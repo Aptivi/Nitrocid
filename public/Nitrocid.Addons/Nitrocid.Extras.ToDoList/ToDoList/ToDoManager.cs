@@ -31,7 +31,7 @@ namespace Nitrocid.Extras.ToDoList.ToDoList
     /// </summary>
     public static class ToDoManager
     {
-        private static List<ToDoTask> toDoTasks = new();
+        private static List<ToDoTask> toDoTasks = [];
 
         /// <summary>
         /// Adds a task

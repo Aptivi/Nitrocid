@@ -40,35 +40,35 @@ namespace Nitrocid.Extras.SftpShell
         {
             { "sftp",
                 new CommandInfo("sftp", /* Localizable */ "Lets you use an SSH FTP server",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(false, "server"),
                         })
-                    }, new SftpCommandExec())
+                    ], new SftpCommandExec())
             },
 
             { "sshell",
                 new CommandInfo("sshell", /* Localizable */ "Connects to an SSH server.",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "address:port"),
                             new CommandArgumentPart(true, "username"),
                         })
-                    }, new SshellCommand())
+                    ], new SshellCommand())
             },
 
             { "sshcmd",
                 new CommandInfo("sshcmd", /* Localizable */ "Connects to an SSH server to execute a command.",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "address:port"),
                             new CommandArgumentPart(true, "username"),
                             new CommandArgumentPart(true, "command"),
                         })
-                    }, new SshcmdCommand())
+                    ], new SshcmdCommand())
             },
         };
 
@@ -92,7 +92,7 @@ namespace Nitrocid.Extras.SftpShell
             ConfigTools.RegisterBaseSetting(config);
             ShellManager.reservedShells.Add("SFTPShell");
             ShellManager.RegisterShell("SFTPShell", new SFTPShellInfo());
-            CommandManager.RegisterAddonCommands(ShellType.Shell, addonCommands.Values.ToArray());
+            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands.Values]);
         }
 
         void IAddon.StartAddon()
@@ -103,7 +103,7 @@ namespace Nitrocid.Extras.SftpShell
             ShellManager.availableShells.Remove("SFTPShell");
             PromptPresetManager.CurrentPresets.Remove("SFTPShell");
             ShellManager.reservedShells.Remove("SFTPShell");
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, addonCommands.Keys.ToArray());
+            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Keys]);
             ConfigTools.UnregisterBaseSetting(nameof(SftpConfig));
         }
     }

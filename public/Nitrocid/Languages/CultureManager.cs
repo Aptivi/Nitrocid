@@ -116,10 +116,10 @@ namespace KS.Languages
         /// </summary>
         public static CultureInfo[] GetCulturesFromLang(string Language)
         {
-            if (LanguageManager.Languages.ContainsKey(Language))
+            if (LanguageManager.Languages.TryGetValue(Language, out LanguageInfo langInfo))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Returning cultures for lang {0}", Language);
-                return LanguageManager.Languages[Language].Cultures;
+                return langInfo.Cultures;
             }
             return null;
         }
@@ -135,10 +135,10 @@ namespace KS.Languages
         /// </summary>
         public static List<string> GetCultureNamesFromLang(string Language)
         {
-            if (LanguageManager.Languages.ContainsKey(Language))
+            if (LanguageManager.Languages.TryGetValue(Language, out LanguageInfo langInfo))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Returning culture names for lang {0}", Language);
-                return LanguageManager.Languages[Language].Cultures.Select((culture) => culture.Name).ToList();
+                return langInfo.Cultures.Select((culture) => culture.Name).ToList();
             }
             return null;
         }

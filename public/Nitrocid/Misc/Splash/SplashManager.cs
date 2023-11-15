@@ -239,8 +239,8 @@ namespace KS.Misc.Splash
         /// <returns>Splash information</returns>
         public static SplashInfo GetSplashFromName(string splashName)
         {
-            if (Splashes.ContainsKey(splashName))
-                return Splashes[splashName];
+            if (Splashes.TryGetValue(splashName, out SplashInfo splashInfo))
+                return splashInfo;
             else
                 return Splashes["Welcome"];
         }

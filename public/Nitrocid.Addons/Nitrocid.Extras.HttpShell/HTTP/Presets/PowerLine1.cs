@@ -62,10 +62,10 @@ namespace Nitrocid.Extras.HttpShell.HTTP.Presets
             char PadlockChar = Convert.ToChar(0xE0A2);
 
             // Segments
-            List<PowerLineSegment> segments = new()
-            {
+            List<PowerLineSegment> segments =
+            [
                 new PowerLineSegment(new Color(85, 255, 255), new Color(43, 127, 127), HTTPShellCommon.HTTPSite, PadlockChar)
-            };
+            ];
 
             // Builder
             var PresetStringBuilder = new StringBuilder();
@@ -83,10 +83,10 @@ namespace Nitrocid.Extras.HttpShell.HTTP.Presets
             char PadlockChar = Convert.ToChar(0xE0A2);
 
             // Segments
-            List<PowerLineSegment> segments = new()
-            {
+            List<PowerLineSegment> segments =
+            [
                 new PowerLineSegment(new Color(85, 255, 255), new Color(43, 127, 127), Translate.DoTranslation("Site"), PadlockChar)
-            };
+            ];
 
             // Builder
             var PresetStringBuilder = new StringBuilder();
@@ -101,10 +101,10 @@ namespace Nitrocid.Extras.HttpShell.HTTP.Presets
         internal override string PresetPromptCompletionBuilder()
         {
             // Segments
-            List<PowerLineSegment> segments = new()
-            {
+            List<PowerLineSegment> segments =
+            [
                 new PowerLineSegment(new Color(85, 255, 255), new Color(43, 127, 127), "+"),
-            };
+            ];
 
             // Builder
             var PresetStringBuilder = new StringBuilder();

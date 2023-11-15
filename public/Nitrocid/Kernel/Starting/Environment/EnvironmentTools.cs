@@ -28,7 +28,7 @@ namespace KS.Kernel.Starting.Environment
     {
         internal static bool resetEnvironment = false;
         internal static string[] arguments = Array.Empty<string>();
-        internal readonly static Dictionary<string, BaseEnvironment> environments = new();
+        internal readonly static Dictionary<string, BaseEnvironment> environments = [];
         private readonly static BaseEnvironment mainEnvironment = new NitrocidKS();
         private static BaseEnvironment environment = mainEnvironment;
 

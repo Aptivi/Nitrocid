@@ -62,16 +62,16 @@ namespace KS.Shell.ShellBase.Arguments
         public static Func<string[], string[]> GetCompletionFunction(string expression)
         {
             expression = expression.ToLower();
-            if (!completions.ContainsKey(expression))
+            if (!completions.TryGetValue(expression, out Func<string[], string[]> func))
                 return null;
-            return completions[expression];
+            return func;
         }
 
         private static string[] PopulateCommands()
         {
             var shellType = ShellManager.ShellStack[^1].ShellType;
             var ShellCommands = CommandManager.GetCommands(shellType);
-            return ShellCommands.Keys.ToArray();
+            return [.. ShellCommands.Keys];
         }
     }
 }

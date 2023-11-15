@@ -80,7 +80,7 @@ namespace KS.Misc.Screensaver.Displays
     {
 
         private int ColumnLine;
-        private readonly List<(int, int, string)> CoveredPositions = new();
+        private readonly List<(int, int, string)> CoveredPositions = [];
         private readonly Color foreground = new("0;255;0");
         private readonly Color background = new("0;0;0");
 

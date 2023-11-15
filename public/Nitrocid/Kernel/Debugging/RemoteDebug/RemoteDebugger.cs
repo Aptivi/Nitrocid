@@ -44,7 +44,7 @@ namespace KS.Kernel.Debugging.RemoteDebug
 
         internal static bool RDebugFailed;
         internal static Exception RDebugFailedReason;
-        internal static List<RemoteDebugDevice> DebugDevices = new();
+        internal static List<RemoteDebugDevice> DebugDevices = [];
         internal static Socket RDebugClient;
         internal static TcpListener DebugTCP;
         internal static KernelThread RDebugThread = new("Remote Debug Thread", true, StartRDebugger) { isCritical = true };

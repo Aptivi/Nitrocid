@@ -45,7 +45,7 @@ namespace Nitrocid.LocaleCheck
                 TextWriterColor.Write("Checking for unlocalized strings...");
                 var sources = CodeLister.PopulateSources();
                 var dataSources = CodeLister.PopulateData();
-                List<string> unlocalizedStrings = new();
+                List<string> unlocalizedStrings = [];
 
                 // Check the source content
                 foreach ((string, string) sourceTuple in sources)

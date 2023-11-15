@@ -43,9 +43,9 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
         internal static int meteorSpeed = 10;
         private static int SpaceshipHeight = 0;
         private readonly static int MaxBullets = 10;
-        private readonly static List<(int, int)> Bullets = new();
+        private readonly static List<(int, int)> Bullets = [];
         private readonly static int MaxMeteors = 10;
-        private readonly static List<(int, int)> Meteors = new();
+        private readonly static List<(int, int)> Meteors = [];
 
         /// <summary>
         /// Use PowerLine characters for the spaceship?
@@ -102,7 +102,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             {
                 // Simulation mode
                 ConsoleKey Keypress = 0;
-                ConsoleKey[] possibleKeys = new[] { ConsoleKey.UpArrow, ConsoleKey.DownArrow, ConsoleKey.Spacebar };
+                ConsoleKey[] possibleKeys = [ConsoleKey.UpArrow, ConsoleKey.DownArrow, ConsoleKey.Spacebar];
                 while (!GameEnded)
                 {
                     float PossibilityToChange = (float)RandomDriver.RandomDouble();

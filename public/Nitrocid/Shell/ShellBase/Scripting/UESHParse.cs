@@ -72,12 +72,12 @@ namespace KS.Shell.ShellBase.Scripting
                 }
 
                 // Get all lines and parse comments, commands, and arguments
-                string[] commandBlocks = new string[] { "if", "while", "until" };
+                string[] commandBlocks = ["if", "while", "until"];
                 int commandStackNum = 0;
                 bool newCommandStackRequired = false;
                 bool retryLoopCondition = false;
                 bool advance = true;
-                List<(int, int)> whilePlaces = new();
+                List<(int, int)> whilePlaces = [];
                 LineNo = 1;
                 for (int l = 0; l < FileLines.Length; l++)
                 {

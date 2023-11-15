@@ -214,7 +214,7 @@ namespace Nitrocid.Extras.NameGen.Screensavers
                     ConsoleColors.Green,
 
                     // Necessary variables to print
-                    new object[] { GeneratedName, FirstName, LastName, FinalAge, TimeDateRenderers.Render(Birthdate) }
+                    [GeneratedName, FirstName, LastName, FinalAge, TimeDateRenderers.Render(Birthdate)]
                 );
 
                 // Lookup delay

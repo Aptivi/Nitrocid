@@ -44,7 +44,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 Titles.AddRange(parameters.ArgumentsList.Skip(2));
 
             // Prompt for selection
-            int SelectedAnswer = SelectionStyle.PromptSelection(parameters.ArgumentsList[1], parameters.ArgumentsList[0], Titles.ToArray());
+            int SelectedAnswer = SelectionStyle.PromptSelection(parameters.ArgumentsList[1], parameters.ArgumentsList[0], [.. Titles]);
             variableValue = $"{SelectedAnswer}";
             return 0;
         }

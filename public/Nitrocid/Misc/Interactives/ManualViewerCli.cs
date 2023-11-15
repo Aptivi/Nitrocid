@@ -39,12 +39,12 @@ namespace KS.Misc.Interactives
         /// <summary>
         /// Manual viewer keybindings
         /// </summary>
-        public override List<InteractiveTuiBinding> Bindings { get; set; } = new()
-        {
+        public override List<InteractiveTuiBinding> Bindings { get; set; } =
+        [
             // Operations
             new InteractiveTuiBinding(/* Localizable */ "Info",        ConsoleKey.F1,
                 (manual, _) => ShowManualInfo(manual), true)
-        };
+        ];
 
         /// <inheritdoc/>
         public override IEnumerable PrimaryDataSource =>

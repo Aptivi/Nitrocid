@@ -41,51 +41,51 @@ namespace Nitrocid.Extras.NameGen
         {
             { "findfirstname",
                 new CommandInfo("findfirstname", /* Localizable */ "First name finder",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(false, "term"),
                             new CommandArgumentPart(false, "nameprefix"),
                             new CommandArgumentPart(false, "namesuffix"),
-                        }, new[] {
+                        ], [
                             new SwitchInfo("t", /* Localizable */ "Generate nametags (umlauts are currently not supported)", new SwitchOptions()
                             {
                                 AcceptsValues = false
                             }),
                             new SwitchInfo("male", /* Localizable */ "Generate names using the male names list", new SwitchOptions()
                             {
-                                ConflictsWith = new[] { "female", "both" },
+                                ConflictsWith = ["female", "both"],
                                 AcceptsValues = false,
                             }),
                             new SwitchInfo("female", /* Localizable */ "Generate names using the female names list", new SwitchOptions()
                             {
-                                ConflictsWith = new[] { "male", "both" },
+                                ConflictsWith = ["male", "both"],
                                 AcceptsValues = false,
                             }),
                             new SwitchInfo("both", /* Localizable */ "Generate names using the unified names list", new SwitchOptions()
                             {
-                                ConflictsWith = new[] { "female", "male" },
+                                ConflictsWith = ["female", "male"],
                                 AcceptsValues = false,
                             }),
-                        }, true)
-                    }, new FindFirstNameCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
+                        ], true)
+                    ], new FindFirstNameCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
             { "findsurname",
                 new CommandInfo("findsurname", /* Localizable */ "Surname finder",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(false, "term"),
                             new CommandArgumentPart(false, "surnameprefix"),
                             new CommandArgumentPart(false, "surnamesuffix"),
-                        }, Array.Empty<SwitchInfo>(), true)
-                    }, new FindSurnameCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
+                        ], Array.Empty<SwitchInfo>(), true)
+                    ], new FindSurnameCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
             { "genname",
                 new CommandInfo("genname", /* Localizable */ "Name and surname generator",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "namescount", new CommandArgumentPartOptions()
                             {
                                 IsNumeric = true
@@ -94,28 +94,28 @@ namespace Nitrocid.Extras.NameGen
                             new CommandArgumentPart(false, "namesuffix"),
                             new CommandArgumentPart(false, "surnameprefix"),
                             new CommandArgumentPart(false, "surnamesuffix"),
-                        }, new[] {
+                        ], [
                             new SwitchInfo("t", /* Localizable */ "Generate nametags (umlauts are currently not supported)", new SwitchOptions()
                             {
                                 AcceptsValues = false
                             }),
                             new SwitchInfo("male", /* Localizable */ "Generate names using the male names list", new SwitchOptions()
                             {
-                                ConflictsWith = new[] { "female", "both" },
+                                ConflictsWith = ["female", "both"],
                                 AcceptsValues = false,
                             }),
                             new SwitchInfo("female", /* Localizable */ "Generate names using the female names list", new SwitchOptions()
                             {
-                                ConflictsWith = new[] { "male", "both" },
+                                ConflictsWith = ["male", "both"],
                                 AcceptsValues = false,
                             }),
                             new SwitchInfo("both", /* Localizable */ "Generate names using the unified names list", new SwitchOptions()
                             {
-                                ConflictsWith = new[] { "female", "male" },
+                                ConflictsWith = ["female", "male"],
                                 AcceptsValues = false,
                             }),
-                        }, true)
-                    }, new GenNameCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
+                        ], true)
+                    ], new GenNameCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
         };
 
@@ -135,7 +135,7 @@ namespace Nitrocid.Extras.NameGen
 
         void IAddon.StartAddon()
         {
-            CommandManager.RegisterAddonCommands(ShellType.Shell, addonCommands.Values.ToArray());
+            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands.Values]);
             ScreensaverManager.AddonSavers.Add("personlookup", new PersonLookupDisplay());
 
             // Then, initialize configuration in a way that no mod can play with them
@@ -145,7 +145,7 @@ namespace Nitrocid.Extras.NameGen
 
         void IAddon.StopAddon()
         {
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, addonCommands.Keys.ToArray());
+            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Keys]);
             ScreensaverManager.AddonSavers.Remove("personlookup");
             ConfigTools.UnregisterBaseSetting(nameof(NameGenSaversConfig));
         }

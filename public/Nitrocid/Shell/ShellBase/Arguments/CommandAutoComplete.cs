@@ -54,7 +54,7 @@ namespace KS.Shell.ShellBase.Arguments
 
             // If text is not provided, return the command list without filtering
             if (string.IsNullOrEmpty(text))
-                return ShellCommands.Keys.ToArray();
+                return [.. ShellCommands.Keys];
 
             // Get the provided command and argument information
             var commandArgumentInfo = ArgumentsParser.ParseShellCommandArguments(text, shellType).total[0];
@@ -95,11 +95,11 @@ namespace KS.Shell.ShellBase.Arguments
 
             // Check to see if there is such command
             DebugWriter.WriteDebug(DebugLevel.I, "Command {0} exists? {1}", CommandName, ShellCommands.ContainsKey(CommandName));
-            if (!ShellCommands.ContainsKey(CommandName))
+            if (!ShellCommands.TryGetValue(CommandName, out CommandInfo cmdInfo))
                 return finalCompletions;
 
             // We have the command. Check its entry for argument info
-            var CommandArgumentInfos = ShellCommands[CommandName].CommandArgumentInfo;
+            var CommandArgumentInfos = cmdInfo.CommandArgumentInfo;
             foreach (var CommandArgumentInfo in CommandArgumentInfos)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Command {0} has argument info? {1}", CommandName, CommandArgumentInfo is not null);

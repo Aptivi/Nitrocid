@@ -55,17 +55,17 @@ namespace KS.Languages
                 return text;
 
             // If the language is available, translate
-            if (LanguageManager.Languages.ContainsKey(lang))
+            if (LanguageManager.Languages.TryGetValue(lang, out LanguageInfo langInfo))
             {
-                return DoTranslation(text, LanguageManager.Languages[lang]);
+                return DoTranslation(text, langInfo);
             }
             else
             {
                 // We might have this string from a mod
                 foreach (ModInfo mod in ModManager.ListMods().Values)
                 {
-                    if (mod.ModStrings.ContainsKey(lang) && mod.ModStrings[lang].Contains(text))
-                        return mod.ModStrings[lang].Single((t) => t == text);
+                    if (mod.ModStrings.TryGetValue(lang, out string[] localizations) && localizations.Contains(text))
+                        return localizations.Single((t) => t == text);
                 }
 
                 // String wasn't found
@@ -94,18 +94,18 @@ namespace KS.Languages
                 return text;
 
             // Do translation
-            if (lang.Strings.ContainsKey(text))
+            if (lang.Strings.TryGetValue(text, out string translated))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Translating string to {0}: {1}", langname, text);
-                return lang.Strings[text];
+                return translated;
             }
             else
             {
                 // We might have this string from a mod
                 foreach (ModInfo mod in ModManager.ListMods().Values)
                 {
-                    if (mod.ModStrings.ContainsKey(langname) && mod.ModStrings[langname].Contains(text))
-                        return mod.ModStrings[langname].Single((t) => t == text);
+                    if (mod.ModStrings.TryGetValue(langname, out string[] localizations) && localizations.Contains(text))
+                        return localizations.Single((t) => t == text);
                 }
 
                 // String wasn't found

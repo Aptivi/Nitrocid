@@ -37,8 +37,8 @@ namespace KS.Kernel.Extensions
 {
     internal static class AddonTools
     {
-        internal static readonly List<string> probedAddons = new();
-        private static readonly List<AddonInfo> addons = new();
+        internal static readonly List<string> probedAddons = [];
+        private static readonly List<AddonInfo> addons = [];
         private const string windowsSuffix = ".Windows";
 
         internal static List<AddonInfo> ListAddons() =>
@@ -161,7 +161,7 @@ namespace KS.Kernel.Extensions
 
         internal static void FinalizeAddons()
         {
-            Dictionary<string, string> errors = new();
+            Dictionary<string, string> errors = [];
             foreach (var addonInfo in addons)
             {
                 try
@@ -183,7 +183,7 @@ namespace KS.Kernel.Extensions
 
         internal static void UnloadAddons()
         {
-            Dictionary<string, string> errors = new();
+            Dictionary<string, string> errors = [];
             for (int addonIdx = addons.Count - 1; addonIdx >= 0; addonIdx--)
             {
                 var addonInstance = addons[addonIdx].Addon;

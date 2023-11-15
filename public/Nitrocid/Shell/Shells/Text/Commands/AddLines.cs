@@ -54,7 +54,7 @@ namespace KS.Shell.Shells.Text.Commands
             }
 
             // Add the new lines
-            TextEditTools.AddNewLines(FinalLines.ToArray());
+            TextEditTools.AddNewLines([.. FinalLines]);
             return 0;
         }
 

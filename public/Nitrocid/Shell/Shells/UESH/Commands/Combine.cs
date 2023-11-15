@@ -53,7 +53,7 @@ namespace KS.Shell.Shells.UESH.Commands
             bool IsInputBinary = Parsing.IsBinaryFile(InputPath);
 
             // Get all the input states and make them true if all binary
-            List<bool> InputStates = new();
+            List<bool> InputStates = [];
             foreach (string CombineInputPath in CombineInputPaths)
                 InputStates.Add(Parsing.IsBinaryFile(CombineInputPath));
 

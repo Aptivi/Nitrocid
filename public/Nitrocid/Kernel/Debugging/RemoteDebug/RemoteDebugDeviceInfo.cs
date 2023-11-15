@@ -36,7 +36,7 @@ namespace KS.Kernel.Debugging.RemoteDebug
         [JsonProperty(nameof(MuteLogs))]
         internal bool muteLogs;
         [JsonProperty(nameof(ChatHistory))]
-        internal List<string> chatHistory = new();
+        internal List<string> chatHistory = [];
 
         /// <summary>
         /// Remote debug device address

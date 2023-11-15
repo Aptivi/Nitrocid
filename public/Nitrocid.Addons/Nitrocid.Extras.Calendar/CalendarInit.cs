@@ -42,39 +42,39 @@ namespace Nitrocid.Extras.Calendar
         {
             { "altdate",
                 new CommandInfo("altdate", /* Localizable */ "Shows date and time",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "culture")
-                        }, new[] {
+                        ], [
                             new SwitchInfo("date", /* Localizable */ "Shows just the date", new SwitchOptions()
                             {
-                                ConflictsWith = new string[] { "full", "time" },
+                                ConflictsWith = ["full", "time"],
                                 AcceptsValues = false
                             }),
                             new SwitchInfo("time", /* Localizable */ "Shows just the time", new SwitchOptions()
                             {
-                                ConflictsWith = new string[] { "date", "full" },
+                                ConflictsWith = ["date", "full"],
                                 AcceptsValues = false
                             }),
                             new SwitchInfo("full", /* Localizable */ "Shows date and time", new SwitchOptions()
                             {
-                                ConflictsWith = new string[] { "date", "time" },
+                                ConflictsWith = ["date", "time"],
                                 AcceptsValues = false
                             }),
                             new SwitchInfo("utc", /* Localizable */ "Uses UTC instead of local", new SwitchOptions()
                             {
                                 AcceptsValues = false
                             })
-                        }, true)
-                    }, new AltDateCommand(), CommandFlags.RedirectionSupported)
+                        ], true)
+                    ], new AltDateCommand(), CommandFlags.RedirectionSupported)
             },
 
             { "calendar",
                 new CommandInfo("calendar", /* Localizable */ "Calendar, event, and reminder manager",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "show", new CommandArgumentPartOptions()
                             {
                                 ExactWording = "show"
@@ -87,10 +87,10 @@ namespace Nitrocid.Extras.Calendar
                             {
                                 IsNumeric = true
                             })
-                        }, new[]
-                        {
+                        ],
+                        [
                             new SwitchInfo("calendar", /* Localizable */ "Calendar type to work on")
-                        }),
+                        ]),
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "event", new CommandArgumentPartOptions()
@@ -191,7 +191,7 @@ namespace Nitrocid.Extras.Calendar
                                 ExactWording = "saveall"
                             })
                         }),
-                    }, new CalendarCommand())
+                    ], new CalendarCommand())
             },
         };
 
@@ -225,14 +225,14 @@ namespace Nitrocid.Extras.Calendar
         {
             var config = new CalendarConfig();
             ConfigTools.RegisterBaseSetting(config);
-            CommandManager.RegisterAddonCommands(ShellType.Shell, addonCommands.Values.ToArray());
+            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands.Values]);
         }
 
         void IAddon.StopAddon()
         {
             ReminderManager.Reminders.Clear();
             EventManager.CalendarEvents.Clear();
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, addonCommands.Keys.ToArray());
+            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Keys]);
             ConfigTools.UnregisterBaseSetting(nameof(CalendarConfig));
         }
     }

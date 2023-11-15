@@ -39,11 +39,11 @@ namespace KS.Files.Extensions
         {
             { ".bin", "NitrocidBin" },
         };
-        internal static readonly List<ExtensionHandler> extensionHandlers = new()
-        {
+        internal static readonly List<ExtensionHandler> extensionHandlers =
+        [
             new ExtensionHandler(".bin", "NitrocidBin", (path) => Opening.OpenEditor(path, false, false, true), (path) => $"{Translate.DoTranslation("File hash sum")}: {Encryption.GetEncryptedFile(path, DriverHandler.CurrentEncryptionDriver.DriverName)}"),
-        };
-        internal static readonly List<ExtensionHandler> customHandlers = new();
+        ];
+        internal static readonly List<ExtensionHandler> customHandlers = [];
 
         /// <summary>
         /// Gets all extension handlers
@@ -146,11 +146,11 @@ namespace KS.Files.Extensions
         public static ExtensionHandler GetExtensionHandler(string extension)
         {
             // Check to see if we have the extension in the default handlers list
-            if (!defaultHandlers.ContainsKey(extension))
+            if (!defaultHandlers.TryGetValue(extension, out string defHandlerName))
                 throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("No default extension handler found for this extension.") + $" {extension}");
 
             // Now, get the default handler name and get the handler instance from it
-            string handlerName = defaultHandlers[extension];
+            string handlerName = defHandlerName;
             return GetExtensionHandler(extension, handlerName);
         }
 

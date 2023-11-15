@@ -63,12 +63,12 @@ namespace Nitrocid.Extras.FtpShell.FTP.Presets
             char PadlockChar = Convert.ToChar(0xE0A2);
 
             // Segments
-            List<PowerLineSegment> segments = new()
-            {
+            List<PowerLineSegment> segments =
+            [
                 new PowerLineSegment(new Color(255, 255, 85), new Color(25, 25, 25), FTPShellCommon.FtpUser, default, TransitionPartChar),
                 new PowerLineSegment(new Color(255, 255, 85), new Color(25, 25, 25), FTPShellCommon.FtpSite, PadlockChar, TransitionPartChar),
                 new PowerLineSegment(new Color(255, 255, 85), new Color(25, 25, 25), FTPShellCommon.FtpCurrentRemoteDir, default, TransitionPartChar),
-            };
+            ];
 
             // Builder
             var PresetStringBuilder = new StringBuilder();
@@ -87,12 +87,12 @@ namespace Nitrocid.Extras.FtpShell.FTP.Presets
             char PadlockChar = Convert.ToChar(0xE0A2);
 
             // Segments
-            List<PowerLineSegment> segments = new()
-            {
+            List<PowerLineSegment> segments =
+            [
                 new PowerLineSegment(new Color(255, 255, 85), new Color(25, 25, 25), Translate.DoTranslation("User"), default, TransitionPartChar),
                 new PowerLineSegment(new Color(255, 255, 85), new Color(25, 25, 25), Translate.DoTranslation("Site"), PadlockChar, TransitionPartChar),
                 new PowerLineSegment(new Color(255, 255, 85), new Color(25, 25, 25), "/dir", default, TransitionPartChar),
-            };
+            ];
 
             // Builder
             var PresetStringBuilder = new StringBuilder();
@@ -107,10 +107,10 @@ namespace Nitrocid.Extras.FtpShell.FTP.Presets
         internal override string PresetPromptCompletionBuilder()
         {
             // Segments
-            List<PowerLineSegment> segments = new()
-            {
+            List<PowerLineSegment> segments =
+            [
                 new PowerLineSegment(new Color(255, 255, 85), new Color(25, 25, 25), "+"),
-            };
+            ];
 
             // Builder
             var PresetStringBuilder = new StringBuilder();

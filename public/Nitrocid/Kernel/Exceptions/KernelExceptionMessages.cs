@@ -203,8 +203,8 @@ namespace KS.Kernel.Exceptions
         }
 
         internal static string GetMessageFromType(KernelExceptionType exceptionType) =>
-            Messages.ContainsKey(exceptionType) ?
-            Messages[exceptionType] :
+            Messages.TryGetValue(exceptionType, out string type) ?
+            type :
             Translate.DoTranslation("Unfortunately, an invalid message type was given, so it's possible that something is messed up. Try turning on the debugger and reproducing the problem.");
     }
 }

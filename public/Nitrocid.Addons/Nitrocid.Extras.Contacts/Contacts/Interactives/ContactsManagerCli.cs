@@ -41,8 +41,8 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
         /// <summary>
         /// Contact manager bindings
         /// </summary>
-        public override List<InteractiveTuiBinding> Bindings { get; set; } = new()
-        {
+        public override List<InteractiveTuiBinding> Bindings { get; set; } =
+        [
             // Operations
             new InteractiveTuiBinding(/* Localizable */ "Delete",      ConsoleKey.F1, (_, index) => RemoveContact(index), true),
             new InteractiveTuiBinding(/* Localizable */ "Delete All",  ConsoleKey.F2, (_, _) => RemoveContacts(), true),
@@ -53,7 +53,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             new InteractiveTuiBinding(/* Localizable */ "Search Next", ConsoleKey.F7, (_, _) => SearchNext(), true),
             new InteractiveTuiBinding(/* Localizable */ "Search Back", ConsoleKey.F8, (_, _) => SearchPrevious(), true),
             new InteractiveTuiBinding(/* Localizable */ "Raw Info",    ConsoleKey.F9, (_, index) => ShowContactRawInfo(index), true),
-        };
+        ];
 
         /// <inheritdoc/>
         public override IEnumerable PrimaryDataSource =>
@@ -283,7 +283,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                 finalInfoRendered.Append(Translate.DoTranslation("Contact address") + ": ");
 
                 var address = card.ContactAddresses[0];
-                List<string> fullElements = new();
+                List<string> fullElements = [];
                 string street = address.StreetAddress;
                 string postal = address.PostalCode;
                 string poBox = address.PostOfficeBox;
@@ -354,7 +354,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                 finalInfoRendered.Append(Translate.DoTranslation("Contact organization") + ": ");
 
                 var org = card.ContactOrganizations[0];
-                List<string> fullElements = new();
+                List<string> fullElements = [];
                 string name = org.Name;
                 string unit = org.Unit;
                 string role = org.Role;

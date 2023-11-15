@@ -40,9 +40,9 @@ namespace Nitrocid.Extras.ChatGpt.Gpt
         {
             { "disclaimer",
                 new CommandInfo("disclaimer", /* Localizable */ "Shows you a disclaimer about how to use this service appropriately",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new DisclaimerCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
+                    ], new DisclaimerCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
         };
 

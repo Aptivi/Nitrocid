@@ -38,9 +38,9 @@ namespace Nitrocid.Extras.Contacts
         {
             { "contacts",
                 new CommandInfo("contacts", /* Localizable */ "Manages your contacts",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new ContactsCommand())
+                    ], new ContactsCommand())
             },
         };
 
@@ -59,14 +59,14 @@ namespace Nitrocid.Extras.Contacts
         { }
 
         void IAddon.StartAddon() =>
-            CommandManager.RegisterAddonCommands(ShellType.Shell, addonCommands.Values.ToArray());
+            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands.Values]);
 
         void IAddon.StopAddon()
         {
             // Unload all contacts
             ContactsManager.RemoveContacts(false);
             DebugWriter.WriteDebug(DebugLevel.I, "Unloaded all contacts");
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, addonCommands.Keys.ToArray());
+            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Keys]);
         }
     }
 }

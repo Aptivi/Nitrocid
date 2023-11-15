@@ -21,8 +21,8 @@ namespace Nitrocid.Extras.Tips
 {
     internal static class TipsList
     {
-        internal static string[] tips = new[]
-        {
+        internal static string[] tips =
+        [
             /* Localizable */ "that you can execute process commands in two ways: entering the executable file name directly, and using the 'exec' command?",
             /* Localizable */ "that you can lock your screen using the 'lockscreen' command?",
             /* Localizable */ "that you can build your own kernel modifications using C# and Visual Basic?",
@@ -38,6 +38,6 @@ namespace Nitrocid.Extras.Tips
             /* Localizable */ "that you can change your kernel colors by either using the 'settings' command or by using one of the pre-built themes?",
             /* Localizable */ "that you can reset your kernel to the factory defaults using the 'reset' argument?",
             /* Localizable */ "that you can access our extensive documentation at our GitBook page?",
-        };
+        ];
     }
 }

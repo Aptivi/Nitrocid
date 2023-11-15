@@ -310,7 +310,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             }
 
             // Prepare the figlet font for writing
-            string FigletWrite = FigletSettings.FigletText.ReplaceAll(new string[] { Convert.ToChar(13).ToString(), Convert.ToChar(10).ToString() }, " - ");
+            string FigletWrite = FigletSettings.FigletText.ReplaceAll([Convert.ToChar(13).ToString(), Convert.ToChar(10).ToString()], " - ");
             FigletWrite = FigletFontUsed.Render(FigletWrite);
             var FigletWriteLines = FigletWrite.SplitNewLines().SkipWhile(string.IsNullOrEmpty).ToArray();
             int FigletHeight = (int)Math.Round(ConsoleMiddleHeight - FigletWriteLines.Length / 2d);

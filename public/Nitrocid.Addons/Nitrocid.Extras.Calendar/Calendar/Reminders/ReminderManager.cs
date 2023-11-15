@@ -48,7 +48,7 @@ namespace Nitrocid.Extras.Calendar.Calendar.Reminders
         /// Current reminder notification importance
         /// </summary>
         public static NotificationPriority CurrentReminderImportance { get; set; } = NotificationPriority.Low;
-        internal static List<ReminderInfo> Reminders = new();
+        internal static List<ReminderInfo> Reminders = [];
         internal static KernelThread ReminderThread = new("Reminder Thread", false, ReminderListen);
         internal static object ReminderManagerLock = new();
 

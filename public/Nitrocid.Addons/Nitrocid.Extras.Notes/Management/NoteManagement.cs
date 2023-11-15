@@ -30,7 +30,7 @@ namespace Nitrocid.Extras.Notes.Management
 {
     internal static class NoteManagement
     {
-        internal static List<string> notes = new();
+        internal static List<string> notes = [];
 
         /// <summary>
         /// Path to the notes file
@@ -105,7 +105,7 @@ namespace Nitrocid.Extras.Notes.Management
             // Now, serialize the array of notes to the JSON file
             string serialized = Reading.ReadContentsText(NotesPath);
             var notesArray = JsonConvert.DeserializeObject<string[]>(serialized);
-            notes = notesArray.ToList();
+            notes = [.. notesArray];
         }
     }
 }

@@ -27,15 +27,15 @@ namespace KS.Kernel.Debugging.Testing.Facades.FacadeData
 {
     internal class CliInfoPaneSlowTestRefreshingData : BaseInteractiveTui, IInteractiveTui
     {
-        internal static List<string> strings = new();
+        internal static List<string> strings = [];
         private static int timesRendered = 0;
 
-        public override List<InteractiveTuiBinding> Bindings { get; set; } = new()
-        {
+        public override List<InteractiveTuiBinding> Bindings { get; set; } =
+        [
             new InteractiveTuiBinding(/* Localizable */ "Add",         ConsoleKey.F1, (_, index) => strings.Add($"[{index}] --+-- [{index}]"), true),
             new InteractiveTuiBinding(/* Localizable */ "Delete",      ConsoleKey.F2, (_, index) => strings.RemoveAt(index), true),
             new InteractiveTuiBinding(/* Localizable */ "Delete Last", ConsoleKey.F3, (_, _)     => strings.RemoveAt(strings.Count - 1), true),
-        };
+        ];
 
         /// <inheritdoc/>
         public override int RefreshInterval => 

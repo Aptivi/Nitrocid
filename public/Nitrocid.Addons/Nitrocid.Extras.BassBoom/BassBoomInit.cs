@@ -31,22 +31,19 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Reflection;
-
-#if NET8_0
 using BassBoom.Basolia;
 using BassBoom.Basolia.File;
 using BassBoom.Basolia.Format;
 using System.IO;
 using KS.Languages;
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.FancyWriters;
-#endif
+using KS.Files.Extensions;
+using KS.ConsoleBase.Inputs.Styles;
 
 namespace Nitrocid.Extras.BassBoom
 {
     internal class BassBoomInit : IAddon
     {
-#if NET8_0
         private readonly ExtensionHandler handler = new(
             ".mp3", "Mp3BassBoom",
             (_) => InfoBoxColor.WriteInfoBoxKernelColor(Translate.DoTranslation("You'll be able to play music soon. Hang tight!"), KernelColorType.Warning),
@@ -76,48 +73,47 @@ namespace Nitrocid.Extras.BassBoom
                     $"{Translate.DoTranslation("Song genre")}: {musicGenre}";
             }
         );
-#endif
 
         private readonly Dictionary<string, CommandInfo> addonCommands = new()
         {
             { "lyriclines",
                 new CommandInfo("lyriclines", /* Localizable */ "Gets all lyric lines from the lyric file",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "lyric.lrc"),
                         })
-                    }, new LyricLinesCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
+                    ], new LyricLinesCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
 
             { "musicplayer",
                 new CommandInfo("musicplayer", /* Localizable */ "Opens an interactive music player",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(false, "musicFile"),
                         })
-                    }, new MusicPlayerCommand())
+                    ], new MusicPlayerCommand())
             },
 
             { "playlyric",
                 new CommandInfo("playlyric", /* Localizable */ "Plays a lyric file",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "lyric.lrc"),
                         })
-                    }, new PlayLyricCommand())
+                    ], new PlayLyricCommand())
             },
 
             { "playsound",
                 new CommandInfo("playsound", /* Localizable */ "Plays a sound",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "musicFile"),
                         })
-                    }, new PlaySoundCommand())
+                    ], new PlaySoundCommand())
             },
         };
 
@@ -140,7 +136,7 @@ namespace Nitrocid.Extras.BassBoom
 
         void IAddon.StartAddon()
         {
-            CommandManager.RegisterAddonCommands(ShellType.Shell, addonCommands.Values.ToArray());
+            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands.Values]);
             ScreensaverManager.AddonSavers.Add("lyrics", new LyricsDisplay());
 
             // Then, initialize configuration in a way that no mod can play with them
@@ -149,22 +145,18 @@ namespace Nitrocid.Extras.BassBoom
             ConfigTools.RegisterBaseSetting(saversConfig);
             ConfigTools.RegisterBaseSetting(bbConfig);
 
-#if NET8_0
             // Additionally, register a custom extension handler that handles music playback
             InitBasolia.Init();
             ExtensionHandlerTools.extensionHandlers.Add(handler);
-#endif
         }
 
         void IAddon.StopAddon()
         {
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, addonCommands.Keys.ToArray());
+            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Keys]);
             ScreensaverManager.AddonSavers.Remove("lyrics");
             ConfigTools.UnregisterBaseSetting(nameof(BassBoomSaversConfig));
             ConfigTools.UnregisterBaseSetting(nameof(BassBoomConfig));
-#if NET8_0
             ExtensionHandlerTools.extensionHandlers.Remove(handler);
-#endif
         }
 
         void IAddon.FinalizeAddon()

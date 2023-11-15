@@ -32,7 +32,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
         public override void Run(params string[] args)
         {
             string Text = Input.ReadLine(Translate.DoTranslation("Write an event name:") + " ");
-            string[] eventArgs = new string[] { "RanByTest" };
+            string[] eventArgs = ["RanByTest"];
             if (Enum.TryParse(Text, out EventType eventType))
                 EventsManager.FireEvent(eventType, eventArgs);
             else

@@ -28,7 +28,7 @@ namespace KS.Misc.Reflection
     public static class IntegerTools
     {
         private static readonly string[] sizeOrders =
-        {
+        [
             "B",  // Bytes
             "KB", // Kilobytes
             "MB", // Megabytes
@@ -36,13 +36,11 @@ namespace KS.Misc.Reflection
             "TB", // Terabytes
             "PB", // Petabytes
             "EB", // Exabytes
-#if NET8_0
             "ZB", // Zettabytes
             "YB", // Yottabytes
             "RB", // Ronnabytes
             "QB"  // Quettabytes
-#endif
-        };
+        ];
 
         /// <summary>
         /// Swaps the two numbers if the source is larger than the target

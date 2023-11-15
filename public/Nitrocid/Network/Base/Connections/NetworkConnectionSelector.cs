@@ -45,10 +45,10 @@ namespace KS.Network.Base.Connections
             }
 
             return SelectionStyle.PromptSelection(Translate.DoTranslation("Select a connection. If you have no connections, you'll have to create a new connection. Additionally, you can use the speed dial feature to quickly connect to servers."),
-                connectionsChoiceList, new List<InputChoiceInfo>() {
+                connectionsChoiceList, [
                     new InputChoiceInfo($"{connectionNames.Length + 1}", Translate.DoTranslation("Create a new connection")),
                     new InputChoiceInfo($"{connectionNames.Length + 2}", Translate.DoTranslation("Use speed dial")),
-                }
+                ]
             );
         }
     }

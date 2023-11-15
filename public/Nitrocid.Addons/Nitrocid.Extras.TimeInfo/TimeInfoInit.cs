@@ -37,19 +37,19 @@ namespace Nitrocid.Extras.TimeInfo
         {
             { "gettimeinfo",
                 new CommandInfo("gettimeinfo", /* Localizable */ "Gets the date and time information",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "date")
-                        }, new[]
-                        {
+                        ],
+                        [
                             new SwitchInfo("now", /* Localizable */ "Gets the current date and time information", new SwitchOptions()
                             {
                                 OptionalizeLastRequiredArguments = 1,
                                 AcceptsValues = false
                             })
-                        })
-                    }, new GetTimeInfoCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
+                        ])
+                    ], new GetTimeInfoCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
         };
 
@@ -65,10 +65,10 @@ namespace Nitrocid.Extras.TimeInfo
         ReadOnlyDictionary<string, FieldInfo> IAddon.PubliclyAvailableFields => null;
 
         void IAddon.StartAddon() =>
-            CommandManager.RegisterAddonCommands(ShellType.Shell, addonCommands.Values.ToArray());
+            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands.Values]);
 
         void IAddon.StopAddon() =>
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, addonCommands.Keys.ToArray());
+            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Keys]);
 
         void IAddon.FinalizeAddon()
         { }

@@ -32,7 +32,7 @@ namespace KS.Modifications.ManPages
     {
 
         // Variables
-        internal static List<Manual> Pages = new();
+        internal static List<Manual> Pages = [];
 
         /// <summary>
         /// Lists all manual pages

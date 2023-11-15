@@ -40,7 +40,7 @@ namespace KS.Shell.ShellBase.Aliases
     public static class AliasManager
     {
 
-        internal static List<AliasInfo> aliases = new();
+        internal static List<AliasInfo> aliases = [];
 
         /// <summary>
         /// Initializes aliases
@@ -52,7 +52,7 @@ namespace KS.Shell.ShellBase.Aliases
             string AliasJsonContent = Reading.ReadContentsText(Paths.GetKernelPath(KernelPathType.Aliases));
             var aliasesArray = JsonConvert.DeserializeObject<AliasInfo[]>(AliasJsonContent) ??
                 Array.Empty<AliasInfo>();
-            aliases = aliasesArray.ToList();
+            aliases = [.. aliasesArray];
         }
 
         /// <summary>

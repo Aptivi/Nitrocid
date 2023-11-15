@@ -142,7 +142,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     sets[y, x] = new();
 
             // Build the list of edges
-            List<(int x, int y, Direction direction)> plainEdges = new();
+            List<(int x, int y, Direction direction)> plainEdges = [];
             for (int y = 0; y < height; y++)
             {
                 for (int x = 0; x < width; x++)

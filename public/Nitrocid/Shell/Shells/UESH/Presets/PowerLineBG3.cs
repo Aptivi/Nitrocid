@@ -66,12 +66,12 @@ namespace KS.Shell.Shells.UESH.Presets
             char PadlockChar = Convert.ToChar(0xE0A2);
 
             // PowerLine presets
-            List<PowerLineSegment> segments = new()
-            {
+            List<PowerLineSegment> segments =
+            [
                 new PowerLineSegment(new Color(255, 255, 85), new Color(25, 25, 25), UserManagement.CurrentUser.Username, default, TransitionPartChar),
                 new PowerLineSegment(new Color(255, 255, 85), new Color(25, 25, 25), NetworkTools.HostName, PadlockChar, TransitionPartChar),
                 new PowerLineSegment(new Color(255, 255, 85), new Color(25, 25, 25), $"{CurrentDirectory.CurrentDir}{(Config.MainConfig.ShowShellCount ? $" [{ShellManager.ShellStack.Count}]" : "")}", default, TransitionPartChar),
-            };
+            ];
 
             // Builder
             var PresetStringBuilder = new StringBuilder();
@@ -102,12 +102,12 @@ namespace KS.Shell.Shells.UESH.Presets
             char PadlockChar = Convert.ToChar(0xE0A2);
 
             // PowerLine presets
-            List<PowerLineSegment> segments = new()
-            {
+            List<PowerLineSegment> segments =
+            [
                 new PowerLineSegment(new Color(255, 255, 85), new Color(25, 25, 25), "user", default, TransitionPartChar),
                 new PowerLineSegment(new Color(255, 255, 85), new Color(25, 25, 25), "host", PadlockChar, TransitionPartChar),
                 new PowerLineSegment(new Color(255, 255, 85), new Color(25, 25, 25), "/home/user [1]", default, TransitionPartChar),
-            };
+            ];
 
             // Builder
             var PresetStringBuilder = new StringBuilder();
@@ -134,10 +134,10 @@ namespace KS.Shell.Shells.UESH.Presets
         internal override string PresetPromptCompletionBuilder()
         {
             // Segments
-            List<PowerLineSegment> segments = new()
-            {
+            List<PowerLineSegment> segments =
+            [
                 new PowerLineSegment(new Color(255, 255, 85), new Color(25, 25, 25), "+"),
-            };
+            ];
 
             // Builder
             var PresetStringBuilder = new StringBuilder();

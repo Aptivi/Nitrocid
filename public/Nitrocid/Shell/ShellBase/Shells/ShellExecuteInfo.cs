@@ -29,7 +29,7 @@ namespace KS.Shell.ShellBase.Shells
     {
 
         internal int LastErrorCode = 0;
-        internal readonly List<KernelThread> AltCommandThreads = new();
+        internal readonly List<KernelThread> AltCommandThreads = [];
         private readonly string shellType;
         private readonly BaseShell shellBase;
         private readonly KernelThread shellCommandThread;

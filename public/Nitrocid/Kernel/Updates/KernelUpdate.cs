@@ -71,7 +71,7 @@ namespace KS.Kernel.Updates
             // After we do this, Nitrocid KS should recognize newer servicing versions based on the current series (i.e. KS 0.0.21.3 didn't notify
             // the user that 0.0.21.4 was available due to 0.0.8.12 and versions that came after coming as first according to the API until 0.0.21.5
             // arrived)
-            List<(SemVer UpdateVersion, Uri UpdateURL)> SortedVersions = new();
+            List<(SemVer UpdateVersion, Uri UpdateURL)> SortedVersions = [];
             string specifier =
                 kind == UpdateKind.Binary ? "bin" :
                 kind == UpdateKind.BinaryLite ? "bin-lite" : "bin";
@@ -112,8 +112,11 @@ namespace KS.Kernel.Updates
                 if (!string.IsNullOrEmpty(KernelUpdateURL))
                     SortedVersions.Add((KernelUpdateVer, new Uri(KernelUpdateURL)));
             }
-            SortedVersions = SortedVersions.OrderByDescending((x) => 
-                new Version(x.UpdateVersion.MajorVersion, x.UpdateVersion.MinorVersion, x.UpdateVersion.PatchVersion, x.UpdateVersion.RevisionVersion)).ToList();
+            SortedVersions =
+            [
+                .. SortedVersions.OrderByDescending((x) => 
+                                new Version(x.UpdateVersion.MajorVersion, x.UpdateVersion.MinorVersion, x.UpdateVersion.PatchVersion, x.UpdateVersion.RevisionVersion)),
+            ];
             DebugWriter.WriteDebug(DebugLevel.I, "Found {0} kernel updates.", SortedVersions.Count);
 
             // Get the latest version found

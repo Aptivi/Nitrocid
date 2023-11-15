@@ -88,7 +88,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                 // Deal with the lines to actually fit text in the infobox
                 string finalInfoRendered = TextTools.FormatString(text, vars);
                 string[] splitLines = finalInfoRendered.ToString().SplitNewLines();
-                List<string> splitFinalLines = new();
+                List<string> splitFinalLines = [];
                 foreach (var line in splitLines)
                 {
                     var lineSentences = TextTools.GetWrappedSentences(line, ConsoleWrapper.WindowWidth - 4);
@@ -521,7 +521,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                 // Deal with the lines to actually fit text in the infobox
                 string finalInfoRendered = TextTools.FormatString(text, vars);
                 string[] splitLines = finalInfoRendered.ToString().SplitNewLines();
-                List<string> splitFinalLines = new();
+                List<string> splitFinalLines = [];
                 foreach (var line in splitLines)
                 {
                     var lineSentences = TextTools.GetWrappedSentences(line, ConsoleWrapper.WindowWidth - 4);
@@ -737,7 +737,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                 // Deal with the lines to actually fit text in the infobox
                 string finalInfoRendered = TextTools.FormatString(text, vars);
                 string[] splitLines = finalInfoRendered.ToString().SplitNewLines();
-                List<string> splitFinalLines = new();
+                List<string> splitFinalLines = [];
                 foreach (var line in splitLines)
                 {
                     var lineSentences = TextTools.GetWrappedSentences(line, ConsoleWrapper.WindowWidth - 4);
@@ -871,7 +871,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                 // Deal with the lines to actually fit text in the infobox
                 string finalInfoRendered = TextTools.FormatString(text, vars);
                 string[] splitLines = finalInfoRendered.ToString().SplitNewLines();
-                List<string> splitFinalLines = new();
+                List<string> splitFinalLines = [];
                 foreach (var line in splitLines)
                 {
                     var lineSentences = TextTools.GetWrappedSentences(line, ConsoleWrapper.WindowWidth - 4);

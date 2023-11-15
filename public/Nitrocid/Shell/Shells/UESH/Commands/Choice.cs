@@ -96,7 +96,7 @@ namespace KS.Shell.Shells.UESH.Commands
             }
 
             // Prompt for choice
-            string Answer = ChoiceStyle.PromptChoice(parameters.ArgumentsList[1], parameters.ArgumentsList[0], Titles.ToArray(), OutputType, PressEnter);
+            string Answer = ChoiceStyle.PromptChoice(parameters.ArgumentsList[1], parameters.ArgumentsList[0], [.. Titles], OutputType, PressEnter);
             variableValue = Answer;
             return 0;
         }

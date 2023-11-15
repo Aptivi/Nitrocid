@@ -366,7 +366,7 @@ namespace KS.Drivers.Network
                 throw new KernelException(KernelExceptionType.NetworkOffline);
 
             // Get the local hostname and get its IP address information from the list
-            List<IPAddress> onlineAddresses = new();
+            List<IPAddress> onlineAddresses = [];
             string hostname = Dns.GetHostName();
             var hostnameEntry = Dns.GetHostEntry(hostname);
 
@@ -385,7 +385,7 @@ namespace KS.Drivers.Network
                     for (byte fourthOctet = 0; fourthOctet <= 255; fourthOctet++)
                     {
                         // Get the address to be scanned
-                        byte[] bytes = { addressBytes[0], addressBytes[1], addressBytes[2], fourthOctet };
+                        byte[] bytes = [addressBytes[0], addressBytes[1], addressBytes[2], fourthOctet];
                         string addressString = string.Join(".", bytes);
 
                         // Ping it and time it out to 10 milliseconds
@@ -406,7 +406,7 @@ namespace KS.Drivers.Network
                 }
             }
 
-            return onlineAddresses.ToArray();
+            return [.. onlineAddresses];
         }
     }
 }

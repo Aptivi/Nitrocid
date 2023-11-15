@@ -44,8 +44,8 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             string RandomWord = WordManager.GetRandomWord();
             bool hung = false;
             int currentAttempt = 0;
-            List<char> gotChars = new();
-            List<char> wrongChars = new();
+            List<char> gotChars = [];
+            List<char> wrongChars = [];
 
             while (!hung)
             {
@@ -135,7 +135,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
 
                 // Check to see if we won the game
                 bool won = false;
-                List<char> queried = new();
+                List<char> queried = [];
                 foreach (char ch in RandomWord)
                 {
                     if (gotChars.Contains(ch))

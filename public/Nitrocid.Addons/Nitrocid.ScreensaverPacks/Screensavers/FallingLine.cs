@@ -240,7 +240,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     {
 
         private int ColumnLine;
-        private readonly List<Tuple<int, int>> CoveredPositions = new();
+        private readonly List<Tuple<int, int>> CoveredPositions = [];
 
         /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "FallingLine";

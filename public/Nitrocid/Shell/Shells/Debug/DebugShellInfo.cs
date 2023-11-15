@@ -43,14 +43,14 @@ namespace KS.Shell.Shells.Debug
         {
             { "currentbt",
                 new CommandInfo("currentbt", /* Localizable */ "Gets current backtrace",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new CurrentBtCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
+                    ], new CurrentBtCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
             },
 
             { "debuglog",
                 new CommandInfo("debuglog", /* Localizable */ "Easily fetches the debug log information using the session number",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "sessionNum", new CommandArgumentPartOptions()
@@ -58,12 +58,12 @@ namespace KS.Shell.Shells.Debug
                                 IsNumeric = true
                             })
                         })
-                    }, new DebugLogCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
+                    ], new DebugLogCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
             },
 
             { "excinfo",
                 new CommandInfo("excinfo", /* Localizable */ "Gets message from kernel exception type. Useful for debugging",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "excNum", new CommandArgumentPartOptions()
@@ -71,12 +71,12 @@ namespace KS.Shell.Shells.Debug
                                 IsNumeric = true
                             })
                         })
-                    }, new ExcInfoCommand())
+                    ], new ExcInfoCommand())
             },
 
             { "getfieldvalue",
                 new CommandInfo("getfieldvalue", /* Localizable */ "Gets a field value",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "field", new CommandArgumentPartOptions()
@@ -84,12 +84,12 @@ namespace KS.Shell.Shells.Debug
                                 AutoCompleter = (_) => FieldManager.GetAllFieldsNoEvaluation().Keys.ToArray(),
                             })
                         }, true)
-                    }, new GetFieldValueCommand())
+                    ], new GetFieldValueCommand())
             },
 
             { "getpropertyvalue",
                 new CommandInfo("getpropertyvalue", /* Localizable */ "Gets a property value",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "property", new CommandArgumentPartOptions()
@@ -97,26 +97,26 @@ namespace KS.Shell.Shells.Debug
                                 AutoCompleter = (_) => PropertyManager.GetAllPropertiesNoEvaluation().Keys.ToArray(),
                             })
                         }, true)
-                    }, new GetPropertyValueCommand())
+                    ], new GetPropertyValueCommand())
             },
 
             { "keyinfo",
                 new CommandInfo("keyinfo", /* Localizable */ "Gets key information for a pressed key. Useful for debugging",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new KeyInfoCommand())
+                    ], new KeyInfoCommand())
             },
 
             { "lsaddons",
                 new CommandInfo("lsaddons", /* Localizable */ "Lists all available addons",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new LsAddonsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
+                    ], new LsAddonsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
             },
 
             { "lsfields",
                 new CommandInfo("lsfields", /* Localizable */ "Lists all available public fields",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new SwitchInfo("suppress", /* Localizable */ "Suppresses the error messages", new SwitchOptions()
@@ -124,12 +124,12 @@ namespace KS.Shell.Shells.Debug
                                 AcceptsValues = false
                             })
                         })
-                    }, new LsFieldsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
+                    ], new LsFieldsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
             },
 
             { "lsproperties",
                 new CommandInfo("lsproperties", /* Localizable */ "Lists all available public properties",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new SwitchInfo("suppress", /* Localizable */ "Suppresses the error messages", new SwitchOptions()
@@ -137,21 +137,21 @@ namespace KS.Shell.Shells.Debug
                                 AcceptsValues = false
                             })
                         })
-                    }, new LsPropertiesCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
+                    ], new LsPropertiesCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
             },
 
             { "lsshells",
                 new CommandInfo("lsshells", /* Localizable */ "Lists all available shells",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new LsShellsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
+                    ], new LsShellsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
             },
 
             { "threadsbt",
                 new CommandInfo("threadsbt", /* Localizable */ "Gets backtrace for all threads",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new ThreadsBtCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
+                    ], new ThreadsBtCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
             },
         };
 

@@ -32,8 +32,8 @@ namespace KS.Kernel.Starting
     internal static class KernelStageTools
     {
         internal static Stopwatch StageTimer = new();
-        internal static List<KernelStage> Stages = new()
-        {
+        internal static List<KernelStage> Stages =
+        [
             new KernelStage( /* Localizable */ "System initialization",             KernelStageActions.Stage01SystemInitialization),
             new KernelStage( /* Localizable */ "Kernel updates",                    KernelStageActions.Stage02KernelUpdates),
             new KernelStage( /* Localizable */ "Hardware detection",                KernelStageActions.Stage03HardwareProbe),
@@ -41,7 +41,7 @@ namespace KS.Kernel.Starting
             new KernelStage( /* Localizable */ "Optional components",               KernelStageActions.Stage05OptionalComponents, false, false),
             new KernelStage( /* Localizable */ "User initialization",               KernelStageActions.Stage06UserInitialization, true, false),
             new KernelStage( /* Localizable */ "System integrity verification",     KernelStageActions.Stage07SysIntegrity),
-        };
+        ];
 
         /// <summary>
         /// Show how much time a stage took on boot

@@ -40,7 +40,7 @@ namespace KS.Kernel.Debugging.RemoteDebug
     public static class RemoteDebugTools
     {
 
-        private static List<RemoteDebugDeviceInfo> remoteDebugDevices = new();
+        private static List<RemoteDebugDeviceInfo> remoteDebugDevices = [];
 
         /// <summary>
         /// When there is a remote debug connection error, notify the user

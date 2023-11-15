@@ -41,15 +41,15 @@ namespace Nitrocid.Extras.RssShell
         {
             { "rss",
                 new CommandInfo("rss", /* Localizable */ "Opens an RSS shell to read the feeds",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(false, "feedlink"),
-                        }, new[]
-                        {
+                        ],
+                        [
                             new SwitchInfo("tui", /* Localizable */ "Opens an interactive RSS feed reader TUI"),
-                        })
-                    }, new RssCommandExec())
+                        ])
+                    ], new RssCommandExec())
             },
         };
 
@@ -77,7 +77,7 @@ namespace Nitrocid.Extras.RssShell
             ConfigTools.RegisterBaseSetting(config);
             ShellManager.reservedShells.Add("RSSShell");
             ShellManager.RegisterShell("RSSShell", new RSSShellInfo());
-            CommandManager.RegisterAddonCommands(ShellType.Shell, addonCommands.Values.ToArray());
+            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands.Values]);
         }
 
         void IAddon.StartAddon()
@@ -88,7 +88,7 @@ namespace Nitrocid.Extras.RssShell
             ShellManager.availableShells.Remove("RSSShell");
             PromptPresetManager.CurrentPresets.Remove("RSSShell");
             ShellManager.reservedShells.Remove("RSSShell");
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, addonCommands.Keys.ToArray());
+            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Keys]);
             ConfigTools.UnregisterBaseSetting(nameof(RssConfig));
         }
     }

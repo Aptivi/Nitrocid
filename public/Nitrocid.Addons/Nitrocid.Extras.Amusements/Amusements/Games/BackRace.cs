@@ -49,22 +49,22 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             // Reset all the horses
             void ResetAll()
             {
-                horses = new BackRaceHorse[5]
-                {
+                horses =
+                [
                     new BackRaceHorse(1),
                     new BackRaceHorse(2),
                     new BackRaceHorse(3),
                     new BackRaceHorse(4),
                     new BackRaceHorse(5),
-                };
-                horseColors = new Color[5]
-                {
+                ];
+                horseColors =
+                [
                     KernelColorTools.GetRandomColor(ColorType.TrueColor),
                     KernelColorTools.GetRandomColor(ColorType.TrueColor),
                     KernelColorTools.GetRandomColor(ColorType.TrueColor),
                     KernelColorTools.GetRandomColor(ColorType.TrueColor),
                     KernelColorTools.GetRandomColor(ColorType.TrueColor)
-                };
+                ];
             }
             ResetAll();
 
@@ -104,7 +104,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     var horsesSorted = horses
                         .OrderByDescending((progress) => progress.HorseProgress)
                         .ToArray();
-                    List<string> positions = new();
+                    List<string> positions = [];
                     for (int i = 0; i < horsesSorted.Length; i++)
                         positions.Add(Translate.DoTranslation("Horse") + $" {horsesSorted[i].HorseNumber}: #{i + 1}");
                     string renderedPositions = string.Join(" | ", positions);

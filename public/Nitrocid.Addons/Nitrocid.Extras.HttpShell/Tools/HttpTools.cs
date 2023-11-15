@@ -177,7 +177,7 @@ namespace Nitrocid.Extras.HttpShell.Tools
                 foreach (var value in values)
                     finalHeaders.Add((header.Key, value));
             }
-            return finalHeaders.ToArray();
+            return [.. finalHeaders];
         }
 
         /// <summary>

@@ -46,8 +46,8 @@ namespace KS.Kernel.Debugging
         internal static StreamWriter DebugStreamWriter;
         internal static bool isDisposed;
         internal static object WriteLock = new();
-        internal readonly static List<string> debugStackTraces = new();
-        internal readonly static List<string> debugLines = new();
+        internal readonly static List<string> debugStackTraces = [];
+        internal readonly static List<string> debugLines = [];
 
         /// <summary>
         /// Debug stack trace list

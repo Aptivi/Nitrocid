@@ -97,7 +97,7 @@ namespace Nitrocid.LocaleGen.Core.Serializer
                 string serializedLocale = JsonConvert.SerializeObject(localizedJson, Formatting.Indented);
                 serializedTargets.Add((language, serializedLocale));
             }
-            return serializedTargets.ToArray();
+            return [.. serializedTargets];
         }
 
         internal static void SaveTargetLanguage(TargetLanguage target, string serializedLocale, string pathToTranslations = "", bool copyToResources = false, bool dry = false)
@@ -186,7 +186,7 @@ namespace Nitrocid.LocaleGen.Core.Serializer
                     }
                 }
             }
-            return toParse.ToArray();
+            return [.. toParse];
         }
     }
 }

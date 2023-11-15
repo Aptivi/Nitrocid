@@ -29,10 +29,10 @@ namespace KS.Misc.Reflection
     internal static class ReflectionCommon
     {
         internal static Type[] KernelConfigTypes =
-        { 
+        [ 
             typeof(KernelMainConfig),
             typeof(KernelSaverConfig),
-        };
+        ];
         internal static Type[] KernelTypes = Assembly.GetExecutingAssembly().GetTypes().Where((type) => type.FullName.StartsWith("KS.")).ToArray();
 
         /// <summary>

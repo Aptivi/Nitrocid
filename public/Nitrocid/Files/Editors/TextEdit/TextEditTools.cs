@@ -49,8 +49,8 @@ namespace KS.Files.Editors.TextEdit
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Trying to open file {0}...", File);
                 TextEditShellCommon.fileStream = new FileStream(File, FileMode.Open);
-                TextEditShellCommon.fileLines ??= new List<string>();
-                TextEditShellCommon.FileLinesOrig ??= new List<string>();
+                TextEditShellCommon.fileLines ??= [];
+                TextEditShellCommon.FileLinesOrig ??= [];
                 DebugWriter.WriteDebug(DebugLevel.I, "File {0} is open. Length: {1}, Pos: {2}", File, TextEditShellCommon.FileStream.Length, TextEditShellCommon.FileStream.Position);
                 var TextFileStreamReader = new StreamReader(TextEditShellCommon.FileStream);
                 while (!TextFileStreamReader.EndOfStream)
@@ -105,7 +105,7 @@ namespace KS.Files.Editors.TextEdit
                 DebugWriter.WriteDebug(DebugLevel.I, "Trying to save file...");
                 TextEditShellCommon.FileStream.SetLength(0L);
                 DebugWriter.WriteDebug(DebugLevel.I, "Length set to 0.");
-                var FileLinesByte = Encoding.Default.GetBytes(string.Join(CharManager.NewLine, TextEditShellCommon.FileLines.ToArray()));
+                var FileLinesByte = Encoding.Default.GetBytes(string.Join(CharManager.NewLine, [.. TextEditShellCommon.FileLines]));
                 DebugWriter.WriteDebug(DebugLevel.I, "Converted lines to bytes. Length: {0}", FileLinesByte.Length);
                 TextEditShellCommon.FileStream.Write(FileLinesByte, 0, FileLinesByte.Length);
                 TextEditShellCommon.FileStream.Flush();
@@ -405,7 +405,7 @@ namespace KS.Files.Editors.TextEdit
                 DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", TextEditShellCommon.FileLines.Count);
                 for (int LineIndex = 0; LineIndex <= TextEditShellCommon.FileLines.Count - 1; LineIndex++)
                 {
-                    List<int> charIndexes = new();
+                    List<int> charIndexes = [];
                     for (int CharIndex = 0; CharIndex <= TextEditShellCommon.FileLines[LineIndex].Length - 1; CharIndex++)
                     {
                         if (TextEditShellCommon.FileLines[LineIndex][CharIndex] == Char)
@@ -469,7 +469,7 @@ namespace KS.Files.Editors.TextEdit
                 for (int LineIndex = 0; LineIndex <= TextEditShellCommon.FileLines.Count - 1; LineIndex++)
                 {
                     var Words = TextEditShellCommon.FileLines[LineIndex].Split(' ');
-                    List<int> wordIndexes = new();
+                    List<int> wordIndexes = [];
                     for (int WordIndex = 0; WordIndex <= Words.Length - 1; WordIndex++)
                     {
                         if (Words[WordIndex].ToLower().Contains(Word.ToLower()))
@@ -534,7 +534,7 @@ namespace KS.Files.Editors.TextEdit
                 for (int LineIndex = 0; LineIndex <= TextEditShellCommon.FileLines.Count - 1; LineIndex++)
                 {
                     var LineMatches = Regex.Matches(TextEditShellCommon.FileLines[LineIndex], Word);
-                    List<int> wordIndexes = new();
+                    List<int> wordIndexes = [];
                     for (int MatchIndex = 0; MatchIndex <= LineMatches.Count - 1; MatchIndex++)
                         wordIndexes.Add(MatchIndex);
                     Lines.Add((LineIndex, wordIndexes.ToArray()));
@@ -843,7 +843,7 @@ namespace KS.Files.Editors.TextEdit
                 DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", lines.Count);
                 for (int LineIndex = 0; LineIndex <= lines.Count - 1; LineIndex++)
                 {
-                    List<int> charIndexes = new();
+                    List<int> charIndexes = [];
                     for (int CharIndex = 0; CharIndex <= lines[LineIndex].Length - 1; CharIndex++)
                     {
                         if (lines[LineIndex][CharIndex] == Char)
@@ -909,7 +909,7 @@ namespace KS.Files.Editors.TextEdit
                 for (int LineIndex = 0; LineIndex <= lines.Count - 1; LineIndex++)
                 {
                     var Words = lines[LineIndex].Split(' ');
-                    List<int> wordIndexes = new();
+                    List<int> wordIndexes = [];
                     for (int WordIndex = 0; WordIndex <= Words.Length - 1; WordIndex++)
                     {
                         if (Words[WordIndex].ToLower().Contains(Word.ToLower()))
@@ -976,7 +976,7 @@ namespace KS.Files.Editors.TextEdit
                 for (int LineIndex = 0; LineIndex <= lines.Count - 1; LineIndex++)
                 {
                     var LineMatches = Regex.Matches(lines[LineIndex], Word);
-                    List<int> wordIndexes = new();
+                    List<int> wordIndexes = [];
                     for (int MatchIndex = 0; MatchIndex <= LineMatches.Count - 1; MatchIndex++)
                         wordIndexes.Add(MatchIndex);
                     Lines.Add((LineIndex, wordIndexes.ToArray()));

@@ -37,7 +37,7 @@ namespace Nitrocid.Extras.FtpShell.FTP
         internal static string FtpSite;
         internal static string FtpPass;
         internal static string FtpUser;
-        internal readonly static Dictionary<string, CommandInfo> FTPModCommands = new();
+        internal readonly static Dictionary<string, CommandInfo> FTPModCommands = [];
 
         /// <summary>
         /// The FTP client used to connect to the FTP server

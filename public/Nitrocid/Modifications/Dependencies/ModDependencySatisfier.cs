@@ -51,7 +51,7 @@ namespace KS.Modifications.Dependencies
             // Parse it and return all dependencies
             ModDependency[] deps = JsonConvert.DeserializeObject<ModDependency[]>(Reading.ReadContentsText(metadataPath));
             DebugWriter.WriteDebug(DebugLevel.I, "Initial dep count: {0}", deps.Length);
-            List<ModDependency> finalDeps = new();
+            List<ModDependency> finalDeps = [];
             foreach (ModDependency dep in deps)
             {
                 // Guesstimate the path to the mod dependency file
@@ -89,7 +89,7 @@ namespace KS.Modifications.Dependencies
             }
 
             // Return the final list
-            return finalDeps.ToArray();
+            return [.. finalDeps];
         }
 
         internal static void SatisfyDependencies(ModInfo mod)
@@ -99,7 +99,7 @@ namespace KS.Modifications.Dependencies
             DebugWriter.WriteDebug(DebugLevel.I, "Got {0} dependencies to satisfy.", deps.Length);
 
             // Load the dependencies
-            List<string> failedDeps = new();
+            List<string> failedDeps = [];
             foreach (var dep in deps)
             {
                 // To avoid circular dependency

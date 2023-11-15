@@ -93,8 +93,8 @@ namespace KS.Shell.ShellBase.Arguments
 
             // Check to see if the caller has provided a switch that subtracts the number of required arguments
             var aliases = AliasManager.GetAliasesListFromType(CommandType);
-            var CommandInfo = ModCommands.ContainsKey(Command) ? ModCommands[Command] :
-                              ShellCommands.ContainsKey(Command) ? ShellCommands[Command] :
+            var CommandInfo = ModCommands.TryGetValue(Command, out CommandInfo modCmd) ? modCmd :
+                              ShellCommands.TryGetValue(Command, out CommandInfo shellCmd) ? shellCmd :
                               aliases.Any((info) => info.Alias == Command) ? aliases.Single((info) => info.Alias == Command).TargetCommand :
                               cmdInfo;
             var fallback = new ProvidedArgumentsInfo(Command, arguments, words.Skip(1).ToArray(), argumentsOrig, wordsOrig.Skip(1).ToArray(), Array.Empty<string>(), true, true, true, Array.Empty<string>(), Array.Empty<string>(), Array.Empty<string>(), true, true, true, new());
@@ -137,7 +137,7 @@ namespace KS.Shell.ShellBase.Arguments
             Argument = words[0];
 
             // Check to see if the caller has provided a switch that subtracts the number of required arguments
-            var ArgumentInfo = KernelArguments.ContainsKey(Argument) ? KernelArguments[Argument] : null;
+            var ArgumentInfo = KernelArguments.TryGetValue(Argument, out ArgumentInfo argInfo) ? argInfo : null;
             var fallback = new ProvidedArgumentsInfo(Argument, arguments, words.Skip(1).ToArray(), argumentsOrig, wordsOrig.Skip(1).ToArray(), Array.Empty<string>(), true, true, true, Array.Empty<string>(), Array.Empty<string>(), Array.Empty<string>(), true, true, true, new());
             if (ArgumentInfo != null)
                 return ProcessArgumentOrShellCommandArguments(ArgumentText, null, ArgumentInfo);
@@ -148,7 +148,7 @@ namespace KS.Shell.ShellBase.Arguments
         private static (ProvidedArgumentsInfo satisfied, ProvidedArgumentsInfo[] total) ProcessArgumentOrShellCommandArguments(string CommandText, CommandInfo CommandInfo, ArgumentInfo ArgumentInfo)
         {
             ProvidedArgumentsInfo satisfiedArg = null;
-            List<ProvidedArgumentsInfo> totalArgs = new();
+            List<ProvidedArgumentsInfo> totalArgs = [];
 
             // Check the command and argument info
             bool isCommand = CommandInfo is not null;
@@ -268,13 +268,13 @@ namespace KS.Shell.ShellBase.Arguments
                         .Where((@switch) => allSwitches.Contains($"{@switch[1..@switch.IndexOf('=')]}"))
                         .Select((@switch) => $"{@switch[..@switch.IndexOf('=')]}")
                         .ToArray();
-                    List<string> rejected = new();
+                    List<string> rejected = [];
                     foreach (var providedSwitch in allProvidedSwitches)
                     {
                         if (!string.IsNullOrWhiteSpace(EnclosedSwitchKeyValuePairs.Single((kvp) => kvp.Item1 == providedSwitch).Item2))
                             rejected.Add(providedSwitch);
                     }
-                    noValueSwitchesList = rejected.ToArray();
+                    noValueSwitchesList = [.. rejected];
                 }
                 DebugWriter.WriteDebug(DebugLevel.I, "RequiredSwitchArgumentsProvided is {0}. Refer to the value of argument info.", RequiredSwitchArgumentsProvided);
 
@@ -289,8 +289,8 @@ namespace KS.Shell.ShellBase.Arguments
                 // Check to see if the caller has provided conflicting switches
                 if (withArgInfo)
                 {
-                    List<string> processed = new();
-                    List<string> conflicts = new();
+                    List<string> processed = [];
+                    List<string> conflicts = [];
                     foreach (var kvp in EnclosedSwitchKeyValuePairs)
                     {
                         // Check to see if the switch exists
@@ -323,7 +323,7 @@ namespace KS.Shell.ShellBase.Arguments
                             DebugWriter.WriteDebug(DebugLevel.I, "Processed: {0} [{1}]", processed.Count, string.Join(", ", processed));
                         }
                     }
-                    conflictingSwitchesList = conflicts.ToArray();
+                    conflictingSwitchesList = [.. conflicts];
                 }
 
                 // Check to see if the caller has provided a non-numeric value to an argument that expects numbers

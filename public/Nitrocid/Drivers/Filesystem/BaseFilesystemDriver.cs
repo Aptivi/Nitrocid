@@ -129,7 +129,7 @@ namespace KS.Drivers.Filesystem
                 }
 
                 // Return the combined contents
-                return CombinedContents.ToArray();
+                return [.. CombinedContents];
             }
             catch (Exception ex)
             {
@@ -162,7 +162,7 @@ namespace KS.Drivers.Filesystem
                 }
 
                 // Return the combined contents
-                return CombinedContents.ToArray();
+                return [.. CombinedContents];
             }
             catch (Exception ex)
             {
@@ -298,7 +298,7 @@ namespace KS.Drivers.Filesystem
 
             // List files and folders
             folder = FS.NeutralizePath(folder);
-            if (Checking.FolderExists(folder) | folder.ContainsAnyOf(new[] { "?", "*" }))
+            if (Checking.FolderExists(folder) | folder.ContainsAnyOf(["?", "*"]))
             {
                 IEnumerable<string> enumeration;
                 try
@@ -340,12 +340,12 @@ namespace KS.Drivers.Filesystem
                 {
                     case FilesystemSortDirection.Ascending:
                         {
-                            FilesystemEntries = FilesystemEntries.OrderBy(x => SortSelector(x, MaxLength), StringComparer.OrdinalIgnoreCase).ToList();
+                            FilesystemEntries = [.. FilesystemEntries.OrderBy(x => SortSelector(x, MaxLength), StringComparer.OrdinalIgnoreCase)];
                             break;
                         }
                     case FilesystemSortDirection.Descending:
                         {
-                            FilesystemEntries = FilesystemEntries.OrderByDescending(x => SortSelector(x, MaxLength), StringComparer.OrdinalIgnoreCase).ToList();
+                            FilesystemEntries = [.. FilesystemEntries.OrderByDescending(x => SortSelector(x, MaxLength), StringComparer.OrdinalIgnoreCase)];
                             break;
                         }
                 }
@@ -797,7 +797,7 @@ namespace KS.Drivers.Filesystem
                 }
                 else
                 {
-                    Entries = new[] { Parent };
+                    Entries = [Parent];
                 }
             }
             catch (Exception ex)
@@ -817,7 +817,7 @@ namespace KS.Drivers.Filesystem
 
             // Get the entries and match them against the given pattern
             var AllFileEntries = Listing.GetFilesystemEntries(Parent, "*", Recursive);
-            List<string> entryNames = new();
+            List<string> entryNames = [];
             foreach (var FileEntry in AllFileEntries)
             {
                 // Match the file entry
@@ -827,7 +827,7 @@ namespace KS.Drivers.Filesystem
                     continue;
                 entryNames.Add(FileEntry);
             }
-            return entryNames.ToArray();
+            return [.. entryNames];
         }
 
         /// <inheritdoc/>
@@ -1379,7 +1379,7 @@ namespace KS.Drivers.Filesystem
             while (!FOpen.EndOfStream)
                 AllLnList.Add(FOpen.ReadLine());
             FOpen.Close();
-            return AllLnList.ToArray();
+            return [.. AllLnList];
         }
 
         /// <inheritdoc/>

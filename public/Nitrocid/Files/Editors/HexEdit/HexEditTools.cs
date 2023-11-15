@@ -194,7 +194,7 @@ namespace KS.Files.Editors.HexEdit
                 {
                     FileBytesList.Insert((int)ByteIndex, Content);
                     DebugWriter.WriteDebug(DebugLevel.I, "Inserted {0}. Result: {1}", ByteIndex, HexEditShellCommon.FileBytes.LongLength);
-                    HexEditShellCommon.FileBytes = FileBytesList.ToArray();
+                    HexEditShellCommon.FileBytes = [.. FileBytesList];
                 }
                 else
                 {
@@ -244,7 +244,7 @@ namespace KS.Files.Editors.HexEdit
                 {
                     FileBytesList.RemoveAt((int)ByteIndex);
                     DebugWriter.WriteDebug(DebugLevel.I, "Removed {0}. Result: {1}", ByteIndex, HexEditShellCommon.FileBytes.LongLength);
-                    HexEditShellCommon.FileBytes = FileBytesList.ToArray();
+                    HexEditShellCommon.FileBytes = [.. FileBytesList];
                 }
                 else
                 {
@@ -290,7 +290,7 @@ namespace KS.Files.Editors.HexEdit
                     for (long ByteNumber = EndByteNumber; ByteNumber >= StartByteNumber; ByteNumber -= 1)
                         FileBytesList.RemoveAt((int)(ByteNumber - 1L));
                     DebugWriter.WriteDebug(DebugLevel.I, "Removed {0} to {1}. New length: {2}", StartByteNumber, EndByteNumber, HexEditShellCommon.FileBytes.LongLength);
-                    HexEditShellCommon.FileBytes = FileBytesList.ToArray();
+                    HexEditShellCommon.FileBytes = [.. FileBytesList];
                 }
                 else if (StartByteNumber > HexEditShellCommon.FileBytes.LongLength)
                 {
@@ -476,7 +476,7 @@ namespace KS.Files.Editors.HexEdit
                 {
                     FileBytesList.Insert((int)ByteIndex, Content);
                     DebugWriter.WriteDebug(DebugLevel.I, "Inserted {0}. Result: {1}", ByteIndex, bytes.LongLength);
-                    bytes = FileBytesList.ToArray();
+                    bytes = [.. FileBytesList];
                 }
                 else
                 {
@@ -530,7 +530,7 @@ namespace KS.Files.Editors.HexEdit
                 {
                     FileBytesList.RemoveAt((int)ByteIndex);
                     DebugWriter.WriteDebug(DebugLevel.I, "Removed {0}. Result: {1}", ByteIndex, bytes.LongLength);
-                    bytes = FileBytesList.ToArray();
+                    bytes = [.. FileBytesList];
                 }
                 else
                 {
@@ -579,7 +579,7 @@ namespace KS.Files.Editors.HexEdit
                     for (long ByteNumber = EndByteNumber; ByteNumber >= StartByteNumber; ByteNumber -= 1)
                         FileBytesList.RemoveAt((int)(ByteNumber - 1L));
                     DebugWriter.WriteDebug(DebugLevel.I, "Removed {0} to {1}. New length: {2}", StartByteNumber, EndByteNumber, bytes.LongLength);
-                    bytes = FileBytesList.ToArray();
+                    bytes = [.. FileBytesList];
                 }
                 else if (StartByteNumber > bytes.LongLength)
                 {

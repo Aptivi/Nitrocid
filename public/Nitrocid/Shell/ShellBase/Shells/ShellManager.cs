@@ -75,8 +75,8 @@ namespace KS.Shell.ShellBase.Shells
     public static class ShellManager
     {
 
-        internal static List<ShellExecuteInfo> ShellStack = new();
-        internal static List<string> reservedShells = new();
+        internal static List<ShellExecuteInfo> ShellStack = [];
+        internal static List<string> reservedShells = [];
         internal static string lastCommand = "";
         internal static KernelThread ProcessStartCommandThread = new("Executable Command Thread", false, (processParams) => ProcessExecutor.ExecuteProcess((ExecuteProcessThreadParameters)processParams));
         internal static Dictionary<string, List<string>> histories = new()
@@ -95,36 +95,36 @@ namespace KS.Shell.ShellBase.Shells
         {
             { "exec",
                 new CommandInfo("exec", /* Localizable */ "Executes an external process",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "process"),
                             new CommandArgumentPart(false, "args")
-                        }, new[]
-                        {
+                        ],
+                        [
                             new SwitchInfo("forked", /* Localizable */ "Executes the process without interrupting the shell thread. A separate window will be created.")
-                        })
-                    }, new ExecUnifiedCommand())
+                        ])
+                    ], new ExecUnifiedCommand())
             },
 
             { "exit",
                 new CommandInfo("exit", /* Localizable */ "Exits the shell if running on subshell",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new ExitUnifiedCommand())
+                    ], new ExitUnifiedCommand())
             },
 
             { "help",
                 new CommandInfo("help", /* Localizable */ "Help page",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(false, "command", new CommandArgumentPartOptions()
                             {
                                 AutoCompleter = (_) => CommandManager.GetCommands(CurrentShellType).Keys.ToArray()
                             })
-                        }, new[]
-                        {
+                        ],
+                        [
                             new SwitchInfo("general", /* Localizable */ "Shows general commands (default)", new SwitchOptions()
                             {
                                 AcceptsValues = false
@@ -149,27 +149,27 @@ namespace KS.Shell.ShellBase.Shells
                             {
                                 AcceptsValues = false
                             }),
-                        }, false)
-                    }, new HelpUnifiedCommand(), CommandFlags.Wrappable)
+                        ], false)
+                    ], new HelpUnifiedCommand(), CommandFlags.Wrappable)
             },
 
             { "loadhistories",
                 new CommandInfo("loadhistories", /* Localizable */ "Loads shell histories",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new LoadHistoriesUnifiedCommand())
+                    ], new LoadHistoriesUnifiedCommand())
             },
 
             { "presets",
                 new CommandInfo("presets", /* Localizable */ "Opens the shell preset library",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new PresetsUnifiedCommand())
+                    ], new PresetsUnifiedCommand())
             },
 
             { "repeat",
                 new CommandInfo("repeat", /* Localizable */ "Repeats the last action or the specified command",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "times", new CommandArgumentPartOptions()
@@ -178,26 +178,26 @@ namespace KS.Shell.ShellBase.Shells
                             }),
                             new CommandArgumentPart(false, "command"),
                         })
-                    }, new RepeatUnifiedCommand())
+                    ], new RepeatUnifiedCommand())
             },
 
             { "savehistories",
                 new CommandInfo("savehistories", /* Localizable */ "Saves shell histories",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new SaveHistoriesUnifiedCommand())
+                    ], new SaveHistoriesUnifiedCommand())
             },
 
             { "tip",
                 new CommandInfo("tip", /* Localizable */ "Shows a random kernel tip",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new TipUnifiedCommand())
+                    ], new TipUnifiedCommand())
             },
 
             { "wrap",
                 new CommandInfo("wrap", /* Localizable */ "Wraps the console output",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "command", new CommandArgumentPartOptions()
@@ -205,7 +205,7 @@ namespace KS.Shell.ShellBase.Shells
                                 AutoCompleter = (_) => CommandExecutor.GetWrappableCommands(CurrentShellType)
                             })
                         })
-                    }, new WrapUnifiedCommand())
+                    ], new WrapUnifiedCommand())
             }
         };
 
@@ -326,7 +326,7 @@ namespace KS.Shell.ShellBase.Shells
             var settings = new TermReaderSettings()
             {
                 Suggestions = (text, index, _) => CommandAutoComplete.GetSuggestions(text, index),
-                SuggestionsDelimiters = new[] { ' ' },
+                SuggestionsDelimiters = [' '],
                 TreatCtrlCAsInput = true,
             };
             TermReaderTools.SetHistory(histories[ShellType]);
@@ -434,7 +434,7 @@ namespace KS.Shell.ShellBase.Shells
                 var varStoreVars = UESHVariables.GetVariablesFrom(varStoreString);
 
                 // First, check to see if we already have that variable. If we do, get its old value.
-                List<(string, string)> oldVarValues = new();
+                List<(string, string)> oldVarValues = [];
                 foreach (string varStoreKey in varStoreVars.varStoreKeys)
                 {
                     if (UESHVariables.Variables.ContainsKey(varStoreKey))
@@ -444,7 +444,7 @@ namespace KS.Shell.ShellBase.Shells
                 Command = Command[varStoreStringFull.Length..];
 
                 // Check to see if the command is a comment
-                if (!string.IsNullOrEmpty(Command) || !Command.StartsWithAnyOf(new[] { " ", "#" }))
+                if (!string.IsNullOrEmpty(Command) || !Command.StartsWithAnyOf([" ", "#"]))
                 {
                     // Get the command name
                     var words = Command.SplitEncloseDoubleQuotes();
@@ -475,11 +475,11 @@ namespace KS.Shell.ShellBase.Shells
                         if (Config.MainConfig.SetTitleOnCommandExecution)
                             ConsoleExtensions.SetTitle($"{KernelReleaseInfo.ConsoleTitle} - {Command}");
 
-                        if (Commands.ContainsKey(commandName))
+                        if (Commands.TryGetValue(commandName, out CommandInfo info))
                         {
                             // Execute the command
                             DebugWriter.WriteDebug(DebugLevel.I, "Executing command");
-                            var cmdInfo = Commands[commandName];
+                            var cmdInfo = info;
 
                             // Check to see if the command supports redirection
                             if (cmdInfo.Flags.HasFlag(CommandFlags.RedirectionSupported))
@@ -495,7 +495,7 @@ namespace KS.Shell.ShellBase.Shells
                                 InitializeOutputPathWriter(OutputPath);
                             }
 
-                            if (!string.IsNullOrEmpty(commandName) || !commandName.StartsWithAnyOf(new[] { " ", "#" }))
+                            if (!string.IsNullOrEmpty(commandName) || !commandName.StartsWithAnyOf([" ", "#"]))
                             {
 
                                 // Check to see if a user is able to execute a command
@@ -657,7 +657,7 @@ namespace KS.Shell.ShellBase.Shells
         /// </summary>
         /// <param name="shellType">Shell type name</param>
         public static BaseShellInfo GetShellInfo(string shellType) =>
-            AvailableShells.ContainsKey(shellType) ? AvailableShells[shellType] : AvailableShells["Shell"];
+            AvailableShells.TryGetValue(shellType, out BaseShellInfo baseShellInfo) ? baseShellInfo : AvailableShells["Shell"];
 
         /// <summary>
         /// Starts the shell
@@ -710,7 +710,7 @@ namespace KS.Shell.ShellBase.Shells
                 // Add a new shell to the shell stack to indicate that we have a new shell (a visitor)!
                 ShellStack.Add(ShellInfo);
                 if (!histories.ContainsKey(ShellType))
-                    histories.Add(ShellType, new());
+                    histories.Add(ShellType, []);
 
                 // Reset title in case we're going to another shell
                 ConsoleExtensions.SetTitle(KernelReleaseInfo.ConsoleTitle);
@@ -885,7 +885,7 @@ namespace KS.Shell.ShellBase.Shells
             {
                 var outputMatch = Regex.Match(Command, RedirectionPattern);
                 var outputFiles = outputMatch.Groups[1].Captures.Select((cap) => cap.Value);
-                List<string> filePaths = new();
+                List<string> filePaths = [];
                 foreach (var outputFile in outputFiles)
                 {
                     bool isOverwrite = !outputFile.StartsWith(" >>> ");
@@ -897,7 +897,7 @@ namespace KS.Shell.ShellBase.Shells
                     filePaths.Add(OutputFilePath);
                 }
                 DriverHandler.BeginLocalDriver<IConsoleDriver>("FileSequence");
-                ((FileSequence)DriverHandler.CurrentConsoleDriverLocal).PathsToWrite = filePaths.ToArray();
+                ((FileSequence)DriverHandler.CurrentConsoleDriverLocal).PathsToWrite = [.. filePaths];
                 ((FileSequence)DriverHandler.CurrentConsoleDriverLocal).FilterVT = true;
                 Command = Command.RemovePostfix(outputMatch.Value);
             }

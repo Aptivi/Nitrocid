@@ -95,7 +95,7 @@ namespace KS.Misc.Screensaver.Displays
     public class MatrixBleedDisplay : BaseScreensaver, IScreensaver
     {
 
-        private static readonly List<MatrixBleedState> bleedStates = new();
+        private static readonly List<MatrixBleedState> bleedStates = [];
 
         /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "MatrixBleed";
@@ -177,10 +177,10 @@ namespace KS.Misc.Screensaver.Displays
         internal int fallStep;
         internal int fadeStep;
         internal static StringBuilder bleedBuffer = new();
-        private readonly List<(int, int, string)> CoveredPositions = new();
+        private readonly List<(int, int, string)> CoveredPositions = [];
         private readonly Color foreground = new("0;255;0");
         private readonly Color background = new("0;0;0");
-        private static readonly List<int> reservedColumns = new();
+        private static readonly List<int> reservedColumns = [];
 
         internal void Fall()
         {

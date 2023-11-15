@@ -37,8 +37,7 @@ namespace KS.Misc.Interactives
         /// <summary>
         /// Time zone showing CLI bindings
         /// </summary>
-        public override List<InteractiveTuiBinding> Bindings { get; set; } = new()
-        { };
+        public override List<InteractiveTuiBinding> Bindings { get; set; } = [];
 
         /// <inheritdoc/>
         public override IEnumerable PrimaryDataSource =>

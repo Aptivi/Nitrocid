@@ -37,17 +37,17 @@ namespace Nitrocid.Extras.Calculators
         {
             { "calc",
                 new CommandInfo("calc", /* Localizable */ "Calculator to calculate expressions.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "expression"),
-                        }, Array.Empty<SwitchInfo>(), true)
-                    }, new CalcCommand())
+                        ], Array.Empty<SwitchInfo>(), true)
+                    ], new CalcCommand())
             },
 
             { "imaginary",
                 new CommandInfo("imaginary", /* Localizable */ "Show information about the imaginary number formula specified by a specified real and imaginary number",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "real", new CommandArgumentPartOptions()
@@ -59,7 +59,7 @@ namespace Nitrocid.Extras.Calculators
                                 IsNumeric = true
                             }),
                         })
-                    }, new ImaginaryCommand())
+                    ], new ImaginaryCommand())
             },
         };
 
@@ -75,10 +75,10 @@ namespace Nitrocid.Extras.Calculators
         ReadOnlyDictionary<string, FieldInfo> IAddon.PubliclyAvailableFields => null;
 
         void IAddon.StartAddon() =>
-            CommandManager.RegisterAddonCommands(ShellType.Shell, addonCommands.Values.ToArray());
+            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands.Values]);
 
         void IAddon.StopAddon() =>
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, addonCommands.Keys.ToArray());
+            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Keys]);
 
         void IAddon.FinalizeAddon()
         { }

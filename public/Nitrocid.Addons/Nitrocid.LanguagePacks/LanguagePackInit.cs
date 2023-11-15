@@ -77,12 +77,12 @@ namespace Nitrocid.LanguagePacks
         private string[] GetLanguageResourceNames()
         {
             // Get all the languages provided by this pack
-            string[] nonLanguages = new[]
-            {
+            string[] nonLanguages =
+            [
                 nameof(LanguageResources.Culture),
                 nameof(LanguageResources.ResourceManager),
                 nameof(LanguageResources.LanguageMetadata),
-            };
+            ];
             return PropertyManager.GetPropertiesNoEvaluation(typeof(LanguageResources)).Keys.Except(nonLanguages).ToArray();
         }
     }

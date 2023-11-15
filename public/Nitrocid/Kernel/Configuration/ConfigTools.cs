@@ -364,10 +364,10 @@ namespace KS.Kernel.Configuration
         public static SettingsKey[] GetSettingsKeys(BaseKernelConfig settings)
         {
             var entries = settings.SettingsEntries;
-            List<SettingsKey> keys = new();
+            List<SettingsKey> keys = [];
             foreach (var entry in entries)
                 keys.AddRange(entry.Keys);
-            return keys.ToArray();
+            return [.. keys];
         }
 
         /// <summary>

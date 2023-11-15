@@ -43,13 +43,12 @@ namespace Nitrocid.Extras.GitShell
         {
             { "gitsh",
                 new CommandInfo("gitsh", /* Localizable */ "Git shell",
-                    new[]
-                    {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "repoPath")
                         }),
-                    }, new GitCommandExec())
+                    ], new GitCommandExec())
             },
         };
 
@@ -73,7 +72,7 @@ namespace Nitrocid.Extras.GitShell
             ConfigTools.RegisterBaseSetting(config);
             ShellManager.reservedShells.Add("GitShell");
             ShellManager.RegisterShell("GitShell", new GitShellInfo());
-            CommandManager.RegisterAddonCommands(ShellType.Shell, addonCommands.Values.ToArray());
+            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands.Values]);
             if (!nativeLibIsSet)
             {
                 nativeLibIsSet = true;
@@ -89,7 +88,7 @@ namespace Nitrocid.Extras.GitShell
             ShellManager.availableShells.Remove("GitShell");
             PromptPresetManager.CurrentPresets.Remove("GitShell");
             ShellManager.reservedShells.Remove("GitShell");
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, addonCommands.Keys.ToArray());
+            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Keys]);
             ConfigTools.UnregisterBaseSetting(nameof(GitConfig));
         }
     }

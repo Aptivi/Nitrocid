@@ -25,8 +25,8 @@ namespace Nitrocid.StandaloneAnalyzer
     {
         // For contributors: If you're going to add a new analyzer, you need to copy the implementation from Analyzers to here,
         // and make a dedicated diagnostic class for the standalone analyzer to recognize your new analyzer.
-        internal static readonly IAnalyzer[] analyzers = new IAnalyzer[]
-        {
+        internal static readonly IAnalyzer[] analyzers =
+        [
             new NKS0001(),
             new NKS0002(),
             new NKS0003(),
@@ -35,6 +35,6 @@ namespace Nitrocid.StandaloneAnalyzer
             new NKS0006(),
             new NKS0007(),
             new NKS0008(),
-        };
+        ];
     }
 }

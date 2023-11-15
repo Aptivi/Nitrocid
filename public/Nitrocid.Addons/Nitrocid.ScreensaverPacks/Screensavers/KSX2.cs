@@ -167,10 +167,10 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         break;
                     // Step 4: Show three selectors adjusting to 0.0.16.0
                     case 4:
-                        string[] versions = new[]
-                        {
+                        string[] versions =
+                        [
                             "0.0.1.0", "0.0.4.0", "0.0.8.0", "0.0.16.0", "0.0.20.0", "0.0.24.0"
-                        };
+                        ];
                         int selector1Selection = 0;
                         int selector2Selection = 0;
                         int selector3Selection = 0;

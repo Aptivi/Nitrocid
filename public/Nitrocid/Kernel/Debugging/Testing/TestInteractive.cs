@@ -265,7 +265,7 @@ namespace KS.Kernel.Debugging.Testing
                 while (!tested)
                 {
                     // Check for optional test parameters
-                    List<string> parameters = new();
+                    List<string> parameters = [];
                     for (int i = 0; i < facade.TestOptionalParameters; i++)
                     {
                         string answer = InfoBoxInputColor.WriteInfoBoxInput(
@@ -278,18 +278,17 @@ namespace KS.Kernel.Debugging.Testing
                     // ...test the facade
                     ConsoleWrapper.Clear();
                     facade.status = TestStatus.Neutral;
-                    facade.Run(parameters.ToArray());
+                    facade.Run([.. parameters]);
 
                     if (facade.TestInteractive)
                     {
                         // Prompt the user to check to see if the test ran as expected
                         int answer = InfoBoxButtonsColor.WriteInfoBoxButtons(
-                            new[]
-                            {
+                            [
                                 Translate.DoTranslation("Yes!"),
                                 Translate.DoTranslation("No"),
                                 Translate.DoTranslation("Retry"),
-                            },
+                            ],
                             Translate.DoTranslation("Did the test run as expected?")
                         );
 

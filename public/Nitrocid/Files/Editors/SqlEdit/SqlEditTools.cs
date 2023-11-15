@@ -104,7 +104,7 @@ namespace KS.Files.Editors.SqlEdit
             try
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Trying to execute query {0}...", query);
-                List<string> replyList = new();
+                List<string> replyList = [];
                 using var sqlCommand = new SqliteCommand(query, SqlShellCommon.sqliteConnection);
 
                 // Add parameters
@@ -121,7 +121,7 @@ namespace KS.Files.Editors.SqlEdit
                         replyList.Add(reply);
                     }
                 }
-                replies = replyList.ToArray();
+                replies = [.. replyList];
                 return true;
             }
             catch (Exception ex)

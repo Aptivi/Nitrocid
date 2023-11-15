@@ -58,11 +58,11 @@ namespace Nitrocid.Extras.MailShell.Mail.Presets
         internal override string PresetPromptBuilder()
         {
             // Segments
-            List<PowerLineSegment> segments = new()
-            {
+            List<PowerLineSegment> segments =
+            [
                 new PowerLineSegment(new Color(255, 255, 85), new Color(127, 127, 43), MailLogin.Authentication.UserName),
                 new PowerLineSegment(new Color(0, 0, 0), new Color(255, 255, 85), MailShellCommon.IMAP_CurrentDirectory),
-            };
+            ];
 
             // Builder
             var PresetStringBuilder = new StringBuilder();
@@ -78,11 +78,11 @@ namespace Nitrocid.Extras.MailShell.Mail.Presets
         internal override string PresetPromptBuilderShowcase()
         {
             // Segments
-            List<PowerLineSegment> segments = new()
-            {
+            List<PowerLineSegment> segments =
+            [
                 new PowerLineSegment(new Color(255, 255, 85), new Color(127, 127, 43), "address@fabrikam.com"),
                 new PowerLineSegment(new Color(0, 0, 0), new Color(255, 255, 85), "Inbox"),
-            };
+            ];
 
             // Builder
             var PresetStringBuilder = new StringBuilder();
@@ -98,10 +98,10 @@ namespace Nitrocid.Extras.MailShell.Mail.Presets
         internal override string PresetPromptCompletionBuilder()
         {
             // Segments
-            List<PowerLineSegment> segments = new()
-            {
+            List<PowerLineSegment> segments =
+            [
                 new PowerLineSegment(new Color(255, 255, 85), new Color(127, 127, 43), "+"),
-            };
+            ];
 
             // Builder
             var PresetStringBuilder = new StringBuilder();

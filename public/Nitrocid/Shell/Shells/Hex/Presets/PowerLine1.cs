@@ -57,10 +57,10 @@ namespace KS.Shell.Shells.Hex.Presets
         internal override string PresetPromptBuilder()
         {
             // Segments
-            List<PowerLineSegment> segments = new()
-            {
+            List<PowerLineSegment> segments =
+            [
                 new PowerLineSegment(new Color(85, 255, 255), new Color(43, 127, 127), HexEditShellCommon.FileStream.Name)
-            };
+            ];
 
             // Builder
             var PresetStringBuilder = new StringBuilder();
@@ -76,10 +76,10 @@ namespace KS.Shell.Shells.Hex.Presets
         internal override string PresetPromptBuilderShowcase()
         {
             // Segments
-            List<PowerLineSegment> segments = new()
-            {
+            List<PowerLineSegment> segments =
+            [
                 new PowerLineSegment(new Color(85, 255, 255), new Color(43, 127, 127), "file.bin")
-            };
+            ];
 
             // Builder
             var PresetStringBuilder = new StringBuilder();
@@ -95,10 +95,10 @@ namespace KS.Shell.Shells.Hex.Presets
         internal override string PresetPromptCompletionBuilder()
         {
             // Segments
-            List<PowerLineSegment> segments = new()
-            {
+            List<PowerLineSegment> segments =
+            [
                 new PowerLineSegment(new Color(85, 255, 255), new Color(43, 127, 127), "+"),
-            };
+            ];
 
             // Builder
             var PresetStringBuilder = new StringBuilder();

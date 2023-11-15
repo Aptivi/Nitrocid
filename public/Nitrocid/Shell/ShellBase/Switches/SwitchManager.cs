@@ -33,7 +33,7 @@ namespace KS.Shell.ShellBase.Switches
         /// <returns>The list of switches, which start with a dash, with values supplied</returns>
         public static List<(string, string)> GetSwitchValues(string[] switches, bool includeNonValueSwitches = false)
         {
-            List<(string, string)> switchValues = new();
+            List<(string, string)> switchValues = [];
 
             // Iterate through switches and check to see if there is an equal sign after the switch name
             foreach (string @switch in switches)

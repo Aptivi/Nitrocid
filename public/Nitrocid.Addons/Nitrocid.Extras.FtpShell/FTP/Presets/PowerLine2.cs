@@ -62,12 +62,12 @@ namespace Nitrocid.Extras.FtpShell.FTP.Presets
             char PadlockChar = Convert.ToChar(0xE0A2);
 
             // Segments
-            List<PowerLineSegment> segments = new()
-            {
+            List<PowerLineSegment> segments =
+            [
                 new PowerLineSegment(new Color(255, 85, 255), new Color(127, 43, 127), FTPShellCommon.FtpUser),
                 new PowerLineSegment(new Color(0, 0, 0), new Color(85, 255, 255), FTPShellCommon.FtpSite, PadlockChar),
                 new PowerLineSegment(new Color(0, 0, 0), new Color(255, 255, 255), FTPShellCommon.FtpCurrentRemoteDir),
-            };
+            ];
 
             // Builder
             var PresetStringBuilder = new StringBuilder();
@@ -85,12 +85,12 @@ namespace Nitrocid.Extras.FtpShell.FTP.Presets
             char PadlockChar = Convert.ToChar(0xE0A2);
 
             // Segments
-            List<PowerLineSegment> segments = new()
-            {
+            List<PowerLineSegment> segments =
+            [
                 new PowerLineSegment(new Color(255, 85, 255), new Color(127, 43, 127), Translate.DoTranslation("User")),
                 new PowerLineSegment(new Color(0, 0, 0), new Color(85, 255, 255), Translate.DoTranslation("Site"), PadlockChar),
                 new PowerLineSegment(new Color(0, 0, 0), new Color(255, 255, 255), "/dir"),
-            };
+            ];
 
             // Builder
             var PresetStringBuilder = new StringBuilder();
@@ -105,10 +105,10 @@ namespace Nitrocid.Extras.FtpShell.FTP.Presets
         internal override string PresetPromptCompletionBuilder()
         {
             // Segments
-            List<PowerLineSegment> segments = new()
-            {
+            List<PowerLineSegment> segments =
+            [
                 new PowerLineSegment(new Color(255, 85, 255), new Color(127, 43, 127), "+"),
-            };
+            ];
 
             // Builder
             var PresetStringBuilder = new StringBuilder();

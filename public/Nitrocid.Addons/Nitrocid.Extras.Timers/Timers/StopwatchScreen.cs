@@ -38,7 +38,7 @@ namespace Nitrocid.Extras.Timers.Timers
     public static class StopwatchScreen
     {
 
-        internal static List<LapDisplayInfo> Laps = new();
+        internal static List<LapDisplayInfo> Laps = [];
         internal static KernelThread StopwatchUpdate = new("Stopwatch ETA Updater", true, UpdateStopwatchElapsedDisplay);
         internal static Color LapColor = KernelColorTools.GetColor(KernelColorType.NeutralText);
         internal static Stopwatch Stopwatch = new();

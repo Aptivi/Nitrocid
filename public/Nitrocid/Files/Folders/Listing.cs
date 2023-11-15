@@ -116,7 +116,7 @@ namespace KS.Files.Folders
 
             // List files and folders
             folder = FilesystemTools.NeutralizePath(folder);
-            if (Checking.FolderExists(folder) | folder.ContainsAnyOf(new[] { "?", "*" }))
+            if (Checking.FolderExists(folder) | folder.ContainsAnyOf(["?", "*"]))
             {
                 List<FileSystemEntry> enumeration;
                 SeparatorWriterColor.WriteSeparator(folder, true);

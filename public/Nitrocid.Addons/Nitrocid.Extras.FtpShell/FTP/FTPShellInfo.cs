@@ -41,109 +41,109 @@ namespace Nitrocid.Extras.FtpShell.FTP
         {
             { "cat",
                 new CommandInfo("cat", /* Localizable */ "Reads the content of a remote file to the console",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "file")
                         })
-                    }, new CatCommand(), CommandFlags.Wrappable)
+                    ], new CatCommand(), CommandFlags.Wrappable)
             },
 
             { "cdl",
                 new CommandInfo("cdl", /* Localizable */ "Changes local directory to download to or upload from",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "directory")
                         })
-                    }, new CdlCommand())
+                    ], new CdlCommand())
             },
 
             { "cdr",
                 new CommandInfo("cdr", /* Localizable */ "Changes remote directory to download from or upload to",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "directory")
                         })
-                    }, new CdrCommand())
+                    ], new CdrCommand())
             },
 
             { "cp",
                 new CommandInfo("cp", /* Localizable */ "Copies file or directory to another file or directory.",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "sourcefileordir"),
                             new CommandArgumentPart(true, "where")
                         })
-                    }, new CpCommand())
+                    ], new CpCommand())
             },
 
             { "del",
                 new CommandInfo("del", /* Localizable */ "Deletes remote file from server",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "file")
                         })
-                    }, new DelCommand())
+                    ], new DelCommand())
             },
 
             { "detach",
                 new CommandInfo("detach", /* Localizable */ "Exits the shell without disconnecting",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new DetachCommand())
+                    ], new DetachCommand())
             },
 
             { "execute",
                 new CommandInfo("execute", /* Localizable */ "Executes an FTP server command",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "command"),
                             new CommandArgumentPart(false, "where")
                         })
-                    }, new ExecuteCommand())
+                    ], new ExecuteCommand())
             },
 
             { "get",
                 new CommandInfo("get", /* Localizable */ "Downloads remote file to local directory using binary or text",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "file"),
                             new CommandArgumentPart(false, "where")
                         })
-                    }, new GetCommand())
+                    ], new GetCommand())
             },
 
             { "getfolder",
                 new CommandInfo("getfolder", /* Localizable */ "Downloads remote folder to local directory using binary or text",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "folder"),
                             new CommandArgumentPart(false, "where")
                         })
-                    }, new GetFolderCommand())
+                    ], new GetFolderCommand())
             },
 
             { "info",
                 new CommandInfo("info", /* Localizable */ "FTP server information",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new InfoCommand())
+                    ], new InfoCommand())
             },
 
             { "lsl",
                 new CommandInfo("lsl", /* Localizable */ "Lists local directory",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(false, "dir")
-                        }, new[] {
+                        ], [
                             new SwitchInfo("showdetails", /* Localizable */ "Shows the file details in the list", new SwitchOptions()
                             {
                                 AcceptsValues = false
@@ -152,75 +152,75 @@ namespace Nitrocid.Extras.FtpShell.FTP
                             {
                                 AcceptsValues = false
                             })
-                        })
-                    }, new LslCommand(), CommandFlags.Wrappable)
+                        ])
+                    ], new LslCommand(), CommandFlags.Wrappable)
             },
 
             { "lsr",
                 new CommandInfo("lsr", /* Localizable */ "Lists remote directory",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(false, "dir")
-                        }, new[] {
+                        ], [
                             new SwitchInfo("showdetails", /* Localizable */ "Shows the file details in the list", new SwitchOptions()
                             {
                                 AcceptsValues = false
                             })
-                        })
-                    }, new LsrCommand(), CommandFlags.Wrappable)
+                        ])
+                    ], new LsrCommand(), CommandFlags.Wrappable)
             },
 
             { "mv",
                 new CommandInfo("mv", /* Localizable */ "Moves file or directory to another file or directory. You can also use that to rename files.",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "sourcefileordir"),
                             new CommandArgumentPart(true, "targetfileordir")
                         })
-                    }, new MvCommand())
+                    ], new MvCommand())
             },
 
             { "put",
                 new CommandInfo("put", /* Localizable */ "Uploads local file to remote directory using binary or text",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "file"),
                             new CommandArgumentPart(false, "output")
                         })
-                    }, new PutCommand())
+                    ], new PutCommand())
             },
 
             { "putfolder",
                 new CommandInfo("putfolder", /* Localizable */ "Uploads local folder to remote directory using binary or text",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "folder"),
                             new CommandArgumentPart(false, "outputfolder")
                         })
-                    }, new PutFolderCommand())
+                    ], new PutFolderCommand())
             },
 
             { "pwdl",
                 new CommandInfo("pwdl", /* Localizable */ "Gets current local directory",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new PwdlCommand())
+                    ], new PwdlCommand())
             },
 
             { "pwdr",
                 new CommandInfo("pwdr", /* Localizable */ "Gets current remote directory",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new PwdrCommand())
+                    ], new PwdrCommand())
             },
 
             { "perm",
                 new CommandInfo("perm", /* Localizable */ "Sets file permissions. This is supported only on FTP servers that run Unix.",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "file"),
@@ -229,39 +229,39 @@ namespace Nitrocid.Extras.FtpShell.FTP
                                 IsNumeric = true
                             })
                         })
-                    }, new PermCommand())
+                    ], new PermCommand())
             },
 
             { "sumfile",
                 new CommandInfo("sumfile", /* Localizable */ "Calculates file sums.",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "file"),
                             new CommandArgumentPart(true, "algorithm")
                         })
-                    }, new SumFileCommand())
+                    ], new SumFileCommand())
             },
 
             { "sumfiles",
                 new CommandInfo("sumfiles", /* Localizable */ "Calculates sums of files in specified directory.",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "file"),
                             new CommandArgumentPart(true, "algorithm")
                         })
-                    }, new SumFilesCommand())
+                    ], new SumFilesCommand())
             },
 
             { "type",
                 new CommandInfo("type", /* Localizable */ "Sets the type for this session",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "a/b")
                         })
-                    }, new TypeCommand())
+                    ], new TypeCommand())
             }
         };
 

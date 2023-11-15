@@ -58,11 +58,11 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Presets
         internal override string PresetPromptBuilder()
         {
             // Segments
-            List<PowerLineSegment> segments = new()
-            {
+            List<PowerLineSegment> segments =
+            [
                 new PowerLineSegment(new Color(255, 85, 255), new Color(127, 43, 127), Path.GetFileName(ArchiveShellCommon.FileStream.Name)),
                 new PowerLineSegment(new Color(0, 0, 0), new Color(255, 85, 255), ArchiveShellCommon.CurrentArchiveDirectory)
-            };
+            ];
 
             // Builder
             var PresetStringBuilder = new StringBuilder();
@@ -78,11 +78,11 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Presets
         internal override string PresetPromptBuilderShowcase()
         {
             // Segments
-            List<PowerLineSegment> segments = new()
-            {
+            List<PowerLineSegment> segments =
+            [
                 new PowerLineSegment(new Color(255, 85, 255), new Color(127, 43, 127), "archive.zip"),
                 new PowerLineSegment(new Color(0, 0, 0), new Color(255, 85, 255), "/dir")
-            };
+            ];
 
             // Builder
             var PresetStringBuilder = new StringBuilder();
@@ -98,10 +98,10 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Presets
         internal override string PresetPromptCompletionBuilder()
         {
             // Segments
-            List<PowerLineSegment> segments = new()
-            {
+            List<PowerLineSegment> segments =
+            [
                 new PowerLineSegment(new Color(255, 85, 255), new Color(127, 43, 127), "+"),
-            };
+            ];
 
             // Builder
             var PresetStringBuilder = new StringBuilder();

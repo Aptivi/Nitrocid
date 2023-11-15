@@ -61,10 +61,10 @@ namespace Nitrocid.Extras.GitShell.Git.Presets
             char TransitionPartChar = Convert.ToChar(0xE0B1);
 
             // PowerLine presets
-            List<PowerLineSegment> segments = new()
-            {
+            List<PowerLineSegment> segments =
+            [
                 new PowerLineSegment(new Color(255, 255, 85), new Color(25, 25, 25), GitShellCommon.BranchName, default, TransitionPartChar)
-            };
+            ];
 
             // Builder
             var PresetStringBuilder = new StringBuilder();
@@ -83,10 +83,10 @@ namespace Nitrocid.Extras.GitShell.Git.Presets
             char TransitionPartChar = Convert.ToChar(0xE0B1);
 
             // PowerLine presets
-            List<PowerLineSegment> segments = new()
-            {
+            List<PowerLineSegment> segments =
+            [
                 new PowerLineSegment(new Color(255, 255, 85), new Color(25, 25, 25), "main", default, TransitionPartChar)
-            };
+            ];
 
             // Builder
             var PresetStringBuilder = new StringBuilder();
@@ -102,10 +102,10 @@ namespace Nitrocid.Extras.GitShell.Git.Presets
         internal override string PresetPromptCompletionBuilder()
         {
             // Segments
-            List<PowerLineSegment> segments = new()
-            {
+            List<PowerLineSegment> segments =
+            [
                 new PowerLineSegment(new Color(255, 255, 85), new Color(25, 25, 25), "+"),
-            };
+            ];
 
             // Builder
             var PresetStringBuilder = new StringBuilder();

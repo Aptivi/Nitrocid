@@ -34,7 +34,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [Description("Management")]
         public void TestGetSwitchValues()
         {
-            string[] switches = new string[] { "-name=Harry", "-job=Programmer", "-company=\"Handworks Software Inc.\"", "-pruned" };
+            string[] switches = ["-name=Harry", "-job=Programmer", "-company=\"Handworks Software Inc.\"", "-pruned"];
             var switchValues = SwitchManager.GetSwitchValues(switches);
             switchValues.Count.ShouldBe(3);
             switchValues[0].Item1.ShouldBe("-name");
@@ -60,7 +60,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [Description("Management")]
         public void TestGetSwitchValuesWithNonValue()
         {
-            string[] switches = new string[] { "-name=Harry", "-job=Programmer", "-company=\"Handworks Software Inc.\"", "-pruned" };
+            string[] switches = ["-name=Harry", "-job=Programmer", "-company=\"Handworks Software Inc.\"", "-pruned"];
             var switchValues = SwitchManager.GetSwitchValues(switches, true);
             switchValues.Count.ShouldBe(4);
             switchValues[0].Item1.ShouldBe("-name");
@@ -87,7 +87,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [Description("Management")]
         public void TestGetSwitchValuesOneNoValue()
         {
-            string[] switches = new string[] { "-name=Harry", "-job=", "-company=\"Handworks Software Inc.\"", "-pruned" };
+            string[] switches = ["-name=Harry", "-job=", "-company=\"Handworks Software Inc.\"", "-pruned"];
             var switchValues = SwitchManager.GetSwitchValues(switches);
             switchValues.Count.ShouldBe(3);
             switchValues[0].Item1.ShouldBe("-name");
@@ -113,7 +113,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [Description("Management")]
         public void TestGetSwitchValuesOneNoValueWithNonValue()
         {
-            string[] switches = new string[] { "-name=Harry", "-job=", "-company=\"Handworks Software Inc.\"", "-pruned" };
+            string[] switches = ["-name=Harry", "-job=", "-company=\"Handworks Software Inc.\"", "-pruned"];
             var switchValues = SwitchManager.GetSwitchValues(switches, true);
             switchValues.Count.ShouldBe(4);
             switchValues[0].Item1.ShouldBe("-name");
@@ -140,7 +140,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [Description("Management")]
         public void TestGetSwitchValuesJustNonValue()
         {
-            string[] switches = new string[] { "-pruned" };
+            string[] switches = ["-pruned"];
             var switchValues = SwitchManager.GetSwitchValues(switches);
             switchValues.Count.ShouldBe(0);
             switchValues.ShouldNotContain(("-pruned", ""));
@@ -154,7 +154,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [Description("Management")]
         public void TestGetSwitchValuesJustNonValueWithNonValue()
         {
-            string[] switches = new string[] { "-pruned" };
+            string[] switches = ["-pruned"];
             var switchValues = SwitchManager.GetSwitchValues(switches, true);
             switchValues.Count.ShouldBe(1);
             switchValues[0].Item1.ShouldBe("-pruned");
@@ -181,7 +181,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [Description("Management")]
         public void TestIsSwitchValueNumeric()
         {
-            string[] switches = new string[] { "-name=Sarah", "-pcnum=3" };
+            string[] switches = ["-name=Sarah", "-pcnum=3"];
             var switchValues = SwitchManager.GetSwitchValues(switches, true);
             switchValues.Count.ShouldBe(2);
             switchValues[0].Item1.ShouldBe("-name");

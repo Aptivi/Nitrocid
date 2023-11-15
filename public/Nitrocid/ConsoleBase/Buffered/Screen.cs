@@ -29,7 +29,7 @@ namespace KS.ConsoleBase.Buffered
     /// </summary>
     public class Screen
     {
-        private readonly List<ScreenPart> screenParts = new();
+        private readonly List<ScreenPart> screenParts = [];
 
         /// <summary>
         /// Buffered screen parts list to render one by one while buffering the console

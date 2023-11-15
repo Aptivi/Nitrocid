@@ -36,13 +36,13 @@ namespace Nitrocid.Extras.InternetRadioInfo
         {
             { "netfminfo",
                 new CommandInfo("netfminfo", /* Localizable */ "Gets information about your online radio station",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "hostname"),
                             new CommandArgumentPart(true, "port"),
                         })
-                    }, new NetFmInfoCommand())
+                    ], new NetFmInfoCommand())
             },
         };
 
@@ -61,9 +61,9 @@ namespace Nitrocid.Extras.InternetRadioInfo
         { }
 
         void IAddon.StartAddon() =>
-            CommandManager.RegisterAddonCommands(ShellType.Shell, addonCommands.Values.ToArray());
+            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands.Values]);
 
         void IAddon.StopAddon() =>
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, addonCommands.Keys.ToArray());
+            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Keys]);
     }
 }

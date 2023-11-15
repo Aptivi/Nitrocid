@@ -41,7 +41,7 @@ namespace Nitrocid.Extras.GitShell.Git
         {
             { "blame",
                 new CommandInfo("blame", /* Localizable */ "Fetches the list of changes in a file line by line",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "file"),
@@ -54,214 +54,214 @@ namespace Nitrocid.Extras.GitShell.Git
                                 IsNumeric = true
                             }),
                         })
-                    }, new BlameCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
+                    ], new BlameCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
 
             { "checkout",
                 new CommandInfo("checkout", /* Localizable */ "Checks out a branch",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "branch")
                         })
-                    }, new CheckoutCommand())
+                    ], new CheckoutCommand())
             },
 
             { "commit",
                 new CommandInfo("commit", /* Localizable */ "Makes a commit",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "summary")
                         })
-                    }, new CommitCommand())
+                    ], new CommitCommand())
             },
 
             { "describe",
                 new CommandInfo("describe", /* Localizable */ "Describes a commit",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "commitsha")
                         })
-                    }, new DescribeCommand())
+                    ], new DescribeCommand())
             },
 
             { "diff",
                 new CommandInfo("diff", /* Localizable */ "Shows a difference between the current commit and the local files",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new SwitchInfo("patch", /* Localizable */ "Shows a difference between the current commit and the local files by their content in a patch hunk form", new()
                             {
-                                ConflictsWith = new[] { "tree", "all" }
+                                ConflictsWith = ["tree", "all"]
                             }),
                             new SwitchInfo("tree", /* Localizable */ "Shows a difference between the current commit and the local files by their existence", new()
                             {
-                                ConflictsWith = new[] { "patch", "all" }
+                                ConflictsWith = ["patch", "all"]
                             }),
                             new SwitchInfo("all", /* Localizable */ "Shows a difference between the current commit and the local files by their existence and by their content", new()
                             {
-                                ConflictsWith = new[] { "tree", "patch" }
+                                ConflictsWith = ["tree", "patch"]
                             }),
                         })
-                    }, new DiffCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
+                    ], new DiffCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
 
             { "fetch",
                 new CommandInfo("fetch", /* Localizable */ "Fetches all updates from a remote",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(false, "remote")
                         })
-                    }, new FetchCommand())
+                    ], new FetchCommand())
             },
 
             { "filestatus",
                 new CommandInfo("filestatus", /* Localizable */ "Fetches the file status",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "file")
                         })
-                    }, new FileStatusCommand())
+                    ], new FileStatusCommand())
             },
             
             { "info",
                 new CommandInfo("info", /* Localizable */ "Gets a simple repository information",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new InfoCommand())
+                    ], new InfoCommand())
             },
             
             { "lsbranches",
                 new CommandInfo("lsbranches", /* Localizable */ "Lists all branches",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new LsBranchesCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
+                    ], new LsBranchesCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
             
             { "lscommits",
                 new CommandInfo("lscommits", /* Localizable */ "Lists all commits",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new LsCommitsCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
+                    ], new LsCommitsCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
             
             { "lsremotes",
                 new CommandInfo("lsremotes", /* Localizable */ "Lists all remotes",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new LsRemotesCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
+                    ], new LsRemotesCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
             
             { "lstags",
                 new CommandInfo("lstags", /* Localizable */ "Lists all tags",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new LsTagsCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
+                    ], new LsTagsCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
             
             { "maketag",
                 new CommandInfo("maketag", /* Localizable */ "Makes a tag from the HEAD",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "tagname"),
                             new CommandArgumentPart(false, "message"),
                         })
-                    }, new MakeTagCommand())
+                    ], new MakeTagCommand())
             },
 
             { "pull",
                 new CommandInfo("pull", /* Localizable */ "Pulls all updates from the server",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new PullCommand())
+                    ], new PullCommand())
             },
 
             { "push",
                 new CommandInfo("push", /* Localizable */ "Pushes all updates to the server",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new PushCommand())
+                    ], new PushCommand())
             },
 
             { "reset",
                 new CommandInfo("reset", /* Localizable */ "Resets the local repository",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new SwitchInfo("soft", /* Localizable */ "Does a soft reset", new SwitchOptions()
                             {
-                                ConflictsWith = new[] { "hard", "mixed" },
+                                ConflictsWith = ["hard", "mixed"],
                                 AcceptsValues = false
                             }),
                             new SwitchInfo("mixed", /* Localizable */ "Does a mixed reset", new SwitchOptions()
                             {
-                                ConflictsWith = new[] { "soft", "hard" },
+                                ConflictsWith = ["soft", "hard"],
                                 AcceptsValues = false
                             }),
                             new SwitchInfo("hard", /* Localizable */ "Does a hard reset", new SwitchOptions()
                             {
-                                ConflictsWith = new[] { "soft", "mixed" },
+                                ConflictsWith = ["soft", "mixed"],
                                 AcceptsValues = false
                             }),
                         })
-                    }, new ResetCommand())
+                    ], new ResetCommand())
             },
 
             { "setid",
                 new CommandInfo("setid", /* Localizable */ "Sets your identity up",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "email"),
                             new CommandArgumentPart(true, "username"),
                         })
-                    }, new SetIdCommand())
+                    ], new SetIdCommand())
             },
 
             { "stage",
                 new CommandInfo("stage", /* Localizable */ "Stages a change",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "unstagedFile")
                         })
-                    }, new StageCommand())
+                    ], new StageCommand())
             },
             
             { "stageall",
                 new CommandInfo("stageall", /* Localizable */ "Stages all changes",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new StageAllCommand())
+                    ], new StageAllCommand())
             },
 
             { "status",
                 new CommandInfo("status", /* Localizable */ "Repository status",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new StatusCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
+                    ], new StatusCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
             },
 
             { "unstage",
                 new CommandInfo("unstage", /* Localizable */ "Unstages a change",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "stagedFile")
                         })
-                    }, new UnstageCommand())
+                    ], new UnstageCommand())
             },
 
             { "unstageall",
                 new CommandInfo("unstageall", /* Localizable */ "Unstages all changes",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new UnstageAllCommand())
+                    ], new UnstageAllCommand())
             },
         };
 

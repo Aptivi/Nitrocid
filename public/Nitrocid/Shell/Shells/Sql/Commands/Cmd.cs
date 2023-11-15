@@ -43,7 +43,7 @@ namespace KS.Shell.Shells.Sql.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             // First, check to see if we have parameters
-            List<SqliteParameter> sqlParameters = new();
+            List<SqliteParameter> sqlParameters = [];
             foreach (string StringArg in parameters.ArgumentsList)
             {
                 if (StringArg.StartsWith("@"))
@@ -55,7 +55,7 @@ namespace KS.Shell.Shells.Sql.Commands
 
             // Now, get a group of replies and print them
             string[] replies = Array.Empty<string>();
-            if (SqlEditTools.SqlEdit_SqlCommand(parameters.ArgumentsText, ref replies, sqlParameters.ToArray()))
+            if (SqlEditTools.SqlEdit_SqlCommand(parameters.ArgumentsText, ref replies, [.. sqlParameters]))
             {
                 TextWriterColor.WriteKernelColor(Translate.DoTranslation("SQL command succeeded. Here are the replies:"), true, KernelColorType.Success);
                 foreach (string reply in replies)

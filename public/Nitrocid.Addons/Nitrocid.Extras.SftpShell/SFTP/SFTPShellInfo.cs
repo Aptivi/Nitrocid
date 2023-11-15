@@ -41,68 +41,68 @@ namespace Nitrocid.Extras.SftpShell.SFTP
         {
             { "cat",
                 new CommandInfo("cat", /* Localizable */ "Reads the content of a remote file to the console",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "file")
                         })
-                    }, new CatCommand(), CommandFlags.Wrappable)
+                    ], new CatCommand(), CommandFlags.Wrappable)
             },
 
             { "cdl",
                 new CommandInfo("cdl", /* Localizable */ "Changes local directory to download to or upload from",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "directory")
                         })
-                    }, new CdlCommand())
+                    ], new CdlCommand())
             },
 
             { "cdr",
                 new CommandInfo("cdr", /* Localizable */ "Changes remote directory to download from or upload to",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "directory")
                         })
-                    }, new CdrCommand())
+                    ], new CdrCommand())
             },
 
             { "del",
                 new CommandInfo("del", /* Localizable */ "Deletes remote file from server",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "file")
                         })
-                    }, new DelCommand())
+                    ], new DelCommand())
             },
 
             { "detach",
                 new CommandInfo("detach", /* Localizable */ "Exits the shell without disconnecting",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new DetachCommand())
+                    ], new DetachCommand())
             },
 
             { "get",
                 new CommandInfo("get", /* Localizable */ "Downloads remote file to local directory using binary or text",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "file")
                         })
-                    }, new GetCommand())
+                    ], new GetCommand())
             },
 
             { "lsl",
                 new CommandInfo("lsl", /* Localizable */ "Lists local directory",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(false, "dir")
-                        }, new[] {
+                        ], [
                             new SwitchInfo("showdetails", /* Localizable */ "Shows the details of the files and folders", new SwitchOptions()
                             {
                                 AcceptsValues = false
@@ -111,47 +111,47 @@ namespace Nitrocid.Extras.SftpShell.SFTP
                             {
                                 AcceptsValues = false
                             })
-                        })
-                    }, new LslCommand(), CommandFlags.Wrappable)
+                        ])
+                    ], new LslCommand(), CommandFlags.Wrappable)
             },
 
             { "lsr",
                 new CommandInfo("lsr", /* Localizable */ "Lists remote directory",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(false, "dir")
-                        }, new[] {
+                        ], [
                             new SwitchInfo("showdetails", /* Localizable */ "Shows the details of the files and folders", new SwitchOptions()
                             {
                                 AcceptsValues = false
                             })
-                        })
-                    }, new LsrCommand(), CommandFlags.Wrappable)
+                        ])
+                    ], new LsrCommand(), CommandFlags.Wrappable)
             },
 
             { "put",
                 new CommandInfo("put", /* Localizable */ "Uploads local file to remote directory using binary or text",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "file")
                         })
-                    }, new PutCommand())
+                    ], new PutCommand())
             },
 
             { "pwdl",
                 new CommandInfo("pwdl", /* Localizable */ "Gets current local directory",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new PwdlCommand())
+                    ], new PwdlCommand())
             },
 
             { "pwdr",
                 new CommandInfo("pwdr", /* Localizable */ "Gets current remote directory",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new PwdrCommand())
+                    ], new PwdrCommand())
             },
         };
 

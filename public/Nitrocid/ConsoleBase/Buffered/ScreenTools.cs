@@ -30,7 +30,7 @@ namespace KS.ConsoleBase.Buffered
     /// </summary>
     public static class ScreenTools
     {
-        private static readonly List<Screen> screens = new();
+        private static readonly List<Screen> screens = [];
 
         /// <summary>
         /// Gets the currently displaying screen

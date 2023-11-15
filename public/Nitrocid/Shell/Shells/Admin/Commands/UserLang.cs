@@ -47,10 +47,10 @@ namespace KS.Shell.Shells.Admin.Commands
                 UserManagement.Users[userIndex].PreferredLanguage = null;
                 TextWriterColor.Write(Translate.DoTranslation("Preferred user language set to {0}. You may want to log in again."), lang);
             }
-            else if (LanguageManager.Languages.ContainsKey(lang))
+            else if (LanguageManager.Languages.TryGetValue(lang, out LanguageInfo langInfo))
             {
                 // Do it locally
-                LanguageManager.currentUserLanguage = LanguageManager.Languages[lang];
+                LanguageManager.currentUserLanguage = langInfo;
 
                 // Now, change the language in the user config
                 UserManagement.Users[userIndex].PreferredLanguage = lang;

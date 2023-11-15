@@ -37,11 +37,11 @@ namespace KS.Kernel.Debugging.RemoteDebug.Command
 
         internal static Dictionary<string, RemoteDebugCommandInfo> RemoteDebugCommands = new()
         {
-            { "help", new RemoteDebugCommandInfo("help", /* Localizable */ "Help page", new RemoteDebugCommandArgumentInfo(new string[] { "[command]" }), new HelpCommand()) },
-            { "register", new RemoteDebugCommandInfo("register", /* Localizable */ "Registers your name to your remote debug device", new RemoteDebugCommandArgumentInfo(new string[] { "<name>" }, true, 1), new RegisterCommand()) },
+            { "help", new RemoteDebugCommandInfo("help", /* Localizable */ "Help page", new RemoteDebugCommandArgumentInfo(["[command]"]), new HelpCommand()) },
+            { "register", new RemoteDebugCommandInfo("register", /* Localizable */ "Registers your name to your remote debug device", new RemoteDebugCommandArgumentInfo(["<name>"], true, 1), new RegisterCommand()) },
             { "exit", new RemoteDebugCommandInfo("exit", /* Localizable */ "Disconnects from the remote debugger", new RemoteDebugCommandArgumentInfo(), new ExitCommand()) },
             { "mutelogs", new RemoteDebugCommandInfo("mutelogs", /* Localizable */ "Mutes or unmutes the kernel logs", new RemoteDebugCommandArgumentInfo(), new MuteLogsCommand()) },
-            { "trace", new RemoteDebugCommandInfo("trace", /* Localizable */ "Shows last stack trace on exception", new RemoteDebugCommandArgumentInfo(new string[] { "<tracenumber>" }, true, 1), new TraceCommand()) },
+            { "trace", new RemoteDebugCommandInfo("trace", /* Localizable */ "Shows last stack trace on exception", new RemoteDebugCommandArgumentInfo(["<tracenumber>"], true, 1), new TraceCommand()) },
             { "username", new RemoteDebugCommandInfo("username", /* Localizable */ "Shows current username in the session", new RemoteDebugCommandArgumentInfo(), new UsernameCommand()) }
         };
 
@@ -58,19 +58,19 @@ namespace KS.Kernel.Debugging.RemoteDebug.Command
                 bool RequiredArgumentsProvided = ArgumentInfo.RequiredArgumentsProvided;
 
                 // Check to see if the command exists
-                if (!RemoteDebugCommands.ContainsKey(Command))
+                if (!RemoteDebugCommands.TryGetValue(Command, out RemoteDebugCommandInfo rdci))
                 {
                     DebugWriter.WriteDebugDeviceOnly(DebugLevel.W, Translate.DoTranslation("Command not found."), true, Device);
                     return;
                 }
 
                 // If there are enough arguments provided, execute. Otherwise, fail with not enough arguments.
-                if (RemoteDebugCommands[Command].CommandArgumentInfo is not null)
+                if (rdci.CommandArgumentInfo is not null)
                 {
-                    var ArgInfo = RemoteDebugCommands[Command].CommandArgumentInfo;
+                    var ArgInfo = rdci.CommandArgumentInfo;
                     if (ArgInfo.ArgumentsRequired & RequiredArgumentsProvided | !ArgInfo.ArgumentsRequired)
                     {
-                        var CommandBase = RemoteDebugCommands[Command].CommandBase;
+                        var CommandBase = rdci.CommandBase;
                         CommandBase.Execute(StrArgs, Args, Switches, Device);
                     }
                     else
@@ -82,7 +82,7 @@ namespace KS.Kernel.Debugging.RemoteDebug.Command
                 }
                 else
                 {
-                    var CommandBase = RemoteDebugCommands[Command].CommandBase;
+                    var CommandBase = rdci.CommandBase;
                     CommandBase.Execute(StrArgs, Args, Switches, Device);
                 }
             }

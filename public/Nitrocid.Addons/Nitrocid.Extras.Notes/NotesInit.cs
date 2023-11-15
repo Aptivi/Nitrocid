@@ -37,19 +37,17 @@ namespace Nitrocid.Extras.Notes
         {
             { "addnote",
                 new CommandInfo("addnote", /* Localizable */ "Adds a note",
-                    new[]
-                    {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "noteContents...")
                         }),
-                    }, new AddNote())
+                    ], new AddNote())
             },
 
             { "removenote",
                 new CommandInfo("removenote", /* Localizable */ "Removes a note",
-                    new[]
-                    {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "noteNumber", new CommandArgumentPartOptions()
@@ -57,39 +55,35 @@ namespace Nitrocid.Extras.Notes
                                 IsNumeric = true
                             })
                         }),
-                    }, new RemoveNote())
+                    ], new RemoveNote())
             },
 
             { "removenotes",
                 new CommandInfo("removenotes", /* Localizable */ "Removes all notes",
-                    new[]
-                    {
+                    [
                         new CommandArgumentInfo(),
-                    }, new RemoveNotes())
+                    ], new RemoveNotes())
             },
 
             { "listnotes",
                 new CommandInfo("listnotes", /* Localizable */ "Lists all notes",
-                    new[]
-                    {
+                    [
                         new CommandArgumentInfo(),
-                    }, new ListNotes())
+                    ], new ListNotes())
             },
 
             { "savenotes",
                 new CommandInfo("savenotes", /* Localizable */ "Saves all notes",
-                    new[]
-                    {
+                    [
                         new CommandArgumentInfo(),
-                    }, new SaveNotes())
+                    ], new SaveNotes())
             },
 
             { "reloadnotes",
                 new CommandInfo("reloadnotes", /* Localizable */ "Reloads all notes",
-                    new[]
-                    {
+                    [
                         new CommandArgumentInfo(),
-                    }, new ReloadNotes())
+                    ], new ReloadNotes())
             },
         };
 
@@ -105,10 +99,10 @@ namespace Nitrocid.Extras.Notes
         ReadOnlyDictionary<string, FieldInfo> IAddon.PubliclyAvailableFields => null;
 
         void IAddon.StartAddon() =>
-            CommandManager.RegisterAddonCommands(ShellType.Shell, addonCommands.Values.ToArray());
+            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands.Values]);
 
         void IAddon.StopAddon() =>
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, addonCommands.Keys.ToArray());
+            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Keys]);
 
         void IAddon.FinalizeAddon() =>
             NoteManagement.LoadNotes();

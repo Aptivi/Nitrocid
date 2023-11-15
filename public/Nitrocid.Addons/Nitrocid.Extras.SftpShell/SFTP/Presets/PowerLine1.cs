@@ -62,12 +62,12 @@ namespace Nitrocid.Extras.SftpShell.SFTP.Presets
             char PadlockChar = Convert.ToChar(0xE0A2);
 
             // Segments
-            List<PowerLineSegment> segments = new()
-            {
+            List<PowerLineSegment> segments =
+            [
                 new PowerLineSegment(new Color(85, 255, 255), new Color(43, 127, 127), SFTPShellCommon.SFTPUser),
                 new PowerLineSegment(new Color(0, 0, 0), new Color(85, 255, 255), SFTPShellCommon.SFTPSite, PadlockChar),
                 new PowerLineSegment(new Color(0, 0, 0), new Color(255, 255, 255), SFTPShellCommon.SFTPCurrentRemoteDir),
-            };
+            ];
 
             // Builder
             var PresetStringBuilder = new StringBuilder();
@@ -85,12 +85,12 @@ namespace Nitrocid.Extras.SftpShell.SFTP.Presets
             char PadlockChar = Convert.ToChar(0xE0A2);
 
             // Segments
-            List<PowerLineSegment> segments = new()
-            {
+            List<PowerLineSegment> segments =
+            [
                 new PowerLineSegment(new Color(85, 255, 255), new Color(43, 127, 127), Translate.DoTranslation("User")),
                 new PowerLineSegment(new Color(0, 0, 0), new Color(85, 255, 255), Translate.DoTranslation("Site"), PadlockChar),
                 new PowerLineSegment(new Color(0, 0, 0), new Color(255, 255, 255), "/path"),
-            };
+            ];
 
             // Builder
             var PresetStringBuilder = new StringBuilder();
@@ -105,10 +105,10 @@ namespace Nitrocid.Extras.SftpShell.SFTP.Presets
         internal override string PresetPromptCompletionBuilder()
         {
             // Segments
-            List<PowerLineSegment> segments = new()
-            {
+            List<PowerLineSegment> segments =
+            [
                 new PowerLineSegment(new Color(85, 255, 255), new Color(43, 127, 127), "+"),
-            };
+            ];
 
             // Builder
             var PresetStringBuilder = new StringBuilder();

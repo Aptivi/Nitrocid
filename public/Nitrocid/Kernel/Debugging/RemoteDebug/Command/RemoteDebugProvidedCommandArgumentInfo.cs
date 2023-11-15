@@ -65,7 +65,7 @@ namespace KS.Kernel.Debugging.RemoteDebug.Command
             DebugWriter.WriteDebug(DebugLevel.I, "Index: {0}", index);
 
             // Split the requested command string into words
-            var words = CommandText.Split(new[] { ' ' });
+            var words = CommandText.Split([' ']);
             for (int i = 0; i <= words.Length - 1; i++)
                 DebugWriter.WriteDebug(DebugLevel.I, "Word {0}: {1}", i + 1, words[i]);
             Command = words[0];
@@ -85,7 +85,7 @@ namespace KS.Kernel.Debugging.RemoteDebug.Command
                 DebugWriter.WriteDebug(DebugLevel.I, "Arguments parsed: " + string.Join(", ", EnclosedArgs));
 
             // Check to see if the caller has provided required number of arguments
-            var CommandInfo = RemoteDebugCommandExecutor.RemoteDebugCommands.ContainsKey(Command) ? RemoteDebugCommandExecutor.RemoteDebugCommands[Command] : null;
+            var CommandInfo = RemoteDebugCommandExecutor.RemoteDebugCommands.TryGetValue(Command, out RemoteDebugCommandInfo rdci) ? rdci : null;
             if (CommandInfo?.CommandArgumentInfo is not null)
                 if (EnclosedArgs is not null)
                     RequiredArgumentsProvided = (bool)(CommandInfo.CommandArgumentInfo.MinimumArguments is int expectedArgumentNum &&
@@ -114,8 +114,8 @@ namespace KS.Kernel.Debugging.RemoteDebug.Command
             }
 
             // Install the parsed values to the new class instance
-            ArgumentsList = FinalArgs.ToArray();
-            SwitchesList = FinalSwitches.ToArray();
+            ArgumentsList = [.. FinalArgs];
+            SwitchesList = [.. FinalSwitches];
             ArgumentsText = strArgs;
             this.Command = Command;
             this.RequiredArgumentsProvided = RequiredArgumentsProvided;

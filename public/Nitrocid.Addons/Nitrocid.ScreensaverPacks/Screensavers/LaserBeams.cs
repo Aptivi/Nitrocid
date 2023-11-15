@@ -252,7 +252,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     public class LaserBeamsDisplay : BaseScreensaver, IScreensaver
     {
 
-        private static readonly List<(int, int)> laserEnds = new();
+        private static readonly List<(int, int)> laserEnds = [];
 
         /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "LaserBeams";

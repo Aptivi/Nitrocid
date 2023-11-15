@@ -61,12 +61,12 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         private static bool shining;
         private static readonly int maxShineSteps = 15;
         private static Color selectedColor = ConsoleColors.LightCyan1;
-        private static readonly List<Color> diamondColors = new()
-        {
+        private static readonly List<Color> diamondColors =
+        [
             ConsoleColors.LightCyan1,
             ConsoleColors.Pink1,
             ConsoleColors.White
-        };
+        ];
 
         /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "Diamond";

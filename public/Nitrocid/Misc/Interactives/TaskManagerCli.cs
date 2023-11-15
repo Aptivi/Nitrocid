@@ -40,14 +40,14 @@ namespace KS.Misc.Interactives
         /// <summary>
         /// Task manager bindings
         /// </summary>
-        public override List<InteractiveTuiBinding> Bindings { get; set; } = new()
-        {
+        public override List<InteractiveTuiBinding> Bindings { get; set; } =
+        [
             // Operations
             new InteractiveTuiBinding(/* Localizable */ "Kill",   ConsoleKey.F1,
                 (_, index) => KillThread(index), true),
             new InteractiveTuiBinding(/* Localizable */ "Switch", ConsoleKey.Tab,
                 (_, _) => SwitchMode(), true)
-        };
+        ];
 
         /// <inheritdoc/>
         public override IEnumerable PrimaryDataSource =>

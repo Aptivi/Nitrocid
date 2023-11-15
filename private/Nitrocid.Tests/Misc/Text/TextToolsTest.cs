@@ -83,7 +83,7 @@ namespace Nitrocid.Tests.Misc.Text
         {
             string ExpectedString = "Please test Nitrocid. This sub is a unit test.";
             string TargetString = "Please <replace> Nitrocid. This sub is a unit <replace2>.";
-            TargetString = TargetString.ReplaceAll(new[] { "<replace>", "<replace2>" }, "test");
+            TargetString = TargetString.ReplaceAll(["<replace>", "<replace2>"], "test");
             TargetString.ShouldBe(ExpectedString);
         }
 
@@ -96,7 +96,7 @@ namespace Nitrocid.Tests.Misc.Text
         {
             string ExpectedString = "Please test the integrity of Nitrocid. This sub is a unit test.";
             string TargetString = "Please <replace> Nitrocid. This sub is a unit <replace2>.";
-            TargetString = TargetString.ReplaceAllRange(new[] { "<replace>", "<replace2>" }, new[] { "test the integrity of", "test" });
+            TargetString = TargetString.ReplaceAllRange(["<replace>", "<replace2>"], ["test the integrity of", "test"]);
             TargetString.ShouldBe(ExpectedString);
         }
 
@@ -189,8 +189,8 @@ namespace Nitrocid.Tests.Misc.Text
         public void TestContainsAnyOf()
         {
             string TargetString = "Hello, Nitrocid users!";
-            TargetString.ContainsAnyOf(new[] { "Nitrocid", "users" }).ShouldBeTrue();
-            TargetString.ContainsAnyOf(new[] { "Awesome", "developers" }).ShouldBeFalse();
+            TargetString.ContainsAnyOf(["Nitrocid", "users"]).ShouldBeTrue();
+            TargetString.ContainsAnyOf(["Awesome", "developers"]).ShouldBeFalse();
         }
 
         /// <summary>
@@ -201,7 +201,7 @@ namespace Nitrocid.Tests.Misc.Text
         public void TestStartsWithAnyOf()
         {
             string TargetString = "dotnet-hostfxr-3.1 dotnet-hostfxr-5.0 runtime-3.1 runtime-5.0 sdk-3.1 sdk-5.0";
-            TargetString.StartsWithAnyOf(new[] { "dotnet", "sdk" }).ShouldBeTrue();
+            TargetString.StartsWithAnyOf(["dotnet", "sdk"]).ShouldBeTrue();
         }
 
         /// <summary>

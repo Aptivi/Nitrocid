@@ -40,139 +40,139 @@ namespace Nitrocid.Extras.HttpShell.HTTP
         {
             { "addheader",
                 new CommandInfo("addheader", /* Localizable */ "Adds a header with the key and the value to all the upcoming requests",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "key"),
                             new CommandArgumentPart(true, "value")
                         })
-                    }, new AddHeaderCommand())
+                    ], new AddHeaderCommand())
             },
 
             { "curragent",
                 new CommandInfo("curragent", /* Localizable */ "Gets current user agent",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new CurrAgentCommand())
+                    ], new CurrAgentCommand())
             },
 
             { "delete",
                 new CommandInfo("delete", /* Localizable */ "Deletes content from HTTP server",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "request")
                         })
-                    }, new DeleteCommand())
+                    ], new DeleteCommand())
             },
 
             { "detach",
                 new CommandInfo("detach", /* Localizable */ "Exits the shell without disconnecting",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new DetachCommand())
+                    ], new DetachCommand())
             },
 
             { "editheader",
                 new CommandInfo("editheader", /* Localizable */ "Edits a key on the header to all the upcoming requests",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "key"),
                             new CommandArgumentPart(true, "value")
                         })
-                    }, new EditHeaderCommand())
+                    ], new EditHeaderCommand())
             },
 
             { "get",
                 new CommandInfo("get", /* Localizable */ "Gets the response from the HTTP server using the specified request",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "request")
                         })
-                    }, new GetCommand(), CommandFlags.Wrappable)
+                    ], new GetCommand(), CommandFlags.Wrappable)
             },
 
             { "getstring",
                 new CommandInfo("getstring", /* Localizable */ "Gets the string from the HTTP server using the specified request",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "request")
                         })
-                    }, new GetStringCommand(), CommandFlags.Wrappable)
+                    ], new GetStringCommand(), CommandFlags.Wrappable)
             },
 
             { "lsheader",
                 new CommandInfo("lsheader", /* Localizable */ "Lists the request headers",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new LsHeaderCommand(), CommandFlags.Wrappable)
+                    ], new LsHeaderCommand(), CommandFlags.Wrappable)
             },
 
             { "put",
                 new CommandInfo("put", /* Localizable */ "Puts the file to the HTTP server using the specified request",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "request"),
                             new CommandArgumentPart(true, "pathtofile")
                         })
-                    }, new PutCommand(), CommandFlags.Wrappable)
+                    ], new PutCommand(), CommandFlags.Wrappable)
             },
 
             { "putstring",
                 new CommandInfo("putstring", /* Localizable */ "Puts the string to the HTTP server using the specified request",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "request"),
                             new CommandArgumentPart(true, "string")
                         })
-                    }, new PutStringCommand(), CommandFlags.Wrappable)
+                    ], new PutStringCommand(), CommandFlags.Wrappable)
             },
 
             { "post",
                 new CommandInfo("post", /* Localizable */ "Posts the file to the HTTP server using the specified request",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "request"),
                             new CommandArgumentPart(true, "pathtofile")
                         })
-                    }, new PostCommand(), CommandFlags.Wrappable)
+                    ], new PostCommand(), CommandFlags.Wrappable)
             },
 
             { "poststring",
                 new CommandInfo("poststring", /* Localizable */ "Posts the string to the HTTP server using the specified request",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "request"),
                             new CommandArgumentPart(true, "string")
                         })
-                    }, new PostStringCommand(), CommandFlags.Wrappable)
+                    ], new PostStringCommand(), CommandFlags.Wrappable)
             },
 
             { "rmheader",
                 new CommandInfo("rmheader", /* Localizable */ "Removes a key on the header to all the upcoming requests",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "key")
                         })
-                    }, new RmHeaderCommand())
+                    ], new RmHeaderCommand())
             },
 
             { "setagent",
                 new CommandInfo("setagent", /* Localizable */ "Sets a user agent",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "userAgent")
                         })
-                    }, new SetAgentCommand())
+                    ], new SetAgentCommand())
             },
         };
 

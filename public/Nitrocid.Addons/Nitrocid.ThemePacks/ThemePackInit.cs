@@ -72,11 +72,11 @@ namespace Nitrocid.ThemePacks
         private string[] GetThemeResourceNames()
         {
             // Get all the themes provided by this pack
-            string[] nonThemes = new[]
-            {
+            string[] nonThemes =
+            [
                 nameof(ThemesResources.Culture),
                 nameof(ThemesResources.ResourceManager)
-            };
+            ];
             return PropertyManager.GetPropertiesNoEvaluation(typeof(ThemesResources)).Keys.Except(nonThemes).ToArray();
         }
     }

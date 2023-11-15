@@ -21,6 +21,8 @@ using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Users.Permissions;
+using System;
+using System.Reflection;
 
 namespace KS.Kernel.Extensions
 {
@@ -80,11 +82,11 @@ namespace KS.Kernel.Extensions
                 return null;
 
             // Assuming that we have functions, get a single function containing that name
-            if (!functions.ContainsKey(functionName))
+            if (!functions.TryGetValue(functionName, out Delegate @delegate))
                 throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("Can't find function '{0}' in addon '{1}'."), functionName, addonInfo.AddonName);
 
             // Assuming that we have that function, get a single function delegate
-            var function = functions[functionName];
+            var function = @delegate;
             if (function is null)
                 return null;
 
@@ -124,11 +126,11 @@ namespace KS.Kernel.Extensions
                 return null;
 
             // Assuming that we have properties, get a single property containing that name
-            if (!propertys.ContainsKey(propertyName))
+            if (!propertys.TryGetValue(propertyName, out PropertyInfo propertyInfo))
                 throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("Can't find property '{0}' in addon '{1}'."), propertyName, addonInfo.AddonName);
 
             // Assuming that we have that property, get a single property delegate
-            var property = propertys[propertyName];
+            var property = propertyInfo;
             if (property is null)
                 return null;
 
@@ -175,11 +177,11 @@ namespace KS.Kernel.Extensions
                 return;
 
             // Assuming that we have properties, get a single property containing that name
-            if (!propertys.ContainsKey(propertyName))
+            if (!propertys.TryGetValue(propertyName, out PropertyInfo propertyInfo))
                 throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("Can't find property '{0}' in addon '{1}'."), propertyName, addonInfo.AddonName);
 
             // Assuming that we have that property, get a single property delegate
-            var property = propertys[propertyName];
+            var property = propertyInfo;
             if (property is null)
                 return;
 
@@ -224,11 +226,11 @@ namespace KS.Kernel.Extensions
                 return null;
 
             // Assuming that we have fields, get a single field containing that name
-            if (!fields.ContainsKey(fieldName))
+            if (!fields.TryGetValue(fieldName, out FieldInfo fieldInfo))
                 throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("Can't find field '{0}' in addon '{1}'."), fieldName, addonInfo.AddonName);
 
             // Assuming that we have that field, get a single field delegate
-            var field = fields[fieldName];
+            var field = fieldInfo;
             if (field is null)
                 return null;
 
@@ -273,11 +275,11 @@ namespace KS.Kernel.Extensions
                 return;
 
             // Assuming that we have fields, get a single field containing that name
-            if (!fields.ContainsKey(fieldName))
+            if (!fields.TryGetValue(fieldName, out FieldInfo fieldInfo))
                 throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("Can't find field '{0}' in addon '{1}'."), fieldName, addonInfo.AddonName);
 
             // Assuming that we have that field, get a single field delegate
-            var field = fields[fieldName];
+            var field = fieldInfo;
             if (field is null)
                 return;
 

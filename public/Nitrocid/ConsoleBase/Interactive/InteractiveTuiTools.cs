@@ -247,10 +247,10 @@ namespace KS.ConsoleBase.Interactive
             // Populate appropriate bindings, depending on the SecondPaneInteractable value
             List<InteractiveTuiBinding> finalBindings;
             if (interactiveTui.Bindings.Count == 0)
-                finalBindings = new()
-                {
+                finalBindings =
+                [
                     new InteractiveTuiBinding(/* Localizable */ "Exit", ConsoleKey.Escape, null, true)
-                };
+                ];
             else
                 finalBindings = new(interactiveTui.Bindings)
                 {

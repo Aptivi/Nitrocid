@@ -30,7 +30,7 @@ namespace Nitrocid.LocaleTools
             // Check to see if we have the Nitrocid KS folder
             string ksJsonifyLocalesSource = "../../../../../public/Nitrocid.LocaleGen/Translations";
             string ksJsonifyLocalesAddonSource = "../../../../../public/Nitrocid.LocaleGen/AddonTranslations";
-            List<string> translations = new();
+            List<string> translations = [];
             if (Directory.Exists(ksJsonifyLocalesSource))
             {
                 // Iterate through all the source files for Nitrocid KS
@@ -43,16 +43,16 @@ namespace Nitrocid.LocaleTools
                 string[] files = Directory.GetFiles(ksJsonifyLocalesAddonSource, "*.txt");
                 translations.AddRange(files);
             }
-            return translations.ToArray();
+            return [.. translations];
         }
 
         internal static Dictionary<string, List<string>> PopulateLanguages()
         {
-            Dictionary<string, List<string>> sources = new();
+            Dictionary<string, List<string>> sources = [];
 
             // List all code files to add the sources
             foreach (string source in ListLanguageFilesForKS())
-                sources.Add(source, File.ReadAllLines(source).ToList());
+                sources.Add(source, [.. File.ReadAllLines(source)]);
 
             return sources;
         }

@@ -36,12 +36,12 @@ namespace Nitrocid.Extras.Dictionary
         {
             { "dict",
                 new CommandInfo("dict", /* Localizable */ "The English Dictionary",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "word"),
                         })
-                    }, new DictCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
+                    ], new DictCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
         };
 
@@ -57,10 +57,10 @@ namespace Nitrocid.Extras.Dictionary
         ReadOnlyDictionary<string, FieldInfo> IAddon.PubliclyAvailableFields => null;
 
         void IAddon.StartAddon() =>
-            CommandManager.RegisterAddonCommands(ShellType.Shell, addonCommands.Values.ToArray());
+            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands.Values]);
 
         void IAddon.StopAddon() =>
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, addonCommands.Keys.ToArray());
+            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Keys]);
 
         void IAddon.FinalizeAddon()
         { }

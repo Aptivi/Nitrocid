@@ -53,33 +53,31 @@ namespace KS.Kernel
                     Translate.DoTranslation("Kernel first-run"),
 
                     // Presentation list
-                    new List<PresentationPage>()
-                    {
+                    [
                         // First page - introduction
                         new PresentationPage(
                             // Page name
                             Translate.DoTranslation("Welcome!"),
                         
                             // Page elements
-                            new List<IElement>()
-                            {
+                            [
                                 new TextElement()
                                 { 
-                                    Arguments = new object[] 
-                                    { 
+                                    Arguments =
+                                    [
                                         Translate.DoTranslation("Welcome to Nitrocid Kernel! Thank you for trying it out!") + "\n"
-                                    }
+                                    ]
                                 },
                                 new TextElement()
                                 {
-                                    Arguments = new object[]
-                                    {
+                                    Arguments =
+                                    [
                                         Translate.DoTranslation("To get started, press ENTER.")
-                                    }
+                                    ]
                                 }
-                            }
+                            ]
                         )
-                    }
+                    ]
                 );
 
                 Slideshow firstRunPresStep1 = new(
@@ -87,25 +85,23 @@ namespace KS.Kernel
                     Translate.DoTranslation("Kernel first-run"),
 
                     // Presentation list
-                    new List<PresentationPage>()
-                    {
+                    [
                         // Third page - language selection
                         new PresentationPage(
                             // Page name
                             Translate.DoTranslation("Select your language"),
                         
                             // Page elements
-                            new List<IElement>()
-                            {
+                            [
                                 new ChoiceInputElement()
                                 {
-                                    Arguments = new object[]
-                                    {
+                                    Arguments =
+                                    [
                                         Translate.DoTranslation("Select your language. By default, the kernel uses the English language, but you can select any other language here.") + " " + 
                                         Translate.DoTranslation("Based on your language settings on your system, the appropriate language is") + $" {LanguageManager.InferLanguageFromSystem()}. " + 
                                         Translate.DoTranslation("Write the language code listed below:"),
                                         LanguageManager.Languages.Keys,
-                                    },
+                                    ],
                                     InvokeActionInput =
                                         (args) => { 
                                             langCode = (string)args[0];
@@ -117,14 +113,14 @@ namespace KS.Kernel
                                 },
                                 new TextElement()
                                 {
-                                    Arguments = new object[]
-                                    {
+                                    Arguments =
+                                    [
                                         Translate.DoTranslation("Press the ENTER key to continue.") + "\n"
-                                    }
+                                    ]
                                 }
-                            }
+                            ]
                         )
-                    }
+                    ]
                 );
 
                 Slideshow firstRunPresStep2 = new(
@@ -132,46 +128,44 @@ namespace KS.Kernel
                     Translate.DoTranslation("Kernel first-run"),
 
                     // Presentation list
-                    new List<PresentationPage>()
-                    {
+                    [
                         // Second page - username creation
                         new PresentationPage(
                             // Page name
                             Translate.DoTranslation("Create your first user"),
                         
                             // Page elements
-                            new List<IElement>()
-                            {
+                            [
                                 new TextElement()
                                 {
-                                    Arguments = new object[]
-                                    {
+                                    Arguments =
+                                    [
                                         Translate.DoTranslation("We'll help you create your own username. Select any name you want. This could be your nickname or your short name, as long as your username doesn't contain spaces and special characters.")
-                                    }
+                                    ]
                                 },
                                 new DynamicTextElement()
                                 {
-                                    Arguments = new object[]
-                                    {
+                                    Arguments =
+                                    [
                                         () => stepFailureReason
-                                    }
+                                    ]
                                 },
                                 new InputElement()
                                 {
-                                    Arguments = new object[]
-                                    {
+                                    Arguments =
+                                    [
                                         Translate.DoTranslation("Enter the username") + ": "
-                                    },
+                                    ],
                                     InvokeActionInput =
                                         (args) =>
                                             user = string.IsNullOrWhiteSpace((string)args[0]) ? "owner" : (string)args[0]
                                 },
                                 new MaskedInputElement()
                                 {
-                                    Arguments = new object[]
-                                    {
+                                    Arguments =
+                                    [
                                         Translate.DoTranslation("Enter the password") + ": "
-                                    },
+                                    ],
                                     InvokeActionInput =
                                         (args) => {
                                             try
@@ -192,14 +186,14 @@ namespace KS.Kernel
                                 },
                                 new TextElement()
                                 {
-                                    Arguments = new object[]
-                                    {
+                                    Arguments =
+                                    [
                                         Translate.DoTranslation("Press the ENTER key to continue.") + "\n"
-                                    }
+                                    ]
                                 }
-                            }
+                            ]
                         )
-                    }
+                    ]
                 );
 
                 Slideshow firstRunPresStep3 = new(
@@ -207,41 +201,39 @@ namespace KS.Kernel
                     Translate.DoTranslation("Kernel first-run"),
 
                     // Presentation list
-                    new List<PresentationPage>()
-                    {
+                    [
                         // Fourth page - Console test
                         new PresentationPage(
                             // Page name
                             Translate.DoTranslation("Testing your console for true-color support"),
                         
                             // Page elements
-                            new List<IElement>()
-                            {
+                            [
                                 new TextElement()
                                 {
-                                    Arguments = new object[]
-                                    {
+                                    Arguments =
+                                    [
                                         KernelPlatform.IsOnWindows() ?
                                             Translate.DoTranslation("You must be running either ConEmu or a Windows 10 command prompt with VT processing enabled.") + "\n" :
                                             Translate.DoTranslation("Your terminal is {0} on {1}.") + "\n",
                                         KernelPlatform.GetTerminalType(),
                                         KernelPlatform.GetTerminalEmulator()
-                                    }
+                                    ]
                                 },
                                 new TextElement()
                                 {
-                                    Arguments = new object[]
-                                    {
+                                    Arguments =
+                                    [
                                         RenderBandsForFirstRun()
-                                    }
+                                    ]
                                 },
                                 new ChoiceInputElement()
                                 {
-                                    Arguments = new object[]
-                                    {
+                                    Arguments =
+                                    [
                                         Translate.DoTranslation("Do these ramps look right to you? They should transition smoothly."),
                                         "y", "n"
-                                    },
+                                    ],
                                     InvokeActionInput =
                                         (args) => {
                                             supportsTrueColor = (string)args[0] == "y";
@@ -251,14 +243,14 @@ namespace KS.Kernel
                                 },
                                 new TextElement()
                                 {
-                                    Arguments = new object[]
-                                    {
+                                    Arguments =
+                                    [
                                         Translate.DoTranslation("Press the ENTER key to continue.") + "\n"
-                                    }
+                                    ]
                                 }
-                            }
+                            ]
                         )
-                    }
+                    ]
                 );
 
                 Slideshow firstRunPresStep4 = new(
@@ -266,30 +258,28 @@ namespace KS.Kernel
                     Translate.DoTranslation("Kernel first-run"),
 
                     // Presentation list
-                    new List<PresentationPage>()
-                    {
+                    [
                         // Fifth page - Automatic updates
                         new PresentationPage(
                             // Page name
                             Translate.DoTranslation("Automatic updates"),
                         
                             // Page elements
-                            new List<IElement>()
-                            {
+                            [
                                 new TextElement()
                                 {
-                                    Arguments = new object[]
-                                    {
+                                    Arguments =
+                                    [
                                         Translate.DoTranslation("Nitrocid KS currently updates itself to get the most recent version that includes general improvements and bug fixes. New major versions usually include breaking changes and new exciting features.")
-                                    }
+                                    ]
                                 },
                                 new ChoiceInputElement()
                                 {
-                                    Arguments = new object[]
-                                    {
+                                    Arguments =
+                                    [
                                         Translate.DoTranslation("Do you want Nitrocid KS to automatically check for updates?"),
                                         "y", "n"
-                                    },
+                                    ],
                                     InvokeActionInput =
                                         (args) => {
                                             Config.MainConfig.CheckUpdateStart = (string)args[0] == "y";
@@ -297,18 +287,18 @@ namespace KS.Kernel
                                 },
                                 new TextElement()
                                 {
-                                    Arguments = new object[]
-                                    {
+                                    Arguments =
+                                    [
                                         Translate.DoTranslation("In addition to automatically checking for updates, Nitrocid KS can also download the update file automatically.")
-                                    }
+                                    ]
                                 },
                                 new ChoiceInputElement()
                                 {
-                                    Arguments = new object[]
-                                    {
+                                    Arguments =
+                                    [
                                         Translate.DoTranslation("Do you want Nitrocid KS to automatically download updates?"),
                                         "y", "n"
-                                    },
+                                    ],
                                     InvokeActionInput =
                                         (args) => {
                                             Config.MainConfig.AutoDownloadUpdate = (string)args[0] == "y";
@@ -318,21 +308,21 @@ namespace KS.Kernel
                                 },
                                 new TextElement()
                                 {
-                                    Arguments = new object[]
-                                    {
+                                    Arguments =
+                                    [
                                         Translate.DoTranslation("You can always check for kernel updates using the \"update\" command.") + "\n"
-                                    }
+                                    ]
                                 },
                                 new TextElement()
                                 {
-                                    Arguments = new object[]
-                                    {
+                                    Arguments =
+                                    [
                                         Translate.DoTranslation("Press the ENTER key to continue.") + "\n"
-                                    }
+                                    ]
                                 }
-                            }
+                            ]
                         )
-                    }
+                    ]
                 );
 
                 Slideshow firstRunPresOutro = new(
@@ -340,37 +330,35 @@ namespace KS.Kernel
                     Translate.DoTranslation("Kernel first-run"),
 
                     // Presentation list
-                    new List<PresentationPage>()
-                    {
+                    [
                         // Third page - get started
                         new PresentationPage(
                             // Page name
                             Translate.DoTranslation("Get Started!"),
                         
                             // Page elements
-                            new List<IElement>()
-                            {
+                            [
                                 new DynamicTextElement()
                                 {
-                                    Arguments = new object[]
-                                    {
+                                    Arguments =
+                                    [
                                         () => TextTools.FormatString(Translate.DoTranslation("Congratulations! You now have a user account, {0}!"), user) + "\n"
-                                    }
+                                    ]
                                 },
                                 new TextElement()
                                 {
-                                    Arguments = new object[]
-                                    {
+                                    Arguments =
+                                    [
                                         Translate.DoTranslation("Press the ENTER key to get started using the kernel and log-in to your new account. Good luck!") + "\n"
-                                    }
+                                    ]
                                 }
-                            }
+                            ]
                         )
-                    }
+                    ]
                 );
 
                 // Assign all first runs
-                Slideshow[] firstRuns = {
+                Slideshow[] firstRuns = [
                     // Introduction
                     firstRunPresIntro,
 
@@ -379,7 +367,7 @@ namespace KS.Kernel
 
                     // Outro
                     firstRunPresOutro 
-                };
+                ];
 
                 // Present all presentations
                 for (int step = 0; step < firstRuns.Length; step++)

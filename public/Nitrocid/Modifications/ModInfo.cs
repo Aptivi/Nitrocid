@@ -54,7 +54,7 @@ namespace KS.Modifications
         /// <summary>
         /// The localization information containing the mod's strings
         /// </summary>
-        public Dictionary<string, string[]> ModStrings { get; private set; } = new();
+        public Dictionary<string, string[]> ModStrings { get; private set; } = [];
 
         /// <summary>
         /// Creates new mod info instance

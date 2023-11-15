@@ -27,14 +27,14 @@ namespace KS.Kernel.Debugging.Testing.Facades.FacadeData
 {
     internal class CliInfoPaneTestData : BaseInteractiveTui, IInteractiveTui
     {
-        internal static List<string> strings = new();
+        internal static List<string> strings = [];
 
-        public override List<InteractiveTuiBinding> Bindings { get; set; } = new()
-        {
+        public override List<InteractiveTuiBinding> Bindings { get; set; } =
+        [
             new InteractiveTuiBinding(/* Localizable */ "Add",         ConsoleKey.F1, (_, index) => Add(index), true),
             new InteractiveTuiBinding(/* Localizable */ "Delete",      ConsoleKey.F2, (_, index) => Remove(index), true),
             new InteractiveTuiBinding(/* Localizable */ "Delete Last", ConsoleKey.F3, (_, _)     => RemoveLast(), true),
-        };
+        ];
 
         /// <inheritdoc/>
         public override IEnumerable PrimaryDataSource =>

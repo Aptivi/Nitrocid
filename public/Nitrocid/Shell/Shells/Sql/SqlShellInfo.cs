@@ -40,23 +40,23 @@ namespace KS.Shell.Shells.Sql
         {
             { "cmd",
                 new CommandInfo("cmd", /* Localizable */ "Executes an SQL query",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new CmdCommand())
+                    ], new CmdCommand())
             },
 
             { "dbinfo",
                 new CommandInfo("dbinfo", /* Localizable */ "Database info",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new DbInfoCommand())
+                    ], new DbInfoCommand())
             },
 
             { "tui",
                 new CommandInfo("tui", /* Localizable */ "Opens the SQL file in the interactive hex editor TUI",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new TuiCommand())
+                    ], new TuiCommand())
             },
         };
 

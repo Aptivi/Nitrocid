@@ -69,8 +69,8 @@ namespace Nitrocid.Analyzers.ConsoleBase
                 {
                     // Before making the diagnostic, we need to first check for any existing methods from the ConsoleWrapper class.
                     // For contributors: Update the below array when new functions get added to ConsoleWrapper or changed.
-                    string[] wrapperFunctions = new[]
-                    {
+                    string[] wrapperFunctions =
+                    [
                         nameof(Console.Out),
                         nameof(Console.CursorLeft),
                         nameof(Console.CursorTop),
@@ -96,7 +96,7 @@ namespace Nitrocid.Analyzers.ConsoleBase
                         nameof(Console.ReadKey),
                         nameof(Console.Write),
                         nameof(Console.WriteLine),
-                    };
+                    ];
 
                     // Let's see if the caller tries to access one of the above Console functions and/or properties.
                     var name = (IdentifierNameSyntax)exp.Name;

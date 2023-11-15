@@ -64,7 +64,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Scripting
             UESHVariables.Variables.ShouldNotBeEmpty();
             UESHVariables.SetVariable("$test_var", "test").ShouldBeTrue();
             UESHVariables.GetVariable("$test_var").ShouldBe("test");
-            UESHVariables.SetVariables("$test_var_arr", new[] { "Nitrocid", "KS" }).ShouldBeTrue();
+            UESHVariables.SetVariables("$test_var_arr", ["Nitrocid", "KS"]).ShouldBeTrue();
             UESHVariables.GetVariable("$test_var_arr[0]").ShouldBe("Nitrocid");
             UESHVariables.GetVariable("$test_var_arr[1]").ShouldBe("KS");
             string ExpectedCommand = "rm test";

@@ -43,7 +43,7 @@ namespace KS.Kernel.Configuration
     public static class Config
     {
 
-        internal static Dictionary<string, BaseKernelConfig> customConfigurations = new();
+        internal static Dictionary<string, BaseKernelConfig> customConfigurations = [];
         internal static Dictionary<string, BaseKernelConfig> baseConfigurations = new()
         {
             { nameof(KernelMainConfig),   new KernelMainConfig() },

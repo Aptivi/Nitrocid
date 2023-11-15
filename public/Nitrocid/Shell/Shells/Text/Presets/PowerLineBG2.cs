@@ -62,10 +62,10 @@ namespace KS.Shell.Shells.Text.Presets
             char TransitionPartChar = Convert.ToChar(0xE0B1);
 
             // PowerLine presets
-            List<PowerLineSegment> segments = new()
-            {
+            List<PowerLineSegment> segments =
+            [
                 new PowerLineSegment(new Color(255, 85, 255), new Color(25, 25, 25), Path.GetFileName(TextEditShellCommon.FileStream.Name), default, TransitionPartChar)
-            };
+            ];
 
             // Builder
             var PresetStringBuilder = new StringBuilder();
@@ -84,10 +84,10 @@ namespace KS.Shell.Shells.Text.Presets
             char TransitionPartChar = Convert.ToChar(0xE0B1);
 
             // PowerLine presets
-            List<PowerLineSegment> segments = new()
-            {
+            List<PowerLineSegment> segments =
+            [
                 new PowerLineSegment(new Color(255, 85, 255), new Color(25, 25, 25), "text.txt", default, TransitionPartChar)
-            };
+            ];
 
             // Builder
             var PresetStringBuilder = new StringBuilder();
@@ -103,10 +103,10 @@ namespace KS.Shell.Shells.Text.Presets
         internal override string PresetPromptCompletionBuilder()
         {
             // Segments
-            List<PowerLineSegment> segments = new()
-            {
+            List<PowerLineSegment> segments =
+            [
                 new PowerLineSegment(new Color(255, 85, 255), new Color(25, 25, 25), "+"),
-            };
+            ];
 
             // Builder
             var PresetStringBuilder = new StringBuilder();

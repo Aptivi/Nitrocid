@@ -77,8 +77,8 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
             string keyDesc = Translate.DoTranslation(key.Description);
             string finalSection = SettingsApp.RenderHeader(keyName, keyDesc);
             int Answer = SelectionStyle.PromptSelection(finalSection,
-                string.Join("/", itemNums), items.ToArray(),
-                string.Join("/", altSectionNums), altSections.ToArray());
+                string.Join("/", itemNums), [.. items],
+                string.Join("/", altSectionNums), [.. altSections]);
             bail = true;
             return Answer;
         }

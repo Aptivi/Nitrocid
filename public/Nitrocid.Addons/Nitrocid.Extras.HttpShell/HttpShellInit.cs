@@ -39,9 +39,9 @@ namespace Nitrocid.Extras.HttpShell
         {
             { "http",
                 new CommandInfo("http", /* Localizable */ "Starts the HTTP shell",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new HttpCommandExec())
+                    ], new HttpCommandExec())
             },
         };
 
@@ -65,7 +65,7 @@ namespace Nitrocid.Extras.HttpShell
             ConfigTools.RegisterBaseSetting(config);
             ShellManager.reservedShells.Add("HTTPShell");
             ShellManager.RegisterShell("HTTPShell", new HTTPShellInfo());
-            CommandManager.RegisterAddonCommands(ShellType.Shell, addonCommands.Values.ToArray());
+            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands.Values]);
         }
 
         void IAddon.StartAddon()
@@ -76,7 +76,7 @@ namespace Nitrocid.Extras.HttpShell
             ShellManager.availableShells.Remove("HTTPShell");
             PromptPresetManager.CurrentPresets.Remove("HTTPShell");
             ShellManager.reservedShells.Remove("HTTPShell");
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, addonCommands.Keys.ToArray());
+            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Keys]);
             ConfigTools.UnregisterBaseSetting(nameof(HttpConfig));
         }
     }

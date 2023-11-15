@@ -45,11 +45,11 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
         private static bool player2Won = false;
         private static int SpaceshipHeightPlayer1 = 0;
         private readonly static int MaxBulletsPlayer1 = 10;
-        private readonly static List<(int, int)> BulletsPlayer1 = new();
+        private readonly static List<(int, int)> BulletsPlayer1 = [];
         private static int SpaceshipHeightPlayer2 = 0;
         private readonly static int MaxBulletsPlayer2 = 10;
-        private readonly static List<(int, int)> BulletsPlayer2 = new();
-        private readonly static List<(int, int)> Stars = new();
+        private readonly static List<(int, int)> BulletsPlayer2 = [];
+        private readonly static List<(int, int)> Stars = [];
 
         /// <summary>
         /// Use PowerLine characters for the spaceship?
@@ -109,14 +109,14 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             {
                 // Simulation mode
                 ConsoleKey Keypress = 0;
-                ConsoleKey[] possibleKeys = new[]
-                { 
+                ConsoleKey[] possibleKeys =
+                [
                     // Player 1
                     ConsoleKey.UpArrow, ConsoleKey.DownArrow, ConsoleKey.Enter,
 
                     // Player 2
                     ConsoleKey.W, ConsoleKey.S, ConsoleKey.Spacebar
-                };
+                ];
                 while (!GameEnded)
                 {
                     float PossibilityToChange = (float)RandomDriver.RandomDouble();

@@ -47,7 +47,7 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
             bool promptBail = false;
             while (!promptBail)
             {
-                List<InputChoiceInfo> choices = new();
+                List<InputChoiceInfo> choices = [];
 
                 // Populate input choices
                 int targetNum = 1;
@@ -59,10 +59,10 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
                         choices.Add(new InputChoiceInfo($"{targetNum}", target.ToString()));
                     targetNum++;
                 }
-                List<InputChoiceInfo> altChoices = new()
-                {
+                List<InputChoiceInfo> altChoices =
+                [
                     new InputChoiceInfo($"{choices.Count + 1}", Translate.DoTranslation("Exit")),
-                };
+                ];
 
                 // Wait for an answer and handle it
                 int selectionAnswer = SelectionStyle.PromptSelection(finalSection, choices, altChoices, true);
@@ -73,12 +73,11 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
                     // Tell the user to choose between adding, removing, or exiting
                     int selectedItemIdx = selectionAnswer - 1;
                     int result = InfoBoxButtonsColor.WriteInfoBoxButtons(
-                        new[]
-                        {
+                        [
                             Translate.DoTranslation("Keep it"),
                             Translate.DoTranslation("Remove it"),
                             Translate.DoTranslation("Add new item"),
-                        },
+                        ],
                         Translate.DoTranslation("What do you want to do with this item?")
                     ) + 1;
 

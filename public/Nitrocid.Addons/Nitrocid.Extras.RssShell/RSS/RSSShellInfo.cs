@@ -41,7 +41,7 @@ namespace Nitrocid.Extras.RssShell.RSS
         {
             { "articleinfo",
                 new CommandInfo("articleinfo", /* Localizable */ "Gets the article info",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "feednum", new CommandArgumentPartOptions()
@@ -49,47 +49,47 @@ namespace Nitrocid.Extras.RssShell.RSS
                                 IsNumeric = true
                             })
                         })
-                    }, new ArticleInfoCommand())
+                    ], new ArticleInfoCommand())
             },
 
             { "bookmark",
                 new CommandInfo("bookmark", /* Localizable */ "Bookmarks the feed",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new BookmarkCommand())
+                    ], new BookmarkCommand())
             },
 
             { "detach",
                 new CommandInfo("detach", /* Localizable */ "Exits the shell without disconnecting",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new DetachCommand())
+                    ], new DetachCommand())
             },
 
             { "feedinfo",
                 new CommandInfo("feedinfo", /* Localizable */ "Gets the feed info",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new FeedInfoCommand())
+                    ], new FeedInfoCommand())
             },
 
             { "list",
                 new CommandInfo("list", /* Localizable */ "Lists all feeds",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new ListCommand(), CommandFlags.Wrappable)
+                    ], new ListCommand(), CommandFlags.Wrappable)
             },
 
             { "listbookmark",
                 new CommandInfo("listbookmark", /* Localizable */ "Lists all bookmarked feeds",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new ListBookmarkCommand(), CommandFlags.Wrappable)
+                    ], new ListBookmarkCommand(), CommandFlags.Wrappable)
             },
 
             { "read",
                 new CommandInfo("read", /* Localizable */ "Reads a feed in a web browser",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "feednum", new CommandArgumentPartOptions()
@@ -97,16 +97,16 @@ namespace Nitrocid.Extras.RssShell.RSS
                                 IsNumeric = true
                             })
                         })
-                    }, new ReadCommand())
+                    ], new ReadCommand())
             },
 
             { "search",
                 new CommandInfo("search", /* Localizable */ "Searches the feed for a phrase in title and/or description",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "phrase")
-                        }, new[] {
+                        ], [
                             new SwitchInfo("t", /* Localizable */ "Search for title", new SwitchOptions()
                             {
                                 AcceptsValues = false
@@ -123,15 +123,15 @@ namespace Nitrocid.Extras.RssShell.RSS
                             {
                                 AcceptsValues = false
                             })
-                        })
-                    }, new SearchCommand(), CommandFlags.Wrappable)
+                        ])
+                    ], new SearchCommand(), CommandFlags.Wrappable)
             },
 
             { "unbookmark",
                 new CommandInfo("unbookmark", /* Localizable */ "Removes the feed bookmark",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new UnbookmarkCommand())
+                    ], new UnbookmarkCommand())
             },
         };
 

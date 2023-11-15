@@ -36,12 +36,12 @@ namespace Nitrocid.Extras.LanguageStudio
         {
             { "mklang",
                 new CommandInfo("mklang", /* Localizable */ "Makes a new language",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "pathToTranslations"),
                         })
-                    }, new MkLangCommand())
+                    ], new MkLangCommand())
             },
         };
 
@@ -57,10 +57,10 @@ namespace Nitrocid.Extras.LanguageStudio
         ReadOnlyDictionary<string, FieldInfo> IAddon.PubliclyAvailableFields => null;
 
         void IAddon.StartAddon() =>
-            CommandManager.RegisterAddonCommands(ShellType.Shell, addonCommands.Values.ToArray());
+            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands.Values]);
 
         void IAddon.StopAddon() =>
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, addonCommands.Keys.ToArray());
+            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Keys]);
 
         void IAddon.FinalizeAddon()
         { }

@@ -58,10 +58,10 @@ namespace KS.Shell.Shells.Text.Presets
         internal override string PresetPromptBuilder()
         {
             // PowerLine presets
-            List<PowerLineSegment> segments = new()
-            {
+            List<PowerLineSegment> segments =
+            [
                 new PowerLineSegment(new Color(255, 255, 85), new Color(127, 127, 43), Path.GetFileName(TextEditShellCommon.FileStream.Name))
-            };
+            ];
 
             // Builder
             var PresetStringBuilder = new StringBuilder();
@@ -77,10 +77,10 @@ namespace KS.Shell.Shells.Text.Presets
         internal override string PresetPromptBuilderShowcase()
         {
             // PowerLine presets
-            List<PowerLineSegment> segments = new()
-            {
+            List<PowerLineSegment> segments =
+            [
                 new PowerLineSegment(new Color(255, 255, 85), new Color(127, 127, 43), "text.txt")
-            };
+            ];
 
             // Builder
             var PresetStringBuilder = new StringBuilder();
@@ -96,10 +96,10 @@ namespace KS.Shell.Shells.Text.Presets
         internal override string PresetPromptCompletionBuilder()
         {
             // Segments
-            List<PowerLineSegment> segments = new()
-            {
+            List<PowerLineSegment> segments =
+            [
                 new PowerLineSegment(new Color(255, 255, 85), new Color(127, 127, 43), "+"),
-            };
+            ];
 
             // Builder
             var PresetStringBuilder = new StringBuilder();

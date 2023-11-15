@@ -60,10 +60,10 @@ namespace KS.Users
         public static UserInfo CurrentUser =>
             CurrentUserInfo;
 
-        internal static readonly UserInfo fallbackRootAccount = new("root", Encryption.GetEncryptedString("", "SHA256"), Array.Empty<string>(), "System Account", "", Array.Empty<string>(), UserFlags.Administrator, new());
+        internal static readonly UserInfo fallbackRootAccount = new("root", Encryption.GetEncryptedString("", "SHA256"), Array.Empty<string>(), "System Account", "", Array.Empty<string>(), UserFlags.Administrator, []);
         internal static UserInfo CurrentUserInfo = fallbackRootAccount;
-        internal static List<UserInfo> Users = new() { CurrentUserInfo };
-        private static readonly List<UserInfo> LockedUsers = new();
+        internal static List<UserInfo> Users = [CurrentUserInfo];
+        private static readonly List<UserInfo> LockedUsers = [];
 
         // ---------- User Management ----------
         /// <summary>
@@ -97,7 +97,7 @@ namespace KS.Users
                 }
 
                 // Add user locally
-                var initedUser = new UserInfo(uninitUser, unpassword, Array.Empty<string>(), "", "", Array.Empty<string>(), UserFlags.None, new());
+                var initedUser = new UserInfo(uninitUser, unpassword, Array.Empty<string>(), "", "", Array.Empty<string>(), UserFlags.None, []);
                 if (!UserExists(uninitUser))
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Added user {0}!", uninitUser);
@@ -139,7 +139,7 @@ namespace KS.Users
             JArray userInfoArrays = (JArray)JsonConvert.DeserializeObject(UsersTokenContent);
 
             // Now, get each user from the config file
-            List<UserInfo> users = new();
+            List<UserInfo> users = [];
             int rootIdx = 0;
             bool sawRoot = false;
             foreach (var userInfoArray in userInfoArrays)

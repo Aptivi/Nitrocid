@@ -57,7 +57,7 @@ namespace KS.Misc.Notifications
         internal static KernelThread NotifThread = new("Notification Thread", false, NotifListen) { isCritical = true };
         private static bool sent = false;
         private static bool dismissing;
-        private static readonly List<Notification> notifRecents = new();
+        private static readonly List<Notification> notifRecents = [];
 
         /// <summary>
         /// Recent notifications

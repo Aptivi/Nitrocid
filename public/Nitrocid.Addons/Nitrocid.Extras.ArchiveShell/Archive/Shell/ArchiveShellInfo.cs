@@ -41,63 +41,63 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
         {
             { "cdir",
                 new CommandInfo("cdir", /* Localizable */ "Gets current local directory",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new CDirCommand())
+                    ], new CDirCommand())
             },
 
             { "chdir",
                 new CommandInfo("chdir", /* Localizable */ "Changes directory",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "directory")
                         })
-                    }, new ChDirCommand())
+                    ], new ChDirCommand())
             },
 
             { "chadir",
                 new CommandInfo("chadir", /* Localizable */ "Changes archive directory",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "archivedirectory")
                         })
-                    }, new ChADirCommand())
+                    ], new ChADirCommand())
             },
 
             { "get",
                 new CommandInfo("get", /* Localizable */ "Extracts a file to a specified directory or a current directory",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "entry"),
                             new CommandArgumentPart(false, "where")
-                        }, new[] {
+                        ], [
                             new SwitchInfo("absolute", /* Localizable */ "Indicates that the target path is absolute")
-                        })
-                    }, new GetCommand())
+                        ])
+                    ], new GetCommand())
             },
 
             { "list",
                 new CommandInfo("list", /* Localizable */ "Lists all files inside the archive",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(false, "directory")
                         })
-                    }, new ListCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
+                    ], new ListCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
             },
 
             { "pack",
                 new CommandInfo("pack", /* Localizable */ "Packs a local file to the archive",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "localfile"),
                             new CommandArgumentPart(false, "where")
                         })
-                    }, new PackCommand())
+                    ], new PackCommand())
             },
         };
 

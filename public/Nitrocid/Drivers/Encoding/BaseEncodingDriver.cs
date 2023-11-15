@@ -136,10 +136,10 @@ namespace KS.Drivers.Encoding
             
             // Get the wrapped bytes, assuming that all the byte numbers are padded to three digits.
             string[] encodedStrings = TextTools.GetWrappedSentences(encoded, 3);
-            List<byte> bytes = new();
+            List<byte> bytes = [];
             foreach (string encodedString in encodedStrings)
                 bytes.Add(byte.Parse(encodedString));
-            return bytes.ToArray();
+            return [.. bytes];
         }
 
         /// <inheritdoc/>

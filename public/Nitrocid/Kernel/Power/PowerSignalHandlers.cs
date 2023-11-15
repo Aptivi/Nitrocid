@@ -26,7 +26,7 @@ namespace KS.Kernel.Power
 {
     internal static class PowerSignalHandlers
     {
-        internal static List<PosixSignalRegistration> signalHandlers = new();
+        internal static List<PosixSignalRegistration> signalHandlers = [];
         internal static bool initialized = false;
 
         internal static void RegisterHandlers()

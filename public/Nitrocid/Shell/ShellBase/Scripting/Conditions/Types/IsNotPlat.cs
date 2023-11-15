@@ -19,6 +19,7 @@
 
 using KS.Kernel.Exceptions;
 using KS.Languages;
+using System;
 
 namespace KS.Shell.ShellBase.Scripting.Conditions.Types
 {
@@ -41,11 +42,11 @@ namespace KS.Shell.ShellBase.Scripting.Conditions.Types
         public override bool IsConditionSatisfied(string FirstVariable, string SecondVariable)
         {
             // FirstVariable is actually a platform needed for parsing.
-            if (!IsPlatCondition.Platforms.ContainsKey(FirstVariable))
+            if (!IsPlatCondition.Platforms.TryGetValue(FirstVariable, out Func<bool> platFunc))
                 throw new KernelException(KernelExceptionType.UESHConditionParse, Translate.DoTranslation("Platform {0} specified is invalid."), FirstVariable);
 
             // Get the action needed to get the comparer and test the condition defined above
-            return !IsPlatCondition.Platforms[FirstVariable]();
+            return !platFunc();
         }
 
     }

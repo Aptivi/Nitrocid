@@ -65,12 +65,12 @@ namespace KS.Shell.Shells.UESH.Presets
             char PadlockChar = Convert.ToChar(0xE0A2);
 
             // PowerLine presets
-            List<PowerLineSegment> segments = new()
-            {
+            List<PowerLineSegment> segments =
+            [
                 new PowerLineSegment(new Color(255, 255, 85), new Color(127, 127, 43), UserManagement.CurrentUser.Username),
                 new PowerLineSegment(new Color(0, 0, 0), new Color(255, 255, 85), NetworkTools.HostName, PadlockChar),
                 new PowerLineSegment(new Color(0, 0, 0), new Color(255, 255, 255), $"{CurrentDirectory.CurrentDir}{(Config.MainConfig.ShowShellCount ? $" [{ShellManager.ShellStack.Count}]" : "")}"),
-            };
+            ];
 
             // Builder
             var PresetStringBuilder = new StringBuilder();
@@ -100,12 +100,12 @@ namespace KS.Shell.Shells.UESH.Presets
             char PadlockChar = Convert.ToChar(0xE0A2);
 
             // PowerLine presets
-            List<PowerLineSegment> segments = new()
-            {
+            List<PowerLineSegment> segments =
+            [
                 new PowerLineSegment(new Color(255, 255, 85), new Color(127, 127, 43), "user"),
                 new PowerLineSegment(new Color(0, 0, 0), new Color(255, 255, 85), "host", PadlockChar),
                 new PowerLineSegment(new Color(0, 0, 0), new Color(255, 255, 255), "/home/user [1]"),
-            };
+            ];
 
             // Builder
             var PresetStringBuilder = new StringBuilder();
@@ -132,10 +132,10 @@ namespace KS.Shell.Shells.UESH.Presets
         internal override string PresetPromptCompletionBuilder()
         {
             // Segments
-            List<PowerLineSegment> segments = new()
-            {
+            List<PowerLineSegment> segments =
+            [
                 new PowerLineSegment(new Color(255, 255, 85), new Color(127, 127, 43), "+"),
-            };
+            ];
 
             // Builder
             var PresetStringBuilder = new StringBuilder();

@@ -48,9 +48,9 @@ namespace KS.Shell.ShellBase.Arguments
         /// <summary>
         /// Command switches
         /// </summary>
-        public SwitchInfo[] Switches { get; private set; } = new[] {
+        public SwitchInfo[] Switches { get; private set; } = [
             new SwitchInfo("set", /* Localizable */ "Sets the value of the output to the selected UESH variable", false, true)
-        };
+        ];
         /// <summary>
         /// Whether to accept the -set switch to set the UESH variable value
         /// </summary>
@@ -65,7 +65,7 @@ namespace KS.Shell.ShellBase.Arguments
                 var usageBuilder = new StringBuilder();
 
                 // Enumerate through the available switches first
-                List<string> switchStrings = new();
+                List<string> switchStrings = [];
                 foreach (var Switch in Switches)
                 {
                     bool required = Switch.IsRequired;

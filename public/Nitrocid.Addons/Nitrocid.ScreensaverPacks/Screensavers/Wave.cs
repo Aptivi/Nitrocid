@@ -245,7 +245,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             int Count = ConsoleWrapper.WindowWidth;
 
             // Then, go ahead and make these bars wave themselves.
-            List<int> CurrentPos = new();
+            List<int> CurrentPos = [];
             double Frequency = Math.PI / WaveSettings.WaveFrequencyLevel;
 
             // Set the current positions

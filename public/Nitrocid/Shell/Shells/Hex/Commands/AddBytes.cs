@@ -61,7 +61,7 @@ namespace KS.Shell.Shells.Hex.Commands
             }
 
             // Add the new bytes
-            HexEditTools.AddNewBytes(FinalBytes.ToArray());
+            HexEditTools.AddNewBytes([.. FinalBytes]);
             return 0;
         }
 

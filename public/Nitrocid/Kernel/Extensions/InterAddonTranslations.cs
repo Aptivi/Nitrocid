@@ -74,8 +74,8 @@ namespace KS.Kernel.Extensions
         /// <exception cref="KernelException"></exception>
         public static string GetAddonName(KnownAddons addon)
         {
-            if (knownAddons.ContainsKey(addon))
-                return knownAddons[addon];
+            if (knownAddons.TryGetValue(addon, out string name))
+                return name;
             throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("No such addon type '{0}'"), addon.ToString());
         }
 
@@ -87,8 +87,8 @@ namespace KS.Kernel.Extensions
         /// <exception cref="KernelException"></exception>
         public static string GetLocalizedAddonName(KnownAddons addon)
         {
-            if (knownAddons.ContainsKey(addon))
-                return Translate.DoTranslation(knownAddons[addon]);
+            if (knownAddons.TryGetValue(addon, out string name))
+                return Translate.DoTranslation(name);
             throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("No such addon type '{0}'"), addon.ToString());
         }
     }

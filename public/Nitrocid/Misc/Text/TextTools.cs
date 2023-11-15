@@ -62,7 +62,7 @@ namespace KS.Misc.Text
         public static string[] GetWrappedSentences(string text, int maximumLength, int indentLength)
         {
             if (string.IsNullOrEmpty(text))
-                return new string[] { "" };
+                return [""];
 
             // Split the paragraph into sentences that have the length of maximum characters that can be printed in various terminal
             // sizes.
@@ -133,7 +133,7 @@ namespace KS.Misc.Text
             }
 
             DebugWriter.WriteDebug(DebugLevel.I, "{0} incomplete sentences...", IncompleteSentences.Count);
-            return IncompleteSentences.ToArray();
+            return [.. IncompleteSentences];
         }
 
         /// <summary>

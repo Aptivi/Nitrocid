@@ -221,8 +221,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         private (int, int) dotCurrentPosition;
         private DirectionMode dotDirection = DirectionMode.CenterMiddleToCenterRight;
         private Color dotColor = Color.Empty;
-        private readonly List<Color> dotColorShades = new();
-        private readonly List<(int, int)> dotPositions = new();
+        private readonly List<Color> dotColorShades = [];
+        private readonly List<(int, int)> dotPositions = [];
 
         /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "Mesmerize";

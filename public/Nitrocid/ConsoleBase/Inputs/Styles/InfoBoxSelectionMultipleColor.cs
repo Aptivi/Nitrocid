@@ -74,11 +74,11 @@ namespace KS.ConsoleBase.Inputs.Styles
                                             char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                             char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, params object[] vars)
         {
-            List<int> selectedChoices = new();
+            List<int> selectedChoices = [];
 
             // First, verify that we have selections
             if (selections is null || selections.Length == 0)
-                return selectedChoices.ToArray();
+                return [.. selectedChoices];
 
             bool initialCursorVisible = ConsoleWrapper.CursorVisible;
             try
@@ -86,7 +86,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                 // Deal with the lines to actually fit text in the infobox
                 string finalInfoRendered = TextTools.FormatString(text, vars);
                 string[] splitLines = finalInfoRendered.ToString().SplitNewLines();
-                List<string> splitFinalLines = new();
+                List<string> splitFinalLines = [];
                 foreach (var line in splitLines)
                 {
                     var lineSentences = TextTools.GetWrappedSentences(line, ConsoleWrapper.WindowWidth - 4);
@@ -263,7 +263,7 @@ namespace KS.ConsoleBase.Inputs.Styles
             }
 
             // Return the selected choices
-            return selectedChoices.ToArray();
+            return [.. selectedChoices];
         }
 
         /// <summary>
@@ -454,11 +454,11 @@ namespace KS.ConsoleBase.Inputs.Styles
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
                                        KernelColorType InfoBoxSelectionMultipleColor, KernelColorType BackgroundColor, params object[] vars)
         {
-            List<int> selectedChoices = new();
+            List<int> selectedChoices = [];
 
             // First, verify that we have selections
             if (selections is null || selections.Length == 0)
-                return selectedChoices.ToArray();
+                return [.. selectedChoices];
 
             bool initialCursorVisible = ConsoleWrapper.CursorVisible;
             try
@@ -466,7 +466,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                 // Deal with the lines to actually fit text in the infobox
                 string finalInfoRendered = TextTools.FormatString(text, vars);
                 string[] splitLines = finalInfoRendered.ToString().SplitNewLines();
-                List<string> splitFinalLines = new();
+                List<string> splitFinalLines = [];
                 foreach (var line in splitLines)
                 {
                     var lineSentences = TextTools.GetWrappedSentences(line, ConsoleWrapper.WindowWidth - 4);
@@ -651,7 +651,7 @@ namespace KS.ConsoleBase.Inputs.Styles
             }
 
             // Return the selected choices
-            return selectedChoices.ToArray();
+            return [.. selectedChoices];
         }
 
         /// <summary>
@@ -698,11 +698,11 @@ namespace KS.ConsoleBase.Inputs.Styles
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
                                        Color InfoBoxSelectionMultipleColor, Color BackgroundColor, params object[] vars)
         {
-            List<int> selectedChoices = new();
+            List<int> selectedChoices = [];
 
             // First, verify that we have selections
             if (selections is null || selections.Length == 0)
-                return selectedChoices.ToArray();
+                return [.. selectedChoices];
 
             bool initialCursorVisible = ConsoleWrapper.CursorVisible;
             try
@@ -710,7 +710,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                 // Deal with the lines to actually fit text in the infobox
                 string finalInfoRendered = TextTools.FormatString(text, vars);
                 string[] splitLines = finalInfoRendered.ToString().SplitNewLines();
-                List<string> splitFinalLines = new();
+                List<string> splitFinalLines = [];
                 foreach (var line in splitLines)
                 {
                     var lineSentences = TextTools.GetWrappedSentences(line, ConsoleWrapper.WindowWidth - 4);
@@ -895,7 +895,7 @@ namespace KS.ConsoleBase.Inputs.Styles
             }
 
             // Return the selected choices
-            return selectedChoices.ToArray();
+            return [.. selectedChoices];
         }
 
         /// <summary>
@@ -920,11 +920,11 @@ namespace KS.ConsoleBase.Inputs.Styles
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
                                        ConsoleColors InfoBoxSelectionMultipleColor, ConsoleColors BackgroundColor, params object[] vars)
         {
-            List<int> selectedChoices = new();
+            List<int> selectedChoices = [];
 
             // First, verify that we have selections
             if (selections is null || selections.Length == 0)
-                return selectedChoices.ToArray();
+                return [.. selectedChoices];
 
             bool initialCursorVisible = ConsoleWrapper.CursorVisible;
             try
@@ -932,7 +932,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                 // Deal with the lines to actually fit text in the infobox
                 string finalInfoRendered = TextTools.FormatString(text, vars);
                 string[] splitLines = finalInfoRendered.ToString().SplitNewLines();
-                List<string> splitFinalLines = new();
+                List<string> splitFinalLines = [];
                 foreach (var line in splitLines)
                 {
                     var lineSentences = TextTools.GetWrappedSentences(line, ConsoleWrapper.WindowWidth - 4);
@@ -1117,7 +1117,7 @@ namespace KS.ConsoleBase.Inputs.Styles
             }
 
             // Return the selected choices
-            return selectedChoices.ToArray();
+            return [.. selectedChoices];
         }
     }
 }

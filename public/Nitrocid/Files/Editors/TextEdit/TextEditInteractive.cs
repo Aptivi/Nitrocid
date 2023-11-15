@@ -50,8 +50,8 @@ namespace KS.Files.Editors.TextEdit
         private static bool entering;
         private static int lineIdx = 0;
         private static int lineColIdx = 0;
-        private static readonly TextEditorBinding[] bindings = new[]
-        {
+        private static readonly TextEditorBinding[] bindings =
+        [
             new TextEditorBinding( /* Localizable */ "Exit", ConsoleKey.Escape, default, (l) => { bail = true; return l; }, true),
             new TextEditorBinding( /* Localizable */ "Keybindings", ConsoleKey.K, default, RenderKeybindingsBox, true),
             new TextEditorBinding( /* Localizable */ "Enter...", ConsoleKey.I, default, SwitchEnter, true),
@@ -61,12 +61,12 @@ namespace KS.Files.Editors.TextEdit
             new TextEditorBinding( /* Localizable */ "Remove Line", ConsoleKey.F2, ConsoleModifiers.Shift, RemoveLineNoMove, true),
             new TextEditorBinding( /* Localizable */ "Replace", ConsoleKey.F3, default, Replace, true),
             new TextEditorBinding( /* Localizable */ "Replace All", ConsoleKey.F3, ConsoleModifiers.Shift, ReplaceAll, true),
-        };
-        private static readonly TextEditorBinding[] bindingsEntering = new[]
-        {
+        ];
+        private static readonly TextEditorBinding[] bindingsEntering =
+        [
             new TextEditorBinding( /* Localizable */ "Stop Entering", ConsoleKey.Escape, default, SwitchEnter, true),
             new TextEditorBinding( /* Localizable */ "New Line", ConsoleKey.Enter, default, Insert, true),
-        };
+        ];
 
         /// <summary>
         /// Opens an interactive text editor

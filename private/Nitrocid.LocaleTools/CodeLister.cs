@@ -29,7 +29,7 @@ namespace Nitrocid.LocaleTools
             // Check to see if we have the Nitrocid KS folder
             string kernelSimulatorSource = "../../../../../public/Nitrocid/";
             string kernelSimulatorAddonsSource = "../../../../../public/Nitrocid.Addons/";
-            List<string> sources = new();
+            List<string> sources = [];
             if (Directory.Exists(kernelSimulatorSource))
             {
                 // Iterate through all the source files for Nitrocid KS
@@ -42,7 +42,7 @@ namespace Nitrocid.LocaleTools
                 string[] files = Directory.GetFiles(kernelSimulatorAddonsSource, "*.cs", SearchOption.AllDirectories);
                 sources.AddRange(files);
             }
-            return sources.ToArray();
+            return [.. sources];
         }
 
         private static string[] ListDataFilesForKS()
@@ -50,7 +50,7 @@ namespace Nitrocid.LocaleTools
             // Check to see if we have the Nitrocid KS folder
             string kernelSimulatorDataSource = "../../../../../public/Nitrocid/Resources/Settings/";
             string kernelSimulatorDataAddonsSource = "../../../../../public/Nitrocid.Addons/";
-            List<string> data = new();
+            List<string> data = [];
             if (Directory.Exists(kernelSimulatorDataSource))
             {
                 // Iterate through all the data files for Nitrocid KS
@@ -63,12 +63,12 @@ namespace Nitrocid.LocaleTools
                 string[] files = Directory.GetFiles(kernelSimulatorDataAddonsSource, "*Settings.json", SearchOption.AllDirectories);
                 data.AddRange(files);
             }
-            return data.ToArray();
+            return [.. data];
         }
 
         internal static List<(string, string)> PopulateSources()
         {
-            List<(string, string)> sources = new();
+            List<(string, string)> sources = [];
 
             // List all code files to add the sources
             foreach (string source in ListCodeFilesForKS())
@@ -79,7 +79,7 @@ namespace Nitrocid.LocaleTools
 
         internal static List<(string, string)> PopulateData()
         {
-            List<(string, string)> sources = new();
+            List<(string, string)> sources = [];
 
             // List all code files to add the sources
             foreach (string source in ListDataFilesForKS())

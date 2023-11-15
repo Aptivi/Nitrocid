@@ -34,7 +34,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.Spin
         private static int CurrentWindowWidth;
         private static int CurrentWindowHeight;
         private static int currentSpinStep = 0;
-        private static readonly char[] spinSteps = new[] { '/', '|', '\\', '-' };
+        private static readonly char[] spinSteps = ['/', '|', '\\', '-'];
 
         /// <summary>
         /// Simulates the pulsing animation

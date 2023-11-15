@@ -37,12 +37,12 @@ namespace Nitrocid.Extras.Caffeine
         {
             { "caffeine",
                 new CommandInfo("caffeine", /* Localizable */ "Adds an alarm to alert you when your cup of tea or coffee is ready.",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "secondsOrName"),
                         })
-                    }, new CaffeineCommand())
+                    ], new CaffeineCommand())
             },
         };
 
@@ -58,12 +58,12 @@ namespace Nitrocid.Extras.Caffeine
         ReadOnlyDictionary<string, FieldInfo> IAddon.PubliclyAvailableFields => null;
 
         void IAddon.StartAddon() =>
-            CommandManager.RegisterAddonCommands(ShellType.Shell, addonCommands.Values.ToArray());
+            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands.Values]);
 
         void IAddon.StopAddon()
         {
             AlarmListener.StopListener();
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, addonCommands.Keys.ToArray());
+            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Keys]);
         }
 
         void IAddon.FinalizeAddon() =>

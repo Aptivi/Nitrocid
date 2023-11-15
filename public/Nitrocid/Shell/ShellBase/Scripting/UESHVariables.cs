@@ -116,8 +116,8 @@ namespace KS.Shell.ShellBase.Scripting
             try
             {
                 string FinalVar = SanitizeVariableName(var);
-                if (ShellVariables.ContainsKey(FinalVar))
-                    return ShellVariables[FinalVar];
+                if (ShellVariables.TryGetValue(FinalVar, out string variableValue))
+                    return variableValue;
                 return var;
             }
             catch (Exception ex)

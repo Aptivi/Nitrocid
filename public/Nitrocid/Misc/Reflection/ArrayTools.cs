@@ -41,7 +41,7 @@ namespace KS.Misc.Reflection
                 return array;
 
             // First, create a new list of random numbers with the array's value indexes
-            List<(double, int)> valuesToShuffle = new();
+            List<(double, int)> valuesToShuffle = [];
             for (int i = 0; i < array.Length; i++)
                 valuesToShuffle.Add((RandomDriver.RandomDouble(), i));
 

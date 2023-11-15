@@ -193,7 +193,7 @@ namespace KS.Shell.ShellBase.Commands
                 string variable = "";
 
                 // Change the command if a command with no slash is entered on a slash-enabled shells
-                var cmdInfo = TargetCommands.ContainsKey(Command) ? TargetCommands[Command] : RequestedCommandInfo;
+                var cmdInfo = TargetCommands.TryGetValue(Command, out CommandInfo requestedCmdInfo) ? requestedCmdInfo : RequestedCommandInfo;
                 var shellInfo = ShellManager.GetShellInfo(ShellType);
                 if (shellInfo.SlashCommand)
                 {

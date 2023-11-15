@@ -110,10 +110,9 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             // Create instance
             var CommandInstance =
                 new CommandInfo("help", $"Help page for type {type}",
-                    new[]
-                    {
+                    [
                         new CommandArgumentInfo()
-                    }, null);
+                    ], null);
 
             // Check for null
             CommandInstance.ShouldNotBeNull();
@@ -152,13 +151,12 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             // Create instance
             var CommandInstance =
                 new CommandInfo("help", $"Help page for type {type}",
-                    new[]
-                    {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(false, "testarg")
                         })
-                    }, null);
+                    ], null);
 
             // Check for null
             CommandInstance.ShouldNotBeNull();
@@ -197,13 +195,12 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             // Create instance
             var CommandInstance =
                 new CommandInfo("help", $"Help page for type {type}",
-                    new[]
-                    {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new SwitchInfo("s", "Simple help")
                         })
-                    }, null);
+                    ], null);
 
             // Check for null
             CommandInstance.ShouldNotBeNull();
@@ -252,16 +249,15 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             // Create instance
             var CommandInstance =
                 new CommandInfo("help", $"Help page for type {type}",
-                    new[]
-                    {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(false, "testarg")
-                        }, new[]
-                        {
+                        ],
+                        [
                             new SwitchInfo("s", "Simple help")
-                        })
-                    }, null);
+                        ])
+                    ], null);
 
             // Check for null
             CommandInstance.ShouldNotBeNull();
@@ -310,8 +306,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             // Create instance
             var CommandInstance =
                 new CommandInfo("help", $"Help page for type {type}",
-                    new[]
-                    {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new SwitchInfo("s", "Simple help", new SwitchOptions
@@ -319,7 +314,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
                                 AcceptsValues = false,
                             })
                         })
-                    }, null);
+                    ], null);
 
             // Check for null
             CommandInstance.ShouldNotBeNull();
@@ -368,19 +363,18 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             // Create instance
             var CommandInstance =
                 new CommandInfo("help", $"Help page for type {type}",
-                    new[]
-                    {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(false, "testarg")
-                        }, new[]
-                        {
+                        ],
+                        [
                             new SwitchInfo("s", "Simple help", new SwitchOptions
                             {
                                 AcceptsValues = false,
                             })
-                        })
-                    }, null);
+                        ])
+                    ], null);
 
             // Check for null
             CommandInstance.ShouldNotBeNull();
@@ -429,10 +423,9 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             // Create instance
             var CommandInstance =
                 new CommandInfo("help", $"Help page for type {type}",
-                    new[]
-                    {
+                    [
                         new CommandArgumentInfo()
-                    }, null);
+                    ], null);
 
             // Check for null
             CommandInstance.ShouldNotBeNull();
@@ -471,13 +464,12 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             // Create instance
             var CommandInstance =
                 new CommandInfo("help", $"Help page for type {type}",
-                    new[]
-                    {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(false, "testarg")
                         })
-                    }, null);
+                    ], null);
 
             // Check for null
             CommandInstance.ShouldNotBeNull();
@@ -516,13 +508,12 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             // Create instance
             var CommandInstance =
                 new CommandInfo("help", $"Help page for type {type}",
-                    new[]
-                    {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new SwitchInfo("s", "Simple help")
                         })
-                    }, null);
+                    ], null);
 
             // Check for null
             CommandInstance.ShouldNotBeNull();
@@ -571,16 +562,15 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             // Create instance
             var CommandInstance =
                 new CommandInfo("help", $"Help page for type {type}",
-                    new[]
-                    {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(false, "testarg")
-                        }, new[]
-                        {
+                        ],
+                        [
                             new SwitchInfo("s", "Simple help")
-                        })
-                    }, null);
+                        ])
+                    ], null);
 
             // Check for null
             CommandInstance.ShouldNotBeNull();
@@ -629,8 +619,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             // Create instance
             var CommandInstance =
                 new CommandInfo("help", $"Help page for type {type}",
-                    new[]
-                    {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new SwitchInfo("s", "Simple help", new SwitchOptions
@@ -638,7 +627,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
                                 AcceptsValues = false,
                             })
                         })
-                    }, null);
+                    ], null);
 
             // Check for null
             CommandInstance.ShouldNotBeNull();
@@ -687,19 +676,18 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             // Create instance
             var CommandInstance =
                 new CommandInfo("help", $"Help page for type {type}",
-                    new[]
-                    {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(false, "testarg")
-                        }, new[]
-                        {
+                        ],
+                        [
                             new SwitchInfo("s", "Simple help", new SwitchOptions
                             {
                                 AcceptsValues = false,
                             })
-                        })
-                    }, null);
+                        ])
+                    ], null);
 
             // Check for null
             CommandInstance.ShouldNotBeNull();
@@ -747,10 +735,10 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         {
             // Create instance
             var CommandInstance = new CommandInfo("help", $"Help page for type {type}", 
-                new[] {
+                [
                     new CommandArgumentInfo(),
                     new CommandArgumentInfo()
-                }, null);
+                ], null);
 
             // Check for null
             CommandInstance.ShouldNotBeNull();
@@ -794,7 +782,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         {
             // Create instance
             var CommandInstance = new CommandInfo("help", $"Help page for type {type}",
-                new[] {
+                [
                     new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(false, "testarg")
@@ -804,7 +792,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
                             new CommandArgumentPart(true, "testme"),
                             new CommandArgumentPart(false, "path"),
                         }),
-                }, null);
+                ], null);
 
             // Check for null
             CommandInstance.ShouldNotBeNull();
@@ -848,7 +836,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         {
             // Create instance
             var CommandInstance = new CommandInfo("help", $"Help page for type {type}",
-                new[] {
+                [
                     new CommandArgumentInfo(new[]
                     {
                         new SwitchInfo("s", "Simple help")
@@ -857,7 +845,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
                     {
                         new SwitchInfo("c", "Complicated help")
                     }),
-                }, null);
+                ], null);
 
             // Check for null
             CommandInstance.ShouldNotBeNull();
@@ -919,23 +907,23 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         {
             // Create instance
             var CommandInstance = new CommandInfo("help", $"Help page for type {type}",
-                new[] {
-                    new CommandArgumentInfo(new[]
-                        {
+                [
+                    new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(false, "testarg")
-                        }, new[]
-                        {
+                        ],
+                        [
                             new SwitchInfo("s", "Simple help")
-                        }),
-                    new CommandArgumentInfo(new[]
-                        {
+                        ]),
+                    new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "testme"),
                             new CommandArgumentPart(false, "path"),
-                        }, new[]
-                        {
+                        ],
+                        [
                             new SwitchInfo("c", "Complicated help")
-                        }),
-                }, null);
+                        ]),
+                ], null);
 
             // Check for null
             CommandInstance.ShouldNotBeNull();
@@ -997,7 +985,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         {
             // Create instance
             var CommandInstance = new CommandInfo("help", $"Help page for type {type}",
-                new[] {
+                [
                     new CommandArgumentInfo(new[]
                     {
                         new SwitchInfo("s", "Simple help", new SwitchOptions
@@ -1013,7 +1001,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
                             IsRequired = true,
                         })
                     }),
-                }, null);
+                ], null);
 
             // Check for null
             CommandInstance.ShouldNotBeNull();
@@ -1075,30 +1063,30 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         {
             // Create instance
             var CommandInstance = new CommandInfo("help", $"Help page for type {type}",
-                new[] {
-                    new CommandArgumentInfo(new[]
-                        {
+                [
+                    new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(false, "testarg")
-                        }, new[]
-                        {
+                        ],
+                        [
                             new SwitchInfo("s", "Simple help", new SwitchOptions
                             {
                                 AcceptsValues = false,
                             })
-                        }),
-                    new CommandArgumentInfo(new[]
-                        {
+                        ]),
+                    new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "testme"),
                             new CommandArgumentPart(false, "path"),
-                        }, new[]
-                        {
+                        ],
+                        [
                             new SwitchInfo("c", "Complicated help", new SwitchOptions
                             {
                                 AcceptsValues = false,
                                 IsRequired = true,
                             })
-                        }),
-                }, null);
+                        ]),
+                ], null);
 
             // Check for null
             CommandInstance.ShouldNotBeNull();
@@ -1160,10 +1148,10 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         {
             // Create instance
             var CommandInstance = new CommandInfo("help", $"Help page for type {type}",
-                new[] {
+                [
                     new CommandArgumentInfo(),
                     new CommandArgumentInfo()
-                }, null);
+                ], null);
 
             // Check for null
             CommandInstance.ShouldNotBeNull();
@@ -1207,7 +1195,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         {
             // Create instance
             var CommandInstance = new CommandInfo("help", $"Help page for type {type}",
-                new[] {
+                [
                     new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(false, "testarg")
@@ -1217,7 +1205,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
                             new CommandArgumentPart(true, "testme"),
                             new CommandArgumentPart(false, "path"),
                         }),
-                }, null);
+                ], null);
 
             // Check for null
             CommandInstance.ShouldNotBeNull();
@@ -1261,7 +1249,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         {
             // Create instance
             var CommandInstance = new CommandInfo("help", $"Help page for type {type}",
-                new[] {
+                [
                     new CommandArgumentInfo(new[]
                     {
                         new SwitchInfo("s", "Simple help")
@@ -1270,7 +1258,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
                     {
                         new SwitchInfo("c", "Complicated help")
                     }),
-                }, null);
+                ], null);
 
             // Check for null
             CommandInstance.ShouldNotBeNull();
@@ -1332,23 +1320,23 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         {
             // Create instance
             var CommandInstance = new CommandInfo("help", $"Help page for type {type}",
-                new[] {
-                    new CommandArgumentInfo(new[]
-                        {
+                [
+                    new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(false, "testarg")
-                        }, new[]
-                        {
+                        ],
+                        [
                             new SwitchInfo("s", "Simple help")
-                        }),
-                    new CommandArgumentInfo(new[]
-                        {
+                        ]),
+                    new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "testme"),
                             new CommandArgumentPart(false, "path"),
-                        }, new[]
-                        {
+                        ],
+                        [
                             new SwitchInfo("c", "Complicated help")
-                        }),
-                }, null);
+                        ]),
+                ], null);
 
             // Check for null
             CommandInstance.ShouldNotBeNull();
@@ -1410,7 +1398,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         {
             // Create instance
             var CommandInstance = new CommandInfo("help", $"Help page for type {type}",
-                new[] {
+                [
                     new CommandArgumentInfo(new[]
                     {
                         new SwitchInfo("s", "Simple help", new SwitchOptions
@@ -1426,7 +1414,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
                             IsRequired = true,
                         })
                     }),
-                }, null);
+                ], null);
 
             // Check for null
             CommandInstance.ShouldNotBeNull();
@@ -1488,30 +1476,30 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         {
             // Create instance
             var CommandInstance = new CommandInfo("help", $"Help page for type {type}",
-                new[] {
-                    new CommandArgumentInfo(new[]
-                        {
+                [
+                    new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(false, "testarg")
-                        }, new[]
-                        {
+                        ],
+                        [
                             new SwitchInfo("s", "Simple help", new SwitchOptions
                             {
                                 AcceptsValues = false,
                             })
-                        }),
-                    new CommandArgumentInfo(new[]
-                        {
+                        ]),
+                    new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "testme"),
                             new CommandArgumentPart(false, "path"),
-                        }, new[]
-                        {
+                        ],
+                        [
                             new SwitchInfo("c", "Complicated help", new SwitchOptions
                             {
                                 AcceptsValues = false,
                                 IsRequired = true,
                             })
-                        }),
-                }, null);
+                        ]),
+                ], null);
 
             // Check for null
             CommandInstance.ShouldNotBeNull();

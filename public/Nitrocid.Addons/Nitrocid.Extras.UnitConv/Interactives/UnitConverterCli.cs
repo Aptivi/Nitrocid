@@ -37,11 +37,11 @@ namespace Nitrocid.Extras.UnitConv.Interactives
         /// <summary>
         /// Contact manager bindings
         /// </summary>
-        public override List<InteractiveTuiBinding> Bindings { get; set; } = new()
-        {
+        public override List<InteractiveTuiBinding> Bindings { get; set; } =
+        [
             // Operations
             new InteractiveTuiBinding(/* Localizable */ "Convert...",  ConsoleKey.F1,  (_, _)     => OpenConvert(), true),
-        };
+        ];
 
         /// <inheritdoc/>
         public override bool SecondPaneInteractable =>

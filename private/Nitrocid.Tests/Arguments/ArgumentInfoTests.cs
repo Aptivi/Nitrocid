@@ -38,7 +38,7 @@ namespace Nitrocid.Tests.Arguments
         public void TestInitializeArgumentInfoInstanceFromCommandLineArg()
         {
             // Create instance
-            var ArgumentInstance = new ArgumentInfo("help", "Help page", new[] { new CommandArgumentInfo() }, null);
+            var ArgumentInstance = new ArgumentInfo("help", "Help page", [new CommandArgumentInfo()], null);
 
             // Check for null
             ArgumentInstance.ShouldNotBeNull();
@@ -81,7 +81,7 @@ namespace Nitrocid.Tests.Arguments
         [Test]
         [Description("Initialization")]
         public void TestInitializedArgumentExecutionWithArguments() =>
-            Should.NotThrow(new Action(() => ArgumentInstance.Execute("Hello World", new[] { "Hello", "World" }, Array.Empty<string>())));
+            Should.NotThrow(new Action(() => ArgumentInstance.Execute("Hello World", ["Hello", "World"], Array.Empty<string>())));
 
         /// <summary>
         /// Tests initializing the argument instance from base
@@ -89,7 +89,7 @@ namespace Nitrocid.Tests.Arguments
         [Test]
         [Description("Initialization")]
         public void TestInitializedArgumentExecutionWithSwitches() =>
-            Should.NotThrow(new Action(() => ArgumentInstance.Execute("-s", Array.Empty<string>(), new[] { "-s" })));
+            Should.NotThrow(new Action(() => ArgumentInstance.Execute("-s", Array.Empty<string>(), ["-s"])));
 
         /// <summary>
         /// Tests initializing the argument instance from base
@@ -97,7 +97,7 @@ namespace Nitrocid.Tests.Arguments
         [Test]
         [Description("Initialization")]
         public void TestInitializedArgumentExecutionWithArgumentsAndSwitches() =>
-            Should.NotThrow(new Action(() => ArgumentInstance.Execute("-s Hello!", new[] { "Hello!" }, new[] { "-s" })));
+            Should.NotThrow(new Action(() => ArgumentInstance.Execute("-s Hello!", ["Hello!"], ["-s"])));
 
     }
 }

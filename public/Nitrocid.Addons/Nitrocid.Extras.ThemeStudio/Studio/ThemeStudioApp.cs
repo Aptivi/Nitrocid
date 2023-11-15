@@ -59,15 +59,15 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
                 ConsoleWrapper.Clear();
 
                 // Make a list of choices
-                List<InputChoiceInfo> choices = new();
+                List<InputChoiceInfo> choices = [];
                 for (int key = 0; key < ThemeStudioTools.SelectedColors.Count; key++)
                 {
                     var colorType = ThemeStudioTools.SelectedColors.Keys.ElementAt(key);
                     var color = ThemeStudioTools.SelectedColors.Values.ElementAt(key).PlainSequence;
                     choices.Add(new InputChoiceInfo($"{key + 1}", $"{colorType}: [{color}] "));
                 }
-                List<InputChoiceInfo> altChoices = new()
-                {
+                List<InputChoiceInfo> altChoices =
+                [
                     new InputChoiceInfo($"{ThemeStudioTools.SelectedColors.Count + 1}", Translate.DoTranslation("Save Theme to Current Directory")),
                     new InputChoiceInfo($"{ThemeStudioTools.SelectedColors.Count + 2}", Translate.DoTranslation("Save Theme to Another Directory...")),
                     new InputChoiceInfo($"{ThemeStudioTools.SelectedColors.Count + 3}", Translate.DoTranslation("Save Theme to Current Directory as...")),
@@ -77,7 +77,7 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
                     new InputChoiceInfo($"{ThemeStudioTools.SelectedColors.Count + 7}", Translate.DoTranslation("Load Current Colors")),
                     new InputChoiceInfo($"{ThemeStudioTools.SelectedColors.Count + 8}", Translate.DoTranslation("Preview...")),
                     new InputChoiceInfo($"{ThemeStudioTools.SelectedColors.Count + 9}", Translate.DoTranslation("Exit")),
-                };
+                ];
                 TextWriterColor.Write(Translate.DoTranslation("Making a new theme \"{0}\".") + CharManager.NewLine, ThemeName);
 
                 // Prompt user

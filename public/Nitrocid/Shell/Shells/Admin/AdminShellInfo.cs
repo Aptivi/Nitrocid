@@ -42,7 +42,7 @@ namespace KS.Shell.Shells.Admin
         {
             { "arghelp",
                 new CommandInfo("arghelp", /* Localizable */ "Kernel arguments help system",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(false, "argument", new CommandArgumentPartOptions()
@@ -50,82 +50,82 @@ namespace KS.Shell.Shells.Admin
                                 AutoCompleter = (_) => ArgumentParse.AvailableCMDLineArgs.Keys.ToArray()
                             })
                         })
-                    }, new ArgHelpCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
+                    ], new ArgHelpCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
             },
             
             { "bootlog",
                 new CommandInfo("bootlog", /* Localizable */ "Prints the boot log",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new BootLogCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
+                    ], new BootLogCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
             },
             
             { "cdbglog",
                 new CommandInfo("cdbglog", /* Localizable */ "Deletes everything in debug log",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new CdbgLogCommand())
+                    ], new CdbgLogCommand())
             },
 
             { "clearfiredevents",
                 new CommandInfo("clearfiredevents", /* Localizable */ "Clears all fired events",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new ClearFiredEventsCommand())
+                    ], new ClearFiredEventsCommand())
             },
 
             { "journal",
                 new CommandInfo("journal", /* Localizable */ "Gets current kernel journal log",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new JournalCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
+                    ], new JournalCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
             },
 
             { "lsevents",
                 new CommandInfo("lsevents", /* Localizable */ "Lists all fired events",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new LsEventsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
+                    ], new LsEventsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
             },
 
             { "lsusers",
                 new CommandInfo("lsusers", /* Localizable */ "Lists the users",
-                    new[] {
+                    [
                         new CommandArgumentInfo(true)
-                    }, new LsUsersCommand())
+                    ], new LsUsersCommand())
             },
 
             { "userflag",
                 new CommandInfo("userflag", /* Localizable */ "Manipulates with the user main flags",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "user"),
                             new CommandArgumentPart(true, "admin/anonymous/disabled"),
                             new CommandArgumentPart(true, "false/true")
                         })
-                    }, new UserFlagCommand())
+                    ], new UserFlagCommand())
             },
 
             { "userinfo",
                 new CommandInfo("userinfo", /* Localizable */ "Gets the user information",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(false, "user")
                         })
-                    }, new UserInfoCommand())
+                    ], new UserInfoCommand())
             },
 
             { "userlang",
                 new CommandInfo("userlang", /* Localizable */ "Changes the preferred user language",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "user"),
                             new CommandArgumentPart(true, "lang/clear")
                         })
-                    }, new UserLangCommand())
+                    ], new UserLangCommand())
             },
         };
 

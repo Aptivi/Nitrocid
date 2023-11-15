@@ -91,13 +91,13 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
             }
 
             // Populate the English strings and fill the translated lines
-            List<string> englishLines = Reading.ReadContents(englishFile).ToList();
-            Dictionary<string, List<string>> translatedLines = new();
+            List<string> englishLines = [.. Reading.ReadContents(englishFile)];
+            Dictionary<string, List<string>> translatedLines = [];
             foreach (string language in finalLangs)
             {
                 // Populate the existing translations
                 string languagePath = $"{pathToTranslations}/{language}.txt";
-                List<string> finalLangLines = new();
+                List<string> finalLangLines = [];
                 DebugWriter.WriteDebug(DebugLevel.I, "Language path is {0}", languagePath);
                 if (Checking.FileExists(languagePath))
                     finalLangLines.AddRange(Reading.ReadContents(languagePath));
@@ -120,7 +120,7 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
             while (true)
             {
                 // Populate the choices with English strings
-                List<InputChoiceInfo> choices = new();
+                List<InputChoiceInfo> choices = [];
                 for (int i = 0; i < englishLines.Count; i++)
                 {
                     string englishLine = englishLines[i];
@@ -129,17 +129,17 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
 
                 // Now, show all strings to select, as well as several options
                 string finalTitle = Translate.DoTranslation("Welcome to the Language Studio!");
-                List<InputChoiceInfo> altChoices = new()
-                {
+                List<InputChoiceInfo> altChoices =
+                [
                     new InputChoiceInfo($"{englishLines.Count + 1}", Translate.DoTranslation("New string")),
                     new InputChoiceInfo($"{englishLines.Count + 2}", Translate.DoTranslation("Remove string")),
                     new InputChoiceInfo($"{englishLines.Count + 3}", Translate.DoTranslation("Save translations")),
                     new InputChoiceInfo($"{englishLines.Count + 4}", Translate.DoTranslation("Exit")),
-                };
-                List<InputChoiceInfo> altChoicesRemove = new()
-                {
+                ];
+                List<InputChoiceInfo> altChoicesRemove =
+                [
                     new InputChoiceInfo($"{englishLines.Count + 1}", Translate.DoTranslation("Go Back...")),
-                };
+                ];
                 int selectedStringNum = SelectionStyle.PromptSelection("- " + finalTitle + " " + new string('-', ConsoleWrapper.WindowWidth - ("- " + finalTitle + " ").Length) + CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation("Select a string to translate:"), choices, altChoices);
 
                 // Check the answer
@@ -174,7 +174,7 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
                         string language = translatedLine.Key;
                         List<string> localizations = translatedLine.Value;
                         string languagePath = $"{pathToTranslations}/{language}.txt";
-                        Writing.WriteContents(languagePath, localizations.ToArray());
+                        Writing.WriteContents(languagePath, [.. localizations]);
                     }
                     LanguageGenerator.GenerateLocaleFiles(pathToTranslations);
                 }
@@ -200,16 +200,16 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
             while (true)
             {
                 // Choose a language first
-                List<InputChoiceInfo> choices = new();
+                List<InputChoiceInfo> choices = [];
                 for (int i = 0; i < targetLanguages.Length; i++)
                 {
                     string language = targetLanguages[i];
                     choices.Add(new InputChoiceInfo($"{i + 1}", $"{language} [{translatedLines[language][index]}]"));
                 }
-                List<InputChoiceInfo> altChoices = new()
-                {
+                List<InputChoiceInfo> altChoices =
+                [
                     new InputChoiceInfo($"{targetLanguages.Length + 1}", Translate.DoTranslation("Go Back...")),
-                };
+                ];
                 string finalTitle = Translate.DoTranslation("Select language");
                 int selectedLangNum = SelectionStyle.PromptSelection("- " + finalTitle + " " + new string('-', ConsoleWrapper.WindowWidth - ("- " + finalTitle + " ").Length) + CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation("Select a language to translate this string to:"), choices, altChoices);
                 if (selectedLangNum == targetLanguages.Length + 1 || selectedLangNum == -1)

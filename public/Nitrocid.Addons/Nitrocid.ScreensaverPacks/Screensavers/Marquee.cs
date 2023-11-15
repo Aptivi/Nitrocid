@@ -248,7 +248,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             // Variable preparations
             KernelColorTools.LoadBack(new Color(MarqueeSettings.MarqueeBackgroundColor));
-            MarqueeSettings.MarqueeWrite = MarqueeSettings.MarqueeWrite.ReplaceAll(new string[] { Convert.ToChar(13).ToString(), Convert.ToChar(10).ToString() }, " - ");
+            MarqueeSettings.MarqueeWrite = MarqueeSettings.MarqueeWrite.ReplaceAll([Convert.ToChar(13).ToString(), Convert.ToChar(10).ToString()], " - ");
         }
 
         /// <inheritdoc/>

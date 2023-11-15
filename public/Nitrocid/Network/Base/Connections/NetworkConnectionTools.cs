@@ -38,16 +38,16 @@ namespace KS.Network.Base.Connections
     /// </summary>
     public static class NetworkConnectionTools
     {
-        private static readonly List<NetworkConnection> networkConnections = new();
-        internal static readonly List<string> networkTypes = new()
-        {
+        private static readonly List<NetworkConnection> networkConnections = [];
+        internal static readonly List<string> networkTypes =
+        [
             NetworkConnectionType.FTP.ToString(),
             NetworkConnectionType.HTTP.ToString(),
             NetworkConnectionType.Mail.ToString(),
             NetworkConnectionType.RSS.ToString(),
             NetworkConnectionType.SFTP.ToString(),
             NetworkConnectionType.SSH.ToString(),
-        };
+        ];
 
         /// <summary>
         /// Gets the network connections according to the given type
@@ -443,9 +443,9 @@ namespace KS.Network.Base.Connections
                             DebugWriter.WriteDebug(DebugLevel.I, "Speed dial info: {0}.", connectionUrl);
                             connectionsChoiceList.Add(new InputChoiceInfo($"{i + 1}", connectionUrl));
                         }
-                        int selectedSpeedDial = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a connection from the speed dial list."), connectionsChoiceList, new List<InputChoiceInfo>() {
+                        int selectedSpeedDial = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a connection from the speed dial list."), connectionsChoiceList, [
                             new InputChoiceInfo($"{speedDials.Length + 1}", Translate.DoTranslation("Create a new connection")),
-                        });
+                        ]);
                         DebugWriter.WriteDebug(DebugLevel.I, "Selected speed dial {0} out of {1} servers", selectedSpeedDial, speedDials.Length);
                         if (selectedSpeedDial == -1)
                             return;

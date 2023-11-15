@@ -39,12 +39,12 @@ namespace Nitrocid.Extras.MailShell
         {
             { "mail",
                 new CommandInfo("mail", /* Localizable */ "Opens the mail client",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(false, "emailAddress"),
                         })
-                    }, new MailCommandExec())
+                    ], new MailCommandExec())
             },
         };
 
@@ -68,7 +68,7 @@ namespace Nitrocid.Extras.MailShell
             ConfigTools.RegisterBaseSetting(config);
             ShellManager.reservedShells.Add("MailShell");
             ShellManager.RegisterShell("MailShell", new MailShellInfo());
-            CommandManager.RegisterAddonCommands(ShellType.Shell, addonCommands.Values.ToArray());
+            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands.Values]);
         }
 
         void IAddon.StartAddon()
@@ -79,7 +79,7 @@ namespace Nitrocid.Extras.MailShell
             ShellManager.availableShells.Remove("MailShell");
             PromptPresetManager.CurrentPresets.Remove("MailShell");
             ShellManager.reservedShells.Remove("MailShell");
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, addonCommands.Keys.ToArray());
+            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Keys]);
             ConfigTools.UnregisterBaseSetting(nameof(MailConfig));
         }
     }

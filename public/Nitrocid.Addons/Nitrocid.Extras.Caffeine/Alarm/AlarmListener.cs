@@ -51,7 +51,7 @@ namespace Nitrocid.Extras.Caffeine.Alarm
                 DebugWriter.WriteDebug(DebugLevel.I, $"Alarm listener started");
 
                 // Loop through all the alarms
-                List<string> notifiedAlarms = new();
+                List<string> notifiedAlarms = [];
                 while (!PowerManager.RebootRequested)
                 {
                     ThreadManager.SleepNoBlock(1);

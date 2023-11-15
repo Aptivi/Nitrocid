@@ -57,10 +57,10 @@ namespace Nitrocid.Extras.ChatGpt.Gpt.Presets
         internal override string PresetPromptBuilder()
         {
             // PowerLine presets
-            List<PowerLineSegment> segments = new()
-            {
+            List<PowerLineSegment> segments =
+            [
                 new PowerLineSegment(new Color(85, 255, 255), new Color(43, 127, 127), "ChatGPT")
-            };
+            ];
 
             // Builder
             var PresetStringBuilder = new StringBuilder();
@@ -76,10 +76,10 @@ namespace Nitrocid.Extras.ChatGpt.Gpt.Presets
         internal override string PresetPromptBuilderShowcase()
         {
             // PowerLine presets
-            List<PowerLineSegment> segments = new()
-            {
+            List<PowerLineSegment> segments =
+            [
                 new PowerLineSegment(new Color(85, 255, 255), new Color(43, 127, 127), "main")
-            };
+            ];
 
             // Builder
             var PresetStringBuilder = new StringBuilder();
@@ -95,10 +95,10 @@ namespace Nitrocid.Extras.ChatGpt.Gpt.Presets
         internal override string PresetPromptCompletionBuilder()
         {
             // Segments
-            List<PowerLineSegment> segments = new()
-            {
+            List<PowerLineSegment> segments =
+            [
                 new PowerLineSegment(new Color(85, 255, 255), new Color(43, 127, 127), "+"),
-            };
+            ];
 
             // Builder
             var PresetStringBuilder = new StringBuilder();

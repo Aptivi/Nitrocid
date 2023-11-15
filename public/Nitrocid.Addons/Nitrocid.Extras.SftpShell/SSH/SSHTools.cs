@@ -189,7 +189,7 @@ namespace Nitrocid.Extras.SftpShell.SSH
         /// <param name="Username">A username to authenticate with</param>
         /// <param name="AuthMethods">Authentication methods list.</param>
         public static ConnectionInfo GetConnectionInfo(string Address, int Port, string Username, List<AuthenticationMethod> AuthMethods) =>
-            new(Address, Port, Username, AuthMethods.ToArray());
+            new(Address, Port, Username, [.. AuthMethods]);
 
         /// <summary>
         /// Opens a session to specified address using the specified port and the username

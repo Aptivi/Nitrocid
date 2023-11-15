@@ -156,7 +156,7 @@ namespace Nitrocid.Legacy.InxiNet
         /// <inheritdoc/>
         public override void ListHardware(string hardwareType)
         {
-            string[] supportedTypes = new[] { "CPU", "RAM", "HDD", "GPU" };
+            string[] supportedTypes = ["CPU", "RAM", "HDD", "GPU"];
             if (hardwareType == "all")
             {
                 foreach (string supportedType in supportedTypes)
@@ -263,7 +263,7 @@ namespace Nitrocid.Legacy.InxiNet
 
         private void ListHardwareInternal(string hardwareType)
         {
-            string[] supportedTypes = new[] { "CPU", "RAM", "HDD", "GPU" };
+            string[] supportedTypes = ["CPU", "RAM", "HDD", "GPU"];
             IEnumerable hardwareList = default;
             switch (hardwareType)
             {

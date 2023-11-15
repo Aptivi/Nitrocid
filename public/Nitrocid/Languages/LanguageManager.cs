@@ -46,8 +46,8 @@ namespace KS.Languages
     {
 
         internal readonly static LanguageMetadata[] LanguageMetadata = JsonConvert.DeserializeObject<LanguageMetadata[]>(LanguageResources.LanguageMetadata);
-        internal static Dictionary<string, LanguageInfo> BaseLanguages = new();
-        internal static Dictionary<string, LanguageInfo> CustomLanguages = new();
+        internal static Dictionary<string, LanguageInfo> BaseLanguages = [];
+        internal static Dictionary<string, LanguageInfo> CustomLanguages = [];
         internal static LanguageInfo currentLanguage = Languages[CurrentLanguage];
         internal static LanguageInfo currentUserLanguage = Languages[CurrentLanguage];
 
@@ -114,14 +114,14 @@ namespace KS.Languages
         {
             // Settings app may have passed the language name with the country
             lang = lang.Contains(' ') ? lang.Split(' ')[0] : lang;
-            if (Languages.ContainsKey(lang))
+            if (Languages.TryGetValue(lang, out LanguageInfo langInfo))
             {
                 // Set appropriate codepage for incapable terminals
                 try
                 {
                     if (KernelPlatform.IsOnWindows() && SetCodepage)
                     {
-                        int Codepage = Languages[lang].Codepage;
+                        int Codepage = langInfo.Codepage;
                         ConsoleBase.ConsoleWrapper.OutputEncoding = System.Text.Encoding.GetEncoding(Codepage);
                         ConsoleBase.ConsoleWrapper.InputEncoding = System.Text.Encoding.GetEncoding(Codepage);
                         DebugWriter.WriteDebug(DebugLevel.I, "Encoding set successfully for {0} to {1}.", lang, ConsoleBase.ConsoleWrapper.OutputEncoding.EncodingName);
@@ -137,7 +137,7 @@ namespace KS.Languages
                 try
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Translating kernel to {0}.", lang);
-                    currentLanguage = Languages[lang];
+                    currentLanguage = langInfo;
 
                     // Update Culture if applicable
                     if (LangChangeCulture)

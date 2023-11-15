@@ -40,31 +40,31 @@ namespace KS.Shell.Shells.Text
         {
             { "addline",
                 new CommandInfo("addline", /* Localizable */ "Adds a new line with text at the end of the file",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "text")
                         })
-                    }, new AddLineCommand())
+                    ], new AddLineCommand())
             },
             
             { "addlines",
                 new CommandInfo("addlines", /* Localizable */ "Adds the new lines at the end of the file",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new AddLinesCommand())
+                    ], new AddLinesCommand())
             },
             
             { "clear",
                 new CommandInfo("clear", /* Localizable */ "Clears the text file",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new ClearCommand())
+                    ], new ClearCommand())
             },
             
             { "delcharnum",
                 new CommandInfo("delcharnum", /* Localizable */ "Deletes a character from character number in specified line",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "charNum", new CommandArgumentPartOptions()
@@ -76,12 +76,12 @@ namespace KS.Shell.Shells.Text
                                 IsNumeric = true
                             })
                         })
-                    }, new DelCharNumCommand())
+                    ], new DelCharNumCommand())
             },
             
             { "delline",
                 new CommandInfo("delline", /* Localizable */ "Removes the specified line number",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "lineNum", new CommandArgumentPartOptions()
@@ -93,12 +93,12 @@ namespace KS.Shell.Shells.Text
                                 IsNumeric = true
                             })
                         })
-                    }, new DelLineCommand())
+                    ], new DelLineCommand())
             },
             
             { "delword",
                 new CommandInfo("delword", /* Localizable */ "Deletes a word or phrase from line number",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "word/phrase"),
@@ -111,12 +111,12 @@ namespace KS.Shell.Shells.Text
                                 IsNumeric = true
                             })
                         })
-                    }, new DelWordCommand())
+                    ], new DelWordCommand())
             },
             
             { "editline",
                 new CommandInfo("editline", /* Localizable */ "Edits the specified line",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "linenumber", new CommandArgumentPartOptions()
@@ -124,19 +124,19 @@ namespace KS.Shell.Shells.Text
                                 IsNumeric = true
                             })
                         })
-                    }, new EditLineCommand())
+                    ], new EditLineCommand())
             },
             
             { "exitnosave",
                 new CommandInfo("exitnosave", /* Localizable */ "Exits the text editor",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new ExitNoSaveCommand())
+                    ], new ExitNoSaveCommand())
             },
             
             { "print",
                 new CommandInfo("print", /* Localizable */ "Prints the contents of the file with line numbers to the console",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(false, "lineNum", new CommandArgumentPartOptions()
@@ -148,12 +148,12 @@ namespace KS.Shell.Shells.Text
                                 IsNumeric = true
                             })
                         })
-                    }, new PrintCommand(), CommandFlags.Wrappable)
+                    ], new PrintCommand(), CommandFlags.Wrappable)
             },
             
             { "querychar",
                 new CommandInfo("querychar", /* Localizable */ "Queries a character in a specified line or all lines",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "char"),
@@ -163,12 +163,12 @@ namespace KS.Shell.Shells.Text
                                 IsNumeric = true
                             })
                         })
-                    }, new QueryCharCommand(), CommandFlags.Wrappable)
+                    ], new QueryCharCommand(), CommandFlags.Wrappable)
             },
             
             { "queryword",
                 new CommandInfo("queryword", /* Localizable */ "Queries a word in a specified line or all lines",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "word/phrase"),
@@ -178,12 +178,12 @@ namespace KS.Shell.Shells.Text
                                 IsNumeric = true
                             })
                         })
-                    }, new QueryWordCommand(), CommandFlags.Wrappable)
+                    ], new QueryWordCommand(), CommandFlags.Wrappable)
             },
             
             { "querywordregex",
                 new CommandInfo("querywordregex", /* Localizable */ "Queries a word in a specified line or all lines using regular expressions",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "regex"),
@@ -193,23 +193,23 @@ namespace KS.Shell.Shells.Text
                                 IsNumeric = true
                             })
                         })
-                    }, new QueryWordRegexCommand(), CommandFlags.Wrappable)
+                    ], new QueryWordRegexCommand(), CommandFlags.Wrappable)
             },
             
             { "replace",
                 new CommandInfo("replace", /* Localizable */ "Replaces a word or phrase with another one",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "word/phrase"),
                             new CommandArgumentPart(true, "word/phrase")
                         })
-                    }, new ReplaceCommand())
+                    ], new ReplaceCommand())
             },
             
             { "replaceinline",
                 new CommandInfo("replaceinline", /* Localizable */ "Replaces a word or phrase with another one in a line",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "word/phrase"),
@@ -220,23 +220,23 @@ namespace KS.Shell.Shells.Text
                                 IsNumeric = true
                             })
                         })
-                    }, new ReplaceInlineCommand())
+                    ], new ReplaceInlineCommand())
             },
             
             { "replaceregex",
                 new CommandInfo("replaceregex", /* Localizable */ "Replaces a word or phrase with another one using regular expressions",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "regex"),
                             new CommandArgumentPart(true, "word/phrase")
                         })
-                    }, new ReplaceRegexCommand())
+                    ], new ReplaceRegexCommand())
             },
             
             { "replaceinlineregex",
                 new CommandInfo("replaceinlineregex", /* Localizable */ "Replaces a word or phrase with another one in a line using regular expressions",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "regex"),
@@ -247,21 +247,21 @@ namespace KS.Shell.Shells.Text
                                 IsNumeric = true
                             })
                         })
-                    }, new ReplaceInlineRegexCommand())
+                    ], new ReplaceInlineRegexCommand())
             },
             
             { "save",
                 new CommandInfo("save", /* Localizable */ "Saves the file",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new SaveCommand())
+                    ], new SaveCommand())
             },
 
             { "tui",
                 new CommandInfo("tui", /* Localizable */ "Opens the interactive text editor TUI",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new TuiCommand())
+                    ], new TuiCommand())
             },
         };
 

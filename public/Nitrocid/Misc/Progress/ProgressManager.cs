@@ -29,7 +29,7 @@ namespace KS.Misc.Progress
     /// </summary>
     public static class ProgressManager
     {
-        private static readonly List<ProgressHandler> handlers = new();
+        private static readonly List<ProgressHandler> handlers = [];
 
         /// <summary>
         /// Registers a process handler

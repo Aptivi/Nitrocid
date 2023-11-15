@@ -38,12 +38,12 @@ namespace KS.Shell.Shells.Json.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             string path = JsonShellCommon.FileStream.Name;
-            List<string> lines = Reading.ReadAllLinesNoBlock(path).ToList();
+            List<string> lines = [.. Reading.ReadAllLinesNoBlock(path)];
             TextEditInteractive.OpenInteractive(JsonShellCommon.FileStream.Name, ref lines);
 
             // Save the changes
             JsonTools.CloseJsonFile();
-            Writing.WriteAllLinesNoBlock(path, lines.ToArray());
+            Writing.WriteAllLinesNoBlock(path, [.. lines]);
             JsonTools.OpenJsonFile(path);
             return 0;
         }

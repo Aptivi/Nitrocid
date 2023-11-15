@@ -272,8 +272,8 @@ namespace KS.Files
         /// <returns>A kernel path</returns>
         public static string GetKernelPath(KernelPathType PathType)
         {
-            if (knownPaths.ContainsKey(PathType))
-                return knownPaths[PathType].Item1();
+            if (knownPaths.TryGetValue(PathType, out (Func<string>, bool) pathDelegate))
+                return pathDelegate.Item1();
             throw new KernelException(KernelExceptionType.InvalidKernelPath, Translate.DoTranslation("Invalid kernel path type."));
         }
 
@@ -284,8 +284,8 @@ namespace KS.Files
         /// <returns>True if we're able to wipe. Otherwise, false.</returns>
         public static bool IsResettable(KernelPathType PathType)
         {
-            if (knownPaths.ContainsKey(PathType))
-                return knownPaths[PathType].Item2;
+            if (knownPaths.TryGetValue(PathType, out (Func<string>, bool) pathDelegate))
+                return pathDelegate.Item2;
             throw new KernelException(KernelExceptionType.InvalidKernelPath, Translate.DoTranslation("Invalid kernel path type."));
         }
 

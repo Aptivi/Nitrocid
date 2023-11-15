@@ -58,10 +58,10 @@ namespace KS.Shell.Shells.Admin.Presets
         internal override string PresetPromptBuilder()
         {
             // Segments
-            List<PowerLineSegment> segments = new()
-            {
+            List<PowerLineSegment> segments =
+            [
                 new PowerLineSegment(new Color(85, 255, 255), new Color(43, 127, 127), Translate.DoTranslation("Administrator Shell")),
-            };
+            ];
 
             // Builder
             var PresetStringBuilder = new StringBuilder();
@@ -77,10 +77,10 @@ namespace KS.Shell.Shells.Admin.Presets
         internal override string PresetPromptCompletionBuilder()
         {
             // Segments
-            List<PowerLineSegment> segments = new()
-            {
+            List<PowerLineSegment> segments =
+            [
                 new PowerLineSegment(new Color(85, 255, 255), new Color(43, 127, 127), "+"),
-            };
+            ];
 
             // Builder
             var PresetStringBuilder = new StringBuilder();

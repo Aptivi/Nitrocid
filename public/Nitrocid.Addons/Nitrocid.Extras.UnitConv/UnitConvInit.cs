@@ -38,7 +38,7 @@ namespace Nitrocid.Extras.UnitConv
         {
             { "listunits",
                 new CommandInfo("listunits", /* Localizable */ "Lists all available units",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "type", new CommandArgumentPartOptions()
@@ -46,14 +46,14 @@ namespace Nitrocid.Extras.UnitConv
                                 AutoCompleter = (_) => Quantity.Infos.Select((src) => src.Name).ToArray()
                             }),
                         })
-                    }, new ListUnitsCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
+                    ], new ListUnitsCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
 
             { "unitconv",
                 new CommandInfo("unitconv", /* Localizable */ "Unit converter",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "unittype", new CommandArgumentPartOptions()
                             {
                                 AutoCompleter = (_) => Quantity.Infos.Select((src) => src.Name).ToArray()
@@ -64,15 +64,15 @@ namespace Nitrocid.Extras.UnitConv
                             }),
                             new CommandArgumentPart(true, "sourceunit"),
                             new CommandArgumentPart(true, "targetunit"),
-                        }, new[]
-                        {
+                        ],
+                        [
                             new SwitchInfo("tui", /* Localizable */ "Use the TUI version of the unit converter", new SwitchOptions()
                             {
                                 OptionalizeLastRequiredArguments = 4,
                                 AcceptsValues = false
                             })
-                        })
-                    }, new UnitConvCommand())
+                        ])
+                    ], new UnitConvCommand())
             },
         };
 
@@ -88,10 +88,10 @@ namespace Nitrocid.Extras.UnitConv
         ReadOnlyDictionary<string, FieldInfo> IAddon.PubliclyAvailableFields => null;
 
         void IAddon.StartAddon() =>
-            CommandManager.RegisterAddonCommands(ShellType.Shell, addonCommands.Values.ToArray());
+            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands.Values]);
 
         void IAddon.StopAddon() =>
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, addonCommands.Keys.ToArray());
+            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Keys]);
 
         void IAddon.FinalizeAddon()
         { }

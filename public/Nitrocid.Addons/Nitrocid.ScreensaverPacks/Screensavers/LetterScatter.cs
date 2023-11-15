@@ -88,7 +88,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     public class LetterScatterDisplay : BaseScreensaver, IScreensaver
     {
 
-        private readonly Dictionary<(int, int), char> characters = new();
+        private readonly Dictionary<(int, int), char> characters = [];
         private readonly char minChar = 'a';
         private readonly char maxChar = 'z';
 
@@ -115,10 +115,10 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Selected left and top: {0}, {1}", Left, Top);
             if (!ConsoleResizeListener.WasResized(false))
             {
-                if (characters.ContainsKey(leftTop))
+                if (characters.TryGetValue(leftTop, out char charValue))
                 {
-                    characters[leftTop]++;
-                    if (characters[leftTop] >= maxChar)
+                    characters[leftTop] = ++charValue;
+                    if (charValue >= maxChar)
                         characters[leftTop] = minChar;
                 }
                 else

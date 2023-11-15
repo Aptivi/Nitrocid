@@ -33,7 +33,7 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            variableValue = $"[{string.Join(", ", parameters.ArgumentsList.ToArray())}]";
+            variableValue = $"[{string.Join(", ", [.. parameters.ArgumentsList])}]";
             return 0;
         }
 

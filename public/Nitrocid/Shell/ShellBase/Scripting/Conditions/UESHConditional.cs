@@ -63,7 +63,7 @@ namespace KS.Shell.ShellBase.Scripting.Conditions
             { "none", new NoneCondition() }
         };
 
-        private readonly static Dictionary<string, BaseCondition> CustomConditions = new();
+        private readonly static Dictionary<string, BaseCondition> CustomConditions = [];
 
         /// <summary>
         /// The available condition names

@@ -263,8 +263,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             int Width = ConsoleWrapper.WindowWidth - 4;
 
             // Then, go ahead and make these bars swivel themselves.
-            List<int> CurrentPosVertical = new();
-            List<int> CurrentPosHorizontal = new();
+            List<int> CurrentPosVertical = [];
+            List<int> CurrentPosHorizontal = [];
             double FrequencyVertical = Math.PI / SwivelSettings.SwivelVerticalFrequencyLevel;
             double FrequencyHorizontal = Math.PI / SwivelSettings.SwivelHorizontalFrequencyLevel;
 

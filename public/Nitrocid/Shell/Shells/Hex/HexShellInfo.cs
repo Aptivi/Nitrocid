@@ -40,24 +40,24 @@ namespace KS.Shell.Shells.Hex
         {
             { "addbyte",
                 new CommandInfo("addbyte", /* Localizable */ "Adds a new byte at the end of the file",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "byte")
                         })
-                    }, new AddByteCommand())
+                    ], new AddByteCommand())
             },
             
             { "addbytes",
                 new CommandInfo("addbytes", /* Localizable */ "Adds the new bytes at the end of the file",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new AddBytesCommand())
+                    ], new AddBytesCommand())
             },
 
             { "addbyteto",
                 new CommandInfo("addbyteto", /* Localizable */ "Adds a new byte to the specified position",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "byte"),
@@ -66,19 +66,19 @@ namespace KS.Shell.Shells.Hex
                                 IsNumeric = true,
                             })
                         })
-                    }, new AddByteToCommand())
+                    ], new AddByteToCommand())
             },
 
             { "clear",
                 new CommandInfo("clear", /* Localizable */ "Clears the binary file",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new ClearCommand())
+                    ], new ClearCommand())
             },
             
             { "delbyte",
                 new CommandInfo("delbyte", /* Localizable */ "Deletes a byte using the byte number",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "bytenumber", new CommandArgumentPartOptions()
@@ -86,12 +86,12 @@ namespace KS.Shell.Shells.Hex
                                 IsNumeric = true
                             })
                         })
-                    }, new DelByteCommand())
+                    ], new DelByteCommand())
             },
             
             { "delbytes",
                 new CommandInfo("delbytes", /* Localizable */ "Deletes the range of bytes",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "startbyte", new CommandArgumentPartOptions()
@@ -103,19 +103,19 @@ namespace KS.Shell.Shells.Hex
                                 IsNumeric = true
                             })
                         })
-                    }, new DelBytesCommand())
+                    ], new DelBytesCommand())
             },
             
             { "exitnosave",
                 new CommandInfo("exitnosave", /* Localizable */ "Exits the hex editor",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new ExitNoSaveCommand())
+                    ], new ExitNoSaveCommand())
             },
             
             { "print",
                 new CommandInfo("print", /* Localizable */ "Prints the contents of the file with byte numbers to the console",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(false, "startbyte", new CommandArgumentPartOptions()
@@ -127,12 +127,12 @@ namespace KS.Shell.Shells.Hex
                                 IsNumeric = true
                             })
                         })
-                    }, new PrintCommand(), CommandFlags.Wrappable)
+                    ], new PrintCommand(), CommandFlags.Wrappable)
             },
             
             { "querybyte",
                 new CommandInfo("querybyte", /* Localizable */ "Queries a byte in a specified range of bytes or all bytes",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "byte"),
@@ -145,32 +145,32 @@ namespace KS.Shell.Shells.Hex
                                 IsNumeric = true
                             })
                         })
-                    }, new QueryByteCommand(), CommandFlags.Wrappable)
+                    ], new QueryByteCommand(), CommandFlags.Wrappable)
             },
             
             { "replace",
                 new CommandInfo("replace", /* Localizable */ "Replaces a byte with another one",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "byte"),
                             new CommandArgumentPart(true, "replacebyte")
                         })
-                    }, new ReplaceCommand())
+                    ], new ReplaceCommand())
             },
             
             { "save",
                 new CommandInfo("save", /* Localizable */ "Saves the file",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new SaveCommand())
+                    ], new SaveCommand())
             },
             
             { "tui",
                 new CommandInfo("tui", /* Localizable */ "Opens the interactive hex editor TUI",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new TuiCommand())
+                    ], new TuiCommand())
             },
         };
 

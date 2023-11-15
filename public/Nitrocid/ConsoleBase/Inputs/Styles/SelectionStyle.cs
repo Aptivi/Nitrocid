@@ -129,7 +129,7 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// <param name="Answers">Set of answers.</param>
         /// <param name="kiosk">Whether to prevent exiting or not</param>
         public static int PromptSelection(string Question, List<InputChoiceInfo> Answers, bool kiosk = false) =>
-            PromptSelection(Question, Answers, new List<InputChoiceInfo>(), kiosk);
+            PromptSelection(Question, Answers, [], kiosk);
 
         /// <summary>
         /// Prompts user for Selection
@@ -139,7 +139,7 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// <param name="AltAnswers">Set of alternate answers.</param>
         /// <param name="kiosk">Whether to prevent exiting or not</param>
         public static int PromptSelection(string Question, List<InputChoiceInfo> Answers, List<InputChoiceInfo> AltAnswers, bool kiosk = false) =>
-            PromptSelection(Question, Answers.ToArray(), AltAnswers.ToArray(), kiosk);
+            PromptSelection(Question, Answers.ToArray(), [.. AltAnswers], kiosk);
 
         /// <summary>
         /// Prompts user for Selection

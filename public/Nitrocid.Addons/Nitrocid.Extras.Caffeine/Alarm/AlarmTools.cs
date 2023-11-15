@@ -25,7 +25,7 @@ namespace Nitrocid.Extras.Caffeine.Alarm
 {
     internal static class AlarmTools
     {
-        internal static Dictionary<string, DateTime> alarms = new();
+        internal static Dictionary<string, DateTime> alarms = [];
 
         internal static void StartAlarm(string alarmName, int alarmValue)
         {

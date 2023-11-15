@@ -206,7 +206,7 @@ namespace KS.Drivers.HardwareProber
         /// <inheritdoc/>
         public virtual void ListHardware(string hardwareType)
         {
-            string[] supportedTypes = new[] { "CPU", "RAM", "HDD", "GPU" };
+            string[] supportedTypes = ["CPU", "RAM", "HDD", "GPU"];
             if (hardwareType == "all")
             {
                 foreach (string supportedType in supportedTypes)

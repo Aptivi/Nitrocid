@@ -29,15 +29,14 @@ namespace KS.Shell.ShellBase.Shells
     /// </summary>
     public abstract class BaseShellInfo : IShellInfo
     {
-        internal Dictionary<string, CommandInfo> modCommands = new();
-        internal Dictionary<string, CommandInfo> addonCommands = new();
-        internal Dictionary<string, PromptPresetBase> customShellPresets = new();
+        internal Dictionary<string, CommandInfo> modCommands = [];
+        internal Dictionary<string, CommandInfo> addonCommands = [];
+        internal Dictionary<string, PromptPresetBase> customShellPresets = [];
         internal static CommandInfo fallbackNonSlashCommand =
             new("slashreminder", /* Localizable */ "Reminder for the slash commands",
-                new[]
-                {
+                [
                     new CommandArgumentInfo()
-                }, new SlashReminderCommand());
+                ], new SlashReminderCommand());
 
         /// <inheritdoc/>
         public virtual object ShellLock => new();

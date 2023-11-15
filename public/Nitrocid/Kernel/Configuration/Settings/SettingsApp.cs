@@ -276,10 +276,10 @@ namespace KS.Kernel.Configuration.Settings
             try
             {
                 List<InputChoiceInfo> Results;
-                List<InputChoiceInfo> Back = new()
-                {
+                List<InputChoiceInfo> Back =
+                [
                     new InputChoiceInfo("<---", Translate.DoTranslation("Go Back..."))
-                };
+                ];
 
                 // Prompt the user
                 TextWriterColor.Write(Translate.DoTranslation("Write what do you want to search for."));

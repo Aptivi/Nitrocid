@@ -529,7 +529,7 @@ namespace Nitrocid.Tests.Files
         {
             string PathToTestText = Path.GetFullPath("TestData/TestText.txt");
             string PathToTestTextToBeCombined = Path.GetFullPath("TestData/TestText.txt");
-            var Combined = Combination.CombineTextFiles(PathToTestText, new[] { PathToTestTextToBeCombined });
+            var Combined = Combination.CombineTextFiles(PathToTestText, [PathToTestTextToBeCombined]);
             Combined.ShouldBeOfType(typeof(string[]));
             Combined.ShouldNotBeNull();
             Combined.ShouldNotBeEmpty();

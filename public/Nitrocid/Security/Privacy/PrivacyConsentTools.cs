@@ -40,7 +40,7 @@ namespace KS.Security.Privacy
     /// </summary>
     public static class PrivacyConsentTools
     {
-        private static List<ConsentedPermission> consentedPermissions = new();
+        private static List<ConsentedPermission> consentedPermissions = [];
 
         /// <summary>
         /// Consents a permission

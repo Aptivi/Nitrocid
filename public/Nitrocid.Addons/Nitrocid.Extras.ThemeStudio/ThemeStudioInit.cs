@@ -36,12 +36,12 @@ namespace Nitrocid.Extras.ThemeStudio
         {
             { "mktheme",
                 new CommandInfo("mktheme", /* Localizable */ "Makes a new theme",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "themeName"),
                         })
-                    }, new MkThemeCommand())
+                    ], new MkThemeCommand())
             },
         };
 
@@ -57,10 +57,10 @@ namespace Nitrocid.Extras.ThemeStudio
         ReadOnlyDictionary<string, FieldInfo> IAddon.PubliclyAvailableFields => null;
 
         void IAddon.StartAddon() =>
-            CommandManager.RegisterAddonCommands(ShellType.Shell, addonCommands.Values.ToArray());
+            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands.Values]);
 
         void IAddon.StopAddon() =>
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, addonCommands.Keys.ToArray());
+            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Keys]);
 
         void IAddon.FinalizeAddon()
         { }

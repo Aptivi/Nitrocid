@@ -136,7 +136,7 @@ namespace KS.ConsoleBase.Presentation
                     // Check to see if we need to invoke action
                     if (element.IsInput)
                         if (element.InvokeActionInput is not null)
-                            element.InvokeActionInput(new object[] { element.WrittenInput });
+                            element.InvokeActionInput([element.WrittenInput]);
                         else
                         if (element.InvokeAction is not null)
                             element.InvokeAction();

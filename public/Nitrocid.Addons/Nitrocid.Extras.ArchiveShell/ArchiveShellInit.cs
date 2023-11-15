@@ -40,12 +40,12 @@ namespace Nitrocid.Extras.ArchiveShell
         {
             { "archive",
                 new CommandInfo("archive", /* Localizable */ "Opens the archive file to the archive shell",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "archivefile"),
                         })
-                    }, new ArchiveCommand())
+                    ], new ArchiveCommand())
             },
         };
 
@@ -72,14 +72,14 @@ namespace Nitrocid.Extras.ArchiveShell
         }
 
         void IAddon.StartAddon() =>
-            CommandManager.RegisterAddonCommands(ShellType.Shell, addonCommands.Values.ToArray());
+            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands.Values]);
 
         void IAddon.StopAddon()
         {
             ShellManager.availableShells.Remove("ArchiveShell");
             PromptPresetManager.CurrentPresets.Remove("ArchiveShell");
             ShellManager.reservedShells.Remove("ArchiveShell");
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, addonCommands.Keys.ToArray());
+            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Keys]);
             ConfigTools.UnregisterBaseSetting(nameof(ArchiveConfig));
         }
     }

@@ -55,7 +55,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 while (true)
                 {
                     // Prompt for screensaver selection
-                    int selected = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a screensaver to showcase"), saverChoices.ToArray(), saverExit);
+                    int selected = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a screensaver to showcase"), [.. saverChoices], saverExit);
                     if (selected == -1 || selected == saverNames.Length + 1)
                         break;
 

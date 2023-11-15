@@ -46,7 +46,7 @@ namespace KS.Modifications
     public static class ModParser
     {
 
-        internal static List<string> queued = new();
+        internal static List<string> queued = [];
 
         /// <summary>
         /// Gets the mod instance from compiled assembly
@@ -177,7 +177,7 @@ namespace KS.Modifications
 
                     // Locate the mod's localization files
                     string ModLocalizationPath = ModPath + "Localization/" + Path.GetFileNameWithoutExtension(modFile) + "-" + FileVersionInfo.GetVersionInfo(ModPath + modFile).FileVersion + "/";
-                    Dictionary<string, string[]> localizations = new();
+                    Dictionary<string, string[]> localizations = [];
                     if (Checking.FolderExists(ModLocalizationPath))
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Found mod localization collection in {0}", ModLocalizationPath);

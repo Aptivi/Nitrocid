@@ -41,7 +41,7 @@ namespace KS.Misc.Splash
         internal static string _ProgressText = "";
         internal static bool _KernelBooted = false;
         internal static bool _InSplash = false;
-        internal static readonly List<string> logBuffer = new();
+        internal static readonly List<string> logBuffer = [];
 
         /// <summary>
         /// The progress indicator of the kernel 

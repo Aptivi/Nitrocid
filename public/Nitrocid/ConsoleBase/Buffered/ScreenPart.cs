@@ -32,7 +32,7 @@ namespace KS.ConsoleBase.Buffered
     public class ScreenPart
     {
         private readonly StringBuilder bufferBuilder = new();
-        private readonly List<Func<string>> dynamicBuffers = new();
+        private readonly List<Func<string>> dynamicBuffers = [];
 
         /// <summary>
         /// Adds a text to the buffer

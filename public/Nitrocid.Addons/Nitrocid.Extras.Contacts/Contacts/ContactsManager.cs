@@ -41,7 +41,7 @@ namespace Nitrocid.Extras.Contacts.Contacts
     /// </summary>
     public static class ContactsManager
     {
-        private static readonly List<Card> cards = new();
+        private static readonly List<Card> cards = [];
         private static int searchedIdx = -1;
         private static string cachedSearchExpression = "";
 
@@ -64,7 +64,7 @@ namespace Nitrocid.Extras.Contacts.Contacts
                 DebugWriter.WriteDebug(DebugLevel.I, "Installing contact {0}...", contact);
                 InstallContacts(contact, false);
             }
-            return cards.ToArray();
+            return [.. cards];
         }
 
         /// <summary>
@@ -137,21 +137,21 @@ namespace Nitrocid.Extras.Contacts.Contacts
                 DebugWriter.WriteDebug(DebugLevel.I, "Got {0} parsers from {1}.", parsers.Count, pathToContactFile);
 
                 // Iterate through the contacts
-                List<Card> addedCards = new();
+                List<Card> addedCards = [];
                 foreach (var parser in parsers)
                 {
                     try
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Parser card version: {0}", parser.CardVersion);
                         DebugWriter.WriteDebug(DebugLevel.D, "Contents:");
-                        DebugWriter.WriteDebugPrivacy(DebugLevel.D, "{0}", new int[] { 0 }, parser.CardContent);
+                        DebugWriter.WriteDebugPrivacy(DebugLevel.D, "{0}", [0], parser.CardContent);
 
                         // Now, parse the card
                         var card = parser.Parse();
                         if (!cards.Where((c) => c == card).Any())
                             cards.Add(card);
                         addedCards.Add(card);
-                        DebugWriter.WriteDebugPrivacy(DebugLevel.I, "Parser successfully processed contact {0}.", new int[] { 0 }, cards[^1].ContactFullName);
+                        DebugWriter.WriteDebugPrivacy(DebugLevel.I, "Parser successfully processed contact {0}.", [0], cards[^1].ContactFullName);
                         DebugWriter.WriteDebug(DebugLevel.I, "Cards: {0}", cards.Count);
                         DebugWriter.WriteDebug(DebugLevel.I, "Added cards: {0}", addedCards.Count);
                     }

@@ -35,8 +35,8 @@ namespace KS.Kernel.Events
         /// <summary>
         /// Recently fired events
         /// </summary>
-        internal static Dictionary<string, object[]> FiredEvents { get; set; } = new Dictionary<string, object[]>();
-        internal static Dictionary<EventType, List<Action<object[]>>> eventHandlers = new();
+        internal static Dictionary<string, object[]> FiredEvents { get; set; } = [];
+        internal static Dictionary<EventType, List<Action<object[]>>> eventHandlers = [];
 
         /// <summary>
         /// Lists all the fired events with arguments
@@ -90,7 +90,7 @@ namespace KS.Kernel.Events
 
             // Now, respond to the event
             if (!IsEventHandled(Event))
-                eventHandlers.Add(Event, new());
+                eventHandlers.Add(Event, []);
             foreach (var handler in eventHandlers[Event])
             {
                 try
@@ -118,7 +118,7 @@ namespace KS.Kernel.Events
             if (!IsEventFound(eventType))
                 throw new KernelException(KernelExceptionType.NoSuchEvent, Translate.DoTranslation("Event {0} not found."), eventType);
             if (!IsEventHandled(eventType))
-                eventHandlers.Add(eventType, new());
+                eventHandlers.Add(eventType, []);
             eventHandlers[eventType].Add(eventAction);
         }
 
@@ -134,7 +134,7 @@ namespace KS.Kernel.Events
             if (!IsEventFound(eventType))
                 throw new KernelException(KernelExceptionType.NoSuchEvent, Translate.DoTranslation("Event {0} not found."), eventType);
             if (!IsEventHandled(eventType))
-                eventHandlers.Add(eventType, new());
+                eventHandlers.Add(eventType, []);
             eventHandlers[eventType].Remove(eventAction);
         }
 

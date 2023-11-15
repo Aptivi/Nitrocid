@@ -38,7 +38,7 @@ namespace Nitrocid.Extras.ToDoList
         {
             { "todo",
                 new CommandInfo("todo", /* Localizable */ "To-do task manager",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "add"),
@@ -71,7 +71,7 @@ namespace Nitrocid.Extras.ToDoList
                         {
                             new CommandArgumentPart(true, "load"),
                         }),
-                    }, new TodoCommand())
+                    ], new TodoCommand())
             },
         };
 
@@ -94,9 +94,9 @@ namespace Nitrocid.Extras.ToDoList
         }
 
         void IAddon.StartAddon() =>
-            CommandManager.RegisterAddonCommands(ShellType.Shell, addonCommands.Values.ToArray());
+            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands.Values]);
 
         void IAddon.StopAddon() =>
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, addonCommands.Keys.ToArray());
+            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Keys]);
     }
 }

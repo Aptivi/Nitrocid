@@ -600,8 +600,8 @@ namespace KS.Files.Extensions
                 throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Extensions must start with the dot. Hint:") + $" .{extension}");
 
             // Now, check to see if we have this extension
-            if (mimeTypes.ContainsKey(extension))
-                return mimeTypes[extension];
+            if (mimeTypes.TryGetValue(extension, out string mimeType))
+                return mimeType;
             return mimeTypes[".bin"];
         }
     }

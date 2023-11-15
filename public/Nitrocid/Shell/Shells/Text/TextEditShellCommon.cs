@@ -31,7 +31,7 @@ namespace KS.Shell.Shells.Text
     public static class TextEditShellCommon
     {
 
-        internal static List<string> fileLines = new();
+        internal static List<string> fileLines = [];
         internal static FileStream fileStream;
         internal static int autoSaveInterval = 60;
         internal static List<string> FileLinesOrig;

@@ -37,13 +37,12 @@ namespace Nitrocid.Extras.ChatGpt
         {
             { "chatgpt",
                 new CommandInfo("chatgpt", /* Localizable */ "Loads the ChatGPT shell with your API key associated with your account",
-                    new[]
-                    {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "apikey")
                         }),
-                    }, new ChatGptCommandExec())
+                    ], new ChatGptCommandExec())
             },
         };
 
@@ -62,7 +61,7 @@ namespace Nitrocid.Extras.ChatGpt
         {
             ShellManager.reservedShells.Add("ChatGptShell");
             ShellManager.RegisterShell("ChatGptShell", new ChatGptShellInfo());
-            CommandManager.RegisterAddonCommands(ShellType.Shell, addonCommands.Values.ToArray());
+            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands.Values]);
         }
 
         void IAddon.StartAddon()
@@ -73,7 +72,7 @@ namespace Nitrocid.Extras.ChatGpt
             ShellManager.availableShells.Remove("ChatGptShell");
             PromptPresetManager.CurrentPresets.Remove("ChatGptShell");
             ShellManager.reservedShells.Remove("ChatGptShell");
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, addonCommands.Keys.ToArray());
+            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Keys]);
         }
     }
 }

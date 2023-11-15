@@ -32,8 +32,8 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD
     public static class BSOD
     {
 
-        private static readonly List<BaseBSOD> BSODList = new()
-        {
+        private static readonly List<BaseBSOD> BSODList =
+        [
             new WindowsXP(),
             new Windows2K(),
             new Windows98(),
@@ -54,7 +54,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD
             new FreeBsdBoot(),
             new FreeBsdPanic(),
             new WindowsNt(),
-        };
+        ];
 
         /// <summary>
         /// Simulates the BSOD animation

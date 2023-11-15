@@ -57,8 +57,8 @@ namespace KS.Network.RPC
         /// <br/>&lt;Request:Acknowledge&gt;: Pings the remote kernel silently. Usage: &lt;Request:Acknowledge&gt;(IP)
         /// <br/>&lt;Request:Ping&gt;: Pings the remote kernel with notification. Usage: &lt;Request:Ping&gt;(IP)
         /// </summary>
-        private readonly static List<string> RPCCommandsField = new()
-        {
+        private readonly static List<string> RPCCommandsField =
+        [
             "Shutdown",
             "Reboot",
             "RebootSafe",
@@ -68,7 +68,7 @@ namespace KS.Network.RPC
             "Exec",
             "Acknowledge",
             "Ping"
-        };
+        ];
 
         private readonly static Dictionary<string, Action<string>> RPCCommandReplyActions = new()
         {
@@ -205,8 +205,8 @@ namespace KS.Network.RPC
                     EventsManager.FireEvent(EventType.RPCCommandReceived, Message, endpoint.Address.ToString(), endpoint.Port);
 
                     // Invoke the action based on message
-                    if (RPCCommandReplyActions.ContainsKey(Cmd))
-                        RPCCommandReplyActions[Cmd].Invoke(Arg);
+                    if (RPCCommandReplyActions.TryGetValue(Cmd, out Action<string> replyAction))
+                        replyAction.Invoke(Arg);
                     else
                         DebugWriter.WriteDebug(DebugLevel.W, "Not found. Message was {0}", Message);
                 }

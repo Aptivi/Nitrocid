@@ -33,7 +33,7 @@ namespace KS.Users.Login.Handlers
             { "classic", new ClassicLogin() },
             { "modern", new ModernLogin() },
         };
-        private readonly static Dictionary<string, BaseLoginHandler> customHandlers = new();
+        private readonly static Dictionary<string, BaseLoginHandler> customHandlers = [];
 
         /// <summary>
         /// Gets and sets the current login handler name
@@ -115,10 +115,8 @@ namespace KS.Users.Login.Handlers
         /// <returns>List of handler names</returns>
         public static string[] GetHandlerNames()
         {
-            List<string> names = new();
-            names.AddRange(handlers.Keys);
-            names.AddRange(customHandlers.Keys);
-            return names.ToArray();
+            List<string> names = [.. handlers.Keys, .. customHandlers.Keys];
+            return [.. names];
         }
     }
 }

@@ -36,7 +36,7 @@ namespace KS.Kernel.Threading
     public static class ThreadManager
     {
 
-        internal static List<KernelThread> kernelThreads = new();
+        internal static List<KernelThread> kernelThreads = [];
 
         /// <summary>
         /// Gets the operating system threads that Nitrocid makes use of within the host OS

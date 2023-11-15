@@ -131,7 +131,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
         private static int[] GetColorLevels(double Frequency)
         {
-            List<int> ColorLevels = new();
+            List<int> ColorLevels = [];
             int Count = 10000;
             int AuroraMaxColor = 80;
             double TimeSecs = 0.0;
@@ -146,12 +146,12 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 if (!isSet)
                     isSet = true;
             }
-            return ColorLevels.ToArray();
+            return [.. ColorLevels];
         }
 
         private static (int, int, int)[] GetColorBands(int redColorNumTo, int greenColorNumTo, int blueColorNumTo)
         {
-            List<(int, int, int)> ColorBands = new();
+            List<(int, int, int)> ColorBands = [];
             int Count = ConsoleWrapper.WindowHeight;
 
             // Set thresholds
@@ -167,7 +167,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 int finalBlueLevel = (int)(blueBandThreshold * i);
                 ColorBands.Add((finalRedLevel, finalGreenLevel, finalBlueLevel));
             }
-            return ColorBands.ToArray();
+            return [.. ColorBands];
         }
 
     }

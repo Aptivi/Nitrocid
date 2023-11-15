@@ -121,7 +121,7 @@ namespace KS.Users.Permissions
                         DebugWriter.WriteDebug(DebugLevel.I, "Granted permission {0} to user {1}", type.ToString(), User);
 
                         // Now, change the permission variable
-                        UserManagement.Users[userIndex].Permissions = perms.ToArray();
+                        UserManagement.Users[userIndex].Permissions = [.. perms];
                     }
                 }
             }
@@ -163,7 +163,7 @@ namespace KS.Users.Permissions
                         DebugWriter.WriteDebug(DebugLevel.I, "Revoked permission {0} from user {1}", type.ToString(), User);
 
                         // Now, change the permission variable
-                        UserManagement.Users[userIndex].Permissions = perms.ToArray();
+                        UserManagement.Users[userIndex].Permissions = [.. perms];
                     }
                 }
             }
@@ -204,7 +204,7 @@ namespace KS.Users.Permissions
                         DebugWriter.WriteDebug(DebugLevel.I, "Granted permission {0} to group {1}", type.ToString(), Group);
 
                         // Now, change the permission variable
-                        GroupManagement.ChangePermissionInternal(Group, perms.ToArray());
+                        GroupManagement.ChangePermissionInternal(Group, [.. perms]);
                     }
                 }
             }
@@ -245,7 +245,7 @@ namespace KS.Users.Permissions
                         DebugWriter.WriteDebug(DebugLevel.I, "Revoked permission {0} from group {1}", type.ToString(), Group);
 
                         // Now, change the permission variable
-                        GroupManagement.ChangePermissionInternal(Group, perms.ToArray());
+                        GroupManagement.ChangePermissionInternal(Group, [.. perms]);
                     }
                 }
             }

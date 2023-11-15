@@ -90,7 +90,7 @@ namespace KS.ConsoleBase.Presentation.Elements
             }
 
             // Flatten the enumerables to their string value representations
-            List<string> choices = new();
+            List<string> choices = [];
             foreach (var finalArg in finalArgs)
             {
                 if (finalArg is IEnumerable enumerable && finalArg is not string)
@@ -102,7 +102,7 @@ namespace KS.ConsoleBase.Presentation.Elements
 
             // Render the choices (with checking for bounds, again)
             TextWriterWhereColor.WriteWhereKernelColor("\n", PresentationTools.PresentationUpperInnerBorderLeft, Console.CursorTop, false, PresentationTools.PresentationUpperInnerBorderLeft, KernelColorType.NeutralText);
-            string[] finalChoices = choices.ToArray();
+            string[] finalChoices = [.. choices];
             int choiceNum = 1;
             var choiceBuffer = new StringBuilder();
             int choiceSeekTop = ConsoleWrapper.CursorTop;
@@ -168,7 +168,7 @@ namespace KS.ConsoleBase.Presentation.Elements
             object[] finalArgs = Arguments.Length > 1 ? Arguments.Skip(1).ToArray() : Array.Empty<object>();
 
             // Flatten the enumerables to their string value representations
-            List<string> choices = new();
+            List<string> choices = [];
             foreach (var finalArg in finalArgs)
             {
                 if (finalArg is IEnumerable enumerable && finalArg is not string)
@@ -178,7 +178,7 @@ namespace KS.ConsoleBase.Presentation.Elements
                     choices.Add(finalArg.ToString());
             }
 
-            string[] finalChoices = choices.ToArray();
+            string[] finalChoices = [.. choices];
             string text = TextTools.FormatString((string)(Arguments.Length > 0 ? Arguments[0] : ""), finalArgs) + "\n\n";
 
             // Add the choices to the text

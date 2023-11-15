@@ -36,7 +36,7 @@ namespace KS.Kernel.Journaling
     public static class JournalManager
     {
 
-        internal static List<JournalEntry> journalEntries = new();
+        internal static List<JournalEntry> journalEntries = [];
         internal static string JournalPath = "";
         private static readonly object journalLock = new();
 
@@ -98,7 +98,7 @@ namespace KS.Kernel.Journaling
                 return Array.Empty<JournalEntry>();
 
             // Now, return the journal entries
-            return journalEntries.ToArray();
+            return [.. journalEntries];
         }
 
         /// <summary>

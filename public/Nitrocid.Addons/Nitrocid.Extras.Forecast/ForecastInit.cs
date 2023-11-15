@@ -39,19 +39,19 @@ namespace Nitrocid.Extras.Forecast
         {
             { "weather",
                 new CommandInfo("weather", /* Localizable */ "Shows weather info for specified city. Uses OpenWeatherMap.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "CityID/CityName"),
                             new CommandArgumentPart(false, "apikey"),
-                        }, new[] {
+                        ], [
                             new SwitchInfo("list", /* Localizable */ "Shows all the available cities", new SwitchOptions()
                             {
                                 OptionalizeLastRequiredArguments = 2,
                                 AcceptsValues = false
                             })
-                        })
-                    }, new WeatherCommand())
+                        ])
+                    ], new WeatherCommand())
             },
         };
 
@@ -74,14 +74,14 @@ namespace Nitrocid.Extras.Forecast
 
         void IAddon.StartAddon()
         {
-            CommandManager.RegisterAddonCommands(ShellType.Shell, addonCommands.Values.ToArray());
+            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands.Values]);
             var config = new ForecastConfig();
             ConfigTools.RegisterBaseSetting(config);
         }
 
         void IAddon.StopAddon()
         {
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, addonCommands.Keys.ToArray());
+            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Keys]);
             ConfigTools.UnregisterBaseSetting(nameof(ForecastConfig));
         }
     }

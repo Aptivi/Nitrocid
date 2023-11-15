@@ -199,7 +199,7 @@ namespace KS.Shell.ShellBase.Help
         {
             // Get visible commands
             var commands = CommandManager.GetCommands(commandType);
-            List<string> finalCommand = new();
+            List<string> finalCommand = [];
             foreach (string cmd in commands.Keys)
             {
                 // Get the necessary flags

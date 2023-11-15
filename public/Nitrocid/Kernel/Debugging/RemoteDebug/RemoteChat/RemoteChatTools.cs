@@ -43,7 +43,7 @@ namespace KS.Kernel.Debugging.RemoteDebug.RemoteChat
 
         internal static bool RDebugFailed;
         internal static Exception RDebugFailedReason;
-        internal static List<RemoteDebugDevice> DebugChatDevices = new();
+        internal static List<RemoteDebugDevice> DebugChatDevices = [];
         internal static Socket RDebugChatClient;
         internal static TcpListener DebugChatTCP;
         internal static KernelThread RDebugChatThread = new("Remote Debug Chat Thread", true, StartRDebugger) { isCritical = true };

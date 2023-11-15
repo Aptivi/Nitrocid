@@ -36,7 +36,7 @@ namespace KS.Network.Base.SpeedDial
     public static class SpeedDialTools
     {
 
-        private static List<SpeedDialEntry> speedDialEntries = new();
+        private static List<SpeedDialEntry> speedDialEntries = [];
 
         /// <summary>
         /// Gets a speed dial entry
@@ -134,7 +134,7 @@ namespace KS.Network.Base.SpeedDial
                 }
 
                 // The entry doesn't exist. Go ahead and create it.
-                var dialEntry = new SpeedDialEntry(Address, Port, SpeedDialType, arguments.ToArray());
+                var dialEntry = new SpeedDialEntry(Address, Port, SpeedDialType, [.. arguments]);
 
                 // Add the entry and write it to the file
                 speedDialEntries.Add(dialEntry);

@@ -43,129 +43,129 @@ namespace Nitrocid.Extras.Amusements
         {
             { "backrace",
                 new CommandInfo("backrace", /* Localizable */ "Do you back the wrong horse?",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new BackRaceCommand())
+                    ], new BackRaceCommand())
             },
 
             { "hangman",
                 new CommandInfo("hangman", /* Localizable */ "Starts the Hangman game",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[] {
                             new SwitchInfo("hardcore", /* Localizable */ "One wrong letter and you're hung!", new SwitchOptions()
                             {
-                                ConflictsWith = new string[] { "practice" },
+                                ConflictsWith = ["practice"],
                                 AcceptsValues = false
                             }),
                             new SwitchInfo("practice", /* Localizable */ "Test your Hangman skills by throwing a random letter.", new SwitchOptions()
                             {
-                                ConflictsWith = new string[] { "hardcore" },
+                                ConflictsWith = ["hardcore"],
                                 AcceptsValues = false
                             }),
                         })
-                    }, new HangmanCommand())
+                    ], new HangmanCommand())
             },
 
             { "meteor",
                 new CommandInfo("meteor", /* Localizable */ "You are a spaceship and the meteors are coming to destroy you. Can you save it?",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new MeteorCommand())
+                    ], new MeteorCommand())
             },
 
             { "quote",
                 new CommandInfo("quote", /* Localizable */ "Gets a random quote",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new QuoteCommand())
+                    ], new QuoteCommand())
             },
 
             { "roulette",
                 new CommandInfo("roulette", /* Localizable */ "Russian Roulette",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new RouletteCommand())
+                    ], new RouletteCommand())
             },
 
             { "shipduet",
                 new CommandInfo("shipduet", /* Localizable */ "Two spaceships are on a fight with each other. One shot and the spaceship will blow. This is a local two-player game.",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new ShipDuetCommand())
+                    ], new ShipDuetCommand())
             },
 
             { "snaker",
                 new CommandInfo("snaker", /* Localizable */ "The snake game!",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new SnakerCommand())
+                    ], new SnakerCommand())
             },
 
             { "solver",
                 new CommandInfo("solver", /* Localizable */ "See if you can solve mathematical equations on time",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new SolverCommand())
+                    ], new SolverCommand())
             },
 
             { "speedpress",
                 new CommandInfo("speedpress", /* Localizable */ "See if you can press a key on time",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[] {
                             new SwitchInfo("e", /* Localizable */ "Starts the game in easy difficulty", new SwitchOptions()
                             {
-                                ConflictsWith = new string[] { "m", "h", "v", "c" },
+                                ConflictsWith = ["m", "h", "v", "c"],
                                 AcceptsValues = false
                             }),
                             new SwitchInfo("m", /* Localizable */ "Starts the game in medium difficulty", new SwitchOptions()
                             {
-                                ConflictsWith = new string[] { "v", "h", "e", "c" },
+                                ConflictsWith = ["v", "h", "e", "c"],
                                 AcceptsValues = false
                             }),
                             new SwitchInfo("h", /* Localizable */ "Starts the game in hard difficulty", new SwitchOptions()
                             {
-                                ConflictsWith = new string[] { "m", "v", "e", "c" },
+                                ConflictsWith = ["m", "v", "e", "c"],
                                 AcceptsValues = false
                             }),
                             new SwitchInfo("v", /* Localizable */ "Starts the game in very hard difficulty", new SwitchOptions()
                             {
-                                ConflictsWith = new string[] { "m", "h", "e", "c" },
+                                ConflictsWith = ["m", "h", "e", "c"],
                                 AcceptsValues = false
                             }),
                             new SwitchInfo("c", /* Localizable */ "Starts the game in custom difficulty. Please note that the custom timeout in milliseconds should be written as argument.", new SwitchOptions()
                             {
-                                ConflictsWith = new string[] { "m", "h", "v", "e" },
+                                ConflictsWith = ["m", "h", "v", "e"],
                                 ArgumentsRequired = true
                             })
                         })
-                    }, new SpeedPressCommand())
+                    ], new SpeedPressCommand())
             },
 
             { "wordle",
                 new CommandInfo("wordle", /* Localizable */ "The Wordle game simulator",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[] {
                             new SwitchInfo("orig", /* Localizable */ "Play the Wordle game originally", new SwitchOptions()
                             {
                                 AcceptsValues = false
                             })
                         })
-                    }, new WordleCommand())
+                    ], new WordleCommand())
             },
 
             // Hidden
             { "2015",
                 new CommandInfo("2015", /* Localizable */ "Starts the joke program, HDD Uncleaner 2015.",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new HddUncleanerCommand(), CommandFlags.Hidden)
+                    ], new HddUncleanerCommand(), CommandFlags.Hidden)
             },
 
             { "2018",
                 new CommandInfo("2018", /* Localizable */ "Commemorates the 5-year anniversary of the kernel release",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new AnniversaryCommand(), CommandFlags.Hidden)
+                    ], new AnniversaryCommand(), CommandFlags.Hidden)
             },
         };
 
@@ -194,7 +194,7 @@ namespace Nitrocid.Extras.Amusements
 
         void IAddon.StartAddon()
         {
-            CommandManager.RegisterAddonCommands(ShellType.Shell, addonCommands.Values.ToArray());
+            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands.Values]);
             ScreensaverManager.AddonSavers.Add("meteor", new MeteorDisplay());
             ScreensaverManager.AddonSavers.Add("quote", new QuoteDisplay());
             ScreensaverManager.AddonSavers.Add("shipduet", new ShipDuetDisplay());
@@ -216,7 +216,7 @@ namespace Nitrocid.Extras.Amusements
 
         void IAddon.StopAddon()
         {
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, addonCommands.Keys.ToArray());
+            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Keys]);
             ScreensaverManager.AddonSavers.Remove("meteor");
             ScreensaverManager.AddonSavers.Remove("quote");
             ScreensaverManager.AddonSavers.Remove("shipduet");

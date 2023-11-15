@@ -49,7 +49,7 @@ namespace KS.Modifications
     public static class ModManager
     {
 
-        internal static Dictionary<string, ModInfo> Mods = new();
+        internal static Dictionary<string, ModInfo> Mods = [];
 
         /// <summary>
         /// Blacklisted mods split by semicolons

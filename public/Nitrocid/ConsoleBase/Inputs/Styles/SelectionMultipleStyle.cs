@@ -129,7 +129,7 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// <param name="Answers">Set of answers.</param>
         /// <param name="kiosk">Whether to prevent exiting or not</param>
         public static int[] PromptMultipleSelection(string Question, List<InputChoiceInfo> Answers, bool kiosk = false) =>
-            PromptMultipleSelection(Question, Answers, new List<InputChoiceInfo>(), kiosk);
+            PromptMultipleSelection(Question, Answers, [], kiosk);
 
         /// <summary>
         /// Prompts user for Selection
@@ -143,7 +143,7 @@ namespace KS.ConsoleBase.Inputs.Styles
             // Variables
             int HighlightedAnswer = 1;
             List<InputChoiceInfo> AllAnswers = new(Answers);
-            List<int> SelectedAnswers = new();
+            List<int> SelectedAnswers = [];
             AllAnswers.AddRange(AltAnswers);
 
             // Before we proceed, we need to check the highlighted answer number
@@ -363,7 +363,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                 InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Failed to initialize the selection input:") + $" {ex.Message}");
             }
             ScreenTools.UnsetCurrent(selectionScreen);
-            return SelectedAnswers.ToArray();
+            return [.. SelectedAnswers];
         }
 
     }

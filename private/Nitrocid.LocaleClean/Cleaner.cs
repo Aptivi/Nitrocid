@@ -47,7 +47,7 @@ namespace Nitrocid.LocaleClean
                 TextWriterColor.Write("Checking for unused strings...");
                 var sources = CodeLister.PopulateSources();
                 var dataSources = CodeLister.PopulateData();
-                List<int> redundantIndexes = new();
+                List<int> redundantIndexes = [];
                 int lineNumber = 1;
                 bool foundFalsePositives = false;
                 foreach (string engString in engStrings)

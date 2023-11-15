@@ -58,7 +58,7 @@ namespace Nitrocid.Tests
     public class TestAttribute<T> : TestGenericAttribute
     {
         public TestAttribute() :
-            base() => TypeArguments = new[] { typeof(T) };
+            base() => TypeArguments = [typeof(T)];
     }
 
     /// <inheritdoc/>
@@ -93,7 +93,7 @@ namespace Nitrocid.Tests
     public class TestCaseAttribute<T> : TestCaseGenericAttribute
     {
         public TestCaseAttribute(params object[] arguments) :
-            base(arguments) => TypeArguments = new[] { typeof(T) };
+            base(arguments) => TypeArguments = [typeof(T)];
     }
 
     /// <inheritdoc/>
@@ -128,6 +128,6 @@ namespace Nitrocid.Tests
     public class TestCaseSourceAttribute<T> : TestCaseSourceGenericAttribute
     {
         public TestCaseSourceAttribute(string sourceName) :
-            base(sourceName) => TypeArguments = new[] { typeof(T) };
+            base(sourceName) => TypeArguments = [typeof(T)];
     }
 }

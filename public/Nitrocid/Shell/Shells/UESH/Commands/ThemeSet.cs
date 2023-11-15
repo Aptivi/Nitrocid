@@ -61,11 +61,11 @@ namespace KS.Shell.Shells.UESH.Commands
                     {
                         // Let the user select a theme category
                         string[] categoryNames = Enum.GetNames(typeof(ThemeCategory));
-                        List<InputChoiceInfo> themeCategoryChoices = new();
-                        List<InputChoiceInfo> themeCategoryAltChoices = new()
-                        {
+                        List<InputChoiceInfo> themeCategoryChoices = [];
+                        List<InputChoiceInfo> themeCategoryAltChoices =
+                        [
                             new($"{categoryNames.Length + 1}", Translate.DoTranslation("Exit"))
-                        };
+                        ];
                         for (int i = 0; i < categoryNames.Length; i++)
                         {
                             string category = categoryNames[i];
@@ -87,11 +87,11 @@ namespace KS.Shell.Shells.UESH.Commands
 
                         // Let the user select a theme
                         var finalCategory = Enum.Parse<ThemeCategory>(categoryNames[categoryIndex]);
-                        List<InputChoiceInfo> themeChoices = new();
-                        List<InputChoiceInfo> themeAltChoices = new()
-                        {
+                        List<InputChoiceInfo> themeChoices = [];
+                        List<InputChoiceInfo> themeAltChoices =
+                        [
                             new("<--", Translate.DoTranslation("Back"))
-                        };
+                        ];
                         foreach (string theme in ThemeTools.GetInstalledThemesByCategory(finalCategory).Keys)
                         {
                             var themeInstance = ThemeTools.GetThemeInfo(theme);
@@ -141,10 +141,10 @@ namespace KS.Shell.Shells.UESH.Commands
                 // Pause until a key is pressed
                 answer = ChoiceStyle.PromptChoice(
                     TextTools.FormatString(Translate.DoTranslation("Would you like to set this theme?") + "\n{0}: {1}", selectedTheme, Theme.Localizable ? Translate.DoTranslation(Theme.Description) : Theme.Description), "y/n",
-                    new[] {
+                    [
                         Translate.DoTranslation("Yes, set it!"),
                         Translate.DoTranslation("No, don't set it.")
-                    },
+                    ],
                     ChoiceOutputType.Modern
                 );
                 if (answer == "n" && parameters.ArgumentsList.Length > 0)

@@ -35,12 +35,7 @@ using KS.Misc.Text;
 using KS.Files.Operations.Querying;
 using KS.Kernel.Exceptions;
 using KS.ConsoleBase.Inputs.Styles;
-
-#if NET6_0
-using SharpLyrics;
-#else
 using BassBoom.Basolia.Lyrics;
-#endif
 
 namespace Nitrocid.Extras.BassBoom.Animations.Lyrics
 {
@@ -191,7 +186,7 @@ namespace Nitrocid.Extras.BassBoom.Animations.Lyrics
             // Here, the lyric file is given. Process it...
             var lyric = LyricReader.GetLyrics(path);
             var lyricLines = lyric.Lines;
-            return lyricLines.ToArray();
+            return [.. lyricLines];
         }
 
     }

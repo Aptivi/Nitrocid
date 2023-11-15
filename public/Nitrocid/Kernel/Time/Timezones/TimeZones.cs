@@ -59,7 +59,7 @@ namespace KS.Kernel.Time.Timezones
             //DebugWriter.WriteDebug(DebugLevel.I, "ZoneTimes = {0}", ZoneTimes.Count);
 
             // Return the populated array
-            recognizedZones = ZoneTimes.ToArray();
+            recognizedZones = [.. ZoneTimes];
             return recognizedZones;
         }
 

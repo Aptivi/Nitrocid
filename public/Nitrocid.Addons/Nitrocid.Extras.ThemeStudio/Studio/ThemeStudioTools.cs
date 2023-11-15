@@ -111,7 +111,7 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
         /// <returns>A JSON object</returns>
         public static JObject GetThemeJson()
         {
-            JObject themeJson = new();
+            JObject themeJson = [];
 
             // Populate the metadata
             JProperty metadata =

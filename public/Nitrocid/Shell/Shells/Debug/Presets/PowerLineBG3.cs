@@ -58,10 +58,10 @@ namespace KS.Shell.Shells.Debug.Presets
         internal override string PresetPromptBuilder()
         {
             // Segments
-            List<PowerLineSegment> segments = new()
-            {
+            List<PowerLineSegment> segments =
+            [
                 new PowerLineSegment(new Color(255, 255, 85), new Color(25, 25, 25), Translate.DoTranslation("Debug Shell")),
-            };
+            ];
 
             // Builder
             var PresetStringBuilder = new StringBuilder();
@@ -77,10 +77,10 @@ namespace KS.Shell.Shells.Debug.Presets
         internal override string PresetPromptCompletionBuilder()
         {
             // Segments
-            List<PowerLineSegment> segments = new()
-            {
+            List<PowerLineSegment> segments =
+            [
                 new PowerLineSegment(new Color(255, 255, 85), new Color(25, 25, 25), "+"),
-            };
+            ];
 
             // Builder
             var PresetStringBuilder = new StringBuilder();

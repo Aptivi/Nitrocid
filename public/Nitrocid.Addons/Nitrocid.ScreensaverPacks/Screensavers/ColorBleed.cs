@@ -255,7 +255,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     public class ColorBleedDisplay : BaseScreensaver, IScreensaver
     {
 
-        private static readonly List<BleedState> bleedStates = new();
+        private static readonly List<BleedState> bleedStates = [];
 
         /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "ColorBleed";
@@ -338,9 +338,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         internal int fallStep;
         internal int fadeStep;
         internal static StringBuilder bleedBuffer = new();
-        internal static readonly List<int> reservedColumns = new();
+        internal static readonly List<int> reservedColumns = [];
         private readonly Color ColorStorage;
-        private readonly List<Tuple<int, int>> CoveredPositions = new();
+        private readonly List<Tuple<int, int>> CoveredPositions = [];
 
         internal void Fall()
         {

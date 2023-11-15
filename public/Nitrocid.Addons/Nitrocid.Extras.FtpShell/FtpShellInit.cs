@@ -39,12 +39,12 @@ namespace Nitrocid.Extras.FtpShell
         {
             { "ftp",
                 new CommandInfo("ftp", /* Localizable */ "Use an FTP shell to interact with servers",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(false, "server"),
                         })
-                    }, new FtpCommandExec())
+                    ], new FtpCommandExec())
             },
         };
 
@@ -68,7 +68,7 @@ namespace Nitrocid.Extras.FtpShell
             ConfigTools.RegisterBaseSetting(config);
             ShellManager.reservedShells.Add("FTPShell");
             ShellManager.RegisterShell("FTPShell", new FTPShellInfo());
-            CommandManager.RegisterAddonCommands(ShellType.Shell, addonCommands.Values.ToArray());
+            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands.Values]);
         }
 
         void IAddon.StartAddon()
@@ -79,7 +79,7 @@ namespace Nitrocid.Extras.FtpShell
             ShellManager.availableShells.Remove("FTPShell");
             PromptPresetManager.CurrentPresets.Remove("FTPShell");
             ShellManager.reservedShells.Remove("FTPShell");
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, addonCommands.Keys.ToArray());
+            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Keys]);
             ConfigTools.UnregisterBaseSetting(nameof(FtpConfig));
         }
     }

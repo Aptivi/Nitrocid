@@ -36,7 +36,7 @@ namespace KS.Users.Groups
     /// </summary>
     public static class GroupManagement
     {
-        internal static List<GroupInfo> AvailableGroups = new();
+        internal static List<GroupInfo> AvailableGroups = [];
 
         /// <summary>
         /// Adds a group
@@ -90,7 +90,7 @@ namespace KS.Users.Groups
                 throw new KernelException(KernelExceptionType.GroupManagement, Translate.DoTranslation("User has already joined the group!"));
             userGroups.Add(groupName);
             DebugWriter.WriteDebug(DebugLevel.I, "Added user {0} to group {1}.", user, groupName);
-            UserManagement.Users[userIndex].Groups = userGroups.ToArray();
+            UserManagement.Users[userIndex].Groups = [.. userGroups];
             UserManagement.SaveUsers();
         }
 
@@ -114,7 +114,7 @@ namespace KS.Users.Groups
                 throw new KernelException(KernelExceptionType.GroupManagement, Translate.DoTranslation("User has already left the group!"));
             userGroups.Remove(groupName);
             DebugWriter.WriteDebug(DebugLevel.I, "Removed user {0} from group {1}.", user, groupName);
-            UserManagement.Users[userIndex].Groups = userGroups.ToArray();
+            UserManagement.Users[userIndex].Groups = [.. userGroups];
             UserManagement.SaveUsers();
         }
 
@@ -198,7 +198,7 @@ namespace KS.Users.Groups
             // Get the group information instances to the user groups path
             string groupInfosJson = Reading.ReadContentsText(Paths.UserGroupsPath);
             JArray groupInfoArrays = (JArray)JsonConvert.DeserializeObject(groupInfosJson);
-            List<GroupInfo> groups = new();
+            List<GroupInfo> groups = [];
             foreach (var groupInfoArray in groupInfoArrays)
             {
                 GroupInfo groupInfo = (GroupInfo)JsonConvert.DeserializeObject(groupInfoArray.ToString(), typeof(GroupInfo));

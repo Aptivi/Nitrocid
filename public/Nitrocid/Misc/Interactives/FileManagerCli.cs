@@ -56,14 +56,14 @@ namespace KS.Misc.Interactives
         private static string secondPanePath = Paths.HomePath;
         private static bool refreshFirstPaneListing = true;
         private static bool refreshSecondPaneListing = true;
-        private static List<FileSystemEntry> firstPaneListing = new();
-        private static List<FileSystemEntry> secondPaneListing = new();
+        private static List<FileSystemEntry> firstPaneListing = [];
+        private static List<FileSystemEntry> secondPaneListing = [];
 
         /// <summary>
         /// File manager bindings
         /// </summary>
-        public override List<InteractiveTuiBinding> Bindings { get; set; } = new()
-        {
+        public override List<InteractiveTuiBinding> Bindings { get; set; } =
+        [
             // Operations
             new InteractiveTuiBinding(/* Localizable */ "Open",         ConsoleKey.Enter,
                 (info, _) => Open((FileSystemEntry)info), true),
@@ -93,7 +93,7 @@ namespace KS.Misc.Interactives
                 (info, _) => Verify((FileSystemEntry)info)),
             new InteractiveTuiBinding(/* Localizable */ "Preview",      ConsoleKey.P, 
                 (info, _) => Preview((FileSystemEntry)info)),
-        };
+        ];
 
         /// <summary>
         /// Always true in the file manager as we want it to behave like Total Commander

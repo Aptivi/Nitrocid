@@ -45,96 +45,96 @@ namespace KS.Arguments
         {
             { "quiet",
                 new ArgumentInfo("quiet", /* Localizable */ "Starts the kernel quietly",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new QuietArgument())
+                    ], new QuietArgument())
             },
 
             { "maintenance",
                 new ArgumentInfo("maintenance", /* Localizable */ "Like safe mode, but also disables multi-user and some customization",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new MaintenanceArgument())
+                    ], new MaintenanceArgument())
             },
 
             { "safe",
                 new ArgumentInfo("safe", /* Localizable */ "Starts the kernel in safe mode, disabling all mods",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new SafeArgument())
+                    ], new SafeArgument())
             },
 
             { "testInteractive",
                 new ArgumentInfo("testInteractive", /* Localizable */ "Opens a test shell",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new TestInteractiveArgument())
+                    ], new TestInteractiveArgument())
             },
 
             { "debug",
                 new ArgumentInfo("debug", /* Localizable */ "Enables debug mode",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new DebugArgument())
+                    ], new DebugArgument())
             },
 
             { "terminaldebug",
                 new ArgumentInfo("terminaldebug", /* Localizable */ "Enables terminal debug mode",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new TerminalDebugArgument())
+                    ], new TerminalDebugArgument())
             },
 
             { "reset",
                 new ArgumentInfo("reset", /* Localizable */ "Resets the kernel to the factory settings",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new ResetArgument())
+                    ], new ResetArgument())
             },
 
             { "bypasssizedetection",
                 new ArgumentInfo("bypasssizedetection", /* Localizable */ "Bypasses the console size detection",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new BypassSizeDetectionArgument())
+                    ], new BypassSizeDetectionArgument())
             },
 
             { "noaltbuffer",
                 new ArgumentInfo("noaltbuffer", /* Localizable */ "Prevents the kernel from using the alternative buffer",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new NoAltBufferArgument())
+                    ], new NoAltBufferArgument())
             },
 
             { "lang",
                 new ArgumentInfo("lang", /* Localizable */ "Sets the initial pre-boot environment language",
-                    new[] {
+                    [
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "lang")
                         })
-                    }, new LangArgument())
+                    ], new LangArgument())
             },
 
             { "attach",
                 new ArgumentInfo("attach", /* Localizable */ "Attaches the Visual Studio debugger to this instance of Nitrocid",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new AttachArgument())
+                    ], new AttachArgument())
             },
 
             { "verbosepreboot",
                 new ArgumentInfo("verbosepreboot", /* Localizable */ "Turns on verbose messages for pre-boot environment",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new VerbosePrebootArgument())
+                    ], new VerbosePrebootArgument())
             },
 
             { "prebootsplash",
                 new ArgumentInfo("prebootsplash", /* Localizable */ "Shows the pre-boot splash before configuration is loaded",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new PrebootSplashArgument())
+                    ], new PrebootSplashArgument())
             },
         };
 
@@ -155,14 +155,14 @@ namespace KS.Arguments
                 {
                     string Argument = ArgumentsInput[i];
                     string ArgumentName = Argument.SplitEncloseDoubleQuotes()[0];
-                    if (Arguments.ContainsKey(ArgumentName))
+                    if (Arguments.TryGetValue(ArgumentName, out ArgumentInfo argInfoVal))
                     {
                         // Variables
                         var (satisfied, total) = ArgumentsParser.ParseArgumentArguments(Argument);
                         for (int j = 0; j < total.Length; j++)
                         {
                             var ArgumentInfo = total[j];
-                            var Arg = Arguments[ArgumentName];
+                            var Arg = argInfoVal;
                             var Args = ArgumentInfo.ArgumentsList;
                             var Switches = ArgumentInfo.SwitchesList;
                             string strArgs = ArgumentInfo.ArgumentsText;

@@ -38,16 +38,16 @@ namespace Nitrocid.Extras.Timers
         {
             { "stopwatch",
                 new CommandInfo("stopwatch", /* Localizable */ "A simple stopwatch",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new StopwatchCommand())
+                    ], new StopwatchCommand())
             },
 
             { "timer",
                 new CommandInfo("timer", /* Localizable */ "A simple timer",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new TimerCommand())
+                    ], new TimerCommand())
             },
         };
 
@@ -69,12 +69,12 @@ namespace Nitrocid.Extras.Timers
         {
             var config = new TimersConfig();
             ConfigTools.RegisterBaseSetting(config);
-            CommandManager.RegisterAddonCommands(ShellType.Shell, addonCommands.Values.ToArray());
+            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands.Values]);
         }
 
         void IAddon.StopAddon()
         {
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, addonCommands.Keys.ToArray());
+            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Keys]);
             ConfigTools.UnregisterBaseSetting(nameof(TimersConfig));
         }
 

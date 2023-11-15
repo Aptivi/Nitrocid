@@ -38,25 +38,25 @@ namespace Nitrocid.Tests.Misc.Presentation
         public static void BuildPresentation()
         {
             // Presentation...
-            var presentation = new Slideshow("MyPresentation", new()
-            {
-                new PresentationPage("Page one", new()
-                {
+            var presentation = new Slideshow("MyPresentation",
+            [
+                new PresentationPage("Page one",
+                [
                     new TextElement()
                     {
-                        Arguments = new object[] { "Hello, world!" },
+                        Arguments = ["Hello, world!"],
                         InvokeAction = () => Console.WriteLine("Invoke action")
                     }
-                }),
-                new PresentationPage("Page two", new()
-                {
+                ]),
+                new PresentationPage("Page two",
+                [
                     new InputElement()
                     {
-                        Arguments = new object[] { "Hello, world!" },
+                        Arguments = ["Hello, world!"],
                         InvokeActionInput = (obj) => Console.WriteLine(obj.ToString())
                     }
-                }),
-            });
+                ]),
+            ]);
 
             // General info
             presentation.ShouldNotBeNull();

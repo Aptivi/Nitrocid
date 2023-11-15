@@ -45,9 +45,9 @@ namespace KS.Misc.Text.Probers.Placeholder
     /// </summary>
     public static class PlaceParse
     {
-        private readonly static List<PlaceInfo> customPlaceholders = new();
-        private readonly static List<PlaceInfo> placeholders = new()
-        {
+        private readonly static List<PlaceInfo> customPlaceholders = [];
+        private readonly static List<PlaceInfo> placeholders =
+        [
             new PlaceInfo("user",                             (_) => UserManagement.CurrentUser.Username),
             new PlaceInfo("host",                             (_) => NetworkTools.HostName),
             new PlaceInfo("currentdirectory",                 (_) => CurrentDirectory.CurrentDir),
@@ -75,7 +75,7 @@ namespace KS.Misc.Text.Probers.Placeholder
             new PlaceInfo("bgreset",                          (_) => KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground),
             new PlaceInfo("uptime",                           (_) => PowerManager.KernelUptime),
             new PlaceInfo("$",                                       UESHVariables.GetVariable),
-        };
+        ];
 
         /// <summary>
         /// Probes the placeholders found in string

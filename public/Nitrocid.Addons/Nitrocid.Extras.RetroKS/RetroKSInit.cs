@@ -37,9 +37,9 @@ namespace Nitrocid.Extras.RetroKS
         {
             { "retroks",
                 new CommandInfo("retroks", /* Localizable */ "Retro Nitrocid KS based on the 0.0.4.x series",
-                    new[] {
+                    [
                         new CommandArgumentInfo()
-                    }, new RetroKSCommand())
+                    ], new RetroKSCommand())
             },
         };
 
@@ -58,9 +58,9 @@ namespace Nitrocid.Extras.RetroKS
             EnvironmentTools.AddEnvironment("RetroKS", new RetroKSEnvironmentInstance());
 
         void IAddon.StartAddon() =>
-            CommandManager.RegisterAddonCommands(ShellType.Shell, addonCommands.Values.ToArray());
+            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands.Values]);
 
         void IAddon.StopAddon() =>
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, addonCommands.Keys.ToArray());
+            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Keys]);
     }
 }

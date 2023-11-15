@@ -61,7 +61,7 @@ namespace KS.Kernel.Configuration.Settings
                 );
                 sections.Add(choice);
             }
-            return sections.ToArray();
+            return [.. sections];
         }
 
         internal static void SaveSettings()

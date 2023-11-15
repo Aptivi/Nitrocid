@@ -77,7 +77,7 @@ namespace KS.ConsoleBase.Inputs.Styles
             if (buttons.Length > 3)
             {
                 // Looks like that we have more than three buttons. Use the selection choice instead.
-                List<string> buttonNums = new();
+                List<string> buttonNums = [];
                 for (int i = 1; i <= buttons.Length; i++)
                     buttonNums.Add($"{i}");
                 var choices = InputChoiceTools.GetInputChoices(buttonNums.ToArray(), buttons).ToArray();
@@ -93,7 +93,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                 // Deal with the lines to actually fit text in the infobox
                 string finalInfoRendered = TextTools.FormatString(text, vars);
                 string[] splitLines = finalInfoRendered.ToString().SplitNewLines();
-                List<string> splitFinalLines = new();
+                List<string> splitFinalLines = [];
                 foreach (var line in splitLines)
                 {
                     var lineSentences = TextTools.GetWrappedSentences(line, ConsoleWrapper.WindowWidth - 4);
@@ -401,7 +401,7 @@ namespace KS.ConsoleBase.Inputs.Styles
             if (buttons.Length > 3)
             {
                 // Looks like that we have more than three buttons. Use the selection choice instead.
-                List<string> buttonNums = new();
+                List<string> buttonNums = [];
                 for (int i = 1; i <= buttons.Length; i++)
                     buttonNums.Add($"{i}");
                 var choices = InputChoiceTools.GetInputChoices(buttonNums.ToArray(), buttons).ToArray();
@@ -417,7 +417,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                 // Deal with the lines to actually fit text in the infobox
                 string finalInfoRendered = TextTools.FormatString(text, vars);
                 string[] splitLines = finalInfoRendered.ToString().SplitNewLines();
-                List<string> splitFinalLines = new();
+                List<string> splitFinalLines = [];
                 foreach (var line in splitLines)
                 {
                     var lineSentences = TextTools.GetWrappedSentences(line, ConsoleWrapper.WindowWidth - 4);
@@ -586,7 +586,7 @@ namespace KS.ConsoleBase.Inputs.Styles
             if (buttons.Length > 3)
             {
                 // Looks like that we have more than three buttons. Use the selection choice instead.
-                List<string> buttonNums = new();
+                List<string> buttonNums = [];
                 for (int i = 1; i <= buttons.Length; i++)
                     buttonNums.Add($"{i}");
                 var choices = InputChoiceTools.GetInputChoices(buttonNums.ToArray(), buttons).ToArray();
@@ -602,7 +602,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                 // Deal with the lines to actually fit text in the infobox
                 string finalInfoRendered = TextTools.FormatString(text, vars);
                 string[] splitLines = finalInfoRendered.ToString().SplitNewLines();
-                List<string> splitFinalLines = new();
+                List<string> splitFinalLines = [];
                 foreach (var line in splitLines)
                 {
                     var lineSentences = TextTools.GetWrappedSentences(line, ConsoleWrapper.WindowWidth - 4);
@@ -771,7 +771,7 @@ namespace KS.ConsoleBase.Inputs.Styles
             if (buttons.Length > 3)
             {
                 // Looks like that we have more than three buttons. Use the selection choice instead.
-                List<string> buttonNums = new();
+                List<string> buttonNums = [];
                 for (int i = 1; i <= buttons.Length; i++)
                     buttonNums.Add($"{i}");
                 var choices = InputChoiceTools.GetInputChoices(buttonNums.ToArray(), buttons).ToArray();
@@ -787,7 +787,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                 // Deal with the lines to actually fit text in the infobox
                 string finalInfoRendered = TextTools.FormatString(text, vars);
                 string[] splitLines = finalInfoRendered.ToString().SplitNewLines();
-                List<string> splitFinalLines = new();
+                List<string> splitFinalLines = [];
                 foreach (var line in splitLines)
                 {
                     var lineSentences = TextTools.GetWrappedSentences(line, ConsoleWrapper.WindowWidth - 4);

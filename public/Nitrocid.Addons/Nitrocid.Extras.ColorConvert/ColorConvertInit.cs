@@ -37,109 +37,109 @@ namespace Nitrocid.Extras.ColorConvert
         {
             { "colorhextorgb",
                 new CommandInfo("colorhextorgb", /* Localizable */ "Converts the hexadecimal representation of the color to RGB numbers.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "#RRGGBB"),
-                        }, Array.Empty<SwitchInfo>(), true)
-                    }, new ColorHexToRgbCommand())
+                        ], Array.Empty<SwitchInfo>(), true)
+                    ], new ColorHexToRgbCommand())
             },
 
             { "colorhextorgbks",
                 new CommandInfo("colorhextorgbks", /* Localizable */ "Converts the hexadecimal representation of the color to RGB numbers in KS format.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "#RRGGBB"),
-                        }, Array.Empty<SwitchInfo>(), true)
-                    }, new ColorHexToRgbKSCommand())
+                        ], Array.Empty<SwitchInfo>(), true)
+                    ], new ColorHexToRgbKSCommand())
             },
 
             { "colorhextocmyk",
                 new CommandInfo("colorhextocmyk", /* Localizable */ "Converts the hexadecimal representation of the color to CMYK numbers.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "#RRGGBB"),
-                        }, Array.Empty<SwitchInfo>(), true)
-                    }, new ColorHexToCmykCommand())
+                        ], Array.Empty<SwitchInfo>(), true)
+                    ], new ColorHexToCmykCommand())
             },
 
             { "colorhextocmykks",
                 new CommandInfo("colorhextocmykks", /* Localizable */ "Converts the hexadecimal representation of the color to CMYK numbers in KS format.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "#RRGGBB"),
-                        }, Array.Empty<SwitchInfo>(), true)
-                    }, new ColorHexToCmykKSCommand())
+                        ], Array.Empty<SwitchInfo>(), true)
+                    ], new ColorHexToCmykKSCommand())
             },
 
             { "colorhextocmy",
                 new CommandInfo("colorhextocmy", /* Localizable */ "Converts the hexadecimal representation of the color to CMY numbers.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "#RRGGBB"),
-                        }, Array.Empty<SwitchInfo>(), true)
-                    }, new ColorHexToCmyCommand())
+                        ], Array.Empty<SwitchInfo>(), true)
+                    ], new ColorHexToCmyCommand())
             },
 
             { "colorhextocmyks",
                 new CommandInfo("colorhextocmyks", /* Localizable */ "Converts the hexadecimal representation of the color to CMY numbers in KS format.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "#RRGGBB"),
-                        }, Array.Empty<SwitchInfo>(), true)
-                    }, new ColorHexToCmyKSCommand())
+                        ], Array.Empty<SwitchInfo>(), true)
+                    ], new ColorHexToCmyKSCommand())
             },
 
             { "colorhextohsl",
                 new CommandInfo("colorhextohsl", /* Localizable */ "Converts the hexadecimal representation of the color to HSL numbers.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "#RRGGBB"),
-                        }, Array.Empty<SwitchInfo>(), true)
-                    }, new ColorHexToHslCommand())
+                        ], Array.Empty<SwitchInfo>(), true)
+                    ], new ColorHexToHslCommand())
             },
 
             { "colorhextohslks",
                 new CommandInfo("colorhextohslks", /* Localizable */ "Converts the hexadecimal representation of the color to HSL numbers in KS format.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "#RRGGBB"),
-                        }, Array.Empty<SwitchInfo>(), true)
-                    }, new ColorHexToHslKSCommand())
+                        ], Array.Empty<SwitchInfo>(), true)
+                    ], new ColorHexToHslKSCommand())
             },
 
             { "colorhextohsv",
                 new CommandInfo("colorhextohsv", /* Localizable */ "Converts the hexadecimal representation of the color to HSV numbers.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "#RRGGBB"),
-                        }, Array.Empty<SwitchInfo>(), true)
-                    }, new ColorHexToHsvCommand())
+                        ], Array.Empty<SwitchInfo>(), true)
+                    ], new ColorHexToHsvCommand())
             },
 
             { "colorhextohsvks",
                 new CommandInfo("colorhextohsvks", /* Localizable */ "Converts the hexadecimal representation of the color to HSV numbers in KS format.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "#RRGGBB"),
-                        }, Array.Empty<SwitchInfo>(), true)
-                    }, new ColorHexToHsvKSCommand())
+                        ], Array.Empty<SwitchInfo>(), true)
+                    ], new ColorHexToHsvKSCommand())
             },
 
             { "colorrgbtohex",
                 new CommandInfo("colorrgbtohex", /* Localizable */ "Converts the color RGB numbers to hex.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "R", new CommandArgumentPartOptions()
                             {
                                 IsNumeric = true
@@ -152,15 +152,15 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        }, Array.Empty<SwitchInfo>(), true)
-                    }, new ColorRgbToHexCommand())
+                        ], Array.Empty<SwitchInfo>(), true)
+                    ], new ColorRgbToHexCommand())
             },
 
             { "colorrgbtocmyk",
                 new CommandInfo("colorrgbtocmyk", /* Localizable */ "Converts the color RGB numbers to CMYK.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "R", new CommandArgumentPartOptions()
                             {
                                 IsNumeric = true
@@ -173,15 +173,15 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        }, Array.Empty<SwitchInfo>(), true)
-                    }, new ColorRgbToCmykCommand())
+                        ], Array.Empty<SwitchInfo>(), true)
+                    ], new ColorRgbToCmykCommand())
             },
 
             { "colorrgbtocmykks",
                 new CommandInfo("colorrgbtocmykks", /* Localizable */ "Converts the color RGB numbers to CMYK in KS format.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "R", new CommandArgumentPartOptions()
                             {
                                 IsNumeric = true
@@ -194,15 +194,15 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        }, Array.Empty<SwitchInfo>(), true)
-                    }, new ColorRgbToCmykKSCommand())
+                        ], Array.Empty<SwitchInfo>(), true)
+                    ], new ColorRgbToCmykKSCommand())
             },
 
             { "colorrgbtocmy",
                 new CommandInfo("colorrgbtocmy", /* Localizable */ "Converts the color RGB numbers to CMY.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "R", new CommandArgumentPartOptions()
                             {
                                 IsNumeric = true
@@ -215,15 +215,15 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        }, Array.Empty<SwitchInfo>(), true)
-                    }, new ColorRgbToCmyCommand())
+                        ], Array.Empty<SwitchInfo>(), true)
+                    ], new ColorRgbToCmyCommand())
             },
 
             { "colorrgbtocmyks",
                 new CommandInfo("colorrgbtocmyks", /* Localizable */ "Converts the color RGB numbers to CMY in KS format.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "R", new CommandArgumentPartOptions()
                             {
                                 IsNumeric = true
@@ -236,15 +236,15 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        }, Array.Empty<SwitchInfo>(), true)
-                    }, new ColorRgbToCmyKSCommand())
+                        ], Array.Empty<SwitchInfo>(), true)
+                    ], new ColorRgbToCmyKSCommand())
             },
 
             { "colorrgbtohsl",
                 new CommandInfo("colorrgbtohsl", /* Localizable */ "Converts the color RGB numbers to HSL.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "R", new CommandArgumentPartOptions()
                             {
                                 IsNumeric = true
@@ -257,15 +257,15 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        }, Array.Empty<SwitchInfo>(), true)
-                    }, new ColorRgbToHslCommand())
+                        ], Array.Empty<SwitchInfo>(), true)
+                    ], new ColorRgbToHslCommand())
             },
 
             { "colorrgbtohslks",
                 new CommandInfo("colorrgbtohslks", /* Localizable */ "Converts the color RGB numbers to HSL in KS format.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "R", new CommandArgumentPartOptions()
                             {
                                 IsNumeric = true
@@ -278,15 +278,15 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        }, Array.Empty<SwitchInfo>(), true)
-                    }, new ColorRgbToHslKSCommand())
+                        ], Array.Empty<SwitchInfo>(), true)
+                    ], new ColorRgbToHslKSCommand())
             },
 
             { "colorrgbtohsv",
                 new CommandInfo("colorrgbtohsv", /* Localizable */ "Converts the color RGB numbers to HSV.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "R", new CommandArgumentPartOptions()
                             {
                                 IsNumeric = true
@@ -299,15 +299,15 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        }, Array.Empty<SwitchInfo>(), true)
-                    }, new ColorRgbToHsvCommand())
+                        ], Array.Empty<SwitchInfo>(), true)
+                    ], new ColorRgbToHsvCommand())
             },
 
             { "colorrgbtohsvks",
                 new CommandInfo("colorrgbtohsvks", /* Localizable */ "Converts the color RGB numbers to HSV in KS format.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "R", new CommandArgumentPartOptions()
                             {
                                 IsNumeric = true
@@ -320,15 +320,15 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        }, Array.Empty<SwitchInfo>(), true)
-                    }, new ColorRgbToHsvKSCommand())
+                        ], Array.Empty<SwitchInfo>(), true)
+                    ], new ColorRgbToHsvKSCommand())
             },
 
             { "colorhsltohex",
                 new CommandInfo("colorhsltohex", /* Localizable */ "Converts the color HSL numbers to hex.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "H", new CommandArgumentPartOptions()
                             {
                                 IsNumeric = true
@@ -341,15 +341,15 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        }, Array.Empty<SwitchInfo>(), true)
-                    }, new ColorHslToHexCommand())
+                        ], Array.Empty<SwitchInfo>(), true)
+                    ], new ColorHslToHexCommand())
             },
 
             { "colorhsltocmyk",
                 new CommandInfo("colorhsltocmyk", /* Localizable */ "Converts the color HSL numbers to CMYK.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "H", new CommandArgumentPartOptions()
                             {
                                 IsNumeric = true
@@ -362,15 +362,15 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        }, Array.Empty<SwitchInfo>(), true)
-                    }, new ColorHslToCmykCommand())
+                        ], Array.Empty<SwitchInfo>(), true)
+                    ], new ColorHslToCmykCommand())
             },
 
             { "colorhsltocmykks",
                 new CommandInfo("colorhsltocmykks", /* Localizable */ "Converts the color HSL numbers to CMYK in KS format.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "H", new CommandArgumentPartOptions()
                             {
                                 IsNumeric = true
@@ -383,15 +383,15 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        }, Array.Empty<SwitchInfo>(), true)
-                    }, new ColorHslToCmykKSCommand())
+                        ], Array.Empty<SwitchInfo>(), true)
+                    ], new ColorHslToCmykKSCommand())
             },
 
             { "colorhsltocmy",
                 new CommandInfo("colorhsltocmy", /* Localizable */ "Converts the color HSL numbers to CMY.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "H", new CommandArgumentPartOptions()
                             {
                                 IsNumeric = true
@@ -404,15 +404,15 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        }, Array.Empty<SwitchInfo>(), true)
-                    }, new ColorHslToCmyCommand())
+                        ], Array.Empty<SwitchInfo>(), true)
+                    ], new ColorHslToCmyCommand())
             },
 
             { "colorhsltocmyks",
                 new CommandInfo("colorhsltocmyks", /* Localizable */ "Converts the color HSL numbers to CMY in KS format.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "H", new CommandArgumentPartOptions()
                             {
                                 IsNumeric = true
@@ -425,15 +425,15 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        }, Array.Empty<SwitchInfo>(), true)
-                    }, new ColorHslToCmyKSCommand())
+                        ], Array.Empty<SwitchInfo>(), true)
+                    ], new ColorHslToCmyKSCommand())
             },
 
             { "colorhsltohsv",
                 new CommandInfo("colorhsltohsv", /* Localizable */ "Converts the color HSL numbers to HSV.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "H", new CommandArgumentPartOptions()
                             {
                                 IsNumeric = true
@@ -446,15 +446,15 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        }, Array.Empty<SwitchInfo>(), true)
-                    }, new ColorHslToHsvCommand())
+                        ], Array.Empty<SwitchInfo>(), true)
+                    ], new ColorHslToHsvCommand())
             },
 
             { "colorhsltohsvks",
                 new CommandInfo("colorhsltohsvks", /* Localizable */ "Converts the color HSL numbers to HSV in KS format.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "H", new CommandArgumentPartOptions()
                             {
                                 IsNumeric = true
@@ -467,15 +467,15 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        }, Array.Empty<SwitchInfo>(), true)
-                    }, new ColorHslToHsvKSCommand())
+                        ], Array.Empty<SwitchInfo>(), true)
+                    ], new ColorHslToHsvKSCommand())
             },
 
             { "colorhsltorgb",
                 new CommandInfo("colorhsltorgb", /* Localizable */ "Converts the color HSL numbers to RGB.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "H", new CommandArgumentPartOptions()
                             {
                                 IsNumeric = true
@@ -488,15 +488,15 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        }, Array.Empty<SwitchInfo>(), true)
-                    }, new ColorHslToRgbCommand())
+                        ], Array.Empty<SwitchInfo>(), true)
+                    ], new ColorHslToRgbCommand())
             },
 
             { "colorhsltorgbks",
                 new CommandInfo("colorhsltorgbks", /* Localizable */ "Converts the color HSL numbers to RGB in KS format.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "H", new CommandArgumentPartOptions()
                             {
                                 IsNumeric = true
@@ -509,15 +509,15 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        }, Array.Empty<SwitchInfo>(), true)
-                    }, new ColorHslToRgbKSCommand())
+                        ], Array.Empty<SwitchInfo>(), true)
+                    ], new ColorHslToRgbKSCommand())
             },
 
             { "colorhsvtohex",
                 new CommandInfo("colorhsvtohex", /* Localizable */ "Converts the color HSV numbers to hex.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "H", new CommandArgumentPartOptions()
                             {
                                 IsNumeric = true
@@ -530,15 +530,15 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        }, Array.Empty<SwitchInfo>(), true)
-                    }, new ColorHsvToHexCommand())
+                        ], Array.Empty<SwitchInfo>(), true)
+                    ], new ColorHsvToHexCommand())
             },
 
             { "colorhsvtocmyk",
                 new CommandInfo("colorhsvtocmyk", /* Localizable */ "Converts the color HSV numbers to CMYK.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "H", new CommandArgumentPartOptions()
                             {
                                 IsNumeric = true
@@ -551,15 +551,15 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        }, Array.Empty<SwitchInfo>(), true)
-                    }, new ColorHsvToCmykCommand())
+                        ], Array.Empty<SwitchInfo>(), true)
+                    ], new ColorHsvToCmykCommand())
             },
 
             { "colorhsvtocmykks",
                 new CommandInfo("colorhsvtocmykks", /* Localizable */ "Converts the color HSV numbers to CMYK in KS format.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "H", new CommandArgumentPartOptions()
                             {
                                 IsNumeric = true
@@ -572,15 +572,15 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        }, Array.Empty<SwitchInfo>(), true)
-                    }, new ColorHsvToCmykKSCommand())
+                        ], Array.Empty<SwitchInfo>(), true)
+                    ], new ColorHsvToCmykKSCommand())
             },
 
             { "colorhsvtocmy",
                 new CommandInfo("colorhsvtocmy", /* Localizable */ "Converts the color HSV numbers to CMY.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "H", new CommandArgumentPartOptions()
                             {
                                 IsNumeric = true
@@ -593,15 +593,15 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        }, Array.Empty<SwitchInfo>(), true)
-                    }, new ColorHsvToCmyCommand())
+                        ], Array.Empty<SwitchInfo>(), true)
+                    ], new ColorHsvToCmyCommand())
             },
 
             { "colorhsvtocmyks",
                 new CommandInfo("colorhsvtocmyks", /* Localizable */ "Converts the color HSV numbers to CMY in KS format.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "H", new CommandArgumentPartOptions()
                             {
                                 IsNumeric = true
@@ -614,15 +614,15 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        }, Array.Empty<SwitchInfo>(), true)
-                    }, new ColorHsvToCmyKSCommand())
+                        ], Array.Empty<SwitchInfo>(), true)
+                    ], new ColorHsvToCmyKSCommand())
             },
 
             { "colorhsvtohsl",
                 new CommandInfo("colorhsvtohsl", /* Localizable */ "Converts the color HSV numbers to HSL.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "H", new CommandArgumentPartOptions()
                             {
                                 IsNumeric = true
@@ -635,15 +635,15 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        }, Array.Empty<SwitchInfo>(), true)
-                    }, new ColorHsvToHslCommand())
+                        ], Array.Empty<SwitchInfo>(), true)
+                    ], new ColorHsvToHslCommand())
             },
 
             { "colorhsvtohslks",
                 new CommandInfo("colorhsvtohslks", /* Localizable */ "Converts the color HSV numbers to HSL in KS format.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "H", new CommandArgumentPartOptions()
                             {
                                 IsNumeric = true
@@ -656,15 +656,15 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        }, Array.Empty<SwitchInfo>(), true)
-                    }, new ColorHsvToHslKSCommand())
+                        ], Array.Empty<SwitchInfo>(), true)
+                    ], new ColorHsvToHslKSCommand())
             },
 
             { "colorhsvtorgb",
                 new CommandInfo("colorhsvtorgb", /* Localizable */ "Converts the color HSV numbers to RGB.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "H", new CommandArgumentPartOptions()
                             {
                                 IsNumeric = true
@@ -677,15 +677,15 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        }, Array.Empty<SwitchInfo>(), true)
-                    }, new ColorHsvToRgbCommand())
+                        ], Array.Empty<SwitchInfo>(), true)
+                    ], new ColorHsvToRgbCommand())
             },
 
             { "colorhsvtorgbks",
                 new CommandInfo("colorhsvtorgbks", /* Localizable */ "Converts the color HSV numbers to RGB in KS format.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "H", new CommandArgumentPartOptions()
                             {
                                 IsNumeric = true
@@ -698,15 +698,15 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        }, Array.Empty<SwitchInfo>(), true)
-                    }, new ColorHsvToRgbKSCommand())
+                        ], Array.Empty<SwitchInfo>(), true)
+                    ], new ColorHsvToRgbKSCommand())
             },
 
             { "colorcmyktohex",
                 new CommandInfo("colorcmyktohex", /* Localizable */ "Converts the color CMYK numbers to hex.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "C", new CommandArgumentPartOptions()
                             {
                                 IsNumeric = true
@@ -723,15 +723,15 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        }, Array.Empty<SwitchInfo>(), true)
-                    }, new ColorCmykToHexCommand())
+                        ], Array.Empty<SwitchInfo>(), true)
+                    ], new ColorCmykToHexCommand())
             },
 
             { "colorcmyktorgb",
                 new CommandInfo("colorcmyktorgb", /* Localizable */ "Converts the color CMYK numbers to RGB.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "C", new CommandArgumentPartOptions()
                             {
                                 IsNumeric = true
@@ -748,15 +748,15 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        }, Array.Empty<SwitchInfo>(), true)
-                    }, new ColorCmykToRgbCommand())
+                        ], Array.Empty<SwitchInfo>(), true)
+                    ], new ColorCmykToRgbCommand())
             },
 
             { "colorcmyktorgbks",
                 new CommandInfo("colorcmyktorgbks", /* Localizable */ "Converts the color CMYK numbers to RGB in KS format.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "C", new CommandArgumentPartOptions()
                             {
                                 IsNumeric = true
@@ -773,15 +773,15 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        }, Array.Empty<SwitchInfo>(), true)
-                    }, new ColorCmykToRgbKSCommand())
+                        ], Array.Empty<SwitchInfo>(), true)
+                    ], new ColorCmykToRgbKSCommand())
             },
 
             { "colorcmyktohsl",
                 new CommandInfo("colorcmyktohsl", /* Localizable */ "Converts the color CMYK numbers to HSL.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "C", new CommandArgumentPartOptions()
                             {
                                 IsNumeric = true
@@ -798,15 +798,15 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        }, Array.Empty<SwitchInfo>(), true)
-                    }, new ColorCmykToHslCommand())
+                        ], Array.Empty<SwitchInfo>(), true)
+                    ], new ColorCmykToHslCommand())
             },
 
             { "colorcmyktohslks",
                 new CommandInfo("colorcmyktohslks", /* Localizable */ "Converts the color CMYK numbers to HSL in KS format.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "C", new CommandArgumentPartOptions()
                             {
                                 IsNumeric = true
@@ -823,15 +823,15 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        }, Array.Empty<SwitchInfo>(), true)
-                    }, new ColorCmykToHslKSCommand())
+                        ], Array.Empty<SwitchInfo>(), true)
+                    ], new ColorCmykToHslKSCommand())
             },
 
             { "colorcmyktohsv",
                 new CommandInfo("colorcmyktohsv", /* Localizable */ "Converts the color CMYK numbers to HSV.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "C", new CommandArgumentPartOptions()
                             {
                                 IsNumeric = true
@@ -848,15 +848,15 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        }, Array.Empty<SwitchInfo>(), true)
-                    }, new ColorCmykToHsvCommand())
+                        ], Array.Empty<SwitchInfo>(), true)
+                    ], new ColorCmykToHsvCommand())
             },
 
             { "colorcmyktohsvks",
                 new CommandInfo("colorcmyktohsvks", /* Localizable */ "Converts the color CMYK numbers to HSV in KS format.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "C", new CommandArgumentPartOptions()
                             {
                                 IsNumeric = true
@@ -873,15 +873,15 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        }, Array.Empty<SwitchInfo>(), true)
-                    }, new ColorCmykToHsvKSCommand())
+                        ], Array.Empty<SwitchInfo>(), true)
+                    ], new ColorCmykToHsvKSCommand())
             },
 
             { "colorcmyktocmy",
                 new CommandInfo("colorcmyktocmy", /* Localizable */ "Converts the color CMYK numbers to CMY.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "C", new CommandArgumentPartOptions()
                             {
                                 IsNumeric = true
@@ -898,15 +898,15 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        }, Array.Empty<SwitchInfo>(), true)
-                    }, new ColorCmykToCmyCommand())
+                        ], Array.Empty<SwitchInfo>(), true)
+                    ], new ColorCmykToCmyCommand())
             },
 
             { "colorcmyktocmyks",
                 new CommandInfo("colorcmyktocmyks", /* Localizable */ "Converts the color CMYK numbers to CMY in KS format.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "C", new CommandArgumentPartOptions()
                             {
                                 IsNumeric = true
@@ -923,15 +923,15 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        }, Array.Empty<SwitchInfo>(), true)
-                    }, new ColorCmykToCmyKSCommand())
+                        ], Array.Empty<SwitchInfo>(), true)
+                    ], new ColorCmykToCmyKSCommand())
             },
 
             { "colorcmytohex",
                 new CommandInfo("colorcmytohex", /* Localizable */ "Converts the color CMY numbers to hex.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "C", new CommandArgumentPartOptions()
                             {
                                 IsNumeric = true
@@ -944,15 +944,15 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        }, Array.Empty<SwitchInfo>(), true)
-                    }, new ColorCmyToHexCommand())
+                        ], Array.Empty<SwitchInfo>(), true)
+                    ], new ColorCmyToHexCommand())
             },
 
             { "colorcmytocmyk",
                 new CommandInfo("colorcmytocmyk", /* Localizable */ "Converts the color CMY numbers to CMYK.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "C", new CommandArgumentPartOptions()
                             {
                                 IsNumeric = true
@@ -965,15 +965,15 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        }, Array.Empty<SwitchInfo>(), true)
-                    }, new ColorCmyToCmykCommand())
+                        ], Array.Empty<SwitchInfo>(), true)
+                    ], new ColorCmyToCmykCommand())
             },
 
             { "colorcmytocmykks",
                 new CommandInfo("colorcmytocmykks", /* Localizable */ "Converts the color CMY numbers to CMYK in KS format.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "C", new CommandArgumentPartOptions()
                             {
                                 IsNumeric = true
@@ -986,15 +986,15 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        }, Array.Empty<SwitchInfo>(), true)
-                    }, new ColorCmyToCmykKSCommand())
+                        ], Array.Empty<SwitchInfo>(), true)
+                    ], new ColorCmyToCmykKSCommand())
             },
 
             { "colorcmytohsl",
                 new CommandInfo("colorcmytohsl", /* Localizable */ "Converts the color CMY numbers to HSL.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "C", new CommandArgumentPartOptions()
                             {
                                 IsNumeric = true
@@ -1007,15 +1007,15 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        }, Array.Empty<SwitchInfo>(), true)
-                    }, new ColorCmyToHslCommand())
+                        ], Array.Empty<SwitchInfo>(), true)
+                    ], new ColorCmyToHslCommand())
             },
 
             { "colorcmytohslks",
                 new CommandInfo("colorcmytohslks", /* Localizable */ "Converts the color CMY numbers to HSL in KS format.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "C", new CommandArgumentPartOptions()
                             {
                                 IsNumeric = true
@@ -1028,15 +1028,15 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        }, Array.Empty<SwitchInfo>(), true)
-                    }, new ColorCmyToHslKSCommand())
+                        ], Array.Empty<SwitchInfo>(), true)
+                    ], new ColorCmyToHslKSCommand())
             },
 
             { "colorcmytohsv",
                 new CommandInfo("colorcmytohsv", /* Localizable */ "Converts the color CMY numbers to HSV.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "C", new CommandArgumentPartOptions()
                             {
                                 IsNumeric = true
@@ -1049,15 +1049,15 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        }, Array.Empty<SwitchInfo>(), true)
-                    }, new ColorCmyToHsvCommand())
+                        ], Array.Empty<SwitchInfo>(), true)
+                    ], new ColorCmyToHsvCommand())
             },
 
             { "colorcmytohsvks",
                 new CommandInfo("colorcmytohsvks", /* Localizable */ "Converts the color CMY numbers to HSV in KS format.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "C", new CommandArgumentPartOptions()
                             {
                                 IsNumeric = true
@@ -1070,15 +1070,15 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        }, Array.Empty<SwitchInfo>(), true)
-                    }, new ColorCmyToHsvKSCommand())
+                        ], Array.Empty<SwitchInfo>(), true)
+                    ], new ColorCmyToHsvKSCommand())
             },
 
             { "colorcmytorgb",
                 new CommandInfo("colorcmytorgb", /* Localizable */ "Converts the color CMY numbers to RGB.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "C", new CommandArgumentPartOptions()
                             {
                                 IsNumeric = true
@@ -1091,15 +1091,15 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        }, Array.Empty<SwitchInfo>(), true)
-                    }, new ColorCmyToRgbCommand())
+                        ], Array.Empty<SwitchInfo>(), true)
+                    ], new ColorCmyToRgbCommand())
             },
 
             { "colorcmytorgbks",
                 new CommandInfo("colorcmytorgbks", /* Localizable */ "Converts the color CMY numbers to RGB in KS format.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
+                    [
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "C", new CommandArgumentPartOptions()
                             {
                                 IsNumeric = true
@@ -1112,8 +1112,8 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        }, Array.Empty<SwitchInfo>(), true)
-                    }, new ColorCmyToRgbKSCommand())
+                        ], Array.Empty<SwitchInfo>(), true)
+                    ], new ColorCmyToRgbKSCommand())
             },
         };
 
@@ -1129,10 +1129,10 @@ namespace Nitrocid.Extras.ColorConvert
         ReadOnlyDictionary<string, FieldInfo> IAddon.PubliclyAvailableFields => null;
 
         void IAddon.StartAddon() =>
-            CommandManager.RegisterAddonCommands(ShellType.Shell, addonCommands.Values.ToArray());
+            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands.Values]);
 
         void IAddon.StopAddon() =>
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, addonCommands.Keys.ToArray());
+            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Keys]);
 
         void IAddon.FinalizeAddon()
         { }

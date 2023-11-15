@@ -30,25 +30,23 @@ namespace KS.ConsoleBase.Presentation
     internal static class PresentationDebugInt
     {
         internal static string[] data1 =
-        {
+        [
             "Alex",
             "Zhao",
             "Agustin",
             "Jim",
             "Sarah"
-        };
+        ];
 
         internal static Slideshow Debug =>
             new(
                 "Debugging the Presentation",
-                new List<PresentationPage>()
-                {
+                [
                     #region First page - Debugging just text elements
                     new PresentationPage("First page - Debugging just text elements",
-                        new List<IElement>()
-                        {
+                        [
                             new TextElement() {
-                                Arguments = new object[] {
+                                Arguments = [
                                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt " +
                                     "ut labore et dolore magna aliqua. Risus sed vulputate odio ut enim blandit. Ac tortor vitae " +
                                     "purus faucibus. Quis eleifend quam adipiscing vitae. Enim blandit volutpat maecenas volutpat " +
@@ -56,24 +54,23 @@ namespace KS.ConsoleBase.Presentation
                                     "velit dignissim. Tempor orci dapibus ultrices in iaculis nunc sed augue lacus. Cras tincidunt " +
                                     "lobortis feugiat vivamus at. Scelerisque fermentum dui faucibus in ornare quam viverra. " +
                                     "Tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin."
-                                }
+                                ]
                             },
                             new TextElement() {
-                                Arguments = new object[] {
+                                Arguments = [
                                     "Enjoying yet? {0}Color treat!",
                                     new Color(ConsoleColors.Purple4_5f00af).VTSequenceForeground
-                                }
+                                ]
                             }
-                        }
+                        ]
                     ),
                     #endregion
                         
                     #region Second page - Debugging text and input elements
                     new PresentationPage("Second page - Debugging text and input elements",
-                        new List<IElement>()
-                        {
+                        [
                             new TextElement() {
-                                Arguments = new object[] {
+                                Arguments = [
                                     "{0}Lorem ipsum {1}dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt " +
                                     "ut labore et dolore {2}magna aliqua. {1}Risus sed vulputate odio ut enim blandit. Ac tortor vitae " +
                                     "purus faucibus. Quis eleifend quam adipiscing vitae. {2}Enim blandit {1}volutpat maecenas volutpat " +
@@ -85,45 +82,43 @@ namespace KS.ConsoleBase.Presentation
                                     KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground,
                                     new Color(ConsoleColors.Yellow).VTSequenceForeground,
                                     new Color(ConsoleColors.Red).VTSequenceForeground
-                                }
+                                ]
                             },
                             new TextElement() {
-                                Arguments = new object[] {
+                                Arguments = [
                                     "Happy {0}hacking!",
                                     new Color(ConsoleColors.Green1).VTSequenceForeground
-                                }
+                                ]
                             },
                             new InputElement() {
-                                Arguments = new object[] {
+                                Arguments = [
                                     "\nDid you enjoy {0}testing? ",
                                     new Color(ConsoleColors.Green1).VTSequenceForeground
-                                },
+                                ],
                                 InvokeActionInput =
                                     (objs) => TextWriterWhereColor.WriteWhere($"You said \"{objs[0]}\".", PresentationTools.PresentationUpperInnerBorderLeft, ConsoleWrapper.CursorTop)
                             }
-                        }
+                        ]
                     ),
                     #endregion
                         
                     #region Third page - Debugging dynamic text
                     new PresentationPage("Third page - Debugging dynamic text",
-                        new List<IElement>()
-                        {
+                        [
                             new DynamicTextElement() {
-                                Arguments = new object[] {
+                                Arguments = [
                                     () => TimeDateRenderers.Render()
-                                }
+                                ]
                             }
-                        }
+                        ]
                     ),
                     #endregion
                         
                     #region Fourth page - Debugging overflow check
                     new PresentationPage("Fourth page - Debugging overflow check",
-                        new List<IElement>()
-                        {
+                        [
                             new TextElement() {
-                                Arguments = new object[] {
+                                Arguments = [
                                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt " +
                                     "ut labore et dolore magna aliqua. Risus sed vulputate odio ut enim blandit. Ac tortor vitae " +
                                     "purus faucibus. Quis eleifend quam adipiscing vitae. Enim blandit volutpat maecenas volutpat " +
@@ -131,10 +126,10 @@ namespace KS.ConsoleBase.Presentation
                                     "velit dignissim. Tempor orci dapibus ultrices in iaculis nunc sed augue lacus. Cras tincidunt " +
                                     "lobortis feugiat vivamus at. Scelerisque fermentum dui faucibus in ornare quam viverra. " +
                                     "Tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin."
-                                }
+                                ]
                             },
                             new TextElement() {
-                                Arguments = new object[] {
+                                Arguments = [
                                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt " +
                                     "ut labore et dolore magna aliqua. Risus sed vulputate odio ut enim blandit. Ac tortor vitae " +
                                     "purus faucibus. Quis eleifend quam adipiscing vitae. Enim blandit volutpat maecenas volutpat " +
@@ -142,10 +137,10 @@ namespace KS.ConsoleBase.Presentation
                                     "velit dignissim. Tempor orci dapibus ultrices in iaculis nunc sed augue lacus. Cras tincidunt " +
                                     "lobortis feugiat vivamus at. Scelerisque fermentum dui faucibus in ornare quam viverra. " +
                                     "Tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin."
-                                }
+                                ]
                             },
                             new TextElement() {
-                                Arguments = new object[] {
+                                Arguments = [
                                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt " +
                                     "ut labore et dolore magna aliqua. Risus sed vulputate odio ut enim blandit. Ac tortor vitae " +
                                     "purus faucibus. Quis eleifend quam adipiscing vitae. Enim blandit volutpat maecenas volutpat " +
@@ -153,10 +148,10 @@ namespace KS.ConsoleBase.Presentation
                                     "velit dignissim. Tempor orci dapibus ultrices in iaculis nunc sed augue lacus. Cras tincidunt " +
                                     "lobortis feugiat vivamus at. Scelerisque fermentum dui faucibus in ornare quam viverra. " +
                                     "Tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin."
-                                }
+                                ]
                             },
                             new TextElement() {
-                                Arguments = new object[] {
+                                Arguments = [
                                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt " +
                                     "ut labore et dolore magna aliqua. Risus sed vulputate odio ut enim blandit. Ac tortor vitae " +
                                     "purus faucibus. Quis eleifend quam adipiscing vitae. Enim blandit volutpat maecenas volutpat " +
@@ -164,10 +159,10 @@ namespace KS.ConsoleBase.Presentation
                                     "velit dignissim. Tempor orci dapibus ultrices in iaculis nunc sed augue lacus. Cras tincidunt " +
                                     "lobortis feugiat vivamus at. Scelerisque fermentum dui faucibus in ornare quam viverra. " +
                                     "Tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin."
-                                }
+                                ]
                             },
                             new TextElement() {
-                                Arguments = new object[] {
+                                Arguments = [
                                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt " +
                                     "ut labore et dolore magna aliqua. Risus sed vulputate odio ut enim blandit. Ac tortor vitae " +
                                     "purus faucibus. Quis eleifend quam adipiscing vitae. Enim blandit volutpat maecenas volutpat " +
@@ -175,35 +170,34 @@ namespace KS.ConsoleBase.Presentation
                                     "velit dignissim. Tempor orci dapibus ultrices in iaculis nunc sed augue lacus. Cras tincidunt " +
                                     "lobortis feugiat vivamus at. Scelerisque fermentum dui faucibus in ornare quam viverra. " +
                                     "Tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin."
-                                }
+                                ]
                             }
-                        }
+                        ]
                     ),
                     #endregion
                         
                     #region Fifth page - Debugging choice input
                     new PresentationPage("Fifth page - Debugging choice input",
-                        new List<IElement>()
-                        {
+                        [
                             new TextElement() {
-                                Arguments = new object[] {
+                                Arguments = [
                                     "Tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin."
-                                }
+                                ]
                             },
                             new ChoiceInputElement()
                             {
-                                Arguments = new object[]
-                                {
+                                Arguments =
+                                [
                                     "Ultricies mi eget mauris pharetra:",
                                     data1
-                                },
+                                ],
                                 InvokeActionInput =
                                     (objs) => TextWriterWhereColor.WriteWhere($"You chose \"{objs[0]}\", a {((string)objs[0] == "Sarah" ? "girl" : "boy")}.", PresentationTools.PresentationUpperInnerBorderLeft, ConsoleWrapper.CursorTop)
                             },
                             new ChoiceInputElement()
                             {
-                                Arguments = new object[]
-                                {
+                                Arguments =
+                                [
                                     "Ultricies mi eget mauris pharetra sapien et ligula:",
                                     data1,
                                     "Akshay",
@@ -231,7 +225,7 @@ namespace KS.ConsoleBase.Presentation
                                     "Sofia",
                                     "Thalia",
                                     "Vincent"
-                                },
+                                ],
                                 InvokeActionInput =
                                     (objs) =>
                                     TextWriterWhereColor.WriteWhere($"You chose \"{objs[0]}\", a " +
@@ -239,26 +233,25 @@ namespace KS.ConsoleBase.Presentation
                                     ? "girl" : "boy")}.",
                                     PresentationTools.PresentationUpperInnerBorderLeft, ConsoleWrapper.CursorTop)
                             }
-                        }
+                        ]
                     ),
                     #endregion
                         
                     #region Sixth page - Debugging multiple choice input
                     new PresentationPage("Sixth page - Debugging choice input",
-                        new List<IElement>()
-                        {
+                        [
                             new TextElement() {
-                                Arguments = new object[] {
+                                Arguments = [
                                     "Tempor orci dapibus ultrices in iaculis nunc sed augue lacus."
-                                }
+                                ]
                             },
                             new MultipleChoiceInputElement()
                             {
-                                Arguments = new object[]
-                                {
+                                Arguments =
+                                [
                                     "Ultricies mi eget mauris pharetra:",
                                     data1
-                                },
+                                ],
                                 InvokeActionInput =
                                     (objs) =>
                                     {
@@ -268,8 +261,8 @@ namespace KS.ConsoleBase.Presentation
                             },
                             new MultipleChoiceInputElement()
                             {
-                                Arguments = new object[]
-                                {
+                                Arguments =
+                                [
                                     "Ultricies mi eget mauris pharetra sapien et ligula:",
                                     data1,
                                     "Akshay",
@@ -297,7 +290,7 @@ namespace KS.ConsoleBase.Presentation
                                     "Sofia",
                                     "Thalia",
                                     "Vincent"
-                                },
+                                ],
                                 InvokeActionInput =
                                     (objs) =>
                                     {
@@ -308,10 +301,10 @@ namespace KS.ConsoleBase.Presentation
                                             $" of which are girls.", PresentationTools.PresentationUpperInnerBorderLeft, ConsoleWrapper.CursorTop);
                                     }
                             }
-                        }
+                        ]
                     ),
                     #endregion
-                }
+                ]
             );
     }
 }

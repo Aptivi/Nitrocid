@@ -64,7 +64,7 @@ namespace KS.Arguments.Help
         {
             // Check to see if we have this argument
             var argumentList = GetArguments();
-            if (!argumentList.ContainsKey(argument))
+            if (!argumentList.TryGetValue(argument, out ArgumentInfo argInfo))
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "We found no help! {0}", argument);
                 TextWriterColor.WriteKernelColor(Translate.DoTranslation("No help for argument \"{0}\"."), true, KernelColorType.Error, argument);
@@ -72,8 +72,8 @@ namespace KS.Arguments.Help
             }
 
             // Now, populate usages for each argument
-            string HelpDefinition = argumentList[argument].GetTranslatedHelpEntry();
-            var argumentInfos = argumentList[argument].ArgArgumentInfo;
+            string HelpDefinition = argInfo.GetTranslatedHelpEntry();
+            var argumentInfos = argInfo.ArgArgumentInfo;
             foreach (var argumentInfo in argumentInfos)
             {
                 var Arguments = Array.Empty<CommandArgumentPart>();
@@ -124,9 +124,7 @@ namespace KS.Arguments.Help
             if (string.IsNullOrEmpty(HelpDefinition))
                 HelpDefinition = Translate.DoTranslation("No argument help description");
             TextWriterColor.WriteKernelColor(Translate.DoTranslation("Description:") + $" {HelpDefinition}", true, KernelColorType.ListValue);
-
-            // Extra help action for some arguments
-            argumentList[argument].ArgumentBase.HelpHelper();
+            argInfo.ArgumentBase.HelpHelper();
         }
     }
 }

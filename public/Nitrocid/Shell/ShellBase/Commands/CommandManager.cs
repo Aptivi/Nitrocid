@@ -224,7 +224,7 @@ namespace KS.Shell.ShellBase.Commands
         /// <param name="commandBases">Custom command bases to register</param>
         public static void RegisterCustomCommands(string ShellType, CommandInfo[] commandBases)
         {
-            List<string> failedCommands = new();
+            List<string> failedCommands = [];
             foreach (var commandBase in commandBases)
             {
                 try
@@ -285,7 +285,7 @@ namespace KS.Shell.ShellBase.Commands
         /// <param name="commandNames">Custom command names to unregister</param>
         public static void UnregisterCustomCommands(string ShellType, string[] commandNames)
         {
-            List<string> failedCommands = new();
+            List<string> failedCommands = [];
             foreach (string commandBase in commandNames)
             {
                 try
@@ -367,7 +367,7 @@ namespace KS.Shell.ShellBase.Commands
         /// <param name="commandBases">Addon command bases to register</param>
         internal static void RegisterAddonCommands(string ShellType, CommandInfo[] commandBases)
         {
-            List<string> failedCommands = new();
+            List<string> failedCommands = [];
             foreach (var commandBase in commandBases)
             {
                 try
@@ -428,7 +428,7 @@ namespace KS.Shell.ShellBase.Commands
         /// <param name="commandNames">Addon command names to unregister</param>
         internal static void UnregisterAddonCommands(string ShellType, string[] commandNames)
         {
-            List<string> failedCommands = new();
+            List<string> failedCommands = [];
             foreach (string commandBase in commandNames)
             {
                 try

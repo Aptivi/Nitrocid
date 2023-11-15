@@ -149,7 +149,7 @@ namespace Nitrocid.Extras.RssShell.Tools
             if (UserCustomSettingsManager.DoesSettingsEntryExist(currentUsername, keyName))
                 return UserCustomSettingsManager.GetSettingsEntryFromUser(currentUsername, keyName).Select((rssString) => rssString.ToString()).ToList();
             else
-                return new();
+                return [];
         }
 
         /// <summary>

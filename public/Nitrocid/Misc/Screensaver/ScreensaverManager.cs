@@ -56,8 +56,8 @@ namespace KS.Misc.Screensaver
             { "matrixbleed", new MatrixBleedDisplay() },
             { "plain", new PlainDisplay() }
         };
-        internal static Dictionary<string, BaseScreensaver> AddonSavers = new();
-        internal static Dictionary<string, BaseScreensaver> CustomSavers = new();
+        internal static Dictionary<string, BaseScreensaver> AddonSavers = [];
+        internal static Dictionary<string, BaseScreensaver> CustomSavers = [];
         internal static bool scrnTimeoutEnabled = true;
         internal static int scrnTimeout = 300000;
         internal static string defSaverName = "matrixbleed";
@@ -123,11 +123,8 @@ namespace KS.Misc.Screensaver
         /// </summary>
         public static string[] GetScreensaverNames()
         {
-            List<string> savers = new();
-            savers.AddRange(Screensavers.Keys);
-            savers.AddRange(AddonSavers.Keys);
-            savers.AddRange(CustomSavers.Keys);
-            return savers.ToArray();
+            List<string> savers = [.. Screensavers.Keys, .. AddonSavers.Keys, .. CustomSavers.Keys];
+            return [.. savers];
         }
 
         /// <summary>
@@ -190,7 +187,7 @@ namespace KS.Misc.Screensaver
                 else if (Screensavers.ContainsKey(saverName) || AddonSavers.ContainsKey(saverName))
                 {
                     saver = saverName;
-                    var BaseSaver = AddonSavers.ContainsKey(saver) ? AddonSavers[saver] : Screensavers[saver];
+                    var BaseSaver = AddonSavers.TryGetValue(saver, out BaseScreensaver @base) ? @base : Screensavers[saver];
                     if (BaseSaver.ScreensaverContainsFlashingImages && !noSeizureWarning)
                         BaseSaver.ScreensaverSeizureWarning();
                     inSaver = true;

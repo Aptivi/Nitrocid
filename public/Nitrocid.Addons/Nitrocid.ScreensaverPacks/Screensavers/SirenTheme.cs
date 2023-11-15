@@ -72,7 +72,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     public class SirenThemeDisplay : BaseScreensaver, IScreensaver
     {
 
-        internal readonly static Dictionary<string, Color[]> sirens = new();
+        internal readonly static Dictionary<string, Color[]> sirens = [];
         private int step = 0;
 
         /// <inheritdoc/>
@@ -95,7 +95,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 var colors = ThemeTools.GetColorsFromTheme(theme);
 
                 // Enumerate thorugh every type
-                List<Color> colorList = new();
+                List<Color> colorList = [];
                 foreach (var color in colors.Values)
                 {
                     // Now, compare the colors and add them
@@ -104,7 +104,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 }
 
                 // Now, add the list with the theme name to the list
-                sirens.Add(theme, colorList.ToArray());
+                sirens.Add(theme, [.. colorList]);
             }
             step = 0;
         }

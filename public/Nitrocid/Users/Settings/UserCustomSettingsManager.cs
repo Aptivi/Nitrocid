@@ -47,7 +47,7 @@ namespace KS.Users.Settings
             // Now, add the key with its value to the user info and then save the file
             int userIndex = UserManagement.GetUserIndex(user);
             if (UserManagement.Users[userIndex].CustomSettings is null)
-                UserManagement.Users[userIndex].CustomSettings = new();
+                UserManagement.Users[userIndex].CustomSettings = [];
             UserManagement.Users[userIndex].CustomSettings.Add(key, value);
 
             // Just save the file!

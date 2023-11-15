@@ -62,11 +62,11 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Presets
             char TransitionPartChar = Convert.ToChar(0xE0B1);
 
             // Segments
-            List<PowerLineSegment> segments = new()
-            {
+            List<PowerLineSegment> segments =
+            [
                 new PowerLineSegment(new Color(85, 255, 255), new Color(25, 25, 25), Path.GetFileName(ArchiveShellCommon.FileStream.Name), default, TransitionPartChar),
                 new PowerLineSegment(new Color(85, 255, 255), new Color(25, 25, 25), ArchiveShellCommon.CurrentArchiveDirectory, default, TransitionPartChar)
-            };
+            ];
 
             // Builder
             var PresetStringBuilder = new StringBuilder();
@@ -85,11 +85,11 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Presets
             char TransitionPartChar = Convert.ToChar(0xE0B1);
 
             // Segments
-            List<PowerLineSegment> segments = new()
-            {
+            List<PowerLineSegment> segments =
+            [
                 new PowerLineSegment(new Color(85, 255, 255), new Color(25, 25, 25), "archive.zip", default, TransitionPartChar),
                 new PowerLineSegment(new Color(85, 255, 255), new Color(25, 25, 25), "/dir", default, TransitionPartChar)
-            };
+            ];
 
             // Builder
             var PresetStringBuilder = new StringBuilder();
@@ -105,10 +105,10 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Presets
         internal override string PresetPromptCompletionBuilder()
         {
             // Segments
-            List<PowerLineSegment> segments = new()
-            {
+            List<PowerLineSegment> segments =
+            [
                 new PowerLineSegment(new Color(85, 255, 255), new Color(25, 25, 25), "+"),
-            };
+            ];
 
             // Builder
             var PresetStringBuilder = new StringBuilder();

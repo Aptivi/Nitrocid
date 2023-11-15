@@ -141,7 +141,7 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// <param name="OutputType">Output type of choices</param>
         /// <param name="PressEnter">When enabled, allows the input to consist of multiple characters</param>
         public static string PromptChoice(string Question, List<InputChoiceInfo> Answers, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false) =>
-            PromptChoice(Question, Answers, new List<InputChoiceInfo>(), OutputType, PressEnter);
+            PromptChoice(Question, Answers, [], OutputType, PressEnter);
 
         /// <summary>
         /// Prompts user for choice

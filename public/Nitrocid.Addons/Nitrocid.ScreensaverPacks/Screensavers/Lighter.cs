@@ -213,7 +213,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     public class LighterDisplay : BaseScreensaver, IScreensaver
     {
 
-        private readonly List<Tuple<int, int>> CoveredPositions = new();
+        private readonly List<Tuple<int, int>> CoveredPositions = [];
 
         /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "Lighter";

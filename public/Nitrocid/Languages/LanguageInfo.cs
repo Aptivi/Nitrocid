@@ -156,7 +156,7 @@ namespace KS.Languages
                     DebugWriter.WriteDebug(DebugLevel.W, "Adding current culture because we can't find any culture with the name of {0}...", FullLanguageName.ToLower());
                     Cultures.Add(CultureInfo.CurrentCulture);
                 }
-                cultures = Cultures.ToArray();
+                cultures = [.. Cultures];
                 this.cultureCode = cultureCode;
 
                 // Get instance of language resource
@@ -216,7 +216,7 @@ namespace KS.Languages
                 DebugWriter.WriteDebug(DebugLevel.W, "Adding current culture because we can't find any culture with the name of {0}...", FullLanguageName.ToLower());
                 Cultures.Add(CultureInfo.CurrentCulture);
             }
-            cultures = Cultures.ToArray();
+            cultures = [.. Cultures];
             this.cultureCode = cultureCode;
 
             // Install it

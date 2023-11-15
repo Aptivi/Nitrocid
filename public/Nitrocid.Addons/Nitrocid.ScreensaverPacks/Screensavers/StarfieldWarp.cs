@@ -60,7 +60,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     public class StarfieldWarpDisplay : BaseScreensaver, IScreensaver
     {
 
-        private readonly List<(double, double, int, int, double, double)> Stars = new();
+        private readonly List<(double, double, int, int, double, double)> Stars = [];
 
         /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "StarfieldWarp";

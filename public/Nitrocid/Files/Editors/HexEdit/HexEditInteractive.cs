@@ -50,8 +50,8 @@ namespace KS.Files.Editors.HexEdit
         private static string status;
         private static bool bail;
         private static int byteIdx = 0;
-        private static readonly HexEditorBinding[] bindings = new[]
-        {
+        private static readonly HexEditorBinding[] bindings =
+        [
             new HexEditorBinding( /* Localizable */ "Exit", ConsoleKey.Escape, default, (b) => { bail = true; return b; }, true),
             new HexEditorBinding( /* Localizable */ "Keybindings", ConsoleKey.K, default, RenderKeybindingsBox, true),
             new HexEditorBinding( /* Localizable */ "Insert", ConsoleKey.F1, default, Insert, true),
@@ -60,7 +60,7 @@ namespace KS.Files.Editors.HexEdit
             new HexEditorBinding( /* Localizable */ "Replace All", ConsoleKey.F3, ConsoleModifiers.Shift, ReplaceAll, true),
             new HexEditorBinding( /* Localizable */ "Replace All What", ConsoleKey.F3, ConsoleModifiers.Shift | ConsoleModifiers.Alt, ReplaceAllWhat, true),
             new HexEditorBinding( /* Localizable */ "Number Info", ConsoleKey.F4, default, NumInfo, true),
-        };
+        ];
 
         /// <summary>
         /// Opens an interactive hex editor

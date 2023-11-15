@@ -65,7 +65,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                         if (currentGuessChar > RandomWord.Length)
                         {
                             currentGuessChar = 1;
-                            List<char> chars = new();
+                            List<char> chars = [];
 
                             // Check to see if the word formed within the current guess try is right
                             for (int i = 0; i < RandomWord.Length; i++)

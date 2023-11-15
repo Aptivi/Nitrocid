@@ -86,10 +86,9 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         {
             Should.NotThrow(() => CommandManager.RegisterCustomCommand(type,
                 new CommandInfo("mycmd", $"My command help definition for type {type}...",
-                    new[]
-                    {
+                    [
                         new CommandArgumentInfo()
-                    }, new CustomCommand())
+                    ], new CustomCommand())
             ));
             CommandManager.IsCommandFound("mycmd", type).ShouldBeTrue();
         }
@@ -110,10 +109,9 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         {
             Should.NotThrow(() => CommandManager.RegisterCustomCommand(type,
                 new CommandInfo("mycmd2", $"My command help definition for type {type}...",
-                    new[]
-                    {
+                    [
                         new CommandArgumentInfo()
-                    }, new CustomCommand())
+                    ], new CustomCommand())
             ));
             CommandManager.IsCommandFound("mycmd2", type).ShouldBeTrue();
         }
@@ -134,10 +132,9 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         {
             Should.Throw(() => CommandManager.RegisterCustomCommand(type,
                 new CommandInfo("", $"My command help definition for type {type}...",
-                    new[]
-                    {
+                    [
                         new CommandArgumentInfo()
-                    }, new CustomCommand())
+                    ], new CustomCommand())
             ), typeof(KernelException));
         }
 
@@ -157,10 +154,9 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         {
             Should.Throw(() => CommandManager.RegisterCustomCommand(type,
                 new CommandInfo("", $"My command help definition for type {type}...",
-                    new[]
-                    {
+                    [
                         new CommandArgumentInfo()
-                    }, new CustomCommand())
+                    ], new CustomCommand())
             ), typeof(KernelException));
         }
 
@@ -180,10 +176,9 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         {
             Should.Throw(() => CommandManager.RegisterCustomCommand(type,
                 new CommandInfo("exit", $"My command help definition for type {type}...",
-                    new[]
-                    {
+                    [
                         new CommandArgumentInfo()
-                    }, new CustomCommand())
+                    ], new CustomCommand())
             ), typeof(KernelException));
         }
 
@@ -203,10 +198,9 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         {
             Should.Throw(() => CommandManager.RegisterCustomCommand(type,
                 new CommandInfo("exit", $"My command help definition for type {type}...",
-                    new[]
-                    {
+                    [
                         new CommandArgumentInfo()
-                    }, new CustomCommand())
+                    ], new CustomCommand())
             ), typeof(KernelException));
         }
 
@@ -353,22 +347,19 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             var commandInfos = new CommandInfo[]
             {
                 new CommandInfo("cmdgroup", $"My command help definition for type {type}...",
-                    new[]
-                    {
+                    [
                         new CommandArgumentInfo()
-                    }, new CustomCommand()),
+                    ], new CustomCommand()),
 
                 new CommandInfo("cmdgroup1", $"My command help definition for type {type}...",
-                    new[]
-                    {
+                    [
                         new CommandArgumentInfo()
-                    }, new CustomCommand()),
+                    ], new CustomCommand()),
 
                 new CommandInfo("cmdgroup2", $"My command help definition for type {type}...",
-                    new[]
-                    {
+                    [
                         new CommandArgumentInfo()
-                    }, new CustomCommand()),
+                    ], new CustomCommand()),
             };
             Should.NotThrow(() => CommandManager.RegisterCustomCommands(type, commandInfos));
             CommandManager.IsCommandFound("cmdgroup", type).ShouldBeTrue();
@@ -393,22 +384,19 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             var commandInfos = new CommandInfo[]
             {
                 new CommandInfo("cmdgroup3", $"My command help definition for type {type}...",
-                    new[]
-                    {
+                    [
                         new CommandArgumentInfo()
-                    }, new CustomCommand()),
+                    ], new CustomCommand()),
                 
                 new CommandInfo("cmdgroup4", $"My command help definition for type {type}...",
-                    new[]
-                    {
+                    [
                         new CommandArgumentInfo()
-                    }, new CustomCommand()),
+                    ], new CustomCommand()),
                 
                 new CommandInfo("cmdgroup5", $"My command help definition for type {type}...",
-                    new[]
-                    {
+                    [
                         new CommandArgumentInfo()
-                    }, new CustomCommand()),
+                    ], new CustomCommand()),
             };
             Should.NotThrow(() => CommandManager.RegisterCustomCommands(type, commandInfos));
             CommandManager.IsCommandFound("cmdgroup3", type).ShouldBeTrue();
@@ -433,22 +421,19 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             var commandInfos = new CommandInfo[]
             {
                 new CommandInfo("command", $"My command help definition for type {type}...",
-                    new[]
-                    {
+                    [
                         new CommandArgumentInfo()
-                    }, new CustomCommand()),
+                    ], new CustomCommand()),
 
                 new CommandInfo("exit", $"My command help definition for type {type}...",
-                    new[]
-                    {
+                    [
                         new CommandArgumentInfo()
-                    }, new CustomCommand()),
+                    ], new CustomCommand()),
 
                 new CommandInfo("", $"My command help definition for type {type}...",
-                    new[]
-                    {
+                    [
                         new CommandArgumentInfo()
-                    }, new CustomCommand()),
+                    ], new CustomCommand()),
             };
             Should.Throw(() => CommandManager.RegisterCustomCommands(type, commandInfos), typeof(KernelException));
             CommandManager.IsCommandFound("command", type).ShouldBeTrue();
@@ -471,22 +456,19 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             var commandInfos = new CommandInfo[]
             {
                 new CommandInfo("command2", $"My command help definition for type {type}...",
-                    new[]
-                    {
+                    [
                         new CommandArgumentInfo()
-                    }, new CustomCommand()),
+                    ], new CustomCommand()),
 
                 new CommandInfo("exit", $"My command help definition for type {type}...",
-                    new[]
-                    {
+                    [
                         new CommandArgumentInfo()
-                    }, new CustomCommand()),
+                    ], new CustomCommand()),
 
                 new CommandInfo("", $"My command help definition for type {type}...",
-                    new[]
-                    {
+                    [
                         new CommandArgumentInfo()
-                    }, new CustomCommand()),
+                    ], new CustomCommand()),
             };
             Should.Throw(() => CommandManager.RegisterCustomCommands(type, commandInfos), typeof(KernelException));
             CommandManager.IsCommandFound("command2", type).ShouldBeTrue();

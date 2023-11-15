@@ -58,10 +58,10 @@ namespace Nitrocid.Extras.RssShell.RSS.Presets
         internal override string PresetPromptBuilder()
         {
             // Segments
-            List<PowerLineSegment> segments = new()
-            {
+            List<PowerLineSegment> segments =
+            [
                 new PowerLineSegment(new Color(255, 85, 255), new Color(127, 43, 127), new Uri(RSSShellCommon.RSSFeedLink).Host),
-            };
+            ];
 
             // Builder
             var PresetStringBuilder = new StringBuilder();
@@ -77,10 +77,10 @@ namespace Nitrocid.Extras.RssShell.RSS.Presets
         internal override string PresetPromptBuilderShowcase()
         {
             // Segments
-            List<PowerLineSegment> segments = new()
-            {
+            List<PowerLineSegment> segments =
+            [
                 new PowerLineSegment(new Color(255, 85, 255), new Color(127, 43, 127), "rss.fabrikam.com/news/tech.rss"),
-            };
+            ];
 
             // Builder
             var PresetStringBuilder = new StringBuilder();
@@ -96,10 +96,10 @@ namespace Nitrocid.Extras.RssShell.RSS.Presets
         internal override string PresetPromptCompletionBuilder()
         {
             // Segments
-            List<PowerLineSegment> segments = new()
-            {
+            List<PowerLineSegment> segments =
+            [
                 new PowerLineSegment(new Color(255, 85, 255), new Color(127, 43, 127), "+"),
-            };
+            ];
 
             // Builder
             var PresetStringBuilder = new StringBuilder();

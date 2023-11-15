@@ -109,7 +109,7 @@ namespace KS.ConsoleBase.Colors
 
         private static Dictionary<KernelColorType, Color> PopulateColors(KernelColorPopulationType populationType)
         {
-            Dictionary<KernelColorType, Color> colors = new();
+            Dictionary<KernelColorType, Color> colors = [];
             ThemeInfo themeInfo = default;
 
             // Select population type

@@ -60,7 +60,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     public class SkyCometDisplay : BaseScreensaver, IScreensaver
     {
 
-        private static readonly List<(int left, int top)> stars = new();
+        private static readonly List<(int left, int top)> stars = [];
 
         /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "SkyComet";
@@ -99,7 +99,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 double thresholdY = -(endY - launchY) / ((double)ConsoleWrapper.WindowHeight * 4);
 
                 // Then, the covered positions
-                List<(int, int)> coveredPositions = new();
+                List<(int, int)> coveredPositions = [];
                 Color color = ConsoleColors.LightSkyBlue1;
                 for (int j = 0; j < ConsoleWrapper.WindowWidth; j++)
                 {
