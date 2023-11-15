@@ -72,7 +72,8 @@ namespace Nitrocid.Extras.SftpShell
             },
         };
 
-        string IAddon.AddonName => "Extras - SFTP Shell";
+        string IAddon.AddonName =>
+            InterAddonTranslations.GetAddonName(KnownAddons.ExtrasSftpShell);
 
         AddonType IAddon.AddonType => AddonType.Optional;
 

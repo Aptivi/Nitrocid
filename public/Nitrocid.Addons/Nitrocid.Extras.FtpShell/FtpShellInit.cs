@@ -48,7 +48,8 @@ namespace Nitrocid.Extras.FtpShell
             },
         };
 
-        string IAddon.AddonName => "Extras - FTP Shell";
+        string IAddon.AddonName =>
+            InterAddonTranslations.GetAddonName(KnownAddons.ExtrasFtpShell);
 
         AddonType IAddon.AddonType => AddonType.Optional;
 

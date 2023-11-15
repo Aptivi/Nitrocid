@@ -1,0 +1,95 @@
+﻿//
+// Nitrocid KS  Copyright (C) 2018-2023  Aptivi
+//
+// This file is part of Nitrocid KS
+//
+// Nitrocid KS is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Nitrocid KS is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY, without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
+//
+
+using KS.Kernel.Exceptions;
+using KS.Languages;
+using System.Collections.Generic;
+
+namespace KS.Kernel.Extensions
+{
+    /// <summary>
+    /// Translations from enumerations to names for all known addons
+    /// </summary>
+    public static class InterAddonTranslations
+    {
+        private static readonly Dictionary<KnownAddons, string> knownAddons = new()
+        {
+            // Note: The names are not to be localized for usage with GetAddonName(), because they are constant addon names.
+            { KnownAddons.AddonLanguagePacks,           /* Localizable */ "Extra Languages Pack" },
+            { KnownAddons.AddonScreensaverPacks,        /* Localizable */ "Extra Screensavers Pack" },
+            { KnownAddons.AddonSplashPacks,             /* Localizable */ "Extra Splashes Pack" },
+            { KnownAddons.AddonThemePacks,              /* Localizable */ "Extra Themes Pack" },
+            { KnownAddons.ExtrasAmusements,             /* Localizable */ "Extras - Amusements" },
+            { KnownAddons.ExtrasArchiveShell,           /* Localizable */ "Extras - Archive Shell" },
+            { KnownAddons.ExtrasBassBoom,               /* Localizable */ "Extras - BassBoom" },
+            { KnownAddons.ExtrasCaffeine,               /* Localizable */ "Extras - Caffeine" },
+            { KnownAddons.ExtrasCalculators,            /* Localizable */ "Extras - Calculators" },
+            { KnownAddons.ExtrasCalendar,               /* Localizable */ "Extras - Calendar" },
+            { KnownAddons.ExtrasChatGpt,                /* Localizable */ "Extras - ChatGPT Unofficial Client" },
+            { KnownAddons.ExtrasColorConvert,           /* Localizable */ "Extras - Color Converter" },
+            { KnownAddons.ExtrasContacts,               /* Localizable */ "Extras - Contacts" },
+            { KnownAddons.ExtrasDictionary,             /* Localizable */ "Extras - Dictionary" },
+            { KnownAddons.ExtrasForecast,               /* Localizable */ "Extras - Forecast" },
+            { KnownAddons.ExtrasFtpShell,               /* Localizable */ "Extras - FTP Shell" },
+            { KnownAddons.ExtrasGitShell,               /* Localizable */ "Extras - Git Shell" },
+            { KnownAddons.ExtrasHttpShell,              /* Localizable */ "Extras - HTTP Shell" },
+            { KnownAddons.ExtrasInternetRadioInfo,      /* Localizable */ "Extras - Internet Radio Information" },
+            { KnownAddons.ExtrasLanguageStudio,         /* Localizable */ "Extras - Language Studio" },
+            { KnownAddons.ExtrasMailShell,              /* Localizable */ "Extras - Mail Shell" },
+            { KnownAddons.ExtrasNameGen,                /* Localizable */ "Extras - NameGen" },
+            { KnownAddons.ExtrasNotes,                  /* Localizable */ "Extras - Notes" },
+            { KnownAddons.ExtrasRetroKS,                /* Localizable */ "Extras - Retro KS (based on 0.0.4.x)" },
+            { KnownAddons.ExtrasRssShell,               /* Localizable */ "Extras - RSS Shell" },
+            { KnownAddons.ExtrasSftpShell,              /* Localizable */ "Extras - SFTP Shell" },
+            { KnownAddons.ExtrasThemeStudio,            /* Localizable */ "Extras - Theme Studio" },
+            { KnownAddons.ExtrasTimeInfo,               /* Localizable */ "Extras - Time Info" },
+            { KnownAddons.ExtrasTimers,                 /* Localizable */ "Extras - Timers" },
+            { KnownAddons.ExtrasTips,                   /* Localizable */ "Extras - Kernel Tips" },
+            { KnownAddons.ExtrasToDoList,               /* Localizable */ "Extras - To-do List" },
+            { KnownAddons.ExtrasUnitConv,               /* Localizable */ "Extras - Unit Converter" },
+            { KnownAddons.LegacyInxiNet,                /* Localizable */ "Legacy - Inxi.NET Hardware Prober Driver" },
+        };
+
+        /// <summary>
+        /// Gets the addon name from the type
+        /// </summary>
+        /// <param name="addon">Addon type</param>
+        /// <returns>The known addon name</returns>
+        /// <exception cref="KernelException"></exception>
+        public static string GetAddonName(KnownAddons addon)
+        {
+            if (knownAddons.ContainsKey(addon))
+                return knownAddons[addon];
+            throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("No such addon type '{0}'"), addon.ToString());
+        }
+
+        /// <summary>
+        /// Gets the localized addon name from the type
+        /// </summary>
+        /// <param name="addon">Addon type</param>
+        /// <returns>The known addon name</returns>
+        /// <exception cref="KernelException"></exception>
+        public static string GetLocalizedAddonName(KnownAddons addon)
+        {
+            if (knownAddons.ContainsKey(addon))
+                return Translate.DoTranslation(knownAddons[addon]);
+            throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("No such addon type '{0}'"), addon.ToString());
+        }
+    }
+}

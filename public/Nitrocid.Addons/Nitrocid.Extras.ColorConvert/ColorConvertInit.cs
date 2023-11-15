@@ -1117,7 +1117,8 @@ namespace Nitrocid.Extras.ColorConvert
             },
         };
 
-        string IAddon.AddonName => "Extras - Color Converter";
+        string IAddon.AddonName =>
+            InterAddonTranslations.GetAddonName(KnownAddons.ExtrasColorConvert);
 
         AddonType IAddon.AddonType => AddonType.Optional;
 

@@ -49,7 +49,8 @@ namespace Nitrocid.Extras.ArchiveShell
             },
         };
 
-        string IAddon.AddonName => "Extras - Archive Shell";
+        string IAddon.AddonName =>
+            InterAddonTranslations.GetAddonName(KnownAddons.ExtrasArchiveShell);
 
         AddonType IAddon.AddonType => AddonType.Optional;
 

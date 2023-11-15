@@ -45,7 +45,8 @@ namespace Nitrocid.Extras.Dictionary
             },
         };
 
-        string IAddon.AddonName => "Extras - Dictionary";
+        string IAddon.AddonName =>
+            InterAddonTranslations.GetAddonName(KnownAddons.ExtrasDictionary);
 
         AddonType IAddon.AddonType => AddonType.Optional;
 

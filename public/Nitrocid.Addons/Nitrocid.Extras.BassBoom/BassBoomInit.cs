@@ -121,7 +121,8 @@ namespace Nitrocid.Extras.BassBoom
             },
         };
 
-        string IAddon.AddonName => "Extras - BassBoom";
+        string IAddon.AddonName =>
+            InterAddonTranslations.GetAddonName(KnownAddons.ExtrasBassBoom);
 
         AddonType IAddon.AddonType => AddonType.Optional;
 

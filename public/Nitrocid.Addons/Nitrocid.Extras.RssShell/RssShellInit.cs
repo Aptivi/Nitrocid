@@ -53,7 +53,8 @@ namespace Nitrocid.Extras.RssShell
             },
         };
 
-        string IAddon.AddonName => "Extras - RSS Shell";
+        string IAddon.AddonName =>
+            InterAddonTranslations.GetAddonName(KnownAddons.ExtrasRssShell);
 
         AddonType IAddon.AddonType => AddonType.Optional;
 

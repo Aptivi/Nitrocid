@@ -69,7 +69,7 @@ namespace KS.Users.Login
                     {
                         if (!RSSTools.ShowHeadlineOnLogin)
                             return "";
-                        var Feed = InterAddonTools.ExecuteCustomAddonFunction("Extras - RSS Shell", "GetFirstArticle", RSSTools.RssHeadlineUrl);
+                        var Feed = InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasRssShell, "GetFirstArticle", RSSTools.RssHeadlineUrl);
                         if (Feed is (string feedTitle, string articleTitle))
                             return Translate.DoTranslation("From") + $" {feedTitle}: {articleTitle}";
                         return Translate.DoTranslation("No feed.");

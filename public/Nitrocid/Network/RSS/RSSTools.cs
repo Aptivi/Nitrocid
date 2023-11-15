@@ -53,7 +53,7 @@ namespace KS.Network.RSS
             {
                 try
                 {
-                    var Feed = InterAddonTools.ExecuteCustomAddonFunction("Extras - RSS Shell", "GetFirstArticle", RssHeadlineUrl);
+                    var Feed = InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasRssShell, "GetFirstArticle", RssHeadlineUrl);
                     if (Feed is (string feedTitle, string articleTitle))
                     {
                         TextWriterColor.WriteKernelColor(Translate.DoTranslation("Latest news from") + " {0}: ", false, KernelColorType.ListEntry, feedTitle);

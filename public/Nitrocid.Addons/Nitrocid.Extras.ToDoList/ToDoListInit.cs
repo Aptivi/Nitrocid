@@ -75,7 +75,8 @@ namespace Nitrocid.Extras.ToDoList
             },
         };
 
-        string IAddon.AddonName => "Extras - To-do List";
+        string IAddon.AddonName =>
+            InterAddonTranslations.GetAddonName(KnownAddons.ExtrasToDoList);
 
         AddonType IAddon.AddonType => AddonType.Optional;
 

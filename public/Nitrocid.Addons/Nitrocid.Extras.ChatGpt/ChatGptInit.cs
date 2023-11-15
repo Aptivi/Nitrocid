@@ -47,7 +47,8 @@ namespace Nitrocid.Extras.ChatGpt
             },
         };
 
-        string IAddon.AddonName => "Extras - ChatGPT Unofficial Client";
+        string IAddon.AddonName =>
+            InterAddonTranslations.GetAddonName(KnownAddons.ExtrasChatGpt);
 
         AddonType IAddon.AddonType => AddonType.Optional;
 

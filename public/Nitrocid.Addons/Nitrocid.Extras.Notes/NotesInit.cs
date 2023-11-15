@@ -93,7 +93,8 @@ namespace Nitrocid.Extras.Notes
             },
         };
 
-        string IAddon.AddonName => "Extras - Notes";
+        string IAddon.AddonName =>
+            InterAddonTranslations.GetAddonName(KnownAddons.ExtrasNotes);
 
         AddonType IAddon.AddonType => AddonType.Optional;
 

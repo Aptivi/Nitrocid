@@ -45,7 +45,8 @@ namespace Nitrocid.Extras.LanguageStudio
             },
         };
 
-        string IAddon.AddonName => "Extras - Language Studio";
+        string IAddon.AddonName =>
+            InterAddonTranslations.GetAddonName(KnownAddons.ExtrasLanguageStudio);
 
         AddonType IAddon.AddonType => AddonType.Optional;
 

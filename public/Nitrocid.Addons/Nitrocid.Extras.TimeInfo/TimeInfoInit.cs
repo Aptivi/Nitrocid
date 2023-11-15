@@ -53,7 +53,8 @@ namespace Nitrocid.Extras.TimeInfo
             },
         };
 
-        string IAddon.AddonName => "Extras - Time Info";
+        string IAddon.AddonName =>
+            InterAddonTranslations.GetAddonName(KnownAddons.ExtrasTimeInfo);
 
         AddonType IAddon.AddonType => AddonType.Optional;
 

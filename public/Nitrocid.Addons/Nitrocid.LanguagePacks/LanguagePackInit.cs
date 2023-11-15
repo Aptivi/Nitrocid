@@ -33,7 +33,8 @@ namespace Nitrocid.LanguagePacks
 {
     internal class LanguagePackInit : IAddon
     {
-        string IAddon.AddonName => "Extra Languages Pack";
+        string IAddon.AddonName =>
+            InterAddonTranslations.GetAddonName(KnownAddons.AddonLanguagePacks);
 
         AddonType IAddon.AddonType => AddonType.Important;
 

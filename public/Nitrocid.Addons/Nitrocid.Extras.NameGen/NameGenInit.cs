@@ -119,7 +119,8 @@ namespace Nitrocid.Extras.NameGen
             },
         };
 
-        string IAddon.AddonName => "Extras - NameGen";
+        string IAddon.AddonName =>
+            InterAddonTranslations.GetAddonName(KnownAddons.ExtrasNameGen);
 
         AddonType IAddon.AddonType => AddonType.Optional;
 

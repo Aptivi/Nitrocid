@@ -195,7 +195,8 @@ namespace Nitrocid.Extras.Calendar
             },
         };
 
-        string IAddon.AddonName => "Extras - Calendar";
+        string IAddon.AddonName =>
+            InterAddonTranslations.GetAddonName(KnownAddons.ExtrasCalendar);
 
         AddonType IAddon.AddonType => AddonType.Optional;
 

@@ -169,7 +169,8 @@ namespace Nitrocid.Extras.Amusements
             },
         };
 
-        string IAddon.AddonName => "Extras - Amusements";
+        string IAddon.AddonName =>
+            InterAddonTranslations.GetAddonName(KnownAddons.ExtrasAmusements);
 
         AddonType IAddon.AddonType => AddonType.Optional;
 

@@ -46,7 +46,8 @@ namespace Nitrocid.Extras.InternetRadioInfo
             },
         };
 
-        string IAddon.AddonName => "Extras - Internet Radio Information";
+        string IAddon.AddonName =>
+            InterAddonTranslations.GetAddonName(KnownAddons.ExtrasInternetRadioInfo);
 
         AddonType IAddon.AddonType => AddonType.Optional;
 

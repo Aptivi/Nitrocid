@@ -45,7 +45,8 @@ namespace Nitrocid.Extras.HttpShell
             },
         };
 
-        string IAddon.AddonName => "Extras - HTTP Shell";
+        string IAddon.AddonName =>
+            InterAddonTranslations.GetAddonName(KnownAddons.ExtrasHttpShell);
 
         AddonType IAddon.AddonType => AddonType.Optional;
 

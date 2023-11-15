@@ -44,7 +44,8 @@ namespace Nitrocid.Extras.Contacts
             },
         };
 
-        string IAddon.AddonName => "Extras - Contacts";
+        string IAddon.AddonName =>
+            InterAddonTranslations.GetAddonName(KnownAddons.ExtrasContacts);
 
         AddonType IAddon.AddonType => AddonType.Optional;
 

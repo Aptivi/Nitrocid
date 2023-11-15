@@ -134,7 +134,8 @@ namespace Nitrocid.ScreensaverPacks
             { "SquareCorner", new SplashInfo("SquareCorner", new SplashSquareCorner()) },
         };
 
-        string IAddon.AddonName => "Extra Screensavers Pack";
+        string IAddon.AddonName =>
+            InterAddonTranslations.GetAddonName(KnownAddons.AddonScreensaverPacks);
 
         AddonType IAddon.AddonType => AddonType.Important;
 

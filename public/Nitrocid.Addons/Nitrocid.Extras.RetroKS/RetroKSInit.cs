@@ -43,7 +43,8 @@ namespace Nitrocid.Extras.RetroKS
             },
         };
 
-        string IAddon.AddonName => "Extras - Retro KS (based on 0.0.4.x)";
+        string IAddon.AddonName =>
+            InterAddonTranslations.GetAddonName(KnownAddons.ExtrasRetroKS);
 
         AddonType IAddon.AddonType => AddonType.Optional;
 

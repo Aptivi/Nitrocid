@@ -45,7 +45,8 @@ namespace Nitrocid.SplashPacks
             { "FigProgress", new SplashInfo("FigProgress", new SplashFigProgress()) },
         };
 
-        string IAddon.AddonName => "Extra Splashes Pack";
+        string IAddon.AddonName =>
+            InterAddonTranslations.GetAddonName(KnownAddons.AddonSplashPacks);
 
         AddonType IAddon.AddonType => AddonType.Important;
 

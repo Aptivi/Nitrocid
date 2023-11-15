@@ -53,7 +53,8 @@ namespace Nitrocid.Extras.GitShell
             },
         };
 
-        string IAddon.AddonName => "Extras - Git Shell";
+        string IAddon.AddonName =>
+            InterAddonTranslations.GetAddonName(KnownAddons.ExtrasGitShell);
 
         AddonType IAddon.AddonType => AddonType.Optional;
 

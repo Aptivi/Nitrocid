@@ -51,7 +51,8 @@ namespace Nitrocid.Extras.Timers
             },
         };
 
-        string IAddon.AddonName => "Extras - Timers";
+        string IAddon.AddonName =>
+            InterAddonTranslations.GetAddonName(KnownAddons.ExtrasTimers);
 
         AddonType IAddon.AddonType => AddonType.Optional;
 

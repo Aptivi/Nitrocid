@@ -45,7 +45,8 @@ namespace Nitrocid.Extras.ThemeStudio
             },
         };
 
-        string IAddon.AddonName => "Extras - Theme Studio";
+        string IAddon.AddonName =>
+            InterAddonTranslations.GetAddonName(KnownAddons.ExtrasThemeStudio);
 
         AddonType IAddon.AddonType => AddonType.Optional;
 

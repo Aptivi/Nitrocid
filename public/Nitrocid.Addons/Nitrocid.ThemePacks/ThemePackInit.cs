@@ -32,7 +32,8 @@ namespace Nitrocid.ThemePacks
 {
     internal class ThemePackInit : IAddon
     {
-        string IAddon.AddonName => "Extra Themes Pack";
+        string IAddon.AddonName =>
+            InterAddonTranslations.GetAddonName(KnownAddons.AddonThemePacks);
 
         AddonType IAddon.AddonType => AddonType.Optional;
 

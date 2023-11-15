@@ -31,7 +31,8 @@ namespace Nitrocid.Legacy.InxiNet
     {
         private static readonly FallbackHardwareProber singleton = new();
 
-        string IAddon.AddonName => "Legacy - Inxi.NET Hardware Prober Driver";
+        string IAddon.AddonName =>
+            InterAddonTranslations.GetAddonName(KnownAddons.LegacyInxiNet);
 
         AddonType IAddon.AddonType => AddonType.Important;
 

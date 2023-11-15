@@ -29,7 +29,8 @@ namespace Nitrocid.Extras.Tips
 {
     internal class TipsInit : IAddon
     {
-        string IAddon.AddonName => "Extras - Kernel Tips";
+        string IAddon.AddonName =>
+            InterAddonTranslations.GetAddonName(KnownAddons.ExtrasTips);
 
         AddonType IAddon.AddonType => AddonType.Optional;
 

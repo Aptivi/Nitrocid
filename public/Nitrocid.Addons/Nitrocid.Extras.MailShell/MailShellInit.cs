@@ -48,7 +48,8 @@ namespace Nitrocid.Extras.MailShell
             },
         };
 
-        string IAddon.AddonName => "Extras - Mail Shell";
+        string IAddon.AddonName =>
+            InterAddonTranslations.GetAddonName(KnownAddons.ExtrasMailShell);
 
         AddonType IAddon.AddonType => AddonType.Optional;
 

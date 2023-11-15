@@ -76,7 +76,8 @@ namespace Nitrocid.Extras.UnitConv
             },
         };
 
-        string IAddon.AddonName => "Extras - UnitConv";
+        string IAddon.AddonName =>
+            InterAddonTranslations.GetAddonName(KnownAddons.ExtrasUnitConv);
 
         AddonType IAddon.AddonType => AddonType.Optional;
 

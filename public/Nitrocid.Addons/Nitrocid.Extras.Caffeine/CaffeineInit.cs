@@ -46,7 +46,8 @@ namespace Nitrocid.Extras.Caffeine
             },
         };
 
-        string IAddon.AddonName => "Extras - Caffeine";
+        string IAddon.AddonName =>
+            InterAddonTranslations.GetAddonName(KnownAddons.ExtrasCaffeine);
 
         AddonType IAddon.AddonType => AddonType.Optional;
 

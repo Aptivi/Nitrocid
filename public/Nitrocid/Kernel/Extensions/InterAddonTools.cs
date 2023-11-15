@@ -35,6 +35,23 @@ namespace KS.Kernel.Extensions
         /// </summary>
         /// <param name="addonName">The addon name to query</param>
         /// <param name="functionName">Function name defined in the <see cref="IAddon.PubliclyAvailableFunctions"/> dictionary to query</param>
+        public static object ExecuteCustomAddonFunction(KnownAddons addonName, string functionName) =>
+            ExecuteCustomAddonFunction(InterAddonTranslations.GetAddonName(addonName), functionName, null);
+
+        /// <summary>
+        /// Executes a custom addon function
+        /// </summary>
+        /// <param name="addonName">The addon name to query</param>
+        /// <param name="functionName">Function name defined in the <see cref="IAddon.PubliclyAvailableFunctions"/> dictionary to query</param>
+        /// <param name="parameters">Parameters to execute the function with</param>
+        public static object ExecuteCustomAddonFunction(KnownAddons addonName, string functionName, params object[] parameters) =>
+            ExecuteCustomAddonFunction(InterAddonTranslations.GetAddonName(addonName), functionName, parameters);
+
+        /// <summary>
+        /// Executes a custom addon function
+        /// </summary>
+        /// <param name="addonName">The addon name to query</param>
+        /// <param name="functionName">Function name defined in the <see cref="IAddon.PubliclyAvailableFunctions"/> dictionary to query</param>
         public static object ExecuteCustomAddonFunction(string addonName, string functionName) =>
             ExecuteCustomAddonFunction(addonName, functionName, null);
 
@@ -74,6 +91,14 @@ namespace KS.Kernel.Extensions
             // The function instance is valid. Try to dynamically invoke it.
             return function.DynamicInvoke(args: parameters);
         }
+
+        /// <summary>
+        /// Gets a value from the custom addon property
+        /// </summary>
+        /// <param name="addonName">The addon name to query</param>
+        /// <param name="propertyName">Property name defined in the <see cref="IAddon.PubliclyAvailableProperties"/> dictionary to query</param>
+        public static object GetCustomAddonPropertyValue(KnownAddons addonName, string propertyName) =>
+            GetCustomAddonPropertyValue(InterAddonTranslations.GetAddonName(addonName), propertyName);
 
         /// <summary>
         /// Gets a value from the custom addon property
@@ -122,6 +147,15 @@ namespace KS.Kernel.Extensions
         /// <param name="addonName">The addon name to query</param>
         /// <param name="propertyName">Property name defined in the <see cref="IAddon.PubliclyAvailableProperties"/> dictionary to query</param>
         /// <param name="value">Value to set the property to</param>
+        public static void SetCustomAddonPropertyValue(KnownAddons addonName, string propertyName, object value) =>
+            SetCustomAddonPropertyValue(InterAddonTranslations.GetAddonName(addonName), propertyName, value);
+
+        /// <summary>
+        /// Sets a value from the custom addon property
+        /// </summary>
+        /// <param name="addonName">The addon name to query</param>
+        /// <param name="propertyName">Property name defined in the <see cref="IAddon.PubliclyAvailableProperties"/> dictionary to query</param>
+        /// <param name="value">Value to set the property to</param>
         public static void SetCustomAddonPropertyValue(string addonName, string propertyName, object value)
         {
             // Check the user permission
@@ -163,6 +197,14 @@ namespace KS.Kernel.Extensions
         /// </summary>
         /// <param name="addonName">The addon name to query</param>
         /// <param name="fieldName">Field name defined in the <see cref="IAddon.PubliclyAvailableFields"/> dictionary to query</param>
+        public static object GetCustomAddonFieldValue(KnownAddons addonName, string fieldName) =>
+            GetCustomAddonFieldValue(InterAddonTranslations.GetAddonName(addonName), fieldName);
+
+        /// <summary>
+        /// Gets a value from the custom addon field
+        /// </summary>
+        /// <param name="addonName">The addon name to query</param>
+        /// <param name="fieldName">Field name defined in the <see cref="IAddon.PubliclyAvailableFields"/> dictionary to query</param>
         public static object GetCustomAddonFieldValue(string addonName, string fieldName)
         {
             // Check the user permission
@@ -196,6 +238,15 @@ namespace KS.Kernel.Extensions
             var get = field.GetValue(null);
             return get;
         }
+
+        /// <summary>
+        /// Sets a value from the custom addon field
+        /// </summary>
+        /// <param name="addonName">The addon name to query</param>
+        /// <param name="fieldName">Field name defined in the <see cref="IAddon.PubliclyAvailableFields"/> dictionary to query</param>
+        /// <param name="value">Value to set the field to</param>
+        public static void SetCustomAddonFieldValue(KnownAddons addonName, string fieldName, object value) =>
+            SetCustomAddonFieldValue(InterAddonTranslations.GetAddonName(addonName), fieldName, value);
 
         /// <summary>
         /// Sets a value from the custom addon field

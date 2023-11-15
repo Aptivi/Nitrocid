@@ -55,7 +55,8 @@ namespace Nitrocid.Extras.Forecast
             },
         };
 
-        string IAddon.AddonName => "Extras - Forecast";
+        string IAddon.AddonName =>
+            InterAddonTranslations.GetAddonName(KnownAddons.ExtrasForecast);
 
         AddonType IAddon.AddonType => AddonType.Optional;
 

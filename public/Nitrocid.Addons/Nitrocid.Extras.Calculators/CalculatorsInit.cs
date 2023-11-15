@@ -63,7 +63,8 @@ namespace Nitrocid.Extras.Calculators
             },
         };
 
-        string IAddon.AddonName => "Extras - Calculators";
+        string IAddon.AddonName =>
+            InterAddonTranslations.GetAddonName(KnownAddons.ExtrasCalculators);
 
         AddonType IAddon.AddonType => AddonType.Optional;
 
