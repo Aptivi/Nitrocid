@@ -37,7 +37,7 @@ using KS.Shell.ShellBase.Arguments;
 using KS.Shell.ShellBase.Switches;
 using KS.Drivers.Console.Bases;
 using KS.Shell.ShellBase.Help;
-using System.Threading.Tasks;
+using System.Runtime;
 
 namespace KS.Shell.ShellBase.Commands
 {
@@ -262,7 +262,6 @@ namespace KS.Shell.ShellBase.Commands
                     var CommandBase = cmdInfo.CommandBase;
                     string value = "";
                     CancellationHandlers.cts = new CancellationTokenSource();
-#if NET8_0
 #pragma warning disable SYSLIB0046
                     try
                     {
@@ -275,20 +274,6 @@ namespace KS.Shell.ShellBase.Commands
                         TextWriterColor.WriteKernelColor(Translate.DoTranslation("Command has been aborted."), true, KernelColorType.Error);
                     }
 #pragma warning restore SYSLIB0046
-#else
-                    try
-                    {
-                        var task = new Task(() => CommandDelegate(ShellInstance, CommandBase, parameters, ref value), CancellationHandlers.cts.Token, TaskCreationOptions.LongRunning);
-                        task.Start();
-                        task.Wait(CancellationHandlers.cts.Token);
-                    }
-                    catch (Exception ex)
-                    {
-                        CancellationHandlers.CancelRequested = false;
-                        DebugWriter.WriteDebug(DebugLevel.W, $"Command aborted. {ex.Message}");
-                        DebugWriter.WriteDebugStackTrace(ex);
-                    }
-#endif
 
                     // Set the error code and set the UESH variable as appropriate
                     DebugWriter.WriteDebug(DebugLevel.I, "Error code is {0}", ShellInstance.LastErrorCode);
