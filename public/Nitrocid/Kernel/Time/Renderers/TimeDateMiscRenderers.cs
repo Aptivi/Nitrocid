@@ -74,7 +74,7 @@ namespace KS.Kernel.Time.Renderers
         /// </summary>
         public static void ShowCurrentTimes() =>
             TextWriterColor.Write(Translate.DoTranslation("Today is") + " {0} @ {1} ({2}), {3} @ UTC",
-                TimeDateRenderers.Render(), TimeZoneInfo.Local.StandardName, TimeZoneRenderers.ShowTimeZoneUtcOffsetStringLocal(),
+                TimeDateRenderers.Render(), TimeZones.GetCurrentZoneInfo().StandardName, TimeZoneRenderers.ShowTimeZoneUtcOffsetStringLocal(),
                 TimeDateRenderersUtc.RenderTimeUtc());
     }
 }

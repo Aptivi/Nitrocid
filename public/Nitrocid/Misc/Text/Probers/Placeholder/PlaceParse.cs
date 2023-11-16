@@ -37,6 +37,7 @@ using KS.Kernel;
 using KS.Files.Operations.Querying;
 using KS.Drivers;
 using System.Linq;
+using KS.Kernel.Time.Timezones;
 
 namespace KS.Misc.Text.Probers.Placeholder
 {
@@ -58,8 +59,8 @@ namespace KS.Misc.Text.Probers.Placeholder
             new PlaceInfo("longtime",                         (_) => TimeDateRenderers.RenderTime(FormatType.Long)),
             new PlaceInfo("date",                             (_) => TimeDateRenderers.RenderDate()),
             new PlaceInfo("time",                             (_) => TimeDateRenderers.RenderTime()),
-            new PlaceInfo("timezone",                         (_) => TimeZoneInfo.Local.StandardName),
-            new PlaceInfo("summertimezone",                   (_) => TimeZoneInfo.Local.DaylightName),
+            new PlaceInfo("timezone",                         (_) => TimeZones.GetCurrentZoneInfo().StandardName),
+            new PlaceInfo("summertimezone",                   (_) => TimeZones.GetCurrentZoneInfo().DaylightName),
             new PlaceInfo("system",                           (_) => Environment.OSVersion.ToString()),
             new PlaceInfo("newline",                          (_) => CharManager.NewLine),
             new PlaceInfo("dollar",                           (_) => UserManagement.GetUserDollarSign()),

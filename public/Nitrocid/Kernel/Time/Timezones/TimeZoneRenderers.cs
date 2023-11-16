@@ -174,7 +174,7 @@ namespace KS.Kernel.Time.Timezones
         {
             // Return the UTC offset
             TimeZones.CheckZoneInfoDirectory();
-            return TimeZoneInfo.Local.GetUtcOffset(TimeDateTools.KernelDateTime);
+            return TimeZones.GetCurrentZoneInfo().GetUtcOffset(TimeDateTools.KernelDateTime);
         }
 
         /// <summary>
