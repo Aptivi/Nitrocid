@@ -54,7 +54,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
                 ListWriterColor.WriteList(NotFound);
             }
 
-            TestActualValue = NotFound.Any();
+            TestActualValue = NotFound.Count != 0;
         }
     }
 }

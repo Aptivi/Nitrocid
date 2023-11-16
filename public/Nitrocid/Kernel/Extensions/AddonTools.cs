@@ -180,7 +180,7 @@ namespace KS.Kernel.Extensions
                     errors.Add(addonInfo.AddonName, ex is KernelException kex ? kex.OriginalExceptionMessage : ex.Message);
                 }
             }
-            if (errors.Any())
+            if (errors.Count != 0)
                 throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("Failed to finalize addons. Below addons have failed to finalize:") + $"\n  - {string.Join("\n  - ", errors.Select((kvp) => $"{kvp.Key}: {kvp.Value}"))}");
         }
 
@@ -202,7 +202,7 @@ namespace KS.Kernel.Extensions
                     errors.Add(addonInstance.AddonName, ex is KernelException kex ? kex.OriginalExceptionMessage : ex.Message);
                 }
             }
-            if (errors.Any())
+            if (errors.Count != 0)
                 throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("Failed to stop addons. Below addons have failed to stop:") + $"\n  - {string.Join("\n  - ", errors.Select((kvp) => $"{kvp.Key}: {kvp.Value}"))}");
         }
 
