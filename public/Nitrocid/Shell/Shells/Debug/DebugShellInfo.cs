@@ -27,6 +27,7 @@ using KS.Shell.Shells.Debug.Presets;
 using KS.Shell.ShellBase.Switches;
 using KS.Misc.Reflection;
 using System.Linq;
+using KS.Kernel.Extensions;
 
 namespace KS.Shell.Shells.Debug
 {
@@ -112,6 +113,45 @@ namespace KS.Shell.Shells.Debug
                     [
                         new CommandArgumentInfo()
                     ], new LsAddonsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
+            },
+
+            { "lsaddonfields",
+                new CommandInfo("lsaddonfields", /* Localizable */ "Lists all available fields from the specified addon",
+                    [
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "addon", new CommandArgumentPartOptions()
+                            {
+                                AutoCompleter = (_) => AddonTools.GetAddons(),
+                            })
+                        })
+                    ], new LsAddonFieldsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
+            },
+
+            { "lsaddonfuncs",
+                new CommandInfo("lsaddonfuncs", /* Localizable */ "Lists all available functions from the specified addon",
+                    [
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "addon", new CommandArgumentPartOptions()
+                            {
+                                AutoCompleter = (_) => AddonTools.GetAddons(),
+                            })
+                        })
+                    ], new LsAddonFuncsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
+            },
+
+            { "lsaddonprops",
+                new CommandInfo("lsaddonprops", /* Localizable */ "Lists all available properties from the specified addon",
+                    [
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "addon", new CommandArgumentPartOptions()
+                            {
+                                AutoCompleter = (_) => AddonTools.GetAddons(),
+                            })
+                        })
+                    ], new LsAddonPropsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
             },
 
             { "lsfields",

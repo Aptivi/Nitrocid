@@ -21,6 +21,7 @@ using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Users.Permissions;
+using System.Collections.Generic;
 
 namespace KS.Modifications.Communication
 {
@@ -29,6 +30,114 @@ namespace KS.Modifications.Communication
     /// </summary>
     public static class InterModTools
     {
+
+        /// <summary>
+        /// Lists all the available functions from the mod name
+        /// </summary>
+        /// <param name="modName">Mod name to check</param>
+        /// <returns>List of function names</returns>
+        /// <exception cref="KernelException"></exception>
+        public static string[] ListAvailableFunctions(string modName)
+        {
+            var funcs = new List<string>();
+
+            // Check the user permission
+            PermissionsTools.Demand(PermissionTypes.IntermodCommunication);
+
+            // Get the mod
+            var modInfo = ModManager.GetMod(modName) ??
+                throw new KernelException(KernelExceptionType.NoSuchMod, Translate.DoTranslation("Can't obtain list of functions"));
+
+            // Now, check the list of available functions
+            var modParts = modInfo.ModParts;
+            foreach (var modPart in modParts.Keys)
+            {
+                // Get a mod part
+                var mod = modParts[modPart];
+                DebugWriter.WriteDebug(DebugLevel.I, "Trying to get list of available functions from mod {0} part {1}...", modInfo.ModName, modPart);
+
+                // Get a list of functions
+                var functions = mod.PartScript.PubliclyAvailableFunctions;
+                if (functions is null || functions.Count == 0)
+                    continue;
+
+                // Add all of the functions!
+                funcs.AddRange(functions.Keys);
+            }
+            return [.. funcs];
+        }
+
+        /// <summary>
+        /// Lists all the available properties from the mod name
+        /// </summary>
+        /// <param name="modName">Mod name to check</param>
+        /// <returns>List of property names</returns>
+        /// <exception cref="KernelException"></exception>
+        public static string[] ListAvailableProperties(string modName)
+        {
+            var funcs = new List<string>();
+
+            // Check the user permission
+            PermissionsTools.Demand(PermissionTypes.IntermodCommunication);
+
+            // Get the mod
+            var modInfo = ModManager.GetMod(modName) ??
+                throw new KernelException(KernelExceptionType.NoSuchMod, Translate.DoTranslation("Can't obtain list of properties"));
+
+            // Now, check the list of available properties
+            var modParts = modInfo.ModParts;
+            foreach (var modPart in modParts.Keys)
+            {
+                // Get a mod part
+                var mod = modParts[modPart];
+                DebugWriter.WriteDebug(DebugLevel.I, "Trying to get list of available properties from mod {0} part {1}...", modInfo.ModName, modPart);
+
+                // Get a list of properties
+                var properties = mod.PartScript.PubliclyAvailableProperties;
+                if (properties is null || properties.Count == 0)
+                    continue;
+
+                // Add all of the properties!
+                funcs.AddRange(properties.Keys);
+            }
+            return [.. funcs];
+        }
+
+        /// <summary>
+        /// Lists all the available fields from the mod name
+        /// </summary>
+        /// <param name="modName">Mod name to check</param>
+        /// <returns>List of field names</returns>
+        /// <exception cref="KernelException"></exception>
+        public static string[] ListAvailableFields(string modName)
+        {
+            var funcs = new List<string>();
+
+            // Check the user permission
+            PermissionsTools.Demand(PermissionTypes.IntermodCommunication);
+
+            // Get the mod
+            var modInfo = ModManager.GetMod(modName) ??
+                throw new KernelException(KernelExceptionType.NoSuchMod, Translate.DoTranslation("Can't obtain list of fields"));
+
+            // Now, check the list of available fields
+            var modParts = modInfo.ModParts;
+            foreach (var modPart in modParts.Keys)
+            {
+                // Get a mod part
+                var mod = modParts[modPart];
+                DebugWriter.WriteDebug(DebugLevel.I, "Trying to get list of available fields from mod {0} part {1}...", modInfo.ModName, modPart);
+
+                // Get a list of fields
+                var fields = mod.PartScript.PubliclyAvailableFields;
+                if (fields is null || fields.Count == 0)
+                    continue;
+
+                // Add all of the fields!
+                funcs.AddRange(fields.Keys);
+            }
+            return [.. funcs];
+        }
 
         /// <summary>
         /// Executes a custom mod function

@@ -22,6 +22,7 @@ using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Users.Permissions;
 using System;
+using System.Collections.Generic;
 using System.Reflection;
 
 namespace KS.Kernel.Extensions
@@ -31,6 +32,87 @@ namespace KS.Kernel.Extensions
     /// </summary>
     public static class InterAddonTools
     {
+
+        /// <summary>
+        /// Lists all the available functions from the addon name
+        /// </summary>
+        /// <param name="addonName">Addon name to check</param>
+        /// <returns>List of function names</returns>
+        /// <exception cref="KernelException"></exception>
+        public static string[] ListAvailableFunctions(string addonName)
+        {
+            var funcs = new List<string>();
+
+            // Check the user permission
+            PermissionsTools.Demand(PermissionTypes.InteraddonCommunication);
+
+            // Get the addon
+            var addonInfo = AddonTools.GetAddon(addonName) ??
+                throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("Can't obtain list of functions"));
+
+            // Get a list of functions
+            var functions = addonInfo.Addon.PubliclyAvailableFunctions;
+            if (functions is null || functions.Count == 0)
+                return [];
+
+            // Add all of the functions!
+            funcs.AddRange(functions.Keys);
+            return [.. funcs];
+        }
+
+        /// <summary>
+        /// Lists all the available properties from the addon name
+        /// </summary>
+        /// <param name="addonName">Addon name to check</param>
+        /// <returns>List of property names</returns>
+        /// <exception cref="KernelException"></exception>
+        public static string[] ListAvailableProperties(string addonName)
+        {
+            var funcs = new List<string>();
+
+            // Check the user permission
+            PermissionsTools.Demand(PermissionTypes.InteraddonCommunication);
+
+            // Get the addon
+            var addonInfo = AddonTools.GetAddon(addonName) ??
+                throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("Can't obtain list of properties"));
+
+            // Get a list of properties
+            var properties = addonInfo.Addon.PubliclyAvailableProperties;
+            if (properties is null || properties.Count == 0)
+                return [];
+
+            // Add all of the properties!
+            funcs.AddRange(properties.Keys);
+            return [.. funcs];
+        }
+
+        /// <summary>
+        /// Lists all the available fields from the addon name
+        /// </summary>
+        /// <param name="addonName">Addon name to check</param>
+        /// <returns>List of field names</returns>
+        /// <exception cref="KernelException"></exception>
+        public static string[] ListAvailableFields(string addonName)
+        {
+            var funcs = new List<string>();
+
+            // Check the user permission
+            PermissionsTools.Demand(PermissionTypes.InteraddonCommunication);
+
+            // Get the addon
+            var addonInfo = AddonTools.GetAddon(addonName) ??
+                throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("Can't obtain list of fields"));
+
+            // Get a list of fields
+            var fields = addonInfo.Addon.PubliclyAvailableFields;
+            if (fields is null || fields.Count == 0)
+                return [];
+
+            // Add all of the fields!
+            funcs.AddRange(fields.Keys);
+            return [.. funcs];
+        }
 
         /// <summary>
         /// Executes a custom addon function

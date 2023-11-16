@@ -50,6 +50,9 @@ namespace KS.Kernel.Extensions
             return addon;
         }
 
+        internal static string[] GetAddons() =>
+            addons.Select((ai) => ai.AddonName).ToArray();
+
         internal static void ProcessAddons(AddonType type)
         {
             var addonFolder = Paths.AddonsPath;
