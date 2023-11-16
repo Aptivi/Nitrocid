@@ -844,8 +844,8 @@ namespace KS.Kernel.Configuration.Instances
         /// </summary>
         public string SqlShellPromptPreset
         {
-            get => PromptPresetManager.GetCurrentPresetBaseFromShell(ShellType.SqlShell).PresetName;
-            set => PromptPresetManager.SetPreset(value, ShellType.SqlShell, false);
+            get => PromptPresetManager.GetCurrentPresetBaseFromShell("SqlShell").PresetName;
+            set => PromptPresetManager.SetPreset(value, "SqlShell", false);
         }
         /// <summary>
         /// Debug Shell Prompt Preset

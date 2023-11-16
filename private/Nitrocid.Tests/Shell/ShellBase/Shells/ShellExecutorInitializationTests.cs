@@ -149,7 +149,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Shells
         [TestCase(ShellType.AdminShell)]
         [TestCase(ShellType.DebugShell)]
         [TestCase(ShellType.HexShell)]
-        [TestCase(ShellType.JsonShell)]
         [TestCase(ShellType.TextShell)]
         [Description("Initialization")]
         public void TestGetShellInfo(ShellType type)
@@ -167,7 +166,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Shells
         [TestCase("AdminShell")]
         [TestCase("DebugShell")]
         [TestCase("HexShell")]
-        [TestCase("JsonShell")]
         [TestCase("TextShell")]
         [Description("Initialization")]
         public void TestGetShellInfo(string type)

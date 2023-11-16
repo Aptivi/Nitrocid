@@ -35,7 +35,6 @@ namespace Nitrocid.Tests.Shell.Prompts
         [TestCase("PowerLine1", ShellType.AdminShell, ExpectedResult = "PowerLine1")]
         [TestCase("PowerLine1", ShellType.DebugShell, ExpectedResult = "PowerLine1")]
         [TestCase("PowerLine1", ShellType.HexShell, ExpectedResult = "PowerLine1")]
-        [TestCase("PowerLine1", ShellType.JsonShell, ExpectedResult = "PowerLine1")]
         [TestCase("PowerLine1", ShellType.TextShell, ExpectedResult = "PowerLine1")]
         [Description("Action")]
         public static string TestSetPresetDry(string presetName, ShellType type)
@@ -52,7 +51,6 @@ namespace Nitrocid.Tests.Shell.Prompts
         [TestCase("PowerLine1", "AdminShell", ExpectedResult = "PowerLine1")]
         [TestCase("PowerLine1", "DebugShell", ExpectedResult = "PowerLine1")]
         [TestCase("PowerLine1", "HexShell", ExpectedResult = "PowerLine1")]
-        [TestCase("PowerLine1", "JsonShell", ExpectedResult = "PowerLine1")]
         [TestCase("PowerLine1", "TextShell", ExpectedResult = "PowerLine1")]
         [Description("Action")]
         public static string TestSetPresetDry(string presetName, string type)
@@ -69,7 +67,6 @@ namespace Nitrocid.Tests.Shell.Prompts
         [TestCase(ShellType.AdminShell)]
         [TestCase(ShellType.DebugShell)]
         [TestCase(ShellType.HexShell)]
-        [TestCase(ShellType.JsonShell)]
         [TestCase(ShellType.TextShell)]
         [Description("Action")]
         public static void TestGetPresetsFromShell(ShellType type)
@@ -88,7 +85,6 @@ namespace Nitrocid.Tests.Shell.Prompts
         [TestCase("AdminShell")]
         [TestCase("DebugShell")]
         [TestCase("HexShell")]
-        [TestCase("JsonShell")]
         [TestCase("TextShell")]
         [Description("Action")]
         public static void TestGetPresetsFromShell(string type)

@@ -39,8 +39,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [TestCase(ShellType.AdminShell)]
         [TestCase(ShellType.DebugShell)]
         [TestCase(ShellType.HexShell)]
-        [TestCase(ShellType.JsonShell)]
-        [TestCase(ShellType.SqlShell)]
         [TestCase(ShellType.TextShell)]
         [Description("Initialization")]
         public void TestInitializeCommandInfoInstanceFromCommandLineArgEmptyInternal(ShellType type)
@@ -70,8 +68,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [TestCase(ShellType.AdminShell)]
         [TestCase(ShellType.DebugShell)]
         [TestCase(ShellType.HexShell)]
-        [TestCase(ShellType.JsonShell)]
-        [TestCase(ShellType.SqlShell)]
         [TestCase(ShellType.TextShell)]
         [Description("Initialization")]
         public void TestInitializeCommandInfoInstanceFromCommandLineArgEmptyPublic(ShellType type)
@@ -101,8 +97,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [TestCase(ShellType.AdminShell)]
         [TestCase(ShellType.DebugShell)]
         [TestCase(ShellType.HexShell)]
-        [TestCase(ShellType.JsonShell)]
-        [TestCase(ShellType.SqlShell)]
         [TestCase(ShellType.TextShell)]
         [Description("Initialization")]
         public void TestInitializeCommandInfoInstanceFromCommandLineArgSimple(ShellType type)
@@ -142,8 +136,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [TestCase(ShellType.AdminShell)]
         [TestCase(ShellType.DebugShell)]
         [TestCase(ShellType.HexShell)]
-        [TestCase(ShellType.JsonShell)]
-        [TestCase(ShellType.SqlShell)]
         [TestCase(ShellType.TextShell)]
         [Description("Initialization")]
         public void TestInitializeCommandInfoInstanceFromCommandLineArg(ShellType type)
@@ -186,8 +178,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [TestCase(ShellType.AdminShell)]
         [TestCase(ShellType.DebugShell)]
         [TestCase(ShellType.HexShell)]
-        [TestCase(ShellType.JsonShell)]
-        [TestCase(ShellType.SqlShell)]
         [TestCase(ShellType.TextShell)]
         [Description("Initialization")]
         public void TestInitializeCommandInfoInstanceFromCommandLineArgWithSwitch(ShellType type)
@@ -240,8 +230,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [TestCase(ShellType.AdminShell)]
         [TestCase(ShellType.DebugShell)]
         [TestCase(ShellType.HexShell)]
-        [TestCase(ShellType.JsonShell)]
-        [TestCase(ShellType.SqlShell)]
         [TestCase(ShellType.TextShell)]
         [Description("Initialization")]
         public void TestInitializeCommandInfoInstanceFromCommandLineArgWithSwitchAndArg(ShellType type)
@@ -297,8 +285,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [TestCase(ShellType.AdminShell)]
         [TestCase(ShellType.DebugShell)]
         [TestCase(ShellType.HexShell)]
-        [TestCase(ShellType.JsonShell)]
-        [TestCase(ShellType.SqlShell)]
         [TestCase(ShellType.TextShell)]
         [Description("Initialization")]
         public void TestInitializeCommandInfoInstanceFromCommandLineArgWithSwitchWithOptions(ShellType type)
@@ -354,8 +340,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [TestCase(ShellType.AdminShell)]
         [TestCase(ShellType.DebugShell)]
         [TestCase(ShellType.HexShell)]
-        [TestCase(ShellType.JsonShell)]
-        [TestCase(ShellType.SqlShell)]
         [TestCase(ShellType.TextShell)]
         [Description("Initialization")]
         public void TestInitializeCommandInfoInstanceFromCommandLineArgWithSwitchWithOptionsAndArg(ShellType type)
@@ -414,8 +398,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [TestCase("AdminShell")]
         [TestCase("DebugShell")]
         [TestCase("HexShell")]
-        [TestCase("JsonShell")]
-        [TestCase("SqlShell")]
         [TestCase("TextShell")]
         [Description("Initialization")]
         public void TestInitializeCommandInfoInstanceFromCommandLineArgSimple(string type)
@@ -455,8 +437,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [TestCase("AdminShell")]
         [TestCase("DebugShell")]
         [TestCase("HexShell")]
-        [TestCase("JsonShell")]
-        [TestCase("SqlShell")]
         [TestCase("TextShell")]
         [Description("Initialization")]
         public void TestInitializeCommandInfoInstanceFromCommandLineArg(string type)
@@ -499,8 +479,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [TestCase("AdminShell")]
         [TestCase("DebugShell")]
         [TestCase("HexShell")]
-        [TestCase("JsonShell")]
-        [TestCase("SqlShell")]
         [TestCase("TextShell")]
         [Description("Initialization")]
         public void TestInitializeCommandInfoInstanceFromCommandLineArgWithSwitch(string type)
@@ -553,8 +531,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [TestCase("AdminShell")]
         [TestCase("DebugShell")]
         [TestCase("HexShell")]
-        [TestCase("JsonShell")]
-        [TestCase("SqlShell")]
         [TestCase("TextShell")]
         [Description("Initialization")]
         public void TestInitializeCommandInfoInstanceFromCommandLineArgWithSwitchAndArg(string type)
@@ -610,8 +586,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [TestCase("AdminShell")]
         [TestCase("DebugShell")]
         [TestCase("HexShell")]
-        [TestCase("JsonShell")]
-        [TestCase("SqlShell")]
         [TestCase("TextShell")]
         [Description("Initialization")]
         public void TestInitializeCommandInfoInstanceFromCommandLineArgWithSwitchWithOptions(string type)
@@ -667,8 +641,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [TestCase("AdminShell")]
         [TestCase("DebugShell")]
         [TestCase("HexShell")]
-        [TestCase("JsonShell")]
-        [TestCase("SqlShell")]
         [TestCase("TextShell")]
         [Description("Initialization")]
         public void TestInitializeCommandInfoInstanceFromCommandLineArgWithSwitchWithOptionsAndArg(string type)
@@ -727,8 +699,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [TestCase(ShellType.AdminShell)]
         [TestCase(ShellType.DebugShell)]
         [TestCase(ShellType.HexShell)]
-        [TestCase(ShellType.JsonShell)]
-        [TestCase(ShellType.SqlShell)]
         [TestCase(ShellType.TextShell)]
         [Description("Initialization")]
         public void TestInitializeCommandInfoInstanceFromCommandLineArgSimpleMultiCommandArgumentInfo(ShellType type)
@@ -774,8 +744,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [TestCase(ShellType.AdminShell)]
         [TestCase(ShellType.DebugShell)]
         [TestCase(ShellType.HexShell)]
-        [TestCase(ShellType.JsonShell)]
-        [TestCase(ShellType.SqlShell)]
         [TestCase(ShellType.TextShell)]
         [Description("Initialization")]
         public void TestInitializeCommandInfoInstanceFromCommandLineArgMultiCommandArgumentInfo(ShellType type)
@@ -828,8 +796,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [TestCase(ShellType.AdminShell)]
         [TestCase(ShellType.DebugShell)]
         [TestCase(ShellType.HexShell)]
-        [TestCase(ShellType.JsonShell)]
-        [TestCase(ShellType.SqlShell)]
         [TestCase(ShellType.TextShell)]
         [Description("Initialization")]
         public void TestInitializeCommandInfoInstanceFromCommandLineArgWithSwitchMultiCommandArgumentInfo(ShellType type)
@@ -899,8 +865,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [TestCase(ShellType.AdminShell)]
         [TestCase(ShellType.DebugShell)]
         [TestCase(ShellType.HexShell)]
-        [TestCase(ShellType.JsonShell)]
-        [TestCase(ShellType.SqlShell)]
         [TestCase(ShellType.TextShell)]
         [Description("Initialization")]
         public void TestInitializeCommandInfoInstanceFromCommandLineArgWithSwitchAndArgMultiCommandArgumentInfo(ShellType type)
@@ -977,8 +941,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [TestCase(ShellType.AdminShell)]
         [TestCase(ShellType.DebugShell)]
         [TestCase(ShellType.HexShell)]
-        [TestCase(ShellType.JsonShell)]
-        [TestCase(ShellType.SqlShell)]
         [TestCase(ShellType.TextShell)]
         [Description("Initialization")]
         public void TestInitializeCommandInfoInstanceFromCommandLineArgWithSwitchWithOptionsMultiCommandArgumentInfo(ShellType type)
@@ -1055,8 +1017,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [TestCase(ShellType.AdminShell)]
         [TestCase(ShellType.DebugShell)]
         [TestCase(ShellType.HexShell)]
-        [TestCase(ShellType.JsonShell)]
-        [TestCase(ShellType.SqlShell)]
         [TestCase(ShellType.TextShell)]
         [Description("Initialization")]
         public void TestInitializeCommandInfoInstanceFromCommandLineArgWithSwitchWithOptionsAndArgMultiCommandArgumentInfo(ShellType type)
@@ -1140,8 +1100,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [TestCase("AdminShell")]
         [TestCase("DebugShell")]
         [TestCase("HexShell")]
-        [TestCase("JsonShell")]
-        [TestCase("SqlShell")]
         [TestCase("TextShell")]
         [Description("Initialization")]
         public void TestInitializeCommandInfoInstanceFromCommandLineArgSimpleMultiCommandArgumentInfo(string type)
@@ -1187,8 +1145,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [TestCase("AdminShell")]
         [TestCase("DebugShell")]
         [TestCase("HexShell")]
-        [TestCase("JsonShell")]
-        [TestCase("SqlShell")]
         [TestCase("TextShell")]
         [Description("Initialization")]
         public void TestInitializeCommandInfoInstanceFromCommandLineArgMultiCommandArgumentInfo(string type)
@@ -1241,8 +1197,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [TestCase("AdminShell")]
         [TestCase("DebugShell")]
         [TestCase("HexShell")]
-        [TestCase("JsonShell")]
-        [TestCase("SqlShell")]
         [TestCase("TextShell")]
         [Description("Initialization")]
         public void TestInitializeCommandInfoInstanceFromCommandLineArgWithSwitchMultiCommandArgumentInfo(string type)
@@ -1312,8 +1266,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [TestCase("AdminShell")]
         [TestCase("DebugShell")]
         [TestCase("HexShell")]
-        [TestCase("JsonShell")]
-        [TestCase("SqlShell")]
         [TestCase("TextShell")]
         [Description("Initialization")]
         public void TestInitializeCommandInfoInstanceFromCommandLineArgWithSwitchAndArgMultiCommandArgumentInfo(string type)
@@ -1390,8 +1342,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [TestCase("AdminShell")]
         [TestCase("DebugShell")]
         [TestCase("HexShell")]
-        [TestCase("JsonShell")]
-        [TestCase("SqlShell")]
         [TestCase("TextShell")]
         [Description("Initialization")]
         public void TestInitializeCommandInfoInstanceFromCommandLineArgWithSwitchWithOptionsMultiCommandArgumentInfo(string type)
@@ -1468,8 +1418,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [TestCase("AdminShell")]
         [TestCase("DebugShell")]
         [TestCase("HexShell")]
-        [TestCase("JsonShell")]
-        [TestCase("SqlShell")]
         [TestCase("TextShell")]
         [Description("Initialization")]
         public void TestInitializeCommandInfoInstanceFromCommandLineArgWithSwitchWithOptionsAndArgMultiCommandArgumentInfo(string type)

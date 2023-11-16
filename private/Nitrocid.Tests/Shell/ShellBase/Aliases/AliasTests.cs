@@ -38,8 +38,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Aliases
         [TestCase(ShellType.AdminShell, "journal", "j")]
         [TestCase(ShellType.DebugShell, "threadsbt", "tbt")]
         [TestCase(ShellType.HexShell, "clear", "wipe")]
-        [TestCase(ShellType.JsonShell, "clear", "wipe")]
-        [TestCase(ShellType.SqlShell, "cmd", "c")]
         [TestCase(ShellType.TextShell, "clear", "wipe")]
         [Description("Action")]
         public void TestAddAlias(ShellType type, string source, string target)
@@ -58,8 +56,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Aliases
         [TestCase("AdminShell", "lsevents", "lse")]
         [TestCase("DebugShell", "currentbt", "cbt")]
         [TestCase("HexShell", "print", "pr")]
-        [TestCase("JsonShell", "print", "pr")]
-        [TestCase("SqlShell", "dbinfo", "info")]
         [TestCase("TextShell", "save", "s")]
         [Description("Action")]
         public void TestAddAlias(string type, string source, string target)
@@ -78,8 +74,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Aliases
         [TestCase(ShellType.AdminShell)]
         [TestCase(ShellType.DebugShell)]
         [TestCase(ShellType.HexShell)]
-        [TestCase(ShellType.JsonShell)]
-        [TestCase(ShellType.SqlShell)]
         [TestCase(ShellType.TextShell)]
         [Description("Action")]
         public void TestAddAliasForUnifiedCommand(ShellType type)
@@ -98,8 +92,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Aliases
         [TestCase("AdminShell")]
         [TestCase("DebugShell")]
         [TestCase("HexShell")]
-        [TestCase("JsonShell")]
-        [TestCase("SqlShell")]
         [TestCase("TextShell")]
         [Description("Action")]
         public void TestAddAliasForUnifiedCommand(string type)
@@ -118,8 +110,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Aliases
         [TestCase(ShellType.AdminShell, "j")]
         [TestCase(ShellType.DebugShell, "tbt")]
         [TestCase(ShellType.HexShell, "wipe")]
-        [TestCase(ShellType.JsonShell, "wipe")]
-        [TestCase(ShellType.SqlShell, "c")]
         [TestCase(ShellType.TextShell, "wipe")]
         [Description("Action")]
         public void TestRemoveAlias(ShellType type, string target)
@@ -139,8 +129,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Aliases
         [TestCase("AdminShell", "lse")]
         [TestCase("DebugShell", "cbt")]
         [TestCase("HexShell", "pr")]
-        [TestCase("JsonShell", "pr")]
-        [TestCase("SqlShell", "info")]
         [TestCase("TextShell", "s")]
         [Description("Action")]
         public void TestRemoveAlias(string type, string target)
@@ -160,8 +148,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Aliases
         [TestCase(ShellType.AdminShell)]
         [TestCase(ShellType.DebugShell)]
         [TestCase(ShellType.HexShell)]
-        [TestCase(ShellType.JsonShell)]
-        [TestCase(ShellType.SqlShell)]
         [TestCase(ShellType.TextShell)]
         [Description("Action")]
         public void TestRemoveAliasForUnifiedCommand(ShellType type)
@@ -181,8 +167,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Aliases
         [TestCase("AdminShell")]
         [TestCase("DebugShell")]
         [TestCase("HexShell")]
-        [TestCase("JsonShell")]
-        [TestCase("SqlShell")]
         [TestCase("TextShell")]
         [Description("Action")]
         public void TestRemoveAliasForUnifiedCommand(string type)

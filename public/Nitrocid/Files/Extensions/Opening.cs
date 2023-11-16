@@ -72,7 +72,7 @@ namespace KS.Files.Extensions
                     ShellManager.StartShell(ShellType.TextShell, path);
                 }
                 else
-                    ShellManager.StartShell(ShellType.JsonShell, path);
+                    ShellManager.StartShell("JsonShell", path);
             }
             else if (forceSql)
             {
@@ -82,7 +82,7 @@ namespace KS.Files.Extensions
                     ShellManager.StartShell(ShellType.HexShell, path);
                 }
                 else
-                    ShellManager.StartShell(ShellType.SqlShell, path);
+                    ShellManager.StartShell("SqlShell", path);
             }
 
             // Exit if forced types
@@ -91,7 +91,7 @@ namespace KS.Files.Extensions
 
             // Determine the type
             if (hasSqlShell && Parsing.IsSql(path))
-                ShellManager.StartShell(ShellType.SqlShell, path);
+                ShellManager.StartShell("SqlShell", path);
             else if (Parsing.IsBinaryFile(path))
                 ShellManager.StartShell(ShellType.HexShell, path);
             else if (Parsing.IsJson(path))
@@ -102,7 +102,7 @@ namespace KS.Files.Extensions
                     ShellManager.StartShell(ShellType.TextShell, path);
                 }
                 else
-                    ShellManager.StartShell(ShellType.JsonShell, path);
+                    ShellManager.StartShell("JsonShell", path);
             }
             else
                 ShellManager.StartShell(ShellType.TextShell, path);

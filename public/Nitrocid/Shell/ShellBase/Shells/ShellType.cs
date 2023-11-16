@@ -33,10 +33,6 @@ namespace KS.Shell.ShellBase.Shells
         /// </summary>
         TextShell,
         /// <summary>
-        /// JSON Shell
-        /// </summary>
-        JsonShell,
-        /// <summary>
         /// Hex shell
         /// </summary>
         HexShell,
@@ -44,10 +40,6 @@ namespace KS.Shell.ShellBase.Shells
         /// Kernel administration shell
         /// </summary>
         AdminShell,
-        /// <summary>
-        /// SQL shell
-        /// </summary>
-        SqlShell,
         /// <summary>
         /// Kernel debug shell
         /// </summary>

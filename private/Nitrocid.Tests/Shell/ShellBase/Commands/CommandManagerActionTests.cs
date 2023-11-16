@@ -40,8 +40,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [TestCase(ShellType.AdminShell, ExpectedResult = false)]
         [TestCase(ShellType.DebugShell, ExpectedResult = false)]
         [TestCase(ShellType.HexShell, ExpectedResult = false)]
-        [TestCase(ShellType.JsonShell, ExpectedResult = false)]
-        [TestCase(ShellType.SqlShell, ExpectedResult = false)]
         [TestCase(ShellType.TextShell, ExpectedResult = false)]
         [Description("Action")]
         public bool TestIsCommandFoundInSpecificShell(ShellType type) =>
@@ -55,8 +53,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [TestCase("AdminShell", ExpectedResult = false)]
         [TestCase("DebugShell", ExpectedResult = false)]
         [TestCase("HexShell", ExpectedResult = false)]
-        [TestCase("JsonShell", ExpectedResult = false)]
-        [TestCase("SqlShell", ExpectedResult = false)]
         [TestCase("TextShell", ExpectedResult = false)]
         [Description("Action")]
         public bool TestIsCommandFoundInSpecificShell(string type) =>
@@ -78,8 +74,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [TestCase(ShellType.AdminShell)]
         [TestCase(ShellType.DebugShell)]
         [TestCase(ShellType.HexShell)]
-        [TestCase(ShellType.JsonShell)]
-        [TestCase(ShellType.SqlShell)]
         [TestCase(ShellType.TextShell)]
         [Description("Action")]
         public void TestRegisterCommand(ShellType type)
@@ -101,8 +95,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [TestCase("AdminShell")]
         [TestCase("DebugShell")]
         [TestCase("HexShell")]
-        [TestCase("JsonShell")]
-        [TestCase("SqlShell")]
         [TestCase("TextShell")]
         [Description("Action")]
         public void TestRegisterCommand(string type)
@@ -124,8 +116,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [TestCase(ShellType.AdminShell)]
         [TestCase(ShellType.DebugShell)]
         [TestCase(ShellType.HexShell)]
-        [TestCase(ShellType.JsonShell)]
-        [TestCase(ShellType.SqlShell)]
         [TestCase(ShellType.TextShell)]
         [Description("Action")]
         public void TestRegisterEmptyCommandName(ShellType type)
@@ -146,8 +136,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [TestCase("AdminShell")]
         [TestCase("DebugShell")]
         [TestCase("HexShell")]
-        [TestCase("JsonShell")]
-        [TestCase("SqlShell")]
         [TestCase("TextShell")]
         [Description("Action")]
         public void TestRegisterEmptyCommandName(string type)
@@ -168,8 +156,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [TestCase(ShellType.AdminShell)]
         [TestCase(ShellType.DebugShell)]
         [TestCase(ShellType.HexShell)]
-        [TestCase(ShellType.JsonShell)]
-        [TestCase(ShellType.SqlShell)]
         [TestCase(ShellType.TextShell)]
         [Description("Action")]
         public void TestRegisterCommandConflicting(ShellType type)
@@ -190,8 +176,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [TestCase("AdminShell")]
         [TestCase("DebugShell")]
         [TestCase("HexShell")]
-        [TestCase("JsonShell")]
-        [TestCase("SqlShell")]
         [TestCase("TextShell")]
         [Description("Action")]
         public void TestRegisterCommandConflicting(string type)
@@ -212,8 +196,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [TestCase(ShellType.AdminShell)]
         [TestCase(ShellType.DebugShell)]
         [TestCase(ShellType.HexShell)]
-        [TestCase(ShellType.JsonShell)]
-        [TestCase(ShellType.SqlShell)]
         [TestCase(ShellType.TextShell)]
         [Description("Action")]
         public void TestRegisterNullCommand(ShellType type) =>
@@ -227,8 +209,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [TestCase("AdminShell")]
         [TestCase("DebugShell")]
         [TestCase("HexShell")]
-        [TestCase("JsonShell")]
-        [TestCase("SqlShell")]
         [TestCase("TextShell")]
         [Description("Action")]
         public void TestRegisterNullCommand(string type) =>
@@ -242,8 +222,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [TestCase(ShellType.AdminShell)]
         [TestCase(ShellType.DebugShell)]
         [TestCase(ShellType.HexShell)]
-        [TestCase(ShellType.JsonShell)]
-        [TestCase(ShellType.SqlShell)]
         [TestCase(ShellType.TextShell)]
         [Description("Action")]
         public void TestUnregisterCommand(ShellType type)
@@ -260,8 +238,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [TestCase("AdminShell")]
         [TestCase("DebugShell")]
         [TestCase("HexShell")]
-        [TestCase("JsonShell")]
-        [TestCase("SqlShell")]
         [TestCase("TextShell")]
         [Description("Action")]
         public void TestUnregisterCommand(string type)
@@ -278,8 +254,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [TestCase(ShellType.AdminShell)]
         [TestCase(ShellType.DebugShell)]
         [TestCase(ShellType.HexShell)]
-        [TestCase(ShellType.JsonShell)]
-        [TestCase(ShellType.SqlShell)]
         [TestCase(ShellType.TextShell)]
         [Description("Action")]
         public void TestUnregisterNonexistentCommand(ShellType type) =>
@@ -293,8 +267,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [TestCase("AdminShell")]
         [TestCase("DebugShell")]
         [TestCase("HexShell")]
-        [TestCase("JsonShell")]
-        [TestCase("SqlShell")]
         [TestCase("TextShell")]
         [Description("Action")]
         public void TestUnregisterNonexistentCommand(string type) =>
@@ -308,8 +280,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [TestCase(ShellType.AdminShell)]
         [TestCase(ShellType.DebugShell)]
         [TestCase(ShellType.HexShell)]
-        [TestCase(ShellType.JsonShell)]
-        [TestCase(ShellType.SqlShell)]
         [TestCase(ShellType.TextShell)]
         [Description("Action")]
         public void TestUnregisterNullCommand(ShellType type) =>
@@ -323,8 +293,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [TestCase("AdminShell")]
         [TestCase("DebugShell")]
         [TestCase("HexShell")]
-        [TestCase("JsonShell")]
-        [TestCase("SqlShell")]
         [TestCase("TextShell")]
         [Description("Action")]
         public void TestUnregisterNullCommand(string type) =>
@@ -338,8 +306,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [TestCase(ShellType.AdminShell)]
         [TestCase(ShellType.DebugShell)]
         [TestCase(ShellType.HexShell)]
-        [TestCase(ShellType.JsonShell)]
-        [TestCase(ShellType.SqlShell)]
         [TestCase(ShellType.TextShell)]
         [Description("Action")]
         public void TestRegisterCommands(ShellType type)
@@ -375,8 +341,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [TestCase("AdminShell")]
         [TestCase("DebugShell")]
         [TestCase("HexShell")]
-        [TestCase("JsonShell")]
-        [TestCase("SqlShell")]
         [TestCase("TextShell")]
         [Description("Action")]
         public void TestRegisterCommands(string type)
@@ -412,8 +376,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [TestCase(ShellType.AdminShell)]
         [TestCase(ShellType.DebugShell)]
         [TestCase(ShellType.HexShell)]
-        [TestCase(ShellType.JsonShell)]
-        [TestCase(ShellType.SqlShell)]
         [TestCase(ShellType.TextShell)]
         [Description("Action")]
         public void TestRegisterCommandsWithErrors(ShellType type)
@@ -447,8 +409,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [TestCase("AdminShell")]
         [TestCase("DebugShell")]
         [TestCase("HexShell")]
-        [TestCase("JsonShell")]
-        [TestCase("SqlShell")]
         [TestCase("TextShell")]
         [Description("Action")]
         public void TestRegisterCommandsWithErrors(string type)
@@ -482,8 +442,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [TestCase(ShellType.AdminShell)]
         [TestCase(ShellType.DebugShell)]
         [TestCase(ShellType.HexShell)]
-        [TestCase(ShellType.JsonShell)]
-        [TestCase(ShellType.SqlShell)]
         [TestCase(ShellType.TextShell)]
         [Description("Action")]
         public void TestUnregisterCommands(ShellType type)
@@ -508,8 +466,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [TestCase("AdminShell")]
         [TestCase("DebugShell")]
         [TestCase("HexShell")]
-        [TestCase("JsonShell")]
-        [TestCase("SqlShell")]
         [TestCase("TextShell")]
         [Description("Action")]
         public void TestUnregisterCommands(string type)
@@ -534,8 +490,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [TestCase(ShellType.AdminShell)]
         [TestCase(ShellType.DebugShell)]
         [TestCase(ShellType.HexShell)]
-        [TestCase(ShellType.JsonShell)]
-        [TestCase(ShellType.SqlShell)]
         [TestCase(ShellType.TextShell)]
         [Description("Action")]
         public void TestUnregisterCommandsWithErrors(ShellType type)
@@ -558,8 +512,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [TestCase("AdminShell")]
         [TestCase("DebugShell")]
         [TestCase("HexShell")]
-        [TestCase("JsonShell")]
-        [TestCase("SqlShell")]
         [TestCase("TextShell")]
         [Description("Action")]
         public void TestUnregisterCommandsWithErrors(string type)

@@ -83,9 +83,7 @@ namespace KS.Shell.ShellBase.Shells
             { $"{ShellType.AdminShell}",    new() },
             { $"{ShellType.DebugShell}",    new() },
             { $"{ShellType.HexShell}",      new() },
-            { $"{ShellType.JsonShell}",     new() },
             { $"{ShellType.Shell}",         new() },
-            { $"{ShellType.SqlShell}",      new() },
             { $"{ShellType.TextShell}",     new() },
         };
 
