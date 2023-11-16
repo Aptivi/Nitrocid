@@ -48,6 +48,7 @@ using KS.ConsoleBase.Inputs.Styles;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Languages;
+using KS.Misc.Screensaver;
 using KS.Misc.Text;
 using System;
 using System.Collections.Generic;
@@ -84,6 +85,9 @@ namespace Nitrocid.Extras.BassBoom.Player
 
         public static void PlayerLoop()
         {
+            // Prevent screensaver lock
+            ScreensaverManager.PreventLock();
+
             volume = PlaybackTools.GetVolume().baseLinear;
             exiting = false;
             rerender = true;
@@ -182,6 +186,7 @@ namespace Nitrocid.Extras.BassBoom.Player
             // Restore state
             ConsoleWrapper.CursorVisible = true;
             KernelColorTools.LoadBack();
+            ScreensaverManager.AllowLock();
         }
 
         private static void HandleKeypressIdleMode(ConsoleKeyInfo keystroke)

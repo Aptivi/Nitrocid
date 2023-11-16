@@ -67,6 +67,7 @@ namespace KS.Misc.Screensaver
         internal static bool screenRefresh;
         internal static bool ScrnTimeReached;
         internal static bool seizureAcknowledged;
+        internal static bool noLock;
         internal static AutoResetEvent SaverAutoReset = new(false);
         internal static KernelThread Timeout = new("Screensaver timeout thread", false, HandleTimeout) { isCritical = true };
 
@@ -323,6 +324,30 @@ namespace KS.Misc.Screensaver
         }
 
         /// <summary>
+        /// Prevents screen lock
+        /// </summary>
+        public static void PreventLock()
+        {
+            if (!scrnTimeoutEnabled)
+                return;
+            if (InSaver)
+                ScreensaverDisplayer.BailFromScreensaver();
+            noLock = true;
+            StopTimeout();
+        }
+
+        /// <summary>
+        /// Allows screen lock
+        /// </summary>
+        public static void AllowLock()
+        {
+            if (!scrnTimeoutEnabled)
+                return;
+            noLock = false;
+            StartTimeout();
+        }
+
+        /// <summary>
         /// Screensaver error handler
         /// </summary>
         internal static void HandleSaverError(Exception Exception, bool initialVisible)
@@ -367,8 +392,10 @@ namespace KS.Misc.Screensaver
         {
             try
             {
+                if (noLock)
+                    return;
                 var termDriver = DriverHandler.GetFallbackDriver<IConsoleDriver>();
-                while (!PowerManager.KernelShutdown)
+                while (!PowerManager.KernelShutdown && !noLock)
                 {
                     int OldCursorLeft = termDriver.CursorLeft;
                     SpinWait.SpinUntil(() => !ScrnTimeReached || PowerManager.KernelShutdown);
