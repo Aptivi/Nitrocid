@@ -403,7 +403,7 @@ namespace KS.Misc.Text
         /// <param name="Expression">The expression</param>
         public static bool IsStringNumeric(string Expression)
         {
-            if (Expression is null)
+            if (string.IsNullOrWhiteSpace(Expression))
                 throw new KernelException(KernelExceptionType.Text, Translate.DoTranslation("The target expression may not be null"));
 
             return double.TryParse(Expression, out double _);
