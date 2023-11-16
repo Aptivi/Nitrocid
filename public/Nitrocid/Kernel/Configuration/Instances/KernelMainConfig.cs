@@ -72,6 +72,7 @@ namespace KS.Kernel.Configuration.Instances
         public override SettingsEntry[] SettingsEntries =>
             ConfigTools.GetSettingsEntries(Resources.SettingsResources.SettingsEntries);
 
+        #region General
         /// <summary>
         /// Each startup, it will check for updates.
         /// </summary>
@@ -224,6 +225,9 @@ namespace KS.Kernel.Configuration.Instances
             get => TimeZones.defaultZoneName;
             set => TimeZones.defaultZoneName = TimeZones.TimeZoneExists(value) ? value : TimeZones.defaultZoneName;
         }
+        #endregion
+
+        #region Colors
         /// <summary>
         /// Whether to use accent colors for themes that support accents
         /// </summary>
@@ -700,6 +704,9 @@ namespace KS.Kernel.Configuration.Instances
             get => KernelColorTools.GetColor(KernelColorType.TuiBoxForeground).PlainSequence;
             set => KernelColorTools.SetColor(KernelColorType.TuiBoxForeground, new Color(value));
         }
+        #endregion
+
+        #region Hardware
         /// <summary>
         /// Keep hardware probing messages silent.
         /// </summary>
@@ -708,6 +715,9 @@ namespace KS.Kernel.Configuration.Instances
         /// Make hardware probing messages a bit talkative.
         /// </summary>
         public bool VerboseHardwareProbe { get; set; }
+        #endregion
+
+        #region Login
         /// <summary>
         /// Show Message of the Day before displaying login screen.
         /// </summary>
@@ -764,6 +774,9 @@ namespace KS.Kernel.Configuration.Instances
             get => LoginHandlerTools.CurrentHandlerName;
             set => LoginHandlerTools.CurrentHandlerName = value;
         }
+        #endregion
+
+        #region Shell
         /// <summary>
         /// Simplified help command for all the shells
         /// </summary>
@@ -807,6 +820,9 @@ namespace KS.Kernel.Configuration.Instances
         /// Shows the shell count in the normal UESH shell (depending on the preset)
         /// </summary>
         public bool ShowShellCount { get; set; }
+        #endregion
+
+        #region Shell Presets
         /// <summary>
         /// Prompt Preset
         /// </summary>
@@ -840,14 +856,6 @@ namespace KS.Kernel.Configuration.Instances
             set => PromptPresetManager.SetPreset(value, ShellType.AdminShell, false);
         }
         /// <summary>
-        /// SQL Shell Prompt Preset
-        /// </summary>
-        public string SqlShellPromptPreset
-        {
-            get => PromptPresetManager.GetCurrentPresetBaseFromShell("SqlShell").PresetName;
-            set => PromptPresetManager.SetPreset(value, "SqlShell", false);
-        }
-        /// <summary>
         /// Debug Shell Prompt Preset
         /// </summary>
         public string DebugShellPromptPreset
@@ -855,6 +863,9 @@ namespace KS.Kernel.Configuration.Instances
             get => PromptPresetManager.GetCurrentPresetBaseFromShell(ShellType.DebugShell).PresetName;
             set => PromptPresetManager.SetPreset(value, ShellType.DebugShell, false);
         }
+        #endregion
+
+        #region Filesystem
         /// <summary>
         /// Controls how the files will be sorted
         /// </summary>
@@ -895,6 +906,9 @@ namespace KS.Kernel.Configuration.Instances
         /// If enabled, shows the total folder size in list, depending on how to calculate the folder sizes according to the configuration.
         /// </summary>
         public bool ShowTotalSizeInList { get; set; }
+        #endregion
+
+        #region Network
         /// <summary>
         /// Write a remote debugger port. It must be numeric, and must not be already used. Otherwise, remote debugger will fail to open the port
         /// </summary>
@@ -987,6 +1001,9 @@ namespace KS.Kernel.Configuration.Instances
         /// If enabled, will use the notification system to notify the host of remote debug connection error. Otherwise, will use the default console writing.
         /// </summary>
         public bool NotifyOnRemoteDebugConnectionError { get; set; } = true;
+        #endregion
+
+        #region Screensaver
         /// <summary>
         /// Which screensaver do you want to lock your screen with?
         /// </summary>
@@ -1034,6 +1051,9 @@ namespace KS.Kernel.Configuration.Instances
         /// After locking the screen, ask for password
         /// </summary>
         public bool PasswordLock { get; set; } = true;
+        #endregion
+
+        #region Drivers
         /// <summary>
         /// Current console driver
         /// </summary>
@@ -1114,6 +1134,9 @@ namespace KS.Kernel.Configuration.Instances
             get => DriverHandler.GetDriverName<ISortingDriver>(DriverHandler.CurrentSortingDriver);
             set => SortingDriverTools.SetSortingDriver(value);
         }
+        #endregion
+
+        #region Misc
         /// <summary>
         /// The time and date will be shown in the upper right corner of the screen
         /// </summary>
@@ -1468,5 +1491,6 @@ namespace KS.Kernel.Configuration.Instances
             get => CpuUsageDebug.usageIntervalUpdatePeriod;
             set => CpuUsageDebug.usageIntervalUpdatePeriod = value >= 1000 ? value : 1000;
         }
+        #endregion
     }
 }
