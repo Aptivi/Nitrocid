@@ -147,7 +147,17 @@ namespace KS.Files.Extensions
         {
             // Check to see if we have the extension in the default handlers list
             if (!defaultHandlers.TryGetValue(extension, out string defHandlerName))
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("No default extension handler found for this extension.") + $" {extension}");
+            {
+                if (IsHandlerRegistered(extension))
+                {
+                    var handler = GetFirstExtensionHandler(extension) ??
+                        throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("No default extension handler found for this extension.") + $" {extension}");
+                    defHandlerName = handler.Implementer;
+                    SetExtensionHandler(extension, defHandlerName);
+                }
+                else
+                    throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("No default extension handler found for this extension.") + $" {extension}");
+            }
 
             // Now, get the default handler name and get the handler instance from it
             string handlerName = defHandlerName;
@@ -228,7 +238,10 @@ namespace KS.Files.Extensions
                 throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Extensions must start with the dot. Hint:") + $" .{extension}");
 
             // Set the handler
-            defaultHandlers[extension] = implementer;
+            if (!defaultHandlers.ContainsKey(extension))
+                defaultHandlers.Add(extension, implementer);
+            else
+                defaultHandlers[extension] = implementer;
         }
 
         /// <summary>

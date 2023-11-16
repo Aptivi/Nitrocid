@@ -18,7 +18,13 @@
 //
 
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Files;
+using KS.Files.Operations.Querying;
+using KS.Kernel.Debugging;
+using KS.Languages;
 using KS.Shell.ShellBase.Commands;
+using Nitrocid.Extras.BassBoom.Player;
+using System;
 
 namespace Nitrocid.Extras.BassBoom.Commands
 {
@@ -33,8 +39,38 @@ namespace Nitrocid.Extras.BassBoom.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            // TODO: Once migrated to .NET 8.0, fill this command.
-            TextWriterColor.Write("We're excited to bring to you a music player! However, it will work once we update Nitrocid to .NET 8.0.");
+            try
+            {
+                // First, prompt for the music path if no arguments are provided.
+                if (parameters.ArgumentsList.Length != 0)
+                {
+                    string musicPath = FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]);
+
+                    // Check for existence.
+                    if (string.IsNullOrEmpty(musicPath))
+                    {
+                        TextWriterColor.Write(Translate.DoTranslation("Music file not specified."));
+                        return 30;
+                    }
+                    if (!Checking.FileExists(musicPath))
+                    {
+                        TextWriterColor.Write(Translate.DoTranslation("Music file '{0}' doesn't exist."), musicPath);
+                        return 31;
+                    }
+                    if (!PlayerTui.musicFiles.Contains(musicPath))
+                        PlayerTui.musicFiles.Add(musicPath);
+                }
+
+                // Now, open an interactive TUI
+                PlayerTui.PlayerLoop();
+            }
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, "Can't start BassBoom Player: {0}", ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
+                TextWriterColor.Write(Translate.DoTranslation("Fatal error in the BassBoom CLI addon.") + "\n\n" + ex.Message);
+                return ex.HResult;
+            }
             return 0;
         }
 

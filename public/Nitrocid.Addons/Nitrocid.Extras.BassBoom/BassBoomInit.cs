@@ -17,6 +17,25 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+// Parts of the code were taken from BassBoom. License notes below:
+
+//   BassBoom  Copyright (C) 2023  Aptivi
+// 
+//   This file is part of BassBoom
+// 
+//   BassBoom is free software: you can redistribute it and/or modify
+//   it under the terms of the GNU General Public License as published by
+//   the Free Software Foundation, either version 3 of the License, or
+//   (at your option) any later version.
+// 
+//   BassBoom is distributed in the hope that it will be useful,
+//   but WITHOUT ANY WARRANTY; without even the implied warranty of
+//   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//   GNU General Public License for more details.
+// 
+//   You should have received a copy of the GNU General Public License
+//   along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
 using KS.Kernel.Configuration;
 using KS.Kernel.Extensions;
 using KS.Misc.Screensaver;
@@ -37,8 +56,10 @@ using System.IO;
 using KS.Languages;
 using KS.ConsoleBase.Colors;
 using KS.Files.Extensions;
-using KS.ConsoleBase.Inputs.Styles;
 using KS.Files;
+using Nitrocid.Extras.BassBoom.Player;
+using KS.Files.Operations.Querying;
+using KS.ConsoleBase.Inputs.Styles;
 
 namespace Nitrocid.Extras.BassBoom
 {
@@ -46,7 +67,17 @@ namespace Nitrocid.Extras.BassBoom
     {
         private readonly ExtensionHandler handler = new(
             ".mp3", "Mp3BassBoom",
-            (_) => InfoBoxColor.WriteInfoBoxKernelColor(Translate.DoTranslation("You'll be able to play music soon. Hang tight!"), KernelColorType.Warning),
+            (path) =>
+            {
+                if (!Checking.FileExists(path))
+                {
+                    InfoBoxColor.WriteInfoBoxKernelColor(Translate.DoTranslation("Can't open music file '{0}' because it's not found."), KernelColorType.Error, path);
+                    return;
+                }
+                if (!PlayerTui.musicFiles.Contains(path))
+                    PlayerTui.musicFiles.Add(path);
+                PlayerTui.PlayerLoop();
+            },
             (path) =>
             {
                 // Get the ID3 metadata
