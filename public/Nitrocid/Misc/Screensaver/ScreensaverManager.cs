@@ -237,7 +237,8 @@ namespace KS.Misc.Screensaver
                 ScreensaverDisplayer.BailFromScreensaver();
                 if (PasswordLock)
                     Login.ShowPasswordPrompt(UserManagement.CurrentUser.Username);
-                ScreenTools.Render();
+                if (ScreenTools.CurrentScreen is not null)
+                    ScreenTools.Render();
             }
             catch (Exception ex)
             {
