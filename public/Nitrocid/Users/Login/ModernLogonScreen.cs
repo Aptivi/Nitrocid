@@ -43,7 +43,7 @@ namespace KS.Users.Login
     internal static class ModernLogonScreen
     {
         internal static bool renderedFully = false;
-        internal readonly static KernelThread DateTimeUpdateThread = new("Date and Time Update Thread for Modern Logon", true, DateTimeWidgetUpdater);
+        internal readonly static KernelThread DateTimeUpdateThread = new("Modern Logon Update Thread", true, DateTimeWidgetUpdater);
 
         /// <summary>
         /// Whether to show the MOTD and the headline at the bottom or at the top of the clock
@@ -74,7 +74,7 @@ namespace KS.Users.Login
                             return Translate.DoTranslation("From") + $" {feedTitle}: {articleTitle}";
                         return Translate.DoTranslation("No feed.");
                     }
-                    catch (KernelException ex) when (ex.ExceptionType == KernelExceptionType.RSSNetwork || ex.ExceptionType == KernelExceptionType.AddonManagement)
+                    catch (KernelException ex) when (ex.ExceptionType == KernelExceptionType.AddonManagement)
                     {
                         DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news: {0}", ex.Message);
                         DebugWriter.WriteDebugStackTrace(ex);

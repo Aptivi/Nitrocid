@@ -60,7 +60,7 @@ namespace KS.Network.RSS
                         TextWriterColor.WriteKernelColor(articleTitle, true, KernelColorType.ListValue);
                     }
                 }
-                catch (KernelException ex) when (ex.ExceptionType == KernelExceptionType.RSSNetwork || ex.ExceptionType == KernelExceptionType.AddonManagement)
+                catch (KernelException ex) when (ex.ExceptionType == KernelExceptionType.AddonManagement)
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news: {0}", ex.Message);
                     DebugWriter.WriteDebugStackTrace(ex);
