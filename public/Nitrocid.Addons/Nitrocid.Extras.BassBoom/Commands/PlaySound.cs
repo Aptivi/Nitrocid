@@ -18,6 +18,7 @@
 //
 
 using BassBoom.Basolia.File;
+using BassBoom.Basolia.Format;
 using BassBoom.Basolia.Playback;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
@@ -28,6 +29,7 @@ using KS.Files.Operations.Querying;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 using System;
+using System.IO;
 using System.Threading;
 
 namespace Nitrocid.Extras.BassBoom.Commands
@@ -64,12 +66,40 @@ namespace Nitrocid.Extras.BassBoom.Commands
             {
                 try
                 {
+                    // They must be done before playing
+                    int total = AudioInfoTools.GetDuration(true);
+                    AudioInfoTools.GetId3Metadata(out var managedV1, out var managedV2);
+
+                    // Play now!
                     PlaybackTools.PlayAsync();
                     if (!SpinWait.SpinUntil(() => PlaybackTools.Playing, 15000))
                     {
                         TextWriterColor.WriteKernelColor(Translate.DoTranslation("Can't play sound because of timeout."), KernelColorType.Error);
                         return 30;
                     }
+
+                    // Print song info
+                    string musicName =
+                        !string.IsNullOrEmpty(managedV2.Title) ? managedV2.Title :
+                        !string.IsNullOrEmpty(managedV1.Title) ? managedV1.Title :
+                        Path.GetFileNameWithoutExtension(path);
+                    string musicArtist =
+                        !string.IsNullOrEmpty(managedV2.Artist) ? managedV2.Artist :
+                        !string.IsNullOrEmpty(managedV1.Artist) ? managedV1.Artist :
+                        Translate.DoTranslation("Unknown Artist");
+                    string musicGenre =
+                        !string.IsNullOrEmpty(managedV2.Genre) ? managedV2.Genre :
+                        managedV1.GenreIndex >= 0 ? $"{managedV1.Genre} [{managedV1.GenreIndex}]" :
+                        Translate.DoTranslation("Unknown Genre");
+                    var totalSpan = AudioInfoTools.GetDurationSpanFromSamples(total);
+                    string duration = totalSpan.ToString();
+                    ListEntryWriterColor.WriteListEntry(Translate.DoTranslation("Name"), musicName);
+                    ListEntryWriterColor.WriteListEntry(Translate.DoTranslation("Artist"), musicArtist);
+                    ListEntryWriterColor.WriteListEntry(Translate.DoTranslation("Genre"), musicGenre);
+                    ListEntryWriterColor.WriteListEntry(Translate.DoTranslation("Duration"), duration);
+
+                    // Wait until the song stops or the user bails
+                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Press 'q' to stop playing."), KernelColorType.Tip);
                     while (PlaybackTools.Playing)
                     {
                         if (ConsoleWrapper.KeyAvailable)
