@@ -24,6 +24,8 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Threading;
+using KS.ConsoleBase;
+using KS.ConsoleBase.Buffered;
 using KS.ConsoleBase.Inputs.Styles;
 using KS.Files;
 using KS.Files.Folders;
@@ -46,6 +48,7 @@ namespace KS.Misc.Splash
     public static class SplashManager
     {
 
+        internal static Screen splashScreen = new();
         internal static SplashContext currentContext = SplashContext.StartingUp;
         internal static KernelThread SplashThread = new("Kernel Splash Thread", false, (splashParams) => SplashThreadHandler((SplashThreadParameters)splashParams));
         internal readonly static Dictionary<string, SplashInfo> InstalledSplashes = new()
@@ -269,10 +272,15 @@ namespace KS.Misc.Splash
         {
             if (EnableSplash)
             {
+                var openingPart = new ScreenPart();
+                splashScreen.RemoveBufferedParts();
                 currentContext = context;
                 SplashReport._Progress = 0;
-                ConsoleBase.ConsoleWrapper.CursorVisible = false;
-                splash.Opening(context);
+                ConsoleWrapper.CursorVisible = false;
+                openingPart.AddDynamicText(() => splash.Opening(context));
+                splashScreen.AddBufferedPart(openingPart);
+                ScreenTools.SetCurrent(splashScreen);
+                ScreenTools.Render(true);
                 SplashThread.Stop();
                 SplashThread.Start(new SplashThreadParameters(splash.SplashName, context));
                 SplashReport._InSplash = true;
@@ -312,6 +320,9 @@ namespace KS.Misc.Splash
         {
             if (EnableSplash)
             {
+                var closingPart = new ScreenPart();
+                bool delay = false;
+                splashScreen.RemoveBufferedParts();
                 currentContext = context;
                 splash.SplashClosing = true;
 
@@ -322,15 +333,22 @@ namespace KS.Misc.Splash
                 SplashThread.Wait();
                 SplashThread.Stop();
                 if (showClosing)
-                    splash.Closing(context);
+                    closingPart.AddDynamicText(() => splash.Closing(context, out delay));
                 else
-                    InstalledSplashes["Blank"].EntryPoint.Closing(context);
-                ConsoleBase.ConsoleWrapper.CursorVisible = true;
+                    closingPart.AddDynamicText(() => InstalledSplashes["Blank"].EntryPoint.Closing(context, out delay));
+                ConsoleWrapper.CursorVisible = true;
+                splashScreen.AddBufferedPart(closingPart);
+                ScreenTools.Render();
 
                 // Reset the SplashClosing variable in case it needs to be open again. Some splashes don't do anything if they detect that the splash
                 // screen is closing.
                 splash.SplashClosing = false;
                 SplashReport._InSplash = false;
+                ScreenTools.UnsetCurrent(splashScreen);
+
+                // Wait for 3 seconds
+                if (delay)
+                    Thread.Sleep(3000);
             }
         }
 
@@ -426,7 +444,17 @@ namespace KS.Misc.Splash
         private static void SplashThreadHandler(SplashThreadParameters threadParameters)
         {
             var splash = GetSplashFromName(threadParameters.SplashName).EntryPoint;
-            splash.Display(threadParameters.SplashContext);
+            while (!splash.SplashClosing)
+            {
+                var displayPart = new ScreenPart();
+                displayPart.AddDynamicText(() => splash.Display(threadParameters.SplashContext));
+                if (splashScreen.ScreenParts.Length > 1)
+                    splashScreen.EditBufferedPart(1, displayPart);
+                else
+                    splashScreen.AddBufferedPart(displayPart);
+                ScreenTools.Render();
+                Thread.Sleep(20);
+            }
         }
 
     }

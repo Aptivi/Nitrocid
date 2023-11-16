@@ -36,7 +36,7 @@ namespace Nitrocid.ScreensaverPacks.Splashes
         public SplashBeatEdgePulse() => BeatEdgePulseSettings = new BeatEdgePulseSettings();
 
         // Actual logic
-        public override void Display(SplashContext context)
+        public override string Display(SplashContext context)
         {
             try
             {
@@ -50,6 +50,7 @@ namespace Nitrocid.ScreensaverPacks.Splashes
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Splash done.");
             }
+            return "";
         }
 
     }

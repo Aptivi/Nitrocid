@@ -26,6 +26,7 @@ using KS.Kernel.Threading;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using Terminaux.Colors;
 using KS.Misc.Splash;
+using System.Text;
 
 namespace Nitrocid.SplashPacks.Splashes
 {
@@ -42,61 +43,66 @@ namespace Nitrocid.SplashPacks.Splashes
         private readonly char TransitionChar = Convert.ToChar(0xE0B0);
 
         // Actual logic
-        public override void Opening(SplashContext context)
+        public override string Opening(SplashContext context)
         {
             // Select the color segment background and mirror it to the transition foreground color
             FirstColorSegmentBackground = new Color(RandomDriver.Random(255), RandomDriver.Random(255), RandomDriver.Random(255));
             LastTransitionForeground = FirstColorSegmentBackground;
-            base.Opening(context);
+            return base.Opening(context);
         }
 
-        public override void Display(SplashContext context)
+        public override string Display(SplashContext context)
         {
+            var builder = new StringBuilder();
             try
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Splash displaying.");
-                while (!SplashClosing)
+
+                // As the length increases, draw the PowerLine lines
+                for (int Top = 0; Top <= ConsoleWrapper.WindowHeight - 1; Top++)
                 {
-                    // As the length increases, draw the PowerLine lines
-                    for (int Top = 0; Top <= ConsoleWrapper.WindowHeight - 1; Top++)
-                    {
-                        if (SplashClosing)
-                            break;
-                        TextWriterWhereColor.WriteWhereColorBack(new string(' ', PowerLineLength), 0, Top, Color.Empty, FirstColorSegmentBackground);
-                        TextWriterWhereColor.WriteWhereColor(Convert.ToString(TransitionChar), PowerLineLength, Top, LastTransitionForeground);
-                        ConsoleExtensions.ClearLineToRight();
-                    }
-
-                    // Increase the length until we reach the window width, then decrease it.
-                    if (LengthDecreasing)
-                    {
-                        PowerLineLength -= 1;
-
-                        // If we reached the start, increase the length
-                        if (PowerLineLength == 0)
-                        {
-                            LengthDecreasing = false;
-                        }
-                    }
-                    else
-                    {
-                        PowerLineLength += 1;
-
-                        // If we reached the end, decrease the length
-                        if (PowerLineLength == ConsoleWrapper.WindowWidth - 1)
-                        {
-                            LengthDecreasing = true;
-                        }
-                    }
-
-                    // Sleep to draw
-                    ThreadManager.SleepNoBlock(10, SplashManager.SplashThread);
+                    if (SplashClosing)
+                        break;
+                    builder.Append(
+                        Color.Empty.VTSequenceForeground +
+                        FirstColorSegmentBackground.VTSequenceBackground +
+                        TextWriterWhereColor.RenderWherePlain(new string(' ', PowerLineLength), 0, Top) +
+                        LastTransitionForeground.VTSequenceBackground +
+                        TextWriterWhereColor.RenderWherePlain(Convert.ToString(TransitionChar), PowerLineLength, Top) +
+                        ConsoleExtensions.GetClearLineToRightSequence()
+                    );
                 }
+
+                // Increase the length until we reach the window width, then decrease it.
+                if (LengthDecreasing)
+                {
+                    PowerLineLength -= 1;
+
+                    // If we reached the start, increase the length
+                    if (PowerLineLength == 0)
+                    {
+                        LengthDecreasing = false;
+                    }
+                }
+                else
+                {
+                    PowerLineLength += 1;
+
+                    // If we reached the end, decrease the length
+                    if (PowerLineLength == ConsoleWrapper.WindowWidth - 1)
+                    {
+                        LengthDecreasing = true;
+                    }
+                }
+
+                // Sleep to draw
+                ThreadManager.SleepNoBlock(10, SplashManager.SplashThread);
             }
             catch (ThreadInterruptedException)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Splash done.");
             }
+            return builder.ToString();
         }
 
     }

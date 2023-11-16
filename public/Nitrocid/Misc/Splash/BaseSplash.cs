@@ -18,9 +18,11 @@
 //
 
 using System;
+using System.Text;
 using System.Threading;
 using KS.ConsoleBase.Colors;
 using KS.Kernel.Debugging;
+using Terminaux.Sequences.Builder.Types;
 
 namespace KS.Misc.Splash
 {
@@ -45,42 +47,57 @@ namespace KS.Misc.Splash
 
         // Actual logic
         /// <inheritdoc/>
-        public virtual void Opening(SplashContext context)
+        public virtual string Opening(SplashContext context)
         {
+            var builder = new StringBuilder();
             DebugWriter.WriteDebug(DebugLevel.I, "Splash opening. Clearing console...");
-            KernelColorTools.LoadBack();
+            KernelColorTools.SetConsoleColor(KernelColorTools.GetColor(KernelColorType.Background), true);
+            builder.Append(
+                CsiSequences.GenerateCsiEraseInDisplay(2) +
+                CsiSequences.GenerateCsiCursorPosition(1, 1)
+            );
+            return builder.ToString();
         }
 
         /// <inheritdoc/>
-        public virtual void Display(SplashContext context)
+        public virtual string Display(SplashContext context)
         {
             try
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Splash displaying.");
-                while (!SplashClosing)
-                    Thread.Sleep(1);
+                Thread.Sleep(1);
             }
             catch (ThreadInterruptedException)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Splash done.");
             }
+            return "";
         }
 
         /// <inheritdoc/>
-        public virtual void Closing(SplashContext context)
+        public virtual string Closing(SplashContext context, out bool delayRequired)
         {
+            var builder = new StringBuilder();
             DebugWriter.WriteDebug(DebugLevel.I, "Splash closing. Clearing console...");
-            KernelColorTools.LoadBack();
+            KernelColorTools.SetConsoleColor(KernelColorTools.GetColor(KernelColorType.Background), true);
+            builder.Append(
+                CsiSequences.GenerateCsiEraseInDisplay(2) +
+                CsiSequences.GenerateCsiCursorPosition(1, 1)
+            );
+            delayRequired = false;
+            return builder.ToString();
         }
 
         /// <inheritdoc/>
-        public virtual void Report(int Progress, string ProgressReport, params object[] Vars) { }
+        public virtual string Report(int Progress, string ProgressReport, params object[] Vars) =>
+            "";
 
         /// <inheritdoc/>
-        public virtual void ReportWarning(int Progress, string WarningReport, Exception ExceptionInfo, params object[] Vars) { }
+        public virtual string ReportWarning(int Progress, string WarningReport, Exception ExceptionInfo, params object[] Vars) =>
+            "";
 
         /// <inheritdoc/>
-        public virtual void ReportError(int Progress, string ErrorReport, Exception ExceptionInfo, params object[] Vars) { }
+        public virtual string ReportError(int Progress, string ErrorReport, Exception ExceptionInfo, params object[] Vars) =>
+            "";
 
     }
 }

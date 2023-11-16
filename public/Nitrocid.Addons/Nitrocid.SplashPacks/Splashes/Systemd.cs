@@ -18,12 +18,14 @@
 //
 
 using System;
+using System.Text;
 using System.Threading;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Debugging;
 using KS.Misc.Splash;
+using KS.Misc.Text;
 
 namespace Nitrocid.SplashPacks.Splashes
 {
@@ -39,59 +41,82 @@ namespace Nitrocid.SplashPacks.Splashes
         private bool Beginning = true;
 
         // Actual logic
-        public override void Display(SplashContext context)
+        public override string Display(SplashContext context)
         {
             try
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Splash displaying.");
                 IndicatorLeft = ConsoleWrapper.CursorLeft + 2;
                 IndicatorTop = ConsoleWrapper.CursorTop;
-                while (!SplashClosing)
-                    Thread.Sleep(1);
             }
             catch (ThreadInterruptedException)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Splash done.");
             }
+            return base.Display(context);
         }
 
-        public override void Report(int Progress, string ProgressReport, params object[] Vars)
+        public override string Report(int Progress, string ProgressReport, params object[] Vars)
         {
+            var builder = new StringBuilder();
             if (!Beginning)
-                TextWriterWhereColor.WriteWhereKernelColor("  OK  ", IndicatorLeft, IndicatorTop, true, KernelColorType.Success);
-            TextWriterColor.Write($" [      ] {ProgressReport}", Vars);
+                builder.Append(
+                    KernelColorTools.GetColor(KernelColorType.Success).VTSequenceForeground +
+                    TextWriterWhereColor.RenderWherePlain("  OK  ", IndicatorLeft, IndicatorTop, true)
+                );
+            builder.Append(
+                KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground +
+                $" [      ] {TextTools.FormatString(ProgressReport, Vars)}"
+            );
             if (!Beginning)
             {
                 IndicatorLeft = 2;
                 IndicatorTop = ConsoleWrapper.CursorTop - 1;
             }
             Beginning = false;
+            return builder.ToString();
         }
 
-        public override void ReportWarning(int Progress, string WarningReport, Exception ExceptionInfo, params object[] Vars)
+        public override string ReportWarning(int Progress, string WarningReport, Exception ExceptionInfo, params object[] Vars)
         {
+            var builder = new StringBuilder();
             if (!Beginning)
-                TextWriterWhereColor.WriteWhereKernelColor(" WARN ", IndicatorLeft, IndicatorTop, true, KernelColorType.Warning);
-            TextWriterColor.Write($" [      ] {WarningReport}", Vars);
+                builder.Append(
+                    KernelColorTools.GetColor(KernelColorType.Warning).VTSequenceForeground +
+                    TextWriterWhereColor.RenderWherePlain(" WARN ", IndicatorLeft, IndicatorTop, true)
+                );
+            builder.Append(
+                KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground +
+                $" [      ] {TextTools.FormatString(WarningReport, Vars)}"
+            );
             if (!Beginning)
             {
                 IndicatorLeft = 2;
                 IndicatorTop = ConsoleWrapper.CursorTop - 1;
             }
             Beginning = false;
+            return builder.ToString();
         }
 
-        public override void ReportError(int Progress, string ErrorReport, Exception ExceptionInfo, params object[] Vars)
+        public override string ReportError(int Progress, string ErrorReport, Exception ExceptionInfo, params object[] Vars)
         {
+            var builder = new StringBuilder();
             if (!Beginning)
-                TextWriterWhereColor.WriteWhereKernelColor("FAILED", IndicatorLeft, IndicatorTop, true, KernelColorType.Error);
-            TextWriterColor.Write($" [      ] {ErrorReport}", Vars);
+                builder.Append(
+                    KernelColorTools.GetColor(KernelColorType.Error).VTSequenceForeground +
+                    TextWriterWhereColor.RenderWherePlain("FAILED", IndicatorLeft, IndicatorTop, true)
+                );
+            builder.Append(
+                KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground +
+                $" [      ] {TextTools.FormatString(ErrorReport, Vars)}"
+            );
             if (!Beginning)
             {
                 IndicatorLeft = 2;
                 IndicatorTop = ConsoleWrapper.CursorTop - 1;
             }
             Beginning = false;
+            return builder.ToString();
         }
 
     }

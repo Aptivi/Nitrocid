@@ -29,14 +29,16 @@ using Terminaux.Sequences.Tools;
 using KS.ConsoleBase.Colors;
 using Figletize;
 using System;
-using KS.Kernel.Power;
 using KS.Misc.Text;
 using KS.Misc.Splash;
+using System.Text;
 
 namespace Nitrocid.SplashPacks.Splashes
 {
     class SplashFigProgress : BaseSplash, ISplash
     {
+
+        private int dotStep = 0;
 
         // Standalone splash information
         public override string SplashName => "FigProgress";
@@ -44,9 +46,12 @@ namespace Nitrocid.SplashPacks.Splashes
         public override bool SplashDisplaysProgress => true;
 
         // Actual logic
-        public override void Opening(SplashContext context)
+        public override string Opening(SplashContext context)
         {
-            base.Opening(context);
+            var builder = new StringBuilder();
+            builder.Append(
+                base.Opening(context)
+            );
 
             // Write a glorious Welcome screen
             Color col = KernelColorTools.GetColor(KernelColorType.Stage);
@@ -60,131 +65,163 @@ namespace Nitrocid.SplashPacks.Splashes
                 // The figlet won't fit, so use small text
                 consoleX = ConsoleWrapper.WindowWidth / 2 - text.Length / 2;
                 consoleY = ConsoleWrapper.WindowHeight / 2;
-                TextWriterWhereColor.WriteWhereColor(text, consoleX, consoleY, true, col);
+                builder.Append(
+                    col.VTSequenceForeground +
+                    TextWriterWhereColor.RenderWherePlain(text, consoleX, consoleY, true)
+                );
             }
             else
             {
                 // Write the figlet.
                 consoleX = ConsoleWrapper.WindowWidth / 2 - figWidth;
                 consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
-                FigletWhereColor.WriteFigletWhereColor(text, consoleX, consoleY, true, figFont, col);
+                builder.Append(
+                    col.VTSequenceForeground +
+                    FigletWhereColor.RenderFigletWherePlain(text, consoleX, consoleY, true, figFont)
+                );
                 consoleY += figHeight * 2;
             }
-            CenteredTextColor.WriteCenteredColor(
-                consoleY + 2,
-                context == SplashContext.Preboot ? Translate.DoTranslation("Please wait while the kernel is initializing...") : Translate.DoTranslation("Starting") + $" {KernelReleaseInfo.ConsoleTitle}...",
-                col
+            builder.Append(
+                CenteredTextColor.RenderCentered(
+                    consoleY + 2,
+                    (context == SplashContext.Preboot ? Translate.DoTranslation("Please wait while the kernel is initializing...") :
+                     context == SplashContext.ShuttingDown ? Translate.DoTranslation("Please wait while the kernel is shutting down...") :
+                     $"{Translate.DoTranslation("Starting")} {KernelReleaseInfo.ConsoleTitle}..."),
+                    col
+                )
             );
+            return builder.ToString();
         }
 
-        public override void Display(SplashContext context)
+        public override string Display(SplashContext context)
         {
+            var builder = new StringBuilder();
             try
             {
                 Color firstColor = KernelColorTools.GetColor(KernelColorType.Background).IsBright ? new(ConsoleColors.Black) : new(ConsoleColors.White);
                 Color secondColor = KernelColorTools.GetColor(KernelColorType.Success);
-                int dotStep = 0;
                 DebugWriter.WriteDebug(DebugLevel.I, "Splash displaying.");
-                while (!SplashClosing)
-                {
-                    Color firstDotColor = dotStep >= 1 ? secondColor : firstColor;
-                    Color secondDotColor = dotStep >= 2 ? secondColor : firstColor;
-                    Color thirdDotColor = dotStep >= 3 ? secondColor : firstColor;
+                Color firstDotColor = dotStep >= 1 ? secondColor : firstColor;
+                Color secondDotColor = dotStep >= 2 ? secondColor : firstColor;
+                Color thirdDotColor = dotStep >= 3 ? secondColor : firstColor;
 
-                    // Write the three dots
-                    string dots = $"{firstDotColor.VTSequenceForeground}* {secondDotColor.VTSequenceForeground}* {thirdDotColor.VTSequenceForeground}*";
-                    int dotsPosX = ConsoleWrapper.WindowWidth / 2 - VtSequenceTools.FilterVTSequences(dots).Length / 2;
-                    int dotsPosY = ConsoleWrapper.WindowHeight - 2;
-                    TextWriterWhereColor.WriteWhere(dots, dotsPosX, dotsPosY);
-                    Thread.Sleep(500);
-                    dotStep++;
-                    if (dotStep > 3)
-                        dotStep = 0;
-                }
+                // Write the three dots
+                string dots = $"{firstDotColor.VTSequenceForeground}* {secondDotColor.VTSequenceForeground}* {thirdDotColor.VTSequenceForeground}*";
+                int dotsPosX = (ConsoleWrapper.WindowWidth / 2) - (VtSequenceTools.FilterVTSequences(dots).Length / 2);
+                int dotsPosY = ConsoleWrapper.WindowHeight - 2;
+                builder.Append(TextWriterWhereColor.RenderWherePlain(dots, dotsPosX, dotsPosY));
+                dotStep++;
+                if (dotStep > 3)
+                    dotStep = 0;
             }
             catch (ThreadInterruptedException)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Splash done.");
             }
+            return builder.ToString();
         }
 
-        public override void Closing(SplashContext context)
+        public override string Closing(SplashContext context, out bool delayRequired)
         {
-            ConsoleWrapper.Clear();
+            var builder = new StringBuilder();
+            builder.Append(
+                base.Opening(context)
+            );
             DebugWriter.WriteDebug(DebugLevel.I, "Splash closing...");
 
             if (context == SplashContext.Showcase || context == SplashContext.Preboot)
-                return;
+            {
+                delayRequired = false;
+                return builder.ToString();
+            }
 
             // Write a glorious Welcome screen
             Color col = KernelColorTools.GetColor(KernelColorType.Stage);
-            string text = (context == SplashContext.StartingUp ? Translate.DoTranslation("Welcome!") : Translate.DoTranslation("Goodbye!")).ToUpper();
+            string text =
+                (context == SplashContext.StartingUp ?
+                 Translate.DoTranslation("Welcome!") :
+                 Translate.DoTranslation("Goodbye!"))
+                .ToUpper();
             var figFont = FigletTools.GetFigletFont(TextTools.DefaultFigletFontName);
             var figFontFallback = FigletTools.GetFigletFont("small");
             int figWidth = FigletTools.GetFigletWidth(text, figFont) / 2;
             int figHeight = FigletTools.GetFigletHeight(text, figFont) / 2;
             int figWidthFallback = FigletTools.GetFigletWidth(text, figFontFallback) / 2;
             int figHeightFallback = FigletTools.GetFigletHeight(text, figFontFallback) / 2;
-            int consoleX = ConsoleWrapper.WindowWidth / 2 - figWidth;
-            int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
+            int width = ConsoleWrapper.WindowWidth;
+            int height = ConsoleWrapper.WindowHeight;
+            int consoleX = (width / 2) - figWidth;
+            int consoleY = (height / 2) - figHeight;
             if (consoleX < 0 || consoleY < 0)
             {
                 // The figlet won't fit, so use small text
-                consoleX = ConsoleWrapper.WindowWidth / 2 - figWidthFallback;
-                consoleY = ConsoleWrapper.WindowHeight / 2 - figHeightFallback;
+                consoleX = (width / 2) - figWidthFallback;
+                consoleY = (height / 2) - figHeightFallback;
                 if (consoleX < 0 || consoleY < 0)
                 {
                     // The fallback figlet also won't fit, so use smaller text
-                    consoleX = ConsoleWrapper.WindowWidth / 2 - text.Length / 2;
-                    consoleY = ConsoleWrapper.WindowHeight / 2;
-                    TextWriterWhereColor.WriteWhereColor(text, consoleX, consoleY, true, col);
+                    consoleX = (width / 2) - (text.Length / 2);
+                    consoleY = height / 2;
+                    builder.Append(
+                        col.VTSequenceForeground +
+                        TextWriterWhereColor.RenderWherePlain(text, consoleX, consoleY, true)
+                    );
                 }
                 else
                 {
                     // Write the figlet.
-                    FigletWhereColor.WriteFigletWhereColor(text, consoleX, consoleY, true, figFontFallback, col);
+                    builder.Append(
+                        col.VTSequenceForeground +
+                        FigletWhereColor.RenderFigletWherePlain(text, consoleX, consoleY, true, figFontFallback)
+                    );
                     consoleY += figHeightFallback * 2;
                 }
             }
             else
             {
                 // Write the figlet.
-                FigletWhereColor.WriteFigletWhereColor(text, consoleX, consoleY, true, figFont, col);
+                builder.Append(
+                    col.VTSequenceForeground +
+                    FigletWhereColor.RenderFigletWherePlain(text, consoleX, consoleY, true, figFont)
+                );
                 consoleY += figHeight * 2;
             }
-            CenteredTextColor.WriteCenteredOneLineColor(consoleY + 2, KernelReleaseInfo.ConsoleTitle, col);
-
-            // Simulate 0.0.1's behavior on shutting down
-            if (context != SplashContext.ShuttingDown || context == SplashContext.ShuttingDown && PowerManager.BeepOnShutdown)
-                ConsoleWrapper.Beep();
-            if (context != SplashContext.ShuttingDown || context == SplashContext.ShuttingDown && PowerManager.DelayOnShutdown)
-                Thread.Sleep(3000);
-
-            // Clear the console
-            ConsoleWrapper.Clear();
+            builder.Append(
+                col.VTSequenceForeground +
+                CenteredTextColor.RenderCenteredOneLine(consoleY + 2, KernelReleaseInfo.ConsoleTitle)
+            );
+            delayRequired = true;
+            return builder.ToString();
         }
 
-        public override void Report(int Progress, string ProgressReport, params object[] Vars) =>
+        public override string Report(int Progress, string ProgressReport, params object[] Vars) =>
             ReportProgress(Progress, ProgressReport, KernelColorType.Stage, Vars);
 
-        public override void ReportWarning(int Progress, string WarningReport, Exception ExceptionInfo, params object[] Vars) =>
+        public override string ReportWarning(int Progress, string WarningReport, Exception ExceptionInfo, params object[] Vars) =>
             ReportProgress(Progress, WarningReport, KernelColorType.Warning, Vars);
 
-        public override void ReportError(int Progress, string ErrorReport, Exception ExceptionInfo, params object[] Vars) =>
+        public override string ReportError(int Progress, string ErrorReport, Exception ExceptionInfo, params object[] Vars) =>
             ReportProgress(Progress, ErrorReport, KernelColorType.Error, Vars);
 
-        private void ReportProgress(int Progress, string ProgressReport, KernelColorType colorType, params object[] Vars)
+        private string ReportProgress(int Progress, string ProgressReport, KernelColorType colorType, params object[] Vars)
         {
+            var builder = new StringBuilder();
             Color col = KernelColorTools.GetColor(colorType);
             string text = $"{Progress}%";
             var figFont = FigletTools.GetFigletFont(TextTools.DefaultFigletFontName);
             int figHeight = FigletTools.GetFigletHeight(text, figFont) / 2;
             int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
+            builder.Append(
+                col.VTSequenceForeground
+            );
             for (int i = consoleY; i <= consoleY + figHeight; i++)
-                TextWriterWhereColor.WriteWhereColor(ConsoleExtensions.GetClearLineToRightSequence(), 0, i, true, col);
-            CenteredFigletTextColor.WriteCenteredFigletColor(consoleY, figFont, text, col, Vars);
-            TextWriterWhereColor.WriteWhereColor(ConsoleExtensions.GetClearLineToRightSequence(), 0, consoleY - 2, true, col);
-            CenteredTextColor.WriteCenteredOneLine(consoleY - 2, ProgressReport, Vars);
+                builder.Append(TextWriterWhereColor.RenderWherePlain(ConsoleExtensions.GetClearLineToRightSequence(), 0, i, true));
+            builder.Append(
+                CenteredFigletTextColor.RenderCenteredFiglet(consoleY, figFont, text, Vars) +
+                TextWriterWhereColor.RenderWherePlain(ConsoleExtensions.GetClearLineToRightSequence(), 0, consoleY - 2, true) +
+                CenteredTextColor.RenderCenteredOneLine(consoleY - 2, ProgressReport, Vars)
+            );
+            return builder.ToString();
         }
 
     }

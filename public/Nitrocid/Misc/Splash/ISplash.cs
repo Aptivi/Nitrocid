@@ -28,7 +28,7 @@ namespace KS.Misc.Splash
     {
 
         /// <summary>
-        /// Whether the splash is closing. If true, the thread of which handles the display should close itself. <see cref="Closing(SplashContext)"/> should set this property to True.
+        /// Whether the splash is closing. If true, the thread of which handles the display should close itself. <see cref="Closing(SplashContext, out bool)"/> should set this property to True.
         /// </summary>
         bool SplashClosing { get; set; }
         /// <summary>
@@ -43,24 +43,29 @@ namespace KS.Misc.Splash
         /// The opening screen. Should be synchronous.
         /// </summary>
         /// <param name="context">Context of the splash screen (can be used as a reason as to why do you want to display the splash)</param>
-        void Opening(SplashContext context);
+        /// <returns>A VT sequence to render the opening part</returns>
+        string Opening(SplashContext context);
         /// <summary>
         /// The screen which is meant to be looped. You can set it to do nothing. Should be async. It should also handle <see cref="System.Threading.ThreadInterruptedException"/> to avoid kernel exiting on startup.
         /// </summary>
         /// <param name="context">Context of the splash screen (can be used as a reason as to why do you want to display the splash)</param>
-        void Display(SplashContext context);
+        /// <returns>A VT sequence to render the display</returns>
+        string Display(SplashContext context);
         /// <summary>
         /// The closing screen. Should be synchronous.
         /// </summary>
         /// <param name="context">Context of the splash screen (can be used as a reason as to why do you want to display the splash)</param>
-        void Closing(SplashContext context);
+        /// <param name="delayRequired">Whether the 3-second delay is required or not after closing the splash</param>
+        /// <returns>A VT sequence to render the closing part</returns>
+        string Closing(SplashContext context, out bool delayRequired);
         /// <summary>
         /// Report the progress
         /// </summary>
         /// <param name="ProgressReport">The progress text to indicate how did the kernel progress</param>
         /// <param name="Progress">The progress indicator of the kernel</param>
         /// <param name="Vars">Variables to be formatted in the text</param>
-        void Report(int Progress, string ProgressReport, params object[] Vars);
+        /// <returns>A VT sequence to render the progress</returns>
+        string Report(int Progress, string ProgressReport, params object[] Vars);
         /// <summary>
         /// Report the progress warning
         /// </summary>
@@ -68,7 +73,8 @@ namespace KS.Misc.Splash
         /// <param name="WarningReport">The progress text to indicate what went wrong</param>
         /// <param name="ExceptionInfo">Exception that caused the warning</param>
         /// <param name="Vars">Variables to be formatted in the text</param>
-        void ReportWarning(int Progress, string WarningReport, Exception ExceptionInfo, params object[] Vars);
+        /// <returns>A VT sequence to render the progress warning</returns>
+        string ReportWarning(int Progress, string WarningReport, Exception ExceptionInfo, params object[] Vars);
         /// <summary>
         /// Report the progress error
         /// </summary>
@@ -76,7 +82,8 @@ namespace KS.Misc.Splash
         /// <param name="ErrorReport">The progress text to indicate what went wrong</param>
         /// <param name="ExceptionInfo">Exception that caused the error</param>
         /// <param name="Vars">Variables to be formatted in the text</param>
-        void ReportError(int Progress, string ErrorReport, Exception ExceptionInfo, params object[] Vars);
+        /// <returns>A VT sequence to render the progress error</returns>
+        string ReportError(int Progress, string ErrorReport, Exception ExceptionInfo, params object[] Vars);
 
     }
 }

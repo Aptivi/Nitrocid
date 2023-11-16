@@ -23,9 +23,7 @@ using KS.Shell.Prompts;
 using KS.Shell.ShellBase.Shells;
 using Nitrocid.Extras.JsonShell.Json;
 using Nitrocid.Extras.JsonShell.Settings;
-using Nitrocid.Extras.JsonShell.Tools;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Reflection;
 

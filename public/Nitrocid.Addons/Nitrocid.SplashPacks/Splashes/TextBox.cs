@@ -33,40 +33,46 @@ namespace Nitrocid.SplashPacks.Splashes
         // Standalone splash information
         public override string SplashName => "TextBox";
 
-        public override void Display(SplashContext context)
+        public override string Display(SplashContext context)
         {
             try
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Splash displaying.");
-
-                // Loop until closing
-                while (!SplashClosing)
-                    Thread.Sleep(1);
             }
             catch (ThreadInterruptedException)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Splash done.");
             }
+            return "";
         }
 
-        public override void Report(int Progress, string ProgressReport, params object[] Vars)
+        public override string Report(int Progress, string ProgressReport, params object[] Vars)
         {
             KernelColorTools.LoadBack();
             InfoBoxColor.WriteInfoBox($"*) {ProgressReport}\n\n{Progress}%", false, Vars);
+            return "";
         }
 
-        public override void ReportWarning(int Progress, string WarningReport, Exception ExceptionInfo, params object[] Vars)
+        public override string ReportWarning(int Progress, string WarningReport, Exception ExceptionInfo, params object[] Vars)
         {
-            string exceptionMessage = ExceptionInfo is not null ? ExceptionInfo.Message : Translate.DoTranslation("Unknown error!");
+            string exceptionMessage =
+                ExceptionInfo is not null ?
+                ExceptionInfo.Message :
+                Translate.DoTranslation("Unknown error!");
             KernelColorTools.LoadBack();
             InfoBoxColor.WriteInfoBox($"!) {WarningReport}\n\n{exceptionMessage}\n\n{Progress}%", false, Vars);
+            return "";
         }
 
-        public override void ReportError(int Progress, string ErrorReport, Exception ExceptionInfo, params object[] Vars)
+        public override string ReportError(int Progress, string ErrorReport, Exception ExceptionInfo, params object[] Vars)
         {
-            string exceptionMessage = ExceptionInfo is not null ? ExceptionInfo.Message : Translate.DoTranslation("Unknown error!");
+            string exceptionMessage =
+                ExceptionInfo is not null ?
+                ExceptionInfo.Message :
+                Translate.DoTranslation("Unknown error!");
             KernelColorTools.LoadBack();
             InfoBoxColor.WriteInfoBox($"X) {ErrorReport}\n\n{exceptionMessage}\n\n{Progress}%", false, Vars);
+            return "";
         }
     }
 }

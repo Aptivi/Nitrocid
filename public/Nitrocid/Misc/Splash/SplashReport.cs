@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using KS.ConsoleBase.Buffered;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel;
@@ -133,8 +134,14 @@ namespace KS.Misc.Splash
                 {
                     if (SplashManager.EnableSplash && splash != null)
                     {
+                        var openingPart = new ScreenPart();
                         DebugWriter.WriteDebug(DebugLevel.I, "Invoking splash to report {0}...", Text);
-                        splash.Report(_Progress, Text, Vars);
+                        openingPart.AddDynamicText(() => splash.Report(_Progress, Text, Vars));
+                        if (SplashManager.splashScreen.ScreenParts.Length > 2)
+                            SplashManager.splashScreen.EditBufferedPart(2, openingPart);
+                        else
+                            SplashManager.splashScreen.AddBufferedPart(openingPart);
+                        ScreenTools.Render();
                     }
                     else if (!KernelEntry.QuietKernel)
                     {

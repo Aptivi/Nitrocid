@@ -52,6 +52,23 @@ namespace KS.ConsoleBase.Buffered
         }
 
         /// <summary>
+        /// Edits the buffered part to the list of screen parts
+        /// </summary>
+        /// <param name="idx">Part index</param>
+        /// <param name="part">Buffered screen part to add to the screen part list for buffering</param>
+        /// <exception cref="KernelException"></exception>
+        public void EditBufferedPart(int idx, ScreenPart part)
+        {
+            if (idx < 0 || idx >= screenParts.Count)
+                throw new KernelException(KernelExceptionType.Console, Translate.DoTranslation("The specified part index is out of range."));
+            if (part is null)
+                throw new KernelException(KernelExceptionType.Console, Translate.DoTranslation("You must specify the screen part."));
+
+            // Now, add the buffered part
+            screenParts[idx] = part;
+        }
+
+        /// <summary>
         /// Removes the buffered part from the list of screen parts
         /// </summary>
         /// <param name="part">Buffered screen part to add to the screen part list for buffering</param>

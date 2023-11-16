@@ -53,32 +53,29 @@ namespace Nitrocid.SplashPacks.Splashes
         private readonly char TransitionChar = Convert.ToChar(0xE0B0);
 
         // Actual logic
-        public override void Display(SplashContext context)
+        public override string Display(SplashContext context)
         {
             try
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Splash displaying.");
 
                 // Display the progress bar
-                UpdateProgressReport(SplashReport.Progress, false, false, SplashReport.ProgressText);
-
-                // Loop until closing
-                while (!SplashClosing)
-                    Thread.Sleep(10);
+                return UpdateProgressReport(SplashReport.Progress, false, false, SplashReport.ProgressText);
             }
             catch (ThreadInterruptedException)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Splash done.");
             }
+            return "";
         }
 
-        public override void Report(int Progress, string ProgressReport, params object[] Vars) =>
+        public override string Report(int Progress, string ProgressReport, params object[] Vars) =>
             UpdateProgressReport(Progress, false, false, ProgressReport, Vars);
 
-        public override void ReportWarning(int Progress, string WarningReport, Exception ExceptionInfo, params object[] Vars) =>
+        public override string ReportWarning(int Progress, string WarningReport, Exception ExceptionInfo, params object[] Vars) =>
             UpdateProgressReport(Progress, false, true, WarningReport, Vars);
 
-        public override void ReportError(int Progress, string ErrorReport, Exception ExceptionInfo, params object[] Vars) =>
+        public override string ReportError(int Progress, string ErrorReport, Exception ExceptionInfo, params object[] Vars) =>
             UpdateProgressReport(Progress, true, false, ErrorReport, Vars);
 
         /// <summary>
@@ -89,7 +86,7 @@ namespace Nitrocid.SplashPacks.Splashes
         /// <param name="ProgressWarning">The progress warning or not</param>
         /// <param name="ProgressReport">The progress text</param>
         /// <param name="Vars">Variables to be formatted in the text</param>
-        public void UpdateProgressReport(int Progress, bool ProgressErrored, bool ProgressWarning, string ProgressReport, params object[] Vars)
+        public string UpdateProgressReport(int Progress, bool ProgressErrored, bool ProgressWarning, string ProgressReport, params object[] Vars)
         {
             // Variables
             var PresetStringBuilder = new StringBuilder();
@@ -120,19 +117,28 @@ namespace Nitrocid.SplashPacks.Splashes
             PresetStringBuilder.AppendFormat("{0} ", TransitionChar);
 
             // Display the text and percentage
-            TextWriterWhereColor.WriteWhereKernelColor(PresetStringBuilder.ToString(), 0, ProgressWritePositionY, false, KernelColorType.Progress, Vars);
-            ConsoleExtensions.ClearLineToRight();
+            PresetStringBuilder.Append(
+                KernelColorTools.GetColor(KernelColorType.Progress).VTSequenceForeground +
+                TextWriterWhereColor.RenderWherePlain(PresetStringBuilder.ToString(), 0, ProgressWritePositionY, false, KernelColorType.Progress, Vars) +
+                ConsoleExtensions.GetClearLineToRightSequence()
+            );
 
             // Display the progress bar
-            if (!string.IsNullOrEmpty(SplashPackInit.SplashConfig.PowerLineProgressProgressColor) & KernelColorTools.TryParseColor(SplashPackInit.SplashConfig.PowerLineProgressProgressColor))
+            if (!string.IsNullOrEmpty(SplashPackInit.SplashConfig.PowerLineProgressProgressColor) &
+                KernelColorTools.TryParseColor(SplashPackInit.SplashConfig.PowerLineProgressProgressColor))
             {
                 var ProgressColor = new Color(SplashPackInit.SplashConfig.PowerLineProgressProgressColor);
-                ProgressBarColor.WriteProgress(Progress, 4, ConsoleWrapper.WindowHeight - 4, ProgressColor);
+                PresetStringBuilder.Append(
+                    ProgressBarColor.RenderProgress(Progress, 4, ConsoleWrapper.WindowHeight - 4, 0, 0, ProgressColor, ProgressColor, KernelColorTools.GetColor(KernelColorType.Background))
+                );
             }
             else
             {
-                ProgressBarColor.WriteProgress(Progress, 4, ConsoleWrapper.WindowHeight - 4);
+                PresetStringBuilder.Append(
+                    ProgressBarColor.RenderProgress(Progress, 4, ConsoleWrapper.WindowHeight - 4, 0, 0, KernelColorTools.GetColor(KernelColorType.Progress), KernelColorTools.GetGray(), KernelColorTools.GetColor(KernelColorType.Background))
+                );
             }
+            return PresetStringBuilder.ToString();
         }
 
     }

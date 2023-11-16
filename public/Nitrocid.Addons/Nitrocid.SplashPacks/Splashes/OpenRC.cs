@@ -27,6 +27,7 @@ using Terminaux.Colors;
 using KS.Misc.Splash;
 using KS.ConsoleBase;
 using KS.Kernel;
+using System.Text;
 
 namespace Nitrocid.SplashPacks.Splashes
 {
@@ -45,91 +46,113 @@ namespace Nitrocid.SplashPacks.Splashes
         private readonly Color OpenRCPlaceholderColor = new(85, 85, 255);
 
         // Actual logic
-        public override void Opening(SplashContext context)
+        public override string Opening(SplashContext context)
         {
+            var builder = new StringBuilder();
             Beginning = true;
             DebugWriter.WriteDebug(DebugLevel.I, "Splash opening. Clearing console...");
             ConsoleWrapper.Clear();
-            TextWriterColor.Write(
+            builder.Append(
                 CharManager.NewLine +
                 $"   {OpenRCIndicatorColor.VTSequenceForeground}OpenRC " +
                 $"{OpenRCVersionColor.VTSequenceForeground}0.13.11 " +
                 $"{KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground}is starting up " +
                 $"{OpenRCPlaceholderColor.VTSequenceForeground}Nitrocid KS {KernelMain.VersionFullStr}" + CharManager.NewLine
             );
+            return builder.ToString();
         }
 
-        public override void Display(SplashContext context)
+        public override string Display(SplashContext context)
         {
             try
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Splash displaying.");
                 IndicatorLeft = ConsoleWrapper.WindowWidth - 8;
                 IndicatorTop = ConsoleWrapper.CursorTop;
-                while (!SplashClosing)
-                    Thread.Sleep(1);
             }
             catch (ThreadInterruptedException)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Splash done.");
             }
+            return "";
         }
 
-        public override void Closing(SplashContext context)
-        {
-            DebugWriter.WriteDebug(DebugLevel.I, "Splash closing. Clearing console...");
-            ConsoleWrapper.Clear();
-        }
+        public override string Closing(SplashContext context, out bool delayRequired) =>
+            base.Closing(context, out delayRequired);
 
-        public override void Report(int Progress, string ProgressReport, params object[] Vars)
+        public override string Report(int Progress, string ProgressReport, params object[] Vars)
         {
+            var builder = new StringBuilder();
             if (!Beginning)
             {
-                TextWriterWhereColor.WriteWhereColor("[    ]", IndicatorLeft, IndicatorTop, true, OpenRCPlaceholderColor);
-                TextWriterWhereColor.WriteWhereColor(" ok ", IndicatorLeft + 1, IndicatorTop, true, OpenRCIndicatorColor);
+                builder.Append(
+                    OpenRCPlaceholderColor.VTSequenceForeground +
+                    TextWriterWhereColor.RenderWherePlain("[    ]", IndicatorLeft, IndicatorTop, true) +
+                    OpenRCIndicatorColor.VTSequenceForeground +
+                    TextWriterWhereColor.RenderWherePlain(" ok ", IndicatorLeft + 1, IndicatorTop, true)
+                );
             }
-            TextWriterColor.WriteColor($" * ", false, OpenRCIndicatorColor);
-            TextWriterColor.Write(ProgressReport, Vars);
+            builder.Append(
+                OpenRCIndicatorColor.VTSequenceForeground +
+                $" * {TextTools.FormatString(ProgressReport, Vars)}"
+            );
             if (!Beginning)
             {
                 IndicatorLeft = ConsoleWrapper.WindowWidth - 8;
                 IndicatorTop = ConsoleWrapper.CursorTop - 1;
             }
             Beginning = false;
+            return builder.ToString();
         }
 
-        public override void ReportError(int Progress, string ErrorReport, Exception ExceptionInfo, params object[] Vars)
+        public override string ReportError(int Progress, string ErrorReport, Exception ExceptionInfo, params object[] Vars)
         {
+            var builder = new StringBuilder();
             if (!Beginning)
             {
-                TextWriterWhereColor.WriteWhereColor("[    ]", IndicatorLeft, IndicatorTop, true, OpenRCPlaceholderColor);
-                TextWriterWhereColor.WriteWhereColor("fail", IndicatorLeft + 1, IndicatorTop, true, OpenRCIndicatorColor);
+                builder.Append(
+                    OpenRCPlaceholderColor.VTSequenceForeground +
+                    TextWriterWhereColor.RenderWherePlain("[    ]", IndicatorLeft, IndicatorTop, true) +
+                    OpenRCIndicatorColor.VTSequenceForeground +
+                    TextWriterWhereColor.RenderWherePlain("fail", IndicatorLeft + 1, IndicatorTop, true)
+                );
             }
-            TextWriterColor.WriteColor($" * ", false, OpenRCIndicatorColor);
-            TextWriterColor.Write(ErrorReport, Vars);
+            builder.Append(
+                OpenRCIndicatorColor.VTSequenceForeground +
+                $" * {TextTools.FormatString(ErrorReport, Vars)}"
+            );
             if (!Beginning)
             {
                 IndicatorLeft = ConsoleWrapper.WindowWidth - 8;
                 IndicatorTop = ConsoleWrapper.CursorTop - 1;
             }
             Beginning = false;
+            return builder.ToString();
         }
 
-        public override void ReportWarning(int Progress, string WarningReport, Exception ExceptionInfo, params object[] Vars)
+        public override string ReportWarning(int Progress, string WarningReport, Exception ExceptionInfo, params object[] Vars)
         {
+            var builder = new StringBuilder();
             if (!Beginning)
             {
-                TextWriterWhereColor.WriteWhereColor("[    ]", IndicatorLeft, IndicatorTop, true, OpenRCPlaceholderColor);
-                TextWriterWhereColor.WriteWhereColor("warn", IndicatorLeft + 1, IndicatorTop, true, OpenRCIndicatorColor);
+                builder.Append(
+                    OpenRCPlaceholderColor.VTSequenceForeground +
+                    TextWriterWhereColor.RenderWherePlain("[    ]", IndicatorLeft, IndicatorTop, true) +
+                    OpenRCIndicatorColor.VTSequenceForeground +
+                    TextWriterWhereColor.RenderWherePlain("warn", IndicatorLeft + 1, IndicatorTop, true)
+                );
             }
-            TextWriterColor.WriteColor($" * ", false, OpenRCIndicatorColor);
-            TextWriterColor.Write(WarningReport, Vars);
+            builder.Append(
+                OpenRCIndicatorColor.VTSequenceForeground +
+                $" * {TextTools.FormatString(WarningReport, Vars)}"
+            );
             if (!Beginning)
             {
                 IndicatorLeft = ConsoleWrapper.WindowWidth - 8;
                 IndicatorTop = ConsoleWrapper.CursorTop - 1;
             }
             Beginning = false;
+            return builder.ToString();
         }
 
     }

@@ -24,11 +24,14 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using Terminaux.Colors;
 using Terminaux.Sequences.Tools;
 using KS.Misc.Splash;
+using System.Text;
 
 namespace Nitrocid.SplashPacks.Splashes
 {
     class SplashDots : BaseSplash, ISplash
     {
+
+        private int dotStep = 0;
 
         // Standalone splash information
         public override string SplashName => "Dots";
@@ -38,33 +41,30 @@ namespace Nitrocid.SplashPacks.Splashes
         readonly Color secondColor = new(ConsoleColors.Cyan);
 
         // Actual logic
-        public override void Display(SplashContext context)
+        public override string Display(SplashContext context)
         {
+            var builder = new StringBuilder();
             try
             {
-                int dotStep = 0;
                 DebugWriter.WriteDebug(DebugLevel.I, "Splash displaying.");
-                while (!SplashClosing)
-                {
-                    Color firstDotColor = dotStep >= 1 ? secondColor : firstColor;
-                    Color secondDotColor = dotStep >= 2 ? secondColor : firstColor;
-                    Color thirdDotColor = dotStep >= 3 ? secondColor : firstColor;
+                Color firstDotColor  = dotStep >= 1 ? secondColor : firstColor;
+                Color secondDotColor = dotStep >= 2 ? secondColor : firstColor;
+                Color thirdDotColor  = dotStep >= 3 ? secondColor : firstColor;
 
-                    // Write the three dots
-                    string dots = $"{firstDotColor.VTSequenceForeground}* {secondDotColor.VTSequenceForeground}* {thirdDotColor.VTSequenceForeground}*";
-                    int dotsPosX = ConsoleWrapper.WindowWidth / 2 - VtSequenceTools.FilterVTSequences(dots).Length / 2;
-                    int dotsPosY = ConsoleWrapper.WindowHeight - 2;
-                    TextWriterWhereColor.WriteWhere(dots, dotsPosX, dotsPosY);
-                    Thread.Sleep(500);
-                    dotStep++;
-                    if (dotStep > 3)
-                        dotStep = 0;
-                }
+                // Write the three dots
+                string dots = $"{firstDotColor.VTSequenceForeground}* {secondDotColor.VTSequenceForeground}* {thirdDotColor.VTSequenceForeground}*";
+                int dotsPosX = (ConsoleWrapper.WindowWidth / 2) - (VtSequenceTools.FilterVTSequences(dots).Length / 2);
+                int dotsPosY = ConsoleWrapper.WindowHeight - 2;
+                builder.Append(TextWriterWhereColor.RenderWherePlain(dots, dotsPosX, dotsPosY));
+                dotStep++;
+                if (dotStep > 3)
+                    dotStep = 0;
             }
             catch (ThreadInterruptedException)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Splash done.");
             }
+            return builder.ToString();
         }
 
     }

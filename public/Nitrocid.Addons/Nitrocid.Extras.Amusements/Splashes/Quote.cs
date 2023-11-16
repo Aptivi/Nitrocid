@@ -18,6 +18,7 @@
 //
 
 using System.Linq;
+using System.Text;
 using System.Threading;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
@@ -37,8 +38,9 @@ namespace Nitrocid.Extras.Amusements.Splashes
         public override string SplashName => "Quote";
 
         // Actual logic
-        public override void Display(SplashContext context)
+        public override string Display(SplashContext context)
         {
+            var builder = new StringBuilder();
             try
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Splash displaying.");
@@ -54,17 +56,17 @@ namespace Nitrocid.Extras.Amusements.Splashes
                 {
                     int currentY = halfConsoleY + i;
                     string str = quoteSplit[i];
-                    TextWriterWhereColor.WriteWhereColor(str, quotePosX, currentY, quoteColor);
+                    builder.Append(
+                        quoteColor.VTSequenceForeground +
+                        TextWriterWhereColor.RenderWherePlain(str, quotePosX, currentY)
+                    );
                 }
-
-                // Loop until closing
-                while (!SplashClosing)
-                    Thread.Sleep(1);
             }
             catch (ThreadInterruptedException)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Splash done.");
             }
+            return builder.ToString();
         }
 
     }

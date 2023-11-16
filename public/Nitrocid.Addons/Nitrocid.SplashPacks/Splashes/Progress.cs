@@ -27,6 +27,7 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
 using Terminaux.Colors;
 using KS.Misc.Splash;
+using System.Text;
 
 namespace Nitrocid.SplashPacks.Splashes
 {
@@ -57,32 +58,29 @@ namespace Nitrocid.SplashPacks.Splashes
             };
 
         // Actual logic
-        public override void Display(SplashContext context)
+        public override string Display(SplashContext context)
         {
             try
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Splash displaying.");
 
                 // Display the progress bar
-                UpdateProgressReport(SplashReport.Progress, false, false, SplashReport.ProgressText);
-
-                // Loop until closing
-                while (!SplashClosing)
-                    Thread.Sleep(1);
+                return UpdateProgressReport(SplashReport.Progress, false, false, SplashReport.ProgressText);
             }
             catch (ThreadInterruptedException)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Splash done.");
             }
+            return "";
         }
 
-        public override void Report(int Progress, string ProgressReport, params object[] Vars) =>
+        public override string Report(int Progress, string ProgressReport, params object[] Vars) =>
             UpdateProgressReport(Progress, false, false, ProgressReport, Vars);
 
-        public override void ReportWarning(int Progress, string WarningReport, Exception ExceptionInfo, params object[] Vars) =>
+        public override string ReportWarning(int Progress, string WarningReport, Exception ExceptionInfo, params object[] Vars) =>
             UpdateProgressReport(Progress, false, true, WarningReport, Vars);
 
-        public override void ReportError(int Progress, string ErrorReport, Exception ExceptionInfo, params object[] Vars) =>
+        public override string ReportError(int Progress, string ErrorReport, Exception ExceptionInfo, params object[] Vars) =>
             UpdateProgressReport(Progress, true, false, ErrorReport, Vars);
 
         /// <summary>
@@ -93,25 +91,43 @@ namespace Nitrocid.SplashPacks.Splashes
         /// <param name="ProgressWarning">The progress warning or not</param>
         /// <param name="ProgressReport">The progress text</param>
         /// <param name="Vars">Variables to be formatted in the text</param>
-        public void UpdateProgressReport(int Progress, bool ProgressErrored, bool ProgressWarning, string ProgressReport, params object[] Vars)
+        public string UpdateProgressReport(int Progress, bool ProgressErrored, bool ProgressWarning, string ProgressReport, params object[] Vars)
         {
+            var PresetStringBuilder = new StringBuilder();
+
             // Display the text and percentage
+            var finalColor =
+                ProgressErrored ? KernelColorTools.GetColor(KernelColorType.Error) :
+                ProgressWarning ? KernelColorTools.GetColor(KernelColorType.Warning) :
+                KernelColorTools.GetColor(KernelColorType.Progress);
+            string indicator =
+                ProgressErrored ? "[X] " :
+                ProgressWarning ? "[!] " :
+                "    ";
             string RenderedText = ProgressReport.Truncate(ConsoleWrapper.WindowWidth - ProgressReportWritePositionX - ProgressWritePositionX - 3);
-            TextWriterWhereColor.WriteWhereKernelColor("{0:000}%", ProgressWritePositionX, ProgressWritePositionY, true, KernelColorType.Progress, Progress);
-            TextWriterWhereColor.WriteWhereKernelColor($"{(ProgressErrored ? "[X] " : "")}{RenderedText}", ProgressReportWritePositionX, ProgressReportWritePositionY, false, KernelColorType.Error, Vars);
-            TextWriterWhereColor.WriteWhereKernelColor($"{(ProgressWarning ? "[!] " : "")}{RenderedText}", ProgressReportWritePositionX, ProgressReportWritePositionY, false, KernelColorType.Warning, Vars);
-            ConsoleExtensions.ClearLineToRight();
+            PresetStringBuilder.Append(
+                KernelColorTools.GetColor(KernelColorType.Progress).VTSequenceForeground +
+                TextWriterWhereColor.RenderWherePlain("{0:000}%", ProgressWritePositionX, ProgressWritePositionY, true, vars: Progress) +
+                finalColor.VTSequenceForeground +
+                TextWriterWhereColor.RenderWherePlain($"{indicator}{RenderedText}", ProgressReportWritePositionX, ProgressReportWritePositionY, false, Vars) +
+                ConsoleExtensions.GetClearLineToRightSequence()
+            );
 
             // Display the progress bar
             if (!string.IsNullOrEmpty(SplashPackInit.SplashConfig.ProgressProgressColor) & KernelColorTools.TryParseColor(SplashPackInit.SplashConfig.ProgressProgressColor))
             {
                 var ProgressColor = new Color(SplashPackInit.SplashConfig.ProgressProgressColor);
-                ProgressBarColor.WriteProgress(Progress, 4, ConsoleWrapper.WindowHeight - 4, ProgressColor);
+                PresetStringBuilder.Append(
+                    ProgressBarColor.RenderProgress(Progress, 4, ConsoleWrapper.WindowHeight - 4, 0, 0, ProgressColor, ProgressColor, KernelColorTools.GetColor(KernelColorType.Background))
+                );
             }
             else
             {
-                ProgressBarColor.WriteProgress(Progress, 4, ConsoleWrapper.WindowHeight - 4);
+                PresetStringBuilder.Append(
+                    ProgressBarColor.RenderProgress(Progress, 4, ConsoleWrapper.WindowHeight - 4, 0, 0, KernelColorTools.GetColor(KernelColorType.Progress), KernelColorTools.GetGray(), KernelColorTools.GetColor(KernelColorType.Background))
+                );
             }
+            return PresetStringBuilder.ToString();
         }
 
     }
