@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>kslite</id>
-    <version>0.1.0-b2</version>
+    <version>0.1.0-b3</version>
     <packageSourceUrl>http://github.com/Aptivi/NitrocidKS</packageSourceUrl>
 
     <title>Nitrocid KS - Lite</title>
