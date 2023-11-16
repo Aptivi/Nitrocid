@@ -38,7 +38,7 @@ namespace KS.Shell.Shells.Debug.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            // List all available propertys on all the kernel types
+            // List all available properties on all the kernel types
             string propertyName = parameters.ArgumentsList[0];
             foreach (var type in ReflectionCommon.KernelTypes)
             {

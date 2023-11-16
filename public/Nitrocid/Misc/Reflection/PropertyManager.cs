@@ -273,7 +273,7 @@ namespace KS.Misc.Reflection
         /// <returns>Property information</returns>
         public static PropertyInfo GetProperty(string Variable, Type Type)
         {
-            // Get propertys of specified type
+            // Get properties of specified type
             var PropertyInstance = Type.GetProperty(Variable);
 
             // Check if any of them contains the specified variable
@@ -297,7 +297,7 @@ namespace KS.Misc.Reflection
             // Get types of possible flag locations
             PossibleTypes = ReflectionCommon.KernelConfigTypes;
 
-            // Get propertys of flag modules
+            // Get properties of flag modules
             foreach (Type PossibleType in PossibleTypes)
             {
                 PossibleProperty = PossibleType.GetProperty(Variable);
@@ -320,7 +320,7 @@ namespace KS.Misc.Reflection
             // Get types of possible flag locations
             PossibleTypes = ReflectionCommon.KernelTypes;
 
-            // Get propertys of flag modules
+            // Get properties of flag modules
             foreach (Type PossibleType in PossibleTypes)
             {
                 PossibleProperty = PossibleType.GetProperty(Variable);

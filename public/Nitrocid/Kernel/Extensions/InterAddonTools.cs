@@ -203,12 +203,12 @@ namespace KS.Kernel.Extensions
             DebugWriter.WriteDebug(DebugLevel.I, "Trying to get list of available properties from addon {0}...", addonInfo.AddonName);
 
             // Get a list of properties
-            var propertys = addon.PubliclyAvailableProperties;
-            if (propertys is null || propertys.Count == 0)
+            var properties = addon.PubliclyAvailableProperties;
+            if (properties is null || properties.Count == 0)
                 return null;
 
             // Assuming that we have properties, get a single property containing that name
-            if (!propertys.TryGetValue(propertyName, out PropertyInfo propertyInfo))
+            if (!properties.TryGetValue(propertyName, out PropertyInfo propertyInfo))
                 throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("Can't find property '{0}' in addon '{1}'."), propertyName, addonInfo.AddonName);
 
             // Assuming that we have that property, get a single property delegate
@@ -254,12 +254,12 @@ namespace KS.Kernel.Extensions
             DebugWriter.WriteDebug(DebugLevel.I, "Trying to get list of available properties from addon {0}...", addonInfo.AddonName);
 
             // Get a list of properties
-            var propertys = addon.PubliclyAvailableProperties;
-            if (propertys is null || propertys.Count == 0)
+            var properties = addon.PubliclyAvailableProperties;
+            if (properties is null || properties.Count == 0)
                 return;
 
             // Assuming that we have properties, get a single property containing that name
-            if (!propertys.TryGetValue(propertyName, out PropertyInfo propertyInfo))
+            if (!properties.TryGetValue(propertyName, out PropertyInfo propertyInfo))
                 throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("Can't find property '{0}' in addon '{1}'."), propertyName, addonInfo.AddonName);
 
             // Assuming that we have that property, get a single property delegate

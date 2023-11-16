@@ -213,16 +213,16 @@ namespace KS.Modifications.Communication
                 DebugWriter.WriteDebug(DebugLevel.I, "Trying to get list of available properties from mod {0} part {1}...", modInfo.ModName, modPart);
 
                 // Get a list of properties
-                var propertys = mod.PartScript.PubliclyAvailableProperties;
-                if (propertys is null || propertys.Count == 0)
+                var properties = mod.PartScript.PubliclyAvailableProperties;
+                if (properties is null || properties.Count == 0)
                     continue;
 
                 // Assuming that we have properties, get a single property containing that name
-                if (!propertys.ContainsKey(propertyName))
+                if (!properties.ContainsKey(propertyName))
                     continue;
 
                 // Assuming that we have that property, get a single property delegate
-                var property = propertys[propertyName];
+                var property = properties[propertyName];
                 if (property is null)
                     continue;
 
@@ -261,16 +261,16 @@ namespace KS.Modifications.Communication
                 DebugWriter.WriteDebug(DebugLevel.I, "Trying to get list of available properties from mod {0} part {1}...", modInfo.ModName, modPart);
 
                 // Get a list of properties
-                var propertys = mod.PartScript.PubliclyAvailableProperties;
-                if (propertys is null || propertys.Count == 0)
+                var properties = mod.PartScript.PubliclyAvailableProperties;
+                if (properties is null || properties.Count == 0)
                     continue;
 
                 // Assuming that we have properties, get a single property containing that name
-                if (!propertys.ContainsKey(propertyName))
+                if (!properties.ContainsKey(propertyName))
                     continue;
 
                 // Assuming that we have that property, get a single property delegate
-                var property = propertys[propertyName];
+                var property = properties[propertyName];
                 if (property is null)
                     continue;
 
