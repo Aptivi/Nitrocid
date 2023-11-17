@@ -363,20 +363,29 @@ namespace KS.Kernel.Starting
             {
                 // We could fail with the debugger enabled
                 KernelColorTools.LoadBack();
-                SplashManager.BeginSplashOut(SplashContext.ShuttingDown);
+                if (!PowerManager.KernelShutdown)
+                    SplashManager.BeginSplashOut(SplashContext.Rebooting);
+                else
+                    SplashManager.BeginSplashOut(SplashContext.ShuttingDown);
                 DebugWriter.WriteDebug(DebugLevel.E, $"Failed to reset everything! {ex.Message}");
                 DebugWriter.WriteDebugStackTrace(ex);
                 InfoBoxColor.WriteInfoBox(
                     Translate.DoTranslation("The kernel failed to reset all the configuration to their initial states. Some of the components might have not unloaded correctly. If you're experiencing problems after the reboot, this might be the cause. Please shut down the kernel once rebooted.") + "\n\n" +
                     Translate.DoTranslation("Error information:") + $" {ex.Message}"
                 );
-                SplashManager.EndSplashOut(SplashContext.ShuttingDown);
+                if (!PowerManager.KernelShutdown)
+                    SplashManager.BeginSplashOut(SplashContext.Rebooting);
+                else
+                    SplashManager.EndSplashOut(SplashContext.ShuttingDown);
             }
             finally
             {
                 // Unload all splashes
                 SplashReport.ReportProgress(Translate.DoTranslation("Goodbye!"));
-                SplashManager.CloseSplash(SplashContext.ShuttingDown);
+                if (!PowerManager.KernelShutdown)
+                    SplashManager.CloseSplash(SplashContext.Rebooting);
+                else
+                    SplashManager.CloseSplash(SplashContext.ShuttingDown);
                 SplashManager.UnloadSplashes();
                 DebugWriter.WriteDebug(DebugLevel.I, "Unloaded all splashes");
                 SplashReport.logBuffer.Clear();

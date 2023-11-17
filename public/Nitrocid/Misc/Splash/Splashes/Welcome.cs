@@ -89,6 +89,7 @@ namespace KS.Misc.Splash.Splashes
                     consoleY + 2,
                     (context == SplashContext.Preboot ? Translate.DoTranslation("Please wait while the kernel is initializing...") :
                      context == SplashContext.ShuttingDown ? Translate.DoTranslation("Please wait while the kernel is shutting down...") :
+                     context == SplashContext.Rebooting ? Translate.DoTranslation("Please wait while the kernel is restarting...") :
                      $"{Translate.DoTranslation("Starting")} {KernelReleaseInfo.ConsoleTitle}..."),
                     col
                 )
@@ -132,7 +133,9 @@ namespace KS.Misc.Splash.Splashes
             );
             DebugWriter.WriteDebug(DebugLevel.I, "Splash closing...");
 
-            if (context == SplashContext.Showcase || context == SplashContext.Preboot)
+            if (context == SplashContext.Showcase ||
+                context == SplashContext.Preboot ||
+                context == SplashContext.Rebooting)
             {
                 delayRequired = false;
                 return builder.ToString();
@@ -210,7 +213,11 @@ namespace KS.Misc.Splash.Splashes
         {
             var builder = new StringBuilder();
             Color col = KernelColorTools.GetColor(colorType);
-            string text = Translate.DoTranslation("Welcome!").ToUpper();
+            string text =
+                (SplashManager.CurrentSplashContext == SplashContext.StartingUp ?
+                 Translate.DoTranslation("Welcome!") :
+                 Translate.DoTranslation("Goodbye!"))
+                .ToUpper();
             var figFont = FigletTools.GetFigletFont(TextTools.DefaultFigletFontName);
             int figHeight = FigletTools.GetFigletHeight(text, figFont) / 2;
             int consoleY = (ConsoleWrapper.WindowHeight / 2) - figHeight;

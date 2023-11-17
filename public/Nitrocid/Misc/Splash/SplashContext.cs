@@ -37,6 +37,10 @@ namespace KS.Misc.Splash
         /// </summary>
         ShuttingDown,
         /// <summary>
+        /// The kernel is rebooting
+        /// </summary>
+        Rebooting,
+        /// <summary>
         /// The kernel is on the preboot stage
         /// </summary>
         Preboot,

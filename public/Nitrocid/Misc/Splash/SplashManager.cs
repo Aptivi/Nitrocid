@@ -272,17 +272,30 @@ namespace KS.Misc.Splash
         {
             if (EnableSplash)
             {
+                // Clean everything up
                 var openingPart = new ScreenPart();
                 splashScreen.RemoveBufferedParts();
+
+                // Now, set the current context and prepare
                 currentContext = context;
                 SplashReport._Progress = 0;
                 ConsoleWrapper.CursorVisible = false;
+
+                // Add the opening function as dynamic text
                 openingPart.AddDynamicText(() => splash.Opening(context));
                 splashScreen.AddBufferedPart(openingPart);
+
+                // Make it resize-aware
                 ScreenTools.SetCurrent(splashScreen);
+
+                // Finally, render it
                 ScreenTools.Render(true);
+
+                // Render the display
                 SplashThread.Stop();
                 SplashThread.Start(new SplashThreadParameters(splash.SplashName, context));
+
+                // Inform the kernel that the splash has started
                 SplashReport._InSplash = true;
             }
         }

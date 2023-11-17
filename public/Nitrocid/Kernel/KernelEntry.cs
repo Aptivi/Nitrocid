@@ -175,8 +175,11 @@ namespace KS.Kernel
 
             // Load splash
             SplashReport._KernelBooted = false;
-            SplashManager.OpenSplash(SplashContext.ShuttingDown);
-            DebugWriter.WriteDebug(DebugLevel.I, "Loaded splash.");
+            if (!PowerManager.KernelShutdown)
+                SplashManager.OpenSplash(SplashContext.Rebooting);
+            else
+                SplashManager.OpenSplash(SplashContext.ShuttingDown);
+            DebugWriter.WriteDebug(DebugLevel.I, "Loaded splash for reboot or shutdown.");
         }
     }
 }
