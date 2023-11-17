@@ -67,7 +67,7 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
                         string bufferedLine = bufferedLines[idx];
                         var Values = new List<object>();
                         buffer.Append(bufferedLine);
-                        if (idx == bufferedLines.Length - 1)
+                        if (idx < bufferedLines.Length - 1)
                             buffer.AppendLine();
 
                         if (Wrap)
@@ -187,7 +187,7 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
                         string bufferedLine = bufferedLines[idx];
                         var Values = new List<object>();
                         buffer.Append(bufferedLine);
-                        if (idx == bufferedLines.Length - 1)
+                        if (idx < bufferedLines.Length - 1)
                             buffer.AppendLine();
                         
                         if (Wrap)
@@ -308,7 +308,7 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
                         string bufferedLine = bufferedLines[idx];
                         var Values = new List<object>();
                         buffer.Append(bufferedLine);
-                        if (idx == bufferedLines.Length - 1)
+                        if (idx < bufferedLines.Length - 1)
                             buffer.AppendLine();
 
                         if (Wrap)
@@ -428,7 +428,7 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
                         string bufferedLine = bufferedLines[idx];
                         var Values = new List<object>();
                         buffer.Append(bufferedLine);
-                        if (idx == bufferedLines.Length - 1)
+                        if (idx < bufferedLines.Length - 1)
                             buffer.AppendLine();
 
                         if (Wrap)

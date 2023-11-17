@@ -87,9 +87,9 @@ namespace Nitrocid.SplashPacks.Splashes
                     int CurrentColorBlueOut = BlueColorNum;
                     DebugWriter.WriteDebug(DebugLevel.I, "Step {0}/{1}", _currentStep, _pulseMaxSteps);
                     ThreadManager.SleepNoBlock(_pulseDelay);
-                    CurrentColorRedOut = (int)Math.Round((CurrentColorRedOut - ThresholdRed) * _currentStep);
-                    CurrentColorGreenOut = (int)Math.Round((CurrentColorGreenOut - ThresholdGreen) * _currentStep);
-                    CurrentColorBlueOut = (int)Math.Round((CurrentColorBlueOut - ThresholdBlue) * _currentStep);
+                    CurrentColorRedOut = (int)Math.Round(CurrentColorRedOut - ThresholdRed * _currentStep);
+                    CurrentColorGreenOut = (int)Math.Round(CurrentColorGreenOut - ThresholdGreen * _currentStep);
+                    CurrentColorBlueOut = (int)Math.Round(CurrentColorBlueOut - ThresholdBlue * _currentStep);
                     DebugWriter.WriteDebug(DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut);
                     KernelColorTools.LoadBack(new Color(CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut));
                     _currentStep++;

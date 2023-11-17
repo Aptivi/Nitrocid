@@ -141,9 +141,9 @@ namespace Nitrocid.SplashPacks.Splashes
                     int CurrentColorBlueOut = BlueColorNum;
                     DebugWriter.WriteDebug(DebugLevel.I, "Step {0}/{1} each {2} ms", _currentStep, _beatedgepulseMaxSteps, BeatIntervalStep);
                     ThreadManager.SleepNoBlock(BeatIntervalStep);
-                    CurrentColorRedOut = (int)Math.Round((CurrentColorRedOut - ThresholdRed) * _currentStep);
-                    CurrentColorGreenOut = (int)Math.Round((CurrentColorGreenOut - ThresholdGreen) * _currentStep);
-                    CurrentColorBlueOut = (int)Math.Round((CurrentColorBlueOut - ThresholdBlue) * _currentStep);
+                    CurrentColorRedOut = (int)Math.Round(CurrentColorRedOut - ThresholdRed * _currentStep);
+                    CurrentColorGreenOut = (int)Math.Round(CurrentColorGreenOut - ThresholdGreen * _currentStep);
+                    CurrentColorBlueOut = (int)Math.Round(CurrentColorBlueOut - ThresholdBlue * _currentStep);
                     DebugWriter.WriteDebug(DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                     var color = new Color($"{CurrentColorRedOut};{CurrentColorGreenOut};{CurrentColorBlueOut}");
                     builder.Append(
@@ -250,7 +250,7 @@ namespace Nitrocid.SplashPacks.Splashes
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor right edge ({0}, {1})", FloorRightEdge, y);
                 filled.Append(
-                    CsiSequences.GenerateCsiCursorPosition(FloorRightEdge + 1, y + 1) +
+                    CsiSequences.GenerateCsiCursorPosition(FloorRightEdge + 2, y + 1) +
                     " "
                 );
             }

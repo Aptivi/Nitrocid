@@ -132,9 +132,9 @@ namespace Nitrocid.SplashPacks.Splashes
                 // Fade out
                 DebugWriter.WriteDebug(DebugLevel.I, "Step {0}/{1} each {2} ms", _currentStep, _beatFaderMaxSteps, BeatIntervalStep);
                 ThreadManager.SleepNoBlock(BeatIntervalStep);
-                int CurrentColorRedOut = (int)Math.Round((RedColorNum - ThresholdRed) * _currentStep);
-                int CurrentColorGreenOut = (int)Math.Round((GreenColorNum - ThresholdGreen) * _currentStep);
-                int CurrentColorBlueOut = (int)Math.Round((BlueColorNum - ThresholdBlue) * _currentStep);
+                int CurrentColorRedOut = (int)Math.Round(RedColorNum - ThresholdRed * _currentStep);
+                int CurrentColorGreenOut = (int)Math.Round(GreenColorNum - ThresholdGreen * _currentStep);
+                int CurrentColorBlueOut = (int)Math.Round(BlueColorNum - ThresholdBlue * _currentStep);
                 DebugWriter.WriteDebug(DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                 KernelColorTools.LoadBack(new Color($"{CurrentColorRedOut};{CurrentColorGreenOut};{CurrentColorBlueOut}"));
                 _currentStep++;

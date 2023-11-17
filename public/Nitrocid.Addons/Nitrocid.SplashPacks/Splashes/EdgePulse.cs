@@ -91,9 +91,9 @@ namespace Nitrocid.SplashPacks.Splashes
                     int CurrentColorBlueOut = BlueColorNum;
                     DebugWriter.WriteDebug(DebugLevel.I, "Step {0}/{1}", _currentStep, _edgepulseMaxSteps);
                     ThreadManager.SleepNoBlock(_edgepulseDelay);
-                    CurrentColorRedOut = (int)Math.Round((CurrentColorRedOut - ThresholdRed) * _currentStep);
-                    CurrentColorGreenOut = (int)Math.Round((CurrentColorGreenOut - ThresholdGreen) * _currentStep);
-                    CurrentColorBlueOut = (int)Math.Round((CurrentColorBlueOut - ThresholdBlue) * _currentStep);
+                    CurrentColorRedOut = (int)Math.Round(CurrentColorRedOut - ThresholdRed * _currentStep);
+                    CurrentColorGreenOut = (int)Math.Round(CurrentColorGreenOut - ThresholdGreen * _currentStep);
+                    CurrentColorBlueOut = (int)Math.Round(CurrentColorBlueOut - ThresholdBlue * _currentStep);
                     DebugWriter.WriteDebug(DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut);
                     var color = new Color(CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut);
                     builder.Append(
@@ -104,7 +104,7 @@ namespace Nitrocid.SplashPacks.Splashes
                     if (_currentStep > _edgepulseMaxSteps)
                     {
                         _currentStep = 0;
-                        _isFadingOut = true;
+                        _isFadingOut = false;
                     }
                 }
                 else
@@ -128,7 +128,7 @@ namespace Nitrocid.SplashPacks.Splashes
                     if (_currentStep > _edgepulseMaxSteps)
                     {
                         _currentStep = 0;
-                        _isFadingOut = false;
+                        _isFadingOut = true;
                     }
                 }
             }
@@ -194,7 +194,7 @@ namespace Nitrocid.SplashPacks.Splashes
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor right edge ({0}, {1})", FloorRightEdge, y);
                 filled.Append(
-                    CsiSequences.GenerateCsiCursorPosition(FloorRightEdge + 1, y + 1) +
+                    CsiSequences.GenerateCsiCursorPosition(FloorRightEdge + 2, y + 1) +
                     " "
                 );
             }
