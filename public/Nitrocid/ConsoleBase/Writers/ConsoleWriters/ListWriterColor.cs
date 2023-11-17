@@ -62,10 +62,13 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
                     string buffered = RenderList(List);
                     string[] bufferedLines = TextTools.GetWrappedSentences(buffered, ConsoleWrapper.WindowWidth);
                     var buffer = new StringBuilder();
-                    foreach (string bufferedLine in bufferedLines)
+                    for (int idx = 0; idx < bufferedLines.Length; idx++)
                     {
+                        string bufferedLine = bufferedLines[idx];
                         var Values = new List<object>();
-                        buffer.AppendLine(bufferedLine);
+                        buffer.Append(bufferedLine);
+                        if (idx == bufferedLines.Length - 1)
+                            buffer.AppendLine();
 
                         if (Wrap)
                         {
@@ -179,10 +182,13 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
                     string buffered = RenderList(List, ListKeyColor, ListValueColor);
                     string[] bufferedLines = TextTools.GetWrappedSentences(buffered, ConsoleWrapper.WindowWidth);
                     var buffer = new StringBuilder();
-                    foreach (string bufferedLine in bufferedLines)
+                    for (int idx = 0; idx < bufferedLines.Length; idx++)
                     {
+                        string bufferedLine = bufferedLines[idx];
                         var Values = new List<object>();
-                        buffer.AppendLine(bufferedLine);
+                        buffer.Append(bufferedLine);
+                        if (idx == bufferedLines.Length - 1)
+                            buffer.AppendLine();
                         
                         if (Wrap)
                         {
@@ -297,10 +303,13 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
                     string buffered = RenderList(List);
                     string[] bufferedLines = TextTools.GetWrappedSentences(buffered, ConsoleWrapper.WindowWidth);
                     var buffer = new StringBuilder();
-                    foreach (string bufferedLine in bufferedLines)
+                    for (int idx = 0; idx < bufferedLines.Length; idx++)
                     {
+                        string bufferedLine = bufferedLines[idx];
                         var Values = new List<object>();
-                        buffer.AppendLine(bufferedLine);
+                        buffer.Append(bufferedLine);
+                        if (idx == bufferedLines.Length - 1)
+                            buffer.AppendLine();
 
                         if (Wrap)
                         {
@@ -414,10 +423,13 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
                     string buffered = RenderList(List, ListKeyColor, ListValueColor);
                     string[] bufferedLines = TextTools.GetWrappedSentences(buffered, ConsoleWrapper.WindowWidth);
                     var buffer = new StringBuilder();
-                    foreach (string bufferedLine in bufferedLines)
+                    for (int idx = 0; idx < bufferedLines.Length; idx++)
                     {
+                        string bufferedLine = bufferedLines[idx];
                         var Values = new List<object>();
-                        buffer.AppendLine(bufferedLine);
+                        buffer.Append(bufferedLine);
+                        if (idx == bufferedLines.Length - 1)
+                            buffer.AppendLine();
 
                         if (Wrap)
                         {
