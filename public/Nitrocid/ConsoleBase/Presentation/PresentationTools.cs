@@ -88,13 +88,6 @@ namespace KS.ConsoleBase.Presentation
         /// <param name="required">Prevents exiting the presentation</param>
         public static void Present(Slideshow presentation, bool kiosk, bool required)
         {
-            // Clear the console
-            ConsoleWrapper.Clear();
-            ConsoleWrapper.CursorVisible = false;
-
-            // Make a border
-            BorderColor.WriteBorder(PresentationUpperBorderLeft, PresentationUpperBorderTop, PresentationLowerInnerBorderLeft, PresentationLowerInnerBorderTop, KernelColorType.Separator);
-
             // Loop for each page
             var pages = presentation.Pages;
             bool presentExit = false;
@@ -103,6 +96,13 @@ namespace KS.ConsoleBase.Presentation
                 // Check to see if we're exiting
                 if (presentExit)
                     break;
+
+                // Clear the console
+                ConsoleWrapper.Clear();
+                ConsoleWrapper.CursorVisible = false;
+
+                // Make a border
+                BorderColor.WriteBorder(PresentationUpperBorderLeft, PresentationUpperBorderTop, PresentationLowerInnerBorderLeft, PresentationLowerInnerBorderTop, KernelColorType.Separator);
 
                 // Get the page
                 var page = pages[i];
