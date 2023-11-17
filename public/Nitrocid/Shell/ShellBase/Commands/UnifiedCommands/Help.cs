@@ -34,6 +34,7 @@ namespace KS.Shell.ShellBase.Commands.UnifiedCommands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             // Determine which type to show
+            bool useSimplified = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-simplified");
             bool showGeneral = parameters.SwitchesList.Length == 0 ||
                 SwitchManager.ContainsSwitch(parameters.SwitchesList, "-general") || SwitchManager.ContainsSwitch(parameters.SwitchesList, "-all");
             bool showMod = parameters.SwitchesList.Length > 0 &&
@@ -47,9 +48,9 @@ namespace KS.Shell.ShellBase.Commands.UnifiedCommands
             
             // Now, show the help
             if (string.IsNullOrWhiteSpace(parameters.ArgumentsText))
-                HelpPrint.ShowHelp(showGeneral, showMod, showAlias, showUnified, showAddon);
+                HelpPrint.ShowHelpExtended(useSimplified, showGeneral, showMod, showAlias, showUnified, showAddon);
             else
-                HelpPrint.ShowHelp(parameters.ArgumentsList[0]);
+                HelpPrint.ShowHelpExtended(parameters.ArgumentsList[0], useSimplified);
             return 0;
         }
 

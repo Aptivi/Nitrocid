@@ -145,6 +145,10 @@ namespace KS.Shell.ShellBase.Shells
                             {
                                 AcceptsValues = false
                             }),
+                            new SwitchInfo("simplified", /* Localizable */ "Uses simplified help", new SwitchOptions()
+                            {
+                                AcceptsValues = false
+                            }),
                         ], false)
                     ], new HelpUnifiedCommand(), CommandFlags.Wrappable)
             },
