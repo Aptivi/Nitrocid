@@ -20,10 +20,8 @@
 using KS.Kernel.Configuration;
 using KS.Kernel.Extensions;
 using KS.Misc.Screensaver;
-using KS.Misc.Splash;
 using Nitrocid.ScreensaverPacks.Screensavers;
 using Nitrocid.ScreensaverPacks.Settings;
-using Nitrocid.ScreensaverPacks.Splashes;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -121,19 +119,6 @@ namespace Nitrocid.ScreensaverPacks
             { "worldclock", new WorldClockDisplay() },
         };
 
-        internal readonly static Dictionary<string, SplashInfo> Splashes = new()
-        {
-            { "Fader", new SplashInfo("Fader", new SplashFader()) },
-            { "FaderBack", new SplashInfo("FaderBack", new SplashFaderBack()) },
-            { "BeatFader", new SplashInfo("BeatFader", new SplashBeatFader()) },
-            { "Pulse", new SplashInfo("Pulse", new SplashPulse()) },
-            { "BeatPulse", new SplashInfo("BeatPulse", new SplashBeatPulse()) },
-            { "EdgePulse", new SplashInfo("EdgePulse", new SplashEdgePulse()) },
-            { "BeatEdgePulse", new SplashInfo("BeatEdgePulse", new SplashBeatEdgePulse()) },
-            { "Spin", new SplashInfo("Spin", new SplashSpin()) },
-            { "SquareCorner", new SplashInfo("SquareCorner", new SplashSquareCorner()) },
-        };
-
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.AddonScreensaverPacks);
 
@@ -150,11 +135,9 @@ namespace Nitrocid.ScreensaverPacks
 
         void IAddon.StartAddon()
         {
-            // First, initialize screensavers and splashes
+            // First, initialize screensavers
             foreach (var saver in Screensavers.Keys)
                 ScreensaverManager.AddonSavers.Add(saver, Screensavers[saver]);
-            foreach (var splash in Splashes.Keys)
-                SplashManager.InstalledSplashes.Add(splash, Splashes[splash]);
 
             // Then, initialize configuration in a way that no mod can play with them
             var saversConfig = new ExtraSaversConfig();
@@ -163,11 +146,9 @@ namespace Nitrocid.ScreensaverPacks
 
         void IAddon.StopAddon()
         {
-            // First, unload screensavers and splashes
+            // First, unload screensavers
             foreach (var saver in Screensavers.Keys)
                 ScreensaverManager.AddonSavers.Remove(saver);
-            foreach (var splash in Splashes.Keys)
-                SplashManager.InstalledSplashes.Remove(splash);
 
             // Then, unload the configuration
             ConfigTools.UnregisterBaseSetting(nameof(ExtraSaversConfig));

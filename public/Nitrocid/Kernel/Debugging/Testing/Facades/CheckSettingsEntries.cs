@@ -22,7 +22,6 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Configuration;
 using KS.Languages;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace KS.Kernel.Debugging.Testing.Facades
 {

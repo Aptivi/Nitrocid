@@ -22,7 +22,6 @@ using KS.Shell.ShellBase.Commands;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Kernel.Extensions;
-using System.Linq;
 
 namespace KS.Shell.Shells.Debug.Commands
 {

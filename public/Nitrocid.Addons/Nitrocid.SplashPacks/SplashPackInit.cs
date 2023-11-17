@@ -43,6 +43,15 @@ namespace Nitrocid.SplashPacks
             { "Dots", new SplashInfo("Dots", new SplashDots()) },
             { "TextBox", new SplashInfo("TextBox", new SplashTextBox()) },
             { "FigProgress", new SplashInfo("FigProgress", new SplashFigProgress()) },
+            { "Fader", new SplashInfo("Fader", new SplashFader()) },
+            { "FaderBack", new SplashInfo("FaderBack", new SplashFaderBack()) },
+            { "BeatFader", new SplashInfo("BeatFader", new SplashBeatFader()) },
+            { "Pulse", new SplashInfo("Pulse", new SplashPulse()) },
+            { "BeatPulse", new SplashInfo("BeatPulse", new SplashBeatPulse()) },
+            { "EdgePulse", new SplashInfo("EdgePulse", new SplashEdgePulse()) },
+            { "BeatEdgePulse", new SplashInfo("BeatEdgePulse", new SplashBeatEdgePulse()) },
+            { "Spin", new SplashInfo("Spin", new SplashSpin()) },
+            { "SquareCorner", new SplashInfo("SquareCorner", new SplashSquareCorner()) },
         };
 
         string IAddon.AddonName =>

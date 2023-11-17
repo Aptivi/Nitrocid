@@ -17,39 +17,61 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System.Text;
 using System.Threading;
+using KS.ConsoleBase;
 using KS.Kernel.Debugging;
+using KS.Kernel.Threading;
 using KS.Misc.Splash;
-using Nitrocid.ScreensaverPacks.Animations.Spin;
+using Terminaux.Colors;
 
-namespace Nitrocid.ScreensaverPacks.Splashes
+namespace Nitrocid.SplashPacks.Splashes
 {
     class SplashSpin : BaseSplash, ISplash
     {
 
+        private readonly int _spinDelay = 10;
+        private static int currentSpinStep = 0;
+        private static readonly char[] spinSteps = ['/', '|', '\\', '-'];
+
         // Standalone splash information
         public override string SplashName => "Spin";
 
-        // Spin-specific variables
-        internal SpinSettings SpinSettings;
-
-        public SplashSpin() => SpinSettings = new SpinSettings();
-
         public override string Display(SplashContext context)
         {
+            var builder = new StringBuilder();
             try
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Splash displaying.");
+                ConsoleWrapper.CursorVisible = false;
 
-                // Loop until we got a closing notification
-                while (!SplashClosing)
-                    Spin.Simulate(SpinSettings);
+                // Get spin character from current index
+                char spinStep = spinSteps[currentSpinStep];
+
+                // Make a spin buffer
+                builder.Append(
+                    new Color(ConsoleColors.White).VTSequenceForeground +
+                    new Color(ConsoleColors.Black).VTSequenceBackground
+                );
+                for (int x = 0; x < ConsoleWrapper.WindowWidth; x++)
+                {
+                    for (int y = 0; y < ConsoleWrapper.WindowHeight; y++)
+                    {
+                        builder.Append(spinStep);
+                    }
+                }
+                ThreadManager.SleepNoBlock(_spinDelay);
+
+                // Step the current spin step forward
+                currentSpinStep++;
+                if (currentSpinStep >= spinSteps.Length)
+                    currentSpinStep = 0;
             }
             catch (ThreadInterruptedException)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Splash done.");
             }
-            return "";
+            return builder.ToString();
         }
 
     }
