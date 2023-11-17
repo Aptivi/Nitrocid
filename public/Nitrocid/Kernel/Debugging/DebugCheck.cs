@@ -71,6 +71,47 @@ namespace KS.Kernel.Debugging
         }
 
         /// <summary>
+        /// Asserts and checks to see if the condition is not satisfied
+        /// </summary>
+        /// <param name="condition">Condition</param>
+        public static void AssertNot(bool condition) =>
+            AssertNot(condition, "");
+
+        /// <summary>
+        /// Asserts and checks to see if the condition is not satisfied
+        /// </summary>
+        /// <param name="condition">Condition</param>
+        /// <param name="message">A message to clarify why the assert failed</param>
+        public static void AssertNot(bool condition, string message)
+        {
+            if (condition)
+            {
+                var trace = new DebugStackFrame();
+                var exc = new KernelException(KernelExceptionType.AssertionFailure, $"condition is true. {message}");
+                DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Condition is true!");
+                DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Failure at {0} routine in {1}:{2}", trace.RoutineName, trace.RoutineFileName, trace.RoutineLineNumber);
+                DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Message: {0}", message);
+                KernelPanic.KernelErrorContinuable(Translate.DoTranslation("Assertion failure.") + $" {message}", exc);
+                throw exc;
+            }
+        }
+
+        /// <summary>
+        /// Asserts and checks to see if the condition is not satisfied
+        /// </summary>
+        /// <param name="condition">Condition</param>
+        /// <param name="message">A message to clarify why the assert failed</param>
+        /// <param name="vars">Variables to format the message with</param>
+        public static void AssertNot(bool condition, string message, params object[] vars)
+        {
+            if (!condition)
+            {
+                message = TextTools.FormatString(message, vars);
+                AssertNot(condition, message);
+            }
+        }
+
+        /// <summary>
         /// Asserts and checks to see if the value is null
         /// </summary>
         /// <param name="value">Condition</param>
