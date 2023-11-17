@@ -17,7 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Kernel.Exceptions;
 using KS.Kernel.Journaling;
+using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 
 namespace KS.Shell.Shells.Admin.Commands
@@ -33,7 +37,19 @@ namespace KS.Shell.Shells.Admin.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            JournalManager.PrintJournalLog();
+            if (parameters.ArgumentsList.Length > 0)
+            {
+                // Check to see if invalid number is provided
+                if (!int.TryParse(parameters.ArgumentsList[0], out int sessionNum))
+                {
+                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Session number is invalid."), KernelColorType.Error);
+                    return 10000 + (int)KernelExceptionType.Journaling;
+                }
+                var entries = JournalManager.GetJournalEntries(sessionNum);
+                JournalManager.PrintJournalLog(entries);
+            }
+            else
+                JournalManager.PrintJournalLog();
             return 0;
         }
     }

@@ -464,5 +464,9 @@ namespace KS.Kernel.Exceptions
         /// The console operation failed to perform the required task.
         /// </summary>
         Console,
+        /// <summary>
+        /// The kernel journaling operation failed to perform the required task.
+        /// </summary>
+        Journaling,
     }
 }

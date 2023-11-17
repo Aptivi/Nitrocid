@@ -19,10 +19,13 @@
 
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Files;
 using KS.Files.Operations;
 using KS.Files.Operations.Querying;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
 using KS.Kernel.Time.Renderers;
+using KS.Languages;
 using KS.Misc.Text;
 using Newtonsoft.Json;
 using System;
@@ -102,16 +105,50 @@ namespace KS.Kernel.Journaling
         }
 
         /// <summary>
+        /// Gets the journal entries
+        /// </summary>
+        /// <param name="sessionNum">Session number</param>
+        /// <returns>An array of journal entries</returns>
+        public static JournalEntry[] GetJournalEntries(int sessionNum)
+        {
+            // If the journal path is null, bail
+            if (string.IsNullOrEmpty(JournalPath))
+                return [];
+            if (sessionNum < 0)
+                return [];
+
+            // Now, formulate a valid journal path and check it for existence
+            string journalPath = Paths.JournalingPath.Insert(Paths.JournalingPath.Length - 5, $"-{sessionNum}");
+            if (!Checking.FileExists(journalPath))
+                throw new KernelException(KernelExceptionType.Journaling, Translate.DoTranslation("Journal file '{0}' doesn't exist."), journalPath);
+
+            // Assuming that the file exists (guarded by the above check), deserialize the contents
+            string entriesValue = Reading.ReadContentsText(journalPath);
+            JournalEntry[] entries = JsonConvert.DeserializeObject<JournalEntry[]>(entriesValue);
+
+            // Now, return the journal entries
+            return entries;
+        }
+
+        /// <summary>
         /// Prints the current journal log
         /// </summary>
         public static void PrintJournalLog()
         {
-            // Parse the journal
             var journals = GetJournalEntries();
-            for (int i = 0; i < journals.Length; i++)
+            PrintJournalLog(journals);
+        }
+
+        /// <summary>
+        /// Prints the current journal log
+        /// </summary>
+        public static void PrintJournalLog(JournalEntry[] entries)
+        {
+            // Parse the journal
+            for (int i = 0; i < entries.Length; i++)
             {
                 // Populate variables
-                var journal = journals[i];
+                var journal = entries[i];
                 string Date = journal.Date;
                 string Time = journal.Time;
                 JournalStatus Status = (JournalStatus)Enum.Parse(typeof(JournalStatus), journal.Status);

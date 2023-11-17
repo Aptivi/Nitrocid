@@ -77,7 +77,13 @@ namespace KS.Shell.Shells.Admin
             { "journal",
                 new CommandInfo("journal", /* Localizable */ "Gets current kernel journal log",
                     [
-                        new CommandArgumentInfo()
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(false, "sessionNum", new()
+                            {
+                                IsNumeric = true,
+                            }),
+                        })
                     ], new JournalCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
             },
 
