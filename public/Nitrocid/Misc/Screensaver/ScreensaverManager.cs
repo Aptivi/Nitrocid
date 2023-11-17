@@ -185,27 +185,19 @@ namespace KS.Misc.Screensaver
                     // Run the screensaver
                     ShowSavers(ScreensaverName, true);
                 }
-                else if (Screensavers.ContainsKey(saverName) || AddonSavers.ContainsKey(saverName))
+                else if (IsScreensaverRegistered(saverName))
                 {
                     saver = saverName;
-                    var BaseSaver = AddonSavers.TryGetValue(saver, out BaseScreensaver @base) ? @base : Screensavers[saver];
+                    var BaseSaver =
+                        AddonSavers.TryGetValue(saver, out BaseScreensaver @base) ? @base :
+                        CustomSavers.TryGetValue(saver, out BaseScreensaver customBase) ? customBase :
+                        Screensavers[saver];
                     if (BaseSaver.ScreensaverContainsFlashingImages && !noSeizureWarning)
                         BaseSaver.ScreensaverSeizureWarning();
                     inSaver = true;
                     ScrnTimeReached = true;
                     ScreensaverDisplayer.ScreensaverDisplayerThread.Start(BaseSaver);
                     DebugWriter.WriteDebug(DebugLevel.I, "{0} started", saver);
-                }
-                else
-                {
-                    // Only one custom screensaver can be used.
-                    var BaseSaver = CustomSavers[saver];
-                    if (BaseSaver.ScreensaverContainsFlashingImages && !noSeizureWarning)
-                        BaseSaver.ScreensaverSeizureWarning();
-                    inSaver = true;
-                    ScrnTimeReached = true;
-                    ScreensaverDisplayer.ScreensaverDisplayerThread.Start(new CustomDisplay(BaseSaver));
-                    DebugWriter.WriteDebug(DebugLevel.I, "Custom screensaver {0} started", saver);
                 }
             }
             catch (InvalidOperationException ex)
