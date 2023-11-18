@@ -90,6 +90,7 @@ namespace Nitrocid.SplashPacks.Splashes
         {
             // Variables
             var PresetStringBuilder = new StringBuilder();
+            var builder = new StringBuilder();
             string RenderedText = ProgressReport.Truncate(ConsoleWrapper.WindowWidth - 5);
 
             // Percentage
@@ -117,7 +118,7 @@ namespace Nitrocid.SplashPacks.Splashes
             PresetStringBuilder.AppendFormat("{0} ", TransitionChar);
 
             // Display the text and percentage
-            PresetStringBuilder.Append(
+            builder.Append(
                 KernelColorTools.GetColor(KernelColorType.Progress).VTSequenceForeground +
                 TextWriterWhereColor.RenderWherePlain(PresetStringBuilder.ToString(), 0, ProgressWritePositionY, false, KernelColorType.Progress, Vars) +
                 ConsoleExtensions.GetClearLineToRightSequence()
@@ -128,17 +129,17 @@ namespace Nitrocid.SplashPacks.Splashes
                 KernelColorTools.TryParseColor(SplashPackInit.SplashConfig.PowerLineProgressProgressColor))
             {
                 var ProgressColor = new Color(SplashPackInit.SplashConfig.PowerLineProgressProgressColor);
-                PresetStringBuilder.Append(
-                    ProgressBarColor.RenderProgress(Progress, 4, ConsoleWrapper.WindowHeight - 4, 0, 0, ProgressColor, ProgressColor, KernelColorTools.GetColor(KernelColorType.Background))
+                builder.Append(
+                    ProgressBarColor.RenderProgress(Progress, 3, ConsoleWrapper.WindowHeight - 4, 4, 4, ProgressColor, ProgressColor, KernelColorTools.GetColor(KernelColorType.Background))
                 );
             }
             else
             {
-                PresetStringBuilder.Append(
-                    ProgressBarColor.RenderProgress(Progress, 4, ConsoleWrapper.WindowHeight - 4, 0, 0, KernelColorTools.GetColor(KernelColorType.Progress), KernelColorTools.GetGray(), KernelColorTools.GetColor(KernelColorType.Background))
+                builder.Append(
+                    ProgressBarColor.RenderProgress(Progress, 3, ConsoleWrapper.WindowHeight - 4, 4, 4, KernelColorTools.GetColor(KernelColorType.Progress), KernelColorTools.GetGray(), KernelColorTools.GetColor(KernelColorType.Background))
                 );
             }
-            return PresetStringBuilder.ToString();
+            return builder.ToString();
         }
 
     }
