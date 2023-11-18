@@ -56,7 +56,7 @@ namespace KS.Shell.Shells.UESH.Commands
             }
             if (Checking.FolderExists(folder))
             {
-                foreach (string file in Directory.EnumerateFiles(folder, "*", SearchOption.TopDirectoryOnly))
+                foreach (string file in Directory.GetFiles(folder, "*", SearchOption.TopDirectoryOnly))
                 {
                     string finalFile = FilesystemTools.NeutralizePath(file);
                     SeparatorWriterColor.WriteSeparator(finalFile, true);

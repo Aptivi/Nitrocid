@@ -167,7 +167,7 @@ namespace Nitrocid.LocaleGen.Core.Serializer
             // Get all the language files
             bool custom = pathToTranslations != Path.GetFullPath("Translations") && pathToTranslations != Path.GetFullPath("AddonTranslations");
             var toParse = new List<TargetLanguage>();
-            var files = Directory.EnumerateFiles(pathToTranslations).ToArray();
+            var files = Directory.GetFiles(pathToTranslations);
 
             // Add languages to parse list
             bool singular = !string.IsNullOrEmpty(toSearch);

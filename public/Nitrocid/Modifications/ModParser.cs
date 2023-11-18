@@ -182,7 +182,7 @@ namespace KS.Modifications
                     if (Checking.FolderExists(ModLocalizationPath))
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Found mod localization collection in {0}", ModLocalizationPath);
-                        foreach (string ModLocFile in Directory.EnumerateFiles(ModLocalizationPath, "*.json", SearchOption.AllDirectories))
+                        foreach (string ModLocFile in Directory.GetFiles(ModLocalizationPath, "*.json", SearchOption.AllDirectories))
                         {
                             // This json file, as always, contains "Name" (ignored), "Transliterable" (ignored), and "Localizations" keys.
                             string LanguageName = Path.GetFileNameWithoutExtension(ModLocFile);
@@ -309,7 +309,7 @@ namespace KS.Modifications
                     if (Checking.FolderExists(ModManualPath))
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Found manual page collection in {0}", ModManualPath);
-                        foreach (string ModManualFile in Directory.EnumerateFiles(ModManualPath, "*.man", SearchOption.AllDirectories))
+                        foreach (string ModManualFile in Directory.GetFiles(ModManualPath, "*.man", SearchOption.AllDirectories))
                             PageParser.InitMan(ModName, ModManualFile);
                     }
 

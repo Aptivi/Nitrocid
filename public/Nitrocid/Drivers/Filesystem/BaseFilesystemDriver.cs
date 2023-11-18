@@ -692,11 +692,11 @@ namespace KS.Drivers.Filesystem
             List<FileInfo> Files;
             if (FullParseMode)
             {
-                Files = DirectoryInfo.EnumerateFiles("*", SearchOption.AllDirectories).ToList();
+                Files = [.. DirectoryInfo.GetFiles("*", SearchOption.AllDirectories)];
             }
             else
             {
-                Files = DirectoryInfo.EnumerateFiles("*", SearchOption.TopDirectoryOnly).ToList();
+                Files = [.. DirectoryInfo.GetFiles("*", SearchOption.TopDirectoryOnly)];
             }
             DebugWriter.WriteDebug(DebugLevel.I, "{0} files to be parsed", Files.Count);
 

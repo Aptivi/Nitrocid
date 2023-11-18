@@ -210,8 +210,8 @@ namespace Nitrocid.Extras.Calendar.Calendar.Reminders
             // Remove all events from path, if running destructively
             if (Destructive)
             {
-                string[] ReminderFiles = (string[])Directory.EnumerateFiles(Path, "*", SearchOption.AllDirectories);
-                string[] ReminderFolders = (string[])Directory.EnumerateDirectories(Path, "*", SearchOption.AllDirectories);
+                string[] ReminderFiles = Directory.GetFiles(Path, "*", SearchOption.AllDirectories);
+                string[] ReminderFolders = Directory.GetDirectories(Path, "*", SearchOption.AllDirectories);
 
                 // First, remove all files
                 foreach (string FilePath in ReminderFiles)

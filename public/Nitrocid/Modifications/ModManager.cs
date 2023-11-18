@@ -82,7 +82,7 @@ namespace KS.Modifications
                 // We're not in safe mode. We're good now.
                 if (!Checking.FolderExists(ModPath))
                     Directory.CreateDirectory(ModPath);
-                int count = Directory.EnumerateFiles(ModPath).Count();
+                int count = Directory.GetFiles(ModPath).Length;
                 DebugWriter.WriteDebug(DebugLevel.I, "Files count: {0}", count);
 
                 // Check to see if we have mods
@@ -90,7 +90,7 @@ namespace KS.Modifications
                 {
                     SplashReport.ReportProgress(Translate.DoTranslation("Loading mods..."));
                     DebugWriter.WriteDebug(DebugLevel.I, "Mods are being loaded. Total mods = {0}", count);
-                    foreach (string modFilePath in Directory.EnumerateFiles(ModPath))
+                    foreach (string modFilePath in Directory.GetFiles(ModPath))
                     {
                         string modFile = Path.GetFileName(modFilePath);
                         StartMod(modFile);
@@ -168,7 +168,7 @@ namespace KS.Modifications
                 // We're not in safe mode. We're good now.
                 if (!Checking.FolderExists(ModPath))
                     Directory.CreateDirectory(ModPath);
-                int count = Directory.EnumerateFiles(ModPath).Count();
+                int count = Directory.GetFiles(ModPath).Length;
                 DebugWriter.WriteDebug(DebugLevel.I, "Files count: {0}", count);
 
                 // Check to see if we have mods
@@ -447,7 +447,7 @@ namespace KS.Modifications
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Found manual page directory. {0}.manual exists. Installing manual pages...", ModPath);
                     Directory.CreateDirectory(TargetModPath + ".manual");
-                    foreach (string ModManualFile in Directory.EnumerateFiles(ModPath + ".manual", "*.man", SearchOption.AllDirectories))
+                    foreach (string ModManualFile in Directory.GetFiles(ModPath + ".manual", "*.man", SearchOption.AllDirectories))
                     {
                         string ManualFileName = Path.GetFileNameWithoutExtension(ModManualFile);
                         var ManualInstance = new Manual(ModName, ModManualFile);

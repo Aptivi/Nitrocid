@@ -204,8 +204,8 @@ namespace Nitrocid.Extras.Calendar.Calendar.Events
             // Remove all events from path, if running destructively
             if (Destructive)
             {
-                var EventFiles = Directory.EnumerateFiles(Path, "*", SearchOption.AllDirectories).ToArray();
-                var EventFolders = Directory.EnumerateDirectories(Path, "*", SearchOption.AllDirectories).ToArray();
+                var EventFiles = Directory.GetFiles(Path, "*", SearchOption.AllDirectories);
+                var EventFolders = Directory.GetDirectories(Path, "*", SearchOption.AllDirectories);
 
                 // First, remove all files
                 foreach (string FilePath in EventFiles)
