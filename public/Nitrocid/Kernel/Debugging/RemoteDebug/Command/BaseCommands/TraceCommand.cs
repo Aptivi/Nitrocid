@@ -24,19 +24,19 @@ namespace KS.Kernel.Debugging.RemoteDebug.Command.BaseCommands
 {
     internal class TraceCommand : RemoteDebugBaseCommand
     {
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, RemoteDebugDevice device)
+        public override void Execute(RemoteDebugCommandParameters parameters, RemoteDebugDevice device)
         {
             if (DebugWriter.DebugStackTraces.Length != 0)
             {
-                if (ListArgsOnly.Length != 0)
+                if (parameters.ArgumentsList.Length != 0)
                 {
                     try
                     {
-                        DebugWriter.WriteDebugDeviceOnly(DebugLevel.I, DebugWriter.DebugStackTraces[Convert.ToInt32(ListArgsOnly[0])], true, device);
+                        DebugWriter.WriteDebugDeviceOnly(DebugLevel.I, DebugWriter.DebugStackTraces[Convert.ToInt32(parameters.ArgumentsList[0])], true, device);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WriteDebugDeviceOnly(DebugLevel.I, Translate.DoTranslation("Index {0} invalid. There are {1} stack traces. Index is zero-based, so try subtracting by 1.") + " {2}", true, device, ListArgsOnly[0], DebugWriter.DebugStackTraces.Length, ex.Message);
+                        DebugWriter.WriteDebugDeviceOnly(DebugLevel.I, Translate.DoTranslation("Index {0} invalid. There are {1} stack traces. Index is zero-based, so try subtracting by 1.") + " {2}", true, device, parameters.ArgumentsList[0], DebugWriter.DebugStackTraces.Length, ex.Message);
                     }
                 }
                 else

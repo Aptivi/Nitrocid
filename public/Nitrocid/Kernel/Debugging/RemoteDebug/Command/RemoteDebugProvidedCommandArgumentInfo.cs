@@ -41,6 +41,14 @@ namespace KS.Kernel.Debugging.RemoteDebug.Command
         /// </summary>
         public string[] ArgumentsList { get; private set; }
         /// <summary>
+        /// Text version of the provided arguments and switches (original)
+        /// </summary>
+        public string ArgumentsTextOrig { get; private set; }
+        /// <summary>
+        /// List version of the provided arguments (original)
+        /// </summary>
+        public string[] ArgumentsListOrig { get; private set; }
+        /// <summary>
         /// List version of the provided switches
         /// </summary>
         public string[] SwitchesList { get; private set; }
@@ -76,6 +84,7 @@ namespace KS.Kernel.Debugging.RemoteDebug.Command
             if (index != CommandText.Length)
                 strArgs = strArgs[1..];
             DebugWriter.WriteDebug(DebugLevel.I, "Finished strArgs: {0}", strArgs);
+            ArgumentsTextOrig = strArgs;
 
             // Split the arguments with enclosed quotes
             var EnclosedArgs = strArgs.SplitEncloseDoubleQuotes();
@@ -83,6 +92,7 @@ namespace KS.Kernel.Debugging.RemoteDebug.Command
                 EnclosedArgs = null;
             if (EnclosedArgs is not null)
                 DebugWriter.WriteDebug(DebugLevel.I, "Arguments parsed: " + string.Join(", ", EnclosedArgs));
+            ArgumentsListOrig = EnclosedArgs;
 
             // Check to see if the caller has provided required number of arguments
             var CommandInfo = RemoteDebugCommandExecutor.RemoteDebugCommands.TryGetValue(Command, out RemoteDebugCommandInfo rdci) ? rdci : null;

@@ -31,12 +31,10 @@ namespace KS.Kernel.Debugging.RemoteDebug.Command
         /// <summary>
         /// Executes a command
         /// </summary>
-        /// <param name="StringArgs">String of arguments</param>
-        /// <param name="ListArgsOnly">List of all arguments</param>
-        /// <param name="ListSwitchesOnly">List of all switches</param>
+        /// <param name="parameters">Command parameters including passed arguments and switches information</param>
         /// <param name="device">Device that executed the command</param>
         /// <exception cref="InvalidOperationException"></exception>
-        public virtual void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, RemoteDebugDevice device)
+        public virtual void Execute(RemoteDebugCommandParameters parameters, RemoteDebugDevice device)
         {
             DebugWriter.WriteDebug(DebugLevel.F, "We shouldn't be here!!!");
             throw new KernelException(KernelExceptionType.NotImplementedYet);

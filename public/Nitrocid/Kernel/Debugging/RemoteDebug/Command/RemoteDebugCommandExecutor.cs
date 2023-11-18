@@ -53,8 +53,10 @@ namespace KS.Kernel.Debugging.RemoteDebug.Command
                 var ArgumentInfo = new RemoteDebugProvidedCommandArgumentInfo(RequestedCommand);
                 string Command = ArgumentInfo.Command;
                 var Args = ArgumentInfo.ArgumentsList;
-                var Switches = ArgumentInfo.SwitchesList;
+                var ArgsOrig = ArgumentInfo.ArgumentsListOrig;
                 string StrArgs = ArgumentInfo.ArgumentsText;
+                string StrArgsOrig = ArgumentInfo.ArgumentsTextOrig;
+                var Switches = ArgumentInfo.SwitchesList;
                 bool RequiredArgumentsProvided = ArgumentInfo.RequiredArgumentsProvided;
 
                 // Check to see if the command exists
@@ -64,6 +66,9 @@ namespace KS.Kernel.Debugging.RemoteDebug.Command
                     return;
                 }
 
+                // Make the command parameters class
+                var parameters = new RemoteDebugCommandParameters(StrArgs, Args, StrArgsOrig, ArgsOrig, Switches, Command);
+
                 // If there are enough arguments provided, execute. Otherwise, fail with not enough arguments.
                 if (rdci.CommandArgumentInfo is not null)
                 {
@@ -71,7 +76,7 @@ namespace KS.Kernel.Debugging.RemoteDebug.Command
                     if (ArgInfo.ArgumentsRequired & RequiredArgumentsProvided | !ArgInfo.ArgumentsRequired)
                     {
                         var CommandBase = rdci.CommandBase;
-                        CommandBase.Execute(StrArgs, Args, Switches, Device);
+                        CommandBase.Execute(parameters, Device);
                     }
                     else
                     {
@@ -83,7 +88,7 @@ namespace KS.Kernel.Debugging.RemoteDebug.Command
                 else
                 {
                     var CommandBase = rdci.CommandBase;
-                    CommandBase.Execute(StrArgs, Args, Switches, Device);
+                    CommandBase.Execute(parameters, Device);
                 }
             }
             catch (ThreadInterruptedException)

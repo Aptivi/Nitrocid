@@ -21,7 +21,7 @@ namespace KS.Kernel.Debugging.RemoteDebug.Command.BaseCommands
 {
     internal class ExitCommand : RemoteDebugBaseCommand
     {
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, RemoteDebugDevice device) => 
+        public override void Execute(RemoteDebugCommandParameters parameters, RemoteDebugDevice device) => 
             RemoteDebugTools.DisconnectDevice(device.ClientIP);
     }
 }

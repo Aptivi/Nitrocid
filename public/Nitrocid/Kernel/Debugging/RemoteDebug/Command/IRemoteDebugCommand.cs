@@ -28,11 +28,9 @@ namespace KS.Kernel.Debugging.RemoteDebug.Command
         /// <summary>
         /// Executes the command with the given argument
         /// </summary>
-        /// <param name="StringArgs">Arguments in a string</param>
-        /// <param name="ListArgsOnly">List of provided arguments</param>
-        /// <param name="ListSwitchesOnly">List of provided switches</param>
+        /// <param name="parameters">Command parameters including passed arguments and switches information</param>
         /// <param name="device">Device that executed the command</param>
-        void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, RemoteDebugDevice device);
+        void Execute(RemoteDebugCommandParameters parameters, RemoteDebugDevice device);
 
         /// <summary>
         /// Shows additional information for the command when "help command" is invoked

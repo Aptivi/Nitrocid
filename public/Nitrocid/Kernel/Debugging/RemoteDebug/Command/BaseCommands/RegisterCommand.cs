@@ -23,9 +23,9 @@ namespace KS.Kernel.Debugging.RemoteDebug.Command.BaseCommands
 {
     internal class RegisterCommand : RemoteDebugBaseCommand
     {
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, RemoteDebugDevice device)
+        public override void Execute(RemoteDebugCommandParameters parameters, RemoteDebugDevice device)
         {
-            string Name = ListArgsOnly[0];
+            string Name = parameters.ArgumentsList[0];
             device.DeviceInfo.name = Name;
             RemoteDebugTools.SaveAllDevices();
             DebugWriter.WriteDebugDevicesOnly(DebugLevel.I, Translate.DoTranslation("Successfully registered! Hi, {0}!"), true, Name);
