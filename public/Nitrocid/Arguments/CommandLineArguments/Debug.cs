@@ -26,7 +26,7 @@ namespace KS.Arguments.CommandLineArguments
     class DebugArgument : ArgumentExecutor, IArgument
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override void Execute(ArgumentParameters parameters)
         {
             KernelEntry.DebugMode = true;
 

@@ -33,7 +33,7 @@ namespace KS.Arguments.CommandLineArguments
     class ResetArgument : ArgumentExecutor, IArgument
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override void Execute(ArgumentParameters parameters)
         {
             // Delete every single thing found in KernelPaths
             foreach (string PathName in Enum.GetNames(typeof(KernelPathType)))

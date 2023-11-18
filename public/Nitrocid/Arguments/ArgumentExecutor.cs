@@ -32,11 +32,9 @@ namespace KS.Arguments
         /// <summary>
         /// Executes the argument
         /// </summary>
-        /// <param name="StringArgs">String of arguments</param>
-        /// <param name="ListArgsOnly">List of argument arguments</param>
-        /// <param name="ListSwitchesOnly">List of argument switches</param>
+        /// <param name="parameters">Argument parameters including passed arguments and switches information</param>
         /// <exception cref="InvalidOperationException"></exception>
-        public virtual void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public virtual void Execute(ArgumentParameters parameters)
         {
             DebugWriter.WriteDebug(DebugLevel.F, "We shouldn't be here!!!");
             throw new KernelException(KernelExceptionType.NotImplementedYet);

@@ -72,32 +72,43 @@ namespace Nitrocid.Tests.Arguments
         /// </summary>
         [Test]
         [Description("Initialization")]
-        public void TestInitializedArgumentExecution() =>
-            Should.NotThrow(new Action(() => ArgumentInstance.Execute("", [], [])));
+        public void TestInitializedArgumentExecution()
+        {
+            var parameters = new ArgumentParameters("", [], "", [], [], "test");
+            Should.NotThrow(new Action(() => ArgumentInstance.Execute(parameters)));
+        }
 
         /// <summary>
         /// Tests initializing the argument instance from base
         /// </summary>
         [Test]
         [Description("Initialization")]
-        public void TestInitializedArgumentExecutionWithArguments() =>
-            Should.NotThrow(new Action(() => ArgumentInstance.Execute("Hello World", ["Hello", "World"], [])));
+        public void TestInitializedArgumentExecutionWithArguments()
+        {
+            var parameters = new ArgumentParameters("Hello World", ["Hello", "World"], "Hello World", ["Hello", "World"], [], "test");
+            Should.NotThrow(new Action(() => ArgumentInstance.Execute(parameters)));
+        }
 
         /// <summary>
         /// Tests initializing the argument instance from base
         /// </summary>
         [Test]
         [Description("Initialization")]
-        public void TestInitializedArgumentExecutionWithSwitches() =>
-            Should.NotThrow(new Action(() => ArgumentInstance.Execute("-s", [], ["-s"])));
+        public void TestInitializedArgumentExecutionWithSwitches()
+        {
+            var parameters = new ArgumentParameters("", [], "-s", [], ["-s"], "test");
+            Should.NotThrow(new Action(() => ArgumentInstance.Execute(parameters)));
+        }
 
         /// <summary>
         /// Tests initializing the argument instance from base
         /// </summary>
         [Test]
         [Description("Initialization")]
-        public void TestInitializedArgumentExecutionWithArgumentsAndSwitches() =>
-            Should.NotThrow(new Action(() => ArgumentInstance.Execute("-s Hello!", ["Hello!"], ["-s"])));
-
+        public void TestInitializedArgumentExecutionWithArgumentsAndSwitches()
+        {
+            var parameters = new ArgumentParameters("Hello!", ["Hello!"], "-s Hello!", ["Hello!"], ["-s"], "test");
+            Should.NotThrow(new Action(() => ArgumentInstance.Execute(parameters)));
+        }
     }
 }

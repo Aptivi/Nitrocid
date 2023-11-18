@@ -27,13 +27,13 @@ namespace KS.Arguments.CommandLineArguments
     class LangArgument : ArgumentExecutor, IArgument
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override void Execute(ArgumentParameters parameters)
         {
             string langPacksAddonPath = Paths.AddonsPath + "/LanguagePacks";
             if (Checking.FolderExists(langPacksAddonPath))
             {
                 AddonTools.ProcessAddon(langPacksAddonPath, AddonType.Important);
-                LanguageManager.SetLangDry(ListArgsOnly[0]);
+                LanguageManager.SetLangDry(parameters.ArgumentsList[0]);
                 AddonTools.probedAddons.Clear();
             }
         }

@@ -28,10 +28,8 @@ namespace KS.Arguments
         /// <summary>
         /// Executes the kernel argument with the given argument
         /// </summary>
-        /// <param name="StringArgs">Arguments in a string</param>
-        /// <param name="ListArgsOnly">List of provided arguments</param>
-        /// <param name="ListSwitchesOnly">List of provided switches</param>
-        void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly);
+        /// <param name="parameters">Argument parameters including passed arguments and switches information</param>
+        void Execute(ArgumentParameters parameters);
 
         /// <summary>
         /// Shows additional information for the argument when "arghelp argument" is invoked in the admin shell

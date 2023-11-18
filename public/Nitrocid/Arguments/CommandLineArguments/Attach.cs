@@ -26,7 +26,7 @@ namespace KS.Arguments.CommandLineArguments
     class AttachArgument : ArgumentExecutor, IArgument
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override void Execute(ArgumentParameters parameters)
         {
             TextWriterColor.Write(Translate.DoTranslation("Kernel is waiting for the debugger..."));
             if (!Debugger.Launch())

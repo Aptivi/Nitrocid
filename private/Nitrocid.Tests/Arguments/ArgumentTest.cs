@@ -24,12 +24,12 @@ namespace Nitrocid.Tests.Arguments
 {
     class ArgumentTest : ArgumentExecutor, IArgument
     {
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override void Execute(ArgumentParameters parameters)
         {
             Console.WriteLine("We're on ArgumentTest with:");
-            Console.WriteLine(format: "- StringArgs: {0}", StringArgs);
-            Console.WriteLine(format: "- ListArgsOnly: {0}", string.Join(", ", ListArgsOnly));
-            Console.WriteLine(format: "- ListSwitchesOnly: {0}", string.Join(", ", ListSwitchesOnly));
+            Console.WriteLine(format: "- StringArgs: {0}", parameters.ArgumentsText);
+            Console.WriteLine(format: "- ListArgsOnly: {0}", string.Join(", ", parameters.ArgumentsList));
+            Console.WriteLine(format: "- ListSwitchesOnly: {0}", string.Join(", ", parameters.SwitchesList));
         }
     }
 }

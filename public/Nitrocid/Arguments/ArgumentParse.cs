@@ -164,6 +164,8 @@ namespace KS.Arguments
                             var ArgumentInfo = total[j];
                             var Arg = argInfoVal;
                             var Args = ArgumentInfo.ArgumentsList;
+                            var ArgOrig = ArgumentInfo.ArgumentsTextOrig;
+                            var ArgsOrig = ArgumentInfo.ArgumentsListOrig;
                             var Switches = ArgumentInfo.SwitchesList;
                             string strArgs = ArgumentInfo.ArgumentsText;
                             bool RequiredArgumentsProvided = ArgumentInfo.RequiredArgumentsProvided;
@@ -176,8 +178,13 @@ namespace KS.Arguments
                                 if (argInfo.ArgumentsRequired & RequiredArgumentsProvided | !argInfo.ArgumentsRequired)
                                 {
                                     DebugWriter.WriteDebug(DebugLevel.I, "Executing argument {0} with args {1}...", Argument, strArgs);
+                                    
+                                    // Prepare the argument parameter instance
+                                    var parameters = new ArgumentParameters(strArgs, Args, ArgOrig, ArgsOrig, Switches, Argument);
+
+                                    // Now, get the base command and execute it
                                     var ArgumentBase = Arg.ArgumentBase;
-                                    ArgumentBase.Execute(strArgs, Args, Switches);
+                                    ArgumentBase.Execute(parameters);
                                 }
                                 else if (isLast)
                                 {

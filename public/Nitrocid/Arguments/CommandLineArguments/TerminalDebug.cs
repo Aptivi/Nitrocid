@@ -25,7 +25,7 @@ namespace KS.Arguments.CommandLineArguments
     class TerminalDebugArgument : ArgumentExecutor, IArgument
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override void Execute(ArgumentParameters parameters)
         {
             DriverHandler.SetDriver<IConsoleDriver>("TerminalDebug");
         }
