@@ -73,6 +73,27 @@ namespace KS.Shell.Shells.UESH.Commands
                     }
                     spent.Stop();
                 }
+                else if (parameters.ArgumentsList[0] == "all")
+                {
+                    foreach (string driverName in DriverHandler.GetDriverNames<IEncryptionDriver>())
+                    {
+                        // Time when you're on a breakpoint is counted
+                        var spent = new Stopwatch();
+                        spent.Start();
+                        string encrypted = Encryption.GetEncryptedFile(file, driverName);
+                        TextWriterColor.Write($"{driverName}: {encrypted}");
+                        TextWriterColor.Write(Translate.DoTranslation("Time spent: {0} milliseconds"), spent.ElapsedMilliseconds);
+                        if (UseRelative)
+                        {
+                            FileBuilder.AppendLine($"- {parameters.ArgumentsList[1]}: {encrypted} ({driverName})");
+                        }
+                        else
+                        {
+                            FileBuilder.AppendLine($"- {file}: {encrypted} ({driverName})");
+                        }
+                        spent.Stop();
+                    }
+                }
                 else
                 {
                     TextWriterColor.WriteKernelColor(Translate.DoTranslation("Invalid encryption algorithm."), true, KernelColorType.Error);
