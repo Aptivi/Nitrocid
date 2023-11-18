@@ -35,7 +35,7 @@ namespace Nitrocid.SplashPacks
         {
             { "Simple", new SplashInfo("Simple", new SplashSimple()) },
             { "Progress", new SplashInfo("Progress", new SplashProgress()) },
-            { "PowerLineProgress", new SplashInfo("PowerLine", new SplashPowerLineProgress()) },
+            { "PowerLineProgress", new SplashInfo("PowerLineProgress", new SplashPowerLineProgress()) },
             { "Dots", new SplashInfo("Dots", new SplashDots()) },
             { "TextBox", new SplashInfo("TextBox", new SplashTextBox()) },
             { "FigProgress", new SplashInfo("FigProgress", new SplashFigProgress()) },
