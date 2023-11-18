@@ -34,10 +34,25 @@ namespace Nitrocid.Extras.Amusements.Splashes
     class SplashQuote : BaseSplash, ISplash
     {
 
+        private bool _refresh = true;
+        private string _selectedQuote = "";
+        private Color _quoteColor = Color.Empty;
+
         // Standalone splash information
         public override string SplashName => "Quote";
 
         // Actual logic
+        public override string Opening(SplashContext context)
+        {
+            if (_refresh)
+            {
+                _selectedQuote = RandomQuotes.RenderQuote();
+                _quoteColor = KernelColorTools.GetRandomColor(ColorType.TrueColor);
+            }
+            _refresh = false;
+            return base.Opening(context);
+        }
+
         public override string Display(SplashContext context)
         {
             var builder = new StringBuilder();
@@ -46,9 +61,7 @@ namespace Nitrocid.Extras.Amusements.Splashes
                 DebugWriter.WriteDebug(DebugLevel.I, "Splash displaying.");
 
                 // Display the quote
-                Color quoteColor = KernelColorTools.GetRandomColor(ColorType.TrueColor);
-                string renderedQuote = RandomQuotes.RenderQuote();
-                string[] quoteSplit = renderedQuote.SplitNewLines();
+                string[] quoteSplit = _selectedQuote.SplitNewLines();
                 int maxLength = quoteSplit.Max((quote) => quote.Length);
                 int halfConsoleY = ConsoleWrapper.WindowHeight / 2 - quoteSplit.Length / 2;
                 int quotePosX = ConsoleWrapper.WindowWidth / 2 - maxLength / 2;
@@ -57,7 +70,7 @@ namespace Nitrocid.Extras.Amusements.Splashes
                     int currentY = halfConsoleY + i;
                     string str = quoteSplit[i];
                     builder.Append(
-                        quoteColor.VTSequenceForeground +
+                        _quoteColor.VTSequenceForeground +
                         TextWriterWhereColor.RenderWherePlain(str, quotePosX, currentY)
                     );
                 }
@@ -67,6 +80,12 @@ namespace Nitrocid.Extras.Amusements.Splashes
                 DebugWriter.WriteDebug(DebugLevel.I, "Splash done.");
             }
             return builder.ToString();
+        }
+
+        public override string Closing(SplashContext context, out bool delayRequired)
+        {
+            _refresh = true;
+            return base.Closing(context, out delayRequired);
         }
 
     }
