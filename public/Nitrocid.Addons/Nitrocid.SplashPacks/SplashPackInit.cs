@@ -35,10 +35,6 @@ namespace Nitrocid.SplashPacks
         {
             { "Simple", new SplashInfo("Simple", new SplashSimple()) },
             { "Progress", new SplashInfo("Progress", new SplashProgress()) },
-            { "systemd", new SplashInfo("systemd", new SplashSystemd()) },
-            { "sysvinit", new SplashInfo("sysvinit", new SplashSysvinit()) },
-            { "openrc", new SplashInfo("openrc", new SplashOpenRC()) },
-            { "PowerLine", new SplashInfo("PowerLine", new SplashPowerLine()) },
             { "PowerLineProgress", new SplashInfo("PowerLine", new SplashPowerLineProgress()) },
             { "Dots", new SplashInfo("Dots", new SplashDots()) },
             { "TextBox", new SplashInfo("TextBox", new SplashTextBox()) },
