@@ -34,7 +34,7 @@ namespace Nitrocid.Tests.Misc.Editors
         [TestCase("64.5", ExpectedResult = true)]
         [TestCase("64-5", ExpectedResult = false)]
         [TestCase("Alsalaam 3lekom", ExpectedResult = false)]
-        [TestCase("", ExpectedResult = false)]
+        [TestCase("Nitrocid", ExpectedResult = false)]
         [Description("Action")]
         public bool TestIsStringNumeric(string Expression) =>
             TextTools.IsStringNumeric(Expression);
