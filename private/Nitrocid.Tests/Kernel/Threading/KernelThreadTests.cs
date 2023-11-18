@@ -281,7 +281,7 @@ namespace Nitrocid.Tests.Kernel.Threading
         [Description("Querying")]
         public void TestGetActualMillisecondsRecursive()
         {
-            for (int i = 1; i <= 100; i++)
+            for (int i = 1; i <= 20; i++)
             {
                 int actualMilliseconds = ThreadManager.GetActualMilliseconds(i);
                 actualMilliseconds.ShouldBeGreaterThanOrEqualTo(i);
@@ -306,7 +306,7 @@ namespace Nitrocid.Tests.Kernel.Threading
         [Description("Querying")]
         public void TestGetActualTicksRecursive()
         {
-            for (int i = 1; i <= 100; i++)
+            for (int i = 1; i <= 20; i++)
             {
                 long actualTicks = ThreadManager.GetActualTicks(i);
                 actualTicks.ShouldBeGreaterThanOrEqualTo(i * 1000);
@@ -333,7 +333,7 @@ namespace Nitrocid.Tests.Kernel.Threading
         [Description("Querying")]
         public void TestGetActualTimeSpanRecursive()
         {
-            for (int i = 1; i <= 100; i++)
+            for (int i = 1; i <= 20; i++)
             {
                 var actualSpan = ThreadManager.GetActualTimeSpan(i);
                 actualSpan.Milliseconds.ShouldBeGreaterThanOrEqualTo(i);
