@@ -66,10 +66,13 @@ namespace KS.Network.Base
             Config.MainConfig.PingTimeout;
 
         /// <summary>
-        /// Checks to see if the network is available. Always true on Android systems.
+        /// Checks to see if the network is available. On Android systems, if there is no Internet connection, the network is considered
+        /// unavailable.
         /// </summary>
         public static bool NetworkAvailable => 
-            KernelPlatform.IsOnAndroid() || NetworkInterface.GetIsNetworkAvailable();
+            KernelPlatform.IsOnAndroid() ?
+            IsInternetAvailableNoNetworkCheck() :
+            NetworkInterface.GetIsNetworkAvailable();
 
         /// <summary>
         /// Checks to see if the Internet connection is available
@@ -195,6 +198,21 @@ namespace KS.Network.Base
                 if (!NetworkAvailable)
                     return false;
 
+                // Try to ping the connectivity check site
+                var status = NetworkTransfer.WClient.GetAsync("https://connectivitycheck.gstatic.com/generate_204").Result.StatusCode;
+                return status == HttpStatusCode.NoContent;
+            }
+            catch
+            {
+                // Network or connection error. Return false.
+                return false;
+            }
+        }
+
+        private static bool IsInternetAvailableNoNetworkCheck()
+        {
+            try
+            {
                 // Try to ping the connectivity check site
                 var status = NetworkTransfer.WClient.GetAsync("https://connectivitycheck.gstatic.com/generate_204").Result.StatusCode;
                 return status == HttpStatusCode.NoContent;
