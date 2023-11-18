@@ -68,16 +68,18 @@ namespace KS.ConsoleBase
             // VT sequences, causing broken display. It claims it supports XTerm, yet it isn't fully XTerm-compliant, so we exit the program early when
             // this stock terminal is spotted.
             // ---
-            // More information regarding this check: The blacklisted terminals will not be able to run Kernel Simulator properly, because they have
+            // More information regarding this check: The blacklisted terminals will not be able to run Nitrocid KS properly, because they have
             // broken support for colors and possibly more features. For example, we have Apple_Terminal that has no support for 255 and true colors;
             // it only supports 16 colors setting by VT sequences and nothing can change that, although it's fully XTerm compliant.
             if (KernelPlatform.IsOnMacOS())
             {
                 if (TerminalEmulator == "Apple_Terminal")
                 {
-                    throw new KernelException(KernelExceptionType.InsaneConsoleDetected,
-                                              "Kernel Simulator makes use of VT escape sequences, but Terminal.app has broken support for 255 and true colors." + CharManager.NewLine +
-                                              "Possible solution: Download iTerm2 here: https://iterm2.com/downloads.html");
+                    throw new KernelException(
+                        KernelExceptionType.InsaneConsoleDetected,
+                        "Nitrocid KS makes use of VT escape sequences, but Terminal.app has broken support for 255 and true colors." + CharManager.NewLine +
+                        "Possible solution: Download iTerm2 here: https://iterm2.com/downloads.html"
+                    );
                 }
             }
 
@@ -92,10 +94,12 @@ namespace KS.ConsoleBase
             // backend applications are console programs).
             if (DriverHandler.CurrentConsoleDriverLocal.IsDumb)
             {
-                throw new KernelException(KernelExceptionType.InsaneConsoleDetected,
-                                          "Nitrocid KS makes use of inputs and cursor manipulation, but the \"dumb\" terminals have no support for such tasks." + CharManager.NewLine + 
-                                          "Possible solution: Use an appropriate terminal emulator or consult your terminal settings to set the terminal type into something other than \"dumb\"." + CharManager.NewLine +
-                                          "                   We recommend using the \"vt100\" terminal emulators to get the most out of Nitrocid KS.");
+                throw new KernelException(
+                    KernelExceptionType.InsaneConsoleDetected,
+                    "Nitrocid KS makes use of inputs and cursor manipulation, but the \"dumb\" terminals have no support for such tasks." + CharManager.NewLine + 
+                    "Possible solution: Use an appropriate terminal emulator or consult your terminal settings to set the terminal type into something other than \"dumb\"." + CharManager.NewLine +
+                    "                   We recommend using the \"vt100\" terminal emulators to get the most out of Nitrocid KS."
+                );
             }
 
             // Check if the terminal supports 256 colors
@@ -103,7 +107,7 @@ namespace KS.ConsoleBase
             // Explanation below
             // ---
             // Nitrocid KS makes use of the 256 colors to print its own text by default. Even if we specify the 16-color compatibility values, we
-            // still use the VT sequence to print colored text, but this will be changed later.
+            // still use the VT sequence to print colored text.
             if (!IsConsole256Colors())
             {
                 if (KernelPlatform.IsOnWindows())

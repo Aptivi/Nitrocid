@@ -121,8 +121,8 @@ namespace Nitrocid.Tests.Misc.Text
         [Description("Querying")]
         public void TestFormatString()
         {
-            string Expected = "Kernel Simulator 0.0.1 first launched 2/22/2018.";
-            string Actual = "Kernel Simulator 0.0.1 first launched {0}/{1}/{2}.";
+            string Expected = "Nitrocid KS 0.0.1 first launched 2/22/2018.";
+            string Actual = "Nitrocid KS 0.0.1 first launched {0}/{1}/{2}.";
             int Day = 22;
             int Year = 2018;
             int Month = 2;
