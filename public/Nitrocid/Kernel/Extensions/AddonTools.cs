@@ -17,11 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Files;
 using KS.Files.Folders;
 using KS.Files.Instances;
 using KS.Files.Operations;
 using KS.Files.Operations.Querying;
+using KS.Files.Paths;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
@@ -55,7 +55,7 @@ namespace KS.Kernel.Extensions
 
         internal static void ProcessAddons(AddonType type)
         {
-            var addonFolder = Paths.AddonsPath;
+            var addonFolder = PathsManagement.AddonsPath;
             if (!Checking.FolderExists(addonFolder))
                 return;
             var addonFolders = Listing.GetFilesystemEntries(addonFolder);

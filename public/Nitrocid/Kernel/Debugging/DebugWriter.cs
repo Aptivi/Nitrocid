@@ -24,6 +24,7 @@ using System.Text;
 using KS.Drivers;
 using KS.Files;
 using KS.Files.Operations.Querying;
+using KS.Files.Paths;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging.RemoteDebug;
 using KS.Kernel.Debugging.RemoteDebug.RemoteChat;
@@ -388,7 +389,7 @@ namespace KS.Kernel.Debugging
         internal static void InitializeDebugPath()
         {
             // Initialize debug path
-            DebugPath = Getting.GetNumberedFileName(Path.GetDirectoryName(Paths.GetKernelPath(KernelPathType.Debugging)), Paths.GetKernelPath(KernelPathType.Debugging));
+            DebugPath = Getting.GetNumberedFileName(Path.GetDirectoryName(PathsManagement.GetKernelPath(KernelPathType.Debugging)), PathsManagement.GetKernelPath(KernelPathType.Debugging));
         }
 
     }

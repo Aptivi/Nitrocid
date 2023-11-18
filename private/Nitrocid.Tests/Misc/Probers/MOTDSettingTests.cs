@@ -19,6 +19,7 @@
 
 using System.IO;
 using KS.Files;
+using KS.Files.Paths;
 using KS.Misc.Text.Probers.Motd;
 using KS.Misc.Text.Probers.Placeholder;
 using NUnit.Framework;
@@ -40,7 +41,7 @@ namespace Nitrocid.Tests.Misc.Probers
         public void TestSetMOTD()
         {
             MotdParse.SetMotd(PlaceParse.ProbePlaces("Hello, I am on <system>"));
-            var MOTDFile = new StreamReader(Paths.GetKernelPath(KernelPathType.MOTD));
+            var MOTDFile = new StreamReader(PathsManagement.GetKernelPath(KernelPathType.MOTD));
             MOTDFile.ReadLine().ShouldBe(PlaceParse.ProbePlaces("Hello, I am on <system>"));
             MOTDFile.Close();
         }
@@ -53,7 +54,7 @@ namespace Nitrocid.Tests.Misc.Probers
         public void TestSetMAL()
         {
             MalParse.SetMal(PlaceParse.ProbePlaces("Hello, I am on <system>"));
-            var MALFile = new StreamReader(Paths.GetKernelPath(KernelPathType.MAL));
+            var MALFile = new StreamReader(PathsManagement.GetKernelPath(KernelPathType.MAL));
             MALFile.ReadLine().ShouldBe(PlaceParse.ProbePlaces("Hello, I am on <system>"));
             MALFile.Close();
         }

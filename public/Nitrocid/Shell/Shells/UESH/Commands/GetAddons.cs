@@ -19,7 +19,7 @@
 
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Files;
+using KS.Files.Paths;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Kernel.Extensions;
@@ -70,7 +70,7 @@ namespace KS.Shell.Shells.UESH.Commands
             try
             {
                 TextWriterColor.WriteKernelColor(Translate.DoTranslation("Downloading the addons package..."), KernelColorType.Progress);
-                NetworkTransfer.DownloadFile(addonsPackage.UpdateURL.ToString(), Paths.AppDataPath + "/addons.zip");
+                NetworkTransfer.DownloadFile(addonsPackage.UpdateURL.ToString(), PathsManagement.AppDataPath + "/addons.zip");
             }
             catch (Exception ex)
             {
@@ -84,7 +84,7 @@ namespace KS.Shell.Shells.UESH.Commands
             try
             {
                 TextWriterColor.WriteKernelColor(Translate.DoTranslation("Installing the addons package..."), KernelColorType.Progress);
-                ZipFile.ExtractToDirectory(Paths.AppDataPath + "/addons.zip", Paths.AddonsPath, true);
+                ZipFile.ExtractToDirectory(PathsManagement.AppDataPath + "/addons.zip", PathsManagement.AddonsPath, true);
             }
             catch (Exception ex)
             {

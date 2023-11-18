@@ -21,8 +21,8 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Inputs.Styles;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Files;
 using KS.Files.Operations;
+using KS.Files.Paths;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Events;
@@ -409,7 +409,7 @@ namespace KS.Kernel.Exceptions
                 dumpBuilder.AppendLine(Translate.DoTranslation("Running from GRILO?") + $" {KernelPlatform.IsRunningFromGrilo()}");
 
                 // Save the dump file
-                string filePath = $"{Paths.AppDataPath}/dmp_{TimeDateRenderers.RenderDate(FormatType.Short).Replace("/", "-")}_{TimeDateRenderers.RenderTime(FormatType.Long).Replace(":", "-")}.txt";
+                string filePath = $"{PathsManagement.AppDataPath}/dmp_{TimeDateRenderers.RenderDate(FormatType.Short).Replace("/", "-")}_{TimeDateRenderers.RenderTime(FormatType.Long).Replace(":", "-")}.txt";
                 Writing.WriteContentsText(filePath, dumpBuilder.ToString());
                 DebugWriter.WriteDebug(DebugLevel.I, "Opened file stream in home directory, saved as {0}", filePath);
             }

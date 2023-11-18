@@ -19,6 +19,7 @@
 
 using KS.Files;
 using KS.Files.Operations.Querying;
+using KS.Files.Paths;
 using NUnit.Framework;
 using Shouldly;
 using System;
@@ -67,10 +68,56 @@ namespace Nitrocid.Tests.Files
             foreach (KernelPathType PathType in Enum.GetValues(typeof(KernelPathType)))
             {
                 Console.WriteLine($"Path type: {PathType}");
-                string TargetKernelPath = Paths.GetKernelPath(PathType);
+                string TargetKernelPath = PathsManagement.GetKernelPath(PathType);
                 Console.WriteLine($"Got path: {TargetKernelPath}");
                 TargetKernelPath.ShouldNotBeNullOrEmpty();
             }
+        }
+
+        /// <summary>
+        /// Tests checking for path registration
+        /// </summary>
+        [Test]
+        [Description("Querying")]
+        public void TestIsKernelPathRegistered()
+        {
+            foreach (KernelPathType PathType in Enum.GetValues(typeof(KernelPathType)))
+            {
+                Console.WriteLine($"Path type: {PathType}");
+                string type = PathsManagement.GetKernelPathName(PathType);
+                bool regged = PathsManagement.IsKernelPathRegistered(type);
+                regged.ShouldBeTrue();
+            }
+        }
+
+        /// <summary>
+        /// Tests checking for built-in path registration
+        /// </summary>
+        [Test]
+        [Description("Querying")]
+        public void TestIsKernelPathBuiltin()
+        {
+            foreach (KernelPathType PathType in Enum.GetValues(typeof(KernelPathType)))
+            {
+                Console.WriteLine($"Path type: {PathType}");
+                string type = PathsManagement.GetKernelPathName(PathType);
+                bool regged = PathsManagement.IsKernelPathBuiltin(type);
+                regged.ShouldBeTrue();
+            }
+        }
+
+        /// <summary>
+        /// Tests the custom path registration, querying, and unregistration
+        /// </summary>
+        [Test]
+        [Description("Querying")]
+        public void TestCustomPath()
+        {
+            string type = "Custom";
+            PathsManagement.RegisterKernelPath(type, InitTest.PathToTestSlotFolder);
+            string path = PathsManagement.GetKernelPath(type);
+            PathsManagement.UnregisterKernelPath(type);
+            path.ShouldBe(InitTest.PathToTestSlotFolder);
         }
 
         /// <summary>

@@ -28,6 +28,7 @@ using FluentFTP.Helpers;
 using KS.ConsoleBase.Colors;
 using KS.Files;
 using KS.Files.Operations.Querying;
+using KS.Files.Paths;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
@@ -254,20 +255,20 @@ namespace Nitrocid.Extras.FtpShell.Tools.Filesystem
             DebugWriter.WriteDebug(DebugLevel.I, "Copying from {0} to {1} with the source file of {2}...", Source, Target, SourceFile);
             if (((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DirectoryExists(Source))
             {
-                ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DownloadDirectory(Paths.TempPath + "/FTPTransfer", Source);
-                Result = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).UploadDirectory(Paths.TempPath + "/FTPTransfer/" + Source, Target);
+                ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DownloadDirectory(PathsManagement.TempPath + "/FTPTransfer", Source);
+                Result = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).UploadDirectory(PathsManagement.TempPath + "/FTPTransfer/" + Source, Target);
             }
             else if (((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).FileExists(Source) & ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DirectoryExists(Target))
             {
-                ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DownloadFile(Paths.TempPath + "/FTPTransfer/" + SourceFile, Source);
-                Result = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).UploadFile(Paths.TempPath + "/FTPTransfer/" + SourceFile, Target + "/" + SourceFile);
+                ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DownloadFile(PathsManagement.TempPath + "/FTPTransfer/" + SourceFile, Source);
+                Result = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).UploadFile(PathsManagement.TempPath + "/FTPTransfer/" + SourceFile, Target + "/" + SourceFile);
             }
             else if (((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).FileExists(Source))
             {
-                ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DownloadFile(Paths.TempPath + "/FTPTransfer/" + SourceFile, Source);
-                Result = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).UploadFile(Paths.TempPath + "/FTPTransfer/" + SourceFile, Target);
+                ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DownloadFile(PathsManagement.TempPath + "/FTPTransfer/" + SourceFile, Source);
+                Result = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).UploadFile(PathsManagement.TempPath + "/FTPTransfer/" + SourceFile, Target);
             }
-            Directory.Delete(Paths.TempPath + "/FTPTransfer", true);
+            Directory.Delete(PathsManagement.TempPath + "/FTPTransfer", true);
 
             // See if copied successfully
             if (Result.GetType() == typeof(List<FtpResult>))

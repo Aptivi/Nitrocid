@@ -17,9 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Files;
 using KS.Files.Operations;
 using KS.Files.Operations.Querying;
+using KS.Files.Paths;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using Newtonsoft.Json;
@@ -35,7 +35,7 @@ namespace Nitrocid.Extras.Notes.Management
         /// Path to the notes file
         /// </summary>
         internal static string NotesPath =>
-            Paths.AppDataPath + "/notes.json";
+            PathsManagement.AppDataPath + "/notes.json";
 
         /// <summary>
         /// Creates a new note

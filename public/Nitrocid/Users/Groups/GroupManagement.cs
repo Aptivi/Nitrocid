@@ -17,9 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Files;
 using KS.Files.Operations;
 using KS.Files.Operations.Querying;
+using KS.Files.Paths;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
@@ -192,11 +192,11 @@ namespace KS.Users.Groups
         internal static void InitializeGroups()
         {
             // First, check to see if we have the groups file
-            if (!Checking.FileExists(Paths.UserGroupsPath))
+            if (!Checking.FileExists(PathsManagement.UserGroupsPath))
                 SaveGroups();
 
             // Get the group information instances to the user groups path
-            string groupInfosJson = Reading.ReadContentsText(Paths.UserGroupsPath);
+            string groupInfosJson = Reading.ReadContentsText(PathsManagement.UserGroupsPath);
             JArray groupInfoArrays = (JArray)JsonConvert.DeserializeObject(groupInfosJson);
             List<GroupInfo> groups = [];
             foreach (var groupInfoArray in groupInfoArrays)
@@ -211,7 +211,7 @@ namespace KS.Users.Groups
         {
             // Make a JSON file to save all group information files
             string groupInfosSerialized = JsonConvert.SerializeObject(AvailableGroups.ToArray(), Formatting.Indented);
-            Writing.WriteContentsText(Paths.UserGroupsPath, groupInfosSerialized);
+            Writing.WriteContentsText(PathsManagement.UserGroupsPath, groupInfosSerialized);
         }
 
         internal static void ChangePermissionInternal(string groupName, string[] newPermissions)

@@ -25,6 +25,7 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files;
 using KS.Files.Operations;
 using KS.Files.Operations.Querying;
+using KS.Files.Paths;
 using KS.Kernel.Updates;
 using KS.Languages;
 using KS.Network.Base.Transfer;
@@ -52,11 +53,11 @@ namespace Nitrocid.Extras.RetroKS
             var update = new KernelUpdate(RetroKSToken, UpdateKind.Binary);
 
             // Populate paths
-            string RetroKSPath = FilesystemTools.NeutralizePath("retroks.rar", Paths.RetroKSDownloadPath);
-            string RetroExecKSPath = FilesystemTools.NeutralizePath(ExecutableName, Paths.RetroKSDownloadPath);
+            string RetroKSPath = FilesystemTools.NeutralizePath("retroks.rar", PathsManagement.RetroKSDownloadPath);
+            string RetroExecKSPath = FilesystemTools.NeutralizePath(ExecutableName, PathsManagement.RetroKSDownloadPath);
 
             // Make the directory for RetroKS
-            Making.MakeDirectory(Paths.RetroKSDownloadPath, false);
+            Making.MakeDirectory(PathsManagement.RetroKSDownloadPath, false);
 
             // Check to see if we already have RetroKS installed and up-to-date
             var currentVersion = Checking.FileExists(RetroExecKSPath) ? AssemblyName.GetAssemblyName(RetroExecKSPath).Version.ToString() : "0.0.0.0";
@@ -72,7 +73,7 @@ namespace Nitrocid.Extras.RetroKS
                 TextWriterColor.Write(Translate.DoTranslation("Installing version") + " {0}...", update.UpdateVersion.ToString());
                 using var archive = ZipArchive.Open(RetroKSPath);
                 foreach (var entry in archive.Entries.Where(e => !e.IsDirectory))
-                    entry.WriteToDirectory(Paths.RetroKSDownloadPath, new ExtractionOptions()
+                    entry.WriteToDirectory(PathsManagement.RetroKSDownloadPath, new ExtractionOptions()
                     {
                         ExtractFullPath = true,
                         Overwrite = true

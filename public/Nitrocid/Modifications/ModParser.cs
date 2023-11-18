@@ -37,6 +37,7 @@ using KS.Files.Operations;
 using KS.Files.Operations.Querying;
 using Newtonsoft.Json;
 using KS.Languages.Decoy;
+using KS.Files.Paths;
 
 namespace KS.Modifications
 {
@@ -68,7 +69,7 @@ namespace KS.Modifications
         /// <param name="modFile">Mod file name with extension. It should end with .dll</param>
         public static void ParseMod(string modFile)
         {
-            string ModPath = Paths.GetKernelPath(KernelPathType.Mods);
+            string ModPath = PathsManagement.GetKernelPath(KernelPathType.Mods);
             if (modFile.EndsWith(".dll"))
             {
                 // Mod is a dynamic DLL
@@ -150,7 +151,7 @@ namespace KS.Modifications
             // Try to finalize mod
             if (script is not null)
             {
-                string ModPath = Paths.GetKernelPath(KernelPathType.Mods);
+                string ModPath = PathsManagement.GetKernelPath(KernelPathType.Mods);
                 string modFilePath = FilesystemTools.NeutralizePath(modFile, ModPath);
                 EventsManager.FireEvent(EventType.ModParsed, modFile);
                 try

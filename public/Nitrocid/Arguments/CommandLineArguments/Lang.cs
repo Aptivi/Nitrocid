@@ -17,8 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Files;
 using KS.Files.Operations.Querying;
+using KS.Files.Paths;
 using KS.Kernel.Extensions;
 using KS.Languages;
 
@@ -29,7 +29,7 @@ namespace KS.Arguments.CommandLineArguments
 
         public override void Execute(ArgumentParameters parameters)
         {
-            string langPacksAddonPath = Paths.AddonsPath + "/LanguagePacks";
+            string langPacksAddonPath = PathsManagement.AddonsPath + "/LanguagePacks";
             if (Checking.FolderExists(langPacksAddonPath))
             {
                 AddonTools.ProcessAddon(langPacksAddonPath, AddonType.Important);

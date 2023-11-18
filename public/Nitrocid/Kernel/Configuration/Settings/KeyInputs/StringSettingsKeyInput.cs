@@ -23,6 +23,7 @@ using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files;
 using KS.Files.Folders;
+using KS.Files.Paths;
 using KS.Kernel.Configuration.Instances;
 using KS.Kernel.Debugging;
 using KS.Languages;
@@ -55,7 +56,7 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
             // Neutralize path if required with the assumption that the keytype is not list
             if (key.IsValuePath)
             {
-                string NeutralizeRootPath = key.IsPathCurrentPath ? CurrentDirectory.CurrentDir : Paths.GetKernelPath(key.ValuePathType);
+                string NeutralizeRootPath = key.IsPathCurrentPath ? CurrentDirectory.CurrentDir : PathsManagement.GetKernelPath(key.ValuePathType);
                 value = FilesystemTools.NeutralizePath(value, NeutralizeRootPath);
             }
             return value;
@@ -66,7 +67,7 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
             // Neutralize path if required with the assumption that the keytype is not list
             if (key.IsValuePath)
             {
-                string NeutralizeRootPath = key.IsPathCurrentPath ? CurrentDirectory.CurrentDir : Paths.GetKernelPath(key.ValuePathType);
+                string NeutralizeRootPath = key.IsPathCurrentPath ? CurrentDirectory.CurrentDir : PathsManagement.GetKernelPath(key.ValuePathType);
                 value = FilesystemTools.NeutralizePath(value, NeutralizeRootPath);
             }
 

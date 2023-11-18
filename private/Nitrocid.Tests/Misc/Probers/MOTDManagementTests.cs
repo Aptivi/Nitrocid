@@ -19,6 +19,7 @@
 
 using KS.Files;
 using KS.Files.Operations;
+using KS.Files.Paths;
 using KS.Misc.Text.Probers.Motd;
 using NUnit.Framework;
 using Shouldly;
@@ -39,7 +40,7 @@ namespace Nitrocid.Tests.Misc.Probers
         public void TestReadMOTDFromFile()
         {
             MotdParse.ReadMotd();
-            string MOTDLine = Reading.ReadContentsText(Paths.GetKernelPath(KernelPathType.MOTD));
+            string MOTDLine = Reading.ReadContentsText(PathsManagement.GetKernelPath(KernelPathType.MOTD));
             MOTDLine.ShouldBe(MotdParse.MotdMessage);
         }
 
@@ -51,7 +52,7 @@ namespace Nitrocid.Tests.Misc.Probers
         public void TestReadMALFromFile()
         {
             MalParse.ReadMal();
-            string MALLine = Reading.ReadContentsText(Paths.GetKernelPath(KernelPathType.MAL));
+            string MALLine = Reading.ReadContentsText(PathsManagement.GetKernelPath(KernelPathType.MAL));
             MALLine.ShouldBe(MalParse.MalMessage);
         }
 

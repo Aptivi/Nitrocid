@@ -23,7 +23,7 @@ using System.IO;
 using KS.Drivers;
 using KS.Kernel.Configuration;
 
-namespace KS.Files.PathLookup
+namespace KS.Files.Paths
 {
     /// <summary>
     /// Path lookup tools module

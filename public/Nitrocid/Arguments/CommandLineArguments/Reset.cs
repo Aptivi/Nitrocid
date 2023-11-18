@@ -27,6 +27,7 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs.Styles;
 using KS.Files.Operations.Querying;
 using KS.Kernel.Power;
+using KS.Files.Paths;
 
 namespace KS.Arguments.CommandLineArguments
 {
@@ -41,8 +42,8 @@ namespace KS.Arguments.CommandLineArguments
                 try
                 {
                     var pathType = (KernelPathType)Enum.Parse(typeof(KernelPathType), PathName);
-                    string TargetPath = Paths.GetKernelPath(pathType);
-                    if (!Paths.IsResettable(pathType))
+                    string TargetPath = PathsManagement.GetKernelPath(pathType);
+                    if (!PathsManagement.IsResettable(pathType))
                         continue;
                     switch (pathType)
                     {
@@ -73,7 +74,7 @@ namespace KS.Arguments.CommandLineArguments
             }
 
             // Delete every dump file
-            string dumpPath = $"{Paths.AppDataPath}/dmp_*.txt";
+            string dumpPath = $"{PathsManagement.AppDataPath}/dmp_*.txt";
             string[] dumps = Listing.GetFilesystemEntries(dumpPath);
             foreach (string dump in dumps)
             {
@@ -88,7 +89,7 @@ namespace KS.Arguments.CommandLineArguments
             }
 
             // Inform user that the wipe was not complete if there are files.
-            string[] files = Listing.GetFilesystemEntries(Paths.AppDataPath);
+            string[] files = Listing.GetFilesystemEntries(PathsManagement.AppDataPath);
             if (files.Length > 0)
             {
                 TextWriterColor.WriteKernelColor(Translate.DoTranslation("The following files are not wiped:"), true, KernelColorType.Warning);

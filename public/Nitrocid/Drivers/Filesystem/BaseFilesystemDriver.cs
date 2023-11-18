@@ -38,15 +38,14 @@ using KS.Kernel;
 using KS.ConsoleBase.Colors;
 using KS.Misc.Text;
 using KS.Kernel.Events;
-using KS.Files;
 using KS.Kernel.Configuration;
 using KS.Misc.Reflection;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Files.PathLookup;
 using KS.Files.Instances;
 using KS.Misc.Text.Probers.Regexp;
 using KS.Files.Operations.Querying;
 using KS.Kernel.Extensions;
+using KS.Files.Paths;
 
 namespace KS.Drivers.Filesystem
 {
@@ -940,11 +939,11 @@ namespace KS.Drivers.Filesystem
 
         /// <inheritdoc/>
         public string GetRandomFileName() =>
-            FS.NeutralizePath(IOPath.GetRandomFileName(), Paths.TempPath);
+            FS.NeutralizePath(IOPath.GetRandomFileName(), PathsManagement.TempPath);
 
         /// <inheritdoc/>
         public string GetRandomFolderName() =>
-            FS.NeutralizePath(IOPath.GetRandomFileName() + "/", Paths.TempPath);
+            FS.NeutralizePath(IOPath.GetRandomFileName() + "/", PathsManagement.TempPath);
 
         /// <inheritdoc/>
         public virtual bool IsBinaryFile(string Path)

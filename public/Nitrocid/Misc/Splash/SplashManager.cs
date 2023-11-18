@@ -32,6 +32,7 @@ using KS.Files.Folders;
 using KS.Files.Instances;
 using KS.Files.Operations;
 using KS.Files.Operations.Querying;
+using KS.Files.Paths;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Threading;
@@ -105,7 +106,7 @@ namespace KS.Misc.Splash
         /// </summary>
         public static void LoadSplashes()
         {
-            string SplashPath = Paths.GetKernelPath(KernelPathType.CustomSplashes);
+            string SplashPath = PathsManagement.GetKernelPath(KernelPathType.CustomSplashes);
             if (!Checking.FolderExists(SplashPath))
                 Making.MakeDirectory(SplashPath);
             var SplashFiles = Listing.CreateList(SplashPath);
@@ -182,7 +183,7 @@ namespace KS.Misc.Splash
         /// </summary>
         public static void UnloadSplashes()
         {
-            string SplashPath = Paths.GetKernelPath(KernelPathType.CustomSplashes);
+            string SplashPath = PathsManagement.GetKernelPath(KernelPathType.CustomSplashes);
             var SplashFiles = Listing.CreateList(SplashPath);
             foreach (FileSystemEntry SplashFileInfo in SplashFiles)
             {

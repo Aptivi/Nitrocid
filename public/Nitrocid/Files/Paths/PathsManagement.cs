@@ -24,46 +24,73 @@ using KS.Kernel;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 
-namespace KS.Files
+namespace KS.Files.Paths
 {
     /// <summary>
     /// Paths module
     /// </summary>
-    public static class Paths
+    public static class PathsManagement
     {
 
-        private static readonly Dictionary<KernelPathType, (Func<string>, bool)> knownPaths = new()
+        private static readonly List<string> knownKernelPathTypes =
+        [
+            $"{KernelPathType.Aliases}",
+            $"{KernelPathType.Configuration}",
+            $"{KernelPathType.CustomLanguages}",
+            $"{KernelPathType.CustomSplashes}",
+            $"{KernelPathType.DebugDevices}",
+            $"{KernelPathType.Debugging}",
+            $"{KernelPathType.Events}",
+            $"{KernelPathType.SpeedDial}",
+            $"{KernelPathType.MAL}",
+            $"{KernelPathType.Mods}",
+            $"{KernelPathType.MOTD}",
+            $"{KernelPathType.Reminders}",
+            $"{KernelPathType.Users}",
+            $"{KernelPathType.Journaling}",
+            $"{KernelPathType.Contacts}",
+            $"{KernelPathType.ContactsImport}",
+            $"{KernelPathType.SaverConfiguration}",
+            $"{KernelPathType.ToDoList}",
+            $"{KernelPathType.UserGroups}",
+            $"{KernelPathType.Addons}",
+            $"{KernelPathType.ShellHistories}",
+            $"{KernelPathType.Consents}",
+            $"{KernelPathType.ExtensionHandlers}",
+        ];
+        private static readonly Dictionary<string, string> customPaths = [];
+        private static readonly Dictionary<string, (Func<string>, bool)> knownPaths = new()
         {
-            { KernelPathType.Aliases,             (() => AliasesPath, true) },
-            { KernelPathType.Configuration,       (() => ConfigurationPath, true) },
-            { KernelPathType.CustomLanguages,     (() => CustomLanguagesPath, true) },
-            { KernelPathType.CustomSplashes,      (() => CustomSplashesPath, true) },
-            { KernelPathType.DebugDevices,        (() => DebugDevicesPath, true) },
-            { KernelPathType.Debugging,           (() => DebuggingPath, true) },
-            { KernelPathType.Events,              (() => EventsPath, true) },
-            { KernelPathType.SpeedDial,           (() => SpeedDialPath, true) },
-            { KernelPathType.MAL,                 (() => MALPath, true) },
-            { KernelPathType.Mods,                (() => ModsPath, true) },
-            { KernelPathType.MOTD,                (() => MOTDPath, true) },
-            { KernelPathType.Reminders,           (() => RemindersPath, true) },
-            { KernelPathType.Users,               (() => UsersPath, true) },
-            { KernelPathType.Journaling,          (() => JournalingPath, true) },
-            { KernelPathType.Contacts,            (() => ContactsPath, true) },
-            { KernelPathType.ContactsImport,      (() => ContactsImportPath, true) },
-            { KernelPathType.SaverConfiguration,  (() => SaverConfigurationPath, true) },
-            { KernelPathType.ToDoList,            (() => ToDoListPath, true) },
-            { KernelPathType.UserGroups,          (() => UserGroupsPath, true) },
-            { KernelPathType.Addons,              (() => AddonsPath, false) },
-            { KernelPathType.ShellHistories,      (() => ShellHistoriesPath, true) },
-            { KernelPathType.Consents,            (() => ConsentsPath, true) },
-            { KernelPathType.ExtensionHandlers,   (() => ExtensionHandlersPath, true) },
+            { $"{KernelPathType.Aliases}",             (() => AliasesPath, true) },
+            { $"{KernelPathType.Configuration}",       (() => ConfigurationPath, true) },
+            { $"{KernelPathType.CustomLanguages}",     (() => CustomLanguagesPath, true) },
+            { $"{KernelPathType.CustomSplashes}",      (() => CustomSplashesPath, true) },
+            { $"{KernelPathType.DebugDevices}",        (() => DebugDevicesPath, true) },
+            { $"{KernelPathType.Debugging}",           (() => DebuggingPath, true) },
+            { $"{KernelPathType.Events}",              (() => EventsPath, true) },
+            { $"{KernelPathType.SpeedDial}",           (() => SpeedDialPath, true) },
+            { $"{KernelPathType.MAL}",                 (() => MALPath, true) },
+            { $"{KernelPathType.Mods}",                (() => ModsPath, true) },
+            { $"{KernelPathType.MOTD}",                (() => MOTDPath, true) },
+            { $"{KernelPathType.Reminders}",           (() => RemindersPath, true) },
+            { $"{KernelPathType.Users}",               (() => UsersPath, true) },
+            { $"{KernelPathType.Journaling}",          (() => JournalingPath, true) },
+            { $"{KernelPathType.Contacts}",            (() => ContactsPath, true) },
+            { $"{KernelPathType.ContactsImport}",      (() => ContactsImportPath, true) },
+            { $"{KernelPathType.SaverConfiguration}",  (() => SaverConfigurationPath, true) },
+            { $"{KernelPathType.ToDoList}",            (() => ToDoListPath, true) },
+            { $"{KernelPathType.UserGroups}",          (() => UserGroupsPath, true) },
+            { $"{KernelPathType.Addons}",              (() => AddonsPath, false) },
+            { $"{KernelPathType.ShellHistories}",      (() => ShellHistoriesPath, true) },
+            { $"{KernelPathType.Consents}",            (() => ConsentsPath, true) },
+            { $"{KernelPathType.ExtensionHandlers}",   (() => ExtensionHandlersPath, true) },
         };
 
         /// <summary>
         /// Path to KS executable folder
         /// </summary>
         public static string ExecPath =>
-            Path.GetDirectoryName(typeof(Paths).Assembly.Location);
+            Path.GetDirectoryName(typeof(PathsManagement).Assembly.Location);
 
         /// <summary>
         /// Platform-dependent home path
@@ -266,15 +293,105 @@ namespace KS.Files
             FilesystemTools.NeutralizePath(AppDataPath + "/ExtensionHandlers.json");
 
         /// <summary>
+        /// Gets the kernel path name from the list of known path types
+        /// </summary>
+        /// <param name="PathType">Kernel path type</param>
+        /// <returns>A kernel path name</returns>
+        /// <exception cref="KernelException"></exception>
+        public static string GetKernelPathName(KernelPathType PathType)
+        {
+            string typeString = $"{PathType}";
+            foreach (string typeName in knownKernelPathTypes)
+            {
+                if (typeName == typeString)
+                    return typeName;
+            }
+            throw new KernelException(KernelExceptionType.InvalidKernelPath, Translate.DoTranslation("Invalid kernel path type."));
+        }
+
+        /// <summary>
         /// Gets the neutralized kernel path
         /// </summary>
         /// <param name="PathType">Kernel path type</param>
         /// <returns>A kernel path</returns>
         public static string GetKernelPath(KernelPathType PathType)
         {
+            string name = GetKernelPathName(PathType);
+            return GetKernelPath(name);
+        }
+
+        /// <summary>
+        /// Gets the neutralized kernel path
+        /// </summary>
+        /// <param name="PathType">Kernel path type</param>
+        /// <returns>A kernel path</returns>
+        public static string GetKernelPath(string PathType)
+        {
             if (knownPaths.TryGetValue(PathType, out (Func<string>, bool) pathDelegate))
                 return pathDelegate.Item1();
+            if (customPaths.TryGetValue(PathType, out string path))
+                return path;
             throw new KernelException(KernelExceptionType.InvalidKernelPath, Translate.DoTranslation("Invalid kernel path type."));
+        }
+
+        /// <summary>
+        /// Checks to see if the kernel path is built-in
+        /// </summary>
+        /// <param name="pathType">Path type to check</param>
+        /// <returns>True if registered in the built-in path list. Otherwise, false.</returns>
+        public static bool IsKernelPathBuiltin(string pathType) =>
+            knownKernelPathTypes.Contains(pathType);
+
+        /// <summary>
+        /// Checks to see if the kernel path is registered
+        /// </summary>
+        /// <param name="pathType">Path type to check</param>
+        /// <returns>True if registered in either the built-in or the custom path list. Otherwise, false.</returns>
+        public static bool IsKernelPathRegistered(string pathType) =>
+            IsKernelPathBuiltin(pathType) ||
+            customPaths.ContainsKey(pathType);
+
+        /// <summary>
+        /// Registers a custom kernel path
+        /// </summary>
+        /// <param name="pathType">Path type to register</param>
+        /// <param name="path">Path to a target (doesn't necessarily need to exist)</param>
+        /// <exception cref="KernelException"></exception>
+        public static void RegisterKernelPath(string pathType, string path)
+        {
+            // Check to see if the path type has been provided
+            if (string.IsNullOrEmpty(pathType))
+                throw new KernelException(KernelExceptionType.InvalidKernelPath, Translate.DoTranslation("Empty kernel path type."));
+
+            // Now, check for registration
+            if (IsKernelPathRegistered(pathType))
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Kernel path type is already registered."));
+
+            // Check the path (not necessarily exists)
+            if (string.IsNullOrEmpty(path))
+                throw new KernelException(KernelExceptionType.InvalidKernelPath, Translate.DoTranslation("Empty path."));
+
+            // Now, register the kernel path to the custom path list
+            customPaths.Add(pathType, path);
+        }
+
+        /// <summary>
+        /// Unregisters a custom kernel path
+        /// </summary>
+        /// <param name="pathType">Path type to unregister</param>
+        /// <exception cref="KernelException"></exception>
+        public static void UnregisterKernelPath(string pathType)
+        {
+            // Check to see if the path type has been provided
+            if (string.IsNullOrEmpty(pathType))
+                throw new KernelException(KernelExceptionType.InvalidKernelPath, Translate.DoTranslation("Empty kernel path type."));
+
+            // Now, check for registration
+            if (!IsKernelPathRegistered(pathType))
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Kernel path type is not registered."));
+
+            // Now, unregister the kernel path to the custom path list
+            customPaths.Remove(pathType);
         }
 
         /// <summary>
@@ -284,7 +401,8 @@ namespace KS.Files
         /// <returns>True if we're able to wipe. Otherwise, false.</returns>
         public static bool IsResettable(KernelPathType PathType)
         {
-            if (knownPaths.TryGetValue(PathType, out (Func<string>, bool) pathDelegate))
+            string name = GetKernelPathName(PathType);
+            if (knownPaths.TryGetValue(name, out (Func<string>, bool) pathDelegate))
                 return pathDelegate.Item2;
             throw new KernelException(KernelExceptionType.InvalidKernelPath, Translate.DoTranslation("Invalid kernel path type."));
         }

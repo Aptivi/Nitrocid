@@ -44,6 +44,7 @@ using KS.Files.Operations.Querying;
 using KS.Files.Operations.Printing;
 using Terminaux.Sequences.Tools;
 using KS.ConsoleBase.Inputs.Styles;
+using KS.Files.Paths;
 
 namespace KS.Misc.Interactives
 {
@@ -52,8 +53,8 @@ namespace KS.Misc.Interactives
     /// </summary>
     public class FileManagerCli : BaseInteractiveTui, IInteractiveTui
     {
-        private static string firstPanePath = Paths.HomePath;
-        private static string secondPanePath = Paths.HomePath;
+        private static string firstPanePath = PathsManagement.HomePath;
+        private static string secondPanePath = PathsManagement.HomePath;
         private static bool refreshFirstPaneListing = true;
         private static bool refreshSecondPaneListing = true;
         private static List<FileSystemEntry> firstPaneListing = [];

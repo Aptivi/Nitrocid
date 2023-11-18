@@ -21,6 +21,7 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files;
 using KS.Files.Operations.Querying;
+using KS.Files.Paths;
 using KS.Kernel;
 using KS.Kernel.Exceptions;
 using KS.Languages;
@@ -43,7 +44,7 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            string modPath = Paths.GetKernelPath(KernelPathType.Mods);
+            string modPath = PathsManagement.GetKernelPath(KernelPathType.Mods);
             string finalSaverName = parameters.ArgumentsText.ToLower();
             if (ScreensaverManager.GetScreensaverNames().Contains(finalSaverName))
             {

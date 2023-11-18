@@ -20,7 +20,6 @@
 using System;
 using System.Threading;
 using KS.ConsoleBase.Colors;
-using KS.Files;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
@@ -32,6 +31,7 @@ using KS.Network.Base.SpeedDial;
 using Nitrocid.Extras.FtpShell.Tools;
 using Nitrocid.Extras.FtpShell.Tools.Transfer;
 using FluentFTP;
+using KS.Files.Paths;
 
 namespace Nitrocid.Extras.FtpShell.FTP
 {
@@ -86,7 +86,7 @@ namespace Nitrocid.Extras.FtpShell.FTP
             clientFTP.Config.LogPassword = false;
 
             // Populate FTP current directory
-            FTPShellCommon.FtpCurrentDirectory = Paths.HomePath;
+            FTPShellCommon.FtpCurrentDirectory = PathsManagement.HomePath;
 
             // Actual shell logic
             while (!Bail)

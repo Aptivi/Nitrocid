@@ -25,6 +25,7 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files;
 using KS.Files.Operations;
 using KS.Files.Operations.Querying;
+using KS.Files.Paths;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Text;
@@ -41,8 +42,8 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
         {
             // Neutralize the translations path
             pathToTranslations = FilesystemTools.NeutralizePath(pathToTranslations);
-            string initialManifestFile = $"{Paths.ExecPath}/Translations/Metadata.json";
-            string initialEnglishFile = $"{Paths.ExecPath}/Translations/eng.txt";
+            string initialManifestFile = $"{PathsManagement.ExecPath}/Translations/Metadata.json";
+            string initialEnglishFile = $"{PathsManagement.ExecPath}/Translations/eng.txt";
             string manifestFile = $"{pathToTranslations}/Metadata.json";
             string englishFile = $"{pathToTranslations}/eng.txt";
 

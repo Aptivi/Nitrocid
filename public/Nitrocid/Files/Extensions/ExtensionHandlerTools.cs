@@ -21,6 +21,7 @@ using KS.Drivers;
 using KS.Drivers.Encryption;
 using KS.Files.Operations;
 using KS.Files.Operations.Querying;
+using KS.Files.Paths;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using Newtonsoft.Json;
@@ -357,14 +358,14 @@ namespace KS.Files.Extensions
         internal static void SaveAllHandlers()
         {
             string serialized = JsonConvert.SerializeObject(defaultHandlers);
-            Writing.WriteContentsText(Paths.ExtensionHandlersPath, serialized);
+            Writing.WriteContentsText(PathsManagement.ExtensionHandlersPath, serialized);
         }
 
         internal static void LoadAllHandlers()
         {
-            if (!Checking.FileExists(Paths.ExtensionHandlersPath))
+            if (!Checking.FileExists(PathsManagement.ExtensionHandlersPath))
                 SaveAllHandlers();
-            string contents = Reading.ReadContentsText(Paths.ExtensionHandlersPath);
+            string contents = Reading.ReadContentsText(PathsManagement.ExtensionHandlersPath);
             defaultHandlers = JsonConvert.DeserializeObject<Dictionary<string, string>>(contents);
         }
     }

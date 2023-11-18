@@ -25,6 +25,7 @@ using KS.Kernel.Exceptions;
 using KS.Files;
 using KS.Files.Folders;
 using KS.Files.Operations;
+using KS.Files.Paths;
 
 namespace KS.Shell.Shells.Debug.Commands
 {
@@ -49,7 +50,7 @@ namespace KS.Shell.Shells.Debug.Commands
             }
 
             // Now, check to see if we have this session number. Get all the debug logs and compare.
-            string TargetPath = Paths.GetKernelPath(KernelPathType.Debugging);
+            string TargetPath = PathsManagement.GetKernelPath(KernelPathType.Debugging);
             TargetPath = TargetPath[..TargetPath.LastIndexOf(".log")] + "*.log";
             string[] debugs = Listing.GetFilesystemEntries(TargetPath);
             string finalDebug = "";

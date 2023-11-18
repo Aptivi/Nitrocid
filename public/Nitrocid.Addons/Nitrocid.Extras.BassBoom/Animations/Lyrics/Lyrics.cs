@@ -36,6 +36,7 @@ using KS.Files.Operations.Querying;
 using KS.Kernel.Exceptions;
 using KS.ConsoleBase.Inputs.Styles;
 using BassBoom.Basolia.Lyrics;
+using KS.Files.Paths;
 
 namespace Nitrocid.Extras.BassBoom.Animations.Lyrics
 {
@@ -45,7 +46,7 @@ namespace Nitrocid.Extras.BassBoom.Animations.Lyrics
     public static class Lyrics
     {
 
-        internal static string lyricsPath = Paths.HomePath + "/Music/";
+        internal static string lyricsPath = PathsManagement.HomePath + "/Music/";
         internal static string[] lyricsLrc;
 
         /// <summary>

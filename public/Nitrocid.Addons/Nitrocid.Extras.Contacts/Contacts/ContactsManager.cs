@@ -33,6 +33,7 @@ using System.IO;
 using VisualCard.Converters;
 using KS.Misc.Text.Probers.Regexp;
 using KS.Files.Operations.Querying;
+using KS.Files.Paths;
 
 namespace Nitrocid.Extras.Contacts.Contacts
 {
@@ -52,10 +53,10 @@ namespace Nitrocid.Extras.Contacts.Contacts
         public static Card[] GetContacts()
         {
             // Get the contact files
-            string contactsPath = Paths.GetKernelPath(KernelPathType.Contacts);
+            string contactsPath = PathsManagement.GetKernelPath(KernelPathType.Contacts);
             if (!Checking.FolderExists(contactsPath))
                 Making.MakeDirectory(contactsPath);
-            var contactFiles = Listing.GetFilesystemEntries(Paths.GetKernelPath(KernelPathType.Contacts) + "/*.vcf");
+            var contactFiles = Listing.GetFilesystemEntries(PathsManagement.GetKernelPath(KernelPathType.Contacts) + "/*.vcf");
             DebugWriter.WriteDebug(DebugLevel.I, "Got {0} contacts.", contactFiles.Length);
 
             // Now, enumerate through each contact file
@@ -73,11 +74,11 @@ namespace Nitrocid.Extras.Contacts.Contacts
         public static void ImportContacts()
         {
             // Get the contact files
-            string contactsImportPath = Paths.GetKernelPath(KernelPathType.ContactsImport);
+            string contactsImportPath = PathsManagement.GetKernelPath(KernelPathType.ContactsImport);
             if (!Checking.FolderExists(contactsImportPath))
                 Making.MakeDirectory(contactsImportPath);
-            var contactFiles = Listing.GetFilesystemEntries(Paths.GetKernelPath(KernelPathType.ContactsImport) + "/*.vcf");
-            var androidContactFiles = Listing.GetFilesystemEntries(Paths.GetKernelPath(KernelPathType.ContactsImport) + "/*.db");
+            var contactFiles = Listing.GetFilesystemEntries(PathsManagement.GetKernelPath(KernelPathType.ContactsImport) + "/*.vcf");
+            var androidContactFiles = Listing.GetFilesystemEntries(PathsManagement.GetKernelPath(KernelPathType.ContactsImport) + "/*.db");
             DebugWriter.WriteDebug(DebugLevel.I, "Got {0} contacts and {1} Android databases.", contactFiles.Length, androidContactFiles.Length);
 
             // Now, enumerate through each contact file
@@ -121,7 +122,7 @@ namespace Nitrocid.Extras.Contacts.Contacts
             try
             {
                 // Check to see if we're dealing with the non-existent contacts file
-                string contactsPath = Paths.GetKernelPath(KernelPathType.Contacts);
+                string contactsPath = PathsManagement.GetKernelPath(KernelPathType.Contacts);
                 if (!Checking.FileExists(pathToContactFile))
                     throw new KernelException(KernelExceptionType.Contacts, pathToContactFile);
 
@@ -209,7 +210,7 @@ namespace Nitrocid.Extras.Contacts.Contacts
             try
             {
                 // Check to see if we're dealing with the non-existent index file
-                string contactsPath = Paths.GetKernelPath(KernelPathType.Contacts);
+                string contactsPath = PathsManagement.GetKernelPath(KernelPathType.Contacts);
                 if (contactIndex < 0 || contactIndex >= cards.Count)
                     throw new KernelException(KernelExceptionType.Contacts, Translate.DoTranslation("Contact index is out of range. Maximum index is {0} while provided index is {1}."), cards.Count - 1, contactIndex);
 
@@ -241,7 +242,7 @@ namespace Nitrocid.Extras.Contacts.Contacts
             try
             {
                 // Check to see if we're dealing with the non-existent index file
-                string contactsPath = Paths.GetKernelPath(KernelPathType.Contacts);
+                string contactsPath = PathsManagement.GetKernelPath(KernelPathType.Contacts);
                 if (cards.Count <= 0)
                     return;
 
@@ -255,7 +256,7 @@ namespace Nitrocid.Extras.Contacts.Contacts
                 {
                     if (Checking.FolderExists(contactsPath))
                     {
-                        var contactFiles = Listing.GetFilesystemEntries(Paths.GetKernelPath(KernelPathType.Contacts) + "/*.vcf");
+                        var contactFiles = Listing.GetFilesystemEntries(PathsManagement.GetKernelPath(KernelPathType.Contacts) + "/*.vcf");
                         foreach (var contactFile in contactFiles)
                             Removing.RemoveFile(contactFile);
                     }

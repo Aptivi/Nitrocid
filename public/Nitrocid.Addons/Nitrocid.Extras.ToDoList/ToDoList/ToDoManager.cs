@@ -20,6 +20,7 @@
 using KS.Files;
 using KS.Files.Operations;
 using KS.Files.Operations.Querying;
+using KS.Files.Paths;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Linq;
@@ -116,7 +117,7 @@ namespace Nitrocid.Extras.ToDoList.ToDoList
         public static void SaveTasks()
         {
             string serializedTasks = JsonConvert.SerializeObject(toDoTasks, Formatting.Indented);
-            Writing.WriteContentsText(Paths.GetKernelPath(KernelPathType.ToDoList), serializedTasks);
+            Writing.WriteContentsText(PathsManagement.GetKernelPath(KernelPathType.ToDoList), serializedTasks);
         }
 
         /// <summary>
@@ -124,7 +125,7 @@ namespace Nitrocid.Extras.ToDoList.ToDoList
         /// </summary>
         public static void LoadTasks()
         {
-            string path = Paths.GetKernelPath(KernelPathType.ToDoList);
+            string path = PathsManagement.GetKernelPath(KernelPathType.ToDoList);
             if (!Checking.FileExists(path))
                 Making.MakeJsonFile(path, true, true);
             string serializedTasks = Reading.ReadContentsText(path);

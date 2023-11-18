@@ -27,6 +27,7 @@ using KS.Files;
 using KS.Files.Folders;
 using KS.Files.Operations;
 using KS.Files.Operations.Querying;
+using KS.Files.Paths;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Kernel.Power;
@@ -149,8 +150,8 @@ namespace Nitrocid.Extras.Calendar.Calendar.Reminders
         /// </summary>
         public static void LoadReminders()
         {
-            Making.MakeDirectory(Paths.GetKernelPath(KernelPathType.Reminders), false);
-            var ReminderFiles = Listing.GetFilesystemEntries(Paths.GetKernelPath(KernelPathType.Reminders), "*", true);
+            Making.MakeDirectory(PathsManagement.GetKernelPath(KernelPathType.Reminders), false);
+            var ReminderFiles = Listing.GetFilesystemEntries(PathsManagement.GetKernelPath(KernelPathType.Reminders), "*", true);
             DebugWriter.WriteDebug(DebugLevel.I, "Got {0} reminders.", ReminderFiles.Length);
 
             // Load all the reminders
@@ -195,7 +196,7 @@ namespace Nitrocid.Extras.Calendar.Calendar.Reminders
         /// Saves all the reminders from the reminder list to their individual files
         /// </summary>
         public static void SaveReminders() =>
-            SaveReminders(Paths.GetKernelPath(KernelPathType.Reminders), CalendarInit.CalendarConfig.SaveEventsRemindersDestructively);
+            SaveReminders(PathsManagement.GetKernelPath(KernelPathType.Reminders), CalendarInit.CalendarConfig.SaveEventsRemindersDestructively);
 
         /// <summary>
         /// Saves all the reminders from the reminder list to their individual files
@@ -237,7 +238,7 @@ namespace Nitrocid.Extras.Calendar.Calendar.Reminders
         /// Saves an reminder to a file
         /// </summary>
         public static void SaveReminder(ReminderInfo ReminderInstance) =>
-            SaveReminder(ReminderInstance, Paths.GetKernelPath(KernelPathType.Reminders));
+            SaveReminder(ReminderInstance, PathsManagement.GetKernelPath(KernelPathType.Reminders));
 
         /// <summary>
         /// Saves an reminder to a file

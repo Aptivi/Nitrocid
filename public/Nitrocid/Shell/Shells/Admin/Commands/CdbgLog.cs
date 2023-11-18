@@ -22,6 +22,7 @@ using System.IO;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files;
+using KS.Files.Paths;
 using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
@@ -46,7 +47,7 @@ namespace KS.Shell.Shells.Admin.Commands
                 try
                 {
                     DebugWriter.DebugStreamWriter.Close();
-                    DebugWriter.DebugStreamWriter = new StreamWriter(Paths.GetKernelPath(KernelPathType.Debugging)) { AutoFlush = true };
+                    DebugWriter.DebugStreamWriter = new StreamWriter(PathsManagement.GetKernelPath(KernelPathType.Debugging)) { AutoFlush = true };
                     TextWriterColor.Write(Translate.DoTranslation("Debug log removed. All connected debugging devices may still view messages."));
                     return 0;
                 }

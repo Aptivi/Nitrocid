@@ -17,8 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Files;
 using KS.Files.Folders;
+using KS.Files.Paths;
 using KS.Kernel.Configuration;
 using NUnit.Framework;
 using Shouldly;
@@ -38,7 +38,7 @@ namespace Nitrocid.Tests.Files
         public void TestSetCurrDir()
         {
             Config.MainConfig.CurrentDir = InitTest.PathToTestSlotFolder;
-            string Path = Paths.AppDataPath;
+            string Path = PathsManagement.AppDataPath;
             CurrentDirectory.SetCurrDir(Path);
             Path.ShouldBe(CurrentDirectory.CurrentDir);
         }
@@ -51,7 +51,7 @@ namespace Nitrocid.Tests.Files
         public void TestTrySetCurrDir()
         {
             Config.MainConfig.CurrentDir = InitTest.PathToTestSlotFolder;
-            string Path = Paths.AppDataPath;
+            string Path = PathsManagement.AppDataPath;
             CurrentDirectory.TrySetCurrDir(Path).ShouldBeTrue();
             Path.ShouldBe(CurrentDirectory.CurrentDir);
         }

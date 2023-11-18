@@ -24,11 +24,10 @@ using KS.Languages;
 using KS.Misc.Text;
 using KS.Drivers;
 using KS.ConsoleBase.Inputs;
-using KS.Files.PathLookup;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands.ProcessExecution;
-using KS.Files;
 using KS.Files.Operations;
+using KS.Files.Paths;
 
 namespace KS.ConsoleBase
 {
@@ -181,7 +180,7 @@ namespace KS.ConsoleBase
             else if (KernelPlatform.IsRunningFromScreen())
             {
                 // The status bar for GNU screen is always one row long.
-                string confPath = Paths.HomePath + "/.screenrc";
+                string confPath = PathsManagement.HomePath + "/.screenrc";
                 string statusKey = "hardstatus";
                 string[] screenRcLines = Reading.ReadContents(confPath);
                 foreach (string line in screenRcLines)

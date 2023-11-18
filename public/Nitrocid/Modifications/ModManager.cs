@@ -40,6 +40,7 @@ using System.Diagnostics;
 using KS.Misc.Screensaver;
 using KS.Files.Operations.Querying;
 using KS.Kernel;
+using KS.Files.Paths;
 
 namespace KS.Modifications
 {
@@ -74,7 +75,7 @@ namespace KS.Modifications
         /// </summary>
         public static void StartMods()
         {
-            string ModPath = Paths.GetKernelPath(KernelPathType.Mods);
+            string ModPath = PathsManagement.GetKernelPath(KernelPathType.Mods);
             DebugWriter.WriteDebug(DebugLevel.I, "Safe mode: {0}", KernelEntry.SafeMode);
             if (!KernelEntry.SafeMode)
             {
@@ -112,7 +113,7 @@ namespace KS.Modifications
         /// <param name="ModFilename">Mod filename found in KSMods</param>
         public static void StartMod(string ModFilename)
         {
-            string ModPath = Paths.GetKernelPath(KernelPathType.Mods);
+            string ModPath = PathsManagement.GetKernelPath(KernelPathType.Mods);
             string PathToMod = Path.Combine(ModPath, ModFilename);
             DebugWriter.WriteDebug(DebugLevel.I, "Safe mode: {0}", KernelEntry.SafeMode);
             DebugWriter.WriteDebug(DebugLevel.I, "Mod file path: {0}", PathToMod);
@@ -160,7 +161,7 @@ namespace KS.Modifications
         /// </summary>
         public static void StopMods()
         {
-            string ModPath = Paths.GetKernelPath(KernelPathType.Mods);
+            string ModPath = PathsManagement.GetKernelPath(KernelPathType.Mods);
             DebugWriter.WriteDebug(DebugLevel.I, "Safe mode: {0}", KernelEntry.SafeMode);
             if (!KernelEntry.SafeMode)
             {
@@ -238,7 +239,7 @@ namespace KS.Modifications
         /// <param name="ModFilename">Mod filename found in KSMods</param>
         public static void StopMod(string ModFilename)
         {
-            string ModPath = Paths.GetKernelPath(KernelPathType.Mods);
+            string ModPath = PathsManagement.GetKernelPath(KernelPathType.Mods);
             string PathToMod = Path.Combine(ModPath, ModFilename);
             DebugWriter.WriteDebug(DebugLevel.I, "Safe mode: {0}", KernelEntry.SafeMode);
             DebugWriter.WriteDebug(DebugLevel.I, "Mod file path: {0}", PathToMod);
@@ -356,7 +357,7 @@ namespace KS.Modifications
         /// <param name="ModFilename">Mod filename found in KSMods</param>
         public static void AddModToBlacklist(string ModFilename)
         {
-            ModFilename = FilesystemTools.NeutralizePath(ModFilename, Paths.GetKernelPath(KernelPathType.Mods));
+            ModFilename = FilesystemTools.NeutralizePath(ModFilename, PathsManagement.GetKernelPath(KernelPathType.Mods));
             DebugWriter.WriteDebug(DebugLevel.I, "Adding {0} to the mod blacklist...", ModFilename);
             var BlacklistedMods = GetBlacklistedMods();
             if (!BlacklistedMods.Contains(ModFilename))
@@ -374,7 +375,7 @@ namespace KS.Modifications
         /// <param name="ModFilename">Mod filename found in KSMods</param>
         public static void RemoveModFromBlacklist(string ModFilename)
         {
-            ModFilename = FilesystemTools.NeutralizePath(ModFilename, Paths.GetKernelPath(KernelPathType.Mods));
+            ModFilename = FilesystemTools.NeutralizePath(ModFilename, PathsManagement.GetKernelPath(KernelPathType.Mods));
             DebugWriter.WriteDebug(DebugLevel.I, "Removing {0} from the mod blacklist...", ModFilename);
             var BlacklistedMods = GetBlacklistedMods();
             if (BlacklistedMods.Contains(ModFilename))
@@ -397,7 +398,7 @@ namespace KS.Modifications
         /// <param name="ModPath">Target mod path</param>
         public static void InstallMod(string ModPath)
         {
-            string TargetModPath = FilesystemTools.NeutralizePath(Path.GetFileName(ModPath), Paths.GetKernelPath(KernelPathType.Mods));
+            string TargetModPath = FilesystemTools.NeutralizePath(Path.GetFileName(ModPath), PathsManagement.GetKernelPath(KernelPathType.Mods));
             string ModName = Path.GetFileNameWithoutExtension(ModPath);
             IMod Script;
             ModPath = FilesystemTools.NeutralizePath(ModPath, true);
@@ -474,7 +475,7 @@ namespace KS.Modifications
         /// <param name="ModPath">Target mod path found in KSMods</param>
         public static void UninstallMod(string ModPath)
         {
-            string TargetModPath = FilesystemTools.NeutralizePath(ModPath, Paths.GetKernelPath(KernelPathType.Mods), true);
+            string TargetModPath = FilesystemTools.NeutralizePath(ModPath, PathsManagement.GetKernelPath(KernelPathType.Mods), true);
             string ModName = Path.GetFileNameWithoutExtension(ModPath);
             DebugWriter.WriteDebug(DebugLevel.I, "Uninstalling mod {0}...", TargetModPath);
             try

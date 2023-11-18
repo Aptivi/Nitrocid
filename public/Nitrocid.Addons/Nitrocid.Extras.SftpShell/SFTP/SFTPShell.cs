@@ -19,7 +19,7 @@
 
 using System;
 using System.Threading;
-using KS.Files;
+using KS.Files.Paths;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
@@ -65,7 +65,7 @@ namespace Nitrocid.Extras.SftpShell.SFTP
             SpeedDialTools.TryAddEntryToSpeedDial(SFTPShellCommon.SFTPSite, client.ConnectionInfo.Port, NetworkConnectionType.SFTP, false, SFTPShellCommon.SFTPUser);
 
             // Populate SFTP current directory
-            SFTPShellCommon.SFTPCurrDirect = Paths.HomePath;
+            SFTPShellCommon.SFTPCurrDirect = PathsManagement.HomePath;
 
             // Actual shell logic
             while (!Bail)

@@ -28,6 +28,7 @@ using KS.Files;
 using KS.Files.Folders;
 using KS.Files.Operations;
 using KS.Files.Operations.Querying;
+using KS.Files.Paths;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Kernel.Power;
@@ -142,8 +143,8 @@ namespace Nitrocid.Extras.Calendar.Calendar.Events
         /// </summary>
         public static void LoadEvents()
         {
-            Making.MakeDirectory(Paths.GetKernelPath(KernelPathType.Events), false);
-            var EventFiles = Listing.GetFilesystemEntries(Paths.GetKernelPath(KernelPathType.Events), "*", true);
+            Making.MakeDirectory(PathsManagement.GetKernelPath(KernelPathType.Events), false);
+            var EventFiles = Listing.GetFilesystemEntries(PathsManagement.GetKernelPath(KernelPathType.Events), "*", true);
             DebugWriter.WriteDebug(DebugLevel.I, "Got {0} events.", EventFiles.Length);
 
             // Load all the events
@@ -189,7 +190,7 @@ namespace Nitrocid.Extras.Calendar.Calendar.Events
         /// Saves all the events from the event list to their individual files
         /// </summary>
         public static void SaveEvents() =>
-            SaveEvents(Paths.GetKernelPath(KernelPathType.Events), CalendarInit.CalendarConfig.SaveEventsRemindersDestructively);
+            SaveEvents(PathsManagement.GetKernelPath(KernelPathType.Events), CalendarInit.CalendarConfig.SaveEventsRemindersDestructively);
 
         /// <summary>
         /// Saves all the events from the event list to their individual files
@@ -231,7 +232,7 @@ namespace Nitrocid.Extras.Calendar.Calendar.Events
         /// Saves an event to a file
         /// </summary>
         public static void SaveEvent(EventInfo EventInstance) =>
-            SaveEvent(EventInstance, Paths.GetKernelPath(KernelPathType.Events));
+            SaveEvent(EventInstance, PathsManagement.GetKernelPath(KernelPathType.Events));
 
         /// <summary>
         /// Saves an event to a file

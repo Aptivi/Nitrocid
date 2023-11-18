@@ -19,6 +19,7 @@
 
 using System;
 using System.IO;
+using KS.Files.Paths;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Events;
@@ -31,13 +32,13 @@ namespace KS.Files.Folders
     public static class CurrentDirectory
     {
 
-        internal static string _CurrentDirectory = Paths.HomePath;
+        internal static string _CurrentDirectory = PathsManagement.HomePath;
 
         /// <summary>
         /// The current directory
         /// </summary>
         public static string CurrentDir =>
-            Config.baseConfigurations is not null && Config.MainConfig is not null ? Config.MainConfig.CurrentDir : Paths.HomePath;
+            Config.baseConfigurations is not null && Config.MainConfig is not null ? Config.MainConfig.CurrentDir : PathsManagement.HomePath;
 
         /// <summary>
         /// Sets the current working directory

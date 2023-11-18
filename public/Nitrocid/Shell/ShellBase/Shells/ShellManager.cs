@@ -25,7 +25,6 @@ using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.Files;
-using KS.Files.PathLookup;
 using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Languages;
@@ -64,6 +63,7 @@ using KS.Misc.Text.Probers.Regexp;
 using KS.Drivers.Console.Bases;
 using KS.Files.Operations.Querying;
 using KS.Kernel.Power;
+using KS.Files.Paths;
 
 namespace KS.Shell.ShellBase.Shells
 {
@@ -862,11 +862,11 @@ namespace KS.Shell.ShellBase.Shells
             ShellStack.Count < 2;
 
         internal static void SaveHistories() =>
-            FileIO.WriteAllText(Paths.ShellHistoriesPath, JsonConvert.SerializeObject(histories, Formatting.Indented));
+            FileIO.WriteAllText(PathsManagement.ShellHistoriesPath, JsonConvert.SerializeObject(histories, Formatting.Indented));
 
         internal static void LoadHistories()
         {
-            string path = Paths.ShellHistoriesPath;
+            string path = PathsManagement.ShellHistoriesPath;
             if (!Checking.FileExists(path))
                 return;
             histories = JsonConvert.DeserializeObject<Dictionary<string, List<string>>>(FileIO.ReadAllText(path));

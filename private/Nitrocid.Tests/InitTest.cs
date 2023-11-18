@@ -27,6 +27,7 @@ using KS.Kernel.Debugging;
 using KS.Kernel.Extensions;
 using KS.Files.Operations.Querying;
 using KS.Kernel;
+using KS.Files.Paths;
 
 namespace Nitrocid.Tests
 {
@@ -41,22 +42,22 @@ namespace Nitrocid.Tests
         [OneTimeSetUp]
         public static void ReadyEverything()
         {
-            if (!Checking.FileExists(Paths.GetKernelPath(KernelPathType.Configuration)))
+            if (!Checking.FileExists(PathsManagement.GetKernelPath(KernelPathType.Configuration)))
             {
                 // Check to see if we have an appdata folder for KS
-                if (!Checking.FolderExists(Paths.AppDataPath))
-                    Making.MakeDirectory(Paths.AppDataPath, false);
+                if (!Checking.FolderExists(PathsManagement.AppDataPath))
+                    Making.MakeDirectory(PathsManagement.AppDataPath, false);
 
                 // Now, create config
                 Config.CreateConfig();
             }
             else
             {
-                if (!Checking.FileExists(Paths.GetKernelPath(KernelPathType.Configuration) + ".old"))
-                    File.Move(Paths.GetKernelPath(KernelPathType.Configuration), Paths.GetKernelPath(KernelPathType.Configuration) + ".old");
+                if (!Checking.FileExists(PathsManagement.GetKernelPath(KernelPathType.Configuration) + ".old"))
+                    File.Move(PathsManagement.GetKernelPath(KernelPathType.Configuration), PathsManagement.GetKernelPath(KernelPathType.Configuration) + ".old");
                 Config.CreateConfig();
             }
-            Config.ReadConfig(Config.MainConfig, Paths.GetKernelPath(KernelPathType.Configuration));
+            Config.ReadConfig(Config.MainConfig, PathsManagement.GetKernelPath(KernelPathType.Configuration));
 
             // NUnit sets current directory to a wrong directory, so set it to the test context directory
             string TestAssemblyDir = TestContext.CurrentContext.TestDirectory;
@@ -87,11 +88,11 @@ namespace Nitrocid.Tests
             if (Checking.FolderExists(Path.GetFullPath("ResultSlot")))
                 Removing.RemoveDirectory(Path.GetFullPath("ResultSlot"));
             Directory.Move(PathToTestSlotFolder, Path.GetFullPath("ResultSlot"));
-            if (Checking.FileExists(Paths.GetKernelPath(KernelPathType.Configuration) + ".old"))
+            if (Checking.FileExists(PathsManagement.GetKernelPath(KernelPathType.Configuration) + ".old"))
             {
-                if (Checking.FileExists(Paths.GetKernelPath(KernelPathType.Configuration)))
-                    File.Delete(Paths.GetKernelPath(KernelPathType.Configuration));
-                File.Move(Paths.GetKernelPath(KernelPathType.Configuration) + ".old", Paths.GetKernelPath(KernelPathType.Configuration));
+                if (Checking.FileExists(PathsManagement.GetKernelPath(KernelPathType.Configuration)))
+                    File.Delete(PathsManagement.GetKernelPath(KernelPathType.Configuration));
+                File.Move(PathsManagement.GetKernelPath(KernelPathType.Configuration) + ".old", PathsManagement.GetKernelPath(KernelPathType.Configuration));
             }
         }
     }

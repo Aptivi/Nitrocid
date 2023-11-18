@@ -59,6 +59,7 @@ using KS.Drivers.Sorting;
 using KS.Kernel.Time.Timezones;
 using System.Linq;
 using KS.Kernel.Debugging.RemoteDebug.RemoteChat;
+using KS.Files.Paths;
 
 namespace KS.Kernel.Configuration.Instances
 {
@@ -737,11 +738,11 @@ namespace KS.Kernel.Configuration.Instances
         /// <summary>
         /// Which file is the MOTD text file? Write an absolute path to the text file
         /// </summary>
-        public string MotdFilePath { get; set; } = Paths.GetKernelPath(KernelPathType.MOTD);
+        public string MotdFilePath { get; set; } = PathsManagement.GetKernelPath(KernelPathType.MOTD);
         /// <summary>
         /// Which file is the MAL text file? Write an absolute path to the text file
         /// </summary>
-        public string MalFilePath { get; set; } = Paths.GetKernelPath(KernelPathType.MAL);
+        public string MalFilePath { get; set; } = PathsManagement.GetKernelPath(KernelPathType.MAL);
         /// <summary>
         /// Write how you want your login prompt to be. Leave blank to use default style. Placeholders are parsed
         /// </summary>

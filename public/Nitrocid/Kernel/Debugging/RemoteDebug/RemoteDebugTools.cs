@@ -31,6 +31,7 @@ using KS.Files.Operations;
 using KS.Files.Operations.Querying;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging.RemoteDebug.RemoteChat;
+using KS.Files.Paths;
 
 namespace KS.Kernel.Debugging.RemoteDebug
 {
@@ -360,11 +361,11 @@ namespace KS.Kernel.Debugging.RemoteDebug
         }
 
         internal static void SaveAllDevices() =>
-            Writing.WriteContentsText(Paths.GetKernelPath(KernelPathType.DebugDevices), JsonConvert.SerializeObject(remoteDebugDevices, Formatting.Indented));
+            Writing.WriteContentsText(PathsManagement.GetKernelPath(KernelPathType.DebugDevices), JsonConvert.SerializeObject(remoteDebugDevices, Formatting.Indented));
 
         internal static void LoadAllDevices()
         {
-            string devicesPath = Paths.GetKernelPath(KernelPathType.DebugDevices);
+            string devicesPath = PathsManagement.GetKernelPath(KernelPathType.DebugDevices);
             if (Checking.FileExists(devicesPath))
                 remoteDebugDevices = JsonConvert.DeserializeObject<List<RemoteDebugDeviceInfo>>(Reading.ReadContentsText(devicesPath));
         }

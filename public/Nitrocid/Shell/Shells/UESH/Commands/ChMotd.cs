@@ -20,6 +20,7 @@
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files;
+using KS.Files.Paths;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Text.Probers.Motd;
@@ -61,7 +62,7 @@ namespace KS.Shell.Shells.UESH.Commands
             }
             else
             {
-                ShellManager.StartShell(ShellType.TextShell, Paths.GetKernelPath(KernelPathType.MOTD));
+                ShellManager.StartShell(ShellType.TextShell, PathsManagement.GetKernelPath(KernelPathType.MOTD));
                 TextWriterColor.Write(Translate.DoTranslation("Changing MOTD..."));
                 MotdParse.ReadMotd();
                 return 0;

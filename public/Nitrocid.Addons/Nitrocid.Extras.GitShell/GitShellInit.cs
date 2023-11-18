@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Files;
+using KS.Files.Paths;
 using KS.Kernel;
 using KS.Kernel.Configuration;
 using KS.Kernel.Extensions;
@@ -75,7 +75,7 @@ namespace Nitrocid.Extras.GitShell
             if (!nativeLibIsSet)
             {
                 nativeLibIsSet = true;
-                GlobalSettings.NativeLibraryPath = Paths.AddonsPath + "/Extras.GitShell/runtimes/" + KernelPlatform.GetCurrentGenericRid() + "/native/";
+                GlobalSettings.NativeLibraryPath = PathsManagement.AddonsPath + "/Extras.GitShell/runtimes/" + KernelPlatform.GetCurrentGenericRid() + "/native/";
             }
         }
 

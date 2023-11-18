@@ -24,6 +24,7 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files;
 using KS.Files.Operations;
 using KS.Files.Operations.Querying;
+using KS.Files.Paths;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
@@ -59,7 +60,7 @@ namespace KS.Misc.Text.Probers.Motd
         /// </summary>
         public static void InitMotd()
         {
-            if (!Checking.FileExists(Paths.GetKernelPath(KernelPathType.MOTD)))
+            if (!Checking.FileExists(PathsManagement.GetKernelPath(KernelPathType.MOTD)))
                 SetMotd(Translate.DoTranslation("Welcome to Nitrocid Kernel!"));
         }
 

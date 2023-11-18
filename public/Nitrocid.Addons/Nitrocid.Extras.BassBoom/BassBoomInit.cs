@@ -56,10 +56,10 @@ using System.IO;
 using KS.Languages;
 using KS.ConsoleBase.Colors;
 using KS.Files.Extensions;
-using KS.Files;
 using Nitrocid.Extras.BassBoom.Player;
 using KS.Files.Operations.Querying;
 using KS.ConsoleBase.Inputs.Styles;
+using KS.Files.Paths;
 
 namespace Nitrocid.Extras.BassBoom
 {
@@ -183,7 +183,7 @@ namespace Nitrocid.Extras.BassBoom
 
             // Additionally, register a custom extension handler that handles music playback
             if (!inited)
-                InitBasolia.Init(Paths.AddonsPath + "/Extras.BassBoom");
+                InitBasolia.Init(PathsManagement.AddonsPath + "/Extras.BassBoom");
             ExtensionHandlerTools.extensionHandlers.Add(handler);
         }
 

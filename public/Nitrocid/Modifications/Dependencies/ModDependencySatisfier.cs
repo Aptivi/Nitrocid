@@ -20,6 +20,7 @@
 using KS.Files;
 using KS.Files.Operations;
 using KS.Files.Operations.Querying;
+using KS.Files.Paths;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
@@ -40,7 +41,7 @@ namespace KS.Modifications.Dependencies
                 return [];
 
             // Get the mod directory
-            string modDirectory = Paths.GetKernelPath(KernelPathType.Mods);
+            string modDirectory = PathsManagement.GetKernelPath(KernelPathType.Mods);
 
             // Get the mod dependency metadata
             string metadataPath = $"{modDirectory}{Path.GetFileNameWithoutExtension(mod.ModFilePath)}-moddeps.json";

@@ -18,9 +18,9 @@
 //
 
 using KS.ConsoleBase.Inputs.Styles;
-using KS.Files;
 using KS.Files.Operations;
 using KS.Files.Operations.Querying;
+using KS.Files.Paths;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Reflection;
@@ -100,7 +100,7 @@ namespace KS.Security.Privacy
 
         internal static void LoadConsents()
         {
-            string consentsPath = Paths.ConsentsPath;
+            string consentsPath = PathsManagement.ConsentsPath;
 
             // Check to see if we have the file
             if (!Checking.FileExists(consentsPath))
@@ -114,7 +114,7 @@ namespace KS.Security.Privacy
         internal static void SaveConsents()
         {
             // Save all the consents to JSON
-            string consentsPath = Paths.ConsentsPath;
+            string consentsPath = PathsManagement.ConsentsPath;
             string serialized = JsonConvert.SerializeObject(consentedPermissions, Formatting.Indented);
             Writing.WriteContentsText(consentsPath, serialized);
         }

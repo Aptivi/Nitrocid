@@ -35,6 +35,7 @@ using KS.Kernel.Configuration;
 using KS.Misc.Text.Probers.Regexp;
 using KS.Files.Operations;
 using KS.Files.Operations.Querying;
+using KS.Files.Paths;
 
 namespace KS.Users
 {
@@ -130,12 +131,12 @@ namespace KS.Users
         public static void InitializeUsers()
         {
             // First, check to see if we have the file
-            string UsersPath = Paths.GetKernelPath(KernelPathType.Users);
+            string UsersPath = PathsManagement.GetKernelPath(KernelPathType.Users);
             if (!Checking.FileExists(UsersPath))
                 SaveUsers();
 
             // Get the content and parse it
-            string UsersTokenContent = Reading.ReadContentsText(Paths.GetKernelPath(KernelPathType.Users));
+            string UsersTokenContent = Reading.ReadContentsText(PathsManagement.GetKernelPath(KernelPathType.Users));
             JArray userInfoArrays = (JArray)JsonConvert.DeserializeObject(UsersTokenContent);
 
             // Now, get each user from the config file
@@ -616,7 +617,7 @@ namespace KS.Users
         {
             // Make a JSON file to save all user information files
             string userInfosSerialized = JsonConvert.SerializeObject(Users.ToArray(), Formatting.Indented);
-            Writing.WriteContentsText(Paths.UsersPath, userInfosSerialized);
+            Writing.WriteContentsText(PathsManagement.UsersPath, userInfosSerialized);
         }
     }
 }

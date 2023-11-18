@@ -24,7 +24,7 @@ using KS.Files.Attributes;
 using KS.Files.Folders;
 using KS.Files.Operations;
 using KS.Files.Operations.Querying;
-using KS.Files.PathLookup;
+using KS.Files.Paths;
 using KS.Kernel;
 using KS.Kernel.Configuration;
 using NUnit.Framework;

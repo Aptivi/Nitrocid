@@ -24,7 +24,7 @@ using System.Net;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Files;
+using KS.Files.Paths;
 using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Languages;
@@ -243,8 +243,8 @@ namespace Nitrocid.Extras.MailShell.Tools
                 // Register the context and initialize the loggers if debug mode is on
                 if (KernelEntry.DebugMode & Debug)
                 {
-                    IMAP_Client = new ImapClient(new ProtocolLogger(Paths.HomePath + "/ImapDebug.log") { LogTimestamps = true, RedactSecrets = true, ClientPrefix = "KS:  ", ServerPrefix = "SRV: " });
-                    SMTP_Client = new SmtpClient(new ProtocolLogger(Paths.HomePath + "/SmtpDebug.log") { LogTimestamps = true, RedactSecrets = true, ClientPrefix = "KS:  ", ServerPrefix = "SRV: " });
+                    IMAP_Client = new ImapClient(new ProtocolLogger(PathsManagement.HomePath + "/ImapDebug.log") { LogTimestamps = true, RedactSecrets = true, ClientPrefix = "KS:  ", ServerPrefix = "SRV: " });
+                    SMTP_Client = new SmtpClient(new ProtocolLogger(PathsManagement.HomePath + "/SmtpDebug.log") { LogTimestamps = true, RedactSecrets = true, ClientPrefix = "KS:  ", ServerPrefix = "SRV: " });
                 }
                 CryptographyContext.Register(typeof(PGPContext));
 

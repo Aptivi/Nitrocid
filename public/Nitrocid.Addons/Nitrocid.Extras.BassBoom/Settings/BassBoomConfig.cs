@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Files;
+using KS.Files.Paths;
 using KS.Kernel.Configuration;
 using KS.Kernel.Configuration.Instances;
 using KS.Kernel.Configuration.Settings;
@@ -38,6 +38,6 @@ namespace Nitrocid.Extras.BassBoom.Settings
         /// <summary>
         /// Path to the lyrics
         /// </summary>
-        public string LyricsPath { get; set; } = Paths.HomePath + "/Music/";
+        public string LyricsPath { get; set; } = PathsManagement.HomePath + "/Music/";
     }
 }

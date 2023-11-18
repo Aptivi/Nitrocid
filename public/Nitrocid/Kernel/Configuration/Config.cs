@@ -34,6 +34,7 @@ using System.Collections.Generic;
 using KS.Files.Operations;
 using KS.Files.Operations.Querying;
 using KS.ConsoleBase.Inputs.Styles;
+using KS.Files.Paths;
 
 namespace KS.Kernel.Configuration
 {
@@ -294,12 +295,12 @@ namespace KS.Kernel.Configuration
         public static void InitializeConfig()
         {
             // Make a config file if not found
-            if (!Checking.FileExists(Paths.GetKernelPath(KernelPathType.Configuration)))
+            if (!Checking.FileExists(PathsManagement.GetKernelPath(KernelPathType.Configuration)))
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "No config file found. Creating...");
                 CreateConfig(MainConfig);
             }
-            if (!Checking.FileExists(Paths.GetKernelPath(KernelPathType.SaverConfiguration)))
+            if (!Checking.FileExists(PathsManagement.GetKernelPath(KernelPathType.SaverConfiguration)))
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "No saver config file found. Creating...");
                 CreateConfig(SaverConfig);

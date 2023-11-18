@@ -28,6 +28,7 @@ using KS.Files;
 using KS.Files.Extensions;
 using KS.Files.Operations;
 using KS.Files.Operations.Querying;
+using KS.Files.Paths;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Debugging.RemoteDebug;
@@ -81,11 +82,11 @@ namespace KS.Kernel.Starting
                 AppDomain.CurrentDomain.AssemblyResolve += AssemblyLookup.LoadFromAssemblySearchPaths;
 
                 // Check to see if we have an appdata folder for KS
-                if (!Checking.FolderExists(Paths.AppDataPath))
-                    Making.MakeDirectory(Paths.AppDataPath, false);
+                if (!Checking.FolderExists(PathsManagement.AppDataPath))
+                    Making.MakeDirectory(PathsManagement.AppDataPath, false);
 
                 // Set the first time run variable
-                if (!Checking.FileExists(Paths.ConfigurationPath))
+                if (!Checking.FileExists(PathsManagement.ConfigurationPath))
                     KernelEntry.FirstTime = true;
 
                 // Initialize debug path
@@ -137,7 +138,7 @@ namespace KS.Kernel.Starting
                 }
 
                 // Initialize journal path
-                JournalManager.JournalPath = Getting.GetNumberedFileName(Path.GetDirectoryName(Paths.GetKernelPath(KernelPathType.Journaling)), Paths.GetKernelPath(KernelPathType.Journaling));
+                JournalManager.JournalPath = Getting.GetNumberedFileName(Path.GetDirectoryName(PathsManagement.GetKernelPath(KernelPathType.Journaling)), PathsManagement.GetKernelPath(KernelPathType.Journaling));
 
                 // Initialize custom languages
                 if (KernelEntry.TalkativePreboot)

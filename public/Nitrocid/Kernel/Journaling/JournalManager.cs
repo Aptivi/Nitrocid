@@ -19,9 +19,9 @@
 
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Files;
 using KS.Files.Operations;
 using KS.Files.Operations.Querying;
+using KS.Files.Paths;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Kernel.Time.Renderers;
@@ -118,7 +118,7 @@ namespace KS.Kernel.Journaling
                 return [];
 
             // Now, formulate a valid journal path and check it for existence
-            string journalPath = Paths.JournalingPath.Insert(Paths.JournalingPath.Length - 5, $"-{sessionNum}");
+            string journalPath = PathsManagement.JournalingPath.Insert(PathsManagement.JournalingPath.Length - 5, $"-{sessionNum}");
             if (!Checking.FileExists(journalPath))
                 throw new KernelException(KernelExceptionType.Journaling, Translate.DoTranslation("Journal file '{0}' doesn't exist."), journalPath);
 
