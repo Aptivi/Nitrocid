@@ -76,7 +76,22 @@ namespace KS.ConsoleBase.Presentation.Elements
                 buffer.Append(split + (i == splitText.Length - 1 ? "" : "\n"));
                 top++;
             }
-            TextWriterWhereColor.WriteWhereKernelColor(buffer.ToString(), PresentationTools.PresentationUpperInnerBorderLeft, seekTop, false, KernelColorType.NeutralText);
+
+            // Write the buffer text
+            string bufferText = buffer.ToString();
+            string[] splitBufferText = TextTools.GetWrappedSentences(bufferText, PresentationTools.PresentationLowerInnerBorderLeft - PresentationTools.PresentationUpperBorderLeft + 2);
+            int maxHeightFinal = PresentationTools.PresentationLowerInnerBorderTop - top + 3;
+            if (maxHeightFinal <= 0)
+            {
+                // If the text is going to overflow the presentation view, clear the presentation and finish writing the parts
+                TextWriterWhereColor.WriteWhereKernelColor(bufferText, PresentationTools.PresentationUpperInnerBorderLeft, seekTop, false, KernelColorType.NeutralText);
+                Input.DetectKeypress();
+                PresentationTools.ClearPresentation();
+                seekTop = top = PresentationTools.PresentationUpperInnerBorderTop;
+                buffer.Clear();
+            }
+            else
+                TextWriterWhereColor.WriteWhereKernelColor(bufferText, PresentationTools.PresentationUpperInnerBorderLeft, seekTop, false, KernelColorType.NeutralText);
 
             // Initialize the reader settings
             var settings = new TermReaderSettings()
