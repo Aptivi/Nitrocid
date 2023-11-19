@@ -155,13 +155,10 @@ namespace KS.Kernel.Configuration.Settings
                 {
                     // Populate sections
                     var sections = new List<InputChoiceInfo>();
-                    var altSections = new List<InputChoiceInfo>()
-                    {
-                        new InputChoiceInfo($"{MaxOptions + 1}", Translate.DoTranslation("Go Back..."))
-                    };
                     var displayUnsupportedConfigs = new List<string>();
 
                     string Notes = "";
+                    int offset = 0;
                     for (int SectionIndex = 0; SectionIndex <= MaxOptions - 1; SectionIndex++)
                     {
                         var Setting = SectionToken[SectionIndex];
@@ -172,19 +169,26 @@ namespace KS.Kernel.Configuration.Settings
                         {
                             displayUnsupportedConfigs.Add(Translate.DoTranslation(Setting.Name));
                             Notes = Translate.DoTranslation("One or more of the following settings found in this section are unsupported in your platform:") + $" {string.Join(", ", displayUnsupportedConfigs)}";
+                            offset++;
                             continue;
                         }
 
                         // Now, populate the input choice info
                         object CurrentValue = ConfigTools.GetValueFromEntry(Setting, settingsType);
                         var ici = new InputChoiceInfo(
-                            $"{SectionIndex + 1}",
+                            $"{SectionIndex + 1 - offset}/{SectionIndex + 1}",
                             $"{Translate.DoTranslation(Setting.Name)} [{CurrentValue}]",
                             Translate.DoTranslation(Setting.Description)
                         );
                         sections.Add(ici);
                     }
                     DebugWriter.WriteDebug(DebugLevel.W, "Section {0} has {1} selections.", Section, MaxOptions);
+
+                    // Populate the alt sections correctly
+                    var altSections = new List<InputChoiceInfo>()
+                    {
+                        new InputChoiceInfo($"{MaxOptions + 1 - offset}/{MaxOptions + 1}", Translate.DoTranslation("Go Back..."))
+                    };
 
                     // Prompt user and check for input
                     string finalSection = SectionTranslateName ? Translate.DoTranslation(SectionDisplayName) : SectionDisplayName;
@@ -193,7 +197,9 @@ namespace KS.Kernel.Configuration.Settings
 
                     // Check the answer
                     var allSections = sections.Union(altSections).ToArray();
-                    int finalAnswer = Answer < 0 ? 0 : Convert.ToInt32(allSections[Answer - 1].ChoiceName);
+                    string answerChoice = allSections[Answer - 1].ChoiceName;
+                    string answerNumberReal = answerChoice[(answerChoice.IndexOf('/') + 1)..];
+                    int finalAnswer = Answer < 0 ? 0 : Convert.ToInt32(answerNumberReal);
                     DebugWriter.WriteDebug(DebugLevel.I, "Succeeded. Checking the answer if it points to the right direction...");
                     if (finalAnswer >= 1 & finalAnswer <= MaxOptions)
                     {
