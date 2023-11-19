@@ -79,6 +79,7 @@ namespace Nitrocid.Extras.BassBoom.Player
         internal static bool advance = false;
         internal static bool populate = true;
         internal static bool paused = false;
+        internal static bool failedToPlay = false;
         internal static string cachedLyric = "";
         internal static readonly List<string> musicFiles = [];
         internal static readonly List<CachedSongInfo> cachedInfos = [];
@@ -308,21 +309,32 @@ namespace Nitrocid.Extras.BassBoom.Player
 
         private static void HandlePlay()
         {
-            foreach (var musicFile in musicFiles.Skip(currentSong - 1))
+            try
             {
-                if (!advance || exiting)
-                    return;
-                else
-                    populate = true;
-                currentSong = musicFiles.IndexOf(musicFile) + 1;
-                PlayerControls.PopulateMusicFileInfo(musicFile);
-                PlayerControls.RenderSongName(musicFile);
-                if (paused)
+                foreach (var musicFile in musicFiles.Skip(currentSong - 1))
                 {
-                    paused = false;
-                    PlaybackPositioningTools.SeekToFrame(position);
+                    if (!advance || exiting)
+                        return;
+                    else
+                        populate = true;
+                    currentSong = musicFiles.IndexOf(musicFile) + 1;
+                    PlayerControls.PopulateMusicFileInfo(musicFile);
+                    PlayerControls.RenderSongName(musicFile);
+                    if (paused)
+                    {
+                        paused = false;
+                        PlaybackPositioningTools.SeekToFrame(position);
+                    }
+                    PlaybackTools.Play();
                 }
-                PlaybackTools.Play();
+            }
+            catch (Exception ex)
+            {
+                InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Playback failure") + $": {ex.Message}");
+                failedToPlay = true;
+            }
+            finally
+            {
                 lyricInstance = null;
                 rerender = true;
             }

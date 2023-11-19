@@ -120,7 +120,8 @@ namespace Nitrocid.Extras.BassBoom.Player
             PlayerTui.advance = true;
             PlayerTui.rerender = true;
             PlayerTui.playerThread.Start();
-            SpinWait.SpinUntil(() => PlaybackTools.Playing);
+            SpinWait.SpinUntil(() => PlaybackTools.Playing || PlayerTui.failedToPlay);
+            PlayerTui.failedToPlay = false;
         }
 
         internal static void Pause()
