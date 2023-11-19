@@ -38,7 +38,7 @@ namespace Nitrocid.Tests.Misc.Splash
             var names = SplashManager.GetNamesOfSplashes();
             names.ShouldNotBeNull();
             names.ShouldNotBeEmpty();
-            names.ShouldContain("openrc");
+            names.ShouldContain("Simple");
         }
 
         /// <summary>
@@ -48,9 +48,9 @@ namespace Nitrocid.Tests.Misc.Splash
         [Description("Setting")]
         public void TestGetSplashFromName()
         {
-            var names = SplashManager.GetSplashFromName("openrc");
+            var names = SplashManager.GetSplashFromName("Simple");
             names.ShouldNotBeNull();
-            names.SplashName.ShouldBe("openrc");
+            names.SplashName.ShouldBe("Simple");
         }
 
     }
