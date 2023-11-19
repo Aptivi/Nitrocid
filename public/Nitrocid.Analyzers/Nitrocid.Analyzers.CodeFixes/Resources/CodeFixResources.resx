@@ -273,6 +273,13 @@
   </data>
 
   <!--
+      PathGetFullPath usage code fix
+  -->
+  <data name="PathGetFullPathUsageCodeFixTitle" xml:space="preserve">
+    <value>Use Filesystem.NeutralizePath()</value>
+  </data>
+
+  <!--
       Other analyzers TBD
   -->
 </root>

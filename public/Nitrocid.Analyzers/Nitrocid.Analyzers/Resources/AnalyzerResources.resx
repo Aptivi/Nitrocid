@@ -405,6 +405,19 @@
   </data>
 
   <!--
+      PathGetFullPath usage analyzer
+  -->
+  <data name="PathGetFullPathUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use Filesystem.NeutralizePath() instead of Path.GetFullPath</value>
+  </data>
+  <data name="PathGetFullPathUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses Path.GetFullPath instead of Filesystem.NeutralizePath()</value>
+  </data>
+  <data name="PathGetFullPathUsageAnalyzerDescription" xml:space="preserve">
+    <value>Filesystem.NeutralizePath() neutralizes the provided path to its absolute correct path, but also gives a path separated by the platform-agnostic path separator.</value>
+  </data>
+
+  <!--
       Other analyzers TBD
   -->
 </root>

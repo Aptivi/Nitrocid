@@ -574,6 +574,33 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Filesystem.NeutralizePath() neutralizes the provided path to its absolute correct path, but also gives a path separated by the platform-agnostic path separator..
+        /// </summary>
+        internal static string PathGetFullPathUsageAnalyzerDescription {
+            get {
+                return ResourceManager.GetString("PathGetFullPathUsageAnalyzerDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Caller uses Path.GetFullPath instead of Filesystem.NeutralizePath().
+        /// </summary>
+        internal static string PathGetFullPathUsageAnalyzerMessageFormat {
+            get {
+                return ResourceManager.GetString("PathGetFullPathUsageAnalyzerMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use Filesystem.NeutralizePath() instead of Path.GetFullPath.
+        /// </summary>
+        internal static string PathGetFullPathUsageAnalyzerTitle {
+            get {
+                return ResourceManager.GetString("PathGetFullPathUsageAnalyzerTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Parsing.GetInvalidPathChars() always returns invalid characters for Windows paths, regardless of the host operating system, while Path.GetInvalidPathChars returns a list of forbidden path characters for an operating system, which may be wrong in .NET 6.0 or later for the following characters: &apos;&quot;&apos;, &apos;&lt;&apos;, &apos;&gt;&apos;..
         /// </summary>
         internal static string PathGetInvalidPathCharsUsageAnalyzerDescription {

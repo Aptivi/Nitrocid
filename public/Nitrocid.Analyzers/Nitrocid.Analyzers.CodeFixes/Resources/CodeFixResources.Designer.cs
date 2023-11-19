@@ -232,6 +232,15 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Use Filesystem.NeutralizePath().
+        /// </summary>
+        internal static string PathGetFullPathUsageCodeFixTitle {
+            get {
+                return ResourceManager.GetString("PathGetFullPathUsageCodeFixTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Use Parsing.GetInvalidPathChars().
         /// </summary>
         internal static string PathGetInvalidPathCharsUsageCodeFixTitle {

@@ -30,7 +30,7 @@ using Terminaux.Writer.MiscWriters;
 
 namespace Nitrocid.StandaloneAnalyzer.Analyzers
 {
-    internal class NKS0022 : IAnalyzer
+    internal class NKS0023 : IAnalyzer
     {
         public bool Analyze(Document document)
         {
@@ -46,10 +46,10 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                     var location = syntaxNode.GetLocation();
                     if (identifier.Identifier.Text == nameof(Path))
                     {
-                        // Let's see if the caller tries to access Path.GetInvalidPathChars.
+                        // Let's see if the caller tries to access Path.GetFullPath.
                         var name = (IdentifierNameSyntax)exp.Name;
                         var idName = name.Identifier.Text;
-                        if (idName == nameof(Path.GetInvalidPathChars))
+                        if (idName == nameof(Path.GetFullPath))
                         {
                             var lineSpan = location.GetLineSpan();
                             TextWriterColor.Write($"{GetType().Name}: {document.FilePath} ({lineSpan.StartLinePosition} -> {lineSpan.EndLinePosition}): Caller uses Console.ResetColor instead of ResetColor()", true, ConsoleColors.Yellow);
@@ -76,12 +76,12 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                     // Get the method
                     if (identifier.Identifier.Text != nameof(Path))
                         continue;
-                    if (idName.Identifier.Text != nameof(Path.GetInvalidPathChars))
+                    if (idName.Identifier.Text != nameof(Path.GetFullPath))
                         continue;
 
-                    // We need to have a syntax that calls Parsing.GetInvalidPathChars
-                    var classSyntax = SyntaxFactory.IdentifierName("Parsing");
-                    var methodSyntax = SyntaxFactory.IdentifierName("GetInvalidPathChars");
+                    // We need to have a syntax that calls FilesystemTools.NeutralizePath
+                    var classSyntax = SyntaxFactory.IdentifierName("FilesystemTools");
+                    var methodSyntax = SyntaxFactory.IdentifierName("NeutralizePath");
                     var resultSyntax = SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, classSyntax, methodSyntax);
                     var replacedSyntax = resultSyntax
                         .WithLeadingTrivia(resultSyntax.GetLeadingTrivia())
@@ -96,15 +96,11 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
 
                     // Check the imports
                     var compilation = finalNode as CompilationUnitSyntax;
-                    if (compilation?.Usings.Any(u => u.Name.ToString() == "KS.Files.Operations.Querying") == false)
+                    if (compilation?.Usings.Any(u => u.Name.ToString() == "KS.Files") == false)
                     {
                         var name = SyntaxFactory.QualifiedName(
-                            SyntaxFactory.QualifiedName(
-                                SyntaxFactory.QualifiedName(
-                                    SyntaxFactory.IdentifierName("KS"),
-                                    SyntaxFactory.IdentifierName("Files")),
-                                SyntaxFactory.IdentifierName("Operations")),
-                            SyntaxFactory.IdentifierName("Querying"));
+                            SyntaxFactory.IdentifierName("KS"),
+                            SyntaxFactory.IdentifierName("Files"));
                         var directive = SyntaxFactory.UsingDirective(name).NormalizeWhitespace();
                         TextWriterColor.Write("Additionally, the suggested fix will add the following using statement:", true, ConsoleColors.Yellow);
                         TextWriterColor.Write($"  + {directive.ToFullString()}", true, ConsoleColors.Green);
