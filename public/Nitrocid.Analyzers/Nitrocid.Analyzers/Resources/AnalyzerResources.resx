@@ -431,6 +431,45 @@
   </data>
 
   <!--
+      KernelDateTimeToTimeString usage analyzer
+  -->
+  <data name="KernelDateTimeToTimeStringUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use TimeDateRenderers.RenderTime() instead of TimeDateTools.KernelDateTime.ToString</value>
+  </data>
+  <data name="KernelDateTimeToTimeStringUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses TimeDateTools.KernelDateTime.ToString instead of TimeDateRenderers.RenderTime()</value>
+  </data>
+  <data name="KernelDateTimeToTimeStringUsageAnalyzerDescription" xml:space="preserve">
+    <value>TimeDateRenderers.RenderTime() respects your kernel settings when rendering time.</value>
+  </data>
+
+  <!--
+      KernelDateTimeToDateString usage analyzer
+  -->
+  <data name="KernelDateTimeToDateStringUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use TimeDateRenderers.RenderDate() instead of TimeDateTools.KernelDateTime.ToString</value>
+  </data>
+  <data name="KernelDateTimeToDateStringUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses TimeDateTools.KernelDateTime.ToString instead of TimeDateRenderers.RenderDate()</value>
+  </data>
+  <data name="KernelDateTimeToDateStringUsageAnalyzerDescription" xml:space="preserve">
+    <value>TimeDateRenderers.RenderDate() respects your kernel settings when rendering date.</value>
+  </data>
+
+  <!--
+      KernelDateTimeToString usage analyzer
+  -->
+  <data name="KernelDateTimeToStringUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use TimeDateRenderers.Render() instead of TimeDateTools.KernelDateTime.ToString</value>
+  </data>
+  <data name="KernelDateTimeToStringUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses TimeDateTools.KernelDateTime.ToString instead of TimeDateRenderers.Render()</value>
+  </data>
+  <data name="KernelDateTimeToStringUsageAnalyzerDescription" xml:space="preserve">
+    <value>TimeDateRenderers.Render() respects your kernel settings when rendering date and time.</value>
+  </data>
+
+  <!--
       Other analyzers TBD
   -->
 </root>

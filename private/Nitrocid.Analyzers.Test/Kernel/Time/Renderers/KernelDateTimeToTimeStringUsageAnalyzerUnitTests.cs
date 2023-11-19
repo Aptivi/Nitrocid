@@ -20,13 +20,13 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Threading.Tasks;
 using VerifyCS = Nitrocid.Analyzers.Test.CSharpCodeFixVerifier<
-    Nitrocid.Analyzers.Kernel.TimeZoneInfoLocalUsageAnalyzer,
-    Nitrocid.Analyzers.Kernel.TimeZoneInfoLocalUsageCodeFixProvider>;
+    Nitrocid.Analyzers.Kernel.Time.Renderers.KernelDateTimeToTimeStringUsageAnalyzer,
+    Nitrocid.Analyzers.Kernel.Time.Renderers.KernelDateTimeToTimeStringUsageCodeFixProvider>;
 
-namespace Nitrocid.Analyzers.Test.Kernel
+namespace Nitrocid.Analyzers.Test.Kernel.Time.Renderers
 {
     [TestClass]
-    public class TimeZoneInfoLocalUsageAnalyzerUnitTests
+    public class KernelDateTimeToTimeStringUsageAnalyzerUnitTests
     {
         [TestMethod]
         public async Task TestEnsureNoAnalyzer()
@@ -47,6 +47,7 @@ namespace Nitrocid.Analyzers.Test.Kernel
                 using System.Text;
                 using System.Threading.Tasks;
                 using System.Diagnostics;
+                using KS.Kernel.Time;
 
                 namespace ConsoleApplication1
                 {
@@ -54,7 +55,7 @@ namespace Nitrocid.Analyzers.Test.Kernel
                     {   
                         public static void Main()
                         {
-                            var zone = [|TimeZoneInfo.Local|];
+                            string value = [|TimeDateTools.KernelDateTime.ToString|]();
                         }
                     }
                 }
@@ -74,6 +75,7 @@ namespace Nitrocid.Analyzers.Test.Kernel
                 using System.Text;
                 using System.Threading.Tasks;
                 using System.Diagnostics;
+                using KS.Kernel.Time;
 
                 namespace ConsoleApplication1
                 {
@@ -81,7 +83,7 @@ namespace Nitrocid.Analyzers.Test.Kernel
                     {   
                         public static void Main()
                         {
-                            var zone = [|TimeZoneInfo.Local|];
+                            string value = [|TimeDateTools.KernelDateTime.ToString|]();
                         }
                     }
                 }
@@ -95,7 +97,8 @@ namespace Nitrocid.Analyzers.Test.Kernel
                 using System.Text;
                 using System.Threading.Tasks;
                 using System.Diagnostics;
-                using KS.Kernel.Time.Timezones;
+                using KS.Kernel.Time;
+                using KS.Kernel.Time.Renderers;
 
                 namespace ConsoleApplication1
                 {
@@ -103,7 +106,7 @@ namespace Nitrocid.Analyzers.Test.Kernel
                     {   
                         public static void Main()
                         {
-                            var zone = TimeZones.GetCurrentZoneInfo();
+                            string value = TimeDateRenderers.RenderTime();
                         }
                     }
                 }

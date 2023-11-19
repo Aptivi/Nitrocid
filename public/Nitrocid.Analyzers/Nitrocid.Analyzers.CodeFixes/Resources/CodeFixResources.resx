@@ -287,6 +287,27 @@
   </data>
 
   <!--
+      KernelDateTimeToTimeString usage code fix
+  -->
+  <data name="KernelDateTimeToTimeStringUsageCodeFixTitle" xml:space="preserve">
+    <value>Use TimeDateRenderers.RenderTime()</value>
+  </data>
+
+  <!--
+      KernelDateTimeToDateString usage code fix
+  -->
+  <data name="KernelDateTimeToDateStringUsageCodeFixTitle" xml:space="preserve">
+    <value>Use TimeDateRenderers.RenderDate()</value>
+  </data>
+
+  <!--
+      KernelDateTimeToString usage code fix
+  -->
+  <data name="KernelDateTimeToStringUsageCodeFixTitle" xml:space="preserve">
+    <value>Use TimeDateRenderers.Render()</value>
+  </data>
+
+  <!--
       Other analyzers TBD
   -->
 </root>

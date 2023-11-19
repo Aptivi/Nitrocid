@@ -28,3 +28,6 @@ NKS0021 | Files | Info | PathIsPathRootedUsageAnalyzer, [Documentation](https://
 NKS0022 | Files | Info | PathGetInvalidPathCharsUsageAnalyzer, [Documentation](https://aptivi.gitbook.io/nitrocid-ks-manual/advanced-and-power-users/kernel-modifications/analyzer-diagnostics/files-nks0022)
 NKS0023 | Files | Info | PathGetFullPathUsageAnalyzer, [Documentation](https://aptivi.gitbook.io/nitrocid-ks-manual/advanced-and-power-users/kernel-modifications/analyzer-diagnostics/files-nks0023)
 NKS0024 | Kernel | Info | TimeZoneInfoLocalUsageAnalyzer, [Documentation](https://aptivi.gitbook.io/nitrocid-ks-manual/advanced-and-power-users/kernel-modifications/analyzer-diagnostics/kernel-nks0024)
+NKS0025 | Kernel | Info | KernelDateTimeToTimeStringUsageAnalyzer, [Documentation](https://aptivi.gitbook.io/nitrocid-ks-manual/advanced-and-power-users/kernel-modifications/analyzer-diagnostics/kernel-nks0025)
+NKS0026 | Kernel | Info | KernelDateTimeToDateStringUsageAnalyzer, [Documentation](https://aptivi.gitbook.io/nitrocid-ks-manual/advanced-and-power-users/kernel-modifications/analyzer-diagnostics/kernel-nks0026)
+NKS0027 | Kernel | Info | KernelDateTimeToStringUsageAnalyzer, [Documentation](https://aptivi.gitbook.io/nitrocid-ks-manual/advanced-and-power-users/kernel-modifications/analyzer-diagnostics/kernel-nks0027)

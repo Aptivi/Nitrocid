@@ -26,22 +26,22 @@ using System;
 using System.Collections.Immutable;
 using System.IO;
 
-namespace Nitrocid.Analyzers.Kernel
+namespace Nitrocid.Analyzers.Kernel.Time.Renderers
 {
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
-    public class TimeZoneInfoLocalUsageAnalyzer : DiagnosticAnalyzer
+    public class KernelDateTimeToTimeStringUsageAnalyzer : DiagnosticAnalyzer
     {
         // Some constants
-        public const string DiagnosticId = "NKS0024";
+        public const string DiagnosticId = "NKS0025";
         private const string Category = "Kernel";
 
         // Some strings
         private static readonly LocalizableString Title =
-            new LocalizableResourceString(nameof(AnalyzerResources.TimeZoneInfoLocalUsageAnalyzerTitle), AnalyzerResources.ResourceManager, typeof(AnalyzerResources));
+            new LocalizableResourceString(nameof(AnalyzerResources.KernelDateTimeToTimeStringUsageAnalyzerTitle), AnalyzerResources.ResourceManager, typeof(AnalyzerResources));
         private static readonly LocalizableString MessageFormat =
-            new LocalizableResourceString(nameof(AnalyzerResources.TimeZoneInfoLocalUsageAnalyzerMessageFormat), AnalyzerResources.ResourceManager, typeof(AnalyzerResources));
+            new LocalizableResourceString(nameof(AnalyzerResources.KernelDateTimeToTimeStringUsageAnalyzerMessageFormat), AnalyzerResources.ResourceManager, typeof(AnalyzerResources));
         private static readonly LocalizableString Description =
-            new LocalizableResourceString(nameof(AnalyzerResources.TimeZoneInfoLocalUsageAnalyzerDescription), AnalyzerResources.ResourceManager, typeof(AnalyzerResources));
+            new LocalizableResourceString(nameof(AnalyzerResources.KernelDateTimeToTimeStringUsageAnalyzerDescription), AnalyzerResources.ResourceManager, typeof(AnalyzerResources));
 
         // A rule
         private static readonly DiagnosticDescriptor Rule =
@@ -55,22 +55,37 @@ namespace Nitrocid.Analyzers.Kernel
         {
             context.ConfigureGeneratedCodeAnalysis(GeneratedCodeAnalysisFlags.None);
             context.EnableConcurrentExecution();
-            context.RegisterSyntaxNodeAction(AnalyzeTimeZoneInfoLocalUsage, SyntaxKind.SimpleMemberAccessExpression);
+            context.RegisterSyntaxNodeAction(AnalyzeKernelDateTimeToTimeStringUsage, SyntaxKind.SimpleMemberAccessExpression);
         }
 
-        private static void AnalyzeTimeZoneInfoLocalUsage(SyntaxNodeAnalysisContext context)
+        private static void AnalyzeKernelDateTimeToTimeStringUsage(SyntaxNodeAnalysisContext context)
         {
             // Now, check for the usage of string.Format()
             var exp = (MemberAccessExpressionSyntax)context.Node;
+
+            // Check the ToString() call
+            if (exp.Parent is InvocationExpressionSyntax parentIes)
+            {
+                var parentExp = (MemberAccessExpressionSyntax)parentIes.Expression;
+                if (parentExp.Name.ToString() != nameof(ToString))
+                    return;
+            }
+            else if (exp.Parent is MemberAccessExpressionSyntax parentMaes)
+            {
+                if (parentMaes.Name.ToString() != nameof(ToString))
+                    return;
+            }
+
+            // Analyze!
             if (exp.Expression is IdentifierNameSyntax identifier)
             {
-                var location = context.Node.GetLocation();
-                if (identifier.Identifier.Text == nameof(TimeZoneInfo))
+                var location = exp.Parent.GetLocation();
+                if (identifier.Identifier.Text == "TimeDateTools")
                 {
-                    // Let's see if the caller tries to access TimeZoneInfo.Local.
+                    // Let's see if the caller tries to access TimeDateTools.KernelDateTime.ToString.
                     var name = (IdentifierNameSyntax)exp.Name;
                     var idName = name.Identifier.Text;
-                    if (idName == nameof(TimeZoneInfo.Local))
+                    if (idName == "KernelDateTime")
                     {
                         var diagnostic = Diagnostic.Create(Rule, location);
                         context.ReportDiagnostic(diagnostic);

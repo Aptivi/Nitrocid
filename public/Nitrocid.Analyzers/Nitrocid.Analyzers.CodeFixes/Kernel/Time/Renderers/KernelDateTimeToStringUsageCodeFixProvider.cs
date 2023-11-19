@@ -29,13 +29,13 @@ using System.Threading;
 using System.Threading.Tasks;
 using Nitrocid.Analyzers.Resources;
 
-namespace Nitrocid.Analyzers.Kernel
+namespace Nitrocid.Analyzers.Kernel.Time.Renderers
 {
-    [ExportCodeFixProvider(LanguageNames.CSharp, Name = nameof(TimeZoneInfoLocalUsageCodeFixProvider)), Shared]
-    public class TimeZoneInfoLocalUsageCodeFixProvider : CodeFixProvider
+    [ExportCodeFixProvider(LanguageNames.CSharp, Name = nameof(KernelDateTimeToStringUsageCodeFixProvider)), Shared]
+    public class KernelDateTimeToStringUsageCodeFixProvider : CodeFixProvider
     {
         public sealed override ImmutableArray<string> FixableDiagnosticIds =>
-            ImmutableArray.Create(TimeZoneInfoLocalUsageAnalyzer.DiagnosticId);
+            ImmutableArray.Create(KernelDateTimeToStringUsageAnalyzer.DiagnosticId);
 
         public sealed override FixAllProvider GetFixAllProvider() =>
             WellKnownFixAllProviders.BatchFixer;
@@ -53,9 +53,9 @@ namespace Nitrocid.Analyzers.Kernel
             // Register a code action that will invoke the fix.
             context.RegisterCodeFix(
                 CodeAction.Create(
-                    title: CodeFixResources.TimeZoneInfoLocalUsageCodeFixTitle,
+                    title: CodeFixResources.KernelDateTimeToStringUsageCodeFixTitle,
                     createChangedSolution: c => UseTextToolsFormatStringAsync(context.Document, declaration, c),
-                    equivalenceKey: nameof(CodeFixResources.TimeZoneInfoLocalUsageCodeFixTitle)),
+                    equivalenceKey: nameof(CodeFixResources.KernelDateTimeToStringUsageCodeFixTitle)),
                 diagnostic);
         }
 
@@ -66,23 +66,21 @@ namespace Nitrocid.Analyzers.Kernel
                 // Get the method
                 var idName = ((IdentifierNameSyntax)typeDecl.Name).Identifier.Text;
 
-                // We need to have a syntax that calls TimeZones.GetCurrentZoneInfo
-                var classSyntax = SyntaxFactory.IdentifierName("TimeZones");
-                var methodSyntax = SyntaxFactory.IdentifierName("GetCurrentZoneInfo");
-                var maeSyntax = SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, classSyntax, methodSyntax);
-                var valuesSyntax = SyntaxFactory.ArgumentList().AddArguments();
-                var resultSyntax = SyntaxFactory.InvocationExpression(maeSyntax, valuesSyntax);
+                // We need to have a syntax that calls TimeDateRenderers.Render
+                var classSyntax = SyntaxFactory.IdentifierName("TimeDateRenderers");
+                var methodSyntax = SyntaxFactory.IdentifierName("Render");
+                var resultSyntax = SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, classSyntax, methodSyntax);
                 var replacedSyntax = resultSyntax
                     .WithLeadingTrivia(resultSyntax.GetLeadingTrivia())
                     .WithTrailingTrivia(resultSyntax.GetTrailingTrivia());
 
                 // Actually replace
                 var node = await document.GetSyntaxRootAsync(cancellationToken);
-                var finalNode = node.ReplaceNode(typeDecl, replacedSyntax);
+                var finalNode = node.ReplaceNode(typeDecl.Parent, replacedSyntax);
 
                 // Check the imports
                 var compilation = finalNode as CompilationUnitSyntax;
-                if (compilation?.Usings.Any(u => u.Name.ToString() == "KS.Kernel.Time.Timezones") == false)
+                if (compilation?.Usings.Any(u => u.Name.ToString() == "KS.Kernel.Time.Renderers") == false)
                 {
                     var name = SyntaxFactory.QualifiedName(
                         SyntaxFactory.QualifiedName(
@@ -90,7 +88,7 @@ namespace Nitrocid.Analyzers.Kernel
                                 SyntaxFactory.IdentifierName("KS"),
                                 SyntaxFactory.IdentifierName("Kernel")),
                             SyntaxFactory.IdentifierName("Time")),
-                        SyntaxFactory.IdentifierName("Timezones"));
+                        SyntaxFactory.IdentifierName("Renderers"));
                     compilation = compilation
                         .AddUsings(SyntaxFactory.UsingDirective(name));
                 }

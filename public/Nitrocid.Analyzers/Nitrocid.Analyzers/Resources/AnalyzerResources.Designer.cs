@@ -547,6 +547,87 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to TimeDateRenderers.RenderDate() respects your kernel settings when rendering date..
+        /// </summary>
+        internal static string KernelDateTimeToDateStringUsageAnalyzerDescription {
+            get {
+                return ResourceManager.GetString("KernelDateTimeToDateStringUsageAnalyzerDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Caller uses TimeDateTools.KernelDateTime.ToString instead of TimeDateRenderers.RenderDate().
+        /// </summary>
+        internal static string KernelDateTimeToDateStringUsageAnalyzerMessageFormat {
+            get {
+                return ResourceManager.GetString("KernelDateTimeToDateStringUsageAnalyzerMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use TimeDateRenderers.RenderDate() instead of TimeDateTools.KernelDateTime.ToString.
+        /// </summary>
+        internal static string KernelDateTimeToDateStringUsageAnalyzerTitle {
+            get {
+                return ResourceManager.GetString("KernelDateTimeToDateStringUsageAnalyzerTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TimeDateRenderers.Render() respects your kernel settings when rendering date and time..
+        /// </summary>
+        internal static string KernelDateTimeToStringUsageAnalyzerDescription {
+            get {
+                return ResourceManager.GetString("KernelDateTimeToStringUsageAnalyzerDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Caller uses TimeDateTools.KernelDateTime.ToString instead of TimeDateRenderers.Render().
+        /// </summary>
+        internal static string KernelDateTimeToStringUsageAnalyzerMessageFormat {
+            get {
+                return ResourceManager.GetString("KernelDateTimeToStringUsageAnalyzerMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use TimeDateRenderers.Render() instead of TimeDateTools.KernelDateTime.ToString.
+        /// </summary>
+        internal static string KernelDateTimeToStringUsageAnalyzerTitle {
+            get {
+                return ResourceManager.GetString("KernelDateTimeToStringUsageAnalyzerTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TimeDateRenderers.RenderTime() respects your kernel settings when rendering time..
+        /// </summary>
+        internal static string KernelDateTimeToTimeStringUsageAnalyzerDescription {
+            get {
+                return ResourceManager.GetString("KernelDateTimeToTimeStringUsageAnalyzerDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Caller uses TimeDateTools.KernelDateTime.ToString instead of TimeDateRenderers.RenderTime().
+        /// </summary>
+        internal static string KernelDateTimeToTimeStringUsageAnalyzerMessageFormat {
+            get {
+                return ResourceManager.GetString("KernelDateTimeToTimeStringUsageAnalyzerMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use TimeDateRenderers.RenderTime() instead of TimeDateTools.KernelDateTime.ToString.
+        /// </summary>
+        internal static string KernelDateTimeToTimeStringUsageAnalyzerTitle {
+            get {
+                return ResourceManager.GetString("KernelDateTimeToTimeStringUsageAnalyzerTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Checking.Exists() neutralizes the provided path to its absolute correct path, while Path.Exists operates at the executable Path (Environment.CurrentPath), which may not be what you want..
         /// </summary>
         internal static string PathExistsUsageAnalyzerDescription {

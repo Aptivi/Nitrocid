@@ -223,6 +223,33 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Use TimeDateRenderers.RenderDate().
+        /// </summary>
+        internal static string KernelDateTimeToDateStringUsageCodeFixTitle {
+            get {
+                return ResourceManager.GetString("KernelDateTimeToDateStringUsageCodeFixTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use TimeDateRenderers.Render().
+        /// </summary>
+        internal static string KernelDateTimeToStringUsageCodeFixTitle {
+            get {
+                return ResourceManager.GetString("KernelDateTimeToStringUsageCodeFixTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use TimeDateRenderers.RenderTime().
+        /// </summary>
+        internal static string KernelDateTimeToTimeStringUsageCodeFixTitle {
+            get {
+                return ResourceManager.GetString("KernelDateTimeToTimeStringUsageCodeFixTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Use Checking.Exists().
         /// </summary>
         internal static string PathExistsUsageCodeFixTitle {

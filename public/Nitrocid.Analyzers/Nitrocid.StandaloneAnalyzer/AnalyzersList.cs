@@ -51,6 +51,9 @@ namespace Nitrocid.StandaloneAnalyzer
             new NKS0022(),
             new NKS0023(),
             new NKS0024(),
+            new NKS0025(),
+            new NKS0026(),
+            new NKS0027(),
         ];
     }
 }
