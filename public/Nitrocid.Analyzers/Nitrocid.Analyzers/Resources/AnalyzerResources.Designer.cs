@@ -142,6 +142,33 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ConsoleExtensions.ResetColors() contains VT sequences that help reset colors in a portable way..
+        /// </summary>
+        internal static string ConsoleResetColorUsageAnalyzerDescription {
+            get {
+                return ResourceManager.GetString("ConsoleResetColorUsageAnalyzerDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Caller uses Console.ResetColor instead of ConsoleExtensions.ResetColors().
+        /// </summary>
+        internal static string ConsoleResetColorUsageAnalyzerMessageFormat {
+            get {
+                return ResourceManager.GetString("ConsoleResetColorUsageAnalyzerMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use ConsoleExtensions.ResetColors() instead of Console.ResetColor.
+        /// </summary>
+        internal static string ConsoleResetColorUsageAnalyzerTitle {
+            get {
+                return ResourceManager.GetString("ConsoleResetColorUsageAnalyzerTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to SetTitle() uses the VT sequence to set the title, while Console.Title works in certain conditions..
         /// </summary>
         internal static string ConsoleTitleUsageAnalyzerDescription {

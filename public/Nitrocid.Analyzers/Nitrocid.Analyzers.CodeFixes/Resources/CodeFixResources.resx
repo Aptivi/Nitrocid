@@ -175,6 +175,13 @@
   </data>
 
   <!--
+      ConsoleResetColor usage code fix
+  -->
+  <data name="ConsoleResetColorUsageCodeFixTitle" xml:space="preserve">
+    <value>Use ConsoleExtensions.ResetColors()</value>
+  </data>
+
+  <!--
       Other analyzers TBD
   -->
 </root>

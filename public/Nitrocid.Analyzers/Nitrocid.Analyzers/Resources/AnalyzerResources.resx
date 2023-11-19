@@ -223,6 +223,19 @@
   </data>
 
   <!--
+      ConsoleResetColor usage analyzer
+  -->
+  <data name="ConsoleResetColorUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use ConsoleExtensions.ResetColors() instead of Console.ResetColor</value>
+  </data>
+  <data name="ConsoleResetColorUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses Console.ResetColor instead of ConsoleExtensions.ResetColors()</value>
+  </data>
+  <data name="ConsoleResetColorUsageAnalyzerDescription" xml:space="preserve">
+    <value>ConsoleExtensions.ResetColors() contains VT sequences that help reset colors in a portable way.</value>
+  </data>
+
+  <!--
       Other analyzers TBD
   -->
 </root>

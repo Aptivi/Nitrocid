@@ -88,6 +88,15 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Use ConsoleExtensions.ResetColors().
+        /// </summary>
+        internal static string ConsoleResetColorUsageCodeFixTitle {
+            get {
+                return ResourceManager.GetString("ConsoleResetColorUsageCodeFixTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Use SetTitle() from ConsoleExtensions.
         /// </summary>
         internal static string ConsoleTitleUsageCodeFixTitle {

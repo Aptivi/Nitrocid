@@ -95,9 +95,9 @@ namespace Nitrocid.StandaloneAnalyzer
             for (int i = 0; i < visualStudioInstances.Length; i++)
             {
                 TextWriterColor.Write($"Instance {i + 1}");
-                TextWriterColor.Write($"    Name: {visualStudioInstances[i].Name}");
-                TextWriterColor.Write($"    Version: {visualStudioInstances[i].Version}");
-                TextWriterColor.Write($"    MSBuild Path: {visualStudioInstances[i].MSBuildPath}");
+                TextWriterColor.Write($"  - Name: {visualStudioInstances[i].Name}");
+                TextWriterColor.Write($"  - Version: {visualStudioInstances[i].Version}");
+                TextWriterColor.Write($"  - MSBuild Path: {visualStudioInstances[i].MSBuildPath}");
             }
 
             while (true)
