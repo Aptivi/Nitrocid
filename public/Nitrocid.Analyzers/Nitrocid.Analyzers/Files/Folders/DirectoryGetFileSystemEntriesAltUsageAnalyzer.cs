@@ -24,23 +24,24 @@ using Microsoft.CodeAnalysis.Diagnostics;
 using Nitrocid.Analyzers.Resources;
 using System;
 using System.Collections.Immutable;
+using System.IO;
 
 namespace Nitrocid.Analyzers.ConsoleBase
 {
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
-    public class ConsoleResetColorUsageAnalyzer : DiagnosticAnalyzer
+    public class DirectoryGetFileSystemEntriesAltUsageAnalyzer : DiagnosticAnalyzer
     {
         // Some constants
-        public const string DiagnosticId = "NKS0009";
-        private const string Category = "ConsoleBase";
+        public const string DiagnosticId = "NKS0011";
+        private const string Category = "Files";
 
         // Some strings
         private static readonly LocalizableString Title =
-            new LocalizableResourceString(nameof(AnalyzerResources.ConsoleResetColorUsageAnalyzerTitle), AnalyzerResources.ResourceManager, typeof(AnalyzerResources));
+            new LocalizableResourceString(nameof(AnalyzerResources.DirectoryGetFileSystemEntriesAltUsageAnalyzerTitle), AnalyzerResources.ResourceManager, typeof(AnalyzerResources));
         private static readonly LocalizableString MessageFormat =
-            new LocalizableResourceString(nameof(AnalyzerResources.ConsoleResetColorUsageAnalyzerMessageFormat), AnalyzerResources.ResourceManager, typeof(AnalyzerResources));
+            new LocalizableResourceString(nameof(AnalyzerResources.DirectoryGetFileSystemEntriesAltUsageAnalyzerMessageFormat), AnalyzerResources.ResourceManager, typeof(AnalyzerResources));
         private static readonly LocalizableString Description =
-            new LocalizableResourceString(nameof(AnalyzerResources.ConsoleResetColorUsageAnalyzerDescription), AnalyzerResources.ResourceManager, typeof(AnalyzerResources));
+            new LocalizableResourceString(nameof(AnalyzerResources.DirectoryGetFileSystemEntriesAltUsageAnalyzerDescription), AnalyzerResources.ResourceManager, typeof(AnalyzerResources));
 
         // A rule
         private static readonly DiagnosticDescriptor Rule =
@@ -54,22 +55,22 @@ namespace Nitrocid.Analyzers.ConsoleBase
         {
             context.ConfigureGeneratedCodeAnalysis(GeneratedCodeAnalysisFlags.None);
             context.EnableConcurrentExecution();
-            context.RegisterSyntaxNodeAction(AnalyzeConsoleResetColorUsage, SyntaxKind.SimpleMemberAccessExpression);
+            context.RegisterSyntaxNodeAction(AnalyzeDirectoryGetFileSystemEntriesAltUsage, SyntaxKind.SimpleMemberAccessExpression);
         }
 
-        private static void AnalyzeConsoleResetColorUsage(SyntaxNodeAnalysisContext context)
+        private static void AnalyzeDirectoryGetFileSystemEntriesAltUsage(SyntaxNodeAnalysisContext context)
         {
             // Now, check for the usage of string.Format()
             var exp = (MemberAccessExpressionSyntax)context.Node;
             if (exp.Expression is IdentifierNameSyntax identifier)
             {
                 var location = context.Node.GetLocation();
-                if (identifier.Identifier.Text == nameof(Console))
+                if (identifier.Identifier.Text == nameof(Directory))
                 {
-                    // Let's see if the caller tries to access Console.ResetColor.
+                    // Let's see if the caller tries to access Directory.GetFileSystemEntries.
                     var name = (IdentifierNameSyntax)exp.Name;
                     var idName = name.Identifier.Text;
-                    if (idName == nameof(Console.ResetColor))
+                    if (idName == nameof(Directory.GetFileSystemEntries))
                     {
                         var diagnostic = Diagnostic.Create(Rule, location);
                         context.ReportDiagnostic(diagnostic);

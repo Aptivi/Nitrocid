@@ -236,6 +236,32 @@
   </data>
 
   <!--
+      GetFileSystemEntries usage analyzer
+  -->
+  <data name="DirectoryGetFileSystemEntriesUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use Listing.CreateList() instead of Directory.GetFileSystemEntries</value>
+  </data>
+  <data name="DirectoryGetFileSystemEntriesUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses Directory.GetFileSystemEntries instead of Listing.CreateList()</value>
+  </data>
+  <data name="DirectoryGetFileSystemEntriesUsageAnalyzerDescription" xml:space="preserve">
+    <value>Listing.CreateList() returns a list of FileSystemEntry instances that provides you information about a file, as well as a wrapper to the FileSystemInfo instance for that file.</value>
+  </data>
+
+  <!--
+      GetFileSystemEntries usage analyzer
+  -->
+  <data name="DirectoryGetFileSystemEntriesAltUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use Listing.GetFileSystemEntries() instead of Directory.GetFileSystemEntries</value>
+  </data>
+  <data name="DirectoryGetFileSystemEntriesAltUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses Directory.GetFileSystemEntries instead of Listing.GetFileSystemEntries()</value>
+  </data>
+  <data name="DirectoryGetFileSystemEntriesAltUsageAnalyzerDescription" xml:space="preserve">
+    <value>Alternatively, Listing.GetFileSystemEntries() returns a list of paths to files or folders with better support for patterns. You can also use GetFilesystemEntriesRegex() for regular expression support.</value>
+  </data>
+
+  <!--
       Other analyzers TBD
   -->
 </root>

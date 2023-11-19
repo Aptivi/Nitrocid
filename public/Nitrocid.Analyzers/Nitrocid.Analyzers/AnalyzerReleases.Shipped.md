@@ -13,3 +13,5 @@ NKS0006 | ConsoleBase | Info | ConsoleReadLineUsageAnalyzer, [Documentation](htt
 NKS0007 | ConsoleBase | Info | ConsoleWriteUsageAnalyzer, [Documentation](https://aptivi.gitbook.io/nitrocid-ks-manual/advanced-and-power-users/kernel-modifications/analyzer-diagnostics/consolebase-nks0007)
 NKS0008 | ConsoleBase | Info | ConsoleWriteLineUsageAnalyzer, [Documentation](https://aptivi.gitbook.io/nitrocid-ks-manual/advanced-and-power-users/kernel-modifications/analyzer-diagnostics/consolebase-nks0008)
 NKS0009 | ConsoleBase | Info | ConsoleResetColorUsageAnalyzer, [Documentation](https://aptivi.gitbook.io/nitrocid-ks-manual/advanced-and-power-users/kernel-modifications/analyzer-diagnostics/consolebase-nks0009)
+NKS0010 | Files | Info | DirectoryGetFileSystemEntriesUsageAnalyzer, [Documentation](https://aptivi.gitbook.io/nitrocid-ks-manual/advanced-and-power-users/kernel-modifications/analyzer-diagnostics/files-nks0010)
+NKS0011 | Files | Info | DirectoryGetFileSystemEntriesAltUsageAnalyzer, [Documentation](https://aptivi.gitbook.io/nitrocid-ks-manual/advanced-and-power-users/kernel-modifications/analyzer-diagnostics/files-nks0011)

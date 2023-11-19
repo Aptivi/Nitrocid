@@ -277,6 +277,60 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Alternatively, Listing.GetFileSystemEntries() returns a list of paths to files or folders with better support for patterns. You can also use GetFilesystemEntriesRegex() for regular expression support..
+        /// </summary>
+        internal static string DirectoryGetFileSystemEntriesAltUsageAnalyzerDescription {
+            get {
+                return ResourceManager.GetString("DirectoryGetFileSystemEntriesAltUsageAnalyzerDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Caller uses Directory.GetFileSystemEntries instead of Listing.GetFileSystemEntries().
+        /// </summary>
+        internal static string DirectoryGetFileSystemEntriesAltUsageAnalyzerMessageFormat {
+            get {
+                return ResourceManager.GetString("DirectoryGetFileSystemEntriesAltUsageAnalyzerMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use Listing.GetFileSystemEntries() instead of Directory.GetFileSystemEntries.
+        /// </summary>
+        internal static string DirectoryGetFileSystemEntriesAltUsageAnalyzerTitle {
+            get {
+                return ResourceManager.GetString("DirectoryGetFileSystemEntriesAltUsageAnalyzerTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Listing.CreateList() returns a list of FileSystemEntry instances that provides you information about a file, as well as a wrapper to the FileSystemInfo instance for that file..
+        /// </summary>
+        internal static string DirectoryGetFileSystemEntriesUsageAnalyzerDescription {
+            get {
+                return ResourceManager.GetString("DirectoryGetFileSystemEntriesUsageAnalyzerDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Caller uses Directory.GetFileSystemEntries instead of Listing.CreateList().
+        /// </summary>
+        internal static string DirectoryGetFileSystemEntriesUsageAnalyzerMessageFormat {
+            get {
+                return ResourceManager.GetString("DirectoryGetFileSystemEntriesUsageAnalyzerMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use Listing.CreateList() instead of Directory.GetFileSystemEntries.
+        /// </summary>
+        internal static string DirectoryGetFileSystemEntriesUsageAnalyzerTitle {
+            get {
+                return ResourceManager.GetString("DirectoryGetFileSystemEntriesUsageAnalyzerTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to TextTools.FormatString() uses the error handler to handle unknown formatting errors and returns the unformatted string if such errors happen, but string.Format() immediately throws..
         /// </summary>
         internal static string StringFormatAnalyzerDescription {

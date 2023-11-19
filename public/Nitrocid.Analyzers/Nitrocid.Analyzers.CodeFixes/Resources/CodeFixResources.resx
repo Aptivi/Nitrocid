@@ -182,6 +182,20 @@
   </data>
 
   <!--
+      GetFileSystemEntries usage code fix
+  -->
+  <data name="DirectoryGetFileSystemEntriesUsageCodeFixTitle" xml:space="preserve">
+    <value>Use Listing.CreateList()</value>
+  </data>
+
+  <!--
+      GetFileSystemEntries usage code fix
+  -->
+  <data name="DirectoryGetFileSystemEntriesAltUsageCodeFixTitle" xml:space="preserve">
+    <value>Use Listing.GetFileSystemEntries()</value>
+  </data>
+
+  <!--
       Other analyzers TBD
   -->
 </root>

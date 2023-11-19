@@ -133,6 +133,24 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Use Listing.GetFileSystemEntries().
+        /// </summary>
+        internal static string DirectoryGetFileSystemEntriesAltUsageCodeFixTitle {
+            get {
+                return ResourceManager.GetString("DirectoryGetFileSystemEntriesAltUsageCodeFixTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use Listing.CreateList().
+        /// </summary>
+        internal static string DirectoryGetFileSystemEntriesUsageCodeFixTitle {
+            get {
+                return ResourceManager.GetString("DirectoryGetFileSystemEntriesUsageCodeFixTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Use TextTools.FormatString().
         /// </summary>
         internal static string StringFormatCodeFixTitle {
