@@ -133,6 +133,24 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Use Making.MakeDirectory().
+        /// </summary>
+        internal static string DirectoryCreateDirectoryUsageCodeFixTitle {
+            get {
+                return ResourceManager.GetString("DirectoryCreateDirectoryUsageCodeFixTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use Removing.RemoveDirectory().
+        /// </summary>
+        internal static string DirectoryDeleteUsageCodeFixTitle {
+            get {
+                return ResourceManager.GetString("DirectoryDeleteUsageCodeFixTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Use Listing.GetFileSystemEntries().
         /// </summary>
         internal static string DirectoryGetFileSystemEntriesAltUsageCodeFixTitle {
@@ -147,6 +165,42 @@ namespace Nitrocid.Analyzers.Resources {
         internal static string DirectoryGetFileSystemEntriesUsageCodeFixTitle {
             get {
                 return ResourceManager.GetString("DirectoryGetFileSystemEntriesUsageCodeFixTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use Copying.CopyFileOrDir().
+        /// </summary>
+        internal static string FileCopyUsageCodeFixTitle {
+            get {
+                return ResourceManager.GetString("FileCopyUsageCodeFixTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use Making.MakeFile().
+        /// </summary>
+        internal static string FileCreateUsageCodeFixTitle {
+            get {
+                return ResourceManager.GetString("FileCreateUsageCodeFixTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use Removing.RemoveFile().
+        /// </summary>
+        internal static string FileDeleteUsageCodeFixTitle {
+            get {
+                return ResourceManager.GetString("FileDeleteUsageCodeFixTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use Moving.MoveFileOrDir().
+        /// </summary>
+        internal static string FileMoveUsageCodeFixTitle {
+            get {
+                return ResourceManager.GetString("FileMoveUsageCodeFixTitle", resourceCulture);
             }
         }
         

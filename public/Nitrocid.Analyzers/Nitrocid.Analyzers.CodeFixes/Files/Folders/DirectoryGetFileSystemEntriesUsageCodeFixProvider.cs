@@ -29,7 +29,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Nitrocid.Analyzers.Resources;
 
-namespace Nitrocid.Analyzers.ConsoleBase
+namespace Nitrocid.Analyzers.Files.Folders
 {
     [ExportCodeFixProvider(LanguageNames.CSharp, Name = nameof(DirectoryGetFileSystemEntriesUsageCodeFixProvider)), Shared]
     public class DirectoryGetFileSystemEntriesUsageCodeFixProvider : CodeFixProvider

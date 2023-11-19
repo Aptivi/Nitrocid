@@ -26,7 +26,7 @@ using System;
 using System.Collections.Immutable;
 using System.IO;
 
-namespace Nitrocid.Analyzers.ConsoleBase
+namespace Nitrocid.Analyzers.Files.Folders
 {
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class DirectoryGetFileSystemEntriesAltUsageAnalyzer : DiagnosticAnalyzer

@@ -26,22 +26,22 @@ using System;
 using System.Collections.Immutable;
 using System.IO;
 
-namespace Nitrocid.Analyzers.Files.Folders
+namespace Nitrocid.Analyzers.Files.Operations
 {
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
-    public class DirectoryGetFileSystemEntriesUsageAnalyzer : DiagnosticAnalyzer
+    public class FileCreateUsageAnalyzer : DiagnosticAnalyzer
     {
         // Some constants
-        public const string DiagnosticId = "NKS0010";
+        public const string DiagnosticId = "NKS0014";
         private const string Category = "Files";
 
         // Some strings
         private static readonly LocalizableString Title =
-            new LocalizableResourceString(nameof(AnalyzerResources.DirectoryGetFileSystemEntriesUsageAnalyzerTitle), AnalyzerResources.ResourceManager, typeof(AnalyzerResources));
+            new LocalizableResourceString(nameof(AnalyzerResources.FileCreateUsageAnalyzerTitle), AnalyzerResources.ResourceManager, typeof(AnalyzerResources));
         private static readonly LocalizableString MessageFormat =
-            new LocalizableResourceString(nameof(AnalyzerResources.DirectoryGetFileSystemEntriesUsageAnalyzerMessageFormat), AnalyzerResources.ResourceManager, typeof(AnalyzerResources));
+            new LocalizableResourceString(nameof(AnalyzerResources.FileCreateUsageAnalyzerMessageFormat), AnalyzerResources.ResourceManager, typeof(AnalyzerResources));
         private static readonly LocalizableString Description =
-            new LocalizableResourceString(nameof(AnalyzerResources.DirectoryGetFileSystemEntriesUsageAnalyzerDescription), AnalyzerResources.ResourceManager, typeof(AnalyzerResources));
+            new LocalizableResourceString(nameof(AnalyzerResources.FileCreateUsageAnalyzerDescription), AnalyzerResources.ResourceManager, typeof(AnalyzerResources));
 
         // A rule
         private static readonly DiagnosticDescriptor Rule =
@@ -55,22 +55,22 @@ namespace Nitrocid.Analyzers.Files.Folders
         {
             context.ConfigureGeneratedCodeAnalysis(GeneratedCodeAnalysisFlags.None);
             context.EnableConcurrentExecution();
-            context.RegisterSyntaxNodeAction(AnalyzeDirectoryGetFileSystemEntriesUsage, SyntaxKind.SimpleMemberAccessExpression);
+            context.RegisterSyntaxNodeAction(AnalyzeFileCreateUsage, SyntaxKind.SimpleMemberAccessExpression);
         }
 
-        private static void AnalyzeDirectoryGetFileSystemEntriesUsage(SyntaxNodeAnalysisContext context)
+        private static void AnalyzeFileCreateUsage(SyntaxNodeAnalysisContext context)
         {
             // Now, check for the usage of string.Format()
             var exp = (MemberAccessExpressionSyntax)context.Node;
             if (exp.Expression is IdentifierNameSyntax identifier)
             {
                 var location = context.Node.GetLocation();
-                if (identifier.Identifier.Text == nameof(Directory))
+                if (identifier.Identifier.Text == nameof(File))
                 {
-                    // Let's see if the caller tries to access Directory.GetFileSystemEntries.
+                    // Let's see if the caller tries to access File.Create.
                     var name = (IdentifierNameSyntax)exp.Name;
                     var idName = name.Identifier.Text;
-                    if (idName == nameof(Directory.GetFileSystemEntries))
+                    if (idName == nameof(File.Create))
                     {
                         var diagnostic = Diagnostic.Create(Rule, location);
                         context.ReportDiagnostic(diagnostic);

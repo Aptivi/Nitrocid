@@ -20,13 +20,13 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Threading.Tasks;
 using VerifyCS = Nitrocid.Analyzers.Test.CSharpCodeFixVerifier<
-    Nitrocid.Analyzers.Files.Folders.DirectoryGetFileSystemEntriesAltUsageAnalyzer,
-    Nitrocid.Analyzers.Files.Folders.DirectoryGetFileSystemEntriesAltUsageCodeFixProvider>;
+    Nitrocid.Analyzers.Files.Operations.FileCreateUsageAnalyzer,
+    Nitrocid.Analyzers.Files.Operations.FileCreateUsageCodeFixProvider>;
 
-namespace Nitrocid.Analyzers.Test.Files.Folders
+namespace Nitrocid.Analyzers.Test.Files.Operations
 {
     [TestClass]
-    public class DirectoryGetFileSystemEntriesAltUsageAnalyzerUnitTests
+    public class FileCreateUsageAnalyzerUnitTests
     {
         [TestMethod]
         public async Task TestEnsureNoAnalyzer()
@@ -56,7 +56,7 @@ namespace Nitrocid.Analyzers.Test.Files.Folders
                     {   
                         public static void Main()
                         {
-                            string[] files = [|Directory.GetFileSystemEntries|](PathsManagement.AppDataPath);
+                            [|File.Create|]("test.txt");
                         }
                     }
                 }
@@ -84,7 +84,7 @@ namespace Nitrocid.Analyzers.Test.Files.Folders
                     {   
                         public static void Main()
                         {
-                            string[] files = [|Directory.GetFileSystemEntries|](PathsManagement.AppDataPath);
+                            [|File.Create|]("test.txt");
                         }
                     }
                 }
@@ -99,7 +99,7 @@ namespace Nitrocid.Analyzers.Test.Files.Folders
                 using System.Threading.Tasks;
                 using System.Diagnostics;
                 using KS.Files.Paths;
-                using KS.Files.Folders;
+                using KS.Files.Operations;
 
                 namespace ConsoleApplication1
                 {
@@ -107,7 +107,7 @@ namespace Nitrocid.Analyzers.Test.Files.Folders
                     {   
                         public static void Main()
                         {
-                            string[] files = Listing.GetFilesystemEntries(PathsManagement.AppDataPath);
+                            Making.MakeFile("test.txt");
                         }
                     }
                 }

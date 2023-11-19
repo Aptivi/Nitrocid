@@ -20,13 +20,13 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Threading.Tasks;
 using VerifyCS = Nitrocid.Analyzers.Test.CSharpCodeFixVerifier<
-    Nitrocid.Analyzers.Files.Folders.DirectoryGetFileSystemEntriesAltUsageAnalyzer,
-    Nitrocid.Analyzers.Files.Folders.DirectoryGetFileSystemEntriesAltUsageCodeFixProvider>;
+    Nitrocid.Analyzers.Files.Operations.FileMoveUsageAnalyzer,
+    Nitrocid.Analyzers.Files.Operations.FileMoveUsageCodeFixProvider>;
 
-namespace Nitrocid.Analyzers.Test.Files.Folders
+namespace Nitrocid.Analyzers.Test.Files.Operations
 {
     [TestClass]
-    public class DirectoryGetFileSystemEntriesAltUsageAnalyzerUnitTests
+    public class FileMoveUsageAnalyzerUnitTests
     {
         [TestMethod]
         public async Task TestEnsureNoAnalyzer()
@@ -56,7 +56,7 @@ namespace Nitrocid.Analyzers.Test.Files.Folders
                     {   
                         public static void Main()
                         {
-                            string[] files = [|Directory.GetFileSystemEntries|](PathsManagement.AppDataPath);
+                            [|File.Move|]("test.txt", PathsManagement.AppDataPath);
                         }
                     }
                 }
@@ -84,7 +84,7 @@ namespace Nitrocid.Analyzers.Test.Files.Folders
                     {   
                         public static void Main()
                         {
-                            string[] files = [|Directory.GetFileSystemEntries|](PathsManagement.AppDataPath);
+                            [|File.Move|]("test.txt", PathsManagement.AppDataPath);
                         }
                     }
                 }
@@ -99,7 +99,7 @@ namespace Nitrocid.Analyzers.Test.Files.Folders
                 using System.Threading.Tasks;
                 using System.Diagnostics;
                 using KS.Files.Paths;
-                using KS.Files.Folders;
+                using KS.Files.Operations;
 
                 namespace ConsoleApplication1
                 {
@@ -107,7 +107,7 @@ namespace Nitrocid.Analyzers.Test.Files.Folders
                     {   
                         public static void Main()
                         {
-                            string[] files = Listing.GetFilesystemEntries(PathsManagement.AppDataPath);
+                            Moving.MoveFileOrDir("test.txt", PathsManagement.AppDataPath);
                         }
                     }
                 }

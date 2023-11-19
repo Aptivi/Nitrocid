@@ -277,6 +277,60 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Making.MakeDirectory() neutralizes the provided path to its absolute correct path, while Directory.CreateDirectory operates at the executable directory (Environment.CurrentDirectory), which may not be what you want..
+        /// </summary>
+        internal static string DirectoryCreateDirectoryUsageAnalyzerDescription {
+            get {
+                return ResourceManager.GetString("DirectoryCreateDirectoryUsageAnalyzerDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Caller uses Directory.CreateDirectory instead of Making.MakeDirectory().
+        /// </summary>
+        internal static string DirectoryCreateDirectoryUsageAnalyzerMessageFormat {
+            get {
+                return ResourceManager.GetString("DirectoryCreateDirectoryUsageAnalyzerMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use Making.MakeDirectory() instead of Directory.CreateDirectory.
+        /// </summary>
+        internal static string DirectoryCreateDirectoryUsageAnalyzerTitle {
+            get {
+                return ResourceManager.GetString("DirectoryCreateDirectoryUsageAnalyzerTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Removing.RemoveDirectory() neutralizes the provided path to its absolute correct path, while Directory.Delete operates at the executable directory (Environment.CurrentDirectory), which may not be what you want..
+        /// </summary>
+        internal static string DirectoryDeleteUsageAnalyzerDescription {
+            get {
+                return ResourceManager.GetString("DirectoryDeleteUsageAnalyzerDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Caller uses Directory.Delete instead of Removing.RemoveDirectory().
+        /// </summary>
+        internal static string DirectoryDeleteUsageAnalyzerMessageFormat {
+            get {
+                return ResourceManager.GetString("DirectoryDeleteUsageAnalyzerMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use Removing.RemoveDirectory() instead of Directory.Delete.
+        /// </summary>
+        internal static string DirectoryDeleteUsageAnalyzerTitle {
+            get {
+                return ResourceManager.GetString("DirectoryDeleteUsageAnalyzerTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Alternatively, Listing.GetFileSystemEntries() returns a list of paths to files or folders with better support for patterns. You can also use GetFilesystemEntriesRegex() for regular expression support..
         /// </summary>
         internal static string DirectoryGetFileSystemEntriesAltUsageAnalyzerDescription {
@@ -327,6 +381,114 @@ namespace Nitrocid.Analyzers.Resources {
         internal static string DirectoryGetFileSystemEntriesUsageAnalyzerTitle {
             get {
                 return ResourceManager.GetString("DirectoryGetFileSystemEntriesUsageAnalyzerTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Copying.CopyFileOrDir() neutralizes the provided paths to their absolute correct paths, while File.Copy operates at the executable directory (Environment.CurrentDirectory), which may not be what you want..
+        /// </summary>
+        internal static string FileCopyUsageAnalyzerDescription {
+            get {
+                return ResourceManager.GetString("FileCopyUsageAnalyzerDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Caller uses File.Copy instead of Copying.CopyFileOrDir().
+        /// </summary>
+        internal static string FileCopyUsageAnalyzerMessageFormat {
+            get {
+                return ResourceManager.GetString("FileCopyUsageAnalyzerMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use Copying.CopyFileOrDir() instead of File.Copy.
+        /// </summary>
+        internal static string FileCopyUsageAnalyzerTitle {
+            get {
+                return ResourceManager.GetString("FileCopyUsageAnalyzerTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Making.MakeFile() neutralizes the provided path to its absolute correct path, while File.Create operates at the executable directory (Environment.CurrentDirectory), which may not be what you want..
+        /// </summary>
+        internal static string FileCreateUsageAnalyzerDescription {
+            get {
+                return ResourceManager.GetString("FileCreateUsageAnalyzerDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Caller uses File.Create instead of Making.MakeFile().
+        /// </summary>
+        internal static string FileCreateUsageAnalyzerMessageFormat {
+            get {
+                return ResourceManager.GetString("FileCreateUsageAnalyzerMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use Making.MakeFile() instead of File.Create.
+        /// </summary>
+        internal static string FileCreateUsageAnalyzerTitle {
+            get {
+                return ResourceManager.GetString("FileCreateUsageAnalyzerTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Removing.RemoveFile() neutralizes the provided path to its absolute correct path, while File.Delete operates at the executable directory (Environment.CurrentDirectory), which may not be what you want..
+        /// </summary>
+        internal static string FileDeleteUsageAnalyzerDescription {
+            get {
+                return ResourceManager.GetString("FileDeleteUsageAnalyzerDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Caller uses File.Delete instead of Removing.RemoveFile().
+        /// </summary>
+        internal static string FileDeleteUsageAnalyzerMessageFormat {
+            get {
+                return ResourceManager.GetString("FileDeleteUsageAnalyzerMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use Removing.RemoveFile() instead of File.Delete.
+        /// </summary>
+        internal static string FileDeleteUsageAnalyzerTitle {
+            get {
+                return ResourceManager.GetString("FileDeleteUsageAnalyzerTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Moving.MoveFileOrDir() neutralizes the provided path to its absolute correct path, while File.Move operates at the executable directory (Environment.CurrentDirectory), which may not be what you want..
+        /// </summary>
+        internal static string FileMoveUsageAnalyzerDescription {
+            get {
+                return ResourceManager.GetString("FileMoveUsageAnalyzerDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Caller uses File.Move instead of Moving.MoveFileOrDir().
+        /// </summary>
+        internal static string FileMoveUsageAnalyzerMessageFormat {
+            get {
+                return ResourceManager.GetString("FileMoveUsageAnalyzerMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use Moving.MoveFileOrDir() instead of File.Move.
+        /// </summary>
+        internal static string FileMoveUsageAnalyzerTitle {
+            get {
+                return ResourceManager.GetString("FileMoveUsageAnalyzerTitle", resourceCulture);
             }
         }
         

@@ -29,13 +29,13 @@ using System.Threading;
 using System.Threading.Tasks;
 using Nitrocid.Analyzers.Resources;
 
-namespace Nitrocid.Analyzers.Files.Folders
+namespace Nitrocid.Analyzers.Files.Operations
 {
-    [ExportCodeFixProvider(LanguageNames.CSharp, Name = nameof(DirectoryGetFileSystemEntriesAltUsageCodeFixProvider)), Shared]
-    public class DirectoryGetFileSystemEntriesAltUsageCodeFixProvider : CodeFixProvider
+    [ExportCodeFixProvider(LanguageNames.CSharp, Name = nameof(FileMoveUsageCodeFixProvider)), Shared]
+    public class FileMoveUsageCodeFixProvider : CodeFixProvider
     {
         public sealed override ImmutableArray<string> FixableDiagnosticIds =>
-            ImmutableArray.Create(DirectoryGetFileSystemEntriesAltUsageAnalyzer.DiagnosticId);
+            ImmutableArray.Create(FileMoveUsageAnalyzer.DiagnosticId);
 
         public sealed override FixAllProvider GetFixAllProvider() =>
             WellKnownFixAllProviders.BatchFixer;
@@ -53,9 +53,9 @@ namespace Nitrocid.Analyzers.Files.Folders
             // Register a code action that will invoke the fix.
             context.RegisterCodeFix(
                 CodeAction.Create(
-                    title: CodeFixResources.DirectoryGetFileSystemEntriesAltUsageCodeFixTitle,
+                    title: CodeFixResources.FileMoveUsageCodeFixTitle,
                     createChangedSolution: c => UseTextToolsFormatStringAsync(context.Document, declaration, c),
-                    equivalenceKey: nameof(CodeFixResources.DirectoryGetFileSystemEntriesAltUsageCodeFixTitle)),
+                    equivalenceKey: nameof(CodeFixResources.FileMoveUsageCodeFixTitle)),
                 diagnostic);
         }
 
@@ -66,9 +66,9 @@ namespace Nitrocid.Analyzers.Files.Folders
                 // Get the method
                 var idName = ((IdentifierNameSyntax)typeDecl.Name).Identifier.Text;
 
-                // We need to have a syntax that calls Listing.GetFilesystemEntries
-                var classSyntax = SyntaxFactory.IdentifierName("Listing");
-                var methodSyntax = SyntaxFactory.IdentifierName("GetFilesystemEntries");
+                // We need to have a syntax that calls Moving.MoveFileOrDir
+                var classSyntax = SyntaxFactory.IdentifierName("Moving");
+                var methodSyntax = SyntaxFactory.IdentifierName("MoveFileOrDir");
                 var resultSyntax = SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, classSyntax, methodSyntax);
                 var replacedSyntax = resultSyntax
                     .WithLeadingTrivia(resultSyntax.GetLeadingTrivia())
@@ -80,13 +80,13 @@ namespace Nitrocid.Analyzers.Files.Folders
 
                 // Check the imports
                 var compilation = finalNode as CompilationUnitSyntax;
-                if (compilation?.Usings.Any(u => u.Name.ToString() == "KS.Files.Folders") == false)
+                if (compilation?.Usings.Any(u => u.Name.ToString() == "KS.Files.Operations") == false)
                 {
                     var name = SyntaxFactory.QualifiedName(
                         SyntaxFactory.QualifiedName(
                             SyntaxFactory.IdentifierName("KS"),
                             SyntaxFactory.IdentifierName("Files")),
-                        SyntaxFactory.IdentifierName("Folders"));
+                        SyntaxFactory.IdentifierName("Operations"));
                     compilation = compilation
                         .AddUsings(SyntaxFactory.UsingDirective(name));
                 }

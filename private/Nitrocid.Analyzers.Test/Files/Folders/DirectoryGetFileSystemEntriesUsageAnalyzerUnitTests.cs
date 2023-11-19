@@ -20,10 +20,10 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Threading.Tasks;
 using VerifyCS = Nitrocid.Analyzers.Test.CSharpCodeFixVerifier<
-    Nitrocid.Analyzers.ConsoleBase.DirectoryGetFileSystemEntriesUsageAnalyzer,
-    Nitrocid.Analyzers.ConsoleBase.DirectoryGetFileSystemEntriesUsageCodeFixProvider>;
+    Nitrocid.Analyzers.Files.Folders.DirectoryGetFileSystemEntriesUsageAnalyzer,
+    Nitrocid.Analyzers.Files.Folders.DirectoryGetFileSystemEntriesUsageCodeFixProvider>;
 
-namespace Nitrocid.Analyzers.Test.ConsoleBase
+namespace Nitrocid.Analyzers.Test.Files.Folders
 {
     [TestClass]
     public class DirectoryGetFileSystemEntriesUsageAnalyzerUnitTests
