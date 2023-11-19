@@ -21,3 +21,8 @@ NKS0014 | Files | Info | FileCreateUsageAnalyzer, [Documentation](https://aptivi
 NKS0015 | Files | Info | FileMoveUsageAnalyzer, [Documentation](https://aptivi.gitbook.io/nitrocid-ks-manual/advanced-and-power-users/kernel-modifications/analyzer-diagnostics/files-nks0015)
 NKS0016 | Files | Info | FileDeleteUsageAnalyzer, [Documentation](https://aptivi.gitbook.io/nitrocid-ks-manual/advanced-and-power-users/kernel-modifications/analyzer-diagnostics/files-nks0016)
 NKS0017 | Files | Info | DirectoryDeleteUsageAnalyzer, [Documentation](https://aptivi.gitbook.io/nitrocid-ks-manual/advanced-and-power-users/kernel-modifications/analyzer-diagnostics/files-nks0017)
+NKS0018 | Files | Info | FileExistsUsageAnalyzer, [Documentation](https://aptivi.gitbook.io/nitrocid-ks-manual/advanced-and-power-users/kernel-modifications/analyzer-diagnostics/files-nks0018)
+NKS0019 | Files | Info | DirectoryExistsUsageAnalyzer, [Documentation](https://aptivi.gitbook.io/nitrocid-ks-manual/advanced-and-power-users/kernel-modifications/analyzer-diagnostics/files-nks0019)
+NKS0020 | Files | Info | PathExistsUsageAnalyzer, [Documentation](https://aptivi.gitbook.io/nitrocid-ks-manual/advanced-and-power-users/kernel-modifications/analyzer-diagnostics/files-nks0020)
+NKS0021 | Files | Info | PathIsPathRootedUsageAnalyzer, [Documentation](https://aptivi.gitbook.io/nitrocid-ks-manual/advanced-and-power-users/kernel-modifications/analyzer-diagnostics/files-nks0021)
+NKS0022 | Files | Info | PathGetInvalidPathCharsUsageAnalyzer, [Documentation](https://aptivi.gitbook.io/nitrocid-ks-manual/advanced-and-power-users/kernel-modifications/analyzer-diagnostics/files-nks0022)

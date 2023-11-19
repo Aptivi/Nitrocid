@@ -331,6 +331,33 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Checking.DirectoryExists() neutralizes the provided path to its absolute correct path, while Directory.Exists operates at the executable directory (Environment.CurrentDirectory), which may not be what you want..
+        /// </summary>
+        internal static string DirectoryExistsUsageAnalyzerDescription {
+            get {
+                return ResourceManager.GetString("DirectoryExistsUsageAnalyzerDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Caller uses Directory.Exists instead of Checking.DirectoryExists().
+        /// </summary>
+        internal static string DirectoryExistsUsageAnalyzerMessageFormat {
+            get {
+                return ResourceManager.GetString("DirectoryExistsUsageAnalyzerMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use Checking.DirectoryExists() instead of Directory.Exists.
+        /// </summary>
+        internal static string DirectoryExistsUsageAnalyzerTitle {
+            get {
+                return ResourceManager.GetString("DirectoryExistsUsageAnalyzerTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Alternatively, Listing.GetFileSystemEntries() returns a list of paths to files or folders with better support for patterns. You can also use GetFilesystemEntriesRegex() for regular expression support..
         /// </summary>
         internal static string DirectoryGetFileSystemEntriesAltUsageAnalyzerDescription {
@@ -466,7 +493,34 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Moving.MoveFileOrDir() neutralizes the provided path to its absolute correct path, while File.Move operates at the executable directory (Environment.CurrentDirectory), which may not be what you want..
+        ///   Looks up a localized string similar to Checking.FileExists() neutralizes the provided path to its absolute correct path, while File.Exists operates at the executable directory (Environment.CurrentDirectory), which may not be what you want..
+        /// </summary>
+        internal static string FileExistsUsageAnalyzerDescription {
+            get {
+                return ResourceManager.GetString("FileExistsUsageAnalyzerDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Caller uses File.Exists instead of Checking.FileExists().
+        /// </summary>
+        internal static string FileExistsUsageAnalyzerMessageFormat {
+            get {
+                return ResourceManager.GetString("FileExistsUsageAnalyzerMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use Checking.FileExists() instead of File.Exists.
+        /// </summary>
+        internal static string FileExistsUsageAnalyzerTitle {
+            get {
+                return ResourceManager.GetString("FileExistsUsageAnalyzerTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Moving.MoveFileOrDir() neutralizes the provided paths to their absolute correct paths, while File.Move operates at the executable directory (Environment.CurrentDirectory), which may not be what you want..
         /// </summary>
         internal static string FileMoveUsageAnalyzerDescription {
             get {
@@ -489,6 +543,87 @@ namespace Nitrocid.Analyzers.Resources {
         internal static string FileMoveUsageAnalyzerTitle {
             get {
                 return ResourceManager.GetString("FileMoveUsageAnalyzerTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Checking.Exists() neutralizes the provided path to its absolute correct path, while Path.Exists operates at the executable Path (Environment.CurrentPath), which may not be what you want..
+        /// </summary>
+        internal static string PathExistsUsageAnalyzerDescription {
+            get {
+                return ResourceManager.GetString("PathExistsUsageAnalyzerDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Caller uses Path.Exists instead of Checking.Exists().
+        /// </summary>
+        internal static string PathExistsUsageAnalyzerMessageFormat {
+            get {
+                return ResourceManager.GetString("PathExistsUsageAnalyzerMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use Checking.Exists() instead of Path.Exists.
+        /// </summary>
+        internal static string PathExistsUsageAnalyzerTitle {
+            get {
+                return ResourceManager.GetString("PathExistsUsageAnalyzerTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Parsing.GetInvalidPathChars() always returns invalid characters for Windows paths, regardless of the host operating system, while Path.GetInvalidPathChars returns a list of forbidden path characters for an operating system, which may be wrong in .NET 6.0 or later for the following characters: &apos;&quot;&apos;, &apos;&lt;&apos;, &apos;&gt;&apos;..
+        /// </summary>
+        internal static string PathGetInvalidPathCharsUsageAnalyzerDescription {
+            get {
+                return ResourceManager.GetString("PathGetInvalidPathCharsUsageAnalyzerDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Caller uses Path.GetInvalidPathChars instead of Parsing.GetInvalidPathChars().
+        /// </summary>
+        internal static string PathGetInvalidPathCharsUsageAnalyzerMessageFormat {
+            get {
+                return ResourceManager.GetString("PathGetInvalidPathCharsUsageAnalyzerMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use Parsing.GetInvalidPathChars() instead of Path.GetInvalidPathChars.
+        /// </summary>
+        internal static string PathGetInvalidPathCharsUsageAnalyzerTitle {
+            get {
+                return ResourceManager.GetString("PathGetInvalidPathCharsUsageAnalyzerTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Checking.Rooted() uses the filesystem driver to call Path.IsPathRooted..
+        /// </summary>
+        internal static string PathIsPathRootedUsageAnalyzerDescription {
+            get {
+                return ResourceManager.GetString("PathIsPathRootedUsageAnalyzerDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Caller uses Path.IsPathRooted instead of Checking.Rooted().
+        /// </summary>
+        internal static string PathIsPathRootedUsageAnalyzerMessageFormat {
+            get {
+                return ResourceManager.GetString("PathIsPathRootedUsageAnalyzerMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use Checking.Rooted() instead of Path.IsPathRooted.
+        /// </summary>
+        internal static string PathIsPathRootedUsageAnalyzerTitle {
+            get {
+                return ResourceManager.GetString("PathIsPathRootedUsageAnalyzerTitle", resourceCulture);
             }
         }
         

@@ -310,7 +310,7 @@
     <value>Caller uses File.Move instead of Moving.MoveFileOrDir()</value>
   </data>
   <data name="FileMoveUsageAnalyzerDescription" xml:space="preserve">
-    <value>Moving.MoveFileOrDir() neutralizes the provided path to its absolute correct path, while File.Move operates at the executable directory (Environment.CurrentDirectory), which may not be what you want.</value>
+    <value>Moving.MoveFileOrDir() neutralizes the provided paths to their absolute correct paths, while File.Move operates at the executable directory (Environment.CurrentDirectory), which may not be what you want.</value>
   </data>
 
   <!--
@@ -337,6 +337,71 @@
   </data>
   <data name="DirectoryDeleteUsageAnalyzerDescription" xml:space="preserve">
     <value>Removing.RemoveDirectory() neutralizes the provided path to its absolute correct path, while Directory.Delete operates at the executable directory (Environment.CurrentDirectory), which may not be what you want.</value>
+  </data>
+
+  <!--
+      FileExists usage analyzer
+  -->
+  <data name="FileExistsUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use Checking.FileExists() instead of File.Exists</value>
+  </data>
+  <data name="FileExistsUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses File.Exists instead of Checking.FileExists()</value>
+  </data>
+  <data name="FileExistsUsageAnalyzerDescription" xml:space="preserve">
+    <value>Checking.FileExists() neutralizes the provided path to its absolute correct path, while File.Exists operates at the executable directory (Environment.CurrentDirectory), which may not be what you want.</value>
+  </data>
+
+  <!--
+      DirectoryExists usage analyzer
+  -->
+  <data name="DirectoryExistsUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use Checking.DirectoryExists() instead of Directory.Exists</value>
+  </data>
+  <data name="DirectoryExistsUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses Directory.Exists instead of Checking.DirectoryExists()</value>
+  </data>
+  <data name="DirectoryExistsUsageAnalyzerDescription" xml:space="preserve">
+    <value>Checking.DirectoryExists() neutralizes the provided path to its absolute correct path, while Directory.Exists operates at the executable directory (Environment.CurrentDirectory), which may not be what you want.</value>
+  </data>
+
+  <!--
+      PathExists usage analyzer
+  -->
+  <data name="PathExistsUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use Checking.Exists() instead of Path.Exists</value>
+  </data>
+  <data name="PathExistsUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses Path.Exists instead of Checking.Exists()</value>
+  </data>
+  <data name="PathExistsUsageAnalyzerDescription" xml:space="preserve">
+    <value>Checking.Exists() neutralizes the provided path to its absolute correct path, while Path.Exists operates at the executable Path (Environment.CurrentPath), which may not be what you want.</value>
+  </data>
+
+  <!--
+      PathIsPathRooted usage analyzer
+  -->
+  <data name="PathIsPathRootedUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use Checking.Rooted() instead of Path.IsPathRooted</value>
+  </data>
+  <data name="PathIsPathRootedUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses Path.IsPathRooted instead of Checking.Rooted()</value>
+  </data>
+  <data name="PathIsPathRootedUsageAnalyzerDescription" xml:space="preserve">
+    <value>Checking.Rooted() uses the filesystem driver to call Path.IsPathRooted.</value>
+  </data>
+
+  <!--
+      PathGetInvalidPathChars usage analyzer
+  -->
+  <data name="PathGetInvalidPathCharsUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use Parsing.GetInvalidPathChars() instead of Path.GetInvalidPathChars</value>
+  </data>
+  <data name="PathGetInvalidPathCharsUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses Path.GetInvalidPathChars instead of Parsing.GetInvalidPathChars()</value>
+  </data>
+  <data name="PathGetInvalidPathCharsUsageAnalyzerDescription" xml:space="preserve">
+    <value>Parsing.GetInvalidPathChars() always returns invalid characters for Windows paths, regardless of the host operating system, while Path.GetInvalidPathChars returns a list of forbidden path characters for an operating system, which may be wrong in .NET 6.0 or later for the following characters: '"', '&lt;', '&gt;'.</value>
   </data>
 
   <!--

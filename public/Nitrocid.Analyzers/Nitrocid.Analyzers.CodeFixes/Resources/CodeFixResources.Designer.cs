@@ -151,6 +151,15 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Use Checking.FolderExists().
+        /// </summary>
+        internal static string DirectoryExistsUsageCodeFixTitle {
+            get {
+                return ResourceManager.GetString("DirectoryExistsUsageCodeFixTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Use Listing.GetFileSystemEntries().
         /// </summary>
         internal static string DirectoryGetFileSystemEntriesAltUsageCodeFixTitle {
@@ -196,11 +205,47 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Use Checking.FileExists().
+        /// </summary>
+        internal static string FileExistsUsageCodeFixTitle {
+            get {
+                return ResourceManager.GetString("FileExistsUsageCodeFixTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Use Moving.MoveFileOrDir().
         /// </summary>
         internal static string FileMoveUsageCodeFixTitle {
             get {
                 return ResourceManager.GetString("FileMoveUsageCodeFixTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use Checking.Exists().
+        /// </summary>
+        internal static string PathExistsUsageCodeFixTitle {
+            get {
+                return ResourceManager.GetString("PathExistsUsageCodeFixTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use Parsing.GetInvalidPathChars().
+        /// </summary>
+        internal static string PathGetInvalidPathCharsUsageCodeFixTitle {
+            get {
+                return ResourceManager.GetString("PathGetInvalidPathCharsUsageCodeFixTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use Checking.Rooted().
+        /// </summary>
+        internal static string PathIsPathRootedUsageCodeFixTitle {
+            get {
+                return ResourceManager.GetString("PathIsPathRootedUsageCodeFixTitle", resourceCulture);
             }
         }
         

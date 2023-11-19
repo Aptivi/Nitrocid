@@ -238,6 +238,41 @@
   </data>
 
   <!--
+      FileExists usage code fix
+  -->
+  <data name="FileExistsUsageCodeFixTitle" xml:space="preserve">
+    <value>Use Checking.FileExists()</value>
+  </data>
+
+  <!--
+      DirectoryExists usage code fix
+  -->
+  <data name="DirectoryExistsUsageCodeFixTitle" xml:space="preserve">
+    <value>Use Checking.FolderExists()</value>
+  </data>
+
+  <!--
+      PathExists usage code fix
+  -->
+  <data name="PathExistsUsageCodeFixTitle" xml:space="preserve">
+    <value>Use Checking.Exists()</value>
+  </data>
+
+  <!--
+      PathIsPathRooted usage code fix
+  -->
+  <data name="PathIsPathRootedUsageCodeFixTitle" xml:space="preserve">
+    <value>Use Checking.Rooted()</value>
+  </data>
+
+  <!--
+      PathGetInvalidPathChars usage code fix
+  -->
+  <data name="PathGetInvalidPathCharsUsageCodeFixTitle" xml:space="preserve">
+    <value>Use Parsing.GetInvalidPathChars()</value>
+  </data>
+
+  <!--
       Other analyzers TBD
   -->
 </root>
