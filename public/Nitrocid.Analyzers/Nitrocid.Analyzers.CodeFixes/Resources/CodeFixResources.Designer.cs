@@ -266,5 +266,14 @@ namespace Nitrocid.Analyzers.Resources {
                 return ResourceManager.GetString("StringFormatCodeFixTitle", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use TimeZones.GetCurrentZoneInfo().
+        /// </summary>
+        internal static string TimeZoneInfoLocalUsageCodeFixTitle {
+            get {
+                return ResourceManager.GetString("TimeZoneInfoLocalUsageCodeFixTitle", resourceCulture);
+            }
+        }
     }
 }

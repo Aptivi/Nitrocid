@@ -418,6 +418,19 @@
   </data>
 
   <!--
+      TimeZoneInfoLocal usage analyzer
+  -->
+  <data name="TimeZoneInfoLocalUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use TimeZones.GetCurrentZoneInfo() instead of TimeZoneInfo.Local</value>
+  </data>
+  <data name="TimeZoneInfoLocalUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses TimeZoneInfo.Local instead of TimeZones.GetCurrentZoneInfo()</value>
+  </data>
+  <data name="TimeZoneInfoLocalUsageAnalyzerDescription" xml:space="preserve">
+    <value>TimeZones.GetCurrentZoneInfo() gets your local time zone and respects your kernel settings based on that. It either gets your local time zone from your system or from your kernel configuration.</value>
+  </data>
+
+  <!--
       Other analyzers TBD
   -->
 </root>

@@ -680,5 +680,32 @@ namespace Nitrocid.Analyzers.Resources {
                 return ResourceManager.GetString("StringFormatAnalyzerTitle", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TimeZones.GetCurrentZoneInfo() gets your local time zone and respects your kernel settings based on that. It either gets your local time zone from your system or from your kernel configuration..
+        /// </summary>
+        internal static string TimeZoneInfoLocalUsageAnalyzerDescription {
+            get {
+                return ResourceManager.GetString("TimeZoneInfoLocalUsageAnalyzerDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Caller uses TimeZoneInfo.Local instead of TimeZones.GetCurrentZoneInfo().
+        /// </summary>
+        internal static string TimeZoneInfoLocalUsageAnalyzerMessageFormat {
+            get {
+                return ResourceManager.GetString("TimeZoneInfoLocalUsageAnalyzerMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use TimeZones.GetCurrentZoneInfo() instead of TimeZoneInfo.Local.
+        /// </summary>
+        internal static string TimeZoneInfoLocalUsageAnalyzerTitle {
+            get {
+                return ResourceManager.GetString("TimeZoneInfoLocalUsageAnalyzerTitle", resourceCulture);
+            }
+        }
     }
 }

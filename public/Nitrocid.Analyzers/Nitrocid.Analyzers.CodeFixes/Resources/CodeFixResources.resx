@@ -280,6 +280,13 @@
   </data>
 
   <!--
+      TimeZoneInfoLocal usage code fix
+  -->
+  <data name="TimeZoneInfoLocalUsageCodeFixTitle" xml:space="preserve">
+    <value>Use TimeZones.GetCurrentZoneInfo()</value>
+  </data>
+
+  <!--
       Other analyzers TBD
   -->
 </root>
