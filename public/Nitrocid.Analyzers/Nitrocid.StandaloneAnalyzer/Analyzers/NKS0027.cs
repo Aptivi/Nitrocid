@@ -68,7 +68,7 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                         if (idName == "KernelDateTime")
                         {
                             var lineSpan = location.GetLineSpan();
-                            TextWriterColor.Write($"{GetType().Name}: {document.FilePath} ({lineSpan.StartLinePosition} -> {lineSpan.EndLinePosition}): Caller uses Console.ResetColor instead of ResetColor()", true, ConsoleColors.Yellow);
+                            TextWriterColor.Write($"{GetType().Name}: {document.FilePath} ({lineSpan.StartLinePosition} -> {lineSpan.EndLinePosition}): Caller uses TimeDateTools.KernelDateTime.ToString instead of TimeDateRenderers.Render()", true, ConsoleColors.Yellow);
                             if (!string.IsNullOrEmpty(document.FilePath))
                                 LineHandleRangedWriter.PrintLineWithHandle(document.FilePath, lineSpan.StartLinePosition.Line + 1, lineSpan.StartLinePosition.Character + 1, lineSpan.EndLinePosition.Character);
                             found = true;
