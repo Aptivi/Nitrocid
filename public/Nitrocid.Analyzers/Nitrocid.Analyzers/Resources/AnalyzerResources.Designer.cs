@@ -574,6 +574,33 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to TimeDateRenderersUtc.RenderDateUtc() respects your kernel settings when rendering date..
+        /// </summary>
+        internal static string KernelDateTimeToDateStringUtcUsageAnalyzerDescription {
+            get {
+                return ResourceManager.GetString("KernelDateTimeToDateStringUtcUsageAnalyzerDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Caller uses TimeDateTools.KernelDateTimeUtc.ToString instead of TimeDateRenderersUtc.RenderDateUtc().
+        /// </summary>
+        internal static string KernelDateTimeToDateStringUtcUsageAnalyzerMessageFormat {
+            get {
+                return ResourceManager.GetString("KernelDateTimeToDateStringUtcUsageAnalyzerMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use TimeDateRenderersUtc.RenderDateUtc() instead of TimeDateTools.KernelDateTimeUtc.ToString.
+        /// </summary>
+        internal static string KernelDateTimeToDateStringUtcUsageAnalyzerTitle {
+            get {
+                return ResourceManager.GetString("KernelDateTimeToDateStringUtcUsageAnalyzerTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to TimeDateRenderers.Render() respects your kernel settings when rendering date and time..
         /// </summary>
         internal static string KernelDateTimeToStringUsageAnalyzerDescription {
@@ -601,6 +628,33 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to TimeDateRenderersUtc.RenderUtc() respects your kernel settings when rendering date and time..
+        /// </summary>
+        internal static string KernelDateTimeToStringUtcUsageAnalyzerDescription {
+            get {
+                return ResourceManager.GetString("KernelDateTimeToStringUtcUsageAnalyzerDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Caller uses TimeDateTools.KernelDateTimeUtc.ToString instead of TimeDateRenderersUtc.RenderUtc().
+        /// </summary>
+        internal static string KernelDateTimeToStringUtcUsageAnalyzerMessageFormat {
+            get {
+                return ResourceManager.GetString("KernelDateTimeToStringUtcUsageAnalyzerMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use TimeDateRenderersUtc.RenderUtc() instead of TimeDateTools.KernelDateTimeUtc.ToString.
+        /// </summary>
+        internal static string KernelDateTimeToStringUtcUsageAnalyzerTitle {
+            get {
+                return ResourceManager.GetString("KernelDateTimeToStringUtcUsageAnalyzerTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to TimeDateRenderers.RenderTime() respects your kernel settings when rendering time..
         /// </summary>
         internal static string KernelDateTimeToTimeStringUsageAnalyzerDescription {
@@ -624,6 +678,33 @@ namespace Nitrocid.Analyzers.Resources {
         internal static string KernelDateTimeToTimeStringUsageAnalyzerTitle {
             get {
                 return ResourceManager.GetString("KernelDateTimeToTimeStringUsageAnalyzerTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TimeDateRenderersUtc.RenderTimeUtc() respects your kernel settings when rendering time..
+        /// </summary>
+        internal static string KernelDateTimeToTimeStringUtcUsageAnalyzerDescription {
+            get {
+                return ResourceManager.GetString("KernelDateTimeToTimeStringUtcUsageAnalyzerDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Caller uses TimeDateTools.KernelDateTimeUtc.ToString instead of TimeDateRenderersUtc.RenderTimeUtc().
+        /// </summary>
+        internal static string KernelDateTimeToTimeStringUtcUsageAnalyzerMessageFormat {
+            get {
+                return ResourceManager.GetString("KernelDateTimeToTimeStringUtcUsageAnalyzerMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use TimeDateRenderersUtc.RenderTimeUtc() instead of TimeDateTools.KernelDateTimeUtc.ToString.
+        /// </summary>
+        internal static string KernelDateTimeToTimeStringUtcUsageAnalyzerTitle {
+            get {
+                return ResourceManager.GetString("KernelDateTimeToTimeStringUtcUsageAnalyzerTitle", resourceCulture);
             }
         }
         

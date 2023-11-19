@@ -470,6 +470,45 @@
   </data>
 
   <!--
+      KernelDateTimeToTimeStringUtc usage analyzer
+  -->
+  <data name="KernelDateTimeToTimeStringUtcUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use TimeDateRenderersUtc.RenderTimeUtc() instead of TimeDateTools.KernelDateTimeUtc.ToString</value>
+  </data>
+  <data name="KernelDateTimeToTimeStringUtcUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses TimeDateTools.KernelDateTimeUtc.ToString instead of TimeDateRenderersUtc.RenderTimeUtc()</value>
+  </data>
+  <data name="KernelDateTimeToTimeStringUtcUsageAnalyzerDescription" xml:space="preserve">
+    <value>TimeDateRenderersUtc.RenderTimeUtc() respects your kernel settings when rendering time.</value>
+  </data>
+
+  <!--
+      KernelDateTimeToDateStringUtc usage analyzer
+  -->
+  <data name="KernelDateTimeToDateStringUtcUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use TimeDateRenderersUtc.RenderDateUtc() instead of TimeDateTools.KernelDateTimeUtc.ToString</value>
+  </data>
+  <data name="KernelDateTimeToDateStringUtcUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses TimeDateTools.KernelDateTimeUtc.ToString instead of TimeDateRenderersUtc.RenderDateUtc()</value>
+  </data>
+  <data name="KernelDateTimeToDateStringUtcUsageAnalyzerDescription" xml:space="preserve">
+    <value>TimeDateRenderersUtc.RenderDateUtc() respects your kernel settings when rendering date.</value>
+  </data>
+
+  <!--
+      KernelDateTimeToStringUtc usage analyzer
+  -->
+  <data name="KernelDateTimeToStringUtcUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use TimeDateRenderersUtc.RenderUtc() instead of TimeDateTools.KernelDateTimeUtc.ToString</value>
+  </data>
+  <data name="KernelDateTimeToStringUtcUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses TimeDateTools.KernelDateTimeUtc.ToString instead of TimeDateRenderersUtc.RenderUtc()</value>
+  </data>
+  <data name="KernelDateTimeToStringUtcUsageAnalyzerDescription" xml:space="preserve">
+    <value>TimeDateRenderersUtc.RenderUtc() respects your kernel settings when rendering date and time.</value>
+  </data>
+
+  <!--
       Other analyzers TBD
   -->
 </root>

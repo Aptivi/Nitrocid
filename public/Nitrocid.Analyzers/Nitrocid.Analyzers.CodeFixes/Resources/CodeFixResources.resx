@@ -308,6 +308,27 @@
   </data>
 
   <!--
+      KernelDateTimeToTimeStringUtc usage code fix
+  -->
+  <data name="KernelDateTimeToTimeStringUtcUsageCodeFixTitle" xml:space="preserve">
+    <value>Use TimeDateRenderersUtc.RenderTimeUtc()</value>
+  </data>
+
+  <!--
+      KernelDateTimeToDateStringUtc usage code fix
+  -->
+  <data name="KernelDateTimeToDateStringUtcUsageCodeFixTitle" xml:space="preserve">
+    <value>Use TimeDateRenderersUtc.RenderDateUtc()</value>
+  </data>
+
+  <!--
+      KernelDateTimeToStringUtc usage code fix
+  -->
+  <data name="KernelDateTimeToStringUtcUsageCodeFixTitle" xml:space="preserve">
+    <value>Use TimeDateRenderersUtc.RenderUtc()</value>
+  </data>
+
+  <!--
       Other analyzers TBD
   -->
 </root>

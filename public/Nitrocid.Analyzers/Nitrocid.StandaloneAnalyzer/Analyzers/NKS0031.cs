@@ -31,7 +31,7 @@ using Terminaux.Writer.MiscWriters;
 
 namespace Nitrocid.StandaloneAnalyzer.Analyzers
 {
-    internal class NKS0025 : IAnalyzer
+    internal class NKS0031 : IAnalyzer
     {
         public bool Analyze(Document document)
         {
@@ -62,10 +62,10 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                     var location = exp.Parent.GetLocation();
                     if (identifier.Identifier.Text == "TimeDateTools")
                     {
-                        // Let's see if the caller tries to access TimeDateTools.KernelDateTime.ToString.
+                        // Let's see if the caller tries to access TimeDateTools.KernelDateTimeUtc.ToString.
                         var name = (IdentifierNameSyntax)exp.Name;
                         var idName = name.Identifier.Text;
-                        if (idName == "KernelDateTime")
+                        if (idName == "KernelDateTimeUtc")
                         {
                             var lineSpan = location.GetLineSpan();
                             TextWriterColor.Write($"{GetType().Name}: {document.FilePath} ({lineSpan.StartLinePosition} -> {lineSpan.EndLinePosition}): Caller uses Console.ResetColor instead of ResetColor()", true, ConsoleColors.Yellow);
@@ -95,9 +95,9 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                     if (idName.Identifier.Text != "KernelDateTime")
                         continue;
 
-                    // We need to have a syntax that calls TimeDateRenderers.RenderTime
-                    var classSyntax = SyntaxFactory.IdentifierName("TimeDateRenderers");
-                    var methodSyntax = SyntaxFactory.IdentifierName("RenderTime");
+                    // We need to have a syntax that calls TimeDateRenderersUtc.RenderTimeUtc
+                    var classSyntax = SyntaxFactory.IdentifierName("TimeDateRenderersUtc");
+                    var methodSyntax = SyntaxFactory.IdentifierName("RenderTimeUtc");
                     var resultSyntax = SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, classSyntax, methodSyntax);
                     var replacedSyntax = resultSyntax
                         .WithLeadingTrivia(resultSyntax.GetLeadingTrivia())

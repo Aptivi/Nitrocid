@@ -232,6 +232,15 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Use TimeDateRenderersUtc.RenderDateUtc().
+        /// </summary>
+        internal static string KernelDateTimeToDateStringUtcUsageCodeFixTitle {
+            get {
+                return ResourceManager.GetString("KernelDateTimeToDateStringUtcUsageCodeFixTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Use TimeDateRenderers.Render().
         /// </summary>
         internal static string KernelDateTimeToStringUsageCodeFixTitle {
@@ -241,11 +250,29 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Use TimeDateRenderersUtc.RenderUtc().
+        /// </summary>
+        internal static string KernelDateTimeToStringUtcUsageCodeFixTitle {
+            get {
+                return ResourceManager.GetString("KernelDateTimeToStringUtcUsageCodeFixTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Use TimeDateRenderers.RenderTime().
         /// </summary>
         internal static string KernelDateTimeToTimeStringUsageCodeFixTitle {
             get {
                 return ResourceManager.GetString("KernelDateTimeToTimeStringUsageCodeFixTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use TimeDateRenderersUtc.RenderTimeUtc().
+        /// </summary>
+        internal static string KernelDateTimeToTimeStringUtcUsageCodeFixTitle {
+            get {
+                return ResourceManager.GetString("KernelDateTimeToTimeStringUtcUsageCodeFixTitle", resourceCulture);
             }
         }
         

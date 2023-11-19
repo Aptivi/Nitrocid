@@ -31,3 +31,6 @@ NKS0024 | Kernel | Info | TimeZoneInfoLocalUsageAnalyzer, [Documentation](https:
 NKS0025 | Kernel | Info | KernelDateTimeToTimeStringUsageAnalyzer, [Documentation](https://aptivi.gitbook.io/nitrocid-ks-manual/advanced-and-power-users/kernel-modifications/analyzer-diagnostics/kernel-nks0025)
 NKS0026 | Kernel | Info | KernelDateTimeToDateStringUsageAnalyzer, [Documentation](https://aptivi.gitbook.io/nitrocid-ks-manual/advanced-and-power-users/kernel-modifications/analyzer-diagnostics/kernel-nks0026)
 NKS0027 | Kernel | Info | KernelDateTimeToStringUsageAnalyzer, [Documentation](https://aptivi.gitbook.io/nitrocid-ks-manual/advanced-and-power-users/kernel-modifications/analyzer-diagnostics/kernel-nks0027)
+NKS0031 | Kernel | Info | KernelDateTimeToTimeStringUtcUsageAnalyzer, [Documentation](https://aptivi.gitbook.io/nitrocid-ks-manual/advanced-and-power-users/kernel-modifications/analyzer-diagnostics/kernel-nks0031)
+NKS0032 | Kernel | Info | KernelDateTimeToDateStringUtcUsageAnalyzer, [Documentation](https://aptivi.gitbook.io/nitrocid-ks-manual/advanced-and-power-users/kernel-modifications/analyzer-diagnostics/kernel-nks0032)
+NKS0033 | Kernel | Info | KernelDateTimeToStringUtcUsageAnalyzer, [Documentation](https://aptivi.gitbook.io/nitrocid-ks-manual/advanced-and-power-users/kernel-modifications/analyzer-diagnostics/kernel-nks0033)

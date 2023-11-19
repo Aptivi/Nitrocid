@@ -67,16 +67,11 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                         var idName = name.Identifier.Text;
                         if (idName == "KernelDateTime")
                         {
-                            var inName = (IdentifierNameSyntax)exp.Name;
-                            var inIdName = inName.Identifier.Text;
-                            if (inIdName == "ToString")
-                            {
-                                var lineSpan = location.GetLineSpan();
-                                TextWriterColor.Write($"{GetType().Name}: {document.FilePath} ({lineSpan.StartLinePosition} -> {lineSpan.EndLinePosition}): Caller uses Console.ResetColor instead of ResetColor()", true, ConsoleColors.Yellow);
-                                if (!string.IsNullOrEmpty(document.FilePath))
-                                    LineHandleRangedWriter.PrintLineWithHandle(document.FilePath, lineSpan.StartLinePosition.Line + 1, lineSpan.StartLinePosition.Character + 1, lineSpan.EndLinePosition.Character);
-                                found = true;
-                            }
+                            var lineSpan = location.GetLineSpan();
+                            TextWriterColor.Write($"{GetType().Name}: {document.FilePath} ({lineSpan.StartLinePosition} -> {lineSpan.EndLinePosition}): Caller uses Console.ResetColor instead of ResetColor()", true, ConsoleColors.Yellow);
+                            if (!string.IsNullOrEmpty(document.FilePath))
+                                LineHandleRangedWriter.PrintLineWithHandle(document.FilePath, lineSpan.StartLinePosition.Line + 1, lineSpan.StartLinePosition.Character + 1, lineSpan.EndLinePosition.Character);
+                            found = true;
                         }
                     }
                 }
@@ -103,16 +98,14 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                     // We need to have a syntax that calls TimeDateRenderers.Render
                     var classSyntax = SyntaxFactory.IdentifierName("TimeDateRenderers");
                     var methodSyntax = SyntaxFactory.IdentifierName("Render");
-                    var maeSyntax = SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, classSyntax, methodSyntax);
-                    var valuesSyntax = SyntaxFactory.ArgumentList().AddArguments();
-                    var resultSyntax = SyntaxFactory.InvocationExpression(maeSyntax, valuesSyntax);
+                    var resultSyntax = SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, classSyntax, methodSyntax);
                     var replacedSyntax = resultSyntax
                         .WithLeadingTrivia(resultSyntax.GetLeadingTrivia())
                         .WithTrailingTrivia(resultSyntax.GetTrailingTrivia());
 
                     // Actually replace
                     var node = await document.GetSyntaxRootAsync(cancellationToken);
-                    var finalNode = node.ReplaceNode(exp, replacedSyntax);
+                    var finalNode = node.ReplaceNode(exp.Parent, replacedSyntax);
                     TextWriterColor.Write("Here's what the replacement would look like (with no Roslyn trivia):", true, ConsoleColors.Yellow);
                     TextWriterColor.Write($"  - {exp}", true, ConsoleColors.Red);
                     TextWriterColor.Write($"  + {replacedSyntax.ToFullString()}", true, ConsoleColors.Green);
