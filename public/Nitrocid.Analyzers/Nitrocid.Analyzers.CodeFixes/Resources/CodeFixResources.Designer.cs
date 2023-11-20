@@ -250,6 +250,15 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Use NetworkTools.NetworkAvailable.
+        /// </summary>
+        internal static string GetIsNetworkAvailableUsageCodeFixTitle {
+            get {
+                return ResourceManager.GetString("GetIsNetworkAvailableUsageCodeFixTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Use KernelPlatform.IsOnUnix().
         /// </summary>
         internal static string IsOsPlatformLinuxUsageCodeFixTitle {

@@ -628,6 +628,33 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to While NetworkInterface.GetIsNetworkAvailable checks your network, it doesn&apos;t work on Android systems, so it&apos;s better to use NetworkTools.NetworkAvailable. Please note that this will return false if there is no connectivity for Android systems..
+        /// </summary>
+        internal static string GetIsNetworkAvailableUsageAnalyzerDescription {
+            get {
+                return ResourceManager.GetString("GetIsNetworkAvailableUsageAnalyzerDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Caller uses NetworkInterface.GetIsNetworkAvailable instead of NetworkTools.NetworkAvailable.
+        /// </summary>
+        internal static string GetIsNetworkAvailableUsageAnalyzerMessageFormat {
+            get {
+                return ResourceManager.GetString("GetIsNetworkAvailableUsageAnalyzerMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use NetworkTools.NetworkAvailable instead of NetworkInterface.GetIsNetworkAvailable.
+        /// </summary>
+        internal static string GetIsNetworkAvailableUsageAnalyzerTitle {
+            get {
+                return ResourceManager.GetString("GetIsNetworkAvailableUsageAnalyzerTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to KernelPlatform.IsOnUnix() is more readable and less verbose than RuntimeInformation.IsOSPlatform(OSPlatform.Linux)..
         /// </summary>
         internal static string IsOsPlatformLinuxUsageAnalyzerDescription {

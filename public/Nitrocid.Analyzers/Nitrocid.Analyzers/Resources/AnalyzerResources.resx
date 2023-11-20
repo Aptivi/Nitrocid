@@ -665,6 +665,19 @@
   </data>
 
   <!--
+      GetIsNetworkAvailable usage analyzer
+  -->
+  <data name="GetIsNetworkAvailableUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use NetworkTools.NetworkAvailable instead of NetworkInterface.GetIsNetworkAvailable</value>
+  </data>
+  <data name="GetIsNetworkAvailableUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses NetworkInterface.GetIsNetworkAvailable instead of NetworkTools.NetworkAvailable</value>
+  </data>
+  <data name="GetIsNetworkAvailableUsageAnalyzerDescription" xml:space="preserve">
+    <value>While NetworkInterface.GetIsNetworkAvailable checks your network, it doesn't work on Android systems, so it's better to use NetworkTools.NetworkAvailable. Please note that this will return false if there is no connectivity for Android systems.</value>
+  </data>
+
+  <!--
       Other analyzers TBD
   -->
 </root>

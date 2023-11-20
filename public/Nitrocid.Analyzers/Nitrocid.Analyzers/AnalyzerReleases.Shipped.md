@@ -46,3 +46,4 @@ NKS0053 | Kernel | Info | ScreenUsageAnalyzer, [Documentation](https://aptivi.gi
 NKS0044 | Languages | Info | CurrentUICultureGetUsageAnalyzer, [Documentation](https://aptivi.gitbook.io/nitrocid-ks-manual/advanced-and-power-users/kernel-modifications/analyzer-diagnostics/languages-nks0044)
 NKS0045 | Languages | Info | CurrentUICultureGetNameUsageAnalyzer, [Documentation](https://aptivi.gitbook.io/nitrocid-ks-manual/advanced-and-power-users/kernel-modifications/analyzer-diagnostics/languages-nks0045)
 NKS0046 | Languages | Info | CurrentUICultureSetUsageAnalyzer, [Documentation](https://aptivi.gitbook.io/nitrocid-ks-manual/advanced-and-power-users/kernel-modifications/analyzer-diagnostics/languages-nks0046)
+NKS0051 | Network | Info | GetIsNetworkAvailableUsageAnalyzer, [Documentation](https://aptivi.gitbook.io/nitrocid-ks-manual/advanced-and-power-users/kernel-modifications/analyzer-diagnostics/network-nks0051)

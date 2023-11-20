@@ -411,6 +411,13 @@
   <data name="CurrentUICultureSetUsageCodeFixTitle" xml:space="preserve">
     <value>Use CultureManager.UpdateCulture</value>
   </data>
+  
+  <!--
+      GetIsNetworkAvailable usage code fix
+  -->
+  <data name="GetIsNetworkAvailableUsageCodeFixTitle" xml:space="preserve">
+    <value>Use NetworkTools.NetworkAvailable</value>
+  </data>
 
   <!--
       Other analyzers TBD
