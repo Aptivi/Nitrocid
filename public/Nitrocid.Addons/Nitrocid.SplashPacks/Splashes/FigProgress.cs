@@ -101,17 +101,24 @@ namespace Nitrocid.SplashPacks.Splashes
                 Color firstColor = KernelColorTools.GetColor(KernelColorType.Background).IsBright ? new(ConsoleColors.Black) : new(ConsoleColors.White);
                 Color secondColor = KernelColorTools.GetColor(KernelColorType.Success);
                 DebugWriter.WriteDebug(DebugLevel.I, "Splash displaying.");
-                Color firstDotColor = dotStep >= 1 ? secondColor : firstColor;
+                Color firstDotColor  = dotStep >= 1 ? secondColor : firstColor;
                 Color secondDotColor = dotStep >= 2 ? secondColor : firstColor;
-                Color thirdDotColor = dotStep >= 3 ? secondColor : firstColor;
+                Color thirdDotColor  = dotStep >= 3 ? secondColor : firstColor;
+                Color fourthDotColor = dotStep >= 4 ? secondColor : firstColor;
+                Color fifthDotColor  = dotStep >= 5 ? secondColor : firstColor;
 
                 // Write the three dots
-                string dots = $"{firstDotColor.VTSequenceForeground}* {secondDotColor.VTSequenceForeground}* {thirdDotColor.VTSequenceForeground}*";
+                string dots =
+                    $"{firstDotColor.VTSequenceForeground}* " +
+                    $"{secondDotColor.VTSequenceForeground}* " +
+                    $"{thirdDotColor.VTSequenceForeground}* " +
+                    $"{fourthDotColor.VTSequenceForeground}* " +
+                    $"{fifthDotColor.VTSequenceForeground}*";
                 int dotsPosX = (ConsoleWrapper.WindowWidth / 2) - (VtSequenceTools.FilterVTSequences(dots).Length / 2);
                 int dotsPosY = ConsoleWrapper.WindowHeight - 2;
                 builder.Append(TextWriterWhereColor.RenderWherePlain(dots, dotsPosX, dotsPosY));
                 dotStep++;
-                if (dotStep > 3)
+                if (dotStep > 5)
                     dotStep = 0;
             }
             catch (ThreadInterruptedException)
