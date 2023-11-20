@@ -352,7 +352,8 @@ namespace KS.Misc.Splash
                     closingPart.AddDynamicText(() => InstalledSplashes["Blank"].EntryPoint.Closing(context, out delay));
                 ConsoleWrapper.CursorVisible = true;
                 splashScreen.AddBufferedPart(closingPart);
-                ScreenTools.Render();
+                if (ScreenTools.CurrentScreen is not null)
+                    ScreenTools.Render();
 
                 // Reset the SplashClosing variable in case it needs to be open again. Some splashes don't do anything if they detect that the splash
                 // screen is closing.
