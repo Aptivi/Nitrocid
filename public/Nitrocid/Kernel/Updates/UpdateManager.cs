@@ -25,7 +25,7 @@ using KS.Network.Base.Transfer;
 using Newtonsoft.Json.Linq;
 
 #if SPECIFIERREL
-using KS.Files;
+using KS.Files.Paths;
 using KS.Misc.Splash;
 using KS.Languages;
 using System.IO;
@@ -134,7 +134,7 @@ namespace KS.Kernel.Updates
                     SplashReport.ReportProgress(AvailableUpdate.UpdateVersion.ToString(), 10);
                     if (AutoDownloadUpdate)
                     {
-                        NetworkTransfer.DownloadFile(AvailableUpdate.UpdateURL.ToString(), Path.Combine(Paths.ExecPath, "update.zip"));
+                        NetworkTransfer.DownloadFile(AvailableUpdate.UpdateURL.ToString(), Path.Combine(PathsManagement.ExecPath, "update.zip"));
                         SplashReport.ReportProgress(Translate.DoTranslation("Downloaded the update successfully!"), 10);
                     }
                     else
