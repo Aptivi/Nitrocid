@@ -63,7 +63,7 @@ namespace KS.ConsoleBase.Presentation.Elements
             var buffer = new StringBuilder();
             foreach (string split in splitText)
             {
-                int maxHeight = PresentationTools.PresentationLowerInnerBorderTop - top + 3;
+                int maxHeight = PresentationTools.PresentationLowerInnerBorderTop - top + 1;
                 if (maxHeight < 0)
                 {
                     // If the text is going to overflow the presentation view, clear the presentation and finish writing the parts
@@ -82,7 +82,7 @@ namespace KS.ConsoleBase.Presentation.Elements
             // Write the buffer text
             string bufferText = buffer.ToString();
             string[] splitBufferText = TextTools.GetWrappedSentences(bufferText, PresentationTools.PresentationLowerInnerBorderLeft - PresentationTools.PresentationUpperBorderLeft + 2);
-            int maxHeightFinal = PresentationTools.PresentationLowerInnerBorderTop - top + 3;
+            int maxHeightFinal = PresentationTools.PresentationLowerInnerBorderTop - top + 1;
             if (maxHeightFinal <= 0)
             {
                 // If the text is going to overflow the presentation view, clear the presentation and finish writing the parts
@@ -119,7 +119,7 @@ namespace KS.ConsoleBase.Presentation.Elements
                 string[] splitTextChoice = TextTools.GetWrappedSentences(finalChoice, PresentationTools.PresentationLowerInnerBorderLeft - PresentationTools.PresentationUpperBorderLeft + 2);
                 foreach (string split in splitTextChoice)
                 {
-                    int maxHeight = PresentationTools.PresentationLowerInnerBorderTop - choiceTop + 3;
+                    int maxHeight = PresentationTools.PresentationLowerInnerBorderTop - choiceTop + 1;
                     if (maxHeight < 0)
                     {
                         // If the text is going to overflow the presentation view, clear the presentation and finish writing the parts
@@ -140,7 +140,7 @@ namespace KS.ConsoleBase.Presentation.Elements
             // Write the choicebuffer text
             string choiceBufferText = choiceBuffer.ToString();
             string[] splitChoiceBufferText = TextTools.GetWrappedSentences(choiceBufferText, PresentationTools.PresentationLowerInnerBorderLeft - PresentationTools.PresentationUpperBorderLeft + 2);
-            int maxChoiceHeightFinal = PresentationTools.PresentationLowerInnerBorderTop - top + 3;
+            int maxChoiceHeightFinal = PresentationTools.PresentationLowerInnerBorderTop - top + 1;
             if (maxChoiceHeightFinal <= 0)
             {
                 // If the text is going to overflow the presentation view, clear the presentation and finish writing the parts

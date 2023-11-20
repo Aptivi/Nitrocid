@@ -59,7 +59,7 @@ namespace KS.ConsoleBase.Presentation.Elements
             var buffer = new StringBuilder();
             foreach (string split in splitText)
             {
-                int maxHeight = PresentationTools.PresentationLowerInnerBorderTop - top + 3;
+                int maxHeight = PresentationTools.PresentationLowerInnerBorderTop - top + 1;
                 if (maxHeight < 0)
                 {
                     // If the text is going to overflow the presentation view, clear the presentation and finish writing the parts
