@@ -340,6 +340,42 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Use TextTools.SplitNewLines().
+        /// </summary>
+        internal static string NewLineSplitCharManagerNewLineUsageCodeFixTitle {
+            get {
+                return ResourceManager.GetString("NewLineSplitCharManagerNewLineUsageCodeFixTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use TextTools.SplitNewLines().
+        /// </summary>
+        internal static string NewLineSplitEnvironmentNewLineUsageCodeFixTitle {
+            get {
+                return ResourceManager.GetString("NewLineSplitEnvironmentNewLineUsageCodeFixTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use TextTools.SplitNewLines().
+        /// </summary>
+        internal static string NewLineSplitLinuxLiteralUsageCodeFixTitle {
+            get {
+                return ResourceManager.GetString("NewLineSplitLinuxLiteralUsageCodeFixTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use TextTools.SplitNewLines().
+        /// </summary>
+        internal static string NewLineSplitWindowsLiteralUsageCodeFixTitle {
+            get {
+                return ResourceManager.GetString("NewLineSplitWindowsLiteralUsageCodeFixTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Use Checking.Exists().
         /// </summary>
         internal static string PathExistsUsageCodeFixTitle {

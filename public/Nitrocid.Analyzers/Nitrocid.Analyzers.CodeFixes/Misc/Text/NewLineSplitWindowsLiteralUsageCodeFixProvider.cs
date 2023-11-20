@@ -31,11 +31,11 @@ using Nitrocid.Analyzers.Resources;
 
 namespace Nitrocid.Analyzers.Misc.Text
 {
-    [ExportCodeFixProvider(LanguageNames.CSharp, Name = nameof(StringFormatCodeFixProvider)), Shared]
-    public class StringFormatCodeFixProvider : CodeFixProvider
+    [ExportCodeFixProvider(LanguageNames.CSharp, Name = nameof(NewLineSplitWindowsLiteralUsageCodeFixProvider)), Shared]
+    public class NewLineSplitWindowsLiteralUsageCodeFixProvider : CodeFixProvider
     {
         public sealed override ImmutableArray<string> FixableDiagnosticIds =>
-            ImmutableArray.Create(StringFormatAnalyzer.DiagnosticId);
+            ImmutableArray.Create(NewLineSplitWindowsLiteralUsageAnalyzer.DiagnosticId);
 
         public sealed override FixAllProvider GetFixAllProvider() =>
             WellKnownFixAllProviders.BatchFixer;
@@ -48,23 +48,27 @@ namespace Nitrocid.Analyzers.Misc.Text
             var diagnosticSpan = diagnostic.Location.SourceSpan;
 
             // Find the type declaration identified by the diagnostic.
-            var declaration = root.FindToken(diagnosticSpan.Start).Parent.AncestorsAndSelf().OfType<MemberAccessExpressionSyntax>().First();
+            var declaration = root.FindToken(diagnosticSpan.Start).Parent.AncestorsAndSelf().OfType<InvocationExpressionSyntax>().First();
 
             // Register a code action that will invoke the fix.
             context.RegisterCodeFix(
                 CodeAction.Create(
-                    title: CodeFixResources.StringFormatCodeFixTitle,
+                    title: CodeFixResources.NewLineSplitWindowsLiteralUsageCodeFixTitle,
                     createChangedSolution: c => UseTextToolsFormatStringAsync(context.Document, declaration, c),
-                    equivalenceKey: nameof(CodeFixResources.StringFormatCodeFixTitle)),
+                    equivalenceKey: nameof(CodeFixResources.NewLineSplitWindowsLiteralUsageCodeFixTitle)),
                 diagnostic);
         }
 
-        private async Task<Solution> UseTextToolsFormatStringAsync(Document document, MemberAccessExpressionSyntax typeDecl, CancellationToken cancellationToken)
+        private async Task<Solution> UseTextToolsFormatStringAsync(Document document, InvocationExpressionSyntax typeDecl, CancellationToken cancellationToken)
         {
-            // We need to have a syntax that calls TextTools.FormatString
-            var classSyntax = SyntaxFactory.IdentifierName("TextTools");
-            var methodSyntax = SyntaxFactory.IdentifierName("FormatString");
-            var resultSyntax = SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, classSyntax, methodSyntax);
+            // We need to have a syntax that calls myvar.SplitNewLines
+            var maes = (MemberAccessExpressionSyntax)typeDecl.Expression;
+            var varName = maes.Expression;
+            var classSyntax = varName;
+            var methodSyntax = SyntaxFactory.IdentifierName("SplitNewLines");
+            var maesSyntax = SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, classSyntax, methodSyntax);
+            var argsSyntax = SyntaxFactory.ArgumentList();
+            var resultSyntax = SyntaxFactory.InvocationExpression(maesSyntax, argsSyntax);
             var replacedSyntax = resultSyntax
                 .WithLeadingTrivia(resultSyntax.GetLeadingTrivia())
                 .WithTrailingTrivia(resultSyntax.GetTrailingTrivia());

@@ -898,6 +898,114 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to TextTools.SplitNewLines() simplifies the readability of the split by new lines function..
+        /// </summary>
+        internal static string NewLineSplitCharManagerNewLineUsageAnalyzerDescription {
+            get {
+                return ResourceManager.GetString("NewLineSplitCharManagerNewLineUsageAnalyzerDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Caller uses CharManager.NewLine instead of TextTools.SplitNewLines().
+        /// </summary>
+        internal static string NewLineSplitCharManagerNewLineUsageAnalyzerMessageFormat {
+            get {
+                return ResourceManager.GetString("NewLineSplitCharManagerNewLineUsageAnalyzerMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use TextTools.SplitNewLines() instead of CharManager.NewLine.
+        /// </summary>
+        internal static string NewLineSplitCharManagerNewLineUsageAnalyzerTitle {
+            get {
+                return ResourceManager.GetString("NewLineSplitCharManagerNewLineUsageAnalyzerTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TextTools.SplitNewLines() simplifies the readability of the split by new lines function..
+        /// </summary>
+        internal static string NewLineSplitEnvironmentNewLineUsageAnalyzerDescription {
+            get {
+                return ResourceManager.GetString("NewLineSplitEnvironmentNewLineUsageAnalyzerDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Caller uses Environment.NewLine instead of TextTools.SplitNewLines().
+        /// </summary>
+        internal static string NewLineSplitEnvironmentNewLineUsageAnalyzerMessageFormat {
+            get {
+                return ResourceManager.GetString("NewLineSplitEnvironmentNewLineUsageAnalyzerMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use TextTools.SplitNewLines() instead of Environment.NewLine.
+        /// </summary>
+        internal static string NewLineSplitEnvironmentNewLineUsageAnalyzerTitle {
+            get {
+                return ResourceManager.GetString("NewLineSplitEnvironmentNewLineUsageAnalyzerTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TextTools.SplitNewLines() simplifies the readability of the split by new lines function..
+        /// </summary>
+        internal static string NewLineSplitLinuxLiteralUsageAnalyzerDescription {
+            get {
+                return ResourceManager.GetString("NewLineSplitLinuxLiteralUsageAnalyzerDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Caller uses .Split(&quot;\n&quot;) instead of TextTools.SplitNewLines().
+        /// </summary>
+        internal static string NewLineSplitLinuxLiteralUsageAnalyzerMessageFormat {
+            get {
+                return ResourceManager.GetString("NewLineSplitLinuxLiteralUsageAnalyzerMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use TextTools.SplitNewLines() instead of .Split(&quot;\n&quot;).
+        /// </summary>
+        internal static string NewLineSplitLinuxLiteralUsageAnalyzerTitle {
+            get {
+                return ResourceManager.GetString("NewLineSplitLinuxLiteralUsageAnalyzerTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TextTools.SplitNewLines() simplifies the readability of the split by new lines function..
+        /// </summary>
+        internal static string NewLineSplitWindowsLiteralUsageAnalyzerDescription {
+            get {
+                return ResourceManager.GetString("NewLineSplitWindowsLiteralUsageAnalyzerDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Caller uses .Split(&quot;\r\n&quot;) instead of TextTools.SplitNewLines().
+        /// </summary>
+        internal static string NewLineSplitWindowsLiteralUsageAnalyzerMessageFormat {
+            get {
+                return ResourceManager.GetString("NewLineSplitWindowsLiteralUsageAnalyzerMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use TextTools.SplitNewLines() instead of .Split(&quot;\r\n&quot;).
+        /// </summary>
+        internal static string NewLineSplitWindowsLiteralUsageAnalyzerTitle {
+            get {
+                return ResourceManager.GetString("NewLineSplitWindowsLiteralUsageAnalyzerTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Checking.Exists() neutralizes the provided path to its absolute correct path, while Path.Exists operates at the executable Path (Environment.CurrentPath), which may not be what you want..
         /// </summary>
         internal static string PathExistsUsageAnalyzerDescription {

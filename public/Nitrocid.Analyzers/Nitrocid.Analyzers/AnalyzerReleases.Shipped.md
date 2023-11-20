@@ -47,3 +47,7 @@ NKS0044 | Languages | Info | CurrentUICultureGetUsageAnalyzer, [Documentation](h
 NKS0045 | Languages | Info | CurrentUICultureGetNameUsageAnalyzer, [Documentation](https://aptivi.gitbook.io/nitrocid-ks-manual/advanced-and-power-users/kernel-modifications/analyzer-diagnostics/languages-nks0045)
 NKS0046 | Languages | Info | CurrentUICultureSetUsageAnalyzer, [Documentation](https://aptivi.gitbook.io/nitrocid-ks-manual/advanced-and-power-users/kernel-modifications/analyzer-diagnostics/languages-nks0046)
 NKS0051 | Network | Info | GetIsNetworkAvailableUsageAnalyzer, [Documentation](https://aptivi.gitbook.io/nitrocid-ks-manual/advanced-and-power-users/kernel-modifications/analyzer-diagnostics/network-nks0051)
+NKS0047 | Text | Info | NewLineSplitLinuxLiteralUsageAnalyzer, [Documentation](https://aptivi.gitbook.io/nitrocid-ks-manual/advanced-and-power-users/kernel-modifications/analyzer-diagnostics/text-nks0047)
+NKS0048 | Text | Info | NewLineSplitWindowsLiteralUsageAnalyzer, [Documentation](https://aptivi.gitbook.io/nitrocid-ks-manual/advanced-and-power-users/kernel-modifications/analyzer-diagnostics/text-nks0048)
+NKS0049 | Text | Info | NewLineSplitEnvironmentNewLineUsageAnalyzer, [Documentation](https://aptivi.gitbook.io/nitrocid-ks-manual/advanced-and-power-users/kernel-modifications/analyzer-diagnostics/text-nks0049)
+NKS0050 | Text | Info | NewLineSplitCharManagerNewLineUsageAnalyzer, [Documentation](https://aptivi.gitbook.io/nitrocid-ks-manual/advanced-and-power-users/kernel-modifications/analyzer-diagnostics/text-nks0050)

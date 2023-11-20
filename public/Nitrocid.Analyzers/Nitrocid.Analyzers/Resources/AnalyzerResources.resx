@@ -678,6 +678,54 @@
   </data>
 
   <!--
-      Other analyzers TBD
+      NewLineSplitLinuxLiteral usage analyzer
   -->
+  <data name="NewLineSplitLinuxLiteralUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use TextTools.SplitNewLines() instead of .Split("\n")</value>
+  </data>
+  <data name="NewLineSplitLinuxLiteralUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses .Split("\n") instead of TextTools.SplitNewLines()</value>
+  </data>
+  <data name="NewLineSplitLinuxLiteralUsageAnalyzerDescription" xml:space="preserve">
+    <value>TextTools.SplitNewLines() simplifies the readability of the split by new lines function.</value>
+  </data>
+
+  <!--
+      NewLineSplitWindowsLiteral usage analyzer
+  -->
+  <data name="NewLineSplitWindowsLiteralUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use TextTools.SplitNewLines() instead of .Split("\r\n")</value>
+  </data>
+  <data name="NewLineSplitWindowsLiteralUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses .Split("\r\n") instead of TextTools.SplitNewLines()</value>
+  </data>
+  <data name="NewLineSplitWindowsLiteralUsageAnalyzerDescription" xml:space="preserve">
+    <value>TextTools.SplitNewLines() simplifies the readability of the split by new lines function.</value>
+  </data>
+
+  <!--
+      NewLineSplitEnvironmentNewLine usage analyzer
+  -->
+  <data name="NewLineSplitEnvironmentNewLineUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use TextTools.SplitNewLines() instead of Environment.NewLine</value>
+  </data>
+  <data name="NewLineSplitEnvironmentNewLineUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses Environment.NewLine instead of TextTools.SplitNewLines()</value>
+  </data>
+  <data name="NewLineSplitEnvironmentNewLineUsageAnalyzerDescription" xml:space="preserve">
+    <value>TextTools.SplitNewLines() simplifies the readability of the split by new lines function.</value>
+  </data>
+
+  <!--
+      NewLineSplitCharManagerNewLine usage analyzer
+  -->
+  <data name="NewLineSplitCharManagerNewLineUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use TextTools.SplitNewLines() instead of CharManager.NewLine</value>
+  </data>
+  <data name="NewLineSplitCharManagerNewLineUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses CharManager.NewLine instead of TextTools.SplitNewLines()</value>
+  </data>
+  <data name="NewLineSplitCharManagerNewLineUsageAnalyzerDescription" xml:space="preserve">
+    <value>TextTools.SplitNewLines() simplifies the readability of the split by new lines function.</value>
+  </data>
 </root>
