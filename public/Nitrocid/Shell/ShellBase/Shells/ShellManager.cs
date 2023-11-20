@@ -98,7 +98,10 @@ namespace KS.Shell.ShellBase.Shells
                             new CommandArgumentPart(false, "args")
                         ],
                         [
-                            new SwitchInfo("forked", /* Localizable */ "Executes the process without interrupting the shell thread. A separate window will be created.")
+                            new SwitchInfo("forked", /* Localizable */ "Executes the process without interrupting the shell thread. A separate window will be created.", new SwitchOptions()
+                            {
+                                AcceptsValues = false
+                            })
                         ])
                     ], new ExecUnifiedCommand())
             },
