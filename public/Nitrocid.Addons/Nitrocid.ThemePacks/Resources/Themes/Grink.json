@@ -2,7 +2,8 @@
     "Metadata": {
         "Name": "Grink (Green + Pink)",
         "Description": "Green and pink mixed together",
-        "Localizable": true
+        "Localizable": true,
+        "Category": "Mesmerizing"
     },
     "InputColor": "235;75;155",
     "LicenseColor": "235;75;155",

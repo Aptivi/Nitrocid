@@ -2,7 +2,8 @@
     "Metadata": {
         "Name": "Amaya",
         "Description": "Purple harmony",
-        "Localizable": true
+        "Localizable": true,
+        "Category": "Mesmerizing"
     },
     "InputColor": "#b491c5",
     "LicenseColor": "#808080",

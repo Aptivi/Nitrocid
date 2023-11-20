@@ -2,7 +2,8 @@
     "Metadata": {
         "Name": "Black Rose",
         "Description": "This is the black rose",
-        "Localizable": true
+        "Localizable": true,
+        "Category": "Mesmerizing"
     },
     "InputColor": "#FF89B7",
     "LicenseColor": "#9D003D",

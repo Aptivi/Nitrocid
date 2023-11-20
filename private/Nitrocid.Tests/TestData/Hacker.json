@@ -2,7 +2,8 @@
     "Metadata": {
         "Name": "Hacker",
         "Description": "Green text on gray",
-        "Localizable": true
+        "Localizable": true,
+        "Category": "Standard"
     },
     "InputColor": "10",
     "LicenseColor": "10",

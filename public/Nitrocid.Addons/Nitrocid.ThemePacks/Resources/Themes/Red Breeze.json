@@ -2,7 +2,8 @@
     "Metadata": {
         "Name": "Red Breeze",
         "Description": "Gives you a breeze of red.",
-        "Localizable": true
+        "Localizable": true,
+        "Category": "Mesmerizing"
     },
     "InputColor": "197;201;54",
     "LicenseColor": "197;201;54",

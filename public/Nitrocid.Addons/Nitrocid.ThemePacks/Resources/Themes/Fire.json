@@ -2,7 +2,8 @@
     "Metadata": {
         "Name": "Fire",
         "Description": "Fire shades",
-        "Localizable": true
+        "Localizable": true,
+        "Category": "Exciting"
     },
     "InputColor": "#FAA307",
     "LicenseColor": "#FFBA08",

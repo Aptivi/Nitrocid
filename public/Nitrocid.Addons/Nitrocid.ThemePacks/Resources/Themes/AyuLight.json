@@ -2,7 +2,8 @@
     "Metadata": {
         "Name": "Ayu (light)",
         "Description": "Light version of a popular VIM theme, Ayu",
-        "Localizable": true
+        "Localizable": true,
+        "Category": "Mesmerizing"
     },
     "InputColor": "134;179;0",
     "LicenseColor": "171;176;182",

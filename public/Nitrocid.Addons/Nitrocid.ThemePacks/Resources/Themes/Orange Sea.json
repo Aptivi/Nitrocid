@@ -2,7 +2,8 @@
     "Metadata": {
         "Name": "Orange Sea",
         "Description": "The sea of orange",
-        "Localizable": true
+        "Localizable": true,
+        "Category": "Mesmerizing"
     },
     "InputColor": "54;152;217",
     "LicenseColor": "54;152;217",
