@@ -133,6 +133,33 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Use CultureManager.CurrentCultStr.
+        /// </summary>
+        internal static string CurrentUICultureGetNameUsageCodeFixTitle {
+            get {
+                return ResourceManager.GetString("CurrentUICultureGetNameUsageCodeFixTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use CultureManager.CurrentCult.
+        /// </summary>
+        internal static string CurrentUICultureGetUsageCodeFixTitle {
+            get {
+                return ResourceManager.GetString("CurrentUICultureGetUsageCodeFixTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use CultureManager.UpdateCulture.
+        /// </summary>
+        internal static string CurrentUICultureSetUsageCodeFixTitle {
+            get {
+                return ResourceManager.GetString("CurrentUICultureSetUsageCodeFixTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Use Making.MakeDirectory().
         /// </summary>
         internal static string DirectoryCreateDirectoryUsageCodeFixTitle {

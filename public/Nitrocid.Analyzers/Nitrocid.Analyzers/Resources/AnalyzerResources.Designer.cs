@@ -277,6 +277,87 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to CultureManager.CurrentCultStr gives you a current culture that is set by the kernel settings without affecting the host system..
+        /// </summary>
+        internal static string CurrentUICultureGetNameUsageAnalyzerDescription {
+            get {
+                return ResourceManager.GetString("CurrentUICultureGetNameUsageAnalyzerDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Caller uses CultureInfo.CurrentUICulture.Name instead of CultureManager.CurrentCultStr.
+        /// </summary>
+        internal static string CurrentUICultureGetNameUsageAnalyzerMessageFormat {
+            get {
+                return ResourceManager.GetString("CurrentUICultureGetNameUsageAnalyzerMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use CultureManager.CurrentCultStr instead of CultureInfo.CurrentUICulture.Name.
+        /// </summary>
+        internal static string CurrentUICultureGetNameUsageAnalyzerTitle {
+            get {
+                return ResourceManager.GetString("CurrentUICultureGetNameUsageAnalyzerTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CultureManager.CurrentCult gives you a current culture that is set by the kernel settings without affecting the host system..
+        /// </summary>
+        internal static string CurrentUICultureGetUsageAnalyzerDescription {
+            get {
+                return ResourceManager.GetString("CurrentUICultureGetUsageAnalyzerDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Caller uses CultureInfo.CurrentUICulture instead of CultureManager.CurrentCult.
+        /// </summary>
+        internal static string CurrentUICultureGetUsageAnalyzerMessageFormat {
+            get {
+                return ResourceManager.GetString("CurrentUICultureGetUsageAnalyzerMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use CultureManager.CurrentCult instead of CultureInfo.CurrentUICulture.
+        /// </summary>
+        internal static string CurrentUICultureGetUsageAnalyzerTitle {
+            get {
+                return ResourceManager.GetString("CurrentUICultureGetUsageAnalyzerTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CultureManager.UpdateCulture() sets a current culture without affecting the host system. It also updates the settings so that it holds the new culture..
+        /// </summary>
+        internal static string CurrentUICultureSetUsageAnalyzerDescription {
+            get {
+                return ResourceManager.GetString("CurrentUICultureSetUsageAnalyzerDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Caller uses CultureInfo.CurrentUICulture instead of CultureManager.UpdateCulture().
+        /// </summary>
+        internal static string CurrentUICultureSetUsageAnalyzerMessageFormat {
+            get {
+                return ResourceManager.GetString("CurrentUICultureSetUsageAnalyzerMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use CultureManager.UpdateCulture() instead of setting CultureInfo.CurrentUICulture.
+        /// </summary>
+        internal static string CurrentUICultureSetUsageAnalyzerTitle {
+            get {
+                return ResourceManager.GetString("CurrentUICultureSetUsageAnalyzerTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Making.MakeDirectory() neutralizes the provided path to its absolute correct path, while Directory.CreateDirectory operates at the executable directory (Environment.CurrentDirectory), which may not be what you want..
         /// </summary>
         internal static string DirectoryCreateDirectoryUsageAnalyzerDescription {

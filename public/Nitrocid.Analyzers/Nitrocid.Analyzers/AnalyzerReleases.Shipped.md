@@ -43,3 +43,6 @@ NKS0042 | Kernel | Info | TermProgramUsageAnalyzer, [Documentation](https://apti
 NKS0043 | Kernel | Info | TermUsageAnalyzer, [Documentation](https://aptivi.gitbook.io/nitrocid-ks-manual/advanced-and-power-users/kernel-modifications/analyzer-diagnostics/kernel-nks0043)
 NKS0052 | Kernel | Info | TmuxUsageAnalyzer, [Documentation](https://aptivi.gitbook.io/nitrocid-ks-manual/advanced-and-power-users/kernel-modifications/analyzer-diagnostics/kernel-nks0052)
 NKS0053 | Kernel | Info | ScreenUsageAnalyzer, [Documentation](https://aptivi.gitbook.io/nitrocid-ks-manual/advanced-and-power-users/kernel-modifications/analyzer-diagnostics/kernel-nks0053)
+NKS0044 | Languages | Info | CurrentUICultureGetUsageAnalyzer, [Documentation](https://aptivi.gitbook.io/nitrocid-ks-manual/advanced-and-power-users/kernel-modifications/analyzer-diagnostics/languages-nks0044)
+NKS0045 | Languages | Info | CurrentUICultureGetNameUsageAnalyzer, [Documentation](https://aptivi.gitbook.io/nitrocid-ks-manual/advanced-and-power-users/kernel-modifications/analyzer-diagnostics/languages-nks0045)
+NKS0046 | Languages | Info | CurrentUICultureSetUsageAnalyzer, [Documentation](https://aptivi.gitbook.io/nitrocid-ks-manual/advanced-and-power-users/kernel-modifications/analyzer-diagnostics/languages-nks0046)

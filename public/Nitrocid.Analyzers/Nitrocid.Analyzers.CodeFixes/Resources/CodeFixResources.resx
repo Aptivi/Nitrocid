@@ -390,6 +390,27 @@
   <data name="ScreenUsageCodeFixTitle" xml:space="preserve">
     <value>Use KernelPlatform.IsRunningFromScreen()</value>
   </data>
+  
+  <!--
+      CurrentUICultureGet usage code fix
+  -->
+  <data name="CurrentUICultureGetUsageCodeFixTitle" xml:space="preserve">
+    <value>Use CultureManager.CurrentCult</value>
+  </data>
+  
+  <!--
+      CurrentUICultureGetName usage code fix
+  -->
+  <data name="CurrentUICultureGetNameUsageCodeFixTitle" xml:space="preserve">
+    <value>Use CultureManager.CurrentCultStr</value>
+  </data>
+  
+  <!--
+      CurrentUICultureSet usage code fix
+  -->
+  <data name="CurrentUICultureSetUsageCodeFixTitle" xml:space="preserve">
+    <value>Use CultureManager.UpdateCulture</value>
+  </data>
 
   <!--
       Other analyzers TBD

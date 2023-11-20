@@ -626,6 +626,45 @@
   </data>
 
   <!--
+      CurrentUICultureGet usage analyzer
+  -->
+  <data name="CurrentUICultureGetUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use CultureManager.CurrentCult instead of CultureInfo.CurrentUICulture</value>
+  </data>
+  <data name="CurrentUICultureGetUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses CultureInfo.CurrentUICulture instead of CultureManager.CurrentCult</value>
+  </data>
+  <data name="CurrentUICultureGetUsageAnalyzerDescription" xml:space="preserve">
+    <value>CultureManager.CurrentCult gives you a current culture that is set by the kernel settings without affecting the host system.</value>
+  </data>
+
+  <!--
+      CurrentUICultureGetName usage analyzer
+  -->
+  <data name="CurrentUICultureGetNameUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use CultureManager.CurrentCultStr instead of CultureInfo.CurrentUICulture.Name</value>
+  </data>
+  <data name="CurrentUICultureGetNameUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses CultureInfo.CurrentUICulture.Name instead of CultureManager.CurrentCultStr</value>
+  </data>
+  <data name="CurrentUICultureGetNameUsageAnalyzerDescription" xml:space="preserve">
+    <value>CultureManager.CurrentCultStr gives you a current culture that is set by the kernel settings without affecting the host system.</value>
+  </data>
+
+  <!--
+      CurrentUICultureSet usage analyzer
+  -->
+  <data name="CurrentUICultureSetUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use CultureManager.UpdateCulture() instead of setting CultureInfo.CurrentUICulture</value>
+  </data>
+  <data name="CurrentUICultureSetUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses CultureInfo.CurrentUICulture instead of CultureManager.UpdateCulture()</value>
+  </data>
+  <data name="CurrentUICultureSetUsageAnalyzerDescription" xml:space="preserve">
+    <value>CultureManager.UpdateCulture() sets a current culture without affecting the host system. It also updates the settings so that it holds the new culture.</value>
+  </data>
+
+  <!--
       Other analyzers TBD
   -->
 </root>
