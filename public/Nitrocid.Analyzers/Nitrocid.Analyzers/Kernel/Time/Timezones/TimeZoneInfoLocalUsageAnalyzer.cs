@@ -24,7 +24,6 @@ using Microsoft.CodeAnalysis.Diagnostics;
 using Nitrocid.Analyzers.Resources;
 using System;
 using System.Collections.Immutable;
-using System.IO;
 
 namespace Nitrocid.Analyzers.Kernel.Time.Timezones
 {

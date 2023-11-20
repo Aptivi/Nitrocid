@@ -24,7 +24,6 @@ using Microsoft.CodeAnalysis.Diagnostics;
 using Nitrocid.Analyzers.Resources;
 using System.Collections.Immutable;
 using System;
-using System.Runtime.InteropServices;
 
 namespace Nitrocid.Analyzers.Kernel
 {

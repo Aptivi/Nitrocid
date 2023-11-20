@@ -24,8 +24,6 @@ using Microsoft.CodeAnalysis.Diagnostics;
 using Nitrocid.Analyzers.Resources;
 using System;
 using System.Collections.Immutable;
-using System.IO;
-using System.Net.NetworkInformation;
 
 namespace Nitrocid.Analyzers.Misc.Text
 {
