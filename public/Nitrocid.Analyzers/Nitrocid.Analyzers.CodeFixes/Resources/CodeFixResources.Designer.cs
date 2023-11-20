@@ -223,6 +223,33 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Use KernelPlatform.IsOnUnix().
+        /// </summary>
+        internal static string IsOsPlatformLinuxUsageCodeFixTitle {
+            get {
+                return ResourceManager.GetString("IsOsPlatformLinuxUsageCodeFixTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use KernelPlatform.IsOnMacOs().
+        /// </summary>
+        internal static string IsOsPlatformOSXUsageCodeFixTitle {
+            get {
+                return ResourceManager.GetString("IsOsPlatformOSXUsageCodeFixTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use KernelPlatform.IsOnWindows().
+        /// </summary>
+        internal static string IsOsPlatformWindowsUsageCodeFixTitle {
+            get {
+                return ResourceManager.GetString("IsOsPlatformWindowsUsageCodeFixTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Use TimeDateRenderers.RenderDate().
         /// </summary>
         internal static string KernelDateTimeToDateStringUsageCodeFixTitle {
@@ -313,6 +340,33 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Use KernelPlatform.IsOnUnix().
+        /// </summary>
+        internal static string PlatformIdUnixUsageCodeFixTitle {
+            get {
+                return ResourceManager.GetString("PlatformIdUnixUsageCodeFixTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use KernelPlatform.IsOnWindows().
+        /// </summary>
+        internal static string PlatformIdWin32NtUsageCodeFixTitle {
+            get {
+                return ResourceManager.GetString("PlatformIdWin32NtUsageCodeFixTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use KernelPlatform.IsRunningFromScreen().
+        /// </summary>
+        internal static string ScreenUsageCodeFixTitle {
+            get {
+                return ResourceManager.GetString("ScreenUsageCodeFixTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Use TextTools.FormatString().
         /// </summary>
         internal static string StringFormatCodeFixTitle {
@@ -322,11 +376,38 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Use KernelPlatform.GetTerminalEmulator().
+        /// </summary>
+        internal static string TermProgramUsageCodeFixTitle {
+            get {
+                return ResourceManager.GetString("TermProgramUsageCodeFixTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use KernelPlatform.GetTerminalType().
+        /// </summary>
+        internal static string TermUsageCodeFixTitle {
+            get {
+                return ResourceManager.GetString("TermUsageCodeFixTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Use TimeZones.GetCurrentZoneInfo().
         /// </summary>
         internal static string TimeZoneInfoLocalUsageCodeFixTitle {
             get {
                 return ResourceManager.GetString("TimeZoneInfoLocalUsageCodeFixTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use KernelPlatform.IsRunningFromTmux().
+        /// </summary>
+        internal static string TmuxUsageCodeFixTitle {
+            get {
+                return ResourceManager.GetString("TmuxUsageCodeFixTitle", resourceCulture);
             }
         }
     }

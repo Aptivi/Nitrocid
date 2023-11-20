@@ -329,6 +329,69 @@
   </data>
 
   <!--
+      PlatformIdWin32Nt usage code fix
+  -->
+  <data name="PlatformIdWin32NtUsageCodeFixTitle" xml:space="preserve">
+    <value>Use KernelPlatform.IsOnWindows()</value>
+  </data>
+
+  <!--
+      PlatformIdUnix usage code fix
+  -->
+  <data name="PlatformIdUnixUsageCodeFixTitle" xml:space="preserve">
+    <value>Use KernelPlatform.IsOnUnix()</value>
+  </data>
+
+  <!--
+      IsOsPlatformWindows usage code fix
+  -->
+  <data name="IsOsPlatformWindowsUsageCodeFixTitle" xml:space="preserve">
+    <value>Use KernelPlatform.IsOnWindows()</value>
+  </data>
+
+  <!--
+      IsOsPlatformLinux usage code fix
+  -->
+  <data name="IsOsPlatformLinuxUsageCodeFixTitle" xml:space="preserve">
+    <value>Use KernelPlatform.IsOnUnix()</value>
+  </data>
+
+  <!--
+      IsOsPlatformOSX usage code fix
+  -->
+  <data name="IsOsPlatformOSXUsageCodeFixTitle" xml:space="preserve">
+    <value>Use KernelPlatform.IsOnMacOs()</value>
+  </data>
+  
+  <!--
+      TermProgram usage code fix
+  -->
+  <data name="TermProgramUsageCodeFixTitle" xml:space="preserve">
+    <value>Use KernelPlatform.GetTerminalEmulator()</value>
+  </data>
+  
+  <!--
+      Term usage code fix
+  -->
+  <data name="TermUsageCodeFixTitle" xml:space="preserve">
+    <value>Use KernelPlatform.GetTerminalType()</value>
+  </data>
+  
+  <!--
+      Tmux usage code fix
+  -->
+  <data name="TmuxUsageCodeFixTitle" xml:space="preserve">
+    <value>Use KernelPlatform.IsRunningFromTmux()</value>
+  </data>
+  
+  <!--
+      Screen usage code fix
+  -->
+  <data name="ScreenUsageCodeFixTitle" xml:space="preserve">
+    <value>Use KernelPlatform.IsRunningFromScreen()</value>
+  </data>
+
+  <!--
       Other analyzers TBD
   -->
 </root>

@@ -547,6 +547,87 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to KernelPlatform.IsOnUnix() is more readable and less verbose than RuntimeInformation.IsOSPlatform(OSPlatform.Linux)..
+        /// </summary>
+        internal static string IsOsPlatformLinuxUsageAnalyzerDescription {
+            get {
+                return ResourceManager.GetString("IsOsPlatformLinuxUsageAnalyzerDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Caller uses RuntimeInformation.IsOSPlatform(OSPlatform.Linux) instead of KernelPlatform.IsOnUnix().
+        /// </summary>
+        internal static string IsOsPlatformLinuxUsageAnalyzerMessageFormat {
+            get {
+                return ResourceManager.GetString("IsOsPlatformLinuxUsageAnalyzerMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use KernelPlatform.IsOnUnix() instead of RuntimeInformation.IsOSPlatform(OSPlatform.Linux).
+        /// </summary>
+        internal static string IsOsPlatformLinuxUsageAnalyzerTitle {
+            get {
+                return ResourceManager.GetString("IsOsPlatformLinuxUsageAnalyzerTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to KernelPlatform.IsOnMacOS() is more readable and less verbose than RuntimeInformation.IsOSPlatform(OSPlatform.OSX)..
+        /// </summary>
+        internal static string IsOsPlatformOSXUsageAnalyzerDescription {
+            get {
+                return ResourceManager.GetString("IsOsPlatformOSXUsageAnalyzerDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Caller uses RuntimeInformation.IsOSPlatform(OSPlatform.OSX) instead of KernelPlatform.IsOnMacOS().
+        /// </summary>
+        internal static string IsOsPlatformOSXUsageAnalyzerMessageFormat {
+            get {
+                return ResourceManager.GetString("IsOsPlatformOSXUsageAnalyzerMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use KernelPlatform.IsOnMacOS() instead of RuntimeInformation.IsOSPlatform(OSPlatform.OSX).
+        /// </summary>
+        internal static string IsOsPlatformOSXUsageAnalyzerTitle {
+            get {
+                return ResourceManager.GetString("IsOsPlatformOSXUsageAnalyzerTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to KernelPlatform.IsOnWindows() is more readable and less verbose than RuntimeInformation.IsOSPlatform(OSPlatform.Windows)..
+        /// </summary>
+        internal static string IsOsPlatformWindowsUsageAnalyzerDescription {
+            get {
+                return ResourceManager.GetString("IsOsPlatformWindowsUsageAnalyzerDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Caller uses RuntimeInformation.IsOSPlatform(OSPlatform.Windows) instead of KernelPlatform.IsOnWindows().
+        /// </summary>
+        internal static string IsOsPlatformWindowsUsageAnalyzerMessageFormat {
+            get {
+                return ResourceManager.GetString("IsOsPlatformWindowsUsageAnalyzerMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use KernelPlatform.IsOnWindows() instead of RuntimeInformation.IsOSPlatform(OSPlatform.Windows).
+        /// </summary>
+        internal static string IsOsPlatformWindowsUsageAnalyzerTitle {
+            get {
+                return ResourceManager.GetString("IsOsPlatformWindowsUsageAnalyzerTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to TimeDateRenderers.RenderDate() respects your kernel settings when rendering date..
         /// </summary>
         internal static string KernelDateTimeToDateStringUsageAnalyzerDescription {
@@ -817,6 +898,87 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to KernelPlatform.IsOnUnix() is more readable and less verbose than Environment.OSVersion.Platform == PlatformID.Unix..
+        /// </summary>
+        internal static string PlatformIdUnixUsageAnalyzerDescription {
+            get {
+                return ResourceManager.GetString("PlatformIdUnixUsageAnalyzerDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Caller uses Environment.OSVersion.Platform == PlatformID.Unix instead of KernelPlatform.IsOnUnix().
+        /// </summary>
+        internal static string PlatformIdUnixUsageAnalyzerMessageFormat {
+            get {
+                return ResourceManager.GetString("PlatformIdUnixUsageAnalyzerMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use KernelPlatform.IsOnUnix() instead of Environment.OSVersion.Platform == PlatformID.Unix.
+        /// </summary>
+        internal static string PlatformIdUnixUsageAnalyzerTitle {
+            get {
+                return ResourceManager.GetString("PlatformIdUnixUsageAnalyzerTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to KernelPlatform.IsOnWindows() is more readable and less verbose than Environment.OSVersion.Platform == PlatformID.Win32NT..
+        /// </summary>
+        internal static string PlatformIdWin32NtUsageAnalyzerDescription {
+            get {
+                return ResourceManager.GetString("PlatformIdWin32NtUsageAnalyzerDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Caller uses Environment.OSVersion.Platform == PlatformID.Win32NT instead of KernelPlatform.IsOnWindows().
+        /// </summary>
+        internal static string PlatformIdWin32NtUsageAnalyzerMessageFormat {
+            get {
+                return ResourceManager.GetString("PlatformIdWin32NtUsageAnalyzerMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use KernelPlatform.IsOnWindows() instead of Environment.OSVersion.Platform == PlatformID.Win32NT.
+        /// </summary>
+        internal static string PlatformIdWin32NtUsageAnalyzerTitle {
+            get {
+                return ResourceManager.GetString("PlatformIdWin32NtUsageAnalyzerTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to KernelPlatform.IsRunningFromScreen() is more readable and less verbose than Environment.GetEnvironmentVariable(&quot;STY&quot;)..
+        /// </summary>
+        internal static string ScreenUsageAnalyzerDescription {
+            get {
+                return ResourceManager.GetString("ScreenUsageAnalyzerDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Caller uses Environment.GetEnvironmentVariable(&quot;STY&quot;) instead of KernelPlatform.IsRunningFromScreen().
+        /// </summary>
+        internal static string ScreenUsageAnalyzerMessageFormat {
+            get {
+                return ResourceManager.GetString("ScreenUsageAnalyzerMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use KernelPlatform.IsRunningFromScreen() instead of Environment.GetEnvironmentVariable(&quot;STY&quot;).
+        /// </summary>
+        internal static string ScreenUsageAnalyzerTitle {
+            get {
+                return ResourceManager.GetString("ScreenUsageAnalyzerTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to TextTools.FormatString() uses the error handler to handle unknown formatting errors and returns the unformatted string if such errors happen, but string.Format() immediately throws..
         /// </summary>
         internal static string StringFormatAnalyzerDescription {
@@ -844,6 +1006,60 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to KernelPlatform.GetTerminalEmulator() is more readable and less verbose than Environment.GetEnvironmentVariable(&quot;TERM_PROGRAM&quot;)..
+        /// </summary>
+        internal static string TermProgramUsageAnalyzerDescription {
+            get {
+                return ResourceManager.GetString("TermProgramUsageAnalyzerDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Caller uses Environment.GetEnvironmentVariable(&quot;TERM_PROGRAM&quot;) instead of KernelPlatform.GetTerminalEmulator().
+        /// </summary>
+        internal static string TermProgramUsageAnalyzerMessageFormat {
+            get {
+                return ResourceManager.GetString("TermProgramUsageAnalyzerMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use KernelPlatform.GetTerminalEmulator() instead of Environment.GetEnvironmentVariable(&quot;TERM_PROGRAM&quot;).
+        /// </summary>
+        internal static string TermProgramUsageAnalyzerTitle {
+            get {
+                return ResourceManager.GetString("TermProgramUsageAnalyzerTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to KernelPlatform.GetTerminalType() is more readable and less verbose than Environment.GetEnvironmentVariable(&quot;TERM&quot;)..
+        /// </summary>
+        internal static string TermUsageAnalyzerDescription {
+            get {
+                return ResourceManager.GetString("TermUsageAnalyzerDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Caller uses Environment.GetEnvironmentVariable(&quot;TERM&quot;) instead of KernelPlatform.GetTerminalType().
+        /// </summary>
+        internal static string TermUsageAnalyzerMessageFormat {
+            get {
+                return ResourceManager.GetString("TermUsageAnalyzerMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use KernelPlatform.GetTerminalType() instead of Environment.GetEnvironmentVariable(&quot;TERM&quot;).
+        /// </summary>
+        internal static string TermUsageAnalyzerTitle {
+            get {
+                return ResourceManager.GetString("TermUsageAnalyzerTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to TimeZones.GetCurrentZoneInfo() gets your local time zone and respects your kernel settings based on that. It either gets your local time zone from your system or from your kernel configuration..
         /// </summary>
         internal static string TimeZoneInfoLocalUsageAnalyzerDescription {
@@ -867,6 +1083,33 @@ namespace Nitrocid.Analyzers.Resources {
         internal static string TimeZoneInfoLocalUsageAnalyzerTitle {
             get {
                 return ResourceManager.GetString("TimeZoneInfoLocalUsageAnalyzerTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to KernelPlatform.IsRunningFromTmux() is more readable and less verbose than Environment.GetEnvironmentVariable(&quot;TMUX&quot;)..
+        /// </summary>
+        internal static string TmuxUsageAnalyzerDescription {
+            get {
+                return ResourceManager.GetString("TmuxUsageAnalyzerDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Caller uses Environment.GetEnvironmentVariable(&quot;TMUX&quot;) instead of KernelPlatform.IsRunningFromTmux().
+        /// </summary>
+        internal static string TmuxUsageAnalyzerMessageFormat {
+            get {
+                return ResourceManager.GetString("TmuxUsageAnalyzerMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use KernelPlatform.IsRunningFromTmux() instead of Environment.GetEnvironmentVariable(&quot;TMUX&quot;).
+        /// </summary>
+        internal static string TmuxUsageAnalyzerTitle {
+            get {
+                return ResourceManager.GetString("TmuxUsageAnalyzerTitle", resourceCulture);
             }
         }
     }

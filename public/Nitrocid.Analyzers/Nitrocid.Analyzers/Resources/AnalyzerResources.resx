@@ -509,6 +509,123 @@
   </data>
 
   <!--
+      PlatformIdWin32Nt usage analyzer
+  -->
+  <data name="PlatformIdWin32NtUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use KernelPlatform.IsOnWindows() instead of Environment.OSVersion.Platform == PlatformID.Win32NT</value>
+  </data>
+  <data name="PlatformIdWin32NtUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses Environment.OSVersion.Platform == PlatformID.Win32NT instead of KernelPlatform.IsOnWindows()</value>
+  </data>
+  <data name="PlatformIdWin32NtUsageAnalyzerDescription" xml:space="preserve">
+    <value>KernelPlatform.IsOnWindows() is more readable and less verbose than Environment.OSVersion.Platform == PlatformID.Win32NT.</value>
+  </data>
+
+  <!--
+      PlatformIdUnix usage analyzer
+  -->
+  <data name="PlatformIdUnixUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use KernelPlatform.IsOnUnix() instead of Environment.OSVersion.Platform == PlatformID.Unix</value>
+  </data>
+  <data name="PlatformIdUnixUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses Environment.OSVersion.Platform == PlatformID.Unix instead of KernelPlatform.IsOnUnix()</value>
+  </data>
+  <data name="PlatformIdUnixUsageAnalyzerDescription" xml:space="preserve">
+    <value>KernelPlatform.IsOnUnix() is more readable and less verbose than Environment.OSVersion.Platform == PlatformID.Unix.</value>
+  </data>
+
+  <!--
+      IsOsPlatformWindows usage analyzer
+  -->
+  <data name="IsOsPlatformWindowsUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use KernelPlatform.IsOnWindows() instead of RuntimeInformation.IsOSPlatform(OSPlatform.Windows)</value>
+  </data>
+  <data name="IsOsPlatformWindowsUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses RuntimeInformation.IsOSPlatform(OSPlatform.Windows) instead of KernelPlatform.IsOnWindows()</value>
+  </data>
+  <data name="IsOsPlatformWindowsUsageAnalyzerDescription" xml:space="preserve">
+    <value>KernelPlatform.IsOnWindows() is more readable and less verbose than RuntimeInformation.IsOSPlatform(OSPlatform.Windows).</value>
+  </data>
+
+  <!--
+      IsOsPlatformLinux usage analyzer
+  -->
+  <data name="IsOsPlatformLinuxUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use KernelPlatform.IsOnUnix() instead of RuntimeInformation.IsOSPlatform(OSPlatform.Linux)</value>
+  </data>
+  <data name="IsOsPlatformLinuxUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses RuntimeInformation.IsOSPlatform(OSPlatform.Linux) instead of KernelPlatform.IsOnUnix()</value>
+  </data>
+  <data name="IsOsPlatformLinuxUsageAnalyzerDescription" xml:space="preserve">
+    <value>KernelPlatform.IsOnUnix() is more readable and less verbose than RuntimeInformation.IsOSPlatform(OSPlatform.Linux).</value>
+  </data>
+
+  <!--
+      IsOsPlatformOSX usage analyzer
+  -->
+  <data name="IsOsPlatformOSXUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use KernelPlatform.IsOnMacOS() instead of RuntimeInformation.IsOSPlatform(OSPlatform.OSX)</value>
+  </data>
+  <data name="IsOsPlatformOSXUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses RuntimeInformation.IsOSPlatform(OSPlatform.OSX) instead of KernelPlatform.IsOnMacOS()</value>
+  </data>
+  <data name="IsOsPlatformOSXUsageAnalyzerDescription" xml:space="preserve">
+    <value>KernelPlatform.IsOnMacOS() is more readable and less verbose than RuntimeInformation.IsOSPlatform(OSPlatform.OSX).</value>
+  </data>
+
+  <!--
+      TermProgram usage analyzer
+  -->
+  <data name="TermProgramUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use KernelPlatform.GetTerminalEmulator() instead of Environment.GetEnvironmentVariable("TERM_PROGRAM")</value>
+  </data>
+  <data name="TermProgramUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses Environment.GetEnvironmentVariable("TERM_PROGRAM") instead of KernelPlatform.GetTerminalEmulator()</value>
+  </data>
+  <data name="TermProgramUsageAnalyzerDescription" xml:space="preserve">
+    <value>KernelPlatform.GetTerminalEmulator() is more readable and less verbose than Environment.GetEnvironmentVariable("TERM_PROGRAM").</value>
+  </data>
+
+  <!--
+      Term usage analyzer
+  -->
+  <data name="TermUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use KernelPlatform.GetTerminalType() instead of Environment.GetEnvironmentVariable("TERM")</value>
+  </data>
+  <data name="TermUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses Environment.GetEnvironmentVariable("TERM") instead of KernelPlatform.GetTerminalType()</value>
+  </data>
+  <data name="TermUsageAnalyzerDescription" xml:space="preserve">
+    <value>KernelPlatform.GetTerminalType() is more readable and less verbose than Environment.GetEnvironmentVariable("TERM").</value>
+  </data>
+
+  <!--
+      Tmux usage analyzer
+  -->
+  <data name="TmuxUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use KernelPlatform.IsRunningFromTmux() instead of Environment.GetEnvironmentVariable("TMUX")</value>
+  </data>
+  <data name="TmuxUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses Environment.GetEnvironmentVariable("TMUX") instead of KernelPlatform.IsRunningFromTmux()</value>
+  </data>
+  <data name="TmuxUsageAnalyzerDescription" xml:space="preserve">
+    <value>KernelPlatform.IsRunningFromTmux() is more readable and less verbose than Environment.GetEnvironmentVariable("TMUX").</value>
+  </data>
+
+  <!--
+      Screen usage analyzer
+  -->
+  <data name="ScreenUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use KernelPlatform.IsRunningFromScreen() instead of Environment.GetEnvironmentVariable("STY")</value>
+  </data>
+  <data name="ScreenUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses Environment.GetEnvironmentVariable("STY") instead of KernelPlatform.IsRunningFromScreen()</value>
+  </data>
+  <data name="ScreenUsageAnalyzerDescription" xml:space="preserve">
+    <value>KernelPlatform.IsRunningFromScreen() is more readable and less verbose than Environment.GetEnvironmentVariable("STY").</value>
+  </data>
+
+  <!--
       Other analyzers TBD
   -->
 </root>
