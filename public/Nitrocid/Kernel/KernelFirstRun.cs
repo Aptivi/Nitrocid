@@ -139,14 +139,21 @@ namespace KS.Kernel
                                 {
                                     Arguments =
                                     [
-                                        Translate.DoTranslation("We'll help you create your own username. Select any name you want. This could be your nickname or your short name, as long as your username doesn't contain spaces and special characters.")
+                                        Translate.DoTranslation("We'll help you create your own username. Select any name you want. This could be your nickname or your short name, as long as your username doesn't contain spaces and special characters and that it doesn't already exist. The following usernames are registered:") + '\n'
                                     ]
                                 },
                                 new DynamicTextElement()
                                 {
                                     Arguments =
                                     [
-                                        () => stepFailureReason
+                                        () =>
+                                        {
+                                            var userList = UserManagement.ListAllUsers();
+                                            string list = string.Join(", ", userList);
+                                            if (string.IsNullOrEmpty(stepFailureReason))
+                                                return $"{list}\n";
+                                            return $"{list}\n{stepFailureReason}\n";
+                                        }
                                     ]
                                 },
                                 new InputElement()
