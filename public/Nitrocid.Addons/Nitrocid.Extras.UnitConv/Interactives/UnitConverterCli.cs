@@ -26,6 +26,7 @@ using UnitsNet;
 using FluentFTP.Helpers;
 using KS.ConsoleBase.Interactive;
 using KS.ConsoleBase.Inputs.Styles;
+using KS.Misc.Reflection;
 
 namespace Nitrocid.Extras.UnitConv.Interactives
 {
@@ -82,9 +83,9 @@ namespace Nitrocid.Extras.UnitConv.Interactives
                 else
                 {
                     var parser = UnitsNetSetup.Default.UnitParser;
-                    var unitNames = Quantity.Infos.Select((qi) => qi.Name);
+                    var unitNames = GetUnitTypeNames();
                     var units = GetUnits();
-                    string UnitType = unitNames.ElementAt(FirstPaneCurrentSelection - 1);
+                    string UnitType = (string)EnumerableTools.GetElementFromIndex(unitNames, FirstPaneCurrentSelection - 1);
                     int QuantityNum = Convert.ToInt32(answer);
                     string wholeUnit = units.OfType<string>().ElementAt(SecondPaneCurrentSelection - 1);
                     string SourceUnit = wholeUnit[..wholeUnit.IndexOf(' ')];
