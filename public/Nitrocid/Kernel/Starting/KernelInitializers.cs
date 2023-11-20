@@ -26,6 +26,7 @@ using KS.ConsoleBase.Writers.FancyWriters;
 using KS.ConsoleBase.Writers.MiscWriters;
 using KS.Files;
 using KS.Files.Extensions;
+using KS.Files.Folders;
 using KS.Files.Operations;
 using KS.Files.Operations.Querying;
 using KS.Files.Paths;
@@ -83,10 +84,13 @@ namespace KS.Kernel.Starting
 
                 // Check to see if we have an appdata folder for KS
                 if (!Checking.FolderExists(PathsManagement.AppDataPath))
+                {
+                    KernelEntry.FirstTime = true;
                     Making.MakeDirectory(PathsManagement.AppDataPath, false);
+                }
 
                 // Set the first time run variable
-                if (!Checking.FileExists(PathsManagement.ConfigurationPath))
+                if (Listing.GetFilesystemEntries(PathsManagement.AppDataPath).Length == 0)
                     KernelEntry.FirstTime = true;
 
                 // Initialize debug path
