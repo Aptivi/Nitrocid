@@ -96,8 +96,8 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
 
         public async Task SuggestAsync(Document document, CancellationToken cancellationToken = default)
         {
-            var tree = document.GetSyntaxTreeAsync().Result;
-            var syntaxNodeNodes = tree.GetRoot().DescendantNodesAndSelf().OfType<SyntaxNode>().ToList();
+            var tree = document.GetSyntaxTreeAsync(cancellationToken).Result;
+            var syntaxNodeNodes = tree.GetRoot(cancellationToken).DescendantNodesAndSelf().OfType<SyntaxNode>().ToList();
             foreach (var syntaxNode in syntaxNodeNodes)
             {
                 if (syntaxNode is not MemberAccessExpressionSyntax exp)
