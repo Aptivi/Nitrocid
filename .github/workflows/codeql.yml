@@ -33,7 +33,7 @@ jobs:
     - name: Build
       run: |
         chmod +x ./tools/build.sh
-        ./tools/build.sh
+        cd tools && ./build.sh && cd -
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v2
       with:
