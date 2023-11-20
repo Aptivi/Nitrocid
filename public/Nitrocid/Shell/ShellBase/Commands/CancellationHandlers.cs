@@ -27,13 +27,28 @@ using System.Threading;
 
 namespace KS.Shell.ShellBase.Commands
 {
-    internal static class CancellationHandlers
+    /// <summary>
+    /// Cancellation handler tools
+    /// </summary>
+    public static class CancellationHandlers
     {
 
         internal static CancellationTokenSource cts = new();
         internal static bool canCancel = false;
         internal static bool installed;
         internal static bool CancelRequested;
+
+        /// <summary>
+        /// Allows cancelling the current command
+        /// </summary>
+        public static void AllowCancel() =>
+            canCancel = true;
+
+        /// <summary>
+        /// Prevents cancelling the current command
+        /// </summary>
+        public static void InhibitCancel() =>
+            canCancel = false;
 
         internal static void CancelCommand(object sender, ConsoleCancelEventArgs e)
         {

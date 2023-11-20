@@ -377,7 +377,7 @@ namespace KS.Shell.ShellBase.Commands
                 DriverHandler.BeginLocalDriver<IConsoleDriver>("Buffered");
                 DebugWriter.WriteDebug(DebugLevel.I, "Buffering...");
                 ShellManager.GetLine(Command, "", currentType, false);
-                CancellationHandlers.canCancel = true;
+                CancellationHandlers.AllowCancel();
                 buffered = true;
 
                 // Extract the buffer and then end the local driver

@@ -392,7 +392,7 @@ namespace KS.Shell.ShellBase.Shells
             }
 
             // Check for a type of command
-            CancellationHandlers.canCancel = true;
+            CancellationHandlers.AllowCancel();
             TermReaderTools.SetHistory(histories["General"]);
             var SplitCommands = FullCommand.Split(new[] { " ; " }, StringSplitOptions.RemoveEmptyEntries);
             var Commands = CommandManager.GetCommands(ShellType);
@@ -632,7 +632,7 @@ namespace KS.Shell.ShellBase.Shells
 
             // Restore title and cancel possibility state
             ConsoleExtensions.SetTitle(KernelReleaseInfo.ConsoleTitle);
-            CancellationHandlers.canCancel = false;
+            CancellationHandlers.InhibitCancel();
             lastCommand = FullCommand;
         }
 
