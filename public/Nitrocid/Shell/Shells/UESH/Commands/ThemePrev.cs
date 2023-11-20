@@ -109,21 +109,20 @@ namespace KS.Shell.Shells.UESH.Commands
                     {
                         // Get the theme name from index
                         selectedTheme = ThemeTools.GetInstalledThemesByCategory(finalCategory).Keys.ElementAt(colorIndex);
-                        break;
                     }
+
+                    // Load the theme to the instance
+                    ThemePath = FilesystemTools.NeutralizePath(selectedTheme);
+                    ThemeInfo Theme;
+                    if (Checking.FileExists(ThemePath))
+                        Theme = new ThemeInfo(ThemePath);
+                    else
+                        Theme = ThemeTools.GetThemeInfo(selectedTheme);
+
+                    // Now, preview the theme
+                    ThemePreviewTools.PreviewTheme(Theme);
                 }
             }
-
-            // Load the theme to the instance
-            ThemePath = FilesystemTools.NeutralizePath(selectedTheme);
-            ThemeInfo Theme;
-            if (Checking.FileExists(ThemePath))
-                Theme = new ThemeInfo(ThemePath);
-            else
-                Theme = ThemeTools.GetThemeInfo(selectedTheme);
-
-            // Now, preview the theme
-            ThemePreviewTools.PreviewTheme(Theme);
             return 0;
         }
 
