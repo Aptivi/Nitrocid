@@ -151,7 +151,7 @@ namespace KS.Misc.Splash
                 }
 
                 // Add to the log buffer
-                logBuffer.Add($" [{TimeDateRenderers.Render(FormatType.Short)}] [{_Progress}%] Info: {TextTools.FormatString(Text, Vars)}");
+                logBuffer.Add($"[{TimeDateRenderers.Render(FormatType.Short)}] [{_Progress}%] Info: {TextTools.FormatString(Text, Vars)}");
             }
             else if (KernelBooted)
             {
@@ -221,7 +221,7 @@ namespace KS.Misc.Splash
                 }
 
                 // Add to the log buffer
-                logBuffer.Add($" [{TimeDateRenderers.Render(FormatType.Short)}] [{_Progress}%] Warning: {TextTools.FormatString(Text, Vars)}");
+                logBuffer.Add($"[{TimeDateRenderers.Render(FormatType.Short)}] [{_Progress}%] Warning: {TextTools.FormatString(Text, Vars)}");
             }
             else if (KernelBooted)
             {
@@ -291,7 +291,7 @@ namespace KS.Misc.Splash
                 }
 
                 // Add to the log buffer
-                logBuffer.Add($" [{TimeDateRenderers.Render(FormatType.Short)}] [{_Progress}%] Error: {TextTools.FormatString(Text, Vars)}");
+                logBuffer.Add($"[{TimeDateRenderers.Render(FormatType.Short)}] [{_Progress}%] Error: {TextTools.FormatString(Text, Vars)}");
             }
             else if (KernelBooted)
             {
