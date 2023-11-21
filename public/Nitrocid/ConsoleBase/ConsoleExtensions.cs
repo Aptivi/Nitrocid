@@ -20,6 +20,7 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
+using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Configuration;
 using KS.Misc.Text;
@@ -242,10 +243,23 @@ namespace KS.ConsoleBase
         /// <summary>
         /// Resets the console colors without clearing screen
         /// </summary>
-        public static void ResetColors()
+        /// <param name="useKernelColors">Whether to use the kernel colors or to use the default terminal colors</param>
+        public static void ResetColors(bool useKernelColors = false)
         {
-            ConsoleWrapper.Write($"{CharManager.GetEsc()}[39m");
-            ConsoleWrapper.Write($"{CharManager.GetEsc()}[49m");
+            if (useKernelColors)
+            {
+                ConsoleWrapper.Write(
+                    KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground +
+                    KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground
+                );
+            }
+            else
+            {
+                ConsoleWrapper.Write(
+                    $"{CharManager.GetEsc()}[39m" +
+                    $"{CharManager.GetEsc()}[49m"
+                );
+            }
         }
 
         internal static string BufferChar(string text, MatchCollection[] sequencesCollections, ref int i, ref int vtSeqIdx, out bool isVtSequence)
