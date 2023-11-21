@@ -152,8 +152,11 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
             // Then, write the list entry
             var listBuilder = new StringBuilder();
             listBuilder.Append(
-                $"{ListKeyColor.VTSequenceForeground}{spaces}- {entry}: " +
-                $"{ListValueColor.VTSequenceForeground}{value}"
+                ListKeyColor.VTSequenceForeground +
+                $"{spaces}- {entry}: " +
+                ListValueColor.VTSequenceForeground +
+                value +
+                KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground
             );
             return listBuilder.ToString();
         }

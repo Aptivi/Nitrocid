@@ -330,6 +330,12 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                     FigletWhereColor.RenderFigletWherePlain(Text, consoleX, consoleY, true, FigletFont, Vars)
                 );
             }
+
+            // Write the resulting buffer
+            figBuilder.Append(
+                KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground +
+                KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground
+            );
             return figBuilder.ToString();
         }
 
@@ -443,10 +449,16 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                     // Write the figlet.
                     figBuilder.Append(
                         ForegroundColor.VTSequenceForeground +
-                            BackgroundColor.VTSequenceBackground +
+                        BackgroundColor.VTSequenceBackground +
                         FigletWhereColor.RenderFigletWherePlain(Text, consoleX, top, true, FigletFont, Vars)
                     );
                 }
+
+                // Write the resulting buffer
+                figBuilder.Append(
+                    KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground +
+                    KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground
+                );
                 return figBuilder.ToString();
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))

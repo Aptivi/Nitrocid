@@ -521,6 +521,10 @@ namespace KS.ConsoleBase.Inputs.Styles
                 }
 
                 // Render the final result
+                boxBuffer.Append(
+                    KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground +
+                    KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground
+                );
                 TextWriterColor.WritePlain(boxBuffer.ToString(), false);
 
                 // Wait for input
@@ -759,6 +763,10 @@ namespace KS.ConsoleBase.Inputs.Styles
                 }
 
                 // Render the final result
+                boxBuffer.Append(
+                    KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground +
+                    KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground
+                );
                 TextWriterColor.WritePlain(boxBuffer.ToString(), false);
 
                 // Wait for input
@@ -975,6 +983,10 @@ namespace KS.ConsoleBase.Inputs.Styles
                 }
 
                 // Render the final result
+                boxBuffer.Append(
+                    KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground +
+                    KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground
+                );
                 TextWriterColor.WritePlain(boxBuffer.ToString(), false);
 
                 // Wait for input

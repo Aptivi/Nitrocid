@@ -143,9 +143,38 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         {
             // Fill the box with spaces inside it
             StringBuilder box = new();
-            box.Append($"{CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + 2)}");
+            box.Append(CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + 2));
             for (int y = 1; y <= InteriorHeight; y++)
-                box.Append(new string(' ', InteriorWidth) + CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + y + 2));
+                box.Append(
+                    new string(' ', InteriorWidth) +
+                    CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + y + 2)
+                );
+            return box.ToString();
+        }
+
+        /// <summary>
+        /// Renders the box
+        /// </summary>
+        /// <param name="Left">Where to place the box horizontally? Please note that this value comes from the upper left corner, which is an exterior position.</param>
+        /// <param name="Top">Where to place the box vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
+        /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
+        /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
+        /// <param name="BoxColor">Box color</param>
+        /// <returns>The rendered box</returns>
+        public static string RenderBox(int Left, int Top, int InteriorWidth, int InteriorHeight, Color BoxColor)
+        {
+            // Fill the box with spaces inside it
+            StringBuilder box = new();
+            box.Append(
+                BoxColor.VTSequenceBackground +
+                CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + 2)
+            );
+            for (int y = 1; y <= InteriorHeight; y++)
+                box.Append(
+                    new string(' ', InteriorWidth) +
+                    CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + y + 2)
+                );
+            box.Append(KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground);
             return box.ToString();
         }
     }

@@ -468,6 +468,10 @@ namespace KS.ConsoleBase.Inputs.Styles
                 int buttonPanelPosY = borderY + maxHeight - 3;
                 int maxButtonPanelWidth = maxWidth - 4;
                 int maxButtonWidth = maxButtonPanelWidth / 4 - 4;
+                boxBuffer.Append(
+                    KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground +
+                    KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground
+                );
                 TextWriterColor.WritePlain(boxBuffer.ToString(), false);
 
                 // Loop for input
@@ -653,6 +657,10 @@ namespace KS.ConsoleBase.Inputs.Styles
                 int buttonPanelPosY = borderY + maxHeight - 3;
                 int maxButtonPanelWidth = maxWidth - 4;
                 int maxButtonWidth = maxButtonPanelWidth / 4 - 4;
+                boxBuffer.Append(
+                    KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground +
+                    KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground
+                );
                 TextWriterColor.WritePlain(boxBuffer.ToString(), false);
 
                 // Loop for input
@@ -838,6 +846,10 @@ namespace KS.ConsoleBase.Inputs.Styles
                 int buttonPanelPosY = borderY + maxHeight - 3;
                 int maxButtonPanelWidth = maxWidth - 4;
                 int maxButtonWidth = maxButtonPanelWidth / 4 - 4;
+                boxBuffer.Append(
+                    KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground +
+                    KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground
+                );
                 TextWriterColor.WritePlain(boxBuffer.ToString(), false);
 
                 // Loop for input

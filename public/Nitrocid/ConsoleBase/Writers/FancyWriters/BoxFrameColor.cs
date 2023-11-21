@@ -452,5 +452,94 @@ namespace KS.ConsoleBase.Writers.FancyWriters
             }
             return "";
         }
+
+        /// <summary>
+        /// Renders the box frame
+        /// </summary>
+        /// <param name="Left">Where to place the box frame horizontally? Please note that this value comes from the upper left corner, which is an exterior position.</param>
+        /// <param name="Top">Where to place the box frame vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
+        /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
+        /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
+        /// <param name="BoxFrameColor">BoxFrame color</param>
+        /// <param name="BackgroundColor">BoxFrame background color</param>
+        /// <returns>The rendered frame</returns>
+        public static string RenderBoxFrame(int Left, int Top, int InteriorWidth, int InteriorHeight,
+                                            Color BoxFrameColor, Color BackgroundColor) =>
+            RenderBoxFrame(Left, Top, InteriorWidth, InteriorHeight,
+                BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
+                BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
+                BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
+                BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
+                BoxFrameColor, BackgroundColor);
+
+        /// <summary>
+        /// Renders the box frame
+        /// </summary>
+        /// <param name="Left">Where to place the box frame horizontally? Please note that this value comes from the upper left corner, which is an exterior position.</param>
+        /// <param name="Top">Where to place the box frame vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
+        /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
+        /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
+        /// <param name="UpperLeftCornerChar">Upper left corner character for box frame</param>
+        /// <param name="LowerLeftCornerChar">Lower left corner character for box frame</param>
+        /// <param name="UpperRightCornerChar">Upper right corner character for box frame</param>
+        /// <param name="LowerRightCornerChar">Lower right corner character for box frame</param>
+        /// <param name="UpperFrameChar">Upper frame character for box frame</param>
+        /// <param name="LowerFrameChar">Lower frame character for box frame</param>
+        /// <param name="LeftFrameChar">Left frame character for box frame</param>
+        /// <param name="RightFrameChar">Right frame character for box frame</param>
+        /// <param name="BoxFrameColor">BoxFrame color</param>
+        /// <param name="BackgroundColor">BoxFrame background color</param>
+        /// <returns>The rendered frame</returns>
+        public static string RenderBoxFrame(int Left, int Top, int InteriorWidth, int InteriorHeight,
+                                            char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
+                                            char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
+                                            Color BoxFrameColor, Color BackgroundColor)
+        {
+            try
+            {
+                // StringBuilder is here to formulate the whole string consisting of box frame
+                StringBuilder frameBuilder = new();
+
+                // Colors
+                frameBuilder.Append(
+                    BoxFrameColor.VTSequenceForeground +
+                    BackgroundColor.VTSequenceBackground
+                );
+
+                // Upper frame
+                frameBuilder.Append(
+                    $"{CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + 1)}" +
+                    $"{UpperLeftCornerChar}{new string(UpperFrameChar, InteriorWidth)}{UpperRightCornerChar}"
+                );
+
+                // Left and right edges
+                for (int i = 1; i <= InteriorHeight; i++)
+                    frameBuilder.Append(
+                        $"{CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + i + 1)}" +
+                        $"{LeftFrameChar}" +
+                        $"{CsiSequences.GenerateCsiCursorPosition(Left + InteriorWidth + 2, Top + i + 1)}" +
+                        $"{RightFrameChar}"
+                    );
+
+                // Lower frame
+                frameBuilder.Append(
+                    $"{CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + InteriorHeight + 2)}" +
+                    $"{LowerLeftCornerChar}{new string(LowerFrameChar, InteriorWidth)}{LowerRightCornerChar}"
+                );
+
+                // Write the resulting buffer
+                frameBuilder.Append(
+                    KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground +
+                    KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground
+                );
+                return frameBuilder.ToString();
+            }
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+            {
+                DebugWriter.WriteDebugStackTrace(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+            }
+            return "";
+        }
     }
 }

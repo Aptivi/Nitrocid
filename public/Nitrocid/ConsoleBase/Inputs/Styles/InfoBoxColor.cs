@@ -589,6 +589,10 @@ namespace KS.ConsoleBase.Inputs.Styles
                         $"{line}"
                     );
                 }
+                boxBuffer.Append(
+                    KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground +
+                    KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground
+                );
                 TextWriterColor.WritePlain(boxBuffer.ToString(), false);
                 boxBuffer.Clear();
 
@@ -805,6 +809,10 @@ namespace KS.ConsoleBase.Inputs.Styles
                         $"{line}"
                     );
                 }
+                boxBuffer.Append(
+                    KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground +
+                    KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground
+                );
                 TextWriterColor.WritePlain(boxBuffer.ToString(), false);
                 boxBuffer.Clear();
 
@@ -939,6 +947,10 @@ namespace KS.ConsoleBase.Inputs.Styles
                         $"{line}"
                     );
                 }
+                boxBuffer.Append(
+                    KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground +
+                    KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground
+                );
                 TextWriterColor.WritePlain(boxBuffer.ToString(), false);
                 boxBuffer.Clear();
 

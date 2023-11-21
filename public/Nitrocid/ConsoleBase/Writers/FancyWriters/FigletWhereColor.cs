@@ -240,7 +240,34 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         {
             Text = FigletTools.RenderFiglet(Text, FigletFont, Vars);
             var builder = new StringBuilder();
-            builder.Append(DriverHandler.CurrentConsoleDriverLocal.RenderWherePlain(Text, Left, Top, Return, Vars));
+            builder.Append(
+                DriverHandler.CurrentConsoleDriverLocal.RenderWherePlain(Text, Left, Top, Return, Vars)
+            );
+            return builder.ToString();
+        }
+
+        /// <summary>
+        /// Renders the figlet text with position support
+        /// </summary>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
+        /// <param name="Left">Column number in console</param>
+        /// <param name="Top">Row number in console</param>
+        /// <param name="Return">Whether or not to return to old position</param>
+        /// <param name="FigletFont">Figlet font to use in the text.</param>
+        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
+        /// <param name="BackgroundColor">A background color that will be changed to.</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static string RenderFigletWhere(string Text, int Left, int Top, bool Return, FigletizeFont FigletFont, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
+        {
+            Text = FigletTools.RenderFiglet(Text, FigletFont, Vars);
+            var builder = new StringBuilder();
+            builder.Append(
+                ForegroundColor.VTSequenceForeground +
+                BackgroundColor.VTSequenceBackground +
+                DriverHandler.CurrentConsoleDriverLocal.RenderWherePlain(Text, Left, Top, Return, Vars) +
+                KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground +
+                KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground
+            );
             return builder.ToString();
         }
 

@@ -371,6 +371,12 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                         line++;
                     }
                 }
+
+                // Write the resulting buffer
+                table.Append(
+                    KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground +
+                    KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground
+                );
                 return table.ToString();
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))

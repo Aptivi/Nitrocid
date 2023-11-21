@@ -46,6 +46,7 @@ namespace KS.ConsoleBase.Inputs.Styles
 
                 // Wait for an answer
                 Answer = Input.ReadLine();
+                KernelColorTools.SetConsoleColor(KernelColorType.NeutralText);
                 DebugWriter.WriteDebug(DebugLevel.I, "Answer: {0}", Answer);
 
                 return Answer;

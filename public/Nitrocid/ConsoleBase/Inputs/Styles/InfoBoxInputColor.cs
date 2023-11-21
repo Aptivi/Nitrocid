@@ -367,6 +367,10 @@ namespace KS.ConsoleBase.Inputs.Styles
                 int inputPosX = borderX + 4;
                 int inputPosY = borderY + maxHeight - 3;
                 int maxInputWidth = maxWidth - inputPosX * 2 + 4;
+                boxBuffer.Append(
+                    KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground +
+                    KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground
+                );
                 TextWriterColor.WritePlain(boxBuffer.ToString(), false);
                 boxBuffer.Clear();
 
@@ -493,6 +497,10 @@ namespace KS.ConsoleBase.Inputs.Styles
                 int inputPosX = borderX + 4;
                 int inputPosY = borderY + maxHeight - 3;
                 int maxInputWidth = maxWidth - inputPosX * 2 + 4;
+                boxBuffer.Append(
+                    KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground +
+                    KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground
+                );
                 TextWriterColor.WritePlain(boxBuffer.ToString(), false);
                 boxBuffer.Clear();
 
@@ -619,6 +627,10 @@ namespace KS.ConsoleBase.Inputs.Styles
                 int inputPosX = borderX + 4;
                 int inputPosY = borderY + maxHeight - 3;
                 int maxInputWidth = maxWidth - inputPosX * 2 + 4;
+                boxBuffer.Append(
+                    KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground +
+                    KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground
+                );
                 TextWriterColor.WritePlain(boxBuffer.ToString(), false);
                 boxBuffer.Clear();
 

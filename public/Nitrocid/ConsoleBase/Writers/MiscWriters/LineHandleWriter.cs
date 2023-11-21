@@ -336,6 +336,12 @@ namespace KS.ConsoleBase.Writers.MiscWriters
                 RepeatBlanks = 0;
             builder.AppendLine($"{color.VTSequenceForeground}  | {LineContent}");
             builder.AppendLine($"{color.VTSequenceForeground}  | {new string(' ', RepeatBlanks)}^");
+
+            // Write the resulting buffer
+            builder.Append(
+                KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground +
+                KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground
+            );
             return builder.ToString();
         }
 

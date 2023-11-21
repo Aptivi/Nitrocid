@@ -65,7 +65,9 @@ namespace KS.ConsoleBase.Writers.FancyWriters
             builder.Append(
                 ForegroundColor.VTSequenceForeground +
                 BackgroundColor.VTSequenceBackground +
-                FigletTools.RenderFiglet(Text, FigletFont, Vars)
+                FigletTools.RenderFiglet(Text, FigletFont, Vars) +
+                KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground +
+                KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground
             );
             return builder.ToString();
         }

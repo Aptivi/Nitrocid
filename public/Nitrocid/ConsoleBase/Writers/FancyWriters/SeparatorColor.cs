@@ -450,7 +450,9 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 separator.Append(
                     ForegroundColor.VTSequenceForeground +
                     BackgroundColor.VTSequenceBackground +
-                    new string('-', RepeatTimes)
+                    new string('-', RepeatTimes) +
+                    KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground +
+                    KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground
                 );
                 return separator.ToString();
             }

@@ -448,6 +448,12 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                         DriverHandler.CurrentConsoleDriverLocal.RenderWherePlain(sentence + "\n", consoleInfoX, top, Vars)
                     );
                 }
+
+                // Write the resulting buffer
+                centered.Append(
+                    KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground +
+                    KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground
+                );
                 return centered.ToString();
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
@@ -516,6 +522,12 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                         DriverHandler.CurrentConsoleDriverLocal.RenderWherePlain(sentence + "\n", consoleInfoX, top, Vars)
                     );
                 }
+
+                // Write the resulting buffer
+                centered.Append(
+                    KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground +
+                    KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground
+                );
                 return centered.ToString();
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))

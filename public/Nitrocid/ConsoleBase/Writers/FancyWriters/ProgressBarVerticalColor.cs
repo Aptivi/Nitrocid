@@ -487,7 +487,8 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                     borderBuilder.Append($"{CsiSequences.GenerateCsiCursorPosition(Left + 2, Top + MaximumHeight - i + 1)}");
                     borderBuilder.Append(' ');
                 }
-                borderBuilder.Append($"{KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground}");
+                borderBuilder.Append(KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground);
+                borderBuilder.Append(KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground);
 
                 // Render to the console
                 return borderBuilder.ToString();

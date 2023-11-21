@@ -422,8 +422,71 @@ namespace KS.ConsoleBase.Writers.FancyWriters
             try
             {
                 // StringBuilder to put out the final rendering text
-                border.Append(BoxFrameColor.RenderBoxFrame(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar));
-                border.Append(BoxColor.RenderBox(Left + 1, Top, InteriorWidth, InteriorHeight));
+                border.Append(
+                    BoxFrameColor.RenderBoxFrame(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar) +
+                    BoxColor.RenderBox(Left + 1, Top, InteriorWidth, InteriorHeight)
+                );
+            }
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+            {
+                DebugWriter.WriteDebugStackTrace(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+            }
+            return border.ToString();
+        }
+
+        /// <summary>
+        /// Renders the border plainly
+        /// </summary>
+        /// <param name="Left">Where to place the border horizontally? Please note that this value comes from the upper left corner, which is an exterior position.</param>
+        /// <param name="Top">Where to place the border vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
+        /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
+        /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
+        /// <param name="BorderColor">Border color</param>
+        /// <param name="BackgroundColor">Border background color</param>
+        public static string RenderBorder(int Left, int Top, int InteriorWidth, int InteriorHeight,
+                                          Color BorderColor, Color BackgroundColor) =>
+            RenderBorder(Left, Top, InteriorWidth, InteriorHeight,
+                             BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
+                             BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
+                             BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
+                             BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
+                             BorderColor, BackgroundColor);
+
+        /// <summary>
+        /// Renders the border plainly
+        /// </summary>
+        /// <param name="Left">Where to place the border horizontally? Please note that this value comes from the upper left corner, which is an exterior position.</param>
+        /// <param name="Top">Where to place the border vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
+        /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
+        /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
+        /// <param name="UpperLeftCornerChar">Upper left corner character for border</param>
+        /// <param name="LowerLeftCornerChar">Lower left corner character for border</param>
+        /// <param name="UpperRightCornerChar">Upper right corner character for border</param>
+        /// <param name="LowerRightCornerChar">Lower right corner character for border</param>
+        /// <param name="UpperFrameChar">Upper frame character for border</param>
+        /// <param name="LowerFrameChar">Lower frame character for border</param>
+        /// <param name="LeftFrameChar">Left frame character for border</param>
+        /// <param name="RightFrameChar">Right frame character for border</param>
+        /// <param name="BorderColor">Border color</param>
+        /// <param name="BackgroundColor">Border background color</param>
+        public static string RenderBorder(int Left, int Top, int InteriorWidth, int InteriorHeight,
+                                               char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
+                                               char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
+                                               Color BorderColor, Color BackgroundColor)
+        {
+            StringBuilder border = new();
+            try
+            {
+                // StringBuilder to put out the final rendering text
+                border.Append(
+                    BorderColor.VTSequenceForeground +
+                    BackgroundColor.VTSequenceBackground +
+                    BoxFrameColor.RenderBoxFrame(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar) +
+                    BoxColor.RenderBox(Left + 1, Top, InteriorWidth, InteriorHeight) +
+                    KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground +
+                    KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground
+                );
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {

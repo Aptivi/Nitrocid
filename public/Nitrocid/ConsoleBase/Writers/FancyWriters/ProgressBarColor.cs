@@ -628,6 +628,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 progBuilder.Append(CsiSequences.GenerateCsiCursorPosition(Left + 1 + times + 1, Top + 2) + new string(' ', ConsoleWrapper.WindowWidth - FinalWidthOffset - times));
                 progBuilder.Append(ProgressColor.VTSequenceBackground);
                 progBuilder.Append(CsiSequences.GenerateCsiCursorPosition(Left + 2, Top + 2) + new string(' ', times));
+                progBuilder.Append(KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground);
                 progBuilder.Append(KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground);
                 return progBuilder.ToString();
             }

@@ -564,6 +564,10 @@ namespace KS.ConsoleBase.Inputs.Styles
                 int progressPosX = borderX + 4;
                 int progressPosY = borderY + maxHeight - 3;
                 int maxProgressWidth = maxWidth - 4;
+                boxBuffer.Append(
+                    KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground +
+                    KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground
+                );
                 TextWriterColor.WritePlain(boxBuffer.ToString(), false);
                 ProgressBarColor.WriteProgress(progress, progressPosX, progressPosY, progressPosX * 2 + 2, InfoBoxProgressColor, InfoBoxProgressColor, BackgroundColor);
                 boxBuffer.Clear();
@@ -765,6 +769,10 @@ namespace KS.ConsoleBase.Inputs.Styles
                 int progressPosX = borderX + 4;
                 int progressPosY = borderY + maxHeight - 3;
                 int maxProgressWidth = maxWidth - 4;
+                boxBuffer.Append(
+                    KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground +
+                    KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground
+                );
                 TextWriterColor.WritePlain(boxBuffer.ToString(), false);
                 ProgressBarColor.WriteProgress(progress, progressPosX, progressPosY, progressPosX * 2 + 2, InfoBoxProgressColor, InfoBoxProgressColor, BackgroundColor);
                 boxBuffer.Clear();
@@ -880,6 +888,10 @@ namespace KS.ConsoleBase.Inputs.Styles
                 int progressPosX = borderX + 4;
                 int progressPosY = borderY + maxHeight - 3;
                 int maxProgressWidth = maxWidth - 4;
+                boxBuffer.Append(
+                    KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground +
+                    KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground
+                );
                 TextWriterColor.WritePlain(boxBuffer.ToString(), false);
                 ProgressBarColor.WriteProgress(progress, progressPosX, progressPosY, progressPosX * 2 + 2, InfoBoxProgressColor, InfoBoxProgressColor, BackgroundColor);
                 boxBuffer.Clear();

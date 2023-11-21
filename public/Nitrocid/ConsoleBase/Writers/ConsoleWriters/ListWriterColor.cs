@@ -263,16 +263,21 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
                         Values.Add(Value);
                     string valuesString = string.Join(", ", Values);
                     listBuilder.AppendLine(
-                        $"{ListKeyColor.VTSequenceForeground}- {ListEntry}: " +
-                        $"{ListValueColor.VTSequenceForeground}{valuesString}"
+                        $"{ListKeyColor.VTSequenceForeground}" +
+                        $"- {ListEntry}: " +
+                        $"{ListValueColor.VTSequenceForeground}" +
+                        $"{valuesString}"
                     );
                 }
                 else
                     listBuilder.AppendLine(
-                        $"{ListKeyColor.VTSequenceForeground}- {ListEntry}: " +
-                        $"{ListValueColor.VTSequenceForeground}{value}"
+                        $"{ListKeyColor.VTSequenceForeground}" +
+                        $"- {ListEntry}: " +
+                        $"{ListValueColor.VTSequenceForeground}" +
+                        $"{value}"
                     );
             }
+            listBuilder.Append(KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground);
             return listBuilder.ToString();
         }
         #endregion
@@ -505,17 +510,22 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
                         Values.Add(Value);
                     string valuesString = string.Join(", ", Values);
                     listBuilder.AppendLine(
-                        $"{ListKeyColor.VTSequenceForeground}- {EntryNumber}: " +
-                        $"{ListValueColor.VTSequenceForeground}{valuesString}"
+                        $"{ListKeyColor.VTSequenceForeground}" +
+                        $"- {EntryNumber}: " +
+                        $"{ListValueColor.VTSequenceForeground}" +
+                        $"{valuesString}"
                     );
                 }
                 else
                     listBuilder.AppendLine(
-                        $"{ListKeyColor.VTSequenceForeground}- {EntryNumber}: " +
-                        $"{ListValueColor.VTSequenceForeground}{ListEntry}"
+                        $"{ListKeyColor.VTSequenceForeground}" +
+                        $"- {EntryNumber}: " +
+                        $"{ListValueColor.VTSequenceForeground}" +
+                        $"{ListEntry}"
                     );
                 EntryNumber += 1;
             }
+            listBuilder.Append(KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground);
             return listBuilder.ToString();
         }
         #endregion
