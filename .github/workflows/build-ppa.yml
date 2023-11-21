@@ -29,6 +29,7 @@ jobs:
           sudo sed -i 's/jammy/noble/g' /etc/apt/sources.list
           sudo sed -i 's/jammy/noble/g' /etc/apt/sources.list.d/*
           sudo apt update
+          sudo apt dist-upgrade
           sudo apt install curl locales-all cli-common-dev libunwind8-dev libcurl4-openssl-dev dotnet-sdk-8.0 devscripts debhelper-compat dput
         
       - name: Initialize offline package
