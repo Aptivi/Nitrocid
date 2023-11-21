@@ -51,8 +51,13 @@ debian-install:
 	rm debian/kernel-simulator/usr/lib/ks/ks-n debian/kernel-simulator/usr/lib/ks/ks-jl
 	# We only support running debian-install for linux-x64 at the moment.
 	find debian/kernel-simulator/usr/lib/ks/runtimes/ -mindepth 1 -maxdepth 1 -not -name "linux-x64" -type d -exec rm -rf {} \;
+	find debian/kernel-simulator/usr/lib/ks/Addons/Extras.BassBoom/runtimes/ -mindepth 1 -maxdepth 1 -not -name "linux-x64" -type d -exec rm -rf {} \;
+	find debian/kernel-simulator/usr/lib/ks/Addons/Extras.BassBoom.Windows/runtimes/ -mindepth 1 -maxdepth 1 -not -name "linux-x64" -type d -exec rm -rf {} \;
 	find debian/kernel-simulator/usr/lib/ks/Addons/Extras.GitShell/runtimes/ -mindepth 1 -maxdepth 1 -not -name "linux-x64" -type d -exec rm -rf {} \;
 	find debian/kernel-simulator/usr/lib/ks/Addons/Extras.Contacts/runtimes/ -mindepth 1 -maxdepth 1 -not -name "linux-x64" -type d -exec rm -rf {} \;
+	find debian/kernel-simulator/usr/lib/ks/Addons/Extras.MailShell/runtimes/ -mindepth 1 -maxdepth 1 -not -name "linux-x64" -type d -exec rm -rf {} \;
+	find debian/kernel-simulator/usr/lib/ks/Addons/Extras.SqlShell/runtimes/ -mindepth 1 -maxdepth 1 -not -name "linux-x64" -type d -exec rm -rf {} \;
+	find debian/kernel-simulator/usr/lib/ks/Addons/Extras.InxiNet/runtimes/ -mindepth 1 -maxdepth 1 -not -name "linux-x64" -type d -exec rm -rf {} \;
 
 clean:
 	rm -rf $(OUTPUTS)
