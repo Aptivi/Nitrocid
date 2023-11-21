@@ -243,6 +243,22 @@ namespace KS.Misc.Text
                 throw new KernelException(KernelExceptionType.Text, Translate.DoTranslation("The target may not be null"));
 
             return target
+                .Replace($"{Convert.ToChar(13)}{Convert.ToChar(10)}", $"{Convert.ToChar(10)}")
+                .Replace($"{Convert.ToChar(13)}", $"{Convert.ToChar(10)}")
+                .Split(Convert.ToChar(10));
+        }
+
+        /// <summary>
+        /// Makes a string array with new line as delimiter (the old way)
+        /// </summary>
+        /// <param name="target">Target string</param>
+        /// <returns>List of words that are separated by the new lines</returns>
+        public static string[] SplitNewLinesOld(this string target)
+        {
+            if (target is null)
+                throw new KernelException(KernelExceptionType.Text, Translate.DoTranslation("The target may not be null"));
+
+            return target
                 .Replace(Convert.ToChar(13).ToString(), "")
                 .Split(Convert.ToChar(10));
         }

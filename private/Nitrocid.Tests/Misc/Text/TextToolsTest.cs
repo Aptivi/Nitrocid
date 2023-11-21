@@ -229,6 +229,126 @@ namespace Nitrocid.Tests.Misc.Text
         }
 
         /// <summary>
+        /// Tests splitting a string with new lines (vbCr)
+        /// </summary>
+        [Test]
+        [Description("Querying")]
+        public void TestSplitNewLinesCr()
+        {
+            string TargetString = "First line\rSecond line\rThird line";
+            var TargetArray = TargetString.SplitNewLines();
+            TargetArray.Length.ShouldBe(3);
+        }
+
+        /// <summary>
+        /// Tests splitting a string with new lines (vbCrLf + vbCr)
+        /// </summary>
+        [Test]
+        [Description("Querying")]
+        public void TestSplitNewLinesCrLfCr()
+        {
+            string TargetString = "First line\r\n\rSecond line\r\n\rThird line";
+            var TargetArray = TargetString.SplitNewLines();
+            TargetArray.Length.ShouldBe(5);
+        }
+
+        /// <summary>
+        /// Tests splitting a string with new lines (vbCrLf + vbLf)
+        /// </summary>
+        [Test]
+        [Description("Querying")]
+        public void TestSplitNewLinesCrLfLf()
+        {
+            string TargetString = "First line\r\n\nSecond line\r\n\nThird line";
+            var TargetArray = TargetString.SplitNewLines();
+            TargetArray.Length.ShouldBe(5);
+        }
+
+        /// <summary>
+        /// Tests splitting a string with new lines (vbCrLf + vbCrLf)
+        /// </summary>
+        [Test]
+        [Description("Querying")]
+        public void TestSplitNewLinesCrLfCrLf()
+        {
+            string TargetString = "First line\r\n\r\nSecond line\r\n\r\nThird line";
+            var TargetArray = TargetString.SplitNewLines();
+            TargetArray.Length.ShouldBe(5);
+        }
+
+        /// <summary>
+        /// Tests splitting a string with new lines (vbCrLf)
+        /// </summary>
+        [Test]
+        [Description("Querying")]
+        public void TestSplitNewLinesOldCrLf()
+        {
+            string TargetString = "First line\r\nSecond line\r\nThird line";
+            var TargetArray = TargetString.SplitNewLinesOld();
+            TargetArray.Length.ShouldBe(3);
+        }
+
+        /// <summary>
+        /// Tests splitting a string with new lines (vbLf)
+        /// </summary>
+        [Test]
+        [Description("Querying")]
+        public void TestSplitNewLinesOldLf()
+        {
+            string TargetString = "First line\nSecond line\nThird line";
+            var TargetArray = TargetString.SplitNewLinesOld();
+            TargetArray.Length.ShouldBe(3);
+        }
+
+        /// <summary>
+        /// Tests splitting a string with new lines (vbCr)
+        /// </summary>
+        [Test]
+        [Description("Querying")]
+        public void TestSplitNewLinesOldCr()
+        {
+            string TargetString = "First line\rSecond line\rThird line";
+            var TargetArray = TargetString.SplitNewLinesOld();
+            TargetArray.Length.ShouldNotBe(3);
+        }
+
+        /// <summary>
+        /// Tests splitting a string with new lines (vbCrLf + vbCr)
+        /// </summary>
+        [Test]
+        [Description("Querying")]
+        public void TestSplitNewLinesOldCrLfCr()
+        {
+            string TargetString = "First line\r\n\rSecond line\r\n\rThird line";
+            var TargetArray = TargetString.SplitNewLinesOld();
+            TargetArray.Length.ShouldNotBe(5);
+        }
+
+        /// <summary>
+        /// Tests splitting a string with new lines (vbCrLf + vbLf)
+        /// </summary>
+        [Test]
+        [Description("Querying")]
+        public void TestSplitNewLinesOldCrLfLf()
+        {
+            string TargetString = "First line\r\n\nSecond line\r\n\nThird line";
+            var TargetArray = TargetString.SplitNewLinesOld();
+            TargetArray.Length.ShouldBe(5);
+        }
+
+        /// <summary>
+        /// Tests splitting a string with new lines (vbCrLf + vbCrLf)
+        /// </summary>
+        [Test]
+        [Description("Querying")]
+        public void TestSplitNewLinesOldCrLfCrLf()
+        {
+            string TargetString = "First line\r\n\r\nSecond line\r\n\r\nThird line";
+            var TargetArray = TargetString.SplitNewLinesOld();
+            TargetArray.Length.ShouldBe(5);
+        }
+
+        /// <summary>
         /// Tests splitting a string with double quotes enclosed
         /// </summary>
         [Test]
