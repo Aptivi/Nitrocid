@@ -195,6 +195,14 @@ namespace KS.Kernel.Configuration.Settings
                     int Answer = SelectionStyle.PromptSelection(RenderHeader(finalSection, Translate.DoTranslation(SectionDescription), Notes),
                         sections, altSections);
 
+                    // We need to check for exit early
+                    if (Answer == -1)
+                    {
+                        // Go Back...
+                        DebugWriter.WriteDebug(DebugLevel.I, "User requested exit. Returning...");
+                        break;
+                    }
+
                     // Check the answer
                     var allSections = sections.Union(altSections).ToArray();
                     string answerChoice = allSections[Answer - 1].ChoiceName;
@@ -206,7 +214,7 @@ namespace KS.Kernel.Configuration.Settings
                         DebugWriter.WriteDebug(DebugLevel.I, "Opening key {0} from section {1}...", finalAnswer, Section);
                         OpenKey(finalAnswer, SettingsSection, settingsType);
                     }
-                    else if (finalAnswer == MaxOptions + 1 | Answer == -1)
+                    else if (finalAnswer == MaxOptions + 1)
                     {
                         // Go Back...
                         DebugWriter.WriteDebug(DebugLevel.I, "User requested exit. Returning...");
