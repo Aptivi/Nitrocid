@@ -212,9 +212,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                                 currentSelection = selections.Length - 1;
                             break;
                         case ConsoleKey.Spacebar:
-                            if (selectedChoices.Contains(currentSelection))
-                                selectedChoices.Remove(currentSelection);
-                            else
+                            if (!selectedChoices.Remove(currentSelection))
                                 selectedChoices.Add(currentSelection);
                             break;
                         case ConsoleKey.Home:
@@ -604,9 +602,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                                 currentSelection = selections.Length - 1;
                             break;
                         case ConsoleKey.Spacebar:
-                            if (selectedChoices.Contains(currentSelection))
-                                selectedChoices.Remove(currentSelection);
-                            else
+                            if (!selectedChoices.Remove(currentSelection))
                                 selectedChoices.Add(currentSelection);
                             break;
                         case ConsoleKey.Home:
@@ -852,9 +848,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                                 currentSelection = selections.Length - 1;
                             break;
                         case ConsoleKey.Spacebar:
-                            if (selectedChoices.Contains(currentSelection))
-                                selectedChoices.Remove(currentSelection);
-                            else
+                            if (!selectedChoices.Remove(currentSelection))
                                 selectedChoices.Add(currentSelection);
                             break;
                         case ConsoleKey.Home:
@@ -1078,9 +1072,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                                 currentSelection = selections.Length - 1;
                             break;
                         case ConsoleKey.Spacebar:
-                            if (selectedChoices.Contains(currentSelection))
-                                selectedChoices.Remove(currentSelection);
-                            else
+                            if (!selectedChoices.Remove(currentSelection))
                                 selectedChoices.Add(currentSelection);
                             break;
                         case ConsoleKey.Home:

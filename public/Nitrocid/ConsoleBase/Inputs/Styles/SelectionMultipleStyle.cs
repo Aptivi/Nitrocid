@@ -317,9 +317,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                             HighlightedAnswer = endIndex == AllAnswers.Count - 1 ? endIndex + 1 : HighlightedAnswer;
                             break;
                         case ConsoleKey.Spacebar:
-                            if (SelectedAnswers.Contains(HighlightedAnswer))
-                                SelectedAnswers.Remove(HighlightedAnswer);
-                            else
+                            if (!SelectedAnswers.Remove(HighlightedAnswer))
                                 SelectedAnswers.Add(HighlightedAnswer);
                             break;
                         case ConsoleKey.Enter:
