@@ -59,11 +59,14 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
 
                     // Iterate through sentences
                     var buffered = new StringBuilder();
-                    foreach (string sentence in sentences)
+                    for (int idx = 0; idx < sentences.Length; idx++)
                     {
+                        string sentence = sentences[idx];
+
                         // Grab each VT sequence from the paragraph and fetch their indexes
                         var sequences = VtSequenceTools.MatchVTSequences(sentence);
                         int vtSeqIdx = 0;
+                        bool bail = false;
                         for (int i = 0; i < sentence.Length; i++)
                         {
                             char TextChar = sentence[i];
@@ -73,14 +76,40 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
                             {
                                 ConsoleWrapper.Write(buffered.ToString());
                                 buffered.Clear();
-                                if (Input.DetectKeypress().Key == ConsoleKey.Escape)
-                                    return;
+                                var key = Input.DetectKeypress().Key;
+                                switch (key)
+                                {
+                                    case ConsoleKey.Escape:
+                                        return;
+                                    case ConsoleKey.PageUp:
+                                        bail = true;
+                                        idx -= (ConsoleWrapper.WindowHeight * 2) - 1;
+                                        if (idx < 0)
+                                            idx = -1;
+                                        LinesMade = 0;
+                                        break;
+                                    case ConsoleKey.Home:
+                                        bail = true;
+                                        idx = -1;
+                                        break;
+                                    case ConsoleKey.End:
+                                        bail = true;
+                                        idx = sentences.Length - 1 - ConsoleWrapper.WindowHeight;
+                                        if (idx < 0)
+                                            idx = -1;
+                                        break;
+                                }
                                 LinesMade = 0;
                             }
+                            if (bail)
+                                break;
                             buffered.Append(ConsoleExtensions.BufferChar(sentence, sequences, ref i, ref vtSeqIdx, out _));
                         }
-                        buffered.AppendLine();
-                        LinesMade++;
+                        if (!bail && idx < sentences.Length - 1)
+                        {
+                            buffered.AppendLine();
+                            LinesMade++;
+                        }
                     }
                     ConsoleWrapper.Write(buffered.ToString());
                     buffered.Clear();
