@@ -17,7 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
 using KS.Kernel.Time.Timezones;
 using KS.Languages;
 using System;
@@ -72,9 +75,31 @@ namespace KS.Kernel.Time.Renderers
         /// <summary>
         /// Shows current time, date, and timezone.
         /// </summary>
-        public static void ShowCurrentTimes() =>
-            TextWriterColor.Write(Translate.DoTranslation("Today is") + " {0} @ {1} ({2}), {3} @ UTC",
-                TimeDateRenderers.Render(), TimeZones.GetCurrentZoneInfo().StandardName, TimeZoneRenderers.ShowTimeZoneUtcOffsetStringLocal(),
-                TimeDateRenderersUtc.RenderTimeUtc());
+        public static void ShowCurrentTimes()
+        {
+            try
+            {
+                TextWriterColor.Write
+                (
+                    Translate.DoTranslation("Today is") + " {0} @ {1} ({2}), {3} @ UTC",
+                    TimeDateRenderers.Render(), TimeZones.GetCurrentZoneInfo().StandardName, TimeZoneRenderers.ShowTimeZoneUtcOffsetStringLocal(),
+                    TimeDateRenderersUtc.RenderTimeUtc()
+                );
+            }
+            catch (KernelException kex) when (kex.ExceptionType == KernelExceptionType.TimeDate)
+            {
+                TextWriterColor.Write
+                (
+                    Translate.DoTranslation("Today is") + " {0}, {1} @ UTC",
+                    TimeDateRenderers.Render(), TimeDateRenderersUtc.RenderTimeUtc()
+                );
+            }
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, $"Can't show time of day with {nameof(ShowCurrentTimes)}(): {ex.Message}");
+                DebugWriter.WriteDebugStackTrace(ex);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Failed to show current times:") + $" {ex.Message}", KernelColorType.Error);
+            }
+        }
     }
 }
