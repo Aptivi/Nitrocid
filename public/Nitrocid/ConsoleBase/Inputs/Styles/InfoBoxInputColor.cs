@@ -367,10 +367,6 @@ namespace KS.ConsoleBase.Inputs.Styles
                 int inputPosX = borderX + 4;
                 int inputPosY = borderY + maxHeight - 3;
                 int maxInputWidth = maxWidth - inputPosX * 2 + 4;
-                boxBuffer.Append(
-                    KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground +
-                    KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground
-                );
                 TextWriterColor.WritePlain(boxBuffer.ToString(), false);
                 boxBuffer.Clear();
 
@@ -379,6 +375,10 @@ namespace KS.ConsoleBase.Inputs.Styles
                 ConsoleWrapper.SetCursorPosition(inputPosX + 1, inputPosY + 1);
 
                 // Wait until the user presses any key to close the box
+                TextWriterColor.WritePlain(
+                    $"{KernelColorTools.GetColor(InfoBoxColor).VTSequenceForeground}" +
+                    $"{KernelColorTools.GetColor(BackgroundColor).VTSequenceBackground}"
+                , false);
                 var settings = new TermReaderSettings()
                 {
                     RightMargin = inputPosX - 2,
@@ -393,6 +393,10 @@ namespace KS.ConsoleBase.Inputs.Styles
             }
             finally
             {
+                TextWriterColor.WritePlain(
+                    KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground +
+                    KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground
+                , false);
                 ConsoleWrapper.CursorVisible = initialCursorVisible;
             }
             return "";
@@ -497,10 +501,6 @@ namespace KS.ConsoleBase.Inputs.Styles
                 int inputPosX = borderX + 4;
                 int inputPosY = borderY + maxHeight - 3;
                 int maxInputWidth = maxWidth - inputPosX * 2 + 4;
-                boxBuffer.Append(
-                    KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground +
-                    KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground
-                );
                 TextWriterColor.WritePlain(boxBuffer.ToString(), false);
                 boxBuffer.Clear();
 
@@ -509,6 +509,10 @@ namespace KS.ConsoleBase.Inputs.Styles
                 ConsoleWrapper.SetCursorPosition(inputPosX + 1, inputPosY + 1);
 
                 // Wait until the user presses any key to close the box
+                TextWriterColor.WritePlain(
+                    $"{InfoBoxColor.VTSequenceForeground}" +
+                    $"{BackgroundColor.VTSequenceBackground}"
+                , false);
                 var settings = new TermReaderSettings()
                 {
                     RightMargin = inputPosX - 2,
@@ -523,6 +527,10 @@ namespace KS.ConsoleBase.Inputs.Styles
             }
             finally
             {
+                TextWriterColor.WritePlain(
+                    KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground +
+                    KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground
+                , false);
                 ConsoleWrapper.CursorVisible = initialCursorVisible;
             }
             return "";
@@ -627,10 +635,6 @@ namespace KS.ConsoleBase.Inputs.Styles
                 int inputPosX = borderX + 4;
                 int inputPosY = borderY + maxHeight - 3;
                 int maxInputWidth = maxWidth - inputPosX * 2 + 4;
-                boxBuffer.Append(
-                    KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground +
-                    KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground
-                );
                 TextWriterColor.WritePlain(boxBuffer.ToString(), false);
                 boxBuffer.Clear();
 
@@ -639,6 +643,10 @@ namespace KS.ConsoleBase.Inputs.Styles
                 ConsoleWrapper.SetCursorPosition(inputPosX + 1, inputPosY + 1);
 
                 // Wait until the user presses any key to close the box
+                TextWriterColor.WritePlain(
+                    $"{new Color(InfoBoxColor).VTSequenceForeground}" +
+                    $"{new Color(BackgroundColor).VTSequenceBackground}"
+                , false);
                 var settings = new TermReaderSettings()
                 {
                     RightMargin = inputPosX - 2,
@@ -653,6 +661,10 @@ namespace KS.ConsoleBase.Inputs.Styles
             }
             finally
             {
+                TextWriterColor.WritePlain(
+                    KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground +
+                    KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground
+                , false);
                 ConsoleWrapper.CursorVisible = initialCursorVisible;
             }
             return "";
