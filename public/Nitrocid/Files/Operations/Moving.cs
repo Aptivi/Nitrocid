@@ -74,9 +74,54 @@ namespace KS.Files.Operations
         /// </summary>
         /// <param name="Source">Source directory</param>
         /// <param name="Destination">Target directory</param>
+        /// <returns>True if successful; False if unsuccessful</returns>
+        /// <exception cref="IOException"></exception>
+        public static bool TryMoveDirectory(string Source, string Destination)
+        {
+            try
+            {
+                MoveDirectory(Source, Destination);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to move {0} to {1}: {2}", Source, Destination, ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Moves the directory from source to destination
+        /// </summary>
+        /// <param name="Source">Source directory</param>
+        /// <param name="Destination">Target directory</param>
         /// <param name="ShowProgress">Whether or not to show what files are being moved</param>
         public static void MoveDirectory(string Source, string Destination, bool ShowProgress) =>
             DriverHandler.CurrentFilesystemDriverLocal.MoveDirectory(Source, Destination, ShowProgress);
+
+        /// <summary>
+        /// Moves the directory from source to destination
+        /// </summary>
+        /// <param name="Source">Source directory</param>
+        /// <param name="Destination">Target directory</param>
+        /// <param name="ShowProgress">Whether or not to show what files are being moved</param>
+        /// <returns>True if successful; False if unsuccessful</returns>
+        /// <exception cref="IOException"></exception>
+        public static bool TryMoveDirectory(string Source, string Destination, bool ShowProgress)
+        {
+            try
+            {
+                MoveDirectory(Source, Destination, ShowProgress);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to move {0} to {1}: {2}", Source, Destination, ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
+            }
+            return false;
+        }
 
         /// <summary>
         /// Moves the file from source to destination
@@ -85,6 +130,28 @@ namespace KS.Files.Operations
         /// <param name="Destination">Target directory</param>
         public static void MoveFile(string Source, string Destination) =>
             DriverHandler.CurrentFilesystemDriverLocal.MoveFile(Source, Destination);
+
+        /// <summary>
+        /// Moves the file from source to destination
+        /// </summary>
+        /// <param name="Source">Source file</param>
+        /// <param name="Destination">Target directory</param>
+        /// <returns>True if successful; False if unsuccessful</returns>
+        /// <exception cref="IOException"></exception>
+        public static bool TryMoveFile(string Source, string Destination)
+        {
+            try
+            {
+                MoveFile(Source, Destination);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to move {0} to {1}: {2}", Source, Destination, ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
+            }
+            return false;
+        }
 
     }
 }
