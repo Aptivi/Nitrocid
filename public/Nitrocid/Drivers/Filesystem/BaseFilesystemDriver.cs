@@ -247,6 +247,40 @@ namespace KS.Drivers.Filesystem
         }
 
         /// <inheritdoc/>
+        public virtual void CopyFile(string Source, string Destination)
+        {
+            FS.ThrowOnInvalidPath(Source);
+            FS.ThrowOnInvalidPath(Destination);
+            Source = FS.NeutralizePath(Source);
+            DebugWriter.WriteDebug(DebugLevel.I, "Source directory: {0}", Source);
+            Destination = FS.NeutralizePath(Destination);
+            DebugWriter.WriteDebug(DebugLevel.I, "Target directory: {0}", Destination);
+            string FileName = IOPath.GetFileName(Source);
+            DebugWriter.WriteDebug(DebugLevel.I, "Source file name: {0}", FileName);
+            if (Checking.FileExists(Source) & Checking.FolderExists(Destination))
+            {
+                DebugWriter.WriteDebug(DebugLevel.I, "Source is a file and destination is a directory");
+                File.Copy(Source, Destination + "/" + FileName, true);
+
+                // Raise event
+                EventsManager.FireEvent(EventType.FileCopied, Source, Destination + "/" + FileName);
+            }
+            else if (Checking.FileExists(Source))
+            {
+                DebugWriter.WriteDebug(DebugLevel.I, "Source is a file and destination is a file");
+                File.Copy(Source, Destination, true);
+
+                // Raise event
+                EventsManager.FireEvent(EventType.FileCopied, Source, Destination);
+            }
+            else
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, "Source or destination are invalid.");
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("The source is either not found or isn't a file."));
+            }
+        }
+
+        /// <inheritdoc/>
         public virtual void CopyFileOrDir(string Source, string Destination)
         {
             FS.ThrowOnInvalidPath(Source);
@@ -1161,6 +1195,40 @@ namespace KS.Drivers.Filesystem
 
                 // Source subdirectories are removed after moving
                 Removing.RemoveDirectory(SourceDirectory.FullName);
+            }
+        }
+
+        /// <inheritdoc/>
+        public virtual void MoveFile(string Source, string Destination)
+        {
+            FS.ThrowOnInvalidPath(Source);
+            FS.ThrowOnInvalidPath(Destination);
+            Source = FS.NeutralizePath(Source);
+            DebugWriter.WriteDebug(DebugLevel.I, "Source directory: {0}", Source);
+            Destination = FS.NeutralizePath(Destination);
+            DebugWriter.WriteDebug(DebugLevel.I, "Target directory: {0}", Destination);
+            string FileName = IOPath.GetFileName(Source);
+            DebugWriter.WriteDebug(DebugLevel.I, "Source file name: {0}", FileName);
+            if (Checking.FileExists(Source) & Checking.FolderExists(Destination))
+            {
+                DebugWriter.WriteDebug(DebugLevel.I, "Source is a file and destination is a directory");
+                File.Move(Source, Destination + "/" + FileName);
+
+                // Raise event
+                EventsManager.FireEvent(EventType.FileMoved, Source, Destination + "/" + FileName);
+            }
+            else if (Checking.FileExists(Source))
+            {
+                DebugWriter.WriteDebug(DebugLevel.I, "Source is a file and destination is a file");
+                File.Move(Source, Destination);
+
+                // Raise event
+                EventsManager.FireEvent(EventType.FileMoved, Source, Destination);
+            }
+            else
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, "Source or destination are invalid.");
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("The source is either not found or isn't a file."));
             }
         }
 

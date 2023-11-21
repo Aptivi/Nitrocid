@@ -78,5 +78,13 @@ namespace KS.Files.Operations
         public static void MoveDirectory(string Source, string Destination, bool ShowProgress) =>
             DriverHandler.CurrentFilesystemDriverLocal.MoveDirectory(Source, Destination, ShowProgress);
 
+        /// <summary>
+        /// Moves the file from source to destination
+        /// </summary>
+        /// <param name="Source">Source file</param>
+        /// <param name="Destination">Target directory</param>
+        public static void MoveFile(string Source, string Destination) =>
+            DriverHandler.CurrentFilesystemDriverLocal.MoveFile(Source, Destination);
+
     }
 }

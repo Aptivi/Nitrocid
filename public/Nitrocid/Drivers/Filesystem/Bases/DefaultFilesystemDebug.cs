@@ -105,6 +105,13 @@ namespace KS.Drivers.Filesystem.Bases
             DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(CopyDirectory)}({Source}, {Destination}, {ShowProgress}) exit");
         }
 
+        public override void CopyFile(string Source, string Destination)
+        {
+            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(CopyFile)}({Source}, {Destination}) entry");
+            base.CopyFile(Source, Destination);
+            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(CopyFile)}({Source}, {Destination}) exit");
+        }
+
         public override void CopyFileOrDir(string Source, string Destination)
         {
             DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(CopyFileOrDir)}({Source}, {Destination}) entry");
@@ -348,6 +355,13 @@ namespace KS.Drivers.Filesystem.Bases
             DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(MoveDirectory)}({Source}, {Destination}, {ShowProgress}) entry");
             base.MoveDirectory(Source, Destination, ShowProgress);
             DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(MoveDirectory)}({Source}, {Destination}, {ShowProgress}) exit");
+        }
+
+        public override void MoveFile(string Source, string Destination)
+        {
+            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(MoveFile)}({Source}, {Destination}) entry");
+            base.MoveFile(Source, Destination);
+            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(MoveFile)}({Source}, {Destination}) exit");
         }
 
         public override void MoveFileOrDir(string Source, string Destination)

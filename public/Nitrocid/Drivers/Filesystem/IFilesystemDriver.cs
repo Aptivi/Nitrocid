@@ -147,6 +147,13 @@ namespace KS.Drivers.Filesystem
         void CopyDirectory(string Source, string Destination, bool ShowProgress);
 
         /// <summary>
+        /// Copies the file from source to destination
+        /// </summary>
+        /// <param name="Source">Source file</param>
+        /// <param name="Destination">Target directory</param>
+        void CopyFile(string Source, string Destination);
+
+        /// <summary>
         /// Makes a directory
         /// </summary>
         /// <param name="NewDirectory">New directory</param>
@@ -201,6 +208,13 @@ namespace KS.Drivers.Filesystem
         /// <param name="Destination">Target directory</param>
         /// <param name="ShowProgress">Whether or not to show what files are being moved</param>
         void MoveDirectory(string Source, string Destination, bool ShowProgress);
+
+        /// <summary>
+        /// Moves the file from source to destination
+        /// </summary>
+        /// <param name="Source">Source file</param>
+        /// <param name="Destination">Target directory</param>
+        void MoveFile(string Source, string Destination);
 
         /// <summary>
         /// Removes a directory

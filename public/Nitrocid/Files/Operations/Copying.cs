@@ -78,5 +78,13 @@ namespace KS.Files.Operations
         public static void CopyDirectory(string Source, string Destination, bool ShowProgress) =>
             DriverHandler.CurrentFilesystemDriverLocal.CopyDirectory(Source, Destination, ShowProgress);
 
+        /// <summary>
+        /// Copies the file from source to destination
+        /// </summary>
+        /// <param name="Source">Source file</param>
+        /// <param name="Destination">Target directory</param>
+        public static void CopyFile(string Source, string Destination) =>
+            DriverHandler.CurrentFilesystemDriverLocal.CopyFile(Source, Destination);
+
     }
 }
