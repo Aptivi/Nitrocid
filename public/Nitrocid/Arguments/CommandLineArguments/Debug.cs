@@ -37,6 +37,8 @@ namespace KS.Arguments.CommandLineArguments
                 "OS: {2}",
                 KernelMain.VersionFullStr, KernelMain.ApiVersion.ToString(), Environment.OSVersion.ToString()
             );
+            if (KernelPlatform.IsOnUnixMusl())
+                DebugWriter.WriteDebug(DebugLevel.I, "Running on musl");
         }
     }
 }

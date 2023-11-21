@@ -46,6 +46,25 @@ namespace KS.Kernel
             Environment.OSVersion.Platform == PlatformID.Unix;
 
         /// <summary>
+        /// Is this system a Unix system that contains musl libc?
+        /// </summary>
+        /// <returns>True if running on Unix systems that use musl libc. Otherwise, false.</returns>
+        public static bool IsOnUnixMusl()
+        {
+            try
+            {
+                if (!IsOnUnix() || IsOnMacOS() || IsOnWindows())
+                    return false;
+                var gnuRel = gnuGetLibcVersion();
+                return false;
+            }
+            catch
+            {
+                return true;
+            }
+        }
+
+        /// <summary>
         /// Is this system a macOS system?
         /// </summary>
         /// <returns>True if running on macOS (MacBook, iMac, etc.). Otherwise, false.</returns>
@@ -116,6 +135,11 @@ namespace KS.Kernel
         /// <returns>Returns a runtime identifier (win-x64 for example).</returns>
         public static string GetCurrentGenericRid() =>
             $"{(IsOnWindows() ? "win" : IsOnMacOS() ? "osx" : IsOnUnix() ? "linux" : "freebsd")}-{RuntimeInformation.OSArchitecture.ToString().ToLower()}";
+
+        #region Interop
+        [DllImport("libc", EntryPoint = "gnu_get_libc_version")]
+        private static extern IntPtr gnuGetLibcVersion();
+        #endregion
 
     }
 }
