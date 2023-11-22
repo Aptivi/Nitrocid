@@ -215,7 +215,7 @@ namespace KS.Misc.Notifications
                             if (NewNotification.NotificationBorderColor != Color.Empty)
                                 NotifyBorderColor = NewNotification.NotificationBorderColor;
 
-                            // Write notification to console
+                            // Determine positions
                             int notifLeftAgnostic = ConsoleWrapper.WindowWidth - 42;
                             int notifTopAgnostic = 1;
                             int notifLeft = useSimplified ? ConsoleWrapper.WindowWidth - 3 : notifLeftAgnostic;
@@ -224,20 +224,7 @@ namespace KS.Misc.Notifications
                             int notifDescTop = notifTopAgnostic + 2;
                             int notifTipTop = notifTopAgnostic + 3;
                             int notifWipeTop = notifTopAgnostic + 4;
-                            string clear = ConsoleExtensions.GetClearLineToRightSequence();
-                            if (useSimplified)
-                            {
-                                // Simplified way
-                                DebugWriter.WriteDebug(DebugLevel.I, "Where to store: ({0}, {1})", notifLeft, notifTop);
-                                TextWriterWhereColor.WriteWhereColor(Title, notifLeft, notifTop, true, NotifyBorderColor);
-                            }
-                            else
-                            {
-                                // Normal way
-                                DebugWriter.WriteDebug(DebugLevel.I, "Where to store: ({0}, {1}), Title top: {2}, Desc top: {3}, Wipe top: {4}, Tip top: {5}", notifLeft, notifTop, notifTitleTop, notifDescTop, notifWipeTop, notifTipTop);
-                                TextWriterWhereColor.WriteWhereColor(Title + clear, notifLeft, notifTitleTop, true, NotifyTitleColor);
-                                TextWriterWhereColor.WriteWhereColor(Desc + clear, notifLeft, notifDescTop, true, NotifyDescColor);
-                            }
+                            int notifWidth = ConsoleWrapper.WindowWidth - 4 - notifLeftAgnostic;
 
                             // Optionally, draw a border
                             if (DrawBorderNotification && !useSimplified)
@@ -266,16 +253,22 @@ namespace KS.Misc.Notifications
                                 }
 
                                 // Just draw the border!
-                                TextWriterWhereColor.WriteWhereKernelColor(clear, notifLeftAgnostic - 1, notifTopAgnostic, true, KernelColorType.NeutralText);
-                                TextWriterWhereColor.WriteWhereKernelColor(clear, notifLeftAgnostic - 1, notifWipeTop, true, KernelColorType.NeutralText);
-                                TextWriterWhereColor.WriteWhereColor(CurrentNotifyUpperLeftCornerChar + new string(CurrentNotifyUpperFrameChar, 38) + CurrentNotifyUpperRightCornerChar, notifLeftAgnostic - 1, notifTopAgnostic, true, NotifyBorderColor);
-                                TextWriterWhereColor.WriteWhereColor(CurrentNotifyLeftFrameChar.ToString(), notifLeftAgnostic - 1, notifTitleTop, true, NotifyBorderColor);
-                                TextWriterWhereColor.WriteWhereColor(CurrentNotifyLeftFrameChar.ToString(), notifLeftAgnostic - 1, notifDescTop, true, NotifyBorderColor);
-                                TextWriterWhereColor.WriteWhereColor(CurrentNotifyLeftFrameChar.ToString(), notifLeftAgnostic - 1, notifTipTop, true, NotifyBorderColor);
-                                TextWriterWhereColor.WriteWhereColor(CurrentNotifyRightFrameChar.ToString(), ConsoleWrapper.WindowWidth - 4, notifTitleTop, true, NotifyBorderColor);
-                                TextWriterWhereColor.WriteWhereColor(CurrentNotifyRightFrameChar.ToString(), ConsoleWrapper.WindowWidth - 4, notifDescTop, true, NotifyBorderColor);
-                                TextWriterWhereColor.WriteWhereColor(CurrentNotifyRightFrameChar.ToString(), ConsoleWrapper.WindowWidth - 4, notifTipTop, true, NotifyBorderColor);
-                                TextWriterWhereColor.WriteWhereColor(CurrentNotifyLowerLeftCornerChar + new string(CurrentNotifyLowerFrameChar, 38) + CurrentNotifyLowerRightCornerChar, notifLeftAgnostic - 1, notifWipeTop, true, NotifyBorderColor);
+                                BorderColor.WriteBorder(notifLeftAgnostic - 1, notifTopAgnostic, notifWidth, 3, CurrentNotifyUpperLeftCornerChar, CurrentNotifyLowerLeftCornerChar, CurrentNotifyUpperRightCornerChar, CurrentNotifyLowerRightCornerChar, CurrentNotifyUpperFrameChar, CurrentNotifyLowerFrameChar, CurrentNotifyLeftFrameChar, CurrentNotifyRightFrameChar, NotifyBorderColor);
+                            }
+
+                            // Write notification to console
+                            if (useSimplified)
+                            {
+                                // Simplified way
+                                DebugWriter.WriteDebug(DebugLevel.I, "Where to store: ({0}, {1})", notifLeft, notifTop);
+                                TextWriterWhereColor.WriteWhereColor(Title, notifLeft, notifTop, true, NotifyBorderColor);
+                            }
+                            else
+                            {
+                                // Normal way
+                                DebugWriter.WriteDebug(DebugLevel.I, "Where to store: ({0}, {1}), Title top: {2}, Desc top: {3}, Wipe top: {4}, Tip top: {5}", notifLeft, notifTop, notifTitleTop, notifDescTop, notifWipeTop, notifTipTop);
+                                TextWriterWhereColor.WriteWhereColor(Title + new string(' ', notifWidth - Title.Length), notifLeft, notifTitleTop, true, NotifyTitleColor);
+                                TextWriterWhereColor.WriteWhereColor(Desc + new string(' ', notifWidth - Desc.Length), notifLeft, notifDescTop, true, NotifyDescColor);
                             }
 
                             // Beep according to priority
@@ -323,6 +316,7 @@ namespace KS.Misc.Notifications
                                 TextWriterWhereColor.WriteWhere(" ", notifLeft, notifTop, true);
                             else
                             {
+                                string clear = ConsoleExtensions.GetClearLineToRightSequence();
                                 if (DrawBorderNotification)
                                 {
                                     TextWriterWhereColor.WriteWhereKernelColor(clear, width, notifTopAgnostic, true, KernelColorType.NeutralText);
