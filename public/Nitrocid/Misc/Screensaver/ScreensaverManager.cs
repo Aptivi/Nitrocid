@@ -40,6 +40,7 @@ using KS.Drivers.RNG;
 using Terminaux.Reader;
 using KS.Kernel.Power;
 using KS.ConsoleBase.Buffered;
+using KS.Misc.Splash;
 
 namespace KS.Misc.Screensaver
 {
@@ -388,6 +389,7 @@ namespace KS.Misc.Screensaver
                 if (noLock)
                     return;
                 var termDriver = DriverHandler.GetFallbackDriver<IConsoleDriver>();
+                SpinWait.SpinUntil(() => SplashReport.KernelBooted);
                 while (!PowerManager.KernelShutdown && !noLock)
                 {
                     int OldCursorLeft = termDriver.CursorLeft;
