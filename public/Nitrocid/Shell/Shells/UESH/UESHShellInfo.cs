@@ -809,7 +809,11 @@ namespace KS.Shell.Shells.UESH
             { "ifm",
                 new CommandInfo("ifm", /* Localizable */ "Interactive system host file manager",
                     [
-                        new CommandArgumentInfo()
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(false, "firstPanePath"),
+                            new CommandArgumentPart(false, "secondPanePath"),
+                        })
                     ], new IfmCommand())
             },
             

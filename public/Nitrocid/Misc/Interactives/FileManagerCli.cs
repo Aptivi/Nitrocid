@@ -53,8 +53,8 @@ namespace KS.Misc.Interactives
     /// </summary>
     public class FileManagerCli : BaseInteractiveTui, IInteractiveTui
     {
-        private static string firstPanePath = PathsManagement.HomePath;
-        private static string secondPanePath = PathsManagement.HomePath;
+        internal string firstPanePath = PathsManagement.HomePath;
+        internal string secondPanePath = PathsManagement.HomePath;
         private static bool refreshFirstPaneListing = true;
         private static bool refreshSecondPaneListing = true;
         private static List<FileSystemEntry> firstPaneListing = [];
@@ -214,13 +214,13 @@ namespace KS.Misc.Interactives
                     // We're dealing with a folder. Open it in the selected pane.
                     if (CurrentPane == 2)
                     {
-                        secondPanePath = FilesystemTools.NeutralizePath(currentFileSystemEntry.FilePath + "/");
+                        ((FileManagerCli)Instance).secondPanePath = FilesystemTools.NeutralizePath(currentFileSystemEntry.FilePath + "/");
                         SecondPaneCurrentSelection = 1;
                         refreshSecondPaneListing = true;
                     }
                     else
                     {
-                        firstPanePath = FilesystemTools.NeutralizePath(currentFileSystemEntry.FilePath + "/");
+                        ((FileManagerCli)Instance).firstPanePath = FilesystemTools.NeutralizePath(currentFileSystemEntry.FilePath + "/");
                         FirstPaneCurrentSelection = 1;
                         refreshFirstPaneListing = true;
                     }
@@ -245,13 +245,13 @@ namespace KS.Misc.Interactives
         {
             if (CurrentPane == 2)
             {
-                secondPanePath = FilesystemTools.NeutralizePath(secondPanePath + "/..");
+                ((FileManagerCli)Instance).secondPanePath = FilesystemTools.NeutralizePath(((FileManagerCli)Instance).secondPanePath + "/..");
                 SecondPaneCurrentSelection = 1;
                 refreshSecondPaneListing = true;
             }
             else
             {
-                firstPanePath = FilesystemTools.NeutralizePath(firstPanePath + "/..");
+                ((FileManagerCli)Instance).firstPanePath = FilesystemTools.NeutralizePath(((FileManagerCli)Instance).firstPanePath + "/..");
                 FirstPaneCurrentSelection = 1;
                 refreshFirstPaneListing = true;
             }
@@ -345,7 +345,7 @@ namespace KS.Misc.Interactives
 
             try
             {
-                string dest = (CurrentPane == 2 ? firstPanePath : secondPanePath) + "/";
+                string dest = (CurrentPane == 2 ? ((FileManagerCli)Instance).firstPanePath : ((FileManagerCli)Instance).secondPanePath) + "/";
                 DebugWriter.WriteDebug(DebugLevel.I, $"Destination is {dest}");
                 DebugCheck.AssertNull(dest, "destination is null!");
                 DebugCheck.Assert(!string.IsNullOrWhiteSpace(dest), "destination is empty or whitespace!");
@@ -372,7 +372,7 @@ namespace KS.Misc.Interactives
 
             try
             {
-                string dest = (CurrentPane == 2 ? firstPanePath : secondPanePath) + "/";
+                string dest = (CurrentPane == 2 ? ((FileManagerCli)Instance).firstPanePath : ((FileManagerCli)Instance).secondPanePath) + "/";
                 DebugWriter.WriteDebug(DebugLevel.I, $"Destination is {dest}");
                 DebugCheck.AssertNull(dest, "destination is null!");
                 DebugCheck.Assert(!string.IsNullOrWhiteSpace(dest), "destination is empty or whitespace!");
@@ -416,19 +416,19 @@ namespace KS.Misc.Interactives
         {
             // Now, render the search box
             string path = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a path or a full path to a local folder."), BoxForegroundColor, BoxBackgroundColor);
-            path = FilesystemTools.NeutralizePath(path, CurrentPane == 2 ? secondPanePath : firstPanePath);
+            path = FilesystemTools.NeutralizePath(path, CurrentPane == 2 ? ((FileManagerCli)Instance).secondPanePath : ((FileManagerCli)Instance).firstPanePath);
             if (Checking.FolderExists(path))
             {
                 if (CurrentPane == 2)
                 {
                     SecondPaneCurrentSelection = 1;
-                    secondPanePath = path;
+                    ((FileManagerCli)Instance).secondPanePath = path;
                     refreshSecondPaneListing = true;
                 }
                 else
                 {
                     FirstPaneCurrentSelection = 1;
-                    firstPanePath = path;
+                    ((FileManagerCli)Instance).firstPanePath = path;
                     refreshFirstPaneListing = true;
                 }
             }
@@ -445,7 +445,7 @@ namespace KS.Misc.Interactives
             try
             {
                 string path = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a path or a full path to a destination folder to copy the selected file to."), BoxForegroundColor, BoxBackgroundColor);
-                path = FilesystemTools.NeutralizePath(path, CurrentPane == 2 ? secondPanePath : firstPanePath) + "/";
+                path = FilesystemTools.NeutralizePath(path, CurrentPane == 2 ? ((FileManagerCli)Instance).secondPanePath : ((FileManagerCli)Instance).firstPanePath) + "/";
                 DebugWriter.WriteDebug(DebugLevel.I, $"Destination is {path}");
                 DebugCheck.AssertNull(path, "destination is null!");
                 DebugCheck.Assert(!string.IsNullOrWhiteSpace(path), "destination is empty or whitespace!");
@@ -483,7 +483,7 @@ namespace KS.Misc.Interactives
             try
             {
                 string path = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a path or a full path to a destination folder to move the selected file to."), BoxForegroundColor, BoxBackgroundColor);
-                path = FilesystemTools.NeutralizePath(path, CurrentPane == 2 ? secondPanePath : firstPanePath) + "/";
+                path = FilesystemTools.NeutralizePath(path, CurrentPane == 2 ? ((FileManagerCli)Instance).secondPanePath : ((FileManagerCli)Instance).firstPanePath) + "/";
                 DebugWriter.WriteDebug(DebugLevel.I, $"Destination is {path}");
                 DebugCheck.AssertNull(path, "destination is null!");
                 DebugCheck.Assert(!string.IsNullOrWhiteSpace(path), "destination is empty or whitespace!");
@@ -549,7 +549,7 @@ namespace KS.Misc.Interactives
         {
             // Now, render the search box
             string path = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a new directory name."), BoxForegroundColor, BoxBackgroundColor);
-            path = FilesystemTools.NeutralizePath(path, CurrentPane == 2 ? secondPanePath : firstPanePath);
+            path = FilesystemTools.NeutralizePath(path, CurrentPane == 2 ? ((FileManagerCli)Instance).secondPanePath : ((FileManagerCli)Instance).firstPanePath);
             if (!Checking.FolderExists(path))
             {
                 Making.TryMakeDirectory(path);

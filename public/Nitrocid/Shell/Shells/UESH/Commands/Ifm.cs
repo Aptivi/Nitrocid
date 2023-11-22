@@ -18,6 +18,8 @@
 //
 
 using KS.ConsoleBase.Interactive;
+using KS.Files;
+using KS.Files.Paths;
 using KS.Misc.Interactives;
 using KS.Shell.ShellBase.Commands;
 
@@ -34,7 +36,12 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            InteractiveTuiTools.OpenInteractiveTui(new FileManagerCli());
+            var tui = new FileManagerCli
+            {
+                firstPanePath = parameters.ArgumentsList.Length > 0 ? FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]) : PathsManagement.HomePath,
+                secondPanePath = parameters.ArgumentsList.Length > 1 ? FilesystemTools.NeutralizePath(parameters.ArgumentsList[1]) : PathsManagement.HomePath
+            };
+            InteractiveTuiTools.OpenInteractiveTui(tui);
             return 0;
         }
     }
