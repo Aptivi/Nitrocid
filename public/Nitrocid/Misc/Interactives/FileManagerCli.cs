@@ -55,8 +55,8 @@ namespace KS.Misc.Interactives
     {
         internal string firstPanePath = PathsManagement.HomePath;
         internal string secondPanePath = PathsManagement.HomePath;
-        private static bool refreshFirstPaneListing = true;
-        private static bool refreshSecondPaneListing = true;
+        internal static bool refreshFirstPaneListing = true;
+        internal static bool refreshSecondPaneListing = true;
         private static List<FileSystemEntry> firstPaneListing = [];
         private static List<FileSystemEntry> secondPaneListing = [];
 

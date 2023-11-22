@@ -41,6 +41,8 @@ namespace KS.Shell.Shells.UESH.Commands
                 firstPanePath = parameters.ArgumentsList.Length > 0 ? FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]) : PathsManagement.HomePath,
                 secondPanePath = parameters.ArgumentsList.Length > 1 ? FilesystemTools.NeutralizePath(parameters.ArgumentsList[1]) : PathsManagement.HomePath
             };
+            FileManagerCli.refreshFirstPaneListing = true;
+            FileManagerCli.refreshSecondPaneListing = true;
             InteractiveTuiTools.OpenInteractiveTui(tui);
             return 0;
         }
