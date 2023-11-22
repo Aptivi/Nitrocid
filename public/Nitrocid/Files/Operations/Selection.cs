@@ -18,6 +18,7 @@
 //
 
 using KS.ConsoleBase.Interactive;
+using KS.Files.Paths;
 using KS.Misc.Interactives;
 
 namespace KS.Files.Operations
@@ -31,9 +32,23 @@ namespace KS.Files.Operations
         /// Opens the file selector
         /// </summary>
         /// <returns>A selected file, or an empty string if not selected</returns>
-        public static string SelectFile()
+        public static string SelectFile() =>
+            SelectFile(PathsManagement.HomePath);
+
+        /// <summary>
+        /// Opens the file selector
+        /// </summary>
+        /// <param name="path">Target path to open</param>
+        /// <returns>A selected file, or an empty string if not selected</returns>
+        public static string SelectFile(string path)
         {
-            var selector = new FileSelectorCli();
+            var selector = new FileSelectorCli()
+            {
+                firstPanePath =
+                    string.IsNullOrEmpty(path) ?
+                    PathsManagement.HomePath :
+                    FilesystemTools.NeutralizePath(path)
+            };
             InteractiveTuiTools.OpenInteractiveTui(selector);
             string selected = FileSelectorCli.SelectedFile;
             return selected;
@@ -43,9 +58,23 @@ namespace KS.Files.Operations
         /// Opens the folder selector
         /// </summary>
         /// <returns>A selected folder, or an empty string if not selected</returns>
-        public static string SelectFolder()
+        public static string SelectFolder() =>
+            SelectFolder(PathsManagement.HomePath);
+
+        /// <summary>
+        /// Opens the folder selector
+        /// </summary>
+        /// <param name="path">Target path to open</param>
+        /// <returns>A selected folder, or an empty string if not selected</returns>
+        public static string SelectFolder(string path)
         {
-            var selector = new FolderSelectorCli();
+            var selector = new FolderSelectorCli()
+            {
+                firstPanePath =
+                    string.IsNullOrEmpty(path) ?
+                    PathsManagement.HomePath :
+                    FilesystemTools.NeutralizePath(path)
+            };
             InteractiveTuiTools.OpenInteractiveTui(selector);
             string selected = FolderSelectorCli.SelectedFolder;
             return selected;

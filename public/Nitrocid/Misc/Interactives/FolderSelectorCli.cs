@@ -53,7 +53,7 @@ namespace KS.Misc.Interactives
     public class FolderSelectorCli : BaseInteractiveTui, IInteractiveTui
     {
         internal string selectedFolder = "";
-        private static string firstPanePath = PathsManagement.HomePath;
+        internal string firstPanePath = PathsManagement.HomePath;
         private static bool refreshFirstPaneListing = true;
         private static List<FileSystemEntry> firstPaneListing = [];
 
@@ -185,7 +185,7 @@ namespace KS.Misc.Interactives
                 if (currentFileSystemEntry.Type == FileSystemEntryType.Directory)
                 {
                     // We're dealing with a folder. Open it in the selected pane.
-                    firstPanePath = FilesystemTools.NeutralizePath(currentFileSystemEntry.FilePath + "/");
+                    ((FolderSelectorCli)Instance).firstPanePath = FilesystemTools.NeutralizePath(currentFileSystemEntry.FilePath + "/");
                     FirstPaneCurrentSelection = 1;
                     refreshFirstPaneListing = true;
                 }
@@ -224,7 +224,7 @@ namespace KS.Misc.Interactives
 
         private static void GoUp()
         {
-            firstPanePath = FilesystemTools.NeutralizePath(firstPanePath + "/..");
+            ((FolderSelectorCli)Instance).firstPanePath = FilesystemTools.NeutralizePath(((FolderSelectorCli)Instance).firstPanePath + "/..");
             FirstPaneCurrentSelection = 1;
             refreshFirstPaneListing = true;
         }
@@ -333,11 +333,11 @@ namespace KS.Misc.Interactives
         {
             // Now, render the search box
             string path = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a path or a full path to a local folder."), BoxForegroundColor, BoxBackgroundColor);
-            path = FilesystemTools.NeutralizePath(path, firstPanePath);
+            path = FilesystemTools.NeutralizePath(path, ((FolderSelectorCli)Instance).firstPanePath);
             if (Checking.FolderExists(path))
             {
                 FirstPaneCurrentSelection = 1;
-                firstPanePath = path;
+                ((FolderSelectorCli)Instance).firstPanePath = path;
                 refreshFirstPaneListing = true;
             }
             else
@@ -353,7 +353,7 @@ namespace KS.Misc.Interactives
             try
             {
                 string path = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a path or a full path to a destination folder to copy the selected file to."), BoxForegroundColor, BoxBackgroundColor);
-                path = FilesystemTools.NeutralizePath(path, firstPanePath) + "/";
+                path = FilesystemTools.NeutralizePath(path, ((FolderSelectorCli)Instance).firstPanePath) + "/";
                 DebugWriter.WriteDebug(DebugLevel.I, $"Destination is {path}");
                 DebugCheck.AssertNull(path, "destination is null!");
                 DebugCheck.Assert(!string.IsNullOrWhiteSpace(path), "destination is empty or whitespace!");
@@ -388,7 +388,7 @@ namespace KS.Misc.Interactives
             try
             {
                 string path = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a path or a full path to a destination folder to move the selected file to."), BoxForegroundColor, BoxBackgroundColor);
-                path = FilesystemTools.NeutralizePath(path, firstPanePath) + "/";
+                path = FilesystemTools.NeutralizePath(path, ((FolderSelectorCli)Instance).firstPanePath) + "/";
                 DebugWriter.WriteDebug(DebugLevel.I, $"Destination is {path}");
                 DebugCheck.AssertNull(path, "destination is null!");
                 DebugCheck.Assert(!string.IsNullOrWhiteSpace(path), "destination is empty or whitespace!");
@@ -450,7 +450,7 @@ namespace KS.Misc.Interactives
         {
             // Now, render the search box
             string path = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a new directory name."), BoxForegroundColor, BoxBackgroundColor);
-            path = FilesystemTools.NeutralizePath(path, firstPanePath);
+            path = FilesystemTools.NeutralizePath(path, ((FolderSelectorCli)Instance).firstPanePath);
             if (!Checking.FolderExists(path))
             {
                 Making.TryMakeDirectory(path);
