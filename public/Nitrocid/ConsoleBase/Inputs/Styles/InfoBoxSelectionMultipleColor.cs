@@ -233,6 +233,8 @@ namespace KS.ConsoleBase.Inputs.Styles
                                 int currentPageMove = (currentSelection - 1) / selectionChoices;
                                 int startIndexMove = selectionChoices * currentPageMove;
                                 currentSelection = startIndexMove;
+                                if (currentSelection < 0)
+                                    currentSelection = 0;
                             }
                             break;
                         case ConsoleKey.PageDown:
@@ -240,6 +242,8 @@ namespace KS.ConsoleBase.Inputs.Styles
                                 int currentPageMove = currentSelection / selectionChoices;
                                 int startIndexMove = selectionChoices * (currentPageMove + 1);
                                 currentSelection = startIndexMove;
+                                if (currentSelection > selections.Length - 1)
+                                    currentSelection = selections.Length - 1;
                             }
                             break;
                         case ConsoleKey.Enter:
@@ -629,6 +633,8 @@ namespace KS.ConsoleBase.Inputs.Styles
                                 int currentPageMove = (currentSelection - 1) / selectionChoices;
                                 int startIndexMove = selectionChoices * currentPageMove;
                                 currentSelection = startIndexMove;
+                                if (currentSelection < 0)
+                                    currentSelection = 0;
                             }
                             break;
                         case ConsoleKey.PageDown:
@@ -636,6 +642,8 @@ namespace KS.ConsoleBase.Inputs.Styles
                                 int currentPageMove = currentSelection / selectionChoices;
                                 int startIndexMove = selectionChoices * (currentPageMove + 1);
                                 currentSelection = startIndexMove;
+                                if (currentSelection > selections.Length - 1)
+                                    currentSelection = selections.Length - 1;
                             }
                             break;
                         case ConsoleKey.Enter:
@@ -881,6 +889,8 @@ namespace KS.ConsoleBase.Inputs.Styles
                                 int currentPageMove = (currentSelection - 1) / selectionChoices;
                                 int startIndexMove = selectionChoices * currentPageMove;
                                 currentSelection = startIndexMove;
+                                if (currentSelection < 0)
+                                    currentSelection = 0;
                             }
                             break;
                         case ConsoleKey.PageDown:
@@ -888,6 +898,8 @@ namespace KS.ConsoleBase.Inputs.Styles
                                 int currentPageMove = currentSelection / selectionChoices;
                                 int startIndexMove = selectionChoices * (currentPageMove + 1);
                                 currentSelection = startIndexMove;
+                                if (currentSelection > selections.Length - 1)
+                                    currentSelection = selections.Length - 1;
                             }
                             break;
                         case ConsoleKey.Enter:
@@ -1111,6 +1123,8 @@ namespace KS.ConsoleBase.Inputs.Styles
                                 int currentPageMove = (currentSelection - 1) / selectionChoices;
                                 int startIndexMove = selectionChoices * currentPageMove;
                                 currentSelection = startIndexMove;
+                                if (currentSelection < 0)
+                                    currentSelection = 0;
                             }
                             break;
                         case ConsoleKey.PageDown:
@@ -1118,6 +1132,8 @@ namespace KS.ConsoleBase.Inputs.Styles
                                 int currentPageMove = currentSelection / selectionChoices;
                                 int startIndexMove = selectionChoices * (currentPageMove + 1);
                                 currentSelection = startIndexMove;
+                                if (currentSelection > selections.Length - 1)
+                                    currentSelection = selections.Length - 1;
                             }
                             break;
                         case ConsoleKey.Enter:
