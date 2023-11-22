@@ -24,6 +24,7 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Configuration.Instances;
 using KS.Kernel.Debugging;
 using KS.Languages;
+using KS.Misc.Text;
 using System;
 
 namespace KS.Kernel.Configuration.Settings.KeyInputs
@@ -42,7 +43,13 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
 
             // Write the prompt
             TextWriterColor.WriteKernelColor("[{0}] > ", false, KernelColorType.Input, KeyDefaultValue);
-            string AnswerString = Convert.ToString(Input.DetectKeypress().KeyChar);
+            var keypressTerm = Input.DetectKeypress();
+            var keypress = keypressTerm.KeyChar;
+            keypress =
+                CharManager.IsControlChar(keypress) ? '\0' :
+                keypressTerm.Key == ConsoleKey.Enter ? '\0' :
+                keypress;
+            string AnswerString = Convert.ToString(keypress);
 
             // Neutralize path if required with the assumption that the keytype is not list
             DebugWriter.WriteDebug(DebugLevel.I, "User answered {0}", AnswerString);
@@ -66,19 +73,12 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
 
         public void SetValue(SettingsKey key, object value, BaseKernelConfig configType)
         {
-            // We're dealing with integers
-            DebugWriter.WriteDebug(DebugLevel.I, "Answer is not numeric and key is of the String or Char (inferred from keytype {0}) type. Setting variable...", key.Type.ToString());
+            // We're dealing with characters
+            DebugWriter.WriteDebug(DebugLevel.I, "Answer is not numeric and key is of the Char (inferred from keytype {0}) type. Setting variable...", key.Type.ToString());
 
             // Check to see if written answer is empty
             if (value is not string AnswerString)
                 return;
-
-            // Check to see if the user intended to clear the variable to make it consist of nothing
-            if (AnswerString.ToLower() == "/clear")
-            {
-                DebugWriter.WriteDebug(DebugLevel.I, "User requested clear.");
-                AnswerString = "";
-            }
 
             // Set the value
             SettingsAppTools.SetPropertyValue(key.Variable, AnswerString, configType);
