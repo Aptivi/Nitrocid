@@ -151,6 +151,8 @@ namespace KS.ConsoleBase.Inputs.Styles
                 int currentSelection = 0;
                 while (!bail)
                 {
+                    var input = new StringBuilder();
+
                     // Check to see if we need to refresh
                     if (refresh)
                     {
@@ -186,7 +188,9 @@ namespace KS.ConsoleBase.Inputs.Styles
                         // Render an entry
                         int left = selectionBoxPosX + 1;
                         int top = selectionBoxPosY + finalIndex - startIndex;
-                        TextWriterWhereColor.WriteWhere(AnswerOption + new string(' ', maxSelectionWidth - AnswerOption.Length - (ConsoleWrapper.WindowWidth % 2 != 0 ? 0 : 1)), left, top);
+                        input.Append(
+                            TextWriterWhereColor.RenderWherePlain(AnswerOption + new string(' ', maxSelectionWidth - AnswerOption.Length - (ConsoleWrapper.WindowWidth % 2 != 0 ? 0 : 1)), left, top)
+                        );
                     }
 
                     // Render the vertical bar
@@ -194,10 +198,13 @@ namespace KS.ConsoleBase.Inputs.Styles
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Drawing scroll bar.");
                         int left = maxWidth - 3;
-                        ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)(currentSelection + 1) / selections.Length), left - 1, selectionBoxPosY - 1, ConsoleWrapper.WindowHeight - selectionChoices, false);
+                        input.Append(
+                            ProgressBarVerticalColor.RenderVerticalProgressPlain(100 * ((double)(currentSelection + 1) / selections.Length), left - 1, selectionBoxPosY - 1, ConsoleWrapper.WindowHeight - selectionChoices, 0, false)
+                        );
                     }
 
                     // Handle keypress
+                    TextWriterColor.WritePlain(input.ToString(), false);
                     var key = Input.DetectKeypress().Key;
                     switch (key)
                     {
@@ -538,6 +545,8 @@ namespace KS.ConsoleBase.Inputs.Styles
                 int currentSelection = 0;
                 while (!bail)
                 {
+                    var input = new StringBuilder();
+
                     // Check to see if we need to refresh
                     if (refresh)
                     {
@@ -575,8 +584,9 @@ namespace KS.ConsoleBase.Inputs.Styles
                         var finalBackColor = selected ? InfoBoxSelectionMultipleColor : BackgroundColor;
                         int left = selectionBoxPosX + 1;
                         int top = selectionBoxPosY + finalIndex - startIndex;
-                        TextWriterWhereColor.WriteWhereKernelColor(AnswerOption + new string(' ', maxSelectionWidth - AnswerOption.Length - (ConsoleWrapper.WindowWidth % 2 != 0 ? 0 : 1)), left, top, finalForeColor, finalBackColor);
-                        KernelColorTools.SetConsoleColor(BackgroundColor, true);
+                        input.Append(
+                            TextWriterWhereColor.RenderWhere(AnswerOption + new string(' ', maxSelectionWidth - AnswerOption.Length - (ConsoleWrapper.WindowWidth % 2 != 0 ? 0 : 1)), left, top, KernelColorTools.GetColor(finalForeColor), KernelColorTools.GetColor(finalBackColor))
+                        );
                     }
 
                     // Render the vertical bar
@@ -584,10 +594,13 @@ namespace KS.ConsoleBase.Inputs.Styles
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Drawing scroll bar.");
                         int left = maxWidth - 3;
-                        ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)(currentSelection + 1) / selections.Length), left - 1, selectionBoxPosY - 1, ConsoleWrapper.WindowHeight - selectionChoices, false);
+                        input.Append(
+                            ProgressBarVerticalColor.RenderVerticalProgress(100 * ((double)(currentSelection + 1) / selections.Length), left - 1, selectionBoxPosY - 1, ConsoleWrapper.WindowHeight - selectionChoices, 0, KernelColorTools.GetColor(KernelColorType.Progress), KernelColorTools.GetColor(KernelColorType.Progress), false)
+                        );
                     }
 
                     // Handle keypress
+                    TextWriterColor.WritePlain(input.ToString(), false);
                     var key = Input.DetectKeypress().Key;
                     switch (key)
                     {
@@ -784,6 +797,8 @@ namespace KS.ConsoleBase.Inputs.Styles
                 int currentSelection = 0;
                 while (!bail)
                 {
+                    var input = new StringBuilder();
+
                     // Check to see if we need to refresh
                     if (refresh)
                     {
@@ -821,8 +836,9 @@ namespace KS.ConsoleBase.Inputs.Styles
                         var finalBackColor = selected ? InfoBoxSelectionMultipleColor : BackgroundColor;
                         int left = selectionBoxPosX + 1;
                         int top = selectionBoxPosY + finalIndex - startIndex;
-                        TextWriterWhereColor.WriteWhereColorBack(AnswerOption + new string(' ', maxSelectionWidth - AnswerOption.Length - (ConsoleWrapper.WindowWidth % 2 != 0 ? 0 : 1)), left, top, finalForeColor, finalBackColor);
-                        KernelColorTools.SetConsoleColor(BackgroundColor, true);
+                        input.Append(
+                            TextWriterWhereColor.RenderWhere(AnswerOption + new string(' ', maxSelectionWidth - AnswerOption.Length - (ConsoleWrapper.WindowWidth % 2 != 0 ? 0 : 1)), left, top, finalForeColor, finalBackColor)
+                        );
                     }
 
                     // Render the vertical bar
@@ -830,10 +846,13 @@ namespace KS.ConsoleBase.Inputs.Styles
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Drawing scroll bar.");
                         int left = maxWidth - 3;
-                        ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)(currentSelection + 1) / selections.Length), left - 1, selectionBoxPosY - 1, ConsoleWrapper.WindowHeight - selectionChoices, false);
+                        input.Append(
+                            ProgressBarVerticalColor.RenderVerticalProgress(100 * ((double)(currentSelection + 1) / selections.Length), left - 1, selectionBoxPosY - 1, ConsoleWrapper.WindowHeight - selectionChoices, 0, BackgroundColor, BackgroundColor, false)
+                        );
                     }
 
                     // Handle keypress
+                    TextWriterColor.WritePlain(input.ToString(), false);
                     var key = Input.DetectKeypress().Key;
                     switch (key)
                     {
@@ -1008,6 +1027,8 @@ namespace KS.ConsoleBase.Inputs.Styles
                 int currentSelection = 0;
                 while (!bail)
                 {
+                    var input = new StringBuilder();
+
                     // Check to see if we need to refresh
                     if (refresh)
                     {
@@ -1045,8 +1066,9 @@ namespace KS.ConsoleBase.Inputs.Styles
                         var finalBackColor = selected ? InfoBoxSelectionMultipleColor : BackgroundColor;
                         int left = selectionBoxPosX + 1;
                         int top = selectionBoxPosY + finalIndex - startIndex;
-                        TextWriterWhereColor.WriteWhereColorBack(AnswerOption + new string(' ', maxSelectionWidth - AnswerOption.Length - (ConsoleWrapper.WindowWidth % 2 != 0 ? 0 : 1)), left, top, finalForeColor, finalBackColor);
-                        KernelColorTools.SetConsoleColor(BackgroundColor, true);
+                        input.Append(
+                            TextWriterWhereColor.RenderWhere(AnswerOption + new string(' ', maxSelectionWidth - AnswerOption.Length - (ConsoleWrapper.WindowWidth % 2 != 0 ? 0 : 1)), left, top, finalForeColor, finalBackColor)
+                        );
                     }
 
                     // Render the vertical bar
@@ -1054,10 +1076,13 @@ namespace KS.ConsoleBase.Inputs.Styles
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Drawing scroll bar.");
                         int left = maxWidth - 3;
-                        ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)(currentSelection + 1) / selections.Length), left - 1, selectionBoxPosY - 1, ConsoleWrapper.WindowHeight - selectionChoices, false);
+                        input.Append(
+                            ProgressBarVerticalColor.RenderVerticalProgress(100 * ((double)(currentSelection + 1) / selections.Length), left - 1, selectionBoxPosY - 1, ConsoleWrapper.WindowHeight - selectionChoices, 0, BackgroundColor, BackgroundColor, false)
+                        );
                     }
 
                     // Handle keypress
+                    TextWriterColor.WritePlain(input.ToString(), false);
                     var key = Input.DetectKeypress().Key;
                     switch (key)
                     {

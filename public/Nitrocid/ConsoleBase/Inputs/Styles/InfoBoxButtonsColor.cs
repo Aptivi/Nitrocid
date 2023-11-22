@@ -146,6 +146,8 @@ namespace KS.ConsoleBase.Inputs.Styles
                 bool bail = false;
                 while (!bail)
                 {
+                    var input = new StringBuilder();
+
                     // Place the buttons from the right for familiarity
                     for (int i = 1; i <= buttons.Length; i++)
                     {
@@ -162,11 +164,14 @@ namespace KS.ConsoleBase.Inputs.Styles
                         int buttonTextX = buttonX + maxButtonWidth / 2 - buttonText.Length / 2;
 
                         // Render the button box
-                        BorderColor.WriteBorderPlain(buttonX, buttonPanelPosY, maxButtonWidth - 3, 1);
-                        TextWriterWhereColor.WriteWhere(buttonText, buttonTextX, buttonPanelPosY + 1);
+                        input.Append(
+                            BorderColor.RenderBorderPlain(buttonX, buttonPanelPosY, maxButtonWidth - 3, 1) +
+                            TextWriterWhereColor.RenderWherePlain(buttonText, buttonTextX, buttonPanelPosY + 1)
+                        );
                     }
 
                     // Wait for keypress
+                    TextWriterColor.WritePlain(input.ToString(), false);
                     var key = Input.DetectKeypress().Key;
                     switch (key)
                     {
@@ -478,6 +483,8 @@ namespace KS.ConsoleBase.Inputs.Styles
                 bool bail = false;
                 while (!bail)
                 {
+                    var input = new StringBuilder();
+
                     // Place the buttons from the right for familiarity
                     for (int i = 1; i <= buttons.Length; i++)
                     {
@@ -495,11 +502,14 @@ namespace KS.ConsoleBase.Inputs.Styles
                         int buttonTextX = buttonX + maxButtonWidth / 2 - buttonText.Length / 2;
 
                         // Render the button box
-                        BorderColor.WriteBorder(buttonX, buttonPanelPosY, maxButtonWidth - 3, 1, buttonForegroundColor, buttonBackgroundColor);
-                        TextWriterWhereColor.WriteWhereKernelColor(buttonText, buttonTextX, buttonPanelPosY + 1, buttonForegroundColor, buttonBackgroundColor);
+                        input.Append(
+                            BorderColor.RenderBorder(buttonX, buttonPanelPosY, maxButtonWidth - 3, 1, KernelColorTools.GetColor(buttonForegroundColor), KernelColorTools.GetColor(buttonBackgroundColor)) +
+                            TextWriterWhereColor.RenderWhere(buttonText, buttonTextX, buttonPanelPosY + 1, KernelColorTools.GetColor(buttonForegroundColor), KernelColorTools.GetColor(buttonBackgroundColor))
+                        );
                     }
 
                     // Wait for keypress
+                    TextWriterColor.WritePlain(input.ToString(), false);
                     var key = Input.DetectKeypress().Key;
                     switch (key)
                     {
@@ -667,6 +677,8 @@ namespace KS.ConsoleBase.Inputs.Styles
                 bool bail = false;
                 while (!bail)
                 {
+                    var input = new StringBuilder();
+
                     // Place the buttons from the right for familiarity
                     for (int i = 1; i <= buttons.Length; i++)
                     {
@@ -684,11 +696,14 @@ namespace KS.ConsoleBase.Inputs.Styles
                         int buttonTextX = buttonX + maxButtonWidth / 2 - buttonText.Length / 2;
 
                         // Render the button box
-                        BorderColor.WriteBorder(buttonX, buttonPanelPosY, maxButtonWidth - 3, 1, buttonForegroundColor, buttonBackgroundColor);
-                        TextWriterWhereColor.WriteWhereColorBack(buttonText, buttonTextX, buttonPanelPosY + 1, buttonForegroundColor, buttonBackgroundColor);
+                        input.Append(
+                            BorderColor.RenderBorder(buttonX, buttonPanelPosY, maxButtonWidth - 3, 1, buttonForegroundColor, buttonBackgroundColor) +
+                            TextWriterWhereColor.RenderWhere(buttonText, buttonTextX, buttonPanelPosY + 1, buttonForegroundColor, buttonBackgroundColor)
+                        );
                     }
 
                     // Wait for keypress
+                    TextWriterColor.WritePlain(input.ToString(), false);
                     var key = Input.DetectKeypress().Key;
                     switch (key)
                     {
@@ -856,6 +871,8 @@ namespace KS.ConsoleBase.Inputs.Styles
                 bool bail = false;
                 while (!bail)
                 {
+                    var input = new StringBuilder();
+
                     // Place the buttons from the right for familiarity
                     for (int i = 1; i <= buttons.Length; i++)
                     {
@@ -873,11 +890,14 @@ namespace KS.ConsoleBase.Inputs.Styles
                         int buttonTextX = buttonX + maxButtonWidth / 2 - buttonText.Length / 2;
 
                         // Render the button box
-                        BorderColor.WriteBorder(buttonX, buttonPanelPosY, maxButtonWidth - 3, 1, buttonForegroundColor, buttonBackgroundColor);
-                        TextWriterWhereColor.WriteWhereColorBack(buttonText, buttonTextX, buttonPanelPosY + 1, buttonForegroundColor, buttonBackgroundColor);
+                        input.Append(
+                            BorderColor.RenderBorder(buttonX, buttonPanelPosY, maxButtonWidth - 3, 1, buttonForegroundColor, buttonBackgroundColor) +
+                            TextWriterWhereColor.RenderWhere(buttonText, buttonTextX, buttonPanelPosY + 1, buttonForegroundColor, buttonBackgroundColor)
+                        );
                     }
 
                     // Wait for keypress
+                    TextWriterColor.WritePlain(input.ToString(), false);
                     var key = Input.DetectKeypress().Key;
                     switch (key)
                     {
