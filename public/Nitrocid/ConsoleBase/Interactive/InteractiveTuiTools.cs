@@ -58,6 +58,7 @@ namespace KS.ConsoleBase.Interactive
             {
                 if (interactiveTui is null)
                     throw new KernelException(KernelExceptionType.InteractiveTui, Translate.DoTranslation("Please provide a base Interactive TUI class and try again."));
+                BaseInteractiveTui.instance = interactiveTui;
 
                 // First, check to see if the interactive TUI has no data source
                 if (interactiveTui.PrimaryDataSource is null && interactiveTui.SecondaryDataSource is null ||

@@ -36,9 +36,6 @@ namespace KS.Files.Operations
             var selector = new FileSelectorCli();
             InteractiveTuiTools.OpenInteractiveTui(selector);
             string selected = FileSelectorCli.SelectedFile;
-
-            // TODO: Get rid of this workaround
-            FileSelectorCli.selectedFile = "";
             return selected;
         }
 
@@ -51,9 +48,6 @@ namespace KS.Files.Operations
             var selector = new FolderSelectorCli();
             InteractiveTuiTools.OpenInteractiveTui(selector);
             string selected = FolderSelectorCli.SelectedFolder;
-
-            // TODO: Get rid of this workaround
-            FolderSelectorCli.selectedFolder = "";
             return selected;
         }
     }

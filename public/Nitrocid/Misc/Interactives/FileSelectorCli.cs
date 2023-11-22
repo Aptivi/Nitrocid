@@ -52,7 +52,7 @@ namespace KS.Misc.Interactives
     /// </summary>
     public class FileSelectorCli : BaseInteractiveTui, IInteractiveTui
     {
-        internal static string selectedFile = "";
+        internal string selectedFile = "";
         private static string firstPanePath = PathsManagement.HomePath;
         private static bool refreshFirstPaneListing = true;
         private static List<FileSystemEntry> firstPaneListing = [];
@@ -171,7 +171,7 @@ namespace KS.Misc.Interactives
         /// Selected file. If not selected yet and bailed earlier, this string is empty.
         /// </summary>
         public static string SelectedFile =>
-            selectedFile;
+            ((FileSelectorCli)Instance).selectedFile;
 
         private static void SelectOrGoTo(FileSystemEntry currentFileSystemEntry)
         {
@@ -191,8 +191,8 @@ namespace KS.Misc.Interactives
                 else if (currentFileSystemEntry.Type == FileSystemEntryType.File)
                 {
                     // We're dealing with a file. Clear the screen and open the appropriate editor.
-                    selectedFile = currentFileSystemEntry.FilePath;
-                    InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Selected '{0}'. Press ESC to exit and confirm selection."), BoxForegroundColor, BoxBackgroundColor, selectedFile);
+                    ((FileSelectorCli)Instance).selectedFile = currentFileSystemEntry.FilePath;
+                    InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Selected '{0}'. Press ESC to exit and confirm selection."), BoxForegroundColor, BoxBackgroundColor, ((FileSelectorCli)Instance).selectedFile);
                 }
             }
             catch (Exception ex)

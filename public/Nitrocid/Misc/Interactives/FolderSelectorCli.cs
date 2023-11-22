@@ -52,7 +52,7 @@ namespace KS.Misc.Interactives
     /// </summary>
     public class FolderSelectorCli : BaseInteractiveTui, IInteractiveTui
     {
-        internal static string selectedFolder = "";
+        internal string selectedFolder = "";
         private static string firstPanePath = PathsManagement.HomePath;
         private static bool refreshFirstPaneListing = true;
         private static List<FileSystemEntry> firstPaneListing = [];
@@ -172,7 +172,7 @@ namespace KS.Misc.Interactives
         /// Selected folder. If not selected yet and bailed earlier, this string is empty.
         /// </summary>
         public static string SelectedFolder =>
-            selectedFolder;
+            ((FolderSelectorCli)Instance).selectedFolder;
 
         private static void Open(FileSystemEntry currentFileSystemEntry)
         {
@@ -209,8 +209,8 @@ namespace KS.Misc.Interactives
                 // Now that the selected folder exists, check the type.
                 if (currentFileSystemEntry.Type == FileSystemEntryType.Directory)
                 {
-                    selectedFolder = currentFileSystemEntry.FilePath;
-                    InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Selected '{0}'. Press ESC to exit and confirm selection."), BoxForegroundColor, BoxBackgroundColor, selectedFolder);
+                    ((FolderSelectorCli)Instance).selectedFolder = currentFileSystemEntry.FilePath;
+                    InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Selected '{0}'. Press ESC to exit and confirm selection."), BoxForegroundColor, BoxBackgroundColor, ((FolderSelectorCli)Instance).selectedFolder);
                 }
             }
             catch (Exception ex)

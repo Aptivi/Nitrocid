@@ -32,6 +32,7 @@ namespace KS.ConsoleBase.Interactive
     /// </summary>
     public class BaseInteractiveTui : IInteractiveTui
     {
+        internal static BaseInteractiveTui instance = null;
         internal bool isExiting = false;
 
         /// <summary>
@@ -135,6 +136,12 @@ namespace KS.ConsoleBase.Interactive
         /// </summary>
         public static Color BoxForegroundColor =>
             new(Config.MainConfig.TuiBoxForegroundColor);
+
+        /// <summary>
+        /// The interactive TUI instance
+        /// </summary>
+        public static BaseInteractiveTui Instance =>
+            instance;
 
         /// <inheritdoc/>
         public virtual string GetEntryFromItem(object item) =>
