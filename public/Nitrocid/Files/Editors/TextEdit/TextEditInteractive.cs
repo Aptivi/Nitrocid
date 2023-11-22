@@ -256,14 +256,18 @@ namespace KS.Files.Editors.TextEdit
                 for (int i = startIndex; i <= endIndex; i++)
                 {
                     // Get a line
-                    string source = lines[i - 1];
+                    string source = lines[i - 1].Replace("\t", ">");
                     if (source.Length == 0)
                         source = " ";
 
                     // Seek through the whole string to find unprintable characters
                     var sourceBuilder = new StringBuilder();
                     for (int l = 0; l < source.Length; l++)
-                        sourceBuilder.Append(CharManager.IsControlChar(source[l]) || source[l] == '\0' ? '.' : source[l]);
+                    {
+                        bool unprintable = CharManager.IsControlChar(source[l]) || source[l] == '\0';
+                        string rendered = unprintable ? "." : source[l].ToString();
+                        sourceBuilder.Append(rendered);
+                    }
                     source = sourceBuilder.ToString();
 
                     // Highlight the selection
@@ -554,6 +558,8 @@ namespace KS.Files.Editors.TextEdit
             var currChar = lines[lineIdx][lineColIdx];
             if (CharManager.IsControlChar(currChar) || currChar == '\0')
                 status += " | " + Translate.DoTranslation("Bin") + $": {(int)currChar}";
+            if (currChar == '\t')
+                status += " | " + Translate.DoTranslation("Tab") + $": {(int)currChar}";
         }
 
         private static void PreviousPage(List<string> lines)
