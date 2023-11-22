@@ -130,6 +130,8 @@ namespace KS.Kernel.Debugging.Testing
             { "FetchKernelUpdates",                         new FetchKernelUpdates() },
             { "TestProgressHandler",                        new TestProgressHandler() },
             { "TestScreen",                                 new TestScreen() },
+            { "TestFileSelector",                           new TestFileSelector() },
+            { "TestFolderSelector",                         new TestFolderSelector() },
         };
         internal static Dictionary<TestSection, string> sections = new()
         {
