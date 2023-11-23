@@ -21,7 +21,7 @@ using KS.Kernel.Extensions;
 using KS.Shell.ShellBase.Arguments;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
-using Nitrocid.Extras.Caffeine.Alarm;
+using KS.Shell.ShellBase.Switches;
 using Nitrocid.Extras.Caffeine.Commands;
 using System;
 using System.Collections.Generic;
@@ -37,10 +37,16 @@ namespace Nitrocid.Extras.Caffeine
             { "caffeine",
                 new CommandInfo("caffeine", /* Localizable */ "Adds an alarm to alert you when your cup of tea or coffee is ready.",
                     [
-                        new CommandArgumentInfo(new[]
-                        {
+                        new CommandArgumentInfo(
+                        [
                             new CommandArgumentPart(true, "secondsOrName"),
-                        })
+                        ],
+                        [
+                            new SwitchInfo("abort", /* Localizable */ "Aborts an alarm that alerts you when your cup of tea or coffee is ready.", new SwitchOptions()
+                            {
+                                OptionalizeLastRequiredArguments = 1
+                            })
+                        ])
                     ], new CaffeineCommand())
             },
         };
@@ -59,13 +65,10 @@ namespace Nitrocid.Extras.Caffeine
         void IAddon.StartAddon() =>
             CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands.Values]);
 
-        void IAddon.StopAddon()
-        {
-            AlarmListener.StopListener();
+        void IAddon.StopAddon() =>
             CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Keys]);
-        }
 
-        void IAddon.FinalizeAddon() =>
-            AlarmListener.StartListener();
+        void IAddon.FinalizeAddon()
+        { }
     }
 }

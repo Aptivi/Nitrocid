@@ -20,16 +20,17 @@
 using KS.Kernel.Debugging;
 using KS.Kernel.Power;
 using KS.Kernel.Threading;
-using KS.Kernel.Time;
 using KS.Languages;
 using KS.Misc.Notifications;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
-namespace Nitrocid.Extras.Caffeine.Alarm
+namespace KS.Kernel.Time.Alarm
 {
     internal static class AlarmListener
     {
+        internal static bool hasRemovedAlarm = false;
         private static readonly KernelThread alarmThread = new("Alarm Listener Thread", true, HandleAlarms);
 
         internal static void StartListener()
@@ -51,14 +52,24 @@ namespace Nitrocid.Extras.Caffeine.Alarm
                 DebugWriter.WriteDebug(DebugLevel.I, $"Alarm listener started");
 
                 // Loop through all the alarms
-                List<string> notifiedAlarms = [];
+                List<(string, string)> notifiedAlarms = [];
                 while (!PowerManager.RebootRequested)
                 {
                     ThreadManager.SleepNoBlock(1);
 
                     // Fetch all alarms
-                    foreach (var alarm in AlarmTools.alarms)
+                    for (int i = 0; i < AlarmTools.alarms.Count; i++)
                     {
+                        // An alarm has been removed and we need to skip this iteration of the loop
+                        if (hasRemovedAlarm)
+                        {
+                            hasRemovedAlarm = false;
+                            break;
+                        }
+
+                        // Get an alarm key and value pair
+                        var alarm = AlarmTools.alarms.ElementAt(i);
+
                         // Get the current date and time for comparison
                         var date = TimeDateTools.KernelDateTime;
                         if (date >= alarm.Value && !notifiedAlarms.Contains(alarm.Key))
@@ -67,12 +78,17 @@ namespace Nitrocid.Extras.Caffeine.Alarm
                             notifiedAlarms.Add(alarm.Key);
                             var alarmNotif = new Notification(
                                 Translate.DoTranslation("Alarm fired!"),
-                                alarm.Key,
+                                alarm.Key.name,
                                 NotificationPriority.High, NotificationType.Normal
                             );
                             NotificationManager.NotifySend(alarmNotif);
                         }
                     }
+
+                    // Clear all notified alarms
+                    foreach (var notifiedAlarm in notifiedAlarms)
+                        AlarmTools.StopAlarm(notifiedAlarm.Item1);
+                    notifiedAlarms.Clear();
                 }
             }
             catch (Exception ex)

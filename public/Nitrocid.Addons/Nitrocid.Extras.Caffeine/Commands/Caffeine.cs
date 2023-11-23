@@ -19,10 +19,12 @@
 
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Kernel.Time.Alarm;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
-using Nitrocid.Extras.Caffeine.Alarm;
+using KS.Shell.ShellBase.Switches;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Nitrocid.Extras.Caffeine.Commands
 {
@@ -44,15 +46,29 @@ namespace Nitrocid.Extras.Caffeine.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            string secsOrName = parameters.ArgumentsList[0];
-            if (!int.TryParse(secsOrName, out int alarmSeconds) && !caffeines.TryGetValue(secsOrName, out alarmSeconds))
+            bool abortCurrentAlarm = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-abort");
+            if (abortCurrentAlarm)
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("The seconds in which your cup will be ready is invalid."), KernelColorType.Error);
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("If you're trying to supply a name of the drink, check out the list below:"), KernelColorType.Tip);
-                ListWriterColor.WriteList(caffeines);
-                return 26;
+                if (!AlarmTools.IsAlarmRegistered("Caffeine"))
+                {
+                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("No caffeine alerts to abort."), KernelColorType.Error);
+                    return 32;
+                }
+                var (id, name) = AlarmTools.alarms.Keys.Last((alarm) => alarm.id.Contains("Caffeine"));
+                AlarmTools.StopAlarm(id);
             }
-            AlarmTools.StartAlarm(Translate.DoTranslation("Your cup is now ready!"), alarmSeconds);
+            else
+            {
+                string secsOrName = parameters.ArgumentsList[0];
+                if (!int.TryParse(secsOrName, out int alarmSeconds) && !caffeines.TryGetValue(secsOrName, out alarmSeconds))
+                {
+                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("The seconds in which your cup will be ready is invalid."), KernelColorType.Error);
+                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("If you're trying to supply a name of the drink, check out the list below:"), KernelColorType.Tip);
+                    ListWriterColor.WriteList(caffeines);
+                    return 26;
+                }
+                AlarmTools.StartAlarm("Caffeine", Translate.DoTranslation("Your cup is now ready!"), alarmSeconds);
+            }
             return 0;
         }
 

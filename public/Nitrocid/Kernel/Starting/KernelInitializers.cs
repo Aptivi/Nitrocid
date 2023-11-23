@@ -38,6 +38,7 @@ using KS.Kernel.Journaling;
 using KS.Kernel.Power;
 using KS.Kernel.Threading;
 using KS.Kernel.Threading.Watchdog;
+using KS.Kernel.Time.Alarm;
 using KS.Kernel.Time.Renderers;
 using KS.Languages;
 using KS.Misc.Notifications;
@@ -246,6 +247,10 @@ namespace KS.Kernel.Starting
                 UESHVariables.ConvertSystemEnvironmentVariables();
                 DebugWriter.WriteDebug(DebugLevel.I, "Loaded environment variables.");
 
+                // Initialize alarm listener
+                AlarmListener.StartListener();
+                DebugWriter.WriteDebug(DebugLevel.I, "Loaded alarm listener.");
+
                 // Finalize addons
                 AddonTools.ProcessAddons(AddonType.Optional);
                 AddonTools.FinalizeAddons();
@@ -311,6 +316,10 @@ namespace KS.Kernel.Starting
                 // Save extension handlers
                 ExtensionHandlerTools.SaveAllHandlers();
                 DebugWriter.WriteDebug(DebugLevel.I, "Extension handlers saved");
+
+                // Stop alarm listener
+                AlarmListener.StopListener();
+                DebugWriter.WriteDebug(DebugLevel.I, "Stopped alarm listener.");
 
                 // Save all settings
                 Config.CreateConfig();
