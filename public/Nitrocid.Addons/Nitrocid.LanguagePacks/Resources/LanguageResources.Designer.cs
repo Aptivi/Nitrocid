@@ -195,25 +195,6 @@ namespace Nitrocid.LanguagePacks.Resources {
         
         /// <summary>
         ///   Looks up a localized string similar to {
-        ///  &quot;Name&quot;: &quot;Czech&quot;,
-        ///  &quot;Transliterable&quot;: false,
-        ///  &quot;Localizations&quot;: [
-        ///    &quot;Neplatná šablona barev {0}&quot;,
-        ///    &quot;hwprobe: Váš hardware bude testován. Prosím, čekejte...&quot;,
-        ///    &quot;Zadejte heslo správce pro údržbu.&quot;,
-        ///    &quot;Chyba při zavádění jádra: {0}&quot;,
-        ///    &quot;DOUBLE PANIC: Reboot Time překračuje maximální povolený čas restartu {0}. Našli jste chybu jádra.&quot;,
-        ///    &quot;[{0}] panic: Reboot povolen z důvodu chybové úrovně {0}.&quot;,
-        ///    &quot;[{0}] panic: Čas restartu: {1} sekund, překročí 1 hodinu. Je nastavena na 1 minutu.&quot; [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string cze {
-            get {
-                return ResourceManager.GetString("cze", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
         ///  &quot;Name&quot;: &quot;Dutch&quot;,
         ///  &quot;Transliterable&quot;: false,
         ///  &quot;Localizations&quot;: [
@@ -571,81 +552,6 @@ namespace Nitrocid.LanguagePacks.Resources {
         public static string spa {
             get {
                 return ResourceManager.GetString("spa", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///  &quot;Name&quot;: &quot;Turkish&quot;,
-        ///  &quot;Transliterable&quot;: false,
-        ///  &quot;Localizations&quot;: [
-        ///    &quot;Geçersiz renk şablonu {0}&quot;,
-        ///    &quot;hwprobe: Donanımınız incelenecek. Lütfen bekle...&quot;,
-        ///    &quot;Bakım için yönetici şifresini girin.&quot;,
-        ///    &quot;Önyükleme sırasında Çekirdek Hatası: {0}&quot;,
-        ///    &quot;ÇİFT PANİK: Yeniden Başlatma Süresi, izin verilen maksimum {0} hata yeniden başlatma süresini aşıyor. Bir çekirdek hatası buldunuz.&quot;,
-        ///    &quot;[{0}] panik: Hata düzeyi {0} olduğu için yeniden başlatma etkinleştirildi.&quot;,
-        ///    &quot;[{0}] panik: Yeniden ba [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string tky {
-            get {
-                return ResourceManager.GetString("tky", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///  &quot;Name&quot;: &quot;Ukrainian&quot;,
-        ///  &quot;Transliterable&quot;: true,
-        ///  &quot;Localizations&quot;: [
-        ///    &quot;Nediysnyy shablon kolʹoru {0}&quot;,
-        ///    &quot;hwprobe: vashe obladnannya bude perevireno. Budʹ laska, zachekayte...&quot;,
-        ///    &quot;Vveditʹ parolʹ administratora dlya obsluhovuvannya.&quot;,
-        ///    &quot;Pomylka yadra pid chas zavantazhennya: {0}&quot;,
-        ///    &quot;PODVIYNA PANIKA: chas perezavantazhennya perevyshchuye maksymalʹno dozvolenyy chas perezavantazhennya pomylky {0}. Vy znayshly pomylku yadra.&quot;,
-        ///    &quot;[{0}] panika: perezavantazhennya vvimkneno cherez rive [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string ukr {
-            get {
-                return ResourceManager.GetString("ukr", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///  &quot;Name&quot;: &quot;Ukrainian&quot;,
-        ///  &quot;Transliterable&quot;: true,
-        ///  &quot;Localizations&quot;: [
-        ///    &quot;Недійсний шаблон кольору {0}&quot;,
-        ///    &quot;hwprobe: ваше обладнання буде перевірено. Будь ласка, зачекайте...&quot;,
-        ///    &quot;Введіть пароль адміністратора для обслуговування.&quot;,
-        ///    &quot;Помилка ядра під час завантаження: {0}&quot;,
-        ///    &quot;ПОДВІЙНА ПАНІКА: час перезавантаження перевищує максимально дозволений час перезавантаження помилки {0}. Ви знайшли помилку ядра.&quot;,
-        ///    &quot;[{0}] паніка: перезавантаження ввімкнено через рівень помилки {0}.&quot;,
-        ///    &quot;[ [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string ukr_T {
-            get {
-                return ResourceManager.GetString("ukr_T", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///  &quot;Name&quot;: &quot;Vietnamese&quot;,
-        ///  &quot;Transliterable&quot;: false,
-        ///  &quot;Localizations&quot;: [
-        ///    &quot;Mẫu màu không hợp lệ {0}&quot;,
-        ///    &quot;hwprobe: Phần cứng của bạn sẽ được thăm dò. Xin vui lòng chờ ...&quot;,
-        ///    &quot;Nhập mật khẩu quản trị để bảo trì.&quot;,
-        ///    &quot;Lỗi hạt nhân khi khởi động: {0}&quot;,
-        ///    &quot;NHÂN ĐÔI: Thời gian khởi động lại vượt quá thời gian khởi động lại lỗi tối đa cho phép {0}. Bạn đã tìm thấy một lỗi kernel.&quot;,
-        ///    &quot;[{0}] hoảng loạn: Đã bật lại do mức lỗi là {0}.&quot;,
-        ///    &quot;[{0}] hoảng loạn: Thời gian để khởi động lại: {1} gi [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string vtn {
-            get {
-                return ResourceManager.GetString("vtn", resourceCulture);
             }
         }
     }

@@ -981,6 +981,33 @@ namespace Nitrocid.Analyzers.Resources {
         /// <summary>
         ///   Looks up a localized string similar to TextTools.SplitNewLines() simplifies the readability of the split by new lines function..
         /// </summary>
+        internal static string NewLineSplitMacOS9LiteralUsageAnalyzerDescription {
+            get {
+                return ResourceManager.GetString("NewLineSplitMacOS9LiteralUsageAnalyzerDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Caller uses .Split(&quot;\r&quot;) instead of TextTools.SplitNewLines().
+        /// </summary>
+        internal static string NewLineSplitMacOS9LiteralUsageAnalyzerMessageFormat {
+            get {
+                return ResourceManager.GetString("NewLineSplitMacOS9LiteralUsageAnalyzerMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use TextTools.SplitNewLines() instead of .Split(&quot;\r&quot;).
+        /// </summary>
+        internal static string NewLineSplitMacOS9LiteralUsageAnalyzerTitle {
+            get {
+                return ResourceManager.GetString("NewLineSplitMacOS9LiteralUsageAnalyzerTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TextTools.SplitNewLines() simplifies the readability of the split by new lines function..
+        /// </summary>
         internal static string NewLineSplitWindowsLiteralUsageAnalyzerDescription {
             get {
                 return ResourceManager.GetString("NewLineSplitWindowsLiteralUsageAnalyzerDescription", resourceCulture);

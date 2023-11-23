@@ -38,12 +38,6 @@
         "country": "China"
     },
     {
-        "three": "cze",
-        "name": "Czech",
-        "transliterable": false,
-        "country": "Czech"
-    },
-    {
         "three": "dtc",
         "name": "Dutch",
         "transliterable": false,
@@ -148,30 +142,5 @@
         "name": "Spanish",
         "transliterable": false,
         "country": "Spain"
-    },
-    {
-        "three": "tky",
-        "name": "Turkish",
-        "transliterable": false,
-        "country": "Turkey"
-    },
-    {
-        "three": "ukr",
-        "name": "Ukrainian",
-        "transliterable": true,
-        "country": "Ukraine"
-    },
-    {
-        "three": "ukr-T",
-        "name": "Ukrainian",
-        "transliterable": true,
-        "country": "Ukraine"
-    },
-    {
-        "three": "vtn",
-        "name": "Vietnamese",
-        "transliterable": false,
-        "codepage": 1258,
-        "country": "Vietnam"
     }
 ]

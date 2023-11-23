@@ -446,4 +446,11 @@
   <data name="NewLineSplitCharManagerNewLineUsageCodeFixTitle" xml:space="preserve">
     <value>Use TextTools.SplitNewLines()</value>
   </data>
+
+  <!--
+      NewLineSplitMacOS9Literal usage code fix
+  -->
+  <data name="NewLineSplitMacOS9LiteralUsageCodeFixTitle" xml:space="preserve">
+    <value>Use TextTools.SplitNewLines()</value>
+  </data>
 </root>

@@ -728,4 +728,17 @@
   <data name="NewLineSplitCharManagerNewLineUsageAnalyzerDescription" xml:space="preserve">
     <value>TextTools.SplitNewLines() simplifies the readability of the split by new lines function.</value>
   </data>
+
+  <!--
+      NewLineSplitMacOS9Literal usage analyzer
+  -->
+  <data name="NewLineSplitMacOS9LiteralUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use TextTools.SplitNewLines() instead of .Split("\r")</value>
+  </data>
+  <data name="NewLineSplitMacOS9LiteralUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses .Split("\r") instead of TextTools.SplitNewLines()</value>
+  </data>
+  <data name="NewLineSplitMacOS9LiteralUsageAnalyzerDescription" xml:space="preserve">
+    <value>TextTools.SplitNewLines() simplifies the readability of the split by new lines function.</value>
+  </data>
 </root>

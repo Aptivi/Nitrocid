@@ -130,9 +130,6 @@
   <data name="chi_T" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Languages\chi-T.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="cze" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Languages\cze.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="dtc" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Languages\dtc.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
@@ -175,23 +172,11 @@
   <data name="spa" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Languages\spa.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="vtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Languages\vtn.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="tky" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Languages\tky.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="cnt" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Languages\cnt.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="cnt_T" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Languages\cnt-T.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="ukr" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Languages\ukr.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="ukr_T" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Languages\ukr-T.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="grk" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Languages\grk.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>

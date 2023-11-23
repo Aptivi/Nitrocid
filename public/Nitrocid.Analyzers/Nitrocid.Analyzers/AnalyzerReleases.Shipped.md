@@ -51,3 +51,4 @@ NKS0047 | Text | Info | NewLineSplitLinuxLiteralUsageAnalyzer, [Documentation](h
 NKS0048 | Text | Info | NewLineSplitWindowsLiteralUsageAnalyzer, [Documentation](https://aptivi.gitbook.io/nitrocid-ks-manual/advanced-and-power-users/kernel-modifications/analyzer-diagnostics/text-nks0048)
 NKS0049 | Text | Info | NewLineSplitEnvironmentNewLineUsageAnalyzer, [Documentation](https://aptivi.gitbook.io/nitrocid-ks-manual/advanced-and-power-users/kernel-modifications/analyzer-diagnostics/text-nks0049)
 NKS0050 | Text | Info | NewLineSplitCharManagerNewLineUsageAnalyzer, [Documentation](https://aptivi.gitbook.io/nitrocid-ks-manual/advanced-and-power-users/kernel-modifications/analyzer-diagnostics/text-nks0050)
+NKS0054 | Text | Info | NewLineSplitMacOS9LiteralUsageAnalyzer, [Documentation](https://aptivi.gitbook.io/nitrocid-ks-manual/advanced-and-power-users/kernel-modifications/analyzer-diagnostics/text-nks0054)

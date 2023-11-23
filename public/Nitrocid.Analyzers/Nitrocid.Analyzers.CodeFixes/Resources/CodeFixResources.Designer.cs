@@ -369,6 +369,15 @@ namespace Nitrocid.Analyzers.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Use TextTools.SplitNewLines().
         /// </summary>
+        internal static string NewLineSplitMacOS9LiteralUsageCodeFixTitle {
+            get {
+                return ResourceManager.GetString("NewLineSplitMacOS9LiteralUsageCodeFixTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use TextTools.SplitNewLines().
+        /// </summary>
         internal static string NewLineSplitWindowsLiteralUsageCodeFixTitle {
             get {
                 return ResourceManager.GetString("NewLineSplitWindowsLiteralUsageCodeFixTitle", resourceCulture);
