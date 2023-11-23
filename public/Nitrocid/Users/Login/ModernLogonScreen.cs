@@ -138,7 +138,7 @@ namespace KS.Users.Login
                                 int consoleMotdInfoY =
                                     MotdHeadlineBottom ? 
                                     (ConsoleWrapper.WindowHeight / 2) + figHeight + 4 + i :
-                                    (ConsoleWrapper.WindowHeight / 2) - figHeight - (RSSTools.ShowHeadlineOnLogin ? 5 : 3) + i;
+                                    (ConsoleWrapper.WindowHeight / 2) - figHeight - (RSSTools.ShowHeadlineOnLogin ? 4 : 2) + i;
                                 display.Append(
                                     CenteredTextColor.RenderCenteredOneLine(consoleMotdInfoY, motdStr)
                                 );
