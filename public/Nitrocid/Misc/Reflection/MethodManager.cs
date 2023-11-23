@@ -42,7 +42,7 @@ namespace KS.Misc.Reflection
             MethodInfo PossibleMethod;
 
             // Get types of possible flag locations
-            PossibleTypes = Assembly.GetExecutingAssembly().GetTypes();
+            PossibleTypes = ReflectionCommon.KernelTypes;
 
             // Get fields of flag modules
             foreach (Type PossibleType in PossibleTypes)
@@ -65,7 +65,7 @@ namespace KS.Misc.Reflection
             MethodInfo PossibleMethod;
 
             // First, check to see if we have this type
-            var PossibleTypes = Assembly.GetExecutingAssembly().GetTypes();
+            var PossibleTypes = ReflectionCommon.KernelTypes;
             if (!PossibleTypes.Contains(methodType))
                 throw new KernelException(KernelExceptionType.Reflection, Translate.DoTranslation("The method type is not defined in the base Nitrocid type list."));
 
