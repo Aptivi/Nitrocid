@@ -34,6 +34,11 @@ namespace KS.Misc.Notifications
         private Color _NotificationBorderColor = Color.Empty;
 
         /// <summary>
+        /// Notification ID
+        /// </summary>
+        public Guid Id { get; }
+
+        /// <summary>
         /// Notification title
         /// </summary>
         public string Title { get; set; }
@@ -220,6 +225,7 @@ namespace KS.Misc.Notifications
             this.Desc = Desc;
             this.Priority = Priority;
             this.Type = Type;
+            Id = Guid.NewGuid();
         }
 
         /// <summary>
@@ -239,6 +245,7 @@ namespace KS.Misc.Notifications
         {
             return 
                 other is not null &&
+                Id == other.Id &&
                 Title == other.Title &&
                 Desc == other.Desc &&
                 Priority == other.Priority &&
@@ -266,6 +273,7 @@ namespace KS.Misc.Notifications
         public override int GetHashCode()
         {
             HashCode hash = new();
+            hash.Add(Id);
             hash.Add(Title);
             hash.Add(Desc);
             hash.Add(Priority);

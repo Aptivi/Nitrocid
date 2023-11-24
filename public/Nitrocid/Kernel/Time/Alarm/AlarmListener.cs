@@ -69,10 +69,11 @@ namespace KS.Kernel.Time.Alarm
 
                         // Get an alarm key and value pair
                         var alarm = AlarmTools.alarms.ElementAt(i);
+                        var alarmId = alarm.Key.id;
 
                         // Get the current date and time for comparison
                         var date = TimeDateTools.KernelDateTime;
-                        if (date >= alarm.Value && !notifiedAlarms.Contains(alarm.Key))
+                        if (date >= alarm.Value && !notifiedAlarms.Any((tuple) => tuple.Item1 == alarmId))
                         {
                             // The alarm has been fired! Send a notification
                             notifiedAlarms.Add(alarm.Key);
