@@ -269,6 +269,38 @@ namespace KS.Misc.Notifications
                 ProgressIndeterminate == other.ProgressIndeterminate;
         }
 
+        /// <summary>
+        /// Checks to see if the notification matches another one
+        /// </summary>
+        /// <param name="other">Notification to compare</param>
+        /// <returns>True if there is a match; false otherwise.</returns>
+        public bool EqualsNoId(Notification other)
+        {
+            return 
+                other is not null &&
+                Title == other.Title &&
+                Desc == other.Desc &&
+                Priority == other.Priority &&
+                Type == other.Type &&
+                CustomBeepTimes == other.CustomBeepTimes &&
+                CustomColor == other.CustomColor &&
+                CustomTitleColor == other.CustomTitleColor &&
+                CustomDescriptionColor == other.CustomDescriptionColor &&
+                CustomProgressColor == other.CustomProgressColor &&
+                CustomProgressFailureColor == other.CustomProgressFailureColor &&
+                CustomProgressSuccessColor == other.CustomProgressSuccessColor &&
+                CustomUpperLeftCornerChar == other.CustomUpperLeftCornerChar &&
+                CustomUpperRightCornerChar == other.CustomUpperRightCornerChar &&
+                CustomLowerLeftCornerChar == other.CustomLowerLeftCornerChar &&
+                CustomLowerRightCornerChar == other.CustomLowerRightCornerChar &&
+                CustomUpperFrameChar == other.CustomUpperFrameChar &&
+                CustomLowerFrameChar == other.CustomLowerFrameChar &&
+                CustomLeftFrameChar == other.CustomLeftFrameChar &&
+                CustomRightFrameChar == other.CustomRightFrameChar &&
+                NotificationBorderColor == other.NotificationBorderColor &&
+                ProgressIndeterminate == other.ProgressIndeterminate;
+        }
+
         /// <inheritdoc/>
         public override int GetHashCode()
         {

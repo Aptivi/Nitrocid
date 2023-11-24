@@ -120,8 +120,8 @@ namespace Nitrocid.Tests.Misc.Notifications
         {
             var Notif = new Notification("A title", "This is a notification", NotificationPriority.Low, NotificationType.Normal);
             var Notif2 = new Notification("A title", "This is a notification", NotificationPriority.Low, NotificationType.Normal);
-            Notif.ShouldBe(Notif2);
-            Notif2.ShouldBe(Notif);
+            Notif.EqualsNoId(Notif2).ShouldBeTrue();
+            Notif2.EqualsNoId(Notif).ShouldBeTrue();
         }
 
         /// <summary>
@@ -132,8 +132,8 @@ namespace Nitrocid.Tests.Misc.Notifications
         {
             var Notif = new Notification("A title", "This is a notification", NotificationPriority.Low, NotificationType.Normal);
             var Notif2 = new Notification("A title", "This is a notification", NotificationPriority.High, NotificationType.Normal);
-            Notif.ShouldNotBe(Notif2);
-            Notif2.ShouldNotBe(Notif);
+            Notif.EqualsNoId(Notif2).ShouldBeFalse();
+            Notif2.EqualsNoId(Notif).ShouldBeFalse();
         }
 
     }
