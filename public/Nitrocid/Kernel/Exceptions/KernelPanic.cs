@@ -300,51 +300,53 @@ namespace KS.Kernel.Exceptions
                         Count += 1;
                     }
                     dumpBuilder.AppendLine(Translate.DoTranslation("The last inner error is the root cause, which is number") + $" {Count}" + CharManager.NewLine);
-                }
-
-                // Write frame info for further analysis
-                WriteHeader(dumpBuilder, Translate.DoTranslation("Frame analysis"));
-                try
-                {
-                    var ExcTrace = new StackTrace(Exc, true);
-                    int FrameNum = 1;
-
-                    // If there are frames to print the file information, write them down.
-                    if (ExcTrace.FrameCount > 0)
+                    
+                    // Write frame info for further analysis
+                    WriteHeader(dumpBuilder, Translate.DoTranslation("Frame analysis"));
+                    try
                     {
-                        // Get the max lengths for rendering
-                        var frames = ExcTrace.GetFrames();
-                        int maxFileLength = frames.Where((sf) => !string.IsNullOrEmpty(sf.GetFileName())).Max((sf) => sf.GetFileName().Length);
-                        int maxFileLineNumber = frames.Max((sf) => sf.GetFileLineNumber().GetDigits());
-                        int maxFileColumnNumber = frames.Max((sf) => sf.GetFileColumnNumber().GetDigits());
-                        foreach (StackFrame Frame in frames)
-                        {
-                            // Get information about each stack frame
-                            string fileName = Frame.GetFileName();
-                            int fileLineNumber = Frame.GetFileLineNumber();
-                            int fileColumnNumber = Frame.GetFileColumnNumber();
+                        var ExcTrace = new StackTrace(Exc, true);
+                        int FrameNum = 1;
 
-                            // If we have information, go ahead.
-                            if (!string.IsNullOrEmpty(fileName) && fileLineNumber != 0 && fileColumnNumber != 0)
+                        // If there are frames to print the file information, write them down.
+                        if (ExcTrace.FrameCount > 0)
+                        {
+                            // Get the max lengths for rendering
+                            var frames = ExcTrace.GetFrames();
+                            int maxFileLength = frames.Where((sf) => !string.IsNullOrEmpty(sf.GetFileName())).Max((sf) => sf.GetFileName().Length);
+                            int maxFileLineNumber = frames.Max((sf) => sf.GetFileLineNumber().GetDigits());
+                            int maxFileColumnNumber = frames.Max((sf) => sf.GetFileColumnNumber().GetDigits());
+                            foreach (StackFrame Frame in frames)
                             {
-                                // Render information
-                                string renderedFileName = $"{fileName}{new string(' ', maxFileLength - fileName.Length)}";
-                                string renderedLineNumber = $"{fileLineNumber}{new string(' ', maxFileLineNumber - fileLineNumber.GetDigits())}";
-                                string renderedColumnNumber = $"{fileColumnNumber}{new string(' ', maxFileColumnNumber - fileColumnNumber.GetDigits())}";
-                                dumpBuilder.AppendLine($"[{FrameNum}] {renderedFileName} | {renderedLineNumber}:{renderedColumnNumber}");
+                                // Get information about each stack frame
+                                string fileName = Frame.GetFileName();
+                                int fileLineNumber = Frame.GetFileLineNumber();
+                                int fileColumnNumber = Frame.GetFileColumnNumber();
+
+                                // If we have information, go ahead.
+                                if (!string.IsNullOrEmpty(fileName) && fileLineNumber != 0 && fileColumnNumber != 0)
+                                {
+                                    // Render information
+                                    string renderedFileName = $"{fileName}{new string(' ', maxFileLength - fileName.Length)}";
+                                    string renderedLineNumber = $"{fileLineNumber}{new string(' ', maxFileLineNumber - fileLineNumber.GetDigits())}";
+                                    string renderedColumnNumber = $"{fileColumnNumber}{new string(' ', maxFileColumnNumber - fileColumnNumber.GetDigits())}";
+                                    dumpBuilder.AppendLine($"[{FrameNum}] {renderedFileName} | {renderedLineNumber}:{renderedColumnNumber}");
+                                }
+                                FrameNum += 1;
                             }
-                            FrameNum += 1;
                         }
+                        else
+                            dumpBuilder.AppendLine(Translate.DoTranslation("There are no frames to analyze."));
                     }
-                    else
-                        dumpBuilder.AppendLine(Translate.DoTranslation("There are no frames to analyze."));
+                    catch (Exception ex)
+                    {
+                        DebugWriter.WriteDebug(DebugLevel.I, "Can't analyze frames: ", ex.Message);
+                        DebugWriter.WriteDebugStackTrace(ex);
+                        dumpBuilder.AppendLine(Translate.DoTranslation("Frame analysis failed. Some information might not be complete.") + $" {ex.Message}");
+                    }
                 }
-                catch (Exception ex)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Can't analyze frames: ", ex.Message);
-                    DebugWriter.WriteDebugStackTrace(ex);
-                    dumpBuilder.AppendLine(Translate.DoTranslation("Frame analysis failed. Some information might not be complete.") + $" {ex.Message}");
-                }
+                else
+                    dumpBuilder.AppendLine(Translate.DoTranslation("Unfortunately, there is no helpful error information provided to help you analyze the issue."));
                 dumpBuilder.AppendLine();
 
                 // All kernel threads
