@@ -355,7 +355,16 @@ namespace KS.Kernel.Exceptions
                 {
                     var threads = ThreadManager.KernelThreads;
                     foreach (var thread in threads)
-                        dumpBuilder.AppendLine($"[{thread.ThreadId}] {thread.Name}{CharManager.NewLine}  - A: {thread.IsAlive}, B: {thread.IsBackground}, C: {thread.IsCritical}, R: {thread.IsReady}, S: {thread.IsStopping}");
+                    {
+                        dumpBuilder.AppendLine($"[{thread.ThreadId}] {thread.Name}:");
+                        dumpBuilder.AppendLine($"  - {Translate.DoTranslation("Thread is alive")}: {thread.IsAlive}");
+                        dumpBuilder.AppendLine($"  - {Translate.DoTranslation("Thread is a background thread")}: {thread.IsBackground}");
+                        dumpBuilder.AppendLine($"  - {Translate.DoTranslation("Thread is system-critical")}: {thread.IsCritical}");
+                        dumpBuilder.AppendLine($"  - {Translate.DoTranslation("Thread is ready")}: {thread.IsReady}");
+                        dumpBuilder.AppendLine($"  - {Translate.DoTranslation("Thread is stopping")}: {thread.IsStopping}");
+                        dumpBuilder.AppendLine();
+                    }
+                    dumpBuilder.AppendLine($"{Translate.DoTranslation("Total threads")}: {threads.Count}");
                 }
                 catch (Exception ex)
                 {
