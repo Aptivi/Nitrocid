@@ -327,7 +327,6 @@ namespace KS.Misc.Screensaver
             if (InSaver)
                 ScreensaverDisplayer.BailFromScreensaver();
             noLock = true;
-            StopTimeout();
         }
 
         /// <summary>
@@ -338,7 +337,6 @@ namespace KS.Misc.Screensaver
             if (!scrnTimeoutEnabled)
                 return;
             noLock = false;
-            StartTimeout();
         }
 
         /// <summary>
@@ -386,14 +384,13 @@ namespace KS.Misc.Screensaver
         {
             try
             {
-                if (noLock)
-                    return;
                 var termDriver = DriverHandler.GetFallbackDriver<IConsoleDriver>();
                 SpinWait.SpinUntil(() => SplashReport.KernelBooted);
-                while (!PowerManager.KernelShutdown && !noLock)
+                while (!PowerManager.KernelShutdown)
                 {
                     int OldCursorLeft = termDriver.CursorLeft;
-                    SpinWait.SpinUntil(() => !ScrnTimeReached || PowerManager.KernelShutdown);
+                    SpinWait.SpinUntil(() => !noLock);
+                    SpinWait.SpinUntil(() => !ScrnTimeReached || PowerManager.KernelShutdown || noLock);
                     if (!ScrnTimeReached)
                     {
                         // Start the stopwatch for monitoring
