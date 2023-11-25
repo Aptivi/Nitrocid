@@ -59,6 +59,7 @@ namespace Nitrocid.Extras.BassBoom.Commands
                     }
                     if (!PlayerTui.musicFiles.Contains(musicPath))
                         PlayerTui.musicFiles.Add(musicPath);
+                    PlayerControls.PopulateMusicFileInfo(musicPath);
                 }
 
                 // Now, open an interactive TUI
