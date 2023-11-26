@@ -75,6 +75,7 @@ namespace KS.Drivers
                 {
                     { "Default", new DefaultRandom() },
                     { "Standard", new StandardRandom() },
+                    { "Optimized", new OptimizedRandom() },
 
 #if !SPECIFIERREL
                     // Below are excluded from the final release
