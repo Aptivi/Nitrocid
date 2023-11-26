@@ -382,6 +382,44 @@ namespace Nitrocid.Tests.Misc.Text
             TextTools.IsStringNumeric(TargetString).ShouldBeFalse();
         }
 
+        /// <summary>
+        /// Gets a BASE64-encoded string
+        /// </summary>
+        [Test]
+        [TestCase("", "")]
+        [TestCase("Hello", "SGVsbG8=")]
+        [TestCase("Nitrocid KS", "Tml0cm9jaWQgS1M=")]
+        [TestCase("Test text", "VGVzdCB0ZXh0")]
+        [TestCase("123456789", "MTIzNDU2Nzg5")]
+        [TestCase("Test with :[]:", "VGVzdCB3aXRoIDpbXTo=")]
+        [TestCase("Test with this long text", "VGVzdCB3aXRoIHRoaXMgbG9uZyB0ZXh0")]
+        [TestCase("Test with this even longer text", "VGVzdCB3aXRoIHRoaXMgZXZlbiBsb25nZXIgdGV4dA==")]
+        [Description("Querying")]
+        public void TestGetBase64Encoded(string text, string expectedEncoded)
+        {
+            string actualEncoded = text.GetBase64Encoded();
+            actualEncoded.ShouldBe(expectedEncoded);
+        }
+
+        /// <summary>
+        /// Gets a BASE64-decoded string
+        /// </summary>
+        [Test]
+        [TestCase("", "")]
+        [TestCase("SGVsbG8=", "Hello")]
+        [TestCase("Tml0cm9jaWQgS1M=", "Nitrocid KS")]
+        [TestCase("VGVzdCB0ZXh0", "Test text")]
+        [TestCase("MTIzNDU2Nzg5", "123456789")]
+        [TestCase("VGVzdCB3aXRoIDpbXTo=", "Test with :[]:")]
+        [TestCase("VGVzdCB3aXRoIHRoaXMgbG9uZyB0ZXh0", "Test with this long text")]
+        [TestCase("VGVzdCB3aXRoIHRoaXMgZXZlbiBsb25nZXIgdGV4dA==", "Test with this even longer text")]
+        [Description("Querying")]
+        public void TestGetBase64Decoded(string text, string expectedDecoded)
+        {
+            string actualDecoded = text.GetBase64Decoded();
+            actualDecoded.ShouldBe(expectedDecoded);
+        }
+
     }
 
 }

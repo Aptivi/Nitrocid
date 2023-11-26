@@ -447,5 +447,27 @@ namespace KS.Misc.Text
                 return text[..^postfix.Length];
             return text;
         }
+
+        /// <summary>
+        /// Gets a BASE64-encoded string from the text
+        /// </summary>
+        /// <param name="text">Text to encode to BASE64</param>
+        /// <returns>A BASE64-encoded string from the text</returns>
+        public static string GetBase64Encoded(this string text)
+        {
+            byte[] textBytes = Encoding.Default.GetBytes(text);
+            return Convert.ToBase64String(textBytes);
+        }
+
+        /// <summary>
+        /// Gets a BASE64-decoded string from the BASE64-encoded string
+        /// </summary>
+        /// <param name="text">Text to encode to BASE64</param>
+        /// <returns>A BASE64-encoded string from the text</returns>
+        public static string GetBase64Decoded(this string text)
+        {
+            byte[] textBytes = Convert.FromBase64String(text);
+            return Encoding.Default.GetString(textBytes);
+        }
     }
 }
