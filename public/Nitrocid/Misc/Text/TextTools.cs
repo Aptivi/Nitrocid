@@ -180,9 +180,9 @@ namespace KS.Misc.Text
                 throw new KernelException(KernelExceptionType.Text, Translate.DoTranslation("The target may not be null"));
 
             string ReleasedString = target;
-            if (target.StartsWith("\"") && target.EndsWith("\"") && target != "\"" ||
-                target.StartsWith("'") && target.EndsWith("'") && target != "'" ||
-                target.StartsWith("`") && target.EndsWith("`") && target != "`")
+            if (target.StartsWith('\"') && target.EndsWith('\"') && target != "\"" ||
+                target.StartsWith('\'') && target.EndsWith('\'') && target != "'" ||
+                target.StartsWith('`') && target.EndsWith('`') && target != "`")
             {
                 ReleasedString = ReleasedString.Remove(0, 1);
                 ReleasedString = ReleasedString.Remove(ReleasedString.Length - 1);
@@ -201,11 +201,11 @@ namespace KS.Misc.Text
                 throw new KernelException(KernelExceptionType.Text, Translate.DoTranslation("The target may not be null"));
 
             var type = EnclosedDoubleQuotesType.None;
-            if (target.StartsWith("\"") && target.EndsWith("\"") && target != "\"")
+            if (target.StartsWith('\"') && target.EndsWith('\"') && target != "\"")
                 type = EnclosedDoubleQuotesType.DoubleQuotes;
-            else if (target.StartsWith("'") && target.EndsWith("'") && target != "'")
+            else if (target.StartsWith('\'') && target.EndsWith('\'') && target != "'")
                 type = EnclosedDoubleQuotesType.SingleQuotes;
-            else if (target.StartsWith("`") && target.EndsWith("`") && target != "`")
+            else if (target.StartsWith('`') && target.EndsWith('`') && target != "`")
                 type = EnclosedDoubleQuotesType.Backticks;
             return type;
         }
