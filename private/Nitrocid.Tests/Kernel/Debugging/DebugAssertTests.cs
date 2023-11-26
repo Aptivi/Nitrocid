@@ -47,7 +47,7 @@ namespace Nitrocid.Tests.Kernel.Debugging
         [Test]
         [Description("Misc")]
         public void TestAssertNormalFailing() {
-            DriverHandler.RegisterDriver<IConsoleDriver>(DriverTypes.Console, new MyCustomConsoleDriver());
+            DriverHandler.RegisterDriver(DriverTypes.Console, new MyCustomConsoleDriver());
             DriverHandler.SetDriver<IConsoleDriver>("MyCustom");
             Should.Throw(() => DebugCheck.Assert(false), typeof(KernelException));
         }
@@ -66,7 +66,7 @@ namespace Nitrocid.Tests.Kernel.Debugging
         [Test]
         [Description("Misc")]
         public void TestAssertNormalMessageFailing() {
-            DriverHandler.RegisterDriver<IConsoleDriver>(DriverTypes.Console, new MyCustomConsoleDriver());
+            DriverHandler.RegisterDriver(DriverTypes.Console, new MyCustomConsoleDriver());
             DriverHandler.SetDriver<IConsoleDriver>("MyCustom");
             Should.Throw(() => DebugCheck.Assert(false, "Always false"), typeof(KernelException));
         }
@@ -85,7 +85,7 @@ namespace Nitrocid.Tests.Kernel.Debugging
         [Test]
         [Description("Misc")]
         public void TestAssertNotNormalFailing() {
-            DriverHandler.RegisterDriver<IConsoleDriver>(DriverTypes.Console, new MyCustomConsoleDriver());
+            DriverHandler.RegisterDriver(DriverTypes.Console, new MyCustomConsoleDriver());
             DriverHandler.SetDriver<IConsoleDriver>("MyCustom");
             Should.Throw(() => DebugCheck.AssertNot(true), typeof(KernelException));
         }
@@ -104,7 +104,7 @@ namespace Nitrocid.Tests.Kernel.Debugging
         [Test]
         [Description("Misc")]
         public void TestAssertNotNormalMessageFailing() {
-            DriverHandler.RegisterDriver<IConsoleDriver>(DriverTypes.Console, new MyCustomConsoleDriver());
+            DriverHandler.RegisterDriver(DriverTypes.Console, new MyCustomConsoleDriver());
             DriverHandler.SetDriver<IConsoleDriver>("MyCustom");
             Should.Throw(() => DebugCheck.AssertNot(true, "Always true"), typeof(KernelException));
         }
@@ -123,7 +123,7 @@ namespace Nitrocid.Tests.Kernel.Debugging
         [Test]
         [Description("Misc")]
         public void TestAssertNullFailing() {
-            DriverHandler.RegisterDriver<IConsoleDriver>(DriverTypes.Console, new MyCustomConsoleDriver());
+            DriverHandler.RegisterDriver(DriverTypes.Console, new MyCustomConsoleDriver());
             DriverHandler.SetDriver<IConsoleDriver>("MyCustom");
             Should.Throw(() => DebugCheck.AssertNull<string[]>(null), typeof(KernelException));
         }
@@ -143,7 +143,7 @@ namespace Nitrocid.Tests.Kernel.Debugging
         [Description("Misc")]
         public void TestAssertNullMessageFailing()
         {
-            DriverHandler.RegisterDriver<IConsoleDriver>(DriverTypes.Console, new MyCustomConsoleDriver());
+            DriverHandler.RegisterDriver(DriverTypes.Console, new MyCustomConsoleDriver());
             DriverHandler.SetDriver<IConsoleDriver>("MyCustom");
             Should.Throw(() => DebugCheck.AssertNull<string[]>(null, "Always false"), typeof(KernelException));
         }
@@ -163,7 +163,7 @@ namespace Nitrocid.Tests.Kernel.Debugging
         [Description("Misc")]
         public void TestAssertNotNullFailing()
         {
-            DriverHandler.RegisterDriver<IConsoleDriver>(DriverTypes.Console, new MyCustomConsoleDriver());
+            DriverHandler.RegisterDriver(DriverTypes.Console, new MyCustomConsoleDriver());
             DriverHandler.SetDriver<IConsoleDriver>("MyCustom");
             Should.Throw(() => DebugCheck.AssertNotNull(Array.Empty<string>()), typeof(KernelException));
         }
@@ -183,7 +183,7 @@ namespace Nitrocid.Tests.Kernel.Debugging
         [Description("Misc")]
         public void TestAssertNotNullMessageFailing()
         {
-            DriverHandler.RegisterDriver<IConsoleDriver>(DriverTypes.Console, new MyCustomConsoleDriver());
+            DriverHandler.RegisterDriver(DriverTypes.Console, new MyCustomConsoleDriver());
             DriverHandler.SetDriver<IConsoleDriver>("MyCustom");
             Should.Throw(() => DebugCheck.AssertNotNull(Array.Empty<string>(), "Always false"), typeof(KernelException));
         }
@@ -194,7 +194,7 @@ namespace Nitrocid.Tests.Kernel.Debugging
         [Test]
         [Description("Misc")]
         public void TestAssertForceFail() {
-            DriverHandler.RegisterDriver<IConsoleDriver>(DriverTypes.Console, new MyCustomConsoleDriver());
+            DriverHandler.RegisterDriver(DriverTypes.Console, new MyCustomConsoleDriver());
             DriverHandler.SetDriver<IConsoleDriver>("MyCustom");
             Should.Throw(() => DebugCheck.AssertFail("Always false"), typeof(KernelException));
         }

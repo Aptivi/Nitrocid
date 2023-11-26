@@ -46,7 +46,7 @@ namespace Nitrocid.Legacy.InxiNet
         { }
 
         void IAddon.StartAddon() =>
-            DriverHandler.RegisterBaseDriver<IHardwareProberDriver>(DriverTypes.HardwareProber, singleton);
+            DriverHandler.RegisterBaseDriver(DriverTypes.HardwareProber, singleton);
 
         void IAddon.StopAddon()
         {

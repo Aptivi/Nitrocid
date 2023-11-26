@@ -318,28 +318,41 @@ namespace KS.Drivers
         /// <param name="name">The driver name</param>
         /// <returns>The driver responsible for performing operations according to driver type</returns>
         public static TResult GetDriver<TResult>(string name)
+            where TResult : IDriver
         {
             // First, infer the type from the TResult
             var driverType = InferDriverTypeFromDriverInterfaceType<TResult>();
 
             // Then, get the actual driver from name
+            return (TResult)GetDriver(driverType, name);
+        }
+
+        /// <summary>
+        /// Gets the driver
+        /// </summary>
+        /// <param name="driverType">The required driver type</param>
+        /// <param name="name">The driver name</param>
+        /// <returns>The driver responsible for performing operations according to driver type</returns>
+        public static IDriver GetDriver(DriverTypes driverType, string name)
+        {
+            // Get the actual driver from name
             if (IsBuiltin(driverType, name))
             {
                 // Found a driver under the kernel driver list
                 DebugWriter.WriteDebug(DebugLevel.I, "Kernel driver {0}, type {1}, found under the built-in driver list.", name, driverType.ToString());
-                return (TResult)drivers[driverType][name];
+                return drivers[driverType][name];
             }
             else if (IsRegistered(driverType, name))
             {
                 // Found a driver under the custom driver list
                 DebugWriter.WriteDebug(DebugLevel.I, "Kernel driver {0}, type {1}, found under the custom driver list.", name, driverType.ToString());
-                return (TResult)customDrivers[driverType][name];
+                return customDrivers[driverType][name];
             }
             else
             {
                 // Found no driver under both lists
                 DebugWriter.WriteDebug(DebugLevel.I, "Kernel driver {0}, type {1}, not found in any list.", name, driverType.ToString());
-                return GetFallbackDriver<TResult>();
+                return GetFallbackDriver(driverType);
             }
         }
 
@@ -350,11 +363,24 @@ namespace KS.Drivers
         /// <param name="driver">Driver to query its name from the key</param>
         /// <returns>Driver name</returns>
         public static string GetDriverName<TResult>(IDriver driver)
+            where TResult : IDriver
         {
             // First, infer the type from the TResult
             var driverType = InferDriverTypeFromDriverInterfaceType<TResult>();
 
             // Then, get the actual driver from name
+            return GetDriverName(driverType, driver);
+        }
+
+        /// <summary>
+        /// Gets the driver name
+        /// </summary>
+        /// <param name="driverType">The required driver type</param>
+        /// <param name="driver">Driver to query its name from the key</param>
+        /// <returns>Driver name</returns>
+        public static string GetDriverName(DriverTypes driverType, IDriver driver)
+        {
+            // Get the actual driver from name
             if (IsBuiltin(driverType, driver))
             {
                 // Found a driver under the kernel driver list
@@ -373,7 +399,7 @@ namespace KS.Drivers
             {
                 // Found no driver under both lists
                 DebugWriter.WriteDebug(DebugLevel.I, "Kernel driver of type {0}, type {1}, not found in any list.", driver.GetType().Name, driverType.ToString());
-                return GetFallbackDriverName<TResult>();
+                return GetFallbackDriverName(driverType);
             }
         }
 
@@ -383,11 +409,23 @@ namespace KS.Drivers
         /// <typeparam name="TResult">The required driver type</typeparam>
         /// <returns>List of drivers with their instances</returns>
         public static Dictionary<string, IDriver> GetDrivers<TResult>()
+            where TResult : IDriver
         {
             // First, infer the type from the TResult
             var driverType = InferDriverTypeFromDriverInterfaceType<TResult>();
 
-            // Then, exclude internal drivers from the list
+            // Then, get the list of drivers
+            return GetDrivers(driverType);
+        }
+
+        /// <summary>
+        /// Gets the drivers
+        /// </summary>
+        /// <param name="driverType">The required driver type</param>
+        /// <returns>List of drivers with their instances</returns>
+        public static Dictionary<string, IDriver> GetDrivers(DriverTypes driverType)
+        {
+            // Exclude internal drivers from the list
             var filteredDrivers       = drivers[driverType].Where((kvp) => !kvp.Value.DriverInternal);
             var filteredCustomDrivers = customDrivers[driverType].Where((kvp) => !kvp.Value.DriverInternal);
             DebugWriter.WriteDebug(DebugLevel.I, "For type {0}, driver counts:", driverType.ToString());
@@ -405,9 +443,22 @@ namespace KS.Drivers
         /// <typeparam name="TResult">The required driver type</typeparam>
         /// <returns>List of driver names</returns>
         public static string[] GetDriverNames<TResult>()
+            where TResult : IDriver
         {
             // Get the drivers and fetch their names
             var drivers = GetDrivers<TResult>();
+            return drivers.Select((kvp) => kvp.Key).ToArray();
+        }
+
+        /// <summary>
+        /// Gets the driver names
+        /// </summary>
+        /// <param name="driverType">The required driver type</param>
+        /// <returns>List of driver names</returns>
+        public static string[] GetDriverNames(DriverTypes driverType)
+        {
+            // Get the drivers and fetch their names
+            var drivers = GetDrivers(driverType);
             return drivers.Select((kvp) => kvp.Key).ToArray();
         }
 
@@ -417,15 +468,27 @@ namespace KS.Drivers
         /// <typeparam name="TResult">The required driver type</typeparam>
         /// <returns>The driver responsible for performing operations according to driver type</returns>
         public static TResult GetFallbackDriver<TResult>()
+            where TResult : IDriver
         {
             // First, infer the type from the TResult
             var driverType = InferDriverTypeFromDriverInterfaceType<TResult>();
 
             // Then, get the fallback (default) driver from name
+            return (TResult)GetFallbackDriver(driverType);
+        }
+
+        /// <summary>
+        /// Gets the fallback (default) driver
+        /// </summary>
+        /// <param name="driverType">The required driver type</param>
+        /// <returns>The driver responsible for performing operations according to driver type</returns>
+        public static IDriver GetFallbackDriver(DriverTypes driverType)
+        {
+            // Get the fallback (default) driver from name
             if (IsBuiltin(driverType, "Default"))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Kernel driver, type {0}, fallback.", driverType.ToString());
-                return (TResult)drivers[driverType]["Default"];
+                return drivers[driverType]["Default"];
             }
             else
             {
@@ -440,11 +503,23 @@ namespace KS.Drivers
         /// <typeparam name="TResult">The required driver type</typeparam>
         /// <returns>Fallback (default) name</returns>
         public static string GetFallbackDriverName<TResult>()
+            where TResult : IDriver
         {
             // First, infer the type from the TResult
             var driverType = InferDriverTypeFromDriverInterfaceType<TResult>();
 
             // Then, get the fallback (default) driver from name
+            return GetFallbackDriverName(driverType);
+        }
+
+        /// <summary>
+        /// Gets the fallback (default) name
+        /// </summary>
+        /// <param name="driverType">The required driver type</param>
+        /// <returns>Fallback (default) name</returns>
+        public static string GetFallbackDriverName(DriverTypes driverType)
+        {
+            // Get the fallback (default) driver from name
             if (IsBuiltin(driverType, "Default"))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Kernel driver, type {0}, fallback.", driverType.ToString());
@@ -485,6 +560,7 @@ namespace KS.Drivers
         /// <typeparam name="TResult">The required driver type</typeparam>
         /// <returns>The current driver responsible for performing operations according to driver type</returns>
         public static TResult GetCurrentDriver<TResult>()
+            where TResult : IDriver
         {
             // First, infer the type from the TResult
             var driverType = InferDriverTypeFromDriverInterfaceType<TResult>();
@@ -499,6 +575,7 @@ namespace KS.Drivers
         /// <typeparam name="TResult">The required driver type</typeparam>
         /// <returns>The current local driver responsible for performing operations according to driver type</returns>
         public static TResult GetCurrentDriverLocal<TResult>()
+            where TResult : IDriver
         {
             // First, infer the type from the TResult
             var driverType = InferDriverTypeFromDriverInterfaceType<TResult>();
@@ -510,16 +587,50 @@ namespace KS.Drivers
         /// <summary>
         /// Registers the driver
         /// </summary>
+        /// <typeparam name="TDriver">Type of driver to register</typeparam>
+        /// <param name="driver">Driver to be registered</param>
+        public static void RegisterDriver<TDriver>(IDriver driver)
+            where TDriver : IDriver
+        {
+            // First, infer the type from the TDriver
+            var driverType = InferDriverTypeFromDriverInterfaceType<TDriver>();
+
+            // Then, register the driver
+            RegisterDriver(driverType, driver);
+        }
+
+        /// <summary>
+        /// Registers the driver
+        /// </summary>
         /// <param name="type">Type of driver to register</param>
         /// <param name="driver">Driver to be registered</param>
-        public static void RegisterDriver<TDriver>(DriverTypes type, IDriver driver)
+        public static void RegisterDriver(DriverTypes type, IDriver driver)
         {
+            if (driver is null)
+                throw new KernelException(KernelExceptionType.DriverHandler, Translate.DoTranslation("Can't register a non-driver or a null driver."));
+            
+            // Now, get the driver name
             string name = driver.DriverName;
             if (!IsRegistered(type, name) && driver.DriverType == type)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Registered driver {0} [{1}] under type {2}", name, driver.GetType().Name, type.ToString());
                 customDrivers[type].Add(name, driver);
             }
+        }
+
+        /// <summary>
+        /// Unregisters the driver
+        /// </summary>
+        /// <typeparam name="TDriver">Type of driver to unregister</typeparam>
+        /// <param name="name">Driver name to be unregistered</param>
+        public static void UnregisterDriver<TDriver>(string name)
+            where TDriver : IDriver
+        {
+            // First, infer the type from the TDriver
+            var driverType = InferDriverTypeFromDriverInterfaceType<TDriver>();
+
+            // Then, register the driver
+            UnregisterDriver(driverType, name);
         }
 
         /// <summary>
@@ -534,6 +645,38 @@ namespace KS.Drivers
                 DebugWriter.WriteDebug(DebugLevel.I, "Unregistered driver {0} [{1}] under type {2}", name, customDrivers[type][name].GetType().Name, type.ToString());
                 customDrivers[type].Remove(name);
             }
+        }
+
+        /// <summary>
+        /// Is the driver built-in?
+        /// </summary>
+        /// <typeparam name="TDriver">Type of driver to query</typeparam>
+        /// <param name="name">Driver name</param>
+        /// <returns>True if built-in. Otherwise, false.</returns>
+        public static bool IsBuiltin<TDriver>(string name)
+            where TDriver : IDriver
+        {
+            // First, infer the type from the TDriver
+            var driverType = InferDriverTypeFromDriverInterfaceType<TDriver>();
+
+            // Then, query the driver
+            return IsBuiltin(driverType, name);
+        }
+
+        /// <summary>
+        /// Is the driver built-in?
+        /// </summary>
+        /// <typeparam name="TDriver">Type of driver to query</typeparam>
+        /// <param name="driver">Driver to query its name from the key</param>
+        /// <returns>True if built-in. Otherwise, false.</returns>
+        public static bool IsBuiltin<TDriver>(IDriver driver)
+            where TDriver : IDriver
+        {
+            // First, infer the type from the TDriver
+            var driverType = InferDriverTypeFromDriverInterfaceType<TDriver>();
+
+            // Then, query the driver
+            return IsBuiltin(driverType, driver);
         }
 
         /// <summary>
@@ -560,6 +703,38 @@ namespace KS.Drivers
             bool registered = drivers[type].ContainsValue(driver);
             DebugWriter.WriteDebug(DebugLevel.I, "Registered built-in {0} for {1}? {2}", driver.GetType().Name, type.ToString(), registered);
             return registered;
+        }
+
+        /// <summary>
+        /// Is the driver registered?
+        /// </summary>
+        /// <typeparam name="TDriver">Type of driver to query</typeparam>
+        /// <param name="name">Driver name</param>
+        /// <returns>True if registered. Otherwise, false.</returns>
+        public static bool IsRegistered<TDriver>(string name)
+            where TDriver : IDriver
+        {
+            // First, infer the type from the TDriver
+            var driverType = InferDriverTypeFromDriverInterfaceType<TDriver>();
+
+            // Then, query the driver
+            return IsRegistered(driverType, name);
+        }
+
+        /// <summary>
+        /// Is the driver registered?
+        /// </summary>
+        /// <typeparam name="TDriver">Type of driver to query</typeparam>
+        /// <param name="driver">Driver to query its name from the key</param>
+        /// <returns>True if registered. Otherwise, false.</returns>
+        public static bool IsRegistered<TDriver>(IDriver driver)
+            where TDriver : IDriver
+        {
+            // First, infer the type from the TDriver
+            var driverType = InferDriverTypeFromDriverInterfaceType<TDriver>();
+
+            // Then, query the driver
+            return IsRegistered(driverType, driver);
         }
 
         /// <summary>
@@ -594,14 +769,27 @@ namespace KS.Drivers
         /// <param name="name">Name of the available kernel driver to set to</param>
         /// <exception cref="KernelException"></exception>
         public static void SetDriver<T>(string name)
+            where T : IDriver
         {
             // First, infer the type from the T
             var driverType = InferDriverTypeFromDriverInterfaceType<T>();
 
             // Then, try to set the driver
+            SetDriver(driverType, name);
+        }
+
+        /// <summary>
+        /// Sets the kernel driver
+        /// </summary>
+        /// <param name="driverType">Driver type</param>
+        /// <param name="name">Name of the available kernel driver to set to</param>
+        /// <exception cref="KernelException"></exception>
+        public static void SetDriver(DriverTypes driverType, string name)
+        {
+            // Try to set the driver
             DebugWriter.WriteDebug(DebugLevel.I, "Trying to set driver to {0} for type {1}...", name, driverType.ToString());
-            currentDrivers[driverType] = (IDriver)GetDriver<T>(name);
-            SetDriverLocal<T>(name);
+            currentDrivers[driverType] = GetDriver(driverType, name);
+            SetDriverLocal(driverType, name);
         }
 
         /// <summary>
@@ -610,23 +798,36 @@ namespace KS.Drivers
         /// <param name="name">Name of the available kernel driver to set to</param>
         /// <exception cref="KernelException"></exception>
         public static void SetDriverSafe<T>(string name)
+            where T : IDriver
         {
             // First, infer the type from the T
             var driverType = InferDriverTypeFromDriverInterfaceType<T>();
 
             // Then, try to set the driver
-            var drivers = GetDrivers<T>();
+            SetDriverSafe(driverType, name);
+        }
+
+        /// <summary>
+        /// Sets the kernel driver
+        /// </summary>
+        /// <param name="driverType">Driver type</param>
+        /// <param name="name">Name of the available kernel driver to set to</param>
+        /// <exception cref="KernelException"></exception>
+        public static void SetDriverSafe(DriverTypes driverType, string name)
+        {
+            // Try to set the driver
+            var drivers = GetDrivers(driverType);
             if (!drivers.ContainsKey(name))
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Nonexistent driver {0} for type {1}, so setting to default...", name, driverType.ToString());
-                currentDrivers[driverType] = (IDriver)GetDriver<T>("Default");
-                SetDriverLocal<T>("Default");
+                currentDrivers[driverType] = GetDriver(driverType, "Default");
+                SetDriverLocal(driverType, "Default");
             }
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Setting driver to {0} for type {1}...", name, driverType.ToString());
-                currentDrivers[driverType] = (IDriver)GetDriver<T>(name);
-                SetDriverLocal<T>(name);
+                currentDrivers[driverType] = GetDriver(driverType, name);
+                SetDriverLocal(driverType, name);
             }
         }
 
@@ -635,12 +836,30 @@ namespace KS.Drivers
         /// </summary>
         /// <param name="name">Name of the available kernel driver to set to</param>
         public static void BeginLocalDriver<T>(string name)
+            where T : IDriver
+        {
+            if (begunLocal)
+                return;
+
+            // First, infer the type from the T
+            var driverType = InferDriverTypeFromDriverInterfaceType<T>();
+
+            // Then, try to set the driver
+            BeginLocalDriver(driverType, name);
+        }
+
+        /// <summary>
+        /// Begins to use the local driver
+        /// </summary>
+        /// <param name="driverType">Driver type</param>
+        /// <param name="name">Name of the available kernel driver to set to</param>
+        public static void BeginLocalDriver(DriverTypes driverType, string name)
         {
             if (begunLocal)
                 return;
 
             // Try to set the driver
-            SetDriverLocal<T>(name);
+            SetDriverLocal(driverType, name);
             begunLocal = true;
             DebugWriter.WriteDebug(DebugLevel.I, "Local driver {0} has begun.", name);
         }
@@ -650,16 +869,34 @@ namespace KS.Drivers
         /// </summary>
         /// <param name="name">Name of the available kernel driver to set to</param>
         public static void BeginLocalDriverSafe<T>(string name)
+            where T : IDriver
+        {
+            if (begunLocal)
+                return;
+
+            // First, infer the type from the T
+            var driverType = InferDriverTypeFromDriverInterfaceType<T>();
+
+            // Then, try to set the driver
+            BeginLocalDriverSafe(driverType, name);
+        }
+
+        /// <summary>
+        /// Begins to use the local driver
+        /// </summary>
+        /// <param name="driverType">Driver type</param>
+        /// <param name="name">Name of the available kernel driver to set to</param>
+        public static void BeginLocalDriverSafe(DriverTypes driverType, string name)
         {
             if (begunLocal)
                 return;
 
             // Try to set the driver
-            var drivers = GetDrivers<T>();
+            var drivers = GetDrivers(driverType);
             if (!drivers.ContainsKey(name))
-                SetDriverLocal<T>("Default");
+                SetDriverLocal(driverType, "Default");
             else
-                SetDriverLocal<T>(name);
+                SetDriverLocal(driverType, name);
             begunLocal = true;
             DebugWriter.WriteDebug(DebugLevel.I, "Local driver {0} has begun.", name);
         }
@@ -668,6 +905,7 @@ namespace KS.Drivers
         /// Ends using the local driver
         /// </summary>
         public static void EndLocalDriver<T>()
+            where T : IDriver
         {
             if (!begunLocal)
                 return;
@@ -676,22 +914,43 @@ namespace KS.Drivers
             var driverType = InferDriverTypeFromDriverInterfaceType<T>();
 
             // Try to set the driver
+            EndLocalDriver(driverType);
+        }
+
+        /// <summary>
+        /// Ends using the local driver
+        /// </summary>
+        /// <param name="driverType">Driver type</param>
+        public static void EndLocalDriver(DriverTypes driverType)
+        {
+            if (!begunLocal)
+                return;
+
+            // Try to set the driver
             currentDriversLocal[driverType] = currentDrivers[driverType];
             begunLocal = false;
             DebugWriter.WriteDebug(DebugLevel.I, "Local driver has ended.");
         }
 
         internal static void SetDriverLocal<T>(string name)
+            where T : IDriver
         {
             // First, infer the type from the T
             var driverType = InferDriverTypeFromDriverInterfaceType<T>();
 
             // Then, try to set the driver
+            SetDriverLocal(driverType, name);
+        }
+
+        internal static void SetDriverLocal(DriverTypes driverType, string name)
+        {
+            // Try to set the driver
             DebugWriter.WriteDebug(DebugLevel.I, "Trying to set driver to {0} for type {1}...", name, driverType.ToString());
-            currentDriversLocal[driverType] = (IDriver)GetDriver<T>(name);
+            currentDriversLocal[driverType] = GetDriver(driverType, name);
         }
 
         internal static DriverTypes InferDriverTypeFromDriverInterfaceType<T>()
+            where T : IDriver
         {
             DriverTypes driverType;
             var type = typeof(T);
@@ -706,14 +965,35 @@ namespace KS.Drivers
             return driverType;
         }
 
-        internal static void RegisterBaseDriver<TDriver>(DriverTypes type, IDriver driver)
+        internal static void RegisterBaseDriver<TDriver>(IDriver driver)
+            where TDriver : IDriver
         {
+            // First, infer the type from the TDriver
+            var driverType = InferDriverTypeFromDriverInterfaceType<TDriver>();
+
+            // Then, try to set the driver
+            RegisterBaseDriver(driverType, driver);
+        }
+
+        internal static void RegisterBaseDriver(DriverTypes type, IDriver driver)
+        {
+            DebugCheck.AssertNull(driver, "driver should not be null");
             string name = driver.DriverName;
             if (!IsRegistered(type, name) && driver.DriverType == type)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Registered driver {0} [{1}] under type {2}", name, driver.GetType().Name, type.ToString());
                 drivers[type].Add(name, driver);
             }
+        }
+
+        internal static void UnregisterBaseDriver<TDriver>(string name)
+            where TDriver : IDriver
+        {
+            // First, infer the type from the TDriver
+            var driverType = InferDriverTypeFromDriverInterfaceType<TDriver>();
+
+            // Then, try to set the driver
+            UnregisterBaseDriver(driverType, name);
         }
 
         internal static void UnregisterBaseDriver(DriverTypes type, string name)
