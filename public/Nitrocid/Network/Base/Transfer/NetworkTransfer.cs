@@ -19,7 +19,6 @@
 
 using System;
 using System.Net.Http;
-using System.Net.Http.Handlers;
 using System.Threading;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
@@ -46,8 +45,7 @@ namespace KS.Network.Base.Transfer
         internal static bool IsError;
         internal static Exception ReasonError;
         internal static CancellationTokenSource CancellationToken = new();
-        internal static ProgressMessageHandler WClientProgress = new(new HttpClientHandler());
-        internal static HttpClient WClient = new(WClientProgress);
+        internal static HttpClient WClient = new();
         internal static string DownloadedString;
         internal static Notification DownloadNotif;
         internal static Notification UploadNotif;
@@ -202,19 +200,25 @@ namespace KS.Network.Base.Transfer
             NetworkTools.TransferFinished = true;
         }
 
-        internal static void HttpReceiveProgressWatch(object sender, HttpProgressEventArgs e)
+        internal static void HttpReceiveProgressWatch(string message)
         {
-            int TotalBytes = (int)(e.TotalBytes ?? -1);
-            var TransferInfo = new NetworkTransferInfo(e.BytesTransferred, TotalBytes, NetworkTransferType.Download);
-            SuppressDownloadMessage = TotalBytes == -1;
+            string totalReadStr = message[0..message.IndexOf(" / ")];
+            string fileSizeStr = message[(message.IndexOf(" / ") + 3)..message.IndexOf(" | ")];
+            long totalRead = long.Parse(totalReadStr);
+            long fileSize = long.Parse(fileSizeStr);
+            var TransferInfo = new NetworkTransferInfo(totalRead, fileSize, NetworkTransferType.Download);
+            SuppressDownloadMessage = fileSize == 0;
             TransferProgress(TransferInfo);
         }
 
-        internal static void HttpSendProgressWatch(object sender, HttpProgressEventArgs e)
+        internal static void HttpSendProgressWatch(string message)
         {
-            int TotalBytes = (int)(e.TotalBytes ?? -1);
-            var TransferInfo = new NetworkTransferInfo(e.BytesTransferred, TotalBytes, NetworkTransferType.Upload);
-            SuppressUploadMessage = TotalBytes == -1;
+            string totalReadStr = message[0..message.IndexOf(" / ")];
+            string fileSizeStr = message[(message.IndexOf(" / ") + 3)..message.IndexOf(" | ")];
+            long totalRead = long.Parse(totalReadStr);
+            long fileSize = long.Parse(fileSizeStr);
+            var TransferInfo = new NetworkTransferInfo(totalRead, fileSize, NetworkTransferType.Upload);
+            SuppressUploadMessage = fileSize == 0;
             TransferProgress(TransferInfo);
         }
 
@@ -237,7 +241,6 @@ namespace KS.Network.Base.Transfer
                     {
                         // We know the total bytes. Print it out.
                         double Progress = 100d * (TransferInfo.DoneSize / (double)TransferInfo.FileSize);
-                        ProgressManager.ReportProgress((int)Math.Round(Progress), $"{TransferInfo.TransferType}", $" {Progress:000.00}% | {TextTools.FormatString(indicator, TransferInfo.DoneSize.SizeString(), TransferInfo.FileSize.SizeString())}");
                         if (NotificationProvoke)
                         {
                             NotificationInstance.Progress = (int)Math.Round(Progress);

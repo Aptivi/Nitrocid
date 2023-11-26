@@ -36,6 +36,8 @@ using System.Net.Sockets;
 using System.Net;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
+using KS.Misc.Progress;
+using KS.Misc.Reflection;
 
 namespace KS.Drivers.Network
 {
@@ -80,6 +82,7 @@ namespace KS.Drivers.Network
         {
             // Intialize variables
             var FileUri = new Uri(URL);
+            var builtinHandler = new ProgressHandler((_, message) => NetworkTransfer.HttpReceiveProgressWatch(message), "Download");
 
             // Initialize the progress bar indicator and the file completed event handler
             if (NetworkTransfer.DownloadNotificationProvoke)
@@ -88,25 +91,40 @@ namespace KS.Drivers.Network
                 NotificationManager.NotifySend(NetworkTransfer.DownloadNotif);
             }
             if (ShowProgress)
-                NetworkTransfer.WClientProgress.HttpReceiveProgress += NetworkTransfer.HttpReceiveProgressWatch;
+                ProgressManager.RegisterProgressHandler(builtinHandler);
 
             // Send the GET request to the server for the file
             DebugWriter.WriteDebug(DebugLevel.I, "Directory location: {0}", CurrentDirectory.CurrentDir);
             var Response = NetworkTransfer.WClient.GetAsync(FileUri, HttpCompletionOption.ResponseHeadersRead, NetworkTransfer.CancellationToken.Token).Result;
             Response.EnsureSuccessStatusCode();
 
-            // Get the file stream
+            // Get the file path
             string FilePath = FS.NeutralizePath(FileName);
-            var FileStream = new FileStream(FilePath, FileMode.Create, FileAccess.Write);
 
             // Try to download the file asynchronously
             Task.Run(() => 
             { 
                 try 
-                { 
-                    Response.Content.ReadAsStreamAsync().Result.CopyTo(FileStream);
-                    FileStream.Flush();
-                    FileStream.Close();
+                {
+                    int size = 16384;
+                    var length = Response.Content.Headers.ContentLength;
+                    long fileSize = length ?? 0;
+                    long totalRead = 0;
+                    using (var outputFileStream = File.Create(FilePath, size))
+                    {
+                        using var responseStream = Response.Content.ReadAsStream();
+                        var buffer = new byte[size];
+                        int bytesRead = 0;
+                        do
+                        {
+                            bytesRead = responseStream.Read(buffer, 0, size);
+                            outputFileStream.Write(buffer, 0, bytesRead);
+                            totalRead += bytesRead;
+                            double prog = 100d * ((double)totalRead / fileSize);
+                            if (ShowProgress)
+                                ProgressManager.ReportProgress((int)prog, "Download", $"{totalRead} / {fileSize} | {prog:000.00}%");
+                        } while (bytesRead > 0);
+                    }
                     NetworkTransfer.DownloadChecker(null);
                 }
                 catch (Exception ex)
@@ -122,6 +140,10 @@ namespace KS.Drivers.Network
                     NetworkTransfer.CancellationToken.Cancel();
                 }
             }
+
+            // Unregister the handler
+            if (ShowProgress)
+                ProgressManager.UnregisterProgressHandler(builtinHandler);
 
             // We're done downloading. Check to see if it's actually an error
             NetworkTools.TransferFinished = false;
@@ -155,6 +177,7 @@ namespace KS.Drivers.Network
         {
             // Intialize variables
             var StringUri = new Uri(URL);
+            var builtinHandler = new ProgressHandler((_, message) => NetworkTransfer.HttpReceiveProgressWatch(message), "Download");
 
             // Initialize the progress bar indicator and the file completed event handler
             if (NetworkTransfer.DownloadNotificationProvoke)
@@ -163,23 +186,40 @@ namespace KS.Drivers.Network
                 NotificationManager.NotifySend(NetworkTransfer.DownloadNotif);
             }
             if (ShowProgress)
-                NetworkTransfer.WClientProgress.HttpReceiveProgress += NetworkTransfer.HttpReceiveProgressWatch;
+                ProgressManager.RegisterProgressHandler(builtinHandler);
 
             // Send the GET request to the server for the file
             DebugWriter.WriteDebug(DebugLevel.I, "Directory location: {0}", CurrentDirectory.CurrentDir);
             var Response = NetworkTransfer.WClient.GetAsync(StringUri, HttpCompletionOption.ResponseHeadersRead, NetworkTransfer.CancellationToken.Token).Result;
             Response.EnsureSuccessStatusCode();
 
-            // Get the memory stream
-            var ContentStream = new MemoryStream();
-
             // Try to download the string asynchronously
+            string downloaded = "";
             Task.Run(() => 
             { 
-                try 
-                { 
-                    Response.Content.ReadAsStreamAsync().Result.CopyTo(ContentStream); 
-                    ContentStream.Seek(0L, SeekOrigin.Begin);
+                try
+                {
+                    int size = 16384;
+                    var length = Response.Content.Headers.ContentLength;
+                    long fileSize = length ?? 0;
+                    long totalRead = 0;
+                    using (var ContentStream = new MemoryStream())
+                    {
+                        using var responseStream = Response.Content.ReadAsStream();
+                        var buffer = new byte[size];
+                        int bytesRead = 0;
+                        do
+                        {
+                            bytesRead = responseStream.Read(buffer, 0, size);
+                            ContentStream.Write(buffer, 0, bytesRead);
+                            totalRead += bytesRead;
+                            double prog = 100d * ((double)totalRead / fileSize);
+                            if (ShowProgress)
+                                ProgressManager.ReportProgress((int)prog, "Download", $"{totalRead} / {fileSize} | {prog:000.00}%");
+                        } while (bytesRead > 0);
+                        ContentStream.Seek(0L, SeekOrigin.Begin);
+                        downloaded = new StreamReader(ContentStream).ReadToEnd();
+                    }
                     NetworkTransfer.DownloadChecker(null); 
                 } 
                 catch (Exception ex) 
@@ -195,6 +235,10 @@ namespace KS.Drivers.Network
                     NetworkTransfer.CancellationToken.Cancel();
                 }
             }
+
+            // Unregister the handler
+            if (ShowProgress)
+                ProgressManager.UnregisterProgressHandler(builtinHandler);
 
             // We're done downloading. Check to see if it's actually an error
             NetworkTools.TransferFinished = false;
@@ -215,29 +259,8 @@ namespace KS.Drivers.Network
                     NetworkTransfer.DownloadNotif.Progress = 100;
                     NetworkTransfer.DownloadNotif.ProgressState = NotificationProgressState.Success;
                 }
-                return new StreamReader(ContentStream).ReadToEnd();
+                return downloaded;
             }
-        }
-
-        /// <inheritdoc/>
-        public virtual string GetFilenameFromUrl(string Url)
-        {
-            string FileName = Url.Split('/').Last();
-            DebugWriter.WriteDebug(DebugLevel.I, "Prototype Filename: {0}", FileName);
-            if (FileName.Contains('?'))
-            {
-                FileName = FileName.Remove(FileName.IndexOf('?'));
-            }
-            DebugWriter.WriteDebug(DebugLevel.I, "Finished Filename: {0}", FileName);
-            return FileName;
-        }
-
-        /// <inheritdoc/>
-        public virtual PingReply PingAddress(string Address, int Timeout, byte[] Buffer)
-        {
-            var Pinger = new Ping();
-            var PingerOpts = new PingOptions() { DontFragment = true };
-            return Pinger.Send(Address, Timeout, Buffer, PingerOpts);
         }
 
         /// <inheritdoc/>
@@ -249,6 +272,7 @@ namespace KS.Drivers.Network
         {
             // Intialize variables
             var FileUri = new Uri(URL);
+            var builtinHandler = new ProgressHandler((_, message) => NetworkTransfer.HttpSendProgressWatch(message), "Upload");
 
             // Initialize the progress bar indicator and the file completed event handler
             if (NetworkTransfer.UploadNotificationProvoke)
@@ -257,7 +281,7 @@ namespace KS.Drivers.Network
                 NotificationManager.NotifySend(NetworkTransfer.DownloadNotif);
             }
             if (ShowProgress)
-                NetworkTransfer.WClientProgress.HttpSendProgress += NetworkTransfer.HttpSendProgressWatch;
+                ProgressManager.RegisterProgressHandler(builtinHandler);
 
             // Send the GET request to the server for the file after getting the stream and target file stream
             DebugWriter.WriteDebug(DebugLevel.I, "Directory location: {0}", CurrentDirectory.CurrentDir);
@@ -276,6 +300,10 @@ namespace KS.Drivers.Network
             {
                 NetworkTransfer.UploadChecker(ex);
             }
+
+            // Unregister the handler
+            if (ShowProgress)
+                ProgressManager.UnregisterProgressHandler(builtinHandler);
 
             // We're done uploading. Check to see if it's actually an error
             NetworkTools.TransferFinished = false;
@@ -309,6 +337,7 @@ namespace KS.Drivers.Network
         {
             // Intialize variables
             var StringUri = new Uri(URL);
+            var builtinHandler = new ProgressHandler((_, message) => NetworkTransfer.HttpSendProgressWatch(message), "Upload");
 
             // Initialize the progress bar indicator and the file completed event handler
             if (NetworkTransfer.UploadNotificationProvoke)
@@ -317,7 +346,7 @@ namespace KS.Drivers.Network
                 NotificationManager.NotifySend(NetworkTransfer.UploadNotif);
             }
             if (ShowProgress)
-                NetworkTransfer.WClientProgress.HttpSendProgress += NetworkTransfer.HttpSendProgressWatch;
+                ProgressManager.RegisterProgressHandler(builtinHandler);
 
             // Send the GET request to the server for the file
             DebugWriter.WriteDebug(DebugLevel.I, "Directory location: {0}", CurrentDirectory.CurrentDir);
@@ -333,6 +362,10 @@ namespace KS.Drivers.Network
             {
                 NetworkTransfer.UploadChecker(ex);
             }
+
+            // Unregister the handler
+            if (ShowProgress)
+                ProgressManager.UnregisterProgressHandler(builtinHandler);
 
             // We're done uploading. Check to see if it's actually an error
             NetworkTools.TransferFinished = false;
@@ -355,6 +388,27 @@ namespace KS.Drivers.Network
                 }
                 return true;
             }
+        }
+
+        /// <inheritdoc/>
+        public virtual string GetFilenameFromUrl(string Url)
+        {
+            string FileName = Url.Split('/').Last();
+            DebugWriter.WriteDebug(DebugLevel.I, "Prototype Filename: {0}", FileName);
+            if (FileName.Contains('?'))
+            {
+                FileName = FileName.Remove(FileName.IndexOf('?'));
+            }
+            DebugWriter.WriteDebug(DebugLevel.I, "Finished Filename: {0}", FileName);
+            return FileName;
+        }
+
+        /// <inheritdoc/>
+        public virtual PingReply PingAddress(string Address, int Timeout, byte[] Buffer)
+        {
+            var Pinger = new Ping();
+            var PingerOpts = new PingOptions() { DontFragment = true };
+            return Pinger.Send(Address, Timeout, Buffer, PingerOpts);
         }
 
         /// <summary>
