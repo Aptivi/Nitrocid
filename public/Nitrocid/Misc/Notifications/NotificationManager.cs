@@ -415,8 +415,8 @@ namespace KS.Misc.Notifications
         {
             string recentsPath =
                 Getting.GetNumberedFileName(
-                    Path.GetDirectoryName(PathsManagement.GetKernelPath(KernelPathType.Debugging)),
-                    PathsManagement.GetKernelPath(KernelPathType.Debugging)
+                    Path.GetDirectoryName(PathsManagement.GetKernelPath(KernelPathType.NotificationRecents)),
+                    PathsManagement.GetKernelPath(KernelPathType.NotificationRecents)
                 );
             string serialized = JsonConvert.SerializeObject(NotifRecents, Formatting.Indented);
             Writing.WriteContentsText(recentsPath, serialized);

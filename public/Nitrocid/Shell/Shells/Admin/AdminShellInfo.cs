@@ -101,6 +101,13 @@ namespace KS.Shell.Shells.Admin
                     ], new LsUsersCommand())
             },
 
+            { "savenotifs",
+                new CommandInfo("savenotifs", /* Localizable */ "Saves the recent notifications",
+                    [
+                        new CommandArgumentInfo()
+                    ], new SaveNotifsCommand())
+            },
+
             { "userflag",
                 new CommandInfo("userflag", /* Localizable */ "Manipulates with the user main flags",
                     [
