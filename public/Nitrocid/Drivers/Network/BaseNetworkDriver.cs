@@ -290,8 +290,11 @@ namespace KS.Drivers.Network
             var Content = new StreamContent(FileStream);
 
             // Upload now
+            bool uploaded = false;
             try
             {
+                var progressTask = new Task(() => { UploadProgress(FileStream, ref uploaded); });
+                progressTask.Start();
                 var Response = NetworkTransfer.WClient.PutAsync(URL, Content, NetworkTransfer.CancellationToken.Token).Result;
                 Response.EnsureSuccessStatusCode();
                 NetworkTransfer.UploadChecker(null);
@@ -300,6 +303,7 @@ namespace KS.Drivers.Network
             {
                 NetworkTransfer.UploadChecker(ex);
             }
+            uploaded = true;
 
             // Unregister the handler
             if (ShowProgress)
@@ -352,6 +356,7 @@ namespace KS.Drivers.Network
             DebugWriter.WriteDebug(DebugLevel.I, "Directory location: {0}", CurrentDirectory.CurrentDir);
             var StringContent = new StringContent(Data);
 
+            // Upload now
             try
             {
                 var Response = NetworkTransfer.WClient.PutAsync(URL, StringContent, NetworkTransfer.CancellationToken.Token).Result;
@@ -461,6 +466,20 @@ namespace KS.Drivers.Network
             }
 
             return [.. onlineAddresses];
+        }
+
+        private static void UploadProgress(FileStream stream, ref bool uploaded)
+        {
+            double previousPercentage = 0.0;
+            while (!uploaded)
+            {
+                long uploadedBytes = stream.Position;
+                long totalBytes = stream.Length;
+                double percentage = 100 * (uploadedBytes / (double)totalBytes);
+                if (percentage != previousPercentage)
+                    ProgressManager.ReportProgress((int)percentage, "Upload", $"{uploadedBytes} / {totalBytes} | {percentage:000.00}%");
+                previousPercentage = percentage;
+            }
         }
     }
 }
