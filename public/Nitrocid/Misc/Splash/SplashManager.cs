@@ -458,17 +458,24 @@ namespace KS.Misc.Splash
 
         private static void SplashThreadHandler(SplashThreadParameters threadParameters)
         {
-            var splash = GetSplashFromName(threadParameters.SplashName).EntryPoint;
-            while (!splash.SplashClosing)
+            try
             {
-                var displayPart = new ScreenPart();
-                displayPart.AddDynamicText(() => splash.Display(threadParameters.SplashContext));
-                if (splashScreen.ScreenParts.Length > 1)
-                    splashScreen.EditBufferedPart(1, displayPart);
-                else
-                    splashScreen.AddBufferedPart(displayPart);
-                ScreenTools.Render();
-                Thread.Sleep(20);
+                var splash = GetSplashFromName(threadParameters.SplashName).EntryPoint;
+                while (!splash.SplashClosing)
+                {
+                    var displayPart = new ScreenPart();
+                    displayPart.AddDynamicText(() => splash.Display(threadParameters.SplashContext));
+                    if (splashScreen.ScreenParts.Length > 1)
+                        splashScreen.EditBufferedPart(1, displayPart);
+                    else
+                        splashScreen.AddBufferedPart(displayPart);
+                    ScreenTools.Render();
+                    Thread.Sleep(20);
+                }
+            }
+            catch (ThreadInterruptedException)
+            {
+                DebugWriter.WriteDebug(DebugLevel.I, $"Splash exiting because {nameof(CloseSplash)}() is called.");
             }
         }
 
