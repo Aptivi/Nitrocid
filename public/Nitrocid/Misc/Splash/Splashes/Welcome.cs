@@ -37,6 +37,7 @@ namespace KS.Misc.Splash.Splashes
     class SplashWelcome : BaseSplash, ISplash
     {
 
+        private bool cleared = false;
         private int dotStep = 0;
 
         // Standalone splash information
@@ -48,9 +49,14 @@ namespace KS.Misc.Splash.Splashes
         public override string Opening(SplashContext context)
         {
             var builder = new StringBuilder();
-            builder.Append(
-                base.Opening(context)
-            );
+            cleared = ConsoleResizeListener.WasResized(true);
+            if (cleared)
+            {
+                cleared = true;
+                builder.Append(
+                    base.Opening(context)
+                );
+            }
 
             // Write a glorious Welcome screen
             Color col = KernelColorTools.GetColor(KernelColorType.Stage);
@@ -135,6 +141,7 @@ namespace KS.Misc.Splash.Splashes
         public override string Closing(SplashContext context, out bool delayRequired)
         {
             var builder = new StringBuilder();
+            cleared = false;
             builder.Append(
                 base.Opening(context)
             );
