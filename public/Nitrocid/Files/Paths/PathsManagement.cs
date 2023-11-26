@@ -57,6 +57,7 @@ namespace KS.Files.Paths
             $"{KernelPathType.ShellHistories}",
             $"{KernelPathType.Consents}",
             $"{KernelPathType.ExtensionHandlers}",
+            $"{KernelPathType.NotificationRecents}",
         ];
         private static readonly Dictionary<string, string> customPaths = [];
         private static readonly Dictionary<string, (Func<string>, bool)> knownPaths = new()
