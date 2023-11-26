@@ -116,5 +116,9 @@ namespace KS.Files
         /// Extension handlers file
         /// </summary>
         ExtensionHandlers,
+        /// <summary>
+        /// Recent notifications file
+        /// </summary>
+        NotificationRecents,
     }
 }

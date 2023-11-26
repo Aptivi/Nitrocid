@@ -47,6 +47,12 @@ namespace KS.Arguments.CommandLineArguments
                         continue;
                     switch (pathType)
                     {
+                        case KernelPathType.NotificationRecents:
+                            TargetPath = TargetPath[..TargetPath.LastIndexOf(".json")] + "*.json";
+                            string[] recents = Listing.GetFilesystemEntries(TargetPath);
+                            foreach (string recent in recents)
+                                File.Delete(recent);
+                            break;
                         case KernelPathType.Debugging:
                             TargetPath = TargetPath[..TargetPath.LastIndexOf(".log")] + "*.log";
                             string[] debugs = Listing.GetFilesystemEntries(TargetPath);

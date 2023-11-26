@@ -84,6 +84,7 @@ namespace KS.Files.Paths
             { $"{KernelPathType.ShellHistories}",      (() => ShellHistoriesPath, true) },
             { $"{KernelPathType.Consents}",            (() => ConsentsPath, true) },
             { $"{KernelPathType.ExtensionHandlers}",   (() => ExtensionHandlersPath, true) },
+            { $"{KernelPathType.NotificationRecents}", (() => NotificationRecentsPath, true) },
         };
 
         /// <summary>
@@ -291,6 +292,12 @@ namespace KS.Files.Paths
         /// </summary>
         public static string ExtensionHandlersPath =>
             FilesystemTools.NeutralizePath(AppDataPath + "/ExtensionHandlers.json");
+
+        /// <summary>
+        /// Recent notifications path
+        /// </summary>
+        public static string NotificationRecentsPath =>
+            FilesystemTools.NeutralizePath(AppDataPath + "/NotificationRecents.json");
 
         /// <summary>
         /// Gets the kernel path name from the list of known path types

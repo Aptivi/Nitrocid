@@ -36,6 +36,12 @@ using Terminaux.Colors;
 using KS.Kernel.Power;
 using KS.Users.Login;
 using KS.Languages;
+using KS.Files.Paths;
+using System.IO;
+using KS.Files;
+using KS.Files.Operations.Querying;
+using Newtonsoft.Json;
+using KS.Files.Operations;
 
 namespace KS.Misc.Notifications
 {
@@ -400,6 +406,20 @@ namespace KS.Misc.Notifications
 
             }
             return successful;
+        }
+
+        /// <summary>
+        /// Saves recent notifications to the APPDATA folder
+        /// </summary>
+        public static void SaveRecents()
+        {
+            string recentsPath =
+                Getting.GetNumberedFileName(
+                    Path.GetDirectoryName(PathsManagement.GetKernelPath(KernelPathType.Debugging)),
+                    PathsManagement.GetKernelPath(KernelPathType.Debugging)
+                );
+            string serialized = JsonConvert.SerializeObject(NotifRecents, Formatting.Indented);
+            Writing.WriteContentsText(recentsPath, serialized);
         }
 
     }

@@ -18,6 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
+using Newtonsoft.Json;
 using System;
 using Terminaux.Colors;
 
@@ -29,48 +30,62 @@ namespace KS.Misc.Notifications
     public class Notification : IEquatable<Notification>
     {
 
+        [JsonProperty(nameof(Id))]
+        private readonly Guid _id;
+        [JsonProperty(nameof(Progress))]
         private int _Progress;
+        [JsonProperty(nameof(CustomBeepTimes))]
         private int _CustomBeepTimes = 1;
+        [JsonProperty(nameof(NotificationBorderColor))]
         private Color _NotificationBorderColor = Color.Empty;
 
         /// <summary>
         /// Notification ID
         /// </summary>
-        public Guid Id { get; }
+        [JsonIgnore]
+        public Guid Id =>
+            _id;
 
         /// <summary>
         /// Notification title
         /// </summary>
+        [JsonProperty]
         public string Title { get; set; }
 
         /// <summary>
         /// Notification description
         /// </summary>
+        [JsonProperty]
         public string Desc { get; set; }
 
         /// <summary>
         /// Notification priority
         /// </summary>
+        [JsonProperty]
         public NotificationPriority Priority { get; set; }
 
         /// <summary>
         /// Notification type
         /// </summary>
+        [JsonProperty]
         public NotificationType Type { get; set; }
 
         /// <summary>
         /// Whether the progress is indeterminate
         /// </summary>
+        [JsonProperty]
         public bool ProgressIndeterminate { get; set; }
 
         /// <summary>
         /// Whether the progress failed
         /// </summary>
+        [JsonProperty]
         public NotificationProgressState ProgressState { get; set; }
 
         /// <summary>
         /// Notification progress
         /// </summary>
+        [JsonIgnore]
         public int Progress
         {
             get
@@ -99,6 +114,7 @@ namespace KS.Misc.Notifications
         /// <summary>
         /// Beep times (for custom priority notfications)
         /// </summary>
+        [JsonIgnore]
         public int CustomBeepTimes
         {
             get
@@ -121,71 +137,85 @@ namespace KS.Misc.Notifications
         /// <summary>
         /// Custom color (for custom priority notfications)
         /// </summary>
+        [JsonProperty]
         public Color CustomColor { get; set; } = KernelColorTools.GetColor(KernelColorType.LowPriorityBorder);
 
         /// <summary>
         /// Custom title color (for custom priority notfications)
         /// </summary>
+        [JsonProperty]
         public Color CustomTitleColor { get; set; } = KernelColorTools.GetColor(KernelColorType.NotificationTitle);
 
         /// <summary>
         /// Custom description color (for custom priority notfications)
         /// </summary>
+        [JsonProperty]
         public Color CustomDescriptionColor { get; set; } = KernelColorTools.GetColor(KernelColorType.NotificationDescription);
 
         /// <summary>
         /// Custom progress color (for custom priority notfications)
         /// </summary>
+        [JsonProperty]
         public Color CustomProgressColor { get; set; } = KernelColorTools.GetColor(KernelColorType.NotificationProgress);
 
         /// <summary>
         /// Custom progress failure color (for custom priority notfications)
         /// </summary>
+        [JsonProperty]
         public Color CustomProgressFailureColor { get; set; } = KernelColorTools.GetColor(KernelColorType.NotificationFailure);
 
         /// <summary>
         /// Custom progress success color (for custom priority notfications)
         /// </summary>
+        [JsonProperty]
         public Color CustomProgressSuccessColor { get; set; } = KernelColorTools.GetColor(KernelColorType.Success);
 
         /// <summary>
         /// Upper left corner character for custom priority notification
         /// </summary>
+        [JsonProperty]
         public char CustomUpperLeftCornerChar { get; set; } = '╔';
 
         /// <summary>
         /// Upper right corner character for custom priority notification
         /// </summary>
+        [JsonProperty]
         public char CustomUpperRightCornerChar { get; set; } = '╗';
 
         /// <summary>
         /// Lower left corner character for custom priority notification
         /// </summary>
+        [JsonProperty]
         public char CustomLowerLeftCornerChar { get; set; } = '╚';
 
         /// <summary>
         /// Lower right corner character for custom priority notification
         /// </summary>
+        [JsonProperty]
         public char CustomLowerRightCornerChar { get; set; } = '╝';
 
         /// <summary>
         /// Upper frame character for custom priority notification
         /// </summary>
+        [JsonProperty]
         public char CustomUpperFrameChar { get; set; } = '═';
 
         /// <summary>
         /// Lower frame character for custom priority notification
         /// </summary>
+        [JsonProperty]
         public char CustomLowerFrameChar { get; set; } = '═';
 
         /// <summary>
         /// Left frame character for custom priority notification
         /// </summary>
+        [JsonProperty]
         public char CustomLeftFrameChar { get; set; } = '║';
 
         /// <summary>
         /// Right frame character for custom priority notification
         /// </summary>
+        [JsonProperty]
         public char CustomRightFrameChar { get; set; } = '║';
 
         /// <summary>
@@ -197,6 +227,7 @@ namespace KS.Misc.Notifications
         /// <summary>
         /// The notification border color. Must be empty for custom priority notifications.
         /// </summary>
+        [JsonIgnore]
         public Color NotificationBorderColor
         {
             get
@@ -225,7 +256,7 @@ namespace KS.Misc.Notifications
             this.Desc = Desc;
             this.Priority = Priority;
             this.Type = Type;
-            Id = Guid.NewGuid();
+            _id = Guid.NewGuid();
         }
 
         /// <summary>
