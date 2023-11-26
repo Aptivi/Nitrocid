@@ -29,9 +29,7 @@ using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Notifications;
-using KS.Misc.Progress;
 using KS.Misc.Reflection;
-using KS.Misc.Text;
 using KS.Misc.Text.Probers.Placeholder;
 
 namespace KS.Network.Base.Transfer

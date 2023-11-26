@@ -18,7 +18,6 @@
 //
 
 using KS.Drivers;
-using KS.Drivers.HardwareProber;
 using KS.Kernel.Debugging;
 using KS.Kernel.Extensions;
 using System;

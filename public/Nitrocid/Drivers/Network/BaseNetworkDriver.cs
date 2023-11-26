@@ -37,7 +37,6 @@ using System.Net;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
 using KS.Misc.Progress;
-using KS.Misc.Reflection;
 
 namespace KS.Drivers.Network
 {
@@ -80,6 +79,10 @@ namespace KS.Drivers.Network
         /// <inheritdoc/>
         public virtual bool DownloadFile(string URL, bool ShowProgress, string FileName)
         {
+            // Reset cancellation token
+            if (NetworkTransfer.CancellationToken.IsCancellationRequested)
+                NetworkTransfer.CancellationToken = new();
+
             // Intialize variables
             var FileUri = new Uri(URL);
             var builtinHandler = new ProgressHandler((_, message) => NetworkTransfer.HttpReceiveProgressWatch(message), "Download");
@@ -175,6 +178,10 @@ namespace KS.Drivers.Network
         /// <inheritdoc/>
         public virtual string DownloadString(string URL, bool ShowProgress)
         {
+            // Reset cancellation token
+            if (NetworkTransfer.CancellationToken.IsCancellationRequested)
+                NetworkTransfer.CancellationToken = new();
+
             // Intialize variables
             var StringUri = new Uri(URL);
             var builtinHandler = new ProgressHandler((_, message) => NetworkTransfer.HttpReceiveProgressWatch(message), "Download");
@@ -270,6 +277,10 @@ namespace KS.Drivers.Network
         /// <inheritdoc/>
         public virtual bool UploadFile(string FileName, string URL, bool ShowProgress)
         {
+            // Reset cancellation token
+            if (NetworkTransfer.CancellationToken.IsCancellationRequested)
+                NetworkTransfer.CancellationToken = new();
+
             // Intialize variables
             var FileUri = new Uri(URL);
             var builtinHandler = new ProgressHandler((_, message) => NetworkTransfer.HttpSendProgressWatch(message), "Upload");
@@ -339,6 +350,10 @@ namespace KS.Drivers.Network
         /// <inheritdoc/>
         public virtual bool UploadString(string URL, string Data, bool ShowProgress)
         {
+            // Reset cancellation token
+            if (NetworkTransfer.CancellationToken.IsCancellationRequested)
+                NetworkTransfer.CancellationToken = new();
+
             // Intialize variables
             var StringUri = new Uri(URL);
             var builtinHandler = new ProgressHandler((_, message) => NetworkTransfer.HttpSendProgressWatch(message), "Upload");
