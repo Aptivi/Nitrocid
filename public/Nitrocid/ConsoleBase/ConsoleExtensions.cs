@@ -22,7 +22,9 @@ using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Kernel;
 using KS.Kernel.Configuration;
+using KS.Kernel.Threading;
 using KS.Misc.Text;
 using Terminaux.Sequences.Builder;
 using Terminaux.Sequences.Tools;
@@ -260,6 +262,45 @@ namespace KS.ConsoleBase
                     $"{CharManager.GetEsc()}[49m"
                 );
             }
+        }
+
+        internal static void PreviewMainBuffer()
+        {
+            if (KernelPlatform.IsOnWindows())
+                return;
+            if (!(HasSetAltBuffer && UseAltBuffer))
+                return;
+
+            // Show the main buffer
+            ShowMainBuffer();
+
+            // Sleep for five seconds
+            ThreadManager.SleepNoBlock(5000);
+
+            // Show the alternative buffer
+            ShowAltBuffer();
+        }
+
+        internal static void ShowMainBuffer()
+        {
+            if (KernelPlatform.IsOnWindows())
+                return;
+            if (!UseAltBuffer)
+                return;
+
+            TextWriterColor.Write("\u001b[?1049l");
+        }
+
+        internal static void ShowAltBuffer()
+        {
+            if (KernelPlatform.IsOnWindows())
+                return;
+            if (!UseAltBuffer)
+                return;
+
+            TextWriterColor.Write("\u001b[?1049h");
+            ConsoleWrapper.SetCursorPosition(0, 0);
+            ConsoleWrapper.CursorVisible = false;
         }
 
         internal static string BufferChar(string text, MatchCollection[] sequencesCollections, ref int i, ref int vtSeqIdx, out bool isVtSequence)

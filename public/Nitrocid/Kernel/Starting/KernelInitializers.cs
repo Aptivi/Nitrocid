@@ -114,9 +114,7 @@ namespace KS.Kernel.Starting
                 // Load alternative buffer (only supported on Linux, because Windows doesn't seem to respect CursorVisible = false on alt buffers)
                 if (!KernelPlatform.IsOnWindows() && ConsoleExtensions.UseAltBuffer)
                 {
-                    TextWriterColor.Write("\u001b[?1049h");
-                    ConsoleWrapper.SetCursorPosition(0, 0);
-                    ConsoleWrapper.CursorVisible = false;
+                    ConsoleExtensions.ShowAltBuffer();
                     ConsoleExtensions.HasSetAltBuffer = true;
                     DebugWriter.WriteDebug(DebugLevel.I, "Loaded alternative buffer.");
                 }

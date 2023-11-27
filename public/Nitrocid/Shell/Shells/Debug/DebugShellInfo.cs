@@ -187,6 +187,13 @@ namespace KS.Shell.Shells.Debug
                     ], new LsShellsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
             },
 
+            { "showmainbuffer",
+                new CommandInfo("showmainbuffer", /* Localizable */ "Shows the main buffer that was on the screen before starting Nitrocid KS (Unix systems only)",
+                    [
+                        new CommandArgumentInfo()
+                    ], new ShowMainBufferCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
+            },
+
             { "threadsbt",
                 new CommandInfo("threadsbt", /* Localizable */ "Gets backtrace for all threads",
                     [

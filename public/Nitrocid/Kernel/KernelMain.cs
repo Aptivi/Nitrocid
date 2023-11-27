@@ -137,7 +137,7 @@ namespace KS.Kernel
 
             // Load main buffer
             if (!KernelPlatform.IsOnWindows() && ConsoleExtensions.UseAltBuffer && ConsoleExtensions.HasSetAltBuffer && !PowerManager.hardShutdown)
-                TextWriterColor.Write("\u001b[?1049l");
+                ConsoleExtensions.ShowMainBuffer();
 
             // Reset colors and clear the console
             if (!PowerManager.hardShutdown)
