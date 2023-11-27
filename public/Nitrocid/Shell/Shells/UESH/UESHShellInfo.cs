@@ -473,7 +473,17 @@ namespace KS.Shell.Shells.UESH
                         ])
                     ], new DecodeTextCommand())
             },
-            
+
+            { "decodebase64",
+                new CommandInfo("decodebase64", /* Localizable */ "Decodes the text from the BASE64 representation",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "encoded")
+                        ])
+                    ], new DecodeBase64Command())
+            },
+
             { "dirinfo",
                 new CommandInfo("dirinfo", /* Localizable */ "Provides information about a directory",
                     [
@@ -617,6 +627,16 @@ namespace KS.Shell.Shells.UESH
                             }),
                         ])
                     ], new EncodeTextCommand())
+            },
+
+            { "encodebase64",
+                new CommandInfo("encodebase64", /* Localizable */ "Encodes the text to a BASE64 representation",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "string")
+                        ])
+                    ], new EncodeBase64Command())
             },
 
             { "fileinfo",
