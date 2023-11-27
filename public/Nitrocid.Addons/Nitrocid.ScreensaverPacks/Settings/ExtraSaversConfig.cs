@@ -3180,5 +3180,45 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [Mazer] If enabled, highlights the non-covered positions with the gray background color. Otherwise, they render as boxes.
         /// </summary>
         public bool MazerHighlightUncovered { get; set; } = false;
+        /// <summary>
+        /// [TwoSpins] Enable truecolor support. Has a higher priority than 255 color support.
+        /// </summary>
+        public bool TwoSpinsTrueColor { get; set; } = true;
+        /// <summary>
+        /// [TwoSpins] How many milliseconds to wait before making the next write?
+        /// </summary>
+        public int TwoSpinsDelay { get; set; } = 25;
+        /// <summary>
+        /// [TwoSpins] The minimum red color level (true color)
+        /// </summary>
+        public int TwoSpinsMinimumRedColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [TwoSpins] The minimum green color level (true color)
+        /// </summary>
+        public int TwoSpinsMinimumGreenColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [TwoSpins] The minimum blue color level (true color)
+        /// </summary>
+        public int TwoSpinsMinimumBlueColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [TwoSpins] The minimum color level (255 colors or 16 colors)
+        /// </summary>
+        public int TwoSpinsMinimumColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [TwoSpins] The maximum red color level (true color)
+        /// </summary>
+        public int TwoSpinsMaximumRedColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [TwoSpins] The maximum green color level (true color)
+        /// </summary>
+        public int TwoSpinsMaximumGreenColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [TwoSpins] The maximum blue color level (true color)
+        /// </summary>
+        public int TwoSpinsMaximumBlueColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [TwoSpins] The maximum color level (255 colors or 16 colors)
+        /// </summary>
+        public int TwoSpinsMaximumColorLevel { get; set; } = 255;
     }
 }

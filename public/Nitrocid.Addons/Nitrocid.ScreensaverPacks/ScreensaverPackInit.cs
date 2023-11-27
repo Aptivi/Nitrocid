@@ -109,6 +109,7 @@ namespace Nitrocid.ScreensaverPacks
             { "text", new TextDisplay() },
             { "textbox", new TextBoxDisplay() },
             { "textwander", new TextWanderDisplay() },
+            { "twospins", new TwoSpinsDisplay() },
             { "typewriter", new TypewriterDisplay() },
             { "typo", new TypoDisplay() },
             { "wave", new WaveDisplay() },

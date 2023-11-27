@@ -5926,5 +5926,87 @@
                 "Description": "If enabled, highlights the non-covered positions with the gray background color. Otherwise, they render as boxes."
             }
         ]
+    },
+    {
+        "Name": "TwoSpins",
+        "Desc": "Two groups of dots spinning across the two halves of the console.",
+        "Keys": [
+            {
+                "Name": "Activate true colors",
+                "Type": "SBoolean",
+                "Variable": "TwoSpinsTrueColor",
+                "Description": "Activates the true color support."
+            },
+            {
+                "Name": "Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "TwoSpinsDelay",
+                "Description": "How many milliseconds to wait before making the next write?"
+            },
+            {
+                "Name": "Minimum red color level",
+                "Type": "SIntSlider",
+                "Variable": "TwoSpinsMinimumRedColorLevel",
+                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            },
+            {
+                "Name": "Minimum green color level",
+                "Type": "SIntSlider",
+                "Variable": "TwoSpinsMinimumGreenColorLevel",
+                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            },
+            {
+                "Name": "Minimum blue color level",
+                "Type": "SIntSlider",
+                "Variable": "TwoSpinsMinimumBlueColorLevel",
+                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            },
+            {
+                "Name": "Minimum color level",
+                "Type": "SIntSlider",
+                "Variable": "TwoSpinsMinimumColorLevel",
+                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            },
+            {
+                "Name": "Maximum red color level",
+                "Type": "SIntSlider",
+                "Variable": "TwoSpinsMaximumRedColorLevel",
+                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            },
+            {
+                "Name": "Maximum green color level",
+                "Type": "SIntSlider",
+                "Variable": "TwoSpinsMaximumGreenColorLevel",
+                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            },
+            {
+                "Name": "Maximum blue color level",
+                "Type": "SIntSlider",
+                "Variable": "TwoSpinsMaximumBlueColorLevel",
+                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            },
+            {
+                "Name": "Maximum color level",
+                "Type": "SIntSlider",
+                "Variable": "TwoSpinsMaximumColorLevel",
+                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            }
+        ]
     }
 ]
