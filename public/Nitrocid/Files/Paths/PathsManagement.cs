@@ -20,6 +20,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using KS.Kernel;
 using KS.Kernel.Exceptions;
 using KS.Languages;
@@ -32,33 +33,7 @@ namespace KS.Files.Paths
     public static class PathsManagement
     {
 
-        private static readonly List<string> knownKernelPathTypes =
-        [
-            $"{KernelPathType.Aliases}",
-            $"{KernelPathType.Configuration}",
-            $"{KernelPathType.CustomLanguages}",
-            $"{KernelPathType.CustomSplashes}",
-            $"{KernelPathType.DebugDevices}",
-            $"{KernelPathType.Debugging}",
-            $"{KernelPathType.Events}",
-            $"{KernelPathType.SpeedDial}",
-            $"{KernelPathType.MAL}",
-            $"{KernelPathType.Mods}",
-            $"{KernelPathType.MOTD}",
-            $"{KernelPathType.Reminders}",
-            $"{KernelPathType.Users}",
-            $"{KernelPathType.Journaling}",
-            $"{KernelPathType.Contacts}",
-            $"{KernelPathType.ContactsImport}",
-            $"{KernelPathType.SaverConfiguration}",
-            $"{KernelPathType.ToDoList}",
-            $"{KernelPathType.UserGroups}",
-            $"{KernelPathType.Addons}",
-            $"{KernelPathType.ShellHistories}",
-            $"{KernelPathType.Consents}",
-            $"{KernelPathType.ExtensionHandlers}",
-            $"{KernelPathType.NotificationRecents}",
-        ];
+        private static readonly string[] knownKernelPathTypes = Enum.GetNames<KernelPathType>();
         private static readonly Dictionary<string, string> customPaths = [];
         private static readonly Dictionary<string, (Func<string>, bool)> knownPaths = new()
         {
