@@ -57,7 +57,7 @@ namespace KS.Misc.Interactives
                 $"{Translate.DoTranslation("Date")}: {TimeDateRenderers.RenderDate(time)}\n" +
                 $"{Translate.DoTranslation("Time")}: {TimeDateRenderers.RenderTime(time)}\n" +
                 $"{Translate.DoTranslation("Display name")}: {info.DisplayName}\n" +
-                $"{Translate.DoTranslation("Standard name")}: {info.StandardName}" ;
+                $"{Translate.DoTranslation("Standard name")}: {info.StandardName}";
         }
 
         /// <inheritdoc/>

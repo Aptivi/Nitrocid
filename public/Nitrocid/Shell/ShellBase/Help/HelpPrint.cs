@@ -86,7 +86,7 @@ namespace KS.Shell.ShellBase.Help
         /// <param name="showAddon">Shows all kernel addon commands</param>
         public static void ShowHelp(string command, string commandType, bool showGeneral = true, bool showMod = false, bool showAlias = false, bool showUnified = false, bool showAddon = false) =>
             ShowHelpExtended(command, commandType, HelpPrintTools.SimHelp, showGeneral, showMod, showAlias, showUnified, showAddon);
-        
+
         /// <summary>
         /// Shows the list of commands under the current shell type
         /// </summary>

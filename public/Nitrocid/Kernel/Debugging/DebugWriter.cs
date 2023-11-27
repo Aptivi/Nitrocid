@@ -172,7 +172,7 @@ namespace KS.Kernel.Debugging
                         foreach (string splitText in texts)
                         {
                             string routinePath = STrace.RoutinePath;
-                            
+
                             // Check to see if source file name is not empty.
                             if (routinePath != lastRoutinePath)
                             {

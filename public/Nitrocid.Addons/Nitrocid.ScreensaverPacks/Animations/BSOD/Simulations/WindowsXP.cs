@@ -71,7 +71,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
             { BugCheckCodes.IRQL_NOT_LESS_OR_EQUAL,
                 new BugCheckParams()
                 {
-                    WindowsBugCheckCode = 0xA, 
+                    WindowsBugCheckCode = 0xA,
                     DisplayMessage = false
                 }
             },
@@ -79,7 +79,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
             { BugCheckCodes.MAXIMUM_WAIT_OBJECTS_EXCEEDED,
                 new BugCheckParams()
                 {
-                    WindowsBugCheckCode = 0xC, 
+                    WindowsBugCheckCode = 0xC,
                     DisplayMessage = false
                 }
             },

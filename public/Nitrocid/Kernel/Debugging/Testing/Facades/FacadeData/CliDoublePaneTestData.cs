@@ -32,10 +32,10 @@ namespace KS.Kernel.Debugging.Testing.Facades.FacadeData
 
         public override List<InteractiveTuiBinding> Bindings { get; set; } =
         [
-            new InteractiveTuiBinding(/* Localizable */ "Add",         ConsoleKey.F1,  (_, index) => Add(index), true),
-            new InteractiveTuiBinding(/* Localizable */ "Delete",      ConsoleKey.F2,  (_, index) => Remove(index), true),
-            new InteractiveTuiBinding(/* Localizable */ "Delete Last", ConsoleKey.F3,  (_, _)     => RemoveLast(), true),
-            new InteractiveTuiBinding(/* Localizable */ "Switch",      ConsoleKey.Tab, (_, _)     => Switch(), true),
+            new InteractiveTuiBinding(/* Localizable */ "Add", ConsoleKey.F1, (_, index) => Add(index), true),
+            new InteractiveTuiBinding(/* Localizable */ "Delete", ConsoleKey.F2, (_, index) => Remove(index), true),
+            new InteractiveTuiBinding(/* Localizable */ "Delete Last", ConsoleKey.F3, (_, _) => RemoveLast(), true),
+            new InteractiveTuiBinding(/* Localizable */ "Switch", ConsoleKey.Tab, (_, _) => Switch(), true),
         ];
 
         /// <inheritdoc/>

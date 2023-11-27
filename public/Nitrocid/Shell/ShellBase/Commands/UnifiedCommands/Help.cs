@@ -45,7 +45,7 @@ namespace KS.Shell.ShellBase.Commands.UnifiedCommands
                 (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-unified") || SwitchManager.ContainsSwitch(parameters.SwitchesList, "-all"));
             bool showAddon = parameters.SwitchesList.Length > 0 &&
                 (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-addon") || SwitchManager.ContainsSwitch(parameters.SwitchesList, "-all"));
-            
+
             // Now, show the help
             if (string.IsNullOrWhiteSpace(parameters.ArgumentsText))
                 HelpPrint.ShowHelpExtended(useSimplified, showGeneral, showMod, showAlias, showUnified, showAddon);

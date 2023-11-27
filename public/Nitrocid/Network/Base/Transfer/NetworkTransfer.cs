@@ -113,7 +113,7 @@ namespace KS.Network.Base.Transfer
         /// <param name="FileName">A target file name. Use <see cref="FilesystemTools.NeutralizePath(string, bool)"/> to get full path of source.</param>
         /// <param name="URL">A URL to a file</param>
         /// <returns>True if successful. Throws exception if unsuccessful.</returns>
-        public static bool UploadFile(string FileName, string URL) => 
+        public static bool UploadFile(string FileName, string URL) =>
             DriverHandler.CurrentNetworkDriverLocal.UploadFile(FileName, URL);
 
         /// <summary>
@@ -131,7 +131,7 @@ namespace KS.Network.Base.Transfer
         /// </summary>
         /// <param name="URL">A URL to a file</param>
         /// <returns>True if successful. Throws exception if unsuccessful.</returns>
-        public static string DownloadString(string URL) => 
+        public static string DownloadString(string URL) =>
             DriverHandler.CurrentNetworkDriverLocal.DownloadString(URL);
 
         /// <summary>

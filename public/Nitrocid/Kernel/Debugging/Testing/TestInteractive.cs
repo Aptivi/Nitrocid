@@ -157,13 +157,13 @@ namespace KS.Kernel.Debugging.Testing
             int sectionCount = sections.Count;
             var listFacadesCodeNames = sections.Keys.Select((sec) => sec).ToArray();
             var listFacadesDescs = sections.Values.Select(Translate.DoTranslation).ToArray();
-            var listFacadesAltOptionName = new string[] 
-            { 
+            var listFacadesAltOptionName = new string[]
+            {
                 Translate.DoTranslation("Stats"),
                 Translate.DoTranslation("Shutdown"),
             };
-            var listFacadesAltOptionDesc = new string[] 
-            { 
+            var listFacadesAltOptionDesc = new string[]
+            {
                 Translate.DoTranslation("Shows the current test statistics"),
                 Translate.DoTranslation("Exits the testing mode and shuts down the kernel"),
             };
@@ -180,7 +180,7 @@ namespace KS.Kernel.Debugging.Testing
                 else
                 {
                     // Selected alternative option
-                    if (sel == sectionCount + 1) 
+                    if (sel == sectionCount + 1)
                     {
                         // Stats
                         PrintTestStats();

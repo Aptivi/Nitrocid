@@ -195,7 +195,7 @@ namespace KS.Shell.ShellBase.Aliases
         /// <param name="TargetAlias">An alias that needs to be removed.</param>
         /// <param name="Type">Alias type.</param>
         /// <returns>True if successful, False if unsuccessful.</returns>
-        public static bool RemoveAlias(string TargetAlias, ShellType Type) => 
+        public static bool RemoveAlias(string TargetAlias, ShellType Type) =>
             RemoveAlias(TargetAlias, ShellManager.GetShellTypeName(Type));
 
         /// <summary>
@@ -226,7 +226,7 @@ namespace KS.Shell.ShellBase.Aliases
         /// <param name="TargetAlias">The existing alias</param>
         /// <param name="Type">The alias type</param>
         /// <returns>True if it exists; false if it doesn't exist</returns>
-        public static bool DoesAliasExist(string TargetAlias, ShellType Type) => 
+        public static bool DoesAliasExist(string TargetAlias, ShellType Type) =>
             DoesAliasExist(TargetAlias, ShellManager.GetShellTypeName(Type));
 
         /// <summary>
@@ -242,7 +242,7 @@ namespace KS.Shell.ShellBase.Aliases
         /// Gets the aliases list from the shell type
         /// </summary>
         /// <param name="ShellType">Selected shell type</param>
-        public static List<AliasInfo> GetAliasesListFromType(ShellType ShellType) => 
+        public static List<AliasInfo> GetAliasesListFromType(ShellType ShellType) =>
             GetAliasesListFromType(ShellManager.GetShellTypeName(ShellType));
 
         /// <summary>

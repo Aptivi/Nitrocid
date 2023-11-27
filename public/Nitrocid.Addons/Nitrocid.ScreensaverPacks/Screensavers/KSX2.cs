@@ -169,7 +169,12 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     case 4:
                         string[] versions =
                         [
-                            "0.0.1.0", "0.0.4.0", "0.0.8.0", "0.0.16.0", "0.0.20.0", "0.0.24.0"
+                            "0.0.1.0",
+                            "0.0.4.0",
+                            "0.0.8.0",
+                            "0.0.16.0",
+                            "0.0.20.0",
+                            "0.0.24.0"
                         ];
                         int selector1Selection = 0;
                         int selector2Selection = 0;

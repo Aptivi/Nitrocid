@@ -114,7 +114,7 @@ namespace KS.Kernel.Updates
             }
             SortedVersions =
             [
-                .. SortedVersions.OrderByDescending((x) => 
+                .. SortedVersions.OrderByDescending((x) =>
                                 new Version(x.UpdateVersion.MajorVersion, x.UpdateVersion.MinorVersion, x.UpdateVersion.PatchVersion, x.UpdateVersion.RevisionVersion)),
             ];
             DebugWriter.WriteDebug(DebugLevel.I, "Found {0} kernel updates.", SortedVersions.Count);

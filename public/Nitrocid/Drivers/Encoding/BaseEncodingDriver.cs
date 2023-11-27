@@ -87,7 +87,7 @@ namespace KS.Drivers.Encoding
                 // Populate the key and the initialization vector
                 aesEncryptor.Key = key;
                 aesEncryptor.IV = iv;
-                
+
                 // Now, make the encryptor
                 var encryptor = aesEncryptor.CreateEncryptor(aesEncryptor.Key, aesEncryptor.IV);
                 using MemoryStream msEncrypt = new();
@@ -133,7 +133,7 @@ namespace KS.Drivers.Encoding
         {
             if (string.IsNullOrEmpty(encoded))
                 throw new KernelException(KernelExceptionType.Encoding, Translate.DoTranslation("The encoded text must not be empty."));
-            
+
             // Get the wrapped bytes, assuming that all the byte numbers are padded to three digits.
             string[] encodedStrings = TextTools.GetWrappedSentences(encoded, 3);
             List<byte> bytes = [];
@@ -162,7 +162,7 @@ namespace KS.Drivers.Encoding
         /// <inheritdoc/>
         public virtual void DecodeFile(string path) =>
             DecodeFile(path, aes.Key, aes.IV);
-            
+
         /// <inheritdoc/>
         public virtual void EncodeFile(string path, byte[] key, byte[] iv)
         {

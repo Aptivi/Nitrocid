@@ -133,8 +133,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             };
 
             // Populate the grid and the sets
-            var grid = new int[height,width];
-            var sets = new MazeTree[height,width];
+            var grid = new int[height, width];
+            var sets = new MazeTree[height, width];
             int yLength = grid.GetLength(0);
             int xLength = grid.GetLength(1);
             for (int y = 0; y < yLength; y++)

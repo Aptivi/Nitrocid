@@ -95,7 +95,7 @@ namespace KS.ConsoleBase
             {
                 throw new KernelException(
                     KernelExceptionType.InsaneConsoleDetected,
-                    "Nitrocid KS makes use of inputs and cursor manipulation, but the \"dumb\" terminals have no support for such tasks." + CharManager.NewLine + 
+                    "Nitrocid KS makes use of inputs and cursor manipulation, but the \"dumb\" terminals have no support for such tasks." + CharManager.NewLine +
                     "Possible solution: Use an appropriate terminal emulator or consult your terminal settings to set the terminal type into something other than \"dumb\"." + CharManager.NewLine +
                     "                   We recommend using the \"vt100\" terminal emulators to get the most out of Nitrocid KS."
                 );
@@ -140,7 +140,7 @@ namespace KS.ConsoleBase
         internal static void CheckConsoleSize()
         {
             // If we're being run on TMUX, the status bar might mess up our interpretation of the window height.
-            int MinimumWidth =  80;
+            int MinimumWidth = 80;
             int MinimumHeight = 24;
             if (KernelPlatform.IsRunningFromTmux())
             {

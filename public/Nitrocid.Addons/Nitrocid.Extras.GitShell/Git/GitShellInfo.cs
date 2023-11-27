@@ -127,42 +127,42 @@ namespace Nitrocid.Extras.GitShell.Git
                         })
                     ], new FileStatusCommand())
             },
-            
+
             { "info",
                 new CommandInfo("info", /* Localizable */ "Gets a simple repository information",
                     [
                         new CommandArgumentInfo()
                     ], new InfoCommand())
             },
-            
+
             { "lsbranches",
                 new CommandInfo("lsbranches", /* Localizable */ "Lists all branches",
                     [
                         new CommandArgumentInfo()
                     ], new LsBranchesCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
-            
+
             { "lscommits",
                 new CommandInfo("lscommits", /* Localizable */ "Lists all commits",
                     [
                         new CommandArgumentInfo()
                     ], new LsCommitsCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
-            
+
             { "lsremotes",
                 new CommandInfo("lsremotes", /* Localizable */ "Lists all remotes",
                     [
                         new CommandArgumentInfo()
                     ], new LsRemotesCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
-            
+
             { "lstags",
                 new CommandInfo("lstags", /* Localizable */ "Lists all tags",
                     [
                         new CommandArgumentInfo()
                     ], new LsTagsCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
-            
+
             { "maketag",
                 new CommandInfo("maketag", /* Localizable */ "Makes a tag from the HEAD",
                     [
@@ -232,7 +232,7 @@ namespace Nitrocid.Extras.GitShell.Git
                         })
                     ], new StageCommand())
             },
-            
+
             { "stageall",
                 new CommandInfo("stageall", /* Localizable */ "Stages all changes",
                     [

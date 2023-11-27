@@ -47,7 +47,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 var saverNums = saverNames.Select((_, idx) => $"{idx + 1}").ToArray();
                 var saverChoices = InputChoiceTools.GetInputChoices(saverNums, saverNames);
                 var saverExit = new InputChoiceInfo[]
-                { 
+                {
                     new($"{saverNames.Length + 1}", Translate.DoTranslation("Exit"))
                 };
 

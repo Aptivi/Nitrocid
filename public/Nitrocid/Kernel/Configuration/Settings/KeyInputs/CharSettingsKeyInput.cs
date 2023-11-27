@@ -59,7 +59,7 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
 
         public object TranslateStringValue(SettingsKey key, string value)
         {
-            char character = value.Length == 0 ? '\0' : value[0] ;
+            char character = value.Length == 0 ? '\0' : value[0];
             return character;
         }
 

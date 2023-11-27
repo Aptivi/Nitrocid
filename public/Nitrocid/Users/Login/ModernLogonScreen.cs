@@ -136,7 +136,7 @@ namespace KS.Users.Login
                             {
                                 string motdStr = motdStrs[i];
                                 int consoleMotdInfoY =
-                                    MotdHeadlineBottom ? 
+                                    MotdHeadlineBottom ?
                                     (ConsoleWrapper.WindowHeight / 2) + figHeight + 4 + i :
                                     (ConsoleWrapper.WindowHeight / 2) - figHeight - (RSSTools.ShowHeadlineOnLogin ? 4 : 2) + i;
                                 display.Append(

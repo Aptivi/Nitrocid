@@ -219,7 +219,7 @@ namespace KS.Users
                 throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Trying to modify existing account while it's locked"));
             if (!ValidateUsername(user))
                 throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Can't remove username. Make sure that the username exists."));
-            
+
             // Try to remove user
             if (user == "root")
             {

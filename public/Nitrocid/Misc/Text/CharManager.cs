@@ -44,20 +44,20 @@ namespace KS.Misc.Text
         /// <summary>
         /// Gets all the letters.
         /// </summary>
-        public static char[] GetAllLetters() => 
+        public static char[] GetAllLetters() =>
             Enumerable.Range(0, Convert.ToInt32(char.MaxValue) + 1).Select(Convert.ToChar).Where(char.IsLetter).ToArray();
 
         /// <summary>
         /// Gets all the numbers.
         /// </summary>
-        public static char[] GetAllNumbers() => 
+        public static char[] GetAllNumbers() =>
             Enumerable.Range(0, Convert.ToInt32(char.MaxValue) + 1).Select(Convert.ToChar).Where(char.IsNumber).ToArray();
 
         /// <summary>
         /// A simplification for <see cref="Convert.ToChar(int)"/> function to return the ESC character
         /// </summary>
         /// <returns>ESC</returns>
-        public static char GetEsc() => 
+        public static char GetEsc() =>
             Convert.ToChar(0x1B);
 
         /// <summary>

@@ -90,7 +90,7 @@ namespace KS.Misc.Reflection
                 throw new KernelException(KernelExceptionType.Reflection, Translate.DoTranslation("This method is nonexistent.") + $" {method}");
             if (methodInstance.IsStatic)
                 throw new KernelException(KernelExceptionType.Reflection, Translate.DoTranslation("This method is static. Use the non-object overload.") + $" {method}");
-            
+
             // Now, invoke the method.
             if (args.Length > 0)
                 return methodInstance.Invoke(obj, args);

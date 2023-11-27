@@ -66,7 +66,7 @@ namespace KS.Modifications.ManPages
         {
             if (!ModManager.Mods.ContainsKey(modName))
                 throw new KernelException(KernelExceptionType.ModManual, Translate.DoTranslation("Tried to query the manuals for nonexistent mod {0}."), modName);
-            
+
             // Populate manual pages by mod
             return Pages.Where((manual) => manual.ModName == modName).ToList();
         }

@@ -55,7 +55,7 @@ namespace KS.Shell.Shells.UESH
                         })
                     ], new AddGroupCommand(), CommandFlags.Strict)
             },
-            
+
             { "adduser",
                 new CommandInfo("adduser", /* Localizable */ "Adds users",
                     [
@@ -67,7 +67,7 @@ namespace KS.Shell.Shells.UESH
                         })
                     ], new AddUserCommand(), CommandFlags.Strict)
             },
-            
+
             { "addusertogroup",
                 new CommandInfo("addusertogroup", /* Localizable */ "Adds users to a group",
                     [
@@ -78,14 +78,14 @@ namespace KS.Shell.Shells.UESH
                         })
                     ], new AddUserToGroupCommand(), CommandFlags.Strict)
             },
-            
+
             { "admin",
                 new CommandInfo("admin", /* Localizable */ "Administrative shell",
                     [
                         new CommandArgumentInfo()
                     ], new AdminCommand(), CommandFlags.Strict)
             },
-            
+
             { "alias",
                 new CommandInfo("alias", /* Localizable */ "Adds aliases to commands",
                     [
@@ -98,14 +98,14 @@ namespace KS.Shell.Shells.UESH
                         })
                     ], new AliasCommand(), CommandFlags.Strict)
             },
-            
+
             { "beep",
                 new CommandInfo("beep", /* Localizable */ "Beeps from the console",
                     [
                         new CommandArgumentInfo()
                     ], new BeepCommand())
             },
-            
+
             { "blockdbgdev",
                 new CommandInfo("blockdbgdev", /* Localizable */ "Block a debug device by IP address",
                     [
@@ -115,7 +115,7 @@ namespace KS.Shell.Shells.UESH
                         })
                     ], new BlockDbgDevCommand(), CommandFlags.Strict)
             },
-            
+
             { "bulkrename",
                 new CommandInfo("bulkrename", /* Localizable */ "Renames group of files to selected format",
                     [
@@ -127,7 +127,7 @@ namespace KS.Shell.Shells.UESH
                         })
                     ], new BulkRenameCommand())
             },
-            
+
             { "cat",
                 new CommandInfo("cat", /* Localizable */ "Prints content of file to console",
                     [
@@ -171,7 +171,7 @@ namespace KS.Shell.Shells.UESH
                         })
                     ], new ChAttrCommand())
             },
-            
+
             { "chdir",
                 new CommandInfo("chdir", /* Localizable */ "Changes directory",
                     [
@@ -181,7 +181,7 @@ namespace KS.Shell.Shells.UESH
                         })
                     ], new ChDirCommand())
             },
-            
+
             { "chhostname",
                 new CommandInfo("chhostname", /* Localizable */ "Changes host name",
                     [
@@ -191,7 +191,7 @@ namespace KS.Shell.Shells.UESH
                         })
                     ], new ChHostNameCommand(), CommandFlags.Strict)
             },
-            
+
             { "chklock",
                 new CommandInfo("chklock", /* Localizable */ "Checks the file or the folder lock",
                     [
@@ -206,7 +206,7 @@ namespace KS.Shell.Shells.UESH
                         ])
                     ], new ChkLockCommand())
             },
-            
+
             { "chlang",
                 new CommandInfo("chlang", /* Localizable */ "Changes language",
                     [
@@ -227,7 +227,7 @@ namespace KS.Shell.Shells.UESH
                         ])
                     ], new ChLangCommand(), CommandFlags.Strict)
             },
-            
+
             { "chmal",
                 new CommandInfo("chmal", /* Localizable */ "Changes MAL, the MOTD After Login",
                     [
@@ -237,7 +237,7 @@ namespace KS.Shell.Shells.UESH
                         })
                     ], new ChMalCommand(), CommandFlags.Strict)
             },
-            
+
             { "chmotd",
                 new CommandInfo("chmotd", /* Localizable */ "Changes MOTD, the Message Of The Day",
                     [
@@ -247,7 +247,7 @@ namespace KS.Shell.Shells.UESH
                         })
                     ], new ChMotdCommand(), CommandFlags.Strict)
             },
-            
+
             { "choice",
                 new CommandInfo("choice", /* Localizable */ "Makes user choices",
                     [
@@ -291,7 +291,7 @@ namespace KS.Shell.Shells.UESH
                         ], true)
                     ], new ChoiceCommand())
             },
-            
+
             { "chpwd",
                 new CommandInfo("chpwd", /* Localizable */ "Changes password for current user",
                     [
@@ -304,7 +304,7 @@ namespace KS.Shell.Shells.UESH
                         })
                     ], new ChPwdCommand(), CommandFlags.Strict)
             },
-            
+
             { "chusrname",
                 new CommandInfo("chusrname", /* Localizable */ "Changes user name",
                     [
@@ -318,14 +318,14 @@ namespace KS.Shell.Shells.UESH
                         })
                     ], new ChUsrNameCommand(), CommandFlags.Strict)
             },
-            
+
             { "cls",
                 new CommandInfo("cls", /* Localizable */ "Clears the screen",
                     [
                         new CommandArgumentInfo()
                     ], new ClsCommand())
             },
-            
+
             { "combinestr",
                 new CommandInfo("combinestr", /* Localizable */ "Combines the two text files or more into the console.",
                     [
@@ -337,7 +337,7 @@ namespace KS.Shell.Shells.UESH
                         ], [], true)
                     ], new CombineStrCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
-            
+
             { "combine",
                 new CommandInfo("combine", /* Localizable */ "Combines the two text files or more into the output file.",
                     [
@@ -350,7 +350,7 @@ namespace KS.Shell.Shells.UESH
                         })
                     ], new CombineCommand())
             },
-            
+
             { "convertlineendings",
                 new CommandInfo("convertlineendings", /* Localizable */ "Converts the line endings to format for the current platform or to specified custom format",
                     [
@@ -380,7 +380,7 @@ namespace KS.Shell.Shells.UESH
                         ])
                     ], new ConvertLineEndingsCommand())
             },
-            
+
             { "copy",
                 new CommandInfo("copy", /* Localizable */ "Creates another copy of a file under different directory or name.",
                     [
@@ -391,7 +391,7 @@ namespace KS.Shell.Shells.UESH
                         })
                     ], new CopyCommand())
             },
-            
+
             { "date",
                 new CommandInfo("date", /* Localizable */ "Shows date and time",
                     [
@@ -418,14 +418,14 @@ namespace KS.Shell.Shells.UESH
                         }, true)
                     ], new DateCommand(), CommandFlags.RedirectionSupported)
             },
-            
+
             { "debugshell",
                 new CommandInfo("debugshell", /* Localizable */ "Starts the debug shell",
                     [
                         new CommandArgumentInfo()
                     ], new DebugShellCommand(), CommandFlags.Strict)
             },
-            
+
             { "decodefile",
                 new CommandInfo("decodefile", /* Localizable */ "Decodes the encoded file",
                     [
@@ -449,7 +449,7 @@ namespace KS.Shell.Shells.UESH
                         ])
                     ], new DecodeFileCommand())
             },
-            
+
             { "decodetext",
                 new CommandInfo("decodetext", /* Localizable */ "Decodes the encoded text",
                     [
@@ -493,7 +493,7 @@ namespace KS.Shell.Shells.UESH
                         })
                     ], new DirInfoCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
-            
+
             { "disconndbgdev",
                 new CommandInfo("disconndbgdev", /* Localizable */ "Disconnect a debug device",
                     [
@@ -529,14 +529,14 @@ namespace KS.Shell.Shells.UESH
                         })
                     ], new DismissNotifCommand())
             },
-            
+
             { "dismissnotifs",
                 new CommandInfo("dismissnotifs", /* Localizable */ "Dismisses all notifications",
                     [
                         new CommandArgumentInfo()
                     ], new DismissNotifsCommand())
             },
-            
+
             { "echo",
                 new CommandInfo("echo", /* Localizable */ "Writes text into the console",
                     [
@@ -549,7 +549,7 @@ namespace KS.Shell.Shells.UESH
                         ], true)
                     ], new EchoCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
-            
+
             { "edit",
                 new CommandInfo("edit", /* Localizable */ "Edits a file",
                     [
@@ -648,7 +648,7 @@ namespace KS.Shell.Shells.UESH
                         })
                     ], new FileInfoCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
-            
+
             { "find",
                 new CommandInfo("find", /* Localizable */ "Finds a file in the specified directory or in the current directory",
                     [
@@ -668,7 +668,7 @@ namespace KS.Shell.Shells.UESH
                         ], true)
                     ], new FindCommand())
             },
-            
+
             { "findreg",
                 new CommandInfo("findreg", /* Localizable */ "Finds a file in the specified directory or in the current directory using regular expressions",
                     [
@@ -688,14 +688,14 @@ namespace KS.Shell.Shells.UESH
                         ], true)
                     ], new FindRegCommand())
             },
-            
+
             { "fork",
                 new CommandInfo("fork", /* Localizable */ "Forks the UESH shell to create another instance",
                     [
                         new CommandArgumentInfo()
                     ], new ForkCommand())
             },
-            
+
             { "get",
                 new CommandInfo("get", /* Localizable */ "Downloads a file to current working directory",
                     [
@@ -801,7 +801,7 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(true)
                     ], new HostCommand())
             },
-            
+
             { "hwinfo",
                 new CommandInfo("hwinfo", /* Localizable */ "Prints hardware information",
                     [
@@ -814,7 +814,7 @@ namespace KS.Shell.Shells.UESH
                         })
                     ], new HwInfoCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
             },
-            
+
             { "if",
                 new CommandInfo("if", /* Localizable */ "Executes commands once the UESH expressions are satisfied",
                     [
@@ -825,7 +825,7 @@ namespace KS.Shell.Shells.UESH
                         })
                     ], new IfCommand())
             },
-            
+
             { "ifm",
                 new CommandInfo("ifm", /* Localizable */ "Interactive system host file manager",
                     [
@@ -836,7 +836,7 @@ namespace KS.Shell.Shells.UESH
                         })
                     ], new IfmCommand())
             },
-            
+
             { "input",
                 new CommandInfo("input", /* Localizable */ "Allows user to enter input",
                     [
@@ -846,7 +846,7 @@ namespace KS.Shell.Shells.UESH
                         ], [], true)
                     ], new InputCommand())
             },
-            
+
             { "jsonbeautify",
                 new CommandInfo("jsonbeautify", /* Localizable */ "Beautifies the JSON file",
                     [
@@ -857,7 +857,7 @@ namespace KS.Shell.Shells.UESH
                         ], [], true)
                     ], new JsonBeautifyCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
-            
+
             { "jsonminify",
                 new CommandInfo("jsonminify", /* Localizable */ "Minifies the JSON file",
                     [
@@ -868,7 +868,7 @@ namespace KS.Shell.Shells.UESH
                         ], [], true)
                     ], new JsonMinifyCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
-            
+
             { "langman",
                 new CommandInfo("langman", /* Localizable */ "Manage your languages",
                     [
@@ -886,14 +886,14 @@ namespace KS.Shell.Shells.UESH
                         })
                     ], new LangManCommand(), CommandFlags.Strict)
             },
-            
+
             { "license",
                 new CommandInfo("license", /* Localizable */ "Shows license information for the kernel",
                     [
                         new CommandArgumentInfo()
                     ], new LicenseCommand())
             },
-            
+
             { "lintscript",
                 new CommandInfo("lintscript", /* Localizable */ "Checks a UESH script for syntax errors",
                     [
@@ -903,7 +903,7 @@ namespace KS.Shell.Shells.UESH
                         ], [], true)
                     ], new LintScriptCommand())
             },
-            
+
             { "list",
                 new CommandInfo("list", /* Localizable */ "List file/folder contents in current folder",
                     [
@@ -926,21 +926,21 @@ namespace KS.Shell.Shells.UESH
                         ])
                     ], new ListCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
-            
+
             { "lockscreen",
                 new CommandInfo("lockscreen", /* Localizable */ "Locks your screen with a password",
                     [
                         new CommandArgumentInfo()
                     ], new LockScreenCommand())
             },
-            
+
             { "logout",
                 new CommandInfo("logout", /* Localizable */ "Logs you out",
                     [
                         new CommandArgumentInfo()
                     ], new LogoutCommand(), CommandFlags.NoMaintenance)
             },
-            
+
             { "lsconfigs",
                 new CommandInfo("lsconfigs", /* Localizable */ "Lists all available configurations",
                     [
@@ -950,7 +950,7 @@ namespace KS.Shell.Shells.UESH
                         })
                     ], new LsConfigsCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
-            
+
             { "lsconfigvalues",
                 new CommandInfo("lsconfigvalues", /* Localizable */ "Lists all configuration variables and their values",
                     [
@@ -984,7 +984,7 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo()
                     ], new LsExtHandlersCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
-           
+
             { "lsdiskparts",
                 new CommandInfo("lsdiskparts", /* Localizable */ "Lists all the disk partitions",
                     [
@@ -997,28 +997,28 @@ namespace KS.Shell.Shells.UESH
                         ], [], true)
                     ], new LsDiskPartsCommand(), CommandFlags.Strict | CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
-           
+
             { "lsdisks",
                 new CommandInfo("lsdisks", /* Localizable */ "Lists all the disks",
                     [
                         new CommandArgumentInfo(true)
                     ], new LsDisksCommand(), CommandFlags.Strict | CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
-            
+
             { "lsnet",
                 new CommandInfo("lsnet", /* Localizable */ "Lists online network devices",
                     [
                         new CommandArgumentInfo()
                     ], new LsNetCommand(), CommandFlags.Strict)
             },
-            
+
             { "lsvars",
                 new CommandInfo("lsvars", /* Localizable */ "Lists available UESH variables",
                     [
                         new CommandArgumentInfo()
                     ], new LsVarsCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
-            
+
             { "md",
                 new CommandInfo("md", /* Localizable */ "Creates a directory",
                     [
@@ -1028,7 +1028,7 @@ namespace KS.Shell.Shells.UESH
                         ], [], true)
                     ], new MdCommand())
             },
-            
+
             { "mkfile",
                 new CommandInfo("mkfile", /* Localizable */ "Makes a new file",
                     [
@@ -1038,7 +1038,7 @@ namespace KS.Shell.Shells.UESH
                         ], [], true)
                     ], new MkFileCommand())
             },
-            
+
             { "modman",
                 new CommandInfo("modman", /* Localizable */ "Manage your mods",
                     [
@@ -1058,7 +1058,7 @@ namespace KS.Shell.Shells.UESH
                         }),
                     ], new ModManCommand(), CommandFlags.Strict)
             },
-            
+
             { "modmanual",
                 new CommandInfo("modmanual", /* Localizable */ "Mod manual",
                     [
@@ -1068,7 +1068,7 @@ namespace KS.Shell.Shells.UESH
                         })
                     ], new ModManualCommand())
             },
-            
+
             { "move",
                 new CommandInfo("move", /* Localizable */ "Moves a file to another directory",
                     [
@@ -1106,7 +1106,7 @@ namespace KS.Shell.Shells.UESH
                         ], [], true)
                     ], new PathFindCommand())
             },
-            
+
             { "perm",
                 new CommandInfo("perm", /* Localizable */ "Manage permissions for users",
                     [
@@ -1118,7 +1118,7 @@ namespace KS.Shell.Shells.UESH
                         })
                     ], new PermCommand(), CommandFlags.Strict)
             },
-            
+
             { "permgroup",
                 new CommandInfo("permgroup", /* Localizable */ "Manage permissions for groups",
                     [
@@ -1130,7 +1130,7 @@ namespace KS.Shell.Shells.UESH
                         })
                     ], new PermGroupCommand(), CommandFlags.Strict)
             },
-            
+
             { "ping",
                 new CommandInfo("ping", /* Localizable */ "Pings an address",
                     [
@@ -1181,7 +1181,7 @@ namespace KS.Shell.Shells.UESH
                         }, true)
                     ], new PlatformCommand())
             },
-            
+
             { "previewsplash",
                 new CommandInfo("previewsplash", /* Localizable */ "Previews the splash",
                     [
@@ -1201,7 +1201,7 @@ namespace KS.Shell.Shells.UESH
                         ])
                     ], new PreviewSplashCommand())
             },
-            
+
             { "put",
                 new CommandInfo("put", /* Localizable */ "Uploads a file to specified website",
                     [
@@ -1233,14 +1233,14 @@ namespace KS.Shell.Shells.UESH
                         })
                     ], new RebootCommand())
             },
-            
+
             { "reloadconfig",
                 new CommandInfo("reloadconfig", /* Localizable */ "Reloads configuration file that is edited.",
                     [
                         new CommandArgumentInfo()
                     ], new ReloadConfigCommand(), CommandFlags.Strict)
             },
-            
+
             { "rexec",
                 new CommandInfo("rexec", /* Localizable */ "Remotely executes a command to remote PC",
                     [
@@ -1255,7 +1255,7 @@ namespace KS.Shell.Shells.UESH
                         })
                     ], new RexecCommand(), CommandFlags.Strict)
             },
-            
+
             { "rm",
                 new CommandInfo("rm", /* Localizable */ "Removes a directory or a file",
                     [
@@ -1265,7 +1265,7 @@ namespace KS.Shell.Shells.UESH
                         })
                     ], new RmCommand())
             },
-            
+
             { "rmsec",
                 new CommandInfo("rmsec", /* Localizable */ "Removes a file or a directory securely",
                     [
@@ -1275,7 +1275,7 @@ namespace KS.Shell.Shells.UESH
                         })
                     ], new RmSecCommand())
             },
-            
+
             { "rmuser",
                 new CommandInfo("rmuser", /* Localizable */ "Removes a user from the list",
                     [
@@ -1285,7 +1285,7 @@ namespace KS.Shell.Shells.UESH
                         })
                     ], new RmUserCommand(), CommandFlags.Strict)
             },
-            
+
             { "rmgroup",
                 new CommandInfo("rmgroup", /* Localizable */ "Removes a group from the list",
                     [
@@ -1295,7 +1295,7 @@ namespace KS.Shell.Shells.UESH
                         })
                     ], new RmGroupCommand(), CommandFlags.Strict)
             },
-            
+
             { "rmuserfromgroup",
                 new CommandInfo("rmuserfromgroup", /* Localizable */ "Removes a user from the group",
                     [
@@ -1306,14 +1306,14 @@ namespace KS.Shell.Shells.UESH
                         })
                     ], new RmUserFromGroupCommand(), CommandFlags.Strict)
             },
-            
+
             { "saveconfig",
                 new CommandInfo("saveconfig", /* Localizable */ "Saves the current kernel configuration to its file",
                     [
                         new CommandArgumentInfo()
                     ], new SaveConfigCommand(), CommandFlags.Strict)
             },
-            
+
             { "savescreen",
                 new CommandInfo("savescreen", /* Localizable */ "Saves your screen from burn outs",
                     [
@@ -1329,7 +1329,7 @@ namespace KS.Shell.Shells.UESH
                         ])
                     ], new SaveScreenCommand())
             },
-            
+
             { "search",
                 new CommandInfo("search", /* Localizable */ "Searches for specified string in the provided file using regular expressions",
                     [
@@ -1340,7 +1340,7 @@ namespace KS.Shell.Shells.UESH
                         })
                     ], new SearchCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
-            
+
             { "searchword",
                 new CommandInfo("searchword", /* Localizable */ "Searches for specified string in the provided file",
                     [
@@ -1351,7 +1351,7 @@ namespace KS.Shell.Shells.UESH
                         })
                     ], new SearchWordCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
-            
+
             { "select",
                 new CommandInfo("select", /* Localizable */ "Provides a selection choice",
                     [
@@ -1364,7 +1364,7 @@ namespace KS.Shell.Shells.UESH
                         ], [], true)
                     ], new SelectCommand())
             },
-            
+
             { "setsaver",
                 new CommandInfo("setsaver", /* Localizable */ "Sets up kernel screensavers",
                     [
@@ -1374,7 +1374,7 @@ namespace KS.Shell.Shells.UESH
                         })
                     ], new SetSaverCommand(), CommandFlags.Strict)
             },
-            
+
             { "settings",
                 new CommandInfo("settings", /* Localizable */ "Changes kernel configuration",
                     [
@@ -1402,7 +1402,7 @@ namespace KS.Shell.Shells.UESH
                         })
                     ], new SettingsCommand(), CommandFlags.Strict)
             },
-            
+
             { "set",
                 new CommandInfo("set", /* Localizable */ "Sets a variable to a value in a script",
                     [
@@ -1459,21 +1459,21 @@ namespace KS.Shell.Shells.UESH
                         ], [], true)
                     ], new SetRangeCommand())
             },
-            
+
             { "shownotifs",
                 new CommandInfo("shownotifs", /* Localizable */ "Shows all received notifications",
                     [
                         new CommandArgumentInfo()
                     ], new ShowNotifsCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
-            
+
             { "showtd",
                 new CommandInfo("showtd", /* Localizable */ "Shows date and time",
                     [
                         new CommandArgumentInfo()
                     ], new ShowTdCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
-            
+
             { "showtdzone",
                 new CommandInfo("showtdzone", /* Localizable */ "Shows date and time in zones",
                     [
@@ -1494,7 +1494,7 @@ namespace KS.Shell.Shells.UESH
                         ])
                     ], new ShowTdZoneCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
-            
+
             { "shutdown",
                 new CommandInfo("shutdown", /* Localizable */ "The kernel will be shut down",
                     [
@@ -1508,7 +1508,7 @@ namespace KS.Shell.Shells.UESH
                         })
                     ], new ShutdownCommand())
             },
-            
+
             { "sleep",
                 new CommandInfo("sleep", /* Localizable */ "Sleeps for specified milliseconds",
                     [
@@ -1548,7 +1548,7 @@ namespace KS.Shell.Shells.UESH
                         ])
                     ], new SumFileCommand())
             },
-            
+
             { "sumfiles",
                 new CommandInfo("sumfiles", /* Localizable */ "Calculates sums of files in specified directory.",
                     [
@@ -1586,7 +1586,7 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo()
                     ], new TaskManCommand())
             },
-            
+
             { "themeprev",
                 new CommandInfo("themeprev", /* Localizable */ "Previews a theme",
                     [
@@ -1596,7 +1596,7 @@ namespace KS.Shell.Shells.UESH
                         })
                     ], new ThemePrevCommand())
             },
-            
+
             { "themeset",
                 new CommandInfo("themeset", /* Localizable */ "Selects a theme and sets it",
                     [
@@ -1619,7 +1619,7 @@ namespace KS.Shell.Shells.UESH
                         })
                     ], new UnblockDbgDevCommand(), CommandFlags.Strict)
             },
-            
+
             { "unset",
                 new CommandInfo("unset", /* Localizable */ "Removes a variable from the UESH variable list",
                     [
@@ -1635,7 +1635,7 @@ namespace KS.Shell.Shells.UESH
                         ])
                     ], new UnsetCommand())
             },
-            
+
             { "unzip",
                 new CommandInfo("unzip", /* Localizable */ "Extracts a ZIP archive",
                     [
@@ -1651,28 +1651,28 @@ namespace KS.Shell.Shells.UESH
                         ])
                     ], new UnZipCommand())
             },
-            
+
             { "update",
                 new CommandInfo("update", /* Localizable */ "System update",
                     [
                         new CommandArgumentInfo()
                     ], new UpdateCommand(), CommandFlags.Strict)
             },
-            
+
             { "uptime",
                 new CommandInfo("uptime", /* Localizable */ "Shows the kernel uptime",
                     [
                         new CommandArgumentInfo(true)
                     ], new UptimeCommand())
             },
-            
+
             { "usermanual",
                 new CommandInfo("usermanual", /* Localizable */ "Shows the two useful URLs for manual.",
                     [
                         new CommandArgumentInfo()
                     ], new UserManualCommand())
             },
-            
+
             { "verify",
                 new CommandInfo("verify", /* Localizable */ "Verifies sanity of the file",
                     [

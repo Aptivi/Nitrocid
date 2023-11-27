@@ -208,7 +208,7 @@ namespace Nitrocid.Extras.NameGen.Screensavers
                     "  - Last Name / Surname: {2}\n" +
                     "  - Age:                 {3} years old\n" +
                     "  - Birth date:          {4}\n",
-                    
+
                     // We don't want to wait for input as we're on the screensaver environment.
                     false,
                     ConsoleColors.Green,

@@ -300,7 +300,7 @@ namespace KS.Kernel.Exceptions
                         Count += 1;
                     }
                     dumpBuilder.AppendLine(Translate.DoTranslation("The last inner error is the root cause, which is number") + $" {Count}" + CharManager.NewLine);
-                    
+
                     // Write frame info for further analysis
                     WriteHeader(dumpBuilder, Translate.DoTranslation("Frame analysis"));
                     try

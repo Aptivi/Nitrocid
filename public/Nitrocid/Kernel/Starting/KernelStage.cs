@@ -41,7 +41,7 @@ namespace KS.Kernel.Starting
             StageName = stageName;
             StageRunsInSafeMode = stageRunsInSafeMode;
             StageRunsInMaintenance = stageRunsInMaintenance;
-            
+
             // Fields
             _stageAction = stageAction;
         }

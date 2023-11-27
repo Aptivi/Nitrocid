@@ -153,7 +153,7 @@ namespace KS.ConsoleBase.Writers.MiscWriters
                 TextWriterColor.WriteKernelColor($"* {message}", true, KernelColorType.DevelopmentWarning);
 #endif
         }
-        
+
         internal static string GetRandomTip()
         {
             // Get a random tip
@@ -165,7 +165,7 @@ namespace KS.ConsoleBase.Writers.MiscWriters
             }
             return tip;
         }
-        
+
         internal static void ShowRandomTip()
         {
             // Get a random tip and print it

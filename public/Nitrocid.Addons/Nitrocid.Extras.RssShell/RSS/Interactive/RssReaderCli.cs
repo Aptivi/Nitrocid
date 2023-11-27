@@ -56,9 +56,9 @@ namespace Nitrocid.Extras.RssShell.RSS.Interactive
         public override List<InteractiveTuiBinding> Bindings { get; set; } =
         [
             // Operations
-            new InteractiveTuiBinding(/* Localizable */ "Info",        ConsoleKey.F1, (article, _) => ShowArticleInfo(article), true),
-            new InteractiveTuiBinding(/* Localizable */ "Read More",   ConsoleKey.F2, (article, _) => OpenArticleLink(article), true),
-            new InteractiveTuiBinding(/* Localizable */ "Refresh",     ConsoleKey.F3, (article, _) => RefreshFeed(), true)
+            new InteractiveTuiBinding(/* Localizable */ "Info", ConsoleKey.F1, (article, _) => ShowArticleInfo(article), true),
+            new InteractiveTuiBinding(/* Localizable */ "Read More", ConsoleKey.F2, (article, _) => OpenArticleLink(article), true),
+            new InteractiveTuiBinding(/* Localizable */ "Refresh", ConsoleKey.F3, (article, _) => RefreshFeed(), true)
         ];
 
         /// <inheritdoc/>

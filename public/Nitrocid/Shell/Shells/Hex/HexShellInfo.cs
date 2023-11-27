@@ -47,7 +47,7 @@ namespace KS.Shell.Shells.Hex
                         })
                     ], new AddByteCommand())
             },
-            
+
             { "addbytes",
                 new CommandInfo("addbytes", /* Localizable */ "Adds the new bytes at the end of the file",
                     [
@@ -75,7 +75,7 @@ namespace KS.Shell.Shells.Hex
                         new CommandArgumentInfo()
                     ], new ClearCommand())
             },
-            
+
             { "delbyte",
                 new CommandInfo("delbyte", /* Localizable */ "Deletes a byte using the byte number",
                     [
@@ -88,7 +88,7 @@ namespace KS.Shell.Shells.Hex
                         })
                     ], new DelByteCommand())
             },
-            
+
             { "delbytes",
                 new CommandInfo("delbytes", /* Localizable */ "Deletes the range of bytes",
                     [
@@ -105,14 +105,14 @@ namespace KS.Shell.Shells.Hex
                         })
                     ], new DelBytesCommand())
             },
-            
+
             { "exitnosave",
                 new CommandInfo("exitnosave", /* Localizable */ "Exits the hex editor",
                     [
                         new CommandArgumentInfo()
                     ], new ExitNoSaveCommand())
             },
-            
+
             { "print",
                 new CommandInfo("print", /* Localizable */ "Prints the contents of the file with byte numbers to the console",
                     [
@@ -129,7 +129,7 @@ namespace KS.Shell.Shells.Hex
                         })
                     ], new PrintCommand(), CommandFlags.Wrappable)
             },
-            
+
             { "querybyte",
                 new CommandInfo("querybyte", /* Localizable */ "Queries a byte in a specified range of bytes or all bytes",
                     [
@@ -147,7 +147,7 @@ namespace KS.Shell.Shells.Hex
                         })
                     ], new QueryByteCommand(), CommandFlags.Wrappable)
             },
-            
+
             { "replace",
                 new CommandInfo("replace", /* Localizable */ "Replaces a byte with another one",
                     [
@@ -158,14 +158,14 @@ namespace KS.Shell.Shells.Hex
                         })
                     ], new ReplaceCommand())
             },
-            
+
             { "save",
                 new CommandInfo("save", /* Localizable */ "Saves the file",
                     [
                         new CommandArgumentInfo()
                     ], new SaveCommand())
             },
-            
+
             { "tui",
                 new CommandInfo("tui", /* Localizable */ "Opens the interactive hex editor TUI",
                     [

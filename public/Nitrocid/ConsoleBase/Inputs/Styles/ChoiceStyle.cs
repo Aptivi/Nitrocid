@@ -48,7 +48,7 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// <param name="AnswersStr">Set of answers. They can be written like this: Y/N/C.</param>
         /// <param name="OutputType">Output type of choices</param>
         /// <param name="PressEnter">When enabled, allows the input to consist of multiple characters</param>
-        public static string PromptChoice(string Question, string AnswersStr, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false) => 
+        public static string PromptChoice(string Question, string AnswersStr, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false) =>
             PromptChoice(Question, AnswersStr, [], OutputType, PressEnter);
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// <param name="Answers">Set of answers.</param>
         /// <param name="OutputType">Output type of choices</param>
         /// <param name="PressEnter">When enabled, allows the input to consist of multiple characters</param>
-        public static string PromptChoice(string Question, string[] Answers, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false) => 
+        public static string PromptChoice(string Question, string[] Answers, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false) =>
             PromptChoice(Question, Answers, [], OutputType, PressEnter);
 
         /// <summary>

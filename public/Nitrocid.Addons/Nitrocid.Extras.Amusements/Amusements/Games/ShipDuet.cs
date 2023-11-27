@@ -112,10 +112,14 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 ConsoleKey[] possibleKeys =
                 [
                     // Player 1
-                    ConsoleKey.UpArrow, ConsoleKey.DownArrow, ConsoleKey.Enter,
+                    ConsoleKey.UpArrow,
+                    ConsoleKey.DownArrow,
+                    ConsoleKey.Enter,
 
                     // Player 2
-                    ConsoleKey.W, ConsoleKey.S, ConsoleKey.Spacebar
+                    ConsoleKey.W,
+                    ConsoleKey.S,
+                    ConsoleKey.Spacebar
                 ];
                 while (!GameEnded)
                 {

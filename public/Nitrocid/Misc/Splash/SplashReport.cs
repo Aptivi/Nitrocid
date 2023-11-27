@@ -83,7 +83,7 @@ namespace KS.Misc.Splash
         /// If the kernel has booted successfully, it will act like the normal printing command. If this routine was called during boot,<br></br>
         /// it will report the progress to the splash system. You can force it to report the progress by passing force.
         /// </remarks>
-        public static void ReportProgress(string Text, params object[] Vars) => 
+        public static void ReportProgress(string Text, params object[] Vars) =>
             ReportProgress(Text, 0, false, SplashManager.CurrentSplash, Vars);
 
         /// <summary>
@@ -96,7 +96,7 @@ namespace KS.Misc.Splash
         /// If the kernel has booted successfully, it will act like the normal printing command. If this routine was called during boot,<br></br>
         /// it will report the progress to the splash system. You can force it to report the progress by passing force.
         /// </remarks>
-        public static void ReportProgress(string Text, int Progress, params object[] Vars) => 
+        public static void ReportProgress(string Text, int Progress, params object[] Vars) =>
             ReportProgress(Text, Progress, false, SplashManager.CurrentSplash, Vars);
 
         /// <summary>

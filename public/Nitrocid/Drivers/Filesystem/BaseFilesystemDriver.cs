@@ -386,7 +386,7 @@ namespace KS.Drivers.Filesystem
 
             // We would most likely need to put the folders first, then the files.
             var listFolders = new List<FileSystemEntry>();
-            var listFiles =   new List<FileSystemEntry>();
+            var listFiles = new List<FileSystemEntry>();
             foreach (var entry in FilesystemEntries)
             {
                 switch (entry.Type)
@@ -1748,16 +1748,16 @@ namespace KS.Drivers.Filesystem
         public virtual string SortSelector(FileSystemEntry FileSystemEntry, int MaxLength) =>
             Listing.SortMode switch
             {
-                FilesystemSortOptions.FullName          => FileSystemEntry.FilePath,
-                FilesystemSortOptions.Length            => (FileSystemEntry.BaseEntry as FileInfo is not null ? (FileSystemEntry.BaseEntry as FileInfo).Length : 0L).ToString().PadLeft(MaxLength, '0'),
-                FilesystemSortOptions.CreationTime      => Convert.ToString(FileSystemEntry.BaseEntry.CreationTime),
-                FilesystemSortOptions.LastAccessTime    => Convert.ToString(FileSystemEntry.BaseEntry.LastAccessTime),
-                FilesystemSortOptions.LastWriteTime     => Convert.ToString(FileSystemEntry.BaseEntry.LastWriteTime),
-                FilesystemSortOptions.Extension         => FileSystemEntry.BaseEntry.Extension,
-                FilesystemSortOptions.CreationTimeUtc   => Convert.ToString(FileSystemEntry.BaseEntry.CreationTimeUtc),
+                FilesystemSortOptions.FullName => FileSystemEntry.FilePath,
+                FilesystemSortOptions.Length => (FileSystemEntry.BaseEntry as FileInfo is not null ? (FileSystemEntry.BaseEntry as FileInfo).Length : 0L).ToString().PadLeft(MaxLength, '0'),
+                FilesystemSortOptions.CreationTime => Convert.ToString(FileSystemEntry.BaseEntry.CreationTime),
+                FilesystemSortOptions.LastAccessTime => Convert.ToString(FileSystemEntry.BaseEntry.LastAccessTime),
+                FilesystemSortOptions.LastWriteTime => Convert.ToString(FileSystemEntry.BaseEntry.LastWriteTime),
+                FilesystemSortOptions.Extension => FileSystemEntry.BaseEntry.Extension,
+                FilesystemSortOptions.CreationTimeUtc => Convert.ToString(FileSystemEntry.BaseEntry.CreationTimeUtc),
                 FilesystemSortOptions.LastAccessTimeUtc => Convert.ToString(FileSystemEntry.BaseEntry.LastAccessTimeUtc),
-                FilesystemSortOptions.LastWriteTimeUtc  => Convert.ToString(FileSystemEntry.BaseEntry.LastWriteTimeUtc),
-                _                                       => FileSystemEntry.FilePath,
+                FilesystemSortOptions.LastWriteTimeUtc => Convert.ToString(FileSystemEntry.BaseEntry.LastWriteTimeUtc),
+                _ => FileSystemEntry.FilePath,
             };
 
         /// <inheritdoc/>

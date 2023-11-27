@@ -750,7 +750,7 @@ namespace KS.Shell.ShellBase.Shells
             // We must have at least two shells to kill the last shell. Else, we will have zero shells running, making us look like we've logged out!
             if (IsOnMotherShell())
                 throw new KernelException(KernelExceptionType.ShellOperation, Translate.DoTranslation("Can not kill the mother shell!"));
-            
+
             // Not a mother shell, so bail.
             ShellStack[^1].ShellBase.Bail = true;
             PurgeShells();

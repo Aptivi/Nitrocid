@@ -178,7 +178,7 @@ namespace KS.Arguments
                                 if (argInfo.ArgumentsRequired & RequiredArgumentsProvided | !argInfo.ArgumentsRequired)
                                 {
                                     DebugWriter.WriteDebug(DebugLevel.I, "Executing argument {0} with args {1}...", Argument, strArgs);
-                                    
+
                                     // Prepare the argument parameter instance
                                     var parameters = new ArgumentParameters(strArgs, Args, ArgOrig, ArgsOrig, Switches, Argument);
 

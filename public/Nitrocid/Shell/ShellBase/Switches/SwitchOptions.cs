@@ -43,7 +43,8 @@ namespace KS.Shell.ShellBase.Switches
         public bool IsRequired
         {
             get => isRequired;
-            set {
+            set
+            {
                 if (!isRequiredSet)
                 {
                     isRequiredSet = true;

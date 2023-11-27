@@ -24,7 +24,7 @@ namespace KS.Arguments.CommandLineArguments
     class NoAltBufferArgument : ArgumentExecutor, IArgument
     {
 
-        public override void Execute(ArgumentParameters parameters) => 
+        public override void Execute(ArgumentParameters parameters) =>
             ConsoleExtensions.UseAltBuffer = false;
 
     }

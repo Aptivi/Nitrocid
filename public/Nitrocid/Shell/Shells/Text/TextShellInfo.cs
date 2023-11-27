@@ -47,21 +47,21 @@ namespace KS.Shell.Shells.Text
                         })
                     ], new AddLineCommand())
             },
-            
+
             { "addlines",
                 new CommandInfo("addlines", /* Localizable */ "Adds the new lines at the end of the file",
                     [
                         new CommandArgumentInfo()
                     ], new AddLinesCommand())
             },
-            
+
             { "clear",
                 new CommandInfo("clear", /* Localizable */ "Clears the text file",
                     [
                         new CommandArgumentInfo()
                     ], new ClearCommand())
             },
-            
+
             { "delcharnum",
                 new CommandInfo("delcharnum", /* Localizable */ "Deletes a character from character number in specified line",
                     [
@@ -78,7 +78,7 @@ namespace KS.Shell.Shells.Text
                         })
                     ], new DelCharNumCommand())
             },
-            
+
             { "delline",
                 new CommandInfo("delline", /* Localizable */ "Removes the specified line number",
                     [
@@ -95,7 +95,7 @@ namespace KS.Shell.Shells.Text
                         })
                     ], new DelLineCommand())
             },
-            
+
             { "delword",
                 new CommandInfo("delword", /* Localizable */ "Deletes a word or phrase from line number",
                     [
@@ -113,7 +113,7 @@ namespace KS.Shell.Shells.Text
                         })
                     ], new DelWordCommand())
             },
-            
+
             { "editline",
                 new CommandInfo("editline", /* Localizable */ "Edits the specified line",
                     [
@@ -126,14 +126,14 @@ namespace KS.Shell.Shells.Text
                         })
                     ], new EditLineCommand())
             },
-            
+
             { "exitnosave",
                 new CommandInfo("exitnosave", /* Localizable */ "Exits the text editor",
                     [
                         new CommandArgumentInfo()
                     ], new ExitNoSaveCommand())
             },
-            
+
             { "print",
                 new CommandInfo("print", /* Localizable */ "Prints the contents of the file with line numbers to the console",
                     [
@@ -150,7 +150,7 @@ namespace KS.Shell.Shells.Text
                         })
                     ], new PrintCommand(), CommandFlags.Wrappable)
             },
-            
+
             { "querychar",
                 new CommandInfo("querychar", /* Localizable */ "Queries a character in a specified line or all lines",
                     [
@@ -165,7 +165,7 @@ namespace KS.Shell.Shells.Text
                         })
                     ], new QueryCharCommand(), CommandFlags.Wrappable)
             },
-            
+
             { "queryword",
                 new CommandInfo("queryword", /* Localizable */ "Queries a word in a specified line or all lines",
                     [
@@ -180,7 +180,7 @@ namespace KS.Shell.Shells.Text
                         })
                     ], new QueryWordCommand(), CommandFlags.Wrappable)
             },
-            
+
             { "querywordregex",
                 new CommandInfo("querywordregex", /* Localizable */ "Queries a word in a specified line or all lines using regular expressions",
                     [
@@ -195,7 +195,7 @@ namespace KS.Shell.Shells.Text
                         })
                     ], new QueryWordRegexCommand(), CommandFlags.Wrappable)
             },
-            
+
             { "replace",
                 new CommandInfo("replace", /* Localizable */ "Replaces a word or phrase with another one",
                     [
@@ -206,7 +206,7 @@ namespace KS.Shell.Shells.Text
                         })
                     ], new ReplaceCommand())
             },
-            
+
             { "replaceinline",
                 new CommandInfo("replaceinline", /* Localizable */ "Replaces a word or phrase with another one in a line",
                     [
@@ -222,7 +222,7 @@ namespace KS.Shell.Shells.Text
                         })
                     ], new ReplaceInlineCommand())
             },
-            
+
             { "replaceregex",
                 new CommandInfo("replaceregex", /* Localizable */ "Replaces a word or phrase with another one using regular expressions",
                     [
@@ -233,7 +233,7 @@ namespace KS.Shell.Shells.Text
                         })
                     ], new ReplaceRegexCommand())
             },
-            
+
             { "replaceinlineregex",
                 new CommandInfo("replaceinlineregex", /* Localizable */ "Replaces a word or phrase with another one in a line using regular expressions",
                     [
@@ -249,7 +249,7 @@ namespace KS.Shell.Shells.Text
                         })
                     ], new ReplaceInlineRegexCommand())
             },
-            
+
             { "save",
                 new CommandInfo("save", /* Localizable */ "Saves the file",
                     [

@@ -210,7 +210,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             CommandInstance.Flags.HasFlag(CommandFlags.Obsolete).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.NoMaintenance).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.RedirectionSupported).ShouldBeFalse();
-            
+
             // Check for switch info correctness
             var @switch = CommandInstance.CommandArgumentInfo[0].Switches[0];
             @switch.SwitchName.ShouldBe("s");
@@ -320,7 +320,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             CommandInstance.Flags.HasFlag(CommandFlags.Obsolete).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.NoMaintenance).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.RedirectionSupported).ShouldBeFalse();
-            
+
             // Check for switch info correctness
             var @switch = CommandInstance.CommandArgumentInfo[0].Switches[0];
             @switch.SwitchName.ShouldBe("s");
@@ -511,7 +511,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             CommandInstance.Flags.HasFlag(CommandFlags.Obsolete).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.NoMaintenance).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.RedirectionSupported).ShouldBeFalse();
-            
+
             // Check for switch info correctness
             var @switch = CommandInstance.CommandArgumentInfo[0].Switches[0];
             @switch.SwitchName.ShouldBe("s");
@@ -621,7 +621,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             CommandInstance.Flags.HasFlag(CommandFlags.Obsolete).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.NoMaintenance).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.RedirectionSupported).ShouldBeFalse();
-            
+
             // Check for switch info correctness
             var @switch = CommandInstance.CommandArgumentInfo[0].Switches[0];
             @switch.SwitchName.ShouldBe("s");
@@ -704,7 +704,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         public void TestInitializeCommandInfoInstanceFromCommandLineArgSimpleMultiCommandArgumentInfo(ShellType type)
         {
             // Create instance
-            var CommandInstance = new CommandInfo("help", $"Help page for type {type}", 
+            var CommandInstance = new CommandInfo("help", $"Help page for type {type}",
                 [
                     new CommandArgumentInfo(),
                     new CommandArgumentInfo()
@@ -837,7 +837,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             CommandInstance.Flags.HasFlag(CommandFlags.Obsolete).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.NoMaintenance).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.RedirectionSupported).ShouldBeFalse();
-            
+
             // Check for switch info correctness
             var @switch = CommandInstance.CommandArgumentInfo[0].Switches[0];
             var @switch2 = CommandInstance.CommandArgumentInfo[1].Switches[0];
@@ -989,7 +989,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             CommandInstance.Flags.HasFlag(CommandFlags.Obsolete).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.NoMaintenance).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.RedirectionSupported).ShouldBeFalse();
-            
+
             // Check for switch info correctness
             var @switch = CommandInstance.CommandArgumentInfo[0].Switches[0];
             var @switch2 = CommandInstance.CommandArgumentInfo[1].Switches[0];

@@ -105,9 +105,9 @@ namespace KS.Drivers.Network
             string FilePath = FS.NeutralizePath(FileName);
 
             // Try to download the file asynchronously
-            Task.Run(() => 
-            { 
-                try 
+            Task.Run(() =>
+            {
+                try
                 {
                     int size = 16384;
                     var length = Response.Content.Headers.ContentLength;
@@ -131,9 +131,9 @@ namespace KS.Drivers.Network
                     NetworkTransfer.DownloadChecker(null);
                 }
                 catch (Exception ex)
-                { 
+                {
                     NetworkTransfer.DownloadChecker(ex);
-                } 
+                }
             }, NetworkTransfer.CancellationToken.Token);
             while (!NetworkTools.TransferFinished)
             {
@@ -202,8 +202,8 @@ namespace KS.Drivers.Network
 
             // Try to download the string asynchronously
             string downloaded = "";
-            Task.Run(() => 
-            { 
+            Task.Run(() =>
+            {
                 try
                 {
                     int size = 16384;
@@ -227,12 +227,12 @@ namespace KS.Drivers.Network
                         ContentStream.Seek(0L, SeekOrigin.Begin);
                         downloaded = new StreamReader(ContentStream).ReadToEnd();
                     }
-                    NetworkTransfer.DownloadChecker(null); 
-                } 
-                catch (Exception ex) 
+                    NetworkTransfer.DownloadChecker(null);
+                }
+                catch (Exception ex)
                 {
-                    NetworkTransfer.DownloadChecker(ex); 
-                } 
+                    NetworkTransfer.DownloadChecker(ex);
+                }
             }, NetworkTransfer.CancellationToken.Token);
             while (!NetworkTools.TransferFinished)
             {
@@ -344,7 +344,7 @@ namespace KS.Drivers.Network
         }
 
         /// <inheritdoc/>
-        public virtual bool UploadString(string URL, string Data) => 
+        public virtual bool UploadString(string URL, string Data) =>
             UploadString(URL, Data, NetworkTools.ShowProgress);
 
         /// <inheritdoc/>

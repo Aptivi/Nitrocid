@@ -47,9 +47,9 @@ namespace Nitrocid.SplashPacks.Splashes
             try
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Splash displaying.");
-                Color firstDotColor  = dotStep >= 1 ? secondColor : firstColor;
+                Color firstDotColor = dotStep >= 1 ? secondColor : firstColor;
                 Color secondDotColor = dotStep >= 2 ? secondColor : firstColor;
-                Color thirdDotColor  = dotStep >= 3 ? secondColor : firstColor;
+                Color thirdDotColor = dotStep >= 3 ? secondColor : firstColor;
 
                 // Write the three dots
                 string dots = $"{firstDotColor.VTSequenceForeground}* {secondDotColor.VTSequenceForeground}* {thirdDotColor.VTSequenceForeground}*";

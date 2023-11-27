@@ -54,7 +54,7 @@ namespace KS.Drivers
         internal static bool begunLocal = false;
         internal static Dictionary<DriverTypes, Dictionary<string, IDriver>> drivers = new()
         {
-            { 
+            {
                 DriverTypes.Console, new()
                 {
                     { "Default", new Terminal() },
@@ -70,7 +70,7 @@ namespace KS.Drivers
 #endif
                 }
             },
-            { 
+            {
                 DriverTypes.RNG, new()
                 {
                     { "Default", new DefaultRandom() },
@@ -84,15 +84,15 @@ namespace KS.Drivers
 #endif
                 }
             },
-            { 
+            {
                 DriverTypes.Network, new()
-                { 
+                {
                     { "Default", new DefaultNetwork() }
                 }
             },
-            { 
+            {
                 DriverTypes.Filesystem, new()
-                { 
+                {
                     { "Default", new DefaultFilesystem() },
 
 #if !SPECIFIERREL
@@ -101,7 +101,7 @@ namespace KS.Drivers
 #endif
                 }
             },
-            { 
+            {
                 DriverTypes.Encryption, new()
                 {
                     { "Default", new SHA256() },
@@ -113,36 +113,36 @@ namespace KS.Drivers
                     { "SHA512", new SHA512() }
                 }
             },
-            { 
+            {
                 DriverTypes.Regexp, new()
-                { 
+                {
                     { "Default", new DefaultRegexp() }
                 }
             },
-            { 
+            {
                 DriverTypes.DebugLogger, new()
-                { 
+                {
                     { "Default", new DefaultDebugLogger() },
                     { "Console", new ConsoleDebugLogger() },
                     { "UnitTest", new UnitTestDebugLogger() },
                 }
             },
-            { 
+            {
                 DriverTypes.Encoding, new()
-                { 
+                {
                     { "Default", new AesEncoding() },
                     { "RSA", new RsaEncoding() },
                 }
             },
-            { 
+            {
                 DriverTypes.HardwareProber, new()
-                { 
+                {
                     { "Default", new DefaultHardwareProber() },
                 }
             },
-            { 
+            {
                 DriverTypes.Sorting, new()
-                { 
+                {
                     { "Default", new DefaultSorting() },
                 }
             }
@@ -427,7 +427,7 @@ namespace KS.Drivers
         public static Dictionary<string, IDriver> GetDrivers(DriverTypes driverType)
         {
             // Exclude internal drivers from the list
-            var filteredDrivers       = drivers[driverType].Where((kvp) => !kvp.Value.DriverInternal);
+            var filteredDrivers = drivers[driverType].Where((kvp) => !kvp.Value.DriverInternal);
             var filteredCustomDrivers = customDrivers[driverType].Where((kvp) => !kvp.Value.DriverInternal);
             DebugWriter.WriteDebug(DebugLevel.I, "For type {0}, driver counts:", driverType.ToString());
             DebugWriter.WriteDebug(DebugLevel.I, "Initial drivers: {0}, custom: {1}", drivers[driverType].Count, customDrivers[driverType].Count);
@@ -609,7 +609,7 @@ namespace KS.Drivers
         {
             if (driver is null)
                 throw new KernelException(KernelExceptionType.DriverHandler, Translate.DoTranslation("Can't register a non-driver or a null driver."));
-            
+
             // Now, get the driver name
             string name = driver.DriverName;
             if (!IsRegistered(type, name) && driver.DriverType == type)
@@ -959,7 +959,7 @@ namespace KS.Drivers
             // Check the type
             if (!knownTypes.TryGetValue(type, out DriverTypes driverTypes))
                 throw new KernelException(KernelExceptionType.DriverHandler, Translate.DoTranslation("Failed to infer driver type from unknown type") + $" {type.Name} [{type.FullName}]");
-            
+
             // Now, actually infer the type from the driver interface type
             driverType = driverTypes;
             DebugWriter.WriteDebug(DebugLevel.I, "Inferred {0} for type {1}", driverType.ToString(), type.Name);

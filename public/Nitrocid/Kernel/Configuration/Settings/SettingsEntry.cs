@@ -55,7 +55,7 @@ namespace KS.Kernel.Configuration.Settings
         /// Settings entry display name
         /// </summary>
         [JsonIgnore]
-        public string DisplayAs => 
+        public string DisplayAs =>
             displayAs;
 
         /// <summary>

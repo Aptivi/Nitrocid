@@ -28,7 +28,7 @@ namespace KS.Drivers.Console.Bases
 {
     internal class TerminalMonoCompat : BaseConsoleDriver, IConsoleDriver
     {
-        
+
         public override string DriverName => "Default - Compatibility layer for Mono";
 
         public override DriverTypes DriverType => DriverTypes.Console;

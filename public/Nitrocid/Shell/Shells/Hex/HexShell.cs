@@ -57,7 +57,7 @@ namespace KS.Shell.Shells.Hex
                 Bail = true;
             }
             TextWriterColor.WriteKernelColor(Translate.DoTranslation("Please note that editing binary files using this shell is experimental and may lead to data corruption or data loss if not used properly.") + CharManager.NewLine + Translate.DoTranslation("DON'T LAUNCH THE SHELL UNLESS YOU KNOW WHAT YOU'RE DOING!"), true, KernelColorType.Warning);
-                    
+
             // Open file if not open
             if (HexEditShellCommon.FileStream is null)
             {

@@ -274,7 +274,7 @@ namespace KS.Misc.Notifications
         /// <returns>True if there is a match; false otherwise.</returns>
         public bool Equals(Notification other)
         {
-            return 
+            return
                 other is not null &&
                 Id == other.Id &&
                 Title == other.Title &&
@@ -307,7 +307,7 @@ namespace KS.Misc.Notifications
         /// <returns>True if there is a match; false otherwise.</returns>
         public bool EqualsNoId(Notification other)
         {
-            return 
+            return
                 other is not null &&
                 Title == other.Title &&
                 Desc == other.Desc &&

@@ -30,7 +30,7 @@ namespace KS.Kernel.Time.Renderers
         /// <example>
         /// 1.12:00:05.482
         /// </example>
-        public const string FullTimeFormat  = @"d\.hh\:mm\:ss\.fff";
+        public const string FullTimeFormat = @"d\.hh\:mm\:ss\.fff";
         /// <summary>
         /// Short time format. Hours, minutes, and seconds included.
         /// </summary>
@@ -45,6 +45,6 @@ namespace KS.Kernel.Time.Renderers
         /// <summary>
         /// Plus sign offset for timezone and time remaining indicators
         /// </summary>
-        public const string PlusSignOffset  = @"\+";
+        public const string PlusSignOffset = @"\+";
     }
 }

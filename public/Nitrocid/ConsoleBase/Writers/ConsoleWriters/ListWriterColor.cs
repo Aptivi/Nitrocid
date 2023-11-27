@@ -189,7 +189,7 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
                         buffer.Append(bufferedLine);
                         if (idx < bufferedLines.Length - 1)
                             buffer.AppendLine();
-                        
+
                         if (Wrap)
                         {
                             LinesMade += 1;

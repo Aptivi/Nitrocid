@@ -196,7 +196,7 @@ namespace KS.ConsoleBase.Colors
         /// Sets the console color
         /// </summary>
         /// <param name="colorType">A type of colors that will be changed.</param>
-        public static void SetConsoleColor(KernelColorType colorType) => 
+        public static void SetConsoleColor(KernelColorType colorType) =>
             SetConsoleColor(colorType, false);
 
         /// <summary>

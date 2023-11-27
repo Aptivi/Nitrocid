@@ -47,7 +47,7 @@ namespace KS.Drivers.Regexp
                 Regex.Match(string.Empty, pattern);
                 return true;
             }
-            catch 
+            catch
             {
                 return false;
             }

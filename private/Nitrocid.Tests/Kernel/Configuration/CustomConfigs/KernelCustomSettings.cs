@@ -136,7 +136,7 @@ namespace Nitrocid.Tests.Kernel.Configuration.CustomConfigs
         public int CustomIntSlider { get; set; } = 4;
 
         public string CustomList { get; set; } = "";
-        
+
         public string CustomPreset { get; set; } = "Default";
 
         public string CustomString { get; set; } = "Default";

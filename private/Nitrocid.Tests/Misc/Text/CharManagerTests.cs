@@ -94,7 +94,7 @@ namespace Nitrocid.Tests.Misc.Text
         [TestCase('a', ExpectedResult = false)]
         [TestCase('1', ExpectedResult = false)]
         [Description("Querying")]
-        public static bool TestIsControlChar(char possiblyControlChar) => 
+        public static bool TestIsControlChar(char possiblyControlChar) =>
             CharManager.IsControlChar(possiblyControlChar);
 
         /// <summary>

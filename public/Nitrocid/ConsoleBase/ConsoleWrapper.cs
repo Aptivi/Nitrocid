@@ -64,7 +64,7 @@ namespace KS.ConsoleBase
         /// <summary>
         /// The console window width (columns)
         /// </summary>
-        public static int WindowWidth => 
+        public static int WindowWidth =>
             ConsoleResizeListener.GetCurrentConsoleSize().Width;
 
         /// <summary>
@@ -181,7 +181,7 @@ namespace KS.ConsoleBase
         /// <summary>
         /// Beeps the console
         /// </summary>
-        public static void Beep() => 
+        public static void Beep() =>
             DriverHandler.CurrentConsoleDriverLocal.Beep();
 
         /// <summary>

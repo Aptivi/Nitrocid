@@ -63,7 +63,7 @@ namespace KS.Shell.Shells.UESH.Commands
                     PrintLines = true;
                 if (parameters.SwitchesList.Contains("-nolines"))
                     // -lines and -nolines cancel together.
-                    PrintLines = false; 
+                    PrintLines = false;
                 if (parameters.SwitchesList.Contains("-plain"))
                     ForcePlain = true;
                 FileContentPrinter.PrintContents(parameters.ArgumentsList[0], PrintLines, ForcePlain);

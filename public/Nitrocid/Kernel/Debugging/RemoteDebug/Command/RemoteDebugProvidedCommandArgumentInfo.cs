@@ -102,8 +102,8 @@ namespace KS.Kernel.Debugging.RemoteDebug.Command
                                                       (EnclosedArgs?.Length) is int actualArgumentNum ? actualArgumentNum >= expectedArgumentNum : (bool?)null);
                 else if (CommandInfo.CommandArgumentInfo.ArgumentsRequired & EnclosedArgs is null)
                     RequiredArgumentsProvided = false;
-            else
-                RequiredArgumentsProvided = true;
+                else
+                    RequiredArgumentsProvided = true;
 
             // Separate the arguments from the switches
             var FinalArgs = new List<string>();

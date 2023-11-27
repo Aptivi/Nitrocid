@@ -44,7 +44,7 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// <param name="Question">A question</param>
         /// <param name="AnswersStr">Set of answers. They can be written like this: Y/N/C.</param>
         /// <param name="kiosk">Whether to prevent exiting or not</param>
-        public static int PromptSelection(string Question, string AnswersStr, bool kiosk = false) => 
+        public static int PromptSelection(string Question, string AnswersStr, bool kiosk = false) =>
             PromptSelection(Question, AnswersStr, [], "", [], kiosk);
 
         /// <summary>
@@ -86,7 +86,7 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// <param name="Question">A question</param>
         /// <param name="Answers">Set of answers. They can be written like this: Y/N/C.</param>
         /// <param name="kiosk">Whether to prevent exiting or not</param>
-        public static int PromptSelection(string Question, string[] Answers, bool kiosk = false) => 
+        public static int PromptSelection(string Question, string[] Answers, bool kiosk = false) =>
             PromptSelection(Question, Answers, [], [], [], kiosk);
 
         /// <summary>

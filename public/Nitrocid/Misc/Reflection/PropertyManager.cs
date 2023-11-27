@@ -37,7 +37,7 @@ namespace KS.Misc.Reflection
         /// </summary>
         /// <param name="Variable">Property name. Use operator NameOf to get name.</param>
         /// <param name="VariableValue">New value</param>
-        public static void SetPropertyValue(string Variable, object VariableValue) => 
+        public static void SetPropertyValue(string Variable, object VariableValue) =>
             SetPropertyValue(Variable, VariableValue, null);
 
         /// <summary>

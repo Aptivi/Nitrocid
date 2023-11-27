@@ -41,7 +41,7 @@ namespace Nitrocid.Extras.UnitConv.Interactives
         public override List<InteractiveTuiBinding> Bindings { get; set; } =
         [
             // Operations
-            new InteractiveTuiBinding(/* Localizable */ "Convert...",  ConsoleKey.F1,  (_, _)     => OpenConvert(), true),
+            new InteractiveTuiBinding(/* Localizable */ "Convert...", ConsoleKey.F1, (_, _) => OpenConvert(), true),
         ];
 
         /// <inheritdoc/>

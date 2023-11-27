@@ -34,7 +34,7 @@ namespace KS.Kernel.Time.Renderers
         /// Renders the current time based on kernel config (long or short) and current culture
         /// </summary>
         /// <returns>A long or short time</returns>
-        public static string RenderTime() => 
+        public static string RenderTime() =>
             TimeDateTools.LongTimeDate
             ? TimeDateTools.KernelDateTime.ToString(CultureManager.CurrentCult.DateTimeFormat.LongTimePattern, CultureManager.CurrentCult)
             : TimeDateTools.KernelDateTime.ToString(CultureManager.CurrentCult.DateTimeFormat.ShortTimePattern, CultureManager.CurrentCult);

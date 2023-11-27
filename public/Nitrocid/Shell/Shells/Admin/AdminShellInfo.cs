@@ -52,14 +52,14 @@ namespace KS.Shell.Shells.Admin
                         })
                     ], new ArgHelpCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
             },
-            
+
             { "bootlog",
                 new CommandInfo("bootlog", /* Localizable */ "Prints the boot log",
                     [
                         new CommandArgumentInfo()
                     ], new BootLogCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
             },
-            
+
             { "cdbglog",
                 new CommandInfo("cdbglog", /* Localizable */ "Deletes everything in debug log",
                     [

@@ -67,7 +67,7 @@ namespace Nitrocid.LocaleGen
                 // Change the values of custom and normal to match the switches provided
                 custom = switches.Contains("--CustomOnly") || switches.Contains("--All");
                 normal = switches.Contains("--NormalOnly") || switches.Contains("--All");
-                addon = switches.Contains("--AddonOnly")   || switches.Contains("--All");
+                addon = switches.Contains("--AddonOnly") || switches.Contains("--All");
                 copyToResources = switches.Contains("--CopyToResources");
                 dry = switches.Contains("--Dry");
 

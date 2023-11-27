@@ -69,7 +69,7 @@ namespace KS.Network.Base
         /// Checks to see if the network is available. On Android systems, if there is no Internet connection, the network is considered
         /// unavailable.
         /// </summary>
-        public static bool NetworkAvailable => 
+        public static bool NetworkAvailable =>
             KernelPlatform.IsOnAndroid() ?
             IsInternetAvailableNoNetworkCheck() :
             NetworkInterface.GetIsNetworkAvailable();
@@ -77,7 +77,7 @@ namespace KS.Network.Base
         /// <summary>
         /// Checks to see if the Internet connection is available
         /// </summary>
-        public static bool InternetAvailable => 
+        public static bool InternetAvailable =>
             IsInternetAvailable();
 
         /// <summary>

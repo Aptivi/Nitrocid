@@ -32,13 +32,13 @@ namespace KS.Kernel.Debugging.Testing.Facades.FacadeData
 
         public override List<InteractiveTuiBinding> Bindings { get; set; } =
         [
-            new InteractiveTuiBinding(/* Localizable */ "Add",         ConsoleKey.F1, (_, index) => strings.Add($"[{index}] --+-- [{index}]"), true),
-            new InteractiveTuiBinding(/* Localizable */ "Delete",      ConsoleKey.F2, (_, index) => strings.RemoveAt(index), true),
-            new InteractiveTuiBinding(/* Localizable */ "Delete Last", ConsoleKey.F3, (_, _)     => strings.RemoveAt(strings.Count - 1), true),
+            new InteractiveTuiBinding(/* Localizable */ "Add", ConsoleKey.F1, (_, index) => strings.Add($"[{index}] --+-- [{index}]"), true),
+            new InteractiveTuiBinding(/* Localizable */ "Delete", ConsoleKey.F2, (_, index) => strings.RemoveAt(index), true),
+            new InteractiveTuiBinding(/* Localizable */ "Delete Last", ConsoleKey.F3, (_, _) => strings.RemoveAt(strings.Count - 1), true),
         ];
 
         /// <inheritdoc/>
-        public override int RefreshInterval => 
+        public override int RefreshInterval =>
             3000;
 
         /// <inheritdoc/>

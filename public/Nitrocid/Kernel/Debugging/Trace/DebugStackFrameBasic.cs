@@ -27,9 +27,10 @@ namespace KS.Kernel.Debugging.Trace
     {
         public string RoutineName { get; }
         public string RoutinePath { get; }
-        
-        internal DebugStackFrameBasic() : 
-            this(2) { }
+
+        internal DebugStackFrameBasic() :
+            this(2)
+        { }
 
         internal DebugStackFrameBasic(int frameNumber)
         {

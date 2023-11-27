@@ -31,9 +31,10 @@ namespace KS.Kernel.Debugging.Trace
         public int RoutineLineNumber { get; }
         public int RoutineColumnNumber { get; }
         public string RoutineFileName { get; }
-        
-        internal DebugStackFrame() : 
-            this(2) { }
+
+        internal DebugStackFrame() :
+            this(2)
+        { }
 
         internal DebugStackFrame(int frameNumber)
         {

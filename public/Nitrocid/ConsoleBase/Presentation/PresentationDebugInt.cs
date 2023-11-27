@@ -44,7 +44,8 @@ namespace KS.ConsoleBase.Presentation
                     #region First page - Debugging just text elements
                     new PresentationPage("First page - Debugging just text elements",
                         [
-                            new TextElement() {
+                            new TextElement()
+                            {
                                 Arguments = [
                                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt " +
                                     "ut labore et dolore magna aliqua. Risus sed vulputate odio ut enim blandit. Ac tortor vitae " +
@@ -55,7 +56,8 @@ namespace KS.ConsoleBase.Presentation
                                     "Tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin."
                                 ]
                             },
-                            new TextElement() {
+                            new TextElement()
+                            {
                                 Arguments = [
                                     "Enjoying yet? {0}Color treat!",
                                     new Color(ConsoleColors.Purple4_5f00af).VTSequenceForeground
@@ -64,11 +66,12 @@ namespace KS.ConsoleBase.Presentation
                         ]
                     ),
                     #endregion
-                        
+
                     #region Second page - Debugging text and input elements
                     new PresentationPage("Second page - Debugging text and input elements",
                         [
-                            new TextElement() {
+                            new TextElement()
+                            {
                                 Arguments = [
                                     "{0}Lorem ipsum {1}dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt " +
                                     "ut labore et dolore {2}magna aliqua. {1}Risus sed vulputate odio ut enim blandit. Ac tortor vitae " +
@@ -83,13 +86,15 @@ namespace KS.ConsoleBase.Presentation
                                     new Color(ConsoleColors.Red).VTSequenceForeground
                                 ]
                             },
-                            new TextElement() {
+                            new TextElement()
+                            {
                                 Arguments = [
                                     "Happy {0}hacking!",
                                     new Color(ConsoleColors.Green1).VTSequenceForeground
                                 ]
                             },
-                            new InputElement() {
+                            new InputElement()
+                            {
                                 Arguments = [
                                     "\nDid you enjoy {0}testing? ",
                                     new Color(ConsoleColors.Green1).VTSequenceForeground
@@ -100,11 +105,12 @@ namespace KS.ConsoleBase.Presentation
                         ]
                     ),
                     #endregion
-                        
+
                     #region Third page - Debugging dynamic text
                     new PresentationPage("Third page - Debugging dynamic text",
                         [
-                            new DynamicTextElement() {
+                            new DynamicTextElement()
+                            {
                                 Arguments = [
                                     () => TimeDateRenderers.Render()
                                 ]
@@ -112,11 +118,12 @@ namespace KS.ConsoleBase.Presentation
                         ]
                     ),
                     #endregion
-                        
+
                     #region Fourth page - Debugging overflow check
                     new PresentationPage("Fourth page - Debugging overflow check",
                         [
-                            new TextElement() {
+                            new TextElement()
+                            {
                                 Arguments = [
                                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt " +
                                     "ut labore et dolore magna aliqua. Risus sed vulputate odio ut enim blandit. Ac tortor vitae " +
@@ -127,7 +134,8 @@ namespace KS.ConsoleBase.Presentation
                                     "Tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin."
                                 ]
                             },
-                            new TextElement() {
+                            new TextElement()
+                            {
                                 Arguments = [
                                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt " +
                                     "ut labore et dolore magna aliqua. Risus sed vulputate odio ut enim blandit. Ac tortor vitae " +
@@ -138,7 +146,8 @@ namespace KS.ConsoleBase.Presentation
                                     "Tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin."
                                 ]
                             },
-                            new TextElement() {
+                            new TextElement()
+                            {
                                 Arguments = [
                                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt " +
                                     "ut labore et dolore magna aliqua. Risus sed vulputate odio ut enim blandit. Ac tortor vitae " +
@@ -149,7 +158,8 @@ namespace KS.ConsoleBase.Presentation
                                     "Tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin."
                                 ]
                             },
-                            new TextElement() {
+                            new TextElement()
+                            {
                                 Arguments = [
                                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt " +
                                     "ut labore et dolore magna aliqua. Risus sed vulputate odio ut enim blandit. Ac tortor vitae " +
@@ -160,7 +170,8 @@ namespace KS.ConsoleBase.Presentation
                                     "Tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin."
                                 ]
                             },
-                            new TextElement() {
+                            new TextElement()
+                            {
                                 Arguments = [
                                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt " +
                                     "ut labore et dolore magna aliqua. Risus sed vulputate odio ut enim blandit. Ac tortor vitae " +
@@ -174,11 +185,12 @@ namespace KS.ConsoleBase.Presentation
                         ]
                     ),
                     #endregion
-                        
+
                     #region Fifth page - Debugging choice input
                     new PresentationPage("Fifth page - Debugging choice input",
                         [
-                            new TextElement() {
+                            new TextElement()
+                            {
                                 Arguments = [
                                     "Tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin."
                                 ]
@@ -235,11 +247,12 @@ namespace KS.ConsoleBase.Presentation
                         ]
                     ),
                     #endregion
-                        
+
                     #region Sixth page - Debugging multiple choice input
                     new PresentationPage("Sixth page - Debugging choice input",
                         [
-                            new TextElement() {
+                            new TextElement()
+                            {
                                 Arguments = [
                                     "Tempor orci dapibus ultrices in iaculis nunc sed augue lacus."
                                 ]

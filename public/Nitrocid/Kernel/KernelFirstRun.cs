@@ -57,11 +57,11 @@ namespace KS.Kernel
                         new PresentationPage(
                             // Page name
                             Translate.DoTranslation("Welcome!"),
-                        
+
                             // Page elements
                             [
                                 new TextElement()
-                                { 
+                                {
                                     Arguments =
                                     [
                                         Translate.DoTranslation("Welcome to Nitrocid Kernel! Thank you for trying it out!") + "\n"
@@ -89,26 +89,27 @@ namespace KS.Kernel
                         new PresentationPage(
                             // Page name
                             Translate.DoTranslation("Select your language"),
-                        
+
                             // Page elements
                             [
                                 new ChoiceInputElement()
                                 {
                                     Arguments =
                                     [
-                                        Translate.DoTranslation("Select your language. By default, the kernel uses the English language, but you can select any other language here.") + " " + 
-                                        Translate.DoTranslation("Based on your language settings on your system, the appropriate language is") + $" {LanguageManager.InferLanguageFromSystem()}. " + 
+                                        Translate.DoTranslation("Select your language. By default, the kernel uses the English language, but you can select any other language here.") + " " +
+                                        Translate.DoTranslation("Based on your language settings on your system, the appropriate language is") + $" {LanguageManager.InferLanguageFromSystem()}. " +
                                         Translate.DoTranslation("Write the language code listed below:"),
                                         LanguageManager.Languages.Keys,
                                     ],
                                     InvokeActionInput =
-                                        (args) => { 
+                                        (args) =>
+                                        {
                                             langCode = (string)args[0];
                                             DebugWriter.WriteDebug(DebugLevel.I, "Got langCode {0}.", langCode);
                                             LanguageManager.SetLang(langCode);
                                             moveOn = true;
                                             DebugWriter.WriteDebug(DebugLevel.I, "Let's move on!");
-                                        } 
+                                        }
                                 },
                                 new TextElement()
                                 {
@@ -132,7 +133,7 @@ namespace KS.Kernel
                         new PresentationPage(
                             // Page name
                             Translate.DoTranslation("Create your first user"),
-                        
+
                             // Page elements
                             [
                                 new TextElement()
@@ -173,7 +174,8 @@ namespace KS.Kernel
                                         Translate.DoTranslation("Enter the password") + ": "
                                     ],
                                     InvokeActionInput =
-                                        (args) => {
+                                        (args) =>
+                                        {
                                             try
                                             {
                                                 UserManagement.AddUser(user, (string)args[0]);
@@ -212,7 +214,7 @@ namespace KS.Kernel
                         new PresentationPage(
                             // Page name
                             Translate.DoTranslation("Testing your console for true-color support"),
-                        
+
                             // Page elements
                             [
                                 new TextElement()
@@ -238,14 +240,16 @@ namespace KS.Kernel
                                     Arguments =
                                     [
                                         Translate.DoTranslation("Do these ramps look right to you? They should transition smoothly."),
-                                        "y", "n"
+                                        "y",
+                                        "n"
                                     ],
                                     InvokeActionInput =
-                                        (args) => {
+                                        (args) =>
+                                        {
                                             supportsTrueColor = (string)args[0] == "y";
                                             moveOn = true;
                                             DebugWriter.WriteDebug(DebugLevel.I, "Let's move on!");
-                                        } 
+                                        }
                                 },
                                 new TextElement()
                                 {
@@ -269,7 +273,7 @@ namespace KS.Kernel
                         new PresentationPage(
                             // Page name
                             Translate.DoTranslation("Automatic updates"),
-                        
+
                             // Page elements
                             [
                                 new TextElement()
@@ -284,12 +288,14 @@ namespace KS.Kernel
                                     Arguments =
                                     [
                                         Translate.DoTranslation("Do you want Nitrocid KS to automatically check for updates?"),
-                                        "y", "n"
+                                        "y",
+                                        "n"
                                     ],
                                     InvokeActionInput =
-                                        (args) => {
+                                        (args) =>
+                                        {
                                             Config.MainConfig.CheckUpdateStart = (string)args[0] == "y";
-                                        } 
+                                        }
                                 },
                                 new TextElement()
                                 {
@@ -303,10 +309,12 @@ namespace KS.Kernel
                                     Arguments =
                                     [
                                         Translate.DoTranslation("Do you want Nitrocid KS to automatically download updates?"),
-                                        "y", "n"
+                                        "y",
+                                        "n"
                                     ],
                                     InvokeActionInput =
-                                        (args) => {
+                                        (args) =>
+                                        {
                                             Config.MainConfig.AutoDownloadUpdate = (string)args[0] == "y";
                                             moveOn = true;
                                             DebugWriter.WriteDebug(DebugLevel.I, "Let's move on!");
@@ -341,7 +349,7 @@ namespace KS.Kernel
                         new PresentationPage(
                             // Page name
                             Translate.DoTranslation("Get Started!"),
-                        
+
                             // Page elements
                             [
                                 new DynamicTextElement()
@@ -369,10 +377,13 @@ namespace KS.Kernel
                     firstRunPresIntro,
 
                     // Steps
-                    firstRunPresStep1, firstRunPresStep2, firstRunPresStep3, firstRunPresStep4,
+                    firstRunPresStep1,
+                    firstRunPresStep2,
+                    firstRunPresStep3,
+                    firstRunPresStep4,
 
                     // Outro
-                    firstRunPresOutro 
+                    firstRunPresOutro
                 ];
 
                 // Present all presentations

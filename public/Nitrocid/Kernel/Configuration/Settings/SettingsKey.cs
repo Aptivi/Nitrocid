@@ -291,19 +291,19 @@ namespace KS.Kernel.Configuration.Settings
 
                 keyInput = Type switch
                 {
-                    SettingsKeyType.SBoolean    => new BooleanSettingsKeyInput(),
-                    SettingsKeyType.SInt        => new IntSettingsKeyInput(),
-                    SettingsKeyType.SString     => new StringSettingsKeyInput(),
-                    SettingsKeyType.SSelection  => new SelectionSettingsKeyInput(),
-                    SettingsKeyType.SList       => new ListSettingsKeyInput(),
-                    SettingsKeyType.SColor      => new ColorSettingsKeyInput(),
-                    SettingsKeyType.SChar       => new CharSettingsKeyInput(),
-                    SettingsKeyType.SIntSlider  => new IntSliderSettingsKeyInput(),
-                    SettingsKeyType.SDouble     => new DoubleSettingsKeyInput(),
-                    SettingsKeyType.SPreset     => new PresetSettingsKeyInput(),
-                    SettingsKeyType.SFiglet     => new FigletSettingsKeyInput(),
-                    SettingsKeyType.SUnknown    => new UnknownSettingsKeyInput(),
-                    _                           => new UnknownSettingsKeyInput(),
+                    SettingsKeyType.SBoolean => new BooleanSettingsKeyInput(),
+                    SettingsKeyType.SInt => new IntSettingsKeyInput(),
+                    SettingsKeyType.SString => new StringSettingsKeyInput(),
+                    SettingsKeyType.SSelection => new SelectionSettingsKeyInput(),
+                    SettingsKeyType.SList => new ListSettingsKeyInput(),
+                    SettingsKeyType.SColor => new ColorSettingsKeyInput(),
+                    SettingsKeyType.SChar => new CharSettingsKeyInput(),
+                    SettingsKeyType.SIntSlider => new IntSliderSettingsKeyInput(),
+                    SettingsKeyType.SDouble => new DoubleSettingsKeyInput(),
+                    SettingsKeyType.SPreset => new PresetSettingsKeyInput(),
+                    SettingsKeyType.SFiglet => new FigletSettingsKeyInput(),
+                    SettingsKeyType.SUnknown => new UnknownSettingsKeyInput(),
+                    _ => new UnknownSettingsKeyInput(),
                 };
                 return keyInput;
             }

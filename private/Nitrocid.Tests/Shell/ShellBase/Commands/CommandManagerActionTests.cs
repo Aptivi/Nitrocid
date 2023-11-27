@@ -351,12 +351,12 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
                     [
                         new CommandArgumentInfo()
                     ], new CustomCommand()),
-                
+
                 new CommandInfo("cmdgroup4", $"My command help definition for type {type}...",
                     [
                         new CommandArgumentInfo()
                     ], new CustomCommand()),
-                
+
                 new CommandInfo("cmdgroup5", $"My command help definition for type {type}...",
                     [
                         new CommandArgumentInfo()

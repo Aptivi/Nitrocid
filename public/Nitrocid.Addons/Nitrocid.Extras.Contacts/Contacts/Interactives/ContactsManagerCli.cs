@@ -44,15 +44,15 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
         public override List<InteractiveTuiBinding> Bindings { get; set; } =
         [
             // Operations
-            new InteractiveTuiBinding(/* Localizable */ "Delete",      ConsoleKey.F1, (_, index) => RemoveContact(index), true),
-            new InteractiveTuiBinding(/* Localizable */ "Delete All",  ConsoleKey.F2, (_, _) => RemoveContacts(), true),
-            new InteractiveTuiBinding(/* Localizable */ "Import",      ConsoleKey.F3, (_, _) => ImportContacts(), true),
+            new InteractiveTuiBinding(/* Localizable */ "Delete", ConsoleKey.F1, (_, index) => RemoveContact(index), true),
+            new InteractiveTuiBinding(/* Localizable */ "Delete All", ConsoleKey.F2, (_, _) => RemoveContacts(), true),
+            new InteractiveTuiBinding(/* Localizable */ "Import", ConsoleKey.F3, (_, _) => ImportContacts(), true),
             new InteractiveTuiBinding(/* Localizable */ "Import From", ConsoleKey.F4, (_, _) => ImportContactsFrom(), true),
-            new InteractiveTuiBinding(/* Localizable */ "Info",        ConsoleKey.F5, (_, index) => ShowContactInfo(index), true),
-            new InteractiveTuiBinding(/* Localizable */ "Search",      ConsoleKey.F6, (_, _) => SearchBox(), true),
+            new InteractiveTuiBinding(/* Localizable */ "Info", ConsoleKey.F5, (_, index) => ShowContactInfo(index), true),
+            new InteractiveTuiBinding(/* Localizable */ "Search", ConsoleKey.F6, (_, _) => SearchBox(), true),
             new InteractiveTuiBinding(/* Localizable */ "Search Next", ConsoleKey.F7, (_, _) => SearchNext(), true),
             new InteractiveTuiBinding(/* Localizable */ "Search Back", ConsoleKey.F8, (_, _) => SearchPrevious(), true),
-            new InteractiveTuiBinding(/* Localizable */ "Raw Info",    ConsoleKey.F9, (_, index) => ShowContactRawInfo(index), true),
+            new InteractiveTuiBinding(/* Localizable */ "Raw Info", ConsoleKey.F9, (_, index) => ShowContactRawInfo(index), true),
         ];
 
         /// <inheritdoc/>

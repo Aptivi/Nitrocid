@@ -60,7 +60,7 @@ namespace Nitrocid.Extras.Notes.Management
             // Check to see if the index is valid
             if (noteIndex < 0 || noteIndex >= notes.Count)
                 throw new KernelException(KernelExceptionType.NoteManagement, Translate.DoTranslation("Can't remove non-existent note") + $" {noteIndex}.");
-            
+
             // Now, remove the target note.
             notes.RemoveAt(noteIndex);
         }
