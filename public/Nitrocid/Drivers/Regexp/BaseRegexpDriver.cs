@@ -20,6 +20,7 @@
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Text;
+using System.Diagnostics.CodeAnalysis;
 using System.Text.RegularExpressions;
 
 namespace KS.Drivers.Regexp
@@ -39,7 +40,7 @@ namespace KS.Drivers.Regexp
         public virtual bool DriverInternal => false;
 
         /// <inheritdoc/>
-        public bool IsValidRegex(string pattern)
+        public bool IsValidRegex([StringSyntax(StringSyntaxAttribute.Regex)] string pattern)
         {
             try
             {
@@ -53,7 +54,7 @@ namespace KS.Drivers.Regexp
         }
 
         /// <inheritdoc/>
-        public bool IsMatch(string text, string pattern)
+        public bool IsMatch(string text, [StringSyntax(StringSyntaxAttribute.Regex)] string pattern)
         {
             if (!IsValidRegex(pattern))
                 return false;
@@ -62,7 +63,7 @@ namespace KS.Drivers.Regexp
         }
 
         /// <inheritdoc/>
-        public Match Match(string text, string pattern)
+        public Match Match(string text, [StringSyntax(StringSyntaxAttribute.Regex)] string pattern)
         {
             if (!IsValidRegex(pattern))
                 throw new KernelException(KernelExceptionType.RegularExpression, Translate.DoTranslation("Invalid regular expression syntax."));
@@ -71,7 +72,7 @@ namespace KS.Drivers.Regexp
         }
 
         /// <inheritdoc/>
-        public MatchCollection Matches(string text, string pattern)
+        public MatchCollection Matches(string text, [StringSyntax(StringSyntaxAttribute.Regex)] string pattern)
         {
             if (!IsValidRegex(pattern))
                 throw new KernelException(KernelExceptionType.RegularExpression, Translate.DoTranslation("Invalid regular expression syntax."));
@@ -80,7 +81,7 @@ namespace KS.Drivers.Regexp
         }
 
         /// <inheritdoc/>
-        public string Filter(string text, string pattern)
+        public string Filter(string text, [StringSyntax(StringSyntaxAttribute.Regex)] string pattern)
         {
             if (!IsValidRegex(pattern))
                 throw new KernelException(KernelExceptionType.RegularExpression, Translate.DoTranslation("Invalid regular expression syntax."));
@@ -89,7 +90,7 @@ namespace KS.Drivers.Regexp
         }
 
         /// <inheritdoc/>
-        public string Filter(string text, string pattern, string replaceWith)
+        public string Filter(string text, [StringSyntax(StringSyntaxAttribute.Regex)] string pattern, string replaceWith)
         {
             if (!IsValidRegex(pattern))
                 throw new KernelException(KernelExceptionType.RegularExpression, Translate.DoTranslation("Invalid regular expression syntax."));
@@ -98,7 +99,7 @@ namespace KS.Drivers.Regexp
         }
 
         /// <inheritdoc/>
-        public string[] Split(string text, string pattern)
+        public string[] Split(string text, [StringSyntax(StringSyntaxAttribute.Regex)] string pattern)
         {
             if (!IsValidRegex(pattern))
                 throw new KernelException(KernelExceptionType.RegularExpression, Translate.DoTranslation("Invalid regular expression syntax."));

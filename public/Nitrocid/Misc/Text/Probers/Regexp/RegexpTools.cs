@@ -18,6 +18,7 @@
 //
 
 using KS.Drivers;
+using System.Diagnostics.CodeAnalysis;
 
 namespace KS.Misc.Text.Probers.Regexp
 {
@@ -31,7 +32,7 @@ namespace KS.Misc.Text.Probers.Regexp
         /// </summary>
         /// <param name="pattern">Regular expression pattern</param>
         /// <returns>True if valid. Otherwise, false</returns>
-        public static bool IsValidRegex(string pattern) =>
+        public static bool IsValidRegex([StringSyntax(StringSyntaxAttribute.Regex)] string pattern) =>
             DriverHandler.CurrentRegexpDriverLocal.IsValidRegex(pattern);
 
         /// <summary>
@@ -40,7 +41,7 @@ namespace KS.Misc.Text.Probers.Regexp
         /// <param name="text">The text to be matched</param>
         /// <param name="pattern">Regular expression pattern for matching</param>
         /// <returns>True if there are matches. Otherwise, false</returns>
-        public static bool IsMatch(string text, string pattern) =>
+        public static bool IsMatch(string text, [StringSyntax(StringSyntaxAttribute.Regex)] string pattern) =>
             DriverHandler.CurrentRegexpDriverLocal.IsMatch(text, pattern);
     }
 }
