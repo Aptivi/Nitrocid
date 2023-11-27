@@ -1312,11 +1312,13 @@ namespace KS.Drivers.Filesystem
                 else
                 {
                     var Contents = Reading.ReadContents(FilePath);
+                    int digits = Contents.Length.GetDigits();
                     if (PrintLineNumbers)
                     {
                         for (int ContentIndex = 0; ContentIndex <= Contents.Length - 1; ContentIndex++)
                         {
-                            builder.Append(TextTools.FormatString("{0}{1,4}: ", entryColor.VTSequenceForeground, ContentIndex + 1));
+                            int spaces = digits - (ContentIndex + 1).GetDigits();
+                            builder.Append($"{entryColor.VTSequenceForeground}{new string(' ', spaces)}{ContentIndex + 1}: ");
                             builder.AppendLine($"{valueColor.VTSequenceForeground}{Contents[ContentIndex]}");
                         }
                     }
