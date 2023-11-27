@@ -42,18 +42,15 @@ namespace KS.Misc.Reflection
                 return array;
 
             // First, create a new list of random numbers with the array's value indexes
-            List<(double, int)> valuesToShuffle = [];
+            List<(double, T)> valuesToShuffle = [];
             for (int i = 0; i < array.Length; i++)
-                valuesToShuffle.Add((RandomDriver.RandomDouble(), i));
+                valuesToShuffle.Add((RandomDriver.RandomDouble(), array[i]));
 
-            // Second, re-order the above list
-            var ordered = valuesToShuffle.OrderBy((val) => val.Item1).ToArray();
-
-            // Then, get their values according to the shuffled indexes
-            var randomizedIndexes = ordered.Select((val) => val.Item2).ToArray();
-
-            // Finally, randomize the array
-            var randomized = randomizedIndexes.Select((idx) => array[idx]).ToArray();
+            // Then, randomize the array after ordering the numbers
+            var randomized = valuesToShuffle
+                .OrderBy((val) => val.Item1)
+                .Select((kvp) => kvp.Item2)
+                .ToArray();
             return randomized;
         }
 
