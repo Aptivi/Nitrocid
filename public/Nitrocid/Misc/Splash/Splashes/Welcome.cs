@@ -31,6 +31,7 @@ using Figletize;
 using System;
 using KS.Misc.Text;
 using System.Text;
+using KS.Kernel.Power;
 
 namespace KS.Misc.Splash.Splashes
 {
@@ -210,7 +211,7 @@ namespace KS.Misc.Splash.Splashes
                 col.VTSequenceForeground +
                 CenteredTextColor.RenderCenteredOneLine(consoleY + 2, KernelReleaseInfo.ConsoleTitle)
             );
-            delayRequired = true;
+            delayRequired = (context == SplashContext.ShuttingDown && PowerManager.DelayOnShutdown) || context != SplashContext.ShuttingDown;
             return builder.ToString();
         }
 
