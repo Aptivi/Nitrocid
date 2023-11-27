@@ -131,6 +131,7 @@ namespace KS.Kernel.Debugging.Testing
             { "TestProgressHandler",                        new TestProgressHandler() },
             { "TestScreen",                                 new TestScreen() },
             { "TestFileSelector",                           new TestFileSelector() },
+            { "TestFilesSelector",                          new TestFilesSelector() },
             { "TestFolderSelector",                         new TestFolderSelector() },
         };
         internal static Dictionary<TestSection, string> sections = new()
