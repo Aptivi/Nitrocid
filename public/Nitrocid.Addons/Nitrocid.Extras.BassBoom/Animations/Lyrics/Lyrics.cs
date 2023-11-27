@@ -34,9 +34,9 @@ using KS.Misc.Screensaver;
 using KS.Misc.Text;
 using KS.Files.Operations.Querying;
 using KS.Kernel.Exceptions;
-using KS.ConsoleBase.Inputs.Styles;
 using BassBoom.Basolia.Lyrics;
 using KS.Files.Paths;
+using KS.ConsoleBase.Inputs.Styles.Infobox;
 
 namespace Nitrocid.Extras.BassBoom.Animations.Lyrics
 {

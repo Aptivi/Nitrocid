@@ -33,8 +33,8 @@ using KS.Kernel.Configuration.Instances;
 using System.Collections.Generic;
 using KS.Files.Operations;
 using KS.Files.Operations.Querying;
-using KS.ConsoleBase.Inputs.Styles;
 using KS.Files.Paths;
+using KS.ConsoleBase.Inputs.Styles.Infobox;
 
 namespace KS.Kernel.Configuration
 {

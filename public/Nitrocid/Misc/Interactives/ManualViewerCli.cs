@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Inputs.Styles;
+using KS.ConsoleBase.Inputs.Styles.Infobox;
 using KS.ConsoleBase.Interactive;
 using KS.Languages;
 using KS.Misc.Text;

@@ -19,7 +19,7 @@
 
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Inputs.Styles;
+using KS.ConsoleBase.Inputs.Styles.Infobox;
 using KS.Kernel.Threading;
 using KS.Languages;
 using KS.Misc.Text;

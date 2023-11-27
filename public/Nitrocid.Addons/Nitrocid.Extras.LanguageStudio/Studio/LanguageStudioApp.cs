@@ -20,7 +20,8 @@
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
-using KS.ConsoleBase.Inputs.Styles;
+using KS.ConsoleBase.Inputs.Styles.Choice;
+using KS.ConsoleBase.Inputs.Styles.Selection;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files;
 using KS.Files.Operations;

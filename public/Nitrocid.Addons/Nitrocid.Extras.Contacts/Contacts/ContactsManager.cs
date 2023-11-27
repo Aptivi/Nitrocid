@@ -24,7 +24,6 @@ using VisualCard;
 using System;
 using KS.Kernel.Debugging;
 using KS.Languages;
-using KS.Files;
 using KS.Files.Folders;
 using KS.Files.Operations;
 using System.Linq;

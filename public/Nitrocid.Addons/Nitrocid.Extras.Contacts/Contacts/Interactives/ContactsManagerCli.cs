@@ -29,7 +29,7 @@ using KS.Misc.Text;
 using KS.ConsoleBase.Interactive;
 using KS.Misc.Text.Probers.Regexp;
 using KS.Files.Operations.Querying;
-using KS.ConsoleBase.Inputs.Styles;
+using KS.ConsoleBase.Inputs.Styles.Infobox;
 
 namespace Nitrocid.Extras.Contacts.Contacts.Interactives
 {

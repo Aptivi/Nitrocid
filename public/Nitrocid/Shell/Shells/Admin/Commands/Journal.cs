@@ -19,6 +19,7 @@
 
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Files.Paths;
 using KS.Kernel.Exceptions;
 using KS.Kernel.Journaling;
 using KS.Languages;
@@ -30,7 +31,7 @@ namespace KS.Shell.Shells.Admin.Commands
     /// Gets the current kernel journal log
     /// </summary>
     /// <remarks>
-    /// This command gets the current kernel journal log from the <see cref="Files.KernelPathType.Journaling"/> path.
+    /// This command gets the current kernel journal log from the <see cref="KernelPathType.Journaling"/> path.
     /// </remarks>
     class JournalCommand : BaseCommand, ICommand
     {

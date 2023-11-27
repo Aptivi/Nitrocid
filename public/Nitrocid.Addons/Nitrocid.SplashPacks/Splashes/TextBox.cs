@@ -20,7 +20,7 @@
 using System;
 using System.Threading;
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Inputs.Styles;
+using KS.ConsoleBase.Inputs.Styles.Infobox;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Splash;

@@ -19,7 +19,8 @@
 
 using KS.ConsoleBase;
 using KS.ConsoleBase.Inputs;
-using KS.ConsoleBase.Inputs.Styles;
+using KS.ConsoleBase.Inputs.Styles.Infobox;
+using KS.ConsoleBase.Inputs.Styles.Selection;
 using KS.Kernel.Configuration.Instances;
 using KS.Kernel.Debugging;
 using KS.Languages;

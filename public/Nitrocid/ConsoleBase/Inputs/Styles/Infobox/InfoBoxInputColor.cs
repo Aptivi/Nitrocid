@@ -32,7 +32,7 @@ using System.Text;
 using Terminaux.Sequences.Builder.Types;
 using KS.ConsoleBase.Writers.FancyWriters;
 
-namespace KS.ConsoleBase.Inputs.Styles
+namespace KS.ConsoleBase.Inputs.Styles.Infobox
 {
     /// <summary>
     /// Info box writer with input and color support

@@ -21,7 +21,7 @@ using KS.ConsoleBase;
 using KS.ConsoleBase.Buffered;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
-using KS.ConsoleBase.Inputs.Styles;
+using KS.ConsoleBase.Inputs.Styles.Infobox;
 using KS.Languages;
 using System;
 using System.Text;

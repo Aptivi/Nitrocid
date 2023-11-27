@@ -22,6 +22,7 @@ using System.Threading;
 using KS.Kernel.Debugging;
 using KS.ConsoleBase.Colors;
 using KS.Languages;
+using System.Linq;
 using KS.Misc.Text;
 using System.Collections.Generic;
 using KS.ConsoleBase.Writers.ConsoleWriters;
@@ -31,30 +32,41 @@ using System.Text;
 using Terminaux.Sequences.Builder.Types;
 using KS.ConsoleBase.Writers.FancyWriters;
 
-namespace KS.ConsoleBase.Inputs.Styles
+namespace KS.ConsoleBase.Inputs.Styles.Infobox
 {
     /// <summary>
-    /// Info box writer with progress and color support
+    /// Info box writer with color support
     /// </summary>
-    public static class InfoBoxProgressColor
+    public static class InfoBoxColor
     {
         /// <summary>
         /// Writes the info box plainly
         /// </summary>
-        /// <param name="progress">Progress percentage from 0 to 100</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxProgressPlain(double progress, string text, params object[] vars) =>
-            WriteInfoBoxProgressPlain(progress, text,
+        public static void WriteInfoBoxPlain(string text, params object[] vars) =>
+            WriteInfoBoxPlain(text,
                              BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
                              BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
                              BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
-                             BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar, vars);
+                             BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar, true, vars);
 
         /// <summary>
         /// Writes the info box plainly
         /// </summary>
-        /// <param name="progress">Progress percentage from 0 to 100</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="waitForInput">Waits for input or not</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static void WriteInfoBoxPlain(string text, bool waitForInput, params object[] vars) =>
+            WriteInfoBoxPlain(text,
+                             BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
+                             BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
+                             BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
+                             BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar, waitForInput, vars);
+
+        /// <summary>
+        /// Writes the info box plainly
+        /// </summary>
         /// <param name="UpperLeftCornerChar">Upper left corner character for info box</param>
         /// <param name="LowerLeftCornerChar">Lower left corner character for info box</param>
         /// <param name="UpperRightCornerChar">Upper right corner character for info box</param>
@@ -64,10 +76,11 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// <param name="LeftFrameChar">Left frame character for info box</param>
         /// <param name="RightFrameChar">Right frame character for info box</param>
         /// <param name="text">Text to be written.</param>
+        /// <param name="waitForInput">Waits for input or not</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxProgressPlain(double progress, string text,
+        public static void WriteInfoBoxPlain(string text,
                                             char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
-                                            char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, params object[] vars)
+                                            char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, bool waitForInput, params object[] vars)
         {
             bool initialCursorVisible = ConsoleWrapper.CursorVisible;
             try
@@ -93,8 +106,10 @@ namespace KS.ConsoleBase.Inputs.Styles
                 }
 
                 // Fill the info box with text inside it
-                int maxWidth = ConsoleWrapper.WindowWidth - 4;
-                int maxHeight = splitFinalLines.Count + 5;
+                int maxWidth = splitFinalLines.Max((str) => str.Length);
+                if (maxWidth >= ConsoleWrapper.WindowWidth)
+                    maxWidth = ConsoleWrapper.WindowWidth - 4;
+                int maxHeight = splitFinalLines.Count;
                 if (maxHeight >= ConsoleWrapper.WindowHeight)
                     maxHeight = ConsoleWrapper.WindowHeight - 4;
                 int maxRenderWidth = ConsoleWrapper.WindowWidth - 6;
@@ -106,24 +121,36 @@ namespace KS.ConsoleBase.Inputs.Styles
 
                 // Render text inside it
                 ConsoleWrapper.CursorVisible = false;
+                bool exiting = false;
                 for (int i = 0; i < splitFinalLines.Count; i++)
                 {
                     var line = splitFinalLines[i];
-                    if (i % (maxHeight - 5) == 0 && i > 0)
+                    if (i % maxHeight == 0 && i > 0)
                     {
-                        // Reached the end of the box. Bail, because we need to print the progress.
-                        break;
+                        // Reached the end of the box. Wait for keypress then clear the box
+                        if (waitForInput)
+                        {
+                            TextWriterColor.WritePlain(boxBuffer.ToString(), false);
+                            boxBuffer.Clear();
+                            var keypress = Input.DetectKeypress();
+                            if (keypress.Key == ConsoleKey.Q)
+                            {
+                                exiting = true;
+                                break;
+                            }
+                        }
+                        else
+                            Thread.Sleep(5000);
+                        boxBuffer.Append(border);
                     }
                     boxBuffer.Append($"{CsiSequences.GenerateCsiCursorPosition(borderX + 2, borderY + 1 + i % maxHeight + 1)}{line}");
                 }
-
-                // Render the final result and write the progress bar
-                int progressPosX = borderX + 4;
-                int progressPosY = borderY + maxHeight - 3;
-                int maxProgressWidth = maxWidth - 4;
                 TextWriterColor.WritePlain(boxBuffer.ToString(), false);
-                ProgressBarColor.WriteProgressPlain(progress, progressPosX, progressPosY, maxProgressWidth);
                 boxBuffer.Clear();
+
+                // Wait until the user presses any key to close the box
+                if (waitForInput && !exiting)
+                    Input.DetectKeypress();
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
@@ -139,11 +166,10 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// <summary>
         /// Writes the info box plainly
         /// </summary>
-        /// <param name="progress">Progress percentage from 0 to 100</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxProgress(double progress, string text, params object[] vars) =>
-            WriteInfoBoxProgressKernelColor(progress, text, true,
+        public static void WriteInfoBox(string text, params object[] vars) =>
+            WriteInfoBoxKernelColor(text, true,
                         BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
                         BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
                         BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
@@ -153,12 +179,11 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// <summary>
         /// Writes the info box plainly
         /// </summary>
-        /// <param name="progress">Progress percentage from 0 to 100</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="waitForInput">Waits for input or not</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxProgress(double progress, string text, bool waitForInput, params object[] vars) =>
-            WriteInfoBoxProgressKernelColor(progress, text, waitForInput,
+        public static void WriteInfoBox(string text, bool waitForInput, params object[] vars) =>
+            WriteInfoBoxKernelColor(text, waitForInput,
                         BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
                         BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
                         BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
@@ -168,199 +193,186 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// <summary>
         /// Writes the info box plainly
         /// </summary>
-        /// <param name="progress">Progress percentage from 0 to 100</param>
-        /// <param name="InfoBoxProgressColor">InfoBoxProgress color from Nitrocid KS's <see cref="KernelColorType"/></param>
+        /// <param name="InfoBoxColor">InfoBox color from Nitrocid KS's <see cref="KernelColorType"/></param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxProgressKernelColor(double progress, string text, KernelColorType InfoBoxProgressColor, params object[] vars) =>
-            WriteInfoBoxProgressKernelColor(progress, text, true,
+        public static void WriteInfoBoxKernelColor(string text, KernelColorType InfoBoxColor, params object[] vars) =>
+            WriteInfoBoxKernelColor(text, true,
                         BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
                         BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
                         BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
                         BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        InfoBoxProgressColor, KernelColorType.Background, vars);
+                        InfoBoxColor, KernelColorType.Background, vars);
 
         /// <summary>
         /// Writes the info box plainly
         /// </summary>
-        /// <param name="progress">Progress percentage from 0 to 100</param>
-        /// <param name="InfoBoxProgressColor">InfoBoxProgress color from Nitrocid KS's <see cref="KernelColorType"/></param>
+        /// <param name="InfoBoxColor">InfoBox color from Nitrocid KS's <see cref="KernelColorType"/></param>
         /// <param name="text">Text to be written.</param>
         /// <param name="waitForInput">Waits for input or not</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxProgressKernelColor(double progress, string text, bool waitForInput, KernelColorType InfoBoxProgressColor, params object[] vars) =>
-            WriteInfoBoxProgressKernelColor(progress, text, waitForInput,
+        public static void WriteInfoBoxKernelColor(string text, bool waitForInput, KernelColorType InfoBoxColor, params object[] vars) =>
+            WriteInfoBoxKernelColor(text, waitForInput,
                         BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
                         BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
                         BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
                         BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        InfoBoxProgressColor, KernelColorType.Background, vars);
+                        InfoBoxColor, KernelColorType.Background, vars);
 
         /// <summary>
         /// Writes the info box plainly
         /// </summary>
-        /// <param name="progress">Progress percentage from 0 to 100</param>
-        /// <param name="InfoBoxProgressColor">InfoBoxProgress color from Nitrocid KS's <see cref="KernelColorType"/></param>
-        /// <param name="BackgroundColor">InfoBoxProgress background color from Nitrocid KS's <see cref="KernelColorType"/></param>
+        /// <param name="InfoBoxColor">InfoBox color from Nitrocid KS's <see cref="KernelColorType"/></param>
+        /// <param name="BackgroundColor">InfoBox background color from Nitrocid KS's <see cref="KernelColorType"/></param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxProgressKernelColor(double progress, string text, KernelColorType InfoBoxProgressColor, KernelColorType BackgroundColor, params object[] vars) =>
-            WriteInfoBoxProgressKernelColor(progress, text, true,
+        public static void WriteInfoBoxKernelColor(string text, KernelColorType InfoBoxColor, KernelColorType BackgroundColor, params object[] vars) =>
+            WriteInfoBoxKernelColor(text, true,
                         BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
                         BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
                         BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
                         BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        InfoBoxProgressColor, BackgroundColor, vars);
+                        InfoBoxColor, BackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
         /// </summary>
-        /// <param name="progress">Progress percentage from 0 to 100</param>
-        /// <param name="InfoBoxProgressColor">InfoBoxProgress color from Nitrocid KS's <see cref="KernelColorType"/></param>
-        /// <param name="BackgroundColor">InfoBoxProgress background color from Nitrocid KS's <see cref="KernelColorType"/></param>
+        /// <param name="InfoBoxColor">InfoBox color from Nitrocid KS's <see cref="KernelColorType"/></param>
+        /// <param name="BackgroundColor">InfoBox background color from Nitrocid KS's <see cref="KernelColorType"/></param>
         /// <param name="text">Text to be written.</param>
         /// <param name="waitForInput">Waits for input or not</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxProgressKernelColor(double progress, string text, bool waitForInput, KernelColorType InfoBoxProgressColor, KernelColorType BackgroundColor, params object[] vars) =>
-            WriteInfoBoxProgressKernelColor(progress, text, waitForInput,
+        public static void WriteInfoBoxKernelColor(string text, bool waitForInput, KernelColorType InfoBoxColor, KernelColorType BackgroundColor, params object[] vars) =>
+            WriteInfoBoxKernelColor(text, waitForInput,
                         BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
                         BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
                         BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
                         BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        InfoBoxProgressColor, BackgroundColor, vars);
+                        InfoBoxColor, BackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
         /// </summary>
-        /// <param name="progress">Progress percentage from 0 to 100</param>
-        /// <param name="InfoBoxProgressColor">InfoBoxProgress color from Nitrocid KS's <see cref="KernelColorType"/></param>
+        /// <param name="InfoBoxColor">InfoBox color from Nitrocid KS's <see cref="KernelColorType"/></param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxProgressColor(double progress, string text, ConsoleColors InfoBoxProgressColor, params object[] vars) =>
-            WriteInfoBoxProgressColorBack(progress, text, true,
+        public static void WriteInfoBoxColor(string text, ConsoleColors InfoBoxColor, params object[] vars) =>
+            WriteInfoBoxColorBack(text, true,
                         BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
                         BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
                         BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
                         BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        new Color(InfoBoxProgressColor), KernelColorTools.GetColor(KernelColorType.Background), vars);
+                        new Color(InfoBoxColor), KernelColorTools.GetColor(KernelColorType.Background), vars);
 
         /// <summary>
         /// Writes the info box plainly
         /// </summary>
-        /// <param name="progress">Progress percentage from 0 to 100</param>
-        /// <param name="InfoBoxProgressColor">InfoBoxProgress color from Nitrocid KS's <see cref="KernelColorType"/></param>
+        /// <param name="InfoBoxColor">InfoBox color from Nitrocid KS's <see cref="KernelColorType"/></param>
         /// <param name="text">Text to be written.</param>
         /// <param name="waitForInput">Waits for input or not</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxProgressColor(double progress, string text, bool waitForInput, ConsoleColors InfoBoxProgressColor, params object[] vars) =>
-            WriteInfoBoxProgressColorBack(progress, text, waitForInput,
+        public static void WriteInfoBoxColor(string text, bool waitForInput, ConsoleColors InfoBoxColor, params object[] vars) =>
+            WriteInfoBoxColorBack(text, waitForInput,
                         BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
                         BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
                         BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
                         BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        new Color(InfoBoxProgressColor), KernelColorTools.GetColor(KernelColorType.Background), vars);
+                        new Color(InfoBoxColor), KernelColorTools.GetColor(KernelColorType.Background), vars);
 
         /// <summary>
         /// Writes the info box plainly
         /// </summary>
-        /// <param name="progress">Progress percentage from 0 to 100</param>
-        /// <param name="InfoBoxProgressColor">InfoBoxProgress color from Nitrocid KS's <see cref="Color"/></param>
-        /// <param name="BackgroundColor">InfoBoxProgress background color from Nitrocid KS's <see cref="Color"/></param>
+        /// <param name="InfoBoxColor">InfoBox color from Nitrocid KS's <see cref="Color"/></param>
+        /// <param name="BackgroundColor">InfoBox background color from Nitrocid KS's <see cref="Color"/></param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxProgressColorBack(double progress, string text, ConsoleColors InfoBoxProgressColor, ConsoleColors BackgroundColor, params object[] vars) =>
-            WriteInfoBoxProgressColorBack(progress, text, true,
+        public static void WriteInfoBoxColorBack(string text, ConsoleColors InfoBoxColor, ConsoleColors BackgroundColor, params object[] vars) =>
+            WriteInfoBoxColorBack(text, true,
                         BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
                         BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
                         BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
                         BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        new Color(InfoBoxProgressColor), new Color(BackgroundColor), vars);
+                        new Color(InfoBoxColor), new Color(BackgroundColor), vars);
 
         /// <summary>
         /// Writes the info box plainly
         /// </summary>
-        /// <param name="progress">Progress percentage from 0 to 100</param>
-        /// <param name="InfoBoxProgressColor">InfoBoxProgress color from Nitrocid KS's <see cref="Color"/></param>
-        /// <param name="BackgroundColor">InfoBoxProgress background color from Nitrocid KS's <see cref="Color"/></param>
+        /// <param name="InfoBoxColor">InfoBox color from Nitrocid KS's <see cref="Color"/></param>
+        /// <param name="BackgroundColor">InfoBox background color from Nitrocid KS's <see cref="Color"/></param>
         /// <param name="text">Text to be written.</param>
         /// <param name="waitForInput">Waits for input or not</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxProgressColorBack(double progress, string text, bool waitForInput, ConsoleColors InfoBoxProgressColor, ConsoleColors BackgroundColor, params object[] vars) =>
-            WriteInfoBoxProgressColorBack(progress, text, waitForInput,
+        public static void WriteInfoBoxColorBack(string text, bool waitForInput, ConsoleColors InfoBoxColor, ConsoleColors BackgroundColor, params object[] vars) =>
+            WriteInfoBoxColorBack(text, waitForInput,
                         BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
                         BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
                         BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
                         BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        new Color(InfoBoxProgressColor), new Color(BackgroundColor), vars);
+                        new Color(InfoBoxColor), new Color(BackgroundColor), vars);
 
         /// <summary>
         /// Writes the info box plainly
         /// </summary>
-        /// <param name="progress">Progress percentage from 0 to 100</param>
-        /// <param name="InfoBoxProgressColor">InfoBoxProgress color from Nitrocid KS's <see cref="KernelColorType"/></param>
+        /// <param name="InfoBoxColor">InfoBox color from Nitrocid KS's <see cref="KernelColorType"/></param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxProgressColor(double progress, string text, Color InfoBoxProgressColor, params object[] vars) =>
-            WriteInfoBoxProgressColorBack(progress, text, true,
+        public static void WriteInfoBoxColor(string text, Color InfoBoxColor, params object[] vars) =>
+            WriteInfoBoxColorBack(text, true,
                         BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
                         BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
                         BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
                         BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        InfoBoxProgressColor, KernelColorTools.GetColor(KernelColorType.Background), vars);
+                        InfoBoxColor, KernelColorTools.GetColor(KernelColorType.Background), vars);
 
         /// <summary>
         /// Writes the info box plainly
         /// </summary>
-        /// <param name="progress">Progress percentage from 0 to 100</param>
-        /// <param name="InfoBoxProgressColor">InfoBoxProgress color from Nitrocid KS's <see cref="KernelColorType"/></param>
+        /// <param name="InfoBoxColor">InfoBox color from Nitrocid KS's <see cref="KernelColorType"/></param>
         /// <param name="text">Text to be written.</param>
         /// <param name="waitForInput">Waits for input or not</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxProgressColor(double progress, string text, bool waitForInput, Color InfoBoxProgressColor, params object[] vars) =>
-            WriteInfoBoxProgressColorBack(progress, text, waitForInput,
+        public static void WriteInfoBoxColor(string text, bool waitForInput, Color InfoBoxColor, params object[] vars) =>
+            WriteInfoBoxColorBack(text, waitForInput,
                         BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
                         BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
                         BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
                         BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        InfoBoxProgressColor, KernelColorTools.GetColor(KernelColorType.Background), vars);
+                        InfoBoxColor, KernelColorTools.GetColor(KernelColorType.Background), vars);
 
         /// <summary>
         /// Writes the info box plainly
         /// </summary>
-        /// <param name="progress">Progress percentage from 0 to 100</param>
-        /// <param name="InfoBoxProgressColor">InfoBoxProgress color from Nitrocid KS's <see cref="Color"/></param>
-        /// <param name="BackgroundColor">InfoBoxProgress background color from Nitrocid KS's <see cref="Color"/></param>
+        /// <param name="InfoBoxColor">InfoBox color from Nitrocid KS's <see cref="Color"/></param>
+        /// <param name="BackgroundColor">InfoBox background color from Nitrocid KS's <see cref="Color"/></param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxProgressColorBack(double progress, string text, Color InfoBoxProgressColor, Color BackgroundColor, params object[] vars) =>
-            WriteInfoBoxProgressColorBack(progress, text, true,
+        public static void WriteInfoBoxColorBack(string text, Color InfoBoxColor, Color BackgroundColor, params object[] vars) =>
+            WriteInfoBoxColorBack(text, true,
                         BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
                         BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
                         BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
                         BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        InfoBoxProgressColor, BackgroundColor, vars);
+                        InfoBoxColor, BackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
         /// </summary>
-        /// <param name="progress">Progress percentage from 0 to 100</param>
-        /// <param name="InfoBoxProgressColor">InfoBoxProgress color from Nitrocid KS's <see cref="Color"/></param>
-        /// <param name="BackgroundColor">InfoBoxProgress background color from Nitrocid KS's <see cref="Color"/></param>
+        /// <param name="InfoBoxColor">InfoBox color from Nitrocid KS's <see cref="Color"/></param>
+        /// <param name="BackgroundColor">InfoBox background color from Nitrocid KS's <see cref="Color"/></param>
         /// <param name="text">Text to be written.</param>
         /// <param name="waitForInput">Waits for input or not</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxProgressColorBack(double progress, string text, bool waitForInput, Color InfoBoxProgressColor, Color BackgroundColor, params object[] vars) =>
-            WriteInfoBoxProgressColorBack(progress, text, waitForInput,
+        public static void WriteInfoBoxColorBack(string text, bool waitForInput, Color InfoBoxColor, Color BackgroundColor, params object[] vars) =>
+            WriteInfoBoxColorBack(text, waitForInput,
                         BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
                         BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
                         BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
                         BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        InfoBoxProgressColor, BackgroundColor, vars);
+                        InfoBoxColor, BackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
         /// </summary>
-        /// <param name="progress">Progress percentage from 0 to 100</param>
         /// <param name="UpperLeftCornerChar">Upper left corner character for info box</param>
         /// <param name="LowerLeftCornerChar">Lower left corner character for info box</param>
         /// <param name="UpperRightCornerChar">Upper right corner character for info box</param>
@@ -371,10 +383,10 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// <param name="RightFrameChar">Right frame character for info box</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxProgress(double progress, string text,
+        public static void WriteInfoBox(string text,
                                        char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, params object[] vars) =>
-            WriteInfoBoxProgressKernelColor(progress, text, true,
+            WriteInfoBoxKernelColor(text, true,
                 UpperLeftCornerChar, LowerLeftCornerChar,
                 UpperRightCornerChar, LowerRightCornerChar,
                 UpperFrameChar, LowerFrameChar,
@@ -384,7 +396,6 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// <summary>
         /// Writes the info box plainly
         /// </summary>
-        /// <param name="progress">Progress percentage from 0 to 100</param>
         /// <param name="UpperLeftCornerChar">Upper left corner character for info box</param>
         /// <param name="LowerLeftCornerChar">Lower left corner character for info box</param>
         /// <param name="UpperRightCornerChar">Upper right corner character for info box</param>
@@ -396,10 +407,10 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// <param name="text">Text to be written.</param>
         /// <param name="waitForInput">Waits for input or not</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxProgress(double progress, string text, bool waitForInput,
+        public static void WriteInfoBox(string text, bool waitForInput,
                                        char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, params object[] vars) =>
-            WriteInfoBoxProgressKernelColor(progress, text, waitForInput,
+            WriteInfoBoxKernelColor(text, waitForInput,
                 UpperLeftCornerChar, LowerLeftCornerChar,
                 UpperRightCornerChar, LowerRightCornerChar,
                 UpperFrameChar, LowerFrameChar,
@@ -409,7 +420,6 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// <summary>
         /// Writes the info box plainly
         /// </summary>
-        /// <param name="progress">Progress percentage from 0 to 100</param>
         /// <param name="UpperLeftCornerChar">Upper left corner character for info box</param>
         /// <param name="LowerLeftCornerChar">Lower left corner character for info box</param>
         /// <param name="UpperRightCornerChar">Upper right corner character for info box</param>
@@ -418,24 +428,23 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// <param name="LowerFrameChar">Lower frame character for info box</param>
         /// <param name="LeftFrameChar">Left frame character for info box</param>
         /// <param name="RightFrameChar">Right frame character for info box</param>
-        /// <param name="InfoBoxProgressColor">InfoBoxProgress color from Nitrocid KS's <see cref="KernelColorType"/></param>
+        /// <param name="InfoBoxColor">InfoBox color from Nitrocid KS's <see cref="KernelColorType"/></param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxProgressKernelColor(double progress, string text,
+        public static void WriteInfoBoxKernelColor(string text,
                                        char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-                                       KernelColorType InfoBoxProgressColor, params object[] vars) =>
-            WriteInfoBoxProgressKernelColor(progress, text, true,
+                                       KernelColorType InfoBoxColor, params object[] vars) =>
+            WriteInfoBoxKernelColor(text, true,
                 UpperLeftCornerChar, LowerLeftCornerChar,
                 UpperRightCornerChar, LowerRightCornerChar,
                 UpperFrameChar, LowerFrameChar,
                 LeftFrameChar, RightFrameChar,
-                InfoBoxProgressColor, KernelColorType.Background, vars);
+                InfoBoxColor, KernelColorType.Background, vars);
 
         /// <summary>
         /// Writes the info box plainly
         /// </summary>
-        /// <param name="progress">Progress percentage from 0 to 100</param>
         /// <param name="UpperLeftCornerChar">Upper left corner character for info box</param>
         /// <param name="LowerLeftCornerChar">Lower left corner character for info box</param>
         /// <param name="UpperRightCornerChar">Upper right corner character for info box</param>
@@ -444,25 +453,24 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// <param name="LowerFrameChar">Lower frame character for info box</param>
         /// <param name="LeftFrameChar">Left frame character for info box</param>
         /// <param name="RightFrameChar">Right frame character for info box</param>
-        /// <param name="InfoBoxProgressColor">InfoBoxProgress color from Nitrocid KS's <see cref="KernelColorType"/></param>
+        /// <param name="InfoBoxColor">InfoBox color from Nitrocid KS's <see cref="KernelColorType"/></param>
         /// <param name="text">Text to be written.</param>
         /// <param name="waitForInput">Waits for input or not</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxProgressKernelColor(double progress, string text, bool waitForInput,
+        public static void WriteInfoBoxKernelColor(string text, bool waitForInput,
                                        char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-                                       KernelColorType InfoBoxProgressColor, params object[] vars) =>
-            WriteInfoBoxProgressKernelColor(progress, text, waitForInput,
+                                       KernelColorType InfoBoxColor, params object[] vars) =>
+            WriteInfoBoxKernelColor(text, waitForInput,
                 UpperLeftCornerChar, LowerLeftCornerChar,
                 UpperRightCornerChar, LowerRightCornerChar,
                 UpperFrameChar, LowerFrameChar,
                 LeftFrameChar, RightFrameChar,
-                InfoBoxProgressColor, KernelColorType.Background, vars);
+                InfoBoxColor, KernelColorType.Background, vars);
 
         /// <summary>
         /// Writes the info box plainly
         /// </summary>
-        /// <param name="progress">Progress percentage from 0 to 100</param>
         /// <param name="UpperLeftCornerChar">Upper left corner character for info box</param>
         /// <param name="LowerLeftCornerChar">Lower left corner character for info box</param>
         /// <param name="UpperRightCornerChar">Upper right corner character for info box</param>
@@ -471,25 +479,24 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// <param name="LowerFrameChar">Lower frame character for info box</param>
         /// <param name="LeftFrameChar">Left frame character for info box</param>
         /// <param name="RightFrameChar">Right frame character for info box</param>
-        /// <param name="InfoBoxProgressColor">InfoBoxProgress color from Nitrocid KS's <see cref="KernelColorType"/></param>
-        /// <param name="BackgroundColor">InfoBoxProgress background color from Nitrocid KS's <see cref="KernelColorType"/></param>
+        /// <param name="InfoBoxColor">InfoBox color from Nitrocid KS's <see cref="KernelColorType"/></param>
+        /// <param name="BackgroundColor">InfoBox background color from Nitrocid KS's <see cref="KernelColorType"/></param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxProgressKernelColor(double progress, string text,
+        public static void WriteInfoBoxKernelColor(string text,
                                        char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-                                       KernelColorType InfoBoxProgressColor, KernelColorType BackgroundColor, params object[] vars) =>
-            WriteInfoBoxProgressKernelColor(progress, text, true,
+                                       KernelColorType InfoBoxColor, KernelColorType BackgroundColor, params object[] vars) =>
+            WriteInfoBoxKernelColor(text, true,
                 UpperLeftCornerChar, LowerLeftCornerChar,
                 UpperRightCornerChar, LowerRightCornerChar,
                 UpperFrameChar, LowerFrameChar,
                 LeftFrameChar, RightFrameChar,
-                InfoBoxProgressColor, BackgroundColor, vars);
+                InfoBoxColor, BackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
         /// </summary>
-        /// <param name="progress">Progress percentage from 0 to 100</param>
         /// <param name="UpperLeftCornerChar">Upper left corner character for info box</param>
         /// <param name="LowerLeftCornerChar">Lower left corner character for info box</param>
         /// <param name="UpperRightCornerChar">Upper right corner character for info box</param>
@@ -498,15 +505,15 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// <param name="LowerFrameChar">Lower frame character for info box</param>
         /// <param name="LeftFrameChar">Left frame character for info box</param>
         /// <param name="RightFrameChar">Right frame character for info box</param>
-        /// <param name="InfoBoxProgressColor">InfoBoxProgress color from Nitrocid KS's <see cref="KernelColorType"/></param>
-        /// <param name="BackgroundColor">InfoBoxProgress background color from Nitrocid KS's <see cref="KernelColorType"/></param>
+        /// <param name="InfoBoxColor">InfoBox color from Nitrocid KS's <see cref="KernelColorType"/></param>
+        /// <param name="BackgroundColor">InfoBox background color from Nitrocid KS's <see cref="KernelColorType"/></param>
         /// <param name="text">Text to be written.</param>
         /// <param name="waitForInput">Waits for input or not</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxProgressKernelColor(double progress, string text, bool waitForInput,
+        public static void WriteInfoBoxKernelColor(string text, bool waitForInput,
                                        char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-                                       KernelColorType InfoBoxProgressColor, KernelColorType BackgroundColor, params object[] vars)
+                                       KernelColorType InfoBoxColor, KernelColorType BackgroundColor, params object[] vars)
         {
             bool initialCursorVisible = ConsoleWrapper.CursorVisible;
             try
@@ -532,8 +539,10 @@ namespace KS.ConsoleBase.Inputs.Styles
                 }
 
                 // Fill the info box with text inside it
-                int maxWidth = ConsoleWrapper.WindowWidth - 4;
-                int maxHeight = splitFinalLines.Count + 5;
+                int maxWidth = splitFinalLines.Max((str) => str.Length);
+                if (maxWidth >= ConsoleWrapper.WindowWidth)
+                    maxWidth = ConsoleWrapper.WindowWidth - 4;
+                int maxHeight = splitFinalLines.Count;
                 if (maxHeight >= ConsoleWrapper.WindowHeight)
                     maxHeight = ConsoleWrapper.WindowHeight - 4;
                 int maxRenderWidth = ConsoleWrapper.WindowWidth - 6;
@@ -542,35 +551,54 @@ namespace KS.ConsoleBase.Inputs.Styles
                 var boxBuffer = new StringBuilder();
                 string border = BorderColor.RenderBorderPlain(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
                 boxBuffer.Append(
-                    $"{KernelColorTools.GetColor(InfoBoxProgressColor).VTSequenceForeground}" +
+                    $"{KernelColorTools.GetColor(InfoBoxColor).VTSequenceForeground}" +
                     $"{KernelColorTools.GetColor(BackgroundColor).VTSequenceBackground}" +
                     $"{border}"
                 );
 
                 // Render text inside it
                 ConsoleWrapper.CursorVisible = false;
+                bool exiting = false;
                 for (int i = 0; i < splitFinalLines.Count; i++)
                 {
                     var line = splitFinalLines[i];
-                    if (i % (maxHeight - 5) == 0 && i > 0)
+                    if (i % maxHeight == 0 && i > 0)
                     {
-                        // Reached the end of the box. Bail, because we need to print the progress.
-                        break;
+                        // Reached the end of the box. Wait for keypress then clear the box
+                        if (waitForInput)
+                        {
+                            TextWriterColor.WritePlain(boxBuffer.ToString(), false);
+                            boxBuffer.Clear();
+                            var keypress = Input.DetectKeypress();
+                            if (keypress.Key == ConsoleKey.Q)
+                            {
+                                exiting = true;
+                                break;
+                            }
+                        }
+                        else
+                            Thread.Sleep(5000);
+                        boxBuffer.Append(
+                            $"{KernelColorTools.GetColor(InfoBoxColor).VTSequenceForeground}" +
+                            $"{KernelColorTools.GetColor(BackgroundColor).VTSequenceBackground}" +
+                            $"{border}"
+                        );
                     }
-                    boxBuffer.Append($"{CsiSequences.GenerateCsiCursorPosition(borderX + 2, borderY + 1 + i % maxHeight + 1)}{line}");
+                    boxBuffer.Append(
+                        $"{CsiSequences.GenerateCsiCursorPosition(borderX + 2, borderY + 1 + i % maxHeight + 1)}" +
+                        $"{line}"
+                    );
                 }
-
-                // Render the final result and write the progress bar
-                int progressPosX = borderX + 4;
-                int progressPosY = borderY + maxHeight - 3;
-                int maxProgressWidth = maxWidth - 4;
                 boxBuffer.Append(
                     KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground +
                     KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground
                 );
                 TextWriterColor.WritePlain(boxBuffer.ToString(), false);
-                ProgressBarColor.WriteProgress(progress, progressPosX, progressPosY, progressPosX * 2 + 2, InfoBoxProgressColor, InfoBoxProgressColor, BackgroundColor);
                 boxBuffer.Clear();
+
+                // Wait until the user presses any key to close the box
+                if (waitForInput && !exiting)
+                    Input.DetectKeypress();
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
@@ -586,7 +614,6 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// <summary>
         /// Writes the info box plainly
         /// </summary>
-        /// <param name="progress">Progress percentage from 0 to 100</param>
         /// <param name="UpperLeftCornerChar">Upper left corner character for info box</param>
         /// <param name="LowerLeftCornerChar">Lower left corner character for info box</param>
         /// <param name="UpperRightCornerChar">Upper right corner character for info box</param>
@@ -595,19 +622,18 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// <param name="LowerFrameChar">Lower frame character for info box</param>
         /// <param name="LeftFrameChar">Left frame character for info box</param>
         /// <param name="RightFrameChar">Right frame character for info box</param>
-        /// <param name="InfoBoxProgressColor">InfoBoxProgress color</param>
+        /// <param name="InfoBoxColor">InfoBox color</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxProgressColor(double progress, string text,
+        public static void WriteInfoBoxColor(string text,
                                        char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-                                       Color InfoBoxProgressColor, params object[] vars) =>
-            WriteInfoBoxProgressColorBack(progress, text, true, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxProgressColor, KernelColorTools.GetColor(KernelColorType.Background), vars);
+                                       Color InfoBoxColor, params object[] vars) =>
+            WriteInfoBoxColorBack(text, true, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxColor, KernelColorTools.GetColor(KernelColorType.Background), vars);
 
         /// <summary>
         /// Writes the info box plainly
         /// </summary>
-        /// <param name="progress">Progress percentage from 0 to 100</param>
         /// <param name="UpperLeftCornerChar">Upper left corner character for info box</param>
         /// <param name="LowerLeftCornerChar">Lower left corner character for info box</param>
         /// <param name="UpperRightCornerChar">Upper right corner character for info box</param>
@@ -616,20 +642,19 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// <param name="LowerFrameChar">Lower frame character for info box</param>
         /// <param name="LeftFrameChar">Left frame character for info box</param>
         /// <param name="RightFrameChar">Right frame character for info box</param>
-        /// <param name="InfoBoxProgressColor">InfoBoxProgress color</param>
-        /// <param name="BackgroundColor">InfoBoxProgress background color</param>
+        /// <param name="InfoBoxColor">InfoBox color</param>
+        /// <param name="BackgroundColor">InfoBox background color</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxProgressColorBack(double progress, string text,
+        public static void WriteInfoBoxColorBack(string text,
                                        char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-                                       Color InfoBoxProgressColor, Color BackgroundColor, params object[] vars) =>
-            WriteInfoBoxProgressColorBack(progress, text, true, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxProgressColor, BackgroundColor, vars);
+                                       Color InfoBoxColor, Color BackgroundColor, params object[] vars) =>
+            WriteInfoBoxColorBack(text, true, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxColor, BackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
         /// </summary>
-        /// <param name="progress">Progress percentage from 0 to 100</param>
         /// <param name="UpperLeftCornerChar">Upper left corner character for info box</param>
         /// <param name="LowerLeftCornerChar">Lower left corner character for info box</param>
         /// <param name="UpperRightCornerChar">Upper right corner character for info box</param>
@@ -638,19 +663,18 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// <param name="LowerFrameChar">Lower frame character for info box</param>
         /// <param name="LeftFrameChar">Left frame character for info box</param>
         /// <param name="RightFrameChar">Right frame character for info box</param>
-        /// <param name="InfoBoxProgressColor">InfoBoxProgress color</param>
+        /// <param name="InfoBoxColor">InfoBox color</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxProgressColor(double progress, string text,
+        public static void WriteInfoBoxColor(string text,
                                        char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-                                       ConsoleColors InfoBoxProgressColor, params object[] vars) =>
-            WriteInfoBoxProgressColorBack(progress, text, true, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, new Color(InfoBoxProgressColor), KernelColorTools.GetColor(KernelColorType.Background), vars);
+                                       ConsoleColors InfoBoxColor, params object[] vars) =>
+            WriteInfoBoxColorBack(text, true, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, new Color(InfoBoxColor), KernelColorTools.GetColor(KernelColorType.Background), vars);
 
         /// <summary>
         /// Writes the info box plainly
         /// </summary>
-        /// <param name="progress">Progress percentage from 0 to 100</param>
         /// <param name="UpperLeftCornerChar">Upper left corner character for info box</param>
         /// <param name="LowerLeftCornerChar">Lower left corner character for info box</param>
         /// <param name="UpperRightCornerChar">Upper right corner character for info box</param>
@@ -659,20 +683,19 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// <param name="LowerFrameChar">Lower frame character for info box</param>
         /// <param name="LeftFrameChar">Left frame character for info box</param>
         /// <param name="RightFrameChar">Right frame character for info box</param>
-        /// <param name="InfoBoxProgressColor">InfoBoxProgress color</param>
-        /// <param name="BackgroundColor">InfoBoxProgress background color</param>
+        /// <param name="InfoBoxColor">InfoBox color</param>
+        /// <param name="BackgroundColor">InfoBox background color</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxProgressColorBack(double progress, string text,
+        public static void WriteInfoBoxColorBack(string text,
                                        char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-                                       ConsoleColors InfoBoxProgressColor, ConsoleColors BackgroundColor, params object[] vars) =>
-            WriteInfoBoxProgressColorBack(progress, text, true, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxProgressColor, BackgroundColor, vars);
+                                       ConsoleColors InfoBoxColor, ConsoleColors BackgroundColor, params object[] vars) =>
+            WriteInfoBoxColorBack(text, true, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxColor, BackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
         /// </summary>
-        /// <param name="progress">Progress percentage from 0 to 100</param>
         /// <param name="UpperLeftCornerChar">Upper left corner character for info box</param>
         /// <param name="LowerLeftCornerChar">Lower left corner character for info box</param>
         /// <param name="UpperRightCornerChar">Upper right corner character for info box</param>
@@ -681,20 +704,19 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// <param name="LowerFrameChar">Lower frame character for info box</param>
         /// <param name="LeftFrameChar">Left frame character for info box</param>
         /// <param name="RightFrameChar">Right frame character for info box</param>
-        /// <param name="InfoBoxProgressColor">InfoBoxProgress color</param>
+        /// <param name="InfoBoxColor">InfoBox color</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="waitForInput">Waits for input or not</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxProgressColor(double progress, string text, bool waitForInput,
+        public static void WriteInfoBoxColor(string text, bool waitForInput,
                                        char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-                                       Color InfoBoxProgressColor, params object[] vars) =>
-            WriteInfoBoxProgressColorBack(progress, text, waitForInput, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxProgressColor, KernelColorTools.GetColor(KernelColorType.Background), vars);
+                                       Color InfoBoxColor, params object[] vars) =>
+            WriteInfoBoxColorBack(text, waitForInput, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxColor, KernelColorTools.GetColor(KernelColorType.Background), vars);
 
         /// <summary>
         /// Writes the info box plainly
         /// </summary>
-        /// <param name="progress">Progress percentage from 0 to 100</param>
         /// <param name="UpperLeftCornerChar">Upper left corner character for info box</param>
         /// <param name="LowerLeftCornerChar">Lower left corner character for info box</param>
         /// <param name="UpperRightCornerChar">Upper right corner character for info box</param>
@@ -703,15 +725,15 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// <param name="LowerFrameChar">Lower frame character for info box</param>
         /// <param name="LeftFrameChar">Left frame character for info box</param>
         /// <param name="RightFrameChar">Right frame character for info box</param>
-        /// <param name="InfoBoxProgressColor">InfoBoxProgress color</param>
-        /// <param name="BackgroundColor">InfoBoxProgress background color</param>
+        /// <param name="InfoBoxColor">InfoBox color</param>
+        /// <param name="BackgroundColor">InfoBox background color</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="waitForInput">Waits for input or not</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxProgressColorBack(double progress, string text, bool waitForInput,
+        public static void WriteInfoBoxColorBack(string text, bool waitForInput,
                                        char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-                                       Color InfoBoxProgressColor, Color BackgroundColor, params object[] vars)
+                                       Color InfoBoxColor, Color BackgroundColor, params object[] vars)
         {
             bool initialCursorVisible = ConsoleWrapper.CursorVisible;
             try
@@ -737,8 +759,10 @@ namespace KS.ConsoleBase.Inputs.Styles
                 }
 
                 // Fill the info box with text inside it
-                int maxWidth = ConsoleWrapper.WindowWidth - 4;
-                int maxHeight = splitFinalLines.Count + 5;
+                int maxWidth = splitFinalLines.Max((str) => str.Length);
+                if (maxWidth >= ConsoleWrapper.WindowWidth)
+                    maxWidth = ConsoleWrapper.WindowWidth - 4;
+                int maxHeight = splitFinalLines.Count;
                 if (maxHeight >= ConsoleWrapper.WindowHeight)
                     maxHeight = ConsoleWrapper.WindowHeight - 4;
                 int maxRenderWidth = ConsoleWrapper.WindowWidth - 6;
@@ -747,35 +771,54 @@ namespace KS.ConsoleBase.Inputs.Styles
                 var boxBuffer = new StringBuilder();
                 string border = BorderColor.RenderBorderPlain(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
                 boxBuffer.Append(
-                    $"{InfoBoxProgressColor.VTSequenceForeground}" +
+                    $"{InfoBoxColor.VTSequenceForeground}" +
                     $"{BackgroundColor.VTSequenceBackground}" +
                     $"{border}"
                 );
 
                 // Render text inside it
                 ConsoleWrapper.CursorVisible = false;
+                bool exiting = false;
                 for (int i = 0; i < splitFinalLines.Count; i++)
                 {
                     var line = splitFinalLines[i];
-                    if (i % (maxHeight - 5) == 0 && i > 0)
+                    if (i % maxHeight == 0 && i > 0)
                     {
-                        // Reached the end of the box. Bail, because we need to print the progress.
-                        break;
+                        // Reached the end of the box. Wait for keypress then clear the box
+                        if (waitForInput)
+                        {
+                            TextWriterColor.WritePlain(boxBuffer.ToString(), false);
+                            boxBuffer.Clear();
+                            var keypress = Input.DetectKeypress();
+                            if (keypress.Key == ConsoleKey.Q)
+                            {
+                                exiting = true;
+                                break;
+                            }
+                        }
+                        else
+                            Thread.Sleep(5000);
+                        boxBuffer.Append(
+                            $"{InfoBoxColor.VTSequenceForeground}" +
+                            $"{BackgroundColor.VTSequenceBackground}" +
+                            $"{border}"
+                        );
                     }
-                    boxBuffer.Append($"{CsiSequences.GenerateCsiCursorPosition(borderX + 2, borderY + 1 + i % maxHeight + 1)}{line}");
+                    boxBuffer.Append(
+                        $"{CsiSequences.GenerateCsiCursorPosition(borderX + 2, borderY + 1 + i % maxHeight + 1)}" +
+                        $"{line}"
+                    );
                 }
-
-                // Render the final result and write the progress bar
-                int progressPosX = borderX + 4;
-                int progressPosY = borderY + maxHeight - 3;
-                int maxProgressWidth = maxWidth - 4;
                 boxBuffer.Append(
                     KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground +
                     KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground
                 );
                 TextWriterColor.WritePlain(boxBuffer.ToString(), false);
-                ProgressBarColor.WriteProgress(progress, progressPosX, progressPosY, progressPosX * 2 + 2, InfoBoxProgressColor, InfoBoxProgressColor, BackgroundColor);
                 boxBuffer.Clear();
+
+                // Wait until the user presses any key to close the box
+                if (waitForInput && !exiting)
+                    Input.DetectKeypress();
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
@@ -791,7 +834,6 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// <summary>
         /// Writes the info box plainly
         /// </summary>
-        /// <param name="progress">Progress percentage from 0 to 100</param>
         /// <param name="UpperLeftCornerChar">Upper left corner character for info box</param>
         /// <param name="LowerLeftCornerChar">Lower left corner character for info box</param>
         /// <param name="UpperRightCornerChar">Upper right corner character for info box</param>
@@ -800,20 +842,19 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// <param name="LowerFrameChar">Lower frame character for info box</param>
         /// <param name="LeftFrameChar">Left frame character for info box</param>
         /// <param name="RightFrameChar">Right frame character for info box</param>
-        /// <param name="InfoBoxProgressColor">InfoBoxProgress color</param>
+        /// <param name="InfoBoxColor">InfoBox color</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="waitForInput">Waits for input or not</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxProgressColor(double progress, string text, bool waitForInput,
+        public static void WriteInfoBoxColor(string text, bool waitForInput,
                                        char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-                                       ConsoleColors InfoBoxProgressColor, params object[] vars) =>
-            WriteInfoBoxProgressColorBack(progress, text, waitForInput, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, new Color(InfoBoxProgressColor), KernelColorTools.GetColor(KernelColorType.Background), vars);
+                                       ConsoleColors InfoBoxColor, params object[] vars) =>
+            WriteInfoBoxColorBack(text, waitForInput, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, new Color(InfoBoxColor), KernelColorTools.GetColor(KernelColorType.Background), vars);
 
         /// <summary>
         /// Writes the info box plainly
         /// </summary>
-        /// <param name="progress">Progress percentage from 0 to 100</param>
         /// <param name="UpperLeftCornerChar">Upper left corner character for info box</param>
         /// <param name="LowerLeftCornerChar">Lower left corner character for info box</param>
         /// <param name="UpperRightCornerChar">Upper right corner character for info box</param>
@@ -822,15 +863,15 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// <param name="LowerFrameChar">Lower frame character for info box</param>
         /// <param name="LeftFrameChar">Left frame character for info box</param>
         /// <param name="RightFrameChar">Right frame character for info box</param>
-        /// <param name="InfoBoxProgressColor">InfoBoxProgress color</param>
-        /// <param name="BackgroundColor">InfoBoxProgress background color</param>
+        /// <param name="InfoBoxColor">InfoBox color</param>
+        /// <param name="BackgroundColor">InfoBox background color</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="waitForInput">Waits for input or not</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxProgressColorBack(double progress, string text, bool waitForInput,
+        public static void WriteInfoBoxColorBack(string text, bool waitForInput,
                                        char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-                                       ConsoleColors InfoBoxProgressColor, ConsoleColors BackgroundColor, params object[] vars)
+                                       ConsoleColors InfoBoxColor, ConsoleColors BackgroundColor, params object[] vars)
         {
             bool initialCursorVisible = ConsoleWrapper.CursorVisible;
             try
@@ -856,8 +897,10 @@ namespace KS.ConsoleBase.Inputs.Styles
                 }
 
                 // Fill the info box with text inside it
-                int maxWidth = ConsoleWrapper.WindowWidth - 4;
-                int maxHeight = splitFinalLines.Count + 5;
+                int maxWidth = splitFinalLines.Max((str) => str.Length);
+                if (maxWidth >= ConsoleWrapper.WindowWidth)
+                    maxWidth = ConsoleWrapper.WindowWidth - 4;
+                int maxHeight = splitFinalLines.Count;
                 if (maxHeight >= ConsoleWrapper.WindowHeight)
                     maxHeight = ConsoleWrapper.WindowHeight - 4;
                 int maxRenderWidth = ConsoleWrapper.WindowWidth - 6;
@@ -866,35 +909,54 @@ namespace KS.ConsoleBase.Inputs.Styles
                 var boxBuffer = new StringBuilder();
                 string border = BorderColor.RenderBorderPlain(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
                 boxBuffer.Append(
-                    $"{new Color(InfoBoxProgressColor).VTSequenceForeground}" +
+                    $"{new Color(InfoBoxColor).VTSequenceForeground}" +
                     $"{new Color(BackgroundColor).VTSequenceBackground}" +
                     $"{border}"
                 );
 
                 // Render text inside it
                 ConsoleWrapper.CursorVisible = false;
+                bool exiting = false;
                 for (int i = 0; i < splitFinalLines.Count; i++)
                 {
                     var line = splitFinalLines[i];
-                    if (i % (maxHeight - 5) == 0 && i > 0)
+                    if (i % maxHeight == 0 && i > 0)
                     {
-                        // Reached the end of the box. Bail, because we need to print the progress.
-                        break;
+                        // Reached the end of the box. Wait for keypress then clear the box
+                        if (waitForInput)
+                        {
+                            TextWriterColor.WritePlain(boxBuffer.ToString(), false);
+                            boxBuffer.Clear();
+                            var keypress = Input.DetectKeypress();
+                            if (keypress.Key == ConsoleKey.Q)
+                            {
+                                exiting = true;
+                                break;
+                            }
+                        }
+                        else
+                            Thread.Sleep(5000);
+                        boxBuffer.Append(
+                            $"{new Color(InfoBoxColor).VTSequenceForeground}" +
+                            $"{new Color(BackgroundColor).VTSequenceBackground}" +
+                            $"{border}"
+                        );
                     }
-                    boxBuffer.Append($"{CsiSequences.GenerateCsiCursorPosition(borderX + 2, borderY + 1 + i % maxHeight + 1)}{line}");
+                    boxBuffer.Append(
+                        $"{CsiSequences.GenerateCsiCursorPosition(borderX + 2, borderY + 1 + i % maxHeight + 1)}" +
+                        $"{line}"
+                    );
                 }
-
-                // Render the final result and write the progress bar
-                int progressPosX = borderX + 4;
-                int progressPosY = borderY + maxHeight - 3;
-                int maxProgressWidth = maxWidth - 4;
                 boxBuffer.Append(
                     KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground +
                     KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground
                 );
                 TextWriterColor.WritePlain(boxBuffer.ToString(), false);
-                ProgressBarColor.WriteProgress(progress, progressPosX, progressPosY, progressPosX * 2 + 2, InfoBoxProgressColor, InfoBoxProgressColor, BackgroundColor);
                 boxBuffer.Clear();
+
+                // Wait until the user presses any key to close the box
+                if (waitForInput && !exiting)
+                    Input.DetectKeypress();
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {

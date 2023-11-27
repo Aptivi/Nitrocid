@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Inputs.Styles;
+using KS.ConsoleBase.Inputs.Styles.Choice;
 using KS.Files.Operations;
 using KS.Files.Operations.Querying;
 using KS.Files.Paths;

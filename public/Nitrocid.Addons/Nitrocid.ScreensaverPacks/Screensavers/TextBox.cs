@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Inputs.Styles;
+using KS.ConsoleBase.Inputs.Styles.Infobox;
 using KS.Drivers.RNG;
 using KS.Kernel.Threading;
 using KS.Misc.Screensaver;

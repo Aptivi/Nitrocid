@@ -19,6 +19,8 @@
 
 using System;
 using KS.ConsoleBase.Inputs.Styles;
+using KS.ConsoleBase.Inputs.Styles.Choice;
+using KS.ConsoleBase.Inputs.Styles.Selection;
 using KS.Kernel.Debugging;
 
 namespace KS.Shell.ShellBase.Scripting.Interaction

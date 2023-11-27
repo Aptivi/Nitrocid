@@ -58,8 +58,8 @@ using KS.ConsoleBase.Colors;
 using KS.Files.Extensions;
 using Nitrocid.Extras.BassBoom.Player;
 using KS.Files.Operations.Querying;
-using KS.ConsoleBase.Inputs.Styles;
 using KS.Files.Paths;
+using KS.ConsoleBase.Inputs.Styles.Infobox;
 
 namespace Nitrocid.Extras.BassBoom
 {

@@ -19,7 +19,6 @@
 
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Files;
 using KS.Files.Operations.Querying;
 using KS.Files.Paths;
 using KS.Kernel;

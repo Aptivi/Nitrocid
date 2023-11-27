@@ -34,7 +34,7 @@ using KS.Users.Windows;
 using System.Diagnostics;
 using System.Reflection;
 using SemanVer.Instance;
-using KS.ConsoleBase.Inputs.Styles;
+using KS.ConsoleBase.Inputs.Styles.Infobox;
 
 namespace KS.Kernel
 {

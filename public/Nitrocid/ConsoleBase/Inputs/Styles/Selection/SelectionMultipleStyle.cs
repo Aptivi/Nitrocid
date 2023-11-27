@@ -23,6 +23,7 @@ using System.Linq;
 using System.Text;
 using KS.ConsoleBase.Buffered;
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Inputs.Styles.Infobox;
 using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Kernel.Debugging;
 using KS.Languages;
@@ -30,12 +31,12 @@ using KS.Misc.Text;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Sequences.Tools;
 
-namespace KS.ConsoleBase.Inputs.Styles
+namespace KS.ConsoleBase.Inputs.Styles.Selection
 {
     /// <summary>
-    /// Selection style for input module
+    /// Multiple selection style for input module
     /// </summary>
-    public static class SelectionStyle
+    public static class SelectionMultipleStyle
     {
 
         /// <summary>
@@ -44,8 +45,8 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// <param name="Question">A question</param>
         /// <param name="AnswersStr">Set of answers. They can be written like this: Y/N/C.</param>
         /// <param name="kiosk">Whether to prevent exiting or not</param>
-        public static int PromptSelection(string Question, string AnswersStr, bool kiosk = false) =>
-            PromptSelection(Question, AnswersStr, [], "", [], kiosk);
+        public static int[] PromptMultipleSelection(string Question, string AnswersStr, bool kiosk = false) =>
+            PromptMultipleSelection(Question, AnswersStr, [], "", [], kiosk);
 
         /// <summary>
         /// Prompts user for Selection
@@ -54,8 +55,8 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// <param name="AnswersStr">Set of answers. They can be written like this: Y/N/C.</param>
         /// <param name="AnswersTitles">Working titles for each answer. It must be the same amount as the answers.</param>
         /// <param name="kiosk">Whether to prevent exiting or not</param>
-        public static int PromptSelection(string Question, string AnswersStr, string[] AnswersTitles, bool kiosk = false) =>
-            PromptSelection(Question, AnswersStr, AnswersTitles, "", [], kiosk);
+        public static int[] PromptMultipleSelection(string Question, string AnswersStr, string[] AnswersTitles, bool kiosk = false) =>
+            PromptMultipleSelection(Question, AnswersStr, AnswersTitles, "", [], kiosk);
 
         /// <summary>
         /// Prompts user for Selection
@@ -65,8 +66,8 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// <param name="AnswersTitles">Working titles for each answer. It must be the same amount as the answers.</param>
         /// <param name="AlternateAnswersStr">Set of alternate answers. They can be written like this: Y/N/C.</param>
         /// <param name="kiosk">Whether to prevent exiting or not</param>
-        public static int PromptSelection(string Question, string AnswersStr, string[] AnswersTitles, string AlternateAnswersStr, bool kiosk = false) =>
-            PromptSelection(Question, AnswersStr, AnswersTitles, AlternateAnswersStr, [], kiosk);
+        public static int[] PromptMultipleSelection(string Question, string AnswersStr, string[] AnswersTitles, string AlternateAnswersStr, bool kiosk = false) =>
+            PromptMultipleSelection(Question, AnswersStr, AnswersTitles, AlternateAnswersStr, [], kiosk);
 
         /// <summary>
         /// Prompts user for Selection
@@ -77,8 +78,8 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// <param name="AlternateAnswersStr">Set of alternate answers. They can be written like this: Y/N/C.</param>
         /// <param name="AlternateAnswersTitles">Working titles for each alternate answer. It must be the same amount as the alternate answers.</param>
         /// <param name="kiosk">Whether to prevent exiting or not</param>
-        public static int PromptSelection(string Question, string AnswersStr, string[] AnswersTitles, string AlternateAnswersStr, string[] AlternateAnswersTitles, bool kiosk = false) =>
-            PromptSelection(Question, InputChoiceTools.GetInputChoices(AnswersStr, AnswersTitles), InputChoiceTools.GetInputChoices(AlternateAnswersStr, AlternateAnswersTitles), kiosk);
+        public static int[] PromptMultipleSelection(string Question, string AnswersStr, string[] AnswersTitles, string AlternateAnswersStr, string[] AlternateAnswersTitles, bool kiosk = false) =>
+            PromptMultipleSelection(Question, InputChoiceTools.GetInputChoices(AnswersStr, AnswersTitles), InputChoiceTools.GetInputChoices(AlternateAnswersStr, AlternateAnswersTitles), kiosk);
 
         /// <summary>
         /// Prompts user for selection
@@ -86,8 +87,8 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// <param name="Question">A question</param>
         /// <param name="Answers">Set of answers. They can be written like this: Y/N/C.</param>
         /// <param name="kiosk">Whether to prevent exiting or not</param>
-        public static int PromptSelection(string Question, string[] Answers, bool kiosk = false) =>
-            PromptSelection(Question, Answers, [], [], [], kiosk);
+        public static int[] PromptMultipleSelection(string Question, string[] Answers, bool kiosk = false) =>
+            PromptMultipleSelection(Question, Answers, [], [], [], kiosk);
 
         /// <summary>
         /// Prompts user for Selection
@@ -96,8 +97,8 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// <param name="Answers">Set of answers. They can be written like this: Y/N/C.</param>
         /// <param name="AnswersTitles">Working titles for each answer. It must be the same amount as the answers.</param>
         /// <param name="kiosk">Whether to prevent exiting or not</param>
-        public static int PromptSelection(string Question, string[] Answers, string[] AnswersTitles, bool kiosk = false) =>
-            PromptSelection(Question, Answers, AnswersTitles, [], [], kiosk);
+        public static int[] PromptMultipleSelection(string Question, string[] Answers, string[] AnswersTitles, bool kiosk = false) =>
+            PromptMultipleSelection(Question, Answers, AnswersTitles, [], [], kiosk);
 
         /// <summary>
         /// Prompts user for Selection
@@ -107,8 +108,8 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// <param name="AnswersTitles">Working titles for each answer. It must be the same amount as the answers.</param>
         /// <param name="AlternateAnswers">Set of alternate answers. They can be written like this: Y/N/C.</param>
         /// <param name="kiosk">Whether to prevent exiting or not</param>
-        public static int PromptSelection(string Question, string[] Answers, string[] AnswersTitles, string[] AlternateAnswers, bool kiosk = false) =>
-            PromptSelection(Question, Answers, AnswersTitles, AlternateAnswers, [], kiosk);
+        public static int[] PromptMultipleSelection(string Question, string[] Answers, string[] AnswersTitles, string[] AlternateAnswers, bool kiosk = false) =>
+            PromptMultipleSelection(Question, Answers, AnswersTitles, AlternateAnswers, [], kiosk);
 
         /// <summary>
         /// Prompts user for Selection
@@ -119,8 +120,8 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// <param name="AlternateAnswers">Set of alternate answers. They can be written like this: Y/N/C.</param>
         /// <param name="AlternateAnswersTitles">Working titles for each alternate answer. It must be the same amount as the alternate answers.</param>
         /// <param name="kiosk">Whether to prevent exiting or not</param>
-        public static int PromptSelection(string Question, string[] Answers, string[] AnswersTitles, string[] AlternateAnswers, string[] AlternateAnswersTitles, bool kiosk = false) =>
-            PromptSelection(Question, InputChoiceTools.GetInputChoices(Answers, AnswersTitles), InputChoiceTools.GetInputChoices(AlternateAnswers, AlternateAnswersTitles), kiosk);
+        public static int[] PromptMultipleSelection(string Question, string[] Answers, string[] AnswersTitles, string[] AlternateAnswers, string[] AlternateAnswersTitles, bool kiosk = false) =>
+            PromptMultipleSelection(Question, InputChoiceTools.GetInputChoices(Answers, AnswersTitles), InputChoiceTools.GetInputChoices(AlternateAnswers, AlternateAnswersTitles), kiosk);
 
         /// <summary>
         /// Prompts user for Selection
@@ -128,27 +129,8 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// <param name="Question">A question</param>
         /// <param name="Answers">Set of answers.</param>
         /// <param name="kiosk">Whether to prevent exiting or not</param>
-        public static int PromptSelection(string Question, List<InputChoiceInfo> Answers, bool kiosk = false) =>
-            PromptSelection(Question, Answers, [], kiosk);
-
-        /// <summary>
-        /// Prompts user for Selection
-        /// </summary>
-        /// <param name="Question">A question</param>
-        /// <param name="Answers">Set of answers.</param>
-        /// <param name="AltAnswers">Set of alternate answers.</param>
-        /// <param name="kiosk">Whether to prevent exiting or not</param>
-        public static int PromptSelection(string Question, List<InputChoiceInfo> Answers, List<InputChoiceInfo> AltAnswers, bool kiosk = false) =>
-            PromptSelection(Question, Answers.ToArray(), [.. AltAnswers], kiosk);
-
-        /// <summary>
-        /// Prompts user for Selection
-        /// </summary>
-        /// <param name="Question">A question</param>
-        /// <param name="Answers">Set of answers.</param>
-        /// <param name="kiosk">Whether to prevent exiting or not</param>
-        public static int PromptSelection(string Question, InputChoiceInfo[] Answers, bool kiosk = false) =>
-            PromptSelection(Question, Answers, [], kiosk);
+        public static int[] PromptMultipleSelection(string Question, List<InputChoiceInfo> Answers, bool kiosk = false) =>
+            PromptMultipleSelection(Question, Answers, [], kiosk);
 
         /// <summary>
         /// Prompts user for Selection
@@ -157,11 +139,12 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// <param name="Answers">Set of answers.</param>
         /// <param name="AltAnswers">Set of alternate answers.</param>
         /// <param name="kiosk">Whether to prevent exiting or not</param>
-        public static int PromptSelection(string Question, InputChoiceInfo[] Answers, InputChoiceInfo[] AltAnswers, bool kiosk = false)
+        public static int[] PromptMultipleSelection(string Question, List<InputChoiceInfo> Answers, List<InputChoiceInfo> AltAnswers, bool kiosk = false)
         {
             // Variables
             int HighlightedAnswer = 1;
             List<InputChoiceInfo> AllAnswers = new(Answers);
+            List<int> SelectedAnswers = [];
             AllAnswers.AddRange(AltAnswers);
 
             // Before we proceed, we need to check the highlighted answer number
@@ -169,7 +152,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                 HighlightedAnswer = 1;
 
             // First alt answer index
-            int altAnswersFirstIdx = Answers.Length;
+            int altAnswersFirstIdx = Answers.Count;
             ConsoleKeyInfo Answer;
             bool initialVisible = ConsoleWrapper.CursorVisible;
             ConsoleWrapper.CursorVisible = false;
@@ -203,7 +186,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                         // causing confusion. Pages, again, are one-based.
                         int currentPage = (HighlightedAnswer - 1) / answersPerPage;
                         startIndex = answersPerPage * currentPage;
-                        endIndex = (answersPerPage * (currentPage + 1)) - 1;
+                        endIndex = answersPerPage * (currentPage + 1) - 1;
 
                         // Write the question.
                         selectionBuilder.Append(
@@ -231,16 +214,17 @@ namespace KS.ConsoleBase.Inputs.Styles
                                 bool selected = AnswerIndex + 1 == HighlightedAnswer;
                                 var AnswerInstance = AllAnswers[AnswerIndex];
                                 string AnswerTitle = AnswerInstance.ChoiceTitle ?? "";
+                                string answerIndicator = $"[{(SelectedAnswers.Contains(AnswerIndex + 1) ? "*" : " ")}]";
 
                                 // Get the option
-                                string AnswerOption = $"{(selected ? ">" : " ")} {AnswerInstance}) {AnswerTitle}";
+                                string AnswerOption = $"{(selected ? ">" : " ")} {AnswerInstance}) {answerIndicator} {AnswerTitle}";
                                 int AnswerTitleLeft = AllAnswers.Max(x => $"{(selected ? ">" : " ")} {x.ChoiceName}) ".Length);
                                 int answerTitleMaxLeft = ConsoleWrapper.WindowWidth;
                                 if (AnswerTitleLeft < answerTitleMaxLeft)
                                 {
                                     string renderedChoice = $"{(selected ? ">" : " ")} {AnswerInstance.ChoiceName}) ";
                                     int blankRepeats = AnswerTitleLeft - renderedChoice.Length;
-                                    AnswerOption = renderedChoice + new string(' ', blankRepeats) + $"{AnswerTitle}" + $"{clear}";
+                                    AnswerOption = renderedChoice + new string(' ', blankRepeats) + $"{answerIndicator} {AnswerTitle}" + $"{ConsoleExtensions.GetClearLineToRightSequence()}";
                                 }
                                 var AnswerColor =
                                     selected ?
@@ -256,7 +240,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                         int descSepArea = ConsoleWrapper.WindowHeight - 3;
                         int descArea = ConsoleWrapper.WindowHeight - 2;
                         var highlightedAnswer = AllAnswers[HighlightedAnswer - 1];
-                        string descFinal = highlightedAnswer.ChoiceDescription is not null ? highlightedAnswer.ChoiceDescription.Truncate((ConsoleWrapper.WindowWidth * 2) - 3) : "";
+                        string descFinal = highlightedAnswer.ChoiceDescription is not null ? highlightedAnswer.ChoiceDescription.Truncate(ConsoleWrapper.WindowWidth * 2 - 3) : "";
                         selectionBuilder.Append(
                             $"{CsiSequences.GenerateCsiCursorPosition(1, descSepArea + 1)}" +
                             $"{KernelColorTools.GetColor(KernelColorType.Separator).VTSequenceForeground}" +
@@ -270,9 +254,9 @@ namespace KS.ConsoleBase.Inputs.Styles
                             descFinal
                         );
 
-                        // Render keybindings and page and answer number
+                        // Write keybindings and page and answer number
                         bool isExtendable = !string.IsNullOrEmpty(highlightedAnswer.ChoiceDescription);
-                        string bindingsRender = $"[{Translate.DoTranslation("ENTER: select")}]";
+                        string bindingsRender = $"[{Translate.DoTranslation("SPACE: (un)check")}]==[{Translate.DoTranslation("ENTER: select")}]";
                         string numberRender = $"[{currentPage + 1}/{pages + 1}]==[{HighlightedAnswer}/{AllAnswers.Count}]";
 
                         // Add info binding if extendable
@@ -333,6 +317,10 @@ namespace KS.ConsoleBase.Inputs.Styles
                             HighlightedAnswer = endIndex > AllAnswers.Count - 1 ? AllAnswers.Count : endIndex + 2;
                             HighlightedAnswer = endIndex == AllAnswers.Count - 1 ? endIndex + 1 : HighlightedAnswer;
                             break;
+                        case ConsoleKey.Spacebar:
+                            if (!SelectedAnswers.Remove(HighlightedAnswer))
+                                SelectedAnswers.Add(HighlightedAnswer);
+                            break;
                         case ConsoleKey.Enter:
                             ConsoleWrapper.CursorVisible = initialVisible;
                             KernelColorTools.LoadBack();
@@ -344,7 +332,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                             ConsoleWrapper.CursorVisible = initialVisible;
                             KernelColorTools.LoadBack();
                             bail = true;
-                            HighlightedAnswer = -1;
+                            SelectedAnswers.Clear();
                             break;
                         case ConsoleKey.Tab:
                             if (string.IsNullOrEmpty(highlightedAnswer.ChoiceDescription))
@@ -353,10 +341,10 @@ namespace KS.ConsoleBase.Inputs.Styles
                             infoRenderer.AppendJoin("\n",
                                 new[]
                                 {
-                                    highlightedAnswer.ChoiceTitle,
-                                    new string('-', highlightedAnswer.ChoiceTitle.Length > ConsoleWrapper.WindowWidth ? ConsoleWrapper.WindowWidth - 4 : highlightedAnswer.ChoiceTitle.Length),
-                                    "",
-                                    highlightedAnswer.ChoiceDescription,
+                                highlightedAnswer.ChoiceTitle,
+                                new string('-', highlightedAnswer.ChoiceTitle.Length > ConsoleWrapper.WindowWidth ? ConsoleWrapper.WindowWidth - 4 : highlightedAnswer.ChoiceTitle.Length),
+                                "",
+                                highlightedAnswer.ChoiceDescription,
                                 }
                             );
                             InfoBoxColor.WriteInfoBox(infoRenderer.ToString());
@@ -374,7 +362,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                 InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Failed to initialize the selection input:") + $" {ex.Message}");
             }
             ScreenTools.UnsetCurrent(selectionScreen);
-            return HighlightedAnswer;
+            return [.. SelectedAnswers];
         }
 
     }

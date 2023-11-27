@@ -25,8 +25,8 @@ using System.Collections;
 using UnitsNet;
 using FluentFTP.Helpers;
 using KS.ConsoleBase.Interactive;
-using KS.ConsoleBase.Inputs.Styles;
 using KS.Misc.Reflection;
+using KS.ConsoleBase.Inputs.Styles.Infobox;
 
 namespace Nitrocid.Extras.UnitConv.Interactives
 {

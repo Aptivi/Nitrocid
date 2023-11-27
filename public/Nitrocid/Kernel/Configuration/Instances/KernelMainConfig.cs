@@ -41,7 +41,6 @@ using KS.Drivers.Network;
 using KS.Drivers.Filesystem;
 using KS.Drivers.Encryption;
 using KS.Drivers.Regexp;
-using KS.ConsoleBase.Inputs.Styles;
 using KS.ConsoleBase.Writers.MiscWriters;
 using KS.ConsoleBase.Writers.FancyWriters.Tools;
 using Terminaux.Colors;
@@ -60,6 +59,7 @@ using KS.Kernel.Time.Timezones;
 using System.Linq;
 using KS.Kernel.Debugging.RemoteDebug.RemoteChat;
 using KS.Files.Paths;
+using KS.ConsoleBase.Inputs.Styles.Choice;
 
 namespace KS.Kernel.Configuration.Instances
 {

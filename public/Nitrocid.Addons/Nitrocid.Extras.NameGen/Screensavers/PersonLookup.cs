@@ -25,7 +25,7 @@ using KS.Kernel.Time.Renderers;
 using KS.Misc.Screensaver;
 using Terminaux.Colors;
 using Namer;
-using KS.ConsoleBase.Inputs.Styles;
+using KS.ConsoleBase.Inputs.Styles.Infobox;
 
 namespace Nitrocid.Extras.NameGen.Screensavers
 {

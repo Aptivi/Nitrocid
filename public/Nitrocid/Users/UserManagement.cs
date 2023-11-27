@@ -22,7 +22,6 @@ using System.Collections.Generic;
 using System.Linq;
 using KS.Drivers;
 using KS.Drivers.Encryption;
-using KS.Files;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;

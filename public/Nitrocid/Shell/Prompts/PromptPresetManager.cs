@@ -21,7 +21,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Inputs.Styles;
+using KS.ConsoleBase.Inputs.Styles.Selection;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;

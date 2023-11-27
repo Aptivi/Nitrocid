@@ -666,7 +666,7 @@
                 "Variable": "DefaultChoiceOutputType",
                 "IsEnumeration": true,
                 "EnumerationInternal": true,
-                "Enumeration": "ConsoleBase.Inputs.Styles.ChoiceOutputType",
+                "Enumeration": "ConsoleBase.Inputs.Styles.Choice.ChoiceOutputType",
                 "EnumerationZeroBased": true,
                 "Description": "Default choice output type"
             },

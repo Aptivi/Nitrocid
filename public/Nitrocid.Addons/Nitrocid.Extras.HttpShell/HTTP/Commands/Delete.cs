@@ -21,10 +21,10 @@ using System;
 using KS.ConsoleBase.Colors;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
-using KS.ConsoleBase.Inputs.Styles;
 using KS.Misc.Text;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using Nitrocid.Extras.HttpShell.Tools;
+using KS.ConsoleBase.Inputs.Styles.Choice;
 
 namespace Nitrocid.Extras.HttpShell.HTTP.Commands
 {

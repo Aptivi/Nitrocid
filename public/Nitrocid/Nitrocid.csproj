@@ -56,7 +56,7 @@
     <NitrocidModAPIVersionMajor>3.0.25</NitrocidModAPIVersionMajor>
 
     <!-- Increment NitrocidModAPIVersionChangeset every time there is a breaking change or an API addition in the N-KS API. -->
-    <NitrocidModAPIVersionChangeset>343</NitrocidModAPIVersionChangeset>
+    <NitrocidModAPIVersionChangeset>344</NitrocidModAPIVersionChangeset>
 
     <!-- To be installed to the file version -->
     <NitrocidModAPIVersion>$(NitrocidModAPIVersionMajor).$(NitrocidModAPIVersionChangeset)</NitrocidModAPIVersion>
@@ -175,8 +175,11 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
+  <!-- KS GRILO boot metadata End -->
+  
+  <!-- KS Misc properties -->
   <ItemGroup>
     <Folder Include="Drivers\RNG\Bases\References\" />
   </ItemGroup>
-  <!-- KS GRILO boot metadata End -->
+  <!-- KS Misc properties End -->
 </Project>

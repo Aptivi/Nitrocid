@@ -42,8 +42,8 @@ using KS.Files.Extensions;
 using KS.Files.Operations.Querying;
 using KS.Files.Operations.Printing;
 using Terminaux.Sequences.Tools;
-using KS.ConsoleBase.Inputs.Styles;
 using KS.Files.Paths;
+using KS.ConsoleBase.Inputs.Styles.Infobox;
 
 namespace KS.Misc.Interactives
 {

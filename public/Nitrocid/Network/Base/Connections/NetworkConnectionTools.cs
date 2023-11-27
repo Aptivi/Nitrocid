@@ -18,7 +18,6 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Inputs.Styles;
 using KS.ConsoleBase.Inputs;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
@@ -30,6 +29,7 @@ using System.Linq;
 using KS.Kernel.Threading;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Network.Base.SpeedDial;
+using KS.ConsoleBase.Inputs.Styles.Selection;
 
 namespace KS.Network.Base.Connections
 {

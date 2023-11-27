@@ -27,7 +27,7 @@ using KS.Kernel.Configuration;
 using KS.Languages;
 using KS.Misc.Text;
 
-namespace KS.ConsoleBase.Inputs.Styles
+namespace KS.ConsoleBase.Inputs.Styles.Choice
 {
     /// <summary>
     /// Choice style for input module

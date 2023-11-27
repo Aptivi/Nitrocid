@@ -34,7 +34,7 @@ using KS.Misc.Screensaver;
 using System.Linq;
 using KS.ConsoleBase.Writers.FancyWriters;
 
-namespace KS.ConsoleBase.Inputs.Styles
+namespace KS.ConsoleBase.Inputs.Styles.Infobox
 {
     /// <summary>
     /// Info box writer with selection and color support

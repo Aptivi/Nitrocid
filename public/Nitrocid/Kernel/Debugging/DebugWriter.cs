@@ -22,7 +22,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using KS.Drivers;
-using KS.Files;
 using KS.Files.Operations.Querying;
 using KS.Files.Paths;
 using KS.Kernel.Configuration;

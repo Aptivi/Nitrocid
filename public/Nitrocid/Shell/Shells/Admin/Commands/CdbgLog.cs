@@ -21,7 +21,6 @@ using System;
 using System.IO;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Files;
 using KS.Files.Paths;
 using KS.Kernel;
 using KS.Kernel.Debugging;

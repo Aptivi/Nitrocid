@@ -22,7 +22,6 @@ using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Exceptions;
-using KS.Files;
 using KS.Files.Folders;
 using KS.Files.Operations;
 using KS.Files.Paths;

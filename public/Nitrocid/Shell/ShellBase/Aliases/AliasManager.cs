@@ -23,7 +23,6 @@ using System.Data;
 using System.Linq;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Files;
 using KS.Files.Operations;
 using KS.Files.Paths;
 using KS.Kernel.Debugging;

@@ -18,7 +18,6 @@
 //
 
 using System.IO;
-using KS.Files;
 using KS.Files.Paths;
 using KS.Misc.Text.Probers.Motd;
 using KS.Misc.Text.Probers.Placeholder;

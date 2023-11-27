@@ -18,6 +18,7 @@
 //
 
 using KS.Files;
+using KS.Files.Paths;
 using KS.Kernel.Configuration.Settings.KeyInputs;
 using Newtonsoft.Json;
 using System;
