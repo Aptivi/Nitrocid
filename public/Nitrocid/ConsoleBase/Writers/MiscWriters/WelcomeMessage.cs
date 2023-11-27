@@ -19,7 +19,7 @@
 
 using Figletize;
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Inputs.Styles.Infobox;
+using KS.ConsoleBase.Inputs.Styles.InfoboxTitled;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Drivers.RNG;
@@ -148,7 +148,11 @@ namespace KS.ConsoleBase.Writers.MiscWriters
 
             // Show development disclaimer
             if (SplashManager.EnableSplash)
-                InfoBoxColor.WriteInfoBoxKernelColor($"{message}\n\n" + Translate.DoTranslation("To dismiss forever, enable \"Development notice acknowledged\" in the kernel settings. Press any key to continue."), KernelColorType.DevelopmentWarning);
+                InfoBoxTitledColor.WriteInfoBoxTitledKernelColor(
+                    Translate.DoTranslation("Development notice"),
+                    $"{message}\n\n" + Translate.DoTranslation("To dismiss forever, enable \"Development notice acknowledged\" in the kernel settings. Press any key to continue.")
+                    , KernelColorType.DevelopmentWarning
+                );
             else
                 TextWriterColor.WriteKernelColor($"* {message}", true, KernelColorType.DevelopmentWarning);
 #endif
