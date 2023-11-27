@@ -58,6 +58,18 @@ namespace KS.Misc.Reflection
         }
 
         /// <summary>
+        /// Randomizes the array by shuffling elements, irrespective of the type, using <see cref="Random.Shuffle{T}(T[])"/>
+        /// </summary>
+        /// <typeparam name="T">Target type. It's not necessarily an integer.</typeparam>
+        /// <param name="array">Target array to sort randomly</param>
+        /// <returns>A new array containing elements that are shuffled.</returns>
+        public static T[] RandomizeArraySystem<T>(this T[] array)
+        {
+            Random.Shared.Shuffle(array);
+            return array;
+        }
+
+        /// <summary>
         /// Sorts the byte numbers
         /// </summary>
         /// <returns>Sorted array of byte numbers</returns>
