@@ -514,6 +514,20 @@ namespace Nitrocid.Tests.Misc.Text
             string TargetString = "First \"Second Third\" Fourth";
             var TargetArray = TargetString.SplitEncloseDoubleQuotes();
             TargetArray.Length.ShouldBe(3);
+            TargetArray[1].ShouldBe("Second Third");
+        }
+
+        /// <summary>
+        /// Tests splitting a string with double quotes enclosed without releasing them
+        /// </summary>
+        [Test]
+        [Description("Querying")]
+        public void TestSplitEncloseDoubleQuotesNoRelease()
+        {
+            string TargetString = "First \"Second Third\" Fourth";
+            var TargetArray = TargetString.SplitEncloseDoubleQuotesNoRelease();
+            TargetArray.Length.ShouldBe(3);
+            TargetArray[1].ShouldBe("\"Second Third\"");
         }
 
         /// <summary>
