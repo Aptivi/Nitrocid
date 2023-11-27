@@ -1295,7 +1295,10 @@ namespace KS.Drivers.Filesystem
             {
                 string FilePath = array[i];
                 var entryColor = KernelColorTools.GetColor(KernelColorType.ListEntry);
-                var valueColor = KernelColorTools.GetColor(KernelColorType.ListValue);
+                var valueColor =
+                    PrintLineNumbers ?
+                    KernelColorTools.GetColor(KernelColorType.ListValue) :
+                    KernelColorTools.GetColor(KernelColorType.NeutralText);
 
                 if (array.Length > 1)
                     builder.AppendLine(FilePath);
@@ -1309,11 +1312,19 @@ namespace KS.Drivers.Filesystem
                 else
                 {
                     var Contents = Reading.ReadContents(FilePath);
-                    for (int ContentIndex = 0; ContentIndex <= Contents.Length - 1; ContentIndex++)
+                    if (PrintLineNumbers)
                     {
-                        if (PrintLineNumbers)
+                        for (int ContentIndex = 0; ContentIndex <= Contents.Length - 1; ContentIndex++)
+                        {
                             builder.Append(TextTools.FormatString("{0}{1,4}: ", entryColor.VTSequenceForeground, ContentIndex + 1));
-                        builder.AppendLine($"{valueColor.VTSequenceForeground}{Contents[ContentIndex]}");
+                            builder.AppendLine($"{valueColor.VTSequenceForeground}{Contents[ContentIndex]}");
+                        }
+                    }
+                    else
+                    {
+                        builder.Append(valueColor.VTSequenceForeground);
+                        for (int ContentIndex = 0; ContentIndex <= Contents.Length - 1; ContentIndex++)
+                            builder.AppendLine(Contents[ContentIndex]);
                     }
                 }
                 if (i != array.Length - 1)
