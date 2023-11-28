@@ -488,4 +488,11 @@
   <data name="NewLineSplitMacOS9LiteralUsageAltCodeFixTitle" xml:space="preserve">
     <value>Use TextTools.SplitNewLinesOld()</value>
   </data>
+
+  <!--
+      NewLineSplitOld usage code fix
+  -->
+  <data name="NewLineSplitOldUsageCodeFixTitle" xml:space="preserve">
+    <value>Use TextTools.SplitNewLines()</value>
+  </data>
 </root>

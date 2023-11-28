@@ -1006,6 +1006,33 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to TextTools.SplitNewLines() is able to correctly split text with Mac OS 9 newline characters and mixed new line characters, while TextTools.SplitNewLinesOld() can&apos;t split such strings properly..
+        /// </summary>
+        internal static string NewLineSplitOldUsageAnalyzerDescription {
+            get {
+                return ResourceManager.GetString("NewLineSplitOldUsageAnalyzerDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Caller uses TextTools.SplitNewLinesOld() instead of TextTools.SplitNewLines().
+        /// </summary>
+        internal static string NewLineSplitOldUsageAnalyzerMessageFormat {
+            get {
+                return ResourceManager.GetString("NewLineSplitOldUsageAnalyzerMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use TextTools.SplitNewLines() instead of TextTools.SplitNewLinesOld().
+        /// </summary>
+        internal static string NewLineSplitOldUsageAnalyzerTitle {
+            get {
+                return ResourceManager.GetString("NewLineSplitOldUsageAnalyzerTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to TextTools.SplitNewLines() simplifies the readability of the split by new lines function..
         /// </summary>
         internal static string NewLineSplitWindowsLiteralUsageAnalyzerDescription {

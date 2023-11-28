@@ -741,4 +741,17 @@
   <data name="NewLineSplitMacOS9LiteralUsageAnalyzerDescription" xml:space="preserve">
     <value>TextTools.SplitNewLines() simplifies the readability of the split by new lines function.</value>
   </data>
+
+  <!--
+      NewLineSplitOld usage analyzer
+  -->
+  <data name="NewLineSplitOldUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use TextTools.SplitNewLines() instead of TextTools.SplitNewLinesOld()</value>
+  </data>
+  <data name="NewLineSplitOldUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses TextTools.SplitNewLinesOld() instead of TextTools.SplitNewLines()</value>
+  </data>
+  <data name="NewLineSplitOldUsageAnalyzerDescription" xml:space="preserve">
+    <value>TextTools.SplitNewLines() is able to correctly split text with Mac OS 9 newline characters and mixed new line characters, while TextTools.SplitNewLinesOld() can't split such strings properly.</value>
+  </data>
 </root>
