@@ -288,7 +288,7 @@ namespace KS.Drivers.Console
         public virtual void SetCursorPosition(int left, int top)
         {
             if (!IsDumb)
-                SystemConsole.Write(CsiSequences.GenerateCsiCursorPosition(left + 1, top + 1));
+                SystemConsole.SetCursorPosition(left, top);
             _moved = true;
         }
 
