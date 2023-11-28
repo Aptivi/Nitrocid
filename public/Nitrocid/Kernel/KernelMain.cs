@@ -77,81 +77,90 @@ namespace KS.Kernel
         /// </summary>
         internal static void Main(string[] Args)
         {
-            // Set main thread name
-            Thread.CurrentThread.Name = "Main Nitrocid Kernel Thread";
-
-            // Show help prior to starting the kernel if help is passed
-            if (ArgumentParse.IsArgumentPassed(Args, "help"))
+            try
             {
-                // Kernel arguments
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Available kernel arguments:"), true, KernelColorType.ListTitle);
-                ArgumentHelpPrint.ShowArgsHelp();
-                ConsoleExtensions.ResetColors();
-                return;
-            }
+                // Set main thread name
+                Thread.CurrentThread.Name = "Main Nitrocid Kernel Thread";
 
-            // This is a kernel entry point
-            while (!PowerManager.KernelShutdown)
+                // Show help prior to starting the kernel if help is passed
+                if (ArgumentParse.IsArgumentPassed(Args, "help"))
+                {
+                    // Kernel arguments
+                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Available kernel arguments:"), true, KernelColorType.ListTitle);
+                    ArgumentHelpPrint.ShowArgsHelp();
+                    ConsoleExtensions.ResetColors();
+                    return;
+                }
+
+                // This is a kernel entry point
+                while (!PowerManager.KernelShutdown)
+                {
+                    try
+                    {
+                        EnvironmentTools.ExecuteEnvironment(Args);
+                    }
+                    catch (KernelException icde) when (icde.ExceptionType == KernelExceptionType.InsaneConsoleDetected)
+                    {
+                        ConsoleWrapper.WriteLine(icde.Message);
+                        PowerManager.KernelShutdown = true;
+                    }
+                    catch (KernelErrorException kee)
+                    {
+                        DebugWriter.WriteDebugStackTrace(kee);
+                        KernelEntry.SafeMode = false;
+                    }
+                    catch (Exception ex)
+                    {
+                        KernelPanic.KernelError(KernelErrorLevel.U, true, 5, Translate.DoTranslation("Kernel environment error:") + $" {ex.Message}", ex);
+                    }
+                    finally
+                    {
+                        // Reset everything to their initial state
+                        if (!PowerManager.hardShutdown)
+                        {
+                            KernelInitializers.ResetEverything();
+
+                            // Clear the console
+                            KernelColorTools.LoadBack();
+                        }
+
+                        // Always switch back to the main environment
+                        if (EnvironmentTools.resetEnvironment)
+                        {
+                            EnvironmentTools.resetEnvironment = false;
+                            EnvironmentTools.ResetEnvironment();
+                        }
+                    }
+                }
+
+                // If "No APM" is enabled, simply print the text
+                if (PowerManager.SimulateNoAPM)
+                    InfoBoxColor.WriteInfoBox(Translate.DoTranslation("It's now safe to turn off your computer."));
+            }
+            catch (Exception ex)
             {
-                try
-                {
-                    EnvironmentTools.ExecuteEnvironment(Args);
-                }
-                catch (KernelException icde) when (icde.ExceptionType == KernelExceptionType.InsaneConsoleDetected)
-                {
-                    ConsoleWrapper.WriteLine(icde.Message);
-                    PowerManager.KernelShutdown = true;
-                }
-                catch (KernelErrorException kee)
-                {
-                    DebugWriter.WriteDebugStackTrace(kee);
-                    KernelEntry.SafeMode = false;
-                }
-                catch (Exception ex)
-                {
-                    KernelPanic.KernelError(KernelErrorLevel.U, true, 5, Translate.DoTranslation("Kernel environment error:") + $" {ex.Message}", ex);
-                }
-                finally
-                {
-                    // Reset everything to their initial state
-                    if (!PowerManager.hardShutdown)
-                    {
-                        KernelInitializers.ResetEverything();
-
-                        // Clear the console
-                        KernelColorTools.LoadBack();
-                    }
-
-                    // Always switch back to the main environment
-                    if (EnvironmentTools.resetEnvironment)
-                    {
-                        EnvironmentTools.resetEnvironment = false;
-                        EnvironmentTools.ResetEnvironment();
-                    }
-                }
+                InfoBoxColor.WriteInfoBoxKernelColor(Translate.DoTranslation("Nitrocid KS has detected a problem and it has been shut down.") + $" {ex.Message}", KernelColorType.Error);
             }
+            finally
+            {
+                // Load main buffer
+                if (!KernelPlatform.IsOnWindows() && ConsoleExtensions.UseAltBuffer && ConsoleExtensions.HasSetAltBuffer && !PowerManager.hardShutdown)
+                    ConsoleExtensions.ShowMainBuffer();
 
-            // If "No APM" is enabled, simply print the text
-            if (PowerManager.SimulateNoAPM)
-                InfoBoxColor.WriteInfoBox(Translate.DoTranslation("It's now safe to turn off your computer."));
+                // Reset colors and clear the console
+                if (!PowerManager.hardShutdown)
+                    ConsoleExtensions.ResetAll();
+                else
+                    ConsoleExtensions.ResetColors();
 
-            // Load main buffer
-            if (!KernelPlatform.IsOnWindows() && ConsoleExtensions.UseAltBuffer && ConsoleExtensions.HasSetAltBuffer && !PowerManager.hardShutdown)
-                ConsoleExtensions.ShowMainBuffer();
+                // Reset cursor state and dispose handlers
+                ConsoleWrapper.CursorVisible = true;
+                PowerSignalHandlers.DisposeHandlers();
 
-            // Reset colors and clear the console
-            if (!PowerManager.hardShutdown)
-                ConsoleExtensions.ResetAll();
-            else
-                ConsoleExtensions.ResetColors();
-
-            // Reset cursor state and dispose handlers
-            ConsoleWrapper.CursorVisible = true;
-            PowerSignalHandlers.DisposeHandlers();
-
-            // Check to see if we're restarting Nitrocid with elevated permissions
-            if (PowerManager.elevating && KernelPlatform.IsOnWindows() && !WindowsUserTools.IsAdministrator())
-                PowerManager.ElevateSelf();
+                // Check to see if we're restarting Nitrocid with elevated permissions
+                if (PowerManager.elevating && KernelPlatform.IsOnWindows() && !WindowsUserTools.IsAdministrator())
+                    PowerManager.ElevateSelf();
+            }
         }
     }
 }
