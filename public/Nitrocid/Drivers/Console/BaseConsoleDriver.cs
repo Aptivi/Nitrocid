@@ -251,8 +251,13 @@ namespace KS.Drivers.Console
                     KernelColorTools.LoadBack();
                 else
                 {
-                    SystemConsole.Write(CsiSequences.GenerateCsiEraseInDisplay(2));
-                    SetCursorPosition(0, 0);
+                    if (KernelPlatform.IsOnWindows())
+                        SystemConsole.Clear();
+                    else
+                    {
+                        SystemConsole.Write(CsiSequences.GenerateCsiEraseInDisplay(2));
+                        SetCursorPosition(0, 0);
+                    }
                 }
             }
         }
