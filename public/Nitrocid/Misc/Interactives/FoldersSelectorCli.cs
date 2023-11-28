@@ -543,7 +543,10 @@ namespace KS.Misc.Interactives
 
         private static void PreviewSelected()
         {
-            string selected = $"  - {string.Join("\n  - ", SelectedFolders)}";
+            string selected =
+                SelectedFolders.Length > 0 ?
+                $"  - {string.Join("\n  - ", SelectedFolders)}" :
+                Translate.DoTranslation("No selected folders.");
             InfoBoxColor.WriteInfoBoxColorBack(selected, BoxForegroundColor, BoxBackgroundColor);
         }
     }

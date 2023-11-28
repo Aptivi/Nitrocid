@@ -523,7 +523,10 @@ namespace KS.Misc.Interactives
 
         private static void PreviewSelected()
         {
-            string selected = $"  - {string.Join("\n  - ", SelectedFiles)}";
+            string selected =
+                SelectedFiles.Length > 0 ?
+                $"  - {string.Join("\n  - ", SelectedFiles)}" :
+                Translate.DoTranslation("No selected files.");
             InfoBoxColor.WriteInfoBoxColorBack(selected, BoxForegroundColor, BoxBackgroundColor);
         }
     }
