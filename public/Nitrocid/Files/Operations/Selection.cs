@@ -105,5 +105,31 @@ namespace KS.Files.Operations
             string selected = FolderSelectorCli.SelectedFolder;
             return selected;
         }
+
+        /// <summary>
+        /// Opens the folder selector
+        /// </summary>
+        /// <returns>A list of selected folders, or an empty list if not selected</returns>
+        public static string[] SelectFolders() =>
+            SelectFolders(PathsManagement.HomePath);
+
+        /// <summary>
+        /// Opens the folder selector
+        /// </summary>
+        /// <param name="path">Target path to open</param>
+        /// <returns>A list of selected folders, or an empty list if not selected</returns>
+        public static string[] SelectFolders(string path)
+        {
+            var selector = new FoldersSelectorCli()
+            {
+                firstPanePath =
+                    string.IsNullOrEmpty(path) ?
+                    PathsManagement.HomePath :
+                    FilesystemTools.NeutralizePath(path)
+            };
+            InteractiveTuiTools.OpenInteractiveTui(selector);
+            string[] selected = FoldersSelectorCli.SelectedFolders;
+            return selected;
+        }
     }
 }

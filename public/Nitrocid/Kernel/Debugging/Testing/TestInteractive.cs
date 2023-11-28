@@ -134,6 +134,7 @@ namespace KS.Kernel.Debugging.Testing
             { "TestFileSelector",                           new TestFileSelector() },
             { "TestFilesSelector",                          new TestFilesSelector() },
             { "TestFolderSelector",                         new TestFolderSelector() },
+            { "TestFoldersSelector",                        new TestFoldersSelector() },
         };
         internal static Dictionary<TestSection, string> sections = new()
         {
