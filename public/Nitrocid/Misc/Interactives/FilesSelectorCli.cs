@@ -159,7 +159,8 @@ namespace KS.Misc.Interactives
             {
                 FileSystemEntry file = (FileSystemEntry)item;
                 bool isDirectory = file.Type == FileSystemEntryType.Directory;
-                return $" [{(isDirectory ? "/" : "*")}] {file.BaseEntry.Name}";
+                bool isSelected = SelectedFiles.Contains(file.FilePath);
+                return $" [{(isDirectory ? "/" : "*")}] [{(isSelected ? "+" : " ")}] {file.BaseEntry.Name}";
             }
             catch (Exception ex)
             {
