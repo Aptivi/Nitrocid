@@ -134,9 +134,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.Extras.ChatGpt", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.Legacy.InxiNet", "public\Nitrocid.Addons\Nitrocid.Legacy.InxiNet\Nitrocid.Legacy.InxiNet.csproj", "{AA1B126D-557F-4A23-8F09-875078BE700D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nitrocid.Extras.SqlShell", "public\Nitrocid.Addons\Nitrocid.Extras.SqlShell\Nitrocid.Extras.SqlShell.csproj", "{0206B299-10B2-4FD4-B21A-14395AEE2E64}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.Extras.SqlShell", "public\Nitrocid.Addons\Nitrocid.Extras.SqlShell\Nitrocid.Extras.SqlShell.csproj", "{0206B299-10B2-4FD4-B21A-14395AEE2E64}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nitrocid.Extras.JsonShell", "public\Nitrocid.Addons\Nitrocid.Extras.JsonShell\Nitrocid.Extras.JsonShell.csproj", "{71F19E75-8C3A-4224-94AD-6419E77F8670}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.Extras.JsonShell", "public\Nitrocid.Addons\Nitrocid.Extras.JsonShell\Nitrocid.Extras.JsonShell.csproj", "{71F19E75-8C3A-4224-94AD-6419E77F8670}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nitrocid.Extras.Docking", "public\Nitrocid.Addons\Nitrocid.Extras.Docking\Nitrocid.Extras.Docking.csproj", "{C83EB703-1DE7-48C9-9406-1CFA5140235F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -336,6 +338,10 @@ Global
 		{71F19E75-8C3A-4224-94AD-6419E77F8670}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{71F19E75-8C3A-4224-94AD-6419E77F8670}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{71F19E75-8C3A-4224-94AD-6419E77F8670}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C83EB703-1DE7-48C9-9406-1CFA5140235F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C83EB703-1DE7-48C9-9406-1CFA5140235F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C83EB703-1DE7-48C9-9406-1CFA5140235F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C83EB703-1DE7-48C9-9406-1CFA5140235F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -394,6 +400,7 @@ Global
 		{AA1B126D-557F-4A23-8F09-875078BE700D} = {B60F276A-FE12-4001-916E-080344ED1FD9}
 		{0206B299-10B2-4FD4-B21A-14395AEE2E64} = {B60F276A-FE12-4001-916E-080344ED1FD9}
 		{71F19E75-8C3A-4224-94AD-6419E77F8670} = {B60F276A-FE12-4001-916E-080344ED1FD9}
+		{C83EB703-1DE7-48C9-9406-1CFA5140235F} = {B60F276A-FE12-4001-916E-080344ED1FD9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {424D8E7A-CFEB-40AE-A79C-437D603177FD}

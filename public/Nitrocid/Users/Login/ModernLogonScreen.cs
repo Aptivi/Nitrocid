@@ -87,6 +87,7 @@ namespace KS.Users.Login
                         return Translate.DoTranslation("Failed to get the latest news.");
                     }
                 }
+
                 string headlineStr = UpdateHeadline();
                 while (true)
                 {

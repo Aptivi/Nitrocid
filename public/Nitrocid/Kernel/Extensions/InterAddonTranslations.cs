@@ -45,6 +45,7 @@ namespace KS.Kernel.Extensions
             { KnownAddons.ExtrasColorConvert,           /* Localizable */ "Extras - Color Converter" },
             { KnownAddons.ExtrasContacts,               /* Localizable */ "Extras - Contacts" },
             { KnownAddons.ExtrasDictionary,             /* Localizable */ "Extras - Dictionary" },
+            { KnownAddons.ExtrasDocking,                /* Localizable */ "Extras - Docking" },
             { KnownAddons.ExtrasForecast,               /* Localizable */ "Extras - Forecast" },
             { KnownAddons.ExtrasFtpShell,               /* Localizable */ "Extras - FTP Shell" },
             { KnownAddons.ExtrasGitShell,               /* Localizable */ "Extras - Git Shell" },

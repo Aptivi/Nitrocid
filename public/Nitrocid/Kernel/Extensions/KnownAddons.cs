@@ -81,6 +81,10 @@ namespace KS.Kernel.Extensions
         /// </summary>
         ExtrasDictionary,
         /// <summary>
+        /// Docking Extras addon
+        /// </summary>
+        ExtrasDocking,
+        /// <summary>
         /// Forecast Extras addon
         /// </summary>
         ExtrasForecast,

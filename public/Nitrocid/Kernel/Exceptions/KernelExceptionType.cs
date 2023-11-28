@@ -468,5 +468,9 @@ namespace KS.Kernel.Exceptions
         /// The kernel journaling operation failed to perform the required task.
         /// </summary>
         Journaling,
+        /// <summary>
+        /// The system docking operation failed to perform the required task.
+        /// </summary>
+        Docking,
     }
 }

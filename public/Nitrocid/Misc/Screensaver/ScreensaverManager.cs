@@ -326,6 +326,7 @@ namespace KS.Misc.Screensaver
                 return;
             if (InSaver)
                 ScreensaverDisplayer.BailFromScreensaver();
+            DebugWriter.WriteDebug(DebugLevel.I, "Placing screensaver lock...");
             noLock = true;
         }
 
@@ -336,6 +337,7 @@ namespace KS.Misc.Screensaver
         {
             if (!scrnTimeoutEnabled)
                 return;
+            DebugWriter.WriteDebug(DebugLevel.I, "Releasing screensaver lock...");
             noLock = false;
         }
 

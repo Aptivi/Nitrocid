@@ -21,32 +21,35 @@ using KS.Kernel.Extensions;
 using KS.Shell.ShellBase.Arguments;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
-using Nitrocid.Extras.InternetRadioInfo.Commands;
+using Nitrocid.Extras.Docking.Commands;
+using Nitrocid.Extras.Docking.Dock;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Reflection;
 
-namespace Nitrocid.Extras.InternetRadioInfo
+namespace Nitrocid.Extras.Docking
 {
-    internal class InternetRadioInfoInit : IAddon
+    internal class DockingInit : IAddon
     {
         private readonly Dictionary<string, CommandInfo> addonCommands = new()
         {
-            { "netfminfo",
-                new CommandInfo("netfminfo", /* Localizable */ "Gets information about your online radio station",
+            { "dock",
+                new CommandInfo("dock", /* Localizable */ "Shows you a full-screen overview about a selected dock view to be able to use it as an info panel",
                     [
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "hostname"),
-                            new CommandArgumentPart(true, "port"),
+                            new CommandArgumentPart(true, "dockName", new()
+                            {
+                                AutoCompleter = (_) => DockTools.GetDockScreenNames()
+                            }),
                         })
-                    ], new NetFmInfoCommand())
+                    ], new DockCommand())
             },
         };
 
         string IAddon.AddonName =>
-            InterAddonTranslations.GetAddonName(KnownAddons.ExtrasInternetRadioInfo);
+            InterAddonTranslations.GetAddonName(KnownAddons.ExtrasDocking);
 
         AddonType IAddon.AddonType => AddonType.Optional;
 
