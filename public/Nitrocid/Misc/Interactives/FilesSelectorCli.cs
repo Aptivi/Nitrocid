@@ -85,6 +85,8 @@ namespace KS.Misc.Interactives
                 (info, _) => Hash((FileSystemEntry)info)),
             new InteractiveTuiBinding(/* Localizable */ "Verify...", ConsoleKey.F10,
                 (info, _) => Verify((FileSystemEntry)info)),
+            new InteractiveTuiBinding(/* Localizable */ "Preview Selected", ConsoleKey.Spacebar,
+                (_, _) => PreviewSelected()),
             new InteractiveTuiBinding(/* Localizable */ "Preview", ConsoleKey.P,
                 (info, _) => Preview((FileSystemEntry)info)),
         ];
@@ -147,7 +149,7 @@ namespace KS.Misc.Interactives
                 Status = Translate.DoTranslation(ex.Message);
             }
             if (selectedFiles.Count > 0)
-                Status = $"{Translate.DoTranslation("Selected")}: {selectedFiles.Count} - {Status}";
+                Status = $"{Translate.DoTranslation("Selected")}: {selectedFiles.Count} - {Translate.DoTranslation("Press SPACE for more info")} - {Status}";
         }
 
         /// <inheritdoc/>
@@ -516,6 +518,12 @@ namespace KS.Misc.Interactives
             string preview = FileContentPrinter.RenderContents(currentFileSystemEntry.FilePath);
             string filtered = VtSequenceTools.FilterVTSequences(preview);
             InfoBoxColor.WriteInfoBoxColorBack(filtered, BoxForegroundColor, BoxBackgroundColor);
+        }
+
+        private static void PreviewSelected()
+        {
+            string selected = $"  - {string.Join("\n  - ", SelectedFiles)}";
+            InfoBoxColor.WriteInfoBoxColorBack(selected, BoxForegroundColor, BoxBackgroundColor);
         }
     }
 }
