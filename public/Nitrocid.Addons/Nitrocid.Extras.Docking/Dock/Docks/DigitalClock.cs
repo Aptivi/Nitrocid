@@ -36,6 +36,7 @@ using KS.Network.RSS;
 using KS.Users.Login;
 using System;
 using System.Text;
+using Terminaux.Colors;
 using Terminaux.Sequences.Builder.Types;
 
 namespace Nitrocid.Extras.Docking.Dock.Docks
@@ -82,15 +83,24 @@ namespace Nitrocid.Extras.Docking.Dock.Docks
                 }
             }
 
+            // Now, get a headline
             string headlineStr = UpdateHeadline();
+
+            // Main loop
             while (!ConsoleWrapper.KeyAvailable)
             {
                 // Print the time
                 string timeStr = TimeDateRenderers.RenderTime(FormatType.Short);
                 if (timeStr != cachedTimeStr)
                 {
+                    // Get a random color for the time
+                    var clockColor = KernelColorTools.GetRandomColor(ColorType.TrueColor);
+
+                    // Clear the buffered parts
                     screen.RemoveBufferedParts();
                     var part = new ScreenPart();
+
+                    // Populate the new part
                     part.AddDynamicText(() =>
                     {
                         var display = new StringBuilder();
@@ -101,7 +111,7 @@ namespace Nitrocid.Extras.Docking.Dock.Docks
                         var figFont = FigletTools.GetFigletFont(TextTools.DefaultFigletFontName);
                         int figHeight = FigletTools.GetFigletHeight(timeStr, figFont) / 2;
                         display.Append(
-                            KernelColorTools.GetColor(KernelColorType.Stage).VTSequenceForeground +
+                            clockColor.VTSequenceForeground +
                             CenteredFigletTextColor.RenderCenteredFiglet(figFont, timeStr)
                         );
 
