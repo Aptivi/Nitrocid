@@ -41,6 +41,7 @@ using Terminaux.Reader;
 using KS.Kernel.Power;
 using KS.ConsoleBase.Buffered;
 using KS.Misc.Splash;
+using KS.ConsoleBase.Inputs;
 
 namespace KS.Misc.Screensaver
 {
@@ -63,7 +64,6 @@ namespace KS.Misc.Screensaver
         internal static int scrnTimeout = 300000;
         internal static string defSaverName = "matrixbleed";
         internal static bool LockMode;
-        internal static bool ShellSuppressLockMode;
         internal static bool inSaver;
         internal static bool screenRefresh;
         internal static bool ScrnTimeReached;
@@ -218,7 +218,7 @@ namespace KS.Misc.Screensaver
         /// </summary>
         public static void LockScreen()
         {
-            ShellSuppressLockMode = LockMode = true;
+            LockMode = true;
             try
             {
                 // Show the screensaver and wait for input
@@ -228,8 +228,17 @@ namespace KS.Misc.Screensaver
 
                 // Bail from screensaver and optionally prompt for password
                 ScreensaverDisplayer.BailFromScreensaver();
+
+                // When getting out of the lock screen by pressing ENTER when lockscreen is invoked, we need to make sure
+                // that we don't write the shell prompt twice.
+                if (ConsoleWrapper.KeyAvailable)
+                    Input.DetectKeypressUnsafe();
+
+                // Now, show the password prompt
                 if (PasswordLock)
                     Login.ShowPasswordPrompt(UserManagement.CurrentUser.Username);
+
+                // Render the current screen
                 if (ScreenTools.CurrentScreen is not null)
                     ScreenTools.Render();
             }
