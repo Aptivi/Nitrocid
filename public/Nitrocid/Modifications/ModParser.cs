@@ -38,6 +38,7 @@ using KS.Files.Operations.Querying;
 using Newtonsoft.Json;
 using KS.Languages.Decoy;
 using KS.Files.Paths;
+using KS.Security.Signing;
 
 namespace KS.Modifications
 {
@@ -75,13 +76,9 @@ namespace KS.Modifications
                 // Mod is a dynamic DLL
                 try
                 {
-                    // Load the mod assembly
-                    var modAsm = Assembly.LoadFrom(ModPath + modFile);
-
-                    // Check the public key
-                    var modAsmName = new AssemblyName(modAsm.FullName);
-                    var modAsmPublicKey = modAsmName.GetPublicKeyToken();
-                    if (modAsmPublicKey is null || modAsmPublicKey.Length == 0)
+                    // Check for signing
+                    bool signed = AssemblySigning.IsStronglySigned(ModPath + modFile);
+                    if (!signed)
                     {
                         if (ModManager.AllowUntrustedMods)
                             SplashReport.ReportProgressWarning(Translate.DoTranslation("The mod is not strongly signed. It may contain untrusted code."));
@@ -90,6 +87,7 @@ namespace KS.Modifications
                     }
 
                     // Check to see if the DLL is actually a mod
+                    var modAsm = Assembly.LoadFrom(ModPath + modFile);
                     var script = GetModInstance(modAsm) ??
                         throw new KernelException(KernelExceptionType.InvalidMod, Translate.DoTranslation("The modfile is invalid."));
 

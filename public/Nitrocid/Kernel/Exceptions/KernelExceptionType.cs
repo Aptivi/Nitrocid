@@ -472,5 +472,9 @@ namespace KS.Kernel.Exceptions
         /// The system docking operation failed to perform the required task.
         /// </summary>
         Docking,
+        /// <summary>
+        /// The security operation failed to perform the required task.
+        /// </summary>
+        Security,
     }
 }

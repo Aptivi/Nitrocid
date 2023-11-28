@@ -143,6 +143,7 @@ namespace KS.Kernel.Exceptions
                 { KernelExceptionType.Console,                          Translate.DoTranslation("The console operation failed to perform the required task.") },
                 { KernelExceptionType.Journaling,                       Translate.DoTranslation("The kernel journaling operation failed to perform the required task.") },
                 { KernelExceptionType.Docking,                          Translate.DoTranslation("The system docking operation failed to perform the required task.") },
+                { KernelExceptionType.Security,                         Translate.DoTranslation("The security operation failed to perform the required task.") },
             };
 
         internal static string GetFinalExceptionMessage(KernelExceptionType exceptionType, string message, Exception e, params object[] vars)
