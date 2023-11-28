@@ -45,7 +45,8 @@ namespace Nitrocid.Extras.Calendar
                         new CommandArgumentInfo(
                         [
                             new CommandArgumentPart(true, "culture")
-                        ], [
+                        ],
+                        [
                             new SwitchInfo("date", /* Localizable */ "Shows just the date", new SwitchOptions()
                             {
                                 ConflictsWith = ["full", "time"],

@@ -45,7 +45,8 @@ namespace Nitrocid.Extras.JsonShell.Json
                         new CommandArgumentInfo(
                         [
                             new CommandArgumentPart(true, "jsonValue")
-                        ], [
+                        ],
+                        [
                             new SwitchInfo("parentPath", /* Localizable */ "Specifies the parent path", new SwitchOptions()
                             {
                                 ArgumentsRequired = true
@@ -72,7 +73,8 @@ namespace Nitrocid.Extras.JsonShell.Json
                             new CommandArgumentPart(true, "propValue1"),
                             new CommandArgumentPart(false, "propValue2"),
                             new CommandArgumentPart(false, "propValue3...")
-                        ], [
+                        ],
+                        [
                             new SwitchInfo("parentProperty", /* Localizable */ "Specifies the parent property", new SwitchOptions()
                             {
                                 ArgumentsRequired = true
@@ -88,7 +90,8 @@ namespace Nitrocid.Extras.JsonShell.Json
                         [
                             new CommandArgumentPart(true, "propName"),
                             new CommandArgumentPart(true, "propValue")
-                        ], [
+                        ],
+                        [
                             new SwitchInfo("parentProperty", /* Localizable */ "Specifies the parent property", new SwitchOptions()
                             {
                                 ArgumentsRequired = true
@@ -104,7 +107,8 @@ namespace Nitrocid.Extras.JsonShell.Json
                         [
                             new CommandArgumentPart(true, "arrayName"),
                             new CommandArgumentPart(true, "valueInArray")
-                        ], [
+                        ],
+                        [
                             new SwitchInfo("parentProperty", /* Localizable */ "Specifies the parent property", new SwitchOptions()
                             {
                                 ArgumentsRequired = true
@@ -123,7 +127,8 @@ namespace Nitrocid.Extras.JsonShell.Json
                                 IsNumeric = true
                             }),
                             new CommandArgumentPart(true, "valueInArray")
-                        ], [
+                        ],
+                        [
                             new SwitchInfo("parentProperty", /* Localizable */ "Specifies the parent property", new SwitchOptions()
                             {
                                 ArgumentsRequired = true
@@ -162,7 +167,8 @@ namespace Nitrocid.Extras.JsonShell.Json
                         new CommandArgumentInfo(
                         [
                             new CommandArgumentPart(true, "propertyName")
-                        ], [
+                        ],
+                        [
                             new SwitchInfo("parentProperty", /* Localizable */ "Specifies the parent property", new SwitchOptions()
                             {
                                 ArgumentsRequired = true
@@ -174,7 +180,8 @@ namespace Nitrocid.Extras.JsonShell.Json
             { "jsoninfo",
                 new CommandInfo("jsoninfo", /* Localizable */ "Shows information about the JSON file",
                     [
-                        new CommandArgumentInfo(new[] {
+                        new CommandArgumentInfo(
+                        [
                             new SwitchInfo("simplified", /* Localizable */ "Don't show individual properties", new SwitchOptions()
                             {
                                 AcceptsValues = false
@@ -183,7 +190,7 @@ namespace Nitrocid.Extras.JsonShell.Json
                             {
                                 AcceptsValues = false
                             })
-                        })
+                        ])
                     ], new JsonInfoCommand(), CommandFlags.Wrappable)
             },
 
@@ -213,7 +220,8 @@ namespace Nitrocid.Extras.JsonShell.Json
                         new CommandArgumentInfo(
                         [
                             new CommandArgumentPart(true, "objectName")
-                        ], [
+                        ],
+                        [
                             new SwitchInfo("parentProperty", /* Localizable */ "Specifies the parent property", new SwitchOptions()
                             {
                                 ArgumentsRequired = true
@@ -231,7 +239,8 @@ namespace Nitrocid.Extras.JsonShell.Json
                             {
                                 IsNumeric = true
                             })
-                        ], [
+                        ],
+                        [
                             new SwitchInfo("parentProperty", /* Localizable */ "Specifies the parent property", new SwitchOptions()
                             {
                                 ArgumentsRequired = true
@@ -243,7 +252,8 @@ namespace Nitrocid.Extras.JsonShell.Json
             { "save",
                 new CommandInfo("save", /* Localizable */ "Saves the JSON file",
                     [
-                        new CommandArgumentInfo(new[] {
+                        new CommandArgumentInfo(
+                        [
                             new SwitchInfo("b", /* Localizable */ "Beautified JSON", new SwitchOptions()
                             {
                                 ConflictsWith = ["m"],
@@ -254,7 +264,7 @@ namespace Nitrocid.Extras.JsonShell.Json
                                 ConflictsWith = ["b"],
                                 AcceptsValues = false
                             })
-                        })
+                        ])
                     ], new SaveCommand())
             },
 
@@ -264,7 +274,8 @@ namespace Nitrocid.Extras.JsonShell.Json
                         new CommandArgumentInfo(
                         [
                             new CommandArgumentPart(true, "jsonValue")
-                        ], [
+                        ],
+                        [
                             new SwitchInfo("parentPath", /* Localizable */ "Specifies the parent path", new SwitchOptions()
                             {
                                 ArgumentsRequired = true

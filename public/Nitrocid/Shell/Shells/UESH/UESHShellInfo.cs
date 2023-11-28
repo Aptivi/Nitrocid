@@ -41,6 +41,8 @@ namespace KS.Shell.Shells.UESH
     /// </summary>
     internal class UESHShellInfo : BaseShellInfo, IShellInfo
     {
+        private static readonly string[] hardwareTypes = ["HDD", "CPU", "GPU", "RAM", "all"];
+
         /// <summary>
         /// List of commands
         /// </summary>
@@ -134,7 +136,8 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(
                         [
                             new CommandArgumentPart(true, "file"),
-                        ], [
+                        ],
+                        [
                             new SwitchInfo("lines", /* Localizable */ "Prints the line numbers alongside the contents", new SwitchOptions()
                             {
                                 ConflictsWith = ["nolines"],
@@ -198,7 +201,8 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(
                         [
                             new CommandArgumentPart(true, "file"),
-                        ], [
+                        ],
+                        [
                             new SwitchInfo("waitforunlock", /* Localizable */ "Waits until the file or the folder is unlocked", new SwitchOptions()
                             {
                                 AcceptsValues = false
@@ -257,7 +261,8 @@ namespace KS.Shell.Shells.UESH
                             new CommandArgumentPart(true, "input"),
                             new CommandArgumentPart(false, "answertitle1"),
                             new CommandArgumentPart(false, "answertitle2 ..."),
-                        ], [
+                        ],
+                        [
                             new SwitchInfo("o", /* Localizable */ "One line choice style", new SwitchOptions()
                             {
                                 ConflictsWith = ["t", "a", "m"],
@@ -334,7 +339,7 @@ namespace KS.Shell.Shells.UESH
                             new CommandArgumentPart(true, "input"),
                             new CommandArgumentPart(true, "input2"),
                             new CommandArgumentPart(false, "input3 ..."),
-                        ], [], true)
+                        ], true)
                     ], new CombineStrCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
 
@@ -357,7 +362,8 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(
                         [
                             new CommandArgumentPart(true, "textfile"),
-                        ], [
+                        ],
+                        [
                             new SwitchInfo("w", /* Localizable */ "Converts the line endings to the Windows format", new SwitchOptions()
                             {
                                 ConflictsWith = ["u", "m"],
@@ -513,7 +519,7 @@ namespace KS.Shell.Shells.UESH
                             {
                                 IsNumeric = true
                             }),
-                        ], [], true)
+                        ], true)
                     ], new DiskInfoCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
 
@@ -556,7 +562,8 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(
                         [
                             new CommandArgumentPart(true, "file"),
-                        ], [
+                        ],
+                        [
                             new SwitchInfo("text", /* Localizable */ "Forces text mode", new SwitchOptions()
                             {
                                 ConflictsWith = ["sql", "json", "hex"],
@@ -656,7 +663,8 @@ namespace KS.Shell.Shells.UESH
                         [
                             new CommandArgumentPart(true, "file"),
                             new CommandArgumentPart(true, "directory"),
-                        ], [
+                        ],
+                        [
                             new SwitchInfo("recursive", /* Localizable */ "Searches for a file recursively", new SwitchOptions()
                             {
                                 AcceptsValues = false
@@ -676,7 +684,8 @@ namespace KS.Shell.Shells.UESH
                         [
                             new CommandArgumentPart(true, "fileRegex"),
                             new CommandArgumentPart(true, "directory"),
-                        ], [
+                        ],
+                        [
                             new SwitchInfo("recursive", /* Localizable */ "Searches for a file recursively", new SwitchOptions()
                             {
                                 AcceptsValues = false
@@ -758,7 +767,7 @@ namespace KS.Shell.Shells.UESH
                             {
                                 AutoCompleter = (_) => ExtensionHandlerTools.GetExtensionHandlers().Select((h) => h.Extension).ToArray()
                             }),
-                        ], [], true)
+                        ], true)
                     ], new GetDefaultExtHandlerCommand())
             },
 
@@ -778,7 +787,7 @@ namespace KS.Shell.Shells.UESH
                             {
                                 AutoCompleter = (_) => ExtensionHandlerTools.GetExtensionHandlers().Select((h) => h.Extension).ToArray()
                             }),
-                        ], [], true)
+                        ], true)
                     ], new GetExtHandlersCommand())
             },
 
@@ -791,7 +800,7 @@ namespace KS.Shell.Shells.UESH
                             {
                                 AutoCompleter = (_) => EncodingDriverTools.GetEncodingDriverNames()
                             }),
-                        ], [], true)
+                        ], true)
                     ], new GetKeyIvCommand())
             },
 
@@ -809,7 +818,7 @@ namespace KS.Shell.Shells.UESH
                         {
                             new CommandArgumentPart(true, "HardwareType", new CommandArgumentPartOptions()
                             {
-                                AutoCompleter = (_) => new[] { "HDD", "CPU", "GPU", "RAM", "all" }
+                                AutoCompleter = (_) => hardwareTypes
                             })
                         })
                     ], new HwInfoCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
@@ -864,7 +873,7 @@ namespace KS.Shell.Shells.UESH
                         [
                             new CommandArgumentPart(true, "jsonfile"),
                             new CommandArgumentPart(true, "output"),
-                        ], [], true)
+                        ], true)
                     ], new JsonBeautifyCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
 
@@ -875,7 +884,7 @@ namespace KS.Shell.Shells.UESH
                         [
                             new CommandArgumentPart(true, "jsonfile"),
                             new CommandArgumentPart(true, "output"),
-                        ], [], true)
+                        ], true)
                     ], new JsonMinifyCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
 
@@ -910,7 +919,7 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(
                         [
                             new CommandArgumentPart(true, "script"),
-                        ], [], true)
+                        ], true)
                     ], new LintScriptCommand())
             },
 
@@ -920,7 +929,8 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(
                         [
                             new CommandArgumentPart(false, "directory"),
-                        ], [
+                        ],
+                        [
                             new SwitchInfo("showdetails", /* Localizable */ "Shows the file details in the list", new SwitchOptions()
                             {
                                 AcceptsValues = false
@@ -1004,7 +1014,7 @@ namespace KS.Shell.Shells.UESH
                             {
                                 IsNumeric = true
                             }),
-                        ], [], true)
+                        ], true)
                     ], new LsDiskPartsCommand(), CommandFlags.Strict | CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
 
@@ -1035,7 +1045,7 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(
                         [
                             new CommandArgumentPart(true, "directory"),
-                        ], [], true)
+                        ], true)
                     ], new MdCommand())
             },
 
@@ -1045,7 +1055,7 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(
                         [
                             new CommandArgumentPart(true, "file"),
-                        ], [], true)
+                        ], true)
                     ], new MkFileCommand())
             },
 
@@ -1103,7 +1113,7 @@ namespace KS.Shell.Shells.UESH
                             {
                                 IsNumeric = true
                             }),
-                        ], [], true)
+                        ], true)
                     ], new PartInfoCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
 
@@ -1113,7 +1123,7 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(
                         [
                             new CommandArgumentPart(true, "fileName"),
-                        ], [], true)
+                        ], true)
                     ], new PathFindCommand())
             },
 
@@ -1148,7 +1158,8 @@ namespace KS.Shell.Shells.UESH
                         [
                             new CommandArgumentPart(true, "Address1"),
                             new CommandArgumentPart(false, "Address2 ..."),
-                        ], [
+                        ],
+                        [
                             new SwitchInfo("times", /* Localizable */ "Specifies number of times to ping", new SwitchOptions()
                             {
                                 ArgumentsRequired = true,
@@ -1371,7 +1382,7 @@ namespace KS.Shell.Shells.UESH
                             new CommandArgumentPart(true, "input"),
                             new CommandArgumentPart(false, "answertitle1"),
                             new CommandArgumentPart(false, "answertitle2 ..."),
-                        ], [], true)
+                        ], true)
                     ], new SelectCommand())
             },
 
@@ -1419,7 +1430,7 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(
                         [
                             new CommandArgumentPart(true, "value"),
-                        ], [], true)
+                        ], true)
                     ], new SetCommand())
             },
 
@@ -1466,7 +1477,7 @@ namespace KS.Shell.Shells.UESH
                             new CommandArgumentPart(true, "value"),
                             new CommandArgumentPart(false, "value2"),
                             new CommandArgumentPart(false, "value3 ..."),
-                        ], [], true)
+                        ], true)
                     ], new SetRangeCommand())
             },
 
@@ -1490,7 +1501,8 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(
                         [
                             new CommandArgumentPart(true, "timezone"),
-                        ], [
+                        ],
+                        [
                             new SwitchInfo("all", /* Localizable */ "Shows all the time zones", new SwitchOptions()
                             {
                                 OptionalizeLastRequiredArguments = 1,
@@ -1550,7 +1562,8 @@ namespace KS.Shell.Shells.UESH
                             }),
                             new CommandArgumentPart(true, "file"),
                             new CommandArgumentPart(false, "outputFile"),
-                        ], [
+                        ],
+                        [
                             new SwitchInfo("relative", /* Localizable */ "Uses relative path instead of absolute", new SwitchOptions()
                             {
                                 AcceptsValues = false
@@ -1570,7 +1583,8 @@ namespace KS.Shell.Shells.UESH
                             }),
                             new CommandArgumentPart(true, "dir"),
                             new CommandArgumentPart(false, "outputFile"),
-                        ], [
+                        ],
+                        [
                             new SwitchInfo("relative", /* Localizable */ "Uses relative path instead of absolute", new SwitchOptions()
                             {
                                 AcceptsValues = false
@@ -1653,7 +1667,8 @@ namespace KS.Shell.Shells.UESH
                         [
                             new CommandArgumentPart(true, "zipfile"),
                             new CommandArgumentPart(false, "path"),
-                        ], [
+                        ],
+                        [
                             new SwitchInfo("createdir", /* Localizable */ "Creates a directory that contains the contents of the ZIP file", new SwitchOptions()
                             {
                                 AcceptsValues = false
@@ -1756,7 +1771,8 @@ namespace KS.Shell.Shells.UESH
                         [
                             new CommandArgumentPart(true, "zipfile"),
                             new CommandArgumentPart(true, "path"),
-                        ], [
+                        ],
+                        [
                             new SwitchInfo("fast", /* Localizable */ "Fast compression", new SwitchOptions()
                             {
                                 ConflictsWith = ["nocomp"],
@@ -1791,5 +1807,6 @@ namespace KS.Shell.Shells.UESH
 
         public override PromptPresetBase CurrentPreset =>
             PromptPresetManager.GetAllPresetsFromShell(ShellType)[PromptPresetManager.CurrentPresets[ShellType]];
+
     }
 }

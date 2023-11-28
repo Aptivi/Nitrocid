@@ -73,7 +73,8 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
                         [
                             new CommandArgumentPart(true, "entry"),
                             new CommandArgumentPart(false, "where")
-                        ], [
+                        ],
+                        [
                             new SwitchInfo("absolute", /* Localizable */ "Indicates that the target path is absolute")
                         ])
                     ], new GetCommand())

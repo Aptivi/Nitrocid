@@ -43,7 +43,8 @@ namespace Nitrocid.Extras.Forecast
                         [
                             new CommandArgumentPart(true, "CityID/CityName"),
                             new CommandArgumentPart(false, "apikey"),
-                        ], [
+                        ],
+                        [
                             new SwitchInfo("list", /* Localizable */ "Shows all the available cities", new SwitchOptions()
                             {
                                 OptionalizeLastRequiredArguments = 2,

@@ -143,7 +143,8 @@ namespace Nitrocid.Extras.FtpShell.FTP
                         new CommandArgumentInfo(
                         [
                             new CommandArgumentPart(false, "dir")
-                        ], [
+                        ],
+                        [
                             new SwitchInfo("showdetails", /* Localizable */ "Shows the file details in the list", new SwitchOptions()
                             {
                                 AcceptsValues = false
@@ -162,7 +163,8 @@ namespace Nitrocid.Extras.FtpShell.FTP
                         new CommandArgumentInfo(
                         [
                             new CommandArgumentPart(false, "dir")
-                        ], [
+                        ],
+                        [
                             new SwitchInfo("showdetails", /* Localizable */ "Shows the file details in the list", new SwitchOptions()
                             {
                                 AcceptsValues = false

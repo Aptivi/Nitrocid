@@ -106,7 +106,8 @@ namespace Nitrocid.Extras.RssShell.RSS
                         new CommandArgumentInfo(
                         [
                             new CommandArgumentPart(true, "phrase")
-                        ], [
+                        ],
+                        [
                             new SwitchInfo("t", /* Localizable */ "Search for title", new SwitchOptions()
                             {
                                 AcceptsValues = false

@@ -102,7 +102,8 @@ namespace Nitrocid.Extras.SftpShell.SFTP
                         new CommandArgumentInfo(
                         [
                             new CommandArgumentPart(false, "dir")
-                        ], [
+                        ],
+                        [
                             new SwitchInfo("showdetails", /* Localizable */ "Shows the details of the files and folders", new SwitchOptions()
                             {
                                 AcceptsValues = false
@@ -121,7 +122,8 @@ namespace Nitrocid.Extras.SftpShell.SFTP
                         new CommandArgumentInfo(
                         [
                             new CommandArgumentPart(false, "dir")
-                        ], [
+                        ],
+                        [
                             new SwitchInfo("showdetails", /* Localizable */ "Shows the details of the files and folders", new SwitchOptions()
                             {
                                 AcceptsValues = false

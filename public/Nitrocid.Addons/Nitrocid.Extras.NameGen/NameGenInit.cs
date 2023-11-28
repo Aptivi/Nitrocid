@@ -46,7 +46,8 @@ namespace Nitrocid.Extras.NameGen
                             new CommandArgumentPart(false, "term"),
                             new CommandArgumentPart(false, "nameprefix"),
                             new CommandArgumentPart(false, "namesuffix"),
-                        ], [
+                        ],
+                        [
                             new SwitchInfo("t", /* Localizable */ "Generate nametags (umlauts are currently not supported)", new SwitchOptions()
                             {
                                 AcceptsValues = false
@@ -77,7 +78,7 @@ namespace Nitrocid.Extras.NameGen
                             new CommandArgumentPart(false, "term"),
                             new CommandArgumentPart(false, "surnameprefix"),
                             new CommandArgumentPart(false, "surnamesuffix"),
-                        ], [], true)
+                        ], true)
                     ], new FindSurnameCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
             { "genname",
@@ -93,7 +94,8 @@ namespace Nitrocid.Extras.NameGen
                             new CommandArgumentPart(false, "namesuffix"),
                             new CommandArgumentPart(false, "surnameprefix"),
                             new CommandArgumentPart(false, "surnamesuffix"),
-                        ], [
+                        ],
+                        [
                             new SwitchInfo("t", /* Localizable */ "Generate nametags (umlauts are currently not supported)", new SwitchOptions()
                             {
                                 AcceptsValues = false
