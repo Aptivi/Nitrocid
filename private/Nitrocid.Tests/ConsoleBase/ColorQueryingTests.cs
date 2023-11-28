@@ -167,6 +167,19 @@ namespace Nitrocid.Tests.ConsoleBase
         /// </summary>
         [Test]
         [Description("Querying")]
+        public void TestGetRandomColorDefault()
+        {
+            Color color = Color.Empty;
+            Should.NotThrow(() => color = KernelColorTools.GetRandomColor());
+            color.ShouldNotBeNull();
+            color.Type.ShouldBe(ColorType.TrueColor);
+        }
+
+        /// <summary>
+        /// Tests getting random color
+        /// </summary>
+        [Test]
+        [Description("Querying")]
         public void TestGetRandomColor()
         {
             var types = Enum.GetNames(typeof(ColorType));
