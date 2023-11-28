@@ -843,8 +843,18 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(
                         [
                             new CommandArgumentPart(true, "question"),
-                        ], [], true)
+                        ], true)
                     ], new InputCommand())
+            },
+
+            { "inputpass",
+                new CommandInfo("inputpass", /* Localizable */ "Allows user to enter input as password",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "question"),
+                        ], true)
+                    ], new InputPassCommand())
             },
 
             { "jsonbeautify",

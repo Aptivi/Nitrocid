@@ -23,17 +23,17 @@ using KS.Shell.ShellBase.Commands;
 namespace KS.Shell.Shells.UESH.Commands
 {
     /// <summary>
-    /// This command will ask the user a question, and the user has to write the answer.
+    /// This command will ask the user a question, and the user has to write the password.
     /// </summary>
     /// <remarks>
-    /// This command can be used in shell scripts to ask the user a specified question, which has to be answered using text. It will then pass the answer to the specified $variable.
+    /// This command can be used in shell scripts to ask the user a specified question, which has to be answered using text. It will then pass the password in plain text to the specified $variable.
     /// </remarks>
-    class InputCommand : BaseCommand, ICommand
+    class InputPassCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            string Answer = InputStyle.PromptInput(parameters.ArgumentsList[0]);
+            string Answer = InputStyle.PromptInputPassword(parameters.ArgumentsList[0]);
             variableValue = Answer;
             return 0;
         }

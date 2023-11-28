@@ -53,5 +53,29 @@ namespace KS.ConsoleBase.Inputs.Styles
             }
         }
 
+        /// <summary>
+        /// Prompts user for password (answer the question with your own answers)
+        /// </summary>
+        public static string PromptInputPassword(string Question)
+        {
+            while (true)
+            {
+                // Variables
+                string Answer;
+                DebugWriter.WriteDebug(DebugLevel.I, "Question: {0}", Question);
+
+                // Ask a question
+                TextWriterColor.WriteKernelColor(Question, false, KernelColorType.Question);
+                KernelColorTools.SetConsoleColor(KernelColorType.Input);
+
+                // Wait for an answer
+                Answer = Input.ReadLineNoInput();
+                KernelColorTools.SetConsoleColor(KernelColorType.NeutralText);
+                DebugWriter.WriteDebug(DebugLevel.I, "Answer: {0}", Answer);
+
+                return Answer;
+            }
+        }
+
     }
 }
