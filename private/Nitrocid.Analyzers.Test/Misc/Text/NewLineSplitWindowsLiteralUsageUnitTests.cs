@@ -22,6 +22,9 @@ using System.Threading.Tasks;
 using VerifyCS = Nitrocid.Analyzers.Test.CSharpCodeFixVerifier<
     Nitrocid.Analyzers.Misc.Text.NewLineSplitWindowsLiteralUsageAnalyzer,
     Nitrocid.Analyzers.Misc.Text.NewLineSplitWindowsLiteralUsageCodeFixProvider>;
+using VerifyCSAlt = Nitrocid.Analyzers.Test.CSharpCodeFixVerifier<
+    Nitrocid.Analyzers.Misc.Text.NewLineSplitWindowsLiteralUsageAnalyzer,
+    Nitrocid.Analyzers.Misc.Text.NewLineSplitWindowsLiteralUsageAltCodeFixProvider>;
 
 namespace Nitrocid.Analyzers.Test.Misc.Text
 {
@@ -110,6 +113,55 @@ namespace Nitrocid.Analyzers.Test.Misc.Text
                 """;
 
             await VerifyCS.VerifyCodeFixAsync(test, fixtest);
+        }
+
+        [TestMethod]
+        public async Task TestFixThisDiagnosticAlt()
+        {
+            var test = """
+                using System;
+                using System.Collections.Generic;
+                using System.Linq;
+                using System.Text;
+                using System.Threading.Tasks;
+                using System.Diagnostics;
+
+                namespace ConsoleApplication1
+                {
+                    class MyMod
+                    {   
+                        public static void Main()
+                        {
+                            string var = "Hello\r\nWorld!";
+                            var split = [|var.Split("\r\n")|];
+                        }
+                    }
+                }
+                """;
+
+            var fixtest = """
+                using System;
+                using System.Collections.Generic;
+                using System.Linq;
+                using System.Text;
+                using System.Threading.Tasks;
+                using System.Diagnostics;
+                using KS.Misc.Text;
+
+                namespace ConsoleApplication1
+                {
+                    class MyMod
+                    {   
+                        public static void Main()
+                        {
+                            string var = "Hello\r\nWorld!";
+                            var split = var.SplitNewLinesOld();
+                        }
+                    }
+                }
+                """;
+
+            await VerifyCSAlt.VerifyCodeFixAsync(test, fixtest);
         }
     }
 }

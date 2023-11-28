@@ -453,4 +453,39 @@
   <data name="NewLineSplitMacOS9LiteralUsageCodeFixTitle" xml:space="preserve">
     <value>Use TextTools.SplitNewLines()</value>
   </data>
+  
+  <!--
+      NewLineSplitLinuxLiteral usage code fix
+  -->
+  <data name="NewLineSplitLinuxLiteralUsageAltCodeFixTitle" xml:space="preserve">
+    <value>Use TextTools.SplitNewLinesOld()</value>
+  </data>
+  
+  <!--
+      NewLineSplitWindowsLiteral usage code fix
+  -->
+  <data name="NewLineSplitWindowsLiteralUsageAltCodeFixTitle" xml:space="preserve">
+    <value>Use TextTools.SplitNewLinesOld()</value>
+  </data>
+  
+  <!--
+      NewLineSplitEnvironmentNewLine usage code fix
+  -->
+  <data name="NewLineSplitEnvironmentNewLineUsageAltCodeFixTitle" xml:space="preserve">
+    <value>Use TextTools.SplitNewLinesOld()</value>
+  </data>
+  
+  <!--
+      NewLineSplitCharManagerNewLine usage code fix
+  -->
+  <data name="NewLineSplitCharManagerNewLineUsageAltCodeFixTitle" xml:space="preserve">
+    <value>Use TextTools.SplitNewLinesOld()</value>
+  </data>
+
+  <!--
+      NewLineSplitMacOS9Literal usage code fix
+  -->
+  <data name="NewLineSplitMacOS9LiteralUsageAltCodeFixTitle" xml:space="preserve">
+    <value>Use TextTools.SplitNewLinesOld()</value>
+  </data>
 </root>

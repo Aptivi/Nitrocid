@@ -340,11 +340,29 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Use TextTools.SplitNewLinesOld().
+        /// </summary>
+        internal static string NewLineSplitCharManagerNewLineUsageAltCodeFixTitle {
+            get {
+                return ResourceManager.GetString("NewLineSplitCharManagerNewLineUsageAltCodeFixTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Use TextTools.SplitNewLines().
         /// </summary>
         internal static string NewLineSplitCharManagerNewLineUsageCodeFixTitle {
             get {
                 return ResourceManager.GetString("NewLineSplitCharManagerNewLineUsageCodeFixTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use TextTools.SplitNewLinesOld().
+        /// </summary>
+        internal static string NewLineSplitEnvironmentNewLineUsageAltCodeFixTitle {
+            get {
+                return ResourceManager.GetString("NewLineSplitEnvironmentNewLineUsageAltCodeFixTitle", resourceCulture);
             }
         }
         
@@ -358,6 +376,15 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Use TextTools.SplitNewLinesOld().
+        /// </summary>
+        internal static string NewLineSplitLinuxLiteralUsageAltCodeFixTitle {
+            get {
+                return ResourceManager.GetString("NewLineSplitLinuxLiteralUsageAltCodeFixTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Use TextTools.SplitNewLines().
         /// </summary>
         internal static string NewLineSplitLinuxLiteralUsageCodeFixTitle {
@@ -367,11 +394,29 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Use TextTools.SplitNewLinesOld().
+        /// </summary>
+        internal static string NewLineSplitMacOS9LiteralUsageAltCodeFixTitle {
+            get {
+                return ResourceManager.GetString("NewLineSplitMacOS9LiteralUsageAltCodeFixTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Use TextTools.SplitNewLines().
         /// </summary>
         internal static string NewLineSplitMacOS9LiteralUsageCodeFixTitle {
             get {
                 return ResourceManager.GetString("NewLineSplitMacOS9LiteralUsageCodeFixTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use TextTools.SplitNewLinesOld().
+        /// </summary>
+        internal static string NewLineSplitWindowsLiteralUsageAltCodeFixTitle {
+            get {
+                return ResourceManager.GetString("NewLineSplitWindowsLiteralUsageAltCodeFixTitle", resourceCulture);
             }
         }
         
