@@ -32,8 +32,10 @@ using System.IO;
 #endif
 
 #if PACKAGEMANAGERBUILD
+#if !SPECIFIERREL
 using KS.Misc.Splash;
 using KS.Languages;
+#endif
 #endif
 
 namespace KS.Kernel.Updates

@@ -65,16 +65,26 @@
   <!-- KS General Information End -->
 
   <!-- KS Platform Information -->
+  <!--
+  
+    Note for constants: All Nitrocid flags should be defined by defining NitrocidFlags, not DefineConstants. Here's how you
+    define such flags: -p:NitrocidFlags=PACKAGEMANAGERBUILD
+    
+    Supported constants:
+      - PACKAGEMANAGERBUILD: Indicates that this build is a package manager build suitable for Launchpad PPA
+    
+  -->
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <DefineDebug>true</DefineDebug>
     <Optimize>false</Optimize>
     <DebugType>portable</DebugType>
-    <DefineConstants>SPECIFIERDEV;MILESTONESPECIFIERBETA</DefineConstants>
+    <DefineConstants>SPECIFIERDEV;MILESTONESPECIFIERBETA;$(NitrocidFlags.Replace(",",";"))</DefineConstants>
   </PropertyGroup>
+  
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <Optimize>true</Optimize>
     <DebugType>pdbonly</DebugType>
-    <DefineConstants>SPECIFIERREL</DefineConstants>
+    <DefineConstants>SPECIFIERREL;$(NitrocidFlags.Replace(",",";"))</DefineConstants>
   </PropertyGroup>
   <!-- KS Platform Information End -->
 
