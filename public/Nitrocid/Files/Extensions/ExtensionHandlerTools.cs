@@ -239,9 +239,7 @@ namespace KS.Files.Extensions
                 throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Extensions must start with the dot. Hint:") + $" .{extension}");
 
             // Set the handler
-            if (!defaultHandlers.ContainsKey(extension))
-                defaultHandlers.Add(extension, implementer);
-            else
+            if (!defaultHandlers.TryAdd(extension, implementer))
                 defaultHandlers[extension] = implementer;
         }
 
@@ -269,8 +267,7 @@ namespace KS.Files.Extensions
             customHandlers.Add(handler);
 
             // Check to see if the extension is found in the default handler list
-            if (!defaultHandlers.ContainsKey(extension))
-                defaultHandlers.Add(extension, implementer);
+            defaultHandlers.TryAdd(extension, implementer);
         }
 
         /// <summary>

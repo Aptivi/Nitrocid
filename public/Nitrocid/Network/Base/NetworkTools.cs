@@ -199,8 +199,7 @@ namespace KS.Network.Base
                     return false;
 
                 // Try to ping the connectivity check site
-                var status = NetworkTransfer.WClient.GetAsync("https://connectivitycheck.gstatic.com/generate_204").Result.StatusCode;
-                return status == HttpStatusCode.NoContent;
+                return IsInternetAvailableNoNetworkCheck();
             }
             catch
             {

@@ -71,11 +71,8 @@ namespace KS.Shell.ShellBase.Scripting
         public static void InitializeVariable(string var)
         {
             var = SanitizeVariableName(var);
-            if (!ShellVariables.ContainsKey(var))
-            {
-                ShellVariables.Add(var, "");
+            if (ShellVariables.TryAdd(var, ""))
                 DebugWriter.WriteDebug(DebugLevel.I, "Initialized variable {0}", var);
-            }
         }
 
         /// <summary>

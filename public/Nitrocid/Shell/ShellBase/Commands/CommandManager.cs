@@ -127,8 +127,7 @@ namespace KS.Shell.ShellBase.Commands
                     break;
                 string alias = aliasInfo.Alias;
                 var resolved = aliasInfo.TargetCommand;
-                if (!FinalCommands.ContainsKey(alias))
-                    FinalCommands.Add(alias, resolved);
+                FinalCommands.TryAdd(alias, resolved);
             }
 
             return FinalCommands;
@@ -347,8 +346,7 @@ namespace KS.Shell.ShellBase.Commands
 
             // Now, add the command to the addon list
             DebugWriter.WriteDebug(DebugLevel.I, "Adding command {0} for {1}...", command, ShellType);
-            if (!ShellManager.AvailableShells[ShellType].addonCommands.ContainsKey(command))
-                ShellManager.availableShells[ShellType].addonCommands.Add(command, commandBase);
+            ShellManager.AvailableShells[ShellType].addonCommands.TryAdd(command, commandBase);
             DebugWriter.WriteDebug(DebugLevel.I, "Registered {0}, ShellType: {1}", command, ShellType);
         }
 
