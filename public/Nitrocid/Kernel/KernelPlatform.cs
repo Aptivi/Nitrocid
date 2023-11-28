@@ -134,7 +134,9 @@ namespace KS.Kernel
         /// </summary>
         /// <returns>Returns a runtime identifier (win-x64 for example).</returns>
         public static string GetCurrentGenericRid() =>
-            $"{(IsOnWindows() ? "win" : IsOnMacOS() ? "osx" : IsOnUnix() ? "linux" : "freebsd")}-{RuntimeInformation.OSArchitecture.ToString().ToLower()}";
+            $"{(IsOnWindows() ? "win" : IsOnMacOS() ? "osx" : IsOnUnix() ? "linux" : "freebsd")}-" +
+            $"{(IsOnUnixMusl() ? "musl-" : "")}" +
+            $"{RuntimeInformation.OSArchitecture.ToString().ToLower()}";
 
         #region Interop
         [DllImport("libc", EntryPoint = "gnu_get_libc_version")]
