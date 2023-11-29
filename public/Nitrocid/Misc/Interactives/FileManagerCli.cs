@@ -415,8 +415,9 @@ namespace KS.Misc.Interactives
         private static void GoTo()
         {
             // Now, render the search box
-            string path = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a path or a full path to a local folder."), BoxForegroundColor, BoxBackgroundColor);
-            path = FilesystemTools.NeutralizePath(path, CurrentPane == 2 ? ((FileManagerCli)Instance).secondPanePath : ((FileManagerCli)Instance).firstPanePath);
+            string root = CurrentPane == 2 ? ((FileManagerCli)Instance).secondPanePath : ((FileManagerCli)Instance).firstPanePath;
+            string path = Selection.SelectFolder(root);
+            path = FilesystemTools.NeutralizePath(path, root);
             if (Checking.FolderExists(path))
             {
                 if (CurrentPane == 2)
