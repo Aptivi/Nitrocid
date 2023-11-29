@@ -172,7 +172,7 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
                 {
                     KernelColorTools.LoadBack(0);
                     SelectedColorInstance = ThemeStudioTools.SelectedColors[ThemeStudioTools.SelectedColors.Keys.ElementAt(response - 1)];
-                    string ColorWheelReturn = ColorWheel.InputForColor(SelectedColorInstance).PlainSequence;
+                    string ColorWheelReturn = ColorSelector.OpenColorSelector(SelectedColorInstance).PlainSequence;
                     ThemeStudioTools.SelectedColors[ThemeStudioTools.SelectedColors.Keys.ElementAt(response - 1)] = new Color(ColorWheelReturn);
                 }
             }
