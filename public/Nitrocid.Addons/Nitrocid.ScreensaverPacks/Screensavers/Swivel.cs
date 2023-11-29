@@ -276,9 +276,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 TimeSecsVertical += 0.1;
                 double calculatedHeight = Height * Math.Cos(FrequencyVertical * TimeSecsVertical) / 2;
                 CurrentPosVertical.Add((int)calculatedHeight);
-                if (calculatedHeight == Height / 2 && isSetVertical)
+                if ((int)calculatedHeight == Height / 2 && isSetVertical)
                     break;
-                if (!isSetVertical)
+                if (!isSetVertical && (int)calculatedHeight < Height / 2)
                     isSetVertical = true;
             }
 
@@ -290,9 +290,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 TimeSecsHorizontal += 0.1;
                 double calculatedWidth = Width * Math.Cos(FrequencyHorizontal * TimeSecsHorizontal) / 2;
                 CurrentPosHorizontal.Add((int)calculatedWidth);
-                if (calculatedWidth == Width / 2 && isSetHorizontal)
+                if ((int)calculatedWidth == Width / 2 && isSetHorizontal)
                     break;
-                if (!isSetHorizontal)
+                if (!isSetHorizontal && (int)calculatedWidth < Width / 2)
                     isSetHorizontal = true;
             }
 
