@@ -149,8 +149,7 @@ namespace KS.Misc.Splash.Splashes
             DebugWriter.WriteDebug(DebugLevel.I, "Splash closing...");
 
             if (context == SplashContext.Showcase ||
-                context == SplashContext.Preboot ||
-                context == SplashContext.Rebooting)
+                context == SplashContext.Preboot)
             {
                 delayRequired = false;
                 return builder.ToString();
@@ -211,7 +210,11 @@ namespace KS.Misc.Splash.Splashes
                 col.VTSequenceForeground +
                 CenteredTextColor.RenderCenteredOneLine(consoleY + 2, KernelReleaseInfo.ConsoleTitle)
             );
-            delayRequired = (context == SplashContext.ShuttingDown && PowerManager.DelayOnShutdown) || context != SplashContext.ShuttingDown;
+            delayRequired =
+                (context == SplashContext.ShuttingDown && PowerManager.DelayOnShutdown) ||
+                context != SplashContext.ShuttingDown && context != SplashContext.Rebooting;
+            if ((context == SplashContext.ShuttingDown || context == SplashContext.Rebooting) && PowerManager.BeepOnShutdown)
+                ConsoleWrapper.Beep();
             return builder.ToString();
         }
 
