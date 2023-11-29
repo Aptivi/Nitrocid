@@ -76,10 +76,13 @@ namespace KS.ConsoleBase.Colors
         /// <returns>An instance of Color to get the resulting color</returns>
         public static Color OpenColorSelector(Color initialColor)
         {
+#pragma warning disable CS0618
+            // This will be dealt with after Beta 3 release.
             if (!ConsoleExtensions.UseNewColorSelector)
                 return ColorWheel.InputForColor(initialColor);
+#pragma warning restore CS0618
 
-            // Initial color is selected
+                // Initial color is selected
             Color selectedColor = initialColor;
             ColorType type = initialColor.Type;
 
