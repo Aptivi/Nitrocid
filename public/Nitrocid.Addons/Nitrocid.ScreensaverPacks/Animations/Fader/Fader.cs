@@ -75,7 +75,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.Fader
                 CurrentColorBlueIn = (int)Math.Round(CurrentColorBlueIn + ThresholdBlue);
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Color in (R;G;B: {0};{1};{2})", CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn);
                 if (!ConsoleResizeListener.WasResized(false))
-                    TextWriterWhereColor.WriteWhereColorBack(Settings.FaderWrite, Left, Top, true, new Color(CurrentColorRedIn + ";" + CurrentColorGreenIn + ";" + CurrentColorBlueIn), new Color(ConsoleColors.Black));
+                    TextWriterWhereColor.WriteWhereColorBack(Settings.FaderWrite, Left, Top, true, new Color(CurrentColorRedIn + ";" + CurrentColorGreenIn + ";" + CurrentColorBlueIn), new Color(Settings.FaderBackgroundColor));
             }
 
             // Wait until fade out
@@ -94,7 +94,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.Fader
                 int CurrentColorBlueOut = (int)Math.Round(BlueColorNum - ThresholdBlue * CurrentStep);
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut);
                 if (!ConsoleResizeListener.WasResized(false))
-                    TextWriterWhereColor.WriteWhereColorBack(Settings.FaderWrite, Left, Top, true, new Color(CurrentColorRedOut + ";" + CurrentColorGreenOut + ";" + CurrentColorBlueOut), new Color(ConsoleColors.Black));
+                    TextWriterWhereColor.WriteWhereColorBack(Settings.FaderWrite, Left, Top, true, new Color(CurrentColorRedOut + ";" + CurrentColorGreenOut + ";" + CurrentColorBlueOut), new Color(Settings.FaderBackgroundColor));
             }
 
             // Reset resize sync
