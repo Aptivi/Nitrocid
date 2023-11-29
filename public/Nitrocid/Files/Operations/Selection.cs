@@ -50,7 +50,7 @@ namespace KS.Files.Operations
                     FilesystemTools.NeutralizePath(path)
             };
             InteractiveTuiTools.OpenInteractiveTui(selector);
-            string selected = FileSelectorCli.SelectedFile;
+            string selected = selector.selectedFile;
             return selected;
         }
 
@@ -76,7 +76,7 @@ namespace KS.Files.Operations
                     FilesystemTools.NeutralizePath(path)
             };
             InteractiveTuiTools.OpenInteractiveTui(selector);
-            string[] selected = FilesSelectorCli.SelectedFiles;
+            string[] selected = [.. selector.selectedFiles];
             return selected;
         }
 
@@ -102,7 +102,7 @@ namespace KS.Files.Operations
                     FilesystemTools.NeutralizePath(path)
             };
             InteractiveTuiTools.OpenInteractiveTui(selector);
-            string selected = FolderSelectorCli.SelectedFolder;
+            string selected = selector.selectedFolder;
             return selected;
         }
 
@@ -128,7 +128,7 @@ namespace KS.Files.Operations
                     FilesystemTools.NeutralizePath(path)
             };
             InteractiveTuiTools.OpenInteractiveTui(selector);
-            string[] selected = FoldersSelectorCli.SelectedFolders;
+            string[] selected = [.. selector.selectedFolders];
             return selected;
         }
     }

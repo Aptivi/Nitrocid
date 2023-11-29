@@ -32,7 +32,7 @@ namespace KS.ConsoleBase.Interactive
     /// </summary>
     public class BaseInteractiveTui : IInteractiveTui
     {
-        internal static BaseInteractiveTui instance = null;
+        internal static List<BaseInteractiveTui> instance = [];
         internal bool isExiting = false;
 
         /// <summary>
@@ -141,7 +141,9 @@ namespace KS.ConsoleBase.Interactive
         /// The interactive TUI instance
         /// </summary>
         public static BaseInteractiveTui Instance =>
-            instance;
+            instance.Count > 0 ?
+            instance[^1] :
+            null;
 
         /// <inheritdoc/>
         public virtual string GetEntryFromItem(object item) =>

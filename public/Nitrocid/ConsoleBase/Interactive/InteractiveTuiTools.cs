@@ -58,7 +58,7 @@ namespace KS.ConsoleBase.Interactive
             {
                 if (interactiveTui is null)
                     throw new KernelException(KernelExceptionType.InteractiveTui, Translate.DoTranslation("Please provide a base Interactive TUI class and try again."));
-                BaseInteractiveTui.instance = interactiveTui;
+                BaseInteractiveTui.instance.Add(interactiveTui);
 
                 // First, check to see if the interactive TUI has no data source
                 if (interactiveTui.PrimaryDataSource is null && interactiveTui.SecondaryDataSource is null ||
@@ -124,6 +124,10 @@ namespace KS.ConsoleBase.Interactive
                     crashReason = TextTools.FormatString(Translate.DoTranslation("The interactive TUI, {0}, has crashed for the following reason:"), interactiveTui.GetType().Name) + $" {ex.Message}";
                     DebugWriter.WriteDebug(DebugLevel.E, "Interactive TUI {0} crashed! {1}", interactiveTui.GetType().Name, ex.Message);
                     DebugWriter.WriteDebugStackTrace(ex);
+                }
+                finally
+                {
+                    BaseInteractiveTui.instance.Remove(interactiveTui);
                 }
                 ScreenTools.UnsetCurrent(screen);
 
