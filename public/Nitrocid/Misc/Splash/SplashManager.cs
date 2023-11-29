@@ -26,6 +26,7 @@ using System.Reflection;
 using System.Threading;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Buffered;
+using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs.Styles.Infobox;
 using KS.Files.Folders;
 using KS.Files.Instances;
@@ -333,36 +334,51 @@ namespace KS.Misc.Splash
         {
             if (EnableSplash)
             {
-                var closingPart = new ScreenPart();
                 bool delay = false;
-                splashScreen.RemoveBufferedParts();
-                currentContext = context;
-                splash.SplashClosing = true;
+                try
+                {
+                    var closingPart = new ScreenPart();
+                    splashScreen.RemoveBufferedParts();
+                    currentContext = context;
+                    splash.SplashClosing = true;
 
-                // We need to wait for the splash display thread to finish its work once SplashClosing is set, because some splashes, like PowerLine,
-                // actually do some operations that take a few milliseconds to finish what it's doing, and if we didn't wait here until the operations
-                // are done in the Display() function, we'd abruptly stop without waiting, causing race condition. If this happened, visual glitches
-                // manifest, which is not good.
-                SplashThread.Wait();
-                SplashThread.Stop();
-                if (showClosing)
-                    closingPart.AddDynamicText(() => splash.Closing(context, out delay));
-                else
-                    closingPart.AddDynamicText(() => InstalledSplashes["Blank"].EntryPoint.Closing(context, out delay));
-                ConsoleWrapper.CursorVisible = true;
-                splashScreen.AddBufferedPart(closingPart);
-                if (ScreenTools.CurrentScreen is not null)
-                    ScreenTools.Render();
+                    // We need to wait for the splash display thread to finish its work once SplashClosing is set, because some splashes, like PowerLine,
+                    // actually do some operations that take a few milliseconds to finish what it's doing, and if we didn't wait here until the operations
+                    // are done in the Display() function, we'd abruptly stop without waiting, causing race condition. If this happened, visual glitches
+                    // manifest, which is not good.
+                    SplashThread.Wait();
+                    SplashThread.Stop();
+                    if (showClosing)
+                        closingPart.AddDynamicText(() => splash.Closing(context, out delay));
+                    else
+                        closingPart.AddDynamicText(() => InstalledSplashes["Blank"].EntryPoint.Closing(context, out delay));
+                    splashScreen.AddBufferedPart(closingPart);
+                    if (ScreenTools.CurrentScreen is not null)
+                        ScreenTools.Render();
+                }
+                catch (Exception ex)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, $"Splash closing failed to display: {ex.Message}");
+                    DebugWriter.WriteDebugStackTrace(ex);
+                    InfoBoxColor.WriteInfoBoxKernelColor(Translate.DoTranslation("The closing splash has failed to display") + $".\n  - {ex.Message}", KernelColorType.Error);
+                }
+                finally
+                {
+                    // Reset the SplashClosing variable in case it needs to be open again. Some splashes don't do anything if they detect that the splash
+                    // screen is closing.
+                    splash.SplashClosing = false;
 
-                // Reset the SplashClosing variable in case it needs to be open again. Some splashes don't do anything if they detect that the splash
-                // screen is closing.
-                splash.SplashClosing = false;
-                SplashReport._InSplash = false;
-                ScreenTools.UnsetCurrent(splashScreen);
+                    // Reset the state
+                    SplashReport._InSplash = false;
+                    ScreenTools.UnsetCurrent(splashScreen);
 
-                // Wait for 3 seconds
-                if (delay)
-                    Thread.Sleep(3000);
+                    // Wait for 3 seconds
+                    if (delay)
+                        Thread.Sleep(3000);
+
+                    // Reset the cursor visibility
+                    ConsoleWrapper.CursorVisible = true;
+                }
             }
         }
 
