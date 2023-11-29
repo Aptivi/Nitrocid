@@ -19,8 +19,9 @@
 
 using KS.ConsoleBase;
 using KS.ConsoleBase.Inputs;
+using KS.Kernel.Debugging;
+using KS.Kernel.Extensions;
 using KS.Languages;
-using Microsoft.Diagnostics.Runtime;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -158,26 +159,18 @@ namespace KS.Kernel.Threading
         /// <returns>A dictionary containing thread names and addresses as keys and stack traces as values</returns>
         public static Dictionary<string, string[]> GetThreadBacktraces()
         {
-            var result = new Dictionary<string, string[]>();
-            var pid = Environment.ProcessId;
-            using var dataTarget = DataTarget.CreateSnapshotAndAttach(pid);
-            ClrInfo runtimeInfo = dataTarget.ClrVersions[0];
-            var runtime = runtimeInfo.CreateRuntime();
-            foreach (var t in runtime.Threads)
+            try
             {
-                var matchingThreads = KernelThreads.Where((thread) => thread.ThreadId == t.ManagedThreadId).ToArray();
-                string threadName = matchingThreads.Length > 0 ? matchingThreads[0].Name : Translate.DoTranslation("Not a Nitrocid KS thread");
-                string[] trace = t.EnumerateStackTrace(true).Select(f =>
-                {
-                    if (f.Method != null)
-                        return $"[0x{f.Method.NativeCode:X16}] @ {f.Method.Signature}";
-                    return "[0x????????????????] @ ???";
-                }
-                ).ToArray();
-                if (trace.Length > 0)
-                    result.Add($"{threadName} [{t.ManagedThreadId}] @ 0x{t.Address:X16}", trace);
+                var resultObj = InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasDiagnostics, nameof(GetThreadBacktraces));
+                if (resultObj is Dictionary<string, string[]> result)
+                    return result;
             }
-            return result;
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, $"Can't get thread backtraces: {ex.Message}");
+                DebugWriter.WriteDebugStackTrace(ex);
+            }
+            return [];
         }
 
     }

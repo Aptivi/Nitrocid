@@ -20,7 +20,6 @@
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
 using KS.Users;
-using KS.Users.Permissions;
 
 namespace KS.Shell.Shells.Admin.Commands
 {

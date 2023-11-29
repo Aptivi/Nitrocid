@@ -54,7 +54,6 @@ using KS.Kernel.Threading;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Scripting;
 using Terminaux.Reader;
-using KS.Misc.Screensaver;
 using System.Collections.ObjectModel;
 using Newtonsoft.Json;
 using KS.Shell.ShellBase.Arguments;

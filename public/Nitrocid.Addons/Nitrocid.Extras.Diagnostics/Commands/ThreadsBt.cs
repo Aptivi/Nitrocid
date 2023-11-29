@@ -27,7 +27,7 @@ using KS.Shell.ShellBase.Commands;
 using System;
 using System.Collections.Generic;
 
-namespace KS.Shell.Shells.Debug.Commands
+namespace Nitrocid.Extras.Diagnostics.Commands
 {
     /// <summary>
     /// Gets backtrace for all threads

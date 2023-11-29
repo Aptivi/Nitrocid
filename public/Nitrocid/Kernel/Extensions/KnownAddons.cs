@@ -77,6 +77,10 @@ namespace KS.Kernel.Extensions
         /// </summary>
         ExtrasContacts,
         /// <summary>
+        /// Diagnostics Extras addon
+        /// </summary>
+        ExtrasDiagnostics,
+        /// <summary>
         /// The English Dictionary Extras addon
         /// </summary>
         ExtrasDictionary,

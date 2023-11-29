@@ -193,13 +193,6 @@ namespace KS.Shell.Shells.Debug
                         new CommandArgumentInfo()
                     ], new ShowMainBufferCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
             },
-
-            { "threadsbt",
-                new CommandInfo("threadsbt", /* Localizable */ "Gets backtrace for all threads",
-                    [
-                        new CommandArgumentInfo()
-                    ], new ThreadsBtCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
-            },
         };
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()

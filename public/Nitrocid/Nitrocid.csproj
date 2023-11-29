@@ -56,7 +56,7 @@
     <NitrocidModAPIVersionMajor>3.0.25</NitrocidModAPIVersionMajor>
 
     <!-- Increment NitrocidModAPIVersionChangeset every time there is a breaking change or an API addition in the N-KS API. -->
-    <NitrocidModAPIVersionChangeset>351</NitrocidModAPIVersionChangeset>
+    <NitrocidModAPIVersionChangeset>352</NitrocidModAPIVersionChangeset>
 
     <!-- To be installed to the file version -->
     <NitrocidModAPIVersion>$(NitrocidModAPIVersionMajor).$(NitrocidModAPIVersionChangeset)</NitrocidModAPIVersion>
@@ -93,7 +93,6 @@
     <PackageReference Include="Crc32.NET" Version="1.2.0" PrivateAssets="all" />
     <PackageReference Include="GRILO.Boot" Version="0.1.0.3" PrivateAssets="all" />
     <PackageReference Include="Microsoft.Data.Sqlite" Version="8.0.0" PrivateAssets="all" />
-    <PackageReference Include="Microsoft.Diagnostics.Runtime" Version="3.1.456101" PrivateAssets="all" />
     <PackageReference Include="Newtonsoft.Json.Schema" Version="3.0.15" PrivateAssets="all" />
     <PackageReference Include="SemanVer" Version="1.1.1" PrivateAssets="all" />
     <PackageReference Include="SpecProbe" Version="1.1.0" PrivateAssets="all" />

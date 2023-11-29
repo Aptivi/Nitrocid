@@ -395,6 +395,11 @@ namespace KS.Kernel.Exceptions
                 try
                 {
                     Dictionary<string, string[]> result = ThreadManager.GetThreadBacktraces();
+                    if (result.Count == 0)
+                    {
+                        dumpBuilder.AppendLine(Translate.DoTranslation("Thread backtraces is empty. Either this information is not available, an error occurred while fetching it, or the Diagnostics Extras addon is not installed. Investigate the debug logs."));
+                        dumpBuilder.AppendLine();
+                    }
                     foreach (var trace in result)
                     {
                         string threadAddress = trace.Key;

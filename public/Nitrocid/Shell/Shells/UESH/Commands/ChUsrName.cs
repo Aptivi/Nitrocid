@@ -22,7 +22,6 @@ using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 using KS.Users;
 using KS.Users.Login;
-using KS.Users.Permissions;
 
 namespace KS.Shell.Shells.UESH.Commands
 {
