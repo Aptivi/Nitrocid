@@ -42,7 +42,6 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            PermissionsTools.Demand(PermissionTypes.ManageUsers);
             if (parameters.ArgumentsList.Length == 1)
             {
                 TextWriterColor.Write(Translate.DoTranslation("usrmgr: Creating username {0}..."), parameters.ArgumentsList[0]);

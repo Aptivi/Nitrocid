@@ -29,7 +29,6 @@ namespace KS.Shell.Shells.Admin.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            PermissionsTools.Demand(PermissionTypes.ManageUsers);
             var users = UserManagement.ListAllUsers();
             ListWriterColor.WriteList(users);
             variableValue = string.Join('\n', users);

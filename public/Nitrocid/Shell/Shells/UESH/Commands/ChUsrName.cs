@@ -43,7 +43,6 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            PermissionsTools.Demand(PermissionTypes.ManageUsers);
             UserManagement.ChangeUsername(parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
             TextWriterColor.Write(Translate.DoTranslation("Username has been changed to {0}!"), parameters.ArgumentsList[1]);
             if (parameters.ArgumentsList[0] == UserManagement.CurrentUser.Username)

@@ -48,7 +48,6 @@ namespace KS.Shell.Shells.UESH.Commands
         {
             try
             {
-                PermissionsTools.Demand(PermissionTypes.ManageUsers);
                 if (parameters.ArgumentsList[3].Contains(' '))
                 {
                     TextWriterColor.WriteKernelColor(Translate.DoTranslation("Spaces are not allowed."), true, KernelColorType.Error);

@@ -38,7 +38,6 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            PermissionsTools.Demand(PermissionTypes.ManageGroups);
             TextWriterColor.Write(Translate.DoTranslation("Creating group {0}..."), parameters.ArgumentsList[0]);
             GroupManagement.AddGroup(parameters.ArgumentsList[0]);
             return 0;

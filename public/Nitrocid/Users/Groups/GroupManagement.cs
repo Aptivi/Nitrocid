@@ -23,6 +23,7 @@ using KS.Files.Paths;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
+using KS.Users.Permissions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
@@ -44,6 +45,9 @@ namespace KS.Users.Groups
         /// <param name="groupName">The group which will be added</param>
         public static void AddGroup(string groupName)
         {
+            // Check the current login for permissions
+            PermissionsTools.Demand(PermissionTypes.ManageGroups);
+
             // Check to see if we have the target group
             if (DoesGroupExist(groupName))
                 throw new KernelException(KernelExceptionType.GroupManagement, Translate.DoTranslation("Can't add a group with the same name."));
@@ -60,6 +64,9 @@ namespace KS.Users.Groups
         /// <param name="groupName">The group which will be removed</param>
         public static void RemoveGroup(string groupName)
         {
+            // Check the current login for permissions
+            PermissionsTools.Demand(PermissionTypes.ManageGroups);
+
             // Check to see if we have the target group
             if (!DoesGroupExist(groupName))
                 throw new KernelException(KernelExceptionType.NoSuchGroup, Translate.DoTranslation("Can't remove a nonexistent group."));
@@ -77,6 +84,9 @@ namespace KS.Users.Groups
         /// <param name="groupName">The group that the user will join</param>
         public static void AddUserToGroup(string user, string groupName)
         {
+            // Check the current login for permissions
+            PermissionsTools.Demand(PermissionTypes.ManageGroups);
+
             // Check to see if we have the target group and user
             if (!UserManagement.UserExists(user))
                 throw new KernelException(KernelExceptionType.NoSuchUser);
@@ -101,6 +111,9 @@ namespace KS.Users.Groups
         /// <param name="groupName">The group that the user will leave</param>
         public static void RemoveUserFromGroup(string user, string groupName)
         {
+            // Check the current login for permissions
+            PermissionsTools.Demand(PermissionTypes.ManageGroups);
+
             // Check to see if we have the target group and user
             if (!UserManagement.UserExists(user))
                 throw new KernelException(KernelExceptionType.NoSuchUser);

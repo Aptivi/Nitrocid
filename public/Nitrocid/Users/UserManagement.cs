@@ -35,6 +35,7 @@ using KS.Misc.Text.Probers.Regexp;
 using KS.Files.Operations;
 using KS.Files.Operations.Querying;
 using KS.Files.Paths;
+using KS.Users.Permissions;
 
 namespace KS.Users
 {
@@ -78,6 +79,9 @@ namespace KS.Users
         {
             try
             {
+                // Check the current login for permissions
+                PermissionsTools.Demand(PermissionTypes.ManageUsers);
+
                 // Check the lock
                 if (IsLocked(uninitUser))
                     throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Trying to modify existing account while it's locked"));
@@ -129,6 +133,9 @@ namespace KS.Users
         /// </summary>
         public static void InitializeUsers()
         {
+            // Check the current login for permissions
+            PermissionsTools.Demand(PermissionTypes.ManageUsers);
+
             // First, check to see if we have the file
             string UsersPath = PathsManagement.GetKernelPath(KernelPathType.Users);
             if (!Checking.FileExists(UsersPath))
@@ -177,6 +184,9 @@ namespace KS.Users
         /// <param name="newPassword">A password</param>
         public static void AddUser(string newUser, string newPassword = "")
         {
+            // Check the current login for permissions
+            PermissionsTools.Demand(PermissionTypes.ManageUsers);
+
             // Adds user
             DebugWriter.WriteDebug(DebugLevel.I, "Creating user {0}...", newUser);
             if (ValidateUsername(newUser, false) && !UserExists(newUser))
@@ -213,6 +223,9 @@ namespace KS.Users
         /// <remarks>This sub is an accomplice of in-shell command arguments.</remarks>
         public static void RemoveUser(string user)
         {
+            // Check the current login for permissions
+            PermissionsTools.Demand(PermissionTypes.ManageUsers);
+
             // Check the lock
             if (IsLocked(user))
                 throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Trying to modify existing account while it's locked"));
@@ -281,6 +294,9 @@ namespace KS.Users
         /// <param name="Username">New username</param>
         public static void ChangeUsername(string OldName, string Username)
         {
+            // Check the current login for permissions
+            PermissionsTools.Demand(PermissionTypes.ManageUsers);
+
             if (UserExists(OldName))
             {
                 // Check the lock
@@ -348,6 +364,9 @@ namespace KS.Users
         /// <param name="NewPass">New user password</param>
         public static void ChangePassword(string Target, string CurrentPass, string NewPass)
         {
+            // Check the current login for permissions
+            PermissionsTools.Demand(PermissionTypes.ManageUsers);
+
             bool currentUserAdmin = GetUser(CurrentUser.Username).Flags.HasFlag(UserFlags.Administrator);
             bool targetUserAdmin = GetUser(Target).Flags.HasFlag(UserFlags.Administrator);
 

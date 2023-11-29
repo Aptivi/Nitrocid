@@ -40,7 +40,6 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            PermissionsTools.Demand(PermissionTypes.ManageUsers);
             UserManagement.RemoveUser(parameters.ArgumentsList[0]);
             if (!UserManagement.UserExists(parameters.ArgumentsList[0]))
                 TextWriterColor.Write(Translate.DoTranslation("User {0} removed."), parameters.ArgumentsList[0]);

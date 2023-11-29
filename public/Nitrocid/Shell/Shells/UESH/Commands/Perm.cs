@@ -42,7 +42,6 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            PermissionsTools.Demand(PermissionTypes.ManageUsers);
             string target = parameters.ArgumentsList[0];
             string mode = parameters.ArgumentsList[1];
             string perm = parameters.ArgumentsList[2];
