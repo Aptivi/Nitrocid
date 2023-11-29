@@ -171,8 +171,8 @@ namespace KS.Misc.Interactives
         /// <summary>
         /// Selected file. If not selected yet and bailed earlier, this string is empty.
         /// </summary>
-        public static string SelectedFile =>
-            ((FileSelectorCli)Instance).selectedFile;
+        public string SelectedFile =>
+            selectedFile;
 
         private static void SelectOrGoTo(FileSystemEntry currentFileSystemEntry)
         {

@@ -172,8 +172,8 @@ namespace KS.Misc.Interactives
         /// <summary>
         /// Selected folder. If not selected yet and bailed earlier, this string is empty.
         /// </summary>
-        public static string SelectedFolder =>
-            ((FolderSelectorCli)Instance).selectedFolder;
+        public string SelectedFolder =>
+            selectedFolder;
 
         private static void Open(FileSystemEntry currentFileSystemEntry)
         {

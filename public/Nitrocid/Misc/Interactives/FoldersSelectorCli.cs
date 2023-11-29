@@ -175,8 +175,8 @@ namespace KS.Misc.Interactives
         /// <summary>
         /// Selected files. If not selected yet and bailed earlier, this list is empty.
         /// </summary>
-        public static string[] SelectedFolders =>
-            ((FoldersSelectorCli)Instance).selectedFolders.ToArray();
+        public string[] SelectedFolders =>
+            selectedFolders.ToArray();
 
         private static void Select(FileSystemEntry currentFileSystemEntry)
         {
@@ -544,8 +544,8 @@ namespace KS.Misc.Interactives
         private static void PreviewSelected()
         {
             string selected =
-                SelectedFolders.Length > 0 ?
-                $"  - {string.Join("\n  - ", SelectedFolders)}" :
+                ((FoldersSelectorCli)Instance).SelectedFolders.Length > 0 ?
+                $"  - {string.Join("\n  - ", ((FoldersSelectorCli)Instance).SelectedFolders)}" :
                 Translate.DoTranslation("No selected folders.");
             InfoBoxColor.WriteInfoBoxColorBack(selected, BoxForegroundColor, BoxBackgroundColor);
         }

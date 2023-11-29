@@ -173,8 +173,8 @@ namespace KS.Misc.Interactives
         /// <summary>
         /// Selected files. If not selected yet and bailed earlier, this list is empty.
         /// </summary>
-        public static string[] SelectedFiles =>
-            ((FilesSelectorCli)Instance).selectedFiles.ToArray();
+        public string[] SelectedFiles =>
+            selectedFiles.ToArray();
 
         private static void SelectOrGoTo(FileSystemEntry currentFileSystemEntry)
         {
@@ -524,8 +524,8 @@ namespace KS.Misc.Interactives
         private static void PreviewSelected()
         {
             string selected =
-                SelectedFiles.Length > 0 ?
-                $"  - {string.Join("\n  - ", SelectedFiles)}" :
+                ((FilesSelectorCli)Instance).SelectedFiles.Length > 0 ?
+                $"  - {string.Join("\n  - ", ((FilesSelectorCli)Instance).SelectedFiles)}" :
                 Translate.DoTranslation("No selected files.");
             InfoBoxColor.WriteInfoBoxColorBack(selected, BoxForegroundColor, BoxBackgroundColor);
         }
