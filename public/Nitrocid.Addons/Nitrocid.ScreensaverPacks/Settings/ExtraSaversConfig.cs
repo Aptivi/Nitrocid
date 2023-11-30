@@ -3220,5 +3220,49 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [TwoSpins] The maximum color level (255 colors or 16 colors)
         /// </summary>
         public int TwoSpinsMaximumColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [CommitMilestone] Enable truecolor support. Has a higher priority than 255 color support.
+        /// </summary>
+        public bool CommitMilestoneTrueColor { get; set; } = true;
+        /// <summary>
+        /// [CommitMilestone] How many milliseconds to wait before making the next write?
+        /// </summary>
+        public int CommitMilestoneDelay { get; set; } = 1000;
+        /// <summary>
+        /// [CommitMilestone] Enables the rainbow colors mode
+        /// </summary>
+        public bool CommitMilestoneRainbowMode { get; set; }
+        /// <summary>
+        /// [CommitMilestone] The minimum red color level (true color)
+        /// </summary>
+        public int CommitMilestoneMinimumRedColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [CommitMilestone] The minimum green color level (true color)
+        /// </summary>
+        public int CommitMilestoneMinimumGreenColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [CommitMilestone] The minimum blue color level (true color)
+        /// </summary>
+        public int CommitMilestoneMinimumBlueColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [CommitMilestone] The minimum color level (255 colors or 16 colors)
+        /// </summary>
+        public int CommitMilestoneMinimumColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [CommitMilestone] The maximum red color level (true color)
+        /// </summary>
+        public int CommitMilestoneMaximumRedColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [CommitMilestone] The maximum green color level (true color)
+        /// </summary>
+        public int CommitMilestoneMaximumGreenColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [CommitMilestone] The maximum blue color level (true color)
+        /// </summary>
+        public int CommitMilestoneMaximumBlueColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [CommitMilestone] The maximum color level (255 colors or 16 colors)
+        /// </summary>
+        public int CommitMilestoneMaximumColorLevel { get; set; } = 255;
     }
 }
