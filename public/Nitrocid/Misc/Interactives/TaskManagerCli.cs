@@ -45,7 +45,7 @@ namespace KS.Misc.Interactives
             // Operations
             new InteractiveTuiBinding(/* Localizable */ "Kill", ConsoleKey.F1,
                 (_, index) => KillThread(index), true),
-            new InteractiveTuiBinding(/* Localizable */ "Switch", ConsoleKey.Tab,
+            new InteractiveTuiBinding(/* Localizable */ "Switch", ConsoleKey.S,
                 (_, _) => SwitchMode(), true)
         ];
 
