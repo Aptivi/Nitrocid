@@ -55,10 +55,10 @@ namespace KS.Misc.Interactives
     {
         internal string firstPanePath = PathsManagement.HomePath;
         internal string secondPanePath = PathsManagement.HomePath;
-        internal static bool refreshFirstPaneListing = true;
-        internal static bool refreshSecondPaneListing = true;
-        private static List<FileSystemEntry> firstPaneListing = [];
-        private static List<FileSystemEntry> secondPaneListing = [];
+        internal bool refreshFirstPaneListing = true;
+        internal bool refreshSecondPaneListing = true;
+        private List<FileSystemEntry> firstPaneListing = [];
+        private List<FileSystemEntry> secondPaneListing = [];
 
         /// <summary>
         /// File manager bindings
@@ -216,13 +216,13 @@ namespace KS.Misc.Interactives
                     {
                         ((FileManagerCli)Instance).secondPanePath = FilesystemTools.NeutralizePath(currentFileSystemEntry.FilePath + "/");
                         SecondPaneCurrentSelection = 1;
-                        refreshSecondPaneListing = true;
+                        ((FileManagerCli)Instance).refreshSecondPaneListing = true;
                     }
                     else
                     {
                         ((FileManagerCli)Instance).firstPanePath = FilesystemTools.NeutralizePath(currentFileSystemEntry.FilePath + "/");
                         FirstPaneCurrentSelection = 1;
-                        refreshFirstPaneListing = true;
+                        ((FileManagerCli)Instance).refreshFirstPaneListing = true;
                     }
                 }
                 else if (currentFileSystemEntry.Type == FileSystemEntryType.File)
@@ -247,13 +247,13 @@ namespace KS.Misc.Interactives
             {
                 ((FileManagerCli)Instance).secondPanePath = FilesystemTools.NeutralizePath(((FileManagerCli)Instance).secondPanePath + "/..");
                 SecondPaneCurrentSelection = 1;
-                refreshSecondPaneListing = true;
+                ((FileManagerCli)Instance).refreshSecondPaneListing = true;
             }
             else
             {
                 ((FileManagerCli)Instance).firstPanePath = FilesystemTools.NeutralizePath(((FileManagerCli)Instance).firstPanePath + "/..");
                 FirstPaneCurrentSelection = 1;
-                refreshFirstPaneListing = true;
+                ((FileManagerCli)Instance).refreshFirstPaneListing = true;
             }
         }
 
@@ -351,9 +351,9 @@ namespace KS.Misc.Interactives
                 DebugCheck.Assert(!string.IsNullOrWhiteSpace(dest), "destination is empty or whitespace!");
                 Copying.CopyFileOrDir(currentFileSystemEntry.FilePath, dest);
                 if (CurrentPane == 2)
-                    refreshFirstPaneListing = true;
+                    ((FileManagerCli)Instance).refreshFirstPaneListing = true;
                 else
-                    refreshSecondPaneListing = true;
+                    ((FileManagerCli)Instance).refreshSecondPaneListing = true;
             }
             catch (Exception ex)
             {
@@ -377,8 +377,8 @@ namespace KS.Misc.Interactives
                 DebugCheck.AssertNull(dest, "destination is null!");
                 DebugCheck.Assert(!string.IsNullOrWhiteSpace(dest), "destination is empty or whitespace!");
                 Moving.MoveFileOrDir(currentFileSystemEntry.FilePath, dest);
-                refreshSecondPaneListing = true;
-                refreshFirstPaneListing = true;
+                ((FileManagerCli)Instance).refreshSecondPaneListing = true;
+                ((FileManagerCli)Instance).refreshFirstPaneListing = true;
             }
             catch (Exception ex)
             {
@@ -399,9 +399,9 @@ namespace KS.Misc.Interactives
             {
                 Removing.RemoveFileOrDir(currentFileSystemEntry.FilePath);
                 if (CurrentPane == 2)
-                    refreshSecondPaneListing = true;
+                    ((FileManagerCli)Instance).refreshSecondPaneListing = true;
                 else
-                    refreshFirstPaneListing = true;
+                    ((FileManagerCli)Instance).refreshFirstPaneListing = true;
             }
             catch (Exception ex)
             {
@@ -424,13 +424,13 @@ namespace KS.Misc.Interactives
                 {
                     SecondPaneCurrentSelection = 1;
                     ((FileManagerCli)Instance).secondPanePath = path;
-                    refreshSecondPaneListing = true;
+                    ((FileManagerCli)Instance).refreshSecondPaneListing = true;
                 }
                 else
                 {
                     FirstPaneCurrentSelection = 1;
                     ((FileManagerCli)Instance).firstPanePath = path;
-                    refreshFirstPaneListing = true;
+                    ((FileManagerCli)Instance).refreshFirstPaneListing = true;
                 }
             }
             else
@@ -456,9 +456,9 @@ namespace KS.Misc.Interactives
                     {
                         Copying.CopyFileOrDir(currentFileSystemEntry.FilePath, path);
                         if (CurrentPane == 2)
-                            refreshFirstPaneListing = true;
+                            ((FileManagerCli)Instance).refreshFirstPaneListing = true;
                         else
-                            refreshSecondPaneListing = true;
+                            ((FileManagerCli)Instance).refreshSecondPaneListing = true;
                     }
                     else
                         InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Make sure that you've written the correct path."), BoxForegroundColor, BoxBackgroundColor);
@@ -493,8 +493,8 @@ namespace KS.Misc.Interactives
                     if (Parsing.TryParsePath(path))
                     {
                         Moving.MoveFileOrDir(currentFileSystemEntry.FilePath, path);
-                        refreshSecondPaneListing = true;
-                        refreshFirstPaneListing = true;
+                        ((FileManagerCli)Instance).refreshSecondPaneListing = true;
+                        ((FileManagerCli)Instance).refreshFirstPaneListing = true;
                     }
                     else
                         InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Make sure that you've written the correct path."), BoxForegroundColor, BoxBackgroundColor);
@@ -527,9 +527,9 @@ namespace KS.Misc.Interactives
                     {
                         Moving.MoveFileOrDir(currentFileSystemEntry.FilePath, Path.GetDirectoryName(currentFileSystemEntry.FilePath) + $"/{filename}");
                         if (CurrentPane == 2)
-                            refreshSecondPaneListing = true;
+                            ((FileManagerCli)Instance).refreshSecondPaneListing = true;
                         else
-                            refreshFirstPaneListing = true;
+                            ((FileManagerCli)Instance).refreshFirstPaneListing = true;
                     }
                     else
                         InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Make sure that you've written the correct file name."), BoxForegroundColor, BoxBackgroundColor);
@@ -555,9 +555,9 @@ namespace KS.Misc.Interactives
             {
                 Making.TryMakeDirectory(path);
                 if (CurrentPane == 2)
-                    refreshSecondPaneListing = true;
+                    ((FileManagerCli)Instance).refreshSecondPaneListing = true;
                 else
-                    refreshFirstPaneListing = true;
+                    ((FileManagerCli)Instance).refreshFirstPaneListing = true;
             }
             else
                 InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Folder already exists. The name shouldn't be occupied by another folder."), BoxForegroundColor, BoxBackgroundColor);

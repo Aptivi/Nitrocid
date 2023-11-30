@@ -54,8 +54,8 @@ namespace KS.Misc.Interactives
     {
         internal string selectedFolder = "";
         internal string firstPanePath = PathsManagement.HomePath;
-        private static bool refreshFirstPaneListing = true;
-        private static List<FileSystemEntry> firstPaneListing = [];
+        internal bool refreshFirstPaneListing = true;
+        private List<FileSystemEntry> firstPaneListing = [];
 
         /// <summary>
         /// Folder Selector bindings
@@ -188,7 +188,7 @@ namespace KS.Misc.Interactives
                     // We're dealing with a folder. Open it in the selected pane.
                     ((FolderSelectorCli)Instance).firstPanePath = FilesystemTools.NeutralizePath(currentFileSystemEntry.FilePath + "/");
                     FirstPaneCurrentSelection = 1;
-                    refreshFirstPaneListing = true;
+                    ((FolderSelectorCli)Instance).refreshFirstPaneListing = true;
                 }
             }
             catch (Exception ex)
@@ -227,7 +227,7 @@ namespace KS.Misc.Interactives
         {
             ((FolderSelectorCli)Instance).firstPanePath = FilesystemTools.NeutralizePath(((FolderSelectorCli)Instance).firstPanePath + "/..");
             FirstPaneCurrentSelection = 1;
-            refreshFirstPaneListing = true;
+            ((FolderSelectorCli)Instance).refreshFirstPaneListing = true;
         }
 
         private static void PrintFileSystemEntry(FileSystemEntry currentFileSystemEntry)
@@ -319,7 +319,7 @@ namespace KS.Misc.Interactives
             try
             {
                 Removing.RemoveFileOrDir(currentFileSystemEntry.FilePath);
-                refreshFirstPaneListing = true;
+                ((FolderSelectorCli)Instance).refreshFirstPaneListing = true;
             }
             catch (Exception ex)
             {
@@ -339,7 +339,7 @@ namespace KS.Misc.Interactives
             {
                 FirstPaneCurrentSelection = 1;
                 ((FolderSelectorCli)Instance).firstPanePath = path;
-                refreshFirstPaneListing = true;
+                ((FolderSelectorCli)Instance).refreshFirstPaneListing = true;
             }
             else
                 InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Folder doesn't exist. Make sure that you've written the correct path."), BoxForegroundColor, BoxBackgroundColor);
@@ -363,7 +363,7 @@ namespace KS.Misc.Interactives
                     if (Parsing.TryParsePath(path))
                     {
                         Copying.CopyFileOrDir(currentFileSystemEntry.FilePath, path);
-                        refreshFirstPaneListing = true;
+                        ((FolderSelectorCli)Instance).refreshFirstPaneListing = true;
                     }
                     else
                         InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Make sure that you've written the correct path."), BoxForegroundColor, BoxBackgroundColor);
@@ -398,7 +398,7 @@ namespace KS.Misc.Interactives
                     if (Parsing.TryParsePath(path))
                     {
                         Moving.MoveFileOrDir(currentFileSystemEntry.FilePath, path);
-                        refreshFirstPaneListing = true;
+                        ((FolderSelectorCli)Instance).refreshFirstPaneListing = true;
                     }
                     else
                         InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Make sure that you've written the correct path."), BoxForegroundColor, BoxBackgroundColor);
@@ -430,7 +430,7 @@ namespace KS.Misc.Interactives
                     if (Parsing.TryParseFileName(filename))
                     {
                         Moving.MoveFileOrDir(currentFileSystemEntry.FilePath, Path.GetDirectoryName(currentFileSystemEntry.FilePath) + $"/{filename}");
-                        refreshFirstPaneListing = true;
+                        ((FolderSelectorCli)Instance).refreshFirstPaneListing = true;
                     }
                     else
                         InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Make sure that you've written the correct file name."), BoxForegroundColor, BoxBackgroundColor);
@@ -455,7 +455,7 @@ namespace KS.Misc.Interactives
             if (!Checking.FolderExists(path))
             {
                 Making.TryMakeDirectory(path);
-                refreshFirstPaneListing = true;
+                ((FolderSelectorCli)Instance).refreshFirstPaneListing = true;
             }
             else
                 InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Folder already exists. The name shouldn't be occupied by another folder."), BoxForegroundColor, BoxBackgroundColor);
