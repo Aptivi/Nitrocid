@@ -115,6 +115,10 @@ namespace KS.Misc.Interactives
         }
 
         /// <inheritdoc/>
+        public override bool AcceptsEmptyData =>
+            true;
+
+        /// <inheritdoc/>
         public override void RenderStatus(object item)
         {
             FileSystemEntry FileInfoCurrentPane = (FileSystemEntry)item;
@@ -180,6 +184,11 @@ namespace KS.Misc.Interactives
         {
             try
             {
+                // Don't do anything if we haven't been provided anything.
+                if (currentFileSystemEntry is null)
+                    return;
+
+                // Check for existence
                 if (!currentFileSystemEntry.Exists)
                     return;
 
@@ -452,6 +461,10 @@ namespace KS.Misc.Interactives
 
         private static void Hash(FileSystemEntry currentFileSystemEntry)
         {
+            // Don't do anything if we haven't been provided anything.
+            if (currentFileSystemEntry is null)
+                return;
+
             // First, check to see if it's a file
             if (!Checking.FileExists(currentFileSystemEntry.FilePath))
             {
@@ -477,6 +490,10 @@ namespace KS.Misc.Interactives
 
         private static void Verify(FileSystemEntry currentFileSystemEntry)
         {
+            // Don't do anything if we haven't been provided anything.
+            if (currentFileSystemEntry is null)
+                return;
+
             // First, check to see if it's a file
             if (!Checking.FileExists(currentFileSystemEntry.FilePath))
             {
@@ -508,6 +525,10 @@ namespace KS.Misc.Interactives
 
         private static void Preview(FileSystemEntry currentFileSystemEntry)
         {
+            // Don't do anything if we haven't been provided anything.
+            if (currentFileSystemEntry is null)
+                return;
+
             // First, check to see if it's a file
             if (!Checking.FileExists(currentFileSystemEntry.FilePath))
             {
