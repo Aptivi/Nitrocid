@@ -19,7 +19,7 @@
     <releaseNotes>https://aptivi.gitbook.io/kernel-simulator-manual/versions-and-compatibility/version-release-notes/v0.1.x.x-series</releaseNotes>
 
     <dependencies>
-      <dependency id="dotnet-6.0-sdk" version="6.0.300"/>
+      <dependency id="dotnet-8.0-runtime" version="8.0.0"/>
     </dependencies>
   </metadata>
   <files>
