@@ -439,12 +439,12 @@ namespace KS.Misc.Text
         }
 
         /// <summary>
-        /// Removes a postfix from the text
+        /// Removes a suffix from the text
         /// </summary>
-        public static string RemovePostfix(this string text, string postfix)
+        public static string RemoveSuffix(this string text, string suffix)
         {
-            if (text.EndsWith(postfix))
-                return text[..^postfix.Length];
+            if (text.EndsWith(suffix))
+                return text[..^suffix.Length];
             return text;
         }
 

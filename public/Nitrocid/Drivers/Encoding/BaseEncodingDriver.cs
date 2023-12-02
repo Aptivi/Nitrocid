@@ -229,7 +229,7 @@ namespace KS.Drivers.Encoding
             int diffIdx = encoded.Length - idx;
 
             // Write the array of bytes
-            string decodedPath = path.RemovePostfix(".encoded");
+            string decodedPath = path.RemoveSuffix(".encoded");
             Writing.WriteAllBytes(decodedPath, decrypted.SkipLast(diffIdx).ToArray());
         }
     }

@@ -888,13 +888,13 @@ namespace KS.Shell.ShellBase.Shells
                 DriverHandler.BeginLocalDriver<IConsoleDriver>("FileSequence");
                 ((FileSequence)DriverHandler.CurrentConsoleDriverLocal).PathsToWrite = [.. filePaths];
                 ((FileSequence)DriverHandler.CurrentConsoleDriverLocal).FilterVT = true;
-                Command = Command.RemovePostfix(outputMatch.Value);
+                Command = Command.RemoveSuffix(outputMatch.Value);
             }
             else if (Command.EndsWith(" |SILENT|"))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Silence found. Redirecting to null writer...");
                 DriverHandler.BeginLocalDriver<IConsoleDriver>("Null");
-                Command = Command.RemovePostfix(" |SILENT|");
+                Command = Command.RemoveSuffix(" |SILENT|");
             }
 
             return Command;
