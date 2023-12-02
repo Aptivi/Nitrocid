@@ -103,6 +103,9 @@
     <None Update="AddonTranslations\fre.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="AddonTranslations\frs.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="AddonTranslations\ger.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

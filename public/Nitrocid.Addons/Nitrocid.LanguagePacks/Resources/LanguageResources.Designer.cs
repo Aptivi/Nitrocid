@@ -251,6 +251,25 @@ namespace Nitrocid.LanguagePacks.Resources {
         
         /// <summary>
         ///   Looks up a localized string similar to {
+        ///  &quot;Name&quot;: &quot;Farsi/Persian&quot;,
+        ///  &quot;Transliterable&quot;: false,
+        ///  &quot;Localizations&quot;: [
+        ///    &quot;الگوی رنگی نامعتبر {0}&quot;,
+        ///    &quot;hwprobe: سخت افزار شما مورد بررسی قرار می گیرد. لطفا صبر کنید...&quot;,
+        ///    &quot;رمز عبور مدیریت را برای نگهداری وارد کنید.&quot;,
+        ///    &quot;خطای هسته هنگام بوت شدن: {0}&quot;,
+        ///    &quot;DOUBLE PANIC: زمان راه‌اندازی مجدد از حداکثر زمان مجاز خطای راه‌اندازی مجدد {0} بیشتر است. شما یک باگ هسته پیدا کردید.&quot;,
+        ///    &quot;[{0}] وحشت: راه اندازی مجدد فعال شد زیرا سطح خطا {0} است.&quot;,
+        ///    &quot;[{0}] وحشت: زمان راه اندازی مجدد: {1} ثان [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string frs {
+            get {
+                return ResourceManager.GetString("frs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
         ///  &quot;Name&quot;: &quot;German&quot;,
         ///  &quot;Transliterable&quot;: false,
         ///  &quot;Localizations&quot;: [
@@ -433,7 +452,7 @@ namespace Nitrocid.LanguagePacks.Resources {
         ///        &quot;three&quot;: &quot;chi-T&quot;,
         ///        &quot;name&quot;: &quot;Chinese&quot;,
         ///        &quot;transliterable&quot;: true,
-        /// [rest of string was truncated]&quot;;.
+        ///        &quot;codepage&quot;: 936, [rest of string was truncated]&quot;;.
         /// </summary>
         public static string LanguageMetadata {
             get {

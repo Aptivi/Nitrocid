@@ -57,6 +57,12 @@
         "country": "France"
     },
     {
+        "three": "frs",
+        "name": "Farsi/Persian",
+        "transliterable": false,
+        "country": "Iran"
+    },
+    {
         "three": "ger",
         "name": "German",
         "transliterable": false,
