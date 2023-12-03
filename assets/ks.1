@@ -15,7 +15,7 @@
 .\"    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 .\"
 
-.TH ks 1 "17 Aug 2023" "0.1.0-Man2.1" "Nitrocid KS"
+.TH ks 1 "3 Dec 2023" "0.1.0-Man2.2" "Nitrocid KS"
 .SH NAME
 ks \- simulates our future-planned kernel, Nitrocid Kernel
 .SH SYNOPSIS
@@ -23,44 +23,6 @@ ks [args]
 .SH DESCRIPTION
 ks is the launcher for Nitrocid KS, which simulates our kernel that will be done in the future, Nitrocid Kernel. It provides the built-in simulated kernel, log-in software, shell, and a set of useful tools like the FTP client, SSH, IMAP shell, etc. It also features the filesystem and basic operations like list, cp(1), mv(1), etc.
 .SH OPTIONS
-It only takes an argument of the executable arguments, which will be described below in the next section.
-.SH PRE-BOOT COMMAND LINE ARGUMENTS
-In Nitrocid KS, when it starts, it checks for the pre-boot command line arguments to see if they are passed or not, and if so, will execute the following:
-.TP 4
-.B bypasssizedetection
-Bypasses the console size detection (checks to see if the console is a 80x24 form) and starts KS right away, although it gives you a chance to resize the window.
-.TP 4
-B testInteractive
-Opens the test shell prior to starting the kernel up
-.TP 4
-.B quiet
-Suppresses the boot messages until the kernel has finished starting up.
-.TP 4
-.B safe
-Enters the safe mode where all the mods are disabled. You can't start mods up in this mode until you reboot to the normal mode.
-.TP 4
-.B reset
-Resets the configuration
-.TP 4
-.B debug
-Enables the debug functionality in the kernel. It enables the local debugging feature which lets the kernel log all debugging messages to a file in your user profile. It also enables the remote debugging feature that lets you see debugging messages remotely from another computer.
-.TP 4
-.B maintenance
-Enters the maintenance mode where the only user is root. It's akin to Linux maintenance, albeit more strict.
-.TP 4
-.B terminaldebug
-Enables terminal driver debugging
-.TP 4
-.B noaltbuffer
-Don't switch to alternative buffer on Linux systems
-.TP 4
-.B lang \<lang\>
-Lets you initially choose a pre-boot language
-.TP 4
-.B attach
-Attaches the kernel to the debugger (most likely not needed)
-.TP 4
-.B verbosepreboot
-Enables the verbose pre-boot messages.
+To get information about the available options, consult the wiki at https://aptivi.gitbook.io/nitrocid-ks-manual/advanced-and-power-users/inner-workings/inner-essentials/kernel-arguments.
 .SH AUTHOR
 Aptivi (eoflaoevicecity@gmail.com)
