@@ -15,12 +15,6 @@
     <None Include="TestData\TestText.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestData\TestVerifyCRC32.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="TestData\TestVerifyCRC32KS.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="TestData\TestVerifyMD5.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

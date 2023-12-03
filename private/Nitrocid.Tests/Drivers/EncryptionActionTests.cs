@@ -32,7 +32,6 @@ namespace Nitrocid.Tests.Drivers
         /// <summary>
         /// Tests string encryption
         /// </summary>
-        [TestCase("CRC32", ExpectedResult = "9413827E")]
         [TestCase("MD5", ExpectedResult = "C4C1867580D6D25B11210F84F935359A")]
         [TestCase("SHA1", ExpectedResult = "CFF9FDA895B0B638957E17CF952457D81ADD622F")]
         [TestCase("SHA256", ExpectedResult = "525514740C93C5442DBCB8FB92FB1B17B6F8B94B3C98E6F07CA8AEB093C2E79F")]
@@ -48,7 +47,6 @@ namespace Nitrocid.Tests.Drivers
         /// <summary>
         /// Tests file encryption
         /// </summary>
-        [TestCase("CRC32", ExpectedResult = "9413827E")]
         [TestCase("MD5", ExpectedResult = "C4C1867580D6D25B11210F84F935359A")]
         [TestCase("SHA1", ExpectedResult = "CFF9FDA895B0B638957E17CF952457D81ADD622F")]
         [TestCase("SHA256", ExpectedResult = "525514740C93C5442DBCB8FB92FB1B17B6F8B94B3C98E6F07CA8AEB093C2E79F")]
@@ -70,7 +68,6 @@ namespace Nitrocid.Tests.Drivers
         /// <summary>
         /// Tests file encryption
         /// </summary>
-        [TestCase("CRC32", ExpectedResult = "D394D7F0")]
         [TestCase("MD5", ExpectedResult = "CD5578C85A4CF32E48D157746A90C7F6")]
         [TestCase("SHA1", ExpectedResult = "36EBF31AF7234D6C99CA65DC4EDA524161600657")]
         [TestCase("SHA256", ExpectedResult = "7E6857729A34755DE8C2C9E535A8765BDE241F593BE3588B8FA6D29D949EFADA")]
@@ -91,7 +88,6 @@ namespace Nitrocid.Tests.Drivers
         /// <summary>
         /// Tests hash verification
         /// </summary>
-        [TestCase("CRC32", "D394D7F0", ExpectedResult = true)]
         [TestCase("MD5", "CD5578C85A4CF32E48D157746A90C7F6", ExpectedResult = true)]
         [TestCase("SHA1", "36EBF31AF7234D6C99CA65DC4EDA524161600657", ExpectedResult = true)]
         [TestCase("SHA256", "7E6857729A34755DE8C2C9E535A8765BDE241F593BE3588B8FA6D29D949EFADA", ExpectedResult = true)]
@@ -113,7 +109,6 @@ namespace Nitrocid.Tests.Drivers
         /// <summary>
         /// Tests hash verification for an uncalculated file
         /// </summary>
-        [TestCase("CRC32", "D394D7F0", ExpectedResult = true)]
         [TestCase("MD5", "CD5578C85A4CF32E48D157746A90C7F6", ExpectedResult = true)]
         [TestCase("SHA1", "36EBF31AF7234D6C99CA65DC4EDA524161600657", ExpectedResult = true)]
         [TestCase("SHA256", "7E6857729A34755DE8C2C9E535A8765BDE241F593BE3588B8FA6D29D949EFADA", ExpectedResult = true)]
@@ -131,7 +126,6 @@ namespace Nitrocid.Tests.Drivers
             return Result;
         }
 
-        [TestCase("CRC32", ExpectedResult = "00000000")]
         [TestCase("MD5", ExpectedResult = "D41D8CD98F00B204E9800998ECF8427E")]
         [TestCase("SHA1", ExpectedResult = "DA39A3EE5E6B4B0D3255BFEF95601890AFD80709")]
         [TestCase("SHA256", ExpectedResult = "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855")]
