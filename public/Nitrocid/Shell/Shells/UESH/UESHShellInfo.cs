@@ -941,7 +941,13 @@ namespace KS.Shell.Shells.UESH
                             }),
                             new SwitchInfo("recursive", /* Localizable */ "Lists a folder recursively", new SwitchOptions()
                             {
-                                AcceptsValues = false
+                                AcceptsValues = false,
+                                ConflictsWith = ["tree"]
+                            }),
+                            new SwitchInfo("tree", /* Localizable */ "Lists a folder using the tree form", new SwitchOptions()
+                            {
+                                AcceptsValues = false,
+                                ConflictsWith = ["recursive"]
                             })
                         ])
                     ], new ListCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)

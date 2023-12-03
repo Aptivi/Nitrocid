@@ -22,6 +22,7 @@ using System.Linq;
 using KS.Files;
 using KS.Files.Folders;
 using KS.Shell.ShellBase.Commands;
+using KS.Shell.ShellBase.Switches;
 
 namespace KS.Shell.Shells.UESH.Commands
 {
@@ -56,19 +57,26 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            bool ShowFileDetails = parameters.SwitchesList.Contains("-showdetails") || Listing.ShowFileDetailsList;
-            bool SuppressUnauthorizedMessage = parameters.SwitchesList.Contains("-suppressmessages") || FilesystemTools.SuppressUnauthorizedMessages;
-            bool Recursive = parameters.SwitchesList.Contains("-recursive");
+            bool ShowFileDetails = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-showdetails") || Listing.ShowFileDetailsList;
+            bool SuppressUnauthorizedMessage = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-suppressmessages") || FilesystemTools.SuppressUnauthorizedMessages;
+            bool Recursive = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-recursive");
+            bool tree = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-tree");
             if (parameters.ArgumentsList.Length == 0)
             {
-                Listing.List(CurrentDirectory.CurrentDir, ShowFileDetails, SuppressUnauthorizedMessage, Listing.SortList, Recursive);
+                if (tree)
+                    Listing.ListTree(CurrentDirectory.CurrentDir, SuppressUnauthorizedMessage, Listing.SortList);
+                else
+                    Listing.List(CurrentDirectory.CurrentDir, ShowFileDetails, SuppressUnauthorizedMessage, Listing.SortList, Recursive);
             }
             else
             {
                 foreach (string Directory in parameters.ArgumentsList)
                 {
                     string direct = FilesystemTools.NeutralizePath(Directory);
-                    Listing.List(direct, ShowFileDetails, SuppressUnauthorizedMessage, Listing.SortList, Recursive);
+                    if (tree)
+                        Listing.ListTree(direct, SuppressUnauthorizedMessage, Listing.SortList);
+                    else
+                        Listing.List(direct, ShowFileDetails, SuppressUnauthorizedMessage, Listing.SortList, Recursive);
                 }
             }
             return 0;

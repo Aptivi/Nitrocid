@@ -152,6 +152,12 @@ namespace KS.Files.Folders
                                 TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("You are not authorized to get info for {0}."), true, KernelColorType.Error, Entry.OriginalFilePath);
                             DebugWriter.WriteDebugStackTrace(ex);
                         }
+                        catch (Exception ex)
+                        {
+                            if (!SuppressUnauthorizedMessage)
+                                TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Failed to get info for {0}."), true, KernelColorType.Error, Entry.OriginalFilePath);
+                            DebugWriter.WriteDebugStackTrace(ex);
+                        }
                     }
 
                     // Show total size in list optionally
@@ -174,6 +180,129 @@ namespace KS.Files.Folders
                 {
                     if (!SuppressUnauthorizedMessage)
                         TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("You are not authorized to get info for {0}."), true, KernelColorType.Error, folder);
+                    DebugWriter.WriteDebugStackTrace(ex);
+                }
+                catch (Exception ex)
+                {
+                    if (!SuppressUnauthorizedMessage)
+                        TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Failed to get info for {0}."), true, KernelColorType.Error, folder);
+                    DebugWriter.WriteDebugStackTrace(ex);
+                }
+            }
+            else
+            {
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Directory {0} not found"), true, KernelColorType.Error, folder);
+                DebugWriter.WriteDebug(DebugLevel.I, "IO.FolderExists = {0}", Checking.FolderExists(folder));
+            }
+        }
+
+        /// <summary>
+        /// List all files and folders in a specified folder (tree form)
+        /// </summary>
+        /// <param name="folder">Full path to folder</param>
+        public static void ListTree(string folder) =>
+            ListTree(folder, FilesystemTools.SuppressUnauthorizedMessages, SortList, 0);
+
+        /// <summary>
+        /// List all files and folders in a specified folder (tree form)
+        /// </summary>
+        /// <param name="folder">Full path to folder</param>
+        /// <param name="Sort">Whether to sort the filesystem entries</param>
+        public static void ListTree(string folder, bool Sort) =>
+            ListTree(folder, FilesystemTools.SuppressUnauthorizedMessages, Sort, 0);
+
+        /// <summary>
+        /// List all files and folders in a specified folder (tree form)
+        /// </summary>
+        /// <param name="folder">Full path to folder</param>
+        /// <param name="SuppressUnauthorizedMessage">Whether to silence the access denied messages</param>
+        /// <param name="Sort">Whether to sort the filesystem entries</param>
+        public static void ListTree(string folder, bool SuppressUnauthorizedMessage, bool Sort) =>
+            ListTree(folder, SuppressUnauthorizedMessage, Sort, 0);
+
+        /// <summary>
+        /// List all files and folders in a specified folder (tree form)
+        /// </summary>
+        /// <param name="folder">Full path to folder</param>
+        /// <param name="SuppressUnauthorizedMessage">Whether to silence the access denied messages</param>
+        /// <param name="Sort">Whether to sort the filesystem entries</param>
+        /// <param name="level">Indentation level</param>
+        internal static void ListTree(string folder, bool SuppressUnauthorizedMessage, bool Sort, int level = 0)
+        {
+            FilesystemTools.ThrowOnInvalidPath(folder);
+            DebugWriter.WriteDebug(DebugLevel.I, "Folder {0} will be listed...", folder);
+
+            // List files and folders
+            folder = FilesystemTools.NeutralizePath(folder);
+            if (Checking.FolderExists(folder) | folder.ContainsAnyOf(["?", "*"]))
+            {
+                List<FileSystemEntry> enumeration;
+                if (level == 0)
+                    SeparatorWriterColor.WriteSeparator(folder, true);
+
+                // Try to create a list
+                try
+                {
+                    enumeration = CreateList(folder, Sort);
+                    if (enumeration.Count == 0)
+                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("Folder is empty."), true, KernelColorType.Warning);
+
+                    // Enumerate each entry
+                    foreach (FileSystemEntry Entry in enumeration)
+                    {
+                        string name = Path.GetFileName(Entry.FilePath);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Enumerating {0}...", Entry.FilePath);
+                        try
+                        {
+                            switch (Entry.Type)
+                            {
+                                case FileSystemEntryType.File:
+                                    ListEntryWriterColor.WriteListEntry(name, Entry.FileSize.SizeString(), level);
+                                    break;
+                                case FileSystemEntryType.Directory:
+                                    ListEntryWriterColor.WriteListEntry(name, "[/]", level);
+                                    ListTree(Entry.FilePath, SuppressUnauthorizedMessage, Sort, level + 1);
+                                    break;
+                            }
+                        }
+                        catch (UnauthorizedAccessException ex)
+                        {
+                            if (!SuppressUnauthorizedMessage)
+                                ListEntryWriterColor.WriteListEntry(name, Translate.DoTranslation("Unauthorized"), level);
+                            DebugWriter.WriteDebugStackTrace(ex);
+                        }
+                        catch (Exception ex)
+                        {
+                            if (!SuppressUnauthorizedMessage)
+                                ListEntryWriterColor.WriteListEntry(name, Translate.DoTranslation("Error"), level);
+                            DebugWriter.WriteDebugStackTrace(ex);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Unknown error while listing in directory: {0}"), true, KernelColorType.Error, ex.Message);
+                    DebugWriter.WriteDebugStackTrace(ex);
+                }
+            }
+            else if (Checking.FileExists(folder))
+            {
+                var entry = new FileSystemEntry(folder);
+                string name = Path.GetFileName(entry.FilePath);
+                try
+                {
+                    ListEntryWriterColor.WriteListEntry(name, entry.FileSize.SizeString());
+                }
+                catch (UnauthorizedAccessException ex)
+                {
+                    if (!SuppressUnauthorizedMessage)
+                        ListEntryWriterColor.WriteListEntry(name, Translate.DoTranslation("Unauthorized"));
+                    DebugWriter.WriteDebugStackTrace(ex);
+                }
+                catch (Exception ex)
+                {
+                    if (!SuppressUnauthorizedMessage)
+                        ListEntryWriterColor.WriteListEntry(name, Translate.DoTranslation("Error"));
                     DebugWriter.WriteDebugStackTrace(ex);
                 }
             }
