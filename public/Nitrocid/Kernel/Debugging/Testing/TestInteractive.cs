@@ -50,6 +50,7 @@ namespace KS.Kernel.Debugging.Testing
             { "PrintPlaces",                                new PrintPlaces() },
             { "PrintWithNewLines",                          new PrintWithNewLines() },
             { "PrintWithNulls",                             new PrintWithNulls() },
+            { "PrintHighlighted",                           new PrintHighlighted() },
             { "Debug",                                      new Debug() },
             { "RDebug",                                     new RDebug() },
             { "TestDictWriterStr",                          new TestDictWriterStr() },
