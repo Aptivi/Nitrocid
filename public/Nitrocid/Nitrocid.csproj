@@ -106,19 +106,13 @@
   </ItemGroup>
   <!-- KS Non-private Dependencies Information End -->
 
-  <!-- KS Launchers and Manpages -->
-  <ItemGroup>
-    <Assets Include="..\..\assets\*.*" />
-  </ItemGroup>
-  <Target Name="UpdateLaunchersManpages" BeforeTargets="Compile">
-    <Copy SourceFiles="@(Assets)" DestinationFolder="$(OutDir)" />
-  </Target>
+  <!-- KS Analyzers -->
   <ItemGroup>
     <Compile Remove="KSAnalyzer\**" />
     <EmbeddedResource Remove="KSAnalyzer\**" />
     <None Remove="KSAnalyzer\**" />
   </ItemGroup>
-  <!-- KS Launchers and Manpages End -->
+  <!-- KS Analyzers End -->
 
   <!-- KS Manifest -->
   <ItemGroup>
