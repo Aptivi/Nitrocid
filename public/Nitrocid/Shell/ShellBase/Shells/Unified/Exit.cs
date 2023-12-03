@@ -17,32 +17,33 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Shell.ShellBase.Commands.ProcessExecution;
-using KS.Shell.ShellBase.Switches;
-using System.Linq;
+using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Kernel.Exceptions;
+using KS.Languages;
+using KS.Shell.ShellBase.Commands;
+using KS.Shell.ShellBase.Shells;
 
-namespace KS.Shell.ShellBase.Commands.UnifiedCommands
+namespace KS.Shell.ShellBase.Shells.Unified
 {
     /// <summary>
-    /// Executes an external command
+    /// Exits the subshell
     /// </summary>
     /// <remarks>
-    /// If you need to take a look at a process output, it's wise to use this command.
+    /// If the UESH shell is a subshell, you can exit it. However, you can't use this command to log out of your account, because it can't exit the mother shell. The only to exit it is to use the logout command.
     /// </remarks>
-    class ExecUnifiedCommand : BaseCommand, ICommand
+    class ExitUnifiedCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            string command = parameters.ArgumentsList[0];
-            string arguments = string.Join(' ', parameters.ArgumentsList.Skip(1).ToArray());
-            if (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-forked"))
+            if (ShellManager.IsOnMotherShell())
             {
-                ProcessExecutor.ExecuteProcessForked(command, arguments);
-                return 0;
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("You can't exit the mother shell. Did you mean to log out of your account, shut the kernel down, or reboot it?"), KernelColorType.Error);
+                return 10000 + (int)KernelExceptionType.ShellOperation;
             }
-            return ProcessExecutor.ExecuteProcess(command, arguments);
+            ShellManager.KillShell();
+            return 0;
         }
-
     }
 }

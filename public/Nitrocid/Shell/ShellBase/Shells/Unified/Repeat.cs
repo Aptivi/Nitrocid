@@ -23,9 +23,10 @@ using KS.Kernel.Debugging;
 using KS.Kernel.Threading;
 using KS.Languages;
 using KS.Shell.ShellBase.Arguments;
+using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 
-namespace KS.Shell.ShellBase.Commands.UnifiedCommands
+namespace KS.Shell.ShellBase.Shells.Unified
 {
     /// <summary>
     /// Repeats a command

@@ -383,10 +383,30 @@ namespace KS.Misc.Splash
         }
 
         /// <summary>
+        /// Clears the screen for important messages to show up during kernel booting
+        /// </summary>
+        /// <param name="context">Context of the splash screen (can be used as a reason as to why do you want to display the splash)</param>
+        public static void BeginSplashOut(SplashContext context)
+        {
+            if (EnableSplash && SplashReport._InSplash)
+                CloseSplash(CurrentSplash, false, context);
+        }
+
+        /// <summary>
+        /// Declares that it's done showing important messages during kernel booting
+        /// </summary>
+        /// <param name="context">Context of the splash screen (can be used as a reason as to why do you want to display the splash)</param>
+        public static void EndSplashOut(SplashContext context)
+        {
+            if (EnableSplash && !SplashReport._InSplash)
+                OpenSplash(context);
+        }
+
+        /// <summary>
         /// Previews the splash by name
         /// </summary>
         /// <param name="context">Context of the splash screen (can be used as a reason as to why do you want to display the splash)</param>
-        public static void PreviewSplash(SplashContext context) =>
+        internal static void PreviewSplash(SplashContext context) =>
             PreviewSplash(CurrentSplash, false, context);
 
         /// <summary>
@@ -394,7 +414,7 @@ namespace KS.Misc.Splash
         /// </summary>
         /// <param name="splashOut">Whether to test out the important messages on splash.</param>
         /// <param name="context">Context of the splash screen (can be used as a reason as to why do you want to display the splash)</param>
-        public static void PreviewSplash(bool splashOut, SplashContext context) =>
+        internal static void PreviewSplash(bool splashOut, SplashContext context) =>
             PreviewSplash(CurrentSplash, splashOut, context);
 
         /// <summary>
@@ -402,7 +422,7 @@ namespace KS.Misc.Splash
         /// </summary>
         /// <param name="splashName">Splash name</param>
         /// <param name="context">Context of the splash screen (can be used as a reason as to why do you want to display the splash)</param>
-        public static void PreviewSplash(string splashName, SplashContext context) =>
+        internal static void PreviewSplash(string splashName, SplashContext context) =>
             PreviewSplash(GetSplashFromName(splashName).EntryPoint, false, context);
 
         /// <summary>
@@ -411,7 +431,7 @@ namespace KS.Misc.Splash
         /// <param name="splashName">Splash name</param>
         /// <param name="splashOut">Whether to test out the important messages on splash.</param>
         /// <param name="context">Context of the splash screen (can be used as a reason as to why do you want to display the splash)</param>
-        public static void PreviewSplash(string splashName, bool splashOut, SplashContext context) =>
+        internal static void PreviewSplash(string splashName, bool splashOut, SplashContext context) =>
             PreviewSplash(GetSplashFromName(splashName).EntryPoint, splashOut, context);
 
         /// <summary>
@@ -419,7 +439,7 @@ namespace KS.Misc.Splash
         /// </summary>
         /// <param name="splash">Splash name</param>
         /// <param name="context">Context of the splash screen (can be used as a reason as to why do you want to display the splash)</param>
-        public static void PreviewSplash(ISplash splash, SplashContext context) =>
+        internal static void PreviewSplash(ISplash splash, SplashContext context) =>
             PreviewSplash(splash, false, context);
 
         /// <summary>
@@ -428,7 +448,7 @@ namespace KS.Misc.Splash
         /// <param name="splash">Splash name</param>
         /// <param name="splashOut">Whether to test out the important messages on splash.</param>
         /// <param name="context">Context of the splash screen (can be used as a reason as to why do you want to display the splash)</param>
-        public static void PreviewSplash(ISplash splash, bool splashOut, SplashContext context)
+        internal static void PreviewSplash(ISplash splash, bool splashOut, SplashContext context)
         {
             // Open the splash and reset the report progress to 0%
             OpenSplash(splash, context);
@@ -449,26 +469,6 @@ namespace KS.Misc.Splash
 
             // Close
             CloseSplash(splash, context);
-        }
-
-        /// <summary>
-        /// Clears the screen for important messages to show up during kernel booting
-        /// </summary>
-        /// <param name="context">Context of the splash screen (can be used as a reason as to why do you want to display the splash)</param>
-        public static void BeginSplashOut(SplashContext context)
-        {
-            if (EnableSplash && SplashReport._InSplash)
-                CloseSplash(CurrentSplash, false, context);
-        }
-
-        /// <summary>
-        /// Declares that it's done showing important messages during kernel booting
-        /// </summary>
-        /// <param name="context">Context of the splash screen (can be used as a reason as to why do you want to display the splash)</param>
-        public static void EndSplashOut(SplashContext context)
-        {
-            if (EnableSplash && !SplashReport._InSplash)
-                OpenSplash(context);
         }
 
         private static void SplashThreadHandler(SplashThreadParameters threadParameters)

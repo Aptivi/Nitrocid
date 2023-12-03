@@ -21,8 +21,9 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.MiscWriters;
 using KS.Languages;
+using KS.Shell.ShellBase.Commands;
 
-namespace KS.Shell.ShellBase.Commands.UnifiedCommands
+namespace KS.Shell.ShellBase.Shells.Unified
 {
     /// <summary>
     /// Gets a random tip

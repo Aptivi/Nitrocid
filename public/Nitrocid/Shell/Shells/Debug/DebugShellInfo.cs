@@ -187,6 +187,26 @@ namespace KS.Shell.Shells.Debug
                     ], new LsShellsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
             },
 
+            { "previewsplash",
+                new CommandInfo("previewsplash", /* Localizable */ "Previews the splash",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "splashName"),
+                        ],
+                        [
+                            new SwitchInfo("splashout", /* Localizable */ "Specifies whether to test out the important messages feature on splash", new SwitchOptions()
+                            {
+                                AcceptsValues = false
+                            }),
+                            new SwitchInfo("context", /* Localizable */ "Specifies the splash screen context", new SwitchOptions()
+                            {
+                                ArgumentsRequired = true
+                            }),
+                        ])
+                    ], new PreviewSplashCommand())
+            },
+
             { "showmainbuffer",
                 new CommandInfo("showmainbuffer", /* Localizable */ "Shows the main buffer that was on the screen before starting Nitrocid KS (Unix systems only)",
                     [

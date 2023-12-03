@@ -17,32 +17,37 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Kernel.Exceptions;
 using KS.Languages;
+using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 
-namespace KS.Shell.ShellBase.Commands.UnifiedCommands
+namespace KS.Shell.ShellBase.Shells.Unified
 {
     /// <summary>
-    /// Exits the subshell
+    /// Wraps a command
     /// </summary>
     /// <remarks>
-    /// If the UESH shell is a subshell, you can exit it. However, you can't use this command to log out of your account, because it can't exit the mother shell. The only to exit it is to use the logout command.
+    /// You can wrap a command so it stops outputting until you press a key if the console has printed lines that exceed the console window height. Only the commands that are explicitly set to be wrappable can be used with this command.
     /// </remarks>
-    class ExitUnifiedCommand : BaseCommand, ICommand
+    class WrapUnifiedCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            if (ShellManager.IsOnMotherShell())
-            {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("You can't exit the mother shell. Did you mean to log out of your account, shut the kernel down, or reboot it?"), KernelColorType.Error);
-                return 10000 + (int)KernelExceptionType.ShellOperation;
-            }
-            ShellManager.KillShell();
+            CommandExecutor.ExecuteCommandWrapped(parameters.ArgumentsText);
             return 0;
         }
+
+        public override void HelpHelper()
+        {
+            // Print the wrappable commands along with help description
+            var currentShell = ShellManager.ShellStack[^1];
+            var currentType = currentShell.ShellType;
+            var WrappableCmds = CommandExecutor.GetWrappableCommands(currentType);
+            TextWriterColor.Write(Translate.DoTranslation("Wrappable commands:"));
+            ListWriterColor.WriteList(WrappableCmds);
+        }
+
     }
 }

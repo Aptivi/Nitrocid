@@ -1203,26 +1203,6 @@ namespace KS.Shell.Shells.UESH
                     ], new PlatformCommand())
             },
 
-            { "previewsplash",
-                new CommandInfo("previewsplash", /* Localizable */ "Previews the splash",
-                    [
-                        new CommandArgumentInfo(
-                        [
-                            new CommandArgumentPart(true, "splashName"),
-                        ],
-                        [
-                            new SwitchInfo("splashout", /* Localizable */ "Specifies whether to test out the important messages feature on splash", new SwitchOptions()
-                            {
-                                AcceptsValues = false
-                            }),
-                            new SwitchInfo("context", /* Localizable */ "Specifies the splash screen context", new SwitchOptions()
-                            {
-                                ArgumentsRequired = true
-                            }),
-                        ])
-                    ], new PreviewSplashCommand())
-            },
-
             { "put",
                 new CommandInfo("put", /* Localizable */ "Uploads a file to specified website",
                     [

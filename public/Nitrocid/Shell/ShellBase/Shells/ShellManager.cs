@@ -33,7 +33,6 @@ using KS.Drivers;
 using KS.Shell.Prompts;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Commands.ProcessExecution;
-using KS.Shell.ShellBase.Commands.UnifiedCommands;
 using KS.Shell.Shells.UESH;
 using KS.Shell.Shells.Text;
 using KS.Shell.Shells.Hex;
@@ -63,6 +62,7 @@ using KS.Drivers.Console.Bases;
 using KS.Files.Operations.Querying;
 using KS.Kernel.Power;
 using KS.Files.Paths;
+using KS.Shell.ShellBase.Shells.Unified;
 
 namespace KS.Shell.ShellBase.Shells
 {

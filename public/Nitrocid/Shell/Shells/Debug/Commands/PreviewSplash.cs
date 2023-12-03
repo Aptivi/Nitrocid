@@ -26,7 +26,7 @@ using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Switches;
 using System;
 
-namespace KS.Shell.Shells.UESH.Commands
+namespace KS.Shell.Shells.Debug.Commands
 {
     /// <summary>
     /// Previews the splash
