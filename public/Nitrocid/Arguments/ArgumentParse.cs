@@ -130,11 +130,11 @@ namespace KS.Arguments
                     ], new VerbosePrebootArgument())
             },
 
-            { "prebootsplash",
-                new ArgumentInfo("prebootsplash", /* Localizable */ "Shows the pre-boot splash before configuration is loaded",
+            { "noprebootsplash",
+                new ArgumentInfo("noprebootsplash", /* Localizable */ "Hides the pre-boot splash before configuration is loaded",
                     [
                         new CommandArgumentInfo()
-                    ], new PrebootSplashArgument())
+                    ], new NoPrebootSplashArgument())
             },
         };
 

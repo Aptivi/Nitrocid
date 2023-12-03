@@ -21,12 +21,12 @@ using KS.Kernel;
 
 namespace KS.Arguments.CommandLineArguments
 {
-    class PrebootSplashArgument : ArgumentExecutor, IArgument
+    class NoPrebootSplashArgument : ArgumentExecutor, IArgument
     {
 
         public override void Execute(ArgumentParameters parameters)
         {
-            KernelEntry.PrebootSplash = true;
+            KernelEntry.PrebootSplash = false;
         }
     }
 }
