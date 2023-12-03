@@ -152,19 +152,18 @@ namespace Nitrocid.Extras.Amusements
                     ], new WordleCommand())
             },
 
-            // Hidden
             { "2015",
                 new CommandInfo("2015", /* Localizable */ "Starts the joke program, HDD Uncleaner 2015.",
                     [
                         new CommandArgumentInfo()
-                    ], new HddUncleanerCommand(), CommandFlags.Hidden)
+                    ], new HddUncleanerCommand())
             },
 
             { "2018",
                 new CommandInfo("2018", /* Localizable */ "Commemorates the 5-year anniversary of the kernel release",
                     [
                         new CommandArgumentInfo()
-                    ], new AnniversaryCommand(), CommandFlags.Hidden)
+                    ], new AnniversaryCommand())
             },
         };
 

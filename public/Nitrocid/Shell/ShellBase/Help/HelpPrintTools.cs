@@ -80,38 +80,18 @@ namespace KS.Shell.ShellBase.Help
         public static bool ShowAddonCommandsCount =>
             Config.MainConfig.ShowAddonCommandsCount;
 
-        internal static Dictionary<string, CommandInfo> FilterHidden(this Dictionary<string, CommandInfo> commandsList)
-        {
-            // Determine command type
-            var CommandList = commandsList
-                .Where((CommandValuePair) => !CommandValuePair.Value.Flags.HasFlag(CommandFlags.Hidden))
-                .OrderBy((CommandValuePair) => CommandValuePair.Key)
-                .ToDictionary((CommandValuePair) => CommandValuePair.Key, (CommandValuePair) => CommandValuePair.Value);
-            return CommandList;
-        }
-
-        internal static Dictionary<AliasInfo, CommandInfo> FilterHidden(this Dictionary<AliasInfo, CommandInfo> commandsList)
-        {
-            // Determine command type
-            var CommandList = commandsList
-                .Where((CommandValuePair) => !CommandValuePair.Value.Flags.HasFlag(CommandFlags.Hidden))
-                .OrderBy((CommandValuePair) => CommandValuePair.Key.Command)
-                .ToDictionary((CommandValuePair) => CommandValuePair.Key, (CommandValuePair) => CommandValuePair.Value);
-            return CommandList;
-        }
-
         internal static void ShowCommandList(string commandType, bool showGeneral = true, bool showMod = false, bool showAlias = false, bool showUnified = false, bool showAddon = false)
         {
             // Get general commands
-            var commands = CommandManager.GetCommands(commandType).FilterHidden();
-            var commandList = ShellManager.GetShellInfo(commandType).Commands.FilterHidden();
+            var commands = CommandManager.GetCommands(commandType);
+            var commandList = ShellManager.GetShellInfo(commandType).Commands;
 
             // Add every command from each mod, addon, and alias
-            var ModCommandList = ModManager.ListModCommands(commandType).FilterHidden();
-            var AddonCommandList = ShellManager.GetShellInfo(commandType).addonCommands.FilterHidden();
-            var unifiedCommandList = ShellManager.unifiedCommandDict.FilterHidden();
+            var ModCommandList = ModManager.ListModCommands(commandType);
+            var AddonCommandList = ShellManager.GetShellInfo(commandType).addonCommands;
+            var unifiedCommandList = ShellManager.unifiedCommandDict;
             var AliasedCommandList = AliasManager.GetAliasesListFromType(commandType)
-                .ToDictionary((ai) => ai, (ai) => ai.TargetCommand).FilterHidden();
+                .ToDictionary((ai) => ai, (ai) => ai.TargetCommand);
             TextWriterColor.WriteKernelColor(Translate.DoTranslation("Available commands:") + (ShowCommandsCount ? " [{0}]" : ""), true, KernelColorType.ListTitle, commands.Count);
 
             // The built-in commands
@@ -218,15 +198,15 @@ namespace KS.Shell.ShellBase.Help
         internal static void ShowHelpUsage(string command, string commandType)
         {
             // Determine command type
-            var CommandList = ShellManager.GetShellInfo(commandType).Commands.FilterHidden();
+            var CommandList = ShellManager.GetShellInfo(commandType).Commands;
 
             // Add every command from each mod, addon, and alias
-            var ModCommandList = ModManager.ListModCommands(commandType).FilterHidden();
-            var AddonCommandList = ShellManager.GetShellInfo(commandType).addonCommands.FilterHidden();
-            var unifiedCommandList = ShellManager.unifiedCommandDict.FilterHidden();
+            var ModCommandList = ModManager.ListModCommands(commandType);
+            var AddonCommandList = ShellManager.GetShellInfo(commandType).addonCommands;
+            var unifiedCommandList = ShellManager.unifiedCommandDict;
             var AliasedCommandList = AliasManager.GetAliasesListFromType(commandType)
-                .ToDictionary((ai) => ai, (ai) => ai.TargetCommand).FilterHidden();
-            var totalCommandList = CommandManager.GetCommands(commandType).FilterHidden();
+                .ToDictionary((ai) => ai, (ai) => ai.TargetCommand);
+            var totalCommandList = CommandManager.GetCommands(commandType);
 
             // Check to see if command exists
             if (!string.IsNullOrWhiteSpace(command) &&
