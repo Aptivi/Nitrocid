@@ -81,8 +81,6 @@ namespace KS.Kernel.Debugging.Testing
             { "ReloadMods",                                 new ReloadMods() },
             { "BlacklistMod",                               new BlacklistMod() },
             { "BlacklistModUndo",                           new BlacklistModUndo() },
-            { "Panic",                                      new Panic() },
-            { "PanicF",                                     new PanicF() },
             { "CheckString",                                new CheckString() },
             { "CheckStrings",                               new CheckStrings() },
             { "CheckLocalizationLines",                     new CheckLocalizationLines() },
