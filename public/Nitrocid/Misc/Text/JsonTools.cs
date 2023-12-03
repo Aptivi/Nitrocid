@@ -18,6 +18,7 @@
 //
 
 using System.IO;
+using System.Linq;
 using KS.Files;
 using KS.Files.Operations;
 using KS.Kernel.Debugging;
@@ -100,6 +101,59 @@ namespace KS.Misc.Text
             string MinifiedJson = JsonConvert.SerializeObject(JsonToken);
             DebugWriter.WriteDebug(DebugLevel.I, "Minified the JSON text. Length: {0}", MinifiedJson.Length);
             return MinifiedJson;
+        }
+
+        /// <summary>
+        /// Finds the JSON object differences between the two JSON object tokens
+        /// </summary>
+        /// <param name="sourceObj">Source object token</param>
+        /// <param name="targetObj">Target object token</param>
+        /// <returns>A JSON object containing differences for objects</returns>
+        public static JObject FindDifferences(JToken sourceObj, JToken targetObj)
+        {
+            var diff = new JObject();
+            if (!JToken.DeepEquals(targetObj, sourceObj))
+            {
+                switch (targetObj.Type)
+                {
+                    case JTokenType.Object:
+                        {
+                            var addedKeys = ((JObject)targetObj).Properties().Select(c => c.Name).Except(((JObject)sourceObj).Properties().Select(c => c.Name));
+                            var removedKeys = ((JObject)sourceObj).Properties().Select(c => c.Name).Except(((JObject)targetObj).Properties().Select(c => c.Name));
+                            var unchangedKeys = ((JObject)targetObj).Properties().Where(c => JToken.DeepEquals(c.Value, sourceObj[c.Name])).Select(c => c.Name);
+                            foreach (var k in addedKeys)
+                            {
+                                diff[k] = new JObject
+                                {
+                                    ["+"] = targetObj[k].Path
+                                };
+                                DebugWriter.WriteDebug(DebugLevel.I, "Extra addition {0}", targetObj[k].Path);
+                            }
+                            foreach (var k in removedKeys)
+                            {
+                                diff[k] = new JObject
+                                {
+                                    ["-"] = sourceObj[k].Path
+                                };
+                                DebugWriter.WriteDebug(DebugLevel.I, "Extra subtraction {0}", sourceObj[k].Path);
+                            }
+                        }
+                        break;
+                    case JTokenType.Array:
+                        {
+                            diff["+"] = new JArray(((JArray)targetObj).Except(sourceObj));
+                            diff["-"] = new JArray(((JArray)sourceObj).Except(targetObj));
+                            DebugWriter.WriteDebug(DebugLevel.I, "Additions: {0}, Removals: {1}", diff["+"].Count(), diff["-"].Count());
+                        }
+                        break;
+                    default:
+                        DebugWriter.WriteDebug(DebugLevel.I, "Whole diff.");
+                        diff["+"] = targetObj;
+                        diff["-"] = sourceObj;
+                        break;
+                }
+            }
+            return diff;
         }
 
     }

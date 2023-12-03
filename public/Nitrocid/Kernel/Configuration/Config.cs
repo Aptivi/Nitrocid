@@ -35,6 +35,7 @@ using KS.Files.Operations;
 using KS.Files.Operations.Querying;
 using KS.Files.Paths;
 using KS.ConsoleBase.Inputs.Styles.Infobox;
+using KS.Misc.Text;
 
 namespace KS.Kernel.Configuration
 {
@@ -374,7 +375,7 @@ namespace KS.Kernel.Configuration
             {
                 var serializedObj = JObject.Parse(serialized);
                 var currentObj = JObject.Parse(current);
-                var diffObj = FindConfigDifferences(serializedObj, currentObj);
+                var diffObj = JsonTools.FindDifferences(serializedObj, currentObj);
 
                 // Skim through the difference object
                 foreach (var diff in diffObj)
@@ -435,52 +436,6 @@ namespace KS.Kernel.Configuration
                 DebugWriter.WriteDebug(DebugLevel.F, "Last Resort: Failed to fix configuration! {0}", ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
-        }
-
-        private static JObject FindConfigDifferences(JToken serializedObj, JToken currentObj)
-        {
-            var diff = new JObject();
-            if (!JToken.DeepEquals(currentObj, serializedObj))
-            {
-                switch (currentObj.Type)
-                {
-                    case JTokenType.Object:
-                        {
-                            var addedKeys = ((JObject)currentObj).Properties().Select(c => c.Name).Except(((JObject)serializedObj).Properties().Select(c => c.Name));
-                            var removedKeys = ((JObject)serializedObj).Properties().Select(c => c.Name).Except(((JObject)currentObj).Properties().Select(c => c.Name));
-                            var unchangedKeys = ((JObject)currentObj).Properties().Where(c => JToken.DeepEquals(c.Value, serializedObj[c.Name])).Select(c => c.Name);
-                            foreach (var k in addedKeys)
-                            {
-                                diff[k] = new JObject
-                                {
-                                    ["+"] = currentObj[k].Path
-                                };
-                                DebugWriter.WriteDebug(DebugLevel.I, "Extra addition {0}", currentObj[k].Path);
-                            }
-                            foreach (var k in removedKeys)
-                            {
-                                diff[k] = new JObject
-                                {
-                                    ["-"] = serializedObj[k].Path
-                                };
-                                DebugWriter.WriteDebug(DebugLevel.I, "Extra subtraction {0}", serializedObj[k].Path);
-                            }
-                        }
-                        break;
-                    case JTokenType.Array:
-                        {
-                            diff["+"] = new JArray(((JArray)currentObj).Except(serializedObj));
-                            diff["-"] = new JArray(((JArray)serializedObj).Except(currentObj));
-                            DebugWriter.WriteDebug(DebugLevel.I, "Additions: {0}, Removals: {1}", diff["+"].Count(), diff["-"].Count());
-                        }
-                        break;
-                    default:
-                        diff["+"] = currentObj;
-                        diff["-"] = serializedObj;
-                        break;
-                }
-            }
-            return diff;
         }
 
     }
