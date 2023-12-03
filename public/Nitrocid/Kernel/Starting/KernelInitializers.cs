@@ -166,7 +166,7 @@ namespace KS.Kernel.Starting
 
                 // Create config file and then read it
                 if (KernelEntry.TalkativePreboot)
-                    TextWriterColor.Write(Translate.DoTranslation("Loading configuration..."));
+                    SplashReport.ReportProgress(Translate.DoTranslation("Loading configuration..."));
                 if (!KernelEntry.SafeMode)
                     Config.InitializeConfig();
                 DebugWriter.WriteDebug(DebugLevel.I, "Loaded configuration.");

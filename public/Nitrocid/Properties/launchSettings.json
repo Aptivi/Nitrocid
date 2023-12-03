@@ -43,9 +43,9 @@
       "commandName": "Project",
       "commandLineArgs": "nosetbuffersize"
     },
-    "Nitrocid KS - Pre-boot splash": {
+    "Nitrocid KS - No pre-boot splash": {
       "commandName": "Project",
-      "commandLineArgs": "verbosepreboot prebootsplash"
+      "commandLineArgs": "verbosepreboot noprebootsplash"
     }
   }
 }

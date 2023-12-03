@@ -153,9 +153,9 @@ namespace KS.Misc.Splash
                 // Add to the log buffer
                 logBuffer.Add($"[{TimeDateRenderers.Render(FormatType.Short)}] [{_Progress}%] Info: {TextTools.FormatString(Text, Vars)}");
             }
-            else if (KernelBooted)
+            else if (KernelBooted || (SplashManager.EnableSplash && !InSplash || !SplashManager.EnableSplash && !KernelEntry.QuietKernel) || !SplashManager.EnableSplash)
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Kernel booted. Reporting {0}...", Text);
+                DebugWriter.WriteDebug(DebugLevel.I, "Kernel booted or not in splash. Reporting {0}...", Text);
                 TextWriterColor.WriteKernelColor(Text, true, KernelColorType.Tip, Vars);
             }
             JournalManager.WriteJournal(Text, Vars);
@@ -200,7 +200,7 @@ namespace KS.Misc.Splash
         /// </remarks>
         public static void ReportProgressWarning(string Text, bool force = false, ISplash splash = null, Exception exception = null, params object[] Vars)
         {
-            if (!KernelBooted && InSplash || force)
+            if (!KernelBooted && (SplashManager.EnableSplash && InSplash || !SplashManager.EnableSplash && !KernelEntry.QuietKernel) || force)
             {
                 // Set the progress text
                 _ProgressText = Text;
@@ -223,7 +223,7 @@ namespace KS.Misc.Splash
                 // Add to the log buffer
                 logBuffer.Add($"[{TimeDateRenderers.Render(FormatType.Short)}] [{_Progress}%] Warning: {TextTools.FormatString(Text, Vars)}");
             }
-            else if (KernelBooted)
+            else if (KernelBooted || (SplashManager.EnableSplash && !InSplash || !SplashManager.EnableSplash && !KernelEntry.QuietKernel) || !SplashManager.EnableSplash)
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Kernel booted. Reporting {0}...", Text);
                 TextWriterColor.WriteKernelColor(Text, true, KernelColorType.Warning, Vars);
@@ -270,7 +270,7 @@ namespace KS.Misc.Splash
         /// </remarks>
         public static void ReportProgressError(string Text, bool force = false, ISplash splash = null, Exception exception = null, params object[] Vars)
         {
-            if (!KernelBooted && InSplash || force)
+            if (!KernelBooted && (SplashManager.EnableSplash && InSplash || !SplashManager.EnableSplash && !KernelEntry.QuietKernel) || force)
             {
                 // Set the progress text
                 _ProgressText = Text;
@@ -293,7 +293,7 @@ namespace KS.Misc.Splash
                 // Add to the log buffer
                 logBuffer.Add($"[{TimeDateRenderers.Render(FormatType.Short)}] [{_Progress}%] Error: {TextTools.FormatString(Text, Vars)}");
             }
-            else if (KernelBooted)
+            else if (KernelBooted || (SplashManager.EnableSplash && !InSplash || !SplashManager.EnableSplash && !KernelEntry.QuietKernel) || !SplashManager.EnableSplash)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Kernel booted. Reporting {0}...", Text);
                 TextWriterColor.WriteKernelColor(Text, true, KernelColorType.Error, Vars);
