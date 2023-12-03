@@ -20,7 +20,7 @@
 using System.Linq;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
-using Namer;
+using Textify.Online.NameGen;
 
 namespace Nitrocid.Extras.NameGen.Commands
 {

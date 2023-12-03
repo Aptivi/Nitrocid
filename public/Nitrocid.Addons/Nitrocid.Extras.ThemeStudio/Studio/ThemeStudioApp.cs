@@ -31,7 +31,6 @@ using KS.Kernel.Events;
 using KS.Languages;
 using KS.Misc.Text;
 using Terminaux.Colors;
-using Terminaux.Colors.Wheel;
 
 namespace Nitrocid.Extras.ThemeStudio.Studio
 {

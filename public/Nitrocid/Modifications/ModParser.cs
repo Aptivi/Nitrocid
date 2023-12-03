@@ -31,7 +31,6 @@ using KS.Misc.Reflection;
 using KS.Misc.Splash;
 using KS.Modifications.ManPages;
 using KS.Kernel.Events;
-using SemanVer.Instance;
 using KS.Modifications.Dependencies;
 using KS.Files.Operations;
 using KS.Files.Operations.Querying;
@@ -39,6 +38,7 @@ using Newtonsoft.Json;
 using KS.Languages.Decoy;
 using KS.Files.Paths;
 using KS.Security.Signing;
+using Textify.Versioning;
 
 namespace KS.Modifications
 {

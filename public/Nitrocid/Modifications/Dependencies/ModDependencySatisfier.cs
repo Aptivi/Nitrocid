@@ -24,11 +24,11 @@ using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using Newtonsoft.Json;
-using SemanVer.Instance;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Textify.Versioning;
 
 namespace KS.Modifications.Dependencies
 {

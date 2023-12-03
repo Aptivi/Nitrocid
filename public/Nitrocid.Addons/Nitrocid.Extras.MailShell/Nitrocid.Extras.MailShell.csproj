@@ -65,8 +65,8 @@
   <!-- Extras.MailShell addon Platform Information End -->
 
   <ItemGroup>
-    <PackageReference Include="Addresstigator" Version="0.1.0.5" />
     <PackageReference Include="MailKit" Version="4.3.0" />
+    <PackageReference Include="Textify.Online" Version="1.0.1" />
   </ItemGroup>
 
 </Project>

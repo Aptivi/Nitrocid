@@ -18,13 +18,12 @@
 //
 
 using System.Linq;
-using Dictify.Models;
 using KS.ConsoleBase.Colors;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
-using Dictify.Manager;
+using Textify.Online.EnglishDictionary;
 
 namespace Nitrocid.Extras.Dictionary.Commands
 {

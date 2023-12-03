@@ -23,10 +23,10 @@ using System.Collections.Generic;
 using System;
 using KS.Languages;
 using System.Threading;
-using Wordament;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
 using Terminaux.Colors;
+using Textify.Online.Words;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games
 {

@@ -35,6 +35,7 @@ using MailKit.Net.Imap;
 using MailKit.Net.Smtp;
 using MimeKit.Cryptography;
 using Nitrocid.Extras.MailShell.Tools.PGP;
+using Textify.Online.MailAddress;
 
 namespace Nitrocid.Extras.MailShell.Tools
 {
@@ -196,7 +197,7 @@ namespace Nitrocid.Extras.MailShell.Tools
         public static string ServerDetect(string Address, ServerType Type)
         {
             // Get the mail server dynamically
-            var DynamicConfiguration = Addresstigator.Tools.GetIspConfig(Address);
+            var DynamicConfiguration = IspTools.GetIspConfig(Address);
             string ReturnedMailAddress = "";
             var ReturnedMailPort = 0;
             switch (Type)

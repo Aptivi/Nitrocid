@@ -38,6 +38,9 @@
     <Optimize>true</Optimize>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="Textify.Online" Version="1.0.1" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\..\Nitrocid\Nitrocid.csproj" Private="false" />
   </ItemGroup>
   <ItemGroup>
@@ -46,10 +49,6 @@
     </None>
   </ItemGroup>
   <!-- ScreensaverPacks addon Platform Information End -->
-
-  <ItemGroup>
-    <PackageReference Include="Wordament" Version="0.3.1" />
-  </ItemGroup>
 
   <ItemGroup>
     <Compile Update="Resources\AddonResources.Designer.cs">

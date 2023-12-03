@@ -21,7 +21,6 @@ using KS.ConsoleBase;
 using KS.ConsoleBase.Inputs;
 using KS.Kernel.Debugging;
 using KS.Kernel.Extensions;
-using KS.Languages;
 using System;
 using System.Collections.Generic;
 using System.Data;

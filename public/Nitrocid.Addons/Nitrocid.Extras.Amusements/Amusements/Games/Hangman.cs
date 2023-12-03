@@ -28,7 +28,7 @@ using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using Terminaux.Colors;
-using Wordament;
+using Textify.Online.Words;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games
 {

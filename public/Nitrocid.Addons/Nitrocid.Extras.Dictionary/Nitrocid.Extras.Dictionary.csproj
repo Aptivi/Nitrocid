@@ -38,6 +38,9 @@
     <Optimize>true</Optimize>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="Textify.Online" Version="1.0.1" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\..\Nitrocid\Nitrocid.csproj" Private="false" />
   </ItemGroup>
   <ItemGroup>
@@ -46,9 +49,5 @@
     </None>
   </ItemGroup>
   <!-- Extras.Dictionary addon Platform Information End -->
-
-  <ItemGroup>
-    <PackageReference Include="Dictify" Version="1.1.2" />
-  </ItemGroup>
 
 </Project>

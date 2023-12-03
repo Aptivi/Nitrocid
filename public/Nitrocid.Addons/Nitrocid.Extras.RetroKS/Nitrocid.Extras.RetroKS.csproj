@@ -38,8 +38,8 @@
     <Optimize>true</Optimize>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="SemanVer" Version="1.1.1" />
     <PackageReference Include="SharpCompress" Version="0.34.2" />
+    <PackageReference Include="Textify.Offline" Version="1.0.1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Nitrocid\Nitrocid.csproj" Private="false" />

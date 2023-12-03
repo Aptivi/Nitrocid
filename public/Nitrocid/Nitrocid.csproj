@@ -95,7 +95,6 @@
     <PackageReference Include="GRILO.Boot" Version="0.1.0.3" PrivateAssets="all" />
     <PackageReference Include="Microsoft.Data.Sqlite" Version="8.0.0" PrivateAssets="all" />
     <PackageReference Include="Newtonsoft.Json.Schema" Version="3.0.15" PrivateAssets="all" />
-    <PackageReference Include="SemanVer" Version="1.1.1" PrivateAssets="all" />
     <PackageReference Include="SpecProbe" Version="1.2.0.1" PrivateAssets="all" />
   </ItemGroup>
   <!-- KS Dependencies Information End -->
@@ -103,6 +102,7 @@
   <!-- KS Non-private Dependencies Information -->
   <ItemGroup>
     <PackageReference Include="Terminaux" Version="1.12.3" />
+    <PackageReference Include="Textify.Offline" Version="1.0.1" />
   </ItemGroup>
   <!-- KS Non-private Dependencies Information End -->
 

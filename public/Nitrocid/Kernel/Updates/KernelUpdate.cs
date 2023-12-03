@@ -23,7 +23,7 @@ using System.Data;
 using System.Linq;
 using KS.Kernel.Debugging;
 using Newtonsoft.Json.Linq;
-using SemanVer.Instance;
+using Textify.Versioning;
 
 namespace KS.Kernel.Updates
 {

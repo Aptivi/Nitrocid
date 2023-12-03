@@ -30,10 +30,10 @@ using KS.Kernel.Updates;
 using KS.Languages;
 using KS.Network.Base.Transfer;
 using Newtonsoft.Json.Linq;
-using SemanVer.Instance;
 using SharpCompress.Archives;
 using SharpCompress.Archives.Zip;
 using SharpCompress.Common;
+using Textify.Versioning;
 
 namespace Nitrocid.Extras.RetroKS
 {
