@@ -6096,5 +6096,17 @@
                 "MaximumValue": 255
             }
         ]
+    },
+    {
+        "Name": "Spray",
+        "Desc": "Shows you spraying stars.",
+        "Keys": [
+            {
+                "Name": "Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "SprayDelay",
+                "Description": "How many milliseconds to wait before making the next write?"
+            }
+        ]
     }
 ]

@@ -3264,5 +3264,9 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [CommitMilestone] The maximum color level (255 colors or 16 colors)
         /// </summary>
         public int CommitMilestoneMaximumColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [Spray] How many milliseconds to wait before making the next write?
+        /// </summary>
+        public int SprayDelay { get; set; } = 10;
     }
 }

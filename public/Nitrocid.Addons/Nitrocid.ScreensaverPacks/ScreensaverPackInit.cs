@@ -102,6 +102,7 @@ namespace Nitrocid.ScreensaverPacks
             { "speckles", new SpecklesDisplay() },
             { "spin", new SpinDisplay() },
             { "spotwrite", new SpotWriteDisplay() },
+            { "spray", new SprayDisplay() },
             { "squarecorner", new SquareCornerDisplay() },
             { "stackbox", new StackBoxDisplay() },
             { "starfield", new StarfieldDisplay() },
