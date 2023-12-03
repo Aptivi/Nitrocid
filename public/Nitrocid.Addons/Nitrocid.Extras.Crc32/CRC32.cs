@@ -23,8 +23,10 @@ using KS.Kernel.Debugging;
 using System.IO;
 using System.Text.RegularExpressions;
 using TextEncoding = System.Text.Encoding;
+using KS.Drivers;
+using KS.Drivers.Encryption;
 
-namespace KS.Drivers.Encryption.Bases
+namespace Nitrocid.Extras.Crc32
 {
     /// <summary>
     /// CRC32 encryptor

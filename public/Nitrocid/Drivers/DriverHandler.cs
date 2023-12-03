@@ -105,7 +105,6 @@ namespace KS.Drivers
                 DriverTypes.Encryption, new()
                 {
                     { "Default", new SHA256() },
-                    { "CRC32", new CRC32() },
                     { "MD5", new MD5() },
                     { "SHA1", new SHA1() },
                     { "SHA256", new SHA256() },

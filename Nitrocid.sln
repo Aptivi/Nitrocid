@@ -140,7 +140,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.Extras.JsonShell",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.Extras.Docking", "public\Nitrocid.Addons\Nitrocid.Extras.Docking\Nitrocid.Extras.Docking.csproj", "{C83EB703-1DE7-48C9-9406-1CFA5140235F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nitrocid.Extras.Diagnostics", "public\Nitrocid.Addons\Nitrocid.Extras.Diagnostics\Nitrocid.Extras.Diagnostics.csproj", "{47BECAD8-5DB2-4DE1-B0F0-3225E3396AF7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.Extras.Diagnostics", "public\Nitrocid.Addons\Nitrocid.Extras.Diagnostics\Nitrocid.Extras.Diagnostics.csproj", "{47BECAD8-5DB2-4DE1-B0F0-3225E3396AF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nitrocid.Extras.Crc32", "public\Nitrocid.Addons\Nitrocid.Extras.Crc32\Nitrocid.Extras.Crc32.csproj", "{4CDBC217-C639-4D93-9F9A-FFD5956C0395}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -348,6 +350,10 @@ Global
 		{47BECAD8-5DB2-4DE1-B0F0-3225E3396AF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47BECAD8-5DB2-4DE1-B0F0-3225E3396AF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47BECAD8-5DB2-4DE1-B0F0-3225E3396AF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CDBC217-C639-4D93-9F9A-FFD5956C0395}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CDBC217-C639-4D93-9F9A-FFD5956C0395}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CDBC217-C639-4D93-9F9A-FFD5956C0395}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CDBC217-C639-4D93-9F9A-FFD5956C0395}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -408,6 +414,7 @@ Global
 		{71F19E75-8C3A-4224-94AD-6419E77F8670} = {B60F276A-FE12-4001-916E-080344ED1FD9}
 		{C83EB703-1DE7-48C9-9406-1CFA5140235F} = {B60F276A-FE12-4001-916E-080344ED1FD9}
 		{47BECAD8-5DB2-4DE1-B0F0-3225E3396AF7} = {B60F276A-FE12-4001-916E-080344ED1FD9}
+		{4CDBC217-C639-4D93-9F9A-FFD5956C0395} = {B60F276A-FE12-4001-916E-080344ED1FD9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {424D8E7A-CFEB-40AE-A79C-437D603177FD}

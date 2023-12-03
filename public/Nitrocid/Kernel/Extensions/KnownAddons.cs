@@ -77,6 +77,10 @@ namespace KS.Kernel.Extensions
         /// </summary>
         ExtrasContacts,
         /// <summary>
+        /// CRC32 Extras addon
+        /// </summary>
+        ExtrasCrc32,
+        /// <summary>
         /// Diagnostics Extras addon
         /// </summary>
         ExtrasDiagnostics,

@@ -44,6 +44,7 @@ namespace KS.Kernel.Extensions
             { KnownAddons.ExtrasChatGpt,                /* Localizable */ "Extras - ChatGPT Unofficial Client" },
             { KnownAddons.ExtrasColorConvert,           /* Localizable */ "Extras - Color Converter" },
             { KnownAddons.ExtrasContacts,               /* Localizable */ "Extras - Contacts" },
+            { KnownAddons.ExtrasCrc32,                  /* Localizable */ "Extras - CRC32" },
             { KnownAddons.ExtrasDiagnostics,            /* Localizable */ "Extras - Diagnostics" },
             { KnownAddons.ExtrasDictionary,             /* Localizable */ "Extras - Dictionary" },
             { KnownAddons.ExtrasDocking,                /* Localizable */ "Extras - Docking" },
