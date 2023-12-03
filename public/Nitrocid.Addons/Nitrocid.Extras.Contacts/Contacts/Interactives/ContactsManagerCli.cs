@@ -53,6 +53,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             new InteractiveTuiBinding(/* Localizable */ "Search Next", ConsoleKey.F7, (_, _) => SearchNext(), true),
             new InteractiveTuiBinding(/* Localizable */ "Search Back", ConsoleKey.F8, (_, _) => SearchPrevious(), true),
             new InteractiveTuiBinding(/* Localizable */ "Raw Info", ConsoleKey.F9, (_, index) => ShowContactRawInfo(index), true),
+            new InteractiveTuiBinding(/* Localizable */ "Import From MeCard", ConsoleKey.F10, (_, _) => ImportContactFromMeCard(), true),
         ];
 
         /// <inheritdoc/>
@@ -151,6 +152,26 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             }
             else
                 InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("File doesn't exist. Make sure that you've written the correct path to a VCF file or to a contacts2.db file."), BoxForegroundColor, BoxBackgroundColor);
+        }
+
+        private static void ImportContactFromMeCard()
+        {
+            // Now, render the search box
+            string meCard = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a valid MeCard representation of your contact."), BoxForegroundColor, BoxBackgroundColor);
+            if (!string.IsNullOrEmpty(meCard))
+            {
+                try
+                {
+                    // Initiate installation
+                    ContactsManager.InstallContactFromMeCard(meCard);
+                }
+                catch
+                {
+                    InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Contact MeCard syntax is invalid."), BoxForegroundColor, BoxBackgroundColor);
+                }
+            }
+            else
+                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Contact MeCard syntax may not be empty"), BoxForegroundColor, BoxBackgroundColor);
         }
 
         private static void ShowContactInfo(int index)

@@ -33,6 +33,7 @@ using VisualCard.Converters;
 using KS.Misc.Text.Probers.Regexp;
 using KS.Files.Operations.Querying;
 using KS.Files.Paths;
+using VisualCard.Parsers;
 
 namespace Nitrocid.Extras.Contacts.Contacts
 {
@@ -118,23 +119,49 @@ namespace Nitrocid.Extras.Contacts.Contacts
         /// <param name="saveToPath">Saves the added contact to a VCF file in <see cref="KernelPathType.Contacts"/></param>
         public static void InstallContacts(string pathToContactFile, bool saveToPath = true)
         {
+            // Check to see if we're dealing with the non-existent contacts file
+            if (!Checking.FileExists(pathToContactFile))
+                throw new KernelException(KernelExceptionType.Contacts, pathToContactFile);
+
+            // Check to see if we're given the Android contacts2.db file
+            bool isAndroidContactDb = Path.GetFileName(pathToContactFile) == "contacts2.db";
+            DebugWriter.WriteDebug(DebugLevel.I, "Contact file came from Android's contact storage? {0}", isAndroidContactDb);
+
+            // Now, ensure that the parser is able to return the base parsers required to parse contacts
+            var parsers =
+                isAndroidContactDb ?
+                AndroidContactsDb.GetContactsFromDb(pathToContactFile) :
+                CardTools.GetCardParsers(pathToContactFile);
+            InstallContacts(parsers, saveToPath);
+        }
+
+        /// <summary>
+        /// Installs the contacts to the manager
+        /// </summary>
+        /// <param name="meCardSyntax">A valid MeCard syntax</param>
+        /// <param name="saveToPath">Saves the added contact to a VCF file in <see cref="KernelPathType.Contacts"/></param>
+        public static void InstallContactFromMeCard(string meCardSyntax, bool saveToPath = true)
+        {
+            // Check to see if we're dealing with the non-existent contacts file
+            if (string.IsNullOrEmpty(meCardSyntax))
+                throw new KernelException(KernelExceptionType.Contacts, Translate.DoTranslation("The MeCard syntax can't be empty."));
+
+            // Now, ensure that the parser is able to return the base parsers required to parse contacts
+            var parsers = MeCard.GetContactsFromMeCardString(meCardSyntax);
+            InstallContacts(parsers, saveToPath);
+        }
+
+        /// <summary>
+        /// Installs the contacts to the manager
+        /// </summary>
+        /// <param name="parsers">How many parsers are there?</param>
+        /// <param name="saveToPath">Saves the added contact to a VCF file in <see cref="KernelPathType.Contacts"/></param>
+        internal static void InstallContacts(List<BaseVcardParser> parsers, bool saveToPath = true)
+        {
             try
             {
-                // Check to see if we're dealing with the non-existent contacts file
                 string contactsPath = PathsManagement.GetKernelPath(KernelPathType.Contacts);
-                if (!Checking.FileExists(pathToContactFile))
-                    throw new KernelException(KernelExceptionType.Contacts, pathToContactFile);
-
-                // Check to see if we're given the Android contacts2.db file
-                bool isAndroidContactDb = Path.GetFileName(pathToContactFile) == "contacts2.db";
-                DebugWriter.WriteDebug(DebugLevel.I, "Contact file came from Android's contact storage? {0}", isAndroidContactDb);
-
-                // Now, ensure that the parser is able to return the base parsers required to parse contacts
-                var parsers =
-                    isAndroidContactDb ?
-                    AndroidContactsDb.GetContactsFromDb(pathToContactFile) :
-                    CardTools.GetCardParsers(pathToContactFile);
-                DebugWriter.WriteDebug(DebugLevel.I, "Got {0} parsers from {1}.", parsers.Count, pathToContactFile);
+                DebugWriter.WriteDebug(DebugLevel.I, "Got {0} parsers.", parsers.Count);
 
                 // Iterate through the contacts
                 List<Card> addedCards = [];
@@ -157,7 +184,7 @@ namespace Nitrocid.Extras.Contacts.Contacts
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WriteDebug(DebugLevel.E, "Failed to parse contact from {0}: {1}", pathToContactFile, ex.Message);
+                        DebugWriter.WriteDebug(DebugLevel.E, "Failed to parse contacts: {0}", ex.Message);
                         DebugWriter.WriteDebugStackTrace(ex);
                     }
                 }
@@ -193,9 +220,9 @@ namespace Nitrocid.Extras.Contacts.Contacts
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to parse contacts from {0}: {1}", pathToContactFile, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to parse contacts: {0}", ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
-                throw new KernelException(KernelExceptionType.Contacts, pathToContactFile, ex);
+                throw new KernelException(KernelExceptionType.Contacts, Translate.DoTranslation("Failed to parse contacts. See the error details for more information."), ex);
             }
         }
 
