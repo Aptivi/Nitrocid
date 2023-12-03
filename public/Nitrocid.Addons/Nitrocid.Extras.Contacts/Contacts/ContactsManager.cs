@@ -306,7 +306,7 @@ namespace Nitrocid.Extras.Contacts.Contacts
             {
                 // Check to see if we're dealing with the non-existent index
                 if (cards.Count <= 0)
-                    throw new KernelException(KernelExceptionType.Contacts, Translate.DoTranslation("There are no contacts to remove."));
+                    throw new KernelException(KernelExceptionType.Contacts, Translate.DoTranslation("There are no contacts to get."));
                 if (contactIndex < 0 || contactIndex >= cards.Count)
                     throw new KernelException(KernelExceptionType.Contacts, Translate.DoTranslation("Contact index is out of range. Maximum index is {0} while provided index is {1}."), cards.Count - 1, contactIndex);
 
@@ -315,7 +315,7 @@ namespace Nitrocid.Extras.Contacts.Contacts
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to remove contact {0}: {1}", contactIndex, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to get contact {0}: {1}", contactIndex, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
                 throw new KernelException(KernelExceptionType.Contacts, contactIndex.ToString(), ex);
             }
