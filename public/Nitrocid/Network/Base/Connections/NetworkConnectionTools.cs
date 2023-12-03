@@ -482,7 +482,7 @@ namespace KS.Network.Base.Connections
                 {
                     // Check to see if the provided address has an already existing connection
                     var availableConnectionInstances = GetNetworkConnections(connectionType).Where((connection) => connection.ConnectionOriginalUrl.Contains(address)).ToArray();
-                    if (availableConnectionInstances.Any())
+                    if (availableConnectionInstances.Length != 0)
                     {
                         var connectionNames = availableConnectionInstances.Select((connection) => connection.ConnectionUri.ToString()).ToArray();
                         var connectionsChoiceList = new List<InputChoiceInfo>();

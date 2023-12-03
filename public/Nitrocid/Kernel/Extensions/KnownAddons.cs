@@ -176,5 +176,9 @@ namespace KS.Kernel.Extensions
         /// Inxi.NET Hardware Prober Legacy addon
         /// </summary>
         LegacyInxiNet,
+        /// <summary>
+        /// HDD Uncleaner 2015 Legacy addon
+        /// </summary>
+        LegacyHddUncleaner,
     }
 }

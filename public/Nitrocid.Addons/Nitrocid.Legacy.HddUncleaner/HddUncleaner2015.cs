@@ -23,7 +23,7 @@ using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Languages;
 
-namespace Nitrocid.Extras.Amusements.Amusements
+namespace Nitrocid.Legacy.HddUncleaner
 {
     internal class HddUncleaner2015
     {

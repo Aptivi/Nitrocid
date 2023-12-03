@@ -70,14 +70,14 @@ namespace Nitrocid.Extras.Dictionary.Commands
                         TextWriterColor.WriteKernelColor($" {DefinitionBase.Example}", true, KernelColorType.ListValue);
 
                         // Now, write the specific synonyms (usually blank)
-                        if (DefinitionBase.Synonyms.Any())
+                        if (DefinitionBase.Synonyms.Length != 0)
                         {
                             TextWriterColor.WriteKernelColor("  - " + Translate.DoTranslation("Synonyms:"), true, KernelColorType.ListEntry);
                             ListWriterColor.WriteList(DefinitionBase.Synonyms);
                         }
 
                         // ...and the specific antonyms (usually blank)
-                        if (DefinitionBase.Antonyms.Any())
+                        if (DefinitionBase.Antonyms.Length != 0)
                         {
                             TextWriterColor.WriteKernelColor("  - " + Translate.DoTranslation("Antonyms:"), true, KernelColorType.ListEntry);
                             ListWriterColor.WriteList(DefinitionBase.Antonyms);
@@ -85,14 +85,14 @@ namespace Nitrocid.Extras.Dictionary.Commands
                     }
 
                     // Now, write the base synonyms (usually blank)
-                    if (MeaningBase.Synonyms.Any())
+                    if (MeaningBase.Synonyms.Length != 0)
                     {
                         TextWriterColor.WriteKernelColor("  - " + Translate.DoTranslation("Synonyms:"), true, KernelColorType.ListEntry);
                         ListWriterColor.WriteList(MeaningBase.Synonyms);
                     }
 
                     // ...and the base antonyms (usually blank)
-                    if (MeaningBase.Antonyms.Any())
+                    if (MeaningBase.Antonyms.Length != 0)
                     {
                         TextWriterColor.WriteKernelColor("  - " + Translate.DoTranslation("Antonyms:"), true, KernelColorType.ListEntry);
                         ListWriterColor.WriteList(MeaningBase.Antonyms);
@@ -140,7 +140,7 @@ namespace Nitrocid.Extras.Dictionary.Commands
                         TextWriterColor.WriteKernelColor($" {DefinitionBase.Example}", true, KernelColorType.ListValue);
 
                         // Now, write the specific synonyms (usually blank)
-                        if (DefinitionBase.Synonyms.Any())
+                        if (DefinitionBase.Synonyms.Length != 0)
                         {
                             TextWriterColor.WriteKernelColor("  - " + Translate.DoTranslation("Synonyms:"), true, KernelColorType.ListEntry);
                             foreach (string synonym in DefinitionBase.Synonyms)
@@ -148,7 +148,7 @@ namespace Nitrocid.Extras.Dictionary.Commands
                         }
 
                         // ...and the specific antonyms (usually blank)
-                        if (DefinitionBase.Antonyms.Any())
+                        if (DefinitionBase.Antonyms.Length != 0)
                         {
                             TextWriterColor.WriteKernelColor("  - " + Translate.DoTranslation("Antonyms:"), true, KernelColorType.ListEntry);
                             foreach (string antonym in DefinitionBase.Antonyms)
@@ -157,7 +157,7 @@ namespace Nitrocid.Extras.Dictionary.Commands
                     }
 
                     // Now, write the base synonyms (usually blank)
-                    if (MeaningBase.Synonyms.Any())
+                    if (MeaningBase.Synonyms.Length != 0)
                     {
                         TextWriterColor.WriteKernelColor("  - " + Translate.DoTranslation("Synonyms:"), true, KernelColorType.ListEntry);
                         foreach (string synonym in MeaningBase.Synonyms)
@@ -165,7 +165,7 @@ namespace Nitrocid.Extras.Dictionary.Commands
                     }
 
                     // ...and the base antonyms (usually blank)
-                    if (MeaningBase.Antonyms.Any())
+                    if (MeaningBase.Antonyms.Length != 0)
                     {
                         TextWriterColor.WriteKernelColor("  - " + Translate.DoTranslation("Antonyms:"), true, KernelColorType.ListEntry);
                         foreach (string antonym in MeaningBase.Antonyms)

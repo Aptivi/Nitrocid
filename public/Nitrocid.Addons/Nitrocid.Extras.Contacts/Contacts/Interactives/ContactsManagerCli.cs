@@ -275,7 +275,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
         {
             // Render the final information string
             var finalInfoRendered = new StringBuilder();
-            bool hasName = card.ContactNames.Any();
+            bool hasName = card.ContactNames.Length != 0;
 
             if (hasName)
                 finalInfoRendered.Append(Translate.DoTranslation("Contact name") + $": {card.ContactFullName}");
@@ -297,7 +297,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
         {
             // Render the final information string
             var finalInfoRendered = new StringBuilder();
-            bool hasAddress = card.ContactAddresses.Any();
+            bool hasAddress = card.ContactAddresses.Length != 0;
 
             if (hasAddress)
             {
@@ -346,7 +346,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
         {
             // Render the final information string
             var finalInfoRendered = new StringBuilder();
-            bool hasMail = card.ContactMails.Any();
+            bool hasMail = card.ContactMails.Length != 0;
 
             if (hasMail)
                 finalInfoRendered.Append(Translate.DoTranslation("Contact mail") + $": {card.ContactMails[0].ContactEmailAddress}");
@@ -368,7 +368,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
         {
             // Render the final information string
             var finalInfoRendered = new StringBuilder();
-            bool hasOrganization = card.ContactOrganizations.Any();
+            bool hasOrganization = card.ContactOrganizations.Length != 0;
 
             if (hasOrganization)
             {
@@ -405,7 +405,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
         {
             // Render the final information string
             var finalInfoRendered = new StringBuilder();
-            bool hasTelephone = card.ContactTelephones.Any();
+            bool hasTelephone = card.ContactTelephones.Length != 0;
 
             if (hasTelephone)
                 finalInfoRendered.Append(Translate.DoTranslation("Contact telephone") + $": {card.ContactTelephones[0].ContactPhoneNumber}");
@@ -449,7 +449,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
         {
             // Render the final information string
             var finalInfoRendered = new StringBuilder();
-            bool hasGeo = card.ContactGeo.Any();
+            bool hasGeo = card.ContactGeo.Length != 0;
 
             if (hasGeo)
                 finalInfoRendered.Append(Translate.DoTranslation("Contact geo") + $": {card.ContactGeo[0].Geo}");
@@ -471,7 +471,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
         {
             // Render the final information string
             var finalInfoRendered = new StringBuilder();
-            bool hasImpp = card.ContactImpps.Any();
+            bool hasImpp = card.ContactImpps.Length != 0;
 
             if (hasImpp)
                 finalInfoRendered.Append(Translate.DoTranslation("Contact IMPP") + $": {card.ContactImpps[0].ContactIMPP}");
@@ -493,7 +493,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
         {
             // Render the final information string
             var finalInfoRendered = new StringBuilder();
-            bool hasNickname = card.ContactNicknames.Any();
+            bool hasNickname = card.ContactNicknames.Length != 0;
 
             if (hasNickname)
                 finalInfoRendered.Append(Translate.DoTranslation("Contact nickname") + $": {card.ContactNicknames[0].ContactNickname}");
@@ -515,7 +515,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
         {
             // Render the final information string
             var finalInfoRendered = new StringBuilder();
-            bool hasRoles = card.ContactRoles.Any();
+            bool hasRoles = card.ContactRoles.Length != 0;
 
             if (hasRoles)
                 finalInfoRendered.Append(Translate.DoTranslation("Contact role") + $": {card.ContactRoles[0].ContactRole}");
@@ -537,7 +537,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
         {
             // Render the final information string
             var finalInfoRendered = new StringBuilder();
-            bool hasTitles = card.ContactTitles.Any();
+            bool hasTitles = card.ContactTitles.Length != 0;
 
             if (hasTitles)
                 finalInfoRendered.Append(Translate.DoTranslation("Contact title") + $": {card.ContactTitles[0].ContactTitle}");

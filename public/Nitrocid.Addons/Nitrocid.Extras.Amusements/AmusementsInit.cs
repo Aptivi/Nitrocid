@@ -152,13 +152,6 @@ namespace Nitrocid.Extras.Amusements
                     ], new WordleCommand())
             },
 
-            { "2015",
-                new CommandInfo("2015", /* Localizable */ "Starts the joke program, HDD Uncleaner 2015.",
-                    [
-                        new CommandArgumentInfo()
-                    ], new HddUncleanerCommand())
-            },
-
             { "2018",
                 new CommandInfo("2018", /* Localizable */ "Commemorates the 5-year anniversary of the kernel release",
                     [

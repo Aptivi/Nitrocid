@@ -69,6 +69,7 @@ namespace KS.Kernel.Extensions
             { KnownAddons.ExtrasToDoList,               /* Localizable */ "Extras - To-do List" },
             { KnownAddons.ExtrasUnitConv,               /* Localizable */ "Extras - Unit Converter" },
             { KnownAddons.LegacyInxiNet,                /* Localizable */ "Legacy - Inxi.NET Hardware Prober Driver" },
+            { KnownAddons.LegacyHddUncleaner,           /* Localizable */ "Legacy - HDD Uncleaner 2015" },
         };
 
         /// <summary>

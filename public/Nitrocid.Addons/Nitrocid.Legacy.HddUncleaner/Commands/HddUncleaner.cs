@@ -18,9 +18,8 @@
 //
 
 using KS.Shell.ShellBase.Commands;
-using Nitrocid.Extras.Amusements.Amusements;
 
-namespace Nitrocid.Extras.Amusements.Commands
+namespace Nitrocid.Legacy.HddUncleaner.Commands
 {
     class HddUncleanerCommand : BaseCommand, ICommand
     {
