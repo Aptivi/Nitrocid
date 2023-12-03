@@ -20,6 +20,7 @@
 using KS.Files.Operations.Querying;
 using KS.Kernel.Exceptions;
 using KS.Languages;
+using System.Diagnostics;
 using System.IO;
 
 namespace KS.Files.Instances
@@ -27,6 +28,7 @@ namespace KS.Files.Instances
     /// <summary>
     /// Proxy class for <see cref="FileSystemInfo"/>
     /// </summary>
+    [DebuggerDisplay("[{Type}] {FilePath}")]
     public class FileSystemEntry
     {
         private readonly string filePath;
