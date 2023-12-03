@@ -196,18 +196,20 @@ namespace KS.ConsoleBase.Colors
         /// Sets the console color
         /// </summary>
         /// <param name="colorType">A type of colors that will be changed.</param>
-        public static void SetConsoleColor(KernelColorType colorType) =>
-            SetConsoleColor(colorType, false);
+        /// <param name="resetBack">If the color is not a background, do we reset the background color?</param>
+        public static void SetConsoleColor(KernelColorType colorType, bool resetBack = true) =>
+            SetConsoleColor(colorType, false, resetBack);
 
         /// <summary>
         /// Sets the console color
         /// </summary>
         /// <param name="colorType">A type of colors that will be changed.</param>
         /// <param name="Background">Is the color a background color?</param>
-        public static void SetConsoleColor(KernelColorType colorType, bool Background)
+        /// <param name="resetBack">If the color is not a background, do we reset the background color?</param>
+        public static void SetConsoleColor(KernelColorType colorType, bool Background, bool resetBack = true)
         {
             SetConsoleColor(GetColor(colorType), Background);
-            if (!Background)
+            if (!Background && resetBack)
                 SetConsoleColor(GetColor(KernelColorType.Background), true);
         }
 

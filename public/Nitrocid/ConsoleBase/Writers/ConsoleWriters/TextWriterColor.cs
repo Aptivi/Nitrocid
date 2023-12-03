@@ -155,7 +155,8 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
                 try
                 {
                     // Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                    KernelColorTools.SetConsoleColor(colorType, Highlight);
+                    KernelColorTools.SetConsoleColor(colorType, Highlight, false);
+                    KernelColorTools.SetConsoleColor(KernelColorType.Background, !Highlight, false);
 
                     // Write the text to console
                     if (Highlight)
@@ -215,8 +216,8 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
                 try
                 {
                     // Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                    KernelColorTools.SetConsoleColor(colorTypeForeground, Highlight);
-                    KernelColorTools.SetConsoleColor(colorTypeBackground, !Highlight);
+                    KernelColorTools.SetConsoleColor(colorTypeForeground, Highlight, false);
+                    KernelColorTools.SetConsoleColor(colorTypeBackground, !Highlight, false);
 
                     // Write the text to console
                     if (Highlight)
@@ -274,6 +275,7 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
                 {
                     // Try to write to console
                     KernelColorTools.SetConsoleColor(new Color(color), Highlight);
+                    KernelColorTools.SetConsoleColor(KernelColorType.Background, !Highlight, false);
 
                     // Write the text to console
                     if (Highlight)
@@ -392,7 +394,7 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
                 {
                     // Try to write to console
                     KernelColorTools.SetConsoleColor(color, Highlight);
-                    KernelColorTools.SetConsoleColor(KernelColorType.Background, !Highlight);
+                    KernelColorTools.SetConsoleColor(KernelColorType.Background, !Highlight, false);
 
                     // Write the text to console
                     if (Highlight)
