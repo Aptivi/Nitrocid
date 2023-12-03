@@ -140,5 +140,13 @@ namespace KS.Drivers.RNG.Bases
             DebugWriter.WriteDebug(DebugLevel.I, "[Value = {0}, Type = {1}]", status, nameof(RandomRussianRoulette));
             return status;
         }
+
+        /// <inheritdoc/>
+        public override bool RandomBoolean()
+        {
+            bool status = random.Next(2) == 1;
+            DebugWriter.WriteDebug(DebugLevel.I, "[Value = {0}, Type = {1}]", status, nameof(RandomBoolean));
+            return status;
+        }
     }
 }

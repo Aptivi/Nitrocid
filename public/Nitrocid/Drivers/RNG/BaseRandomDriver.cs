@@ -38,45 +38,63 @@ namespace KS.Drivers.RNG
         public virtual bool DriverInternal => false;
 
         /// <inheritdoc/>
-        public virtual int Random() => Random(int.MaxValue - 1);
+        public virtual int Random() =>
+            Random(int.MaxValue - 1);
 
         /// <inheritdoc/>
-        public virtual int Random(int max) => Random(0, max);
+        public virtual int Random(int max) =>
+            Random(0, max);
 
         /// <inheritdoc/>
-        public virtual int Random(int min, int max) => random.Next(min, max + 1);
+        public virtual int Random(int min, int max) =>
+            random.Next(min, max + 1);
 
         /// <inheritdoc/>
-        public virtual short RandomShort() => RandomShort(short.MaxValue);
+        public virtual short RandomShort() =>
+            RandomShort(short.MaxValue);
 
         /// <inheritdoc/>
-        public virtual short RandomShort(short max) => RandomShort(0, max);
+        public virtual short RandomShort(short max) =>
+            RandomShort(0, max);
 
         /// <inheritdoc/>
-        public virtual short RandomShort(short min, short max) => (short)Random(min, max);
+        public virtual short RandomShort(short min, short max) =>
+            (short)Random(min, max);
 
         /// <inheritdoc/>
-        public virtual int RandomIdx() => RandomIdx(int.MaxValue);
+        public virtual int RandomIdx() =>
+            RandomIdx(int.MaxValue);
 
         /// <inheritdoc/>
-        public virtual int RandomIdx(int max) => RandomIdx(0, max);
+        public virtual int RandomIdx(int max) =>
+            RandomIdx(0, max);
 
         /// <inheritdoc/>
-        public virtual int RandomIdx(int min, int max) => random.Next(min, max);
+        public virtual int RandomIdx(int min, int max) =>
+            random.Next(min, max);
 
         /// <inheritdoc/>
-        public virtual double RandomDouble() => random.NextDouble();
+        public virtual double RandomDouble() =>
+            random.NextDouble();
 
         /// <inheritdoc/>
-        public virtual double RandomDouble(double max) => random.NextDouble() * max;
+        public virtual double RandomDouble(double max) =>
+            random.NextDouble() * max;
 
         /// <inheritdoc/>
-        public virtual bool RandomChance(double prob) => random.NextDouble() < prob;
+        public virtual bool RandomChance(double prob) =>
+            random.NextDouble() < prob;
 
         /// <inheritdoc/>
-        public virtual bool RandomChance(int probPercent) => RandomChance((probPercent >= 0 && probPercent <= 100 ? probPercent : Random(100)) / 100d);
+        public virtual bool RandomChance(int probPercent) =>
+            RandomChance((probPercent >= 0 && probPercent <= 100 ? probPercent : Random(100)) / 100d);
 
         /// <inheritdoc/>
-        public virtual bool RandomRussianRoulette() => (RandomShort() % 6) == 0;
+        public virtual bool RandomRussianRoulette() =>
+            (RandomShort() % 6) == 0;
+
+        /// <inheritdoc/>
+        public virtual bool RandomBoolean() =>
+            random.Next(2) == 1;
     }
 }

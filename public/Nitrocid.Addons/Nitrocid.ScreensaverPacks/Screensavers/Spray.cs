@@ -78,7 +78,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            moveUp = RandomDriver.RandomChance(50);
+            moveUp = RandomDriver.RandomBoolean();
             ConsoleWrapper.CursorVisible = false;
 
             // Move the stars left

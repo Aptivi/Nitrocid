@@ -121,5 +121,12 @@ namespace KS.Drivers.RNG
         /// <returns>True if you're unlucky; otherwise, false if lucky.</returns>
         public static bool RandomRussianRoulette() =>
             DriverHandler.CurrentRandomDriverLocal.RandomRussianRoulette();
+
+        /// <summary>
+        /// Gets a random boolean value
+        /// </summary>
+        /// <returns>True or false.</returns>
+        public static bool RandomBoolean() =>
+            DriverHandler.CurrentRandomDriverLocal.RandomBoolean();
     }
 }

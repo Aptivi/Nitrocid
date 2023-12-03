@@ -108,5 +108,11 @@ namespace KS.Drivers.RNG
         /// </summary>
         /// <returns>True if you're unlucky; otherwise, false if lucky.</returns>
         bool RandomRussianRoulette();
+
+        /// <summary>
+        /// Gets a random boolean value
+        /// </summary>
+        /// <returns>True or false.</returns>
+        bool RandomBoolean();
     }
 }

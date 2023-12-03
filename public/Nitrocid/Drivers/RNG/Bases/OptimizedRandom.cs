@@ -40,46 +40,64 @@ namespace KS.Drivers.RNG.Bases
         public override DriverTypes DriverType => DriverTypes.RNG;
 
         /// <inheritdoc/>
-        public override int Random() => Random(int.MaxValue);
+        public override int Random() =>
+            Random(int.MaxValue);
 
         /// <inheritdoc/>
-        public override int Random(int max) => (int)(SignedRandom() * max);
+        public override int Random(int max) =>
+            (int)(SignedRandom() * max);
 
         /// <inheritdoc/>
-        public override int Random(int min, int max) => RandomNumberGenerator.GetInt32(min, max + 1);
+        public override int Random(int min, int max) =>
+            RandomNumberGenerator.GetInt32(min, max + 1);
 
         /// <inheritdoc/>
-        public override short RandomShort() => (short)UnsignedRandom();
+        public override short RandomShort() =>
+            (short)UnsignedRandom();
 
         /// <inheritdoc/>
-        public override short RandomShort(short max) => (short)(SignedRandom() * max);
+        public override short RandomShort(short max) =>
+            (short)(SignedRandom() * max);
 
         /// <inheritdoc/>
-        public override short RandomShort(short min, short max) => (short)Random(min, max);
+        public override short RandomShort(short min, short max) =>
+            (short)Random(min, max);
 
         /// <inheritdoc/>
-        public override int RandomIdx() => Random() - 1;
+        public override int RandomIdx() =>
+            Random() - 1;
 
         /// <inheritdoc/>
-        public override int RandomIdx(int max) => (int)(SignedRandom() * max) - 1;
+        public override int RandomIdx(int max) =>
+            (int)(SignedRandom() * max) - 1;
 
         /// <inheritdoc/>
-        public override int RandomIdx(int min, int max) => RandomNumberGenerator.GetInt32(min, max);
+        public override int RandomIdx(int min, int max) =>
+            RandomNumberGenerator.GetInt32(min, max);
 
         /// <inheritdoc/>
-        public override double RandomDouble() => SignedRandom();
+        public override double RandomDouble() =>
+            SignedRandom();
 
         /// <inheritdoc/>
-        public override double RandomDouble(double max) => SignedRandom() * max;
+        public override double RandomDouble(double max) =>
+            SignedRandom() * max;
 
         /// <inheritdoc/>
-        public override bool RandomChance(double prob) => SignedRandom() < prob;
+        public override bool RandomChance(double prob) =>
+            SignedRandom() < prob;
 
         /// <inheritdoc/>
-        public override bool RandomChance(int probPercent) => RandomChance((probPercent >= 0 && probPercent <= 100 ? probPercent : Random(100)) / 100d);
+        public override bool RandomChance(int probPercent) =>
+            RandomChance((probPercent >= 0 && probPercent <= 100 ? probPercent : Random(100)) / 100d);
 
         /// <inheritdoc/>
-        public override bool RandomRussianRoulette() => RandomShort() % 6 == 0;
+        public override bool RandomRussianRoulette() =>
+            RandomShort() % 6 == 0;
+
+        /// <inheritdoc/>
+        public override bool RandomBoolean() =>
+            Random(1) == 1;
 
         #region Taken from random.c
         // Reference: http://ftp.grnet.gr/pub/lang/algorithms/c/jpl-c/random.c
