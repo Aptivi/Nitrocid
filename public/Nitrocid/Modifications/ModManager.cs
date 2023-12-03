@@ -181,25 +181,15 @@ namespace KS.Modifications
                     for (int ScriptIndex = Mods.Count - 1; ScriptIndex >= 0; ScriptIndex -= 1)
                     {
                         var TargetMod = Mods.Values.ElementAtOrDefault(ScriptIndex);
-                        var ScriptParts = TargetMod.ModParts;
+                        var Script = TargetMod.ModScript;
 
-                        // Try to stop the mod and all associated parts
+                        // Try to stop the mod
                         DebugWriter.WriteDebug(DebugLevel.I, "Stopping... Mod name: {0}", TargetMod.ModName);
-                        for (int PartIndex = ScriptParts.Count - 1; PartIndex >= 0; PartIndex -= 1)
-                        {
-                            var ScriptPartInfo = ScriptParts.Values.ElementAtOrDefault(PartIndex);
-                            DebugWriter.WriteDebug(DebugLevel.I, "Stopping part {0} v{1}", ScriptPartInfo.PartName, ScriptPartInfo.PartScript.Version);
 
-                            // Stop the associated part
-                            ScriptPartInfo.PartScript.StopMod();
-                            if (!string.IsNullOrWhiteSpace(ScriptPartInfo.PartName) & !string.IsNullOrWhiteSpace(ScriptPartInfo.PartScript.Version))
-                            {
-                                SplashReport.ReportProgress(Translate.DoTranslation("{0} v{1} stopped"), ScriptPartInfo.PartName, ScriptPartInfo.PartScript.Version);
-                            }
-
-                            // Remove the part from the list
-                            ScriptParts.Remove(ScriptParts.Keys.ElementAtOrDefault(PartIndex));
-                        }
+                        // Stop the associated part
+                        Script.StopMod();
+                        if (!string.IsNullOrWhiteSpace(TargetMod.ModName) & !string.IsNullOrWhiteSpace(Script.Version))
+                            SplashReport.ReportProgress(Translate.DoTranslation("{0} v{1} stopped"), TargetMod.ModName, Script.Version);
 
                         // Remove the mod from the list
                         TextWriterColor.Write(Translate.DoTranslation("Mod {0} stopped"), TargetMod.ModName);
@@ -269,28 +259,18 @@ namespace KS.Modifications
             for (int ScriptIndex = Mods.Count - 1; ScriptIndex >= 0; ScriptIndex -= 1)
             {
                 var TargetMod = Mods.Values.ElementAtOrDefault(ScriptIndex);
-                var ScriptParts = TargetMod.ModParts;
+                var Script = TargetMod.ModScript;
 
-                // Try to stop the mod and all associated parts
+                // Try to stop the mod
                 DebugWriter.WriteDebug(DebugLevel.I, "Checking mod {0}...", TargetMod.ModName);
                 if (TargetMod.ModFileName != ModFilename)
                     continue;
 
-                // Iterate through all the parts
+                // Stop the associated mod
                 DebugWriter.WriteDebug(DebugLevel.I, "Found mod to be stopped. Stopping...");
-                for (int PartIndex = ScriptParts.Count - 1; PartIndex >= 0; PartIndex -= 1)
-                {
-                    var ScriptPartInfo = ScriptParts.Values.ElementAtOrDefault(PartIndex);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Stopping part {0} v{1}", ScriptPartInfo.PartName, ScriptPartInfo.PartScript.Version);
-
-                    // Stop the associated part
-                    ScriptPartInfo.PartScript.StopMod();
-                    if (!string.IsNullOrWhiteSpace(ScriptPartInfo.PartName) & !string.IsNullOrWhiteSpace(ScriptPartInfo.PartScript.Version))
-                        SplashReport.ReportProgress(Translate.DoTranslation("{0} v{1} stopped"), ScriptPartInfo.PartName, ScriptPartInfo.PartScript.Version);
-
-                    // Remove the part from the list
-                    ScriptParts.Remove(ScriptParts.Keys.ElementAtOrDefault(PartIndex));
-                }
+                Script.StopMod();
+                if (!string.IsNullOrWhiteSpace(TargetMod.ModName) & !string.IsNullOrWhiteSpace(Script.Version))
+                    SplashReport.ReportProgress(Translate.DoTranslation("{0} v{1} stopped"), TargetMod.ModName, Script.Version);
 
                 // Remove the mod from the list
                 SplashReport.ReportProgress(Translate.DoTranslation("Mod {0} stopped"), TargetMod.ModName);
@@ -335,15 +315,12 @@ namespace KS.Modifications
             // Iterate through each mod and mod part
             foreach (string ModName in Mods.Keys)
             {
+                var mod = Mods[ModFilename];
                 DebugWriter.WriteDebug(DebugLevel.I, "Checking mod {0}...", ModName);
-                foreach (string PartName in Mods[ModName].ModParts.Keys)
+                if (mod.ModFileName == ModFilename || mod.ModFilePath == ModFilename)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Checking part {0}...", PartName);
-                    if (Mods[ModName].ModParts[PartName].PartFilePath == ModFilename)
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Found part {0} ({1}). Returning True...", PartName, ModFilename);
-                        return true;
-                    }
+                    DebugWriter.WriteDebug(DebugLevel.I, "Found mod {0}.", ModName);
+                    return true;
                 }
             }
 

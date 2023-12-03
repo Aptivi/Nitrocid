@@ -84,12 +84,9 @@ namespace KS.Shell.Shells.UESH.Commands
                             break;
                         }
                     case "list":
-                    case "listparts":
                         {
                             if (parameters.ArgumentsList.Length > 1)
-                            {
                                 ModListTerm = parameters.ArgumentsList[1];
-                            }
 
                             break;
                         }
@@ -124,18 +121,6 @@ namespace KS.Shell.Shells.UESH.Commands
                                     TextWriterColor.WriteKernelColor(ModManager.Mods[script].ModFilePath, true, KernelColorType.ListValue);
                                     TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Mod version:") + " ", false, KernelColorType.ListEntry);
                                     TextWriterColor.WriteKernelColor(ModManager.Mods[script].ModVersion, true, KernelColorType.ListValue);
-                                    TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Mod parts:") + " ", false, KernelColorType.ListEntry);
-                                    TextWriterColor.WriteKernelColor(ModManager.Mods[script].ModParts.Count.ToString(), true, KernelColorType.ListValue);
-                                    foreach (string ModPart in ModManager.Mods[script].ModParts.Keys)
-                                    {
-                                        SeparatorWriterColor.WriteSeparatorColor("-- {0}", false, ModPart);
-                                        TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Part version:") + " ", false, KernelColorType.ListEntry);
-                                        TextWriterColor.WriteKernelColor(ModManager.Mods[script].ModParts[ModPart].PartScript.Version, true, KernelColorType.ListValue);
-                                        TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Part file name:") + " ", false, KernelColorType.ListEntry);
-                                        TextWriterColor.WriteKernelColor(ModManager.Mods[script].ModParts[ModPart].PartFileName, true, KernelColorType.ListValue);
-                                        TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Part file path:") + " ", false, KernelColorType.ListEntry);
-                                        TextWriterColor.WriteKernelColor(ModManager.Mods[script].ModParts[ModPart].PartFilePath, true, KernelColorType.ListValue);
-                                    }
                                 }
                             }
 
@@ -169,27 +154,6 @@ namespace KS.Shell.Shells.UESH.Commands
                                 TextWriterColor.WriteKernelColor(ModManager.Mods[Mod].ModFilePath, true, KernelColorType.ListValue);
                                 TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Mod version:") + " ", false, KernelColorType.ListEntry);
                                 TextWriterColor.WriteKernelColor(ModManager.Mods[Mod].ModVersion, true, KernelColorType.ListValue);
-                                TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Mod parts:") + " ", false, KernelColorType.ListEntry);
-                                TextWriterColor.WriteKernelColor(ModManager.Mods[Mod].ModParts.Count.ToString(), true, KernelColorType.ListValue);
-                            }
-
-                            break;
-                        }
-                    case "listparts":
-                        {
-                            var ModList = ModManager.ListMods(ModListTerm);
-                            foreach (string Mod in ModList.Keys)
-                            {
-                                foreach (string Part in ModList[Mod].ModParts.Keys)
-                                {
-                                    SeparatorWriterColor.WriteSeparator($"{Mod} > {Part}", true);
-                                    TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Mod part name:") + " ", false, KernelColorType.ListEntry);
-                                    TextWriterColor.WriteKernelColor(ModList[Mod].ModParts[Part].PartName, true, KernelColorType.ListValue);
-                                    TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Mod part file name:") + " ", false, KernelColorType.ListEntry);
-                                    TextWriterColor.WriteKernelColor(ModManager.Mods[Mod].ModParts[Part].PartFileName, true, KernelColorType.ListValue);
-                                    TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Mod part file path:") + " ", false, KernelColorType.ListEntry);
-                                    TextWriterColor.WriteKernelColor(ModManager.Mods[Mod].ModParts[Part].PartFilePath, true, KernelColorType.ListValue);
-                                }
                             }
 
                             break;

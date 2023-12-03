@@ -142,9 +142,7 @@ namespace KS.Modifications
         /// <param name="modFile">Mod file name with extension. It should end with .dll</param>
         public static void FinalizeMods(IMod script, string modFile)
         {
-            var ModParts = new Dictionary<string, ModPartInfo>();
             ModInfo ModInstance;
-            ModPartInfo PartInstance;
 
             // Try to finalize mod
             if (script is not null)
@@ -249,17 +247,6 @@ namespace KS.Modifications
                     }
                     DebugWriter.WriteDebug(DebugLevel.I, "Mod name: {0}", ModName);
 
-                    // Check to see if there is a part under the same name.
-                    bool modFound = ModManager.Mods.ContainsKey(ModName);
-                    var Parts = modFound ? ModManager.Mods[ModName].ModParts : ModParts;
-                    DebugWriter.WriteDebug(DebugLevel.I, "Adding mod part {0}...", script.ModPart);
-                    if (Parts.ContainsKey(script.ModPart))
-                    {
-                        // Append the number to the end of the name
-                        DebugWriter.WriteDebug(DebugLevel.W, "There is a conflict with {0}. Appending item number...", script.ModPart);
-                        script.ModPart = $"{script.ModPart} [{Parts.Count}]";
-                    }
-
                     // See if the mod has version
                     if (string.IsNullOrWhiteSpace(script.Version))
                     {
@@ -286,10 +273,8 @@ namespace KS.Modifications
                     }
 
                     // Prepare the mod and part instances
-                    PartInstance = new ModPartInfo(ModName, script.ModPart, modFile, modFilePath, script);
-                    Parts.Add(script.ModPart, PartInstance);
                     queued.Add(modFilePath);
-                    ModInstance = new ModInfo(ModName, modFile, modFilePath, Parts, script.Version, localizations);
+                    ModInstance = new ModInfo(ModName, modFile, modFilePath, script, script.Version, localizations);
 
                     // Satisfy the dependencies
                     ModDependencySatisfier.SatisfyDependencies(ModInstance);
@@ -299,6 +284,7 @@ namespace KS.Modifications
                     DebugWriter.WriteDebug(DebugLevel.I, "script.StartMod() initialized. Mod name: {0} | Mod part: {1} | Version: {2}", script.Name, script.ModPart, script.Version);
 
                     // Now, add the part
+                    bool modFound = ModManager.Mods.ContainsKey(ModName);
                     if (!modFound)
                         ModManager.Mods.Add(ModName, ModInstance);
 

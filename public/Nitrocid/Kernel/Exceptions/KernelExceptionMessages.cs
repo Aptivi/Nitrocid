@@ -63,7 +63,7 @@ namespace KS.Kernel.Exceptions
                 { KernelExceptionType.LanguageUninstall,                Translate.DoTranslation("The custom language failed to uninstall.") },
                 { KernelExceptionType.Mail,                             Translate.DoTranslation("The mail system encountered an error.") },
                 { KernelExceptionType.ModInstall,                       Translate.DoTranslation("The mod failed to install. Check to make sure that it's a valid mod file. If your mod is a valid .NET assembly, check to make sure that it actually implements the interface that is necessary to start the mod.") },
-                { KernelExceptionType.ModNoParts,                       Translate.DoTranslation("The mod contains no parts. Consult with the mod vendor for a new copy.") },
+                { KernelExceptionType.ModWithoutMod,                    Translate.DoTranslation("The mod contains no mod instance. Consult with the mod vendor for a new copy.") },
                 { KernelExceptionType.ModUninstall,                     Translate.DoTranslation("The mod uninstallation has failed.") },
                 { KernelExceptionType.MOTD,                             Translate.DoTranslation("An error occurred trying to read or set the message of the day.") },
                 { KernelExceptionType.NoSuchEvent,                      Translate.DoTranslation("There is no event by this name.") },

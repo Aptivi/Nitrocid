@@ -21,7 +21,9 @@ using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Users.Permissions;
+using System;
 using System.Collections.Generic;
+using System.Reflection;
 
 namespace KS.Modifications.Communication
 {
@@ -49,21 +51,16 @@ namespace KS.Modifications.Communication
                 throw new KernelException(KernelExceptionType.NoSuchMod, Translate.DoTranslation("Can't obtain list of functions"));
 
             // Now, check the list of available functions
-            var modParts = modInfo.ModParts;
-            foreach (var modPart in modParts.Keys)
-            {
-                // Get a mod part
-                var mod = modParts[modPart];
-                DebugWriter.WriteDebug(DebugLevel.I, "Trying to get list of available functions from mod {0} part {1}...", modInfo.ModName, modPart);
+            var mod = modInfo.ModScript;
+            DebugWriter.WriteDebug(DebugLevel.I, "Trying to get list of available functions from mod {0}...", modInfo.ModName);
 
-                // Get a list of functions
-                var functions = mod.PartScript.PubliclyAvailableFunctions;
-                if (functions is null || functions.Count == 0)
-                    continue;
+            // Get a list of functions
+            var functions = mod.PubliclyAvailableFunctions;
+            if (functions is null || functions.Count == 0)
+                return [];
 
-                // Add all of the functions!
-                funcs.AddRange(functions.Keys);
-            }
+            // Add all of the functions!
+            funcs.AddRange(functions.Keys);
             return [.. funcs];
         }
 
@@ -85,21 +82,16 @@ namespace KS.Modifications.Communication
                 throw new KernelException(KernelExceptionType.NoSuchMod, Translate.DoTranslation("Can't obtain list of properties"));
 
             // Now, check the list of available properties
-            var modParts = modInfo.ModParts;
-            foreach (var modPart in modParts.Keys)
-            {
-                // Get a mod part
-                var mod = modParts[modPart];
-                DebugWriter.WriteDebug(DebugLevel.I, "Trying to get list of available properties from mod {0} part {1}...", modInfo.ModName, modPart);
+            var mod = modInfo.ModScript;
+            DebugWriter.WriteDebug(DebugLevel.I, "Trying to get list of available properties from mod {0}...", modInfo.ModName);
 
-                // Get a list of properties
-                var properties = mod.PartScript.PubliclyAvailableProperties;
-                if (properties is null || properties.Count == 0)
-                    continue;
+            // Get a list of properties
+            var properties = mod.PubliclyAvailableProperties;
+            if (properties is null || properties.Count == 0)
+                return [];
 
-                // Add all of the properties!
-                funcs.AddRange(properties.Keys);
-            }
+            // Add all of the properties!
+            funcs.AddRange(properties.Keys);
             return [.. funcs];
         }
 
@@ -121,21 +113,16 @@ namespace KS.Modifications.Communication
                 throw new KernelException(KernelExceptionType.NoSuchMod, Translate.DoTranslation("Can't obtain list of fields"));
 
             // Now, check the list of available fields
-            var modParts = modInfo.ModParts;
-            foreach (var modPart in modParts.Keys)
-            {
-                // Get a mod part
-                var mod = modParts[modPart];
-                DebugWriter.WriteDebug(DebugLevel.I, "Trying to get list of available fields from mod {0} part {1}...", modInfo.ModName, modPart);
+            var mod = modInfo.ModScript;
+            DebugWriter.WriteDebug(DebugLevel.I, "Trying to get list of available fields from mod {0}...", modInfo.ModName);
 
-                // Get a list of fields
-                var fields = mod.PartScript.PubliclyAvailableFields;
-                if (fields is null || fields.Count == 0)
-                    continue;
+            // Get a list of fields
+            var fields = mod.PubliclyAvailableFields;
+            if (fields is null || fields.Count == 0)
+                return [];
 
-                // Add all of the fields!
-                funcs.AddRange(fields.Keys);
-            }
+            // Add all of the fields!
+            funcs.AddRange(fields.Keys);
             return [.. funcs];
         }
 
@@ -163,31 +150,24 @@ namespace KS.Modifications.Communication
                 throw new KernelException(KernelExceptionType.NoSuchMod, Translate.DoTranslation("Can't execute custom function with non-existent mod"));
 
             // Now, check the list of available functions
-            var modParts = modInfo.ModParts;
-            foreach (var modPart in modParts.Keys)
-            {
-                // Get a mod part
-                var mod = modParts[modPart];
-                DebugWriter.WriteDebug(DebugLevel.I, "Trying to get list of available functions from mod {0} part {1}...", modInfo.ModName, modPart);
+            var mod = modInfo.ModScript;
+            DebugWriter.WriteDebug(DebugLevel.I, "Trying to get list of available functions from mod {0}...", modInfo.ModName);
 
-                // Get a list of functions
-                var functions = mod.PartScript.PubliclyAvailableFunctions;
-                if (functions is null || functions.Count == 0)
-                    continue;
+            // Get a list of functions
+            var functions = mod.PubliclyAvailableFunctions;
+            if (functions is null || functions.Count == 0)
+                return null;
 
-                // Assuming that we have functions, get a single function containing that name
-                if (!functions.ContainsKey(functionName))
-                    continue;
+            // Assuming that we have functions, get a single function containing that name
+            if (!functions.TryGetValue(functionName, out Delegate function))
+                return null;
 
-                // Assuming that we have that function, get a single function delegate
-                var function = functions[functionName];
-                if (function is null)
-                    continue;
+            // Assuming that we have that function, get a single function delegate
+            if (function is null)
+                return null;
 
-                // The function instance is valid. Try to dynamically invoke it.
-                return function.DynamicInvoke(args: parameters);
-            }
-            return null;
+            // The function instance is valid. Try to dynamically invoke it.
+            return function.DynamicInvoke(args: parameters);
         }
 
         /// <summary>
@@ -205,36 +185,29 @@ namespace KS.Modifications.Communication
                 throw new KernelException(KernelExceptionType.NoSuchMod, Translate.DoTranslation("Can't execute custom property with non-existent mod"));
 
             // Now, check the list of available properties
-            var modParts = modInfo.ModParts;
-            foreach (var modPart in modParts.Keys)
-            {
-                // Get a mod part
-                var mod = modParts[modPart];
-                DebugWriter.WriteDebug(DebugLevel.I, "Trying to get list of available properties from mod {0} part {1}...", modInfo.ModName, modPart);
+            var mod = modInfo.ModScript;
+            DebugWriter.WriteDebug(DebugLevel.I, "Trying to get list of available properties from mod {0}...", modInfo.ModName);
 
-                // Get a list of properties
-                var properties = mod.PartScript.PubliclyAvailableProperties;
-                if (properties is null || properties.Count == 0)
-                    continue;
+            // Get a list of properties
+            var properties = mod.PubliclyAvailableProperties;
+            if (properties is null || properties.Count == 0)
+                return null;
 
-                // Assuming that we have properties, get a single property containing that name
-                if (!properties.ContainsKey(propertyName))
-                    continue;
+            // Assuming that we have properties, get a single property containing that name
+            if (!properties.TryGetValue(propertyName, out PropertyInfo property))
+                return null;
 
-                // Assuming that we have that property, get a single property delegate
-                var property = properties[propertyName];
-                if (property is null)
-                    continue;
+            // Assuming that we have that property, get a single property delegate
+            if (property is null)
+                return null;
 
-                // Check to see if this property is static
-                var get = property.GetGetMethod();
-                if (get is null)
-                    continue;
+            // Check to see if this property is static
+            var get = property.GetGetMethod();
+            if (get is null)
+                return null;
 
-                // The property instance is valid. Try to get a value from it.
-                return get.Invoke(null, null);
-            }
-            return null;
+            // The property instance is valid. Try to get a value from it.
+            return get.Invoke(null, null);
         }
 
         /// <summary>
@@ -253,35 +226,29 @@ namespace KS.Modifications.Communication
                 throw new KernelException(KernelExceptionType.NoSuchMod, Translate.DoTranslation("Can't execute custom property with non-existent mod"));
 
             // Now, check the list of available properties
-            var modParts = modInfo.ModParts;
-            foreach (var modPart in modParts.Keys)
-            {
-                // Get a mod part
-                var mod = modParts[modPart];
-                DebugWriter.WriteDebug(DebugLevel.I, "Trying to get list of available properties from mod {0} part {1}...", modInfo.ModName, modPart);
+            var mod = modInfo.ModScript;
+            DebugWriter.WriteDebug(DebugLevel.I, "Trying to get list of available properties from mod {0}...", modInfo.ModName);
 
-                // Get a list of properties
-                var properties = mod.PartScript.PubliclyAvailableProperties;
-                if (properties is null || properties.Count == 0)
-                    continue;
+            // Get a list of properties
+            var properties = mod.PubliclyAvailableProperties;
+            if (properties is null || properties.Count == 0)
+                return;
 
-                // Assuming that we have properties, get a single property containing that name
-                if (!properties.ContainsKey(propertyName))
-                    continue;
+            // Assuming that we have properties, get a single property containing that name
+            if (!properties.TryGetValue(propertyName, out PropertyInfo property))
+                return;
 
-                // Assuming that we have that property, get a single property delegate
-                var property = properties[propertyName];
-                if (property is null)
-                    continue;
+            // Assuming that we have that property, get a single property delegate
+            if (property is null)
+                return;
 
-                // Check to see if this property is static
-                var set = property.GetSetMethod();
-                if (set is null)
-                    continue;
+            // Check to see if this property is static
+            var set = property.GetSetMethod();
+            if (set is null)
+                return;
 
-                // The property instance is valid. Try to get a value from it.
-                set.Invoke(null, new[] { value });
-            }
+            // The property instance is valid. Try to get a value from it.
+            set.Invoke(null, new[] { value });
         }
 
         /// <summary>
@@ -299,36 +266,29 @@ namespace KS.Modifications.Communication
                 throw new KernelException(KernelExceptionType.NoSuchMod, Translate.DoTranslation("Can't execute custom field with non-existent mod"));
 
             // Now, check the list of available fields
-            var modParts = modInfo.ModParts;
-            foreach (var modPart in modParts.Keys)
-            {
-                // Get a mod part
-                var mod = modParts[modPart];
-                DebugWriter.WriteDebug(DebugLevel.I, "Trying to get list of available fields from mod {0} part {1}...", modInfo.ModName, modPart);
+            var mod = modInfo.ModScript;
+            DebugWriter.WriteDebug(DebugLevel.I, "Trying to get list of available fields from mod {0}...", modInfo.ModName);
 
-                // Get a list of fields
-                var fields = mod.PartScript.PubliclyAvailableFields;
-                if (fields is null || fields.Count == 0)
-                    continue;
+            // Get a list of fields
+            var fields = mod.PubliclyAvailableFields;
+            if (fields is null || fields.Count == 0)
+                return null;
 
-                // Assuming that we have fields, get a single field containing that name
-                if (!fields.ContainsKey(fieldName))
-                    continue;
+            // Assuming that we have fields, get a single field containing that name
+            if (!fields.TryGetValue(fieldName, out FieldInfo field))
+                return null;
 
-                // Assuming that we have that field, get a single field delegate
-                var field = fields[fieldName];
-                if (field is null)
-                    continue;
+            // Assuming that we have that field, get a single field delegate
+            if (field is null)
+                return null;
 
-                // Check to see if this field is static
-                if (!field.IsStatic)
-                    continue;
-                var get = field.GetValue(null);
-                if (get is null)
-                    continue;
-                return get;
-            }
-            return null;
+            // Check to see if this field is static
+            if (!field.IsStatic)
+                return null;
+            var get = field.GetValue(null);
+            if (get is null)
+                return null;
+            return get;
         }
 
         /// <summary>
@@ -347,34 +307,28 @@ namespace KS.Modifications.Communication
                 throw new KernelException(KernelExceptionType.NoSuchMod, Translate.DoTranslation("Can't execute custom field with non-existent mod"));
 
             // Now, check the list of available fields
-            var modParts = modInfo.ModParts;
-            foreach (var modPart in modParts.Keys)
-            {
-                // Get a mod part
-                var mod = modParts[modPart];
-                DebugWriter.WriteDebug(DebugLevel.I, "Trying to get list of available fields from mod {0} part {1}...", modInfo.ModName, modPart);
+            var mod = modInfo.ModScript;
+            DebugWriter.WriteDebug(DebugLevel.I, "Trying to get list of available fields from mod {0}...", modInfo.ModName);
 
-                // Get a list of fields
-                var fields = mod.PartScript.PubliclyAvailableFields;
-                if (fields is null || fields.Count == 0)
-                    continue;
+            // Get a list of fields
+            var fields = mod.PubliclyAvailableFields;
+            if (fields is null || fields.Count == 0)
+                return;
 
-                // Assuming that we have fields, get a single field containing that name
-                if (!fields.ContainsKey(fieldName))
-                    continue;
+            // Assuming that we have fields, get a single field containing that name
+            if (!fields.TryGetValue(fieldName, out FieldInfo field))
+                return;
 
-                // Assuming that we have that field, get a single field delegate
-                var field = fields[fieldName];
-                if (field is null)
-                    continue;
+            // Assuming that we have that field, get a single field delegate
+            if (field is null)
+                return;
 
-                // Check to see if this field is static
-                if (!field.IsStatic)
-                    continue;
+            // Check to see if this field is static
+            if (!field.IsStatic)
+                return;
 
-                // The field instance is valid. Try to get a value from it.
-                field.SetValue(null, value);
-            }
+            // The field instance is valid. Try to get a value from it.
+            field.SetValue(null, value);
         }
 
     }

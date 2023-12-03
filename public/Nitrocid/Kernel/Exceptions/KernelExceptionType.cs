@@ -153,9 +153,9 @@ namespace KS.Kernel.Exceptions
         /// </summary>
         ModInstall,
         /// <summary>
-        /// The mod contains no parts. Consult with the mod vendor for a new copy.
+        /// The mod contains no mod instance. Consult with the mod vendor for a new copy.
         /// </summary>
-        ModNoParts,
+        ModWithoutMod,
         /// <summary>
         /// The mod uninstallation has failed.
         /// </summary>

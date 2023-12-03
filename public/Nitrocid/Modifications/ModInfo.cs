@@ -46,7 +46,7 @@ namespace KS.Modifications
         /// <summary>
         /// The mod parts and their scripts
         /// </summary>
-        internal Dictionary<string, ModPartInfo> ModParts { get; set; }
+        internal IMod ModScript { get; set; }
         /// <summary>
         /// The mod version. We recommend using <seealso href="https://semver.org/">Semantic Versioning</seealso> scheme.
         /// </summary>
@@ -59,7 +59,7 @@ namespace KS.Modifications
         /// <summary>
         /// Creates new mod info instance
         /// </summary>
-        internal ModInfo(string ModName, string ModFileName, string ModFilePath, Dictionary<string, ModPartInfo> ModParts, string ModVersion, Dictionary<string, string[]> ModStrings)
+        internal ModInfo(string ModName, string ModFileName, string ModFilePath, IMod ModScript, string ModVersion, Dictionary<string, string[]> ModStrings)
         {
             // Validate values. Check to see if the name is null. If so, it will take the mod file name.
             if (string.IsNullOrWhiteSpace(ModName))
@@ -67,17 +67,17 @@ namespace KS.Modifications
                 ModName = ModFileName;
             }
 
-            // Check to see if the mod parts is null or zero. If so, throw exception.
-            if (ModParts is null || ModParts.Count == 0)
+            // Check to see if the script is null or zero. If so, throw exception.
+            if (ModScript is null)
             {
-                throw new KernelException(KernelExceptionType.ModNoParts, Translate.DoTranslation("There are no parts in mod."));
+                throw new KernelException(KernelExceptionType.ModWithoutMod, Translate.DoTranslation("The mod script may not be null."));
             }
 
             // Install values to new instance
             this.ModName = ModName;
             this.ModFileName = ModFileName;
             this.ModFilePath = ModFilePath;
-            this.ModParts = ModParts;
+            this.ModScript = ModScript;
             this.ModVersion = ModVersion;
             this.ModStrings = ModStrings;
         }

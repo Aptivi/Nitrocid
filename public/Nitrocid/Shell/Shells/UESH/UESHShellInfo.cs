@@ -1075,7 +1075,7 @@ namespace KS.Shell.Shells.UESH
                         }),
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "list/listparts"),
+                            new CommandArgumentPart(true, "list"),
                             new CommandArgumentPart(true, "modname"),
                         }),
                         new CommandArgumentInfo(new[]
