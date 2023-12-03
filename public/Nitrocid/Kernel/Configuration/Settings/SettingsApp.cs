@@ -188,7 +188,7 @@ namespace KS.Kernel.Configuration.Settings
                     // Populate the alt sections correctly
                     var altSections = new List<InputChoiceInfo>()
                     {
-                        new InputChoiceInfo($"{MaxOptions + 1 - offset}/{MaxOptions + 1}", Translate.DoTranslation("Go Back..."))
+                        new($"{MaxOptions + 1 - offset}/{MaxOptions + 1}", Translate.DoTranslation("Go Back..."))
                     };
 
                     // Prompt user and check for input

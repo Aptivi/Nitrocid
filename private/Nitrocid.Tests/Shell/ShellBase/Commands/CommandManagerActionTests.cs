@@ -312,17 +312,17 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         {
             var commandInfos = new CommandInfo[]
             {
-                new CommandInfo("cmdgroup", $"My command help definition for type {type}...",
+                new("cmdgroup", $"My command help definition for type {type}...",
                     [
                         new CommandArgumentInfo()
                     ], new CustomCommand()),
 
-                new CommandInfo("cmdgroup1", $"My command help definition for type {type}...",
+                new("cmdgroup1", $"My command help definition for type {type}...",
                     [
                         new CommandArgumentInfo()
                     ], new CustomCommand()),
 
-                new CommandInfo("cmdgroup2", $"My command help definition for type {type}...",
+                new("cmdgroup2", $"My command help definition for type {type}...",
                     [
                         new CommandArgumentInfo()
                     ], new CustomCommand()),
@@ -347,17 +347,17 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         {
             var commandInfos = new CommandInfo[]
             {
-                new CommandInfo("cmdgroup3", $"My command help definition for type {type}...",
+                new("cmdgroup3", $"My command help definition for type {type}...",
                     [
                         new CommandArgumentInfo()
                     ], new CustomCommand()),
 
-                new CommandInfo("cmdgroup4", $"My command help definition for type {type}...",
+                new("cmdgroup4", $"My command help definition for type {type}...",
                     [
                         new CommandArgumentInfo()
                     ], new CustomCommand()),
 
-                new CommandInfo("cmdgroup5", $"My command help definition for type {type}...",
+                new("cmdgroup5", $"My command help definition for type {type}...",
                     [
                         new CommandArgumentInfo()
                     ], new CustomCommand()),
@@ -382,17 +382,17 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         {
             var commandInfos = new CommandInfo[]
             {
-                new CommandInfo("command", $"My command help definition for type {type}...",
+                new("command", $"My command help definition for type {type}...",
                     [
                         new CommandArgumentInfo()
                     ], new CustomCommand()),
 
-                new CommandInfo("exit", $"My command help definition for type {type}...",
+                new("exit", $"My command help definition for type {type}...",
                     [
                         new CommandArgumentInfo()
                     ], new CustomCommand()),
 
-                new CommandInfo("", $"My command help definition for type {type}...",
+                new("", $"My command help definition for type {type}...",
                     [
                         new CommandArgumentInfo()
                     ], new CustomCommand()),
@@ -415,17 +415,17 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         {
             var commandInfos = new CommandInfo[]
             {
-                new CommandInfo("command2", $"My command help definition for type {type}...",
+                new("command2", $"My command help definition for type {type}...",
                     [
                         new CommandArgumentInfo()
                     ], new CustomCommand()),
 
-                new CommandInfo("exit", $"My command help definition for type {type}...",
+                new("exit", $"My command help definition for type {type}...",
                     [
                         new CommandArgumentInfo()
                     ], new CustomCommand()),
 
-                new CommandInfo("", $"My command help definition for type {type}...",
+                new("", $"My command help definition for type {type}...",
                     [
                         new CommandArgumentInfo()
                     ], new CustomCommand()),
