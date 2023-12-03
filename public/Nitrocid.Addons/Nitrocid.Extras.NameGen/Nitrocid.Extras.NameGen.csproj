@@ -21,7 +21,6 @@
     <Configurations>Debug;Release</Configurations>
     <LangVersion>latest</LangVersion>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
-    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <SignAssembly>True</SignAssembly>
     <AssemblyOriginatorKeyFile>..\..\..\aptivi_snk.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
@@ -37,9 +36,6 @@
     <DefineDebug>false</DefineDebug>
     <Optimize>true</Optimize>
   </PropertyGroup>
-  <ItemGroup>
-    <PackageReference Include="Textify.Online" Version="1.0.1" />
-  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Nitrocid\Nitrocid.csproj" Private="false" />
   </ItemGroup>

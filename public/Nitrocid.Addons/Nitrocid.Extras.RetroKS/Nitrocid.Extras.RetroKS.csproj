@@ -39,7 +39,6 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="SharpCompress" Version="0.34.2" />
-    <PackageReference Include="Textify.Offline" Version="1.0.1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Nitrocid\Nitrocid.csproj" Private="false" />
