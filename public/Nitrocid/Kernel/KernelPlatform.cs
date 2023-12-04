@@ -20,6 +20,7 @@
 using KS.Files.Operations.Querying;
 using KS.Kernel.Debugging;
 using System;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using UnameNET;
 
@@ -108,7 +109,7 @@ namespace KS.Kernel
         /// Is Nitrocid KS running from GRILO?
         /// </summary>
         public static bool IsRunningFromGrilo() =>
-            (System.Reflection.Assembly.GetEntryAssembly()?.GetName()?.Name?.StartsWith("GRILO")) ?? false;
+            (Assembly.GetEntryAssembly()?.GetName()?.Name?.StartsWith("GRILO")) ?? false;
 
         /// <summary>
         /// Is Nitrocid KS running from TMUX?
