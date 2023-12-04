@@ -47,7 +47,7 @@ namespace KS.Shell.Shells.UESH.Commands
             // If the pinged address is actually a number of times
             int PingTimes = 4;
             string projectedTimes = SwitchManager.GetSwitchValue(parameters.SwitchesList, "-times");
-            if (TextTools.IsStringNumeric(projectedTimes))
+            if (!string.IsNullOrEmpty(projectedTimes) && TextTools.IsStringNumeric(projectedTimes))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Projected times {0} is numeric.", projectedTimes);
                 PingTimes = Convert.ToInt32(projectedTimes);
