@@ -328,4 +328,7 @@
   <data name="ViceCity2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Themes\ViceCity2.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
   </data>
+  <data name="GreenRed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Themes\GreenRed.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+  </data>
 </root>

@@ -608,6 +608,30 @@ namespace Nitrocid.ThemePacks.Resources {
         /// <summary>
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
+        ///        &quot;Name&quot;: &quot;Green and Red&quot;,
+        ///        &quot;Description&quot;: &quot;We&apos;ve added green and red as colors.&quot;,
+        ///        &quot;Localizable&quot;: true
+        ///    },
+        ///    &quot;InputColor&quot;: &quot;#00FF00&quot;,
+        ///    &quot;LicenseColor&quot;: &quot;#00FF00&quot;,
+        ///    &quot;ContKernelErrorColor&quot;: &quot;#FF0000&quot;,
+        ///    &quot;UncontKernelErrorColor&quot;: &quot;#FF0000&quot;,
+        ///    &quot;HostNameShellColor&quot;: &quot;#FF0000&quot;,
+        ///    &quot;UserNameShellColor&quot;: &quot;#FF0000&quot;,
+        ///    &quot;BackgroundColor&quot;: &quot;#000000&quot;,
+        ///    &quot;NeutralTextColor&quot;: &quot;#00FF00&quot;,
+        ///    &quot;ListEntryColor&quot;: &quot;#00FF00&quot;,
+        ///    &quot;ListValueColor&quot;: &quot;#FF0000 [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string GreenRed {
+            get {
+                return ResourceManager.GetString("GreenRed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
+        ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Grink (Green + Pink)&quot;,
         ///        &quot;Description&quot;: &quot;Green and pink mixed together&quot;,
         ///        &quot;Localizable&quot;: true,
@@ -1588,21 +1612,21 @@ namespace Nitrocid.ThemePacks.Resources {
         /// <summary>
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
-        ///        &quot;Name&quot;: &quot;Aptivi&quot;,
-        ///        &quot;Description&quot;: &quot;Our branding harmony&quot;,
+        ///        &quot;Name&quot;: &quot;Vice City 2&quot;,
+        ///        &quot;Description&quot;: &quot;This is your Vice City dawn.&quot;,
         ///        &quot;Localizable&quot;: true,
         ///        &quot;Category&quot;: &quot;Mesmerizing&quot;
         ///    },
-        ///    &quot;InputColor&quot;: &quot;#C390D9&quot;,
-        ///    &quot;LicenseColor&quot;: &quot;#C390D9&quot;,
-        ///    &quot;ContKernelErrorColor&quot;: &quot;#752EFD&quot;,
-        ///    &quot;UncontKernelErrorColor&quot;: &quot;#752EFD&quot;,
-        ///    &quot;HostNameShellColor&quot;: &quot;#752EFD&quot;,
-        ///    &quot;UserNameShellColor&quot;: &quot;#752EFD&quot;,
-        ///    &quot;BackgroundColor&quot;: &quot;#020143&quot;,
-        ///    &quot;NeutralTextColor&quot;: &quot;#C390D9&quot;,
-        ///    &quot;ListEntryColor&quot;: &quot;#C390D9&quot;,
-        ///    &quot;ListValueCol [rest of string was truncated]&quot;;.
+        ///    &quot;InputColor&quot;: &quot;#5B5A9E&quot;,
+        ///    &quot;LicenseColor&quot;: &quot;#5B5A9E&quot;,
+        ///    &quot;ContKernelErrorColor&quot;: &quot;#FFB470&quot;,
+        ///    &quot;UncontKernelErrorColor&quot;: &quot;#FFB470&quot;,
+        ///    &quot;HostNameShellColor&quot;: &quot;#FFB470&quot;,
+        ///    &quot;UserNameShellColor&quot;: &quot;#FFB470&quot;,
+        ///    &quot;BackgroundColor&quot;: &quot;#70365C&quot;,
+        ///    &quot;NeutralTextColor&quot;: &quot;#5B5A9E&quot;,
+        ///    &quot;ListEntryColor&quot;: &quot;#5B5A9E&quot;,
+        ///     [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ViceCity2 {
             get {
