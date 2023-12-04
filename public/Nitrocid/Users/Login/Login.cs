@@ -95,6 +95,10 @@ namespace KS.Users.Login
                     // Prompt for username
                     user = handler.UserSelector();
 
+                    // Handlers may return an empty username. This may indicate that the user has exited. In this case, go to the beginning.
+                    if (string.IsNullOrEmpty(user))
+                        continue;
+
                     // OK. Here's where things get tricky. Some handlers may misleadingly give us a completely invalid username, so verify it
                     // the second time for these handlers to behave.
                     if (!UserManagement.ValidateUsername(user))

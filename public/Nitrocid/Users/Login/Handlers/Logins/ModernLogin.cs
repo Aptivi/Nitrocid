@@ -64,8 +64,15 @@ namespace KS.Users.Login.Handlers.Logins
                     UserManagement.GetUser(user).FullName :
                     ""
             ).ToArray();
-            int userNum = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a user account you want to log in with."), string.Join("/", users), userFullNames, true);
-            return UserManagement.SelectUser(userNum);
+
+            // Then, make the choices and prompt for the selection
+            KernelColorTools.LoadBack();
+            var choices = InputChoiceTools.GetInputChoices(users, userFullNames);
+            int userNum = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choices], Translate.DoTranslation("Select a user account you want to log in with.")) + 1;
+            return
+                userNum != 0 ?
+                UserManagement.SelectUser(userNum) :
+                "";
         }
 
         public override bool PasswordHandler(string user, ref string pass)
