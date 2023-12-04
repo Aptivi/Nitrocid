@@ -1075,12 +1075,7 @@ namespace KS.Shell.Shells.UESH
                         }),
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "list"),
-                            new CommandArgumentPart(true, "modname"),
-                        }),
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "reloadall/stopall/startall"),
+                            new CommandArgumentPart(true, "list/reloadall/stopall/startall"),
                         }),
                     ], new ModManCommand(), CommandFlags.Strict)
             },
