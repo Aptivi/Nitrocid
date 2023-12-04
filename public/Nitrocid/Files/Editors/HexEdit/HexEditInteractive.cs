@@ -171,7 +171,7 @@ namespace KS.Files.Editors.HexEdit
                 }
                 return bindingsBuilder.ToString();
             });
-            screen.AddBufferedPart(part);
+            screen.AddBufferedPart("Hex editor interactive - Keybindings", part);
         }
 
         private static void RenderStatus(ref Screen screen)
@@ -188,7 +188,7 @@ namespace KS.Files.Editors.HexEdit
                 );
                 return builder.ToString();
             });
-            screen.AddBufferedPart(part);
+            screen.AddBufferedPart("Hex editor interactive - Status", part);
         }
 
         private static void RenderHexViewBox(ref Screen screen)
@@ -212,7 +212,7 @@ namespace KS.Files.Editors.HexEdit
                 );
                 return builder.ToString();
             });
-            screen.AddBufferedPart(part);
+            screen.AddBufferedPart("Hex editor interactive - Hex view box", part);
         }
 
         private static void RenderContentsInHexWithSelection(int byteIdx, ref Screen screen, byte[] bytes)
@@ -246,7 +246,7 @@ namespace KS.Files.Editors.HexEdit
                 );
                 return builder.ToString();
             });
-            screen.AddBufferedPart(part);
+            screen.AddBufferedPart("Hex editor interactive - Contents", part);
         }
 
         private static void HandleKeypress(ConsoleKeyInfo key, ref byte[] bytes)

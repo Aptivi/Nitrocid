@@ -175,7 +175,7 @@ namespace KS.Files.Editors.TextEdit
                 }
                 return bindingsBuilder.ToString();
             });
-            screen.AddBufferedPart(part);
+            screen.AddBufferedPart("Text editor interactive - Keybindings", part);
         }
 
         private static void RenderStatus(ref Screen screen)
@@ -192,7 +192,7 @@ namespace KS.Files.Editors.TextEdit
                 );
                 return builder.ToString();
             });
-            screen.AddBufferedPart(part);
+            screen.AddBufferedPart("Text editor interactive - Status", part);
         }
 
         private static void RenderTextViewBox(ref Screen screen)
@@ -216,7 +216,7 @@ namespace KS.Files.Editors.TextEdit
                 );
                 return builder.ToString();
             });
-            screen.AddBufferedPart(part);
+            screen.AddBufferedPart("Text editor interactive - Text view box", part);
         }
 
         private static void RenderContentsWithSelection(int lineIdx, ref Screen screen, List<string> lines)
@@ -323,7 +323,7 @@ namespace KS.Files.Editors.TextEdit
                 }
                 return sels.ToString();
             });
-            screen.AddBufferedPart(part);
+            screen.AddBufferedPart("Text editor interactive - Contents", part);
         }
 
         private static void HandleKeypress(ConsoleKeyInfo key, ref List<string> lines)

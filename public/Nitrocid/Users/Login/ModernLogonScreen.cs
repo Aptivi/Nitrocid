@@ -155,7 +155,7 @@ namespace KS.Users.Login
                             // Print everything
                             return display.ToString();
                         });
-                        screen.AddBufferedPart(part);
+                        screen.AddBufferedPart("Date/time widget updater", part);
 
                         // Render it now
                         ScreenTools.Render();

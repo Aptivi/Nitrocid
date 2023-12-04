@@ -47,7 +47,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
                 stickScreenPart.AddDynamicText(GenerateHeightStick);
                 stickScreenPart.AddDynamicText(() => KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground);
                 stickScreenPart.AddDynamicText(() => KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground);
-                stickScreen.AddBufferedPart(stickScreenPart);
+                stickScreen.AddBufferedPart("Test", stickScreenPart);
                 ScreenTools.SetCurrent(stickScreen);
                 ScreenTools.Render();
                 Input.DetectKeypress();

@@ -305,7 +305,7 @@ namespace KS.ConsoleBase.Interactive
                 return bindingsBuilder.ToString();
             });
 
-            screen.AddBufferedPart(part);
+            screen.AddBufferedPart($"Interactive TUI - Main - {interactiveTui.GetType().Name}", part);
         }
 
         private static void DrawInteractiveTuiItems(BaseInteractiveTui interactiveTui, int paneNum, ref Screen screen)
@@ -394,7 +394,7 @@ namespace KS.ConsoleBase.Interactive
                 return builder.ToString();
             });
 
-            screen.AddBufferedPart(part);
+            screen.AddBufferedPart($"Interactive TUI - Items - {interactiveTui.GetType().Name}", part);
         }
 
         private static void DrawInformationOnSecondPane(BaseInteractiveTui interactiveTui, ref Screen screen)
@@ -496,7 +496,7 @@ namespace KS.ConsoleBase.Interactive
                 return builder.ToString();
             });
 
-            screen.AddBufferedPart(part);
+            screen.AddBufferedPart($"Interactive TUI - Info (2nd pane) - {interactiveTui.GetType().Name}", part);
         }
 
         private static void DrawStatus(BaseInteractiveTui interactiveTui, ref Screen screen)
@@ -525,7 +525,7 @@ namespace KS.ConsoleBase.Interactive
                 builder.Append(ConsoleExtensions.GetClearLineToRightSequence());
                 return builder.ToString();
             });
-            screen.AddBufferedPart(part);
+            screen.AddBufferedPart($"Interactive TUI - Status - {interactiveTui.GetType().Name}", part);
         }
 
         private static void RespondToUserInput(BaseInteractiveTui interactiveTui)

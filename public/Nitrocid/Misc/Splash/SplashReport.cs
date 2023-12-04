@@ -137,10 +137,10 @@ namespace KS.Misc.Splash
                         var openingPart = new ScreenPart();
                         DebugWriter.WriteDebug(DebugLevel.I, "Invoking splash to report {0}...", Text);
                         openingPart.AddDynamicText(() => splash.Report(_Progress, Text, Vars));
-                        if (SplashManager.splashScreen.ScreenParts.Length > 2)
-                            SplashManager.splashScreen.EditBufferedPart(2, openingPart);
+                        if (SplashManager.splashScreen.CheckBufferedPart("Splash report"))
+                            SplashManager.splashScreen.EditBufferedPart("Splash report", openingPart);
                         else
-                            SplashManager.splashScreen.AddBufferedPart(openingPart);
+                            SplashManager.splashScreen.AddBufferedPart("Splash report", openingPart);
                         ScreenTools.Render();
                     }
                     else if (!KernelEntry.QuietKernel)

@@ -302,7 +302,7 @@ namespace KS.ConsoleBase.Inputs.Styles.Selection
                             );
                         return selectionBuilder.ToString();
                     });
-                    selectionScreen.AddBufferedPart(screenPart);
+                    selectionScreen.AddBufferedPart("Selection - single", screenPart);
 
                     // Wait for an answer
                     ScreenTools.Render();

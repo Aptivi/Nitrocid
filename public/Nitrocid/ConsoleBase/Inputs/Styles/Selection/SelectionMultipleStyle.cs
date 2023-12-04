@@ -285,7 +285,7 @@ namespace KS.ConsoleBase.Inputs.Styles.Selection
                             );
                         return selectionBuilder.ToString();
                     });
-                    selectionScreen.AddBufferedPart(screenPart);
+                    selectionScreen.AddBufferedPart("Selection - multiple", screenPart);
 
                     // Wait for an answer
                     ScreenTools.Render();

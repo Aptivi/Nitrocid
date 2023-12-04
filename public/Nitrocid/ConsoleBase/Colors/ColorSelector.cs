@@ -133,7 +133,7 @@ namespace KS.ConsoleBase.Colors
                                 ConsoleWrapper.CursorVisible = false;
                                 return RenderTrueColorSelector(selectedColor);
                             });
-                            screen.AddBufferedPart(screenPart);
+                            screen.AddBufferedPart("Color selector", screenPart);
                             ScreenTools.Render();
                             bail = HandleKeypressTrueColor(ref selectedColor, ref type);
                             break;
@@ -143,7 +143,7 @@ namespace KS.ConsoleBase.Colors
                                 ConsoleWrapper.CursorVisible = false;
                                 return Render255ColorsSelector(selectedColor);
                             });
-                            screen.AddBufferedPart(screenPart);
+                            screen.AddBufferedPart("Color selector", screenPart);
                             ScreenTools.Render();
                             bail = HandleKeypress255Colors(ref selectedColor, ref type);
                             break;
@@ -153,7 +153,7 @@ namespace KS.ConsoleBase.Colors
                                 ConsoleWrapper.CursorVisible = false;
                                 return Render16ColorsSelector(selectedColor);
                             });
-                            screen.AddBufferedPart(screenPart);
+                            screen.AddBufferedPart("Color selector", screenPart);
                             ScreenTools.Render();
                             bail = HandleKeypress16Colors(ref selectedColor, ref type);
                             break;

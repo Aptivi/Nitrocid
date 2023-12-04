@@ -159,7 +159,7 @@ namespace Nitrocid.Extras.Docking.Dock.Docks
                         // Print everything
                         return display.ToString();
                     });
-                    screen.AddBufferedPart(part);
+                    screen.AddBufferedPart("Digital clock dock", part);
 
                     // Render it now
                     ScreenTools.Render();

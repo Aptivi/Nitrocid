@@ -284,7 +284,7 @@ namespace KS.Misc.Splash
 
                 // Add the opening function as dynamic text
                 openingPart.AddDynamicText(() => splash.Opening(context));
-                splashScreen.AddBufferedPart(openingPart);
+                splashScreen.AddBufferedPart("Opening splash", openingPart);
 
                 // Make it resize-aware
                 ScreenTools.SetCurrent(splashScreen);
@@ -352,7 +352,7 @@ namespace KS.Misc.Splash
                         closingPart.AddDynamicText(() => splash.Closing(context, out delay));
                     else
                         closingPart.AddDynamicText(() => InstalledSplashes["Blank"].EntryPoint.Closing(context, out delay));
-                    splashScreen.AddBufferedPart(closingPart);
+                    splashScreen.AddBufferedPart("Closing splash", closingPart);
                     if (ScreenTools.CurrentScreen is not null)
                         ScreenTools.Render();
                 }
@@ -480,10 +480,10 @@ namespace KS.Misc.Splash
                 {
                     var displayPart = new ScreenPart();
                     displayPart.AddDynamicText(() => splash.Display(threadParameters.SplashContext));
-                    if (splashScreen.ScreenParts.Length > 1)
-                        splashScreen.EditBufferedPart(1, displayPart);
+                    if (splashScreen.CheckBufferedPart("Display"))
+                        splashScreen.EditBufferedPart("Display", displayPart);
                     else
-                        splashScreen.AddBufferedPart(displayPart);
+                        splashScreen.AddBufferedPart("Display", displayPart);
                     ScreenTools.Render();
                     Thread.Sleep(20);
                 }

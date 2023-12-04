@@ -20,6 +20,7 @@
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace KS.ConsoleBase.Buffered
@@ -29,26 +30,31 @@ namespace KS.ConsoleBase.Buffered
     /// </summary>
     public class Screen
     {
-        private readonly List<ScreenPart> screenParts = [];
+        private readonly Dictionary<string, ScreenPart> screenParts = [];
 
         /// <summary>
         /// Buffered screen parts list to render one by one while buffering the console
         /// </summary>
         public ScreenPart[] ScreenParts =>
-            screenParts.ToArray();
+            [.. screenParts.Values];
 
         /// <summary>
         /// Adds the buffered part to the list of screen parts
         /// </summary>
+        /// <param name="name">Screen buffer part name</param>
         /// <param name="part">Buffered screen part to add to the screen part list for buffering</param>
         /// <exception cref="KernelException"></exception>
-        public void AddBufferedPart(ScreenPart part)
+        public void AddBufferedPart(string name, ScreenPart part)
         {
             if (part is null)
                 throw new KernelException(KernelExceptionType.Console, Translate.DoTranslation("You must specify the screen part."));
+            if (string.IsNullOrEmpty(name))
+                throw new KernelException(KernelExceptionType.Console, Translate.DoTranslation("You must specify the screen name."));
+            while (screenParts.ContainsKey(name))
+                name += $" [{screenParts.Count}]";
 
             // Now, add the buffered part
-            screenParts.Add(part);
+            screenParts.Add(name, part);
         }
 
         /// <summary>
@@ -64,22 +70,111 @@ namespace KS.ConsoleBase.Buffered
             if (part is null)
                 throw new KernelException(KernelExceptionType.Console, Translate.DoTranslation("You must specify the screen part."));
 
-            // Now, add the buffered part
-            screenParts[idx] = part;
+            // Now, edit the buffered part
+            var kvp = screenParts.ElementAt(idx);
+            EditBufferedPart(kvp.Key, part);
+        }
+
+        /// <summary>
+        /// Edits the buffered part to the list of screen parts
+        /// </summary>
+        /// <param name="name">Screen buffer part name</param>
+        /// <param name="part">Buffered screen part to add to the screen part list for buffering</param>
+        /// <exception cref="KernelException"></exception>
+        public void EditBufferedPart(string name, ScreenPart part)
+        {
+            if (!screenParts.ContainsKey(name))
+                throw new KernelException(KernelExceptionType.Console, Translate.DoTranslation("The specified part name is not found."));
+            if (part is null)
+                throw new KernelException(KernelExceptionType.Console, Translate.DoTranslation("You must specify the screen part."));
+
+            // Now, edit the buffered part
+            screenParts[name] = part;
         }
 
         /// <summary>
         /// Removes the buffered part from the list of screen parts
         /// </summary>
-        /// <param name="part">Buffered screen part to add to the screen part list for buffering</param>
+        /// <param name="idx">Part index</param>
         /// <exception cref="KernelException"></exception>
-        public void RemoveBufferedPart(ScreenPart part)
+        public void RemoveBufferedPart(int idx)
         {
-            if (part is null)
-                throw new KernelException(KernelExceptionType.Console, Translate.DoTranslation("You must specify the screen part."));
+            if (idx < 0 || idx >= screenParts.Count)
+                throw new KernelException(KernelExceptionType.Console, Translate.DoTranslation("The specified part index is out of range."));
 
             // Now, remove the buffered part
-            screenParts.Remove(part);
+            var kvp = screenParts.ElementAt(idx);
+            RemoveBufferedPart(kvp.Key);
+        }
+
+        /// <summary>
+        /// Removes the buffered part from the list of screen parts
+        /// </summary>
+        /// <param name="name">Screen buffer part name</param>
+        /// <exception cref="KernelException"></exception>
+        public void RemoveBufferedPart(string name)
+        {
+            if (!screenParts.ContainsKey(name))
+                throw new KernelException(KernelExceptionType.Console, Translate.DoTranslation("The specified part name is not found."));
+
+            // Now, remove the buffered part
+            screenParts.Remove(name);
+        }
+
+        /// <summary>
+        /// Gets the buffered part to the list of screen parts
+        /// </summary>
+        /// <param name="idx">Part index</param>
+        /// <exception cref="KernelException"></exception>
+        public ScreenPart GetBufferedPart(int idx)
+        {
+            if (idx < 0 || idx >= screenParts.Count)
+                throw new KernelException(KernelExceptionType.Console, Translate.DoTranslation("The specified part index is out of range."));
+
+            // Now, get the buffered part
+            var kvp = screenParts.ElementAt(idx);
+            return GetBufferedPart(kvp.Key);
+        }
+
+        /// <summary>
+        /// Gets the buffered part to the list of screen parts
+        /// </summary>
+        /// <param name="name">Screen buffer part name</param>
+        /// <exception cref="KernelException"></exception>
+        public ScreenPart GetBufferedPart(string name)
+        {
+            if (!screenParts.TryGetValue(name, out ScreenPart part))
+                throw new KernelException(KernelExceptionType.Console, Translate.DoTranslation("The specified part name is not found."));
+
+            // Now, get the buffered part
+            return part;
+        }
+
+        /// <summary>
+        /// Checks the buffered part to the list of screen parts
+        /// </summary>
+        /// <param name="idx">Part index</param>
+        /// <exception cref="KernelException"></exception>
+        public bool CheckBufferedPart(int idx)
+        {
+            if (idx < 0 || idx >= screenParts.Count)
+                return false;
+
+            // Now, check the buffered part
+            var kvp = screenParts.ElementAt(idx);
+            return CheckBufferedPart(kvp.Key);
+        }
+
+        /// <summary>
+        /// Checks the buffered part to the list of screen parts
+        /// </summary>
+        /// <param name="name">Screen buffer part name</param>
+        /// <exception cref="KernelException"></exception>
+        public bool CheckBufferedPart(string name)
+        {
+            if (!screenParts.ContainsKey(name))
+                return false;
+            return true;
         }
 
         /// <summary>
