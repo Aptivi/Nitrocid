@@ -19,7 +19,6 @@
 
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs.Styles.Choice;
-using KS.ConsoleBase.Inputs.Styles.Selection;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Drivers.RNG;
 using KS.Languages;

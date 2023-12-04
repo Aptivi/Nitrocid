@@ -21,7 +21,6 @@ using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Inputs.Styles.Infobox;
-using KS.ConsoleBase.Inputs.Styles.Selection;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Drivers.Encryption;
 using KS.Kernel.Debugging;

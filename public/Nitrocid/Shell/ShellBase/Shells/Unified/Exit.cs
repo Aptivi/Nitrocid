@@ -22,7 +22,6 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
-using KS.Shell.ShellBase.Shells;
 
 namespace KS.Shell.ShellBase.Shells.Unified
 {

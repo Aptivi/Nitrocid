@@ -17,8 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System;
-using System.Linq;
 using KS.Files;
 using KS.Files.Folders;
 using KS.Shell.ShellBase.Commands;

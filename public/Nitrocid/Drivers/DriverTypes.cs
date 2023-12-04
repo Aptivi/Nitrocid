@@ -64,5 +64,9 @@ namespace KS.Drivers
         /// Array sorting drivers
         /// </summary>
         Sorting,
+        /// <summary>
+        /// Console input drivers
+        /// </summary>
+        Input,
     }
 }

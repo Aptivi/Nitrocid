@@ -43,6 +43,8 @@ using KS.Drivers.HardwareProber;
 using KS.Languages;
 using KS.Drivers.Sorting;
 using KS.Drivers.Sorting.Bases;
+using KS.Drivers.Input.Bases;
+using KS.Drivers.Input;
 
 namespace KS.Drivers
 {
@@ -144,6 +146,12 @@ namespace KS.Drivers
                 {
                     { "Default", new DefaultSorting() },
                 }
+            },
+            {
+                DriverTypes.Input, new()
+                {
+                    { "Default", new DefaultInput() },
+                }
             }
         };
 
@@ -159,6 +167,7 @@ namespace KS.Drivers
             { DriverTypes.Encoding,             new() },
             { DriverTypes.HardwareProber,       new() },
             { DriverTypes.Sorting,              new() },
+            { DriverTypes.Input,                new() },
         };
 
         internal static Dictionary<DriverTypes, IDriver> currentDrivers = new()
@@ -173,6 +182,7 @@ namespace KS.Drivers
             { DriverTypes.Encoding,             drivers[DriverTypes.Encoding]["Default"] },
             { DriverTypes.HardwareProber,       drivers[DriverTypes.HardwareProber]["Default"] },
             { DriverTypes.Sorting,              drivers[DriverTypes.Sorting]["Default"] },
+            { DriverTypes.Input,                drivers[DriverTypes.Input]["Default"] },
         };
 
         internal static Dictionary<Type, DriverTypes> knownTypes = new()
@@ -187,6 +197,7 @@ namespace KS.Drivers
             { typeof(IEncodingDriver),          DriverTypes.Encoding },
             { typeof(IHardwareProberDriver),    DriverTypes.HardwareProber },
             { typeof(ISortingDriver),           DriverTypes.Sorting },
+            { typeof(IInputDriver),             DriverTypes.Input },
         };
 
         internal static Dictionary<DriverTypes, IDriver> currentDriversLocal = new(currentDrivers);
@@ -252,6 +263,12 @@ namespace KS.Drivers
             begunLocal ? (ISortingDriver)currentDriversLocal[DriverTypes.Sorting] : CurrentSortingDriver;
 
         /// <summary>
+        /// Gets the current input driver (use this when possible)
+        /// </summary>
+        public static IInputDriver CurrentInputDriverLocal =>
+            begunLocal ? (IInputDriver)currentDriversLocal[DriverTypes.Input] : CurrentInputDriver;
+
+        /// <summary>
         /// Gets the system-wide current random driver
         /// </summary>
         public static IRandomDriver CurrentRandomDriver =>
@@ -310,6 +327,12 @@ namespace KS.Drivers
         /// </summary>
         public static ISortingDriver CurrentSortingDriver =>
             (ISortingDriver)currentDrivers[DriverTypes.Sorting];
+
+        /// <summary>
+        /// Gets the system-wide current input driver
+        /// </summary>
+        public static IInputDriver CurrentInputDriver =>
+            (IInputDriver)currentDrivers[DriverTypes.Input];
 
         /// <summary>
         /// Gets the driver

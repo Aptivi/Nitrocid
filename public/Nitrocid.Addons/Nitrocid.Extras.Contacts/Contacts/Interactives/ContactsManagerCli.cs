@@ -21,7 +21,6 @@ using KS.Kernel.Debugging;
 using KS.Languages;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using VisualCard.Parts;
 using System.Text;
 using System.Collections;

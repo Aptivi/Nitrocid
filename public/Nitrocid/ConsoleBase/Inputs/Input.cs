@@ -72,15 +72,8 @@ namespace KS.ConsoleBase.Inputs
         /// <param name="InputText">Input text to write</param>
         /// <param name="DefaultValue">Default value</param>
         /// <param name="settings">Reader settings</param>
-        public static string ReadLine(string InputText, string DefaultValue, TermReaderSettings settings)
-        {
-            string Output = ReadLineUnsafe(InputText, DefaultValue, false, settings);
-
-            // If in lock mode, wait until release
-            DebugWriter.WriteDebug(DebugLevel.I, "Waiting for lock mode to release...");
-            SpinWait.SpinUntil(() => !ScreensaverManager.LockMode);
-            return Output;
-        }
+        public static string ReadLine(string InputText, string DefaultValue, TermReaderSettings settings) =>
+            DriverHandler.CurrentInputDriverLocal.ReadLine(InputText, DefaultValue, settings);
 
         /// <summary>
         /// Reads the line from the console (wrapped to one line)
@@ -109,15 +102,8 @@ namespace KS.ConsoleBase.Inputs
         /// <param name="InputText">Input text to write</param>
         /// <param name="DefaultValue">Default value</param>
         /// <param name="settings">Reader settings</param>
-        public static string ReadLineWrapped(string InputText, string DefaultValue, TermReaderSettings settings)
-        {
-            string Output = ReadLineUnsafe(InputText, DefaultValue, true, settings);
-
-            // If in lock mode, wait until release
-            DebugWriter.WriteDebug(DebugLevel.I, "Waiting for lock mode to release...");
-            SpinWait.SpinUntil(() => !ScreensaverManager.LockMode);
-            return Output;
-        }
+        public static string ReadLineWrapped(string InputText, string DefaultValue, TermReaderSettings settings) =>
+            DriverHandler.CurrentInputDriverLocal.ReadLineWrapped(InputText, DefaultValue, settings);
 
         /// <summary>
         /// Reads the line from the console unsafely. This doesn't wait until the screensaver lock mode is released.
@@ -135,174 +121,91 @@ namespace KS.ConsoleBase.Inputs
         /// <param name="DefaultValue">Default value</param>
         /// <param name="OneLineWrap">Whether to wrap the input to one line</param>
         /// <param name="settings">Reader settings</param>
-        public static string ReadLineUnsafe(string InputText, string DefaultValue, bool OneLineWrap = false, TermReaderSettings settings = null)
-        {
-            bool cursorState = ConsoleWrapper.CursorVisible;
-            ConsoleWrapper.CursorVisible = true;
-            TermReaderSettings finalSettings = settings is null ? globalSettings : settings;
-            string Output = TermReader.Read(InputText, DefaultValue, finalSettings, false, OneLineWrap, true);
-            ConsoleWrapper.CursorVisible = cursorState;
-
-            // For some reason, Terminaux tends to forget to restore the below property to the state before the read.
-            ConsoleWrapper.TreatCtrlCAsInput = false;
-            return Output;
-        }
+        public static string ReadLineUnsafe(string InputText, string DefaultValue, bool OneLineWrap = false, TermReaderSettings settings = null) =>
+            DriverHandler.CurrentInputDriverLocal.ReadLineUnsafe(InputText, DefaultValue, OneLineWrap, settings);
 
         /// <summary>
         /// Reads the next line of characters from the standard input stream without showing input being written by user.
         /// </summary>
-        public static string ReadLineNoInput()
-        {
-            if (!string.IsNullOrEmpty(CurrentMask))
-                return ReadLineNoInput(CurrentMask[0]);
-            else
-                return ReadLineNoInput(Convert.ToChar("\0"));
-        }
+        public static string ReadLineNoInput() =>
+            DriverHandler.CurrentInputDriverLocal.ReadLineNoInput();
 
         /// <summary>
         /// Reads the next line of characters from the standard input stream without showing input being written by user.
         /// </summary>
-        internal static string ReadLineNoInput(TermReaderSettings settings)
-        {
-            if (!string.IsNullOrEmpty(CurrentMask))
-                return ReadLineNoInput(CurrentMask[0], settings);
-            else
-                return ReadLineNoInput('\0', settings);
-        }
+        public static string ReadLineNoInput(TermReaderSettings settings) =>
+            DriverHandler.CurrentInputDriverLocal.ReadLineNoInput(settings);
 
         /// <summary>
         /// Reads the next line of characters from the standard input stream without showing input being written by user.
         /// </summary>
         /// <param name="MaskChar">Specifies the password mask character</param>
-        public static string ReadLineNoInput(char MaskChar)
-        {
-            string pass = ReadLineNoInputUnsafe(MaskChar);
-
-            // If in lock mode, wait until release
-            DebugWriter.WriteDebug(DebugLevel.I, "Waiting for lock mode to release...");
-            SpinWait.SpinUntil(() => !ScreensaverManager.LockMode);
-            return pass;
-        }
+        public static string ReadLineNoInput(char MaskChar) =>
+            DriverHandler.CurrentInputDriverLocal.ReadLineNoInput(MaskChar);
 
         /// <summary>
         /// Reads the next line of characters from the standard input stream without showing input being written by user.
         /// </summary>
         /// <param name="MaskChar">Specifies the password mask character</param>
         /// <param name="settings">Reader settings</param>
-        public static string ReadLineNoInput(char MaskChar, TermReaderSettings settings)
-        {
-            TermReaderSettings finalSettings = settings is null ? globalSettings : settings;
-            string pass = ReadLineNoInputUnsafe(MaskChar, finalSettings);
-
-            // If in lock mode, wait until release
-            DebugWriter.WriteDebug(DebugLevel.I, "Waiting for lock mode to release...");
-            SpinWait.SpinUntil(() => !ScreensaverManager.LockMode);
-            return pass;
-        }
+        public static string ReadLineNoInput(char MaskChar, TermReaderSettings settings) =>
+            DriverHandler.CurrentInputDriverLocal.ReadLineNoInput(MaskChar, settings);
 
         /// <summary>
         /// Reads the next line of characters from the standard input stream without showing input being written by user unsafely. This doesn't wait until the screensaver lock mode is released.
         /// </summary>
-        public static string ReadLineNoInputUnsafe()
-        {
-            if (!string.IsNullOrEmpty(CurrentMask))
-                return ReadLineNoInputUnsafe(CurrentMask[0]);
-            else
-                return ReadLineNoInputUnsafe('\0');
-        }
+        public static string ReadLineNoInputUnsafe() =>
+            DriverHandler.CurrentInputDriverLocal.ReadLineNoInputUnsafe();
 
         /// <summary>
         /// Reads the next line of characters from the standard input stream without showing input being written by user unsafely. This doesn't wait until the screensaver lock mode is released.
         /// </summary>
         /// <param name="settings">Reader settings</param>
-        public static string ReadLineNoInputUnsafe(TermReaderSettings settings)
-        {
-            if (!string.IsNullOrEmpty(CurrentMask))
-                return ReadLineNoInputUnsafe(CurrentMask[0], settings);
-            else
-                return ReadLineNoInputUnsafe('\0', settings);
-        }
+        public static string ReadLineNoInputUnsafe(TermReaderSettings settings) =>
+            DriverHandler.CurrentInputDriverLocal.ReadLineNoInputUnsafe(settings);
 
         /// <summary>
         /// Reads the next line of characters from the standard input stream without showing input being written by user unsafely. This doesn't wait until the screensaver lock mode is released.
         /// </summary>
         /// <param name="MaskChar">Specifies the password mask character</param>
         public static string ReadLineNoInputUnsafe(char MaskChar) =>
-            ReadLineNoInputUnsafe(MaskChar, globalSettings);
+            DriverHandler.CurrentInputDriverLocal.ReadLineNoInputUnsafe(MaskChar);
 
         /// <summary>
         /// Reads the next line of characters from the standard input stream without showing input being written by user unsafely. This doesn't wait until the screensaver lock mode is released.
         /// </summary>
         /// <param name="MaskChar">Specifies the password mask character</param>
         /// <param name="settings">Reader settings</param>
-        public static string ReadLineNoInputUnsafe(char MaskChar, TermReaderSettings settings)
-        {
-            bool cursorState = ConsoleWrapper.CursorVisible;
-            ConsoleWrapper.CursorVisible = true;
-            TermReaderSettings finalSettings = settings is null ? globalSettings : settings;
-            finalSettings.PasswordMaskChar = MaskChar;
-            string pass = TermReader.Read("", "", settings, true, false, true);
-            ConsoleWrapper.CursorVisible = cursorState;
-
-            // For some reason, Terminaux tends to forget to restore the below property to the state before the read.
-            ConsoleWrapper.TreatCtrlCAsInput = false;
-            return pass;
-        }
+        public static string ReadLineNoInputUnsafe(char MaskChar, TermReaderSettings settings) =>
+            DriverHandler.CurrentInputDriverLocal.ReadLineNoInputUnsafe(MaskChar, settings);
 
         /// <summary>
         /// Reads the next key from the console input stream with the timeout
         /// </summary>
         /// <param name="Intercept">Whether to intercept an input</param>
         /// <param name="Timeout">Timeout</param>
-        public static ConsoleKeyInfo ReadKeyTimeout(bool Intercept, TimeSpan Timeout)
-        {
-            var Output = ReadKeyTimeoutUnsafe(Intercept, Timeout);
-
-            // If in lock mode, wait until release
-            DebugWriter.WriteDebug(DebugLevel.I, "Waiting for lock mode to release...");
-            SpinWait.SpinUntil(() => !ScreensaverManager.LockMode);
-            return Output;
-        }
+        public static ConsoleKeyInfo ReadKeyTimeout(bool Intercept, TimeSpan Timeout) =>
+            DriverHandler.CurrentInputDriverLocal.ReadKeyTimeout(Intercept, Timeout);
 
         /// <summary>
         /// Reads the next key from the console input stream with the timeout
         /// </summary>
         /// <param name="Intercept">Whether to intercept an input</param>
         /// <param name="Timeout">Timeout</param>
-        public static ConsoleKeyInfo ReadKeyTimeoutUnsafe(bool Intercept, TimeSpan Timeout)
-        {
-            SpinWait.SpinUntil(() => ConsoleWrapper.KeyAvailable, Timeout);
-            if (!ConsoleWrapper.KeyAvailable)
-            {
-                DebugWriter.WriteDebug(DebugLevel.W, "Timeout trying to read key.");
-                throw new KernelException(KernelExceptionType.ConsoleReadTimeout, Translate.DoTranslation("User didn't provide any input in a timely fashion."));
-            }
-            return ConsoleWrapper.ReadKey(Intercept);
-        }
+        public static ConsoleKeyInfo ReadKeyTimeoutUnsafe(bool Intercept, TimeSpan Timeout) =>
+            DriverHandler.CurrentInputDriverLocal.ReadKeyTimeoutUnsafe(Intercept, Timeout);
 
         /// <summary>
         /// Detects the keypress
         /// </summary>
-        public static ConsoleKeyInfo DetectKeypress()
-        {
-            var key = DetectKeypressUnsafe();
-
-            // If in lock mode, wait until release
-            DebugWriter.WriteDebug(DebugLevel.I, "Waiting for lock mode to release...");
-            SpinWait.SpinUntil(() => !ScreensaverManager.LockMode);
-            return key;
-        }
+        public static ConsoleKeyInfo DetectKeypress() =>
+            DriverHandler.CurrentInputDriverLocal.DetectKeypress();
 
         /// <summary>
         /// Detects the keypress
         /// </summary>
-        public static ConsoleKeyInfo DetectKeypressUnsafe()
-        {
-            SpinWait.SpinUntil(() => ConsoleWrapper.KeyAvailable);
-            var key = ConsoleWrapper.ReadKey(true);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got key! {0} [{1}] {2}", key.Key.ToString(), (int)key.KeyChar, key.Modifiers.ToString());
-            return key;
-        }
+        public static ConsoleKeyInfo DetectKeypressUnsafe() =>
+            DriverHandler.CurrentInputDriverLocal.DetectKeypressUnsafe();
 
         internal static void InitializeTerminauxWrappers()
         {

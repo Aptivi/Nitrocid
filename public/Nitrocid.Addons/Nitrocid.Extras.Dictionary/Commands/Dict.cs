@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System.Linq;
 using KS.ConsoleBase.Colors;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;

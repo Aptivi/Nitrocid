@@ -32,6 +32,7 @@ using KS.Drivers.DebugLogger;
 using KS.Drivers.HardwareProber;
 using KS.Drivers.Encoding;
 using KS.Drivers.Sorting;
+using KS.Drivers.Input;
 
 namespace Nitrocid.Tests.Drivers
 {
@@ -62,6 +63,8 @@ namespace Nitrocid.Tests.Drivers
                 new TestCaseData(DriverHandler.CurrentHardwareProberDriverLocal,    "Default"),
                 new TestCaseData(DriverHandler.CurrentSortingDriver,                "Default"),
                 new TestCaseData(DriverHandler.CurrentSortingDriverLocal,           "Default"),
+                new TestCaseData(DriverHandler.CurrentInputDriver,                  "Default"),
+                new TestCaseData(DriverHandler.CurrentInputDriverLocal,             "Default"),
             };
 
         private static IEnumerable<TestCaseData> RegisteredConsoleDriver =>
@@ -122,6 +125,12 @@ namespace Nitrocid.Tests.Drivers
             new[] {
                 //               ---------- Provided ----------
                 new TestCaseData(DriverTypes.Sorting, new MyCustomSortingDriver()),
+            };
+
+        private static IEnumerable<TestCaseData> RegisteredInputDriver =>
+            new[] {
+                //               ---------- Provided ----------
+                new TestCaseData(DriverTypes.Input, new MyCustomInputDriver()),
             };
 
         [Test]
@@ -375,6 +384,31 @@ namespace Nitrocid.Tests.Drivers
         }
 
         [Test]
+        [Description("Management")]
+        public void TestSetInputDriver()
+        {
+            InputDriverTools.SetInputDriver("Default");
+            DriverHandler.CurrentInputDriver.DriverName.ShouldBe("Default");
+            DriverHandler.CurrentInputDriverLocal.DriverName.ShouldBe("Default");
+        }
+
+        [Test]
+        [Description("Management")]
+        public void TestGetInputDrivers()
+        {
+            var drivers = InputDriverTools.GetInputDrivers();
+            drivers.ShouldNotBeEmpty();
+        }
+
+        [Test]
+        [Description("Management")]
+        public void TestGetInputDriverNames()
+        {
+            var drivers = InputDriverTools.GetInputDriverNames();
+            drivers.ShouldNotBeEmpty();
+        }
+
+        [Test]
         [TestCase<IConsoleDriver>("Null", DriverTypes.Console)]
         [TestCase<IEncryptionDriver>("SHA384", DriverTypes.Encryption)]
         [TestCase<IFilesystemDriver>("Default", DriverTypes.Filesystem)]
@@ -385,6 +419,7 @@ namespace Nitrocid.Tests.Drivers
         [TestCase<IEncodingDriver>("RSA", DriverTypes.Encoding)]
         [TestCase<IHardwareProberDriver>("Default", DriverTypes.HardwareProber)]
         [TestCase<ISortingDriver>("Default", DriverTypes.Sorting)]
+        [TestCase<IInputDriver>("Default", DriverTypes.Input)]
         [Description("Management")]
         public void TestGetDriver<T>(string driverName, DriverTypes expectedType)
             where T : IDriver
@@ -405,6 +440,7 @@ namespace Nitrocid.Tests.Drivers
         [TestCase("RSA", DriverTypes.Encoding)]
         [TestCase("Default", DriverTypes.HardwareProber)]
         [TestCase("Default", DriverTypes.Sorting)]
+        [TestCase("Default", DriverTypes.Input)]
         [Description("Management")]
         public void TestGetDriver(string driverName, DriverTypes expectedType)
         {
@@ -424,6 +460,7 @@ namespace Nitrocid.Tests.Drivers
         [TestCaseSource<IEncodingDriver>(nameof(ExpectedDriverNames))]
         [TestCaseSource<IHardwareProberDriver>(nameof(ExpectedDriverNames))]
         [TestCaseSource<ISortingDriver>(nameof(ExpectedDriverNames))]
+        [TestCaseSource<IInputDriver>(nameof(ExpectedDriverNames))]
         [Description("Management")]
         public void TestGetDriverName<T>(IDriver driver, string expectedName)
             where T : IDriver
@@ -443,6 +480,7 @@ namespace Nitrocid.Tests.Drivers
         [TestCase<IEncodingDriver>]
         [TestCase<IHardwareProberDriver>]
         [TestCase<ISortingDriver>]
+        [TestCase<IInputDriver>]
         [Description("Management")]
         public void TestGetDrivers<T>()
             where T : IDriver
@@ -462,6 +500,7 @@ namespace Nitrocid.Tests.Drivers
         [TestCase(DriverTypes.Encoding)]
         [TestCase(DriverTypes.HardwareProber)]
         [TestCase(DriverTypes.Sorting)]
+        [TestCase(DriverTypes.Input)]
         [Description("Management")]
         public void TestGetDrivers(DriverTypes type)
         {
@@ -480,6 +519,7 @@ namespace Nitrocid.Tests.Drivers
         [TestCase<IEncodingDriver>]
         [TestCase<IHardwareProberDriver>]
         [TestCase<ISortingDriver>]
+        [TestCase<IInputDriver>]
         [Description("Management")]
         public void TestGetDriverNames<T>()
             where T : IDriver
@@ -499,6 +539,7 @@ namespace Nitrocid.Tests.Drivers
         [TestCase(DriverTypes.Encoding)]
         [TestCase(DriverTypes.HardwareProber)]
         [TestCase(DriverTypes.Sorting)]
+        [TestCase(DriverTypes.Input)]
         [Description("Management")]
         public void TestGetDriverNames(DriverTypes type)
         {
@@ -517,6 +558,7 @@ namespace Nitrocid.Tests.Drivers
         [TestCase<IEncodingDriver>("AES")]
         [TestCase<IHardwareProberDriver>("Default")]
         [TestCase<ISortingDriver>("Default")]
+        [TestCase<IInputDriver>("Default")]
         [Description("Management")]
         public void TestGetFallbackDriver<T>(string driverName)
             where T : IDriver
@@ -537,6 +579,7 @@ namespace Nitrocid.Tests.Drivers
         [TestCase(DriverTypes.Encoding, "AES")]
         [TestCase(DriverTypes.HardwareProber, "Default")]
         [TestCase(DriverTypes.Sorting, "Default")]
+        [TestCase(DriverTypes.Input, "Default")]
         [Description("Management")]
         public void TestGetFallbackDriver(DriverTypes type, string driverName)
         {
@@ -556,6 +599,7 @@ namespace Nitrocid.Tests.Drivers
         [TestCase<IEncodingDriver>]
         [TestCase<IHardwareProberDriver>]
         [TestCase<ISortingDriver>]
+        [TestCase<IInputDriver>]
         [Description("Management")]
         public void TestGetFallbackDriverName<T>()
             where T : IDriver
@@ -577,6 +621,7 @@ namespace Nitrocid.Tests.Drivers
         [TestCase(DriverTypes.Encoding)]
         [TestCase(DriverTypes.HardwareProber)]
         [TestCase(DriverTypes.Sorting)]
+        [TestCase(DriverTypes.Input)]
         [Description("Management")]
         public void TestGetFallbackDriverName(DriverTypes type)
         {
@@ -597,6 +642,7 @@ namespace Nitrocid.Tests.Drivers
         [TestCase(DriverTypes.Encoding, "AES")]
         [TestCase(DriverTypes.HardwareProber, "Default")]
         [TestCase(DriverTypes.Sorting, "Default")]
+        [TestCase(DriverTypes.Input, "Default")]
         [Description("Management")]
         public void TestGetCurrentDriver(DriverTypes driverType, string expectedName)
         {
@@ -615,6 +661,7 @@ namespace Nitrocid.Tests.Drivers
         [TestCase(DriverTypes.Encoding, "AES")]
         [TestCase(DriverTypes.HardwareProber, "Default")]
         [TestCase(DriverTypes.Sorting, "Default")]
+        [TestCase(DriverTypes.Input, "Default")]
         [Description("Management")]
         public void TestGetCurrentDriverLocal(DriverTypes driverType, string expectedName)
         {
@@ -633,6 +680,7 @@ namespace Nitrocid.Tests.Drivers
         [TestCase<IEncodingDriver>("AES")]
         [TestCase<IHardwareProberDriver>("Default")]
         [TestCase<ISortingDriver>("Default")]
+        [TestCase<IInputDriver>("Default")]
         [Description("Management")]
         public void TestGetCurrentDriver<T>(string expectedName)
             where T : IDriver
@@ -652,6 +700,7 @@ namespace Nitrocid.Tests.Drivers
         [TestCase<IEncodingDriver>("AES")]
         [TestCase<IHardwareProberDriver>("Default")]
         [TestCase<ISortingDriver>("Default")]
+        [TestCase<IInputDriver>("Default")]
         [Description("Management")]
         public void TestGetCurrentDriverLocal<T>(string expectedName)
             where T : IDriver
@@ -671,6 +720,7 @@ namespace Nitrocid.Tests.Drivers
         [TestCaseSource(nameof(RegisteredEncodingDriver))]
         [TestCaseSource(nameof(RegisteredHardwareProberDriver))]
         [TestCaseSource(nameof(RegisteredSortingDriver))]
+        [TestCaseSource(nameof(RegisteredInputDriver))]
         [Description("Management")]
         public void TestRegisterDriver(DriverTypes type, IDriver driver)
         {
@@ -689,6 +739,7 @@ namespace Nitrocid.Tests.Drivers
         [TestCase(DriverTypes.Encoding, "MyCustom")]
         [TestCase(DriverTypes.HardwareProber, "MyCustom")]
         [TestCase(DriverTypes.Sorting, "MyCustom")]
+        [TestCase(DriverTypes.Input, "MyCustom")]
         [Description("Management")]
         public void TestUnregisterDriver(DriverTypes type, string name)
         {
@@ -707,6 +758,7 @@ namespace Nitrocid.Tests.Drivers
         [TestCase<IEncodingDriver>(DriverTypes.Encoding, "RSA", "RSA")]
         [TestCase<IHardwareProberDriver>(DriverTypes.HardwareProber, "Default", "Default")]
         [TestCase<ISortingDriver>(DriverTypes.Sorting, "Default", "Default")]
+        [TestCase<IInputDriver>(DriverTypes.Input, "Default", "Default")]
         [Description("Management")]
         public void TestSetDriver<T>(DriverTypes type, string name, string expectedName)
             where T : IDriver
@@ -727,6 +779,7 @@ namespace Nitrocid.Tests.Drivers
         [TestCase<IEncodingDriver>(DriverTypes.Encoding, "RSA", "RSA")]
         [TestCase<IHardwareProberDriver>(DriverTypes.HardwareProber, "Default", "Default")]
         [TestCase<ISortingDriver>(DriverTypes.Sorting, "Default", "Default")]
+        [TestCase<IInputDriver>(DriverTypes.Input, "Default", "Default")]
         [Description("Management")]
         public void TestSetDriverSafe<T>(DriverTypes type, string name, string expectedName)
             where T : IDriver
@@ -747,6 +800,7 @@ namespace Nitrocid.Tests.Drivers
         [TestCase<IEncodingDriver>(DriverTypes.Encoding, "RSA", "RSA", "AES")]
         [TestCase<IHardwareProberDriver>(DriverTypes.HardwareProber, "Default", "Default", "Default")]
         [TestCase<ISortingDriver>(DriverTypes.Sorting, "Default", "Default", "Default")]
+        [TestCase<IInputDriver>(DriverTypes.Input, "Default", "Default", "Default")]
         [Description("Management")]
         public void TestBeginLocalDriver<T>(DriverTypes type, string name, string expectedName, string expectedNameAfterLocal)
             where T : IDriver
@@ -770,6 +824,7 @@ namespace Nitrocid.Tests.Drivers
         [TestCase<IEncodingDriver>(DriverTypes.Encoding, "RSA", "RSA", "AES")]
         [TestCase<IHardwareProberDriver>(DriverTypes.HardwareProber, "Default", "Default", "Default")]
         [TestCase<ISortingDriver>(DriverTypes.Sorting, "Default", "Default", "Default")]
+        [TestCase<IInputDriver>(DriverTypes.Input, "Default", "Default", "Default")]
         [Description("Management")]
         public void TestBeginLocalDriverSafe<T>(DriverTypes type, string name, string expectedName, string expectedNameAfterLocal)
             where T : IDriver
@@ -793,6 +848,7 @@ namespace Nitrocid.Tests.Drivers
         [TestCase<IEncodingDriver>(DriverTypes.Encoding)]
         [TestCase<IHardwareProberDriver>(DriverTypes.HardwareProber)]
         [TestCase<ISortingDriver>(DriverTypes.Sorting)]
+        [TestCase<IInputDriver>(DriverTypes.Input)]
         [Description("Management")]
         public void TestInferDriverTypeFromDriverInterfaceType<T>(DriverTypes type)
             where T : IDriver
