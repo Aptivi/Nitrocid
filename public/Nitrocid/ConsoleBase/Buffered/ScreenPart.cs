@@ -61,6 +61,20 @@ namespace KS.ConsoleBase.Buffered
         }
 
         /// <summary>
+        /// Adds the VT sequence to set the left cursor position
+        /// </summary>
+        /// <param name="left">Zero-based left position</param>
+        public void LeftPosition(int left) =>
+            Position(left, ConsoleWrapper.CursorTop);
+
+        /// <summary>
+        /// Adds the VT sequence to set the top cursor position
+        /// </summary>
+        /// <param name="top">Zero-based top position</param>
+        public void TopPosition(int top) =>
+            Position(ConsoleWrapper.CursorLeft, top);
+
+        /// <summary>
         /// Adds the VT sequence to set the cursor position
         /// </summary>
         /// <param name="left">Zero-based left position</param>
