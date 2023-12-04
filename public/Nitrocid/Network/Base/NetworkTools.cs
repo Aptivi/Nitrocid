@@ -90,13 +90,14 @@ namespace KS.Network.Base
         /// Pings an address
         /// </summary>
         /// <param name="Address">Target address</param>
+        /// <param name="options">Ping options</param>
         /// <returns>A ping reply status</returns>
-        public static PingReply PingAddress(string Address)
+        public static PingReply PingAddress(string Address, PingOptions options = null)
         {
             // 60 seconds = 1 minute. timeout of Pinger.Send() takes milliseconds.
             var PingBuffer = Encoding.ASCII.GetBytes("Nitrocid KS");
             int Timeout = PingTimeout;
-            return PingAddress(Address, Timeout, PingBuffer);
+            return PingAddress(Address, Timeout, PingBuffer, options);
         }
 
         /// <summary>
@@ -104,11 +105,12 @@ namespace KS.Network.Base
         /// </summary>
         /// <param name="Address">Target address</param>
         /// <param name="Timeout">Ping timeout in milliseconds</param>
+        /// <param name="options">Ping options</param>
         /// <returns>A ping reply status</returns>
-        public static PingReply PingAddress(string Address, int Timeout)
+        public static PingReply PingAddress(string Address, int Timeout, PingOptions options = null)
         {
             var PingBuffer = Encoding.ASCII.GetBytes("Nitrocid KS");
-            return PingAddress(Address, Timeout, PingBuffer);
+            return PingAddress(Address, Timeout, PingBuffer, options);
         }
 
         /// <summary>
@@ -117,11 +119,12 @@ namespace KS.Network.Base
         /// <param name="Address">Target address</param>
         /// <param name="Timeout">Timeout in milliseconds</param>
         /// <param name="text">The text to buffer</param>
+        /// <param name="options">Ping options</param>
         /// <returns>A ping reply status</returns>
-        public static PingReply PingAddress(string Address, int Timeout, string text)
+        public static PingReply PingAddress(string Address, int Timeout, string text, PingOptions options = null)
         {
             var PingBuffer = Encoding.ASCII.GetBytes(text);
-            return PingAddress(Address, Timeout, PingBuffer);
+            return PingAddress(Address, Timeout, PingBuffer, options);
         }
 
         /// <summary>
@@ -130,12 +133,13 @@ namespace KS.Network.Base
         /// <param name="Address">Target address</param>
         /// <param name="Timeout">Timeout in milliseconds</param>
         /// <param name="Buffer">The buffer consisting of array of bytes</param>
+        /// <param name="options">Ping options</param>
         /// <returns>A ping reply status</returns>
-        public static PingReply PingAddress(string Address, int Timeout, byte[] Buffer)
+        public static PingReply PingAddress(string Address, int Timeout, byte[] Buffer, PingOptions options = null)
         {
             var Pinger = new Ping();
-            var PingerOpts = new PingOptions() { DontFragment = true };
-            return Pinger.Send(Address, Timeout, Buffer, PingerOpts);
+            options ??= new PingOptions() { DontFragment = true };
+            return Pinger.Send(Address, Timeout, Buffer, options);
         }
 
         /// <summary>
