@@ -83,6 +83,9 @@ namespace KS.Drivers.Console.Bases
         public override Stream OpenStandardOutput() =>
             throw new KernelException(KernelExceptionType.NotImplementedYet);
 
+        public override bool TreatCtrlCAsInput =>
+            throw new KernelException(KernelExceptionType.NotImplementedYet);
+
         public override ConsoleKeyInfo ReadKey(bool intercept = false) =>
             throw new KernelException(KernelExceptionType.NotImplementedYet);
 

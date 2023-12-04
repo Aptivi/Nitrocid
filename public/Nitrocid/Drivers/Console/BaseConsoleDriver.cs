@@ -239,6 +239,13 @@ namespace KS.Drivers.Console
         }
 
         /// <inheritdoc/>
+        public virtual bool TreatCtrlCAsInput 
+        {
+            get => SystemConsole.TreatControlCAsInput;
+            set => SystemConsole.TreatControlCAsInput = value;
+        }
+
+        /// <inheritdoc/>
         public virtual void Beep() =>
             SystemConsole.Beep();
 

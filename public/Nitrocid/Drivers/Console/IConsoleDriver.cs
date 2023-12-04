@@ -205,6 +205,11 @@ namespace KS.Drivers.Console
         bool CursorVisible { set; }
 
         /// <summary>
+        /// Whether to treat Ctrl + C as input or not
+        /// </summary>
+        bool TreatCtrlCAsInput { get; set; }
+
+        /// <summary>
         /// The output encoding
         /// </summary>
         TextEncoding OutputEncoding { get; set; }

@@ -144,7 +144,7 @@ namespace KS.ConsoleBase.Inputs
             ConsoleWrapper.CursorVisible = cursorState;
 
             // For some reason, Terminaux tends to forget to restore the below property to the state before the read.
-            Console.TreatControlCAsInput = false;
+            ConsoleWrapper.TreatCtrlCAsInput = false;
             return Output;
         }
 
@@ -245,7 +245,7 @@ namespace KS.ConsoleBase.Inputs
             ConsoleWrapper.CursorVisible = cursorState;
 
             // For some reason, Terminaux tends to forget to restore the below property to the state before the read.
-            Console.TreatControlCAsInput = false;
+            ConsoleWrapper.TreatCtrlCAsInput = false;
             return pass;
         }
 
@@ -319,6 +319,8 @@ namespace KS.ConsoleBase.Inputs
             ConsoleWrappers.ActionKeyAvailable = () => ConsoleWrapper.KeyAvailable;
             ConsoleWrappers.ActionReadKey = ConsoleWrapper.ReadKey;
             ConsoleWrappers.ActionSetCursorPosition = ConsoleWrapper.SetCursorPosition;
+            ConsoleWrappers.ActionTreatCtrlCAsInput = (value) => ConsoleWrapper.TreatCtrlCAsInput = value;
+            //ConsoleWrappers.ActionGetTreatCtrlCAsInput = () => ConsoleWrapper.TreatCtrlCAsInput;
             ConsoleWrappers.ActionWindowHeight = () => ConsoleWrapper.WindowHeight;
             ConsoleWrappers.ActionWindowWidth = () => ConsoleWrapper.WindowWidth;
             ConsoleWrappers.ActionWriteChar = ConsoleWrapper.Write;

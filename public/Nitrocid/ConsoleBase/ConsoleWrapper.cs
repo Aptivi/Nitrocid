@@ -125,6 +125,15 @@ namespace KS.ConsoleBase
         }
 
         /// <summary>
+        /// Whether to treat Ctrl + C as input or not
+        /// </summary>
+        public static bool TreatCtrlCAsInput
+        {
+            get => DriverHandler.CurrentConsoleDriverLocal.TreatCtrlCAsInput;
+            set => DriverHandler.CurrentConsoleDriverLocal.TreatCtrlCAsInput = value;
+        }
+
+        /// <summary>
         /// Whether a key is pressed
         /// </summary>
         public static bool KeyAvailable =>
