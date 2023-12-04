@@ -65,7 +65,8 @@ namespace Nitrocid.ThemePacks.Resources {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Amaya&quot;,
         ///        &quot;Description&quot;: &quot;Purple harmony&quot;,
-        ///        &quot;Localizable&quot;: true
+        ///        &quot;Localizable&quot;: true,
+        ///        &quot;Category&quot;: &quot;Mesmerizing&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;#b491c5&quot;,
         ///    &quot;LicenseColor&quot;: &quot;#808080&quot;,
@@ -76,8 +77,7 @@ namespace Nitrocid.ThemePacks.Resources {
         ///    &quot;BackgroundColor&quot;: &quot;#000000&quot;,
         ///    &quot;NeutralTextColor&quot;: &quot;#808080&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;#b491c5&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;#33218a&quot;,
-        ///    &quot;StageColor&quot;: &quot;#b491c5 [rest of string was truncated]&quot;;.
+        ///    &quot;ListValueColor&quot;: &quot;# [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Amaya {
             get {
@@ -114,7 +114,8 @@ namespace Nitrocid.ThemePacks.Resources {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Aptivi&quot;,
         ///        &quot;Description&quot;: &quot;Our branding harmony&quot;,
-        ///        &quot;Localizable&quot;: true
+        ///        &quot;Localizable&quot;: true,
+        ///        &quot;Category&quot;: &quot;Mesmerizing&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;#C390D9&quot;,
         ///    &quot;LicenseColor&quot;: &quot;#C390D9&quot;,
@@ -125,8 +126,7 @@ namespace Nitrocid.ThemePacks.Resources {
         ///    &quot;BackgroundColor&quot;: &quot;#020143&quot;,
         ///    &quot;NeutralTextColor&quot;: &quot;#C390D9&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;#C390D9&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;#752EFD&quot;,
-        ///    &quot;StageColor&quot;: &quot; [rest of string was truncated]&quot;;.
+        ///    &quot;ListValueCol [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Aptivi {
             get {
@@ -139,7 +139,8 @@ namespace Nitrocid.ThemePacks.Resources {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Ayu (dark)&quot;,
         ///        &quot;Description&quot;: &quot;Dark version of a popular VIM theme, Ayu&quot;,
-        ///        &quot;Localizable&quot;: true
+        ///        &quot;Localizable&quot;: true,
+        ///        &quot;Category&quot;: &quot;Mesmerizing&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;184;204;82&quot;,
         ///    &quot;LicenseColor&quot;: &quot;92;103;115&quot;,
@@ -149,8 +150,7 @@ namespace Nitrocid.ThemePacks.Resources {
         ///    &quot;UserNameShellColor&quot;: &quot;230;182;115&quot;,
         ///    &quot;BackgroundColor&quot;: &quot;15;20;25&quot;,
         ///    &quot;NeutralTextColor&quot;: &quot;230;225;207&quot;,
-        ///    &quot;ListEntryColor&quot;: &quot;54;163;217&quot;,
-        ///    [rest of string was truncated]&quot;;.
+        ///     [rest of string was truncated]&quot;;.
         /// </summary>
         public static string AyuDark {
             get {
@@ -163,7 +163,8 @@ namespace Nitrocid.ThemePacks.Resources {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Ayu (light)&quot;,
         ///        &quot;Description&quot;: &quot;Light version of a popular VIM theme, Ayu&quot;,
-        ///        &quot;Localizable&quot;: true
+        ///        &quot;Localizable&quot;: true,
+        ///        &quot;Category&quot;: &quot;Mesmerizing&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;134;179;0&quot;,
         ///    &quot;LicenseColor&quot;: &quot;171;176;182&quot;,
@@ -173,7 +174,7 @@ namespace Nitrocid.ThemePacks.Resources {
         ///    &quot;UserNameShellColor&quot;: &quot;230;182;115&quot;,
         ///    &quot;BackgroundColor&quot;: &quot;250;250;250&quot;,
         ///    &quot;NeutralTextColor&quot;: &quot;92;103;115&quot;,
-        ///    &quot;ListEntryColor&quot;: &quot;54;163;217&quot;,        /// [rest of string was truncated]&quot;;.
+        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string AyuLight {
             get {
@@ -186,7 +187,8 @@ namespace Nitrocid.ThemePacks.Resources {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Ayu (mirage)&quot;,
         ///        &quot;Description&quot;: &quot;Mirage version of a popular VIM theme, Ayu&quot;,
-        ///        &quot;Localizable&quot;: true
+        ///        &quot;Localizable&quot;: true,
+        ///        &quot;Category&quot;: &quot;Mesmerizing&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;187;230;126&quot;,
         ///    &quot;LicenseColor&quot;: &quot;92;103;115&quot;,
@@ -196,7 +198,7 @@ namespace Nitrocid.ThemePacks.Resources {
         ///    &quot;UserNameShellColor&quot;: &quot;255;196;76&quot;,
         ///    &quot;BackgroundColor&quot;: &quot;33;39;51&quot;,
         ///    &quot;NeutralTextColor&quot;: &quot;217;215;206&quot;,
-        ///    &quot;ListEntryColor&quot;: &quot;92;207;230&quot;,        /// [rest of string was truncated]&quot;;.
+        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string AyuMirage {
             get {
@@ -262,7 +264,8 @@ namespace Nitrocid.ThemePacks.Resources {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Black Rose&quot;,
         ///        &quot;Description&quot;: &quot;This is the black rose&quot;,
-        ///        &quot;Localizable&quot;: true
+        ///        &quot;Localizable&quot;: true,
+        ///        &quot;Category&quot;: &quot;Mesmerizing&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;#FF89B7&quot;,
         ///    &quot;LicenseColor&quot;: &quot;#9D003D&quot;,
@@ -273,8 +276,7 @@ namespace Nitrocid.ThemePacks.Resources {
         ///    &quot;BackgroundColor&quot;: &quot;#000000&quot;,
         ///    &quot;NeutralTextColor&quot;: &quot;#9D003D&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;#FF89B7&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;#9D003D&quot;,
-        ///    &quot;StageCol [rest of string was truncated]&quot;;.
+        ///    &quot;ListVa [rest of string was truncated]&quot;;.
         /// </summary>
         public static string BlackRose {
             get {
@@ -287,7 +289,8 @@ namespace Nitrocid.ThemePacks.Resources {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Breeze&quot;,
         ///        &quot;Description&quot;: &quot;Color scheme for Breeze, a KDE Plasma 5 theme&quot;,
-        ///        &quot;Localizable&quot;: true
+        ///        &quot;Localizable&quot;: true,
+        ///        &quot;Category&quot;: &quot;Mesmerizing&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;244;79;79&quot;,
         ///    &quot;LicenseColor&quot;: &quot;122;124;125&quot;,
@@ -297,8 +300,7 @@ namespace Nitrocid.ThemePacks.Resources {
         ///    &quot;UserNameShellColor&quot;: &quot;61;174;233&quot;,
         ///    &quot;BackgroundColor&quot;: &quot;35;38;41&quot;,
         ///    &quot;NeutralTextColor&quot;: &quot;207;207;194&quot;,
-        ///    &quot;ListEntryColor&quot;: &quot;41;128;185&quot;,
-        ///     [rest of string was truncated]&quot;;.
+        ///    &quot; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Breeze {
             get {
@@ -311,7 +313,8 @@ namespace Nitrocid.ThemePacks.Resources {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Breeze (dark)&quot;,
         ///        &quot;Description&quot;: &quot;Color scheme for Breeze, a KDE Plasma 5 theme&quot;,
-        ///        &quot;Localizable&quot;: true
+        ///        &quot;Localizable&quot;: true,
+        ///        &quot;Category&quot;: &quot;Mesmerizing&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;244;79;79&quot;,
         ///    &quot;LicenseColor&quot;: &quot;122;124;125&quot;,
@@ -321,8 +324,7 @@ namespace Nitrocid.ThemePacks.Resources {
         ///    &quot;UserNameShellColor&quot;: &quot;61;174;233&quot;,
         ///    &quot;BackgroundColor&quot;: &quot;0&quot;,
         ///    &quot;NeutralTextColor&quot;: &quot;207;207;194&quot;,
-        ///    &quot;ListEntryColor&quot;: &quot;41;128;185&quot;,
-        ///     [rest of string was truncated]&quot;;.
+        ///    &quot; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string BreezeDark {
             get {
@@ -462,7 +464,8 @@ namespace Nitrocid.ThemePacks.Resources {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Electronic Dance Music (EDM)&quot;,
         ///        &quot;Description&quot;: &quot;Use if you are a fan of EDM&quot;,
-        ///        &quot;Localizable&quot;: true
+        ///        &quot;Localizable&quot;: true,
+        ///        &quot;Category&quot;: &quot;Exciting&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;#5C1D6B&quot;,
         ///    &quot;LicenseColor&quot;: &quot;#FDD602&quot;,
@@ -472,8 +475,7 @@ namespace Nitrocid.ThemePacks.Resources {
         ///    &quot;UserNameShellColor&quot;: &quot;#FF3179&quot;,
         ///    &quot;BackgroundColor&quot;: &quot;#000000&quot;,
         ///    &quot;NeutralTextColor&quot;: &quot;#FDD602&quot;,
-        ///    &quot;ListEntryColor&quot;: &quot;#5C1D6B&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;# [rest of string was truncated]&quot;;.
+        ///    &quot;ListEntryColor&quot;: &quot;#5 [rest of string was truncated]&quot;;.
         /// </summary>
         public static string EDM {
             get {
@@ -486,7 +488,8 @@ namespace Nitrocid.ThemePacks.Resources {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Fire&quot;,
         ///        &quot;Description&quot;: &quot;Fire shades&quot;,
-        ///        &quot;Localizable&quot;: true
+        ///        &quot;Localizable&quot;: true,
+        ///        &quot;Category&quot;: &quot;Exciting&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;#FAA307&quot;,
         ///    &quot;LicenseColor&quot;: &quot;#FFBA08&quot;,
@@ -497,9 +500,7 @@ namespace Nitrocid.ThemePacks.Resources {
         ///    &quot;BackgroundColor&quot;: &quot;#03071E&quot;,
         ///    &quot;NeutralTextColor&quot;: &quot;#FFBA08&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;#6A040F&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;#F48C06&quot;,
-        ///    &quot;StageColor&quot;: &quot;#FAA307&quot;,
-        /// [rest of string was truncated]&quot;;.
+        ///    &quot;ListValueColor&quot;: &quot;#F48C06&quot; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Fire {
             get {
@@ -609,7 +610,8 @@ namespace Nitrocid.ThemePacks.Resources {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Grink (Green + Pink)&quot;,
         ///        &quot;Description&quot;: &quot;Green and pink mixed together&quot;,
-        ///        &quot;Localizable&quot;: true
+        ///        &quot;Localizable&quot;: true,
+        ///        &quot;Category&quot;: &quot;Mesmerizing&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;235;75;155&quot;,
         ///    &quot;LicenseColor&quot;: &quot;235;75;155&quot;,
@@ -619,8 +621,7 @@ namespace Nitrocid.ThemePacks.Resources {
         ///    &quot;UserNameShellColor&quot;: &quot;214;64;139&quot;,
         ///    &quot;BackgroundColor&quot;: &quot;0&quot;,
         ///    &quot;NeutralTextColor&quot;: &quot;51;199;46&quot;,
-        ///    &quot;ListEntryColor&quot;: &quot;44;163;104&quot;,
-        ///    &quot;ListValue [rest of string was truncated]&quot;;.
+        ///    &quot;ListEntryC [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Grink {
             get {
@@ -657,7 +658,8 @@ namespace Nitrocid.ThemePacks.Resources {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Hacker&quot;,
         ///        &quot;Description&quot;: &quot;Green text on gray&quot;,
-        ///        &quot;Localizable&quot;: true
+        ///        &quot;Localizable&quot;: true,
+        ///        &quot;Category&quot;: &quot;Standard&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;10&quot;,
         ///    &quot;LicenseColor&quot;: &quot;10&quot;,
@@ -670,8 +672,7 @@ namespace Nitrocid.ThemePacks.Resources {
         ///    &quot;ListEntryColor&quot;: &quot;2&quot;,
         ///    &quot;ListValueColor&quot;: &quot;10&quot;,
         ///    &quot;StageColor&quot;: &quot;2&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;2&quot;,
-        ///    &quot;WarningColor&quot;: &quot;10&quot;, [rest of string was truncated]&quot;;.
+        ///    &quot;ErrorColor&quot; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Hacker {
             get {
@@ -684,7 +685,8 @@ namespace Nitrocid.ThemePacks.Resources {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Lemon&quot;,
         ///        &quot;Description&quot;: &quot;Make your terminal full of lemon acid&quot;,
-        ///        &quot;Localizable&quot;: true
+        ///        &quot;Localizable&quot;: true,
+        ///        &quot;Category&quot;: &quot;Exciting&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;185;204;45&quot;,
         ///    &quot;LicenseColor&quot;: &quot;185;204;45&quot;,
@@ -694,8 +696,7 @@ namespace Nitrocid.ThemePacks.Resources {
         ///    &quot;UserNameShellColor&quot;: &quot;199;197;78&quot;,
         ///    &quot;BackgroundColor&quot;: &quot;0&quot;,
         ///    &quot;NeutralTextColor&quot;: &quot;173;173;35&quot;,
-        ///    &quot;ListEntryColor&quot;: &quot;232;250;97&quot;,
-        ///    &quot;ListValueColor [rest of string was truncated]&quot;;.
+        ///    &quot;ListEntryColor&quot;: &quot; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Lemon {
             get {
@@ -732,7 +733,8 @@ namespace Nitrocid.ThemePacks.Resources {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Linux (colored defaults)&quot;,
         ///        &quot;Description&quot;: &quot;Standard Linux terminal colors&quot;,
-        ///        &quot;Localizable&quot;: true
+        ///        &quot;Localizable&quot;: true,
+        ///        &quot;Category&quot;: &quot;Standard&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;7&quot;,
         ///    &quot;LicenseColor&quot;: &quot;7&quot;,
@@ -744,8 +746,7 @@ namespace Nitrocid.ThemePacks.Resources {
         ///    &quot;NeutralTextColor&quot;: &quot;7&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;15&quot;,
         ///    &quot;ListValueColor&quot;: &quot;7&quot;,
-        ///    &quot;StageColor&quot;: &quot;15&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;7&quot;,        /// [rest of string was truncated]&quot;;.
+        ///    &quot;StageColor [rest of string was truncated]&quot;;.
         /// </summary>
         public static string LinuxColoredDef {
             get {
@@ -758,7 +759,8 @@ namespace Nitrocid.ThemePacks.Resources {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Linux (uncolored)&quot;,
         ///        &quot;Description&quot;: &quot;Gray terminal&quot;,
-        ///        &quot;Localizable&quot;: true
+        ///        &quot;Localizable&quot;: true,
+        ///        &quot;Category&quot;: &quot;Standard&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;7&quot;,
         ///    &quot;LicenseColor&quot;: &quot;7&quot;,
@@ -771,9 +773,7 @@ namespace Nitrocid.ThemePacks.Resources {
         ///    &quot;ListEntryColor&quot;: &quot;7&quot;,
         ///    &quot;ListValueColor&quot;: &quot;7&quot;,
         ///    &quot;StageColor&quot;: &quot;7&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;7&quot;,
-        ///    &quot;WarningColor&quot;: &quot;7&quot;,
-        ///  [rest of string was truncated]&quot;;.
+        ///    &quot;ErrorColor&quot;:  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string LinuxUncolored {
             get {
@@ -810,7 +810,8 @@ namespace Nitrocid.ThemePacks.Resources {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Maya&quot;,
         ///        &quot;Description&quot;: &quot;Shades of orange and brown&quot;,
-        ///        &quot;Localizable&quot;: true
+        ///        &quot;Localizable&quot;: true,
+        ///        &quot;Category&quot;: &quot;Mesmerizing&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;#d1e1da&quot;,
         ///    &quot;LicenseColor&quot;: &quot;#c3d6c2&quot;,
@@ -821,8 +822,7 @@ namespace Nitrocid.ThemePacks.Resources {
         ///    &quot;BackgroundColor&quot;: &quot;0&quot;,
         ///    &quot;NeutralTextColor&quot;: &quot;#c3d6c2&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;#d1e1da&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;#e59f00&quot;,
-        ///    &quot;StageColor&quot;: &quot;#d [rest of string was truncated]&quot;;.
+        ///    &quot;ListValueColor [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Maya {
             get {
@@ -931,7 +931,8 @@ namespace Nitrocid.ThemePacks.Resources {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Neon Breeze&quot;,
         ///        &quot;Description&quot;: &quot;Do you like neon blue and pink?&quot;,
-        ///        &quot;Localizable&quot;: true
+        ///        &quot;Localizable&quot;: true,
+        ///        &quot;Category&quot;: &quot;Exciting&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;13&quot;,
         ///    &quot;LicenseColor&quot;: &quot;14&quot;,
@@ -943,9 +944,7 @@ namespace Nitrocid.ThemePacks.Resources {
         ///    &quot;NeutralTextColor&quot;: &quot;14&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;13&quot;,
         ///    &quot;ListValueColor&quot;: &quot;14&quot;,
-        ///    &quot;StageColor&quot;: &quot;13&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;13&quot;,
-        ///   [rest of string was truncated]&quot;;.
+        ///    &quot;StageColor&quot;: &quot; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string NeonBreeze {
             get {
@@ -1006,7 +1005,8 @@ namespace Nitrocid.ThemePacks.Resources {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Nitric Acid - HNO3&quot;,
         ///        &quot;Description&quot;: &quot;Colorless, fuming, and highly corrosive liquid&quot;,
-        ///        &quot;Localizable&quot;: true
+        ///        &quot;Localizable&quot;: true,
+        ///        &quot;Category&quot;: &quot;Mesmerizing&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;#AC9B03&quot;,
         ///    &quot;LicenseColor&quot;: &quot;#AC9B03&quot;,
@@ -1016,8 +1016,7 @@ namespace Nitrocid.ThemePacks.Resources {
         ///    &quot;UserNameShellColor&quot;: &quot;#AC9B03&quot;,
         ///    &quot;BackgroundColor&quot;: &quot;#0A0A00&quot;,
         ///    &quot;NeutralTextColor&quot;: &quot;#AC9B03&quot;,
-        ///    &quot;ListEntryColor&quot;: &quot;#AC9B03&quot;,
-        ///    &quot;ListValueC [rest of string was truncated]&quot;;.
+        ///    &quot;ListEntr [rest of string was truncated]&quot;;.
         /// </summary>
         public static string NitricAcid {
             get {
@@ -1131,14 +1130,15 @@ namespace Nitrocid.ThemePacks.Resources {
         ///        &quot;StartDay&quot;: 26,
         ///        &quot;EndMonth&quot;: 10,
         ///        &quot;EndDay&quot;: 12,
-        ///        &quot;Localizable&quot;: true
+        ///        &quot;Localizable&quot;: true,
+        ///        &quot;Category&quot;: &quot;Exciting&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;129;69;3&quot;,
         ///    &quot;LicenseColor&quot;: &quot;129;69;3&quot;,
         ///    &quot;ContKernelErrorColor&quot;: &quot;250;139;18&quot;,
         ///    &quot;UncontKernelErrorColor&quot;: &quot;250;139;18&quot;,
         ///    &quot;HostNameShellColor&quot;: &quot;250;139;18&quot;,
-        ///    &quot;UserNameShellColor&quot;: &quot;250;139;18&quot; [rest of string was truncated]&quot;;.
+        ///    &quot; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Oktoberfest {
             get {
@@ -1151,7 +1151,8 @@ namespace Nitrocid.ThemePacks.Resources {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Orange Sea&quot;,
         ///        &quot;Description&quot;: &quot;The sea of orange&quot;,
-        ///        &quot;Localizable&quot;: true
+        ///        &quot;Localizable&quot;: true,
+        ///        &quot;Category&quot;: &quot;Mesmerizing&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;54;152;217&quot;,
         ///    &quot;LicenseColor&quot;: &quot;54;152;217&quot;,
@@ -1161,8 +1162,7 @@ namespace Nitrocid.ThemePacks.Resources {
         ///    &quot;UserNameShellColor&quot;: &quot;56;157;224&quot;,
         ///    &quot;BackgroundColor&quot;: &quot;0&quot;,
         ///    &quot;NeutralTextColor&quot;: &quot;163;95;49&quot;,
-        ///    &quot;ListEntryColor&quot;: &quot;42;118;168&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;189;121;75&quot;, [rest of string was truncated]&quot;;.
+        ///    &quot;ListEntryColor&quot;: &quot;42;118;168&quot;,        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Orange_Sea {
             get {
@@ -1223,7 +1223,8 @@ namespace Nitrocid.ThemePacks.Resources {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Phosphoric (background)&quot;,
         ///        &quot;Description&quot;: &quot;Phosphoric terminal that turns everything to orange&quot;,
-        ///        &quot;Localizable&quot;: true
+        ///        &quot;Localizable&quot;: true,
+        ///        &quot;Category&quot;: &quot;Mesmerizing&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;0&quot;,
         ///    &quot;LicenseColor&quot;: &quot;0&quot;,
@@ -1234,9 +1235,7 @@ namespace Nitrocid.ThemePacks.Resources {
         ///    &quot;BackgroundColor&quot;: &quot;3&quot;,
         ///    &quot;NeutralTextColor&quot;: &quot;0&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;0&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;0&quot;,
-        ///    &quot;StageColor&quot;: &quot;0&quot;,
-        ///    &quot;Er [rest of string was truncated]&quot;;.
+        ///    &quot;ListValueColor&quot;: &quot; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string PhosphoricBG {
             get {
@@ -1249,7 +1248,8 @@ namespace Nitrocid.ThemePacks.Resources {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Phosphoric (foreground)&quot;,
         ///        &quot;Description&quot;: &quot;Phosphoric terminal that turns everything to orange&quot;,
-        ///        &quot;Localizable&quot;: true
+        ///        &quot;Localizable&quot;: true,
+        ///        &quot;Category&quot;: &quot;Mesmerizing&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;3&quot;,
         ///    &quot;LicenseColor&quot;: &quot;3&quot;,
@@ -1260,9 +1260,7 @@ namespace Nitrocid.ThemePacks.Resources {
         ///    &quot;BackgroundColor&quot;: &quot;0&quot;,
         ///    &quot;NeutralTextColor&quot;: &quot;3&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;3&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;3&quot;,
-        ///    &quot;StageColor&quot;: &quot;3&quot;,
-        ///    &quot;Er [rest of string was truncated]&quot;;.
+        ///    &quot;ListValueColor&quot;: &quot; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string PhosphoricFG {
             get {
@@ -1275,7 +1273,8 @@ namespace Nitrocid.ThemePacks.Resources {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Red Breeze&quot;,
         ///        &quot;Description&quot;: &quot;Gives you a breeze of red.&quot;,
-        ///        &quot;Localizable&quot;: true
+        ///        &quot;Localizable&quot;: true,
+        ///        &quot;Category&quot;: &quot;Mesmerizing&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;197;201;54&quot;,
         ///    &quot;LicenseColor&quot;: &quot;197;201;54&quot;,
@@ -1285,8 +1284,7 @@ namespace Nitrocid.ThemePacks.Resources {
         ///    &quot;UserNameShellColor&quot;: &quot;247;93;79&quot;,
         ///    &quot;BackgroundColor&quot;: &quot;0&quot;,
         ///    &quot;NeutralTextColor&quot;: &quot;212;78;66&quot;,
-        ///    &quot;ListEntryColor&quot;: &quot;212;64;51&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;230;97; [rest of string was truncated]&quot;;.
+        ///    &quot;ListEntryColor&quot;: &quot;212;64; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Red_Breeze {
             get {
@@ -1299,7 +1297,8 @@ namespace Nitrocid.ThemePacks.Resources {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Red Console&quot;,
         ///        &quot;Description&quot;: &quot;A bloody red console&quot;,
-        ///        &quot;Localizable&quot;: true
+        ///        &quot;Localizable&quot;: true,
+        ///        &quot;Category&quot;: &quot;Standard&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;9&quot;,
         ///    &quot;LicenseColor&quot;: &quot;9&quot;,
@@ -1312,9 +1311,7 @@ namespace Nitrocid.ThemePacks.Resources {
         ///    &quot;ListEntryColor&quot;: &quot;9&quot;,
         ///    &quot;ListValueColor&quot;: &quot;1&quot;,
         ///    &quot;StageColor&quot;: &quot;9&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;1&quot;,
-        ///    &quot;WarningColor&quot;: &quot;9&quot;,
-        /// [rest of string was truncated]&quot;;.
+        ///    &quot;ErrorColor&quot;: [rest of string was truncated]&quot;;.
         /// </summary>
         public static string RedConsole {
             get {
@@ -1351,7 +1348,8 @@ namespace Nitrocid.ThemePacks.Resources {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Sakura&quot;,
         ///        &quot;Description&quot;: &quot;Sakura trees will give you some Chinese breeze&quot;,
-        ///        &quot;Localizable&quot;: true
+        ///        &quot;Localizable&quot;: true,
+        ///        &quot;Category&quot;: &quot;Chinese&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;#EACBD2&quot;,
         ///    &quot;LicenseColor&quot;: &quot;#DFAEB4&quot;,
@@ -1361,8 +1359,7 @@ namespace Nitrocid.ThemePacks.Resources {
         ///    &quot;UserNameShellColor&quot;: &quot;#DD9AC2&quot;,
         ///    &quot;BackgroundColor&quot;: &quot;#231C29&quot;,
         ///    &quot;NeutralTextColor&quot;: &quot;#DFAEB4&quot;,
-        ///    &quot;ListEntryColor&quot;: &quot;#EACBD2&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;#DFA [rest of string was truncated]&quot;;.
+        ///    &quot;ListEntryColor&quot;: &quot;#EACBD [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Sakura {
             get {
@@ -1494,7 +1491,8 @@ namespace Nitrocid.ThemePacks.Resources {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Techno&quot;,
         ///        &quot;Description&quot;: &quot;A theme for technology lovers&quot;,
-        ///        &quot;Localizable&quot;: true
+        ///        &quot;Localizable&quot;: true,
+        ///        &quot;Category&quot;: &quot;Exciting&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;#7cd4d4&quot;,
         ///    &quot;LicenseColor&quot;: &quot;#648e9c&quot;,
@@ -1505,8 +1503,7 @@ namespace Nitrocid.ThemePacks.Resources {
         ///    &quot;BackgroundColor&quot;: &quot;#3d3756&quot;,
         ///    &quot;NeutralTextColor&quot;: &quot;#648e9c&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;#7cd4d4&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;#82c5c8&quot;,
-        ///    &quot;Stage [rest of string was truncated]&quot;;.
+        ///    &quot;ListVa [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Techno {
             get {
@@ -1519,7 +1516,8 @@ namespace Nitrocid.ThemePacks.Resources {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Trance&quot;,
         ///        &quot;Description&quot;: &quot;Trance music fan? This is the theme for you!&quot;,
-        ///        &quot;Localizable&quot;: true
+        ///        &quot;Localizable&quot;: true,
+        ///        &quot;Category&quot;: &quot;Standard&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;14&quot;,
         ///    &quot;LicenseColor&quot;: &quot;14&quot;,
@@ -1531,8 +1529,7 @@ namespace Nitrocid.ThemePacks.Resources {
         ///    &quot;NeutralTextColor&quot;: &quot;14&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;14&quot;,
         ///    &quot;ListValueColor&quot;: &quot;12&quot;,
-        ///    &quot;StageColor&quot;: &quot;14&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;12 [rest of string was truncated]&quot;;.
+        ///    &quot;StageCol [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Trance {
             get {
@@ -1545,7 +1542,8 @@ namespace Nitrocid.ThemePacks.Resources {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Ubuntu&quot;,
         ///        &quot;Description&quot;: &quot;Color schemes from a popular Linux operating system, Ubuntu&quot;,
-        ///        &quot;Localizable&quot;: true
+        ///        &quot;Localizable&quot;: true,
+        ///        &quot;Category&quot;: &quot;Mesmerizing&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;15&quot;,
         ///    &quot;LicenseColor&quot;: &quot;#77216F&quot;,
@@ -1555,9 +1553,7 @@ namespace Nitrocid.ThemePacks.Resources {
         ///    &quot;UserNameShellColor&quot;: &quot;#E95420&quot;,
         ///    &quot;BackgroundColor&quot;: &quot;0&quot;,
         ///    &quot;NeutralTextColor&quot;: &quot;15&quot;,
-        ///    &quot;ListEntryColor&quot;: &quot;#E95420&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;15&quot;,
-        ///  [rest of string was truncated]&quot;;.
+        ///    &quot;ListEntryColor&quot;: &quot;#E954 [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Ubuntu {
             get {
@@ -1570,7 +1566,8 @@ namespace Nitrocid.ThemePacks.Resources {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;VI - Vice City&quot;,
         ///        &quot;Description&quot;: &quot;Gives you a perfect Vice City vibe&quot;,
-        ///        &quot;Localizable&quot;: true
+        ///        &quot;Localizable&quot;: true,
+        ///        &quot;Category&quot;: &quot;Mesmerizing&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;#00a8ff&quot;,
         ///    &quot;LicenseColor&quot;: &quot;#0266c8&quot;,
@@ -1580,12 +1577,36 @@ namespace Nitrocid.ThemePacks.Resources {
         ///    &quot;UserNameShellColor&quot;: &quot;#f195ac&quot;,
         ///    &quot;BackgroundColor&quot;: &quot;#000000&quot;,
         ///    &quot;NeutralTextColor&quot;: &quot;#0266c8&quot;,
-        ///    &quot;ListEntryColor&quot;: &quot;#00a8ff&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;#b28bc0&quot; [rest of string was truncated]&quot;;.
+        ///    &quot;ListEntryColor&quot;: &quot;#00a8f [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ViceCity {
             get {
                 return ResourceManager.GetString("ViceCity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
+        ///    &quot;Metadata&quot;: {
+        ///        &quot;Name&quot;: &quot;Aptivi&quot;,
+        ///        &quot;Description&quot;: &quot;Our branding harmony&quot;,
+        ///        &quot;Localizable&quot;: true,
+        ///        &quot;Category&quot;: &quot;Mesmerizing&quot;
+        ///    },
+        ///    &quot;InputColor&quot;: &quot;#C390D9&quot;,
+        ///    &quot;LicenseColor&quot;: &quot;#C390D9&quot;,
+        ///    &quot;ContKernelErrorColor&quot;: &quot;#752EFD&quot;,
+        ///    &quot;UncontKernelErrorColor&quot;: &quot;#752EFD&quot;,
+        ///    &quot;HostNameShellColor&quot;: &quot;#752EFD&quot;,
+        ///    &quot;UserNameShellColor&quot;: &quot;#752EFD&quot;,
+        ///    &quot;BackgroundColor&quot;: &quot;#020143&quot;,
+        ///    &quot;NeutralTextColor&quot;: &quot;#C390D9&quot;,
+        ///    &quot;ListEntryColor&quot;: &quot;#C390D9&quot;,
+        ///    &quot;ListValueCol [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string ViceCity2 {
+            get {
+                return ResourceManager.GetString("ViceCity2", resourceCulture);
             }
         }
         
@@ -1743,7 +1764,8 @@ namespace Nitrocid.ThemePacks.Resources {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Yasai&quot;,
         ///        &quot;Description&quot;: &quot;Inspired from the Chinese pattern of different fruits&quot;,
-        ///        &quot;Localizable&quot;: true
+        ///        &quot;Localizable&quot;: true,
+        ///        &quot;Category&quot;: &quot;Chinese&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;#C0B596&quot;,
         ///    &quot;LicenseColor&quot;: &quot;#7B1F68&quot;,
@@ -1753,8 +1775,7 @@ namespace Nitrocid.ThemePacks.Resources {
         ///    &quot;UserNameShellColor&quot;: &quot;#614161&quot;,
         ///    &quot;BackgroundColor&quot;: &quot;#16253D&quot;,
         ///    &quot;NeutralTextColor&quot;: &quot;#7B1F68&quot;,
-        ///    &quot;ListEntryColor&quot;: &quot;#C0B596&quot;,
-        ///    &quot;ListValueColor&quot;: [rest of string was truncated]&quot;;.
+        ///    &quot;ListEntryColor&quot;: &quot; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Yasai {
             get {
