@@ -95,9 +95,8 @@ namespace KS.Network.Base
         public static PingReply PingAddress(string Address, PingOptions options = null)
         {
             // 60 seconds = 1 minute. timeout of Pinger.Send() takes milliseconds.
-            var PingBuffer = Encoding.ASCII.GetBytes("Nitrocid KS");
             int Timeout = PingTimeout;
-            return PingAddress(Address, Timeout, PingBuffer, options);
+            return PingAddress(Address, Timeout, options);
         }
 
         /// <summary>
@@ -109,12 +108,13 @@ namespace KS.Network.Base
         /// <returns>A ping reply status</returns>
         public static PingReply PingAddress(string Address, int Timeout, PingOptions options = null)
         {
-            var PingBuffer = Encoding.ASCII.GetBytes("Nitrocid KS");
-            return PingAddress(Address, Timeout, PingBuffer, options);
+            var Pinger = new Ping();
+            options ??= new PingOptions() { DontFragment = true };
+            return Pinger.Send(Address, Timeout, [], options);
         }
 
         /// <summary>
-        /// Pings an address
+        /// Pings an address under an assumption that Nitrocid KS is executed with administrative privileges for Linux
         /// </summary>
         /// <param name="Address">Target address</param>
         /// <param name="Timeout">Timeout in milliseconds</param>
@@ -128,7 +128,7 @@ namespace KS.Network.Base
         }
 
         /// <summary>
-        /// Pings an address
+        /// Pings an address under an assumption that Nitrocid KS is executed with administrative privileges for Linux
         /// </summary>
         /// <param name="Address">Target address</param>
         /// <param name="Timeout">Timeout in milliseconds</param>
@@ -137,6 +137,7 @@ namespace KS.Network.Base
         /// <returns>A ping reply status</returns>
         public static PingReply PingAddress(string Address, int Timeout, byte[] Buffer, PingOptions options = null)
         {
+            // See https://learn.microsoft.com/en-us/dotnet/core/compatibility/networking/7.0/ping-custom-payload-linux for more info
             var Pinger = new Ping();
             options ??= new PingOptions() { DontFragment = true };
             return Pinger.Send(Address, Timeout, Buffer, options);
