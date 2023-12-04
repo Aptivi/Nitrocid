@@ -18,6 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
+using KS.Misc.Text;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -31,7 +32,6 @@ namespace KS.ConsoleBase.Buffered
     /// </summary>
     public class ScreenPart
     {
-        private readonly StringBuilder bufferBuilder = new();
         private readonly List<Func<string>> dynamicBuffers = [];
 
         /// <summary>
@@ -39,14 +39,14 @@ namespace KS.ConsoleBase.Buffered
         /// </summary>
         /// <param name="text">Text to write to the buffer builder</param>
         public void AddText(string text) =>
-            bufferBuilder.Append(text);
+            AddDynamicText(() => text);
 
         /// <summary>
         /// Adds a text to the buffer with a new line
         /// </summary>
         /// <param name="text">Text to write to the buffer builder</param>
         public void AddTextLine(string text) =>
-            bufferBuilder.AppendLine(text);
+            AddDynamicText(() => $"{text}{CharManager.NewLine}");
 
         /// <summary>
         /// Adds a dynamic text to the buffer
@@ -105,11 +105,8 @@ namespace KS.ConsoleBase.Buffered
         /// <summary>
         /// Clears the buffer
         /// </summary>
-        public void Clear()
-        {
-            bufferBuilder.Clear();
+        public void Clear() =>
             dynamicBuffers.Clear();
-        }
 
         /// <summary>
         /// Gets the resulting buffer
@@ -117,7 +114,7 @@ namespace KS.ConsoleBase.Buffered
         /// <returns>The resulting buffer</returns>
         public string GetBuffer()
         {
-            var finalBuffer = new StringBuilder(bufferBuilder.ToString());
+            var finalBuffer = new StringBuilder();
             foreach (var dynamicBuffer in dynamicBuffers)
                 finalBuffer.Append(dynamicBuffer());
             return finalBuffer.ToString();
