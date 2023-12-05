@@ -28,9 +28,9 @@ using KS.Kernel;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Modifications;
+using KS.Security.Permissions;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Help;
-using KS.Users.Permissions;
 
 namespace KS.Shell.Shells.UESH.Commands
 {

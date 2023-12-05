@@ -19,9 +19,9 @@
 
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Languages;
+using KS.Security.Permissions;
 using KS.Shell.ShellBase.Commands;
 using KS.Users.Groups;
-using KS.Users.Permissions;
 
 namespace KS.Shell.Shells.UESH.Commands
 {

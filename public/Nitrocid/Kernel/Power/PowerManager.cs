@@ -23,7 +23,6 @@ using KS.Languages;
 using KS.Network.RPC;
 using System.Threading;
 using KS.Kernel.Events;
-using KS.Users.Permissions;
 using System.Diagnostics;
 using KS.Kernel.Journaling;
 using KS.ConsoleBase.Writers.ConsoleWriters;
@@ -37,6 +36,7 @@ using System.Reflection;
 using System.IO;
 using KS.Kernel.Starting.Environment;
 using KS.Shell.ShellBase.Commands.ProcessExecution;
+using KS.Security.Permissions;
 
 namespace KS.Kernel.Power
 {

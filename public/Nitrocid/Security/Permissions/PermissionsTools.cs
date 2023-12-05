@@ -21,12 +21,13 @@ using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Kernel.Journaling;
 using KS.Languages;
+using KS.Users;
 using KS.Users.Groups;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace KS.Users.Permissions
+namespace KS.Security.Permissions
 {
     /// <summary>
     /// Permission tools

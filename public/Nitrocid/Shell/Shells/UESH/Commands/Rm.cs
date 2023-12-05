@@ -19,8 +19,8 @@
 
 using KS.Files;
 using KS.Files.Operations;
+using KS.Security.Permissions;
 using KS.Shell.ShellBase.Commands;
-using KS.Users.Permissions;
 
 namespace KS.Shell.Shells.UESH.Commands
 {

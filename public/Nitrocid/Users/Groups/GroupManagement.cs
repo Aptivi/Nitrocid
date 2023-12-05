@@ -23,7 +23,7 @@ using KS.Files.Paths;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
-using KS.Users.Permissions;
+using KS.Security.Permissions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;

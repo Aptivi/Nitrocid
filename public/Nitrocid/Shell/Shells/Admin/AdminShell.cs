@@ -23,9 +23,9 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Debugging;
 using KS.Languages;
+using KS.Security.Permissions;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
-using KS.Users.Permissions;
 
 namespace KS.Shell.Shells.Admin
 {

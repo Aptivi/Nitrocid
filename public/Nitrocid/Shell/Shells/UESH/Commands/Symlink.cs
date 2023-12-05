@@ -24,8 +24,8 @@ using KS.Files.Operations;
 using KS.Files.Operations.Querying;
 using KS.Kernel.Exceptions;
 using KS.Languages;
+using KS.Security.Permissions;
 using KS.Shell.ShellBase.Commands;
-using KS.Users.Permissions;
 using System;
 
 namespace KS.Shell.Shells.UESH.Commands

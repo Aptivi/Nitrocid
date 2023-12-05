@@ -20,7 +20,7 @@
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
-using KS.Users.Permissions;
+using KS.Security.Permissions;
 using System;
 using System.Collections.Generic;
 using System.Reflection;

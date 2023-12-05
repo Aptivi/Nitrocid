@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace KS.Users.Permissions
+namespace KS.Security.Permissions
 {
     /// <summary>
     /// All permission types

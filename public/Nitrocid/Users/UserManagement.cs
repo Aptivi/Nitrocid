@@ -35,7 +35,7 @@ using KS.Misc.Text.Probers.Regexp;
 using KS.Files.Operations;
 using KS.Files.Operations.Querying;
 using KS.Files.Paths;
-using KS.Users.Permissions;
+using KS.Security.Permissions;
 
 namespace KS.Users
 {

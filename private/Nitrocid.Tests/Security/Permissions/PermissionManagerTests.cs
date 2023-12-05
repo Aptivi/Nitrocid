@@ -19,13 +19,13 @@
 
 using KS.Drivers.Encryption;
 using KS.Kernel.Exceptions;
+using KS.Security.Permissions;
 using KS.Users;
-using KS.Users.Permissions;
 using NUnit.Framework;
 using Shouldly;
 using System.Linq;
 
-namespace Nitrocid.Tests.Users.Permissions
+namespace Nitrocid.Tests.Security.Permissions
 {
     [TestFixture]
     public class PermissionManagerTests

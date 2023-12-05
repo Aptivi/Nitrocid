@@ -21,8 +21,8 @@ using KS.Files;
 using KS.Files.Folders;
 using KS.Files.Operations;
 using KS.Files.Operations.Querying;
+using KS.Security.Permissions;
 using KS.Shell.ShellBase.Commands;
-using KS.Users.Permissions;
 using System.IO;
 
 namespace KS.Shell.Shells.UESH.Commands
