@@ -155,6 +155,37 @@ namespace KS.Misc.Interactives
         }
 
         /// <inheritdoc/>
+        public override string GetInfoFromItem(object item)
+        {
+            try
+            {
+                FileSystemEntry file = (FileSystemEntry)item;
+                bool isDirectory = file.Type == FileSystemEntryType.Directory;
+                bool isSelected = SelectedFile == file.FilePath;
+                var size = file.FileSize;
+                var path = file.FilePath;
+                string finalRenderedName = Translate.DoTranslation("File name") + $": {Path.GetFileName(file.FilePath)}";
+                string finalRenderedDir = Translate.DoTranslation("Is a directory") + $": {isDirectory}";
+                string finalRenderedSelected = Translate.DoTranslation("Is selected") + $": {isSelected}";
+                string finalRenderedSize = Translate.DoTranslation("File size") + $": {size.SizeString()}";
+                string finalRenderedPath = Translate.DoTranslation("File path") + $": {path}";
+                return
+                    finalRenderedName + CharManager.NewLine +
+                    finalRenderedDir + CharManager.NewLine +
+                    finalRenderedSelected + CharManager.NewLine +
+                    finalRenderedSize + CharManager.NewLine +
+                    finalRenderedPath
+                ;
+            }
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to get file entry: {0}", ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
+                return "";
+            }
+        }
+
+        /// <inheritdoc/>
         public override string GetEntryFromItem(object item)
         {
             try
