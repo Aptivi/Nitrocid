@@ -50,9 +50,10 @@ namespace Nitrocid.Extras.Calendar.Calendar.Commands
             var ActionArguments = parameters.ArgumentsList.Skip(1).ToArray();
             switch (Action)
             {
-                case "show":
+                case "tui":
                     {
-                        // User chose to show the calendar
+                        // User chose to show the calendar TUI
+                        TextWriterColor.WriteKernelColor("The calendar TUI is not ready yet. It will hopefully be ready as soon as possible.", KernelColorType.Warning);
                         var calendar = CalendarTypes.Gregorian;
                         if (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-calendar"))
                             calendar = Enum.Parse<CalendarTypes>(SwitchManager.GetSwitchValue(parameters.SwitchesList, "-calendar"));

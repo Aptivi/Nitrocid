@@ -75,9 +75,9 @@ namespace Nitrocid.Extras.Calendar
                     [
                         new CommandArgumentInfo(
                         [
-                            new CommandArgumentPart(true, "show", new CommandArgumentPartOptions()
+                            new CommandArgumentPart(true, "tui", new CommandArgumentPartOptions()
                             {
-                                ExactWording = "show"
+                                ExactWording = "tui"
                             }),
                             new CommandArgumentPart(false, "year", new CommandArgumentPartOptions()
                             {
