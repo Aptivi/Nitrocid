@@ -1617,20 +1617,45 @@ namespace Nitrocid.ThemePacks.Resources {
         ///        &quot;Localizable&quot;: true,
         ///        &quot;Category&quot;: &quot;Mesmerizing&quot;
         ///    },
-        ///    &quot;InputColor&quot;: &quot;#5B5A9E&quot;,
-        ///    &quot;LicenseColor&quot;: &quot;#5B5A9E&quot;,
+        ///    &quot;InputColor&quot;: &quot;#FFFFFF&quot;,
+        ///    &quot;LicenseColor&quot;: &quot;#FFFFFF&quot;,
         ///    &quot;ContKernelErrorColor&quot;: &quot;#FFB470&quot;,
         ///    &quot;UncontKernelErrorColor&quot;: &quot;#FFB470&quot;,
         ///    &quot;HostNameShellColor&quot;: &quot;#FFB470&quot;,
         ///    &quot;UserNameShellColor&quot;: &quot;#FFB470&quot;,
         ///    &quot;BackgroundColor&quot;: &quot;#70365C&quot;,
-        ///    &quot;NeutralTextColor&quot;: &quot;#5B5A9E&quot;,
-        ///    &quot;ListEntryColor&quot;: &quot;#5B5A9E&quot;,
+        ///    &quot;NeutralTextColor&quot;: &quot;#FFFFFF&quot;,
+        ///    &quot;ListEntryColor&quot;: &quot;#FFFFFF&quot;,
         ///     [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ViceCity2 {
             get {
                 return ResourceManager.GetString("ViceCity2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
+        ///    &quot;Metadata&quot;: {
+        ///        &quot;Name&quot;: &quot;Vice City 3&quot;,
+        ///        &quot;Description&quot;: &quot;This is your Vice City dawn.&quot;,
+        ///        &quot;Localizable&quot;: true,
+        ///        &quot;Category&quot;: &quot;Mesmerizing&quot;
+        ///    },
+        ///    &quot;InputColor&quot;: &quot;#FFFFFF&quot;,
+        ///    &quot;LicenseColor&quot;: &quot;#FFFFFF&quot;,
+        ///    &quot;ContKernelErrorColor&quot;: &quot;#5B5A9E&quot;,
+        ///    &quot;UncontKernelErrorColor&quot;: &quot;#5B5A9E&quot;,
+        ///    &quot;HostNameShellColor&quot;: &quot;#5B5A9E&quot;,
+        ///    &quot;UserNameShellColor&quot;: &quot;#5B5A9E&quot;,
+        ///    &quot;BackgroundColor&quot;: &quot;#70365C&quot;,
+        ///    &quot;NeutralTextColor&quot;: &quot;#FFFFFF&quot;,
+        ///    &quot;ListEntryColor&quot;: &quot;#FFFFFF&quot;,
+        ///     [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string ViceCity3 {
+            get {
+                return ResourceManager.GetString("ViceCity3", resourceCulture);
             }
         }
         
