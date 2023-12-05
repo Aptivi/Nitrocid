@@ -80,5 +80,9 @@ namespace KS.Security.Permissions
         /// Allows the user to run mod commands that depend on inter-mod communication
         /// </summary>
         InteraddonCommunication = 8192,
+        /// <summary>
+        /// Allows the user to use the sudo command
+        /// </summary>
+        UseSudo = 16384,
     }
 }

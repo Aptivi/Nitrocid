@@ -22,6 +22,7 @@ using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Kernel.Threading;
 using KS.Languages;
+using KS.Security.Permissions;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 using KS.Users;
@@ -42,6 +43,7 @@ namespace KS.Shell.Shells.UESH.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             bool sudoDone = false;
+            PermissionsTools.Demand(PermissionTypes.UseSudo);
 
             // First, check to see if we're already root
             var root = UserManagement.GetUser("root");
