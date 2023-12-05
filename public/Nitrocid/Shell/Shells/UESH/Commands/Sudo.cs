@@ -42,6 +42,16 @@ namespace KS.Shell.Shells.UESH.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             bool sudoDone = false;
+
+            // First, check to see if we're already root
+            var root = UserManagement.GetUser("root");
+            if (UserManagement.CurrentUserInfo == root)
+            {
+                TextWriterColor.Write(Translate.DoTranslation("You are already a superuser!"));
+                return 10000 + (int)KernelExceptionType.ShellOperation;
+            }    
+
+            // Now, prompt for the current username's password
             string currentUsername = UserManagement.CurrentUser.Username;
             bool failed = false;
             try
@@ -50,7 +60,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 {
                     sudoDone = true;
                     DebugWriter.WriteDebug(DebugLevel.I, "Switching to root user...");
-                    UserManagement.CurrentUserInfo = UserManagement.GetUser("root");
+                    UserManagement.CurrentUserInfo = root;
                     UserManagement.LockUser(currentUsername);
                     UserManagement.LockUser("root");
                     var AltThreads = ShellManager.ShellStack[^1].AltCommandThreads;
