@@ -88,7 +88,7 @@ namespace KS.Kernel
                     // Kernel arguments
                     TextWriterColor.WriteKernelColor(Translate.DoTranslation("Available kernel arguments:"), true, KernelColorType.ListTitle);
                     ArgumentHelpPrint.ShowArgsHelp();
-                    ConsoleExtensions.ResetColors();
+                    PowerManager.hardShutdown = true;
                     return;
                 }
 

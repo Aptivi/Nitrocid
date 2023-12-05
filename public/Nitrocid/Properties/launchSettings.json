@@ -46,6 +46,10 @@
     "Nitrocid KS - No pre-boot splash": {
       "commandName": "Project",
       "commandLineArgs": "verbosepreboot noprebootsplash"
+    },
+    "Nitrocid KS - Help system for cmdline args": {
+      "commandName": "Project",
+      "commandLineArgs": "help"
     }
   }
 }
