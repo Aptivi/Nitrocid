@@ -30,7 +30,7 @@ using KS.Kernel.Threading;
 using KS.Languages;
 using KS.Misc.Screensaver;
 using Terminaux.Colors;
-using Textify.Online.Words;
+using Textify.Words;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {

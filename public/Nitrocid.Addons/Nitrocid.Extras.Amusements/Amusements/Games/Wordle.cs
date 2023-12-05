@@ -26,7 +26,7 @@ using System.Threading;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
 using Terminaux.Colors;
-using Textify.Online.Words;
+using Textify.Words;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games
 {

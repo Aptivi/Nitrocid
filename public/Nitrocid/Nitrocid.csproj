@@ -101,8 +101,8 @@
   <!-- KS Non-private Dependencies Information -->
   <ItemGroup>
     <PackageReference Include="Terminaux" Version="1.12.3" />
-    <PackageReference Include="Textify.Offline" Version="1.0.1" />
-    <PackageReference Include="Textify.Online" Version="1.0.1" />
+    <PackageReference Include="Textify.Offline" Version="1.1.0" />
+    <PackageReference Include="Textify.Online" Version="1.1.0" />
   </ItemGroup>
   <!-- KS Non-private Dependencies Information End -->
 

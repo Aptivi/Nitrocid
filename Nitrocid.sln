@@ -144,7 +144,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.Extras.Diagnostics
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.Extras.Crc32", "public\Nitrocid.Addons\Nitrocid.Extras.Crc32\Nitrocid.Extras.Crc32.csproj", "{4CDBC217-C639-4D93-9F9A-FFD5956C0395}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nitrocid.Legacy.HddUncleaner", "public\Nitrocid.Addons\Nitrocid.Legacy.HddUncleaner\Nitrocid.Legacy.HddUncleaner.csproj", "{54334767-32A7-46E5-AC1F-5D263F0BE159}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.Legacy.HddUncleaner", "public\Nitrocid.Addons\Nitrocid.Legacy.HddUncleaner\Nitrocid.Legacy.HddUncleaner.csproj", "{54334767-32A7-46E5-AC1F-5D263F0BE159}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
