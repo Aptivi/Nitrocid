@@ -49,10 +49,11 @@ namespace KS.Shell.Shells.UESH.Commands
                     SeparatorWriterColor.WriteSeparator("-- " + Translate.DoTranslation("Entry name") + $": {entry.Name}", false);
                     foreach (var key in entry.Keys)
                     {
-                        TextWriterColor.Write($"{Translate.DoTranslation("Key name")}: {key.Name}");
-                        TextWriterColor.Write($"{Translate.DoTranslation("Key description")}: {key.Description}");
-                        TextWriterColor.Write($"{Translate.DoTranslation("Key type")}: {key.Type}");
-                        TextWriterColor.Write($"{Translate.DoTranslation("Key variable")}: {key.Variable} [{ConfigTools.GetValueFromEntry(key, config)}]");
+                        var value = ConfigTools.GetValueFromEntry(key, config);
+                        ListEntryWriterColor.WriteListEntry(Translate.DoTranslation("Key name"), key.Name, 1);
+                        ListEntryWriterColor.WriteListEntry(Translate.DoTranslation("Key description"), key.Description, 1);
+                        ListEntryWriterColor.WriteListEntry(Translate.DoTranslation("Key type"), $"{key.Type}", 1);
+                        ListEntryWriterColor.WriteListEntry(Translate.DoTranslation("Key variable"), $"{key.Variable} [{value}]", 1);
                     }
                 }
             }

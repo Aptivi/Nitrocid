@@ -42,15 +42,15 @@ namespace KS.Shell.Shells.UESH.Commands
             foreach (var config in configs)
             {
                 SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Info for") + $" {config.GetType().Name}", true);
-                TextWriterColor.Write($"{Translate.DoTranslation("Entries count")}: {config.SettingsEntries.Length}");
+                ListEntryWriterColor.WriteListEntry(Translate.DoTranslation("Entries count"), $"{config.SettingsEntries.Length}");
                 if (deep)
                 {
                     foreach (var entry in config.SettingsEntries)
                     {
                         SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Entry name") + $": {entry.Name}", true);
-                        TextWriterColor.Write($"{Translate.DoTranslation("Displaying as")}: {entry.DisplayAs}");
-                        TextWriterColor.Write($"{Translate.DoTranslation("Description")}: {entry.Desc}");
-                        TextWriterColor.Write($"{Translate.DoTranslation("Keys count")}: {entry.Keys.Length}");
+                        ListEntryWriterColor.WriteListEntry(Translate.DoTranslation("Displaying as"), entry.DisplayAs, 1);
+                        ListEntryWriterColor.WriteListEntry(Translate.DoTranslation("Description"), entry.Desc, 1);
+                        ListEntryWriterColor.WriteListEntry(Translate.DoTranslation("Keys count"), $"{entry.Keys.Length}", 1);
                     }
                 }
             }

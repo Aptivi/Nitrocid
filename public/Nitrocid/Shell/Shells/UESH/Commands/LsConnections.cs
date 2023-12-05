@@ -47,27 +47,8 @@ namespace KS.Shell.Shells.UESH.Commands
                     TextWriterColor.Write($"- {connection.ConnectionName} -> {connection.ConnectionOriginalUrl}");
                     TextWriterColor.Write($"  {connection.ConnectionUri}");
                     if (!connection.ConnectionIsInstance)
-                        TextWriterColor.Write($"  {Translate.DoTranslation("Alive")}: {connection.ConnectionAlive}");
-                    TextWriterColor.Write($"  {Translate.DoTranslation("Instance")}: {connection.ConnectionInstance}");
-                }
-            }
-            return 0;
-        }
-
-        public override int ExecuteDumb(CommandParameters parameters, ref string variableValue)
-        {
-            var shellTypes = Enum.GetNames<NetworkConnectionType>();
-            foreach (var shellType in shellTypes)
-            {
-                var connections = NetworkConnectionTools.GetNetworkConnections(shellType);
-                TextWriterColor.Write(Translate.DoTranslation("Connections for type") + $" {shellType}");
-                foreach (var connection in connections)
-                {
-                    TextWriterColor.Write($"- {connection.ConnectionName} -> {connection.ConnectionOriginalUrl}");
-                    TextWriterColor.Write($"  {connection.ConnectionUri}");
-                    if (!connection.ConnectionIsInstance)
-                        TextWriterColor.Write($"  {Translate.DoTranslation("Alive")}: {connection.ConnectionAlive}");
-                    TextWriterColor.Write($"  {Translate.DoTranslation("Instance")}: {connection.ConnectionInstance}");
+                        ListEntryWriterColor.WriteListEntry(Translate.DoTranslation("Alive"), $"{connection.ConnectionAlive}", 1);
+                    ListEntryWriterColor.WriteListEntry(Translate.DoTranslation("Instance"), $"{connection.ConnectionInstance}", 1);
                 }
             }
             return 0;
