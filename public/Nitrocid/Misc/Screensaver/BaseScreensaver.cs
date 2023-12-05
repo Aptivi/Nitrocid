@@ -78,10 +78,7 @@ namespace KS.Misc.Screensaver
         /// <summary>
         /// Screensaver resize sync
         /// </summary>
-        public virtual void ScreensaverResizeSync()
-        {
-            KernelColorTools.LoadBack();
-            ConsoleWrapper.CursorVisible = false;
-        }
+        public virtual void ScreensaverResizeSync() =>
+            ScreensaverPreparation();
     }
 }
