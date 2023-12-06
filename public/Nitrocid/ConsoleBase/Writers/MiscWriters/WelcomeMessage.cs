@@ -120,15 +120,24 @@ namespace KS.ConsoleBase.Writers.MiscWriters
         public static void WriteLicense()
         {
             SeparatorWriterColor.WriteSeparatorKernelColor(Translate.DoTranslation("License information"), true, KernelColorType.Stage);
-            TextWriterColor.WriteKernelColor(
-                CharManager.NewLine + "    Nitrocid KS  Copyright (C) 2018-2023  Aptivi" +
-                CharManager.NewLine + "    This program comes with ABSOLUTELY NO WARRANTY, not even " +
-                CharManager.NewLine + "    MERCHANTABILITY or FITNESS for particular purposes." +
-                CharManager.NewLine + "    This is free software, and you are welcome to redistribute it" +
-                CharManager.NewLine + "    under certain conditions; See COPYING file in source code." + CharManager.NewLine, true, KernelColorType.License
-            );
-            TextWriterColor.WriteKernelColor("* " + Translate.DoTranslation("For more information about the terms and conditions of using this software, visit") + " http://www.gnu.org/licenses/\n", true, KernelColorType.License);
+            TextWriterColor.WriteKernelColor(GetLicenseString(), true, KernelColorType.License);
         }
+
+        /// <summary>
+        /// Gets the license string
+        /// </summary>
+        /// <returns></returns>
+        public static string GetLicenseString() =>
+            $"""
+            
+                Nitrocid KS  Copyright (C) 2018-2023  Aptivi
+                This program comes with ABSOLUTELY NO WARRANTY, not even
+                MERCHANTABILITY or FITNESS for particular purposes.
+                This is free software, and you are welcome to redistribute it
+                under certain conditions; See COPYING file in source code.
+
+            * {Translate.DoTranslation("For more information about the terms and conditions of using this software, visit")} http://www.gnu.org/licenses/
+            """;
 
         internal static void ShowDevelopmentDisclaimer()
         {

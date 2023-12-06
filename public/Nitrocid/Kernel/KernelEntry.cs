@@ -38,6 +38,7 @@ using KS.Shell.ShellBase.Shells;
 using KS.Misc.Text.Probers.Motd;
 using KS.Kernel.Time;
 using KS.Users.Login.Handlers;
+using KS.ConsoleBase.Inputs.Styles.Infobox;
 
 namespace KS.Kernel
 {
@@ -106,6 +107,14 @@ namespace KS.Kernel
                 KernelFirstRun.PresentFirstRun();
             }
 
+            // Show the license infobox
+            string rendered = Translate.DoTranslation("License information");
+            string dashes = new('=', rendered.Length);
+            InfoBoxColor.WriteInfoBoxKernelColor(
+                Translate.DoTranslation("License information") + CharManager.NewLine +
+                dashes + CharManager.NewLine +
+                WelcomeMessage.GetLicenseString(), KernelColorType.License);
+
             // Start the main loop
             DebugWriter.WriteDebug(DebugLevel.I, "Main Loop start.");
             MainLoop();
@@ -141,9 +150,6 @@ namespace KS.Kernel
                 if (PowerManager.RebootRequested || PowerManager.KernelShutdown)
                     return;
 
-                // Show license information
-                WelcomeMessage.WriteLicense();
-
                 // Show current time
                 if (TimeDateTools.ShowCurrentTimeBeforeLogin)
                 {
@@ -154,6 +160,9 @@ namespace KS.Kernel
                 // Show the tip
                 if (WelcomeMessage.ShowTip)
                     WelcomeMessage.ShowRandomTip();
+
+                // Show a tip telling users to see license information
+                TextWriterColor.WriteKernelColor("* " + Translate.DoTranslation("Run 'license' to see the license information.") + CharManager.NewLine, KernelColorType.Tip);
 
                 // Show MOTD
                 BaseLoginHandler.ShowMOTDOnceFlag = true;
