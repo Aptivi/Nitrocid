@@ -20,6 +20,7 @@
 using KS.Drivers;
 using KS.Kernel.Debugging;
 using KS.Kernel.Extensions;
+using KS.Misc.Splash;
 using System;
 using System.Collections.ObjectModel;
 using System.Reflection;
@@ -44,8 +45,12 @@ namespace Nitrocid.Legacy.InxiNet
         void IAddon.FinalizeAddon()
         { }
 
-        void IAddon.StartAddon() =>
+        void IAddon.StartAddon()
+        {
+            // TODO: Inxi.NET parser will be removed starting from the beginning of the RC cycle.
+            SplashReport.ReportProgressWarning("Inxi.NET parser will be removed starting from the beginning of the RC cycle.");
             DriverHandler.RegisterBaseDriver(DriverTypes.HardwareProber, singleton);
+        }
 
         void IAddon.StopAddon()
         {
