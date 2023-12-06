@@ -324,12 +324,13 @@ namespace KS.Misc.Notifications
                                     printBuffer.Append(TextWriterWhereColor.RenderWhere(ProgressTitle, notifLeftAgnostic, notifTitleTop, NotifyTitleColor, background));
                                     printBuffer.Append(TextWriterWhereColor.RenderWhere(Desc, notifLeftAgnostic, notifDescTop, NotifyDescColor, background));
 
-                                    // For indeterminate progress, flash the box inside the progress bar
-                                    ProgressBarColor.WriteProgress(NewNotification.ProgressIndeterminate ? 100 * indeterminateStep : NewNotification.Progress, notifLeftAgnostic, notifTipTop, notifLeftAgnostic, 6, NotifyProgressColor, NotifyBorderColor, KernelColorTools.GetColor(KernelColorType.Background), DrawBorderNotification);
+                                    // For indeterminate progresses, flash the box inside the progress bar
+                                    bool indeterminate = NewNotification.ProgressIndeterminate;
+                                    ProgressBarColor.WriteProgress(indeterminate ? 100 * indeterminateStep : NewNotification.Progress, notifLeftAgnostic, notifTipTop, notifLeftAgnostic, 6, NotifyProgressColor, NotifyBorderColor, KernelColorTools.GetColor(KernelColorType.Background), DrawBorderNotification);
                                     indeterminateStep++;
                                     if (indeterminateStep > 1)
                                         indeterminateStep = 0;
-                                    Thread.Sleep(1);
+                                    Thread.Sleep(indeterminate ? 250 : 1);
                                     if (NewNotification.ProgressState == NotificationProgressState.Failure)
                                         printBuffer.Append(TextWriterWhereColor.RenderWhere(ProgressTitle, notifLeftAgnostic, notifTitleTop, NotifyProgressFailureColor, background));
                                     else if (NewNotification.ProgressState == NotificationProgressState.Success)
