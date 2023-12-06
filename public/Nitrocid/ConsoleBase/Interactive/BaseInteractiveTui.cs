@@ -53,7 +53,7 @@ namespace KS.ConsoleBase.Interactive
         public static int CurrentPane { get; set; } = 1;
 
         /// <inheritdoc/>
-        public virtual List<InteractiveTuiBinding> Bindings { get; set; }
+        public virtual List<InteractiveTuiBinding> Bindings { get; set; } = [];
         /// <inheritdoc/>
         public virtual bool SecondPaneInteractable => false;
         /// <inheritdoc/>
