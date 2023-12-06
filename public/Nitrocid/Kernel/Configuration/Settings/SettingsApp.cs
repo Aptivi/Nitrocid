@@ -72,13 +72,13 @@ namespace KS.Kernel.Configuration.Settings
                 var sections = SettingsAppTools.GetSectionChoices(SettingsEntries);
                 var altSections = new InputChoiceInfo[]
                 {
-                    new($"{MaxSections + 1}", Translate.DoTranslation("Find an option")),
-                    new($"{MaxSections + 2}", Translate.DoTranslation("Save settings")),
-                    new($"{MaxSections + 3}", Translate.DoTranslation("Save settings as")),
-                    new($"{MaxSections + 4}", Translate.DoTranslation("Load settings from")),
-                    new($"{MaxSections + 5}", Translate.DoTranslation("Reload settings")),
-                    new($"{MaxSections + 6}", Translate.DoTranslation("Check for system updates")),
-                    new($"{MaxSections + 7}", Translate.DoTranslation("System information")),
+                    new($"{MaxSections + 1}", Translate.DoTranslation("Find an option"), Translate.DoTranslation("Allows you to easily search for a settings entry using either its title or its value.")),
+                    new($"{MaxSections + 2}", Translate.DoTranslation("Save settings"), Translate.DoTranslation("Saves your kernel configuration changes to the config file found in the application data folder.")),
+                    new($"{MaxSections + 3}", Translate.DoTranslation("Save settings as"), Translate.DoTranslation("Saves your kernel configuration changes to the config file found in the specified folder.")),
+                    new($"{MaxSections + 4}", Translate.DoTranslation("Load settings from"), Translate.DoTranslation("Loads the kernel configuration from the specified config file.")),
+                    new($"{MaxSections + 5}", Translate.DoTranslation("Reload settings"), Translate.DoTranslation("Reloads the kernel configuration for any external changes")),
+                    new($"{MaxSections + 6}", Translate.DoTranslation("Check for system updates"), Translate.DoTranslation("Checks for system updates (requires an active Internet connection).")),
+                    new($"{MaxSections + 7}", Translate.DoTranslation("System information"), Translate.DoTranslation("Shows you basic system information (more info available in the 'sysinfo' command).")),
                     new($"{MaxSections + 8}", Translate.DoTranslation("Exit")),
                 };
 
