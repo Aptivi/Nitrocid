@@ -72,12 +72,14 @@ namespace KS.Kernel.Configuration.Settings
                 var sections = SettingsAppTools.GetSectionChoices(SettingsEntries);
                 var altSections = new InputChoiceInfo[]
                 {
-                    new($"{MaxSections + 1}", Translate.DoTranslation("Find a Setting")),
-                    new($"{MaxSections + 2}", Translate.DoTranslation("Save Settings")),
-                    new($"{MaxSections + 3}", Translate.DoTranslation("Save Settings As")),
-                    new($"{MaxSections + 4}", Translate.DoTranslation("Load Settings From")),
-                    new($"{MaxSections + 5}", Translate.DoTranslation("Reload Settings")),
-                    new($"{MaxSections + 6}", Translate.DoTranslation("Exit")),
+                    new($"{MaxSections + 1}", Translate.DoTranslation("Find an option")),
+                    new($"{MaxSections + 2}", Translate.DoTranslation("Save settings")),
+                    new($"{MaxSections + 3}", Translate.DoTranslation("Save settings as")),
+                    new($"{MaxSections + 4}", Translate.DoTranslation("Load settings from")),
+                    new($"{MaxSections + 5}", Translate.DoTranslation("Reload settings")),
+                    new($"{MaxSections + 6}", Translate.DoTranslation("Check for system updates")),
+                    new($"{MaxSections + 7}", Translate.DoTranslation("System information")),
+                    new($"{MaxSections + 8}", Translate.DoTranslation("Exit")),
                 };
 
                 // Prompt for selection and check the answer
@@ -94,30 +96,40 @@ namespace KS.Kernel.Configuration.Settings
                 }
                 else if (Answer == MaxSections + 1)
                 {
-                    // The selected answer is "Find a Setting"
+                    // The selected answer is "Find an option"
                     VariableFinder(settingsType);
                 }
                 else if (Answer == MaxSections + 2)
                 {
-                    // The selected answer is "Save Settings"
+                    // The selected answer is "Save settings"
                     SettingsAppTools.SaveSettings();
                 }
                 else if (Answer == MaxSections + 3)
                 {
-                    // The selected answer is "Save Settings As"
+                    // The selected answer is "Save settings as"
                     SettingsAppTools.SaveSettingsAs();
                 }
                 else if (Answer == MaxSections + 4)
                 {
-                    // The selected answer is "Load Settings From"
+                    // The selected answer is "Load settings from"
                     SettingsAppTools.LoadSettingsFrom(settingsType);
                 }
                 else if (Answer == MaxSections + 5)
                 {
-                    // The selected answer is "Reload Settings"
+                    // The selected answer is "Reload settings"
                     SettingsAppTools.ReloadConfig();
                 }
-                else if (Answer == MaxSections + 6 || Answer == -1)
+                else if (Answer == MaxSections + 6)
+                {
+                    // The selected answer is "Check for system updates"
+                    SettingsAppTools.CheckForSystemUpdates();
+                }
+                else if (Answer == MaxSections + 7)
+                {
+                    // The selected answer is "System information"
+                    SettingsAppTools.SystemInformation();
+                }
+                else if (Answer == MaxSections + 8 || Answer == -1)
                 {
                     // The selected answer is "Exit"
                     DebugWriter.WriteDebug(DebugLevel.W, "Exiting...");

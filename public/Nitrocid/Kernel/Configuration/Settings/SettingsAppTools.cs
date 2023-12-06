@@ -31,6 +31,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
+#if SPECIFIERREL
+#if !PACKAGEMANAGERBUILD
+using KS.Kernel.Updates;
+#endif
+#endif
+
 namespace KS.Kernel.Configuration.Settings
 {
     internal static class SettingsAppTools
@@ -136,6 +142,44 @@ namespace KS.Kernel.Configuration.Settings
             InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Reloading settings..."), false);
             ConfigTools.ReloadConfig();
             InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Configuration reloaded. You might need to reboot the kernel for some changes to take effect."));
+        }
+
+        internal static void CheckForSystemUpdates()
+        {
+#if SPECIFIERREL && !PACKAGEMANAGERBUILD
+            // Check for updates now
+            InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Checking for system updates..."), false);
+            var AvailableUpdate = UpdateManager.FetchKernelUpdates();
+            if (AvailableUpdate is not null)
+            {
+                if (!AvailableUpdate.Updated)
+                {
+                    InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Found new version: ") + $"{AvailableUpdate.UpdateVersion}");
+                }
+                else
+                {
+                    InfoBoxColor.WriteInfoBox(Translate.DoTranslation("You're up to date!"));
+                }
+            }
+            else if (AvailableUpdate is null)
+            {
+                InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Failed to check for updates."));
+            }
+#elif PACKAGEMANAGERBUILD
+            InfoBoxColor.WriteInfoBox(Translate.DoTranslation("You've installed Nitrocid KS using your package manager. Please use it to upgrade your kernel instead."));
+#else
+            InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Checking for updates is disabled on development versions."));
+#endif
+        }
+
+        internal static void SystemInformation()
+        {
+            InfoBoxColor.WriteInfoBox(
+                $"{Translate.DoTranslation("Kernel version")}: {KernelMain.VersionFullStr}\n" +
+                $"{Translate.DoTranslation("Kernel API version")}: {KernelMain.ApiVersion}\n" +
+                $"{Translate.DoTranslation("Host ID")}: {KernelPlatform.GetCurrentRid()}\n" +
+                $"{Translate.DoTranslation("Host Generic ID")}: {KernelPlatform.GetCurrentGenericRid()}"
+            );
         }
 
         internal static bool ValidatePlatformCompatibility(SettingsKey settings)
