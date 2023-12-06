@@ -41,6 +41,7 @@ using System.IO;
 using KS.Files.Operations.Querying;
 using Newtonsoft.Json;
 using KS.Files.Operations;
+using System.Text;
 
 namespace KS.Misc.Notifications
 {
@@ -231,6 +232,14 @@ namespace KS.Misc.Notifications
                             int notifWipeTop = notifTopAgnostic + 4;
                             int notifWidth = ConsoleWrapper.WindowWidth - 4 - notifLeftAgnostic;
 
+                            // Make a string builder for our buffer
+                            var printBuffer = new StringBuilder();
+                            var textColor = KernelColorTools.GetColor(KernelColorType.NeutralText);
+                            var background = KernelColorTools.GetColor(KernelColorType.Background);
+
+                            // Return to the original position
+                            (int x, int y) = (ConsoleWrapper.CursorLeft, ConsoleWrapper.CursorTop);
+
                             // Optionally, draw a border
                             if (DrawBorderNotification && !useSimplified)
                             {
@@ -258,7 +267,16 @@ namespace KS.Misc.Notifications
                                 }
 
                                 // Just draw the border!
-                                BorderColor.WriteBorder(notifLeftAgnostic - 1, notifTopAgnostic, notifWidth, 3, CurrentNotifyUpperLeftCornerChar, CurrentNotifyLowerLeftCornerChar, CurrentNotifyUpperRightCornerChar, CurrentNotifyLowerRightCornerChar, CurrentNotifyUpperFrameChar, CurrentNotifyLowerFrameChar, CurrentNotifyLeftFrameChar, CurrentNotifyRightFrameChar, NotifyBorderColor);
+                                printBuffer.Append(
+                                    BorderColor.RenderBorder(
+                                        notifLeftAgnostic - 1, notifTopAgnostic, notifWidth, 3,
+                                        CurrentNotifyUpperLeftCornerChar, CurrentNotifyLowerLeftCornerChar,
+                                        CurrentNotifyUpperRightCornerChar, CurrentNotifyLowerRightCornerChar,
+                                        CurrentNotifyUpperFrameChar, CurrentNotifyLowerFrameChar,
+                                        CurrentNotifyLeftFrameChar, CurrentNotifyRightFrameChar,
+                                        NotifyBorderColor, background
+                                    )
+                                );
                             }
 
                             // Write notification to console
@@ -266,15 +284,20 @@ namespace KS.Misc.Notifications
                             {
                                 // Simplified way
                                 DebugWriter.WriteDebug(DebugLevel.I, "Where to store: ({0}, {1})", notifLeft, notifTop);
-                                TextWriterWhereColor.WriteWhereColor(Title, notifLeft, notifTop, true, NotifyBorderColor);
+                                printBuffer.Append(TextWriterWhereColor.RenderWhere(Title, notifLeft, notifTop, NotifyBorderColor, background));
                             }
                             else
                             {
                                 // Normal way
                                 DebugWriter.WriteDebug(DebugLevel.I, "Where to store: ({0}, {1}), Title top: {2}, Desc top: {3}, Wipe top: {4}, Tip top: {5}", notifLeft, notifTop, notifTitleTop, notifDescTop, notifWipeTop, notifTipTop);
-                                TextWriterWhereColor.WriteWhereColor(Title + new string(' ', notifWidth - Title.Length), notifLeft, notifTitleTop, true, NotifyTitleColor);
-                                TextWriterWhereColor.WriteWhereColor(Desc + new string(' ', notifWidth - Desc.Length), notifLeft, notifDescTop, true, NotifyDescColor);
+                                printBuffer.Append(TextWriterWhereColor.RenderWhere(Title + new string(' ', notifWidth - Title.Length), notifLeft, notifTitleTop, NotifyTitleColor, background));
+                                printBuffer.Append(TextWriterWhereColor.RenderWhere(Desc + new string(' ', notifWidth - Desc.Length), notifLeft, notifDescTop, NotifyDescColor, background));
                             }
+
+                            // Go to the original position and print
+                            TextWriterColor.WritePlain(printBuffer.ToString(), false);
+                            printBuffer.Clear();
+                            ConsoleWrapper.SetCursorPosition(x, y);
 
                             // Beep according to priority
                             int BeepTimes = (int)NewNotification.Priority;
@@ -298,8 +321,8 @@ namespace KS.Misc.Notifications
                                     DebugWriter.WriteDebug(DebugLevel.I, "Progress: {0}", NewNotification.Progress);
 
                                     // Write the title, the description, and the progress
-                                    TextWriterWhereColor.WriteWhereColor(ProgressTitle, notifLeftAgnostic, notifTitleTop, true, NotifyTitleColor);
-                                    TextWriterWhereColor.WriteWhereColor(Desc, notifLeftAgnostic, notifDescTop, true, NotifyDescColor);
+                                    printBuffer.Append(TextWriterWhereColor.RenderWhere(ProgressTitle, notifLeftAgnostic, notifTitleTop, NotifyTitleColor, background));
+                                    printBuffer.Append(TextWriterWhereColor.RenderWhere(Desc, notifLeftAgnostic, notifDescTop, NotifyDescColor, background));
 
                                     // For indeterminate progress, flash the box inside the progress bar
                                     ProgressBarColor.WriteProgress(NewNotification.ProgressIndeterminate ? 100 * indeterminateStep : NewNotification.Progress, notifLeftAgnostic, notifTipTop, notifLeftAgnostic, 6, NotifyProgressColor, NotifyBorderColor, KernelColorTools.GetColor(KernelColorType.Background), DrawBorderNotification);
@@ -308,30 +331,52 @@ namespace KS.Misc.Notifications
                                         indeterminateStep = 0;
                                     Thread.Sleep(1);
                                     if (NewNotification.ProgressState == NotificationProgressState.Failure)
-                                        TextWriterWhereColor.WriteWhereColor(ProgressTitle, notifLeftAgnostic, notifTitleTop, true, NotifyProgressFailureColor);
+                                        printBuffer.Append(TextWriterWhereColor.RenderWhere(ProgressTitle, notifLeftAgnostic, notifTitleTop, NotifyProgressFailureColor, background));
                                     else if (NewNotification.ProgressState == NotificationProgressState.Success)
-                                        TextWriterWhereColor.WriteWhereColor((ProgressTitle + Translate.DoTranslation("Success")).Truncate(36), notifLeftAgnostic, notifTitleTop, true, NotifyProgressSuccessColor);
+                                        printBuffer.Append(TextWriterWhereColor.RenderWhere((ProgressTitle + Translate.DoTranslation("Success")).Truncate(36), notifLeftAgnostic, notifTitleTop, NotifyProgressSuccessColor, background));
+                                    
+                                    // Print the buffer
+                                    TextWriterColor.WritePlain(printBuffer.ToString(), false);
+                                    printBuffer.Clear();
+                                    ConsoleWrapper.SetCursorPosition(x, y);
                                 }
                             }
 
                             // Clear the area
                             SpinWait.SpinUntil(() => sent, 5000);
-                            int width = ConsoleWrapper.WindowWidth - (DrawBorderNotification ? 43 : 42);
+                            int left = ConsoleWrapper.WindowWidth - (DrawBorderNotification ? 43 : 42);
+                            int width = DrawBorderNotification ? 43 : 42;
                             if (useSimplified)
                                 TextWriterWhereColor.WriteWhere(" ", notifLeft, notifTop, true);
                             else
                             {
-                                string clear = ConsoleExtensions.GetClearLineToRightSequence();
+                                // Clear the area
+                                string spaces = new(' ', width);
+                                printBuffer.Append(
+                                    TextWriterWhereColor.RenderWhere(spaces, left, notifTitleTop, textColor, background) +
+                                    TextWriterWhereColor.RenderWhere(spaces, left, notifDescTop, textColor, background) +
+                                    TextWriterWhereColor.RenderWhere(spaces, left, notifTipTop, textColor, background)
+                                );
+
+                                // Also, clear the border area
                                 if (DrawBorderNotification)
                                 {
-                                    TextWriterWhereColor.WriteWhereKernelColor(clear, width, notifTopAgnostic, true, KernelColorType.NeutralText);
-                                    TextWriterWhereColor.WriteWhereKernelColor(clear, width, notifWipeTop, true, KernelColorType.NeutralText);
+                                    printBuffer.Append(
+                                        TextWriterWhereColor.RenderWhere(spaces, left, notifTopAgnostic, textColor, background) +
+                                        TextWriterWhereColor.RenderWhere(spaces, left, notifWipeTop, textColor, background)
+                                    );
                                 }
-                                TextWriterWhereColor.WriteWhereKernelColor(clear, width, notifTitleTop, true, KernelColorType.NeutralText);
-                                TextWriterWhereColor.WriteWhereKernelColor(clear, width, notifDescTop, true, KernelColorType.NeutralText);
-                                TextWriterWhereColor.WriteWhereKernelColor(clear, width, notifTipTop, true, KernelColorType.NeutralText);
+
+                                // Also, clear the progress area
                                 if (NewNotification.Type == NotificationType.Progress)
-                                    TextWriterWhereColor.WriteWhereKernelColor(clear, width, notifWipeTop + 1, true, KernelColorType.NeutralText);
+                                    printBuffer.Append(
+                                        TextWriterWhereColor.RenderWhere(spaces, left, notifWipeTop + 1, textColor, background)
+                                    );
+
+                                // Render it
+                                TextWriterColor.WritePlain(printBuffer.ToString(), false);
+                                printBuffer.Clear();
+                                ConsoleWrapper.SetCursorPosition(x, y);
                             }
                         }
                     }
