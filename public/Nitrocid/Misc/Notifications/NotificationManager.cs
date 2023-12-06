@@ -309,38 +309,53 @@ namespace KS.Misc.Notifications
                             // Show progress
                             if (NewNotification.Type == NotificationType.Progress)
                             {
+                                // Some variables
+                                bool indeterminate = NewNotification.ProgressIndeterminate;
                                 int indeterminateStep = 0;
-                                while (NewNotification.Progress < 100 && NewNotification.ProgressState == NotificationProgressState.Progressing)
+                                string ProgressTitle = Title;
+                                string renderedProgressTitle = ProgressTitle.Truncate(36);
+                                string renderedProgressTitleSuccess = $"{ProgressTitle} ({Translate.DoTranslation("Success")})".Truncate(36);
+                                string renderedProgressTitleFailure = $"{ProgressTitle} ({Translate.DoTranslation("Failure")})".Truncate(36);
+
+                                // Loop until the progress is finished
+                                while (NewNotification.ProgressState == NotificationProgressState.Progressing)
                                 {
-                                    string ProgressTitle =
+                                    // Change the title according to the current progress percentage
+                                    ProgressTitle =
                                         !NewNotification.ProgressIndeterminate ?
                                         Title + $" ({NewNotification.Progress}%) " :
                                         Title + " (...%) ";
-                                    ProgressTitle = ProgressTitle.Truncate(36);
+                                    renderedProgressTitle = ProgressTitle.Truncate(36);
                                     DebugWriter.WriteDebug(DebugLevel.I, "Where to store progress: {0},{1}", notifLeftAgnostic, notifWipeTop);
                                     DebugWriter.WriteDebug(DebugLevel.I, "Progress: {0}", NewNotification.Progress);
 
                                     // Write the title, the description, and the progress
-                                    printBuffer.Append(TextWriterWhereColor.RenderWhere(ProgressTitle, notifLeftAgnostic, notifTitleTop, NotifyTitleColor, background));
+                                    printBuffer.Append(TextWriterWhereColor.RenderWhere(renderedProgressTitle, notifLeftAgnostic, notifTitleTop, NotifyTitleColor, background));
                                     printBuffer.Append(TextWriterWhereColor.RenderWhere(Desc, notifLeftAgnostic, notifDescTop, NotifyDescColor, background));
 
                                     // For indeterminate progresses, flash the box inside the progress bar
-                                    bool indeterminate = NewNotification.ProgressIndeterminate;
                                     ProgressBarColor.WriteProgress(indeterminate ? 100 * indeterminateStep : NewNotification.Progress, notifLeftAgnostic, notifTipTop, notifLeftAgnostic, 6, NotifyProgressColor, NotifyBorderColor, KernelColorTools.GetColor(KernelColorType.Background), DrawBorderNotification);
                                     indeterminateStep++;
                                     if (indeterminateStep > 1)
                                         indeterminateStep = 0;
                                     Thread.Sleep(indeterminate ? 250 : 1);
-                                    if (NewNotification.ProgressState == NotificationProgressState.Failure)
-                                        printBuffer.Append(TextWriterWhereColor.RenderWhere(ProgressTitle, notifLeftAgnostic, notifTitleTop, NotifyProgressFailureColor, background));
-                                    else if (NewNotification.ProgressState == NotificationProgressState.Success)
-                                        printBuffer.Append(TextWriterWhereColor.RenderWhere((ProgressTitle + Translate.DoTranslation("Success")).Truncate(36), notifLeftAgnostic, notifTitleTop, NotifyProgressSuccessColor, background));
                                     
                                     // Print the buffer
                                     TextWriterColor.WritePlain(printBuffer.ToString(), false);
                                     printBuffer.Clear();
                                     ConsoleWrapper.SetCursorPosition(x, y);
                                 }
+
+                                // Now, check to see if the progress failed or succeeded
+                                if (NewNotification.ProgressState == NotificationProgressState.Failure)
+                                    printBuffer.Append(TextWriterWhereColor.RenderWhere(renderedProgressTitleFailure, notifLeftAgnostic, notifTitleTop, NotifyProgressFailureColor, background));
+                                else if (NewNotification.ProgressState == NotificationProgressState.Success)
+                                    printBuffer.Append(TextWriterWhereColor.RenderWhere(renderedProgressTitleSuccess, notifLeftAgnostic, notifTitleTop, NotifyProgressSuccessColor, background));
+
+                                // Print the buffer
+                                TextWriterColor.WritePlain(printBuffer.ToString(), false);
+                                printBuffer.Clear();
+                                ConsoleWrapper.SetCursorPosition(x, y);
                             }
 
                             // Clear the area

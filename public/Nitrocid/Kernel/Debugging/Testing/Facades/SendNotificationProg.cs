@@ -36,6 +36,8 @@ namespace KS.Kernel.Debugging.Testing.Facades
             {
                 Thread.Sleep(100);
                 Notif.Progress += 1;
+                if (Notif.Progress == 100)
+                    Notif.ProgressState = NotificationProgressState.Success;
             }
             SplashReport._KernelBooted = false;
         }
