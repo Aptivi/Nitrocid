@@ -18,6 +18,7 @@
 //
 
 using System.Collections.Generic;
+using System.Text;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Drivers.RNG;
@@ -59,6 +60,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     {
 
         private static bool shining;
+        private static bool seen;
         private static readonly int maxShineSteps = 15;
         private static Color selectedColor = ConsoleColors.LightCyan1;
         private static readonly List<Color> diamondColors =
@@ -74,6 +76,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
+            seen = false;
             selectedColor = diamondColors[RandomDriver.RandomIdx(diamondColors.Count)];
             base.ScreensaverPreparation();
         }
@@ -97,36 +100,48 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             int shinePlaceY2 = halfHeight;
             shining = RandomDriver.RandomChance(5);
 
-            // Now, draw the diamond (the first part)
-            for (int left = minLeft; left <= halfWidth; left++)
+            // Diamond buffer
+            var buffer = new StringBuilder();
+
+            // Draw the diamond once
+            if (!seen)
             {
-                int diff = left - minLeft;
-                for (int top = halfHeight - diff; top <= halfHeight + diff; top++)
+                // Now, draw the diamond (the first part)
+                for (int left = minLeft; left <= halfWidth; left++)
                 {
-                    bool drawingEdge = top == halfHeight - diff || top == halfHeight + diff;
-                    if (ConsoleResizeListener.WasResized(false))
-                        break;
+                    int diff = left - minLeft;
+                    for (int top = halfHeight - diff; top <= halfHeight + diff; top++)
+                    {
+                        bool drawingEdge = top == halfHeight - diff || top == halfHeight + diff;
+                        if (ConsoleResizeListener.WasResized(false))
+                            break;
 
-                    // Determine the color by draw mode
-                    var finalColor = drawingEdge ? selectedColor : colorShaded;
-                    TextWriterWhereColor.WriteWhereColorBack(" ", left, top, Color.Empty, finalColor);
+                        // Determine the color by draw mode
+                        var finalColor = drawingEdge ? selectedColor : colorShaded;
+                        buffer.Append(TextWriterWhereColor.RenderWhere(" ", left, top, Color.Empty, finalColor));
+                    }
                 }
-            }
 
-            // Now, draw the diamond (the second part)
-            for (int left = halfWidth; left <= maxLeft; left++)
-            {
-                int diff = left - maxLeft;
-                for (int top = halfHeight + diff; top <= halfHeight - diff; top++)
+                // Now, draw the diamond (the second part)
+                for (int left = halfWidth; left <= maxLeft; left++)
                 {
-                    bool drawingEdge = top == halfHeight - diff || top == halfHeight + diff;
-                    if (ConsoleResizeListener.WasResized(false))
-                        break;
+                    int diff = left - maxLeft;
+                    for (int top = halfHeight + diff; top <= halfHeight - diff; top++)
+                    {
+                        bool drawingEdge = top == halfHeight - diff || top == halfHeight + diff;
+                        if (ConsoleResizeListener.WasResized(false))
+                            break;
 
-                    // Determine the color by draw mode
-                    var finalColor = drawingEdge ? selectedColor : colorShaded;
-                    TextWriterWhereColor.WriteWhereColorBack(" ", left, top, Color.Empty, finalColor);
+                        // Determine the color by draw mode
+                        var finalColor = drawingEdge ? selectedColor : colorShaded;
+                        buffer.Append(TextWriterWhereColor.RenderWhere(" ", left, top, Color.Empty, finalColor));
+                    }
                 }
+
+                // Now, write the diamond buffer
+                TextWriterColor.WritePlain(buffer.ToString(), false);
+                buffer.Clear();
+                seen = true;
             }
 
             // If shining, fade the small light in
@@ -187,24 +202,30 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     Color colBottom = new((int)currentBottomR, (int)currentBottomG, (int)currentBottomB);
                     Color colCenter = new((int)currentCenterR, (int)currentCenterG, (int)currentCenterB);
                     Color colRest = new((int)currentRestR, (int)currentRestG, (int)currentRestB);
-                    TextWriterWhereColor.WriteWhereColorBack(" ", shinePlaceX, shinePlaceY, Color.Empty, colCenter);
-                    TextWriterWhereColor.WriteWhereColorBack(" ", shinePlaceX, shinePlaceY + 1, Color.Empty, colBottom);
-                    TextWriterWhereColor.WriteWhereColorBack(" ", shinePlaceX, shinePlaceY + 2, Color.Empty, colBottom);
-                    TextWriterWhereColor.WriteWhereColorBack(" ", shinePlaceX, shinePlaceY - 1, Color.Empty, colRest);
-                    TextWriterWhereColor.WriteWhereColorBack(" ", shinePlaceX, shinePlaceY - 2, Color.Empty, colRest);
-                    TextWriterWhereColor.WriteWhereColorBack(" ", shinePlaceX - 1, shinePlaceY, Color.Empty, colRest);
-                    TextWriterWhereColor.WriteWhereColorBack(" ", shinePlaceX - 2, shinePlaceY, Color.Empty, colRest);
-                    TextWriterWhereColor.WriteWhereColorBack(" ", shinePlaceX + 1, shinePlaceY, Color.Empty, colRest);
-                    TextWriterWhereColor.WriteWhereColorBack(" ", shinePlaceX + 2, shinePlaceY, Color.Empty, colRest);
-                    TextWriterWhereColor.WriteWhereColorBack(" ", shinePlaceX2, shinePlaceY2, Color.Empty, colCenter);
-                    TextWriterWhereColor.WriteWhereColorBack(" ", shinePlaceX2, shinePlaceY2 + 1, Color.Empty, colRest);
-                    TextWriterWhereColor.WriteWhereColorBack(" ", shinePlaceX2, shinePlaceY2 + 2, Color.Empty, colRest);
-                    TextWriterWhereColor.WriteWhereColorBack(" ", shinePlaceX2, shinePlaceY2 - 1, Color.Empty, colRest);
-                    TextWriterWhereColor.WriteWhereColorBack(" ", shinePlaceX2, shinePlaceY2 - 2, Color.Empty, colRest);
-                    TextWriterWhereColor.WriteWhereColorBack(" ", shinePlaceX2 - 1, shinePlaceY2, Color.Empty, colRest);
-                    TextWriterWhereColor.WriteWhereColorBack(" ", shinePlaceX2 - 2, shinePlaceY2, Color.Empty, colRest);
-                    TextWriterWhereColor.WriteWhereColorBack(" ", shinePlaceX2 + 1, shinePlaceY2, Color.Empty, colBottom);
-                    TextWriterWhereColor.WriteWhereColorBack(" ", shinePlaceX2 + 2, shinePlaceY2, Color.Empty, colBottom);
+                    buffer.Append(
+                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX, shinePlaceY, Color.Empty, colCenter) +
+                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX, shinePlaceY + 1, Color.Empty, colBottom) +
+                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX, shinePlaceY + 2, Color.Empty, colBottom) +
+                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX, shinePlaceY - 1, Color.Empty, colRest) +
+                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX, shinePlaceY - 2, Color.Empty, colRest) +
+                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX - 1, shinePlaceY, Color.Empty, colRest) +
+                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX - 2, shinePlaceY, Color.Empty, colRest) +
+                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX + 1, shinePlaceY, Color.Empty, colRest) +
+                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX + 2, shinePlaceY, Color.Empty, colRest) +
+                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX2, shinePlaceY2, Color.Empty, colCenter) +
+                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX2, shinePlaceY2 + 1, Color.Empty, colRest) +
+                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX2, shinePlaceY2 + 2, Color.Empty, colRest) +
+                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX2, shinePlaceY2 - 1, Color.Empty, colRest) +
+                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX2, shinePlaceY2 - 2, Color.Empty, colRest) +
+                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX2 - 1, shinePlaceY2, Color.Empty, colRest) +
+                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX2 - 2, shinePlaceY2, Color.Empty, colRest) +
+                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX2 + 1, shinePlaceY2, Color.Empty, colBottom) +
+                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX2 + 2, shinePlaceY2, Color.Empty, colBottom)
+                    );
+
+                    // Now, write the diamond buffer
+                    TextWriterColor.WritePlain(buffer.ToString(), false);
+                    buffer.Clear();
 
                     // Sleep
                     ThreadManager.SleepNoBlock(DiamondSettings.DiamondDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
@@ -229,24 +250,30 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     Color colBottom = new((int)currentBottomR, (int)currentBottomG, (int)currentBottomB);
                     Color colCenter = new((int)currentCenterR, (int)currentCenterG, (int)currentCenterB);
                     Color colRest = new((int)currentRestR, (int)currentRestG, (int)currentRestB);
-                    TextWriterWhereColor.WriteWhereColorBack(" ", shinePlaceX, shinePlaceY, Color.Empty, colCenter);
-                    TextWriterWhereColor.WriteWhereColorBack(" ", shinePlaceX, shinePlaceY + 1, Color.Empty, colBottom);
-                    TextWriterWhereColor.WriteWhereColorBack(" ", shinePlaceX, shinePlaceY + 2, Color.Empty, colBottom);
-                    TextWriterWhereColor.WriteWhereColorBack(" ", shinePlaceX, shinePlaceY - 1, Color.Empty, colRest);
-                    TextWriterWhereColor.WriteWhereColorBack(" ", shinePlaceX, shinePlaceY - 2, Color.Empty, colRest);
-                    TextWriterWhereColor.WriteWhereColorBack(" ", shinePlaceX - 1, shinePlaceY, Color.Empty, colRest);
-                    TextWriterWhereColor.WriteWhereColorBack(" ", shinePlaceX - 2, shinePlaceY, Color.Empty, colRest);
-                    TextWriterWhereColor.WriteWhereColorBack(" ", shinePlaceX + 1, shinePlaceY, Color.Empty, colRest);
-                    TextWriterWhereColor.WriteWhereColorBack(" ", shinePlaceX + 2, shinePlaceY, Color.Empty, colRest);
-                    TextWriterWhereColor.WriteWhereColorBack(" ", shinePlaceX2, shinePlaceY2, Color.Empty, colCenter);
-                    TextWriterWhereColor.WriteWhereColorBack(" ", shinePlaceX2, shinePlaceY2 + 1, Color.Empty, colRest);
-                    TextWriterWhereColor.WriteWhereColorBack(" ", shinePlaceX2, shinePlaceY2 + 2, Color.Empty, colRest);
-                    TextWriterWhereColor.WriteWhereColorBack(" ", shinePlaceX2, shinePlaceY2 - 1, Color.Empty, colRest);
-                    TextWriterWhereColor.WriteWhereColorBack(" ", shinePlaceX2, shinePlaceY2 - 2, Color.Empty, colRest);
-                    TextWriterWhereColor.WriteWhereColorBack(" ", shinePlaceX2 - 1, shinePlaceY2, Color.Empty, colRest);
-                    TextWriterWhereColor.WriteWhereColorBack(" ", shinePlaceX2 - 2, shinePlaceY2, Color.Empty, colRest);
-                    TextWriterWhereColor.WriteWhereColorBack(" ", shinePlaceX2 + 1, shinePlaceY2, Color.Empty, colBottom);
-                    TextWriterWhereColor.WriteWhereColorBack(" ", shinePlaceX2 + 2, shinePlaceY2, Color.Empty, colBottom);
+                    buffer.Append(
+                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX, shinePlaceY, Color.Empty, colCenter) +
+                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX, shinePlaceY + 1, Color.Empty, colBottom) +
+                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX, shinePlaceY + 2, Color.Empty, colBottom) +
+                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX, shinePlaceY - 1, Color.Empty, colRest) +
+                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX, shinePlaceY - 2, Color.Empty, colRest) +
+                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX - 1, shinePlaceY, Color.Empty, colRest) +
+                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX - 2, shinePlaceY, Color.Empty, colRest) +
+                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX + 1, shinePlaceY, Color.Empty, colRest) +
+                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX + 2, shinePlaceY, Color.Empty, colRest) +
+                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX2, shinePlaceY2, Color.Empty, colCenter) +
+                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX2, shinePlaceY2 + 1, Color.Empty, colRest) +
+                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX2, shinePlaceY2 + 2, Color.Empty, colRest) +
+                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX2, shinePlaceY2 - 1, Color.Empty, colRest) +
+                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX2, shinePlaceY2 - 2, Color.Empty, colRest) +
+                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX2 - 1, shinePlaceY2, Color.Empty, colRest) +
+                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX2 - 2, shinePlaceY2, Color.Empty, colRest) +
+                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX2 + 1, shinePlaceY2, Color.Empty, colBottom) +
+                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX2 + 2, shinePlaceY2, Color.Empty, colBottom)
+                    );
+
+                    // Now, write the diamond buffer
+                    TextWriterColor.WritePlain(buffer.ToString(), false);
+                    buffer.Clear();
 
                     // Sleep
                     ThreadManager.SleepNoBlock(DiamondSettings.DiamondDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
