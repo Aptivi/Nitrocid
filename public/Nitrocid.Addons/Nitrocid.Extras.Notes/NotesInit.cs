@@ -84,6 +84,13 @@ namespace Nitrocid.Extras.Notes
                         new CommandArgumentInfo(),
                     ], new ReloadNotes())
             },
+
+            { "notestui",
+                new CommandInfo("notestui", /* Localizable */ "Notes viewer TUI",
+                    [
+                        new CommandArgumentInfo(),
+                    ], new NotesTui())
+            },
         };
 
         string IAddon.AddonName =>
