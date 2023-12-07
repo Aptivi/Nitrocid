@@ -44,7 +44,8 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
             TextWriterColor.WriteKernelColor(finalSection + "\n", true, KernelColorType.Question);
 
             // Write the prompt
-            TextWriterColor.WriteKernelColor("[{0}] > ", false, KernelColorType.Input, KeyDefaultValue);
+            TextWriterColor.WriteKernelColor($"{Translate.DoTranslation("Write any text to use. Remember, follow the description of the option that you've chosen.")}\n", KernelColorType.Tip);
+            TextWriterColor.WriteKernelColor("[{0}] ", false, KernelColorType.Input, KeyDefaultValue);
             string AnswerString = Input.ReadLine();
             AnswerString = (string)TranslateStringValueWithDefault(key, AnswerString, KeyDefaultValue);
             bail = true;

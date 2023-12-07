@@ -42,7 +42,8 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
             TextWriterColor.WriteKernelColor(finalSection + "\n", true, KernelColorType.Question);
 
             // Write the prompt
-            TextWriterColor.WriteKernelColor("[{0}] > ", false, KernelColorType.Input, KeyDefaultValue);
+            TextWriterColor.WriteKernelColor($"{Translate.DoTranslation("Press any letter on your keyboard to set it to that character.")}\n", KernelColorType.Tip);
+            TextWriterColor.WriteKernelColor("[{0}] ", false, KernelColorType.Input, KeyDefaultValue);
             var keypressTerm = Input.DetectKeypress();
             var keypress = keypressTerm.KeyChar;
             keypress =

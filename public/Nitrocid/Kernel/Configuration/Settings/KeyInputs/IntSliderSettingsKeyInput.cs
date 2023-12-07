@@ -20,6 +20,7 @@
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
+using KS.ConsoleBase.Inputs.Styles.Infobox;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Kernel.Configuration.Instances;
@@ -45,11 +46,9 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
             TextWriterColor.WriteKernelColor(finalSection, true, KernelColorType.Question);
             while (PressedKey != ConsoleKey.Enter)
             {
-                // Draw the progress bar
-                ProgressBarColor.WriteProgress(100d * (CurrentValue / (double)key.MaximumValue), 4, ConsoleWrapper.WindowHeight - 4);
-
                 // Show the current value
-                TextWriterWhereColor.WriteWhereKernelColor(Translate.DoTranslation("Current value:") + " {0} / {1} - {2}" + $"{ConsoleExtensions.GetClearLineToRightSequence()}", 5, ConsoleWrapper.WindowHeight - 5, false, KernelColorType.NeutralText, CurrentValue, key.MinimumValue, key.MaximumValue);
+                double slider = 100d * (CurrentValue / (double)key.MaximumValue);
+                InfoBoxProgressColor.WriteInfoBoxProgress(slider, Translate.DoTranslation("Current value:") + " {0} / {1} - {2}", CurrentValue, key.MinimumValue, key.MaximumValue);
 
                 // Parse the user input
                 PressedKey = Input.DetectKeypress().Key;

@@ -40,7 +40,8 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
             TextWriterColor.WriteKernelColor(finalSection + "\n", true, KernelColorType.Question);
 
             // Write the prompt
-            TextWriterColor.WriteKernelColor("[{0}] > ", false, KernelColorType.Input, KeyDefaultValue);
+            TextWriterColor.WriteKernelColor($"{Translate.DoTranslation("Write a natural number in the below prompt.")}\n", KernelColorType.Tip);
+            TextWriterColor.WriteKernelColor("[{0}] ", false, KernelColorType.Input, KeyDefaultValue);
             string AnswerString = Input.ReadLine();
 
             // Neutralize path if required with the assumption that the keytype is not list
