@@ -34,7 +34,7 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
     {
         public object PromptForSet(SettingsKey key, object KeyDefaultValue, out bool bail)
         {
-            var PressedKey = default(ConsoleKey);
+            var PressedKey = default(ConsoleKeyInfo);
             int CurrentValue = Convert.ToInt32(KeyDefaultValue);
             ConsoleWrapper.CursorVisible = false;
             ConsoleWrapper.Clear();
@@ -44,23 +44,61 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
             string keyDesc = Translate.DoTranslation(key.Description);
             string finalSection = SettingsApp.RenderHeader(keyName, keyDesc);
             TextWriterColor.WriteKernelColor(finalSection, true, KernelColorType.Question);
-            while (PressedKey != ConsoleKey.Enter)
+            while (PressedKey.Key != ConsoleKey.Enter)
             {
                 // Show the current value
                 double slider = 100d * (CurrentValue / (double)key.MaximumValue);
                 InfoBoxProgressColor.WriteInfoBoxProgress(slider, Translate.DoTranslation("Current value:") + " {0} / {1} - {2}", CurrentValue, key.MinimumValue, key.MaximumValue);
 
                 // Parse the user input
-                PressedKey = Input.DetectKeypress().Key;
-                switch (PressedKey)
+                PressedKey = Input.DetectKeypress();
+                switch (PressedKey.Key)
                 {
+                    case ConsoleKey.Home:
+                        CurrentValue = key.MinimumValue;
+                        break;
+                    case ConsoleKey.End:
+                        CurrentValue = key.MaximumValue;
+                        break;
+                    case ConsoleKey.PageUp:
+                        if (CurrentValue > key.MinimumValue)
+                        {
+                            CurrentValue -=
+                                PressedKey.Modifiers.HasFlag(ConsoleModifiers.Shift) ? 100000 :
+                                PressedKey.Modifiers.HasFlag(ConsoleModifiers.Control) ? 10000 : 1000;
+                            if (CurrentValue < key.MinimumValue)
+                                CurrentValue = key.MinimumValue;
+                        }
+                        break;
+                    case ConsoleKey.PageDown:
+                        if (CurrentValue < key.MaximumValue)
+                        {
+                            CurrentValue +=
+                                PressedKey.Modifiers.HasFlag(ConsoleModifiers.Shift) ? 100000 :
+                                PressedKey.Modifiers.HasFlag(ConsoleModifiers.Control) ? 10000 : 1000;
+                            if (CurrentValue > key.MaximumValue)
+                                CurrentValue = key.MaximumValue;
+                        }
+                        break;
                     case ConsoleKey.LeftArrow:
                         if (CurrentValue > key.MinimumValue)
-                            CurrentValue -= 1;
+                        {
+                            CurrentValue -=
+                                PressedKey.Modifiers.HasFlag(ConsoleModifiers.Shift) ? 100 :
+                                PressedKey.Modifiers.HasFlag(ConsoleModifiers.Control) ? 10 : 1;
+                            if (CurrentValue < key.MinimumValue)
+                                CurrentValue = key.MinimumValue;
+                        }
                         break;
                     case ConsoleKey.RightArrow:
                         if (CurrentValue < key.MaximumValue)
-                            CurrentValue += 1;
+                        {
+                            CurrentValue +=
+                                PressedKey.Modifiers.HasFlag(ConsoleModifiers.Shift) ? 100 :
+                                PressedKey.Modifiers.HasFlag(ConsoleModifiers.Control) ? 10 : 1;
+                            if (CurrentValue > key.MaximumValue)
+                                CurrentValue = key.MaximumValue;
+                        }
                         break;
                     case ConsoleKey.Enter:
                         ConsoleWrapper.CursorVisible = true;
