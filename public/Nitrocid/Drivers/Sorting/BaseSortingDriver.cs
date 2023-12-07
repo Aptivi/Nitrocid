@@ -22,7 +22,7 @@ using System;
 namespace KS.Drivers.Sorting
 {
     /// <summary>
-    /// Base sorting driver
+    /// Base sorting driver using the bubble sort algorithm
     /// </summary>
     public abstract class BaseSortingDriver : ISortingDriver
     {
@@ -39,7 +39,7 @@ namespace KS.Drivers.Sorting
             false;
 
         /// <inheritdoc/>
-        public byte[] SortNumbersInt8(byte[] unsorted)
+        public virtual byte[] SortNumbersInt8(byte[] unsorted)
         {
             // Get the number of iterations
             int iteration = unsorted.Length;
@@ -69,7 +69,7 @@ namespace KS.Drivers.Sorting
         }
 
         /// <inheritdoc/>
-        public short[] SortNumbersInt16(short[] unsorted)
+        public virtual short[] SortNumbersInt16(short[] unsorted)
         {
             // Get the number of iterations
             int iteration = unsorted.Length;
@@ -99,7 +99,7 @@ namespace KS.Drivers.Sorting
         }
 
         /// <inheritdoc/>
-        public int[] SortNumbersInt32(int[] unsorted)
+        public virtual int[] SortNumbersInt32(int[] unsorted)
         {
             // Get the number of iterations
             int iteration = unsorted.Length;
@@ -129,7 +129,7 @@ namespace KS.Drivers.Sorting
         }
 
         /// <inheritdoc/>
-        public long[] SortNumbersInt64(long[] unsorted)
+        public virtual long[] SortNumbersInt64(long[] unsorted)
         {
             // Get the number of iterations
             int iteration = unsorted.Length;
@@ -159,7 +159,7 @@ namespace KS.Drivers.Sorting
         }
 
         /// <inheritdoc/>
-        public Int128[] SortNumbersInt128(Int128[] unsorted)
+        public virtual Int128[] SortNumbersInt128(Int128[] unsorted)
         {
             // Get the number of iterations
             int iteration = unsorted.Length;
@@ -189,7 +189,7 @@ namespace KS.Drivers.Sorting
         }
 
         /// <inheritdoc/>
-        public float[] SortNumbersFloat(float[] unsorted)
+        public virtual float[] SortNumbersFloat(float[] unsorted)
         {
             // Get the number of iterations
             int iteration = unsorted.Length;
@@ -219,7 +219,7 @@ namespace KS.Drivers.Sorting
         }
 
         /// <inheritdoc/>
-        public double[] SortNumbersDouble(double[] unsorted)
+        public virtual double[] SortNumbersDouble(double[] unsorted)
         {
             // Get the number of iterations
             int iteration = unsorted.Length;

@@ -35,6 +35,7 @@ namespace Nitrocid.Tests.Drivers
             byte[] expected = [1, 4, 8, 64, 255];
             byte[] data = [1, 4, 8, 64, 255];
             ArrayTools.SortNumbers(data).SequenceEqual(expected).ShouldBeTrue();
+            ArrayTools.SortNumbers(data, "Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
         [Test]
@@ -44,6 +45,7 @@ namespace Nitrocid.Tests.Drivers
             short[] expected = [1, 4, 8, 64, 255];
             short[] data = [1, 4, 8, 64, 255];
             ArrayTools.SortNumbers(data).SequenceEqual(expected).ShouldBeTrue();
+            ArrayTools.SortNumbers(data, "Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
         [Test]
@@ -53,6 +55,7 @@ namespace Nitrocid.Tests.Drivers
             int[] expected = [1, 4, 8, 64, 255];
             int[] data = [1, 4, 8, 64, 255];
             ArrayTools.SortNumbers(data).SequenceEqual(expected).ShouldBeTrue();
+            ArrayTools.SortNumbers(data, "Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
         [Test]
@@ -62,6 +65,7 @@ namespace Nitrocid.Tests.Drivers
             long[] expected = [1, 4, 8, 64, 255];
             long[] data = [1, 4, 8, 64, 255];
             ArrayTools.SortNumbers(data).SequenceEqual(expected).ShouldBeTrue();
+            ArrayTools.SortNumbers(data, "Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
         [Test]
@@ -71,6 +75,7 @@ namespace Nitrocid.Tests.Drivers
             long[] expected = [1, 4, 8, 64, 255];
             long[] data = [1, 4, 8, 64, 255];
             ArrayTools.SortNumbers(data).SequenceEqual(expected).ShouldBeTrue();
+            ArrayTools.SortNumbers(data, "Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
         [Test]
@@ -80,6 +85,7 @@ namespace Nitrocid.Tests.Drivers
             float[] expected = [1.2f, 1.3f, 8.4f, 64.5f, 255.6f];
             float[] data = [1.2f, 1.3f, 8.4f, 64.5f, 255.6f];
             ArrayTools.SortNumbers(data).SequenceEqual(expected).ShouldBeTrue();
+            ArrayTools.SortNumbers(data, "Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
         [Test]
@@ -89,6 +95,7 @@ namespace Nitrocid.Tests.Drivers
             double[] expected = [1.2f, 1.3f, 8.4f, 64.5f, 255.6f];
             double[] data = [1.2f, 1.3f, 8.4f, 64.5f, 255.6f];
             ArrayTools.SortNumbers(data).SequenceEqual(expected).ShouldBeTrue();
+            ArrayTools.SortNumbers(data, "Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
         [Test]
@@ -98,6 +105,7 @@ namespace Nitrocid.Tests.Drivers
             byte[] expected = [1, 4, 8, 64, 255];
             byte[] data = [4, 1, 8, 64, 255];
             ArrayTools.SortNumbers(data).SequenceEqual(expected).ShouldBeTrue();
+            ArrayTools.SortNumbers(data, "Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
         [Test]
@@ -107,6 +115,7 @@ namespace Nitrocid.Tests.Drivers
             short[] expected = [1, 4, 8, 64, 255];
             short[] data = [4, 1, 8, 64, 255];
             ArrayTools.SortNumbers(data).SequenceEqual(expected).ShouldBeTrue();
+            ArrayTools.SortNumbers(data, "Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
         [Test]
@@ -116,6 +125,7 @@ namespace Nitrocid.Tests.Drivers
             int[] expected = [1, 4, 8, 64, 255];
             int[] data = [4, 1, 8, 64, 255];
             ArrayTools.SortNumbers(data).SequenceEqual(expected).ShouldBeTrue();
+            ArrayTools.SortNumbers(data, "Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
         [Test]
@@ -125,6 +135,7 @@ namespace Nitrocid.Tests.Drivers
             long[] expected = [1, 4, 8, 64, 255];
             long[] data = [4, 1, 8, 64, 255];
             ArrayTools.SortNumbers(data).SequenceEqual(expected).ShouldBeTrue();
+            ArrayTools.SortNumbers(data, "Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
         [Test]
@@ -134,6 +145,7 @@ namespace Nitrocid.Tests.Drivers
             long[] expected = [1, 4, 8, 64, 255];
             long[] data = [4, 1, 8, 64, 255];
             ArrayTools.SortNumbers(data).SequenceEqual(expected).ShouldBeTrue();
+            ArrayTools.SortNumbers(data, "Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
         [Test]
@@ -143,6 +155,7 @@ namespace Nitrocid.Tests.Drivers
             float[] expected = [1.2f, 1.3f, 8.4f, 64.5f, 255.6f];
             float[] data = [1.3f, 1.2f, 8.4f, 64.5f, 255.6f];
             ArrayTools.SortNumbers(data).SequenceEqual(expected).ShouldBeTrue();
+            ArrayTools.SortNumbers(data, "Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
         [Test]
@@ -152,6 +165,7 @@ namespace Nitrocid.Tests.Drivers
             double[] expected = [1.2f, 1.3f, 8.4f, 64.5f, 255.6f];
             double[] data = [1.3f, 1.2f, 8.4f, 64.5f, 255.6f];
             ArrayTools.SortNumbers(data).SequenceEqual(expected).ShouldBeTrue();
+            ArrayTools.SortNumbers(data, "Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
         [Test]
@@ -161,6 +175,7 @@ namespace Nitrocid.Tests.Drivers
             byte[] expected = [1, 4, 8, 64, 255];
             byte[] data = [8, 4, 64, 1, 255];
             ArrayTools.SortNumbers(data).SequenceEqual(expected).ShouldBeTrue();
+            ArrayTools.SortNumbers(data, "Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
         [Test]
@@ -170,6 +185,7 @@ namespace Nitrocid.Tests.Drivers
             short[] expected = [1, 4, 8, 64, 255];
             short[] data = [8, 4, 64, 1, 255];
             ArrayTools.SortNumbers(data).SequenceEqual(expected).ShouldBeTrue();
+            ArrayTools.SortNumbers(data, "Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
         [Test]
@@ -179,6 +195,7 @@ namespace Nitrocid.Tests.Drivers
             int[] expected = [1, 4, 8, 64, 255];
             int[] data = [8, 4, 64, 1, 255];
             ArrayTools.SortNumbers(data).SequenceEqual(expected).ShouldBeTrue();
+            ArrayTools.SortNumbers(data, "Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
         [Test]
@@ -188,6 +205,7 @@ namespace Nitrocid.Tests.Drivers
             long[] expected = [1, 4, 8, 64, 255];
             long[] data = [8, 4, 64, 1, 255];
             ArrayTools.SortNumbers(data).SequenceEqual(expected).ShouldBeTrue();
+            ArrayTools.SortNumbers(data, "Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
         [Test]
@@ -197,6 +215,7 @@ namespace Nitrocid.Tests.Drivers
             long[] expected = [1, 4, 8, 64, 255];
             long[] data = [8, 4, 64, 1, 255];
             ArrayTools.SortNumbers(data).SequenceEqual(expected).ShouldBeTrue();
+            ArrayTools.SortNumbers(data, "Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
         [Test]
@@ -206,6 +225,7 @@ namespace Nitrocid.Tests.Drivers
             float[] expected = [1.2f, 1.3f, 8.4f, 64.5f, 255.6f];
             float[] data = [8.4f, 1.3f, 64.5f, 1.2f, 255.6f];
             ArrayTools.SortNumbers(data).SequenceEqual(expected).ShouldBeTrue();
+            ArrayTools.SortNumbers(data, "Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
         [Test]
@@ -215,6 +235,7 @@ namespace Nitrocid.Tests.Drivers
             double[] expected = [1.2f, 1.3f, 8.4f, 64.5f, 255.6f];
             double[] data = [8.4f, 1.3f, 64.5f, 1.2f, 255.6f];
             ArrayTools.SortNumbers(data).SequenceEqual(expected).ShouldBeTrue();
+            ArrayTools.SortNumbers(data, "Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
         [Test]
@@ -224,6 +245,7 @@ namespace Nitrocid.Tests.Drivers
             byte[] expected = [1, 4, 8, 64, 255];
             byte[] data = [1, 4, 8, 64, 255];
             data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
+            data.SortNumbers("Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
         [Test]
@@ -233,6 +255,7 @@ namespace Nitrocid.Tests.Drivers
             short[] expected = [1, 4, 8, 64, 255];
             short[] data = [1, 4, 8, 64, 255];
             data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
+            data.SortNumbers("Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
         [Test]
@@ -242,6 +265,7 @@ namespace Nitrocid.Tests.Drivers
             int[] expected = [1, 4, 8, 64, 255];
             int[] data = [1, 4, 8, 64, 255];
             data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
+            data.SortNumbers("Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
         [Test]
@@ -251,6 +275,7 @@ namespace Nitrocid.Tests.Drivers
             long[] expected = [1, 4, 8, 64, 255];
             long[] data = [1, 4, 8, 64, 255];
             data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
+            data.SortNumbers("Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
         [Test]
@@ -260,6 +285,7 @@ namespace Nitrocid.Tests.Drivers
             long[] expected = [1, 4, 8, 64, 255];
             long[] data = [1, 4, 8, 64, 255];
             data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
+            data.SortNumbers("Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
         [Test]
@@ -269,6 +295,7 @@ namespace Nitrocid.Tests.Drivers
             float[] expected = [1.2f, 1.3f, 8.4f, 64.5f, 255.6f];
             float[] data = [1.2f, 1.3f, 8.4f, 64.5f, 255.6f];
             data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
+            data.SortNumbers("Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
         [Test]
@@ -278,6 +305,7 @@ namespace Nitrocid.Tests.Drivers
             double[] expected = [1.2f, 1.3f, 8.4f, 64.5f, 255.6f];
             double[] data = [1.2f, 1.3f, 8.4f, 64.5f, 255.6f];
             data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
+            data.SortNumbers("Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
         [Test]
@@ -287,6 +315,7 @@ namespace Nitrocid.Tests.Drivers
             byte[] expected = [1, 4, 8, 64, 255];
             byte[] data = [4, 1, 8, 64, 255];
             data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
+            data.SortNumbers("Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
         [Test]
@@ -296,6 +325,7 @@ namespace Nitrocid.Tests.Drivers
             short[] expected = [1, 4, 8, 64, 255];
             short[] data = [4, 1, 8, 64, 255];
             data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
+            data.SortNumbers("Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
         [Test]
@@ -305,6 +335,7 @@ namespace Nitrocid.Tests.Drivers
             int[] expected = [1, 4, 8, 64, 255];
             int[] data = [4, 1, 8, 64, 255];
             data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
+            data.SortNumbers("Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
         [Test]
@@ -314,6 +345,7 @@ namespace Nitrocid.Tests.Drivers
             long[] expected = [1, 4, 8, 64, 255];
             long[] data = [4, 1, 8, 64, 255];
             data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
+            data.SortNumbers("Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
         [Test]
@@ -323,6 +355,7 @@ namespace Nitrocid.Tests.Drivers
             long[] expected = [1, 4, 8, 64, 255];
             long[] data = [4, 1, 8, 64, 255];
             data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
+            data.SortNumbers("Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
         [Test]
@@ -332,6 +365,7 @@ namespace Nitrocid.Tests.Drivers
             float[] expected = [1.2f, 1.3f, 8.4f, 64.5f, 255.6f];
             float[] data = [1.3f, 1.2f, 8.4f, 64.5f, 255.6f];
             data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
+            data.SortNumbers("Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
         [Test]
@@ -341,6 +375,7 @@ namespace Nitrocid.Tests.Drivers
             double[] expected = [1.2f, 1.3f, 8.4f, 64.5f, 255.6f];
             double[] data = [1.3f, 1.2f, 8.4f, 64.5f, 255.6f];
             data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
+            data.SortNumbers("Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
         [Test]
@@ -350,6 +385,7 @@ namespace Nitrocid.Tests.Drivers
             byte[] expected = [1, 4, 8, 64, 255];
             byte[] data = [8, 4, 64, 1, 255];
             data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
+            data.SortNumbers("Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
         [Test]
@@ -359,6 +395,7 @@ namespace Nitrocid.Tests.Drivers
             short[] expected = [1, 4, 8, 64, 255];
             short[] data = [8, 4, 64, 1, 255];
             data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
+            data.SortNumbers("Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
         [Test]
@@ -368,6 +405,7 @@ namespace Nitrocid.Tests.Drivers
             int[] expected = [1, 4, 8, 64, 255];
             int[] data = [8, 4, 64, 1, 255];
             data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
+            data.SortNumbers("Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
         [Test]
@@ -377,6 +415,7 @@ namespace Nitrocid.Tests.Drivers
             long[] expected = [1, 4, 8, 64, 255];
             long[] data = [8, 4, 64, 1, 255];
             data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
+            data.SortNumbers("Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
         [Test]
@@ -386,6 +425,7 @@ namespace Nitrocid.Tests.Drivers
             long[] expected = [1, 4, 8, 64, 255];
             long[] data = [8, 4, 64, 1, 255];
             data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
+            data.SortNumbers("Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
         [Test]
@@ -395,6 +435,7 @@ namespace Nitrocid.Tests.Drivers
             float[] expected = [1.2f, 1.3f, 8.4f, 64.5f, 255.6f];
             float[] data = [8.4f, 1.3f, 64.5f, 1.2f, 255.6f];
             data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
+            data.SortNumbers("Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
         [Test]
@@ -404,6 +445,427 @@ namespace Nitrocid.Tests.Drivers
             double[] expected = [1.2f, 1.3f, 8.4f, 64.5f, 255.6f];
             double[] data = [8.4f, 1.3f, 64.5f, 1.2f, 255.6f];
             data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
+            data.SortNumbers("Default").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestQuickSortNumbersInt8BestCase()
+        {
+            byte[] expected = [1, 4, 8, 64, 255];
+            byte[] data = [1, 4, 8, 64, 255];
+            ArrayTools.SortNumbers(data).SequenceEqual(expected).ShouldBeTrue();
+            ArrayTools.SortNumbers(data, "Quick").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestQuickSortNumbersInt16BestCase()
+        {
+            short[] expected = [1, 4, 8, 64, 255];
+            short[] data = [1, 4, 8, 64, 255];
+            ArrayTools.SortNumbers(data).SequenceEqual(expected).ShouldBeTrue();
+            ArrayTools.SortNumbers(data, "Quick").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestQuickSortNumbersInt32BestCase()
+        {
+            int[] expected = [1, 4, 8, 64, 255];
+            int[] data = [1, 4, 8, 64, 255];
+            ArrayTools.SortNumbers(data).SequenceEqual(expected).ShouldBeTrue();
+            ArrayTools.SortNumbers(data, "Quick").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestQuickSortNumbersInt64BestCase()
+        {
+            long[] expected = [1, 4, 8, 64, 255];
+            long[] data = [1, 4, 8, 64, 255];
+            ArrayTools.SortNumbers(data).SequenceEqual(expected).ShouldBeTrue();
+            ArrayTools.SortNumbers(data, "Quick").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestQuickSortNumbersInt128BestCase()
+        {
+            long[] expected = [1, 4, 8, 64, 255];
+            long[] data = [1, 4, 8, 64, 255];
+            ArrayTools.SortNumbers(data).SequenceEqual(expected).ShouldBeTrue();
+            ArrayTools.SortNumbers(data, "Quick").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestQuickSortNumbersFloatBestCase()
+        {
+            float[] expected = [1.2f, 1.3f, 8.4f, 64.5f, 255.6f];
+            float[] data = [1.2f, 1.3f, 8.4f, 64.5f, 255.6f];
+            ArrayTools.SortNumbers(data).SequenceEqual(expected).ShouldBeTrue();
+            ArrayTools.SortNumbers(data, "Quick").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestQuickSortNumbersDoubleBestCase()
+        {
+            double[] expected = [1.2f, 1.3f, 8.4f, 64.5f, 255.6f];
+            double[] data = [1.2f, 1.3f, 8.4f, 64.5f, 255.6f];
+            ArrayTools.SortNumbers(data).SequenceEqual(expected).ShouldBeTrue();
+            ArrayTools.SortNumbers(data, "Quick").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestQuickSortNumbersInt8MidCase()
+        {
+            byte[] expected = [1, 4, 8, 64, 255];
+            byte[] data = [4, 1, 8, 64, 255];
+            ArrayTools.SortNumbers(data).SequenceEqual(expected).ShouldBeTrue();
+            ArrayTools.SortNumbers(data, "Quick").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestQuickSortNumbersInt16MidCase()
+        {
+            short[] expected = [1, 4, 8, 64, 255];
+            short[] data = [4, 1, 8, 64, 255];
+            ArrayTools.SortNumbers(data).SequenceEqual(expected).ShouldBeTrue();
+            ArrayTools.SortNumbers(data, "Quick").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestQuickSortNumbersInt32MidCase()
+        {
+            int[] expected = [1, 4, 8, 64, 255];
+            int[] data = [4, 1, 8, 64, 255];
+            ArrayTools.SortNumbers(data).SequenceEqual(expected).ShouldBeTrue();
+            ArrayTools.SortNumbers(data, "Quick").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestQuickSortNumbersInt64MidCase()
+        {
+            long[] expected = [1, 4, 8, 64, 255];
+            long[] data = [4, 1, 8, 64, 255];
+            ArrayTools.SortNumbers(data).SequenceEqual(expected).ShouldBeTrue();
+            ArrayTools.SortNumbers(data, "Quick").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestQuickSortNumbersInt128MidCase()
+        {
+            long[] expected = [1, 4, 8, 64, 255];
+            long[] data = [4, 1, 8, 64, 255];
+            ArrayTools.SortNumbers(data).SequenceEqual(expected).ShouldBeTrue();
+            ArrayTools.SortNumbers(data, "Quick").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestQuickSortNumbersFloatMidCase()
+        {
+            float[] expected = [1.2f, 1.3f, 8.4f, 64.5f, 255.6f];
+            float[] data = [1.3f, 1.2f, 8.4f, 64.5f, 255.6f];
+            ArrayTools.SortNumbers(data).SequenceEqual(expected).ShouldBeTrue();
+            ArrayTools.SortNumbers(data, "Quick").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestQuickSortNumbersDoubleMidCase()
+        {
+            double[] expected = [1.2f, 1.3f, 8.4f, 64.5f, 255.6f];
+            double[] data = [1.3f, 1.2f, 8.4f, 64.5f, 255.6f];
+            ArrayTools.SortNumbers(data).SequenceEqual(expected).ShouldBeTrue();
+            ArrayTools.SortNumbers(data, "Quick").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestQuickSortNumbersInt8WorstCase()
+        {
+            byte[] expected = [1, 4, 8, 64, 255];
+            byte[] data = [8, 4, 64, 1, 255];
+            ArrayTools.SortNumbers(data).SequenceEqual(expected).ShouldBeTrue();
+            ArrayTools.SortNumbers(data, "Quick").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestQuickSortNumbersInt16WorstCase()
+        {
+            short[] expected = [1, 4, 8, 64, 255];
+            short[] data = [8, 4, 64, 1, 255];
+            ArrayTools.SortNumbers(data).SequenceEqual(expected).ShouldBeTrue();
+            ArrayTools.SortNumbers(data, "Quick").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestQuickSortNumbersInt32WorstCase()
+        {
+            int[] expected = [1, 4, 8, 64, 255];
+            int[] data = [8, 4, 64, 1, 255];
+            ArrayTools.SortNumbers(data).SequenceEqual(expected).ShouldBeTrue();
+            ArrayTools.SortNumbers(data, "Quick").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestQuickSortNumbersInt64WorstCase()
+        {
+            long[] expected = [1, 4, 8, 64, 255];
+            long[] data = [8, 4, 64, 1, 255];
+            ArrayTools.SortNumbers(data).SequenceEqual(expected).ShouldBeTrue();
+            ArrayTools.SortNumbers(data, "Quick").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestQuickSortNumbersInt128WorstCase()
+        {
+            long[] expected = [1, 4, 8, 64, 255];
+            long[] data = [8, 4, 64, 1, 255];
+            ArrayTools.SortNumbers(data).SequenceEqual(expected).ShouldBeTrue();
+            ArrayTools.SortNumbers(data, "Quick").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestQuickSortNumbersFloatWorstCase()
+        {
+            float[] expected = [1.2f, 1.3f, 8.4f, 64.5f, 255.6f];
+            float[] data = [8.4f, 1.3f, 64.5f, 1.2f, 255.6f];
+            ArrayTools.SortNumbers(data).SequenceEqual(expected).ShouldBeTrue();
+            ArrayTools.SortNumbers(data, "Quick").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestQuickSortNumbersDoubleWorstCase()
+        {
+            double[] expected = [1.2f, 1.3f, 8.4f, 64.5f, 255.6f];
+            double[] data = [8.4f, 1.3f, 64.5f, 1.2f, 255.6f];
+            ArrayTools.SortNumbers(data).SequenceEqual(expected).ShouldBeTrue();
+            ArrayTools.SortNumbers(data, "Quick").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestQuickSortNumbersInt8BestCaseUsingExtension()
+        {
+            byte[] expected = [1, 4, 8, 64, 255];
+            byte[] data = [1, 4, 8, 64, 255];
+            data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
+            data.SortNumbers("Quick").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestQuickSortNumbersInt16BestCaseUsingExtension()
+        {
+            short[] expected = [1, 4, 8, 64, 255];
+            short[] data = [1, 4, 8, 64, 255];
+            data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
+            data.SortNumbers("Quick").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestQuickSortNumbersInt32BestCaseUsingExtension()
+        {
+            int[] expected = [1, 4, 8, 64, 255];
+            int[] data = [1, 4, 8, 64, 255];
+            data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
+            data.SortNumbers("Quick").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestQuickSortNumbersInt64BestCaseUsingExtension()
+        {
+            long[] expected = [1, 4, 8, 64, 255];
+            long[] data = [1, 4, 8, 64, 255];
+            data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
+            data.SortNumbers("Quick").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestQuickSortNumbersInt128BestCaseUsingExtension()
+        {
+            long[] expected = [1, 4, 8, 64, 255];
+            long[] data = [1, 4, 8, 64, 255];
+            data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
+            data.SortNumbers("Quick").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestQuickSortNumbersFloatBestCaseUsingExtension()
+        {
+            float[] expected = [1.2f, 1.3f, 8.4f, 64.5f, 255.6f];
+            float[] data = [1.2f, 1.3f, 8.4f, 64.5f, 255.6f];
+            data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
+            data.SortNumbers("Quick").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestQuickSortNumbersDoubleBestCaseUsingExtension()
+        {
+            double[] expected = [1.2f, 1.3f, 8.4f, 64.5f, 255.6f];
+            double[] data = [1.2f, 1.3f, 8.4f, 64.5f, 255.6f];
+            data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
+            data.SortNumbers("Quick").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestQuickSortNumbersInt8MidCaseUsingExtension()
+        {
+            byte[] expected = [1, 4, 8, 64, 255];
+            byte[] data = [4, 1, 8, 64, 255];
+            data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
+            data.SortNumbers("Quick").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestQuickSortNumbersInt16MidCaseUsingExtension()
+        {
+            short[] expected = [1, 4, 8, 64, 255];
+            short[] data = [4, 1, 8, 64, 255];
+            data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
+            data.SortNumbers("Quick").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestQuickSortNumbersInt32MidCaseUsingExtension()
+        {
+            int[] expected = [1, 4, 8, 64, 255];
+            int[] data = [4, 1, 8, 64, 255];
+            data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
+            data.SortNumbers("Quick").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestQuickSortNumbersInt64MidCaseUsingExtension()
+        {
+            long[] expected = [1, 4, 8, 64, 255];
+            long[] data = [4, 1, 8, 64, 255];
+            data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
+            data.SortNumbers("Quick").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestQuickSortNumbersInt128MidCaseUsingExtension()
+        {
+            long[] expected = [1, 4, 8, 64, 255];
+            long[] data = [4, 1, 8, 64, 255];
+            data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
+            data.SortNumbers("Quick").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestQuickSortNumbersFloatMidCaseUsingExtension()
+        {
+            float[] expected = [1.2f, 1.3f, 8.4f, 64.5f, 255.6f];
+            float[] data = [1.3f, 1.2f, 8.4f, 64.5f, 255.6f];
+            data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
+            data.SortNumbers("Quick").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestQuickSortNumbersDoubleMidCaseUsingExtension()
+        {
+            double[] expected = [1.2f, 1.3f, 8.4f, 64.5f, 255.6f];
+            double[] data = [1.3f, 1.2f, 8.4f, 64.5f, 255.6f];
+            data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
+            data.SortNumbers("Quick").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestQuickSortNumbersInt8WorstCaseUsingExtension()
+        {
+            byte[] expected = [1, 4, 8, 64, 255];
+            byte[] data = [8, 4, 64, 1, 255];
+            data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
+            data.SortNumbers("Quick").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestQuickSortNumbersInt16WorstCaseUsingExtension()
+        {
+            short[] expected = [1, 4, 8, 64, 255];
+            short[] data = [8, 4, 64, 1, 255];
+            data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
+            data.SortNumbers("Quick").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestQuickSortNumbersInt32WorstCaseUsingExtension()
+        {
+            int[] expected = [1, 4, 8, 64, 255];
+            int[] data = [8, 4, 64, 1, 255];
+            data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
+            data.SortNumbers("Quick").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestQuickSortNumbersInt64WorstCaseUsingExtension()
+        {
+            long[] expected = [1, 4, 8, 64, 255];
+            long[] data = [8, 4, 64, 1, 255];
+            data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
+            data.SortNumbers("Quick").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestQuickSortNumbersInt128WorstCaseUsingExtension()
+        {
+            long[] expected = [1, 4, 8, 64, 255];
+            long[] data = [8, 4, 64, 1, 255];
+            data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
+            data.SortNumbers("Quick").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestQuickSortNumbersFloatWorstCaseUsingExtension()
+        {
+            float[] expected = [1.2f, 1.3f, 8.4f, 64.5f, 255.6f];
+            float[] data = [8.4f, 1.3f, 64.5f, 1.2f, 255.6f];
+            data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
+            data.SortNumbers("Quick").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestQuickSortNumbersDoubleWorstCaseUsingExtension()
+        {
+            double[] expected = [1.2f, 1.3f, 8.4f, 64.5f, 255.6f];
+            double[] data = [8.4f, 1.3f, 64.5f, 1.2f, 255.6f];
+            data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
+            data.SortNumbers("Quick").SequenceEqual(expected).ShouldBeTrue();
         }
     }
 }

@@ -145,6 +145,7 @@ namespace KS.Drivers
                 DriverTypes.Sorting, new()
                 {
                     { "Default", new DefaultSorting() },
+                    { "Quick", new QuickSorting() },
                 }
             },
             {
