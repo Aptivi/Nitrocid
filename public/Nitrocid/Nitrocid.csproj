@@ -93,6 +93,7 @@
   <ItemGroup>
     <PackageReference Include="GRILO.Boot" Version="0.1.0.3" PrivateAssets="all" />
     <PackageReference Include="Microsoft.Data.Sqlite" Version="8.0.0" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="all" />
     <PackageReference Include="Newtonsoft.Json.Schema" Version="3.0.15" PrivateAssets="all" />
     <PackageReference Include="SpecProbe" Version="1.2.0.1" PrivateAssets="all" />
   </ItemGroup>
@@ -180,6 +181,13 @@
     </None>
   </ItemGroup>
   <!-- KS GRILO boot metadata End -->
+
+  <!-- KS Source Link properties -->
+  <PropertyGroup>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+  </PropertyGroup>
+  <!-- KS Source Link properties End -->
   
   <!-- KS Misc properties -->
   <ItemGroup>
