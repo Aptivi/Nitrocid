@@ -19,19 +19,21 @@
 
 using KS.Shell.ShellBase.Commands;
 using Newtonsoft.Json;
+using System.Diagnostics;
 
 namespace KS.Shell.ShellBase.Aliases
 {
     /// <summary>
     /// Command alias information
     /// </summary>
+    [DebuggerDisplay("[{Type}] {Alias} -> {Command}")]
     public class AliasInfo
     {
-        [JsonProperty(PropertyName = "Alias")]
+        [JsonProperty(PropertyName = nameof(Alias))]
         internal string alias;
-        [JsonProperty(PropertyName = "Command")]
+        [JsonProperty(PropertyName = nameof(Command))]
         internal string command;
-        [JsonProperty(PropertyName = "Type")]
+        [JsonProperty(PropertyName = nameof(Type))]
         internal string type;
 
         /// <summary>
