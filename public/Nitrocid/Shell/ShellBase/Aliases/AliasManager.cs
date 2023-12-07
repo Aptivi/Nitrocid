@@ -40,6 +40,9 @@ namespace KS.Shell.ShellBase.Aliases
     public static class AliasManager
     {
 
+        internal static List<AliasInfo> builtinAliases = [
+            new AliasInfo("ls", "list", ShellManager.GetShellTypeName(ShellType.Shell))
+        ];
         internal static List<AliasInfo> aliases = [];
 
         /// <summary>
@@ -62,7 +65,8 @@ namespace KS.Shell.ShellBase.Aliases
         {
             // Save all aliases
             DebugWriter.WriteDebug(DebugLevel.I, "Saving aliases...");
-            Writing.WriteContentsText(PathsManagement.GetKernelPath(KernelPathType.Aliases), JsonConvert.SerializeObject(aliases.ToArray(), Formatting.Indented));
+            string serialized = JsonConvert.SerializeObject(aliases.ToArray(), Formatting.Indented);
+            Writing.WriteContentsText(PathsManagement.GetKernelPath(KernelPathType.Aliases), serialized);
         }
 
         /// <summary>
@@ -163,7 +167,7 @@ namespace KS.Shell.ShellBase.Aliases
                     DebugWriter.WriteDebug(DebugLevel.E, "{0} not found in all the command lists", Destination);
                     throw new KernelException(KernelExceptionType.AliasNoSuchCommand, Translate.DoTranslation("Command not found to alias to {0}."), Destination);
                 }
-                else if (DoesAliasExist(SourceAlias, Type))
+                else if (DoesAliasExist(Destination, Type))
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "Alias {0} already found", SourceAlias);
                     throw new KernelException(KernelExceptionType.AliasAlreadyExists, Translate.DoTranslation("Alias already found: {0}"), SourceAlias);
@@ -235,7 +239,7 @@ namespace KS.Shell.ShellBase.Aliases
         /// <param name="Type">The alias type</param>
         /// <returns>True if it exists; false if it doesn't exist</returns>
         public static bool DoesAliasExist(string TargetAlias, string Type) =>
-            aliases.Any((info) => info.Alias == TargetAlias && info.Type == Type);
+            GetEntireAliasListFromType(Type).Any((info) => info.Alias == TargetAlias && info.Type == Type);
 
         /// <summary>
         /// Gets the aliases list from the shell type
@@ -250,6 +254,22 @@ namespace KS.Shell.ShellBase.Aliases
         /// <param name="ShellType">Selected shell type</param>
         public static List<AliasInfo> GetAliasesListFromType(string ShellType) =>
             aliases.Where((info) => info.Type == ShellType).ToList();
+
+        /// <summary>
+        /// Gets the aliases list from the shell type
+        /// </summary>
+        /// <param name="ShellType">Selected shell type</param>
+        public static List<AliasInfo> GetEntireAliasListFromType(ShellType ShellType) =>
+            GetEntireAliasListFromType(ShellManager.GetShellTypeName(ShellType));
+
+        /// <summary>
+        /// Gets the aliases list from the shell type
+        /// </summary>
+        /// <param name="ShellType">Selected shell type</param>
+        public static List<AliasInfo> GetEntireAliasListFromType(string ShellType) =>
+            aliases
+                .Union(builtinAliases)
+                .Where((info) => info.Type == ShellType).ToList();
 
         /// <summary>
         /// Gets the alias.

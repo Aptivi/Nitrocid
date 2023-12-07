@@ -92,7 +92,7 @@ namespace KS.Shell.ShellBase.Arguments
             Command = words[0];
 
             // Check to see if the caller has provided a switch that subtracts the number of required arguments
-            var aliases = AliasManager.GetAliasesListFromType(CommandType);
+            var aliases = AliasManager.GetEntireAliasListFromType(CommandType);
             var CommandInfo = ModCommands.TryGetValue(Command, out CommandInfo modCmd) ? modCmd :
                               ShellCommands.TryGetValue(Command, out CommandInfo shellCmd) ? shellCmd :
                               aliases.Any((info) => info.Alias == Command) ? aliases.Single((info) => info.Alias == Command).TargetCommand :

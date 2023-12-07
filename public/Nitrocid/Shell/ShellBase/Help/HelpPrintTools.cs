@@ -90,7 +90,7 @@ namespace KS.Shell.ShellBase.Help
             var ModCommandList = ModManager.ListModCommands(commandType);
             var AddonCommandList = ShellManager.GetShellInfo(commandType).addonCommands;
             var unifiedCommandList = ShellManager.unifiedCommandDict;
-            var AliasedCommandList = AliasManager.GetAliasesListFromType(commandType)
+            var AliasedCommandList = AliasManager.GetEntireAliasListFromType(commandType)
                 .ToDictionary((ai) => ai, (ai) => ai.TargetCommand);
             TextWriterColor.WriteKernelColor(Translate.DoTranslation("Available commands:") + (ShowCommandsCount ? " [{0}]" : ""), true, KernelColorType.ListTitle, commands.Count);
 
@@ -204,7 +204,7 @@ namespace KS.Shell.ShellBase.Help
             var ModCommandList = ModManager.ListModCommands(commandType);
             var AddonCommandList = ShellManager.GetShellInfo(commandType).addonCommands;
             var unifiedCommandList = ShellManager.unifiedCommandDict;
-            var AliasedCommandList = AliasManager.GetAliasesListFromType(commandType)
+            var AliasedCommandList = AliasManager.GetEntireAliasListFromType(commandType)
                 .ToDictionary((ai) => ai, (ai) => ai.TargetCommand);
             var totalCommandList = CommandManager.GetCommands(commandType);
 

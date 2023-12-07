@@ -62,5 +62,12 @@ namespace KS.Shell.ShellBase.Aliases
         [JsonConstructor]
         internal AliasInfo()
         { }
+
+        internal AliasInfo(string alias, string command, string type)
+        {
+            this.alias = alias;
+            this.command = command;
+            this.type = type;
+        }
     }
 }

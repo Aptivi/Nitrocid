@@ -96,7 +96,7 @@ namespace KS.Shell.ShellBase.Commands
             var shellInfo = ShellManager.GetShellInfo(ShellType);
             var addonCommands = ShellManager.GetShellInfo(ShellType).addonCommands;
             var modCommands = ModManager.ListModCommands(ShellType);
-            var aliasCommands = AliasManager.GetAliasesListFromType(ShellType);
+            var aliasCommands = AliasManager.GetEntireAliasListFromType(ShellType);
             Dictionary<string, CommandInfo> FinalCommands = shellInfo.Commands;
 
             // Unified commands

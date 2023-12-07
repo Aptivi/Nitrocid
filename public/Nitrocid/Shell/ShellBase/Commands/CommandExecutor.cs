@@ -429,7 +429,7 @@ namespace KS.Shell.ShellBase.Commands
                 .Where(CommandInfo => CommandInfo.Flags.HasFlag(CommandFlags.Wrappable))
                 .Select(CommandInfo => CommandInfo.Command)
                 .ToArray();
-            var WrappableAliases = AliasManager.GetAliasesListFromType(shellType)
+            var WrappableAliases = AliasManager.GetEntireAliasListFromType(shellType)
                 .Where((info) => WrappableCmds.Contains(info.Command) || WrappableUnified.Contains(info.Command))
                 .Select((info) => info.Alias)
                 .ToArray();
