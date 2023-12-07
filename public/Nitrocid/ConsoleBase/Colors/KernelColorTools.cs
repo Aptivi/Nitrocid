@@ -374,13 +374,18 @@ namespace KS.ConsoleBase.Colors
         public static Color GetRandomColor(ColorType type, bool selectBlack = true)
         {
             int maxColor = type != ColorType._16Color ? 255 : 15;
-            var color = GetRandomColor(ColorType.TrueColor, 0, maxColor, 0, 255, 0, 255, 0, 255);
+            var color = GetRandomColor(type, 0, maxColor, 0, 255, 0, 255, 0, 255);
             int colorLevel = 0;
             var colorType = color.Type;
             if (colorType != ColorType.TrueColor)
                 colorLevel = int.Parse(color.PlainSequence);
             while (!IsSeeable(colorType, colorLevel, color.R, color.G, color.B) && !selectBlack)
-                color = GetRandomColor(ColorType.TrueColor, 0, maxColor, 0, 255, 0, 255, 0, 255);
+            {
+                color = GetRandomColor(type, 0, maxColor, 0, 255, 0, 255, 0, 255);
+                if (colorType != ColorType.TrueColor)
+                    colorLevel = int.Parse(color.PlainSequence);
+
+            }
             return color;
         }
 
