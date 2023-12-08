@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using KS.ConsoleBase.Buffered;
 using KS.Kernel.Configuration;
 using KS.Languages;
 using KS.Misc.Reflection;
@@ -33,6 +34,7 @@ namespace KS.ConsoleBase.Interactive
     public class BaseInteractiveTui : IInteractiveTui
     {
         internal static List<BaseInteractiveTui> instances = [];
+        internal Screen screen;
         internal bool isExiting = false;
 
         /// <summary>
@@ -144,6 +146,12 @@ namespace KS.ConsoleBase.Interactive
             instances.Count > 0 ?
             instances[^1] :
             null;
+
+        /// <summary>
+        /// The screen instance for this interactive TUI
+        /// </summary>
+        public Screen Screen =>
+            screen;
 
         /// <inheritdoc/>
         public virtual string GetEntryFromItem(object item) =>

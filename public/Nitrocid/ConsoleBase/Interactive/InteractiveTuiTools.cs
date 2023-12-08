@@ -70,12 +70,15 @@ namespace KS.ConsoleBase.Interactive
                     Input.DetectKeypress();
                     return;
                 }
-
-                // Now, run the application
                 bool notifyCrash = false;
                 string crashReason = "";
+
+                // Make the screen
                 var screen = new Screen();
                 ScreenTools.SetCurrent(screen);
+                interactiveTui.screen = screen;
+
+                // Now, run the application
                 try
                 {
                     // Loop until the user requests to exit
@@ -87,26 +90,26 @@ namespace KS.ConsoleBase.Interactive
                         DebugWriter.WriteDebug(DebugLevel.I, "Went to the last element on overflow.");
 
                         // Draw the boxes
-                        DrawInteractiveTui(interactiveTui, ref screen);
+                        DrawInteractiveTui(interactiveTui);
                         DebugWriter.WriteDebug(DebugLevel.I, "Interactive TUI drawn.");
 
                         // Draw the first pane
-                        DrawInteractiveTuiItems(interactiveTui, 1, ref screen);
+                        DrawInteractiveTuiItems(interactiveTui, 1);
                         DebugWriter.WriteDebug(DebugLevel.I, "Interactive TUI items (first pane) drawn.");
 
                         // Draw the second pane
                         if (interactiveTui.SecondPaneInteractable)
                         {
-                            DrawInteractiveTuiItems(interactiveTui, 2, ref screen);
+                            DrawInteractiveTuiItems(interactiveTui, 2);
                             DebugWriter.WriteDebug(DebugLevel.I, "Interactive TUI items (second pane) drawn.");
                         }
                         else
                         {
-                            DrawInformationOnSecondPane(interactiveTui, ref screen);
+                            DrawInformationOnSecondPane(interactiveTui);
                             DebugWriter.WriteDebug(DebugLevel.I, "Info drawn.");
                         }
 
-                        DrawStatus(interactiveTui, ref screen);
+                        DrawStatus(interactiveTui);
                         DebugWriter.WriteDebug(DebugLevel.I, "Status drawn.");
 
                         // Wait for user input
@@ -176,12 +179,12 @@ namespace KS.ConsoleBase.Interactive
                 BaseInteractiveTui.FirstPaneCurrentSelection = pos;
         }
 
-        private static void DrawInteractiveTui(BaseInteractiveTui interactiveTui, ref Screen screen)
+        private static void DrawInteractiveTui(BaseInteractiveTui interactiveTui)
         {
             // Check to make sure that we don't get nulls on interactiveTui and screen
             DebugCheck.AssertNull(interactiveTui,
                 "attempted to render TUI items on null");
-            DebugCheck.AssertNull(screen,
+            DebugCheck.AssertNull(interactiveTui.Screen,
                 "attempted to render TUI items on no screen");
 
             // Make a screen part
@@ -305,15 +308,15 @@ namespace KS.ConsoleBase.Interactive
                 return bindingsBuilder.ToString();
             });
 
-            screen.AddBufferedPart($"Interactive TUI - Main - {interactiveTui.GetType().Name}", part);
+            interactiveTui.Screen.AddBufferedPart($"Interactive TUI - Main - {interactiveTui.GetType().Name}", part);
         }
 
-        private static void DrawInteractiveTuiItems(BaseInteractiveTui interactiveTui, int paneNum, ref Screen screen)
+        private static void DrawInteractiveTuiItems(BaseInteractiveTui interactiveTui, int paneNum)
         {
             // Check to make sure that we don't get nulls on interactiveTui
             DebugCheck.AssertNull(interactiveTui,
                 "attempted to render TUI items on null");
-            DebugCheck.AssertNull(screen,
+            DebugCheck.AssertNull(interactiveTui.Screen,
                 "attempted to render TUI items on no screen");
 
             // Check to make sure that we're not rendering the second pane on the first-pane-only interactive TUI
@@ -394,15 +397,15 @@ namespace KS.ConsoleBase.Interactive
                 return builder.ToString();
             });
 
-            screen.AddBufferedPart($"Interactive TUI - Items - {interactiveTui.GetType().Name}", part);
+            interactiveTui.Screen.AddBufferedPart($"Interactive TUI - Items - {interactiveTui.GetType().Name}", part);
         }
 
-        private static void DrawInformationOnSecondPane(BaseInteractiveTui interactiveTui, ref Screen screen)
+        private static void DrawInformationOnSecondPane(BaseInteractiveTui interactiveTui)
         {
             // Check to make sure that we don't get nulls on interactiveTui
             DebugCheck.AssertNull(interactiveTui,
                 "attempted to render TUI items on null");
-            DebugCheck.AssertNull(screen,
+            DebugCheck.AssertNull(interactiveTui.Screen,
                 "attempted to render TUI items on no screen");
 
             // Check to make sure that we're not rendering the information pane on the both-panes interactive TUI
@@ -496,11 +499,15 @@ namespace KS.ConsoleBase.Interactive
                 return builder.ToString();
             });
 
-            screen.AddBufferedPart($"Interactive TUI - Info (2nd pane) - {interactiveTui.GetType().Name}", part);
+            interactiveTui.Screen.AddBufferedPart($"Interactive TUI - Info (2nd pane) - {interactiveTui.GetType().Name}", part);
         }
 
-        private static void DrawStatus(BaseInteractiveTui interactiveTui, ref Screen screen)
+        private static void DrawStatus(BaseInteractiveTui interactiveTui)
         {
+            // Check to make sure that we don't get nulls on interactiveTui
+            DebugCheck.AssertNull(interactiveTui.Screen,
+                "attempted to render TUI items on no screen");
+
             // Make a screen part
             var part = new ScreenPart();
 
@@ -525,7 +532,7 @@ namespace KS.ConsoleBase.Interactive
                 builder.Append(ConsoleExtensions.GetClearLineToRightSequence());
                 return builder.ToString();
             });
-            screen.AddBufferedPart($"Interactive TUI - Status - {interactiveTui.GetType().Name}", part);
+            interactiveTui.Screen.AddBufferedPart($"Interactive TUI - Status - {interactiveTui.GetType().Name}", part);
         }
 
         private static void RespondToUserInput(BaseInteractiveTui interactiveTui)
