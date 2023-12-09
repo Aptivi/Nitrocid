@@ -36,6 +36,7 @@ move %temp%\%ksversion%-bin-lite.zip
 move %temp%\%ksversion%-addons.zip
 move %temp%\%ksversion%-analyzers.zip
 move %temp%\%ksversion%-mod-analyzer.zip
+copy changes.chg %ksversion%-changes.chg
 
 echo Pack successful.
 :finished

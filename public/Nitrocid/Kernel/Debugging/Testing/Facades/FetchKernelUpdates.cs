@@ -29,10 +29,10 @@ namespace KS.Kernel.Debugging.Testing.Facades
         public override TestSection TestSection => TestSection.Kernel;
         public override void Run(params string[] args)
         {
-            var update = UpdateManager.FetchKernelUpdates();
+            var update = UpdateManager.FetchKernelUpdates(UpdateKind.Binary);
             if (update != null)
             {
-                TextWriterColor.Write($"{update.UpdateVersion} - {update.UpdateURL}");
+                TextWriterColor.Write($"U: {update.UpdateVersion} - {update.UpdateURL}");
                 TextWriterColor.Write(Translate.DoTranslation("Is the kernel up to date?") + $" {update.Updated}");
             }
         }

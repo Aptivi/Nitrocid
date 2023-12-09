@@ -163,6 +163,13 @@ namespace KS.Shell.Shells.UESH
                     ], new CDirCommand())
             },
 
+            { "changes",
+                new CommandInfo("changes", /* Localizable */ "What's new in this version of Nitrocid?",
+                    [
+                        new CommandArgumentInfo()
+                    ], new ChangesCommand())
+            },
+
             { "chattr",
                 new CommandInfo("chattr", /* Localizable */ "Changes attribute of a file",
                     [

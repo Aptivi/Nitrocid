@@ -61,27 +61,48 @@ namespace KS.Kernel.Updates
         /// <summary>
         /// Fetches the GitHub repo to see if there are any updates
         /// </summary>
+        /// <param name="kind">The kind of update</param>
         /// <returns>A kernel update instance</returns>
-        public static KernelUpdate FetchKernelUpdates()
+        public static KernelUpdate FetchKernelUpdates(UpdateKind kind)
         {
             try
             {
                 // Because api.github.com requires the UserAgent header to be put, else, 403 error occurs. Fortunately for us, "Aptivi" is enough.
                 NetworkTransfer.WClient.DefaultRequestHeaders.Add("User-Agent", "Aptivi");
 
-                // Determine the update kind by fetching the addons
-                var kind = UpdateKind.Binary;
-                if (AddonTools.ListAddons().Count == 0)
-                    kind = UpdateKind.BinaryLite;
-
                 // Populate the following variables with information
-                string UpdateStr = NetworkTransfer.DownloadString("https://api.github.com/repos/Aptivi/NitrocidKS/releases");
+                string UpdateStr = NetworkTransfer.DownloadString("https://api.github.com/repos/Aptivi/NitrocidKS/releases", false);
                 var UpdateToken = JToken.Parse(UpdateStr);
                 var UpdateInstance = new KernelUpdate(UpdateToken, kind);
 
                 // Return the update instance
-                NetworkTransfer.WClient.DefaultRequestHeaders.Remove("User-Agent");
                 return UpdateInstance;
+            }
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to check for updates: {0}", ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
+            }
+            finally
+            {
+                NetworkTransfer.WClient.DefaultRequestHeaders.Remove("User-Agent");
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// Fetches the GitHub repo to see if there are any updates
+        /// </summary>
+        /// <returns>A kernel update instance</returns>
+        public static KernelUpdate FetchBinaryArchive()
+        {
+            try
+            {
+                // Determine the update kind by fetching the addons
+                var kind = UpdateKind.Binary;
+                if (AddonTools.ListAddons().Count == 0)
+                    kind = UpdateKind.BinaryLite;
+                return FetchKernelUpdates(kind);
             }
             catch (Exception ex)
             {
@@ -99,17 +120,25 @@ namespace KS.Kernel.Updates
         {
             try
             {
-                // Because api.github.com requires the UserAgent header to be put, else, 403 error occurs. Fortunately for us, "Aptivi" is enough.
-                NetworkTransfer.WClient.DefaultRequestHeaders.Add("User-Agent", "Aptivi");
+                return FetchKernelUpdates(UpdateKind.Addons);
+            }
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to check for updates: {0}", ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
+            }
+            return null;
+        }
 
-                // Populate the following variables with information
-                string UpdateStr = NetworkTransfer.DownloadString("https://api.github.com/repos/Aptivi/NitrocidKS/releases");
-                var UpdateToken = JToken.Parse(UpdateStr);
-                var UpdateInstance = new KernelUpdate(UpdateToken, UpdateKind.Addons);
-
-                // Return the update instance
-                NetworkTransfer.WClient.DefaultRequestHeaders.Remove("User-Agent");
-                return UpdateInstance;
+        /// <summary>
+        /// Fetches the GitHub repo for changelogs
+        /// </summary>
+        /// <returns>A kernel update instance</returns>
+        public static KernelUpdate FetchChangelogs()
+        {
+            try
+            {
+                return FetchKernelUpdates(UpdateKind.Changelogs);
             }
             catch (Exception ex)
             {
@@ -157,6 +186,17 @@ namespace KS.Kernel.Updates
 #elif PACKAGEMANAGERBUILD
             SplashReport.ReportProgressError(Translate.DoTranslation("You've installed Nitrocid KS using your package manager. Please use it to upgrade your kernel instead."));
 #endif
+        }
+
+        /// <summary>
+        /// Gets the changelogs for the current kernel version
+        /// </summary>
+        /// <returns>A string representing the changelogs for this kernel version</returns>
+        public static string GetVersionChangelogs()
+        {
+            var changelogsUpdate = FetchChangelogs();
+            string changes = NetworkTransfer.DownloadString(changelogsUpdate.UpdateURL.ToString());
+            return changes;
         }
 
     }

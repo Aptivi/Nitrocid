@@ -74,12 +74,14 @@ namespace KS.Kernel.Updates
             List<(SemVer UpdateVersion, Uri UpdateURL)> SortedVersions = [];
             string specifier =
                 kind == UpdateKind.Binary ? "bin" :
-                kind == UpdateKind.BinaryLite ? "bin-lite" : "bin";
+                kind == UpdateKind.BinaryLite ? "bin-lite" :
+                kind == UpdateKind.Changelogs ? "changes" :
+                "bin";
             foreach (JToken KernelUpdate in UpdateToken)
             {
                 // We usually prefix versions with vx.x.x.x-xxx on Nitrocid KS releases.
                 string tagName = KernelUpdate.SelectToken("tag_name").ToString();
-                tagName = tagName.StartsWith("v") ? KernelUpdate.SelectToken("tag_name").ToString()[1..] : tagName;
+                tagName = tagName.StartsWith('v') ? KernelUpdate.SelectToken("tag_name").ToString()[1..] : tagName;
                 SemVer KernelUpdateVer = default;
                 if (tagName.Split('.').Length > 3)
                     KernelUpdateVer = SemVer.ParseWithRev(tagName);
@@ -102,7 +104,9 @@ namespace KS.Kernel.Updates
                         "48"
 #endif
                         ;
-                    if (url.EndsWith($"-{binSpecifier}.zip") || url.EndsWith($"-{binSpecifier}.rar"))
+                    if (url.EndsWith($"-{binSpecifier}.zip") ||
+                        url.EndsWith($"-{binSpecifier}.rar") ||
+                        url.EndsWith($"-{binSpecifier}.chg"))
                     {
                         KernelUpdateURL = url;
                         break;
@@ -115,7 +119,7 @@ namespace KS.Kernel.Updates
             SortedVersions =
             [
                 .. SortedVersions.OrderByDescending((x) =>
-                                new Version(x.UpdateVersion.MajorVersion, x.UpdateVersion.MinorVersion, x.UpdateVersion.PatchVersion, x.UpdateVersion.RevisionVersion)),
+                       new Version(x.UpdateVersion.MajorVersion, x.UpdateVersion.MinorVersion, x.UpdateVersion.PatchVersion, x.UpdateVersion.RevisionVersion)),
             ];
             DebugWriter.WriteDebug(DebugLevel.I, "Found {0} kernel updates.", SortedVersions.Count);
 

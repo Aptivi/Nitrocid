@@ -17,28 +17,26 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace KS.Kernel.Updates
+using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Kernel.Updates;
+using KS.Shell.ShellBase.Commands;
+
+namespace KS.Shell.Shells.UESH.Commands
 {
     /// <summary>
-    /// Kernel update kind
+    /// Shows the changelogs for the current version
     /// </summary>
-    public enum UpdateKind
+    /// <remarks>
+    /// If you want to know what's new with this version of Nitrocid KS, you can use the changes command.
+    /// </remarks>
+    class ChangesCommand : BaseCommand, ICommand
     {
-        /// <summary>
-        /// The full binary archive
-        /// </summary>
-        Binary,
-        /// <summary>
-        /// The lite version of the kernel binary
-        /// </summary>
-        BinaryLite,
-        /// <summary>
-        /// The addons
-        /// </summary>
-        Addons,
-        /// <summary>
-        /// The changelogs
-        /// </summary>
-        Changelogs,
+
+        public override int Execute(CommandParameters parameters, ref string variableValue)
+        {
+            string changes = UpdateManager.GetVersionChangelogs();
+            TextWriterColor.Write(changes);
+            return 0;
+        }
     }
 }
