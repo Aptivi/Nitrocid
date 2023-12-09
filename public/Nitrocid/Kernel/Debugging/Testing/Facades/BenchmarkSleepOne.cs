@@ -29,7 +29,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
         public override TestSection TestSection => TestSection.Kernel;
         public override void Run(params string[] args)
         {
-            TextWriterColor.WriteColor("{0} ms", true, ThreadManager.GetActualMilliseconds(1));
+            TextWriterColor.Write("{0} ms", true, ThreadManager.GetActualMilliseconds(1));
         }
     }
 }
