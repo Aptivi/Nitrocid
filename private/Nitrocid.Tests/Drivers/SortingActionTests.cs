@@ -1287,5 +1287,425 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
             data.SortNumbers("Selection").SequenceEqual(expected).ShouldBeTrue();
         }
+
+        [Test]
+        [Description("Action")]
+        public void TestMergeSortNumbersInt8BestCase()
+        {
+            byte[] expected = [1, 4, 8, 64, 255];
+            byte[] data = [1, 4, 8, 64, 255];
+            ArrayTools.SortNumbers(data).SequenceEqual(expected).ShouldBeTrue();
+            ArrayTools.SortNumbers(data, "Merge").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestMergeSortNumbersInt16BestCase()
+        {
+            short[] expected = [1, 4, 8, 64, 255];
+            short[] data = [1, 4, 8, 64, 255];
+            ArrayTools.SortNumbers(data).SequenceEqual(expected).ShouldBeTrue();
+            ArrayTools.SortNumbers(data, "Merge").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestMergeSortNumbersInt32BestCase()
+        {
+            int[] expected = [1, 4, 8, 64, 255];
+            int[] data = [1, 4, 8, 64, 255];
+            ArrayTools.SortNumbers(data).SequenceEqual(expected).ShouldBeTrue();
+            ArrayTools.SortNumbers(data, "Merge").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestMergeSortNumbersInt64BestCase()
+        {
+            long[] expected = [1, 4, 8, 64, 255];
+            long[] data = [1, 4, 8, 64, 255];
+            ArrayTools.SortNumbers(data).SequenceEqual(expected).ShouldBeTrue();
+            ArrayTools.SortNumbers(data, "Merge").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestMergeSortNumbersInt128BestCase()
+        {
+            long[] expected = [1, 4, 8, 64, 255];
+            long[] data = [1, 4, 8, 64, 255];
+            ArrayTools.SortNumbers(data).SequenceEqual(expected).ShouldBeTrue();
+            ArrayTools.SortNumbers(data, "Merge").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestMergeSortNumbersFloatBestCase()
+        {
+            float[] expected = [1.2f, 1.3f, 8.4f, 64.5f, 255.6f];
+            float[] data = [1.2f, 1.3f, 8.4f, 64.5f, 255.6f];
+            ArrayTools.SortNumbers(data).SequenceEqual(expected).ShouldBeTrue();
+            ArrayTools.SortNumbers(data, "Merge").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestMergeSortNumbersDoubleBestCase()
+        {
+            double[] expected = [1.2f, 1.3f, 8.4f, 64.5f, 255.6f];
+            double[] data = [1.2f, 1.3f, 8.4f, 64.5f, 255.6f];
+            ArrayTools.SortNumbers(data).SequenceEqual(expected).ShouldBeTrue();
+            ArrayTools.SortNumbers(data, "Merge").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestMergeSortNumbersInt8MidCase()
+        {
+            byte[] expected = [1, 4, 8, 64, 255];
+            byte[] data = [4, 1, 8, 64, 255];
+            ArrayTools.SortNumbers(data).SequenceEqual(expected).ShouldBeTrue();
+            ArrayTools.SortNumbers(data, "Merge").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestMergeSortNumbersInt16MidCase()
+        {
+            short[] expected = [1, 4, 8, 64, 255];
+            short[] data = [4, 1, 8, 64, 255];
+            ArrayTools.SortNumbers(data).SequenceEqual(expected).ShouldBeTrue();
+            ArrayTools.SortNumbers(data, "Merge").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestMergeSortNumbersInt32MidCase()
+        {
+            int[] expected = [1, 4, 8, 64, 255];
+            int[] data = [4, 1, 8, 64, 255];
+            ArrayTools.SortNumbers(data).SequenceEqual(expected).ShouldBeTrue();
+            ArrayTools.SortNumbers(data, "Merge").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestMergeSortNumbersInt64MidCase()
+        {
+            long[] expected = [1, 4, 8, 64, 255];
+            long[] data = [4, 1, 8, 64, 255];
+            ArrayTools.SortNumbers(data).SequenceEqual(expected).ShouldBeTrue();
+            ArrayTools.SortNumbers(data, "Merge").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestMergeSortNumbersInt128MidCase()
+        {
+            long[] expected = [1, 4, 8, 64, 255];
+            long[] data = [4, 1, 8, 64, 255];
+            ArrayTools.SortNumbers(data).SequenceEqual(expected).ShouldBeTrue();
+            ArrayTools.SortNumbers(data, "Merge").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestMergeSortNumbersFloatMidCase()
+        {
+            float[] expected = [1.2f, 1.3f, 8.4f, 64.5f, 255.6f];
+            float[] data = [1.3f, 1.2f, 8.4f, 64.5f, 255.6f];
+            ArrayTools.SortNumbers(data).SequenceEqual(expected).ShouldBeTrue();
+            ArrayTools.SortNumbers(data, "Merge").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestMergeSortNumbersDoubleMidCase()
+        {
+            double[] expected = [1.2f, 1.3f, 8.4f, 64.5f, 255.6f];
+            double[] data = [1.3f, 1.2f, 8.4f, 64.5f, 255.6f];
+            ArrayTools.SortNumbers(data).SequenceEqual(expected).ShouldBeTrue();
+            ArrayTools.SortNumbers(data, "Merge").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestMergeSortNumbersInt8WorstCase()
+        {
+            byte[] expected = [1, 4, 8, 64, 255];
+            byte[] data = [8, 4, 64, 1, 255];
+            ArrayTools.SortNumbers(data).SequenceEqual(expected).ShouldBeTrue();
+            ArrayTools.SortNumbers(data, "Merge").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestMergeSortNumbersInt16WorstCase()
+        {
+            short[] expected = [1, 4, 8, 64, 255];
+            short[] data = [8, 4, 64, 1, 255];
+            ArrayTools.SortNumbers(data).SequenceEqual(expected).ShouldBeTrue();
+            ArrayTools.SortNumbers(data, "Merge").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestMergeSortNumbersInt32WorstCase()
+        {
+            int[] expected = [1, 4, 8, 64, 255];
+            int[] data = [8, 4, 64, 1, 255];
+            ArrayTools.SortNumbers(data).SequenceEqual(expected).ShouldBeTrue();
+            ArrayTools.SortNumbers(data, "Merge").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestMergeSortNumbersInt64WorstCase()
+        {
+            long[] expected = [1, 4, 8, 64, 255];
+            long[] data = [8, 4, 64, 1, 255];
+            ArrayTools.SortNumbers(data).SequenceEqual(expected).ShouldBeTrue();
+            ArrayTools.SortNumbers(data, "Merge").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestMergeSortNumbersInt128WorstCase()
+        {
+            long[] expected = [1, 4, 8, 64, 255];
+            long[] data = [8, 4, 64, 1, 255];
+            ArrayTools.SortNumbers(data).SequenceEqual(expected).ShouldBeTrue();
+            ArrayTools.SortNumbers(data, "Merge").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestMergeSortNumbersFloatWorstCase()
+        {
+            float[] expected = [1.2f, 1.3f, 8.4f, 64.5f, 255.6f];
+            float[] data = [8.4f, 1.3f, 64.5f, 1.2f, 255.6f];
+            ArrayTools.SortNumbers(data).SequenceEqual(expected).ShouldBeTrue();
+            ArrayTools.SortNumbers(data, "Merge").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestMergeSortNumbersDoubleWorstCase()
+        {
+            double[] expected = [1.2f, 1.3f, 8.4f, 64.5f, 255.6f];
+            double[] data = [8.4f, 1.3f, 64.5f, 1.2f, 255.6f];
+            ArrayTools.SortNumbers(data).SequenceEqual(expected).ShouldBeTrue();
+            ArrayTools.SortNumbers(data, "Merge").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestMergeSortNumbersInt8BestCaseUsingExtension()
+        {
+            byte[] expected = [1, 4, 8, 64, 255];
+            byte[] data = [1, 4, 8, 64, 255];
+            data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
+            data.SortNumbers("Merge").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestMergeSortNumbersInt16BestCaseUsingExtension()
+        {
+            short[] expected = [1, 4, 8, 64, 255];
+            short[] data = [1, 4, 8, 64, 255];
+            data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
+            data.SortNumbers("Merge").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestMergeSortNumbersInt32BestCaseUsingExtension()
+        {
+            int[] expected = [1, 4, 8, 64, 255];
+            int[] data = [1, 4, 8, 64, 255];
+            data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
+            data.SortNumbers("Merge").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestMergeSortNumbersInt64BestCaseUsingExtension()
+        {
+            long[] expected = [1, 4, 8, 64, 255];
+            long[] data = [1, 4, 8, 64, 255];
+            data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
+            data.SortNumbers("Merge").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestMergeSortNumbersInt128BestCaseUsingExtension()
+        {
+            long[] expected = [1, 4, 8, 64, 255];
+            long[] data = [1, 4, 8, 64, 255];
+            data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
+            data.SortNumbers("Merge").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestMergeSortNumbersFloatBestCaseUsingExtension()
+        {
+            float[] expected = [1.2f, 1.3f, 8.4f, 64.5f, 255.6f];
+            float[] data = [1.2f, 1.3f, 8.4f, 64.5f, 255.6f];
+            data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
+            data.SortNumbers("Merge").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestMergeSortNumbersDoubleBestCaseUsingExtension()
+        {
+            double[] expected = [1.2f, 1.3f, 8.4f, 64.5f, 255.6f];
+            double[] data = [1.2f, 1.3f, 8.4f, 64.5f, 255.6f];
+            data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
+            data.SortNumbers("Merge").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestMergeSortNumbersInt8MidCaseUsingExtension()
+        {
+            byte[] expected = [1, 4, 8, 64, 255];
+            byte[] data = [4, 1, 8, 64, 255];
+            data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
+            data.SortNumbers("Merge").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestMergeSortNumbersInt16MidCaseUsingExtension()
+        {
+            short[] expected = [1, 4, 8, 64, 255];
+            short[] data = [4, 1, 8, 64, 255];
+            data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
+            data.SortNumbers("Merge").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestMergeSortNumbersInt32MidCaseUsingExtension()
+        {
+            int[] expected = [1, 4, 8, 64, 255];
+            int[] data = [4, 1, 8, 64, 255];
+            data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
+            data.SortNumbers("Merge").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestMergeSortNumbersInt64MidCaseUsingExtension()
+        {
+            long[] expected = [1, 4, 8, 64, 255];
+            long[] data = [4, 1, 8, 64, 255];
+            data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
+            data.SortNumbers("Merge").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestMergeSortNumbersInt128MidCaseUsingExtension()
+        {
+            long[] expected = [1, 4, 8, 64, 255];
+            long[] data = [4, 1, 8, 64, 255];
+            data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
+            data.SortNumbers("Merge").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestMergeSortNumbersFloatMidCaseUsingExtension()
+        {
+            float[] expected = [1.2f, 1.3f, 8.4f, 64.5f, 255.6f];
+            float[] data = [1.3f, 1.2f, 8.4f, 64.5f, 255.6f];
+            data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
+            data.SortNumbers("Merge").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestMergeSortNumbersDoubleMidCaseUsingExtension()
+        {
+            double[] expected = [1.2f, 1.3f, 8.4f, 64.5f, 255.6f];
+            double[] data = [1.3f, 1.2f, 8.4f, 64.5f, 255.6f];
+            data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
+            data.SortNumbers("Merge").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestMergeSortNumbersInt8WorstCaseUsingExtension()
+        {
+            byte[] expected = [1, 4, 8, 64, 255];
+            byte[] data = [8, 4, 64, 1, 255];
+            data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
+            data.SortNumbers("Merge").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestMergeSortNumbersInt16WorstCaseUsingExtension()
+        {
+            short[] expected = [1, 4, 8, 64, 255];
+            short[] data = [8, 4, 64, 1, 255];
+            data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
+            data.SortNumbers("Merge").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestMergeSortNumbersInt32WorstCaseUsingExtension()
+        {
+            int[] expected = [1, 4, 8, 64, 255];
+            int[] data = [8, 4, 64, 1, 255];
+            data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
+            data.SortNumbers("Merge").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestMergeSortNumbersInt64WorstCaseUsingExtension()
+        {
+            long[] expected = [1, 4, 8, 64, 255];
+            long[] data = [8, 4, 64, 1, 255];
+            data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
+            data.SortNumbers("Merge").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestMergeSortNumbersInt128WorstCaseUsingExtension()
+        {
+            long[] expected = [1, 4, 8, 64, 255];
+            long[] data = [8, 4, 64, 1, 255];
+            data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
+            data.SortNumbers("Merge").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestMergeSortNumbersFloatWorstCaseUsingExtension()
+        {
+            float[] expected = [1.2f, 1.3f, 8.4f, 64.5f, 255.6f];
+            float[] data = [8.4f, 1.3f, 64.5f, 1.2f, 255.6f];
+            data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
+            data.SortNumbers("Merge").SequenceEqual(expected).ShouldBeTrue();
+        }
+
+        [Test]
+        [Description("Action")]
+        public void TestMergeSortNumbersDoubleWorstCaseUsingExtension()
+        {
+            double[] expected = [1.2f, 1.3f, 8.4f, 64.5f, 255.6f];
+            double[] data = [8.4f, 1.3f, 64.5f, 1.2f, 255.6f];
+            data.SortNumbers().SequenceEqual(expected).ShouldBeTrue();
+            data.SortNumbers("Merge").SequenceEqual(expected).ShouldBeTrue();
+        }
     }
 }

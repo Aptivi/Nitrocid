@@ -147,6 +147,7 @@ namespace KS.Drivers
                     { "Default", new DefaultSorting() },
                     { "Quick", new QuickSorting() },
                     { "Selection", new SelectionSorting() },
+                    { "Merge", new MergeSorting() },
                 }
             },
             {
