@@ -156,7 +156,7 @@ namespace KS.Kernel.Updates
 #if SPECIFIERREL && !PACKAGEMANAGERBUILD
             // Check for updates now
             SplashReport.ReportProgress(Translate.DoTranslation("Checking for system updates..."), 10);
-            var AvailableUpdate = FetchKernelUpdates();
+            var AvailableUpdate = FetchBinaryArchive();
             if (AvailableUpdate is not null)
             {
                 if (!AvailableUpdate.Updated)

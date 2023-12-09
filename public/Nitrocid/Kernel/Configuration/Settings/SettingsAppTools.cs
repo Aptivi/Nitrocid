@@ -149,7 +149,7 @@ namespace KS.Kernel.Configuration.Settings
 #if SPECIFIERREL && !PACKAGEMANAGERBUILD
             // Check for updates now
             InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Checking for system updates..."), false);
-            var AvailableUpdate = UpdateManager.FetchKernelUpdates();
+            var AvailableUpdate = UpdateManager.FetchBinaryArchive();
             if (AvailableUpdate is not null)
             {
                 if (!AvailableUpdate.Updated)
