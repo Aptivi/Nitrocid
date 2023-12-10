@@ -50,8 +50,9 @@ namespace KS.Misc.Splash.Splashes
         public override string Opening(SplashContext context)
         {
             var builder = new StringBuilder();
-            cleared = ConsoleResizeListener.WasResized(true);
-            if (cleared)
+            if (ConsoleResizeListener.WasResized(true))
+                cleared = false;
+            if (!cleared)
             {
                 cleared = true;
                 builder.Append(
