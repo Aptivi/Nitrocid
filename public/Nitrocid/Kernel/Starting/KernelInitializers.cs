@@ -289,7 +289,6 @@ namespace KS.Kernel.Starting
                 SplashReport._Progress = 0;
                 SplashReport._ProgressText = "";
                 SplashReport._KernelBooted = false;
-                JournalManager.journalEntries.Clear();
                 DebugWriter.WriteDebug(DebugLevel.I, "General variables reset");
                 SplashReport.ReportProgress(Translate.DoTranslation("General variables reset"));
 
@@ -400,6 +399,7 @@ namespace KS.Kernel.Starting
                 SplashManager.UnloadSplashes();
                 DebugWriter.WriteDebug(DebugLevel.I, "Unloaded all splashes");
                 SplashReport.logBuffer.Clear();
+                JournalManager.journalEntries.Clear();
                 PowerManager.Uptime.Reset();
 
                 // Reset power state
