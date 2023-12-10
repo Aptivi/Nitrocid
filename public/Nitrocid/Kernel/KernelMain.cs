@@ -119,6 +119,7 @@ namespace KS.Kernel
                         if (!PowerManager.hardShutdown)
                         {
                             KernelInitializers.ResetEverything();
+                            PowerSignalHandlers.DisposeHandlers();
 
                             // Clear the console
                             KernelColorTools.LoadBack();
@@ -153,9 +154,8 @@ namespace KS.Kernel
                 else
                     ConsoleExtensions.ResetColors();
 
-                // Reset cursor state and dispose handlers
+                // Reset cursor state
                 ConsoleWrapper.CursorVisible = true;
-                PowerSignalHandlers.DisposeHandlers();
 
                 // Check to see if we're restarting Nitrocid with elevated permissions
                 if (PowerManager.elevating && KernelPlatform.IsOnWindows() && !WindowsUserTools.IsAdministrator())

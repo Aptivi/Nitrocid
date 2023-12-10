@@ -61,6 +61,7 @@ namespace KS.Kernel.Power
         {
             foreach (var signalHandler in signalHandlers)
                 signalHandler.Dispose();
+            initialized = false;
         }
 
         private static void SigQuit(PosixSignalContext psc)
