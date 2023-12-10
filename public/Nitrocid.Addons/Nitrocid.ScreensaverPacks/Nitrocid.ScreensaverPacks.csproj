@@ -14,7 +14,7 @@
     <OutputPath>..\..\Nitrocid\KSBuild\$(TargetFramework)\Addons\ScreensaverPacks</OutputPath>
     <Description>Nitrocid KS Screensaver Packs</Description>
     <AssemblyTitle>Nitrocid KS Screensaver Packs</AssemblyTitle>
-    <Copyright>Copyright © Aptivi 2018 - 2023</Copyright>
+    <Copyright>Copyright © Aptivi 2018 - 2024</Copyright>
     <Company>Aptivi</Company>
     <Product>Nitrocid</Product>
     <Version>0.1.0</Version>

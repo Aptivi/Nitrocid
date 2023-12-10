@@ -14,7 +14,7 @@
     <OutputPath>..\..\Nitrocid\KSBuild\$(TargetFramework)\Addons\Extras.Crc32</OutputPath>
     <Description>Nitrocid KS Extras - CRC32</Description>
     <AssemblyTitle>Nitrocid KS Extras - CRC32</AssemblyTitle>
-    <Copyright>Copyright © Aptivi 2018 - 2023</Copyright>
+    <Copyright>Copyright © Aptivi 2018 - 2024</Copyright>
     <Company>Aptivi</Company>
     <Product>Nitrocid</Product>
     <Version>0.1.0</Version>

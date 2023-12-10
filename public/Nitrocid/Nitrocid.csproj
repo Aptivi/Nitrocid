@@ -41,7 +41,7 @@
     <Description>Simulates our future kernel, Nitrocid Kernel</Description>
     <Company>Aptivi</Company>
     <Product>Nitrocid</Product>
-    <Copyright>Copyright © Aptivi 2018 - 2023</Copyright>
+    <Copyright>Copyright © Aptivi 2018 - 2024</Copyright>
     <OutputPath>KSBuild\</OutputPath>
     <ApplicationIcon>OfficialAppIcon-KernelSimulator.ico</ApplicationIcon>
     <Version>0.1.0</Version>

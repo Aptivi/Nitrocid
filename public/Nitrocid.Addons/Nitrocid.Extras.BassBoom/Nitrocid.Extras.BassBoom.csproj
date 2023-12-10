@@ -15,7 +15,7 @@
     <OutputPath Condition=" '$(TargetFramework)' == 'net8.0-windows' ">..\..\Nitrocid\KSBuild\net8.0\Addons\Extras.BassBoom.Windows</OutputPath>
     <Description>Nitrocid KS Extras - BassBoom</Description>
     <AssemblyTitle>Nitrocid KS Extras - BassBoom</AssemblyTitle>
-    <Copyright>Copyright © Aptivi 2018 - 2023</Copyright>
+    <Copyright>Copyright © Aptivi 2018 - 2024</Copyright>
     <Company>Aptivi</Company>
     <Product>Nitrocid</Product>
     <Version>0.1.0</Version>

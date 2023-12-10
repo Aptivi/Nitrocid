@@ -18,7 +18,7 @@
     <AssemblyTitle>Nitrocid KS Locale Generator</AssemblyTitle>
     <Company>Aptivi</Company>
     <Product>Nitrocid</Product>
-    <Copyright>Copyright © Aptivi 2018 - 2023</Copyright>
+    <Copyright>Copyright © Aptivi 2018 - 2024</Copyright>
     <ApplicationIcon>../Nitrocid/OfficialAppIcon-KernelSimulator.ico</ApplicationIcon>
     <Version>0.1.0</Version>
     <Configurations>Debug;Release</Configurations>

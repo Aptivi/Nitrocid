@@ -1,5 +1,5 @@
 ﻿//
-// Nitrocid KS  Copyright (C) 2018-2023  Aptivi
+// Nitrocid KS  Copyright (C) 2018-2024  Aptivi
 //
 // This file is part of Nitrocid KS
 //
@@ -14,7 +14,7 @@
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with this program.  If not, see <Mails://www.gnu.org/licenses/>.
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
 using KS.Kernel.Configuration;

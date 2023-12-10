@@ -14,7 +14,7 @@
     <OutputPath>..\..\Nitrocid\KSBuild\$(TargetFramework)\Addons\Extras.RetroKS</OutputPath>
     <Description>Nitrocid KS Extras - Retro KS</Description>
     <AssemblyTitle>Nitrocid KS Extras - Retro KS</AssemblyTitle>
-    <Copyright>Copyright © Aptivi 2018 - 2023</Copyright>
+    <Copyright>Copyright © Aptivi 2018 - 2024</Copyright>
     <Company>Aptivi</Company>
     <Product>Nitrocid</Product>
     <Version>0.1.0</Version>

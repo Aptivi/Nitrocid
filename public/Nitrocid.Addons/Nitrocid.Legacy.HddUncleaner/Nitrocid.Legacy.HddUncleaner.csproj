@@ -14,7 +14,7 @@
     <OutputPath>..\..\Nitrocid\KSBuild\$(TargetFramework)\Addons\Legacy.HddUncleaner</OutputPath>
     <Description>Nitrocid KS Legacy - HDD Uncleaner 2015</Description>
     <AssemblyTitle>Nitrocid KS Legacy - HDD Uncleaner 2015</AssemblyTitle>
-    <Copyright>Copyright © Aptivi 2018 - 2023</Copyright>
+    <Copyright>Copyright © Aptivi 2018 - 2024</Copyright>
     <Company>Aptivi</Company>
     <Product>Nitrocid</Product>
     <Version>0.1.0</Version>

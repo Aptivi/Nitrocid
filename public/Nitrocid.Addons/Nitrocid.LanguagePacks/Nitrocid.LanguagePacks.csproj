@@ -14,7 +14,7 @@
     <OutputPath>..\..\Nitrocid\KSBuild\$(TargetFramework)\Addons\LanguagePacks</OutputPath>
     <Description>Nitrocid KS Language Packs</Description>
     <AssemblyTitle>Nitrocid KS Language Packs</AssemblyTitle>
-    <Copyright>Copyright © Aptivi 2018 - 2023</Copyright>
+    <Copyright>Copyright © Aptivi 2018 - 2024</Copyright>
     <Company>Aptivi</Company>
     <Product>Nitrocid</Product>
     <Version>0.1.0</Version>

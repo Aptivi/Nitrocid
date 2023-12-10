@@ -1,5 +1,5 @@
 ﻿//
-// Nitrocid KS  Copyright (C) 2018-2023  Aptivi
+// Nitrocid KS  Copyright (C) 2018-2024  Aptivi
 //
 // This file is part of Nitrocid KS
 //
@@ -130,7 +130,7 @@ namespace KS.ConsoleBase.Writers.MiscWriters
         public static string GetLicenseString() =>
             $"""
             
-                Nitrocid KS  Copyright (C) 2018-2023  Aptivi
+                Nitrocid KS  Copyright (C) 2018-2024  Aptivi
                 This program comes with ABSOLUTELY NO WARRANTY, not even
                 MERCHANTABILITY or FITNESS for particular purposes.
                 This is free software, and you are welcome to redistribute it
