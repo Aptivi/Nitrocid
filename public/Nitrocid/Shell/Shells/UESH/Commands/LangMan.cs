@@ -47,7 +47,7 @@ namespace KS.Shell.Shells.UESH.Commands
             if (!KernelEntry.SafeMode)
             {
                 string CommandMode = parameters.ArgumentsList[0].ToLower();
-                string TargetLanguage = "";
+                string TargetLanguage;
                 string TargetLanguagePath = "";
                 string LanguageListTerm = "";
 
@@ -98,12 +98,12 @@ namespace KS.Shell.Shells.UESH.Commands
                         }
                     case "load":
                         {
-                            LanguageManager.InstallCustomLanguage(TargetLanguage);
+                            LanguageManager.InstallCustomLanguage(TargetLanguagePath);
                             break;
                         }
                     case "unload":
                         {
-                            LanguageManager.UninstallCustomLanguage(TargetLanguage);
+                            LanguageManager.UninstallCustomLanguage(TargetLanguagePath);
                             break;
                         }
                     case "list":

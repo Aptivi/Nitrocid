@@ -179,13 +179,24 @@ namespace KS.Languages
         /// </summary>
         /// <param name="LanguageName">The custom three-letter language name found in KSLanguages directory</param>
         /// <param name="ThrowOnAlreadyInstalled">If the custom language is already installed, throw an exception</param>
-        public static void InstallCustomLanguage(string LanguageName, bool ThrowOnAlreadyInstalled = true)
+        public static void InstallCustomLanguageByName(string LanguageName, bool ThrowOnAlreadyInstalled = true)
+        {
+            string LanguagePath = PathsManagement.GetKernelPath(KernelPathType.CustomLanguages) + LanguageName + ".json";
+            InstallCustomLanguage(LanguagePath, ThrowOnAlreadyInstalled);
+        }
+
+        /// <summary>
+        /// Installs the custom language to the installed languages
+        /// </summary>
+        /// <param name="LanguagePath">Path to the JSON file of a language</param>
+        /// <param name="ThrowOnAlreadyInstalled">If the custom language is already installed, throw an exception</param>
+        public static void InstallCustomLanguage(string LanguagePath, bool ThrowOnAlreadyInstalled = true)
         {
             if (!KernelEntry.SafeMode)
             {
+                string LanguageName = Path.GetFileNameWithoutExtension(LanguagePath);
                 try
                 {
-                    string LanguagePath = PathsManagement.GetKernelPath(KernelPathType.CustomLanguages) + LanguageName + ".json";
                     if (Checking.FileExists(LanguagePath))
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Language {0} exists in {1}", LanguageName, LanguagePath);
@@ -278,13 +289,23 @@ namespace KS.Languages
         /// Uninstalls the custom language to the installed languages
         /// </summary>
         /// <param name="LanguageName">The custom three-letter language name found in KSLanguages directory</param>
-        public static void UninstallCustomLanguage(string LanguageName)
+        public static void UninstallCustomLanguageByName(string LanguageName)
+        {
+            string LanguagePath = PathsManagement.GetKernelPath(KernelPathType.CustomLanguages) + LanguageName + ".json";
+            UninstallCustomLanguage(LanguagePath);
+        }
+
+        /// <summary>
+        /// Uninstalls the custom language to the installed languages
+        /// </summary>
+        /// <param name="LanguagePath">Path to the JSON file of a language</param>
+        public static void UninstallCustomLanguage(string LanguagePath)
         {
             if (!KernelEntry.SafeMode)
             {
+                string LanguageName = Path.GetFileNameWithoutExtension(LanguagePath);
                 try
                 {
-                    string LanguagePath = PathsManagement.GetKernelPath(KernelPathType.CustomLanguages) + LanguageName + ".json";
                     if (Checking.FileExists(LanguagePath))
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Language {0} exists in {1}", LanguageName, LanguagePath);
