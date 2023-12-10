@@ -70,7 +70,7 @@ namespace KS.Misc.Screensaver
         internal static bool seizureAcknowledged;
         internal static bool noLock;
         internal static AutoResetEvent SaverAutoReset = new(false);
-        internal static KernelThread Timeout = new("Screensaver timeout thread", false, HandleTimeout) { isCritical = true };
+        internal static KernelThread Timeout = new("Screensaver timeout thread", false, HandleTimeout);
 
         // Public Variables
         /// <summary>
