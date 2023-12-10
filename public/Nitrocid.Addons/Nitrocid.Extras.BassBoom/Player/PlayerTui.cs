@@ -43,6 +43,7 @@ using BassBoom.Basolia.Format.Cache;
 using BassBoom.Basolia.Lyrics;
 using BassBoom.Basolia.Playback;
 using KS.ConsoleBase;
+using KS.ConsoleBase.Buffered;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs.Styles.Infobox;
 using KS.ConsoleBase.Writers.ConsoleWriters;
@@ -96,18 +97,25 @@ namespace Nitrocid.Extras.BassBoom.Player
             populate = true;
             advance = false;
 
+            // Populate the screen
+            Screen playerScreen = new();
+            ScreenTools.SetCurrent(playerScreen);
+
             // First, clear the screen to draw our TUI
             while (!exiting)
             {
+                ScreenPart screenPart = new();
                 Thread.Sleep(1);
                 try
                 {
                     // Redraw if necessary
+                    if (ConsoleResizeListener.WasResized(true))
+                        rerender = true;
                     bool wasRerendered = rerender;
                     if (rerender)
                     {
                         rerender = false;
-                        HandleDraw();
+                        screenPart.AddDynamicText(HandleDraw);
                     }
 
                     // Current duration
@@ -116,11 +124,18 @@ namespace Nitrocid.Extras.BassBoom.Player
                     string indicator =
                         Translate.DoTranslation("Seek") + $": {PlayerControls.seekRate:0.00} | " +
                         Translate.DoTranslation("Volume") + $": {volume:0.00}";
-                    ProgressBarColor.WriteProgress(100 * (position / (double)total), 2, ConsoleWrapper.WindowHeight - 8, 6);
-                    TextWriterWhereColor.WriteWhere($"{posSpan} / {totalSpan}", 3, ConsoleWrapper.WindowHeight - 9);
-                    TextWriterWhereColor.WriteWhere(indicator, ConsoleWrapper.WindowWidth - indicator.Length - 3, ConsoleWrapper.WindowHeight - 9);
+                    screenPart.AddDynamicText(() =>
+                    {
+                        var buffer = new StringBuilder();
+                        buffer.Append(
+                            ProgressBarColor.RenderProgress(100 * (position / (double)total), 2, ConsoleWrapper.WindowHeight - 8, 3, 3, KernelColorTools.GetColor(KernelColorType.Progress), KernelColorTools.GetGray(), KernelColorTools.GetColor(KernelColorType.Background)) +
+                            TextWriterWhereColor.RenderWhere($"{posSpan} / {totalSpan}", 3, ConsoleWrapper.WindowHeight - 9, KernelColorTools.GetColor(KernelColorType.NeutralText), KernelColorTools.GetColor(KernelColorType.Background)) +
+                            TextWriterWhereColor.RenderWhere(indicator, ConsoleWrapper.WindowWidth - indicator.Length - 3, ConsoleWrapper.WindowHeight - 9, KernelColorTools.GetColor(KernelColorType.NeutralText), KernelColorTools.GetColor(KernelColorType.Background))
+                        );
+                        return buffer.ToString();
+                    });
 
-                    // Check the mode
+                    // Get the lyrics
                     if (PlaybackTools.Playing)
                     {
                         // Print the lyrics, if any
@@ -130,31 +145,45 @@ namespace Nitrocid.Extras.BassBoom.Player
                             if (current != cachedLyric || wasRerendered)
                             {
                                 cachedLyric = current;
-                                TextWriterWhereColor.WriteWhere(ConsoleExtensions.GetClearLineToRightSequence(), 0, ConsoleWrapper.WindowHeight - 10);
-                                CenteredTextColor.WriteCentered(ConsoleWrapper.WindowHeight - 10, lyricInstance.GetLastLineCurrent());
+                                screenPart.AddDynamicText(() =>
+                                {
+                                    var buffer = new StringBuilder();
+                                    buffer.Append(
+                                        TextWriterWhereColor.RenderWhere(ConsoleExtensions.GetClearLineToRightSequence(), 0, ConsoleWrapper.WindowHeight - 10, KernelColorTools.GetColor(KernelColorType.NeutralText), KernelColorTools.GetColor(KernelColorType.Background)) +
+                                        CenteredTextColor.RenderCentered(ConsoleWrapper.WindowHeight - 10, lyricInstance.GetLastLineCurrent(), KernelColorTools.GetColor(KernelColorType.NeutralText), KernelColorTools.GetColor(KernelColorType.Background))
+                                    );
+                                    return buffer.ToString();
+                                });
                             }
                         }
                         else
                             cachedLyric = "";
-
-                        // Wait for any keystroke asynchronously
-                        if (ConsoleWrapper.KeyAvailable)
-                        {
-                            var keystroke = Input.DetectKeypress();
-                            HandleKeypressPlayMode(keystroke);
-                        }
                     }
                     else
                     {
-                        TextWriterWhereColor.WriteWhere(ConsoleExtensions.GetClearLineToRightSequence(), 0, ConsoleWrapper.WindowHeight - 10);
                         cachedLyric = "";
-
-                        // Wait for any keystroke
-                        if (ConsoleWrapper.KeyAvailable)
+                        screenPart.AddDynamicText(() =>
                         {
-                            var keystroke = Input.DetectKeypress();
+                            var buffer = new StringBuilder();
+                            buffer.Append(
+                                TextWriterWhereColor.RenderWhere(ConsoleExtensions.GetClearLineToRightSequence(), 0, ConsoleWrapper.WindowHeight - 10, KernelColorTools.GetColor(KernelColorType.NeutralText), KernelColorTools.GetColor(KernelColorType.Background))
+                            );
+                            return buffer.ToString();
+                        });
+                    }
+
+                    // Render the buffer
+                    playerScreen.AddBufferedPart("BassBoom Player", screenPart);
+                    ScreenTools.Render();
+
+                    // Handle the keystroke
+                    if (ConsoleWrapper.KeyAvailable)
+                    {
+                        var keystroke = Input.DetectKeypress();
+                        if (PlaybackTools.Playing)
+                            HandleKeypressPlayMode(keystroke);
+                        else
                             HandleKeypressIdleMode(keystroke);
-                        }
                     }
                 }
                 catch (BasoliaException bex)
@@ -178,6 +207,7 @@ namespace Nitrocid.Extras.BassBoom.Player
                     InfoBoxColor.WriteInfoBox(Translate.DoTranslation("There's an unknown error when trying to process the music file.") + "\n\n" + ex.Message);
                     rerender = true;
                 }
+                playerScreen.RemoveBufferedParts();
             }
 
             // Close the file if open
@@ -188,6 +218,7 @@ namespace Nitrocid.Extras.BassBoom.Player
             ConsoleWrapper.CursorVisible = true;
             KernelColorTools.LoadBack();
             ScreensaverManager.AllowLock();
+            ScreenTools.UnsetCurrent(playerScreen);
         }
 
         private static void HandleKeypressIdleMode(ConsoleKeyInfo keystroke)
@@ -319,7 +350,7 @@ namespace Nitrocid.Extras.BassBoom.Player
                         populate = true;
                     currentSong = musicFiles.IndexOf(musicFile) + 1;
                     PlayerControls.PopulateMusicFileInfo(musicFile);
-                    PlayerControls.RenderSongName(musicFile);
+                    TextWriterColor.WritePlain(PlayerControls.RenderSongName(musicFile), false);
                     if (paused)
                     {
                         paused = false;
@@ -340,9 +371,10 @@ namespace Nitrocid.Extras.BassBoom.Player
             }
         }
 
-        private static void HandleDraw()
+        private static string HandleDraw()
         {
             // Prepare things
+            var drawn = new StringBuilder();
             ConsoleWrapper.CursorVisible = false;
             KernelColorTools.LoadBack();
 
@@ -352,27 +384,27 @@ namespace Nitrocid.Extras.BassBoom.Player
                 " - [ESC] " + Translate.DoTranslation("Stop") +
                 " - [Q] " + Translate.DoTranslation("Exit") +
                 " - [H] " + Translate.DoTranslation("Help");
-            CenteredTextColor.WriteCentered(ConsoleWrapper.WindowHeight - 2, keystrokes);
+            drawn.Append(CenteredTextColor.RenderCentered(ConsoleWrapper.WindowHeight - 2, keystrokes));
 
             // Print the separator and the music file info
             string separator = new('=', ConsoleWrapper.WindowWidth);
-            CenteredTextColor.WriteCentered(ConsoleWrapper.WindowHeight - 4, separator);
+            drawn.Append(CenteredTextColor.RenderCentered(ConsoleWrapper.WindowHeight - 4, separator));
 
             // Write powered by...
-            TextWriterWhereColor.WriteWhere($"[ {Translate.DoTranslation("Powered by BassBoom")} ]", 2, ConsoleWrapper.WindowHeight - 4);
+            drawn.Append(TextWriterWhereColor.RenderWherePlain($"[ {Translate.DoTranslation("Powered by BassBoom")} ]", 2, ConsoleWrapper.WindowHeight - 4));
 
             // In case we have no songs in the playlist...
             if (musicFiles.Count == 0)
             {
                 int height = (ConsoleWrapper.WindowHeight - 10) / 2;
-                CenteredTextColor.WriteCentered(height, Translate.DoTranslation("Press 'A' to insert a single song to the playlist, or 'S' to insert the whole music library."));
-                return;
+                drawn.Append(CenteredTextColor.RenderCentered(height, Translate.DoTranslation("Press 'A' to insert a single song to the playlist, or 'S' to insert the whole music library.")));
+                return drawn.ToString();
             }
 
             // Populate music file info, as necessary
             if (populate)
                 PlayerControls.PopulateMusicFileInfo(musicFiles[currentSong - 1]);
-            PlayerControls.RenderSongName(musicFiles[currentSong - 1]);
+            drawn.Append(PlayerControls.RenderSongName(musicFiles[currentSong - 1]));
 
             // Now, print the list of songs.
             int startPos = 3;
@@ -407,7 +439,8 @@ namespace Nitrocid.Extras.BassBoom.Player
                     new string(' ', ConsoleWrapper.WindowWidth - finalEntry.Length)
                 );
             }
-            TextWriterColor.WritePlain(playlist.ToString());
+            drawn.Append(playlist);
+            return drawn.ToString();
         }
     }
 }

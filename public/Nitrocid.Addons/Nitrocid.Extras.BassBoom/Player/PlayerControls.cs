@@ -42,6 +42,7 @@ using BassBoom.Basolia.Format.Cache;
 using BassBoom.Basolia.Lyrics;
 using BassBoom.Basolia.Playback;
 using KS.ConsoleBase;
+using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs.Styles.Infobox;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
@@ -268,13 +269,13 @@ namespace Nitrocid.Extras.BassBoom.Player
                 PlayerTui.musicFiles.Add(musicPath);
         }
 
-        internal static void RenderSongName(string musicPath)
+        internal static string RenderSongName(string musicPath)
         {
             // Render the song name
             var (musicName, musicArtist, _) = GetMusicNameArtistGenre(musicPath);
 
             // Print the music name
-            CenteredTextColor.WriteCentered(1, Translate.DoTranslation("Now playing") + ": {0} - {1}", musicArtist, musicName);
+            return CenteredTextColor.RenderCentered(1, Translate.DoTranslation("Now playing") + ": {0} - {1}", KernelColorTools.GetColor(KernelColorType.NeutralText), KernelColorTools.GetColor(KernelColorType.Background), musicArtist, musicName);
         }
 
         internal static (string musicName, string musicArtist, string musicGenre) GetMusicNameArtistGenre(string musicPath)
