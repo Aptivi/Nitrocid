@@ -38,6 +38,19 @@ namespace KS.Kernel.Threading.Watchdog
                 watchdogThread.Start();
         }
 
+        internal static KernelThread[] GetCriticalThreads() =>
+            ThreadManager.KernelThreads.Where((thread) => thread.IsCritical).ToArray();
+
+        internal static void EnsureAllCriticalThreadsStarted()
+        {
+            var threads = GetCriticalThreads();
+
+            // Check to see if all the critical threads have started
+            var unstartedCriticals = threads.Where((thread) => !thread.IsAlive).ToArray();
+            if (unstartedCriticals.Length > 0)
+                KernelPanic.KernelError(KernelErrorLevel.U, true, 5, Translate.DoTranslation("Kernel thread supervisor detected {0} critical threads that haven't started yet.") + " [{1}]", null, unstartedCriticals.Length, string.Join(", ", unstartedCriticals.Select((thread) => thread.Name)));
+        }
+
         private static void Watch()
         {
             try
@@ -45,7 +58,7 @@ namespace KS.Kernel.Threading.Watchdog
                 while (!PowerManager.RebootRequested)
                 {
                     // Get the list of threads and supervise them
-                    var threads = ThreadManager.KernelThreads.Where((thread) => thread.IsCritical).ToArray();
+                    var threads = GetCriticalThreads();
                     var deadThreads = new List<KernelThread>();
                     foreach (var thread in threads)
                     {

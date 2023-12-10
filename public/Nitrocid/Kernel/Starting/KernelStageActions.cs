@@ -21,6 +21,7 @@ using KS.ConsoleBase.Writers.MiscWriters;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging.RemoteDebug;
 using KS.Kernel.Hardware;
+using KS.Kernel.Threading.Watchdog;
 using KS.Kernel.Updates;
 using KS.Languages;
 using KS.Misc.Notifications;
@@ -94,6 +95,8 @@ namespace KS.Kernel.Starting
         internal static void Stage07SysIntegrity()
         {
             SplashReport.ReportProgress(Translate.DoTranslation("Verifying system integrity"), 5);
+
+            // Check for configuration errors
             if (ConfigTools.NotifyConfigError)
             {
                 ConfigTools.NotifyConfigError = false;
@@ -107,6 +110,9 @@ namespace KS.Kernel.Starting
                     )
                 );
             }
+
+            // Check for critical threads
+            ThreadWatchdog.EnsureAllCriticalThreadsStarted();
         }
     }
 }
