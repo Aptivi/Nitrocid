@@ -46,9 +46,9 @@ namespace KS.Kernel.Threading.Watchdog
             var threads = GetCriticalThreads();
 
             // Check to see if all the critical threads have started
-            var unstartedCriticals = threads.Where((thread) => !thread.IsAlive).ToArray();
+            var unstartedCriticals = threads.Where((thread) => !thread.IsAlive && thread.Name != "Console Resize Listener Thread").ToArray();
             if (unstartedCriticals.Length > 0)
-                KernelPanic.KernelError(KernelErrorLevel.U, true, 5, Translate.DoTranslation("Kernel thread supervisor detected {0} critical threads that haven't started yet.") + " [{1}]", null, unstartedCriticals.Length, string.Join(", ", unstartedCriticals.Select((thread) => thread.Name)));
+                KernelPanic.KernelError(KernelErrorLevel.U, true, 5, Translate.DoTranslation("Kernel thread supervisor detected {0} critical threads that haven't started yet.") + " [{1}]", null, unstartedCriticals.Length, string.Join(", ", unstartedCriticals.Select((thread) => $"{thread.Name} [{thread.BaseThread.ThreadState}]")));
         }
 
         private static void Watch()
