@@ -120,6 +120,7 @@ namespace Nitrocid.ScreensaverPacks
             { "wordhasher", new WordHasherDisplay() },
             { "wordhasherwrite", new WordHasherWriteDisplay() },
             { "worldclock", new WorldClockDisplay() },
+            { "zebrashift", new ZebraShiftDisplay() },
         };
 
         string IAddon.AddonName =>

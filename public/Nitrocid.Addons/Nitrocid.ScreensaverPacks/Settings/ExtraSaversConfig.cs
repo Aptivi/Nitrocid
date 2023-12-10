@@ -3268,5 +3268,45 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [Spray] How many milliseconds to wait before making the next write?
         /// </summary>
         public int SprayDelay { get; set; } = 10;
+        /// <summary>
+        /// [ZebraShift] Enable truecolor support. Has a higher priority than 255 color support.
+        /// </summary>
+        public bool ZebraShiftTrueColor { get; set; } = true;
+        /// <summary>
+        /// [ZebraShift] How many milliseconds to wait before making the next write?
+        /// </summary>
+        public int ZebraShiftDelay { get; set; } = 25;
+        /// <summary>
+        /// [ZebraShift] The minimum red color level (true color)
+        /// </summary>
+        public int ZebraShiftMinimumRedColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [ZebraShift] The minimum green color level (true color)
+        /// </summary>
+        public int ZebraShiftMinimumGreenColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [ZebraShift] The minimum blue color level (true color)
+        /// </summary>
+        public int ZebraShiftMinimumBlueColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [ZebraShift] The minimum color level (255 colors or 16 colors)
+        /// </summary>
+        public int ZebraShiftMinimumColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [ZebraShift] The maximum red color level (true color)
+        /// </summary>
+        public int ZebraShiftMaximumRedColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [ZebraShift] The maximum green color level (true color)
+        /// </summary>
+        public int ZebraShiftMaximumGreenColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [ZebraShift] The maximum blue color level (true color)
+        /// </summary>
+        public int ZebraShiftMaximumBlueColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [ZebraShift] The maximum color level (255 colors or 16 colors)
+        /// </summary>
+        public int ZebraShiftMaximumColorLevel { get; set; } = 255;
     }
 }
