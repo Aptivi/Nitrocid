@@ -19,6 +19,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Text;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Drivers.RNG;
@@ -148,22 +149,24 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             }
 
             // Draw stars
-            if (!ConsoleResizeListener.WasResized(false))
+            var starsBuffer = new StringBuilder();
+            for (int StarIndex = Stars.Count - 1; StarIndex >= 0; StarIndex -= 1)
             {
-                for (int StarIndex = Stars.Count - 1; StarIndex >= 0; StarIndex -= 1)
-                {
-                    var Star = Stars[StarIndex];
-                    char StarSymbol = '*';
-                    int StarX = (int)Star.Item1;
-                    int StarY = (int)Star.Item2;
-                    TextWriterWhereColor.WriteWhereColor(Convert.ToString(StarSymbol), StarX, StarY, false, ConsoleColors.White);
-                }
+                if (ConsoleResizeListener.WasResized(false))
+                    break;
+                var Star = Stars[StarIndex];
+                char StarSymbol = '*';
+                int StarX = (int)Star.Item1;
+                int StarY = (int)Star.Item2;
+                starsBuffer.Append(TextWriterWhereColor.RenderWhere(Convert.ToString(StarSymbol), StarX, StarY, false, ConsoleColors.White, ConsoleColors.Black));
             }
-            else
+            if (ConsoleResizeListener.WasResized(false))
             {
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.W, "Resize-syncing. Clearing...");
                 Stars.Clear();
             }
+            else
+                TextWriterColor.WritePlain(starsBuffer.ToString(), false);
 
             // Reset resize sync
             ConsoleResizeListener.WasResized();

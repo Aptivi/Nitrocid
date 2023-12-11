@@ -28,6 +28,7 @@ using KS.Kernel.Threading;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using Terminaux.Colors;
 using KS.Misc.Screensaver;
+using System.Text;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games
 {
@@ -181,19 +182,22 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             {
                 while (!GameEnded)
                 {
+                    // Buffer
+                    var buffer = new StringBuilder();
+
                     // Clear only the relevant parts
                     for (int y = 0; y < ConsoleWrapper.WindowHeight; y++)
                     {
                         if (y != SpaceshipHeightPlayer1)
-                            TextWriterWhereColor.WriteWhere(" ", 0, y);
+                            buffer.Append(TextWriterWhereColor.RenderWherePlain(" ", 0, y));
                         if (y != SpaceshipHeightPlayer2)
-                            TextWriterWhereColor.WriteWhere(" ", ConsoleWrapper.WindowWidth - 1, y);
+                            buffer.Append(TextWriterWhereColor.RenderWherePlain(" ", ConsoleWrapper.WindowWidth - 1, y));
                     }
 
                     // Move the Player 1 bullets right
                     for (int Bullet = 0; Bullet <= BulletsPlayer1.Count - 1; Bullet++)
                     {
-                        TextWriterWhereColor.WriteWhere(" ", BulletsPlayer1[Bullet].Item1, BulletsPlayer1[Bullet].Item2);
+                        buffer.Append(TextWriterWhereColor.RenderWherePlain(" ", BulletsPlayer1[Bullet].Item1, BulletsPlayer1[Bullet].Item2));
                         int BulletX = BulletsPlayer1[Bullet].Item1 + 1;
                         int BulletY = BulletsPlayer1[Bullet].Item2;
                         BulletsPlayer1[Bullet] = (BulletX, BulletY);
@@ -202,7 +206,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     // Move the Player 2 bullets left
                     for (int Bullet = 0; Bullet <= BulletsPlayer2.Count - 1; Bullet++)
                     {
-                        TextWriterWhereColor.WriteWhere(" ", BulletsPlayer2[Bullet].Item1, BulletsPlayer2[Bullet].Item2);
+                        buffer.Append(TextWriterWhereColor.RenderWherePlain(" ", BulletsPlayer2[Bullet].Item1, BulletsPlayer2[Bullet].Item2));
                         int BulletX = BulletsPlayer2[Bullet].Item1 - 1;
                         int BulletY = BulletsPlayer2[Bullet].Item2;
                         BulletsPlayer2[Bullet] = (BulletX, BulletY);
@@ -211,7 +215,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     // Move the stars left
                     for (int Star = 0; Star <= Stars.Count - 1; Star++)
                     {
-                        TextWriterWhereColor.WriteWhere(" ", Stars[Star].Item1, Stars[Star].Item2);
+                        buffer.Append(TextWriterWhereColor.RenderWherePlain(" ", Stars[Star].Item1, Stars[Star].Item2));
                         int StarX = Stars[Star].Item1 - 1;
                         int StarY = Stars[Star].Item2;
                         Stars[Star] = (StarX, StarY);
@@ -258,16 +262,16 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     }
 
                     // Draw the stars, the bullet, and the spaceship if any of them are updated
-                    DrawSpaceships();
+                    buffer.Append(DrawSpaceships());
                     for (int BulletIndex = BulletsPlayer1.Count - 1; BulletIndex >= 0; BulletIndex -= 1)
                     {
                         var Bullet = BulletsPlayer1[BulletIndex];
-                        DrawBullet(Bullet.Item1, Bullet.Item2);
+                        buffer.Append(DrawBullet(Bullet.Item1, Bullet.Item2));
                     }
                     for (int BulletIndex = BulletsPlayer2.Count - 1; BulletIndex >= 0; BulletIndex -= 1)
                     {
                         var Bullet = BulletsPlayer2[BulletIndex];
-                        DrawBullet(Bullet.Item1, Bullet.Item2);
+                        buffer.Append(DrawBullet(Bullet.Item1, Bullet.Item2));
                     }
                     for (int StarIndex = Stars.Count - 1; StarIndex >= 0; StarIndex -= 1)
                     {
@@ -275,7 +279,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                         char StarSymbol = '*';
                         int StarX = Star.Item1;
                         int StarY = Star.Item2;
-                        TextWriterWhereColor.WriteWhereColor(Convert.ToString(StarSymbol), StarX, StarY, false, ConsoleColors.White);
+                        buffer.Append(TextWriterWhereColor.RenderWhere(Convert.ToString(StarSymbol), StarX, StarY, false, ConsoleColors.White, ConsoleColors.Black));
                     }
 
                     // Check to see if the spaceship is blown up by the opposing spaceship
@@ -301,6 +305,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     }
 
                     // Wait for a few milliseconds
+                    TextWriterColor.WritePlain(buffer.ToString(), false);
                     ThreadManager.SleepNoBlock(ShipDuetSpeed, ShipDuetDrawThread);
                 }
             }
@@ -332,20 +337,24 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             }
         }
 
-        private static void DrawSpaceships()
+        private static string DrawSpaceships()
         {
+            var builder = new StringBuilder();
             char PowerLineSpaceshipP1 = Convert.ToChar(0xE0B0);
             char PowerLineSpaceshipP2 = Convert.ToChar(0xE0B2);
             char SpaceshipSymbolP1 = ShipDuetUsePowerLine ? PowerLineSpaceshipP1 : '>';
             char SpaceshipSymbolP2 = ShipDuetUsePowerLine ? PowerLineSpaceshipP2 : '<';
-            TextWriterWhereColor.WriteWhereColor(Convert.ToString(SpaceshipSymbolP1), 0, SpaceshipHeightPlayer1, false, ConsoleColors.Green);
-            TextWriterWhereColor.WriteWhereColor(Convert.ToString(SpaceshipSymbolP2), ConsoleWrapper.WindowWidth - 1, SpaceshipHeightPlayer2, false, ConsoleColors.DarkGreen);
+            builder.Append(
+                TextWriterWhereColor.RenderWhere(Convert.ToString(SpaceshipSymbolP1), 0, SpaceshipHeightPlayer1, false, ConsoleColors.Green, ConsoleColors.Black) +
+                TextWriterWhereColor.RenderWhere(Convert.ToString(SpaceshipSymbolP2), ConsoleWrapper.WindowWidth - 1, SpaceshipHeightPlayer2, false, ConsoleColors.DarkGreen, ConsoleColors.Black)
+            );
+            return builder.ToString();
         }
 
-        private static void DrawBullet(int BulletX, int BulletY)
+        private static string DrawBullet(int BulletX, int BulletY)
         {
             char BulletSymbol = '-';
-            TextWriterWhereColor.WriteWhereColor(Convert.ToString(BulletSymbol), BulletX, BulletY, false, ConsoleColors.Cyan);
+            return TextWriterWhereColor.RenderWhere(Convert.ToString(BulletSymbol), BulletX, BulletY, false, ConsoleColors.Cyan, ConsoleColors.Black);
         }
 
     }

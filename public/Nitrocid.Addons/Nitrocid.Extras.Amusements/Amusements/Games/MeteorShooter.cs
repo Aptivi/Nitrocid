@@ -28,6 +28,7 @@ using KS.Kernel.Threading;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using Terminaux.Colors;
 using KS.Misc.Screensaver;
+using System.Text;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games
 {
@@ -151,11 +152,14 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             {
                 while (!GameEnded)
                 {
+                    // Buffer
+                    var buffer = new StringBuilder();
+
                     // Clear only the relevant parts
                     for (int y = 0; y < ConsoleWrapper.WindowHeight; y++)
                     {
                         if (y != SpaceshipHeight)
-                            TextWriterWhereColor.WriteWhere(" ", 0, y);
+                            buffer.Append(TextWriterWhereColor.RenderWherePlain(" ", 0, y));
                     }
 
                     // Move the meteors left
@@ -209,16 +213,16 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     }
 
                     // Draw the meteor, the bullet, and the spaceship if any of them are updated
-                    DrawSpaceship();
+                    buffer.Append(DrawSpaceship());
                     for (int MeteorIndex = Meteors.Count - 1; MeteorIndex >= 0; MeteorIndex -= 1)
                     {
                         var Meteor = Meteors[MeteorIndex];
-                        DrawMeteor(Meteor.Item1, Meteor.Item2);
+                        buffer.Append(DrawMeteor(Meteor.Item1, Meteor.Item2));
                     }
                     for (int BulletIndex = Bullets.Count - 1; BulletIndex >= 0; BulletIndex -= 1)
                     {
                         var Bullet = Bullets[BulletIndex];
-                        DrawBullet(Bullet.Item1, Bullet.Item2);
+                        buffer.Append(DrawBullet(Bullet.Item1, Bullet.Item2));
                     }
 
                     // Check to see if the spaceship is blown up
@@ -242,8 +246,8 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                             if (Meteor.Item1 <= Bullet.Item1 & Meteor.Item2 == Bullet.Item2)
                             {
                                 // The meteor crashed! Remove both the bullet and the meteor
-                                TextWriterWhereColor.WriteWhere(" ", Meteor.Item1, Meteor.Item2);
-                                TextWriterWhereColor.WriteWhere(" ", Bullet.Item1, Bullet.Item2);
+                                buffer.Append(TextWriterWhereColor.RenderWherePlain(" ", Meteor.Item1, Meteor.Item2));
+                                buffer.Append(TextWriterWhereColor.RenderWherePlain(" ", Bullet.Item1, Bullet.Item2));
                                 Bullets.RemoveAt(BulletIndex);
                                 Meteors.RemoveAt(MeteorIndex);
                             }
@@ -251,6 +255,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     }
 
                     // Wait for a few milliseconds
+                    TextWriterColor.WritePlain(buffer.ToString(), false);
                     ThreadManager.SleepNoBlock(MeteorSpeed, MeteorDrawThread);
                 }
             }
@@ -279,23 +284,23 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             }
         }
 
-        private static void DrawSpaceship()
+        private static string DrawSpaceship()
         {
             char PowerLineSpaceship = Convert.ToChar(0xE0B0);
             char SpaceshipSymbol = MeteorUsePowerLine ? PowerLineSpaceship : '>';
-            TextWriterWhereColor.WriteWhereColor(Convert.ToString(SpaceshipSymbol), 0, SpaceshipHeight, false, ConsoleColors.Green);
+            return TextWriterWhereColor.RenderWhere(Convert.ToString(SpaceshipSymbol), 0, SpaceshipHeight, false, ConsoleColors.Green, ConsoleColors.Black);
         }
 
-        private static void DrawMeteor(int MeteorX, int MeteorY)
+        private static string DrawMeteor(int MeteorX, int MeteorY)
         {
             char MeteorSymbol = '*';
-            TextWriterWhereColor.WriteWhereColor(Convert.ToString(MeteorSymbol), MeteorX, MeteorY, false, ConsoleColors.Red);
+            return TextWriterWhereColor.RenderWhere(Convert.ToString(MeteorSymbol), MeteorX, MeteorY, false, ConsoleColors.Red, ConsoleColors.Black);
         }
 
-        private static void DrawBullet(int BulletX, int BulletY)
+        private static string DrawBullet(int BulletX, int BulletY)
         {
             char BulletSymbol = '-';
-            TextWriterWhereColor.WriteWhereColor(Convert.ToString(BulletSymbol), BulletX, BulletY, false, ConsoleColors.Cyan);
+            return TextWriterWhereColor.RenderWhere(Convert.ToString(BulletSymbol), BulletX, BulletY, false, ConsoleColors.Cyan, ConsoleColors.Black);
         }
 
     }
