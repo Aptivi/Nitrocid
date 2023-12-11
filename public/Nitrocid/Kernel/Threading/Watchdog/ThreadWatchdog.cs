@@ -31,6 +31,14 @@ namespace KS.Kernel.Threading.Watchdog
     internal static class ThreadWatchdog
     {
         private static readonly KernelThread watchdogThread = new("Kernel thread watchdog thread", true, Watch) { isCritical = true };
+        private static readonly string[] whitelistedThreads =
+        [
+            "Console Resize Listener Thread",
+            "Remote Debug Chat Thread",
+            "Remote Debug Thread",
+            "Screensaver timeout thread",
+            "RPC Thread"
+        ];
 
         internal static void StartWatchdog()
         {
@@ -46,7 +54,7 @@ namespace KS.Kernel.Threading.Watchdog
             var threads = GetCriticalThreads();
 
             // Check to see if all the critical threads have started
-            var unstartedCriticals = threads.Where((thread) => !thread.IsAlive && thread.Name != "Console Resize Listener Thread").ToArray();
+            var unstartedCriticals = threads.Where((thread) => !thread.IsAlive && !whitelistedThreads.Contains(thread.Name)).ToArray();
             if (unstartedCriticals.Length > 0)
                 KernelPanic.KernelError(KernelErrorLevel.U, true, 5, Translate.DoTranslation("Kernel thread supervisor detected {0} critical threads that haven't started yet.") + " [{1}]", null, unstartedCriticals.Length, string.Join(", ", unstartedCriticals.Select((thread) => $"{thread.Name} [{thread.BaseThread.ThreadState}]")));
         }

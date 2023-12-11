@@ -46,7 +46,7 @@ namespace KS.Kernel.Debugging.RemoteDebug.RemoteChat
         internal static List<RemoteDebugDevice> DebugChatDevices = [];
         internal static Socket RDebugChatClient;
         internal static TcpListener DebugChatTCP;
-        internal static KernelThread RDebugChatThread = new("Remote Debug Chat Thread", true, StartRDebugger);
+        internal static KernelThread RDebugChatThread = new("Remote Debug Chat Thread", true, StartRDebugger) { isCritical = true };
         internal static int debugChatPort = 3015;
         private static readonly AutoResetEvent RDebugChatBailer = new(false);
 
