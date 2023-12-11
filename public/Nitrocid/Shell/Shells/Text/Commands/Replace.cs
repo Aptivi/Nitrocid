@@ -18,7 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Files.Editors.TextEdit;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
@@ -37,7 +37,7 @@ namespace KS.Shell.Shells.Text.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             TextEditTools.Replace(parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
-            TextWriterColor.WriteKernelColor(Translate.DoTranslation("String replaced."), true, KernelColorType.Success);
+            TextWriters.Write(Translate.DoTranslation("String replaced."), true, KernelColorType.Success);
             return 0;
         }
 

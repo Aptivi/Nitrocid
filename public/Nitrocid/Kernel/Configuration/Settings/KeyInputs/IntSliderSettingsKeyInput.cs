@@ -21,8 +21,7 @@ using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Inputs.Styles.Infobox;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.ConsoleBase.Writers.FancyWriters;
+using KS.ConsoleBase.Writers;
 using KS.Kernel.Configuration.Instances;
 using KS.Kernel.Debugging;
 using KS.Languages;
@@ -43,7 +42,7 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
             string keyName = Translate.DoTranslation(key.Name);
             string keyDesc = Translate.DoTranslation(key.Description);
             string finalSection = SettingsApp.RenderHeader(keyName, keyDesc);
-            TextWriterColor.WriteKernelColor(finalSection, true, KernelColorType.Question);
+            TextWriters.Write(finalSection, true, KernelColorType.Question);
             while (PressedKey.Key != ConsoleKey.Enter)
             {
                 // Show the current value

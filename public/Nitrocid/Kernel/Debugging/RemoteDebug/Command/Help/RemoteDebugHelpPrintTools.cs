@@ -18,7 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Languages;
 using KS.Shell.ShellBase.Help;
 using System;
@@ -68,7 +68,7 @@ namespace KS.Kernel.Debugging.RemoteDebug.Command.Help
             if (!commandList.ContainsKey(command))
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "We found no help! {0}", command);
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("No help for command \"{0}\"."), true, KernelColorType.Error, command);
+                TextWriters.Write(Translate.DoTranslation("No help for command \"{0}\"."), true, KernelColorType.Error, command);
                 return;
             }
 

@@ -20,7 +20,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Files;
 using KS.Files.Operations;
 using KS.Files.Operations.Querying;
@@ -62,7 +62,7 @@ namespace KS.Shell.Shells.UESH.Commands
             AreAllInputsText = InputStates.Count == InputStates.Where((binary) => !binary).Count();
             if (!AreAllInputsBinary && !AreAllInputsText)
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Can't combine a mix of text and binary files."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("Can't combine a mix of text and binary files."), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.Filesystem;
             }
 

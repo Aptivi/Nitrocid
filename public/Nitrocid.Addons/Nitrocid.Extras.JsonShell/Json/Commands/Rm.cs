@@ -18,7 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
@@ -44,12 +44,12 @@ namespace Nitrocid.Extras.JsonShell.Json.Commands
             }
             catch (KernelException kex)
             {
-                TextWriterColor.WriteKernelColor(kex.Message, KernelColorType.Error);
+                TextWriters.Write(kex.Message, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.JsonEditor;
             }
             catch (Exception ex)
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("The JSON shell failed to remove an item.") + $" {ex.Message}", KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("The JSON shell failed to remove an item.") + $" {ex.Message}", KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.JsonEditor;
             }
             return 0;

@@ -18,7 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Files.Extensions;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
@@ -38,12 +38,12 @@ namespace KS.Shell.Shells.UESH.Commands
         {
             if (!ExtensionHandlerTools.IsHandlerRegistered(parameters.ArgumentsList[0]))
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("No such extension."), KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("No such extension."), KernelColorType.Error);
                 return 23;
             }
             if (!ExtensionHandlerTools.IsHandlerRegisteredSpecific(parameters.ArgumentsList[0], parameters.ArgumentsList[1]))
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("No such implementer."), KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("No such implementer."), KernelColorType.Error);
                 return 24;
             }
             ExtensionHandlerTools.SetExtensionHandler(parameters.ArgumentsList[0], parameters.ArgumentsList[1]);

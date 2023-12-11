@@ -91,21 +91,6 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="Margin">Margin offset</param>
         /// <param name="SeparateRows">Separate the rows?</param>
         /// <param name="CellOptions">Specifies the cell options</param>
-        /// <param name="colorTypeSeparatorForeground">A type of colors that will be changed for the separator foreground color.</param>
-        /// <param name="colorTypeHeaderForeground">A type of colors that will be changed for the header foreground color.</param>
-        /// <param name="colorTypeValueForeground">A type of colors that will be changed for the value foreground color.</param>
-        /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
-        public static void WriteTable(string[] Headers, string[,] Rows, int Margin, KernelColorType colorTypeSeparatorForeground, KernelColorType colorTypeHeaderForeground, KernelColorType colorTypeValueForeground, KernelColorType colorTypeBackground, bool SeparateRows = true, List<CellOptions> CellOptions = null) =>
-            WriteTable(Headers, Rows, Margin, KernelColorTools.GetColor(colorTypeSeparatorForeground), KernelColorTools.GetColor(colorTypeHeaderForeground), KernelColorTools.GetColor(colorTypeValueForeground), KernelColorTools.GetColor(colorTypeBackground), SeparateRows, CellOptions);
-
-        /// <summary>
-        /// Draw a table with text
-        /// </summary>
-        /// <param name="Headers">Headers to insert to the table.</param>
-        /// <param name="Rows">Rows to insert to the table.</param>
-        /// <param name="Margin">Margin offset</param>
-        /// <param name="SeparateRows">Separate the rows?</param>
-        /// <param name="CellOptions">Specifies the cell options</param>
         /// <param name="SeparatorForegroundColor">A separator foreground color that will be changed to.</param>
         /// <param name="HeaderForegroundColor">A header foreground color that will be changed to.</param>
         /// <param name="ValueForegroundColor">A value foreground color that will be changed to.</param>

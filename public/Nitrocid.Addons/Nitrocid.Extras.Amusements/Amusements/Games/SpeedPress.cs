@@ -20,6 +20,7 @@
 using System;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
+using KS.ConsoleBase.Writers;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Exceptions;
 using KS.Languages;
@@ -131,7 +132,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             }
 
             // Enter the loop until the user presses ESC
-            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Press ESC to exit.") + CharManager.NewLine, true, KernelColorType.Tip);
+            TextWriters.Write(Translate.DoTranslation("Press ESC to exit.") + CharManager.NewLine, true, KernelColorType.Tip);
             while (WrittenChar.Key != ConsoleKey.Escape)
             {
                 // Select a random character
@@ -141,24 +142,24 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 try
                 {
                     TextWriterColor.Write(Translate.DoTranslation("Current character:") + " {0}", SelectedChar);
-                    TextWriterColor.WriteKernelColor("> ", false, KernelColorType.Input);
+                    TextWriters.Write("> ", false, KernelColorType.Input);
                     WrittenChar = Input.ReadKeyTimeout(false, TimeSpan.FromMilliseconds(SpeedTimeout));
                     TextWriterColor.Write();
 
                     // Check to see if the user has pressed the correct character
                     if (WrittenChar.KeyChar == SelectedChar)
                     {
-                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("You've pressed the right character!"), true, KernelColorType.Success);
+                        TextWriters.Write(Translate.DoTranslation("You've pressed the right character!"), true, KernelColorType.Success);
                     }
                     else if (WrittenChar.Key != ConsoleKey.Escape)
                     {
-                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("You've pressed the wrong character."), true, KernelColorType.Warning);
+                        TextWriters.Write(Translate.DoTranslation("You've pressed the wrong character."), true, KernelColorType.Warning);
                     }
                 }
                 catch (KernelException kex) when (kex.ExceptionType == KernelExceptionType.ConsoleReadTimeout)
                 {
                     TextWriterColor.Write();
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Character not pressed on time."), true, KernelColorType.Warning);
+                    TextWriters.Write(Translate.DoTranslation("Character not pressed on time."), true, KernelColorType.Warning);
                 }
             }
         }

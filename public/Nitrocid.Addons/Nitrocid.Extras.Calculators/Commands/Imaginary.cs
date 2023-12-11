@@ -18,6 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
@@ -40,12 +41,12 @@ namespace Nitrocid.Extras.Calculators.Commands
             // Check both the real and the imaginary numbers for verification
             if (!double.TryParse(parameters.ArgumentsList[0], out double Real))
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("The real number is not valid."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("The real number is not valid."), true, KernelColorType.Error);
                 return 2;
             }
             if (!double.TryParse(parameters.ArgumentsList[1], out double Imaginary))
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("The imaginary number is not valid."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("The imaginary number is not valid."), true, KernelColorType.Error);
                 return 2;
             }
 
@@ -69,8 +70,8 @@ namespace Nitrocid.Extras.Calculators.Commands
 
             // Now, write the result in both the exponentional format (Z = r * (e)^{angle}i)
             //                           and the triangular format    (Z = r (cos {angle} + i sin {angle})
-            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Exponential:") + " Z = {0} * (e)^{1}i", true, KernelColorType.Success, Radius, AngleSin);
-            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Triangular:") + " Z = {0} * (cos ({1}) + i sin ({2}))", true, KernelColorType.Success, Radius, AngleCos, AngleSin);
+            TextWriters.Write(Translate.DoTranslation("Exponential:") + " Z = {0} * (e)^{1}i", true, KernelColorType.Success, Radius, AngleSin);
+            TextWriters.Write(Translate.DoTranslation("Triangular:") + " Z = {0} * (cos ({1}) + i sin ({2}))", true, KernelColorType.Success, Radius, AngleCos, AngleSin);
             return 0;
         }
     }

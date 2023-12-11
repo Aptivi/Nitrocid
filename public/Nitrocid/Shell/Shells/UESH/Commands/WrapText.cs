@@ -18,7 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Files.Operations;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
@@ -43,7 +43,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 string parsedColumns = SwitchManager.GetSwitchValue(parameters.SwitchesList, "-columns");
                 if (!int.TryParse(parsedColumns, out columns))
                 {
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Invalid number of columns."), true, KernelColorType.Error);
+                    TextWriters.Write(Translate.DoTranslation("Invalid number of columns."), true, KernelColorType.Error);
                     return 20;
                 }
             }

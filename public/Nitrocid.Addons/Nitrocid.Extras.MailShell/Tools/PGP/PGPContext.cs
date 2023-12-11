@@ -19,7 +19,7 @@
 
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Languages;
 using KS.Misc.Text.Probers.Placeholder;
 using MimeKit.Cryptography;
@@ -42,11 +42,11 @@ namespace Nitrocid.Extras.MailShell.Tools.PGP
         {
             if (!string.IsNullOrWhiteSpace(MailLogin.GPGPromptStyle))
             {
-                TextWriterColor.WriteKernelColor(PlaceParse.ProbePlaces(MailLogin.GPGPromptStyle), false, KernelColorType.Input, key.KeyId);
+                TextWriters.Write(PlaceParse.ProbePlaces(MailLogin.GPGPromptStyle), false, KernelColorType.Input, key.KeyId);
             }
             else
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Write password for key ID {0}") + ": ", false, KernelColorType.Input, key.KeyId);
+                TextWriters.Write(Translate.DoTranslation("Write password for key ID {0}") + ": ", false, KernelColorType.Input, key.KeyId);
             }
             string Password = Input.ReadLineNoInput();
             return Password;

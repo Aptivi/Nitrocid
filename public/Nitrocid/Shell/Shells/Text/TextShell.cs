@@ -20,7 +20,7 @@
 using System;
 using System.Threading;
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Files.Editors.TextEdit;
 using KS.Kernel.Debugging;
 using KS.Languages;
@@ -53,7 +53,7 @@ namespace KS.Shell.Shells.Text
             }
             else
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("File not specified. Exiting shell..."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("File not specified. Exiting shell..."), true, KernelColorType.Error);
                 Bail = true;
             }
 
@@ -63,7 +63,7 @@ namespace KS.Shell.Shells.Text
                 DebugWriter.WriteDebug(DebugLevel.W, "File not open yet. Trying to open {0}...", FilePath);
                 if (!TextEditTools.OpenTextFile(FilePath))
                 {
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Failed to open file. Exiting shell..."), true, KernelColorType.Error);
+                    TextWriters.Write(Translate.DoTranslation("Failed to open file. Exiting shell..."), true, KernelColorType.Error);
                     Bail = true;
                 }
                 TextEditShellCommon.AutoSave.Start();
@@ -85,7 +85,7 @@ namespace KS.Shell.Shells.Text
                 catch (Exception ex)
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("There was an error in the shell.") + CharManager.NewLine + "Error {0}: {1}", true, KernelColorType.Error, ex.GetType().FullName, ex.Message);
+                    TextWriters.Write(Translate.DoTranslation("There was an error in the shell.") + CharManager.NewLine + "Error {0}: {1}", true, KernelColorType.Error, ex.GetType().FullName, ex.Message);
                     continue;
                 }
             }

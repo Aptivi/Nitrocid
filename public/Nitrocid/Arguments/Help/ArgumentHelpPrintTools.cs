@@ -18,6 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Debugging;
 using KS.Languages;
@@ -48,8 +49,8 @@ namespace KS.Arguments.Help
             {
                 string entry = argumentList[arg].GetTranslatedHelpEntry();
                 DebugWriter.WriteDebug(DebugLevel.I, "Help entry for {0}: {1}", arg, entry);
-                TextWriterColor.WriteKernelColor("- {0}: ", false, KernelColorType.ListEntry, arg);
-                TextWriterColor.WriteKernelColor("{0}", true, KernelColorType.ListValue, entry);
+                TextWriters.Write("- {0}: ", false, KernelColorType.ListEntry, arg);
+                TextWriters.Write("{0}", true, KernelColorType.ListValue, entry);
             }
         }
 
@@ -57,7 +58,7 @@ namespace KS.Arguments.Help
         {
             var argumentList = GetArguments();
             DebugWriter.WriteDebug(DebugLevel.I, "Simple help is printing {0} commands...", argumentList.Count);
-            TextWriterColor.WriteKernelColor(string.Join(", ", argumentList.Keys), false, KernelColorType.ListEntry);
+            TextWriters.Write(string.Join(", ", argumentList.Keys), false, KernelColorType.ListEntry);
         }
 
         internal static void ShowHelpUsage(string argument)
@@ -67,7 +68,7 @@ namespace KS.Arguments.Help
             if (!argumentList.TryGetValue(argument, out ArgumentInfo argInfo))
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "We found no help! {0}", argument);
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("No help for argument \"{0}\"."), true, KernelColorType.Error, argument);
+                TextWriters.Write(Translate.DoTranslation("No help for argument \"{0}\"."), true, KernelColorType.Error, argument);
                 return;
             }
 
@@ -91,7 +92,7 @@ namespace KS.Arguments.Help
                 if (Arguments.Length != 0 || Switches.Length != 0)
                 {
                     // Print the usage information holder
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Usage:") + $" {argument}", false, KernelColorType.ListEntry);
+                    TextWriters.Write(Translate.DoTranslation("Usage:") + $" {argument}", false, KernelColorType.ListEntry);
 
                     // Enumerate through the available switches first
                     foreach (var Switch in Switches)
@@ -100,7 +101,7 @@ namespace KS.Arguments.Help
                         string switchName = Switch.SwitchName;
                         string renderedSwitch = required ? $" <-{switchName}[=value]>" : $" [-{switchName}[=value]]";
                         DebugWriter.WriteDebug(DebugLevel.I, "Rendered switch: {0}", renderedSwitch);
-                        TextWriterColor.WriteKernelColor(renderedSwitch, false, KernelColorType.ListEntry);
+                        TextWriters.Write(renderedSwitch, false, KernelColorType.ListEntry);
                     }
 
                     // Enumerate through the available arguments
@@ -111,19 +112,19 @@ namespace KS.Arguments.Help
                         bool required = argumentInfo.ArgumentsRequired && queriedArgs <= howManyRequired;
                         string renderedArgument = required ? $" <{argumentPart.ArgumentExpression}>" : $" [{argumentPart.ArgumentExpression}]";
                         DebugWriter.WriteDebug(DebugLevel.I, "Rendered argument: {0}", renderedArgument);
-                        TextWriterColor.WriteKernelColor(renderedArgument, false, KernelColorType.ListEntry);
+                        TextWriters.Write(renderedArgument, false, KernelColorType.ListEntry);
                     }
                     TextWriterColor.Write();
                 }
                 else
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Usage:") + $" {argument}", true, KernelColorType.ListEntry);
+                    TextWriters.Write(Translate.DoTranslation("Usage:") + $" {argument}", true, KernelColorType.ListEntry);
             }
 
             // Write the description now
             DebugWriter.WriteDebug(DebugLevel.I, "Definition: {0}", HelpDefinition);
             if (string.IsNullOrEmpty(HelpDefinition))
                 HelpDefinition = Translate.DoTranslation("No argument help description");
-            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Description:") + $" {HelpDefinition}", true, KernelColorType.ListValue);
+            TextWriters.Write(Translate.DoTranslation("Description:") + $" {HelpDefinition}", true, KernelColorType.ListValue);
             argInfo.ArgumentBase.HelpHelper();
         }
     }

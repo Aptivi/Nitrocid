@@ -24,6 +24,7 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Inputs.Styles.Selection;
 using KS.ConsoleBase.Themes;
+using KS.ConsoleBase.Writers;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files.Folders;
 using KS.Kernel.Debugging;
@@ -95,7 +96,7 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
                 {
                     // Save theme to another directory...
                     DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for directory name...");
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Specify directory to save theme to:") + " [{0}] ", false, KernelColorType.Input, CurrentDirectory.CurrentDir);
+                    TextWriters.Write(Translate.DoTranslation("Specify directory to save theme to:") + " [{0}] ", false, KernelColorType.Input, CurrentDirectory.CurrentDir);
                     string DirectoryName = Input.ReadLine();
                     DirectoryName = string.IsNullOrWhiteSpace(DirectoryName) ? CurrentDirectory.CurrentDir : DirectoryName;
                     DebugWriter.WriteDebug(DebugLevel.I, "Got directory name {0}.", DirectoryName);
@@ -105,7 +106,7 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
                 {
                     // Save theme to current directory as...
                     DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for theme name...");
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Specify theme name:") + " [{0}] ", false, KernelColorType.Input, ThemeName);
+                    TextWriters.Write(Translate.DoTranslation("Specify theme name:") + " [{0}] ", false, KernelColorType.Input, ThemeName);
                     string AltThemeName = Input.ReadLine();
                     AltThemeName = string.IsNullOrWhiteSpace(AltThemeName) ? ThemeName : AltThemeName;
                     DebugWriter.WriteDebug(DebugLevel.I, "Got theme name {0}.", AltThemeName);
@@ -115,12 +116,12 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
                 {
                     // Save theme to another directory as...
                     DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for theme and directory name...");
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Specify directory to save theme to:") + " [{0}] ", false, KernelColorType.Input, CurrentDirectory.CurrentDir);
+                    TextWriters.Write(Translate.DoTranslation("Specify directory to save theme to:") + " [{0}] ", false, KernelColorType.Input, CurrentDirectory.CurrentDir);
                     string DirectoryName = Input.ReadLine();
                     DirectoryName = string.IsNullOrWhiteSpace(DirectoryName) ? CurrentDirectory.CurrentDir : DirectoryName;
                     DebugWriter.WriteDebug(DebugLevel.I, "Got directory name {0}.", DirectoryName);
                     DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for theme name...");
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Specify theme name:") + " [{0}] ", false, KernelColorType.Input, ThemeName);
+                    TextWriters.Write(Translate.DoTranslation("Specify theme name:") + " [{0}] ", false, KernelColorType.Input, ThemeName);
                     string AltThemeName = Input.ReadLine();
                     AltThemeName = string.IsNullOrWhiteSpace(AltThemeName) ? ThemeName : AltThemeName;
                     DebugWriter.WriteDebug(DebugLevel.I, "Got theme name {0}.", AltThemeName);
@@ -130,7 +131,7 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
                 {
                     // Load Theme From File...
                     DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for theme name...");
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Specify theme file name wihout the .json extension:") + " ", false, KernelColorType.Input);
+                    TextWriters.Write(Translate.DoTranslation("Specify theme file name wihout the .json extension:") + " ", false, KernelColorType.Input);
                     string AltThemeName = Input.ReadLine() + ".json";
                     DebugWriter.WriteDebug(DebugLevel.I, "Got theme name {0}.", AltThemeName);
                     ThemeStudioTools.LoadThemeFromFile(AltThemeName);
@@ -139,7 +140,7 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
                 {
                     // Load Theme From Prebuilt Themes...
                     DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for theme name...");
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Specify theme name:") + " ", false, KernelColorType.Input);
+                    TextWriters.Write(Translate.DoTranslation("Specify theme name:") + " ", false, KernelColorType.Input);
                     string AltThemeName = Input.ReadLine();
                     DebugWriter.WriteDebug(DebugLevel.I, "Got theme name {0}.", AltThemeName);
                     ThemeStudioTools.LoadThemeFromResource(AltThemeName);

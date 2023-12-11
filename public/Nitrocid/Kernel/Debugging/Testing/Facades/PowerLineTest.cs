@@ -22,6 +22,7 @@ using System;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using Terminaux.Colors;
+using KS.ConsoleBase.Writers;
 
 namespace KS.Kernel.Debugging.Testing.Facades
 {
@@ -33,7 +34,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
             char TransitionChar = Convert.ToChar(0xE0B0);
             char PadlockChar = Convert.ToChar(0xE0A2);
             char GitBranchChar = Convert.ToChar(0xE0A0);
-            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Be sure to use a console font supporting PowerLine glyphs, or the output may not render properly. We recommend") + " Cascadia Code/Mono PL", true, KernelColorType.Warning);
+            TextWriters.Write(Translate.DoTranslation("Be sure to use a console font supporting PowerLine glyphs, or the output may not render properly. We recommend") + " Cascadia Code/Mono PL", true, KernelColorType.Warning);
             TextWriterColor.WriteColorBack(" One ", false, new Color(ConsoleColors.Black), new Color(85, 255, 255));
             TextWriterColor.WriteColorBack(Convert.ToString(TransitionChar), false, new Color(85, 255, 255), new Color(255, 85, 255));
             TextWriterColor.WriteColorBack(" Two ", false, new Color(ConsoleColors.Black), new Color(255, 85, 255));

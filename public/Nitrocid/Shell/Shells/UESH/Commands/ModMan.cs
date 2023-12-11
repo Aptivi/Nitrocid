@@ -20,7 +20,6 @@
 using System.IO;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Files;
 using KS.Files.Operations.Querying;
 using KS.Files.Paths;
@@ -31,6 +30,8 @@ using KS.Modifications;
 using KS.Security.Permissions;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Help;
+using KS.ConsoleBase.Writers.FancyWriters;
+using KS.ConsoleBase.Writers;
 
 namespace KS.Shell.Shells.UESH.Commands
 {
@@ -71,13 +72,13 @@ namespace KS.Shell.Shells.UESH.Commands
                                 TargetModPath = FilesystemTools.NeutralizePath(TargetMod, PathsManagement.GetKernelPath(KernelPathType.Mods));
                                 if (!(Parsing.TryParsePath(TargetModPath) && Checking.FileExists(TargetModPath)))
                                 {
-                                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Mod not found or file has invalid characters."), true, KernelColorType.Error);
+                                    TextWriters.Write(Translate.DoTranslation("Mod not found or file has invalid characters."), true, KernelColorType.Error);
                                     return 10000 + (int)KernelExceptionType.NoSuchMod;
                                 }
                             }
                             else
                             {
-                                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Mod file is not specified."), true, KernelColorType.Error);
+                                TextWriters.Write(Translate.DoTranslation("Mod file is not specified."), true, KernelColorType.Error);
                                 return 10000 + (int)KernelExceptionType.NoSuchMod;
                             }
 
@@ -113,14 +114,14 @@ namespace KS.Shell.Shells.UESH.Commands
                                 if (ModManager.Mods[script].ModFilePath == TargetModPath)
                                 {
                                     SeparatorWriterColor.WriteSeparator(script, true);
-                                    TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Mod name:") + " ", false, KernelColorType.ListEntry);
-                                    TextWriterColor.WriteKernelColor(ModManager.Mods[script].ModName, true, KernelColorType.ListValue);
-                                    TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Mod file name:") + " ", false, KernelColorType.ListEntry);
-                                    TextWriterColor.WriteKernelColor(ModManager.Mods[script].ModFileName, true, KernelColorType.ListValue);
-                                    TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Mod file path:") + " ", false, KernelColorType.ListEntry);
-                                    TextWriterColor.WriteKernelColor(ModManager.Mods[script].ModFilePath, true, KernelColorType.ListValue);
-                                    TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Mod version:") + " ", false, KernelColorType.ListEntry);
-                                    TextWriterColor.WriteKernelColor(ModManager.Mods[script].ModVersion, true, KernelColorType.ListValue);
+                                    TextWriters.Write("- " + Translate.DoTranslation("Mod name:") + " ", false, KernelColorType.ListEntry);
+                                    TextWriters.Write(ModManager.Mods[script].ModName, true, KernelColorType.ListValue);
+                                    TextWriters.Write("- " + Translate.DoTranslation("Mod file name:") + " ", false, KernelColorType.ListEntry);
+                                    TextWriters.Write(ModManager.Mods[script].ModFileName, true, KernelColorType.ListValue);
+                                    TextWriters.Write("- " + Translate.DoTranslation("Mod file path:") + " ", false, KernelColorType.ListEntry);
+                                    TextWriters.Write(ModManager.Mods[script].ModFilePath, true, KernelColorType.ListValue);
+                                    TextWriters.Write("- " + Translate.DoTranslation("Mod version:") + " ", false, KernelColorType.ListEntry);
+                                    TextWriters.Write(ModManager.Mods[script].ModVersion, true, KernelColorType.ListValue);
                                 }
                             }
 
@@ -146,14 +147,14 @@ namespace KS.Shell.Shells.UESH.Commands
                             foreach (string Mod in ModManager.ListMods(ModListTerm).Keys)
                             {
                                 SeparatorWriterColor.WriteSeparator(Mod, true);
-                                TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Mod name:") + " ", false, KernelColorType.ListEntry);
-                                TextWriterColor.WriteKernelColor(ModManager.Mods[Mod].ModName, true, KernelColorType.ListValue);
-                                TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Mod file name:") + " ", false, KernelColorType.ListEntry);
-                                TextWriterColor.WriteKernelColor(ModManager.Mods[Mod].ModFileName, true, KernelColorType.ListValue);
-                                TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Mod file path:") + " ", false, KernelColorType.ListEntry);
-                                TextWriterColor.WriteKernelColor(ModManager.Mods[Mod].ModFilePath, true, KernelColorType.ListValue);
-                                TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Mod version:") + " ", false, KernelColorType.ListEntry);
-                                TextWriterColor.WriteKernelColor(ModManager.Mods[Mod].ModVersion, true, KernelColorType.ListValue);
+                                TextWriters.Write("- " + Translate.DoTranslation("Mod name:") + " ", false, KernelColorType.ListEntry);
+                                TextWriters.Write(ModManager.Mods[Mod].ModName, true, KernelColorType.ListValue);
+                                TextWriters.Write("- " + Translate.DoTranslation("Mod file name:") + " ", false, KernelColorType.ListEntry);
+                                TextWriters.Write(ModManager.Mods[Mod].ModFileName, true, KernelColorType.ListValue);
+                                TextWriters.Write("- " + Translate.DoTranslation("Mod file path:") + " ", false, KernelColorType.ListEntry);
+                                TextWriters.Write(ModManager.Mods[Mod].ModFilePath, true, KernelColorType.ListValue);
+                                TextWriters.Write("- " + Translate.DoTranslation("Mod version:") + " ", false, KernelColorType.ListEntry);
+                                TextWriters.Write(ModManager.Mods[Mod].ModVersion, true, KernelColorType.ListValue);
                             }
 
                             break;
@@ -176,7 +177,7 @@ namespace KS.Shell.Shells.UESH.Commands
 
                     default:
                         {
-                            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Invalid command {0}. Check the usage below:"), true, KernelColorType.Error, CommandMode);
+                            TextWriters.Write(Translate.DoTranslation("Invalid command {0}. Check the usage below:"), true, KernelColorType.Error, CommandMode);
                             HelpPrint.ShowHelp("modman");
                             return 10000 + (int)KernelExceptionType.ModManagement;
                         }
@@ -184,7 +185,7 @@ namespace KS.Shell.Shells.UESH.Commands
             }
             else
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Mod management is disabled in safe mode."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("Mod management is disabled in safe mode."), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.ModManagement;
             }
             return 0;

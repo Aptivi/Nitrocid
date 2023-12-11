@@ -23,6 +23,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Drivers;
 using KS.Drivers.Encryption;
@@ -96,7 +97,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 }
                 else
                 {
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Invalid encryption algorithm."), true, KernelColorType.Error);
+                    TextWriters.Write(Translate.DoTranslation("Invalid encryption algorithm."), true, KernelColorType.Error);
                     return 10000 + (int)KernelExceptionType.Encryption;
                 }
                 if (!string.IsNullOrEmpty(@out))
@@ -109,7 +110,7 @@ namespace KS.Shell.Shells.UESH.Commands
             }
             else
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("{0} is not found."), true, KernelColorType.Error, file);
+                TextWriters.Write(Translate.DoTranslation("{0} is not found."), true, KernelColorType.Error, file);
                 return 10000 + (int)KernelExceptionType.Encryption;
             }
         }

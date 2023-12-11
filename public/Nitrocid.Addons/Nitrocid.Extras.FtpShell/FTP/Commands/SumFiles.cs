@@ -20,7 +20,7 @@
 using System;
 using FluentFTP;
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
@@ -48,14 +48,14 @@ namespace Nitrocid.Extras.FtpShell.FTP.Commands
                 var HashResults = FTPHashing.FTPGetHashes(RemoteDirectory, (FtpHashAlgorithm)Convert.ToInt32(Enum.Parse(typeof(FtpHashAlgorithm), Hash)));
                 foreach (string Filename in HashResults.Keys)
                 {
-                    TextWriterColor.WriteKernelColor("- " + Filename + ": ", false, KernelColorType.ListEntry);
-                    TextWriterColor.WriteKernelColor(HashResults[Filename].Value, true, KernelColorType.ListValue);
+                    TextWriters.Write("- " + Filename + ": ", false, KernelColorType.ListEntry);
+                    TextWriters.Write(HashResults[Filename].Value, true, KernelColorType.ListValue);
                 }
                 return 0;
             }
             else
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Invalid encryption algorithm."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("Invalid encryption algorithm."), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.FTPFilesystem;
             }
         }

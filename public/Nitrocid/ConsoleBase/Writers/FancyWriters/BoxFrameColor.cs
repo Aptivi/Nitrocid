@@ -94,40 +94,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                         BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
                         BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
                         BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        KernelColorType.Separator, KernelColorType.Background);
-
-        /// <summary>
-        /// Writes the box frame plainly
-        /// </summary>
-        /// <param name="Left">Where to place the box frame horizontally? Please note that this value comes from the upper left corner, which is an exterior position.</param>
-        /// <param name="Top">Where to place the box frame vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
-        /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
-        /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
-        /// <param name="BoxFrameColor">BoxFrame color from Nitrocid KS's <see cref="KernelColorType"/></param>
-        public static void WriteBoxFrame(int Left, int Top, int InteriorWidth, int InteriorHeight, KernelColorType BoxFrameColor) =>
-            WriteBoxFrame(Left, Top, InteriorWidth, InteriorHeight,
-                        BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
-                        BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
-                        BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
-                        BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        BoxFrameColor, KernelColorType.Background);
-
-        /// <summary>
-        /// Writes the box frame plainly
-        /// </summary>
-        /// <param name="Left">Where to place the box frame horizontally? Please note that this value comes from the upper left corner, which is an exterior position.</param>
-        /// <param name="Top">Where to place the box frame vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
-        /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
-        /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
-        /// <param name="BoxFrameColor">BoxFrame color from Nitrocid KS's <see cref="KernelColorType"/></param>
-        /// <param name="BackgroundColor">BoxFrame background color from Nitrocid KS's <see cref="KernelColorType"/></param>
-        public static void WriteBoxFrame(int Left, int Top, int InteriorWidth, int InteriorHeight, KernelColorType BoxFrameColor, KernelColorType BackgroundColor) =>
-            WriteBoxFrame(Left, Top, InteriorWidth, InteriorHeight,
-                        BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
-                        BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
-                        BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
-                        BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        BoxFrameColor, BackgroundColor);
+                        KernelColorTools.GetColor(KernelColorType.Separator), KernelColorTools.GetColor(KernelColorType.Background));
 
         /// <summary>
         /// Writes the box frame plainly
@@ -213,64 +180,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         public static void WriteBoxFrame(int Left, int Top, int InteriorWidth, int InteriorHeight,
                                        char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar) =>
-            WriteBoxFrame(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, KernelColorType.Separator, KernelColorType.Background);
-
-        /// <summary>
-        /// Writes the box frame plainly
-        /// </summary>
-        /// <param name="Left">Where to place the box frame horizontally? Please note that this value comes from the upper left corner, which is an exterior position.</param>
-        /// <param name="Top">Where to place the box frame vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
-        /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
-        /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
-        /// <param name="UpperLeftCornerChar">Upper left corner character for box frame</param>
-        /// <param name="LowerLeftCornerChar">Lower left corner character for box frame</param>
-        /// <param name="UpperRightCornerChar">Upper right corner character for box frame</param>
-        /// <param name="LowerRightCornerChar">Lower right corner character for box frame</param>
-        /// <param name="UpperFrameChar">Upper frame character for box frame</param>
-        /// <param name="LowerFrameChar">Lower frame character for box frame</param>
-        /// <param name="LeftFrameChar">Left frame character for box frame</param>
-        /// <param name="RightFrameChar">Right frame character for box frame</param>
-        /// <param name="BoxFrameColor">BoxFrame color from Nitrocid KS's <see cref="KernelColorType"/></param>
-        public static void WriteBoxFrame(int Left, int Top, int InteriorWidth, int InteriorHeight,
-                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
-                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-                                       KernelColorType BoxFrameColor) =>
-            WriteBoxFrame(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, BoxFrameColor, KernelColorType.Background);
-
-        /// <summary>
-        /// Writes the box frame plainly
-        /// </summary>
-        /// <param name="Left">Where to place the box frame horizontally? Please note that this value comes from the upper left corner, which is an exterior position.</param>
-        /// <param name="Top">Where to place the box frame vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
-        /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
-        /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
-        /// <param name="UpperLeftCornerChar">Upper left corner character for box frame</param>
-        /// <param name="LowerLeftCornerChar">Lower left corner character for box frame</param>
-        /// <param name="UpperRightCornerChar">Upper right corner character for box frame</param>
-        /// <param name="LowerRightCornerChar">Lower right corner character for box frame</param>
-        /// <param name="UpperFrameChar">Upper frame character for box frame</param>
-        /// <param name="LowerFrameChar">Lower frame character for box frame</param>
-        /// <param name="LeftFrameChar">Left frame character for box frame</param>
-        /// <param name="RightFrameChar">Right frame character for box frame</param>
-        /// <param name="BoxFrameColor">BoxFrame color from Nitrocid KS's <see cref="KernelColorType"/></param>
-        /// <param name="BackgroundColor">BoxFrame background color from Nitrocid KS's <see cref="KernelColorType"/></param>
-        public static void WriteBoxFrame(int Left, int Top, int InteriorWidth, int InteriorHeight,
-                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
-                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-                                       KernelColorType BoxFrameColor, KernelColorType BackgroundColor)
-        {
-            try
-            {
-                // Render the box frame
-                string frame = RenderBoxFrame(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
-                TextWriterWhereColor.WriteWhereKernelColor(frame, Left, Top, false, BoxFrameColor, BackgroundColor);
-            }
-            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
-            {
-                DebugWriter.WriteDebugStackTrace(ex);
-                DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
-            }
-        }
+            WriteBoxFrame(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, KernelColorTools.GetColor(KernelColorType.Separator), KernelColorTools.GetColor(KernelColorType.Background));
 
         /// <summary>
         /// Writes the box frame plainly

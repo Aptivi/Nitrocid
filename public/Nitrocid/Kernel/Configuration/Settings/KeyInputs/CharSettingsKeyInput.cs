@@ -20,7 +20,7 @@
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Kernel.Configuration.Instances;
 using KS.Kernel.Debugging;
 using KS.Languages;
@@ -39,11 +39,11 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
             string keyName = Translate.DoTranslation(key.Name);
             string keyDesc = Translate.DoTranslation(key.Description);
             string finalSection = SettingsApp.RenderHeader(keyName, keyDesc);
-            TextWriterColor.WriteKernelColor(finalSection + "\n", true, KernelColorType.Question);
+            TextWriters.Write(finalSection + "\n", true, KernelColorType.Question);
 
             // Write the prompt
-            TextWriterColor.WriteKernelColor($"{Translate.DoTranslation("Press any letter on your keyboard to set it to that character.")}\n", KernelColorType.Tip);
-            TextWriterColor.WriteKernelColor("[{0}] ", false, KernelColorType.Input, KeyDefaultValue);
+            TextWriters.Write($"{Translate.DoTranslation("Press any letter on your keyboard to set it to that character.")}\n", KernelColorType.Tip);
+            TextWriters.Write("[{0}] ", false, KernelColorType.Input, KeyDefaultValue);
             var keypressTerm = Input.DetectKeypress();
             var keypress = keypressTerm.KeyChar;
             keypress =

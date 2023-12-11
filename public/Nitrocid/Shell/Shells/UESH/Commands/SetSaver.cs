@@ -18,6 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files.Operations.Querying;
 using KS.Files.Paths;
@@ -59,7 +60,7 @@ namespace KS.Shell.Shells.UESH.Commands
             }
             else
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Screensaver {0} not found."), true, KernelColorType.Error, finalSaverName);
+                TextWriters.Write(Translate.DoTranslation("Screensaver {0} not found."), true, KernelColorType.Error, finalSaverName);
                 return 10000 + (int)KernelExceptionType.NoSuchScreensaver;
             }
         }

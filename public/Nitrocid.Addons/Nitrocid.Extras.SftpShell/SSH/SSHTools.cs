@@ -36,6 +36,7 @@ using KS.Network.Base.Connections;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files.Operations.Querying;
 using KS.ConsoleBase;
+using KS.ConsoleBase.Writers;
 
 namespace Nitrocid.Extras.SftpShell.SSH
 {
@@ -85,10 +86,10 @@ namespace Nitrocid.Extras.SftpShell.SSH
             while (true)
             {
                 // Ask for authentication method
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("How do you want to authenticate?") + CharManager.NewLine, true, KernelColorType.Question);
-                TextWriterColor.WriteKernelColor("1) " + Translate.DoTranslation("Private key file"), true, KernelColorType.Option);
-                TextWriterColor.WriteKernelColor("2) " + Translate.DoTranslation("Password") + CharManager.NewLine, true, KernelColorType.Option);
-                TextWriterColor.WriteKernelColor(">> ", false, KernelColorType.Input);
+                TextWriters.Write(Translate.DoTranslation("How do you want to authenticate?") + CharManager.NewLine, true, KernelColorType.Question);
+                TextWriters.Write("1) " + Translate.DoTranslation("Private key file"), true, KernelColorType.Option);
+                TextWriters.Write("2) " + Translate.DoTranslation("Password") + CharManager.NewLine, true, KernelColorType.Option);
+                TextWriters.Write(">> ", false, KernelColorType.Input);
                 if (int.TryParse(Input.ReadLine(), out Answer))
                 {
                     // Check for answer
@@ -101,8 +102,8 @@ namespace Nitrocid.Extras.SftpShell.SSH
                             break;
                         default:
                             DebugWriter.WriteDebug(DebugLevel.W, "Option is not valid. Returning...");
-                            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Specified option {0} is invalid."), true, KernelColorType.Error, Answer);
-                            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Press any key to go back."), true, KernelColorType.Error);
+                            TextWriters.Write(Translate.DoTranslation("Specified option {0} is invalid."), true, KernelColorType.Error, Answer);
+                            TextWriters.Write(Translate.DoTranslation("Press any key to go back."), true, KernelColorType.Error);
                             Input.DetectKeypress();
                             break;
                     }
@@ -113,8 +114,8 @@ namespace Nitrocid.Extras.SftpShell.SSH
                 else
                 {
                     DebugWriter.WriteDebug(DebugLevel.W, "Answer is not numeric.");
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("The answer must be numeric."), true, KernelColorType.Error);
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Press any key to go back."), true, KernelColorType.Error);
+                    TextWriters.Write(Translate.DoTranslation("The answer must be numeric."), true, KernelColorType.Error);
+                    TextWriters.Write(Translate.DoTranslation("Press any key to go back."), true, KernelColorType.Error);
                     Input.DetectKeypress();
                 }
             }
@@ -132,13 +133,13 @@ namespace Nitrocid.Extras.SftpShell.SSH
                         PrivateKeyFile PrivateKeyAuth;
 
                         // Ask for location
-                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("Enter the location of the private key for {0}. Write \"q\" to finish adding keys: "), false, KernelColorType.Input, Username);
+                        TextWriters.Write(Translate.DoTranslation("Enter the location of the private key for {0}. Write \"q\" to finish adding keys: "), false, KernelColorType.Input, Username);
                         PrivateKeyFile = Input.ReadLine();
                         PrivateKeyFile = FilesystemTools.NeutralizePath(PrivateKeyFile);
                         if (Checking.FileExists(PrivateKeyFile))
                         {
                             // Ask for passphrase
-                            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Enter the passphrase for key {0}: "), false, KernelColorType.Input, PrivateKeyFile);
+                            TextWriters.Write(Translate.DoTranslation("Enter the passphrase for key {0}: "), false, KernelColorType.Input, PrivateKeyFile);
                             PrivateKeyPassphrase = Input.ReadLineNoInput();
 
                             // Add authentication method
@@ -154,13 +155,13 @@ namespace Nitrocid.Extras.SftpShell.SSH
                             {
                                 DebugWriter.WriteDebugStackTrace(ex);
                                 DebugWriter.WriteDebug(DebugLevel.E, "Error trying to add private key authentication method: {0}", ex.Message);
-                                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Error trying to add private key:") + " {0}", true, KernelColorType.Error, ex.Message);
+                                TextWriters.Write(Translate.DoTranslation("Error trying to add private key:") + " {0}", true, KernelColorType.Error, ex.Message);
                             }
                         }
                         else if (PrivateKeyFile.EndsWith("/q"))
                             break;
                         else
-                            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Key file {0} doesn't exist."), true, KernelColorType.Error, PrivateKeyFile);
+                            TextWriters.Write(Translate.DoTranslation("Key file {0} doesn't exist."), true, KernelColorType.Error, PrivateKeyFile);
                     }
 
                     // Add authentication method
@@ -171,7 +172,7 @@ namespace Nitrocid.Extras.SftpShell.SSH
                     string Pass;
 
                     // Ask for password
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Enter the password for {0}: "), false, KernelColorType.Input, Username);
+                    TextWriters.Write(Translate.DoTranslation("Enter the password for {0}: "), false, KernelColorType.Input, Username);
                     Pass = Input.ReadLineNoInput();
 
                     // Add authentication method
@@ -223,7 +224,7 @@ namespace Nitrocid.Extras.SftpShell.SSH
             catch (Exception ex)
             {
                 EventsManager.FireEvent(EventType.SSHError, ex);
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Error trying to connect to SSH server: {0}"), true, KernelColorType.Error, ex.Message);
+                TextWriters.Write(Translate.DoTranslation("Error trying to connect to SSH server: {0}"), true, KernelColorType.Error, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
         }
@@ -299,7 +300,7 @@ namespace Nitrocid.Extras.SftpShell.SSH
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Error on SSH shell in {0}: {1}", SSHClient.ConnectionInfo.Host, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Error on SSH shell") + ": {0}", true, KernelColorType.Error, ex.Message);
+                TextWriters.Write(Translate.DoTranslation("Error on SSH shell") + ": {0}", true, KernelColorType.Error, ex.Message);
             }
             finally
             {
@@ -366,7 +367,7 @@ namespace Nitrocid.Extras.SftpShell.SSH
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Error trying to execute SSH command \"{0}\" to {1}: {2}", Command, SSHClient.ConnectionInfo.Host, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Error executing SSH command") + " {0}: {1}", true, KernelColorType.Error, Command, ex.Message);
+                TextWriters.Write(Translate.DoTranslation("Error executing SSH command") + " {0}: {1}", true, KernelColorType.Error, Command, ex.Message);
                 EventsManager.FireEvent(EventType.SSHCommandError, SSHClient.ConnectionInfo.Host + ":" + SSHClient.ConnectionInfo.Port.ToString(), Command, ex);
             }
             finally

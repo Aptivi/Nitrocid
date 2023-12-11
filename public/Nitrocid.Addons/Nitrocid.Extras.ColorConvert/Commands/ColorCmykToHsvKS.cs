@@ -18,7 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
@@ -39,29 +39,29 @@ namespace Nitrocid.Extras.ColorConvert.Commands
             // Check to see if we have the numeric arguments
             if (!int.TryParse(parameters.ArgumentsList[0], out int C))
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("The cyan color level must be numeric."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("The cyan color level must be numeric."), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.Color;
             }
             if (!int.TryParse(parameters.ArgumentsList[1], out int M))
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("The magenta color level must be numeric."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("The magenta color level must be numeric."), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.Color;
             }
             if (!int.TryParse(parameters.ArgumentsList[2], out int Y))
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("The yellow color level must be numeric."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("The yellow color level must be numeric."), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.Color;
             }
             if (!int.TryParse(parameters.ArgumentsList[3], out int K))
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("The black key level must be numeric."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("The black key level must be numeric."), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.Color;
             }
 
             // Do the job
             var HSV = KernelColorConversionTools.ConvertFromCmykToHsv(C, M, Y, K);
-            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("HSV color sequence:") + " ", false, KernelColorType.ListEntry);
-            TextWriterColor.WriteKernelColor($"{HSV}", true, KernelColorType.ListValue);
+            TextWriters.Write("- " + Translate.DoTranslation("HSV color sequence:") + " ", false, KernelColorType.ListEntry);
+            TextWriters.Write($"{HSV}", true, KernelColorType.ListValue);
             variableValue = HSV;
             return 0;
         }

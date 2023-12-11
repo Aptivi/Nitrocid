@@ -20,7 +20,7 @@
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Files;
 using KS.Files.Folders;
 using KS.Files.Paths;
@@ -41,11 +41,11 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
             string keyName = Translate.DoTranslation(key.Name);
             string keyDesc = Translate.DoTranslation(key.Description);
             string finalSection = SettingsApp.RenderHeader(keyName, keyDesc);
-            TextWriterColor.WriteKernelColor(finalSection + "\n", true, KernelColorType.Question);
+            TextWriters.Write(finalSection + "\n", true, KernelColorType.Question);
 
             // Write the prompt
-            TextWriterColor.WriteKernelColor($"{Translate.DoTranslation("Write any text to use. Remember, follow the description of the option that you've chosen.")}\n", KernelColorType.Tip);
-            TextWriterColor.WriteKernelColor("[{0}] ", false, KernelColorType.Input, KeyDefaultValue);
+            TextWriters.Write($"{Translate.DoTranslation("Write any text to use. Remember, follow the description of the option that you've chosen.")}\n", KernelColorType.Tip);
+            TextWriters.Write("[{0}] ", false, KernelColorType.Input, KeyDefaultValue);
             string AnswerString = Input.ReadLine();
             AnswerString = (string)TranslateStringValueWithDefault(key, AnswerString, KeyDefaultValue);
             bail = true;

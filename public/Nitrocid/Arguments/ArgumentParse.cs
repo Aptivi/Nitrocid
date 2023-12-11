@@ -20,7 +20,7 @@
 using KS.Arguments.CommandLineArguments;
 using KS.Arguments.Help;
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
@@ -189,7 +189,7 @@ namespace KS.Arguments
                                 else if (isLast)
                                 {
                                     DebugWriter.WriteDebug(DebugLevel.W, "User hasn't provided enough arguments for {0}", Argument);
-                                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("There was not enough arguments."), true, KernelColorType.Error);
+                                    TextWriters.Write(Translate.DoTranslation("There was not enough arguments."), true, KernelColorType.Error);
                                 }
                             }
                         }
@@ -197,7 +197,7 @@ namespace KS.Arguments
                     else
                     {
                         DebugWriter.WriteDebug(DebugLevel.W, "No such argument {0}", Argument);
-                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("Unknown argument") + $" {Argument}", true, KernelColorType.Error);
+                        TextWriters.Write(Translate.DoTranslation("Unknown argument") + $" {Argument}", true, KernelColorType.Error);
                     }
                 }
             }

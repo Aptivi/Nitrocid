@@ -22,9 +22,9 @@ using KS.ConsoleBase.Colors;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 using KS.Misc.Text;
-using KS.ConsoleBase.Writers.ConsoleWriters;
 using Nitrocid.Extras.SftpShell.Tools.Filesystem;
 using KS.ConsoleBase.Inputs.Styles.Choice;
+using KS.ConsoleBase.Writers;
 
 namespace Nitrocid.Extras.SftpShell.SFTP.Commands
 {
@@ -44,7 +44,7 @@ namespace Nitrocid.Extras.SftpShell.SFTP.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             // Print a message
-            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Deleting {0}..."), true, KernelColorType.Progress, parameters.ArgumentsList[0]);
+            TextWriters.Write(Translate.DoTranslation("Deleting {0}..."), true, KernelColorType.Progress, parameters.ArgumentsList[0]);
 
             // Make a confirmation message so user will not accidentally delete a file or folder
             string answer = ChoiceStyle.PromptChoice(TextTools.FormatString(Translate.DoTranslation("Are you sure you want to delete {0}?"), parameters.ArgumentsList[0]), "y/n");
@@ -58,7 +58,7 @@ namespace Nitrocid.Extras.SftpShell.SFTP.Commands
             }
             catch (Exception ex)
             {
-                TextWriterColor.WriteKernelColor(ex.Message, true, KernelColorType.Error);
+                TextWriters.Write(ex.Message, true, KernelColorType.Error);
                 return ex.GetHashCode();
             }
         }

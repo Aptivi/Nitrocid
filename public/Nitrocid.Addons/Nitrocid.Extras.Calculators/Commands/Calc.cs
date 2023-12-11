@@ -19,6 +19,7 @@
 
 using System;
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Debugging;
 using KS.Languages;
@@ -50,7 +51,7 @@ namespace Nitrocid.Extras.Calculators.Commands
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Error trying to calculate expression {0}: {1}", parameters.ArgumentsText, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Error in calculation.") + " {0}", true, KernelColorType.Error, ex.Message);
+                TextWriters.Write(Translate.DoTranslation("Error in calculation.") + " {0}", true, KernelColorType.Error, ex.Message);
                 return ex.GetHashCode();
             }
         }

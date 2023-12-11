@@ -25,13 +25,13 @@ using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Network.Base.Connections;
 using KS.Shell.ShellBase.Shells;
-using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
 using KS.Network.Base.SpeedDial;
 using Nitrocid.Extras.FtpShell.Tools;
 using Nitrocid.Extras.FtpShell.Tools.Transfer;
 using FluentFTP;
 using KS.Files.Paths;
+using KS.ConsoleBase.Writers;
 
 namespace Nitrocid.Extras.FtpShell.FTP
 {
@@ -63,9 +63,9 @@ namespace Nitrocid.Extras.FtpShell.FTP
             if (FTPShellCommon.FtpShowMotd)
             {
                 if (clientFTP.FileExists("welcome.msg"))
-                    TextWriterColor.WriteKernelColor(FTPTransfer.FTPDownloadToString("welcome.msg"), true, KernelColorType.Banner);
+                    TextWriters.Write(FTPTransfer.FTPDownloadToString("welcome.msg"), true, KernelColorType.Banner);
                 else if (clientFTP.FileExists(".message"))
-                    TextWriterColor.WriteKernelColor(FTPTransfer.FTPDownloadToString(".message"), true, KernelColorType.Banner);
+                    TextWriters.Write(FTPTransfer.FTPDownloadToString(".message"), true, KernelColorType.Banner);
             }
 
             // Prepare to print current FTP directory

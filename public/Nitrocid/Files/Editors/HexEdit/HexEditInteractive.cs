@@ -24,7 +24,6 @@ using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Inputs.Styles.Infobox;
 using KS.ConsoleBase.Interactive;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Files.Operations;
 using KS.Files.Operations.Printing;
 using KS.Files.Operations.Querying;
@@ -39,6 +38,7 @@ using System.Linq;
 using System.Text;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Sequences.Tools;
+using KS.ConsoleBase.Writers.FancyWriters;
 
 namespace KS.Files.Editors.HexEdit
 {

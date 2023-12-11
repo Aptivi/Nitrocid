@@ -18,7 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Shell.ShellBase.Commands;
 
 namespace Nitrocid.Extras.GitShell.Git.Commands
@@ -37,9 +37,9 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
             var remotes = GitShellCommon.Repository.Network.Remotes;
             foreach (var remote in remotes)
             {
-                TextWriterColor.WriteKernelColor($"- {remote.Name}:", true, KernelColorType.ListEntry);
-                TextWriterColor.WriteKernelColor($"  - R: {remote.Url}", true, KernelColorType.ListValue);
-                TextWriterColor.WriteKernelColor($"  - P: {remote.PushUrl}", true, KernelColorType.ListValue);
+                TextWriters.Write($"- {remote.Name}:", true, KernelColorType.ListEntry);
+                TextWriters.Write($"  - R: {remote.Url}", true, KernelColorType.ListValue);
+                TextWriters.Write($"  - P: {remote.PushUrl}", true, KernelColorType.ListValue);
             }
             return 0;
         }

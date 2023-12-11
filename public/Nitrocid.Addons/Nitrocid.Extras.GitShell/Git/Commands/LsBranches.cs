@@ -18,7 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Shell.ShellBase.Commands;
 
 namespace Nitrocid.Extras.GitShell.Git.Commands
@@ -37,8 +37,8 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
             var branches = GitShellCommon.Repository.Branches;
             foreach (var branch in branches)
             {
-                TextWriterColor.WriteKernelColor($"- [{(branch.IsRemote ? "R" : " ")}-{(branch.IsTracking ? "T" : " ")}-{(branch.IsCurrentRepositoryHead ? "H" : " ")}] {branch.CanonicalName} [{branch.FriendlyName}]", true, KernelColorType.ListEntry);
-                TextWriterColor.WriteKernelColor($"  {branch.Tip.Sha[..7]}: {branch.Tip.MessageShort}", true, KernelColorType.ListValue);
+                TextWriters.Write($"- [{(branch.IsRemote ? "R" : " ")}-{(branch.IsTracking ? "T" : " ")}-{(branch.IsCurrentRepositoryHead ? "H" : " ")}] {branch.CanonicalName} [{branch.FriendlyName}]", true, KernelColorType.ListEntry);
+                TextWriters.Write($"  {branch.Tip.Sha[..7]}: {branch.Tip.MessageShort}", true, KernelColorType.ListValue);
             }
             return 0;
         }

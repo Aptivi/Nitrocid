@@ -18,13 +18,11 @@
 //
 
 using KS.ConsoleBase;
-using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
 using KS.Kernel.Threading;
 using KS.Misc.Screensaver;
-using System.Collections.Generic;
 using System.Text;
 using Terminaux.Colors;
 using Terminaux.Sequences.Builder.Types;

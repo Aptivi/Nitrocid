@@ -18,13 +18,13 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 using LibGit2Sharp;
 using GitCommand = LibGit2Sharp.Commands;
 using System.Linq;
 using System;
+using KS.ConsoleBase.Writers;
 
 namespace Nitrocid.Extras.GitShell.Git.Commands
 {
@@ -44,7 +44,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
             // Check to see if the repo has been modified
             if (!status.IsDirty)
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("No modifications are done to unstage."), true, KernelColorType.Success);
+                TextWriters.Write(Translate.DoTranslation("No modifications are done to unstage."), true, KernelColorType.Success);
                 return 0;
             }
 
@@ -53,11 +53,11 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
             try
             {
                 GitCommand.Unstage(GitShellCommon.Repository, modified.FilePath);
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Unstaged file {0} successfully!"), true, KernelColorType.Success, modified.FilePath);
+                TextWriters.Write(Translate.DoTranslation("Unstaged file {0} successfully!"), true, KernelColorType.Success, modified.FilePath);
             }
             catch (Exception ex)
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Failed to unstage file {0}.") + "{1}", true, KernelColorType.Error, modified.FilePath, ex.Message);
+                TextWriters.Write(Translate.DoTranslation("Failed to unstage file {0}.") + "{1}", true, KernelColorType.Error, modified.FilePath, ex.Message);
             }
             return 0;
         }

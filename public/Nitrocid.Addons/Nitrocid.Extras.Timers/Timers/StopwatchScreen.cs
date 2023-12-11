@@ -29,6 +29,7 @@ using KS.ConsoleBase.Colors;
 using KS.Kernel.Threading;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using Terminaux.Colors;
+using KS.ConsoleBase.Writers;
 
 namespace Nitrocid.Extras.Timers.Timers
 {
@@ -70,7 +71,7 @@ namespace Nitrocid.Extras.Timers.Timers
             var KeysKeypress = default(ConsoleKey);
 
             // Print the keys text
-            TextWriterWhereColor.WriteWhereKernelColor(KeysText, KeysTextLeftPosition, KeysTextTopPosition, true, KernelColorType.Tip);
+            TextWriters.WriteWhere(KeysText, KeysTextLeftPosition, KeysTextTopPosition, true, KernelColorType.Tip);
 
             // Print the time interval and the current lap
             TextWriterWhereColor.WriteWhereColor(Stopwatch.Elapsed.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCult), TimeLeftPosition, TimeTopPosition, true, LapColor);
@@ -80,7 +81,7 @@ namespace Nitrocid.Extras.Timers.Timers
             MakeBorder();
 
             // Print informational messages
-            TextWriterWhereColor.WriteWhereKernelColor(Translate.DoTranslation("Ready!"), 1, 0, false, KernelColorType.NeutralText);
+            TextWriters.WriteWhere(Translate.DoTranslation("Ready!"), 1, 0, false, KernelColorType.NeutralText);
             ConsoleExtensions.ClearLineToRight();
 
             while (KeysKeypress != ConsoleKey.Escape)
@@ -105,7 +106,7 @@ namespace Nitrocid.Extras.Timers.Timers
                                 Stopwatch.Stop();
                             else
                                 Stopwatch.Start();
-                            TextWriterWhereColor.WriteWhereKernelColor(Translate.DoTranslation("Stopwatch running!"), 1, 0, false, KernelColorType.NeutralText);
+                            TextWriters.WriteWhere(Translate.DoTranslation("Stopwatch running!"), 1, 0, false, KernelColorType.NeutralText);
                             ConsoleExtensions.ClearLineToRight();
                             break;
                         }
@@ -153,7 +154,7 @@ namespace Nitrocid.Extras.Timers.Timers
                             ConsoleExtensions.ClearLineToRight();
                             TextWriterWhereColor.WriteWhereColor(Stopwatch.Elapsed.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCult), TimeLeftPosition, TimeTopPosition, false, LapColor);
                             MakeBorder();
-                            TextWriterWhereColor.WriteWhereKernelColor(Translate.DoTranslation("Ready!"), 1, 0, false, KernelColorType.NeutralText);
+                            TextWriters.WriteWhere(Translate.DoTranslation("Ready!"), 1, 0, false, KernelColorType.NeutralText);
                             ConsoleExtensions.ClearLineToRight();
                             break;
                         }

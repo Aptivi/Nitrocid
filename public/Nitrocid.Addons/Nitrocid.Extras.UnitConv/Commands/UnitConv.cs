@@ -22,6 +22,7 @@ using System.Data;
 using System.Linq;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Interactive;
+using KS.ConsoleBase.Writers;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
@@ -59,8 +60,8 @@ namespace Nitrocid.Extras.UnitConv.Commands
                 var QuantityInfos = Quantity.Infos.Where(x => x.Name == UnitType).ToArray();
                 var TargetUnitInstance = parser.Parse(TargetUnit, QuantityInfos[0].UnitType);
                 var ConvertedUnit = Quantity.Parse(QuantityInfos[0].ValueType, $"{QuantityNum} {SourceUnit}").ToUnit(TargetUnitInstance);
-                TextWriterColor.WriteKernelColor("- {0} => {1}: ", false, KernelColorType.ListEntry, SourceUnit, TargetUnit);
-                TextWriterColor.WriteKernelColor(ConvertedUnit.ToString(CultureManager.CurrentCult.NumberFormat), true, KernelColorType.ListValue);
+                TextWriters.Write("- {0} => {1}: ", false, KernelColorType.ListEntry, SourceUnit, TargetUnit);
+                TextWriters.Write(ConvertedUnit.ToString(CultureManager.CurrentCult.NumberFormat), true, KernelColorType.ListValue);
             }
             return 0;
         }
@@ -71,11 +72,11 @@ namespace Nitrocid.Extras.UnitConv.Commands
             TextWriterColor.Write(Translate.DoTranslation("Available unit types and their units:"));
             foreach (QuantityInfo QuantityInfo in Quantity.Infos)
             {
-                TextWriterColor.WriteKernelColor("- {0}:", true, KernelColorType.ListEntry, QuantityInfo.Name);
+                TextWriters.Write("- {0}:", true, KernelColorType.ListEntry, QuantityInfo.Name);
                 foreach (Enum UnitValues in QuantityInfo.UnitInfos.Select(x => x.Value))
                 {
-                    TextWriterColor.WriteKernelColor("  - {0}: ", false, KernelColorType.ListEntry, string.Join(", ", abbreviations.GetDefaultAbbreviation(UnitValues.GetType(), Convert.ToInt32(UnitValues))));
-                    TextWriterColor.WriteKernelColor(UnitValues.ToString(), true, KernelColorType.ListValue);
+                    TextWriters.Write("  - {0}: ", false, KernelColorType.ListEntry, string.Join(", ", abbreviations.GetDefaultAbbreviation(UnitValues.GetType(), Convert.ToInt32(UnitValues))));
+                    TextWriters.Write(UnitValues.ToString(), true, KernelColorType.ListValue);
                 }
             }
         }

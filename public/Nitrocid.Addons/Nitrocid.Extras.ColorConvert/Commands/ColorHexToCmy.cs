@@ -18,7 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 using Terminaux.Colors;
@@ -41,12 +41,12 @@ namespace Nitrocid.Extras.ColorConvert.Commands
             // Do the job
             Color color = new(Hex);
             var cmy = color.CMY;
-            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Cyan level:") + " ", false, KernelColorType.ListEntry);
-            TextWriterColor.WriteKernelColor($"{cmy.CWhole} [{cmy.C:0.00}]", true, KernelColorType.ListValue);
-            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Magenta level:") + " ", false, KernelColorType.ListEntry);
-            TextWriterColor.WriteKernelColor($"{cmy.MWhole} [{cmy.M:0.00}]", true, KernelColorType.ListValue);
-            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Yellow level:") + " ", false, KernelColorType.ListEntry);
-            TextWriterColor.WriteKernelColor($"{cmy.YWhole} [{cmy.Y:0.00}]", true, KernelColorType.ListValue);
+            TextWriters.Write("- " + Translate.DoTranslation("Cyan level:") + " ", false, KernelColorType.ListEntry);
+            TextWriters.Write($"{cmy.CWhole} [{cmy.C:0.00}]", true, KernelColorType.ListValue);
+            TextWriters.Write("- " + Translate.DoTranslation("Magenta level:") + " ", false, KernelColorType.ListEntry);
+            TextWriters.Write($"{cmy.MWhole} [{cmy.M:0.00}]", true, KernelColorType.ListValue);
+            TextWriters.Write("- " + Translate.DoTranslation("Yellow level:") + " ", false, KernelColorType.ListEntry);
+            TextWriters.Write($"{cmy.YWhole} [{cmy.Y:0.00}]", true, KernelColorType.ListValue);
             variableValue = $"cmy:{cmy.CWhole};{cmy.MWhole};{cmy.YWhole}";
             return 0;
         }

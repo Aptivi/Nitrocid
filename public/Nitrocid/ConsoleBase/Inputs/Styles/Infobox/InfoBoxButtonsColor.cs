@@ -29,8 +29,8 @@ using KS.ConsoleBase.Writers.FancyWriters.Tools;
 using Terminaux.Colors;
 using System.Text;
 using Terminaux.Sequences.Builder.Types;
-using KS.ConsoleBase.Writers.FancyWriters;
 using KS.ConsoleBase.Buffered;
+using KS.ConsoleBase.Writers.FancyWriters;
 
 namespace KS.ConsoleBase.Inputs.Styles.Infobox
 {

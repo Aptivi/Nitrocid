@@ -23,6 +23,7 @@ using BassBoom.Basolia.Playback;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
+using KS.ConsoleBase.Writers;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files;
 using KS.Files.Operations.Querying;
@@ -49,17 +50,17 @@ namespace Nitrocid.Extras.BassBoom.Commands
             path = FilesystemTools.NeutralizePath(path);
             if (!Checking.FileExists(path))
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Can't play sound because the file is not found."), KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("Can't play sound because the file is not found."), KernelColorType.Error);
                 return 29;
             }
             try
             {
                 FileTools.OpenFile(path);
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Opened music file successfully."), KernelColorType.Success);
+                TextWriters.Write(Translate.DoTranslation("Opened music file successfully."), KernelColorType.Success);
             }
             catch (Exception ex)
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Can't open music file.") + $" {ex.Message}", KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("Can't open music file.") + $" {ex.Message}", KernelColorType.Error);
                 return ex.HResult;
             }
             if (FileTools.IsOpened)
@@ -74,7 +75,7 @@ namespace Nitrocid.Extras.BassBoom.Commands
                     PlaybackTools.PlayAsync();
                     if (!SpinWait.SpinUntil(() => PlaybackTools.Playing, 15000))
                     {
-                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("Can't play sound because of timeout."), KernelColorType.Error);
+                        TextWriters.Write(Translate.DoTranslation("Can't play sound because of timeout."), KernelColorType.Error);
                         return 30;
                     }
 
@@ -99,7 +100,7 @@ namespace Nitrocid.Extras.BassBoom.Commands
                     ListEntryWriterColor.WriteListEntry(Translate.DoTranslation("Duration"), duration);
 
                     // Wait until the song stops or the user bails
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Press 'q' to stop playing."), KernelColorType.Tip);
+                    TextWriters.Write(Translate.DoTranslation("Press 'q' to stop playing."), KernelColorType.Tip);
                     while (PlaybackTools.Playing)
                     {
                         if (ConsoleWrapper.KeyAvailable)
@@ -112,7 +113,7 @@ namespace Nitrocid.Extras.BassBoom.Commands
                 }
                 catch (Exception ex)
                 {
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Can't play sound.") + $" {ex.Message}", KernelColorType.Error);
+                    TextWriters.Write(Translate.DoTranslation("Can't play sound.") + $" {ex.Message}", KernelColorType.Error);
                     return ex.HResult;
                 }
                 finally

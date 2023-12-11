@@ -18,7 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Kernel.Debugging;
 
 namespace KS.ConsoleBase.Inputs.Styles
@@ -41,7 +41,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                 DebugWriter.WriteDebug(DebugLevel.I, "Question: {0}", Question);
 
                 // Ask a question
-                TextWriterColor.WriteKernelColor(Question, false, KernelColorType.Question);
+                TextWriters.Write(Question, false, KernelColorType.Question);
                 KernelColorTools.SetConsoleColor(KernelColorType.Input);
 
                 // Wait for an answer
@@ -65,7 +65,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                 DebugWriter.WriteDebug(DebugLevel.I, "Question: {0}", Question);
 
                 // Ask a question
-                TextWriterColor.WriteKernelColor(Question, false, KernelColorType.Question);
+                TextWriters.Write(Question, false, KernelColorType.Question);
                 KernelColorTools.SetConsoleColor(KernelColorType.Input);
 
                 // Wait for an answer

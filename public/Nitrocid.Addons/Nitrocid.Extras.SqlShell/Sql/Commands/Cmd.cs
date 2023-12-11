@@ -19,7 +19,7 @@
 
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Text;
@@ -56,14 +56,14 @@ namespace Nitrocid.Extras.SqlShell.Sql.Commands
             string[] replies = [];
             if (SqlEditTools.SqlEdit_SqlCommand(parameters.ArgumentsText, ref replies, [.. sqlParameters]))
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("SQL command succeeded. Here are the replies:"), true, KernelColorType.Success);
+                TextWriters.Write(Translate.DoTranslation("SQL command succeeded. Here are the replies:"), true, KernelColorType.Success);
                 foreach (string reply in replies)
-                    TextWriterColor.WriteKernelColor(reply, true, KernelColorType.Success);
+                    TextWriters.Write(reply, true, KernelColorType.Success);
                 return 0;
             }
             else
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("SQL command failed."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("SQL command failed."), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.SqlEditor;
             }
         }

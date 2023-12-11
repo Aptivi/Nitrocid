@@ -18,7 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Files.LineEndings;
 using KS.Files.Operations.Querying;
 using KS.Languages;
@@ -76,7 +76,7 @@ namespace KS.Shell.Shells.UESH.Commands
             // Convert the line endings
             if (Parsing.IsBinaryFile(TargetTextFile) && !force)
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Can't convert line endings on a binary file since it results in file corruption."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("Can't convert line endings on a binary file since it results in file corruption."), true, KernelColorType.Error);
                 return 7;
             }
             LineEndingsConverter.ConvertLineEndings(TargetTextFile, TargetLineEnding, force);

@@ -25,10 +25,10 @@ using KS.Languages;
 using KS.Misc.Text;
 using KS.Network.Base.Connections;
 using KS.Shell.ShellBase.Shells;
-using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
 using KS.Network.Base.SpeedDial;
 using Syndian.Instance;
+using KS.ConsoleBase.Writers;
 
 namespace Nitrocid.Extras.RssShell.RSS
 {
@@ -80,7 +80,7 @@ namespace Nitrocid.Extras.RssShell.RSS
                 catch (Exception ex)
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("There was an error in the shell.") + CharManager.NewLine + "Error {0}: {1}", true, KernelColorType.Error, ex.GetType().FullName, ex.Message);
+                    TextWriters.Write(Translate.DoTranslation("There was an error in the shell.") + CharManager.NewLine + "Error {0}: {1}", true, KernelColorType.Error, ex.GetType().FullName, ex.Message);
                     continue;
                 }
 

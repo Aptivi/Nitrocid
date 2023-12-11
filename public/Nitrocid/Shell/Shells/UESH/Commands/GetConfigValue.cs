@@ -18,6 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Configuration;
 using KS.Languages;
@@ -56,13 +57,13 @@ namespace KS.Shell.Shells.UESH.Commands
                 }
                 else
                 {
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Key not found."), KernelColorType.Error);
+                    TextWriters.Write(Translate.DoTranslation("Key not found."), KernelColorType.Error);
                     return 28;
                 }
             }
             else
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Config not found."), KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("Config not found."), KernelColorType.Error);
                 return 28;
             }
             return 0;

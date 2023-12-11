@@ -18,7 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Files;
 using KS.Kernel.Exceptions;
 using KS.Languages;
@@ -37,20 +37,20 @@ namespace KS.Shell.Shells.UESH.Commands
             {
                 string pathToScript = FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]);
                 UESHParse.Execute(pathToScript, "", true);
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Script lint succeeded."), true, KernelColorType.Success);
+                TextWriters.Write(Translate.DoTranslation("Script lint succeeded."), true, KernelColorType.Success);
                 variableValue = "1";
                 return 0;
             }
             catch (KernelException kex) when (kex.ExceptionType == KernelExceptionType.UESHScript)
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Script lint failed. Most likely there is a syntax error. Check your script for errors and retry running the linter."), true, KernelColorType.Error);
-                TextWriterColor.WriteKernelColor(kex.Message, true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("Script lint failed. Most likely there is a syntax error. Check your script for errors and retry running the linter."), true, KernelColorType.Error);
+                TextWriters.Write(kex.Message, true, KernelColorType.Error);
                 variableValue = "0";
                 return 10000 + (int)kex.ExceptionType;
             }
             catch (Exception ex)
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Script linter failed unexpectedly trying to parse your script.") + $" {ex.Message}", true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("Script linter failed unexpectedly trying to parse your script.") + $" {ex.Message}", true, KernelColorType.Error);
                 variableValue = "0";
                 return ex.GetHashCode();
             }

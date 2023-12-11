@@ -30,9 +30,9 @@ using KS.Kernel.Events;
 using KS.Kernel.Debugging.RemoteDebug.Command;
 using KS.Kernel.Configuration;
 using KS.Kernel.Threading;
-using KS.ConsoleBase.Writers.ConsoleWriters;
 using Textify.Versioning;
 using KS.Kernel.Debugging.RemoteDebug.RemoteChat;
+using KS.ConsoleBase.Writers;
 
 namespace KS.Kernel.Debugging.RemoteDebug
 {
@@ -198,7 +198,7 @@ namespace KS.Kernel.Debugging.RemoteDebug
                     }
                     else
                     {
-                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("Remote debugger connection error") + ": {0}", true, KernelColorType.Error, ex.Message);
+                        TextWriters.Write(Translate.DoTranslation("Remote debugger connection error") + ": {0}", true, KernelColorType.Error, ex.Message);
                     }
                     DebugWriter.WriteDebugStackTrace(ex);
                 }

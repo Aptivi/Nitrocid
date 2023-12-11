@@ -18,7 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 
@@ -40,8 +40,8 @@ namespace Nitrocid.Extras.ColorConvert.Commands
 
             // Do the job
             CMY = KernelColorConversionTools.ConvertFromHexToCmy(Hex);
-            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("CMY color sequence:") + " ", false, KernelColorType.ListEntry);
-            TextWriterColor.WriteKernelColor(CMY, true, KernelColorType.ListValue);
+            TextWriters.Write("- " + Translate.DoTranslation("CMY color sequence:") + " ", false, KernelColorType.ListEntry);
+            TextWriters.Write(CMY, true, KernelColorType.ListValue);
             variableValue = CMY;
             return 0;
         }

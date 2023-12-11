@@ -19,6 +19,7 @@
 
 using System;
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files.Operations.Querying;
 using KS.Kernel.Debugging;
@@ -62,7 +63,7 @@ namespace KS.Shell.Shells.UESH.Commands
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Error trying to search {0} for {1}", lookup, fileName);
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Searching {0} for {1} failed.") + " {2}", true, KernelColorType.Error, parameters.ArgumentsList[0], parameters.ArgumentsList[1], ex.Message);
+                TextWriters.Write(Translate.DoTranslation("Searching {0} for {1} failed.") + " {2}", true, KernelColorType.Error, parameters.ArgumentsList[0], parameters.ArgumentsList[1], ex.Message);
                 return ex.GetHashCode();
             }
         }

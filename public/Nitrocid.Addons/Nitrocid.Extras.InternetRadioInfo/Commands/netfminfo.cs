@@ -18,12 +18,12 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Switches;
 using ShoutStats.Core;
+using KS.ConsoleBase.Writers.FancyWriters;
+using KS.ConsoleBase.Writers;
 
 namespace Nitrocid.Extras.InternetRadioInfo.Commands
 {
@@ -40,7 +40,7 @@ namespace Nitrocid.Extras.InternetRadioInfo.Commands
             // Check for the port integrity
             if (!int.TryParse(internetFmPort, out int internetFmPortInt))
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("The port number for your online radio is invalid."), KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("The port number for your online radio is invalid."), KernelColorType.Error);
                 return 25;
             }
 
@@ -48,35 +48,35 @@ namespace Nitrocid.Extras.InternetRadioInfo.Commands
             var internetFm = new ShoutcastServer(internetFmUrl, internetFmPortInt, https);
             internetFm.Refresh();
             SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Internet Radio (FM) info for") + $" {internetFmUrl}");
-            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Full URL") + ": ", false, KernelColorType.ListEntry);
-            TextWriterColor.WriteKernelColor($"{internetFm.ServerHostFull}", true, KernelColorType.ListValue);
-            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Version") + ": ", false, KernelColorType.ListEntry);
-            TextWriterColor.WriteKernelColor($"{internetFm.ServerVersion}", true, KernelColorType.ListValue);
-            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Current listeners") + ": ", false, KernelColorType.ListEntry);
-            TextWriterColor.WriteKernelColor($"{internetFm.CurrentListeners}", true, KernelColorType.ListValue);
-            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Peak listeners") + ": ", false, KernelColorType.ListEntry);
-            TextWriterColor.WriteKernelColor($"{internetFm.PeakListeners}", true, KernelColorType.ListValue);
-            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Max listeners") + ": ", false, KernelColorType.ListEntry);
-            TextWriterColor.WriteKernelColor($"{internetFm.MaxListeners}", true, KernelColorType.ListValue);
-            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Unique listeners") + ": ", false, KernelColorType.ListEntry);
-            TextWriterColor.WriteKernelColor($"{internetFm.UniqueListeners}", true, KernelColorType.ListValue);
-            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Streams") + ": ", false, KernelColorType.ListEntry);
-            TextWriterColor.WriteKernelColor($"{internetFm.TotalStreams}", true, KernelColorType.ListValue);
-            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Active streams") + ": ", false, KernelColorType.ListEntry);
-            TextWriterColor.WriteKernelColor($"{internetFm.ActiveStreams}\n", true, KernelColorType.ListValue);
+            TextWriters.Write(Translate.DoTranslation("Full URL") + ": ", false, KernelColorType.ListEntry);
+            TextWriters.Write($"{internetFm.ServerHostFull}", true, KernelColorType.ListValue);
+            TextWriters.Write(Translate.DoTranslation("Version") + ": ", false, KernelColorType.ListEntry);
+            TextWriters.Write($"{internetFm.ServerVersion}", true, KernelColorType.ListValue);
+            TextWriters.Write(Translate.DoTranslation("Current listeners") + ": ", false, KernelColorType.ListEntry);
+            TextWriters.Write($"{internetFm.CurrentListeners}", true, KernelColorType.ListValue);
+            TextWriters.Write(Translate.DoTranslation("Peak listeners") + ": ", false, KernelColorType.ListEntry);
+            TextWriters.Write($"{internetFm.PeakListeners}", true, KernelColorType.ListValue);
+            TextWriters.Write(Translate.DoTranslation("Max listeners") + ": ", false, KernelColorType.ListEntry);
+            TextWriters.Write($"{internetFm.MaxListeners}", true, KernelColorType.ListValue);
+            TextWriters.Write(Translate.DoTranslation("Unique listeners") + ": ", false, KernelColorType.ListEntry);
+            TextWriters.Write($"{internetFm.UniqueListeners}", true, KernelColorType.ListValue);
+            TextWriters.Write(Translate.DoTranslation("Streams") + ": ", false, KernelColorType.ListEntry);
+            TextWriters.Write($"{internetFm.TotalStreams}", true, KernelColorType.ListValue);
+            TextWriters.Write(Translate.DoTranslation("Active streams") + ": ", false, KernelColorType.ListEntry);
+            TextWriters.Write($"{internetFm.ActiveStreams}\n", true, KernelColorType.ListValue);
 
             // Now, the stream info
             foreach (var stream in internetFm.Streams)
             {
                 SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Stream info for ID") + $" {stream.StreamId}");
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Title") + ": ", false, KernelColorType.ListEntry);
-                TextWriterColor.WriteKernelColor($"{stream.StreamTitle}", true, KernelColorType.ListValue);
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Path") + ": ", false, KernelColorType.ListEntry);
-                TextWriterColor.WriteKernelColor($"{stream.StreamPath}", true, KernelColorType.ListValue);
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Currently playing") + ": ", false, KernelColorType.ListEntry);
-                TextWriterColor.WriteKernelColor($"{stream.SongTitle}", true, KernelColorType.ListValue);
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Uptime") + ": ", false, KernelColorType.ListEntry);
-                TextWriterColor.WriteKernelColor($"{stream.StreamUptimeSpan}", true, KernelColorType.ListValue);
+                TextWriters.Write(Translate.DoTranslation("Title") + ": ", false, KernelColorType.ListEntry);
+                TextWriters.Write($"{stream.StreamTitle}", true, KernelColorType.ListValue);
+                TextWriters.Write(Translate.DoTranslation("Path") + ": ", false, KernelColorType.ListEntry);
+                TextWriters.Write($"{stream.StreamPath}", true, KernelColorType.ListValue);
+                TextWriters.Write(Translate.DoTranslation("Currently playing") + ": ", false, KernelColorType.ListEntry);
+                TextWriters.Write($"{stream.SongTitle}", true, KernelColorType.ListValue);
+                TextWriters.Write(Translate.DoTranslation("Uptime") + ": ", false, KernelColorType.ListEntry);
+                TextWriters.Write($"{stream.StreamUptimeSpan}", true, KernelColorType.ListValue);
             }
 
             return 0;

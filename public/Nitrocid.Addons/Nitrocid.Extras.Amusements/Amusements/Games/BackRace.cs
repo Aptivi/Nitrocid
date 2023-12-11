@@ -22,7 +22,6 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Inputs.Styles.Infobox;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Drivers.RNG;
 using KS.Languages;
 using System;
@@ -30,6 +29,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using Terminaux.Colors;
+using KS.ConsoleBase.Writers.FancyWriters;
+using KS.ConsoleBase.Writers;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games
 {
@@ -98,7 +99,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 if (racing)
                 {
                     // Race mode. Wipe the keybindings
-                    TextWriterWhereColor.WriteWhereKernelColor(new string(' ', bindings.Length), bindingsPositionX, bindingsPositionY, KernelColorType.NeutralText);
+                    TextWriters.WriteWhere(new string(' ', bindings.Length), bindingsPositionX, bindingsPositionY, KernelColorType.NeutralText);
 
                     // Write the positions
                     var horsesSorted = horses
@@ -109,7 +110,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                         positions.Add(Translate.DoTranslation("Horse") + $" {horsesSorted[i].HorseNumber}: #{i + 1}");
                     string renderedPositions = string.Join(" | ", positions);
                     int positionsPositionX = ConsoleWrapper.WindowWidth / 2 - renderedPositions.Length / 2;
-                    TextWriterWhereColor.WriteWhereKernelColor(renderedPositions, positionsPositionX, bindingsPositionY, KernelColorType.NeutralText);
+                    TextWriters.WriteWhere(renderedPositions, positionsPositionX, bindingsPositionY, KernelColorType.NeutralText);
 
                     // Update each horse with their own movement
                     for (int i = 0; i < 5; i++)
@@ -147,7 +148,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 else
                 {
                     // Rest mode. Write the keybindings
-                    TextWriterWhereColor.WriteWhereKernelColor(bindings, bindingsPositionX, bindingsPositionY, KernelColorType.NeutralText);
+                    TextWriters.WriteWhere(bindings, bindingsPositionX, bindingsPositionY, KernelColorType.NeutralText);
 
                     // Wait for the input
                     winner = 0;

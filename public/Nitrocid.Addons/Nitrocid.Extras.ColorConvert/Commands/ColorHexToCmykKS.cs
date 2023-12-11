@@ -18,7 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 
@@ -40,8 +40,8 @@ namespace Nitrocid.Extras.ColorConvert.Commands
 
             // Do the job
             CMYK = KernelColorConversionTools.ConvertFromHexToCmyk(Hex);
-            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("CMYK color sequence:") + " ", false, KernelColorType.ListEntry);
-            TextWriterColor.WriteKernelColor(CMYK, true, KernelColorType.ListValue);
+            TextWriters.Write("- " + Translate.DoTranslation("CMYK color sequence:") + " ", false, KernelColorType.ListEntry);
+            TextWriters.Write(CMYK, true, KernelColorType.ListValue);
             variableValue = CMYK;
             return 0;
         }

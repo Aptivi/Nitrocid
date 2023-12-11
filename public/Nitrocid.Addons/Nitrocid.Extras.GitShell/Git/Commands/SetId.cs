@@ -18,7 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 
@@ -38,7 +38,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
             GitShellCommon.email = parameters.ArgumentsList[0];
             GitShellCommon.name = parameters.ArgumentsList[1];
             GitShellCommon.isIdentified = true;
-            TextWriterColor.WriteKernelColor(Translate.DoTranslation("You've successfully identified yourself as") + $": {GitShellCommon.name} <{GitShellCommon.email}>", true, KernelColorType.Success);
+            TextWriters.Write(Translate.DoTranslation("You've successfully identified yourself as") + $": {GitShellCommon.name} <{GitShellCommon.email}>", true, KernelColorType.Success);
             return 0;
         }
 

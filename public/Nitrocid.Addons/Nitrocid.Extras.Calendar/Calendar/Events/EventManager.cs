@@ -23,7 +23,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Files;
 using KS.Files.Folders;
 using KS.Files.Operations;
@@ -133,8 +133,8 @@ namespace Nitrocid.Extras.Calendar.Calendar.Events
         {
             foreach (EventInfo EventInstance in CalendarEvents.Union(baseEvents))
             {
-                TextWriterColor.WriteKernelColor("- {0}: ", false, KernelColorType.ListEntry, EventInstance.EventDate);
-                TextWriterColor.WriteKernelColor($"{EventInstance.EventTitle}{(EventInstance.IsYearly ? $" [{EventInstance.StartMonth}/{EventInstance.StartDay} -> {EventInstance.EndMonth}/{EventInstance.EndDay}]" : "")}", true, KernelColorType.ListValue);
+                TextWriters.Write("- {0}: ", false, KernelColorType.ListEntry, EventInstance.EventDate);
+                TextWriters.Write($"{EventInstance.EventTitle}{(EventInstance.IsYearly ? $" [{EventInstance.StartMonth}/{EventInstance.StartDay} -> {EventInstance.EndMonth}/{EventInstance.EndDay}]" : "")}", true, KernelColorType.ListValue);
             }
         }
 

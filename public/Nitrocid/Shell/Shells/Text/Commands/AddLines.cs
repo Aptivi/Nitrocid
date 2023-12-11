@@ -20,6 +20,7 @@
 using System.Collections.Generic;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
+using KS.ConsoleBase.Writers;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files.Editors.TextEdit;
 using KS.Languages;
@@ -45,7 +46,7 @@ namespace KS.Shell.Shells.Text.Commands
             TextWriterColor.Write(Translate.DoTranslation("Enter the text that you want to append to the end of the file. When you're done, write \"EOF\" on its own line."));
             while (FinalLine != "EOF")
             {
-                TextWriterColor.WriteKernelColor(">> ", false, KernelColorType.Input);
+                TextWriters.Write(">> ", false, KernelColorType.Input);
                 FinalLine = Input.ReadLine();
                 if (FinalLine != "EOF")
                 {

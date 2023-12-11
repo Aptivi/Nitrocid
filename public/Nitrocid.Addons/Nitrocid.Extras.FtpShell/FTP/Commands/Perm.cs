@@ -18,7 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
@@ -42,12 +42,12 @@ namespace Nitrocid.Extras.FtpShell.FTP.Commands
         {
             if (FTPFilesystem.FTPChangePermissions(parameters.ArgumentsList[0], Convert.ToInt32(parameters.ArgumentsList[1])))
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Permissions set successfully for file") + " {0}", true, KernelColorType.Success, parameters.ArgumentsList[0]);
+                TextWriters.Write(Translate.DoTranslation("Permissions set successfully for file") + " {0}", true, KernelColorType.Success, parameters.ArgumentsList[0]);
                 return 0;
             }
             else
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Failed to set permissions of {0} to {1}."), true, KernelColorType.Error, parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
+                TextWriters.Write(Translate.DoTranslation("Failed to set permissions of {0} to {1}."), true, KernelColorType.Error, parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
                 return 10000 + (int)KernelExceptionType.FTPFilesystem;
             }
         }

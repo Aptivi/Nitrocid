@@ -18,6 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Languages;
 using KS.Misc.Notifications;
@@ -41,11 +42,11 @@ namespace KS.Shell.Shells.UESH.Commands
             {
                 foreach (Notification Notif in NotificationManager.NotifRecents)
                 {
-                    TextWriterColor.WriteKernelColor($"[{Count}/{NotificationManager.NotifRecents.Count}] {Notif.Title}: ", false, KernelColorType.ListEntry);
-                    TextWriterColor.WriteKernelColor(Notif.Desc, false, KernelColorType.ListValue);
+                    TextWriters.Write($"[{Count}/{NotificationManager.NotifRecents.Count}] {Notif.Title}: ", false, KernelColorType.ListEntry);
+                    TextWriters.Write(Notif.Desc, false, KernelColorType.ListValue);
                     if (Notif.Type == NotificationType.Progress)
                     {
-                        TextWriterColor.WriteKernelColor($" ({Notif.Progress}%)", false, Notif.ProgressState == NotificationProgressState.Failure ? KernelColorType.Error : KernelColorType.Success);
+                        TextWriters.Write($" ({Notif.Progress}%)", false, Notif.ProgressState == NotificationProgressState.Failure ? KernelColorType.Error : KernelColorType.Success);
                     }
                     TextWriterColor.Write();
                     Count += 1;

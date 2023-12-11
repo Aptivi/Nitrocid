@@ -19,7 +19,7 @@
 
 using KS.ConsoleBase.Buffered;
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Kernel.Journaling;
@@ -146,7 +146,7 @@ namespace KS.Misc.Splash
                     else if (!KernelEntry.QuietKernel)
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Kernel not booted and not quiet. Reporting {0}...", Text);
-                        TextWriterColor.WriteKernelColor($"  [{_Progress}%] {Text}", true, KernelColorType.Tip, Vars);
+                        TextWriters.Write($"  [{_Progress}%] {Text}", true, KernelColorType.Tip, Vars);
                     }
                 }
 
@@ -156,7 +156,7 @@ namespace KS.Misc.Splash
             else if (KernelBooted || (SplashManager.EnableSplash && !InSplash || !SplashManager.EnableSplash && !KernelEntry.QuietKernel) || !SplashManager.EnableSplash)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Kernel booted or not in splash. Reporting {0}...", Text);
-                TextWriterColor.WriteKernelColor(Text, true, KernelColorType.Tip, Vars);
+                TextWriters.Write(Text, true, KernelColorType.Tip, Vars);
             }
             JournalManager.WriteJournal(Text, Vars);
         }
@@ -216,7 +216,7 @@ namespace KS.Misc.Splash
                     else if (!KernelEntry.QuietKernel)
                     {
                         DebugWriter.WriteDebug(DebugLevel.W, "Kernel not booted and not quiet. Reporting {0}...", Text);
-                        TextWriterColor.WriteKernelColor($"  [{_Progress}%] Warning: {Text}", true, KernelColorType.Warning, Vars);
+                        TextWriters.Write($"  [{_Progress}%] Warning: {Text}", true, KernelColorType.Warning, Vars);
                     }
                 }
 
@@ -226,7 +226,7 @@ namespace KS.Misc.Splash
             else if (KernelBooted || (SplashManager.EnableSplash && !InSplash || !SplashManager.EnableSplash && !KernelEntry.QuietKernel) || !SplashManager.EnableSplash)
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Kernel booted. Reporting {0}...", Text);
-                TextWriterColor.WriteKernelColor(Text, true, KernelColorType.Warning, Vars);
+                TextWriters.Write(Text, true, KernelColorType.Warning, Vars);
             }
             JournalManager.WriteJournal(Text, JournalStatus.Warning, Vars);
         }
@@ -286,7 +286,7 @@ namespace KS.Misc.Splash
                     else if (!KernelEntry.QuietKernel)
                     {
                         DebugWriter.WriteDebug(DebugLevel.E, "Kernel not booted and not quiet. Reporting {0}...", Text);
-                        TextWriterColor.WriteKernelColor($"  [{_Progress}%] Error: {Text}", true, KernelColorType.Error, Vars);
+                        TextWriters.Write($"  [{_Progress}%] Error: {Text}", true, KernelColorType.Error, Vars);
                     }
                 }
 
@@ -296,7 +296,7 @@ namespace KS.Misc.Splash
             else if (KernelBooted || (SplashManager.EnableSplash && !InSplash || !SplashManager.EnableSplash && !KernelEntry.QuietKernel) || !SplashManager.EnableSplash)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Kernel booted. Reporting {0}...", Text);
-                TextWriterColor.WriteKernelColor(Text, true, KernelColorType.Error, Vars);
+                TextWriters.Write(Text, true, KernelColorType.Error, Vars);
             }
             JournalManager.WriteJournal(Text, JournalStatus.Error, Vars);
         }

@@ -20,7 +20,7 @@
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Inputs.Styles.Infobox;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Files.Operations;
 using KS.Files.Paths;
 using KS.Kernel.Configuration;
@@ -431,7 +431,7 @@ namespace KS.Kernel.Exceptions
             }
             catch (Exception ex)
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Dump generator failed to dump a kernel error caused by") + " {0}: {1}", true, KernelColorType.Error, Exc.GetType().FullName, ex.Message);
+                TextWriters.Write(Translate.DoTranslation("Dump generator failed to dump a kernel error caused by") + " {0}: {1}", true, KernelColorType.Error, Exc.GetType().FullName, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
         }

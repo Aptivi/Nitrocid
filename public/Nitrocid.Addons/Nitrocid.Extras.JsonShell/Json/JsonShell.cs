@@ -19,7 +19,7 @@
 
 using System;
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Shell.ShellBase.Shells;
@@ -50,7 +50,7 @@ namespace Nitrocid.Extras.JsonShell.Json
             }
             else
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("File not specified. Exiting shell..."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("File not specified. Exiting shell..."), true, KernelColorType.Error);
                 Bail = true;
             }
 
@@ -60,7 +60,7 @@ namespace Nitrocid.Extras.JsonShell.Json
                 DebugWriter.WriteDebug(DebugLevel.W, "File not open yet. Trying to open {0}...", FilePath);
                 if (!JsonTools.OpenJsonFile(FilePath))
                 {
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Failed to open file. Exiting shell..."), true, KernelColorType.Error);
+                    TextWriters.Write(Translate.DoTranslation("Failed to open file. Exiting shell..."), true, KernelColorType.Error);
                     Bail = true;
                 }
                 JsonShellCommon.AutoSave.Start();

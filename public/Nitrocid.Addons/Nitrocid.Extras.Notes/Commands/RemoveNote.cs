@@ -19,7 +19,7 @@
 
 using FluentFTP.Helpers;
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 using Nitrocid.Extras.Notes.Management;
@@ -36,7 +36,7 @@ namespace Nitrocid.Extras.Notes.Commands
                 NoteManagement.RemoveNote(Convert.ToInt32(parameters.ArgumentsList[0]) - 1);
             else
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("The note ID must be a note number"), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("The note ID must be a note number"), true, KernelColorType.Error);
                 return 8;
             }
             return 0;

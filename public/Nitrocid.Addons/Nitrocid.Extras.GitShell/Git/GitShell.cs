@@ -20,7 +20,7 @@
 using System;
 using System.Threading;
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Text;
@@ -52,7 +52,7 @@ namespace Nitrocid.Extras.GitShell.Git
             }
             else
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Repository not specified. Exiting shell..."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("Repository not specified. Exiting shell..."), true, KernelColorType.Error);
                 Bail = true;
             }
 
@@ -62,7 +62,7 @@ namespace Nitrocid.Extras.GitShell.Git
                 DebugWriter.WriteDebug(DebugLevel.W, "Repo not open yet. Trying to open {0}...", RepoPath);
                 if (!GitShellCommon.OpenRepository(RepoPath))
                 {
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Failed to open repository. Exiting shell..."), true, KernelColorType.Error);
+                    TextWriters.Write(Translate.DoTranslation("Failed to open repository. Exiting shell..."), true, KernelColorType.Error);
                     Bail = true;
                 }
             }
@@ -83,7 +83,7 @@ namespace Nitrocid.Extras.GitShell.Git
                 catch (Exception ex)
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("There was an error in the shell.") + CharManager.NewLine + "Error {0}: {1}", true, KernelColorType.Error, ex.GetType().FullName, ex.Message);
+                    TextWriters.Write(Translate.DoTranslation("There was an error in the shell.") + CharManager.NewLine + "Error {0}: {1}", true, KernelColorType.Error, ex.GetType().FullName, ex.Message);
                     continue;
                 }
             }

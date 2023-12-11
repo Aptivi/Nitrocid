@@ -25,6 +25,7 @@ using KS.Kernel.Exceptions;
 using KS.Files.Folders;
 using KS.Files.Operations;
 using KS.Files.Paths;
+using KS.ConsoleBase.Writers;
 
 namespace KS.Shell.Shells.Debug.Commands
 {
@@ -44,7 +45,7 @@ namespace KS.Shell.Shells.Debug.Commands
             if (!int.TryParse(sessionNumStr, out int sessionNum))
             {
                 // There is invalid session number being requested
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Invalid session number") + $" {sessionNumStr}", true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("Invalid session number") + $" {sessionNumStr}", true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.Debug;
             }
 
@@ -68,7 +69,7 @@ namespace KS.Shell.Shells.Debug.Commands
             if (string.IsNullOrEmpty(finalDebug))
             {
                 // There is no such session number being requested
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("No such session number") + $" {sessionNumStr}", true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("No such session number") + $" {sessionNumStr}", true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.Debug;
             }
 

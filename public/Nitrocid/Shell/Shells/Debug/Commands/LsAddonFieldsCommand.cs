@@ -20,8 +20,8 @@
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Kernel.Extensions;
+using KS.ConsoleBase.Writers.FancyWriters;
 
 namespace KS.Shell.Shells.Debug.Commands
 {

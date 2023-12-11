@@ -22,7 +22,6 @@ using System.Linq;
 using System.Collections.Generic;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.ConsoleBase.Writers.FancyWriters;
 using KS.ConsoleBase.Writers.FancyWriters.Tools;
 using Nitrocid.Extras.Calendar.Calendar.Reminders;
 using Nitrocid.Extras.Calendar.Calendar.Events;
@@ -30,6 +29,8 @@ using KS.ConsoleBase;
 using KS.Kernel.Time.Calendars;
 using KS.Kernel.Time.Converters;
 using KS.Kernel.Time;
+using KS.ConsoleBase.Writers.FancyWriters;
+using KS.ConsoleBase.Writers;
 
 namespace Nitrocid.Extras.Calendar.Calendar
 {
@@ -69,7 +70,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
             var CalendarCellOptions = new List<CellOptions>();
 
             // Populate the calendar data
-            TextWriterWhereColor.WriteWhereKernelColor(CalendarTitle, (int)Math.Round((ConsoleWrapper.WindowWidth - CalendarTitle.Length) / 2d), ConsoleWrapper.CursorTop, true, KernelColorType.TableTitle);
+            TextWriters.WriteWhere(CalendarTitle, (int)Math.Round((ConsoleWrapper.WindowWidth - CalendarTitle.Length) / 2d), ConsoleWrapper.CursorTop, true, KernelColorType.TableTitle);
             TextWriterColor.Write();
             for (int CurrentDay = 1; CurrentDay <= DateTo.Day; CurrentDay++)
             {

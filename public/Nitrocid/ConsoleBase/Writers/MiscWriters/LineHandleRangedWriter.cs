@@ -42,7 +42,7 @@ namespace KS.ConsoleBase.Writers.MiscWriters
         /// <param name="startPos">Column number (not index). This tells the handle where to place itself as the start.</param>
         /// <param name="endPos">Column number (not index). This tells the handle where to place itself as the end. Should be bigger than the start position.</param>
         public static void PrintLineWithHandleConditional(bool Condition, string Filename, int LineNumber, int startPos, int endPos) =>
-            PrintLineWithHandleConditional(Condition, Filename, LineNumber, startPos, endPos, KernelColorType.NeutralText);
+            PrintLineWithHandleConditional(Condition, Filename, LineNumber, startPos, endPos, KernelColorTools.GetColor(KernelColorType.NeutralText));
 
         /// <summary>
         /// Prints the line of a text file with the specified line number and the column number if the specified condition is satisfied
@@ -53,31 +53,7 @@ namespace KS.ConsoleBase.Writers.MiscWriters
         /// <param name="startPos">Column number (not index). This tells the handle where to place itself</param>
         /// <param name="endPos">Column number (not index). This tells the handle where to place itself as the end. Should be bigger than the start position.</param>
         public static void PrintLineWithHandleConditional(bool Condition, string[] Array, int LineNumber, int startPos, int endPos) =>
-            PrintLineWithHandleConditional(Condition, Array, LineNumber, startPos, endPos, KernelColorType.NeutralText);
-
-        /// <summary>
-        /// Prints the line of a text file with the specified line number and the column number if the specified condition is satisfied
-        /// </summary>
-        /// <param name="Condition">The condition to satisfy</param>
-        /// <param name="Filename">Path to text file</param>
-        /// <param name="LineNumber">Line number (not index)</param>
-        /// <param name="startPos">Column number (not index). This tells the handle where to place itself</param>
-        /// <param name="endPos">Column number (not index). This tells the handle where to place itself as the end. Should be bigger than the start position.</param>
-        /// <param name="ColorType">The type of color</param>
-        public static void PrintLineWithHandleConditional(bool Condition, string Filename, int LineNumber, int startPos, int endPos, KernelColorType ColorType) =>
-            PrintLineWithHandleConditional(Condition, Filename, LineNumber, startPos, endPos, KernelColorTools.GetColor(ColorType));
-
-        /// <summary>
-        /// Prints the line of a text file with the specified line number and the column number if the specified condition is satisfied
-        /// </summary>
-        /// <param name="Condition">The condition to satisfy</param>
-        /// <param name="Array">A string array containing the contents of the file</param>
-        /// <param name="LineNumber">Line number (not index)</param>
-        /// <param name="startPos">Column number (not index). This tells the handle where to place itself</param>
-        /// <param name="endPos">Column number (not index). This tells the handle where to place itself as the end. Should be bigger than the start position.</param>
-        /// <param name="ColorType">The type of color</param>
-        public static void PrintLineWithHandleConditional(bool Condition, string[] Array, int LineNumber, int startPos, int endPos, KernelColorType ColorType) =>
-            PrintLineWithHandleConditional(Condition, Array, LineNumber, startPos, endPos, KernelColorTools.GetColor(ColorType));
+            PrintLineWithHandleConditional(Condition, Array, LineNumber, startPos, endPos, KernelColorTools.GetColor(KernelColorType.NeutralText));
 
         /// <summary>
         /// Prints the line of a text file with the specified line number and the column number if the specified condition is satisfied
@@ -121,7 +97,7 @@ namespace KS.ConsoleBase.Writers.MiscWriters
         /// <param name="startPos">Column number (not index). This tells the handle where to place itself</param>
         /// <param name="endPos">Column number (not index). This tells the handle where to place itself as the end. Should be bigger than the start position.</param>
         public static void PrintLineWithHandle(string Filename, int LineNumber, int startPos, int endPos) =>
-            PrintLineWithHandle(Filename, LineNumber, startPos, endPos, KernelColorType.NeutralText);
+            PrintLineWithHandle(Filename, LineNumber, startPos, endPos, KernelColorTools.GetColor(KernelColorType.NeutralText));
 
         /// <summary>
         /// Prints the line of a text file with the specified line number and the column number
@@ -131,29 +107,7 @@ namespace KS.ConsoleBase.Writers.MiscWriters
         /// <param name="startPos">Column number (not index). This tells the handle where to place itself</param>
         /// <param name="endPos">Column number (not index). This tells the handle where to place itself as the end. Should be bigger than the start position.</param>
         public static void PrintLineWithHandle(string[] Array, int LineNumber, int startPos, int endPos) =>
-            PrintLineWithHandle(Array, LineNumber, startPos, endPos, KernelColorType.NeutralText);
-
-        /// <summary>
-        /// Prints the line of a text file with the specified line number and the column number
-        /// </summary>
-        /// <param name="Filename">Path to text file</param>
-        /// <param name="LineNumber">Line number (not index)</param>
-        /// <param name="startPos">Column number (not index). This tells the handle where to place itself</param>
-        /// <param name="endPos">Column number (not index). This tells the handle where to place itself as the end. Should be bigger than the start position.</param>
-        /// <param name="ColorType">The type of color</param>
-        public static void PrintLineWithHandle(string Filename, int LineNumber, int startPos, int endPos, KernelColorType ColorType) =>
-            PrintLineWithHandle(Filename, LineNumber, startPos, endPos, KernelColorTools.GetColor(ColorType));
-
-        /// <summary>
-        /// Prints the line of a text file with the specified line number and the column number
-        /// </summary>
-        /// <param name="Array">A string array containing the contents of the file</param>
-        /// <param name="LineNumber">Line number (not index)</param>
-        /// <param name="startPos">Column number (not index). This tells the handle where to place itself</param>
-        /// <param name="endPos">Column number (not index). This tells the handle where to place itself as the end. Should be bigger than the start position.</param>
-        /// <param name="ColorType">The type of color</param>
-        public static void PrintLineWithHandle(string[] Array, int LineNumber, int startPos, int endPos, KernelColorType ColorType) =>
-            PrintLineWithHandle(Array, LineNumber, startPos, endPos, KernelColorTools.GetColor(ColorType));
+            PrintLineWithHandle(Array, LineNumber, startPos, endPos, KernelColorTools.GetColor(KernelColorType.NeutralText));
 
         /// <summary>
         /// Prints the line of a text file with the specified line number and the column number
@@ -194,7 +148,7 @@ namespace KS.ConsoleBase.Writers.MiscWriters
         /// <param name="startPos">Column number (not index). This tells the handle where to place itself</param>
         /// <param name="endPos">Column number (not index). This tells the handle where to place itself as the end. Should be bigger than the start position.</param>
         public static string RenderLineWithHandleConditional(bool Condition, string Filename, int LineNumber, int startPos, int endPos) =>
-            RenderLineWithHandleConditional(Condition, Filename, LineNumber, startPos, endPos, KernelColorType.NeutralText);
+            RenderLineWithHandleConditional(Condition, Filename, LineNumber, startPos, endPos, KernelColorTools.GetColor(KernelColorType.NeutralText));
 
         /// <summary>
         /// Renders the line of a text file with the specified line number and the column number if the specified condition is satisfied
@@ -205,35 +159,7 @@ namespace KS.ConsoleBase.Writers.MiscWriters
         /// <param name="startPos">Column number (not index). This tells the handle where to place itself</param>
         /// <param name="endPos">Column number (not index). This tells the handle where to place itself as the end. Should be bigger than the start position.</param>
         public static string RenderLineWithHandleConditional(bool Condition, string[] Array, int LineNumber, int startPos, int endPos) =>
-            RenderLineWithHandleConditional(Condition, Array, LineNumber, startPos, endPos, KernelColorType.NeutralText);
-
-        /// <summary>
-        /// Renders the line of a text file with the specified line number and the column number if the specified condition is satisfied
-        /// </summary>
-        /// <param name="Condition">The condition to satisfy</param>
-        /// <param name="Filename">Path to text file</param>
-        /// <param name="LineNumber">Line number (not index)</param>
-        /// <param name="startPos">Column number (not index). This tells the handle where to place itself</param>
-        /// <param name="endPos">Column number (not index). This tells the handle where to place itself as the end. Should be bigger than the start position.</param>
-        /// <param name="ColorType">The type of color</param>
-        public static string RenderLineWithHandleConditional(bool Condition, string Filename, int LineNumber, int startPos, int endPos, KernelColorType ColorType)
-        {
-            if (Condition)
-                return RenderLineWithHandle(Filename, LineNumber, startPos, endPos, ColorType);
-            return "";
-        }
-
-        /// <summary>
-        /// Renders the line of a text file with the specified line number and the column number if the specified condition is satisfied
-        /// </summary>
-        /// <param name="Condition">The condition to satisfy</param>
-        /// <param name="Array">A string array containing the contents of the file</param>
-        /// <param name="LineNumber">Line number (not index)</param>
-        /// <param name="startPos">Column number (not index). This tells the handle where to place itself</param>
-        /// <param name="endPos">Column number (not index). This tells the handle where to place itself as the end. Should be bigger than the start position.</param>
-        /// <param name="ColorType">The type of color</param>
-        public static string RenderLineWithHandleConditional(bool Condition, string[] Array, int LineNumber, int startPos, int endPos, KernelColorType ColorType) =>
-            RenderLineWithHandleConditional(Condition, Array, LineNumber, startPos, endPos, KernelColorTools.GetColor(ColorType));
+            RenderLineWithHandleConditional(Condition, Array, LineNumber, startPos, endPos, KernelColorTools.GetColor(KernelColorType.NeutralText));
 
         /// <summary>
         /// Renders the line of a text file with the specified line number and the column number if the specified condition is satisfied
@@ -275,7 +201,7 @@ namespace KS.ConsoleBase.Writers.MiscWriters
         /// <param name="startPos">Column number (not index). This tells the handle where to place itself</param>
         /// <param name="endPos">Column number (not index). This tells the handle where to place itself as the end. Should be bigger than the start position.</param>
         public static string RenderLineWithHandle(string Filename, int LineNumber, int startPos, int endPos) =>
-            RenderLineWithHandle(Filename, LineNumber, startPos, endPos, KernelColorType.NeutralText);
+            RenderLineWithHandle(Filename, LineNumber, startPos, endPos, KernelColorTools.GetColor(KernelColorType.NeutralText));
 
         /// <summary>
         /// Renders the line of a text file with the specified line number and the column number
@@ -285,29 +211,7 @@ namespace KS.ConsoleBase.Writers.MiscWriters
         /// <param name="startPos">Column number (not index). This tells the handle where to place itself</param>
         /// <param name="endPos">Column number (not index). This tells the handle where to place itself as the end. Should be bigger than the start position.</param>
         public static string RenderLineWithHandle(string[] Array, int LineNumber, int startPos, int endPos) =>
-            RenderLineWithHandle(Array, LineNumber, startPos, endPos, KernelColorType.NeutralText);
-
-        /// <summary>
-        /// Renders the line of a text file with the specified line number and the column number
-        /// </summary>
-        /// <param name="Filename">Path to text file</param>
-        /// <param name="LineNumber">Line number (not index)</param>
-        /// <param name="startPos">Column number (not index). This tells the handle where to place itself</param>
-        /// <param name="endPos">Column number (not index). This tells the handle where to place itself as the end. Should be bigger than the start position.</param>
-        /// <param name="ColorType">The type of color</param>
-        public static string RenderLineWithHandle(string Filename, int LineNumber, int startPos, int endPos, KernelColorType ColorType) =>
-            RenderLineWithHandle(Filename, LineNumber, startPos, endPos, KernelColorTools.GetColor(ColorType));
-
-        /// <summary>
-        /// Renders the line of a text file with the specified line number and the column number
-        /// </summary>
-        /// <param name="Array">A string array containing the contents of the file</param>
-        /// <param name="LineNumber">Line number (not index)</param>
-        /// <param name="startPos">Column number (not index). This tells the handle where to place itself</param>
-        /// <param name="endPos">Column number (not index). This tells the handle where to place itself as the end. Should be bigger than the start position.</param>
-        /// <param name="ColorType">The type of color</param>
-        public static string RenderLineWithHandle(string[] Array, int LineNumber, int startPos, int endPos, KernelColorType ColorType) =>
-            RenderLineWithHandle(Array, LineNumber, startPos, endPos, KernelColorTools.GetColor(ColorType));
+            RenderLineWithHandle(Array, LineNumber, startPos, endPos, KernelColorTools.GetColor(KernelColorType.NeutralText));
 
         /// <summary>
         /// Renders the line of a text file with the specified line number and the column number

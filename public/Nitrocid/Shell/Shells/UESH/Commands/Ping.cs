@@ -21,13 +21,14 @@ using System;
 using System.Net.NetworkInformation;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Text;
 using KS.Network.Base;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Switches;
+using KS.ConsoleBase.Writers.FancyWriters;
+using KS.ConsoleBase.Writers;
 
 namespace KS.Shell.Shells.UESH.Commands
 {
@@ -70,19 +71,19 @@ namespace KS.Shell.Shells.UESH.Commands
                             }
                             else
                             {
-                                TextWriterColor.WriteKernelColor("[{2}] " + Translate.DoTranslation("Failed to ping {0}: {1}"), true, KernelColorType.Error, PingedAddress, PingReplied.Status, CurrentTime);
+                                TextWriters.Write("[{2}] " + Translate.DoTranslation("Failed to ping {0}: {1}"), true, KernelColorType.Error, PingedAddress, PingReplied.Status, CurrentTime);
                             }
                         }
                         catch (Exception ex)
                         {
-                            TextWriterColor.WriteKernelColor("[{2}] " + Translate.DoTranslation("Failed to ping {0}: {1}"), true, KernelColorType.Error, PingedAddress, ex.Message, CurrentTime);
+                            TextWriters.Write("[{2}] " + Translate.DoTranslation("Failed to ping {0}: {1}"), true, KernelColorType.Error, PingedAddress, ex.Message, CurrentTime);
                             DebugWriter.WriteDebugStackTrace(ex);
                         }
                     }
                 }
                 else
                 {
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Address may not be empty."), true, KernelColorType.Error);
+                    TextWriters.Write(Translate.DoTranslation("Address may not be empty."), true, KernelColorType.Error);
                 }
             }
             return 0;

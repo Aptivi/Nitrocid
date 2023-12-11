@@ -67,62 +67,6 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="Top">Row number in console</param>
         /// <param name="Return">Whether or not to return to old position</param>
         /// <param name="FigletFont">Figlet font to use in the text.</param>
-        /// <param name="ColTypes">A type of colors that will be changed.</param>
-        /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteFigletWhereKernelColor(string Text, int Left, int Top, bool Return, FigletizeFont FigletFont, KernelColorType ColTypes, params object[] Vars)
-        {
-            try
-            {
-                // Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                KernelColorTools.SetConsoleColor(ColTypes);
-
-                // Actually write
-                WriteFigletWherePlain(Text, Left, Top, Return, FigletFont, Vars);
-            }
-            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
-            {
-                DebugWriter.WriteDebugStackTrace(ex);
-                DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// Writes the figlet text with position support
-        /// </summary>
-        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
-        /// <param name="Left">Column number in console</param>
-        /// <param name="Top">Row number in console</param>
-        /// <param name="Return">Whether or not to return to old position</param>
-        /// <param name="FigletFont">Figlet font to use in the text.</param>
-        /// <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
-        /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
-        /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteFigletWhereKernelColor(string Text, int Left, int Top, bool Return, FigletizeFont FigletFont, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] Vars)
-        {
-            try
-            {
-                // Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                KernelColorTools.SetConsoleColor(colorTypeForeground);
-                KernelColorTools.SetConsoleColor(colorTypeBackground, true);
-
-                // Actually write
-                WriteFigletWherePlain(Text, Left, Top, Return, FigletFont, Vars);
-            }
-            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
-            {
-                DebugWriter.WriteDebugStackTrace(ex);
-                DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// Writes the figlet text with position support
-        /// </summary>
-        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
-        /// <param name="Left">Column number in console</param>
-        /// <param name="Top">Row number in console</param>
-        /// <param name="Return">Whether or not to return to old position</param>
-        /// <param name="FigletFont">Figlet font to use in the text.</param>
         /// <param name="Color">A color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
         public static void WriteFigletWhereColor(string Text, int Left, int Top, bool Return, FigletizeFont FigletFont, ConsoleColors Color, params object[] Vars)

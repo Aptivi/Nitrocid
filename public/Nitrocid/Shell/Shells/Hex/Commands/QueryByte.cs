@@ -19,7 +19,7 @@
 
 using System;
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Files.Editors.HexEdit;
 using KS.Kernel.Exceptions;
 using KS.Languages;
@@ -58,7 +58,7 @@ namespace KS.Shell.Shells.Hex.Commands
                     }
                     else
                     {
-                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("The specified byte number may not be larger than the file size."), true, KernelColorType.Error);
+                        TextWriters.Write(Translate.DoTranslation("The specified byte number may not be larger than the file size."), true, KernelColorType.Error);
                         return 10000 + (int)KernelExceptionType.HexEditor;
                     }
                 }
@@ -78,7 +78,7 @@ namespace KS.Shell.Shells.Hex.Commands
                     }
                     else
                     {
-                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("The specified byte number may not be larger than the file size."), true, KernelColorType.Error);
+                        TextWriters.Write(Translate.DoTranslation("The specified byte number may not be larger than the file size."), true, KernelColorType.Error);
                         return 10000 + (int)KernelExceptionType.HexEditor;
                     }
                 }

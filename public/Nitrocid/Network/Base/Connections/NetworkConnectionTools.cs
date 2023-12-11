@@ -27,9 +27,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using KS.Kernel.Threading;
-using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Network.Base.SpeedDial;
 using KS.ConsoleBase.Inputs.Styles.Selection;
+using KS.ConsoleBase.Writers;
 
 namespace KS.Network.Base.Connections
 {
@@ -511,7 +511,7 @@ namespace KS.Network.Base.Connections
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Failed to establish a connection [type: {0}] to a network [address: {1}] for shell: {2}", shellType, address, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Unknown networked shell error:") + " {0}", true, KernelColorType.Error, ex.Message);
+                TextWriters.Write(Translate.DoTranslation("Unknown networked shell error:") + " {0}", true, KernelColorType.Error, ex.Message);
             }
         }
     }

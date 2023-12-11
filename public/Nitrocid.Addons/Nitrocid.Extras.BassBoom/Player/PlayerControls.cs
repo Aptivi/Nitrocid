@@ -45,13 +45,13 @@ using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs.Styles.Infobox;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Languages;
 using System;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
+using KS.ConsoleBase.Writers.FancyWriters;
 
 namespace Nitrocid.Extras.BassBoom.Player
 {

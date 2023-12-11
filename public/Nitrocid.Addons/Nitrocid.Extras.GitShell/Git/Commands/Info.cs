@@ -18,7 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 
@@ -36,20 +36,20 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             var info = GitShellCommon.Repository.Info;
-            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Bare repository") + ": ", false, KernelColorType.ListEntry);
-            TextWriterColor.WriteKernelColor($"{info.IsBare}", true, KernelColorType.ListValue);
-            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Head detached") + ": ", false, KernelColorType.ListEntry);
-            TextWriterColor.WriteKernelColor($"{info.IsHeadDetached}", true, KernelColorType.ListValue);
-            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("No reference") + ": ", false, KernelColorType.ListEntry);
-            TextWriterColor.WriteKernelColor($"{info.IsHeadUnborn}", true, KernelColorType.ListValue);
-            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Shallow clone") + ": ", false, KernelColorType.ListEntry);
-            TextWriterColor.WriteKernelColor($"{info.IsShallow}", true, KernelColorType.ListValue);
-            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Path to .git") + ": ", false, KernelColorType.ListEntry);
-            TextWriterColor.WriteKernelColor($"{info.Path}", true, KernelColorType.ListValue);
+            TextWriters.Write("- " + Translate.DoTranslation("Bare repository") + ": ", false, KernelColorType.ListEntry);
+            TextWriters.Write($"{info.IsBare}", true, KernelColorType.ListValue);
+            TextWriters.Write("- " + Translate.DoTranslation("Head detached") + ": ", false, KernelColorType.ListEntry);
+            TextWriters.Write($"{info.IsHeadDetached}", true, KernelColorType.ListValue);
+            TextWriters.Write("- " + Translate.DoTranslation("No reference") + ": ", false, KernelColorType.ListEntry);
+            TextWriters.Write($"{info.IsHeadUnborn}", true, KernelColorType.ListValue);
+            TextWriters.Write("- " + Translate.DoTranslation("Shallow clone") + ": ", false, KernelColorType.ListEntry);
+            TextWriters.Write($"{info.IsShallow}", true, KernelColorType.ListValue);
+            TextWriters.Write("- " + Translate.DoTranslation("Path to .git") + ": ", false, KernelColorType.ListEntry);
+            TextWriters.Write($"{info.Path}", true, KernelColorType.ListValue);
             if (!info.IsBare)
             {
-                TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Path to working directory") + ": ", false, KernelColorType.ListEntry);
-                TextWriterColor.WriteKernelColor($"{info.WorkingDirectory}", true, KernelColorType.ListValue);
+                TextWriters.Write("- " + Translate.DoTranslation("Path to working directory") + ": ", false, KernelColorType.ListEntry);
+                TextWriters.Write($"{info.WorkingDirectory}", true, KernelColorType.ListValue);
             }
             return 0;
         }

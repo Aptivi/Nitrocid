@@ -18,7 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Shell.ShellBase.Commands;
 
 namespace Nitrocid.Extras.GitShell.Git.Commands
@@ -37,8 +37,8 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
             var tags = GitShellCommon.Repository.Tags;
             foreach (var tag in tags)
             {
-                TextWriterColor.WriteKernelColor($"- [{(tag.IsAnnotated ? "A" : " ")}] {tag.CanonicalName} [{tag.FriendlyName}]", true, KernelColorType.ListEntry);
-                TextWriterColor.WriteKernelColor($"  {tag.Target.Sha}", true, KernelColorType.ListValue);
+                TextWriters.Write($"- [{(tag.IsAnnotated ? "A" : " ")}] {tag.CanonicalName} [{tag.FriendlyName}]", true, KernelColorType.ListEntry);
+                TextWriters.Write($"  {tag.Target.Sha}", true, KernelColorType.ListValue);
             }
             return 0;
         }

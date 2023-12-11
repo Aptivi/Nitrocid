@@ -18,6 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Time.Alarm;
 using KS.Languages;
@@ -51,7 +52,7 @@ namespace Nitrocid.Extras.Caffeine.Commands
             {
                 if (!AlarmTools.IsAlarmRegistered("Caffeine"))
                 {
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("No caffeine alerts to abort."), KernelColorType.Error);
+                    TextWriters.Write(Translate.DoTranslation("No caffeine alerts to abort."), KernelColorType.Error);
                     return 32;
                 }
                 var (id, name) = AlarmTools.alarms.Keys.Last((alarm) => alarm.id.Contains("Caffeine"));
@@ -62,8 +63,8 @@ namespace Nitrocid.Extras.Caffeine.Commands
                 string secsOrName = parameters.ArgumentsList[0];
                 if (!int.TryParse(secsOrName, out int alarmSeconds) && !caffeines.TryGetValue(secsOrName, out alarmSeconds))
                 {
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("The seconds in which your cup will be ready is invalid."), KernelColorType.Error);
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("If you're trying to supply a name of the drink, check out the list below:"), KernelColorType.Tip);
+                    TextWriters.Write(Translate.DoTranslation("The seconds in which your cup will be ready is invalid."), KernelColorType.Error);
+                    TextWriters.Write(Translate.DoTranslation("If you're trying to supply a name of the drink, check out the list below:"), KernelColorType.Tip);
                     ListWriterColor.WriteList(caffeines);
                     return 26;
                 }

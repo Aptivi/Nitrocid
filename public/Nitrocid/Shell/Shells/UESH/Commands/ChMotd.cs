@@ -18,6 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files.Paths;
 using KS.Kernel.Exceptions;
@@ -49,7 +50,7 @@ namespace KS.Shell.Shells.UESH.Commands
             {
                 if (string.IsNullOrEmpty(parameters.ArgumentsText))
                 {
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Blank message of the day."), true, KernelColorType.Error);
+                    TextWriters.Write(Translate.DoTranslation("Blank message of the day."), true, KernelColorType.Error);
                     return 10000 + (int)KernelExceptionType.MOTD;
                 }
                 else

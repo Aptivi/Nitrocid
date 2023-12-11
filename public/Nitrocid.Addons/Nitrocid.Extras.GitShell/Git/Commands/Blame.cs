@@ -19,12 +19,13 @@
 
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 using LibGit2Sharp;
 using System.IO;
 using System.Linq;
+using KS.ConsoleBase.Writers.FancyWriters;
+using KS.ConsoleBase.Writers;
 
 namespace Nitrocid.Extras.GitShell.Git.Commands
 {
@@ -65,40 +66,40 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
 
                 // Display some info about the blame hunk
                 SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Hunk number") + $" {hunkNum}/{blameHunks.Count()}", true);
-                TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Number of lines") + ": ", false, KernelColorType.ListEntry);
-                TextWriterColor.WriteKernelColor($"{lines}", true, KernelColorType.ListValue);
-                TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Initial line number") + ": ", false, KernelColorType.ListEntry);
-                TextWriterColor.WriteKernelColor($"{initialStart}", true, KernelColorType.ListValue);
-                TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Final line number") + ": ", false, KernelColorType.ListEntry);
-                TextWriterColor.WriteKernelColor($"{finalStart}", true, KernelColorType.ListValue);
+                TextWriters.Write("- " + Translate.DoTranslation("Number of lines") + ": ", false, KernelColorType.ListEntry);
+                TextWriters.Write($"{lines}", true, KernelColorType.ListValue);
+                TextWriters.Write("- " + Translate.DoTranslation("Initial line number") + ": ", false, KernelColorType.ListEntry);
+                TextWriters.Write($"{initialStart}", true, KernelColorType.ListValue);
+                TextWriters.Write("- " + Translate.DoTranslation("Final line number") + ": ", false, KernelColorType.ListEntry);
+                TextWriters.Write($"{finalStart}", true, KernelColorType.ListValue);
                 TextWriterColor.Write();
 
                 // Initial commit info
-                TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Initial commit"), true, KernelColorType.ListEntry);
-                TextWriterColor.WriteKernelColor("  - " + Translate.DoTranslation("Commit SHA") + ": ", false, KernelColorType.ListEntry);
-                TextWriterColor.WriteKernelColor($"{initialCommit.Sha}", true, KernelColorType.ListValue);
-                TextWriterColor.WriteKernelColor("  - " + Translate.DoTranslation("Commit message") + ": ", false, KernelColorType.ListEntry);
-                TextWriterColor.WriteKernelColor($"{initialCommit.MessageShort}", true, KernelColorType.ListValue);
-                TextWriterColor.WriteKernelColor("  - " + Translate.DoTranslation("Commit author") + ": ", false, KernelColorType.ListEntry);
-                TextWriterColor.WriteKernelColor($"{initialCommit.Author.Name} <{initialCommit.Author.Email}>", true, KernelColorType.ListValue);
-                TextWriterColor.WriteKernelColor("  - " + Translate.DoTranslation("Commit committer") + ": ", false, KernelColorType.ListEntry);
-                TextWriterColor.WriteKernelColor($"{initialCommit.Committer.Name} <{initialCommit.Committer.Email}>", true, KernelColorType.ListValue);
-                TextWriterColor.WriteKernelColor("  - " + Translate.DoTranslation("Number of parents") + ": ", false, KernelColorType.ListEntry);
-                TextWriterColor.WriteKernelColor($"{initialCommit.Parents.Count()}", true, KernelColorType.ListValue);
+                TextWriters.Write("- " + Translate.DoTranslation("Initial commit"), true, KernelColorType.ListEntry);
+                TextWriters.Write("  - " + Translate.DoTranslation("Commit SHA") + ": ", false, KernelColorType.ListEntry);
+                TextWriters.Write($"{initialCommit.Sha}", true, KernelColorType.ListValue);
+                TextWriters.Write("  - " + Translate.DoTranslation("Commit message") + ": ", false, KernelColorType.ListEntry);
+                TextWriters.Write($"{initialCommit.MessageShort}", true, KernelColorType.ListValue);
+                TextWriters.Write("  - " + Translate.DoTranslation("Commit author") + ": ", false, KernelColorType.ListEntry);
+                TextWriters.Write($"{initialCommit.Author.Name} <{initialCommit.Author.Email}>", true, KernelColorType.ListValue);
+                TextWriters.Write("  - " + Translate.DoTranslation("Commit committer") + ": ", false, KernelColorType.ListEntry);
+                TextWriters.Write($"{initialCommit.Committer.Name} <{initialCommit.Committer.Email}>", true, KernelColorType.ListValue);
+                TextWriters.Write("  - " + Translate.DoTranslation("Number of parents") + ": ", false, KernelColorType.ListEntry);
+                TextWriters.Write($"{initialCommit.Parents.Count()}", true, KernelColorType.ListValue);
                 TextWriterColor.Write();
 
                 // Final commit info
-                TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Final commit"), true, KernelColorType.ListEntry);
-                TextWriterColor.WriteKernelColor("  - " + Translate.DoTranslation("Commit SHA") + ": ", false, KernelColorType.ListEntry);
-                TextWriterColor.WriteKernelColor($"{finalCommit.Sha}", true, KernelColorType.ListValue);
-                TextWriterColor.WriteKernelColor("  - " + Translate.DoTranslation("Commit message") + ": ", false, KernelColorType.ListEntry);
-                TextWriterColor.WriteKernelColor($"{finalCommit.MessageShort}", true, KernelColorType.ListValue);
-                TextWriterColor.WriteKernelColor("  - " + Translate.DoTranslation("Commit author") + ": ", false, KernelColorType.ListEntry);
-                TextWriterColor.WriteKernelColor($"{finalCommit.Author.Name} <{finalCommit.Author.Email}>", true, KernelColorType.ListValue);
-                TextWriterColor.WriteKernelColor("  - " + Translate.DoTranslation("Commit committer") + ": ", false, KernelColorType.ListEntry);
-                TextWriterColor.WriteKernelColor($"{finalCommit.Committer.Name} <{finalCommit.Committer.Email}>", true, KernelColorType.ListValue);
-                TextWriterColor.WriteKernelColor("  - " + Translate.DoTranslation("Number of parents") + ": ", false, KernelColorType.ListEntry);
-                TextWriterColor.WriteKernelColor($"{finalCommit.Parents.Count()}", true, KernelColorType.ListValue);
+                TextWriters.Write("- " + Translate.DoTranslation("Final commit"), true, KernelColorType.ListEntry);
+                TextWriters.Write("  - " + Translate.DoTranslation("Commit SHA") + ": ", false, KernelColorType.ListEntry);
+                TextWriters.Write($"{finalCommit.Sha}", true, KernelColorType.ListValue);
+                TextWriters.Write("  - " + Translate.DoTranslation("Commit message") + ": ", false, KernelColorType.ListEntry);
+                TextWriters.Write($"{finalCommit.MessageShort}", true, KernelColorType.ListValue);
+                TextWriters.Write("  - " + Translate.DoTranslation("Commit author") + ": ", false, KernelColorType.ListEntry);
+                TextWriters.Write($"{finalCommit.Author.Name} <{finalCommit.Author.Email}>", true, KernelColorType.ListValue);
+                TextWriters.Write("  - " + Translate.DoTranslation("Commit committer") + ": ", false, KernelColorType.ListEntry);
+                TextWriters.Write($"{finalCommit.Committer.Name} <{finalCommit.Committer.Email}>", true, KernelColorType.ListValue);
+                TextWriters.Write("  - " + Translate.DoTranslation("Number of parents") + ": ", false, KernelColorType.ListEntry);
+                TextWriters.Write($"{finalCommit.Parents.Count()}", true, KernelColorType.ListValue);
                 TextWriterColor.Write();
 
                 // Increment the hunk number for display

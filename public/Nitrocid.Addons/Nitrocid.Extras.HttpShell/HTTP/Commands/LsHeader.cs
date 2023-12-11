@@ -18,7 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Shell.ShellBase.Commands;
 using Nitrocid.Extras.HttpShell.Tools;
 
@@ -35,8 +35,8 @@ namespace Nitrocid.Extras.HttpShell.HTTP.Commands
             var headers = HttpTools.HttpListHeaders();
             foreach (var header in headers)
             {
-                TextWriterColor.WriteKernelColor("  - {0}: ", false, KernelColorType.ListEntry, header.Item1);
-                TextWriterColor.WriteKernelColor("{0}", true, KernelColorType.ListValue, header.Item2);
+                TextWriters.Write("  - {0}: ", false, KernelColorType.ListEntry, header.Item1);
+                TextWriters.Write("{0}", true, KernelColorType.ListValue, header.Item2);
             }
             return 0;
         }

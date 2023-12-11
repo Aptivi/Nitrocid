@@ -18,7 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 using Nitrocid.Extras.JsonShell.Tools;
@@ -38,7 +38,7 @@ namespace Nitrocid.Extras.JsonShell.Json.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             JsonTools.RemoveProperty(parameters.ArgumentsList[0]);
-            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Removed property."), true, KernelColorType.Success);
+            TextWriters.Write(Translate.DoTranslation("Removed property."), true, KernelColorType.Success);
             return 0;
         }
 

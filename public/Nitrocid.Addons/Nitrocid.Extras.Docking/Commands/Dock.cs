@@ -18,7 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 using Nitrocid.Extras.Docking.Dock;
@@ -33,7 +33,7 @@ namespace Nitrocid.Extras.Docking.Commands
             // Check the dock screen for existence
             if (!DockTools.DoesDockScreenExist(parameters.ArgumentsList[0], out IDock dock))
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("There is no dock screen by this name."), KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("There is no dock screen by this name."), KernelColorType.Error);
                 return 34;
             }
 

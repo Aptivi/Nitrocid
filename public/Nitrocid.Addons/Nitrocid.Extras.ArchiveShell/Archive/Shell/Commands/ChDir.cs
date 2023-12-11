@@ -20,8 +20,8 @@
 using KS.ConsoleBase.Colors;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
-using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Exceptions;
+using KS.ConsoleBase.Writers;
 
 namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Commands
 {
@@ -38,7 +38,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Commands
         {
             if (!ArchiveTools.ChangeWorkingArchiveLocalDirectory(parameters.ArgumentsList[0]))
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Directory {0} doesn't exist"), true, KernelColorType.Error, parameters.ArgumentsList[0]);
+                TextWriters.Write(Translate.DoTranslation("Directory {0} doesn't exist"), true, KernelColorType.Error, parameters.ArgumentsList[0]);
                 return 10000 + (int)KernelExceptionType.Archive;
             }
             return 0;

@@ -20,7 +20,7 @@
 using System;
 using System.Diagnostics;
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
@@ -42,7 +42,7 @@ namespace Nitrocid.Extras.RssShell.RSS.Commands
             int ArticleIndex = (int)Math.Round(Convert.ToDouble(parameters.ArgumentsList[0]) - 1d);
             if (ArticleIndex > RSSShellCommon.RSSFeedInstance.FeedArticles.Count - 1)
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Article number couldn't be bigger than the available articles."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("Article number couldn't be bigger than the available articles."), true, KernelColorType.Error);
                 DebugWriter.WriteDebug(DebugLevel.E, "Tried to access article number {0}, but count is {1}.", ArticleIndex, RSSShellCommon.RSSFeedInstance.FeedArticles.Count - 1);
                 return 10000 + (int)KernelExceptionType.RSSShell;
             }
@@ -54,7 +54,7 @@ namespace Nitrocid.Extras.RssShell.RSS.Commands
             }
             else
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Article doesn't have a link!"), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("Article doesn't have a link!"), true, KernelColorType.Error);
                 DebugWriter.WriteDebug(DebugLevel.E, "Tried to open a web browser to link of article number {0}, but it's empty. \"{1}\"", ArticleIndex, RSSShellCommon.RSSFeedInstance.FeedArticles[ArticleIndex].ArticleLink);
                 return 10000 + (int)KernelExceptionType.RSSShell;
             }

@@ -24,6 +24,7 @@ using KS.Shell.ShellBase.Commands;
 using SharpCompress.Archives;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Misc.Reflection;
+using KS.ConsoleBase.Writers;
 
 namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Commands
 {
@@ -51,10 +52,10 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Commands
             }
             foreach (IArchiveEntry Entry in Entries)
             {
-                TextWriterColor.WriteKernelColor("- {0}: ", false, KernelColorType.ListEntry, Entry.Key);
+                TextWriters.Write("- {0}: ", false, KernelColorType.ListEntry, Entry.Key);
                 if (!Entry.IsDirectory) // Entry is a file
                 {
-                    TextWriterColor.WriteKernelColor("{0} ({1})", true, KernelColorType.ListValue, Entry.CompressedSize.SizeString(), Entry.Size.SizeString());
+                    TextWriters.Write("{0} ({1})", true, KernelColorType.ListValue, Entry.CompressedSize.SizeString(), Entry.Size.SizeString());
                 }
                 else
                 {

@@ -19,7 +19,6 @@
 
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Reflection;
@@ -28,6 +27,8 @@ using SpecProbe.Hardware.Parts.Types;
 using System.Collections;
 using System.Linq;
 using HwProber = SpecProbe.Hardware.HardwareProber;
+using KS.ConsoleBase.Writers.FancyWriters;
+using KS.ConsoleBase.Writers;
 
 namespace KS.Drivers.HardwareProber
 {
@@ -141,7 +142,7 @@ namespace KS.Drivers.HardwareProber
             if (hardDrives.Length == 0)
             {
                 // SpecProbe may have failed to parse hard disks due to insufficient permissions.
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("The hardware probing library has failed to probe hard drives. If you're running Windows, the most likely cause is that you have insufficient permissions to access the hard drive information. Restart Nitrocid with elevated administrative privileges to be able to parse hard drives."), true, KernelColorType.Warning);
+                TextWriters.Write(Translate.DoTranslation("The hardware probing library has failed to probe hard drives. If you're running Windows, the most likely cause is that you have insufficient permissions to access the hard drive information. Restart Nitrocid with elevated administrative privileges to be able to parse hard drives."), true, KernelColorType.Warning);
             }
             return $"[{string.Join(", ", hardDrives.Select((hdp) => hdp.HardDiskNumber))}]";
         }
@@ -229,16 +230,16 @@ namespace KS.Drivers.HardwareProber
                         {
                             foreach (var processor in hardwareList)
                             {
-                                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Processor name:"), false, KernelColorType.ListEntry);
-                                TextWriterColor.WriteKernelColor($" {processor.Name}", true, KernelColorType.ListValue);
-                                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Processor vendor:"), false, KernelColorType.ListEntry);
-                                TextWriterColor.WriteKernelColor($" {processor.Vendor} [CPUID: {processor.CpuidVendor}]", true, KernelColorType.ListValue);
-                                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Clock speed:"), false, KernelColorType.ListEntry);
-                                TextWriterColor.WriteKernelColor($" {processor.Speed} MHz", true, KernelColorType.ListValue);
-                                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Total cores:"), false, KernelColorType.ListEntry);
-                                TextWriterColor.WriteKernelColor($" {processor.TotalCores} ({processor.ProcessorCores} x{processor.CoresForEachCore})", true, KernelColorType.ListValue);
-                                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Cache sizes:"), false, KernelColorType.ListEntry);
-                                TextWriterColor.WriteKernelColor($" {processor.L1CacheSize.SizeString()} L1, {processor.L2CacheSize.SizeString()} L2, {processor.L3CacheSize.SizeString()} L3", true, KernelColorType.ListValue);
+                                TextWriters.Write(Translate.DoTranslation("Processor name:"), false, KernelColorType.ListEntry);
+                                TextWriters.Write($" {processor.Name}", true, KernelColorType.ListValue);
+                                TextWriters.Write(Translate.DoTranslation("Processor vendor:"), false, KernelColorType.ListEntry);
+                                TextWriters.Write($" {processor.Vendor} [CPUID: {processor.CpuidVendor}]", true, KernelColorType.ListValue);
+                                TextWriters.Write(Translate.DoTranslation("Clock speed:"), false, KernelColorType.ListEntry);
+                                TextWriters.Write($" {processor.Speed} MHz", true, KernelColorType.ListValue);
+                                TextWriters.Write(Translate.DoTranslation("Total cores:"), false, KernelColorType.ListEntry);
+                                TextWriters.Write($" {processor.TotalCores} ({processor.ProcessorCores} x{processor.CoresForEachCore})", true, KernelColorType.ListValue);
+                                TextWriters.Write(Translate.DoTranslation("Cache sizes:"), false, KernelColorType.ListEntry);
+                                TextWriters.Write($" {processor.L1CacheSize.SizeString()} L1, {processor.L2CacheSize.SizeString()} L2, {processor.L3CacheSize.SizeString()} L3", true, KernelColorType.ListValue);
                             }
                         }
                         break;
@@ -250,12 +251,12 @@ namespace KS.Drivers.HardwareProber
                         {
                             foreach (var ram in hardwareList)
                             {
-                                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Total usable memory:"), false, KernelColorType.ListEntry);
-                                TextWriterColor.WriteKernelColor($" {ram.TotalMemory.SizeString()}", true, KernelColorType.ListValue);
-                                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Total memory:"), false, KernelColorType.ListEntry);
-                                TextWriterColor.WriteKernelColor($" {ram.TotalPhysicalMemory.SizeString()}", true, KernelColorType.ListValue);
-                                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Reserved memory:"), false, KernelColorType.ListEntry);
-                                TextWriterColor.WriteKernelColor($" {ram.SystemReservedMemory.SizeString()}", true, KernelColorType.ListValue);
+                                TextWriters.Write(Translate.DoTranslation("Total usable memory:"), false, KernelColorType.ListEntry);
+                                TextWriters.Write($" {ram.TotalMemory.SizeString()}", true, KernelColorType.ListValue);
+                                TextWriters.Write(Translate.DoTranslation("Total memory:"), false, KernelColorType.ListEntry);
+                                TextWriters.Write($" {ram.TotalPhysicalMemory.SizeString()}", true, KernelColorType.ListValue);
+                                TextWriters.Write(Translate.DoTranslation("Reserved memory:"), false, KernelColorType.ListEntry);
+                                TextWriters.Write($" {ram.SystemReservedMemory.SizeString()}", true, KernelColorType.ListValue);
                             }
                         }
                         break;
@@ -267,18 +268,18 @@ namespace KS.Drivers.HardwareProber
                         {
                             foreach (var hdd in hardwareList)
                             {
-                                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Disk number:"), false, KernelColorType.ListEntry);
-                                TextWriterColor.WriteKernelColor($" {hdd.HardDiskNumber}", true, KernelColorType.ListValue);
-                                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Disk size:"), false, KernelColorType.ListEntry);
-                                TextWriterColor.WriteKernelColor($" {hdd.HardDiskSize.SizeString()}", true, KernelColorType.ListValue);
-                                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Partitions:"), false, KernelColorType.ListEntry);
-                                TextWriterColor.WriteKernelColor($" {hdd.PartitionCount}", true, KernelColorType.ListValue);
+                                TextWriters.Write(Translate.DoTranslation("Disk number:"), false, KernelColorType.ListEntry);
+                                TextWriters.Write($" {hdd.HardDiskNumber}", true, KernelColorType.ListValue);
+                                TextWriters.Write(Translate.DoTranslation("Disk size:"), false, KernelColorType.ListEntry);
+                                TextWriters.Write($" {hdd.HardDiskSize.SizeString()}", true, KernelColorType.ListValue);
+                                TextWriters.Write(Translate.DoTranslation("Partitions:"), false, KernelColorType.ListEntry);
+                                TextWriters.Write($" {hdd.PartitionCount}", true, KernelColorType.ListValue);
                                 foreach (var part in hdd.Partitions)
                                 {
-                                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Partition number:"), false, KernelColorType.ListEntry);
-                                    TextWriterColor.WriteKernelColor($" {part.PartitionNumber}", true, KernelColorType.ListValue);
-                                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Partition size:"), false, KernelColorType.ListEntry);
-                                    TextWriterColor.WriteKernelColor($" {part.PartitionSize.SizeString()}", true, KernelColorType.ListValue);
+                                    TextWriters.Write(Translate.DoTranslation("Partition number:"), false, KernelColorType.ListEntry);
+                                    TextWriters.Write($" {part.PartitionNumber}", true, KernelColorType.ListValue);
+                                    TextWriters.Write(Translate.DoTranslation("Partition size:"), false, KernelColorType.ListEntry);
+                                    TextWriters.Write($" {part.PartitionSize.SizeString()}", true, KernelColorType.ListValue);
                                 }
                             }
                         }
@@ -291,14 +292,14 @@ namespace KS.Drivers.HardwareProber
                         {
                             foreach (var gpu in hardwareList)
                             {
-                                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Graphics card name:"), false, KernelColorType.ListEntry);
-                                TextWriterColor.WriteKernelColor($" {gpu.VideoCardName}", true, KernelColorType.ListValue);
+                                TextWriters.Write(Translate.DoTranslation("Graphics card name:"), false, KernelColorType.ListEntry);
+                                TextWriters.Write($" {gpu.VideoCardName}", true, KernelColorType.ListValue);
                             }
                         }
                         break;
                     }
                 default:
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Either the hardware type {0} is not probed, or is not valid."), true, KernelColorType.Error, hardwareType);
+                    TextWriters.Write(Translate.DoTranslation("Either the hardware type {0} is not probed, or is not valid."), true, KernelColorType.Error, hardwareType);
                     break;
             }
         }

@@ -19,6 +19,7 @@
 
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs.Styles.Choice;
+using KS.ConsoleBase.Writers;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Drivers.RNG;
 using KS.Languages;
@@ -43,9 +44,9 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
 
             // Finally, check if the user is lucky or not
             if (unlucky)
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("But, you're unlucky. Loser."), true, KernelColorType.Warning);
+                TextWriters.Write(Translate.DoTranslation("But, you're unlucky. Loser."), true, KernelColorType.Warning);
             else
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("You're lucky! Winner!"), true, KernelColorType.Success);
+                TextWriters.Write(Translate.DoTranslation("You're lucky! Winner!"), true, KernelColorType.Success);
         }
     }
 }

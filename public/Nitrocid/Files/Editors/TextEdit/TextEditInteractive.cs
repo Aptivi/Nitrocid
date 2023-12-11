@@ -22,7 +22,6 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Interactive;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Files.Operations.Querying;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
@@ -37,6 +36,7 @@ using Terminaux.Sequences.Builder.Types;
 using KS.ConsoleBase.Buffered;
 using System.Collections.Generic;
 using KS.ConsoleBase.Inputs.Styles.Infobox;
+using KS.ConsoleBase.Writers.FancyWriters;
 
 namespace KS.Files.Editors.TextEdit
 {

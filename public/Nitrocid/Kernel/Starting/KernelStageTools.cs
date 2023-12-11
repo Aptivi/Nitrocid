@@ -19,7 +19,7 @@
 
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.ConsoleBase.Writers.FancyWriters;
+using KS.ConsoleBase.Writers;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Languages;
@@ -109,7 +109,7 @@ namespace KS.Kernel.Starting
                 if (!SplashManager.EnableSplash & !KernelEntry.QuietKernel)
                 {
                     TextWriterColor.Write();
-                    SeparatorWriterColor.WriteSeparatorKernelColor(StageText, false, KernelColorType.Stage);
+                    TextFancyWriters.WriteSeparator(StageText, false, KernelColorType.Stage);
                 }
                 DebugWriter.WriteDebug(DebugLevel.I, $"- Kernel stage {StageNumber} | Text: {StageText}");
             }

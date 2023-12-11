@@ -21,6 +21,7 @@ using System;
 using System.Data;
 using System.Linq;
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
@@ -46,18 +47,18 @@ namespace Nitrocid.Extras.UnitConv.Commands
                 TextWriterColor.Write(Translate.DoTranslation("Available unit types and their units:"));
                 foreach (QuantityInfo QuantityInfo in Quantities)
                 {
-                    TextWriterColor.WriteKernelColor("- {0}:", true, KernelColorType.ListEntry, QuantityInfo.Name);
+                    TextWriters.Write("- {0}:", true, KernelColorType.ListEntry, QuantityInfo.Name);
                     foreach (Enum UnitValues in QuantityInfo.UnitInfos.Select(x => x.Value))
                     {
-                        TextWriterColor.WriteKernelColor("  - {0}: ", false, KernelColorType.ListEntry, string.Join(", ", abbreviations.GetDefaultAbbreviation(UnitValues.GetType(), Convert.ToInt32(UnitValues))));
-                        TextWriterColor.WriteKernelColor(UnitValues.ToString(), true, KernelColorType.ListValue);
+                        TextWriters.Write("  - {0}: ", false, KernelColorType.ListEntry, string.Join(", ", abbreviations.GetDefaultAbbreviation(UnitValues.GetType(), Convert.ToInt32(UnitValues))));
+                        TextWriters.Write(UnitValues.ToString(), true, KernelColorType.ListValue);
                     }
                 }
                 return 0;
             }
             else
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("No such unit type:") + " {0}", true, KernelColorType.Error, parameters.ArgumentsList[0]);
+                TextWriters.Write(Translate.DoTranslation("No such unit type:") + " {0}", true, KernelColorType.Error, parameters.ArgumentsList[0]);
                 return 3;
             }
         }
@@ -66,7 +67,7 @@ namespace Nitrocid.Extras.UnitConv.Commands
         {
             TextWriterColor.Write(Translate.DoTranslation("Available unit types:"));
             foreach (QuantityInfo QuantityInfo in Quantity.Infos)
-                TextWriterColor.WriteKernelColor("- {0}", true, KernelColorType.ListEntry, QuantityInfo.Name);
+                TextWriters.Write("- {0}", true, KernelColorType.ListEntry, QuantityInfo.Name);
         }
 
     }

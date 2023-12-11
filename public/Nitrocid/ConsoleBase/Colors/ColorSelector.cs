@@ -21,7 +21,6 @@ using KS.ConsoleBase.Buffered;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Inputs.Styles.Infobox;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Text;
@@ -31,6 +30,7 @@ using Terminaux.Colors;
 using Terminaux.Colors.Accessibility;
 using Terminaux.Colors.Wheel;
 using Terminaux.Sequences.Builder.Types;
+using KS.ConsoleBase.Writers.FancyWriters;
 
 namespace KS.ConsoleBase.Colors
 {

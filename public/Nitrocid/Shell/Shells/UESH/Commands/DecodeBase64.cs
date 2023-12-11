@@ -18,7 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Misc.Text;
 using KS.Shell.ShellBase.Commands;
 
@@ -37,7 +37,7 @@ namespace KS.Shell.Shells.UESH.Commands
         {
             string orig = parameters.ArgumentsList[0];
             string decoded = orig.GetBase64Decoded();
-            TextWriterColor.WriteKernelColor(decoded, true, KernelColorType.Success);
+            TextWriters.Write(decoded, true, KernelColorType.Success);
             return 0;
         }
     }

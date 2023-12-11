@@ -25,6 +25,7 @@ using GitCommand = LibGit2Sharp.Commands;
 using LibGit2Sharp;
 using KS.Kernel.Time;
 using KS.Kernel.Time.Timezones;
+using KS.ConsoleBase.Writers;
 
 namespace Nitrocid.Extras.GitShell.Git.Commands
 {
@@ -41,7 +42,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
         {
             if (!GitShellCommon.isIdentified)
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("You need to identify yourself before using this command. Use") + " 'setid' " + Translate.DoTranslation("to identify yourself."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("You need to identify yourself before using this command. Use") + " 'setid' " + Translate.DoTranslation("to identify yourself."), true, KernelColorType.Error);
                 return 14;
             }
             var merger = new Signature(GitShellCommon.name, GitShellCommon.email, new(TimeDateTools.KernelDateTime, TimeZoneRenderers.ShowTimeZoneUtcOffsetLocal()));
@@ -54,14 +55,14 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
                     break;
                 case MergeStatus.FastForward:
                     TextWriterColor.Write(Translate.DoTranslation("Fast forwarded to") + $":");
-                    TextWriterColor.WriteKernelColor($"  {pullResult.Commit.Sha[..7]}: {pullResult.Commit.MessageShort}", true, KernelColorType.ListValue);
+                    TextWriters.Write($"  {pullResult.Commit.Sha[..7]}: {pullResult.Commit.MessageShort}", true, KernelColorType.ListValue);
                     break;
                 case MergeStatus.NonFastForward:
                     TextWriterColor.Write(Translate.DoTranslation("Updated repository to") + $":");
-                    TextWriterColor.WriteKernelColor($"  {pullResult.Commit.Sha[..7]}: {pullResult.Commit.MessageShort}", true, KernelColorType.ListValue);
+                    TextWriters.Write($"  {pullResult.Commit.Sha[..7]}: {pullResult.Commit.MessageShort}", true, KernelColorType.ListValue);
                     break;
                 case MergeStatus.Conflicts:
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Your merge resulted in conflicts. Please resolve any of the conflicts."), true, KernelColorType.Warning);
+                    TextWriters.Write(Translate.DoTranslation("Your merge resulted in conflicts. Please resolve any of the conflicts."), true, KernelColorType.Warning);
                     break;
             }
             return 0;

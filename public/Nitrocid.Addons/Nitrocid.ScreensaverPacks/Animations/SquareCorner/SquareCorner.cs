@@ -23,8 +23,8 @@ using Terminaux.Colors;
 using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
 using System;
-using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Misc.Screensaver;
+using KS.ConsoleBase.Writers.FancyWriters;
 
 namespace Nitrocid.ScreensaverPacks.Animations.SquareCorner
 {

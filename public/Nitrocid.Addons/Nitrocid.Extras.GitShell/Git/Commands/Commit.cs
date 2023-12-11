@@ -24,6 +24,7 @@ using KS.Shell.ShellBase.Commands;
 using LibGit2Sharp;
 using KS.Kernel.Time;
 using KS.Kernel.Time.Timezones;
+using KS.ConsoleBase.Writers;
 
 namespace Nitrocid.Extras.GitShell.Git.Commands
 {
@@ -40,13 +41,13 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
         {
             if (!GitShellCommon.isIdentified)
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("You need to identify yourself before using this command. Use") + " 'setid' " + Translate.DoTranslation("to identify yourself."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("You need to identify yourself before using this command. Use") + " 'setid' " + Translate.DoTranslation("to identify yourself."), true, KernelColorType.Error);
                 return 15;
             }
             var author = new Signature(GitShellCommon.name, GitShellCommon.email, new(TimeDateTools.KernelDateTime, TimeZoneRenderers.ShowTimeZoneUtcOffsetLocal()));
             var newCommit = GitShellCommon.Repository.Commit(parameters.ArgumentsList[0], author, author);
             TextWriterColor.Write(Translate.DoTranslation("Updated repository with new commit") + $":");
-            TextWriterColor.WriteKernelColor($"  {newCommit.Sha[..7]}: {newCommit.MessageShort}", true, KernelColorType.ListValue);
+            TextWriters.Write($"  {newCommit.Sha[..7]}: {newCommit.MessageShort}", true, KernelColorType.ListValue);
             return 0;
         }
 

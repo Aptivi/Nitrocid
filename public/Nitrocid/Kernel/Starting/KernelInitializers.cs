@@ -22,7 +22,7 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Inputs.Styles.Infobox;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.ConsoleBase.Writers.FancyWriters;
+using KS.ConsoleBase.Writers;
 using KS.ConsoleBase.Writers.MiscWriters;
 using KS.Files.Extensions;
 using KS.Files.Folders;
@@ -208,7 +208,7 @@ namespace KS.Kernel.Starting
             // Some information
             if (WelcomeMessage.ShowAppInfoOnBoot & !SplashManager.EnableSplash)
             {
-                SeparatorWriterColor.WriteSeparatorKernelColor(Translate.DoTranslation("Kernel environment information"), true, KernelColorType.Stage);
+                TextFancyWriters.WriteSeparator(Translate.DoTranslation("Kernel environment information"), true, KernelColorType.Stage);
                 TextWriterColor.Write("  OS: " + Translate.DoTranslation("Running on {0}"), System.Environment.OSVersion.ToString());
                 TextWriterColor.Write("  KS: " + Translate.DoTranslation("Running from GRILO?") + $" {KernelPlatform.IsRunningFromGrilo()}");
                 TextWriterColor.Write("  KSAPI: " + $"v{KernelMain.ApiVersion}");

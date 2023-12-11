@@ -22,7 +22,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Drivers;
 using KS.Files.Operations.Printing;
 using KS.Kernel.Debugging;
@@ -362,11 +362,11 @@ namespace KS.Files.Editors.HexEdit
                 }
                 else if (StartByte > HexEditShellCommon.FileBytes.LongLength)
                 {
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("The specified start byte number may not be larger than the file size."), true, KernelColorType.Error);
+                    TextWriters.Write(Translate.DoTranslation("The specified start byte number may not be larger than the file size."), true, KernelColorType.Error);
                 }
                 else if (EndByte > HexEditShellCommon.FileBytes.LongLength)
                 {
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("The specified end byte number may not be larger than the file size."), true, KernelColorType.Error);
+                    TextWriters.Write(Translate.DoTranslation("The specified end byte number may not be larger than the file size."), true, KernelColorType.Error);
                 }
             }
             else
@@ -420,11 +420,11 @@ namespace KS.Files.Editors.HexEdit
                 }
                 else if (StartByte > HexEditShellCommon.FileBytes.LongLength)
                 {
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("The specified start byte number may not be larger than the file size."), true, KernelColorType.Error);
+                    TextWriters.Write(Translate.DoTranslation("The specified start byte number may not be larger than the file size."), true, KernelColorType.Error);
                 }
                 else if (EndByte > HexEditShellCommon.FileBytes.LongLength)
                 {
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("The specified end byte number may not be larger than the file size."), true, KernelColorType.Error);
+                    TextWriters.Write(Translate.DoTranslation("The specified end byte number may not be larger than the file size."), true, KernelColorType.Error);
                 }
             }
             else
@@ -667,11 +667,11 @@ namespace KS.Files.Editors.HexEdit
                 }
                 else if (StartByte > bytes.LongLength)
                 {
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("The specified start byte number may not be larger than the file size."), true, KernelColorType.Error);
+                    TextWriters.Write(Translate.DoTranslation("The specified start byte number may not be larger than the file size."), true, KernelColorType.Error);
                 }
                 else if (EndByte > bytes.LongLength)
                 {
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("The specified end byte number may not be larger than the file size."), true, KernelColorType.Error);
+                    TextWriters.Write(Translate.DoTranslation("The specified end byte number may not be larger than the file size."), true, KernelColorType.Error);
                 }
             }
             else
@@ -728,11 +728,11 @@ namespace KS.Files.Editors.HexEdit
                 }
                 else if (StartByte > bytes.LongLength)
                 {
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("The specified start byte number may not be larger than the file size."), true, KernelColorType.Error);
+                    TextWriters.Write(Translate.DoTranslation("The specified start byte number may not be larger than the file size."), true, KernelColorType.Error);
                 }
                 else if (EndByte > bytes.LongLength)
                 {
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("The specified end byte number may not be larger than the file size."), true, KernelColorType.Error);
+                    TextWriters.Write(Translate.DoTranslation("The specified end byte number may not be larger than the file size."), true, KernelColorType.Error);
                 }
             }
             else

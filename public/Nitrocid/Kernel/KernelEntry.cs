@@ -39,6 +39,7 @@ using KS.Misc.Text.Probers.Motd;
 using KS.Kernel.Time;
 using KS.Users.Login.Handlers;
 using KS.ConsoleBase.Inputs.Styles.Infobox;
+using KS.ConsoleBase.Writers;
 
 namespace KS.Kernel
 {
@@ -71,7 +72,7 @@ namespace KS.Kernel
             }
             else
             {
-                TextWriterColor.WriteKernelColor(
+                TextWriters.Write(
                     Translate.DoTranslation("Looks like you're bypassing the console size detection. Things may not work properly on small screens.") + CharManager.NewLine +
                     Translate.DoTranslation("To have a better experience, resize your console window while still being on this screen. Press any key to continue..."), true, KernelColorType.Warning
                 );
@@ -162,13 +163,13 @@ namespace KS.Kernel
                     WelcomeMessage.ShowRandomTip();
 
                 // Show a tip telling users to see license information
-                TextWriterColor.WriteKernelColor("* " + Translate.DoTranslation("Run 'license' to see the license information.") + CharManager.NewLine, KernelColorType.Tip);
+                TextWriters.Write("* " + Translate.DoTranslation("Run 'license' to see the license information.") + CharManager.NewLine, KernelColorType.Tip);
 
                 // Show MOTD
                 BaseLoginHandler.ShowMOTDOnceFlag = true;
                 if (BaseLoginHandler.ShowMAL)
                 {
-                    TextWriterColor.WriteKernelColor(PlaceParse.ProbePlaces(MalParse.MalMessage), true, KernelColorType.Banner);
+                    TextWriters.Write(PlaceParse.ProbePlaces(MalParse.MalMessage), true, KernelColorType.Banner);
                     MalParse.ProcessDynamicMal();
                 }
                 DebugWriter.WriteDebug(DebugLevel.I, "Loaded MAL.");

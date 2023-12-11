@@ -18,6 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files;
 using KS.Files.Operations;
@@ -61,7 +62,7 @@ namespace KS.Shell.Shells.UESH.Commands
             }
             else
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("File {0} not found."), true, KernelColorType.Error, JsonFile);
+                TextWriters.Write(Translate.DoTranslation("File {0} not found."), true, KernelColorType.Error, JsonFile);
                 return 10000 + (int)KernelExceptionType.JsonEditor;
             }
         }

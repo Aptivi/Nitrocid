@@ -18,7 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Files.Paths;
 using KS.Kernel.Exceptions;
 using KS.Languages;
@@ -40,13 +40,13 @@ namespace KS.Shell.Shells.UESH.Commands
             string filePath = "";
             if (PathLookupTools.FileExistsInPath(parameters.ArgumentsList[0], ref filePath))
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("File found in path:") + " {0}", true, KernelColorType.Success, filePath);
+                TextWriters.Write(Translate.DoTranslation("File found in path:") + " {0}", true, KernelColorType.Success, filePath);
                 variableValue = filePath;
                 return 0;
             }
             else
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("File not found in path lookup directories."), true, KernelColorType.Warning);
+                TextWriters.Write(Translate.DoTranslation("File not found in path lookup directories."), true, KernelColorType.Warning);
                 variableValue = "";
                 return 10000 + (int)KernelExceptionType.Filesystem;
             }

@@ -18,7 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Drivers;
 using KS.Drivers.Encoding;
 using KS.Kernel.Exceptions;
@@ -43,7 +43,7 @@ namespace KS.Shell.Shells.UESH.Commands
             driver.Initialize();
             if (!driver.IsSymmetric)
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Only symmetric encoding algorithms which use both the key and the initialization vector are supported."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("Only symmetric encoding algorithms which use both the key and the initialization vector are supported."), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.Encoding;
             }
 
@@ -52,10 +52,10 @@ namespace KS.Shell.Shells.UESH.Commands
             byte[] iv = driver.Iv;
             string keyDecomposed = driver.DecomposeBytesFromString(key);
             string ivDecomposed = driver.DecomposeBytesFromString(iv);
-            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Key used") + ": ", false, KernelColorType.ListEntry);
-            TextWriterColor.WriteKernelColor(keyDecomposed, true, KernelColorType.ListValue);
-            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Initialization vector used") + ": ", false, KernelColorType.ListEntry);
-            TextWriterColor.WriteKernelColor(ivDecomposed, true, KernelColorType.ListValue);
+            TextWriters.Write("- " + Translate.DoTranslation("Key used") + ": ", false, KernelColorType.ListEntry);
+            TextWriters.Write(keyDecomposed, true, KernelColorType.ListValue);
+            TextWriters.Write("- " + Translate.DoTranslation("Initialization vector used") + ": ", false, KernelColorType.ListEntry);
+            TextWriters.Write(ivDecomposed, true, KernelColorType.ListValue);
             variableValue = $"[{keyDecomposed}, {ivDecomposed}]";
             return 0;
         }

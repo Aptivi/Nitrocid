@@ -18,7 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Files;
 using KS.Files.Operations.Querying;
 using KS.Kernel.Debugging;
@@ -48,7 +48,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Commands
             }
             else
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("File doesn't exist."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("File doesn't exist."), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.Filesystem;
             }
             return 0;

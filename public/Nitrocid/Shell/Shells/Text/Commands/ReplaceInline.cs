@@ -18,7 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Files.Editors.TextEdit;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
@@ -48,18 +48,18 @@ namespace KS.Shell.Shells.Text.Commands
                     if (Convert.ToInt32(parameters.ArgumentsList[2]) <= TextEditShellCommon.FileLines.Count)
                     {
                         TextEditTools.Replace(parameters.ArgumentsList[0], parameters.ArgumentsList[1], Convert.ToInt32(parameters.ArgumentsList[2]));
-                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("String replaced."), true, KernelColorType.Success);
+                        TextWriters.Write(Translate.DoTranslation("String replaced."), true, KernelColorType.Success);
                         return 0;
                     }
                     else
                     {
-                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("The specified line number may not be larger than the last file line number."), true, KernelColorType.Error);
+                        TextWriters.Write(Translate.DoTranslation("The specified line number may not be larger than the last file line number."), true, KernelColorType.Error);
                         return 10000 + (int)KernelExceptionType.TextEditor;
                     }
                 }
                 else
                 {
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Specified line number {0} is not a valid number."), true, KernelColorType.Error, parameters.ArgumentsList[2]);
+                    TextWriters.Write(Translate.DoTranslation("Specified line number {0} is not a valid number."), true, KernelColorType.Error, parameters.ArgumentsList[2]);
                     DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", parameters.ArgumentsList[2]);
                     return 10000 + (int)KernelExceptionType.TextEditor;
                 }
@@ -76,13 +76,13 @@ namespace KS.Shell.Shells.Text.Commands
                         for (int LineNumber = LineNumberStart; LineNumber <= LineNumberEnd; LineNumber++)
                         {
                             TextEditTools.Replace(parameters.ArgumentsList[0], parameters.ArgumentsList[1], LineNumber);
-                            TextWriterColor.WriteKernelColor(Translate.DoTranslation("String replaced in line {0}."), true, KernelColorType.Success, LineNumber);
+                            TextWriters.Write(Translate.DoTranslation("String replaced in line {0}."), true, KernelColorType.Success, LineNumber);
                         }
                         return 0;
                     }
                     else
                     {
-                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("The specified line number may not be larger than the last file line number."), true, KernelColorType.Error);
+                        TextWriters.Write(Translate.DoTranslation("The specified line number may not be larger than the last file line number."), true, KernelColorType.Error);
                         return 10000 + (int)KernelExceptionType.TextEditor;
                     }
                 }

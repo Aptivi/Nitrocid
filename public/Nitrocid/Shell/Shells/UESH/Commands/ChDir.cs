@@ -19,7 +19,7 @@
 
 using System;
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Files.Folders;
 using KS.Kernel.Debugging;
 using KS.Languages;
@@ -45,7 +45,7 @@ namespace KS.Shell.Shells.UESH.Commands
             }
             catch (Exception ex)
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Changing directory has failed: {0}"), true, KernelColorType.Error, ex.Message);
+                TextWriters.Write(Translate.DoTranslation("Changing directory has failed: {0}"), true, KernelColorType.Error, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
                 return ex.GetHashCode();
             }

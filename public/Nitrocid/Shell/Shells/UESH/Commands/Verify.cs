@@ -19,6 +19,7 @@
 
 using System.IO;
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Drivers.Encryption;
 using KS.Files;
@@ -74,7 +75,7 @@ namespace KS.Shell.Shells.UESH.Commands
                     }
                     else
                     {
-                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("Hashes don't match."), true, KernelColorType.Warning);
+                        TextWriters.Write(Translate.DoTranslation("Hashes don't match."), true, KernelColorType.Warning);
                         return 4;
                     }
                 }
@@ -85,26 +86,26 @@ namespace KS.Shell.Shells.UESH.Commands
                 }
                 else
                 {
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Hashes don't match."), true, KernelColorType.Warning);
+                    TextWriters.Write(Translate.DoTranslation("Hashes don't match."), true, KernelColorType.Warning);
                     return 4;
                 }
             }
             catch (KernelException ihae) when (ihae.ExceptionType == KernelExceptionType.InvalidHashAlgorithm)
             {
                 DebugWriter.WriteDebugStackTrace(ihae);
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Invalid encryption algorithm."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("Invalid encryption algorithm."), true, KernelColorType.Error);
                 return 10000 + (int)ihae.ExceptionType;
             }
             catch (KernelException ihe) when (ihe.ExceptionType == KernelExceptionType.InvalidHash)
             {
                 DebugWriter.WriteDebugStackTrace(ihe);
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Hashes are malformed."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("Hashes are malformed."), true, KernelColorType.Error);
                 return 10000 + (int)ihe.ExceptionType;
             }
             catch (FileNotFoundException fnfe)
             {
                 DebugWriter.WriteDebugStackTrace(fnfe);
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("{0} is not found."), true, KernelColorType.Error, parameters.ArgumentsList[3]);
+                TextWriters.Write(Translate.DoTranslation("{0} is not found."), true, KernelColorType.Error, parameters.ArgumentsList[3]);
                 return 10000 + (int)KernelExceptionType.Encryption;
             }
         }

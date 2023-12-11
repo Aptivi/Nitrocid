@@ -25,13 +25,14 @@ using FluentFTP.Client.BaseClient;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Text;
 using KS.Misc.Text.Probers.Placeholder;
 using KS.Network.Base.Connections;
 using Nitrocid.Extras.FtpShell.FTP;
+using KS.ConsoleBase.Writers.FancyWriters;
+using KS.ConsoleBase.Writers;
 
 namespace Nitrocid.Extras.FtpShell.Tools
 {
@@ -88,9 +89,9 @@ namespace Nitrocid.Extras.FtpShell.Tools
 
             // Prompt for password
             if (!string.IsNullOrWhiteSpace(FTPShellCommon.FtpPassPromptStyle))
-                TextWriterColor.WriteKernelColor(PlaceParse.ProbePlaces(FTPShellCommon.FtpPassPromptStyle), false, KernelColorType.Input, user);
+                TextWriters.Write(PlaceParse.ProbePlaces(FTPShellCommon.FtpPassPromptStyle), false, KernelColorType.Input, user);
             else
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Password for {0}: "), false, KernelColorType.Input, user);
+                TextWriters.Write(Translate.DoTranslation("Password for {0}: "), false, KernelColorType.Input, user);
 
             // Get input
             FTPShellCommon.FtpPass = Input.ReadLineNoInput();
@@ -119,7 +120,7 @@ namespace Nitrocid.Extras.FtpShell.Tools
                 bool portParsed = int.TryParse(FtpHost == FtpPortString ? "0" : FtpPortString, out int FtpPort);
                 if (!portParsed)
                 {
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Make sure that you specify the port correctly."), true, KernelColorType.Error);
+                    TextWriters.Write(Translate.DoTranslation("Make sure that you specify the port correctly."), true, KernelColorType.Error);
                     return null;
                 }
 
@@ -146,11 +147,11 @@ namespace Nitrocid.Extras.FtpShell.Tools
                 // Prompt for username
                 if (!string.IsNullOrWhiteSpace(FTPShellCommon.FtpUserPromptStyle))
                 {
-                    TextWriterColor.WriteKernelColor(PlaceParse.ProbePlaces(FTPShellCommon.FtpUserPromptStyle), false, KernelColorType.Input, address);
+                    TextWriters.Write(PlaceParse.ProbePlaces(FTPShellCommon.FtpUserPromptStyle), false, KernelColorType.Input, address);
                 }
                 else
                 {
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Username for {0}: "), false, KernelColorType.Input, address);
+                    TextWriters.Write(Translate.DoTranslation("Username for {0}: "), false, KernelColorType.Input, address);
                 }
                 FTPShellCommon.FtpUser = Input.ReadLine();
                 if (string.IsNullOrEmpty(FTPShellCommon.FtpUser))
@@ -166,7 +167,7 @@ namespace Nitrocid.Extras.FtpShell.Tools
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Error connecting to {0}: {1}", address, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Error when trying to connect to {0}: {1}"), true, KernelColorType.Error, address, ex.Message);
+                TextWriters.Write(Translate.DoTranslation("Error when trying to connect to {0}: {1}"), true, KernelColorType.Error, address, ex.Message);
                 return null;
             }
         }
@@ -206,7 +207,7 @@ namespace Nitrocid.Extras.FtpShell.Tools
                     TableColor.WriteTable(ProfHeaders, ProfData, 2);
                     while (!profanswered)
                     {
-                        TextWriterColor.WriteKernelColor(CharManager.NewLine + ">> ", false, KernelColorType.Input);
+                        TextWriters.Write(CharManager.NewLine + ">> ", false, KernelColorType.Input);
                         profanswer = Input.ReadLine();
                         DebugWriter.WriteDebug(DebugLevel.I, "Selection: {0}", profanswer);
                         if (TextTools.IsStringNumeric(profanswer))
@@ -221,7 +222,7 @@ namespace Nitrocid.Extras.FtpShell.Tools
                             catch (Exception ex)
                             {
                                 DebugWriter.WriteDebug(DebugLevel.I, "Profile invalid");
-                                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Invalid profile selection.") + CharManager.NewLine, true, KernelColorType.Error);
+                                TextWriters.Write(Translate.DoTranslation("Invalid profile selection.") + CharManager.NewLine, true, KernelColorType.Error);
                                 DebugWriter.WriteDebugStackTrace(ex);
                             }
                         }
@@ -234,7 +235,7 @@ namespace Nitrocid.Extras.FtpShell.Tools
             else
             {
                 // Failed trying to get profiles
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Error when trying to connect to {0}: Connection timeout or lost connection"), true, KernelColorType.Error, clientFTP.Host);
+                TextWriters.Write(Translate.DoTranslation("Error when trying to connect to {0}: Connection timeout or lost connection"), true, KernelColorType.Error, clientFTP.Host);
                 return null;
             }
 
@@ -245,7 +246,7 @@ namespace Nitrocid.Extras.FtpShell.Tools
             var ftpConnection = NetworkConnectionTools.EstablishConnection("FTP connection", clientFTP.Host, NetworkConnectionType.FTP, clientFTP);
 
             // Show that it's connected
-            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Connected to {0}"), true, KernelColorType.Success, clientFTP.Host);
+            TextWriters.Write(Translate.DoTranslation("Connected to {0}"), true, KernelColorType.Success, clientFTP.Host);
             DebugWriter.WriteDebug(DebugLevel.I, "Connected.");
             return ftpConnection;
         }
@@ -265,8 +266,8 @@ namespace Nitrocid.Extras.FtpShell.Tools
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.W, $"Certificate error is {e.PolicyErrors}");
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("During certificate validation, there are certificate errors. It might be the first time you've connected to the server or the certificate might have been expired. Here's an error:"), true, KernelColorType.Error);
-                TextWriterColor.WriteKernelColor("- {0}", true, KernelColorType.Error, e.PolicyErrors.ToString());
+                TextWriters.Write(Translate.DoTranslation("During certificate validation, there are certificate errors. It might be the first time you've connected to the server or the certificate might have been expired. Here's an error:"), true, KernelColorType.Error);
+                TextWriters.Write("- {0}", true, KernelColorType.Error, e.PolicyErrors.ToString());
                 if (FTPShellCommon.FtpAlwaysAcceptInvalidCerts)
                 {
                     DebugWriter.WriteDebug(DebugLevel.W, "Certificate accepted, although there are errors.");
@@ -278,7 +279,7 @@ namespace Nitrocid.Extras.FtpShell.Tools
                     string Answer = "";
                     while (Answer.ToLower() != "y" || Answer.ToLower() != "n")
                     {
-                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("Are you sure that you want to connect?") + " (y/n) ", false, KernelColorType.Question);
+                        TextWriters.Write(Translate.DoTranslation("Are you sure that you want to connect?") + " (y/n) ", false, KernelColorType.Question);
                         KernelColorTools.SetConsoleColor(KernelColorTools.GetColor(KernelColorType.Input));
                         Answer = Convert.ToString(Input.DetectKeypress().KeyChar);
                         TextWriterColor.Write();
@@ -292,7 +293,7 @@ namespace Nitrocid.Extras.FtpShell.Tools
                         else if (Answer.ToLower() != "n")
                         {
                             DebugWriter.WriteDebug(DebugLevel.W, "Invalid answer.");
-                            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Invalid answer. Please try again."), true, KernelColorType.Error);
+                            TextWriters.Write(Translate.DoTranslation("Invalid answer. Please try again."), true, KernelColorType.Error);
                         }
                     }
                 }

@@ -18,7 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 using Terminaux.Colors;
@@ -41,12 +41,12 @@ namespace Nitrocid.Extras.ColorConvert.Commands
             // Do the job
             Color color = new(Hex);
             var hsl = color.HSL;
-            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Hue:") + " ", false, KernelColorType.ListEntry);
-            TextWriterColor.WriteKernelColor($"{hsl.HueWhole} [{hsl.Hue:0.00}]", true, KernelColorType.ListValue);
-            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Saturation:") + " ", false, KernelColorType.ListEntry);
-            TextWriterColor.WriteKernelColor($"{hsl.SaturationWhole} [{hsl.Saturation:0.00}]", true, KernelColorType.ListValue);
-            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Lumiance (Lightness):") + " ", false, KernelColorType.ListEntry);
-            TextWriterColor.WriteKernelColor($"{hsl.LightnessWhole} [{hsl.Lightness:0.00}]", true, KernelColorType.ListValue);
+            TextWriters.Write("- " + Translate.DoTranslation("Hue:") + " ", false, KernelColorType.ListEntry);
+            TextWriters.Write($"{hsl.HueWhole} [{hsl.Hue:0.00}]", true, KernelColorType.ListValue);
+            TextWriters.Write("- " + Translate.DoTranslation("Saturation:") + " ", false, KernelColorType.ListEntry);
+            TextWriters.Write($"{hsl.SaturationWhole} [{hsl.Saturation:0.00}]", true, KernelColorType.ListValue);
+            TextWriters.Write("- " + Translate.DoTranslation("Lumiance (Lightness):") + " ", false, KernelColorType.ListEntry);
+            TextWriters.Write($"{hsl.LightnessWhole} [{hsl.Lightness:0.00}]", true, KernelColorType.ListValue);
             variableValue = $"hsl:{hsl.HueWhole};{hsl.SaturationWhole};{hsl.LightnessWhole}";
             return 0;
         }

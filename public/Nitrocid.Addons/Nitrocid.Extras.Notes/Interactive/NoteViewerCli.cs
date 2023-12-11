@@ -17,16 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Inputs.Styles.Infobox;
 using KS.ConsoleBase.Interactive;
 using KS.Languages;
-using KS.Misc.Text;
-using KS.Modifications.ManPages;
 using Nitrocid.Extras.Notes.Management;
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Nitrocid.Extras.Notes.Interactive
 {

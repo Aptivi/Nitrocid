@@ -25,6 +25,7 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Inputs.Styles.Infobox;
 using KS.ConsoleBase.Inputs.Styles.Selection;
+using KS.ConsoleBase.Writers;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Configuration.Instances;
 using KS.Kernel.Debugging;
@@ -56,7 +57,7 @@ namespace KS.Kernel.Configuration.Settings
             // Verify that we actually have the type
             if (settingsType is null)
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Settings type is not found."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("Settings type is not found."), true, KernelColorType.Error);
                 return;
             }
 
@@ -236,8 +237,8 @@ namespace KS.Kernel.Configuration.Settings
                     else
                     {
                         DebugWriter.WriteDebug(DebugLevel.W, "Option is not valid. Returning...");
-                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("Specified option {0} is invalid."), true, KernelColorType.Error, Answer);
-                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("Press any key to go back."), true, KernelColorType.Error);
+                        TextWriters.Write(Translate.DoTranslation("Specified option {0} is invalid."), true, KernelColorType.Error, Answer);
+                        TextWriters.Write(Translate.DoTranslation("Press any key to go back."), true, KernelColorType.Error);
                         Input.DetectKeypress();
                     }
                 }
@@ -311,7 +312,7 @@ namespace KS.Kernel.Configuration.Settings
                 // Prompt the user
                 TextWriterColor.Write(Translate.DoTranslation("Write what do you want to search for."));
                 DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for searching...");
-                TextWriterColor.WriteKernelColor(">> ", false, KernelColorType.Input);
+                TextWriters.Write(">> ", false, KernelColorType.Input);
                 string SearchFor = Input.ReadLine();
 
                 // Search for the setting

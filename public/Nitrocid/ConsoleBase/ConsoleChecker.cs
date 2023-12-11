@@ -28,6 +28,7 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands.ProcessExecution;
 using KS.Files.Operations;
 using KS.Files.Paths;
+using KS.ConsoleBase.Writers;
 
 namespace KS.ConsoleBase
 {
@@ -196,13 +197,13 @@ namespace KS.ConsoleBase
             // Check for the minimum console window requirements (80x24)
             while (ConsoleWrapper.WindowWidth < MinimumWidth | ConsoleWrapper.WindowHeight < MinimumHeight)
             {
-                TextWriterColor.WriteKernelColor(
+                TextWriters.Write(
                     Translate.DoTranslation("Your console is too small to run properly:") + " {0}x{1} | buff: {2}x{3} | min: {4}x{5}", true, KernelColorType.Warning,
                     ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight,
                     ConsoleWrapper.BufferWidth, ConsoleWrapper.BufferHeight,
                     MinimumWidth, MinimumHeight
                 );
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("To have a better experience, resize your console window while still being on this screen. Press any key to continue..."), true, KernelColorType.Warning);
+                TextWriters.Write(Translate.DoTranslation("To have a better experience, resize your console window while still being on this screen. Press any key to continue..."), true, KernelColorType.Warning);
                 Input.DetectKeypress();
             }
         }

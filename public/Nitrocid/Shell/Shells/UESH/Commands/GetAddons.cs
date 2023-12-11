@@ -18,7 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Files.Paths;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
@@ -47,7 +47,7 @@ namespace KS.Shell.Shells.UESH.Commands
             // Bail if there are addons already installed
             if (AddonTools.ListAddons().Count > 0 && !SwitchManager.ContainsSwitch(parameters.SwitchesList, "-reinstall"))
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Some or all your addons have been installed. If you wish to re-install them, use the -reinstall switch."), KernelColorType.Progress);
+                TextWriters.Write(Translate.DoTranslation("Some or all your addons have been installed. If you wish to re-install them, use the -reinstall switch."), KernelColorType.Progress);
                 return 0;
             }
 
@@ -55,42 +55,42 @@ namespace KS.Shell.Shells.UESH.Commands
             KernelUpdate addonsPackage;
             try
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Fetching the addons package..."), KernelColorType.Progress);
+                TextWriters.Write(Translate.DoTranslation("Fetching the addons package..."), KernelColorType.Progress);
                 addonsPackage = UpdateManager.FetchAddonPack();
             }
             catch (Exception ex)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, $"Error trying to fetch the addon package: {ex.Message}");
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Failed to fetch the addon package") + $": {ex.Message}", KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("Failed to fetch the addon package") + $": {ex.Message}", KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.AddonManagement;
             }
 
             // Now, try to download the addons package
             try
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Downloading the addons package..."), KernelColorType.Progress);
+                TextWriters.Write(Translate.DoTranslation("Downloading the addons package..."), KernelColorType.Progress);
                 NetworkTransfer.DownloadFile(addonsPackage.UpdateURL.ToString(), PathsManagement.AppDataPath + "/addons.zip");
             }
             catch (Exception ex)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, $"Error trying to download the addon package: {ex.Message}");
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Failed to download the addon package") + $": {ex.Message}", KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("Failed to download the addon package") + $": {ex.Message}", KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.AddonManagement;
             }
 
             // Finally, try to install the addons package
             try
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Installing the addons package..."), KernelColorType.Progress);
+                TextWriters.Write(Translate.DoTranslation("Installing the addons package..."), KernelColorType.Progress);
                 ZipFile.ExtractToDirectory(PathsManagement.AppDataPath + "/addons.zip", PathsManagement.AddonsPath, true);
             }
             catch (Exception ex)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, $"Error trying to install the addon package: {ex.Message}");
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Failed to install the addon package") + $": {ex.Message}", KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("Failed to install the addon package") + $": {ex.Message}", KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.AddonManagement;
             }
             return 0;

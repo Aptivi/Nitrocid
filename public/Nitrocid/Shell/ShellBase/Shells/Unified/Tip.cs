@@ -18,7 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.ConsoleBase.Writers.MiscWriters;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
@@ -37,7 +37,7 @@ namespace KS.Shell.ShellBase.Shells.Unified
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             string tip = WelcomeMessage.GetRandomTip();
-            TextWriterColor.WriteKernelColor(
+            TextWriters.Write(
                 "* " + Translate.DoTranslation("Pro tip: Did you know") + " " + tip, true, KernelColorType.Tip);
             return 0;
         }

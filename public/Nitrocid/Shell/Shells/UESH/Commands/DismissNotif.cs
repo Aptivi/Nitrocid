@@ -19,6 +19,7 @@
 
 using System;
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Exceptions;
 using KS.Languages;
@@ -48,7 +49,7 @@ namespace KS.Shell.Shells.UESH.Commands
             }
             else
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Error trying to dismiss notification."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("Error trying to dismiss notification."), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.NotificationManagement;
             }
         }

@@ -18,7 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Scripting;
 
@@ -37,8 +37,8 @@ namespace KS.Shell.Shells.UESH.Commands
         {
             foreach (string VarName in UESHVariables.Variables.Keys)
             {
-                TextWriterColor.WriteKernelColor($"- {VarName}: ", false, KernelColorType.ListEntry);
-                TextWriterColor.WriteKernelColor(UESHVariables.Variables[VarName], true, KernelColorType.ListValue);
+                TextWriters.Write($"- {VarName}: ", false, KernelColorType.ListEntry);
+                TextWriters.Write(UESHVariables.Variables[VarName], true, KernelColorType.ListValue);
             }
             return 0;
         }

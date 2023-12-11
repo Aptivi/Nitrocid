@@ -20,7 +20,7 @@
 using System;
 using System.Threading;
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Kernel.Debugging;
 using KS.Kernel.Threading;
 using KS.Misc.Screensaver;
@@ -51,10 +51,10 @@ namespace KS.Kernel.Time.Renderers
                         string TimeString = $"{TimeDateRenderers.RenderDate()} - {TimeDateRenderers.RenderTime()}";
                         oldWid = ConsoleBase.ConsoleWrapper.WindowWidth - TimeString.Length - 1;
                         oldTop = ConsoleBase.ConsoleWrapper.WindowTop;
-                        TextWriterWhereColor.WriteWhereKernelColor(TimeString, ConsoleBase.ConsoleWrapper.WindowWidth - TimeString.Length - 1, ConsoleBase.ConsoleWrapper.WindowTop, true, KernelColorType.NeutralText);
+                        TextWriters.WriteWhere(TimeString, ConsoleBase.ConsoleWrapper.WindowWidth - TimeString.Length - 1, ConsoleBase.ConsoleWrapper.WindowTop, true, KernelColorType.NeutralText);
                         Thread.Sleep(1000);
                         if (oldWid != 0)
-                            TextWriterWhereColor.WriteWhereKernelColor(new string(' ', TimeString.Length), oldWid, oldTop, true, KernelColorType.NeutralText);
+                            TextWriters.WriteWhere(new string(' ', TimeString.Length), oldWid, oldTop, true, KernelColorType.NeutralText);
                     }
                 }
             }

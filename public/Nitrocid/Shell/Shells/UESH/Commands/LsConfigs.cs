@@ -18,11 +18,11 @@
 //
 
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Kernel.Configuration;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Switches;
+using KS.ConsoleBase.Writers.FancyWriters;
 
 namespace KS.Shell.Shells.UESH.Commands
 {

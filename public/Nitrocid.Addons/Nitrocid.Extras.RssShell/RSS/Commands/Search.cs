@@ -24,6 +24,7 @@ using System.Linq;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using Syndian.Instance;
 using Nitrocid.Extras.RssShell.Tools;
+using KS.ConsoleBase.Writers;
 
 namespace Nitrocid.Extras.RssShell.RSS.Commands
 {
@@ -72,8 +73,8 @@ namespace Nitrocid.Extras.RssShell.RSS.Commands
             var foundArticles = RSSShellTools.SearchArticles(parameters.ArgumentsList[0], findTitle, findDescription, caseSensitive);
             foreach (RSSArticle Article in foundArticles)
             {
-                TextWriterColor.WriteKernelColor("- {0}: ", false, KernelColorType.ListEntry, Article.ArticleTitle);
-                TextWriterColor.WriteKernelColor(Article.ArticleLink, true, KernelColorType.ListValue);
+                TextWriters.Write("- {0}: ", false, KernelColorType.ListEntry, Article.ArticleTitle);
+                TextWriters.Write(Article.ArticleLink, true, KernelColorType.ListValue);
                 TextWriterColor.Write("    {0}", Article.ArticleDescription.SplitNewLines()[0].Truncate(200));
             }
             return 0;

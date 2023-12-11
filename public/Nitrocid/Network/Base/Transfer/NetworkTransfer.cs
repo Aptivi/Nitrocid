@@ -22,7 +22,7 @@ using System.Net.Http;
 using System.Threading;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Drivers;
 using KS.Files;
 using KS.Kernel.Configuration;
@@ -247,11 +247,11 @@ namespace KS.Network.Base.Transfer
                         {
                             if (!string.IsNullOrWhiteSpace(DownloadPercentagePrint))
                             {
-                                TextWriterWhereColor.WriteWhereKernelColor(PlaceParse.ProbePlaces(DownloadPercentagePrint), 0, ConsoleWrapper.CursorTop, false, KernelColorType.NeutralText, TransferInfo.DoneSize.SizeString(), TransferInfo.FileSize.SizeString(), Progress);
+                                TextWriters.WriteWhere(PlaceParse.ProbePlaces(DownloadPercentagePrint), 0, ConsoleWrapper.CursorTop, false, KernelColorType.NeutralText, TransferInfo.DoneSize.SizeString(), TransferInfo.FileSize.SizeString(), Progress);
                             }
                             else
                             {
-                                TextWriterWhereColor.WriteWhereKernelColor(" {2:000.00}% | " + indicator, 0, ConsoleWrapper.CursorTop, false, KernelColorType.NeutralText, TransferInfo.DoneSize.SizeString(), TransferInfo.FileSize.SizeString(), Progress);
+                                TextWriters.WriteWhere(" {2:000.00}% | " + indicator, 0, ConsoleWrapper.CursorTop, false, KernelColorType.NeutralText, TransferInfo.DoneSize.SizeString(), TransferInfo.FileSize.SizeString(), Progress);
                             }
                             ConsoleExtensions.ClearLineToRight();
                         }

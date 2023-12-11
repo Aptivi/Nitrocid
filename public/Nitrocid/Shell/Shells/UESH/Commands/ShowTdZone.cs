@@ -19,7 +19,7 @@
 
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Interactive;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Kernel.Time.Timezones;
 using KS.Languages;
 using KS.Misc.Interactives;
@@ -68,7 +68,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 if (ShowAll)
                     TimeZoneRenderers.ShowAllTimeZones();
                 else if (!TimeZoneRenderers.ShowTimeZones(parameters.ArgumentsList[0]))
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Timezone is specified incorrectly."), true, KernelColorType.Error);
+                    TextWriters.Write(Translate.DoTranslation("Timezone is specified incorrectly."), true, KernelColorType.Error);
             }
             return 0;
         }

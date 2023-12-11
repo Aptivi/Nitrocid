@@ -18,6 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files.Editors.TextEdit;
 using KS.Kernel.Exceptions;
@@ -49,21 +50,21 @@ namespace KS.Shell.Shells.Text.Commands
                     {
                         int LineIndex = Convert.ToInt32(parameters.ArgumentsList[1]);
                         var QueriedChars = TextEditTools.QueryChar(Convert.ToChar(parameters.ArgumentsList[0]), LineIndex);
-                        TextWriterColor.WriteKernelColor("- {0}: ", false, KernelColorType.ListEntry, LineIndex);
+                        TextWriters.Write("- {0}: ", false, KernelColorType.ListEntry, LineIndex);
 
                         // Process the output
                         string text = TextEditShellCommon.FileLines[LineIndex - 1];
                         for (int charIndex = 0; charIndex < text.Length; charIndex++)
                         {
                             char Character = text[charIndex];
-                            TextWriterColor.WriteKernelColor($"{(QueriedChars.Contains(charIndex) ? KernelColorTools.GetColor(KernelColorType.Success).VTSequenceForeground : "")}{Character}", false, KernelColorType.ListValue);
+                            TextWriters.Write($"{(QueriedChars.Contains(charIndex) ? KernelColorTools.GetColor(KernelColorType.Success).VTSequenceForeground : "")}{Character}", false, KernelColorType.ListValue);
                         }
                         TextWriterColor.Write();
                         return 0;
                     }
                     else
                     {
-                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("The specified line number may not be larger than the last file line number."), true, KernelColorType.Error);
+                        TextWriters.Write(Translate.DoTranslation("The specified line number may not be larger than the last file line number."), true, KernelColorType.Error);
                         return 10000 + (int)KernelExceptionType.TextEditor;
                     }
                 }
@@ -73,7 +74,7 @@ namespace KS.Shell.Shells.Text.Commands
                     foreach (var QueriedChar in QueriedChars)
                     {
                         int LineIndex = QueriedChar.Item1;
-                        TextWriterColor.WriteKernelColor("- {0}: ", false, KernelColorType.ListEntry, LineIndex + 1);
+                        TextWriters.Write("- {0}: ", false, KernelColorType.ListEntry, LineIndex + 1);
 
                         // Process the output
                         string text = TextEditShellCommon.FileLines[LineIndex];
@@ -81,7 +82,7 @@ namespace KS.Shell.Shells.Text.Commands
                         for (int charIndex = 0; charIndex < text.Length; charIndex++)
                         {
                             char Character = text[charIndex];
-                            TextWriterColor.WriteKernelColor($"{(queried.Contains(charIndex) ? KernelColorTools.GetColor(KernelColorType.Success).VTSequenceForeground : "")}{Character}", false, KernelColorType.ListValue);
+                            TextWriters.Write($"{(queried.Contains(charIndex) ? KernelColorTools.GetColor(KernelColorType.Success).VTSequenceForeground : "")}{Character}", false, KernelColorType.ListValue);
                         }
                         TextWriterColor.Write();
                     }
@@ -101,14 +102,14 @@ namespace KS.Shell.Shells.Text.Commands
                         {
                             var QueriedChars = TextEditTools.QueryChar(Convert.ToChar(parameters.ArgumentsList[0]), LineNumber);
                             int LineIndex = LineNumber - 1;
-                            TextWriterColor.WriteKernelColor("- {0}: ", false, KernelColorType.ListEntry, LineNumber);
+                            TextWriters.Write("- {0}: ", false, KernelColorType.ListEntry, LineNumber);
 
                             // Process the output
                             string text = TextEditShellCommon.FileLines[LineIndex];
                             for (int charIndex = 0; charIndex < text.Length; charIndex++)
                             {
                                 char Character = text[charIndex];
-                                TextWriterColor.WriteKernelColor($"{(QueriedChars.Contains(charIndex) ? KernelColorTools.GetColor(KernelColorType.Success).VTSequenceForeground : "")}{Character}", false, KernelColorType.ListValue);
+                                TextWriters.Write($"{(QueriedChars.Contains(charIndex) ? KernelColorTools.GetColor(KernelColorType.Success).VTSequenceForeground : "")}{Character}", false, KernelColorType.ListValue);
                             }
                             TextWriterColor.Write();
                         }
@@ -116,7 +117,7 @@ namespace KS.Shell.Shells.Text.Commands
                     }
                     else
                     {
-                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("The specified line number may not be larger than the last file line number."), true, KernelColorType.Error);
+                        TextWriters.Write(Translate.DoTranslation("The specified line number may not be larger than the last file line number."), true, KernelColorType.Error);
                         return 10000 + (int)KernelExceptionType.TextEditor;
                     }
                 }

@@ -18,12 +18,12 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 using LibGit2Sharp;
 using GitCommand = LibGit2Sharp.Commands;
 using System.Linq;
+using KS.ConsoleBase.Writers;
 
 namespace Nitrocid.Extras.GitShell.Git.Commands
 {
@@ -43,7 +43,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
             // Check to see if the repo has been modified
             if (status.IsDirty)
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Save your work first by creating a commit before checking out a branch."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("Save your work first by creating a commit before checking out a branch."), true, KernelColorType.Error);
                 return 11;
             }
 
@@ -56,7 +56,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
                 string requestedRemote = parameters.ArgumentsList[0];
                 if (!remoteNames.Contains(requestedRemote))
                 {
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Remote doesn't exist.") + $" {requestedRemote}", true, KernelColorType.Error);
+                    TextWriters.Write(Translate.DoTranslation("Remote doesn't exist.") + $" {requestedRemote}", true, KernelColorType.Error);
                     return 12;
                 }
             }
@@ -68,7 +68,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
                     // We don't have origin! Let's select the first remote
                     if (remoteNames.Length == 0)
                     {
-                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("No remotes found to pull updates from."), true, KernelColorType.Error);
+                        TextWriters.Write(Translate.DoTranslation("No remotes found to pull updates from."), true, KernelColorType.Error);
                         return 13;
                     }
                     selectedRemote = remoteNames[0];

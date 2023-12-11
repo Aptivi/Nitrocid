@@ -22,7 +22,6 @@ using System.Text;
 using Figletize;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Drivers;
 using KS.Drivers.Encryption;
 using KS.Drivers.RNG;
@@ -31,6 +30,7 @@ using KS.Languages;
 using KS.Misc.Screensaver;
 using Terminaux.Colors;
 using Textify.Words;
+using KS.ConsoleBase.Writers.FancyWriters;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {

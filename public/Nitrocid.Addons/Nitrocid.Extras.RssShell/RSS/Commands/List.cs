@@ -22,6 +22,7 @@ using KS.Misc.Text;
 using KS.Shell.ShellBase.Commands;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using Syndian.Instance;
+using KS.ConsoleBase.Writers;
 
 namespace Nitrocid.Extras.RssShell.RSS.Commands
 {
@@ -38,8 +39,8 @@ namespace Nitrocid.Extras.RssShell.RSS.Commands
         {
             foreach (RSSArticle Article in RSSShellCommon.RSSFeedInstance.FeedArticles)
             {
-                TextWriterColor.WriteKernelColor("- {0}: ", false, KernelColorType.ListEntry, Article.ArticleTitle);
-                TextWriterColor.WriteKernelColor(Article.ArticleLink, true, KernelColorType.ListValue);
+                TextWriters.Write("- {0}: ", false, KernelColorType.ListEntry, Article.ArticleTitle);
+                TextWriters.Write(Article.ArticleLink, true, KernelColorType.ListValue);
                 TextWriterColor.Write("    {0}", Article.ArticleDescription.SplitNewLines()[0].Truncate(200));
             }
             return 0;

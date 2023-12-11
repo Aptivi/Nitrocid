@@ -18,13 +18,13 @@
 //
 
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Text;
 using ManagedWeatherMap.Core;
 using MWM = ManagedWeatherMap.Core.Forecast;
 using System;
+using KS.ConsoleBase.Writers.FancyWriters;
 
 namespace Nitrocid.Extras.Forecast.Forecast
 {

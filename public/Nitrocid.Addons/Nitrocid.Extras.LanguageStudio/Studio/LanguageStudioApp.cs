@@ -22,6 +22,7 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Inputs.Styles.Choice;
 using KS.ConsoleBase.Inputs.Styles.Selection;
+using KS.ConsoleBase.Writers;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files;
 using KS.Files.Operations;
@@ -88,7 +89,7 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
             if (finalLangs.Length == 0)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "No languages!");
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("No valid language is specified."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("No valid language is specified."), true, KernelColorType.Error);
                 return;
             }
 

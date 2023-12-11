@@ -47,7 +47,6 @@ using KS.ConsoleBase.Buffered;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs.Styles.Infobox;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Languages;
 using KS.Misc.Screensaver;
 using KS.Misc.Text;
@@ -59,6 +58,7 @@ using System.Threading;
 using Terminaux.Colors;
 using Terminaux.Reader.Inputs;
 using Terminaux.Sequences.Builder.Types;
+using KS.ConsoleBase.Writers.FancyWriters;
 
 namespace Nitrocid.Extras.BassBoom.Player
 {

@@ -22,9 +22,9 @@ using KS.ConsoleBase.Colors;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Languages;
-using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Extensions;
 using KS.Kernel.Exceptions;
+using KS.ConsoleBase.Writers;
 
 namespace KS.Network.RSS
 {
@@ -56,21 +56,21 @@ namespace KS.Network.RSS
                     var Feed = InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasRssShell, "GetFirstArticle", RssHeadlineUrl);
                     if (Feed is (string feedTitle, string articleTitle))
                     {
-                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("Latest news from") + " {0}: ", false, KernelColorType.ListEntry, feedTitle);
-                        TextWriterColor.WriteKernelColor(articleTitle, true, KernelColorType.ListValue);
+                        TextWriters.Write(Translate.DoTranslation("Latest news from") + " {0}: ", false, KernelColorType.ListEntry, feedTitle);
+                        TextWriters.Write(articleTitle, true, KernelColorType.ListValue);
                     }
                 }
                 catch (KernelException ex) when (ex.ExceptionType == KernelExceptionType.AddonManagement)
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news: {0}", ex.Message);
                     DebugWriter.WriteDebugStackTrace(ex);
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("To be able to get the latest news, you must install the RSS Shell Extras addon. You can use the 'getaddons' command to get all the addons!"), true, KernelColorType.Tip);
+                    TextWriters.Write(Translate.DoTranslation("To be able to get the latest news, you must install the RSS Shell Extras addon. You can use the 'getaddons' command to get all the addons!"), true, KernelColorType.Tip);
                 }
                 catch (Exception ex)
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news: {0}", ex.Message);
                     DebugWriter.WriteDebugStackTrace(ex);
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Failed to get the latest news."), true, KernelColorType.Error);
+                    TextWriters.Write(Translate.DoTranslation("Failed to get the latest news."), true, KernelColorType.Error);
                 }
             }
         }

@@ -22,7 +22,6 @@ using System.Collections.Generic;
 using System.IO;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Drivers;
 using KS.Files.Instances;
 using KS.Files.Operations.Printing;
@@ -32,6 +31,8 @@ using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Reflection;
 using KS.Misc.Text;
+using KS.ConsoleBase.Writers.FancyWriters;
+using KS.ConsoleBase.Writers;
 
 namespace KS.Files.Folders
 {
@@ -126,7 +127,7 @@ namespace KS.Files.Folders
                 {
                     enumeration = CreateList(folder, Sort, Recursive);
                     if (enumeration.Count == 0)
-                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("Folder is empty."), true, KernelColorType.Warning);
+                        TextWriters.Write(Translate.DoTranslation("Folder is empty."), true, KernelColorType.Warning);
 
                     // Enumerate each entry
                     long TotalSize = 0L;
@@ -149,13 +150,13 @@ namespace KS.Files.Folders
                         catch (UnauthorizedAccessException ex)
                         {
                             if (!SuppressUnauthorizedMessage)
-                                TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("You are not authorized to get info for {0}."), true, KernelColorType.Error, Entry.OriginalFilePath);
+                                TextWriters.Write("- " + Translate.DoTranslation("You are not authorized to get info for {0}."), true, KernelColorType.Error, Entry.OriginalFilePath);
                             DebugWriter.WriteDebugStackTrace(ex);
                         }
                         catch (Exception ex)
                         {
                             if (!SuppressUnauthorizedMessage)
-                                TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Failed to get info for {0}."), true, KernelColorType.Error, Entry.OriginalFilePath);
+                                TextWriters.Write("- " + Translate.DoTranslation("Failed to get info for {0}."), true, KernelColorType.Error, Entry.OriginalFilePath);
                             DebugWriter.WriteDebugStackTrace(ex);
                         }
                     }
@@ -166,7 +167,7 @@ namespace KS.Files.Folders
                 }
                 catch (Exception ex)
                 {
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Unknown error while listing in directory: {0}"), true, KernelColorType.Error, ex.Message);
+                    TextWriters.Write(Translate.DoTranslation("Unknown error while listing in directory: {0}"), true, KernelColorType.Error, ex.Message);
                     DebugWriter.WriteDebugStackTrace(ex);
                 }
             }
@@ -179,19 +180,19 @@ namespace KS.Files.Folders
                 catch (UnauthorizedAccessException ex)
                 {
                     if (!SuppressUnauthorizedMessage)
-                        TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("You are not authorized to get info for {0}."), true, KernelColorType.Error, folder);
+                        TextWriters.Write("- " + Translate.DoTranslation("You are not authorized to get info for {0}."), true, KernelColorType.Error, folder);
                     DebugWriter.WriteDebugStackTrace(ex);
                 }
                 catch (Exception ex)
                 {
                     if (!SuppressUnauthorizedMessage)
-                        TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Failed to get info for {0}."), true, KernelColorType.Error, folder);
+                        TextWriters.Write("- " + Translate.DoTranslation("Failed to get info for {0}."), true, KernelColorType.Error, folder);
                     DebugWriter.WriteDebugStackTrace(ex);
                 }
             }
             else
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Directory {0} not found"), true, KernelColorType.Error, folder);
+                TextWriters.Write(Translate.DoTranslation("Directory {0} not found"), true, KernelColorType.Error, folder);
                 DebugWriter.WriteDebug(DebugLevel.I, "IO.FolderExists = {0}", Checking.FolderExists(folder));
             }
         }
@@ -245,7 +246,7 @@ namespace KS.Files.Folders
                 {
                     enumeration = CreateList(folder, Sort);
                     if (enumeration.Count == 0)
-                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("Folder is empty."), true, KernelColorType.Warning);
+                        TextWriters.Write(Translate.DoTranslation("Folder is empty."), true, KernelColorType.Warning);
 
                     // Enumerate each entry
                     foreach (FileSystemEntry Entry in enumeration)
@@ -281,7 +282,7 @@ namespace KS.Files.Folders
                 }
                 catch (Exception ex)
                 {
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Unknown error while listing in directory: {0}"), true, KernelColorType.Error, ex.Message);
+                    TextWriters.Write(Translate.DoTranslation("Unknown error while listing in directory: {0}"), true, KernelColorType.Error, ex.Message);
                     DebugWriter.WriteDebugStackTrace(ex);
                 }
             }
@@ -308,7 +309,7 @@ namespace KS.Files.Folders
             }
             else
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Directory {0} not found"), true, KernelColorType.Error, folder);
+                TextWriters.Write(Translate.DoTranslation("Directory {0} not found"), true, KernelColorType.Error, folder);
                 DebugWriter.WriteDebug(DebugLevel.I, "IO.FolderExists = {0}", Checking.FolderExists(folder));
             }
         }

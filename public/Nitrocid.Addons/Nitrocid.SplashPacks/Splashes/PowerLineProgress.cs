@@ -25,9 +25,9 @@ using KS.Kernel.Debugging;
 using KS.Misc.Text;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.ConsoleBase.Writers.FancyWriters;
 using Terminaux.Colors;
 using KS.Misc.Splash;
+using KS.ConsoleBase.Writers.FancyWriters;
 
 namespace Nitrocid.SplashPacks.Splashes
 {

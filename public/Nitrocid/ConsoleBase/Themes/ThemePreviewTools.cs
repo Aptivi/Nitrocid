@@ -20,7 +20,6 @@
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using System;
@@ -28,6 +27,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Terminaux.Colors;
+using KS.ConsoleBase.Writers.FancyWriters;
+using KS.ConsoleBase.Writers;
 
 namespace KS.ConsoleBase.Themes
 {
@@ -73,7 +74,7 @@ namespace KS.ConsoleBase.Themes
                 themeColorPromptText.Append($"\n{KernelColorTools.GetColor(KernelColorType.Option).VTSequenceForeground}*) {type}: ");
                 themeColorPromptText.Append($"[{color.PlainSequence}]{color.VTSequenceForeground} Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
             }
-            TextWriterWrappedColor.WriteWrappedKernelColor(themeColorPromptText.ToString(), false, KernelColorType.Option);
+            TextWriters.WriteWrapped(themeColorPromptText.ToString(), false, KernelColorType.Option);
         }
 
         /// <summary>

@@ -18,7 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Files.Operations;
 using KS.Files.Operations.Querying;
 using KS.Files.Paths;
@@ -155,8 +155,8 @@ namespace KS.Kernel.Journaling
                 string Message = journal.Message;
 
                 // Now, print the entries
-                TextWriterColor.WriteKernelColor($"[{Date} {Time}] [{i + 1}] [{Status}]: ", false, KernelColorType.ListEntry);
-                TextWriterColor.WriteKernelColor(Message, true, KernelColorType.ListEntry);
+                TextWriters.Write($"[{Date} {Time}] [{i + 1}] [{Status}]: ", false, KernelColorType.ListEntry);
+                TextWriters.Write(Message, true, KernelColorType.ListEntry);
             }
         }
 

@@ -18,7 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 
@@ -40,8 +40,8 @@ namespace Nitrocid.Extras.ColorConvert.Commands
 
             // Do the job
             RGB = KernelColorConversionTools.ConvertFromHexToRgb(Hex);
-            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("RGB color sequence:") + " ", false, KernelColorType.ListEntry);
-            TextWriterColor.WriteKernelColor(RGB, true, KernelColorType.ListValue);
+            TextWriters.Write("- " + Translate.DoTranslation("RGB color sequence:") + " ", false, KernelColorType.ListEntry);
+            TextWriters.Write(RGB, true, KernelColorType.ListValue);
             variableValue = RGB;
             return 0;
         }

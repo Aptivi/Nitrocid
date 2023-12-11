@@ -20,7 +20,7 @@
 using System;
 using System.Threading;
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Languages;
@@ -48,7 +48,7 @@ namespace KS.Shell.Shells.Debug
         {
             if (!KernelEntry.DebugMode)
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("You must enable debug mode before you can use the debug shell."), true, KernelColorType.Warning);
+                TextWriters.Write(Translate.DoTranslation("You must enable debug mode before you can use the debug shell."), true, KernelColorType.Warning);
                 Bail = true;
             }
 
@@ -70,7 +70,7 @@ namespace KS.Shell.Shells.Debug
                 catch (Exception ex)
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("There was an error in the shell.") + CharManager.NewLine + "Error {0}: {1}", true, KernelColorType.Error, ex.GetType().FullName, ex.Message);
+                    TextWriters.Write(Translate.DoTranslation("There was an error in the shell.") + CharManager.NewLine + "Error {0}: {1}", true, KernelColorType.Error, ex.GetType().FullName, ex.Message);
                     continue;
                 }
             }

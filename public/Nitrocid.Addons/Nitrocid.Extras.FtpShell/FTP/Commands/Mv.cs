@@ -18,7 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Text;
@@ -40,15 +40,15 @@ namespace Nitrocid.Extras.FtpShell.FTP.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Moving {0} to {1}..."), true, KernelColorType.Progress, parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
+            TextWriters.Write(Translate.DoTranslation("Moving {0} to {1}..."), true, KernelColorType.Progress, parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
             if (FTPFilesystem.FTPMoveItem(parameters.ArgumentsList[0], parameters.ArgumentsList[1]))
             {
-                TextWriterColor.WriteKernelColor(CharManager.NewLine + Translate.DoTranslation("Moved successfully"), true, KernelColorType.Success);
+                TextWriters.Write(CharManager.NewLine + Translate.DoTranslation("Moved successfully"), true, KernelColorType.Success);
                 return 0;
             }
             else
             {
-                TextWriterColor.WriteKernelColor(CharManager.NewLine + Translate.DoTranslation("Failed to move {0} to {1}."), true, KernelColorType.Error, parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
+                TextWriters.Write(CharManager.NewLine + Translate.DoTranslation("Failed to move {0} to {1}."), true, KernelColorType.Error, parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
                 return 10000 + (int)KernelExceptionType.FTPFilesystem;
             }
         }

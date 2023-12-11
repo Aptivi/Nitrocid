@@ -19,7 +19,7 @@
 
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.ConsoleBase.Writers.FancyWriters;
+using KS.ConsoleBase.Writers;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Switches;
@@ -64,23 +64,23 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
                 var renamed = tree.Renamed;
 
                 // List the general changes
-                SeparatorWriterColor.WriteSeparatorKernelColor(Translate.DoTranslation("General changes in") + $" {GitShellCommon.RepoName}:", KernelColorType.ListTitle);
+                TextFancyWriters.WriteSeparator(Translate.DoTranslation("General changes in") + $" {GitShellCommon.RepoName}:", KernelColorType.ListTitle);
                 foreach (var change in modified)
-                    TextWriterColor.WriteKernelColor($"[M] * {change.Path}", KernelColorType.ListEntry);
+                    TextWriters.Write($"[M] * {change.Path}", KernelColorType.ListEntry);
                 foreach (var change in added)
-                    TextWriterColor.WriteKernelColor($"[A] + {change.Path}", KernelColorType.ListEntry);
+                    TextWriters.Write($"[A] + {change.Path}", KernelColorType.ListEntry);
                 foreach (var change in deleted)
-                    TextWriterColor.WriteKernelColor($"[D] - {change.Path}", KernelColorType.ListEntry);
+                    TextWriters.Write($"[D] - {change.Path}", KernelColorType.ListEntry);
                 foreach (var change in conflicted)
-                    TextWriterColor.WriteKernelColor($"[C] X {change.OldPath} vs. {change.Path}", KernelColorType.ListEntry);
+                    TextWriters.Write($"[C] X {change.OldPath} vs. {change.Path}", KernelColorType.ListEntry);
                 foreach (var change in renamed)
-                    TextWriterColor.WriteKernelColor($"[R] / {change.OldPath} -> {change.Path}", KernelColorType.ListEntry);
+                    TextWriters.Write($"[R] / {change.OldPath} -> {change.Path}", KernelColorType.ListEntry);
             }
             TextWriterColor.Write();
 
             if (doPatch)
             {
-                SeparatorWriterColor.WriteSeparatorKernelColor(Translate.DoTranslation("Content changes in") + $" {GitShellCommon.RepoName}:", KernelColorType.ListTitle);
+                TextFancyWriters.WriteSeparator(Translate.DoTranslation("Content changes in") + $" {GitShellCommon.RepoName}:", KernelColorType.ListTitle);
                 TextWriterColor.Write(patch.Content);
             }
 

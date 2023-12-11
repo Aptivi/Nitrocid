@@ -18,6 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
@@ -98,7 +99,7 @@ namespace KS.Kernel.Time.Renderers
             {
                 DebugWriter.WriteDebug(DebugLevel.E, $"Can't show time of day with {nameof(ShowCurrentTimes)}(): {ex.Message}");
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Failed to show current times:") + $" {ex.Message}", KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("Failed to show current times:") + $" {ex.Message}", KernelColorType.Error);
             }
         }
     }

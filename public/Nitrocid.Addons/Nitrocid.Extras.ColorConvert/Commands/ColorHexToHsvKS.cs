@@ -18,7 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 
@@ -40,8 +40,8 @@ namespace Nitrocid.Extras.ColorConvert.Commands
 
             // Do the job
             HSV = KernelColorConversionTools.ConvertFromHexToHsv(Hex);
-            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("HSV color sequence:") + " ", false, KernelColorType.ListEntry);
-            TextWriterColor.WriteKernelColor(HSV, true, KernelColorType.ListValue);
+            TextWriters.Write("- " + Translate.DoTranslation("HSV color sequence:") + " ", false, KernelColorType.ListEntry);
+            TextWriters.Write(HSV, true, KernelColorType.ListValue);
             variableValue = HSV;
             return 0;
         }

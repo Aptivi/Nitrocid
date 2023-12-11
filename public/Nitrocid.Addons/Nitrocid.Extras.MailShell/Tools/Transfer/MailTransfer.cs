@@ -24,6 +24,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Debugging;
 using KS.Kernel.Time.Renderers;
@@ -60,13 +61,13 @@ namespace Nitrocid.Extras.MailShell.Tools.Transfer
             if (Message < 0)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Trying to access message 0 or less than 0.");
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Message number may not be negative or zero."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("Message number may not be negative or zero."), true, KernelColorType.Error);
                 return;
             }
             else if (Message > MaxMessagesIndex)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Message {0} not in list. It was larger than MaxMessagesIndex ({1})", Message, MaxMessagesIndex);
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Message specified is not found."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("Message specified is not found."), true, KernelColorType.Error);
                 return;
             }
 
@@ -93,7 +94,7 @@ namespace Nitrocid.Extras.MailShell.Tools.Transfer
                 foreach (InternetAddress Address in Msg.From)
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Address: {0} ({1})", Address.Name, Address.Encoding.EncodingName);
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("- From {0}"), true, KernelColorType.ListEntry, Address.ToString());
+                    TextWriters.Write(Translate.DoTranslation("- From {0}"), true, KernelColorType.ListEntry, Address.ToString());
                 }
 
                 // Print all the addresses that received the mail
@@ -101,23 +102,23 @@ namespace Nitrocid.Extras.MailShell.Tools.Transfer
                 foreach (InternetAddress Address in Msg.To)
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Address: {0} ({1})", Address.Name, Address.Encoding.EncodingName);
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("- To {0}"), true, KernelColorType.ListEntry, Address.ToString());
+                    TextWriters.Write(Translate.DoTranslation("- To {0}"), true, KernelColorType.ListEntry, Address.ToString());
                 }
 
                 // Print the date and time when the user received the mail
                 DebugWriter.WriteDebug(DebugLevel.I, "Rendering time and date of {0}.", Msg.Date.DateTime.ToString());
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("- Sent at {0} in {1}"), true, KernelColorType.ListEntry, TimeDateRenderers.RenderTime(Msg.Date.DateTime), TimeDateRenderers.RenderDate(Msg.Date.DateTime));
+                TextWriters.Write(Translate.DoTranslation("- Sent at {0} in {1}"), true, KernelColorType.ListEntry, TimeDateRenderers.RenderTime(Msg.Date.DateTime), TimeDateRenderers.RenderDate(Msg.Date.DateTime));
 
                 // Prepare subject
                 TextWriterColor.Write();
                 DebugWriter.WriteDebug(DebugLevel.I, "Subject length: {0}, {1}", Msg.Subject.Length, Msg.Subject);
-                TextWriterColor.WriteKernelColor($"- {Msg.Subject}", false, KernelColorType.ListEntry);
+                TextWriters.Write($"- {Msg.Subject}", false, KernelColorType.ListEntry);
 
                 // Write a sign after the subject if attachments are found
                 DebugWriter.WriteDebug(DebugLevel.I, "Attachments count: {0}", Msg.Attachments.Count());
                 if (Msg.Attachments.Any())
                 {
-                    TextWriterColor.WriteKernelColor(" - [*]", true, KernelColorType.ListEntry);
+                    TextWriters.Write(" - [*]", true, KernelColorType.ListEntry);
                 }
                 else
                 {
@@ -153,7 +154,7 @@ namespace Nitrocid.Extras.MailShell.Tools.Transfer
                                     var DecryptedByte = new byte[(int)(DecryptedStream.Length + 1)];
                                     DecryptedStream.Read(DecryptedByte, 0, (int)DecryptedStream.Length);
                                     DebugWriter.WriteDebug(DebugLevel.I, "Written {0} bytes to buffer.", DecryptedByte.Length);
-                                    TextWriterColor.WriteKernelColor(Encoding.Default.GetString(DecryptedByte), true, KernelColorType.ListValue);
+                                    TextWriters.Write(Encoding.Default.GetString(DecryptedByte), true, KernelColorType.ListValue);
                                 }
                             }
                         }
@@ -166,12 +167,12 @@ namespace Nitrocid.Extras.MailShell.Tools.Transfer
                         var DecryptedByte = new byte[(int)(DecryptedStream.Length + 1)];
                         DecryptedStream.Read(DecryptedByte, 0, (int)DecryptedStream.Length);
                         DebugWriter.WriteDebug(DebugLevel.I, "Written {0} bytes to buffer.", DecryptedByte.Length);
-                        TextWriterColor.WriteKernelColor(Encoding.Default.GetString(DecryptedByte), true, KernelColorType.ListValue);
+                        TextWriters.Write(Encoding.Default.GetString(DecryptedByte), true, KernelColorType.ListValue);
                     }
                 }
                 else
                 {
-                    TextWriterColor.WriteKernelColor(Msg.GetTextBody(MailShellCommon.TextFormat), true, KernelColorType.ListValue);
+                    TextWriters.Write(Msg.GetTextBody(MailShellCommon.TextFormat), true, KernelColorType.ListValue);
                 }
                 TextWriterColor.Write();
 

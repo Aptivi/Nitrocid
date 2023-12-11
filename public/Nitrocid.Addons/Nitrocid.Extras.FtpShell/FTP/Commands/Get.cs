@@ -18,6 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Exceptions;
 using KS.Languages;
@@ -39,18 +40,18 @@ namespace Nitrocid.Extras.FtpShell.FTP.Commands
         {
             string RemoteFile = parameters.ArgumentsList[0];
             string LocalFile = parameters.ArgumentsList.Length > 1 ? parameters.ArgumentsList[1] : "";
-            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Downloading file {0}..."), false, KernelColorType.Progress, RemoteFile);
+            TextWriters.Write(Translate.DoTranslation("Downloading file {0}..."), false, KernelColorType.Progress, RemoteFile);
             bool Result = !string.IsNullOrWhiteSpace(LocalFile) ? FTPTransfer.FTPGetFile(RemoteFile, LocalFile) : FTPTransfer.FTPGetFile(RemoteFile);
             if (Result)
             {
                 TextWriterColor.Write();
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Downloaded file {0}."), true, KernelColorType.Success, RemoteFile);
+                TextWriters.Write(Translate.DoTranslation("Downloaded file {0}."), true, KernelColorType.Success, RemoteFile);
                 return 0;
             }
             else
             {
                 TextWriterColor.Write();
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Download failed for file {0}."), true, KernelColorType.Error, RemoteFile);
+                TextWriters.Write(Translate.DoTranslation("Download failed for file {0}."), true, KernelColorType.Error, RemoteFile);
                 return 10000 + (int)KernelExceptionType.FTPNetwork;
             }
         }

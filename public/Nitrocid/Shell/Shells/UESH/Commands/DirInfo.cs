@@ -20,7 +20,6 @@
 using System.IO;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Files;
 using KS.Files.Operations.Querying;
 using KS.Kernel.Debugging;
@@ -28,6 +27,8 @@ using KS.Kernel.Time.Renderers;
 using KS.Languages;
 using KS.Misc.Reflection;
 using KS.Shell.ShellBase.Commands;
+using KS.ConsoleBase.Writers.FancyWriters;
+using KS.ConsoleBase.Writers;
 
 namespace KS.Shell.Shells.UESH.Commands
 {
@@ -61,7 +62,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 }
                 else
                 {
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Can't get information about nonexistent directory."), true, KernelColorType.Error);
+                    TextWriters.Write(Translate.DoTranslation("Can't get information about nonexistent directory."), true, KernelColorType.Error);
                 }
             }
             return 0;

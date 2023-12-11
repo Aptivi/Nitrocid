@@ -19,6 +19,7 @@
 
 using System;
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files;
 using KS.Kernel.Debugging;
@@ -63,20 +64,20 @@ namespace KS.Shell.Shells.UESH.Commands
                         }
                         else
                         {
-                            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Specify the address"), true, KernelColorType.Error);
+                            TextWriters.Write(Translate.DoTranslation("Specify the address"), true, KernelColorType.Error);
                             return 10000 + (int)KernelExceptionType.Network;
                         }
                     }
                     else
                     {
-                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("Please use \"ftp\" if you are going to upload files to the FTP server."), true, KernelColorType.Error);
+                        TextWriters.Write(Translate.DoTranslation("Please use \"ftp\" if you are going to upload files to the FTP server."), true, KernelColorType.Error);
                         return 10000 + (int)KernelExceptionType.Network;
                     }
                 }
                 catch (Exception ex)
                 {
                     NetworkTools.TransferFinished = false;
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Upload failed in try {0}: {1}"), true, KernelColorType.Error, RetryCount, ex.Message);
+                    TextWriters.Write(Translate.DoTranslation("Upload failed in try {0}: {1}"), true, KernelColorType.Error, RetryCount, ex.Message);
                     RetryCount += 1;
                     DebugWriter.WriteDebug(DebugLevel.I, "Try count: {0}", RetryCount);
                     DebugWriter.WriteDebugStackTrace(ex);

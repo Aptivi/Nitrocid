@@ -19,7 +19,7 @@
 
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Languages;
 
 namespace KS.Kernel.Debugging.Testing.Facades
@@ -30,8 +30,8 @@ namespace KS.Kernel.Debugging.Testing.Facades
         public override TestSection TestSection => TestSection.ConsoleBase;
         public override void Run(params string[] args)
         {
-            TextWriterColor.WriteKernelColor("Hello world!\nHow's your day going? \0Should be after this:\0\0\0", false, KernelColorType.Success);
-            TextWriterColor.WriteKernelColor(" [{0}, {1}] ", true, KernelColorType.NeutralText, ConsoleWrapper.CursorLeft, ConsoleWrapper.CursorTop);
+            TextWriters.Write("Hello world!\nHow's your day going? \0Should be after this:\0\0\0", false, KernelColorType.Success);
+            TextWriters.Write(" [{0}, {1}] ", true, KernelColorType.NeutralText, ConsoleWrapper.CursorLeft, ConsoleWrapper.CursorTop);
         }
     }
 }

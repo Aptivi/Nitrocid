@@ -18,7 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
@@ -47,7 +47,7 @@ namespace KS.Shell.Shells.UESH.Commands
             }
             else
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Cannot log out from the subshell."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("Cannot log out from the subshell."), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.ShellOperation;
             }
         }

@@ -20,11 +20,12 @@
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Misc.Reflection;
 using System;
 using KS.ConsoleBase.Colors;
 using KS.Shell.ShellBase.Switches;
+using KS.ConsoleBase.Writers.FancyWriters;
+using KS.ConsoleBase.Writers;
 
 namespace KS.Shell.Shells.Debug.Commands
 {
@@ -55,7 +56,7 @@ namespace KS.Shell.Shells.Debug.Commands
                 catch (Exception ex)
                 {
                     if (!SwitchManager.ContainsSwitch(parameters.SwitchesList, "-suppress"))
-                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("Failed to get field info for") + $" {type.Name}: {ex.Message}", KernelColorType.Error);
+                        TextWriters.Write(Translate.DoTranslation("Failed to get field info for") + $" {type.Name}: {ex.Message}", KernelColorType.Error);
                 }
             }
             return 0;
@@ -80,7 +81,7 @@ namespace KS.Shell.Shells.Debug.Commands
                 catch (Exception ex)
                 {
                     if (!SwitchManager.ContainsSwitch(parameters.SwitchesList, "-suppress"))
-                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("Failed to get field info for") + $" {type.Name}: {ex.Message}", KernelColorType.Error);
+                        TextWriters.Write(Translate.DoTranslation("Failed to get field info for") + $" {type.Name}: {ex.Message}", KernelColorType.Error);
                 }
             }
             return 0;

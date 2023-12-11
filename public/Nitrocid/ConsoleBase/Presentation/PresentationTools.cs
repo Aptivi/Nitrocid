@@ -21,12 +21,12 @@ using KS.ConsoleBase.Buffered;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Languages;
 using KS.Misc.Text;
 using System;
 using System.Text;
 using Terminaux.Sequences.Builder.Types;
+using KS.ConsoleBase.Writers.FancyWriters;
 
 namespace KS.ConsoleBase.Presentation
 {

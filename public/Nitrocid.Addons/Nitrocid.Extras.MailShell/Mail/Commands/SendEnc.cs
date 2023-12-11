@@ -29,6 +29,7 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Exceptions;
 using KS.Files.Operations.Querying;
 using Nitrocid.Extras.MailShell.Tools.Transfer;
+using KS.ConsoleBase.Writers;
 
 namespace Nitrocid.Extras.MailShell.Mail.Commands
 {
@@ -68,7 +69,7 @@ namespace Nitrocid.Extras.MailShell.Mail.Commands
             var Body = new BodyBuilder();
 
             // Prompt for receiver e-mail address
-            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Enter recipient mail address:") + " ", false, KernelColorType.Input);
+            TextWriters.Write(Translate.DoTranslation("Enter recipient mail address:") + " ", false, KernelColorType.Input);
             Receiver = Input.ReadLine();
             DebugWriter.WriteDebug(DebugLevel.I, "Recipient: {0}", Receiver);
 
@@ -78,12 +79,12 @@ namespace Nitrocid.Extras.MailShell.Mail.Commands
                 DebugWriter.WriteDebug(DebugLevel.I, "Mail format satisfied. Contains \"@\" and contains \".\" in the second part after the \"@\" symbol.");
 
                 // Prompt for subject
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Enter the subject:") + " ", false, KernelColorType.Input);
+                TextWriters.Write(Translate.DoTranslation("Enter the subject:") + " ", false, KernelColorType.Input);
                 Subject = Input.ReadLine();
                 DebugWriter.WriteDebug(DebugLevel.I, "Subject: {0} ({1} chars)", Subject, Subject.Length);
 
                 // Prompt for body
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Enter your message below. Write \"EOF\" to confirm."), true, KernelColorType.Input);
+                TextWriters.Write(Translate.DoTranslation("Enter your message below. Write \"EOF\" to confirm."), true, KernelColorType.Input);
                 string BodyLine = "";
                 while (BodyLine.ToUpper() != "EOF")
                 {
@@ -100,7 +101,7 @@ namespace Nitrocid.Extras.MailShell.Mail.Commands
                 string PathLine = " ";
                 while (!string.IsNullOrEmpty(PathLine))
                 {
-                    TextWriterColor.WriteKernelColor("> ", false, KernelColorType.Input);
+                    TextWriters.Write("> ", false, KernelColorType.Input);
                     PathLine = Input.ReadLine();
                     if (!string.IsNullOrEmpty(PathLine))
                     {
@@ -114,24 +115,24 @@ namespace Nitrocid.Extras.MailShell.Mail.Commands
                 }
 
                 // Send the message
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Sending message..."), true, KernelColorType.Progress);
+                TextWriters.Write(Translate.DoTranslation("Sending message..."), true, KernelColorType.Progress);
                 if (MailTransfer.MailSendEncryptedMessage(Receiver, Subject, Body.ToMessageBody()))
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Message sent.");
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Message sent."), true, KernelColorType.Success);
+                    TextWriters.Write(Translate.DoTranslation("Message sent."), true, KernelColorType.Success);
                     return 0;
                 }
                 else
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "See debug output to find what's wrong.");
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Error sending message."), true, KernelColorType.Error);
+                    TextWriters.Write(Translate.DoTranslation("Error sending message."), true, KernelColorType.Error);
                     return 10000 + (int)KernelExceptionType.Mail;
                 }
             }
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Mail format unsatisfied." + Receiver);
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Invalid e-mail address. Make sure you've written the address correctly and that it matches the format of the example shown:") + " john.s@example.com", true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("Invalid e-mail address. Make sure you've written the address correctly and that it matches the format of the example shown:") + " john.s@example.com", true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.Mail;
             }
         }

@@ -18,7 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 
@@ -30,7 +30,7 @@ namespace Nitrocid.Extras.ChatGpt
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             string apikey = parameters.ArgumentsList[0];
-            TextWriterColor.WriteKernelColor("Warning: The ChatGPT shell isn't done yet, so chatting doesn't work.", KernelColorType.Warning);
+            TextWriters.Write("Warning: The ChatGPT shell isn't done yet, so chatting doesn't work.", KernelColorType.Warning);
             ShellManager.StartShell("ChatGptShell", apikey);
             return 0;
         }

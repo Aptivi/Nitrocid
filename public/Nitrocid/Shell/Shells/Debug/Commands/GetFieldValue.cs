@@ -19,11 +19,11 @@
 
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Misc.Reflection;
 using System;
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers.FancyWriters;
+using KS.ConsoleBase.Writers;
 
 namespace KS.Shell.Shells.Debug.Commands
 {
@@ -50,12 +50,12 @@ namespace KS.Shell.Shells.Debug.Commands
 
                     // Write the field name and its value
                     SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Field info for") + $" {type.Name}::{fieldName}", true);
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Value") + $": ", false, KernelColorType.ListEntry);
-                    TextWriterColor.WriteKernelColor($"{field.GetValue(null)}", KernelColorType.ListValue);
+                    TextWriters.Write(Translate.DoTranslation("Value") + $": ", false, KernelColorType.ListEntry);
+                    TextWriters.Write($"{field.GetValue(null)}", KernelColorType.ListValue);
                 }
                 catch (Exception ex)
                 {
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Failed to get field info for") + $" {type.Name}::{fieldName}: {ex.Message}", KernelColorType.Error);
+                    TextWriters.Write(Translate.DoTranslation("Failed to get field info for") + $" {type.Name}::{fieldName}: {ex.Message}", KernelColorType.Error);
                 }
             }
             return 0;

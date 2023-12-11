@@ -18,12 +18,12 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 using LibGit2Sharp;
 using GitCommand = LibGit2Sharp.Commands;
 using System.Linq;
+using KS.ConsoleBase.Writers;
 
 namespace Nitrocid.Extras.GitShell.Git.Commands
 {
@@ -43,7 +43,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
             // Check to see if the repo has been modified
             if (status.IsDirty)
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Save your work first by creating a commit before checking out a branch."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("Save your work first by creating a commit before checking out a branch."), true, KernelColorType.Error);
                 return 9;
             }
 
@@ -54,7 +54,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
             string requestedBranch = parameters.ArgumentsList[0];
             if (!branchFriendlyNames.Contains(requestedBranch) && !branchCanonNames.Contains(requestedBranch))
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Branch doesn't exist.") + $" {requestedBranch}", true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("Branch doesn't exist.") + $" {requestedBranch}", true, KernelColorType.Error);
                 return 10;
             }
 

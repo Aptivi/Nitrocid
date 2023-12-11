@@ -29,7 +29,7 @@ using KS.Languages;
 using KS.Kernel.Time.Renderers;
 using KS.Kernel.Threading;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.ConsoleBase.Writers.FancyWriters;
+using KS.ConsoleBase.Writers;
 using Figletize;
 using KS.ConsoleBase.Inputs.Styles.Infobox;
 
@@ -123,13 +123,13 @@ namespace Nitrocid.Extras.Timers.Timers
                 int KeysTextTopPosition = ConsoleWrapper.WindowHeight - 2;
 
                 // Print the keys text
-                TextWriterWhereColor.WriteWhereKernelColor(KeysText, KeysTextLeftPosition, KeysTextTopPosition, true, KernelColorType.Tip);
+                TextWriters.WriteWhere(KeysText, KeysTextLeftPosition, KeysTextTopPosition, true, KernelColorType.Tip);
 
                 // Print the time interval
                 if (TimersInit.TimersConfig.EnableFigletTimer)
-                    FigletWhereColor.WriteFigletWhereKernelColor(CurrentRemainingString, TimeLeftPosition, TimeTopPosition, true, FigletFont, KernelColorType.NeutralText);
+                    TextFancyWriters.WriteFigletWhere(CurrentRemainingString, TimeLeftPosition, TimeTopPosition, true, FigletFont, KernelColorType.NeutralText);
                 else
-                    TextWriterWhereColor.WriteWhereKernelColor(CurrentRemainingString, TimeLeftPosition, TimeTopPosition, true, KernelColorType.NeutralText);
+                    TextWriters.WriteWhere(CurrentRemainingString, TimeLeftPosition, TimeTopPosition, true, KernelColorType.NeutralText);
 
                 // Print the border
                 TextWriterWhereColor.WriteWhereColor(new string('═', ConsoleWrapper.WindowWidth), 0, KeysTextTopPosition - 2, true, KernelColorTools.GetGray());
@@ -200,9 +200,9 @@ namespace Nitrocid.Extras.Timers.Timers
             if (TimerUpdate.IsAlive)
                 TimerUpdate.Stop();
             if (TimersInit.TimersConfig.EnableFigletTimer)
-                FigletWhereColor.WriteFigletWhereKernelColor(ElapsedText, TimeLeftPosition, TimeTopPosition, true, FigletFont, KernelColorType.Success);
+                TextFancyWriters.WriteFigletWhere(ElapsedText, TimeLeftPosition, TimeTopPosition, true, FigletFont, KernelColorType.Success);
             else
-                TextWriterWhereColor.WriteWhereKernelColor(ElapsedText, TimeLeftPosition, TimeTopPosition, true, KernelColorType.Success);
+                TextWriters.WriteWhere(ElapsedText, TimeLeftPosition, TimeTopPosition, true, KernelColorType.Success);
             Timer.Stop();
         }
 
@@ -227,9 +227,9 @@ namespace Nitrocid.Extras.Timers.Timers
                     UpdateRemainingPositions(UntilText, ref TimeLeftPosition, ref TimeTopPosition);
                     ClearRemainingTimeDisplay(UntilText, FigletTimeOldWidth, FigletTimeOldWidthEnd);
                     if (TimersInit.TimersConfig.EnableFigletTimer)
-                        FigletWhereColor.WriteFigletWhereKernelColor(UntilText, TimeLeftPosition, TimeTopPosition, true, FigletFont, KernelColorType.NeutralText);
+                        TextFancyWriters.WriteFigletWhere(UntilText, TimeLeftPosition, TimeTopPosition, true, FigletFont, KernelColorType.NeutralText);
                     else
-                        TextWriterWhereColor.WriteWhereKernelColor(UntilText, TimeLeftPosition, TimeTopPosition, true, KernelColorType.NeutralText);
+                        TextWriters.WriteWhere(UntilText, TimeLeftPosition, TimeTopPosition, true, KernelColorType.NeutralText);
                 }
                 catch (ThreadInterruptedException)
                 {

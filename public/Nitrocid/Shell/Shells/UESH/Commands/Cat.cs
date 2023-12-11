@@ -20,7 +20,7 @@
 using System;
 using System.Linq;
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Files;
 using KS.Files.Operations.Printing;
 using KS.Kernel.Debugging;
@@ -72,7 +72,7 @@ namespace KS.Shell.Shells.UESH.Commands
             catch (Exception ex)
             {
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriterColor.WriteKernelColor(ex.Message, true, KernelColorType.Error);
+                TextWriters.Write(ex.Message, true, KernelColorType.Error);
                 return ex.GetHashCode();
             }
         }

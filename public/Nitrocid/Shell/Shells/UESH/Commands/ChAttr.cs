@@ -20,6 +20,7 @@
 using System;
 using System.IO;
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files;
 using KS.Files.Attributes;
@@ -104,13 +105,13 @@ namespace KS.Shell.Shells.UESH.Commands
                 }
                 else
                 {
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Attribute \"{0}\" is invalid."), true, KernelColorType.Error, parameters.ArgumentsList[2]);
+                    TextWriters.Write(Translate.DoTranslation("Attribute \"{0}\" is invalid."), true, KernelColorType.Error, parameters.ArgumentsList[2]);
                     return 10000 + (int)KernelExceptionType.Filesystem;
                 }
             }
             else
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("File not found."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("File not found."), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.Filesystem;
             }
             return 0;
@@ -119,14 +120,14 @@ namespace KS.Shell.Shells.UESH.Commands
         public override void HelpHelper()
         {
             TextWriterColor.Write(Translate.DoTranslation("where <attributes> is one of the following:"));
-            TextWriterColor.WriteKernelColor("- Normal: ", false, KernelColorType.ListEntry);
-            TextWriterColor.WriteKernelColor(Translate.DoTranslation("The file is a normal file"), true, KernelColorType.ListValue);                   // Normal   = 128
-            TextWriterColor.WriteKernelColor("- ReadOnly: ", false, KernelColorType.ListEntry);
-            TextWriterColor.WriteKernelColor(Translate.DoTranslation("The file is a read-only file"), true, KernelColorType.ListValue);              // ReadOnly = 1
-            TextWriterColor.WriteKernelColor("- Hidden: ", false, KernelColorType.ListEntry);
-            TextWriterColor.WriteKernelColor(Translate.DoTranslation("The file is a hidden file"), true, KernelColorType.ListValue);                   // Hidden   = 2
-            TextWriterColor.WriteKernelColor("- Archive: ", false, KernelColorType.ListEntry);
-            TextWriterColor.WriteKernelColor(Translate.DoTranslation("The file is an archive. Used for backups."), true, KernelColorType.ListValue);  // Archive  = 32
+            TextWriters.Write("- Normal: ", false, KernelColorType.ListEntry);
+            TextWriters.Write(Translate.DoTranslation("The file is a normal file"), true, KernelColorType.ListValue);                   // Normal   = 128
+            TextWriters.Write("- ReadOnly: ", false, KernelColorType.ListEntry);
+            TextWriters.Write(Translate.DoTranslation("The file is a read-only file"), true, KernelColorType.ListValue);              // ReadOnly = 1
+            TextWriters.Write("- Hidden: ", false, KernelColorType.ListEntry);
+            TextWriters.Write(Translate.DoTranslation("The file is a hidden file"), true, KernelColorType.ListValue);                   // Hidden   = 2
+            TextWriters.Write("- Archive: ", false, KernelColorType.ListEntry);
+            TextWriters.Write(Translate.DoTranslation("The file is an archive. Used for backups."), true, KernelColorType.ListValue);  // Archive  = 32
         }
 
     }

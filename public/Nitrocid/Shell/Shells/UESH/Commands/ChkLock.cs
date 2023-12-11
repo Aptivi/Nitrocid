@@ -18,7 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Files;
 using KS.Kernel.Exceptions;
 using KS.Languages;
@@ -46,22 +46,22 @@ namespace KS.Shell.Shells.UESH.Commands
             int waitForUnlockMs = waitForUnlockTimed ? int.Parse(waitForUnlockMsStr) : 0;
             if (locked)
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("File or folder is already in use."), true, KernelColorType.Warning);
+                TextWriters.Write(Translate.DoTranslation("File or folder is already in use."), true, KernelColorType.Warning);
                 if (waitForUnlock)
                 {
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Waiting until the file or the folder is unlocked..."), true, KernelColorType.Progress);
+                    TextWriters.Write(Translate.DoTranslation("Waiting until the file or the folder is unlocked..."), true, KernelColorType.Progress);
                     if (waitForUnlockTimed)
                         FilesystemTools.WaitForLockRelease(path, waitForUnlockMs);
                     else
                         FilesystemTools.WaitForLockReleaseIndefinite(path);
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("File or folder is not in use."), true, KernelColorType.Success);
+                    TextWriters.Write(Translate.DoTranslation("File or folder is not in use."), true, KernelColorType.Success);
                     return 0;
                 }
                 else
                     return 10000 + (int)KernelExceptionType.Filesystem;
             }
             else
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("File or folder is not in use."), true, KernelColorType.Success);
+                TextWriters.Write(Translate.DoTranslation("File or folder is not in use."), true, KernelColorType.Success);
             return 0;
         }
     }

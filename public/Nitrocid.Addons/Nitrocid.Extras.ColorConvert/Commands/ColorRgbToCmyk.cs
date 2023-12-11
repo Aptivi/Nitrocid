@@ -18,7 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
@@ -40,17 +40,17 @@ namespace Nitrocid.Extras.ColorConvert.Commands
             // Check to see if we have the numeric arguments
             if (!int.TryParse(parameters.ArgumentsList[0], out int R))
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("The red color level must be numeric."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("The red color level must be numeric."), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.Color;
             }
             if (!int.TryParse(parameters.ArgumentsList[1], out int G))
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("The green color level must be numeric."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("The green color level must be numeric."), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.Color;
             }
             if (!int.TryParse(parameters.ArgumentsList[2], out int B))
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("The blue color level must be numeric."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("The blue color level must be numeric."), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.Color;
             }
 
@@ -58,14 +58,14 @@ namespace Nitrocid.Extras.ColorConvert.Commands
             var rgb = new Color(R, G, B);
             var cmyk = rgb.CMYK;
             var cmy = rgb.CMYK.CMY;
-            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Black key:") + " ", false, KernelColorType.ListEntry);
-            TextWriterColor.WriteKernelColor($"{cmyk.KWhole} [{cmyk.K:0.00}]", true, KernelColorType.ListValue);
-            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Cyan level:") + " ", false, KernelColorType.ListEntry);
-            TextWriterColor.WriteKernelColor($"{cmy.CWhole} [{cmy.C:0.00}]", true, KernelColorType.ListValue);
-            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Magenta level:") + " ", false, KernelColorType.ListEntry);
-            TextWriterColor.WriteKernelColor($"{cmy.MWhole} [{cmy.M:0.00}]", true, KernelColorType.ListValue);
-            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Yellow level:") + " ", false, KernelColorType.ListEntry);
-            TextWriterColor.WriteKernelColor($"{cmy.YWhole} [{cmy.Y:0.00}]", true, KernelColorType.ListValue);
+            TextWriters.Write("- " + Translate.DoTranslation("Black key:") + " ", false, KernelColorType.ListEntry);
+            TextWriters.Write($"{cmyk.KWhole} [{cmyk.K:0.00}]", true, KernelColorType.ListValue);
+            TextWriters.Write("- " + Translate.DoTranslation("Cyan level:") + " ", false, KernelColorType.ListEntry);
+            TextWriters.Write($"{cmy.CWhole} [{cmy.C:0.00}]", true, KernelColorType.ListValue);
+            TextWriters.Write("- " + Translate.DoTranslation("Magenta level:") + " ", false, KernelColorType.ListEntry);
+            TextWriters.Write($"{cmy.MWhole} [{cmy.M:0.00}]", true, KernelColorType.ListValue);
+            TextWriters.Write("- " + Translate.DoTranslation("Yellow level:") + " ", false, KernelColorType.ListEntry);
+            TextWriters.Write($"{cmy.YWhole} [{cmy.Y:0.00}]", true, KernelColorType.ListValue);
             variableValue = $"cmyk:{cmy.CWhole};{cmy.MWhole};{cmy.YWhole};{cmyk.KWhole}";
             return 0;
         }

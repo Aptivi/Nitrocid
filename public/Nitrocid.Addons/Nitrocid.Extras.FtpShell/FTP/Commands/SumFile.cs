@@ -20,6 +20,7 @@
 using System;
 using FluentFTP;
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Exceptions;
 using KS.Languages;
@@ -51,7 +52,7 @@ namespace Nitrocid.Extras.FtpShell.FTP.Commands
             }
             else
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Invalid encryption algorithm."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("Invalid encryption algorithm."), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.FTPFilesystem;
             }
         }

@@ -18,6 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Time;
 using KS.Kernel.Time.Timezones;
@@ -40,7 +41,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
         {
             if (!GitShellCommon.isIdentified)
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("You need to identify yourself before using this command. Use") + " 'setid' " + Translate.DoTranslation("to identify yourself."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("You need to identify yourself before using this command. Use") + " 'setid' " + Translate.DoTranslation("to identify yourself."), true, KernelColorType.Error);
                 return 15;
             }
 
@@ -49,8 +50,8 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
             var author = new Signature(GitShellCommon.name, GitShellCommon.email, new(TimeDateTools.KernelDateTime, TimeZoneRenderers.ShowTimeZoneUtcOffsetLocal()));
             var tag = GitShellCommon.Repository.ApplyTag(tagName, author, message);
             TextWriterColor.Write(Translate.DoTranslation("Created a new tag! Here's your tag details:"));
-            TextWriterColor.WriteKernelColor($"- [{(tag.IsAnnotated ? "A" : " ")}] {tag.CanonicalName} [{tag.FriendlyName}]", true, KernelColorType.ListEntry);
-            TextWriterColor.WriteKernelColor($"  {tag.Target.Sha}", true, KernelColorType.ListValue);
+            TextWriters.Write($"- [{(tag.IsAnnotated ? "A" : " ")}] {tag.CanonicalName} [{tag.FriendlyName}]", true, KernelColorType.ListEntry);
+            TextWriters.Write($"  {tag.Target.Sha}", true, KernelColorType.ListValue);
             return 0;
         }
 

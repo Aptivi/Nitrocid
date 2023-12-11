@@ -30,7 +30,6 @@ using KS.Kernel.Events;
 using KS.Kernel.Configuration;
 using KS.Kernel.Threading;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Misc.Screensaver;
 using Terminaux.Colors;
 using KS.Kernel.Power;
@@ -42,6 +41,7 @@ using KS.Files.Operations.Querying;
 using Newtonsoft.Json;
 using KS.Files.Operations;
 using System.Text;
+using KS.ConsoleBase.Writers.FancyWriters;
 
 namespace KS.Misc.Notifications
 {

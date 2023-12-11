@@ -19,7 +19,7 @@
 
 using System;
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Security.Permissions;
@@ -48,7 +48,7 @@ namespace KS.Shell.Shells.UESH.Commands
             if (!Enum.TryParse(typeof(PermissionTypes), perm, out object permission))
             {
                 // Permission not found
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("No such permission"), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("No such permission"), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.PermissionManagement;
             }
 
@@ -61,7 +61,7 @@ namespace KS.Shell.Shells.UESH.Commands
             else
             {
                 // No mode
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("No such permission mode"), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("No such permission mode"), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.PermissionManagement;
             }
             return 0;

@@ -18,7 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Kernel;
 using KS.Kernel.Debugging.RemoteDebug;
 using KS.Kernel.Exceptions;
@@ -56,7 +56,7 @@ namespace KS.Shell.Shells.UESH.Commands
             }
             else
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Debugging not enabled."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("Debugging not enabled."), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.Debug;
             }
         }

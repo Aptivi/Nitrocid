@@ -75,25 +75,6 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// Draw a separator with text
         /// </summary>
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
-        /// <param name="ColTypes">A type of colors that will be changed.</param>
-        /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteSeparatorKernelColor(string Text, KernelColorType ColTypes, params object[] Vars) =>
-            WriteSeparatorColorBack(Text, true, KernelColorTools.GetColor(ColTypes), KernelColorTools.GetColor(KernelColorType.Background), Vars);
-
-        /// <summary>
-        /// Draw a separator with text
-        /// </summary>
-        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
-        /// <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
-        /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
-        /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteSeparatorKernelColor(string Text, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] Vars) =>
-            WriteSeparatorColorBack(Text, true, KernelColorTools.GetColor(colorTypeForeground), KernelColorTools.GetColor(colorTypeBackground), Vars);
-
-        /// <summary>
-        /// Draw a separator with text
-        /// </summary>
-        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
         /// <param name="Color">A color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
         public static void WriteSeparatorColor(string Text, ConsoleColors Color, params object[] Vars) =>
@@ -146,27 +127,6 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
             }
         }
-
-        /// <summary>
-        /// Draw a separator with text
-        /// </summary>
-        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
-        /// <param name="PrintSuffix">Whether or not to print the leading suffix. Only use if you don't have suffix on your text.</param>
-        /// <param name="ColTypes">A type of colors that will be changed.</param>
-        /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteSeparatorKernelColor(string Text, bool PrintSuffix, KernelColorType ColTypes, params object[] Vars) =>
-            WriteSeparatorColorBack(Text, PrintSuffix, KernelColorTools.GetColor(ColTypes), KernelColorTools.GetColor(KernelColorType.Background), Vars);
-
-        /// <summary>
-        /// Draw a separator with text
-        /// </summary>
-        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
-        /// <param name="PrintSuffix">Whether or not to print the leading suffix. Only use if you don't have suffix on your text.</param>
-        /// <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
-        /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
-        /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteSeparatorKernelColor(string Text, bool PrintSuffix, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] Vars) =>
-            WriteSeparatorColorBack(Text, PrintSuffix, KernelColorTools.GetColor(colorTypeForeground), KernelColorTools.GetColor(colorTypeBackground), Vars);
 
         /// <summary>
         /// Draw a separator with text

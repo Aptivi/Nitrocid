@@ -18,7 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 using Terminaux.Colors;
@@ -40,12 +40,12 @@ namespace Nitrocid.Extras.ColorConvert.Commands
 
             // Do the job
             Color color = new(Hex);
-            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Red color level:") + " ", false, KernelColorType.ListEntry);
-            TextWriterColor.WriteKernelColor($"{color.R}", true, KernelColorType.ListValue);
-            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Green color level:") + " ", false, KernelColorType.ListEntry);
-            TextWriterColor.WriteKernelColor($"{color.G}", true, KernelColorType.ListValue);
-            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Blue color level:") + " ", false, KernelColorType.ListEntry);
-            TextWriterColor.WriteKernelColor($"{color.B}", true, KernelColorType.ListValue);
+            TextWriters.Write("- " + Translate.DoTranslation("Red color level:") + " ", false, KernelColorType.ListEntry);
+            TextWriters.Write($"{color.R}", true, KernelColorType.ListValue);
+            TextWriters.Write("- " + Translate.DoTranslation("Green color level:") + " ", false, KernelColorType.ListEntry);
+            TextWriters.Write($"{color.G}", true, KernelColorType.ListValue);
+            TextWriters.Write("- " + Translate.DoTranslation("Blue color level:") + " ", false, KernelColorType.ListEntry);
+            TextWriters.Write($"{color.B}", true, KernelColorType.ListValue);
             variableValue = color.PlainSequence;
             return 0;
         }

@@ -18,7 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
@@ -38,7 +38,7 @@ namespace KS.Shell.ShellBase.Shells.Unified
         {
             if (ShellManager.IsOnMotherShell())
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("You can't exit the mother shell. Did you mean to log out of your account, shut the kernel down, or reboot it?"), KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("You can't exit the mother shell. Did you mean to log out of your account, shut the kernel down, or reboot it?"), KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.ShellOperation;
             }
             ShellManager.KillShell();

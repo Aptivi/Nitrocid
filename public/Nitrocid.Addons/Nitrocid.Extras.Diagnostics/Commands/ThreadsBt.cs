@@ -18,6 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel;
 using KS.Kernel.Exceptions;
@@ -43,7 +44,7 @@ namespace Nitrocid.Extras.Diagnostics.Commands
             // Check to see if we're running on Windows 8.1 or later
             if (KernelPlatform.IsOnWindows() && !OperatingSystem.IsWindowsVersionAtLeast(6, 3))
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("We believe that you're running Windows 8 or lower. This operation is not supported."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("We believe that you're running Windows 8 or lower. This operation is not supported."), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.Debug;
             }
 
@@ -53,7 +54,7 @@ namespace Nitrocid.Extras.Diagnostics.Commands
             {
                 string threadAddress = trace.Key;
                 string[] threadTrace = trace.Value;
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Thread stack trace information for {0}") + "\n", true, KernelColorType.ListTitle, threadAddress);
+                TextWriters.Write(Translate.DoTranslation("Thread stack trace information for {0}") + "\n", true, KernelColorType.ListTitle, threadAddress);
                 ListWriterColor.WriteList(threadTrace);
                 TextWriterColor.Write();
             }
@@ -65,7 +66,7 @@ namespace Nitrocid.Extras.Diagnostics.Commands
             // Check to see if we're running on Windows 8.1 or later
             if (KernelPlatform.IsOnWindows() && !OperatingSystem.IsWindowsVersionAtLeast(6, 3))
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("We believe that you're running Windows 8 or lower. This operation is not supported."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("We believe that you're running Windows 8 or lower. This operation is not supported."), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.Debug;
             }
 
@@ -75,7 +76,7 @@ namespace Nitrocid.Extras.Diagnostics.Commands
             {
                 string threadAddress = trace.Key;
                 string[] threadTrace = trace.Value;
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Thread stack trace information for {0}") + "\n", true, KernelColorType.ListTitle, threadAddress);
+                TextWriters.Write(Translate.DoTranslation("Thread stack trace information for {0}") + "\n", true, KernelColorType.ListTitle, threadAddress);
                 foreach (string threadTraceStr in threadTrace)
                     TextWriterColor.Write(threadTraceStr);
                 TextWriterColor.Write();

@@ -30,11 +30,11 @@ using SharpCompress.Archives.Rar;
 using SharpCompress.Common;
 using SharpCompress.Readers;
 using SharpCompress.Archives.Zip;
-using KS.ConsoleBase.Writers.ConsoleWriters;
 using SharpCompress.Archives.GZip;
 using SharpCompress.Archives.SevenZip;
 using SharpCompress.Archives.Tar;
 using KS.Shell.ShellBase.Commands;
+using KS.ConsoleBase.Writers;
 
 namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
 {
@@ -63,7 +63,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
             }
             else
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("File not specified. Exiting shell..."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("File not specified. Exiting shell..."), true, KernelColorType.Error);
                 Bail = true;
             }
 
@@ -90,7 +90,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
                     ArchiveShellCommon.Archive ??= TarArchive.Open(ArchiveShellCommon.FileStream);
                     break;
                 default:
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("This archive type is not supported.") + $" {type}", true, KernelColorType.Error);
+                    TextWriters.Write(Translate.DoTranslation("This archive type is not supported.") + $" {type}", true, KernelColorType.Error);
                     Bail = true;
                     break;
             }
@@ -110,7 +110,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
                 catch (Exception ex)
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("There was an error in the shell.") + CharManager.NewLine + "Error {0}: {1}", true, KernelColorType.Error, ex.GetType().FullName, ex.Message);
+                    TextWriters.Write(Translate.DoTranslation("There was an error in the shell.") + CharManager.NewLine + "Error {0}: {1}", true, KernelColorType.Error, ex.GetType().FullName, ex.Message);
                     continue;
                 }
             }

@@ -18,7 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
@@ -48,7 +48,7 @@ namespace Nitrocid.Extras.MailShell.Mail.Commands
             }
             else
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Message number is not a numeric value."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("Message number is not a numeric value."), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.Mail;
             }
         }

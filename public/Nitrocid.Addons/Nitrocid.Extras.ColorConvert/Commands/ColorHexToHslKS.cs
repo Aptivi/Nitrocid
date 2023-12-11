@@ -18,7 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 
@@ -40,8 +40,8 @@ namespace Nitrocid.Extras.ColorConvert.Commands
 
             // Do the job
             HSL = KernelColorConversionTools.ConvertFromHexToHsl(Hex);
-            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("HSL color sequence:") + " ", false, KernelColorType.ListEntry);
-            TextWriterColor.WriteKernelColor(HSL, true, KernelColorType.ListValue);
+            TextWriters.Write("- " + Translate.DoTranslation("HSL color sequence:") + " ", false, KernelColorType.ListEntry);
+            TextWriters.Write(HSL, true, KernelColorType.ListValue);
             variableValue = HSL;
             return 0;
         }

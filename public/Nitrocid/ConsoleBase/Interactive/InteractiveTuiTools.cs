@@ -22,7 +22,6 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Inputs.Styles.Infobox;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
@@ -35,6 +34,8 @@ using System.Linq;
 using System.Text;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Sequences.Tools;
+using KS.ConsoleBase.Writers.FancyWriters;
+using KS.ConsoleBase.Writers;
 
 namespace KS.ConsoleBase.Interactive
 {
@@ -64,7 +65,7 @@ namespace KS.ConsoleBase.Interactive
                 if (interactiveTui.PrimaryDataSource is null && interactiveTui.SecondaryDataSource is null ||
                     EnumerableTools.CountElements(interactiveTui.PrimaryDataSource) == 0 && EnumerableTools.CountElements(interactiveTui.SecondaryDataSource) == 0 && !interactiveTui.AcceptsEmptyData)
                 {
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("The interactive TUI {0} doesn't contain any data source. This program can't continue."), true, KernelColorType.Error, interactiveTui.GetType().Name);
+                    TextWriters.Write(Translate.DoTranslation("The interactive TUI {0} doesn't contain any data source. This program can't continue."), true, KernelColorType.Error, interactiveTui.GetType().Name);
                     TextWriterColor.Write();
                     TextWriterColor.Write(Translate.DoTranslation("Press any key to exit this program..."));
                     Input.DetectKeypress();
@@ -141,7 +142,7 @@ namespace KS.ConsoleBase.Interactive
                 if (notifyCrash)
                 {
                     notifyCrash = false;
-                    TextWriterColor.WriteKernelColor(crashReason, true, KernelColorType.Error);
+                    TextWriters.Write(crashReason, true, KernelColorType.Error);
                     TextWriterColor.Write();
                     TextWriterColor.Write(Translate.DoTranslation("Press any key to exit this program..."));
                     Input.DetectKeypress();

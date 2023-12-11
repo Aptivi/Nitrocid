@@ -28,7 +28,6 @@ using KS.Kernel.Configuration;
 using KS.Kernel.Time;
 using KS.Kernel.Time.Renderers;
 using KS.Kernel.Threading;
-using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Misc.Text;
 using Figletize;
 using KS.Misc.Text.Probers.Motd;
@@ -37,6 +36,7 @@ using KS.ConsoleBase.Buffered;
 using Terminaux.Sequences.Builder.Types;
 using KS.Kernel.Extensions;
 using KS.Kernel.Exceptions;
+using KS.ConsoleBase.Writers.FancyWriters;
 
 namespace KS.Users.Login
 {

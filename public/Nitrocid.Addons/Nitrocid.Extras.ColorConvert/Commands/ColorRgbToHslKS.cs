@@ -18,7 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
@@ -39,24 +39,24 @@ namespace Nitrocid.Extras.ColorConvert.Commands
             // Check to see if we have the numeric arguments
             if (!int.TryParse(parameters.ArgumentsList[0], out int R))
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("The red color level must be numeric."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("The red color level must be numeric."), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.Color;
             }
             if (!int.TryParse(parameters.ArgumentsList[1], out int G))
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("The green color level must be numeric."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("The green color level must be numeric."), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.Color;
             }
             if (!int.TryParse(parameters.ArgumentsList[2], out int B))
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("The blue color level must be numeric."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("The blue color level must be numeric."), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.Color;
             }
 
             // Do the job
             string rgb = KernelColorConversionTools.ConvertFromRgbToHsl(R, G, B);
-            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("HSL color sequence:") + " ", false, KernelColorType.ListEntry);
-            TextWriterColor.WriteKernelColor(rgb, true, KernelColorType.ListValue);
+            TextWriters.Write("- " + Translate.DoTranslation("HSL color sequence:") + " ", false, KernelColorType.ListEntry);
+            TextWriters.Write(rgb, true, KernelColorType.ListValue);
             variableValue = rgb;
             return 0;
         }

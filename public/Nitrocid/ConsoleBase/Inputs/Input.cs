@@ -18,13 +18,8 @@
 //
 
 using System;
-using System.Threading;
 using KS.Drivers;
 using KS.Kernel.Configuration;
-using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
-using KS.Languages;
-using KS.Misc.Screensaver;
 using Terminaux.Base;
 using Terminaux.Reader;
 

@@ -18,7 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
@@ -39,24 +39,24 @@ namespace Nitrocid.Extras.ColorConvert.Commands
             // Check to see if we have the numeric arguments
             if (!int.TryParse(parameters.ArgumentsList[0], out int H))
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("The hue level must be numeric."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("The hue level must be numeric."), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.Color;
             }
             if (!int.TryParse(parameters.ArgumentsList[1], out int S))
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("The saturation level must be numeric."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("The saturation level must be numeric."), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.Color;
             }
             if (!int.TryParse(parameters.ArgumentsList[2], out int L))
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("The luminance or lighting level must be numeric."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("The luminance or lighting level must be numeric."), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.Color;
             }
 
             // Do the job
             string rgb = KernelColorConversionTools.ConvertFromHslToCmyk(H, S, L);
-            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("CMYK color sequence:") + " ", false, KernelColorType.ListEntry);
-            TextWriterColor.WriteKernelColor(rgb, true, KernelColorType.ListValue);
+            TextWriters.Write("- " + Translate.DoTranslation("CMYK color sequence:") + " ", false, KernelColorType.ListEntry);
+            TextWriters.Write(rgb, true, KernelColorType.ListValue);
             variableValue = rgb;
             return 0;
         }

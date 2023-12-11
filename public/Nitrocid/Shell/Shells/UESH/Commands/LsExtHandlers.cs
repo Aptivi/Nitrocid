@@ -18,8 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.ConsoleBase.Writers.FancyWriters;
+using KS.ConsoleBase.Writers;
 using KS.Files.Extensions;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
@@ -40,15 +39,15 @@ namespace KS.Shell.Shells.UESH.Commands
             var handlers = ExtensionHandlerTools.GetExtensionHandlers();
             foreach (var handler in handlers)
             {
-                SeparatorWriterColor.WriteSeparatorKernelColor(Translate.DoTranslation("Extension handler information for") + $" {handler.Extension}", true, KernelColorType.ListTitle);
-                TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Handler implementer") + $": ", false, KernelColorType.ListEntry);
-                TextWriterColor.WriteKernelColor(handler.Implementer, true, KernelColorType.ListValue);
-                TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Handler metadata") + $": ", false, KernelColorType.ListEntry);
-                TextWriterColor.WriteKernelColor(handler.MimeType, true, KernelColorType.ListValue);
-                TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Contains handler function") + $": ", false, KernelColorType.ListEntry);
-                TextWriterColor.WriteKernelColor($"{handler.Handler is not null}", true, KernelColorType.ListValue);
-                TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Contains info handler function") + $": ", false, KernelColorType.ListEntry);
-                TextWriterColor.WriteKernelColor($"{handler.InfoHandler is not null}\n", true, KernelColorType.ListValue);
+                TextFancyWriters.WriteSeparator(Translate.DoTranslation("Extension handler information for") + $" {handler.Extension}", true, KernelColorType.ListTitle);
+                TextWriters.Write("- " + Translate.DoTranslation("Handler implementer") + $": ", false, KernelColorType.ListEntry);
+                TextWriters.Write(handler.Implementer, true, KernelColorType.ListValue);
+                TextWriters.Write("- " + Translate.DoTranslation("Handler metadata") + $": ", false, KernelColorType.ListEntry);
+                TextWriters.Write(handler.MimeType, true, KernelColorType.ListValue);
+                TextWriters.Write("- " + Translate.DoTranslation("Contains handler function") + $": ", false, KernelColorType.ListEntry);
+                TextWriters.Write($"{handler.Handler is not null}", true, KernelColorType.ListValue);
+                TextWriters.Write("- " + Translate.DoTranslation("Contains info handler function") + $": ", false, KernelColorType.ListEntry);
+                TextWriters.Write($"{handler.InfoHandler is not null}\n", true, KernelColorType.ListValue);
             }
             return 0;
         }

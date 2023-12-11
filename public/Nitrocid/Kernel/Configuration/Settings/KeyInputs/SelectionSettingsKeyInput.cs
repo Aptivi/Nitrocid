@@ -20,7 +20,7 @@
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Inputs.Styles.Selection;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Kernel.Configuration.Instances;
 using KS.Kernel.Debugging;
 using KS.Languages;
@@ -145,23 +145,23 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
                 else
                 {
                     DebugWriter.WriteDebug(DebugLevel.W, "Answer is not valid.");
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("The answer may not exceed the entries shown."), true, KernelColorType.Error);
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Press any key to go back."), true, KernelColorType.Error);
+                    TextWriters.Write(Translate.DoTranslation("The answer may not exceed the entries shown."), true, KernelColorType.Error);
+                    TextWriters.Write(Translate.DoTranslation("Press any key to go back."), true, KernelColorType.Error);
                     Input.DetectKeypress();
                 }
             }
             else if (AnswerInt == 0 & !SelectionEnumZeroBased)
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Zero is not allowed.");
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("The answer may not be zero."), true, KernelColorType.Error);
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Press any key to go back."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("The answer may not be zero."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("Press any key to go back."), true, KernelColorType.Error);
                 Input.DetectKeypress();
             }
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Negative values are disallowed.");
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("The answer may not be negative."), true, KernelColorType.Error);
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Press any key to go back."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("The answer may not be negative."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("Press any key to go back."), true, KernelColorType.Error);
                 Input.DetectKeypress();
             }
         }

@@ -73,17 +73,6 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
         /// <param name="indent">Indentation level</param>
         /// <param name="ListKeyColor">A key color.</param>
         /// <param name="ListValueColor">A value color.</param>
-        public static void WriteListEntry(string entry, string value, KernelColorType ListKeyColor, KernelColorType ListValueColor, int indent = 0) =>
-            WriteListEntry(entry, value, KernelColorTools.GetColor(ListKeyColor), KernelColorTools.GetColor(ListValueColor), indent);
-
-        /// <summary>
-        /// Outputs a list entry and value into the terminal prompt.
-        /// </summary>
-        /// <param name="entry">A list entry that will be listed to the terminal prompt.</param>
-        /// <param name="value">A list value that will be listed to the terminal prompt.</param>
-        /// <param name="indent">Indentation level</param>
-        /// <param name="ListKeyColor">A key color.</param>
-        /// <param name="ListValueColor">A value color.</param>
         public static void WriteListEntry(string entry, string value, ConsoleColors ListKeyColor, ConsoleColors ListValueColor, int indent = 0) =>
             WriteListEntry(entry, value, new Color(ListKeyColor), new Color(ListValueColor), indent);
 

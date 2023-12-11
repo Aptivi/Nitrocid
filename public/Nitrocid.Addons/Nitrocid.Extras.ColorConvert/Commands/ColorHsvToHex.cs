@@ -18,7 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
@@ -39,24 +39,24 @@ namespace Nitrocid.Extras.ColorConvert.Commands
             // Check to see if we have the numeric arguments
             if (!int.TryParse(parameters.ArgumentsList[0], out int H))
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("The hue level must be numeric."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("The hue level must be numeric."), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.Color;
             }
             if (!int.TryParse(parameters.ArgumentsList[1], out int S))
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("The saturation level must be numeric."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("The saturation level must be numeric."), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.Color;
             }
             if (!int.TryParse(parameters.ArgumentsList[2], out int V))
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("The luminance or lighting level must be numeric."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("The luminance or lighting level must be numeric."), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.Color;
             }
 
             // Do the job
             string hex = KernelColorConversionTools.ConvertFromHsvToHex(H, S, V);
-            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Color hexadecimal representation:") + " ", false, KernelColorType.ListEntry);
-            TextWriterColor.WriteKernelColor(hex, true, KernelColorType.ListValue);
+            TextWriters.Write("- " + Translate.DoTranslation("Color hexadecimal representation:") + " ", false, KernelColorType.ListEntry);
+            TextWriters.Write(hex, true, KernelColorType.ListValue);
             variableValue = hex;
             return 0;
         }

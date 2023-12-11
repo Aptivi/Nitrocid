@@ -22,9 +22,9 @@ using KS.ConsoleBase.Colors;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 using KS.Misc.Text;
-using KS.ConsoleBase.Writers.ConsoleWriters;
 using Nitrocid.Extras.HttpShell.Tools;
 using KS.ConsoleBase.Inputs.Styles.Choice;
+using KS.ConsoleBase.Writers;
 
 namespace Nitrocid.Extras.HttpShell.HTTP.Commands
 {
@@ -40,7 +40,7 @@ namespace Nitrocid.Extras.HttpShell.HTTP.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             // Print a message
-            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Deleting {0}..."), true, KernelColorType.Progress, parameters.ArgumentsList[0]);
+            TextWriters.Write(Translate.DoTranslation("Deleting {0}..."), true, KernelColorType.Progress, parameters.ArgumentsList[0]);
 
             // Make a confirmation message so user will not accidentally delete a file or folder
             string answer = ChoiceStyle.PromptChoice(TextTools.FormatString(Translate.DoTranslation("Are you sure you want to delete {0}?"), parameters.ArgumentsList[0]), "y/n");
@@ -55,20 +55,20 @@ namespace Nitrocid.Extras.HttpShell.HTTP.Commands
             }
             catch (AggregateException aex)
             {
-                TextWriterColor.WriteKernelColor(aex.Message + ":", true, KernelColorType.Error);
+                TextWriters.Write(aex.Message + ":", true, KernelColorType.Error);
                 foreach (Exception InnerException in aex.InnerExceptions)
                 {
-                    TextWriterColor.WriteKernelColor("- " + InnerException.Message, true, KernelColorType.Error);
+                    TextWriters.Write("- " + InnerException.Message, true, KernelColorType.Error);
                     if (InnerException.InnerException is not null)
                     {
-                        TextWriterColor.WriteKernelColor("- " + InnerException.InnerException.Message, true, KernelColorType.Error);
+                        TextWriters.Write("- " + InnerException.InnerException.Message, true, KernelColorType.Error);
                     }
                 }
                 return aex.GetHashCode();
             }
             catch (Exception ex)
             {
-                TextWriterColor.WriteKernelColor(ex.Message, true, KernelColorType.Error);
+                TextWriters.Write(ex.Message, true, KernelColorType.Error);
                 return ex.GetHashCode();
             }
         }

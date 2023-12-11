@@ -18,6 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files.Operations.Querying;
 using KS.Languages;
@@ -50,8 +51,8 @@ namespace Nitrocid.Extras.BassBoom.Commands
             var lines = Lyrics.GetLyricLines(pathToLyrics);
             foreach (var line in lines)
             {
-                TextWriterColor.WriteKernelColor($"- [{line.LineSpan.Hours:00}:{line.LineSpan.Minutes:00}:{line.LineSpan.Seconds:00}.{line.LineSpan.Milliseconds:000}] ", false, KernelColorType.ListEntry);
-                TextWriterColor.WriteKernelColor(line.Line, KernelColorType.ListValue);
+                TextWriters.Write($"- [{line.LineSpan.Hours:00}:{line.LineSpan.Minutes:00}:{line.LineSpan.Seconds:00}.{line.LineSpan.Milliseconds:000}] ", false, KernelColorType.ListEntry);
+                TextWriters.Write(line.Line, KernelColorType.ListValue);
             }
             return 0;
         }

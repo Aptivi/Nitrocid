@@ -22,7 +22,6 @@ using Figletize;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Kernel.Debugging;
 using KS.Kernel.Threading;
 using KS.Kernel.Time;
@@ -30,6 +29,7 @@ using KS.Languages;
 using KS.Misc.Screensaver;
 using KS.Misc.Text;
 using Terminaux.Colors;
+using KS.ConsoleBase.Writers.FancyWriters;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {

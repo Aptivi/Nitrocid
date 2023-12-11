@@ -20,13 +20,13 @@
 using System;
 using System.Threading;
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Text;
 using KS.Shell.ShellBase.Shells;
 using KS.Shell.ShellBase.Commands;
 using Nitrocid.Extras.SqlShell.Tools;
+using KS.ConsoleBase.Writers;
 
 namespace Nitrocid.Extras.SqlShell.Sql
 {
@@ -53,7 +53,7 @@ namespace Nitrocid.Extras.SqlShell.Sql
             }
             else
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("File not specified. Exiting shell..."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("File not specified. Exiting shell..."), true, KernelColorType.Error);
                 Bail = true;
             }
 
@@ -63,7 +63,7 @@ namespace Nitrocid.Extras.SqlShell.Sql
                 DebugWriter.WriteDebug(DebugLevel.W, "File not open yet. Trying to open {0}...", FilePath);
                 if (!SqlEditTools.SqlEdit_OpenSqlFile(FilePath))
                 {
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Failed to open file. Exiting shell..."), true, KernelColorType.Error);
+                    TextWriters.Write(Translate.DoTranslation("Failed to open file. Exiting shell..."), true, KernelColorType.Error);
                     Bail = true;
                 }
             }
@@ -84,7 +84,7 @@ namespace Nitrocid.Extras.SqlShell.Sql
                 catch (Exception ex)
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("There was an error in the shell.") + CharManager.NewLine + "Error {0}: {1}", true, KernelColorType.Error, ex.GetType().FullName, ex.Message);
+                    TextWriters.Write(Translate.DoTranslation("There was an error in the shell.") + CharManager.NewLine + "Error {0}: {1}", true, KernelColorType.Error, ex.GetType().FullName, ex.Message);
                     continue;
                 }
             }

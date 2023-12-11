@@ -99,44 +99,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                         BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
                         BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
                         BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        KernelColorType.Separator, KernelColorType.Background, vars);
-
-        /// <summary>
-        /// Writes the border plainly
-        /// </summary>
-        /// <param name="text">Text to be written.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        /// <param name="Left">Where to place the border horizontally? Please note that this value comes from the upper left corner, which is an exterior position.</param>
-        /// <param name="Top">Where to place the border vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
-        /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
-        /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
-        /// <param name="BorderColor">Border color from Nitrocid KS's <see cref="KernelColorType"/></param>
-        public static void WriteBorderText(string text, int Left, int Top, int InteriorWidth, int InteriorHeight, KernelColorType BorderColor, params object[] vars) =>
-            WriteBorderText(text, Left, Top, InteriorWidth, InteriorHeight,
-                        BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
-                        BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
-                        BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
-                        BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        BorderColor, KernelColorType.Background, vars);
-
-        /// <summary>
-        /// Writes the border plainly
-        /// </summary>
-        /// <param name="text">Text to be written.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        /// <param name="Left">Where to place the border horizontally? Please note that this value comes from the upper left corner, which is an exterior position.</param>
-        /// <param name="Top">Where to place the border vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
-        /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
-        /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
-        /// <param name="BorderColor">Border color from Nitrocid KS's <see cref="KernelColorType"/></param>
-        /// <param name="BackgroundColor">Border background color from Nitrocid KS's <see cref="KernelColorType"/></param>
-        public static void WriteBorderText(string text, int Left, int Top, int InteriorWidth, int InteriorHeight, KernelColorType BorderColor, KernelColorType BackgroundColor, params object[] vars) =>
-            WriteBorderText(text, Left, Top, InteriorWidth, InteriorHeight,
-                        BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
-                        BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
-                        BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
-                        BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        BorderColor, BackgroundColor, vars);
+                        KernelColorTools.GetColor(KernelColorType.Separator), KernelColorTools.GetColor(KernelColorType.Background), vars);
 
         /// <summary>
         /// Writes the border plainly
@@ -232,68 +195,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         public static void WriteBorderText(string text, int Left, int Top, int InteriorWidth, int InteriorHeight,
                                        char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, params object[] vars) =>
-            WriteBorderText(text, Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, KernelColorType.Separator, KernelColorType.Background, vars);
-
-        /// <summary>
-        /// Writes the border plainly
-        /// </summary>
-        /// <param name="text">Text to be written.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        /// <param name="Left">Where to place the border horizontally? Please note that this value comes from the upper left corner, which is an exterior position.</param>
-        /// <param name="Top">Where to place the border vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
-        /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
-        /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
-        /// <param name="UpperLeftCornerChar">Upper left corner character for border</param>
-        /// <param name="LowerLeftCornerChar">Lower left corner character for border</param>
-        /// <param name="UpperRightCornerChar">Upper right corner character for border</param>
-        /// <param name="LowerRightCornerChar">Lower right corner character for border</param>
-        /// <param name="UpperFrameChar">Upper frame character for border</param>
-        /// <param name="LowerFrameChar">Lower frame character for border</param>
-        /// <param name="LeftFrameChar">Left frame character for border</param>
-        /// <param name="RightFrameChar">Right frame character for border</param>
-        /// <param name="BorderColor">Border color from Nitrocid KS's <see cref="KernelColorType"/></param>
-        public static void WriteBorderText(string text, int Left, int Top, int InteriorWidth, int InteriorHeight,
-                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
-                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-                                       KernelColorType BorderColor, params object[] vars) =>
-            WriteBorderText(text, Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, BorderColor, KernelColorType.Background, vars);
-
-        /// <summary>
-        /// Writes the border plainly
-        /// </summary>
-        /// <param name="text">Text to be written.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        /// <param name="Left">Where to place the border horizontally? Please note that this value comes from the upper left corner, which is an exterior position.</param>
-        /// <param name="Top">Where to place the border vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
-        /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
-        /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
-        /// <param name="UpperLeftCornerChar">Upper left corner character for border</param>
-        /// <param name="LowerLeftCornerChar">Lower left corner character for border</param>
-        /// <param name="UpperRightCornerChar">Upper right corner character for border</param>
-        /// <param name="LowerRightCornerChar">Lower right corner character for border</param>
-        /// <param name="UpperFrameChar">Upper frame character for border</param>
-        /// <param name="LowerFrameChar">Lower frame character for border</param>
-        /// <param name="LeftFrameChar">Left frame character for border</param>
-        /// <param name="RightFrameChar">Right frame character for border</param>
-        /// <param name="BorderColor">Border color from Nitrocid KS's <see cref="KernelColorType"/></param>
-        /// <param name="BackgroundColor">Border background color from Nitrocid KS's <see cref="KernelColorType"/></param>
-        public static void WriteBorderText(string text, int Left, int Top, int InteriorWidth, int InteriorHeight,
-                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
-                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-                                       KernelColorType BorderColor, KernelColorType BackgroundColor, params object[] vars)
-        {
-            try
-            {
-                // StringBuilder to put out the final rendering text
-                string rendered = RenderBorderTextPlain(text, Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, vars);
-                TextWriterWhereColor.WriteWhereKernelColor(rendered, Left, Top, false, BorderColor, BackgroundColor);
-            }
-            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
-            {
-                DebugWriter.WriteDebugStackTrace(ex);
-                DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
-            }
-        }
+            WriteBorderText(text, Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, KernelColorTools.GetColor(KernelColorType.Separator), KernelColorTools.GetColor(KernelColorType.Background), vars);
 
         /// <summary>
         /// Writes the border plainly

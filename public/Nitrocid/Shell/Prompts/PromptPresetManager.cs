@@ -22,7 +22,7 @@ using System.Data;
 using System.Linq;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs.Styles.Selection;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
@@ -169,7 +169,7 @@ namespace KS.Shell.Prompts
         public static void WriteShellPrompt(string ShellType)
         {
             var CurrentPresetBase = GetCurrentPresetBaseFromShell(ShellType);
-            TextWriterColor.WriteKernelColor(CurrentPresetBase.PresetPrompt, false, KernelColorType.Input);
+            TextWriters.Write(CurrentPresetBase.PresetPrompt, false, KernelColorType.Input);
         }
 
         /// <summary>
@@ -186,7 +186,7 @@ namespace KS.Shell.Prompts
         public static void WriteShellCompletionPrompt(string ShellType)
         {
             var CurrentPresetBase = GetCurrentPresetBaseFromShell(ShellType);
-            TextWriterColor.WriteKernelColor(CurrentPresetBase.PresetPromptCompletion, false, KernelColorType.Input);
+            TextWriters.Write(CurrentPresetBase.PresetPromptCompletion, false, KernelColorType.Input);
         }
 
         /// <summary>

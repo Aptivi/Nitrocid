@@ -23,6 +23,7 @@ using System.Linq;
 using System.Net;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
+using KS.ConsoleBase.Writers;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files.Paths;
 using KS.Kernel;
@@ -85,11 +86,11 @@ namespace Nitrocid.Extras.MailShell.Tools
             // Username or mail address
             if (!string.IsNullOrWhiteSpace(UserPromptStyle))
             {
-                TextWriterColor.WriteKernelColor(PlaceParse.ProbePlaces(UserPromptStyle), false, KernelColorType.Input);
+                TextWriters.Write(PlaceParse.ProbePlaces(UserPromptStyle), false, KernelColorType.Input);
             }
             else
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Enter username or mail address: "), false, KernelColorType.Input);
+                TextWriters.Write(Translate.DoTranslation("Enter username or mail address: "), false, KernelColorType.Input);
             }
 
             // Try to get the username or e-mail address from the input
@@ -108,11 +109,11 @@ namespace Nitrocid.Extras.MailShell.Tools
             Authentication.UserName = Username;
             if (!string.IsNullOrWhiteSpace(PassPromptStyle))
             {
-                TextWriterColor.WriteKernelColor(PlaceParse.ProbePlaces(PassPromptStyle), false, KernelColorType.Input);
+                TextWriters.Write(PlaceParse.ProbePlaces(PassPromptStyle), false, KernelColorType.Input);
             }
             else
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Enter password: "), false, KernelColorType.Input);
+                TextWriters.Write(Translate.DoTranslation("Enter password: "), false, KernelColorType.Input);
             }
             Authentication.Password = Input.ReadLineNoInput();
 
@@ -137,11 +138,11 @@ namespace Nitrocid.Extras.MailShell.Tools
             // IMAP server address and port
             if (!string.IsNullOrWhiteSpace(IMAPPromptStyle))
             {
-                TextWriterColor.WriteKernelColor(PlaceParse.ProbePlaces(IMAPPromptStyle), false, KernelColorType.Input);
+                TextWriters.Write(PlaceParse.ProbePlaces(IMAPPromptStyle), false, KernelColorType.Input);
             }
             else
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Enter IMAP server address and port (<address> or <address>:[port]): "), false, KernelColorType.Input);
+                TextWriters.Write(Translate.DoTranslation("Enter IMAP server address and port (<address> or <address>:[port]): "), false, KernelColorType.Input);
             }
             IMAP_Address = Input.ReadLine();
             DebugWriter.WriteDebug(DebugLevel.I, "IMAP Server: \"{0}\"", IMAP_Address);
@@ -149,11 +150,11 @@ namespace Nitrocid.Extras.MailShell.Tools
             // SMTP server address and port
             if (!string.IsNullOrWhiteSpace(SMTPPromptStyle))
             {
-                TextWriterColor.WriteKernelColor(PlaceParse.ProbePlaces(SMTPPromptStyle), false, KernelColorType.Input);
+                TextWriters.Write(PlaceParse.ProbePlaces(SMTPPromptStyle), false, KernelColorType.Input);
             }
             else
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Enter SMTP server address and port (<address> or <address>:[port]): "), false, KernelColorType.Input);
+                TextWriters.Write(Translate.DoTranslation("Enter SMTP server address and port (<address> or <address>:[port]): "), false, KernelColorType.Input);
             }
             string SMTP_Address = Input.ReadLine();
             SMTP_Port = 587;
@@ -277,7 +278,7 @@ namespace Nitrocid.Extras.MailShell.Tools
             }
             catch (Exception ex)
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Error while connecting to {0}: {1}"), true, KernelColorType.Error, Address, ex.Message);
+                TextWriters.Write(Translate.DoTranslation("Error while connecting to {0}: {1}"), true, KernelColorType.Error, Address, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
                 IMAP_Client.Disconnect(true);
                 SMTP_Client.Disconnect(true);

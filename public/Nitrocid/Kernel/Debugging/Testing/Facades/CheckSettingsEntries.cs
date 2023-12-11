@@ -18,6 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Configuration;
 using KS.Languages;
@@ -49,7 +50,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
             // Warn if not found
             if (NotFound.Count > 0)
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("These configuration entries have invalid variables or enumerations and need to be fixed:"), true, KernelColorType.Warning);
+                TextWriters.Write(Translate.DoTranslation("These configuration entries have invalid variables or enumerations and need to be fixed:"), true, KernelColorType.Warning);
                 ListWriterColor.WriteList(NotFound);
             }
 

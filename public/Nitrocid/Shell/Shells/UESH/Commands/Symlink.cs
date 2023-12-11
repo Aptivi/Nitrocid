@@ -18,7 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Files;
 using KS.Files.Operations;
 using KS.Files.Operations.Querying;
@@ -46,12 +46,12 @@ namespace KS.Shell.Shells.UESH.Commands
             string target = FilesystemTools.NeutralizePath(parameters.ArgumentsList[1]);
             if (!Checking.Exists(target))
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("The target file or directory isn't found."), KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("The target file or directory isn't found."), KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.Filesystem;
             }
             if (Checking.Exists(linkName))
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Can't overwrite an existing file or directory with a symbolic link."), KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("Can't overwrite an existing file or directory with a symbolic link."), KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.Filesystem;
             }
             try
@@ -60,7 +60,7 @@ namespace KS.Shell.Shells.UESH.Commands
             }
             catch (Exception ex)
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Can't make a symbolic link.") + $"{ex.Message}", KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("Can't make a symbolic link.") + $"{ex.Message}", KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.Filesystem;
             }
             return 0;

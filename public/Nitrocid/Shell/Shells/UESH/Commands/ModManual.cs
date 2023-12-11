@@ -19,12 +19,12 @@
 
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Interactive;
-using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Modifications;
 using KS.Misc.Interactives;
 using KS.Shell.ShellBase.Commands;
+using KS.ConsoleBase.Writers;
 
 namespace KS.Shell.Shells.UESH.Commands
 {
@@ -43,7 +43,7 @@ namespace KS.Shell.Shells.UESH.Commands
             string modName = parameters.ArgumentsList[0];
             if (!ModManager.Mods.ContainsKey(modName))
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Tried to query the manuals for nonexistent mod {0}."), true, KernelColorType.Error, modName);
+                TextWriters.Write(Translate.DoTranslation("Tried to query the manuals for nonexistent mod {0}."), true, KernelColorType.Error, modName);
                 return 10000 + (int)KernelExceptionType.NoSuchMod;
             }
 

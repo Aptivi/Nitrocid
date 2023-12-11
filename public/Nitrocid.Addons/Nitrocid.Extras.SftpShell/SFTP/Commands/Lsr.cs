@@ -21,7 +21,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Shell.ShellBase.Commands;
 using Nitrocid.Extras.SftpShell.Tools.Filesystem;
 
@@ -67,7 +67,7 @@ namespace Nitrocid.Extras.SftpShell.SFTP.Commands
             }
             Entries.Sort();
             foreach (string Entry in Entries)
-                TextWriterColor.WriteKernelColor(Entry, true, KernelColorType.ListEntry);
+                TextWriters.Write(Entry, true, KernelColorType.ListEntry);
             return 0;
         }
 

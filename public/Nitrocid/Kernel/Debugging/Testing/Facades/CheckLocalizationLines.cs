@@ -18,11 +18,11 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Languages;
 using Newtonsoft.Json.Linq;
 using KS.Resources;
 using System.Linq;
+using KS.ConsoleBase.Writers;
 
 namespace KS.Kernel.Debugging.Testing.Facades
 {
@@ -39,7 +39,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
                 LanguageJson = JToken.Parse(LanguageResources.ResourceManager.GetString(LanguageName.Replace("-", "_")));
                 if (LanguageJson.Count() != EnglishJson.Count())
                 {
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Line mismatch in") + " {0}: {1} <> {2}", true, KernelColorType.Warning, LanguageName, LanguageJson.Count(), EnglishJson.Count());
+                    TextWriters.Write(Translate.DoTranslation("Line mismatch in") + " {0}: {1} <> {2}", true, KernelColorType.Warning, LanguageName, LanguageJson.Count(), EnglishJson.Count());
                 }
             }
         }

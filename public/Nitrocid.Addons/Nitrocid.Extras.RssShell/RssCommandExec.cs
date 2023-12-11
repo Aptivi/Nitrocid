@@ -20,7 +20,7 @@
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Interactive;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Kernel.Configuration;
 using KS.Kernel.Exceptions;
 using KS.Languages;
@@ -51,7 +51,7 @@ namespace Nitrocid.Extras.RssShell
                     string address = Input.ReadLine(Translate.DoTranslation("Enter the RSS feed URL") + ": ", Config.MainConfig.RssHeadlineUrl);
                     if (string.IsNullOrEmpty(address) || !Uri.TryCreate(address, UriKind.Absolute, out Uri uri))
                     {
-                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("Error trying to parse the address. Make sure that you've written the address correctly."), KernelColorType.Error);
+                        TextWriters.Write(Translate.DoTranslation("Error trying to parse the address. Make sure that you've written the address correctly."), KernelColorType.Error);
                         return 10000 + (int)KernelExceptionType.RSSNetwork;
                     }
                     RssReaderCli.rssConnection = EstablishRssConnection(address);

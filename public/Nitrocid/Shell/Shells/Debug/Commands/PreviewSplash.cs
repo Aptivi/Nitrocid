@@ -18,6 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Exceptions;
 using KS.Languages;
@@ -50,7 +51,7 @@ namespace KS.Shell.Shells.Debug.Commands
                 !customContext || Enum.TryParse(contextName, out context);
             if (!contextValid)
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("The splash context is not valid"), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("The splash context is not valid"), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.Splash;
             }
 

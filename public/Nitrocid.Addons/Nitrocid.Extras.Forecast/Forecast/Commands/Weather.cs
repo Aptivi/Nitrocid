@@ -21,6 +21,7 @@ using System;
 using System.Linq;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
+using KS.ConsoleBase.Writers;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
@@ -70,7 +71,7 @@ namespace Nitrocid.Extras.Forecast.Forecast.Commands
                 else if (string.IsNullOrEmpty(APIKey))
                 {
                     TextWriterColor.Write(Translate.DoTranslation("You can get your own API key at https://home.openweathermap.org/api_keys."));
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Enter your API key:") + " ", false, KernelColorType.Input);
+                    TextWriters.Write(Translate.DoTranslation("Enter your API key:") + " ", false, KernelColorType.Input);
                     APIKey = Input.ReadLineNoInput();
                     Forecast.ApiKey = APIKey;
                 }

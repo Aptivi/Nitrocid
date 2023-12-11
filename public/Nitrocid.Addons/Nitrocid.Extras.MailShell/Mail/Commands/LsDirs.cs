@@ -18,7 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Shell.ShellBase.Commands;
 using Nitrocid.Extras.MailShell.Tools.Directory;
 
@@ -35,7 +35,7 @@ namespace Nitrocid.Extras.MailShell.Mail.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            TextWriterColor.WriteKernelColor(MailDirectory.MailListDirectories(), false, KernelColorType.NeutralText);
+            TextWriters.Write(MailDirectory.MailListDirectories(), false, KernelColorType.NeutralText);
             return 0;
         }
     }

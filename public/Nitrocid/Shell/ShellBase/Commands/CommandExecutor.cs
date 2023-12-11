@@ -38,6 +38,7 @@ using KS.Shell.ShellBase.Switches;
 using KS.Drivers.Console.Bases;
 using KS.Shell.ShellBase.Help;
 using System.Runtime;
+using KS.ConsoleBase.Writers;
 
 namespace KS.Shell.ShellBase.Commands
 {
@@ -99,7 +100,7 @@ namespace KS.Shell.ShellBase.Commands
                 if (!argSatisfied)
                 {
                     DebugWriter.WriteDebug(DebugLevel.W, "Arguments not satisfied.");
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Required arguments are not provided for all usages. See below for more info:"), true, KernelColorType.Error);
+                    TextWriters.Write(Translate.DoTranslation("Required arguments are not provided for all usages. See below for more info:"), true, KernelColorType.Error);
                     for (int i = 0; i < total.Length; i++)
                     {
                         ProvidedArgumentsInfo unsatisfied = total[i];
@@ -107,34 +108,34 @@ namespace KS.Shell.ShellBase.Commands
 
                         // Write usage number
                         string renderedUsage = !string.IsNullOrEmpty(unsatisfied.ArgumentInfo.RenderedUsage) ? " " + unsatisfied.ArgumentInfo.RenderedUsage : "";
-                        TextWriterColor.WriteKernelColor("\n" + Translate.DoTranslation("For usage number") + $" #{i + 1} [{Command}{renderedUsage}]:", true, KernelColorType.Error);
+                        TextWriters.Write("\n" + Translate.DoTranslation("For usage number") + $" #{i + 1} [{Command}{renderedUsage}]:", true, KernelColorType.Error);
 
                         // Check for required arguments
                         if (!unsatisfied.RequiredArgumentsProvided)
                         {
                             DebugWriter.WriteDebug(DebugLevel.W, "User hasn't provided enough arguments for {0}", Command);
-                            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Required arguments are not provided."), true, KernelColorType.Error);
+                            TextWriters.Write("- " + Translate.DoTranslation("Required arguments are not provided."), true, KernelColorType.Error);
                         }
 
                         // Check for required switches
                         if (!unsatisfied.RequiredSwitchesProvided)
                         {
                             DebugWriter.WriteDebug(DebugLevel.W, "User hasn't provided enough switches for {0}", Command);
-                            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Required switches are not provided."), true, KernelColorType.Error);
+                            TextWriters.Write("- " + Translate.DoTranslation("Required switches are not provided."), true, KernelColorType.Error);
                         }
 
                         // Check for required switch arguments
                         if (!unsatisfied.RequiredSwitchArgumentsProvided)
                         {
                             DebugWriter.WriteDebug(DebugLevel.W, "User hasn't provided a value for one of the switches for {0}", Command);
-                            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("One of the switches requires a value that is not provided."), true, KernelColorType.Error);
+                            TextWriters.Write("- " + Translate.DoTranslation("One of the switches requires a value that is not provided."), true, KernelColorType.Error);
                         }
 
                         // Check for unknown switches
                         if (unsatisfied.UnknownSwitchesList.Length > 0)
                         {
                             DebugWriter.WriteDebug(DebugLevel.W, "User has provided unknown switches {0}", Command);
-                            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Switches that are listed below are unknown."), true, KernelColorType.Error);
+                            TextWriters.Write("- " + Translate.DoTranslation("Switches that are listed below are unknown."), true, KernelColorType.Error);
                             ListWriterColor.WriteList(unsatisfied.UnknownSwitchesList);
                         }
 
@@ -142,7 +143,7 @@ namespace KS.Shell.ShellBase.Commands
                         if (unsatisfied.ConflictingSwitchesList.Length > 0)
                         {
                             DebugWriter.WriteDebug(DebugLevel.W, "User has provided conflicting switches for {0}", Command);
-                            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Switches that are listed below conflict with each other."), true, KernelColorType.Error);
+                            TextWriters.Write("- " + Translate.DoTranslation("Switches that are listed below conflict with each other."), true, KernelColorType.Error);
                             ListWriterColor.WriteList(unsatisfied.ConflictingSwitchesList);
                         }
 
@@ -150,7 +151,7 @@ namespace KS.Shell.ShellBase.Commands
                         if (unsatisfied.NoValueSwitchesList.Length > 0)
                         {
                             DebugWriter.WriteDebug(DebugLevel.W, "User has provided switches that don't accept values for {0}", Command);
-                            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("The below switches don't accept values."), true, KernelColorType.Error);
+                            TextWriters.Write("- " + Translate.DoTranslation("The below switches don't accept values."), true, KernelColorType.Error);
                             ListWriterColor.WriteList(unsatisfied.NoValueSwitchesList);
                         }
 
@@ -158,21 +159,21 @@ namespace KS.Shell.ShellBase.Commands
                         if (!unsatisfied.NumberProvided)
                         {
                             DebugWriter.WriteDebug(DebugLevel.W, "User has provided invalid number for one or more of the arguments for {0}", Command);
-                            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("One or more of the arguments expect a numeric value, but you provided an invalid number."), true, KernelColorType.Error);
+                            TextWriters.Write("- " + Translate.DoTranslation("One or more of the arguments expect a numeric value, but you provided an invalid number."), true, KernelColorType.Error);
                         }
 
                         // Check for invalid exact wording
                         if (!unsatisfied.ExactWordingProvided)
                         {
                             DebugWriter.WriteDebug(DebugLevel.W, "User has provided non-exact wording for {0}", Command);
-                            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("One or more of the arguments expect an exact wording, but you provided an invalid word."), true, KernelColorType.Error);
+                            TextWriters.Write("- " + Translate.DoTranslation("One or more of the arguments expect an exact wording, but you provided an invalid word."), true, KernelColorType.Error);
                         }
 
                         // Check for invalid number in numeric switches
                         if (!unsatisfied.SwitchNumberProvided)
                         {
                             DebugWriter.WriteDebug(DebugLevel.W, "User has provided invalid number for one or more of the switches for {0}", Command);
-                            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("One or more of the switches expect a numeric value, but you provided an invalid number."), true, KernelColorType.Error);
+                            TextWriters.Write("- " + Translate.DoTranslation("One or more of the switches expect a numeric value, but you provided an invalid number."), true, KernelColorType.Error);
                         }
                     }
                     TextWriterColor.Write(Translate.DoTranslation("See below for usage:"));
@@ -271,7 +272,7 @@ namespace KS.Shell.ShellBase.Commands
                     {
                         DebugWriter.WriteDebug(DebugLevel.W, "Command aborted in the .NET Framework way. This is currently not supported as it may corrupt the state. Any weird behavior logged below is most likely from this.");
                         DebugWriter.WriteDebugStackTrace(ex);
-                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("Command has been aborted."), true, KernelColorType.Error);
+                        TextWriters.Write(Translate.DoTranslation("Command has been aborted."), true, KernelColorType.Error);
                     }
 #pragma warning restore SYSLIB0046
 
@@ -318,7 +319,7 @@ namespace KS.Shell.ShellBase.Commands
                 EventsManager.FireEvent(EventType.CommandError, ShellType, RequestedCommand, ex);
                 DebugWriter.WriteDebug(DebugLevel.E, "Failed to execute command {0} from type {1}: {2}", RequestedCommand, ShellType.ToString(), ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Error trying to execute command") + " {2}." + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, KernelColorType.Error, ex.GetType().FullName, ex.Message, RequestedCommand);
+                TextWriters.Write(Translate.DoTranslation("Error trying to execute command") + " {2}." + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, KernelColorType.Error, ex.GetType().FullName, ex.Message, RequestedCommand);
                 ShellInstance.LastErrorCode = ex.GetHashCode();
             }
         }
@@ -339,7 +340,7 @@ namespace KS.Shell.ShellBase.Commands
             if (!CommandManager.IsCommandFound(CommandToBeWrapped, currentType))
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Wrappable command {0} not found", Command);
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("The wrappable command is not found."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("The wrappable command is not found."), true, KernelColorType.Error);
                 return;
             }
 
@@ -347,7 +348,7 @@ namespace KS.Shell.ShellBase.Commands
             if (!StartCommandThread.IsAlive)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Can't directly execute command {0} in wrapped mode.", Command);
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("You must not directly execute this command in a wrapped mode."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("You must not directly execute this command in a wrapped mode."), true, KernelColorType.Error);
                 return;
             }
 
@@ -356,7 +357,7 @@ namespace KS.Shell.ShellBase.Commands
             {
                 var WrappableCmds = GetWrappableCommands(currentType);
                 DebugWriter.WriteDebug(DebugLevel.E, "Unwrappable command {0}! Wrappable commands: [{1}]", Command, string.Join(", ", WrappableCmds));
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("The command is not wrappable. These commands are wrappable:"), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("The command is not wrappable. These commands are wrappable:"), true, KernelColorType.Error);
                 ListWriterColor.WriteList(WrappableCmds);
                 return;
             }
@@ -388,13 +389,13 @@ namespace KS.Shell.ShellBase.Commands
 
                 // Now, print the output
                 DebugWriter.WriteDebug(DebugLevel.I, "Printing...");
-                TextWriterWrappedColor.WriteWrappedKernelColor(wrapOutput, false, KernelColorType.NeutralText);
+                TextWriters.WriteWrapped(wrapOutput, false, KernelColorType.NeutralText);
             }
             catch (Exception ex)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Failed to wrap command {0}: {1}", CommandToBeWrapped, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("An error occurred while trying to wrap a command output") + ": {0}", true, KernelColorType.Error, ex.Message);
+                TextWriters.Write(Translate.DoTranslation("An error occurred while trying to wrap a command output") + ": {0}", true, KernelColorType.Error, ex.Message);
             }
 
             // In case error happens
@@ -454,7 +455,7 @@ namespace KS.Shell.ShellBase.Commands
             {
                 DebugWriter.WriteDebug(DebugLevel.E, $"Command aborted: {ex.Message}");
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Command aborted for the following reason:") + $" {ex.Message}", KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("Command aborted for the following reason:") + $" {ex.Message}", KernelColorType.Error);
             }
         }
 

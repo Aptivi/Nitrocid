@@ -18,7 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Files;
 using KS.Files.Extensions;
 using KS.Files.Operations.Querying;
@@ -49,7 +49,7 @@ namespace KS.Shell.Shells.UESH.Commands
             if (Checking.FileExists(path))
                 Opening.OpenEditor(path, forceText, forceJson, forceHex, forceSql);
             else
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Can't edit file {0} because it's not found."), true, KernelColorType.Error, path);
+                TextWriters.Write(Translate.DoTranslation("Can't edit file {0} because it's not found."), true, KernelColorType.Error, path);
             return 0;
         }
 

@@ -18,6 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Exceptions;
 using KS.Languages;
@@ -47,12 +48,12 @@ namespace KS.Shell.Shells.UESH.Commands
         {
             if (string.IsNullOrEmpty(parameters.ArgumentsList[0]))
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Blank host name."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("Blank host name."), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.Network;
             }
             else if (parameters.ArgumentsList[0].IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray()) != -1)
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Special characters are not allowed."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("Special characters are not allowed."), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.Network;
             }
             else

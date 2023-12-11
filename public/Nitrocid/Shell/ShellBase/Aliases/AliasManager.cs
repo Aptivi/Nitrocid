@@ -22,6 +22,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files.Operations;
 using KS.Files.Paths;
@@ -102,7 +103,7 @@ namespace KS.Shell.ShellBase.Aliases
                     {
                         DebugWriter.WriteDebug(DebugLevel.E, "Failed to add alias. Stack trace written using WStkTrc(). {0}", ex.Message);
                         DebugWriter.WriteDebugStackTrace(ex);
-                        TextWriterColor.WriteKernelColor(ex.Message, true, KernelColorType.Error);
+                        TextWriters.Write(ex.Message, true, KernelColorType.Error);
                     }
                 }
                 else if (mode == "rem")
@@ -117,13 +118,13 @@ namespace KS.Shell.ShellBase.Aliases
                     {
                         DebugWriter.WriteDebug(DebugLevel.E, "Failed to remove alias. Stack trace written using WStkTrc(). {0}", ex.Message);
                         DebugWriter.WriteDebugStackTrace(ex);
-                        TextWriterColor.WriteKernelColor(ex.Message, true, KernelColorType.Error);
+                        TextWriters.Write(ex.Message, true, KernelColorType.Error);
                     }
                 }
                 else
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "Mode {0} was neither add nor rem.", mode);
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Invalid mode {0}."), true, KernelColorType.Error, mode);
+                    TextWriters.Write(Translate.DoTranslation("Invalid mode {0}."), true, KernelColorType.Error, mode);
                 }
 
                 // Save all aliases
@@ -132,7 +133,7 @@ namespace KS.Shell.ShellBase.Aliases
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Type {0} not found.", Type);
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Invalid type {0}."), true, KernelColorType.Error, Type);
+                TextWriters.Write(Translate.DoTranslation("Invalid type {0}."), true, KernelColorType.Error, Type);
             }
         }
 

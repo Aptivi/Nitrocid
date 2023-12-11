@@ -18,7 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Network.Base;
@@ -58,8 +58,8 @@ namespace KS.Shell.Shells.UESH.Commands
                 }
 
                 // Print info
-                TextWriterColor.WriteKernelColor($"- {address}: ", false, KernelColorType.ListEntry);
-                TextWriterColor.WriteKernelColor(host, true, KernelColorType.ListValue);
+                TextWriters.Write($"- {address}: ", false, KernelColorType.ListEntry);
+                TextWriters.Write(host, true, KernelColorType.ListValue);
             }
             return 0;
         }

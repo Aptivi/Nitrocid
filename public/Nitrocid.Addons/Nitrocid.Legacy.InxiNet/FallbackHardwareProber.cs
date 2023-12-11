@@ -20,7 +20,6 @@
 using InxiFrontend;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Drivers.HardwareProber;
 using KS.Kernel;
 using KS.Kernel.Debugging;
@@ -32,6 +31,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using KS.ConsoleBase.Writers.FancyWriters;
+using KS.ConsoleBase.Writers;
 
 namespace Nitrocid.Legacy.InxiNet
 {
@@ -285,14 +286,14 @@ namespace Nitrocid.Legacy.InxiNet
             if (supportedTypes.Contains(hardwareType) && (hardwareList is not null || EnumerableTools.CountElements(hardwareList) > 0))
                 ListHardwareProperties(hardwareList, hardwareType);
             else
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Either the hardware type {0} is not probed, or is not valid."), true, KernelColorType.Error, hardwareType);
+                TextWriters.Write(Translate.DoTranslation("Either the hardware type {0} is not probed, or is not valid."), true, KernelColorType.Error, hardwareType);
         }
 
         private static void ListHardwareProperties(IEnumerable hardwareList, string hardwareType)
         {
             if (hardwareList is null)
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("The hardware type {0} is not probed yet. If you're sure that it's probed, restart the kernel with debugging enabled."), true, KernelColorType.Error, hardwareType);
+                TextWriters.Write(Translate.DoTranslation("The hardware type {0} is not probed yet. If you're sure that it's probed, restart the kernel with debugging enabled."), true, KernelColorType.Error, hardwareType);
                 return;
             }
 
@@ -301,10 +302,10 @@ namespace Nitrocid.Legacy.InxiNet
             {
                 foreach (string HardwareKey in FieldValueDict.Keys)
                 {
-                    TextWriterColor.WriteKernelColor("- {0}: ", true, KernelColorType.ListEntry, HardwareKey);
+                    TextWriters.Write("- {0}: ", true, KernelColorType.ListEntry, HardwareKey);
                     foreach (PropertyInfo HardwareValuePropertyInfo in FieldValueDict[HardwareKey].GetType().GetProperties())
                     {
-                        TextWriterColor.WriteKernelColor("  - {0}: ", false, KernelColorType.ListEntry, HardwareValuePropertyInfo.Name);
+                        TextWriters.Write("  - {0}: ", false, KernelColorType.ListEntry, HardwareValuePropertyInfo.Name);
                         if (hardwareType == "HDD" & HardwareValuePropertyInfo.Name == "Partitions")
                         {
                             TextWriterColor.Write();
@@ -313,26 +314,26 @@ namespace Nitrocid.Legacy.InxiNet
                             {
                                 foreach (string PartitionKey in Partitions.Keys)
                                 {
-                                    TextWriterColor.WriteKernelColor("    - {0}: ", true, KernelColorType.ListEntry, PartitionKey);
+                                    TextWriters.Write("    - {0}: ", true, KernelColorType.ListEntry, PartitionKey);
                                     foreach (PropertyInfo PartitionValuePropertyInfo in Partitions[PartitionKey].GetType().GetProperties())
                                     {
-                                        TextWriterColor.WriteKernelColor("      - {0}: ", false, KernelColorType.ListEntry, PartitionValuePropertyInfo.Name);
-                                        TextWriterColor.WriteKernelColor(Convert.ToString(PartitionValuePropertyInfo.GetValue(Partitions[PartitionKey])), true, KernelColorType.ListValue);
+                                        TextWriters.Write("      - {0}: ", false, KernelColorType.ListEntry, PartitionValuePropertyInfo.Name);
+                                        TextWriters.Write(Convert.ToString(PartitionValuePropertyInfo.GetValue(Partitions[PartitionKey])), true, KernelColorType.ListValue);
                                     }
                                 }
                             }
                             else
                             {
-                                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Partitions not parsed to list."), true, KernelColorType.Error);
+                                TextWriters.Write(Translate.DoTranslation("Partitions not parsed to list."), true, KernelColorType.Error);
                             }
                         }
                         else if (hardwareType == "CPU" & HardwareValuePropertyInfo.Name == "Flags")
                         {
-                            TextWriterColor.WriteKernelColor(string.Join(", ", HardwareValuePropertyInfo.GetValue(FieldValueDict[HardwareKey]) as string[]), true, KernelColorType.ListValue);
+                            TextWriters.Write(string.Join(", ", HardwareValuePropertyInfo.GetValue(FieldValueDict[HardwareKey]) as string[]), true, KernelColorType.ListValue);
                         }
                         else
                         {
-                            TextWriterColor.WriteKernelColor(Convert.ToString(HardwareValuePropertyInfo.GetValue(FieldValueDict[HardwareKey])), true, KernelColorType.ListValue);
+                            TextWriters.Write(Convert.ToString(HardwareValuePropertyInfo.GetValue(FieldValueDict[HardwareKey])), true, KernelColorType.ListValue);
                         }
                     }
                 }
@@ -343,8 +344,8 @@ namespace Nitrocid.Legacy.InxiNet
                 {
                     foreach (FieldInfo HardwareFieldInfo in hardware.GetType().GetFields())
                     {
-                        TextWriterColor.WriteKernelColor("- {0}: ", false, KernelColorType.ListEntry, HardwareFieldInfo.Name);
-                        TextWriterColor.WriteKernelColor(Convert.ToString(HardwareFieldInfo.GetValue(hardware)), true, KernelColorType.ListValue);
+                        TextWriters.Write("- {0}: ", false, KernelColorType.ListEntry, HardwareFieldInfo.Name);
+                        TextWriters.Write(Convert.ToString(HardwareFieldInfo.GetValue(hardware)), true, KernelColorType.ListValue);
                     }
                 }
             }

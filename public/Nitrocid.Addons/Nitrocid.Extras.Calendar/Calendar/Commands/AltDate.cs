@@ -18,6 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Time.Calendars;
 using KS.Kernel.Time.Renderers;
@@ -56,7 +57,7 @@ namespace Nitrocid.Extras.Calendar.Calendar.Commands
             string culture = parameters.ArgumentsList[0];
             if (!Enum.TryParse(culture, out CalendarTypes calendarType))
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Culture isn't found.") + $" {culture}", true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("Culture isn't found.") + $" {culture}", true, KernelColorType.Error);
                 return 16;
             }
             var cultureInstance = CalendarTools.GetCalendar(calendarType);

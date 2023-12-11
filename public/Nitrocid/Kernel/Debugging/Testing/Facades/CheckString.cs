@@ -19,6 +19,7 @@
 
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
+using KS.ConsoleBase.Writers;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Languages;
 
@@ -37,7 +38,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
             var LocalizedStrings = LanguageManager.Languages["eng"].Strings;
             if (LocalizedStrings.ContainsKey(Text))
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("String found in the localization resources."), true, KernelColorType.Success);
+                TextWriters.Write(Translate.DoTranslation("String found in the localization resources."), true, KernelColorType.Success);
             }
             else
             {

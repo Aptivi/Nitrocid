@@ -18,7 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Misc.Splash;
 using KS.Shell.ShellBase.Commands;
 
@@ -37,7 +37,7 @@ namespace KS.Shell.Shells.Admin.Commands
         {
             var logLines = SplashReport.LogBuffer;
             foreach (var line in logLines)
-                TextWriterColor.WriteKernelColor(line, true, KernelColorType.ListEntry);
+                TextWriters.Write(line, true, KernelColorType.ListEntry);
             return 0;
         }
     }

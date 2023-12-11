@@ -29,6 +29,7 @@ using KS.Kernel.Events;
 using System.Text;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using System.Reflection;
+using KS.ConsoleBase.Writers;
 
 namespace KS.Shell.ShellBase.Commands.ProcessExecution
 {
@@ -122,7 +123,7 @@ namespace KS.Shell.ShellBase.Commands.ProcessExecution
                 EventsManager.FireEvent(EventType.ProcessError, File + Args, ex);
                 DebugWriter.WriteDebug(DebugLevel.E, "Process error for {0}, {1}, {2}: {3}.", File, WorkingDirectory, Args, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Error trying to execute command") + " {2}." + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, KernelColorType.Error, ex.GetType().FullName, ex.Message, File);
+                TextWriters.Write(Translate.DoTranslation("Error trying to execute command") + " {2}." + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, KernelColorType.Error, ex.GetType().FullName, ex.Message, File);
             }
             return -1;
         }
@@ -219,7 +220,7 @@ namespace KS.Shell.ShellBase.Commands.ProcessExecution
                 EventsManager.FireEvent(EventType.ProcessError, File + Args, ex);
                 DebugWriter.WriteDebug(DebugLevel.E, "Process error for {0}, {1}, {2}: {3}.", File, WorkingDirectory, Args, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Error trying to execute command") + " {2}." + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, KernelColorType.Error, ex.GetType().FullName, ex.Message, File);
+                TextWriters.Write(Translate.DoTranslation("Error trying to execute command") + " {2}." + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, KernelColorType.Error, ex.GetType().FullName, ex.Message, File);
                 exitCode = -1;
             }
             return commandOutputBuilder.ToString();
@@ -274,7 +275,7 @@ namespace KS.Shell.ShellBase.Commands.ProcessExecution
                 EventsManager.FireEvent(EventType.ProcessError, File + Args, ex);
                 DebugWriter.WriteDebug(DebugLevel.E, "Process error for {0}, {1}, {2}: {3}.", File, WorkingDirectory, Args, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Error trying to execute command") + " {2}." + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, KernelColorType.Error, ex.GetType().FullName, ex.Message, File);
+                TextWriters.Write(Translate.DoTranslation("Error trying to execute command") + " {2}." + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, KernelColorType.Error, ex.GetType().FullName, ex.Message, File);
             }
         }
 

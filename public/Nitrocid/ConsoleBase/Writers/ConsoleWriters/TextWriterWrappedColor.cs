@@ -125,62 +125,6 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
         }
 
         /// <summary>
-        /// Outputs the text into the terminal prompt, wraps the long terminal output if needed, and sets colors as needed.
-        /// </summary>
-        /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
-        /// <param name="Line">Whether to print a new line or not</param>
-        /// <param name="colorType">A type of colors that will be changed.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWrappedKernelColor(string Text, bool Line, KernelColorType colorType, params object[] vars)
-        {
-            lock (TextWriterColor.WriteLock)
-            {
-                try
-                {
-                    // Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                    KernelColorTools.SetConsoleColor(colorType);
-
-                    // Write wrapped output
-                    WriteWrappedPlain(Text, Line, vars);
-                }
-                catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
-                {
-                    DebugWriter.WriteDebugStackTrace(ex);
-                    DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
-                }
-            }
-        }
-
-        /// <summary>
-        /// Outputs the text into the terminal prompt, wraps the long terminal output if needed, and sets colors as needed.
-        /// </summary>
-        /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
-        /// <param name="Line">Whether to print a new line or not</param>
-        /// <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
-        /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWrappedKernelColor(string Text, bool Line, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] vars)
-        {
-            lock (TextWriterColor.WriteLock)
-            {
-                try
-                {
-                    // Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                    KernelColorTools.SetConsoleColor(colorTypeForeground);
-                    KernelColorTools.SetConsoleColor(colorTypeBackground, true);
-
-                    // Write wrapped output
-                    WriteWrappedPlain(Text, Line, vars);
-                }
-                catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
-                {
-                    DebugWriter.WriteDebugStackTrace(ex);
-                    DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
-                }
-            }
-        }
-
-        /// <summary>
         /// Outputs the text into the terminal prompt with custom color support and wraps the long terminal output if needed.
         /// </summary>
         /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>

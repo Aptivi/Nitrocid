@@ -18,7 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Files.Editors.TextEdit;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
@@ -45,18 +45,18 @@ namespace KS.Shell.Shells.Text.Commands
                 if (Convert.ToInt32(parameters.ArgumentsList[1]) <= TextEditShellCommon.FileLines.Count)
                 {
                     TextEditTools.DeleteChar(Convert.ToInt32(parameters.ArgumentsList[0]), Convert.ToInt32(parameters.ArgumentsList[1]));
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Character deleted."), true, KernelColorType.Success);
+                    TextWriters.Write(Translate.DoTranslation("Character deleted."), true, KernelColorType.Success);
                     return 0;
                 }
                 else
                 {
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("The specified line number may not be larger than the last file line number."), true, KernelColorType.Error);
+                    TextWriters.Write(Translate.DoTranslation("The specified line number may not be larger than the last file line number."), true, KernelColorType.Error);
                     return 10000 + (int)KernelExceptionType.TextEditor;
                 }
             }
             else
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("One or both of the numbers are not numeric."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("One or both of the numbers are not numeric."), true, KernelColorType.Error);
                 DebugWriter.WriteDebug(DebugLevel.E, "{0} and {1} are not numeric values.", parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
                 return 10000 + (int)KernelExceptionType.TextEditor;
             }

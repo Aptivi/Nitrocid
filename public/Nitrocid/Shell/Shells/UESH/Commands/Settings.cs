@@ -18,6 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Configuration;
 using KS.Kernel.Configuration.Instances;
@@ -83,7 +84,7 @@ namespace KS.Shell.Shells.UESH.Commands
                         typeFinal = "ExtraSaversConfig";
                     else
                     {
-                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("To get additional screensavers, install the screensaver pack addon."), true, KernelColorType.Error);
+                        TextWriters.Write(Translate.DoTranslation("To get additional screensavers, install the screensaver pack addon."), true, KernelColorType.Error);
                         return 10000 + (int)KernelExceptionType.Config;
                     }
                 }
@@ -93,7 +94,7 @@ namespace KS.Shell.Shells.UESH.Commands
                         typeFinal = "ExtraSplashesConfig";
                     else
                     {
-                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("To get additional splashes, install the splash pack addon."), true, KernelColorType.Error);
+                        TextWriters.Write(Translate.DoTranslation("To get additional splashes, install the splash pack addon."), true, KernelColorType.Error);
                         return 10000 + (int)KernelExceptionType.Config;
                     }
                 }
@@ -104,10 +105,10 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override void HelpHelper()
         {
-            TextWriterColor.WriteKernelColor(Translate.DoTranslation("You can use the type switch to open the following settings") + ": ", true, KernelColorType.Tip);
-            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Base settings") + ": ", true, KernelColorType.ListTitle);
+            TextWriters.Write(Translate.DoTranslation("You can use the type switch to open the following settings") + ": ", true, KernelColorType.Tip);
+            TextWriters.Write("- " + Translate.DoTranslation("Base settings") + ": ", true, KernelColorType.ListTitle);
             ListWriterColor.WriteList(Config.baseConfigurations.Keys);
-            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Custom settings") + ": ", true, KernelColorType.ListTitle);
+            TextWriters.Write("- " + Translate.DoTranslation("Custom settings") + ": ", true, KernelColorType.ListTitle);
             ListWriterColor.WriteList(Config.customConfigurations.Keys);
         }
 

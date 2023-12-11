@@ -19,6 +19,7 @@
 
 using System;
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
@@ -32,7 +33,7 @@ namespace Nitrocid.Extras.HttpShell.HTTP.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             // Print a message
-            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Posting file {0}..."), true, KernelColorType.Progress, parameters.ArgumentsList[1]);
+            TextWriters.Write(Translate.DoTranslation("Posting file {0}..."), true, KernelColorType.Progress, parameters.ArgumentsList[1]);
 
             try
             {
@@ -47,20 +48,20 @@ namespace Nitrocid.Extras.HttpShell.HTTP.Commands
             }
             catch (AggregateException aex)
             {
-                TextWriterColor.WriteKernelColor(aex.Message + ":", true, KernelColorType.Error);
+                TextWriters.Write(aex.Message + ":", true, KernelColorType.Error);
                 foreach (Exception InnerException in aex.InnerExceptions)
                 {
-                    TextWriterColor.WriteKernelColor("- " + InnerException.Message, true, KernelColorType.Error);
+                    TextWriters.Write("- " + InnerException.Message, true, KernelColorType.Error);
                     if (InnerException.InnerException is not null)
                     {
-                        TextWriterColor.WriteKernelColor("- " + InnerException.InnerException.Message, true, KernelColorType.Error);
+                        TextWriters.Write("- " + InnerException.InnerException.Message, true, KernelColorType.Error);
                     }
                 }
                 return aex.GetHashCode();
             }
             catch (Exception ex)
             {
-                TextWriterColor.WriteKernelColor(ex.Message, true, KernelColorType.Error);
+                TextWriters.Write(ex.Message, true, KernelColorType.Error);
                 return ex.GetHashCode();
             }
         }

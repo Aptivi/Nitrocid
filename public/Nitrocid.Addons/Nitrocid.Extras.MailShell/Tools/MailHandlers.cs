@@ -21,6 +21,7 @@ using System;
 using System.Diagnostics;
 using System.Linq;
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Debugging;
 using KS.Languages;
@@ -54,7 +55,7 @@ namespace Nitrocid.Extras.MailShell.Tools
         public static void HandleWebAlert(object sender, WebAlertEventArgs e)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "WebAlert URI: {0}", e.WebUri.AbsoluteUri);
-            TextWriterColor.WriteKernelColor(e.Message, true, KernelColorType.Warning);
+            TextWriters.Write(e.Message, true, KernelColorType.Warning);
             TextWriterColor.Write(Translate.DoTranslation("Opening URL... Make sure to follow the steps shown on the screen."));
             Process.Start(e.WebUri.AbsoluteUri).WaitForExit();
         }

@@ -18,7 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Kernel.Debugging;
 using KS.Kernel.Threading;
 using KS.Languages;
@@ -42,7 +42,7 @@ namespace KS.Shell.ShellBase.Shells.Unified
             bool valid = uint.TryParse(timesString, out uint times);
             if (!valid)
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Invalid number of times."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("Invalid number of times."), true, KernelColorType.Error);
                 return 18;
             }
 
@@ -55,7 +55,7 @@ namespace KS.Shell.ShellBase.Shells.Unified
             var argumentInfo = ArgumentsParser.ParseShellCommandArguments(lastCommand, ShellManager.CurrentShellType).total[0];
             if (argumentInfo.Command == "repeat")
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Can't repeat self."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("Can't repeat self."), true, KernelColorType.Error);
                 return 19;
             }
 

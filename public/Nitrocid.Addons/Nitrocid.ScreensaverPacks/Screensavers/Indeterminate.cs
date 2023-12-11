@@ -21,12 +21,12 @@ using System;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
 using KS.Kernel.Threading;
 using KS.Misc.Screensaver;
 using Terminaux.Colors;
+using KS.ConsoleBase.Writers.FancyWriters;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {

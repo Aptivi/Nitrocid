@@ -59,7 +59,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static string RenderFigletPlain(string Text, FigletizeFont FigletFont, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
+        public static string RenderFiglet(string Text, FigletizeFont FigletFont, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
         {
             var builder = new StringBuilder();
             builder.Append(
@@ -96,54 +96,13 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// </summary>
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
         /// <param name="FigletFont">Figlet font to use in the text.</param>
-        /// <param name="ColTypes">A type of colors that will be changed.</param>
-        /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteFigletKernelColor(string Text, FigletizeFont FigletFont, KernelColorType ColTypes, params object[] Vars)
-        {
-            try
-            {
-                TextWriterColor.WritePlain(RenderFigletPlain(Text, FigletFont, KernelColorTools.GetColor(ColTypes), KernelColorTools.GetColor(KernelColorType.Background), Vars), false);
-            }
-            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
-            {
-                DebugWriter.WriteDebugStackTrace(ex);
-                DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// Writes the figlet text
-        /// </summary>
-        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
-        /// <param name="FigletFont">Figlet font to use in the text.</param>
-        /// <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
-        /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
-        /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteFigletKernelColor(string Text, FigletizeFont FigletFont, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] Vars)
-        {
-            try
-            {
-                TextWriterColor.WritePlain(RenderFigletPlain(Text, FigletFont, KernelColorTools.GetColor(colorTypeForeground), KernelColorTools.GetColor(colorTypeBackground), Vars), false);
-            }
-            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
-            {
-                DebugWriter.WriteDebugStackTrace(ex);
-                DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// Writes the figlet text
-        /// </summary>
-        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
-        /// <param name="FigletFont">Figlet font to use in the text.</param>
         /// <param name="Color">A color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
         public static void WriteFigletColor(string Text, FigletizeFont FigletFont, ConsoleColors Color, params object[] Vars)
         {
             try
             {
-                TextWriterColor.WritePlain(RenderFigletPlain(Text, FigletFont, Color, KernelColorTools.GetColor(KernelColorType.Background), Vars), false);
+                TextWriterColor.WritePlain(RenderFiglet(Text, FigletFont, Color, KernelColorTools.GetColor(KernelColorType.Background), Vars), false);
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
@@ -164,7 +123,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         {
             try
             {
-                TextWriterColor.WritePlain(RenderFigletPlain(Text, FigletFont, ForegroundColor, BackgroundColor, Vars), false);
+                TextWriterColor.WritePlain(RenderFiglet(Text, FigletFont, ForegroundColor, BackgroundColor, Vars), false);
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
@@ -184,7 +143,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         {
             try
             {
-                TextWriterColor.WritePlain(RenderFigletPlain(Text, FigletFont, Color, KernelColorTools.GetColor(KernelColorType.Background), Vars), false);
+                TextWriterColor.WritePlain(RenderFiglet(Text, FigletFont, Color, KernelColorTools.GetColor(KernelColorType.Background), Vars), false);
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
@@ -205,7 +164,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         {
             try
             {
-                TextWriterColor.WritePlain(RenderFigletPlain(Text, FigletFont, ForegroundColor, BackgroundColor, Vars), false);
+                TextWriterColor.WritePlain(RenderFiglet(Text, FigletFont, ForegroundColor, BackgroundColor, Vars), false);
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {

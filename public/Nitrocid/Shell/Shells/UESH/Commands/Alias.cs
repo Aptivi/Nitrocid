@@ -18,7 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Shell.ShellBase.Aliases;
@@ -53,7 +53,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 }
                 else
                 {
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Invalid type {0}."), true, KernelColorType.Error, parameters.ArgumentsList[1]);
+                    TextWriters.Write(Translate.DoTranslation("Invalid type {0}."), true, KernelColorType.Error, parameters.ArgumentsList[1]);
                     return 10000 + (int)KernelExceptionType.AliasNoSuchType;
                 }
             }
@@ -66,7 +66,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 }
                 else
                 {
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Invalid type {0}."), true, KernelColorType.Error, parameters.ArgumentsList[1]);
+                    TextWriters.Write(Translate.DoTranslation("Invalid type {0}."), true, KernelColorType.Error, parameters.ArgumentsList[1]);
                     return 10000 + (int)KernelExceptionType.AliasNoSuchType;
                 }
             }

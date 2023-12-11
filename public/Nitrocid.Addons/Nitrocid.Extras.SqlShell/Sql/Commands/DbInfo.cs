@@ -18,7 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 
@@ -36,16 +36,16 @@ namespace Nitrocid.Extras.SqlShell.Sql.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             var connection = SqlShellCommon.sqliteConnection;
-            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Database path:") + " ", false, KernelColorType.ListEntry);
-            TextWriterColor.WriteKernelColor(connection.DataSource, true, KernelColorType.ListValue);
-            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Server version:") + " ", false, KernelColorType.ListEntry);
-            TextWriterColor.WriteKernelColor(connection.ServerVersion, true, KernelColorType.ListValue);
-            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Connection state:") + " ", false, KernelColorType.ListEntry);
-            TextWriterColor.WriteKernelColor(connection.State.ToString(), true, KernelColorType.ListValue);
-            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Connection string:") + " ", false, KernelColorType.ListEntry);
-            TextWriterColor.WriteKernelColor(connection.ConnectionString, true, KernelColorType.ListValue);
-            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Database name:") + " ", false, KernelColorType.ListEntry);
-            TextWriterColor.WriteKernelColor(connection.Database, true, KernelColorType.ListValue);
+            TextWriters.Write(Translate.DoTranslation("Database path:") + " ", false, KernelColorType.ListEntry);
+            TextWriters.Write(connection.DataSource, true, KernelColorType.ListValue);
+            TextWriters.Write(Translate.DoTranslation("Server version:") + " ", false, KernelColorType.ListEntry);
+            TextWriters.Write(connection.ServerVersion, true, KernelColorType.ListValue);
+            TextWriters.Write(Translate.DoTranslation("Connection state:") + " ", false, KernelColorType.ListEntry);
+            TextWriters.Write(connection.State.ToString(), true, KernelColorType.ListValue);
+            TextWriters.Write(Translate.DoTranslation("Connection string:") + " ", false, KernelColorType.ListEntry);
+            TextWriters.Write(connection.ConnectionString, true, KernelColorType.ListValue);
+            TextWriters.Write(Translate.DoTranslation("Database name:") + " ", false, KernelColorType.ListEntry);
+            TextWriters.Write(connection.Database, true, KernelColorType.ListValue);
             return 0;
         }
     }

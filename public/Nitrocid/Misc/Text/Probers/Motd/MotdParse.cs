@@ -20,7 +20,7 @@
 using System;
 using System.Collections.Generic;
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Files;
 using KS.Files.Operations;
 using KS.Files.Operations.Querying;
@@ -144,7 +144,7 @@ namespace KS.Misc.Text.Probers.Motd
                 foreach (var motdDynamic in motdDynamics)
                 {
                     string result = motdDynamic();
-                    TextWriterColor.WriteKernelColor(result, KernelColorType.Banner);
+                    TextWriters.Write(result, KernelColorType.Banner);
                 }
             }
             catch (Exception ex)

@@ -18,7 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Files.Paths;
 using KS.Kernel.Exceptions;
 using KS.Kernel.Journaling;
@@ -43,7 +43,7 @@ namespace KS.Shell.Shells.Admin.Commands
                 // Check to see if invalid number is provided
                 if (!int.TryParse(parameters.ArgumentsList[0], out int sessionNum))
                 {
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Session number is invalid."), KernelColorType.Error);
+                    TextWriters.Write(Translate.DoTranslation("Session number is invalid."), KernelColorType.Error);
                     return 10000 + (int)KernelExceptionType.Journaling;
                 }
                 var entries = JournalManager.GetJournalEntries(sessionNum);

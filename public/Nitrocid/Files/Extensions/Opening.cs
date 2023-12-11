@@ -18,7 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Files.Operations.Querying;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
@@ -68,7 +68,7 @@ namespace KS.Files.Extensions
             {
                 if (!hasJsonShell)
                 {
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("It looks like that you don't have the JSON shell addon installed. In order to get extra features that it offers, install the addons pack."), KernelColorType.Warning);
+                    TextWriters.Write(Translate.DoTranslation("It looks like that you don't have the JSON shell addon installed. In order to get extra features that it offers, install the addons pack."), KernelColorType.Warning);
                     ShellManager.StartShell(ShellType.TextShell, path);
                 }
                 else
@@ -78,7 +78,7 @@ namespace KS.Files.Extensions
             {
                 if (!hasSqlShell)
                 {
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("It looks like that you don't have the SQL shell addon installed. In order to get extra features that it offers, install the addons pack."), KernelColorType.Warning);
+                    TextWriters.Write(Translate.DoTranslation("It looks like that you don't have the SQL shell addon installed. In order to get extra features that it offers, install the addons pack."), KernelColorType.Warning);
                     ShellManager.StartShell(ShellType.HexShell, path);
                 }
                 else
@@ -98,7 +98,7 @@ namespace KS.Files.Extensions
             {
                 if (!hasJsonShell)
                 {
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("It looks like that you don't have the JSON shell addon installed. In order to get extra features that it offers, install the addons pack."), KernelColorType.Warning);
+                    TextWriters.Write(Translate.DoTranslation("It looks like that you don't have the JSON shell addon installed. In order to get extra features that it offers, install the addons pack."), KernelColorType.Warning);
                     ShellManager.StartShell(ShellType.TextShell, path);
                 }
                 else

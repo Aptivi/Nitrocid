@@ -22,7 +22,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Threading;
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Files;
 using KS.Files.Folders;
 using KS.Files.Operations;
@@ -140,8 +140,8 @@ namespace Nitrocid.Extras.Calendar.Calendar.Reminders
         {
             foreach (ReminderInfo Reminder in Reminders)
             {
-                TextWriterColor.WriteKernelColor("- {0}: ", false, KernelColorType.ListEntry, Reminder.ReminderDate);
-                TextWriterColor.WriteKernelColor(Reminder.ReminderTitle, true, KernelColorType.ListValue);
+                TextWriters.Write("- {0}: ", false, KernelColorType.ListEntry, Reminder.ReminderDate);
+                TextWriters.Write(Reminder.ReminderTitle, true, KernelColorType.ListValue);
             }
         }
 

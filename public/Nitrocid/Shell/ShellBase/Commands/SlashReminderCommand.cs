@@ -18,7 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Languages;
 
 namespace KS.Shell.ShellBase.Commands
@@ -28,7 +28,7 @@ namespace KS.Shell.ShellBase.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            TextWriterColor.WriteKernelColor(
+            TextWriters.Write(
                 "* " + Translate.DoTranslation("This shell uses the slash commands to execute the commands. Please append the slash symbol '/' to the beginning of the command to get started. For example:") + $" /{parameters.CommandText} {parameters.ArgumentsText}", true, KernelColorType.Tip);
             return 0;
         }

@@ -19,7 +19,7 @@
 
 using Figletize;
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.FancyWriters;
+using KS.ConsoleBase.Writers;
 using KS.Languages;
 
 namespace KS.Kernel.Debugging.Testing.Facades
@@ -32,7 +32,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
         public override void Run(params string[] args)
         {
             string rendered = args.Length > 0 ? args[0] : "Hi, {0}!";
-            CenteredFigletTextColor.WriteCenteredFigletKernelColor(FigletizeFonts.TryGetByName("speed"), rendered, KernelColorType.Success, "Nitrocid KS");
+            TextFancyWriters.WriteCenteredFiglet(FigletizeFonts.TryGetByName("speed"), rendered, KernelColorType.Success, "Nitrocid KS");
         }
     }
 }

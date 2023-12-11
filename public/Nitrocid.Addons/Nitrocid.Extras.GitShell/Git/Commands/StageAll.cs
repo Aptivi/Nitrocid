@@ -18,12 +18,12 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 using LibGit2Sharp;
 using GitCommand = LibGit2Sharp.Commands;
 using System;
+using KS.ConsoleBase.Writers;
 
 namespace Nitrocid.Extras.GitShell.Git.Commands
 {
@@ -43,7 +43,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
             // Check to see if the repo has been modified
             if (!status.IsDirty)
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("No modifications are done to stage."), true, KernelColorType.Success);
+                TextWriters.Write(Translate.DoTranslation("No modifications are done to stage."), true, KernelColorType.Success);
                 return 0;
             }
 
@@ -54,11 +54,11 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
                 try
                 {
                     GitCommand.Stage(GitShellCommon.Repository, item.FilePath);
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Staged file {0} successfully!"), true, KernelColorType.Success, item.FilePath);
+                    TextWriters.Write(Translate.DoTranslation("Staged file {0} successfully!"), true, KernelColorType.Success, item.FilePath);
                 }
                 catch (Exception ex)
                 {
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Failed to stage file {0}.") + "{1}", true, KernelColorType.Error, item.FilePath, ex.Message);
+                    TextWriters.Write(Translate.DoTranslation("Failed to stage file {0}.") + "{1}", true, KernelColorType.Error, item.FilePath, ex.Message);
                 }
             }
             return 0;

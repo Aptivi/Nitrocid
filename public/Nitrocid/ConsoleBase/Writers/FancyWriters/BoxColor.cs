@@ -63,29 +63,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
         public static void WriteBox(int Left, int Top, int InteriorWidth, int InteriorHeight) =>
-            WriteBox(Left, Top, InteriorWidth, InteriorHeight, KernelColorType.Background);
-
-        /// <summary>
-        /// Writes the box plainly
-        /// </summary>
-        /// <param name="Left">Where to place the box horizontally? Please note that this value comes from the upper left corner, which is an exterior position.</param>
-        /// <param name="Top">Where to place the box vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
-        /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
-        /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
-        /// <param name="BoxColor">Box color from Nitrocid KS's <see cref="KernelColorType"/></param>
-        public static void WriteBox(int Left, int Top, int InteriorWidth, int InteriorHeight, KernelColorType BoxColor)
-        {
-            try
-            {
-                // Fill the box with spaces inside it
-                TextWriterWhereColor.WriteWhereColorBack(RenderBox(Left, Top, InteriorWidth, InteriorHeight), Left, Top, false, KernelColorTools.GetColor(KernelColorType.NeutralText), KernelColorTools.GetColor(BoxColor));
-            }
-            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
-            {
-                DebugWriter.WriteDebugStackTrace(ex);
-                DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
-            }
-        }
+            WriteBox(Left, Top, InteriorWidth, InteriorHeight, KernelColorTools.GetColor(KernelColorType.Background));
 
         /// <summary>
         /// Writes the box plainly

@@ -21,7 +21,6 @@ using System.Threading;
 using KS.ConsoleBase;
 using KS.Languages;
 using KS.Kernel.Power;
-using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Starting.Environment;
 using KS.ConsoleBase.Colors;
 using System;
@@ -35,6 +34,7 @@ using System.Diagnostics;
 using System.Reflection;
 using KS.ConsoleBase.Inputs.Styles.Infobox;
 using Textify.Versioning;
+using KS.ConsoleBase.Writers;
 
 namespace KS.Kernel
 {
@@ -86,7 +86,7 @@ namespace KS.Kernel
                 if (ArgumentParse.IsArgumentPassed(Args, "help"))
                 {
                     // Kernel arguments
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Available kernel arguments:"), true, KernelColorType.ListTitle);
+                    TextWriters.Write(Translate.DoTranslation("Available kernel arguments:"), true, KernelColorType.ListTitle);
                     ArgumentHelpPrint.ShowArgsHelp();
                     PowerManager.hardShutdown = true;
                     return;

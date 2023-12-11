@@ -19,7 +19,7 @@
 
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Kernel;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
@@ -39,7 +39,7 @@ namespace KS.Shell.Shells.Debug.Commands
         {
             if (KernelPlatform.IsOnWindows())
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("This command is not supported on Windows."), KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("This command is not supported on Windows."), KernelColorType.Error);
                 return 33;
             }
             ConsoleExtensions.PreviewMainBuffer();

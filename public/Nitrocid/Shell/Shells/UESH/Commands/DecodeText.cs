@@ -18,7 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Drivers;
 using KS.Drivers.Encoding;
 using KS.Shell.ShellBase.Commands;
@@ -53,7 +53,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 byte[] iv = driver.ComposeBytesFromString(ivValue);
                 decoded = driver.GetDecodedString(composed, key, iv);
             }
-            TextWriterColor.WriteKernelColor(decoded, true, KernelColorType.Success);
+            TextWriters.Write(decoded, true, KernelColorType.Success);
             return 0;
         }
     }

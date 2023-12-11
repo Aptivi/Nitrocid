@@ -20,6 +20,7 @@
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
+using KS.ConsoleBase.Writers;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Drivers.Encryption;
 using KS.Kernel;
@@ -77,7 +78,7 @@ namespace KS.Users.Login.Handlers
             if (ShowMOTDOnceFlag && ShowMOTD)
             {
                 // This is not going to happen when the modern logon is enabled.
-                TextWriterColor.WriteKernelColor(PlaceParse.ProbePlaces(MotdParse.MotdMessage), true, KernelColorType.Banner);
+                TextWriters.Write(PlaceParse.ProbePlaces(MotdParse.MotdMessage), true, KernelColorType.Banner);
                 MotdParse.ProcessDynamicMotd();
                 ShowMOTDOnceFlag = false;
             }
@@ -107,9 +108,9 @@ namespace KS.Users.Login.Handlers
                     // Wait for input
                     DebugWriter.WriteDebug(DebugLevel.I, "Password not empty");
                     if (!string.IsNullOrWhiteSpace(Login.PasswordPrompt))
-                        TextWriterColor.WriteKernelColor(PlaceParse.ProbePlaces(Login.PasswordPrompt), false, KernelColorType.Input);
+                        TextWriters.Write(PlaceParse.ProbePlaces(Login.PasswordPrompt), false, KernelColorType.Input);
                     else
-                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("{0}'s password: "), false, KernelColorType.Input, user);
+                        TextWriters.Write(Translate.DoTranslation("{0}'s password: "), false, KernelColorType.Input, user);
 
                     // Get input
                     string answerpass = Input.ReadLineNoInputUnsafe();
@@ -118,7 +119,7 @@ namespace KS.Users.Login.Handlers
                         return true;
                     else
                     {
-                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("Wrong password."), true, KernelColorType.Error);
+                        TextWriters.Write(Translate.DoTranslation("Wrong password."), true, KernelColorType.Error);
                         if (!KernelEntry.Maintenance)
                         {
                             if (!ScreensaverManager.LockMode)
@@ -144,9 +145,9 @@ namespace KS.Users.Login.Handlers
         {
             // Prompt user to login
             if (!string.IsNullOrWhiteSpace(Login.UsernamePrompt))
-                TextWriterColor.WriteKernelColor(PlaceParse.ProbePlaces(Login.UsernamePrompt), false, KernelColorType.Input);
+                TextWriters.Write(PlaceParse.ProbePlaces(Login.UsernamePrompt), false, KernelColorType.Input);
             else
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Username: "), false, KernelColorType.Input);
+                TextWriters.Write(Translate.DoTranslation("Username: "), false, KernelColorType.Input);
             return Input.ReadLine();
         }
     }

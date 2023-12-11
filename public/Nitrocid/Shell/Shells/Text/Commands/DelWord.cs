@@ -18,7 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Files.Editors.TextEdit;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
@@ -48,18 +48,18 @@ namespace KS.Shell.Shells.Text.Commands
                     if (Convert.ToInt32(parameters.ArgumentsList[1]) <= TextEditShellCommon.FileLines.Count)
                     {
                         TextEditTools.DeleteWord(parameters.ArgumentsList[0], Convert.ToInt32(parameters.ArgumentsList[1]));
-                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("Word deleted."), true, KernelColorType.Success);
+                        TextWriters.Write(Translate.DoTranslation("Word deleted."), true, KernelColorType.Success);
                         return 0;
                     }
                     else
                     {
-                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("The specified line number may not be larger than the last file line number."), true, KernelColorType.Error);
+                        TextWriters.Write(Translate.DoTranslation("The specified line number may not be larger than the last file line number."), true, KernelColorType.Error);
                         return 10000 + (int)KernelExceptionType.TextEditor;
                     }
                 }
                 else
                 {
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Specified line number {0} is not a valid number."), true, KernelColorType.Error, parameters.ArgumentsList[1]);
+                    TextWriters.Write(Translate.DoTranslation("Specified line number {0} is not a valid number."), true, KernelColorType.Error, parameters.ArgumentsList[1]);
                     DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", parameters.ArgumentsList[1]);
                     return 10000 + (int)KernelExceptionType.TextEditor;
                 }
@@ -76,19 +76,19 @@ namespace KS.Shell.Shells.Text.Commands
                         for (int LineNumber = LineNumberStart; LineNumber <= LineNumberEnd; LineNumber++)
                         {
                             TextEditTools.DeleteWord(parameters.ArgumentsList[0], LineNumber);
-                            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Word deleted in line {0}."), true, KernelColorType.Success, LineNumber);
+                            TextWriters.Write(Translate.DoTranslation("Word deleted in line {0}."), true, KernelColorType.Success, LineNumber);
                         }
                         return 0;
                     }
                     else
                     {
-                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("The specified line number may not be larger than the last file line number."), true, KernelColorType.Error);
+                        TextWriters.Write(Translate.DoTranslation("The specified line number may not be larger than the last file line number."), true, KernelColorType.Error);
                         return 10000 + (int)KernelExceptionType.TextEditor;
                     }
                 }
                 else
                 {
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Specified line number {0} is not a valid number."), true, KernelColorType.Error, parameters.ArgumentsList[1]);
+                    TextWriters.Write(Translate.DoTranslation("Specified line number {0} is not a valid number."), true, KernelColorType.Error, parameters.ArgumentsList[1]);
                     DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", parameters.ArgumentsList[1]);
                     return 10000 + (int)KernelExceptionType.TextEditor;
                 }

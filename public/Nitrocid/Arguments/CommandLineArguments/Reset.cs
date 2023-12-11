@@ -27,6 +27,7 @@ using KS.Files.Operations.Querying;
 using KS.Kernel.Power;
 using KS.Files.Paths;
 using KS.ConsoleBase.Inputs.Styles.Choice;
+using KS.ConsoleBase.Writers;
 
 namespace KS.Arguments.CommandLineArguments
 {
@@ -74,7 +75,7 @@ namespace KS.Arguments.CommandLineArguments
                 }
                 catch (Exception ex)
                 {
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Can't wipe file") + $" {PathName}: {ex.Message}", true, KernelColorType.Error);
+                    TextWriters.Write(Translate.DoTranslation("Can't wipe file") + $" {PathName}: {ex.Message}", true, KernelColorType.Error);
                 }
             }
 
@@ -89,7 +90,7 @@ namespace KS.Arguments.CommandLineArguments
                 }
                 catch (Exception ex)
                 {
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Can't wipe dump file") + $" {dump}: {ex.Message}", true, KernelColorType.Error);
+                    TextWriters.Write(Translate.DoTranslation("Can't wipe dump file") + $" {dump}: {ex.Message}", true, KernelColorType.Error);
                 }
             }
 
@@ -97,7 +98,7 @@ namespace KS.Arguments.CommandLineArguments
             string[] files = Listing.GetFilesystemEntries(PathsManagement.AppDataPath);
             if (files.Length > 0)
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("The following files are not wiped:"), true, KernelColorType.Warning);
+                TextWriters.Write(Translate.DoTranslation("The following files are not wiped:"), true, KernelColorType.Warning);
                 ListWriterColor.WriteList(files);
                 string answer = ChoiceStyle.PromptChoice(Translate.DoTranslation("Are you sure to wipe these files?"), "y/n");
                 if (answer == "y")
@@ -110,7 +111,7 @@ namespace KS.Arguments.CommandLineArguments
                         }
                         catch (Exception ex)
                         {
-                            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Can't wipe miscellaneous file") + $" {file}: {ex.Message}", true, KernelColorType.Error);
+                            TextWriters.Write(Translate.DoTranslation("Can't wipe miscellaneous file") + $" {file}: {ex.Message}", true, KernelColorType.Error);
                         }
                     }
                 }

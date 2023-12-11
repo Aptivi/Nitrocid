@@ -18,7 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Languages;
 using KS.Misc.Progress;
 using System.Threading;
@@ -32,10 +32,10 @@ namespace KS.Kernel.Debugging.Testing.Facades
         {
             int progress = 0;
             var handler = new ProgressHandler((num, text) =>
-                TextWriterColor.WriteKernelColor($"{num}% {text}", KernelColorType.Progress)
+                TextWriters.Write($"{num}% {text}", KernelColorType.Progress)
             , "General");
             var handler2 = new ProgressHandler((num, text) =>
-                TextWriterColor.WriteKernelColor($"{num}% {text}", KernelColorType.NeutralText)
+                TextWriters.Write($"{num}% {text}", KernelColorType.NeutralText)
             , "Nongeneral");
             ProgressManager.RegisterProgressHandler(handler);
             ProgressManager.RegisterProgressHandler(handler2);

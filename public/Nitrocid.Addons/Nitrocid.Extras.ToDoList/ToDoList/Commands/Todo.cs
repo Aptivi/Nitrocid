@@ -20,6 +20,7 @@
 using System;
 using System.Linq;
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Debugging;
 using KS.Languages;
@@ -56,13 +57,13 @@ namespace Nitrocid.Extras.ToDoList.ToDoList.Commands
                             catch (Exception ex)
                             {
                                 DebugWriter.WriteDebugStackTrace(ex);
-                                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Failed to add or remove a task.") + " {0}", true, KernelColorType.Error, ex.Message);
+                                TextWriters.Write(Translate.DoTranslation("Failed to add or remove a task.") + " {0}", true, KernelColorType.Error, ex.Message);
                                 return ex.GetHashCode();
                             }
                         }
                         else
                         {
-                            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Please provide a name for your task."), true, KernelColorType.Error);
+                            TextWriters.Write(Translate.DoTranslation("Please provide a name for your task."), true, KernelColorType.Error);
                             return 5;
                         }
 
@@ -80,13 +81,13 @@ namespace Nitrocid.Extras.ToDoList.ToDoList.Commands
                             catch (Exception ex)
                             {
                                 DebugWriter.WriteDebugStackTrace(ex);
-                                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Failed to add or remove a task.") + " {0}", true, KernelColorType.Error, ex.Message);
+                                TextWriters.Write(Translate.DoTranslation("Failed to add or remove a task.") + " {0}", true, KernelColorType.Error, ex.Message);
                                 return ex.GetHashCode();
                             }
                         }
                         else
                         {
-                            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Please provide a name for your task."), true, KernelColorType.Error);
+                            TextWriters.Write(Translate.DoTranslation("Please provide a name for your task."), true, KernelColorType.Error);
                             return 5;
                         }
 
@@ -104,13 +105,13 @@ namespace Nitrocid.Extras.ToDoList.ToDoList.Commands
                             catch (Exception ex)
                             {
                                 DebugWriter.WriteDebugStackTrace(ex);
-                                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Failed to mark a task.") + " {0}", true, KernelColorType.Error, ex.Message);
+                                TextWriters.Write(Translate.DoTranslation("Failed to mark a task.") + " {0}", true, KernelColorType.Error, ex.Message);
                                 return ex.GetHashCode();
                             }
                         }
                         else
                         {
-                            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Please provide a name for your task."), true, KernelColorType.Error);
+                            TextWriters.Write(Translate.DoTranslation("Please provide a name for your task."), true, KernelColorType.Error);
                             return 5;
                         }
 
@@ -128,13 +129,13 @@ namespace Nitrocid.Extras.ToDoList.ToDoList.Commands
                             catch (Exception ex)
                             {
                                 DebugWriter.WriteDebugStackTrace(ex);
-                                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Failed to mark a task.") + " {0}", true, KernelColorType.Error, ex.Message);
+                                TextWriters.Write(Translate.DoTranslation("Failed to mark a task.") + " {0}", true, KernelColorType.Error, ex.Message);
                                 return ex.GetHashCode();
                             }
                         }
                         else
                         {
-                            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Please provide a name for your task."), true, KernelColorType.Error);
+                            TextWriters.Write(Translate.DoTranslation("Please provide a name for your task."), true, KernelColorType.Error);
                             return 5;
                         }
 
@@ -164,7 +165,7 @@ namespace Nitrocid.Extras.ToDoList.ToDoList.Commands
                 default:
                     {
                         // Invalid action.
-                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("Invalid action."), true, KernelColorType.Error);
+                        TextWriters.Write(Translate.DoTranslation("Invalid action."), true, KernelColorType.Error);
                         return 5;
                     }
             }

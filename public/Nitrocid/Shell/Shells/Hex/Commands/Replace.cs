@@ -19,7 +19,7 @@
 
 using System;
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Files.Editors.HexEdit;
 using KS.Kernel.Exceptions;
 using KS.Languages;
@@ -45,7 +45,7 @@ namespace KS.Shell.Shells.Hex.Commands
                 byte ByteFrom = Convert.ToByte(parameters.ArgumentsList[0], 16);
                 byte ByteWith = Convert.ToByte(parameters.ArgumentsList[1], 16);
                 HexEditTools.Replace(ByteFrom, ByteWith);
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Byte replaced."), true, KernelColorType.Success);
+                TextWriters.Write(Translate.DoTranslation("Byte replaced."), true, KernelColorType.Success);
                 return 0;
             }
             else if (parameters.ArgumentsList.Length == 3)
@@ -57,12 +57,12 @@ namespace KS.Shell.Shells.Hex.Commands
                         byte ByteFrom = Convert.ToByte(parameters.ArgumentsList[0], 16);
                         byte ByteWith = Convert.ToByte(parameters.ArgumentsList[1], 16);
                         HexEditTools.Replace(ByteFrom, ByteWith, Convert.ToInt64(parameters.ArgumentsList[2]));
-                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("Byte replaced."), true, KernelColorType.Success);
+                        TextWriters.Write(Translate.DoTranslation("Byte replaced."), true, KernelColorType.Success);
                         return 0;
                     }
                     else
                     {
-                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("The specified byte number may not be larger than the file size."), true, KernelColorType.Error);
+                        TextWriters.Write(Translate.DoTranslation("The specified byte number may not be larger than the file size."), true, KernelColorType.Error);
                         return 10000 + (int)KernelExceptionType.HexEditor;
                     }
                 }
@@ -79,12 +79,12 @@ namespace KS.Shell.Shells.Hex.Commands
                         long ByteNumberEnd = Convert.ToInt64(parameters.ArgumentsList[3]);
                         ByteNumberStart.SwapIfSourceLarger(ref ByteNumberEnd);
                         HexEditTools.Replace(ByteFrom, ByteWith, ByteNumberStart, ByteNumberEnd);
-                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("Byte replaced."), true, KernelColorType.Success);
+                        TextWriters.Write(Translate.DoTranslation("Byte replaced."), true, KernelColorType.Success);
                         return 0;
                     }
                     else
                     {
-                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("The specified byte number may not be larger than the file size."), true, KernelColorType.Error);
+                        TextWriters.Write(Translate.DoTranslation("The specified byte number may not be larger than the file size."), true, KernelColorType.Error);
                         return 10000 + (int)KernelExceptionType.HexEditor;
                     }
                 }

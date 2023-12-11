@@ -19,7 +19,7 @@
 
 using System;
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Files.Editors.HexEdit;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
@@ -46,18 +46,18 @@ namespace KS.Shell.Shells.Hex.Commands
                 if (Convert.ToInt32(parameters.ArgumentsList[1]) <= HexEditShellCommon.FileBytes.LongLength)
                 {
                     HexEditTools.AddNewByte(ByteContent, Convert.ToInt64(parameters.ArgumentsList[1]));
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Byte deleted."), true, KernelColorType.Success);
+                    TextWriters.Write(Translate.DoTranslation("Byte deleted."), true, KernelColorType.Success);
                     return 0;
                 }
                 else
                 {
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("The specified byte number may not be larger than the file size."), true, KernelColorType.Error);
+                    TextWriters.Write(Translate.DoTranslation("The specified byte number may not be larger than the file size."), true, KernelColorType.Error);
                     return 10000 + (int)KernelExceptionType.HexEditor;
                 }
             }
             else
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("The byte number is not numeric."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("The byte number is not numeric."), true, KernelColorType.Error);
                 DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", parameters.ArgumentsList[1]);
                 return 10000 + (int)KernelExceptionType.HexEditor;
             }

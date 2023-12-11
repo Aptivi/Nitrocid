@@ -23,7 +23,6 @@ using KS.ConsoleBase;
 using KS.Languages;
 using KS.Kernel;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.ConsoleBase.Writers.FancyWriters;
 using Terminaux.Colors;
 using Terminaux.Sequences.Tools;
 using KS.ConsoleBase.Colors;
@@ -32,6 +31,7 @@ using System;
 using KS.Misc.Text;
 using System.Text;
 using KS.Kernel.Power;
+using KS.ConsoleBase.Writers.FancyWriters;
 
 namespace KS.Misc.Splash.Splashes
 {

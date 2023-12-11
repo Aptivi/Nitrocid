@@ -20,6 +20,7 @@
 using System;
 using System.IO;
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files.Paths;
 using KS.Kernel;
@@ -52,7 +53,7 @@ namespace KS.Shell.Shells.Admin.Commands
                 }
                 catch (Exception ex)
                 {
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Debug log removal failed: {0}"), true, KernelColorType.Error, ex.Message);
+                    TextWriters.Write(Translate.DoTranslation("Debug log removal failed: {0}"), true, KernelColorType.Error, ex.Message);
                     DebugWriter.WriteDebugStackTrace(ex);
                     return ex.GetHashCode();
                 }

@@ -18,7 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Languages;
 
 namespace KS.Kernel.Debugging.Testing.Facades
@@ -31,7 +31,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
         public override void Run(params string[] args)
         {
             string rendered = args.Length > 0 ? args[0] : "Hi, {0}!";
-            TextWriterColor.WriteKernelColor(rendered, true, KernelColorType.Success, "Nitrocid KS");
+            TextWriters.Write(rendered, true, KernelColorType.Success, "Nitrocid KS");
         }
     }
 }

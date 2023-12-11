@@ -20,7 +20,7 @@
 using System;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
@@ -46,20 +46,20 @@ namespace KS.Shell.Shells.Text.Commands
                 if (lineNum <= TextEditShellCommon.FileLines.Count)
                 {
                     string OriginalLine = TextEditShellCommon.FileLines[lineNum - 1];
-                    TextWriterColor.WriteKernelColor(">> ", false, KernelColorType.Input);
+                    TextWriters.Write(">> ", false, KernelColorType.Input);
                     string EditedLine = Input.ReadLine("", OriginalLine);
                     TextEditShellCommon.FileLines[lineNum - 1] = EditedLine;
                     return 0;
                 }
                 else
                 {
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("The specified line number may not be larger than the last file line number."), true, KernelColorType.Error);
+                    TextWriters.Write(Translate.DoTranslation("The specified line number may not be larger than the last file line number."), true, KernelColorType.Error);
                     return 10000 + (int)KernelExceptionType.TextEditor;
                 }
             }
             else
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Specified line number {0} is not a valid number."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("Specified line number {0} is not a valid number."), true, KernelColorType.Error);
                 DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", parameters.ArgumentsList[0]);
                 return 10000 + (int)KernelExceptionType.TextEditor;
             }

@@ -18,7 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers;
 using KS.Languages;
 using KS.Misc.Text;
 using KS.Shell.ShellBase.Commands;
@@ -36,7 +36,7 @@ namespace Nitrocid.Extras.ChatGpt.Gpt.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            TextWriterColor.WriteKernelColor(
+            TextWriters.Write(
                 Translate.DoTranslation("ChatGPT is an Artificial Intelligence (AI) tool that allows you to initiate an almost-humanly conversation with the AI bot.") + " " +
                 Translate.DoTranslation("It helps you solve problems and generates content for you according to the prompt given, such as poetry, case studies, letters, conversations, and even ideas and fun jokes.") + CharManager.NewLine + CharManager.NewLine +
                 Translate.DoTranslation("However, neither ChatGPT nor OpenAI can generate content that violate the terms and conditions, which can be read in the below link.") + " " +

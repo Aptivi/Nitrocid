@@ -18,6 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
@@ -39,8 +40,8 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
             TextWriterColor.Write(Translate.DoTranslation("Commits for branch") + $" {GitShellCommon.BranchName}:");
             foreach (var commit in commits)
             {
-                TextWriterColor.WriteKernelColor($"- {commit.Sha[..7]}, {commit.Committer.Name} <{commit.Committer.Email}>", true, KernelColorType.ListEntry);
-                TextWriterColor.WriteKernelColor($"  - {commit.MessageShort}", true, KernelColorType.ListValue);
+                TextWriters.Write($"- {commit.Sha[..7]}, {commit.Committer.Name} <{commit.Committer.Email}>", true, KernelColorType.ListEntry);
+                TextWriters.Write($"  - {commit.MessageShort}", true, KernelColorType.ListValue);
             }
             return 0;
         }

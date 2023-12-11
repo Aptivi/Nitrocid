@@ -18,8 +18,7 @@
 //
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.ConsoleBase.Writers.FancyWriters;
+using KS.ConsoleBase.Writers;
 using KS.Files.Extensions;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
@@ -42,11 +41,11 @@ namespace KS.Shell.Shells.UESH.Commands
             for (int i = 0; i < handlers.Length; i++)
             {
                 ExtensionHandler handler = handlers[i];
-                SeparatorWriterColor.WriteSeparatorKernelColor($"{i + 1}/{handlers.Length}", KernelColorType.ListTitle);
-                TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Extension") + ": ", false, KernelColorType.ListEntry);
-                TextWriterColor.WriteKernelColor(handler.Extension, KernelColorType.ListValue);
-                TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Extension handler") + ": ", false, KernelColorType.ListEntry);
-                TextWriterColor.WriteKernelColor(handler.Implementer, KernelColorType.ListValue);
+                TextFancyWriters.WriteSeparator($"{i + 1}/{handlers.Length}", KernelColorType.ListTitle);
+                TextWriters.Write("- " + Translate.DoTranslation("Extension") + ": ", false, KernelColorType.ListEntry);
+                TextWriters.Write(handler.Extension, KernelColorType.ListValue);
+                TextWriters.Write("- " + Translate.DoTranslation("Extension handler") + ": ", false, KernelColorType.ListEntry);
+                TextWriters.Write(handler.Implementer, KernelColorType.ListValue);
             }
             variableValue = $"[{string.Join(", ", handlers.Select((h) => h.Implementer))}]";
             return 0;

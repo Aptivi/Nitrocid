@@ -21,7 +21,6 @@ using Figletize;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs.Styles.InfoboxTitled;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Drivers.RNG;
 using KS.Kernel;
 using KS.Kernel.Configuration;
@@ -101,11 +100,11 @@ namespace KS.ConsoleBase.Writers.MiscWriters
                 // Finally, write the message
                 if (StartScroll)
                 {
-                    TextWriterSlowColor.WriteSlowlyKernelColor(MessageWrite, true, 10d, KernelColorType.Banner, KernelMain.VersionFullStr);
+                    TextWriters.WriteSlowly(MessageWrite, true, 10d, KernelColorType.Banner, KernelMain.VersionFullStr);
                 }
                 else
                 {
-                    TextWriterColor.WriteKernelColor(MessageWrite, true, KernelColorType.Banner, KernelMain.VersionFullStr);
+                    TextWriters.Write(MessageWrite, true, KernelColorType.Banner, KernelMain.VersionFullStr);
                 }
 
                 string FigletRenderedBanner = FigletTools.RenderFiglet($"{KernelMain.VersionFullStr}", TextTools.DefaultFigletFontName);
@@ -119,8 +118,8 @@ namespace KS.ConsoleBase.Writers.MiscWriters
         /// </summary>
         public static void WriteLicense()
         {
-            SeparatorWriterColor.WriteSeparatorKernelColor(Translate.DoTranslation("License information"), true, KernelColorType.Stage);
-            TextWriterColor.WriteKernelColor(GetLicenseString(), true, KernelColorType.License);
+            TextFancyWriters.WriteSeparator(Translate.DoTranslation("License information"), true, KernelColorType.Stage);
+            TextWriters.Write(GetLicenseString(), true, KernelColorType.License);
         }
 
         /// <summary>
@@ -163,7 +162,7 @@ namespace KS.ConsoleBase.Writers.MiscWriters
                     , KernelColorType.DevelopmentWarning
                 );
             else
-                TextWriterColor.WriteKernelColor($"* {message}", true, KernelColorType.DevelopmentWarning);
+                TextWriters.Write($"* {message}", true, KernelColorType.DevelopmentWarning);
 #endif
         }
 
@@ -182,7 +181,7 @@ namespace KS.ConsoleBase.Writers.MiscWriters
         internal static void ShowRandomTip()
         {
             // Get a random tip and print it
-            TextWriterColor.WriteKernelColor(
+            TextWriters.Write(
                 "* " + Translate.DoTranslation("Pro tip: Did you know") + " " + GetRandomTip(), true, KernelColorType.Tip);
         }
 

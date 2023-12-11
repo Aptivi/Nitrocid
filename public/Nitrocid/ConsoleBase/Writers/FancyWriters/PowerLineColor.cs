@@ -58,15 +58,6 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// Writes the PowerLine text
         /// </summary>
         /// <param name="Segments">List of PowerLine segments</param>
-        /// <param name="EndingColor">A type of colors that will be changed at the end of the transition</param>
-        /// <param name="Line">Write new line after writing the segments</param>
-        public static void WritePowerLine(List<PowerLineSegment> Segments, KernelColorType EndingColor, bool Line = false) =>
-            WritePowerLine(Segments, KernelColorTools.GetColor(EndingColor), Line);
-
-        /// <summary>
-        /// Writes the PowerLine text
-        /// </summary>
-        /// <param name="Segments">List of PowerLine segments</param>
         /// <param name="EndingColor">A color that will be changed at the end of the transition</param>
         /// <param name="Line">Write new line after writing the segments</param>
         public static void WritePowerLine(List<PowerLineSegment> Segments, ConsoleColors EndingColor, bool Line = false) =>
