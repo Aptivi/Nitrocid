@@ -48,7 +48,7 @@
   <!-- Extras.Forecast addon Platform Information End -->
 
   <ItemGroup>
-    <PackageReference Include="ManagedWeatherMap" Version="1.2.1" />
+    <PackageReference Include="ManagedWeatherMap" Version="1.2.2" />
   </ItemGroup>
 
   <ItemGroup>
