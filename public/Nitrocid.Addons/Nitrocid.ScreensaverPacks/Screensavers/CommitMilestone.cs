@@ -248,15 +248,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            int ConsoleMiddleWidth = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d);
-            int ConsoleMiddleHeight = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d);
             var figFontUsed = FigletTools.GetFigletFont("Banner2");
             var figFontFallback = FigletTools.GetFigletFont("small");
             ConsoleWrapper.CursorVisible = false;
             ConsoleWrapper.Clear();
 
             // Set colors
-            var ColorStorage = new Color(255, 255, 255);
+            Color ColorStorage;
             if (CommitMilestoneSettings.CommitMilestoneTrueColor)
             {
                 int RedColorNum = RandomDriver.Random(CommitMilestoneSettings.CommitMilestoneMinimumRedColorLevel, CommitMilestoneSettings.CommitMilestoneMaximumRedColorLevel);
