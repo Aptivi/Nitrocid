@@ -89,7 +89,11 @@ namespace Nitrocid.Extras.Calendar
                             })
                         ],
                         [
-                            new SwitchInfo("calendar", /* Localizable */ "Calendar type to work on")
+                            new SwitchInfo("calendar", /* Localizable */ "Calendar type to work on"),
+                            new SwitchInfo("legacy", /* Localizable */ "Use the table-based calendar viewer", new SwitchOptions()
+                            {
+                                AcceptsValues = false
+                            }),
                         ]),
                         new CommandArgumentInfo(new[]
                         {

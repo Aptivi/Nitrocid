@@ -53,8 +53,8 @@ namespace Nitrocid.Extras.Calendar.Calendar.Commands
                 case "tui":
                     {
                         // User chose to show the calendar TUI
-                        TextWriterColor.WriteKernelColor("The calendar TUI is not ready yet. It will hopefully be ready as soon as possible.", KernelColorType.Warning);
                         var calendar = CalendarTypes.Gregorian;
+                        bool useLegacy = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-legacy");
                         if (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-calendar"))
                             calendar = Enum.Parse<CalendarTypes>(SwitchManager.GetSwitchValue(parameters.SwitchesList, "-calendar"));
                         if (ActionArguments.Length != 0)
@@ -69,7 +69,10 @@ namespace Nitrocid.Extras.Calendar.Calendar.Commands
                                 // Show the calendar using the provided year and month
                                 int yearInt = Convert.ToInt32(StringYear);
                                 int monthInt = Convert.ToInt32(StringMonth);
-                                CalendarPrint.PrintCalendar(yearInt, monthInt, calendar);
+                                if (useLegacy)
+                                    CalendarPrint.PrintCalendar(yearInt, monthInt, calendar);
+                                else
+                                    CalendarTui.OpenInteractive(yearInt, monthInt, DateTime.Today.Day, calendar);
                             }
                             catch (Exception ex)
                             {
@@ -80,7 +83,10 @@ namespace Nitrocid.Extras.Calendar.Calendar.Commands
                         }
                         else
                         {
-                            CalendarPrint.PrintCalendar(calendar);
+                            if (useLegacy)
+                                CalendarPrint.PrintCalendar(calendar);
+                            else
+                                CalendarTui.OpenInteractive(calendar);
                         }
 
                         return 0;
