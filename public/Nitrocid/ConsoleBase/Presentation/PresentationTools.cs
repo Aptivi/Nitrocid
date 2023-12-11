@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using KS.ConsoleBase.Buffered;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Writers.ConsoleWriters;
@@ -24,6 +25,8 @@ using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Languages;
 using KS.Misc.Text;
 using System;
+using System.Text;
+using Terminaux.Sequences.Builder.Types;
 
 namespace KS.ConsoleBase.Presentation
 {
@@ -83,6 +86,12 @@ namespace KS.ConsoleBase.Presentation
         /// <param name="required">Prevents exiting the presentation</param>
         public static void Present(Slideshow presentation, bool kiosk, bool required)
         {
+            // Make a screen instance for the presentation
+            var screen = new Screen();
+            var buffer = new ScreenPart();
+            ScreenTools.SetCurrent(screen);
+            screen.AddBufferedPart("Presentation view", buffer);
+
             // Loop for each page
             var pages = presentation.Pages;
             bool presentExit = false;
@@ -92,22 +101,44 @@ namespace KS.ConsoleBase.Presentation
                 if (presentExit)
                     break;
 
-                // Clear the console
-                ConsoleWrapper.Clear();
-                ConsoleWrapper.CursorVisible = false;
-
                 // Get the page
                 var page = pages[i];
 
-                // Make a border
-                BoxFrameTextColor.WriteBoxFrame($"{(!kiosk ? $"[{i + 1}/{pages.Count}] - " : "")}{page.Name} - {presentation.Name}", PresentationUpperBorderLeft, PresentationUpperBorderTop, PresentationLowerInnerBorderLeft, PresentationLowerInnerBorderTop, KernelColorType.Separator);
-                BoxColor.WriteBox(PresentationUpperBorderLeft + 1, PresentationUpperBorderTop, PresentationLowerInnerBorderLeft, PresentationLowerInnerBorderTop);
+                // Fill the buffer
+                buffer.AddDynamicText(() =>
+                {
+                    var builder = new StringBuilder();
 
-                // Write the bindings
-                CenteredTextColor.WriteCenteredKernelColor(PresentationInformationalTop, $"[ENTER] {Translate.DoTranslation("Advance")}{(!kiosk && !required ? $" - [ESC] {Translate.DoTranslation("Exit")}" : "")}".Truncate(PresentationLowerInnerBorderLeft + 1), KernelColorType.NeutralText);
+                    // Clear the console
+                    KernelColorTools.SetConsoleColor(KernelColorTools.GetColor(KernelColorType.Background), true);
+                    builder.Append(
+                        CsiSequences.GenerateCsiEraseInDisplay(2) +
+                        CsiSequences.GenerateCsiCursorPosition(1, 1)
+                    );
+                    ConsoleWrapper.CursorVisible = false;
 
-                // Clear the presentation screen
-                ClearPresentation();
+                    // Make a border
+                    builder.Append(
+                        BoxFrameTextColor.RenderBoxFrame($"{(!kiosk ? $"[{i + 1}/{pages.Count}] - " : "")}{page.Name} - {presentation.Name}", PresentationUpperBorderLeft, PresentationUpperBorderTop, PresentationLowerInnerBorderLeft, PresentationLowerInnerBorderTop, KernelColorTools.GetColor(KernelColorType.Separator), KernelColorTools.GetColor(KernelColorType.Background)) +
+                        BoxColor.RenderBox(PresentationUpperBorderLeft + 1, PresentationUpperBorderTop, PresentationLowerInnerBorderLeft, PresentationLowerInnerBorderTop)
+                    );
+
+                    // Write the bindings
+                    builder.Append(
+                        CenteredTextColor.RenderCentered(PresentationInformationalTop, $"[ENTER] {Translate.DoTranslation("Advance")}{(!kiosk && !required ? $" - [ESC] {Translate.DoTranslation("Exit")}" : "")}".Truncate(PresentationLowerInnerBorderLeft + 1), KernelColorTools.GetColor(KernelColorType.NeutralText), KernelColorTools.GetColor(KernelColorType.Background))
+                    );
+
+                    // Clear the presentation screen
+                    builder.Append(
+                        ClearPresentation()
+                    );
+
+                    // Generate the final string
+                    return builder.ToString();
+                });
+
+                // We need to dynamically render all the elements, so screen ends here.
+                ScreenTools.Render();
 
                 // Render all elements
                 var pageElements = page.Elements;
@@ -118,7 +149,7 @@ namespace KS.ConsoleBase.Presentation
                     if (element.IsPossibleOutOfBounds() && checkOutOfBounds)
                     {
                         Input.DetectKeypress();
-                        ClearPresentation();
+                        TextWriterColor.WritePlain(ClearPresentation(), false);
                     }
                     checkOutOfBounds = true;
 
@@ -160,6 +191,7 @@ namespace KS.ConsoleBase.Presentation
             }
 
             // Clean up after ourselves
+            ScreenTools.UnsetCurrent(screen);
             ConsoleWrapper.Clear();
             ConsoleWrapper.CursorVisible = true;
         }
@@ -185,14 +217,17 @@ namespace KS.ConsoleBase.Presentation
         /// <summary>
         /// Clears the presentation
         /// </summary>
-        public static void ClearPresentation()
+        public static string ClearPresentation()
         {
+            var builder = new StringBuilder();
+
             // Clear the presentation screen
             for (int y = PresentationUpperInnerBorderTop; y <= PresentationLowerInnerBorderTop + 1; y++)
-                TextWriterWhereColor.WriteWhere(new string(' ', PresentationLowerInnerBorderLeft), PresentationUpperInnerBorderLeft, y);
+                builder.Append(TextWriterWhereColor.RenderWherePlain(new string(' ', PresentationLowerInnerBorderLeft), PresentationUpperInnerBorderLeft, y));
 
             // Seek to the first position inside the border
-            ConsoleWrapper.SetCursorPosition(PresentationUpperInnerBorderLeft, PresentationUpperInnerBorderTop);
+            builder.Append(CsiSequences.GenerateCsiCursorPosition(PresentationUpperInnerBorderLeft + 1, PresentationUpperInnerBorderTop + 1));
+            return builder.ToString();
         }
     }
 }
