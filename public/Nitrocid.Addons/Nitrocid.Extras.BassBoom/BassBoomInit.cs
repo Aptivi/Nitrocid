@@ -154,7 +154,8 @@ namespace Nitrocid.Extras.BassBoom
             ScreensaverManager.AddonSavers.Remove("lyrics");
             ConfigTools.UnregisterBaseSetting(nameof(BassBoomSaversConfig));
             ConfigTools.UnregisterBaseSetting(nameof(BassBoomConfig));
-            ExtensionHandlerTools.extensionHandlers.RemoveRange(0, handlers.Length);
+            foreach (var handler in handlers)
+                ExtensionHandlerTools.extensionHandlers.Remove(handler);
         }
 
         void IAddon.FinalizeAddon()

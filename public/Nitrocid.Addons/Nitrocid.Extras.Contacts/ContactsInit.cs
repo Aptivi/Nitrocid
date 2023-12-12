@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using KS.Files.Extensions;
 using KS.Kernel.Debugging;
 using KS.Kernel.Extensions;
 using KS.Shell.ShellBase.Arguments;
@@ -33,6 +34,10 @@ namespace Nitrocid.Extras.Contacts
 {
     internal class ContactsInit : IAddon
     {
+        private readonly ExtensionHandler[] handlers = [
+            new(".vcf", "Contacts", ContactsHandler.Handle, ContactsHandler.InfoHandle),
+            new(".vcard", "Contacts", ContactsHandler.Handle, ContactsHandler.InfoHandle),
+        ];
         private readonly Dictionary<string, CommandInfo> addonCommands = new()
         {
             { "contacts",
@@ -57,8 +62,11 @@ namespace Nitrocid.Extras.Contacts
         void IAddon.FinalizeAddon()
         { }
 
-        void IAddon.StartAddon() =>
+        void IAddon.StartAddon()
+        {
             CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands.Values]);
+            ExtensionHandlerTools.extensionHandlers.AddRange(handlers);
+        }
 
         void IAddon.StopAddon()
         {
@@ -66,6 +74,8 @@ namespace Nitrocid.Extras.Contacts
             ContactsManager.RemoveContacts(false);
             DebugWriter.WriteDebug(DebugLevel.I, "Unloaded all contacts");
             CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Keys]);
+            foreach (var handler in handlers)
+                ExtensionHandlerTools.extensionHandlers.Remove(handler);
         }
     }
 }
