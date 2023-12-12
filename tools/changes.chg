@@ -1,7 +1,13 @@
 Nitrocid KS 0.1.0 Beta 3 changes
 ================================
 
-Description TBD...
+Released December 28th, 2023.
+
+Nitrocid KS 0.1.0 Beta 3 comes with the black magic that gives you a ton of
+amazing features and improvements that make it look like it's made from
+scratch. This version is a major breakthrough over the previous beta version
+of Nitrocid 0.1.0 because of a number of improvements that we had to make to
+enhance the user experience.
 
 Since Nitrocid KS 0.1.0 Beta 2 was released for testing purposes, here's a
 list of changes that will surprise you:
@@ -9,11 +15,141 @@ list of changes that will surprise you:
 Re-targeted .NET 8.0
 --------------------
 
-TBD...
+Celebrating the release of the fourth long-term support (LTS) release of the
+modern .NET framework, we've updated the application and its associated
+addons so that they use the .NET 8.0 framework instead of the older .NET 6.0
+release. This means that Nitrocid and its addons will be able to take
+advantage of the new features and improvements that .NET 8.0 brings to you.
+
+This version now targets .NET 8.0 instead of 6.0 to benefit from the speed
+improvements for the whole framework over the previous long term support
+version of .NET that was released on 2021.
+
+Simplified JSON manipulation
+----------------------------
+
+Before, there were several variants of Add and Remove commands with no way
+to edit an array, an object, or a property. Now, we've added three commands
+that help simplify your JSON manipulation.
+
+  * add: Adds an array, a property, or an empty object to a target array or
+    object. If the property name is specified, it adds a property with a
+    value of your selected type. You can also add raw JSON contents.
+
+  * rem: Removes an array, a property, or an empty object to a target array
+    or object. If the property name is specified, it removes a property with
+    a value of your selected type.
+
+  * set: Sets a value of a target to an array, a property, or an empty
+    object. You can also use raw JSON content.
+
+This means that you don't have to jump between various steps to form a final
+JSON file.
 
 Flexible console
 ----------------
 
-TBD...
+Resizable elements are now spread through the entire kernel and not just
+screensavers. This allows this kernel to be more flexible when it comes to
+console resizing. This is to make it scale more appropriately.
 
-(To be populated. TBD.)
+Alongside this, between the second beta and the third beta, we've made a
+truckload of console-related improvements that make the performance like the
+speed of light.
+
+We've also implemented the screen feature, which helped making the console
+more flexible than before, therefore allowing dynamic screen printing to the
+console across all platforms in a light speed.
+
+Lite and Full
+-------------
+
+Starting from this beta version of Nitrocid KS, there are two versions of the
+binary copy: lite and full. The lite version comes with very basic kernel
+features with no extras, and the full version adds extra features to the
+kernel using a mechanism called the kernel addons.
+
+The kernel addons add extra features to the base kernel that allow you to use
+many of the common tools that are not available in the base version, such as
+unit conversion, games, and playing music. This ensures that the development
+is more streamlined than before.
+
+Here are some of the addons that come with the full version of the kernel:
+
+1) Music Player
+
+Powered by BassBoom, you can play music right from the kernel without having
+to download the standalone BassBoom music player on your system. It works on
+all the platforms that have sound drivers installed, like Windows, macOS, and
+Linux. The full-featured music player is built for speed and accuracy.
+
+The music player addon allows you to play your local music files right from
+the kernel from classical to hip-hop to reggae to techno and trance. It
+doesn't support playing Internet music files and radio stations.
+
+2) Contacts
+
+Powered by VisualCard, you can manage your contacts imported right from your
+VCard files. This allows you to view your contact information, such as their
+phone numbers, their full name, and their addresses.
+
+Not only can you import VCard files (single and multiple contacts with
+differing VCard files), but you can also import your Android contacts right
+from your contacts2.db file if you have a rooted Android device with contacts
+imported. You can also import contacts using the MeCard string extracted from
+the QR code of your contact.
+
+3) ChatGPT
+
+Powered by Semantic Kernel in association with OpenAI and ChatGPT, you can use
+this AI chatbot to get assistance in almost all the queries, like getting
+instructions on how to cook your food, ask it questions, and much more.
+
+Please note that we're not affiliated with OpenAI, and we're not responsible
+if anything happens due to misconduct.
+
+Analyzer for your Mods
+----------------------
+
+Nitrocid KS 0.1.0 Beta 3 also provides you with more than 50+ code analyzers
+that detect common usage pitfalls in your kernel mods and correct your code to
+use appropriate functions that are better alternatives, such as replacing
+plain console writes with the usage of the text writer, which gives you more
+flexibility.
+
+It's up to you if you want to enable analyzers for your mods, but we provide
+you with two easy ways to analyze your mod code:
+
+  * The standalone analyzer is a console application that allows you to analyze
+    your mod code for such pitfalls. It requires .NET SDK to be installed in
+    order to be able to use it.
+
+  * The Visual Studio-based analyzer is an extension that analyzes all your
+    mods to check to see if your code is declining in quality according to the
+    Nitrocid KS mod coding standards.
+
+The analyzers will keep growing up as time passes and as new versions get
+released.
+
+Interactive text and hex editor
+-------------------------------
+
+You can now interactively edit your binary and text files without any
+difficulty. Just execute the "tui" command in either the console-based text or
+the hex editor to start using it. This saves you time from having to manually
+re-typing in commands.
+
+The good news is that they're resizable, too! This means that you can occupy
+the whole screen editing a text file or a binary file while editing it
+interactively.
+
+It not only allows you to perform standard text editor operations in these
+interactive TUIs, but you can also perform advanced editing operations.
+
+More changes?
+-------------
+
+As this is one of the "Black Magic" releases, we strive to leave that as an
+exercise for you to find the new features that we've added. Try to break the
+magician's code to see what we've got for you in Nitrocid KS 0.1.0 Beta 3!
+
