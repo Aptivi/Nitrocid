@@ -168,19 +168,21 @@ namespace KS.ConsoleBase.Inputs.Styles.Infobox
                     int borderY = ConsoleWrapper.WindowHeight / 2 - maxHeight / 2 - 1;
                     var boxBuffer = new StringBuilder();
                     delay = false;
+                    int linesMade = 0;
                     for (int i = currIdx; i < splitFinalLines.Length; i++)
                     {
                         var line = splitFinalLines[i];
-                        if (i % maxHeight == 0 && i > 0)
+                        if (linesMade % maxHeight == 0 && linesMade > 0)
                         {
                             // Reached the end of the box. Bail.
-                            currIdx = i + 1;
+                            currIdx = i;
                             delay = true;
                             break;
                         }
                         if (i == splitFinalLines.Length - 1)
                             exiting = true;
                         boxBuffer.Append($"{CsiSequences.GenerateCsiCursorPosition(borderX + 2, borderY + 1 + i % maxHeight + 1)}{line}");
+                        linesMade++;
                     }
                     return boxBuffer.ToString();
                 });
@@ -837,19 +839,21 @@ namespace KS.ConsoleBase.Inputs.Styles.Infobox
                     int borderY = ConsoleWrapper.WindowHeight / 2 - maxHeight / 2 - 1;
                     var boxBuffer = new StringBuilder();
                     delay = false;
+                    int linesMade = 0;
                     for (int i = currIdx; i < splitFinalLines.Length; i++)
                     {
                         var line = splitFinalLines[i];
-                        if (i % maxHeight == 0 && i > 0)
+                        if (linesMade % maxHeight == 0 && linesMade > 0)
                         {
                             // Reached the end of the box. Bail.
-                            currIdx = i + 1;
+                            currIdx = i;
                             delay = true;
                             break;
                         }
                         if (i == splitFinalLines.Length - 1)
                             exiting = true;
                         boxBuffer.Append($"{CsiSequences.GenerateCsiCursorPosition(borderX + 2, borderY + 1 + i % maxHeight + 1)}{line}");
+                        linesMade++;
                     }
                     return boxBuffer.ToString();
                 });
