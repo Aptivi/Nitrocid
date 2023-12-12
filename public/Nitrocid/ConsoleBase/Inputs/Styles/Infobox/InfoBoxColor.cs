@@ -212,6 +212,10 @@ namespace KS.ConsoleBase.Inputs.Styles.Infobox
             finally
             {
                 ConsoleWrapper.CursorVisible = initialCursorVisible;
+                ScreenTools.CurrentScreen.RemoveBufferedPart("Informational box");
+                ScreenTools.CurrentScreen.RemoveBufferedPart("Informational box - Page");
+                if (initialScreenIsNull)
+                    ScreenTools.UnsetCurrent(screen);
             }
         }
 
@@ -877,6 +881,10 @@ namespace KS.ConsoleBase.Inputs.Styles.Infobox
             finally
             {
                 ConsoleWrapper.CursorVisible = initialCursorVisible;
+                ScreenTools.CurrentScreen.RemoveBufferedPart("Informational box");
+                ScreenTools.CurrentScreen.RemoveBufferedPart("Informational box - Page");
+                if (initialScreenIsNull)
+                    ScreenTools.UnsetCurrent(screen);
             }
         }
     }

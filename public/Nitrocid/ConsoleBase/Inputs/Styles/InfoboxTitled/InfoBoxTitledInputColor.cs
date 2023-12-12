@@ -169,6 +169,9 @@ namespace KS.ConsoleBase.Inputs.Styles.InfoboxTitled
             finally
             {
                 ConsoleWrapper.CursorVisible = initialCursorVisible;
+                ScreenTools.CurrentScreen.RemoveBufferedPart("Informational box");
+                if (initialScreenIsNull)
+                    ScreenTools.UnsetCurrent(screen);
             }
             return "";
         }
@@ -541,6 +544,9 @@ namespace KS.ConsoleBase.Inputs.Styles.InfoboxTitled
                     KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground
                 , false);
                 ConsoleWrapper.CursorVisible = initialCursorVisible;
+                ScreenTools.CurrentScreen.RemoveBufferedPart("Informational box");
+                if (initialScreenIsNull)
+                    ScreenTools.UnsetCurrent(screen);
             }
             return "";
         }
