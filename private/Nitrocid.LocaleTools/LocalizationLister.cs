@@ -17,8 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace Nitrocid.LocaleTools
 {
@@ -54,6 +56,17 @@ namespace Nitrocid.LocaleTools
                 sources.Add(source, [.. File.ReadAllLines(source)]);
 
             return sources;
+        }
+
+        internal static LanguageMetadata[] PopulateLanguageMetadata()
+        {
+            string metadataFile = "../../../../../public/Nitrocid.LocaleGen/Translations/Metadata.json";
+            string addonMetadataFile = "../../../../../public/Nitrocid.LocaleGen/AddonTranslations/Metadata.json";
+            string metadata = File.ReadAllText(metadataFile);
+            string addonMetadata = File.ReadAllText(addonMetadataFile);
+            var languageMetadataToken = JsonConvert.DeserializeObject<LanguageMetadata[]>(metadata);
+            var languageAddonMetadataToken = JsonConvert.DeserializeObject<LanguageMetadata[]>(addonMetadata);
+            return languageMetadataToken.Union(languageAddonMetadataToken).ToArray();
         }
     }
 }

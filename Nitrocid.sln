@@ -146,6 +146,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.Extras.Crc32", "pu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.Legacy.HddUncleaner", "public\Nitrocid.Addons\Nitrocid.Legacy.HddUncleaner\Nitrocid.Legacy.HddUncleaner.csproj", "{54334767-32A7-46E5-AC1F-5D263F0BE159}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nitrocid.LocaleTrim", "private\Nitrocid.LocaleTrim\Nitrocid.LocaleTrim.csproj", "{6524403F-F55E-4E8D-8A63-8A7D2FA518D3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -360,6 +362,10 @@ Global
 		{54334767-32A7-46E5-AC1F-5D263F0BE159}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54334767-32A7-46E5-AC1F-5D263F0BE159}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{54334767-32A7-46E5-AC1F-5D263F0BE159}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6524403F-F55E-4E8D-8A63-8A7D2FA518D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6524403F-F55E-4E8D-8A63-8A7D2FA518D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6524403F-F55E-4E8D-8A63-8A7D2FA518D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6524403F-F55E-4E8D-8A63-8A7D2FA518D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -422,6 +428,7 @@ Global
 		{47BECAD8-5DB2-4DE1-B0F0-3225E3396AF7} = {B60F276A-FE12-4001-916E-080344ED1FD9}
 		{4CDBC217-C639-4D93-9F9A-FFD5956C0395} = {B60F276A-FE12-4001-916E-080344ED1FD9}
 		{54334767-32A7-46E5-AC1F-5D263F0BE159} = {B60F276A-FE12-4001-916E-080344ED1FD9}
+		{6524403F-F55E-4E8D-8A63-8A7D2FA518D3} = {5427F963-3094-4111-AB05-DAE364A8DF67}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {424D8E7A-CFEB-40AE-A79C-437D603177FD}

@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "Nitrocid.LocaleTrim": {
+      "commandName": "Project"
+    },
+    "Nitrocid.LocaleTrim - Dry": {
+      "commandName": "Project",
+      "commandLineArgs": "-dry"
+    }
+  }
+}
