@@ -31,6 +31,7 @@ using Terminaux.Reader;
 using System.Text;
 using Terminaux.Sequences.Builder.Types;
 using KS.ConsoleBase.Writers.FancyWriters;
+using KS.ConsoleBase.Buffered;
 
 namespace KS.ConsoleBase.Inputs.Styles.Infobox
 {
@@ -69,71 +70,91 @@ namespace KS.ConsoleBase.Inputs.Styles.Infobox
                                                     char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, params object[] vars)
         {
             bool initialCursorVisible = ConsoleWrapper.CursorVisible;
+            bool initialScreenIsNull = ScreenTools.CurrentScreen is null;
+            var infoBoxScreenPart = new ScreenPart();
+            var screen = new Screen();
+            if (initialScreenIsNull)
+            {
+                infoBoxScreenPart.AddDynamicText(() =>
+                {
+                    KernelColorTools.SetConsoleColor(KernelColorTools.GetColor(KernelColorType.Background), true);
+                    return CsiSequences.GenerateCsiEraseInDisplay(2) + CsiSequences.GenerateCsiCursorPosition(1, 1);
+                });
+                ScreenTools.SetCurrent(screen);
+            }
+            ScreenTools.CurrentScreen.AddBufferedPart("Informational box", infoBoxScreenPart);
             try
             {
-                // Deal with the lines to actually fit text in the infobox
-                string finalInfoRendered = TextTools.FormatString(text, vars);
-                string[] splitLines = finalInfoRendered.ToString().SplitNewLines();
-                List<string> splitFinalLines = [];
-                foreach (var line in splitLines)
+                int rightMargin = 0;
+                infoBoxScreenPart.AddDynamicText(() =>
                 {
-                    var lineSentences = TextTools.GetWrappedSentences(line, ConsoleWrapper.WindowWidth - 4);
-                    foreach (var lineSentence in lineSentences)
-                        splitFinalLines.Add(lineSentence);
-                }
-
-                // Trim the new lines until we reach a full line
-                for (int i = splitFinalLines.Count - 1; i >= 0; i--)
-                {
-                    string line = splitFinalLines[i];
-                    if (!string.IsNullOrWhiteSpace(line))
-                        break;
-                    splitFinalLines.RemoveAt(i);
-                }
-
-                // Fill the info box with text inside it
-                int maxWidth = ConsoleWrapper.WindowWidth - 4;
-                int maxHeight = splitFinalLines.Count + 5;
-                if (maxHeight >= ConsoleWrapper.WindowHeight)
-                    maxHeight = ConsoleWrapper.WindowHeight - 4;
-                int maxRenderWidth = ConsoleWrapper.WindowWidth - 6;
-                int borderX = ConsoleWrapper.WindowWidth / 2 - maxWidth / 2 - 1;
-                int borderY = ConsoleWrapper.WindowHeight / 2 - maxHeight / 2 - 1;
-                var boxBuffer = new StringBuilder();
-                string border = BorderColor.RenderBorderPlain(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
-                boxBuffer.Append(border);
-
-                // Render text inside it
-                ConsoleWrapper.CursorVisible = false;
-                for (int i = 0; i < splitFinalLines.Count; i++)
-                {
-                    var line = splitFinalLines[i];
-                    if (i % maxHeight == 0 && i > 0)
+                    // Deal with the lines to actually fit text in the infobox
+                    string finalInfoRendered = TextTools.FormatString(text, vars);
+                    string[] splitLines = finalInfoRendered.ToString().SplitNewLines();
+                    List<string> splitFinalLines = [];
+                    foreach (var line in splitLines)
                     {
-                        // Reached the end of the box. Bail, because we need to print the input box.
-                        break;
+                        var lineSentences = TextTools.GetWrappedSentences(line, ConsoleWrapper.WindowWidth - 4);
+                        foreach (var lineSentence in lineSentences)
+                            splitFinalLines.Add(lineSentence);
                     }
+
+                    // Trim the new lines until we reach a full line
+                    for (int i = splitFinalLines.Count - 1; i >= 0; i--)
+                    {
+                        string line = splitFinalLines[i];
+                        if (!string.IsNullOrWhiteSpace(line))
+                            break;
+                        splitFinalLines.RemoveAt(i);
+                    }
+
+                    // Fill the info box with text inside it
+                    int maxWidth = ConsoleWrapper.WindowWidth - 4;
+                    int maxHeight = splitFinalLines.Count + 5;
+                    if (maxHeight >= ConsoleWrapper.WindowHeight)
+                        maxHeight = ConsoleWrapper.WindowHeight - 4;
+                    int maxRenderWidth = ConsoleWrapper.WindowWidth - 6;
+                    int borderX = ConsoleWrapper.WindowWidth / 2 - maxWidth / 2 - 1;
+                    int borderY = ConsoleWrapper.WindowHeight / 2 - maxHeight / 2 - 1;
+                    var boxBuffer = new StringBuilder();
+                    string border = BorderColor.RenderBorderPlain(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
+                    boxBuffer.Append(border);
+
+                    // Render text inside it
+                    ConsoleWrapper.CursorVisible = false;
+                    for (int i = 0; i < splitFinalLines.Count; i++)
+                    {
+                        var line = splitFinalLines[i];
+                        if (i % maxHeight == 0 && i > 0)
+                        {
+                            // Reached the end of the box. Bail, because we need to print the input box.
+                            break;
+                        }
+                        boxBuffer.Append(
+                            $"{CsiSequences.GenerateCsiCursorPosition(borderX + 2, borderY + 1 + i % maxHeight + 1)}" +
+                            $"{line}"
+                        );
+                    }
+
+                    // Write the input bar and set the cursor position
+                    int inputPosX = borderX + 4;
+                    rightMargin = inputPosX - 2;
+                    int inputPosY = borderY + maxHeight - 3;
+                    int maxInputWidth = maxWidth - inputPosX * 2 + 4;
                     boxBuffer.Append(
-                        $"{CsiSequences.GenerateCsiCursorPosition(borderX + 2, borderY + 1 + i % maxHeight + 1)}" +
-                        $"{line}"
+                        BorderColor.RenderBorderPlain(inputPosX, inputPosY, maxInputWidth, 1) +
+                        CsiSequences.GenerateCsiCursorPosition(inputPosX + 2, inputPosY + 2)
                     );
-                }
+                    return boxBuffer.ToString();
+                });
 
-                // Render the final result
-                int inputPosX = borderX + 4;
-                int inputPosY = borderY + maxHeight - 3;
-                int maxInputWidth = maxWidth - inputPosX * 2 + 4;
-                TextWriterColor.WritePlain(boxBuffer.ToString(), false);
-                boxBuffer.Clear();
-
-                // Write the input bar and set the cursor position
-                BorderColor.WriteBorderPlain(inputPosX, inputPosY, maxInputWidth, 1);
-                ConsoleWrapper.SetCursorPosition(inputPosX + 1, inputPosY + 1);
+                // Render the screen
+                ScreenTools.Render();
 
                 // Wait until the user presses any key to close the box
                 var settings = new TermReaderSettings()
                 {
-                    RightMargin = inputPosX - 2,
+                    RightMargin = rightMargin,
                 };
                 string input = Input.ReadLineWrapped("", "", settings);
                 return input;
@@ -397,79 +418,97 @@ namespace KS.ConsoleBase.Inputs.Styles.Infobox
                                        Color InfoBoxColor, Color BackgroundColor, params object[] vars)
         {
             bool initialCursorVisible = ConsoleWrapper.CursorVisible;
+            bool initialScreenIsNull = ScreenTools.CurrentScreen is null;
+            var infoBoxScreenPart = new ScreenPart();
+            var screen = new Screen();
+            if (initialScreenIsNull)
+            {
+                infoBoxScreenPart.AddDynamicText(() =>
+                {
+                    KernelColorTools.SetConsoleColor(KernelColorTools.GetColor(KernelColorType.Background), true);
+                    return CsiSequences.GenerateCsiEraseInDisplay(2) + CsiSequences.GenerateCsiCursorPosition(1, 1);
+                });
+                ScreenTools.SetCurrent(screen);
+            }
+            ScreenTools.CurrentScreen.AddBufferedPart("Informational box", infoBoxScreenPart);
             try
             {
-                // Deal with the lines to actually fit text in the infobox
-                string finalInfoRendered = TextTools.FormatString(text, vars);
-                string[] splitLines = finalInfoRendered.ToString().SplitNewLines();
-                List<string> splitFinalLines = [];
-                foreach (var line in splitLines)
+                int rightMargin = 0;
+                infoBoxScreenPart.AddDynamicText(() =>
                 {
-                    var lineSentences = TextTools.GetWrappedSentences(line, ConsoleWrapper.WindowWidth - 4);
-                    foreach (var lineSentence in lineSentences)
-                        splitFinalLines.Add(lineSentence);
-                }
-
-                // Trim the new lines until we reach a full line
-                for (int i = splitFinalLines.Count - 1; i >= 0; i--)
-                {
-                    string line = splitFinalLines[i];
-                    if (!string.IsNullOrWhiteSpace(line))
-                        break;
-                    splitFinalLines.RemoveAt(i);
-                }
-
-                // Fill the info box with text inside it
-                int maxWidth = ConsoleWrapper.WindowWidth - 4;
-                int maxHeight = splitFinalLines.Count + 5;
-                if (maxHeight >= ConsoleWrapper.WindowHeight)
-                    maxHeight = ConsoleWrapper.WindowHeight - 4;
-                int maxRenderWidth = ConsoleWrapper.WindowWidth - 6;
-                int borderX = ConsoleWrapper.WindowWidth / 2 - maxWidth / 2;
-                int borderY = ConsoleWrapper.WindowHeight / 2 - maxHeight / 2;
-                var boxBuffer = new StringBuilder();
-                string border = BorderColor.RenderBorderPlain(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
-                boxBuffer.Append(
-                    $"{InfoBoxColor.VTSequenceForeground}" +
-                    $"{BackgroundColor.VTSequenceBackground}" +
-                    $"{border}"
-                );
-
-                // Render text inside it
-                ConsoleWrapper.CursorVisible = false;
-                for (int i = 0; i < splitFinalLines.Count; i++)
-                {
-                    var line = splitFinalLines[i];
-                    if (i % maxHeight == 0 && i > 0)
+                    // Deal with the lines to actually fit text in the infobox
+                    string finalInfoRendered = TextTools.FormatString(text, vars);
+                    string[] splitLines = finalInfoRendered.ToString().SplitNewLines();
+                    List<string> splitFinalLines = [];
+                    foreach (var line in splitLines)
                     {
-                        // Reached the end of the box. Bail, because we need to print the input box.
-                        break;
+                        var lineSentences = TextTools.GetWrappedSentences(line, ConsoleWrapper.WindowWidth - 4);
+                        foreach (var lineSentence in lineSentences)
+                            splitFinalLines.Add(lineSentence);
                     }
+
+                    // Trim the new lines until we reach a full line
+                    for (int i = splitFinalLines.Count - 1; i >= 0; i--)
+                    {
+                        string line = splitFinalLines[i];
+                        if (!string.IsNullOrWhiteSpace(line))
+                            break;
+                        splitFinalLines.RemoveAt(i);
+                    }
+
+                    // Fill the info box with text inside it
+                    int maxWidth = ConsoleWrapper.WindowWidth - 4;
+                    int maxHeight = splitFinalLines.Count + 5;
+                    if (maxHeight >= ConsoleWrapper.WindowHeight)
+                        maxHeight = ConsoleWrapper.WindowHeight - 4;
+                    int maxRenderWidth = ConsoleWrapper.WindowWidth - 6;
+                    int borderX = ConsoleWrapper.WindowWidth / 2 - maxWidth / 2;
+                    int borderY = ConsoleWrapper.WindowHeight / 2 - maxHeight / 2;
+                    var boxBuffer = new StringBuilder();
+                    string border = BorderColor.RenderBorderPlain(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
                     boxBuffer.Append(
-                        $"{CsiSequences.GenerateCsiCursorPosition(borderX + 2, borderY + 1 + i % maxHeight + 1)}" +
-                        $"{line}"
+                        $"{InfoBoxColor.VTSequenceForeground}" +
+                        $"{BackgroundColor.VTSequenceBackground}" +
+                        $"{border}"
                     );
-                }
 
-                // Render the final result
-                int inputPosX = borderX + 4;
-                int inputPosY = borderY + maxHeight - 3;
-                int maxInputWidth = maxWidth - inputPosX * 2 + 4;
-                TextWriterColor.WritePlain(boxBuffer.ToString(), false);
-                boxBuffer.Clear();
+                    // Render text inside it
+                    ConsoleWrapper.CursorVisible = false;
+                    for (int i = 0; i < splitFinalLines.Count; i++)
+                    {
+                        var line = splitFinalLines[i];
+                        if (i % maxHeight == 0 && i > 0)
+                        {
+                            // Reached the end of the box. Bail, because we need to print the input box.
+                            break;
+                        }
+                        boxBuffer.Append(
+                            $"{CsiSequences.GenerateCsiCursorPosition(borderX + 2, borderY + 1 + i % maxHeight + 1)}" +
+                            $"{line}"
+                        );
+                    }
 
-                // Write the input bar and set the cursor position
-                BorderColor.WriteBorder(inputPosX, inputPosY, maxInputWidth, 1, InfoBoxColor, BackgroundColor);
-                ConsoleWrapper.SetCursorPosition(inputPosX + 1, inputPosY + 1);
+                    // Write the input bar and set the cursor position
+                    int inputPosX = borderX + 4;
+                    rightMargin = inputPosX - 2;
+                    int inputPosY = borderY + maxHeight - 3;
+                    int maxInputWidth = maxWidth - inputPosX * 2 + 4;
+                    boxBuffer.Append(
+                        BorderColor.RenderBorder(inputPosX, inputPosY, maxInputWidth, 1, InfoBoxColor, BackgroundColor) +
+                        CsiSequences.GenerateCsiCursorPosition(inputPosX + 2, inputPosY + 2) +
+                        $"{InfoBoxColor.VTSequenceForeground}" +
+                        $"{BackgroundColor.VTSequenceBackground}"
+                    );
+                    return boxBuffer.ToString();
+                });
+
+                // Render the screen
+                ScreenTools.Render();
 
                 // Wait until the user presses any key to close the box
-                TextWriterColor.WritePlain(
-                    $"{InfoBoxColor.VTSequenceForeground}" +
-                    $"{BackgroundColor.VTSequenceBackground}"
-                , false);
                 var settings = new TermReaderSettings()
                 {
-                    RightMargin = inputPosX - 2,
+                    RightMargin = rightMargin,
                 };
                 string input = Input.ReadLineWrapped("", "", settings);
                 return input;
