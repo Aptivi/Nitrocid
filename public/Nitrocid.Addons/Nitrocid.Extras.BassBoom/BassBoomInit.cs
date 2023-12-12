@@ -50,60 +50,21 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Reflection;
 using BassBoom.Basolia;
-using BassBoom.Basolia.File;
-using BassBoom.Basolia.Format;
-using System.IO;
-using KS.Languages;
-using KS.ConsoleBase.Colors;
 using KS.Files.Extensions;
 using Nitrocid.Extras.BassBoom.Player;
-using KS.Files.Operations.Querying;
 using KS.Files.Paths;
-using KS.ConsoleBase.Inputs.Styles.Infobox;
 
 namespace Nitrocid.Extras.BassBoom
 {
     internal class BassBoomInit : IAddon
     {
-        private readonly ExtensionHandler handler = new(
-            ".mp3", "Mp3BassBoom",
-            (path) =>
-            {
-                if (!Checking.FileExists(path))
-                {
-                    InfoBoxColor.WriteInfoBoxKernelColor(Translate.DoTranslation("Can't open music file '{0}' because it's not found."), KernelColorType.Error, path);
-                    return;
-                }
-                if (!PlayerTui.musicFiles.Contains(path))
-                    PlayerTui.musicFiles.Add(path);
-                PlayerTui.PlayerLoop();
-            },
-            (path) =>
-            {
-                // Get the ID3 metadata
-                FileTools.OpenFile(path);
-                AudioInfoTools.GetId3Metadata(out var metadatav1, out var metadatav2);
-                FileTools.CloseFile();
-
-                // Now, populate the necessary variables
-                string musicName =
-                    !string.IsNullOrEmpty(metadatav2.Title) ? metadatav2.Title :
-                    !string.IsNullOrEmpty(metadatav1.Title) ? metadatav1.Title :
-                    Path.GetFileNameWithoutExtension(path);
-                string musicArtist =
-                    !string.IsNullOrEmpty(metadatav2.Artist) ? metadatav2.Artist :
-                    !string.IsNullOrEmpty(metadatav1.Artist) ? metadatav1.Artist :
-                    Translate.DoTranslation("Unknown Artist");
-                string musicGenre =
-                    !string.IsNullOrEmpty(metadatav2.Genre) ? metadatav2.Genre :
-                    metadatav1.GenreIndex >= 0 ? $"{metadatav1.Genre} [{metadatav1.GenreIndex}]" :
-                    Translate.DoTranslation("Unknown Genre");
-                return
-                    $"{Translate.DoTranslation("Song name")}: {musicName}\n" +
-                    $"{Translate.DoTranslation("Song artist")}: {musicArtist}\n" +
-                    $"{Translate.DoTranslation("Song genre")}: {musicGenre}";
-            }
-        );
+        private readonly ExtensionHandler[] handlers = [
+            new(".mp3", "Mp3BassBoom", PlayerHandler.Handle, PlayerHandler.InfoHandle),
+            new(".mp2", "Mp3BassBoom", PlayerHandler.Handle, PlayerHandler.InfoHandle),
+            new(".mpg", "Mp3BassBoom", PlayerHandler.Handle, PlayerHandler.InfoHandle),
+            new(".mpa", "Mp3BassBoom", PlayerHandler.Handle, PlayerHandler.InfoHandle),
+            new(".mpga", "Mp3BassBoom", PlayerHandler.Handle, PlayerHandler.InfoHandle),
+        ];
 
         private readonly Dictionary<string, CommandInfo> addonCommands = new()
         {
@@ -184,7 +145,7 @@ namespace Nitrocid.Extras.BassBoom
             // Additionally, register a custom extension handler that handles music playback
             if (!inited)
                 InitBasolia.Init(PathsManagement.AddonsPath + "/Extras.BassBoom");
-            ExtensionHandlerTools.extensionHandlers.Add(handler);
+            ExtensionHandlerTools.extensionHandlers.AddRange(handlers);
         }
 
         void IAddon.StopAddon()
@@ -193,7 +154,7 @@ namespace Nitrocid.Extras.BassBoom
             ScreensaverManager.AddonSavers.Remove("lyrics");
             ConfigTools.UnregisterBaseSetting(nameof(BassBoomSaversConfig));
             ConfigTools.UnregisterBaseSetting(nameof(BassBoomConfig));
-            ExtensionHandlerTools.extensionHandlers.Remove(handler);
+            ExtensionHandlerTools.extensionHandlers.RemoveRange(0, handlers.Length);
         }
 
         void IAddon.FinalizeAddon()
