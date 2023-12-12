@@ -152,6 +152,7 @@ namespace KS.ConsoleBase.Inputs.Styles.InfoboxTitled
 
                 // Then, the text
                 int currIdx = 0;
+                int increment = 0;
                 bool exiting = false;
                 bool delay = false;
                 infoBoxPageScreenPart.AddDynamicText(() =>
@@ -178,13 +179,16 @@ namespace KS.ConsoleBase.Inputs.Styles.InfoboxTitled
                         if (linesMade % maxHeight == 0 && linesMade > 0)
                         {
                             // Reached the end of the box. Bail.
-                            currIdx = i;
+                            increment = linesMade;
                             delay = true;
                             break;
                         }
                         if (i == splitFinalLines.Length - 1)
                             exiting = true;
-                        boxBuffer.Append($"{CsiSequences.GenerateCsiCursorPosition(borderX + 2, borderY + 1 + i % maxHeight + 1)}{line}");
+                        else
+                            // In case resize caused us to have an extra page
+                            exiting = false;
+                        boxBuffer.Append($"{CsiSequences.GenerateCsiCursorPosition(borderX + 2, borderY + 1 + linesMade % maxHeight + 1)}{line}");
                         linesMade++;
                     }
                     return boxBuffer.ToString();
@@ -204,9 +208,14 @@ namespace KS.ConsoleBase.Inputs.Styles.InfoboxTitled
                             exiting = true;
                             break;
                         }
+                        if (delay)
+                            currIdx += increment;
                     }
                     else if (delay)
+                    {
                         Thread.Sleep(5000);
+                        currIdx += increment;
+                    }
                 }
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
@@ -851,6 +860,7 @@ namespace KS.ConsoleBase.Inputs.Styles.InfoboxTitled
 
                 // Then, the text
                 int currIdx = 0;
+                int increment = 0;
                 bool exiting = false;
                 bool delay = false;
                 infoBoxPageScreenPart.AddDynamicText(() =>
@@ -877,13 +887,16 @@ namespace KS.ConsoleBase.Inputs.Styles.InfoboxTitled
                         if (linesMade % maxHeight == 0 && linesMade > 0)
                         {
                             // Reached the end of the box. Bail.
-                            currIdx = i;
+                            increment = linesMade;
                             delay = true;
                             break;
                         }
                         if (i == splitFinalLines.Length - 1)
                             exiting = true;
-                        boxBuffer.Append($"{CsiSequences.GenerateCsiCursorPosition(borderX + 2, borderY + 1 + i % maxHeight + 1)}{line}");
+                        else
+                            // In case resize caused us to have an extra page
+                            exiting = false;
+                        boxBuffer.Append($"{CsiSequences.GenerateCsiCursorPosition(borderX + 2, borderY + 1 + linesMade % maxHeight + 1)}{line}");
                         linesMade++;
                     }
                     return boxBuffer.ToString();
@@ -903,9 +916,14 @@ namespace KS.ConsoleBase.Inputs.Styles.InfoboxTitled
                             exiting = true;
                             break;
                         }
+                        if (delay)
+                            currIdx += increment;
                     }
                     else if (delay)
+                    {
                         Thread.Sleep(5000);
+                        currIdx += increment;
+                    }
                 }
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
