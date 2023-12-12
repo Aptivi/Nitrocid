@@ -190,7 +190,8 @@ namespace KS.ConsoleBase.Buffered
         public string GetBuffer()
         {
             var builder = new StringBuilder();
-            foreach (var part in ScreenParts)
+            var sortedParts = ScreenParts.OrderBy((part) => part.Order).ToList();
+            foreach (var part in sortedParts)
                 builder.Append(part.GetBuffer());
             return builder.ToString();
         }

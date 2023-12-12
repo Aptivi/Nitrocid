@@ -86,7 +86,7 @@ namespace KS.ConsoleBase.Inputs.Styles.Infobox
             bool initialCursorVisible = ConsoleWrapper.CursorVisible;
             bool initialScreenIsNull = ScreenTools.CurrentScreen is null;
             var infoBoxScreenPart = new ScreenPart();
-            var infoBoxPageScreenPart = new ScreenPart();
+            var infoBoxPageScreenPart = new ScreenPart() { Order = 1 };
             var screen = new Screen();
             if (initialScreenIsNull)
             {
@@ -752,7 +752,7 @@ namespace KS.ConsoleBase.Inputs.Styles.Infobox
             bool initialCursorVisible = ConsoleWrapper.CursorVisible;
             bool initialScreenIsNull = ScreenTools.CurrentScreen is null;
             var infoBoxScreenPart = new ScreenPart();
-            var infoBoxPageScreenPart = new ScreenPart();
+            var infoBoxPageScreenPart = new ScreenPart() { Order = 1 };
             var screen = new Screen();
             if (initialScreenIsNull)
             {

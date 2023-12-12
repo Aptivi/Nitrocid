@@ -32,7 +32,22 @@ namespace KS.ConsoleBase.Buffered
     /// </summary>
     public class ScreenPart
     {
+        private int order = 0;
         private readonly List<Func<string>> dynamicBuffers = [];
+
+        /// <summary>
+        /// Order to use while buffering the screen.
+        /// </summary>
+        /// <remarks>
+        /// This is compared in an ascending way so that the screen management system sorts the parts from the least important to
+        /// the most important. For example, parts that are in order number 0 will get buffered before parts that have their
+        /// order number of 1, and so on.
+        /// </remarks>
+        public int Order
+        {
+            get => order;
+            set => order = value;
+        }
 
         /// <summary>
         /// Adds a text to the buffer
