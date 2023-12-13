@@ -27,7 +27,7 @@ using KS.Kernel.Debugging;
 using KS.Kernel.Threading;
 using KS.Misc.Screensaver;
 using Terminaux.Colors;
-using Terminaux.Sequences.Builder.Types;
+using Textify.Sequences.Builder.Types;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {

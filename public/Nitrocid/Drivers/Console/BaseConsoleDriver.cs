@@ -27,7 +27,7 @@ using SystemConsole = System.Console;
 using TextEncoding = System.Text.Encoding;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using Terminaux.Sequences.Builder.Types;
+using Textify.Sequences.Builder.Types;
 
 namespace KS.Drivers.Console
 {

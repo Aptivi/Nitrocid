@@ -25,7 +25,7 @@ using KS.Languages;
 using Terminaux.Colors;
 using KS.Misc.Text;
 using System.Text;
-using Terminaux.Sequences.Tools;
+using Textify.Sequences.Tools;
 
 namespace KS.ConsoleBase.Writers.ConsoleWriters
 {

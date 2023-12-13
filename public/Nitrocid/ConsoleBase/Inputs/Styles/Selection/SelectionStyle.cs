@@ -28,8 +28,8 @@ using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Text;
-using Terminaux.Sequences.Builder.Types;
-using Terminaux.Sequences.Tools;
+using Textify.Sequences.Builder.Types;
+using Textify.Sequences.Tools;
 
 namespace KS.ConsoleBase.Inputs.Styles.Selection
 {

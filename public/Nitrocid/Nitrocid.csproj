@@ -57,7 +57,7 @@
     <NitrocidModAPIVersionMajor>3.0.25</NitrocidModAPIVersionMajor>
 
     <!-- Increment NitrocidModAPIVersionChangeset every time there is a breaking change or an API addition in the N-KS API. -->
-    <NitrocidModAPIVersionChangeset>376</NitrocidModAPIVersionChangeset>
+    <NitrocidModAPIVersionChangeset>377</NitrocidModAPIVersionChangeset>
 
     <!-- To be installed to the file version -->
     <NitrocidModAPIVersion>$(NitrocidModAPIVersionMajor).$(NitrocidModAPIVersionChangeset)</NitrocidModAPIVersion>
@@ -96,12 +96,12 @@
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="all" />
     <PackageReference Include="Newtonsoft.Json.Schema" Version="3.0.15" PrivateAssets="all" />
     <PackageReference Include="SpecProbe" Version="1.2.0.1" PrivateAssets="all" />
+    <PackageReference Include="Terminaux" Version="2.0.0" />
   </ItemGroup>
   <!-- KS Dependencies Information End -->
 
   <!-- KS Non-private Dependencies Information -->
   <ItemGroup>
-    <PackageReference Include="Terminaux" Version="1.12.3" />
     <PackageReference Include="Textify.Offline" Version="1.1.0" />
     <PackageReference Include="Textify.Online" Version="1.1.0" />
   </ItemGroup>

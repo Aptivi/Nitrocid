@@ -24,7 +24,7 @@ using KS.Languages;
 using KS.Kernel;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using Terminaux.Colors;
-using Terminaux.Sequences.Tools;
+using Textify.Sequences.Tools;
 using KS.ConsoleBase.Colors;
 using Figletize;
 using System;
@@ -98,7 +98,7 @@ namespace Nitrocid.SplashPacks.Splashes
             var builder = new StringBuilder();
             try
             {
-                Color firstColor = KernelColorTools.GetColor(KernelColorType.Background).IsBright ? new(ConsoleColors.Black) : new(ConsoleColors.White);
+                Color firstColor = KernelColorTools.GetColor(KernelColorType.Background).Brightness == ColorBrightness.Light ? new(ConsoleColors.Black) : new(ConsoleColors.White);
                 Color secondColor = KernelColorTools.GetColor(KernelColorType.Success);
                 DebugWriter.WriteDebug(DebugLevel.I, "Splash displaying.");
                 Color firstDotColor = dotStep >= 1 ? secondColor : firstColor;

@@ -25,7 +25,7 @@ using KS.Languages;
 using KS.Misc.Text;
 using System;
 using System.Text;
-using Terminaux.Sequences.Builder.Types;
+using Textify.Sequences.Builder.Types;
 using KS.ConsoleBase.Writers.FancyWriters;
 
 namespace KS.ConsoleBase.Presentation

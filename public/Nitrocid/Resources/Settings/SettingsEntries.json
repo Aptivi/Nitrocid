@@ -120,12 +120,12 @@
                 "Description": "If you are color blind or if you want to simulate color blindness, then you can enable it."
             },
             {
-                "Name": "Color blindness deficiency",
+                "Name": "Color blindness TransformationFormula",
                 "Type": "SSelection",
-                "Variable": "BlindnessDeficiency",
+                "Variable": "BlindnessTransformationFormula",
                 "IsEnumeration": true,
                 "EnumerationInternal": false,
-                "Enumeration": "Terminaux.Colors.Accessibility.Deficiency",
+                "Enumeration": "Terminaux.Colors.Transformation.TransformationFormula",
                 "EnumerationAssembly": "Terminaux",
                 "EnumerationZeroBased": true,
                 "Description": "The type of color blindness, whether it's protan, deuter, or tritan."

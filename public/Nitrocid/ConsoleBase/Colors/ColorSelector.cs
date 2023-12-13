@@ -27,10 +27,10 @@ using KS.Misc.Text;
 using System;
 using System.Text;
 using Terminaux.Colors;
-using Terminaux.Colors.Accessibility;
-using Terminaux.Colors.Wheel;
-using Terminaux.Sequences.Builder.Types;
+using Terminaux.Colors.Transformation;
+using Textify.Sequences.Builder.Types;
 using KS.ConsoleBase.Writers.FancyWriters;
+using Terminaux.Colors.Models.Conversion;
 
 namespace KS.ConsoleBase.Colors
 {
@@ -76,13 +76,7 @@ namespace KS.ConsoleBase.Colors
         /// <returns>An instance of Color to get the resulting color</returns>
         public static Color OpenColorSelector(Color initialColor)
         {
-#pragma warning disable CS0618
-            // This will be dealt with after Beta 3 release.
-            if (!ConsoleExtensions.UseNewColorSelector)
-                return ColorWheel.InputForColor(initialColor);
-#pragma warning restore CS0618
-
-                // Initial color is selected
+            // Initial color is selected
             Color selectedColor = initialColor;
             ColorType type = initialColor.Type;
 
@@ -95,12 +89,13 @@ namespace KS.ConsoleBase.Colors
                 var screenPart = new ScreenPart();
 
                 // Set initial colors
+                var hsl = HslConversionTools.ConvertFrom(selectedColor.RGB);
                 switch (type)
                 {
                     case ColorType.TrueColor:
-                        trueColorHue = selectedColor.HSL.HueWhole;
-                        trueColorSaturation = selectedColor.HSL.SaturationWhole;
-                        trueColorLightness = selectedColor.HSL.LightnessWhole;
+                        trueColorHue = hsl.HueWhole;
+                        trueColorSaturation = hsl.SaturationWhole;
+                        trueColorLightness = hsl.LightnessWhole;
                         break;
                     case ColorType._255Color:
                         colorValue255 = selectedColor.ColorEnum255;
@@ -316,7 +311,12 @@ namespace KS.ConsoleBase.Colors
             );
 
             // then, the boxes
-            var mono = ColorTools.RenderColorBlindnessAware(selectedColor, Deficiency.Monochromacy, 0.6);
+            var mono = ColorTools.RenderColorBlindnessAware(selectedColor, TransformationFormula.Monochromacy, 0.6);
+            var ryb = RybConversionTools.ConvertFrom(selectedColor.RGB);
+            var cmyk = CmykConversionTools.ConvertFrom(selectedColor.RGB);
+            var cmy = CmyConversionTools.ConvertFrom(selectedColor.RGB);
+            var hsl = HslConversionTools.ConvertFrom(selectedColor.RGB);
+            var hsv = HsvConversionTools.ConvertFrom(selectedColor.RGB);
             selector.Append(
                 BoxFrameTextColor.RenderBoxFrame(Translate.DoTranslation("Info for") + $": {colorValue255}", infoBoxX, infoBoxY, boxWidth, boxHeight) +
                 BoxColor.RenderBox(infoBoxX + 1, infoBoxY, boxWidth, boxHeight) +
@@ -324,11 +324,11 @@ namespace KS.ConsoleBase.Colors
                 TextWriterWhereColor.RenderWherePlain(Translate.DoTranslation("Hex") + $": {selectedColor.Hex}", infoBoxX + 1, infoBoxY + 2) +
                 TextWriterWhereColor.RenderWherePlain(Translate.DoTranslation("RGB sequence") + $": {selectedColor.PlainSequence}", infoBoxX + 1, infoBoxY + 3) +
                 TextWriterWhereColor.RenderWherePlain(Translate.DoTranslation("RGB sequence (real)") + $": {selectedColor.PlainSequenceTrueColor}", infoBoxX + 1, infoBoxY + 4) +
-                TextWriterWhereColor.RenderWherePlain($"CMYK: {selectedColor.CMYK}", infoBoxX + 1, infoBoxY + 5) +
-                TextWriterWhereColor.RenderWherePlain($"CMY: {selectedColor.CMY}", infoBoxX + 1, infoBoxY + 6) +
-                TextWriterWhereColor.RenderWherePlain($"HSL: {selectedColor.HSL}", infoBoxX + 1, infoBoxY + 7) +
-                TextWriterWhereColor.RenderWherePlain($"HSV: {selectedColor.HSV}", infoBoxX + 1, infoBoxY + 8) +
-                TextWriterWhereColor.RenderWherePlain($"RYB: {selectedColor.RYB}, " + Translate.DoTranslation("Grayscale") + $": {mono}", infoBoxX + 1, infoBoxY + 9)
+                TextWriterWhereColor.RenderWherePlain($"CMYK: {cmyk}", infoBoxX + 1, infoBoxY + 5) +
+                TextWriterWhereColor.RenderWherePlain($"CMY: {cmy}", infoBoxX + 1, infoBoxY + 6) +
+                TextWriterWhereColor.RenderWherePlain($"HSL: {hsl}", infoBoxX + 1, infoBoxY + 7) +
+                TextWriterWhereColor.RenderWherePlain($"HSV: {hsv}", infoBoxX + 1, infoBoxY + 8) +
+                TextWriterWhereColor.RenderWherePlain($"RYB: {ryb}, " + Translate.DoTranslation("Grayscale") + $": {mono}", infoBoxX + 1, infoBoxY + 9)
             );
 
             // Finally, the keybindings
@@ -377,7 +377,12 @@ namespace KS.ConsoleBase.Colors
             );
 
             // then, the boxes
-            var mono = ColorTools.RenderColorBlindnessAware(selectedColor, Deficiency.Monochromacy, 0.6);
+            var mono = ColorTools.RenderColorBlindnessAware(selectedColor, TransformationFormula.Monochromacy, 0.6);
+            var ryb = RybConversionTools.ConvertFrom(selectedColor.RGB);
+            var cmyk = CmykConversionTools.ConvertFrom(selectedColor.RGB);
+            var cmy = CmyConversionTools.ConvertFrom(selectedColor.RGB);
+            var hsl = HslConversionTools.ConvertFrom(selectedColor.RGB);
+            var hsv = HsvConversionTools.ConvertFrom(selectedColor.RGB);
             selector.Append(
                 BoxFrameTextColor.RenderBoxFrame(Translate.DoTranslation("Info for") + $": {colorValue16}", infoBoxX, infoBoxY, boxWidth, boxHeight) +
                 BoxColor.RenderBox(infoBoxX + 1, infoBoxY, boxWidth, boxHeight) +
@@ -385,11 +390,11 @@ namespace KS.ConsoleBase.Colors
                 TextWriterWhereColor.RenderWherePlain(Translate.DoTranslation("Hex") + $": {selectedColor.Hex}", infoBoxX + 1, infoBoxY + 2) +
                 TextWriterWhereColor.RenderWherePlain(Translate.DoTranslation("RGB sequence") + $": {selectedColor.PlainSequence}", infoBoxX + 1, infoBoxY + 3) +
                 TextWriterWhereColor.RenderWherePlain(Translate.DoTranslation("RGB sequence (real)") + $": {selectedColor.PlainSequenceTrueColor}", infoBoxX + 1, infoBoxY + 4) +
-                TextWriterWhereColor.RenderWherePlain($"CMYK: {selectedColor.CMYK}", infoBoxX + 1, infoBoxY + 5) +
-                TextWriterWhereColor.RenderWherePlain($"CMY: {selectedColor.CMY}", infoBoxX + 1, infoBoxY + 6) +
-                TextWriterWhereColor.RenderWherePlain($"HSL: {selectedColor.HSL}", infoBoxX + 1, infoBoxY + 7) +
-                TextWriterWhereColor.RenderWherePlain($"HSV: {selectedColor.HSV}", infoBoxX + 1, infoBoxY + 8) +
-                TextWriterWhereColor.RenderWherePlain($"RYB: {selectedColor.RYB}, " + Translate.DoTranslation("Grayscale") + $": {mono}", infoBoxX + 1, infoBoxY + 9)
+                TextWriterWhereColor.RenderWherePlain($"CMYK: {cmyk}", infoBoxX + 1, infoBoxY + 5) +
+                TextWriterWhereColor.RenderWherePlain($"CMY: {cmy}", infoBoxX + 1, infoBoxY + 6) +
+                TextWriterWhereColor.RenderWherePlain($"HSL: {hsl}", infoBoxX + 1, infoBoxY + 7) +
+                TextWriterWhereColor.RenderWherePlain($"HSV: {hsv}", infoBoxX + 1, infoBoxY + 8) +
+                TextWriterWhereColor.RenderWherePlain($"RYB: {ryb}, " + Translate.DoTranslation("Grayscale") + $": {mono}", infoBoxX + 1, infoBoxY + 9)
             );
 
             // Finally, the keybindings
@@ -663,47 +668,52 @@ namespace KS.ConsoleBase.Colors
                 Translate.DoTranslation("Color info (Protanopia)"),
                 selectedColor,
                 true,
-                Deficiency.Protan, 1.0
+                TransformationFormula.Protan, 1.0
             );
             ShowColorInfoBox(
                 Translate.DoTranslation("Color info (Deuteranomaly)"),
                 selectedColor,
                 true,
-                Deficiency.Deutan
+                TransformationFormula.Deutan
             );
             ShowColorInfoBox(
                 Translate.DoTranslation("Color info (Deuteranopia)"),
                 selectedColor,
                 true,
-                Deficiency.Deutan, 1.0
+                TransformationFormula.Deutan, 1.0
             );
             ShowColorInfoBox(
                 Translate.DoTranslation("Color info (Tritanomaly)"),
                 selectedColor,
                 true,
-                Deficiency.Tritan
+                TransformationFormula.Tritan
             );
             ShowColorInfoBox(
                 Translate.DoTranslation("Color info (Tritanopia)"),
                 selectedColor,
                 true,
-                Deficiency.Tritan, 1.0
+                TransformationFormula.Tritan, 1.0
             );
             ShowColorInfoBox(
                 Translate.DoTranslation("Color info (Monochromacy)"),
                 selectedColor,
                 true,
-                Deficiency.Monochromacy
+                TransformationFormula.Monochromacy
             );
         }
 
-        private static void ShowColorInfoBox(string localizedTextTitle, Color selectedColor, bool colorBlind = false, Deficiency deficiency = Deficiency.Protan, double severity = 0.6)
+        private static void ShowColorInfoBox(string localizedTextTitle, Color selectedColor, bool colorBlind = false, TransformationFormula TransformationFormula = TransformationFormula.Protan, double severity = 0.6)
         {
             selectedColor =
                 colorBlind ?
-                ColorTools.RenderColorBlindnessAware(selectedColor, deficiency, severity) :
+                ColorTools.RenderColorBlindnessAware(selectedColor, TransformationFormula, severity) :
                 selectedColor;
             string separator = new('-', localizedTextTitle.Length);
+            var ryb = RybConversionTools.ConvertFrom(selectedColor.RGB);
+            var cmyk = CmykConversionTools.ConvertFrom(selectedColor.RGB);
+            var cmy = CmyConversionTools.ConvertFrom(selectedColor.RGB);
+            var hsl = HslConversionTools.ConvertFrom(selectedColor.RGB);
+            var hsv = HsvConversionTools.ConvertFrom(selectedColor.RGB);
             InfoBoxColor.WriteInfoBox(
                 $$"""
                 {{localizedTextTitle}}
@@ -715,32 +725,32 @@ namespace KS.ConsoleBase.Colors
                 {{Translate.DoTranslation("Color type:")}}         {{selectedColor.Type}}
                     
                 {{Translate.DoTranslation("RYB information:")}}
-                    - {{Translate.DoTranslation("Red:")}}            {{selectedColor.RYB.R,3}}
-                    - {{Translate.DoTranslation("Yellow:")}}         {{selectedColor.RYB.Y,3}}
-                    - {{Translate.DoTranslation("Blue:")}}           {{selectedColor.RYB.B,3}}
+                    - {{Translate.DoTranslation("Red:")}}            {{ryb.R,3}}
+                    - {{Translate.DoTranslation("Yellow:")}}         {{ryb.Y,3}}
+                    - {{Translate.DoTranslation("Blue:")}}           {{ryb.B,3}}
 
                 {{Translate.DoTranslation("CMYK information:")}}
-                    - {{Translate.DoTranslation("Black key:")}}      {{selectedColor.CMYK.KWhole,3}}
-                    - {{Translate.DoTranslation("Cyan:")}}           {{selectedColor.CMYK.CMY.CWhole,3}}
-                    - {{Translate.DoTranslation("Magenta:")}}        {{selectedColor.CMYK.CMY.MWhole,3}}
-                    - {{Translate.DoTranslation("Yellow:")}}         {{selectedColor.CMYK.CMY.YWhole,3}}
+                    - {{Translate.DoTranslation("Black key:")}}      {{cmyk.KWhole,3}}
+                    - {{Translate.DoTranslation("Cyan:")}}           {{cmyk.CMY.CWhole,3}}
+                    - {{Translate.DoTranslation("Magenta:")}}        {{cmyk.CMY.MWhole,3}}
+                    - {{Translate.DoTranslation("Yellow:")}}         {{cmyk.CMY.YWhole,3}}
                     
                 {{Translate.DoTranslation("CMY information:")}}
-                    - {{Translate.DoTranslation("Cyan:")}}           {{selectedColor.CMY.CWhole,3}}
-                    - {{Translate.DoTranslation("Magenta:")}}        {{selectedColor.CMY.CWhole,3}}
-                    - {{Translate.DoTranslation("Yellow:")}}         {{selectedColor.CMY.CWhole,3}}
+                    - {{Translate.DoTranslation("Cyan:")}}           {{cmy.CWhole,3}}
+                    - {{Translate.DoTranslation("Magenta:")}}        {{cmy.CWhole,3}}
+                    - {{Translate.DoTranslation("Yellow:")}}         {{cmy.CWhole,3}}
                     
                 {{Translate.DoTranslation("HSL information:")}}
-                    - {{Translate.DoTranslation("Hue (degs):")}}     {{selectedColor.HSL.HueWhole,3}}'
-                    - {{Translate.DoTranslation("Reverse Hue:")}}    {{selectedColor.HSL.ReverseHueWhole,3}}'
-                    - {{Translate.DoTranslation("Saturation:")}}     {{selectedColor.HSL.SaturationWhole,3}}
-                    - {{Translate.DoTranslation("Lightness:")}}      {{selectedColor.HSL.LightnessWhole,3}}
+                    - {{Translate.DoTranslation("Hue (degs):")}}     {{hsl.HueWhole,3}}'
+                    - {{Translate.DoTranslation("Reverse Hue:")}}    {{hsl.ReverseHueWhole,3}}'
+                    - {{Translate.DoTranslation("Saturation:")}}     {{hsl.SaturationWhole,3}}
+                    - {{Translate.DoTranslation("Lightness:")}}      {{hsl.LightnessWhole,3}}
                     
                 {{Translate.DoTranslation("HSV information:")}}
-                    - {{Translate.DoTranslation("Hue (degs):")}}     {{selectedColor.HSV.HueWhole,3}}'
-                    - {{Translate.DoTranslation("Reverse Hue:")}}    {{selectedColor.HSV.ReverseHueWhole,3}}'
-                    - {{Translate.DoTranslation("Saturation:")}}     {{selectedColor.HSV.SaturationWhole,3}}
-                    - {{Translate.DoTranslation("Value:")}}          {{selectedColor.HSV.ValueWhole,3}}
+                    - {{Translate.DoTranslation("Hue (degs):")}}     {{hsv.HueWhole,3}}'
+                    - {{Translate.DoTranslation("Reverse Hue:")}}    {{hsv.ReverseHueWhole,3}}'
+                    - {{Translate.DoTranslation("Saturation:")}}     {{hsv.SaturationWhole,3}}
+                    - {{Translate.DoTranslation("Value:")}}          {{hsv.ValueWhole,3}}
                 """
             );
         }

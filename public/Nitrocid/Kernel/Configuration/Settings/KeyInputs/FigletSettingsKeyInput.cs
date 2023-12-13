@@ -19,7 +19,7 @@
 
 using Figletize;
 using KS.Kernel.Configuration.Instances;
-using Terminaux.Figlet;
+using Terminaux.Inputs.Styles;
 
 namespace KS.Kernel.Configuration.Settings.KeyInputs
 {

@@ -35,8 +35,8 @@ using Nitrocid.Extras.Calendar.Calendar.Reminders;
 using System;
 using System.Linq;
 using System.Text;
-using Terminaux.Sequences.Builder.Types;
-using Terminaux.Sequences.Tools;
+using Textify.Sequences.Builder.Types;
+using Textify.Sequences.Tools;
 using KS.ConsoleBase.Writers.FancyWriters;
 
 namespace Nitrocid.Extras.Calendar.Calendar

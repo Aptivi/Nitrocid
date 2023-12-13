@@ -19,10 +19,10 @@
 
 using KS.Files.Operations.Querying;
 using KS.Kernel.Debugging;
+using SpecProbe.Software.Kernel;
 using System;
 using System.Reflection;
 using System.Runtime.InteropServices;
-using UnameNET;
 
 namespace KS.Kernel
 {

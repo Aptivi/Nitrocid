@@ -23,7 +23,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Terminaux.Colors;
-using Terminaux.Sequences.Builder.Types;
+using Textify.Sequences.Builder.Types;
 
 namespace KS.ConsoleBase.Buffered
 {

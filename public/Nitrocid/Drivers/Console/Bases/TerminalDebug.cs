@@ -18,7 +18,7 @@
 //
 
 using KS.Kernel.Debugging;
-using Terminaux.Sequences.Tools;
+using Textify.Sequences.Tools;
 
 namespace KS.Drivers.Console.Bases
 {

@@ -29,7 +29,7 @@ using KS.ConsoleBase.Writers.FancyWriters.Tools;
 using Terminaux.Colors;
 using Terminaux.Reader;
 using System.Text;
-using Terminaux.Sequences.Builder.Types;
+using Textify.Sequences.Builder.Types;
 using KS.ConsoleBase.Writers.FancyWriters;
 using KS.ConsoleBase.Buffered;
 

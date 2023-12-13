@@ -22,6 +22,7 @@ using KS.Kernel.Exceptions;
 using KS.Languages;
 using System;
 using Terminaux.Colors;
+using Terminaux.Colors.Models.Conversion;
 
 namespace KS.ConsoleBase.Colors
 {
@@ -65,7 +66,7 @@ namespace KS.ConsoleBase.Colors
                 int G = (byte)((ColorDecimal & 0xFF00) >> 8);
                 int B = (byte)(ColorDecimal & 0xFF);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", R, G, B);
-                var ryb = new Color(R, G, B).RYB;
+                var ryb = RybConversionTools.ConvertFrom(new Color(R, G, B).RGB);
                 string rybSeq = $"ryb:{ryb.R};{ryb.Y};{ryb.B}";
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color (RYB: {0})", rybSeq);
                 return rybSeq;
@@ -88,7 +89,7 @@ namespace KS.ConsoleBase.Colors
                 int G = (byte)((ColorDecimal & 0xFF00) >> 8);
                 int B = (byte)(ColorDecimal & 0xFF);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", R, G, B);
-                var cmyk = new Color(R, G, B).CMYK;
+                var cmyk = CmykConversionTools.ConvertFrom(new Color(R, G, B).RGB);
                 var cmy = cmyk.CMY;
                 string cmykSeq = $"cmyk:{cmy.CWhole};{cmy.MWhole};{cmy.YWhole};{cmyk.KWhole}";
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color (CMYK: {0})", cmykSeq);
@@ -112,7 +113,7 @@ namespace KS.ConsoleBase.Colors
                 int G = (byte)((ColorDecimal & 0xFF00) >> 8);
                 int B = (byte)(ColorDecimal & 0xFF);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", R, G, B);
-                var cmy = new Color(R, G, B).CMY;
+                var cmy = CmyConversionTools.ConvertFrom(new Color(R, G, B).RGB);
                 string cmySeq = $"cmy:{cmy.CWhole};{cmy.MWhole};{cmy.YWhole}";
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color (CMY: {0})", cmySeq);
                 return cmySeq;
@@ -135,7 +136,7 @@ namespace KS.ConsoleBase.Colors
                 int G = (byte)((ColorDecimal & 0xFF00) >> 8);
                 int B = (byte)(ColorDecimal & 0xFF);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", R, G, B);
-                var hsl = new Color(R, G, B).HSL;
+                var hsl = HslConversionTools.ConvertFrom(new Color(R, G, B).RGB);
                 string hslSeq = $"hsl:{hsl.HueWhole};{hsl.SaturationWhole};{hsl.LightnessWhole}";
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color (HSL: {0})", hslSeq);
                 return hslSeq;
@@ -158,7 +159,7 @@ namespace KS.ConsoleBase.Colors
                 int G = (byte)((ColorDecimal & 0xFF00) >> 8);
                 int B = (byte)(ColorDecimal & 0xFF);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", R, G, B);
-                var hsv = new Color(R, G, B).HSV;
+                var hsv = HsvConversionTools.ConvertFrom(new Color(R, G, B).RGB);
                 string hsvSeq = $"hsv:{hsv.HueWhole};{hsv.SaturationWhole};{hsv.ValueWhole}";
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color (HSV: {0})", hsvSeq);
                 return hsvSeq;
@@ -247,7 +248,7 @@ namespace KS.ConsoleBase.Colors
                     int G = Convert.ToInt32(ColorSpecifierArray[1]);
                     int B = Convert.ToInt32(ColorSpecifierArray[2]);
                     DebugWriter.WriteDebug(DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", R, G, B);
-                    var ryb = new Color(R, G, B).RYB;
+                    var ryb = RybConversionTools.ConvertFrom(new Color(R, G, B).RGB);
                     string rybSeq = $"ryb:{ryb.R};{ryb.Y};{ryb.B}";
                     DebugWriter.WriteDebug(DebugLevel.I, "Got color (RYB: {0})", rybSeq);
                     return rybSeq;
@@ -290,7 +291,7 @@ namespace KS.ConsoleBase.Colors
                     int G = Convert.ToInt32(ColorSpecifierArray[1]);
                     int B = Convert.ToInt32(ColorSpecifierArray[2]);
                     DebugWriter.WriteDebug(DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", R, G, B);
-                    var cmyk = new Color(R, G, B).CMYK;
+                    var cmyk = CmykConversionTools.ConvertFrom(new Color(R, G, B).RGB);
                     var cmy = cmyk.CMY;
                     string cmykSeq = $"cmyk:{cmy.CWhole};{cmy.MWhole};{cmy.YWhole};{cmyk.KWhole}";
                     DebugWriter.WriteDebug(DebugLevel.I, "Got color (CMYK: {0})", cmykSeq);
@@ -334,7 +335,7 @@ namespace KS.ConsoleBase.Colors
                     int G = Convert.ToInt32(ColorSpecifierArray[1]);
                     int B = Convert.ToInt32(ColorSpecifierArray[2]);
                     DebugWriter.WriteDebug(DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", R, G, B);
-                    var cmy = new Color(R, G, B).CMY;
+                    var cmy = CmyConversionTools.ConvertFrom(new Color(R, G, B).RGB);
                     string cmySeq = $"cmy:{cmy.CWhole};{cmy.MWhole};{cmy.YWhole}";
                     DebugWriter.WriteDebug(DebugLevel.I, "Got color (CMY: {0})", cmySeq);
                     return cmySeq;
@@ -377,7 +378,7 @@ namespace KS.ConsoleBase.Colors
                     int G = Convert.ToInt32(ColorSpecifierArray[1]);
                     int B = Convert.ToInt32(ColorSpecifierArray[2]);
                     DebugWriter.WriteDebug(DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", R, G, B);
-                    var hsl = new Color(R, G, B).HSL;
+                    var hsl = HslConversionTools.ConvertFrom(new Color(R, G, B).RGB);
                     string hslSeq = $"hsl:{hsl.HueWhole};{hsl.SaturationWhole};{hsl.LightnessWhole}";
                     DebugWriter.WriteDebug(DebugLevel.I, "Got color (HSL: {0})", hslSeq);
                     return hslSeq;
@@ -420,7 +421,7 @@ namespace KS.ConsoleBase.Colors
                     int G = Convert.ToInt32(ColorSpecifierArray[1]);
                     int B = Convert.ToInt32(ColorSpecifierArray[2]);
                     DebugWriter.WriteDebug(DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", R, G, B);
-                    var hsv = new Color(R, G, B).HSV;
+                    var hsv = HsvConversionTools.ConvertFrom(new Color(R, G, B).RGB);
                     string hsvSeq = $"hsv:{hsv.HueWhole};{hsv.SaturationWhole};{hsv.ValueWhole}";
                     DebugWriter.WriteDebug(DebugLevel.I, "Got color (HSV: {0})", hsvSeq);
                     return hsvSeq;
@@ -550,7 +551,7 @@ namespace KS.ConsoleBase.Colors
                     int Y = Convert.ToInt32(ColorSpecifierArray[1]);
                     int B = Convert.ToInt32(ColorSpecifierArray[2]);
                     DebugWriter.WriteDebug(DebugLevel.I, "Got color (RYB: {0})", $"ryb:{R};{Y};{B}");
-                    var cmyk = new Color($"ryb:{R};{Y};{B}").CMYK;
+                    var cmyk = CmykConversionTools.ConvertFrom(new Color($"ryb:{R};{Y};{B}").RGB);
                     var cmy = cmyk.CMY;
                     string cmykSeq = $"cmyk:{cmy.CWhole};{cmy.MWhole};{cmy.YWhole};{cmyk.KWhole}";
                     DebugWriter.WriteDebug(DebugLevel.I, "Got color (CMYK: {0})", cmykSeq);
@@ -594,7 +595,7 @@ namespace KS.ConsoleBase.Colors
                     int Y = Convert.ToInt32(ColorSpecifierArray[1]);
                     int B = Convert.ToInt32(ColorSpecifierArray[2]);
                     DebugWriter.WriteDebug(DebugLevel.I, "Got color (RYB: {0})", $"ryb:{R};{Y};{B}");
-                    var cmy = new Color($"ryb:{R};{Y};{B}").CMY;
+                    var cmy = CmyConversionTools.ConvertFrom(new Color($"ryb:{R};{Y};{B}").RGB);
                     string cmySeq = $"cmy:{cmy.CWhole};{cmy.MWhole};{cmy.YWhole}";
                     DebugWriter.WriteDebug(DebugLevel.I, "Got color (CMY: {0})", cmySeq);
                     return cmySeq;
@@ -637,7 +638,7 @@ namespace KS.ConsoleBase.Colors
                     int Y = Convert.ToInt32(ColorSpecifierArray[1]);
                     int B = Convert.ToInt32(ColorSpecifierArray[2]);
                     DebugWriter.WriteDebug(DebugLevel.I, "Got color (RYB: {0})", $"ryb:{R};{Y};{B}");
-                    var hsl = new Color($"ryb:{R};{Y};{B}").HSL;
+                    var hsl = HslConversionTools.ConvertFrom(new Color($"ryb:{R};{Y};{B}").RGB);
                     string hslSeq = $"hsl:{hsl.HueWhole};{hsl.SaturationWhole};{hsl.LightnessWhole}";
                     DebugWriter.WriteDebug(DebugLevel.I, "Got color (HSL: {0})", hslSeq);
                     return hslSeq;
@@ -680,7 +681,7 @@ namespace KS.ConsoleBase.Colors
                     int Y = Convert.ToInt32(ColorSpecifierArray[1]);
                     int B = Convert.ToInt32(ColorSpecifierArray[2]);
                     DebugWriter.WriteDebug(DebugLevel.I, "Got color (RYB: {0})", $"ryb:{R};{Y};{B}");
-                    var hsv = new Color($"ryb:{R};{Y};{B}").HSV;
+                    var hsv = HsvConversionTools.ConvertFrom(new Color($"ryb:{R};{Y};{B}").RGB);
                     string hsvSeq = $"hsv:{hsv.HueWhole};{hsv.SaturationWhole};{hsv.ValueWhole}";
                     DebugWriter.WriteDebug(DebugLevel.I, "Got color (HSV: {0})", hsvSeq);
                     return hsvSeq;
@@ -818,7 +819,7 @@ namespace KS.ConsoleBase.Colors
                     int C = Convert.ToInt32(ColorSpecifierArray[0]);
                     int M = Convert.ToInt32(ColorSpecifierArray[1]);
                     int Y = Convert.ToInt32(ColorSpecifierArray[2]);
-                    var ryb = new Color($"cmy:{C};{M};{Y}").RYB;
+                    var ryb = RybConversionTools.ConvertFrom(new Color($"cmy:{C};{M};{Y}").RGB);
                     DebugWriter.WriteDebug(DebugLevel.I, "Got color (RYB: {0})", ryb.ToString());
                     return ryb.ToString();
                 }
@@ -860,7 +861,7 @@ namespace KS.ConsoleBase.Colors
                     int M = Convert.ToInt32(ColorSpecifierArray[1]);
                     int Y = Convert.ToInt32(ColorSpecifierArray[2]);
                     var rgb = new Color($"cmy:{C};{M};{Y}");
-                    var hsl = rgb.HSL;
+                    var hsl = HslConversionTools.ConvertFrom(rgb.RGB);
                     DebugWriter.WriteDebug(DebugLevel.I, "Got color (HSL: hsl:{0};{1};{2})", hsl.HueWhole, hsl.SaturationWhole, hsl.LightnessWhole);
                     return $"hsl:{hsl.HueWhole};{hsl.SaturationWhole};{hsl.LightnessWhole}";
                 }
@@ -902,7 +903,7 @@ namespace KS.ConsoleBase.Colors
                     int M = Convert.ToInt32(ColorSpecifierArray[1]);
                     int Y = Convert.ToInt32(ColorSpecifierArray[2]);
                     var rgb = new Color($"cmy:{C};{M};{Y}");
-                    var hsv = rgb.HSV;
+                    var hsv = HsvConversionTools.ConvertFrom(rgb.RGB);
                     string hsvSequence = $"hsv:{hsv.HueWhole};{hsv.SaturationWhole};{hsv.ValueWhole}";
                     DebugWriter.WriteDebug(DebugLevel.I, "Got color (HSV: {0})", hsvSequence);
                     return hsvSequence;
@@ -945,7 +946,7 @@ namespace KS.ConsoleBase.Colors
                     int M = Convert.ToInt32(ColorSpecifierArray[1]);
                     int Y = Convert.ToInt32(ColorSpecifierArray[2]);
                     var rgb = new Color($"cmy:{C};{M};{Y}");
-                    var cmyk = rgb.CMYK;
+                    var cmyk = CmykConversionTools.ConvertFrom(rgb.RGB);
                     var cmy = cmyk.CMY;
                     string cmySequence = $"cmyk:{cmy.CWhole};{cmy.MWhole};{cmy.YWhole};{cmyk.KWhole}";
                     DebugWriter.WriteDebug(DebugLevel.I, "Got color (CMYK: {0})", cmySequence);
@@ -1092,7 +1093,7 @@ namespace KS.ConsoleBase.Colors
                     int M = Convert.ToInt32(ColorSpecifierArray[1]);
                     int Y = Convert.ToInt32(ColorSpecifierArray[2]);
                     int K = Convert.ToInt32(ColorSpecifierArray[3]);
-                    var ryb = new Color($"cmyk:{C};{M};{Y};{K}").RYB;
+                    var ryb = RybConversionTools.ConvertFrom(new Color($"cmyk:{C};{M};{Y};{K}").RGB);
                     DebugWriter.WriteDebug(DebugLevel.I, "Got color (RYB: {0})", ryb.ToString());
                     return ryb.ToString();
                 }
@@ -1135,7 +1136,7 @@ namespace KS.ConsoleBase.Colors
                     int M = Convert.ToInt32(ColorSpecifierArray[1]);
                     int Y = Convert.ToInt32(ColorSpecifierArray[2]);
                     int K = Convert.ToInt32(ColorSpecifierArray[3]);
-                    var cmy = new Color($"cmyk:{C};{M};{Y};{K}").CMY;
+                    var cmy = CmyConversionTools.ConvertFrom(new Color($"cmyk:{C};{M};{Y};{K}").RGB);
                     DebugWriter.WriteDebug(DebugLevel.I, "Got color (CMY: cmy:{0};{1};{2})", cmy.CWhole, cmy.MWhole, cmy.YWhole);
                     return $"cmy:{cmy.CWhole};{cmy.MWhole};{cmy.YWhole}";
                 }
@@ -1178,7 +1179,7 @@ namespace KS.ConsoleBase.Colors
                     int M = Convert.ToInt32(ColorSpecifierArray[1]);
                     int Y = Convert.ToInt32(ColorSpecifierArray[2]);
                     int K = Convert.ToInt32(ColorSpecifierArray[3]);
-                    var hsv = new Color($"cmyk:{C};{M};{Y};{K}").HSV;
+                    var hsv = HsvConversionTools.ConvertFrom(new Color($"cmyk:{C};{M};{Y};{K}").RGB);
                     string hsvSequence = $"hsv:{hsv.HueWhole};{hsv.SaturationWhole};{hsv.ValueWhole}";
                     DebugWriter.WriteDebug(DebugLevel.I, "Got color (HSV: {0})", hsvSequence);
                     return hsvSequence;
@@ -1223,7 +1224,7 @@ namespace KS.ConsoleBase.Colors
                     int Y = Convert.ToInt32(ColorSpecifierArray[2]);
                     int K = Convert.ToInt32(ColorSpecifierArray[3]);
                     var rgb = new Color($"cmyk:{C};{M};{Y};{K}");
-                    var hsl = rgb.HSL;
+                    var hsl = HslConversionTools.ConvertFrom(rgb.RGB);
                     DebugWriter.WriteDebug(DebugLevel.I, "Got color (HSL: hsl:{0};{1};{2})", hsl.HueWhole, hsl.SaturationWhole, hsl.LightnessWhole);
                     return $"hsl:{hsl.HueWhole};{hsl.SaturationWhole};{hsl.LightnessWhole}";
                 }
@@ -1320,7 +1321,7 @@ namespace KS.ConsoleBase.Colors
                     int S = Convert.ToInt32(ColorSpecifierArray[1]);
                     int L = Convert.ToInt32(ColorSpecifierArray[2]);
                     var rgb = new Color($"hsl:{H};{S};{L}");
-                    var cmyk = rgb.CMYK;
+                    var cmyk = CmykConversionTools.ConvertFrom(rgb.RGB);
                     var cmy = cmyk.CMY;
                     string cmykSeq = $"cmyk:{cmy.CWhole};{cmy.MWhole};{cmy.YWhole};{cmyk.KWhole}";
                     DebugWriter.WriteDebug(DebugLevel.I, "Got color (CMYK: {0})", cmykSeq);
@@ -1364,7 +1365,7 @@ namespace KS.ConsoleBase.Colors
                     int S = Convert.ToInt32(ColorSpecifierArray[1]);
                     int L = Convert.ToInt32(ColorSpecifierArray[2]);
                     var rgb = new Color($"hsl:{H};{S};{L}");
-                    var ryb = rgb.RYB;
+                    var ryb = RybConversionTools.ConvertFrom(rgb.RGB);
                     string rybSeq = ryb.ToString();
                     DebugWriter.WriteDebug(DebugLevel.I, "Got color (RYB: {0})", rybSeq);
                     return rybSeq;
@@ -1407,7 +1408,7 @@ namespace KS.ConsoleBase.Colors
                     int S = Convert.ToInt32(ColorSpecifierArray[1]);
                     int L = Convert.ToInt32(ColorSpecifierArray[2]);
                     var rgb = new Color($"hsl:{H};{S};{L}");
-                    var cmy = rgb.CMY;
+                    var cmy = CmyConversionTools.ConvertFrom(rgb.RGB);
                     string cmySeq = $"cmy:{cmy.CWhole};{cmy.MWhole};{cmy.YWhole}";
                     DebugWriter.WriteDebug(DebugLevel.I, "Got color (CMY: {0})", cmySeq);
                     return cmySeq;
@@ -1450,7 +1451,7 @@ namespace KS.ConsoleBase.Colors
                     int S = Convert.ToInt32(ColorSpecifierArray[1]);
                     int L = Convert.ToInt32(ColorSpecifierArray[2]);
                     var rgb = new Color($"hsl:{H};{S};{L}");
-                    var hsv = rgb.HSV;
+                    var hsv = HsvConversionTools.ConvertFrom(rgb.RGB);
                     string hsvSeq = $"hsv:{hsv.HueWhole};{hsv.SaturationWhole};{hsv.ValueWhole}";
                     DebugWriter.WriteDebug(DebugLevel.I, "Got color (HSV: {0})", hsvSeq);
                     return hsvSeq;
@@ -1591,7 +1592,7 @@ namespace KS.ConsoleBase.Colors
                     int S = Convert.ToInt32(ColorSpecifierArray[1]);
                     int V = Convert.ToInt32(ColorSpecifierArray[2]);
                     var rgb = new Color($"hsv:{H};{S};{V}");
-                    var cmyk = rgb.CMYK;
+                    var cmyk = CmykConversionTools.ConvertFrom(rgb.RGB);
                     var cmy = cmyk.CMY;
                     string cmykSeq = $"cmyk:{cmy.CWhole};{cmy.MWhole};{cmy.YWhole};{cmyk.KWhole}";
                     DebugWriter.WriteDebug(DebugLevel.I, "Got color (CMYK: {0})", cmykSeq);
@@ -1635,7 +1636,7 @@ namespace KS.ConsoleBase.Colors
                     int S = Convert.ToInt32(ColorSpecifierArray[1]);
                     int V = Convert.ToInt32(ColorSpecifierArray[2]);
                     var rgb = new Color($"hsv:{H};{S};{V}");
-                    var ryb = rgb.RYB;
+                    var ryb = RybConversionTools.ConvertFrom(rgb.RGB);
                     string rybSeq = ryb.ToString();
                     DebugWriter.WriteDebug(DebugLevel.I, "Got color (RYB: {0})", rybSeq);
                     return rybSeq;
@@ -1678,7 +1679,7 @@ namespace KS.ConsoleBase.Colors
                     int S = Convert.ToInt32(ColorSpecifierArray[1]);
                     int V = Convert.ToInt32(ColorSpecifierArray[2]);
                     var rgb = new Color($"hsv:{H};{S};{V}");
-                    var cmy = rgb.CMY;
+                    var cmy = CmyConversionTools.ConvertFrom(rgb.RGB);
                     string cmySeq = $"cmy:{cmy.CWhole};{cmy.MWhole};{cmy.YWhole}";
                     DebugWriter.WriteDebug(DebugLevel.I, "Got color (CMY: {0})", cmySeq);
                     return cmySeq;
@@ -1721,7 +1722,7 @@ namespace KS.ConsoleBase.Colors
                     int S = Convert.ToInt32(ColorSpecifierArray[1]);
                     int V = Convert.ToInt32(ColorSpecifierArray[2]);
                     var rgb = new Color($"hsv:{H};{S};{V}");
-                    var hsl = rgb.HSL;
+                    var hsl = HslConversionTools.ConvertFrom(rgb.RGB);
                     string hslSeq = $"hsl:{hsl.HueWhole};{hsl.SaturationWhole};{hsl.LightnessWhole}";
                     DebugWriter.WriteDebug(DebugLevel.I, "Got color (HSL: {0})", hslSeq);
                     return hslSeq;

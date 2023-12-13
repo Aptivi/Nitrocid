@@ -22,7 +22,7 @@ using System.Text;
 using System.Threading;
 using KS.ConsoleBase.Colors;
 using KS.Kernel.Debugging;
-using Terminaux.Sequences.Builder.Types;
+using Textify.Sequences.Builder.Types;
 
 namespace KS.Misc.Splash
 {

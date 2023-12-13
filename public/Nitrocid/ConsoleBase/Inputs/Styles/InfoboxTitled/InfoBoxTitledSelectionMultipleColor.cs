@@ -28,7 +28,7 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters.Tools;
 using Terminaux.Colors;
 using System.Text;
-using Terminaux.Sequences.Builder.Types;
+using Textify.Sequences.Builder.Types;
 using KS.Kernel.Configuration;
 using KS.Misc.Screensaver;
 using System.Linq;

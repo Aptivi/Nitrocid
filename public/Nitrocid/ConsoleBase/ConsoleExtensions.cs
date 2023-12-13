@@ -26,8 +26,8 @@ using KS.Kernel;
 using KS.Kernel.Configuration;
 using KS.Kernel.Threading;
 using KS.Misc.Text;
-using Terminaux.Sequences.Builder;
-using Terminaux.Sequences.Tools;
+using Textify.Sequences.Builder;
+using Textify.Sequences.Tools;
 
 namespace KS.ConsoleBase
 {

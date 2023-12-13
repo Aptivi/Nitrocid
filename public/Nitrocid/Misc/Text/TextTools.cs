@@ -26,7 +26,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Terminaux.Sequences.Tools;
+using Textify.Sequences.Tools;
 
 namespace KS.Misc.Text
 {

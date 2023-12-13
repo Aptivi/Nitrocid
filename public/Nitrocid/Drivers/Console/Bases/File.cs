@@ -26,7 +26,7 @@ using System.Threading;
 using KS.Kernel.Exceptions;
 using KS.Misc.Text;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using Terminaux.Sequences.Tools;
+using Textify.Sequences.Tools;
 using TextEncoding = System.Text.Encoding;
 using KS.Files.Operations.Querying;
 using KS.Files.Operations;

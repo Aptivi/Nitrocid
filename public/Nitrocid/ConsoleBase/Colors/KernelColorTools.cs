@@ -26,7 +26,7 @@ using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using Terminaux.Colors;
-using Terminaux.Colors.Accessibility;
+using Terminaux.Colors.Transformation;
 
 namespace KS.ConsoleBase.Colors
 {
@@ -64,10 +64,10 @@ namespace KS.ConsoleBase.Colors
             Config.MainConfig.ColorBlindSimple;
 
         /// <summary>
-        /// Color blindness deficiency
+        /// Color blindness TransformationFormula
         /// </summary>
-        public static Deficiency BlindnessDeficiency =>
-            (Deficiency)Config.MainConfig.BlindnessDeficiency;
+        public static TransformationFormula BlindnessTransformationFormula =>
+            (TransformationFormula)Config.MainConfig.BlindnessTransformationFormula;
 
         /// <summary>
         /// Color blindness severity
@@ -187,7 +187,7 @@ namespace KS.ConsoleBase.Colors
         /// </summary>
         public static Color GetGray()
         {
-            if (GetColor(KernelColorType.Background).IsBright)
+            if (GetColor(KernelColorType.Background).Brightness == ColorBrightness.Light)
             {
                 var color = GetColor(KernelColorType.NeutralText);
                 DebugWriter.WriteDebug(DebugLevel.I, "Background color is bright! Returning neutral text color {0}...", color.PlainSequence);

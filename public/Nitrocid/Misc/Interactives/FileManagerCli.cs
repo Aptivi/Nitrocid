@@ -42,7 +42,7 @@ using KS.ConsoleBase.Interactive;
 using KS.Files.Extensions;
 using KS.Files.Operations.Querying;
 using KS.Files.Operations.Printing;
-using Terminaux.Sequences.Tools;
+using Textify.Sequences.Tools;
 using KS.Files.Paths;
 using KS.ConsoleBase.Inputs.Styles.Infobox;
 

@@ -25,7 +25,8 @@ using KS.Misc.Screensaver;
 using System;
 using System.Text;
 using Terminaux.Colors;
-using Terminaux.Sequences.Builder.Types;
+using Terminaux.Colors.Models.Conversion;
+using Textify.Sequences.Builder.Types;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -109,7 +110,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Prepare the color
             var color = new Color($"hsl:{currentHueAngle};{HueBackGradientSettings.HueBackGradientSaturation};{HueBackGradientSettings.HueBackGradientLuminance}");
-            var reverseColor = new Color($"hsl:{color.HSL.ReverseHueWhole};{HueBackGradientSettings.HueBackGradientSaturation};{HueBackGradientSettings.HueBackGradientLuminance}");
+            var hsl = HslConversionTools.ConvertFrom(color.RGB);
+            var reverseColor = new Color($"hsl:{hsl.ReverseHueWhole};{HueBackGradientSettings.HueBackGradientSaturation};{HueBackGradientSettings.HueBackGradientLuminance}");
 
             // Set thresholds for color ramp
             int RampFrameSpaces = ConsoleWrapper.WindowWidth;

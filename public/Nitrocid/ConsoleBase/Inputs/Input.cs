@@ -208,25 +208,25 @@ namespace KS.ConsoleBase.Inputs
                 return;
 
             // Initialize console wrappers for Terminaux
-            ConsoleWrappers.ActionBeep = ConsoleWrapper.Beep;
-            ConsoleWrappers.ActionBufferHeight = () => ConsoleWrapper.BufferHeight;
-            ConsoleWrappers.ActionCursorLeft = () => ConsoleWrapper.CursorLeft;
-            ConsoleWrappers.ActionCursorTop = () => ConsoleWrapper.CursorTop;
-            ConsoleWrappers.ActionCursorVisible = (value) => ConsoleWrapper.CursorVisible = value;
-            ConsoleWrappers.ActionIsDumb = () => DriverHandler.CurrentConsoleDriverLocal.IsDumb;
-            ConsoleWrappers.ActionKeyAvailable = () => ConsoleWrapper.KeyAvailable;
-            ConsoleWrappers.ActionReadKey = ConsoleWrapper.ReadKey;
-            ConsoleWrappers.ActionSetCursorPosition = ConsoleWrapper.SetCursorPosition;
-            ConsoleWrappers.ActionTreatCtrlCAsInput = (value) => ConsoleWrapper.TreatCtrlCAsInput = value;
-            //ConsoleWrappers.ActionGetTreatCtrlCAsInput = () => ConsoleWrapper.TreatCtrlCAsInput;
-            ConsoleWrappers.ActionWindowHeight = () => ConsoleWrapper.WindowHeight;
-            ConsoleWrappers.ActionWindowWidth = () => ConsoleWrapper.WindowWidth;
-            ConsoleWrappers.ActionWriteChar = ConsoleWrapper.Write;
-            ConsoleWrappers.ActionWriteLine = ConsoleWrapper.WriteLine;
-            ConsoleWrappers.ActionWriteLineParameterized = ConsoleWrapper.WriteLine;
-            ConsoleWrappers.ActionWriteLineString = ConsoleWrapper.WriteLine;
-            ConsoleWrappers.ActionWriteParameterized = ConsoleWrapper.Write;
-            ConsoleWrappers.ActionWriteString = ConsoleWrapper.Write;
+            ConsoleWrapperTools.ActionBeep = ConsoleWrapper.Beep;
+            ConsoleWrapperTools.ActionBufferHeight = () => ConsoleWrapper.BufferHeight;
+            ConsoleWrapperTools.ActionCursorLeft = () => ConsoleWrapper.CursorLeft;
+            ConsoleWrapperTools.ActionCursorTop = () => ConsoleWrapper.CursorTop;
+            ConsoleWrapperTools.ActionCursorVisible = (value) => ConsoleWrapper.CursorVisible = value;
+            ConsoleWrapperTools.ActionIsDumb = () => DriverHandler.CurrentConsoleDriverLocal.IsDumb;
+            ConsoleWrapperTools.ActionKeyAvailable = () => ConsoleWrapper.KeyAvailable;
+            ConsoleWrapperTools.ActionReadKey = ConsoleWrapper.ReadKey;
+            ConsoleWrapperTools.ActionSetCursorPosition = ConsoleWrapper.SetCursorPosition;
+            ConsoleWrapperTools.ActionTreatCtrlCAsInput = (value) => ConsoleWrapper.TreatCtrlCAsInput = value;
+            ConsoleWrapperTools.ActionGetTreatCtrlCAsInput = () => ConsoleWrapper.TreatCtrlCAsInput;
+            ConsoleWrapperTools.ActionWindowHeight = () => ConsoleWrapper.WindowHeight;
+            ConsoleWrapperTools.ActionWindowWidth = () => ConsoleWrapper.WindowWidth;
+            ConsoleWrapperTools.ActionWriteChar = ConsoleWrapper.Write;
+            ConsoleWrapperTools.ActionWriteLine = ConsoleWrapper.WriteLine;
+            ConsoleWrapperTools.ActionWriteLineParameterized = ConsoleWrapper.WriteLine;
+            ConsoleWrapperTools.ActionWriteLineString = ConsoleWrapper.WriteLine;
+            ConsoleWrapperTools.ActionWriteParameterized = ConsoleWrapper.Write;
+            ConsoleWrapperTools.ActionWriteString = ConsoleWrapper.Write;
             isWrapperInitialized = true;
         }
 

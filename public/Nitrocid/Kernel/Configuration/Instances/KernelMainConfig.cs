@@ -44,7 +44,7 @@ using KS.Drivers.Regexp;
 using KS.ConsoleBase.Writers.MiscWriters;
 using KS.ConsoleBase.Writers.FancyWriters.Tools;
 using Terminaux.Colors;
-using Terminaux.Colors.Accessibility;
+using Terminaux.Colors.Transformation;
 using Figletize;
 using KS.Users.Login.Handlers;
 using KS.Kernel.Configuration.Settings;
@@ -157,18 +157,18 @@ namespace KS.Kernel.Configuration.Instances
         /// <summary>
         /// The type of color blindness, whether it's protan, deuter, or tritan.
         /// </summary>
-        public int BlindnessDeficiency
+        public int BlindnessTransformationFormula
         {
-            get => (int)ColorTools.ColorDeficiency;
-            set => ColorTools.ColorDeficiency = (Deficiency)value;
+            get => (int)ColorTools.ColorTransformationFormula;
+            set => ColorTools.ColorTransformationFormula = (TransformationFormula)value;
         }
         /// <summary>
         /// How severe is the color blindness?
         /// </summary>
         public double BlindnessSeverity
         {
-            get => ColorTools.ColorDeficiencySeverity;
-            set => ColorTools.ColorDeficiencySeverity = value;
+            get => ColorTools.ColorBlindnessSeverity;
+            set => ColorTools.ColorBlindnessSeverity = value;
         }
         /// <summary>
         /// Enables beeping upon shutting down the kernel.
@@ -183,8 +183,8 @@ namespace KS.Kernel.Configuration.Instances
         /// </summary>
         public bool ColorBlindSimple
         {
-            get => ColorTools.EnableSimpleColorTransformation;
-            set => ColorTools.EnableSimpleColorTransformation = value;
+            get => ColorTools.ColorTransformationMethod == TransformationMethod.Vienot1999;
+            set => ColorTools.ColorTransformationMethod = value ? TransformationMethod.Vienot1999 : TransformationMethod.Brettel1997;
         }
         /// <summary>
         /// If you are sure that the console supports true color, or if you want to change your terminal to a terminal that supports true color, change this value.

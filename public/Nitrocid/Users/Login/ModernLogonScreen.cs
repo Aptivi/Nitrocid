@@ -33,7 +33,7 @@ using Figletize;
 using KS.Misc.Text.Probers.Motd;
 using System.Text;
 using KS.ConsoleBase.Buffered;
-using Terminaux.Sequences.Builder.Types;
+using Textify.Sequences.Builder.Types;
 using KS.Kernel.Extensions;
 using KS.Kernel.Exceptions;
 using KS.ConsoleBase.Writers.FancyWriters;

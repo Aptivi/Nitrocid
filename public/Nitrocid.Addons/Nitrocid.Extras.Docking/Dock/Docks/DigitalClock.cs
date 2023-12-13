@@ -37,7 +37,7 @@ using KS.Users.Login;
 using System;
 using System.Text;
 using Terminaux.Colors;
-using Terminaux.Sequences.Builder.Types;
+using Textify.Sequences.Builder.Types;
 
 namespace Nitrocid.Extras.Docking.Dock.Docks
 {

@@ -22,7 +22,7 @@ using KS.Kernel.Debugging;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using Terminaux.Colors;
-using Terminaux.Sequences.Tools;
+using Textify.Sequences.Tools;
 using KS.Misc.Splash;
 using System.Text;
 

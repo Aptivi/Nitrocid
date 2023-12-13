@@ -26,7 +26,7 @@ using KS.Languages;
 using System;
 using System.Text;
 using Terminaux.Colors;
-using Terminaux.Sequences.Builder.Types;
+using Textify.Sequences.Builder.Types;
 
 namespace KS.Kernel.Debugging.Testing.Facades
 {
