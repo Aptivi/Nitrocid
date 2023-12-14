@@ -499,7 +499,7 @@ namespace Nitrocid.Tests.ConsoleBase
         public void TestConvertFromHslSequenceToCmyk()
         {
             Console.WriteLine("Converting 0;0;5...");
-            KernelColorConversionTools.ConvertFromHslToCmyk("hsl:0;0;5").ShouldBe("cmyk:0;0;0;94");
+            KernelColorConversionTools.ConvertFromHslToCmyk("hsl:0;0;5").ShouldBe("cmyk:0;0;0;95");
         }
 
         /// <summary>
@@ -510,7 +510,7 @@ namespace Nitrocid.Tests.ConsoleBase
         public void TestConvertFromHslNumbersToCmyk()
         {
             Console.WriteLine("Converting 0, 0, 5...");
-            KernelColorConversionTools.ConvertFromHslToCmyk(0, 0, 5).ShouldBe("cmyk:0;0;0;94");
+            KernelColorConversionTools.ConvertFromHslToCmyk(0, 0, 5).ShouldBe("cmyk:0;0;0;95");
         }
 
         /// <summary>
@@ -609,7 +609,7 @@ namespace Nitrocid.Tests.ConsoleBase
         public void TestConvertFromHsvSequenceToCmyk()
         {
             Console.WriteLine("Converting 0;0;5...");
-            KernelColorConversionTools.ConvertFromHsvToCmyk("hsv:0;0;5").ShouldBe("cmyk:0;0;0;94");
+            KernelColorConversionTools.ConvertFromHsvToCmyk("hsv:0;0;5").ShouldBe("cmyk:0;0;0;95");
         }
 
         /// <summary>
@@ -620,7 +620,7 @@ namespace Nitrocid.Tests.ConsoleBase
         public void TestConvertFromHsvNumbersToCmyk()
         {
             Console.WriteLine("Converting 0, 0, 5...");
-            KernelColorConversionTools.ConvertFromHsvToCmyk(0, 0, 5).ShouldBe("cmyk:0;0;0;94");
+            KernelColorConversionTools.ConvertFromHsvToCmyk(0, 0, 5).ShouldBe("cmyk:0;0;0;95");
         }
 
         /// <summary>
