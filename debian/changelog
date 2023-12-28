@@ -1,3 +1,9 @@
+kernel-simulator (0.1.0-beta3-0ppa2) noble; urgency=medium
+
+  * Fixed FTBFS
+
+ -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Thu, 28 Dec 2023 22:20:10 +0300
+
 kernel-simulator (0.1.0-beta3-0ppa1) noble; urgency=medium
 
   * Added new commands
