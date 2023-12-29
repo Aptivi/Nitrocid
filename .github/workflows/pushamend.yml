@@ -32,8 +32,8 @@ jobs:
         
       - name: Download original source
         run: |
-          wget --output-document=../kernel-simulator_0.1.0-beta3.orig.tar.xz https://launchpad.net/~eofla/+archive/ubuntu/kernel-sim/+sourcefiles/kernel-simulator/0.1.0-beta3/kernel-simulator_0.1.0.orig.tar.xz
-          tar xf ../kernel-simulator_0.1.0-beta3.orig.tar.xz .
+          wget --output-document=../kernel-simulator_3.0.25.377-0.1.0~beta3.orig.tar.xz https://launchpad.net/~eofla/+archive/ubuntu/kernel-sim/+sourcefiles/kernel-simulator/3.0.25.377-0.1.0~beta3/kernel-simulator_3.0.25.377-0.1.0~beta3.orig.tar.xz
+          tar xf ../kernel-simulator_3.0.25.377-0.1.0~beta3.orig.tar.xz .
           mv .github ..
 
       - name: Build source package

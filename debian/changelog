@@ -1,3 +1,9 @@
+kernel-simulator (3.0.25.377-0.1.0~beta3-1) noble; urgency=medium
+
+  * Changed version number
+
+ -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Fri, 29 Dec 2023 08:24:24 +0000
+
 kernel-simulator (0.1.0-beta3-0ppa2) noble; urgency=medium
 
   * Fixed FTBFS
