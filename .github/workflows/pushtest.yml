@@ -47,4 +47,4 @@ jobs:
         run: debuild -S -sa
         
       - name: Push to Launchpad
-        run: dput ppa:eofla/kernel-sim ../kernel-simulator_0.1.0*_source.changes
+        run: dput ppa:eofla/kernel-sim ../kernel-simulator_*_source.changes
