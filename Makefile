@@ -56,7 +56,6 @@ debian-install:
 	find debian/kernel-simulator/usr/lib/ks/Addons/Extras.Contacts/runtimes/ -mindepth 1 -maxdepth 1 -not -name "linux-x64" -type d -exec rm -rf {} \;
 	find debian/kernel-simulator/usr/lib/ks/Addons/Extras.MailShell/runtimes/ -mindepth 1 -maxdepth 1 -not -name "linux-x64" -type d -exec rm -rf {} \;
 	find debian/kernel-simulator/usr/lib/ks/Addons/Extras.SqlShell/runtimes/ -mindepth 1 -maxdepth 1 -not -name "linux-x64" -type d -exec rm -rf {} \;
-	find debian/kernel-simulator/usr/lib/ks/Addons/Legacy.InxiNet/runtimes/ -mindepth 1 -maxdepth 1 -not -name "linux-x64" -type d -exec rm -rf {} \;
 
 clean:
 	rm -rf $(OUTPUTS)
