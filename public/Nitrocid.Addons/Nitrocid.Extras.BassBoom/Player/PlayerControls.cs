@@ -241,7 +241,7 @@ namespace Nitrocid.Extras.BassBoom.Player
                 var instance = PlayerTui.cachedInfos.Single((csi) => csi.MusicPath == musicPath);
                 PlayerTui.total = instance.Duration;
                 PlayerTui.formatInfo = instance.FormatInfo;
-                PlayerTui.totalSpan = AudioInfoTools.GetDurationSpanFromSamples(PlayerTui.total, PlayerTui.formatInfo);
+                PlayerTui.totalSpan = AudioInfoTools.GetDurationSpanFromSamples(PlayerTui.total, PlayerTui.formatInfo.rate);
                 PlayerTui.frameInfo = instance.FrameInfo;
                 PlayerTui.managedV1 = instance.MetadataV1;
                 PlayerTui.managedV2 = instance.MetadataV2;

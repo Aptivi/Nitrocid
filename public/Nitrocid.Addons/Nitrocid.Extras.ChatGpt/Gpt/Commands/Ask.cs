@@ -20,7 +20,6 @@
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers;
 using KS.Shell.ShellBase.Commands;
-using Microsoft.SemanticKernel.AI.ChatCompletion;
 
 namespace Nitrocid.Extras.ChatGpt.Gpt.Commands
 {
@@ -29,9 +28,7 @@ namespace Nitrocid.Extras.ChatGpt.Gpt.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            ChatGptShellCommon.chat.AddUserMessage(parameters.CommandText);
-            string answer = ChatGptShellCommon.chatCompletion.GenerateMessageAsync(ChatGptShellCommon.chat).Result;
-            ChatGptShellCommon.chat.AddAssistantMessage(answer);
+            string answer = ChatGptShellCommon.aiKernel.SendUserMessage(ChatGptShellCommon.chat).Result;
             TextWriters.Write(answer, KernelColorType.Success);
             return 0;
         }

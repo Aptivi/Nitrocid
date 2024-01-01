@@ -62,7 +62,7 @@
   <!-- Extras.ChatGpt addon Platform Information End -->
   
   <ItemGroup>
-    <PackageReference Include="Microsoft.SemanticKernel" Version="1.0.0-beta6" />
+    <PackageReference Include="Microsoft.SemanticKernel" Version="1.0.1" />
   </ItemGroup>
 
 </Project>

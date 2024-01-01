@@ -18,7 +18,9 @@
 //
 
 using System;
+using System.Linq;
 using System.Threading;
+using Azure.AI.OpenAI;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers;
 using KS.Kernel.Debugging;
@@ -27,7 +29,6 @@ using KS.Misc.Text;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 using Microsoft.SemanticKernel;
-using Microsoft.SemanticKernel.AI.ChatCompletion;
 
 namespace Nitrocid.Extras.ChatGpt.Gpt
 {
@@ -47,13 +48,12 @@ namespace Nitrocid.Extras.ChatGpt.Gpt
         public override void InitializeShell(params object[] ShellArgs)
         {
             // Set the API key
+            var kernelBuilder = Kernel.CreateBuilder();
             ChatGptShellCommon.apiKey = (string)ShellArgs[0];
-            ChatGptShellCommon.aiKernel = new KernelBuilder()
-                .WithOpenAIChatCompletionService("Gpt35Turbo_0301", ChatGptShellCommon.apiKey)
-                .Build();
-            var completion = ChatGptShellCommon.aiKernel.GetService<IChatCompletion>();
+            kernelBuilder.Services.AddOpenAIChatCompletion("Gpt35Turbo_0301", ChatGptShellCommon.apiKey);
+            ChatGptShellCommon.aiKernel = kernelBuilder.Build();
+            var completion = ChatGptShellCommon.aiKernel.GetAllServices<ChatCompletions>().ElementAt(0);
             ChatGptShellCommon.chatCompletion = completion;
-            ChatGptShellCommon.chat = completion.CreateNewChat();
 
             // Actual shell logic
             while (!Bail)

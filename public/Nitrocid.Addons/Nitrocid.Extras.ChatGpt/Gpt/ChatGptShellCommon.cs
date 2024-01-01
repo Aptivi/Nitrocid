@@ -17,8 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Azure.AI.OpenAI;
 using Microsoft.SemanticKernel;
-using Microsoft.SemanticKernel.AI.ChatCompletion;
 
 namespace Nitrocid.Extras.ChatGpt.Gpt
 {
@@ -27,9 +27,8 @@ namespace Nitrocid.Extras.ChatGpt.Gpt
     /// </summary>
     public static class ChatGptShellCommon
     {
-        internal static IKernel aiKernel;
-        internal static IChatCompletion chatCompletion;
-        internal static ChatHistory chat;
+        internal static AssistantKernel aiKernel;
+        internal static ChatCompletions chatCompletion;
         internal static string apiKey = "";
     }
 }

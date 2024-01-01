@@ -30,7 +30,6 @@ using Terminaux.Colors;
 using System.Text;
 using Textify.Sequences.Builder.Types;
 using KS.Kernel.Configuration;
-using KS.Misc.Screensaver;
 using System.Linq;
 using KS.ConsoleBase.Writers.FancyWriters;
 using KS.ConsoleBase.Buffered;

@@ -24,7 +24,6 @@ using KS.ConsoleBase.Colors;
 using KS.Languages;
 using KS.Misc.Text;
 using System.Collections.Generic;
-using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters.Tools;
 using Terminaux.Colors;
 using System.Text;

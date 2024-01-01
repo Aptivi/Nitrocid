@@ -38,7 +38,7 @@
     <Optimize>true</Optimize>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="SharpCompress" Version="0.34.2" />
+    <PackageReference Include="SharpCompress" Version="0.35.0" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Nitrocid\Nitrocid.csproj" Private="false" />

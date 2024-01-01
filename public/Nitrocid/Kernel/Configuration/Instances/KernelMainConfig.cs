@@ -151,24 +151,24 @@ namespace KS.Kernel.Configuration.Instances
         /// </summary>
         public bool ColorBlind
         {
-            get => ColorTools.EnableColorTransformation;
-            set => ColorTools.EnableColorTransformation = value;
+            get => ColorTools.GlobalSettings.EnableColorTransformation;
+            set => ColorTools.GlobalSettings.EnableColorTransformation = value;
         }
         /// <summary>
         /// The type of color blindness, whether it's protan, deuter, or tritan.
         /// </summary>
         public int BlindnessTransformationFormula
         {
-            get => (int)ColorTools.ColorTransformationFormula;
-            set => ColorTools.ColorTransformationFormula = (TransformationFormula)value;
+            get => (int)ColorTools.GlobalSettings.ColorTransformationFormula;
+            set => ColorTools.GlobalSettings.ColorTransformationFormula = (TransformationFormula)value;
         }
         /// <summary>
         /// How severe is the color blindness?
         /// </summary>
         public double BlindnessSeverity
         {
-            get => ColorTools.ColorBlindnessSeverity;
-            set => ColorTools.ColorBlindnessSeverity = value;
+            get => ColorTools.GlobalSettings.ColorBlindnessSeverity;
+            set => ColorTools.GlobalSettings.ColorBlindnessSeverity = value;
         }
         /// <summary>
         /// Enables beeping upon shutting down the kernel.
@@ -183,8 +183,8 @@ namespace KS.Kernel.Configuration.Instances
         /// </summary>
         public bool ColorBlindSimple
         {
-            get => ColorTools.ColorTransformationMethod == TransformationMethod.Vienot1999;
-            set => ColorTools.ColorTransformationMethod = value ? TransformationMethod.Vienot1999 : TransformationMethod.Brettel1997;
+            get => ColorTools.GlobalSettings.ColorTransformationMethod == TransformationMethod.Vienot1999;
+            set => ColorTools.GlobalSettings.ColorTransformationMethod = value ? TransformationMethod.Vienot1999 : TransformationMethod.Brettel1997;
         }
         /// <summary>
         /// If you are sure that the console supports true color, or if you want to change your terminal to a terminal that supports true color, change this value.
@@ -254,8 +254,8 @@ namespace KS.Kernel.Configuration.Instances
         /// </summary>
         public bool UseConsoleColorPalette
         {
-            get => ColorTools.UseTerminalPalette;
-            set => ColorTools.UseTerminalPalette = value;
+            get => ColorTools.GlobalSettings.UseTerminalPalette;
+            set => ColorTools.GlobalSettings.UseTerminalPalette = value;
         }
         /// <summary>
         /// User Name Shell Color

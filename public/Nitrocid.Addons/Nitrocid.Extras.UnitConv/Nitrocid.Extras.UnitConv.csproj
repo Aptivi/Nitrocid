@@ -48,8 +48,8 @@
   <!-- Extras.UnitConv addon Platform Information End -->
 
   <ItemGroup>
-    <PackageReference Include="FluentFTP" Version="48.0.3" />
-    <PackageReference Include="UnitsNet" Version="5.38.2" />
+    <PackageReference Include="FluentFTP" Version="49.0.1" />
+    <PackageReference Include="UnitsNet" Version="5.41.0" />
   </ItemGroup>
 
 </Project>
