@@ -25,6 +25,8 @@ using KS.Kernel.Events;
 using KS.Kernel.Configuration;
 using System.Collections;
 using KS.Drivers.HardwareProber;
+using KS.Users.Windows;
+using KS.Misc.Splash;
 
 namespace KS.Kernel.Hardware
 {
@@ -59,11 +61,22 @@ namespace KS.Kernel.Hardware
             EventsManager.FireEvent(EventType.HardwareProbing);
             try
             {
-                processors = HardwareProberDriver.ProbeProcessor();
-                pcMemory = HardwareProberDriver.ProbePcMemory();
-                hardDrive = HardwareProberDriver.ProbeHardDrive();
-                graphics = HardwareProberDriver.ProbeGraphics();
-                DebugWriter.WriteDebug(DebugLevel.I, "Probe finished.");
+                if (!KernelPlatform.IsOnWindows() || (KernelPlatform.IsOnWindows() && WindowsUserTools.IsAdministrator()))
+                {
+                    processors = HardwareProberDriver.ProbeProcessor();
+                    pcMemory = HardwareProberDriver.ProbePcMemory();
+                    hardDrive = HardwareProberDriver.ProbeHardDrive();
+                    graphics = HardwareProberDriver.ProbeGraphics();
+                    DebugWriter.WriteDebug(DebugLevel.I, "Probe finished.");
+                }
+                else
+                {
+                    processors = Array.Empty<object>();
+                    pcMemory = Array.Empty<object>();
+                    hardDrive = Array.Empty<object>();
+                    graphics = Array.Empty<object>();
+                    SplashReport.ReportProgressWarning(Translate.DoTranslation("Hardware won't be parsed because of insufficient privileges. Use \"winelevate\" to restart Nitrocid in elevated mode."));
+                }
             }
             catch (Exception ex)
             {
