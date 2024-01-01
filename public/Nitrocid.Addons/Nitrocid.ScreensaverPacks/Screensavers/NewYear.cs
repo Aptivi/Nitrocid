@@ -73,7 +73,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 // Congratulate!
                 string cong = Translate.DoTranslation("Happy new year!");
                 int consoleInfoX = ConsoleWrapper.WindowWidth / 2 - cong.Length / 2;
-                int consoleInfoY = ConsoleWrapper.WindowHeight / 2 + figHeight;
+                int consoleInfoY = ConsoleWrapper.WindowHeight / 2 + figHeight + 2;
                 TextWriterWhereColor.WriteWhere(cong, consoleInfoX, consoleInfoY);
             }
             else
