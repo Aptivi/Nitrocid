@@ -46,7 +46,7 @@ namespace KS.Kernel
         private static readonly Version kernelVersion =
             Assembly.GetExecutingAssembly().GetName().Version;
         private static readonly SemVer kernelVersionFull =
-            SemVer.ParseWithRev($"{kernelVersion}-b3");
+            SemVer.ParseWithRev($"{kernelVersion}-rc");
         private static readonly Version kernelApiVersion =
             new(FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).FileVersion);
 

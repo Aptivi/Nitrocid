@@ -45,7 +45,7 @@
     <OutputPath>KSBuild\</OutputPath>
     <ApplicationIcon>OfficialAppIcon-KernelSimulator.ico</ApplicationIcon>
     <Version>0.1.0</Version>
-    <PackageVersion>0.1.0.0-beta3</PackageVersion>
+    <PackageVersion>0.1.0.0-rc</PackageVersion>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <Deterministic>true</Deterministic>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -79,7 +79,7 @@
     <DefineDebug>true</DefineDebug>
     <Optimize>false</Optimize>
     <DebugType>portable</DebugType>
-    <DefineConstants>SPECIFIERDEV;MILESTONESPECIFIERBETA;$(NitrocidFlags.Replace(",",";"))</DefineConstants>
+    <DefineConstants>SPECIFIERDEV;MILESTONESPECIFIERRC;$(NitrocidFlags.Replace(",",";"))</DefineConstants>
   </PropertyGroup>
   
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
