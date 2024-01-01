@@ -240,7 +240,7 @@ namespace Nitrocid.Extras.Calendar.Calendar.Events
         public static void SaveEvent(EventInfo EventInstance, string File)
         {
             FilesystemTools.ThrowOnInvalidPath(File);
-            File = FilesystemTools.NeutralizePath(File, true);
+            File = FilesystemTools.NeutralizePath(File);
             DebugWriter.WriteDebug(DebugLevel.I, "Saving event to {0}...", File);
             var contents = JsonConvert.SerializeObject(EventInstance, Formatting.Indented);
             Writing.WriteContentsText(File, contents);

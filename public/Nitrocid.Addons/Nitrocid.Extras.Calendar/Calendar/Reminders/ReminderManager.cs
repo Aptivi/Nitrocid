@@ -246,9 +246,9 @@ namespace Nitrocid.Extras.Calendar.Calendar.Reminders
         public static void SaveReminder(ReminderInfo ReminderInstance, string File)
         {
             FilesystemTools.ThrowOnInvalidPath(File);
-            File = FilesystemTools.NeutralizePath(File, true);
+            File = FilesystemTools.NeutralizePath(File);
             DebugWriter.WriteDebug(DebugLevel.I, "Saving reminder to {0}...", File);
-            var contents = JsonConvert.SerializeObject(ReminderInstance);
+            var contents = JsonConvert.SerializeObject(ReminderInstance, Formatting.Indented);
             Writing.WriteContentsText(File, contents);
         }
 
