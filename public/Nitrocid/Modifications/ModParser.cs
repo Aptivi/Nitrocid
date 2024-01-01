@@ -224,14 +224,6 @@ namespace KS.Modifications
                         }
                     }
 
-                    // See if the mod has part name
-                    if (string.IsNullOrWhiteSpace(script.ModPart))
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.W, "No part name for {0}", modFile);
-                        SplashReport.ReportProgressError(Translate.DoTranslation("Mod {0} does not have the part name. Mod parsing failed. Review the source code."), modFile);
-                        return;
-                    }
-
                     // See if the mod has name
                     string ModName = script.Name;
                     if (string.IsNullOrWhiteSpace(ModName))
@@ -261,7 +253,7 @@ namespace KS.Modifications
                         {
                             // Parse the semantic version of the mod
                             var versionInfo = SemVer.Parse(script.Version);
-                            SplashReport.ReportProgress(Translate.DoTranslation("{0} v{1} started") + " ({2})", script.Name, script.Version, script.ModPart);
+                            SplashReport.ReportProgress(Translate.DoTranslation("{0} v{1} started"), script.Name, script.Version);
                         }
                         catch (Exception ex)
                         {
@@ -281,7 +273,7 @@ namespace KS.Modifications
 
                     // Start the mod
                     script.StartMod();
-                    DebugWriter.WriteDebug(DebugLevel.I, "script.StartMod() initialized. Mod name: {0} | Mod part: {1} | Version: {2}", script.Name, script.ModPart, script.Version);
+                    DebugWriter.WriteDebug(DebugLevel.I, "script.StartMod() initialized. Mod name: {0} | Version: {1}", script.Name, script.Version);
 
                     // Now, add the part
                     bool modFound = ModManager.Mods.ContainsKey(ModName);

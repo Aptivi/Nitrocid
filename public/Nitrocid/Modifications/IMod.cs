@@ -33,10 +33,6 @@ namespace KS.Modifications
         /// </summary>
         string Name { get; set; }
         /// <summary>
-        /// Name of part of mod
-        /// </summary>
-        string ModPart { get; set; }
-        /// <summary>
         /// Mod version
         /// </summary>
         string Version { get; set; }
