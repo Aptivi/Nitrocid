@@ -21,7 +21,6 @@
     <Configurations>Debug;Release</Configurations>
     <LangVersion>latest</LangVersion>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
-    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <SignAssembly>True</SignAssembly>
     <AssemblyOriginatorKeyFile>..\..\..\aptivi_snk.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
@@ -46,10 +45,6 @@
     </None>
   </ItemGroup>
   <!-- Extras.Forecast addon Platform Information End -->
-
-  <ItemGroup>
-    <PackageReference Include="ManagedWeatherMap" Version="1.2.2" />
-  </ItemGroup>
 
   <ItemGroup>
     <Compile Update="Resources\AddonResources.Designer.cs">

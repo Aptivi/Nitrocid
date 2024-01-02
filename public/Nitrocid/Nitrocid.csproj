@@ -102,7 +102,7 @@
   <!-- KS Non-private Dependencies Information -->
   <ItemGroup>
     <PackageReference Include="Textify.Offline" Version="1.2.0" />
-    <PackageReference Include="Textify.Online" Version="1.1.0" />
+    <PackageReference Include="Nettify" Version="1.1.0" />
   </ItemGroup>
   <!-- KS Non-private Dependencies Information End -->
 

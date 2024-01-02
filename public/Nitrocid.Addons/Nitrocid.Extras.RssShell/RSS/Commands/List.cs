@@ -21,8 +21,8 @@ using KS.ConsoleBase.Colors;
 using KS.Misc.Text;
 using KS.Shell.ShellBase.Commands;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using Syndian.Instance;
 using KS.ConsoleBase.Writers;
+using Nettify.Rss.Instance;
 
 namespace Nitrocid.Extras.RssShell.RSS.Commands
 {

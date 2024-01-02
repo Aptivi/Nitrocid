@@ -25,8 +25,8 @@ using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Notifications;
+using Nettify.Rss.Instance;
 using Nitrocid.Extras.RssShell.RSS;
-using Syndian.Instance;
 
 namespace Nitrocid.Extras.RssShell.Tools
 {

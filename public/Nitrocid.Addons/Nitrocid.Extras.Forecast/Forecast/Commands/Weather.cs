@@ -25,6 +25,7 @@ using KS.ConsoleBase.Writers;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
+using Nettify.Weather;
 
 namespace Nitrocid.Extras.Forecast.Forecast.Commands
 {
@@ -58,7 +59,7 @@ namespace Nitrocid.Extras.Forecast.Forecast.Commands
                 ListMode = true;
             if (ListMode)
             {
-                var Cities = ManagedWeatherMap.Core.Forecast.ListAllCities();
+                var Cities = WeatherForecast.ListAllCities();
                 ListWriterColor.WriteList(Cities);
             }
             else

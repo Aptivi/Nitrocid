@@ -35,8 +35,8 @@ using MailKit;
 using MailKit.Net.Imap;
 using MailKit.Net.Smtp;
 using MimeKit.Cryptography;
+using Nettify.MailAddress;
 using Nitrocid.Extras.MailShell.Tools.PGP;
-using Textify.Online.MailAddress;
 
 namespace Nitrocid.Extras.MailShell.Tools
 {

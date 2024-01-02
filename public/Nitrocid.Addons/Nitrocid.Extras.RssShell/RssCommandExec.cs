@@ -27,8 +27,8 @@ using KS.Languages;
 using KS.Network.Base.Connections;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Switches;
+using Nettify.Rss.Instance;
 using Nitrocid.Extras.RssShell.RSS.Interactive;
-using Syndian.Instance;
 using System;
 
 namespace Nitrocid.Extras.RssShell

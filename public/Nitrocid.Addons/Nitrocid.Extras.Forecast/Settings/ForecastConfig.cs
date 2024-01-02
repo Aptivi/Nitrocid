@@ -20,7 +20,7 @@
 using KS.Kernel.Configuration;
 using KS.Kernel.Configuration.Instances;
 using KS.Kernel.Configuration.Settings;
-using ManagedWeatherMap.Core;
+using Nettify.Weather;
 using Newtonsoft.Json;
 
 namespace Nitrocid.Extras.Forecast.Settings

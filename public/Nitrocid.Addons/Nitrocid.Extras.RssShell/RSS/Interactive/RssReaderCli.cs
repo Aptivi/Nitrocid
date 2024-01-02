@@ -23,7 +23,7 @@ using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Text;
 using KS.Network.Base.Connections;
-using Syndian.Instance;
+using Nettify.Rss.Instance;
 using System;
 using System.Collections;
 using System.Collections.Generic;

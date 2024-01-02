@@ -22,9 +22,9 @@ using KS.Misc.Text;
 using KS.Shell.ShellBase.Commands;
 using System.Linq;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using Syndian.Instance;
 using Nitrocid.Extras.RssShell.Tools;
 using KS.ConsoleBase.Writers;
+using Nettify.Rss.Instance;
 
 namespace Nitrocid.Extras.RssShell.RSS.Commands
 {

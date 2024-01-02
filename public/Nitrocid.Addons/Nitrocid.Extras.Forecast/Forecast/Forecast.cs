@@ -21,10 +21,9 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Text;
-using ManagedWeatherMap.Core;
-using MWM = ManagedWeatherMap.Core.Forecast;
 using System;
 using KS.ConsoleBase.Writers.FancyWriters;
+using Nettify.Weather;
 
 namespace Nitrocid.Extras.Forecast.Forecast
 {
@@ -47,8 +46,8 @@ namespace Nitrocid.Extras.Forecast.Forecast
         /// </summary>
         /// <param name="CityID">City ID</param>
         /// <returns>A class containing properties of weather information</returns>
-        public static ForecastInfo GetWeatherInfo(long CityID) =>
-            MWM.GetWeatherInfo(CityID: CityID, ApiKey, PreferredUnit);
+        public static WeatherForecastInfo GetWeatherInfo(long CityID) =>
+            WeatherForecast.GetWeatherInfo(CityID: CityID, ApiKey, PreferredUnit);
 
         /// <summary>
         /// Gets current weather info from OpenWeatherMap
@@ -56,16 +55,16 @@ namespace Nitrocid.Extras.Forecast.Forecast
         /// <param name="CityID">City ID</param>
         /// <param name="APIKey">API key</param>
         /// <returns>A class containing properties of weather information</returns>
-        public static ForecastInfo GetWeatherInfo(long CityID, string APIKey) =>
-            MWM.GetWeatherInfo(CityID: CityID, APIKey, PreferredUnit);
+        public static WeatherForecastInfo GetWeatherInfo(long CityID, string APIKey) =>
+            WeatherForecast.GetWeatherInfo(CityID: CityID, APIKey, PreferredUnit);
 
         /// <summary>
         /// Gets current weather info from OpenWeatherMap
         /// </summary>
         /// <param name="CityName">City name</param>
         /// <returns>A class containing properties of weather information</returns>
-        public static ForecastInfo GetWeatherInfo(string CityName) =>
-            MWM.GetWeatherInfo(CityName: CityName, ApiKey, PreferredUnit);
+        public static WeatherForecastInfo GetWeatherInfo(string CityName) =>
+            WeatherForecast.GetWeatherInfo(CityName: CityName, ApiKey, PreferredUnit);
 
         /// <summary>
         /// Gets current weather info from OpenWeatherMap
@@ -73,8 +72,8 @@ namespace Nitrocid.Extras.Forecast.Forecast
         /// <param name="CityName">City name</param>
         /// <param name="APIKey">API key</param>
         /// <returns>A class containing properties of weather information</returns>
-        public static ForecastInfo GetWeatherInfo(string CityName, string APIKey) =>
-            MWM.GetWeatherInfo(CityName: CityName, APIKey, PreferredUnit);
+        public static WeatherForecastInfo GetWeatherInfo(string CityName, string APIKey) =>
+            WeatherForecast.GetWeatherInfo(CityName: CityName, APIKey, PreferredUnit);
 
         /// <summary>
         /// Prints the weather information to the console
@@ -90,7 +89,7 @@ namespace Nitrocid.Extras.Forecast.Forecast
         /// <param name="APIKey">API Key</param>
         public static void PrintWeatherInfo(string CityID, string APIKey)
         {
-            ForecastInfo WeatherInfo;
+            WeatherForecastInfo WeatherInfo;
             string WeatherSpecifier = "°";
             string WindSpeedSpecifier = "m.s";
             if (TextTools.IsStringNumeric(CityID))
