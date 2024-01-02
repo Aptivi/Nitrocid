@@ -69,7 +69,7 @@ namespace KS.Shell.ShellBase.Arguments
 
         private static string[] PopulateCommands()
         {
-            var shellType = ShellManager.ShellStack[^1].ShellType;
+            var shellType = ShellManager.CurrentShellType;
             var ShellCommands = CommandManager.GetCommands(shellType);
             return [.. ShellCommands.Keys];
         }

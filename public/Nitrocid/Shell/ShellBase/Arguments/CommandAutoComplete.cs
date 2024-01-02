@@ -47,7 +47,7 @@ namespace KS.Shell.ShellBase.Arguments
                 return [];
 
             // Get the commands based on the current shell type
-            var shellType = ShellManager.ShellStack[^1].ShellType;
+            var shellType = ShellManager.CurrentShellType;
             var ShellCommands = CommandManager.GetCommands(shellType);
             DebugWriter.WriteDebug(DebugLevel.I, "Commands count for type {0}: {1}", shellType, ShellCommands.Count);
 

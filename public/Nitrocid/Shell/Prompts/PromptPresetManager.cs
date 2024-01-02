@@ -193,7 +193,7 @@ namespace KS.Shell.Prompts
         /// Prompts a user to select the preset
         /// </summary>
         public static string PromptForPresets() =>
-            PromptForPresets(ShellManager.ShellStack[^1].ShellType);
+            PromptForPresets(ShellManager.CurrentShellType);
 
         /// <summary>
         /// Prompts a user to select the preset
