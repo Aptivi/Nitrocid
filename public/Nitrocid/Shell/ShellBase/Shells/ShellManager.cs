@@ -112,6 +112,16 @@ namespace KS.Shell.ShellBase.Shells
                     ], new ExitUnifiedCommand())
             },
 
+            { "findcmds",
+                new CommandInfo("findcmds", /* Localizable */ "Finds the available commands in the current shell type",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "search")
+                        ], false)
+                    ], new FindCmdsUnifiedCommand())
+            },
+
             { "help",
                 new CommandInfo("help", /* Localizable */ "Help page",
                     [

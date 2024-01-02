@@ -17,16 +17,20 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using KS.Drivers.Regexp;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Splash;
 using KS.Misc.Text;
+using KS.Misc.Text.Probers.Regexp;
 using KS.Modifications;
 using KS.Shell.ShellBase.Aliases;
 using KS.Shell.ShellBase.Shells;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 
 namespace KS.Shell.ShellBase.Commands
 {
@@ -131,6 +135,36 @@ namespace KS.Shell.ShellBase.Commands
             }
 
             return FinalCommands;
+        }
+
+        /// <summary>
+        /// Gets the command dictionary according to the shell type by searching for the partial command name
+        /// </summary>
+        /// <param name="namePattern">A valid regex pattern for command name</param>
+        /// <param name="ShellType">The shell type</param>
+        /// <param name="includeAliases">Whether to include aliases or not</param>
+        public static Dictionary<string, CommandInfo> FindCommands([StringSyntax(StringSyntaxAttribute.Regex)] string namePattern, ShellType ShellType, bool includeAliases = true) =>
+            FindCommands(namePattern, ShellManager.GetShellTypeName(ShellType), includeAliases);
+
+        /// <summary>
+        /// Gets the command dictionary according to the shell type by searching for the partial command name
+        /// </summary>
+        /// <param name="ShellType">The shell type</param>
+        /// <param name="includeAliases">Whether to include aliases or not</param>
+        public static Dictionary<string, CommandInfo> FindCommands([StringSyntax(StringSyntaxAttribute.Regex)] string namePattern, string ShellType, bool includeAliases = true)
+        {
+            // Verify that the provided regex is valid
+            if (!RegexpTools.IsValidRegex(namePattern))
+                throw new KernelException(KernelExceptionType.CommandManager, Translate.DoTranslation("Invalid command pattern provided."));
+
+            // Get all the commands first
+            var allCommands = GetCommands(ShellType, includeAliases);
+
+            // Now, find the commands that match the specified regex pattern.
+            var foundCommands = allCommands
+                .Where((kvp) => RegexpTools.IsMatch(kvp.Key, namePattern))
+                .ToDictionary((kvp) => kvp.Key, (kvp) => kvp.Value);
+            return foundCommands;
         }
 
         /// <summary>
