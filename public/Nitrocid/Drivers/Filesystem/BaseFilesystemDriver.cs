@@ -566,7 +566,7 @@ namespace KS.Drivers.Filesystem
                         char ProjectedByteChar = Convert.ToChar(CurrentByte);
                         DebugWriter.WriteDebug(DebugLevel.I, "Projected byte char: {0}", ProjectedByteChar);
                         char RenderedByteChar = '.';
-                        if (!char.IsWhiteSpace(ProjectedByteChar) & !char.IsControl(ProjectedByteChar) & !char.IsHighSurrogate(ProjectedByteChar) & !char.IsLowSurrogate(ProjectedByteChar))
+                        if (!char.IsWhiteSpace(ProjectedByteChar) & !char.IsControl(ProjectedByteChar) & !char.IsHighSurrogate(ProjectedByteChar) & !char.IsLowSurrogate(ProjectedByteChar) & ProjectedByteChar != (char)0xAD)
                         {
                             // The renderer will actually render the character, not as a dot.
                             DebugWriter.WriteDebug(DebugLevel.I, "Char is not a whitespace.");

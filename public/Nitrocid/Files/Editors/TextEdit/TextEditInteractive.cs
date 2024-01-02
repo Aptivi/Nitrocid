@@ -264,7 +264,7 @@ namespace KS.Files.Editors.TextEdit
                     var sourceBuilder = new StringBuilder();
                     for (int l = 0; l < source.Length; l++)
                     {
-                        bool unprintable = CharManager.IsControlChar(source[l]) || source[l] == '\0';
+                        bool unprintable = CharManager.IsControlChar(source[l]) || source[l] == '\0' || source[l] == (char)0xAD;
                         string rendered = unprintable ? "." : source[l].ToString();
                         sourceBuilder.Append(rendered);
                     }
@@ -556,7 +556,7 @@ namespace KS.Files.Editors.TextEdit
             if (entering)
                 return;
             var currChar = lines[lineIdx][lineColIdx];
-            if (CharManager.IsControlChar(currChar) || currChar == '\0')
+            if (CharManager.IsControlChar(currChar) || currChar == '\0' || currChar == (char)0xAD)
                 status += " | " + Translate.DoTranslation("Bin") + $": {(int)currChar}";
             if (currChar == '\t')
                 status += " | " + Translate.DoTranslation("Tab") + $": {(int)currChar}";
