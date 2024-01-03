@@ -18,10 +18,10 @@
 //
 
 using System;
-using KS.Files.Editors.HexEdit;
-using KS.Shell.ShellBase.Commands;
+using Nitrocid.Files.Editors.HexEdit;
+using Nitrocid.Shell.ShellBase.Commands;
 
-namespace KS.Shell.Shells.Hex.Commands
+namespace Nitrocid.Shell.Shells.Hex.Commands
 {
     /// <summary>
     /// Adds a new byte at the end of the file

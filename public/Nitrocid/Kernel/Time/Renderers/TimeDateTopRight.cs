@@ -19,13 +19,14 @@
 
 using System;
 using System.Threading;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers;
-using KS.Kernel.Debugging;
-using KS.Kernel.Threading;
-using KS.Misc.Screensaver;
+using Nitrocid.ConsoleBase;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Threading;
+using Nitrocid.Misc.Screensaver;
 
-namespace KS.Kernel.Time.Renderers
+namespace Nitrocid.Kernel.Time.Renderers
 {
     /// <summary>
     /// Top right corner on time and date
@@ -49,9 +50,9 @@ namespace KS.Kernel.Time.Renderers
                     if (!ScreensaverManager.InSaver)
                     {
                         string TimeString = $"{TimeDateRenderers.RenderDate()} - {TimeDateRenderers.RenderTime()}";
-                        oldWid = ConsoleBase.ConsoleWrapper.WindowWidth - TimeString.Length - 1;
-                        oldTop = ConsoleBase.ConsoleWrapper.WindowTop;
-                        TextWriters.WriteWhere(TimeString, ConsoleBase.ConsoleWrapper.WindowWidth - TimeString.Length - 1, ConsoleBase.ConsoleWrapper.WindowTop, true, KernelColorType.NeutralText);
+                        oldWid = ConsoleWrapper.WindowWidth - TimeString.Length - 1;
+                        oldTop = ConsoleWrapper.WindowTop;
+                        TextWriters.WriteWhere(TimeString, ConsoleWrapper.WindowWidth - TimeString.Length - 1, ConsoleWrapper.WindowTop, true, KernelColorType.NeutralText);
                         Thread.Sleep(1000);
                         if (oldWid != 0)
                             TextWriters.WriteWhere(new string(' ', TimeString.Length), oldWid, oldTop, true, KernelColorType.NeutralText);

@@ -18,9 +18,9 @@
 //
 
 using System;
-using KS.Kernel.Debugging;
-using KS.Kernel.Events;
 using Nitrocid.Extras.SftpShell.SFTP;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Events;
 using Renci.SshNet;
 
 namespace Nitrocid.Extras.SftpShell.Tools.Transfer

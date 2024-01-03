@@ -17,13 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Colors;
-using KS.Languages;
-using KS.Shell.ShellBase.Commands;
-using KS.Shell.ShellBase.Switches;
-using KS.ConsoleBase.Writers.FancyWriters;
-using KS.ConsoleBase.Writers;
 using Nettify.Radio;
+using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.ConsoleBase.Writers.FancyWriters;
+using Nitrocid.Shell.ShellBase.Switches;
+using Nitrocid.Languages;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.ConsoleBase.Colors;
 
 namespace Nitrocid.Extras.InternetRadioInfo.Commands
 {

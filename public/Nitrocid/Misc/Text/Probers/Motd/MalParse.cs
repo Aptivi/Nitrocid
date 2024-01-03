@@ -19,18 +19,18 @@
 
 using System;
 using System.Collections.Generic;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers;
-using KS.Files;
-using KS.Files.Operations;
-using KS.Files.Operations.Querying;
-using KS.Files.Paths;
-using KS.Kernel.Configuration;
-using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
-using KS.Languages;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Files;
+using Nitrocid.Files.Operations;
+using Nitrocid.Files.Operations.Querying;
+using Nitrocid.Files.Paths;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
 
-namespace KS.Misc.Text.Probers.Motd
+namespace Nitrocid.Misc.Text.Probers.Motd
 {
     /// <summary>
     /// Message of the Day After Login (MAL) parsing module

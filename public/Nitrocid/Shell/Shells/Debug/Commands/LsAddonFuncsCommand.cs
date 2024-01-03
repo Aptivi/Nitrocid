@@ -17,13 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Languages;
-using KS.Shell.ShellBase.Commands;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Kernel.Extensions;
-using KS.ConsoleBase.Writers.FancyWriters;
+using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.Languages;
+using Nitrocid.ConsoleBase.Writers.FancyWriters;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.Kernel.Extensions;
 
-namespace KS.Shell.Shells.Debug.Commands
+namespace Nitrocid.Shell.Shells.Debug.Commands
 {
     /// <summary>
     /// You can list all the available public functions from an addon

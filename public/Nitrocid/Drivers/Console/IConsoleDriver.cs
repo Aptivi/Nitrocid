@@ -21,7 +21,7 @@ using System.IO;
 using System;
 using TextEncoding = System.Text.Encoding;
 
-namespace KS.Drivers.Console
+namespace Nitrocid.Drivers.Console
 {
     /// <summary>
     /// Console driver interface

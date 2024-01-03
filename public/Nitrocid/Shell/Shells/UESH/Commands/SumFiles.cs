@@ -22,19 +22,19 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Drivers;
-using KS.Drivers.Encryption;
-using KS.Files;
-using KS.Files.Operations.Querying;
-using KS.Kernel.Exceptions;
-using KS.Languages;
-using KS.Shell.ShellBase.Commands;
-using KS.ConsoleBase.Writers.FancyWriters;
-using KS.ConsoleBase.Writers;
+using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.Files;
+using Nitrocid.Drivers;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Languages;
+using Nitrocid.ConsoleBase.Writers.FancyWriters;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Drivers.Encryption;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Files.Operations.Querying;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 
-namespace KS.Shell.Shells.UESH.Commands
+namespace Nitrocid.Shell.Shells.UESH.Commands
 {
     /// <summary>
     /// Calculates the sum of files

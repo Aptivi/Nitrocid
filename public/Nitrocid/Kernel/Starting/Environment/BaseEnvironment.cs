@@ -17,10 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Languages;
+using Nitrocid.Languages;
 using System;
 
-namespace KS.Kernel.Starting.Environment
+namespace Nitrocid.Kernel.Starting.Environment
 {
     internal abstract class BaseEnvironment : IEnvironment
     {

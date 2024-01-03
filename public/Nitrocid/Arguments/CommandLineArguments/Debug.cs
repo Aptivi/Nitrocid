@@ -17,11 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel;
-using KS.Kernel.Debugging;
+using Nitrocid.Kernel;
+using Nitrocid.Kernel.Debugging;
 using System;
 
-namespace KS.Arguments.CommandLineArguments
+namespace Nitrocid.Arguments.CommandLineArguments
 {
     class DebugArgument : ArgumentExecutor, IArgument
     {

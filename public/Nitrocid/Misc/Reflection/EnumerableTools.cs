@@ -17,10 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Debugging;
+using Nitrocid.Kernel.Debugging;
 using System.Collections;
 
-namespace KS.Misc.Reflection
+namespace Nitrocid.Misc.Reflection
 {
     /// <summary>
     /// Tools for enumerables

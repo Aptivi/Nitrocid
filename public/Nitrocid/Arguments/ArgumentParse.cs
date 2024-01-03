@@ -17,20 +17,20 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Arguments.CommandLineArguments;
-using KS.Arguments.Help;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers;
-using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
-using KS.Languages;
-using KS.Misc.Text;
-using KS.Shell.ShellBase.Arguments;
+using Nitrocid.Arguments.CommandLineArguments;
+using Nitrocid.Arguments.Help;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Text;
+using Nitrocid.Shell.ShellBase.Arguments;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace KS.Arguments
+namespace Nitrocid.Arguments
 {
     /// <summary>
     /// Argument parser class
@@ -227,7 +227,7 @@ namespace KS.Arguments
                 {
                     string Argument = ArgumentsInput[i];
                     string ArgumentName = Argument.SplitEncloseDoubleQuotes()[0];
-                    found = ArgumentName == "help" || (ArgumentName == argumentName && Arguments.ContainsKey(ArgumentName));
+                    found = ArgumentName == "help" || ArgumentName == argumentName && Arguments.ContainsKey(ArgumentName);
                     if (found)
                         break;
                 }

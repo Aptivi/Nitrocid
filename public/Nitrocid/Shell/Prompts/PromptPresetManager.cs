@@ -20,16 +20,16 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Inputs.Styles.Selection;
-using KS.ConsoleBase.Writers;
-using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
-using KS.Languages;
-using KS.Misc.Text;
-using KS.Shell.ShellBase.Shells;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Inputs.Styles.Selection;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Text;
+using Nitrocid.Shell.ShellBase.Shells;
 
-namespace KS.Shell.Prompts
+namespace Nitrocid.Shell.Prompts
 {
     /// <summary>
     /// Prompt preset management module

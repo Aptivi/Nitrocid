@@ -17,9 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Threading;
-using KS.Misc.Screensaver;
 using Nitrocid.Extras.Amusements.Amusements.Games;
+using Nitrocid.Kernel.Threading;
+using Nitrocid.Misc.Screensaver;
 
 namespace Nitrocid.Extras.Amusements.Screensavers
 {

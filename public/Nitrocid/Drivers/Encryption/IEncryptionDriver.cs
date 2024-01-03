@@ -20,7 +20,7 @@
 using System.IO;
 using System.Text.RegularExpressions;
 
-namespace KS.Drivers.Encryption
+namespace Nitrocid.Drivers.Encryption
 {
     /// <summary>
     /// Base encryptor interface for an encryption algorithm

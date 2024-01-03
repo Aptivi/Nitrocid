@@ -19,10 +19,10 @@
 
 using System;
 using System.Globalization;
-using KS.Kernel.Time.Calendars;
-using KS.Languages;
+using Nitrocid.Kernel.Time.Calendars;
+using Nitrocid.Languages;
 
-namespace KS.Kernel.Time.Renderers
+namespace Nitrocid.Kernel.Time.Renderers
 {
     /// <summary>
     /// Time and date rendering module

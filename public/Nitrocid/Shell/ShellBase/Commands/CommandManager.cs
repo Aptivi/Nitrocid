@@ -17,22 +17,21 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Drivers.Regexp;
-using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
-using KS.Languages;
-using KS.Misc.Splash;
-using KS.Misc.Text;
-using KS.Misc.Text.Probers.Regexp;
-using KS.Modifications;
-using KS.Shell.ShellBase.Aliases;
-using KS.Shell.ShellBase.Shells;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Splash;
+using Nitrocid.Misc.Text;
+using Nitrocid.Misc.Text.Probers.Regexp;
+using Nitrocid.Modifications;
+using Nitrocid.Shell.ShellBase.Aliases;
+using Nitrocid.Shell.ShellBase.Shells;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 
-namespace KS.Shell.ShellBase.Commands
+namespace Nitrocid.Shell.ShellBase.Commands
 {
     /// <summary>
     /// Command management class

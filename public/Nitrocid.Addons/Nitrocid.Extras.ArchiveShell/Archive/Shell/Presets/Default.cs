@@ -19,8 +19,8 @@
 
 using System.IO;
 using System.Text;
-using KS.ConsoleBase.Colors;
-using KS.Shell.Prompts;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Shell.Prompts;
 
 namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Presets
 {

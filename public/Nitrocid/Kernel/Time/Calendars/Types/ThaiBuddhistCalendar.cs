@@ -19,7 +19,7 @@
 
 using System.Globalization;
 
-namespace KS.Kernel.Time.Calendars.Types
+namespace Nitrocid.Kernel.Time.Calendars.Types
 {
     /// <summary>
     /// Thai Buddhist calendar

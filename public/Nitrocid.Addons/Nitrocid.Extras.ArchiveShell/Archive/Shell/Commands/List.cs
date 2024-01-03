@@ -18,13 +18,13 @@
 //
 
 using System.Collections.Generic;
-using KS.ConsoleBase.Colors;
-using KS.Kernel.Debugging;
-using KS.Shell.ShellBase.Commands;
 using SharpCompress.Archives;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Misc.Reflection;
-using KS.ConsoleBase.Writers;
+using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Misc.Reflection;
 
 namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Commands
 {

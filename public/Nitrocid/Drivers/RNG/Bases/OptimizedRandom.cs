@@ -19,7 +19,7 @@
 
 using System.Security.Cryptography;
 
-namespace KS.Drivers.RNG.Bases
+namespace Nitrocid.Drivers.RNG.Bases
 {
     // Refer to random.c in the References folder for more information.
     internal unsafe class OptimizedRandom : BaseRandomDriver, IRandomDriver
@@ -121,7 +121,7 @@ namespace KS.Drivers.RNG.Bases
                 for (i = 0; i < 66; i++)
                 {
                     reg[i++] = (byte)(seed *= MULTIPLIER & 0xff);
-                    reg[i] = (byte)((seed >> 8) & 0xff);
+                    reg[i] = (byte)(seed >> 8 & 0xff);
                 }
 
                 reg[65] &= 0x80;
@@ -156,8 +156,8 @@ namespace KS.Drivers.RNG.Bases
                 // and mod-2 the final bit.
                 for (i = 0; i < 4; i++)
                 {
-                    cy1 = ((*q & 1) != 0) ? (byte)0x80 : (byte)0;
-                    *p++ ^= (byte)(((*q++ >> 1) & 0x7f) | cy0);
+                    cy1 = (*q & 1) != 0 ? (byte)0x80 : (byte)0;
+                    *p++ ^= (byte)(*q++ >> 1 & 0x7f | cy0);
                     cy0 = cy1;
                 }
                 *p ^= cy0;

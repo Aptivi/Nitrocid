@@ -95,7 +95,7 @@ namespace Nitrocid.Analyzers.Test.Languages
                 using System.Threading.Tasks;
                 using System.Diagnostics;
                 using System.Globalization;
-                using KS.Languages;
+                using Nitrocid.Languages;
 
                 namespace ConsoleApplication1
                 {

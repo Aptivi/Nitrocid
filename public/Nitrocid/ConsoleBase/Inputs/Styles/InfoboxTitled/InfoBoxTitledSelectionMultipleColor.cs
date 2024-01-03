@@ -19,22 +19,22 @@
 
 using System;
 using System.Threading;
-using KS.Kernel.Debugging;
-using KS.ConsoleBase.Colors;
-using KS.Languages;
-using KS.Misc.Text;
 using System.Collections.Generic;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.ConsoleBase.Writers.FancyWriters.Tools;
 using Terminaux.Colors;
 using System.Text;
 using Textify.Sequences.Builder.Types;
-using KS.Kernel.Configuration;
 using System.Linq;
-using KS.ConsoleBase.Writers.FancyWriters;
-using KS.ConsoleBase.Buffered;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.ConsoleBase.Writers.FancyWriters;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Text;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.ConsoleBase.Writers.FancyWriters.Tools;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Buffered;
 
-namespace KS.ConsoleBase.Inputs.Styles.InfoboxTitled
+namespace Nitrocid.ConsoleBase.Inputs.Styles.InfoboxTitled
 {
     /// <summary>
     /// Info box writer with selection and color support
@@ -647,7 +647,7 @@ namespace KS.ConsoleBase.Inputs.Styles.InfoboxTitled
                             $"{line}"
                         );
                     }
-                
+
                     // Now, render the selections
                     int currentPage = currentSelection / selectionChoices;
                     int startIndex = selectionChoices * currentPage;

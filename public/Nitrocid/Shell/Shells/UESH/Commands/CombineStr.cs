@@ -18,11 +18,11 @@
 //
 
 using System.Linq;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Files.Operations;
-using KS.Shell.ShellBase.Commands;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.Files.Operations;
+using Nitrocid.Shell.ShellBase.Commands;
 
-namespace KS.Shell.Shells.UESH.Commands
+namespace Nitrocid.Shell.Shells.UESH.Commands
 {
     /// <summary>
     /// Combines the two text files or more into the console.

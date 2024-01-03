@@ -17,10 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Misc.Text;
+using Nitrocid.Misc.Text;
 using System.Collections.Generic;
 
-namespace KS.Kernel.Debugging.RemoteDebug.Command
+namespace Nitrocid.Kernel.Debugging.RemoteDebug.Command
 {
     /// <summary>
     /// Remote debug - provided command arguments information class

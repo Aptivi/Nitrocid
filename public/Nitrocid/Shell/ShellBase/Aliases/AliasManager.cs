@@ -21,19 +21,19 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Files.Operations;
-using KS.Files.Paths;
-using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
-using KS.Languages;
-using KS.Shell.ShellBase.Commands;
-using KS.Shell.ShellBase.Shells;
 using Newtonsoft.Json;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.Files.Operations;
+using Nitrocid.Files.Paths;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
+using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.Shell.ShellBase.Shells;
 
-namespace KS.Shell.ShellBase.Aliases
+namespace Nitrocid.Shell.ShellBase.Aliases
 {
     /// <summary>
     /// Alias management module

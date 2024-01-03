@@ -18,15 +18,15 @@
 //
 
 using System.Collections.Generic;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Inputs;
-using KS.ConsoleBase.Writers;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Files.Editors.HexEdit;
-using KS.Languages;
-using KS.Shell.ShellBase.Commands;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Inputs;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.Files.Editors.HexEdit;
+using Nitrocid.Languages;
+using Nitrocid.Shell.ShellBase.Commands;
 
-namespace KS.Shell.Shells.Hex.Commands
+namespace Nitrocid.Shell.Shells.Hex.Commands
 {
     /// <summary>
     /// Adds new bytes at the end of the file

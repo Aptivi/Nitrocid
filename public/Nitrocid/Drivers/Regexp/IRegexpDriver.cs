@@ -20,7 +20,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Text.RegularExpressions;
 
-namespace KS.Drivers.Regexp
+namespace Nitrocid.Drivers.Regexp
 {
     /// <summary>
     /// Regexp driver interface for drivers

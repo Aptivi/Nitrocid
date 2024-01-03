@@ -18,14 +18,14 @@
 //
 
 using Figletize;
-using KS.ConsoleBase;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.FancyWriters;
-using KS.Drivers.RNG;
-using KS.Kernel.Debugging;
-using KS.Kernel.Threading;
-using KS.Languages;
-using KS.Misc.Screensaver;
+using Nitrocid.ConsoleBase;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers.FancyWriters;
+using Nitrocid.Drivers.RNG;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Threading;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Screensaver;
 using Terminaux.Colors;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers

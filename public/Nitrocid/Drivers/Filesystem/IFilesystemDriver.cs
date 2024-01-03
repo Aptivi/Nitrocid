@@ -18,14 +18,14 @@
 //
 
 
-using KS.Files.Instances;
-using KS.Files.LineEndings;
-using FS = KS.Files.FilesystemTools;
+using FS = Nitrocid.Files.FilesystemTools;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
+using Nitrocid.Files.Instances;
+using Nitrocid.Files.LineEndings;
 
-namespace KS.Drivers.Filesystem
+namespace Nitrocid.Drivers.Filesystem
 {
     /// <summary>
     /// Filesystem driver interface for drivers

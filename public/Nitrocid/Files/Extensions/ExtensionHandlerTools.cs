@@ -17,19 +17,19 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Drivers;
-using KS.Drivers.Encryption;
-using KS.Files.Operations;
-using KS.Files.Operations.Querying;
-using KS.Files.Paths;
-using KS.Kernel.Exceptions;
-using KS.Languages;
 using Newtonsoft.Json;
+using Nitrocid.Drivers;
+using Nitrocid.Drivers.Encryption;
+using Nitrocid.Files.Operations;
+using Nitrocid.Files.Operations.Querying;
+using Nitrocid.Files.Paths;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace KS.Files.Extensions
+namespace Nitrocid.Files.Extensions
 {
     /// <summary>
     /// Tools for extension handling

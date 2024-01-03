@@ -18,11 +18,11 @@
 //
 
 using System;
-using KS.Kernel.Time;
-using KS.Kernel.Time.Calendars;
-using KS.Languages;
-using KS.Misc.Notifications;
 using Newtonsoft.Json;
+using Nitrocid.Kernel.Time;
+using Nitrocid.Kernel.Time.Calendars;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Notifications;
 
 namespace Nitrocid.Extras.Calendar.Calendar.Events
 {

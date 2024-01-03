@@ -18,29 +18,13 @@
 //
 
 using System;
-using KS.ConsoleBase;
-using KS.Drivers.RNG;
-using KS.Kernel.Debugging;
-using KS.ConsoleBase.Colors;
-using KS.Kernel.Threading;
-
-/* Unmerged change from project 'Nitrocid.ScreensaverPacks (net7.0)'
-Before:
 using Terminaux.Colors;
-
-namespace KS.Misc.Screensaver.Displays
-After:
-using Terminaux.Colors;
-using Nitrocid.ScreensaverPacks.Screensavers;
-using KS;
-using KS.Misc;
-using KS.Misc.Screensaver;
-using KS.Misc.Screensaver.Displays;
-
-namespace Nitrocid.ScreensaverPacks.Screensavers
-*/
-using Terminaux.Colors;
-using KS.Misc.Screensaver;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Misc.Screensaver;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase;
+using Nitrocid.Drivers.RNG;
+using Nitrocid.Kernel.Threading;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {

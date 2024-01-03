@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Shell.ShellBase.Shells;
+using Nitrocid.Shell.ShellBase.Shells;
 using NUnit.Framework;
 using Shouldly;
 using System;

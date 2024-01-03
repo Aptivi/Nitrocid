@@ -17,16 +17,16 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers;
-using KS.Kernel.Debugging;
-using KS.Languages;
-using KS.Network.Base;
-using KS.Shell.ShellBase.Commands;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Languages;
+using Nitrocid.Network.Base;
+using Nitrocid.Shell.ShellBase.Commands;
 using System;
 using System.Net;
 
-namespace KS.Shell.Shells.UESH.Commands
+namespace Nitrocid.Shell.Shells.UESH.Commands
 {
     /// <summary>
     /// Lists network devices

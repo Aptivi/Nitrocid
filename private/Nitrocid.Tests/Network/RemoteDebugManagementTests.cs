@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Debugging.RemoteDebug;
+using Nitrocid.Kernel.Debugging.RemoteDebug;
 using NUnit.Framework;
 using Shouldly;
 

@@ -17,17 +17,17 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.ConsoleBase.Writers;
-using KS.Kernel.Configuration;
-using KS.Kernel.Debugging;
-using KS.Languages;
-using KS.Misc.Splash;
 using System.Collections.Generic;
 using System.Diagnostics;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Misc.Splash;
+using Nitrocid.Languages;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 
-namespace KS.Kernel.Starting
+namespace Nitrocid.Kernel.Starting
 {
     internal static class KernelStageTools
     {
@@ -60,9 +60,9 @@ namespace KS.Kernel.Starting
 
                 // Report the stage to the splash manager
                 ReportNewStage(stageNum, $"- {Translate.DoTranslation("Stage")} {stageNum}: {Translate.DoTranslation(stage.StageName)}");
-                if ((KernelEntry.SafeMode && stage.StageRunsInSafeMode) || !KernelEntry.SafeMode)
+                if (KernelEntry.SafeMode && stage.StageRunsInSafeMode || !KernelEntry.SafeMode)
                 {
-                    if ((KernelEntry.Maintenance && stage.StageRunsInMaintenance) || !KernelEntry.Maintenance)
+                    if (KernelEntry.Maintenance && stage.StageRunsInMaintenance || !KernelEntry.Maintenance)
                         stage.StageAction();
                     else
                         SplashReport.ReportProgress(Translate.DoTranslation("Running in maintenance mode. Skipping stage..."));

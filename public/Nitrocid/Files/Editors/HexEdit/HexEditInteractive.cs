@@ -17,30 +17,30 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase;
-using KS.ConsoleBase.Buffered;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Inputs;
-using KS.ConsoleBase.Inputs.Styles.Infobox;
-using KS.ConsoleBase.Interactive;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Files.Operations;
-using KS.Files.Operations.Printing;
-using KS.Files.Operations.Querying;
-using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
-using KS.Languages;
-using KS.Misc.Text;
-using KS.Shell.Shells.Hex;
 using System;
 using System.Globalization;
 using System.Linq;
 using System.Text;
 using Textify.Sequences.Builder.Types;
 using Textify.Sequences.Tools;
-using KS.ConsoleBase.Writers.FancyWriters;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.ConsoleBase;
+using Nitrocid.ConsoleBase.Inputs;
+using Nitrocid.Shell.Shells.Hex;
+using Nitrocid.Files.Operations;
+using Nitrocid.Languages;
+using Nitrocid.Files.Operations.Printing;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.ConsoleBase.Writers.FancyWriters;
+using Nitrocid.Misc.Text;
+using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.ConsoleBase.Interactive;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Buffered;
+using Nitrocid.Files.Operations.Querying;
 
-namespace KS.Files.Editors.HexEdit
+namespace Nitrocid.Files.Editors.HexEdit
 {
     /// <summary>
     /// Interactive hex editor
@@ -230,7 +230,7 @@ namespace KS.Files.Editors.HexEdit
                 int currentPage = currentSelection / byteLinesPerPage;
                 int startIndex = byteLinesPerPage * currentPage;
                 int endIndex = byteLinesPerPage * (currentPage + 1);
-                int startByte = (startIndex * 16) + 1;
+                int startByte = startIndex * 16 + 1;
                 int endByte = endIndex * 16;
                 if (startByte > bytes.Length)
                     startByte = bytes.Length;
@@ -352,7 +352,7 @@ namespace KS.Files.Editors.HexEdit
             byte byteNum = default;
             string byteNumHex = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Write the byte number with the hexadecimal value.") + " 00 -> FF.", BaseInteractiveTui.BoxForegroundColor, BaseInteractiveTui.BoxBackgroundColor);
             if (byteNumHex.Length != 2 ||
-                (byteNumHex.Length == 2 && !byte.TryParse(byteNumHex, NumberStyles.AllowHexSpecifier, null, out byteNum)))
+                byteNumHex.Length == 2 && !byte.TryParse(byteNumHex, NumberStyles.AllowHexSpecifier, null, out byteNum))
                 InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("The byte number specified is not valid."), BaseInteractiveTui.BoxForegroundColor, BaseInteractiveTui.BoxBackgroundColor);
             else
                 bytes = HexEditTools.AddNewByte(bytes, byteNum, byteIdx + 1);
@@ -375,7 +375,7 @@ namespace KS.Files.Editors.HexEdit
             byte byteNumReplaced = default;
             string byteNumReplacedHex = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Write the byte number with the hexadecimal value to replace {0} with.") + " 00 -> FF.", BaseInteractiveTui.BoxForegroundColor, BaseInteractiveTui.BoxBackgroundColor, byteNumHex);
             if (byteNumReplacedHex.Length != 2 ||
-                (byteNumReplacedHex.Length == 2 && !byte.TryParse(byteNumReplacedHex, NumberStyles.AllowHexSpecifier, null, out byteNumReplaced)))
+                byteNumReplacedHex.Length == 2 && !byte.TryParse(byteNumReplacedHex, NumberStyles.AllowHexSpecifier, null, out byteNumReplaced))
                 InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("The byte number specified is not valid."), BaseInteractiveTui.BoxForegroundColor, BaseInteractiveTui.BoxBackgroundColor);
 
             // Do the replacement!
@@ -393,7 +393,7 @@ namespace KS.Files.Editors.HexEdit
             byte byteNumReplaced = default;
             string byteNumReplacedHex = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Write the byte number with the hexadecimal value to replace {0} with.") + " 00 -> FF.", BaseInteractiveTui.BoxForegroundColor, BaseInteractiveTui.BoxBackgroundColor, byteNumHex);
             if (byteNumReplacedHex.Length != 2 ||
-                (byteNumReplacedHex.Length == 2 && !byte.TryParse(byteNumReplacedHex, NumberStyles.AllowHexSpecifier, null, out byteNumReplaced)))
+                byteNumReplacedHex.Length == 2 && !byte.TryParse(byteNumReplacedHex, NumberStyles.AllowHexSpecifier, null, out byteNumReplaced))
                 InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("The byte number specified is not valid."), BaseInteractiveTui.BoxForegroundColor, BaseInteractiveTui.BoxBackgroundColor);
 
             // Do the replacement!
@@ -407,14 +407,14 @@ namespace KS.Files.Editors.HexEdit
             byte byteNum = default;
             string byteNumHex = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Write the byte number with the hexadecimal value to be replaced.") + " 00 -> FF.", BaseInteractiveTui.BoxForegroundColor, BaseInteractiveTui.BoxBackgroundColor);
             if (byteNumHex.Length != 2 ||
-                (byteNumHex.Length == 2 && !byte.TryParse(byteNumHex, NumberStyles.AllowHexSpecifier, null, out byteNum)))
+                byteNumHex.Length == 2 && !byte.TryParse(byteNumHex, NumberStyles.AllowHexSpecifier, null, out byteNum))
                 InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("The byte number specified is not valid."), BaseInteractiveTui.BoxForegroundColor, BaseInteractiveTui.BoxBackgroundColor);
 
             // Now, prompt for the replacement byte
             byte byteNumReplaced = default;
             string byteNumReplacedHex = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Write the byte number with the hexadecimal value to replace {0} with.") + " 00 -> FF.", BaseInteractiveTui.BoxForegroundColor, BaseInteractiveTui.BoxBackgroundColor, byteNumHex);
             if (byteNumReplacedHex.Length != 2 ||
-                (byteNumReplacedHex.Length == 2 && !byte.TryParse(byteNumReplacedHex, NumberStyles.AllowHexSpecifier, null, out byteNumReplaced)))
+                byteNumReplacedHex.Length == 2 && !byte.TryParse(byteNumReplacedHex, NumberStyles.AllowHexSpecifier, null, out byteNumReplaced))
                 InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("The byte number specified is not valid."), BaseInteractiveTui.BoxForegroundColor, BaseInteractiveTui.BoxBackgroundColor);
 
             // Do the replacement!

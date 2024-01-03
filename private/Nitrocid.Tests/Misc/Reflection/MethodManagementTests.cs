@@ -17,9 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Languages;
-using KS.Misc.Reflection;
-using KS.Shell.ShellBase.Commands;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Reflection;
+using Nitrocid.Shell.ShellBase.Commands;
 using NUnit.Framework;
 using Shouldly;
 using System.Globalization;

@@ -19,16 +19,16 @@
 
 using System;
 using System.Linq;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers;
-using KS.Kernel.Debugging;
-using KS.Kernel.Threading;
-using KS.Languages;
-using KS.Shell.ShellBase.Commands;
-using KS.Shell.ShellBase.Scripting.Conditions;
-using KS.Shell.ShellBase.Shells;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Threading;
+using Nitrocid.Languages;
+using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.Shell.ShellBase.Scripting.Conditions;
+using Nitrocid.Shell.ShellBase.Shells;
 
-namespace KS.Shell.Shells.UESH.Commands
+namespace Nitrocid.Shell.Shells.UESH.Commands
 {
     /// <summary>
     /// Tests the condition

@@ -17,9 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase;
+using Nitrocid.ConsoleBase;
 
-namespace KS.Arguments.CommandLineArguments
+namespace Nitrocid.Arguments.CommandLineArguments
 {
     class NoAltBufferArgument : ArgumentExecutor, IArgument
     {

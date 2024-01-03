@@ -17,12 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Misc.Text.Probers.Placeholder;
-using KS.Shell.ShellBase.Commands;
-using KS.Shell.ShellBase.Switches;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.Misc.Text.Probers.Placeholder;
+using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.Shell.ShellBase.Switches;
 
-namespace KS.Shell.Shells.UESH.Commands
+namespace Nitrocid.Shell.Shells.UESH.Commands
 {
     /// <summary>
     /// Echoes the text

@@ -17,13 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers;
-using KS.Languages;
-using KS.Misc.Progress;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Progress;
 using System.Threading;
 
-namespace KS.Kernel.Debugging.Testing.Facades
+namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
     internal class TestProgressHandler : TestFacade
     {

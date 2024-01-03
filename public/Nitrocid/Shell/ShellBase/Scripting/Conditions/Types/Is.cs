@@ -17,14 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Drivers;
-using KS.Kernel.Exceptions;
-using KS.Languages;
-using KS.Misc.Text;
+using Nitrocid.Drivers;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Text;
 using System;
 using System.Collections.Generic;
 
-namespace KS.Shell.ShellBase.Scripting.Conditions.Types
+namespace Nitrocid.Shell.ShellBase.Scripting.Conditions.Types
 {
     /// <summary>
     /// Checks to see if a UESH variable is of the correct type

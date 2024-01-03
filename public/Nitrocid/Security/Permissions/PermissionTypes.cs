@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace KS.Security.Permissions
+namespace Nitrocid.Security.Permissions
 {
     /// <summary>
     /// All permission types

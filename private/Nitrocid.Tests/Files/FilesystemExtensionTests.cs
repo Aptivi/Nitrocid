@@ -17,8 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Files.Extensions;
-using KS.Kernel.Debugging;
+using Nitrocid.Files.Extensions;
+using Nitrocid.Kernel.Debugging;
 using NUnit.Framework;
 using Shouldly;
 

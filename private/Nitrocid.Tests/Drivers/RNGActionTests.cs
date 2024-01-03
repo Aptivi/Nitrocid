@@ -17,9 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Nitrocid.Drivers.RNG;
 using NUnit.Framework;
 using Shouldly;
-using KS.Drivers.RNG;
 
 namespace Nitrocid.Tests.Drivers
 {

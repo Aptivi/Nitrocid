@@ -21,19 +21,19 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using KS.Drivers;
-using KS.Files.Operations.Querying;
-using KS.Files.Paths;
-using KS.Kernel.Configuration;
-using KS.Kernel.Debugging.RemoteDebug;
-using KS.Kernel.Debugging.RemoteDebug.RemoteChat;
-using KS.Kernel.Debugging.Trace;
-using KS.Kernel.Exceptions;
-using KS.Kernel.Time;
-using KS.Kernel.Time.Renderers;
-using KS.Misc.Text;
+using Nitrocid.Drivers;
+using Nitrocid.Files.Operations.Querying;
+using Nitrocid.Files.Paths;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Kernel.Debugging.RemoteDebug;
+using Nitrocid.Kernel.Debugging.RemoteDebug.RemoteChat;
+using Nitrocid.Kernel.Debugging.Trace;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Kernel.Time;
+using Nitrocid.Kernel.Time.Renderers;
+using Nitrocid.Misc.Text;
 
-namespace KS.Kernel.Debugging
+namespace Nitrocid.Kernel.Debugging
 {
     /// <summary>
     /// Debug writing module
@@ -278,7 +278,7 @@ namespace KS.Kernel.Debugging
                         string[] texts = text.Split("\n");
                         foreach (string textStr in texts)
                         {
-                            if (force || (!force && !device.DeviceInfo.MuteLogs))
+                            if (force || !force && !device.DeviceInfo.MuteLogs)
                                 device.ClientStreamWriter.Write($"{TimeDateTools.KernelDateTime.ToShortDateString()} {TimeDateTools.KernelDateTime.ToShortTimeString()} [{Level}] {textStr}\r\n", vars);
                         }
                     }

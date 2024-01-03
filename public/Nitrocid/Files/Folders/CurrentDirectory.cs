@@ -19,12 +19,12 @@
 
 using System;
 using System.IO;
-using KS.Files.Paths;
-using KS.Kernel.Configuration;
-using KS.Kernel.Debugging;
-using KS.Kernel.Events;
+using Nitrocid.Files.Paths;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Events;
 
-namespace KS.Files.Folders
+namespace Nitrocid.Files.Folders
 {
     /// <summary>
     /// Current directory module

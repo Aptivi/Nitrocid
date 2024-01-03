@@ -23,10 +23,10 @@ using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
-using KS.Files;
-using KS.Kernel.Exceptions;
-using KS.Languages;
 using Nitrocid.Extras.HttpShell.HTTP;
+using Nitrocid.Files;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
 
 namespace Nitrocid.Extras.HttpShell.Tools
 {

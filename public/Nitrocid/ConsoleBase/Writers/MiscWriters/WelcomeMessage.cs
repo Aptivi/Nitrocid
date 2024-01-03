@@ -18,18 +18,18 @@
 //
 
 using Figletize;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Inputs.Styles.InfoboxTitled;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Drivers.RNG;
-using KS.Kernel;
-using KS.Kernel.Configuration;
-using KS.Languages;
-using KS.Misc.Splash;
-using KS.Misc.Text;
-using KS.Misc.Text.Probers.Placeholder;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Inputs.Styles.InfoboxTitled;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.Drivers.RNG;
+using Nitrocid.Kernel;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Splash;
+using Nitrocid.Misc.Text;
+using Nitrocid.Misc.Text.Probers.Placeholder;
 
-namespace KS.ConsoleBase.Writers.MiscWriters
+namespace Nitrocid.ConsoleBase.Writers.MiscWriters
 {
     /// <summary>
     /// Welcome message writer

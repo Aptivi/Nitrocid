@@ -22,17 +22,17 @@ using System.Net;
 using System.Net.Security;
 using FluentFTP;
 using FluentFTP.Client.BaseClient;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Inputs;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Kernel.Debugging;
-using KS.Languages;
-using KS.Misc.Text;
-using KS.Misc.Text.Probers.Placeholder;
-using KS.Network.Base.Connections;
 using Nitrocid.Extras.FtpShell.FTP;
-using KS.ConsoleBase.Writers.FancyWriters;
-using KS.ConsoleBase.Writers;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.ConsoleBase.Inputs;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Text;
+using Nitrocid.Network.Base.Connections;
+using Nitrocid.ConsoleBase.Writers.FancyWriters;
+using Nitrocid.Misc.Text.Probers.Placeholder;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 
 namespace Nitrocid.Extras.FtpShell.Tools
 {

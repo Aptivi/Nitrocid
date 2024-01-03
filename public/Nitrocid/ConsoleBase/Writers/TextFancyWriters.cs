@@ -18,17 +18,17 @@
 //
 
 using Figletize.Utilities;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.ConsoleBase.Writers.FancyWriters;
-using KS.ConsoleBase.Writers.FancyWriters.Tools;
-using KS.Kernel.Debugging;
-using KS.Languages;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.ConsoleBase.Writers.FancyWriters;
+using Nitrocid.ConsoleBase.Writers.FancyWriters.Tools;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Languages;
 using System;
 using System.Collections.Generic;
 using System.Threading;
 
-namespace KS.ConsoleBase.Writers
+namespace Nitrocid.ConsoleBase.Writers
 {
     /// <summary>
     /// Fancy text writer wrapper for writing with <see cref="KernelColorType"/> (<see cref="Terminaux.Writer.FancyWriters"/>)

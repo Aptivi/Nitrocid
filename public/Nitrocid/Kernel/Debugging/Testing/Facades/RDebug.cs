@@ -17,10 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Debugging.RemoteDebug;
-using KS.Languages;
+using Nitrocid.Kernel.Debugging.RemoteDebug;
+using Nitrocid.Languages;
 
-namespace KS.Kernel.Debugging.Testing.Facades
+namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
     internal class RDebug : TestFacade
     {

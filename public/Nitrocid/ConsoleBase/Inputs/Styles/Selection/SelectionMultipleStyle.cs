@@ -21,17 +21,17 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using KS.ConsoleBase.Buffered;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Inputs.Styles.Infobox;
-using KS.ConsoleBase.Writers.FancyWriters;
-using KS.Kernel.Debugging;
-using KS.Languages;
-using KS.Misc.Text;
+using Nitrocid.ConsoleBase.Buffered;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
+using Nitrocid.ConsoleBase.Writers.FancyWriters;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Text;
 using Textify.Sequences.Builder.Types;
 using Textify.Sequences.Tools;
 
-namespace KS.ConsoleBase.Inputs.Styles.Selection
+namespace Nitrocid.ConsoleBase.Inputs.Styles.Selection
 {
     /// <summary>
     /// Multiple selection style for input module

@@ -19,16 +19,16 @@
 
 using System;
 using System.Threading;
-using KS.ConsoleBase.Colors;
-using KS.Kernel.Debugging;
-using KS.Languages;
-using KS.ConsoleBase.Writers.ConsoleWriters;
 using Terminaux.Colors;
 using Figletize.Utilities;
 using Figletize;
 using System.Text;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Languages;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 
-namespace KS.ConsoleBase.Writers.FancyWriters
+namespace Nitrocid.ConsoleBase.Writers.FancyWriters
 {
     /// <summary>
     /// Figlet writer

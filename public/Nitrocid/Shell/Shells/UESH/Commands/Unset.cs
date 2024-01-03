@@ -17,11 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Shell.ShellBase.Commands;
-using KS.Shell.ShellBase.Scripting;
-using KS.Shell.ShellBase.Switches;
+using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.Shell.ShellBase.Scripting;
+using Nitrocid.Shell.ShellBase.Switches;
 
-namespace KS.Shell.Shells.UESH.Commands
+namespace Nitrocid.Shell.Shells.UESH.Commands
 {
     /// <summary>
     /// Removes a UESH variable from the list

@@ -18,11 +18,11 @@
 //
 
 using System.Text;
-using KS.ConsoleBase.Colors;
 using System.Collections.Generic;
-using KS.ConsoleBase.Writers.FancyWriters.Tools;
 using Terminaux.Colors;
-using KS.Shell.Prompts;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Shell.Prompts;
+using Nitrocid.ConsoleBase.Writers.FancyWriters.Tools;
 
 namespace Nitrocid.Extras.GitShell.Git.Presets
 {

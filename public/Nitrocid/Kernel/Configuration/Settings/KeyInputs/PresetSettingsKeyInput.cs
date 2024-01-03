@@ -17,11 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Configuration.Instances;
-using KS.Kernel.Debugging;
-using KS.Shell.Prompts;
+using Nitrocid.Kernel.Configuration.Instances;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Shell.Prompts;
 
-namespace KS.Kernel.Configuration.Settings.KeyInputs
+namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
 {
     internal class PresetSettingsKeyInput : ISettingsKeyInput
     {

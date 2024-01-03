@@ -18,8 +18,8 @@
 //
 
 using System.IO;
-using KS.Files.Editors.TextEdit;
-using KS.Shell.Shells.Text;
+using Nitrocid.Files.Editors.TextEdit;
+using Nitrocid.Shell.Shells.Text;
 using NUnit.Framework;
 using Shouldly;
 

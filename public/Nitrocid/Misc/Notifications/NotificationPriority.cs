@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace KS.Misc.Notifications
+namespace Nitrocid.Misc.Notifications
 {
     /// <summary>
     /// Notification priority

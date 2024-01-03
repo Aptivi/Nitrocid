@@ -18,9 +18,9 @@
 //
 
 using System.Collections.Generic;
-using KS.ConsoleBase.Colors;
-using KS.Kernel.Threading;
-using KS.Misc.Screensaver;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Kernel.Threading;
+using Nitrocid.Misc.Screensaver;
 using Terminaux.Colors;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers

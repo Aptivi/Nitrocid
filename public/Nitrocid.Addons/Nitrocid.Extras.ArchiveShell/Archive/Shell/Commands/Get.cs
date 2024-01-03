@@ -17,9 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Files;
-using KS.Shell.ShellBase.Commands;
-using KS.Shell.ShellBase.Switches;
+using Nitrocid.Files;
+using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.Shell.ShellBase.Switches;
 
 namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Commands
 {

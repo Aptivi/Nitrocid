@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace KS.Network.Base.Transfer
+namespace Nitrocid.Network.Base.Transfer
 {
     /// <summary>
     /// Network transfer type

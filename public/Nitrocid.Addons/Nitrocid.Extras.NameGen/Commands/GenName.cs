@@ -18,8 +18,8 @@
 //
 
 using System.Linq;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Shell.ShellBase.Commands;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.Shell.ShellBase.Commands;
 using Textify.NameGen;
 
 namespace Nitrocid.Extras.NameGen.Commands

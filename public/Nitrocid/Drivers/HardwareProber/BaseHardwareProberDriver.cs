@@ -17,20 +17,20 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Kernel.Debugging;
-using KS.Languages;
-using KS.Misc.Reflection;
-using KS.Misc.Splash;
 using SpecProbe.Hardware.Parts.Types;
 using System.Collections;
 using System.Linq;
 using HwProber = SpecProbe.Hardware.HardwareProber;
-using KS.ConsoleBase.Writers.FancyWriters;
-using KS.ConsoleBase.Writers;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Misc.Reflection;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Misc.Splash;
+using Nitrocid.Languages;
+using Nitrocid.ConsoleBase.Writers.FancyWriters;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 
-namespace KS.Drivers.HardwareProber
+namespace Nitrocid.Drivers.HardwareProber
 {
     /// <summary>
     /// Base Hardware prober driver

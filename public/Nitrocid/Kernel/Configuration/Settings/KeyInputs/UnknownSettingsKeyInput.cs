@@ -17,10 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Configuration.Instances;
-using KS.Kernel.Exceptions;
+using Nitrocid.Kernel.Configuration.Instances;
+using Nitrocid.Kernel.Exceptions;
 
-namespace KS.Kernel.Configuration.Settings.KeyInputs
+namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
 {
     internal class UnknownSettingsKeyInput : ISettingsKeyInput
     {

@@ -17,13 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Inputs.Styles.Infobox;
-using KS.ConsoleBase.Interactive;
-using KS.Kernel.Exceptions;
-using KS.Languages;
-using KS.Misc.Text;
-using KS.Network.Base.Connections;
 using Nettify.Rss.Instance;
+using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
+using Nitrocid.ConsoleBase.Interactive;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Text;
+using Nitrocid.Network.Base.Connections;
 using System;
 using System.Collections;
 using System.Collections.Generic;

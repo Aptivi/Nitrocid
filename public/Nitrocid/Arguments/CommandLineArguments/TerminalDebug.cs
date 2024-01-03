@@ -17,10 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Drivers;
-using KS.Drivers.Console;
+using Nitrocid.Drivers;
+using Nitrocid.Drivers.Console;
 
-namespace KS.Arguments.CommandLineArguments
+namespace Nitrocid.Arguments.CommandLineArguments
 {
     class TerminalDebugArgument : ArgumentExecutor, IArgument
     {

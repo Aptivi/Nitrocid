@@ -17,13 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Exceptions;
-using KS.Languages;
-using KS.Misc.Text;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Text;
 using System.Diagnostics.CodeAnalysis;
 using System.Text.RegularExpressions;
 
-namespace KS.Drivers.Regexp
+namespace Nitrocid.Drivers.Regexp
 {
     /// <summary>
     /// Base regexp driver

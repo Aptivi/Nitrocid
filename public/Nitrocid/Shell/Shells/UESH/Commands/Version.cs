@@ -18,12 +18,12 @@
 //
 
 using System;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Kernel;
-using KS.Shell.ShellBase.Commands;
-using KS.Shell.ShellBase.Switches;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.Kernel;
+using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.Shell.ShellBase.Switches;
 
-namespace KS.Shell.Shells.UESH.Commands
+namespace Nitrocid.Shell.Shells.UESH.Commands
 {
     /// <summary>
     /// This command prints your current kernel or mod API version

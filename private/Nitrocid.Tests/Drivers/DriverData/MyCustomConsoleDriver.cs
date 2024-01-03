@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Drivers.Console;
+using Nitrocid.Drivers.Console;
 using System;
 
 namespace Nitrocid.Tests.Drivers.DriverData

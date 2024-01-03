@@ -18,9 +18,9 @@
 //
 
 using System.IO;
-using KS.Drivers;
+using Nitrocid.Drivers;
 
-namespace KS.Files.Operations.Querying
+namespace Nitrocid.Files.Operations.Querying
 {
     /// <summary>
     /// Size getter module

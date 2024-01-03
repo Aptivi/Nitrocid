@@ -17,11 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Network.Base;
-using KS.Shell.ShellBase.Commands;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.Network.Base;
+using Nitrocid.Shell.ShellBase.Commands;
 
-namespace KS.Shell.Shells.UESH.Commands
+namespace Nitrocid.Shell.Shells.UESH.Commands
 {
     /// <summary>
     /// This command prints your current host name

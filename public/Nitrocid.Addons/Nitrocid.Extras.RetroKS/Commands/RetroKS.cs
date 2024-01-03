@@ -17,9 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Power;
-using KS.Kernel.Starting.Environment;
-using KS.Shell.ShellBase.Commands;
+using Nitrocid.Kernel.Power;
+using Nitrocid.Kernel.Starting.Environment;
+using Nitrocid.Shell.ShellBase.Commands;
 
 namespace Nitrocid.Extras.RetroKS.Commands
 {

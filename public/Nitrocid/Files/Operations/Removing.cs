@@ -18,14 +18,14 @@
 //
 
 using System;
-using KS.Kernel.Debugging;
-using KS.Drivers;
-using KS.Security.Privacy;
-using KS.Security.Privacy.Consents;
-using KS.Kernel.Exceptions;
-using KS.Languages;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Drivers;
+using Nitrocid.Languages;
+using Nitrocid.Security.Privacy;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Security.Privacy.Consents;
 
-namespace KS.Files.Operations
+namespace Nitrocid.Files.Operations
 {
     /// <summary>
     /// Removing file operations module

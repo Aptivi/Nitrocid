@@ -17,16 +17,16 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase;
-using KS.ConsoleBase.Inputs;
 using System.Collections.Generic;
 using System;
-using KS.Languages;
 using System.Threading;
-using KS.ConsoleBase.Writers.ConsoleWriters;
 using Terminaux.Colors;
 using Textify.Words;
-using KS.ConsoleBase.Writers.FancyWriters;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.ConsoleBase;
+using Nitrocid.ConsoleBase.Inputs;
+using Nitrocid.Languages;
+using Nitrocid.ConsoleBase.Writers.FancyWriters;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games
 {

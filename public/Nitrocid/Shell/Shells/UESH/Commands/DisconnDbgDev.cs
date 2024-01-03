@@ -17,12 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Kernel.Debugging.RemoteDebug;
-using KS.Languages;
-using KS.Shell.ShellBase.Commands;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.Kernel.Debugging.RemoteDebug;
+using Nitrocid.Languages;
+using Nitrocid.Shell.ShellBase.Commands;
 
-namespace KS.Shell.Shells.UESH.Commands
+namespace Nitrocid.Shell.Shells.UESH.Commands
 {
     /// <summary>
     /// Disconnects debug devices

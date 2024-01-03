@@ -20,7 +20,7 @@
 using Newtonsoft.Json;
 using System.Diagnostics;
 
-namespace KS.Kernel.Configuration.Settings
+namespace Nitrocid.Kernel.Configuration.Settings
 {
     /// <summary>
     /// Settings entry class

@@ -18,11 +18,11 @@
 //
 
 using System.IO;
-using KS.Files.Editors.HexEdit;
-using KS.Kernel.Configuration;
-using KS.Kernel.Threading;
+using Nitrocid.Files.Editors.HexEdit;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Kernel.Threading;
 
-namespace KS.Shell.Shells.Hex
+namespace Nitrocid.Shell.Shells.Hex
 {
     /// <summary>
     /// Common hex editor shell module

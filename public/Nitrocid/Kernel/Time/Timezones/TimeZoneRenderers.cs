@@ -17,13 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Kernel.Exceptions;
-using KS.Kernel.Time.Renderers;
-using KS.Languages;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Kernel.Time.Renderers;
+using Nitrocid.Languages;
 using System;
 
-namespace KS.Kernel.Time.Timezones
+namespace Nitrocid.Kernel.Time.Timezones
 {
     /// <summary>
     /// Tools to allow you to render time zones

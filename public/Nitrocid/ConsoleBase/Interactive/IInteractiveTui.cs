@@ -20,7 +20,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace KS.ConsoleBase.Interactive
+namespace Nitrocid.ConsoleBase.Interactive
 {
     /// <summary>
     /// An interface for your interactive user interface for terminal apps

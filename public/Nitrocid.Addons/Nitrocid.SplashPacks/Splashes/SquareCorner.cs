@@ -20,12 +20,12 @@
 using System;
 using System.Text;
 using System.Threading;
-using KS.ConsoleBase;
-using KS.ConsoleBase.Writers.FancyWriters;
-using KS.Drivers.RNG;
-using KS.Kernel.Debugging;
-using KS.Kernel.Threading;
-using KS.Misc.Splash;
+using Nitrocid.ConsoleBase;
+using Nitrocid.ConsoleBase.Writers.FancyWriters;
+using Nitrocid.Drivers.RNG;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Threading;
+using Nitrocid.Misc.Splash;
 using Terminaux.Colors;
 
 namespace Nitrocid.SplashPacks.Splashes

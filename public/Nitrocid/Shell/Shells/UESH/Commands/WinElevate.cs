@@ -17,14 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Kernel;
-using KS.Kernel.Power;
-using KS.Languages;
-using KS.Shell.ShellBase.Commands;
-using KS.Users.Windows;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.Kernel;
+using Nitrocid.Kernel.Power;
+using Nitrocid.Languages;
+using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.Users.Windows;
 
-namespace KS.Shell.Shells.UESH.Commands
+namespace Nitrocid.Shell.Shells.UESH.Commands
 {
     /// <summary>
     /// You can restart Nitrocid with elevated admin permissions

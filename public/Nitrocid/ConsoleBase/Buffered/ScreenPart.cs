@@ -17,15 +17,15 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Colors;
-using KS.Misc.Text;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Misc.Text;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using Terminaux.Colors;
 using Textify.Sequences.Builder.Types;
 
-namespace KS.ConsoleBase.Buffered
+namespace Nitrocid.ConsoleBase.Buffered
 {
     /// <summary>
     /// Buffered screen part

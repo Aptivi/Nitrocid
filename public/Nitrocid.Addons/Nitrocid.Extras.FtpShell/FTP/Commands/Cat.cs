@@ -17,9 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Shell.ShellBase.Commands;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 using Nitrocid.Extras.FtpShell.Tools.Transfer;
+using Nitrocid.Shell.ShellBase.Commands;
 
 namespace Nitrocid.Extras.FtpShell.FTP.Commands
 {

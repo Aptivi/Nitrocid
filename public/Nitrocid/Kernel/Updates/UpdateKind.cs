@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace KS.Kernel.Updates
+namespace Nitrocid.Kernel.Updates
 {
     /// <summary>
     /// Kernel update kind

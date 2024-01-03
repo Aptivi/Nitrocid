@@ -18,11 +18,11 @@
 //
 
 using System.Runtime.Versioning;
-using KS.ConsoleBase;
-using KS.ConsoleBase.Colors;
-using KS.Kernel;
-using KS.Kernel.Debugging;
-using KS.Misc.Screensaver;
+using Nitrocid.ConsoleBase;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Kernel;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Misc.Screensaver;
 using Terminaux.Colors;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers

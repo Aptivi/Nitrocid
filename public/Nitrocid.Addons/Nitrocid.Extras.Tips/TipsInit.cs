@@ -17,10 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Writers.MiscWriters;
-using KS.Kernel.Configuration;
-using KS.Kernel.Extensions;
+using Nitrocid.ConsoleBase.Writers.MiscWriters;
 using Nitrocid.Extras.Tips.Settings;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Kernel.Extensions;
 using System;
 using System.Collections.ObjectModel;
 using System.Reflection;

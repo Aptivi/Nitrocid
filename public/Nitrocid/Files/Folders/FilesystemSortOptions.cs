@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace KS.Files.Folders
+namespace Nitrocid.Files.Folders
 {
     /// <summary>
     /// How are the file system entries sorted in list?

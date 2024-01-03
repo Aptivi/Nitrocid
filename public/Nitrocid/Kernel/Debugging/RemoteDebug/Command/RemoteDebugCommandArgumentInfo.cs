@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace KS.Kernel.Debugging.RemoteDebug.Command
+namespace Nitrocid.Kernel.Debugging.RemoteDebug.Command
 {
     /// <summary>
     /// Command argument info class

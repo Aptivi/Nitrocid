@@ -24,24 +24,24 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Threading;
-using KS.ConsoleBase;
-using KS.ConsoleBase.Buffered;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Inputs.Styles.Infobox;
-using KS.Files.Folders;
-using KS.Files.Instances;
-using KS.Files.Operations;
-using KS.Files.Operations.Querying;
-using KS.Files.Paths;
-using KS.Kernel.Configuration;
-using KS.Kernel.Debugging;
-using KS.Kernel.Threading;
-using KS.Languages;
-using KS.Misc.Reflection;
-using KS.Misc.Splash.Splashes;
-using KS.Modifications;
+using Nitrocid.ConsoleBase;
+using Nitrocid.ConsoleBase.Buffered;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
+using Nitrocid.Files.Folders;
+using Nitrocid.Files.Instances;
+using Nitrocid.Files.Operations;
+using Nitrocid.Files.Operations.Querying;
+using Nitrocid.Files.Paths;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Threading;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Reflection;
+using Nitrocid.Misc.Splash.Splashes;
+using Nitrocid.Modifications;
 
-namespace KS.Misc.Splash
+namespace Nitrocid.Misc.Splash
 {
     /// <summary>
     /// Splash management module

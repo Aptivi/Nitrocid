@@ -19,7 +19,7 @@
 
 using System;
 
-namespace KS.Drivers.RNG
+namespace Nitrocid.Drivers.RNG
 {
     /// <summary>
     /// Base random number generation driver
@@ -91,7 +91,7 @@ namespace KS.Drivers.RNG
 
         /// <inheritdoc/>
         public virtual bool RandomRussianRoulette() =>
-            (RandomShort() % 6) == 0;
+            RandomShort() % 6 == 0;
 
         /// <inheritdoc/>
         public virtual bool RandomBoolean() =>

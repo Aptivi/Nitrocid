@@ -17,12 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Files.Operations.Querying;
-using KS.Files.Paths;
-using KS.Kernel.Extensions;
-using KS.Languages;
+using Nitrocid.Files.Operations.Querying;
+using Nitrocid.Files.Paths;
+using Nitrocid.Kernel.Extensions;
+using Nitrocid.Languages;
 
-namespace KS.Arguments.CommandLineArguments
+namespace Nitrocid.Arguments.CommandLineArguments
 {
     class LangArgument : ArgumentExecutor, IArgument
     {

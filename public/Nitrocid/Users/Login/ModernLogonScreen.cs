@@ -17,28 +17,28 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase;
-using KS.ConsoleBase.Colors;
-using KS.Languages;
 using System.Threading;
-using KS.Kernel.Debugging;
 using System;
-using KS.Network.RSS;
-using KS.Kernel.Configuration;
-using KS.Kernel.Time;
-using KS.Kernel.Time.Renderers;
-using KS.Kernel.Threading;
-using KS.Misc.Text;
 using Figletize;
-using KS.Misc.Text.Probers.Motd;
 using System.Text;
-using KS.ConsoleBase.Buffered;
 using Textify.Sequences.Builder.Types;
-using KS.Kernel.Extensions;
-using KS.Kernel.Exceptions;
-using KS.ConsoleBase.Writers.FancyWriters;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Kernel.Time;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Threading;
+using Nitrocid.ConsoleBase;
+using Nitrocid.Kernel.Time.Renderers;
+using Nitrocid.Languages;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Misc.Text;
+using Nitrocid.ConsoleBase.Writers.FancyWriters;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Buffered;
+using Nitrocid.Misc.Text.Probers.Motd;
+using Nitrocid.Kernel.Extensions;
+using Nitrocid.Network.RSS;
 
-namespace KS.Users.Login
+namespace Nitrocid.Users.Login
 {
     internal static class ModernLogonScreen
     {
@@ -113,7 +113,7 @@ namespace KS.Users.Login
 
                             // Print the date
                             string dateStr = $"{TimeDateRenderers.RenderDate()}";
-                            int consoleInfoY = (ConsoleWrapper.WindowHeight / 2) + figHeight + 2;
+                            int consoleInfoY = ConsoleWrapper.WindowHeight / 2 + figHeight + 2;
                             display.Append(
                                 CenteredTextColor.RenderCenteredOneLine(consoleInfoY, dateStr) +
                                 KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground
@@ -124,8 +124,8 @@ namespace KS.Users.Login
                             {
                                 int consoleHeadlineInfoY =
                                     MotdHeadlineBottom ?
-                                    (ConsoleWrapper.WindowHeight / 2) + figHeight + 3 :
-                                    (ConsoleWrapper.WindowHeight / 2) - figHeight - 2;
+                                    ConsoleWrapper.WindowHeight / 2 + figHeight + 3 :
+                                    ConsoleWrapper.WindowHeight / 2 - figHeight - 2;
                                 display.Append(
                                     CenteredTextColor.RenderCenteredOneLine(consoleHeadlineInfoY, headlineStr)
                                 );
@@ -138,8 +138,8 @@ namespace KS.Users.Login
                                 string motdStr = motdStrs[i];
                                 int consoleMotdInfoY =
                                     MotdHeadlineBottom ?
-                                    (ConsoleWrapper.WindowHeight / 2) + figHeight + 4 + i :
-                                    (ConsoleWrapper.WindowHeight / 2) - figHeight - (RSSTools.ShowHeadlineOnLogin ? 4 : 2) + i;
+                                    ConsoleWrapper.WindowHeight / 2 + figHeight + 4 + i :
+                                    ConsoleWrapper.WindowHeight / 2 - figHeight - (RSSTools.ShowHeadlineOnLogin ? 4 : 2) + i;
                                 display.Append(
                                     CenteredTextColor.RenderCenteredOneLine(consoleMotdInfoY, motdStr)
                                 );

@@ -17,14 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Files.Operations.Querying;
-using KS.Kernel.Configuration.Instances;
-using KS.Kernel.Exceptions;
+using Nitrocid.Files.Operations.Querying;
+using Nitrocid.Kernel.Configuration.Instances;
+using Nitrocid.Kernel.Exceptions;
 using System;
 using System.Linq;
 using System.Reflection;
 
-namespace KS.Misc.Reflection
+namespace Nitrocid.Misc.Reflection
 {
     internal static class ReflectionCommon
     {
@@ -33,7 +33,7 @@ namespace KS.Misc.Reflection
             typeof(KernelMainConfig),
             typeof(KernelSaverConfig),
         ];
-        internal static Type[] KernelTypes = Assembly.GetExecutingAssembly().GetTypes().Where((type) => type.FullName.StartsWith("KS.")).ToArray();
+        internal static Type[] KernelTypes = Assembly.GetExecutingAssembly().GetTypes().Where((type) => type.FullName.StartsWith("Nitrocid.")).ToArray();
 
         /// <summary>
         /// If the specified file is a .NET assembly

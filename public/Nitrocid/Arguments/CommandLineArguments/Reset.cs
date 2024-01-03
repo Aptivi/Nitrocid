@@ -19,17 +19,17 @@
 
 using System.IO;
 using System;
-using KS.Files.Folders;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Languages;
-using KS.ConsoleBase.Colors;
-using KS.Files.Operations.Querying;
-using KS.Kernel.Power;
-using KS.Files.Paths;
-using KS.ConsoleBase.Inputs.Styles.Choice;
-using KS.ConsoleBase.Writers;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Files.Folders;
+using Nitrocid.Languages;
+using Nitrocid.ConsoleBase.Inputs.Styles.Choice;
+using Nitrocid.Files.Paths;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.Files.Operations.Querying;
+using Nitrocid.Kernel.Power;
 
-namespace KS.Arguments.CommandLineArguments
+namespace Nitrocid.Arguments.CommandLineArguments
 {
     class ResetArgument : ArgumentExecutor, IArgument
     {

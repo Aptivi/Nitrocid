@@ -17,11 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Shell.ShellBase.Commands;
 using Newtonsoft.Json;
+using Nitrocid.Shell.ShellBase.Commands;
 using System.Diagnostics;
 
-namespace KS.Shell.ShellBase.Aliases
+namespace Nitrocid.Shell.ShellBase.Aliases
 {
     /// <summary>
     /// Command alias information

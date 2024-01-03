@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace KS.Kernel.Journaling
+namespace Nitrocid.Kernel.Journaling
 {
     /// <summary>
     /// Journaling status to write to the kernel journal

@@ -17,10 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Languages;
-using KS.Modifications;
+using Nitrocid.Languages;
+using Nitrocid.Modifications;
 
-namespace KS.Kernel.Debugging.Testing.Facades
+namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
     internal class BlacklistModUndo : TestFacade
     {

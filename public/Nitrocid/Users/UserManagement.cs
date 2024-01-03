@@ -20,24 +20,24 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using KS.Drivers;
-using KS.Drivers.Encryption;
-using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
-using KS.Languages;
-using KS.Misc.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using KS.Kernel.Events;
-using KS.Users.Login;
-using KS.Kernel.Configuration;
-using KS.Misc.Text.Probers.Regexp;
-using KS.Files.Operations;
-using KS.Files.Operations.Querying;
-using KS.Files.Paths;
-using KS.Security.Permissions;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Users.Login;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Drivers;
+using Nitrocid.Files.Operations;
+using Nitrocid.Languages;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Drivers.Encryption;
+using Nitrocid.Misc.Text;
+using Nitrocid.Security.Permissions;
+using Nitrocid.Files.Paths;
+using Nitrocid.Kernel.Events;
+using Nitrocid.Files.Operations.Querying;
+using Nitrocid.Misc.Text.Probers.Regexp;
 
-namespace KS.Users
+namespace Nitrocid.Users
 {
     /// <summary>
     /// User management module

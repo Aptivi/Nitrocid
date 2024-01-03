@@ -17,11 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Debugging.Testing;
-using KS.Kernel.Power;
-using KS.Kernel.Starting;
+using Nitrocid.Kernel.Debugging.Testing;
+using Nitrocid.Kernel.Power;
+using Nitrocid.Kernel.Starting;
 
-namespace KS.Arguments.CommandLineArguments
+namespace Nitrocid.Arguments.CommandLineArguments
 {
     class TestInteractiveArgument : ArgumentExecutor, IArgument
     {

@@ -17,13 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Kernel.Debugging;
-using KS.Languages;
-using KS.Misc.Text;
 using System;
-using KS.ConsoleBase.Writers.FancyWriters;
 using Nettify.Weather;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.ConsoleBase.Writers.FancyWriters;
+using Nitrocid.Misc.Text;
+using Nitrocid.Languages;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 
 namespace Nitrocid.Extras.Forecast.Forecast
 {

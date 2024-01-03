@@ -18,14 +18,14 @@
 //
 
 using System;
-using KS.Drivers;
-using KS.Shell.ShellBase.Shells;
-using KS.Drivers.Console;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Kernel.Debugging;
 using System.Threading;
+using Nitrocid.Shell.ShellBase.Shells;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Drivers;
+using Nitrocid.Drivers.Console;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 
-namespace KS.Shell.ShellBase.Commands
+namespace Nitrocid.Shell.ShellBase.Commands
 {
     /// <summary>
     /// Cancellation handler tools

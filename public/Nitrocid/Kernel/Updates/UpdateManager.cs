@@ -18,27 +18,27 @@
 //
 
 using System;
-using KS.Kernel.Configuration;
-using KS.Kernel.Debugging;
-using KS.Kernel.Extensions;
-using KS.Network.Base.Transfer;
 using Newtonsoft.Json.Linq;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Extensions;
+using Nitrocid.Network.Base.Transfer;
 
 #if SPECIFIERREL
-using KS.Files.Paths;
-using KS.Misc.Splash;
-using KS.Languages;
+using Nitrocid.Files.Paths;
+using Nitrocid.Misc.Splash;
+using Nitrocid.Languages;
 using System.IO;
 #endif
 
 #if PACKAGEMANAGERBUILD
 #if !SPECIFIERREL
-using KS.Misc.Splash;
-using KS.Languages;
+using Nitrocid.Misc.Splash;
+using Nitrocid.Languages;
 #endif
 #endif
 
-namespace KS.Kernel.Updates
+namespace Nitrocid.Kernel.Updates
 {
     /// <summary>
     /// Update management module

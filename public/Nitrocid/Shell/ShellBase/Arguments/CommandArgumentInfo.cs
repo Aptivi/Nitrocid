@@ -21,9 +21,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using KS.Shell.ShellBase.Switches;
+using Nitrocid.Shell.ShellBase.Switches;
 
-namespace KS.Shell.ShellBase.Arguments
+namespace Nitrocid.Shell.ShellBase.Arguments
 {
     /// <summary>
     /// Command argument info class

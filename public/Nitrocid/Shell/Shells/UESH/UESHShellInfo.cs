@@ -19,22 +19,22 @@
 
 using System;
 using System.Collections.Generic;
-using KS.Shell.Shells.UESH.Commands;
-using KS.Shell.ShellBase.Commands;
-using KS.Shell.ShellBase.Shells;
-using KS.Shell.Prompts;
 using System.Linq;
-using KS.Users;
-using KS.Languages;
-using KS.Shell.ShellBase.Arguments;
-using KS.Shell.ShellBase.Switches;
-using KS.Drivers.Encryption;
-using KS.Shell.Shells.UESH.Presets;
-using KS.Drivers.Encoding;
-using KS.Files.Extensions;
-using KS.Kernel.Configuration;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.Shell.ShellBase.Shells;
+using Nitrocid.Users;
+using Nitrocid.Shell.ShellBase.Arguments;
+using Nitrocid.Drivers.Encoding;
+using Nitrocid.Shell.ShellBase.Switches;
+using Nitrocid.Languages;
+using Nitrocid.Drivers.Encryption;
+using Nitrocid.Shell.Prompts;
+using Nitrocid.Files.Extensions;
+using Nitrocid.Shell.Shells.UESH.Commands;
+using Nitrocid.Shell.Shells.UESH.Presets;
 
-namespace KS.Shell.Shells.UESH
+namespace Nitrocid.Shell.Shells.UESH
 {
     /// <summary>
     /// UESH common shell properties

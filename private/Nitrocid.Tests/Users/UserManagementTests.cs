@@ -17,10 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Drivers;
-using KS.Drivers.Encryption;
-using KS.Kernel.Exceptions;
-using KS.Users;
+using Nitrocid.Drivers;
+using Nitrocid.Drivers.Encryption;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Users;
 using NUnit.Framework;
 using Shouldly;
 

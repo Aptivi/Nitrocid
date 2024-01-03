@@ -17,10 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Shell.ShellBase.Commands;
-using KS.Shell.ShellBase.Shells;
+using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.Shell.ShellBase.Shells;
 
-namespace KS.Shell.Shells.Hex.Commands
+namespace Nitrocid.Shell.Shells.Hex.Commands
 {
     /// <summary>
     /// Exits your hex editor shell

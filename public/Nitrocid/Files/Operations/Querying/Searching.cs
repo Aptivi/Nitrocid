@@ -20,9 +20,9 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
-using KS.Drivers;
+using Nitrocid.Drivers;
 
-namespace KS.Files.Operations.Querying
+namespace Nitrocid.Files.Operations.Querying
 {
     /// <summary>
     /// File searching module

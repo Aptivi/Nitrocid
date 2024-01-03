@@ -17,9 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Configuration;
+using Nitrocid.Kernel.Configuration;
 
-namespace KS.ConsoleBase.Writers.FancyWriters.Tools
+namespace Nitrocid.ConsoleBase.Writers.FancyWriters.Tools
 {
     /// <summary>
     /// All border tools here

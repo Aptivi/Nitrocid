@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace KS.Resources {
+namespace Nitrocid.Resources {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace KS.Resources {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("KS.Resources.LanguageResources", typeof(LanguageResources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Nitrocid.Resources.LanguageResources", typeof(LanguageResources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -67,11 +67,11 @@ namespace KS.Resources {
         ///  &quot;Localizations&quot;: [
         ///    &quot;Invalid color template {0}&quot;,
         ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;,
-        ///    &quot;RAM: One or more of the RAM chips failed to be probed. Showing information anyway...&quot;,
-        ///    &quot;HDD: One or more of the hard drives failed to be probed. Showing information anyway...&quot;,
         ///    &quot;Enter the admin password for maintenance.&quot;,
-        ///    &quot;Kern [rest of string was truncated]&quot;;.
+        ///    &quot;Kernel Error while booting: {0}&quot;,
+        ///    &quot;DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.&quot;,
+        ///    &quot;[{0}] panic: Reboot enabled due to error level being {0}.&quot;,
+        ///    &quot;[{0}] panic: Time to reboot: {1} seconds, exceeds 1 hour. It is set to 1 m [rest of string was truncated]&quot;;.
         /// </summary>
         public static string eng {
             get {
@@ -80,12 +80,14 @@ namespace KS.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {
-        ///    &quot;eng&quot;: {
+        ///   Looks up a localized string similar to [
+        ///    {
+        ///        &quot;three&quot;: &quot;eng&quot;,
         ///        &quot;name&quot;: &quot;English&quot;,
-        ///        &quot;transliterable&quot;: false
+        ///        &quot;transliterable&quot;: false,
+        ///        &quot;country&quot;: &quot;United States of America&quot;
         ///    }
-        ///}
+        ///]
         ///.
         /// </summary>
         public static string LanguageMetadata {

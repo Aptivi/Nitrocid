@@ -17,19 +17,19 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
-using KS.Kernel.Threading;
-using KS.Languages;
-using KS.Security.Permissions;
-using KS.Shell.ShellBase.Commands;
-using KS.Shell.ShellBase.Shells;
-using KS.Users;
-using KS.Users.Login;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Kernel.Threading;
+using Nitrocid.Languages;
+using Nitrocid.Security.Permissions;
+using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.Shell.ShellBase.Shells;
+using Nitrocid.Users;
+using Nitrocid.Users.Login;
 using System;
 
-namespace KS.Shell.Shells.UESH.Commands
+namespace Nitrocid.Shell.Shells.UESH.Commands
 {
     /// <summary>
     /// Runs a command as the superuser
@@ -51,7 +51,7 @@ namespace KS.Shell.Shells.UESH.Commands
             {
                 TextWriterColor.Write(Translate.DoTranslation("You are already a superuser!"));
                 return 10000 + (int)KernelExceptionType.ShellOperation;
-            }    
+            }
 
             // Now, prompt for the current username's password
             string currentUsername = UserManagement.CurrentUser.Username;

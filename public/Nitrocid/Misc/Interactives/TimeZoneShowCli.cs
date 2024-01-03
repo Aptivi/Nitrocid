@@ -17,14 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Languages;
 using System.Collections.Generic;
 using System.Collections;
-using KS.ConsoleBase.Interactive;
-using KS.Kernel.Time.Timezones;
-using KS.Kernel.Time.Renderers;
+using Nitrocid.Kernel.Time.Renderers;
+using Nitrocid.Languages;
+using Nitrocid.ConsoleBase.Interactive;
+using Nitrocid.Kernel.Time.Timezones;
 
-namespace KS.Misc.Interactives
+namespace Nitrocid.Misc.Interactives
 {
     /// <summary>
     /// Time zone showing class

@@ -19,10 +19,10 @@
 
 using System;
 using System.Threading;
-using KS.Kernel.Debugging;
 using MailKit.Net.Imap;
 using MailKit.Net.Smtp;
 using Nitrocid.Extras.MailShell.Mail;
+using Nitrocid.Kernel.Debugging;
 
 namespace Nitrocid.Extras.MailShell.Tools.Transfer
 {

@@ -17,16 +17,16 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Interactive;
-using KS.ConsoleBase.Writers;
-using KS.Kernel.Time.Timezones;
-using KS.Languages;
-using KS.Misc.Interactives;
-using KS.Shell.ShellBase.Commands;
-using KS.Shell.ShellBase.Switches;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Interactive;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Kernel.Time.Timezones;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Interactives;
+using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.Shell.ShellBase.Switches;
 
-namespace KS.Shell.Shells.UESH.Commands
+namespace Nitrocid.Shell.Shells.UESH.Commands
 {
     /// <summary>
     /// Shows current time and date in another timezone

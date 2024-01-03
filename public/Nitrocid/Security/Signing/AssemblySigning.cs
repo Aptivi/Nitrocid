@@ -17,12 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Files;
-using KS.Kernel.Exceptions;
-using KS.Languages;
+using Nitrocid.Files;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
 using System.Reflection;
 
-namespace KS.Security.Signing
+namespace Nitrocid.Security.Signing
 {
     /// <summary>
     /// Assembly signing tools

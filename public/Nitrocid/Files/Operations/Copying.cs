@@ -19,10 +19,10 @@
 
 using System;
 using System.IO;
-using KS.Drivers;
-using KS.Kernel.Debugging;
+using Nitrocid.Drivers;
+using Nitrocid.Kernel.Debugging;
 
-namespace KS.Files.Operations
+namespace Nitrocid.Files.Operations
 {
     /// <summary>
     /// Copying file operations module

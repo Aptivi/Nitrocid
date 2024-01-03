@@ -20,17 +20,17 @@
 using System;
 using System.Linq;
 using System.Collections.Generic;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.ConsoleBase.Writers.FancyWriters.Tools;
 using Nitrocid.Extras.Calendar.Calendar.Reminders;
 using Nitrocid.Extras.Calendar.Calendar.Events;
-using KS.ConsoleBase;
-using KS.Kernel.Time.Calendars;
-using KS.Kernel.Time.Converters;
-using KS.Kernel.Time;
-using KS.ConsoleBase.Writers.FancyWriters;
-using KS.ConsoleBase.Writers;
+using Nitrocid.Kernel.Time.Calendars;
+using Nitrocid.ConsoleBase.Writers.FancyWriters.Tools;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Kernel.Time;
+using Nitrocid.Kernel.Time.Converters;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.ConsoleBase;
+using Nitrocid.ConsoleBase.Writers.FancyWriters;
 
 namespace Nitrocid.Extras.Calendar.Calendar
 {

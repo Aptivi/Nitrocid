@@ -17,12 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Drivers.RNG;
-using KS.Kernel.Threading;
-using KS.Misc.Screensaver;
+using Nitrocid.ConsoleBase;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.Drivers.RNG;
+using Nitrocid.Kernel.Threading;
+using Nitrocid.Misc.Screensaver;
 using System;
 using System.Text;
 using Terminaux.Colors;

@@ -17,17 +17,17 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Inputs.Styles.Infobox;
-using KS.ConsoleBase.Interactive;
-using KS.Languages;
-using KS.Misc.Text;
-using KS.Modifications.ManPages;
+using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
+using Nitrocid.ConsoleBase.Interactive;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Text;
+using Nitrocid.Modifications.ManPages;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
-namespace KS.Misc.Interactives
+namespace Nitrocid.Misc.Interactives
 {
     /// <summary>
     /// Manual viewer class

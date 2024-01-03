@@ -18,10 +18,10 @@
 //
 
 using FluentFTP;
-using KS.Network.Base.Connections;
-using KS.Network.Base.SpeedDial;
-using KS.Shell.ShellBase.Commands;
 using Nitrocid.Extras.FtpShell.Tools;
+using Nitrocid.Network.Base.Connections;
+using Nitrocid.Network.Base.SpeedDial;
+using Nitrocid.Shell.ShellBase.Commands;
 using System;
 
 namespace Nitrocid.Extras.FtpShell

@@ -17,11 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Colors;
-using KS.Languages;
-using KS.Shell.ShellBase.Commands;
-using KS.Kernel.Exceptions;
-using KS.ConsoleBase.Writers;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
+using Nitrocid.Shell.ShellBase.Commands;
 
 namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Commands
 {

@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace KS.Shell.ShellBase.Commands
+namespace Nitrocid.Shell.ShellBase.Commands
 {
     /// <summary>
     /// Base command executor

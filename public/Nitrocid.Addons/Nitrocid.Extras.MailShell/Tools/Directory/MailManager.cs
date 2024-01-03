@@ -20,17 +20,17 @@
 using System;
 using System.Data;
 using System.Linq;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
-using KS.Languages;
-using KS.Misc.Text;
 using MailKit;
 using MailKit.Net.Imap;
 using MimeKit;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 using Nitrocid.Extras.MailShell.Mail;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Text;
 
 namespace Nitrocid.Extras.MailShell.Tools.Directory
 {

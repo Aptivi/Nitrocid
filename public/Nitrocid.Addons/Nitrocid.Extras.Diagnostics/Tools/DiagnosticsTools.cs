@@ -17,9 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Threading;
-using KS.Languages;
 using Microsoft.Diagnostics.Runtime;
+using Nitrocid.Kernel.Threading;
+using Nitrocid.Languages;
 using System;
 using System.Collections.Generic;
 using System.Linq;

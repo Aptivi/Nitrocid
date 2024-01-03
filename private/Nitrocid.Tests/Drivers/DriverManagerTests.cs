@@ -17,22 +17,22 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Drivers;
-using KS.Drivers.Console;
-using KS.Drivers.Encryption;
-using KS.Drivers.Filesystem;
-using KS.Drivers.Network;
-using KS.Drivers.Regexp;
-using KS.Drivers.RNG;
 using NUnit.Framework;
 using Shouldly;
 using System.Collections.Generic;
 using Nitrocid.Tests.Drivers.DriverData;
-using KS.Drivers.DebugLogger;
-using KS.Drivers.HardwareProber;
-using KS.Drivers.Encoding;
-using KS.Drivers.Sorting;
-using KS.Drivers.Input;
+using Nitrocid.Drivers;
+using Nitrocid.Drivers.RNG;
+using Nitrocid.Drivers.Filesystem;
+using Nitrocid.Drivers.Encoding;
+using Nitrocid.Drivers.HardwareProber;
+using Nitrocid.Drivers.Network;
+using Nitrocid.Drivers.Sorting;
+using Nitrocid.Drivers.Regexp;
+using Nitrocid.Drivers.Input;
+using Nitrocid.Drivers.Console;
+using Nitrocid.Drivers.Encryption;
+using Nitrocid.Drivers.DebugLogger;
 
 namespace Nitrocid.Tests.Drivers
 {

@@ -19,7 +19,7 @@
 
 using System;
 
-namespace KS.Kernel.Starting
+namespace Nitrocid.Kernel.Starting
 {
     internal class KernelStage
     {

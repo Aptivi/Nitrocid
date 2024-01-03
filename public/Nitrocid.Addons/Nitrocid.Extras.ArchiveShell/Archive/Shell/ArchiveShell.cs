@@ -17,12 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Colors;
-using KS.Files.Folders;
-using KS.Kernel.Debugging;
-using KS.Languages;
-using KS.Misc.Text;
-using KS.Shell.ShellBase.Shells;
 using System;
 using System.IO;
 using System.Threading;
@@ -33,8 +27,14 @@ using SharpCompress.Archives.Zip;
 using SharpCompress.Archives.GZip;
 using SharpCompress.Archives.SevenZip;
 using SharpCompress.Archives.Tar;
-using KS.Shell.ShellBase.Commands;
-using KS.ConsoleBase.Writers;
+using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.Shell.ShellBase.Shells;
+using Nitrocid.Misc.Text;
+using Nitrocid.Files.Folders;
+using Nitrocid.Languages;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Kernel.Debugging;
 
 namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
 {

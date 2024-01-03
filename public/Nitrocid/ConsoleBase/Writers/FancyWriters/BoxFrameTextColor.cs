@@ -19,17 +19,17 @@
 
 using System;
 using System.Threading;
-using KS.Kernel.Debugging;
-using KS.ConsoleBase.Colors;
-using KS.Languages;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.ConsoleBase.Writers.FancyWriters.Tools;
 using Terminaux.Colors;
 using Textify.Sequences.Builder.Types;
 using System.Text;
-using KS.Misc.Text;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Text;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.ConsoleBase.Writers.FancyWriters.Tools;
+using Nitrocid.ConsoleBase.Colors;
 
-namespace KS.ConsoleBase.Writers.FancyWriters
+namespace Nitrocid.ConsoleBase.Writers.FancyWriters
 {
     /// <summary>
     /// BoxFrame writer with color support

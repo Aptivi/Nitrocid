@@ -17,20 +17,20 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Inputs;
-using KS.ConsoleBase.Inputs.Styles.Infobox;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Drivers.RNG;
-using KS.Languages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using Terminaux.Colors;
-using KS.ConsoleBase.Writers.FancyWriters;
-using KS.ConsoleBase.Writers;
+using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase;
+using Nitrocid.ConsoleBase.Writers.FancyWriters;
+using Nitrocid.Languages;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Drivers.RNG;
+using Nitrocid.ConsoleBase.Inputs;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games
 {

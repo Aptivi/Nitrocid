@@ -18,18 +18,18 @@
 //
 
 using System;
-using KS.ConsoleBase;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Kernel.Debugging;
-using KS.Kernel.Threading;
-using KS.Kernel.Time;
-using KS.Kernel.Time.Renderers;
-using KS.Misc.Screensaver;
-using KS.Misc.Text.Probers.Placeholder;
 using Terminaux.Colors;
-using KS.ConsoleBase.Writers.FancyWriters;
-using KS.ConsoleBase.Writers;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.ConsoleBase;
+using Nitrocid.Misc.Screensaver;
+using Nitrocid.ConsoleBase.Writers.FancyWriters;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.Misc.Text.Probers.Placeholder;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Kernel.Time;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Kernel.Time.Renderers;
+using Nitrocid.Kernel.Threading;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {

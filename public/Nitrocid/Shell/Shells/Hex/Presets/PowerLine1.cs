@@ -18,13 +18,13 @@
 //
 
 using System.Text;
-using KS.ConsoleBase.Colors;
 using System.Collections.Generic;
-using KS.ConsoleBase.Writers.FancyWriters.Tools;
 using Terminaux.Colors;
-using KS.Shell.Prompts;
+using Nitrocid.Shell.Prompts;
+using Nitrocid.ConsoleBase.Writers.FancyWriters.Tools;
+using Nitrocid.ConsoleBase.Colors;
 
-namespace KS.Shell.Shells.Hex.Presets
+namespace Nitrocid.Shell.Shells.Hex.Presets
 {
     /// <summary>
     /// PowerLine 1 preset

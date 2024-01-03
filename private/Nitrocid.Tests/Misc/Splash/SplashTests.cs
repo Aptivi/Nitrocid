@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Misc.Splash;
+using Nitrocid.Misc.Splash;
 using NUnit.Framework;
 using Shouldly;
 

@@ -17,8 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Time.Calendars;
-using KS.Kernel.Time.Converters;
+using Nitrocid.Kernel.Time.Calendars;
+using Nitrocid.Kernel.Time.Converters;
 using NUnit.Framework;
 using Shouldly;
 using System;

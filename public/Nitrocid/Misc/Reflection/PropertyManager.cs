@@ -20,11 +20,11 @@
 using System;
 using System.Collections.Generic;
 using System.Reflection;
-using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
-using KS.Languages;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
 
-namespace KS.Misc.Reflection
+namespace Nitrocid.Misc.Reflection
 {
     /// <summary>
     /// Property management module

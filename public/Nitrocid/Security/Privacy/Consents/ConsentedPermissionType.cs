@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace KS.Security.Privacy.Consents
+namespace Nitrocid.Security.Privacy.Consents
 {
     /// <summary>
     /// Consented permission type

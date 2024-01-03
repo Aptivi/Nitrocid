@@ -25,15 +25,15 @@ using System.Linq;
 using System.Text;
 using FluentFTP;
 using FluentFTP.Helpers;
-using KS.ConsoleBase.Colors;
-using KS.Files;
-using KS.Files.Operations.Querying;
-using KS.Files.Paths;
-using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
-using KS.Languages;
-using KS.Misc.Reflection;
+using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Extras.FtpShell.FTP;
+using Nitrocid.Files;
+using Nitrocid.Files.Operations.Querying;
+using Nitrocid.Files.Paths;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Reflection;
 
 namespace Nitrocid.Extras.FtpShell.Tools.Filesystem
 {

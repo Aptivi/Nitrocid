@@ -20,7 +20,7 @@
 using System.Globalization;
 using DtfCalendar = System.Globalization.HijriCalendar;
 
-namespace KS.Kernel.Time.Calendars.Types
+namespace Nitrocid.Kernel.Time.Calendars.Types
 {
     /// <summary>
     /// Hijri calendar

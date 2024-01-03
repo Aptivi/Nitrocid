@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace KS.Users.Login
+namespace Nitrocid.Users.Login
 {
     /// <summary>
     /// Enumeration for the login error reasons

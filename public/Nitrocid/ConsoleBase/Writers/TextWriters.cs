@@ -17,15 +17,15 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Kernel.Debugging;
-using KS.Languages;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Languages;
 using System;
 using System.Collections.Generic;
 using System.Threading;
 
-namespace KS.ConsoleBase.Writers
+namespace Nitrocid.ConsoleBase.Writers
 {
     /// <summary>
     /// Text writer wrapper for writing with <see cref="KernelColorType"/> (<see cref="Terminaux.Writer.ConsoleWriters"/>)

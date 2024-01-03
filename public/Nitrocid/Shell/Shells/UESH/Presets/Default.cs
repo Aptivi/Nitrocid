@@ -18,17 +18,17 @@
 //
 
 using System.Text;
-using KS.ConsoleBase.Colors;
-using KS.Files.Folders;
-using KS.Kernel;
-using KS.Kernel.Configuration;
-using KS.Languages;
-using KS.Network.Base;
-using KS.Shell.Prompts;
-using KS.Shell.ShellBase.Shells;
-using KS.Users;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Files.Folders;
+using Nitrocid.Kernel;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Languages;
+using Nitrocid.Network.Base;
+using Nitrocid.Shell.Prompts;
+using Nitrocid.Shell.ShellBase.Shells;
+using Nitrocid.Users;
 
-namespace KS.Shell.Shells.UESH.Presets
+namespace Nitrocid.Shell.Shells.UESH.Presets
 {
     /// <summary>
     /// Default preset

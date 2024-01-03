@@ -17,27 +17,27 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Buffered;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Inputs;
-using KS.ConsoleBase.Inputs.Styles.Infobox;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Kernel.Configuration;
-using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
-using KS.Languages;
-using KS.Misc.Reflection;
-using KS.Misc.Text;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Textify.Sequences.Builder.Types;
 using Textify.Sequences.Tools;
-using KS.ConsoleBase.Writers.FancyWriters;
-using KS.ConsoleBase.Writers;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.ConsoleBase.Inputs;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Misc.Reflection;
+using Nitrocid.ConsoleBase.Writers.FancyWriters;
+using Nitrocid.Languages;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Misc.Text;
+using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Buffered;
 
-namespace KS.ConsoleBase.Interactive
+namespace Nitrocid.ConsoleBase.Interactive
 {
     /// <summary>
     /// Tools for the interactive TUI implementation
@@ -392,7 +392,7 @@ namespace KS.ConsoleBase.Interactive
                 if (Config.MainConfig.EnableScrollBarInSelection)
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Drawing scroll bar.");
-                    int left = paneNum == 2 ? (SeparatorHalfConsoleWidthInterior * 2) + (ConsoleWrapper.WindowWidth % 2 != 0 && paneNum == 2 ? 2 : 1) : SeparatorHalfConsoleWidthInterior - 1;
+                    int left = paneNum == 2 ? SeparatorHalfConsoleWidthInterior * 2 + (ConsoleWrapper.WindowWidth % 2 != 0 && paneNum == 2 ? 2 : 1) : SeparatorHalfConsoleWidthInterior - 1;
                     builder.Append(ProgressBarVerticalColor.RenderVerticalProgress(100 * ((double)paneCurrentSelection / dataCount), left, 1, 2, 2, BaseInteractiveTui.PaneSeparatorColor, BaseInteractiveTui.PaneBackgroundColor, false));
                 }
                 return builder.ToString();

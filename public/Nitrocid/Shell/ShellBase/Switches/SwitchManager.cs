@@ -17,10 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Misc.Text;
+using Nitrocid.Misc.Text;
 using System.Collections.Generic;
 
-namespace KS.Shell.ShellBase.Switches
+namespace Nitrocid.Shell.ShellBase.Switches
 {
     /// <summary>
     /// Switch management module

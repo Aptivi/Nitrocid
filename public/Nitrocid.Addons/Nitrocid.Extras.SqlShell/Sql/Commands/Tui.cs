@@ -17,10 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Files.Editors.HexEdit;
-using KS.Files.Operations;
-using KS.Shell.ShellBase.Commands;
 using Nitrocid.Extras.SqlShell.Tools;
+using Nitrocid.Files.Editors.HexEdit;
+using Nitrocid.Files.Operations;
+using Nitrocid.Shell.ShellBase.Commands;
 
 namespace Nitrocid.Extras.SqlShell.Sql.Commands
 {

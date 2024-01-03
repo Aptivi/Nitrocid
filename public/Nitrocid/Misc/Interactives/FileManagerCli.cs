@@ -17,36 +17,36 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Colors;
-using KS.Drivers;
-using KS.Drivers.Encryption;
-using KS.Files.Folders;
-using KS.Files.Operations;
-using KS.Kernel.Debugging;
-using KS.Languages;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using KS.Files.LineEndings;
 using System.Text;
 using System.Collections;
-using KS.Misc.Text;
-using KS.Kernel.Time.Renderers;
-using KS.Kernel.Configuration;
-using KS.Files;
-using KS.Misc.Reflection;
 using System.Reflection;
-using KS.Files.Instances;
-using KS.ConsoleBase.Interactive;
-using KS.Files.Extensions;
-using KS.Files.Operations.Querying;
-using KS.Files.Operations.Printing;
 using Textify.Sequences.Tools;
-using KS.Files.Paths;
-using KS.ConsoleBase.Inputs.Styles.Infobox;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Files;
+using Nitrocid.Drivers;
+using Nitrocid.Misc.Reflection;
+using Nitrocid.Files.Operations;
+using Nitrocid.Files.Folders;
+using Nitrocid.Kernel.Time.Renderers;
+using Nitrocid.Languages;
+using Nitrocid.Files.Operations.Printing;
+using Nitrocid.Drivers.Encryption;
+using Nitrocid.Misc.Text;
+using Nitrocid.ConsoleBase.Interactive;
+using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
+using Nitrocid.Files.Paths;
+using Nitrocid.Files.Instances;
+using Nitrocid.Files.LineEndings;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Files.Extensions;
+using Nitrocid.Files.Operations.Querying;
 
-namespace KS.Misc.Interactives
+namespace Nitrocid.Misc.Interactives
 {
     /// <summary>
     /// File manager class relating to the interactive file manager planned back in 2018

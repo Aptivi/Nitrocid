@@ -17,9 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Configuration.Instances;
+using Nitrocid.Kernel.Configuration.Instances;
 
-namespace KS.Kernel.Configuration.Settings
+namespace Nitrocid.Kernel.Configuration.Settings
 {
     internal interface ISettingsKeyInput
     {

@@ -17,9 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Debugging;
+using Nitrocid.Kernel.Debugging;
 
-namespace KS.Shell.ShellBase.Scripting.Conditions
+namespace Nitrocid.Shell.ShellBase.Scripting.Conditions
 {
     /// <summary>
     /// Base UESH scripting condition class

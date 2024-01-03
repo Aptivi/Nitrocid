@@ -20,12 +20,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Themes;
-using KS.Files;
-using KS.Files.Operations;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Themes;
+using Nitrocid.Files;
+using Nitrocid.Files.Operations;
 using Terminaux.Colors;
 
 namespace Nitrocid.Extras.ThemeStudio.Studio

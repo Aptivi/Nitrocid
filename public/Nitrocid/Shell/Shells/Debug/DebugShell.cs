@@ -19,17 +19,17 @@
 
 using System;
 using System.Threading;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers;
-using KS.Kernel;
-using KS.Kernel.Debugging;
-using KS.Languages;
-using KS.Misc.Text;
-using KS.Security.Permissions;
-using KS.Shell.ShellBase.Commands;
-using KS.Shell.ShellBase.Shells;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Kernel;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Text;
+using Nitrocid.Security.Permissions;
+using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.Shell.ShellBase.Shells;
 
-namespace KS.Shell.Shells.Debug
+namespace Nitrocid.Shell.Shells.Debug
 {
     /// <summary>
     /// The Debug editor shell

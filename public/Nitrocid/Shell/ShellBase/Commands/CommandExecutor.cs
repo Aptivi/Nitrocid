@@ -20,27 +20,27 @@
 using System;
 using System.Collections.Generic;
 using System.Threading;
-using KS.ConsoleBase.Colors;
-using KS.Kernel.Debugging;
-using KS.Languages;
-using KS.Misc.Text;
-using KS.Shell.ShellBase.Shells;
-using KS.Kernel.Events;
 using System.Linq;
-using KS.Drivers.Console;
-using KS.Drivers;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Kernel.Threading;
-using KS.Shell.ShellBase.Scripting;
-using KS.Shell.ShellBase.Aliases;
-using KS.Shell.ShellBase.Arguments;
-using KS.Shell.ShellBase.Switches;
-using KS.Drivers.Console.Bases;
-using KS.Shell.ShellBase.Help;
 using System.Runtime;
-using KS.ConsoleBase.Writers;
+using Nitrocid.Shell.ShellBase.Help;
+using Nitrocid.Shell.ShellBase.Scripting;
+using Nitrocid.Shell.ShellBase.Shells;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Shell.ShellBase.Arguments;
+using Nitrocid.Drivers;
+using Nitrocid.Shell.ShellBase.Aliases;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Shell.ShellBase.Switches;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Text;
+using Nitrocid.Drivers.Console;
+using Nitrocid.Drivers.Console.Bases;
+using Nitrocid.Kernel.Events;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.Kernel.Threading;
 
-namespace KS.Shell.ShellBase.Commands
+namespace Nitrocid.Shell.ShellBase.Commands
 {
     /// <summary>
     /// Command executor module

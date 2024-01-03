@@ -17,13 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Languages;
-using KS.Shell.ShellBase.Commands;
-using KS.Users;
-using KS.Users.Login;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.Languages;
+using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.Users;
+using Nitrocid.Users.Login;
 
-namespace KS.Shell.Shells.UESH.Commands
+namespace Nitrocid.Shell.Shells.UESH.Commands
 {
     /// <summary>
     /// You can change your username or someone else's username

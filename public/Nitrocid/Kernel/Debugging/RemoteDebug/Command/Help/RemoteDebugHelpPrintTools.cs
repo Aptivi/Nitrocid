@@ -17,15 +17,15 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers;
-using KS.Languages;
-using KS.Shell.ShellBase.Help;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Languages;
+using Nitrocid.Shell.ShellBase.Help;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace KS.Kernel.Debugging.RemoteDebug.Command.Help
+namespace Nitrocid.Kernel.Debugging.RemoteDebug.Command.Help
 {
     internal static class RemoteDebugHelpPrintTools
     {

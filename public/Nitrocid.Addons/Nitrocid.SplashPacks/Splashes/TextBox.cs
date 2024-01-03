@@ -19,11 +19,11 @@
 
 using System;
 using System.Threading;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Inputs.Styles.Infobox;
-using KS.Kernel.Debugging;
-using KS.Languages;
-using KS.Misc.Splash;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Splash;
 
 namespace Nitrocid.SplashPacks.Splashes
 {

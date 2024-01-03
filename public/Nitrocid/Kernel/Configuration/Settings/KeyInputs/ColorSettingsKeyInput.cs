@@ -17,14 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Colors;
-using KS.Kernel.Configuration.Instances;
-using KS.Misc.Reflection;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Kernel.Configuration.Instances;
+using Nitrocid.Misc.Reflection;
 using System.Collections.Generic;
 using System.Linq;
 using Terminaux.Colors;
 
-namespace KS.Kernel.Configuration.Settings.KeyInputs
+namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
 {
     internal class ColorSettingsKeyInput : ISettingsKeyInput
     {

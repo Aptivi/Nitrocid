@@ -17,20 +17,20 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Buffered;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers;
-using KS.Kernel;
-using KS.Kernel.Debugging;
-using KS.Kernel.Journaling;
-using KS.Kernel.Time;
-using KS.Kernel.Time.Renderers;
-using KS.Languages;
-using KS.Misc.Text;
+using Nitrocid.ConsoleBase.Buffered;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Kernel;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Journaling;
+using Nitrocid.Kernel.Time;
+using Nitrocid.Kernel.Time.Renderers;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Text;
 using System;
 using System.Collections.Generic;
 
-namespace KS.Misc.Splash
+namespace Nitrocid.Misc.Splash
 {
     /// <summary>
     /// Splash reporting module
@@ -153,7 +153,7 @@ namespace KS.Misc.Splash
                 // Add to the log buffer
                 logBuffer.Add($"[{TimeDateRenderers.Render(FormatType.Short)}] [{_Progress}%] Info: {TextTools.FormatString(Text, Vars)}");
             }
-            else if (KernelBooted || (SplashManager.EnableSplash && !InSplash || !SplashManager.EnableSplash && !KernelEntry.QuietKernel) || !SplashManager.EnableSplash)
+            else if (KernelBooted || SplashManager.EnableSplash && !InSplash || !SplashManager.EnableSplash && !KernelEntry.QuietKernel || !SplashManager.EnableSplash)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Kernel booted or not in splash. Reporting {0}...", Text);
                 TextWriters.Write(Text, true, KernelColorType.Tip, Vars);
@@ -223,7 +223,7 @@ namespace KS.Misc.Splash
                 // Add to the log buffer
                 logBuffer.Add($"[{TimeDateRenderers.Render(FormatType.Short)}] [{_Progress}%] Warning: {TextTools.FormatString(Text, Vars)}");
             }
-            else if (KernelBooted || (SplashManager.EnableSplash && !InSplash || !SplashManager.EnableSplash && !KernelEntry.QuietKernel) || !SplashManager.EnableSplash)
+            else if (KernelBooted || SplashManager.EnableSplash && !InSplash || !SplashManager.EnableSplash && !KernelEntry.QuietKernel || !SplashManager.EnableSplash)
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Kernel booted. Reporting {0}...", Text);
                 TextWriters.Write(Text, true, KernelColorType.Warning, Vars);
@@ -293,7 +293,7 @@ namespace KS.Misc.Splash
                 // Add to the log buffer
                 logBuffer.Add($"[{TimeDateRenderers.Render(FormatType.Short)}] [{_Progress}%] Error: {TextTools.FormatString(Text, Vars)}");
             }
-            else if (KernelBooted || (SplashManager.EnableSplash && !InSplash || !SplashManager.EnableSplash && !KernelEntry.QuietKernel) || !SplashManager.EnableSplash)
+            else if (KernelBooted || SplashManager.EnableSplash && !InSplash || !SplashManager.EnableSplash && !KernelEntry.QuietKernel || !SplashManager.EnableSplash)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Kernel booted. Reporting {0}...", Text);
                 TextWriters.Write(Text, true, KernelColorType.Error, Vars);

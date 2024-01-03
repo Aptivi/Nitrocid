@@ -19,7 +19,7 @@
 
 using System.Diagnostics;
 
-namespace KS.Kernel.Debugging.RemoteDebug.Command
+namespace Nitrocid.Kernel.Debugging.RemoteDebug.Command
 {
     /// <summary>
     /// Remote debug command parameters that holds information about arguments and switches

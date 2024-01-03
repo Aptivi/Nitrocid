@@ -17,12 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Colors;
 using Newtonsoft.Json;
+using Nitrocid.ConsoleBase.Colors;
 using System;
 using Terminaux.Colors;
 
-namespace KS.Misc.Notifications
+namespace Nitrocid.Misc.Notifications
 {
     /// <summary>
     /// Notification holder with title, description, and priority

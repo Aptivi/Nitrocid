@@ -17,22 +17,22 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Buffered;
-using KS.ConsoleBase.Inputs;
-using KS.ConsoleBase.Inputs.Styles.Infobox;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Kernel.Debugging;
-using KS.Languages;
-using KS.Misc.Text;
 using System;
 using System.Text;
 using Terminaux.Colors;
 using Terminaux.Colors.Transformation;
 using Textify.Sequences.Builder.Types;
-using KS.ConsoleBase.Writers.FancyWriters;
 using Terminaux.Colors.Models.Conversion;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.ConsoleBase.Inputs;
+using Nitrocid.Languages;
+using Nitrocid.ConsoleBase.Writers.FancyWriters;
+using Nitrocid.Misc.Text;
+using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.ConsoleBase.Buffered;
 
-namespace KS.ConsoleBase.Colors
+namespace Nitrocid.ConsoleBase.Colors
 {
     /// <summary>
     /// Color selection application
@@ -190,12 +190,12 @@ namespace KS.ConsoleBase.Colors
             selector.Append(RenderPreviewBox(selectedColor));
 
             // Then, render the hue, saturation, and lightness bars
-            int hueBarX = (ConsoleWrapper.WindowWidth / 2) + 3;
+            int hueBarX = ConsoleWrapper.WindowWidth / 2 + 3;
             int hueBarY = 1;
             int saturationBarY = 5;
             int lightnessBarY = 9;
             int rgbRampBarY = 13;
-            int boxWidth = (ConsoleWrapper.WindowWidth / 2) - 6;
+            int boxWidth = ConsoleWrapper.WindowWidth / 2 - 6;
             int boxHeight = 1;
             var initialBackground = KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground;
 
@@ -279,9 +279,9 @@ namespace KS.ConsoleBase.Colors
             selector.Append(RenderPreviewBox(selectedColor));
 
             // Then, render the color info
-            int infoBoxX = (ConsoleWrapper.WindowWidth / 2) + 3;
+            int infoBoxX = ConsoleWrapper.WindowWidth / 2 + 3;
             int infoBoxY = 1;
-            int boxWidth = (ConsoleWrapper.WindowWidth / 2) - 6;
+            int boxWidth = ConsoleWrapper.WindowWidth / 2 - 6;
             int boxHeight = 9;
             int rgbRampBarY = 13;
             var initialBackground = KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground;
@@ -345,9 +345,9 @@ namespace KS.ConsoleBase.Colors
             selector.Append(RenderPreviewBox(selectedColor));
 
             // Then, render the color info
-            int infoBoxX = (ConsoleWrapper.WindowWidth / 2) + 3;
+            int infoBoxX = ConsoleWrapper.WindowWidth / 2 + 3;
             int infoBoxY = 1;
-            int boxWidth = (ConsoleWrapper.WindowWidth / 2) - 6;
+            int boxWidth = ConsoleWrapper.WindowWidth / 2 - 6;
             int boxHeight = 9;
             int rgbRampBarY = 13;
             var initialBackground = KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground;
@@ -622,7 +622,7 @@ namespace KS.ConsoleBase.Colors
             // Draw the box that represents the currently selected color
             int boxX = 2;
             int boxY = 1;
-            int boxWidth = (ConsoleWrapper.WindowWidth / 2) - 4;
+            int boxWidth = ConsoleWrapper.WindowWidth / 2 - 4;
             int boxHeight = ConsoleWrapper.WindowHeight - 6;
 
             // First, draw the border

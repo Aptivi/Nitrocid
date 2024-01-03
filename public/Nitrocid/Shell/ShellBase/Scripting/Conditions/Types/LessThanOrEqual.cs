@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace KS.Shell.ShellBase.Scripting.Conditions.Types
+namespace Nitrocid.Shell.ShellBase.Scripting.Conditions.Types
 {
     /// <summary>
     /// Checks to see if one of the two UESH variables is less than the other or equal to each other

@@ -17,11 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 using System;
 using System.Threading;
 
-namespace KS.Kernel.Debugging.Testing.Facades.FacadeData
+namespace Nitrocid.Kernel.Debugging.Testing.Facades.FacadeData
 {
     internal static class KernelThreadTestData
     {

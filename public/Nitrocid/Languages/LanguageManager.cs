@@ -22,22 +22,23 @@ using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Linq;
-using KS.Files.Folders;
-using KS.Kernel;
-using KS.Kernel.Configuration;
-using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
-using KS.Kernel.Events;
-using KS.Resources;
+using Nitrocid.Resources;
 using System.Globalization;
-using KS.Files.Operations;
-using KS.Files.Operations.Querying;
 using Newtonsoft.Json;
-using KS.Languages.Decoy;
-using KS.Users.Login;
-using KS.Files.Paths;
+using Nitrocid.Kernel;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Users.Login;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.ConsoleBase;
+using Nitrocid.Files.Operations;
+using Nitrocid.Files.Folders;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Files.Paths;
+using Nitrocid.Kernel.Events;
+using Nitrocid.Files.Operations.Querying;
+using Nitrocid.Languages.Decoy;
 
-namespace KS.Languages
+namespace Nitrocid.Languages
 {
     /// <summary>
     /// Lanaguage management module
@@ -122,9 +123,9 @@ namespace KS.Languages
                     if (KernelPlatform.IsOnWindows() && SetCodepage)
                     {
                         int Codepage = langInfo.Codepage;
-                        ConsoleBase.ConsoleWrapper.OutputEncoding = System.Text.Encoding.GetEncoding(Codepage);
-                        ConsoleBase.ConsoleWrapper.InputEncoding = System.Text.Encoding.GetEncoding(Codepage);
-                        DebugWriter.WriteDebug(DebugLevel.I, "Encoding set successfully for {0} to {1}.", lang, ConsoleBase.ConsoleWrapper.OutputEncoding.EncodingName);
+                        ConsoleWrapper.OutputEncoding = System.Text.Encoding.GetEncoding(Codepage);
+                        ConsoleWrapper.InputEncoding = System.Text.Encoding.GetEncoding(Codepage);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Encoding set successfully for {0} to {1}.", lang, ConsoleWrapper.OutputEncoding.EncodingName);
                     }
                 }
                 catch (Exception ex)

@@ -17,9 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Shell.ShellBase.Commands;
 using Newtonsoft.Json;
 using Nitrocid.Extras.JsonShell.Tools;
+using Nitrocid.Shell.ShellBase.Commands;
 
 namespace Nitrocid.Extras.JsonShell.Json.Commands
 {

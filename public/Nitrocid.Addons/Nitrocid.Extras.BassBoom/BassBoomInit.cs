@@ -36,12 +36,7 @@
 //   You should have received a copy of the GNU General Public License
 //   along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.Kernel.Configuration;
-using KS.Kernel.Extensions;
-using KS.Misc.Screensaver;
-using KS.Shell.ShellBase.Arguments;
-using KS.Shell.ShellBase.Commands;
-using KS.Shell.ShellBase.Shells;
+using Nitrocid.Shell.ShellBase.Arguments;
 using Nitrocid.Extras.BassBoom.Commands;
 using Nitrocid.Extras.BassBoom.Screensavers;
 using Nitrocid.Extras.BassBoom.Settings;
@@ -50,9 +45,14 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Reflection;
 using BassBoom.Basolia;
-using KS.Files.Extensions;
 using Nitrocid.Extras.BassBoom.Player;
-using KS.Files.Paths;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.Files.Extensions;
+using Nitrocid.Kernel.Extensions;
+using Nitrocid.Shell.ShellBase.Shells;
+using Nitrocid.Misc.Screensaver;
+using Nitrocid.Files.Paths;
 
 namespace Nitrocid.Extras.BassBoom
 {

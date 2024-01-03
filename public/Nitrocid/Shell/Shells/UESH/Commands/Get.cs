@@ -18,19 +18,19 @@
 //
 
 using System;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Files;
-using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
-using KS.Languages;
-using KS.Network.Base;
-using KS.Network.Base.Transfer;
-using KS.Shell.ShellBase.Commands;
-using KS.Shell.ShellBase.Switches;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.Files;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
+using Nitrocid.Network.Base;
+using Nitrocid.Network.Base.Transfer;
+using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.Shell.ShellBase.Switches;
 
-namespace KS.Shell.Shells.UESH.Commands
+namespace Nitrocid.Shell.Shells.UESH.Commands
 {
     /// <summary>
     /// Download a file

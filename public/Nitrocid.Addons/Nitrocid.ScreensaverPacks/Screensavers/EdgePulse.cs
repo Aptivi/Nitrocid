@@ -17,11 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase;
-using KS.ConsoleBase.Colors;
-using KS.Kernel.Debugging;
-using KS.Kernel.Threading;
-using KS.Misc.Screensaver;
+using Nitrocid.ConsoleBase;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Threading;
+using Nitrocid.Misc.Screensaver;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {

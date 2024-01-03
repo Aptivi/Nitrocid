@@ -17,10 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Users.Login.Handlers.Logins;
+using Nitrocid.Users.Login.Handlers.Logins;
 using System.Collections.Generic;
 
-namespace KS.Users.Login.Handlers
+namespace Nitrocid.Users.Login.Handlers
 {
     /// <summary>
     /// Login handler tools

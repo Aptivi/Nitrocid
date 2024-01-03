@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace KS.Kernel.Debugging
+namespace Nitrocid.Kernel.Debugging
 {
     /// <summary>
     /// One-lettered debugging level enumeration

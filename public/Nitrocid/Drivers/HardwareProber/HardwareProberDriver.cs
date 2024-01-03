@@ -19,7 +19,7 @@
 
 using System.Collections;
 
-namespace KS.Drivers.HardwareProber
+namespace Nitrocid.Drivers.HardwareProber
 {
     /// <summary>
     /// Hardware prober driver module

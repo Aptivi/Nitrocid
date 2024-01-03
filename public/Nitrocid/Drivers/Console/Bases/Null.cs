@@ -17,12 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Exceptions;
+using Nitrocid.Kernel.Exceptions;
 using System;
 using System.IO;
 using TextEncoding = System.Text.Encoding;
 
-namespace KS.Drivers.Console.Bases
+namespace Nitrocid.Drivers.Console.Bases
 {
     internal class Null : BaseConsoleDriver, IConsoleDriver
     {

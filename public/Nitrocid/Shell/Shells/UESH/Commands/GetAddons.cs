@@ -17,21 +17,21 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers;
-using KS.Files.Paths;
-using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
-using KS.Kernel.Extensions;
-using KS.Kernel.Updates;
-using KS.Languages;
-using KS.Network.Base.Transfer;
-using KS.Shell.ShellBase.Commands;
-using KS.Shell.ShellBase.Switches;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Files.Paths;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Kernel.Extensions;
+using Nitrocid.Kernel.Updates;
+using Nitrocid.Languages;
+using Nitrocid.Network.Base.Transfer;
+using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.Shell.ShellBase.Switches;
 using System;
 using System.IO.Compression;
 
-namespace KS.Shell.Shells.UESH.Commands
+namespace Nitrocid.Shell.Shells.UESH.Commands
 {
     /// <summary>
     /// Gets the addons

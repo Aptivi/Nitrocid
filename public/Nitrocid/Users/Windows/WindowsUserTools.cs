@@ -17,11 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel;
+using Nitrocid.Kernel;
 using System.Runtime.InteropServices;
 using System.Security.Principal;
 
-namespace KS.Users.Windows
+namespace Nitrocid.Users.Windows
 {
     /// <summary>
     /// User tools for Windows

@@ -17,18 +17,18 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase;
-using KS.ConsoleBase.Buffered;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Inputs;
-using KS.ConsoleBase.Inputs.Styles.Infobox;
-using KS.Languages;
+using Nitrocid.ConsoleBase;
+using Nitrocid.ConsoleBase.Buffered;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Inputs;
+using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
+using Nitrocid.Languages;
 using System;
 using System.Text;
 using Terminaux.Colors;
 using Textify.Sequences.Builder.Types;
 
-namespace KS.Kernel.Debugging.Testing.Facades
+namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
     internal class TestScreen : TestFacade
     {

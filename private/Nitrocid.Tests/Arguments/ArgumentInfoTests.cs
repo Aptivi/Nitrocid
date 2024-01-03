@@ -18,8 +18,8 @@
 //
 
 using System;
-using KS.Arguments;
-using KS.Shell.ShellBase.Arguments;
+using Nitrocid.Arguments;
+using Nitrocid.Shell.ShellBase.Arguments;
 using NUnit.Framework;
 using Shouldly;
 

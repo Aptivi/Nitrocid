@@ -18,13 +18,13 @@
 //
 
 using System.Collections.Generic;
-using KS.Shell.Prompts;
-using KS.Shell.ShellBase.Commands;
-using KS.Shell.ShellBase.Shells;
-using KS.Shell.ShellBase.Switches;
-using KS.Shell.ShellBase.Arguments;
+using Nitrocid.Shell.ShellBase.Switches;
+using Nitrocid.Shell.ShellBase.Arguments;
 using Nitrocid.Extras.SftpShell.SFTP.Presets;
 using Nitrocid.Extras.SftpShell.SFTP.Commands;
+using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.Shell.ShellBase.Shells;
+using Nitrocid.Shell.Prompts;
 
 namespace Nitrocid.Extras.SftpShell.SFTP
 {

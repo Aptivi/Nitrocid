@@ -17,12 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Inputs;
-using KS.ConsoleBase.Writers;
-using KS.Languages;
-using KS.Misc.Text.Probers.Placeholder;
 using MimeKit.Cryptography;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Inputs;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Text.Probers.Placeholder;
 using Org.BouncyCastle.Bcpg.OpenPgp;
 
 namespace Nitrocid.Extras.MailShell.Tools.PGP

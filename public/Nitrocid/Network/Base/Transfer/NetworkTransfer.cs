@@ -20,19 +20,19 @@
 using System;
 using System.Net.Http;
 using System.Threading;
-using KS.ConsoleBase;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers;
-using KS.Drivers;
-using KS.Files;
-using KS.Kernel.Configuration;
-using KS.Kernel.Debugging;
-using KS.Languages;
-using KS.Misc.Notifications;
-using KS.Misc.Reflection;
-using KS.Misc.Text.Probers.Placeholder;
+using Nitrocid.ConsoleBase;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Drivers;
+using Nitrocid.Files;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Notifications;
+using Nitrocid.Misc.Reflection;
+using Nitrocid.Misc.Text.Probers.Placeholder;
 
-namespace KS.Network.Base.Transfer
+namespace Nitrocid.Network.Base.Transfer
 {
     /// <summary>
     /// Network transfer module

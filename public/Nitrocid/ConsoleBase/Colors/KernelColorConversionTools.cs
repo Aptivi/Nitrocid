@@ -17,14 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
-using KS.Languages;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
 using System;
 using Terminaux.Colors;
 using Terminaux.Colors.Models.Conversion;
 
-namespace KS.ConsoleBase.Colors
+namespace Nitrocid.ConsoleBase.Colors
 {
     /// <summary>
     /// Kernel color conversion tools

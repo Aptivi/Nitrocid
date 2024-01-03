@@ -17,10 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Configuration;
-using KS.Kernel.Configuration.Instances;
-using KS.Kernel.Configuration.Settings;
 using Newtonsoft.Json;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Kernel.Configuration.Instances;
+using Nitrocid.Kernel.Configuration.Settings;
 
 namespace Nitrocid.Extras.BassBoom.Settings
 {

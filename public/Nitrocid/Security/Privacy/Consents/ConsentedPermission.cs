@@ -21,7 +21,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 
-namespace KS.Security.Privacy.Consents
+namespace Nitrocid.Security.Privacy.Consents
 {
     /// <summary>
     /// Consented permission

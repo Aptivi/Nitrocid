@@ -17,11 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Shell.Prompts;
-using KS.Shell.ShellBase.Commands;
+using Nitrocid.Shell.Prompts;
+using Nitrocid.Shell.ShellBase.Commands;
 using System.Collections.Generic;
 
-namespace KS.Shell.ShellBase.Shells
+namespace Nitrocid.Shell.ShellBase.Shells
 {
     /// <summary>
     /// Shell information interface for both the KS shells and the custom shells made by mods

@@ -17,20 +17,20 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Files.Operations;
-using KS.Files.Operations.Querying;
-using KS.Files.Paths;
-using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
-using KS.Languages;
-using KS.Security.Permissions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Nitrocid.Files.Operations;
+using Nitrocid.Files.Operations.Querying;
+using Nitrocid.Files.Paths;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
+using Nitrocid.Security.Permissions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace KS.Users.Groups
+namespace Nitrocid.Users.Groups
 {
     /// <summary>
     /// Group management routines

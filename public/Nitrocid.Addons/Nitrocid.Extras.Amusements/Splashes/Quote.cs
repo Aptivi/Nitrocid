@@ -20,13 +20,13 @@
 using System.Linq;
 using System.Text;
 using System.Threading;
-using KS.ConsoleBase;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Kernel.Debugging;
-using KS.Misc.Splash;
-using KS.Misc.Text;
+using Nitrocid.ConsoleBase;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 using Nitrocid.Extras.Amusements.Amusements.Quotes;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Misc.Splash;
+using Nitrocid.Misc.Text;
 using Terminaux.Colors;
 
 namespace Nitrocid.Extras.Amusements.Splashes

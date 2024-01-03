@@ -18,11 +18,11 @@
 //
 
 using FluentFTP;
-using KS.ConsoleBase.Colors;
-using KS.Languages;
-using KS.Shell.ShellBase.Commands;
-using KS.ConsoleBase.Writers.FancyWriters;
-using KS.ConsoleBase.Writers;
+using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Languages;
+using Nitrocid.ConsoleBase.Writers.FancyWriters;
+using Nitrocid.ConsoleBase.Colors;
 
 namespace Nitrocid.Extras.FtpShell.FTP.Commands
 {

@@ -17,10 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Debugging;
+using Nitrocid.Kernel.Debugging;
 using System.Security.Cryptography;
 
-namespace KS.Drivers.RNG.Bases
+namespace Nitrocid.Drivers.RNG.Bases
 {
     internal class DefaultRandomDebug : BaseRandomDriver, IRandomDriver
     {

@@ -17,12 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase;
-using KS.Drivers.RNG;
-using KS.Kernel.Threading;
-using KS.Misc.Screensaver;
 using GlitchSettings = Nitrocid.ScreensaverPacks.Screensavers.GlitchSettings;
 using BsodSettings = Nitrocid.ScreensaverPacks.Screensavers.BSODSettings;
+using Nitrocid.ConsoleBase;
+using Nitrocid.Drivers.RNG;
+using Nitrocid.Misc.Screensaver;
+using Nitrocid.Kernel.Threading;
 
 namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
 {

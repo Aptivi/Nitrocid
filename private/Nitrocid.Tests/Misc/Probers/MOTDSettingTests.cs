@@ -18,9 +18,9 @@
 //
 
 using System.IO;
-using KS.Files.Paths;
-using KS.Misc.Text.Probers.Motd;
-using KS.Misc.Text.Probers.Placeholder;
+using Nitrocid.Files.Paths;
+using Nitrocid.Misc.Text.Probers.Motd;
+using Nitrocid.Misc.Text.Probers.Placeholder;
 using NUnit.Framework;
 using Shouldly;
 

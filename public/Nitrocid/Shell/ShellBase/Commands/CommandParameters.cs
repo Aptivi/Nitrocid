@@ -19,7 +19,7 @@
 
 using System.Diagnostics;
 
-namespace KS.Shell.ShellBase.Commands
+namespace Nitrocid.Shell.ShellBase.Commands
 {
     /// <summary>
     /// Command parameters that holds information about arguments and switches

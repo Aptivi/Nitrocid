@@ -20,13 +20,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
-using KS.Languages;
-using KS.Files.Operations.Querying;
-using KS.Kernel.Time.Converters;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Languages;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Files.Operations.Querying;
+using Nitrocid.Kernel.Time.Converters;
 
-namespace KS.Kernel.Time.Timezones
+namespace Nitrocid.Kernel.Time.Timezones
 {
     /// <summary>
     /// Time zone module

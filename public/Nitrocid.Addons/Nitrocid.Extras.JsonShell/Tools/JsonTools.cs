@@ -22,14 +22,14 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
-using KS.Files;
-using KS.Files.Operations;
-using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
-using KS.Languages;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Nitrocid.Extras.JsonShell.Json;
+using Nitrocid.Files;
+using Nitrocid.Files.Operations;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
 
 namespace Nitrocid.Extras.JsonShell.Tools
 {

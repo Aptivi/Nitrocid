@@ -18,9 +18,9 @@
 //
 
 using System.Text;
-using KS.ConsoleBase.Colors;
-using KS.Languages;
-using KS.Shell.Prompts;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Languages;
+using Nitrocid.Shell.Prompts;
 
 namespace Nitrocid.Extras.FtpShell.FTP.Presets
 {

@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace KS.Kernel.Events
+namespace Nitrocid.Kernel.Events
 {
     /// <summary>
     /// Kernel event type

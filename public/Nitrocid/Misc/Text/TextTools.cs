@@ -17,18 +17,18 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Drivers;
-using KS.Kernel.Configuration;
-using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
-using KS.Languages;
+using Nitrocid.Drivers;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Textify.Sequences.Tools;
 
-namespace KS.Misc.Text
+namespace Nitrocid.Misc.Text
 {
     /// <summary>
     /// Tools for text manipulation

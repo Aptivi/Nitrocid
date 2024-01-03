@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace KS.ConsoleBase.Themes
+namespace Nitrocid.ConsoleBase.Themes
 {
     /// <summary>
     /// Theme category

@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace KS.Misc.Text
+namespace Nitrocid.Misc.Text
 {
     /// <summary>
     /// Type of enclosed double quotes in a word or phrase

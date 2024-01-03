@@ -17,13 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Colors;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using Terminaux.Colors;
 
-namespace KS.ConsoleBase.Writers.FancyWriters.Tools
+namespace Nitrocid.ConsoleBase.Writers.FancyWriters.Tools
 {
     /// <summary>
     /// PowerLine tools

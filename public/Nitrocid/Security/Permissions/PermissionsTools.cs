@@ -17,17 +17,17 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
-using KS.Kernel.Journaling;
-using KS.Languages;
-using KS.Users;
-using KS.Users.Groups;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Kernel.Journaling;
+using Nitrocid.Languages;
+using Nitrocid.Users;
+using Nitrocid.Users.Groups;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace KS.Security.Permissions
+namespace Nitrocid.Security.Permissions
 {
     /// <summary>
     /// Permission tools

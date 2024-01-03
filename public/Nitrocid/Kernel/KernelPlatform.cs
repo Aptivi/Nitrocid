@@ -17,14 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Files.Operations.Querying;
-using KS.Kernel.Debugging;
+using Nitrocid.Files.Operations.Querying;
+using Nitrocid.Kernel.Debugging;
 using SpecProbe.Software.Kernel;
 using System;
 using System.Reflection;
 using System.Runtime.InteropServices;
 
-namespace KS.Kernel
+namespace Nitrocid.Kernel
 {
     /// <summary>
     /// Kernel platform query
@@ -141,7 +141,7 @@ namespace KS.Kernel
 
         #region Interop
         [DllImport("libc", EntryPoint = "gnu_get_libc_version")]
-        private static extern IntPtr gnuGetLibcVersion();
+        private static extern nint gnuGetLibcVersion();
         #endregion
 
     }

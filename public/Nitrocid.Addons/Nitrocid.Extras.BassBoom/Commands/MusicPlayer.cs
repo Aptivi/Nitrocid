@@ -17,13 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Files;
-using KS.Files.Operations.Querying;
-using KS.Kernel.Debugging;
-using KS.Languages;
-using KS.Shell.ShellBase.Commands;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 using Nitrocid.Extras.BassBoom.Player;
+using Nitrocid.Files;
+using Nitrocid.Files.Operations.Querying;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Languages;
+using Nitrocid.Shell.ShellBase.Commands;
 using System;
 
 namespace Nitrocid.Extras.BassBoom.Commands

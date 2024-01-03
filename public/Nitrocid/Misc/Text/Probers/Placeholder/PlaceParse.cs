@@ -19,27 +19,27 @@
 
 using System;
 using System.IO;
-using KS.Files.Folders;
-using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
-using KS.Languages;
-using KS.Network.Base;
-using KS.Users;
-using KS.Kernel.Events;
-using KS.ConsoleBase.Colors;
 using System.Collections.Generic;
-using KS.Kernel.Power;
-using KS.Kernel.Time;
-using KS.Kernel.Time.Renderers;
-using KS.Shell.ShellBase.Scripting;
 using Terminaux.Colors;
-using KS.Kernel;
-using KS.Files.Operations.Querying;
-using KS.Drivers;
 using System.Linq;
-using KS.Kernel.Time.Timezones;
+using Nitrocid.Kernel;
+using Nitrocid.Kernel.Time;
+using Nitrocid.Shell.ShellBase.Scripting;
+using Nitrocid.Users;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Drivers;
+using Nitrocid.Files.Folders;
+using Nitrocid.Kernel.Time.Renderers;
+using Nitrocid.Languages;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Network.Base;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Kernel.Events;
+using Nitrocid.Files.Operations.Querying;
+using Nitrocid.Kernel.Power;
+using Nitrocid.Kernel.Time.Timezones;
 
-namespace KS.Misc.Text.Probers.Placeholder
+namespace Nitrocid.Misc.Text.Probers.Placeholder
 {
     /// <summary>
     /// Placeholder parsing module

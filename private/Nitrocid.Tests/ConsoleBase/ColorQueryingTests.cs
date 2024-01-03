@@ -17,8 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Themes;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Themes;
 using NUnit.Framework;
 using Shouldly;
 using System;

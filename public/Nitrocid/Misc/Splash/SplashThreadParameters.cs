@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace KS.Misc.Splash
+namespace Nitrocid.Misc.Splash
 {
     internal class SplashThreadParameters
     {

@@ -19,7 +19,7 @@
 
 using System;
 
-namespace KS.Drivers.Sorting
+namespace Nitrocid.Drivers.Sorting
 {
     /// <summary>
     /// Sorting driver interface for drivers

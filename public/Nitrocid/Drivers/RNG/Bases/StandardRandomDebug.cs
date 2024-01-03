@@ -17,9 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Debugging;
+using Nitrocid.Kernel.Debugging;
 
-namespace KS.Drivers.RNG.Bases
+namespace Nitrocid.Drivers.RNG.Bases
 {
     internal class StandardRandomDebug : BaseRandomDriver, IRandomDriver
     {

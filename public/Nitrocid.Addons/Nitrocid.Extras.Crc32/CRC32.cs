@@ -18,13 +18,13 @@
 //
 
 using Force.Crc32;
-using FS = KS.Files.FilesystemTools;
-using KS.Kernel.Debugging;
+using FS = Nitrocid.Files.FilesystemTools;
 using System.IO;
 using System.Text.RegularExpressions;
 using TextEncoding = System.Text.Encoding;
-using KS.Drivers;
-using KS.Drivers.Encryption;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Drivers;
+using Nitrocid.Drivers.Encryption;
 
 namespace Nitrocid.Extras.Crc32
 {

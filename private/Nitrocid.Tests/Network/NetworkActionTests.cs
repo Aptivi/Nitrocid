@@ -17,9 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Threading;
-using KS.Network.Base;
-using KS.Network.Base.Connections;
+using Nitrocid.Kernel.Threading;
+using Nitrocid.Network.Base;
+using Nitrocid.Network.Base.Connections;
 using Nitrocid.Tests.Network.Connections;
 using NUnit.Framework;
 using Shouldly;

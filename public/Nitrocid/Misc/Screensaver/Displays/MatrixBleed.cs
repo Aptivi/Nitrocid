@@ -20,17 +20,17 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using KS.ConsoleBase;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Drivers.RNG;
-using KS.Kernel.Configuration;
-using KS.Kernel.Debugging;
-using KS.Kernel.Threading;
+using Nitrocid.ConsoleBase;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.Drivers.RNG;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Threading;
 using Terminaux.Colors;
 using Textify.Sequences.Builder.Types;
 
-namespace KS.Misc.Screensaver.Displays
+namespace Nitrocid.Misc.Screensaver.Displays
 {
     /// <summary>
     /// Settings for MatrixBleed

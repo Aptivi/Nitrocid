@@ -18,12 +18,12 @@
 //
 
 using System;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Kernel.Debugging;
-using KS.Languages;
-using KS.Shell.ShellBase.Commands;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Languages;
+using Nitrocid.Shell.ShellBase.Commands;
 using StringMath;
 
 namespace Nitrocid.Extras.Calculators.Commands

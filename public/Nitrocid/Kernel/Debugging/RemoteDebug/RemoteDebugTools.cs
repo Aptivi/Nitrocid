@@ -21,18 +21,18 @@ using System;
 using System.Data;
 using System.Linq;
 using System.Net.Sockets;
-using KS.Kernel.Exceptions;
-using KS.Languages;
 using Newtonsoft.Json;
-using KS.Kernel.Events;
 using System.Collections.Generic;
-using KS.Files.Operations;
-using KS.Files.Operations.Querying;
-using KS.Kernel.Configuration;
-using KS.Kernel.Debugging.RemoteDebug.RemoteChat;
-using KS.Files.Paths;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Files.Operations;
+using Nitrocid.Languages;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Files.Paths;
+using Nitrocid.Kernel.Events;
+using Nitrocid.Files.Operations.Querying;
+using Nitrocid.Kernel.Debugging.RemoteDebug.RemoteChat;
 
-namespace KS.Kernel.Debugging.RemoteDebug
+namespace Nitrocid.Kernel.Debugging.RemoteDebug
 {
     /// <summary>
     /// Remote debug tool module
@@ -342,10 +342,10 @@ namespace KS.Kernel.Debugging.RemoteDebug
             SocketException SE = (SocketException)exception.InnerException;
             if (SE is not null)
             {
-                if ((SE.SocketErrorCode == SocketError.TimedOut) ||
-                    (SE.SocketErrorCode == SocketError.WouldBlock) ||
-                    (SE.SocketErrorCode == SocketError.ConnectionAborted) ||
-                    (SE.SocketErrorCode == SocketError.Shutdown))
+                if (SE.SocketErrorCode == SocketError.TimedOut ||
+                    SE.SocketErrorCode == SocketError.WouldBlock ||
+                    SE.SocketErrorCode == SocketError.ConnectionAborted ||
+                    SE.SocketErrorCode == SocketError.Shutdown)
                     // A device was disconnected
                     DisconnectDevice(device.ClientIP);
                 else

@@ -17,9 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase;
-using KS.Shell.ShellBase.Commands;
+using Nitrocid.ConsoleBase;
 using Nitrocid.Extras.Amusements.Amusements.Games;
+using Nitrocid.Shell.ShellBase.Commands;
 
 namespace Nitrocid.Extras.Amusements.Commands
 {

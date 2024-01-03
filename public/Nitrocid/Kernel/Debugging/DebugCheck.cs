@@ -17,12 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Debugging.Trace;
-using KS.Kernel.Exceptions;
-using KS.Languages;
-using KS.Misc.Text;
+using Nitrocid.Kernel.Debugging.Trace;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Text;
 
-namespace KS.Kernel.Debugging
+namespace Nitrocid.Kernel.Debugging
 {
     /// <summary>
     /// Debug checking functions, such as assertions

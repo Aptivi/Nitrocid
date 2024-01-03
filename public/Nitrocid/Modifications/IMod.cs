@@ -21,7 +21,7 @@ using System;
 using System.Collections.ObjectModel;
 using System.Reflection;
 
-namespace KS.Modifications
+namespace Nitrocid.Modifications
 {
     /// <summary>
     /// Interface for mods

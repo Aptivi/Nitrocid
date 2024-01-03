@@ -17,13 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Files.Operations.Querying;
-using KS.Kernel.Exceptions;
-using KS.Languages;
+using Nitrocid.Files.Operations.Querying;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
 using System.Diagnostics;
 using System.IO;
 
-namespace KS.Files.Instances
+namespace Nitrocid.Files.Instances
 {
     /// <summary>
     /// Proxy class for <see cref="FileSystemInfo"/>

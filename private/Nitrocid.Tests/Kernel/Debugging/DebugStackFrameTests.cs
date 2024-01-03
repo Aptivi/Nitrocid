@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Debugging.Trace;
+using Nitrocid.Kernel.Debugging.Trace;
 using NUnit.Framework;
 using Shouldly;
 

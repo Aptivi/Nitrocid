@@ -18,11 +18,11 @@
 //
 
 using FluentFTP.Helpers;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers;
-using KS.Languages;
-using KS.Shell.ShellBase.Commands;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Extras.Notes.Management;
+using Nitrocid.Languages;
+using Nitrocid.Shell.ShellBase.Commands;
 using System;
 
 namespace Nitrocid.Extras.Notes.Commands

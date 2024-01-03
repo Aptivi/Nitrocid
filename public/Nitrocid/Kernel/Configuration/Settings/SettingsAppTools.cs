@@ -17,27 +17,27 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Inputs;
-using KS.ConsoleBase.Inputs.Styles.Infobox;
-using KS.Files;
-using KS.Files.Operations.Querying;
-using KS.Kernel.Configuration.Instances;
-using KS.Kernel.Debugging;
-using KS.Languages;
-using KS.Misc.Reflection;
+using Nitrocid.ConsoleBase;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Inputs;
+using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
+using Nitrocid.Files;
+using Nitrocid.Files.Operations.Querying;
+using Nitrocid.Kernel.Configuration.Instances;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Reflection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
 #if SPECIFIERREL
 #if !PACKAGEMANAGERBUILD
-using KS.Kernel.Updates;
+using Nitrocid.Kernel.Updates;
 #endif
 #endif
 
-namespace KS.Kernel.Configuration.Settings
+namespace Nitrocid.Kernel.Configuration.Settings
 {
     internal static class SettingsAppTools
     {

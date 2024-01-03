@@ -17,14 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Languages;
-using KS.Network.Base.Connections;
-using KS.Shell.ShellBase.Commands;
 using System;
-using KS.ConsoleBase.Writers.FancyWriters;
+using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.Languages;
+using Nitrocid.ConsoleBase.Writers.FancyWriters;
+using Nitrocid.Network.Base.Connections;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 
-namespace KS.Shell.Shells.UESH.Commands
+namespace Nitrocid.Shell.Shells.UESH.Commands
 {
     /// <summary>
     /// Lists all connections

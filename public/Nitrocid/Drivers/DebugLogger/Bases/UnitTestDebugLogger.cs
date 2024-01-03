@@ -19,7 +19,7 @@
 
 using Terminal = System.Console;
 
-namespace KS.Drivers.DebugLogger.Bases
+namespace Nitrocid.Drivers.DebugLogger.Bases
 {
     internal class UnitTestDebugLogger : BaseDebugLoggerDriver, IDebugLoggerDriver
     {

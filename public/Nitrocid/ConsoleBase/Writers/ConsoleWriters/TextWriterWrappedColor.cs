@@ -19,16 +19,16 @@
 
 using System;
 using System.Threading;
-using KS.Kernel.Debugging;
-using KS.ConsoleBase.Colors;
-using KS.Languages;
 using Terminaux.Colors;
-using KS.Misc.Text;
 using System.Text;
 using Textify.Sequences.Tools;
-using KS.ConsoleBase.Inputs;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.ConsoleBase.Inputs;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Text;
+using Nitrocid.ConsoleBase.Colors;
 
-namespace KS.ConsoleBase.Writers.ConsoleWriters
+namespace Nitrocid.ConsoleBase.Writers.ConsoleWriters
 {
     /// <summary>
     /// Console text writer with color support (wrapped)
@@ -83,7 +83,7 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
                                         return;
                                     case ConsoleKey.PageUp:
                                         bail = true;
-                                        idx -= (ConsoleWrapper.WindowHeight * 2) - 1;
+                                        idx -= ConsoleWrapper.WindowHeight * 2 - 1;
                                         if (idx < 0)
                                             idx = -1;
                                         LinesMade = 0;

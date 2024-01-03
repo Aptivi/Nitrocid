@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Misc.Text.Probers.Placeholder;
+using Nitrocid.Misc.Text.Probers.Placeholder;
 using NUnit.Framework;
 using Shouldly;
 

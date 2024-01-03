@@ -17,14 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase;
-using KS.Kernel.Threading;
 using Terminaux.Colors;
-using KS.Drivers.RNG;
-using KS.Kernel.Debugging;
 using System;
-using KS.Misc.Screensaver;
-using KS.ConsoleBase.Writers.FancyWriters;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Drivers.RNG;
+using Nitrocid.ConsoleBase;
+using Nitrocid.Misc.Screensaver;
+using Nitrocid.ConsoleBase.Writers.FancyWriters;
+using Nitrocid.Kernel.Threading;
 
 namespace Nitrocid.ScreensaverPacks.Animations.SquareCorner
 {

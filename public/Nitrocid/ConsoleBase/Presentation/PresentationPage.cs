@@ -17,11 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Presentation.Elements;
-using KS.Languages;
+using Nitrocid.ConsoleBase.Presentation.Elements;
+using Nitrocid.Languages;
 using System.Collections.Generic;
 
-namespace KS.ConsoleBase.Presentation
+namespace Nitrocid.ConsoleBase.Presentation
 {
     /// <summary>
     /// Presentation page

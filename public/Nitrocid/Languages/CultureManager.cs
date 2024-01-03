@@ -20,10 +20,10 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using KS.Kernel.Configuration;
-using KS.Kernel.Debugging;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Kernel.Debugging;
 
-namespace KS.Languages
+namespace Nitrocid.Languages
 {
     /// <summary>
     /// Culture management module

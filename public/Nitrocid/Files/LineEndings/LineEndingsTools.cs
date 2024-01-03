@@ -18,12 +18,12 @@
 //
 
 using System;
-using KS.Misc.Text;
-using KS.Drivers;
-using KS.Kernel.Exceptions;
-using KS.Languages;
+using Nitrocid.Drivers;
+using Nitrocid.Languages;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Misc.Text;
 
-namespace KS.Files.LineEndings
+namespace Nitrocid.Files.LineEndings
 {
     /// <summary>
     /// Line endings tools module

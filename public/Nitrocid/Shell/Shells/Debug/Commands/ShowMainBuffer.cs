@@ -17,14 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers;
-using KS.Kernel;
-using KS.Languages;
-using KS.Shell.ShellBase.Commands;
+using Nitrocid.ConsoleBase;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Kernel;
+using Nitrocid.Languages;
+using Nitrocid.Shell.ShellBase.Commands;
 
-namespace KS.Shell.Shells.Debug.Commands
+namespace Nitrocid.Shell.Shells.Debug.Commands
 {
     /// <summary>
     /// Shows the main buffer for five seconds

@@ -17,18 +17,18 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Inputs;
-using KS.ConsoleBase.Interactive;
-using KS.ConsoleBase.Writers;
-using KS.Kernel.Configuration;
-using KS.Kernel.Exceptions;
-using KS.Languages;
-using KS.Network.Base.Connections;
-using KS.Shell.ShellBase.Commands;
-using KS.Shell.ShellBase.Switches;
 using Nettify.Rss.Instance;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Inputs;
+using Nitrocid.ConsoleBase.Interactive;
+using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Extras.RssShell.RSS.Interactive;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
+using Nitrocid.Network.Base.Connections;
+using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.Shell.ShellBase.Switches;
 using System;
 
 namespace Nitrocid.Extras.RssShell

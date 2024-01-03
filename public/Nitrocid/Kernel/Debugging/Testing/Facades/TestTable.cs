@@ -17,12 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Writers.FancyWriters;
-using KS.Kernel.Time.Renderers;
-using KS.Languages;
+using Nitrocid.ConsoleBase.Writers.FancyWriters;
+using Nitrocid.Kernel.Time.Renderers;
+using Nitrocid.Languages;
 using System;
 
-namespace KS.Kernel.Debugging.Testing.Facades
+namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
     internal class TestTable : TestFacade
     {

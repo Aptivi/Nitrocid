@@ -18,14 +18,14 @@
 //
 
 using System;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers;
-using KS.Files.Folders;
-using KS.Kernel.Debugging;
-using KS.Languages;
-using KS.Shell.ShellBase.Commands;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Files.Folders;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Languages;
+using Nitrocid.Shell.ShellBase.Commands;
 
-namespace KS.Shell.Shells.UESH.Commands
+namespace Nitrocid.Shell.Shells.UESH.Commands
 {
     /// <summary>
     /// You can change your current working directory to another directory

@@ -17,12 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Languages;
-using KS.Shell.ShellBase.Arguments;
-using KS.Shell.ShellBase.Shells;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.Languages;
+using Nitrocid.Shell.ShellBase.Arguments;
+using Nitrocid.Shell.ShellBase.Shells;
 
-namespace KS.Kernel.Debugging.Testing.Facades
+namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
     internal class TestSwitches : TestFacade
     {

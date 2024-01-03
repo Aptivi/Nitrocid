@@ -17,17 +17,17 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Files;
-using KS.Files.Folders;
-using KS.Files.Operations.Querying;
-using KS.Kernel.Debugging;
-using KS.Misc.Text;
-using KS.Shell.ShellBase.Commands;
-using KS.Shell.ShellBase.Shells;
+using Nitrocid.Files;
+using Nitrocid.Files.Folders;
+using Nitrocid.Files.Operations.Querying;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Misc.Text;
+using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.Shell.ShellBase.Shells;
 using System.IO;
 using System.Linq;
 
-namespace KS.Shell.ShellBase.Arguments
+namespace Nitrocid.Shell.ShellBase.Arguments
 {
     /// <summary>
     /// Command auto completion class

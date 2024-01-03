@@ -17,17 +17,17 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers;
-using KS.Files.Operations.Querying;
-using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
-using KS.Kernel.Extensions;
-using KS.Languages;
-using KS.Shell.ShellBase.Shells;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Files.Operations.Querying;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Kernel.Extensions;
+using Nitrocid.Languages;
+using Nitrocid.Shell.ShellBase.Shells;
 using System.IO;
 
-namespace KS.Files.Extensions
+namespace Nitrocid.Files.Extensions
 {
     /// <summary>
     /// Routines related to opening the files

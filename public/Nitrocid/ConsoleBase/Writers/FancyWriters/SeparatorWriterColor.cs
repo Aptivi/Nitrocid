@@ -20,15 +20,15 @@
 using System;
 using System.Text;
 using System.Threading;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Drivers;
-using KS.Kernel.Debugging;
-using KS.Languages;
-using KS.Misc.Text;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.Drivers;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Text;
 using Terminaux.Colors;
 
-namespace KS.ConsoleBase.Writers.FancyWriters
+namespace Nitrocid.ConsoleBase.Writers.FancyWriters
 {
     /// <summary>
     /// Separator writer

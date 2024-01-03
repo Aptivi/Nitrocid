@@ -17,15 +17,15 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Inputs;
-using KS.ConsoleBase.Writers;
-using KS.Kernel.Configuration.Instances;
-using KS.Kernel.Debugging;
-using KS.Languages;
+using Nitrocid.ConsoleBase;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Inputs;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Kernel.Configuration.Instances;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Languages;
 
-namespace KS.Kernel.Configuration.Settings.KeyInputs
+namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
 {
     internal class DoubleSettingsKeyInput : ISettingsKeyInput
     {

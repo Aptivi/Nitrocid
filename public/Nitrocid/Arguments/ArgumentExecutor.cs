@@ -18,10 +18,10 @@
 //
 
 using System;
-using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Exceptions;
 
-namespace KS.Arguments
+namespace Nitrocid.Arguments
 {
     /// <summary>
     /// Argument executor base class

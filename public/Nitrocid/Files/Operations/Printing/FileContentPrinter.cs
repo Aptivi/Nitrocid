@@ -17,9 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Drivers;
+using Nitrocid.Drivers;
 
-namespace KS.Files.Operations.Printing
+namespace Nitrocid.Files.Operations.Printing
 {
     /// <summary>
     /// File content printing module

@@ -20,22 +20,22 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Kernel;
-using KS.Kernel.Configuration;
-using KS.Languages;
-using KS.Misc.Text;
-using KS.Modifications;
-using KS.Shell.ShellBase.Aliases;
-using KS.Shell.ShellBase.Arguments;
-using KS.Shell.ShellBase.Commands;
-using KS.Shell.ShellBase.Shells;
-using KS.Shell.ShellBase.Switches;
-using KS.Users;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.Kernel;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Text;
+using Nitrocid.Modifications;
+using Nitrocid.Shell.ShellBase.Aliases;
+using Nitrocid.Shell.ShellBase.Arguments;
+using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.Shell.ShellBase.Shells;
+using Nitrocid.Shell.ShellBase.Switches;
+using Nitrocid.Users;
 
-namespace KS.Shell.ShellBase.Help
+namespace Nitrocid.Shell.ShellBase.Help
 {
     internal static class HelpPrintTools
     {

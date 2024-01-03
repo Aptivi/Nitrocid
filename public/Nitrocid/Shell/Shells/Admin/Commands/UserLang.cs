@@ -17,13 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Kernel.Exceptions;
-using KS.Languages;
-using KS.Shell.ShellBase.Commands;
-using KS.Users;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
+using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.Users;
 
-namespace KS.Shell.Shells.Admin.Commands
+namespace Nitrocid.Shell.Shells.Admin.Commands
 {
     class UserLangCommand : BaseCommand, ICommand
     {

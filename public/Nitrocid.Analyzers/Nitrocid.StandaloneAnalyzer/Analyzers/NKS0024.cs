@@ -98,7 +98,7 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
 
                     // Check the imports
                     var compilation = finalNode as CompilationUnitSyntax;
-                    if (compilation?.Usings.Any(u => u.Name.ToString() == "KS.Kernel.Time.Timezones") == false)
+                    if (compilation?.Usings.Any(u => u.Name.ToString() == "Nitrocid.Kernel.Time.Timezones") == false)
                     {
                         var name = SyntaxFactory.QualifiedName(
                             SyntaxFactory.QualifiedName(

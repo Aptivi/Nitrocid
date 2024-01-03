@@ -17,31 +17,31 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase;
-using KS.Kernel.Exceptions;
-using KS.Languages;
-using KS.Misc.Splash;
-using KS.Users.Login;
-using KS.Misc.Text;
-using KS.ConsoleBase.Inputs;
-using KS.ConsoleBase.Colors;
-using KS.Kernel.Power;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Kernel.Starting;
-using KS.Arguments;
-using KS.ConsoleBase.Writers.MiscWriters;
-using KS.Kernel.Time.Renderers;
-using KS.Kernel.Debugging;
-using KS.Misc.Text.Probers.Placeholder;
-using KS.Network.RSS;
-using KS.Shell.ShellBase.Shells;
-using KS.Misc.Text.Probers.Motd;
-using KS.Kernel.Time;
-using KS.Users.Login.Handlers;
-using KS.ConsoleBase.Inputs.Styles.Infobox;
-using KS.ConsoleBase.Writers;
+using Nitrocid.Kernel.Time;
+using Nitrocid.Shell.ShellBase.Shells;
+using Nitrocid.Users.Login;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.ConsoleBase.Inputs;
+using Nitrocid.Arguments;
+using Nitrocid.ConsoleBase;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Misc.Splash;
+using Nitrocid.Kernel.Time.Renderers;
+using Nitrocid.Kernel.Starting;
+using Nitrocid.Languages;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Misc.Text;
+using Nitrocid.ConsoleBase.Writers.MiscWriters;
+using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
+using Nitrocid.Users.Login.Handlers;
+using Nitrocid.Misc.Text.Probers.Placeholder;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.Misc.Text.Probers.Motd;
+using Nitrocid.Kernel.Power;
+using Nitrocid.Network.RSS;
 
-namespace KS.Kernel
+namespace Nitrocid.Kernel
 {
     internal static class KernelEntry
     {

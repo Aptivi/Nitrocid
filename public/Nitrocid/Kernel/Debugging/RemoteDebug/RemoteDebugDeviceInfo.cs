@@ -20,7 +20,7 @@
 using Newtonsoft.Json;
 using System.Collections.Generic;
 
-namespace KS.Kernel.Debugging.RemoteDebug
+namespace Nitrocid.Kernel.Debugging.RemoteDebug
 {
     /// <summary>
     /// Remote debug device info class

@@ -21,12 +21,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
-using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
-using KS.Languages;
-using KS.Misc.Notifications;
 using Nettify.Rss.Instance;
 using Nitrocid.Extras.RssShell.RSS;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Notifications;
 
 namespace Nitrocid.Extras.RssShell.Tools
 {

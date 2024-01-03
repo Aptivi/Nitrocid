@@ -18,10 +18,10 @@
 //
 
 using Figletize;
-using KS.Kernel.Configuration.Instances;
+using Nitrocid.Kernel.Configuration.Instances;
 using Terminaux.Inputs.Styles;
 
-namespace KS.Kernel.Configuration.Settings.KeyInputs
+namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
 {
     internal class FigletSettingsKeyInput : ISettingsKeyInput
     {

@@ -17,14 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
-using KS.Kernel.Journaling;
-using KS.Languages;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Kernel.Journaling;
+using Nitrocid.Languages;
 using System;
 using System.Collections.Generic;
 
-namespace KS.Kernel.Events
+namespace Nitrocid.Kernel.Events
 {
     /// <summary>
     /// Kernel event management module

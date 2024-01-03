@@ -17,10 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Configuration.Settings;
 using Newtonsoft.Json;
+using Nitrocid.Kernel.Configuration.Settings;
 
-namespace KS.Kernel.Configuration.Instances
+namespace Nitrocid.Kernel.Configuration.Instances
 {
     /// <summary>
     /// Screensaver kernel configuration instance

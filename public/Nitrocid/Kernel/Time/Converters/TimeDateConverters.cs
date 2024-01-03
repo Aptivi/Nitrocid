@@ -17,12 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Time.Calendars;
-using KS.Kernel.Time.Timezones;
+using Nitrocid.Kernel.Time.Calendars;
+using Nitrocid.Kernel.Time.Timezones;
 using System;
 using System.Globalization;
 
-namespace KS.Kernel.Time.Converters
+namespace Nitrocid.Kernel.Time.Converters
 {
     /// <summary>
     /// Date and time conversion module

@@ -17,11 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Drivers.Encryption;
-using KS.Files.Operations.Querying;
-using KS.Kernel.Debugging;
+using Nitrocid.Drivers.Encryption;
+using Nitrocid.Files.Operations.Querying;
+using Nitrocid.Kernel.Debugging;
 
-namespace KS.Shell.ShellBase.Scripting
+namespace Nitrocid.Shell.ShellBase.Scripting
 {
     /// <summary>
     /// UESH operator code functions

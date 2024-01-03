@@ -17,9 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Debugging;
-using KS.Shell.ShellBase.Scripting;
-using KS.Shell.ShellBase.Scripting.Conditions;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Shell.ShellBase.Scripting;
+using Nitrocid.Shell.ShellBase.Scripting.Conditions;
 
 namespace Nitrocid.Tests.Shell.ShellBase.Scripting.CustomConditions
 {

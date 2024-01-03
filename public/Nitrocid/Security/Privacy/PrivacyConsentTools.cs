@@ -17,23 +17,23 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Inputs.Styles.Choice;
-using KS.Files.Operations;
-using KS.Files.Operations.Querying;
-using KS.Files.Paths;
-using KS.Kernel.Exceptions;
-using KS.Languages;
-using KS.Misc.Reflection;
-using KS.Misc.Splash;
-using KS.Misc.Text;
-using KS.Security.Privacy.Consents;
-using KS.Users;
 using Newtonsoft.Json;
+using Nitrocid.ConsoleBase.Inputs.Styles.Choice;
+using Nitrocid.Files.Operations;
+using Nitrocid.Files.Operations.Querying;
+using Nitrocid.Files.Paths;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Reflection;
+using Nitrocid.Misc.Splash;
+using Nitrocid.Misc.Text;
+using Nitrocid.Security.Privacy.Consents;
+using Nitrocid.Users;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 
-namespace KS.Security.Privacy
+namespace Nitrocid.Security.Privacy
 {
     /// <summary>
     /// Privacy consent tools
@@ -55,7 +55,7 @@ namespace KS.Security.Privacy
 
             // Verify the type and the context
             var type = methodInfo.ReflectedType;
-            if ((finalContext == "KS" && ReflectionCommon.KernelTypes.Contains(type)) ||
+            if (finalContext == "KS" && ReflectionCommon.KernelTypes.Contains(type) ||
                  finalContext == "Nitrocid")
                 return true;
 

@@ -17,14 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Configuration;
-using KS.Kernel.Extensions;
-using KS.Shell.Prompts;
-using KS.Shell.ShellBase.Arguments;
-using KS.Shell.ShellBase.Commands;
-using KS.Shell.ShellBase.Shells;
 using Nitrocid.Extras.FtpShell.FTP;
 using Nitrocid.Extras.FtpShell.Settings;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Kernel.Extensions;
+using Nitrocid.Shell.Prompts;
+using Nitrocid.Shell.ShellBase.Arguments;
+using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.Shell.ShellBase.Shells;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;

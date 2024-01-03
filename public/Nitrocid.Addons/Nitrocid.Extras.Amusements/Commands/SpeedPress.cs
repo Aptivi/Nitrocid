@@ -19,9 +19,9 @@
 
 using System;
 using System.Linq;
-using KS.Misc.Text;
-using KS.Shell.ShellBase.Commands;
 using Nitrocid.Extras.Amusements.Amusements.Games;
+using Nitrocid.Misc.Text;
+using Nitrocid.Shell.ShellBase.Commands;
 
 namespace Nitrocid.Extras.Amusements.Commands
 {

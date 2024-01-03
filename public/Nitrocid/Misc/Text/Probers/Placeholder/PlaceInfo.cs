@@ -19,7 +19,7 @@
 
 using System;
 
-namespace KS.Misc.Text.Probers.Placeholder
+namespace Nitrocid.Misc.Text.Probers.Placeholder
 {
     /// <summary>
     /// Placeholder information class

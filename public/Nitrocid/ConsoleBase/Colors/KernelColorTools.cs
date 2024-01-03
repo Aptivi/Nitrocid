@@ -19,16 +19,16 @@
 
 using System;
 using System.Collections.Generic;
-using KS.ConsoleBase.Themes;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Drivers.RNG;
-using KS.Kernel.Configuration;
-using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
+using Nitrocid.ConsoleBase.Themes;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.Drivers.RNG;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Exceptions;
 using Terminaux.Colors;
 using Terminaux.Colors.Transformation;
 
-namespace KS.ConsoleBase.Colors
+namespace Nitrocid.ConsoleBase.Colors
 {
     /// <summary>
     /// Color tools module

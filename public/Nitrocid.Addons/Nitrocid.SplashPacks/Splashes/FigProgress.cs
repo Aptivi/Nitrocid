@@ -18,20 +18,20 @@
 //
 
 using System.Threading;
-using KS.Kernel.Debugging;
-using KS.ConsoleBase;
-using KS.Languages;
-using KS.Kernel;
-using KS.ConsoleBase.Writers.ConsoleWriters;
 using Terminaux.Colors;
 using Textify.Sequences.Tools;
-using KS.ConsoleBase.Colors;
 using Figletize;
 using System;
-using KS.Misc.Text;
-using KS.Misc.Splash;
 using System.Text;
-using KS.ConsoleBase.Writers.FancyWriters;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.ConsoleBase;
+using Nitrocid.Misc.Splash;
+using Nitrocid.ConsoleBase.Writers.FancyWriters;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Misc.Text;
+using Nitrocid.Languages;
+using Nitrocid.Kernel;
 
 namespace Nitrocid.SplashPacks.Splashes
 {

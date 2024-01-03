@@ -17,12 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Languages;
-using KS.Shell.ShellBase.Commands;
 using Newtonsoft.Json.Linq;
 using System.Linq;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.ConsoleBase.Writers.FancyWriters;
+using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.ConsoleBase.Writers.FancyWriters;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.Languages;
 
 namespace Nitrocid.Extras.JsonShell.Json.Commands
 {

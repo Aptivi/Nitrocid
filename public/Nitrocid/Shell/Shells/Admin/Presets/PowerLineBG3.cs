@@ -18,14 +18,14 @@
 //
 
 using System.Text;
-using KS.ConsoleBase.Colors;
 using System.Collections.Generic;
-using KS.Languages;
-using KS.ConsoleBase.Writers.FancyWriters.Tools;
 using Terminaux.Colors;
-using KS.Shell.Prompts;
+using Nitrocid.Languages;
+using Nitrocid.Shell.Prompts;
+using Nitrocid.ConsoleBase.Writers.FancyWriters.Tools;
+using Nitrocid.ConsoleBase.Colors;
 
-namespace KS.Shell.Shells.Admin.Presets
+namespace Nitrocid.Shell.Shells.Admin.Presets
 {
     /// <summary>
     /// PowerLine BG 3 preset

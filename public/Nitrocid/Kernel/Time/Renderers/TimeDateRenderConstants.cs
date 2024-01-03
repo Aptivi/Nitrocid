@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace KS.Kernel.Time.Renderers
+namespace Nitrocid.Kernel.Time.Renderers
 {
     /// <summary>
     /// Rendering constants to help you get started with formatting date and time

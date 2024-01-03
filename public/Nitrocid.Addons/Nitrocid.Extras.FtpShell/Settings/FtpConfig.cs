@@ -18,12 +18,12 @@
 //
 
 using FluentFTP;
-using KS.Kernel.Configuration;
-using KS.Kernel.Configuration.Instances;
-using KS.Kernel.Configuration.Settings;
-using KS.Shell.Prompts;
 using Newtonsoft.Json;
 using Nitrocid.Extras.FtpShell.FTP;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Kernel.Configuration.Instances;
+using Nitrocid.Kernel.Configuration.Settings;
+using Nitrocid.Shell.Prompts;
 
 namespace Nitrocid.Extras.FtpShell.Settings
 {

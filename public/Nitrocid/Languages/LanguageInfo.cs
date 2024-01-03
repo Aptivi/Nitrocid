@@ -19,14 +19,14 @@
 
 using System.Collections.Generic;
 using System.Globalization;
-using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
 using Newtonsoft.Json;
-using KS.Resources;
-using KS.Languages.Decoy;
+using Nitrocid.Resources;
 using System.Diagnostics;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages.Decoy;
 
-namespace KS.Languages
+namespace Nitrocid.Languages
 {
     /// <summary>
     /// Language information

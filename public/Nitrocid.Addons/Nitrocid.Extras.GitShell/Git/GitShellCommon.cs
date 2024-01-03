@@ -17,8 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Files.Operations.Querying;
 using LibGit2Sharp;
+using Nitrocid.Files.Operations.Querying;
 using System.IO;
 
 namespace Nitrocid.Extras.GitShell.Git

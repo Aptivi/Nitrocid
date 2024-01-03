@@ -17,15 +17,15 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
-using KS.Languages;
-using KS.Security.Permissions;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
+using Nitrocid.Security.Permissions;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
 
-namespace KS.Kernel.Extensions
+namespace Nitrocid.Kernel.Extensions
 {
     /// <summary>
     /// Inter-Addon Communication tools

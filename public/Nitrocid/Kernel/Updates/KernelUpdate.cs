@@ -21,11 +21,11 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using KS.Kernel.Debugging;
 using Newtonsoft.Json.Linq;
+using Nitrocid.Kernel.Debugging;
 using Textify.Versioning;
 
-namespace KS.Kernel.Updates
+namespace Nitrocid.Kernel.Updates
 {
     /// <summary>
     /// Kernel update class instance

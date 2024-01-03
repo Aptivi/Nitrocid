@@ -17,16 +17,16 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Interactive;
-using KS.Kernel.Exceptions;
-using KS.Languages;
-using KS.Modifications;
-using KS.Misc.Interactives;
-using KS.Shell.ShellBase.Commands;
-using KS.ConsoleBase.Writers;
+using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Languages;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Modifications;
+using Nitrocid.ConsoleBase.Interactive;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Misc.Interactives;
 
-namespace KS.Shell.Shells.UESH.Commands
+namespace Nitrocid.Shell.Shells.UESH.Commands
 {
     /// <summary>
     /// Opens the mod manual

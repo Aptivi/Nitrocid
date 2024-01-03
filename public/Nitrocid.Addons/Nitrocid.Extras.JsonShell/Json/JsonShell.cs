@@ -18,12 +18,12 @@
 //
 
 using System;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers;
-using KS.Kernel.Debugging;
-using KS.Languages;
-using KS.Shell.ShellBase.Shells;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Extras.JsonShell.Tools;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Languages;
+using Nitrocid.Shell.ShellBase.Shells;
 
 namespace Nitrocid.Extras.JsonShell.Json
 {

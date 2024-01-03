@@ -21,17 +21,17 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using KS.ConsoleBase.Colors;
-using KS.Files.Operations;
-using KS.Kernel.Configuration;
-using KS.Kernel.Time;
-using KS.Kernel.Time.Calendars;
-using KS.Resources;
+using Nitrocid.Resources;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Files.Operations;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Kernel.Time;
+using Nitrocid.Kernel.Time.Calendars;
 using Terminaux.Colors;
 
-namespace KS.ConsoleBase.Themes
+namespace Nitrocid.ConsoleBase.Themes
 {
     /// <summary>
     /// Theme information class
@@ -137,7 +137,7 @@ namespace KS.ConsoleBase.Themes
                 else
                     ThemeColors[type] =
                         UseAccentTypes.Contains(fullTypeName) && Config.MainConfig.UseAccentColors ?
-                        (fullTypeName.EndsWith("BackgroundColor") || fullTypeName.EndsWith("BackColor") ? new Color(Config.MainConfig.AccentBackgroundColor) : new Color(Config.MainConfig.AccentForegroundColor)) :
+                        fullTypeName.EndsWith("BackgroundColor") || fullTypeName.EndsWith("BackColor") ? new Color(Config.MainConfig.AccentBackgroundColor) : new Color(Config.MainConfig.AccentForegroundColor) :
                         new Color(colorToken.ToString());
             }
         }

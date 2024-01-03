@@ -22,16 +22,16 @@ using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Timers;
 using Timer = System.Timers.Timer;
-using KS.ConsoleBase;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Inputs;
-using KS.Languages;
-using KS.Kernel.Time.Renderers;
-using KS.Kernel.Threading;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.ConsoleBase.Writers;
 using Figletize;
-using KS.ConsoleBase.Inputs.Styles.Infobox;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Kernel.Threading;
+using Nitrocid.ConsoleBase;
+using Nitrocid.Kernel.Time.Renderers;
+using Nitrocid.Languages;
+using Nitrocid.ConsoleBase.Inputs;
 
 namespace Nitrocid.Extras.Timers.Timers
 {

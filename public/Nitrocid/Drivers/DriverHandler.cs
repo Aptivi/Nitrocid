@@ -17,36 +17,36 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Drivers.RNG;
-using KS.Drivers.Console;
 using System.Collections.Generic;
-using KS.Drivers.Console.Bases;
-using KS.Drivers.RNG.Bases;
-using KS.Drivers.Network;
-using KS.Drivers.Network.Bases;
-using KS.Drivers.Filesystem;
-using KS.Drivers.Filesystem.Bases;
-using KS.Drivers.Encryption;
-using KS.Drivers.Encryption.Bases;
-using KS.Drivers.Regexp;
-using KS.Drivers.Regexp.Bases;
-using KS.Kernel.Exceptions;
 using System.Linq;
-using KS.Kernel.Debugging;
-using KS.Drivers.DebugLogger.Bases;
-using KS.Drivers.DebugLogger;
 using System;
-using KS.Drivers.Encoding.Bases;
-using KS.Drivers.Encoding;
-using KS.Drivers.HardwareProber.Bases;
-using KS.Drivers.HardwareProber;
-using KS.Languages;
-using KS.Drivers.Sorting;
-using KS.Drivers.Sorting.Bases;
-using KS.Drivers.Input.Bases;
-using KS.Drivers.Input;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Drivers.RNG;
+using Nitrocid.Drivers.Filesystem;
+using Nitrocid.Drivers.Encoding;
+using Nitrocid.Drivers.HardwareProber;
+using Nitrocid.Drivers.Network;
+using Nitrocid.Languages;
+using Nitrocid.Drivers.Sorting;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Drivers.DebugLogger;
+using Nitrocid.Drivers.Encryption;
+using Nitrocid.Drivers.Input;
+using Nitrocid.Drivers.Regexp;
+using Nitrocid.Drivers.Console;
+using Nitrocid.Drivers.Network.Bases;
+using Nitrocid.Drivers.RNG.Bases;
+using Nitrocid.Drivers.Filesystem.Bases;
+using Nitrocid.Drivers.Console.Bases;
+using Nitrocid.Drivers.Encryption.Bases;
+using Nitrocid.Drivers.Regexp.Bases;
+using Nitrocid.Drivers.DebugLogger.Bases;
+using Nitrocid.Drivers.Encoding.Bases;
+using Nitrocid.Drivers.HardwareProber.Bases;
+using Nitrocid.Drivers.Sorting.Bases;
+using Nitrocid.Drivers.Input.Bases;
 
-namespace KS.Drivers
+namespace Nitrocid.Drivers
 {
     /// <summary>
     /// The driver handler routine class

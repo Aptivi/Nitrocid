@@ -17,12 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Inputs;
-using KS.ConsoleBase.Inputs.Styles.Selection;
-using KS.Languages;
+using Nitrocid.ConsoleBase.Inputs;
+using Nitrocid.ConsoleBase.Inputs.Styles.Selection;
+using Nitrocid.Languages;
 using System.Collections.Generic;
 
-namespace KS.Kernel.Debugging.Testing.Facades
+namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
     internal class TestInputSelectionLarge : TestFacade
     {

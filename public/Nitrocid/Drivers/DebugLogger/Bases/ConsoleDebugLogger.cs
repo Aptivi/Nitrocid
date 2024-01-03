@@ -17,9 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 
-namespace KS.Drivers.DebugLogger.Bases
+namespace Nitrocid.Drivers.DebugLogger.Bases
 {
     internal class ConsoleDebugLogger : BaseDebugLoggerDriver, IDebugLoggerDriver
     {

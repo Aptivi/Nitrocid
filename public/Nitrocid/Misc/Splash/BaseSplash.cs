@@ -20,11 +20,11 @@
 using System;
 using System.Text;
 using System.Threading;
-using KS.ConsoleBase.Colors;
-using KS.Kernel.Debugging;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Kernel.Debugging;
 using Textify.Sequences.Builder.Types;
 
-namespace KS.Misc.Splash
+namespace Nitrocid.Misc.Splash
 {
     /// <summary>
     /// Base splash screen class

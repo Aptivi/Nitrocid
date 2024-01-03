@@ -17,12 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Drivers.RNG;
 using System;
 using System.Collections.Generic;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
 using Terminaux.Colors;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Drivers.RNG;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 
 namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
 {

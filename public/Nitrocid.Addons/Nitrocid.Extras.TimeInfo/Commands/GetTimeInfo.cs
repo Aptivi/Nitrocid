@@ -18,18 +18,18 @@
 //
 
 using System;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Kernel.Exceptions;
-using KS.Kernel.Time;
-using KS.Kernel.Time.Calendars;
-using KS.Kernel.Time.Converters;
-using KS.Kernel.Time.Renderers;
-using KS.Languages;
-using KS.Misc.Text;
-using KS.Shell.ShellBase.Commands;
-using KS.Shell.ShellBase.Switches;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Kernel.Time;
+using Nitrocid.Kernel.Time.Calendars;
+using Nitrocid.Kernel.Time.Converters;
+using Nitrocid.Kernel.Time.Renderers;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Text;
+using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.Shell.ShellBase.Switches;
 
 namespace Nitrocid.Extras.TimeInfo.Commands
 {

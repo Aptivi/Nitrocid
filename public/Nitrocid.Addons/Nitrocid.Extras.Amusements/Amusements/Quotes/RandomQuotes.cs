@@ -17,9 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Misc.Text;
-using KS.Network.Base.Transfer;
 using Newtonsoft.Json.Linq;
+using Nitrocid.Misc.Text;
+using Nitrocid.Network.Base.Transfer;
 using System.Text;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Quotes

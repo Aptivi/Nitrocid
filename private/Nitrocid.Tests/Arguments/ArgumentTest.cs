@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Arguments;
+using Nitrocid.Arguments;
 using System;
 
 namespace Nitrocid.Tests.Arguments

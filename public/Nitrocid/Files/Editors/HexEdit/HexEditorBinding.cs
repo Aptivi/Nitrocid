@@ -17,12 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Exceptions;
-using KS.Languages;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
 using System;
 using System.Collections.Generic;
 
-namespace KS.Files.Editors.HexEdit
+namespace Nitrocid.Files.Editors.HexEdit
 {
     /// <summary>
     /// Keybinding class for the interactive hex editor

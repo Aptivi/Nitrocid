@@ -17,12 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers;
-using KS.Misc.Splash;
-using KS.Shell.ShellBase.Commands;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Misc.Splash;
+using Nitrocid.Shell.ShellBase.Commands;
 
-namespace KS.Shell.Shells.Admin.Commands
+namespace Nitrocid.Shell.Shells.Admin.Commands
 {
     /// <summary>
     /// Gets the current boot log

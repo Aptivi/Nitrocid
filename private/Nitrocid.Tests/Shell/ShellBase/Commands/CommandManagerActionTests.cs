@@ -17,13 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Exceptions;
-using KS.Shell.ShellBase.Arguments;
-using KS.Shell.ShellBase.Commands;
-using KS.Shell.ShellBase.Shells;
+using Nitrocid.Shell.ShellBase.Arguments;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Tests.Shell.ShellBase.Commands.TestCommands;
 using NUnit.Framework;
 using Shouldly;
+using Nitrocid.Shell.ShellBase.Shells;
 
 namespace Nitrocid.Tests.Shell.ShellBase.Commands
 {

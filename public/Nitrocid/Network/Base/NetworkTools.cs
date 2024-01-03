@@ -22,13 +22,13 @@ using System.Linq;
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Text;
-using KS.Drivers;
-using KS.Kernel;
-using KS.Kernel.Configuration;
-using KS.Kernel.Debugging;
-using KS.Network.Base.Transfer;
+using Nitrocid.Drivers;
+using Nitrocid.Kernel;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Network.Base.Transfer;
 
-namespace KS.Network.Base
+namespace Nitrocid.Network.Base
 {
     /// <summary>
     /// Network tools module

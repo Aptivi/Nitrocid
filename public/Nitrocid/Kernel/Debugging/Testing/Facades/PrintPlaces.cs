@@ -17,11 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Languages;
-using KS.Misc.Text.Probers.Placeholder;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Text.Probers.Placeholder;
 
-namespace KS.Kernel.Debugging.Testing.Facades
+namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
     internal class PrintPlaces : TestFacade
     {

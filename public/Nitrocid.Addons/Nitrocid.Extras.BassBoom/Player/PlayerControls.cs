@@ -41,17 +41,17 @@ using BassBoom.Basolia.Format;
 using BassBoom.Basolia.Format.Cache;
 using BassBoom.Basolia.Lyrics;
 using BassBoom.Basolia.Playback;
-using KS.ConsoleBase;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Inputs.Styles.Infobox;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Languages;
 using System;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
-using KS.ConsoleBase.Writers.FancyWriters;
+using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Languages;
+using Nitrocid.ConsoleBase;
+using Nitrocid.ConsoleBase.Writers.FancyWriters;
 
 namespace Nitrocid.Extras.BassBoom.Player
 {

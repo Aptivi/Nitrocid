@@ -19,15 +19,15 @@
 
 using System;
 using System.Threading;
-using KS.Kernel.Debugging;
-using KS.ConsoleBase.Colors;
-using KS.Languages;
-using KS.ConsoleBase.Writers.ConsoleWriters;
 using Terminaux.Colors;
 using System.Text;
 using Textify.Sequences.Builder.Types;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Languages;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.ConsoleBase.Colors;
 
-namespace KS.ConsoleBase.Writers.FancyWriters
+namespace Nitrocid.ConsoleBase.Writers.FancyWriters
 {
     /// <summary>
     /// Box writer with color support

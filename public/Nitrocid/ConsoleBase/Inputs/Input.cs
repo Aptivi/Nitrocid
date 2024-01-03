@@ -18,12 +18,12 @@
 //
 
 using System;
-using KS.Drivers;
-using KS.Kernel.Configuration;
+using Nitrocid.Drivers;
+using Nitrocid.Kernel.Configuration;
 using Terminaux.Base;
 using Terminaux.Reader;
 
-namespace KS.ConsoleBase.Inputs
+namespace Nitrocid.ConsoleBase.Inputs
 {
     /// <summary>
     /// Console input module

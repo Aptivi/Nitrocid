@@ -17,16 +17,16 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Buffered;
-using KS.Kernel.Configuration;
-using KS.Languages;
-using KS.Misc.Reflection;
+using Nitrocid.ConsoleBase.Buffered;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Reflection;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using Terminaux.Colors;
 
-namespace KS.ConsoleBase.Interactive
+namespace Nitrocid.ConsoleBase.Interactive
 {
     /// <summary>
     /// A base class for your interactive user interface for terminal apps

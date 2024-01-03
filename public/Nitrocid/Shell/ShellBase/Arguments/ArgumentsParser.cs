@@ -17,20 +17,20 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Arguments;
-using KS.Drivers;
-using KS.Kernel.Debugging;
-using KS.Misc.Text;
-using KS.Modifications;
-using KS.Shell.ShellBase.Aliases;
-using KS.Shell.ShellBase.Commands;
-using KS.Shell.ShellBase.Shells;
-using KS.Shell.ShellBase.Switches;
+using Nitrocid.Arguments;
+using Nitrocid.Drivers;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Misc.Text;
+using Nitrocid.Modifications;
+using Nitrocid.Shell.ShellBase.Aliases;
+using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.Shell.ShellBase.Shells;
+using Nitrocid.Shell.ShellBase.Switches;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace KS.Shell.ShellBase.Arguments
+namespace Nitrocid.Shell.ShellBase.Arguments
 {
     /// <summary>
     /// Argument parser tools

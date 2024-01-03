@@ -17,11 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Threading;
-using KS.Shell.ShellBase.Commands;
+using Nitrocid.Kernel.Threading;
+using Nitrocid.Shell.ShellBase.Commands;
 using System.Threading;
 
-namespace KS.Shell.Shells.UESH.Commands
+namespace Nitrocid.Shell.Shells.UESH.Commands
 {
     class SleepCommand : BaseCommand, ICommand
     {

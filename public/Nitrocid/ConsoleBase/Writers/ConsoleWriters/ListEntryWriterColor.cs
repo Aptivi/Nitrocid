@@ -20,12 +20,12 @@
 using System;
 using System.Text;
 using System.Threading;
-using KS.ConsoleBase.Colors;
-using KS.Kernel.Debugging;
-using KS.Languages;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Languages;
 using Terminaux.Colors;
 
-namespace KS.ConsoleBase.Writers.ConsoleWriters
+namespace Nitrocid.ConsoleBase.Writers.ConsoleWriters
 {
     /// <summary>
     /// List entry writer with color support

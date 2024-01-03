@@ -17,18 +17,18 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Drivers;
-using KS.Kernel.Debugging;
-using KS.Languages;
-using KS.Misc.Text;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.Drivers;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Text;
 using System;
 using System.Text;
 using System.Threading;
 using Terminaux.Colors;
 
-namespace KS.ConsoleBase.Writers.FancyWriters
+namespace Nitrocid.ConsoleBase.Writers.FancyWriters
 {
     /// <summary>
     /// Centered writer
@@ -322,7 +322,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 var centered = new StringBuilder();
                 Text = TextTools.FormatString(Text, Vars);
                 string[] sentences = TextTools.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
-                int top = (ConsoleWrapper.WindowHeight / 2) - (sentences.Length / 2);
+                int top = ConsoleWrapper.WindowHeight / 2 - sentences.Length / 2;
                 for (int i = 0; i < sentences.Length; i++)
                 {
                     string sentence = sentences[i];
@@ -356,7 +356,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 var centered = new StringBuilder();
                 Text = TextTools.FormatString(Text, Vars);
                 string[] sentences = TextTools.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
-                int top = (ConsoleWrapper.WindowHeight / 2) - (sentences.Length / 2);
+                int top = ConsoleWrapper.WindowHeight / 2 - sentences.Length / 2;
                 for (int i = 0; i < sentences.Length; i++)
                 {
                     string sentence = sentences[i];
@@ -470,7 +470,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 var centered = new StringBuilder();
                 Text = TextTools.FormatString(Text, Vars);
                 string[] sentences = TextTools.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
-                int top = (ConsoleWrapper.WindowHeight / 2) - (sentences.Length / 2);
+                int top = ConsoleWrapper.WindowHeight / 2 - sentences.Length / 2;
                 return RenderCentered(top, sentences[0].Truncate(ConsoleWrapper.WindowWidth - 4));
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
@@ -494,7 +494,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
             {
                 Text = TextTools.FormatString(Text, Vars);
                 string[] sentences = TextTools.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
-                int top = (ConsoleWrapper.WindowHeight / 2) - (sentences.Length / 2);
+                int top = ConsoleWrapper.WindowHeight / 2 - sentences.Length / 2;
                 return RenderCentered(top, sentences[0].Truncate(ConsoleWrapper.WindowWidth - 4), ForegroundColor, BackgroundColor);
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))

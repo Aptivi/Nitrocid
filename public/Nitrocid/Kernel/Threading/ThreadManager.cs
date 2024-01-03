@@ -17,10 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase;
-using KS.ConsoleBase.Inputs;
-using KS.Kernel.Debugging;
-using KS.Kernel.Extensions;
+using Nitrocid.ConsoleBase;
+using Nitrocid.ConsoleBase.Inputs;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -28,7 +28,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading;
 
-namespace KS.Kernel.Threading
+namespace Nitrocid.Kernel.Threading
 {
     /// <summary>
     /// Thread management module

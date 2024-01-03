@@ -17,21 +17,21 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Inputs;
-using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
-using KS.Languages;
-using KS.Shell.ShellBase.Shells;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using KS.Kernel.Threading;
-using KS.Network.Base.SpeedDial;
-using KS.ConsoleBase.Inputs.Styles.Selection;
-using KS.ConsoleBase.Writers;
+using Nitrocid.Shell.ShellBase.Shells;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.ConsoleBase.Inputs;
+using Nitrocid.Kernel.Threading;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.ConsoleBase.Inputs.Styles.Selection;
+using Nitrocid.Languages;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Network.Base.SpeedDial;
+using Nitrocid.ConsoleBase.Colors;
 
-namespace KS.Network.Base.Connections
+namespace Nitrocid.Network.Base.Connections
 {
     /// <summary>
     /// Network connection tools to manipulate with connections

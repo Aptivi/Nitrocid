@@ -19,15 +19,15 @@
 
 using System;
 using System.IO;
-using KS.Files;
-using KS.Kernel.Configuration;
 using NUnit.Framework;
-using KS.Files.Operations;
-using KS.Kernel.Debugging;
-using KS.Kernel.Extensions;
-using KS.Files.Operations.Querying;
-using KS.Kernel;
-using KS.Files.Paths;
+using Nitrocid.Kernel;
+using Nitrocid.Files;
+using Nitrocid.Files.Paths;
+using Nitrocid.Kernel.Extensions;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Files.Operations;
+using Nitrocid.Files.Operations.Querying;
+using Nitrocid.Kernel.Configuration;
 
 namespace Nitrocid.Tests
 {

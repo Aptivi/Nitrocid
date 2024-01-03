@@ -19,7 +19,7 @@
 
 using System;
 
-namespace KS.Drivers.Sorting.Bases
+namespace Nitrocid.Drivers.Sorting.Bases
 {
     internal class MergeSorting : BaseSortingDriver, ISortingDriver
     {

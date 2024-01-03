@@ -17,11 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Presentation;
-using KS.ConsoleBase.Presentation.Elements;
-using KS.Languages;
-using KS.Shell.ShellBase.Commands;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Presentation;
+using Nitrocid.ConsoleBase.Presentation.Elements;
+using Nitrocid.Languages;
+using Nitrocid.Shell.ShellBase.Commands;
 using Terminaux.Colors;
 
 namespace Nitrocid.Extras.Amusements.Commands

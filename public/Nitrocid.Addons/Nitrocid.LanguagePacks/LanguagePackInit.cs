@@ -17,13 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Debugging;
-using KS.Kernel.Extensions;
-using KS.Languages;
-using KS.Languages.Decoy;
-using KS.Misc.Reflection;
 using Newtonsoft.Json;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Extensions;
 using Nitrocid.LanguagePacks.Resources;
+using Nitrocid.Languages;
+using Nitrocid.Languages.Decoy;
+using Nitrocid.Misc.Reflection;
 using System;
 using System.Collections.ObjectModel;
 using System.Linq;

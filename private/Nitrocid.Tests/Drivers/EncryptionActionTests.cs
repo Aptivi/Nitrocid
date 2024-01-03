@@ -18,7 +18,7 @@
 //
 
 using System.IO;
-using KS.Drivers.Encryption;
+using Nitrocid.Drivers.Encryption;
 using NUnit.Framework;
 using Shouldly;
 

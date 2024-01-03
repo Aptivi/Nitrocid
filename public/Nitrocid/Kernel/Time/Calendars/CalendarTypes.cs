@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace KS.Kernel.Time.Calendars
+namespace Nitrocid.Kernel.Time.Calendars
 {
     /// <summary>
     /// Calendar types

@@ -18,17 +18,17 @@
 //
 
 using System;
-using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
-using KS.Languages;
-using KS.Kernel.Events;
-using KS.Kernel.Configuration;
 using System.Collections;
-using KS.Drivers.HardwareProber;
-using KS.Users.Windows;
-using KS.Misc.Splash;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Drivers.HardwareProber;
+using Nitrocid.Misc.Splash;
+using Nitrocid.Languages;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Users.Windows;
+using Nitrocid.Kernel.Events;
 
-namespace KS.Kernel.Hardware
+namespace Nitrocid.Kernel.Hardware
 {
     /// <summary>
     /// Hardware probe module
@@ -61,7 +61,7 @@ namespace KS.Kernel.Hardware
             EventsManager.FireEvent(EventType.HardwareProbing);
             try
             {
-                if (!KernelPlatform.IsOnWindows() || (KernelPlatform.IsOnWindows() && WindowsUserTools.IsAdministrator()))
+                if (!KernelPlatform.IsOnWindows() || KernelPlatform.IsOnWindows() && WindowsUserTools.IsAdministrator())
                 {
                     processors = HardwareProberDriver.ProbeProcessor();
                     pcMemory = HardwareProberDriver.ProbePcMemory();

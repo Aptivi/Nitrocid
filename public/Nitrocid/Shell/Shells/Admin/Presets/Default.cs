@@ -17,10 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Languages;
-using KS.Shell.Prompts;
+using Nitrocid.Languages;
+using Nitrocid.Shell.Prompts;
 
-namespace KS.Shell.Shells.Admin.Presets
+namespace Nitrocid.Shell.Shells.Admin.Presets
 {
     /// <summary>
     /// Default preset

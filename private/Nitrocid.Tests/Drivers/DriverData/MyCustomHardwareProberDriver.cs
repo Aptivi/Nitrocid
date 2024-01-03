@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Drivers.HardwareProber;
+using Nitrocid.Drivers.HardwareProber;
 
 namespace Nitrocid.Tests.Drivers.DriverData
 {

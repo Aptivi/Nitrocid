@@ -20,21 +20,21 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Drivers;
-using KS.Files.Instances;
-using KS.Files.Operations.Printing;
-using KS.Files.Operations.Querying;
-using KS.Kernel.Configuration;
-using KS.Kernel.Debugging;
-using KS.Languages;
-using KS.Misc.Reflection;
-using KS.Misc.Text;
-using KS.ConsoleBase.Writers.FancyWriters;
-using KS.ConsoleBase.Writers;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Drivers;
+using Nitrocid.Misc.Reflection;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Languages;
+using Nitrocid.ConsoleBase.Writers.FancyWriters;
+using Nitrocid.Files.Operations.Printing;
+using Nitrocid.Misc.Text;
+using Nitrocid.Files.Instances;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.Files.Operations.Querying;
 
-namespace KS.Files.Folders
+namespace Nitrocid.Files.Folders
 {
     /// <summary>
     /// File listing module

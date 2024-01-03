@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace KS.Files.Instances
+namespace Nitrocid.Files.Instances
 {
     /// <summary>
     /// Enumeration for file system entry type

@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace KS.Kernel.Time
+namespace Nitrocid.Kernel.Time
 {
     /// <summary>
     /// Specifies the time/date format type.

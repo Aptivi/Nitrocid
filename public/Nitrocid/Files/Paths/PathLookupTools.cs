@@ -20,10 +20,10 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using KS.Drivers;
-using KS.Kernel.Configuration;
+using Nitrocid.Drivers;
+using Nitrocid.Kernel.Configuration;
 
-namespace KS.Files.Paths
+namespace Nitrocid.Files.Paths
 {
     /// <summary>
     /// Path lookup tools module

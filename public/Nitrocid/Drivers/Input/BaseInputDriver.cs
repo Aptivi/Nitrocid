@@ -17,17 +17,17 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using In = KS.ConsoleBase.Inputs.Input;
-using KS.Kernel.Debugging;
-using KS.Languages;
+using In = Nitrocid.ConsoleBase.Inputs.Input;
 using System;
-using KS.Kernel.Exceptions;
 using Terminaux.Reader;
 using System.Threading;
-using KS.ConsoleBase;
-using KS.Misc.Screensaver;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Misc.Screensaver;
+using Nitrocid.ConsoleBase;
+using Nitrocid.Languages;
+using Nitrocid.Kernel.Exceptions;
 
-namespace KS.Drivers.Input
+namespace Nitrocid.Drivers.Input
 {
     /// <summary>
     /// Base input driver

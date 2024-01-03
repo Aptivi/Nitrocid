@@ -19,25 +19,25 @@
 
 using System;
 using System.Linq;
-using KS.Files;
-using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
-using KS.Languages;
-using KS.Misc.Notifications;
-using KS.Misc.Splash;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using KS.Kernel.Events;
-using KS.ConsoleBase.Colors;
-using KS.Kernel.Configuration.Instances;
 using System.Collections.Generic;
-using KS.Files.Operations;
-using KS.Files.Operations.Querying;
-using KS.Files.Paths;
-using KS.ConsoleBase.Inputs.Styles.Infobox;
-using KS.Misc.Text;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Files;
+using Nitrocid.Files.Operations;
+using Nitrocid.Misc.Splash;
+using Nitrocid.Misc.Notifications;
+using Nitrocid.Languages;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Kernel.Configuration.Instances;
+using Nitrocid.Misc.Text;
+using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
+using Nitrocid.Files.Paths;
+using Nitrocid.Kernel.Events;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Files.Operations.Querying;
 
-namespace KS.Kernel.Configuration
+namespace Nitrocid.Kernel.Configuration
 {
     /// <summary>
     /// Configuration module

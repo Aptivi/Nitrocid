@@ -17,11 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Debugging;
-using KS.Kernel.Starting.Environment.Instances;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Starting.Environment.Instances;
 using System.Collections.Generic;
 
-namespace KS.Kernel.Starting.Environment
+namespace Nitrocid.Kernel.Starting.Environment
 {
     internal static class EnvironmentTools
     {

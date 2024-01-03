@@ -17,15 +17,15 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Inputs;
-using KS.ConsoleBase.Writers;
-using KS.Kernel.Exceptions;
-using KS.Languages;
-using KS.Misc.Text;
-using KS.Shell.ShellBase.Commands;
 using Microsoft.Data.Sqlite;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Inputs;
+using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Extras.SqlShell.Tools;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Text;
+using Nitrocid.Shell.ShellBase.Commands;
 using System.Collections.Generic;
 
 namespace Nitrocid.Extras.SqlShell.Sql.Commands

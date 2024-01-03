@@ -17,13 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Interactive;
-using KS.Languages;
+using Nitrocid.ConsoleBase.Interactive;
+using Nitrocid.Languages;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace KS.Kernel.Debugging.Testing.Facades.FacadeData
+namespace Nitrocid.Kernel.Debugging.Testing.Facades.FacadeData
 {
     internal class CliDoublePaneSlowTestData : BaseInteractiveTui, IInteractiveTui
     {

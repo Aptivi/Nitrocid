@@ -17,15 +17,15 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Files.Instances;
-using KS.Files.LineEndings;
-using FS = KS.Files.FilesystemTools;
-using KS.Kernel.Debugging;
+using FS = Nitrocid.Files.FilesystemTools;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Files.Instances;
+using Nitrocid.Files.LineEndings;
 
-namespace KS.Drivers.Filesystem.Bases
+namespace Nitrocid.Drivers.Filesystem.Bases
 {
     internal class DefaultFilesystemDebug : BaseFilesystemDriver, IFilesystemDriver
     {

@@ -17,17 +17,17 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Files;
-using KS.Files.Folders;
-using KS.Kernel.Threading;
-using KS.Misc.Text;
-using KS.Shell.ShellBase.Commands;
-using KS.Shell.ShellBase.Shells;
-using KS.Shell.ShellBase.Switches;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.Files;
+using Nitrocid.Files.Folders;
+using Nitrocid.Kernel.Threading;
+using Nitrocid.Misc.Text;
+using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.Shell.ShellBase.Shells;
+using Nitrocid.Shell.ShellBase.Switches;
 using System.Linq;
 
-namespace KS.Shell.Shells.UESH.Commands
+namespace Nitrocid.Shell.Shells.UESH.Commands
 {
     /// <summary>
     /// Finds a file in the specified directory or in the current directory

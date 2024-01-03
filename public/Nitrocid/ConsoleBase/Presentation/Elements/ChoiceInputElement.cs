@@ -17,20 +17,20 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Inputs;
-using KS.ConsoleBase.Colors;
-using KS.Languages;
-using KS.Misc.Text;
 using System;
 using System.Linq;
 using System.Collections.Generic;
 using System.Collections;
-using KS.ConsoleBase.Writers.ConsoleWriters;
 using Terminaux.Reader;
 using System.Text;
-using KS.ConsoleBase.Writers;
+using Nitrocid.ConsoleBase.Inputs;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Text;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 
-namespace KS.ConsoleBase.Presentation.Elements
+namespace Nitrocid.ConsoleBase.Presentation.Elements
 {
     /// <summary>
     /// Choice input element

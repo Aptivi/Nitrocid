@@ -17,17 +17,17 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Colors;
-using KS.Languages;
-using KS.Shell.ShellBase.Commands;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Kernel.Exceptions;
-using KS.Files.Folders;
-using KS.Files.Operations;
-using KS.Files.Paths;
-using KS.ConsoleBase.Writers;
+using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Files.Operations;
+using Nitrocid.Files.Folders;
+using Nitrocid.Languages;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Files.Paths;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 
-namespace KS.Shell.Shells.Debug.Commands
+namespace Nitrocid.Shell.Shells.Debug.Commands
 {
     /// <summary>
     /// You can view the debug log of a session

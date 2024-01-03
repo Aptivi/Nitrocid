@@ -17,9 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase;
-using KS.Misc.Screensaver;
+using Nitrocid.ConsoleBase;
 using Nitrocid.Extras.Amusements.Amusements.Games;
+using Nitrocid.Misc.Screensaver;
 
 namespace Nitrocid.Extras.Amusements.Screensavers
 {

@@ -95,7 +95,7 @@ namespace Nitrocid.Analyzers.Test.Kernel
                 using System.Text;
                 using System.Threading.Tasks;
                 using System.Diagnostics;
-                using KS.Kernel;
+                using Nitrocid.Kernel;
 
                 namespace ConsoleApplication1
                 {

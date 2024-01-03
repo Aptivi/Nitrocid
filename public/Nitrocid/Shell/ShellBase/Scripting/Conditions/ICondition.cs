@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace KS.Shell.ShellBase.Scripting.Conditions
+namespace Nitrocid.Shell.ShellBase.Scripting.Conditions
 {
     /// <summary>
     /// UESH scripting condition interface

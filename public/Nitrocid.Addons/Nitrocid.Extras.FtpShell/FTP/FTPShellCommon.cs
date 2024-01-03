@@ -19,8 +19,8 @@
 
 using System.Collections.Generic;
 using FluentFTP;
-using KS.Network.Base.Connections;
-using KS.Shell.ShellBase.Commands;
+using Nitrocid.Network.Base.Connections;
+using Nitrocid.Shell.ShellBase.Commands;
 
 namespace Nitrocid.Extras.FtpShell.FTP
 {

@@ -21,10 +21,10 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using KS.Files;
-using KS.Kernel.Debugging;
 using Microsoft.Data.Sqlite;
 using Nitrocid.Extras.SqlShell.Sql;
+using Nitrocid.Files;
+using Nitrocid.Kernel.Debugging;
 
 namespace Nitrocid.Extras.SqlShell.Tools
 {

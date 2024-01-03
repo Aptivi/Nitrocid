@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace KS.Files.Folders
+namespace Nitrocid.Files.Folders
 {
     /// <summary>
     /// Sort directions

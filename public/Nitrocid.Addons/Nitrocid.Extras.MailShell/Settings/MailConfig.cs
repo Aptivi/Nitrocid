@@ -17,13 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Configuration;
-using KS.Kernel.Configuration.Instances;
-using KS.Kernel.Configuration.Settings;
-using KS.Shell.Prompts;
 using MimeKit.Text;
 using Newtonsoft.Json;
 using Nitrocid.Extras.MailShell.Mail;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Kernel.Configuration.Instances;
+using Nitrocid.Kernel.Configuration.Settings;
+using Nitrocid.Shell.Prompts;
 
 namespace Nitrocid.Extras.MailShell.Settings
 {

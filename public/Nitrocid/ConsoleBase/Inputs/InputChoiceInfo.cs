@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace KS.ConsoleBase.Inputs
+namespace Nitrocid.ConsoleBase.Inputs
 {
     /// <summary>
     /// Choice information for input

@@ -17,13 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Exceptions;
-using KS.Languages;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace KS.Kernel.Time.Alarm
+namespace Nitrocid.Kernel.Time.Alarm
 {
     /// <summary>
     /// Alarm tools

@@ -21,17 +21,17 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Threading;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers;
-using KS.Drivers;
-using KS.Files.Operations.Printing;
-using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
-using KS.Languages;
-using KS.Misc.Reflection;
-using KS.Shell.Shells.Hex;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Drivers;
+using Nitrocid.Files.Operations.Printing;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Reflection;
+using Nitrocid.Shell.Shells.Hex;
 
-namespace KS.Files.Editors.HexEdit
+namespace Nitrocid.Files.Editors.HexEdit
 {
     /// <summary>
     /// Hex editor tools module

@@ -17,14 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Colors;
-using KS.Languages;
 using Newtonsoft.Json.Linq;
-using KS.Resources;
+using Nitrocid.Resources;
 using System.Linq;
-using KS.ConsoleBase.Writers;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Languages;
+using Nitrocid.ConsoleBase.Colors;
 
-namespace KS.Kernel.Debugging.Testing.Facades
+namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
     internal class CheckLocalizationLines : TestFacade
     {

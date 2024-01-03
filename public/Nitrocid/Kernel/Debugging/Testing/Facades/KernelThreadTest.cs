@@ -17,12 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Debugging.Testing.Facades.FacadeData;
-using KS.Kernel.Threading;
-using KS.Languages;
+using Nitrocid.Kernel.Debugging.Testing.Facades.FacadeData;
+using Nitrocid.Kernel.Threading;
+using Nitrocid.Languages;
 using System.Threading;
 
-namespace KS.Kernel.Debugging.Testing.Facades
+namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
     internal class KernelThreadTest : TestFacade
     {

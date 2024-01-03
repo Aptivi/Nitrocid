@@ -19,18 +19,18 @@
 
 using Figletize;
 using Figletize.Utilities;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Drivers;
-using KS.Kernel.Debugging;
-using KS.Languages;
-using KS.Misc.Text;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.Drivers;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Text;
 using System;
 using System.Text;
 using System.Threading;
 using Terminaux.Colors;
 
-namespace KS.ConsoleBase.Writers.FancyWriters
+namespace Nitrocid.ConsoleBase.Writers.FancyWriters
 {
     /// <summary>
     /// Centered Figlet writer
@@ -205,12 +205,12 @@ namespace KS.ConsoleBase.Writers.FancyWriters
             if (consoleX < 0 || consoleY > ConsoleWrapper.WindowHeight)
             {
                 // The figlet won't fit, so use small text
-                consoleX = (ConsoleWrapper.WindowWidth / 2) - figWidthFallback;
+                consoleX = ConsoleWrapper.WindowWidth / 2 - figWidthFallback;
                 consoleY = ConsoleWrapper.WindowHeight / 2 - figHeightFallback;
                 if (consoleX < 0 || consoleY > ConsoleWrapper.WindowHeight)
                 {
                     // The fallback figlet also won't fit, so use smaller text
-                    consoleX = (ConsoleWrapper.WindowWidth / 2) - (Text.Length / 2);
+                    consoleX = ConsoleWrapper.WindowWidth / 2 - Text.Length / 2;
                     figBuilder.Append(
                         DriverHandler.CurrentConsoleDriverLocal.RenderWherePlain(Text, consoleX, consoleY, true, Vars)
                     );
@@ -255,12 +255,12 @@ namespace KS.ConsoleBase.Writers.FancyWriters
             if (consoleX < 0 || consoleY > ConsoleWrapper.WindowHeight)
             {
                 // The figlet won't fit, so use small text
-                consoleX = (ConsoleWrapper.WindowWidth / 2) - figWidthFallback;
+                consoleX = ConsoleWrapper.WindowWidth / 2 - figWidthFallback;
                 consoleY = ConsoleWrapper.WindowHeight / 2 - figHeightFallback;
                 if (consoleX < 0 || consoleY > ConsoleWrapper.WindowHeight)
                 {
                     // The fallback figlet also won't fit, so use smaller text
-                    consoleX = (ConsoleWrapper.WindowWidth / 2) - (Text.Length / 2);
+                    consoleX = ConsoleWrapper.WindowWidth / 2 - Text.Length / 2;
                     figBuilder.Append(
                         ForegroundColor.VTSequenceForeground +
                         BackgroundColor.VTSequenceBackground +
@@ -318,12 +318,12 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 if (consoleX < 0 || consoleMaxY > ConsoleWrapper.WindowHeight)
                 {
                     // The figlet won't fit, so use small text
-                    consoleX = (ConsoleWrapper.WindowWidth / 2) - figWidthFallback;
+                    consoleX = ConsoleWrapper.WindowWidth / 2 - figWidthFallback;
                     consoleMaxY = top + figHeightFallback;
                     if (consoleX < 0 || consoleMaxY > ConsoleWrapper.WindowHeight)
                     {
                         // The fallback figlet also won't fit, so use smaller text
-                        consoleX = (ConsoleWrapper.WindowWidth / 2) - (Text.Length / 2);
+                        consoleX = ConsoleWrapper.WindowWidth / 2 - Text.Length / 2;
                         figBuilder.Append(
                             DriverHandler.CurrentConsoleDriverLocal.RenderWherePlain(Text, consoleX, top, true, Vars)
                         );
@@ -378,12 +378,12 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 if (consoleX < 0 || consoleMaxY > ConsoleWrapper.WindowHeight)
                 {
                     // The figlet won't fit, so use small text
-                    consoleX = (ConsoleWrapper.WindowWidth / 2) - figWidthFallback;
+                    consoleX = ConsoleWrapper.WindowWidth / 2 - figWidthFallback;
                     consoleMaxY = top + figHeightFallback;
                     if (consoleX < 0 || consoleMaxY > ConsoleWrapper.WindowHeight)
                     {
                         // The fallback figlet also won't fit, so use smaller text
-                        consoleX = (ConsoleWrapper.WindowWidth / 2) - (Text.Length / 2);
+                        consoleX = ConsoleWrapper.WindowWidth / 2 - Text.Length / 2;
                         figBuilder.Append(
                             ForegroundColor.VTSequenceForeground +
                             BackgroundColor.VTSequenceBackground +

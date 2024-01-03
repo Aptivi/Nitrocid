@@ -19,9 +19,9 @@
 
 using System.IO;
 using System.Text;
-using KS.ConsoleBase.Colors;
-using KS.Shell.Prompts;
+using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Extras.JsonShell.Tools;
+using Nitrocid.Shell.Prompts;
 
 namespace Nitrocid.Extras.JsonShell.Json.Presets
 {

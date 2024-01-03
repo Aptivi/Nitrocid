@@ -17,18 +17,18 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Buffered;
-using KS.Drivers;
-using KS.Drivers.Console;
-using KS.Kernel.Debugging;
-using KS.Kernel.Events;
-using KS.Kernel.Power;
-using KS.Kernel.Threading;
-using KS.Misc.Screensaver;
+using Nitrocid.ConsoleBase.Buffered;
+using Nitrocid.Drivers;
+using Nitrocid.Drivers.Console;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Events;
+using Nitrocid.Kernel.Power;
+using Nitrocid.Kernel.Threading;
+using Nitrocid.Misc.Screensaver;
 using System;
 using System.Threading;
 
-namespace KS.ConsoleBase
+namespace Nitrocid.ConsoleBase
 {
     /// <summary>
     /// The console resize listener module

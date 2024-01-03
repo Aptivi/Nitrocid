@@ -17,18 +17,18 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers;
-using KS.Files.Editors.TextEdit;
-using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
-using KS.Languages;
-using KS.Misc.Reflection;
-using KS.Misc.Text;
-using KS.Shell.ShellBase.Commands;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Files.Editors.TextEdit;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Reflection;
+using Nitrocid.Misc.Text;
+using Nitrocid.Shell.ShellBase.Commands;
 using System;
 
-namespace KS.Shell.Shells.Text.Commands
+namespace Nitrocid.Shell.Shells.Text.Commands
 {
     /// <summary>
     /// Replaces a word or phrase with another one in a line using regular expressions

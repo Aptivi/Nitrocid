@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace KS.ConsoleBase.Colors
+namespace Nitrocid.ConsoleBase.Colors
 {
     /// <summary>
     /// Enumeration for the color setting error reasons

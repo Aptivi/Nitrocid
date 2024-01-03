@@ -19,11 +19,11 @@
 
 using System.Collections.Generic;
 using System.Linq;
-using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
-using KS.Languages;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
 
-namespace KS.Modifications.ManPages
+namespace Nitrocid.Modifications.ManPages
 {
     /// <summary>
     /// Mod manual page management module

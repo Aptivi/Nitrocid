@@ -17,8 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Network.Base.Connections;
-using KS.Network.Base.SpeedDial;
+using Nitrocid.Network.Base.Connections;
+using Nitrocid.Network.Base.SpeedDial;
 using NUnit.Framework;
 using Shouldly;
 

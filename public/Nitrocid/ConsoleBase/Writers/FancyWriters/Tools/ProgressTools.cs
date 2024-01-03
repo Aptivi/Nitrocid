@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace KS.ConsoleBase.Writers.FancyWriters.Tools
+namespace Nitrocid.ConsoleBase.Writers.FancyWriters.Tools
 {
     /// <summary>
     /// Progress tools

@@ -17,8 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Files.Operations.Querying;
-using KS.Files.Paths;
+using Nitrocid.Files.Operations.Querying;
+using Nitrocid.Files.Paths;
 using NUnit.Framework;
 using Shouldly;
 using System;

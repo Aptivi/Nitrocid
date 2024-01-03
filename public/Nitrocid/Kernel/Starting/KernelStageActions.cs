@@ -17,21 +17,21 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Writers.MiscWriters;
-using KS.Kernel.Configuration;
-using KS.Kernel.Debugging.RemoteDebug;
-using KS.Kernel.Hardware;
-using KS.Kernel.Threading.Watchdog;
-using KS.Kernel.Updates;
-using KS.Languages;
-using KS.Misc.Notifications;
-using KS.Misc.Splash;
-using KS.Modifications;
-using KS.Network.RPC;
-using KS.Users;
-using KS.Users.Groups;
+using Nitrocid.ConsoleBase.Writers.MiscWriters;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Kernel.Debugging.RemoteDebug;
+using Nitrocid.Kernel.Hardware;
+using Nitrocid.Kernel.Threading.Watchdog;
+using Nitrocid.Kernel.Updates;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Notifications;
+using Nitrocid.Misc.Splash;
+using Nitrocid.Modifications;
+using Nitrocid.Network.RPC;
+using Nitrocid.Users;
+using Nitrocid.Users.Groups;
 
-namespace KS.Kernel.Starting
+namespace Nitrocid.Kernel.Starting
 {
     internal static class KernelStageActions
     {

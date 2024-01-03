@@ -18,16 +18,16 @@
 //
 
 using System;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers;
-using KS.Files.Editors.HexEdit;
-using KS.Kernel.Exceptions;
-using KS.Languages;
-using KS.Misc.Reflection;
-using KS.Misc.Text;
-using KS.Shell.ShellBase.Commands;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Files.Editors.HexEdit;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Reflection;
+using Nitrocid.Misc.Text;
+using Nitrocid.Shell.ShellBase.Commands;
 
-namespace KS.Shell.Shells.Hex.Commands
+namespace Nitrocid.Shell.Shells.Hex.Commands
 {
     /// <summary>
     /// Queries a byte in a specified byte, a range of bytes, or entirely

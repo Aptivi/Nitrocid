@@ -17,8 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase;
-using KS.Misc.Text;
+using Nitrocid.ConsoleBase;
+using Nitrocid.Misc.Text;
 using NUnit.Framework;
 using Shouldly;
 using System;

@@ -19,10 +19,10 @@
 
 using BassBoom.Basolia.File;
 using BassBoom.Basolia.Format;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Inputs.Styles.Infobox;
-using KS.Files.Operations.Querying;
-using KS.Languages;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
+using Nitrocid.Files.Operations.Querying;
+using Nitrocid.Languages;
 using System.IO;
 
 namespace Nitrocid.Extras.BassBoom.Player

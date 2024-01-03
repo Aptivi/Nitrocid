@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Misc.Reflection;
+using Nitrocid.Misc.Reflection;
 using NUnit.Framework;
 using Shouldly;
 

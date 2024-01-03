@@ -19,14 +19,14 @@
 
 using System;
 using System.Linq;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers;
-using KS.Files;
-using KS.Files.Operations.Printing;
-using KS.Kernel.Debugging;
-using KS.Shell.ShellBase.Commands;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Files;
+using Nitrocid.Files.Operations.Printing;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Shell.ShellBase.Commands;
 
-namespace KS.Shell.Shells.UESH.Commands
+namespace Nitrocid.Shell.Shells.UESH.Commands
 {
     /// <summary>
     /// Prints files to console.

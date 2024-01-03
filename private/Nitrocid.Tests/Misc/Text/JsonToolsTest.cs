@@ -17,9 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Misc.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Nitrocid.Misc.Text;
 using NUnit.Framework;
 using Shouldly;
 using System.IO;

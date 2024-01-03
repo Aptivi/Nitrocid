@@ -17,12 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase;
-using KS.Kernel.Debugging;
+using Nitrocid.ConsoleBase;
+using Nitrocid.Kernel.Debugging;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 
-namespace KS.Kernel.Power
+namespace Nitrocid.Kernel.Power
 {
     internal static class PowerSignalHandlers
     {

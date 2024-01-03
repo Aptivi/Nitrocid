@@ -17,23 +17,23 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Exceptions;
 using System.Collections.Generic;
 using VisualCard.Parts;
 using VisualCard;
 using System;
-using KS.Kernel.Debugging;
-using KS.Languages;
-using KS.Files.Folders;
-using KS.Files.Operations;
 using System.Linq;
-using KS.Drivers.Encryption;
 using System.IO;
 using VisualCard.Converters;
-using KS.Misc.Text.Probers.Regexp;
-using KS.Files.Operations.Querying;
-using KS.Files.Paths;
 using VisualCard.Parsers;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Files.Folders;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Files.Paths;
+using Nitrocid.Files.Operations.Querying;
+using Nitrocid.Files.Operations;
+using Nitrocid.Languages;
+using Nitrocid.Drivers.Encryption;
+using Nitrocid.Misc.Text.Probers.Regexp;
 
 namespace Nitrocid.Extras.Contacts.Contacts
 {

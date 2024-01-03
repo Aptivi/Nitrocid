@@ -17,22 +17,22 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Inputs;
-using KS.ConsoleBase.Writers;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Drivers.Encryption;
-using KS.Kernel;
-using KS.Kernel.Configuration;
-using KS.Kernel.Debugging;
-using KS.Kernel.Power;
-using KS.Languages;
-using KS.Misc.Screensaver;
-using KS.Misc.Text.Probers.Motd;
-using KS.Misc.Text.Probers.Placeholder;
+using Nitrocid.ConsoleBase;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Inputs;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.Drivers.Encryption;
+using Nitrocid.Kernel;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Power;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Screensaver;
+using Nitrocid.Misc.Text.Probers.Motd;
+using Nitrocid.Misc.Text.Probers.Placeholder;
 
-namespace KS.Users.Login.Handlers
+namespace Nitrocid.Users.Login.Handlers
 {
     /// <summary>
     /// Abstract class of the base login handler

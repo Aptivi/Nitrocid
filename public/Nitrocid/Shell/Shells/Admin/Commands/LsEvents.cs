@@ -17,11 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Kernel.Events;
-using KS.Shell.ShellBase.Commands;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.Kernel.Events;
+using Nitrocid.Shell.ShellBase.Commands;
 
-namespace KS.Shell.Shells.Admin.Commands
+namespace Nitrocid.Shell.Shells.Admin.Commands
 {
     /// <summary>
     /// Shows the list of fired events

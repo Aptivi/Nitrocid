@@ -21,7 +21,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace KS.Modifications.ManPages
+namespace Nitrocid.Modifications.ManPages
 {
     /// <summary>
     /// Manual page class instance

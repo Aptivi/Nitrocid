@@ -21,29 +21,29 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
-using KS.ConsoleBase;
-using KS.ConsoleBase.Colors;
-using KS.Kernel.Debugging;
-using KS.Misc.Splash;
-using KS.Misc.Text;
-using KS.Kernel.Events;
-using KS.Kernel.Configuration;
-using KS.Kernel.Threading;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Misc.Screensaver;
 using Terminaux.Colors;
-using KS.Kernel.Power;
-using KS.Users.Login;
-using KS.Languages;
-using KS.Files.Paths;
 using System.IO;
-using KS.Files.Operations.Querying;
 using Newtonsoft.Json;
-using KS.Files.Operations;
 using System.Text;
-using KS.ConsoleBase.Writers.FancyWriters;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Users.Login;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Threading;
+using Nitrocid.Misc.Screensaver;
+using Nitrocid.ConsoleBase;
+using Nitrocid.Files.Operations;
+using Nitrocid.Misc.Splash;
+using Nitrocid.Languages;
+using Nitrocid.ConsoleBase.Writers.FancyWriters;
+using Nitrocid.Misc.Text;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.Files.Paths;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Kernel.Events;
+using Nitrocid.Files.Operations.Querying;
+using Nitrocid.Kernel.Power;
 
-namespace KS.Misc.Notifications
+namespace Nitrocid.Misc.Notifications
 {
     /// <summary>
     /// Notifications module
@@ -339,7 +339,7 @@ namespace KS.Misc.Notifications
                                     if (indeterminateStep > 1)
                                         indeterminateStep = 0;
                                     Thread.Sleep(indeterminate ? 250 : 1);
-                                    
+
                                     // Print the buffer
                                     TextWriterColor.WritePlain(printBuffer.ToString(), false);
                                     printBuffer.Clear();

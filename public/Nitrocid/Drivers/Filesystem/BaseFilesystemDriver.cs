@@ -17,12 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Files.Attributes;
-using KS.Files.Folders;
-using KS.Files.LineEndings;
-using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
-using KS.Languages;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -30,25 +24,32 @@ using IOPath = System.IO.Path;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using FS = KS.Files.FilesystemTools;
+using FS = Nitrocid.Files.FilesystemTools;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
-using KS.Files.Operations;
-using KS.Kernel;
-using KS.ConsoleBase.Colors;
-using KS.Misc.Text;
-using KS.Kernel.Events;
-using KS.Kernel.Configuration;
-using KS.Misc.Reflection;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Files.Instances;
-using KS.Misc.Text.Probers.Regexp;
-using KS.Files.Operations.Querying;
-using KS.Kernel.Extensions;
-using KS.Files.Paths;
-using KS.ConsoleBase.Writers;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Kernel;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.ConsoleBase;
+using Nitrocid.Misc.Reflection;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Files.Operations;
+using Nitrocid.Files.Folders;
+using Nitrocid.Languages;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Misc.Text;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.Files.Paths;
+using Nitrocid.Files.Instances;
+using Nitrocid.Files.LineEndings;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Kernel.Events;
+using Nitrocid.Files.Attributes;
+using Nitrocid.Files.Operations.Querying;
+using Nitrocid.Misc.Text.Probers.Regexp;
+using Nitrocid.Kernel.Extensions;
 
-namespace KS.Drivers.Filesystem
+namespace Nitrocid.Drivers.Filesystem
 {
     /// <summary>
     /// Base Filesystem driver
@@ -459,8 +460,8 @@ namespace KS.Drivers.Filesystem
                         RenderedByteChar = ProjectedByteChar;
                     }
                     DebugWriter.WriteDebug(DebugLevel.I, "Rendered byte char: {0}", ProjectedByteChar);
-                    TextWriterWhereColor.WriteWhereColor($"{CurrentByte:X2}", ByteWritePositionX + 3 * (ByteNumberEachSixteen - 1), ConsoleBase.ConsoleWrapper.CursorTop, false, (ByteContent == CurrentByte ? highlightedColor : unhighlightedColor));
-                    TextWriterWhereColor.WriteWhereColor($"{RenderedByteChar}", ByteCharWritePositionX + (ByteNumberEachSixteen - 1), ConsoleBase.ConsoleWrapper.CursorTop, false, (ByteContent == CurrentByte ? highlightedColor : unhighlightedColor));
+                    TextWriterWhereColor.WriteWhereColor($"{CurrentByte:X2}", ByteWritePositionX + 3 * (ByteNumberEachSixteen - 1), ConsoleWrapper.CursorTop, false, ByteContent == CurrentByte ? highlightedColor : unhighlightedColor);
+                    TextWriterWhereColor.WriteWhereColor($"{RenderedByteChar}", ByteCharWritePositionX + (ByteNumberEachSixteen - 1), ConsoleWrapper.CursorTop, false, ByteContent == CurrentByte ? highlightedColor : unhighlightedColor);
 
                     // Increase the byte number
                     ByteNumberEachSixteen += 1;

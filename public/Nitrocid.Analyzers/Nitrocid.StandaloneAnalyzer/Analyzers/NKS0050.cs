@@ -108,7 +108,7 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
 
                     // Check the imports
                     var compilation = finalNode as CompilationUnitSyntax;
-                    if (compilation?.Usings.Any(u => u.Name.ToString() == "KS.Misc.Text") == false)
+                    if (compilation?.Usings.Any(u => u.Name.ToString() == "Nitrocid.Misc.Text") == false)
                     {
                         var name = SyntaxFactory.QualifiedName(
                             SyntaxFactory.QualifiedName(

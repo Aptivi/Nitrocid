@@ -20,10 +20,10 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using KS.ConsoleBase;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.ConsoleBase;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 using Nitrocid.LocaleGen.Core.Serializer;
 
 namespace Nitrocid.LocaleGen

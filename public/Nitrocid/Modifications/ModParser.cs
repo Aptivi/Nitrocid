@@ -22,25 +22,25 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Reflection;
-using KS.Files;
-using KS.Kernel;
-using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
-using KS.Languages;
-using KS.Misc.Reflection;
-using KS.Misc.Splash;
-using KS.Modifications.ManPages;
-using KS.Kernel.Events;
-using KS.Modifications.Dependencies;
-using KS.Files.Operations;
-using KS.Files.Operations.Querying;
 using Newtonsoft.Json;
-using KS.Languages.Decoy;
-using KS.Files.Paths;
-using KS.Security.Signing;
 using Textify.Versioning;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel;
+using Nitrocid.Files;
+using Nitrocid.Misc.Reflection;
+using Nitrocid.Files.Operations;
+using Nitrocid.Misc.Splash;
+using Nitrocid.Languages;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Files.Paths;
+using Nitrocid.Kernel.Events;
+using Nitrocid.Modifications.ManPages;
+using Nitrocid.Security.Signing;
+using Nitrocid.Files.Operations.Querying;
+using Nitrocid.Modifications.Dependencies;
+using Nitrocid.Languages.Decoy;
 
-namespace KS.Modifications
+namespace Nitrocid.Modifications
 {
     /// <summary>
     /// Mod parsing module

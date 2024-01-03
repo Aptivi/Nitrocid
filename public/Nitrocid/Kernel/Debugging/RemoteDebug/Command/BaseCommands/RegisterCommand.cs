@@ -17,9 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Languages;
+using Nitrocid.Languages;
 
-namespace KS.Kernel.Debugging.RemoteDebug.Command.BaseCommands
+namespace Nitrocid.Kernel.Debugging.RemoteDebug.Command.BaseCommands
 {
     internal class RegisterCommand : RemoteDebugBaseCommand
     {

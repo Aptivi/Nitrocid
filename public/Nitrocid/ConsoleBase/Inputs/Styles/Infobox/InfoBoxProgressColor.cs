@@ -19,19 +19,19 @@
 
 using System;
 using System.Threading;
-using KS.Kernel.Debugging;
-using KS.ConsoleBase.Colors;
-using KS.Languages;
-using KS.Misc.Text;
 using System.Collections.Generic;
-using KS.ConsoleBase.Writers.FancyWriters.Tools;
 using Terminaux.Colors;
 using System.Text;
 using Textify.Sequences.Builder.Types;
-using KS.ConsoleBase.Writers.FancyWriters;
-using KS.ConsoleBase.Buffered;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Languages;
+using Nitrocid.ConsoleBase.Writers.FancyWriters;
+using Nitrocid.Misc.Text;
+using Nitrocid.ConsoleBase.Writers.FancyWriters.Tools;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Buffered;
 
-namespace KS.ConsoleBase.Inputs.Styles.Infobox
+namespace Nitrocid.ConsoleBase.Inputs.Styles.Infobox
 {
     /// <summary>
     /// Info box writer with progress and color support

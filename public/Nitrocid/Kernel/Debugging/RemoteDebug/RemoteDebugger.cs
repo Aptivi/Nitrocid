@@ -23,18 +23,18 @@ using System.IO;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading;
-using KS.ConsoleBase.Colors;
-using KS.Languages;
-using KS.Misc.Notifications;
-using KS.Kernel.Events;
-using KS.Kernel.Debugging.RemoteDebug.Command;
-using KS.Kernel.Configuration;
-using KS.Kernel.Threading;
 using Textify.Versioning;
-using KS.Kernel.Debugging.RemoteDebug.RemoteChat;
-using KS.ConsoleBase.Writers;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Kernel.Threading;
+using Nitrocid.Kernel.Debugging.RemoteDebug.Command;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Misc.Notifications;
+using Nitrocid.Languages;
+using Nitrocid.Kernel.Events;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Kernel.Debugging.RemoteDebug.RemoteChat;
 
-namespace KS.Kernel.Debugging.RemoteDebug
+namespace Nitrocid.Kernel.Debugging.RemoteDebug
 {
     /// <summary>
     /// Remote debugger module

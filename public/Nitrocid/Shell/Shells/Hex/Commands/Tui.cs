@@ -17,10 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Files.Editors.HexEdit;
-using KS.Shell.ShellBase.Commands;
+using Nitrocid.Files.Editors.HexEdit;
+using Nitrocid.Shell.ShellBase.Commands;
 
-namespace KS.Shell.Shells.Hex.Commands
+namespace Nitrocid.Shell.Shells.Hex.Commands
 {
     /// <summary>
     /// Opens the interactive hex editor

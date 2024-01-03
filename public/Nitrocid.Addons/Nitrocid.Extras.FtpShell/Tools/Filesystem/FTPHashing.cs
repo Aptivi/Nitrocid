@@ -20,10 +20,10 @@
 using System;
 using System.Collections.Generic;
 using FluentFTP;
-using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
-using KS.Languages;
 using Nitrocid.Extras.FtpShell.FTP;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
 
 namespace Nitrocid.Extras.FtpShell.Tools.Filesystem
 {

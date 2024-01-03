@@ -17,10 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Hardware;
-using KS.Languages;
+using Nitrocid.Kernel.Hardware;
+using Nitrocid.Languages;
 
-namespace KS.Kernel.Debugging.Testing.Facades
+namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
     internal class ProbeHardware : TestFacade
     {

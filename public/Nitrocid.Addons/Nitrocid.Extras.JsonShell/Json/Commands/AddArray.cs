@@ -17,10 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Shell.ShellBase.Commands;
-using KS.Shell.ShellBase.Switches;
 using Newtonsoft.Json.Linq;
 using Nitrocid.Extras.JsonShell.Tools;
+using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.Shell.ShellBase.Switches;
 using System.Linq;
 
 #pragma warning disable CS0618

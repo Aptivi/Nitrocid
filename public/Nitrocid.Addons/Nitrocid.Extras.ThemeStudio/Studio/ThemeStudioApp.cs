@@ -19,18 +19,18 @@
 
 using System.Collections.Generic;
 using System.Linq;
-using KS.ConsoleBase;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Inputs;
-using KS.ConsoleBase.Inputs.Styles.Selection;
-using KS.ConsoleBase.Themes;
-using KS.ConsoleBase.Writers;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Files.Folders;
-using KS.Kernel.Debugging;
-using KS.Kernel.Events;
-using KS.Languages;
-using KS.Misc.Text;
+using Nitrocid.ConsoleBase;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Inputs;
+using Nitrocid.ConsoleBase.Inputs.Styles.Selection;
+using Nitrocid.ConsoleBase.Themes;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.Files.Folders;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Events;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Text;
 using Terminaux.Colors;
 
 namespace Nitrocid.Extras.ThemeStudio.Studio

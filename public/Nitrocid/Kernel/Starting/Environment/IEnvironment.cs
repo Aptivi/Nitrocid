@@ -19,7 +19,7 @@
 
 using System;
 
-namespace KS.Kernel.Starting.Environment
+namespace Nitrocid.Kernel.Starting.Environment
 {
     internal interface IEnvironment
     {

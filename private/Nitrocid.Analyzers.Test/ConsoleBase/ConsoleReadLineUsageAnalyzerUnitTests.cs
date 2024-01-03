@@ -46,7 +46,7 @@ namespace Nitrocid.Analyzers.Test.ConsoleBase
                 using System.Text;
                 using System.Threading.Tasks;
                 using System.Diagnostics;
-                using KS.Misc.Text;
+                using Nitrocid.Misc.Text;
 
                 namespace ConsoleApplication1
                 {
@@ -93,7 +93,7 @@ namespace Nitrocid.Analyzers.Test.ConsoleBase
                 using System.Text;
                 using System.Threading.Tasks;
                 using System.Diagnostics;
-                using KS.ConsoleBase.Inputs;
+                using Nitrocid.ConsoleBase.Inputs;
 
                 namespace ConsoleApplication1
                 {

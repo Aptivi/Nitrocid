@@ -17,10 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Inputs;
-using KS.Languages;
-using KS.Network.Base.Connections;
-using KS.Shell.ShellBase.Commands;
+using Nitrocid.ConsoleBase.Inputs;
+using Nitrocid.Languages;
+using Nitrocid.Network.Base.Connections;
+using Nitrocid.Shell.ShellBase.Commands;
 using System.Net.Http;
 
 namespace Nitrocid.Extras.HttpShell

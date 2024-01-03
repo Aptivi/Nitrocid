@@ -110,7 +110,7 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
 
                     // Check the imports
                     var compilation = finalNode as CompilationUnitSyntax;
-                    if (compilation?.Usings.Any(u => u.Name.ToString() == "KS.Kernel.Time.Renderers") == false)
+                    if (compilation?.Usings.Any(u => u.Name.ToString() == "Nitrocid.Kernel.Time.Renderers") == false)
                     {
                         var name = SyntaxFactory.QualifiedName(
                             SyntaxFactory.QualifiedName(

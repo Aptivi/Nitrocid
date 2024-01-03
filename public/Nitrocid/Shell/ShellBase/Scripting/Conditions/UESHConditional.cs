@@ -20,13 +20,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
-using KS.Languages;
-using KS.Misc.Text;
-using KS.Shell.ShellBase.Scripting.Conditions.Types;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Text;
+using Nitrocid.Shell.ShellBase.Scripting.Conditions.Types;
 
-namespace KS.Shell.ShellBase.Scripting.Conditions
+namespace Nitrocid.Shell.ShellBase.Scripting.Conditions
 {
     /// <summary>
     /// UESH condition manager

@@ -17,9 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Files.Folders;
-using KS.Files.Paths;
-using KS.Kernel.Configuration;
+using Nitrocid.Files.Folders;
+using Nitrocid.Files.Paths;
+using Nitrocid.Kernel.Configuration;
 using NUnit.Framework;
 using Shouldly;
 

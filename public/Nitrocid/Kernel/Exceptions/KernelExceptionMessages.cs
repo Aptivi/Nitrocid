@@ -17,14 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Debugging;
-using KS.Languages;
-using KS.Misc.Text;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Text;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace KS.Kernel.Exceptions
+namespace Nitrocid.Kernel.Exceptions
 {
     internal static class KernelExceptionMessages
     {

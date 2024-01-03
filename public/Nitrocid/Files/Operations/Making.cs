@@ -19,10 +19,10 @@
 
 using System;
 using System.IO;
-using KS.Drivers;
-using KS.Files.Operations.Querying;
+using Nitrocid.Drivers;
+using Nitrocid.Files.Operations.Querying;
 
-namespace KS.Files.Operations
+namespace Nitrocid.Files.Operations
 {
     /// <summary>
     /// Making file operations module

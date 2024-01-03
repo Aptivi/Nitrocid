@@ -17,10 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.MiscWriters;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers.MiscWriters;
 
-namespace KS.ConsoleBase.Writers
+namespace Nitrocid.ConsoleBase.Writers
 {
     /// <summary>
     /// Miscellaneous text writer wrapper for writing with <see cref="KernelColorType"/> (<see cref="Terminaux.Writer.MiscWriters"/>)

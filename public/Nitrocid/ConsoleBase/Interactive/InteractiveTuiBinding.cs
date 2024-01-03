@@ -19,7 +19,7 @@
 
 using System;
 
-namespace KS.ConsoleBase.Interactive
+namespace Nitrocid.ConsoleBase.Interactive
 {
     /// <summary>
     /// Interactive TUI binding information class

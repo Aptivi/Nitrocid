@@ -23,17 +23,17 @@ using System.IO;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading;
-using KS.ConsoleBase.Colors;
-using KS.Languages;
-using KS.Misc.Notifications;
-using KS.Kernel.Events;
-using KS.Kernel.Configuration;
-using KS.Kernel.Time.Renderers;
-using KS.Kernel.Threading;
-using KS.Misc.Text.Probers.Placeholder;
-using KS.ConsoleBase.Writers;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Kernel.Threading;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Kernel.Time.Renderers;
+using Nitrocid.Misc.Notifications;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Text.Probers.Placeholder;
+using Nitrocid.Kernel.Events;
+using Nitrocid.ConsoleBase.Colors;
 
-namespace KS.Kernel.Debugging.RemoteDebug.RemoteChat
+namespace Nitrocid.Kernel.Debugging.RemoteDebug.RemoteChat
 {
     /// <summary>
     /// Remote chat module

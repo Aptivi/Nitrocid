@@ -19,13 +19,13 @@
 
 using System.Collections.Generic;
 using System.Text;
-using KS.ConsoleBase;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Kernel.Threading;
-using KS.Misc.Reflection;
-using KS.Misc.Screensaver;
-using KS.Misc.Text;
+using Nitrocid.ConsoleBase;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.Kernel.Threading;
+using Nitrocid.Misc.Reflection;
+using Nitrocid.Misc.Screensaver;
+using Nitrocid.Misc.Text;
 using Terminaux.Colors;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers

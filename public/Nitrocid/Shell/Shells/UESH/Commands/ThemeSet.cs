@@ -17,24 +17,24 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Inputs;
-using KS.ConsoleBase.Inputs.Styles.Choice;
-using KS.ConsoleBase.Inputs.Styles.Selection;
-using KS.ConsoleBase.Themes;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Files;
-using KS.Files.Operations.Querying;
-using KS.Kernel.Configuration;
-using KS.Languages;
-using KS.Misc.Text;
-using KS.Shell.ShellBase.Commands;
-using KS.Shell.ShellBase.Switches;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Inputs;
+using Nitrocid.ConsoleBase.Inputs.Styles.Choice;
+using Nitrocid.ConsoleBase.Inputs.Styles.Selection;
+using Nitrocid.ConsoleBase.Themes;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.Files;
+using Nitrocid.Files.Operations.Querying;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Text;
+using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.Shell.ShellBase.Switches;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace KS.Shell.Shells.UESH.Commands
+namespace Nitrocid.Shell.Shells.UESH.Commands
 {
     /// <summary>
     /// Selects a theme and sets it

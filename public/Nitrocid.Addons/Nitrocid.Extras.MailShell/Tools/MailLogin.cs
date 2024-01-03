@@ -21,22 +21,22 @@ using System;
 using System.Data;
 using System.Linq;
 using System.Net;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Inputs;
-using KS.ConsoleBase.Writers;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Files.Paths;
-using KS.Kernel;
-using KS.Kernel.Debugging;
-using KS.Languages;
-using KS.Misc.Text.Probers.Placeholder;
-using KS.Network.Base.Connections;
 using MailKit;
 using MailKit.Net.Imap;
 using MailKit.Net.Smtp;
 using MimeKit.Cryptography;
 using Nettify.MailAddress;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Inputs;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 using Nitrocid.Extras.MailShell.Tools.PGP;
+using Nitrocid.Files.Paths;
+using Nitrocid.Kernel;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Text.Probers.Placeholder;
+using Nitrocid.Network.Base.Connections;
 
 namespace Nitrocid.Extras.MailShell.Tools
 {

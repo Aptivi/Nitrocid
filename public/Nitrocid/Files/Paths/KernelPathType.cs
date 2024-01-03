@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace KS.Files.Paths
+namespace Nitrocid.Files.Paths
 {
     /// <summary>
     /// Specifies the kernel path type

@@ -17,12 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Exceptions;
-using KS.Languages;
-using KS.Misc.Text;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Text;
 using System.Collections.Generic;
 
-namespace KS.Misc.Progress
+namespace Nitrocid.Misc.Progress
 {
     /// <summary>
     /// Progress management tools

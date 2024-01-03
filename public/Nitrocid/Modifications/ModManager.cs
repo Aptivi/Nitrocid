@@ -23,27 +23,27 @@ using System.Data;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using KS.ConsoleBase.Colors;
-using KS.Files;
-using KS.Files.Operations;
-using KS.Kernel.Configuration;
-using KS.Languages;
-using KS.Misc.Splash;
-using KS.Shell.ShellBase.Commands;
-using KS.Shell.ShellBase.Shells;
-using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
-using KS.Modifications.ManPages;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Misc.Reflection;
 using System.Diagnostics;
-using KS.Misc.Screensaver;
-using KS.Files.Operations.Querying;
-using KS.Kernel;
-using KS.Files.Paths;
-using KS.ConsoleBase.Writers;
+using Nitrocid.Kernel;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.Shell.ShellBase.Shells;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Files;
+using Nitrocid.Misc.Screensaver;
+using Nitrocid.Misc.Reflection;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Files.Operations;
+using Nitrocid.Misc.Splash;
+using Nitrocid.Languages;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Files.Paths;
+using Nitrocid.Modifications.ManPages;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Files.Operations.Querying;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 
-namespace KS.Modifications
+namespace Nitrocid.Modifications
 {
     /// <summary>
     /// Mod management module

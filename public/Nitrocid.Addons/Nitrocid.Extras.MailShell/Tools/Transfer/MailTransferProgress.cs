@@ -17,14 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers;
-using KS.Languages;
-using KS.Misc.Reflection;
-using KS.Misc.Text.Probers.Placeholder;
 using MailKit;
+using Nitrocid.ConsoleBase;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Extras.MailShell.Mail;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Reflection;
+using Nitrocid.Misc.Text.Probers.Placeholder;
 
 namespace Nitrocid.Extras.MailShell.Tools.Transfer
 {

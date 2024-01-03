@@ -19,14 +19,14 @@
 
 using System.IO;
 using System.Text.RegularExpressions;
-using KS.Files;
-using KS.Files.Attributes;
-using KS.Files.Folders;
-using KS.Files.Operations;
-using KS.Files.Operations.Querying;
-using KS.Files.Paths;
-using KS.Kernel;
-using KS.Kernel.Configuration;
+using Nitrocid.Files;
+using Nitrocid.Files.Attributes;
+using Nitrocid.Files.Folders;
+using Nitrocid.Files.Operations;
+using Nitrocid.Files.Operations.Querying;
+using Nitrocid.Files.Paths;
+using Nitrocid.Kernel;
+using Nitrocid.Kernel.Configuration;
 using NUnit.Framework;
 using Shouldly;
 using Shouldly.ShouldlyExtensionMethods;

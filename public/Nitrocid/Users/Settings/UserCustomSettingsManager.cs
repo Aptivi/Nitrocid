@@ -17,10 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Exceptions;
-using KS.Languages;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
 
-namespace KS.Users.Settings
+namespace Nitrocid.Users.Settings
 {
     /// <summary>
     /// Custom settings manager for users

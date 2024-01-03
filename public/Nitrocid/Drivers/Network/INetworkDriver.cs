@@ -19,9 +19,9 @@
 
 using System.Net;
 using System.Net.NetworkInformation;
-using FS = KS.Files.FilesystemTools;
+using FS = Nitrocid.Files.FilesystemTools;
 
-namespace KS.Drivers.Network
+namespace Nitrocid.Drivers.Network
 {
     /// <summary>
     /// Network driver interface for drivers

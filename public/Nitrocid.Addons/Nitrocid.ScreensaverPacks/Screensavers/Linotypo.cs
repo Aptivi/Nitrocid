@@ -19,15 +19,15 @@
 
 using System;
 using System.Collections.Generic;
-using KS.ConsoleBase;
-using KS.ConsoleBase.Colors;
-using KS.Drivers.RNG;
-using KS.Files.Operations;
-using KS.Files.Operations.Querying;
-using KS.Kernel.Debugging;
-using KS.Kernel.Threading;
-using KS.Misc.Screensaver;
-using KS.Misc.Text;
+using Nitrocid.ConsoleBase;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Drivers.RNG;
+using Nitrocid.Files.Operations;
+using Nitrocid.Files.Operations.Querying;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Threading;
+using Nitrocid.Misc.Screensaver;
+using Nitrocid.Misc.Text;
 using Terminaux.Colors;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers

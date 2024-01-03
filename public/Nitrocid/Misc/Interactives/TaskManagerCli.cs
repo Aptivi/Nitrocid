@@ -17,16 +17,16 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Languages;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using KS.Misc.Text;
 using System.Collections;
-using KS.ConsoleBase.Interactive;
-using KS.Kernel.Threading;
+using Nitrocid.Kernel.Threading;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Text;
+using Nitrocid.ConsoleBase.Interactive;
 
-namespace KS.Misc.Interactives
+namespace Nitrocid.Misc.Interactives
 {
     /// <summary>
     /// Task manager class

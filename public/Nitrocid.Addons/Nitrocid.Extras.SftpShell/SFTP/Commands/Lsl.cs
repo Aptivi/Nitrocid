@@ -19,9 +19,9 @@
 
 using System;
 using System.Linq;
-using KS.Files;
-using KS.Files.Folders;
-using KS.Shell.ShellBase.Commands;
+using Nitrocid.Files;
+using Nitrocid.Files.Folders;
+using Nitrocid.Shell.ShellBase.Commands;
 
 namespace Nitrocid.Extras.SftpShell.SFTP.Commands
 {

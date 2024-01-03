@@ -19,7 +19,7 @@
 
 using System;
 
-namespace KS.Misc.Splash
+namespace Nitrocid.Misc.Splash
 {
     /// <summary>
     /// Splash screen interface

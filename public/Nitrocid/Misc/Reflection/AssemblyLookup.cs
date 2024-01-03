@@ -21,12 +21,12 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
-using KS.Files;
-using KS.Files.Operations.Querying;
-using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
+using Nitrocid.Files;
+using Nitrocid.Files.Operations.Querying;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Exceptions;
 
-namespace KS.Misc.Reflection
+namespace Nitrocid.Misc.Reflection
 {
     /// <summary>
     /// Assembly lookup module

@@ -17,9 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Files.Operations;
-using KS.Files.Paths;
-using KS.Misc.Text.Probers.Motd;
+using Nitrocid.Files.Operations;
+using Nitrocid.Files.Paths;
+using Nitrocid.Misc.Text.Probers.Motd;
 using NUnit.Framework;
 using Shouldly;
 

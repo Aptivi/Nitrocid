@@ -17,18 +17,18 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Files.Operations;
-using KS.Files.Operations.Querying;
-using KS.Kernel.Exceptions;
-using KS.Languages;
-using KS.Misc.Text;
+using Nitrocid.Files.Operations;
+using Nitrocid.Files.Operations.Querying;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Text;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace KS.Drivers.Encoding
+namespace Nitrocid.Drivers.Encoding
 {
     /// <summary>
     /// AES encoding

@@ -17,21 +17,21 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Inputs;
-using KS.ConsoleBase.Inputs.Styles.Selection;
-using KS.ConsoleBase.Writers;
-using KS.Kernel.Configuration.Instances;
-using KS.Kernel.Debugging;
-using KS.Languages;
-using KS.Misc.Reflection;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Inputs;
+using Nitrocid.ConsoleBase.Inputs.Styles.Selection;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Kernel.Configuration.Instances;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Reflection;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace KS.Kernel.Configuration.Settings.KeyInputs
+namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
 {
     internal class SelectionSettingsKeyInput : ISettingsKeyInput
     {
@@ -184,7 +184,7 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
                 if (SelectionEnumInternal)
                 {
                     // Apparently, we need to have a full assembly name for getting types.
-                    SelectionEnumType = Type.GetType("KS." + enumeration + ", " + Assembly.GetExecutingAssembly().FullName);
+                    SelectionEnumType = Type.GetType("Nitrocid." + enumeration + ", " + Assembly.GetExecutingAssembly().FullName);
                     SelectFrom = SelectionEnumType.GetEnumNames();
                     Selections = SelectionEnumType.GetEnumValues();
                 }

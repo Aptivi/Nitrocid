@@ -17,11 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Power;
-using KS.Shell.ShellBase.Commands;
+using Nitrocid.Kernel.Power;
+using Nitrocid.Shell.ShellBase.Commands;
 using System;
 
-namespace KS.Shell.Shells.UESH.Commands
+namespace Nitrocid.Shell.Shells.UESH.Commands
 {
     /// <summary>
     /// Restarts the kernel

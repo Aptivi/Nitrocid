@@ -17,18 +17,18 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Buffered;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Inputs;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Languages;
-using KS.Misc.Text;
 using System;
 using System.Text;
 using Textify.Sequences.Builder.Types;
-using KS.ConsoleBase.Writers.FancyWriters;
+using Nitrocid.ConsoleBase.Inputs;
+using Nitrocid.Languages;
+using Nitrocid.ConsoleBase.Writers.FancyWriters;
+using Nitrocid.Misc.Text;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Buffered;
 
-namespace KS.ConsoleBase.Presentation
+namespace Nitrocid.ConsoleBase.Presentation
 {
     /// <summary>
     /// Presentation tools

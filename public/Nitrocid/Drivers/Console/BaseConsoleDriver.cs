@@ -17,19 +17,19 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Debugging;
-using KS.Languages;
 using System;
 using System.IO;
 using System.Threading;
-using KS.Kernel;
 using SystemConsole = System.Console;
 using TextEncoding = System.Text.Encoding;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
 using Textify.Sequences.Builder.Types;
+using Nitrocid.Kernel;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Languages;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.ConsoleBase.Colors;
 
-namespace KS.Drivers.Console
+namespace Nitrocid.Drivers.Console
 {
     /// <summary>
     /// Base console driver
@@ -239,7 +239,7 @@ namespace KS.Drivers.Console
         }
 
         /// <inheritdoc/>
-        public virtual bool TreatCtrlCAsInput 
+        public virtual bool TreatCtrlCAsInput
         {
             get => SystemConsole.TreatControlCAsInput;
             set => SystemConsole.TreatControlCAsInput = value;

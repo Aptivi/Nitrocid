@@ -20,7 +20,7 @@
 using Newtonsoft.Json;
 using System.Collections.Generic;
 
-namespace KS.Users
+namespace Nitrocid.Users
 {
     /// <summary>
     /// User information class

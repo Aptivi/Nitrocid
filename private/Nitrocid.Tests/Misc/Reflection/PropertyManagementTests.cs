@@ -19,10 +19,10 @@
 
 using System;
 using System.Reflection;
-using KS.Kernel.Configuration;
-using KS.Kernel.Configuration.Instances;
-using KS.Kernel.Updates;
-using KS.Misc.Reflection;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Kernel.Configuration.Instances;
+using Nitrocid.Kernel.Updates;
+using Nitrocid.Misc.Reflection;
 using NUnit.Framework;
 using Shouldly;
 

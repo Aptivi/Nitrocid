@@ -22,11 +22,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Threading;
-using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
-using KS.Languages;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
 
-namespace KS.Kernel.Threading
+namespace Nitrocid.Kernel.Threading
 {
     /// <summary>
     /// The kernel thread to simplify the access to making new threads, starting them, and stopping them

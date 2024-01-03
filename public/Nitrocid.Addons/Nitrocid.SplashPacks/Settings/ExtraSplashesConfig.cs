@@ -17,12 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Colors;
-using KS.Kernel.Configuration;
-using KS.Kernel.Configuration.Instances;
-using KS.Kernel.Configuration.Settings;
-using KS.Misc.Text;
 using Newtonsoft.Json;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Kernel.Configuration.Instances;
+using Nitrocid.Kernel.Configuration.Settings;
+using Nitrocid.Misc.Text;
 
 namespace Nitrocid.SplashPacks.Settings
 {

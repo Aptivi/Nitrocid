@@ -18,15 +18,15 @@
 //
 
 using System;
-using KS.ConsoleBase.Colors;
-using KS.Kernel.Configuration;
-using KS.Kernel.Debugging;
-using KS.Languages;
-using KS.Kernel.Extensions;
-using KS.Kernel.Exceptions;
-using KS.ConsoleBase.Writers;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Languages;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Kernel.Extensions;
 
-namespace KS.Network.RSS
+namespace Nitrocid.Network.RSS
 {
     /// <summary>
     /// RSS tools module

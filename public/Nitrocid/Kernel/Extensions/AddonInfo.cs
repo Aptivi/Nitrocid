@@ -19,7 +19,7 @@
 
 using System.Diagnostics;
 
-namespace KS.Kernel.Extensions
+namespace Nitrocid.Kernel.Extensions
 {
     [DebuggerDisplay("Addon name = {AddonName}")]
     internal class AddonInfo

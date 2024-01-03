@@ -17,14 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Drivers;
-using KS.Kernel.Exceptions;
-using KS.Languages;
-using KS.Security.Privacy;
-using KS.Security.Privacy.Consents;
+using Nitrocid.Drivers;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
+using Nitrocid.Security.Privacy;
+using Nitrocid.Security.Privacy.Consents;
 using System.IO;
 
-namespace KS.Files.Operations
+namespace Nitrocid.Files.Operations
 {
     /// <summary>
     /// File reading module

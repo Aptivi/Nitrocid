@@ -19,10 +19,10 @@
 
 using System.Collections.Generic;
 using System.Diagnostics;
-using KS.Kernel.Exceptions;
-using KS.Languages;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
 
-namespace KS.Modifications
+namespace Nitrocid.Modifications
 {
     /// <summary>
     /// Mod information

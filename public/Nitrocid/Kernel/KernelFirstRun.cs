@@ -17,21 +17,21 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase;
-using KS.ConsoleBase.Inputs;
-using KS.ConsoleBase.Presentation;
-using KS.ConsoleBase.Presentation.Elements;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Kernel.Configuration;
-using KS.Kernel.Debugging;
-using KS.Languages;
-using KS.Misc.Text;
-using KS.Users;
+using Nitrocid.ConsoleBase;
+using Nitrocid.ConsoleBase.Inputs;
+using Nitrocid.ConsoleBase.Presentation;
+using Nitrocid.ConsoleBase.Presentation.Elements;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Text;
+using Nitrocid.Users;
 using System;
 using System.Text;
 using Terminaux.Colors;
 
-namespace KS.Kernel
+namespace Nitrocid.Kernel
 {
     internal static class KernelFirstRun
     {
@@ -423,7 +423,7 @@ namespace KS.Kernel
         {
             // Show three color bands
             var band = new StringBuilder();
-            int times = ConsoleWrapper.WindowWidth - (PresentationTools.PresentationUpperInnerBorderLeft * 2) - 1;
+            int times = ConsoleWrapper.WindowWidth - PresentationTools.PresentationUpperInnerBorderLeft * 2 - 1;
             DebugWriter.WriteDebug(DebugLevel.I, "Band length: {0} cells", times);
             double threshold = 255 / (double)times;
             for (double i = 0; i <= times; i++)

@@ -17,10 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Exceptions;
+using Nitrocid.Kernel.Exceptions;
 using System;
 
-namespace KS.Kernel.Debugging.RemoteDebug.Command
+namespace Nitrocid.Kernel.Debugging.RemoteDebug.Command
 {
     /// <summary>
     /// The command executor class

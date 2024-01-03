@@ -21,11 +21,11 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using KS.Kernel;
-using KS.Kernel.Exceptions;
-using KS.Languages;
+using Nitrocid.Kernel;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
 
-namespace KS.Files.Paths
+namespace Nitrocid.Files.Paths
 {
     /// <summary>
     /// Paths module

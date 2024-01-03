@@ -17,13 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Interactive;
-using KS.Files;
-using KS.Files.Paths;
-using KS.Misc.Interactives;
-using KS.Shell.ShellBase.Commands;
+using Nitrocid.ConsoleBase.Interactive;
+using Nitrocid.Files;
+using Nitrocid.Files.Paths;
+using Nitrocid.Misc.Interactives;
+using Nitrocid.Shell.ShellBase.Commands;
 
-namespace KS.Shell.Shells.UESH.Commands
+namespace Nitrocid.Shell.Shells.UESH.Commands
 {
     /// <summary>
     /// Interactive system host file manager

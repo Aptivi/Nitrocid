@@ -21,16 +21,16 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using KS.Drivers;
-using KS.Kernel;
-using KS.Kernel.Debugging;
-using KS.Languages;
-using KS.Misc.Text;
-using KS.Shell.ShellBase.Arguments;
-using KS.Shell.ShellBase.Commands;
-using KS.Shell.ShellBase.Shells;
+using Nitrocid.Drivers;
+using Nitrocid.Kernel;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Text;
+using Nitrocid.Shell.ShellBase.Arguments;
+using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.Shell.ShellBase.Shells;
 
-namespace KS.Shell.ShellBase.Scripting
+namespace Nitrocid.Shell.ShellBase.Scripting
 {
     /// <summary>
     /// UESH shell variable manager

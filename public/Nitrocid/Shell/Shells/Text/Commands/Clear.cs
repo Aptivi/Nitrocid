@@ -17,9 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Shell.ShellBase.Commands;
+using Nitrocid.Shell.ShellBase.Commands;
 
-namespace KS.Shell.Shells.Text.Commands
+namespace Nitrocid.Shell.Shells.Text.Commands
 {
     /// <summary>
     /// Clears the text file

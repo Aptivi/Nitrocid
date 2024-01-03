@@ -17,8 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Shell.ShellBase.Commands;
 using Nitrocid.Extras.Notes.Management;
+using Nitrocid.Shell.ShellBase.Commands;
 
 namespace Nitrocid.Extras.Notes.Commands
 {

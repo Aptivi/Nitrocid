@@ -17,11 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Time.Calendars.Types;
+using Nitrocid.Kernel.Time.Calendars.Types;
 using System;
 using System.Collections.Generic;
 
-namespace KS.Kernel.Time.Calendars
+namespace Nitrocid.Kernel.Time.Calendars
 {
     /// <summary>
     /// Calendar tools

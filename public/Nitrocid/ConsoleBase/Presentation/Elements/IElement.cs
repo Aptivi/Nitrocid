@@ -19,7 +19,7 @@
 
 using System;
 
-namespace KS.ConsoleBase.Presentation.Elements
+namespace Nitrocid.ConsoleBase.Presentation.Elements
 {
     /// <summary>
     /// A presentation element

@@ -20,20 +20,20 @@
 using System;
 using System.IO;
 using System.Linq;
-using KS.Files.Folders;
-using KS.Languages;
-using KS.Kernel.Debugging;
-using KS.Kernel;
-using KS.Kernel.Exceptions;
-using KS.Kernel.Configuration;
-using KS.Drivers;
-using KS.Misc.Text;
 using IOPath = System.IO.Path;
 using System.Threading;
-using KS.Files.Instances;
-using KS.Files.Operations.Querying;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Kernel;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Drivers;
+using Nitrocid.Files.Folders;
+using Nitrocid.Languages;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Misc.Text;
+using Nitrocid.Files.Instances;
+using Nitrocid.Files.Operations.Querying;
 
-namespace KS.Files
+namespace Nitrocid.Files
 {
     /// <summary>
     /// Filesystem module

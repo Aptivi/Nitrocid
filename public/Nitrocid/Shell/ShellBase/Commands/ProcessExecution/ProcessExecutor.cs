@@ -20,18 +20,18 @@
 using System;
 using System.Diagnostics;
 using System.Threading;
-using KS.ConsoleBase.Colors;
-using KS.Files.Folders;
-using KS.Kernel.Debugging;
-using KS.Languages;
-using KS.Misc.Text;
-using KS.Kernel.Events;
 using System.Text;
-using KS.ConsoleBase.Writers.ConsoleWriters;
 using System.Reflection;
-using KS.ConsoleBase.Writers;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Files.Folders;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Text;
+using Nitrocid.Kernel.Events;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 
-namespace KS.Shell.ShellBase.Commands.ProcessExecution
+namespace Nitrocid.Shell.ShellBase.Commands.ProcessExecution
 {
     /// <summary>
     /// Process executor module

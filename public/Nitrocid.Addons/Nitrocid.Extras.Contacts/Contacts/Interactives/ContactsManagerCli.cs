@@ -17,18 +17,18 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Debugging;
-using KS.Languages;
 using System;
 using System.Collections.Generic;
 using VisualCard.Parts;
 using System.Text;
 using System.Collections;
-using KS.Misc.Text;
-using KS.ConsoleBase.Interactive;
-using KS.Misc.Text.Probers.Regexp;
-using KS.Files.Operations.Querying;
-using KS.ConsoleBase.Inputs.Styles.Infobox;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Misc.Text;
+using Nitrocid.ConsoleBase.Interactive;
+using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Text.Probers.Regexp;
+using Nitrocid.Files.Operations.Querying;
 
 namespace Nitrocid.Extras.Contacts.Contacts.Interactives
 {

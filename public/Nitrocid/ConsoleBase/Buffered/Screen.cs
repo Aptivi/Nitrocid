@@ -17,13 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Exceptions;
-using KS.Languages;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace KS.ConsoleBase.Buffered
+namespace Nitrocid.ConsoleBase.Buffered
 {
     /// <summary>
     /// A screen instance to store your buffered screen parts

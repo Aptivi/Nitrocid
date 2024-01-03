@@ -20,14 +20,14 @@
 using System;
 using System.Collections.Generic;
 using System.Threading;
-using KS.Languages;
-using KS.Misc.Text;
-using KS.Kernel.Events;
-using KS.Kernel.Debugging.RemoteDebug.Command.BaseCommands;
-using KS.Shell.ShellBase.Commands;
-using KS.Kernel.Debugging.RemoteDebug.Command.Help;
+using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Text;
+using Nitrocid.Kernel.Events;
+using Nitrocid.Kernel.Debugging.RemoteDebug.Command.Help;
+using Nitrocid.Kernel.Debugging.RemoteDebug.Command.BaseCommands;
 
-namespace KS.Kernel.Debugging.RemoteDebug.Command
+namespace Nitrocid.Kernel.Debugging.RemoteDebug.Command
 {
     /// <summary>
     /// Command parser module

@@ -17,10 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Arguments.Help;
-using KS.Shell.ShellBase.Commands;
+using Nitrocid.Arguments.Help;
+using Nitrocid.Shell.ShellBase.Commands;
 
-namespace KS.Shell.Shells.Admin.Commands
+namespace Nitrocid.Shell.Shells.Admin.Commands
 {
     /// <summary>
     /// Opens the help page

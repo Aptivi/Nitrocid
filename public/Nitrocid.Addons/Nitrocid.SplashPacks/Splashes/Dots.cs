@@ -18,13 +18,13 @@
 //
 
 using System.Threading;
-using KS.Kernel.Debugging;
-using KS.ConsoleBase;
-using KS.ConsoleBase.Writers.ConsoleWriters;
 using Terminaux.Colors;
 using Textify.Sequences.Tools;
-using KS.Misc.Splash;
 using System.Text;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Misc.Splash;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.ConsoleBase;
 
 namespace Nitrocid.SplashPacks.Splashes
 {

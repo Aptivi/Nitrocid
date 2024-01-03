@@ -17,14 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Debugging;
+using Nitrocid.Kernel.Debugging;
 using System.IO;
 using System.Text.RegularExpressions;
 using Encryptor = System.Security.Cryptography.SHA256;
-using FS = KS.Files.FilesystemTools;
+using FS = Nitrocid.Files.FilesystemTools;
 using TextEncoding = System.Text.Encoding;
 
-namespace KS.Drivers.Encryption
+namespace Nitrocid.Drivers.Encryption
 {
     /// <summary>
     /// SHA256 encryptor

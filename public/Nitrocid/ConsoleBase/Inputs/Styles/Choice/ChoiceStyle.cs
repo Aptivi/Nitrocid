@@ -20,15 +20,15 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Kernel.Configuration;
-using KS.Languages;
-using KS.Misc.Text;
-using KS.ConsoleBase.Writers.FancyWriters;
-using KS.ConsoleBase.Writers;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Text;
+using Nitrocid.ConsoleBase.Writers.FancyWriters;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 
-namespace KS.ConsoleBase.Inputs.Styles.Choice
+namespace Nitrocid.ConsoleBase.Inputs.Styles.Choice
 {
     /// <summary>
     /// Choice style for input module

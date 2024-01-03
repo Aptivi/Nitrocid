@@ -17,10 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Drivers;
+using Nitrocid.Drivers;
 using System.Diagnostics.CodeAnalysis;
 
-namespace KS.Misc.Text.Probers.Regexp
+namespace Nitrocid.Misc.Text.Probers.Regexp
 {
     /// <summary>
     /// All tools for the regular expressions

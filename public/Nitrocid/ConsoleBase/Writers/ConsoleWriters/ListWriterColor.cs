@@ -21,15 +21,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
-using KS.ConsoleBase.Inputs;
-using KS.ConsoleBase.Colors;
-using KS.Kernel.Debugging;
-using KS.Languages;
 using Terminaux.Colors;
 using System.Text;
-using KS.Misc.Text;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.ConsoleBase.Inputs;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Text;
+using Nitrocid.ConsoleBase.Colors;
 
-namespace KS.ConsoleBase.Writers.ConsoleWriters
+namespace Nitrocid.ConsoleBase.Writers.ConsoleWriters
 {
     /// <summary>
     /// List writer with color support

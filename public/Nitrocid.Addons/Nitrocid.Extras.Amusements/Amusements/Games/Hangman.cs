@@ -21,12 +21,12 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading;
-using KS.ConsoleBase;
-using KS.ConsoleBase.Inputs;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Drivers.RNG;
-using KS.Kernel.Debugging;
-using KS.Languages;
+using Nitrocid.ConsoleBase;
+using Nitrocid.ConsoleBase.Inputs;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.Drivers.RNG;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Languages;
 using Terminaux.Colors;
 using Textify.Words;
 

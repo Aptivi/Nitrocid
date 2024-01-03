@@ -17,14 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Kernel.Time;
-using KS.Kernel.Time.Timezones;
-using KS.Languages;
-using KS.Shell.ShellBase.Commands;
 using LibGit2Sharp;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.Kernel.Time;
+using Nitrocid.Kernel.Time.Timezones;
+using Nitrocid.Languages;
+using Nitrocid.Shell.ShellBase.Commands;
 
 namespace Nitrocid.Extras.GitShell.Git.Commands
 {

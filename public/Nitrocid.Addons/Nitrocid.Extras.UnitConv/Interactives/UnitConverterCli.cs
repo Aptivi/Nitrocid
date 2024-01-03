@@ -17,16 +17,16 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Languages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Collections;
 using UnitsNet;
 using FluentFTP.Helpers;
-using KS.ConsoleBase.Interactive;
-using KS.Misc.Reflection;
-using KS.ConsoleBase.Inputs.Styles.Infobox;
+using Nitrocid.ConsoleBase.Interactive;
+using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Reflection;
 
 namespace Nitrocid.Extras.UnitConv.Interactives
 {

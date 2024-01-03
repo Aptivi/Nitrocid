@@ -47,7 +47,7 @@ namespace Nitrocid.Analyzers.Test.Kernel.Time.Renderers
                 using System.Text;
                 using System.Threading.Tasks;
                 using System.Diagnostics;
-                using KS.Kernel.Time;
+                using Nitrocid.Kernel.Time;
 
                 namespace ConsoleApplication1
                 {
@@ -75,7 +75,7 @@ namespace Nitrocid.Analyzers.Test.Kernel.Time.Renderers
                 using System.Text;
                 using System.Threading.Tasks;
                 using System.Diagnostics;
-                using KS.Kernel.Time;
+                using Nitrocid.Kernel.Time;
 
                 namespace ConsoleApplication1
                 {
@@ -97,8 +97,8 @@ namespace Nitrocid.Analyzers.Test.Kernel.Time.Renderers
                 using System.Text;
                 using System.Threading.Tasks;
                 using System.Diagnostics;
-                using KS.Kernel.Time;
-                using KS.Kernel.Time.Renderers;
+                using Nitrocid.Kernel.Time;
+                using Nitrocid.Kernel.Time.Renderers;
 
                 namespace ConsoleApplication1
                 {

@@ -17,10 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Debugging;
+using Nitrocid.Kernel.Debugging;
 using System;
 
-namespace KS.Misc.Progress
+namespace Nitrocid.Misc.Progress
 {
     /// <summary>
     /// Progress handler class instance

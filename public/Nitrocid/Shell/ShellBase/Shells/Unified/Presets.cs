@@ -17,10 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Shell.Prompts;
-using KS.Shell.ShellBase.Commands;
+using Nitrocid.Shell.Prompts;
+using Nitrocid.Shell.ShellBase.Commands;
 
-namespace KS.Shell.ShellBase.Shells.Unified
+namespace Nitrocid.Shell.ShellBase.Shells.Unified
 {
     /// <summary>
     /// Changes the shell preset

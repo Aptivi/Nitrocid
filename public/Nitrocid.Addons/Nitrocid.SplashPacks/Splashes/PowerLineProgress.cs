@@ -20,14 +20,14 @@
 using System;
 using System.Text;
 using System.Threading;
-using KS.ConsoleBase;
-using KS.Kernel.Debugging;
-using KS.Misc.Text;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
 using Terminaux.Colors;
-using KS.Misc.Splash;
-using KS.ConsoleBase.Writers.FancyWriters;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.ConsoleBase;
+using Nitrocid.Misc.Splash;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Misc.Text;
+using Nitrocid.ConsoleBase.Writers.FancyWriters;
 
 namespace Nitrocid.SplashPacks.Splashes
 {

@@ -17,13 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Languages;
-using KS.Security.Permissions;
-using KS.Shell.ShellBase.Commands;
-using KS.Users.Groups;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.Languages;
+using Nitrocid.Security.Permissions;
+using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.Users.Groups;
 
-namespace KS.Shell.Shells.UESH.Commands
+namespace Nitrocid.Shell.Shells.UESH.Commands
 {
     /// <summary>
     /// Removes uninvited or redundant group

@@ -17,9 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Drivers;
-using KS.Drivers.Encryption;
-using KS.Kernel.Extensions;
+using Nitrocid.Drivers;
+using Nitrocid.Drivers.Encryption;
+using Nitrocid.Kernel.Extensions;
 using System;
 using System.Collections.ObjectModel;
 using System.Reflection;

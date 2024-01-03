@@ -21,7 +21,7 @@ using System;
 using System.Data;
 using System.Linq;
 
-namespace KS.Misc.Text
+namespace Nitrocid.Misc.Text
 {
     /// <summary>
     /// Character querying and management module
@@ -68,7 +68,7 @@ namespace KS.Misc.Text
             // If the character is greater than the NULL character and less than the BACKSPACE character, or
             // if the character is greater than the CARRIAGE RETURN character and less than the SUBSTITUTE character,
             // it's a real control character.
-            (ch > (char)0 && ch < (char)8) || (ch > (char)13 && ch < (char)26);
+            ch > (char)0 && ch < (char)8 || ch > (char)13 && ch < (char)26;
 
     }
 }

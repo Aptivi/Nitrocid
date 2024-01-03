@@ -19,11 +19,11 @@
 
 using System.Collections.Generic;
 using System.IO;
-using KS.Files.Editors.TextEdit;
-using KS.Kernel.Configuration;
-using KS.Kernel.Threading;
+using Nitrocid.Files.Editors.TextEdit;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Kernel.Threading;
 
-namespace KS.Shell.Shells.Text
+namespace Nitrocid.Shell.Shells.Text
 {
     /// <summary>
     /// Common text editor shell module

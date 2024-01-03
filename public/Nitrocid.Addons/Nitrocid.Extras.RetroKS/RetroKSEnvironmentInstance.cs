@@ -17,8 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Starting.Environment;
-using KS.Languages;
+using Nitrocid.Kernel.Starting.Environment;
+using Nitrocid.Languages;
 using System;
 
 namespace Nitrocid.Extras.RetroKS

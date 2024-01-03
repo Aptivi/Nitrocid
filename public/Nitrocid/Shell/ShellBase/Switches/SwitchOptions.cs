@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace KS.Shell.ShellBase.Switches
+namespace Nitrocid.Shell.ShellBase.Switches
 {
     /// <summary>
     /// Switch options for a switch

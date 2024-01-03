@@ -19,12 +19,12 @@
 
 using System;
 using System.Threading;
-using KS.Kernel.Debugging;
-using KS.Kernel.Events;
-using KS.Kernel.Threading;
-using KS.ConsoleBase;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Threading;
+using Nitrocid.ConsoleBase;
+using Nitrocid.Kernel.Events;
 
-namespace KS.Misc.Screensaver
+namespace Nitrocid.Misc.Screensaver
 {
     /// <summary>
     /// Screensaver display module

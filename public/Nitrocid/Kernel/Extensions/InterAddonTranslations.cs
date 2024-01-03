@@ -17,11 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Exceptions;
-using KS.Languages;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
 using System.Collections.Generic;
 
-namespace KS.Kernel.Extensions
+namespace Nitrocid.Kernel.Extensions
 {
     /// <summary>
     /// Translations from enumerations to names for all known addons

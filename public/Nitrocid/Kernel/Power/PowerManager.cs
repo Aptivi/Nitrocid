@@ -17,28 +17,28 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase;
-using KS.Kernel.Debugging;
-using KS.Languages;
-using KS.Network.RPC;
 using System.Threading;
-using KS.Kernel.Events;
 using System.Diagnostics;
-using KS.Kernel.Journaling;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Kernel.Threading;
 using Terminaux.Reader;
-using KS.Shell.ShellBase.Shells;
-using KS.Kernel.Configuration;
-using KS.Users.Login;
-using KS.Misc.Splash;
 using System.Reflection;
 using System.IO;
-using KS.Kernel.Starting.Environment;
-using KS.Shell.ShellBase.Commands.ProcessExecution;
-using KS.Security.Permissions;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Users.Login;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Shell.ShellBase.Commands.ProcessExecution;
+using Nitrocid.Shell.ShellBase.Shells;
+using Nitrocid.Kernel.Threading;
+using Nitrocid.ConsoleBase;
+using Nitrocid.Misc.Splash;
+using Nitrocid.Languages;
+using Nitrocid.Kernel.Starting.Environment;
+using Nitrocid.Security.Permissions;
+using Nitrocid.Kernel.Events;
+using Nitrocid.Kernel.Journaling;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.Network.RPC;
 
-namespace KS.Kernel.Power
+namespace Nitrocid.Kernel.Power
 {
     /// <summary>
     /// Power management module
@@ -54,7 +54,7 @@ namespace KS.Kernel.Power
         internal static bool rebootingToDebugMode;
         internal static bool rebootingToMaintenanceMode;
         internal static Stopwatch Uptime = new();
-        internal static KernelThread RPCPowerListener = new("RPC Power Listener Thread", true, (object arg) => PowerManage((PowerMode)arg));
+        internal static KernelThread RPCPowerListener = new("RPC Power Listener Thread", true, (arg) => PowerManage((PowerMode)arg));
 
         /// <summary>
         /// Beeps on shutdown (to restore the way of 0.0.1's shutdown)

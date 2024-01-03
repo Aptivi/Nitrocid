@@ -17,16 +17,16 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
-using KS.Kernel.Power;
-using KS.Languages;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Kernel.Power;
+using Nitrocid.Languages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 
-namespace KS.Kernel.Threading.Watchdog
+namespace Nitrocid.Kernel.Threading.Watchdog
 {
     internal static class ThreadWatchdog
     {

@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace KS.Shell.ShellBase.Scripting.Conditions.Types
+namespace Nitrocid.Shell.ShellBase.Scripting.Conditions.Types
 {
     /// <summary>
     /// Condition to check if the filename is not valid

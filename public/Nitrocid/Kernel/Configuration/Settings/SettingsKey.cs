@@ -17,14 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Files;
-using KS.Files.Paths;
-using KS.Kernel.Configuration.Settings.KeyInputs;
 using Newtonsoft.Json;
+using Nitrocid.Files;
+using Nitrocid.Files.Paths;
+using Nitrocid.Kernel.Configuration.Settings.KeyInputs;
 using System;
 using System.Diagnostics;
 
-namespace KS.Kernel.Configuration.Settings
+namespace Nitrocid.Kernel.Configuration.Settings
 {
     /// <summary>
     /// Settings key entry

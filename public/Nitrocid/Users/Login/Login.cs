@@ -17,24 +17,24 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Inputs;
-using KS.Drivers.Encryption;
-using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
-using KS.Languages;
-using KS.Misc.Screensaver;
-using KS.Kernel.Events;
-using KS.Kernel.Configuration;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Users.Login.Handlers;
 using System;
-using KS.Misc.Text.Probers.Placeholder;
-using KS.Kernel.Power;
-using KS.Kernel;
-using KS.ConsoleBase.Writers;
+using Nitrocid.Kernel;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.ConsoleBase.Inputs;
+using Nitrocid.Misc.Screensaver;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Languages;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Drivers.Encryption;
+using Nitrocid.Users.Login.Handlers;
+using Nitrocid.Misc.Text.Probers.Placeholder;
+using Nitrocid.Kernel.Events;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.Kernel.Power;
 
-namespace KS.Users.Login
+namespace Nitrocid.Users.Login
 {
     /// <summary>
     /// Login module

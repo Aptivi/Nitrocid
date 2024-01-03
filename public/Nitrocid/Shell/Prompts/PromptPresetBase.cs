@@ -17,10 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Exceptions;
 
-namespace KS.Shell.Prompts
+namespace Nitrocid.Shell.Prompts
 {
     /// <summary>
     /// Base prompt preset

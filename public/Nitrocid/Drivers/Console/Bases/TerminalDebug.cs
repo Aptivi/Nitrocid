@@ -17,10 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Debugging;
+using Nitrocid.Kernel.Debugging;
 using Textify.Sequences.Tools;
 
-namespace KS.Drivers.Console.Bases
+namespace Nitrocid.Drivers.Console.Bases
 {
     internal class TerminalDebug : BaseConsoleDriver, IConsoleDriver
     {

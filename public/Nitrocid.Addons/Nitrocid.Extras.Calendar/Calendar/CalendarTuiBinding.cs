@@ -17,9 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Exceptions;
-using KS.Kernel.Time.Calendars;
-using KS.Languages;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Kernel.Time.Calendars;
+using Nitrocid.Languages;
 using System;
 using System.Collections.Generic;
 

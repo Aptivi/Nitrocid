@@ -17,11 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Threading;
+using Nitrocid.Kernel.Threading;
 using System.IO;
 using System.Net.Sockets;
 
-namespace KS.Kernel.Debugging.RemoteDebug
+namespace Nitrocid.Kernel.Debugging.RemoteDebug
 {
     /// <summary>
     /// Remote debug device instance

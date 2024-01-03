@@ -17,14 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Kernel.Debugging;
-using KS.Languages;
+using Nitrocid.ConsoleBase;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Languages;
 using System;
 using System.Threading;
 
-namespace KS.Drivers.Console.Bases
+namespace Nitrocid.Drivers.Console.Bases
 {
     internal class TerminalMonoCompat : BaseConsoleDriver, IConsoleDriver
     {

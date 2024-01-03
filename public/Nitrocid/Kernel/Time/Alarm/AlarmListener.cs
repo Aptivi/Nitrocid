@@ -17,16 +17,16 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Debugging;
-using KS.Kernel.Power;
-using KS.Kernel.Threading;
-using KS.Languages;
-using KS.Misc.Notifications;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Power;
+using Nitrocid.Kernel.Threading;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Notifications;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace KS.Kernel.Time.Alarm
+namespace Nitrocid.Kernel.Time.Alarm
 {
     internal static class AlarmListener
     {

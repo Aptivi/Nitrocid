@@ -17,19 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase;
-using KS.ConsoleBase.Buffered;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Inputs;
-using KS.ConsoleBase.Inputs.Styles.Infobox;
-using KS.ConsoleBase.Interactive;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Kernel.Debugging;
-using KS.Kernel.Time;
-using KS.Kernel.Time.Calendars;
-using KS.Kernel.Time.Converters;
-using KS.Languages;
-using KS.Misc.Text;
 using Nitrocid.Extras.Calendar.Calendar.Events;
 using Nitrocid.Extras.Calendar.Calendar.Reminders;
 using System;
@@ -37,7 +24,20 @@ using System.Linq;
 using System.Text;
 using Textify.Sequences.Builder.Types;
 using Textify.Sequences.Tools;
-using KS.ConsoleBase.Writers.FancyWriters;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Time.Calendars;
+using Nitrocid.ConsoleBase;
+using Nitrocid.Misc.Text;
+using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Buffered;
+using Nitrocid.ConsoleBase.Inputs;
+using Nitrocid.Languages;
+using Nitrocid.ConsoleBase.Interactive;
+using Nitrocid.ConsoleBase.Writers.FancyWriters;
+using Nitrocid.Kernel.Time.Converters;
+using Nitrocid.Kernel.Time;
 
 namespace Nitrocid.Extras.Calendar.Calendar
 {

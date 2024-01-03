@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Misc.Notifications;
+using Nitrocid.Misc.Notifications;
 using NUnit.Framework;
 using Shouldly;
 using System.Collections.Generic;

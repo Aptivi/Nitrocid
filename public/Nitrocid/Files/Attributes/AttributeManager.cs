@@ -19,10 +19,10 @@
 
 using System;
 using System.IO;
-using KS.Drivers;
-using KS.Kernel.Debugging;
+using Nitrocid.Drivers;
+using Nitrocid.Kernel.Debugging;
 
-namespace KS.Files.Attributes
+namespace Nitrocid.Files.Attributes
 {
     /// <summary>
     /// Attribute management module

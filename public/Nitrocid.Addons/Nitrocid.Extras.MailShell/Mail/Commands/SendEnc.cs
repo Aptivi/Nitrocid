@@ -17,19 +17,19 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Inputs;
-using KS.Files;
-using KS.Languages;
-using KS.Misc.Text;
-using KS.Shell.ShellBase.Commands;
 using MimeKit;
-using KS.Kernel.Debugging;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Kernel.Exceptions;
-using KS.Files.Operations.Querying;
 using Nitrocid.Extras.MailShell.Tools.Transfer;
-using KS.ConsoleBase.Writers;
+using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Files;
+using Nitrocid.ConsoleBase.Inputs;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Languages;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Misc.Text;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Files.Operations.Querying;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 
 namespace Nitrocid.Extras.MailShell.Mail.Commands
 {

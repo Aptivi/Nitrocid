@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace KS.Users.Login.Handlers
+namespace Nitrocid.Users.Login.Handlers
 {
     /// <summary>
     /// Login handler interface

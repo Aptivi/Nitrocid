@@ -20,10 +20,10 @@
 using System;
 using System.IO.Compression;
 using System.Linq;
-using KS.Files;
-using KS.Shell.ShellBase.Commands;
+using Nitrocid.Files;
+using Nitrocid.Shell.ShellBase.Commands;
 
-namespace KS.Shell.Shells.UESH.Commands
+namespace Nitrocid.Shell.Shells.UESH.Commands
 {
     /// <summary>
     /// Makes a ZIP file

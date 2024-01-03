@@ -22,14 +22,14 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
 using System.Threading;
-using KS.ConsoleBase;
-using KS.Languages;
-using KS.ConsoleBase.Inputs;
-using KS.ConsoleBase.Colors;
-using KS.Kernel.Threading;
-using KS.ConsoleBase.Writers.ConsoleWriters;
 using Terminaux.Colors;
-using KS.ConsoleBase.Writers;
+using Nitrocid.ConsoleBase;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Kernel.Threading;
+using Nitrocid.Languages;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.ConsoleBase.Inputs;
 
 namespace Nitrocid.Extras.Timers.Timers
 {

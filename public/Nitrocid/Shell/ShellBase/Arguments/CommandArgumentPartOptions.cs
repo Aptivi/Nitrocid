@@ -19,7 +19,7 @@
 
 using System;
 
-namespace KS.Shell.ShellBase.Arguments
+namespace Nitrocid.Shell.ShellBase.Arguments
 {
     /// <summary>
     /// Command argument part options class

@@ -18,25 +18,25 @@
 //
 
 using System.Threading;
-using KS.ConsoleBase;
-using KS.Languages;
-using KS.Kernel.Power;
-using KS.Kernel.Starting.Environment;
-using KS.ConsoleBase.Colors;
 using System;
-using KS.Kernel.Exceptions;
-using KS.Kernel.Debugging;
-using KS.Kernel.Starting;
-using KS.Arguments;
-using KS.Arguments.Help;
-using KS.Users.Windows;
 using System.Diagnostics;
 using System.Reflection;
-using KS.ConsoleBase.Inputs.Styles.Infobox;
 using Textify.Versioning;
-using KS.ConsoleBase.Writers;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.ConsoleBase;
+using Nitrocid.Arguments;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Languages;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Kernel.Starting;
+using Nitrocid.Kernel.Starting.Environment;
+using Nitrocid.Users.Windows;
+using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Arguments.Help;
+using Nitrocid.Kernel.Power;
 
-namespace KS.Kernel
+namespace Nitrocid.Kernel
 {
     /// <summary>
     /// Kernel main class

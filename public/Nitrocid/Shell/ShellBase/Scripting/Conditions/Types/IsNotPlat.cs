@@ -17,11 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Exceptions;
-using KS.Languages;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
 using System;
 
-namespace KS.Shell.ShellBase.Scripting.Conditions.Types
+namespace Nitrocid.Shell.ShellBase.Scripting.Conditions.Types
 {
     /// <summary>
     /// Checks to see if a UESH variable is not of the correct type

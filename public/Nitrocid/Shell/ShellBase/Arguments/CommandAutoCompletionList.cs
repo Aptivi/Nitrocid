@@ -17,21 +17,21 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Themes;
-using KS.Misc.Screensaver;
-using KS.Misc.Splash;
-using KS.Modifications;
-using KS.Security.Permissions;
-using KS.Shell.ShellBase.Commands;
-using KS.Shell.ShellBase.Scripting;
-using KS.Shell.ShellBase.Shells;
-using KS.Users;
-using KS.Users.Groups;
+using Nitrocid.ConsoleBase.Themes;
+using Nitrocid.Misc.Screensaver;
+using Nitrocid.Misc.Splash;
+using Nitrocid.Modifications;
+using Nitrocid.Security.Permissions;
+using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.Shell.ShellBase.Scripting;
+using Nitrocid.Shell.ShellBase.Shells;
+using Nitrocid.Users;
+using Nitrocid.Users.Groups;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace KS.Shell.ShellBase.Arguments
+namespace Nitrocid.Shell.ShellBase.Arguments
 {
     /// <summary>
     /// The list of known command auto completion patterns

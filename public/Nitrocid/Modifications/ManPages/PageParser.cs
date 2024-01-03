@@ -21,15 +21,15 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using KS.Files;
-using KS.Files.Operations;
-using KS.Files.Operations.Querying;
-using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
-using KS.Languages;
-using KS.Misc.Text.Probers.Placeholder;
+using Nitrocid.Files;
+using Nitrocid.Files.Operations;
+using Nitrocid.Files.Operations.Querying;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Text.Probers.Placeholder;
 
-namespace KS.Modifications.ManPages
+namespace Nitrocid.Modifications.ManPages
 {
     static class PageParser
     {

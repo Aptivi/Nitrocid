@@ -17,14 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Presentation.Elements;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Kernel.Time.Renderers;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Presentation.Elements;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.Kernel.Time.Renderers;
 using System.Linq;
 using Terminaux.Colors;
 
-namespace KS.ConsoleBase.Presentation
+namespace Nitrocid.ConsoleBase.Presentation
 {
     internal static class PresentationDebugInt
     {

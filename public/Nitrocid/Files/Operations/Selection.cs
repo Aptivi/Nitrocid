@@ -17,11 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Interactive;
-using KS.Files.Paths;
-using KS.Misc.Interactives;
+using Nitrocid.ConsoleBase.Interactive;
+using Nitrocid.Files.Paths;
+using Nitrocid.Misc.Interactives;
 
-namespace KS.Files.Operations
+namespace Nitrocid.Files.Operations
 {
     /// <summary>
     /// File and folder selection class

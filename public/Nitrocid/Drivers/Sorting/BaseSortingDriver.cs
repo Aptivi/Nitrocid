@@ -19,7 +19,7 @@
 
 using System;
 
-namespace KS.Drivers.Sorting
+namespace Nitrocid.Drivers.Sorting
 {
     /// <summary>
     /// Base sorting driver using the bubble sort algorithm

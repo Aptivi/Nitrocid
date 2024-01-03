@@ -17,14 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Colors;
-using KS.Languages;
-using KS.Shell.ShellBase.Commands;
-using KS.Kernel.Exceptions;
 using System;
-using KS.ConsoleBase.Writers;
+using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Languages;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.ConsoleBase.Colors;
 
-namespace KS.Shell.Shells.Debug.Commands
+namespace Nitrocid.Shell.Shells.Debug.Commands
 {
     /// <summary>
     /// You can view an exception info

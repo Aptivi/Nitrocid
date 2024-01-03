@@ -17,9 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Files;
-using KS.Kernel.Configuration;
-using KS.Kernel.Exceptions;
+using Nitrocid.Files;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Kernel.Exceptions;
 using NUnit.Framework;
 using Shouldly;
 

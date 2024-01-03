@@ -19,12 +19,12 @@
 
 using System;
 using System.Text;
-using KS.ConsoleBase.Colors;
 using System.Collections.Generic;
-using KS.ConsoleBase.Writers.FancyWriters.Tools;
 using Terminaux.Colors;
-using KS.Shell.Prompts;
-using KS.Languages;
+using Nitrocid.Languages;
+using Nitrocid.Shell.Prompts;
+using Nitrocid.ConsoleBase.Writers.FancyWriters.Tools;
+using Nitrocid.ConsoleBase.Colors;
 
 namespace Nitrocid.Extras.HttpShell.HTTP.Presets
 {

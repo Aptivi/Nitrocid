@@ -19,7 +19,7 @@
 
 using GRILO.Boot;
 
-namespace KS.Kernel
+namespace Nitrocid.Kernel
 {
     class KernelGRILOBoot : IBootable
     {

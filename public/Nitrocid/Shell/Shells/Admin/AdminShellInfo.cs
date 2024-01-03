@@ -18,16 +18,16 @@
 //
 
 using System.Collections.Generic;
-using KS.Shell.Prompts;
-using KS.Shell.ShellBase.Commands;
-using KS.Shell.ShellBase.Shells;
-using KS.Shell.Shells.Admin.Commands;
-using KS.Shell.ShellBase.Arguments;
-using KS.Shell.Shells.Admin.Presets;
-using KS.Arguments;
 using System.Linq;
+using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.Shell.ShellBase.Shells;
+using Nitrocid.Arguments;
+using Nitrocid.Shell.Prompts;
+using Nitrocid.Shell.ShellBase.Arguments;
+using Nitrocid.Shell.Shells.Admin.Commands;
+using Nitrocid.Shell.Shells.Admin.Presets;
 
-namespace KS.Shell.Shells.Admin
+namespace Nitrocid.Shell.Shells.Admin
 {
     /// <summary>
     /// Common admin shell class

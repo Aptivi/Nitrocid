@@ -17,11 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase;
 using System.Collections.Generic;
-using KS.Drivers.RNG;
-using KS.Kernel.Threading;
-using KS.Misc.Screensaver;
+using Nitrocid.ConsoleBase;
+using Nitrocid.Drivers.RNG;
+using Nitrocid.Kernel.Threading;
+using Nitrocid.Misc.Screensaver;
 using Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations;
 
 namespace Nitrocid.ScreensaverPacks.Animations.BSOD

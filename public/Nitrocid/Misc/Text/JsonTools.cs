@@ -19,13 +19,13 @@
 
 using System.IO;
 using System.Linq;
-using KS.Files;
-using KS.Files.Operations;
-using KS.Kernel.Debugging;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Nitrocid.Files;
+using Nitrocid.Files.Operations;
+using Nitrocid.Kernel.Debugging;
 
-namespace KS.Misc.Text
+namespace Nitrocid.Misc.Text
 {
     /// <summary>
     /// JSON shell tools

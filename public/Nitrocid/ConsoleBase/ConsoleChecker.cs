@@ -17,20 +17,20 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Colors;
-using KS.Kernel;
-using KS.Kernel.Exceptions;
-using KS.Languages;
-using KS.Misc.Text;
-using KS.Drivers;
-using KS.ConsoleBase.Inputs;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Shell.ShellBase.Commands.ProcessExecution;
-using KS.Files.Operations;
-using KS.Files.Paths;
-using KS.ConsoleBase.Writers;
+using Nitrocid.Kernel;
+using Nitrocid.Shell.ShellBase.Commands.ProcessExecution;
+using Nitrocid.ConsoleBase.Inputs;
+using Nitrocid.Drivers;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Files.Operations;
+using Nitrocid.Languages;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Misc.Text;
+using Nitrocid.Files.Paths;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 
-namespace KS.ConsoleBase
+namespace Nitrocid.ConsoleBase
 {
     /// <summary>
     /// Console sanity checking module

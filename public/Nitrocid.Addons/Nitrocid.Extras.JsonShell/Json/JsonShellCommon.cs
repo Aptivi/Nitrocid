@@ -18,10 +18,10 @@
 //
 
 using System.IO;
-using KS.Kernel.Threading;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Nitrocid.Extras.JsonShell.Tools;
+using Nitrocid.Kernel.Threading;
 
 namespace Nitrocid.Extras.JsonShell.Json
 {

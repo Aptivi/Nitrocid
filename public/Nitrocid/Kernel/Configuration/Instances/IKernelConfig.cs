@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace KS.Kernel.Configuration.Instances
+namespace Nitrocid.Kernel.Configuration.Instances
 {
     /// <summary>
     /// Kernel configuration interface

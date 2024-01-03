@@ -21,12 +21,12 @@ using System;
 using System.Text;
 using FluentFTP;
 using FluentFTP.Helpers;
-using KS.Files;
-using KS.Kernel.Debugging;
-using KS.Kernel.Events;
-using KS.Kernel.Exceptions;
-using KS.Languages;
 using Nitrocid.Extras.FtpShell.FTP;
+using Nitrocid.Files;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Events;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
 
 namespace Nitrocid.Extras.FtpShell.Tools.Transfer
 {

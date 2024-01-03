@@ -17,16 +17,16 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Debugging;
-using KS.Kernel.Power;
-using KS.Kernel.Time;
-using KS.Kernel.Time.Renderers;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Power;
+using Nitrocid.Kernel.Time;
+using Nitrocid.Kernel.Time.Renderers;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading;
 
-namespace KS.Kernel.Threading.Performance
+namespace Nitrocid.Kernel.Threading.Performance
 {
     internal static class CpuUsageDebug
     {

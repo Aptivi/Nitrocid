@@ -19,11 +19,11 @@
 
 using System.IO;
 using System.Text;
-using KS.ConsoleBase.Colors;
-using KS.Files.Editors.TextEdit;
-using KS.Shell.Prompts;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Files.Editors.TextEdit;
+using Nitrocid.Shell.Prompts;
 
-namespace KS.Shell.Shells.Text.Presets
+namespace Nitrocid.Shell.Shells.Text.Presets
 {
     /// <summary>
     /// Default preset

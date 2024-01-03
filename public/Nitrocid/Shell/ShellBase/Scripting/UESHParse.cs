@@ -18,19 +18,19 @@
 //
 
 using System;
-using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
-using KS.Languages;
-using KS.Kernel.Events;
 using System.Linq;
 using System.Collections.Generic;
-using KS.Misc.Text;
-using KS.Shell.ShellBase.Scripting.Conditions;
-using KS.ConsoleBase.Writers.MiscWriters;
-using KS.Shell.ShellBase.Shells;
-using KS.Files.Operations;
+using Nitrocid.Shell.ShellBase.Scripting.Conditions;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Shell.ShellBase.Shells;
+using Nitrocid.Files.Operations;
+using Nitrocid.Languages;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Misc.Text;
+using Nitrocid.ConsoleBase.Writers.MiscWriters;
+using Nitrocid.Kernel.Events;
 
-namespace KS.Shell.ShellBase.Scripting
+namespace Nitrocid.Shell.ShellBase.Scripting
 {
     /// <summary>
     /// UESH script parser

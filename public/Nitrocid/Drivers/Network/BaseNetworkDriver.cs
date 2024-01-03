@@ -17,28 +17,28 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Files.Folders;
-using FS = KS.Files.FilesystemTools;
-using KS.Kernel.Debugging;
-using KS.Languages;
-using KS.Misc.Notifications;
-using KS.Network.Base;
+using FS = Nitrocid.Files.FilesystemTools;
 using System;
 using System.IO;
 using System.Linq;
 using System.Net.NetworkInformation;
 using System.Threading.Tasks;
-using KS.Network.Base.Transfer;
 using System.Net.Http;
-using KS.Kernel.Exceptions;
 using System.Collections.Generic;
 using System.Net.Sockets;
 using System.Net;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Shell.ShellBase.Commands;
-using KS.Misc.Progress;
+using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Files.Folders;
+using Nitrocid.Misc.Notifications;
+using Nitrocid.Languages;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Network.Base;
+using Nitrocid.Misc.Progress;
+using Nitrocid.Network.Base.Transfer;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 
-namespace KS.Drivers.Network
+namespace Nitrocid.Drivers.Network
 {
     /// <summary>
     /// Base network driver

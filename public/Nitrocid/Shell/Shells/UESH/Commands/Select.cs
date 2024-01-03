@@ -19,12 +19,12 @@
 
 using System.Collections.Generic;
 using System.Linq;
-using KS.ConsoleBase.Inputs.Styles.Selection;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Languages;
-using KS.Shell.ShellBase.Commands;
+using Nitrocid.ConsoleBase.Inputs.Styles.Selection;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.Languages;
+using Nitrocid.Shell.ShellBase.Commands;
 
-namespace KS.Shell.Shells.UESH.Commands
+namespace Nitrocid.Shell.Shells.UESH.Commands
 {
     /// <summary>
     /// Lets the user make a selection

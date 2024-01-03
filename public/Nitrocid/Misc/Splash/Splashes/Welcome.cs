@@ -18,22 +18,22 @@
 //
 
 using System.Threading;
-using KS.Kernel.Debugging;
-using KS.ConsoleBase;
-using KS.Languages;
-using KS.Kernel;
-using KS.ConsoleBase.Writers.ConsoleWriters;
 using Terminaux.Colors;
 using Textify.Sequences.Tools;
-using KS.ConsoleBase.Colors;
 using Figletize;
 using System;
-using KS.Misc.Text;
 using System.Text;
-using KS.Kernel.Power;
-using KS.ConsoleBase.Writers.FancyWriters;
+using Nitrocid.Kernel;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.ConsoleBase;
+using Nitrocid.ConsoleBase.Writers.FancyWriters;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Text;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Kernel.Power;
 
-namespace KS.Misc.Splash.Splashes
+namespace Nitrocid.Misc.Splash.Splashes
 {
     class SplashWelcome : BaseSplash, ISplash
     {
@@ -74,7 +74,7 @@ namespace KS.Misc.Splash.Splashes
             if (figWidth >= ConsoleWrapper.WindowWidth || figHeight >= ConsoleWrapper.WindowHeight)
             {
                 // The figlet won't fit, so use small text
-                consoleX = (ConsoleWrapper.WindowWidth / 2) - (text.Length / 2);
+                consoleX = ConsoleWrapper.WindowWidth / 2 - text.Length / 2;
                 consoleY = ConsoleWrapper.WindowHeight / 2;
                 builder.Append(
                     col.VTSequenceForeground +
@@ -84,8 +84,8 @@ namespace KS.Misc.Splash.Splashes
             else
             {
                 // Write the figlet.
-                consoleX = (ConsoleWrapper.WindowWidth / 2) - figWidth;
-                consoleY = (ConsoleWrapper.WindowHeight / 2) - figHeight;
+                consoleX = ConsoleWrapper.WindowWidth / 2 - figWidth;
+                consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
                 builder.Append(
                     col.VTSequenceForeground +
                     FigletWhereColor.RenderFigletWherePlain(text, consoleX, consoleY, true, figFont)
@@ -95,10 +95,10 @@ namespace KS.Misc.Splash.Splashes
             builder.Append(
                 CenteredTextColor.RenderCentered(
                     consoleY + 2,
-                    (context == SplashContext.Preboot ? Translate.DoTranslation("Please wait while the kernel is initializing...") :
+                    context == SplashContext.Preboot ? Translate.DoTranslation("Please wait while the kernel is initializing...") :
                      context == SplashContext.ShuttingDown ? Translate.DoTranslation("Please wait while the kernel is shutting down...") :
                      context == SplashContext.Rebooting ? Translate.DoTranslation("Please wait while the kernel is restarting...") :
-                     $"{Translate.DoTranslation("Starting")} {KernelReleaseInfo.ConsoleTitle}..."),
+                     $"{Translate.DoTranslation("Starting")} {KernelReleaseInfo.ConsoleTitle}...",
                     col
                 )
             );
@@ -126,7 +126,7 @@ namespace KS.Misc.Splash.Splashes
                     $"{thirdDotColor.VTSequenceForeground}* " +
                     $"{fourthDotColor.VTSequenceForeground}* " +
                     $"{fifthDotColor.VTSequenceForeground}*";
-                int dotsPosX = (ConsoleWrapper.WindowWidth / 2) - (VtSequenceTools.FilterVTSequences(dots).Length / 2);
+                int dotsPosX = ConsoleWrapper.WindowWidth / 2 - VtSequenceTools.FilterVTSequences(dots).Length / 2;
                 int dotsPosY = ConsoleWrapper.WindowHeight - 2;
                 builder.Append(TextWriterWhereColor.RenderWherePlain(dots, dotsPosX, dotsPosY));
                 dotStep++;
@@ -171,17 +171,17 @@ namespace KS.Misc.Splash.Splashes
             int figHeightFallback = FigletTools.GetFigletHeight(text, figFontFallback) / 2;
             int width = ConsoleWrapper.WindowWidth;
             int height = ConsoleWrapper.WindowHeight;
-            int consoleX = (width / 2) - figWidth;
-            int consoleY = (height / 2) - figHeight;
+            int consoleX = width / 2 - figWidth;
+            int consoleY = height / 2 - figHeight;
             if (consoleX < 0 || consoleY < 0)
             {
                 // The figlet won't fit, so use small text
-                consoleX = (width / 2) - figWidthFallback;
-                consoleY = (height / 2) - figHeightFallback;
+                consoleX = width / 2 - figWidthFallback;
+                consoleY = height / 2 - figHeightFallback;
                 if (consoleX < 0 || consoleY < 0)
                 {
                     // The fallback figlet also won't fit, so use smaller text
-                    consoleX = (width / 2) - (text.Length / 2);
+                    consoleX = width / 2 - text.Length / 2;
                     consoleY = height / 2;
                     builder.Append(
                         col.VTSequenceForeground +
@@ -212,7 +212,7 @@ namespace KS.Misc.Splash.Splashes
                 CenteredTextColor.RenderCenteredOneLine(consoleY + 2, KernelReleaseInfo.ConsoleTitle)
             );
             delayRequired =
-                (context == SplashContext.ShuttingDown && PowerManager.DelayOnShutdown) ||
+                context == SplashContext.ShuttingDown && PowerManager.DelayOnShutdown ||
                 context != SplashContext.ShuttingDown && context != SplashContext.Rebooting;
             if ((context == SplashContext.ShuttingDown || context == SplashContext.Rebooting) && PowerManager.BeepOnShutdown)
                 ConsoleWrapper.Beep();
@@ -239,7 +239,7 @@ namespace KS.Misc.Splash.Splashes
                 .ToUpper();
             var figFont = FigletTools.GetFigletFont(TextTools.DefaultFigletFontName);
             int figHeight = FigletTools.GetFigletHeight(text, figFont) / 2;
-            int consoleY = (ConsoleWrapper.WindowHeight / 2) - figHeight;
+            int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
             builder.Append(
                 col.VTSequenceForeground +
                 TextWriterWhereColor.RenderWherePlain(ConsoleExtensions.GetClearLineToRightSequence(), 0, consoleY - 2, true, Vars) +

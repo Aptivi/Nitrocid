@@ -17,10 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Misc.Text;
+using Nitrocid.Misc.Text;
 using System;
 
-namespace KS.Kernel.Exceptions
+namespace Nitrocid.Kernel.Exceptions
 {
     /// <summary>
     /// A kernel exception occurred

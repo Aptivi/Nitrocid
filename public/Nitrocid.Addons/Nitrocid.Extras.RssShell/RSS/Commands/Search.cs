@@ -17,14 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Colors;
-using KS.Misc.Text;
-using KS.Shell.ShellBase.Commands;
 using System.Linq;
-using KS.ConsoleBase.Writers.ConsoleWriters;
 using Nitrocid.Extras.RssShell.Tools;
-using KS.ConsoleBase.Writers;
 using Nettify.Rss.Instance;
+using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Misc.Text;
 
 namespace Nitrocid.Extras.RssShell.RSS.Commands
 {

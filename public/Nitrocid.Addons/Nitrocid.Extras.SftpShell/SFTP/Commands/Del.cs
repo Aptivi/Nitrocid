@@ -18,13 +18,13 @@
 //
 
 using System;
-using KS.ConsoleBase.Colors;
-using KS.Languages;
-using KS.Shell.ShellBase.Commands;
-using KS.Misc.Text;
 using Nitrocid.Extras.SftpShell.Tools.Filesystem;
-using KS.ConsoleBase.Inputs.Styles.Choice;
-using KS.ConsoleBase.Writers;
+using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.ConsoleBase.Inputs.Styles.Choice;
+using Nitrocid.Languages;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Misc.Text;
 
 namespace Nitrocid.Extras.SftpShell.SFTP.Commands
 {

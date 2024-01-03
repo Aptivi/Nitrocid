@@ -17,20 +17,20 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
-using KS.Languages;
-using KS.Network.Base.Connections;
-using KS.Shell.ShellBase.Shells;
 using MailKit.Net.Imap;
 using MailKit.Net.Smtp;
 using System.Threading;
 using System;
-using KS.Kernel.Threading;
-using KS.Shell.ShellBase.Commands;
-using KS.Network.Base.SpeedDial;
 using Nitrocid.Extras.MailShell.Tools;
 using Nitrocid.Extras.MailShell.Tools.Transfer;
+using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.Shell.ShellBase.Shells;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Languages;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Network.Base.Connections;
+using Nitrocid.Network.Base.SpeedDial;
+using Nitrocid.Kernel.Threading;
 
 namespace Nitrocid.Extras.MailShell.Mail
 {

@@ -20,12 +20,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
-using KS.Languages;
-using KS.Users;
-using KS.Users.Settings;
 using Nitrocid.Extras.RssShell.RSS;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
+using Nitrocid.Users;
+using Nitrocid.Users.Settings;
 
 namespace Nitrocid.Extras.RssShell.Tools
 {

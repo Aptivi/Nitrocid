@@ -17,11 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Shell.ShellBase.Commands;
-using KS.Shell.ShellBase.Help;
-using KS.Shell.ShellBase.Switches;
+using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.Shell.ShellBase.Help;
+using Nitrocid.Shell.ShellBase.Switches;
 
-namespace KS.Shell.ShellBase.Shells.Unified
+namespace Nitrocid.Shell.ShellBase.Shells.Unified
 {
     /// <summary>
     /// Opens the help page

@@ -17,11 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Exceptions;
-using KS.Languages;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
 using System.Collections.Generic;
 
-namespace KS.Files.Extensions
+namespace Nitrocid.Files.Extensions
 {
     /// <summary>
     /// Simple MIME management class

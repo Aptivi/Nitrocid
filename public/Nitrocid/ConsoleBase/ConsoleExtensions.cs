@@ -20,16 +20,16 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Kernel;
-using KS.Kernel.Configuration;
-using KS.Kernel.Threading;
-using KS.Misc.Text;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.Kernel;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Kernel.Threading;
+using Nitrocid.Misc.Text;
 using Textify.Sequences.Builder;
 using Textify.Sequences.Tools;
 
-namespace KS.ConsoleBase
+namespace Nitrocid.ConsoleBase
 {
     /// <summary>
     /// Additional routines for the console
@@ -345,17 +345,17 @@ namespace KS.ConsoleBase
         private const string winKernel = "kernel32.dll";
 
         [DllImport(winKernel, SetLastError = true)]
-        private static extern bool SetConsoleMode(IntPtr hConsoleHandle, int mode);
+        private static extern bool SetConsoleMode(nint hConsoleHandle, int mode);
 
         [DllImport(winKernel, SetLastError = true)]
-        private static extern bool GetConsoleMode(IntPtr handle, out int mode);
+        private static extern bool GetConsoleMode(nint handle, out int mode);
 
         [DllImport(winKernel, SetLastError = true)]
-        private static extern IntPtr GetStdHandle(int handle);
+        private static extern nint GetStdHandle(int handle);
 
         internal static bool InitializeSequences()
         {
-            IntPtr stdHandle = GetStdHandle(-11);
+            nint stdHandle = GetStdHandle(-11);
             int mode = CheckForConHostSequenceSupport();
             if (mode != 7)
                 return SetConsoleMode(stdHandle, mode | 4);
@@ -364,7 +364,7 @@ namespace KS.ConsoleBase
 
         internal static int CheckForConHostSequenceSupport()
         {
-            IntPtr stdHandle = GetStdHandle(-11);
+            nint stdHandle = GetStdHandle(-11);
             GetConsoleMode(stdHandle, out int mode);
             return mode;
         }

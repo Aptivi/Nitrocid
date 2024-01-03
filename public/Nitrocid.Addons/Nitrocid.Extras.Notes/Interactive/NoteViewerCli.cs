@@ -17,9 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Interactive;
-using KS.Languages;
+using Nitrocid.ConsoleBase.Interactive;
 using Nitrocid.Extras.Notes.Management;
+using Nitrocid.Languages;
 using System.Collections;
 
 namespace Nitrocid.Extras.Notes.Interactive

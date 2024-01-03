@@ -17,11 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Exceptions;
+using Nitrocid.Kernel.Exceptions;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace KS.Drivers.Encryption
+namespace Nitrocid.Drivers.Encryption
 {
     /// <summary>
     /// Encryption driver tools (strongly typed)

@@ -21,18 +21,18 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using KS.ConsoleBase.Colors;
-using KS.Files;
-using KS.Kernel.Configuration;
-using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
-using KS.Languages;
-using KS.Kernel.Events;
 using Terminaux.Colors;
-using KS.Resources;
+using Nitrocid.Resources;
 using Newtonsoft.Json.Linq;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Files;
+using Nitrocid.Languages;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Kernel.Events;
 
-namespace KS.ConsoleBase.Themes
+namespace Nitrocid.ConsoleBase.Themes
 {
     /// <summary>
     /// Theme tools module
@@ -119,7 +119,7 @@ namespace KS.ConsoleBase.Themes
                 var ThemeInfo = GetThemeInfo(theme);
 
                 // Check if the console supports true color
-                if ((ConsoleExtensions.ConsoleSupportsTrueColor && ThemeInfo.TrueColorRequired) || !ThemeInfo.TrueColorRequired)
+                if (ConsoleExtensions.ConsoleSupportsTrueColor && ThemeInfo.TrueColorRequired || !ThemeInfo.TrueColorRequired)
                 {
                     // Check to see if the event is finished
                     if (ThemeInfo.IsExpired)
@@ -168,7 +168,7 @@ namespace KS.ConsoleBase.Themes
                 var ThemeInfo = new ThemeInfo(ThemeFile);
 
                 // Check if the console supports true color
-                if ((ConsoleExtensions.ConsoleSupportsTrueColor && ThemeInfo.TrueColorRequired) || !ThemeInfo.TrueColorRequired)
+                if (ConsoleExtensions.ConsoleSupportsTrueColor && ThemeInfo.TrueColorRequired || !ThemeInfo.TrueColorRequired)
                 {
                     // Check to see if the event is finished
                     if (ThemeInfo.IsExpired)

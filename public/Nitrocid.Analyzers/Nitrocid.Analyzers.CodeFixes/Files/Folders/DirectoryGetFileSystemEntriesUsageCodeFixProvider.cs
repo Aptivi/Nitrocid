@@ -80,7 +80,7 @@ namespace Nitrocid.Analyzers.Files.Folders
 
                 // Check the imports
                 var compilation = finalNode as CompilationUnitSyntax;
-                if (compilation?.Usings.Any(u => u.Name.ToString() == "KS.Files.Folders") == false)
+                if (compilation?.Usings.Any(u => u.Name.ToString() == "Nitrocid.Files.Folders") == false)
                 {
                     var name = SyntaxFactory.QualifiedName(
                         SyntaxFactory.QualifiedName(

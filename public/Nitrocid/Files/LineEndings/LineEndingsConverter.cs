@@ -17,11 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Drivers;
-using KS.Kernel.Exceptions;
-using KS.Languages;
+using Nitrocid.Drivers;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
 
-namespace KS.Files.LineEndings
+namespace Nitrocid.Files.LineEndings
 {
     /// <summary>
     /// Line endings conversion module

@@ -17,48 +17,48 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Inputs;
-using KS.ConsoleBase.Inputs.Styles.Infobox;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.ConsoleBase.Writers;
-using KS.ConsoleBase.Writers.MiscWriters;
-using KS.Files.Extensions;
-using KS.Files.Folders;
-using KS.Files.Operations;
-using KS.Files.Operations.Querying;
-using KS.Files.Paths;
-using KS.Kernel.Configuration;
-using KS.Kernel.Debugging;
-using KS.Kernel.Debugging.RemoteDebug;
-using KS.Kernel.Extensions;
-using KS.Kernel.Journaling;
-using KS.Kernel.Power;
-using KS.Kernel.Threading;
-using KS.Kernel.Threading.Watchdog;
-using KS.Kernel.Time.Alarm;
-using KS.Kernel.Time.Renderers;
-using KS.Languages;
-using KS.Misc.Notifications;
-using KS.Misc.Reflection;
-using KS.Misc.Screensaver;
-using KS.Misc.Splash;
-using KS.Misc.Text.Probers.Motd;
-using KS.Modifications;
-using KS.Network.Base.Connections;
-using KS.Network.Base.SpeedDial;
-using KS.Network.RPC;
-using KS.Security.Privacy;
-using KS.Shell.ShellBase.Aliases;
-using KS.Shell.ShellBase.Commands;
-using KS.Shell.ShellBase.Scripting;
-using KS.Shell.ShellBase.Shells;
-using KS.Users.Login;
 using System;
 using System.IO;
+using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Shell.ShellBase.Scripting;
+using Nitrocid.Users.Login;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Shell.ShellBase.Shells;
+using Nitrocid.ConsoleBase;
+using Nitrocid.ConsoleBase.Inputs;
+using Nitrocid.Kernel.Threading;
+using Nitrocid.Shell.ShellBase.Aliases;
+using Nitrocid.Kernel.Debugging.RemoteDebug;
+using Nitrocid.Misc.Screensaver;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Misc.Reflection;
+using Nitrocid.Files.Operations;
+using Nitrocid.Kernel.Time.Renderers;
+using Nitrocid.Files.Folders;
+using Nitrocid.Misc.Splash;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Notifications;
+using Nitrocid.Security.Privacy;
+using Nitrocid.Modifications;
+using Nitrocid.ConsoleBase.Writers.MiscWriters;
+using Nitrocid.Network.Base.Connections;
+using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
+using Nitrocid.Files.Paths;
+using Nitrocid.Network.Base.SpeedDial;
+using Nitrocid.Kernel.Time.Alarm;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Files.Extensions;
+using Nitrocid.Kernel.Journaling;
+using Nitrocid.Files.Operations.Querying;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.Kernel.Extensions;
+using Nitrocid.Misc.Text.Probers.Motd;
+using Nitrocid.Kernel.Power;
+using Nitrocid.Network.RPC;
+using Nitrocid.Kernel.Threading.Watchdog;
 
-namespace KS.Kernel.Starting
+namespace Nitrocid.Kernel.Starting
 {
     internal static class KernelInitializers
     {

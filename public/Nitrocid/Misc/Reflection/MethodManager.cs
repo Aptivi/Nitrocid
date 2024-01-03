@@ -17,13 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Exceptions;
-using KS.Languages;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
 using System;
 using System.Linq;
 using System.Reflection;
 
-namespace KS.Misc.Reflection
+namespace Nitrocid.Misc.Reflection
 {
     /// <summary>
     /// Method management module

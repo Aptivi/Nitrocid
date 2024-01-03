@@ -19,20 +19,20 @@
 
 using System;
 using System.Text;
-using KS.Files.Folders;
-using KS.Languages;
-using KS.Network.Base;
-using KS.ConsoleBase.Colors;
 using System.Collections.Generic;
-using KS.Users;
-using KS.ConsoleBase.Writers.FancyWriters.Tools;
 using Terminaux.Colors;
-using KS.Shell.ShellBase.Shells;
-using KS.Shell.Prompts;
-using KS.Kernel;
-using KS.Kernel.Configuration;
+using Nitrocid.Kernel;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Users;
+using Nitrocid.Shell.ShellBase.Shells;
+using Nitrocid.Files.Folders;
+using Nitrocid.Languages;
+using Nitrocid.Network.Base;
+using Nitrocid.Shell.Prompts;
+using Nitrocid.ConsoleBase.Writers.FancyWriters.Tools;
+using Nitrocid.ConsoleBase.Colors;
 
-namespace KS.Shell.Shells.UESH.Presets
+namespace Nitrocid.Shell.Shells.UESH.Presets
 {
     /// <summary>
     /// PowerLine 1 preset

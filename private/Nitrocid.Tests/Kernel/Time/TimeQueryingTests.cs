@@ -17,9 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Drivers.RNG;
-using KS.Kernel.Time.Renderers;
-using KS.Kernel.Time.Timezones;
+using Nitrocid.Drivers.RNG;
+using Nitrocid.Kernel.Time.Renderers;
+using Nitrocid.Kernel.Time.Timezones;
 using NUnit.Framework;
 using Shouldly;
 using System;

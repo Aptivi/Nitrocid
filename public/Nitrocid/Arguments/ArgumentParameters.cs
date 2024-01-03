@@ -19,7 +19,7 @@
 
 using System.Diagnostics;
 
-namespace KS.Arguments
+namespace Nitrocid.Arguments
 {
     /// <summary>
     /// Argument parameters that holds information about arguments and switches

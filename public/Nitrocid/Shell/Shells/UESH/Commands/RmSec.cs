@@ -17,12 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Files;
-using KS.Files.Operations;
-using KS.Security.Permissions;
-using KS.Shell.ShellBase.Commands;
+using Nitrocid.Files;
+using Nitrocid.Files.Operations;
+using Nitrocid.Security.Permissions;
+using Nitrocid.Shell.ShellBase.Commands;
 
-namespace KS.Shell.Shells.UESH.Commands
+namespace Nitrocid.Shell.Shells.UESH.Commands
 {
     /// <summary>
     /// Removes file or directory from current working directory securely

@@ -17,11 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Interactive;
-using KS.Kernel.Debugging.Testing.Facades.FacadeData;
-using KS.Languages;
+using Nitrocid.ConsoleBase.Interactive;
+using Nitrocid.Kernel.Debugging.Testing.Facades.FacadeData;
+using Nitrocid.Languages;
 
-namespace KS.Kernel.Debugging.Testing.Facades
+namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
     internal class CliDoublePaneSlowTest : TestFacade
     {

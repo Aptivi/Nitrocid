@@ -18,12 +18,12 @@
 //
 
 using System.IO;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Themes;
+using Nitrocid.ConsoleBase.Themes;
 using NUnit.Framework;
 using Shouldly;
 using System;
 using System.Linq;
+using Nitrocid.ConsoleBase.Colors;
 
 namespace Nitrocid.Tests.ConsoleBase
 {

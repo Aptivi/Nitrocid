@@ -17,13 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Drivers.HardwareProber;
-using KS.Kernel.Debugging;
-using KS.Languages;
-using KS.Misc.Reflection;
-using KS.Misc.Splash;
+using Nitrocid.Drivers.HardwareProber;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Reflection;
+using Nitrocid.Misc.Splash;
 
-namespace KS.Kernel.Hardware
+namespace Nitrocid.Kernel.Hardware
 {
     /// <summary>
     /// Hardware list module

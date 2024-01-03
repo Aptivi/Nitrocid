@@ -17,10 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Languages;
-using KS.Shell.ShellBase.Arguments;
+using Nitrocid.Languages;
+using Nitrocid.Shell.ShellBase.Arguments;
 
-namespace KS.Arguments
+namespace Nitrocid.Arguments
 {
     /// <summary>
     /// Argument information class

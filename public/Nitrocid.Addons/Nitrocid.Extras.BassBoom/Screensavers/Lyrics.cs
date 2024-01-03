@@ -17,9 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase;
-using KS.Kernel.Debugging;
-using KS.Misc.Screensaver;
+using Nitrocid.ConsoleBase;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Misc.Screensaver;
 
 namespace Nitrocid.Extras.BassBoom.Screensavers
 {

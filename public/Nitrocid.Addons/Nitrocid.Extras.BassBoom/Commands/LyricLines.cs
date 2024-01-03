@@ -17,13 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Files.Operations.Querying;
-using KS.Languages;
-using KS.Shell.ShellBase.Commands;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 using Nitrocid.Extras.BassBoom.Animations.Lyrics;
+using Nitrocid.Files.Operations.Querying;
+using Nitrocid.Languages;
+using Nitrocid.Shell.ShellBase.Commands;
 
 namespace Nitrocid.Extras.BassBoom.Commands
 {

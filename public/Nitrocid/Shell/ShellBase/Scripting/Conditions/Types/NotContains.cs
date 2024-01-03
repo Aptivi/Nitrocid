@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace KS.Shell.ShellBase.Scripting.Conditions.Types
+namespace Nitrocid.Shell.ShellBase.Scripting.Conditions.Types
 {
     /// <summary>
     /// Checks to see if a UESH variable doesn't contain an expression

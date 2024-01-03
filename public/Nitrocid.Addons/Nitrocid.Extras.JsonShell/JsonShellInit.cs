@@ -17,12 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Configuration;
-using KS.Kernel.Extensions;
-using KS.Shell.Prompts;
-using KS.Shell.ShellBase.Shells;
 using Nitrocid.Extras.JsonShell.Json;
 using Nitrocid.Extras.JsonShell.Settings;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Kernel.Extensions;
+using Nitrocid.Shell.Prompts;
+using Nitrocid.Shell.ShellBase.Shells;
 using System;
 using System.Collections.ObjectModel;
 using System.Reflection;

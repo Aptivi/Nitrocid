@@ -17,10 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Languages;
+using Nitrocid.Languages;
 using System;
 
-namespace KS.Files.Extensions
+namespace Nitrocid.Files.Extensions
 {
     /// <summary>
     /// Extension handler class

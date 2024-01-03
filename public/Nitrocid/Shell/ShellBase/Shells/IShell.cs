@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace KS.Shell.ShellBase.Shells
+namespace Nitrocid.Shell.ShellBase.Shells
 {
     /// <summary>
     /// Base shell functions

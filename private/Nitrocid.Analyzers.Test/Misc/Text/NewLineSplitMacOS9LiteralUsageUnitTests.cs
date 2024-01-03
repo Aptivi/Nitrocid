@@ -97,7 +97,7 @@ namespace Nitrocid.Analyzers.Test.Misc.Text
                 using System.Text;
                 using System.Threading.Tasks;
                 using System.Diagnostics;
-                using KS.Misc.Text;
+                using Nitrocid.Misc.Text;
 
                 namespace ConsoleApplication1
                 {
@@ -146,7 +146,7 @@ namespace Nitrocid.Analyzers.Test.Misc.Text
                 using System.Text;
                 using System.Threading.Tasks;
                 using System.Diagnostics;
-                using KS.Misc.Text;
+                using Nitrocid.Misc.Text;
 
                 namespace ConsoleApplication1
                 {

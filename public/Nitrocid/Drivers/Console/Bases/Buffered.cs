@@ -17,19 +17,19 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Debugging;
-using KS.Languages;
 using System;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Text;
-using KS.Kernel.Exceptions;
-using KS.Misc.Text;
-using KS.ConsoleBase.Writers.ConsoleWriters;
 using TextEncoding = System.Text.Encoding;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Languages;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Misc.Text;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 
-namespace KS.Drivers.Console.Bases
+namespace Nitrocid.Drivers.Console.Bases
 {
     internal class Buffered : BaseConsoleDriver, IConsoleDriver
     {

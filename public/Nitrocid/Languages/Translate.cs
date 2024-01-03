@@ -17,11 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Debugging;
-using KS.Modifications;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Modifications;
 using System.Linq;
 
-namespace KS.Languages
+namespace Nitrocid.Languages
 {
     /// <summary>
     /// Translation module

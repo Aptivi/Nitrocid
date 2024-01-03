@@ -17,11 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers;
-using KS.Kernel.Debugging;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Kernel.Debugging;
 
-namespace KS.ConsoleBase.Inputs.Styles
+namespace Nitrocid.ConsoleBase.Inputs.Styles
 {
     /// <summary>
     /// Input style module

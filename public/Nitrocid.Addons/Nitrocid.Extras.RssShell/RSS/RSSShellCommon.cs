@@ -19,10 +19,10 @@
 
 using System;
 using System.Net.Http;
-using KS.Kernel.Threading;
-using KS.Network.Base.Connections;
 using Nettify.Rss.Instance;
 using Nitrocid.Extras.RssShell.Tools;
+using Nitrocid.Kernel.Threading;
+using Nitrocid.Network.Base.Connections;
 
 namespace Nitrocid.Extras.RssShell.RSS
 {

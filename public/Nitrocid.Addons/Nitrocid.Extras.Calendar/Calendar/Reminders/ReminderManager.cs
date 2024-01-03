@@ -21,21 +21,21 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers;
-using KS.Files;
-using KS.Files.Folders;
-using KS.Files.Operations;
-using KS.Files.Operations.Querying;
-using KS.Files.Paths;
-using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
-using KS.Kernel.Power;
-using KS.Kernel.Threading;
-using KS.Kernel.Time.Renderers;
-using KS.Languages;
-using KS.Misc.Notifications;
 using Newtonsoft.Json;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Files;
+using Nitrocid.Files.Folders;
+using Nitrocid.Files.Operations;
+using Nitrocid.Files.Operations.Querying;
+using Nitrocid.Files.Paths;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Kernel.Power;
+using Nitrocid.Kernel.Threading;
+using Nitrocid.Kernel.Time.Renderers;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Notifications;
 
 namespace Nitrocid.Extras.Calendar.Calendar.Reminders
 {

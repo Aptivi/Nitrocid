@@ -18,11 +18,11 @@
 //
 
 using System.Collections.Generic;
-using KS.Kernel.Configuration;
-using KS.Network.Base.Connections;
 using MailKit;
 using MimeKit.Text;
 using Nitrocid.Extras.MailShell.Tools.Transfer;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Network.Base.Connections;
 
 namespace Nitrocid.Extras.MailShell.Mail
 {

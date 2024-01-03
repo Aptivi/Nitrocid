@@ -19,19 +19,19 @@
 
 using System;
 using System.Threading;
-using KS.ConsoleBase.Colors;
-using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
-using KS.Languages;
-using KS.Network.Base.Connections;
-using KS.Shell.ShellBase.Shells;
-using KS.Shell.ShellBase.Commands;
-using KS.Network.Base.SpeedDial;
 using Nitrocid.Extras.FtpShell.Tools;
 using Nitrocid.Extras.FtpShell.Tools.Transfer;
 using FluentFTP;
-using KS.Files.Paths;
-using KS.ConsoleBase.Writers;
+using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.Shell.ShellBase.Shells;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Languages;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Network.Base.Connections;
+using Nitrocid.Files.Paths;
+using Nitrocid.Network.Base.SpeedDial;
+using Nitrocid.ConsoleBase.Colors;
 
 namespace Nitrocid.Extras.FtpShell.FTP
 {

@@ -20,12 +20,12 @@
 using System;
 using System.Linq;
 using System.Text;
-using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
-using KS.Languages;
 using MailKit;
 using MailKit.Net.Imap;
 using Nitrocid.Extras.MailShell.Mail;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
 
 namespace Nitrocid.Extras.MailShell.Tools.Directory
 {

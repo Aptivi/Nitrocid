@@ -18,10 +18,10 @@
 //
 
 using System.Text;
-using KS.ConsoleBase;
-using KS.Kernel.Threading;
-using KS.ConsoleBase.Writers.ConsoleWriters;
 using Terminaux.Colors;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.ConsoleBase;
+using Nitrocid.Kernel.Threading;
 
 namespace Nitrocid.ScreensaverPacks.Animations.Spin
 {

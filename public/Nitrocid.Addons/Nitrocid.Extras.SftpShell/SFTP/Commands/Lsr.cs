@@ -20,10 +20,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers;
-using KS.Shell.ShellBase.Commands;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Extras.SftpShell.Tools.Filesystem;
+using Nitrocid.Shell.ShellBase.Commands;
 
 namespace Nitrocid.Extras.SftpShell.SFTP.Commands
 {

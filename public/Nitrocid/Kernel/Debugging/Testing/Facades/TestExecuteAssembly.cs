@@ -17,12 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Inputs;
-using KS.Files;
-using KS.Languages;
+using Nitrocid.ConsoleBase.Inputs;
+using Nitrocid.Files;
+using Nitrocid.Languages;
 using System.Reflection;
 
-namespace KS.Kernel.Debugging.Testing.Facades
+namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
     internal class TestExecuteAssembly : TestFacade
     {

@@ -17,15 +17,15 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Drivers;
-using KS.Kernel.Debugging;
-using KS.Misc.Text;
+using Nitrocid.Drivers;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Misc.Text;
 using System;
 using System.IO;
 using System.Text;
 using Terminaux.Reader;
 
-namespace KS.ConsoleBase
+namespace Nitrocid.ConsoleBase
 {
     /// <summary>
     /// Wrapper for the <see cref="Console"/> class to ensure safety against dumb consoles. This connects to the current console driver of the <see cref="DriverTypes.Console"/> type handled by <see cref="DriverHandler"/>.

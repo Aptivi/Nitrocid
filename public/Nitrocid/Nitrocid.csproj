@@ -31,7 +31,6 @@
     <DefineTrace>true</DefineTrace>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <OutputType>Exe</OutputType>
-    <RootNamespace>KS</RootNamespace>
     <LangVersion>latest</LangVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -56,7 +55,7 @@
     <NitrocidModAPIVersionMajor>3.0.25</NitrocidModAPIVersionMajor>
 
     <!-- Increment NitrocidModAPIVersionChangeset every time there is a breaking change or an API addition in the N-KS API. -->
-    <NitrocidModAPIVersionChangeset>379</NitrocidModAPIVersionChangeset>
+    <NitrocidModAPIVersionChangeset>380</NitrocidModAPIVersionChangeset>
 
     <!-- To be installed to the file version -->
     <NitrocidModAPIVersion>$(NitrocidModAPIVersionMajor).$(NitrocidModAPIVersionChangeset)</NitrocidModAPIVersion>
@@ -118,25 +117,25 @@
   <ItemGroup>
     <EmbeddedResource Update="Resources\SchemasResources.resx">
       <SubType>Designer</SubType>
-      <CustomToolNamespace>KS.Resources</CustomToolNamespace>
+      <CustomToolNamespace>Nitrocid.Resources</CustomToolNamespace>
       <LastGenOutput>SchemasResources.Designer.cs</LastGenOutput>
       <Generator>PublicResXFileCodeGenerator</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\ThemesResources.resx">
       <SubType>Designer</SubType>
-      <CustomToolNamespace>KS.Resources</CustomToolNamespace>
+      <CustomToolNamespace>Nitrocid.Resources</CustomToolNamespace>
       <LastGenOutput>ThemesResources.Designer.cs</LastGenOutput>
       <Generator>PublicResXFileCodeGenerator</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\SettingsResources.resx">
       <SubType>Designer</SubType>
-      <CustomToolNamespace>KS.Resources</CustomToolNamespace>
+      <CustomToolNamespace>Nitrocid.Resources</CustomToolNamespace>
       <LastGenOutput>SettingsResources.Designer.cs</LastGenOutput>
       <Generator>PublicResXFileCodeGenerator</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\LanguageResources.resx">
       <SubType>Designer</SubType>
-      <CustomToolNamespace>KS.Resources</CustomToolNamespace>
+      <CustomToolNamespace>Nitrocid.Resources</CustomToolNamespace>
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>LanguageResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>

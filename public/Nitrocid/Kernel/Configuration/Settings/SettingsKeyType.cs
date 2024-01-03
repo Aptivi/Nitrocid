@@ -17,11 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Shell.Prompts;
+using Nitrocid.Shell.Prompts;
 using System.Collections.Generic;
 using Terminaux.Colors;
 
-namespace KS.Kernel.Configuration.Settings
+namespace Nitrocid.Kernel.Configuration.Settings
 {
     /// <summary>
     /// Key type for settings entry

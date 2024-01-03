@@ -18,12 +18,12 @@
 //
 
 using System;
-using KS.ConsoleBase.Inputs.Styles;
-using KS.ConsoleBase.Inputs.Styles.Choice;
-using KS.ConsoleBase.Inputs.Styles.Selection;
-using KS.Kernel.Debugging;
+using Nitrocid.ConsoleBase.Inputs.Styles;
+using Nitrocid.ConsoleBase.Inputs.Styles.Choice;
+using Nitrocid.ConsoleBase.Inputs.Styles.Selection;
+using Nitrocid.Kernel.Debugging;
 
-namespace KS.Shell.ShellBase.Scripting.Interaction
+namespace Nitrocid.Shell.ShellBase.Scripting.Interaction
 {
     /// <summary>
     /// UESH scripting command functions

@@ -18,14 +18,14 @@
 //
 
 using System;
-using KS.ConsoleBase;
-using KS.Drivers.RNG;
-using KS.Kernel.Threading;
-using KS.Kernel.Time.Renderers;
-using KS.Misc.Screensaver;
 using Terminaux.Colors;
-using KS.ConsoleBase.Inputs.Styles.Infobox;
 using Textify.NameGen;
+using Nitrocid.Misc.Screensaver;
+using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
+using Nitrocid.ConsoleBase;
+using Nitrocid.Drivers.RNG;
+using Nitrocid.Kernel.Threading;
+using Nitrocid.Kernel.Time.Renderers;
 
 namespace Nitrocid.Extras.NameGen.Screensavers
 {

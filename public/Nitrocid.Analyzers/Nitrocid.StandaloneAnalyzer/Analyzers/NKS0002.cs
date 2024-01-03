@@ -126,7 +126,7 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
 
                     // Check the imports
                     var compilation = finalNode as CompilationUnitSyntax;
-                    if (compilation?.Usings.Any(u => u.Name.ToString() == "KS.ConsoleBase") == false)
+                    if (compilation?.Usings.Any(u => u.Name.ToString() == "Nitrocid.ConsoleBase") == false)
                     {
                         var name = SyntaxFactory.QualifiedName(
                             SyntaxFactory.IdentifierName("KS"),

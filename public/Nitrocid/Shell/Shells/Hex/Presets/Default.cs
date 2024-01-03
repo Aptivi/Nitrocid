@@ -19,11 +19,11 @@
 
 using System.IO;
 using System.Text;
-using KS.ConsoleBase.Colors;
-using KS.Files.Editors.HexEdit;
-using KS.Shell.Prompts;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Files.Editors.HexEdit;
+using Nitrocid.Shell.Prompts;
 
-namespace KS.Shell.Shells.Hex.Presets
+namespace Nitrocid.Shell.Shells.Hex.Presets
 {
     /// <summary>
     /// Default preset

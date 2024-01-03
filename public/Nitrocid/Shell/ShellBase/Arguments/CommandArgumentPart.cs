@@ -20,7 +20,7 @@
 using System;
 using System.Linq;
 
-namespace KS.Shell.ShellBase.Arguments
+namespace Nitrocid.Shell.ShellBase.Arguments
 {
     /// <summary>
     /// Command argument part class

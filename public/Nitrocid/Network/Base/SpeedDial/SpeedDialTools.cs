@@ -17,18 +17,18 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Languages;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using KS.Kernel.Exceptions;
-using KS.Network.Base.Connections;
-using KS.Files.Operations;
-using KS.Files.Operations.Querying;
-using KS.Files.Paths;
+using Nitrocid.Files.Operations;
+using Nitrocid.Languages;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Network.Base.Connections;
+using Nitrocid.Files.Paths;
+using Nitrocid.Files.Operations.Querying;
 
-namespace KS.Network.Base.SpeedDial
+namespace Nitrocid.Network.Base.SpeedDial
 {
     /// <summary>
     /// Speed dial management tools

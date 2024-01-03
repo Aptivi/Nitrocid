@@ -20,7 +20,7 @@
 using NUnit.Framework;
 using Shouldly;
 using System.Linq;
-using KS.Misc.Reflection;
+using Nitrocid.Misc.Reflection;
 
 namespace Nitrocid.Tests.Drivers
 {

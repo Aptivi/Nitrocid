@@ -19,14 +19,14 @@
 
 using System;
 using System.Threading;
-using KS.ConsoleBase.Colors;
-using KS.Kernel.Debugging;
-using KS.Languages;
-using KS.Misc.Text;
-using KS.Shell.ShellBase.Shells;
-using KS.Shell.ShellBase.Commands;
 using Nitrocid.Extras.SqlShell.Tools;
-using KS.ConsoleBase.Writers;
+using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.Shell.ShellBase.Shells;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Misc.Text;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Languages;
+using Nitrocid.ConsoleBase.Colors;
 
 namespace Nitrocid.Extras.SqlShell.Sql
 {

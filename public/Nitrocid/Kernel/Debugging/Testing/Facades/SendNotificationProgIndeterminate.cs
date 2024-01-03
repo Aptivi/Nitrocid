@@ -17,12 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Languages;
-using KS.Misc.Notifications;
-using KS.Misc.Splash;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Notifications;
+using Nitrocid.Misc.Splash;
 using System.Threading;
 
-namespace KS.Kernel.Debugging.Testing.Facades
+namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
     internal class SendNotificationProgIndeterminate : TestFacade
     {

@@ -18,18 +18,18 @@
 //
 
 using System.Collections.Generic;
-using KS.Shell.Prompts;
-using KS.Shell.ShellBase.Commands;
-using KS.Shell.ShellBase.Shells;
-using KS.Shell.Shells.Debug.Commands;
-using KS.Shell.ShellBase.Arguments;
-using KS.Shell.Shells.Debug.Presets;
-using KS.Shell.ShellBase.Switches;
-using KS.Misc.Reflection;
 using System.Linq;
-using KS.Kernel.Extensions;
+using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.Shell.ShellBase.Shells;
+using Nitrocid.Misc.Reflection;
+using Nitrocid.Shell.Prompts;
+using Nitrocid.Kernel.Extensions;
+using Nitrocid.Shell.Shells.Debug.Commands;
+using Nitrocid.Shell.ShellBase.Arguments;
+using Nitrocid.Shell.ShellBase.Switches;
+using Nitrocid.Shell.Shells.Debug.Presets;
 
-namespace KS.Shell.Shells.Debug
+namespace Nitrocid.Shell.Shells.Debug
 {
     /// <summary>
     /// Common debug shell class

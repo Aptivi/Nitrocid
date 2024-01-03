@@ -21,9 +21,9 @@ using System.Globalization;
 using NUnit.Framework;
 using Shouldly;
 using System;
-using KS.Kernel.Time;
-using KS.Kernel.Time.Renderers;
-using KS.Kernel.Time.Calendars;
+using Nitrocid.Kernel.Time.Calendars;
+using Nitrocid.Kernel.Time.Renderers;
+using Nitrocid.Kernel.Time;
 
 namespace Nitrocid.Tests.Kernel.Time
 {

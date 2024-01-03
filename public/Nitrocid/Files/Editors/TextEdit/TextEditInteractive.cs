@@ -17,28 +17,28 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Inputs;
-using KS.ConsoleBase.Interactive;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Files.Operations.Querying;
-using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
-using KS.Languages;
-using KS.Misc.Text;
-using KS.Shell.Shells.Text;
 using System;
 using System.Linq;
 using System.Text;
 using Textify.Sequences.Tools;
 using Textify.Sequences.Builder.Types;
-using KS.ConsoleBase.Buffered;
 using System.Collections.Generic;
-using KS.ConsoleBase.Inputs.Styles.Infobox;
-using KS.ConsoleBase.Writers.FancyWriters;
+using Nitrocid.Shell.Shells.Text;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.ConsoleBase;
+using Nitrocid.ConsoleBase.Inputs;
+using Nitrocid.Languages;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.ConsoleBase.Writers.FancyWriters;
+using Nitrocid.Misc.Text;
+using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.ConsoleBase.Interactive;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Buffered;
+using Nitrocid.Files.Operations.Querying;
 
-namespace KS.Files.Editors.TextEdit
+namespace Nitrocid.Files.Editors.TextEdit
 {
     /// <summary>
     /// Interactive text editor
@@ -243,7 +243,7 @@ namespace KS.Files.Editors.TextEdit
                 // Get the start and the end indexes for lines
                 int lineLinesPerPage = ConsoleWrapper.WindowHeight - 4;
                 int currentPage = lineIdx / lineLinesPerPage;
-                int startIndex = (lineLinesPerPage * currentPage) + 1;
+                int startIndex = lineLinesPerPage * currentPage + 1;
                 int endIndex = lineLinesPerPage * (currentPage + 1);
                 if (startIndex > lines.Count)
                     startIndex = lines.Count;
@@ -297,7 +297,7 @@ namespace KS.Files.Editors.TextEdit
                     {
                         int charsPerPage = SeparatorConsoleWidthInterior;
                         int currentCharPage = lineColIdx / charsPerPage;
-                        int startLineIndex = (charsPerPage * currentCharPage);
+                        int startLineIndex = charsPerPage * currentCharPage;
                         int endLineIndex = charsPerPage * (currentCharPage + 1);
                         if (startLineIndex > source.Length)
                             startLineIndex = source.Length;

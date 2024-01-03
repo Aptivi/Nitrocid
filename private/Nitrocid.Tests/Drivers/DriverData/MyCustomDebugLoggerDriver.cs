@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Drivers.DebugLogger;
+using Nitrocid.Drivers.DebugLogger;
 
 namespace Nitrocid.Tests.Drivers.DriverData
 {

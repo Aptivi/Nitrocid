@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace KS.Kernel.Debugging.Testing
+namespace Nitrocid.Kernel.Debugging.Testing
 {
     internal enum TestSection
     {

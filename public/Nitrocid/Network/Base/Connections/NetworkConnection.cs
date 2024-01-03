@@ -17,12 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Exceptions;
-using KS.Kernel.Threading;
-using KS.Languages;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Kernel.Threading;
+using Nitrocid.Languages;
 using System;
 
-namespace KS.Network.Base.Connections
+namespace Nitrocid.Network.Base.Connections
 {
     /// <summary>
     /// A class for network connection information

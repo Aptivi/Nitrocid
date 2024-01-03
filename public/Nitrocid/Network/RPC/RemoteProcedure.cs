@@ -19,14 +19,14 @@
 
 using System.Net.Sockets;
 using System.Threading;
-using KS.Kernel.Configuration;
-using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
-using KS.Kernel.Threading;
-using KS.Languages;
-using KS.Misc.Splash;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Kernel.Threading;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Splash;
 
-namespace KS.Network.RPC
+namespace Nitrocid.Network.RPC
 {
     /// <summary>
     /// Remote procedure module

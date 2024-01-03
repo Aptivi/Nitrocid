@@ -24,13 +24,13 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
-using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
-using KS.Languages;
-using KS.Misc.Text;
-using KS.Shell.Shells.Text;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Text;
+using Nitrocid.Shell.Shells.Text;
 
-namespace KS.Files.Editors.TextEdit
+namespace Nitrocid.Files.Editors.TextEdit
 {
     /// <summary>
     /// Text editor tools module

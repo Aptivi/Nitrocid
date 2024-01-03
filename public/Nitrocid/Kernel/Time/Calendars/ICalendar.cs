@@ -19,7 +19,7 @@
 
 using System.Globalization;
 
-namespace KS.Kernel.Time.Calendars
+namespace Nitrocid.Kernel.Time.Calendars
 {
     /// <summary>
     /// Calendar interface

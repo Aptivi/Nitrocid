@@ -18,13 +18,13 @@
 //
 
 using System;
-using KS.ConsoleBase.Colors;
-using KS.Languages;
-using KS.Shell.ShellBase.Commands;
-using KS.Misc.Text;
 using Nitrocid.Extras.FtpShell.Tools.Filesystem;
-using KS.ConsoleBase.Inputs.Styles.Choice;
-using KS.ConsoleBase.Writers;
+using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Languages;
+using Nitrocid.ConsoleBase.Inputs.Styles.Choice;
+using Nitrocid.Misc.Text;
+using Nitrocid.ConsoleBase.Colors;
 
 namespace Nitrocid.Extras.FtpShell.FTP.Commands
 {

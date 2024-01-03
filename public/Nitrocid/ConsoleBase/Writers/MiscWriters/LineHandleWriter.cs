@@ -17,14 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Files;
-using KS.Files.Operations;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.Files;
+using Nitrocid.Files.Operations;
 using System.Text;
 using Terminaux.Colors;
 
-namespace KS.ConsoleBase.Writers.MiscWriters
+namespace Nitrocid.ConsoleBase.Writers.MiscWriters
 {
     /// <summary>
     /// Line handle writer

@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace KS.Drivers.Console.Bases
+namespace Nitrocid.Drivers.Console.Bases
 {
     internal class Terminal : BaseConsoleDriver, IConsoleDriver
     { }

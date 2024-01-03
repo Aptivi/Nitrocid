@@ -17,11 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Debugging;
+using Nitrocid.Kernel.Debugging;
 using System;
 using System.Collections.Generic;
 
-namespace KS.ConsoleBase.Inputs
+namespace Nitrocid.ConsoleBase.Inputs
 {
     /// <summary>
     /// Input choice tools

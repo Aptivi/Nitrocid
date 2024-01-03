@@ -17,14 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Drivers;
-using KS.Drivers.RNG;
-using KS.Drivers.Sorting;
+using Nitrocid.Drivers;
+using Nitrocid.Drivers.RNG;
+using Nitrocid.Drivers.Sorting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace KS.Misc.Reflection
+namespace Nitrocid.Misc.Reflection
 {
     /// <summary>
     /// Array tools that are useful

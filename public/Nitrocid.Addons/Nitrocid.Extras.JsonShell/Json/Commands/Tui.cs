@@ -17,10 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Files.Editors.TextEdit;
-using KS.Files.Operations;
-using KS.Shell.ShellBase.Commands;
 using Nitrocid.Extras.JsonShell.Tools;
+using Nitrocid.Files.Editors.TextEdit;
+using Nitrocid.Files.Operations;
+using Nitrocid.Shell.ShellBase.Commands;
 using System.Collections.Generic;
 
 namespace Nitrocid.Extras.JsonShell.Json.Commands

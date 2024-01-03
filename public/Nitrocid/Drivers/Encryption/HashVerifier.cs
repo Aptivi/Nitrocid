@@ -18,12 +18,12 @@
 //
 
 using System.IO;
-using FS = KS.Files.FilesystemTools;
-using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
-using KS.Files.Operations.Querying;
+using FS = Nitrocid.Files.FilesystemTools;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Files.Operations.Querying;
 
-namespace KS.Drivers.Encryption
+namespace Nitrocid.Drivers.Encryption
 {
     /// <summary>
     /// Hash sum verification module

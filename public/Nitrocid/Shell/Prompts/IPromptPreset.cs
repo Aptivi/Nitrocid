@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace KS.Shell.Prompts
+namespace Nitrocid.Shell.Prompts
 {
     /// <summary>
     /// Prompt preset interface

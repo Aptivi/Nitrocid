@@ -17,11 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Drivers;
-using KS.Files.Folders;
-using KS.Files.Instances;
+using Nitrocid.Drivers;
+using Nitrocid.Files.Folders;
+using Nitrocid.Files.Instances;
 
-namespace KS.Files.Operations.Printing
+namespace Nitrocid.Files.Operations.Printing
 {
     /// <summary>
     /// File information printing module

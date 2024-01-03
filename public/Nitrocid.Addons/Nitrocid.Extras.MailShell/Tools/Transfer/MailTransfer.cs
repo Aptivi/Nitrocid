@@ -23,12 +23,6 @@ using System.Data;
 using System.IO;
 using System.Linq;
 using System.Text;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Kernel.Debugging;
-using KS.Kernel.Time.Renderers;
-using KS.Languages;
 using MailKit;
 using MailKit.Net.Imap;
 using MailKit.Net.Smtp;
@@ -36,9 +30,15 @@ using MailKit.Search;
 using MimeKit;
 using MimeKit.Cryptography;
 using MimeKit.Text;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 using Nitrocid.Extras.MailShell.Mail;
 using Nitrocid.Extras.MailShell.Tools.Directory;
 using Nitrocid.Extras.MailShell.Tools.PGP;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Time.Renderers;
+using Nitrocid.Languages;
 
 namespace Nitrocid.Extras.MailShell.Tools.Transfer
 {

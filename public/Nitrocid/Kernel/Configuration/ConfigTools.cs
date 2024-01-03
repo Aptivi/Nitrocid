@@ -21,26 +21,26 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Text.RegularExpressions;
-using KS.ConsoleBase.Inputs;
-using KS.Kernel.Debugging;
-using KS.Languages;
-using KS.Misc.Reflection;
-using KS.Kernel.Events;
-using KS.ConsoleBase.Colors;
 using Terminaux.Colors;
-using KS.Kernel.Exceptions;
-using KS.Kernel.Configuration.Settings;
 using Newtonsoft.Json;
-using KS.Kernel.Configuration.Instances;
-using KS.Files;
 using System.Linq;
-using KS.Files.Operations.Querying;
 using Newtonsoft.Json.Schema;
-using KS.Resources;
+using Nitrocid.Resources;
 using Newtonsoft.Json.Linq;
-using KS.Files.Paths;
+using Nitrocid.Kernel.Configuration.Settings;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Files;
+using Nitrocid.ConsoleBase.Inputs;
+using Nitrocid.Misc.Reflection;
+using Nitrocid.Languages;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Kernel.Configuration.Instances;
+using Nitrocid.Files.Paths;
+using Nitrocid.Kernel.Events;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Files.Operations.Querying;
 
-namespace KS.Kernel.Configuration
+namespace Nitrocid.Kernel.Configuration
 {
     /// <summary>
     /// Configuration tools
@@ -229,7 +229,7 @@ namespace KS.Kernel.Configuration
                         if (KeyEnumerationInternal)
                         {
                             // Apparently, we need to have a full assembly name for getting types.
-                            Result = Type.GetType("KS." + KeyEnumeration + ", " + Assembly.GetExecutingAssembly().FullName) is not null;
+                            Result = Type.GetType("Nitrocid." + KeyEnumeration + ", " + Assembly.GetExecutingAssembly().FullName) is not null;
                         }
                         else
                         {

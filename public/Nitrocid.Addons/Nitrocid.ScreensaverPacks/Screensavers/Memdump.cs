@@ -18,13 +18,13 @@
 //
 
 using System;
-using KS.ConsoleBase;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Drivers.RNG;
-using KS.Kernel.Threading;
-using KS.Misc.Screensaver;
 using Terminaux.Colors;
-using KS.ConsoleBase.Writers.FancyWriters;
+using Nitrocid.Misc.Screensaver;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.ConsoleBase;
+using Nitrocid.ConsoleBase.Writers.FancyWriters;
+using Nitrocid.Drivers.RNG;
+using Nitrocid.Kernel.Threading;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {

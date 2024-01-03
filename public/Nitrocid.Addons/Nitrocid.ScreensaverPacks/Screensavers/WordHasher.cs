@@ -19,17 +19,17 @@
 
 using System;
 using Figletize;
-using KS.ConsoleBase;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Drivers;
-using KS.Drivers.Encryption;
-using KS.Drivers.RNG;
-using KS.Kernel.Threading;
-using KS.Languages;
-using KS.Misc.Screensaver;
 using Terminaux.Colors;
 using Textify.Words;
-using KS.ConsoleBase.Writers.FancyWriters;
+using Nitrocid.Drivers;
+using Nitrocid.Misc.Screensaver;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.Languages;
+using Nitrocid.Drivers.Encryption;
+using Nitrocid.ConsoleBase;
+using Nitrocid.ConsoleBase.Writers.FancyWriters;
+using Nitrocid.Kernel.Threading;
+using Nitrocid.Drivers.RNG;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {

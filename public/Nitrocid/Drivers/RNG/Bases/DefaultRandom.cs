@@ -19,7 +19,7 @@
 
 using System.Security.Cryptography;
 
-namespace KS.Drivers.RNG.Bases
+namespace Nitrocid.Drivers.RNG.Bases
 {
     internal class DefaultRandom : BaseRandomDriver, IRandomDriver
     {

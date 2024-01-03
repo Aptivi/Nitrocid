@@ -17,14 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Files.Operations;
-using KS.Files.Operations.Querying;
-using KS.Kernel.Exceptions;
-using KS.Languages;
+using Nitrocid.Files.Operations;
+using Nitrocid.Files.Operations.Querying;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
 using System.Security.Cryptography;
 using TextEncoding = System.Text.Encoding;
 
-namespace KS.Drivers.Encoding.Bases
+namespace Nitrocid.Drivers.Encoding.Bases
 {
     /// <summary>
     /// RSA encoder

@@ -20,7 +20,7 @@
 using System;
 using Terminaux.Reader;
 
-namespace KS.Drivers.Input
+namespace Nitrocid.Drivers.Input
 {
     /// <summary>
     /// Input driver interface for drivers

@@ -18,9 +18,9 @@
 //
 
 using System.Collections.Generic;
-using KS.Kernel.Threading;
+using Nitrocid.Kernel.Threading;
 
-namespace KS.Shell.ShellBase.Shells
+namespace Nitrocid.Shell.ShellBase.Shells
 {
     /// <summary>
     /// Shell execution information

@@ -17,24 +17,24 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Inputs;
-using KS.ConsoleBase.Inputs.Styles.Infobox;
-using KS.ConsoleBase.Writers;
-using KS.Files.Operations;
-using KS.Files.Paths;
-using KS.Kernel.Configuration;
-using KS.Kernel.Debugging;
-using KS.Kernel.Events;
-using KS.Kernel.Journaling;
-using KS.Kernel.Power;
-using KS.Kernel.Threading;
-using KS.Kernel.Time;
-using KS.Kernel.Time.Renderers;
-using KS.Languages;
-using KS.Misc.Reflection;
-using KS.Misc.Splash;
-using KS.Misc.Text;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Inputs;
+using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Files.Operations;
+using Nitrocid.Files.Paths;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Events;
+using Nitrocid.Kernel.Journaling;
+using Nitrocid.Kernel.Power;
+using Nitrocid.Kernel.Threading;
+using Nitrocid.Kernel.Time;
+using Nitrocid.Kernel.Time.Renderers;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Reflection;
+using Nitrocid.Misc.Splash;
+using Nitrocid.Misc.Text;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -42,7 +42,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 
-namespace KS.Kernel.Exceptions
+namespace Nitrocid.Kernel.Exceptions
 {
     internal class KernelPanic
     {

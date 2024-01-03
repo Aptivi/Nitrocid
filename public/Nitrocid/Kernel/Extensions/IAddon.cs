@@ -21,7 +21,7 @@ using System;
 using System.Collections.ObjectModel;
 using System.Reflection;
 
-namespace KS.Kernel.Extensions
+namespace Nitrocid.Kernel.Extensions
 {
     internal interface IAddon
     {

@@ -18,13 +18,13 @@
 //
 
 using System.Collections.Generic;
-using KS.Shell.Prompts;
-using KS.Shell.ShellBase.Commands;
-using KS.Shell.ShellBase.Shells;
 using Nitrocid.Extras.ArchiveShell.Archive.Shell.Commands;
 using Nitrocid.Extras.ArchiveShell.Archive.Shell.Presets;
-using KS.Shell.ShellBase.Switches;
-using KS.Shell.ShellBase.Arguments;
+using Nitrocid.Shell.ShellBase.Switches;
+using Nitrocid.Shell.ShellBase.Arguments;
+using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.Shell.ShellBase.Shells;
+using Nitrocid.Shell.Prompts;
 
 namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
 {

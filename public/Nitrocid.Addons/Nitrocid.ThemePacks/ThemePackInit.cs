@@ -17,16 +17,16 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Themes;
-using KS.Kernel.Debugging;
-using KS.Kernel.Extensions;
-using KS.Misc.Reflection;
+using Nitrocid.ConsoleBase.Themes;
 using Newtonsoft.Json.Linq;
+using Nitrocid.Kernel.Debugging;
 using Nitrocid.ThemePacks.Resources;
 using System;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Reflection;
+using Nitrocid.Kernel.Extensions;
+using Nitrocid.Misc.Reflection;
 
 namespace Nitrocid.ThemePacks
 {

@@ -20,15 +20,15 @@
 using System;
 using System.Collections.Generic;
 using System.Threading;
-using KS.Drivers.RNG;
-using KS.Languages;
-using KS.ConsoleBase.Inputs;
-using KS.ConsoleBase;
-using KS.Kernel.Threading;
-using KS.ConsoleBase.Writers.ConsoleWriters;
 using Terminaux.Colors;
-using KS.Misc.Screensaver;
 using System.Text;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.Kernel.Threading;
+using Nitrocid.Languages;
+using Nitrocid.ConsoleBase;
+using Nitrocid.Drivers.RNG;
+using Nitrocid.Misc.Screensaver;
+using Nitrocid.ConsoleBase.Inputs;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games
 {

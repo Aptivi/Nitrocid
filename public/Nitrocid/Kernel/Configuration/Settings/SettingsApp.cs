@@ -20,20 +20,20 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using KS.ConsoleBase;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Inputs;
-using KS.ConsoleBase.Inputs.Styles.Infobox;
-using KS.ConsoleBase.Inputs.Styles.Selection;
-using KS.ConsoleBase.Writers;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Kernel.Configuration.Instances;
-using KS.Kernel.Debugging;
-using KS.Languages;
-using KS.Misc.Text;
-using KS.Security.Permissions;
+using Nitrocid.ConsoleBase;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Inputs;
+using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
+using Nitrocid.ConsoleBase.Inputs.Styles.Selection;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.Kernel.Configuration.Instances;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Text;
+using Nitrocid.Security.Permissions;
 
-namespace KS.Kernel.Configuration.Settings
+namespace Nitrocid.Kernel.Configuration.Settings
 {
     /// <summary>
     /// Settings application module
@@ -360,7 +360,7 @@ namespace KS.Kernel.Configuration.Settings
                 // User prefers the classic style
                 return
                     classicTitle +
-                    new string('-', ConsoleWrapper.WindowWidth - (classicTitle).Length) + CharManager.NewLine + CharManager.NewLine +
+                    new string('-', ConsoleWrapper.WindowWidth - classicTitle.Length) + CharManager.NewLine + CharManager.NewLine +
                     description +
                     (!string.IsNullOrEmpty(notes) ? CharManager.NewLine + notes : "");
             else

@@ -17,12 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Shell.ShellBase.Commands;
-using KS.Shell.ShellBase.Commands.ProcessExecution;
-using KS.Shell.ShellBase.Switches;
+using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.Shell.ShellBase.Commands.ProcessExecution;
+using Nitrocid.Shell.ShellBase.Switches;
 using System.Linq;
 
-namespace KS.Shell.ShellBase.Shells.Unified
+namespace Nitrocid.Shell.ShellBase.Shells.Unified
 {
     /// <summary>
     /// Executes an external command

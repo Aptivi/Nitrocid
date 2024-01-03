@@ -17,10 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Files.Operations;
-using KS.Files.Operations.Querying;
-using KS.Files.Paths;
 using Newtonsoft.Json;
+using Nitrocid.Files.Operations;
+using Nitrocid.Files.Operations.Querying;
+using Nitrocid.Files.Paths;
 using System.Collections.Generic;
 using System.Linq;
 

@@ -23,20 +23,20 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
-using KS.Kernel.Debugging;
-using KS.Kernel.Power;
-using KS.Languages;
-using KS.Misc.Notifications;
-using KS.Misc.Screensaver;
-using KS.Misc.Text;
-using KS.Kernel.Events;
-using KS.Kernel.Exceptions;
 using System.Linq;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Shell.ShellBase.Shells;
-using KS.Users.Login;
+using Nitrocid.Users.Login;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Shell.ShellBase.Shells;
+using Nitrocid.Misc.Screensaver;
+using Nitrocid.Misc.Notifications;
+using Nitrocid.Languages;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Misc.Text;
+using Nitrocid.Kernel.Events;
+using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.Kernel.Power;
 
-namespace KS.Network.RPC
+namespace Nitrocid.Network.RPC
 {
     /// <summary>
     /// RPC commands module
@@ -116,7 +116,7 @@ namespace KS.Network.RPC
                     DebugWriter.WriteDebug(DebugLevel.I, "Command found.");
 
                     // Check the request type
-                    string RequestType = Cmd[(Cmd.IndexOf(":") + 1)..(Cmd.IndexOf(">"))];
+                    string RequestType = Cmd[(Cmd.IndexOf(":") + 1)..Cmd.IndexOf(">")];
                     var ByteMsg = Array.Empty<byte>();
 
                     // Populate the byte message to send the confirmation to

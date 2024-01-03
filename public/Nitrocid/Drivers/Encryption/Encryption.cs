@@ -18,10 +18,10 @@
 //
 
 using System.IO;
-using KS.Kernel.Debugging;
-using FS = KS.Files.FilesystemTools;
+using Nitrocid.Kernel.Debugging;
+using FS = Nitrocid.Files.FilesystemTools;
 
-namespace KS.Drivers.Encryption
+namespace Nitrocid.Drivers.Encryption
 {
     /// <summary>
     /// Encryption and hashing module
