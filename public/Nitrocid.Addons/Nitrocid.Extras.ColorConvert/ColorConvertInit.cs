@@ -52,6 +52,26 @@ namespace Nitrocid.Extras.ColorConvert
                         ], true)
                     ], new ColorHexToRgbKSCommand())
             },
+            
+            { "colorhextoryb",
+                new CommandInfo("colorhextoryb", /* Localizable */ "Converts the hexadecimal representation of the color to RYB numbers.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "#RRGGBB"),
+                        ], true)
+                    ], new ColorHexToRybCommand())
+            },
+
+            { "colorhextorybks",
+                new CommandInfo("colorhextorybks", /* Localizable */ "Converts the hexadecimal representation of the color to RYB numbers in KS format.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "#RRGGBB"),
+                        ], true)
+                    ], new ColorHexToRybKSCommand())
+            },
 
             { "colorhextocmyk",
                 new CommandInfo("colorhextocmyk", /* Localizable */ "Converts the hexadecimal representation of the color to CMYK numbers.",
@@ -322,6 +342,279 @@ namespace Nitrocid.Extras.ColorConvert
                     ], new ColorRgbToHsvKSCommand())
             },
 
+            { "colorrgbtoryb",
+                new CommandInfo("colorrgbtoryb", /* Localizable */ "Converts the color RGB numbers to RYB.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "R", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "B", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorRgbToRybCommand())
+            },
+
+            { "colorrgbtorybks",
+                new CommandInfo("colorrgbtorybks", /* Localizable */ "Converts the color RGB numbers to RYB in KS format.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "R", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "B", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorRgbToRybKSCommand())
+            },
+
+            { "colorrybtohex",
+                new CommandInfo("colorrybtohex", /* Localizable */ "Converts the color RYB numbers to hex.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "R", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "B", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorRybToHexCommand())
+            },
+
+            { "colorrybtocmyk",
+                new CommandInfo("colorrybtocmyk", /* Localizable */ "Converts the color RYB numbers to CMYK.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "R", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "B", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorRybToCmykCommand())
+            },
+
+            { "colorrybtocmykks",
+                new CommandInfo("colorrybtocmykks", /* Localizable */ "Converts the color RYB numbers to CMYK in KS format.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "R", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "B", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorRybToCmykKSCommand())
+            },
+
+            { "colorrybtocmy",
+                new CommandInfo("colorrybtocmy", /* Localizable */ "Converts the color RYB numbers to CMY.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "R", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "B", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorRybToCmyCommand())
+            },
+
+            { "colorrybtocmyks",
+                new CommandInfo("colorrybtocmyks", /* Localizable */ "Converts the color RYB numbers to CMY in KS format.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "R", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "B", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorRybToCmyKSCommand())
+            },
+
+            { "colorrybtohsl",
+                new CommandInfo("colorrybtohsl", /* Localizable */ "Converts the color RYB numbers to HSL.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "R", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "B", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorRybToHslCommand())
+            },
+
+            { "colorrybtohslks",
+                new CommandInfo("colorrybtohslks", /* Localizable */ "Converts the color RYB numbers to HSL in KS format.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "R", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "B", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorRybToHslKSCommand())
+            },
+
+            { "colorrybtohsv",
+                new CommandInfo("colorrybtohsv", /* Localizable */ "Converts the color RYB numbers to HSV.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "R", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "B", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorRybToHsvCommand())
+            },
+
+            { "colorrybtohsvks",
+                new CommandInfo("colorrybtohsvks", /* Localizable */ "Converts the color RYB numbers to HSV in KS format.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "R", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "B", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorRybToHsvKSCommand())
+            },
+
+            { "colorrybtorgb",
+                new CommandInfo("colorrybtorgb", /* Localizable */ "Converts the color RYB numbers to RGB.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "R", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "B", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorRybToRgbCommand())
+            },
+
+            { "colorrybtorgbks",
+                new CommandInfo("colorrybtorgbks", /* Localizable */ "Converts the color RYB numbers to RGB in KS format.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "R", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "B", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorRybToRgbKSCommand())
+            },
+
             { "colorhsltohex",
                 new CommandInfo("colorhsltohex", /* Localizable */ "Converts the color HSL numbers to hex.",
                     [
@@ -509,6 +802,48 @@ namespace Nitrocid.Extras.ColorConvert
                             }),
                         ], true)
                     ], new ColorHslToRgbKSCommand())
+            },
+
+            { "colorhsltoryb",
+                new CommandInfo("colorhsltoryb", /* Localizable */ "Converts the color HSL numbers to RYB.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "H", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "S", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "L", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorHslToRybCommand())
+            },
+
+            { "colorhsltorybks",
+                new CommandInfo("colorhsltorybks", /* Localizable */ "Converts the color HSL numbers to RYB in KS format.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "H", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "S", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "L", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorHslToRybKSCommand())
             },
 
             { "colorhsvtohex",
@@ -700,6 +1035,48 @@ namespace Nitrocid.Extras.ColorConvert
                     ], new ColorHsvToRgbKSCommand())
             },
 
+            { "colorhsvtoryb",
+                new CommandInfo("colorhsvtoryb", /* Localizable */ "Converts the color HSV numbers to RYB.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "H", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "S", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "V", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorHsvToRybCommand())
+            },
+
+            { "colorhsvtorybks",
+                new CommandInfo("colorhsvtorybks", /* Localizable */ "Converts the color HSV numbers to RYB in KS format.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "H", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "S", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "V", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorHsvToRybKSCommand())
+            },
+
             { "colorcmyktohex",
                 new CommandInfo("colorcmyktohex", /* Localizable */ "Converts the color CMYK numbers to hex.",
                     [
@@ -773,6 +1150,56 @@ namespace Nitrocid.Extras.ColorConvert
                             }),
                         ], true)
                     ], new ColorCmykToRgbKSCommand())
+            },
+
+            { "colorcmyktoryb",
+                new CommandInfo("colorcmyktoryb", /* Localizable */ "Converts the color CMYK numbers to RYB.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "C", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "M", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "K", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorCmykToRybCommand())
+            },
+
+            { "colorcmyktorybks",
+                new CommandInfo("colorcmyktorybks", /* Localizable */ "Converts the color CMYK numbers to RYB in KS format.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "C", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "M", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "K", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorCmykToRybKSCommand())
             },
 
             { "colorcmyktohsl",
@@ -1112,6 +1539,48 @@ namespace Nitrocid.Extras.ColorConvert
                             }),
                         ], true)
                     ], new ColorCmyToRgbKSCommand())
+            },
+
+            { "colorcmytoryb",
+                new CommandInfo("colorcmytoryb", /* Localizable */ "Converts the color CMY numbers to RYB.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "C", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "M", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorCmyToRybCommand())
+            },
+
+            { "colorcmytorybks",
+                new CommandInfo("colorcmytorybks", /* Localizable */ "Converts the color CMY numbers to RYB in KS format.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "C", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "M", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorCmyToRybKSCommand())
             },
         };
 
