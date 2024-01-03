@@ -94,12 +94,12 @@
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="all" />
     <PackageReference Include="Newtonsoft.Json.Schema" Version="3.0.15" PrivateAssets="all" />
     <PackageReference Include="SpecProbe" Version="1.2.0.2" PrivateAssets="all" />
-    <PackageReference Include="Terminaux" Version="2.2.0" />
   </ItemGroup>
   <!-- KS Dependencies Information End -->
 
   <!-- KS Non-private Dependencies Information -->
   <ItemGroup>
+    <PackageReference Include="Terminaux" Version="2.2.0" />
     <PackageReference Include="Textify.Offline" Version="1.2.0" />
     <PackageReference Include="Nettify" Version="1.1.0" />
   </ItemGroup>

@@ -148,6 +148,7 @@ namespace Nitrocid.Shell.ShellBase.Commands
         /// <summary>
         /// Gets the command dictionary according to the shell type by searching for the partial command name
         /// </summary>
+        /// <param name="namePattern">A valid regex pattern for command name</param>
         /// <param name="ShellType">The shell type</param>
         /// <param name="includeAliases">Whether to include aliases or not</param>
         public static Dictionary<string, CommandInfo> FindCommands([StringSyntax(StringSyntaxAttribute.Regex)] string namePattern, string ShellType, bool includeAliases = true)
