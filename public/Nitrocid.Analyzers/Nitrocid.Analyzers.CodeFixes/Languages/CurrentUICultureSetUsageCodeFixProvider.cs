@@ -88,7 +88,7 @@ namespace Nitrocid.Analyzers.Languages
                 if (compilation?.Usings.Any(u => u.Name.ToString() == "Nitrocid.Languages") == false)
                 {
                     var name = SyntaxFactory.QualifiedName(
-                        SyntaxFactory.IdentifierName("KS"),
+                        SyntaxFactory.IdentifierName("Nitrocid"),
                         SyntaxFactory.IdentifierName("Languages"));
                     compilation = compilation
                         .AddUsings(SyntaxFactory.UsingDirective(name));

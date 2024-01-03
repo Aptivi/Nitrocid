@@ -84,7 +84,7 @@ namespace Nitrocid.Analyzers.Network.Base
                 {
                     var name = SyntaxFactory.QualifiedName(
                         SyntaxFactory.QualifiedName(
-                            SyntaxFactory.IdentifierName("KS"),
+                            SyntaxFactory.IdentifierName("Nitrocid"),
                             SyntaxFactory.IdentifierName("Network")),
                         SyntaxFactory.IdentifierName("Base"));
                     compilation = compilation

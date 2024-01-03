@@ -84,7 +84,7 @@ namespace Nitrocid.Analyzers.ConsoleBase
                 {
                     var name = SyntaxFactory.QualifiedName(
                         SyntaxFactory.QualifiedName(
-                            SyntaxFactory.IdentifierName("KS"),
+                            SyntaxFactory.IdentifierName("Nitrocid"),
                             SyntaxFactory.IdentifierName("ConsoleBase")),
                         SyntaxFactory.IdentifierName("Inputs"));
                     compilation = compilation

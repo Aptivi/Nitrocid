@@ -84,7 +84,7 @@ namespace Nitrocid.Analyzers.Files.Operations
                 {
                     var name = SyntaxFactory.QualifiedName(
                         SyntaxFactory.QualifiedName(
-                            SyntaxFactory.IdentifierName("KS"),
+                            SyntaxFactory.IdentifierName("Nitrocid"),
                             SyntaxFactory.IdentifierName("Files")),
                         SyntaxFactory.IdentifierName("Operations"));
                     compilation = compilation

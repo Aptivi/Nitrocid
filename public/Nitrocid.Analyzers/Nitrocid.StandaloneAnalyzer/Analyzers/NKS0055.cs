@@ -100,7 +100,7 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                     {
                         var name = SyntaxFactory.QualifiedName(
                             SyntaxFactory.QualifiedName(
-                                SyntaxFactory.IdentifierName("KS"),
+                                SyntaxFactory.IdentifierName("Nitrocid"),
                                 SyntaxFactory.IdentifierName("Misc")),
                             SyntaxFactory.IdentifierName("Text"));
                         var directive = SyntaxFactory.UsingDirective(name).NormalizeWhitespace();

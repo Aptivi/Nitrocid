@@ -79,7 +79,7 @@ namespace Nitrocid.Analyzers.Misc.Text
             {
                 var name = SyntaxFactory.QualifiedName(
                     SyntaxFactory.QualifiedName(
-                        SyntaxFactory.IdentifierName("KS"),
+                        SyntaxFactory.IdentifierName("Nitrocid"),
                         SyntaxFactory.IdentifierName("Misc")),
                     SyntaxFactory.IdentifierName("Text"));
                 compilation = compilation

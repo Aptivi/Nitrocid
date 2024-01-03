@@ -85,7 +85,7 @@ namespace Nitrocid.Analyzers.Kernel.Time.Renderers
                     var name = SyntaxFactory.QualifiedName(
                         SyntaxFactory.QualifiedName(
                             SyntaxFactory.QualifiedName(
-                                SyntaxFactory.IdentifierName("KS"),
+                                SyntaxFactory.IdentifierName("Nitrocid"),
                                 SyntaxFactory.IdentifierName("Kernel")),
                             SyntaxFactory.IdentifierName("Time")),
                         SyntaxFactory.IdentifierName("Renderers"));

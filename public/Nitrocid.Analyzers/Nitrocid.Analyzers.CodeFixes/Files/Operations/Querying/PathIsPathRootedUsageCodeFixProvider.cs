@@ -85,7 +85,7 @@ namespace Nitrocid.Analyzers.Files.Operations.Querying
                     var name = SyntaxFactory.QualifiedName(
                         SyntaxFactory.QualifiedName(
                             SyntaxFactory.QualifiedName(
-                                SyntaxFactory.IdentifierName("KS"),
+                                SyntaxFactory.IdentifierName("Nitrocid"),
                                 SyntaxFactory.IdentifierName("Files")),
                             SyntaxFactory.IdentifierName("Operations")),
                         SyntaxFactory.IdentifierName("Querying"));

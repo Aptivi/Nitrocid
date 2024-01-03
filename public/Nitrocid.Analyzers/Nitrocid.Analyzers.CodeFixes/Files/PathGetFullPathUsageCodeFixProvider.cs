@@ -83,7 +83,7 @@ namespace Nitrocid.Analyzers.Files
                 if (compilation?.Usings.Any(u => u.Name.ToString() == "Nitrocid.Files") == false)
                 {
                     var name = SyntaxFactory.QualifiedName(
-                        SyntaxFactory.IdentifierName("KS"),
+                        SyntaxFactory.IdentifierName("Nitrocid"),
                         SyntaxFactory.IdentifierName("Files"));
                     compilation = compilation
                         .AddUsings(SyntaxFactory.UsingDirective(name));

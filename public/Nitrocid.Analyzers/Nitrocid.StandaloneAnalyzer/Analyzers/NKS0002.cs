@@ -129,7 +129,7 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                     if (compilation?.Usings.Any(u => u.Name.ToString() == "Nitrocid.ConsoleBase") == false)
                     {
                         var name = SyntaxFactory.QualifiedName(
-                            SyntaxFactory.IdentifierName("KS"),
+                            SyntaxFactory.IdentifierName("Nitrocid"),
                             SyntaxFactory.IdentifierName("ConsoleBase"));
                         var directive = SyntaxFactory.UsingDirective(name).NormalizeWhitespace();
                         TextWriterColor.Write("Additionally, the suggested fix will add the following using statement:", true, ConsoleColors.Yellow);
