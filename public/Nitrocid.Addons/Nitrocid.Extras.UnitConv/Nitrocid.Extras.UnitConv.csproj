@@ -49,7 +49,7 @@
 
   <ItemGroup>
     <PackageReference Include="FluentFTP" Version="49.0.1" />
-    <PackageReference Include="UnitsNet" Version="5.41.0" />
+    <PackageReference Include="UnitsNet" Version="5.42.0" />
   </ItemGroup>
 
 </Project>
