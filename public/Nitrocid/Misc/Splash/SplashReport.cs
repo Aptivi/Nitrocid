@@ -26,9 +26,9 @@ using Nitrocid.Kernel.Journaling;
 using Nitrocid.Kernel.Time;
 using Nitrocid.Kernel.Time.Renderers;
 using Nitrocid.Languages;
-using Nitrocid.Misc.Text;
 using System;
 using System.Collections.Generic;
+using Textify.General;
 
 namespace Nitrocid.Misc.Splash
 {

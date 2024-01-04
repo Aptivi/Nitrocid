@@ -29,7 +29,7 @@ using Nitrocid.Extras.MailShell.Mail;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Notifications;
-using Nitrocid.Misc.Text;
+using Textify.General;
 
 namespace Nitrocid.Extras.MailShell.Tools
 {

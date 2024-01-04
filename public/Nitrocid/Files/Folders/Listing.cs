@@ -28,11 +28,11 @@ using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Writers.FancyWriters;
 using Nitrocid.Files.Operations.Printing;
-using Nitrocid.Misc.Text;
 using Nitrocid.Files.Instances;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 using Nitrocid.Files.Operations.Querying;
+using Textify.General;
 
 namespace Nitrocid.Files.Folders
 {

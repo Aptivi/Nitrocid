@@ -21,7 +21,6 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Splash;
-using Nitrocid.Misc.Text;
 using Nitrocid.Misc.Text.Probers.Regexp;
 using Nitrocid.Modifications;
 using Nitrocid.Shell.ShellBase.Aliases;
@@ -30,6 +29,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using Textify.General;
 
 namespace Nitrocid.Shell.ShellBase.Commands
 {

@@ -19,18 +19,18 @@
 
 using System.IO;
 using System.Linq;
-using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Nitrocid.Files;
 using Nitrocid.Files.Operations;
 using Nitrocid.Kernel.Debugging;
+using Textify.General;
 
 namespace Nitrocid.Misc.Text
 {
     /// <summary>
     /// JSON shell tools
     /// </summary>
-    public static class JsonTools
+    public static class JsonTextTools
     {
 
         /// <summary>
@@ -48,24 +48,7 @@ namespace Nitrocid.Misc.Text
 
             // Try to beautify JSON
             string JsonFileContents = Reading.ReadContentsText(JsonFile);
-            return BeautifyJsonText(JsonFileContents);
-        }
-
-        /// <summary>
-        /// Beautifies the JSON text.
-        /// </summary>
-        /// <param name="JsonText">Contents of a minified JSON.</param>
-        /// <returns>Beautified JSON</returns>
-        public static string BeautifyJsonText(string JsonText)
-        {
-            // Make an instance of JToken with this text
-            var JsonToken = JToken.Parse(JsonText);
-            DebugWriter.WriteDebug(DebugLevel.I, "Created a token with text length of {0}", JsonText.Length);
-
-            // Beautify JSON
-            string BeautifiedJson = JsonConvert.SerializeObject(JsonToken, Formatting.Indented);
-            DebugWriter.WriteDebug(DebugLevel.I, "Beautified the JSON text. Length: {0}", BeautifiedJson.Length);
-            return BeautifiedJson;
+            return JsonTools.BeautifyJsonText(JsonFileContents);
         }
 
         /// <summary>
@@ -83,24 +66,7 @@ namespace Nitrocid.Misc.Text
 
             // Try to minify JSON
             string JsonFileContents = Reading.ReadContentsText(JsonFile);
-            return MinifyJsonText(JsonFileContents);
-        }
-
-        /// <summary>
-        /// Minifies the JSON text.
-        /// </summary>
-        /// <param name="JsonText">Contents of a beautified JSON.</param>
-        /// <returns>Minified JSON</returns>
-        public static string MinifyJsonText(string JsonText)
-        {
-            // Make an instance of JToken with this text
-            var JsonToken = JToken.Parse(JsonText);
-            DebugWriter.WriteDebug(DebugLevel.I, "Created a token with text length of {0}", JsonText.Length);
-
-            // Minify JSON
-            string MinifiedJson = JsonConvert.SerializeObject(JsonToken);
-            DebugWriter.WriteDebug(DebugLevel.I, "Minified the JSON text. Length: {0}", MinifiedJson.Length);
-            return MinifiedJson;
+            return JsonTools.MinifyJsonText(JsonFileContents);
         }
 
         /// <summary>

@@ -25,10 +25,10 @@ using Nitrocid.Drivers;
 using Nitrocid.Kernel;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
-using Nitrocid.Misc.Text;
 using Nitrocid.Shell.ShellBase.Arguments;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Shells;
+using Textify.General;
 
 namespace Nitrocid.Shell.ShellBase.Scripting
 {

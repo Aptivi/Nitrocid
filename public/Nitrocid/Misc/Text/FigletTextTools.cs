@@ -17,28 +17,21 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Nitrocid.Kernel.Configuration;
+
 namespace Nitrocid.Misc.Text
 {
     /// <summary>
-    /// Type of enclosed double quotes in a word or phrase
+    /// Tools for text manipulation
     /// </summary>
-    public enum EnclosedDoubleQuotesType
+    public static class FigletTextTools
     {
+        internal static string defaultFigletFontName = "speed";
+
         /// <summary>
-        /// No double quotes to be enclosed
+        /// Default figlet font name
         /// </summary>
-        None,
-        /// <summary>
-        /// Text enclosed by the double quotes
-        /// </summary>
-        DoubleQuotes,
-        /// <summary>
-        /// Text enclosed by the single quotes
-        /// </summary>
-        SingleQuotes,
-        /// <summary>
-        /// Text enclosed by the backticks
-        /// </summary>
-        Backticks
+        public static string DefaultFigletFontName =>
+            Config.MainConfig.DefaultFigletFontName ?? "speed";
     }
 }

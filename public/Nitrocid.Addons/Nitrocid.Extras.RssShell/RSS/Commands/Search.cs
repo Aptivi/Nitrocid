@@ -24,7 +24,7 @@ using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.Misc.Text;
+using Textify.General;
 
 namespace Nitrocid.Extras.RssShell.RSS.Commands
 {

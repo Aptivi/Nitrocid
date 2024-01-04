@@ -25,7 +25,7 @@ using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 using Nitrocid.Kernel;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Threading;
-using Nitrocid.Misc.Text;
+using Textify.General;
 using Textify.Sequences.Builder;
 using Textify.Sequences.Tools;
 

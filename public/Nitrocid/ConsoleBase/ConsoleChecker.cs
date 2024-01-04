@@ -25,10 +25,10 @@ using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Files.Operations;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Misc.Text;
 using Nitrocid.Files.Paths;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Textify.General;
 
 namespace Nitrocid.ConsoleBase
 {

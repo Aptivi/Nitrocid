@@ -20,9 +20,9 @@
 using Nitrocid.Drivers;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
-using Nitrocid.Misc.Text;
 using System;
 using System.Collections.Generic;
+using Textify.General;
 
 namespace Nitrocid.Shell.ShellBase.Scripting.Conditions.Types
 {

@@ -37,7 +37,7 @@ using Nitrocid.ConsoleBase;
 using Nitrocid.Misc.Screensaver;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.Misc.Text;
+using Textify.General;
 
 namespace Nitrocid.Extras.BassBoom.Animations.Lyrics
 {

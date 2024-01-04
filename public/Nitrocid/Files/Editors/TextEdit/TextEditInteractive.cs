@@ -30,13 +30,13 @@ using Nitrocid.ConsoleBase.Inputs;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.ConsoleBase.Writers.FancyWriters;
-using Nitrocid.Misc.Text;
 using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
 using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 using Nitrocid.ConsoleBase.Interactive;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Buffered;
 using Nitrocid.Files.Operations.Querying;
+using Textify.General;
 
 namespace Nitrocid.Files.Editors.TextEdit
 {

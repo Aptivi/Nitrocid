@@ -27,8 +27,8 @@ using System.Threading;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
-using Nitrocid.Misc.Text;
 using Nitrocid.Shell.Shells.Text;
+using Textify.General;
 
 namespace Nitrocid.Files.Editors.TextEdit
 {

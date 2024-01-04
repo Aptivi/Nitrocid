@@ -45,7 +45,6 @@ using Nitrocid.Kernel.Threading;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Misc.Text;
 using Nitrocid.Drivers.Console;
 using Nitrocid.Shell.Prompts;
 using Nitrocid.Security.Permissions;
@@ -63,6 +62,7 @@ using Nitrocid.Shell.Shells.UESH;
 using Nitrocid.Shell.Shells.Text;
 using Nitrocid.Shell.Shells.Hex;
 using Nitrocid.Shell.Shells.Debug;
+using Textify.General;
 
 namespace Nitrocid.Shell.ShellBase.Shells
 {

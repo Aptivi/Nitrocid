@@ -17,9 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Misc.Text;
 using NUnit.Framework;
 using Shouldly;
+using Textify.General;
 
 namespace Nitrocid.Tests.Misc.Text
 {

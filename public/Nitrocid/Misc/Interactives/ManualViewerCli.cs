@@ -20,12 +20,12 @@
 using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
 using Nitrocid.ConsoleBase.Interactive;
 using Nitrocid.Languages;
-using Nitrocid.Misc.Text;
 using Nitrocid.Modifications.ManPages;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
+using Textify.General;
 
 namespace Nitrocid.Misc.Interactives
 {

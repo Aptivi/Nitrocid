@@ -23,10 +23,10 @@ using Nitrocid.Extras.SqlShell.Tools;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.Misc.Text;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Colors;
+using Textify.General;
 
 namespace Nitrocid.Extras.SqlShell.Sql
 {

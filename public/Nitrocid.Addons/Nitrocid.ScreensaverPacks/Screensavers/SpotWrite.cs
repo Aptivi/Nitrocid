@@ -25,8 +25,8 @@ using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Screensaver;
-using Nitrocid.Misc.Text;
 using Terminaux.Colors;
+using Textify.General;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {

@@ -20,7 +20,6 @@
 using Nitrocid.Arguments;
 using Nitrocid.Drivers;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.Misc.Text;
 using Nitrocid.Modifications;
 using Nitrocid.Shell.ShellBase.Aliases;
 using Nitrocid.Shell.ShellBase.Commands;
@@ -29,6 +28,7 @@ using Nitrocid.Shell.ShellBase.Switches;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Textify.General;
 
 namespace Nitrocid.Shell.ShellBase.Arguments
 {

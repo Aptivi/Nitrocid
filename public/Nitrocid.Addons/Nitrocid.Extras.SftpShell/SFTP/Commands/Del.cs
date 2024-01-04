@@ -24,7 +24,7 @@ using Nitrocid.ConsoleBase.Inputs.Styles.Choice;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.Misc.Text;
+using Textify.General;
 
 namespace Nitrocid.Extras.SftpShell.SFTP.Commands
 {

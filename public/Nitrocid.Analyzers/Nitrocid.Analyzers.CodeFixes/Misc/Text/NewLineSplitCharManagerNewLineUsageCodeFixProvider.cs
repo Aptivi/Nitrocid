@@ -79,13 +79,11 @@ namespace Nitrocid.Analyzers.Misc.Text
 
             // Check the imports
             var compilation = finalNode as CompilationUnitSyntax;
-            if (compilation?.Usings.Any(u => u.Name.ToString() == "Nitrocid.Misc.Text") == false)
+            if (compilation?.Usings.Any(u => u.Name.ToString() == "Textify.General") == false)
             {
                 var name = SyntaxFactory.QualifiedName(
-                    SyntaxFactory.QualifiedName(
-                        SyntaxFactory.IdentifierName("Nitrocid"),
-                        SyntaxFactory.IdentifierName("Misc")),
-                    SyntaxFactory.IdentifierName("Text"));
+                    SyntaxFactory.IdentifierName("Textify"),
+                    SyntaxFactory.IdentifierName("General"));
                 compilation = compilation
                     .AddUsings(SyntaxFactory.UsingDirective(name));
             }

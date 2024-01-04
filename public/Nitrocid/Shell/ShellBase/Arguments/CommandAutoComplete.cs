@@ -21,11 +21,11 @@ using Nitrocid.Files;
 using Nitrocid.Files.Folders;
 using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.Misc.Text;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Shells;
 using System.IO;
 using System.Linq;
+using Textify.General;
 
 namespace Nitrocid.Shell.ShellBase.Arguments
 {

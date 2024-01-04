@@ -24,9 +24,9 @@ using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Extras.SqlShell.Tools;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
-using Nitrocid.Misc.Text;
 using Nitrocid.Shell.ShellBase.Commands;
 using System.Collections.Generic;
+using Textify.General;
 
 namespace Nitrocid.Extras.SqlShell.Sql.Commands
 {

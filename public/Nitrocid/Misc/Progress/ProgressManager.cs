@@ -19,8 +19,8 @@
 
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
-using Nitrocid.Misc.Text;
 using System.Collections.Generic;
+using Textify.General;
 
 namespace Nitrocid.Misc.Progress
 {

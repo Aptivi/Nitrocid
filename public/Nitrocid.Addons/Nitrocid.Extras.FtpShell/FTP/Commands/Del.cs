@@ -23,8 +23,8 @@ using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Inputs.Styles.Choice;
-using Nitrocid.Misc.Text;
 using Nitrocid.ConsoleBase.Colors;
+using Textify.General;
 
 namespace Nitrocid.Extras.FtpShell.FTP.Commands
 {

@@ -27,7 +27,6 @@ using Textify.Sequences.Tools;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Time.Calendars;
 using Nitrocid.ConsoleBase;
-using Nitrocid.Misc.Text;
 using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
 using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 using Nitrocid.ConsoleBase.Colors;
@@ -38,6 +37,7 @@ using Nitrocid.ConsoleBase.Interactive;
 using Nitrocid.ConsoleBase.Writers.FancyWriters;
 using Nitrocid.Kernel.Time.Converters;
 using Nitrocid.Kernel.Time;
+using Textify.General;
 
 namespace Nitrocid.Extras.Calendar.Calendar
 {

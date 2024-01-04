@@ -24,7 +24,7 @@ using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
-using Nitrocid.Misc.Text;
+using Textify.General;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games
 {

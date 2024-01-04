@@ -26,9 +26,9 @@ using System.Text;
 using Nitrocid.ConsoleBase.Inputs;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
-using Nitrocid.Misc.Text;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Textify.General;
 
 namespace Nitrocid.ConsoleBase.Presentation.Elements
 {

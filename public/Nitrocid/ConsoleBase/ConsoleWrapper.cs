@@ -19,11 +19,11 @@
 
 using Nitrocid.Drivers;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.Misc.Text;
 using System;
 using System.IO;
 using System.Text;
 using Terminaux.Reader;
+using Textify.General;
 
 namespace Nitrocid.ConsoleBase
 {

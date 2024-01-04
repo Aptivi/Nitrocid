@@ -23,8 +23,8 @@ using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 using Nitrocid.Extras.SftpShell.Tools.Transfer;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
-using Nitrocid.Misc.Text;
 using Nitrocid.Shell.ShellBase.Commands;
+using Textify.General;
 
 namespace Nitrocid.Extras.SftpShell.SFTP.Commands
 {

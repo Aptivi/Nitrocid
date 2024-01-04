@@ -24,9 +24,9 @@ using Nitrocid.Files.Editors.TextEdit;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Reflection;
-using Nitrocid.Misc.Text;
 using Nitrocid.Shell.ShellBase.Commands;
 using System;
+using Textify.General;
 
 namespace Nitrocid.Shell.Shells.Text.Commands
 {

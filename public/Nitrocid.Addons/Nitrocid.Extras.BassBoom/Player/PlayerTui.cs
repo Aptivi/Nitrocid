@@ -58,7 +58,7 @@ using Nitrocid.Misc.Screensaver;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Writers.FancyWriters;
 using Nitrocid.ConsoleBase.Inputs;
-using Nitrocid.Misc.Text;
+using Textify.General;
 
 namespace Nitrocid.Extras.BassBoom.Player
 {

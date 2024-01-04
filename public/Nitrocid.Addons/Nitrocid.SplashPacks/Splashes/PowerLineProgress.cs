@@ -28,6 +28,7 @@ using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Misc.Text;
 using Nitrocid.ConsoleBase.Writers.FancyWriters;
+using Textify.General;
 
 namespace Nitrocid.SplashPacks.Splashes
 {

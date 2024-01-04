@@ -107,7 +107,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.ExcaliBeats
 
             // Populate the text
             string exStr = Settings.ExcaliBeatsExplicit ? "EXCALIBUR" : "EXCALIBEATS";
-            var figFont = FigletTools.GetFigletFont(TextTools.DefaultFigletFontName);
+            var figFont = FigletTools.GetFigletFont(FigletTextTools.DefaultFigletFontName);
 
             // Fade out
             for (int CurrentStep = 1; CurrentStep <= maxSteps; CurrentStep++)

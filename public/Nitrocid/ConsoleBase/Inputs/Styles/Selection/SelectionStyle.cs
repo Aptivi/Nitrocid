@@ -27,7 +27,7 @@ using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
 using Nitrocid.ConsoleBase.Writers.FancyWriters;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
-using Nitrocid.Misc.Text;
+using Textify.General;
 using Textify.Sequences.Builder.Types;
 using Textify.Sequences.Tools;
 

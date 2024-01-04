@@ -29,9 +29,9 @@ using Nitrocid.Drivers;
 using Nitrocid.Files.Folders;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Misc.Text;
 using Nitrocid.Files.Instances;
 using Nitrocid.Files.Operations.Querying;
+using Textify.General;
 
 namespace Nitrocid.Files
 {

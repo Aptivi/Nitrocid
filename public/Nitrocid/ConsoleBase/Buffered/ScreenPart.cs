@@ -18,11 +18,11 @@
 //
 
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.Misc.Text;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using Terminaux.Colors;
+using Textify.General;
 using Textify.Sequences.Builder.Types;
 
 namespace Nitrocid.ConsoleBase.Buffered

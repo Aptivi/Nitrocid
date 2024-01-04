@@ -23,12 +23,12 @@ using VisualCard.Parts;
 using System.Text;
 using System.Collections;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.Misc.Text;
 using Nitrocid.ConsoleBase.Interactive;
 using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Text.Probers.Regexp;
 using Nitrocid.Files.Operations.Querying;
+using Textify.General;
 
 namespace Nitrocid.Extras.Contacts.Contacts.Interactives
 {

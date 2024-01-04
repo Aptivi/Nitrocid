@@ -26,8 +26,8 @@ using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 using Nitrocid.Extras.Amusements.Amusements.Quotes;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Misc.Splash;
-using Nitrocid.Misc.Text;
 using Terminaux.Colors;
+using Textify.General;
 
 namespace Nitrocid.Extras.Amusements.Splashes
 {

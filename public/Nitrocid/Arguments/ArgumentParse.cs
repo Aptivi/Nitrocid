@@ -24,11 +24,11 @@ using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
-using Nitrocid.Misc.Text;
 using Nitrocid.Shell.ShellBase.Arguments;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Textify.General;
 
 namespace Nitrocid.Arguments
 {

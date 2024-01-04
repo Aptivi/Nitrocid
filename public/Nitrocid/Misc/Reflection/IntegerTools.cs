@@ -17,8 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Misc.Text;
 using System;
+using Textify.General;
 
 namespace Nitrocid.Misc.Reflection
 {

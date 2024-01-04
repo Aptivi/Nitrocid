@@ -26,8 +26,8 @@ using TextEncoding = System.Text.Encoding;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Misc.Text;
 using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Textify.General;
 
 namespace Nitrocid.Drivers.Console.Bases
 {

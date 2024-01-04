@@ -37,6 +37,7 @@ using Nitrocid.ConsoleBase.Buffered;
 using Nitrocid.Misc.Text.Probers.Motd;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Network.RSS;
+using Textify.General;
 
 namespace Nitrocid.Users.Login
 {
@@ -104,7 +105,7 @@ namespace Nitrocid.Users.Login
                             // Clear the console and write the time using figlet
                             display.Append(CsiSequences.GenerateCsiEraseInDisplay(2));
                             cachedTimeStr = TimeDateRenderers.RenderTime(FormatType.Short);
-                            var figFont = FigletTools.GetFigletFont(TextTools.DefaultFigletFontName);
+                            var figFont = FigletTools.GetFigletFont(FigletTextTools.DefaultFigletFontName);
                             int figHeight = FigletTools.GetFigletHeight(timeStr, figFont) / 2;
                             display.Append(
                                 KernelColorTools.GetColor(KernelColorType.Stage).VTSequenceForeground +

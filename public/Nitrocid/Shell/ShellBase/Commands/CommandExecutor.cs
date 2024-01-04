@@ -32,13 +32,13 @@ using Nitrocid.Shell.ShellBase.Aliases;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Shell.ShellBase.Switches;
 using Nitrocid.Languages;
-using Nitrocid.Misc.Text;
 using Nitrocid.Drivers.Console;
 using Nitrocid.Drivers.Console.Bases;
 using Nitrocid.Kernel.Events;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 using Nitrocid.Kernel.Threading;
+using Textify.General;
 
 namespace Nitrocid.Shell.ShellBase.Commands
 {

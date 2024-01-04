@@ -29,12 +29,12 @@ using SharpCompress.Archives.SevenZip;
 using SharpCompress.Archives.Tar;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Shells;
-using Nitrocid.Misc.Text;
 using Nitrocid.Files.Folders;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Kernel.Debugging;
+using Textify.General;
 
 namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
 {

@@ -56,7 +56,7 @@ namespace Nitrocid.SplashPacks.Splashes
             // Write a glorious Welcome screen
             Color col = KernelColorTools.GetColor(KernelColorType.Stage);
             string text = $"{SplashReport.Progress}%";
-            var figFont = FigletTools.GetFigletFont(TextTools.DefaultFigletFontName);
+            var figFont = FigletTools.GetFigletFont(FigletTextTools.DefaultFigletFontName);
             int figWidth = FigletTools.GetFigletWidth(text, figFont) / 2;
             int figHeight = FigletTools.GetFigletHeight(text, figFont) / 2;
             int consoleX, consoleY;
@@ -149,7 +149,7 @@ namespace Nitrocid.SplashPacks.Splashes
                  Translate.DoTranslation("Welcome!") :
                  Translate.DoTranslation("Goodbye!"))
                 .ToUpper();
-            var figFont = FigletTools.GetFigletFont(TextTools.DefaultFigletFontName);
+            var figFont = FigletTools.GetFigletFont(FigletTextTools.DefaultFigletFontName);
             var figFontFallback = FigletTools.GetFigletFont("small");
             int figWidth = FigletTools.GetFigletWidth(text, figFont) / 2;
             int figHeight = FigletTools.GetFigletHeight(text, figFont) / 2;
@@ -215,7 +215,7 @@ namespace Nitrocid.SplashPacks.Splashes
             var builder = new StringBuilder();
             Color col = KernelColorTools.GetColor(colorType);
             string text = $"{Progress}%";
-            var figFont = FigletTools.GetFigletFont(TextTools.DefaultFigletFontName);
+            var figFont = FigletTools.GetFigletFont(FigletTextTools.DefaultFigletFontName);
             int figHeight = FigletTools.GetFigletHeight(text, figFont) / 2;
             int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
             builder.Append(

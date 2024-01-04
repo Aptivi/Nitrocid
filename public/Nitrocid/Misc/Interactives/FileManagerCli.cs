@@ -36,7 +36,6 @@ using Nitrocid.Kernel.Time.Renderers;
 using Nitrocid.Languages;
 using Nitrocid.Files.Operations.Printing;
 using Nitrocid.Drivers.Encryption;
-using Nitrocid.Misc.Text;
 using Nitrocid.ConsoleBase.Interactive;
 using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
 using Nitrocid.Files.Paths;
@@ -45,6 +44,7 @@ using Nitrocid.Files.LineEndings;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Files.Extensions;
 using Nitrocid.Files.Operations.Querying;
+using Textify.General;
 
 namespace Nitrocid.Misc.Interactives
 {

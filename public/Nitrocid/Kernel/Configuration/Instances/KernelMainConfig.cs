@@ -1469,8 +1469,8 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public string DefaultFigletFontName
         {
-            get => TextTools.defaultFigletFontName;
-            set => TextTools.defaultFigletFontName = FigletTools.GetFigletFonts().ContainsKey(value) ? value : "speed";
+            get => FigletTextTools.defaultFigletFontName;
+            set => FigletTextTools.defaultFigletFontName = FigletTools.GetFigletFonts().ContainsKey(value) ? value : "speed";
         }
         /// <summary>
         /// Whether to update the CPU usage or not

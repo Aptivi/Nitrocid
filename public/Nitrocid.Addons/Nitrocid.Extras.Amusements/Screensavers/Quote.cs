@@ -23,9 +23,9 @@ using Nitrocid.Drivers.RNG;
 using Nitrocid.Extras.Amusements.Amusements.Quotes;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Screensaver;
-using Nitrocid.Misc.Text;
 using System.Linq;
 using Terminaux.Colors;
+using Textify.General;
 
 namespace Nitrocid.Extras.Amusements.Screensavers
 {

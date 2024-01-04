@@ -17,8 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Misc.Text;
 using System.Collections.Generic;
+using Textify.General;
 
 namespace Nitrocid.Shell.ShellBase.Switches
 {

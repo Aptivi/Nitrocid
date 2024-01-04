@@ -24,10 +24,10 @@ using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
-using Nitrocid.Misc.Text;
 using Nitrocid.Security.Permissions;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Shells;
+using Textify.General;
 
 namespace Nitrocid.Shell.Shells.Debug
 {

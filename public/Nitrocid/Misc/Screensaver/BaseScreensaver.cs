@@ -22,8 +22,8 @@ using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Languages;
-using Nitrocid.Misc.Text;
 using Terminaux.Colors;
+using Textify.General;
 
 namespace Nitrocid.Misc.Screensaver
 {

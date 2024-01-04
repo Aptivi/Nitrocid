@@ -19,10 +19,10 @@
 
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
-using Nitrocid.Misc.Text;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Textify.General;
 
 namespace Nitrocid.Kernel.Exceptions
 {

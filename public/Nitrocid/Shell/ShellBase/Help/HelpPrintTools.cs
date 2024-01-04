@@ -26,7 +26,6 @@ using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 using Nitrocid.Kernel;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Languages;
-using Nitrocid.Misc.Text;
 using Nitrocid.Modifications;
 using Nitrocid.Shell.ShellBase.Aliases;
 using Nitrocid.Shell.ShellBase.Arguments;
@@ -34,6 +33,7 @@ using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Shell.ShellBase.Switches;
 using Nitrocid.Users;
+using Textify.General;
 
 namespace Nitrocid.Shell.ShellBase.Help
 {

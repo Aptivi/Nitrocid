@@ -20,7 +20,7 @@
 using Nitrocid.Kernel.Debugging.Trace;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
-using Nitrocid.Misc.Text;
+using Textify.General;
 
 namespace Nitrocid.Kernel.Debugging
 {

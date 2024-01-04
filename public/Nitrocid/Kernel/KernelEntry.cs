@@ -30,7 +30,6 @@ using Nitrocid.Kernel.Time.Renderers;
 using Nitrocid.Kernel.Starting;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Misc.Text;
 using Nitrocid.ConsoleBase.Writers.MiscWriters;
 using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
 using Nitrocid.Users.Login.Handlers;
@@ -40,6 +39,7 @@ using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 using Nitrocid.Misc.Text.Probers.Motd;
 using Nitrocid.Kernel.Power;
 using Nitrocid.Network.RSS;
+using Textify.General;
 
 namespace Nitrocid.Kernel
 {

@@ -26,10 +26,10 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Files.Folders;
 using Nitrocid.Languages;
-using Nitrocid.Misc.Text;
 using Nitrocid.Kernel.Events;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Textify.General;
 
 namespace Nitrocid.Shell.ShellBase.Commands.ProcessExecution
 {

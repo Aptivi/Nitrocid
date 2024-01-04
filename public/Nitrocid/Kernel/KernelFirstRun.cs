@@ -25,11 +25,11 @@ using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
-using Nitrocid.Misc.Text;
 using Nitrocid.Users;
 using System;
 using System.Text;
 using Terminaux.Colors;
+using Textify.General;
 
 namespace Nitrocid.Kernel
 {

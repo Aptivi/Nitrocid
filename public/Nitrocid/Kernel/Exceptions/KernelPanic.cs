@@ -34,13 +34,13 @@ using Nitrocid.Kernel.Time.Renderers;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Reflection;
 using Nitrocid.Misc.Splash;
-using Nitrocid.Misc.Text;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading;
+using Textify.General;
 
 namespace Nitrocid.Kernel.Exceptions
 {

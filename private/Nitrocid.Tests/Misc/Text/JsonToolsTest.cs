@@ -23,6 +23,7 @@ using Nitrocid.Misc.Text;
 using NUnit.Framework;
 using Shouldly;
 using System.IO;
+using Textify.General;
 
 namespace Nitrocid.Tests.Misc.Text
 {
@@ -74,7 +75,7 @@ namespace Nitrocid.Tests.Misc.Text
         public void TestBeautifyJsonFile()
         {
             string SourcePath = Path.GetFullPath("TestData/Hacker.json");
-            string Beautified = JsonTools.BeautifyJson(SourcePath);
+            string Beautified = JsonTextTools.BeautifyJson(SourcePath);
             Beautified.ShouldNotBeEmpty();
             Beautified.ShouldBe(JsonConvert.SerializeObject(JToken.Parse(Beautified), Formatting.Indented));
         }
@@ -111,7 +112,7 @@ namespace Nitrocid.Tests.Misc.Text
         public void TestMinifyJsonFile()
         {
             string SourcePath = Path.GetFullPath("TestData/Hacker.json");
-            string Minified = JsonTools.MinifyJson(SourcePath);
+            string Minified = JsonTextTools.MinifyJson(SourcePath);
             Minified.ShouldNotBeEmpty();
             Minified.ShouldBe(JsonConvert.SerializeObject(JToken.Parse(Minified), Formatting.None));
         }
@@ -148,7 +149,7 @@ namespace Nitrocid.Tests.Misc.Text
         [Description("Action")]
         public void TestFindDifferenceObjectDifferent()
         {
-            var diffObject = JsonTools.FindDifferences(compareObjectSourceJson, compareObjectTargetJson);
+            var diffObject = JsonTextTools.FindDifferences(compareObjectSourceJson, compareObjectTargetJson);
             diffObject.ShouldNotBeNull();
             diffObject.Count.ShouldBe(2);
             diffObject["DebugPath5"].ShouldNotBeNull();
@@ -164,7 +165,7 @@ namespace Nitrocid.Tests.Misc.Text
         [Description("Action")]
         public void TestFindDifferenceObjectIdentical()
         {
-            var diffObject = JsonTools.FindDifferences(compareObjectSourceJson, compareObjectSourceJson);
+            var diffObject = JsonTextTools.FindDifferences(compareObjectSourceJson, compareObjectSourceJson);
             diffObject.ShouldNotBeNull();
             diffObject.Count.ShouldBe(0);
         }
@@ -199,7 +200,7 @@ namespace Nitrocid.Tests.Misc.Text
         [Description("Action")]
         public void TestFindDifferenceArrayDifferent()
         {
-            var diffArray = JsonTools.FindDifferences(compareArraySourceJson, compareArrayTargetJson);
+            var diffArray = JsonTextTools.FindDifferences(compareArraySourceJson, compareArrayTargetJson);
             diffArray.ShouldNotBeNull();
             diffArray.Count.ShouldBe(2);
             diffArray["+"].ShouldNotBeNull();
@@ -215,7 +216,7 @@ namespace Nitrocid.Tests.Misc.Text
         [Description("Action")]
         public void TestFindDifferenceArrayIdentical()
         {
-            var diffArray = JsonTools.FindDifferences(compareArraySourceJson, compareArraySourceJson);
+            var diffArray = JsonTextTools.FindDifferences(compareArraySourceJson, compareArraySourceJson);
             diffArray.ShouldNotBeNull();
             diffArray.Count.ShouldBe(0);
         }
@@ -236,7 +237,7 @@ namespace Nitrocid.Tests.Misc.Text
         [Description("Action")]
         public void TestFindDifferenceOtherDifferent()
         {
-            var diffOther = JsonTools.FindDifferences(compareOtherSourceJson, compareOtherTargetJson);
+            var diffOther = JsonTextTools.FindDifferences(compareOtherSourceJson, compareOtherTargetJson);
             diffOther.ShouldNotBeNull();
             diffOther.Count.ShouldBe(2);
             diffOther["+"].ShouldNotBeNull();
@@ -252,7 +253,7 @@ namespace Nitrocid.Tests.Misc.Text
         [Description("Action")]
         public void TestFindDifferenceOtherIdentical()
         {
-            var diffOther = JsonTools.FindDifferences(compareOtherSourceJson, compareOtherSourceJson);
+            var diffOther = JsonTextTools.FindDifferences(compareOtherSourceJson, compareOtherSourceJson);
             diffOther.ShouldNotBeNull();
             diffOther.Count.ShouldBe(0);
         }

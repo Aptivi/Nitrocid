@@ -23,8 +23,8 @@ using System.Linq;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
-using Nitrocid.Misc.Text;
 using Nitrocid.Shell.ShellBase.Scripting.Conditions.Types;
+using Textify.General;
 
 namespace Nitrocid.Shell.ShellBase.Scripting.Conditions
 {

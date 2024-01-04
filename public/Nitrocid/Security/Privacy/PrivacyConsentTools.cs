@@ -26,12 +26,12 @@ using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Reflection;
 using Nitrocid.Misc.Splash;
-using Nitrocid.Misc.Text;
 using Nitrocid.Security.Privacy.Consents;
 using Nitrocid.Users;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using Textify.General;
 
 namespace Nitrocid.Security.Privacy
 {

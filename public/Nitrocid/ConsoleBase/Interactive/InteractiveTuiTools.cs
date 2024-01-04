@@ -31,11 +31,11 @@ using Nitrocid.Misc.Reflection;
 using Nitrocid.ConsoleBase.Writers.FancyWriters;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Misc.Text;
 using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
 using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Buffered;
+using Textify.General;
 
 namespace Nitrocid.ConsoleBase.Interactive
 {

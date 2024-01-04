@@ -27,12 +27,12 @@ using Nitrocid.Files;
 using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Languages;
-using Nitrocid.Misc.Text;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Switches;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Textify.General;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {

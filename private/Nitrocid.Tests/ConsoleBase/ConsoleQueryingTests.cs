@@ -18,10 +18,10 @@
 //
 
 using Nitrocid.ConsoleBase;
-using Nitrocid.Misc.Text;
 using NUnit.Framework;
 using Shouldly;
 using System;
+using Textify.General;
 
 namespace Nitrocid.Tests.ConsoleBase
 {
@@ -35,7 +35,8 @@ namespace Nitrocid.Tests.ConsoleBase
         /// </summary>
         [Test]
         [Description("Querying")]
-        public void TestPercentRepeatTargeted() => ConsoleExtensions.PercentRepeatTargeted(25, 200, 100).ShouldBe(12);
+        public void TestPercentRepeatTargeted() =>
+            ConsoleExtensions.PercentRepeatTargeted(25, 200, 100).ShouldBe(12);
 
         /// <summary>
         /// Tests filtering the VT sequences that matches the regex

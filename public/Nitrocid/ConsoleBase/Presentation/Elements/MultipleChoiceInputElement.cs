@@ -22,13 +22,13 @@ using Nitrocid.ConsoleBase.Inputs;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 using Nitrocid.Languages;
-using Nitrocid.Misc.Text;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Terminaux.Reader;
+using Textify.General;
 
 namespace Nitrocid.ConsoleBase.Presentation.Elements
 {

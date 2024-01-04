@@ -19,8 +19,8 @@
 
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.Misc.Text;
 using Nitrocid.Shell.ShellBase.Commands;
+using Textify.General;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {

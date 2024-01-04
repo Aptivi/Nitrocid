@@ -21,10 +21,10 @@ using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Inputs;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
-using Nitrocid.Misc.Text;
 using System;
 using System.Linq;
 using System.Text;
+using Textify.General;
 
 namespace Nitrocid.ConsoleBase.Presentation.Elements
 {

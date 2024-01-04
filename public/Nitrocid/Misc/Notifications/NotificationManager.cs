@@ -35,13 +35,13 @@ using Nitrocid.Files.Operations;
 using Nitrocid.Misc.Splash;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Writers.FancyWriters;
-using Nitrocid.Misc.Text;
 using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 using Nitrocid.Files.Paths;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Kernel.Events;
 using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Power;
+using Textify.General;
 
 namespace Nitrocid.Misc.Notifications
 {

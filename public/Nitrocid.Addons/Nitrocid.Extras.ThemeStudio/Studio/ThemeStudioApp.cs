@@ -30,8 +30,8 @@ using Nitrocid.Files.Folders;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Events;
 using Nitrocid.Languages;
-using Nitrocid.Misc.Text;
 using Terminaux.Colors;
+using Textify.General;
 
 namespace Nitrocid.Extras.ThemeStudio.Studio
 {

@@ -24,8 +24,8 @@ using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
-using Nitrocid.Misc.Text;
 using Nitrocid.Shell.ShellBase.Commands;
+using Textify.General;
 
 namespace Nitrocid.Extras.RssShell.RSS.Commands
 {

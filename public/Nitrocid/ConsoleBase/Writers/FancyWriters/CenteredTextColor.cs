@@ -22,11 +22,11 @@ using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 using Nitrocid.Drivers;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
-using Nitrocid.Misc.Text;
 using System;
 using System.Text;
 using System.Threading;
 using Terminaux.Colors;
+using Textify.General;
 
 namespace Nitrocid.ConsoleBase.Writers.FancyWriters
 {

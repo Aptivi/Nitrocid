@@ -22,7 +22,6 @@ using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
 using Nitrocid.ConsoleBase.Interactive;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
-using Nitrocid.Misc.Text;
 using Nitrocid.Network.Base.Connections;
 using System;
 using System.Collections;
@@ -30,6 +29,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using Textify.General;
 
 namespace Nitrocid.Extras.RssShell.RSS.Interactive
 {

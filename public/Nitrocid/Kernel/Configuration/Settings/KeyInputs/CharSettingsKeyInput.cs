@@ -24,8 +24,8 @@ using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel.Configuration.Instances;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
-using Nitrocid.Misc.Text;
 using System;
+using Textify.General;
 
 namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
 {

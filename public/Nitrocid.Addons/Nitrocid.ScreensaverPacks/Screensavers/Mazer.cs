@@ -25,8 +25,8 @@ using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Reflection;
 using Nitrocid.Misc.Screensaver;
-using Nitrocid.Misc.Text;
 using Terminaux.Colors;
+using Textify.General;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {

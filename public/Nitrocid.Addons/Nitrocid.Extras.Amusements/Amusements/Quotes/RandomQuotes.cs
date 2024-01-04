@@ -18,9 +18,9 @@
 //
 
 using Newtonsoft.Json.Linq;
-using Nitrocid.Misc.Text;
 using Nitrocid.Network.Base.Transfer;
 using System.Text;
+using Textify.General;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Quotes
 {

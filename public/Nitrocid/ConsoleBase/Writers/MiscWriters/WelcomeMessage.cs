@@ -28,6 +28,7 @@ using Nitrocid.Languages;
 using Nitrocid.Misc.Splash;
 using Nitrocid.Misc.Text;
 using Nitrocid.Misc.Text.Probers.Placeholder;
+using Textify.General;
 
 namespace Nitrocid.ConsoleBase.Writers.MiscWriters
 {
@@ -107,7 +108,7 @@ namespace Nitrocid.ConsoleBase.Writers.MiscWriters
                     TextWriters.Write(MessageWrite, true, KernelColorType.Banner, KernelMain.VersionFullStr);
                 }
 
-                string FigletRenderedBanner = FigletTools.RenderFiglet($"{KernelMain.VersionFullStr}", TextTools.DefaultFigletFontName);
+                string FigletRenderedBanner = FigletTools.RenderFiglet($"{KernelMain.VersionFullStr}", FigletTextTools.DefaultFigletFontName);
                 TextWriterColor.Write(CharManager.NewLine + FigletRenderedBanner + CharManager.NewLine);
                 ConsoleWrapper.CursorVisible = true;
             }

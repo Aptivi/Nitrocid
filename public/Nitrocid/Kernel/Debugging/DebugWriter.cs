@@ -31,7 +31,7 @@ using Nitrocid.Kernel.Debugging.Trace;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Kernel.Time;
 using Nitrocid.Kernel.Time.Renderers;
-using Nitrocid.Misc.Text;
+using Textify.General;
 
 namespace Nitrocid.Kernel.Debugging
 {

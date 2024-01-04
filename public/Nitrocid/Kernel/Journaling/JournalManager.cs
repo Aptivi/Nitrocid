@@ -27,9 +27,9 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Kernel.Time.Renderers;
 using Nitrocid.Languages;
-using Nitrocid.Misc.Text;
 using System;
 using System.Collections.Generic;
+using Textify.General;
 
 namespace Nitrocid.Kernel.Journaling
 {

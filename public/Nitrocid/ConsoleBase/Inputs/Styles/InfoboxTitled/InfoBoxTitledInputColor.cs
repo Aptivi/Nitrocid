@@ -27,11 +27,11 @@ using Textify.Sequences.Builder.Types;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Writers.FancyWriters;
-using Nitrocid.Misc.Text;
 using Nitrocid.ConsoleBase.Writers.FancyWriters.Tools;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Buffered;
 using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Textify.General;
 
 namespace Nitrocid.ConsoleBase.Inputs.Styles.InfoboxTitled
 {

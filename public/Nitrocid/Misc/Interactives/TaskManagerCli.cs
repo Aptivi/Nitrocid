@@ -23,8 +23,8 @@ using System.Diagnostics;
 using System.Collections;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Languages;
-using Nitrocid.Misc.Text;
 using Nitrocid.ConsoleBase.Interactive;
+using Textify.General;
 
 namespace Nitrocid.Misc.Interactives
 {

@@ -23,8 +23,8 @@ using Terminaux.Colors;
 using Textify.Sequences.Tools;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
-using Nitrocid.Misc.Text;
 using Nitrocid.ConsoleBase.Colors;
+using Textify.General;
 
 namespace Nitrocid.ConsoleBase.Writers.ConsoleWriters
 {

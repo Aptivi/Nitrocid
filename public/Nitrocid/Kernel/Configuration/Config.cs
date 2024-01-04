@@ -375,7 +375,7 @@ namespace Nitrocid.Kernel.Configuration
             {
                 var serializedObj = JObject.Parse(serialized);
                 var currentObj = JObject.Parse(current);
-                var diffObj = JsonTools.FindDifferences(serializedObj, currentObj);
+                var diffObj = JsonTextTools.FindDifferences(serializedObj, currentObj);
 
                 // Skim through the difference object
                 foreach (var diff in diffObj)

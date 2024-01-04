@@ -25,8 +25,8 @@ using Textify.Sequences.Tools;
 using Textify.Sequences.Builder.Types;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
-using Nitrocid.Misc.Text;
 using Nitrocid.ConsoleBase.Colors;
+using Textify.General;
 
 namespace Nitrocid.ConsoleBase.Writers.ConsoleWriters
 {

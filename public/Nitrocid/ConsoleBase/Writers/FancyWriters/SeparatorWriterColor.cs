@@ -25,8 +25,8 @@ using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 using Nitrocid.Drivers;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
-using Nitrocid.Misc.Text;
 using Terminaux.Colors;
+using Textify.General;
 
 namespace Nitrocid.ConsoleBase.Writers.FancyWriters
 {

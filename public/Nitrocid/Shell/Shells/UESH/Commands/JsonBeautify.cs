@@ -48,7 +48,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             if (Checking.FileExists(JsonFile))
             {
                 // Beautify the JSON and display it on screen
-                BeautifiedJson = JsonTools.BeautifyJson(JsonFile);
+                BeautifiedJson = JsonTextTools.BeautifyJson(JsonFile);
                 TextWriterColor.Write(BeautifiedJson);
 
                 // Beautify it to an output file specified (optional)

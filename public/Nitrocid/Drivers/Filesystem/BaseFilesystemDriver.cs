@@ -37,7 +37,6 @@ using Nitrocid.Files.Operations;
 using Nitrocid.Files.Folders;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Misc.Text;
 using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 using Nitrocid.Files.Paths;
 using Nitrocid.Files.Instances;
@@ -48,6 +47,7 @@ using Nitrocid.Files.Attributes;
 using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Misc.Text.Probers.Regexp;
 using Nitrocid.Kernel.Extensions;
+using Textify.General;
 
 namespace Nitrocid.Drivers.Filesystem
 {

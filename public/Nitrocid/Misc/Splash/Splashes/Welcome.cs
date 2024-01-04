@@ -67,7 +67,7 @@ namespace Nitrocid.Misc.Splash.Splashes
                  Translate.DoTranslation("Please wait") :
                  Translate.DoTranslation("Loading"))
                 .ToUpper();
-            var figFont = FigletTools.GetFigletFont(TextTools.DefaultFigletFontName);
+            var figFont = FigletTools.GetFigletFont(FigletTextTools.DefaultFigletFontName);
             int figWidth = FigletTools.GetFigletWidth(text, figFont) / 2;
             int figHeight = FigletTools.GetFigletHeight(text, figFont) / 2;
             int consoleX, consoleY;
@@ -163,7 +163,7 @@ namespace Nitrocid.Misc.Splash.Splashes
                  Translate.DoTranslation("Welcome!") :
                  Translate.DoTranslation("Goodbye!"))
                 .ToUpper();
-            var figFont = FigletTools.GetFigletFont(TextTools.DefaultFigletFontName);
+            var figFont = FigletTools.GetFigletFont(FigletTextTools.DefaultFigletFontName);
             var figFontFallback = FigletTools.GetFigletFont("small");
             int figWidth = FigletTools.GetFigletWidth(text, figFont) / 2;
             int figHeight = FigletTools.GetFigletHeight(text, figFont) / 2;
@@ -237,7 +237,7 @@ namespace Nitrocid.Misc.Splash.Splashes
                  Translate.DoTranslation("Welcome!") :
                  Translate.DoTranslation("Goodbye!"))
                 .ToUpper();
-            var figFont = FigletTools.GetFigletFont(TextTools.DefaultFigletFontName);
+            var figFont = FigletTools.GetFigletFont(FigletTextTools.DefaultFigletFontName);
             int figHeight = FigletTools.GetFigletHeight(text, figFont) / 2;
             int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
             builder.Append(

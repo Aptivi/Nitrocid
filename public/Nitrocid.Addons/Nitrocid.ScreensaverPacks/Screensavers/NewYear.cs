@@ -66,7 +66,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             {
                 // We're at the new year!
                 string currentYearStr = currentYear.ToString();
-                var figFont = FigletTools.GetFigletFont(TextTools.DefaultFigletFontName);
+                var figFont = FigletTools.GetFigletFont(FigletTextTools.DefaultFigletFontName);
                 int figHeight = FigletTools.GetFigletHeight(currentYearStr, figFont) / 2;
                 CenteredFigletTextColor.WriteCenteredFigletColor(figFont, currentYearStr, green);
 
@@ -80,7 +80,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             {
                 // Print the countdown, but print the next year first using Figlet
                 string nextYearStr = $"{currentYear + 1}";
-                var figFont = FigletTools.GetFigletFont(TextTools.DefaultFigletFontName);
+                var figFont = FigletTools.GetFigletFont(FigletTextTools.DefaultFigletFontName);
                 int figHeight = FigletTools.GetFigletHeight(nextYearStr, figFont) / 2;
                 CenteredFigletTextColor.WriteCenteredFigletColor(figFont, nextYearStr, darkGreen);
 

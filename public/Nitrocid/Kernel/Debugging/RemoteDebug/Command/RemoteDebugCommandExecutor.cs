@@ -22,10 +22,10 @@ using System.Collections.Generic;
 using System.Threading;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Languages;
-using Nitrocid.Misc.Text;
 using Nitrocid.Kernel.Events;
 using Nitrocid.Kernel.Debugging.RemoteDebug.Command.Help;
 using Nitrocid.Kernel.Debugging.RemoteDebug.Command.BaseCommands;
+using Textify.General;
 
 namespace Nitrocid.Kernel.Debugging.RemoteDebug.Command
 {

@@ -21,9 +21,9 @@ using System;
 using Nettify.Weather;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.ConsoleBase.Writers.FancyWriters;
-using Nitrocid.Misc.Text;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Textify.General;
 
 namespace Nitrocid.Extras.Forecast.Forecast
 {

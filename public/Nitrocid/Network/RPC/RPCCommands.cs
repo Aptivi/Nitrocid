@@ -31,10 +31,10 @@ using Nitrocid.Misc.Screensaver;
 using Nitrocid.Misc.Notifications;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Misc.Text;
 using Nitrocid.Kernel.Events;
 using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 using Nitrocid.Kernel.Power;
+using Textify.General;
 
 namespace Nitrocid.Network.RPC
 {

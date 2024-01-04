@@ -17,8 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Misc.Text;
 using System;
+using Textify.General;
 
 namespace Nitrocid.Kernel.Exceptions
 {
@@ -29,34 +29,38 @@ namespace Nitrocid.Kernel.Exceptions
     {
 
         /// <inheritdoc/>
-        public KernelErrorException() : base()
-        {
-        }
+        public KernelErrorException() :
+            base()
+        { }
+
         /// <inheritdoc/>
-        public KernelErrorException(string message) : base(message)
-        {
-        }
+        public KernelErrorException(string message) :
+            base(message)
+        { }
+
         /// <summary>
         /// Initializes the instance of this exception that has a message and a list of arguments
         /// </summary>
         /// <param name="vars">List of arguments</param>
         /// <param name="message">Message to be printed</param>
-        public KernelErrorException(string message, params object[] vars) : base(TextTools.FormatString(message, vars))
-        {
-        }
+        public KernelErrorException(string message, params object[] vars) :
+            base(TextTools.FormatString(message, vars))
+        { }
+
         /// <inheritdoc/>
-        public KernelErrorException(string message, Exception e) : base(message, e)
-        {
-        }
+        public KernelErrorException(string message, Exception e) :
+            base(message, e)
+        { }
+
         /// <summary>
         /// Initializes the instance of this exception that has a message, an inner exception, and a list of arguments
         /// </summary>
         /// <param name="vars">List of arguments</param>
         /// <param name="e">Inner exception</param>
         /// <param name="message">Message to be printed</param>
-        public KernelErrorException(string message, Exception e, params object[] vars) : base(TextTools.FormatString(message, vars), e)
-        {
-        }
+        public KernelErrorException(string message, Exception e, params object[] vars) :
+            base(TextTools.FormatString(message, vars), e)
+        { }
 
     }
 }

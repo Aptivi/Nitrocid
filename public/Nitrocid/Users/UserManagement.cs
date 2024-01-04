@@ -30,12 +30,12 @@ using Nitrocid.Files.Operations;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Drivers.Encryption;
-using Nitrocid.Misc.Text;
 using Nitrocid.Security.Permissions;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Events;
 using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Misc.Text.Probers.Regexp;
+using Textify.General;
 
 namespace Nitrocid.Users
 {

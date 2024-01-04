@@ -46,7 +46,7 @@ namespace Nitrocid.Analyzers.Test.Misc.Text
                 using System.Text;
                 using System.Threading.Tasks;
                 using System.Diagnostics;
-                using Nitrocid.Misc.Text;
+                using Textify.General;
 
                 namespace ConsoleApplication1
                 {
@@ -74,7 +74,7 @@ namespace Nitrocid.Analyzers.Test.Misc.Text
                 using System.Text;
                 using System.Threading.Tasks;
                 using System.Diagnostics;
-                using Nitrocid.Misc.Text;
+                using Textify.General;
 
                 namespace ConsoleApplication1
                 {
@@ -96,7 +96,7 @@ namespace Nitrocid.Analyzers.Test.Misc.Text
                 using System.Text;
                 using System.Threading.Tasks;
                 using System.Diagnostics;
-                using Nitrocid.Misc.Text;
+                using Textify.General;
 
                 namespace ConsoleApplication1
                 {

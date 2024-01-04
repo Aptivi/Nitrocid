@@ -48,7 +48,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             if (Checking.FileExists(JsonFile))
             {
                 // Minify the JSON and display it on screen
-                MinifiedJson = JsonTools.MinifyJson(JsonFile);
+                MinifiedJson = JsonTextTools.MinifyJson(JsonFile);
                 TextWriterColor.Write(MinifiedJson);
 
                 // Minify it to an output file specified (optional)

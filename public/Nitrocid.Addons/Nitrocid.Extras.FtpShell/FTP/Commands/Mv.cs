@@ -22,8 +22,8 @@ using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Extras.FtpShell.Tools.Filesystem;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
-using Nitrocid.Misc.Text;
 using Nitrocid.Shell.ShellBase.Commands;
+using Textify.General;
 
 namespace Nitrocid.Extras.FtpShell.FTP.Commands
 {

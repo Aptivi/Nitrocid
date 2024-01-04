@@ -38,6 +38,7 @@ using Nitrocid.Kernel.Events;
 using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Power;
 using Nitrocid.Kernel.Time.Timezones;
+using Textify.General;
 
 namespace Nitrocid.Misc.Text.Probers.Placeholder
 {

@@ -17,10 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Misc.Text;
 using NUnit.Framework;
 using Shouldly;
 using System.Linq;
+using Textify.General;
 
 namespace Nitrocid.Tests.Misc.Text
 {
@@ -107,7 +107,7 @@ namespace Nitrocid.Tests.Misc.Text
         [Description("Querying")]
         public void TestTruncate()
         {
-            string expected = "Nitrocid is awesome...";
+            string expected = "Nitrocid is awesome ...";
             string Source = "Nitrocid is awesome and is great!";
             int Target = 20;
             Source = Source.Truncate(Target);

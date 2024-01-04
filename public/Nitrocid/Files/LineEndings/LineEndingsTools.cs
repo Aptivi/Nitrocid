@@ -21,7 +21,7 @@ using System;
 using Nitrocid.Drivers;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Misc.Text;
+using Textify.General;
 
 namespace Nitrocid.Files.LineEndings
 {

@@ -27,10 +27,10 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.ConsoleBase.Inputs;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Writers.FancyWriters;
-using Nitrocid.Misc.Text;
 using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
 using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 using Nitrocid.ConsoleBase.Buffered;
+using Textify.General;
 
 namespace Nitrocid.ConsoleBase.Colors
 {

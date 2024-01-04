@@ -27,12 +27,12 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.ConsoleBase.Inputs;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
-using Nitrocid.Misc.Text;
 using Nitrocid.Network.Base.Connections;
 using Nitrocid.ConsoleBase.Writers.FancyWriters;
 using Nitrocid.Misc.Text.Probers.Placeholder;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Textify.General;
 
 namespace Nitrocid.Extras.FtpShell.Tools
 {

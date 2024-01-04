@@ -26,8 +26,8 @@ using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
-using Nitrocid.Misc.Text;
 using Nitrocid.Shell.ShellBase.Shells;
+using Textify.General;
 
 namespace Nitrocid.Shell.Prompts
 {
