@@ -148,7 +148,7 @@ namespace Nitrocid.Misc.Notifications
                 List<Notification> NewNotificationsList;
                 while (!PowerManager.KernelShutdown)
                 {
-                    SpinWait.SpinUntil(() => NotifRecents.Except(OldNotificationsList).ToList().Count > 0 || dismissing);
+                    SpinWait.SpinUntil(() => sent || dismissing);
                     if (dismissing)
                     {
                         dismissing = false;
