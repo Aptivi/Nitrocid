@@ -29,6 +29,7 @@ using System.Collections.ObjectModel;
 using System.Reflection;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
+using Nitrocid.Modifications;
 
 namespace Nitrocid.Extras.Forecast
 {
@@ -58,7 +59,7 @@ namespace Nitrocid.Extras.Forecast
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasForecast);
 
-        AddonType IAddon.AddonType => AddonType.Optional;
+        ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
 
         internal static ForecastConfig ForecastConfig =>
             (ForecastConfig)Config.baseConfigurations[nameof(ForecastConfig)];

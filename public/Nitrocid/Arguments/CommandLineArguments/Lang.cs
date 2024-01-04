@@ -21,6 +21,7 @@ using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Languages;
+using Nitrocid.Modifications;
 
 namespace Nitrocid.Arguments.CommandLineArguments
 {
@@ -32,7 +33,7 @@ namespace Nitrocid.Arguments.CommandLineArguments
             string langPacksAddonPath = PathsManagement.AddonsPath + "/LanguagePacks";
             if (Checking.FolderExists(langPacksAddonPath))
             {
-                AddonTools.ProcessAddon(langPacksAddonPath, AddonType.Important);
+                AddonTools.ProcessAddon(langPacksAddonPath, ModLoadPriority.Important);
                 LanguageManager.SetLangDry(parameters.ArgumentsList[0]);
                 AddonTools.probedAddons.Clear();
             }

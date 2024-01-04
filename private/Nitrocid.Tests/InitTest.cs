@@ -28,6 +28,7 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Files.Operations;
 using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Configuration;
+using Nitrocid.Modifications;
 
 namespace Nitrocid.Tests
 {
@@ -75,8 +76,8 @@ namespace Nitrocid.Tests
             KernelEntry.DebugMode = true;
 
             // Load necessary addons for testing
-            AddonTools.ProcessAddons(AddonType.Important);
-            AddonTools.ProcessAddons(AddonType.Optional);
+            AddonTools.ProcessAddons(ModLoadPriority.Important);
+            AddonTools.ProcessAddons(ModLoadPriority.Optional);
         }
 
         /// <summary>

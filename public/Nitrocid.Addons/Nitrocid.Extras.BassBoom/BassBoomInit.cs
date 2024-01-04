@@ -53,6 +53,7 @@ using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Misc.Screensaver;
 using Nitrocid.Files.Paths;
+using Nitrocid.Modifications;
 
 namespace Nitrocid.Extras.BassBoom
 {
@@ -112,7 +113,7 @@ namespace Nitrocid.Extras.BassBoom
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasBassBoom);
 
-        AddonType IAddon.AddonType => AddonType.Optional;
+        ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
 
         internal static BassBoomSaversConfig SaversConfig =>
             (BassBoomSaversConfig)Config.baseConfigurations[nameof(BassBoomSaversConfig)];

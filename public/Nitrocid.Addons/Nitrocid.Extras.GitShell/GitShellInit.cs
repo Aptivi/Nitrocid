@@ -32,6 +32,7 @@ using Nitrocid.Files.Paths;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Shell.Prompts;
 using Nitrocid.Kernel;
+using Nitrocid.Modifications;
 
 namespace Nitrocid.Extras.GitShell
 {
@@ -54,7 +55,7 @@ namespace Nitrocid.Extras.GitShell
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasGitShell);
 
-        AddonType IAddon.AddonType => AddonType.Optional;
+        ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
 
         internal static GitConfig GitConfig =>
             (GitConfig)Config.baseConfigurations[nameof(GitConfig)];

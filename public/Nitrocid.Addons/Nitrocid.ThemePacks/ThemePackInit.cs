@@ -27,6 +27,7 @@ using System.Linq;
 using System.Reflection;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Misc.Reflection;
+using Nitrocid.Modifications;
 
 namespace Nitrocid.ThemePacks
 {
@@ -35,7 +36,7 @@ namespace Nitrocid.ThemePacks
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.AddonThemePacks);
 
-        AddonType IAddon.AddonType => AddonType.Optional;
+        ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
 
         ReadOnlyDictionary<string, Delegate> IAddon.PubliclyAvailableFunctions => null;
 

@@ -20,6 +20,7 @@
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Misc.Screensaver;
+using Nitrocid.Modifications;
 using Nitrocid.ScreensaverPacks.Screensavers;
 using Nitrocid.ScreensaverPacks.Settings;
 using System;
@@ -127,7 +128,7 @@ namespace Nitrocid.ScreensaverPacks
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.AddonScreensaverPacks);
 
-        AddonType IAddon.AddonType => AddonType.Important;
+        ModLoadPriority IAddon.AddonType => ModLoadPriority.Important;
 
         internal static ExtraSaversConfig SaversConfig =>
             (ExtraSaversConfig)Config.baseConfigurations[nameof(ExtraSaversConfig)];

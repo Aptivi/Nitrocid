@@ -33,6 +33,7 @@ using Nitrocid.Kernel.Extensions;
 using Nitrocid.Misc.Screensaver;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Misc.Splash;
+using Nitrocid.Modifications;
 
 namespace Nitrocid.Extras.Amusements
 {
@@ -163,7 +164,7 @@ namespace Nitrocid.Extras.Amusements
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasAmusements);
 
-        AddonType IAddon.AddonType => AddonType.Optional;
+        ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
 
         internal static AmusementsSaversConfig SaversConfig =>
             (AmusementsSaversConfig)Config.baseConfigurations[nameof(AmusementsSaversConfig)];

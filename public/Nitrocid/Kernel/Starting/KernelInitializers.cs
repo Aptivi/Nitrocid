@@ -157,7 +157,7 @@ namespace Nitrocid.Kernel.Starting
                 // Initialize addons
                 if (KernelEntry.TalkativePreboot)
                     SplashReport.ReportProgress(Translate.DoTranslation("Loading kernel addons..."));
-                AddonTools.ProcessAddons(AddonType.Important);
+                AddonTools.ProcessAddons(ModLoadPriority.Important);
                 DebugWriter.WriteDebug(DebugLevel.I, "Loaded kernel addons.");
 
                 // Stop the splash prior to loading config
@@ -249,7 +249,7 @@ namespace Nitrocid.Kernel.Starting
                 DebugWriter.WriteDebug(DebugLevel.I, "Loaded alarm listener.");
 
                 // Finalize addons
-                AddonTools.ProcessAddons(AddonType.Optional);
+                AddonTools.ProcessAddons(ModLoadPriority.Optional);
                 AddonTools.FinalizeAddons();
                 DebugWriter.WriteDebug(DebugLevel.I, "Finalized addons.");
 

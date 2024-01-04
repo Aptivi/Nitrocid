@@ -32,6 +32,7 @@ using System.Collections.ObjectModel;
 using System.Reflection;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
+using Nitrocid.Modifications;
 
 namespace Nitrocid.Extras.Calendar
 {
@@ -202,7 +203,7 @@ namespace Nitrocid.Extras.Calendar
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasCalendar);
 
-        AddonType IAddon.AddonType => AddonType.Optional;
+        ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
 
         internal static CalendarConfig CalendarConfig =>
             (CalendarConfig)Config.baseConfigurations[nameof(CalendarConfig)];

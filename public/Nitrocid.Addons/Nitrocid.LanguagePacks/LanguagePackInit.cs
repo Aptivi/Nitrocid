@@ -24,6 +24,7 @@ using Nitrocid.LanguagePacks.Resources;
 using Nitrocid.Languages;
 using Nitrocid.Languages.Decoy;
 using Nitrocid.Misc.Reflection;
+using Nitrocid.Modifications;
 using System;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -36,7 +37,7 @@ namespace Nitrocid.LanguagePacks
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.AddonLanguagePacks);
 
-        AddonType IAddon.AddonType => AddonType.Important;
+        ModLoadPriority IAddon.AddonType => ModLoadPriority.Important;
 
         ReadOnlyDictionary<string, Delegate> IAddon.PubliclyAvailableFunctions => null;
 

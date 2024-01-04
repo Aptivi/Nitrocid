@@ -20,6 +20,7 @@
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Misc.Splash;
+using Nitrocid.Modifications;
 using Nitrocid.SplashPacks.Settings;
 using Nitrocid.SplashPacks.Splashes;
 using System;
@@ -53,7 +54,7 @@ namespace Nitrocid.SplashPacks
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.AddonSplashPacks);
 
-        AddonType IAddon.AddonType => AddonType.Important;
+        ModLoadPriority IAddon.AddonType => ModLoadPriority.Important;
 
         internal static ExtraSplashesConfig SplashConfig =>
             (ExtraSplashesConfig)Config.baseConfigurations[nameof(ExtraSplashesConfig)];

@@ -28,6 +28,7 @@ using System.Collections.ObjectModel;
 using System.Reflection;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
+using Nitrocid.Modifications;
 
 namespace Nitrocid.Extras.ToDoList
 {
@@ -77,7 +78,7 @@ namespace Nitrocid.Extras.ToDoList
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasToDoList);
 
-        AddonType IAddon.AddonType => AddonType.Optional;
+        ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
 
         ReadOnlyDictionary<string, Delegate> IAddon.PubliclyAvailableFunctions => null;
 

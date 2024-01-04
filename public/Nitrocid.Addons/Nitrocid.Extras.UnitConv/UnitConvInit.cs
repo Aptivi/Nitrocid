@@ -29,6 +29,7 @@ using System.Reflection;
 using UnitsNet;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
+using Nitrocid.Modifications;
 
 namespace Nitrocid.Extras.UnitConv
 {
@@ -79,7 +80,7 @@ namespace Nitrocid.Extras.UnitConv
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasUnitConv);
 
-        AddonType IAddon.AddonType => AddonType.Optional;
+        ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
 
         ReadOnlyDictionary<string, Delegate> IAddon.PubliclyAvailableFunctions => null;
 

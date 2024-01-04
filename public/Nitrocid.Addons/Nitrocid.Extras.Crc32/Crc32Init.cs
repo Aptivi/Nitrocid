@@ -20,6 +20,7 @@
 using Nitrocid.Drivers;
 using Nitrocid.Drivers.Encryption;
 using Nitrocid.Kernel.Extensions;
+using Nitrocid.Modifications;
 using System;
 using System.Collections.ObjectModel;
 using System.Reflection;
@@ -33,7 +34,7 @@ namespace Nitrocid.Extras.Crc32
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasCrc32);
 
-        AddonType IAddon.AddonType => AddonType.Optional;
+        ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
 
         ReadOnlyDictionary<string, Delegate> IAddon.PubliclyAvailableFunctions => null;
 

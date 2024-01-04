@@ -27,6 +27,7 @@ using System.Collections.ObjectModel;
 using System.Reflection;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
+using Nitrocid.Modifications;
 
 namespace Nitrocid.Extras.Notes
 {
@@ -96,7 +97,7 @@ namespace Nitrocid.Extras.Notes
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasNotes);
 
-        AddonType IAddon.AddonType => AddonType.Optional;
+        ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
 
         ReadOnlyDictionary<string, Delegate> IAddon.PubliclyAvailableFunctions => null;
 

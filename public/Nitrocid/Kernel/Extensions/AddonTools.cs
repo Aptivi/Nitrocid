@@ -27,6 +27,7 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Reflection;
+using Nitrocid.Modifications;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -53,7 +54,7 @@ namespace Nitrocid.Kernel.Extensions
         internal static string[] GetAddons() =>
             addons.Select((ai) => ai.AddonName).ToArray();
 
-        internal static void ProcessAddons(AddonType type)
+        internal static void ProcessAddons(ModLoadPriority type)
         {
             var addonFolder = PathsManagement.AddonsPath;
             if (!Checking.FolderExists(addonFolder))
@@ -66,7 +67,7 @@ namespace Nitrocid.Kernel.Extensions
             probedAddons.Clear();
         }
 
-        internal static void ProcessAddon(string addon, AddonType type)
+        internal static void ProcessAddon(string addon, ModLoadPriority type)
         {
             try
             {

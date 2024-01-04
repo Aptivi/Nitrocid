@@ -17,19 +17,19 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace Nitrocid.Kernel.Extensions
+namespace Nitrocid.Modifications
 {
     /// <summary>
-    /// Addon type
+    /// Kernel modification loading priority type
     /// </summary>
-    public enum AddonType
+    public enum ModLoadPriority
     {
         /// <summary>
-        /// Important addons that must be loaded before all the optional ones.
+        /// Important modifications that must be loaded before all the optional ones.
         /// </summary>
         Important,
         /// <summary>
-        /// Optional addons that may be loaded.
+        /// Optional modifications that may be loaded.
         /// </summary>
         Optional
     }

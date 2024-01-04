@@ -31,6 +31,7 @@ using System.Reflection;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Shell.Prompts;
+using Nitrocid.Modifications;
 
 namespace Nitrocid.Extras.RssShell
 {
@@ -55,7 +56,7 @@ namespace Nitrocid.Extras.RssShell
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasRssShell);
 
-        AddonType IAddon.AddonType => AddonType.Optional;
+        ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
 
         internal static RssConfig RssConfig =>
             (RssConfig)Config.baseConfigurations[nameof(RssConfig)];

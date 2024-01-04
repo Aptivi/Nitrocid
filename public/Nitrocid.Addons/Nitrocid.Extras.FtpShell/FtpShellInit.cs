@@ -21,6 +21,7 @@ using Nitrocid.Extras.FtpShell.FTP;
 using Nitrocid.Extras.FtpShell.Settings;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Extensions;
+using Nitrocid.Modifications;
 using Nitrocid.Shell.Prompts;
 using Nitrocid.Shell.ShellBase.Arguments;
 using Nitrocid.Shell.ShellBase.Commands;
@@ -50,7 +51,7 @@ namespace Nitrocid.Extras.FtpShell
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasFtpShell);
 
-        AddonType IAddon.AddonType => AddonType.Optional;
+        ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
 
         internal static FtpConfig FtpConfig =>
             (FtpConfig)Config.baseConfigurations[nameof(FtpConfig)];

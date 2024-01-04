@@ -21,6 +21,7 @@ using Nitrocid.Extras.JsonShell.Json;
 using Nitrocid.Extras.JsonShell.Settings;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Extensions;
+using Nitrocid.Modifications;
 using Nitrocid.Shell.Prompts;
 using Nitrocid.Shell.ShellBase.Shells;
 using System;
@@ -34,7 +35,7 @@ namespace Nitrocid.Extras.JsonShell
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasJsonShell);
 
-        AddonType IAddon.AddonType => AddonType.Optional;
+        ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
 
         internal static JsonConfig JsonConfig =>
             (JsonConfig)Config.baseConfigurations[nameof(JsonConfig)];

@@ -21,6 +21,7 @@ using Nitrocid.ConsoleBase.Writers.MiscWriters;
 using Nitrocid.Extras.Tips.Settings;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Extensions;
+using Nitrocid.Modifications;
 using System;
 using System.Collections.ObjectModel;
 using System.Reflection;
@@ -32,7 +33,7 @@ namespace Nitrocid.Extras.Tips
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasTips);
 
-        AddonType IAddon.AddonType => AddonType.Optional;
+        ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
 
         internal static TipsConfig TipsConfig =>
             (TipsConfig)Config.baseConfigurations[nameof(TipsConfig)];

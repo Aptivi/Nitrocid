@@ -31,6 +31,7 @@ using System.Reflection;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Misc.Screensaver;
+using Nitrocid.Modifications;
 
 namespace Nitrocid.Extras.NameGen
 {
@@ -123,7 +124,7 @@ namespace Nitrocid.Extras.NameGen
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasNameGen);
 
-        AddonType IAddon.AddonType => AddonType.Optional;
+        ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
 
         internal static NameGenSaversConfig SaversConfig =>
             (NameGenSaversConfig)Config.baseConfigurations[nameof(NameGenSaversConfig)];

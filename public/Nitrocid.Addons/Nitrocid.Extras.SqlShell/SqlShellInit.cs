@@ -21,6 +21,7 @@ using Nitrocid.Extras.SqlShell.Settings;
 using Nitrocid.Extras.SqlShell.Sql;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Extensions;
+using Nitrocid.Modifications;
 using Nitrocid.Shell.Prompts;
 using Nitrocid.Shell.ShellBase.Shells;
 using System;
@@ -35,7 +36,7 @@ namespace Nitrocid.Extras.SqlShell
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasSqlShell);
 
-        AddonType IAddon.AddonType => AddonType.Optional;
+        ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
 
         internal static SqlConfig SqlConfig =>
             (SqlConfig)Config.baseConfigurations[nameof(SqlConfig)];

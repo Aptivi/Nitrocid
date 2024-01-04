@@ -27,6 +27,7 @@ using System.Collections.ObjectModel;
 using System.Reflection;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
+using Nitrocid.Modifications;
 
 namespace Nitrocid.Extras.Diagnostics
 {
@@ -45,7 +46,7 @@ namespace Nitrocid.Extras.Diagnostics
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasDiagnostics);
 
-        AddonType IAddon.AddonType => AddonType.Important;
+        ModLoadPriority IAddon.AddonType => ModLoadPriority.Important;
 
         ReadOnlyDictionary<string, Delegate> IAddon.PubliclyAvailableFunctions => new(new Dictionary<string, Delegate>()
         {

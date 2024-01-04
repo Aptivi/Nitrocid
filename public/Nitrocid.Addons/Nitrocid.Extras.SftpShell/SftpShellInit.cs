@@ -30,6 +30,7 @@ using System.Reflection;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Shell.Prompts;
+using Nitrocid.Modifications;
 
 namespace Nitrocid.Extras.SftpShell
 {
@@ -74,7 +75,7 @@ namespace Nitrocid.Extras.SftpShell
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasSftpShell);
 
-        AddonType IAddon.AddonType => AddonType.Optional;
+        ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
 
         internal static SftpConfig SftpConfig =>
             (SftpConfig)Config.baseConfigurations[nameof(SftpConfig)];

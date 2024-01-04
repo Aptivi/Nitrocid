@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Nitrocid.Modifications;
 using System;
 using System.Collections.ObjectModel;
 using System.Reflection;
@@ -26,7 +27,7 @@ namespace Nitrocid.Kernel.Extensions
     internal interface IAddon
     {
         internal string AddonName { get; }
-        internal AddonType AddonType { get; }
+        internal ModLoadPriority AddonType { get; }
         internal void StartAddon();
         internal void FinalizeAddon();
         internal void StopAddon();
