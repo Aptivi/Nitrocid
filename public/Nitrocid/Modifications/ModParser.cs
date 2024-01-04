@@ -232,14 +232,10 @@ namespace Nitrocid.Modifications
                     string ModName = script.Name;
                     if (string.IsNullOrWhiteSpace(ModName))
                     {
-                        // Mod has no name! Give it a file name.
-                        ModName = modFile;
-                        DebugWriter.WriteDebug(DebugLevel.W, "No name for {0}", modFile);
-                        SplashReport.ReportProgress(Translate.DoTranslation("Mod {0} does not have the name. Review the source code."), modFile);
-                    }
-                    else
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.I, "There is a name for {0}", modFile);
+                        // Mod has no name!
+                        DebugWriter.WriteDebug(DebugLevel.E, "No name for {0}", modFile);
+                        SplashReport.ReportProgressError(Translate.DoTranslation("Mod {0} does not have the name. Mod parsing failed. Review the source code."), modFile);
+                        return;
                     }
                     DebugWriter.WriteDebug(DebugLevel.I, "Mod name: {0}", ModName);
 
@@ -247,8 +243,8 @@ namespace Nitrocid.Modifications
                     if (string.IsNullOrWhiteSpace(script.Version))
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "{0}.Version = \"\" | {0}.Name = {1}", modFile, script.Name);
-                        SplashReport.ReportProgress(Translate.DoTranslation("Mod {0} does not have the version. Setting as") + " 1.0.0...", script.Name);
-                        script.Version = "1.0.0";
+                        SplashReport.ReportProgressError(Translate.DoTranslation("Mod {0} does not have the version. Mod parsing failed. Review the source code."), modFile);
+                        return;
                     }
                     else
                     {

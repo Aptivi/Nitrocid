@@ -31,11 +31,11 @@ namespace Nitrocid.Modifications
         /// <summary>
         /// Mod name
         /// </summary>
-        string Name { get; set; }
+        string Name { get; }
         /// <summary>
         /// Mod version
         /// </summary>
-        string Version { get; set; }
+        string Version { get; }
         /// <summary>
         /// Mod load priority
         /// </summary>
