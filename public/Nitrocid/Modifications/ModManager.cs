@@ -317,7 +317,7 @@ namespace Nitrocid.Modifications
             // Iterate through each mod and mod part
             foreach (string ModName in Mods.Keys)
             {
-                var mod = Mods[ModFilename];
+                var mod = Mods[ModName];
                 DebugWriter.WriteDebug(DebugLevel.I, "Checking mod {0}...", ModName);
                 if (mod.ModFileName == ModFilename || mod.ModFilePath == ModFilename)
                 {
