@@ -37,6 +37,26 @@ namespace Nitrocid.Kernel.Time.Renderers
         /// Gets the remaining time from now
         /// </summary>
         /// <param name="Milliseconds">The milliseconds interval</param>
+        /// <returns>Remaining time from now in a TimeSpan representation</returns>
+        public static TimeSpan GetRemainingTimeFromNow(int Milliseconds) =>
+            GetRemainingTimeFrom(TimeDateTools.KernelDateTime, Milliseconds);
+
+        /// <summary>
+        /// Gets the remaining time from the specified date and time
+        /// </summary>
+        /// <param name="moment">A moment in time in which will be compared into how many milliseconds remaining</param>
+        /// <param name="Milliseconds">The milliseconds interval</param>
+        /// <returns>Remaining time from the specified date and time in a TimeSpan representation</returns>
+        public static TimeSpan GetRemainingTimeFrom(DateTime moment, int Milliseconds)
+        {
+            var RemainingTime = moment.AddMilliseconds(Milliseconds) - moment;
+            return RemainingTime;
+        }
+
+        /// <summary>
+        /// Gets the remaining time from now
+        /// </summary>
+        /// <param name="Milliseconds">The milliseconds interval</param>
         /// <returns>Remaining time from now in a string representation</returns>
         public static string RenderRemainingTimeFromNow(int Milliseconds) =>
             RenderRemainingTimeFromNow(Milliseconds, TimeDateRenderConstants.FullTimeFormat);

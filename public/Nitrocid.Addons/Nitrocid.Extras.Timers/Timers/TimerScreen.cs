@@ -32,6 +32,9 @@ using Nitrocid.ConsoleBase;
 using Nitrocid.Kernel.Time.Renderers;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Inputs;
+using Nitrocid.ConsoleBase.Buffered;
+using System.Text;
+using Nitrocid.ConsoleBase.Writers.FancyWriters;
 
 namespace Nitrocid.Extras.Timers.Timers
 {
@@ -40,11 +43,11 @@ namespace Nitrocid.Extras.Timers.Timers
     /// </summary>
     public static class TimerScreen
     {
-        internal static KernelThread TimerUpdate = new("Timer Remaining Time Updater", true, UpdateTimerElapsedDisplay);
         internal static DateTime TimerStarted;
         internal static int FigletTimeOldWidth;
         internal static int FigletTimeOldWidthEnd;
         internal static string timerFigletFont = "Small";
+        internal static bool running;
         private static Timer _Timer;
 
         internal static Timer Timer
@@ -87,55 +90,102 @@ namespace Nitrocid.Extras.Timers.Timers
         /// </summary>
         public static void OpenTimer()
         {
+            Screen timerScreen = new();
+            ScreenPart timerScreenPart = new();
+            ScreenTools.SetCurrent(timerScreen);
+            KernelColorTools.LoadBack();
+
             // Populate the figlet font (if any)
             var FigletFont = FigletTools.GetFigletFont(TimerFigletFont);
 
             // Populate the time
             double TimerInterval = 60000d;
+            bool prompted = false;
+            Timer.Interval = TimerInterval;
 
-            // Main loop
-            bool exiting = false;
-            bool rerender = true;
-            while (!exiting)
+            // Add a dynamic text that shows you the remaining time dynamically
+            timerScreenPart.AddDynamicText(() =>
             {
-                // Check to see if we need to clear
-                if (rerender)
+                // If prompted, clear the console
+                if (prompted || ConsoleResizeListener.WasResized(false))
                 {
-                    ConsoleWrapper.Clear();
-                    ConsoleWrapper.CursorVisible = false;
-                    rerender = false;
+                    prompted = false;
+                    KernelColorTools.LoadBack();
                 }
+                ConsoleWrapper.CursorVisible = false;
+                var builder = new StringBuilder();
 
                 // Populate the positions for time
+                var Until =
+                    running ?
+                    TimerStarted.AddMilliseconds(Timer.Interval) - DateTime.Now :
+                    TimeDateMiscRenderers.GetRemainingTimeFromNow((int)Math.Round(TimerInterval));
                 int HalfWidth = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d);
-                string CurrentRemainingString = TimeDateMiscRenderers.RenderRemainingTimeFromNow((int)Math.Round(TimerInterval));
+                int HalfHeight = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d);
+                string UntilText = Until.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCult);
                 int TimeLeftPosition = 0;
                 int TimeTopPosition = 0;
-                UpdateRemainingPositions(CurrentRemainingString, ref TimeLeftPosition, ref TimeTopPosition);
+
+                // Prepare the display
+                UpdateRemainingPositions(UntilText, ref TimeLeftPosition, ref TimeTopPosition);
+                ClearRemainingTimeDisplay(UntilText, FigletTimeOldWidth, FigletTimeOldWidthEnd);
 
                 // Update the old positions
-                FigletTimeOldWidth = (int)Math.Round(HalfWidth - FigletTools.GetFigletWidth(CurrentRemainingString, FigletFont) / 2d);
-                FigletTimeOldWidthEnd = (int)Math.Round(HalfWidth + FigletTools.GetFigletWidth(CurrentRemainingString, FigletFont) / 2d);
+                FigletTimeOldWidth = (int)Math.Round(HalfWidth - FigletTools.GetFigletWidth(UntilText, FigletFont) / 2d);
+                FigletTimeOldWidthEnd = (int)Math.Round(HalfWidth + FigletTools.GetFigletWidth(UntilText, FigletFont) / 2d);
 
                 // Populate the keys text variable
                 string KeysText = "[ENTER] " + Translate.DoTranslation("Start counting down") + " | [T] " + Translate.DoTranslation("Set interval") + " | [ESC] " + Translate.DoTranslation("Exit");
-                int KeysTextLeftPosition = (int)Math.Round(HalfWidth - KeysText.Length / 2d);
                 int KeysTextTopPosition = ConsoleWrapper.WindowHeight - 2;
 
                 // Print the keys text
-                TextWriters.WriteWhere(KeysText, KeysTextLeftPosition, KeysTextTopPosition, true, KernelColorType.Tip);
+                builder.Append(
+                    CenteredTextColor.RenderCenteredOneLine(KeysTextTopPosition, KeysText, true, KernelColorType.Tip)
+                );
 
                 // Print the time interval
                 if (TimersInit.TimersConfig.EnableFigletTimer)
-                    TextFancyWriters.WriteFigletWhere(CurrentRemainingString, TimeLeftPosition, TimeTopPosition, true, FigletFont, KernelColorType.NeutralText);
+                {
+                    builder.Append(
+                        FigletWhereColor.RenderFigletWhere(UntilText, TimeLeftPosition, TimeTopPosition, true, FigletFont, KernelColorTools.GetColor(KernelColorType.NeutralText), KernelColorTools.GetColor(KernelColorType.Background))
+                    );
+                }
                 else
-                    TextWriters.WriteWhere(CurrentRemainingString, TimeLeftPosition, TimeTopPosition, true, KernelColorType.NeutralText);
+                {
+                    builder.Append(
+                        TextWriterWhereColor.RenderWhere(UntilText, TimeLeftPosition, TimeTopPosition, true, KernelColorTools.GetColor(KernelColorType.NeutralText), KernelColorTools.GetColor(KernelColorType.Background))
+                    );
+                }
 
                 // Print the border
-                TextWriterWhereColor.WriteWhereColor(new string('═', ConsoleWrapper.WindowWidth), 0, KeysTextTopPosition - 2, true, KernelColorTools.GetGray());
+                builder.Append(
+                    TextWriterWhereColor.RenderWhere(new string('═', ConsoleWrapper.WindowWidth), 0, KeysTextTopPosition - 2, true, KernelColorTools.GetGray(), KernelColorTools.GetColor(KernelColorType.Background))
+                );
 
-                // Wait for a keypress
-                var KeysKeypress = Input.DetectKeypress().Key;
+                // Return the final result
+                return builder.ToString();
+            });
+
+            // Main loop
+            timerScreen.AddBufferedPart("Timer Update", timerScreenPart);
+            bool exiting = false;
+            while (!exiting)
+            {
+                ScreenTools.Render(timerScreen);
+
+                // Check to see if the timer is running to continually update the timer render
+                ConsoleKey KeysKeypress = default;
+                if (running)
+                {
+                    // Wait for a keypress
+                    if (ConsoleWrapper.KeyAvailable)
+                        KeysKeypress = Input.DetectKeypress().Key;
+                }
+                else
+                {
+                    // Wait for a keypress
+                    KeysKeypress = Input.DetectKeypress().Key;
+                }
 
                 // Check for a keypress
                 switch (KeysKeypress)
@@ -147,8 +197,7 @@ namespace Nitrocid.Extras.Timers.Timers
                         Timer.Interval = TimerInterval;
                         Timer.Start();
                         TimerStarted = DateTime.Now;
-                        if (!TimerUpdate.IsAlive)
-                            TimerUpdate.Start();
+                        running = true;
                         break;
                     case ConsoleKey.T:
                         // User requested to specify the timeout in milliseconds
@@ -163,20 +212,19 @@ namespace Nitrocid.Extras.Timers.Timers
                             InfoBoxColor.WriteInfoBoxKernelColor(Translate.DoTranslation("Indicated timeout is not numeric."), KernelColorType.Error);
                             TimerInterval = 60000d;
                         }
-                        rerender = true;
+                        prompted = true;
                         break;
                     case ConsoleKey.Escape:
                         // Stop the timer
                         Timer.Stop();
                         Timer.Dispose();
-                        if (TimerUpdate.IsAlive)
-                            TimerUpdate.Stop();
                         exiting = true;
                         break;
                 }
             }
 
             // Clear for cleanliness
+            running = false;
             Timer = new Timer();
             ConsoleWrapper.Clear();
             ConsoleWrapper.CursorVisible = true;
@@ -187,55 +235,8 @@ namespace Nitrocid.Extras.Timers.Timers
         /// </summary>
         private static void TimerElapsed(object sender, ElapsedEventArgs e)
         {
-            var FigletFont = FigletTools.GetFigletFont(TimerFigletFont);
-            string ElapsedText = new TimeSpan().ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCult);
-            int TimeLeftPosition = 0;
-            int TimeTopPosition = 0;
-
-            // Prepare the display
-            UpdateRemainingPositions(ElapsedText, ref TimeLeftPosition, ref TimeTopPosition);
-            ClearRemainingTimeDisplay(ElapsedText, FigletTimeOldWidth, FigletTimeOldWidthEnd);
-
-            // Actually display it
-            if (TimerUpdate.IsAlive)
-                TimerUpdate.Stop();
-            if (TimersInit.TimersConfig.EnableFigletTimer)
-                TextFancyWriters.WriteFigletWhere(ElapsedText, TimeLeftPosition, TimeTopPosition, true, FigletFont, KernelColorType.Success);
-            else
-                TextWriters.WriteWhere(ElapsedText, TimeLeftPosition, TimeTopPosition, true, KernelColorType.Success);
+            running = false;
             Timer.Stop();
-        }
-
-        /// <summary>
-        /// Updates the timer elapsed display
-        /// </summary>
-        private static void UpdateTimerElapsedDisplay()
-        {
-            var FigletFont = FigletTools.GetFigletFont(TimerFigletFont);
-            while (!TimerUpdate.IsStopping)
-            {
-                try
-                {
-                    var Until = TimerStarted.AddMilliseconds(Timer.Interval) - DateTime.Now;
-                    int HalfWidth = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d);
-                    int HalfHeight = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d);
-                    string UntilText = Until.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCult);
-                    int TimeLeftPosition = 0;
-                    int TimeTopPosition = 0;
-
-                    // Prepare the display
-                    UpdateRemainingPositions(UntilText, ref TimeLeftPosition, ref TimeTopPosition);
-                    ClearRemainingTimeDisplay(UntilText, FigletTimeOldWidth, FigletTimeOldWidthEnd);
-                    if (TimersInit.TimersConfig.EnableFigletTimer)
-                        TextFancyWriters.WriteFigletWhere(UntilText, TimeLeftPosition, TimeTopPosition, true, FigletFont, KernelColorType.NeutralText);
-                    else
-                        TextWriters.WriteWhere(UntilText, TimeLeftPosition, TimeTopPosition, true, KernelColorType.NeutralText);
-                }
-                catch (ThreadInterruptedException)
-                {
-                    break;
-                }
-            }
         }
 
         /// <summary>
