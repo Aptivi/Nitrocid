@@ -186,6 +186,17 @@
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
   </PropertyGroup>
   <!-- KS Source Link properties End -->
+
+  <!-- KS extra targets -->
+  <Target Name="WipeBuild" AfterTargets="Clean">
+    <ItemGroup>
+      <BuildDirs Include="KSBuild\**\*" />
+    </ItemGroup>
+    <Message Importance="high" Text="N: Removing whole KSBuild directory..." />
+    <Delete Files="@(BuildDirs)" />
+    <RemoveDir Directories="KSBuild\" />
+  </Target>
+  <!-- KS extra targets End -->
   
   <!-- KS Misc properties -->
   <ItemGroup>

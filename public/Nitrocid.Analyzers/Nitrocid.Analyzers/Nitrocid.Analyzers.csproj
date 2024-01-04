@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
@@ -20,6 +20,15 @@
     </PackageReference>
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.8.0" />
   </ItemGroup>
+
+  <Target Name="WipeAnalyzerBuild" AfterTargets="Clean">
+    <ItemGroup>
+      <BuildDirs Include="..\..\Nitrocid\KSAnalyzer\**\*" />
+    </ItemGroup>
+    <Message Importance="high" Text="A: Removing whole KSAnalyzer directory..." />
+    <Delete Files="@(BuildDirs)" />
+    <RemoveDir Directories="..\..\Nitrocid\KSAnalyzer\" />
+  </Target>
 
   <ItemGroup>
     <Compile Update="Resources\AnalyzerResources.Designer.cs" DesignTime="True" AutoGen="True" DependentUpon="AnalyzerResources.resx" />
