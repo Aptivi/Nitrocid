@@ -19,28 +19,18 @@
 
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
 using System.Linq;
-using System.Reflection;
 using System.Threading;
 using Nitrocid.ConsoleBase;
 using Nitrocid.ConsoleBase.Buffered;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
-using Nitrocid.Files.Folders;
-using Nitrocid.Files.Instances;
-using Nitrocid.Files.Operations;
-using Nitrocid.Files.Operations.Querying;
-using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Languages;
-using Nitrocid.Misc.Reflection;
 using Nitrocid.Misc.Splash.Splashes;
-using Nitrocid.Modifications;
 
 namespace Nitrocid.Misc.Splash
 {

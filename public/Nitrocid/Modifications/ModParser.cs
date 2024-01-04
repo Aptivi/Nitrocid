@@ -34,7 +34,6 @@ using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Events;
-using Nitrocid.Modifications.ManPages;
 using Nitrocid.Security.Signing;
 using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Modifications.Dependencies;

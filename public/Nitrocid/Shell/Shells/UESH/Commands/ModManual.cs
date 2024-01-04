@@ -46,14 +46,13 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             string modName = parameters.ArgumentsList[0];
-            if (!ModManager.Mods.ContainsKey(modName))
+            if (!ModManager.Mods.TryGetValue(modName, out ModInfo mod))
             {
                 TextWriters.Write(Translate.DoTranslation("Tried to query the manuals for nonexistent mod {0}."), true, KernelColorType.Error, modName);
                 return 10000 + (int)KernelExceptionType.NoSuchMod;
             }
 
             // Check for accompanying manual pages for mods
-            var mod = ModManager.Mods[modName];
             string ModManualPath = FilesystemTools.NeutralizePath(mod.ModFilePath + ".manual");
             if (Checking.FolderExists(ModManualPath))
             {
