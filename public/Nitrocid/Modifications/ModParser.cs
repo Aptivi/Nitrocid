@@ -280,15 +280,6 @@ namespace Nitrocid.Modifications
                     if (!modFound)
                         ModManager.Mods.Add(ModName, ModInstance);
 
-                    // Check for accompanying manual pages for mods
-                    string ModManualPath = FilesystemTools.NeutralizePath(modFile + ".manual", ModPath);
-                    if (Checking.FolderExists(ModManualPath))
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Found manual page collection in {0}", ModManualPath);
-                        foreach (string ModManualFile in Directory.GetFiles(ModManualPath, "*.man", SearchOption.AllDirectories))
-                            PageParser.InitMan(ModName, ModManualFile);
-                    }
-
                     // Raise event
                     EventsManager.FireEvent(EventType.ModFinalized, modFile);
                 }

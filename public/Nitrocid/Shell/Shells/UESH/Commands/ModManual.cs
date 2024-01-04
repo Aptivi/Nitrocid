@@ -25,6 +25,11 @@ using Nitrocid.Modifications;
 using Nitrocid.ConsoleBase.Interactive;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Misc.Interactives;
+using Nitrocid.Files;
+using Nitrocid.Files.Operations.Querying;
+using Nitrocid.Kernel.Debugging;
+using System.IO;
+using Nitrocid.Modifications.ManPages;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -45,6 +50,16 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             {
                 TextWriters.Write(Translate.DoTranslation("Tried to query the manuals for nonexistent mod {0}."), true, KernelColorType.Error, modName);
                 return 10000 + (int)KernelExceptionType.NoSuchMod;
+            }
+
+            // Check for accompanying manual pages for mods
+            var mod = ModManager.Mods[modName];
+            string ModManualPath = FilesystemTools.NeutralizePath(mod.ModFilePath + ".manual");
+            if (Checking.FolderExists(ModManualPath))
+            {
+                DebugWriter.WriteDebug(DebugLevel.I, "Found manual page collection in {0}", ModManualPath);
+                foreach (string ModManualFile in Directory.GetFiles(ModManualPath, "*.man", SearchOption.AllDirectories))
+                    PageParser.InitMan(modName, ModManualFile);
             }
 
             var tuiInstance = new ManualViewerCli() { modName = modName };
