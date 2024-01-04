@@ -73,10 +73,6 @@ namespace Nitrocid.Files.Paths
         /// </summary>
         CustomLanguages,
         /// <summary>
-        /// Custom splashes folder
-        /// </summary>
-        CustomSplashes,
-        /// <summary>
         /// Journal file
         /// </summary>
         Journaling,

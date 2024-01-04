@@ -65,7 +65,7 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
         public override void HelpHelper()
         {
             TextWriterColor.Write(Translate.DoTranslation("Available splashes:"));
-            ListWriterColor.WriteList(SplashManager.Splashes.Keys);
+            ListWriterColor.WriteList(SplashManager.GetNamesOfSplashes());
         }
 
     }

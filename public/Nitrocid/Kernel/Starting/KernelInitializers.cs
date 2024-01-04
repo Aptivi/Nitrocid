@@ -148,17 +148,17 @@ namespace Nitrocid.Kernel.Starting
                 LanguageManager.InstallCustomLanguages();
                 DebugWriter.WriteDebug(DebugLevel.I, "Loaded custom languages.");
 
-                // Initialize splashes
+                // Initialize important mods
                 if (KernelEntry.TalkativePreboot)
-                    SplashReport.ReportProgress(Translate.DoTranslation("Loading custom splashes..."));
-                SplashManager.LoadSplashes();
-                DebugWriter.WriteDebug(DebugLevel.I, "Loaded custom splashes.");
+                    SplashReport.ReportProgress(Translate.DoTranslation("Loading important mods..."));
+                ModManager.StartMods(ModLoadPriority.Important);
+                DebugWriter.WriteDebug(DebugLevel.I, "Loaded important mods.");
 
                 // Initialize addons
                 if (KernelEntry.TalkativePreboot)
-                    SplashReport.ReportProgress(Translate.DoTranslation("Loading kernel addons..."));
+                    SplashReport.ReportProgress(Translate.DoTranslation("Loading important kernel addons..."));
                 AddonTools.ProcessAddons(ModLoadPriority.Important);
-                DebugWriter.WriteDebug(DebugLevel.I, "Loaded kernel addons.");
+                DebugWriter.WriteDebug(DebugLevel.I, "Loaded important kernel addons.");
 
                 // Stop the splash prior to loading config
                 if (KernelEntry.PrebootSplash)
@@ -390,14 +390,15 @@ namespace Nitrocid.Kernel.Starting
             }
             finally
             {
-                // Unload all splashes
+                // Unload all custom splashes
                 SplashReport.ReportProgress(Translate.DoTranslation("Goodbye!"));
                 if (!PowerManager.KernelShutdown)
                     SplashManager.CloseSplash(SplashContext.Rebooting);
                 else
                     SplashManager.CloseSplash(SplashContext.ShuttingDown);
-                SplashManager.UnloadSplashes();
-                DebugWriter.WriteDebug(DebugLevel.I, "Unloaded all splashes");
+                SplashManager.customSplashes.Clear();
+
+                // Clear remaining lists
                 SplashReport.logBuffer.Clear();
                 JournalManager.journalEntries.Clear();
                 PowerManager.Uptime.Reset();

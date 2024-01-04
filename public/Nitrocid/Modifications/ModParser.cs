@@ -68,10 +68,11 @@ namespace Nitrocid.Modifications
         /// Starts to parse the mod, and configures it so it can be used
         /// </summary>
         /// <param name="modFile">Mod file name with extension. It should end with .dll</param>
-        public static void ParseMod(string modFile)
+        /// <param name="priority">Specifies the mod load priority</param>
+        public static void ParseMod(string modFile, ModLoadPriority priority = ModLoadPriority.Optional)
         {
             string ModPath = PathsManagement.GetKernelPath(KernelPathType.Mods);
-            if (modFile.EndsWith(".dll"))
+            if (Path.HasExtension(modFile) && Path.GetExtension(modFile) == ".dll")
             {
                 // Mod is a dynamic DLL
                 try
@@ -92,7 +93,10 @@ namespace Nitrocid.Modifications
                         throw new KernelException(KernelExceptionType.InvalidMod, Translate.DoTranslation("The modfile is invalid."));
 
                     // Finalize the mod
-                    FinalizeMods(script, modFile);
+                    if (script.LoadPriority == priority)
+                        FinalizeMods(script, modFile);
+                    else
+                        DebugWriter.WriteDebug(DebugLevel.W, "Skipping dynamic mod {0} because priority [{1}] doesn't match required priority [{2}]", modFile, priority, script.LoadPriority);
                 }
                 catch (ReflectionTypeLoadException ex)
                 {

@@ -74,10 +74,11 @@ namespace Nitrocid.Modifications
         /// <summary>
         /// Loads all mods in KSMods
         /// </summary>
-        public static void StartMods()
+        /// <param name="priority">Specifies the mod load priority</param>
+        public static void StartMods(ModLoadPriority priority = ModLoadPriority.Optional)
         {
             string ModPath = PathsManagement.GetKernelPath(KernelPathType.Mods);
-            DebugWriter.WriteDebug(DebugLevel.I, "Safe mode: {0}", KernelEntry.SafeMode);
+            DebugWriter.WriteDebug(DebugLevel.I, "Safe mode: {0} | Priority: {1}", KernelEntry.SafeMode, priority);
             if (!KernelEntry.SafeMode)
             {
                 // We're not in safe mode. We're good now.
@@ -94,7 +95,7 @@ namespace Nitrocid.Modifications
                     foreach (string modFilePath in Directory.GetFiles(ModPath))
                     {
                         string modFile = Path.GetFileName(modFilePath);
-                        StartMod(modFile);
+                        StartMod(modFile, priority);
                     }
                 }
                 else
@@ -112,12 +113,12 @@ namespace Nitrocid.Modifications
         /// Starts a specified mod
         /// </summary>
         /// <param name="ModFilename">Mod filename found in KSMods</param>
-        public static void StartMod(string ModFilename)
+        /// <param name="priority">Specifies the mod load priority</param>
+        public static void StartMod(string ModFilename, ModLoadPriority priority = ModLoadPriority.Optional)
         {
             string ModPath = PathsManagement.GetKernelPath(KernelPathType.Mods);
             string PathToMod = Path.Combine(ModPath, ModFilename);
-            DebugWriter.WriteDebug(DebugLevel.I, "Safe mode: {0}", KernelEntry.SafeMode);
-            DebugWriter.WriteDebug(DebugLevel.I, "Mod file path: {0}", PathToMod);
+            DebugWriter.WriteDebug(DebugLevel.I, "Mod file path: {0} | Safe mode: {1} | Priority: {2}", PathToMod, KernelEntry.SafeMode, priority);
 
             if (!KernelEntry.SafeMode)
             {
@@ -130,7 +131,7 @@ namespace Nitrocid.Modifications
                         {
                             DebugWriter.WriteDebug(DebugLevel.I, "Mod {0} is not blacklisted.", ModFilename);
                             SplashReport.ReportProgress(Translate.DoTranslation("Starting mod") + " {0}...", ModFilename);
-                            ModParser.ParseMod(ModFilename);
+                            ModParser.ParseMod(ModFilename, priority);
                         }
                         else
                         {

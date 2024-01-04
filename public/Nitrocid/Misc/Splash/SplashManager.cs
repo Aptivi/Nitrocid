@@ -35,6 +35,7 @@ using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Reflection;
@@ -52,12 +53,15 @@ namespace Nitrocid.Misc.Splash
         internal static Screen splashScreen = new();
         internal static SplashContext currentContext = SplashContext.StartingUp;
         internal static KernelThread SplashThread = new("Kernel Splash Thread", false, (splashParams) => SplashThreadHandler((SplashThreadParameters)splashParams));
-        internal readonly static Dictionary<string, SplashInfo> InstalledSplashes = new()
-        {
+        internal static SplashInfo fallbackSplash = new("Welcome", new SplashWelcome());
+        internal static SplashInfo blankSplash = new("Blank", new SplashBlank(), false);
+        internal readonly static List<SplashInfo> builtinSplashes =
+        [
             // They are the base splashes. They shouldn't be moved to the splash addon pack as such movement breaks things.
-            { "Welcome", new SplashInfo("Welcome", new SplashWelcome()) },
-            { "Blank", new SplashInfo("Blank", new SplashBlank(), false) },
-        };
+            fallbackSplash,
+            blankSplash,
+        ];
+        internal readonly static List<SplashInfo> customSplashes = [];
 
         /// <summary>
         /// Current splash name
@@ -80,8 +84,10 @@ namespace Nitrocid.Misc.Splash
         /// <summary>
         /// All the installed splashes either normal or custom
         /// </summary>
-        public static Dictionary<string, SplashInfo> Splashes =>
-            InstalledSplashes;
+        public static SplashInfo[] Splashes =>
+            builtinSplashes
+                .Union(customSplashes)
+                .ToArray();
 
         /// <summary>
         /// Gets the current splash context
@@ -98,142 +104,60 @@ namespace Nitrocid.Misc.Splash
         /// <summary>
         /// Gets names of the installed splashes
         /// </summary>
-        public static List<string> GetNamesOfSplashes() =>
-            Splashes.Keys.ToList();
+        public static string[] GetNamesOfSplashes() =>
+            Splashes
+                .Select((info) => info.SplashName)
+                .ToArray();
 
         /// <summary>
-        /// Loads all the splashes from the KSSplashes folder
+        /// Registers a custom splash to the list
         /// </summary>
-        public static void LoadSplashes()
+        /// <param name="splashInfo">A custom splash information</param>
+        /// <exception cref="KernelException"></exception>
+        public static void RegisterSplash(SplashInfo splashInfo)
         {
-            string SplashPath = PathsManagement.GetKernelPath(KernelPathType.CustomSplashes);
-            if (!Checking.FolderExists(SplashPath))
-                Making.MakeDirectory(SplashPath);
-            var SplashFiles = Listing.CreateList(SplashPath);
-            foreach (FileSystemEntry SplashFileInfo in SplashFiles)
-            {
-                string FilePath = SplashFileInfo.FilePath;
-                string FileName = SplashFileInfo.BaseEntry.Name;
+            // Check for splash info sanity
+            if (splashInfo is null)
+                throw new KernelException(KernelExceptionType.Splash, Translate.DoTranslation("Can't register empty splash"));
+            if (string.IsNullOrEmpty(splashInfo.SplashName))
+                throw new KernelException(KernelExceptionType.Splash, Translate.DoTranslation("Can't register splash with no name"));
+            if (splashInfo.EntryPoint is null)
+                throw new KernelException(KernelExceptionType.Splash, Translate.DoTranslation("Can't register splash with no entry point"));
 
-                // Try to parse the splash file
-                if (SplashFileInfo.BaseEntry.Extension == ".dll")
-                {
-                    // We got a .dll file that may or may not contain splash file. Parse that to verify.
-                    try
-                    {
-                        // Add splash dependencies folder (if any) to the private appdomain lookup folder
-                        string SplashDepPath = SplashPath + "Deps/" + Path.GetFileNameWithoutExtension(FileName) + "-" + FileVersionInfo.GetVersionInfo(FilePath).FileVersion + "/";
-                        AssemblyLookup.AddPathToAssemblySearchPath(SplashDepPath);
-
-                        // Now, actually parse that.
-                        DebugWriter.WriteDebug(DebugLevel.I, "Parsing splash file {0}...", FilePath);
-                        var SplashAssembly = Assembly.LoadFrom(FilePath);
-
-                        // Check the public key
-                        var modAsmName = new AssemblyName(SplashAssembly.FullName);
-                        var modAsmPublicKey = modAsmName.GetPublicKeyToken();
-                        if (modAsmPublicKey is null || modAsmPublicKey.Length == 0)
-                        {
-                            SplashReport.ReportProgressWarning(Translate.DoTranslation("The splash is not strongly signed. It may contain untrusted code."));
-                            if (!ModManager.AllowUntrustedMods)
-                                continue;
-                        }
-
-                        // Now, get the instance
-                        var SplashInstance = GetSplashInstance(SplashAssembly);
-                        if (SplashInstance is not null)
-                        {
-                            DebugWriter.WriteDebug(DebugLevel.I, "Found valid splash! Getting information...");
-                            string Name = SplashInstance.SplashName;
-                            bool DisplaysProgress = SplashInstance.SplashDisplaysProgress;
-
-                            // Install the values to the new instance
-                            DebugWriter.WriteDebug(DebugLevel.I, "- Name: {0}", Name);
-                            DebugWriter.WriteDebug(DebugLevel.I, "- Displays Progress: {0}", DisplaysProgress);
-                            DebugWriter.WriteDebug(DebugLevel.I, "Installing splash...");
-                            var InstalledSplash = new SplashInfo(Name, SplashInstance, DisplaysProgress);
-                            InstalledSplashes.Remove(Name);
-                            InstalledSplashes.Add(Name, InstalledSplash);
-                        }
-                        else
-                        {
-                            DebugWriter.WriteDebug(DebugLevel.W, "Skipping incompatible splash file {0}...", FilePath);
-                        }
-                    }
-                    catch (ReflectionTypeLoadException ex)
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.W, "Could not handle splash file {0}! {1}", FilePath, ex.Message);
-                        DebugWriter.WriteDebugStackTrace(ex);
-                        foreach (Exception LoaderException in ex.LoaderExceptions)
-                        {
-                            DebugWriter.WriteDebug(DebugLevel.E, "Loader exception: {0}", LoaderException.Message);
-                            DebugWriter.WriteDebugStackTrace(LoaderException);
-                        }
-                    }
-                }
-                else
-                {
-                    DebugWriter.WriteDebug(DebugLevel.W, "Skipping incompatible splash file {0} because file extension is not .dll ({1})...", FilePath, SplashFileInfo.BaseEntry.Extension);
-                }
-            }
+            // Now, register the splash to the custom splash list
+            if (IsSplashRegistered(splashInfo.SplashName))
+                throw new KernelException(KernelExceptionType.Splash, Translate.DoTranslation("Can't re-register splash. You need to unregister that splash first."));
+            customSplashes.Add(splashInfo);
         }
 
         /// <summary>
-        /// Unloads all the splashes from the KSSplashes folder
+        /// Unregisters a custom splash to the list
         /// </summary>
-        public static void UnloadSplashes()
+        /// <param name="splashName">A custom splash name</param>
+        /// <exception cref="KernelException"></exception>
+        public static void UnregisterSplash(string splashName)
         {
-            string SplashPath = PathsManagement.GetKernelPath(KernelPathType.CustomSplashes);
-            var SplashFiles = Listing.CreateList(SplashPath);
-            foreach (FileSystemEntry SplashFileInfo in SplashFiles)
-            {
-                string FilePath = SplashFileInfo.FilePath;
+            // Check to see if we have the splash
+            if (string.IsNullOrEmpty(splashName))
+                throw new KernelException(KernelExceptionType.Splash, Translate.DoTranslation("Can't unregister splash with no name"));
+            if (IsSplashRegistered(splashName))
+                throw new KernelException(KernelExceptionType.Splash, Translate.DoTranslation("Can't unregister non-existent splash"));
 
-                // Try to parse the splash file
-                try
-                {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Parsing splash file {0}...", FilePath);
-                    var SplashAssembly = Assembly.LoadFrom(FilePath);
-                    var SplashInstance = GetSplashInstance(SplashAssembly);
-                    if (SplashInstance is not null)
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Found valid splash! Getting information...");
-                        string Name = SplashInstance.SplashName;
-
-                        // Uninstall the splash
-                        DebugWriter.WriteDebug(DebugLevel.I, "- Name: {0}", Name);
-                        DebugWriter.WriteDebug(DebugLevel.I, "Uninstalling splash...");
-                        InstalledSplashes.Remove(Name);
-
-                        // Remove splash dependencies folder (if any) from the private appdomain lookup folder
-                        string SplashDepPath = SplashPath + "Deps/" + Path.GetFileNameWithoutExtension(FilePath) + "-" + FileVersionInfo.GetVersionInfo(FilePath).FileVersion + "/";
-                        AssemblyLookup.RemovePathFromAssemblySearchPath(SplashDepPath);
-                    }
-                    else
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.W, "Skipping incompatible splash file {0}...", FilePath);
-                    }
-                }
-                catch (ReflectionTypeLoadException ex)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.W, "Could not handle splash file {0}! {1}", FilePath, ex.Message);
-                    DebugWriter.WriteDebugStackTrace(ex);
-                }
-            }
+            // Now, unregister the splash
+            var splash = GetSplashFromName(splashName);
+            customSplashes.Remove(splash);
         }
 
         /// <summary>
-        /// Gets the splash instance from compiled assembly
+        /// Checks to see if a splash is registered
         /// </summary>
-        /// <param name="Assembly">An assembly</param>
-        public static ISplash GetSplashInstance(Assembly Assembly)
+        /// <param name="splashName">A splash name</param>
+        /// <exception cref="KernelException"></exception>
+        public static bool IsSplashRegistered(string splashName)
         {
-            foreach (Type t in Assembly.GetTypes())
-            {
-                if (t.GetInterface(typeof(ISplash).Name) is not null)
-                    return (ISplash)Assembly.CreateInstance(t.FullName);
-            }
-            return null;
+            // Check to see if we have the splash
+            var names = GetNamesOfSplashes();
+            return names.Contains(splashName);
         }
 
         /// <summary>
@@ -243,10 +167,10 @@ namespace Nitrocid.Misc.Splash
         /// <returns>Splash information</returns>
         public static SplashInfo GetSplashFromName(string splashName)
         {
-            if (Splashes.TryGetValue(splashName, out SplashInfo splashInfo))
-                return splashInfo;
+            if (IsSplashRegistered(splashName))
+                return Splashes.First((info) => info.SplashName == splashName);
             else
-                return Splashes["Welcome"];
+                return Splashes.First((info) => info.SplashName == "Welcome");
         }
 
         /// <summary>
@@ -351,7 +275,7 @@ namespace Nitrocid.Misc.Splash
                     if (showClosing)
                         closingPart.AddDynamicText(() => splash.Closing(context, out delay));
                     else
-                        closingPart.AddDynamicText(() => InstalledSplashes["Blank"].EntryPoint.Closing(context, out delay));
+                        closingPart.AddDynamicText(() => blankSplash.EntryPoint.Closing(context, out delay));
                     splashScreen.AddBufferedPart("Closing splash", closingPart);
                     if (ScreenTools.CurrentScreen is not null)
                         ScreenTools.Render();

@@ -43,7 +43,7 @@ namespace Nitrocid.Misc.Splash
         /// <inheritdoc/>
         public virtual bool SplashDisplaysProgress => Info.DisplaysProgress;
 
-        internal virtual SplashInfo Info => SplashManager.Splashes[SplashName];
+        internal virtual SplashInfo Info => SplashManager.GetSplashFromName(SplashName);
 
         // Actual logic
         /// <inheritdoc/>

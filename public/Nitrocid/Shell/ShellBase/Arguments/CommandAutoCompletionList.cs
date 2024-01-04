@@ -45,7 +45,7 @@ namespace Nitrocid.Shell.ShellBase.Arguments
             { "group",      (_) => GroupManagement.AvailableGroups.Select((group) => group.GroupName).ToArray() },
             { "groupname",  (_) => GroupManagement.AvailableGroups.Select((group) => group.GroupName).ToArray() },
             { "modname",    (_) => ModManager.ListMods().Keys.ToArray() },
-            { "splashname", (_) => SplashManager.Splashes.Keys.ToArray() },
+            { "splashname", (_) => SplashManager.GetNamesOfSplashes() },
             { "saver",      (_) => ScreensaverManager.GetScreensaverNames() },
             { "theme",      (_) => ThemeTools.GetInstalledThemes().Keys.ToArray() },
             { "$variable",  (_) => UESHVariables.Variables.Keys.ToArray() },

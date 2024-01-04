@@ -32,24 +32,24 @@ namespace Nitrocid.SplashPacks
 {
     internal class SplashPackInit : IAddon
     {
-        internal readonly static Dictionary<string, SplashInfo> Splashes = new()
-        {
-            { "Simple", new SplashInfo("Simple", new SplashSimple()) },
-            { "Progress", new SplashInfo("Progress", new SplashProgress()) },
-            { "PowerLineProgress", new SplashInfo("PowerLineProgress", new SplashPowerLineProgress()) },
-            { "Dots", new SplashInfo("Dots", new SplashDots()) },
-            { "TextBox", new SplashInfo("TextBox", new SplashTextBox()) },
-            { "FigProgress", new SplashInfo("FigProgress", new SplashFigProgress()) },
-            { "Fader", new SplashInfo("Fader", new SplashFader()) },
-            { "FaderBack", new SplashInfo("FaderBack", new SplashFaderBack()) },
-            { "BeatFader", new SplashInfo("BeatFader", new SplashBeatFader()) },
-            { "Pulse", new SplashInfo("Pulse", new SplashPulse()) },
-            { "BeatPulse", new SplashInfo("BeatPulse", new SplashBeatPulse()) },
-            { "EdgePulse", new SplashInfo("EdgePulse", new SplashEdgePulse()) },
-            { "BeatEdgePulse", new SplashInfo("BeatEdgePulse", new SplashBeatEdgePulse()) },
-            { "Spin", new SplashInfo("Spin", new SplashSpin()) },
-            { "SquareCorner", new SplashInfo("SquareCorner", new SplashSquareCorner()) },
-        };
+        internal readonly static SplashInfo[] Splashes =
+        [
+            new SplashInfo("Simple", new SplashSimple()),
+            new SplashInfo("Progress", new SplashProgress()),
+            new SplashInfo("PowerLineProgress", new SplashPowerLineProgress()),
+            new SplashInfo("Dots", new SplashDots()),
+            new SplashInfo("TextBox", new SplashTextBox()),
+            new SplashInfo("FigProgress", new SplashFigProgress()),
+            new SplashInfo("Fader", new SplashFader()),
+            new SplashInfo("FaderBack", new SplashFaderBack()),
+            new SplashInfo("BeatFader", new SplashBeatFader()),
+            new SplashInfo("Pulse", new SplashPulse()),
+            new SplashInfo("BeatPulse", new SplashBeatPulse()),
+            new SplashInfo("EdgePulse", new SplashEdgePulse()),
+            new SplashInfo("BeatEdgePulse", new SplashBeatEdgePulse()),
+            new SplashInfo("Spin", new SplashSpin()),
+            new SplashInfo("SquareCorner", new SplashSquareCorner()),
+        ];
 
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.AddonSplashPacks);
@@ -68,8 +68,8 @@ namespace Nitrocid.SplashPacks
         void IAddon.StartAddon()
         {
             // First, initialize splashes
-            foreach (var splash in Splashes.Keys)
-                SplashManager.InstalledSplashes.Add(splash, Splashes[splash]);
+            foreach (var splash in Splashes)
+                SplashManager.builtinSplashes.Add(splash);
 
             // Then, initialize configuration in a way that no mod can play with them
             var splashesConfig = new ExtraSplashesConfig();
@@ -78,8 +78,8 @@ namespace Nitrocid.SplashPacks
 
         void IAddon.StopAddon()
         {
-            foreach (var splash in Splashes.Keys)
-                SplashManager.InstalledSplashes.Remove(splash);
+            foreach (var splash in Splashes)
+                SplashManager.builtinSplashes.Remove(splash);
 
             // Then, unload the configuration
             ConfigTools.UnregisterBaseSetting(nameof(ExtraSplashesConfig));

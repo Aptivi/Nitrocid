@@ -40,7 +40,6 @@ namespace Nitrocid.Files.Paths
             { $"{KernelPathType.Aliases}",             (() => AliasesPath, true) },
             { $"{KernelPathType.Configuration}",       (() => ConfigurationPath, true) },
             { $"{KernelPathType.CustomLanguages}",     (() => CustomLanguagesPath, true) },
-            { $"{KernelPathType.CustomSplashes}",      (() => CustomSplashesPath, true) },
             { $"{KernelPathType.DebugDevices}",        (() => DebugDevicesPath, true) },
             { $"{KernelPathType.Debugging}",           (() => DebuggingPath, true) },
             { $"{KernelPathType.Events}",              (() => EventsPath, true) },
@@ -202,12 +201,6 @@ namespace Nitrocid.Files.Paths
         /// </summary>
         public static string CustomLanguagesPath =>
             FilesystemTools.NeutralizePath(AppDataPath + "/KSLanguages/");
-
-        /// <summary>
-        /// CustomSplashes path
-        /// </summary>
-        public static string CustomSplashesPath =>
-            FilesystemTools.NeutralizePath(AppDataPath + "/KSSplashes/");
 
         /// <summary>
         /// Journaling path

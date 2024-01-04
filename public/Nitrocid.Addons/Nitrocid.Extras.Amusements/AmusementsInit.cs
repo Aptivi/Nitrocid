@@ -181,6 +181,8 @@ namespace Nitrocid.Extras.Amusements
 
         ReadOnlyDictionary<string, FieldInfo> IAddon.PubliclyAvailableFields => null;
 
+        private readonly SplashInfo quote = new("Quote", new SplashQuote(), false);
+
         void IAddon.FinalizeAddon()
         { }
 
@@ -191,7 +193,7 @@ namespace Nitrocid.Extras.Amusements
             ScreensaverManager.AddonSavers.Add("quote", new QuoteDisplay());
             ScreensaverManager.AddonSavers.Add("shipduet", new ShipDuetDisplay());
             ScreensaverManager.AddonSavers.Add("snaker", new SnakerDisplay());
-            SplashManager.InstalledSplashes.Add("Quote", new SplashInfo("Quote", new SplashQuote(), false));
+            SplashManager.builtinSplashes.Add(quote);
 
             // Initialize configuration in a way that no mod can play with them
             var saversConfig = new AmusementsSaversConfig();
@@ -213,7 +215,7 @@ namespace Nitrocid.Extras.Amusements
             ScreensaverManager.AddonSavers.Remove("quote");
             ScreensaverManager.AddonSavers.Remove("shipduet");
             ScreensaverManager.AddonSavers.Remove("snaker");
-            SplashManager.InstalledSplashes.Remove("Quote");
+            SplashManager.builtinSplashes.Remove(quote);
             ConfigTools.UnregisterBaseSetting(nameof(AmusementsSaversConfig));
             ConfigTools.UnregisterBaseSetting(nameof(AmusementsSplashesConfig));
             ConfigTools.UnregisterBaseSetting(nameof(AmusementsConfig));

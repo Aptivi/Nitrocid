@@ -37,6 +37,10 @@ namespace Nitrocid.Modifications
         /// </summary>
         string Version { get; set; }
         /// <summary>
+        /// Mod load priority
+        /// </summary>
+        ModLoadPriority LoadPriority { get; }
+        /// <summary>
         /// Minimum supported API version that the mod supports
         /// </summary>
         Version MinimumSupportedApiVersion { get; }
