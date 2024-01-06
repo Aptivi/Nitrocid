@@ -476,5 +476,9 @@ namespace Nitrocid.Kernel.Exceptions
         /// The security operation failed to perform the required task.
         /// </summary>
         Security,
+        /// <summary>
+        /// There was an error when trying to perform an operation for the kernel driver management.
+        /// </summary>
+        DriverManagement,
     }
 }

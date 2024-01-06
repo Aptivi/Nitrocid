@@ -84,5 +84,9 @@ namespace Nitrocid.Security.Permissions
         /// Allows the user to use the sudo command
         /// </summary>
         UseSudo = 16384,
+        /// <summary>
+        /// Allows the user to manage the drivers
+        /// </summary>
+        ManageDrivers = 32768,
     }
 }

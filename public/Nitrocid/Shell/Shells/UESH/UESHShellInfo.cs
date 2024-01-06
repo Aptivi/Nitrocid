@@ -550,6 +550,27 @@ namespace Nitrocid.Shell.Shells.UESH
                     ], new DismissNotifsCommand())
             },
 
+            { "driverman",
+                new CommandInfo("driverman", /* Localizable */ "Manage your drivers",
+                    [
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "list", new()
+                            {
+                                ExactWording = "list"
+                            }),
+                            new CommandArgumentPart(true, "type"),
+                        }),
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "types", new()
+                            {
+                                ExactWording = "types"
+                            }),
+                        }),
+                    ], new DriverManCommand(), CommandFlags.Strict)
+            },
+
             { "echo",
                 new CommandInfo("echo", /* Localizable */ "Writes text into the console",
                     [
