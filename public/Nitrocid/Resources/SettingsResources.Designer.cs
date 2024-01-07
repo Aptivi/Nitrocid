@@ -63,6 +63,28 @@ namespace Nitrocid.Resources {
         /// <summary>
         ///   Looks up a localized string similar to [
         ///    {
+        ///        &quot;Name&quot;: &quot;General&quot;,
+        ///        &quot;Desc&quot;: &quot;This section lists all general kernel settings, mainly for maintaining the kernel.&quot;,
+        ///        &quot;DisplayAs&quot;: &quot;General kernel settings&quot;,
+        ///        &quot;Keys&quot;: [
+        ///            {
+        ///                &quot;Name&quot;: &quot;Check for Updates on Startup&quot;,
+        ///                &quot;Type&quot;: &quot;SBoolean&quot;,
+        ///                &quot;Variable&quot;: &quot;CheckUpdateStart&quot;,
+        ///                &quot;Description&quot;: &quot;Each startup, it will check for updates.&quot;
+        ///            },
+        ///            {
+        ///                &quot;Name&quot;: &quot;Custom Startup [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string DriverSettingsEntries {
+            get {
+                return ResourceManager.GetString("DriverSettingsEntries", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [
+        ///    {
         ///        &quot;Name&quot;: &quot;Matrix&quot;,
         ///        &quot;Desc&quot;: &quot;The falling binary number in your screen.&quot;,
         ///        &quot;Keys&quot;: [

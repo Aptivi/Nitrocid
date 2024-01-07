@@ -50,6 +50,7 @@ namespace Nitrocid.Kernel.Configuration
         {
             { nameof(KernelMainConfig),   new KernelMainConfig() },
             { nameof(KernelSaverConfig),  new KernelSaverConfig() },
+            { nameof(KernelDriverConfig), new KernelDriverConfig() },
         };
 
         /// <summary>
@@ -62,6 +63,11 @@ namespace Nitrocid.Kernel.Configuration
         /// </summary>
         public static KernelSaverConfig SaverConfig =>
             baseConfigurations is not null ? (KernelSaverConfig)baseConfigurations[nameof(KernelSaverConfig)] : new KernelSaverConfig();
+        /// <summary>
+        /// Driver configuration entry for the kernel
+        /// </summary>
+        public static KernelDriverConfig DriverConfig =>
+            baseConfigurations is not null ? (KernelDriverConfig)baseConfigurations[nameof(KernelDriverConfig)] : new KernelDriverConfig();
 
         /// <summary>
         /// Gets the kernel configuration
