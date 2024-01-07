@@ -18,7 +18,7 @@
 //
 
 using Nitrocid.ConsoleBase;
-using Nitrocid.ConsoleBase.Inputs;
+using Terminaux.Inputs;
 using Nitrocid.ConsoleBase.Presentation;
 using Nitrocid.ConsoleBase.Presentation.Elements;
 using Nitrocid.ConsoleBase.Writers.ConsoleWriters;

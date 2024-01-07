@@ -64,7 +64,7 @@ namespace Nitrocid.Analyzers.ConsoleBase
             if (typeDecl.Expression is IdentifierNameSyntax identifier)
             {
                 // Build the replacement syntax
-                var classSyntax = SyntaxFactory.IdentifierName("KernelColorTools");
+                var classSyntax = SyntaxFactory.IdentifierName("ColorTools");
                 var methodSyntax = SyntaxFactory.IdentifierName("SetConsoleColor");
                 var maeSyntax = SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, classSyntax, methodSyntax);
                 var parentSyntax = (AssignmentExpressionSyntax)typeDecl.Parent;
@@ -79,16 +79,6 @@ namespace Nitrocid.Analyzers.ConsoleBase
 
                 // Check the imports
                 var compilation = finalNode as CompilationUnitSyntax;
-                if (compilation?.Usings.Any(u => u.Name.ToString() == "Nitrocid.ConsoleBase.Colors") == false)
-                {
-                    var name = SyntaxFactory.QualifiedName(
-                        SyntaxFactory.QualifiedName(
-                            SyntaxFactory.IdentifierName("Nitrocid"),
-                            SyntaxFactory.IdentifierName("ConsoleBase")),
-                        SyntaxFactory.IdentifierName("Colors"));
-                    compilation = compilation
-                        .AddUsings(SyntaxFactory.UsingDirective(name));
-                }
                 if (compilation?.Usings.Any(u => u.Name.ToString() == "Terminaux.Colors") == false)
                 {
                     var name = SyntaxFactory.QualifiedName(

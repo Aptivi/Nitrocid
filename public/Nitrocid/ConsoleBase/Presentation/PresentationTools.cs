@@ -20,7 +20,7 @@
 using System;
 using System.Text;
 using Textify.Sequences.Builder.Types;
-using Nitrocid.ConsoleBase.Inputs;
+using Terminaux.Inputs;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Writers.FancyWriters;
 using Nitrocid.ConsoleBase.Writers.ConsoleWriters;

@@ -20,10 +20,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Nitrocid.ConsoleBase.Inputs.Styles.Choice;
+using Terminaux.Inputs.Styles.Choice;
 using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.ConsoleBase.Inputs;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -72,7 +73,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
         {
             var Titles = new List<string>();
             var PressEnter = false;
-            var OutputType = ChoiceStyle.DefaultChoiceOutputType;
+            var OutputType = InputTools.DefaultChoiceOutputType;
             if (parameters.SwitchesList.Contains("-multiple"))
                 PressEnter = true;
             if (parameters.SwitchesList.Contains("-single"))

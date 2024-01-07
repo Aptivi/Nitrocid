@@ -665,8 +665,9 @@
                 "Type": "SSelection",
                 "Variable": "DefaultChoiceOutputType",
                 "IsEnumeration": true,
-                "EnumerationInternal": true,
-                "Enumeration": "ConsoleBase.Inputs.Styles.Choice.ChoiceOutputType",
+                "EnumerationInternal": false,
+                "Enumeration": "Terminaux.Inputs.Styles.Choice.ChoiceOutputType",
+                "EnumerationAssembly": "Terminaux",
                 "EnumerationZeroBased": true,
                 "Description": "Default choice output type"
             },

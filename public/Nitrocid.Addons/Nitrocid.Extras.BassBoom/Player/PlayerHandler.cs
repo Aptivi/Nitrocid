@@ -20,7 +20,7 @@
 using BassBoom.Basolia.File;
 using BassBoom.Basolia.Format;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Languages;
 using System.IO;
@@ -33,7 +33,7 @@ namespace Nitrocid.Extras.BassBoom.Player
         {
             if (!Checking.FileExists(path))
             {
-                InfoBoxColor.WriteInfoBoxKernelColor(Translate.DoTranslation("Can't open music file '{0}' because it's not found."), KernelColorType.Error, path);
+                InfoBoxColor.WriteInfoBoxColor(Translate.DoTranslation("Can't open music file '{0}' because it's not found."), KernelColorTools.GetColor(KernelColorType.Error), path);
                 return;
             }
             if (!PlayerTui.musicFiles.Contains(path))

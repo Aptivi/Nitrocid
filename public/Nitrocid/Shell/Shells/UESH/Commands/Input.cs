@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Inputs.Styles;
+using Terminaux.Inputs.Styles;
 using Nitrocid.Shell.ShellBase.Commands;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands

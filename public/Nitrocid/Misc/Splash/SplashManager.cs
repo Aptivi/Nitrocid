@@ -24,7 +24,7 @@ using System.Threading;
 using Nitrocid.ConsoleBase;
 using Terminaux.Base.Buffered;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
@@ -274,7 +274,7 @@ namespace Nitrocid.Misc.Splash
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, $"Splash closing failed to display: {ex.Message}");
                     DebugWriter.WriteDebugStackTrace(ex);
-                    InfoBoxColor.WriteInfoBoxKernelColor(Translate.DoTranslation("The closing splash has failed to display") + $".\n  - {ex.Message}", KernelColorType.Error);
+                    InfoBoxColor.WriteInfoBoxColor(Translate.DoTranslation("The closing splash has failed to display") + $".\n  - {ex.Message}", KernelColorTools.GetColor(KernelColorType.Error));
                 }
                 finally
                 {

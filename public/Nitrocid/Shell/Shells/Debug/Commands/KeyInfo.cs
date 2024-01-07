@@ -19,7 +19,7 @@
 
 using System;
 using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.ConsoleBase.Inputs;
+using Terminaux.Inputs;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Colors;

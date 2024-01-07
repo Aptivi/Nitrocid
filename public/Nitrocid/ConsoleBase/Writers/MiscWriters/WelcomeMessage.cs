@@ -19,7 +19,7 @@
 
 using Figletize;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Inputs.Styles.InfoboxTitled;
+using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel;
@@ -157,10 +157,10 @@ namespace Nitrocid.ConsoleBase.Writers.MiscWriters
 
             // Show development disclaimer
             if (SplashManager.EnableSplash)
-                InfoBoxTitledColor.WriteInfoBoxTitledKernelColor(
-                    Translate.DoTranslation("Development notice"),
+                InfoBoxColor.WriteInfoBoxColor(
+                    title: Translate.DoTranslation("Development notice"),
                     $"{message}\n\n" + Translate.DoTranslation("To dismiss forever, enable \"Development notice acknowledged\" in the kernel settings. Press any key to continue.")
-                    , KernelColorType.DevelopmentWarning
+                    , KernelColorTools.GetColor(KernelColorType.DevelopmentWarning)
                 );
             else
                 TextWriters.Write($"* {message}", true, KernelColorType.DevelopmentWarning);

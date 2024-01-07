@@ -39,7 +39,7 @@ using Nitrocid.Shell.ShellBase.Commands.ProcessExecution;
 using Nitrocid.Files;
 using Nitrocid.Shell.ShellBase.Arguments;
 using Nitrocid.ConsoleBase;
-using Nitrocid.ConsoleBase.Inputs;
+using Terminaux.Inputs;
 using Nitrocid.Drivers;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.ConsoleBase.Writers;

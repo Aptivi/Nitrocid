@@ -45,7 +45,7 @@ using Nitrocid.Misc.Notifications;
 using Nitrocid.Drivers.DebugLogger;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Drivers.Encryption;
-using Nitrocid.ConsoleBase.Inputs.Styles.Choice;
+using Terminaux.Inputs.Styles.Choice;
 using Nitrocid.Drivers.Regexp;
 using Nitrocid.Misc.Text;
 using Nitrocid.Network.Base;
@@ -1287,8 +1287,8 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public string CurrentMask
         {
-            get => Input.currentMask;
-            set => Input.currentMask = string.IsNullOrEmpty(value) ? "*" : value[0].ToString();
+            get => InputTools.currentMask;
+            set => InputTools.currentMask = string.IsNullOrEmpty(value) ? "*" : value[0].ToString();
         }
         /// <summary>
         /// A character that resembles the upper left corner. Be sure to only input one character
@@ -1361,11 +1361,11 @@ namespace Nitrocid.Kernel.Configuration.Instances
         {
             get
             {
-                return Input.globalSettings.HistoryEnabled;
+                return InputTools.globalSettings.HistoryEnabled;
             }
             set
             {
-                Input.globalSettings.HistoryEnabled = value;
+                InputTools.globalSettings.HistoryEnabled = value;
             }
         }
         /// <summary>

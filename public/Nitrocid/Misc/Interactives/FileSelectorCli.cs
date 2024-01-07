@@ -37,7 +37,7 @@ using Nitrocid.Languages;
 using Nitrocid.Files.Operations.Printing;
 using Nitrocid.Drivers.Encryption;
 using Nitrocid.ConsoleBase.Interactive;
-using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Files.Paths;
 using Nitrocid.Files.Instances;
 using Nitrocid.Files.LineEndings;

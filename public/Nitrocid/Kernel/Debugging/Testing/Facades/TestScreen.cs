@@ -20,8 +20,8 @@
 using Nitrocid.ConsoleBase;
 using Terminaux.Base.Buffered;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Inputs;
-using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
+using Terminaux.Inputs;
+using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Languages;
 using System;
 using System.Text;
@@ -54,7 +54,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
             }
             catch (Exception ex)
             {
-                InfoBoxColor.WriteInfoBoxKernelColor(Translate.DoTranslation("Screen failed to render:") + $" {ex.Message}", KernelColorType.Error);
+                InfoBoxColor.WriteInfoBoxColor(Translate.DoTranslation("Screen failed to render:") + $" {ex.Message}", KernelColorTools.GetColor(KernelColorType.Error));
             }
             finally
             {

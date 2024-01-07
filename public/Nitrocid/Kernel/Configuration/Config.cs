@@ -31,7 +31,7 @@ using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Kernel.Configuration.Instances;
 using Nitrocid.Misc.Text;
-using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Events;
 using Nitrocid.ConsoleBase.Colors;
@@ -322,7 +322,7 @@ namespace Nitrocid.Kernel.Configuration
             }
             catch (KernelException cex)
             {
-                InfoBoxColor.WriteInfoBoxKernelColor(Translate.DoTranslation("Validation failed!") + $" {cex.Message}", KernelColorType.Error);
+                InfoBoxColor.WriteInfoBoxColor(Translate.DoTranslation("Validation failed!") + $" {cex.Message}", KernelColorTools.GetColor(KernelColorType.Error));
                 DebugWriter.WriteDebug(DebugLevel.E, "Config validation error! {0}", cex.Message);
                 DebugWriter.WriteDebugStackTrace(cex);
             }
@@ -334,7 +334,7 @@ namespace Nitrocid.Kernel.Configuration
             }
             catch (KernelException cex) when (cex.ExceptionType == KernelExceptionType.Config)
             {
-                InfoBoxColor.WriteInfoBoxKernelColor(Translate.DoTranslation("Reading failed!") + $" {cex.Message}", KernelColorType.Error);
+                InfoBoxColor.WriteInfoBoxColor(Translate.DoTranslation("Reading failed!") + $" {cex.Message}", KernelColorTools.GetColor(KernelColorType.Error));
                 DebugWriter.WriteDebug(DebugLevel.E, "Config read error! {0}", cex.Message);
                 DebugWriter.WriteDebugStackTrace(cex);
 
@@ -342,7 +342,7 @@ namespace Nitrocid.Kernel.Configuration
                 ConfigTools.NotifyConfigError = true;
 
                 // Fix anyways, for compatibility...
-                InfoBoxColor.WriteInfoBoxKernelColor(Translate.DoTranslation("Trying to fix configuration..."), false, KernelColorType.Error);
+                InfoBoxColor.WriteInfoBoxColor(Translate.DoTranslation("Trying to fix configuration..."), false, KernelColorTools.GetColor(KernelColorType.Error));
                 RepairConfig();
             }
         }

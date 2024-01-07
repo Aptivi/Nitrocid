@@ -19,8 +19,8 @@
 
 using Nitrocid.ConsoleBase;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Inputs;
-using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
+using Terminaux.Inputs;
+using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 using Nitrocid.Drivers.Encryption;
 using Nitrocid.Kernel.Debugging;
@@ -94,7 +94,7 @@ namespace Nitrocid.Users.Login.Handlers.Logins
                 return true;
             else
                 // Wrong password.
-                InfoBoxColor.WriteInfoBoxKernelColor(Translate.DoTranslation("Wrong password for user."), KernelColorType.Error);
+                InfoBoxColor.WriteInfoBoxColor(Translate.DoTranslation("Wrong password for user."), KernelColorTools.GetColor(KernelColorType.Error));
             return false;
         }
     }

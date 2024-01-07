@@ -18,8 +18,8 @@
 //
 
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Inputs;
-using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
+using Terminaux.Inputs;
+using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Files.Operations;
 using Nitrocid.Files.Paths;
@@ -449,7 +449,7 @@ namespace Nitrocid.Kernel.Exceptions
                 failureBuilder.AppendLine(Translate.DoTranslation("We apologize for your inconvenience, but it looks like that the kernel was having trouble booting. The below error message might help:") + "\n");
                 failureBuilder.AppendLine(LastKernelErrorException.Message + "\n");
                 failureBuilder.AppendLine(Translate.DoTranslation("For further investigation, enable debugging mode on the kernel and try to reproduce the issue. Also, try to investigate the latest dump file created."));
-                InfoBoxColor.WriteInfoBoxKernelColor(failureBuilder.ToString(), KernelColorType.Error);
+                InfoBoxColor.WriteInfoBoxColor(failureBuilder.ToString(), KernelColorTools.GetColor(KernelColorType.Error));
                 SplashManager.EndSplashOut(SplashManager.CurrentSplashContext);
             }
         }

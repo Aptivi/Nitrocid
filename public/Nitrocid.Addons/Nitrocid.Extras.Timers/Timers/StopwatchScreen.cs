@@ -29,7 +29,7 @@ using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.ConsoleBase.Inputs;
+using Terminaux.Inputs;
 using Terminaux.Base.Buffered;
 
 namespace Nitrocid.Extras.Timers.Timers

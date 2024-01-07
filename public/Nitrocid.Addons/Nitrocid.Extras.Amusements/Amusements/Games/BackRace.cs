@@ -22,7 +22,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using Terminaux.Colors;
-using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase;
@@ -30,7 +30,7 @@ using Nitrocid.ConsoleBase.Writers.FancyWriters;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Drivers.RNG;
-using Nitrocid.ConsoleBase.Inputs;
+using Terminaux.Inputs;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games
 {
@@ -134,7 +134,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     // If the user chose the same horse that won, congratulate the user.
                     if (selected == winner)
                     {
-                        InfoBoxColor.WriteInfoBoxKernelColor(Translate.DoTranslation("Your horse won the race!"), KernelColorType.Success);
+                        InfoBoxColor.WriteInfoBoxColor(Translate.DoTranslation("Your horse won the race!"), KernelColorTools.GetColor(KernelColorType.Success));
                         ConsoleWrapper.Clear();
                         ResetAll();
                     }

@@ -155,7 +155,7 @@ namespace Nitrocid.Users.Login
                         TextWriters.Write(Translate.DoTranslation("{0}'s password: "), false, KernelColorType.Input, usernamerequested);
 
                     // Get input
-                    string answerpass = Input.ReadLineNoInputUnsafe();
+                    string answerpass = InputTools.ReadLineNoInputUnsafe();
 
                     if (UserManagement.ValidatePassword(usernamerequested, answerpass))
                         return true;

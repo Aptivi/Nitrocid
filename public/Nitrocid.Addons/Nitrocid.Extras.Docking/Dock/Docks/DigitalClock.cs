@@ -21,7 +21,7 @@ using Figletize;
 using Nitrocid.ConsoleBase;
 using Terminaux.Base.Buffered;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Inputs;
+using Terminaux.Inputs;
 using Nitrocid.ConsoleBase.Writers.FancyWriters;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;

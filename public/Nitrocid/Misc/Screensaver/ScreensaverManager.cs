@@ -233,7 +233,7 @@ namespace Nitrocid.Misc.Screensaver
                 // When getting out of the lock screen by pressing ENTER when lockscreen is invoked, we need to make sure
                 // that we don't write the shell prompt twice.
                 if (ConsoleWrapper.KeyAvailable)
-                    Input.DetectKeypressUnsafe();
+                    InputTools.DetectKeypressUnsafe();
 
                 // Now, show the password prompt
                 if (PasswordLock)

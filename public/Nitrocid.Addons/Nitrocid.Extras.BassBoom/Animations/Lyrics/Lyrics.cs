@@ -26,7 +26,7 @@ using Nitrocid.Files;
 using Nitrocid.Files.Folders;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.ConsoleBase.Writers.FancyWriters;
-using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Files.Paths;

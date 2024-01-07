@@ -25,14 +25,14 @@ using Textify.Sequences.Builder.Types;
 using Textify.Sequences.Tools;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.ConsoleBase;
-using Nitrocid.ConsoleBase.Inputs;
+using Terminaux.Inputs;
 using Nitrocid.Shell.Shells.Hex;
 using Nitrocid.Files.Operations;
 using Nitrocid.Languages;
 using Nitrocid.Files.Operations.Printing;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.ConsoleBase.Writers.FancyWriters;
-using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 using Nitrocid.ConsoleBase.Interactive;
 using Nitrocid.ConsoleBase.Colors;
@@ -123,7 +123,7 @@ namespace Nitrocid.Files.Editors.HexEdit
             {
                 DebugWriter.WriteDebug(DebugLevel.E, $"Hex editor failed: {ex.Message}");
                 DebugWriter.WriteDebugStackTrace(ex);
-                InfoBoxColor.WriteInfoBoxKernelColor(Translate.DoTranslation("The hex editor failed:") + $" {ex.Message}", KernelColorType.Error);
+                InfoBoxColor.WriteInfoBoxColor(Translate.DoTranslation("The hex editor failed:") + $" {ex.Message}", KernelColorTools.GetColor(KernelColorType.Error));
             }
             bail = false;
             ScreenTools.UnsetCurrent(screen);

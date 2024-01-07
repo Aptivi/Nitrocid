@@ -18,7 +18,7 @@
 //
 
 using Nettify.Rss.Instance;
-using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.ConsoleBase.Interactive;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;

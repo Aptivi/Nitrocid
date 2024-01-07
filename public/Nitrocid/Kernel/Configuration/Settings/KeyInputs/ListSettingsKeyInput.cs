@@ -18,9 +18,9 @@
 //
 
 using Nitrocid.ConsoleBase;
-using Nitrocid.ConsoleBase.Inputs;
-using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
-using Nitrocid.ConsoleBase.Inputs.Styles.Selection;
+using Terminaux.Inputs;
+using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Selection;
 using Nitrocid.Kernel.Configuration.Instances;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;

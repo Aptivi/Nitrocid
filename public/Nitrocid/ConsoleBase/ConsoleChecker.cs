@@ -19,7 +19,7 @@
 
 using Nitrocid.Kernel;
 using Nitrocid.Shell.ShellBase.Commands.ProcessExecution;
-using Nitrocid.ConsoleBase.Inputs;
+using Terminaux.Inputs;
 using Nitrocid.Drivers;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Files.Operations;

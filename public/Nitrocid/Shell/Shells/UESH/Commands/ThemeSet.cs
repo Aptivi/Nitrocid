@@ -18,9 +18,9 @@
 //
 
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Inputs;
-using Nitrocid.ConsoleBase.Inputs.Styles.Choice;
-using Nitrocid.ConsoleBase.Inputs.Styles.Selection;
+using Terminaux.Inputs;
+using Terminaux.Inputs.Styles.Choice;
+using Terminaux.Inputs.Styles.Selection;
 using Nitrocid.ConsoleBase.Themes;
 using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 using Nitrocid.Files;

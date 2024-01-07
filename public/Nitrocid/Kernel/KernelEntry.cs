@@ -21,7 +21,7 @@ using Nitrocid.Kernel.Time;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Users.Login;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.ConsoleBase.Inputs;
+using Terminaux.Inputs;
 using Nitrocid.Arguments;
 using Nitrocid.ConsoleBase;
 using Nitrocid.ConsoleBase.Writers;
@@ -31,7 +31,7 @@ using Nitrocid.Kernel.Starting;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.ConsoleBase.Writers.MiscWriters;
-using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Users.Login.Handlers;
 using Nitrocid.Misc.Text.Probers.Placeholder;
 using Nitrocid.ConsoleBase.Colors;
@@ -111,10 +111,10 @@ namespace Nitrocid.Kernel
             // Show the license infobox
             string rendered = Translate.DoTranslation("License information");
             string dashes = new('=', rendered.Length);
-            InfoBoxColor.WriteInfoBoxKernelColor(
+            InfoBoxColor.WriteInfoBoxColor(
                 Translate.DoTranslation("License information") + CharManager.NewLine +
                 dashes + CharManager.NewLine +
-                WelcomeMessage.GetLicenseString(), KernelColorType.License);
+                WelcomeMessage.GetLicenseString(), KernelColorTools.GetColor(KernelColorType.License));
 
             // Start the main loop
             DebugWriter.WriteDebug(DebugLevel.I, "Main Loop start.");

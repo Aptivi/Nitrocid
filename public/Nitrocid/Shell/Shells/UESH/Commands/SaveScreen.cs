@@ -17,8 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Inputs;
-using Nitrocid.ConsoleBase.Inputs.Styles.Selection;
+using Terminaux.Inputs;
+using Terminaux.Inputs.Styles.Selection;
 using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Screensaver;

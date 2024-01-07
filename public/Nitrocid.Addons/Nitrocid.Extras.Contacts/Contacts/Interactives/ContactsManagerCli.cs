@@ -24,7 +24,7 @@ using System.Text;
 using System.Collections;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.ConsoleBase.Interactive;
-using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Text.Probers.Regexp;
 using Nitrocid.Files.Operations.Querying;

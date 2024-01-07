@@ -30,7 +30,7 @@ using Newtonsoft.Json.Linq;
 using Nitrocid.Kernel.Configuration.Settings;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Files;
-using Nitrocid.ConsoleBase.Inputs;
+using Terminaux.Inputs;
 using Nitrocid.Misc.Reflection;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;

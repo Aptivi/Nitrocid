@@ -19,7 +19,7 @@
 
 using Nitrocid.ConsoleBase;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Languages;
 using Terminaux.Colors;

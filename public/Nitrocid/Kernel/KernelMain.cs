@@ -31,7 +31,7 @@ using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Kernel.Starting;
 using Nitrocid.Kernel.Starting.Environment;
 using Nitrocid.Users.Windows;
-using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Arguments.Help;
 using Nitrocid.Kernel.Power;
@@ -141,7 +141,7 @@ namespace Nitrocid.Kernel
             }
             catch (Exception ex)
             {
-                InfoBoxColor.WriteInfoBoxKernelColor(Translate.DoTranslation("Nitrocid KS has detected a problem and it has been shut down.") + $" {ex.Message}", KernelColorType.Error);
+                InfoBoxColor.WriteInfoBoxColor(Translate.DoTranslation("Nitrocid KS has detected a problem and it has been shut down.") + $" {ex.Message}", KernelColorTools.GetColor(KernelColorType.Error));
             }
             finally
             {

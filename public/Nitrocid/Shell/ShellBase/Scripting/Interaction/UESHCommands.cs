@@ -18,9 +18,9 @@
 //
 
 using System;
-using Nitrocid.ConsoleBase.Inputs.Styles;
-using Nitrocid.ConsoleBase.Inputs.Styles.Choice;
-using Nitrocid.ConsoleBase.Inputs.Styles.Selection;
+using Terminaux.Inputs.Styles;
+using Terminaux.Inputs.Styles.Choice;
+using Terminaux.Inputs.Styles.Selection;
 using Nitrocid.Kernel.Debugging;
 
 namespace Nitrocid.Shell.ShellBase.Scripting.Interaction

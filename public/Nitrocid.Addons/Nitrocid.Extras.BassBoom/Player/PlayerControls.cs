@@ -46,7 +46,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
-using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Languages;

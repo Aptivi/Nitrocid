@@ -21,6 +21,7 @@ using System;
 using Nitrocid.Drivers;
 using Nitrocid.Kernel.Configuration;
 using Terminaux.Base;
+using Terminaux.Inputs.Styles.Choice;
 using Terminaux.Reader;
 
 namespace Nitrocid.ConsoleBase.Inputs
@@ -28,11 +29,17 @@ namespace Nitrocid.ConsoleBase.Inputs
     /// <summary>
     /// Console input module
     /// </summary>
-    public static class Input
+    public static class InputTools
     {
         internal static TermReaderSettings globalSettings = new();
         internal static string currentMask = "*";
         private static bool isWrapperInitialized;
+
+        /// <summary>
+        /// Default input choice output type
+        /// </summary>
+        public static ChoiceOutputType DefaultChoiceOutputType =>
+            (ChoiceOutputType)Config.MainConfig.DefaultChoiceOutputType;
 
         /// <summary>
         /// Current mask character

@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using In = Nitrocid.ConsoleBase.Inputs.Input;
+using In = Nitrocid.ConsoleBase.Inputs.InputTools;
 using System;
 using Terminaux.Reader;
 using System.Threading;

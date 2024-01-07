@@ -18,7 +18,7 @@
 //
 
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Extras.Docking.Dock.Docks;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
@@ -84,7 +84,7 @@ namespace Nitrocid.Extras.Docking.Dock
                 ColorTools.LoadBack();
                 DebugWriter.WriteDebug(DebugLevel.E, $"Screen dock crashed [{dockInstance.DockName}]: {ex.Message}");
                 DebugWriter.WriteDebugStackTrace(ex);
-                InfoBoxColor.WriteInfoBoxKernelColor(Translate.DoTranslation("Screen dock has crashed") + $": {ex.Message}", KernelColorType.Error);
+                InfoBoxColor.WriteInfoBoxColor(Translate.DoTranslation("Screen dock has crashed") + $": {ex.Message}", KernelColorTools.GetColor(KernelColorType.Error));
             }
             finally
             {

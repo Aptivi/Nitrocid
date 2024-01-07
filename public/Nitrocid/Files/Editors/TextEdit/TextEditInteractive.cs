@@ -26,11 +26,11 @@ using System.Collections.Generic;
 using Nitrocid.Shell.Shells.Text;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.ConsoleBase;
-using Nitrocid.ConsoleBase.Inputs;
+using Terminaux.Inputs;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.ConsoleBase.Writers.FancyWriters;
-using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 using Nitrocid.ConsoleBase.Interactive;
 using Nitrocid.ConsoleBase.Colors;
@@ -126,7 +126,7 @@ namespace Nitrocid.Files.Editors.TextEdit
             {
                 DebugWriter.WriteDebug(DebugLevel.E, $"Text editor failed: {ex.Message}");
                 DebugWriter.WriteDebugStackTrace(ex);
-                InfoBoxColor.WriteInfoBoxKernelColor(Translate.DoTranslation("The text editor failed:") + $" {ex.Message}", KernelColorType.Error);
+                InfoBoxColor.WriteInfoBoxColor(Translate.DoTranslation("The text editor failed:") + $" {ex.Message}", KernelColorTools.GetColor(KernelColorType.Error));
             }
             bail = false;
             ScreenTools.UnsetCurrent(screen);

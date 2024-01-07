@@ -27,11 +27,11 @@ using Textify.Sequences.Tools;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Time.Calendars;
 using Nitrocid.ConsoleBase;
-using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Base.Buffered;
-using Nitrocid.ConsoleBase.Inputs;
+using Terminaux.Inputs;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Interactive;
 using Nitrocid.ConsoleBase.Writers.FancyWriters;
@@ -111,7 +111,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
             {
                 DebugWriter.WriteDebug(DebugLevel.E, $"Interactive calendar failed: {ex.Message}");
                 DebugWriter.WriteDebugStackTrace(ex);
-                InfoBoxColor.WriteInfoBoxKernelColor(Translate.DoTranslation("The interactive calendar failed:") + $" {ex.Message}", KernelColorType.Error);
+                InfoBoxColor.WriteInfoBoxColor(Translate.DoTranslation("The interactive calendar failed:") + $" {ex.Message}", KernelColorTools.GetColor(KernelColorType.Error));
             }
             bail = false;
             ScreenTools.UnsetCurrent(screen);

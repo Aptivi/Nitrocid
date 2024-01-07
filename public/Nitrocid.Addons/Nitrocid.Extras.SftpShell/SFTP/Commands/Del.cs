@@ -20,7 +20,7 @@
 using System;
 using Nitrocid.Extras.SftpShell.Tools.Filesystem;
 using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.ConsoleBase.Inputs.Styles.Choice;
+using Terminaux.Inputs.Styles.Choice;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.ConsoleBase.Colors;

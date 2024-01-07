@@ -21,7 +21,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Inputs.Styles.Selection;
+using Terminaux.Inputs.Styles.Selection;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;

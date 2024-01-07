@@ -93,7 +93,6 @@ namespace Nitrocid.Analyzers.Test.ConsoleBase
                 using System.Text;
                 using System.Threading.Tasks;
                 using System.Diagnostics;
-                using Nitrocid.ConsoleBase.Colors;
                 using Terminaux.Colors;
 
                 namespace ConsoleApplication1

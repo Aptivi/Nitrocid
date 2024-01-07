@@ -50,14 +50,14 @@ using System.Threading;
 using Terminaux.Colors;
 using Textify.Sequences.Builder.Types;
 using Nitrocid.ConsoleBase;
-using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Base.Buffered;
 using Nitrocid.Misc.Screensaver;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Writers.FancyWriters;
-using Nitrocid.ConsoleBase.Inputs;
+using Terminaux.Inputs;
 using Textify.General;
 
 namespace Nitrocid.Extras.BassBoom.Player

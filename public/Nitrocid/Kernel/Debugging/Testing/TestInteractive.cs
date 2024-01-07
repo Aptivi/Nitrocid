@@ -19,8 +19,8 @@
 
 using Nitrocid.ConsoleBase;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
-using Nitrocid.ConsoleBase.Inputs.Styles.Selection;
+using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Selection;
 using Nitrocid.Kernel.Debugging.Testing.Facades;
 using Nitrocid.Languages;
 using System;
@@ -315,7 +315,7 @@ namespace Nitrocid.Kernel.Debugging.Testing
                         // Compare the actual value with the expected value
                         if (!facade.TestActualValue.Equals(facade.TestExpectedValue))
                         {
-                            InfoBoxColor.WriteInfoBoxKernelColor(Translate.DoTranslation("The test failed. Expected value is {0}, but actual value is {1}."), KernelColorType.Error, facade.TestExpectedValue.ToString(), facade.TestActualValue.ToString());
+                            InfoBoxColor.WriteInfoBoxColor(Translate.DoTranslation("The test failed. Expected value is {0}, but actual value is {1}."), KernelColorTools.GetColor(KernelColorType.Error), facade.TestExpectedValue.ToString(), facade.TestActualValue.ToString());
                             facade.status = TestStatus.Failed;
                             tested = true;
                         }
@@ -330,7 +330,7 @@ namespace Nitrocid.Kernel.Debugging.Testing
             catch (Exception ex)
             {
                 // Facade failed unexpectedly
-                InfoBoxColor.WriteInfoBoxKernelColor(Translate.DoTranslation("The test failed unexpectedly.") + $" {ex.Message}", KernelColorType.Error);
+                InfoBoxColor.WriteInfoBoxColor(Translate.DoTranslation("The test failed unexpectedly.") + $" {ex.Message}", KernelColorTools.GetColor(KernelColorType.Error));
                 facade.status = TestStatus.Failed;
             }
         }

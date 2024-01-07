@@ -28,7 +28,7 @@ using Nitrocid.ConsoleBase;
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Screensaver;
-using Nitrocid.ConsoleBase.Inputs;
+using Terminaux.Inputs;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games
 {

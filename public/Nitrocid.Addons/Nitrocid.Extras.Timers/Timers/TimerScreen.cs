@@ -24,14 +24,14 @@ using System.Timers;
 using Timer = System.Timers.Timer;
 using Figletize;
 using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.ConsoleBase;
 using Nitrocid.Kernel.Time.Renderers;
 using Nitrocid.Languages;
-using Nitrocid.ConsoleBase.Inputs;
+using Terminaux.Inputs;
 using Terminaux.Base.Buffered;
 using System.Text;
 using Nitrocid.ConsoleBase.Writers.FancyWriters;
@@ -206,11 +206,11 @@ namespace Nitrocid.Extras.Timers.Timers
                             break;
 
                         // Try to parse the interval
-                        string UnparsedInterval = InfoBoxInputColor.WriteInfoBoxInputKernelColor(Translate.DoTranslation("Specify the timeout in milliseconds") + " [{0}] ", KernelColorType.Question, TimerInterval);
+                        string UnparsedInterval = InfoBoxInputColor.WriteInfoBoxInputColor(Translate.DoTranslation("Specify the timeout in milliseconds") + " [{0}] ", KernelColorTools.GetColor(KernelColorType.Question), TimerInterval);
                         if (!double.TryParse(UnparsedInterval, out TimerInterval))
                         {
                             // Not numeric.
-                            InfoBoxColor.WriteInfoBoxKernelColor(Translate.DoTranslation("Indicated timeout is not numeric."), KernelColorType.Error);
+                            InfoBoxColor.WriteInfoBoxColor(Translate.DoTranslation("Indicated timeout is not numeric."), KernelColorTools.GetColor(KernelColorType.Error));
                             TimerInterval = 60000d;
                         }
                         prompted = true;

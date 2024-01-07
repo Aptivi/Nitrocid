@@ -23,7 +23,7 @@ using Terminaux.Colors;
 using System.Text;
 using Textify.Sequences.Tools;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.ConsoleBase.Inputs;
+using Terminaux.Inputs;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Colors;
 using Textify.General;

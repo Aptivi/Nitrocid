@@ -19,7 +19,7 @@
 
 using MimeKit.Cryptography;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Inputs;
+using Terminaux.Inputs;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Text.Probers.Placeholder;

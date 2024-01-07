@@ -19,7 +19,7 @@
 
 using Microsoft.Data.Sqlite;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Inputs;
+using Terminaux.Inputs;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Extras.SqlShell.Tools;
 using Nitrocid.Kernel.Exceptions;

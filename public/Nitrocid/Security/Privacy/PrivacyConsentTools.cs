@@ -18,7 +18,7 @@
 //
 
 using Newtonsoft.Json;
-using Nitrocid.ConsoleBase.Inputs.Styles.Choice;
+using Terminaux.Inputs.Styles.Choice;
 using Nitrocid.Files.Operations;
 using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Files.Paths;

@@ -113,7 +113,7 @@ namespace Nitrocid.Users.Login.Handlers
                         TextWriters.Write(Translate.DoTranslation("{0}'s password: "), false, KernelColorType.Input, user);
 
                     // Get input
-                    string answerpass = Input.ReadLineNoInputUnsafe();
+                    string answerpass = InputTools.ReadLineNoInputUnsafe();
                     pass = answerpass;
                     if (UserManagement.ValidatePassword(user, answerpass))
                         return true;
@@ -148,7 +148,7 @@ namespace Nitrocid.Users.Login.Handlers
                 TextWriters.Write(PlaceParse.ProbePlaces(Login.UsernamePrompt), false, KernelColorType.Input);
             else
                 TextWriters.Write(Translate.DoTranslation("Username: "), false, KernelColorType.Input);
-            return Input.ReadLine();
+            return InputTools.ReadLine();
         }
     }
 }

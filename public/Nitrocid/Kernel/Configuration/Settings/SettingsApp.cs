@@ -22,9 +22,9 @@ using System.Collections.Generic;
 using System.Linq;
 using Nitrocid.ConsoleBase;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Inputs;
-using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
-using Nitrocid.ConsoleBase.Inputs.Styles.Selection;
+using Terminaux.Inputs;
+using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Selection;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 using Nitrocid.Kernel.Configuration.Instances;
@@ -141,7 +141,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
                 {
                     // Invalid selection
                     DebugWriter.WriteDebug(DebugLevel.W, "Option is not valid. Returning...");
-                    InfoBoxColor.WriteInfoBoxKernelColor(Translate.DoTranslation("Specified option {0} is invalid.") + " " + Translate.DoTranslation("Press any key to go back."), true, KernelColorType.Error, Answer);
+                    InfoBoxColor.WriteInfoBoxColor(Translate.DoTranslation("Specified option {0} is invalid.") + " " + Translate.DoTranslation("Press any key to go back."), true, KernelColorTools.GetColor(KernelColorType.Error), Answer);
                 }
             }
         }
@@ -344,12 +344,12 @@ namespace Nitrocid.Kernel.Configuration.Settings
                 }
                 else
                 {
-                    InfoBoxColor.WriteInfoBoxKernelColor(Translate.DoTranslation("Nothing is found. Make sure that you've written the setting correctly."), true, KernelColorType.Error);
+                    InfoBoxColor.WriteInfoBoxColor(Translate.DoTranslation("Nothing is found. Make sure that you've written the setting correctly."), true, KernelColorTools.GetColor(KernelColorType.Error));
                 }
             }
             catch (Exception ex)
             {
-                InfoBoxColor.WriteInfoBoxKernelColor(Translate.DoTranslation("Failed to find your requested setting.") + $" {ex.Message}", true, KernelColorType.Error);
+                InfoBoxColor.WriteInfoBoxColor(Translate.DoTranslation("Failed to find your requested setting.") + $" {ex.Message}", true, KernelColorTools.GetColor(KernelColorType.Error));
             }
         }
 

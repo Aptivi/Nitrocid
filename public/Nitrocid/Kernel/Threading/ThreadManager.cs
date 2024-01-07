@@ -72,7 +72,7 @@ namespace Nitrocid.Kernel.Threading
         {
             SpinWait.SpinUntil(() => ConsoleWrapper.KeyAvailable);
             if (ConsoleWrapper.KeyAvailable)
-                Input.DetectKeypressUnsafe();
+                InputTools.DetectKeypressUnsafe();
         }
 
         /// <summary>
@@ -83,7 +83,7 @@ namespace Nitrocid.Kernel.Threading
         {
             bool result = SpinWait.SpinUntil(() => ConsoleWrapper.KeyAvailable, (int)Time);
             if (result)
-                Input.DetectKeypressUnsafe();
+                InputTools.DetectKeypressUnsafe();
             return result;
         }
 

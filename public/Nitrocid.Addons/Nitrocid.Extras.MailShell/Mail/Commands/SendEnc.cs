@@ -22,7 +22,7 @@ using Nitrocid.Extras.MailShell.Tools.Transfer;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Files;
-using Nitrocid.ConsoleBase.Inputs;
+using Terminaux.Inputs;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;

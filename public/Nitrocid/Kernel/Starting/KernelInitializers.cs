@@ -43,7 +43,7 @@ using Nitrocid.Security.Privacy;
 using Nitrocid.Modifications;
 using Nitrocid.ConsoleBase.Writers.MiscWriters;
 using Nitrocid.Network.Base.Connections;
-using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Files.Paths;
 using Nitrocid.Network.Base.SpeedDial;
 using Nitrocid.Kernel.Time.Alarm;
@@ -76,7 +76,7 @@ namespace Nitrocid.Kernel.Starting
                     if (!ConsoleExtensions.InitializeSequences())
                     {
                         TextWriterColor.Write("Can not initialize VT sequences for your Windows terminal. Make sure that you're running Windows 10 or later.");
-                        Input.DetectKeypress();
+                        InputTools.DetectKeypress();
                     }
                 }
 
@@ -127,7 +127,7 @@ namespace Nitrocid.Kernel.Starting
                     SplashManager.OpenSplash(SplashContext.Preboot);
 
                 // Initialize console wrappers for TermRead
-                Input.InitializeTerminauxWrappers();
+                InputTools.InitializeTerminauxWrappers();
                 DebugWriter.WriteDebug(DebugLevel.I, "Loaded input wrappers.");
 
                 // Initialize watchdog

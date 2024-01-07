@@ -24,7 +24,7 @@ using System.Collections;
 using UnitsNet;
 using FluentFTP.Helpers;
 using Nitrocid.ConsoleBase.Interactive;
-using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Reflection;
 

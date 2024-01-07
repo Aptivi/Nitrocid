@@ -23,7 +23,7 @@ using System.Collections.Generic;
 using System.Collections;
 using Terminaux.Reader;
 using System.Text;
-using Nitrocid.ConsoleBase.Inputs;
+using Terminaux.Inputs;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Colors;

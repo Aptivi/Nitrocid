@@ -80,12 +80,10 @@ namespace Nitrocid.Analyzers.ConsoleBase
 
                 // Check the imports
                 var compilation = finalNode as CompilationUnitSyntax;
-                if (compilation?.Usings.Any(u => u.Name.ToString() == "Nitrocid.ConsoleBase.Inputs") == false)
+                if (compilation?.Usings.Any(u => u.Name.ToString() == "Terminaux.Inputs") == false)
                 {
                     var name = SyntaxFactory.QualifiedName(
-                        SyntaxFactory.QualifiedName(
-                            SyntaxFactory.IdentifierName("Nitrocid"),
-                            SyntaxFactory.IdentifierName("ConsoleBase")),
+                        SyntaxFactory.IdentifierName("Terminaux"),
                         SyntaxFactory.IdentifierName("Inputs"));
                     compilation = compilation
                         .AddUsings(SyntaxFactory.UsingDirective(name));
