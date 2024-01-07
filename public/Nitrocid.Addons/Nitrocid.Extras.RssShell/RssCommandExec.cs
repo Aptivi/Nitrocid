@@ -20,7 +20,7 @@
 using Nettify.Rss.Instance;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Inputs;
-using Nitrocid.ConsoleBase.Interactive;
+using Terminaux.Inputs.Interactive;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Extras.RssShell.RSS.Interactive;
 using Nitrocid.Kernel.Configuration;

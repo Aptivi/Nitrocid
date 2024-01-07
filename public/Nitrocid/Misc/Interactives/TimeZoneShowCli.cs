@@ -21,7 +21,7 @@ using System.Collections.Generic;
 using System.Collections;
 using Nitrocid.Kernel.Time.Renderers;
 using Nitrocid.Languages;
-using Nitrocid.ConsoleBase.Interactive;
+using Terminaux.Inputs.Interactive;
 using Nitrocid.Kernel.Time.Timezones;
 
 namespace Nitrocid.Misc.Interactives
@@ -65,7 +65,7 @@ namespace Nitrocid.Misc.Interactives
         {
             string selectedZone = (string)item;
             var time = TimeZones.GetTimeZoneTimes()[selectedZone];
-            Status = $"{TimeDateRenderers.Render(time)}";
+            InteractiveTuiStatus.Status = $"{TimeDateRenderers.Render(time)}";
         }
 
         /// <inheritdoc/>

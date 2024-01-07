@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Inputs.Styles.Infobox;
-using Nitrocid.ConsoleBase.Interactive;
+using Terminaux.Inputs.Interactive;
 using Nitrocid.Languages;
 using Nitrocid.Modifications.ManPages;
 using System;
@@ -42,8 +42,8 @@ namespace Nitrocid.Misc.Interactives
         public override List<InteractiveTuiBinding> Bindings { get; set; } =
         [
             // Operations
-            new InteractiveTuiBinding(/* Localizable */ "Info", ConsoleKey.F1,
-                (manual, _) => ShowManualInfo(manual), true)
+            new InteractiveTuiBinding("Info", ConsoleKey.F1,
+                (manual, _) => ShowManualInfo(manual))
         ];
 
         /// <inheritdoc/>
@@ -88,7 +88,7 @@ namespace Nitrocid.Misc.Interactives
                 selectedManual.Name;
 
             // Render them to the status
-            Status = finalRenderedManualName;
+            InteractiveTuiStatus.Status = finalRenderedManualName;
         }
 
         /// <inheritdoc/>
@@ -121,7 +121,7 @@ namespace Nitrocid.Misc.Interactives
             finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
 
             // Now, render the info box
-            InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), BoxForegroundColor, BoxBackgroundColor);
+            InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
         }
     }
 }

@@ -23,7 +23,7 @@ using System.Diagnostics;
 using System.Collections;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Languages;
-using Nitrocid.ConsoleBase.Interactive;
+using Terminaux.Inputs.Interactive;
 using Textify.General;
 
 namespace Nitrocid.Misc.Interactives
@@ -43,10 +43,10 @@ namespace Nitrocid.Misc.Interactives
         public override List<InteractiveTuiBinding> Bindings { get; set; } =
         [
             // Operations
-            new InteractiveTuiBinding(/* Localizable */ "Kill", ConsoleKey.F1,
-                (_, index) => KillThread(index), true),
-            new InteractiveTuiBinding(/* Localizable */ "Switch", ConsoleKey.S,
-                (_, _) => SwitchMode(), true)
+            new InteractiveTuiBinding("Kill", ConsoleKey.F1,
+                (_, index) => KillThread(index)),
+            new InteractiveTuiBinding("Switch", ConsoleKey.S,
+                (_, _) => SwitchMode())
         ];
 
         /// <inheritdoc/>
@@ -105,17 +105,17 @@ namespace Nitrocid.Misc.Interactives
             {
                 ProcessThread thread = (ProcessThread)item;
                 if (string.IsNullOrEmpty(taskStatus))
-                    Status = $"{thread.Id}";
+                    InteractiveTuiStatus.Status = $"{thread.Id}";
                 else
-                    Status = $"{thread.Id} - {taskStatus}";
+                    InteractiveTuiStatus.Status = $"{thread.Id} - {taskStatus}";
             }
             else
             {
                 KernelThread thread = (KernelThread)item;
                 if (string.IsNullOrEmpty(taskStatus))
-                    Status = $"{thread.Name}";
+                    InteractiveTuiStatus.Status = $"{thread.Name}";
                 else
-                    Status = $"{thread.Name} - {taskStatus}";
+                    InteractiveTuiStatus.Status = $"{thread.Name} - {taskStatus}";
             }
             taskStatus = "";
         }
@@ -151,7 +151,7 @@ namespace Nitrocid.Misc.Interactives
         private static void SwitchMode()
         {
             osThreadMode = !osThreadMode;
-            FirstPaneCurrentSelection = 1;
+            InteractiveTuiStatus.FirstPaneCurrentSelection = 1;
         }
     }
 }

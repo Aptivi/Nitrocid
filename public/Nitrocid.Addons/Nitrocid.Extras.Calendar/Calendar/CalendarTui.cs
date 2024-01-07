@@ -33,7 +33,7 @@ using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Base.Buffered;
 using Terminaux.Inputs;
 using Nitrocid.Languages;
-using Nitrocid.ConsoleBase.Interactive;
+using Terminaux.Inputs.Interactive;
 using Nitrocid.ConsoleBase.Writers.FancyWriters;
 using Nitrocid.Kernel.Time.Converters;
 using Nitrocid.Kernel.Time;
@@ -137,11 +137,11 @@ namespace Nitrocid.Extras.Calendar.Calendar
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Drawing binding {0} with description {1}...", GetBindingKeyShortcut(binding, false), binding.Name);
                         bindingsBuilder.Append(
-                            $"{BaseInteractiveTui.KeyBindingOptionColor.VTSequenceForeground}" +
-                            $"{BaseInteractiveTui.OptionBackgroundColor.VTSequenceBackground}" +
+                            $"{InteractiveTuiStatus.KeyBindingOptionColor.VTSequenceForeground}" +
+                            $"{InteractiveTuiStatus.OptionBackgroundColor.VTSequenceBackground}" +
                             GetBindingKeyShortcut(binding, false) +
-                            $"{BaseInteractiveTui.OptionForegroundColor.VTSequenceForeground}" +
-                            $"{BaseInteractiveTui.BackgroundColor.VTSequenceBackground}" +
+                            $"{InteractiveTuiStatus.OptionForegroundColor.VTSequenceForeground}" +
+                            $"{InteractiveTuiStatus.BackgroundColor.VTSequenceBackground}" +
                             $" {(binding._localizable ? Translate.DoTranslation(binding.Name) : binding.Name)}  "
                         );
                     }
@@ -151,8 +151,8 @@ namespace Nitrocid.Extras.Calendar.Calendar
                         DebugWriter.WriteDebug(DebugLevel.I, "Bailing because of no space...");
                         bindingsBuilder.Append(
                             $"{CsiSequences.GenerateCsiCursorPosition(ConsoleWrapper.WindowWidth - 2, ConsoleWrapper.WindowHeight)}" +
-                            $"{BaseInteractiveTui.KeyBindingOptionColor.VTSequenceForeground}" +
-                            $"{BaseInteractiveTui.OptionBackgroundColor.VTSequenceBackground}" +
+                            $"{InteractiveTuiStatus.KeyBindingOptionColor.VTSequenceForeground}" +
+                            $"{InteractiveTuiStatus.OptionBackgroundColor.VTSequenceBackground}" +
                             " K "
                         );
                         break;
@@ -171,7 +171,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
             {
                 var builder = new StringBuilder();
                 builder.Append(
-                    $"{BaseInteractiveTui.ForegroundColor.VTSequenceForeground}" +
+                    $"{InteractiveTuiStatus.ForegroundColor.VTSequenceForeground}" +
                     $"{KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground}" +
                     $"{TextWriterWhereColor.RenderWherePlain(status + ConsoleExtensions.GetClearLineToRightSequence(), 0, 0)}"
                 );
@@ -195,7 +195,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
 
                 // Render the box
                 builder.Append(
-                    $"{BaseInteractiveTui.PaneSeparatorColor.VTSequenceForeground}" +
+                    $"{InteractiveTuiStatus.PaneSeparatorColor.VTSequenceForeground}" +
                     $"{KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground}" +
                     $"{BorderColor.RenderBorderPlain(0, SeparatorMinimumHeight, SeparatorConsoleWidthInterior, SeparatorMaximumHeightInterior)}"
                 );
@@ -261,7 +261,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
                     var foreground =
                         IsToday ? KernelColorTools.GetColor(KernelColorType.TodayDay) :
                         IsWeekend ? KernelColorTools.GetColor(KernelColorType.WeekendDay) :
-                        BaseInteractiveTui.ForegroundColor;
+                        InteractiveTuiStatus.ForegroundColor;
 
                     // Know where and how to put the day number
                     foreach (ReminderInfo Reminder in ReminderManager.Reminders)
@@ -337,7 +337,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
                     var foreground =
                         IsToday ? KernelColorTools.GetColor(KernelColorType.TodayDay) :
                         IsWeekend ? KernelColorTools.GetColor(KernelColorType.WeekendDay) :
-                        BaseInteractiveTui.ForegroundColor;
+                        InteractiveTuiStatus.ForegroundColor;
 
                     // Know where and how to put the reminders and events
                     foreach (ReminderInfo Reminder in ReminderManager.Reminders)
@@ -385,7 +385,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
 
                 // Finalize everything
                 builder.Append(
-                    $"{BaseInteractiveTui.ForegroundColor.VTSequenceForeground}" +
+                    $"{InteractiveTuiStatus.ForegroundColor.VTSequenceForeground}" +
                     $"{background.VTSequenceBackground}"
                 );
                 return builder.ToString();
@@ -458,7 +458,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
                 $"{section}{CharManager.NewLine}" +
                 $"{new string('=', section.Length)}{CharManager.NewLine}{CharManager.NewLine}" +
                 $"{string.Join('\n', bindingRepresentations)}"
-            , BaseInteractiveTui.BoxForegroundColor, BaseInteractiveTui.BoxBackgroundColor);
+            , InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
             return state;
         }
 

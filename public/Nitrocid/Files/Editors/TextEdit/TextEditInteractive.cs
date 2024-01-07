@@ -32,7 +32,7 @@ using Nitrocid.Kernel.Exceptions;
 using Nitrocid.ConsoleBase.Writers.FancyWriters;
 using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
-using Nitrocid.ConsoleBase.Interactive;
+using Terminaux.Inputs.Interactive;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Base.Buffered;
 using Nitrocid.Files.Operations.Querying;
@@ -153,11 +153,11 @@ namespace Nitrocid.Files.Editors.TextEdit
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Drawing binding {0} with description {1}...", GetBindingKeyShortcut(binding, false), binding.Name);
                         bindingsBuilder.Append(
-                            $"{BaseInteractiveTui.KeyBindingOptionColor.VTSequenceForeground}" +
-                            $"{BaseInteractiveTui.OptionBackgroundColor.VTSequenceBackground}" +
+                            $"{InteractiveTuiStatus.KeyBindingOptionColor.VTSequenceForeground}" +
+                            $"{InteractiveTuiStatus.OptionBackgroundColor.VTSequenceBackground}" +
                             GetBindingKeyShortcut(binding, false) +
-                            $"{BaseInteractiveTui.OptionForegroundColor.VTSequenceForeground}" +
-                            $"{BaseInteractiveTui.BackgroundColor.VTSequenceBackground}" +
+                            $"{InteractiveTuiStatus.OptionForegroundColor.VTSequenceForeground}" +
+                            $"{InteractiveTuiStatus.BackgroundColor.VTSequenceBackground}" +
                             $" {(binding._localizable ? Translate.DoTranslation(binding.Name) : binding.Name)}  "
                         );
                     }
@@ -167,8 +167,8 @@ namespace Nitrocid.Files.Editors.TextEdit
                         DebugWriter.WriteDebug(DebugLevel.I, "Bailing because of no space...");
                         bindingsBuilder.Append(
                             $"{CsiSequences.GenerateCsiCursorPosition(ConsoleWrapper.WindowWidth - 2, ConsoleWrapper.WindowHeight)}" +
-                            $"{BaseInteractiveTui.KeyBindingOptionColor.VTSequenceForeground}" +
-                            $"{BaseInteractiveTui.OptionBackgroundColor.VTSequenceBackground}" +
+                            $"{InteractiveTuiStatus.KeyBindingOptionColor.VTSequenceForeground}" +
+                            $"{InteractiveTuiStatus.OptionBackgroundColor.VTSequenceBackground}" +
                             " K "
                         );
                         break;
@@ -187,7 +187,7 @@ namespace Nitrocid.Files.Editors.TextEdit
             {
                 var builder = new StringBuilder();
                 builder.Append(
-                    $"{BaseInteractiveTui.ForegroundColor.VTSequenceForeground}" +
+                    $"{InteractiveTuiStatus.ForegroundColor.VTSequenceForeground}" +
                     $"{KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground}" +
                     $"{TextWriterWhereColor.RenderWherePlain(status + ConsoleExtensions.GetClearLineToRightSequence(), 0, 0)}"
                 );
@@ -211,7 +211,7 @@ namespace Nitrocid.Files.Editors.TextEdit
 
                 // Render the box
                 builder.Append(
-                    $"{BaseInteractiveTui.PaneSeparatorColor.VTSequenceForeground}" +
+                    $"{InteractiveTuiStatus.PaneSeparatorColor.VTSequenceForeground}" +
                     $"{KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground}" +
                     $"{BorderColor.RenderBorderPlain(0, SeparatorMinimumHeight, SeparatorConsoleWidthInterior, SeparatorMaximumHeightInterior)}"
                 );
@@ -442,7 +442,7 @@ namespace Nitrocid.Files.Editors.TextEdit
                 $"{section}{CharManager.NewLine}" +
                 $"{new string('=', section.Length)}{CharManager.NewLine}{CharManager.NewLine}" +
                 $"{string.Join('\n', bindingRepresentations)}"
-            , BaseInteractiveTui.BoxForegroundColor, BaseInteractiveTui.BoxBackgroundColor);
+            , InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
             return lines;
         }
 
@@ -518,8 +518,8 @@ namespace Nitrocid.Files.Editors.TextEdit
                 return lines;
 
             // Now, prompt for the replacement line
-            string replacementText = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Write the string to find"), BaseInteractiveTui.BoxForegroundColor, BaseInteractiveTui.BoxBackgroundColor);
-            string replacedText = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Write the replacement string"), BaseInteractiveTui.BoxForegroundColor, BaseInteractiveTui.BoxBackgroundColor);
+            string replacementText = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Write the string to find"), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+            string replacedText = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Write the replacement string"), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
 
             // Do the replacement!
             lines = TextEditTools.Replace(lines, replacementText, replacedText, lineIdx + 1);
@@ -533,8 +533,8 @@ namespace Nitrocid.Files.Editors.TextEdit
                 return lines;
 
             // Now, prompt for the replacement line
-            string replacementText = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Write the string to find"), BaseInteractiveTui.BoxForegroundColor, BaseInteractiveTui.BoxBackgroundColor);
-            string replacedText = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Write the replacement string"), BaseInteractiveTui.BoxForegroundColor, BaseInteractiveTui.BoxBackgroundColor);
+            string replacementText = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Write the string to find"), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+            string replacedText = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Write the replacement string"), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
 
             // Do the replacement!
             lines = TextEditTools.Replace(lines, replacementText, replacedText);

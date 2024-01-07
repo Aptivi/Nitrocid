@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Interactive;
+using Terminaux.Inputs.Interactive;
 using Nitrocid.Extras.Notes.Management;
 using Nitrocid.Languages;
 using System.Collections;
@@ -62,7 +62,7 @@ namespace Nitrocid.Extras.Notes.Interactive
                 $"{noteInstance}";
 
             // Render them to the status
-            Status = finalRenderedNote;
+            InteractiveTuiStatus.Status = finalRenderedNote;
         }
 
         /// <inheritdoc/>

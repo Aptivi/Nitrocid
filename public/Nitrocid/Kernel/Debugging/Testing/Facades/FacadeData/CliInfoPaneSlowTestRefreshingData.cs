@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Interactive;
+using Terminaux.Inputs.Interactive;
 using Nitrocid.Languages;
 using System;
 using System.Collections;
@@ -32,9 +32,9 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades.FacadeData
 
         public override List<InteractiveTuiBinding> Bindings { get; set; } =
         [
-            new InteractiveTuiBinding(/* Localizable */ "Add", ConsoleKey.F1, (_, index) => strings.Add($"[{index}] --+-- [{index}]"), true),
-            new InteractiveTuiBinding(/* Localizable */ "Delete", ConsoleKey.F2, (_, index) => strings.RemoveAt(index), true),
-            new InteractiveTuiBinding(/* Localizable */ "Delete Last", ConsoleKey.F3, (_, _) => strings.RemoveAt(strings.Count - 1), true),
+            new InteractiveTuiBinding("Add", ConsoleKey.F1, (_, index) => strings.Add($"[{index}] --+-- [{index}]")),
+            new InteractiveTuiBinding("Delete", ConsoleKey.F2, (_, index) => strings.RemoveAt(index)),
+            new InteractiveTuiBinding("Delete Last", ConsoleKey.F3, (_, _) => strings.RemoveAt(strings.Count - 1)),
         ];
 
         /// <inheritdoc/>
@@ -58,9 +58,9 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades.FacadeData
 
             // Check to see if we're given the test info
             if (string.IsNullOrEmpty(selected))
-                Status = Translate.DoTranslation("No info.");
+                InteractiveTuiStatus.Status = Translate.DoTranslation("No info.");
             else
-                Status = $"{selected}";
+                InteractiveTuiStatus.Status = $"{selected}";
 
             // Now, populate the info to the status
             return $"{timesRendered}";

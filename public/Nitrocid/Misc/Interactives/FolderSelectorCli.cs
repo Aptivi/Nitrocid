@@ -36,7 +36,7 @@ using Nitrocid.Kernel.Time.Renderers;
 using Nitrocid.Languages;
 using Nitrocid.Files.Operations.Printing;
 using Nitrocid.Drivers.Encryption;
-using Nitrocid.ConsoleBase.Interactive;
+using Terminaux.Inputs.Interactive;
 using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Files.Paths;
 using Nitrocid.Files.Instances;
@@ -63,31 +63,31 @@ namespace Nitrocid.Misc.Interactives
         public override List<InteractiveTuiBinding> Bindings { get; set; } =
         [
             // Operations
-            new InteractiveTuiBinding(/* Localizable */ "Open", ConsoleKey.Enter,
-                (info, _) => Open((FileSystemEntry)info), true),
-            new InteractiveTuiBinding(/* Localizable */ "Select", ConsoleKey.Spacebar,
-                (info, _) => Select((FileSystemEntry)info), true),
-            new InteractiveTuiBinding(/* Localizable */ "Copy", ConsoleKey.F1,
-                (info, _) => CopyTo((FileSystemEntry)info), true),
-            new InteractiveTuiBinding(/* Localizable */ "Move", ConsoleKey.F2,
-                (info, _) => MoveTo((FileSystemEntry)info), true),
-            new InteractiveTuiBinding(/* Localizable */ "Delete", ConsoleKey.F3,
-                (info, _) => RemoveFileOrDir((FileSystemEntry)info), true),
-            new InteractiveTuiBinding(/* Localizable */ "Up", ConsoleKey.F4,
-                (_, _) => GoUp(), true),
-            new InteractiveTuiBinding(/* Localizable */ "Info", ConsoleKey.F5,
-                (info, _) => PrintFileSystemEntry((FileSystemEntry)info), true),
-            new InteractiveTuiBinding(/* Localizable */ "Go To", ConsoleKey.F6,
-                (_, _) => GoTo(), true),
-            new InteractiveTuiBinding(/* Localizable */ "Rename", ConsoleKey.F7,
-                (info, _) => Rename((FileSystemEntry)info), true),
-            new InteractiveTuiBinding(/* Localizable */ "New Folder", ConsoleKey.F8,
-                (_, _) => MakeDir(), true),
-            new InteractiveTuiBinding(/* Localizable */ "Hash...", ConsoleKey.F9,
+            new InteractiveTuiBinding("Open", ConsoleKey.Enter,
+                (info, _) => Open((FileSystemEntry)info)),
+            new InteractiveTuiBinding("Select", ConsoleKey.Spacebar,
+                (info, _) => Select((FileSystemEntry)info)),
+            new InteractiveTuiBinding("Copy", ConsoleKey.F1,
+                (info, _) => CopyTo((FileSystemEntry)info)),
+            new InteractiveTuiBinding("Move", ConsoleKey.F2,
+                (info, _) => MoveTo((FileSystemEntry)info)),
+            new InteractiveTuiBinding("Delete", ConsoleKey.F3,
+                (info, _) => RemoveFileOrDir((FileSystemEntry)info)),
+            new InteractiveTuiBinding("Up", ConsoleKey.F4,
+                (_, _) => GoUp()),
+            new InteractiveTuiBinding("Info", ConsoleKey.F5,
+                (info, _) => PrintFileSystemEntry((FileSystemEntry)info)),
+            new InteractiveTuiBinding("Go To", ConsoleKey.F6,
+                (_, _) => GoTo()),
+            new InteractiveTuiBinding("Rename", ConsoleKey.F7,
+                (info, _) => Rename((FileSystemEntry)info)),
+            new InteractiveTuiBinding("New Folder", ConsoleKey.F8,
+                (_, _) => MakeDir()),
+            new InteractiveTuiBinding("Hash...", ConsoleKey.F9,
                 (info, _) => Hash((FileSystemEntry)info)),
-            new InteractiveTuiBinding(/* Localizable */ "Verify...", ConsoleKey.F10,
+            new InteractiveTuiBinding("Verify...", ConsoleKey.F10,
                 (info, _) => Verify((FileSystemEntry)info)),
-            new InteractiveTuiBinding(/* Localizable */ "Preview", ConsoleKey.P,
+            new InteractiveTuiBinding("Preview", ConsoleKey.P,
                 (info, _) => Preview((FileSystemEntry)info)),
         ];
 
@@ -126,7 +126,7 @@ namespace Nitrocid.Misc.Interactives
             // Check to see if we're given the file system info
             if (FileInfoCurrentPane == null)
             {
-                Status = Translate.DoTranslation("No info.");
+                InteractiveTuiStatus.Status = Translate.DoTranslation("No info.");
                 return;
             }
 
@@ -135,7 +135,7 @@ namespace Nitrocid.Misc.Interactives
             {
                 bool infoIsDirectory = FileInfoCurrentPane.Type == FileSystemEntryType.Directory;
                 if (Config.MainConfig.IfmShowFileSize)
-                    Status =
+                    InteractiveTuiStatus.Status =
                         // Name and directory indicator
                         $"[{(infoIsDirectory ? "/" : "*")}] {FileInfoCurrentPane.BaseEntry.Name} | " +
 
@@ -146,13 +146,13 @@ namespace Nitrocid.Misc.Interactives
                         $"{(!infoIsDirectory ? TimeDateRenderers.Render(((FileInfo)FileInfoCurrentPane.BaseEntry).LastWriteTime) : "")}"
                     ;
                 else
-                    Status = $"[{(infoIsDirectory ? "/" : "*")}] {FileInfoCurrentPane.BaseEntry.Name}";
+                    InteractiveTuiStatus.Status = $"[{(infoIsDirectory ? "/" : "*")}] {FileInfoCurrentPane.BaseEntry.Name}";
             }
             catch (Exception ex)
             {
-                Status = Translate.DoTranslation(ex.Message);
+                InteractiveTuiStatus.Status = Translate.DoTranslation(ex.Message);
             }
-            Status = $"{Translate.DoTranslation("Selected")} {selectedFolder} - {Status}";
+            InteractiveTuiStatus.Status = $"{Translate.DoTranslation("Selected")} {selectedFolder} - {InteractiveTuiStatus.Status}";
         }
 
         /// <inheritdoc/>
@@ -227,7 +227,7 @@ namespace Nitrocid.Misc.Interactives
                 {
                     // We're dealing with a folder. Open it in the selected pane.
                     ((FolderSelectorCli)Instance).firstPanePath = FilesystemTools.NeutralizePath(currentFileSystemEntry.FilePath + "/");
-                    FirstPaneCurrentSelection = 1;
+                    InteractiveTuiStatus.FirstPaneCurrentSelection = 1;
                     ((FolderSelectorCli)Instance).refreshFirstPaneListing = true;
                 }
             }
@@ -236,7 +236,7 @@ namespace Nitrocid.Misc.Interactives
                 var finalInfoRendered = new StringBuilder();
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't open folder") + TextTools.FormatString(": {0}", ex.Message));
                 finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
-                InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), BoxForegroundColor, BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
             }
         }
 
@@ -256,7 +256,7 @@ namespace Nitrocid.Misc.Interactives
                 if (currentFileSystemEntry.Type == FileSystemEntryType.Directory)
                 {
                     ((FolderSelectorCli)Instance).selectedFolder = currentFileSystemEntry.FilePath;
-                    InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Selected '{0}'. Press ESC to exit and confirm selection."), BoxForegroundColor, BoxBackgroundColor, ((FolderSelectorCli)Instance).selectedFolder);
+                    InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Selected '{0}'. Press ESC to exit and confirm selection."), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor, ((FolderSelectorCli)Instance).selectedFolder);
                 }
             }
             catch (Exception ex)
@@ -264,14 +264,14 @@ namespace Nitrocid.Misc.Interactives
                 var finalInfoRendered = new StringBuilder();
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't select folder") + TextTools.FormatString(": {0}", ex.Message));
                 finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
-                InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), BoxForegroundColor, BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
             }
         }
 
         private static void GoUp()
         {
             ((FolderSelectorCli)Instance).firstPanePath = FilesystemTools.NeutralizePath(((FolderSelectorCli)Instance).firstPanePath + "/..");
-            FirstPaneCurrentSelection = 1;
+            InteractiveTuiStatus.FirstPaneCurrentSelection = 1;
             ((FolderSelectorCli)Instance).refreshFirstPaneListing = true;
         }
 
@@ -344,14 +344,14 @@ namespace Nitrocid.Misc.Interactives
                 finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
 
                 // Now, render the info box
-                InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), BoxForegroundColor, BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
             }
             catch (Exception ex)
             {
                 var finalInfoRendered = new StringBuilder();
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't get file system info") + TextTools.FormatString(": {0}", ex.Message));
                 finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
-                InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), BoxForegroundColor, BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
             }
         }
 
@@ -371,23 +371,23 @@ namespace Nitrocid.Misc.Interactives
                 var finalInfoRendered = new StringBuilder();
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't remove file or directory") + TextTools.FormatString(": {0}", ex.Message));
                 finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
-                InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), BoxForegroundColor, BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
             }
         }
 
         private static void GoTo()
         {
             // Now, render the search box
-            string path = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a path or a full path to a local folder."), BoxForegroundColor, BoxBackgroundColor);
+            string path = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a path or a full path to a local folder."), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
             path = FilesystemTools.NeutralizePath(path, ((FolderSelectorCli)Instance).firstPanePath);
             if (Checking.FolderExists(path))
             {
-                FirstPaneCurrentSelection = 1;
+                InteractiveTuiStatus.FirstPaneCurrentSelection = 1;
                 ((FolderSelectorCli)Instance).firstPanePath = path;
                 ((FolderSelectorCli)Instance).refreshFirstPaneListing = true;
             }
             else
-                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Folder doesn't exist. Make sure that you've written the correct path."), BoxForegroundColor, BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Folder doesn't exist. Make sure that you've written the correct path."), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
         }
 
         private static void CopyTo(FileSystemEntry currentFileSystemEntry)
@@ -398,7 +398,7 @@ namespace Nitrocid.Misc.Interactives
 
             try
             {
-                string path = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a path or a full path to a destination folder to copy the selected file to."), BoxForegroundColor, BoxBackgroundColor);
+                string path = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a path or a full path to a destination folder to copy the selected file to."), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
                 path = FilesystemTools.NeutralizePath(path, ((FolderSelectorCli)Instance).firstPanePath) + "/";
                 DebugWriter.WriteDebug(DebugLevel.I, $"Destination is {path}");
                 DebugCheck.AssertNull(path, "destination is null!");
@@ -411,17 +411,17 @@ namespace Nitrocid.Misc.Interactives
                         ((FolderSelectorCli)Instance).refreshFirstPaneListing = true;
                     }
                     else
-                        InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Make sure that you've written the correct path."), BoxForegroundColor, BoxBackgroundColor);
+                        InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Make sure that you've written the correct path."), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
                 }
                 else
-                    InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("File doesn't exist. Make sure that you've written the correct path."), BoxForegroundColor, BoxBackgroundColor);
+                    InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("File doesn't exist. Make sure that you've written the correct path."), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
             }
             catch (Exception ex)
             {
                 var finalInfoRendered = new StringBuilder();
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't copy file or directory") + TextTools.FormatString(": {0}", ex.Message));
                 finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
-                InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), BoxForegroundColor, BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
             }
         }
 
@@ -433,7 +433,7 @@ namespace Nitrocid.Misc.Interactives
 
             try
             {
-                string path = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a path or a full path to a destination folder to move the selected file to."), BoxForegroundColor, BoxBackgroundColor);
+                string path = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a path or a full path to a destination folder to move the selected file to."), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
                 path = FilesystemTools.NeutralizePath(path, ((FolderSelectorCli)Instance).firstPanePath) + "/";
                 DebugWriter.WriteDebug(DebugLevel.I, $"Destination is {path}");
                 DebugCheck.AssertNull(path, "destination is null!");
@@ -446,17 +446,17 @@ namespace Nitrocid.Misc.Interactives
                         ((FolderSelectorCli)Instance).refreshFirstPaneListing = true;
                     }
                     else
-                        InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Make sure that you've written the correct path."), BoxForegroundColor, BoxBackgroundColor);
+                        InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Make sure that you've written the correct path."), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
                 }
                 else
-                    InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("File doesn't exist. Make sure that you've written the correct path."), BoxForegroundColor, BoxBackgroundColor);
+                    InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("File doesn't exist. Make sure that you've written the correct path."), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
             }
             catch (Exception ex)
             {
                 var finalInfoRendered = new StringBuilder();
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't move file or directory") + TextTools.FormatString(": {0}", ex.Message));
                 finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
-                InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), BoxForegroundColor, BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
             }
         }
 
@@ -468,7 +468,7 @@ namespace Nitrocid.Misc.Interactives
 
             try
             {
-                string filename = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a new file name."), BoxForegroundColor, BoxBackgroundColor);
+                string filename = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a new file name."), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
                 DebugWriter.WriteDebug(DebugLevel.I, $"New filename is {filename}");
                 if (!Checking.FileExists(filename))
                 {
@@ -478,24 +478,24 @@ namespace Nitrocid.Misc.Interactives
                         ((FolderSelectorCli)Instance).refreshFirstPaneListing = true;
                     }
                     else
-                        InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Make sure that you've written the correct file name."), BoxForegroundColor, BoxBackgroundColor);
+                        InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Make sure that you've written the correct file name."), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
                 }
                 else
-                    InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("File already exists. The name shouldn't be occupied by another file."), BoxForegroundColor, BoxBackgroundColor);
+                    InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("File already exists. The name shouldn't be occupied by another file."), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
             }
             catch (Exception ex)
             {
                 var finalInfoRendered = new StringBuilder();
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't move file or directory") + TextTools.FormatString(": {0}", ex.Message));
                 finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
-                InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), BoxForegroundColor, BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
             }
         }
 
         private static void MakeDir()
         {
             // Now, render the search box
-            string path = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a new directory name."), BoxForegroundColor, BoxBackgroundColor);
+            string path = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a new directory name."), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
             path = FilesystemTools.NeutralizePath(path, ((FolderSelectorCli)Instance).firstPanePath);
             if (!Checking.FolderExists(path))
             {
@@ -503,7 +503,7 @@ namespace Nitrocid.Misc.Interactives
                 ((FolderSelectorCli)Instance).refreshFirstPaneListing = true;
             }
             else
-                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Folder already exists. The name shouldn't be occupied by another folder."), BoxForegroundColor, BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Folder already exists. The name shouldn't be occupied by another folder."), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
         }
 
         private static void Hash(FileSystemEntry currentFileSystemEntry)
@@ -515,13 +515,13 @@ namespace Nitrocid.Misc.Interactives
             // First, check to see if it's a file
             if (!Checking.FileExists(currentFileSystemEntry.FilePath))
             {
-                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Selected entry is not a file."), BoxForegroundColor, BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Selected entry is not a file."), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
                 return;
             }
 
             // Render the hash box
             string[] hashDrivers = EncryptionDriverTools.GetEncryptionDriverNames();
-            string hashDriver = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a hash driver:") + $" {string.Join(", ", hashDrivers)}", BoxForegroundColor, BoxBackgroundColor);
+            string hashDriver = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a hash driver:") + $" {string.Join(", ", hashDrivers)}", InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
             string hash;
             if (string.IsNullOrEmpty(hashDriver))
                 hash = Encryption.GetEncryptedFile(currentFileSystemEntry.FilePath, DriverHandler.CurrentEncryptionDriver.DriverName);
@@ -529,10 +529,10 @@ namespace Nitrocid.Misc.Interactives
                 hash = Encryption.GetEncryptedFile(currentFileSystemEntry.FilePath, hashDriver);
             else
             {
-                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Hash driver not found."), BoxForegroundColor, BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Hash driver not found."), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
                 return;
             }
-            InfoBoxColor.WriteInfoBoxColorBack(hash, BoxForegroundColor, BoxBackgroundColor);
+            InfoBoxColor.WriteInfoBoxColorBack(hash, InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
         }
 
         private static void Verify(FileSystemEntry currentFileSystemEntry)
@@ -544,13 +544,13 @@ namespace Nitrocid.Misc.Interactives
             // First, check to see if it's a file
             if (!Checking.FileExists(currentFileSystemEntry.FilePath))
             {
-                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Selected entry is not a file."), BoxForegroundColor, BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Selected entry is not a file."), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
                 return;
             }
 
             // Render the hash box
             string[] hashDrivers = EncryptionDriverTools.GetEncryptionDriverNames();
-            string hashDriver = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a hash driver:") + $" {string.Join(", ", hashDrivers)}", BoxForegroundColor, BoxBackgroundColor);
+            string hashDriver = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a hash driver:") + $" {string.Join(", ", hashDrivers)}", InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
             string hash;
             if (string.IsNullOrEmpty(hashDriver))
                 hash = Encryption.GetEncryptedFile(currentFileSystemEntry.FilePath, DriverHandler.CurrentEncryptionDriver.DriverName);
@@ -558,16 +558,16 @@ namespace Nitrocid.Misc.Interactives
                 hash = Encryption.GetEncryptedFile(currentFileSystemEntry.FilePath, hashDriver);
             else
             {
-                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Hash driver not found."), BoxForegroundColor, BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Hash driver not found."), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
                 return;
             }
 
             // Now, let the user write the expected hash
-            string expectedHash = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter your expected hash"), BoxForegroundColor, BoxBackgroundColor);
+            string expectedHash = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter your expected hash"), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
             if (expectedHash == hash)
-                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Two hashes match!"), BoxForegroundColor, BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Two hashes match!"), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
             else
-                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Two hashes don't match."), BoxForegroundColor, BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Two hashes don't match."), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
         }
 
         private static void Preview(FileSystemEntry currentFileSystemEntry)
@@ -579,14 +579,14 @@ namespace Nitrocid.Misc.Interactives
             // First, check to see if it's a file
             if (!Checking.FileExists(currentFileSystemEntry.FilePath))
             {
-                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Selected entry is not a file."), BoxForegroundColor, BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Selected entry is not a file."), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
                 return;
             }
 
             // Render the preview box
             string preview = FileContentPrinter.RenderContents(currentFileSystemEntry.FilePath);
             string filtered = VtSequenceTools.FilterVTSequences(preview);
-            InfoBoxColor.WriteInfoBoxColorBack(filtered, BoxForegroundColor, BoxBackgroundColor);
+            InfoBoxColor.WriteInfoBoxColorBack(filtered, InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
         }
     }
 }

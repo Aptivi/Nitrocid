@@ -44,7 +44,6 @@ namespace Nitrocid.Tests.Misc.Interactive
             tui.Bindings[0].BindingName.ShouldBe("Test");
             tui.Bindings[0].BindingKeyName.ShouldBe(ConsoleKey.F1);
             tui.Bindings[0].BindingAction.ShouldNotBeNull();
-            tui.Bindings[0]._localizable.ShouldBeFalse();
         }
 
     }

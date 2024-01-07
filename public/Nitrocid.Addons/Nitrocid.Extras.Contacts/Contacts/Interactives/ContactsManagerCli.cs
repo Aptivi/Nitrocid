@@ -23,7 +23,7 @@ using VisualCard.Parts;
 using System.Text;
 using System.Collections;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.ConsoleBase.Interactive;
+using Terminaux.Inputs.Interactive;
 using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Text.Probers.Regexp;
@@ -43,16 +43,16 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
         public override List<InteractiveTuiBinding> Bindings { get; set; } =
         [
             // Operations
-            new InteractiveTuiBinding(/* Localizable */ "Delete", ConsoleKey.F1, (_, index) => RemoveContact(index), true),
-            new InteractiveTuiBinding(/* Localizable */ "Delete All", ConsoleKey.F2, (_, _) => RemoveContacts(), true),
-            new InteractiveTuiBinding(/* Localizable */ "Import", ConsoleKey.F3, (_, _) => ImportContacts(), true),
-            new InteractiveTuiBinding(/* Localizable */ "Import From", ConsoleKey.F4, (_, _) => ImportContactsFrom(), true),
-            new InteractiveTuiBinding(/* Localizable */ "Info", ConsoleKey.F5, (_, index) => ShowContactInfo(index), true),
-            new InteractiveTuiBinding(/* Localizable */ "Search", ConsoleKey.F6, (_, _) => SearchBox(), true),
-            new InteractiveTuiBinding(/* Localizable */ "Search Next", ConsoleKey.F7, (_, _) => SearchNext(), true),
-            new InteractiveTuiBinding(/* Localizable */ "Search Back", ConsoleKey.F8, (_, _) => SearchPrevious(), true),
-            new InteractiveTuiBinding(/* Localizable */ "Raw Info", ConsoleKey.F9, (_, index) => ShowContactRawInfo(index), true),
-            new InteractiveTuiBinding(/* Localizable */ "Import From MeCard", ConsoleKey.F10, (_, _) => ImportContactFromMeCard(), true),
+            new InteractiveTuiBinding("Delete", ConsoleKey.F1, (_, index) => RemoveContact(index)),
+            new InteractiveTuiBinding("Delete All", ConsoleKey.F2, (_, _) => RemoveContacts()),
+            new InteractiveTuiBinding("Import", ConsoleKey.F3, (_, _) => ImportContacts()),
+            new InteractiveTuiBinding("Import From", ConsoleKey.F4, (_, _) => ImportContactsFrom()),
+            new InteractiveTuiBinding("Info", ConsoleKey.F5, (_, index) => ShowContactInfo(index)),
+            new InteractiveTuiBinding("Search", ConsoleKey.F6, (_, _) => SearchBox()),
+            new InteractiveTuiBinding("Search Next", ConsoleKey.F7, (_, _) => SearchNext()),
+            new InteractiveTuiBinding("Search Back", ConsoleKey.F8, (_, _) => SearchPrevious()),
+            new InteractiveTuiBinding("Raw Info", ConsoleKey.F9, (_, index) => ShowContactRawInfo(index)),
+            new InteractiveTuiBinding("Import From MeCard", ConsoleKey.F10, (_, _) => ImportContactFromMeCard()),
         ];
 
         /// <inheritdoc/>
@@ -102,7 +102,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             string finalRenderedContactName = GetContactNameFinal(selectedContact);
 
             // Render them to the status
-            Status = finalRenderedContactName;
+            InteractiveTuiStatus.Status = finalRenderedContactName;
         }
 
         /// <inheritdoc/>
@@ -129,14 +129,14 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             }
             catch (Exception ex)
             {
-                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Some of the contacts can't be imported.") + ex.Message, BoxForegroundColor, BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Some of the contacts can't be imported.") + ex.Message, InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
             }
         }
 
         private static void ImportContactsFrom()
         {
             // Now, render the search box
-            string path = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter path to a VCF file containing your contact. Android's contacts2.db file is also supported."), BoxForegroundColor, BoxBackgroundColor);
+            string path = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter path to a VCF file containing your contact. Android's contacts2.db file is also supported."), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
             if (Checking.FileExists(path))
             {
                 try
@@ -146,17 +146,17 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                 }
                 catch
                 {
-                    InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Contact file is invalid."), BoxForegroundColor, BoxBackgroundColor);
+                    InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Contact file is invalid."), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
                 }
             }
             else
-                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("File doesn't exist. Make sure that you've written the correct path to a VCF file or to a contacts2.db file."), BoxForegroundColor, BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("File doesn't exist. Make sure that you've written the correct path to a VCF file or to a contacts2.db file."), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
         }
 
         private static void ImportContactFromMeCard()
         {
             // Now, render the search box
-            string meCard = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a valid MeCard representation of your contact."), BoxForegroundColor, BoxBackgroundColor);
+            string meCard = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a valid MeCard representation of your contact."), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
             if (!string.IsNullOrEmpty(meCard))
             {
                 try
@@ -166,11 +166,11 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                 }
                 catch
                 {
-                    InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Contact MeCard syntax is invalid."), BoxForegroundColor, BoxBackgroundColor);
+                    InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Contact MeCard syntax is invalid."), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
                 }
             }
             else
-                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Contact MeCard syntax may not be empty"), BoxForegroundColor, BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Contact MeCard syntax may not be empty"), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
         }
 
         private static void ShowContactInfo(int index)
@@ -204,7 +204,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
 
             // Now, render the info box
-            InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), BoxForegroundColor, BoxBackgroundColor);
+            InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
         }
 
         private static void ShowContactRawInfo(int index)
@@ -218,23 +218,23 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             finalInfoRendered.Append(Translate.DoTranslation("Press any key to close this window."));
 
             // Now, render the info box
-            InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), BoxForegroundColor, BoxBackgroundColor);
+            InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
         }
 
         private static void SearchBox()
         {
             // Now, render the search box
-            string exp = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter regular expression to search the contacts."), BoxForegroundColor, BoxBackgroundColor);
+            string exp = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter regular expression to search the contacts."), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
             if (RegexpTools.IsValidRegex(exp))
             {
                 // Initiate the search
                 var foundCard = ContactsManager.SearchNext(exp);
                 if (foundCard is null)
-                    InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("There are no contacts that contains your requested expression."), BoxForegroundColor, BoxBackgroundColor);
+                    InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("There are no contacts that contains your requested expression."), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
                 UpdateIndex(foundCard);
             }
             else
-                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Regular expression is invalid."), BoxForegroundColor, BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Regular expression is invalid."), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
         }
 
         private static void SearchNext()
@@ -259,7 +259,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                 // Get the index from the instance
                 int idx = Array.FindIndex(contacts, (card) => card == foundCard);
                 DebugCheck.Assert(idx != -1, "contact index is -1!!!");
-                FirstPaneCurrentSelection = idx + 1;
+                InteractiveTuiStatus.FirstPaneCurrentSelection = idx + 1;
             }
         }
 

@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Interactive;
+using Terminaux.Inputs.Interactive;
 using Nitrocid.Extras.Contacts.Contacts.Interactives;
 using Nitrocid.Shell.ShellBase.Commands;
 

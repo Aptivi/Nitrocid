@@ -18,7 +18,7 @@
 //
 
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Interactive;
+using Terminaux.Inputs.Interactive;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel.Time.Timezones;
 using Nitrocid.Languages;

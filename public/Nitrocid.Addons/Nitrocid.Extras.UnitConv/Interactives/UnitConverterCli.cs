@@ -23,7 +23,7 @@ using System.Linq;
 using System.Collections;
 using UnitsNet;
 using FluentFTP.Helpers;
-using Nitrocid.ConsoleBase.Interactive;
+using Terminaux.Inputs.Interactive;
 using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Reflection;
@@ -41,7 +41,7 @@ namespace Nitrocid.Extras.UnitConv.Interactives
         public override List<InteractiveTuiBinding> Bindings { get; set; } =
         [
             // Operations
-            new InteractiveTuiBinding(/* Localizable */ "Convert...", ConsoleKey.F1, (_, _) => OpenConvert(), true),
+            new InteractiveTuiBinding("Convert...", ConsoleKey.F1, (_, _) => OpenConvert()),
         ];
 
         /// <inheritdoc/>
@@ -58,7 +58,7 @@ namespace Nitrocid.Extras.UnitConv.Interactives
 
         /// <inheritdoc/>
         public override void RenderStatus(object item) =>
-            Status = $"{GetUnits().OfType<string>().Count()} " + Translate.DoTranslation("units to convert");
+            InteractiveTuiStatus.Status = $"{GetUnits().OfType<string>().Count()} " + Translate.DoTranslation("units to convert");
 
         /// <inheritdoc/>
         public override string GetEntryFromItem(object item) =>
@@ -69,15 +69,15 @@ namespace Nitrocid.Extras.UnitConv.Interactives
             try
             {
                 // Open a dialog box asking for number to convert
-                string answer = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a number to convert..."), BoxForegroundColor, BoxBackgroundColor);
+                string answer = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a number to convert..."), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
                 if (string.IsNullOrEmpty(answer))
                 {
-                    InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("You haven't entered a number to convert."), BoxForegroundColor, BoxBackgroundColor);
+                    InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("You haven't entered a number to convert."), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
                     return;
                 }
                 else if (!answer.IsNumeric())
                 {
-                    InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("The entered number is invalid."), BoxForegroundColor, BoxBackgroundColor);
+                    InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("The entered number is invalid."), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
                     return;
                 }
                 else
@@ -85,21 +85,21 @@ namespace Nitrocid.Extras.UnitConv.Interactives
                     var parser = UnitsNetSetup.Default.UnitParser;
                     var unitNames = GetUnitTypeNames();
                     var units = GetUnits();
-                    string UnitType = (string)EnumerableTools.GetElementFromIndex(unitNames, FirstPaneCurrentSelection - 1);
+                    string UnitType = (string)EnumerableTools.GetElementFromIndex(unitNames, InteractiveTuiStatus.FirstPaneCurrentSelection - 1);
                     int QuantityNum = Convert.ToInt32(answer);
-                    string wholeUnit = units.OfType<string>().ElementAt(SecondPaneCurrentSelection - 1);
+                    string wholeUnit = units.OfType<string>().ElementAt(InteractiveTuiStatus.SecondPaneCurrentSelection - 1);
                     string SourceUnit = wholeUnit[..wholeUnit.IndexOf(' ')];
                     string TargetUnit = wholeUnit[(wholeUnit.LastIndexOf(' ') + 1)..];
                     var QuantityInfos = Quantity.Infos.Where(x => x.Name == UnitType).ToArray();
                     var TargetUnitInstance = parser.Parse(TargetUnit, QuantityInfos[0].UnitType);
                     var ConvertedUnit = Quantity.Parse(QuantityInfos[0].ValueType, $"{QuantityNum} {SourceUnit}").ToUnit(TargetUnitInstance);
-                    InfoBoxColor.WriteInfoBoxColorBack("{0} => {1}: {2}", BoxForegroundColor, BoxBackgroundColor,
+                    InfoBoxColor.WriteInfoBoxColorBack("{0} => {1}: {2}", InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor,
                         SourceUnit, TargetUnit, ConvertedUnit.ToString(CultureManager.CurrentCult.NumberFormat));
                 }
             }
             catch (Exception ex)
             {
-                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Can't convert unit.") + ex.Message, BoxForegroundColor, BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Can't convert unit.") + ex.Message, InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
             }
         }
 
@@ -115,7 +115,7 @@ namespace Nitrocid.Extras.UnitConv.Interactives
             var abbreviations = UnitsNetSetup.Default.UnitAbbreviations;
             for (int i = 0; i < unitInfo.Length; i++)
             {
-                if (i != FirstPaneCurrentSelection - 1)
+                if (i != InteractiveTuiStatus.FirstPaneCurrentSelection - 1)
                     continue;
 
                 QuantityInfo QuantityInfo = unitInfo[i];

@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Interactive;
+using Terminaux.Inputs.Interactive;
 using Nitrocid.Languages;
 using System;
 using System.Collections;
@@ -32,10 +32,9 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades.FacadeData
 
         public override List<InteractiveTuiBinding> Bindings { get; set; } =
         [
-            new InteractiveTuiBinding(/* Localizable */ "Add", ConsoleKey.F1, (_, index) => Add(index), true),
-            new InteractiveTuiBinding(/* Localizable */ "Delete", ConsoleKey.F2, (_, index) => Remove(index), true),
-            new InteractiveTuiBinding(/* Localizable */ "Delete Last", ConsoleKey.F3, (_, _) => RemoveLast(), true),
-            new InteractiveTuiBinding(/* Localizable */ "Switch", ConsoleKey.Tab, (_, _) => Switch(), true),
+            new InteractiveTuiBinding("Add", ConsoleKey.F1, (_, index) => Add(index)),
+            new InteractiveTuiBinding("Delete", ConsoleKey.F2, (_, index) => Remove(index)),
+            new InteractiveTuiBinding("Delete Last", ConsoleKey.F3, (_, _) => RemoveLast()),
         ];
 
         /// <inheritdoc/>
@@ -61,9 +60,9 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades.FacadeData
 
             // Check to see if we're given the test info
             if (string.IsNullOrEmpty(selected))
-                Status = Translate.DoTranslation("No info.");
+                InteractiveTuiStatus.Status = Translate.DoTranslation("No info.");
             else
-                Status = $"{selected}";
+                InteractiveTuiStatus.Status = $"{selected}";
         }
 
         /// <inheritdoc/>
@@ -75,7 +74,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades.FacadeData
 
         private static void Add(int index)
         {
-            if (CurrentPane == 2)
+            if (InteractiveTuiStatus.CurrentPane == 2)
                 strings2.Add($"[{index}] --2-- [{index}]");
             else
                 strings.Add($"[{index}] --1-- [{index}]");
@@ -83,43 +82,36 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades.FacadeData
 
         private static void Remove(int index)
         {
-            if (CurrentPane == 2)
+            if (InteractiveTuiStatus.CurrentPane == 2)
             {
                 if (index < strings2.Count)
                     strings2.RemoveAt(index - 1);
-                if (SecondPaneCurrentSelection > strings2.Count)
-                    SecondPaneCurrentSelection = strings2.Count;
+                if (InteractiveTuiStatus.SecondPaneCurrentSelection > strings2.Count)
+                    InteractiveTuiStatus.SecondPaneCurrentSelection = strings2.Count;
             }
             else
             {
                 if (index < strings.Count)
                     strings.RemoveAt(index - 1);
-                if (FirstPaneCurrentSelection > strings.Count)
-                    FirstPaneCurrentSelection = strings.Count;
+                if (InteractiveTuiStatus.FirstPaneCurrentSelection > strings.Count)
+                    InteractiveTuiStatus.FirstPaneCurrentSelection = strings.Count;
             }
         }
 
         private static void RemoveLast()
         {
-            if (CurrentPane == 2)
+            if (InteractiveTuiStatus.CurrentPane == 2)
             {
                 strings2.RemoveAt(strings2.Count - 1);
-                if (SecondPaneCurrentSelection > strings2.Count)
-                    SecondPaneCurrentSelection = strings2.Count;
+                if (InteractiveTuiStatus.SecondPaneCurrentSelection > strings2.Count)
+                    InteractiveTuiStatus.SecondPaneCurrentSelection = strings2.Count;
             }
             else
             {
                 strings.RemoveAt(strings.Count - 1);
-                if (FirstPaneCurrentSelection > strings.Count)
-                    FirstPaneCurrentSelection = strings.Count;
+                if (InteractiveTuiStatus.FirstPaneCurrentSelection > strings.Count)
+                    InteractiveTuiStatus.FirstPaneCurrentSelection = strings.Count;
             }
-        }
-
-        private static void Switch()
-        {
-            CurrentPane++;
-            if (CurrentPane > 2)
-                CurrentPane = 1;
         }
     }
 }
