@@ -92,13 +92,6 @@ namespace Nitrocid.Arguments
                     ], new ResetArgument())
             },
 
-            { "bypasssizedetection",
-                new ArgumentInfo("bypasssizedetection", /* Localizable */ "Bypasses the console size detection",
-                    [
-                        new CommandArgumentInfo()
-                    ], new BypassSizeDetectionArgument())
-            },
-
             { "noaltbuffer",
                 new ArgumentInfo("noaltbuffer", /* Localizable */ "Prevents the kernel from using the alternative buffer",
                     [

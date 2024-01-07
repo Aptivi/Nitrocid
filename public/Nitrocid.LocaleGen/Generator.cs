@@ -25,6 +25,7 @@ using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.LocaleGen.Core.Serializer;
+using Terminaux.Base.Checks;
 
 namespace Nitrocid.LocaleGen
 {

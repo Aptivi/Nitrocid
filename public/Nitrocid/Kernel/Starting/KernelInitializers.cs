@@ -59,6 +59,7 @@ using Nitrocid.Network.RPC;
 using Nitrocid.Kernel.Threading.Watchdog;
 using Terminaux.Colors;
 using Nitrocid.ConsoleBase.Writers.MiscWriters;
+using Terminaux.Base.Checks;
 
 namespace Nitrocid.Kernel.Starting
 {

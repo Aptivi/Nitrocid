@@ -41,6 +41,7 @@ using Nitrocid.Kernel.Power;
 using Nitrocid.Network.RSS;
 using Textify.General;
 using Nitrocid.ConsoleBase.Writers.MiscWriters;
+using Terminaux.Base.Checks;
 
 namespace Nitrocid.Kernel
 {
@@ -67,19 +68,7 @@ namespace Nitrocid.Kernel
                 return;
 
             // Check for console size
-            if (ConsoleChecker.CheckingForConsoleSize)
-            {
-                ConsoleChecker.CheckConsoleSize();
-            }
-            else
-            {
-                TextWriters.Write(
-                    Translate.DoTranslation("Looks like you're bypassing the console size detection. Things may not work properly on small screens.") + CharManager.NewLine +
-                    Translate.DoTranslation("To have a better experience, resize your console window while still being on this screen. Press any key to continue..."), true, KernelColorType.Warning
-                );
-                Input.DetectKeypress();
-                ConsoleChecker.CheckingForConsoleSize = true;
-            }
+            ConsoleChecker.CheckConsoleSize();
 
             // Initialize important components
             KernelStageTools.StageTimer.Start();

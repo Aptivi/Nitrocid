@@ -31,14 +31,6 @@ namespace Nitrocid.Tests.ConsoleBase
     {
 
         /// <summary>
-        /// Tests getting how many times to repeat the character to represent the appropriate percentage level for the specified number.
-        /// </summary>
-        [Test]
-        [Description("Querying")]
-        public void TestPercentRepeatTargeted() =>
-            ConsoleExtensions.PercentRepeatTargeted(25, 200, 100).ShouldBe(12);
-
-        /// <summary>
         /// Tests filtering the VT sequences that matches the regex
         /// </summary>
         [Test]
