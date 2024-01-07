@@ -22,6 +22,7 @@ using System.Text;
 using System.Threading;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Kernel.Debugging;
+using Terminaux.Colors;
 using Textify.Sequences.Builder.Types;
 
 namespace Nitrocid.Misc.Splash
@@ -51,7 +52,7 @@ namespace Nitrocid.Misc.Splash
         {
             var builder = new StringBuilder();
             DebugWriter.WriteDebug(DebugLevel.I, "Splash opening. Clearing console...");
-            KernelColorTools.SetConsoleColor(KernelColorTools.GetColor(KernelColorType.Background), true);
+            ColorTools.SetConsoleColor(KernelColorTools.GetColor(KernelColorType.Background), true);
             builder.Append(
                 CsiSequences.GenerateCsiEraseInDisplay(2) +
                 CsiSequences.GenerateCsiCursorPosition(1, 1)
@@ -78,7 +79,7 @@ namespace Nitrocid.Misc.Splash
         {
             var builder = new StringBuilder();
             DebugWriter.WriteDebug(DebugLevel.I, "Splash closing. Clearing console...");
-            KernelColorTools.SetConsoleColor(KernelColorTools.GetColor(KernelColorType.Background), true);
+            ColorTools.SetConsoleColor(KernelColorTools.GetColor(KernelColorType.Background), true);
             builder.Append(
                 CsiSequences.GenerateCsiEraseInDisplay(2) +
                 CsiSequences.GenerateCsiCursorPosition(1, 1)

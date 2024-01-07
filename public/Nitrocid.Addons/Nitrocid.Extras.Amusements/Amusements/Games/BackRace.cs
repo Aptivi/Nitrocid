@@ -60,11 +60,11 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 ];
                 horseColors =
                 [
-                    KernelColorTools.GetRandomColor(ColorType.TrueColor),
-                    KernelColorTools.GetRandomColor(ColorType.TrueColor),
-                    KernelColorTools.GetRandomColor(ColorType.TrueColor),
-                    KernelColorTools.GetRandomColor(ColorType.TrueColor),
-                    KernelColorTools.GetRandomColor(ColorType.TrueColor)
+                    ColorTools.GetRandomColor(ColorType.TrueColor),
+                    ColorTools.GetRandomColor(ColorType.TrueColor),
+                    ColorTools.GetRandomColor(ColorType.TrueColor),
+                    ColorTools.GetRandomColor(ColorType.TrueColor),
+                    ColorTools.GetRandomColor(ColorType.TrueColor)
                 ];
             }
             ResetAll();

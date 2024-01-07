@@ -294,8 +294,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                     // Delay writing
                     ThreadManager.SleepNoBlock(FireworksSettings.FireworksDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
-                    KernelColorTools.LoadBack(new Color(ConsoleColors.Black));
-                    KernelColorTools.SetConsoleColor(new Color(255, 255, 255), true);
+                    ColorTools.LoadBack(new Color(ConsoleColors.Black));
+                    ColorTools.SetConsoleColor(new Color(255, 255, 255), true);
 
                     // Change positions
                     CurrentX += FireworkStepsX;
@@ -322,7 +322,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Right particle position: {0}", RightParticleX);
 
                     // Draw the explosion
-                    KernelColorTools.SetConsoleColor(IgniteColor, true);
+                    ColorTools.SetConsoleColor(IgniteColor, true);
                     if (UpperParticleY < ConsoleWrapper.WindowHeight && UpperParticleY >= 0)
                     {
                         DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Making upper particle at {0}, {1}", IgnitePositionX, UpperParticleY);
@@ -350,7 +350,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                     // Delay writing
                     ThreadManager.SleepNoBlock(FireworksSettings.FireworksDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
-                    KernelColorTools.LoadBack(new Color(ConsoleColors.Black));
+                    ColorTools.LoadBack(new Color(ConsoleColors.Black));
                 }
             }
 

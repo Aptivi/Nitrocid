@@ -221,7 +221,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            KernelColorTools.LoadBack(new Color(WipeSettings.WipeBackgroundColor));
+            ColorTools.LoadBack(new Color(WipeSettings.WipeBackgroundColor));
             ConsoleWrapper.CursorVisible = false;
             TimesWiped = 0;
             ToDirection = WipeDirections.Right;
@@ -240,14 +240,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 int BlueColorNum = RandomDriver.Random(WipeSettings.WipeMinimumBlueColorLevel, WipeSettings.WipeMaximumBlueColorLevel);
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                 if (!ConsoleResizeListener.WasResized(false))
-                    KernelColorTools.SetConsoleColor(new Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}"), true);
+                    ColorTools.SetConsoleColor(new Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}"), true);
             }
             else
             {
                 int ColorNum = RandomDriver.Random(WipeSettings.WipeMinimumColorLevel, WipeSettings.WipeMaximumColorLevel);
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
                 if (!ConsoleResizeListener.WasResized(false))
-                    KernelColorTools.SetConsoleColor(new Color(ColorNum), true);
+                    ColorTools.SetConsoleColor(new Color(ColorNum), true);
             }
 
             // Set max height
@@ -352,7 +352,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             else
             {
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.W, "Resize-syncing. Clearing...");
-                KernelColorTools.LoadBack(new Color(WipeSettings.WipeBackgroundColor));
+                ColorTools.LoadBack(new Color(WipeSettings.WipeBackgroundColor));
             }
 
             ConsoleResizeListener.WasResized();

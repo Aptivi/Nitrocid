@@ -20,6 +20,7 @@
 using System.Text;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Shell.Prompts;
+using Terminaux.Colors;
 
 namespace Nitrocid.Extras.SqlShell.Sql.Presets
 {
@@ -49,7 +50,7 @@ namespace Nitrocid.Extras.SqlShell.Sql.Presets
             var PresetStringBuilder = new StringBuilder();
 
             // Opening
-            PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);
+            PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
             PresetStringBuilder.Append('[');
 
             // File name
@@ -57,7 +58,7 @@ namespace Nitrocid.Extras.SqlShell.Sql.Presets
             PresetStringBuilder.AppendFormat(SqlShellCommon.DatabaseFileName);
 
             // Closing
-            PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);
+            PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
             PresetStringBuilder.Append("] > ");
             PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
 
@@ -71,7 +72,7 @@ namespace Nitrocid.Extras.SqlShell.Sql.Presets
             var PresetStringBuilder = new StringBuilder();
 
             // Opening
-            PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);
+            PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
             PresetStringBuilder.Append('[');
 
             // File name
@@ -79,7 +80,7 @@ namespace Nitrocid.Extras.SqlShell.Sql.Presets
             PresetStringBuilder.AppendFormat("database.sqlite");
 
             // Closing
-            PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);
+            PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
             PresetStringBuilder.Append("] > ");
             PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
 

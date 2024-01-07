@@ -286,7 +286,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 BeatEdgePulseMaximumBlueColorLevel = BeatEdgePulseSettings.BeatEdgePulseMaximumBlueColorLevel,
                 BeatEdgePulseMaximumColorLevel = BeatEdgePulseSettings.BeatEdgePulseMaximumColorLevel
             };
-            KernelColorTools.LoadBack("0;0;0");
+            ColorTools.LoadBack("0;0;0");
             ConsoleWrapper.CursorVisible = false;
         }
 

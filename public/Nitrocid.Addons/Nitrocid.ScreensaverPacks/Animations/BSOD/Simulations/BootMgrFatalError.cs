@@ -36,8 +36,8 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
 
         public override void Simulate()
         {
-            KernelColorTools.LoadBack(new Color(ConsoleColors.Black));
-            KernelColorTools.SetConsoleColor(new Color(ConsoleColors.White));
+            ColorTools.LoadBack(new Color(ConsoleColors.Black));
+            ColorTools.SetConsoleColor(new Color(ConsoleColors.White));
 
             // Select a variant
             int excVariantInt = RandomDriver.RandomIdx(Enum.GetNames<Variant>().Length);

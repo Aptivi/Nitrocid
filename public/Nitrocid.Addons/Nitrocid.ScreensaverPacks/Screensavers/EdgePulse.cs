@@ -22,6 +22,7 @@ using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Screensaver;
+using Terminaux.Colors;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -200,7 +201,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 EdgePulseMaximumGreenColorLevel = EdgePulseSettings.EdgePulseMaximumGreenColorLevel,
                 EdgePulseMaximumBlueColorLevel = EdgePulseSettings.EdgePulseMaximumBlueColorLevel
             };
-            KernelColorTools.LoadBack("0;0;0");
+            ColorTools.LoadBack("0;0;0");
             ConsoleWrapper.Clear();
         }
 

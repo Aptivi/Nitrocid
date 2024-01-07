@@ -27,6 +27,7 @@ using Nitrocid.Languages;
 using System;
 using System.Collections.Generic;
 using System.Threading;
+using Terminaux.Colors;
 
 namespace Nitrocid.ConsoleBase.Writers
 {
@@ -673,7 +674,7 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         /// <param name="Targeted">Targeted percentage?</param>
         public static void WriteProgress(double Progress, int Left, int Top, KernelColorType ProgressColor, bool DrawBorder = true, bool Targeted = false) =>
-            ProgressBarColor.WriteProgress(Progress, Left, Top, 10, 0, KernelColorTools.GetColor(ProgressColor), KernelColorTools.GetGray(), DrawBorder, Targeted);
+            ProgressBarColor.WriteProgress(Progress, Left, Top, 10, 0, KernelColorTools.GetColor(ProgressColor), ColorTools.GetGray(), DrawBorder, Targeted);
 
         /// <summary>
         /// Writes the progress bar
@@ -686,7 +687,7 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         /// <param name="Targeted">Targeted percentage?</param>
         public static void WriteProgress(double Progress, int Left, int Top, int WidthOffset, KernelColorType ProgressColor, bool DrawBorder = true, bool Targeted = false) =>
-            ProgressBarColor.WriteProgress(Progress, Left, Top, WidthOffset, 0, KernelColorTools.GetColor(ProgressColor), KernelColorTools.GetGray(), DrawBorder, Targeted);
+            ProgressBarColor.WriteProgress(Progress, Left, Top, WidthOffset, 0, KernelColorTools.GetColor(ProgressColor), ColorTools.GetGray(), DrawBorder, Targeted);
 
         /// <summary>
         /// Writes the progress bar
@@ -700,7 +701,7 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         /// <param name="Targeted">Targeted percentage?</param>
         public static void WriteProgress(double Progress, int Left, int Top, int LeftWidthOffset, int RightWidthOffset, KernelColorType ProgressColor, bool DrawBorder = true, bool Targeted = false) =>
-            ProgressBarColor.WriteProgress(Progress, Left, Top, LeftWidthOffset, RightWidthOffset, KernelColorTools.GetColor(ProgressColor), KernelColorTools.GetGray(), DrawBorder, Targeted);
+            ProgressBarColor.WriteProgress(Progress, Left, Top, LeftWidthOffset, RightWidthOffset, KernelColorTools.GetColor(ProgressColor), ColorTools.GetGray(), DrawBorder, Targeted);
 
         /// <summary>
         /// Writes the progress bar
@@ -808,7 +809,7 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="ProgressColor">The progress bar color</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         public static void WriteVerticalProgress(double Progress, int Left, int Top, KernelColorType ProgressColor, bool DrawBorder = true) =>
-            ProgressBarVerticalColor.WriteVerticalProgress(Progress, Left, Top, 2, 0, KernelColorTools.GetColor(ProgressColor), KernelColorTools.GetGray(), DrawBorder);
+            ProgressBarVerticalColor.WriteVerticalProgress(Progress, Left, Top, 2, 0, KernelColorTools.GetColor(ProgressColor), ColorTools.GetGray(), DrawBorder);
 
         /// <summary>
         /// Writes the progress bar
@@ -820,7 +821,7 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="HeightOffset">Height offset</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         public static void WriteVerticalProgress(double Progress, int Left, int Top, int HeightOffset, KernelColorType ProgressColor, bool DrawBorder = true) =>
-            ProgressBarVerticalColor.WriteVerticalProgress(Progress, Left, Top, HeightOffset, 0, KernelColorTools.GetColor(ProgressColor), KernelColorTools.GetGray(), DrawBorder);
+            ProgressBarVerticalColor.WriteVerticalProgress(Progress, Left, Top, HeightOffset, 0, KernelColorTools.GetColor(ProgressColor), ColorTools.GetGray(), DrawBorder);
 
         /// <summary>
         /// Writes the progress bar
@@ -833,7 +834,7 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="BottomHeightOffset">Height offset from the bottom</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         public static void WriteVerticalProgress(double Progress, int Left, int Top, int TopHeightOffset, int BottomHeightOffset, KernelColorType ProgressColor, bool DrawBorder = true) =>
-            ProgressBarVerticalColor.WriteVerticalProgress(Progress, Left, Top, TopHeightOffset, BottomHeightOffset, KernelColorTools.GetColor(ProgressColor), KernelColorTools.GetGray(), DrawBorder);
+            ProgressBarVerticalColor.WriteVerticalProgress(Progress, Left, Top, TopHeightOffset, BottomHeightOffset, KernelColorTools.GetColor(ProgressColor), ColorTools.GetGray(), DrawBorder);
 
         /// <summary>
         /// Writes the progress bar

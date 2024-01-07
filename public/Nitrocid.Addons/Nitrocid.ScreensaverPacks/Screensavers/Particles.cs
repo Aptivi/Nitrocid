@@ -282,7 +282,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             // Reset resize sync
             ConsoleResizeListener.WasResized();
             ThreadManager.SleepNoBlock(ParticlesSettings.ParticlesDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
-            KernelColorTools.LoadBack();
+            ColorTools.LoadBack();
         }
 
     }

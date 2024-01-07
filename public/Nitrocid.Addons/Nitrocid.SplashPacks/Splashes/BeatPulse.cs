@@ -141,7 +141,7 @@ namespace Nitrocid.SplashPacks.Splashes
                     CurrentColorGreenOut = (int)Math.Round(CurrentColorGreenOut - ThresholdGreen * _currentStep);
                     CurrentColorBlueOut = (int)Math.Round(CurrentColorBlueOut - ThresholdBlue * _currentStep);
                     DebugWriter.WriteDebug(DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
-                    KernelColorTools.LoadBack(new Color(CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut));
+                    ColorTools.LoadBack(new Color(CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut));
                     _currentStep++;
                     if (_currentStep > _beatpulseMaxSteps)
                     {
@@ -161,7 +161,7 @@ namespace Nitrocid.SplashPacks.Splashes
                     CurrentColorGreenIn = (int)Math.Round((CurrentColorGreenIn + ThresholdGreen) * _currentStep);
                     CurrentColorBlueIn = (int)Math.Round((CurrentColorBlueIn + ThresholdBlue) * _currentStep);
                     DebugWriter.WriteDebug(DebugLevel.I, "Color in (R;G;B: {0};{1};{2})", CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn);
-                    KernelColorTools.LoadBack(new Color(CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn));
+                    ColorTools.LoadBack(new Color(CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn));
                     _currentStep++;
                     if (_currentStep > _beatpulseMaxSteps)
                     {

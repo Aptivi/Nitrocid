@@ -54,7 +54,7 @@ namespace Nitrocid.Extras.Timers.Timers
             Screen watchScreen = new();
             ScreenPart watchScreenPart = new();
             ScreenTools.SetCurrent(watchScreen);
-            KernelColorTools.LoadBack();
+            ColorTools.LoadBack();
             string status = Translate.DoTranslation("Stopwatch is ready.");
             bool resetting = false;
 
@@ -65,7 +65,7 @@ namespace Nitrocid.Extras.Timers.Timers
                 if (resetting || ConsoleResizeListener.WasResized())
                 {
                     resetting = false;
-                    KernelColorTools.LoadBack();
+                    ColorTools.LoadBack();
                 }
                 ConsoleWrapper.CursorVisible = false;
                 var builder = new StringBuilder();
@@ -225,18 +225,18 @@ namespace Nitrocid.Extras.Timers.Timers
             int KeysTextTopPosition = ConsoleWrapper.WindowHeight - 2;
             int HalfWidth = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d);
             border.Append(
-                TextWriterWhereColor.RenderWhere(new string('═', ConsoleWrapper.WindowWidth), 0, KeysTextTopPosition - 2, true, KernelColorTools.GetGray(), KernelColorTools.GetColor(KernelColorType.Background)) +
-                TextWriterWhereColor.RenderWhere(new string('═', ConsoleWrapper.WindowWidth), 0, 1, true, KernelColorTools.GetGray(), KernelColorTools.GetColor(KernelColorType.Background))
+                TextWriterWhereColor.RenderWhere(new string('═', ConsoleWrapper.WindowWidth), 0, KeysTextTopPosition - 2, true, ColorTools.GetGray(), KernelColorTools.GetColor(KernelColorType.Background)) +
+                TextWriterWhereColor.RenderWhere(new string('═', ConsoleWrapper.WindowWidth), 0, 1, true, ColorTools.GetGray(), KernelColorTools.GetColor(KernelColorType.Background))
             );
             for (int Height = 2; Height <= KeysTextTopPosition - 2; Height++)
             {
                 border.Append(
-                    TextWriterWhereColor.RenderWhere("║", HalfWidth, Height, true, KernelColorTools.GetGray(), KernelColorTools.GetColor(KernelColorType.Background))
+                    TextWriterWhereColor.RenderWhere("║", HalfWidth, Height, true, ColorTools.GetGray(), KernelColorTools.GetColor(KernelColorType.Background))
                 );
             }
             border.Append(
-                TextWriterWhereColor.RenderWhere("╩", HalfWidth, KeysTextTopPosition - 2, true, KernelColorTools.GetGray(), KernelColorTools.GetColor(KernelColorType.Background)) +
-                TextWriterWhereColor.RenderWhere("╦", HalfWidth, 1, true, KernelColorTools.GetGray(), KernelColorTools.GetColor(KernelColorType.Background))
+                TextWriterWhereColor.RenderWhere("╩", HalfWidth, KeysTextTopPosition - 2, true, ColorTools.GetGray(), KernelColorTools.GetColor(KernelColorType.Background)) +
+                TextWriterWhereColor.RenderWhere("╦", HalfWidth, 1, true, ColorTools.GetGray(), KernelColorTools.GetColor(KernelColorType.Background))
             );
             return border.ToString();
         }

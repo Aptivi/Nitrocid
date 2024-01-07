@@ -45,6 +45,7 @@ using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Files.Extensions;
 using Nitrocid.Files.Operations.Querying;
 using Textify.General;
+using Terminaux.Colors;
 
 namespace Nitrocid.Misc.Interactives
 {
@@ -237,7 +238,7 @@ namespace Nitrocid.Misc.Interactives
                 else if (currentFileSystemEntry.Type == FileSystemEntryType.File)
                 {
                     // We're dealing with a file. Clear the screen and open the appropriate editor.
-                    KernelColorTools.LoadBack();
+                    ColorTools.LoadBack();
                     Opening.OpenDeterministically(currentFileSystemEntry.FilePath);
                 }
             }

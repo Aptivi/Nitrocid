@@ -128,7 +128,7 @@ namespace Nitrocid.Extras.BassBoom.Player
                     {
                         var buffer = new StringBuilder();
                         buffer.Append(
-                            ProgressBarColor.RenderProgress(100 * (position / (double)total), 2, ConsoleWrapper.WindowHeight - 8, 3, 3, KernelColorTools.GetColor(KernelColorType.Progress), KernelColorTools.GetGray(), KernelColorTools.GetColor(KernelColorType.Background)) +
+                            ProgressBarColor.RenderProgress(100 * (position / (double)total), 2, ConsoleWrapper.WindowHeight - 8, 3, 3, KernelColorTools.GetColor(KernelColorType.Progress), ColorTools.GetGray(), KernelColorTools.GetColor(KernelColorType.Background)) +
                             TextWriterWhereColor.RenderWhere($"{posSpan} / {totalSpan}", 3, ConsoleWrapper.WindowHeight - 9, KernelColorTools.GetColor(KernelColorType.NeutralText), KernelColorTools.GetColor(KernelColorType.Background)) +
                             TextWriterWhereColor.RenderWhere(indicator, ConsoleWrapper.WindowWidth - indicator.Length - 3, ConsoleWrapper.WindowHeight - 9, KernelColorTools.GetColor(KernelColorType.NeutralText), KernelColorTools.GetColor(KernelColorType.Background))
                         );
@@ -216,7 +216,7 @@ namespace Nitrocid.Extras.BassBoom.Player
 
             // Restore state
             ConsoleWrapper.CursorVisible = true;
-            KernelColorTools.LoadBack();
+            ColorTools.LoadBack();
             ScreensaverManager.AllowLock();
             ScreenTools.UnsetCurrent(playerScreen);
         }
@@ -376,7 +376,7 @@ namespace Nitrocid.Extras.BassBoom.Player
             // Prepare things
             var drawn = new StringBuilder();
             ConsoleWrapper.CursorVisible = false;
-            KernelColorTools.LoadBack();
+            ColorTools.LoadBack();
 
             // First, print the keystrokes
             string keystrokes =

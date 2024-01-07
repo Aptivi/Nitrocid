@@ -27,6 +27,7 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
 using System.Linq;
 using System.Threading;
+using Terminaux.Colors;
 
 namespace Nitrocid.Users.Login.Handlers.Logins
 {
@@ -65,7 +66,7 @@ namespace Nitrocid.Users.Login.Handlers.Logins
             ).ToArray();
 
             // Then, make the choices and prompt for the selection
-            KernelColorTools.LoadBack();
+            ColorTools.LoadBack();
             var choices = InputChoiceTools.GetInputChoices(users, userFullNames);
             int userNum = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choices], Translate.DoTranslation("Select a user account you want to log in with.")) + 1;
             return

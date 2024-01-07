@@ -29,8 +29,8 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
     {
         public override void Simulate()
         {
-            KernelColorTools.LoadBack(new Color(ConsoleColors.Black));
-            KernelColorTools.SetConsoleColor(new Color(ConsoleColors.White));
+            ColorTools.LoadBack(new Color(ConsoleColors.Black));
+            ColorTools.SetConsoleColor(new Color(ConsoleColors.White));
 
             // Simulate a Yaboot failure
             TextWriterColor.WritePlain("Welcome to yaboot version 1.3.17", true);

@@ -28,6 +28,7 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors;
 
 namespace Nitrocid.Drivers.Console
 {
@@ -255,7 +256,7 @@ namespace Nitrocid.Drivers.Console
             if (!IsDumb)
             {
                 if (loadBack)
-                    KernelColorTools.LoadBack();
+                    ColorTools.LoadBack();
                 else
                 {
                     if (KernelPlatform.IsOnWindows())

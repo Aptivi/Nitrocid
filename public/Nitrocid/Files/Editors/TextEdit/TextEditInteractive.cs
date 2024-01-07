@@ -37,6 +37,7 @@ using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Base.Buffered;
 using Nitrocid.Files.Operations.Querying;
 using Textify.General;
+using Terminaux.Colors;
 
 namespace Nitrocid.Files.Editors.TextEdit
 {
@@ -95,7 +96,7 @@ namespace Nitrocid.Files.Editors.TextEdit
             var screen = new Screen();
             ScreenTools.SetCurrent(screen);
             ConsoleWrapper.CursorVisible = false;
-            KernelColorTools.LoadBack();
+            ColorTools.LoadBack();
             try
             {
                 while (!bail)
@@ -131,7 +132,7 @@ namespace Nitrocid.Files.Editors.TextEdit
             ScreenTools.UnsetCurrent(screen);
 
             // Close the file and clean up
-            KernelColorTools.LoadBack();
+            ColorTools.LoadBack();
         }
 
         private static void RenderKeybindings(ref Screen screen)

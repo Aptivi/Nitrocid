@@ -45,7 +45,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             var SnakeMassPositions = new List<string>();
             var Direction = SnakeDirection.Bottom;
             ConsoleWrapper.CursorVisible = false;
-            KernelColorTools.LoadBack();
+            ColorTools.LoadBack();
 
             // Get the floor color ready
             var FloorColor = ChangeSnakeColor();
@@ -68,7 +68,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 int FloorLeftEdge = 2;
                 int FloorRightEdge = ConsoleWrapper.WindowWidth - 4;
                 DebugWriter.WriteDebug(DebugLevel.I, "Left edge: {0}, Right edge: {1}", FloorLeftEdge, FloorRightEdge);
-                KernelColorTools.SetConsoleColor(FloorColor, true);
+                ColorTools.SetConsoleColor(FloorColor, true);
 
                 // First, draw the floor top edge
                 for (int x = FloorTopLeftEdge; x <= FloorTopRightEdge; x++)
@@ -150,7 +150,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     ConsoleWrapper.Write($"{new Color(ConsoleColors.Black).VTSequenceBackground} ");
 
                     // Set the snake color
-                    KernelColorTools.SetConsoleColor(SnakeColor, true);
+                    ColorTools.SetConsoleColor(SnakeColor, true);
 
                     // Draw an apple
                     if (!AppleDrawn)
@@ -375,7 +375,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
 
             // Reset mass and console display
             SnakeMassPositions.Clear();
-            KernelColorTools.LoadBack();
+            ColorTools.LoadBack();
             ConsoleResizeListener.WasResized();
         }
 

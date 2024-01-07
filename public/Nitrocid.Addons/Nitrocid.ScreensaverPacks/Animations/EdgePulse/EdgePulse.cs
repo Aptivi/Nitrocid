@@ -67,7 +67,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.EdgePulse
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Color in (R;G;B: {0};{1};{2})", CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn);
                 if (!ConsoleResizeListener.WasResized(false))
                 {
-                    KernelColorTools.SetConsoleColor(new Color(CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn), true);
+                    ColorTools.SetConsoleColor(new Color(CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn), true);
                     FillIn();
                 }
             }
@@ -85,7 +85,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.EdgePulse
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut);
                 if (!ConsoleResizeListener.WasResized(false))
                 {
-                    KernelColorTools.SetConsoleColor(new Color(CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut), true);
+                    ColorTools.SetConsoleColor(new Color(CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut), true);
                     FillIn();
                 }
             }

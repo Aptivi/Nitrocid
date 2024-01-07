@@ -363,7 +363,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Draw the frame
             if (!ConsoleResizeListener.WasResized(false))
-                BorderColor.WriteBorder(RampFrameStartWidth, RampCenterPosition - 2, RampFrameSpaces, 3, IndeterminateSettings.IndeterminateUseBorderColors ? new Color(IndeterminateSettings.IndeterminateLeftFrameColor) : KernelColorTools.GetGray());
+                BorderColor.WriteBorder(RampFrameStartWidth, RampCenterPosition - 2, RampFrameSpaces, 3, IndeterminateSettings.IndeterminateUseBorderColors ? new Color(IndeterminateSettings.IndeterminateLeftFrameColor) : ColorTools.GetGray());
 
             // Draw the ramp
             int RampFrameBlockEndWidth = RampFrameEndWidth;
@@ -407,7 +407,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 }
 
                 // Fill the ramp
-                KernelColorTools.SetConsoleColor(RampCurrentColorInstance, true);
+                ColorTools.SetConsoleColor(RampCurrentColorInstance, true);
                 for (int BlockPos = IndeterminateCurrentBlockStart; BlockPos <= IndeterminateCurrentBlockEnd; BlockPos++)
                 {
                     TextWriterWhereColor.WriteWhere(" ", BlockPos, RampCenterPosition - 1, true);
@@ -444,7 +444,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             }
 
             // Reset the background
-            KernelColorTools.LoadBack();
+            ColorTools.LoadBack();
             ConsoleResizeListener.WasResized();
             ThreadManager.SleepNoBlock(IndeterminateSettings.IndeterminateDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }

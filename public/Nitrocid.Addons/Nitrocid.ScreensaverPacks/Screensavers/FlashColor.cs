@@ -239,7 +239,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            KernelColorTools.LoadBack(new Color(FlashColorSettings.FlashColorBackgroundColor));
+            ColorTools.LoadBack(new Color(FlashColorSettings.FlashColorBackgroundColor));
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
         }
 
@@ -252,7 +252,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             int Left = RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth);
             int Top = RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight);
             DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Selected left and top: {0}, {1}", Left, Top);
-            KernelColorTools.LoadBack(new Color(ConsoleColors.Black));
+            ColorTools.LoadBack(new Color(ConsoleColors.Black));
             ConsoleWrapper.SetCursorPosition(Left, Top);
 
             // Make a flash color
@@ -265,7 +265,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 var ColorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
                 if (!ConsoleResizeListener.WasResized(false))
                 {
-                    KernelColorTools.SetConsoleColor(ColorStorage, true);
+                    ColorTools.SetConsoleColor(ColorStorage, true);
                     ConsoleWrapper.Write(" ");
                 }
             }
@@ -275,7 +275,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
                 if (!ConsoleResizeListener.WasResized(false))
                 {
-                    KernelColorTools.SetConsoleColor(new Color(ColorNum), true);
+                    ColorTools.SetConsoleColor(new Color(ColorNum), true);
                     ConsoleWrapper.Write(" ");
                 }
             }

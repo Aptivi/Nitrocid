@@ -98,8 +98,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
-            nextColor = KernelColorTools.GetRandomColor(ColorType.TrueColor, 0, MaxLevel, 0, MaxLevel, 0, MaxLevel, 0, MaxLevel);
-            currentColor = KernelColorTools.GetRandomColor(ColorType.TrueColor, 0, MaxLevel, 0, MaxLevel, 0, MaxLevel, 0, MaxLevel);
+            nextColor = ColorTools.GetRandomColor(ColorType.TrueColor, 0, MaxLevel, 0, MaxLevel, 0, MaxLevel, 0, MaxLevel);
+            currentColor = ColorTools.GetRandomColor(ColorType.TrueColor, 0, MaxLevel, 0, MaxLevel, 0, MaxLevel, 0, MaxLevel);
             base.ScreensaverPreparation();
         }
 
@@ -130,7 +130,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                 // Now, make a color and fill the console with it
                 Color col = new((int)currentR, (int)currentG, (int)currentB);
-                KernelColorTools.LoadBack(col);
+                ColorTools.LoadBack(col);
 
                 // Sleep
                 ThreadManager.SleepNoBlock(BloomSettings.BloomDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
@@ -138,7 +138,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Generate new colors
             currentColor = nextColor;
-            nextColor = KernelColorTools.GetRandomColor(ColorType.TrueColor, 0, MaxLevel, 0, MaxLevel, 0, MaxLevel, 0, MaxLevel);
+            nextColor = ColorTools.GetRandomColor(ColorType.TrueColor, 0, MaxLevel, 0, MaxLevel, 0, MaxLevel, 0, MaxLevel);
             ThreadManager.SleepNoBlock(BloomSettings.BloomDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
 
             // Reset resize sync

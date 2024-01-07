@@ -245,7 +245,7 @@ namespace Nitrocid.ConsoleBase.Writers.ConsoleWriters
             {
                 try
                 {
-                    KernelColorTools.SetConsoleColor(new Color(color));
+                    ColorTools.SetConsoleColor(new Color(color));
                     KernelColorTools.SetConsoleColor(KernelColorType.Background, true);
 
                     // Write text in another place slowly
@@ -307,8 +307,8 @@ namespace Nitrocid.ConsoleBase.Writers.ConsoleWriters
             {
                 try
                 {
-                    KernelColorTools.SetConsoleColor(new Color(ForegroundColor));
-                    KernelColorTools.SetConsoleColor(new Color(BackgroundColor));
+                    ColorTools.SetConsoleColor(new Color(ForegroundColor));
+                    ColorTools.SetConsoleColor(new Color(BackgroundColor));
 
                     // Write text in another place slowly
                     WriteWhereSlowlyPlain(msg, Line, Left, Top, MsEachLetter, Return, RightMargin, vars);
@@ -366,7 +366,7 @@ namespace Nitrocid.ConsoleBase.Writers.ConsoleWriters
             {
                 try
                 {
-                    KernelColorTools.SetConsoleColor(color);
+                    ColorTools.SetConsoleColor(color);
                     KernelColorTools.SetConsoleColor(KernelColorType.Background, true);
 
                     // Write text in another place slowly
@@ -428,8 +428,8 @@ namespace Nitrocid.ConsoleBase.Writers.ConsoleWriters
             {
                 try
                 {
-                    KernelColorTools.SetConsoleColor(ForegroundColor);
-                    KernelColorTools.SetConsoleColor(BackgroundColor, true);
+                    ColorTools.SetConsoleColor(ForegroundColor);
+                    ColorTools.SetConsoleColor(BackgroundColor, true);
 
                     // Write text in another place slowly
                     WriteWhereSlowlyPlain(msg, Line, Left, Top, MsEachLetter, Return, RightMargin, vars);

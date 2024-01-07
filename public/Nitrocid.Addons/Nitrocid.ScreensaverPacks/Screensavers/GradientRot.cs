@@ -362,7 +362,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                 // Make a new instance
                 var RampSubgradientCurrentColorInstance = new Color($"{Convert.ToInt32(RampSubgradientCurrentColorRed)};{Convert.ToInt32(RampSubgradientCurrentColorGreen)};{Convert.ToInt32(RampSubgradientCurrentColorBlue)}");
-                KernelColorTools.SetConsoleColor(RampSubgradientCurrentColorInstance, true);
+                ColorTools.SetConsoleColor(RampSubgradientCurrentColorInstance, true);
 
                 // Try to fill the ramp
                 int RampSubgradientStepsMade = 0;
@@ -403,7 +403,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         RampSubgradientCurrentColorBlue = 0;
                     }
                     RampSubgradientCurrentColorInstance = new Color($"{Convert.ToInt32(RampSubgradientCurrentColorRed)};{Convert.ToInt32(RampSubgradientCurrentColorGreen)};{Convert.ToInt32(RampSubgradientCurrentColorBlue)}");
-                    KernelColorTools.SetConsoleColor(RampSubgradientCurrentColorInstance, true);
+                    ColorTools.SetConsoleColor(RampSubgradientCurrentColorInstance, true);
                 }
 
                 // Change the colors
@@ -437,7 +437,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Clear the scene
             ThreadManager.SleepNoBlock(GradientRotSettings.GradientRotNextRampDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
-            KernelColorTools.LoadBack(new Color(ConsoleColors.Black));
+            ColorTools.LoadBack(new Color(ConsoleColors.Black));
 
             // Reset resize sync
             ConsoleResizeListener.WasResized();

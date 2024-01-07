@@ -203,7 +203,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            KernelColorTools.LoadBack(new Color(DoorShiftSettings.DoorShiftBackgroundColor));
+            ColorTools.LoadBack(new Color(DoorShiftSettings.DoorShiftBackgroundColor));
             ConsoleWrapper.CursorVisible = false;
         }
 
@@ -223,14 +223,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 int BlueColorNum = RandomDriver.Random(DoorShiftSettings.DoorShiftMinimumBlueColorLevel, DoorShiftSettings.DoorShiftMaximumBlueColorLevel);
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                 if (!ConsoleResizeListener.WasResized(false))
-                    KernelColorTools.SetConsoleColor(new Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}"), true);
+                    ColorTools.SetConsoleColor(new Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}"), true);
             }
             else
             {
                 int ColorNum = RandomDriver.Random(DoorShiftSettings.DoorShiftMinimumColorLevel, DoorShiftSettings.DoorShiftMaximumColorLevel);
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
                 if (!ConsoleResizeListener.WasResized(false))
-                    KernelColorTools.SetConsoleColor(new Color(ColorNum), true);
+                    ColorTools.SetConsoleColor(new Color(ColorNum), true);
             }
 
             // Set max height and width

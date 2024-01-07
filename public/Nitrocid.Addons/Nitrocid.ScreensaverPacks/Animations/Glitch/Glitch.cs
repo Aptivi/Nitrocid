@@ -155,44 +155,44 @@ namespace Nitrocid.ScreensaverPacks.Animations.Glitch
                 case GlitchType.RandomLetter:
                     {
                         if (ColorLetter)
-                            KernelColorTools.SetConsoleColor(ColorLetterInstance);
+                            ColorTools.SetConsoleColor(ColorLetterInstance);
                         else
-                            KernelColorTools.SetConsoleColor(new Color(ConsoleColors.White));
+                            ColorTools.SetConsoleColor(new Color(ConsoleColors.White));
                         ConsoleWrapper.Write(Letter);
                         break;
                     }
                 case GlitchType.RandomSymbol:
                     {
                         if (ColorLetter)
-                            KernelColorTools.SetConsoleColor(ColorLetterInstance);
+                            ColorTools.SetConsoleColor(ColorLetterInstance);
                         else
-                            KernelColorTools.SetConsoleColor(new Color(ConsoleColors.White));
+                            ColorTools.SetConsoleColor(new Color(ConsoleColors.White));
                         ConsoleWrapper.Write(Symbol);
                         break;
                     }
                 case GlitchType.RedGreenBlueColor:
                     {
-                        KernelColorTools.SetConsoleColor(ColorBlockInstance, true);
+                        ColorTools.SetConsoleColor(ColorBlockInstance, true);
                         ConsoleWrapper.Write(" ");
                         break;
                     }
                 case GlitchType.RedGreenBlueColorWithRandomLetter:
                     {
                         if (ColorLetter)
-                            KernelColorTools.SetConsoleColor(ColorLetterInstance);
+                            ColorTools.SetConsoleColor(ColorLetterInstance);
                         else
-                            KernelColorTools.SetConsoleColor(new Color(ConsoleColors.White));
-                        KernelColorTools.SetConsoleColor(ColorBlockInstance, true);
+                            ColorTools.SetConsoleColor(new Color(ConsoleColors.White));
+                        ColorTools.SetConsoleColor(ColorBlockInstance, true);
                         ConsoleWrapper.Write(Letter);
                         break;
                     }
                 case GlitchType.RedGreenBlueColorWithRandomSymbol:
                     {
                         if (ColorLetter)
-                            KernelColorTools.SetConsoleColor(ColorLetterInstance);
+                            ColorTools.SetConsoleColor(ColorLetterInstance);
                         else
-                            KernelColorTools.SetConsoleColor(new Color(ConsoleColors.White));
-                        KernelColorTools.SetConsoleColor(ColorBlockInstance, true);
+                            ColorTools.SetConsoleColor(new Color(ConsoleColors.White));
+                        ColorTools.SetConsoleColor(ColorBlockInstance, true);
                         ConsoleWrapper.Write(Symbol);
                         break;
                     }

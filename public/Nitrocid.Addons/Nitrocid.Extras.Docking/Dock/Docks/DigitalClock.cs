@@ -95,7 +95,7 @@ namespace Nitrocid.Extras.Docking.Dock.Docks
                 if (timeStr != cachedTimeStr)
                 {
                     // Get a random color for the time
-                    var clockColor = KernelColorTools.GetRandomColor(ColorType.TrueColor);
+                    var clockColor = ColorTools.GetRandomColor(ColorType.TrueColor);
 
                     // Clear the buffered parts
                     screen.RemoveBufferedParts();

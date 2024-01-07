@@ -232,7 +232,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             posIdx = 0;
-            KernelColorTools.LoadBack();
+            ColorTools.LoadBack();
         }
 
         /// <inheritdoc/>

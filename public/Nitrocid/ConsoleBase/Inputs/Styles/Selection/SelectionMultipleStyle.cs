@@ -30,6 +30,7 @@ using Nitrocid.Languages;
 using Textify.General;
 using Textify.Sequences.Builder.Types;
 using Textify.Sequences.Tools;
+using Terminaux.Colors;
 
 namespace Nitrocid.ConsoleBase.Inputs.Styles.Selection
 {
@@ -323,14 +324,14 @@ namespace Nitrocid.ConsoleBase.Inputs.Styles.Selection
                             break;
                         case ConsoleKey.Enter:
                             ConsoleWrapper.CursorVisible = initialVisible;
-                            KernelColorTools.LoadBack();
+                            ColorTools.LoadBack();
                             bail = true;
                             break;
                         case ConsoleKey.Escape:
                             if (kiosk)
                                 break;
                             ConsoleWrapper.CursorVisible = initialVisible;
-                            KernelColorTools.LoadBack();
+                            ColorTools.LoadBack();
                             bail = true;
                             SelectedAnswers.Clear();
                             break;

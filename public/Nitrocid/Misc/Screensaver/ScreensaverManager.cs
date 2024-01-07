@@ -42,6 +42,7 @@ using Nitrocid.Kernel.Events;
 using Terminaux.Base.Buffered;
 using Nitrocid.Kernel.Power;
 using Nitrocid.Misc.Screensaver.Displays;
+using Terminaux.Colors;
 
 namespace Nitrocid.Misc.Screensaver
 {
@@ -370,7 +371,7 @@ namespace Nitrocid.Misc.Screensaver
         internal static void HandleSaverCancel(bool initialVisible)
         {
             DebugWriter.WriteDebug(DebugLevel.W, "Cancellation is pending. Cleaning everything up...");
-            KernelColorTools.LoadBack();
+            ColorTools.LoadBack();
             ConsoleWrapper.CursorVisible = initialVisible;
             DebugWriter.WriteDebug(DebugLevel.I, "All clean. Screensaver stopped.");
             SaverAutoReset.Set();

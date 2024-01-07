@@ -225,7 +225,7 @@ namespace Nitrocid.ConsoleBase.Themes
                     DebugWriter.WriteDebug(DebugLevel.I, "Kernel color type {0}, setting theme color {1}...", type.ToString(), themeColor.PlainSequence);
                     KernelColorTools.KernelColors[type] = themeColor;
                 }
-                KernelColorTools.LoadBack();
+                ColorTools.LoadBack();
                 Config.CreateConfig();
 
                 // Raise event

@@ -41,7 +41,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
             var black = new Color(ConsoleColors.Black);
 
             // Load the background
-            KernelColorTools.LoadBack(black);
+            ColorTools.LoadBack(black);
 
             // Select a variant
             int excVariantInt = RandomDriver.RandomIdx(Enum.GetNames<Variant>().Length);

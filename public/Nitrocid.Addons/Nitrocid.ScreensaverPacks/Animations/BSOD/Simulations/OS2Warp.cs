@@ -28,8 +28,8 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
     {
         public override void Simulate()
         {
-            KernelColorTools.LoadBack(new Color(ConsoleColors.Black));
-            KernelColorTools.SetConsoleColor(new Color(ConsoleColors.White));
+            ColorTools.LoadBack(new Color(ConsoleColors.Black));
+            ColorTools.SetConsoleColor(new Color(ConsoleColors.White));
 
             // Simulate an OS/2 kernel failure
             TextWriterColor.WritePlain("Exception in module: OS2KRNL", true);

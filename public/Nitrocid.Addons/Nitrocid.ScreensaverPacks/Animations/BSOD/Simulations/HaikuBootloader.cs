@@ -27,8 +27,8 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
     {
         public override void Simulate()
         {
-            KernelColorTools.LoadBack(new Color(ConsoleColors.Black));
-            KernelColorTools.SetConsoleColor(new Color(ConsoleColors.White));
+            ColorTools.LoadBack(new Color(ConsoleColors.Black));
+            ColorTools.SetConsoleColor(new Color(ConsoleColors.White));
 
             // Simulate a Haiku bootloader failure
             TextWriterColor.WritePlain("bios_ia32 stage1: Failed to load OS. Press any key to reboot...", true);

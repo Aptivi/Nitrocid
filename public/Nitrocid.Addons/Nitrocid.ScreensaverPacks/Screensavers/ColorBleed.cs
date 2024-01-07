@@ -264,7 +264,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             bleedStates.Clear();
-            KernelColorTools.LoadBack("0;0;0");
+            ColorTools.LoadBack("0;0;0");
             ConsoleWrapper.Clear();
             ConsoleWrapper.CursorVisible = false;
         }

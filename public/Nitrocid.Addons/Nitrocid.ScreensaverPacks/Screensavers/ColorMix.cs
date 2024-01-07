@@ -240,7 +240,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            KernelColorTools.LoadBack(new Color(ColorMixSettings.ColorMixBackgroundColor));
+            ColorTools.LoadBack(new Color(ColorMixSettings.ColorMixBackgroundColor));
         }
 
         /// <inheritdoc/>
@@ -276,14 +276,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                 if (!ConsoleResizeListener.WasResized(false))
                 {
-                    KernelColorTools.SetConsoleColor(Color.Empty);
-                    KernelColorTools.SetConsoleColor(colorStorage, true);
+                    ColorTools.SetConsoleColor(Color.Empty);
+                    ColorTools.SetConsoleColor(colorStorage, true);
                     TextWriterColor.WritePlain(" ", false);
                 }
                 else
                 {
                     DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "We're refilling...");
-                    KernelColorTools.LoadBack(new Color(ColorMixSettings.ColorMixBackgroundColor));
+                    ColorTools.LoadBack(new Color(ColorMixSettings.ColorMixBackgroundColor));
                 }
             }
 

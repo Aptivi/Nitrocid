@@ -38,6 +38,7 @@ using Nitrocid.ConsoleBase.Writers.FancyWriters;
 using Nitrocid.Kernel.Time.Converters;
 using Nitrocid.Kernel.Time;
 using Textify.General;
+using Terminaux.Colors;
 
 namespace Nitrocid.Extras.Calendar.Calendar
 {
@@ -80,7 +81,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
             var screen = new Screen();
             ScreenTools.SetCurrent(screen);
             ConsoleWrapper.CursorVisible = false;
-            KernelColorTools.LoadBack();
+            ColorTools.LoadBack();
             try
             {
                 while (!bail)
@@ -116,7 +117,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
             ScreenTools.UnsetCurrent(screen);
 
             // Close the file and clean up
-            KernelColorTools.LoadBack();
+            ColorTools.LoadBack();
         }
 
         private static void RenderKeybindings(ref Screen screen)

@@ -242,7 +242,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 var ColorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
                 if (!ConsoleResizeListener.WasResized(false))
                 {
-                    KernelColorTools.SetConsoleColor(ColorStorage, true);
+                    ColorTools.SetConsoleColor(ColorStorage, true);
                     ConsoleWrapper.Write(" ");
                 }
             }
@@ -252,7 +252,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
                 if (!ConsoleResizeListener.WasResized(false))
                 {
-                    KernelColorTools.SetConsoleColor(new Color(ColorNum), true);
+                    ColorTools.SetConsoleColor(new Color(ColorNum), true);
                     ConsoleWrapper.Write(" ");
                 }
             }

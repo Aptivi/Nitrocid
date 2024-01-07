@@ -504,7 +504,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Draw the frame
             if (!ConsoleResizeListener.WasResized(false))
-                BorderColor.WriteBorder(RampFrameStartWidth, RampCenterPosition - 2, RampFrameSpaces, 3, RampSettings.RampUseBorderColors ? new Color(RampSettings.RampLeftFrameColor) : KernelColorTools.GetGray());
+                BorderColor.WriteBorder(RampFrameStartWidth, RampCenterPosition - 2, RampFrameSpaces, 3, RampSettings.RampUseBorderColors ? new Color(RampSettings.RampLeftFrameColor) : ColorTools.GetGray());
 
             // Draw the ramp
             if (RampSettings.RampTrueColor)
@@ -516,7 +516,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 var RampCurrentColorInstance = new Color($"{Convert.ToInt32(RampCurrentColorRed)};{Convert.ToInt32(RampCurrentColorGreen)};{Convert.ToInt32(RampCurrentColorBlue)}");
 
                 // Set the console color and fill the ramp!
-                KernelColorTools.SetConsoleColor(RampCurrentColorInstance, true);
+                ColorTools.SetConsoleColor(RampCurrentColorInstance, true);
                 int step = 1;
                 while (step <= RampFrameSpaces)
                 {
@@ -536,7 +536,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     RampCurrentColorBlue -= RampColorBlueSteps;
                     DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got new current colors (R;G;B: {0};{1};{2}) subtracting from {3};{4};{5}", RampCurrentColorRed, RampCurrentColorGreen, RampCurrentColorBlue, RampColorRedSteps, RampColorGreenSteps, RampColorBlueSteps);
                     RampCurrentColorInstance = new Color($"{Convert.ToInt32(RampCurrentColorRed)};{Convert.ToInt32(RampCurrentColorGreen)};{Convert.ToInt32(RampCurrentColorBlue)}");
-                    KernelColorTools.SetConsoleColor(RampCurrentColorInstance, true);
+                    ColorTools.SetConsoleColor(RampCurrentColorInstance, true);
 
                     // Delay writing
                     step++;
@@ -550,7 +550,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 var RampCurrentColorInstance = new Color(Convert.ToInt32(RampCurrentColor));
 
                 // Set the console color and fill the ramp!
-                KernelColorTools.SetConsoleColor(RampCurrentColorInstance, true);
+                ColorTools.SetConsoleColor(RampCurrentColorInstance, true);
                 while (Convert.ToInt32(RampCurrentColor) != ColorNumTo)
                 {
                     if (ConsoleResizeListener.WasResized(false))
@@ -567,14 +567,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     RampCurrentColor -= RampColorSteps;
                     DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got new current colors (Normal: {0}) subtracting from {1}", RampCurrentColor, RampColorSteps);
                     RampCurrentColorInstance = new Color(Convert.ToInt32(RampCurrentColor));
-                    KernelColorTools.SetConsoleColor(RampCurrentColorInstance, true);
+                    ColorTools.SetConsoleColor(RampCurrentColorInstance, true);
 
                     // Delay writing
                     ThreadManager.SleepNoBlock(RampSettings.RampDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
                 }
             }
             ThreadManager.SleepNoBlock(RampSettings.RampNextRampDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
-            KernelColorTools.LoadBack();
+            ColorTools.LoadBack();
             ConsoleResizeListener.WasResized();
             ThreadManager.SleepNoBlock(RampSettings.RampDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }

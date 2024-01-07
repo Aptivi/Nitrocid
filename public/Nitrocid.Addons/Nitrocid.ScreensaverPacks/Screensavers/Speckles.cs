@@ -147,7 +147,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 double blockThresholdY = (double)blockDiffY / stepsY;
 
                 // Get the color
-                var color = KernelColorTools.GetRandomColor(ColorType.TrueColor);
+                var color = ColorTools.GetRandomColor(ColorType.TrueColor);
                 Blocks.Add((BlockX, BlockY, blockEndX, blockEndY, blockThresholdX, blockThresholdY, color));
             }
 
@@ -173,7 +173,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             // Reset resize sync
             ConsoleResizeListener.WasResized();
             ThreadManager.SleepNoBlock(SpecklesSettings.SpecklesDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
-            KernelColorTools.LoadBack();
+            ColorTools.LoadBack();
         }
 
         /// <inheritdoc/>

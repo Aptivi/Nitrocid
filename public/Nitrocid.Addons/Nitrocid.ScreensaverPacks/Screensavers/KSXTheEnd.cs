@@ -43,7 +43,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            KernelColorTools.LoadBack(new Color(0, 0, 0));
+            ColorTools.LoadBack(new Color(0, 0, 0));
             ConsoleWrapper.CursorVisible = false;
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
         }
@@ -83,7 +83,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Reset
             ConsoleResizeListener.WasResized();
-            KernelColorTools.LoadBack(black);
+            ColorTools.LoadBack(black);
         }
 
     }

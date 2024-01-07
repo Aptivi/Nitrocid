@@ -21,6 +21,7 @@ using System;
 using System.Text;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Shell.Prompts;
+using Terminaux.Colors;
 
 namespace Nitrocid.Extras.RssShell.RSS.Presets
 {
@@ -50,7 +51,7 @@ namespace Nitrocid.Extras.RssShell.RSS.Presets
             var PresetStringBuilder = new StringBuilder();
 
             // Opening
-            PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);
+            PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
             PresetStringBuilder.Append('[');
 
             // RSS site
@@ -58,7 +59,7 @@ namespace Nitrocid.Extras.RssShell.RSS.Presets
             PresetStringBuilder.AppendFormat("{0}", new Uri(RSSShellCommon.RSSFeedLink).Host);
 
             // Closing
-            PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);
+            PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
             PresetStringBuilder.Append("] > ");
             PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
 
@@ -72,7 +73,7 @@ namespace Nitrocid.Extras.RssShell.RSS.Presets
             var PresetStringBuilder = new StringBuilder();
 
             // Opening
-            PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);
+            PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
             PresetStringBuilder.Append('[');
 
             // RSS site
@@ -80,7 +81,7 @@ namespace Nitrocid.Extras.RssShell.RSS.Presets
             PresetStringBuilder.AppendFormat("rss.fabrikam.com/news/tech.rss");
 
             // Closing
-            PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);
+            PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
             PresetStringBuilder.Append("] > ");
             PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
 

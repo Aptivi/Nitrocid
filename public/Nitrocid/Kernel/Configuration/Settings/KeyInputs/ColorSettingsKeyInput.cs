@@ -40,7 +40,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
                 keyColorValue = new Color(keyColorString);
 
             // Get the color value from the color wheel
-            KernelColorTools.LoadBack(new Color(ConsoleColors.Black));
+            ColorTools.LoadBack(new Color(ConsoleColors.Black));
             string ColorValue = ColorSelector.OpenColorSelector(keyColorValue).PlainSequence;
 
             // Bail and return

@@ -155,14 +155,14 @@ namespace Nitrocid.ConsoleBase.Writers.ConsoleWriters
                 try
                 {
                     // Try to write to console
-                    KernelColorTools.SetConsoleColor(new Color(color), Highlight);
+                    ColorTools.SetConsoleColor(new Color(color), Highlight);
                     KernelColorTools.SetConsoleColor(KernelColorType.Background, !Highlight, false);
 
                     // Write the text to console
                     if (Highlight)
                     {
                         WritePlain(Text, false, vars);
-                        KernelColorTools.SetConsoleColor(new Color(color));
+                        ColorTools.SetConsoleColor(new Color(color));
                         KernelColorTools.SetConsoleColor(KernelColorType.Background, true);
                         WritePlain("", Line);
                     }
@@ -216,15 +216,15 @@ namespace Nitrocid.ConsoleBase.Writers.ConsoleWriters
                 try
                 {
                     // Try to write to console
-                    KernelColorTools.SetConsoleColor(new Color(ForegroundColor), Highlight);
-                    KernelColorTools.SetConsoleColor(new Color(BackgroundColor), !Highlight);
+                    ColorTools.SetConsoleColor(new Color(ForegroundColor), Highlight);
+                    ColorTools.SetConsoleColor(new Color(BackgroundColor), !Highlight);
 
                     // Write the text to console
                     if (Highlight)
                     {
                         WritePlain(Text, false, vars);
-                        KernelColorTools.SetConsoleColor(new Color(ForegroundColor));
-                        KernelColorTools.SetConsoleColor(new Color(BackgroundColor), true);
+                        ColorTools.SetConsoleColor(new Color(ForegroundColor));
+                        ColorTools.SetConsoleColor(new Color(BackgroundColor), true);
                         WritePlain("", Line);
                     }
                     else
@@ -274,14 +274,14 @@ namespace Nitrocid.ConsoleBase.Writers.ConsoleWriters
                 try
                 {
                     // Try to write to console
-                    KernelColorTools.SetConsoleColor(color, Highlight);
+                    ColorTools.SetConsoleColor(color, Highlight);
                     KernelColorTools.SetConsoleColor(KernelColorType.Background, !Highlight, false);
 
                     // Write the text to console
                     if (Highlight)
                     {
                         WritePlain(Text, false, vars);
-                        KernelColorTools.SetConsoleColor(color);
+                        ColorTools.SetConsoleColor(color);
                         KernelColorTools.SetConsoleColor(KernelColorType.Background, true);
                         WritePlain("", Line);
                     }
@@ -335,15 +335,15 @@ namespace Nitrocid.ConsoleBase.Writers.ConsoleWriters
                 try
                 {
                     // Try to write to console
-                    KernelColorTools.SetConsoleColor(ForegroundColor, Highlight);
-                    KernelColorTools.SetConsoleColor(BackgroundColor, !Highlight);
+                    ColorTools.SetConsoleColor(ForegroundColor, Highlight);
+                    ColorTools.SetConsoleColor(BackgroundColor, !Highlight);
 
                     // Write the text to console
                     if (Highlight)
                     {
                         WritePlain(Text, false, vars);
-                        KernelColorTools.SetConsoleColor(ForegroundColor);
-                        KernelColorTools.SetConsoleColor(BackgroundColor, true);
+                        ColorTools.SetConsoleColor(ForegroundColor);
+                        ColorTools.SetConsoleColor(BackgroundColor, true);
                         WritePlain("", Line);
                     }
                     else

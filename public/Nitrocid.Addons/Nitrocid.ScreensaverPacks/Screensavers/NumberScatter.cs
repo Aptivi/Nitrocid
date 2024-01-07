@@ -93,8 +93,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            KernelColorTools.SetConsoleColor(new Color(NumberScatterSettings.NumberScatterForegroundColor));
-            KernelColorTools.LoadBack(new Color(NumberScatterSettings.NumberScatterBackgroundColor));
+            ColorTools.SetConsoleColor(new Color(NumberScatterSettings.NumberScatterForegroundColor));
+            ColorTools.LoadBack(new Color(NumberScatterSettings.NumberScatterBackgroundColor));
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
         }
 

@@ -57,6 +57,7 @@ using Nitrocid.Misc.Text.Probers.Motd;
 using Nitrocid.Kernel.Power;
 using Nitrocid.Network.RPC;
 using Nitrocid.Kernel.Threading.Watchdog;
+using Terminaux.Colors;
 
 namespace Nitrocid.Kernel.Starting
 {
@@ -176,7 +177,7 @@ namespace Nitrocid.Kernel.Starting
                 DebugWriter.WriteDebug(DebugLevel.I, "Loaded privacy consents.");
 
                 // Load background
-                KernelColorTools.LoadBack();
+                ColorTools.LoadBack();
                 DebugWriter.WriteDebug(DebugLevel.I, "Loaded background.");
 
                 // Load splash
@@ -372,7 +373,7 @@ namespace Nitrocid.Kernel.Starting
             catch (Exception ex)
             {
                 // We could fail with the debugger enabled
-                KernelColorTools.LoadBack();
+                ColorTools.LoadBack();
                 if (!PowerManager.KernelShutdown)
                     SplashManager.BeginSplashOut(SplashContext.Rebooting);
                 else

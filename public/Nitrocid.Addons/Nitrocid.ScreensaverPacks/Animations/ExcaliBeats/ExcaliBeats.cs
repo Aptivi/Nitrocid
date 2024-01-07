@@ -101,9 +101,9 @@ namespace Nitrocid.ScreensaverPacks.Animations.ExcaliBeats
             DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Color threshold (R;G;B: {0};{1};{2})", ThresholdRed, ThresholdGreen, ThresholdBlue);
 
             // Flash!
-            KernelColorTools.LoadBack("255;255;255");
+            ColorTools.LoadBack("255;255;255");
             ThreadManager.SleepNoBlock(20, System.Threading.Thread.CurrentThread);
-            KernelColorTools.LoadBack(0);
+            ColorTools.LoadBack(0);
 
             // Populate the text
             string exStr = Settings.ExcaliBeatsExplicit ? "EXCALIBUR" : "EXCALIBEATS";

@@ -38,6 +38,7 @@ using Nitrocid.Misc.Screensaver;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Writers;
 using Textify.General;
+using Terminaux.Colors;
 
 namespace Nitrocid.Extras.BassBoom.Animations.Lyrics
 {
@@ -90,7 +91,7 @@ namespace Nitrocid.Extras.BassBoom.Animations.Lyrics
             // Neutralize the path
             path = FilesystemTools.NeutralizePath(path);
             ConsoleWrapper.CursorVisible = false;
-            KernelColorTools.LoadBack();
+            ColorTools.LoadBack();
 
             // Get the height and the maximum number of characters
             int infoHeight = ConsoleWrapper.WindowHeight - 3;

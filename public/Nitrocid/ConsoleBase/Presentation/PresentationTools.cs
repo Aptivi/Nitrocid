@@ -27,6 +27,7 @@ using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Base.Buffered;
 using Textify.General;
+using Terminaux.Colors;
 
 namespace Nitrocid.ConsoleBase.Presentation
 {
@@ -110,7 +111,7 @@ namespace Nitrocid.ConsoleBase.Presentation
                     var builder = new StringBuilder();
 
                     // Clear the console
-                    KernelColorTools.SetConsoleColor(KernelColorTools.GetColor(KernelColorType.Background), true);
+                    ColorTools.SetConsoleColor(KernelColorTools.GetColor(KernelColorType.Background), true);
                     builder.Append(
                         CsiSequences.GenerateCsiEraseInDisplay(2) +
                         CsiSequences.GenerateCsiCursorPosition(1, 1)

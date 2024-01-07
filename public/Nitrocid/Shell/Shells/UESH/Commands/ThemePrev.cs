@@ -29,6 +29,7 @@ using Nitrocid.Shell.ShellBase.Commands;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Terminaux.Colors;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -73,7 +74,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                     // even if that PromptSelection returned the abovementioned value, so bail if index is -2
                     if (categoryIndex == -2 || categoryIndex >= categoryNames.Length)
                     {
-                        KernelColorTools.LoadBack();
+                        ColorTools.LoadBack();
                         return 3;
                     }
 
@@ -102,7 +103,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                     // even if that PromptSelection returned the abovementioned value, so bail if index is -2
                     if (colorIndex == -2)
                     {
-                        KernelColorTools.LoadBack();
+                        ColorTools.LoadBack();
                         return 3;
                     }
                     else if (colorIndex != themeChoices.Count)

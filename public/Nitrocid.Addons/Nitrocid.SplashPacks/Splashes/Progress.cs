@@ -115,7 +115,7 @@ namespace Nitrocid.SplashPacks.Splashes
             );
 
             // Display the progress bar
-            if (!string.IsNullOrEmpty(SplashPackInit.SplashConfig.ProgressProgressColor) & KernelColorTools.TryParseColor(SplashPackInit.SplashConfig.ProgressProgressColor))
+            if (!string.IsNullOrEmpty(SplashPackInit.SplashConfig.ProgressProgressColor) & ColorTools.TryParseColor(SplashPackInit.SplashConfig.ProgressProgressColor))
             {
                 var ProgressColor = new Color(SplashPackInit.SplashConfig.ProgressProgressColor);
                 PresetStringBuilder.Append(
@@ -125,7 +125,7 @@ namespace Nitrocid.SplashPacks.Splashes
             else
             {
                 PresetStringBuilder.Append(
-                    ProgressBarColor.RenderProgress(Progress, 3, ConsoleWrapper.WindowHeight - 4, 4, 4, KernelColorTools.GetColor(KernelColorType.Progress), KernelColorTools.GetGray(), KernelColorTools.GetColor(KernelColorType.Background))
+                    ProgressBarColor.RenderProgress(Progress, 3, ConsoleWrapper.WindowHeight - 4, 4, 4, KernelColorTools.GetColor(KernelColorType.Progress), ColorTools.GetGray(), KernelColorTools.GetColor(KernelColorType.Background))
                 );
             }
             return PresetStringBuilder.ToString();

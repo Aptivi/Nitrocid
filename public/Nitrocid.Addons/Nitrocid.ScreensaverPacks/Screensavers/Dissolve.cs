@@ -230,7 +230,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            KernelColorTools.LoadBack(new Color(DissolveSettings.DissolveBackgroundColor));
+            ColorTools.LoadBack(new Color(DissolveSettings.DissolveBackgroundColor));
             ConsoleWrapper.CursorVisible = false;
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
         }
@@ -275,7 +275,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "We're refilling...");
                     ColorFilled = false;
                     goAhead = false;
-                    KernelColorTools.LoadBack(new Color(DissolveSettings.DissolveBackgroundColor));
+                    ColorTools.LoadBack(new Color(DissolveSettings.DissolveBackgroundColor));
                     CoveredPositions.Clear();
                 }
 
@@ -283,16 +283,16 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 {
                     if (ConsoleWrapper.CursorLeft >= EndLeft && ConsoleWrapper.CursorTop >= EndTop)
                     {
-                        KernelColorTools.SetConsoleColor(Color.Empty);
-                        KernelColorTools.SetConsoleColor(colorStorage, true);
+                        ColorTools.SetConsoleColor(Color.Empty);
+                        ColorTools.SetConsoleColor(colorStorage, true);
                         TextWriterColor.WritePlain(" ", false);
                         DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "We're now dissolving... L: {0} = {1} | T: {2} = {3}", ConsoleWrapper.CursorLeft, EndLeft, ConsoleWrapper.CursorTop, EndTop);
                         ColorFilled = true;
                     }
                     else
                     {
-                        KernelColorTools.SetConsoleColor(Color.Empty);
-                        KernelColorTools.SetConsoleColor(colorStorage, true);
+                        ColorTools.SetConsoleColor(Color.Empty);
+                        ColorTools.SetConsoleColor(colorStorage, true);
                         TextWriterColor.WritePlain(" ", false);
                     }
                 }
@@ -308,13 +308,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 if (!ConsoleResizeListener.WasResized(false))
                 {
                     ConsoleWrapper.SetCursorPosition(Left, Top);
-                    KernelColorTools.SetConsoleColor(new Color(DissolveSettings.DissolveBackgroundColor), true);
+                    ColorTools.SetConsoleColor(new Color(DissolveSettings.DissolveBackgroundColor), true);
                     ConsoleWrapper.Write(" ");
                     if (CoveredPositions.Count == (EndLeft + 1) * (EndTop + 1))
                     {
                         DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "We're refilling...");
                         ColorFilled = false;
-                        KernelColorTools.LoadBack(new Color(DissolveSettings.DissolveBackgroundColor));
+                        ColorTools.LoadBack(new Color(DissolveSettings.DissolveBackgroundColor));
                         CoveredPositions.Clear();
                     }
                 }
@@ -322,7 +322,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 {
                     DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "We're refilling...");
                     ColorFilled = false;
-                    KernelColorTools.LoadBack(new Color(DissolveSettings.DissolveBackgroundColor));
+                    ColorTools.LoadBack(new Color(DissolveSettings.DissolveBackgroundColor));
                     CoveredPositions.Clear();
                 }
             }

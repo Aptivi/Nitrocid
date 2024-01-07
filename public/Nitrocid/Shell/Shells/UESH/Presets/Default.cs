@@ -27,6 +27,7 @@ using Nitrocid.Network.Base;
 using Nitrocid.Shell.Prompts;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Users;
+using Terminaux.Colors;
 
 namespace Nitrocid.Shell.Shells.UESH.Presets
 {
@@ -56,7 +57,7 @@ namespace Nitrocid.Shell.Shells.UESH.Presets
             if (!KernelEntry.Maintenance)
             {
                 // Opening
-                PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);
+                PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
                 PresetStringBuilder.AppendFormat($"[{(Config.MainConfig.ShowShellCount ? $"{ShellManager.ShellStack.Count}:" : "")}");
 
                 // Current username
@@ -64,7 +65,7 @@ namespace Nitrocid.Shell.Shells.UESH.Presets
                 PresetStringBuilder.AppendFormat("{0}", UserManagement.CurrentUser.Username);
 
                 // "At" sign
-                PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);
+                PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
                 PresetStringBuilder.Append('@');
 
                 // Current hostname
@@ -72,7 +73,7 @@ namespace Nitrocid.Shell.Shells.UESH.Presets
                 PresetStringBuilder.AppendFormat("{0}", NetworkTools.HostName);
 
                 // Current directory and shell stack
-                PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);
+                PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
                 PresetStringBuilder.AppendFormat("]{0}:", CurrentDirectory.CurrentDir);
 
                 // User dollar sign
@@ -83,7 +84,7 @@ namespace Nitrocid.Shell.Shells.UESH.Presets
             else
             {
                 // Maintenance mode
-                PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);
+                PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
                 PresetStringBuilder.Append(Translate.DoTranslation("Maintenance Mode") + "> ");
                 PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
             }
@@ -100,7 +101,7 @@ namespace Nitrocid.Shell.Shells.UESH.Presets
             if (!KernelEntry.Maintenance)
             {
                 // Opening
-                PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);
+                PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
                 PresetStringBuilder.AppendFormat("[1:");
 
                 // Current username
@@ -108,7 +109,7 @@ namespace Nitrocid.Shell.Shells.UESH.Presets
                 PresetStringBuilder.AppendFormat("user");
 
                 // "At" sign
-                PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);
+                PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
                 PresetStringBuilder.Append('@');
 
                 // Current hostname
@@ -116,7 +117,7 @@ namespace Nitrocid.Shell.Shells.UESH.Presets
                 PresetStringBuilder.AppendFormat("host");
 
                 // Current directory and shell stack
-                PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);
+                PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
                 PresetStringBuilder.AppendFormat("]/home/user:");
 
                 // User dollar sign
@@ -127,7 +128,7 @@ namespace Nitrocid.Shell.Shells.UESH.Presets
             else
             {
                 // Maintenance mode
-                PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);
+                PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
                 PresetStringBuilder.Append(Translate.DoTranslation("Maintenance Mode") + "> ");
                 PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
             }

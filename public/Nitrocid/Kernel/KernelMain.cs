@@ -35,6 +35,7 @@ using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Arguments.Help;
 using Nitrocid.Kernel.Power;
+using Terminaux.Colors;
 
 namespace Nitrocid.Kernel
 {
@@ -122,7 +123,7 @@ namespace Nitrocid.Kernel
                             PowerSignalHandlers.DisposeHandlers();
 
                             // Clear the console
-                            KernelColorTools.LoadBack();
+                            ColorTools.LoadBack();
                         }
 
                         // Always switch back to the main environment

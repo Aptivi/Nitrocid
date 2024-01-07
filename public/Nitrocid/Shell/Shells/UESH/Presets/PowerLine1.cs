@@ -85,7 +85,7 @@ namespace Nitrocid.Shell.Shells.UESH.Presets
             else
             {
                 // Maintenance mode
-                PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);
+                PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
                 PresetStringBuilder.Append(Translate.DoTranslation("Maintenance Mode") + "> ");
                 PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
             }
@@ -120,7 +120,7 @@ namespace Nitrocid.Shell.Shells.UESH.Presets
             else
             {
                 // Maintenance mode
-                PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);
+                PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
                 PresetStringBuilder.Append(Translate.DoTranslation("Maintenance Mode") + "> ");
                 PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
             }

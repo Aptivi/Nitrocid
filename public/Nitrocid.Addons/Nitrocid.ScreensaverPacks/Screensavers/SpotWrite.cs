@@ -114,7 +114,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            KernelColorTools.SetConsoleColor(new Color(SpotWriteSettings.SpotWriteTextColor));
+            ColorTools.SetConsoleColor(new Color(SpotWriteSettings.SpotWriteTextColor));
             ConsoleWrapper.Clear();
         }
 

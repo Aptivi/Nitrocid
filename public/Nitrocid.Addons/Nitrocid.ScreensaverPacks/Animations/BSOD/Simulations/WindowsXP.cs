@@ -306,8 +306,8 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
         {
             // Windows 7's BSOD is the same as Windows XP's and Windows Vista's BSOD.
             var bugParams = BugChecks[BugCheckCode];
-            KernelColorTools.LoadBack(new Color(ConsoleColors.DarkBlue_000087));
-            KernelColorTools.SetConsoleColor(new Color(ConsoleColors.White));
+            ColorTools.LoadBack(new Color(ConsoleColors.DarkBlue_000087));
+            ColorTools.SetConsoleColor(new Color(ConsoleColors.White));
 
             // First, write the introduction
             TextWriterColor.WritePlain("\nA problem has been detected and Windows has been shut down to prevent damage\n" +

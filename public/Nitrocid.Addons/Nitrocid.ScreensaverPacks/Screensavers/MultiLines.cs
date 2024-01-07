@@ -262,7 +262,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverLogic()
         {
             ConsoleWrapper.CursorVisible = false;
-            KernelColorTools.LoadBack(new Color(MultiLinesSettings.MultiLinesBackgroundColor));
+            ColorTools.LoadBack(new Color(MultiLinesSettings.MultiLinesBackgroundColor));
 
             // Draw few lines
             string lineString = !string.IsNullOrWhiteSpace(MultiLinesSettings.MultiLinesLineChar) ? MultiLinesSettings.MultiLinesLineChar : "-";
@@ -278,13 +278,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     int BlueColorNum = RandomDriver.Random(MultiLinesSettings.MultiLinesMinimumBlueColorLevel, MultiLinesSettings.MultiLinesMaximumBlueColorLevel);
                     DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                     var ColorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
-                    KernelColorTools.SetConsoleColor(ColorStorage);
+                    ColorTools.SetConsoleColor(ColorStorage);
                 }
                 else
                 {
                     int color = RandomDriver.Random(MultiLinesSettings.MultiLinesMinimumColorLevel, MultiLinesSettings.MultiLinesMaximumColorLevel);
                     DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color ({0})", color);
-                    KernelColorTools.SetConsoleColor(new Color(color));
+                    ColorTools.SetConsoleColor(new Color(color));
                 }
 
                 // Now, draw a line

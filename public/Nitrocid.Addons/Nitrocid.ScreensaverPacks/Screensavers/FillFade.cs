@@ -244,21 +244,21 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "We're refilling...");
                     ColorFilled = false;
                     goAhead = false;
-                    KernelColorTools.LoadBack();
+                    ColorTools.LoadBack();
                 }
 
                 if (goAhead)
                 {
                     if (ConsoleWrapper.CursorLeft >= EndLeft && ConsoleWrapper.CursorTop >= EndTop)
                     {
-                        KernelColorTools.SetConsoleColor(currentColor, true);
+                        ColorTools.SetConsoleColor(currentColor, true);
                         TextWriterColor.WritePlain(" ", false);
                         DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "We're now dissolving... L: {0} = {1} | T: {2} = {3}", ConsoleWrapper.CursorLeft, EndLeft, ConsoleWrapper.CursorTop, EndTop);
                         ColorFilled = true;
                     }
                     else
                     {
-                        KernelColorTools.SetConsoleColor(currentColor, true);
+                        ColorTools.SetConsoleColor(currentColor, true);
                         TextWriterColor.WritePlain(" ", false);
                     }
                 }
@@ -289,7 +289,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     int CurrentColorBlueOut = (int)Math.Round(BlueColorNum - ThresholdBlue * CurrentStep);
                     DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut);
                     if (!ConsoleResizeListener.WasResized(false))
-                        KernelColorTools.LoadBack(new Color(CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut));
+                        ColorTools.LoadBack(new Color(CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut));
                 }
                 ChangeColor();
                 ColorFilled = false;

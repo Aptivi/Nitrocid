@@ -91,7 +91,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            KernelColorTools.LoadBack(new Color(ConsoleColors.Black));
+            ColorTools.LoadBack(new Color(ConsoleColors.Black));
             ConsoleWrapper.CursorVisible = false;
 
             // Use Kruskal's algorithm to generate a maze

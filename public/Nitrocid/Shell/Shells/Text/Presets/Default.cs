@@ -22,6 +22,7 @@ using System.Text;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Files.Editors.TextEdit;
 using Nitrocid.Shell.Prompts;
+using Terminaux.Colors;
 
 namespace Nitrocid.Shell.Shells.Text.Presets
 {
@@ -51,7 +52,7 @@ namespace Nitrocid.Shell.Shells.Text.Presets
             var PresetStringBuilder = new StringBuilder();
 
             // Opening
-            PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);
+            PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
             PresetStringBuilder.Append('[');
 
             // File name
@@ -63,7 +64,7 @@ namespace Nitrocid.Shell.Shells.Text.Presets
             PresetStringBuilder.AppendFormat("{0}", TextEditTools.WasTextEdited() ? "*" : "");
 
             // Closing
-            PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);
+            PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
             PresetStringBuilder.Append("] > ");
             PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
 
@@ -77,7 +78,7 @@ namespace Nitrocid.Shell.Shells.Text.Presets
             var PresetStringBuilder = new StringBuilder();
 
             // Opening
-            PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);
+            PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
             PresetStringBuilder.Append('[');
 
             // File name
@@ -89,7 +90,7 @@ namespace Nitrocid.Shell.Shells.Text.Presets
             PresetStringBuilder.AppendFormat("*");
 
             // Closing
-            PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);
+            PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
             PresetStringBuilder.Append("] > ");
             PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
 

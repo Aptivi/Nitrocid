@@ -127,7 +127,7 @@ namespace Nitrocid.SplashPacks.Splashes
 
             // Display the progress bar
             if (!string.IsNullOrEmpty(SplashPackInit.SplashConfig.PowerLineProgressProgressColor) &
-                KernelColorTools.TryParseColor(SplashPackInit.SplashConfig.PowerLineProgressProgressColor))
+                ColorTools.TryParseColor(SplashPackInit.SplashConfig.PowerLineProgressProgressColor))
             {
                 var ProgressColor = new Color(SplashPackInit.SplashConfig.PowerLineProgressProgressColor);
                 builder.Append(
@@ -137,7 +137,7 @@ namespace Nitrocid.SplashPacks.Splashes
             else
             {
                 builder.Append(
-                    ProgressBarColor.RenderProgress(Progress, 3, ConsoleWrapper.WindowHeight - 4, 4, 4, KernelColorTools.GetColor(KernelColorType.Progress), KernelColorTools.GetGray(), KernelColorTools.GetColor(KernelColorType.Background))
+                    ProgressBarColor.RenderProgress(Progress, 3, ConsoleWrapper.WindowHeight - 4, 4, 4, KernelColorTools.GetColor(KernelColorType.Progress), ColorTools.GetGray(), KernelColorTools.GetColor(KernelColorType.Background))
                 );
             }
             return builder.ToString();

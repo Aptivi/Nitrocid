@@ -274,7 +274,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
         /// <inheritdoc/>
         public override void ScreensaverPreparation() =>
-            KernelColorTools.LoadBack();
+            ColorTools.LoadBack();
 
         /// <inheritdoc/>
         public override void ScreensaverLogic()

@@ -91,7 +91,7 @@ namespace Nitrocid.ConsoleBase.Writers.ConsoleWriters
             {
                 try
                 {
-                    KernelColorTools.SetConsoleColor(new Color(color));
+                    ColorTools.SetConsoleColor(new Color(color));
                     KernelColorTools.SetConsoleColor(KernelColorType.Background, true);
 
                     // Write text slowly
@@ -120,8 +120,8 @@ namespace Nitrocid.ConsoleBase.Writers.ConsoleWriters
             {
                 try
                 {
-                    KernelColorTools.SetConsoleColor(new Color(ForegroundColor));
-                    KernelColorTools.SetConsoleColor(new Color(BackgroundColor));
+                    ColorTools.SetConsoleColor(new Color(ForegroundColor));
+                    ColorTools.SetConsoleColor(new Color(BackgroundColor));
 
                     // Write text slowly
                     WriteSlowlyPlain(msg, Line, MsEachLetter, vars);
@@ -148,7 +148,7 @@ namespace Nitrocid.ConsoleBase.Writers.ConsoleWriters
             {
                 try
                 {
-                    KernelColorTools.SetConsoleColor(color);
+                    ColorTools.SetConsoleColor(color);
                     KernelColorTools.SetConsoleColor(KernelColorType.Background, true);
 
                     // Write text slowly
@@ -177,8 +177,8 @@ namespace Nitrocid.ConsoleBase.Writers.ConsoleWriters
             {
                 try
                 {
-                    KernelColorTools.SetConsoleColor(ForegroundColor);
-                    KernelColorTools.SetConsoleColor(BackgroundColor, true);
+                    ColorTools.SetConsoleColor(ForegroundColor);
+                    ColorTools.SetConsoleColor(BackgroundColor, true);
 
                     // Write text slowly
                     WriteSlowlyPlain(msg, Line, MsEachLetter, vars);

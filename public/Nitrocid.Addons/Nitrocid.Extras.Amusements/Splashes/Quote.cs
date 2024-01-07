@@ -47,7 +47,7 @@ namespace Nitrocid.Extras.Amusements.Splashes
             if (_refresh)
             {
                 _selectedQuote = RandomQuotes.RenderQuote();
-                _quoteColor = KernelColorTools.GetRandomColor(ColorType.TrueColor);
+                _quoteColor = ColorTools.GetRandomColor(ColorType.TrueColor);
             }
             _refresh = false;
             return base.Opening(context);

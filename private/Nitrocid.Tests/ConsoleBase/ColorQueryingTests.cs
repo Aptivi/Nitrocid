@@ -144,7 +144,7 @@ namespace Nitrocid.Tests.ConsoleBase
         {
             var expected = KernelColorTools.GetColor(KernelColorType.NeutralText);
             Should.NotThrow(() => KernelColorTools.SetColor(KernelColorType.Background, new Color(255, 255, 255)));
-            var color = KernelColorTools.GetGray();
+            var color = ColorTools.GetGray();
             color.ShouldBe(expected);
         }
 
@@ -158,7 +158,7 @@ namespace Nitrocid.Tests.ConsoleBase
         {
             var expected = new Color(ConsoleColors.Gray);
             Should.NotThrow(() => KernelColorTools.SetColor(KernelColorType.Background, new Color(0, 0, 0)));
-            var color = KernelColorTools.GetGray();
+            var color = ColorTools.GetGray();
             color.ShouldBe(expected);
         }
 
@@ -170,7 +170,7 @@ namespace Nitrocid.Tests.ConsoleBase
         public void TestGetRandomColorDefault()
         {
             Color color = Color.Empty;
-            Should.NotThrow(() => color = KernelColorTools.GetRandomColor());
+            Should.NotThrow(() => color = ColorTools.GetRandomColor());
             color.ShouldNotBeNull();
             color.Type.ShouldBe(ColorType.TrueColor);
         }
@@ -187,7 +187,7 @@ namespace Nitrocid.Tests.ConsoleBase
             {
                 Color color = Color.Empty;
                 var type = (ColorType)Enum.Parse(typeof(ColorType), typeName);
-                Should.NotThrow(() => color = KernelColorTools.GetRandomColor(type));
+                Should.NotThrow(() => color = ColorTools.GetRandomColor(type));
                 type = color.PlainSequence.Contains(';') ?
                        ColorType.TrueColor : color.ColorEnum255 != (ConsoleColors)(-1) ?
                        ColorType._255Color : ColorType._16Color;
@@ -210,7 +210,7 @@ namespace Nitrocid.Tests.ConsoleBase
                 Color expected = Color.Empty;
                 Color color = null;
                 while (color is null || color != expected)
-                    Should.NotThrow(() => color = KernelColorTools.GetRandomColor(type));
+                    Should.NotThrow(() => color = ColorTools.GetRandomColor(type));
                 color.ShouldNotBeNull();
                 color.ShouldBe(expected);
             }
@@ -230,7 +230,7 @@ namespace Nitrocid.Tests.ConsoleBase
                 var type = (ColorType)Enum.Parse(typeof(ColorType), typeName);
                 Color unexpected = Color.Empty;
                 for (int i = 1; i <= 100; i++)
-                    Should.NotThrow(() => colors.Add(KernelColorTools.GetRandomColor(type, false)));
+                    Should.NotThrow(() => colors.Add(ColorTools.GetRandomColor(type, false)));
                 colors.ShouldNotBeEmpty();
                 colors.ShouldNotContain(unexpected);
             }
@@ -245,7 +245,7 @@ namespace Nitrocid.Tests.ConsoleBase
         public bool TestTryParseColorFromHex(string TargetHex)
         {
             Console.WriteLine($"Trying {TargetHex}...");
-            return KernelColorTools.TryParseColor(TargetHex);
+            return ColorTools.TryParseColor(TargetHex);
         }
 
         /// <summary>
@@ -258,7 +258,7 @@ namespace Nitrocid.Tests.ConsoleBase
         public bool TestTryParseColorFromColorNum(int TargetColorNum)
         {
             Console.WriteLine($"Trying colornum {TargetColorNum}...");
-            return KernelColorTools.TryParseColor(TargetColorNum);
+            return ColorTools.TryParseColor(TargetColorNum);
         }
 
         /// <summary>
@@ -283,7 +283,7 @@ namespace Nitrocid.Tests.ConsoleBase
         public bool TestTryParseColorFromRGB(int R, int G, int B)
         {
             Console.WriteLine($"Trying rgb {R}, {G}, {B}...");
-            return KernelColorTools.TryParseColor(R, G, B);
+            return ColorTools.TryParseColor(R, G, B);
         }
 
         /// <summary>
@@ -308,7 +308,7 @@ namespace Nitrocid.Tests.ConsoleBase
         public bool TestTryParseColorFromSpecifier(string specifier)
         {
             Console.WriteLine($"Trying rgb specifier {specifier}...");
-            return KernelColorTools.TryParseColor(specifier);
+            return ColorTools.TryParseColor(specifier);
         }
 
     }

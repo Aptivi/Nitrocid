@@ -87,7 +87,7 @@ namespace Nitrocid.ConsoleBase.Writers.FancyWriters
         /// <param name="Top">The progress position from the top</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         public static void WriteVerticalProgress(double Progress, int Left, int Top, bool DrawBorder = true) =>
-            WriteVerticalProgress(Progress, Left, Top, 2, 0, KernelColorTools.GetColor(KernelColorType.Progress), KernelColorTools.GetGray(), DrawBorder);
+            WriteVerticalProgress(Progress, Left, Top, 2, 0, KernelColorTools.GetColor(KernelColorType.Progress), ColorTools.GetGray(), DrawBorder);
 
         /// <summary>
         /// Writes the progress bar
@@ -98,7 +98,7 @@ namespace Nitrocid.ConsoleBase.Writers.FancyWriters
         /// <param name="HeightOffset">Height offset</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         public static void WriteVerticalProgress(double Progress, int Left, int Top, int HeightOffset, bool DrawBorder = true) =>
-             WriteVerticalProgress(Progress, Left, Top, HeightOffset, 0, KernelColorTools.GetColor(KernelColorType.Progress), KernelColorTools.GetGray(), DrawBorder);
+             WriteVerticalProgress(Progress, Left, Top, HeightOffset, 0, KernelColorTools.GetColor(KernelColorType.Progress), ColorTools.GetGray(), DrawBorder);
 
         /// <summary>
         /// Writes the progress bar
@@ -110,7 +110,7 @@ namespace Nitrocid.ConsoleBase.Writers.FancyWriters
         /// <param name="BottomHeightOffset">Height offset from the bottom</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         public static void WriteVerticalProgress(double Progress, int Left, int Top, int TopHeightOffset, int BottomHeightOffset, bool DrawBorder = true) =>
-            WriteVerticalProgress(Progress, Left, Top, TopHeightOffset, BottomHeightOffset, KernelColorTools.GetColor(KernelColorType.Progress), KernelColorTools.GetGray(), DrawBorder);
+            WriteVerticalProgress(Progress, Left, Top, TopHeightOffset, BottomHeightOffset, KernelColorTools.GetColor(KernelColorType.Progress), ColorTools.GetGray(), DrawBorder);
 
         /// <summary>
         /// Writes the progress bar
@@ -121,7 +121,7 @@ namespace Nitrocid.ConsoleBase.Writers.FancyWriters
         /// <param name="ProgressColor">The progress bar color</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         public static void WriteVerticalProgress(double Progress, int Left, int Top, ConsoleColors ProgressColor, bool DrawBorder = true) =>
-            WriteVerticalProgress(Progress, Left, Top, 2, 0, new Color(ProgressColor), KernelColorTools.GetGray(), DrawBorder);
+            WriteVerticalProgress(Progress, Left, Top, 2, 0, new Color(ProgressColor), ColorTools.GetGray(), DrawBorder);
 
         /// <summary>
         /// Writes the progress bar
@@ -133,7 +133,7 @@ namespace Nitrocid.ConsoleBase.Writers.FancyWriters
         /// <param name="HeightOffset">Height offset</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         public static void WriteVerticalProgress(double Progress, int Left, int Top, int HeightOffset, ConsoleColors ProgressColor, bool DrawBorder = true) =>
-            WriteVerticalProgress(Progress, Left, Top, HeightOffset, 0, new Color(ProgressColor), KernelColorTools.GetGray(), DrawBorder);
+            WriteVerticalProgress(Progress, Left, Top, HeightOffset, 0, new Color(ProgressColor), ColorTools.GetGray(), DrawBorder);
 
         /// <summary>
         /// Writes the progress bar
@@ -146,7 +146,7 @@ namespace Nitrocid.ConsoleBase.Writers.FancyWriters
         /// <param name="BottomHeightOffset">Height offset from the bottom</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         public static void WriteVerticalProgress(double Progress, int Left, int Top, int TopHeightOffset, int BottomHeightOffset, ConsoleColors ProgressColor, bool DrawBorder = true) =>
-            WriteVerticalProgress(Progress, Left, Top, TopHeightOffset, BottomHeightOffset, new Color(ProgressColor), KernelColorTools.GetGray(), DrawBorder);
+            WriteVerticalProgress(Progress, Left, Top, TopHeightOffset, BottomHeightOffset, new Color(ProgressColor), ColorTools.GetGray(), DrawBorder);
 
         /// <summary>
         /// Writes the progress bar
@@ -206,7 +206,7 @@ namespace Nitrocid.ConsoleBase.Writers.FancyWriters
         /// <param name="ProgressColor">The progress bar color</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         public static void WriteVerticalProgress(double Progress, int Left, int Top, Color ProgressColor, bool DrawBorder = true) =>
-            WriteVerticalProgress(Progress, Left, Top, 2, 0, ProgressColor, KernelColorTools.GetGray(), DrawBorder);
+            WriteVerticalProgress(Progress, Left, Top, 2, 0, ProgressColor, ColorTools.GetGray(), DrawBorder);
 
         /// <summary>
         /// Writes the progress bar
@@ -218,7 +218,7 @@ namespace Nitrocid.ConsoleBase.Writers.FancyWriters
         /// <param name="HeightOffset">Height offset</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         public static void WriteVerticalProgress(double Progress, int Left, int Top, int HeightOffset, Color ProgressColor, bool DrawBorder = true) =>
-            WriteVerticalProgress(Progress, Left, Top, HeightOffset, 0, ProgressColor, KernelColorTools.GetGray(), DrawBorder);
+            WriteVerticalProgress(Progress, Left, Top, HeightOffset, 0, ProgressColor, ColorTools.GetGray(), DrawBorder);
 
         /// <summary>
         /// Writes the progress bar
@@ -231,7 +231,7 @@ namespace Nitrocid.ConsoleBase.Writers.FancyWriters
         /// <param name="BottomHeightOffset">Height offset from the bottom</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         public static void WriteVerticalProgress(double Progress, int Left, int Top, int TopHeightOffset, int BottomHeightOffset, Color ProgressColor, bool DrawBorder = true) =>
-            WriteVerticalProgress(Progress, Left, Top, TopHeightOffset, BottomHeightOffset, ProgressColor, KernelColorTools.GetGray(), DrawBorder);
+            WriteVerticalProgress(Progress, Left, Top, TopHeightOffset, BottomHeightOffset, ProgressColor, ColorTools.GetGray(), DrawBorder);
 
         /// <summary>
         /// Writes the progress bar

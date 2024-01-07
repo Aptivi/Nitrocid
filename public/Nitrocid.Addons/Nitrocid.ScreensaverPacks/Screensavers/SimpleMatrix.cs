@@ -65,8 +65,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            KernelColorTools.LoadBack(new Color(ConsoleColors.Black));
-            KernelColorTools.SetConsoleColor(ConsoleColors.Green);
+            ColorTools.LoadBack(new Color(ConsoleColors.Black));
+            ColorTools.SetConsoleColor(ConsoleColors.Green);
         }
 
         /// <inheritdoc/>

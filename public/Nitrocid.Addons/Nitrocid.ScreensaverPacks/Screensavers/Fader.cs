@@ -235,7 +235,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             base.ScreensaverPreparation();
-            KernelColorTools.LoadBack(new Color(FaderSettings.FaderBackgroundColor));
+            ColorTools.LoadBack(new Color(FaderSettings.FaderBackgroundColor));
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
             FaderSettingsInstance = new Animations.Fader.FaderSettings()
             {

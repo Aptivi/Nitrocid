@@ -21,6 +21,7 @@ using System.IO;
 using System.Text;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Shell.Prompts;
+using Terminaux.Colors;
 
 namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Presets
 {
@@ -50,7 +51,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Presets
             var PresetStringBuilder = new StringBuilder();
 
             // Opening
-            PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);
+            PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
             PresetStringBuilder.Append('[');
 
             // File name
@@ -62,7 +63,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Presets
             PresetStringBuilder.AppendFormat("{0}", ArchiveShellCommon.CurrentArchiveDirectory);
 
             // Closing
-            PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);
+            PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
             PresetStringBuilder.Append("] > ");
             PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
 
@@ -76,7 +77,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Presets
             var PresetStringBuilder = new StringBuilder();
 
             // Opening
-            PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);
+            PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
             PresetStringBuilder.Append('[');
 
             // File name
@@ -88,7 +89,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Presets
             PresetStringBuilder.AppendFormat("/dir");
 
             // Closing
-            PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);
+            PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
             PresetStringBuilder.Append("] > ");
             PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
 

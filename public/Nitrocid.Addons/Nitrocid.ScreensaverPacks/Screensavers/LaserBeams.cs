@@ -269,7 +269,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverLogic()
         {
             ConsoleWrapper.CursorVisible = false;
-            KernelColorTools.LoadBack(new Color(LaserBeamsSettings.LaserBeamsBackgroundColor));
+            ColorTools.LoadBack(new Color(LaserBeamsSettings.LaserBeamsBackgroundColor));
 
             // Populate the laser ends
             laserEnds.AddRange(

@@ -27,6 +27,7 @@ using Nitrocid.Misc.Screensaver;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using Terminaux.Colors;
 
 namespace Nitrocid.Extras.Docking.Dock
 {
@@ -80,14 +81,14 @@ namespace Nitrocid.Extras.Docking.Dock
             }
             catch (Exception ex)
             {
-                KernelColorTools.LoadBack();
+                ColorTools.LoadBack();
                 DebugWriter.WriteDebug(DebugLevel.E, $"Screen dock crashed [{dockInstance.DockName}]: {ex.Message}");
                 DebugWriter.WriteDebugStackTrace(ex);
                 InfoBoxColor.WriteInfoBoxKernelColor(Translate.DoTranslation("Screen dock has crashed") + $": {ex.Message}", KernelColorType.Error);
             }
             finally
             {
-                KernelColorTools.LoadBack();
+                ColorTools.LoadBack();
                 ScreensaverManager.AllowLock();
             }
         }

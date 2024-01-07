@@ -35,6 +35,7 @@ using Nitrocid.ConsoleBase.Inputs;
 using Terminaux.Base.Buffered;
 using System.Text;
 using Nitrocid.ConsoleBase.Writers.FancyWriters;
+using Terminaux.Colors;
 
 namespace Nitrocid.Extras.Timers.Timers
 {
@@ -93,7 +94,7 @@ namespace Nitrocid.Extras.Timers.Timers
             Screen timerScreen = new();
             ScreenPart timerScreenPart = new();
             ScreenTools.SetCurrent(timerScreen);
-            KernelColorTools.LoadBack();
+            ColorTools.LoadBack();
 
             // Populate the figlet font (if any)
             var FigletFont = FigletTools.GetFigletFont(TimerFigletFont);
@@ -110,7 +111,7 @@ namespace Nitrocid.Extras.Timers.Timers
                 if (prompted || ConsoleResizeListener.WasResized())
                 {
                     prompted = false;
-                    KernelColorTools.LoadBack();
+                    ColorTools.LoadBack();
                 }
                 ConsoleWrapper.CursorVisible = false;
                 var builder = new StringBuilder();
@@ -159,7 +160,7 @@ namespace Nitrocid.Extras.Timers.Timers
 
                 // Print the border
                 builder.Append(
-                    TextWriterWhereColor.RenderWhere(new string('═', ConsoleWrapper.WindowWidth), 0, KeysTextTopPosition - 2, true, KernelColorTools.GetGray(), KernelColorTools.GetColor(KernelColorType.Background))
+                    TextWriterWhereColor.RenderWhere(new string('═', ConsoleWrapper.WindowWidth), 0, KeysTextTopPosition - 2, true, ColorTools.GetGray(), KernelColorTools.GetColor(KernelColorType.Background))
                 );
 
                 // Return the final result

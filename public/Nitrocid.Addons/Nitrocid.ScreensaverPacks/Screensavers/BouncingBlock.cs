@@ -267,8 +267,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverLogic()
         {
             ConsoleWrapper.CursorVisible = false;
-            KernelColorTools.SetConsoleColor(new Color(BouncingBlockSettings.BouncingBlockForegroundColor));
-            KernelColorTools.LoadBack(new Color(BouncingBlockSettings.BouncingBlockBackgroundColor));
+            ColorTools.SetConsoleColor(new Color(BouncingBlockSettings.BouncingBlockForegroundColor));
+            ColorTools.LoadBack(new Color(BouncingBlockSettings.BouncingBlockBackgroundColor));
             DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Row block: {0} | Column block: {1}", RowBlock, ColumnBlock);
 
             // Initialize the color

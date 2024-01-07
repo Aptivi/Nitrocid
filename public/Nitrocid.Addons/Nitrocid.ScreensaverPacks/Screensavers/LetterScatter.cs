@@ -100,8 +100,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             // Variable preparations
             characters.Clear();
-            KernelColorTools.SetConsoleColor(new Color(LetterScatterSettings.LetterScatterForegroundColor));
-            KernelColorTools.LoadBack(new Color(LetterScatterSettings.LetterScatterBackgroundColor));
+            ColorTools.SetConsoleColor(new Color(LetterScatterSettings.LetterScatterForegroundColor));
+            ColorTools.LoadBack(new Color(LetterScatterSettings.LetterScatterBackgroundColor));
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
         }
 

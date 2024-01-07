@@ -136,7 +136,7 @@ namespace Nitrocid.SplashPacks.Splashes
                 int CurrentColorGreenOut = (int)Math.Round(GreenColorNum - ThresholdGreen * _currentStep);
                 int CurrentColorBlueOut = (int)Math.Round(BlueColorNum - ThresholdBlue * _currentStep);
                 DebugWriter.WriteDebug(DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
-                KernelColorTools.LoadBack(new Color($"{CurrentColorRedOut};{CurrentColorGreenOut};{CurrentColorBlueOut}"));
+                ColorTools.LoadBack(new Color($"{CurrentColorRedOut};{CurrentColorGreenOut};{CurrentColorBlueOut}"));
                 _currentStep++;
                 if (_currentStep > _beatFaderMaxSteps)
                     _currentStep = 0;

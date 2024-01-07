@@ -86,7 +86,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
-            KernelColorTools.LoadBack(0);
+            ColorTools.LoadBack(0);
             ConsoleWrapper.Clear();
             ConsoleWrapper.CursorVisible = false;
         }
@@ -212,12 +212,12 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     else
                     {
                         // Show only the white background
-                        KernelColorTools.LoadBack(new Color(ConsoleColors.White));
+                        ColorTools.LoadBack(new Color(ConsoleColors.White));
                         ThreadManager.SleepNoBlock(LightningSettings.LightningDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
-                        KernelColorTools.LoadBack(new Color(ConsoleColors.Black));
+                        ColorTools.LoadBack(new Color(ConsoleColors.Black));
                     }
                 }
-                KernelColorTools.LoadBack(new Color(ConsoleColors.Black));
+                ColorTools.LoadBack(new Color(ConsoleColors.Black));
             }
             ThreadManager.SleepNoBlock(LightningSettings.LightningDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }

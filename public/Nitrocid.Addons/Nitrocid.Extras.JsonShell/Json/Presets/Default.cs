@@ -22,6 +22,7 @@ using System.Text;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Extras.JsonShell.Tools;
 using Nitrocid.Shell.Prompts;
+using Terminaux.Colors;
 
 namespace Nitrocid.Extras.JsonShell.Json.Presets
 {
@@ -51,7 +52,7 @@ namespace Nitrocid.Extras.JsonShell.Json.Presets
             var PresetStringBuilder = new StringBuilder();
 
             // Opening
-            PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);
+            PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
             PresetStringBuilder.Append('[');
 
             // File name
@@ -63,7 +64,7 @@ namespace Nitrocid.Extras.JsonShell.Json.Presets
             PresetStringBuilder.AppendFormat("{0}", JsonTools.WasJsonEdited() ? "*" : "");
 
             // Closing
-            PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);
+            PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
             PresetStringBuilder.Append("] > ");
             PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
 
@@ -77,7 +78,7 @@ namespace Nitrocid.Extras.JsonShell.Json.Presets
             var PresetStringBuilder = new StringBuilder();
 
             // Opening
-            PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);
+            PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
             PresetStringBuilder.Append('[');
 
             // File name
@@ -89,7 +90,7 @@ namespace Nitrocid.Extras.JsonShell.Json.Presets
             PresetStringBuilder.AppendFormat("*");
 
             // Closing
-            PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);
+            PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
             PresetStringBuilder.Append("] > ");
             PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
 

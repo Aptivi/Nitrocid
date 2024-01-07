@@ -86,9 +86,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             double NoiseDense = (NoiseSettings.NoiseDensity > 100 ? 100 : NoiseSettings.NoiseDensity) / 100d;
 
             ConsoleWrapper.CursorVisible = false;
-            KernelColorTools.LoadBack(new Color(ConsoleColors.DarkGray));
+            ColorTools.LoadBack(new Color(ConsoleColors.DarkGray));
             ConsoleWrapper.Clear();
-            KernelColorTools.SetConsoleColor(ConsoleColors.Black, true);
+            ColorTools.SetConsoleColor(ConsoleColors.Black, true);
 
             // Select random positions to generate noise
             int AmountOfBlocks = ConsoleWrapper.WindowWidth * ConsoleWrapper.WindowHeight;

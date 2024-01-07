@@ -94,7 +94,7 @@ namespace Nitrocid.ConsoleBase.Inputs.Styles.InfoboxTitled
             {
                 infoBoxScreenPart.AddDynamicText(() =>
                 {
-                    KernelColorTools.SetConsoleColor(KernelColorTools.GetColor(KernelColorType.Background), true);
+                    ColorTools.SetConsoleColor(KernelColorTools.GetColor(KernelColorType.Background), true);
                     return CsiSequences.GenerateCsiEraseInDisplay(2) + CsiSequences.GenerateCsiCursorPosition(1, 1);
                 });
                 ScreenTools.SetCurrent(screen);
@@ -797,7 +797,7 @@ namespace Nitrocid.ConsoleBase.Inputs.Styles.InfoboxTitled
             {
                 infoBoxScreenPart.AddDynamicText(() =>
                 {
-                    KernelColorTools.SetConsoleColor(KernelColorTools.GetColor(KernelColorType.Background), true);
+                    ColorTools.SetConsoleColor(KernelColorTools.GetColor(KernelColorType.Background), true);
                     return CsiSequences.GenerateCsiEraseInDisplay(2) + CsiSequences.GenerateCsiCursorPosition(1, 1);
                 });
                 ScreenTools.SetCurrent(screen);

@@ -36,6 +36,7 @@ using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Base.Buffered;
 using Textify.General;
+using Terminaux.Colors;
 
 namespace Nitrocid.ConsoleBase.Interactive
 {
@@ -136,7 +137,7 @@ namespace Nitrocid.ConsoleBase.Interactive
                 ScreenTools.UnsetCurrent(screen);
 
                 // Clear the console to clean up
-                KernelColorTools.LoadBack();
+                ColorTools.LoadBack();
 
                 // If there is a crash, notify the user about it
                 if (notifyCrash)

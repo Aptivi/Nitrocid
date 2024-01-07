@@ -266,20 +266,20 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             // Select a color
             if (LinesSettings.LinesTrueColor)
             {
-                KernelColorTools.LoadBack(new Color(LinesSettings.LinesBackgroundColor));
+                ColorTools.LoadBack(new Color(LinesSettings.LinesBackgroundColor));
                 int RedColorNum = RandomDriver.Random(LinesSettings.LinesMinimumRedColorLevel, LinesSettings.LinesMaximumRedColorLevel);
                 int GreenColorNum = RandomDriver.Random(LinesSettings.LinesMinimumGreenColorLevel, LinesSettings.LinesMaximumGreenColorLevel);
                 int BlueColorNum = RandomDriver.Random(LinesSettings.LinesMinimumBlueColorLevel, LinesSettings.LinesMaximumBlueColorLevel);
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                 var ColorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
-                KernelColorTools.SetConsoleColor(ColorStorage);
+                ColorTools.SetConsoleColor(ColorStorage);
             }
             else
             {
-                KernelColorTools.LoadBack(new Color(LinesSettings.LinesBackgroundColor));
+                ColorTools.LoadBack(new Color(LinesSettings.LinesBackgroundColor));
                 int color = RandomDriver.Random(LinesSettings.LinesMinimumColorLevel, LinesSettings.LinesMaximumColorLevel);
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color ({0})", color);
-                KernelColorTools.SetConsoleColor(new Color(color));
+                ColorTools.SetConsoleColor(new Color(color));
             }
 
             // Draw a line

@@ -28,8 +28,8 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
     {
         public override void Simulate()
         {
-            KernelColorTools.LoadBack(new Color(ConsoleColors.DarkBlue_000087));
-            KernelColorTools.SetConsoleColor(new Color(ConsoleColors.White));
+            ColorTools.LoadBack(new Color(ConsoleColors.DarkBlue_000087));
+            ColorTools.SetConsoleColor(new Color(ConsoleColors.White));
 
             // Display technical information
             TextWriterColor.WritePlain($"\n*** STOP: 0x0000007B (0x{RandomDriver.Random():X8}, 0x{RandomDriver.Random():X8}, 0x{RandomDriver.Random():X8}, 0x{RandomDriver.Random():X8})\n", true);

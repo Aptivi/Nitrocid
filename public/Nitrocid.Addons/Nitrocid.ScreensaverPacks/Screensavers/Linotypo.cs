@@ -266,7 +266,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            KernelColorTools.SetConsoleColor(new Color(LinotypoSettings.LinotypoTextColor));
+            ColorTools.SetConsoleColor(new Color(LinotypoSettings.LinotypoTextColor));
             ConsoleWrapper.Clear();
             ConsoleWrapper.CursorVisible = false;
             CurrentColumn = 1;

@@ -104,7 +104,7 @@ namespace Nitrocid.ConsoleBase.Themes
 
             // Clear the screen
             ConsoleWrapper.CursorVisible = false;
-            KernelColorTools.LoadBack();
+            ColorTools.LoadBack();
 
             // Render the elements
             bool exiting = false;
@@ -117,7 +117,7 @@ namespace Nitrocid.ConsoleBase.Themes
 
                 // Render the border
                 int bindingsY = ConsoleWrapper.WindowHeight - 2;
-                TextWriterWhereColor.WriteWhereColor(new string('═', ConsoleWrapper.WindowWidth), 0, bindingsY - 2, true, KernelColorTools.GetGray());
+                TextWriterWhereColor.WriteWhereColor(new string('═', ConsoleWrapper.WindowWidth), 0, bindingsY - 2, true, ColorTools.GetGray());
 
                 // Render the bindings
                 string bindings = $"[ENTER] {Translate.DoTranslation("Done")} - [<-|->] {Translate.DoTranslation("Switch Types")}";
@@ -163,7 +163,7 @@ namespace Nitrocid.ConsoleBase.Themes
             }
 
             // Clean up
-            KernelColorTools.LoadBack();
+            ColorTools.LoadBack();
         }
     }
 }

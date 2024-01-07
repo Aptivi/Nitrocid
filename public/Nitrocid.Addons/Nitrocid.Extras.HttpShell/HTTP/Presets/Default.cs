@@ -21,6 +21,7 @@ using System.Text;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Languages;
 using Nitrocid.Shell.Prompts;
+using Terminaux.Colors;
 
 namespace Nitrocid.Extras.HttpShell.HTTP.Presets
 {
@@ -50,7 +51,7 @@ namespace Nitrocid.Extras.HttpShell.HTTP.Presets
             var PresetStringBuilder = new StringBuilder();
 
             // Opening
-            PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);
+            PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
             PresetStringBuilder.Append('[');
 
             // HTTP site
@@ -58,7 +59,7 @@ namespace Nitrocid.Extras.HttpShell.HTTP.Presets
             PresetStringBuilder.AppendFormat("{0}", HTTPShellCommon.HTTPSite);
 
             // Closing
-            PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);
+            PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
             PresetStringBuilder.Append("] > ");
             PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
 
@@ -72,7 +73,7 @@ namespace Nitrocid.Extras.HttpShell.HTTP.Presets
             var PresetStringBuilder = new StringBuilder();
 
             // Opening
-            PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);
+            PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
             PresetStringBuilder.Append('[');
 
             // HTTP site
@@ -80,7 +81,7 @@ namespace Nitrocid.Extras.HttpShell.HTTP.Presets
             PresetStringBuilder.AppendFormat(Translate.DoTranslation("Site"));
 
             // Closing
-            PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);
+            PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
             PresetStringBuilder.Append("] > ");
             PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
 

@@ -250,7 +250,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             posIdxVertical = 0;
             posIdxHorizontal = 0;
-            KernelColorTools.LoadBack();
+            ColorTools.LoadBack();
         }
 
         /// <inheritdoc/>
