@@ -23,7 +23,7 @@ using Terminaux.Inputs;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Shell.Shells.Debug.Commands
 {

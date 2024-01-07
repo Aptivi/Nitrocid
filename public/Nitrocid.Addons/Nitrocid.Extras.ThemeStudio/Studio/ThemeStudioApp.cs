@@ -25,7 +25,7 @@ using Terminaux.Inputs;
 using Terminaux.Inputs.Styles.Selection;
 using Nitrocid.ConsoleBase.Themes;
 using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Files.Folders;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Events;

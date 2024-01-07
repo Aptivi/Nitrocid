@@ -23,7 +23,7 @@ using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Drivers;
 using Nitrocid.Drivers.Console;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Shell.ShellBase.Commands
 {

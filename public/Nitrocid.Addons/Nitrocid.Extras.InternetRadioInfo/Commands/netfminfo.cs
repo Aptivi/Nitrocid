@@ -19,7 +19,7 @@
 
 using Nettify.Radio;
 using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.ConsoleBase.Writers.FancyWriters;
+using Terminaux.Writer.FancyWriters;
 using Nitrocid.Shell.ShellBase.Switches;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Writers;

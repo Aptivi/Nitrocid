@@ -41,7 +41,7 @@ using Nitrocid.Files.Paths;
 using Nitrocid.Modifications.ManPages;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Files.Operations.Querying;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Modifications
 {

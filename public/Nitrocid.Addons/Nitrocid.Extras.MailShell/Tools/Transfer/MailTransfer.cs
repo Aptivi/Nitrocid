@@ -32,7 +32,7 @@ using MimeKit.Cryptography;
 using MimeKit.Text;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Extras.MailShell.Mail;
 using Nitrocid.Extras.MailShell.Tools.Directory;
 using Nitrocid.Extras.MailShell.Tools.PGP;

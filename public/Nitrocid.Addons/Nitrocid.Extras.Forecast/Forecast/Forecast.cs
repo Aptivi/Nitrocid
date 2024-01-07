@@ -20,9 +20,9 @@
 using System;
 using Nettify.Weather;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.ConsoleBase.Writers.FancyWriters;
+using Terminaux.Writer.FancyWriters;
 using Nitrocid.Languages;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
 
 namespace Nitrocid.Extras.Forecast.Forecast

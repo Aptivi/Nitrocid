@@ -93,7 +93,7 @@ namespace Nitrocid.Analyzers.Test.ConsoleBase
                 using System.Text;
                 using System.Threading.Tasks;
                 using System.Diagnostics;
-                using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+                using Terminaux.Writer.ConsoleWriters;
 
                 namespace ConsoleApplication1
                 {

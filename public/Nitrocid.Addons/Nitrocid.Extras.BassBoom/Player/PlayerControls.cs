@@ -47,11 +47,11 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using Terminaux.Inputs.Styles.Infobox;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase;
-using Nitrocid.ConsoleBase.Writers.FancyWriters;
+using Terminaux.Writer.FancyWriters;
 
 namespace Nitrocid.Extras.BassBoom.Player
 {

@@ -19,9 +19,9 @@
 
 using Nettify.EnglishDictionary;
 using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.ConsoleBase.Writers.FancyWriters;
+using Terminaux.Writer.FancyWriters;
 using Nitrocid.Languages;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.ConsoleBase.Colors;
 

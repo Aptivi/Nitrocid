@@ -20,7 +20,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Terminaux.Inputs.Styles.Selection;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
 

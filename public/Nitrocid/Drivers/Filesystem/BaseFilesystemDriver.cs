@@ -37,7 +37,7 @@ using Nitrocid.Files.Operations;
 using Nitrocid.Files.Folders;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Files.Paths;
 using Nitrocid.Files.Instances;
 using Nitrocid.Files.LineEndings;

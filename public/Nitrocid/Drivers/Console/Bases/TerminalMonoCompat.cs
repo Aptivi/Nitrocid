@@ -18,7 +18,7 @@
 //
 
 using Nitrocid.ConsoleBase;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
 using System;
@@ -36,7 +36,7 @@ namespace Nitrocid.Drivers.Console.Bases
         /// <inheritdoc/>
         public override void WritePlain(string Text, bool Line, params object[] vars)
         {
-            lock (TextWriterColor.WriteLock)
+            lock (WriteLock)
             {
                 try
                 {

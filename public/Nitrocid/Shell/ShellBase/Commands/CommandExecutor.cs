@@ -36,7 +36,7 @@ using Nitrocid.Drivers.Console;
 using Nitrocid.Drivers.Console.Bases;
 using Nitrocid.Kernel.Events;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Threading;
 using Textify.General;
 

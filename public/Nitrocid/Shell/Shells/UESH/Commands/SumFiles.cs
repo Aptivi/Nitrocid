@@ -27,12 +27,12 @@ using Nitrocid.Files;
 using Nitrocid.Drivers;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
-using Nitrocid.ConsoleBase.Writers.FancyWriters;
+using Terminaux.Writer.FancyWriters;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Drivers.Encryption;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Files.Operations.Querying;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {

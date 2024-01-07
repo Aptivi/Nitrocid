@@ -26,7 +26,7 @@ using TextEncoding = System.Text.Encoding;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
 
 namespace Nitrocid.Drivers.Console.Bases
@@ -143,7 +143,7 @@ namespace Nitrocid.Drivers.Console.Bases
         /// <inheritdoc/>
         public override void WritePlain(string Text, bool Line, params object[] vars)
         {
-            lock (TextWriterColor.WriteLock)
+            lock (WriteLock)
             {
                 // Open the stream
                 try
@@ -168,7 +168,7 @@ namespace Nitrocid.Drivers.Console.Bases
         /// <inheritdoc/>
         public override void WritePlain()
         {
-            lock (TextWriterColor.WriteLock)
+            lock (WriteLock)
             {
                 try
                 {
@@ -188,7 +188,7 @@ namespace Nitrocid.Drivers.Console.Bases
         /// <inheritdoc/>
         public override void WriteSlowlyPlain(string msg, bool Line, double MsEachLetter, params object[] vars)
         {
-            lock (TextWriterColor.WriteLock)
+            lock (WriteLock)
             {
                 try
                 {
@@ -236,7 +236,7 @@ namespace Nitrocid.Drivers.Console.Bases
         /// <inheritdoc/>
         public override void WriteWherePlain(string msg, int Left, int Top, bool Return, int RightMargin, params object[] vars)
         {
-            lock (TextWriterColor.WriteLock)
+            lock (WriteLock)
             {
                 try
                 {
@@ -271,7 +271,7 @@ namespace Nitrocid.Drivers.Console.Bases
         /// <inheritdoc/>
         public override void WriteWhereSlowlyPlain(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, int RightMargin, params object[] vars)
         {
-            lock (TextWriterColor.WriteLock)
+            lock (WriteLock)
             {
                 try
                 {
@@ -292,7 +292,7 @@ namespace Nitrocid.Drivers.Console.Bases
         /// <inheritdoc/>
         public override void WriteWrappedPlain(string Text, bool Line, params object[] vars)
         {
-            lock (TextWriterColor.WriteLock)
+            lock (WriteLock)
             {
                 try
                 {

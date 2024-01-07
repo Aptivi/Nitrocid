@@ -24,7 +24,7 @@ using Terminaux.Inputs;
 using Terminaux.Inputs.Styles.Choice;
 using Terminaux.Inputs.Styles.Selection;
 using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Files;
 using Nitrocid.Files.Operations;
 using Nitrocid.Files.Operations.Querying;

@@ -22,7 +22,7 @@ using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Misc.Reflection;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
-using Nitrocid.ConsoleBase.Writers.FancyWriters;
+using Terminaux.Writer.FancyWriters;
 using Nitrocid.ConsoleBase.Colors;
 
 namespace Nitrocid.Shell.Shells.Debug.Commands

@@ -21,7 +21,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Terminaux.Inputs.Styles.Choice;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.ConsoleBase.Inputs;

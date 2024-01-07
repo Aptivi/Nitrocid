@@ -21,7 +21,7 @@ using Nitrocid.ConsoleBase;
 using Terminaux.Inputs;
 using Nitrocid.ConsoleBase.Presentation;
 using Nitrocid.ConsoleBase.Presentation.Elements;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;

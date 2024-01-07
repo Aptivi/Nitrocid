@@ -19,7 +19,7 @@
 
 using Terminaux.Inputs;
 using Terminaux.Inputs.Styles.Infobox;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using System.Collections.Generic;
 

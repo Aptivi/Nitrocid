@@ -20,7 +20,7 @@
 using Nettify.Rss.Instance;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Shell.ShellBase.Commands;
 using Textify.General;
 

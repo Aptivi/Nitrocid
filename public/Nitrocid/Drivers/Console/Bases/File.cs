@@ -28,7 +28,7 @@ using Nitrocid.Files.Operations;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Files.Operations.Querying;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
 
 namespace Nitrocid.Drivers.Console.Bases
@@ -146,7 +146,7 @@ namespace Nitrocid.Drivers.Console.Bases
         /// <inheritdoc/>
         public override void WritePlain(string Text, bool Line, params object[] vars)
         {
-            lock (TextWriterColor.WriteLock)
+            lock (WriteLock)
             {
                 // If the file doesn't exist, make a new file
                 if (!Checking.FileExists(PathToWrite))
@@ -195,7 +195,7 @@ namespace Nitrocid.Drivers.Console.Bases
         /// <inheritdoc/>
         public override void WritePlain()
         {
-            lock (TextWriterColor.WriteLock)
+            lock (WriteLock)
             {
                 // If the file doesn't exist, make a new file
                 if (!Checking.FileExists(PathToWrite))
@@ -222,7 +222,7 @@ namespace Nitrocid.Drivers.Console.Bases
         /// <inheritdoc/>
         public override void WriteSlowlyPlain(string msg, bool Line, double MsEachLetter, params object[] vars)
         {
-            lock (TextWriterColor.WriteLock)
+            lock (WriteLock)
             {
                 // If the file doesn't exist, make a new file
                 if (!Checking.FileExists(PathToWrite))
@@ -281,7 +281,7 @@ namespace Nitrocid.Drivers.Console.Bases
         /// <inheritdoc/>
         public override void WriteWherePlain(string msg, int Left, int Top, bool Return, int RightMargin, params object[] vars)
         {
-            lock (TextWriterColor.WriteLock)
+            lock (WriteLock)
             {
                 // If the file doesn't exist, make a new file
                 if (!Checking.FileExists(PathToWrite))
@@ -320,7 +320,7 @@ namespace Nitrocid.Drivers.Console.Bases
         /// <inheritdoc/>
         public override void WriteWhereSlowlyPlain(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, int RightMargin, params object[] vars)
         {
-            lock (TextWriterColor.WriteLock)
+            lock (WriteLock)
             {
                 // If the file doesn't exist, make a new file
                 if (!Checking.FileExists(PathToWrite))
@@ -345,7 +345,7 @@ namespace Nitrocid.Drivers.Console.Bases
         /// <inheritdoc/>
         public override void WriteWrappedPlain(string Text, bool Line, params object[] vars)
         {
-            lock (TextWriterColor.WriteLock)
+            lock (WriteLock)
             {
                 // If the file doesn't exist, make a new file
                 if (!Checking.FileExists(PathToWrite))

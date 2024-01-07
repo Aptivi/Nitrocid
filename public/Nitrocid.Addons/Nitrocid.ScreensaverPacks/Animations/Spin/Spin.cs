@@ -19,7 +19,7 @@
 
 using System.Text;
 using Terminaux.Colors;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ConsoleBase;
 using Nitrocid.Kernel.Threading;
 

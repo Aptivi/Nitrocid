@@ -20,7 +20,7 @@
 using System;
 using System.Collections.Generic;
 using Nitrocid.ConsoleBase.Themes;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Debugging;

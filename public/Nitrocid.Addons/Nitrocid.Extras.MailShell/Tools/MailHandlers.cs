@@ -24,7 +24,7 @@ using MailKit;
 using MailKit.Net.Imap;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Extras.MailShell.Mail;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;

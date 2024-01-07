@@ -19,7 +19,7 @@
 
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Extras.BassBoom.Animations.Lyrics;
 using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Languages;

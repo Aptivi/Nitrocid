@@ -18,7 +18,7 @@
 //
 
 using System.Linq;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Shell.ShellBase.Commands;
 using Textify.NameGen;
 

@@ -32,7 +32,7 @@ using Nitrocid.Misc.Notifications;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Kernel.Events;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Power;
 using Textify.General;
 

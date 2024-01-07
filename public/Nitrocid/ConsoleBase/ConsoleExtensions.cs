@@ -21,7 +21,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Threading;

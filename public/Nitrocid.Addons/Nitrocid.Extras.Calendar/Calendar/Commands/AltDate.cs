@@ -19,7 +19,7 @@
 
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Time.Calendars;
 using Nitrocid.Kernel.Time.Renderers;
 using Nitrocid.Languages;

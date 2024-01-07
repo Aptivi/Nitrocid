@@ -22,7 +22,7 @@ using System.Text;
 using System.Threading;
 using Nitrocid.ConsoleBase;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Extras.Amusements.Amusements.Quotes;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Misc.Splash;

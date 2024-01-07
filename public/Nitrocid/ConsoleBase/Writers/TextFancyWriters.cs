@@ -19,9 +19,9 @@
 
 using Figletize.Utilities;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
-using Nitrocid.ConsoleBase.Writers.FancyWriters;
-using Nitrocid.ConsoleBase.Writers.FancyWriters.Tools;
+using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.FancyWriters;
+using Terminaux.Writer.FancyWriters.Tools;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
 using System;
@@ -214,7 +214,7 @@ namespace Nitrocid.ConsoleBase.Writers
             try
             {
                 // StringBuilder to put out the final rendering text
-                string rendered = BorderTextColor.RenderBorderTextPlain(text, Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, vars);
+                string rendered = BorderColor.RenderBorderPlain(text, Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, vars);
                 TextWriterWhereColor.WriteWhereColorBack(rendered, Left, Top, false, KernelColorTools.GetColor(BoxBorderColor), KernelColorTools.GetColor(BackgroundColor));
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
@@ -414,18 +414,18 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="LowerFrameChar">Lower frame character for box frame</param>
         /// <param name="LeftFrameChar">Left frame character for box frame</param>
         /// <param name="RightFrameChar">Right frame character for box frame</param>
-        /// <param name="BoxFrameColor">BoxFrame color from Nitrocid KS's <see cref="KernelColorType"/></param>
+        /// <param name="FrameColor">BoxFrame color from Nitrocid KS's <see cref="KernelColorType"/></param>
         /// <param name="BackgroundColor">BoxFrame background color from Nitrocid KS's <see cref="KernelColorType"/></param>
         public static void WriteBoxFrame(string text, int Left, int Top, int InteriorWidth, int InteriorHeight,
                                        char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-                                       KernelColorType BoxFrameColor, KernelColorType BackgroundColor, params object[] vars)
+                                       KernelColorType FrameColor, KernelColorType BackgroundColor, params object[] vars)
         {
             try
             {
                 // Render the box frame
-                string frame = BoxFrameTextColor.RenderBoxFrame(text, Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, vars);
-                TextWriterWhereColor.WriteWhereColorBack(frame, Left, Top, false, KernelColorTools.GetColor(BoxFrameColor), KernelColorTools.GetColor(BackgroundColor));
+                string frame = BoxFrameColor.RenderBoxFrame(text, Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, vars);
+                TextWriterWhereColor.WriteWhereColorBack(frame, Left, Top, false, KernelColorTools.GetColor(FrameColor), KernelColorTools.GetColor(BackgroundColor));
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
@@ -569,7 +569,7 @@ namespace Nitrocid.ConsoleBase.Writers
         {
             try
             {
-                TextWriterColor.WritePlain(FigletColor.RenderFiglet(Text, FigletFont, KernelColorTools.GetColor(ColTypes), KernelColorTools.GetColor(KernelColorType.Background), Vars), false);
+                TextWriterColor.WritePlain(FigletColor.RenderFigletPlain(Text, FigletFont, KernelColorTools.GetColor(ColTypes), KernelColorTools.GetColor(KernelColorType.Background), Vars), false);
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
@@ -590,7 +590,7 @@ namespace Nitrocid.ConsoleBase.Writers
         {
             try
             {
-                TextWriterColor.WritePlain(FigletColor.RenderFiglet(Text, FigletFont, KernelColorTools.GetColor(colorTypeForeground), KernelColorTools.GetColor(colorTypeBackground), Vars), false);
+                TextWriterColor.WritePlain(FigletColor.RenderFigletPlain(Text, FigletFont, KernelColorTools.GetColor(colorTypeForeground), KernelColorTools.GetColor(colorTypeBackground), Vars), false);
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {

@@ -20,8 +20,8 @@
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Languages;
-using Nitrocid.ConsoleBase.Writers.FancyWriters;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.FancyWriters;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Shell.Shells.Debug.Commands
 {

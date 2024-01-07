@@ -20,7 +20,7 @@
 using System.IO;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Drivers.Encryption;
 using Nitrocid.Files;
 using Nitrocid.Files.Operations.Querying;

@@ -25,7 +25,7 @@ using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Misc.Splash;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Kernel.Starting
 {

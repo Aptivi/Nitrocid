@@ -27,7 +27,7 @@ using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Files.Paths;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
 
 namespace Nitrocid.ConsoleBase

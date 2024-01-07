@@ -23,7 +23,7 @@ using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Shell.ShellBase.Switches;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Languages;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Extras.GitShell.Git.Commands
 {

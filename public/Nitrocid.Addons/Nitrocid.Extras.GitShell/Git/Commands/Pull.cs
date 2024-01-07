@@ -22,7 +22,7 @@ using LibGit2Sharp;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Kernel.Time;
 using Nitrocid.Kernel.Time.Timezones;

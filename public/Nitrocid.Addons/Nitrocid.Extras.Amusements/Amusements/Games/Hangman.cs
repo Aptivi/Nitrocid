@@ -23,7 +23,7 @@ using System.Text;
 using System.Threading;
 using Nitrocid.ConsoleBase;
 using Terminaux.Inputs;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;

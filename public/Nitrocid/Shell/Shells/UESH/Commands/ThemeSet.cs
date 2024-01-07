@@ -22,7 +22,7 @@ using Terminaux.Inputs;
 using Terminaux.Inputs.Styles.Choice;
 using Terminaux.Inputs.Styles.Selection;
 using Nitrocid.ConsoleBase.Themes;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Files;
 using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Configuration;

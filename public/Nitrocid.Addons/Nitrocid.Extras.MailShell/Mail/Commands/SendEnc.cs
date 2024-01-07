@@ -28,7 +28,7 @@ using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Files.Operations.Querying;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
 
 namespace Nitrocid.Extras.MailShell.Mail.Commands

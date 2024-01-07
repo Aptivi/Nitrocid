@@ -24,13 +24,13 @@ using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Files;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
-using Nitrocid.ConsoleBase.Writers.FancyWriters;
+using Terminaux.Writer.FancyWriters;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Security.Permissions;
 using Nitrocid.Files.Paths;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Files.Operations.Querying;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Drivers;
 using System;
 

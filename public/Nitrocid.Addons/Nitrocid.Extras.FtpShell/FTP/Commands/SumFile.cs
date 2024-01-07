@@ -21,7 +21,7 @@ using System;
 using FluentFTP;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Extras.FtpShell.Tools.Filesystem;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;

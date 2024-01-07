@@ -18,7 +18,7 @@
 //
 
 using Nitrocid.ConsoleBase;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Kernel.Time.Renderers;

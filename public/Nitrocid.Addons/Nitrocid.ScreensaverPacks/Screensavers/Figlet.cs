@@ -22,7 +22,7 @@ using System.Linq;
 using Figletize;
 using Nitrocid.ConsoleBase;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Threading;

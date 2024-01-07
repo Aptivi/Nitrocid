@@ -23,11 +23,11 @@ using Terminaux.Colors;
 using Textify.Words;
 using Nitrocid.Drivers;
 using Nitrocid.Misc.Screensaver;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using Nitrocid.Drivers.Encryption;
 using Nitrocid.ConsoleBase;
-using Nitrocid.ConsoleBase.Writers.FancyWriters;
+using Terminaux.Writer.FancyWriters;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Drivers.RNG;
 

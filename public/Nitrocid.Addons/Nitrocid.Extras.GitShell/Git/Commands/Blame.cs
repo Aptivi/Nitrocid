@@ -21,11 +21,11 @@ using LibGit2Sharp;
 using System.IO;
 using System.Linq;
 using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.ConsoleBase.Writers.FancyWriters;
+using Terminaux.Writer.FancyWriters;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Extras.GitShell.Git.Commands
 {

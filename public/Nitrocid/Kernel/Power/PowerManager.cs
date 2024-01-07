@@ -35,7 +35,7 @@ using Nitrocid.Kernel.Starting.Environment;
 using Nitrocid.Security.Permissions;
 using Nitrocid.Kernel.Events;
 using Nitrocid.Kernel.Journaling;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Network.RPC;
 
 namespace Nitrocid.Kernel.Power

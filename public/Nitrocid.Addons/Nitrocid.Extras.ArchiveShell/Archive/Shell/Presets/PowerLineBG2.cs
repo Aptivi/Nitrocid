@@ -24,7 +24,7 @@ using System.Collections.Generic;
 using Terminaux.Colors;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Shell.Prompts;
-using Nitrocid.ConsoleBase.Writers.FancyWriters.Tools;
+using Terminaux.Writer.FancyWriters.Tools;
 
 namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Presets
 {

@@ -36,7 +36,7 @@ using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Network.Base;
 using Nitrocid.Misc.Progress;
 using Nitrocid.Network.Base.Transfer;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Drivers.Network
 {

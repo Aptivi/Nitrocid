@@ -18,7 +18,7 @@
 //
 
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Drivers.RNG;
 using Terminaux.Colors;
 

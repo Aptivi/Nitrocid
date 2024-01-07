@@ -21,7 +21,7 @@ using MimeKit;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Inputs;
 using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Extras.MailShell.Tools.Transfer;
 using Nitrocid.Files;
 using Nitrocid.Files.Operations.Querying;

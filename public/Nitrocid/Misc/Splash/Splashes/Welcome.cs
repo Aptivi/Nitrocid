@@ -26,10 +26,10 @@ using System.Text;
 using Nitrocid.Kernel;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.ConsoleBase;
-using Nitrocid.ConsoleBase.Writers.FancyWriters;
+using Terminaux.Writer.FancyWriters;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Text;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Kernel.Power;
 

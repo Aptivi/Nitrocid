@@ -21,11 +21,11 @@ using System;
 using Terminaux.Colors;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Misc.Screensaver;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Drivers.RNG;
 using Nitrocid.ConsoleBase;
-using Nitrocid.ConsoleBase.Writers.FancyWriters;
+using Terminaux.Writer.FancyWriters;
 using Nitrocid.Kernel.Threading;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers

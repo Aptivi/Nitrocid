@@ -20,8 +20,8 @@
 using System.Linq;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Languages;
-using Nitrocid.ConsoleBase.Writers.FancyWriters;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.FancyWriters;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Extensions;
 
 namespace Nitrocid.Shell.Shells.Debug.Commands

@@ -28,13 +28,13 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Time.Calendars;
 using Nitrocid.ConsoleBase;
 using Terminaux.Inputs.Styles.Infobox;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Base.Buffered;
 using Terminaux.Inputs;
 using Nitrocid.Languages;
 using Terminaux.Inputs.Interactive;
-using Nitrocid.ConsoleBase.Writers.FancyWriters;
+using Terminaux.Writer.FancyWriters;
 using Nitrocid.Kernel.Time.Converters;
 using Nitrocid.Kernel.Time;
 using Textify.General;
@@ -233,7 +233,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
                 int boxWidth = 4 + (6 * 6);
                 int boxHeight = 11;
                 builder.Append(
-                    BorderTextColor.RenderBorderText(CalendarTitle, boxLeft, boxTop, boxWidth, boxHeight, boxForeground, background)
+                    BorderColor.RenderBorder(CalendarTitle, boxLeft, boxTop, boxWidth, boxHeight, boxForeground, background)
                 );
 
                 // Make a calendar
@@ -308,7 +308,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
                 int eventBoxWidth = ConsoleWrapper.WindowWidth - eventBoxLeft - 6;
                 int eventBoxHeight = ConsoleWrapper.WindowHeight - 8;
                 builder.Append(
-                    BorderTextColor.RenderBorderText(Translate.DoTranslation("Events and reminders for") + $" {CalendarTitle}", eventBoxLeft, eventBoxTop, eventBoxWidth, eventBoxHeight, boxForeground, background)
+                    BorderColor.RenderBorder(Translate.DoTranslation("Events and reminders for") + $" {CalendarTitle}", eventBoxLeft, eventBoxTop, eventBoxWidth, eventBoxHeight, boxForeground, background)
                 );
 
                 // List all the events if they don't overflow

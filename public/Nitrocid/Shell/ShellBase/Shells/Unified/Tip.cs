@@ -19,9 +19,10 @@
 
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.ConsoleBase.Writers.MiscWriters;
+using Terminaux.Writer.MiscWriters;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.ConsoleBase.Writers.MiscWriters;
 
 namespace Nitrocid.Shell.ShellBase.Shells.Unified
 {

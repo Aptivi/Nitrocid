@@ -23,7 +23,7 @@ using System.IO;
 using Nitrocid.ConsoleBase;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.LocaleGen.Core.Serializer;
 
 namespace Nitrocid.LocaleGen

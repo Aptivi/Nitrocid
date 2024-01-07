@@ -26,7 +26,7 @@ using Textify.Sequences.Builder.Types;
 using Nitrocid.Kernel;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Colors;
 
@@ -37,6 +37,7 @@ namespace Nitrocid.Drivers.Console
     /// </summary>
     public abstract class BaseConsoleDriver : IConsoleDriver
     {
+        internal static readonly object WriteLock = new();
 
         /// <inheritdoc/>
         public virtual string DriverName => "Default";
@@ -317,7 +318,7 @@ namespace Nitrocid.Drivers.Console
         /// <inheritdoc/>
         public virtual void Write(char value)
         {
-            lock (TextWriterColor.WriteLock)
+            lock (WriteLock)
             {
                 SystemConsole.Write(value);
                 _moved = true;
@@ -327,7 +328,7 @@ namespace Nitrocid.Drivers.Console
         /// <inheritdoc/>
         public virtual void Write(string text)
         {
-            lock (TextWriterColor.WriteLock)
+            lock (WriteLock)
             {
                 SystemConsole.Write(text);
                 _moved = true;
@@ -337,7 +338,7 @@ namespace Nitrocid.Drivers.Console
         /// <inheritdoc/>
         public virtual void Write(string text, params object[] args)
         {
-            lock (TextWriterColor.WriteLock)
+            lock (WriteLock)
             {
                 SystemConsole.Write(text, args);
                 _moved = true;
@@ -347,7 +348,7 @@ namespace Nitrocid.Drivers.Console
         /// <inheritdoc/>
         public virtual void WriteLine()
         {
-            lock (TextWriterColor.WriteLock)
+            lock (WriteLock)
             {
                 SystemConsole.WriteLine();
                 _moved = true;
@@ -357,7 +358,7 @@ namespace Nitrocid.Drivers.Console
         /// <inheritdoc/>
         public virtual void WriteLine(string text)
         {
-            lock (TextWriterColor.WriteLock)
+            lock (WriteLock)
             {
                 SystemConsole.WriteLine(text);
                 _moved = true;
@@ -367,7 +368,7 @@ namespace Nitrocid.Drivers.Console
         /// <inheritdoc/>
         public virtual void WriteLine(string text, params object[] args)
         {
-            lock (TextWriterColor.WriteLock)
+            lock (WriteLock)
             {
                 SystemConsole.WriteLine(text, args);
                 _moved = true;
@@ -377,7 +378,7 @@ namespace Nitrocid.Drivers.Console
         /// <inheritdoc/>
         public virtual void WritePlain(string Text, bool Line, params object[] vars)
         {
-            lock (TextWriterColor.WriteLock)
+            lock (WriteLock)
             {
                 try
                 {

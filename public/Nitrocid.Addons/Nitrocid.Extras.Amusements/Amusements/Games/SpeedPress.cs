@@ -21,7 +21,7 @@ using System;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Inputs;
 using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Textify.General;

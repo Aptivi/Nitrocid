@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Writers.MiscWriters;
+using Terminaux.Writer.MiscWriters;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Debugging.RemoteDebug;
 using Nitrocid.Kernel.Hardware;
@@ -30,6 +30,7 @@ using Nitrocid.Modifications;
 using Nitrocid.Network.RPC;
 using Nitrocid.Users;
 using Nitrocid.Users.Groups;
+using Nitrocid.ConsoleBase.Writers.MiscWriters;
 
 namespace Nitrocid.Kernel.Starting
 {

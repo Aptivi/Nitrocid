@@ -25,7 +25,7 @@ using Timer = System.Timers.Timer;
 using Figletize;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Inputs.Styles.Infobox;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.ConsoleBase;
@@ -34,7 +34,7 @@ using Nitrocid.Languages;
 using Terminaux.Inputs;
 using Terminaux.Base.Buffered;
 using System.Text;
-using Nitrocid.ConsoleBase.Writers.FancyWriters;
+using Terminaux.Writer.FancyWriters;
 using Terminaux.Colors;
 
 namespace Nitrocid.Extras.Timers.Timers

@@ -23,7 +23,7 @@ using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Files;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
-using Nitrocid.ConsoleBase.Writers.FancyWriters;
+using Terminaux.Writer.FancyWriters;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Files.Paths;
 using Nitrocid.ConsoleBase.Colors;

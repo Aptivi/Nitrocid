@@ -18,7 +18,7 @@
 //
 
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers.MiscWriters;
+using Terminaux.Writer.MiscWriters;
 
 namespace Nitrocid.ConsoleBase.Writers
 {

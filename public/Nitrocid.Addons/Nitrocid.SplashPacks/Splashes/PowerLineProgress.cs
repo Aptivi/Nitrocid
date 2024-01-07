@@ -24,10 +24,10 @@ using Terminaux.Colors;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.ConsoleBase;
 using Nitrocid.Misc.Splash;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Misc.Text;
-using Nitrocid.ConsoleBase.Writers.FancyWriters;
+using Terminaux.Writer.FancyWriters;
 using Textify.General;
 
 namespace Nitrocid.SplashPacks.Splashes

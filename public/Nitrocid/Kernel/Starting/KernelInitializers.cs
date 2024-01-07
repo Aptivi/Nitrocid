@@ -41,7 +41,7 @@ using Nitrocid.Languages;
 using Nitrocid.Misc.Notifications;
 using Nitrocid.Security.Privacy;
 using Nitrocid.Modifications;
-using Nitrocid.ConsoleBase.Writers.MiscWriters;
+using Terminaux.Writer.MiscWriters;
 using Nitrocid.Network.Base.Connections;
 using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Files.Paths;
@@ -51,13 +51,14 @@ using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Files.Extensions;
 using Nitrocid.Kernel.Journaling;
 using Nitrocid.Files.Operations.Querying;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Misc.Text.Probers.Motd;
 using Nitrocid.Kernel.Power;
 using Nitrocid.Network.RPC;
 using Nitrocid.Kernel.Threading.Watchdog;
 using Terminaux.Colors;
+using Nitrocid.ConsoleBase.Writers.MiscWriters;
 
 namespace Nitrocid.Kernel.Starting
 {

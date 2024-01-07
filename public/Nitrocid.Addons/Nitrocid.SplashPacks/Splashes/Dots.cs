@@ -23,7 +23,7 @@ using Textify.Sequences.Tools;
 using System.Text;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Misc.Splash;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ConsoleBase;
 
 namespace Nitrocid.SplashPacks.Splashes

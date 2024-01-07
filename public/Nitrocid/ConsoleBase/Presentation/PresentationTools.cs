@@ -22,8 +22,8 @@ using System.Text;
 using Textify.Sequences.Builder.Types;
 using Terminaux.Inputs;
 using Nitrocid.Languages;
-using Nitrocid.ConsoleBase.Writers.FancyWriters;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.FancyWriters;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Base.Buffered;
 using Textify.General;
@@ -120,7 +120,7 @@ namespace Nitrocid.ConsoleBase.Presentation
 
                     // Make a border
                     builder.Append(
-                        BoxFrameTextColor.RenderBoxFrame($"{(!kiosk ? $"[{i + 1}/{pages.Count}] - " : "")}{page.Name} - {presentation.Name}", PresentationUpperBorderLeft, PresentationUpperBorderTop, PresentationLowerInnerBorderLeft, PresentationLowerInnerBorderTop, KernelColorTools.GetColor(KernelColorType.Separator), KernelColorTools.GetColor(KernelColorType.Background)) +
+                        BoxFrameColor.RenderBoxFrame($"{(!kiosk ? $"[{i + 1}/{pages.Count}] - " : "")}{page.Name} - {presentation.Name}", PresentationUpperBorderLeft, PresentationUpperBorderTop, PresentationLowerInnerBorderLeft, PresentationLowerInnerBorderTop, KernelColorTools.GetColor(KernelColorType.Separator), KernelColorTools.GetColor(KernelColorType.Background)) +
                         BoxColor.RenderBox(PresentationUpperBorderLeft + 1, PresentationUpperBorderTop, PresentationLowerInnerBorderLeft, PresentationLowerInnerBorderTop)
                     );
 

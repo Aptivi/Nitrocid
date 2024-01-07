@@ -22,12 +22,12 @@ using Figletize;
 using Terminaux.Colors;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Misc.Screensaver;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase;
 using Nitrocid.Kernel.Time;
 using Nitrocid.Misc.Text;
-using Nitrocid.ConsoleBase.Writers.FancyWriters;
+using Terminaux.Writer.FancyWriters;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Threading;
 

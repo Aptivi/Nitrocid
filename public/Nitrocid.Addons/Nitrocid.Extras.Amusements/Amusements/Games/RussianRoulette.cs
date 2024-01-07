@@ -20,7 +20,7 @@
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Inputs.Styles.Choice;
 using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Languages;
 using System;

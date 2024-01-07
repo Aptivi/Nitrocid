@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Inputs;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Events;
 using Nitrocid.Languages;
 using System;

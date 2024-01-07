@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Writers.MiscWriters;
+using Terminaux.Writer.MiscWriters;
 using Nitrocid.Extras.Tips.Settings;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Extensions;
@@ -25,6 +25,7 @@ using Nitrocid.Modifications;
 using System;
 using System.Collections.ObjectModel;
 using System.Reflection;
+using Nitrocid.ConsoleBase.Writers.MiscWriters;
 
 namespace Nitrocid.Extras.Tips
 {

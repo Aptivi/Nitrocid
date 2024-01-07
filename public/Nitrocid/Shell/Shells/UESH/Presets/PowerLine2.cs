@@ -29,7 +29,7 @@ using Nitrocid.Files.Folders;
 using Nitrocid.Languages;
 using Nitrocid.Network.Base;
 using Nitrocid.Shell.Prompts;
-using Nitrocid.ConsoleBase.Writers.FancyWriters.Tools;
+using Terminaux.Writer.FancyWriters.Tools;
 using Nitrocid.ConsoleBase.Colors;
 
 namespace Nitrocid.Shell.Shells.UESH.Presets

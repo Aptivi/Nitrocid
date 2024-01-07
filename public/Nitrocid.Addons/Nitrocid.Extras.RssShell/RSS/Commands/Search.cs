@@ -22,7 +22,7 @@ using Nitrocid.Extras.RssShell.Tools;
 using Nettify.Rss.Instance;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ConsoleBase.Colors;
 using Textify.General;
 

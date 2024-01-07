@@ -50,16 +50,17 @@ using Nitrocid.Drivers.Regexp;
 using Nitrocid.Misc.Text;
 using Nitrocid.Network.Base;
 using Nitrocid.Drivers.Console;
-using Nitrocid.ConsoleBase.Writers.MiscWriters;
+using Terminaux.Writer.MiscWriters;
 using Nitrocid.Shell.Prompts;
 using Nitrocid.Users.Login.Handlers;
 using Nitrocid.Files.Paths;
-using Nitrocid.ConsoleBase.Writers.FancyWriters.Tools;
+using Terminaux.Writer.FancyWriters.Tools;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Network.RPC;
 using Nitrocid.Kernel.Debugging.RemoteDebug.RemoteChat;
 using Nitrocid.Kernel.Time.Timezones;
+using Nitrocid.ConsoleBase.Writers.MiscWriters;
 
 namespace Nitrocid.Kernel.Configuration.Instances
 {
@@ -1295,64 +1296,64 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public char ProgressUpperLeftCornerChar
         {
-            get => ProgressTools.progressUpperLeftCornerChar;
-            set => ProgressTools.progressUpperLeftCornerChar = value;
+            get => ProgressTools.ProgressUpperLeftCornerChar;
+            set => ProgressTools.ProgressUpperLeftCornerChar = value;
         }
         /// <summary>
         /// A character that resembles the upper right corner. Be sure to only input one character
         /// </summary>
         public char ProgressUpperRightCornerChar
         {
-            get => ProgressTools.progressUpperRightCornerChar;
-            set => ProgressTools.progressUpperRightCornerChar = value;
+            get => ProgressTools.ProgressUpperRightCornerChar;
+            set => ProgressTools.ProgressUpperRightCornerChar = value;
         }
         /// <summary>
         /// A character that resembles the lower left corner. Be sure to only input one character
         /// </summary>
         public char ProgressLowerLeftCornerChar
         {
-            get => ProgressTools.progressLowerLeftCornerChar;
-            set => ProgressTools.progressLowerLeftCornerChar = value;
+            get => ProgressTools.ProgressLowerLeftCornerChar;
+            set => ProgressTools.ProgressLowerLeftCornerChar = value;
         }
         /// <summary>
         /// A character that resembles the lower right corner. Be sure to only input one character
         /// </summary>
         public char ProgressLowerRightCornerChar
         {
-            get => ProgressTools.progressLowerRightCornerChar;
-            set => ProgressTools.progressLowerRightCornerChar = value;
+            get => ProgressTools.ProgressLowerRightCornerChar;
+            set => ProgressTools.ProgressLowerRightCornerChar = value;
         }
         /// <summary>
         /// A character that resembles the upper frame. Be sure to only input one character
         /// </summary>
         public char ProgressUpperFrameChar
         {
-            get => ProgressTools.progressUpperFrameChar;
-            set => ProgressTools.progressUpperFrameChar = value;
+            get => ProgressTools.ProgressUpperFrameChar;
+            set => ProgressTools.ProgressUpperFrameChar = value;
         }
         /// <summary>
         /// A character that resembles the lower frame. Be sure to only input one character
         /// </summary>
         public char ProgressLowerFrameChar
         {
-            get => ProgressTools.progressLowerFrameChar;
-            set => ProgressTools.progressLowerFrameChar = value;
+            get => ProgressTools.ProgressLowerFrameChar;
+            set => ProgressTools.ProgressLowerFrameChar = value;
         }
         /// <summary>
         /// A character that resembles the left frame. Be sure to only input one character
         /// </summary>
         public char ProgressLeftFrameChar
         {
-            get => ProgressTools.progressLeftFrameChar;
-            set => ProgressTools.progressLeftFrameChar = value;
+            get => ProgressTools.ProgressLeftFrameChar;
+            set => ProgressTools.ProgressLeftFrameChar = value;
         }
         /// <summary>
         /// A character that resembles the right frame. Be sure to only input one character
         /// </summary>
         public char ProgressRightFrameChar
         {
-            get => ProgressTools.progressRightFrameChar;
-            set => ProgressTools.progressRightFrameChar = value;
+            get => ProgressTools.ProgressRightFrameChar;
+            set => ProgressTools.ProgressRightFrameChar = value;
         }
         /// <summary>
         /// Whether the input history is enabled or not. If enabled, you can access recently typed commands using the up or down arrow keys.
@@ -1385,64 +1386,64 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public char BorderUpperLeftCornerChar
         {
-            get => BorderTools._borderUpperLeftCornerChar;
-            set => BorderTools._borderUpperLeftCornerChar = value;
+            get => BorderTools.BorderUpperLeftCornerChar;
+            set => BorderTools.BorderUpperLeftCornerChar = value;
         }
         /// <summary>
         /// A character that resembles the upper right corner. Be sure to only input one character.
         /// </summary>
         public char BorderUpperRightCornerChar
         {
-            get => BorderTools._borderUpperRightCornerChar;
-            set => BorderTools._borderUpperRightCornerChar = value;
+            get => BorderTools.BorderUpperRightCornerChar;
+            set => BorderTools.BorderUpperRightCornerChar = value;
         }
         /// <summary>
         /// A character that resembles the lower left corner. Be sure to only input one character.
         /// </summary>
         public char BorderLowerLeftCornerChar
         {
-            get => BorderTools._borderLowerLeftCornerChar;
-            set => BorderTools._borderLowerLeftCornerChar = value;
+            get => BorderTools.BorderLowerLeftCornerChar;
+            set => BorderTools.BorderLowerLeftCornerChar = value;
         }
         /// <summary>
         /// A character that resembles the lower right corner. Be sure to only input one character.
         /// </summary>
         public char BorderLowerRightCornerChar
         {
-            get => BorderTools._borderLowerRightCornerChar;
-            set => BorderTools._borderLowerRightCornerChar = value;
+            get => BorderTools.BorderLowerRightCornerChar;
+            set => BorderTools.BorderLowerRightCornerChar = value;
         }
         /// <summary>
         /// A character that resembles the upper frame. Be sure to only input one character.
         /// </summary>
         public char BorderUpperFrameChar
         {
-            get => BorderTools._borderUpperFrameChar;
-            set => BorderTools._borderUpperFrameChar = value;
+            get => BorderTools.BorderUpperFrameChar;
+            set => BorderTools.BorderUpperFrameChar = value;
         }
         /// <summary>
         /// A character that resembles the lower frame. Be sure to only input one character.
         /// </summary>
         public char BorderLowerFrameChar
         {
-            get => BorderTools._borderLowerFrameChar;
-            set => BorderTools._borderLowerFrameChar = value;
+            get => BorderTools.BorderLowerFrameChar;
+            set => BorderTools.BorderLowerFrameChar = value;
         }
         /// <summary>
         /// A character that resembles the left frame. Be sure to only input one character.
         /// </summary>
         public char BorderLeftFrameChar
         {
-            get => BorderTools._borderLeftFrameChar;
-            set => BorderTools._borderLeftFrameChar = value;
+            get => BorderTools.BorderLeftFrameChar;
+            set => BorderTools.BorderLeftFrameChar = value;
         }
         /// <summary>
         /// A character that resembles the right frame. Be sure to only input one character.
         /// </summary>
         public char BorderRightFrameChar
         {
-            get => BorderTools._borderRightFrameChar;
-            set => BorderTools._borderRightFrameChar = value;
+            get => BorderTools.BorderRightFrameChar;
+            set => BorderTools.BorderRightFrameChar = value;
         }
         /// <summary>
         /// Censor private information that may be printed to the debug logs.

@@ -51,12 +51,12 @@ using Terminaux.Colors;
 using Textify.Sequences.Builder.Types;
 using Nitrocid.ConsoleBase;
 using Terminaux.Inputs.Styles.Infobox;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Base.Buffered;
 using Nitrocid.Misc.Screensaver;
 using Nitrocid.Languages;
-using Nitrocid.ConsoleBase.Writers.FancyWriters;
+using Terminaux.Writer.FancyWriters;
 using Terminaux.Inputs;
 using Textify.General;
 

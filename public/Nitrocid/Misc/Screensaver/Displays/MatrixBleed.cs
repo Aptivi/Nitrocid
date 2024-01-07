@@ -22,7 +22,7 @@ using System.Collections.Generic;
 using System.Text;
 using Nitrocid.ConsoleBase;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Debugging;

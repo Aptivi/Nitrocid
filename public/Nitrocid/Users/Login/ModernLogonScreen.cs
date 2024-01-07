@@ -31,7 +31,7 @@ using Nitrocid.Kernel.Time.Renderers;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Misc.Text;
-using Nitrocid.ConsoleBase.Writers.FancyWriters;
+using Terminaux.Writer.FancyWriters;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Base.Buffered;
 using Nitrocid.Misc.Text.Probers.Motd;

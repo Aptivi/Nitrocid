@@ -22,7 +22,7 @@ using System.Collections.Generic;
 using System.Threading;
 using Terminaux.Colors;
 using System.Text;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase;

@@ -22,11 +22,11 @@ using System;
 using System.Threading;
 using Terminaux.Colors;
 using Textify.Words;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ConsoleBase;
 using Terminaux.Inputs;
 using Nitrocid.Languages;
-using Nitrocid.ConsoleBase.Writers.FancyWriters;
+using Terminaux.Writer.FancyWriters;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games
 {

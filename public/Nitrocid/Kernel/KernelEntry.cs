@@ -30,16 +30,17 @@ using Nitrocid.Kernel.Time.Renderers;
 using Nitrocid.Kernel.Starting;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
-using Nitrocid.ConsoleBase.Writers.MiscWriters;
+using Terminaux.Writer.MiscWriters;
 using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Users.Login.Handlers;
 using Nitrocid.Misc.Text.Probers.Placeholder;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Misc.Text.Probers.Motd;
 using Nitrocid.Kernel.Power;
 using Nitrocid.Network.RSS;
 using Textify.General;
+using Nitrocid.ConsoleBase.Writers.MiscWriters;
 
 namespace Nitrocid.Kernel
 {
