@@ -54,26 +54,38 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <summary>
         /// Enables color blindness
         /// </summary>
-        public static bool ColorBlind =>
-            Config.MainConfig.ColorBlind;
+        public static bool ColorBlind
+        {
+            get => Config.MainConfig.ColorBlind;
+            set => Config.MainConfig.ColorBlind = value;
+        }
 
         /// <summary>
         /// Enables simple color blindness using the Vienot 1999 formula (may not be accurate for tritanopia)
         /// </summary>
-        public static bool ColorBlindSimple =>
-            Config.MainConfig.ColorBlindSimple;
+        public static bool ColorBlindSimple
+        {
+            get => Config.MainConfig.ColorBlindSimple;
+            set => Config.MainConfig.ColorBlindSimple = value;
+        }
 
         /// <summary>
-        /// Color blindness TransformationFormula
+        /// Color blindness transformation formula
         /// </summary>
-        public static TransformationFormula BlindnessTransformationFormula =>
-            (TransformationFormula)Config.MainConfig.BlindnessTransformationFormula;
+        public static TransformationFormula BlindnessTransformationFormula
+        {
+            get => (TransformationFormula)Config.MainConfig.BlindnessTransformationFormula;
+            set => Config.MainConfig.BlindnessTransformationFormula = (int)value;
+        }
 
         /// <summary>
         /// Color blindness severity
         /// </summary>
-        public static double BlindnessSeverity =>
-            Config.MainConfig.BlindnessSeverity;
+        public static double BlindnessSeverity
+        {
+            get => Config.MainConfig.BlindnessSeverity;
+            set => Config.MainConfig.BlindnessSeverity = value;
+        }
 
         /// <summary>
         /// Gets a color from the color type
