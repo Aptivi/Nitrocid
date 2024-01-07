@@ -80,9 +80,10 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
             }
 
             // Check the provided languages
-            JToken metadata = JObject.Parse(Reading.ReadContentsText(manifestFile));
+            string metadataStr = Reading.ReadContentsText(manifestFile);
+            JArray metadata = JArray.Parse(metadataStr);
             string[] finalLangs = metadata
-                .Select((token) => token.Path)
+                .Select((token) => token["three"].ToString())
                 .Where(LanguageManager.Languages.ContainsKey)
                 .ToArray();
             DebugWriter.WriteDebug(DebugLevel.I, "finalLangs = {0}.", finalLangs.Length);
