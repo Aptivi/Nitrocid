@@ -31,6 +31,7 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Events;
 using Nitrocid.Languages;
 using Terminaux.Colors;
+using Terminaux.Colors.Selector;
 using Textify.General;
 
 namespace Nitrocid.Extras.ThemeStudio.Studio
