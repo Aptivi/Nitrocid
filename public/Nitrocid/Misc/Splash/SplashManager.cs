@@ -22,7 +22,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using Nitrocid.ConsoleBase;
-using Nitrocid.ConsoleBase.Buffered;
+using Terminaux.Base.Buffered;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
 using Nitrocid.Kernel.Configuration;

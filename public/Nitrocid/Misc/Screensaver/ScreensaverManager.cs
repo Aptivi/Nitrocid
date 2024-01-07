@@ -39,7 +39,7 @@ using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Drivers.Console;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Kernel.Events;
-using Nitrocid.ConsoleBase.Buffered;
+using Terminaux.Base.Buffered;
 using Nitrocid.Kernel.Power;
 using Nitrocid.Misc.Screensaver.Displays;
 

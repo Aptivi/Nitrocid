@@ -30,7 +30,7 @@ using Nitrocid.Kernel.Threading;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.ConsoleBase.Inputs;
-using Nitrocid.ConsoleBase.Buffered;
+using Terminaux.Base.Buffered;
 
 namespace Nitrocid.Extras.Timers.Timers
 {

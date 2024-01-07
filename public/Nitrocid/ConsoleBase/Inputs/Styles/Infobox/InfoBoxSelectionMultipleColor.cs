@@ -31,7 +31,7 @@ using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 using Nitrocid.ConsoleBase.Writers.FancyWriters.Tools;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Buffered;
+using Terminaux.Base.Buffered;
 using Textify.General;
 
 namespace Nitrocid.ConsoleBase.Inputs.Styles.Infobox

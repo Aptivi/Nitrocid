@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Buffered;
+using Terminaux.Base.Buffered;
 using Nitrocid.Drivers;
 using Nitrocid.Drivers.Console;
 using Nitrocid.Kernel.Debugging;
@@ -111,6 +111,7 @@ namespace Nitrocid.ConsoleBase
             CurrentWindowHeight = termDriver.WindowHeight;
 
             // Also, tell the screen-based apps to refresh themselves
+            // TODO: Terminaux needs to provide an option whether to call the essential handler or not
             if (ScreenTools.CurrentScreen is not null && !ScreensaverManager.InSaver)
                 ScreenTools.Render();
 

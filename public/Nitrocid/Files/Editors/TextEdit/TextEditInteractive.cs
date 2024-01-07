@@ -34,7 +34,7 @@ using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
 using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 using Nitrocid.ConsoleBase.Interactive;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Buffered;
+using Terminaux.Base.Buffered;
 using Nitrocid.Files.Operations.Querying;
 using Textify.General;
 

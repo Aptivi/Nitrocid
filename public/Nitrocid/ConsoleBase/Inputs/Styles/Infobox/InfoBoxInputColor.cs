@@ -29,7 +29,7 @@ using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Writers.FancyWriters;
 using Nitrocid.ConsoleBase.Writers.FancyWriters.Tools;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Buffered;
+using Terminaux.Base.Buffered;
 using Nitrocid.ConsoleBase.Writers.ConsoleWriters;
 using Textify.General;
 

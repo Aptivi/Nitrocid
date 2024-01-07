@@ -33,7 +33,7 @@ using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Misc.Text;
 using Nitrocid.ConsoleBase.Writers.FancyWriters;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Buffered;
+using Terminaux.Base.Buffered;
 using Nitrocid.Misc.Text.Probers.Motd;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Network.RSS;

@@ -32,7 +32,7 @@ using Nitrocid.ConsoleBase;
 using Nitrocid.Kernel.Time.Renderers;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Inputs;
-using Nitrocid.ConsoleBase.Buffered;
+using Terminaux.Base.Buffered;
 using System.Text;
 using Nitrocid.ConsoleBase.Writers.FancyWriters;
 

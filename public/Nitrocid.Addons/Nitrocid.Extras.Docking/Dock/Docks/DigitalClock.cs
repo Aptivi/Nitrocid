@@ -19,7 +19,7 @@
 
 using Figletize;
 using Nitrocid.ConsoleBase;
-using Nitrocid.ConsoleBase.Buffered;
+using Terminaux.Base.Buffered;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Inputs;
 using Nitrocid.ConsoleBase.Writers.FancyWriters;

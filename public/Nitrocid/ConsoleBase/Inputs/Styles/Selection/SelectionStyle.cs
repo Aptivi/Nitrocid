@@ -21,7 +21,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Nitrocid.ConsoleBase.Buffered;
+using Terminaux.Base.Buffered;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Inputs.Styles.Infobox;
 using Nitrocid.ConsoleBase.Writers.FancyWriters;
