@@ -24,7 +24,6 @@ using System.Text;
 using Textify.Sequences.Builder.Types;
 using Textify.Sequences.Tools;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.ConsoleBase;
 using Terminaux.Inputs;
 using Nitrocid.Shell.Shells.Hex;
 using Nitrocid.Files.Operations;

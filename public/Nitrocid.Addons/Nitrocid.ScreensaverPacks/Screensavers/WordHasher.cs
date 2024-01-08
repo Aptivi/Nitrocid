@@ -26,7 +26,6 @@ using Nitrocid.Misc.Screensaver;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using Nitrocid.Drivers.Encryption;
-using Nitrocid.ConsoleBase;
 using Terminaux.Writer.FancyWriters;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Drivers.RNG;

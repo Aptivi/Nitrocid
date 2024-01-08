@@ -19,8 +19,6 @@
 
 using System;
 using System.Collections;
-using Nitrocid.ConsoleBase;
-using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Screensaver;

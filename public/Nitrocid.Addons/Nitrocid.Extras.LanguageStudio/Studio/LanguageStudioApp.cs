@@ -18,7 +18,6 @@
 //
 
 using Newtonsoft.Json.Linq;
-using Nitrocid.ConsoleBase;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Inputs;
 using Terminaux.Inputs.Styles.Choice;

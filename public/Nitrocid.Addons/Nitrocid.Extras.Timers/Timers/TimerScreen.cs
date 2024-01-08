@@ -19,16 +19,12 @@
 
 using System;
 using System.Runtime.CompilerServices;
-using System.Threading;
 using System.Timers;
 using Timer = System.Timers.Timer;
 using Figletize;
-using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.Kernel.Threading;
-using Nitrocid.ConsoleBase;
 using Nitrocid.Kernel.Time.Renderers;
 using Nitrocid.Languages;
 using Terminaux.Inputs;

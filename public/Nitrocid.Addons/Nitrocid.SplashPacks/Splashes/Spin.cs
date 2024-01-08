@@ -19,7 +19,6 @@
 
 using System.Text;
 using System.Threading;
-using Nitrocid.ConsoleBase;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Splash;

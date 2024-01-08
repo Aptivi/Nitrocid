@@ -33,7 +33,6 @@ using Nitrocid.Files.Paths;
 using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Threading;
-using Nitrocid.ConsoleBase;
 using Nitrocid.Misc.Screensaver;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Writers;

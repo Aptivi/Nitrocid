@@ -25,7 +25,6 @@ using System;
 using System.Text;
 using Nitrocid.Kernel;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.ConsoleBase;
 using Terminaux.Writer.FancyWriters;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Text;

@@ -17,20 +17,15 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System.IO;
 using Nitrocid.Kernel;
 using Nitrocid.Shell.ShellBase.Help;
 using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Files;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
 using Terminaux.Writer.FancyWriters;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Security.Permissions;
-using Nitrocid.Files.Paths;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.Files.Operations.Querying;
-using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Drivers;
 using System;
 

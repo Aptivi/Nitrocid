@@ -29,7 +29,6 @@ using Nitrocid.Kernel.Time;
 using Nitrocid.Kernel.Time.Converters;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.ConsoleBase;
 using Terminaux.Writer.FancyWriters;
 using Terminaux.Base;
 

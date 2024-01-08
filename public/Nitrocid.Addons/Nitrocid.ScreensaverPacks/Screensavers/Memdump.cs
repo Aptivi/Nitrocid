@@ -21,7 +21,6 @@ using System;
 using Terminaux.Colors;
 using Nitrocid.Misc.Screensaver;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.ConsoleBase;
 using Terminaux.Writer.FancyWriters;
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Threading;

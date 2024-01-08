@@ -28,7 +28,6 @@ using Nitrocid.Files.Operations;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Files.Operations.Querying;
-using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
 
 namespace Nitrocid.Drivers.Console.Bases

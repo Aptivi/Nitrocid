@@ -26,7 +26,6 @@ using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Time;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Threading;
-using Nitrocid.ConsoleBase;
 using Nitrocid.Kernel.Time.Renderers;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;

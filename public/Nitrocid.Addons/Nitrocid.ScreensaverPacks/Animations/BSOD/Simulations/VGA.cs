@@ -19,7 +19,6 @@
 
 using GlitchSettings = Nitrocid.ScreensaverPacks.Screensavers.GlitchSettings;
 using BsodSettings = Nitrocid.ScreensaverPacks.Screensavers.BSODSettings;
-using Nitrocid.ConsoleBase;
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Misc.Screensaver;
 using Nitrocid.Kernel.Threading;

@@ -29,7 +29,6 @@ using Nitrocid.Kernel;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Users.Login;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.ConsoleBase;
 using Nitrocid.Files.Operations;
 using Nitrocid.Files.Folders;
 using Nitrocid.Kernel.Exceptions;

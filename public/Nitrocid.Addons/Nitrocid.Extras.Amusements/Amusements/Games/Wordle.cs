@@ -23,7 +23,6 @@ using System.Threading;
 using Terminaux.Colors;
 using Textify.Words;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.ConsoleBase;
 using Terminaux.Inputs;
 using Nitrocid.Languages;
 using Terminaux.Writer.FancyWriters;

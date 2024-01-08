@@ -19,7 +19,6 @@
 
 using System.Collections.Generic;
 using System.Linq;
-using Nitrocid.ConsoleBase;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Inputs;
 using Terminaux.Inputs.Styles.Selection;

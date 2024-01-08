@@ -17,17 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System;
 using System.Runtime.InteropServices;
-using System.Text.RegularExpressions;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Threading;
-using Textify.General;
-using Textify.Sequences.Builder;
-using Textify.Sequences.Tools;
 using Terminaux.Base;
 
 namespace Nitrocid.ConsoleBase

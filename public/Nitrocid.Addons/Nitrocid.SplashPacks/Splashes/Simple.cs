@@ -20,7 +20,6 @@
 using System;
 using System.Text;
 using System.Threading;
-using Nitrocid.ConsoleBase;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Debugging;

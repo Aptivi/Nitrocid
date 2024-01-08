@@ -25,7 +25,6 @@ using Textify.Sequences.Builder.Types;
 using System.Collections.Generic;
 using Nitrocid.Shell.Shells.Text;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.ConsoleBase;
 using Terminaux.Inputs;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;

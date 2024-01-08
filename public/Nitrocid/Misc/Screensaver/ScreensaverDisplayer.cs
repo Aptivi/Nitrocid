@@ -21,7 +21,6 @@ using System;
 using System.Threading;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Threading;
-using Nitrocid.ConsoleBase;
 using Nitrocid.Kernel.Events;
 using Terminaux.Base;
 

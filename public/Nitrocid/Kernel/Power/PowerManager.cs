@@ -28,7 +28,6 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Shell.ShellBase.Commands.ProcessExecution;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Kernel.Threading;
-using Nitrocid.ConsoleBase;
 using Nitrocid.Misc.Splash;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Starting.Environment;

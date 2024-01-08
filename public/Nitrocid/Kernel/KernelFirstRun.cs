@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase;
 using Terminaux.Inputs;
 using Nitrocid.ConsoleBase.Presentation;
 using Nitrocid.ConsoleBase.Presentation.Elements;

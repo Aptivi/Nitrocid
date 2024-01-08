@@ -19,7 +19,6 @@
 
 using System.Collections.Generic;
 using System.Text;
-using Nitrocid.ConsoleBase;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Threading;

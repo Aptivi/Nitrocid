@@ -18,7 +18,6 @@
 //
 
 using System.Collections.Generic;
-using Nitrocid.ConsoleBase;
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Screensaver;

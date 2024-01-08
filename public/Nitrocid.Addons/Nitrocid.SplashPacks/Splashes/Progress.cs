@@ -22,7 +22,6 @@ using System.Threading;
 using Terminaux.Colors;
 using System.Text;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.ConsoleBase;
 using Nitrocid.Misc.Splash;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ConsoleBase.Colors;

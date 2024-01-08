@@ -49,7 +49,6 @@ using System.Text;
 using System.Threading;
 using Terminaux.Colors;
 using Textify.Sequences.Builder.Types;
-using Nitrocid.ConsoleBase;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ConsoleBase.Colors;

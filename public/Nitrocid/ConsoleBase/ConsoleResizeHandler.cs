@@ -22,11 +22,7 @@ using Nitrocid.Drivers;
 using Nitrocid.Drivers.Console;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Events;
-using Nitrocid.Kernel.Power;
-using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Screensaver;
-using System;
-using System.Threading;
 using Terminaux.Base;
 
 namespace Nitrocid.ConsoleBase

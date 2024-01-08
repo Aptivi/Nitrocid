@@ -31,7 +31,6 @@ using Nitrocid.ConsoleBase.Inputs;
 using Nitrocid.Drivers;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Drivers.RNG;
-using Nitrocid.ConsoleBase;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Misc.Splash;
 using Nitrocid.Languages;

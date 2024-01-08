@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase;
 using Nitrocid.Extras.Amusements.Amusements.Games;
 using Nitrocid.Shell.ShellBase.Commands;
 using Terminaux.Base;

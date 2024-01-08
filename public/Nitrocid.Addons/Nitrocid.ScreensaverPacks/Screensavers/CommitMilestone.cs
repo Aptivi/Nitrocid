@@ -18,8 +18,6 @@
 //
 
 using Figletize;
-using Nitrocid.ConsoleBase;
-using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Writer.FancyWriters;
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Debugging;

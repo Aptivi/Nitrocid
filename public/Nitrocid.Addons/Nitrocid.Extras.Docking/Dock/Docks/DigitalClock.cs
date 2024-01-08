@@ -18,7 +18,6 @@
 //
 
 using Figletize;
-using Nitrocid.ConsoleBase;
 using Terminaux.Base.Buffered;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Inputs;

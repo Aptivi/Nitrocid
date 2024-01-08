@@ -18,7 +18,6 @@
 //
 
 using System;
-using Nitrocid.ConsoleBase;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Debugging;

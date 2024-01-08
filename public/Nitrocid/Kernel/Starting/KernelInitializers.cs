@@ -41,7 +41,6 @@ using Nitrocid.Languages;
 using Nitrocid.Misc.Notifications;
 using Nitrocid.Security.Privacy;
 using Nitrocid.Modifications;
-using Terminaux.Writer.MiscWriters;
 using Nitrocid.Network.Base.Connections;
 using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Files.Paths;

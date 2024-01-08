@@ -22,7 +22,6 @@ using Terminaux.Colors;
 using Textify.NameGen;
 using Nitrocid.Misc.Screensaver;
 using Terminaux.Inputs.Styles.Infobox;
-using Nitrocid.ConsoleBase;
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Kernel.Time.Renderers;

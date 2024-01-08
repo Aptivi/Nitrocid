@@ -38,7 +38,6 @@
 //
 
 using Nitrocid.ConsoleBase;
-using Terminaux.Base;
 
 namespace Nitrocid.Misc.Screensaver
 {

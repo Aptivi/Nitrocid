@@ -20,7 +20,6 @@
 using System;
 using System.Collections.Generic;
 using Terminaux.Colors;
-using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Drivers.RNG;
 using Terminaux.Writer.ConsoleWriters;
 

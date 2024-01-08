@@ -19,7 +19,6 @@
 
 using System;
 using System.Threading;
-using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;

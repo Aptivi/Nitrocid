@@ -34,7 +34,6 @@ using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Inputs;
 using Nitrocid.Files.Operations.Querying;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.ConsoleBase;
 using Nitrocid.Kernel;
 using Textify.General;
 using Terminaux.Base;

@@ -23,8 +23,6 @@ using System.Threading;
 using Terminaux.Colors;
 using Nitrocid.Extras.Amusements.Screensavers;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase;
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Screensaver;

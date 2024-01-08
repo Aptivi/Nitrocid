@@ -20,7 +20,6 @@
 using System;
 using System.Net.Http;
 using System.Threading;
-using Nitrocid.ConsoleBase;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Drivers;

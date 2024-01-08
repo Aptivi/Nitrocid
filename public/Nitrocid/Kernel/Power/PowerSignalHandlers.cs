@@ -18,7 +18,6 @@
 //
 
 using Nitrocid.ConsoleBase;
-using Nitrocid.Kernel.Debugging;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using Terminaux.Base;

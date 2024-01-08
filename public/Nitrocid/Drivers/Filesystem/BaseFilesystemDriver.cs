@@ -30,7 +30,6 @@ using Newtonsoft.Json;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.ConsoleBase;
 using Nitrocid.Misc.Reflection;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Files.Operations;

@@ -18,7 +18,6 @@
 //
 
 using System.Collections.Generic;
-using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Screensaver;
 using Terminaux.Colors;

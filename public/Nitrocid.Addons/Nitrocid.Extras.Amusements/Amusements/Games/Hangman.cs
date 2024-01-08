@@ -21,7 +21,6 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading;
-using Nitrocid.ConsoleBase;
 using Terminaux.Inputs;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Drivers.RNG;

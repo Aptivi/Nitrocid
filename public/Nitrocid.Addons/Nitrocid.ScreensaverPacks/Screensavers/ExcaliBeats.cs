@@ -18,8 +18,6 @@
 //
 
 using System.Runtime.Versioning;
-using Nitrocid.ConsoleBase;
-using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Kernel;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Misc.Screensaver;
