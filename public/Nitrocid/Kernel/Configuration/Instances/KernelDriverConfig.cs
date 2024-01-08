@@ -41,7 +41,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// <inheritdoc/>
         [JsonIgnore]
         public override SettingsEntry[] SettingsEntries =>
-            ConfigTools.GetSettingsEntries(Resources.SettingsResources.SettingsEntries);
+            ConfigTools.GetSettingsEntries(Resources.SettingsResources.DriverSettingsEntries);
 
         #region Drivers
         /// <summary>
