@@ -53,6 +53,7 @@ namespace Nitrocid.Files.Paths
             { $"{KernelPathType.Contacts}",            (() => ContactsPath, true) },
             { $"{KernelPathType.ContactsImport}",      (() => ContactsImportPath, true) },
             { $"{KernelPathType.SaverConfiguration}",  (() => SaverConfigurationPath, true) },
+            { $"{KernelPathType.DriverConfiguration}", (() => DriverConfigurationPath, true) },
             { $"{KernelPathType.ToDoList}",            (() => ToDoListPath, true) },
             { $"{KernelPathType.UserGroups}",          (() => UserGroupsPath, true) },
             { $"{KernelPathType.Addons}",              (() => AddonsPath, false) },
@@ -225,6 +226,12 @@ namespace Nitrocid.Files.Paths
         /// </summary>
         public static string SaverConfigurationPath =>
             FilesystemTools.NeutralizePath(AppDataPath + "/KernelSaverConfig.json");
+
+        /// <summary>
+        /// Configuration path
+        /// </summary>
+        public static string DriverConfigurationPath =>
+            FilesystemTools.NeutralizePath(AppDataPath + "/KernelDriverConfig.json");
 
         /// <summary>
         /// Configuration path

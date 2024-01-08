@@ -312,6 +312,11 @@ namespace Nitrocid.Kernel.Configuration
                 DebugWriter.WriteDebug(DebugLevel.W, "No saver config file found. Creating...");
                 CreateConfig(SaverConfig);
             }
+            if (!Checking.FileExists(PathsManagement.GetKernelPath(KernelPathType.DriverConfiguration)))
+            {
+                DebugWriter.WriteDebug(DebugLevel.W, "No driver config file found. Creating...");
+                CreateConfig(DriverConfig);
+            }
 
             // Validate config
             try

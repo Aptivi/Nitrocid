@@ -89,6 +89,10 @@ namespace Nitrocid.Files.Paths
         /// </summary>
         SaverConfiguration,
         /// <summary>
+        /// Driver configuration file.
+        /// </summary>
+        DriverConfiguration,
+        /// <summary>
         /// User groups configuration file.
         /// </summary>
         UserGroups,
