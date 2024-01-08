@@ -444,7 +444,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
                 Command = Command[varStoreStringFull.Length..];
 
                 // Check to see if the command is a comment
-                if (!string.IsNullOrEmpty(Command) || !Command.StartsWithAnyOf([" ", "#"]))
+                if (!string.IsNullOrWhiteSpace(Command) || !Command.StartsWithAnyOf([" ", "#"]))
                 {
                     // Get the command name
                     var words = Command.SplitEncloseDoubleQuotes();
