@@ -63,6 +63,7 @@ using Nitrocid.Shell.Shells.Text;
 using Nitrocid.Shell.Shells.Hex;
 using Nitrocid.Shell.Shells.Debug;
 using Textify.General;
+using Terminaux.Base;
 
 namespace Nitrocid.Shell.ShellBase.Shells
 {

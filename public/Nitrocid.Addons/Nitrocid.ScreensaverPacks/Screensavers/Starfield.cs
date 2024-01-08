@@ -27,6 +27,7 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Screensaver;
 using Terminaux.Colors;
+using Terminaux.Base;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {

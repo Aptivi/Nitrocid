@@ -24,6 +24,7 @@ using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Screensaver;
+using Terminaux.Base;
 using Terminaux.Colors;
 
 namespace Nitrocid.ScreensaverPacks.Animations.Glitch

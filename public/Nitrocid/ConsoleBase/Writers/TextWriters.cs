@@ -25,6 +25,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 using Nitrocid.Drivers.Console;
+using Terminaux.Base;
 
 namespace Nitrocid.ConsoleBase.Writers
 {
@@ -51,7 +52,7 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="ListKeyColor">A key color.</param>
         /// <param name="ListValueColor">A value color.</param>
         public static void WriteList<TKey, TValue>(Dictionary<TKey, TValue> List, KernelColorType ListKeyColor, KernelColorType ListValueColor) =>
-           ListWriterColor.WriteList(List, KernelColorTools.GetColor(ListKeyColor), KernelColorTools.GetColor(ListValueColor), ConsoleExtensions.WrapListOutputs);
+           ListWriterColor.WriteList(List, KernelColorTools.GetColor(ListKeyColor), KernelColorTools.GetColor(ListValueColor), ConsoleTools.WrapListOutputs);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support.
@@ -70,7 +71,7 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="ListKeyColor">A key color.</param>
         /// <param name="ListValueColor">A value color.</param>
         public static void WriteList<T>(IEnumerable<T> List, KernelColorType ListKeyColor, KernelColorType ListValueColor) =>
-            ListWriterColor.WriteList(List, KernelColorTools.GetColor(ListKeyColor), KernelColorTools.GetColor(ListValueColor), ConsoleExtensions.WrapListOutputs);
+            ListWriterColor.WriteList(List, KernelColorTools.GetColor(ListKeyColor), KernelColorTools.GetColor(ListValueColor), ConsoleTools.WrapListOutputs);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support.

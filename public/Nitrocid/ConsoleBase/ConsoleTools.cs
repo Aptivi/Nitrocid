@@ -28,14 +28,14 @@ using Nitrocid.Kernel.Threading;
 using Textify.General;
 using Textify.Sequences.Builder;
 using Textify.Sequences.Tools;
-using TerminauxExts = Terminaux.Base.ConsoleExtensions;
+using Terminaux.Base;
 
 namespace Nitrocid.ConsoleBase
 {
     /// <summary>
     /// Additional routines for the console
     /// </summary>
-    public static class ConsoleExtensions
+    public static class ConsoleTools
     {
 
         internal static bool UseAltBuffer = true;
@@ -72,64 +72,6 @@ namespace Nitrocid.ConsoleBase
             Config.MainConfig.WrapListOutputs;
 
         /// <summary>
-        /// Clears the console buffer, but keeps the current cursor position
-        /// </summary>
-        public static void ClearKeepPosition() =>
-            TerminauxExts.ClearKeepPosition();
-
-        /// <summary>
-        /// Clears the line to the right
-        /// </summary>
-        public static string GetClearLineToRightSequence() =>
-            TerminauxExts.GetClearLineToRightSequence();
-
-        /// <summary>
-        /// Clears the line to the right
-        /// </summary>
-        public static void ClearLineToRight() =>
-            TerminauxExts.ClearLineToRight();
-
-        /// <summary>
-        /// Gets how many times to repeat the character to represent the appropriate percentage level for the specified number.
-        /// </summary>
-        /// <param name="CurrentNumber">The current number that is less than or equal to the maximum number.</param>
-        /// <param name="MaximumNumber">The maximum number.</param>
-        /// <param name="WidthOffset">The console window width offset. It's usually a multiple of 2.</param>
-        /// <returns>How many times to repeat the character</returns>
-        public static int PercentRepeat(int CurrentNumber, int MaximumNumber, int WidthOffset) =>
-            TerminauxExts.PercentRepeat(CurrentNumber, MaximumNumber, WidthOffset);
-
-        /// <summary>
-        /// Filters the VT sequences that matches the regex
-        /// </summary>
-        /// <param name="Text">The text that contains the VT sequences</param>
-        /// <returns>The text that doesn't contain the VT sequences</returns>
-        public static string FilterVTSequences(string Text) =>
-            TerminauxExts.FilterVTSequences(Text);
-
-        /// <summary>
-        /// Get the filtered cursor positions (by filtered means filtered from the VT escape sequences that matches the regex in the routine)
-        /// </summary>
-        /// <param name="Text">The text that contains the VT sequences</param>
-        /// <param name="line">Whether to simulate the new line at the end of text or not</param>
-        /// <param name="Vars">Variables to be formatted in the text</param>
-        public static (int, int) GetFilteredPositions(string Text, bool line, params object[] Vars) =>
-            TerminauxExts.GetFilteredPositions(Text, line, Vars);
-
-        /// <summary>
-        /// Sets the console title
-        /// </summary>
-        /// <param name="Text">The text to be set</param>
-        public static void SetTitle(string Text) =>
-            TerminauxExts.SetTitle(Text);
-
-        /// <summary>
-        /// Resets the entire console
-        /// </summary>
-        public static void ResetAll() =>
-            TerminauxExts.ResetAll();
-
-        /// <summary>
         /// Resets the console colors without clearing screen
         /// </summary>
         /// <param name="useKernelColors">Whether to use the kernel colors or to use the default terminal colors</param>
@@ -146,15 +88,9 @@ namespace Nitrocid.ConsoleBase
         public static void ResetBackground(bool useKernelColors = false)
         {
             if (useKernelColors)
-            {
-                ConsoleWrapper.Write(
-                    KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground
-                );
-            }
+                KernelColorTools.SetConsoleColor(KernelColorType.Background, Background: true);
             else
-            {
-                TerminauxExts.ResetBackground();
-            }
+                ConsoleExtensions.ResetBackground();
         }
 
         /// <summary>
@@ -164,15 +100,9 @@ namespace Nitrocid.ConsoleBase
         public static void ResetForeground(bool useKernelColors = false)
         {
             if (useKernelColors)
-            {
-                ConsoleWrapper.Write(
-                    KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground
-                );
-            }
+                KernelColorTools.SetConsoleColor(KernelColorType.NeutralText);
             else
-            {
-                TerminauxExts.ResetForeground();
-            }
+                ConsoleExtensions.ResetForeground();
         }
 
         internal static void PreviewMainBuffer()

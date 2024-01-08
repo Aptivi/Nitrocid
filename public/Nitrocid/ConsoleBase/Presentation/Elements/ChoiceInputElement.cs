@@ -29,6 +29,7 @@ using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
+using Terminaux.Base;
 
 namespace Nitrocid.ConsoleBase.Presentation.Elements
 {

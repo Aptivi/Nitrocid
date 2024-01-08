@@ -48,6 +48,7 @@ using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Misc.Text.Probers.Regexp;
 using Nitrocid.Kernel.Extensions;
 using Textify.General;
+using Terminaux.Base;
 
 namespace Nitrocid.Drivers.Filesystem
 {

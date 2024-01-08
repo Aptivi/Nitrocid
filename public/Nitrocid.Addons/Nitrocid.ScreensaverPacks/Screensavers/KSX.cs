@@ -36,6 +36,7 @@ using Nitrocid.Kernel.Time.Renderers;
 using Nitrocid.Kernel.Time;
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Languages;
+using Terminaux.Base;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {

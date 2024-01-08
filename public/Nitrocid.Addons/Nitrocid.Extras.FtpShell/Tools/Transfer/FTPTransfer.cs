@@ -38,8 +38,8 @@ namespace Nitrocid.Extras.FtpShell.Tools.Transfer
 
         // Progress Bar Enabled
         internal static bool progressFlag = true;
-        internal static int ConsoleOriginalPosition_LEFT;
-        internal static int ConsoleOriginalPosition_TOP;
+        internal static int ConsoleOriginalPositionLeft;
+        internal static int ConsoleOriginalPositionTop;
 
         /// <summary>
         /// Downloads a file from the currently connected FTP server

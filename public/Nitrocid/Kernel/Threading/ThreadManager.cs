@@ -27,6 +27,7 @@ using System.Data;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading;
+using Terminaux.Base;
 
 namespace Nitrocid.Kernel.Threading
 {

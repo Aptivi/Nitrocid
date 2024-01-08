@@ -31,6 +31,7 @@ using Nitrocid.Languages;
 using Nitrocid.Misc.Notifications;
 using Nitrocid.Misc.Reflection;
 using Nitrocid.Misc.Text.Probers.Placeholder;
+using Terminaux.Base;
 
 namespace Nitrocid.Network.Base.Transfer
 {

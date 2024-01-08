@@ -28,6 +28,7 @@ using Nitrocid.Languages;
 using System.Linq;
 using System.Threading;
 using Terminaux.Colors;
+using Terminaux.Base;
 
 namespace Nitrocid.Users.Login.Handlers.Logins
 {

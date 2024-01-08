@@ -23,6 +23,7 @@ using Terminaux.Inputs;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
+using Terminaux.Base;
 
 namespace Nitrocid.Legacy.HddUncleaner
 {

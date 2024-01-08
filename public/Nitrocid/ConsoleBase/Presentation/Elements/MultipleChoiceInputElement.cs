@@ -29,6 +29,7 @@ using System.Linq;
 using System.Text;
 using Terminaux.Reader;
 using Textify.General;
+using Terminaux.Base;
 
 namespace Nitrocid.ConsoleBase.Presentation.Elements
 {

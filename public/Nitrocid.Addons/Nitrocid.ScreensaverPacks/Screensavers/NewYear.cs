@@ -30,6 +30,7 @@ using Nitrocid.Misc.Text;
 using Terminaux.Writer.FancyWriters;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Threading;
+using Terminaux.Base;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {

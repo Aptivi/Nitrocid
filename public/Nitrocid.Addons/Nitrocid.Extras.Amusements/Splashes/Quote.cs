@@ -28,6 +28,7 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Misc.Splash;
 using Terminaux.Colors;
 using Textify.General;
+using Terminaux.Base;
 
 namespace Nitrocid.Extras.Amusements.Splashes
 {

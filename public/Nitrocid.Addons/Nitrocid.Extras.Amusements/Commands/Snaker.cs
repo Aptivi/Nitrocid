@@ -20,6 +20,7 @@
 using Nitrocid.ConsoleBase;
 using Nitrocid.Extras.Amusements.Amusements.Games;
 using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Base;
 
 namespace Nitrocid.Extras.Amusements.Commands
 {

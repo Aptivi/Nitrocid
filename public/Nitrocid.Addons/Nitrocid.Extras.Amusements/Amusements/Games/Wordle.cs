@@ -27,6 +27,7 @@ using Nitrocid.ConsoleBase;
 using Terminaux.Inputs;
 using Nitrocid.Languages;
 using Terminaux.Writer.FancyWriters;
+using Terminaux.Base;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games
 {

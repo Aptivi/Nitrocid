@@ -23,6 +23,7 @@ using Nitrocid.ConsoleBase;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Splash;
+using Terminaux.Base;
 using Terminaux.Colors;
 
 namespace Nitrocid.SplashPacks.Splashes

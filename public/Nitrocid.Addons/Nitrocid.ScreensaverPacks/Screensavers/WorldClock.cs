@@ -27,6 +27,7 @@ using Nitrocid.Drivers.RNG;
 using Nitrocid.ConsoleBase;
 using Terminaux.Writer.FancyWriters;
 using Nitrocid.Kernel.Threading;
+using Terminaux.Base;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {

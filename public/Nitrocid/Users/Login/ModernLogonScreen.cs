@@ -38,6 +38,7 @@ using Nitrocid.Misc.Text.Probers.Motd;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Network.RSS;
 using Textify.General;
+using Terminaux.Base;
 
 namespace Nitrocid.Users.Login
 {

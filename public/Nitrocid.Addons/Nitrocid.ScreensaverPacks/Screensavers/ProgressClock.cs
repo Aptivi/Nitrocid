@@ -30,6 +30,7 @@ using Nitrocid.Kernel.Time;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel.Time.Renderers;
 using Nitrocid.Kernel.Threading;
+using Terminaux.Base;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {

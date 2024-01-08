@@ -43,6 +43,7 @@ using Terminaux.Base.Buffered;
 using Nitrocid.Kernel.Power;
 using Nitrocid.Misc.Screensaver.Displays;
 using Terminaux.Colors;
+using Terminaux.Base;
 
 namespace Nitrocid.Misc.Screensaver
 {

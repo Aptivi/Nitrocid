@@ -66,8 +66,8 @@ namespace Nitrocid.Analyzers.ConsoleBase
                 // Get the method
                 var idName = ((IdentifierNameSyntax)typeDecl.Name).Identifier.Text;
 
-                // We need to have a syntax that calls ConsoleExtensions.ResetColors
-                var classSyntax = SyntaxFactory.IdentifierName("ConsoleExtensions");
+                // We need to have a syntax that calls ConsoleTools.ResetColors
+                var classSyntax = SyntaxFactory.IdentifierName("ConsoleTools");
                 var methodSyntax = SyntaxFactory.IdentifierName("ResetColors");
                 var resultSyntax = SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, classSyntax, methodSyntax);
                 var replacedSyntax = resultSyntax

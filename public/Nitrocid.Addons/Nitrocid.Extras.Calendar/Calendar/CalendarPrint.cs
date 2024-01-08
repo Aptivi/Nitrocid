@@ -31,6 +31,7 @@ using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ConsoleBase;
 using Terminaux.Writer.FancyWriters;
+using Terminaux.Base;
 
 namespace Nitrocid.Extras.Calendar.Calendar
 {

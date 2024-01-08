@@ -25,6 +25,7 @@ using Nitrocid.Extras.MailShell.Mail;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Reflection;
 using Nitrocid.Misc.Text.Probers.Placeholder;
+using Terminaux.Base;
 
 namespace Nitrocid.Extras.MailShell.Tools.Transfer
 {

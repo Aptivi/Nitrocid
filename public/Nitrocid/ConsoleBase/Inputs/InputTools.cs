@@ -33,7 +33,6 @@ namespace Nitrocid.ConsoleBase.Inputs
     {
         internal static TermReaderSettings globalSettings = new();
         internal static string currentMask = "*";
-        private static bool isWrapperInitialized;
 
         /// <summary>
         /// Default input choice output type
@@ -208,34 +207,6 @@ namespace Nitrocid.ConsoleBase.Inputs
         /// </summary>
         public static ConsoleKeyInfo DetectKeypressUnsafe() =>
             DriverHandler.CurrentInputDriverLocal.DetectKeypressUnsafe();
-
-        internal static void InitializeTerminauxWrappers()
-        {
-            if (isWrapperInitialized)
-                return;
-
-            // Initialize console wrappers for Terminaux
-            ConsoleWrapperTools.ActionBeep = ConsoleWrapper.Beep;
-            ConsoleWrapperTools.ActionBufferHeight = () => ConsoleWrapper.BufferHeight;
-            ConsoleWrapperTools.ActionCursorLeft = () => ConsoleWrapper.CursorLeft;
-            ConsoleWrapperTools.ActionCursorTop = () => ConsoleWrapper.CursorTop;
-            ConsoleWrapperTools.ActionCursorVisible = (value) => ConsoleWrapper.CursorVisible = value;
-            ConsoleWrapperTools.ActionIsDumb = () => DriverHandler.CurrentConsoleDriverLocal.IsDumb;
-            ConsoleWrapperTools.ActionKeyAvailable = () => ConsoleWrapper.KeyAvailable;
-            ConsoleWrapperTools.ActionReadKey = ConsoleWrapper.ReadKey;
-            ConsoleWrapperTools.ActionSetCursorPosition = ConsoleWrapper.SetCursorPosition;
-            ConsoleWrapperTools.ActionTreatCtrlCAsInput = (value) => ConsoleWrapper.TreatCtrlCAsInput = value;
-            ConsoleWrapperTools.ActionGetTreatCtrlCAsInput = () => ConsoleWrapper.TreatCtrlCAsInput;
-            ConsoleWrapperTools.ActionWindowHeight = () => ConsoleWrapper.WindowHeight;
-            ConsoleWrapperTools.ActionWindowWidth = () => ConsoleWrapper.WindowWidth;
-            ConsoleWrapperTools.ActionWriteChar = ConsoleWrapper.Write;
-            ConsoleWrapperTools.ActionWriteLine = ConsoleWrapper.WriteLine;
-            ConsoleWrapperTools.ActionWriteLineParameterized = ConsoleWrapper.WriteLine;
-            ConsoleWrapperTools.ActionWriteLineString = ConsoleWrapper.WriteLine;
-            ConsoleWrapperTools.ActionWriteParameterized = ConsoleWrapper.Write;
-            ConsoleWrapperTools.ActionWriteString = ConsoleWrapper.Write;
-            isWrapperInitialized = true;
-        }
 
     }
 }

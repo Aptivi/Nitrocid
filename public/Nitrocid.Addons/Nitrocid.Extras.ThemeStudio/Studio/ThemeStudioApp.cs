@@ -33,6 +33,7 @@ using Nitrocid.Languages;
 using Terminaux.Colors;
 using Terminaux.Colors.Selector;
 using Textify.General;
+using Terminaux.Base;
 
 namespace Nitrocid.Extras.ThemeStudio.Studio
 {

@@ -20,6 +20,7 @@
 using Nitrocid.ConsoleBase;
 using Nitrocid.Extras.Amusements.Amusements.Games;
 using Nitrocid.Misc.Screensaver;
+using Terminaux.Base;
 
 namespace Nitrocid.Extras.Amusements.Screensavers
 {

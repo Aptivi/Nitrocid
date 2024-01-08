@@ -25,6 +25,7 @@ using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase;
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Threading;
+using Terminaux.Base;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {

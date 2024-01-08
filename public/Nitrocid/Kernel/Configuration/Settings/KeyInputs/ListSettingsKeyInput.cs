@@ -28,6 +28,7 @@ using Nitrocid.Misc.Reflection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Terminaux.Base;
 
 namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
 {

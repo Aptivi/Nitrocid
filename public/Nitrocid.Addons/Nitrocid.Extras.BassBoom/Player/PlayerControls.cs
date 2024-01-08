@@ -52,6 +52,7 @@ using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase;
 using Terminaux.Writer.FancyWriters;
+using Terminaux.Base;
 
 namespace Nitrocid.Extras.BassBoom.Player
 {

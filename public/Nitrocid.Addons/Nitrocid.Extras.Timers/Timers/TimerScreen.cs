@@ -36,6 +36,7 @@ using Terminaux.Base.Buffered;
 using System.Text;
 using Terminaux.Writer.FancyWriters;
 using Terminaux.Colors;
+using Terminaux.Base;
 
 namespace Nitrocid.Extras.Timers.Timers
 {

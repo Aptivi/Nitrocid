@@ -23,6 +23,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Time.Renderers;
 using System.Linq;
 using Terminaux.Colors;
+using Terminaux.Base;
 
 namespace Nitrocid.ConsoleBase.Presentation
 {

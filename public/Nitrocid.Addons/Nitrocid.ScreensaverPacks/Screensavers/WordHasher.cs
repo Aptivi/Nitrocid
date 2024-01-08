@@ -30,6 +30,7 @@ using Nitrocid.ConsoleBase;
 using Terminaux.Writer.FancyWriters;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Drivers.RNG;
+using Terminaux.Base;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {

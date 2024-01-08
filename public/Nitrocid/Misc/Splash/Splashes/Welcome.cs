@@ -32,6 +32,7 @@ using Nitrocid.Misc.Text;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Kernel.Power;
+using Terminaux.Base;
 
 namespace Nitrocid.Misc.Splash.Splashes
 {

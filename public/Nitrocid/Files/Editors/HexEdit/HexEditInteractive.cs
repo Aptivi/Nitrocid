@@ -40,6 +40,7 @@ using Terminaux.Base.Buffered;
 using Nitrocid.Files.Operations.Querying;
 using Textify.General;
 using Terminaux.Colors;
+using Terminaux.Base;
 
 namespace Nitrocid.Files.Editors.HexEdit
 {

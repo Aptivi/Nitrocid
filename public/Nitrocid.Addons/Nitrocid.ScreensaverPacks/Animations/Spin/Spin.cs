@@ -22,6 +22,7 @@ using Terminaux.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ConsoleBase;
 using Nitrocid.Kernel.Threading;
+using Terminaux.Base;
 
 namespace Nitrocid.ScreensaverPacks.Animations.Spin
 {

@@ -36,6 +36,7 @@ using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Arguments.Help;
 using Nitrocid.Kernel.Power;
 using Terminaux.Colors;
+using Terminaux.Base;
 
 namespace Nitrocid.Kernel
 {
@@ -146,14 +147,14 @@ namespace Nitrocid.Kernel
             finally
             {
                 // Load main buffer
-                if (!KernelPlatform.IsOnWindows() && ConsoleExtensions.UseAltBuffer && ConsoleExtensions.HasSetAltBuffer && !PowerManager.hardShutdown)
-                    ConsoleExtensions.ShowMainBuffer();
+                if (!KernelPlatform.IsOnWindows() && ConsoleTools.UseAltBuffer && ConsoleTools.HasSetAltBuffer && !PowerManager.hardShutdown)
+                    ConsoleTools.ShowMainBuffer();
 
                 // Reset colors and clear the console
                 if (!PowerManager.hardShutdown)
                     ConsoleExtensions.ResetAll();
                 else
-                    ConsoleExtensions.ResetColors();
+                    ConsoleTools.ResetColors();
 
                 // Reset cursor state
                 ConsoleWrapper.CursorVisible = true;

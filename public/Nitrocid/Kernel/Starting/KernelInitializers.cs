@@ -60,6 +60,7 @@ using Nitrocid.Kernel.Threading.Watchdog;
 using Terminaux.Colors;
 using Nitrocid.ConsoleBase.Writers.MiscWriters;
 using Terminaux.Base.Checks;
+using Terminaux.Base;
 
 namespace Nitrocid.Kernel.Starting
 {
@@ -75,7 +76,7 @@ namespace Nitrocid.Kernel.Starting
                 // Initialize crucial things
                 if (!KernelPlatform.IsOnUnix())
                 {
-                    if (!ConsoleExtensions.InitializeSequences())
+                    if (!ConsoleTools.InitializeSequences())
                     {
                         TextWriterColor.Write("Can not initialize VT sequences for your Windows terminal. Make sure that you're running Windows 10 or later.");
                         InputTools.DetectKeypress();
@@ -114,10 +115,10 @@ namespace Nitrocid.Kernel.Starting
             try
             {
                 // Load alternative buffer (only supported on Linux, because Windows doesn't seem to respect CursorVisible = false on alt buffers)
-                if (!KernelPlatform.IsOnWindows() && ConsoleExtensions.UseAltBuffer)
+                if (!KernelPlatform.IsOnWindows() && ConsoleTools.UseAltBuffer)
                 {
-                    ConsoleExtensions.ShowAltBuffer();
-                    ConsoleExtensions.HasSetAltBuffer = true;
+                    ConsoleTools.ShowAltBuffer();
+                    ConsoleTools.HasSetAltBuffer = true;
                     DebugWriter.WriteDebug(DebugLevel.I, "Loaded alternative buffer.");
                 }
 
@@ -127,10 +128,6 @@ namespace Nitrocid.Kernel.Starting
                 // Initialize pre-boot splash (if enabled)
                 if (KernelEntry.PrebootSplash)
                     SplashManager.OpenSplash(SplashContext.Preboot);
-
-                // Initialize console wrappers for TermRead
-                InputTools.InitializeTerminauxWrappers();
-                DebugWriter.WriteDebug(DebugLevel.I, "Loaded input wrappers.");
 
                 // Initialize watchdog
                 ThreadWatchdog.StartWatchdog();
@@ -288,7 +285,7 @@ namespace Nitrocid.Kernel.Starting
             {
                 // Reset every variable below
                 KernelEntry.QuietKernel = false;
-                ConsoleExtensions.HasSetAltBuffer = false;
+                ConsoleTools.HasSetAltBuffer = false;
                 SplashReport._Progress = 0;
                 SplashReport._ProgressText = "";
                 SplashReport._KernelBooted = false;

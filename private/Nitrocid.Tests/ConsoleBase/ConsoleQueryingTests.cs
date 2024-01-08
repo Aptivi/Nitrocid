@@ -21,6 +21,7 @@ using Nitrocid.ConsoleBase;
 using NUnit.Framework;
 using Shouldly;
 using System;
+using Terminaux.Base;
 using Textify.General;
 
 namespace Nitrocid.Tests.ConsoleBase

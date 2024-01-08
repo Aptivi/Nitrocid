@@ -29,6 +29,7 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
 using Terminaux.Colors;
 using Textify.Words;
+using Terminaux.Base;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games
 {

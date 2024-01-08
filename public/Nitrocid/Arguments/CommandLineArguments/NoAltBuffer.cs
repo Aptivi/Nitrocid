@@ -25,7 +25,7 @@ namespace Nitrocid.Arguments.CommandLineArguments
     {
 
         public override void Execute(ArgumentParameters parameters) =>
-            ConsoleExtensions.UseAltBuffer = false;
+            ConsoleTools.UseAltBuffer = false;
 
     }
 }

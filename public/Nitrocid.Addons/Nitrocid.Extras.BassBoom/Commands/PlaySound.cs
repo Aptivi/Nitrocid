@@ -32,6 +32,7 @@ using Nitrocid.Shell.ShellBase.Commands;
 using System;
 using System.IO;
 using System.Threading;
+using Terminaux.Base;
 
 namespace Nitrocid.Extras.BassBoom.Commands
 {

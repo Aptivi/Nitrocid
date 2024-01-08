@@ -25,6 +25,7 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Misc.Splash;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ConsoleBase;
+using Terminaux.Base;
 
 namespace Nitrocid.SplashPacks.Splashes
 {

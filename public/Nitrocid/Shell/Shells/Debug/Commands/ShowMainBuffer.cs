@@ -42,7 +42,7 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
                 TextWriters.Write(Translate.DoTranslation("This command is not supported on Windows."), KernelColorType.Error);
                 return 33;
             }
-            ConsoleExtensions.PreviewMainBuffer();
+            ConsoleTools.PreviewMainBuffer();
             return 0;
         }
 

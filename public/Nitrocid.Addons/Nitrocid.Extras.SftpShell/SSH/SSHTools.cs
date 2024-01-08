@@ -37,6 +37,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ConsoleBase;
 using Nitrocid.Kernel;
 using Textify.General;
+using Terminaux.Base;
 
 namespace Nitrocid.Extras.SftpShell.SSH
 {
@@ -273,13 +274,13 @@ namespace Nitrocid.Extras.SftpShell.SSH
                 // Shell creation. Note that $TERM is what kind of terminal being used (vt100, xterm, ...). Always vt100 on Windows.
                 DebugWriter.WriteDebug(DebugLevel.I, "Opening shell...");
                 var SSHS = SSHClient.CreateShell(
-                    ConsoleWrapper.OpenStandardInput(),
-                    ConsoleWrapper.OpenStandardOutput(),
-                    ConsoleWrapper.OpenStandardError(),
+                    Console.OpenStandardInput(),
+                    Console.OpenStandardOutput(),
+                    Console.OpenStandardError(),
                     KernelPlatform.IsOnUnix() ? KernelPlatform.GetTerminalType() : "vt100",
                     (uint)ConsoleWrapper.WindowWidth,
                     (uint)ConsoleWrapper.WindowHeight,
-                    (uint)ConsoleWrapper.BufferWidth,
+                    (uint)Console.BufferWidth,
                     (uint)ConsoleWrapper.BufferHeight,
                     new Dictionary<TerminalModes, uint>()
                 );

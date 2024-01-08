@@ -31,6 +31,7 @@ using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Inputs;
 using Terminaux.Base.Buffered;
+using Terminaux.Base;
 
 namespace Nitrocid.Extras.Timers.Timers
 {

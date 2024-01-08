@@ -59,6 +59,7 @@ using Nitrocid.Languages;
 using Terminaux.Writer.FancyWriters;
 using Terminaux.Inputs;
 using Textify.General;
+using Terminaux.Base;
 
 namespace Nitrocid.Extras.BassBoom.Player
 {

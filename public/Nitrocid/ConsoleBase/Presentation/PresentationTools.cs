@@ -28,6 +28,7 @@ using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Base.Buffered;
 using Textify.General;
 using Terminaux.Colors;
+using Terminaux.Base;
 
 namespace Nitrocid.ConsoleBase.Presentation
 {

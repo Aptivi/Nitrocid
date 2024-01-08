@@ -39,6 +39,7 @@ using Nitrocid.Kernel.Time.Converters;
 using Nitrocid.Kernel.Time;
 using Textify.General;
 using Terminaux.Colors;
+using Terminaux.Base;
 
 namespace Nitrocid.Extras.Calendar.Calendar
 {

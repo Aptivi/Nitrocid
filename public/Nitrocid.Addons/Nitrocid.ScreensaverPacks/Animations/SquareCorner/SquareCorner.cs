@@ -25,6 +25,7 @@ using Nitrocid.ConsoleBase;
 using Nitrocid.Misc.Screensaver;
 using Terminaux.Writer.FancyWriters;
 using Nitrocid.Kernel.Threading;
+using Terminaux.Base;
 
 namespace Nitrocid.ScreensaverPacks.Animations.SquareCorner
 {

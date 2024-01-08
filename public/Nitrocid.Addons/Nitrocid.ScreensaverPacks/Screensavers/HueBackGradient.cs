@@ -27,6 +27,7 @@ using System.Text;
 using Terminaux.Colors;
 using Terminaux.Colors.Models.Conversion;
 using Textify.Sequences.Builder.Types;
+using Terminaux.Base;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {

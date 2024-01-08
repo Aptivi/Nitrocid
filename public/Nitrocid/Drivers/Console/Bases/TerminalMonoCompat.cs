@@ -23,6 +23,7 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
 using System;
 using System.Threading;
+using Terminaux.Base;
 
 namespace Nitrocid.Drivers.Console.Bases
 {

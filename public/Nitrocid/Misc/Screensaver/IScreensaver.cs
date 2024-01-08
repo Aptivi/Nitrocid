@@ -38,6 +38,7 @@
 //
 
 using Nitrocid.ConsoleBase;
+using Terminaux.Base;
 
 namespace Nitrocid.Misc.Screensaver
 {
@@ -59,7 +60,7 @@ namespace Nitrocid.Misc.Screensaver
         /// </summary>
         void ScreensaverLogic();
         /// <summary>
-        /// Resize synchronization logic. This is executed by <see cref="ConsoleResizeListener.PollForResize"/>
+        /// Resize synchronization logic. This is executed by <see cref="ConsoleResizeHandler.HandleResize(int, int, int, int)"/>
         /// </summary>
         void ScreensaverResizeSync();
         /// <summary>

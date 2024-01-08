@@ -30,6 +30,7 @@ using Nitrocid.Misc.Reflection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Terminaux.Base;
 
 #if SPECIFIERREL
 #if !PACKAGEMANAGERBUILD

@@ -29,6 +29,7 @@ using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Misc.Text;
 using Terminaux.Writer.FancyWriters;
 using Textify.General;
+using Terminaux.Base;
 
 namespace Nitrocid.SplashPacks.Splashes
 {

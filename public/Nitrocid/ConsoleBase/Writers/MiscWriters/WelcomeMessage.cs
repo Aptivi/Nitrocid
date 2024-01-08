@@ -29,6 +29,7 @@ using Nitrocid.Misc.Splash;
 using Nitrocid.Misc.Text;
 using Nitrocid.Misc.Text.Probers.Placeholder;
 using Textify.General;
+using Terminaux.Base;
 
 namespace Nitrocid.ConsoleBase.Writers.MiscWriters
 {

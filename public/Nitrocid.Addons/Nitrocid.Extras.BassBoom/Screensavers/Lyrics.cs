@@ -20,6 +20,7 @@
 using Nitrocid.ConsoleBase;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Misc.Screensaver;
+using Terminaux.Base;
 
 namespace Nitrocid.Extras.BassBoom.Screensavers
 {

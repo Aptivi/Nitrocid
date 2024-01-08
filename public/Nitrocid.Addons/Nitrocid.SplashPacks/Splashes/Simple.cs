@@ -27,6 +27,7 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Misc.Splash;
 using Nitrocid.Misc.Text;
 using Textify.General;
+using Terminaux.Base;
 
 namespace Nitrocid.SplashPacks.Splashes
 {

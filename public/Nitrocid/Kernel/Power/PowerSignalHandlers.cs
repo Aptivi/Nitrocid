@@ -21,6 +21,7 @@ using Nitrocid.ConsoleBase;
 using Nitrocid.Kernel.Debugging;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
+using Terminaux.Base;
 
 namespace Nitrocid.Kernel.Power
 {
@@ -43,17 +44,12 @@ namespace Nitrocid.Kernel.Power
             {
                 signalHandlers.Add(PosixSignalRegistration.Create((PosixSignal)PowerSignals.SIGUSR1, SigReboot));
                 signalHandlers.Add(PosixSignalRegistration.Create((PosixSignal)PowerSignals.SIGUSR2, SigReboot));
-                ConsoleResizeListener.CurrentWindowWidth = ConsoleWrapper.WindowWidth;
-                ConsoleResizeListener.CurrentWindowHeight = ConsoleWrapper.WindowHeight;
             }
 
             // Handle window change
-            ConsoleResizeListener.usesSigWinch = KernelPlatform.IsOnUnix();
-            if (ConsoleResizeListener.usesSigWinch)
-                signalHandlers.Add(PosixSignalRegistration.Create((PosixSignal)PowerSignals.SIGWINCH, SigWindowChange));
-            else
-                ConsoleResizeListener.StartResizeListener();
-
+            // TODO: The below code needs to be uncommented once Terminaux 2.4.0 releases on 1/9.
+            //ConsoleResizeListener.StartResizeListener((int oldX, int oldY, int newX, int newY) => ConsoleResizeHandler.HandleResize(oldX, oldY, newX, newY));
+            ConsoleResizeListener.StartResizeListener(() => ConsoleResizeHandler.HandleResize());
             initialized = true;
         }
 
@@ -73,13 +69,6 @@ namespace Nitrocid.Kernel.Power
         private static void SigReboot(PosixSignalContext psc)
         {
             PowerManager.PowerManage(PowerMode.Reboot);
-            psc.Cancel = true;
-        }
-
-        private static void SigWindowChange(PosixSignalContext psc)
-        {
-            DebugWriter.WriteDebug(DebugLevel.I, "SIGWINCH recieved!");
-            ConsoleResizeListener.HandleResize();
             psc.Cancel = true;
         }
     }

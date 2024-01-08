@@ -30,6 +30,7 @@ using System;
 using System.Text;
 using Terminaux.Colors;
 using Textify.General;
+using Terminaux.Base;
 
 namespace Nitrocid.Kernel
 {

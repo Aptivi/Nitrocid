@@ -101,7 +101,7 @@ namespace Nitrocid.Analyzers.Test.ConsoleBase
                     {   
                         public static void Main()
                         {
-                            ConsoleExtensions.ResetColors();
+                            ConsoleTools.ResetColors();
                         }
                     }
                 }

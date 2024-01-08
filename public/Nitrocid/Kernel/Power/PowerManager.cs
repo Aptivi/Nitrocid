@@ -37,6 +37,7 @@ using Nitrocid.Kernel.Events;
 using Nitrocid.Kernel.Journaling;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Network.RPC;
+using Terminaux.Base;
 
 namespace Nitrocid.Kernel.Power
 {

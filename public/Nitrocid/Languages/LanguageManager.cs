@@ -123,9 +123,9 @@ namespace Nitrocid.Languages
                     if (KernelPlatform.IsOnWindows() && SetCodepage)
                     {
                         int Codepage = langInfo.Codepage;
-                        ConsoleWrapper.OutputEncoding = System.Text.Encoding.GetEncoding(Codepage);
-                        ConsoleWrapper.InputEncoding = System.Text.Encoding.GetEncoding(Codepage);
-                        DebugWriter.WriteDebug(DebugLevel.I, "Encoding set successfully for {0} to {1}.", lang, ConsoleWrapper.OutputEncoding.EncodingName);
+                        Console.OutputEncoding = System.Text.Encoding.GetEncoding(Codepage);
+                        Console.InputEncoding = System.Text.Encoding.GetEncoding(Codepage);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Encoding set successfully for {0} to {1}.", lang, Console.OutputEncoding.EncodingName);
                     }
                 }
                 catch (Exception ex)

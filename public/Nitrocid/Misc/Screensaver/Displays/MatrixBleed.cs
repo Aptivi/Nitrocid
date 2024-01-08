@@ -29,6 +29,7 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Threading;
 using Terminaux.Colors;
 using Textify.Sequences.Builder.Types;
+using Terminaux.Base;
 
 namespace Nitrocid.Misc.Screensaver.Displays
 {

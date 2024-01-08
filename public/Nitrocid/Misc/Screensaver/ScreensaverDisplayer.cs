@@ -23,6 +23,7 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.ConsoleBase;
 using Nitrocid.Kernel.Events;
+using Terminaux.Base;
 
 namespace Nitrocid.Misc.Screensaver
 {

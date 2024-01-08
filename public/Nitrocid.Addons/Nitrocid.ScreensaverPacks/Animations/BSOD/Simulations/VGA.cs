@@ -23,6 +23,7 @@ using Nitrocid.ConsoleBase;
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Misc.Screensaver;
 using Nitrocid.Kernel.Threading;
+using Terminaux.Base;
 
 namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
 {

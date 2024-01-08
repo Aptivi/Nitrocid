@@ -25,6 +25,7 @@ using System;
 using System.Linq;
 using System.Text;
 using Textify.General;
+using Terminaux.Base;
 
 namespace Nitrocid.ConsoleBase.Presentation.Elements
 {

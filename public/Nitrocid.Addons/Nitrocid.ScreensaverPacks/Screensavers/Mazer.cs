@@ -27,6 +27,7 @@ using Nitrocid.Misc.Reflection;
 using Nitrocid.Misc.Screensaver;
 using Terminaux.Colors;
 using Textify.General;
+using Terminaux.Base;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {

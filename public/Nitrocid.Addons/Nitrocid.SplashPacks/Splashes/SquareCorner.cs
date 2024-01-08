@@ -27,6 +27,7 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Splash;
 using Terminaux.Colors;
+using Terminaux.Base;
 
 namespace Nitrocid.SplashPacks.Splashes
 {

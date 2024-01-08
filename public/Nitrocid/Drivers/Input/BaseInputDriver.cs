@@ -26,6 +26,7 @@ using Nitrocid.Misc.Screensaver;
 using Nitrocid.ConsoleBase;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
+using Terminaux.Base;
 
 namespace Nitrocid.Drivers.Input
 {

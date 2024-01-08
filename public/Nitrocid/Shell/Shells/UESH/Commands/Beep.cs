@@ -19,6 +19,7 @@
 
 using Nitrocid.ConsoleBase;
 using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Base;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {

@@ -32,6 +32,7 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
 using Nitrocid.Security.Permissions;
 using Textify.General;
+using Terminaux.Base;
 
 namespace Nitrocid.Kernel.Configuration.Settings
 {

@@ -35,6 +35,7 @@ using Nitrocid.LocaleGen.Core.Serializer;
 using System.Collections.Generic;
 using System.Linq;
 using Textify.General;
+using Terminaux.Base;
 
 namespace Nitrocid.Extras.LanguageStudio.Studio
 {

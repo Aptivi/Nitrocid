@@ -95,7 +95,7 @@ namespace Nitrocid.Analyzers.Test.ConsoleBase
                 using System.Threading.Tasks;
                 using System.Diagnostics;
                 using Textify.General;
-                using Nitrocid.ConsoleBase;
+                using Terminaux.Base;
 
                 namespace ConsoleApplication1
                 {

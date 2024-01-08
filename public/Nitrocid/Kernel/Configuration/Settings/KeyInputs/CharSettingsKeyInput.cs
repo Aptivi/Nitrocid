@@ -26,6 +26,7 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
 using System;
 using Textify.General;
+using Terminaux.Base;
 
 namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
 {

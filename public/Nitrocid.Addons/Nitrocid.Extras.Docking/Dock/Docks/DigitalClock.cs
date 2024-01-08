@@ -39,6 +39,7 @@ using System.Text;
 using Terminaux.Colors;
 using Textify.General;
 using Textify.Sequences.Builder.Types;
+using Terminaux.Base;
 
 namespace Nitrocid.Extras.Docking.Dock.Docks
 {

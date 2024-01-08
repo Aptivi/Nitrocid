@@ -24,6 +24,7 @@ using Nitrocid.Kernel.Threading;
 using Nitrocid.Languages;
 using Terminaux.Colors;
 using Textify.General;
+using Terminaux.Base;
 
 namespace Nitrocid.Misc.Screensaver
 {

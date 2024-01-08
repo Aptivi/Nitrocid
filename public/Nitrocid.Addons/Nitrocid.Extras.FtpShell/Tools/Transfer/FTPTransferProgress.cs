@@ -22,6 +22,7 @@ using FluentFTP;
 using Nitrocid.ConsoleBase;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Base;
 
 namespace Nitrocid.Extras.FtpShell.Tools.Transfer
 {
@@ -52,14 +53,14 @@ namespace Nitrocid.Extras.FtpShell.Tools.Transfer
             }
             else
             {
-                FTPTransfer.ConsoleOriginalPosition_LEFT = ConsoleWrapper.CursorLeft;
-                FTPTransfer.ConsoleOriginalPosition_TOP = ConsoleWrapper.CursorTop;
+                FTPTransfer.ConsoleOriginalPositionLeft = ConsoleWrapper.CursorLeft;
+                FTPTransfer.ConsoleOriginalPositionTop = ConsoleWrapper.CursorTop;
                 if (FTPTransfer.progressFlag & Percentage.Progress != 100d)
                 {
                     TextWriters.Write(" {0}% (ETA: {1}d {2}:{3}:{4} @ {5})", false, KernelColorType.Progress, Percentage.Progress.ToString("N2"), Percentage.ETA.Days, Percentage.ETA.Hours, Percentage.ETA.Minutes, Percentage.ETA.Seconds, Percentage.TransferSpeedToString());
                     ConsoleExtensions.ClearLineToRight();
                 }
-                ConsoleWrapper.SetCursorPosition(FTPTransfer.ConsoleOriginalPosition_LEFT, FTPTransfer.ConsoleOriginalPosition_TOP);
+                ConsoleWrapper.SetCursorPosition(FTPTransfer.ConsoleOriginalPositionLeft, FTPTransfer.ConsoleOriginalPositionTop);
             }
         }
 
@@ -75,15 +76,15 @@ namespace Nitrocid.Extras.FtpShell.Tools.Transfer
             }
             else
             {
-                FTPTransfer.ConsoleOriginalPosition_LEFT = ConsoleWrapper.CursorLeft;
-                FTPTransfer.ConsoleOriginalPosition_TOP = ConsoleWrapper.CursorTop;
+                FTPTransfer.ConsoleOriginalPositionLeft = ConsoleWrapper.CursorLeft;
+                FTPTransfer.ConsoleOriginalPositionTop = ConsoleWrapper.CursorTop;
                 if (FTPTransfer.progressFlag & Percentage.Progress != 100d)
                 {
                     TextWriters.Write("- [{0}/{1}] {2}: ", false, KernelColorType.ListEntry, Percentage.FileIndex + 1, Percentage.FileCount, Percentage.RemotePath);
                     TextWriters.Write("{0}% (ETA: {1}d {2}:{3}:{4} @ {5})", false, KernelColorType.Progress, Percentage.Progress.ToString("N2"), Percentage.ETA.Days, Percentage.ETA.Hours, Percentage.ETA.Minutes, Percentage.ETA.Seconds, Percentage.TransferSpeedToString());
                     ConsoleExtensions.ClearLineToRight();
                 }
-                ConsoleWrapper.SetCursorPosition(FTPTransfer.ConsoleOriginalPosition_LEFT, FTPTransfer.ConsoleOriginalPosition_TOP);
+                ConsoleWrapper.SetCursorPosition(FTPTransfer.ConsoleOriginalPositionLeft, FTPTransfer.ConsoleOriginalPositionTop);
             }
         }
 

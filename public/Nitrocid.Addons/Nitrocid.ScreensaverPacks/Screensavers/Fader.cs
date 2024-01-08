@@ -21,6 +21,7 @@ using Nitrocid.ConsoleBase;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Misc.Screensaver;
+using Terminaux.Base;
 using Terminaux.Colors;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
