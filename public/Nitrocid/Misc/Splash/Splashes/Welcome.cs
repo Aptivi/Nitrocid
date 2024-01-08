@@ -69,38 +69,16 @@ namespace Nitrocid.Misc.Splash.Splashes
                  Translate.DoTranslation("Loading"))
                 .ToUpper();
             var figFont = FigletTools.GetFigletFont(FigletTextTools.DefaultFigletFontName);
-            int figWidth = FigletTools.GetFigletWidth(text, figFont) / 2;
-            int figHeight = FigletTools.GetFigletHeight(text, figFont) / 2;
-            int consoleX, consoleY;
-            if (figWidth >= ConsoleWrapper.WindowWidth || figHeight >= ConsoleWrapper.WindowHeight)
-            {
-                // The figlet won't fit, so use small text
-                consoleX = ConsoleWrapper.WindowWidth / 2 - text.Length / 2;
-                consoleY = ConsoleWrapper.WindowHeight / 2;
-                builder.Append(
-                    col.VTSequenceForeground +
-                    TextWriterWhereColor.RenderWherePlain(text, consoleX, consoleY, true)
-                );
-            }
-            else
-            {
-                // Write the figlet.
-                consoleX = ConsoleWrapper.WindowWidth / 2 - figWidth;
-                consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
-                builder.Append(
-                    col.VTSequenceForeground +
-                    FigletWhereColor.RenderFigletWherePlain(text, consoleX, consoleY, true, figFont)
-                );
-                consoleY += figHeight * 2;
-            }
+            int consoleY = (ConsoleWrapper.WindowHeight / 2) + FigletTools.GetFigletHeight(text, figFont);
             builder.Append(
+                col.VTSequenceForeground +
+                CenteredFigletTextColor.RenderCenteredFiglet(figFont, text) +
                 CenteredTextColor.RenderCentered(
-                    consoleY + 2,
+                    consoleY - 1,
                     context == SplashContext.Preboot ? Translate.DoTranslation("Please wait while the kernel is initializing...") :
-                     context == SplashContext.ShuttingDown ? Translate.DoTranslation("Please wait while the kernel is shutting down...") :
-                     context == SplashContext.Rebooting ? Translate.DoTranslation("Please wait while the kernel is restarting...") :
-                     $"{Translate.DoTranslation("Starting")} {KernelReleaseInfo.ConsoleTitle}...",
-                    col
+                    context == SplashContext.ShuttingDown ? Translate.DoTranslation("Please wait while the kernel is shutting down...") :
+                    context == SplashContext.Rebooting ? Translate.DoTranslation("Please wait while the kernel is restarting...") :
+                    $"{Translate.DoTranslation("Starting")} {KernelReleaseInfo.ConsoleTitle}..."
                 )
             );
             return builder.ToString();
@@ -165,52 +143,11 @@ namespace Nitrocid.Misc.Splash.Splashes
                  Translate.DoTranslation("Goodbye!"))
                 .ToUpper();
             var figFont = FigletTools.GetFigletFont(FigletTextTools.DefaultFigletFontName);
-            var figFontFallback = FigletTools.GetFigletFont("small");
-            int figWidth = FigletTools.GetFigletWidth(text, figFont) / 2;
-            int figHeight = FigletTools.GetFigletHeight(text, figFont) / 2;
-            int figWidthFallback = FigletTools.GetFigletWidth(text, figFontFallback) / 2;
-            int figHeightFallback = FigletTools.GetFigletHeight(text, figFontFallback) / 2;
-            int width = ConsoleWrapper.WindowWidth;
-            int height = ConsoleWrapper.WindowHeight;
-            int consoleX = width / 2 - figWidth;
-            int consoleY = height / 2 - figHeight;
-            if (consoleX < 0 || consoleY < 0)
-            {
-                // The figlet won't fit, so use small text
-                consoleX = width / 2 - figWidthFallback;
-                consoleY = height / 2 - figHeightFallback;
-                if (consoleX < 0 || consoleY < 0)
-                {
-                    // The fallback figlet also won't fit, so use smaller text
-                    consoleX = width / 2 - text.Length / 2;
-                    consoleY = height / 2;
-                    builder.Append(
-                        col.VTSequenceForeground +
-                        TextWriterWhereColor.RenderWherePlain(text, consoleX, consoleY, true)
-                    );
-                }
-                else
-                {
-                    // Write the figlet.
-                    builder.Append(
-                        col.VTSequenceForeground +
-                        FigletWhereColor.RenderFigletWherePlain(text, consoleX, consoleY, true, figFontFallback)
-                    );
-                    consoleY += figHeightFallback * 2;
-                }
-            }
-            else
-            {
-                // Write the figlet.
-                builder.Append(
-                    col.VTSequenceForeground +
-                    FigletWhereColor.RenderFigletWherePlain(text, consoleX, consoleY, true, figFont)
-                );
-                consoleY += figHeight * 2;
-            }
+            int consoleY = (ConsoleWrapper.WindowHeight / 2) + FigletTools.GetFigletHeight(text, figFont);
             builder.Append(
                 col.VTSequenceForeground +
-                CenteredTextColor.RenderCenteredOneLine(consoleY + 2, KernelReleaseInfo.ConsoleTitle)
+                CenteredFigletTextColor.RenderCenteredFiglet(figFont, text) +
+                CenteredTextColor.RenderCenteredOneLine(consoleY - 1, KernelReleaseInfo.ConsoleTitle)
             );
             delayRequired =
                 context == SplashContext.ShuttingDown && PowerManager.DelayOnShutdown ||
