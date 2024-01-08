@@ -26,6 +26,7 @@ using Nitrocid.Misc.Splash;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ConsoleBase;
 using Terminaux.Base;
+using Nitrocid.ConsoleBase.Colors;
 
 namespace Nitrocid.SplashPacks.Splashes
 {
@@ -33,6 +34,7 @@ namespace Nitrocid.SplashPacks.Splashes
     {
 
         private int dotStep = 0;
+        private int currMs = 0;
 
         // Standalone splash information
         public override string SplashName => "Dots";
@@ -47,19 +49,38 @@ namespace Nitrocid.SplashPacks.Splashes
             var builder = new StringBuilder();
             try
             {
+                bool noAppend = true;
+                currMs++;
+                if (currMs >= 10)
+                {
+                    noAppend = false;
+                    currMs = 0;
+                }
+                Color firstColor = KernelColorTools.GetColor(KernelColorType.Background).Brightness == ColorBrightness.Light ? new(ConsoleColors.Black) : new(ConsoleColors.White);
+                Color secondColor = KernelColorTools.GetColor(KernelColorType.Success);
                 DebugWriter.WriteDebug(DebugLevel.I, "Splash displaying.");
                 Color firstDotColor = dotStep >= 1 ? secondColor : firstColor;
                 Color secondDotColor = dotStep >= 2 ? secondColor : firstColor;
                 Color thirdDotColor = dotStep >= 3 ? secondColor : firstColor;
+                Color fourthDotColor = dotStep >= 4 ? secondColor : firstColor;
+                Color fifthDotColor = dotStep >= 5 ? secondColor : firstColor;
 
                 // Write the three dots
-                string dots = $"{firstDotColor.VTSequenceForeground}* {secondDotColor.VTSequenceForeground}* {thirdDotColor.VTSequenceForeground}*";
-                int dotsPosX = (ConsoleWrapper.WindowWidth / 2) - (VtSequenceTools.FilterVTSequences(dots).Length / 2);
+                string dots =
+                    $"{firstDotColor.VTSequenceForeground}* " +
+                    $"{secondDotColor.VTSequenceForeground}* " +
+                    $"{thirdDotColor.VTSequenceForeground}* " +
+                    $"{fourthDotColor.VTSequenceForeground}* " +
+                    $"{fifthDotColor.VTSequenceForeground}*";
+                int dotsPosX = ConsoleWrapper.WindowWidth / 2 - VtSequenceTools.FilterVTSequences(dots).Length / 2;
                 int dotsPosY = ConsoleWrapper.WindowHeight - 2;
                 builder.Append(TextWriterWhereColor.RenderWherePlain(dots, dotsPosX, dotsPosY));
-                dotStep++;
-                if (dotStep > 3)
-                    dotStep = 0;
+                if (!noAppend)
+                {
+                    dotStep++;
+                    if (dotStep > 5)
+                        dotStep = 0;
+                }
             }
             catch (ThreadInterruptedException)
             {

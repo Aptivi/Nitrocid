@@ -41,6 +41,7 @@ namespace Nitrocid.Misc.Splash.Splashes
 
         private bool cleared = false;
         private int dotStep = 0;
+        private int currMs = 0;
 
         // Standalone splash information
         public override string SplashName => "Welcome";
@@ -89,6 +90,13 @@ namespace Nitrocid.Misc.Splash.Splashes
             var builder = new StringBuilder();
             try
             {
+                bool noAppend = true;
+                currMs++;
+                if (currMs >= 10)
+                {
+                    noAppend = false;
+                    currMs = 0;
+                }
                 Color firstColor = KernelColorTools.GetColor(KernelColorType.Background).Brightness == ColorBrightness.Light ? new(ConsoleColors.Black) : new(ConsoleColors.White);
                 Color secondColor = KernelColorTools.GetColor(KernelColorType.Success);
                 DebugWriter.WriteDebug(DebugLevel.I, "Splash displaying.");
@@ -108,9 +116,12 @@ namespace Nitrocid.Misc.Splash.Splashes
                 int dotsPosX = ConsoleWrapper.WindowWidth / 2 - VtSequenceTools.FilterVTSequences(dots).Length / 2;
                 int dotsPosY = ConsoleWrapper.WindowHeight - 2;
                 builder.Append(TextWriterWhereColor.RenderWherePlain(dots, dotsPosX, dotsPosY));
-                dotStep++;
-                if (dotStep > 5)
-                    dotStep = 0;
+                if (!noAppend)
+                {
+                    dotStep++;
+                    if (dotStep > 5)
+                        dotStep = 0;
+                }
             }
             catch (ThreadInterruptedException)
             {
@@ -122,6 +133,8 @@ namespace Nitrocid.Misc.Splash.Splashes
         public override string Closing(SplashContext context, out bool delayRequired)
         {
             var builder = new StringBuilder();
+            currMs = 0;
+            dotStep = 0;
             cleared = false;
             builder.Append(
                 base.Opening(context)
