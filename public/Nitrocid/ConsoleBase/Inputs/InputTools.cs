@@ -20,6 +20,7 @@
 using System;
 using Nitrocid.Drivers;
 using Nitrocid.Kernel.Configuration;
+using Terminaux.Base;
 using Terminaux.Inputs.Styles.Choice;
 using Terminaux.Reader;
 
@@ -32,6 +33,7 @@ namespace Nitrocid.ConsoleBase.Inputs
     {
         internal static TermReaderSettings globalSettings = new();
         internal static string currentMask = "*";
+        private static bool isWrapperInitialized;
 
         /// <summary>
         /// Default input choice output type
@@ -206,6 +208,34 @@ namespace Nitrocid.ConsoleBase.Inputs
         /// </summary>
         public static ConsoleKeyInfo DetectKeypressUnsafe() =>
             DriverHandler.CurrentInputDriverLocal.DetectKeypressUnsafe();
+
+        internal static void InitializeTerminauxWrappers()
+        {
+            if (isWrapperInitialized)
+                return;
+
+            // Initialize console wrappers for Terminaux
+            ConsoleWrapperTools.ActionBeep = DriverHandler.CurrentConsoleDriverLocal.Beep;
+            ConsoleWrapperTools.ActionBufferHeight = () => DriverHandler.CurrentConsoleDriverLocal.BufferHeight;
+            ConsoleWrapperTools.ActionCursorLeft = () => DriverHandler.CurrentConsoleDriverLocal.CursorLeft;
+            ConsoleWrapperTools.ActionCursorTop = () => DriverHandler.CurrentConsoleDriverLocal.CursorTop;
+            ConsoleWrapperTools.ActionCursorVisible = (value) => DriverHandler.CurrentConsoleDriverLocal.CursorVisible = value;
+            ConsoleWrapperTools.ActionIsDumb = () => DriverHandler.CurrentConsoleDriverLocal.IsDumb;
+            ConsoleWrapperTools.ActionKeyAvailable = () => DriverHandler.CurrentConsoleDriverLocal.KeyAvailable;
+            ConsoleWrapperTools.ActionReadKey = DriverHandler.CurrentConsoleDriverLocal.ReadKey;
+            ConsoleWrapperTools.ActionSetCursorPosition = DriverHandler.CurrentConsoleDriverLocal.SetCursorPosition;
+            ConsoleWrapperTools.ActionTreatCtrlCAsInput = (value) => DriverHandler.CurrentConsoleDriverLocal.TreatCtrlCAsInput = value;
+            ConsoleWrapperTools.ActionGetTreatCtrlCAsInput = () => DriverHandler.CurrentConsoleDriverLocal.TreatCtrlCAsInput;
+            ConsoleWrapperTools.ActionWindowHeight = () => DriverHandler.CurrentConsoleDriverLocal.WindowHeight;
+            ConsoleWrapperTools.ActionWindowWidth = () => DriverHandler.CurrentConsoleDriverLocal.WindowWidth;
+            ConsoleWrapperTools.ActionWriteChar = DriverHandler.CurrentConsoleDriverLocal.Write;
+            ConsoleWrapperTools.ActionWriteLine = DriverHandler.CurrentConsoleDriverLocal.WriteLine;
+            ConsoleWrapperTools.ActionWriteLineParameterized = DriverHandler.CurrentConsoleDriverLocal.WriteLine;
+            ConsoleWrapperTools.ActionWriteLineString = DriverHandler.CurrentConsoleDriverLocal.WriteLine;
+            ConsoleWrapperTools.ActionWriteParameterized = DriverHandler.CurrentConsoleDriverLocal.Write;
+            ConsoleWrapperTools.ActionWriteString = DriverHandler.CurrentConsoleDriverLocal.Write;
+            isWrapperInitialized = true;
+        }
 
     }
 }
