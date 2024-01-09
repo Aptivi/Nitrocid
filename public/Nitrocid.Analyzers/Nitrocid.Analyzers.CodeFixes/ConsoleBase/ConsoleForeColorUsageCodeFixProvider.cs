@@ -86,6 +86,16 @@ namespace Nitrocid.Analyzers.ConsoleBase
                     compilation = compilation
                         .AddUsings(SyntaxFactory.UsingDirective(name));
                 }
+                if (compilation?.Usings.Any(u => u.Name.ToString() == "Terminaux.Colors.Data") == false)
+                {
+                    var name = SyntaxFactory.QualifiedName(
+                        SyntaxFactory.QualifiedName(
+                            SyntaxFactory.IdentifierName("Terminaux"),
+                            SyntaxFactory.IdentifierName("Colors")),
+                        SyntaxFactory.IdentifierName("Data"));
+                    compilation = compilation
+                        .AddUsings(SyntaxFactory.UsingDirective(name));
+                }
 
                 var finalDoc = document.WithSyntaxRoot(compilation);
                 return finalDoc.Project.Solution;
