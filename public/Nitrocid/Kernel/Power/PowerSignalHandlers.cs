@@ -43,10 +43,6 @@ namespace Nitrocid.Kernel.Power
                 signalHandlers.Add(PosixSignalRegistration.Create((PosixSignal)PowerSignals.SIGUSR1, SigReboot));
                 signalHandlers.Add(PosixSignalRegistration.Create((PosixSignal)PowerSignals.SIGUSR2, SigReboot));
             }
-
-            // Handle window change
-            Terminaux.Base.ConsoleResizeHandler.RunEssentialHandler = false;
-            ConsoleResizeListener.StartResizeListener(ConsoleBase.ConsoleResizeHandler.HandleResize);
             initialized = true;
         }
 

@@ -25,21 +25,34 @@ using Nitrocid.Kernel.Events;
 using Nitrocid.Misc.Screensaver;
 using Terminaux.Base;
 using Terminaux.ResizeListener;
+using Nitrocid.Kernel.Power;
+using System;
+using System.Runtime.InteropServices;
+using System.Reflection;
+using Nitrocid.Kernel;
+using System.Collections.Generic;
 
 namespace Nitrocid.ConsoleBase
 {
     /// <summary>
     /// The console resize listener module
     /// </summary>
-    public static class ConsoleResizeHandler
+    internal static class ConsoleResizeHandler
     {
-        internal static bool usesSigWinch;
-        internal static bool ResizeDetected;
+        internal static bool inited = false;
+
+        internal static void StartHandler()
+        {
+            // Handle window change
+            if (inited)
+                return;
+            Terminaux.Base.ConsoleResizeHandler.RunEssentialHandler = false;
+            ConsoleResizeListener.StartResizeListener(HandleResize);
+            inited = true;
+        }
 
         internal static void HandleResize(int oldX, int oldY, int newX, int newY)
         {
-            ResizeDetected = true;
-
             // We need to call the WindowHeight and WindowWidth properties on the Terminal console driver, because
             // this polling works for all the terminals. Other drivers that don't use the terminal may not even
             // implement these two properties.
@@ -48,7 +61,7 @@ namespace Nitrocid.ConsoleBase
             newX = termDriver.WindowWidth;
             newY = termDriver.WindowHeight;
             DebugWriter.WriteDebug(DebugLevel.W, "Final: Old width x height: {0}x{1} | New width x height: {2}x{3}", oldX, oldY, newX, newY);
-            DebugWriter.WriteDebug(DebugLevel.W, $"Userspace application will have to call {nameof(ConsoleResizeHandler.ResizeDetected)} to reset the state.");
+            DebugWriter.WriteDebug(DebugLevel.W, $"Userspace application will have to call {nameof(Terminaux.Base.ConsoleResizeHandler.WasResized)} to reset the state.");
             EventsManager.FireEvent(EventType.ResizeDetected, oldX, oldY, newX, newY);
 
             // Also, tell the screen-based apps to refresh themselves
