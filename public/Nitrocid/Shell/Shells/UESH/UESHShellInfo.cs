@@ -33,6 +33,7 @@ using Nitrocid.Shell.Prompts;
 using Nitrocid.Files.Extensions;
 using Nitrocid.Shell.Shells.UESH.Commands;
 using Nitrocid.Shell.Shells.UESH.Presets;
+using Nitrocid.Drivers;
 
 namespace Nitrocid.Shell.Shells.UESH
 {
@@ -555,11 +556,20 @@ namespace Nitrocid.Shell.Shells.UESH
                     [
                         new CommandArgumentInfo(new[]
                         {
+                            new CommandArgumentPart(true, "change", new()
+                            {
+                                ExactWording = "change"
+                            }),
+                            new CommandArgumentPart(true, "type", (_) => Enum.GetNames<DriverTypes>()),
+                            new CommandArgumentPart(true, "driver", (args) => DriverHandler.GetDriverNames(DriverHandler.InferDriverTypeFromTypeName(args[1]))),
+                        }),
+                        new CommandArgumentInfo(new[]
+                        {
                             new CommandArgumentPart(true, "list", new()
                             {
                                 ExactWording = "list"
                             }),
-                            new CommandArgumentPart(true, "type"),
+                            new CommandArgumentPart(true, "type", (_) => Enum.GetNames<DriverTypes>()),
                         }),
                         new CommandArgumentInfo(new[]
                         {

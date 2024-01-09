@@ -991,6 +991,20 @@ namespace Nitrocid.Drivers
             return driverType;
         }
 
+        internal static DriverTypes InferDriverTypeFromTypeName(string name)
+        {
+            DriverTypes driverType;
+
+            // Check the type
+            if (!Enum.TryParse(name, out DriverTypes driverTypes))
+                throw new KernelException(KernelExceptionType.DriverHandler, Translate.DoTranslation("Failed to infer driver type from unknown type") + $" {name}");
+
+            // Now, actually infer the type from the name
+            driverType = driverTypes;
+            DebugWriter.WriteDebug(DebugLevel.I, "Inferred {0} for type {1}", driverType.ToString(), name);
+            return driverType;
+        }
+
         internal static void RegisterBaseDriver<TDriver>(IDriver driver)
             where TDriver : IDriver
         {

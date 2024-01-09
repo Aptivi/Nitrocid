@@ -49,10 +49,21 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 PermissionsTools.Demand(PermissionTypes.ManageDrivers);
                 string CommandDriver = parameters.ArgumentsList[0].ToLower();
                 DriverTypes typeTerm = DriverTypes.RNG;
+                string driverValue = "";
 
                 // These command drivers require arguments to be passed, so re-check here and there. Optional arguments also lie there.
                 switch (CommandDriver)
                 {
+                    case "change":
+                        {
+                            if (parameters.ArgumentsList.Length > 2)
+                            {
+                                typeTerm = Enum.Parse<DriverTypes>(parameters.ArgumentsList[1]);
+                                driverValue = parameters.ArgumentsList[2];
+                            }
+
+                            break;
+                        }
                     case "list":
                         {
                             if (parameters.ArgumentsList.Length > 1)
@@ -65,6 +76,14 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 // Now, the actual logic
                 switch (CommandDriver)
                 {
+                    case "change":
+                        {
+                            if (DriverHandler.IsRegistered(typeTerm, driverValue))
+                                DriverHandler.SetDriverSafe(typeTerm, driverValue);
+                            else
+                                TextWriters.Write(Translate.DoTranslation("The driver is not found."), true, KernelColorType.Error);
+                            break;
+                        }
                     case "list":
                         {
                             foreach (string Driver in DriverHandler.GetDrivers(typeTerm).Keys)
