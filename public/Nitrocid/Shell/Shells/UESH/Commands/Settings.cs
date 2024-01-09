@@ -98,6 +98,8 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                         return 10000 + (int)KernelExceptionType.Config;
                     }
                 }
+                else if (parameters.SwitchesList[0] == "-driver")
+                    typeFinal = nameof(KernelDriverConfig);
             }
             SettingsApp.OpenMainPage(typeFinal);
             return 0;

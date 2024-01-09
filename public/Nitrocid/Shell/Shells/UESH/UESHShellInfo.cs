@@ -1421,22 +1421,27 @@ namespace Nitrocid.Shell.Shells.UESH
                         new CommandArgumentInfo(new[] {
                             new SwitchInfo("saver", /* Localizable */ "Opens the screensaver settings", new SwitchOptions()
                             {
-                                ConflictsWith = ["splash", "type", "addonsaver"],
+                                ConflictsWith = ["splash", "type", "addonsaver", "driver"],
                                 AcceptsValues = false
                             }),
                             new SwitchInfo("addonsaver", /* Localizable */ "Opens the addon screensaver settings", new SwitchOptions()
                             {
-                                ConflictsWith = ["splash", "type", "saver"],
+                                ConflictsWith = ["splash", "type", "saver", "driver"],
                                 AcceptsValues = false
                             }),
                             new SwitchInfo("splash", /* Localizable */ "Opens the splash settings", new SwitchOptions()
                             {
-                                ConflictsWith = ["saver", "type", "addonsaver"],
+                                ConflictsWith = ["saver", "type", "addonsaver", "driver"],
+                                AcceptsValues = false
+                            }),
+                            new SwitchInfo("driver", /* Localizable */ "Opens the driver settings", new SwitchOptions()
+                            {
+                                ConflictsWith = ["saver", "type", "addonsaver", "splash"],
                                 AcceptsValues = false
                             }),
                             new SwitchInfo("type", /* Localizable */ "Opens the custom settings", new SwitchOptions()
                             {
-                                ConflictsWith = ["saver", "splash", "addonsaver"],
+                                ConflictsWith = ["saver", "splash", "addonsaver", "driver"],
                                 ArgumentsRequired = true
                             })
                         })
