@@ -24,6 +24,7 @@ using Nitrocid.Kernel.Time.Renderers;
 using System.Linq;
 using Terminaux.Colors;
 using Terminaux.Base;
+using Terminaux.Colors.Data;
 
 namespace Nitrocid.ConsoleBase.Presentation
 {

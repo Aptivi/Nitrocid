@@ -112,7 +112,7 @@ namespace Nitrocid.Misc.Screensaver.Displays
             for (int Fall = FallStart; Fall <= FallEnd; Fall++)
             {
                 // Check to see if user decided to resize
-                if (ConsoleResizeListener.WasResized(false))
+                if (ConsoleResizeHandler.WasResized(false))
                     break;
 
                 // Print a block and add the covered position to the list so fading down can be done
@@ -129,7 +129,7 @@ namespace Nitrocid.Misc.Screensaver.Displays
             for (int StepNum = 0; StepNum <= MatrixSettings.MatrixMaxSteps; StepNum++)
             {
                 // Check to see if user decided to resize
-                if (ConsoleResizeListener.WasResized(false))
+                if (ConsoleResizeHandler.WasResized(false))
                     break;
 
                 // Set thresholds
@@ -150,7 +150,7 @@ namespace Nitrocid.Misc.Screensaver.Displays
                 foreach ((int, int, string) PositionTuple in CoveredPositions)
                 {
                     // Check to see if user decided to resize
-                    if (ConsoleResizeListener.WasResized(false))
+                    if (ConsoleResizeHandler.WasResized(false))
                         break;
 
                     // Actually fade the line out
@@ -169,7 +169,7 @@ namespace Nitrocid.Misc.Screensaver.Displays
             CoveredPositions.Clear();
 
             // Reset resize sync
-            ConsoleResizeListener.WasResized();
+            ConsoleResizeHandler.WasResized();
             ThreadManager.SleepNoBlock(MatrixSettings.MatrixDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 

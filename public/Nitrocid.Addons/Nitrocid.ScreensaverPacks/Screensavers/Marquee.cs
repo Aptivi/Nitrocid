@@ -289,7 +289,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             while (CurrentLeftOtherEnd != 0)
             {
                 ThreadManager.SleepNoBlock(MarqueeSettings.MarqueeDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
-                if (ConsoleResizeListener.WasResized(false))
+                if (ConsoleResizeHandler.WasResized(false))
                     break;
                 if (MarqueeSettings.MarqueeUseConsoleAPI)
                     ConsoleWrapper.Clear();
@@ -341,7 +341,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             }
 
             // Reset resize sync
-            ConsoleResizeListener.WasResized();
+            ConsoleResizeHandler.WasResized();
             ThreadManager.SleepNoBlock(MarqueeSettings.MarqueeDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 

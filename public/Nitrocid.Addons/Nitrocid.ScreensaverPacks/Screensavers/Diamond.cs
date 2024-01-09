@@ -25,6 +25,7 @@ using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Screensaver;
 using Terminaux.Colors;
 using Terminaux.Base;
+using Terminaux.Colors.Data;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -113,7 +114,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     for (int top = halfHeight - diff; top <= halfHeight + diff; top++)
                     {
                         bool drawingEdge = top == halfHeight - diff || top == halfHeight + diff;
-                        if (ConsoleResizeListener.WasResized(false))
+                        if (ConsoleResizeHandler.WasResized(false))
                             break;
 
                         // Determine the color by draw mode
@@ -129,7 +130,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     for (int top = halfHeight + diff; top <= halfHeight - diff; top++)
                     {
                         bool drawingEdge = top == halfHeight - diff || top == halfHeight + diff;
-                        if (ConsoleResizeListener.WasResized(false))
+                        if (ConsoleResizeHandler.WasResized(false))
                             break;
 
                         // Determine the color by draw mode
@@ -184,7 +185,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 double currentRestB = black.B;
                 for (int currentStep = 1; currentStep <= maxShineSteps; currentStep++)
                 {
-                    if (ConsoleResizeListener.WasResized(false))
+                    if (ConsoleResizeHandler.WasResized(false))
                         break;
 
                     // Add the values according to the threshold
@@ -232,7 +233,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 }
                 for (int currentStep = 1; currentStep <= maxShineSteps; currentStep++)
                 {
-                    if (ConsoleResizeListener.WasResized(false))
+                    if (ConsoleResizeHandler.WasResized(false))
                         break;
 
                     // Add the values according to the threshold
@@ -281,7 +282,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             }
 
             // Delay
-            ConsoleResizeListener.WasResized();
+            ConsoleResizeHandler.WasResized();
             ThreadManager.SleepNoBlock(DiamondSettings.DiamondDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 

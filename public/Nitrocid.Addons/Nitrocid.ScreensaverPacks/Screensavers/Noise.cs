@@ -24,6 +24,7 @@ using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Screensaver;
 using Terminaux.Base;
 using Terminaux.Colors;
+using Terminaux.Colors.Data;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -95,7 +96,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             var CoveredBlocks = new ArrayList();
             while (CoveredBlocks.Count < BlocksToCover)
             {
-                if (!ConsoleResizeListener.WasResized(false))
+                if (!ConsoleResizeHandler.WasResized(false))
                 {
                     int CoverX = RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth);
                     int CoverY = RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight);
@@ -112,7 +113,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             }
 
             // Reset resize sync
-            ConsoleResizeListener.WasResized();
+            ConsoleResizeHandler.WasResized();
             ThreadManager.SleepNoBlock(NoiseSettings.NoiseNewScreenDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 

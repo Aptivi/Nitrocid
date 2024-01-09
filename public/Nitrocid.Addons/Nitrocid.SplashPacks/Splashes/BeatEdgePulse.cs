@@ -26,6 +26,7 @@ using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Splash;
 using Terminaux.Base;
 using Terminaux.Colors;
+using Terminaux.Colors.Data;
 using Textify.Sequences.Builder.Types;
 
 namespace Nitrocid.SplashPacks.Splashes

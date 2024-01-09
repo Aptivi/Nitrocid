@@ -502,7 +502,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Current left position: {0}", RampCurrentPositionLeft);
 
             // Draw the frame
-            if (!ConsoleResizeListener.WasResized(false))
+            if (!ConsoleResizeHandler.WasResized(false))
                 BorderColor.WriteBorder(RampFrameStartWidth, RampCenterPosition - 2, RampFrameSpaces, 3, RampSettings.RampUseBorderColors ? new Color(RampSettings.RampLeftFrameColor) : ColorTools.GetGray());
 
             // Draw the ramp
@@ -519,7 +519,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 int step = 1;
                 while (step <= RampFrameSpaces)
                 {
-                    if (ConsoleResizeListener.WasResized(false))
+                    if (ConsoleResizeHandler.WasResized(false))
                         break;
                     ConsoleWrapper.SetCursorPosition(RampCurrentPositionLeft, RampCenterPosition - 1);
                     ConsoleWrapper.Write(' ');
@@ -552,7 +552,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 ColorTools.SetConsoleColor(RampCurrentColorInstance, true);
                 while (Convert.ToInt32(RampCurrentColor) != ColorNumTo)
                 {
-                    if (ConsoleResizeListener.WasResized(false))
+                    if (ConsoleResizeHandler.WasResized(false))
                         break;
                     ConsoleWrapper.SetCursorPosition(RampCurrentPositionLeft, RampCenterPosition - 1);
                     ConsoleWrapper.Write(' ');
@@ -574,7 +574,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             }
             ThreadManager.SleepNoBlock(RampSettings.RampNextRampDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
             ColorTools.LoadBack();
-            ConsoleResizeListener.WasResized();
+            ConsoleResizeHandler.WasResized();
             ThreadManager.SleepNoBlock(RampSettings.RampDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 

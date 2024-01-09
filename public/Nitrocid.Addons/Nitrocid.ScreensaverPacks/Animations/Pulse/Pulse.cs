@@ -55,7 +55,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.Pulse
             int CurrentColorBlueIn = 0;
             for (int CurrentStep = Settings.PulseMaxSteps; CurrentStep >= 1; CurrentStep -= 1)
             {
-                if (ConsoleResizeListener.WasResized(false))
+                if (ConsoleResizeHandler.WasResized(false))
                     break;
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Step {0}/{1}", CurrentStep, Settings.PulseMaxSteps);
                 ThreadManager.SleepNoBlock(Settings.PulseDelay, System.Threading.Thread.CurrentThread);
@@ -63,14 +63,14 @@ namespace Nitrocid.ScreensaverPacks.Animations.Pulse
                 CurrentColorGreenIn = (int)Math.Round(CurrentColorGreenIn + ThresholdGreen);
                 CurrentColorBlueIn = (int)Math.Round(CurrentColorBlueIn + ThresholdBlue);
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Color in (R;G;B: {0};{1};{2})", CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn);
-                if (!ConsoleResizeListener.WasResized(false))
+                if (!ConsoleResizeHandler.WasResized(false))
                     ColorTools.LoadBack(new Color(CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn));
             }
 
             // Fade out
             for (int CurrentStep = 1; CurrentStep <= Settings.PulseMaxSteps; CurrentStep++)
             {
-                if (ConsoleResizeListener.WasResized(false))
+                if (ConsoleResizeHandler.WasResized(false))
                     break;
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Step {0}/{1}", CurrentStep, Settings.PulseMaxSteps);
                 ThreadManager.SleepNoBlock(Settings.PulseDelay, System.Threading.Thread.CurrentThread);
@@ -78,12 +78,12 @@ namespace Nitrocid.ScreensaverPacks.Animations.Pulse
                 int CurrentColorGreenOut = (int)Math.Round(GreenColorNum - ThresholdGreen * CurrentStep);
                 int CurrentColorBlueOut = (int)Math.Round(BlueColorNum - ThresholdBlue * CurrentStep);
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut);
-                if (!ConsoleResizeListener.WasResized(false))
+                if (!ConsoleResizeHandler.WasResized(false))
                     ColorTools.LoadBack(new Color(CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut));
             }
 
             // Reset resize sync
-            ConsoleResizeListener.WasResized();
+            ConsoleResizeHandler.WasResized();
             ThreadManager.SleepNoBlock(Settings.PulseDelay, System.Threading.Thread.CurrentThread);
         }
 

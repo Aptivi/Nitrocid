@@ -25,6 +25,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Terminaux.Colors;
+using Terminaux.Colors.Data;
 
 namespace Nitrocid.Tests.ConsoleBase
 {

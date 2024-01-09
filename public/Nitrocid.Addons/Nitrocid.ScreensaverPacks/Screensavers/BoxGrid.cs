@@ -189,7 +189,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             {
                 for (int j = 0; j < boxRows; j++)
                 {
-                    if (ConsoleResizeListener.WasResized(false))
+                    if (ConsoleResizeHandler.WasResized(false))
                         break;
                     var color = ColorTools.GetRandomColor(ColorType.TrueColor);
                     BorderColor.WriteBorder(i * (boxWidthExterior + 1), j * boxHeightExterior, boxWidth, boxHeight, color);
@@ -197,7 +197,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             }
 
             // Reset resize sync
-            ConsoleResizeListener.WasResized();
+            ConsoleResizeHandler.WasResized();
             ThreadManager.SleepNoBlock(BoxGridSettings.BoxGridDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 

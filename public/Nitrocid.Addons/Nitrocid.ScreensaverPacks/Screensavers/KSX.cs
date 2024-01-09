@@ -70,7 +70,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             // Start stepping
             for (step = 1; step <= maxSteps; step++)
             {
-                if (ConsoleResizeListener.WasResized(false))
+                if (ConsoleResizeHandler.WasResized(false))
                     break;
 
                 switch (step)
@@ -90,7 +90,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         int currentB = 0;
                         for (int currentStep = 1; currentStep <= colorSteps; currentStep++)
                         {
-                            if (ConsoleResizeListener.WasResized(false))
+                            if (ConsoleResizeHandler.WasResized(false))
                                 break;
 
                             // Add the values according to the threshold
@@ -111,7 +111,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         int pulses = 11;
                         for (int currentPulse = 1; currentPulse <= pulses; currentPulse++)
                         {
-                            if (ConsoleResizeListener.WasResized(false))
+                            if (ConsoleResizeHandler.WasResized(false))
                                 break;
 
                             // Get the final color by using the odd/even comparison
@@ -136,7 +136,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         // Now, transition from black to the target color
                         for (int currentStep = 1; currentStep <= colorSteps; currentStep++)
                         {
-                            if (ConsoleResizeListener.WasResized(false))
+                            if (ConsoleResizeHandler.WasResized(false))
                                 break;
 
                             // Remove the values according to the threshold
@@ -226,7 +226,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         // Now, transition from target color to black
                         for (int currentStep = 1; currentStep <= colorSteps; currentStep++)
                         {
-                            if (ConsoleResizeListener.WasResized(false))
+                            if (ConsoleResizeHandler.WasResized(false))
                                 break;
 
                             // Remove the values according to the threshold
@@ -438,7 +438,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         // Now, transition from target color to black
                         for (int currentStep = 1; currentStep <= colorSteps; currentStep++)
                         {
-                            if (ConsoleResizeListener.WasResized(false))
+                            if (ConsoleResizeHandler.WasResized(false))
                                 break;
 
                             // Remove the values according to the threshold
@@ -472,7 +472,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             }
 
             // Reset
-            ConsoleResizeListener.WasResized();
+            ConsoleResizeHandler.WasResized();
             ColorTools.LoadBack(black);
         }
 

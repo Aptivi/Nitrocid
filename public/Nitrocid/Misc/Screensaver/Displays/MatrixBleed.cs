@@ -159,7 +159,7 @@ namespace Nitrocid.Misc.Screensaver.Displays
             TextWriterColor.WritePlain(buffer);
 
             // Reset resize sync
-            ConsoleResizeListener.WasResized();
+            ConsoleResizeHandler.WasResized();
             ThreadManager.SleepNoBlock(MatrixBleedSettings.MatrixBleedDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 
@@ -184,7 +184,7 @@ namespace Nitrocid.Misc.Screensaver.Displays
         internal void Fall()
         {
             // Check to see if user decided to resize
-            if (ConsoleResizeListener.WasResized(false))
+            if (ConsoleResizeHandler.WasResized(false))
                 return;
 
             // Print a block and add the covered position to the list so fading down can be done
@@ -202,7 +202,7 @@ namespace Nitrocid.Misc.Screensaver.Displays
         internal void Fade()
         {
             // Check to see if user decided to resize
-            if (ConsoleResizeListener.WasResized(false))
+            if (ConsoleResizeHandler.WasResized(false))
                 return;
 
             // Set thresholds
@@ -222,7 +222,7 @@ namespace Nitrocid.Misc.Screensaver.Displays
             foreach ((int, int, string) PositionTuple in CoveredPositions)
             {
                 // Check to see if user decided to resize
-                if (ConsoleResizeListener.WasResized(false))
+                if (ConsoleResizeHandler.WasResized(false))
                     break;
 
                 // Actually fade the line out

@@ -24,6 +24,7 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using Terminaux.Colors;
+using Terminaux.Colors.Data;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.LocaleCheck

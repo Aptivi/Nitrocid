@@ -265,7 +265,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverLogic()
         {
             ConsoleWrapper.CursorVisible = false;
-            if (!ConsoleResizeListener.WasResized(false))
+            if (!ConsoleResizeHandler.WasResized(false))
             {
                 // Setting maximum and minimum limits for console height and width
                 int minLeft = 8;
@@ -360,7 +360,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             }
 
             // Reset resize sync
-            ConsoleResizeListener.WasResized();
+            ConsoleResizeHandler.WasResized();
             ThreadManager.SleepNoBlock(MesmerizeSettings.MesmerizeDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 

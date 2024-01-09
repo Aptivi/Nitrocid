@@ -318,7 +318,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             var StrikeCharsIndex1 = 0;
             foreach (string Paragraph in LinotypeWrite.SplitNewLines())
             {
-                if (ConsoleResizeListener.WasResized(false))
+                if (ConsoleResizeHandler.WasResized(false))
                     break;
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "New paragraph: {0}", Paragraph);
 
@@ -351,7 +351,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 for (int IncompleteSentenceIndex = 0; IncompleteSentenceIndex <= IncompleteSentences.Length - 1; IncompleteSentenceIndex++)
                 {
                     string IncompleteSentence = IncompleteSentences[IncompleteSentenceIndex];
-                    if (ConsoleResizeListener.WasResized(false))
+                    if (ConsoleResizeHandler.WasResized(false))
                         break;
 
                     // Check if we need to indent a sentence
@@ -379,7 +379,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     // Process the incomplete sentences
                     for (int StruckCharIndex = 0; StruckCharIndex <= IncompleteSentence.Length - 1; StruckCharIndex++)
                     {
-                        if (ConsoleResizeListener.WasResized(false))
+                        if (ConsoleResizeHandler.WasResized(false))
                             break;
 
                         // Sometimes, typing error can be made in the last line and the line is repeated on the first line in the different
@@ -597,7 +597,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             }
 
             // Reset resize sync
-            ConsoleResizeListener.WasResized();
+            ConsoleResizeHandler.WasResized();
             ThreadManager.SleepNoBlock(LinotypoSettings.LinotypoDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 

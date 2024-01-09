@@ -25,6 +25,7 @@ using Nitrocid.Misc.Reflection;
 using Nitrocid.Misc.Screensaver;
 using Terminaux.Colors;
 using Terminaux.Base;
+using Terminaux.Colors.Data;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -240,12 +241,12 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverLogic()
         {
             ConsoleWrapper.CursorVisible = false;
-            if (ConsoleResizeListener.WasResized(false))
+            if (ConsoleResizeHandler.WasResized(false))
             {
                 ColorTools.LoadBack(new Color(ConsoleColors.Black));
 
                 // Reset resize sync
-                ConsoleResizeListener.WasResized();
+                ConsoleResizeHandler.WasResized();
             }
             else
             {

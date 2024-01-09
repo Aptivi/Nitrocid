@@ -27,6 +27,7 @@ using Nitrocid.Misc.Screensaver;
 using Nitrocid.Misc.Text;
 using Terminaux.Colors;
 using Terminaux.Base;
+using Terminaux.Colors.Data;
 
 namespace Nitrocid.ScreensaverPacks.Animations.ExcaliBeats
 {
@@ -111,7 +112,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.ExcaliBeats
             // Fade out
             for (int CurrentStep = 1; CurrentStep <= maxSteps; CurrentStep++)
             {
-                if (ConsoleResizeListener.WasResized(false))
+                if (ConsoleResizeHandler.WasResized(false))
                     break;
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Step {0}/{1} each {2} ms", CurrentStep, maxSteps, BeatIntervalStep);
                 ThreadManager.SleepNoBlock(BeatIntervalStep, System.Threading.Thread.CurrentThread);
@@ -120,12 +121,12 @@ namespace Nitrocid.ScreensaverPacks.Animations.ExcaliBeats
                 int CurrentColorBlueOut = (int)Math.Round(BlueColorNum - ThresholdBlue * CurrentStep);
                 var CurrentColorOut = new Color($"{CurrentColorRedOut};{CurrentColorGreenOut};{CurrentColorBlueOut}");
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
-                if (!ConsoleResizeListener.WasResized(false))
+                if (!ConsoleResizeHandler.WasResized(false))
                     CenteredFigletTextColor.WriteCenteredFigletColor(figFont, exStr, CurrentColorOut);
             }
 
             // Reset resize sync
-            ConsoleResizeListener.WasResized();
+            ConsoleResizeHandler.WasResized();
         }
 
     }

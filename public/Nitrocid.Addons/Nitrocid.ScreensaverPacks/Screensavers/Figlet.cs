@@ -316,11 +316,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             int FigletWidth = (int)Math.Round(ConsoleMiddleWidth - FigletWriteLines[0].Length / 2d);
 
             // Actually write it
-            if (!ConsoleResizeListener.WasResized(false))
+            if (!ConsoleResizeHandler.WasResized(false))
                 TextWriterWhereColor.WriteWhereColor(FigletWrite, FigletWidth, FigletHeight, true, ColorStorage);
 
             // Reset resize sync
-            ConsoleResizeListener.WasResized();
+            ConsoleResizeHandler.WasResized();
             int delay = FigletSettings.FigletRainbowMode ? 16 : FigletSettings.FigletDelay;
             ThreadManager.SleepNoBlock(delay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }

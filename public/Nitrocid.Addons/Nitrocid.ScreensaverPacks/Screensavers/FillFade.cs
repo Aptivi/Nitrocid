@@ -237,7 +237,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             // Fill the color if not filled
             if (!ColorFilled)
             {
-                if (ConsoleResizeListener.WasResized(false))
+                if (ConsoleResizeHandler.WasResized(false))
                 {
                     // Refill, because the console is resized
                     DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "We're refilling...");
@@ -268,7 +268,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 int maxSteps = 30;
                 for (int CurrentStep = 1; CurrentStep <= maxSteps; CurrentStep++)
                 {
-                    if (ConsoleResizeListener.WasResized(false))
+                    if (ConsoleResizeHandler.WasResized(false))
                         break;
 
                     // Set the thresholds
@@ -287,7 +287,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     int CurrentColorGreenOut = (int)Math.Round(GreenColorNum - ThresholdGreen * CurrentStep);
                     int CurrentColorBlueOut = (int)Math.Round(BlueColorNum - ThresholdBlue * CurrentStep);
                     DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut);
-                    if (!ConsoleResizeListener.WasResized(false))
+                    if (!ConsoleResizeHandler.WasResized(false))
                         ColorTools.LoadBack(new Color(CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut));
                 }
                 ChangeColor();
@@ -295,7 +295,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             }
 
             // Reset resize sync
-            ConsoleResizeListener.WasResized();
+            ConsoleResizeHandler.WasResized();
         }
 
         private void ChangeColor()

@@ -268,7 +268,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             // Fill the color if not filled
             if (!ColorFilled)
             {
-                if (ConsoleResizeListener.WasResized(false))
+                if (ConsoleResizeHandler.WasResized(false))
                 {
                     // Refill, because the console is resized
                     DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "We're refilling...");
@@ -304,7 +304,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     CoveredPositions.Add(new Tuple<int, int>(Left, Top));
                     DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Covered positions: {0}/{1}", CoveredPositions.Count, (EndLeft + 1) * (EndTop + 1));
                 }
-                if (!ConsoleResizeListener.WasResized(false))
+                if (!ConsoleResizeHandler.WasResized(false))
                 {
                     ConsoleWrapper.SetCursorPosition(Left, Top);
                     ColorTools.SetConsoleColor(new Color(DissolveSettings.DissolveBackgroundColor), true);
@@ -327,7 +327,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             }
 
             // Reset resize sync
-            ConsoleResizeListener.WasResized();
+            ConsoleResizeHandler.WasResized();
         }
 
         /// <inheritdoc/>

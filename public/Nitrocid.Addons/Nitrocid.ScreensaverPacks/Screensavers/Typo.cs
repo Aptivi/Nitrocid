@@ -203,7 +203,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 char StruckCharAssigned = StruckChar;
 
                 // Check to see if we can go ahead
-                if (ConsoleResizeListener.WasResized(false))
+                if (ConsoleResizeHandler.WasResized(false))
                     break;
 
                 // Calculate needed milliseconds from two WPM speeds (minimum and maximum)
@@ -270,11 +270,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Wait until retry
             ConsoleWrapper.WriteLine();
-            if (!ConsoleResizeListener.WasResized(false))
+            if (!ConsoleResizeHandler.WasResized(false))
                 ThreadManager.SleepNoBlock(TypoSettings.TypoWriteAgainDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
 
             // Reset resize sync
-            ConsoleResizeListener.WasResized();
+            ConsoleResizeHandler.WasResized();
             ThreadManager.SleepNoBlock(TypoSettings.TypoDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 

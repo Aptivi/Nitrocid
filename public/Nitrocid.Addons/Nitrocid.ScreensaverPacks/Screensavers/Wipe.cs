@@ -238,14 +238,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 int GreenColorNum = RandomDriver.Random(WipeSettings.WipeMinimumGreenColorLevel, WipeSettings.WipeMaximumGreenColorLevel);
                 int BlueColorNum = RandomDriver.Random(WipeSettings.WipeMinimumBlueColorLevel, WipeSettings.WipeMaximumBlueColorLevel);
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
-                if (!ConsoleResizeListener.WasResized(false))
+                if (!ConsoleResizeHandler.WasResized(false))
                     ColorTools.SetConsoleColor(new Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}"), true);
             }
             else
             {
                 int ColorNum = RandomDriver.Random(WipeSettings.WipeMinimumColorLevel, WipeSettings.WipeMaximumColorLevel);
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
-                if (!ConsoleResizeListener.WasResized(false))
+                if (!ConsoleResizeHandler.WasResized(false))
                     ColorTools.SetConsoleColor(new Color(ColorNum), true);
             }
 
@@ -261,11 +261,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     {
                         for (int Column = 0; Column <= ConsoleWrapper.WindowWidth; Column++)
                         {
-                            if (ConsoleResizeListener.WasResized(false))
+                            if (ConsoleResizeHandler.WasResized(false))
                                 break;
                             for (int Row = 0; Row <= MaxWindowHeight; Row++)
                             {
-                                if (ConsoleResizeListener.WasResized(false))
+                                if (ConsoleResizeHandler.WasResized(false))
                                     break;
 
                                 // Do the actual writing
@@ -283,11 +283,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     {
                         for (int Column = ConsoleWrapper.WindowWidth; Column >= 1; Column -= 1)
                         {
-                            if (ConsoleResizeListener.WasResized(false))
+                            if (ConsoleResizeHandler.WasResized(false))
                                 break;
                             for (int Row = 0; Row <= MaxWindowHeight; Row++)
                             {
-                                if (ConsoleResizeListener.WasResized(false))
+                                if (ConsoleResizeHandler.WasResized(false))
                                     break;
 
                                 // Do the actual writing
@@ -305,7 +305,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     {
                         for (int Row = MaxWindowHeight; Row >= 0; Row -= 1)
                         {
-                            if (ConsoleResizeListener.WasResized(false))
+                            if (ConsoleResizeHandler.WasResized(false))
                                 break;
 
                             // Do the actual writing
@@ -322,7 +322,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     {
                         for (int Row = 0; Row <= MaxWindowHeight; Row++)
                         {
-                            if (ConsoleResizeListener.WasResized(false))
+                            if (ConsoleResizeHandler.WasResized(false))
                                 break;
 
                             // Do the actual writing
@@ -335,7 +335,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     }
             }
 
-            if (!ConsoleResizeListener.WasResized(false))
+            if (!ConsoleResizeHandler.WasResized(false))
             {
                 TimesWiped += 1;
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Wiped {0} times out of {1}", TimesWiped, WipeSettings.WipeWipesNeededToChangeDirection);
@@ -354,7 +354,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 ColorTools.LoadBack(new Color(WipeSettings.WipeBackgroundColor));
             }
 
-            ConsoleResizeListener.WasResized();
+            ConsoleResizeHandler.WasResized();
             ThreadManager.SleepNoBlock(WipeSettings.WipeDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 

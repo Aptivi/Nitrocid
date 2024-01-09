@@ -288,7 +288,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             int consoleY = (height / 2) - figHeight;
 
             // Write it!
-            if (!ConsoleResizeListener.WasResized(false))
+            if (!ConsoleResizeHandler.WasResized(false))
             {
                 ConsoleWrapper.Clear();
                 if (consoleX < 0 || consoleY < 0)
@@ -317,7 +317,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             }
 
             // Reset resize sync
-            ConsoleResizeListener.WasResized();
+            ConsoleResizeHandler.WasResized();
             int delay = CommitMilestoneSettings.CommitMilestoneRainbowMode ? 16 : CommitMilestoneSettings.CommitMilestoneDelay;
             ThreadManager.SleepNoBlock(delay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }

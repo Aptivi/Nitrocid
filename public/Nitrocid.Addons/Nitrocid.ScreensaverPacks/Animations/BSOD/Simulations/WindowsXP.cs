@@ -22,6 +22,7 @@ using System.Collections.Generic;
 using Terminaux.Colors;
 using Nitrocid.Drivers.RNG;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Colors.Data;
 
 namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
 {

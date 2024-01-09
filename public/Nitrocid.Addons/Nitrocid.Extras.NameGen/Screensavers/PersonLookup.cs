@@ -26,6 +26,7 @@ using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Kernel.Time.Renderers;
 using Terminaux.Base;
+using Terminaux.Colors.Data;
 
 namespace Nitrocid.Extras.NameGen.Screensavers
 {

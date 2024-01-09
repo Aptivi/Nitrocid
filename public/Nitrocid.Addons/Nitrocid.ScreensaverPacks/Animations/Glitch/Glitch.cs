@@ -24,6 +24,7 @@ using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Screensaver;
 using Terminaux.Base;
 using Terminaux.Colors;
+using Terminaux.Colors.Data;
 
 namespace Nitrocid.ScreensaverPacks.Animations.Glitch
 {
@@ -43,9 +44,9 @@ namespace Nitrocid.ScreensaverPacks.Animations.Glitch
             int AmountOfBlocks = ConsoleWrapper.WindowWidth * ConsoleWrapper.WindowHeight - 1;
             int BlocksToCover = (int)Math.Round(AmountOfBlocks * GlitchDense);
             var CoveredBlocks = new ArrayList();
-            while (CoveredBlocks.Count != BlocksToCover || !ConsoleResizeListener.WasResized(false))
+            while (CoveredBlocks.Count != BlocksToCover || !ConsoleResizeHandler.WasResized(false))
             {
-                if (!ConsoleResizeListener.WasResized(false))
+                if (!ConsoleResizeHandler.WasResized(false))
                 {
                     // Select random position to cover
                     int CoverX = RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth);
@@ -68,7 +69,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.Glitch
             }
 
             // Reset resize sync
-            ConsoleResizeListener.WasResized();
+            ConsoleResizeHandler.WasResized();
         }
 
         /// <summary>

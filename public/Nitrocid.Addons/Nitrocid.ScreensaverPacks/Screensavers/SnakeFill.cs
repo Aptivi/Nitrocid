@@ -205,14 +205,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 int GreenColorNum = RandomDriver.Random(SnakeFillSettings.SnakeFillMinimumGreenColorLevel, SnakeFillSettings.SnakeFillMaximumGreenColorLevel);
                 int BlueColorNum = RandomDriver.Random(SnakeFillSettings.SnakeFillMinimumBlueColorLevel, SnakeFillSettings.SnakeFillMaximumBlueColorLevel);
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
-                if (!ConsoleResizeListener.WasResized(false))
+                if (!ConsoleResizeHandler.WasResized(false))
                     ColorTools.SetConsoleColor(new Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}"), true);
             }
             else
             {
                 int ColorNum = RandomDriver.Random(SnakeFillSettings.SnakeFillMinimumColorLevel, SnakeFillSettings.SnakeFillMaximumColorLevel);
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
-                if (!ConsoleResizeListener.WasResized(false))
+                if (!ConsoleResizeHandler.WasResized(false))
                     ColorTools.SetConsoleColor(new Color(ColorNum), true);
             }
 
@@ -224,7 +224,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             bool reverseHeightAxis = false;
             for (int x = 0; x < ConsoleWrapper.WindowWidth; x++)
             {
-                if (ConsoleResizeListener.WasResized(false))
+                if (ConsoleResizeHandler.WasResized(false))
                     break;
 
                 // Select the height and fill the entire screen
@@ -232,7 +232,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 {
                     for (int y = MaxWindowHeight; y >= 0; y--)
                     {
-                        if (ConsoleResizeListener.WasResized(false))
+                        if (ConsoleResizeHandler.WasResized(false))
                             break;
 
                         TextWriterWhereColor.WriteWhere(" ", x, y);
@@ -244,7 +244,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 {
                     for (int y = 0; y <= MaxWindowHeight; y++)
                     {
-                        if (ConsoleResizeListener.WasResized(false))
+                        if (ConsoleResizeHandler.WasResized(false))
                             break;
 
                         TextWriterWhereColor.WriteWhere(" ", x, y);
@@ -254,7 +254,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 }
             }
 
-            ConsoleResizeListener.WasResized();
+            ConsoleResizeHandler.WasResized();
             ThreadManager.SleepNoBlock(SnakeFillSettings.SnakeFillDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 

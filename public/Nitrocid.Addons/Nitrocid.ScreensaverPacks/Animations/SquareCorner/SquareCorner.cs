@@ -84,7 +84,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.SquareCorner
             int CurrentColorBlueIn = 0;
             for (int CurrentStep = Settings.SquareCornerMaxSteps; CurrentStep >= 1; CurrentStep -= 1)
             {
-                if (ConsoleResizeListener.WasResized(false))
+                if (ConsoleResizeHandler.WasResized(false))
                     break;
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Step {0}/{1}", CurrentStep, Settings.SquareCornerMaxSteps);
                 ThreadManager.SleepNoBlock(Settings.SquareCornerDelay, System.Threading.Thread.CurrentThread);
@@ -96,7 +96,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.SquareCorner
             }
 
             // Wait until fade out
-            if (!ConsoleResizeListener.WasResized(false))
+            if (!ConsoleResizeHandler.WasResized(false))
             {
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Waiting {0} ms...", Settings.SquareCornerFadeOutDelay);
                 ThreadManager.SleepNoBlock(Settings.SquareCornerFadeOutDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
@@ -105,7 +105,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.SquareCorner
             // Fade out
             for (int CurrentStep = 1; CurrentStep <= Settings.SquareCornerMaxSteps; CurrentStep++)
             {
-                if (ConsoleResizeListener.WasResized(false))
+                if (ConsoleResizeHandler.WasResized(false))
                     break;
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Step {0}/{1}", CurrentStep, Settings.SquareCornerMaxSteps);
                 ThreadManager.SleepNoBlock(Settings.SquareCornerDelay, System.Threading.Thread.CurrentThread);
@@ -117,7 +117,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.SquareCorner
             }
 
             // Reset resize sync
-            ConsoleResizeListener.WasResized();
+            ConsoleResizeHandler.WasResized();
             ThreadManager.SleepNoBlock(Settings.SquareCornerDelay, System.Threading.Thread.CurrentThread);
         }
 

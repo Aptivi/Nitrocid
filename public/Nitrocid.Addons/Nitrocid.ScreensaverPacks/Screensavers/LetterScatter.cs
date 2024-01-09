@@ -112,7 +112,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             int Top = RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight);
             var leftTop = (Left, Top);
             DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Selected left and top: {0}, {1}", Left, Top);
-            if (!ConsoleResizeListener.WasResized(false))
+            if (!ConsoleResizeHandler.WasResized(false))
             {
                 if (characters.TryGetValue(leftTop, out char charValue))
                 {
@@ -131,7 +131,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             }
 
             // Reset resize sync
-            ConsoleResizeListener.WasResized();
+            ConsoleResizeHandler.WasResized();
             ThreadManager.SleepNoBlock(LetterScatterSettings.LetterScatterDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 

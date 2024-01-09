@@ -439,7 +439,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Current left position: {0}", RampCurrentPositionLeft);
 
             // Draw the frame
-            if (!ConsoleResizeListener.WasResized(false))
+            if (!ConsoleResizeHandler.WasResized(false))
             {
                 TextWriterWhereColor.WriteWhereColor(BarRotSettings.BarRotUpperLeftCornerChar.ToString(), RampFrameStartWidth, RampCenterPosition - 2, false, BarRotSettings.BarRotUseBorderColors ? new Color(BarRotSettings.BarRotUpperLeftCornerColor) : ColorTools.GetGray());
                 TextWriterColor.WriteColor(new string(BarRotSettings.BarRotUpperFrameChar, RampFrameSpaces), false, BarRotSettings.BarRotUseBorderColors ? new Color(BarRotSettings.BarRotUpperFrameColor) : ColorTools.GetGray());
@@ -467,7 +467,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 Convert.ToInt32(RampCurrentColorBlue) != BlueColorNumTo
             )
             {
-                if (ConsoleResizeListener.WasResized(false))
+                if (ConsoleResizeHandler.WasResized(false))
                     break;
 
                 // Populate the variables for sub-gradients
@@ -503,7 +503,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 int RampSubgradientStepsMade = 0;
                 while (RampSubgradientStepsMade != RampFrameSpaces)
                 {
-                    if (ConsoleResizeListener.WasResized(false))
+                    if (ConsoleResizeHandler.WasResized(false))
                         break;
                     ConsoleWrapper.SetCursorPosition(RampCurrentPositionLeft, RampCenterPosition - 1);
                     ConsoleWrapper.Write(' ');
@@ -534,14 +534,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Current left position: {0}", RampCurrentPositionLeft);
                 ThreadManager.SleepNoBlock(BarRotSettings.BarRotDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
             }
-            if (!ConsoleResizeListener.WasResized(false))
+            if (!ConsoleResizeHandler.WasResized(false))
                 ThreadManager.SleepNoBlock(BarRotSettings.BarRotNextRampDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
 
             // Clear the scene
             ColorTools.LoadBack();
 
             // Reset resize sync
-            ConsoleResizeListener.WasResized();
+            ConsoleResizeHandler.WasResized();
         }
 
     }

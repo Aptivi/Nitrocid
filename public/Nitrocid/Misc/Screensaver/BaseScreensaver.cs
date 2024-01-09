@@ -23,6 +23,7 @@ using Nitrocid.Languages;
 using Terminaux.Colors;
 using Textify.General;
 using Terminaux.Base;
+using Terminaux.Colors.Data;
 
 namespace Nitrocid.Misc.Screensaver
 {

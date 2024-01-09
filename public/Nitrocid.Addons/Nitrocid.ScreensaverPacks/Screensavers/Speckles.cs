@@ -151,7 +151,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             }
 
             // Draw blocks
-            if (!ConsoleResizeListener.WasResized(false))
+            if (!ConsoleResizeHandler.WasResized(false))
             {
                 for (int BlockIndex = Blocks.Count - 1; BlockIndex >= 0; BlockIndex -= 1)
                 {
@@ -170,7 +170,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             }
 
             // Reset resize sync
-            ConsoleResizeListener.WasResized();
+            ConsoleResizeHandler.WasResized();
             ThreadManager.SleepNoBlock(SpecklesSettings.SpecklesDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
             ColorTools.LoadBack();
         }

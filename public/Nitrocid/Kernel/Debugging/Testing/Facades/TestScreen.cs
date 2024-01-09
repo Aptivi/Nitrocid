@@ -27,6 +27,7 @@ using System.Text;
 using Terminaux.Colors;
 using Textify.Sequences.Builder.Types;
 using Terminaux.Base;
+using Terminaux.Colors.Data;
 
 namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {

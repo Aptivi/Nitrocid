@@ -26,6 +26,7 @@ using Nitrocid.Misc.Splash;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Base;
 using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Colors.Data;
 
 namespace Nitrocid.SplashPacks.Splashes
 {
@@ -37,10 +38,6 @@ namespace Nitrocid.SplashPacks.Splashes
 
         // Standalone splash information
         public override string SplashName => "Dots";
-
-        // Private variables
-        readonly Color firstColor = new(ConsoleColors.White);
-        readonly Color secondColor = new(ConsoleColors.Cyan);
 
         // Actual logic
         public override string Display(SplashContext context)

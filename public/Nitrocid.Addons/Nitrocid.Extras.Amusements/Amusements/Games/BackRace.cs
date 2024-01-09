@@ -31,6 +31,7 @@ using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Drivers.RNG;
 using Terminaux.Inputs;
 using Terminaux.Base;
+using Terminaux.Colors.Data;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games
 {

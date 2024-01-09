@@ -22,6 +22,7 @@ using Terminaux.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Threading;
 using Terminaux.Base;
+using Terminaux.Colors.Data;
 
 namespace Nitrocid.ScreensaverPacks.Animations.Spin
 {
@@ -60,7 +61,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.Spin
             }
 
             // Spin!
-            if (!ConsoleResizeListener.WasResized(false))
+            if (!ConsoleResizeHandler.WasResized(false))
             {
                 TextWriterWhereColor.WriteWhereColorBack(spinBuffer.ToString(), 0, 0, true, new Color(ConsoleColors.White), new Color(ConsoleColors.Black));
                 ThreadManager.SleepNoBlock(Settings.SpinDelay, System.Threading.Thread.CurrentThread);
@@ -72,7 +73,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.Spin
                 currentSpinStep = 0;
 
             // Reset resize sync
-            ConsoleResizeListener.WasResized();
+            ConsoleResizeHandler.WasResized();
             CurrentWindowWidth = ConsoleWrapper.WindowWidth;
             CurrentWindowHeight = ConsoleWrapper.WindowHeight;
         }

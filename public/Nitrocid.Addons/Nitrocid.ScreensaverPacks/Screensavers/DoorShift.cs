@@ -221,14 +221,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 int GreenColorNum = RandomDriver.Random(DoorShiftSettings.DoorShiftMinimumGreenColorLevel, DoorShiftSettings.DoorShiftMaximumGreenColorLevel);
                 int BlueColorNum = RandomDriver.Random(DoorShiftSettings.DoorShiftMinimumBlueColorLevel, DoorShiftSettings.DoorShiftMaximumBlueColorLevel);
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
-                if (!ConsoleResizeListener.WasResized(false))
+                if (!ConsoleResizeHandler.WasResized(false))
                     ColorTools.SetConsoleColor(new Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}"), true);
             }
             else
             {
                 int ColorNum = RandomDriver.Random(DoorShiftSettings.DoorShiftMinimumColorLevel, DoorShiftSettings.DoorShiftMaximumColorLevel);
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
-                if (!ConsoleResizeListener.WasResized(false))
+                if (!ConsoleResizeHandler.WasResized(false))
                     ColorTools.SetConsoleColor(new Color(ColorNum), true);
             }
 
@@ -240,11 +240,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             {
                 for (int column = 0; column <= halfWidth; column++)
                 {
-                    if (ConsoleResizeListener.WasResized(false))
+                    if (ConsoleResizeHandler.WasResized(false))
                         break;
                     for (int Row = 0; Row <= MaxWindowHeight; Row++)
                     {
-                        if (ConsoleResizeListener.WasResized(false))
+                        if (ConsoleResizeHandler.WasResized(false))
                             break;
 
                         // Check the positions
@@ -270,11 +270,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             {
                 for (int column = 0; column <= halfWidth; column++)
                 {
-                    if (ConsoleResizeListener.WasResized(false))
+                    if (ConsoleResizeHandler.WasResized(false))
                         break;
                     for (int Row = 0; Row <= MaxWindowHeight; Row++)
                     {
-                        if (ConsoleResizeListener.WasResized(false))
+                        if (ConsoleResizeHandler.WasResized(false))
                             break;
 
                         // Check the positions
@@ -297,7 +297,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 }
             }
 
-            ConsoleResizeListener.WasResized();
+            ConsoleResizeHandler.WasResized();
             ThreadManager.SleepNoBlock(DoorShiftSettings.DoorShiftDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 

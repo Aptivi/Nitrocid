@@ -24,6 +24,7 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Events;
 using Nitrocid.Misc.Screensaver;
 using Terminaux.Base;
+using Terminaux.ResizeListener;
 
 namespace Nitrocid.ConsoleBase
 {
@@ -47,32 +48,10 @@ namespace Nitrocid.ConsoleBase
             newX = termDriver.WindowWidth;
             newY = termDriver.WindowHeight;
             DebugWriter.WriteDebug(DebugLevel.W, "Final: Old width x height: {0}x{1} | New width x height: {2}x{3}", oldX, oldY, newX, newY);
-            DebugWriter.WriteDebug(DebugLevel.W, $"Userspace application will have to call {nameof(ConsoleResizeListener.WasResized)} to reset the state.");
+            DebugWriter.WriteDebug(DebugLevel.W, $"Userspace application will have to call {nameof(ConsoleResizeHandler.ResizeDetected)} to reset the state.");
             EventsManager.FireEvent(EventType.ResizeDetected, oldX, oldY, newX, newY);
 
             // Also, tell the screen-based apps to refresh themselves
-            // TODO: Terminaux needs to provide an option whether to call the essential handler or not
-            if (ScreenTools.CurrentScreen is not null && !ScreensaverManager.InSaver)
-                ScreenTools.Render();
-
-            // Also, tell the screensaver application to refresh itself
-            if (ScreensaverManager.InSaver)
-                ScreensaverDisplayer.displayingSaver.ScreensaverResizeSync();
-        }
-
-        internal static void HandleResize()
-        {
-            ResizeDetected = true;
-
-            // We need to call the WindowHeight and WindowWidth properties on the Terminal console driver, because
-            // this polling works for all the terminals. Other drivers that don't use the terminal may not even
-            // implement these two properties.
-            var termDriver = DriverHandler.GetFallbackDriver<IConsoleDriver>();
-            DebugWriter.WriteDebug(DebugLevel.W, "Temp listener: Console resize detected! New width x height: {0}x{1}", termDriver.WindowWidth, termDriver.WindowHeight);
-            DebugWriter.WriteDebug(DebugLevel.W, "Temp listener: Userspace application will have to call Resized to set ResizeDetected back to false.");
-
-            // Also, tell the screen-based apps to refresh themselves
-            // TODO: Terminaux needs to provide an option whether to call the essential handler or not
             if (ScreenTools.CurrentScreen is not null && !ScreensaverManager.InSaver)
                 ScreenTools.Render();
 

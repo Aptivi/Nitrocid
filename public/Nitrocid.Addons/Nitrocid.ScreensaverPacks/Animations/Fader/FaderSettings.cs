@@ -18,6 +18,7 @@
 //
 
 using Terminaux.Colors;
+using Terminaux.Colors.Data;
 
 namespace Nitrocid.ScreensaverPacks.Animations.Fader
 {

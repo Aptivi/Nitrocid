@@ -276,12 +276,12 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 int BlueColorNum = RandomDriver.Random(BarWaveSettings.BarWaveMinimumBlueColorLevel, BarWaveSettings.BarWaveMaximumBlueColorLevel);
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                 var ColorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
-                if (!ConsoleResizeListener.WasResized(false))
+                if (!ConsoleResizeHandler.WasResized(false))
                     ProgressBarVerticalColor.WriteVerticalProgress(Pos, ThisBarLeft, 1, 4, ColorStorage);
             }
 
             // Reset resize sync
-            ConsoleResizeListener.WasResized();
+            ConsoleResizeHandler.WasResized();
             ThreadManager.SleepNoBlock(BarWaveSettings.BarWaveDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 

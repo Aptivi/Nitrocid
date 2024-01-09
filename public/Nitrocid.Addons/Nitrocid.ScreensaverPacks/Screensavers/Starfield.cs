@@ -27,6 +27,7 @@ using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Screensaver;
 using Terminaux.Colors;
 using Terminaux.Base;
+using Terminaux.Colors.Data;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -103,7 +104,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             var starsBuffer = new StringBuilder();
             for (int StarIndex = Stars.Count - 1; StarIndex >= 0; StarIndex -= 1)
             {
-                if (ConsoleResizeListener.WasResized(false))
+                if (ConsoleResizeHandler.WasResized(false))
                     break;
                 var Star = Stars[StarIndex];
                 char StarSymbol = '*';
@@ -111,7 +112,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 int StarY = Star.Item2;
                 starsBuffer.Append(TextWriterWhereColor.RenderWhere(Convert.ToString(StarSymbol), StarX, StarY, false, ConsoleColors.White, ConsoleColors.Black));
             }
-            if (ConsoleResizeListener.WasResized(false))
+            if (ConsoleResizeHandler.WasResized(false))
             {
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.W, "Resize-syncing. Clearing...");
                 Stars.Clear();
@@ -120,7 +121,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 TextWriterColor.WritePlain(starsBuffer.ToString(), false);
 
             // Reset resize sync
-            ConsoleResizeListener.WasResized();
+            ConsoleResizeHandler.WasResized();
             ThreadManager.SleepNoBlock(StarfieldSettings.StarfieldDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
             ConsoleWrapper.Clear();
         }

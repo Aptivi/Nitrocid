@@ -279,7 +279,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             TextWriterColor.WritePlain(particlesBuffer.ToString(), false);
 
             // Reset resize sync
-            ConsoleResizeListener.WasResized();
+            ConsoleResizeHandler.WasResized();
             ThreadManager.SleepNoBlock(ParticlesSettings.ParticlesDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
             ColorTools.LoadBack();
         }

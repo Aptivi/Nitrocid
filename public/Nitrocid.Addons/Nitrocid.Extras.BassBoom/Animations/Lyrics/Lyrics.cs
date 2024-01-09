@@ -79,7 +79,7 @@ namespace Nitrocid.Extras.BassBoom.Animations.Lyrics
             ThreadManager.SleepNoBlock(Settings.LyricsDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
 
             // Reset resize sync
-            ConsoleResizeListener.WasResized();
+            ConsoleResizeHandler.WasResized();
         }
 
         /// <summary>

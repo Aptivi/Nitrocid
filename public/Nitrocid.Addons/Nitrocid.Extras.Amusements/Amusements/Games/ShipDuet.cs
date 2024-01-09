@@ -29,6 +29,7 @@ using Nitrocid.Drivers.RNG;
 using Nitrocid.Misc.Screensaver;
 using Terminaux.Inputs;
 using Terminaux.Base;
+using Terminaux.Colors.Data;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games
 {

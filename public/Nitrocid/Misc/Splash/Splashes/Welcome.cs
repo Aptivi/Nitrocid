@@ -32,6 +32,8 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Kernel.Power;
 using Terminaux.Base;
+using Terminaux.ResizeListener;
+using Terminaux.Colors.Data;
 
 namespace Nitrocid.Misc.Splash.Splashes
 {
@@ -51,7 +53,7 @@ namespace Nitrocid.Misc.Splash.Splashes
         public override string Opening(SplashContext context)
         {
             var builder = new StringBuilder();
-            if (ConsoleResizeListener.WasResized(true))
+            if (ConsoleResizeHandler.WasResized(true))
                 cleared = false;
             if (!cleared)
             {

@@ -27,6 +27,7 @@ using Nitrocid.Misc.Screensaver;
 using Terminaux.Colors;
 using Textify.Sequences.Builder.Types;
 using Terminaux.Base;
+using Terminaux.Colors.Data;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -338,7 +339,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Reset resize sync
             laserEnds.Clear();
-            ConsoleResizeListener.WasResized();
+            ConsoleResizeHandler.WasResized();
             ThreadManager.SleepNoBlock(LaserBeamsSettings.LaserBeamsDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 

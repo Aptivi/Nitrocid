@@ -132,7 +132,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             double currentRightB = currentColorRight.B;
             for (int currentStep = 1; currentStep <= steps; currentStep++)
             {
-                if (ConsoleResizeListener.WasResized(false))
+                if (ConsoleResizeHandler.WasResized(false))
                     break;
 
                 // Add the values according to the threshold
@@ -159,7 +159,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 StringBuilder buffered = new();
                 for (int currentStepGradient = 1; currentStepGradient <= ConsoleWrapper.WindowWidth; currentStepGradient++)
                 {
-                    if (ConsoleResizeListener.WasResized(false))
+                    if (ConsoleResizeHandler.WasResized(false))
                         break;
 
                     // Add the values according to the threshold
@@ -189,7 +189,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             ThreadManager.SleepNoBlock(GradientBloomSettings.GradientBloomDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
 
             // Reset resize sync
-            ConsoleResizeListener.WasResized();
+            ConsoleResizeHandler.WasResized();
         }
 
     }

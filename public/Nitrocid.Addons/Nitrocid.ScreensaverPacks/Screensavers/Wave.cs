@@ -274,7 +274,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 if (posIdx >= CurrentPos.Count)
                     posIdx = 0;
                 int Pos = CurrentPos[posIdx] + Math.Abs(CurrentPos.Min()) + 2;
-                if (!ConsoleResizeListener.WasResized(false))
+                if (!ConsoleResizeHandler.WasResized(false))
                 {
                     ThreadManager.SleepNoBlock(WaveSettings.WaveDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
                     for (int j = 0; j < ConsoleWrapper.WindowHeight; j++)
@@ -284,7 +284,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             }
 
             // Reset resize sync
-            ConsoleResizeListener.WasResized();
+            ConsoleResizeHandler.WasResized();
             ThreadManager.SleepNoBlock(WaveSettings.WaveDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 

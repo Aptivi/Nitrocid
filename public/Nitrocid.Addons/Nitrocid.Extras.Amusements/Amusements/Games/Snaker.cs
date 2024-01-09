@@ -28,6 +28,7 @@ using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Screensaver;
 using Terminaux.Inputs;
 using Terminaux.Base;
+using Terminaux.Colors.Data;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games
 {
@@ -50,7 +51,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             var FloorColor = ChangeSnakeColor();
 
             // Draw the floor
-            if (!ConsoleResizeListener.WasResized(false))
+            if (!ConsoleResizeHandler.WasResized(false))
             {
                 int FloorTopLeftEdge = 2;
                 int FloorBottomLeftEdge = 2;
@@ -106,7 +107,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             var SnakeColor = ChangeSnakeColor();
 
             // A typical snake usually starts in the middle.
-            if (!ConsoleResizeListener.WasResized(false))
+            if (!ConsoleResizeHandler.WasResized(false))
             {
                 bool Dead = false;
                 int FloorTopEdge = 1;
@@ -141,7 +142,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                         ThreadManager.SleepNoBlock(SnakerSettings.SnakerDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
                     else
                         Thread.Sleep(SnakerSettings.SnakerDelay);
-                    if (ConsoleResizeListener.WasResized(false))
+                    if (ConsoleResizeHandler.WasResized(false))
                         break;
 
                     // Remove excess mass
@@ -375,7 +376,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             // Reset mass and console display
             SnakeMassPositions.Clear();
             ColorTools.LoadBack();
-            ConsoleResizeListener.WasResized();
+            ConsoleResizeHandler.WasResized();
         }
 
         /// <summary>

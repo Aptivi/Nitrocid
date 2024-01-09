@@ -23,7 +23,7 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using Terminaux.Colors;
+using Terminaux.Colors.Data;
 using Terminaux.Reader;
 using Terminaux.Writer.ConsoleWriters;
 

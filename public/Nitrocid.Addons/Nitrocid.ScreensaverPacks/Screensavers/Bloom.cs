@@ -119,7 +119,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             double currentB = currentColor.B;
             for (int currentStep = 1; currentStep <= steps; currentStep++)
             {
-                if (ConsoleResizeListener.WasResized(false))
+                if (ConsoleResizeHandler.WasResized(false))
                     break;
 
                 // Add the values according to the threshold
@@ -141,7 +141,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             ThreadManager.SleepNoBlock(BloomSettings.BloomDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
 
             // Reset resize sync
-            ConsoleResizeListener.WasResized();
+            ConsoleResizeHandler.WasResized();
         }
 
     }

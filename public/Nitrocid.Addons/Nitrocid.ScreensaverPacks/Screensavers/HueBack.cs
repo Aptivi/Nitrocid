@@ -113,7 +113,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 currentHueAngle = 0;
 
             // Reset resize sync
-            ConsoleResizeListener.WasResized();
+            ConsoleResizeHandler.WasResized();
         }
 
         /// <inheritdoc/>

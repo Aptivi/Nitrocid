@@ -17,10 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
-using Terminaux.Base;
+using Terminaux.ResizeListener;
 
 namespace Nitrocid.Kernel.Power
 {
@@ -46,9 +45,8 @@ namespace Nitrocid.Kernel.Power
             }
 
             // Handle window change
-            // TODO: The below code needs to be uncommented once Terminaux 2.4.0 releases on 1/9.
-            //ConsoleResizeListener.StartResizeListener((int oldX, int oldY, int newX, int newY) => ConsoleResizeHandler.HandleResize(oldX, oldY, newX, newY));
-            ConsoleResizeListener.StartResizeListener(() => ConsoleResizeHandler.HandleResize());
+            Terminaux.Base.ConsoleResizeHandler.RunEssentialHandler = false;
+            ConsoleResizeListener.StartResizeListener(ConsoleBase.ConsoleResizeHandler.HandleResize);
             initialized = true;
         }
 

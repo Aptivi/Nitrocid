@@ -58,7 +58,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             // Start stepping
             for (step = 1; step <= maxSteps; step++)
             {
-                if (ConsoleResizeListener.WasResized(false))
+                if (ConsoleResizeHandler.WasResized(false))
                     break;
 
                 switch (step)
@@ -81,7 +81,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             }
 
             // Reset
-            ConsoleResizeListener.WasResized();
+            ConsoleResizeHandler.WasResized();
             ColorTools.LoadBack(black);
         }
 

@@ -135,7 +135,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             // For each line, write four spaces, and extra two spaces if paragraph starts.
             foreach (string Paragraph in TypeWrite.SplitNewLines())
             {
-                if (ConsoleResizeListener.WasResized(false))
+                if (ConsoleResizeHandler.WasResized(false))
                     break;
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "New paragraph: {0}", Paragraph);
 
@@ -155,11 +155,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 for (int SentenceIndex = 0; SentenceIndex <= IncompleteSentences.Length - 1; SentenceIndex++)
                 {
                     string Sentence = IncompleteSentences[SentenceIndex];
-                    if (ConsoleResizeListener.WasResized(false))
+                    if (ConsoleResizeHandler.WasResized(false))
                         break;
                     foreach (char StruckChar in Sentence)
                     {
-                        if (ConsoleResizeListener.WasResized(false))
+                        if (ConsoleResizeHandler.WasResized(false))
                             break;
 
                         // If we're at the end of the page, clear the screen
@@ -189,7 +189,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             }
 
             // Reset resize sync
-            ConsoleResizeListener.WasResized();
+            ConsoleResizeHandler.WasResized();
             ThreadManager.SleepNoBlock(SpotWriteSettings.SpotWriteDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 

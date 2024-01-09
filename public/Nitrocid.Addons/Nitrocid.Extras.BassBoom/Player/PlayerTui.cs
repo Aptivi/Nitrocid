@@ -59,6 +59,7 @@ using Terminaux.Writer.FancyWriters;
 using Terminaux.Inputs;
 using Textify.General;
 using Terminaux.Base;
+using Terminaux.Colors.Data;
 
 namespace Nitrocid.Extras.BassBoom.Player
 {
@@ -109,7 +110,7 @@ namespace Nitrocid.Extras.BassBoom.Player
                 try
                 {
                     // Redraw if necessary
-                    if (ConsoleResizeListener.WasResized(true))
+                    if (ConsoleResizeHandler.WasResized(true))
                         rerender = true;
                     bool wasRerendered = rerender;
                     if (rerender)

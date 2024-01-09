@@ -273,7 +273,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     colorStorage = new Color(ColorNum);
                 }
 
-                if (!ConsoleResizeListener.WasResized(false))
+                if (!ConsoleResizeHandler.WasResized(false))
                 {
                     ColorTools.SetConsoleColor(Color.Empty);
                     ColorTools.SetConsoleColor(colorStorage, true);
@@ -287,7 +287,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             }
 
             // Reset resize sync
-            ConsoleResizeListener.WasResized();
+            ConsoleResizeHandler.WasResized();
             ThreadManager.SleepNoBlock(ColorMixSettings.ColorMixDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 

@@ -26,6 +26,7 @@ using Nitrocid.Misc.Screensaver;
 using Terminaux.Colors;
 using Textify.General;
 using Terminaux.Base;
+using Terminaux.Colors.Data;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -97,7 +98,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             GenerateMaze();
 
             // Reset resize sync
-            ConsoleResizeListener.WasResized();
+            ConsoleResizeHandler.WasResized();
             ThreadManager.SleepNoBlock(MazerSettings.MazerNewMazeDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 
@@ -157,7 +158,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             // Iterate through all the edges to display the maze in a spectacular way
             foreach (var (x, y, direction) in edges)
             {
-                if (ConsoleResizeListener.WasResized(false))
+                if (ConsoleResizeHandler.WasResized(false))
                     break;
 
                 // Get necessary values for connections
@@ -169,7 +170,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 // Now, connect the grids
                 while (!set1.IsConnected(set2))
                 {
-                    if (ConsoleResizeListener.WasResized(false))
+                    if (ConsoleResizeHandler.WasResized(false))
                         break;
 
                     // Display the maze

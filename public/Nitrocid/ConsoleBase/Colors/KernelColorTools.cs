@@ -23,6 +23,7 @@ using Nitrocid.ConsoleBase.Themes;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Debugging;
 using Terminaux.Colors;
+using Terminaux.Colors.Data;
 using Terminaux.Colors.Transformation;
 
 namespace Nitrocid.ConsoleBase.Colors

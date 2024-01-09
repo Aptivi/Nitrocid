@@ -112,13 +112,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 Color storage = new(red, green, blue);
                 builder.Append($"{storage.VTSequenceBackground}{new string(' ', ConsoleWrapper.WindowWidth)}");
             }
-            if (!ConsoleResizeListener.WasResized(false))
+            if (!ConsoleResizeHandler.WasResized(false))
                 TextWriterColor.Write(builder.ToString());
             ConsoleWrapper.SetCursorPosition(0, 0);
             ThreadManager.SleepNoBlock(AuroraSettings.AuroraDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
 
             // Reset resize sync
-            ConsoleResizeListener.WasResized();
+            ConsoleResizeHandler.WasResized();
         }
 
         /// <inheritdoc/>

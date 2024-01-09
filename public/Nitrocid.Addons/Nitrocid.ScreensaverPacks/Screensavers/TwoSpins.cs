@@ -28,6 +28,7 @@ using System.Text;
 using Terminaux.Colors;
 using Textify.Sequences.Builder.Types;
 using Terminaux.Base;
+using Terminaux.Colors.Data;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -430,7 +431,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             TextWriterColor.WritePlain(spinBuffer.ToString(), false);
 
             // Reset resize sync
-            ConsoleResizeListener.WasResized();
+            ConsoleResizeHandler.WasResized();
             ThreadManager.SleepNoBlock(TwoSpinsSettings.TwoSpinsDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
 
             // Clear the printed dots

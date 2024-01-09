@@ -31,9 +31,9 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
         public override void Simulate()
         {
             int millisecondsElapsed = 0;
-            while (millisecondsElapsed < BsodSettings.BSODDelay || !ConsoleResizeListener.WasResized(false))
+            while (millisecondsElapsed < BsodSettings.BSODDelay || !ConsoleResizeHandler.WasResized(false))
             {
-                if (!ConsoleResizeListener.WasResized(false))
+                if (!ConsoleResizeHandler.WasResized(false))
                 {
                     // Select random position to cover
                     int CoverX = RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth);

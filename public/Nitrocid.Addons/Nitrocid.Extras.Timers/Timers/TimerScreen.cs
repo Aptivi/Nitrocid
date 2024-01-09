@@ -105,7 +105,7 @@ namespace Nitrocid.Extras.Timers.Timers
             timerScreenPart.AddDynamicText(() =>
             {
                 // If prompted, clear the console
-                if (prompted || ConsoleResizeListener.WasResized())
+                if (prompted || ConsoleResizeHandler.WasResized())
                 {
                     prompted = false;
                     ColorTools.LoadBack();

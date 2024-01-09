@@ -24,6 +24,7 @@ using Nitrocid.Misc.Screensaver;
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Threading;
 using Terminaux.Base;
+using Terminaux.Colors.Data;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -279,13 +280,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             }
 
             // Launch the rocket
-            if (!ConsoleResizeListener.WasResized(false))
+            if (!ConsoleResizeHandler.WasResized(false))
             {
                 double CurrentX = LaunchPositionX;
                 int CurrentY = LaunchPositionY;
                 while (CurrentX != IgnitePositionX && CurrentY != IgnitePositionY)
                 {
-                    if (ConsoleResizeListener.WasResized(false))
+                    if (ConsoleResizeHandler.WasResized(false))
                         break;
                     DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Current position: {0}, {1}", CurrentX, CurrentY);
                     ConsoleWrapper.SetCursorPosition((int)Math.Round(CurrentX), CurrentY);
@@ -303,11 +304,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             }
 
             // Blow it up!
-            if (!ConsoleResizeListener.WasResized(false))
+            if (!ConsoleResizeHandler.WasResized(false))
             {
                 for (int Radius = 0; Radius <= FireworkRadius; Radius++)
                 {
-                    if (ConsoleResizeListener.WasResized(false))
+                    if (ConsoleResizeHandler.WasResized(false))
                         break;
 
                     // Variables
@@ -354,7 +355,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             }
 
             // Reset resize sync
-            ConsoleResizeListener.WasResized();
+            ConsoleResizeHandler.WasResized();
         }
 
     }

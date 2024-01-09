@@ -23,6 +23,7 @@ using Nitrocid.ConsoleBase.Presentation.Elements;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
 using Terminaux.Colors;
+using Terminaux.Colors.Data;
 
 namespace Nitrocid.Extras.Amusements.Commands
 {

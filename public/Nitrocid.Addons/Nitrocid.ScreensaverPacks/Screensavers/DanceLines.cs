@@ -289,7 +289,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                 // Now, draw a line
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got top position ({0})", i);
-                if (!ConsoleResizeListener.WasResized(false))
+                if (!ConsoleResizeHandler.WasResized(false))
                 {
                     ConsoleWrapper.SetCursorPosition(0, i);
                     ConsoleWrapper.Write(line);
@@ -297,7 +297,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             }
 
             // Reset resize sync
-            ConsoleResizeListener.WasResized();
+            ConsoleResizeHandler.WasResized();
             ThreadManager.SleepNoBlock(DanceLinesSettings.DanceLinesDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 

@@ -59,7 +59,7 @@ namespace Nitrocid.Extras.Timers.Timers
             watchScreenPart.AddDynamicText(() =>
             {
                 // If resized, clear the console
-                if (resetting || ConsoleResizeListener.WasResized())
+                if (resetting || ConsoleResizeHandler.WasResized())
                 {
                     resetting = false;
                     ColorTools.LoadBack();

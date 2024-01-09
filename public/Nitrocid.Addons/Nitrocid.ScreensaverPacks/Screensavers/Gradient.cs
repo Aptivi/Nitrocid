@@ -314,7 +314,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             StringBuilder gradientBuilder = new();
             for (int x = 0; x < ConsoleWrapper.WindowWidth; x++)
             {
-                if (ConsoleResizeListener.WasResized(false))
+                if (ConsoleResizeHandler.WasResized(false))
                     break;
 
                 // Write the background gradient!
@@ -332,7 +332,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Reset resize sync
             ThreadManager.SleepNoBlock(GradientSettings.GradientNextRotDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
-            ConsoleResizeListener.WasResized();
+            ConsoleResizeHandler.WasResized();
         }
 
     }

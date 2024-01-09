@@ -25,6 +25,7 @@ using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Screensaver;
 using Terminaux.Colors;
 using Terminaux.Base;
+using Terminaux.Colors.Data;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -331,7 +332,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 Convert.ToInt32(RampCurrentColorBlue) != BlueColorNumTo
             )
             {
-                if (ConsoleResizeListener.WasResized(false))
+                if (ConsoleResizeHandler.WasResized(false))
                     break;
 
                 // Populate the variables for sub-gradients
@@ -368,7 +369,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 int RampCurrentPositionLeft = 0;
                 while (RampSubgradientStepsMade != RampFrameSpaces)
                 {
-                    if (ConsoleResizeListener.WasResized(false))
+                    if (ConsoleResizeHandler.WasResized(false))
                         break;
 
                     // Fill the entire screen
@@ -439,7 +440,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             ColorTools.LoadBack(new Color(ConsoleColors.Black));
 
             // Reset resize sync
-            ConsoleResizeListener.WasResized();
+            ConsoleResizeHandler.WasResized();
         }
 
     }

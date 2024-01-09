@@ -21,6 +21,7 @@ using Terminaux.Writer.ConsoleWriters;
 using System.Threading;
 using Terminaux.Colors;
 using Terminaux.Base;
+using Terminaux.Colors.Data;
 
 namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
 {

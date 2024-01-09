@@ -26,6 +26,7 @@ using System.Text;
 using Terminaux.Colors;
 using Textify.Sequences.Builder.Types;
 using Terminaux.Base;
+using Terminaux.Colors.Data;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -298,7 +299,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             TextWriterColor.WritePlain(zebraBuffer.ToString(), false);
 
             // Reset resize sync
-            ConsoleResizeListener.WasResized();
+            ConsoleResizeHandler.WasResized();
             ThreadManager.SleepNoBlock(ZebraShiftSettings.ZebraShiftDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 

@@ -104,7 +104,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             TextWriterWhereColor.WriteWhereColor(shiftedHex, shiftedInfoMargin, infoTop, shiftedColor);
 
             // Reset resize sync
-            ConsoleResizeListener.WasResized();
+            ConsoleResizeHandler.WasResized();
             ThreadManager.SleepNoBlock(MemdumpSettings.MemdumpDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 

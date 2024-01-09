@@ -25,6 +25,7 @@ using System;
 using System.Collections.Generic;
 using Terminaux.Colors;
 using Terminaux.Base;
+using Terminaux.Colors.Data;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -102,7 +103,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 Color color = ConsoleColors.LightSkyBlue1;
                 for (int j = 0; j < ConsoleWrapper.WindowWidth; j++)
                 {
-                    if (ConsoleResizeListener.WasResized(false))
+                    if (ConsoleResizeHandler.WasResized(false))
                         break;
 
                     int currentPosX = launchX - j;
@@ -123,7 +124,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 double thresholdBlue = currentB / (double)steps;
                 for (int j = 1; j <= steps; j++)
                 {
-                    if (ConsoleResizeListener.WasResized(false))
+                    if (ConsoleResizeHandler.WasResized(false))
                         break;
 
                     // Fade out to black by getting its threshold
@@ -140,7 +141,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             }
 
             // Reset resize sync
-            ConsoleResizeListener.WasResized();
+            ConsoleResizeHandler.WasResized();
             ThreadManager.SleepNoBlock(SkyCometSettings.SkyCometDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 
@@ -174,7 +175,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             string starChar = "*";
             foreach (var star in stars)
             {
-                if (ConsoleResizeListener.WasResized(false))
+                if (ConsoleResizeHandler.WasResized(false))
                     break;
 
                 // Get the position and write it

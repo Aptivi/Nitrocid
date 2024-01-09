@@ -47,7 +47,7 @@ namespace Nitrocid.Shell.Shells.Text.Commands
                 {
                     string OriginalLine = TextEditShellCommon.FileLines[lineNum - 1];
                     TextWriters.Write(">> ", false, KernelColorType.Input);
-                    string EditedLine = Input.ReadLine("", OriginalLine);
+                    string EditedLine = Input.ReadLine("", OriginalLine, OneLineWrap: false, true);
                     TextEditShellCommon.FileLines[lineNum - 1] = EditedLine;
                     return 0;
                 }

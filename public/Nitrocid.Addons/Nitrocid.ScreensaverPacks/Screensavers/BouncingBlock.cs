@@ -274,7 +274,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             blockColor ??= GetRandomBlockColor();
 
             // Render a block
-            if (!ConsoleResizeListener.WasResized(false))
+            if (!ConsoleResizeHandler.WasResized(false))
             {
                 TextWriterWhereColor.WriteWhereColorBack(" ", ColumnBlock, RowBlock, true, Color.Empty, blockColor);
             }
@@ -283,7 +283,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.W, "We're resize-syncing! Setting RowBlock and ColumnBlock to its original position...");
                 RowBlock = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d);
                 ColumnBlock = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d);
-                ConsoleResizeListener.WasResized();
+                ConsoleResizeHandler.WasResized();
                 ThreadManager.SleepNoBlock(BouncingBlockSettings.BouncingBlockDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
                 return;
             }
@@ -341,7 +341,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             }
 
             // Reset resize sync
-            ConsoleResizeListener.WasResized();
+            ConsoleResizeHandler.WasResized();
             ThreadManager.SleepNoBlock(BouncingBlockSettings.BouncingBlockDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 
