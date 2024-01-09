@@ -85,7 +85,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
 
                 // Prompt for selection and check the answer
                 string finalTitle = Translate.DoTranslation("Welcome to Settings!");
-                int Answer = SelectionStyle.PromptSelection(RenderHeader(finalTitle, Translate.DoTranslation("You're on the landing page. Select a section or an option to get started. Depending on which settings you've changed, you might need to restart the kernel.")),
+                int Answer = SelectionStyle.PromptSelection(RenderHeader(finalTitle, TextTools.FormatString(Translate.DoTranslation("You're on the landing page of the {0} settings. Select a section or an option to get started. Depending on which settings you've changed, you might need to restart the kernel."), settingsType.GetType().Name)),
                     sections, altSections);
                 if (Answer >= 1 & Answer <= MaxSections)
                 {
