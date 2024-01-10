@@ -256,17 +256,9 @@ namespace Nitrocid.Drivers.Console
             if (!IsDumb)
             {
                 if (loadBack)
-                    ColorTools.LoadBack();
-                else
-                {
-                    if (KernelPlatform.IsOnWindows())
-                        SystemConsole.Clear();
-                    else
-                    {
-                        SystemConsole.Write(CsiSequences.GenerateCsiEraseInDisplay(2));
-                        SetCursorPosition(0, 0);
-                    }
-                }
+                    SystemConsole.Write(ColorTools.CurrentBackgroundColor.VTSequenceBackground);
+                SystemConsole.Write(CsiSequences.GenerateCsiEraseInDisplay(2));
+                SetCursorPosition(0, 0);
             }
         }
 
