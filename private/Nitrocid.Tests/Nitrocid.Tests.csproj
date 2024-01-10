@@ -80,7 +80,7 @@
       <Project>{c7b37899-c361-423d-9512-fe0a87a46866}</Project>
       <Name>Nitrocid</Name>
     </ProjectReference>
-    <PackageReference Include="Terminaux" Version="2.4.0" />
+    <PackageReference Include="Terminaux" Version="2.4.1" />
   </ItemGroup>
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
     <Copy SourceFiles="..\..\public\Nitrocid.Addons\Nitrocid.ThemePacks\Resources\Themes\Hacker.json" DestinationFolder="TestData"></Copy>
