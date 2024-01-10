@@ -47,7 +47,6 @@ namespace Nitrocid.Extras.Tips
             /* Localizable */ "that you can refer to the API documentation to help you make your mods?",
             /* Localizable */ "that you can get several of the awesome games, like Hangman and ShipDuet, by installing the extra addons?",
             /* Localizable */ "that, in Meteor, if you crash with a red meteor storm, your spaceship crashes?",
-            /* Localizable */ "that you can leverage the power of artificial intelligence using the ChatGPT client integrated to teh kernel by installing extra addons?",
             /* Localizable */ "that you can convert your kernel to information centers using the docking feature?",
             /* Localizable */ "that you can make user groups to organize user accounts?",
             /* Localizable */ "that if you're a member of a group that grants certain permissions, you're allowed to perform such operations?",
