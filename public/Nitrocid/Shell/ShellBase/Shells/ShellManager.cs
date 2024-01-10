@@ -369,8 +369,8 @@ namespace Nitrocid.Shell.ShellBase.Shells
                 DebugWriter.WriteDebug(DebugLevel.I, "Waiting for command");
                 string strcommand =
                     shellInfo.OneLineWrap ?
-                    Input.ReadLineWrapped("", "", settings) :
-                    Input.ReadLine("", "", settings);
+                    Input.ReadLineWrapped("", "", settings, true) :
+                    Input.ReadLine("", "", settings, true);
                 DebugWriter.WriteDebug(DebugLevel.I, "Waited for command [{0}]", strcommand);
                 if (strcommand == ";")
                     strcommand = "";
