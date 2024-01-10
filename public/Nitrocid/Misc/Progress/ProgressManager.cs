@@ -58,7 +58,7 @@ namespace Nitrocid.Misc.Progress
         /// </summary>
         /// <param name="progress">Progress percentage from 0 to 100</param>
         /// <param name="context">Progress context</param>
-        public static void ReportProgress(int progress, string context) =>
+        public static void ReportProgress(double progress, string context) =>
             ReportProgress(progress, context, Translate.DoTranslation("Processing..."));
 
         /// <summary>
@@ -67,7 +67,7 @@ namespace Nitrocid.Misc.Progress
         /// <param name="progress">Progress percentage from 0 to 100</param>
         /// <param name="message">Message to write to the handlers</param>
         /// <param name="context">Progress context</param>
-        public static void ReportProgress(int progress, string context, string message) =>
+        public static void ReportProgress(double progress, string context, string message) =>
             ReportProgress(progress, context, message, null);
 
         /// <summary>
@@ -77,7 +77,7 @@ namespace Nitrocid.Misc.Progress
         /// <param name="message">Message to write to the handlers</param>
         /// <param name="vars">Variables for message extension</param>
         /// <param name="context">Progress context</param>
-        public static void ReportProgress(int progress, string context, string message, params object[] vars)
+        public static void ReportProgress(double progress, string context, string message, params object[] vars)
         {
             context = string.IsNullOrEmpty(context) ? "General" : context;
             message = vars is not null ? TextTools.FormatString(message, vars) : message;

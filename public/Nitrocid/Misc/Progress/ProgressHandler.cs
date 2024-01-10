@@ -27,15 +27,15 @@ namespace Nitrocid.Misc.Progress
     /// </summary>
     public class ProgressHandler
     {
-        private readonly Action<int, string> progressActionOrig =
+        private readonly Action<double, string> progressActionOrig =
             (num, text) => DebugWriter.WriteDebug(DebugLevel.I, $"{num}% {text}");
-        private readonly Action<int, string> progressAction;
+        private readonly Action<double, string> progressAction;
         private readonly string context = "General";
 
         /// <summary>
         /// The progress action delegate to use
         /// </summary>
-        public Action<int, string> ProgressAction =>
+        public Action<double, string> ProgressAction =>
             progressAction;
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace Nitrocid.Misc.Progress
         /// </summary>
         /// <param name="progressAction">The progress action delegate to use</param>
         /// <param name="context">Progress context</param>
-        public ProgressHandler(Action<int, string> progressAction, string context)
+        public ProgressHandler(Action<double, string> progressAction, string context)
         {
             this.progressAction = progressAction ?? progressActionOrig;
             this.context = string.IsNullOrEmpty(context) ? "General" : context;

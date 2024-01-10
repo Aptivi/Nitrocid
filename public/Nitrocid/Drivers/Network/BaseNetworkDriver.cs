@@ -125,7 +125,7 @@ namespace Nitrocid.Drivers.Network
                             totalRead += bytesRead;
                             double prog = 100d * ((double)totalRead / fileSize);
                             if (ShowProgress)
-                                ProgressManager.ReportProgress((int)prog, "Download", $"{totalRead} / {fileSize} | {prog:000.00}%");
+                                ProgressManager.ReportProgress(prog, "Download", $"{totalRead} / {fileSize} | {prog:000.00}%");
                         } while (bytesRead > 0);
                     }
                     NetworkTransfer.DownloadChecker(null);
@@ -222,7 +222,7 @@ namespace Nitrocid.Drivers.Network
                             totalRead += bytesRead;
                             double prog = 100d * ((double)totalRead / fileSize);
                             if (ShowProgress)
-                                ProgressManager.ReportProgress((int)prog, "Download", $"{totalRead} / {fileSize} | {prog:000.00}%");
+                                ProgressManager.ReportProgress(prog, "Download", $"{totalRead} / {fileSize} | {prog:000.00}%");
                         } while (bytesRead > 0);
                         ContentStream.Seek(0L, SeekOrigin.Begin);
                         downloaded = new StreamReader(ContentStream).ReadToEnd();
@@ -492,7 +492,7 @@ namespace Nitrocid.Drivers.Network
                 long totalBytes = stream.Length;
                 double percentage = 100 * (uploadedBytes / (double)totalBytes);
                 if (percentage != previousPercentage)
-                    ProgressManager.ReportProgress((int)percentage, "Upload", $"{uploadedBytes} / {totalBytes} | {percentage:000.00}%");
+                    ProgressManager.ReportProgress(percentage, "Upload", $"{uploadedBytes} / {totalBytes} | {percentage:000.00}%");
                 previousPercentage = percentage;
             }
         }
