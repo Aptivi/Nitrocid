@@ -261,7 +261,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverLogic()
         {
             ConsoleWrapper.CursorVisible = false;
-            ColorTools.LoadBack(new Color(MultiLinesSettings.MultiLinesBackgroundColor));
+            ColorTools.LoadBackDry(new Color(MultiLinesSettings.MultiLinesBackgroundColor));
 
             // Draw few lines
             string lineString = !string.IsNullOrWhiteSpace(MultiLinesSettings.MultiLinesLineChar) ? MultiLinesSettings.MultiLinesLineChar : "-";

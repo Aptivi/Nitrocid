@@ -200,7 +200,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 EdgePulseMaximumGreenColorLevel = EdgePulseSettings.EdgePulseMaximumGreenColorLevel,
                 EdgePulseMaximumBlueColorLevel = EdgePulseSettings.EdgePulseMaximumBlueColorLevel
             };
-            ColorTools.LoadBack("0;0;0");
+            ColorTools.LoadBackDry("0;0;0");
             ConsoleWrapper.Clear();
         }
 

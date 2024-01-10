@@ -70,7 +70,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             // Get random stars
             UpdateStars();
-            ColorTools.LoadBack(new Color(0, 0, 0));
+            ColorTools.LoadBackDry(new Color(0, 0, 0));
         }
 
         /// <inheritdoc/>

@@ -267,7 +267,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             ConsoleWrapper.CursorVisible = false;
             ColorTools.SetConsoleColor(new Color(BouncingBlockSettings.BouncingBlockForegroundColor));
-            ColorTools.LoadBack(new Color(BouncingBlockSettings.BouncingBlockBackgroundColor));
+            ColorTools.LoadBackDry(new Color(BouncingBlockSettings.BouncingBlockBackgroundColor));
             DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Row block: {0} | Column block: {1}", RowBlock, ColumnBlock);
 
             // Initialize the color

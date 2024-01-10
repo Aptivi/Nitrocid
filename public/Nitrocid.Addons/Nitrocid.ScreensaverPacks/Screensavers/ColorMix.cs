@@ -239,7 +239,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            ColorTools.LoadBack(new Color(ColorMixSettings.ColorMixBackgroundColor));
+            ColorTools.LoadBackDry(new Color(ColorMixSettings.ColorMixBackgroundColor));
         }
 
         /// <inheritdoc/>
@@ -282,7 +282,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 else
                 {
                     DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "We're refilling...");
-                    ColorTools.LoadBack(new Color(ColorMixSettings.ColorMixBackgroundColor));
+                    ColorTools.LoadBackDry(new Color(ColorMixSettings.ColorMixBackgroundColor));
                 }
             }
 

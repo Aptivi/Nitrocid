@@ -261,7 +261,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverLogic()
         {
             ConsoleWrapper.CursorVisible = false;
-            ColorTools.LoadBack(new Color(DanceLinesSettings.DanceLinesBackgroundColor));
+            ColorTools.LoadBackDry(new Color(DanceLinesSettings.DanceLinesBackgroundColor));
 
             // Draw few lines
             string lineString = !string.IsNullOrWhiteSpace(DanceLinesSettings.DanceLinesLineChar) ? DanceLinesSettings.DanceLinesLineChar : "-";

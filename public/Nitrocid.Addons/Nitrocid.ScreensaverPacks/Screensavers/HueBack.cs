@@ -106,7 +106,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             var color = new Color($"hsl:{currentHueAngle};{HueBackSettings.HueBackSaturation};{HueBackSettings.HueBackLuminance}");
 
             // Now, change the background color accordingly
-            ColorTools.LoadBack(color);
+            ColorTools.LoadBackDry(color);
             ThreadManager.SleepNoBlock(HueBackSettings.HueBackDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
             currentHueAngle++;
             if (currentHueAngle > 360)

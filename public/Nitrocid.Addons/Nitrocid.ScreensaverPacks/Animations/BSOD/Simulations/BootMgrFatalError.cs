@@ -36,7 +36,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
 
         public override void Simulate()
         {
-            ColorTools.LoadBack(new Color(ConsoleColors.Black));
+            ColorTools.LoadBackDry(new Color(ConsoleColors.Black));
             ColorTools.SetConsoleColor(new Color(ConsoleColors.White));
 
             // Select a variant

@@ -202,7 +202,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            ColorTools.LoadBack(new Color(DoorShiftSettings.DoorShiftBackgroundColor));
+            ColorTools.LoadBackDry(new Color(DoorShiftSettings.DoorShiftBackgroundColor));
             ConsoleWrapper.CursorVisible = false;
         }
 

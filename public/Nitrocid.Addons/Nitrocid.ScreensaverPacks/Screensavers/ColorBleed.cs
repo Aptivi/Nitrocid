@@ -263,7 +263,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             bleedStates.Clear();
-            ColorTools.LoadBack("0;0;0");
+            ColorTools.LoadBackDry("0;0;0");
             ConsoleWrapper.Clear();
             ConsoleWrapper.CursorVisible = false;
         }

@@ -222,7 +222,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             // Variable preparations
             CoveredPositions.Clear();
-            ColorTools.LoadBack(new Color(LighterSettings.LighterBackgroundColor));
+            ColorTools.LoadBackDry(new Color(LighterSettings.LighterBackgroundColor));
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
         }
 

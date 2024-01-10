@@ -129,7 +129,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                 // Now, make a color and fill the console with it
                 Color col = new((int)currentR, (int)currentG, (int)currentB);
-                ColorTools.LoadBack(col);
+                ColorTools.LoadBackDry(col);
 
                 // Sleep
                 ThreadManager.SleepNoBlock(BloomSettings.BloomDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);

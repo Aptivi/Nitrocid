@@ -230,7 +230,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             // Clear the console
-            ColorTools.LoadBack("0;0;0");
+            ColorTools.LoadBackDry("0;0;0");
             ConsoleWrapper.Clear();
             ConsoleWrapper.CursorVisible = false;
 

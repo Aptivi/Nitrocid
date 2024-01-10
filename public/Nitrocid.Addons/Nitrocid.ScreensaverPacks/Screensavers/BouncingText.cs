@@ -276,7 +276,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             // Variable preparations
             ColorTools.SetConsoleColor(new Color(BouncingTextSettings.BouncingTextForegroundColor));
-            ColorTools.LoadBack(new Color(BouncingTextSettings.BouncingTextBackgroundColor));
+            ColorTools.LoadBackDry(new Color(BouncingTextSettings.BouncingTextBackgroundColor));
             RowText = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d);
             ColumnFirstLetter = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d - BouncingTextSettings.BouncingTextWrite.Length / 2d);
             ColumnLastLetter = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d + BouncingTextSettings.BouncingTextWrite.Length / 2d);

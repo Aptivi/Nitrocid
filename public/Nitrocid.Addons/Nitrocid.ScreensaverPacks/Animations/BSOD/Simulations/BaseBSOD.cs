@@ -27,7 +27,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
     {
         public virtual void Simulate()
         {
-            ColorTools.LoadBack(new Color(ConsoleColors.Black));
+            ColorTools.LoadBackDry(new Color(ConsoleColors.Black));
             ColorTools.SetConsoleColor(new Color(ConsoleColors.White));
             TextWriterColor.WritePlain("No operating system found.", true);
         }

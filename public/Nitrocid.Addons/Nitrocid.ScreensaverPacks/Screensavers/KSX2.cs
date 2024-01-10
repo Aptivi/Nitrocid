@@ -51,7 +51,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            ColorTools.LoadBack(new Color(ConsoleColors.Black));
+            ColorTools.LoadBackDry(new Color(ConsoleColors.Black));
             ConsoleWrapper.CursorVisible = false;
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
         }
@@ -100,7 +100,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                             // Now, make a color and fill the console with it
                             Color col = new(currentRColor, currentGColor, currentBColor);
-                            ColorTools.LoadBack(col);
+                            ColorTools.LoadBackDry(col);
 
                             // Sleep
                             ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
@@ -134,7 +134,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                             // Now, make a color and fill the console with it
                             Color col = new(currentR, currentG, currentB);
-                            ColorTools.LoadBack(col);
+                            ColorTools.LoadBackDry(col);
 
                             // Sleep
                             ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
@@ -151,7 +151,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                             // Now, make a color and fill the console with it
                             Color col = new(currentR, currentG, currentB);
-                            ColorTools.LoadBack(col);
+                            ColorTools.LoadBackDry(col);
 
                             // Sleep
                             ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
@@ -213,7 +213,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             bool showYear = flashes % 2 == 0;
                             if (showYear)
                             {
-                                ColorTools.LoadBack(black);
+                                ColorTools.LoadBackDry(black);
                                 var s5figFont = FigletTools.GetFigletFont("banner");
                                 int s5figWidth = FigletTools.GetFigletWidth("2021", s5figFont) / 2;
                                 int s5figHeight = FigletTools.GetFigletHeight("2021", s5figFont) / 2;
@@ -222,7 +222,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                                 FigletWhereColor.WriteFigletWhereColorBack("2021", s5consoleX, s5consoleY, true, s5figFont, darkRed, black);
                             }
                             else
-                                ColorTools.LoadBack(darkRed);
+                                ColorTools.LoadBackDry(darkRed);
                             ThreadManager.SleepNoBlock(50, ScreensaverDisplayer.ScreensaverDisplayerThread);
                         }
                         ThreadManager.SleepNoBlock(3000, ScreensaverDisplayer.ScreensaverDisplayerThread);
@@ -300,7 +300,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                                 currentRotB = (int)Math.Round(currentRotB + toGreenThresholdB);
                                 color = new Color(currentRotR, currentRotG, currentRotB);
                             }
-                            ColorTools.LoadBack(color);
+                            ColorTools.LoadBackDry(color);
                             var s5figFont = FigletTools.GetFigletFont("banner");
                             int s5figWidth = FigletTools.GetFigletWidth("X", s5figFont) / 2;
                             int s5figHeight = FigletTools.GetFigletHeight("X", s5figFont) / 2;
@@ -317,9 +317,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         {
                             bool showRed = flashes % 2 == 0;
                             if (showRed)
-                                ColorTools.LoadBack(red);
+                                ColorTools.LoadBackDry(red);
                             else
-                                ColorTools.LoadBack(green);
+                                ColorTools.LoadBackDry(green);
                             ThreadManager.SleepNoBlock(50, ScreensaverDisplayer.ScreensaverDisplayerThread);
                         }
                         break;
@@ -377,7 +377,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                             // Now, make a color and fill the console with it
                             Color col = new(currentRColor, currentGColor, currentBColor);
-                            ColorTools.LoadBack(col);
+                            ColorTools.LoadBackDry(col);
 
                             // Sleep
                             ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
@@ -403,7 +403,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Reset
             ConsoleResizeHandler.WasResized();
-            ColorTools.LoadBack(black);
+            ColorTools.LoadBackDry(black);
         }
 
     }

@@ -29,7 +29,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
         public override void Simulate()
         {
             // Clear the screen
-            ColorTools.LoadBack(new Color(0, 0, 0));
+            ColorTools.LoadBackDry(new Color(0, 0, 0));
 
             // Render the header and footer
             int marginX = 2;

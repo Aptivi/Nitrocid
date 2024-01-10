@@ -28,7 +28,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
     {
         public override void Simulate()
         {
-            ColorTools.LoadBack(new Color(ConsoleColors.Black));
+            ColorTools.LoadBackDry(new Color(ConsoleColors.Black));
             ColorTools.SetConsoleColor(new Color(ConsoleColors.White));
 
             // Simulate a Mac OS X 10.0 PowerPC kernel panic on boot

@@ -28,7 +28,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
     {
         public override void Simulate()
         {
-            ColorTools.LoadBack(new Color(ConsoleColors.DarkBlue_000087));
+            ColorTools.LoadBackDry(new Color(ConsoleColors.DarkBlue_000087));
             ColorTools.SetConsoleColor(new Color(ConsoleColors.White));
 
             // Windows header

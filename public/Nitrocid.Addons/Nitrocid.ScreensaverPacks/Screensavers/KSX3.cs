@@ -52,7 +52,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            ColorTools.LoadBack(new Color(ConsoleColors.Black));
+            ColorTools.LoadBackDry(new Color(ConsoleColors.Black));
             ConsoleWrapper.CursorVisible = false;
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
         }
@@ -84,7 +84,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     //   - 0.0.16 with red color
                     //   - 0.0.24 with pink color
                     case 1:
-                        ColorTools.LoadBack(black);
+                        ColorTools.LoadBackDry(black);
                         int colorSteps = 30;
 
                         // Get the color thresholds
@@ -213,7 +213,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                             // Now, make a color and fill the console with it
                             Color col = new(currentBackR, currentBackG, currentBackB);
-                            ColorTools.LoadBack(col);
+                            ColorTools.LoadBackDry(col);
                             CenteredFigletTextColor.WriteCenteredFigletColorBack(font, "v0.0.24", pink, col);
 
                             // Sleep
@@ -245,7 +245,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                             // Now, make a color and fill the console with it
                             Color col = new(currentR, currentG, currentB);
-                            ColorTools.LoadBack(pink);
+                            ColorTools.LoadBackDry(pink);
                             CenteredFigletTextColor.WriteCenteredFigletColorBack(font, "v0.0.24", col, pink);
 
                             // Sleep
@@ -277,15 +277,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         {
                             bool showRed = flashes % 2 == 0;
                             if (showRed)
-                                ColorTools.LoadBack(red);
+                                ColorTools.LoadBackDry(red);
                             else
-                                ColorTools.LoadBack(pink);
+                                ColorTools.LoadBackDry(pink);
                             ThreadManager.SleepNoBlock(50, ScreensaverDisplayer.ScreensaverDisplayerThread);
                         }
                         break;
                     // Step 7: Three random date selectors
                     case 7:
-                        ColorTools.LoadBack(red);
+                        ColorTools.LoadBackDry(red);
                         int maxSelections = RandomDriver.Random(100, 150);
                         int oneThirdConsoleWidth = ConsoleWrapper.WindowWidth / 3;
                         int selectorsPositionY = ConsoleWrapper.WindowHeight - 2;
@@ -326,7 +326,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         break;
                     // Step 8: Show a day selection screen trying to decide between the three target dates
                     case 8:
-                        ColorTools.LoadBack(black);
+                        ColorTools.LoadBackDry(black);
 
                         // Get things ready
                         var targetDates = new[]
@@ -427,7 +427,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                             // Now, make a color and fill the console with it
                             Color col = new(currentR, currentG, currentB);
-                            ColorTools.LoadBack(col);
+                            ColorTools.LoadBackDry(col);
 
                             // Sleep
                             ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
@@ -444,7 +444,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                             // Now, make a color and fill the console with it
                             Color col = new(currentR, currentG, currentB);
-                            ColorTools.LoadBack(col);
+                            ColorTools.LoadBackDry(col);
 
                             // Sleep
                             ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
@@ -452,7 +452,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         break;
                     // Step 10: fade the X character in, and use figlet
                     case 10:
-                        ColorTools.LoadBack(black);
+                        ColorTools.LoadBackDry(black);
                         colorSteps = 30;
 
                         // Get the color thresholds
@@ -587,7 +587,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                             // Now, make a color and fill the console with it
                             Color col = new(currentR, currentG, currentB);
-                            ColorTools.LoadBack(col);
+                            ColorTools.LoadBackDry(col);
 
                             // Sleep
                             ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
@@ -612,7 +612,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Reset
             ConsoleResizeHandler.WasResized();
-            ColorTools.LoadBack(black);
+            ColorTools.LoadBackDry(black);
         }
 
     }

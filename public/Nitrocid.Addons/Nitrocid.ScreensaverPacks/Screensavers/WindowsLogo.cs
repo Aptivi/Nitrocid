@@ -88,7 +88,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 // Draw the Windows 11 logo
                 if (!Drawn)
                 {
-                    ColorTools.LoadBack(new Color(ConsoleColors.Black));
+                    ColorTools.LoadBackDry(new Color(ConsoleColors.Black));
                     var windows11Color = new Color($"0;120;212");
 
                     // First, draw the upper left box

@@ -246,7 +246,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            ColorTools.LoadBack(new Color(MarqueeSettings.MarqueeBackgroundColor));
+            ColorTools.LoadBackDry(new Color(MarqueeSettings.MarqueeBackgroundColor));
             MarqueeSettings.MarqueeWrite = MarqueeSettings.MarqueeWrite.ReplaceAll([Convert.ToChar(13).ToString(), Convert.ToChar(10).ToString()], " - ");
         }
 

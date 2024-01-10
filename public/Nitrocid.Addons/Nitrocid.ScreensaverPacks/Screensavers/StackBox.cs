@@ -243,7 +243,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             ConsoleWrapper.CursorVisible = false;
             if (ConsoleResizeHandler.WasResized(false))
             {
-                ColorTools.LoadBack(new Color(ConsoleColors.Black));
+                ColorTools.LoadBackDry(new Color(ConsoleColors.Black));
 
                 // Reset resize sync
                 ConsoleResizeHandler.WasResized();

@@ -294,7 +294,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                     // Delay writing
                     ThreadManager.SleepNoBlock(FireworksSettings.FireworksDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
-                    ColorTools.LoadBack(new Color(ConsoleColors.Black));
+                    ColorTools.LoadBackDry(new Color(ConsoleColors.Black));
                     ColorTools.SetConsoleColor(new Color(255, 255, 255), true);
 
                     // Change positions
@@ -350,7 +350,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                     // Delay writing
                     ThreadManager.SleepNoBlock(FireworksSettings.FireworksDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
-                    ColorTools.LoadBack(new Color(ConsoleColors.Black));
+                    ColorTools.LoadBackDry(new Color(ConsoleColors.Black));
                 }
             }
 

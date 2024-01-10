@@ -93,7 +93,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             // Variable preparations
             ColorTools.SetConsoleColor(new Color(NumberScatterSettings.NumberScatterForegroundColor));
-            ColorTools.LoadBack(new Color(NumberScatterSettings.NumberScatterBackgroundColor));
+            ColorTools.LoadBackDry(new Color(NumberScatterSettings.NumberScatterBackgroundColor));
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
         }
 

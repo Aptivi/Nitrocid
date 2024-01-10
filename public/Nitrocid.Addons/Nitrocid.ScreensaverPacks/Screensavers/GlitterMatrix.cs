@@ -93,7 +93,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             // Variable preparations
             ColorTools.SetConsoleColor(new Color(GlitterMatrixSettings.GlitterMatrixForegroundColor));
-            ColorTools.LoadBack(new Color(GlitterMatrixSettings.GlitterMatrixBackgroundColor));
+            ColorTools.LoadBackDry(new Color(GlitterMatrixSettings.GlitterMatrixBackgroundColor));
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
         }
 

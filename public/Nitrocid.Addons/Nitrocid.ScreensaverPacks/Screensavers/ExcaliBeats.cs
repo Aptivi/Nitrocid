@@ -322,7 +322,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 ExcaliBeatsMaximumBlueColorLevel = ExcaliBeatsSettings.ExcaliBeatsMaximumBlueColorLevel,
                 ExcaliBeatsMaximumColorLevel = ExcaliBeatsSettings.ExcaliBeatsMaximumColorLevel
             };
-            ColorTools.LoadBack(0);
+            ColorTools.LoadBackDry(0);
             ConsoleWrapper.Clear();
         }
 

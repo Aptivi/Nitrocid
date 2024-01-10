@@ -220,7 +220,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            ColorTools.LoadBack(new Color(WipeSettings.WipeBackgroundColor));
+            ColorTools.LoadBackDry(new Color(WipeSettings.WipeBackgroundColor));
             ConsoleWrapper.CursorVisible = false;
             TimesWiped = 0;
             ToDirection = WipeDirections.Right;
@@ -351,7 +351,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             else
             {
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.W, "Resize-syncing. Clearing...");
-                ColorTools.LoadBack(new Color(WipeSettings.WipeBackgroundColor));
+                ColorTools.LoadBackDry(new Color(WipeSettings.WipeBackgroundColor));
             }
 
             ConsoleResizeHandler.WasResized();

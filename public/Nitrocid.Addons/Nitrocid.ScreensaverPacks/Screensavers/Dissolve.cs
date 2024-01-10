@@ -229,7 +229,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            ColorTools.LoadBack(new Color(DissolveSettings.DissolveBackgroundColor));
+            ColorTools.LoadBackDry(new Color(DissolveSettings.DissolveBackgroundColor));
             ConsoleWrapper.CursorVisible = false;
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
         }
@@ -274,7 +274,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "We're refilling...");
                     ColorFilled = false;
                     goAhead = false;
-                    ColorTools.LoadBack(new Color(DissolveSettings.DissolveBackgroundColor));
+                    ColorTools.LoadBackDry(new Color(DissolveSettings.DissolveBackgroundColor));
                     CoveredPositions.Clear();
                 }
 
@@ -313,7 +313,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     {
                         DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "We're refilling...");
                         ColorFilled = false;
-                        ColorTools.LoadBack(new Color(DissolveSettings.DissolveBackgroundColor));
+                        ColorTools.LoadBackDry(new Color(DissolveSettings.DissolveBackgroundColor));
                         CoveredPositions.Clear();
                     }
                 }
@@ -321,7 +321,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 {
                     DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "We're refilling...");
                     ColorFilled = false;
-                    ColorTools.LoadBack(new Color(DissolveSettings.DissolveBackgroundColor));
+                    ColorTools.LoadBackDry(new Color(DissolveSettings.DissolveBackgroundColor));
                     CoveredPositions.Clear();
                 }
             }

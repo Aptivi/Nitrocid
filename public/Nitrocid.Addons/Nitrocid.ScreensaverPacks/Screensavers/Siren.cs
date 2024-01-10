@@ -103,7 +103,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 step = 0;
 
             // Set color
-            ColorTools.LoadBack(sirenColors[step]);
+            ColorTools.LoadBackDry(sirenColors[step]);
 
             // Delay
             ThreadManager.SleepNoBlock(SirenSettings.SirenDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
