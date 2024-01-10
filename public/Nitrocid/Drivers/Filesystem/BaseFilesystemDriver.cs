@@ -48,6 +48,8 @@ using Nitrocid.Misc.Text.Probers.Regexp;
 using Nitrocid.Kernel.Extensions;
 using Textify.General;
 using Terminaux.Base;
+using Nitrocid.Misc.Progress;
+using System.Diagnostics;
 
 namespace Nitrocid.Drivers.Filesystem
 {
@@ -121,11 +123,13 @@ namespace Nitrocid.Drivers.Filesystem
                 CombinedContents.AddRange(Reading.ReadAllBytes(Input));
 
                 // Enumerate the target inputs
-                foreach (string TargetInput in TargetInputs)
+                for (int i = 0; i < TargetInputs.Length; i++)
                 {
+                    string TargetInput = TargetInputs[i];
                     FS.ThrowOnInvalidPath(TargetInput);
                     if (!Parsing.IsBinaryFile(TargetInput))
                         throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("To combine text files, use the appropriate function.") + " " + nameof(CombineTextFiles) + "(" + TargetInput + ")");
+                    ProgressManager.ReportProgress((i + 1) / TargetInputs.Length, nameof(CombineBinaryFiles), $"{Input} + {TargetInput}");
                     CombinedContents.AddRange(Reading.ReadAllBytes(TargetInput));
                 }
 
@@ -154,11 +158,13 @@ namespace Nitrocid.Drivers.Filesystem
                 CombinedContents.AddRange(Reading.ReadContents(Input));
 
                 // Enumerate the target inputs
-                foreach (string TargetInput in TargetInputs)
+                for (int i = 0; i < TargetInputs.Length; i++)
                 {
+                    string TargetInput = TargetInputs[i];
                     FS.ThrowOnInvalidPath(TargetInput);
                     if (Parsing.IsBinaryFile(TargetInput))
                         throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("To combine binary files, use the appropriate function.") + " " + nameof(CombineBinaryFiles) + "(" + TargetInput + ")");
+                    ProgressManager.ReportProgress((i + 1) / TargetInputs.Length, nameof(CombineTextFiles), $"{Input} + {TargetInput}");
                     CombinedContents.AddRange(Reading.ReadContents(TargetInput));
                 }
 
@@ -194,8 +200,12 @@ namespace Nitrocid.Drivers.Filesystem
 
             // Convert the newlines now
             var Result = new StringBuilder();
-            foreach (string FileContent in FileContents)
+            for (int i = 0; i < FileContents.Length; i++)
+            {
+                string FileContent = FileContents[i];
+                ProgressManager.ReportProgress((i + 1) / FileContents.Length, nameof(ConvertLineEndings), FileContent);
                 Result.Append(FileContent + NewLineString);
+            }
 
             // Save the changes
             Writing.WriteContentsText(TextFile, Result.ToString());
@@ -228,22 +238,26 @@ namespace Nitrocid.Drivers.Filesystem
             }
 
             // Iterate through every file and copy them to destination
-            foreach (FileInfo SourceFile in SourceFiles)
+            for (int i = 0; i < SourceFiles.Length; i++)
             {
+                FileInfo SourceFile = SourceFiles[i];
                 string DestinationFilePath = IOPath.Combine(Destination, SourceFile.Name);
                 DebugWriter.WriteDebug(DebugLevel.I, "Copying file {0} to destination...", DestinationFilePath);
                 if (ShowProgress)
-                    TextWriterColor.Write("-> {0}", DestinationFilePath);
+                    ProgressManager.RegisterProgressHandler(new(new((perc, message) => TextWriterColor.Write($"{perc}% - {message}")), SourceFile.FullName));
+                ProgressManager.ReportProgress((i + 1) / SourceFiles.Length, SourceFile.FullName, $"-> {DestinationFilePath}");
                 SourceFile.CopyTo(DestinationFilePath, true);
             }
 
             // Iterate through every subdirectory and copy them to destination
-            foreach (DirectoryInfo SourceDirectory in SourceDirectories)
+            for (int i = 0; i < SourceDirectories.Length; i++)
             {
+                DirectoryInfo SourceDirectory = SourceDirectories[i];
                 string DestinationDirectoryPath = IOPath.Combine(Destination, SourceDirectory.Name);
                 DebugWriter.WriteDebug(DebugLevel.I, "Calling CopyDirectory() with destination {0}...", DestinationDirectoryPath);
                 if (ShowProgress)
-                    TextWriterColor.Write("* {0}", DestinationDirectoryPath);
+                    ProgressManager.RegisterProgressHandler(new(new((perc, message) => TextWriterColor.Write($"{perc}% - {message}")), SourceDirectory.FullName));
+                ProgressManager.ReportProgress((i + 1) / SourceDirectories.Length, SourceDirectory.FullName, $"*  {DestinationDirectoryPath}");
                 CopyDirectory(SourceDirectory.FullName, DestinationDirectoryPath);
             }
         }
@@ -738,10 +752,13 @@ namespace Nitrocid.Drivers.Filesystem
 
             // Get all sizes in bytes
             long TotalSize = 0L;
-            foreach (FileInfo DFile in Files)
+            for (int i = 0; i < Files.Count; i++)
             {
+                FileInfo DFile = Files[i];
+                ProgressManager.ReportProgress((i + 1) / Files.Count, nameof(GetAllSizesInFolder), $". {DFile.FullName}");
                 if (DFile.Attributes == FileAttributes.Hidden & FS.HiddenFiles | !DFile.Attributes.HasFlag(FileAttributes.Hidden))
                 {
+                    ProgressManager.ReportProgress((i + 1) / Files.Count, nameof(GetAllSizesInFolder) + "Found", $"+ {DFile.FullName} [{DFile.Length.SizeString()}]");
                     DebugWriter.WriteDebug(DebugLevel.I, "File {0}, Size {1} bytes", DFile.Name, DFile.Length);
                     TotalSize += DFile.Length;
                 }
@@ -1177,22 +1194,26 @@ namespace Nitrocid.Drivers.Filesystem
             }
 
             // Iterate through every file and copy them to destination
-            foreach (FileInfo SourceFile in SourceFiles)
+            for (int i = 0; i < SourceFiles.Length; i++)
             {
+                FileInfo SourceFile = SourceFiles[i];
                 string DestinationFilePath = IOPath.Combine(Destination, SourceFile.Name);
                 DebugWriter.WriteDebug(DebugLevel.I, "Moving file {0} to destination...", DestinationFilePath);
                 if (ShowProgress)
-                    TextWriterColor.Write("-> {0}", DestinationFilePath);
+                    ProgressManager.RegisterProgressHandler(new(new((perc, message) => TextWriterColor.Write($"{perc}% - {message}")), SourceFile.FullName));
+                ProgressManager.ReportProgress((i + 1) / SourceFiles.Length, SourceFile.FullName, $"-> {DestinationFilePath}");
                 SourceFile.MoveTo(DestinationFilePath);
             }
 
             // Iterate through every subdirectory and copy them to destination
-            foreach (DirectoryInfo SourceDirectory in SourceDirectories)
+            for (int i = 0; i < SourceDirectories.Length; i++)
             {
+                DirectoryInfo SourceDirectory = SourceDirectories[i];
                 string DestinationDirectoryPath = IOPath.Combine(Destination, SourceDirectory.Name);
                 DebugWriter.WriteDebug(DebugLevel.I, "Calling MoveDirectory() with destination {0}...", DestinationDirectoryPath);
                 if (ShowProgress)
-                    TextWriterColor.Write("* {0}", DestinationDirectoryPath);
+                    ProgressManager.RegisterProgressHandler(new(new((perc, message) => TextWriterColor.Write($"{perc}% - {message}")), SourceDirectory.FullName));
+                ProgressManager.ReportProgress((i + 1) / SourceDirectories.Length, SourceDirectory.FullName, $"*  {DestinationDirectoryPath}");
                 MoveDirectory(SourceDirectory.FullName, DestinationDirectoryPath);
 
                 // Source subdirectories are removed after moving
@@ -1593,22 +1614,26 @@ namespace Nitrocid.Drivers.Filesystem
             DebugWriter.WriteDebug(DebugLevel.I, "Source files: {0}", SourceFiles.Length);
 
             // Iterate through every file and delete them
-            foreach (FileInfo SourceFile in SourceFiles)
+            for (int i = 0; i < SourceFiles.Length; i++)
             {
+                FileInfo SourceFile = SourceFiles[i];
                 string DestinationFilePath = IOPath.Combine(Target, SourceFile.Name);
                 DebugWriter.WriteDebug(DebugLevel.I, "Removing file {0}...", DestinationFilePath);
                 if (ShowProgress)
-                    TextWriterColor.Write("-> {0}", DestinationFilePath);
+                    ProgressManager.RegisterProgressHandler(new(new((perc, message) => TextWriterColor.Write($"{perc}% - {message}")), SourceFile.FullName));
+                ProgressManager.ReportProgress((i + 1) / SourceFiles.Length, SourceFile.FullName, $"-> {DestinationFilePath}");
                 RemoveFile(DestinationFilePath, secureRemove);
             }
 
             // Iterate through every subdirectory and delete them
-            foreach (DirectoryInfo SourceDirectory in SourceDirectories)
+            for (int i = 0; i < SourceDirectories.Length; i++)
             {
+                DirectoryInfo SourceDirectory = SourceDirectories[i];
                 string DestinationDirectoryPath = IOPath.Combine(Target, SourceDirectory.Name);
                 DebugWriter.WriteDebug(DebugLevel.I, "Calling RemoveDirectory() with destination {0}...", DestinationDirectoryPath);
                 if (ShowProgress)
-                    TextWriterColor.Write("* {0}", DestinationDirectoryPath);
+                    ProgressManager.RegisterProgressHandler(new(new((perc, message) => TextWriterColor.Write($"{perc}% - {message}")), SourceDirectory.FullName));
+                ProgressManager.ReportProgress((i + 1) / SourceDirectories.Length, SourceDirectory.FullName, $"*  {DestinationDirectoryPath}");
                 RemoveDirectory(DestinationDirectoryPath, ShowProgress, secureRemove);
             }
 
@@ -1691,10 +1716,13 @@ namespace Nitrocid.Drivers.Filesystem
                 var Filebyte = Reading.ReadContents(FilePath);
                 int MatchNum = 1;
                 int LineNumber = 1;
-                foreach (string Str in Filebyte)
+                for (int i = 0; i < Filebyte.Length; i++)
                 {
+                    string Str = Filebyte[i];
+                    ProgressManager.ReportProgress((i + 1) / Filebyte.Length, nameof(SearchFileForString), $". {Str}");
                     if (Str.Contains(StringLookup))
                     {
+                        ProgressManager.ReportProgress((i + 1) / Filebyte.Length, nameof(SearchFileForString) + "Matched", $"+ {Str}");
                         Matches.Add($"[{LineNumber}] " + TextTools.FormatString(Translate.DoTranslation("Match {0}: {1}"), MatchNum, Str));
                         MatchNum += 1;
                     }
@@ -1720,10 +1748,13 @@ namespace Nitrocid.Drivers.Filesystem
                 var Filebyte = Reading.ReadContents(FilePath);
                 int MatchNum = 1;
                 int LineNumber = 1;
-                foreach (string Str in Filebyte)
+                for (int i = 0; i < Filebyte.Length; i++)
                 {
+                    string Str = Filebyte[i];
+                    ProgressManager.ReportProgress((i + 1) / Filebyte.Length, nameof(SearchFileForStringRegexp), $". {Str}");
                     if (StringLookup.IsMatch(Str))
                     {
+                        ProgressManager.ReportProgress((i + 1) / Filebyte.Length, nameof(SearchFileForStringRegexp) + "Matched", $"+ {Str}");
                         Matches.Add($"[{LineNumber}] " + TextTools.FormatString(Translate.DoTranslation("Match {0}: {1}"), MatchNum, Str));
                         MatchNum += 1;
                     }
@@ -1747,9 +1778,16 @@ namespace Nitrocid.Drivers.Filesystem
                 FilePath = FS.NeutralizePath(FilePath);
                 var Matches = new List<(string, MatchCollection)>();
                 var Filebyte = Reading.ReadContents(FilePath);
-                foreach (string Str in Filebyte)
+                for (int i = 0; i < Filebyte.Length; i++)
+                {
+                    string Str = Filebyte[i];
+                    ProgressManager.ReportProgress((i + 1) / Filebyte.Length, nameof(SearchFileForStringRegexpMatches), $". {Str}");
                     if (StringLookup.IsMatch(Str))
+                    {
+                        ProgressManager.ReportProgress((i + 1) / Filebyte.Length, nameof(SearchFileForStringRegexpMatches) + "Matched", $"+ {Str}");
                         Matches.Add((Str, StringLookup.Matches(Str)));
+                    }
+                }
                 return Matches;
             }
             catch (Exception ex)
