@@ -217,7 +217,8 @@ namespace Nitrocid.ConsoleBase.Inputs
             // Initialize console wrappers for Terminaux
             ConsoleWrapperTools.ActionBeep = DriverHandler.CurrentConsoleDriverLocal.Beep;
             ConsoleWrapperTools.ActionBufferHeight = () => DriverHandler.CurrentConsoleDriverLocal.BufferHeight;
-            ConsoleWrapperTools.ActionClear = () => DriverHandler.CurrentConsoleDriverLocal.Clear(true);
+            ConsoleWrapperTools.ActionClear = () => DriverHandler.CurrentConsoleDriverLocal.Clear();
+            ConsoleWrapperTools.ActionClearLoadBack = () => DriverHandler.CurrentConsoleDriverLocal.Clear(true);
             ConsoleWrapperTools.ActionCursorLeft = () => DriverHandler.CurrentConsoleDriverLocal.CursorLeft;
             ConsoleWrapperTools.ActionCursorTop = () => DriverHandler.CurrentConsoleDriverLocal.CursorTop;
             ConsoleWrapperTools.ActionCursorVisible = (value) => DriverHandler.CurrentConsoleDriverLocal.CursorVisible = value;
