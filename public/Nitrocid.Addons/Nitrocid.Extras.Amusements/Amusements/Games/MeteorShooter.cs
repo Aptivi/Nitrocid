@@ -69,7 +69,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
         public static void InitializeMeteor(bool simulation = false)
         {
             // Clear screen
-            ConsoleWrapper.Clear();
+            ColorTools.LoadBackDry(0);
 
             // Clear all bullets and meteors
             Bullets.Clear();
@@ -160,13 +160,17 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     for (int y = 0; y < ConsoleWrapper.WindowHeight; y++)
                     {
                         if (y != SpaceshipHeight)
-                            buffer.Append(TextWriterWhereColor.RenderWherePlain(" ", 0, y));
+                            buffer.Append(
+                                new Color(ConsoleColors.Black).VTSequenceBackground +
+                                TextWriterWhereColor.RenderWherePlain(" ", 0, y)
+                            );
                     }
 
                     // Move the meteors left
                     for (int Meteor = 0; Meteor <= Meteors.Count - 1; Meteor++)
                     {
-                        TextWriterWhereColor.WriteWhere(" ", Meteors[Meteor].Item1, Meteors[Meteor].Item2);
+                        buffer.Append(new Color(ConsoleColors.Black).VTSequenceBackground);
+                        buffer.Append(TextWriterWhereColor.RenderWherePlain(" ", Meteors[Meteor].Item1, Meteors[Meteor].Item2));
                         int MeteorX = Meteors[Meteor].Item1 - 1;
                         int MeteorY = Meteors[Meteor].Item2;
                         Meteors[Meteor] = (MeteorX, MeteorY);
@@ -175,7 +179,8 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     // Move the bullets right
                     for (int Bullet = 0; Bullet <= Bullets.Count - 1; Bullet++)
                     {
-                        TextWriterWhereColor.WriteWhere(" ", Bullets[Bullet].Item1, Bullets[Bullet].Item2);
+                        buffer.Append(new Color(ConsoleColors.Black).VTSequenceBackground);
+                        buffer.Append(TextWriterWhereColor.RenderWherePlain(" ", Bullets[Bullet].Item1, Bullets[Bullet].Item2));
                         int BulletX = Bullets[Bullet].Item1 + 1;
                         int BulletY = Bullets[Bullet].Item2;
                         Bullets[Bullet] = (BulletX, BulletY);
@@ -234,6 +239,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                         {
                             // The spaceship crashed! Game ended.
                             GameEnded = true;
+                            GameExiting = true;
                         }
                     }
 
@@ -247,6 +253,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                             if (Meteor.Item1 <= Bullet.Item1 & Meteor.Item2 == Bullet.Item2)
                             {
                                 // The meteor crashed! Remove both the bullet and the meteor
+                                buffer.Append(new Color(ConsoleColors.Black).VTSequenceBackground);
                                 buffer.Append(TextWriterWhereColor.RenderWherePlain(" ", Meteor.Item1, Meteor.Item2));
                                 buffer.Append(TextWriterWhereColor.RenderWherePlain(" ", Bullet.Item1, Bullet.Item2));
                                 Bullets.RemoveAt(BulletIndex);

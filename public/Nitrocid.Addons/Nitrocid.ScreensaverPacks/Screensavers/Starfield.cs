@@ -68,6 +68,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override string ScreensaverName { get; set; } = "Starfield";
 
         /// <inheritdoc/>
+        public override void ScreensaverPreparation()
+        {
+            Stars.Clear();
+            ColorTools.LoadBackDry(0);
+        }
+
+        /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
             ConsoleWrapper.CursorVisible = false;
@@ -123,7 +130,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             // Reset resize sync
             ConsoleResizeHandler.WasResized();
             ThreadManager.SleepNoBlock(StarfieldSettings.StarfieldDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
-            ConsoleWrapper.Clear();
+            ColorTools.LoadBackDry(0);
         }
 
         /// <inheritdoc/>

@@ -73,7 +73,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
         public static void InitializeShipDuet(bool simulation = false)
         {
             // Clear screen
-            ConsoleWrapper.Clear();
+            ColorTools.LoadBackDry(0);
 
             // Clear all bullets
             BulletsPlayer1.Clear();
@@ -190,15 +190,24 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     for (int y = 0; y < ConsoleWrapper.WindowHeight; y++)
                     {
                         if (y != SpaceshipHeightPlayer1)
-                            buffer.Append(TextWriterWhereColor.RenderWherePlain(" ", 0, y));
+                            buffer.Append(
+                                new Color(ConsoleColors.Black).VTSequenceBackground +
+                                TextWriterWhereColor.RenderWherePlain(" ", 0, y)
+                            );
                         if (y != SpaceshipHeightPlayer2)
-                            buffer.Append(TextWriterWhereColor.RenderWherePlain(" ", ConsoleWrapper.WindowWidth - 1, y));
+                            buffer.Append(
+                                new Color(ConsoleColors.Black).VTSequenceBackground +
+                                TextWriterWhereColor.RenderWherePlain(" ", ConsoleWrapper.WindowWidth - 1, y)
+                            );
                     }
 
                     // Move the Player 1 bullets right
                     for (int Bullet = 0; Bullet <= BulletsPlayer1.Count - 1; Bullet++)
                     {
-                        buffer.Append(TextWriterWhereColor.RenderWherePlain(" ", BulletsPlayer1[Bullet].Item1, BulletsPlayer1[Bullet].Item2));
+                        buffer.Append(
+                            new Color(ConsoleColors.Black).VTSequenceBackground +
+                            TextWriterWhereColor.RenderWherePlain(" ", BulletsPlayer1[Bullet].Item1, BulletsPlayer1[Bullet].Item2)
+                        );
                         int BulletX = BulletsPlayer1[Bullet].Item1 + 1;
                         int BulletY = BulletsPlayer1[Bullet].Item2;
                         BulletsPlayer1[Bullet] = (BulletX, BulletY);
@@ -207,7 +216,10 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     // Move the Player 2 bullets left
                     for (int Bullet = 0; Bullet <= BulletsPlayer2.Count - 1; Bullet++)
                     {
-                        buffer.Append(TextWriterWhereColor.RenderWherePlain(" ", BulletsPlayer2[Bullet].Item1, BulletsPlayer2[Bullet].Item2));
+                        buffer.Append(
+                            new Color(ConsoleColors.Black).VTSequenceBackground +
+                            TextWriterWhereColor.RenderWherePlain(" ", BulletsPlayer2[Bullet].Item1, BulletsPlayer2[Bullet].Item2)
+                        );
                         int BulletX = BulletsPlayer2[Bullet].Item1 - 1;
                         int BulletY = BulletsPlayer2[Bullet].Item2;
                         BulletsPlayer2[Bullet] = (BulletX, BulletY);
@@ -216,7 +228,10 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     // Move the stars left
                     for (int Star = 0; Star <= Stars.Count - 1; Star++)
                     {
-                        buffer.Append(TextWriterWhereColor.RenderWherePlain(" ", Stars[Star].Item1, Stars[Star].Item2));
+                        buffer.Append(
+                            new Color(ConsoleColors.Black).VTSequenceBackground +
+                            TextWriterWhereColor.RenderWherePlain(" ", Stars[Star].Item1, Stars[Star].Item2)
+                        );
                         int StarX = Stars[Star].Item1 - 1;
                         int StarY = Stars[Star].Item2;
                         Stars[Star] = (StarX, StarY);

@@ -56,6 +56,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             Color darkGreen = new(ConsoleColors.DarkGreen);
             Color green = new(ConsoleColors.Green);
+            Color black = new(ConsoleColors.Black);
 
             // Get the current year
             int currentYear = TimeDateTools.KernelDateTime.Year;
@@ -68,13 +69,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 string currentYearStr = currentYear.ToString();
                 var figFont = FigletTools.GetFigletFont(FigletTextTools.DefaultFigletFontName);
                 int figHeight = FigletTools.GetFigletHeight(currentYearStr, figFont) / 2;
-                CenteredFigletTextColor.WriteCenteredFigletColor(figFont, currentYearStr, green);
+                CenteredFigletTextColor.WriteCenteredFigletColorBack(figFont, currentYearStr, green, black);
 
                 // Congratulate!
                 string cong = Translate.DoTranslation("Happy new year!");
                 int consoleInfoX = ConsoleWrapper.WindowWidth / 2 - cong.Length / 2;
                 int consoleInfoY = ConsoleWrapper.WindowHeight / 2 + figHeight + 2;
-                TextWriterWhereColor.WriteWhere(cong, consoleInfoX, consoleInfoY);
+                TextWriterWhereColor.WriteWhereColorBack(cong, consoleInfoX, consoleInfoY, green, black);
             }
             else
             {
@@ -82,14 +83,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 string nextYearStr = $"{currentYear + 1}";
                 var figFont = FigletTools.GetFigletFont(FigletTextTools.DefaultFigletFontName);
                 int figHeight = FigletTools.GetFigletHeight(nextYearStr, figFont) / 2;
-                CenteredFigletTextColor.WriteCenteredFigletColor(figFont, nextYearStr, darkGreen);
+                CenteredFigletTextColor.WriteCenteredFigletColorBack(figFont, nextYearStr, darkGreen, black);
 
                 // Print the time remaining
                 var nextYearDate = new DateTime(currentYear + 1, 1, 1);
                 var distance = nextYearDate - TimeDateTools.KernelDateTime;
                 string distanceStr = distance.ToString("dd\\d\\ hh\\:mm\\:ss") + " left till " + nextYearStr;
                 int consoleInfoY = ConsoleWrapper.WindowHeight / 2 + figHeight + 2;
-                CenteredTextColor.WriteCentered(consoleInfoY, distanceStr);
+                CenteredTextColor.WriteCenteredColorBack(consoleInfoY, distanceStr, darkGreen, black);
             }
 
             // Reset

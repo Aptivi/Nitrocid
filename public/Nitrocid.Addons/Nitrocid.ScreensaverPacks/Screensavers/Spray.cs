@@ -74,7 +74,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             Stars.Clear();
             offsetY = 0;
-            base.ScreensaverPreparation();
+            ColorTools.LoadBackDry(0);
         }
 
         /// <inheritdoc/>
@@ -140,7 +140,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             // Reset resize sync
             ConsoleResizeHandler.WasResized();
             ThreadManager.SleepNoBlock(SpraySettings.SprayDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
-            ConsoleWrapper.Clear();
+            ColorTools.LoadBackDry(0);
         }
 
         /// <inheritdoc/>
