@@ -282,16 +282,16 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 {
                     if (ConsoleWrapper.CursorLeft >= EndLeft && ConsoleWrapper.CursorTop >= EndTop)
                     {
-                        ColorTools.SetConsoleColor(Color.Empty);
-                        ColorTools.SetConsoleColor(colorStorage, true);
+                        ColorTools.SetConsoleColorDry(Color.Empty);
+                        ColorTools.SetConsoleColorDry(colorStorage, true);
                         TextWriterColor.WritePlain(" ", false);
                         DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "We're now dissolving... L: {0} = {1} | T: {2} = {3}", ConsoleWrapper.CursorLeft, EndLeft, ConsoleWrapper.CursorTop, EndTop);
                         ColorFilled = true;
                     }
                     else
                     {
-                        ColorTools.SetConsoleColor(Color.Empty);
-                        ColorTools.SetConsoleColor(colorStorage, true);
+                        ColorTools.SetConsoleColorDry(Color.Empty);
+                        ColorTools.SetConsoleColorDry(colorStorage, true);
                         TextWriterColor.WritePlain(" ", false);
                     }
                 }
@@ -307,7 +307,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 if (!ConsoleResizeHandler.WasResized(false))
                 {
                     ConsoleWrapper.SetCursorPosition(Left, Top);
-                    ColorTools.SetConsoleColor(new Color(DissolveSettings.DissolveBackgroundColor), true);
+                    ColorTools.SetConsoleColorDry(new Color(DissolveSettings.DissolveBackgroundColor), true);
                     ConsoleWrapper.Write(" ");
                     if (CoveredPositions.Count == (EndLeft + 1) * (EndTop + 1))
                     {

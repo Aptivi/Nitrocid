@@ -362,7 +362,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                 // Make a new instance
                 var RampSubgradientCurrentColorInstance = new Color($"{Convert.ToInt32(RampSubgradientCurrentColorRed)};{Convert.ToInt32(RampSubgradientCurrentColorGreen)};{Convert.ToInt32(RampSubgradientCurrentColorBlue)}");
-                ColorTools.SetConsoleColor(RampSubgradientCurrentColorInstance, true);
+                ColorTools.SetConsoleColorDry(RampSubgradientCurrentColorInstance, true);
 
                 // Try to fill the ramp
                 int RampSubgradientStepsMade = 0;
@@ -403,7 +403,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         RampSubgradientCurrentColorBlue = 0;
                     }
                     RampSubgradientCurrentColorInstance = new Color($"{Convert.ToInt32(RampSubgradientCurrentColorRed)};{Convert.ToInt32(RampSubgradientCurrentColorGreen)};{Convert.ToInt32(RampSubgradientCurrentColorBlue)}");
-                    ColorTools.SetConsoleColor(RampSubgradientCurrentColorInstance, true);
+                    ColorTools.SetConsoleColorDry(RampSubgradientCurrentColorInstance, true);
                 }
 
                 // Change the colors

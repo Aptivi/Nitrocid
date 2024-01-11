@@ -275,8 +275,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                 if (!ConsoleResizeHandler.WasResized(false))
                 {
-                    ColorTools.SetConsoleColor(Color.Empty);
-                    ColorTools.SetConsoleColor(colorStorage, true);
+                    ColorTools.SetConsoleColorDry(Color.Empty);
+                    ColorTools.SetConsoleColorDry(colorStorage, true);
                     TextWriterColor.WritePlain(" ", false);
                 }
                 else

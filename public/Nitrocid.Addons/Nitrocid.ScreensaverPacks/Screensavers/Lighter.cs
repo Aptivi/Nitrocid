@@ -253,7 +253,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 var ColorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
                 if (!ConsoleResizeHandler.WasResized(false))
                 {
-                    ColorTools.SetConsoleColor(ColorStorage, true);
+                    ColorTools.SetConsoleColorDry(ColorStorage, true);
                     ConsoleWrapper.Write(" ");
                 }
                 else
@@ -268,7 +268,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
                 if (!ConsoleResizeHandler.WasResized(false))
                 {
-                    ColorTools.SetConsoleColor(new Color(ColorNum), true);
+                    ColorTools.SetConsoleColorDry(new Color(ColorNum), true);
                     ConsoleWrapper.Write(" ");
                 }
                 else
@@ -288,7 +288,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 if (!ConsoleResizeHandler.WasResized(false))
                 {
                     ConsoleWrapper.SetCursorPosition(WipeLeft, WipeTop);
-                    ColorTools.SetConsoleColor(new Color(LighterSettings.LighterBackgroundColor), true);
+                    ColorTools.SetConsoleColorDry(new Color(LighterSettings.LighterBackgroundColor), true);
                     ConsoleWrapper.Write(" ");
                     CoveredPositions.RemoveAt(0);
                 }

@@ -272,14 +272,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 int BlueColorNum = RandomDriver.Random(FallingLineSettings.FallingLineMinimumBlueColorLevel, FallingLineSettings.FallingLineMaximumBlueColorLevel);
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                 ColorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
-                ColorTools.SetConsoleColor(ColorStorage, true);
+                ColorTools.SetConsoleColorDry(ColorStorage, true);
             }
             else
             {
                 int ColorNum = RandomDriver.Random(FallingLineSettings.FallingLineMinimumColorLevel, FallingLineSettings.FallingLineMaximumColorLevel);
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
                 ColorStorage = new Color(ColorNum);
-                ColorTools.SetConsoleColor(ColorStorage, true);
+                ColorTools.SetConsoleColorDry(ColorStorage, true);
             }
 
             // Make the line fall down

@@ -206,14 +206,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 int BlueColorNum = RandomDriver.Random(SnakeFillSettings.SnakeFillMinimumBlueColorLevel, SnakeFillSettings.SnakeFillMaximumBlueColorLevel);
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                 if (!ConsoleResizeHandler.WasResized(false))
-                    ColorTools.SetConsoleColor(new Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}"), true);
+                    ColorTools.SetConsoleColorDry(new Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}"), true);
             }
             else
             {
                 int ColorNum = RandomDriver.Random(SnakeFillSettings.SnakeFillMinimumColorLevel, SnakeFillSettings.SnakeFillMaximumColorLevel);
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
                 if (!ConsoleResizeHandler.WasResized(false))
-                    ColorTools.SetConsoleColor(new Color(ColorNum), true);
+                    ColorTools.SetConsoleColorDry(new Color(ColorNum), true);
             }
 
             // Set max height

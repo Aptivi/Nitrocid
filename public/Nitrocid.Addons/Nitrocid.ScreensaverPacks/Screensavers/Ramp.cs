@@ -515,7 +515,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 var RampCurrentColorInstance = new Color($"{Convert.ToInt32(RampCurrentColorRed)};{Convert.ToInt32(RampCurrentColorGreen)};{Convert.ToInt32(RampCurrentColorBlue)}");
 
                 // Set the console color and fill the ramp!
-                ColorTools.SetConsoleColor(RampCurrentColorInstance, true);
+                ColorTools.SetConsoleColorDry(RampCurrentColorInstance, true);
                 int step = 1;
                 while (step <= RampFrameSpaces)
                 {
@@ -535,7 +535,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     RampCurrentColorBlue -= RampColorBlueSteps;
                     DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got new current colors (R;G;B: {0};{1};{2}) subtracting from {3};{4};{5}", RampCurrentColorRed, RampCurrentColorGreen, RampCurrentColorBlue, RampColorRedSteps, RampColorGreenSteps, RampColorBlueSteps);
                     RampCurrentColorInstance = new Color($"{Convert.ToInt32(RampCurrentColorRed)};{Convert.ToInt32(RampCurrentColorGreen)};{Convert.ToInt32(RampCurrentColorBlue)}");
-                    ColorTools.SetConsoleColor(RampCurrentColorInstance, true);
+                    ColorTools.SetConsoleColorDry(RampCurrentColorInstance, true);
 
                     // Delay writing
                     step++;
@@ -549,7 +549,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 var RampCurrentColorInstance = new Color(Convert.ToInt32(RampCurrentColor));
 
                 // Set the console color and fill the ramp!
-                ColorTools.SetConsoleColor(RampCurrentColorInstance, true);
+                ColorTools.SetConsoleColorDry(RampCurrentColorInstance, true);
                 while (Convert.ToInt32(RampCurrentColor) != ColorNumTo)
                 {
                     if (ConsoleResizeHandler.WasResized(false))
@@ -566,7 +566,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     RampCurrentColor -= RampColorSteps;
                     DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got new current colors (Normal: {0}) subtracting from {1}", RampCurrentColor, RampColorSteps);
                     RampCurrentColorInstance = new Color(Convert.ToInt32(RampCurrentColor));
-                    ColorTools.SetConsoleColor(RampCurrentColorInstance, true);
+                    ColorTools.SetConsoleColorDry(RampCurrentColorInstance, true);
 
                     // Delay writing
                     ThreadManager.SleepNoBlock(RampSettings.RampDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);

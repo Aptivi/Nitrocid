@@ -407,7 +407,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 }
 
                 // Fill the ramp
-                ColorTools.SetConsoleColor(RampCurrentColorInstance, true);
+                ColorTools.SetConsoleColorDry(RampCurrentColorInstance, true);
                 for (int BlockPos = IndeterminateCurrentBlockStart; BlockPos <= IndeterminateCurrentBlockEnd; BlockPos++)
                 {
                     TextWriterWhereColor.WriteWhere(" ", BlockPos, RampCenterPosition - 1, true);
