@@ -20,6 +20,7 @@
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Misc.Screensaver;
 using Terminaux.Base;
+using Terminaux.Colors;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -216,7 +217,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 SquareCornerMaximumGreenColorLevel = SquareCornerSettings.SquareCornerMaximumGreenColorLevel,
                 SquareCornerMaximumBlueColorLevel = SquareCornerSettings.SquareCornerMaximumBlueColorLevel,
             };
-            base.ScreensaverPreparation();
+            ColorTools.LoadBackDry(0);
         }
 
         /// <inheritdoc/>

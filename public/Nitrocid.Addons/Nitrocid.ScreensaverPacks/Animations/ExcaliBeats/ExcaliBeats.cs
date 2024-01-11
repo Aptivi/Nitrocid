@@ -122,7 +122,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.ExcaliBeats
                 var CurrentColorOut = new Color($"{CurrentColorRedOut};{CurrentColorGreenOut};{CurrentColorBlueOut}");
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                 if (!ConsoleResizeHandler.WasResized(false))
-                    CenteredFigletTextColor.WriteCenteredFigletColor(figFont, exStr, CurrentColorOut);
+                    CenteredFigletTextColor.WriteCenteredFigletColorBack(figFont, exStr, CurrentColorOut, 0);
             }
 
             // Reset resize sync
