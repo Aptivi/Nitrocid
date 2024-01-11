@@ -160,14 +160,11 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 ThemeTools.ApplyThemeFromFile(ThemePath);
             else
                 ThemeTools.ApplyThemeFromResources(selectedTheme);
-
-            // Save it to configuration
-            Config.CreateConfig();
             return 0;
         }
 
         public override void HelpHelper() =>
-            TextWriterColor.Write("<Theme>: ThemeName.json, " + string.Join(", ", ThemeTools.GetInstalledThemes().Keys));
+            TextWriterColor.Write("[Theme]: ThemeName.json, " + string.Join(", ", ThemeTools.GetInstalledThemes().Keys));
 
     }
 }
