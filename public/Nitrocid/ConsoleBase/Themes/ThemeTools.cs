@@ -105,44 +105,54 @@ namespace Nitrocid.ConsoleBase.Themes
         }
 
         /// <summary>
+        /// Sets system colors according to the theme information instance
+        /// </summary>
+        /// <param name="themeInfo">A specified theme information instance</param>
+        /// <param name="dry">Whether to dryly apply the theme or not</param>
+        public static void ApplyTheme(ThemeInfo themeInfo, bool dry = false)
+        {
+            // Check if the console supports true color
+            if (ConsoleTools.ConsoleSupportsTrueColor && themeInfo.TrueColorRequired || !themeInfo.TrueColorRequired)
+            {
+                // Check to see if the event is finished
+                if (themeInfo.IsExpired)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, "Setting event theme in a day that the event finished...");
+                    EventsManager.FireEvent(EventType.ThemeSetError, themeInfo.Name, ThemeSetErrorReasons.EventFinished);
+                    throw new KernelException(KernelExceptionType.ThemeManagement, Translate.DoTranslation("The theme {0} celebrates an event, but you're either too early or too late to attend. Each year, this theme is accessible from {1}/{2} to {3}/{4}."), themeInfo.Name, themeInfo.StartMonth, themeInfo.StartDay, themeInfo.EndMonth, themeInfo.EndDay);
+                }
+
+                // Set colors as appropriate
+                DebugWriter.WriteDebug(DebugLevel.I, "Setting colors as appropriate...");
+                SetColorsTheme(themeInfo, dry);
+            }
+            else
+            {
+                // We're trying to apply true color on unsupported console
+                DebugWriter.WriteDebug(DebugLevel.E, "Unsupported console or the terminal doesn't support true color.");
+                EventsManager.FireEvent(EventType.ThemeSetError, themeInfo.Name, ThemeSetErrorReasons.ConsoleUnsupported);
+                throw new KernelException(KernelExceptionType.UnsupportedConsole, Translate.DoTranslation("The theme {0} needs true color support, but your console doesn't support it."), themeInfo.Name);
+            }
+
+            // Raise event
+            EventsManager.FireEvent(EventType.ThemeSet, themeInfo.Name);
+        }
+
+        /// <summary>
         /// Sets system colors according to the programmed templates
         /// </summary>
         /// <param name="theme">A specified theme</param>
-        public static void ApplyThemeFromResources(string theme)
+        /// <param name="dry">Whether to dryly apply the theme or not</param>
+        public static void ApplyThemeFromResources(string theme, bool dry = false)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Theme: {0}", theme);
             if (GetInstalledThemes().ContainsKey(theme))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Theme found.");
 
-                // Populate theme info
+                // Populate theme info and use it
                 var ThemeInfo = GetThemeInfo(theme);
-
-                // Check if the console supports true color
-                if (ConsoleTools.ConsoleSupportsTrueColor && ThemeInfo.TrueColorRequired || !ThemeInfo.TrueColorRequired)
-                {
-                    // Check to see if the event is finished
-                    if (ThemeInfo.IsExpired)
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.E, "Setting event theme in a day that the event finished...");
-                        EventsManager.FireEvent(EventType.ThemeSetError, theme, ThemeSetErrorReasons.EventFinished);
-                        throw new KernelException(KernelExceptionType.ThemeManagement, Translate.DoTranslation("The theme {0} celebrates an event, but you're either too early or too late to attend. Each year, this theme is accessible from {1}/{2} to {3}/{4}."), theme, ThemeInfo.StartMonth, ThemeInfo.StartDay, ThemeInfo.EndMonth, ThemeInfo.EndDay);
-                    }
-
-                    // Set colors as appropriate
-                    DebugWriter.WriteDebug(DebugLevel.I, "Setting colors as appropriate...");
-                    SetColorsTheme(ThemeInfo);
-                }
-                else
-                {
-                    // We're trying to apply true color on unsupported console
-                    DebugWriter.WriteDebug(DebugLevel.E, "Unsupported console or the terminal doesn't support true color.");
-                    EventsManager.FireEvent(EventType.ThemeSetError, theme, ThemeSetErrorReasons.ConsoleUnsupported);
-                    throw new KernelException(KernelExceptionType.UnsupportedConsole, Translate.DoTranslation("The theme {0} needs true color support, but your console doesn't support it."), theme);
-                }
-
-                // Raise event
-                EventsManager.FireEvent(EventType.ThemeSet, theme);
+                ApplyTheme(ThemeInfo, dry);
             }
             else
             {
@@ -156,7 +166,8 @@ namespace Nitrocid.ConsoleBase.Themes
         /// Sets system colors according to the template file
         /// </summary>
         /// <param name="ThemeFile">Theme file</param>
-        public static void ApplyThemeFromFile(string ThemeFile)
+        /// <param name="dry">Whether to dryly apply the theme or not</param>
+        public static void ApplyThemeFromFile(string ThemeFile, bool dry = false)
         {
             try
             {
@@ -164,34 +175,9 @@ namespace Nitrocid.ConsoleBase.Themes
                 ThemeFile = FilesystemTools.NeutralizePath(ThemeFile, true);
                 DebugWriter.WriteDebug(DebugLevel.I, "Theme file path: {0}", ThemeFile);
 
-                // Populate theme info
+                // Populate theme info and use it
                 var ThemeInfo = new ThemeInfo(ThemeFile);
-
-                // Check if the console supports true color
-                if (ConsoleTools.ConsoleSupportsTrueColor && ThemeInfo.TrueColorRequired || !ThemeInfo.TrueColorRequired)
-                {
-                    // Check to see if the event is finished
-                    if (ThemeInfo.IsExpired)
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.E, "Setting event theme in a day that the event finished...");
-                        EventsManager.FireEvent(EventType.ThemeSetError, ThemeInfo.Name, ThemeSetErrorReasons.EventFinished);
-                        throw new KernelException(KernelExceptionType.ThemeManagement, Translate.DoTranslation("The theme {0} celebrates an event, but you're either too early or too late to attend. Each year, this theme is accessible from {1}/{2} to {3}/{4}."), ThemeInfo.Name, ThemeInfo.StartMonth, ThemeInfo.StartDay, ThemeInfo.EndMonth, ThemeInfo.EndDay);
-                    }
-
-                    // Set colors as appropriate
-                    DebugWriter.WriteDebug(DebugLevel.I, "Setting colors as appropriate...");
-                    SetColorsTheme(ThemeInfo);
-                }
-                else
-                {
-                    // We're trying to apply true color on unsupported console
-                    DebugWriter.WriteDebug(DebugLevel.E, "Unsupported console or the terminal doesn't support true color.");
-                    EventsManager.FireEvent(EventType.ThemeSetError, ThemeInfo.Name, ThemeSetErrorReasons.ConsoleUnsupported);
-                    throw new KernelException(KernelExceptionType.UnsupportedConsole, Translate.DoTranslation("The theme {0} needs true color support, but your console doesn't support it."), ThemeInfo.Name);
-                }
-
-                // Raise event
-                EventsManager.FireEvent(EventType.ThemeSet, ThemeInfo.Name);
+                ApplyTheme(ThemeInfo, dry);
             }
             catch (FileNotFoundException)
             {
@@ -205,8 +191,9 @@ namespace Nitrocid.ConsoleBase.Themes
         /// Sets custom colors. It only works if colored shell is enabled.
         /// </summary>
         /// <param name="ThemeInfo">Theme information</param>
+        /// <param name="dry">Whether to dryly set the colors or not</param>
         /// <exception cref="InvalidOperationException"></exception>
-        public static void SetColorsTheme(ThemeInfo ThemeInfo)
+        public static void SetColorsTheme(ThemeInfo ThemeInfo, bool dry = false)
         {
             if (ThemeInfo is null)
                 throw new KernelException(KernelExceptionType.Color, nameof(ThemeInfo));
@@ -226,7 +213,8 @@ namespace Nitrocid.ConsoleBase.Themes
                     KernelColorTools.KernelColors[type] = themeColor;
                 }
                 ColorTools.LoadBack(KernelColorTools.GetColor(KernelColorType.Background));
-                Config.CreateConfig();
+                if (!dry)
+                    Config.CreateConfig();
 
                 // Raise event
                 EventsManager.FireEvent(EventType.ColorSet);
