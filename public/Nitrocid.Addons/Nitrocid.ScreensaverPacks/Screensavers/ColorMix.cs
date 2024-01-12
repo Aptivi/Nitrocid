@@ -240,6 +240,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             // Variable preparations
             ColorTools.LoadBackDry(new Color(ColorMixSettings.ColorMixBackgroundColor));
+            ConsoleWrapper.CursorVisible = false;
         }
 
         /// <inheritdoc/>
