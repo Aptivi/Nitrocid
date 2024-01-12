@@ -18,7 +18,6 @@
 //
 
 using System;
-using Terminaux.Colors;
 using Textify.NameGen;
 using Nitrocid.Misc.Screensaver;
 using Terminaux.Inputs.Styles.Infobox;

@@ -32,7 +32,6 @@ using Nitrocid.Kernel.Time.Renderers;
 using Nitrocid.Kernel.Time;
 using Nitrocid.Languages;
 using Terminaux.Base;
-using Terminaux.Colors.Data;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {

@@ -23,14 +23,7 @@ using Nitrocid.Drivers.Console;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Events;
 using Nitrocid.Misc.Screensaver;
-using Terminaux.Base;
 using Terminaux.ResizeListener;
-using Nitrocid.Kernel.Power;
-using System;
-using System.Runtime.InteropServices;
-using System.Reflection;
-using Nitrocid.Kernel;
-using System.Collections.Generic;
 
 namespace Nitrocid.ConsoleBase
 {

@@ -24,7 +24,6 @@ using Nitrocid.ConsoleBase.Themes;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Files;
 using Nitrocid.Files.Operations.Querying;
-using Nitrocid.Kernel.Configuration;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Switches;

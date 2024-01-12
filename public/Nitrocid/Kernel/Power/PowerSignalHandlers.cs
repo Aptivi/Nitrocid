@@ -19,7 +19,6 @@
 
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
-using Terminaux.ResizeListener;
 
 namespace Nitrocid.Kernel.Power
 {
