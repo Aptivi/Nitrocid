@@ -52,7 +52,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            ColorTools.LoadBackDry(new Color(ConsoleColors.Black));
+            Color black = new(0, 0, 0);
+            ColorTools.LoadBackDry(black);
             ConsoleWrapper.CursorVisible = false;
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
         }
@@ -114,7 +115,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                             // Now, make a color and fill the console with it
                             Color col = new(currentR, currentG, currentB);
-                            CenteredFigletTextColor.WriteCenteredFigletColor(font, "v0.0.1", col);
+                            CenteredFigletTextColor.WriteCenteredFigletColorBack(font, "v0.0.1", col, black);
 
                             // Sleep
                             ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
@@ -131,7 +132,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                             // Now, make a color and fill the console with it
                             Color col = new(currentR, currentG, currentB);
-                            CenteredFigletTextColor.WriteCenteredFigletColor(font, "v0.0.1", col);
+                            CenteredFigletTextColor.WriteCenteredFigletColorBack(font, "v0.0.1", col, black);
 
                             // Sleep
                             ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
@@ -148,7 +149,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                             // Now, make a color and fill the console with it
                             Color col = new(currentR, currentG, currentB);
-                            CenteredFigletTextColor.WriteCenteredFigletColor(font, "v0.0.16", col);
+                            CenteredFigletTextColor.WriteCenteredFigletColorBack(font, "v0.0.16", col, black);
 
                             // Sleep
                             ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
@@ -165,7 +166,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                             // Now, make a color and fill the console with it
                             Color col = new(currentR, currentG, currentB);
-                            CenteredFigletTextColor.WriteCenteredFigletColor(font, "v0.0.16", col);
+                            CenteredFigletTextColor.WriteCenteredFigletColorBack(font, "v0.0.16", col, black);
 
                             // Sleep
                             ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
@@ -182,7 +183,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                             // Now, make a color and fill the console with it
                             Color col = new(currentR, currentG, currentB);
-                            CenteredFigletTextColor.WriteCenteredFigletColor(font, "v0.0.24", col);
+                            CenteredFigletTextColor.WriteCenteredFigletColorBack(font, "v0.0.24", col, black);
 
                             // Sleep
                             ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
