@@ -23,9 +23,9 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
-using Nitrocid.Misc.Text.Probers.Motd;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Shells;
+using Nitrocid.Users.Login.Motd;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {

@@ -19,8 +19,8 @@
 
 using System.IO;
 using Nitrocid.Files.Paths;
-using Nitrocid.Misc.Text.Probers.Motd;
 using Nitrocid.Misc.Text.Probers.Placeholder;
+using Nitrocid.Users.Login.Motd;
 using NUnit.Framework;
 using Shouldly;
 

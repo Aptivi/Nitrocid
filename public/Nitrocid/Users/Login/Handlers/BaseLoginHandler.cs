@@ -28,9 +28,9 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Power;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Screensaver;
-using Nitrocid.Misc.Text.Probers.Motd;
 using Nitrocid.Misc.Text.Probers.Placeholder;
 using Terminaux.Base;
+using Nitrocid.Users.Login.Motd;
 
 namespace Nitrocid.Users.Login.Handlers
 {

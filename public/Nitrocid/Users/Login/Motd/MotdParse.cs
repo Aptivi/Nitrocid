@@ -30,7 +30,7 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 
-namespace Nitrocid.Misc.Text.Probers.Motd
+namespace Nitrocid.Users.Login.Motd
 {
     /// <summary>
     /// Message of the Day (MOTD) parsing module

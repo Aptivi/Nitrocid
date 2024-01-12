@@ -52,7 +52,6 @@ using Nitrocid.Kernel.Journaling;
 using Nitrocid.Files.Operations.Querying;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Extensions;
-using Nitrocid.Misc.Text.Probers.Motd;
 using Nitrocid.Kernel.Power;
 using Nitrocid.Network.RPC;
 using Nitrocid.Kernel.Threading.Watchdog;
@@ -60,6 +59,7 @@ using Terminaux.Colors;
 using Nitrocid.ConsoleBase.Writers.MiscWriters;
 using Terminaux.Base.Checks;
 using Terminaux.Base;
+using Nitrocid.Users.Login.Motd;
 
 namespace Nitrocid.Kernel.Starting
 {

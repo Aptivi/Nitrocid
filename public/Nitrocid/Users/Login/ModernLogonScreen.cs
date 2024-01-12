@@ -33,11 +33,11 @@ using Nitrocid.Misc.Text;
 using Terminaux.Writer.FancyWriters;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Base.Buffered;
-using Nitrocid.Misc.Text.Probers.Motd;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Network.RSS;
 using Textify.General;
 using Terminaux.Base;
+using Nitrocid.Users.Login.Motd;
 
 namespace Nitrocid.Users.Login
 {
