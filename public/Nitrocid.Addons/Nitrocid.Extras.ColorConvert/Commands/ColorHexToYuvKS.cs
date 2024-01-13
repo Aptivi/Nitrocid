@@ -21,34 +21,28 @@ using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
-using Terminaux.Colors;
-using Terminaux.Colors.Models.Conversion;
 
 namespace Nitrocid.Extras.ColorConvert.Commands
 {
     /// <summary>
-    /// Converts the hexadecimal representation of the color to RYB numbers.
+    /// Converts the hexadecimal representation of the color to YUV numbers in KS format.
     /// </summary>
     /// <remarks>
-    /// If you want to get the RYB color numbers from the hexadecimal representation of the color, you can use this command.
+    /// If you want to get the semicolon-delimited sequence of the YUV color numbers from the hexadecimal representation of the color, you can use this command. You can use this to form a complete VT sequence of changing color.
     /// </remarks>
-    class ColorHexToRybCommand : BaseCommand, ICommand
+    class ColorHexToYuvKSCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             string Hex = parameters.ArgumentsList[0];
+            string YUV;
 
             // Do the job
-            Color color = new(Hex);
-            var ryb = RybConversionTools.ConvertFrom(color.RGB);
-            TextWriters.Write("- " + Translate.DoTranslation("Red color level:") + " ", false, KernelColorType.ListEntry);
-            TextWriters.Write($"{ryb.R}", true, KernelColorType.ListValue);
-            TextWriters.Write("- " + Translate.DoTranslation("Yellow color level:") + " ", false, KernelColorType.ListEntry);
-            TextWriters.Write($"{ryb.Y}", true, KernelColorType.ListValue);
-            TextWriters.Write("- " + Translate.DoTranslation("Blue color level:") + " ", false, KernelColorType.ListEntry);
-            TextWriters.Write($"{ryb.B}", true, KernelColorType.ListValue);
-            variableValue = ryb.ToString();
+            YUV = KernelColorConversionTools.ConvertFromHexToYuv(Hex);
+            TextWriters.Write("- " + Translate.DoTranslation("YUV color sequence:") + " ", false, KernelColorType.ListEntry);
+            TextWriters.Write(YUV, true, KernelColorType.ListValue);
+            variableValue = YUV;
             return 0;
         }
 

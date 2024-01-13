@@ -28,43 +28,43 @@ using Terminaux.Colors.Models.Conversion;
 namespace Nitrocid.Extras.ColorConvert.Commands
 {
     /// <summary>
-    /// Converts the color HSL numbers to RYB.
+    /// Converts the color RYB numbers to YUV.
     /// </summary>
     /// <remarks>
-    /// If you want to get the RYB representation of the color from the HSL color numbers, you can use this command.
+    /// If you want to get the YUV representation of the color from the RYB color numbers, you can use this command.
     /// </remarks>
-    class ColorHslToRybCommand : BaseCommand, ICommand
+    class ColorRybToYuvCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             // Check to see if we have the numeric arguments
-            if (!int.TryParse(parameters.ArgumentsList[0], out int H))
+            if (!int.TryParse(parameters.ArgumentsList[0], out int R))
             {
-                TextWriters.Write(Translate.DoTranslation("The hue level must be numeric."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("The red color level must be numeric."), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.Color;
             }
-            if (!int.TryParse(parameters.ArgumentsList[1], out int S))
+            if (!int.TryParse(parameters.ArgumentsList[1], out int Y))
             {
-                TextWriters.Write(Translate.DoTranslation("The saturation level must be numeric."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("The yellow color level must be numeric."), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.Color;
             }
-            if (!int.TryParse(parameters.ArgumentsList[2], out int L))
+            if (!int.TryParse(parameters.ArgumentsList[2], out int B))
             {
-                TextWriters.Write(Translate.DoTranslation("The luminance or lighting level must be numeric."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("The blue color level must be numeric."), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.Color;
             }
 
             // Do the job
-            var color = new Color($"hsl:{H};{S};{L}");
-            var ryb = RybConversionTools.ConvertFrom(color.RGB);
-            TextWriters.Write("- " + Translate.DoTranslation("Red color level:") + " ", false, KernelColorType.ListEntry);
-            TextWriters.Write($"{ryb.R}", true, KernelColorType.ListValue);
-            TextWriters.Write("- " + Translate.DoTranslation("Yellow color level:") + " ", false, KernelColorType.ListEntry);
-            TextWriters.Write($"{ryb.Y}", true, KernelColorType.ListValue);
-            TextWriters.Write("- " + Translate.DoTranslation("Blue color level:") + " ", false, KernelColorType.ListEntry);
-            TextWriters.Write($"{ryb.B}", true, KernelColorType.ListValue);
-            variableValue = ryb.ToString();
+            var color = new Color($"ryb:{R};{Y};{B}");
+            var yuv = YuvConversionTools.ConvertFrom(color.RGB);
+            TextWriters.Write("- " + Translate.DoTranslation("Luma:") + " ", false, KernelColorType.ListEntry);
+            TextWriters.Write($"{yuv.Luma}", true, KernelColorType.ListValue);
+            TextWriters.Write("- " + Translate.DoTranslation("U-Chroma:") + " ", false, KernelColorType.ListEntry);
+            TextWriters.Write($"{yuv.ChromaU}", true, KernelColorType.ListValue);
+            TextWriters.Write("- " + Translate.DoTranslation("V-Chroma:") + " ", false, KernelColorType.ListEntry);
+            TextWriters.Write($"{yuv.ChromaV}", true, KernelColorType.ListValue);
+            variableValue = yuv.ToString();
             return 0;
         }
 

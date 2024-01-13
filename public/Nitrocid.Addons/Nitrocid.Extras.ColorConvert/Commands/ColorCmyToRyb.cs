@@ -23,6 +23,7 @@ using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
 using Terminaux.Colors;
+using Terminaux.Colors.Models.Conversion;
 
 namespace Nitrocid.Extras.ColorConvert.Commands
 {
@@ -56,13 +57,14 @@ namespace Nitrocid.Extras.ColorConvert.Commands
 
             // Do the job
             var color = new Color($"cmy:{C};{M};{Y}");
+            var ryb = RybConversionTools.ConvertFrom(color.RGB);
             TextWriters.Write("- " + Translate.DoTranslation("Red color level:") + " ", false, KernelColorType.ListEntry);
-            TextWriters.Write($"{color.R}", true, KernelColorType.ListValue);
-            TextWriters.Write("- " + Translate.DoTranslation("Green color level:") + " ", false, KernelColorType.ListEntry);
-            TextWriters.Write($"{color.G}", true, KernelColorType.ListValue);
+            TextWriters.Write($"{ryb.R}", true, KernelColorType.ListValue);
+            TextWriters.Write("- " + Translate.DoTranslation("Yellow color level:") + " ", false, KernelColorType.ListEntry);
+            TextWriters.Write($"{ryb.Y}", true, KernelColorType.ListValue);
             TextWriters.Write("- " + Translate.DoTranslation("Blue color level:") + " ", false, KernelColorType.ListEntry);
-            TextWriters.Write($"{color.B}", true, KernelColorType.ListValue);
-            variableValue = color.PlainSequence;
+            TextWriters.Write($"{ryb.B}", true, KernelColorType.ListValue);
+            variableValue = ryb.ToString();
             return 0;
         }
 
