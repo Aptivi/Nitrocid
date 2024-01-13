@@ -41,7 +41,6 @@ namespace Nitrocid.Kernel.Extensions
             { KnownAddons.ExtrasCaffeine,               /* Localizable */ "Extras - Caffeine" },
             { KnownAddons.ExtrasCalculators,            /* Localizable */ "Extras - Calculators" },
             { KnownAddons.ExtrasCalendar,               /* Localizable */ "Extras - Calendar" },
-            { KnownAddons.ExtrasChatGpt,                /* Localizable */ "Extras - ChatGPT Unofficial Client" },
             { KnownAddons.ExtrasColorConvert,           /* Localizable */ "Extras - Color Converter" },
             { KnownAddons.ExtrasContacts,               /* Localizable */ "Extras - Contacts" },
             { KnownAddons.ExtrasCrc32,                  /* Localizable */ "Extras - CRC32" },
@@ -58,7 +57,6 @@ namespace Nitrocid.Kernel.Extensions
             { KnownAddons.ExtrasMailShell,              /* Localizable */ "Extras - Mail Shell" },
             { KnownAddons.ExtrasNameGen,                /* Localizable */ "Extras - NameGen" },
             { KnownAddons.ExtrasNotes,                  /* Localizable */ "Extras - Notes" },
-            { KnownAddons.ExtrasRetroKS,                /* Localizable */ "Extras - Retro KS (based on 0.0.4.x)" },
             { KnownAddons.ExtrasRssShell,               /* Localizable */ "Extras - RSS Shell" },
             { KnownAddons.ExtrasSftpShell,              /* Localizable */ "Extras - SFTP Shell" },
             { KnownAddons.ExtrasSqlShell,               /* Localizable */ "Extras - SQL Shell" },
@@ -68,7 +66,6 @@ namespace Nitrocid.Kernel.Extensions
             { KnownAddons.ExtrasTips,                   /* Localizable */ "Extras - Kernel Tips" },
             { KnownAddons.ExtrasToDoList,               /* Localizable */ "Extras - To-do List" },
             { KnownAddons.ExtrasUnitConv,               /* Localizable */ "Extras - Unit Converter" },
-            { KnownAddons.LegacyInxiNet,                /* Localizable */ "Legacy - Inxi.NET Hardware Prober Driver" },
             { KnownAddons.LegacyHddUncleaner,           /* Localizable */ "Legacy - HDD Uncleaner 2015" },
         };
 

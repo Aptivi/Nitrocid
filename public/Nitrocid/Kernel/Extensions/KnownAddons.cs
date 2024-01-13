@@ -65,10 +65,6 @@ namespace Nitrocid.Kernel.Extensions
         /// </summary>
         ExtrasCalendar,
         /// <summary>
-        /// ChatGPT Unofficial Client Extras addon
-        /// </summary>
-        ExtrasChatGpt,
-        /// <summary>
         /// Color Conversion Tools Extras addon
         /// </summary>
         ExtrasColorConvert,
@@ -133,10 +129,6 @@ namespace Nitrocid.Kernel.Extensions
         /// </summary>
         ExtrasNotes,
         /// <summary>
-        /// RetroKS Extras addon
-        /// </summary>
-        ExtrasRetroKS,
-        /// <summary>
         /// RSS Shell Extras addon
         /// </summary>
         ExtrasRssShell,
@@ -172,10 +164,6 @@ namespace Nitrocid.Kernel.Extensions
         /// Unit Converter App Extras addon
         /// </summary>
         ExtrasUnitConv,
-        /// <summary>
-        /// Inxi.NET Hardware Prober Legacy addon
-        /// </summary>
-        LegacyInxiNet,
         /// <summary>
         /// HDD Uncleaner 2015 Legacy addon
         /// </summary>
