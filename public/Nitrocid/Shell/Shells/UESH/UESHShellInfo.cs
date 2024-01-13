@@ -364,6 +364,17 @@ namespace Nitrocid.Shell.Shells.UESH
                     ], new CombineCommand())
             },
 
+            { "compare",
+                new CommandInfo("compare", /* Localizable */ "Compares between the two text files.",
+                    [
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "source"),
+                            new CommandArgumentPart(true, "target"),
+                        })
+                    ], new CompareCommand())
+            },
+
             { "convertlineendings",
                 new CommandInfo("convertlineendings", /* Localizable */ "Converts the line endings to format for the current platform or to specified custom format",
                     [

@@ -67,5 +67,14 @@ namespace Nitrocid.Files.Operations
         /// <param name="columns">How many columns until wrapping begins?</param>
         public static void WrapTextFile(string path, int columns) =>
             DriverHandler.CurrentFilesystemDriverLocal.WrapTextFile(path, columns);
+
+        /// <summary>
+        /// Compares between two text files
+        /// </summary>
+        /// <param name="pathOne">Path to the first file to be compared</param>
+        /// <param name="pathTwo">Path to the second file to be compared</param>
+        /// <returns>A list of tuples containing an affected line number, a line from the first file, and a line from the second file</returns>
+        public static (int line, string one, string two)[] Compare(string pathOne, string pathTwo) =>
+            DriverHandler.CurrentFilesystemDriverLocal.Compare(pathOne, pathTwo);
     }
 }

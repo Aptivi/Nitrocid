@@ -49,6 +49,7 @@ using Nitrocid.Kernel.Extensions;
 using Textify.General;
 using Terminaux.Base;
 using Nitrocid.Misc.Progress;
+using Nitrocid.Files;
 
 namespace Nitrocid.Drivers.Filesystem
 {
@@ -1862,12 +1863,53 @@ namespace Nitrocid.Drivers.Filesystem
         {
             // Check to see if we're interacting with a text file
             if (IsBinaryFile(path) || IsJson(path) || IsSql(path))
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("The file you provided, {0}, is not a valid text file. If this file is a JSON file, this function might cause it to be unreadable. For your file's safety, this operation is halted to prevent file corruption."));
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("The file you provided, {0}, is not a valid text file. If this file is a JSON file, this function might cause it to be unreadable. For your file's safety, this operation is halted to prevent file corruption."), path);
 
             // Now, do the wrapping!
             string contents = ReadContentsText(path);
             var wrapped = TextTools.GetWrappedSentences(contents, columns);
             WriteContents(path, wrapped);
+        }
+
+        /// <inheritdoc/>
+        public (int line, string one, string two)[] Compare(string pathOne, string pathTwo)
+        {
+            pathOne = FS.NeutralizePath(pathOne);
+            pathTwo = FS.NeutralizePath(pathTwo);
+
+            // Check to see if we're interacting with a text file
+            if (IsBinaryFile(pathOne) || IsSql(pathOne))
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("The source file you provided, {0}, is not a valid text file."), pathOne);
+            if (IsBinaryFile(pathTwo) || IsSql(pathTwo))
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("The target file you provided, {0}, is not a valid text file."), pathTwo);
+
+            // Now, filter the lines according to the added and the removed lines
+            var sourceLines = ReadContents(pathOne).Select((ln, lnidx) => $"{lnidx + 1}|{ln}").ToDictionary((spec) => spec[..spec.IndexOf('|')], (spec) => spec[(spec.IndexOf('|') + 1)..]);
+            var targetLines = ReadContents(pathTwo).Select((ln, lnidx) => $"{lnidx + 1}|{ln}").ToDictionary((spec) => spec[..spec.IndexOf('|')], (spec) => spec[(spec.IndexOf('|') + 1)..]);
+            var added = targetLines.Values.Except(sourceLines.Values);
+            var removed = sourceLines.Values.Except(targetLines.Values);
+            var addedFinal = targetLines.Where((kvp) => added.Contains(kvp.Value)).ToDictionary((spec) => Convert.ToInt32(spec.Key), (spec) => ("", spec.Value));
+            var removedFinal = sourceLines.Where((kvp) => removed.Contains(kvp.Value)).ToDictionary((spec) => Convert.ToInt32(spec.Key), (spec) => (spec.Value, ""));
+            Dictionary<int, (string, string)> modifiedFinal = [];
+            var sameLines = addedFinal.Where((kvp) => removedFinal.ContainsKey(kvp.Key)).Select((kvp) => kvp.Key);
+            foreach (var idx in sameLines)
+            {
+                modifiedFinal.Add(idx, (removedFinal[idx].Value, addedFinal[idx].Value));
+                addedFinal.Remove(idx);
+                removedFinal.Remove(idx);
+            }
+
+            // Finally, make a list of affected lines
+            List<(int line, string one, string two)> affectedLines = [];
+            foreach (var line in addedFinal)
+                affectedLines.Add((line.Key, line.Value.Item1, line.Value.Value));
+            foreach (var line in removedFinal)
+                affectedLines.Add((line.Key, line.Value.Value, line.Value.Item2));
+            foreach (var line in modifiedFinal)
+                affectedLines.Add((line.Key, line.Value.Item1, line.Value.Item2));
+            affectedLines = affectedLines.OrderBy((kvp) => kvp.line).ToList();
+
+            return [.. affectedLines];
         }
     }
 }
