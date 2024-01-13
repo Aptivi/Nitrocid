@@ -133,8 +133,8 @@ namespace Nitrocid.Files
         /// </summary>
         /// <param name="Path">Target path</param>
         /// <remarks>
-        /// - When we try to access the secret NTFS bitmap path, which contains <b>$i30</b>, from the partition root path, we'll trigger the "Your disk is corrupt." <br></br>
-        /// - When we try to access the <b>kernelconnect</b> secret device from the system partition root path, we'll trigger the BSOD. <br></br><br></br>
+        /// - When we try to access the secret NTFS bitmap path, which contains <b>$i30</b>, from the partition root path, we'll trigger the "Your disk is corrupt" message.<br></br>
+        /// - When we try to access the <b>kernelconnect</b> secret device from the system partition root path, we'll trigger the BSOD.<br></br><br></br>
         /// This sub will try to prevent access to these paths on unpatched systems and patched systems by throwing <see cref="ArgumentException"/>
         /// </remarks>
         public static void ThrowOnInvalidPath(string Path)

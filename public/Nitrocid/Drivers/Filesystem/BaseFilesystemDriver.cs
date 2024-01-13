@@ -1907,7 +1907,7 @@ namespace Nitrocid.Drivers.Filesystem
                 affectedLines.Add((line.Key, line.Value.Value, line.Value.Item2));
             foreach (var line in modifiedFinal)
                 affectedLines.Add((line.Key, line.Value.Item1, line.Value.Item2));
-            affectedLines = affectedLines.OrderBy((kvp) => kvp.line).ToList();
+            affectedLines = [.. affectedLines.OrderBy((kvp) => kvp.line)];
 
             return [.. affectedLines];
         }
