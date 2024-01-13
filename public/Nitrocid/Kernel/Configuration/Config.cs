@@ -395,8 +395,8 @@ namespace Nitrocid.Kernel.Configuration
                     string modifiedKey = diff.Key;
                     string modifiedType = string.Join("", diff.Value.Select((diffToken) => ((JProperty)diffToken).Name));
 
-                    // Now, work on how to add or remove the key to the current object
-                    DebugCheck.Assert(modifiedType == "-" || modifiedType == "+", $"modified type is garbage. {modifiedType}");
+                    // Now, work on how to add or remove the key to the current object, but ignore all the modifications since they're usually valid.
+                    DebugCheck.Assert(modifiedType == "-" || modifiedType == "+" || modifiedType == "*", $"modified type is garbage. {modifiedType}");
                     if (modifiedType == "-")
                     {
                         // Missing key from current config. Most likely, we've added a new config entry.
@@ -404,7 +404,7 @@ namespace Nitrocid.Kernel.Configuration
                         var newValue = serializedObj[modifiedKey];
                         currentObj.Add(modifiedKey, newValue);
                     }
-                    else
+                    else if (modifiedType == "+")
                     {
                         // Extra key from current config. Most likely, we've removed a new config entry.
                         DebugWriter.WriteDebug(DebugLevel.I, "Removing extraneous key: {0}", modifiedKey);
