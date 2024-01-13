@@ -86,10 +86,10 @@ namespace Nitrocid.Misc.Text
                         {
                             var addedKeys = ((JObject)targetObj).Properties().Select(c => c.Name).Except(((JObject)sourceObj).Properties().Select(c => c.Name));
                             var removedKeys = ((JObject)sourceObj).Properties().Select(c => c.Name).Except(((JObject)targetObj).Properties().Select(c => c.Name));
-                            var unchangedKeys = ((JObject)targetObj).Properties().Where(c => JToken.DeepEquals(c.Value, sourceObj[c.Name])).Select(c => c.Name);
+                            var changedKeys = ((JObject)targetObj).Properties().Where(c => !JToken.DeepEquals(c.Value, sourceObj[c.Name])).Select(c => c.Name);
                             foreach (var k in addedKeys)
                             {
-                                diff[k] = new JObject
+                                diff[$"+{k}"] = new JObject
                                 {
                                     ["+"] = targetObj[k].Path
                                 };
@@ -97,11 +97,23 @@ namespace Nitrocid.Misc.Text
                             }
                             foreach (var k in removedKeys)
                             {
-                                diff[k] = new JObject
+                                diff[$"-{k}"] = new JObject
                                 {
                                     ["-"] = sourceObj[k].Path
                                 };
                                 DebugWriter.WriteDebug(DebugLevel.I, "Extra subtraction {0}", sourceObj[k].Path);
+                            }
+                            foreach (var k in changedKeys)
+                            {
+                                diff[$"*{k}"] = new JObject
+                                {
+                                    ["*"] = new JObject
+                                    {
+                                        ["source"] = sourceObj[k],
+                                        ["target"] = targetObj[k],
+                                    }
+                                };
+                                DebugWriter.WriteDebug(DebugLevel.I, "Changed: {0}, {1}", sourceObj[k]?.Path, targetObj[k]?.Path);
                             }
                         }
                         break;

@@ -151,11 +151,17 @@ namespace Nitrocid.Tests.Misc.Text
         {
             var diffObject = JsonTextTools.FindDifferences(compareObjectSourceJson, compareObjectTargetJson);
             diffObject.ShouldNotBeNull();
-            diffObject.Count.ShouldBe(2);
-            diffObject["DebugPath5"].ShouldNotBeNull();
-            diffObject["DebugPath4"].ShouldNotBeNull();
-            ((JProperty)diffObject["DebugPath5"].First).Name.ShouldBe("+");
-            ((JProperty)diffObject["DebugPath4"].First).Name.ShouldBe("-");
+            diffObject.Count.ShouldBe(5);
+            diffObject["+DebugPath5"].ShouldNotBeNull();
+            diffObject["-DebugPath4"].ShouldNotBeNull();
+            diffObject["*DebugPath"].ShouldNotBeNull();
+            diffObject["*DebugPath2"].ShouldNotBeNull();
+            diffObject["*DebugPath5"].ShouldNotBeNull();
+            ((JProperty)diffObject["+DebugPath5"].First).Name.ShouldBe("+");
+            ((JProperty)diffObject["-DebugPath4"].First).Name.ShouldBe("-");
+            ((JProperty)diffObject["*DebugPath"].First).Name.ShouldBe("*");
+            ((JProperty)diffObject["*DebugPath2"].First).Name.ShouldBe("*");
+            ((JProperty)diffObject["*DebugPath5"].First).Name.ShouldBe("*");
         }
 
         /// <summary>
