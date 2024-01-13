@@ -154,6 +154,13 @@ namespace Nitrocid.Shell.Shells.Debug
                     ], new LsAddonPropsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
             },
 
+            { "lsbaseaddons",
+                new CommandInfo("lsbaseaddons", /* Localizable */ "Lists all the base addons and their status",
+                    [
+                        new CommandArgumentInfo()
+                    ], new LsBaseAddonsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
+            },
+
             { "lsfields",
                 new CommandInfo("lsfields", /* Localizable */ "Lists all available public fields",
                     [
