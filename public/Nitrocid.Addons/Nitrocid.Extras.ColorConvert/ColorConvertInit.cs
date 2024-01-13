@@ -154,6 +154,46 @@ namespace Nitrocid.Extras.ColorConvert
                     ], new ColorHexToHsvKSCommand())
             },
 
+            { "colorhextoyiq",
+                new CommandInfo("colorhextoyiq", /* Localizable */ "Converts the hexadecimal representation of the color to YIQ numbers.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "#RRGGBB"),
+                        ], true)
+                    ], new ColorHexToYiqCommand())
+            },
+
+            { "colorhextoyiqks",
+                new CommandInfo("colorhextoyiqks", /* Localizable */ "Converts the hexadecimal representation of the color to YIQ numbers in KS format.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "#RRGGBB"),
+                        ], true)
+                    ], new ColorHexToYiqKSCommand())
+            },
+
+            { "colorhextoyuv",
+                new CommandInfo("colorhextoyuv", /* Localizable */ "Converts the hexadecimal representation of the color to YUV numbers.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "#RRGGBB"),
+                        ], true)
+                    ], new ColorHexToYuvCommand())
+            },
+
+            { "colorhextoyuvks",
+                new CommandInfo("colorhextoyuvks", /* Localizable */ "Converts the hexadecimal representation of the color to YUV numbers in KS format.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "#RRGGBB"),
+                        ], true)
+                    ], new ColorHexToYuvKSCommand())
+            },
+
             { "colorrgbtohex",
                 new CommandInfo("colorrgbtohex", /* Localizable */ "Converts the color RGB numbers to hex.",
                     [
@@ -352,7 +392,7 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            new CommandArgumentPart(true, "G", new CommandArgumentPartOptions()
                             {
                                 IsNumeric = true
                             }),
@@ -373,7 +413,7 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            new CommandArgumentPart(true, "G", new CommandArgumentPartOptions()
                             {
                                 IsNumeric = true
                             }),
@@ -383,6 +423,90 @@ namespace Nitrocid.Extras.ColorConvert
                             }),
                         ], true)
                     ], new ColorRgbToRybKSCommand())
+            },
+
+            { "colorrgbtoyiq",
+                new CommandInfo("colorrgbtoyiq", /* Localizable */ "Converts the color RGB numbers to YIQ.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "R", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "G", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "B", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorRgbToYiqCommand())
+            },
+
+            { "colorrgbtoyiqks",
+                new CommandInfo("colorrgbtoyiqks", /* Localizable */ "Converts the color RGB numbers to YIQ in KS format.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "R", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "G", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "B", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorRgbToYiqKSCommand())
+            },
+
+            { "colorrgbtoyuv",
+                new CommandInfo("colorrgbtoyuv", /* Localizable */ "Converts the color RGB numbers to YUV.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "R", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "G", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "B", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorRgbToYuvCommand())
+            },
+
+            { "colorrgbtoyuvks",
+                new CommandInfo("colorrgbtoyuvks", /* Localizable */ "Converts the color RGB numbers to YUV in KS format.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "R", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "G", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "B", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorRgbToYuvKSCommand())
             },
 
             { "colorrybtohex",
@@ -616,6 +740,90 @@ namespace Nitrocid.Extras.ColorConvert
                     ], new ColorRybToRgbKSCommand())
             },
 
+            { "colorrybtoyiq",
+                new CommandInfo("colorrybtoyiq", /* Localizable */ "Converts the color RYB numbers to YIQ.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "R", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "B", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorRybToYiqCommand())
+            },
+
+            { "colorrybtoyiqks",
+                new CommandInfo("colorrybtoyiqks", /* Localizable */ "Converts the color RYB numbers to YIQ in KS format.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "R", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "B", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorRybToYiqKSCommand())
+            },
+
+            { "colorrybtoyuv",
+                new CommandInfo("colorrybtoyuv", /* Localizable */ "Converts the color RYB numbers to YUV.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "R", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "B", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorRybToYuvCommand())
+            },
+
+            { "colorrybtoyuvks",
+                new CommandInfo("colorrybtoyuvks", /* Localizable */ "Converts the color RYB numbers to YUV in KS format.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "R", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "B", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorRybToYuvKSCommand())
+            },
+
             { "colorhsltohex",
                 new CommandInfo("colorhsltohex", /* Localizable */ "Converts the color HSL numbers to hex.",
                     [
@@ -847,6 +1055,90 @@ namespace Nitrocid.Extras.ColorConvert
                     ], new ColorHslToRybKSCommand())
             },
 
+            { "colorhsltoyiq",
+                new CommandInfo("colorhsltoyiq", /* Localizable */ "Converts the color HSL numbers to YIQ.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "H", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "S", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "L", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorHslToYiqCommand())
+            },
+
+            { "colorhsltoyiqks",
+                new CommandInfo("colorhsltoyiqks", /* Localizable */ "Converts the color HSL numbers to YIQ in KS format.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "H", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "S", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "L", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorHslToYiqKSCommand())
+            },
+
+            { "colorhsltoyuv",
+                new CommandInfo("colorhsltoyuv", /* Localizable */ "Converts the color HSL numbers to YUV.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "H", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "S", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "L", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorHslToYuvCommand())
+            },
+
+            { "colorhsltoyuvks",
+                new CommandInfo("colorhsltoyuvks", /* Localizable */ "Converts the color HSL numbers to YUV in KS format.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "H", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "S", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "L", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorHslToYuvKSCommand())
+            },
+
             { "colorhsvtohex",
                 new CommandInfo("colorhsvtohex", /* Localizable */ "Converts the color HSV numbers to hex.",
                     [
@@ -1076,6 +1368,90 @@ namespace Nitrocid.Extras.ColorConvert
                             }),
                         ], true)
                     ], new ColorHsvToRybKSCommand())
+            },
+
+            { "colorhsvtoyiq",
+                new CommandInfo("colorhsvtoyiq", /* Localizable */ "Converts the color HSV numbers to YIQ.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "H", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "S", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "V", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorHsvToYiqCommand())
+            },
+
+            { "colorhsvtoyiqks",
+                new CommandInfo("colorhsvtoyiqks", /* Localizable */ "Converts the color HSV numbers to YIQ in KS format.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "H", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "S", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "V", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorHsvToYiqKSCommand())
+            },
+
+            { "colorhsvtoyuv",
+                new CommandInfo("colorhsvtoyuv", /* Localizable */ "Converts the color HSV numbers to YUV.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "H", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "S", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "V", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorHsvToYuvCommand())
+            },
+
+            { "colorhsvtoyuvks",
+                new CommandInfo("colorhsvtoyuvks", /* Localizable */ "Converts the color HSV numbers to YUV in KS format.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "H", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "S", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "V", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorHsvToYuvKSCommand())
             },
 
             { "colorcmyktohex",
@@ -1353,6 +1729,106 @@ namespace Nitrocid.Extras.ColorConvert
                     ], new ColorCmykToCmyKSCommand())
             },
 
+            { "colorcmyktoyiq",
+                new CommandInfo("colorcmyktoyiq", /* Localizable */ "Converts the color CMYK numbers to YIQ.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "C", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "M", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "K", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorCmykToYiqCommand())
+            },
+
+            { "colorcmyktoyiqks",
+                new CommandInfo("colorcmyktoyiqks", /* Localizable */ "Converts the color CMYK numbers to YIQ in KS format.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "C", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "M", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "K", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorCmykToYiqKSCommand())
+            },
+
+            { "colorcmyktoyuv",
+                new CommandInfo("colorcmyktoyuv", /* Localizable */ "Converts the color CMYK numbers to YUV.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "C", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "M", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "K", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorCmykToYuvCommand())
+            },
+
+            { "colorcmyktoyuvks",
+                new CommandInfo("colorcmyktoyuvks", /* Localizable */ "Converts the color CMYK numbers to YUV in KS format.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "C", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "M", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "K", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorCmykToYuvKSCommand())
+            },
+
             { "colorcmytohex",
                 new CommandInfo("colorcmytohex", /* Localizable */ "Converts the color CMY numbers to hex.",
                     [
@@ -1582,6 +2058,720 @@ namespace Nitrocid.Extras.ColorConvert
                             }),
                         ], true)
                     ], new ColorCmyToRybKSCommand())
+            },
+
+            { "colorcmytoyiq",
+                new CommandInfo("colorcmytoyiq", /* Localizable */ "Converts the color CMY numbers to YIQ.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "C", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "M", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorCmyToYiqCommand())
+            },
+
+            { "colorcmytoyiqks",
+                new CommandInfo("colorcmytoyiqks", /* Localizable */ "Converts the color CMY numbers to YIQ in KS format.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "C", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "M", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorCmyToYiqKSCommand())
+            },
+
+            { "colorcmytoyuv",
+                new CommandInfo("colorcmytoyuv", /* Localizable */ "Converts the color CMY numbers to YUV.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "C", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "M", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorCmyToYuvCommand())
+            },
+
+            { "colorcmytoyuvks",
+                new CommandInfo("colorcmytoyuvks", /* Localizable */ "Converts the color CMY numbers to YUV in KS format.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "C", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "M", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorCmyToYuvKSCommand())
+            },
+
+            { "coloryiqtohex",
+                new CommandInfo("coloryiqtohex", /* Localizable */ "Converts the color YIQ numbers to hex.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "I", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Q", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorYiqToHexCommand())
+            },
+
+            { "coloryiqtocmyk",
+                new CommandInfo("coloryiqtocmyk", /* Localizable */ "Converts the color YIQ numbers to CMYK.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "I", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Q", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorYiqToCmykCommand())
+            },
+
+            { "coloryiqtocmykks",
+                new CommandInfo("coloryiqtocmykks", /* Localizable */ "Converts the color YIQ numbers to CMYK in KS format.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "I", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Q", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorYiqToCmykKSCommand())
+            },
+
+            { "coloryiqtocmy",
+                new CommandInfo("coloryiqtocmy", /* Localizable */ "Converts the color YIQ numbers to CMY.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "I", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Q", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorYiqToCmyCommand())
+            },
+
+            { "coloryiqtocmyks",
+                new CommandInfo("coloryiqtocmyks", /* Localizable */ "Converts the color YIQ numbers to CMY in KS format.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "I", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Q", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorYiqToCmyKSCommand())
+            },
+
+            { "coloryiqtohsl",
+                new CommandInfo("coloryiqtohsl", /* Localizable */ "Converts the color YIQ numbers to HSL.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "I", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Q", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorYiqToHslCommand())
+            },
+
+            { "coloryiqtohslks",
+                new CommandInfo("coloryiqtohslks", /* Localizable */ "Converts the color YIQ numbers to HSL in KS format.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "I", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Q", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorYiqToHslKSCommand())
+            },
+
+            { "coloryiqtohsv",
+                new CommandInfo("coloryiqtohsv", /* Localizable */ "Converts the color YIQ numbers to HSV.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "I", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Q", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorYiqToHsvCommand())
+            },
+
+            { "coloryiqtohsvks",
+                new CommandInfo("coloryiqtohsvks", /* Localizable */ "Converts the color YIQ numbers to HSV in KS format.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "I", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Q", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorYiqToHsvKSCommand())
+            },
+
+            { "coloryiqtorgb",
+                new CommandInfo("coloryiqtorgb", /* Localizable */ "Converts the color YIQ numbers to RGB.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "I", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Q", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorYiqToRgbCommand())
+            },
+
+            { "coloryiqtorgbks",
+                new CommandInfo("coloryiqtorgbks", /* Localizable */ "Converts the color YIQ numbers to RGB in KS format.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "I", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Q", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorYiqToRgbKSCommand())
+            },
+
+            { "coloryiqtoryb",
+                new CommandInfo("coloryiqtoryb", /* Localizable */ "Converts the color YIQ numbers to RYB.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "I", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Q", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorYiqToRybCommand())
+            },
+
+            { "coloryiqtorybks",
+                new CommandInfo("coloryiqtorybks", /* Localizable */ "Converts the color YIQ numbers to RYB in KS format.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "I", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Q", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorYiqToRybKSCommand())
+            },
+
+            { "coloryiqtoyuv",
+                new CommandInfo("coloryiqtoyuv", /* Localizable */ "Converts the color YIQ numbers to YUV.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "I", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Q", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorYiqToYuvCommand())
+            },
+
+            { "coloryiqtoyuvks",
+                new CommandInfo("coloryiqtoyuvks", /* Localizable */ "Converts the color YIQ numbers to YUV in KS format.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "I", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Q", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorYiqToYuvKSCommand())
+            },
+
+            { "coloryuvtohex",
+                new CommandInfo("coloryuvtohex", /* Localizable */ "Converts the color YUV numbers to hex.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "I", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Q", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorYuvToHexCommand())
+            },
+
+            { "coloryuvtocmyk",
+                new CommandInfo("coloryuvtocmyk", /* Localizable */ "Converts the color YUV numbers to CMYK.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "I", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Q", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorYuvToCmykCommand())
+            },
+
+            { "coloryuvtocmykks",
+                new CommandInfo("coloryuvtocmykks", /* Localizable */ "Converts the color YUV numbers to CMYK in KS format.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "I", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Q", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorYuvToCmykKSCommand())
+            },
+
+            { "coloryuvtocmy",
+                new CommandInfo("coloryuvtocmy", /* Localizable */ "Converts the color YUV numbers to CMY.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "I", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Q", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorYuvToCmyCommand())
+            },
+
+            { "coloryuvtocmyks",
+                new CommandInfo("coloryuvtocmyks", /* Localizable */ "Converts the color YUV numbers to CMY in KS format.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "I", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Q", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorYuvToCmyKSCommand())
+            },
+
+            { "coloryuvtohsl",
+                new CommandInfo("coloryuvtohsl", /* Localizable */ "Converts the color YUV numbers to HSL.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "I", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Q", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorYuvToHslCommand())
+            },
+
+            { "coloryuvtohslks",
+                new CommandInfo("coloryuvtohslks", /* Localizable */ "Converts the color YUV numbers to HSL in KS format.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "I", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Q", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorYuvToHslKSCommand())
+            },
+
+            { "coloryuvtohsv",
+                new CommandInfo("coloryuvtohsv", /* Localizable */ "Converts the color YUV numbers to HSV.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "I", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Q", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorYuvToHsvCommand())
+            },
+
+            { "coloryuvtohsvks",
+                new CommandInfo("coloryuvtohsvks", /* Localizable */ "Converts the color YUV numbers to HSV in KS format.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "I", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Q", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorYuvToHsvKSCommand())
+            },
+
+            { "coloryuvtorgb",
+                new CommandInfo("coloryuvtorgb", /* Localizable */ "Converts the color YUV numbers to RGB.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "I", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Q", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorYuvToRgbCommand())
+            },
+
+            { "coloryuvtorgbks",
+                new CommandInfo("coloryuvtorgbks", /* Localizable */ "Converts the color YUV numbers to RGB in KS format.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "I", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Q", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorYuvToRgbKSCommand())
+            },
+
+            { "coloryuvtoryb",
+                new CommandInfo("coloryuvtoryb", /* Localizable */ "Converts the color YUV numbers to RYB.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "I", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Q", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorYuvToRybCommand())
+            },
+
+            { "coloryuvtorybks",
+                new CommandInfo("coloryuvtorybks", /* Localizable */ "Converts the color YUV numbers to RYB in KS format.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "I", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Q", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorYuvToRybKSCommand())
+            },
+
+            { "coloryuvtoyiq",
+                new CommandInfo("coloryuvtoyiq", /* Localizable */ "Converts the color YUV numbers to YUV.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "I", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Q", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorYuvToYiqCommand())
+            },
+
+            { "coloryuvtoyiqks",
+                new CommandInfo("coloryuvtoyiqks", /* Localizable */ "Converts the color YUV numbers to YIQ in KS format.",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "I", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Q", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                        ], true)
+                    ], new ColorYuvToYiqKSCommand())
             },
         };
 
