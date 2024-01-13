@@ -1643,7 +1643,7 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <param name="I">The I component (in-phase)</param>
         /// <param name="Q">The Q component (quadrant)</param>
         /// <returns>A hexadecimal representation of a color (#AABBCC for example)</returns>
-        public static string ConvertFromYiqToHex(int Y, int I, int Q) =>
+        public static string ConvertFromYiqToHex(double Y, double I, double Q) =>
             ConvertFromYiqToHex($"yiq:{Y};{I};{Q}");
 
         /// <summary>
@@ -1655,9 +1655,9 @@ namespace Nitrocid.ConsoleBase.Colors
         {
             if (YiqParsingTools.IsSpecifierAndValueValid(YIQSequence))
             {
-                var rgb = new Color(YIQSequence).RGB;
-                DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", rgb.ToString());
-                return rgb.ToString();
+                string hex = new Color(YIQSequence).Hex;
+                DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", hex);
+                return hex;
             }
             else
             {
@@ -1672,7 +1672,7 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <param name="I">The I component (in-phase)</param>
         /// <param name="Q">The Q component (quadrant)</param>
         /// <returns>&lt;R&gt;;&lt;G&gt;;&lt;B&gt;</returns>
-        public static string ConvertFromYiqToRgb(int Y, int I, int Q) =>
+        public static string ConvertFromYiqToRgb(double Y, double I, double Q) =>
             ConvertFromYiqToRgb($"yiq:{Y};{I};{Q}");
 
         /// <summary>
@@ -1701,7 +1701,7 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <param name="I">The I component (in-phase)</param>
         /// <param name="Q">The Q component (quadrant)</param>
         /// <returns>ryb:&lt;C&gt;;&lt;M&gt;;&lt;Y&gt;;&lt;K&gt;</returns>
-        public static string ConvertFromYiqToRyb(int Y, int I, int Q) =>
+        public static string ConvertFromYiqToRyb(double Y, double I, double Q) =>
             ConvertFromYiqToRyb($"yiq:{Y};{I};{Q}");
 
         /// <summary>
@@ -1731,7 +1731,7 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <param name="I">The I component (in-phase)</param>
         /// <param name="Q">The Q component (quadrant)</param>
         /// <returns>cmyk:&lt;C&gt;;&lt;M&gt;;&lt;Y&gt;;&lt;K&gt;</returns>
-        public static string ConvertFromYiqToCmyk(int Y, int I, int Q) =>
+        public static string ConvertFromYiqToCmyk(double Y, double I, double Q) =>
             ConvertFromYiqToCmyk($"yiq:{Y};{I};{Q}");
 
         /// <summary>
@@ -1760,15 +1760,15 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <param name="Y">The Y component (luma)</param>
         /// <param name="I">The I component (in-phase)</param>
         /// <param name="Q">The Q component (quadrant)</param>
-        /// <returns>cmyk:&lt;C&gt;;&lt;M&gt;;&lt;Y&gt;</returns>
-        public static string ConvertFromYiqToCmy(int Y, int I, int Q) =>
+        /// <returns>cmy:&lt;C&gt;;&lt;M&gt;;&lt;Y&gt;</returns>
+        public static string ConvertFromYiqToCmy(double Y, double I, double Q) =>
             ConvertFromYiqToCmy($"yiq:{Y};{I};{Q}");
 
         /// <summary>
         /// Converts from the YIQ sequence of a color to the CMY sequence
         /// </summary>
         /// <param name="YIQSequence">yiq:&lt;Y&gt;;&lt;I&gt;;&lt;Q&gt;</param>
-        /// <returns>cmyk:&lt;C&gt;;&lt;M&gt;;&lt;Y&gt;</returns>
+        /// <returns>cmy:&lt;C&gt;;&lt;M&gt;;&lt;Y&gt;</returns>
         public static string ConvertFromYiqToCmy(string YIQSequence)
         {
             if (YiqParsingTools.IsSpecifierAndValueValid(YIQSequence))
@@ -1791,7 +1791,7 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <param name="I">The I component (in-phase)</param>
         /// <param name="Q">The Q component (quadrant)</param>
         /// <returns>hsl:&lt;C&gt;;&lt;M&gt;;&lt;Y&gt;</returns>
-        public static string ConvertFromYiqToHsl(int Y, int I, int Q) =>
+        public static string ConvertFromYiqToHsl(double Y, double I, double Q) =>
             ConvertFromYiqToHsl($"yiq:{Y};{I};{Q}");
 
         /// <summary>
@@ -1821,7 +1821,7 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <param name="I">The I component (in-phase)</param>
         /// <param name="Q">The Q component (quadrant)</param>
         /// <returns>hsv:&lt;H&gt;;&lt;S&gt;;&lt;V&gt;</returns>
-        public static string ConvertFromYiqToHsv(int Y, int I, int Q) =>
+        public static string ConvertFromYiqToHsv(double Y, double I, double Q) =>
             ConvertFromYiqToHsv($"yiq:{Y};{I};{Q}");
 
         /// <summary>
@@ -1851,7 +1851,7 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <param name="I">The I component (in-phase)</param>
         /// <param name="Q">The Q component (quadrant)</param>
         /// <returns>yuv:&lt;Y&gt;;&lt;U&gt;;&lt;V&gt;</returns>
-        public static string ConvertFromYiqToYuv(int Y, int I, int Q) =>
+        public static string ConvertFromYiqToYuv(double Y, double I, double Q) =>
             ConvertFromYiqToYuv($"yiq:{Y};{I};{Q}");
 
         /// <summary>
@@ -1883,7 +1883,7 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <param name="U">The U component (chroma)</param>
         /// <param name="V">The V component (chroma)</param>
         /// <returns>A hexadecimal representation of a color (#AABBCC for example)</returns>
-        public static string ConvertFromYuvToHex(int Y, int U, int V) =>
+        public static string ConvertFromYuvToHex(double Y, double U, double V) =>
             ConvertFromYuvToHex($"yuv:{Y};{U};{V}");
 
         /// <summary>
@@ -1895,9 +1895,9 @@ namespace Nitrocid.ConsoleBase.Colors
         {
             if (YuvParsingTools.IsSpecifierAndValueValid(YUVSequence))
             {
-                var rgb = new Color(YUVSequence).RGB;
-                DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", rgb.ToString());
-                return rgb.ToString();
+                string hex = new Color(YUVSequence).Hex;
+                DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", hex);
+                return hex;
             }
             else
             {
@@ -1912,7 +1912,7 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <param name="U">The U component (chroma)</param>
         /// <param name="V">The V component (chroma)</param>
         /// <returns>&lt;R&gt;;&lt;G&gt;;&lt;B&gt;</returns>
-        public static string ConvertFromYuvToRgb(int Y, int U, int V) =>
+        public static string ConvertFromYuvToRgb(double Y, double U, double V) =>
             ConvertFromYuvToRgb($"yuv:{Y};{U};{V}");
 
         /// <summary>
@@ -1941,7 +1941,7 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <param name="U">The U component (chroma)</param>
         /// <param name="V">The V component (chroma)</param>
         /// <returns>ryb:&lt;C&gt;;&lt;M&gt;;&lt;Y&gt;;&lt;K&gt;</returns>
-        public static string ConvertFromYuvToRyb(int Y, int U, int V) =>
+        public static string ConvertFromYuvToRyb(double Y, double U, double V) =>
             ConvertFromYuvToRyb($"yuv:{Y};{U};{V}");
 
         /// <summary>
@@ -1971,7 +1971,7 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <param name="U">The U component (chroma)</param>
         /// <param name="V">The V component (chroma)</param>
         /// <returns>cmyk:&lt;C&gt;;&lt;M&gt;;&lt;Y&gt;;&lt;K&gt;</returns>
-        public static string ConvertFromYuvToCmyk(int Y, int U, int V) =>
+        public static string ConvertFromYuvToCmyk(double Y, double U, double V) =>
             ConvertFromYuvToCmyk($"yuv:{Y};{U};{V}");
 
         /// <summary>
@@ -2000,15 +2000,15 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <param name="Y">The Y component (luma)</param>
         /// <param name="U">The U component (chroma)</param>
         /// <param name="V">The V component (chroma)</param>
-        /// <returns>cmyk:&lt;C&gt;;&lt;M&gt;;&lt;Y&gt;</returns>
-        public static string ConvertFromYuvToCmy(int Y, int U, int V) =>
+        /// <returns>cmy:&lt;C&gt;;&lt;M&gt;;&lt;Y&gt;</returns>
+        public static string ConvertFromYuvToCmy(double Y, double U, double V) =>
             ConvertFromYuvToCmy($"yuv:{Y};{U};{V}");
 
         /// <summary>
         /// Converts from the YUV sequence of a color to the CMY sequence
         /// </summary>
         /// <param name="YUVSequence">yuv:&lt;Y&gt;;&lt;I&gt;;&lt;Q&gt;</param>
-        /// <returns>cmyk:&lt;C&gt;;&lt;M&gt;;&lt;Y&gt;</returns>
+        /// <returns>cmy:&lt;C&gt;;&lt;M&gt;;&lt;Y&gt;</returns>
         public static string ConvertFromYuvToCmy(string YUVSequence)
         {
             if (YuvParsingTools.IsSpecifierAndValueValid(YUVSequence))
@@ -2031,7 +2031,7 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <param name="U">The U component (chroma)</param>
         /// <param name="V">The V component (chroma)</param>
         /// <returns>hsl:&lt;C&gt;;&lt;M&gt;;&lt;Y&gt;</returns>
-        public static string ConvertFromYuvToHsl(int Y, int U, int V) =>
+        public static string ConvertFromYuvToHsl(double Y, double U, double V) =>
             ConvertFromYuvToHsl($"yuv:{Y};{U};{V}");
 
         /// <summary>
@@ -2061,7 +2061,7 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <param name="U">The U component (chroma)</param>
         /// <param name="V">The V component (chroma)</param>
         /// <returns>hsv:&lt;H&gt;;&lt;S&gt;;&lt;V&gt;</returns>
-        public static string ConvertFromYuvToHsv(int Y, int U, int V) =>
+        public static string ConvertFromYuvToHsv(double Y, double U, double V) =>
             ConvertFromYuvToHsv($"yuv:{Y};{U};{V}");
 
         /// <summary>
@@ -2091,7 +2091,7 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <param name="U">The U component (chroma)</param>
         /// <param name="V">The V component (chroma)</param>
         /// <returns>yiq:&lt;Y&gt;;&lt;I&gt;;&lt;Q&gt;</returns>
-        public static string ConvertFromYuvToYiq(int Y, int U, int V) =>
+        public static string ConvertFromYuvToYiq(double Y, double U, double V) =>
             ConvertFromYuvToYiq($"yuv:{Y};{U};{V}");
 
         /// <summary>
