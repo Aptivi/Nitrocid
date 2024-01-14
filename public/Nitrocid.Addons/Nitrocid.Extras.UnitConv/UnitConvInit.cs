@@ -35,8 +35,8 @@ namespace Nitrocid.Extras.UnitConv
 {
     internal class UnitConvInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands = new()
-        {
+        private readonly List<CommandInfo> addonCommands =
+        [
             new CommandInfo("listunits", /* Localizable */ "Lists all available units",
                 [
                     new CommandArgumentInfo(new[]
@@ -71,7 +71,7 @@ namespace Nitrocid.Extras.UnitConv
                         })
                     ])
                 ], new UnitConvCommand()),
-        };
+        ];
 
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasUnitConv);

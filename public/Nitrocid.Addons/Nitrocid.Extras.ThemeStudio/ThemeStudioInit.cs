@@ -33,8 +33,8 @@ namespace Nitrocid.Extras.ThemeStudio
 {
     internal class ThemeStudioInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands = new()
-        {
+        private readonly List<CommandInfo> addonCommands =
+        [
             new CommandInfo("mktheme", /* Localizable */ "Makes a new theme",
                 [
                     new CommandArgumentInfo(new[]
@@ -42,7 +42,7 @@ namespace Nitrocid.Extras.ThemeStudio
                         new CommandArgumentPart(true, "themeName"),
                     })
                 ], new MkThemeCommand()),
-        };
+        ];
 
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasThemeStudio);

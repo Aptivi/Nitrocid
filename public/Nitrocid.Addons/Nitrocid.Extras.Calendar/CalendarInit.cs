@@ -39,8 +39,8 @@ namespace Nitrocid.Extras.Calendar
 {
     internal class CalendarInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands = new()
-        {
+        private readonly List<CommandInfo> addonCommands =
+        [
             new CommandInfo("altdate", /* Localizable */ "Shows date and time",
                 [
                     new CommandArgumentInfo(
@@ -195,7 +195,7 @@ namespace Nitrocid.Extras.Calendar
                         })
                     }),
                 ], new CalendarCommand()),
-        };
+        ];
 
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasCalendar);

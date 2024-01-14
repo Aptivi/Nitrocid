@@ -33,8 +33,8 @@ namespace Nitrocid.Extras.ColorConvert
 {
     internal class ColorConvertInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands = new()
-        {
+        private readonly List<CommandInfo> addonCommands =
+        [
             new CommandInfo("colorhextorgb", /* Localizable */ "Converts the hexadecimal representation of the color to RGB numbers.",
                 [
                     new CommandArgumentInfo(
@@ -2502,7 +2502,7 @@ namespace Nitrocid.Extras.ColorConvert
                         }),
                     ], true)
                 ], new ColorYuvToYiqKSCommand()),
-        };
+        ];
 
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasColorConvert);

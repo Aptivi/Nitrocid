@@ -34,8 +34,8 @@ namespace Nitrocid.Extras.TimeInfo
 {
     internal class TimeInfoInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands = new()
-        {
+        private readonly List<CommandInfo> addonCommands =
+        [
             new CommandInfo("gettimeinfo", /* Localizable */ "Gets the date and time information",
                 [
                     new CommandArgumentInfo(
@@ -50,7 +50,7 @@ namespace Nitrocid.Extras.TimeInfo
                         })
                     ])
                 ], new GetTimeInfoCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
-        };
+        ];
 
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasTimeInfo);

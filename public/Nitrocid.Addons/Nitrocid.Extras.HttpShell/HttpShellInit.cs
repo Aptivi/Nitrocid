@@ -36,13 +36,13 @@ namespace Nitrocid.Extras.HttpShell
 {
     internal class HttpShellInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands = new()
-        {
+        private readonly List<CommandInfo> addonCommands =
+        [
             new CommandInfo("http", /* Localizable */ "Starts the HTTP shell",
                 [
                     new CommandArgumentInfo()
                 ], new HttpCommandExec())
-        };
+        ];
 
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasHttpShell);

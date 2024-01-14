@@ -35,8 +35,8 @@ namespace Nitrocid.Extras.Timers
 {
     internal class TimersInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands = new()
-        {
+        private readonly List<CommandInfo> addonCommands =
+        [
             new CommandInfo("stopwatch", /* Localizable */ "A simple stopwatch",
                 [
                     new CommandArgumentInfo()
@@ -46,7 +46,7 @@ namespace Nitrocid.Extras.Timers
                 [
                     new CommandArgumentInfo()
                 ], new TimerCommand()),
-        };
+        ];
 
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasTimers);

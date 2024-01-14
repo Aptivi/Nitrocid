@@ -38,8 +38,8 @@ namespace Nitrocid.Extras.RssShell
 {
     internal class RssShellInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands = new()
-        {
+        private readonly List<CommandInfo> addonCommands =
+        [
             new CommandInfo("rss", /* Localizable */ "Opens an RSS shell to read the feeds",
                 [
                     new CommandArgumentInfo(
@@ -50,7 +50,7 @@ namespace Nitrocid.Extras.RssShell
                         new SwitchInfo("tui", /* Localizable */ "Opens an interactive RSS feed reader TUI"),
                     ])
                 ], new RssCommandExec())
-        };
+        ];
 
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasRssShell);

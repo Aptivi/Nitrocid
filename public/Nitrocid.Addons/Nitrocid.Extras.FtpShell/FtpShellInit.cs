@@ -36,8 +36,8 @@ namespace Nitrocid.Extras.FtpShell
 {
     internal class FtpShellInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands = new()
-        {
+        private readonly List<CommandInfo> addonCommands =
+        [
             new CommandInfo("ftp", /* Localizable */ "Use an FTP shell to interact with servers",
                 [
                     new CommandArgumentInfo(new[]
@@ -45,7 +45,7 @@ namespace Nitrocid.Extras.FtpShell
                         new CommandArgumentPart(false, "server"),
                     })
                 ], new FtpCommandExec())
-        };
+        ];
 
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasFtpShell);

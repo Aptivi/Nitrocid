@@ -38,8 +38,8 @@ namespace Nitrocid.Extras.NameGen
 {
     internal class NameGenInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands = new()
-        {
+        private readonly List<CommandInfo> addonCommands =
+        [
                 new CommandInfo("findfirstname", /* Localizable */ "First name finder",
                     [
                         new CommandArgumentInfo(
@@ -116,7 +116,7 @@ namespace Nitrocid.Extras.NameGen
                             }),
                         ], true)
                     ], new GenNameCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
-        };
+        ];
 
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasNameGen);

@@ -34,13 +34,13 @@ namespace Nitrocid.Extras.Diagnostics
 {
     internal class DiagnosticsInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands = new()
-        {
+        private readonly List<CommandInfo> addonCommands =
+        [
             new CommandInfo("threadsbt", /* Localizable */ "Gets backtrace for all threads",
                 [
                     new CommandArgumentInfo()
                 ], new ThreadsBtCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
-        };
+        ];
 
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasDiagnostics);

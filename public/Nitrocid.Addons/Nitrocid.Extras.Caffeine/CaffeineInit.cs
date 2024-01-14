@@ -34,8 +34,8 @@ namespace Nitrocid.Extras.Caffeine
 {
     internal class CaffeineInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands = new()
-        {
+        private readonly List<CommandInfo> addonCommands =
+        [
             new CommandInfo("caffeine", /* Localizable */ "Adds an alarm to alert you when your cup of tea or coffee is ready.",
                 [
                     new CommandArgumentInfo(
@@ -49,7 +49,7 @@ namespace Nitrocid.Extras.Caffeine
                         })
                     ])
                 ], new CaffeineCommand())
-        };
+        ];
 
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasCaffeine);

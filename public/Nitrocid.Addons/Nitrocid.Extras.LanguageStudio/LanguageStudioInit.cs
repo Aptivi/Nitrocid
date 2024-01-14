@@ -33,8 +33,8 @@ namespace Nitrocid.Extras.LanguageStudio
 {
     internal class LanguageStudioInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands = new()
-        {
+        private readonly List<CommandInfo> addonCommands =
+        [
             new CommandInfo("mklang", /* Localizable */ "Makes a new language",
                 [
                     new CommandArgumentInfo(new[]
@@ -42,7 +42,7 @@ namespace Nitrocid.Extras.LanguageStudio
                         new CommandArgumentPart(true, "pathToTranslations"),
                     })
                 ], new MkLangCommand())
-        };
+        ];
 
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasLanguageStudio);

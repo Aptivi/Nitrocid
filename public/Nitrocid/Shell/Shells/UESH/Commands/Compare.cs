@@ -18,9 +18,7 @@
 //
 
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Misc.Text.Probers.Placeholder;
 using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Switches;
 using Nitrocid.Files.Operations;
 using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Exceptions;

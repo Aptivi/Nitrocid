@@ -40,8 +40,8 @@ namespace Nitrocid.Extras.GitShell
     internal class GitShellInit : IAddon
     {
         private static bool nativeLibIsSet = false;
-        private readonly List<CommandInfo> addonCommands = new()
-        {
+        private readonly List<CommandInfo> addonCommands =
+        [
             new CommandInfo("gitsh", /* Localizable */ "Git shell",
                 [
                     new CommandArgumentInfo(new[]
@@ -49,7 +49,7 @@ namespace Nitrocid.Extras.GitShell
                         new CommandArgumentPart(true, "repoPath")
                     }),
                 ], new GitCommandExec())
-        };
+        ];
 
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasGitShell);

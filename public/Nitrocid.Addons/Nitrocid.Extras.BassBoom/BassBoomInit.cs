@@ -68,8 +68,8 @@ namespace Nitrocid.Extras.BassBoom
             new(".mpga", "Mp3BassBoom", PlayerHandler.Handle, PlayerHandler.InfoHandle),
         ];
 
-        private readonly List<CommandInfo> addonCommands = new()
-        {
+        private readonly List<CommandInfo> addonCommands =
+        [
             new CommandInfo("lyriclines", /* Localizable */ "Gets all lyric lines from the lyric file",
                 [
                     new CommandArgumentInfo(new[]
@@ -101,7 +101,7 @@ namespace Nitrocid.Extras.BassBoom
                         new CommandArgumentPart(true, "musicFile"),
                     })
                 ], new PlaySoundCommand())
-        };
+        ];
 
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasBassBoom);

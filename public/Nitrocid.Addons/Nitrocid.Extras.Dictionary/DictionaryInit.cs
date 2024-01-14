@@ -33,8 +33,8 @@ namespace Nitrocid.Extras.Dictionary
 {
     internal class DictionaryInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands = new()
-        {
+        private readonly List<CommandInfo> addonCommands =
+        [
             new CommandInfo("dict", /* Localizable */ "The English Dictionary",
                 [
                     new CommandArgumentInfo(new[]
@@ -42,7 +42,7 @@ namespace Nitrocid.Extras.Dictionary
                         new CommandArgumentPart(true, "word"),
                     })
                 ], new DictCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
-        };
+        ];
 
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasDictionary);

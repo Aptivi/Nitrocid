@@ -37,8 +37,8 @@ namespace Nitrocid.Extras.SftpShell
 {
     internal class SftpShellInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands = new()
-        {
+        private readonly List<CommandInfo> addonCommands =
+        [
             new CommandInfo("sftp", /* Localizable */ "Lets you use an SSH FTP server",
                 [
                     new CommandArgumentInfo(new[]
@@ -65,7 +65,7 @@ namespace Nitrocid.Extras.SftpShell
                         new CommandArgumentPart(true, "command"),
                     })
                 ], new SshcmdCommand()),
-        };
+        ];
 
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasSftpShell);

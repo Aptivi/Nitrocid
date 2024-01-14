@@ -33,8 +33,8 @@ namespace Nitrocid.Extras.Calculators
 {
     internal class CalculatorsInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands = new()
-        {
+        private readonly List<CommandInfo> addonCommands =
+        [
             new CommandInfo("calc", /* Localizable */ "Calculator to calculate expressions.",
                 [
                     new CommandArgumentInfo(
@@ -57,7 +57,7 @@ namespace Nitrocid.Extras.Calculators
                         }),
                     })
                 ], new ImaginaryCommand()),
-        };
+        ];
 
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasCalculators);

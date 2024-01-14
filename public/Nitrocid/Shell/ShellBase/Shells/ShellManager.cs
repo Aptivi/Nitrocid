@@ -86,8 +86,8 @@ namespace Nitrocid.Shell.ShellBase.Shells
             { $"{ShellType.TextShell}",     new() },
         };
 
-        internal readonly static List<CommandInfo> unifiedCommandDict = new()
-        {
+        internal readonly static List<CommandInfo> unifiedCommandDict =
+        [
             new CommandInfo("exec", /* Localizable */ "Executes an external process",
                 [
                     new CommandArgumentInfo(
@@ -199,7 +199,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
                         })
                     })
                 ], new WrapUnifiedCommand()),
-        };
+        ];
 
         internal readonly static Dictionary<string, BaseShellInfo> availableShells = new()
         {

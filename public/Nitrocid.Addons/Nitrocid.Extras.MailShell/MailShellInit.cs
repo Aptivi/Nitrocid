@@ -36,8 +36,8 @@ namespace Nitrocid.Extras.MailShell
 {
     internal class MailShellInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands = new()
-        {
+        private readonly List<CommandInfo> addonCommands =
+        [
             new CommandInfo("mail", /* Localizable */ "Opens the mail client",
                 [
                     new CommandArgumentInfo(new[]
@@ -45,7 +45,7 @@ namespace Nitrocid.Extras.MailShell
                         new CommandArgumentPart(false, "emailAddress"),
                     })
                 ], new MailCommandExec())
-        };
+        ];
 
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasMailShell);

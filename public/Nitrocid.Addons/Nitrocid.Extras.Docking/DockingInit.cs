@@ -34,8 +34,8 @@ namespace Nitrocid.Extras.Docking
 {
     internal class DockingInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands = new()
-        {
+        private readonly List<CommandInfo> addonCommands =
+        [
             new CommandInfo("dock", /* Localizable */ "Shows you a full-screen overview about a selected dock view to be able to use it as an info panel",
                 [
                     new CommandArgumentInfo(new[]
@@ -46,7 +46,7 @@ namespace Nitrocid.Extras.Docking
                         }),
                     })
                 ], new DockCommand())
-        };
+        ];
 
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasDocking);

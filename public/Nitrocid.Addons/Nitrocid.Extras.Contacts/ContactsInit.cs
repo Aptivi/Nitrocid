@@ -40,13 +40,13 @@ namespace Nitrocid.Extras.Contacts
             new(".vcf", "Contacts", ContactsHandler.Handle, ContactsHandler.InfoHandle),
             new(".vcard", "Contacts", ContactsHandler.Handle, ContactsHandler.InfoHandle),
         ];
-        private readonly List<CommandInfo> addonCommands = new()
-        {
+        private readonly List<CommandInfo> addonCommands =
+        [
             new CommandInfo("contacts", /* Localizable */ "Manages your contacts",
                 [
                     new CommandArgumentInfo()
                 ], new ContactsCommand())
-        };
+        ];
 
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasContacts);

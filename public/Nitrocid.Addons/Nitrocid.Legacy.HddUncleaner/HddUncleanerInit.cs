@@ -33,13 +33,13 @@ namespace Nitrocid.Legacy.HddUncleaner
 {
     internal class HddUncleanerInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands = new()
-        {
+        private readonly List<CommandInfo> addonCommands =
+        [
             new CommandInfo("2015", /* Localizable */ "Starts the joke program, HDD Uncleaner 2015.",
                 [
                     new CommandArgumentInfo()
                 ], new HddUncleanerCommand())
-        };
+        ];
 
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.LegacyHddUncleaner);

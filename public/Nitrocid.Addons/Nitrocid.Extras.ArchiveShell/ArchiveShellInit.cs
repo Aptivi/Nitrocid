@@ -37,8 +37,8 @@ namespace Nitrocid.Extras.ArchiveShell
 {
     internal class ArchiveShellInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands = new()
-        {
+        private readonly List<CommandInfo> addonCommands =
+        [
             new CommandInfo("archive", /* Localizable */ "Opens the archive file to the archive shell",
                 [
                     new CommandArgumentInfo(new[]
@@ -46,7 +46,7 @@ namespace Nitrocid.Extras.ArchiveShell
                         new CommandArgumentPart(true, "archivefile"),
                     })
                 ], new ArchiveCommand())
-        };
+        ];
 
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasArchiveShell);

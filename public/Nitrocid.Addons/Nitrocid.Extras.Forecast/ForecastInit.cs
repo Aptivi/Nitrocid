@@ -36,8 +36,8 @@ namespace Nitrocid.Extras.Forecast
 {
     internal class ForecastInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands = new()
-        {
+        private readonly List<CommandInfo> addonCommands =
+        [
             new CommandInfo("weather", /* Localizable */ "Shows weather info for specified city. Uses OpenWeatherMap.",
                 [
                     new CommandArgumentInfo(
@@ -53,7 +53,7 @@ namespace Nitrocid.Extras.Forecast
                         })
                     ])
                 ], new WeatherCommand())
-        };
+        ];
 
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasForecast);

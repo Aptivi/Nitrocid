@@ -35,8 +35,8 @@ namespace Nitrocid.Extras.ToDoList
 {
     internal class ToDoListInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands = new()
-        {
+        private readonly List<CommandInfo> addonCommands =
+        [
             new CommandInfo("todo", /* Localizable */ "To-do task manager",
                 [
                     new CommandArgumentInfo(new[]
@@ -72,7 +72,7 @@ namespace Nitrocid.Extras.ToDoList
                         new CommandArgumentPart(true, "load"),
                     }),
                 ], new TodoCommand()),
-        };
+        ];
 
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasToDoList);

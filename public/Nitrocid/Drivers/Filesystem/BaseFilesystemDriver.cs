@@ -49,7 +49,6 @@ using Nitrocid.Kernel.Extensions;
 using Textify.General;
 using Terminaux.Base;
 using Nitrocid.Misc.Progress;
-using Nitrocid.Files;
 
 namespace Nitrocid.Drivers.Filesystem
 {

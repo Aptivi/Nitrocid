@@ -33,8 +33,8 @@ namespace Nitrocid.Extras.InternetRadioInfo
 {
     internal class InternetRadioInfoInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands = new()
-        {
+        private readonly List<CommandInfo> addonCommands =
+        [
             new CommandInfo("netfminfo", /* Localizable */ "Gets information about your online radio station",
                 [
                     new CommandArgumentInfo(new[]
@@ -43,7 +43,7 @@ namespace Nitrocid.Extras.InternetRadioInfo
                         new CommandArgumentPart(true, "port"),
                     })
                 ], new NetFmInfoCommand()),
-        };
+        ];
 
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasInternetRadioInfo);

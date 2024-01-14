@@ -34,8 +34,8 @@ namespace Nitrocid.Extras.Notes
 {
     internal class NotesInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands = new()
-        {
+        private readonly List<CommandInfo> addonCommands =
+        [
             new CommandInfo("addnote", /* Localizable */ "Adds a note",
                 [
                     new CommandArgumentInfo(new[]
@@ -79,7 +79,7 @@ namespace Nitrocid.Extras.Notes
                 [
                     new CommandArgumentInfo(),
                 ], new NotesTui()),
-        };
+        ];
 
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasNotes);
