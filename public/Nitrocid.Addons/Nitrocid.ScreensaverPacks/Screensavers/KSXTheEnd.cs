@@ -23,6 +23,13 @@ using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Screensaver;
 using Terminaux.Colors;
 using Terminaux.Base;
+using System;
+using Terminaux.Writer.FancyWriters;
+using Figletize;
+using Nitrocid.Misc.Text;
+using Nitrocid.ScreensaverPacks.Animations.Glitch;
+using Nitrocid.Languages;
+using Nitrocid.Kernel.Time.Renderers;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -51,9 +58,19 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverLogic()
         {
             int step;
-            int maxSteps = 1;
+            int maxSteps = 6;
             Color green = new(0, 255, 0);
+            Color red = new(255, 0, 0);
+            Color pink = new(255, 0, 255);
+            Color blue = new(0, 0, 255);
             Color black = new(0, 0, 0);
+            Color white = new(255, 255, 255);
+            var font = FigletTools.GetFigletFont(FigletTextTools.DefaultFigletFontName);
+            int colorSteps = 30;
+            int currentR = 0;
+            int currentG = 0;
+            int currentB = 0;
+            int height = ConsoleWrapper.WindowHeight - 2;
 
             // Start stepping
             for (step = 1; step <= maxSteps; step++)
@@ -63,19 +80,247 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                 switch (step)
                 {
+                    // Step 1: Shows all the versions, but with 0.1.0.
                     case 1:
-                        string tbc = "KS-X: The End - Coming soon - January 31st, 2024".ToUpper();
-                        ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
-                        TextWriterWhereColor.WriteWhereColorBack(tbc, ConsoleWrapper.WindowWidth / 2 - tbc.Length / 2, ConsoleWrapper.WindowHeight / 2, green, black);
-                        ThreadManager.SleepNoBlock(40, ScreensaverDisplayer.ScreensaverDisplayerThread);
-                        TextWriterWhereColor.WriteWhereColorBack(tbc, ConsoleWrapper.WindowWidth / 2 - tbc.Length / 2, ConsoleWrapper.WindowHeight / 2, black, black);
-                        ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
-                        TextWriterWhereColor.WriteWhereColorBack(tbc, ConsoleWrapper.WindowWidth / 2 - tbc.Length / 2, ConsoleWrapper.WindowHeight / 2, green, black);
-                        ThreadManager.SleepNoBlock(50, ScreensaverDisplayer.ScreensaverDisplayerThread);
-                        TextWriterWhereColor.WriteWhereColorBack(tbc, ConsoleWrapper.WindowWidth / 2 - tbc.Length / 2, ConsoleWrapper.WindowHeight / 2, black, black);
-                        ThreadManager.SleepNoBlock(1000, ScreensaverDisplayer.ScreensaverDisplayerThread);
-                        TextWriterWhereColor.WriteWhereColorBack(tbc, ConsoleWrapper.WindowWidth / 2 - tbc.Length / 2, ConsoleWrapper.WindowHeight / 2, green, black);
+                        ColorTools.LoadBackDry(black);
+
+                        // Get the color thresholds
+                        double thresholdGR = green.R / (double)colorSteps;
+                        double thresholdGG = green.G / (double)colorSteps;
+                        double thresholdGB = green.B / (double)colorSteps;
+                        double thresholdRR = red.R / (double)colorSteps;
+                        double thresholdRG = red.G / (double)colorSteps;
+                        double thresholdRB = red.B / (double)colorSteps;
+                        double thresholdPR = pink.R / (double)colorSteps;
+                        double thresholdPG = pink.G / (double)colorSteps;
+                        double thresholdPB = pink.B / (double)colorSteps;
+                        double thresholdBR = blue.R / (double)colorSteps;
+                        double thresholdBG = blue.G / (double)colorSteps;
+                        double thresholdBB = blue.B / (double)colorSteps;
+
+                        // Now, transition
+                        for (int currentStep = 1; currentStep <= colorSteps; currentStep++)
+                        {
+                            if (ConsoleResizeHandler.WasResized(false))
+                                break;
+
+                            // Remove the values according to the threshold
+                            currentR = (int)Math.Round(currentR + thresholdGR);
+                            currentG = (int)Math.Round(currentG + thresholdGG);
+                            currentB = (int)Math.Round(currentB + thresholdGB);
+
+                            // Now, make a color and fill the console with it
+                            Color col = new(currentR, currentG, currentB);
+                            CenteredFigletTextColor.WriteCenteredFigletColorBack(font, "v0.0.1", col, black);
+                            CenteredTextColor.WriteCenteredColorBack(height, TimeDateRenderers.RenderDate(new DateTime(2018, 2, 22)), col, black);
+
+                            // Sleep
+                            ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                        }
+                        for (int currentStep = 1; currentStep <= colorSteps; currentStep++)
+                        {
+                            if (ConsoleResizeHandler.WasResized(false))
+                                break;
+
+                            // Remove the values according to the threshold
+                            currentR = (int)Math.Round(currentR - thresholdGR);
+                            currentG = (int)Math.Round(currentG - thresholdGG);
+                            currentB = (int)Math.Round(currentB - thresholdGB);
+
+                            // Now, make a color and fill the console with it
+                            Color col = new(currentR, currentG, currentB);
+                            CenteredFigletTextColor.WriteCenteredFigletColorBack(font, "v0.0.1", col, black);
+                            CenteredTextColor.WriteCenteredColorBack(height, TimeDateRenderers.RenderDate(new DateTime(2018, 2, 22)), col, black);
+
+                            // Sleep
+                            ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                        }
+                        for (int currentStep = 1; currentStep <= colorSteps; currentStep++)
+                        {
+                            if (ConsoleResizeHandler.WasResized(false))
+                                break;
+
+                            // Remove the values according to the threshold
+                            currentR = (int)Math.Round(currentR + thresholdRR);
+                            currentG = (int)Math.Round(currentG + thresholdRG);
+                            currentB = (int)Math.Round(currentB + thresholdRB);
+
+                            // Now, make a color and fill the console with it
+                            Color col = new(currentR, currentG, currentB);
+                            CenteredFigletTextColor.WriteCenteredFigletColorBack(font, "v0.0.16", col, black);
+                            CenteredTextColor.WriteCenteredColorBack(height, TimeDateRenderers.RenderDate(new DateTime(2021, 6, 12)), col, black);
+
+                            // Sleep
+                            ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                        }
+                        for (int currentStep = 1; currentStep <= colorSteps; currentStep++)
+                        {
+                            if (ConsoleResizeHandler.WasResized(false))
+                                break;
+
+                            // Remove the values according to the threshold
+                            currentR = (int)Math.Round(currentR - thresholdRR);
+                            currentG = (int)Math.Round(currentG - thresholdRG);
+                            currentB = (int)Math.Round(currentB - thresholdRB);
+
+                            // Now, make a color and fill the console with it
+                            Color col = new(currentR, currentG, currentB);
+                            CenteredFigletTextColor.WriteCenteredFigletColorBack(font, "v0.0.16", col, black);
+                            CenteredTextColor.WriteCenteredColorBack(height, TimeDateRenderers.RenderDate(new DateTime(2021, 6, 12)), col, black);
+
+                            // Sleep
+                            ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                        }
+                        for (int currentStep = 1; currentStep <= colorSteps; currentStep++)
+                        {
+                            if (ConsoleResizeHandler.WasResized(false))
+                                break;
+
+                            // Remove the values according to the threshold
+                            currentR = (int)Math.Round(currentR + thresholdPR);
+                            currentG = (int)Math.Round(currentG + thresholdPG);
+                            currentB = (int)Math.Round(currentB + thresholdPB);
+
+                            // Now, make a color and fill the console with it
+                            Color col = new(currentR, currentG, currentB);
+                            CenteredFigletTextColor.WriteCenteredFigletColorBack(font, "v0.0.24", col, black);
+                            CenteredTextColor.WriteCenteredColorBack(height, TimeDateRenderers.RenderDate(new DateTime(2022, 8, 2)), col, black);
+
+                            // Sleep
+                            ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                        }
+                        for (int currentStep = 1; currentStep <= colorSteps; currentStep++)
+                        {
+                            if (ConsoleResizeHandler.WasResized(false))
+                                break;
+
+                            // Remove the values according to the threshold
+                            currentR = (int)Math.Round(currentR - thresholdPR);
+                            currentG = (int)Math.Round(currentG - thresholdPG);
+                            currentB = (int)Math.Round(currentB - thresholdPB);
+
+                            // Now, make a color and fill the console with it
+                            Color col = new(currentR, currentG, currentB);
+                            CenteredFigletTextColor.WriteCenteredFigletColorBack(font, "v0.0.24", col, black);
+                            CenteredTextColor.WriteCenteredColorBack(height, TimeDateRenderers.RenderDate(new DateTime(2022, 8, 2)), col, black);
+
+                            // Sleep
+                            ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                        }
+                        for (int currentStep = 1; currentStep <= colorSteps; currentStep++)
+                        {
+                            if (ConsoleResizeHandler.WasResized(false))
+                                break;
+
+                            // Remove the values according to the threshold
+                            currentR = (int)Math.Round(currentR + thresholdBR);
+                            currentG = (int)Math.Round(currentG + thresholdBG);
+                            currentB = (int)Math.Round(currentB + thresholdBB);
+
+                            // Now, make a color and fill the console with it
+                            Color col = new(currentR, currentG, currentB);
+                            CenteredFigletTextColor.WriteCenteredFigletColorBack(font, "v0.1.0", col, black);
+                            CenteredTextColor.WriteCenteredColorBack(height, TimeDateRenderers.RenderDate(new DateTime(2024, 3, 11)), col, black);
+
+                            // Sleep
+                            ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                        }
+                        break;
+                    // Step 2: 0.1.0 doesn't fade out, but a glitch shows
+                    case 2:
+                        for (int delayed = 0; delayed < 5000; delayed += 10)
+                        {
+                            ThreadManager.SleepNoBlock(10, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                            Glitch.GlitchAt();
+                        }
+                        break;
+                    // Step 3: Flickering colors between white and each version's color
+                    case 3:
+                        int maxFlashes = 200;
+                        for (int flashes = 0; flashes <= maxFlashes; flashes++)
+                        {
+                            bool showGreen = flashes % 2 == 0;
+                            if (showGreen)
+                                ColorTools.LoadBackDry(green);
+                            else
+                                ColorTools.LoadBackDry(white);
+                            ThreadManager.SleepNoBlock(50, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                        }
+                        for (int flashes = 0; flashes <= maxFlashes; flashes++)
+                        {
+                            bool showRed = flashes % 2 == 0;
+                            if (showRed)
+                                ColorTools.LoadBackDry(red);
+                            else
+                                ColorTools.LoadBackDry(white);
+                            ThreadManager.SleepNoBlock(50, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                        }
+                        for (int flashes = 0; flashes <= maxFlashes; flashes++)
+                        {
+                            bool showPink = flashes % 2 == 0;
+                            if (showPink)
+                                ColorTools.LoadBackDry(pink);
+                            else
+                                ColorTools.LoadBackDry(white);
+                            ThreadManager.SleepNoBlock(50, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                        }
+                        for (int flashes = 0; flashes <= maxFlashes; flashes++)
+                        {
+                            bool showBlue = flashes % 2 == 0;
+                            if (showBlue)
+                                ColorTools.LoadBackDry(blue);
+                            else
+                                ColorTools.LoadBackDry(white);
+                            ThreadManager.SleepNoBlock(50, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                        }
+                        break;
+                    // Step 4: White background for a few seconds
+                    case 4:
+                        ColorTools.LoadBackDry(white);
                         ThreadManager.SleepNoBlock(5000, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                        break;
+                    // Step 5: "THE END" shows for a few seconds
+                    case 5:
+                        CenteredFigletTextColor.WriteCenteredFigletColorBack(font, Translate.DoTranslation("The End").ToUpper(), green, white);
+                        ThreadManager.SleepNoBlock(5000, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                        break;
+                    // Step 6: With the figlet text, the background fades out
+                    case 6:
+                        // Get the color thresholds
+                        double thresholdR = green.R / (double)colorSteps;
+                        double thresholdG = green.G / (double)colorSteps;
+                        double thresholdB = green.B / (double)colorSteps;
+                        double thresholdBGR = white.R / (double)colorSteps;
+                        double thresholdBGG = white.G / (double)colorSteps;
+                        double thresholdBGB = white.B / (double)colorSteps;
+                        currentR = green.R;
+                        currentG = green.G;
+                        currentB = green.B;
+                        int currentBGR = white.R;
+                        int currentBGG = white.G;
+                        int currentBGB = white.B;
+                        for (int currentStep = 1; currentStep <= colorSteps; currentStep++)
+                        {
+                            if (ConsoleResizeHandler.WasResized(false))
+                                break;
+
+                            // Remove the values according to the threshold
+                            currentR = (int)Math.Round(currentR - thresholdR);
+                            currentG = (int)Math.Round(currentG - thresholdG);
+                            currentB = (int)Math.Round(currentB - thresholdB);
+                            currentBGR = (int)Math.Round(currentBGR - thresholdBGR);
+                            currentBGG = (int)Math.Round(currentBGG - thresholdBGG);
+                            currentBGB = (int)Math.Round(currentBGB - thresholdBGB);
+
+                            // Now, make a color and fill the console with it
+                            Color col = new(currentR, currentG, currentB);
+                            Color colBG = new(currentBGR, currentBGG, currentBGB);
+                            ColorTools.LoadBackDry(colBG);
+                            CenteredFigletTextColor.WriteCenteredFigletColorBack(font, Translate.DoTranslation("The End").ToUpper(), col, colBG);
+
+                            // Sleep
+                            ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                        }
                         break;
                 }
             }
