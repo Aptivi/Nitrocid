@@ -93,7 +93,7 @@ namespace Nitrocid.Files.Editors.HexEdit
             var screen = new Screen();
             ScreenTools.SetCurrent(screen);
             ConsoleWrapper.CursorVisible = false;
-            ColorTools.LoadBack();
+            ColorTools.LoadBackDry(InteractiveTuiStatus.OptionBackgroundColor);
             try
             {
                 while (!bail)
@@ -154,7 +154,8 @@ namespace Nitrocid.Files.Editors.HexEdit
                             GetBindingKeyShortcut(binding, false) +
                             $"{InteractiveTuiStatus.OptionForegroundColor.VTSequenceForeground}" +
                             $"{InteractiveTuiStatus.BackgroundColor.VTSequenceBackground}" +
-                            $" {(binding._localizable ? Translate.DoTranslation(binding.Name) : binding.Name)}  "
+                            $" {(binding._localizable ? Translate.DoTranslation(binding.Name) : binding.Name)}  " +
+                            ConsoleExtensions.GetClearLineToRightSequence()
                         );
                     }
                     else
@@ -165,7 +166,8 @@ namespace Nitrocid.Files.Editors.HexEdit
                             $"{CsiSequences.GenerateCsiCursorPosition(ConsoleWrapper.WindowWidth - 2, ConsoleWrapper.WindowHeight)}" +
                             $"{InteractiveTuiStatus.KeyBindingOptionColor.VTSequenceForeground}" +
                             $"{InteractiveTuiStatus.OptionBackgroundColor.VTSequenceBackground}" +
-                            " K "
+                            " K " +
+                            ConsoleExtensions.GetClearLineToRightSequence()
                         );
                         break;
                     }
@@ -184,7 +186,7 @@ namespace Nitrocid.Files.Editors.HexEdit
                 var builder = new StringBuilder();
                 builder.Append(
                     $"{InteractiveTuiStatus.ForegroundColor.VTSequenceForeground}" +
-                    $"{KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground}" +
+                    $"{InteractiveTuiStatus.BackgroundColor.VTSequenceBackground}" +
                     $"{TextWriterWhereColor.RenderWherePlain(status + ConsoleExtensions.GetClearLineToRightSequence(), 0, 0)}"
                 );
                 return builder.ToString();
@@ -208,7 +210,7 @@ namespace Nitrocid.Files.Editors.HexEdit
                 // Render the box
                 builder.Append(
                     $"{InteractiveTuiStatus.PaneSeparatorColor.VTSequenceForeground}" +
-                    $"{KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground}" +
+                    $"{InteractiveTuiStatus.BackgroundColor.VTSequenceBackground}" +
                     $"{BorderColor.RenderBorderPlain(0, SeparatorMinimumHeight, SeparatorConsoleWidthInterior, SeparatorMaximumHeightInterior)}"
                 );
                 return builder.ToString();
@@ -242,7 +244,7 @@ namespace Nitrocid.Files.Editors.HexEdit
                 // Render the box
                 builder.Append(
                     $"{InteractiveTuiStatus.ForegroundColor.VTSequenceForeground}" +
-                    $"{KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground}" +
+                    $"{InteractiveTuiStatus.BackgroundColor.VTSequenceBackground}" +
                     $"{TextWriterWhereColor.RenderWherePlain(rendered, 1, 2)}"
                 );
                 return builder.ToString();
