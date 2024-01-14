@@ -48,12 +48,12 @@ namespace Nitrocid.Shell.ShellBase.Arguments
 
             // Get the commands based on the current shell type
             var shellType = ShellManager.CurrentShellType;
-            var ShellCommands = CommandManager.GetCommands(shellType);
-            DebugWriter.WriteDebug(DebugLevel.I, "Commands count for type {0}: {1}", shellType, ShellCommands.Count);
+            var ShellCommandNames = CommandManager.GetCommandNames(shellType);
+            DebugWriter.WriteDebug(DebugLevel.I, "Commands count for type {0}: {1}", shellType, ShellCommandNames.Length);
 
             // If text is not provided, return the command list without filtering
             if (string.IsNullOrEmpty(text))
-                return [.. ShellCommands.Keys];
+                return ShellCommandNames;
 
             // Get the provided command and argument information
             var commandArgumentInfo = ArgumentsParser.ParseShellCommandArguments(text, shellType).total[0];
@@ -85,7 +85,7 @@ namespace Nitrocid.Shell.ShellBase.Arguments
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Creating list of commands starting with command {0} [{1}]...", CommandName, CommandName.Length);
-                finalCompletions = ShellCommands.Keys
+                finalCompletions = ShellCommandNames
                     .Where(x => x.StartsWith(CommandName))
                     .Select(x => x[CommandName.Length..])
                     .ToArray();
@@ -93,11 +93,12 @@ namespace Nitrocid.Shell.ShellBase.Arguments
             }
 
             // Check to see if there is such command
-            DebugWriter.WriteDebug(DebugLevel.I, "Command {0} exists? {1}", CommandName, ShellCommands.ContainsKey(CommandName));
-            if (!ShellCommands.TryGetValue(CommandName, out CommandInfo cmdInfo))
+            DebugWriter.WriteDebug(DebugLevel.I, "Command {0} exists? {1}", CommandName, ShellCommandNames.Contains(CommandName));
+            if (!ShellCommandNames.Contains(CommandName))
                 return finalCompletions;
 
             // We have the command. Check its entry for argument info
+            var cmdInfo = CommandManager.GetCommand(CommandName, shellType);
             var CommandArgumentInfos = cmdInfo.CommandArgumentInfo;
             foreach (var CommandArgumentInfo in CommandArgumentInfos)
             {

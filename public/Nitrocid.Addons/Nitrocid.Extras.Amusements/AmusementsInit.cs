@@ -34,132 +34,111 @@ using Nitrocid.Misc.Screensaver;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Misc.Splash;
 using Nitrocid.Modifications;
+using System.Linq;
 
 namespace Nitrocid.Extras.Amusements
 {
     internal class AmusementsInit : IAddon
     {
-        private readonly Dictionary<string, CommandInfo> addonCommands = new()
-        {
-            { "backrace",
-                new CommandInfo("backrace", /* Localizable */ "Do you back the wrong horse?",
-                    [
-                        new CommandArgumentInfo()
-                    ], new BackRaceCommand())
-            },
+        private readonly List<CommandInfo> addonCommands =
+        [
+            new CommandInfo("backrace", /* Localizable */ "Do you back the wrong horse?",
+                [
+                    new CommandArgumentInfo()
+                ], new BackRaceCommand()),
 
-            { "hangman",
-                new CommandInfo("hangman", /* Localizable */ "Starts the Hangman game",
-                    [
-                        new CommandArgumentInfo(new[] {
-                            new SwitchInfo("hardcore", /* Localizable */ "One wrong letter and you're hung!", new SwitchOptions()
-                            {
-                                ConflictsWith = ["practice"],
-                                AcceptsValues = false
-                            }),
-                            new SwitchInfo("practice", /* Localizable */ "Test your Hangman skills by throwing a random letter.", new SwitchOptions()
-                            {
-                                ConflictsWith = ["hardcore"],
-                                AcceptsValues = false
-                            }),
+            new CommandInfo("hangman", /* Localizable */ "Starts the Hangman game",
+                [
+                    new CommandArgumentInfo(new[] {
+                        new SwitchInfo("hardcore", /* Localizable */ "One wrong letter and you're hung!", new SwitchOptions()
+                        {
+                            ConflictsWith = ["practice"],
+                            AcceptsValues = false
+                        }),
+                        new SwitchInfo("practice", /* Localizable */ "Test your Hangman skills by throwing a random letter.", new SwitchOptions()
+                        {
+                            ConflictsWith = ["hardcore"],
+                            AcceptsValues = false
+                        }),
+                    })
+                ], new HangmanCommand()),
+
+            new CommandInfo("meteor", /* Localizable */ "You are a spaceship and the meteors are coming to destroy you. Can you save it?",
+                [
+                    new CommandArgumentInfo()
+                ], new MeteorCommand()),
+
+            new CommandInfo("quote", /* Localizable */ "Gets a random quote",
+                [
+                    new CommandArgumentInfo()
+                ], new QuoteCommand()),
+
+            new CommandInfo("roulette", /* Localizable */ "Russian Roulette",
+                [
+                    new CommandArgumentInfo()
+                ], new RouletteCommand()),
+
+            new CommandInfo("shipduet", /* Localizable */ "Two spaceships are on a fight with each other. One shot and the spaceship will blow. This is a local two-player game.",
+                [
+                    new CommandArgumentInfo()
+                ], new ShipDuetCommand()),
+
+            new CommandInfo("snaker", /* Localizable */ "The snake game!",
+                [
+                    new CommandArgumentInfo()
+                ], new SnakerCommand()),
+
+            new CommandInfo("solver", /* Localizable */ "See if you can solve mathematical equations on time",
+                [
+                    new CommandArgumentInfo()
+                ], new SolverCommand()),
+
+            new CommandInfo("speedpress", /* Localizable */ "See if you can press a key on time",
+                [
+                    new CommandArgumentInfo(new[] {
+                        new SwitchInfo("e", /* Localizable */ "Starts the game in easy difficulty", new SwitchOptions()
+                        {
+                            ConflictsWith = ["m", "h", "v", "c"],
+                            AcceptsValues = false
+                        }),
+                        new SwitchInfo("m", /* Localizable */ "Starts the game in medium difficulty", new SwitchOptions()
+                        {
+                            ConflictsWith = ["v", "h", "e", "c"],
+                            AcceptsValues = false
+                        }),
+                        new SwitchInfo("h", /* Localizable */ "Starts the game in hard difficulty", new SwitchOptions()
+                        {
+                            ConflictsWith = ["m", "v", "e", "c"],
+                            AcceptsValues = false
+                        }),
+                        new SwitchInfo("v", /* Localizable */ "Starts the game in very hard difficulty", new SwitchOptions()
+                        {
+                            ConflictsWith = ["m", "h", "e", "c"],
+                            AcceptsValues = false
+                        }),
+                        new SwitchInfo("c", /* Localizable */ "Starts the game in custom difficulty. Please note that the custom timeout in milliseconds should be written as argument.", new SwitchOptions()
+                        {
+                            ConflictsWith = ["m", "h", "v", "e"],
+                            ArgumentsRequired = true
                         })
-                    ], new HangmanCommand())
-            },
+                    })
+                ], new SpeedPressCommand()),
 
-            { "meteor",
-                new CommandInfo("meteor", /* Localizable */ "You are a spaceship and the meteors are coming to destroy you. Can you save it?",
-                    [
-                        new CommandArgumentInfo()
-                    ], new MeteorCommand())
-            },
-
-            { "quote",
-                new CommandInfo("quote", /* Localizable */ "Gets a random quote",
-                    [
-                        new CommandArgumentInfo()
-                    ], new QuoteCommand())
-            },
-
-            { "roulette",
-                new CommandInfo("roulette", /* Localizable */ "Russian Roulette",
-                    [
-                        new CommandArgumentInfo()
-                    ], new RouletteCommand())
-            },
-
-            { "shipduet",
-                new CommandInfo("shipduet", /* Localizable */ "Two spaceships are on a fight with each other. One shot and the spaceship will blow. This is a local two-player game.",
-                    [
-                        new CommandArgumentInfo()
-                    ], new ShipDuetCommand())
-            },
-
-            { "snaker",
-                new CommandInfo("snaker", /* Localizable */ "The snake game!",
-                    [
-                        new CommandArgumentInfo()
-                    ], new SnakerCommand())
-            },
-
-            { "solver",
-                new CommandInfo("solver", /* Localizable */ "See if you can solve mathematical equations on time",
-                    [
-                        new CommandArgumentInfo()
-                    ], new SolverCommand())
-            },
-
-            { "speedpress",
-                new CommandInfo("speedpress", /* Localizable */ "See if you can press a key on time",
-                    [
-                        new CommandArgumentInfo(new[] {
-                            new SwitchInfo("e", /* Localizable */ "Starts the game in easy difficulty", new SwitchOptions()
-                            {
-                                ConflictsWith = ["m", "h", "v", "c"],
-                                AcceptsValues = false
-                            }),
-                            new SwitchInfo("m", /* Localizable */ "Starts the game in medium difficulty", new SwitchOptions()
-                            {
-                                ConflictsWith = ["v", "h", "e", "c"],
-                                AcceptsValues = false
-                            }),
-                            new SwitchInfo("h", /* Localizable */ "Starts the game in hard difficulty", new SwitchOptions()
-                            {
-                                ConflictsWith = ["m", "v", "e", "c"],
-                                AcceptsValues = false
-                            }),
-                            new SwitchInfo("v", /* Localizable */ "Starts the game in very hard difficulty", new SwitchOptions()
-                            {
-                                ConflictsWith = ["m", "h", "e", "c"],
-                                AcceptsValues = false
-                            }),
-                            new SwitchInfo("c", /* Localizable */ "Starts the game in custom difficulty. Please note that the custom timeout in milliseconds should be written as argument.", new SwitchOptions()
-                            {
-                                ConflictsWith = ["m", "h", "v", "e"],
-                                ArgumentsRequired = true
-                            })
+            new CommandInfo("wordle", /* Localizable */ "The Wordle game simulator",
+                [
+                    new CommandArgumentInfo(new[] {
+                        new SwitchInfo("orig", /* Localizable */ "Play the Wordle game originally", new SwitchOptions()
+                        {
+                            AcceptsValues = false
                         })
-                    ], new SpeedPressCommand())
-            },
+                    })
+                ], new WordleCommand()),
 
-            { "wordle",
-                new CommandInfo("wordle", /* Localizable */ "The Wordle game simulator",
-                    [
-                        new CommandArgumentInfo(new[] {
-                            new SwitchInfo("orig", /* Localizable */ "Play the Wordle game originally", new SwitchOptions()
-                            {
-                                AcceptsValues = false
-                            })
-                        })
-                    ], new WordleCommand())
-            },
-
-            { "2018",
-                new CommandInfo("2018", /* Localizable */ "Commemorates the 5-year anniversary of the kernel release",
-                    [
-                        new CommandArgumentInfo()
-                    ], new AnniversaryCommand())
-            },
-        };
+            new CommandInfo("2018", /* Localizable */ "Commemorates the 5-year anniversary of the kernel release",
+                [
+                    new CommandArgumentInfo()
+                ], new AnniversaryCommand()),
+        ];
 
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasAmusements);
@@ -188,7 +167,7 @@ namespace Nitrocid.Extras.Amusements
 
         void IAddon.StartAddon()
         {
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands.Values]);
+            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
             ScreensaverManager.AddonSavers.Add("meteor", new MeteorDisplay());
             ScreensaverManager.AddonSavers.Add("quote", new QuoteDisplay());
             ScreensaverManager.AddonSavers.Add("shipduet", new ShipDuetDisplay());
@@ -210,7 +189,7 @@ namespace Nitrocid.Extras.Amusements
 
         void IAddon.StopAddon()
         {
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Keys]);
+            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
             ScreensaverManager.AddonSavers.Remove("meteor");
             ScreensaverManager.AddonSavers.Remove("quote");
             ScreensaverManager.AddonSavers.Remove("shipduet");

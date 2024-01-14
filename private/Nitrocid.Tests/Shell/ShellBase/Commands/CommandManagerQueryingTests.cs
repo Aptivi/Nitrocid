@@ -37,9 +37,9 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [Description("Querying")]
         public void TestGetCommandListFromSpecificShell()
         {
-            var Commands = CommandManager.GetCommands(ShellType.Shell);
-            Console.WriteLine(format: "Commands from Shell: {0} commands", Commands.Count);
-            Console.WriteLine(format: string.Join(", ", Commands.Keys));
+            var Commands = CommandManager.GetCommandNames(ShellType.Shell);
+            Console.WriteLine(format: "Commands from Shell: {0} commands", Commands.Length);
+            Console.WriteLine(format: string.Join(", ", Commands));
             Commands.ShouldNotBeNull();
             Commands.ShouldNotBeEmpty();
         }
@@ -56,9 +56,9 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [Description("Querying")]
         public void TestGetCommandListFromAllShells(ShellType type)
         {
-            var Commands = CommandManager.GetCommands(type);
-            Console.WriteLine(format: "Commands from {0}: {1} commands", type.ToString(), Commands.Count);
-            Console.WriteLine(format: string.Join(", ", Commands.Keys));
+            var Commands = CommandManager.GetCommandNames(type);
+            Console.WriteLine(format: "Commands from {0}: {1} commands", type.ToString(), Commands.Length);
+            Console.WriteLine(format: string.Join(", ", Commands));
             Commands.ShouldNotBeNull();
             Commands.ShouldNotBeEmpty();
         }
@@ -75,9 +75,9 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [Description("Querying")]
         public void TestGetCommandListFromAllShells(string type)
         {
-            var Commands = CommandManager.GetCommands(type);
-            Console.WriteLine(format: "Commands from {0}: {1} commands", type, Commands.Count);
-            Console.WriteLine(format: string.Join(", ", Commands.Keys));
+            var Commands = CommandManager.GetCommandNames(type);
+            Console.WriteLine(format: "Commands from {0}: {1} commands", type, Commands.Length);
+            Console.WriteLine(format: string.Join(", ", Commands));
             Commands.ShouldNotBeNull();
             Commands.ShouldNotBeEmpty();
         }

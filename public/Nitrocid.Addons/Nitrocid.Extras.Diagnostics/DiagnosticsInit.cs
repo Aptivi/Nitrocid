@@ -28,19 +28,18 @@ using System.Reflection;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Modifications;
+using System.Linq;
 
 namespace Nitrocid.Extras.Diagnostics
 {
     internal class DiagnosticsInit : IAddon
     {
-        private readonly Dictionary<string, CommandInfo> addonCommands = new()
+        private readonly List<CommandInfo> addonCommands = new()
         {
-            { "threadsbt",
-                new CommandInfo("threadsbt", /* Localizable */ "Gets backtrace for all threads",
-                    [
-                        new CommandArgumentInfo()
-                    ], new ThreadsBtCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
-            },
+            new CommandInfo("threadsbt", /* Localizable */ "Gets backtrace for all threads",
+                [
+                    new CommandArgumentInfo()
+                ], new ThreadsBtCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
         };
 
         string IAddon.AddonName =>
@@ -61,9 +60,9 @@ namespace Nitrocid.Extras.Diagnostics
         { }
 
         void IAddon.StartAddon() =>
-            CommandManager.RegisterAddonCommands(ShellType.DebugShell, [.. addonCommands.Values]);
+            CommandManager.RegisterAddonCommands(ShellType.DebugShell, [.. addonCommands]);
 
         void IAddon.StopAddon() =>
-            CommandManager.UnregisterAddonCommands(ShellType.DebugShell, [.. addonCommands.Keys]);
+            CommandManager.UnregisterAddonCommands(ShellType.DebugShell, [.. addonCommands.Select((ci) => ci.Command)]);
     }
 }

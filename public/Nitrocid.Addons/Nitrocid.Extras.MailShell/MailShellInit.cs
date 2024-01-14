@@ -29,23 +29,22 @@ using Nitrocid.Shell.ShellBase.Shells;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Reflection;
 
 namespace Nitrocid.Extras.MailShell
 {
     internal class MailShellInit : IAddon
     {
-        private readonly Dictionary<string, CommandInfo> addonCommands = new()
+        private readonly List<CommandInfo> addonCommands = new()
         {
-            { "mail",
-                new CommandInfo("mail", /* Localizable */ "Opens the mail client",
-                    [
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(false, "emailAddress"),
-                        })
-                    ], new MailCommandExec())
-            },
+            new CommandInfo("mail", /* Localizable */ "Opens the mail client",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(false, "emailAddress"),
+                    })
+                ], new MailCommandExec())
         };
 
         string IAddon.AddonName =>
@@ -68,7 +67,7 @@ namespace Nitrocid.Extras.MailShell
             ConfigTools.RegisterBaseSetting(config);
             ShellManager.reservedShells.Add("MailShell");
             ShellManager.RegisterShell("MailShell", new MailShellInfo());
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands.Values]);
+            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
         }
 
         void IAddon.StartAddon()
@@ -79,7 +78,7 @@ namespace Nitrocid.Extras.MailShell
             ShellManager.availableShells.Remove("MailShell");
             PromptPresetManager.CurrentPresets.Remove("MailShell");
             ShellManager.reservedShells.Remove("MailShell");
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Keys]);
+            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
             ConfigTools.UnregisterBaseSetting(nameof(MailConfig));
         }
     }

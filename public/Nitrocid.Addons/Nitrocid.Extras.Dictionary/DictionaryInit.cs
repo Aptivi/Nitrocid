@@ -27,22 +27,21 @@ using System.Reflection;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Modifications;
+using System.Linq;
 
 namespace Nitrocid.Extras.Dictionary
 {
     internal class DictionaryInit : IAddon
     {
-        private readonly Dictionary<string, CommandInfo> addonCommands = new()
+        private readonly List<CommandInfo> addonCommands = new()
         {
-            { "dict",
-                new CommandInfo("dict", /* Localizable */ "The English Dictionary",
-                    [
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "word"),
-                        })
-                    ], new DictCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
-            },
+            new CommandInfo("dict", /* Localizable */ "The English Dictionary",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "word"),
+                    })
+                ], new DictCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
         };
 
         string IAddon.AddonName =>
@@ -57,10 +56,10 @@ namespace Nitrocid.Extras.Dictionary
         ReadOnlyDictionary<string, FieldInfo> IAddon.PubliclyAvailableFields => null;
 
         void IAddon.StartAddon() =>
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands.Values]);
+            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
 
         void IAddon.StopAddon() =>
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Keys]);
+            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
 
         void IAddon.FinalizeAddon()
         { }

@@ -40,186 +40,154 @@ namespace Nitrocid.Shell.Shells.Debug
         /// <summary>
         /// Debug commands
         /// </summary>
-        public override Dictionary<string, CommandInfo> Commands => new()
+        public override List<CommandInfo> Commands => new()
         {
-            { "currentbt",
-                new CommandInfo("currentbt", /* Localizable */ "Gets current backtrace",
-                    [
-                        new CommandArgumentInfo()
-                    ], new CurrentBtCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
-            },
+            new CommandInfo("currentbt", /* Localizable */ "Gets current backtrace",
+                [
+                    new CommandArgumentInfo()
+                ], new CurrentBtCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
-            { "debuglog",
-                new CommandInfo("debuglog", /* Localizable */ "Easily fetches the debug log information using the session number",
-                    [
-                        new CommandArgumentInfo(new[]
+            new CommandInfo("debuglog", /* Localizable */ "Easily fetches the debug log information using the session number",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "sessionNum", new CommandArgumentPartOptions()
                         {
-                            new CommandArgumentPart(true, "sessionNum", new CommandArgumentPartOptions()
-                            {
-                                IsNumeric = true
-                            })
+                            IsNumeric = true
                         })
-                    ], new DebugLogCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
-            },
+                    })
+                ], new DebugLogCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
-            { "excinfo",
-                new CommandInfo("excinfo", /* Localizable */ "Gets message from kernel exception type. Useful for debugging",
-                    [
-                        new CommandArgumentInfo(new[]
+            new CommandInfo("excinfo", /* Localizable */ "Gets message from kernel exception type. Useful for debugging",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "excNum", new CommandArgumentPartOptions()
                         {
-                            new CommandArgumentPart(true, "excNum", new CommandArgumentPartOptions()
-                            {
-                                IsNumeric = true
-                            })
+                            IsNumeric = true
                         })
-                    ], new ExcInfoCommand())
-            },
+                    })
+                ], new ExcInfoCommand()),
 
-            { "getfieldvalue",
-                new CommandInfo("getfieldvalue", /* Localizable */ "Gets a field value",
-                    [
-                        new CommandArgumentInfo(new[]
+            new CommandInfo("getfieldvalue", /* Localizable */ "Gets a field value",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "field", new CommandArgumentPartOptions()
                         {
-                            new CommandArgumentPart(true, "field", new CommandArgumentPartOptions()
-                            {
-                                AutoCompleter = (_) => FieldManager.GetAllFieldsNoEvaluation().Keys.ToArray(),
-                            })
-                        }, true)
-                    ], new GetFieldValueCommand())
-            },
-
-            { "getpropertyvalue",
-                new CommandInfo("getpropertyvalue", /* Localizable */ "Gets a property value",
-                    [
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "property", new CommandArgumentPartOptions()
-                            {
-                                AutoCompleter = (_) => PropertyManager.GetAllPropertiesNoEvaluation().Keys.ToArray(),
-                            })
-                        }, true)
-                    ], new GetPropertyValueCommand())
-            },
-
-            { "keyinfo",
-                new CommandInfo("keyinfo", /* Localizable */ "Gets key information for a pressed key. Useful for debugging",
-                    [
-                        new CommandArgumentInfo()
-                    ], new KeyInfoCommand())
-            },
-
-            { "lsaddons",
-                new CommandInfo("lsaddons", /* Localizable */ "Lists all available addons",
-                    [
-                        new CommandArgumentInfo()
-                    ], new LsAddonsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
-            },
-
-            { "lsaddonfields",
-                new CommandInfo("lsaddonfields", /* Localizable */ "Lists all available fields from the specified addon",
-                    [
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "addon", new CommandArgumentPartOptions()
-                            {
-                                AutoCompleter = (_) => AddonTools.GetAddons(),
-                            })
+                            AutoCompleter = (_) => FieldManager.GetAllFieldsNoEvaluation().Keys.ToArray(),
                         })
-                    ], new LsAddonFieldsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
-            },
+                    }, true)
+                ], new GetFieldValueCommand()),
 
-            { "lsaddonfuncs",
-                new CommandInfo("lsaddonfuncs", /* Localizable */ "Lists all available functions from the specified addon",
-                    [
-                        new CommandArgumentInfo(new[]
+            new CommandInfo("getpropertyvalue", /* Localizable */ "Gets a property value",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "property", new CommandArgumentPartOptions()
                         {
-                            new CommandArgumentPart(true, "addon", new CommandArgumentPartOptions()
-                            {
-                                AutoCompleter = (_) => AddonTools.GetAddons(),
-                            })
+                            AutoCompleter = (_) => PropertyManager.GetAllPropertiesNoEvaluation().Keys.ToArray(),
                         })
-                    ], new LsAddonFuncsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
-            },
+                    }, true)
+                ], new GetPropertyValueCommand()),
 
-            { "lsaddonprops",
-                new CommandInfo("lsaddonprops", /* Localizable */ "Lists all available properties from the specified addon",
-                    [
-                        new CommandArgumentInfo(new[]
+            new CommandInfo("keyinfo", /* Localizable */ "Gets key information for a pressed key. Useful for debugging",
+                [
+                    new CommandArgumentInfo()
+                ], new KeyInfoCommand()),
+
+            new CommandInfo("lsaddons", /* Localizable */ "Lists all available addons",
+                [
+                    new CommandArgumentInfo()
+                ], new LsAddonsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
+
+            new CommandInfo("lsaddonfields", /* Localizable */ "Lists all available fields from the specified addon",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "addon", new CommandArgumentPartOptions()
                         {
-                            new CommandArgumentPart(true, "addon", new CommandArgumentPartOptions()
-                            {
-                                AutoCompleter = (_) => AddonTools.GetAddons(),
-                            })
+                            AutoCompleter = (_) => AddonTools.GetAddons(),
                         })
-                    ], new LsAddonPropsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
-            },
+                    })
+                ], new LsAddonFieldsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
-            { "lsbaseaddons",
-                new CommandInfo("lsbaseaddons", /* Localizable */ "Lists all the base addons and their status",
-                    [
-                        new CommandArgumentInfo()
-                    ], new LsBaseAddonsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
-            },
-
-            { "lsfields",
-                new CommandInfo("lsfields", /* Localizable */ "Lists all available public fields",
-                    [
-                        new CommandArgumentInfo(new[]
+            new CommandInfo("lsaddonfuncs", /* Localizable */ "Lists all available functions from the specified addon",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "addon", new CommandArgumentPartOptions()
                         {
-                            new SwitchInfo("suppress", /* Localizable */ "Suppresses the error messages", new SwitchOptions()
-                            {
-                                AcceptsValues = false
-                            })
+                            AutoCompleter = (_) => AddonTools.GetAddons(),
                         })
-                    ], new LsFieldsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
-            },
+                    })
+                ], new LsAddonFuncsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
-            { "lsproperties",
-                new CommandInfo("lsproperties", /* Localizable */ "Lists all available public properties",
-                    [
-                        new CommandArgumentInfo(new[]
+            new CommandInfo("lsaddonprops", /* Localizable */ "Lists all available properties from the specified addon",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "addon", new CommandArgumentPartOptions()
                         {
-                            new SwitchInfo("suppress", /* Localizable */ "Suppresses the error messages", new SwitchOptions()
-                            {
-                                AcceptsValues = false
-                            })
+                            AutoCompleter = (_) => AddonTools.GetAddons(),
                         })
-                    ], new LsPropertiesCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
-            },
+                    })
+                ], new LsAddonPropsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
-            { "lsshells",
-                new CommandInfo("lsshells", /* Localizable */ "Lists all available shells",
-                    [
-                        new CommandArgumentInfo()
-                    ], new LsShellsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
-            },
+            new CommandInfo("lsbaseaddons", /* Localizable */ "Lists all the base addons and their status",
+                [
+                    new CommandArgumentInfo()
+                ], new LsBaseAddonsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
-            { "previewsplash",
-                new CommandInfo("previewsplash", /* Localizable */ "Previews the splash",
-                    [
-                        new CommandArgumentInfo(
-                        [
-                            new CommandArgumentPart(true, "splashName"),
-                        ],
-                        [
-                            new SwitchInfo("splashout", /* Localizable */ "Specifies whether to test out the important messages feature on splash", new SwitchOptions()
-                            {
-                                AcceptsValues = false
-                            }),
-                            new SwitchInfo("context", /* Localizable */ "Specifies the splash screen context", new SwitchOptions()
-                            {
-                                ArgumentsRequired = true
-                            }),
-                        ])
-                    ], new PreviewSplashCommand())
-            },
+            new CommandInfo("lsfields", /* Localizable */ "Lists all available public fields",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new SwitchInfo("suppress", /* Localizable */ "Suppresses the error messages", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        })
+                    })
+                ], new LsFieldsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
-            { "showmainbuffer",
-                new CommandInfo("showmainbuffer", /* Localizable */ "Shows the main buffer that was on the screen before starting Nitrocid KS (Unix systems only)",
+            new CommandInfo("lsproperties", /* Localizable */ "Lists all available public properties",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new SwitchInfo("suppress", /* Localizable */ "Suppresses the error messages", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        })
+                    })
+                ], new LsPropertiesCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
+
+            new CommandInfo("lsshells", /* Localizable */ "Lists all available shells",
+                [
+                    new CommandArgumentInfo()
+                ], new LsShellsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
+
+            new CommandInfo("previewsplash", /* Localizable */ "Previews the splash",
+                [
+                    new CommandArgumentInfo(
                     [
-                        new CommandArgumentInfo()
-                    ], new ShowMainBufferCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
-            },
+                        new CommandArgumentPart(true, "splashName"),
+                    ],
+                    [
+                        new SwitchInfo("splashout", /* Localizable */ "Specifies whether to test out the important messages feature on splash", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                        new SwitchInfo("context", /* Localizable */ "Specifies the splash screen context", new SwitchOptions()
+                        {
+                            ArgumentsRequired = true
+                        }),
+                    ])
+                ], new PreviewSplashCommand()),
+
+            new CommandInfo("showmainbuffer", /* Localizable */ "Shows the main buffer that was on the screen before starting Nitrocid KS (Unix systems only)",
+                [
+                    new CommandArgumentInfo()
+                ], new ShowMainBufferCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
         };
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()

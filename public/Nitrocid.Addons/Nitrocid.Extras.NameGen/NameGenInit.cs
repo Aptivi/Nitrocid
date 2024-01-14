@@ -32,14 +32,14 @@ using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Misc.Screensaver;
 using Nitrocid.Modifications;
+using System.Linq;
 
 namespace Nitrocid.Extras.NameGen
 {
     internal class NameGenInit : IAddon
     {
-        private readonly Dictionary<string, CommandInfo> addonCommands = new()
+        private readonly List<CommandInfo> addonCommands = new()
         {
-            { "findfirstname",
                 new CommandInfo("findfirstname", /* Localizable */ "First name finder",
                     [
                         new CommandArgumentInfo(
@@ -69,9 +69,8 @@ namespace Nitrocid.Extras.NameGen
                                 AcceptsValues = false,
                             }),
                         ], true)
-                    ], new FindFirstNameCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
-            },
-            { "findsurname",
+                    ], new FindFirstNameCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
+
                 new CommandInfo("findsurname", /* Localizable */ "Surname finder",
                     [
                         new CommandArgumentInfo(
@@ -80,9 +79,8 @@ namespace Nitrocid.Extras.NameGen
                             new CommandArgumentPart(false, "surnameprefix"),
                             new CommandArgumentPart(false, "surnamesuffix"),
                         ], true)
-                    ], new FindSurnameCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
-            },
-            { "genname",
+                    ], new FindSurnameCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
+
                 new CommandInfo("genname", /* Localizable */ "Name and surname generator",
                     [
                         new CommandArgumentInfo(
@@ -117,8 +115,7 @@ namespace Nitrocid.Extras.NameGen
                                 AcceptsValues = false,
                             }),
                         ], true)
-                    ], new GenNameCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
-            },
+                    ], new GenNameCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
         };
 
         string IAddon.AddonName =>
@@ -137,7 +134,7 @@ namespace Nitrocid.Extras.NameGen
 
         void IAddon.StartAddon()
         {
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands.Values]);
+            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
             ScreensaverManager.AddonSavers.Add("personlookup", new PersonLookupDisplay());
 
             // Then, initialize configuration in a way that no mod can play with them
@@ -147,7 +144,7 @@ namespace Nitrocid.Extras.NameGen
 
         void IAddon.StopAddon()
         {
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Keys]);
+            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
             ScreensaverManager.AddonSavers.Remove("personlookup");
             ConfigTools.UnregisterBaseSetting(nameof(NameGenSaversConfig));
         }

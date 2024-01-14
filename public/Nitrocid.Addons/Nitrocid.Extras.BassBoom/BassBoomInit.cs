@@ -54,6 +54,7 @@ using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Misc.Screensaver;
 using Nitrocid.Files.Paths;
 using Nitrocid.Modifications;
+using System.Linq;
 
 namespace Nitrocid.Extras.BassBoom
 {
@@ -67,47 +68,39 @@ namespace Nitrocid.Extras.BassBoom
             new(".mpga", "Mp3BassBoom", PlayerHandler.Handle, PlayerHandler.InfoHandle),
         ];
 
-        private readonly Dictionary<string, CommandInfo> addonCommands = new()
+        private readonly List<CommandInfo> addonCommands = new()
         {
-            { "lyriclines",
-                new CommandInfo("lyriclines", /* Localizable */ "Gets all lyric lines from the lyric file",
-                    [
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "lyric.lrc"),
-                        })
-                    ], new LyricLinesCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
-            },
+            new CommandInfo("lyriclines", /* Localizable */ "Gets all lyric lines from the lyric file",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "lyric.lrc"),
+                    })
+                ], new LyricLinesCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
-            { "musicplayer",
-                new CommandInfo("musicplayer", /* Localizable */ "Opens an interactive music player",
-                    [
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(false, "musicFile"),
-                        })
-                    ], new MusicPlayerCommand())
-            },
+            new CommandInfo("musicplayer", /* Localizable */ "Opens an interactive music player",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(false, "musicFile"),
+                    })
+                ], new MusicPlayerCommand()),
 
-            { "playlyric",
-                new CommandInfo("playlyric", /* Localizable */ "Plays a lyric file",
-                    [
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "lyric.lrc"),
-                        })
-                    ], new PlayLyricCommand())
-            },
+            new CommandInfo("playlyric", /* Localizable */ "Plays a lyric file",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "lyric.lrc"),
+                    })
+                ], new PlayLyricCommand()),
 
-            { "playsound",
-                new CommandInfo("playsound", /* Localizable */ "Plays a sound",
-                    [
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "musicFile"),
-                        })
-                    ], new PlaySoundCommand())
-            },
+            new CommandInfo("playsound", /* Localizable */ "Plays a sound",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "musicFile"),
+                    })
+                ], new PlaySoundCommand())
         };
 
         string IAddon.AddonName =>
@@ -129,7 +122,7 @@ namespace Nitrocid.Extras.BassBoom
 
         void IAddon.StartAddon()
         {
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands.Values]);
+            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
             ScreensaverManager.AddonSavers.Add("lyrics", new LyricsDisplay());
 
             // Then, initialize configuration in a way that no mod can play with them
@@ -151,7 +144,7 @@ namespace Nitrocid.Extras.BassBoom
 
         void IAddon.StopAddon()
         {
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Keys]);
+            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
             ScreensaverManager.AddonSavers.Remove("lyrics");
             ConfigTools.UnregisterBaseSetting(nameof(BassBoomSaversConfig));
             ConfigTools.UnregisterBaseSetting(nameof(BassBoomConfig));

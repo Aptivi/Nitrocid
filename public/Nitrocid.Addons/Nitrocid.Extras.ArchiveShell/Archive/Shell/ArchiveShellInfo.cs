@@ -37,69 +37,57 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
         /// <summary>
         /// Archive commands
         /// </summary>
-        public override Dictionary<string, CommandInfo> Commands => new()
+        public override List<CommandInfo> Commands => new()
         {
-            { "cdir",
-                new CommandInfo("cdir", /* Localizable */ "Gets current local directory",
-                    [
-                        new CommandArgumentInfo()
-                    ], new CDirCommand())
-            },
+            new CommandInfo("cdir", /* Localizable */ "Gets current local directory",
+                [
+                    new CommandArgumentInfo()
+                ], new CDirCommand()),
 
-            { "chdir",
-                new CommandInfo("chdir", /* Localizable */ "Changes directory",
-                    [
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "directory")
-                        })
-                    ], new ChDirCommand())
-            },
+            new CommandInfo("chdir", /* Localizable */ "Changes directory",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "directory")
+                    })
+                ], new ChDirCommand()),
 
-            { "chadir",
-                new CommandInfo("chadir", /* Localizable */ "Changes archive directory",
-                    [
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "archivedirectory")
-                        })
-                    ], new ChADirCommand())
-            },
+            new CommandInfo("chadir", /* Localizable */ "Changes archive directory",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "archivedirectory")
+                    })
+                ], new ChADirCommand()),
 
-            { "get",
-                new CommandInfo("get", /* Localizable */ "Extracts a file to a specified directory or a current directory",
+            new CommandInfo("get", /* Localizable */ "Extracts a file to a specified directory or a current directory",
+                [
+                    new CommandArgumentInfo(
                     [
-                        new CommandArgumentInfo(
-                        [
-                            new CommandArgumentPart(true, "entry"),
-                            new CommandArgumentPart(false, "where")
-                        ],
-                        [
-                            new SwitchInfo("absolute", /* Localizable */ "Indicates that the target path is absolute")
-                        ])
-                    ], new GetCommand())
-            },
+                        new CommandArgumentPart(true, "entry"),
+                        new CommandArgumentPart(false, "where")
+                    ],
+                    [
+                        new SwitchInfo("absolute", /* Localizable */ "Indicates that the target path is absolute")
+                    ])
+                ], new GetCommand()),
 
-            { "list",
-                new CommandInfo("list", /* Localizable */ "Lists all files inside the archive",
-                    [
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(false, "directory")
-                        })
-                    ], new ListCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
-            },
+            new CommandInfo("list", /* Localizable */ "Lists all files inside the archive",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(false, "directory")
+                    })
+                ], new ListCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
-            { "pack",
-                new CommandInfo("pack", /* Localizable */ "Packs a local file to the archive",
-                    [
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "localfile"),
-                            new CommandArgumentPart(false, "where")
-                        })
-                    ], new PackCommand())
-            },
+            new CommandInfo("pack", /* Localizable */ "Packs a local file to the archive",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "localfile"),
+                        new CommandArgumentPart(false, "where")
+                    })
+                ], new PackCommand()),
         };
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()

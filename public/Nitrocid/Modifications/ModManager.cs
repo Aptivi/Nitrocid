@@ -205,7 +205,7 @@ namespace Nitrocid.Modifications
                     // Clear all mod commands list, since we've stopped all mods.
                     foreach (string ShellTypeName in ShellManager.AvailableShells.Keys)
                     {
-                        ListModCommands(ShellTypeName).Clear();
+                        ShellManager.GetShellInfo(ShellTypeName).ModCommands.Clear();
                         DebugWriter.WriteDebug(DebugLevel.I, "Mod commands for {0} cleared.", ShellTypeName);
                     }
 
@@ -513,15 +513,15 @@ namespace Nitrocid.Modifications
         /// Lists the mod commands based on the shell
         /// </summary>
         /// <param name="ShellType">Selected shell type</param>
-        public static Dictionary<string, CommandInfo> ListModCommands(ShellType ShellType) =>
+        public static CommandInfo[] ListModCommands(ShellType ShellType) =>
             ListModCommands(ShellManager.GetShellTypeName(ShellType));
 
         /// <summary>
         /// Lists the mod commands based on the shell
         /// </summary>
         /// <param name="ShellType">Selected shell type</param>
-        public static Dictionary<string, CommandInfo> ListModCommands(string ShellType) =>
-            ShellManager.GetShellInfo(ShellType).ModCommands;
+        public static CommandInfo[] ListModCommands(string ShellType) =>
+            [.. ShellManager.GetShellInfo(ShellType).ModCommands];
 
         /// <summary>
         /// Gets a mod from the name

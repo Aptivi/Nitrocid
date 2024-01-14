@@ -28,70 +28,57 @@ using System.Reflection;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Modifications;
+using System.Linq;
 
 namespace Nitrocid.Extras.Notes
 {
     internal class NotesInit : IAddon
     {
-        private readonly Dictionary<string, CommandInfo> addonCommands = new()
+        private readonly List<CommandInfo> addonCommands = new()
         {
-            { "addnote",
-                new CommandInfo("addnote", /* Localizable */ "Adds a note",
-                    [
-                        new CommandArgumentInfo(new[]
+            new CommandInfo("addnote", /* Localizable */ "Adds a note",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "noteContents...")
+                    }),
+                ], new AddNote()),
+
+            new CommandInfo("removenote", /* Localizable */ "Removes a note",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "noteNumber", new CommandArgumentPartOptions()
                         {
-                            new CommandArgumentPart(true, "noteContents...")
-                        }),
-                    ], new AddNote())
-            },
+                            IsNumeric = true
+                        })
+                    }),
+                ], new RemoveNote()),
 
-            { "removenote",
-                new CommandInfo("removenote", /* Localizable */ "Removes a note",
-                    [
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "noteNumber", new CommandArgumentPartOptions()
-                            {
-                                IsNumeric = true
-                            })
-                        }),
-                    ], new RemoveNote())
-            },
+            new CommandInfo("removenotes", /* Localizable */ "Removes all notes",
+                [
+                    new CommandArgumentInfo(),
+                ], new RemoveNotes()),
 
-            { "removenotes",
-                new CommandInfo("removenotes", /* Localizable */ "Removes all notes",
-                    [
-                        new CommandArgumentInfo(),
-                    ], new RemoveNotes())
-            },
+            new CommandInfo("listnotes", /* Localizable */ "Lists all notes",
+                [
+                    new CommandArgumentInfo(),
+                ], new ListNotes()),
 
-            { "listnotes",
-                new CommandInfo("listnotes", /* Localizable */ "Lists all notes",
-                    [
-                        new CommandArgumentInfo(),
-                    ], new ListNotes())
-            },
+            new CommandInfo("savenotes", /* Localizable */ "Saves all notes",
+                [
+                    new CommandArgumentInfo(),
+                ], new SaveNotes()),
 
-            { "savenotes",
-                new CommandInfo("savenotes", /* Localizable */ "Saves all notes",
-                    [
-                        new CommandArgumentInfo(),
-                    ], new SaveNotes())
-            },
+            new CommandInfo("reloadnotes", /* Localizable */ "Reloads all notes",
+                [
+                    new CommandArgumentInfo(),
+                ], new ReloadNotes()),
 
-            { "reloadnotes",
-                new CommandInfo("reloadnotes", /* Localizable */ "Reloads all notes",
-                    [
-                        new CommandArgumentInfo(),
-                    ], new ReloadNotes())
-            },
-
-            { "notestui",
-                new CommandInfo("notestui", /* Localizable */ "Notes viewer TUI",
-                    [
-                        new CommandArgumentInfo(),
-                    ], new NotesTui())
-            },
+            new CommandInfo("notestui", /* Localizable */ "Notes viewer TUI",
+                [
+                    new CommandArgumentInfo(),
+                ], new NotesTui()),
         };
 
         string IAddon.AddonName =>
@@ -106,10 +93,10 @@ namespace Nitrocid.Extras.Notes
         ReadOnlyDictionary<string, FieldInfo> IAddon.PubliclyAvailableFields => null;
 
         void IAddon.StartAddon() =>
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands.Values]);
+            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
 
         void IAddon.StopAddon() =>
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Keys]);
+            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
 
         void IAddon.FinalizeAddon() =>
             NoteManagement.LoadNotes();

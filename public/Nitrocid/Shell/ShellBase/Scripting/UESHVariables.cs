@@ -85,8 +85,9 @@ namespace Nitrocid.Shell.ShellBase.Scripting
         {
             var CommandArgumentsInfo = ArgumentsParser.ParseShellCommandArguments(cmd, ShellType.Shell).total[0];
             string NewCommand = $"{CommandArgumentsInfo.Command} ";
+            var commands = CommandManager.GetCommands(ShellType.Shell);
             if (!CommandManager.IsCommandFound(CommandArgumentsInfo.Command) ||
-                !ShellManager.GetShellInfo(ShellType.Shell).Commands[CommandArgumentsInfo.Command].CommandArgumentInfo.Any((cai) => cai.AcceptsSet))
+                !ShellManager.GetShellInfo(ShellType.Shell).Commands.Single((ci) => ci.Command == CommandArgumentsInfo.Command).CommandArgumentInfo.Any((cai) => cai.AcceptsSet))
             {
                 foreach (string Word in CommandArgumentsInfo.ArgumentsList)
                 {

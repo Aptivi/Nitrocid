@@ -75,8 +75,8 @@ namespace Nitrocid.Shell.ShellBase.Arguments
         public static (ProvidedArgumentsInfo satisfied, ProvidedArgumentsInfo[] total) ParseShellCommandArguments(string CommandText, CommandInfo cmdInfo, string CommandType)
         {
             string Command;
-            Dictionary<string, CommandInfo> ShellCommands;
-            Dictionary<string, CommandInfo> ModCommands;
+            CommandInfo[] ShellCommands;
+            CommandInfo[] ModCommands;
 
             // Change the available commands list according to command type
             ShellCommands = CommandManager.GetCommands(CommandType);
@@ -93,8 +93,8 @@ namespace Nitrocid.Shell.ShellBase.Arguments
 
             // Check to see if the caller has provided a switch that subtracts the number of required arguments
             var aliases = AliasManager.GetEntireAliasListFromType(CommandType);
-            var CommandInfo = ModCommands.TryGetValue(Command, out CommandInfo modCmd) ? modCmd :
-                              ShellCommands.TryGetValue(Command, out CommandInfo shellCmd) ? shellCmd :
+            var CommandInfo = ModCommands.Any((info) => info.Command == Command) ? ModCommands.Single((info) => info.Command == Command) :
+                              ShellCommands.Any((info) => info.Command == Command) ? ShellCommands.Single((info) => info.Command == Command) :
                               aliases.Any((info) => info.Alias == Command) ? aliases.Single((info) => info.Alias == Command).TargetCommand :
                               cmdInfo;
             var fallback = new ProvidedArgumentsInfo(Command, arguments, words.Skip(1).ToArray(), argumentsOrig, wordsOrig.Skip(1).ToArray(), [], true, true, true, [], [], [], true, true, true, new());

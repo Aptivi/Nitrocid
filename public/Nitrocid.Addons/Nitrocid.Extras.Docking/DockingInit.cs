@@ -28,25 +28,24 @@ using System.Reflection;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Modifications;
+using System.Linq;
 
 namespace Nitrocid.Extras.Docking
 {
     internal class DockingInit : IAddon
     {
-        private readonly Dictionary<string, CommandInfo> addonCommands = new()
+        private readonly List<CommandInfo> addonCommands = new()
         {
-            { "dock",
-                new CommandInfo("dock", /* Localizable */ "Shows you a full-screen overview about a selected dock view to be able to use it as an info panel",
-                    [
-                        new CommandArgumentInfo(new[]
+            new CommandInfo("dock", /* Localizable */ "Shows you a full-screen overview about a selected dock view to be able to use it as an info panel",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "dockName", new()
                         {
-                            new CommandArgumentPart(true, "dockName", new()
-                            {
-                                AutoCompleter = (_) => DockTools.GetDockScreenNames()
-                            }),
-                        })
-                    ], new DockCommand())
-            },
+                            AutoCompleter = (_) => DockTools.GetDockScreenNames()
+                        }),
+                    })
+                ], new DockCommand())
         };
 
         string IAddon.AddonName =>
@@ -64,9 +63,9 @@ namespace Nitrocid.Extras.Docking
         { }
 
         void IAddon.StartAddon() =>
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands.Values]);
+            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
 
         void IAddon.StopAddon() =>
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Keys]);
+            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
     }
 }

@@ -70,8 +70,8 @@ namespace Nitrocid.Shell.ShellBase.Arguments
         private static string[] PopulateCommands()
         {
             var shellType = ShellManager.CurrentShellType;
-            var ShellCommands = CommandManager.GetCommands(shellType);
-            return [.. ShellCommands.Keys];
+            var ShellCommands = CommandManager.GetCommandNames(shellType);
+            return ShellCommands;
         }
     }
 }

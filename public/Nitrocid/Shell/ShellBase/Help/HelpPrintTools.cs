@@ -93,7 +93,7 @@ namespace Nitrocid.Shell.ShellBase.Help
             var unifiedCommandList = ShellManager.unifiedCommandDict;
             var AliasedCommandList = AliasManager.GetEntireAliasListFromType(commandType)
                 .ToDictionary((ai) => ai, (ai) => ai.TargetCommand);
-            TextWriters.Write(Translate.DoTranslation("Available commands:") + (ShowCommandsCount ? " [{0}]" : ""), true, KernelColorType.ListTitle, commands.Count);
+            TextWriters.Write(Translate.DoTranslation("Available commands:") + (ShowCommandsCount ? " [{0}]" : ""), true, KernelColorType.ListTitle, commands.Length);
 
             // The built-in commands
             if (showGeneral)
@@ -101,12 +101,12 @@ namespace Nitrocid.Shell.ShellBase.Help
                 TextWriters.Write(CharManager.NewLine + Translate.DoTranslation("General commands:") + (ShowCommandsCount & ShowShellCommandsCount ? " [{0}]" : ""), true, KernelColorType.ListTitle, commandList.Count);
                 if (commandList.Count == 0)
                     TextWriters.Write("- " + Translate.DoTranslation("Shell commands not implemented!!!"), true, KernelColorType.Warning);
-                foreach (string cmd in commandList.Keys)
+                foreach (var cmd in commandList)
                 {
-                    if ((!commandList[cmd].Flags.HasFlag(CommandFlags.Strict) | commandList[cmd].Flags.HasFlag(CommandFlags.Strict) & UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator)) & (KernelEntry.Maintenance & !commandList[cmd].Flags.HasFlag(CommandFlags.NoMaintenance) | !KernelEntry.Maintenance))
+                    if ((!cmd.Flags.HasFlag(CommandFlags.Strict) | cmd.Flags.HasFlag(CommandFlags.Strict) & UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator)) & (KernelEntry.Maintenance & !cmd.Flags.HasFlag(CommandFlags.NoMaintenance) | !KernelEntry.Maintenance))
                     {
-                        TextWriters.Write("  - {0}: ", false, KernelColorType.ListEntry, cmd);
-                        TextWriters.Write("{0}", true, KernelColorType.ListValue, commandList[cmd].GetTranslatedHelpEntry());
+                        TextWriters.Write("  - {0}: ", false, KernelColorType.ListEntry, cmd.Command);
+                        TextWriters.Write("{0}", true, KernelColorType.ListValue, cmd.GetTranslatedHelpEntry());
                     }
                 }
             }
@@ -117,12 +117,12 @@ namespace Nitrocid.Shell.ShellBase.Help
                 TextWriters.Write(CharManager.NewLine + Translate.DoTranslation("Kernel addon commands:") + (ShowCommandsCount & ShowAddonCommandsCount ? " [{0}]" : ""), true, KernelColorType.ListTitle, AddonCommandList.Count);
                 if (AddonCommandList.Count == 0)
                     TextWriters.Write("- " + Translate.DoTranslation("No kernel addon commands."), true, KernelColorType.Warning);
-                foreach (string cmd in AddonCommandList.Keys)
+                foreach (var cmd in AddonCommandList)
                 {
-                    if ((!AddonCommandList[cmd].Flags.HasFlag(CommandFlags.Strict) | AddonCommandList[cmd].Flags.HasFlag(CommandFlags.Strict) & UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator)) & (KernelEntry.Maintenance & !AddonCommandList[cmd].Flags.HasFlag(CommandFlags.NoMaintenance) | !KernelEntry.Maintenance))
+                    if ((!cmd.Flags.HasFlag(CommandFlags.Strict) | cmd.Flags.HasFlag(CommandFlags.Strict) & UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator)) & (KernelEntry.Maintenance & !cmd.Flags.HasFlag(CommandFlags.NoMaintenance) | !KernelEntry.Maintenance))
                     {
-                        TextWriters.Write("  - {0}: ", false, KernelColorType.ListEntry, cmd);
-                        TextWriters.Write("{0}", true, KernelColorType.ListValue, AddonCommandList[cmd].GetTranslatedHelpEntry());
+                        TextWriters.Write("  - {0}: ", false, KernelColorType.ListEntry, cmd.Command);
+                        TextWriters.Write("{0}", true, KernelColorType.ListValue, cmd.GetTranslatedHelpEntry());
                     }
                 }
             }
@@ -130,15 +130,15 @@ namespace Nitrocid.Shell.ShellBase.Help
             // The mod commands
             if (showMod)
             {
-                TextWriters.Write(CharManager.NewLine + Translate.DoTranslation("Mod commands:") + (ShowCommandsCount & ShowModCommandsCount ? " [{0}]" : ""), true, KernelColorType.ListTitle, ModCommandList.Count);
-                if (ModCommandList.Count == 0)
+                TextWriters.Write(CharManager.NewLine + Translate.DoTranslation("Mod commands:") + (ShowCommandsCount & ShowModCommandsCount ? " [{0}]" : ""), true, KernelColorType.ListTitle, ModCommandList.Length);
+                if (ModCommandList.Length == 0)
                     TextWriters.Write("- " + Translate.DoTranslation("No mod commands."), true, KernelColorType.Warning);
-                foreach (string cmd in ModCommandList.Keys)
+                foreach (var cmd in ModCommandList)
                 {
-                    if ((!ModCommandList[cmd].Flags.HasFlag(CommandFlags.Strict) | ModCommandList[cmd].Flags.HasFlag(CommandFlags.Strict) & UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator)) & (KernelEntry.Maintenance & !ModCommandList[cmd].Flags.HasFlag(CommandFlags.NoMaintenance) | !KernelEntry.Maintenance))
+                    if ((!cmd.Flags.HasFlag(CommandFlags.Strict) | cmd.Flags.HasFlag(CommandFlags.Strict) & UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator)) & (KernelEntry.Maintenance & !cmd.Flags.HasFlag(CommandFlags.NoMaintenance) | !KernelEntry.Maintenance))
                     {
-                        TextWriters.Write("  - {0}: ", false, KernelColorType.ListEntry, cmd);
-                        TextWriters.Write("{0}", true, KernelColorType.ListValue, ModCommandList[cmd].GetTranslatedHelpEntry());
+                        TextWriters.Write("  - {0}: ", false, KernelColorType.ListEntry, cmd.Command);
+                        TextWriters.Write("{0}", true, KernelColorType.ListValue, cmd.GetTranslatedHelpEntry());
                     }
                 }
             }
@@ -149,12 +149,12 @@ namespace Nitrocid.Shell.ShellBase.Help
                 TextWriters.Write(CharManager.NewLine + Translate.DoTranslation("Alias commands:") + (ShowCommandsCount & ShowShellAliasesCount ? " [{0}]" : ""), true, KernelColorType.ListTitle, AliasedCommandList.Count);
                 if (AliasedCommandList.Count == 0)
                     TextWriters.Write("- " + Translate.DoTranslation("No alias commands."), true, KernelColorType.Warning);
-                foreach (var cmd in AliasedCommandList.Keys)
+                foreach (var cmd in AliasedCommandList)
                 {
-                    if ((!AliasedCommandList[cmd].Flags.HasFlag(CommandFlags.Strict) | AliasedCommandList[cmd].Flags.HasFlag(CommandFlags.Strict) & UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator)) & (KernelEntry.Maintenance & !AliasedCommandList[cmd].Flags.HasFlag(CommandFlags.NoMaintenance) | !KernelEntry.Maintenance))
+                    if ((!cmd.Value.Flags.HasFlag(CommandFlags.Strict) | cmd.Value.Flags.HasFlag(CommandFlags.Strict) & UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator)) & (KernelEntry.Maintenance & !cmd.Value.Flags.HasFlag(CommandFlags.NoMaintenance) | !KernelEntry.Maintenance))
                     {
-                        TextWriters.Write("  - {0} -> {1}: ", false, KernelColorType.ListEntry, cmd.Alias, cmd.Command);
-                        TextWriters.Write("{0}", true, KernelColorType.ListValue, AliasedCommandList[cmd].GetTranslatedHelpEntry());
+                        TextWriters.Write("  - {0} -> {1}: ", false, KernelColorType.ListEntry, cmd.Key.Alias, cmd.Value.Command);
+                        TextWriters.Write("{0}", true, KernelColorType.ListValue, cmd.Value.GetTranslatedHelpEntry());
                     }
                 }
             }
@@ -165,12 +165,12 @@ namespace Nitrocid.Shell.ShellBase.Help
                 TextWriters.Write(CharManager.NewLine + Translate.DoTranslation("Unified commands:") + (ShowCommandsCount & ShowUnifiedCommandsCount ? " [{0}]" : ""), true, KernelColorType.ListTitle, unifiedCommandList.Count);
                 if (unifiedCommandList.Count == 0)
                     TextWriters.Write("- " + Translate.DoTranslation("Unified commands not implemented!!!"), true, KernelColorType.Warning);
-                foreach (string cmd in unifiedCommandList.Keys)
+                foreach (var cmd in unifiedCommandList)
                 {
-                    if ((!unifiedCommandList[cmd].Flags.HasFlag(CommandFlags.Strict) | unifiedCommandList[cmd].Flags.HasFlag(CommandFlags.Strict) & UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator)) & (KernelEntry.Maintenance & !unifiedCommandList[cmd].Flags.HasFlag(CommandFlags.NoMaintenance) | !KernelEntry.Maintenance))
+                    if ((!cmd.Flags.HasFlag(CommandFlags.Strict) | cmd.Flags.HasFlag(CommandFlags.Strict) & UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator)) & (KernelEntry.Maintenance & !cmd.Flags.HasFlag(CommandFlags.NoMaintenance) | !KernelEntry.Maintenance))
                     {
-                        TextWriters.Write("  - {0}: ", false, KernelColorType.ListEntry, cmd);
-                        TextWriters.Write("{0}", true, KernelColorType.ListValue, unifiedCommandList[cmd].GetTranslatedHelpEntry());
+                        TextWriters.Write("  - {0}: ", false, KernelColorType.ListEntry, cmd.Command);
+                        TextWriters.Write("{0}", true, KernelColorType.ListValue, cmd.GetTranslatedHelpEntry());
                     }
                 }
             }
@@ -179,14 +179,15 @@ namespace Nitrocid.Shell.ShellBase.Help
         internal static void ShowCommandListSimplified(string commandType)
         {
             // Get visible commands
-            var commands = CommandManager.GetCommands(commandType);
+            var commands = CommandManager.GetCommandNames(commandType);
             List<string> finalCommand = [];
-            foreach (string cmd in commands.Keys)
+            foreach (string cmd in commands)
             {
                 // Get the necessary flags
+                var command = CommandManager.GetCommand(cmd, commandType);
                 bool hasAdmin = UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator);
-                bool isStrict = commands[cmd].Flags.HasFlag(CommandFlags.Strict);
-                bool isNoMaintenance = commands[cmd].Flags.HasFlag(CommandFlags.NoMaintenance);
+                bool isStrict = command.Flags.HasFlag(CommandFlags.Strict);
+                bool isNoMaintenance = command.Flags.HasFlag(CommandFlags.NoMaintenance);
 
                 // Now, populate the command list
                 if ((!isStrict | isStrict & hasAdmin) &
@@ -211,27 +212,26 @@ namespace Nitrocid.Shell.ShellBase.Help
 
             // Check to see if command exists
             if (!string.IsNullOrWhiteSpace(command) &&
-                (CommandList.ContainsKey(command) ||
-                AliasedCommandList.Any((info) => info.Key.Alias == command) ||
-                ModCommandList.ContainsKey(command) ||
-                AddonCommandList.ContainsKey(command) ||
-                unifiedCommandList.ContainsKey(command)))
+                (CommandList.Any((ci) => ci.Command == command) ||
+                 AliasedCommandList.Any((info) => info.Key.Alias == command) ||
+                 ModCommandList.Any((ci) => ci.Command == command) ||
+                 AddonCommandList.Any((ci) => ci.Command == command) ||
+                 unifiedCommandList.Any((ci) => ci.Command == command)))
             {
                 // Found!
-                bool IsMod = ModCommandList.ContainsKey(command);
+                bool IsMod = ModCommandList.Any((ci) => ci.Command == command);
                 bool IsAlias = AliasedCommandList.Any((info) => info.Key.Alias == command);
-                bool IsAddon = AddonCommandList.ContainsKey(command);
-                bool IsUnified = unifiedCommandList.ContainsKey(command);
+                bool IsAddon = AddonCommandList.Any((ci) => ci.Command == command);
+                bool IsUnified = unifiedCommandList.Any((ci) => ci.Command == command);
                 var FinalCommandList =
-                    IsMod ? ModCommandList :
-                    IsAddon ? AddonCommandList :
+                    IsMod ? ModCommandList.ToDictionary((info) => info.Command, (info) => info) :
+                    IsAddon ? AddonCommandList.ToDictionary((info) => info.Command, (info) => info) :
                     IsAlias ? AliasedCommandList.ToDictionary((info) => info.Key.Command, (info) => info.Key.TargetCommand) :
-                    IsUnified ? unifiedCommandList :
-                    CommandList;
+                    IsUnified ? unifiedCommandList.ToDictionary((info) => info.Command, (info) => info) :
+                    CommandList.ToDictionary((info) => info.Command, (info) => info);
                 string FinalCommand =
-                    IsMod || IsAddon ? command :
+                    IsMod || IsAddon || IsUnified ? command :
                     IsAlias ? AliasManager.GetAlias(command, commandType).Command :
-                    IsUnified ? unifiedCommandList[command].Command :
                     command;
                 string HelpDefinition = FinalCommandList[FinalCommand].GetTranslatedHelpEntry();
 

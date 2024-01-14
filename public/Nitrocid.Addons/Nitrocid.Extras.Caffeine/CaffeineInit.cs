@@ -28,28 +28,27 @@ using System.Reflection;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Modifications;
+using System.Linq;
 
 namespace Nitrocid.Extras.Caffeine
 {
     internal class CaffeineInit : IAddon
     {
-        private readonly Dictionary<string, CommandInfo> addonCommands = new()
+        private readonly List<CommandInfo> addonCommands = new()
         {
-            { "caffeine",
-                new CommandInfo("caffeine", /* Localizable */ "Adds an alarm to alert you when your cup of tea or coffee is ready.",
+            new CommandInfo("caffeine", /* Localizable */ "Adds an alarm to alert you when your cup of tea or coffee is ready.",
+                [
+                    new CommandArgumentInfo(
                     [
-                        new CommandArgumentInfo(
-                        [
-                            new CommandArgumentPart(true, "secondsOrName"),
-                        ],
-                        [
-                            new SwitchInfo("abort", /* Localizable */ "Aborts an alarm that alerts you when your cup of tea or coffee is ready.", new SwitchOptions()
-                            {
-                                OptionalizeLastRequiredArguments = 1
-                            })
-                        ])
-                    ], new CaffeineCommand())
-            },
+                        new CommandArgumentPart(true, "secondsOrName"),
+                    ],
+                    [
+                        new SwitchInfo("abort", /* Localizable */ "Aborts an alarm that alerts you when your cup of tea or coffee is ready.", new SwitchOptions()
+                        {
+                            OptionalizeLastRequiredArguments = 1
+                        })
+                    ])
+                ], new CaffeineCommand())
         };
 
         string IAddon.AddonName =>
@@ -64,10 +63,10 @@ namespace Nitrocid.Extras.Caffeine
         ReadOnlyDictionary<string, FieldInfo> IAddon.PubliclyAvailableFields => null;
 
         void IAddon.StartAddon() =>
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands.Values]);
+            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
 
         void IAddon.StopAddon() =>
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Keys]);
+            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
 
         void IAddon.FinalizeAddon()
         { }

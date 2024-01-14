@@ -27,22 +27,21 @@ using System.Reflection;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Modifications;
+using System.Linq;
 
 namespace Nitrocid.Extras.ThemeStudio
 {
     internal class ThemeStudioInit : IAddon
     {
-        private readonly Dictionary<string, CommandInfo> addonCommands = new()
+        private readonly List<CommandInfo> addonCommands = new()
         {
-            { "mktheme",
-                new CommandInfo("mktheme", /* Localizable */ "Makes a new theme",
-                    [
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "themeName"),
-                        })
-                    ], new MkThemeCommand())
-            },
+            new CommandInfo("mktheme", /* Localizable */ "Makes a new theme",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "themeName"),
+                    })
+                ], new MkThemeCommand()),
         };
 
         string IAddon.AddonName =>
@@ -57,10 +56,10 @@ namespace Nitrocid.Extras.ThemeStudio
         ReadOnlyDictionary<string, FieldInfo> IAddon.PubliclyAvailableFields => null;
 
         void IAddon.StartAddon() =>
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands.Values]);
+            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
 
         void IAddon.StopAddon() =>
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Keys]);
+            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
 
         void IAddon.FinalizeAddon()
         { }

@@ -36,142 +36,118 @@ namespace Nitrocid.Shell.Shells.Hex
         /// <summary>
         /// Hex commands
         /// </summary>
-        public override Dictionary<string, CommandInfo> Commands => new()
+        public override List<CommandInfo> Commands => new()
         {
-            { "addbyte",
-                new CommandInfo("addbyte", /* Localizable */ "Adds a new byte at the end of the file",
-                    [
-                        new CommandArgumentInfo(new[]
+            new CommandInfo("addbyte", /* Localizable */ "Adds a new byte at the end of the file",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "byte")
+                    })
+                ], new AddByteCommand()),
+
+            new CommandInfo("addbytes", /* Localizable */ "Adds the new bytes at the end of the file",
+                [
+                    new CommandArgumentInfo()
+                ], new AddBytesCommand()),
+
+            new CommandInfo("addbyteto", /* Localizable */ "Adds a new byte to the specified position",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "byte"),
+                        new CommandArgumentPart(true, "pos", new()
                         {
-                            new CommandArgumentPart(true, "byte")
+                            IsNumeric = true,
                         })
-                    ], new AddByteCommand())
-            },
+                    })
+                ], new AddByteToCommand()),
 
-            { "addbytes",
-                new CommandInfo("addbytes", /* Localizable */ "Adds the new bytes at the end of the file",
-                    [
-                        new CommandArgumentInfo()
-                    ], new AddBytesCommand())
-            },
+            new CommandInfo("clear", /* Localizable */ "Clears the binary file",
+                [
+                    new CommandArgumentInfo()
+                ], new ClearCommand()),
 
-            { "addbyteto",
-                new CommandInfo("addbyteto", /* Localizable */ "Adds a new byte to the specified position",
-                    [
-                        new CommandArgumentInfo(new[]
+            new CommandInfo("delbyte", /* Localizable */ "Deletes a byte using the byte number",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "bytenumber", new CommandArgumentPartOptions()
                         {
-                            new CommandArgumentPart(true, "byte"),
-                            new CommandArgumentPart(true, "pos", new()
-                            {
-                                IsNumeric = true,
-                            })
+                            IsNumeric = true
                         })
-                    ], new AddByteToCommand())
-            },
+                    })
+                ], new DelByteCommand()),
 
-            { "clear",
-                new CommandInfo("clear", /* Localizable */ "Clears the binary file",
-                    [
-                        new CommandArgumentInfo()
-                    ], new ClearCommand())
-            },
-
-            { "delbyte",
-                new CommandInfo("delbyte", /* Localizable */ "Deletes a byte using the byte number",
-                    [
-                        new CommandArgumentInfo(new[]
+            new CommandInfo("delbytes", /* Localizable */ "Deletes the range of bytes",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "startbyte", new CommandArgumentPartOptions()
                         {
-                            new CommandArgumentPart(true, "bytenumber", new CommandArgumentPartOptions()
-                            {
-                                IsNumeric = true
-                            })
-                        })
-                    ], new DelByteCommand())
-            },
-
-            { "delbytes",
-                new CommandInfo("delbytes", /* Localizable */ "Deletes the range of bytes",
-                    [
-                        new CommandArgumentInfo(new[]
+                            IsNumeric = true
+                        }),
+                        new CommandArgumentPart(false, "endbyte", new CommandArgumentPartOptions()
                         {
-                            new CommandArgumentPart(true, "startbyte", new CommandArgumentPartOptions()
-                            {
-                                IsNumeric = true
-                            }),
-                            new CommandArgumentPart(false, "endbyte", new CommandArgumentPartOptions()
-                            {
-                                IsNumeric = true
-                            })
+                            IsNumeric = true
                         })
-                    ], new DelBytesCommand())
-            },
+                    })
+                ], new DelBytesCommand()),
 
-            { "exitnosave",
-                new CommandInfo("exitnosave", /* Localizable */ "Exits the hex editor",
-                    [
-                        new CommandArgumentInfo()
-                    ], new ExitNoSaveCommand())
-            },
+            new CommandInfo("exitnosave", /* Localizable */ "Exits the hex editor",
+                [
+                    new CommandArgumentInfo()
+                ], new ExitNoSaveCommand()),
 
-            { "print",
-                new CommandInfo("print", /* Localizable */ "Prints the contents of the file with byte numbers to the console",
-                    [
-                        new CommandArgumentInfo(new[]
+            new CommandInfo("print", /* Localizable */ "Prints the contents of the file with byte numbers to the console",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(false, "startbyte", new CommandArgumentPartOptions()
                         {
-                            new CommandArgumentPart(false, "startbyte", new CommandArgumentPartOptions()
-                            {
-                                IsNumeric = true
-                            }),
-                            new CommandArgumentPart(false, "endbyte", new CommandArgumentPartOptions()
-                            {
-                                IsNumeric = true
-                            })
-                        })
-                    ], new PrintCommand(), CommandFlags.Wrappable)
-            },
-
-            { "querybyte",
-                new CommandInfo("querybyte", /* Localizable */ "Queries a byte in a specified range of bytes or all bytes",
-                    [
-                        new CommandArgumentInfo(new[]
+                            IsNumeric = true
+                        }),
+                        new CommandArgumentPart(false, "endbyte", new CommandArgumentPartOptions()
                         {
-                            new CommandArgumentPart(true, "byte"),
-                            new CommandArgumentPart(false, "startbyte", new CommandArgumentPartOptions()
-                            {
-                                IsNumeric = true
-                            }),
-                            new CommandArgumentPart(false, "endbyte", new CommandArgumentPartOptions()
-                            {
-                                IsNumeric = true
-                            })
+                            IsNumeric = true
                         })
-                    ], new QueryByteCommand(), CommandFlags.Wrappable)
-            },
+                    })
+                ], new PrintCommand(), CommandFlags.Wrappable),
 
-            { "replace",
-                new CommandInfo("replace", /* Localizable */ "Replaces a byte with another one",
-                    [
-                        new CommandArgumentInfo(new[]
+            new CommandInfo("querybyte", /* Localizable */ "Queries a byte in a specified range of bytes or all bytes",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "byte"),
+                        new CommandArgumentPart(false, "startbyte", new CommandArgumentPartOptions()
                         {
-                            new CommandArgumentPart(true, "byte"),
-                            new CommandArgumentPart(true, "replacebyte")
+                            IsNumeric = true
+                        }),
+                        new CommandArgumentPart(false, "endbyte", new CommandArgumentPartOptions()
+                        {
+                            IsNumeric = true
                         })
-                    ], new ReplaceCommand())
-            },
+                    })
+                ], new QueryByteCommand(), CommandFlags.Wrappable),
 
-            { "save",
-                new CommandInfo("save", /* Localizable */ "Saves the file",
-                    [
-                        new CommandArgumentInfo()
-                    ], new SaveCommand())
-            },
+            new CommandInfo("replace", /* Localizable */ "Replaces a byte with another one",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "byte"),
+                        new CommandArgumentPart(true, "replacebyte")
+                    })
+                ], new ReplaceCommand()),
 
-            { "tui",
-                new CommandInfo("tui", /* Localizable */ "Opens the interactive hex editor TUI",
-                    [
-                        new CommandArgumentInfo()
-                    ], new TuiCommand())
-            },
+            new CommandInfo("save", /* Localizable */ "Saves the file",
+                [
+                    new CommandArgumentInfo()
+                ], new SaveCommand()),
+
+            new CommandInfo("tui", /* Localizable */ "Opens the interactive hex editor TUI",
+                [
+                    new CommandArgumentInfo()
+                ], new TuiCommand()),
         };
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()

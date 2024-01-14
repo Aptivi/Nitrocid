@@ -27,19 +27,18 @@ using System.Reflection;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Modifications;
+using System.Linq;
 
 namespace Nitrocid.Legacy.HddUncleaner
 {
     internal class HddUncleanerInit : IAddon
     {
-        private readonly Dictionary<string, CommandInfo> addonCommands = new()
+        private readonly List<CommandInfo> addonCommands = new()
         {
-            { "2015",
-                new CommandInfo("2015", /* Localizable */ "Starts the joke program, HDD Uncleaner 2015.",
-                    [
-                        new CommandArgumentInfo()
-                    ], new HddUncleanerCommand())
-            },
+            new CommandInfo("2015", /* Localizable */ "Starts the joke program, HDD Uncleaner 2015.",
+                [
+                    new CommandArgumentInfo()
+                ], new HddUncleanerCommand())
         };
 
         string IAddon.AddonName =>
@@ -57,9 +56,9 @@ namespace Nitrocid.Legacy.HddUncleaner
         { }
 
         void IAddon.StartAddon() =>
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands.Values]);
+            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
 
         void IAddon.StopAddon() =>
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Keys]);
+            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
     }
 }

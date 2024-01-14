@@ -29,23 +29,22 @@ using Nitrocid.Shell.ShellBase.Shells;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Reflection;
 
 namespace Nitrocid.Extras.FtpShell
 {
     internal class FtpShellInit : IAddon
     {
-        private readonly Dictionary<string, CommandInfo> addonCommands = new()
+        private readonly List<CommandInfo> addonCommands = new()
         {
-            { "ftp",
-                new CommandInfo("ftp", /* Localizable */ "Use an FTP shell to interact with servers",
-                    [
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(false, "server"),
-                        })
-                    ], new FtpCommandExec())
-            },
+            new CommandInfo("ftp", /* Localizable */ "Use an FTP shell to interact with servers",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(false, "server"),
+                    })
+                ], new FtpCommandExec())
         };
 
         string IAddon.AddonName =>
@@ -68,7 +67,7 @@ namespace Nitrocid.Extras.FtpShell
             ConfigTools.RegisterBaseSetting(config);
             ShellManager.reservedShells.Add("FTPShell");
             ShellManager.RegisterShell("FTPShell", new FTPShellInfo());
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands.Values]);
+            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
         }
 
         void IAddon.StartAddon()
@@ -79,7 +78,7 @@ namespace Nitrocid.Extras.FtpShell
             ShellManager.availableShells.Remove("FTPShell");
             PromptPresetManager.CurrentPresets.Remove("FTPShell");
             ShellManager.reservedShells.Remove("FTPShell");
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Keys]);
+            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
             ConfigTools.UnregisterBaseSetting(nameof(FtpConfig));
         }
     }

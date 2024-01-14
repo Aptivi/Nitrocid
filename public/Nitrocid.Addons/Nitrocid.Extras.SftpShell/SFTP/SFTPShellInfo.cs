@@ -37,124 +37,102 @@ namespace Nitrocid.Extras.SftpShell.SFTP
         /// <summary>
         /// SFTP commands
         /// </summary>
-        public override Dictionary<string, CommandInfo> Commands => new()
+        public override List<CommandInfo> Commands => new()
         {
-            { "cat",
-                new CommandInfo("cat", /* Localizable */ "Reads the content of a remote file to the console",
+            new CommandInfo("cat", /* Localizable */ "Reads the content of a remote file to the console",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "file")
+                    })
+                ], new CatCommand(), CommandFlags.Wrappable),
+
+            new CommandInfo("cdl", /* Localizable */ "Changes local directory to download to or upload from",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "directory")
+                    })
+                ], new CdlCommand()),
+
+            new CommandInfo("cdr", /* Localizable */ "Changes remote directory to download from or upload to",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "directory")
+                    })
+                ], new CdrCommand()),
+
+            new CommandInfo("del", /* Localizable */ "Deletes remote file from server",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "file")
+                    })
+                ], new DelCommand()),
+
+            new CommandInfo("detach", /* Localizable */ "Exits the shell without disconnecting",
+                [
+                    new CommandArgumentInfo()
+                ], new DetachCommand()),
+
+            new CommandInfo("get", /* Localizable */ "Downloads remote file to local directory using binary or text",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "file")
+                    })
+                ], new GetCommand()),
+
+            new CommandInfo("lsl", /* Localizable */ "Lists local directory",
+                [
+                    new CommandArgumentInfo(
                     [
-                        new CommandArgumentInfo(new[]
+                        new CommandArgumentPart(false, "dir")
+                    ],
+                    [
+                        new SwitchInfo("showdetails", /* Localizable */ "Shows the details of the files and folders", new SwitchOptions()
                         {
-                            new CommandArgumentPart(true, "file")
-                        })
-                    ], new CatCommand(), CommandFlags.Wrappable)
-            },
-
-            { "cdl",
-                new CommandInfo("cdl", /* Localizable */ "Changes local directory to download to or upload from",
-                    [
-                        new CommandArgumentInfo(new[]
+                            AcceptsValues = false
+                        }),
+                        new SwitchInfo("suppressmessages", /* Localizable */ "Suppresses the \"unauthorized\" messages", new SwitchOptions()
                         {
-                            new CommandArgumentPart(true, "directory")
+                            AcceptsValues = false
                         })
-                    ], new CdlCommand())
-            },
+                    ])
+                ], new LslCommand(), CommandFlags.Wrappable),
 
-            { "cdr",
-                new CommandInfo("cdr", /* Localizable */ "Changes remote directory to download from or upload to",
+            new CommandInfo("lsr", /* Localizable */ "Lists remote directory",
+                [
+                    new CommandArgumentInfo(
                     [
-                        new CommandArgumentInfo(new[]
+                        new CommandArgumentPart(false, "dir")
+                    ],
+                    [
+                        new SwitchInfo("showdetails", /* Localizable */ "Shows the details of the files and folders", new SwitchOptions()
                         {
-                            new CommandArgumentPart(true, "directory")
+                            AcceptsValues = false
                         })
-                    ], new CdrCommand())
-            },
+                    ])
+                ], new LsrCommand(), CommandFlags.Wrappable),
 
-            { "del",
-                new CommandInfo("del", /* Localizable */ "Deletes remote file from server",
-                    [
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "file")
-                        })
-                    ], new DelCommand())
-            },
+            new CommandInfo("put", /* Localizable */ "Uploads local file to remote directory using binary or text",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "file")
+                    })
+                ], new PutCommand()),
 
-            { "detach",
-                new CommandInfo("detach", /* Localizable */ "Exits the shell without disconnecting",
-                    [
-                        new CommandArgumentInfo()
-                    ], new DetachCommand())
-            },
+            new CommandInfo("pwdl", /* Localizable */ "Gets current local directory",
+                [
+                    new CommandArgumentInfo()
+                ], new PwdlCommand()),
 
-            { "get",
-                new CommandInfo("get", /* Localizable */ "Downloads remote file to local directory using binary or text",
-                    [
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "file")
-                        })
-                    ], new GetCommand())
-            },
-
-            { "lsl",
-                new CommandInfo("lsl", /* Localizable */ "Lists local directory",
-                    [
-                        new CommandArgumentInfo(
-                        [
-                            new CommandArgumentPart(false, "dir")
-                        ],
-                        [
-                            new SwitchInfo("showdetails", /* Localizable */ "Shows the details of the files and folders", new SwitchOptions()
-                            {
-                                AcceptsValues = false
-                            }),
-                            new SwitchInfo("suppressmessages", /* Localizable */ "Suppresses the \"unauthorized\" messages", new SwitchOptions()
-                            {
-                                AcceptsValues = false
-                            })
-                        ])
-                    ], new LslCommand(), CommandFlags.Wrappable)
-            },
-
-            { "lsr",
-                new CommandInfo("lsr", /* Localizable */ "Lists remote directory",
-                    [
-                        new CommandArgumentInfo(
-                        [
-                            new CommandArgumentPart(false, "dir")
-                        ],
-                        [
-                            new SwitchInfo("showdetails", /* Localizable */ "Shows the details of the files and folders", new SwitchOptions()
-                            {
-                                AcceptsValues = false
-                            })
-                        ])
-                    ], new LsrCommand(), CommandFlags.Wrappable)
-            },
-
-            { "put",
-                new CommandInfo("put", /* Localizable */ "Uploads local file to remote directory using binary or text",
-                    [
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "file")
-                        })
-                    ], new PutCommand())
-            },
-
-            { "pwdl",
-                new CommandInfo("pwdl", /* Localizable */ "Gets current local directory",
-                    [
-                        new CommandArgumentInfo()
-                    ], new PwdlCommand())
-            },
-
-            { "pwdr",
-                new CommandInfo("pwdr", /* Localizable */ "Gets current remote directory",
-                    [
-                        new CommandArgumentInfo()
-                    ], new PwdrCommand())
-            },
+            new CommandInfo("pwdr", /* Localizable */ "Gets current remote directory",
+                [
+                    new CommandArgumentInfo()
+                ], new PwdrCommand()),
         };
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()

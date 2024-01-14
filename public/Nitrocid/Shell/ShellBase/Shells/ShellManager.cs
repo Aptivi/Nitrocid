@@ -86,139 +86,119 @@ namespace Nitrocid.Shell.ShellBase.Shells
             { $"{ShellType.TextShell}",     new() },
         };
 
-        internal readonly static Dictionary<string, CommandInfo> unifiedCommandDict = new()
+        internal readonly static List<CommandInfo> unifiedCommandDict = new()
         {
-            { "exec",
-                new CommandInfo("exec", /* Localizable */ "Executes an external process",
+            new CommandInfo("exec", /* Localizable */ "Executes an external process",
+                [
+                    new CommandArgumentInfo(
                     [
-                        new CommandArgumentInfo(
-                        [
-                            new CommandArgumentPart(true, "process"),
-                            new CommandArgumentPart(false, "args")
-                        ],
-                        [
-                            new SwitchInfo("forked", /* Localizable */ "Executes the process without interrupting the shell thread. A separate window will be created.", new SwitchOptions()
-                            {
-                                AcceptsValues = false
-                            })
-                        ])
-                    ], new ExecUnifiedCommand())
-            },
-
-            { "exit",
-                new CommandInfo("exit", /* Localizable */ "Exits the shell if running on subshell",
+                        new CommandArgumentPart(true, "process"),
+                        new CommandArgumentPart(false, "args")
+                    ],
                     [
-                        new CommandArgumentInfo()
-                    ], new ExitUnifiedCommand())
-            },
-
-            { "findcmds",
-                new CommandInfo("findcmds", /* Localizable */ "Finds the available commands in the current shell type",
-                    [
-                        new CommandArgumentInfo(
-                        [
-                            new CommandArgumentPart(true, "search")
-                        ], false)
-                    ], new FindCmdsUnifiedCommand())
-            },
-
-            { "help",
-                new CommandInfo("help", /* Localizable */ "Help page",
-                    [
-                        new CommandArgumentInfo(
-                        [
-                            new CommandArgumentPart(false, "command", new CommandArgumentPartOptions()
-                            {
-                                AutoCompleter = (_) => CommandManager.GetCommands(CurrentShellType).Keys.ToArray()
-                            })
-                        ],
-                        [
-                            new SwitchInfo("general", /* Localizable */ "Shows general commands (default)", new SwitchOptions()
-                            {
-                                AcceptsValues = false
-                            }),
-                            new SwitchInfo("mod", /* Localizable */ "Shows mod commands", new SwitchOptions()
-                            {
-                                AcceptsValues = false
-                            }),
-                            new SwitchInfo("alias", /* Localizable */ "Shows aliased commands", new SwitchOptions()
-                            {
-                                AcceptsValues = false
-                            }),
-                            new SwitchInfo("unified", /* Localizable */ "Shows unified commands", new SwitchOptions()
-                            {
-                                AcceptsValues = false
-                            }),
-                            new SwitchInfo("addon", /* Localizable */ "Shows kernel addon commands", new SwitchOptions()
-                            {
-                                AcceptsValues = false
-                            }),
-                            new SwitchInfo("all", /* Localizable */ "Shows all commands", new SwitchOptions()
-                            {
-                                AcceptsValues = false
-                            }),
-                            new SwitchInfo("simplified", /* Localizable */ "Uses simplified help", new SwitchOptions()
-                            {
-                                AcceptsValues = false
-                            }),
-                        ], false)
-                    ], new HelpUnifiedCommand(), CommandFlags.Wrappable)
-            },
-
-            { "loadhistories",
-                new CommandInfo("loadhistories", /* Localizable */ "Loads shell histories",
-                    [
-                        new CommandArgumentInfo()
-                    ], new LoadHistoriesUnifiedCommand())
-            },
-
-            { "presets",
-                new CommandInfo("presets", /* Localizable */ "Opens the shell preset library",
-                    [
-                        new CommandArgumentInfo()
-                    ], new PresetsUnifiedCommand())
-            },
-
-            { "repeat",
-                new CommandInfo("repeat", /* Localizable */ "Repeats the last action or the specified command",
-                    [
-                        new CommandArgumentInfo(new[]
+                        new SwitchInfo("forked", /* Localizable */ "Executes the process without interrupting the shell thread. A separate window will be created.", new SwitchOptions()
                         {
-                            new CommandArgumentPart(true, "times", new CommandArgumentPartOptions()
-                            {
-                                IsNumeric = true
-                            }),
-                            new CommandArgumentPart(false, "command"),
+                            AcceptsValues = false
                         })
-                    ], new RepeatUnifiedCommand())
-            },
+                    ])
+                ], new ExecUnifiedCommand()),
 
-            { "savehistories",
-                new CommandInfo("savehistories", /* Localizable */ "Saves shell histories",
-                    [
-                        new CommandArgumentInfo()
-                    ], new SaveHistoriesUnifiedCommand())
-            },
+            new CommandInfo("exit", /* Localizable */ "Exits the shell if running on subshell",
+                [
+                    new CommandArgumentInfo()
+                ], new ExitUnifiedCommand()),
 
-            { "tip",
-                new CommandInfo("tip", /* Localizable */ "Shows a random kernel tip",
+            new CommandInfo("findcmds", /* Localizable */ "Finds the available commands in the current shell type",
+                [
+                    new CommandArgumentInfo(
                     [
-                        new CommandArgumentInfo()
-                    ], new TipUnifiedCommand())
-            },
+                        new CommandArgumentPart(true, "search")
+                    ], false)
+                ], new FindCmdsUnifiedCommand()),
 
-            { "wrap",
-                new CommandInfo("wrap", /* Localizable */ "Wraps the console output",
+            new CommandInfo("help", /* Localizable */ "Help page",
+                [
+                    new CommandArgumentInfo(
                     [
-                        new CommandArgumentInfo(new[]
+                        new CommandArgumentPart(false, "command", new CommandArgumentPartOptions()
                         {
-                            new CommandArgumentPart(true, "command", new CommandArgumentPartOptions()
-                            {
-                                AutoCompleter = (_) => CommandExecutor.GetWrappableCommands(CurrentShellType)
-                            })
+                            AutoCompleter = (_) => CommandManager.GetCommandNames(CurrentShellType)
                         })
-                    ], new WrapUnifiedCommand())
-            }
+                    ],
+                    [
+                        new SwitchInfo("general", /* Localizable */ "Shows general commands (default)", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                        new SwitchInfo("mod", /* Localizable */ "Shows mod commands", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                        new SwitchInfo("alias", /* Localizable */ "Shows aliased commands", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                        new SwitchInfo("unified", /* Localizable */ "Shows unified commands", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                        new SwitchInfo("addon", /* Localizable */ "Shows kernel addon commands", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                        new SwitchInfo("all", /* Localizable */ "Shows all commands", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                        new SwitchInfo("simplified", /* Localizable */ "Uses simplified help", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                    ], false)
+                ], new HelpUnifiedCommand(), CommandFlags.Wrappable),
+
+            new CommandInfo("loadhistories", /* Localizable */ "Loads shell histories",
+                [
+                    new CommandArgumentInfo()
+                ], new LoadHistoriesUnifiedCommand()),
+
+            new CommandInfo("presets", /* Localizable */ "Opens the shell preset library",
+                [
+                    new CommandArgumentInfo()
+                ], new PresetsUnifiedCommand()),
+
+            new CommandInfo("repeat", /* Localizable */ "Repeats the last action or the specified command",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "times", new CommandArgumentPartOptions()
+                        {
+                            IsNumeric = true
+                        }),
+                        new CommandArgumentPart(false, "command"),
+                    })
+                ], new RepeatUnifiedCommand()),
+
+            new CommandInfo("savehistories", /* Localizable */ "Saves shell histories",
+                [
+                    new CommandArgumentInfo()
+                ], new SaveHistoriesUnifiedCommand()),
+
+            new CommandInfo("tip", /* Localizable */ "Shows a random kernel tip",
+                [
+                    new CommandArgumentInfo()
+                ], new TipUnifiedCommand()),
+
+            new CommandInfo("wrap", /* Localizable */ "Wraps the console output",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "command", new CommandArgumentPartOptions()
+                        {
+                            AutoCompleter = (_) => CommandExecutor.GetWrappableCommands(CurrentShellType)
+                        })
+                    })
+                ], new WrapUnifiedCommand()),
         };
 
         internal readonly static Dictionary<string, BaseShellInfo> availableShells = new()
@@ -233,8 +213,8 @@ namespace Nitrocid.Shell.ShellBase.Shells
         /// <summary>
         /// List of unified commands
         /// </summary>
-        public static ReadOnlyDictionary<string, CommandInfo> UnifiedCommands =>
-            new(unifiedCommandDict);
+        public static CommandInfo[] UnifiedCommands =>
+            [.. unifiedCommandDict];
 
         /// <summary>
         /// List of available shells
@@ -474,11 +454,13 @@ namespace Nitrocid.Shell.ShellBase.Shells
                         if (Config.MainConfig.SetTitleOnCommandExecution)
                             ConsoleExtensions.SetTitle($"{KernelReleaseInfo.ConsoleTitle} - {Command}");
 
-                        if (Commands.TryGetValue(commandName, out CommandInfo info))
+                        // Check the command
+                        bool exists = Commands.Any((ci) => ci.Command == commandName || ci.Aliases.Any((ai) => ai.Alias == commandName));
+                        if (exists)
                         {
                             // Execute the command
                             DebugWriter.WriteDebug(DebugLevel.I, "Executing command");
-                            var cmdInfo = info;
+                            var cmdInfo = Commands.Single((ci) => ci.Command == commandName || ci.Aliases.Any((ai) => ai.Alias == commandName));
 
                             // Check to see if the command supports redirection
                             if (cmdInfo.Flags.HasFlag(CommandFlags.RedirectionSupported))

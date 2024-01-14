@@ -27,23 +27,22 @@ using System.Reflection;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Modifications;
+using System.Linq;
 
 namespace Nitrocid.Extras.InternetRadioInfo
 {
     internal class InternetRadioInfoInit : IAddon
     {
-        private readonly Dictionary<string, CommandInfo> addonCommands = new()
+        private readonly List<CommandInfo> addonCommands = new()
         {
-            { "netfminfo",
-                new CommandInfo("netfminfo", /* Localizable */ "Gets information about your online radio station",
-                    [
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "hostname"),
-                            new CommandArgumentPart(true, "port"),
-                        })
-                    ], new NetFmInfoCommand())
-            },
+            new CommandInfo("netfminfo", /* Localizable */ "Gets information about your online radio station",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "hostname"),
+                        new CommandArgumentPart(true, "port"),
+                    })
+                ], new NetFmInfoCommand()),
         };
 
         string IAddon.AddonName =>
@@ -61,9 +60,9 @@ namespace Nitrocid.Extras.InternetRadioInfo
         { }
 
         void IAddon.StartAddon() =>
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands.Values]);
+            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
 
         void IAddon.StopAddon() =>
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Keys]);
+            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
     }
 }

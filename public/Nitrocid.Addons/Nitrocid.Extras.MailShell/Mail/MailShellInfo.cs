@@ -36,163 +36,133 @@ namespace Nitrocid.Extras.MailShell.Mail
         /// <summary>
         /// Mail commands
         /// </summary>
-        public override Dictionary<string, CommandInfo> Commands => new()
+        public override List<CommandInfo> Commands => new()
         {
-            { "cd",
-                new CommandInfo("cd", /* Localizable */ "Changes current mail directory",
-                    [
-                        new CommandArgumentInfo(new[]
+            new CommandInfo("cd", /* Localizable */ "Changes current mail directory",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "folder")
+                    })
+                ], new CdCommand()),
+
+            new CommandInfo("detach", /* Localizable */ "Exits the shell without disconnecting",
+                [
+                    new CommandArgumentInfo()
+                ], new DetachCommand()),
+
+            new CommandInfo("lsdirs", /* Localizable */ "Lists directories in your mail address",
+                [
+                    new CommandArgumentInfo()
+                ], new LsDirsCommand()),
+
+            new CommandInfo("list", /* Localizable */ "Downloads messages and lists them",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(false, "pageNum", new CommandArgumentPartOptions()
                         {
-                            new CommandArgumentPart(true, "folder")
+                            IsNumeric = true
                         })
-                    ], new CdCommand())
-            },
+                    })
+                ], new ListCommand()),
 
-            { "detach",
-                new CommandInfo("detach", /* Localizable */ "Exits the shell without disconnecting",
-                    [
-                        new CommandArgumentInfo()
-                    ], new DetachCommand())
-            },
+            new CommandInfo("mkdir", /* Localizable */ "Makes a directory in the current working directory",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "foldername")
+                    })
+                ], new MkdirCommand()),
 
-            { "lsdirs",
-                new CommandInfo("lsdirs", /* Localizable */ "Lists directories in your mail address",
-                    [
-                        new CommandArgumentInfo()
-                    ], new LsDirsCommand())
-            },
-
-            { "list",
-                new CommandInfo("list", /* Localizable */ "Downloads messages and lists them",
-                    [
-                        new CommandArgumentInfo(new[]
+            new CommandInfo("mv", /* Localizable */ "Moves a message",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "mailId", new CommandArgumentPartOptions()
                         {
-                            new CommandArgumentPart(false, "pageNum", new CommandArgumentPartOptions()
-                            {
-                                IsNumeric = true
-                            })
-                        })
-                    ], new ListCommand())
-            },
+                            IsNumeric = true
+                        }),
+                        new CommandArgumentPart(true, "targetFolder")
+                    })
+                ], new MvCommand()),
 
-            { "mkdir",
-                new CommandInfo("mkdir", /* Localizable */ "Makes a directory in the current working directory",
-                    [
-                        new CommandArgumentInfo(new[]
+            new CommandInfo("mvall", /* Localizable */ "Moves all messages from recipient",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "senderName"),
+                        new CommandArgumentPart(true, "targetFolder")
+                    })
+                ], new MvAllCommand()),
+
+            new CommandInfo("read", /* Localizable */ "Opens a message",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "mailid", new CommandArgumentPartOptions()
                         {
-                            new CommandArgumentPart(true, "foldername")
+                            IsNumeric = true
                         })
-                    ], new MkdirCommand())
-            },
+                    })
+                ], new ReadCommand()),
 
-            { "mv",
-                new CommandInfo("mv", /* Localizable */ "Moves a message",
-                    [
-                        new CommandArgumentInfo(new[]
+            new CommandInfo("readenc", /* Localizable */ "Opens an encrypted message",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "mailid", new CommandArgumentPartOptions()
                         {
-                            new CommandArgumentPart(true, "mailId", new CommandArgumentPartOptions()
-                            {
-                                IsNumeric = true
-                            }),
-                            new CommandArgumentPart(true, "targetFolder")
+                            IsNumeric = true
                         })
-                    ], new MvCommand())
-            },
+                    })
+                ], new ReadEncCommand()),
 
-            { "mvall",
-                new CommandInfo("mvall", /* Localizable */ "Moves all messages from recipient",
-                    [
-                        new CommandArgumentInfo(new[]
+            new CommandInfo("ren", /* Localizable */ "Renames a folder",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "oldFolderName"),
+                        new CommandArgumentPart(true, "newFolderName")
+                    })
+                ], new RenCommand()),
+
+            new CommandInfo("rm", /* Localizable */ "Removes a message",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "mailid", new CommandArgumentPartOptions()
                         {
-                            new CommandArgumentPart(true, "senderName"),
-                            new CommandArgumentPart(true, "targetFolder")
+                            IsNumeric = true
                         })
-                    ], new MvAllCommand())
-            },
+                    })
+                ], new RmCommand()),
 
-            { "read",
-                new CommandInfo("read", /* Localizable */ "Opens a message",
-                    [
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "mailid", new CommandArgumentPartOptions()
-                            {
-                                IsNumeric = true
-                            })
-                        })
-                    ], new ReadCommand())
-            },
+            new CommandInfo("rmall", /* Localizable */ "Removes all messages from recipient",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "sendername")
+                    })
+                ], new RmAllCommand()),
 
-            { "readenc",
-                new CommandInfo("readenc", /* Localizable */ "Opens an encrypted message",
-                    [
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "mailid", new CommandArgumentPartOptions()
-                            {
-                                IsNumeric = true
-                            })
-                        })
-                    ], new ReadEncCommand())
-            },
+            new CommandInfo("rmdir", /* Localizable */ "Removes a directory from the current working directory",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "foldername")
+                    })
+                ], new RmdirCommand()),
 
-            { "ren",
-                new CommandInfo("ren", /* Localizable */ "Renames a folder",
-                    [
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "oldFolderName"),
-                            new CommandArgumentPart(true, "newFolderName")
-                        })
-                    ], new RenCommand())
-            },
+            new CommandInfo("send", /* Localizable */ "Sends a message to an address",
+                [
+                    new CommandArgumentInfo()
+                ], new SendCommand()),
 
-            { "rm",
-                new CommandInfo("rm", /* Localizable */ "Removes a message",
-                    [
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "mailid", new CommandArgumentPartOptions()
-                            {
-                                IsNumeric = true
-                            })
-                        })
-                    ], new RmCommand())
-            },
-
-            { "rmall",
-                new CommandInfo("rmall", /* Localizable */ "Removes all messages from recipient",
-                    [
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "sendername")
-                        })
-                    ], new RmAllCommand())
-            },
-
-            { "rmdir",
-                new CommandInfo("rmdir", /* Localizable */ "Removes a directory from the current working directory",
-                    [
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "foldername")
-                        })
-                    ], new RmdirCommand())
-            },
-
-            { "send",
-                new CommandInfo("send", /* Localizable */ "Sends a message to an address",
-                    [
-                        new CommandArgumentInfo()
-                    ], new SendCommand())
-            },
-
-            { "sendenc",
-                new CommandInfo("sendenc", /* Localizable */ "Sends an encrypted message to an address",
-                    [
-                        new CommandArgumentInfo()
-                    ], new SendEncCommand())
-            }
+            new CommandInfo("sendenc", /* Localizable */ "Sends an encrypted message to an address",
+                [
+                    new CommandArgumentInfo()
+                ], new SendEncCommand()),
         };
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()

@@ -36,233 +36,197 @@ namespace Nitrocid.Shell.Shells.Text
         /// <summary>
         /// Text commands
         /// </summary>
-        public override Dictionary<string, CommandInfo> Commands => new()
+        public override List<CommandInfo> Commands => new()
         {
-            { "addline",
-                new CommandInfo("addline", /* Localizable */ "Adds a new line with text at the end of the file",
-                    [
-                        new CommandArgumentInfo(new[]
+            new CommandInfo("addline", /* Localizable */ "Adds a new line with text at the end of the file",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "text")
+                    })
+                ], new AddLineCommand()),
+
+            new CommandInfo("addlines", /* Localizable */ "Adds the new lines at the end of the file",
+                [
+                    new CommandArgumentInfo()
+                ], new AddLinesCommand()),
+
+            new CommandInfo("clear", /* Localizable */ "Clears the text file",
+                [
+                    new CommandArgumentInfo()
+                ], new ClearCommand()),
+
+            new CommandInfo("delcharnum", /* Localizable */ "Deletes a character from character number in specified line",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "charNum", new CommandArgumentPartOptions()
                         {
-                            new CommandArgumentPart(true, "text")
-                        })
-                    ], new AddLineCommand())
-            },
-
-            { "addlines",
-                new CommandInfo("addlines", /* Localizable */ "Adds the new lines at the end of the file",
-                    [
-                        new CommandArgumentInfo()
-                    ], new AddLinesCommand())
-            },
-
-            { "clear",
-                new CommandInfo("clear", /* Localizable */ "Clears the text file",
-                    [
-                        new CommandArgumentInfo()
-                    ], new ClearCommand())
-            },
-
-            { "delcharnum",
-                new CommandInfo("delcharnum", /* Localizable */ "Deletes a character from character number in specified line",
-                    [
-                        new CommandArgumentInfo(new[]
+                            IsNumeric = true
+                        }),
+                        new CommandArgumentPart(true, "lineNum", new CommandArgumentPartOptions()
                         {
-                            new CommandArgumentPart(true, "charNum", new CommandArgumentPartOptions()
-                            {
-                                IsNumeric = true
-                            }),
-                            new CommandArgumentPart(true, "lineNum", new CommandArgumentPartOptions()
-                            {
-                                IsNumeric = true
-                            })
+                            IsNumeric = true
                         })
-                    ], new DelCharNumCommand())
-            },
+                    })
+                ], new DelCharNumCommand()),
 
-            { "delline",
-                new CommandInfo("delline", /* Localizable */ "Removes the specified line number",
-                    [
-                        new CommandArgumentInfo(new[]
+            new CommandInfo("delline", /* Localizable */ "Removes the specified line number",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "lineNum", new CommandArgumentPartOptions()
                         {
-                            new CommandArgumentPart(true, "lineNum", new CommandArgumentPartOptions()
-                            {
-                                IsNumeric = true
-                            }),
-                            new CommandArgumentPart(false, "lineNum2", new CommandArgumentPartOptions()
-                            {
-                                IsNumeric = true
-                            })
-                        })
-                    ], new DelLineCommand())
-            },
-
-            { "delword",
-                new CommandInfo("delword", /* Localizable */ "Deletes a word or phrase from line number",
-                    [
-                        new CommandArgumentInfo(new[]
+                            IsNumeric = true
+                        }),
+                        new CommandArgumentPart(false, "lineNum2", new CommandArgumentPartOptions()
                         {
-                            new CommandArgumentPart(true, "word/phrase"),
-                            new CommandArgumentPart(true, "lineNum", new CommandArgumentPartOptions()
-                            {
-                                IsNumeric = true
-                            }),
-                            new CommandArgumentPart(false, "lineNum2", new CommandArgumentPartOptions()
-                            {
-                                IsNumeric = true
-                            })
+                            IsNumeric = true
                         })
-                    ], new DelWordCommand())
-            },
+                    })
+                ], new DelLineCommand()),
 
-            { "editline",
-                new CommandInfo("editline", /* Localizable */ "Edits the specified line",
-                    [
-                        new CommandArgumentInfo(new[]
+            new CommandInfo("delword", /* Localizable */ "Deletes a word or phrase from line number",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "word/phrase"),
+                        new CommandArgumentPart(true, "lineNum", new CommandArgumentPartOptions()
                         {
-                            new CommandArgumentPart(true, "linenumber", new CommandArgumentPartOptions()
-                            {
-                                IsNumeric = true
-                            })
-                        })
-                    ], new EditLineCommand())
-            },
-
-            { "exitnosave",
-                new CommandInfo("exitnosave", /* Localizable */ "Exits the text editor",
-                    [
-                        new CommandArgumentInfo()
-                    ], new ExitNoSaveCommand())
-            },
-
-            { "print",
-                new CommandInfo("print", /* Localizable */ "Prints the contents of the file with line numbers to the console",
-                    [
-                        new CommandArgumentInfo(new[]
+                            IsNumeric = true
+                        }),
+                        new CommandArgumentPart(false, "lineNum2", new CommandArgumentPartOptions()
                         {
-                            new CommandArgumentPart(false, "lineNum", new CommandArgumentPartOptions()
-                            {
-                                IsNumeric = true
-                            }),
-                            new CommandArgumentPart(false, "lineNum2", new CommandArgumentPartOptions()
-                            {
-                                IsNumeric = true
-                            })
+                            IsNumeric = true
                         })
-                    ], new PrintCommand(), CommandFlags.Wrappable)
-            },
+                    })
+                ], new DelWordCommand()),
 
-            { "querychar",
-                new CommandInfo("querychar", /* Localizable */ "Queries a character in a specified line or all lines",
-                    [
-                        new CommandArgumentInfo(new[]
+            new CommandInfo("editline", /* Localizable */ "Edits the specified line",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "linenumber", new CommandArgumentPartOptions()
                         {
-                            new CommandArgumentPart(true, "char"),
-                            new CommandArgumentPart(true, "lineNum/all"),
-                            new CommandArgumentPart(false, "lineNum2", new CommandArgumentPartOptions()
-                            {
-                                IsNumeric = true
-                            })
+                            IsNumeric = true
                         })
-                    ], new QueryCharCommand(), CommandFlags.Wrappable)
-            },
+                    })
+                ], new EditLineCommand()),
 
-            { "queryword",
-                new CommandInfo("queryword", /* Localizable */ "Queries a word in a specified line or all lines",
-                    [
-                        new CommandArgumentInfo(new[]
+            new CommandInfo("exitnosave", /* Localizable */ "Exits the text editor",
+                [
+                    new CommandArgumentInfo()
+                ], new ExitNoSaveCommand()),
+
+            new CommandInfo("print", /* Localizable */ "Prints the contents of the file with line numbers to the console",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(false, "lineNum", new CommandArgumentPartOptions()
                         {
-                            new CommandArgumentPart(true, "word/phrase"),
-                            new CommandArgumentPart(true, "lineNum/all"),
-                            new CommandArgumentPart(false, "lineNum2", new CommandArgumentPartOptions()
-                            {
-                                IsNumeric = true
-                            })
-                        })
-                    ], new QueryWordCommand(), CommandFlags.Wrappable)
-            },
-
-            { "querywordregex",
-                new CommandInfo("querywordregex", /* Localizable */ "Queries a word in a specified line or all lines using regular expressions",
-                    [
-                        new CommandArgumentInfo(new[]
+                            IsNumeric = true
+                        }),
+                        new CommandArgumentPart(false, "lineNum2", new CommandArgumentPartOptions()
                         {
-                            new CommandArgumentPart(true, "regex"),
-                            new CommandArgumentPart(true, "lineNum/all"),
-                            new CommandArgumentPart(false, "lineNum2", new CommandArgumentPartOptions()
-                            {
-                                IsNumeric = true
-                            })
+                            IsNumeric = true
                         })
-                    ], new QueryWordRegexCommand(), CommandFlags.Wrappable)
-            },
+                    })
+                ], new PrintCommand(), CommandFlags.Wrappable),
 
-            { "replace",
-                new CommandInfo("replace", /* Localizable */ "Replaces a word or phrase with another one",
-                    [
-                        new CommandArgumentInfo(new[]
+            new CommandInfo("querychar", /* Localizable */ "Queries a character in a specified line or all lines",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "char"),
+                        new CommandArgumentPart(true, "lineNum/all"),
+                        new CommandArgumentPart(false, "lineNum2", new CommandArgumentPartOptions()
                         {
-                            new CommandArgumentPart(true, "word/phrase"),
-                            new CommandArgumentPart(true, "word/phrase")
+                            IsNumeric = true
                         })
-                    ], new ReplaceCommand())
-            },
+                    })
+                ], new QueryCharCommand(), CommandFlags.Wrappable),
 
-            { "replaceinline",
-                new CommandInfo("replaceinline", /* Localizable */ "Replaces a word or phrase with another one in a line",
-                    [
-                        new CommandArgumentInfo(new[]
+            new CommandInfo("queryword", /* Localizable */ "Queries a word in a specified line or all lines",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "word/phrase"),
+                        new CommandArgumentPart(true, "lineNum/all"),
+                        new CommandArgumentPart(false, "lineNum2", new CommandArgumentPartOptions()
                         {
-                            new CommandArgumentPart(true, "word/phrase"),
-                            new CommandArgumentPart(true, "word/phrase"),
-                            new CommandArgumentPart(true, "lineNum/all"),
-                            new CommandArgumentPart(false, "lineNum2", new CommandArgumentPartOptions()
-                            {
-                                IsNumeric = true
-                            })
+                            IsNumeric = true
                         })
-                    ], new ReplaceInlineCommand())
-            },
+                    })
+                ], new QueryWordCommand(), CommandFlags.Wrappable),
 
-            { "replaceregex",
-                new CommandInfo("replaceregex", /* Localizable */ "Replaces a word or phrase with another one using regular expressions",
-                    [
-                        new CommandArgumentInfo(new[]
+            new CommandInfo("querywordregex", /* Localizable */ "Queries a word in a specified line or all lines using regular expressions",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "regex"),
+                        new CommandArgumentPart(true, "lineNum/all"),
+                        new CommandArgumentPart(false, "lineNum2", new CommandArgumentPartOptions()
                         {
-                            new CommandArgumentPart(true, "regex"),
-                            new CommandArgumentPart(true, "word/phrase")
+                            IsNumeric = true
                         })
-                    ], new ReplaceRegexCommand())
-            },
+                    })
+                ], new QueryWordRegexCommand(), CommandFlags.Wrappable),
 
-            { "replaceinlineregex",
-                new CommandInfo("replaceinlineregex", /* Localizable */ "Replaces a word or phrase with another one in a line using regular expressions",
-                    [
-                        new CommandArgumentInfo(new[]
+            new CommandInfo("replace", /* Localizable */ "Replaces a word or phrase with another one",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "word/phrase"),
+                        new CommandArgumentPart(true, "word/phrase")
+                    })
+                ], new ReplaceCommand()),
+
+            new CommandInfo("replaceinline", /* Localizable */ "Replaces a word or phrase with another one in a line",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "word/phrase"),
+                        new CommandArgumentPart(true, "word/phrase"),
+                        new CommandArgumentPart(true, "lineNum/all"),
+                        new CommandArgumentPart(false, "lineNum2", new CommandArgumentPartOptions()
                         {
-                            new CommandArgumentPart(true, "regex"),
-                            new CommandArgumentPart(true, "word/phrase"),
-                            new CommandArgumentPart(true, "lineNum/all"),
-                            new CommandArgumentPart(false, "lineNum2", new CommandArgumentPartOptions()
-                            {
-                                IsNumeric = true
-                            })
+                            IsNumeric = true
                         })
-                    ], new ReplaceInlineRegexCommand())
-            },
+                    })
+                ], new ReplaceInlineCommand()),
 
-            { "save",
-                new CommandInfo("save", /* Localizable */ "Saves the file",
-                    [
-                        new CommandArgumentInfo()
-                    ], new SaveCommand())
-            },
+            new CommandInfo("replaceregex", /* Localizable */ "Replaces a word or phrase with another one using regular expressions",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "regex"),
+                        new CommandArgumentPart(true, "word/phrase")
+                    })
+                ], new ReplaceRegexCommand()),
 
-            { "tui",
-                new CommandInfo("tui", /* Localizable */ "Opens the interactive text editor TUI",
-                    [
-                        new CommandArgumentInfo()
-                    ], new TuiCommand())
-            },
+            new CommandInfo("replaceinlineregex", /* Localizable */ "Replaces a word or phrase with another one in a line using regular expressions",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "regex"),
+                        new CommandArgumentPart(true, "word/phrase"),
+                        new CommandArgumentPart(true, "lineNum/all"),
+                        new CommandArgumentPart(false, "lineNum2", new CommandArgumentPartOptions()
+                        {
+                            IsNumeric = true
+                        })
+                    })
+                ], new ReplaceInlineRegexCommand()),
+
+            new CommandInfo("save", /* Localizable */ "Saves the file",
+                [
+                    new CommandArgumentInfo()
+                ], new SaveCommand()),
+
+            new CommandInfo("tui", /* Localizable */ "Opens the interactive text editor TUI",
+                [
+                    new CommandArgumentInfo()
+                ], new TuiCommand()),
         };
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()

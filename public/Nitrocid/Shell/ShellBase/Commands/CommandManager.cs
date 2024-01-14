@@ -23,7 +23,6 @@ using Nitrocid.Languages;
 using Nitrocid.Misc.Splash;
 using Nitrocid.Misc.Text.Probers.Regexp;
 using Nitrocid.Modifications;
-using Nitrocid.Shell.ShellBase.Aliases;
 using Nitrocid.Shell.ShellBase.Shells;
 using System;
 using System.Collections.Generic;
@@ -43,37 +42,34 @@ namespace Nitrocid.Shell.ShellBase.Commands
         /// </summary>
         /// <param name="Command">A command</param>
         /// <param name="ShellType">The shell type</param>
-        /// <param name="includeAliases">Whether to include aliases or not</param>
         /// <returns>True if found; False if not found or shell type is invalid.</returns>
-        public static bool IsCommandFound(string Command, ShellType ShellType, bool includeAliases = true) =>
-            IsCommandFound(Command, ShellManager.GetShellTypeName(ShellType), includeAliases);
+        public static bool IsCommandFound(string Command, ShellType ShellType) =>
+            IsCommandFound(Command, ShellManager.GetShellTypeName(ShellType));
 
         /// <summary>
         /// Checks to see if the command is found in selected shell command type
         /// </summary>
         /// <param name="Command">A command</param>
         /// <param name="ShellType">The shell type name</param>
-        /// <param name="includeAliases">Whether to include aliases or not</param>
         /// <returns>True if found; False if not found or shell type is invalid.</returns>
-        public static bool IsCommandFound(string Command, string ShellType, bool includeAliases = true)
+        public static bool IsCommandFound(string Command, string ShellType)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Command: {0}, ShellType: {1}", Command, ShellType);
-            return GetCommands(ShellType, includeAliases).ContainsKey(Command);
+            return GetCommands(ShellType).Any((ci) => ci.Command == Command || ci.Aliases.Any((ai) => ai.Alias == Command));
         }
 
         /// <summary>
         /// Checks to see if the command is found in all the shells
         /// </summary>
         /// <param name="Command">A command</param>
-        /// <param name="includeAliases">Whether to include aliases or not</param>
         /// <returns>True if found; False if not found.</returns>
-        public static bool IsCommandFound(string Command, bool includeAliases = true)
+        public static bool IsCommandFound(string Command)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Command: {0}", Command);
             bool found = false;
             foreach (var ShellType in ShellManager.AvailableShells.Keys)
             {
-                found = GetCommands(ShellType, includeAliases).ContainsKey(Command);
+                found = GetCommands(ShellType).Any((ci) => ci.Command == Command || ci.Aliases.Any((ai) => ai.Alias == Command));
                 if (found)
                     break;
             }
@@ -81,89 +77,92 @@ namespace Nitrocid.Shell.ShellBase.Commands
         }
 
         /// <summary>
-        /// Gets the command dictionary according to the shell type
+        /// Gets the command list according to the shell type
         /// </summary>
         /// <param name="ShellType">The shell type</param>
-        /// <param name="includeAliases">Whether to include aliases or not</param>
-        public static Dictionary<string, CommandInfo> GetCommands(ShellType ShellType, bool includeAliases = true) =>
-            GetCommands(ShellManager.GetShellTypeName(ShellType), includeAliases);
+        public static CommandInfo[] GetCommands(ShellType ShellType) =>
+            GetCommands(ShellManager.GetShellTypeName(ShellType));
 
         /// <summary>
-        /// Gets the command dictionary according to the shell type
+        /// Gets the command list according to the shell type
         /// </summary>
         /// <param name="ShellType">The shell type</param>
-        /// <param name="includeAliases">Whether to include aliases or not</param>
-        public static Dictionary<string, CommandInfo> GetCommands(string ShellType, bool includeAliases = true)
+        public static CommandInfo[] GetCommands(string ShellType)
         {
             // Individual shells
             var shellInfo = ShellManager.GetShellInfo(ShellType);
             var addonCommands = ShellManager.GetShellInfo(ShellType).addonCommands;
             var modCommands = ModManager.ListModCommands(ShellType);
-            var aliasCommands = AliasManager.GetEntireAliasListFromType(ShellType);
-            Dictionary<string, CommandInfo> FinalCommands = shellInfo.Commands;
+            List<CommandInfo> FinalCommands = shellInfo.Commands;
 
             // Unified commands
-            foreach (string UnifiedCommand in ShellManager.UnifiedCommands.Keys)
+            foreach (var UnifiedCommand in ShellManager.UnifiedCommands)
             {
-                if (!FinalCommands.ContainsKey(UnifiedCommand))
-                    FinalCommands.Add(UnifiedCommand, ShellManager.UnifiedCommands[UnifiedCommand]);
+                if (!FinalCommands.Contains(UnifiedCommand))
+                    FinalCommands.Add(UnifiedCommand);
             }
 
             // Addon commands
-            foreach (string AddonCommand in addonCommands.Keys)
+            foreach (var AddonCommand in addonCommands)
             {
-                if (!FinalCommands.ContainsKey(AddonCommand))
-                    FinalCommands.Add(AddonCommand, addonCommands[AddonCommand]);
+                if (!FinalCommands.Contains(AddonCommand))
+                    FinalCommands.Add(AddonCommand);
             }
 
             // Mod commands
-            foreach (string ModCommand in modCommands.Keys)
+            foreach (var ModCommand in modCommands)
             {
-                if (!FinalCommands.ContainsKey(ModCommand))
-                    FinalCommands.Add(ModCommand, modCommands[ModCommand]);
+                if (!FinalCommands.Contains(ModCommand))
+                    FinalCommands.Add(ModCommand);
             }
 
-            // Aliased commands
-            foreach (var aliasInfo in aliasCommands)
-            {
-                if (!includeAliases)
-                    break;
-                string alias = aliasInfo.Alias;
-                var resolved = aliasInfo.TargetCommand;
-                FinalCommands.TryAdd(alias, resolved);
-            }
+            return [.. FinalCommands];
+        }
 
+        /// <summary>
+        /// Gets the command names according to the shell type
+        /// </summary>
+        /// <param name="ShellType">The shell type</param>
+        public static string[] GetCommandNames(ShellType ShellType) =>
+            GetCommandNames(ShellManager.GetShellTypeName(ShellType));
+
+        /// <summary>
+        /// Gets the command names according to the shell type
+        /// </summary>
+        /// <param name="ShellType">The shell type</param>
+        public static string[] GetCommandNames(string ShellType)
+        {
+            // Return command names
+            string[] FinalCommands = GetCommands(ShellType).Select((ci) => ci.Command).ToArray();
             return FinalCommands;
         }
 
         /// <summary>
-        /// Gets the command dictionary according to the shell type by searching for the partial command name
+        /// Gets the command list according to the shell type by searching for the partial command name
         /// </summary>
         /// <param name="namePattern">A valid regex pattern for command name</param>
         /// <param name="ShellType">The shell type</param>
-        /// <param name="includeAliases">Whether to include aliases or not</param>
-        public static Dictionary<string, CommandInfo> FindCommands([StringSyntax(StringSyntaxAttribute.Regex)] string namePattern, ShellType ShellType, bool includeAliases = true) =>
-            FindCommands(namePattern, ShellManager.GetShellTypeName(ShellType), includeAliases);
+        public static CommandInfo[] FindCommands([StringSyntax(StringSyntaxAttribute.Regex)] string namePattern, ShellType ShellType) =>
+            FindCommands(namePattern, ShellManager.GetShellTypeName(ShellType));
 
         /// <summary>
-        /// Gets the command dictionary according to the shell type by searching for the partial command name
+        /// Gets the command list according to the shell type by searching for the partial command name
         /// </summary>
         /// <param name="namePattern">A valid regex pattern for command name</param>
         /// <param name="ShellType">The shell type</param>
-        /// <param name="includeAliases">Whether to include aliases or not</param>
-        public static Dictionary<string, CommandInfo> FindCommands([StringSyntax(StringSyntaxAttribute.Regex)] string namePattern, string ShellType, bool includeAliases = true)
+        public static CommandInfo[] FindCommands([StringSyntax(StringSyntaxAttribute.Regex)] string namePattern, string ShellType)
         {
             // Verify that the provided regex is valid
             if (!RegexpTools.IsValidRegex(namePattern))
                 throw new KernelException(KernelExceptionType.CommandManager, Translate.DoTranslation("Invalid command pattern provided."));
 
             // Get all the commands first
-            var allCommands = GetCommands(ShellType, includeAliases);
+            var allCommands = GetCommands(ShellType);
 
             // Now, find the commands that match the specified regex pattern.
             var foundCommands = allCommands
-                .Where((kvp) => RegexpTools.IsMatch(kvp.Key, namePattern))
-                .ToDictionary((kvp) => kvp.Key, (kvp) => kvp.Value);
+                .Where((info) => RegexpTools.IsMatch(info.Command, namePattern))
+                .ToArray();
             return foundCommands;
         }
 
@@ -172,25 +171,23 @@ namespace Nitrocid.Shell.ShellBase.Commands
         /// </summary>
         /// <param name="Command">A command</param>
         /// <param name="ShellType">The shell type</param>
-        /// <param name="includeAliases">Whether to include aliases or not</param>
         /// <returns>A <see cref="CommandInfo"/> instance of a specified command</returns>
-        public static CommandInfo GetCommand(string Command, ShellType ShellType, bool includeAliases = true) =>
-            GetCommand(Command, ShellManager.GetShellTypeName(ShellType), includeAliases);
+        public static CommandInfo GetCommand(string Command, ShellType ShellType) =>
+            GetCommand(Command, ShellManager.GetShellTypeName(ShellType));
 
         /// <summary>
         /// Gets a command, specified by the shell type
         /// </summary>
         /// <param name="Command">A command</param>
         /// <param name="ShellType">The shell type name</param>
-        /// <param name="includeAliases">Whether to include aliases or not</param>
         /// <returns>True if found; False if not found or shell type is invalid.</returns>
-        public static CommandInfo GetCommand(string Command, string ShellType, bool includeAliases = true)
+        public static CommandInfo GetCommand(string Command, string ShellType)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Command: {0}, ShellType: {1}", Command, ShellType);
-            var commandList = GetCommands(ShellType, includeAliases);
-            if (!IsCommandFound(Command, ShellType, includeAliases))
+            var commandList = GetCommands(ShellType);
+            if (!IsCommandFound(Command, ShellType))
                 throw new KernelException(KernelExceptionType.CommandManager, Translate.DoTranslation("Command not found."));
-            return commandList[Command];
+            return commandList.Single((ci) => ci.Command == Command || ci.Aliases.Any((ai) => ai.Alias == Command));
         }
 
         /// <summary>
@@ -237,8 +234,8 @@ namespace Nitrocid.Shell.ShellBase.Commands
 
             // Now, add the command to the mod list
             DebugWriter.WriteDebug(DebugLevel.I, "Adding command {0} for {1}...", command, ShellType);
-            if (!ModManager.ListModCommands(ShellType).ContainsKey(command))
-                ModManager.ListModCommands(ShellType).Add(command, commandBase);
+            if (!ModManager.ListModCommands(ShellType).Contains(commandBase))
+                ShellManager.GetShellInfo(ShellType).ModCommands.Add(commandBase);
             DebugWriter.WriteDebug(DebugLevel.I, "Registered {0}, ShellType: {1}", command, ShellType);
         }
 
@@ -297,10 +294,14 @@ namespace Nitrocid.Shell.ShellBase.Commands
                 throw new KernelException(KernelExceptionType.CommandManager, Translate.DoTranslation("You must provide the command."));
 
             // Check to see if we have this command
-            if (!ModManager.ListModCommands(ShellType).ContainsKey(commandName))
+            if (!GetCommandNames(ShellType).Contains(commandName))
                 throw new KernelException(KernelExceptionType.CommandManager, Translate.DoTranslation("The custom command specified is not found."));
             else
-                ModManager.ListModCommands(ShellType).Remove(commandName);
+            {
+                // We have the command. Remove it.
+                var cmd = GetCommand(commandName, ShellType);
+                ShellManager.GetShellInfo(ShellType).ModCommands.Remove(cmd);
+            }
         }
 
         /// <summary>
@@ -380,7 +381,8 @@ namespace Nitrocid.Shell.ShellBase.Commands
 
             // Now, add the command to the addon list
             DebugWriter.WriteDebug(DebugLevel.I, "Adding command {0} for {1}...", command, ShellType);
-            ShellManager.AvailableShells[ShellType].addonCommands.TryAdd(command, commandBase);
+            if (!ShellManager.AvailableShells[ShellType].addonCommands.Contains(commandBase))
+                ShellManager.AvailableShells[ShellType].addonCommands.Add(commandBase);
             DebugWriter.WriteDebug(DebugLevel.I, "Registered {0}, ShellType: {1}", command, ShellType);
         }
 
@@ -439,10 +441,14 @@ namespace Nitrocid.Shell.ShellBase.Commands
                 throw new KernelException(KernelExceptionType.CommandManager, Translate.DoTranslation("You must provide the command."));
 
             // Check to see if we have this command
-            if (!ShellManager.AvailableShells[ShellType].addonCommands.ContainsKey(commandName))
+            if (!GetCommandNames(ShellType).Contains(commandName))
                 throw new KernelException(KernelExceptionType.CommandManager, Translate.DoTranslation("The addon command specified is not found."));
             else
-                ShellManager.availableShells[ShellType].addonCommands.Remove(commandName);
+            {
+                // We have the command. Remove it.
+                var cmd = GetCommand(commandName, ShellType);
+                ShellManager.availableShells[ShellType].addonCommands.Remove(cmd);
+            }
         }
 
         /// <summary>

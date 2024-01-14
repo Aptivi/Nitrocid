@@ -82,7 +82,7 @@ namespace Nitrocid.Shell.ShellBase.Commands
         internal static void ExecuteCommand(CommandExecutorParameters ThreadParams) =>
             ExecuteCommand(ThreadParams, CommandManager.GetCommands(ThreadParams.ShellType));
 
-        private static void ExecuteCommand(CommandExecutorParameters ThreadParams, Dictionary<string, CommandInfo> TargetCommands)
+        private static void ExecuteCommand(CommandExecutorParameters ThreadParams, CommandInfo[] TargetCommands)
         {
             var RequestedCommand = ThreadParams.RequestedCommand;
             var RequestedCommandInfo = ThreadParams.RequestedCommandInfo;
@@ -194,7 +194,10 @@ namespace Nitrocid.Shell.ShellBase.Commands
                 string variable = "";
 
                 // Change the command if a command with no slash is entered on a slash-enabled shells
-                var cmdInfo = TargetCommands.TryGetValue(Command, out CommandInfo requestedCmdInfo) ? requestedCmdInfo : RequestedCommandInfo;
+                var cmdInfo =
+                    TargetCommands.Any((ci) => ci.Command == Command) ?
+                    TargetCommands.Single((ci) => ci.Command == Command) :
+                    RequestedCommandInfo;
                 var shellInfo = ShellManager.GetShellInfo(ShellType);
                 if (shellInfo.SlashCommand)
                 {
@@ -422,11 +425,11 @@ namespace Nitrocid.Shell.ShellBase.Commands
             var shellInfo = ShellManager.GetShellInfo(shellType);
 
             // Get wrappable commands
-            var WrappableCmds = shellInfo.Commands.Values
+            var WrappableCmds = shellInfo.Commands
                 .Where(CommandInfo => CommandInfo.Flags.HasFlag(CommandFlags.Wrappable))
                 .Select(CommandInfo => CommandInfo.Command)
                 .ToArray();
-            var WrappableUnified = ShellManager.UnifiedCommands.Values
+            var WrappableUnified = ShellManager.UnifiedCommands
                 .Where(CommandInfo => CommandInfo.Flags.HasFlag(CommandFlags.Wrappable))
                 .Select(CommandInfo => CommandInfo.Command)
                 .ToArray();

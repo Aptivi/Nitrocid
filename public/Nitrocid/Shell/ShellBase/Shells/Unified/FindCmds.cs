@@ -39,9 +39,9 @@ namespace Nitrocid.Shell.ShellBase.Shells.Unified
             foreach (var command in commands)
             {
                 TextWriters.Write("- ", false, KernelColorType.ListEntry);
-                TextWriters.Write(command.Key, KernelColorType.ListValue);
+                TextWriters.Write(command.Command, KernelColorType.ListValue);
             }
-            if (commands.Count == 0)
+            if (commands.Length == 0)
                 TextWriters.Write(Translate.DoTranslation("No commands found."), KernelColorType.Error);
             return 0;
         }

@@ -31,45 +31,40 @@ using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Shell.Prompts;
 using Nitrocid.Modifications;
+using System.Linq;
 
 namespace Nitrocid.Extras.SftpShell
 {
     internal class SftpShellInit : IAddon
     {
-        private readonly Dictionary<string, CommandInfo> addonCommands = new()
+        private readonly List<CommandInfo> addonCommands = new()
         {
-            { "sftp",
-                new CommandInfo("sftp", /* Localizable */ "Lets you use an SSH FTP server",
-                    [
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(false, "server"),
-                        })
-                    ], new SftpCommandExec())
-            },
+            new CommandInfo("sftp", /* Localizable */ "Lets you use an SSH FTP server",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(false, "server"),
+                    })
+                ], new SftpCommandExec()),
 
-            { "sshell",
-                new CommandInfo("sshell", /* Localizable */ "Connects to an SSH server.",
-                    [
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "address:port"),
-                            new CommandArgumentPart(true, "username"),
-                        })
-                    ], new SshellCommand())
-            },
+            new CommandInfo("sshell", /* Localizable */ "Connects to an SSH server.",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "address:port"),
+                        new CommandArgumentPart(true, "username"),
+                    })
+                ], new SshellCommand()),
 
-            { "sshcmd",
-                new CommandInfo("sshcmd", /* Localizable */ "Connects to an SSH server to execute a command.",
-                    [
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "address:port"),
-                            new CommandArgumentPart(true, "username"),
-                            new CommandArgumentPart(true, "command"),
-                        })
-                    ], new SshcmdCommand())
-            },
+            new CommandInfo("sshcmd", /* Localizable */ "Connects to an SSH server to execute a command.",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "address:port"),
+                        new CommandArgumentPart(true, "username"),
+                        new CommandArgumentPart(true, "command"),
+                    })
+                ], new SshcmdCommand()),
         };
 
         string IAddon.AddonName =>
@@ -92,7 +87,7 @@ namespace Nitrocid.Extras.SftpShell
             ConfigTools.RegisterBaseSetting(config);
             ShellManager.reservedShells.Add("SFTPShell");
             ShellManager.RegisterShell("SFTPShell", new SFTPShellInfo());
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands.Values]);
+            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
         }
 
         void IAddon.StartAddon()
@@ -103,7 +98,7 @@ namespace Nitrocid.Extras.SftpShell
             ShellManager.availableShells.Remove("SFTPShell");
             PromptPresetManager.CurrentPresets.Remove("SFTPShell");
             ShellManager.reservedShells.Remove("SFTPShell");
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Keys]);
+            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
             ConfigTools.UnregisterBaseSetting(nameof(SftpConfig));
         }
     }

@@ -31,22 +31,21 @@ using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Shell.Prompts;
 using Nitrocid.Modifications;
+using System.Linq;
 
 namespace Nitrocid.Extras.ArchiveShell
 {
     internal class ArchiveShellInit : IAddon
     {
-        private readonly Dictionary<string, CommandInfo> addonCommands = new()
+        private readonly List<CommandInfo> addonCommands = new()
         {
-            { "archive",
-                new CommandInfo("archive", /* Localizable */ "Opens the archive file to the archive shell",
-                    [
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "archivefile"),
-                        })
-                    ], new ArchiveCommand())
-            },
+            new CommandInfo("archive", /* Localizable */ "Opens the archive file to the archive shell",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "archivefile"),
+                    })
+                ], new ArchiveCommand())
         };
 
         string IAddon.AddonName =>
@@ -72,14 +71,14 @@ namespace Nitrocid.Extras.ArchiveShell
         }
 
         void IAddon.StartAddon() =>
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands.Values]);
+            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
 
         void IAddon.StopAddon()
         {
             ShellManager.availableShells.Remove("ArchiveShell");
             PromptPresetManager.CurrentPresets.Remove("ArchiveShell");
             ShellManager.reservedShells.Remove("ArchiveShell");
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Keys]);
+            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
             ConfigTools.UnregisterBaseSetting(nameof(ArchiveConfig));
         }
     }

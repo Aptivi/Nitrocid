@@ -37,268 +37,234 @@ namespace Nitrocid.Extras.JsonShell.Json
         /// <summary>
         /// JSON commands
         /// </summary>
-        public override Dictionary<string, CommandInfo> Commands => new()
+        public override List<CommandInfo> Commands => new()
         {
-            { "add",
-                new CommandInfo("add", /* Localizable */ "Adds a new array, object, or property",
+            new CommandInfo("add", /* Localizable */ "Adds a new array, object, or property",
+                [
+                    new CommandArgumentInfo(
                     [
-                        new CommandArgumentInfo(
-                        [
-                            new CommandArgumentPart(true, "jsonValue")
-                        ],
-                        [
-                            new SwitchInfo("parentPath", /* Localizable */ "Specifies the parent path", new SwitchOptions()
-                            {
-                                ArgumentsRequired = true
-                            }),
-                            new SwitchInfo("type", /* Localizable */ "Specifies the type", new SwitchOptions()
-                            {
-                                ArgumentsRequired = true,
-                                IsRequired = true
-                            }),
-                            new SwitchInfo("propName", /* Localizable */ "Specifies the property name to be created with. This is used if the parent path is an object.", new SwitchOptions()
-                            {
-                                ArgumentsRequired = true
-                            }),
-                        ])
-                    ], new AddCommand())
-            },
-
-            { "addarray",
-                new CommandInfo("addarray", /* Localizable */ "Adds a new property containing the array",
+                        new CommandArgumentPart(true, "jsonValue")
+                    ],
                     [
-                        new CommandArgumentInfo(
-                        [
-                            new CommandArgumentPart(true, "propName"),
-                            new CommandArgumentPart(true, "propValue1"),
-                            new CommandArgumentPart(false, "propValue2"),
-                            new CommandArgumentPart(false, "propValue3...")
-                        ],
-                        [
-                            new SwitchInfo("parentProperty", /* Localizable */ "Specifies the parent property", new SwitchOptions()
-                            {
-                                ArgumentsRequired = true
-                            })
-                        ])
-                    ], new AddArrayCommand(), CommandFlags.Obsolete)
-            },
-
-            { "addproperty",
-                new CommandInfo("addproperty", /* Localizable */ "Adds a new property at the end of the JSON file",
-                    [
-                        new CommandArgumentInfo(
-                        [
-                            new CommandArgumentPart(true, "propName"),
-                            new CommandArgumentPart(true, "propValue")
-                        ],
-                        [
-                            new SwitchInfo("parentProperty", /* Localizable */ "Specifies the parent property", new SwitchOptions()
-                            {
-                                ArgumentsRequired = true
-                            })
-                        ])
-                    ], new AddPropertyCommand(), CommandFlags.Obsolete)
-            },
-
-            { "addobject",
-                new CommandInfo("addobject", /* Localizable */ "Adds a new object inside the array",
-                    [
-                        new CommandArgumentInfo(
-                        [
-                            new CommandArgumentPart(true, "arrayName"),
-                            new CommandArgumentPart(true, "valueInArray")
-                        ],
-                        [
-                            new SwitchInfo("parentProperty", /* Localizable */ "Specifies the parent property", new SwitchOptions()
-                            {
-                                ArgumentsRequired = true
-                            })
-                        ])
-                    ], new AddObjectCommand(), CommandFlags.Obsolete)
-            },
-
-            { "addobjectindexed",
-                new CommandInfo("addobjectindexed", /* Localizable */ "Adds a new object inside an object specified by index",
-                    [
-                        new CommandArgumentInfo(
-                        [
-                            new CommandArgumentPart(true, "index", new CommandArgumentPartOptions()
-                            {
-                                IsNumeric = true
-                            }),
-                            new CommandArgumentPart(true, "valueInArray")
-                        ],
-                        [
-                            new SwitchInfo("parentProperty", /* Localizable */ "Specifies the parent property", new SwitchOptions()
-                            {
-                                ArgumentsRequired = true
-                            })
-                        ])
-                    ], new AddObjectIndexedCommand(), CommandFlags.Obsolete)
-            },
-
-            { "clear",
-                new CommandInfo("clear", /* Localizable */ "Clears the JSON file",
-                    [
-                        new CommandArgumentInfo()
-                    ], new ClearCommand())
-            },
-
-            { "delproperty",
-                new CommandInfo("delproperty", /* Localizable */ "Removes a property from the JSON file",
-                    [
-                        new CommandArgumentInfo(new[]
+                        new SwitchInfo("parentPath", /* Localizable */ "Specifies the parent path", new SwitchOptions()
                         {
-                            new CommandArgumentPart(true, "propertyName")
-                        })
-                    ], new DelPropertyCommand(), CommandFlags.Obsolete)
-            },
-
-            { "exitnosave",
-                new CommandInfo("exitnosave", /* Localizable */ "Exits the JSON shell without saving the changes",
-                    [
-                        new CommandArgumentInfo()
-                    ], new ExitNoSaveCommand())
-            },
-
-            { "findproperty",
-                new CommandInfo("findproperty", /* Localizable */ "Finds a property",
-                    [
-                        new CommandArgumentInfo(
-                        [
-                            new CommandArgumentPart(true, "propertyName")
-                        ],
-                        [
-                            new SwitchInfo("parentProperty", /* Localizable */ "Specifies the parent property", new SwitchOptions()
-                            {
-                                ArgumentsRequired = true
-                            })
-                        ])
-                    ], new FindPropertyCommand())
-            },
-
-            { "jsoninfo",
-                new CommandInfo("jsoninfo", /* Localizable */ "Shows information about the JSON file",
-                    [
-                        new CommandArgumentInfo(
-                        [
-                            new SwitchInfo("simplified", /* Localizable */ "Don't show individual properties", new SwitchOptions()
-                            {
-                                AcceptsValues = false
-                            }),
-                            new SwitchInfo("showvals", /* Localizable */ "Show all values", new SwitchOptions()
-                            {
-                                AcceptsValues = false
-                            })
-                        ])
-                    ], new JsonInfoCommand(), CommandFlags.Wrappable)
-            },
-
-            { "print",
-                new CommandInfo("print", /* Localizable */ "Prints the JSON file",
-                    [
-                        new CommandArgumentInfo(new[]
+                            ArgumentsRequired = true
+                        }),
+                        new SwitchInfo("type", /* Localizable */ "Specifies the type", new SwitchOptions()
                         {
-                            new CommandArgumentPart(false, "propertyName")
-                        })
-                    ], new PrintCommand(), CommandFlags.Wrappable)
-            },
-
-            { "rm",
-                new CommandInfo("rm", /* Localizable */ "Removes a target object",
-                    [
-                        new CommandArgumentInfo(new[]
+                            ArgumentsRequired = true,
+                            IsRequired = true
+                        }),
+                        new SwitchInfo("propName", /* Localizable */ "Specifies the property name to be created with. This is used if the parent path is an object.", new SwitchOptions()
                         {
-                            new CommandArgumentPart(true, "objectPath")
+                            ArgumentsRequired = true
+                        }),
+                    ])
+                ], new AddCommand()),
+
+            new CommandInfo("addarray", /* Localizable */ "Adds a new property containing the array",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "propName"),
+                        new CommandArgumentPart(true, "propValue1"),
+                        new CommandArgumentPart(false, "propValue2"),
+                        new CommandArgumentPart(false, "propValue3...")
+                    ],
+                    [
+                        new SwitchInfo("parentProperty", /* Localizable */ "Specifies the parent property", new SwitchOptions()
+                        {
+                            ArgumentsRequired = true
                         })
-                    ], new RmCommand())
-            },
+                    ])
+                ], new AddArrayCommand(), CommandFlags.Obsolete),
 
-            { "rmobject",
-                new CommandInfo("rmobject", /* Localizable */ "Removes an object",
+            new CommandInfo("addproperty", /* Localizable */ "Adds a new property at the end of the JSON file",
+                [
+                    new CommandArgumentInfo(
                     [
-                        new CommandArgumentInfo(
-                        [
-                            new CommandArgumentPart(true, "objectName")
-                        ],
-                        [
-                            new SwitchInfo("parentProperty", /* Localizable */ "Specifies the parent property", new SwitchOptions()
-                            {
-                                ArgumentsRequired = true
-                            })
-                        ])
-                    ], new RmObjectCommand(), CommandFlags.Obsolete)
-            },
+                        new CommandArgumentPart(true, "propName"),
+                        new CommandArgumentPart(true, "propValue")
+                    ],
+                    [
+                        new SwitchInfo("parentProperty", /* Localizable */ "Specifies the parent property", new SwitchOptions()
+                        {
+                            ArgumentsRequired = true
+                        })
+                    ])
+                ], new AddPropertyCommand(), CommandFlags.Obsolete),
 
-            { "rmobjectindexed",
-                new CommandInfo("rmobjectindexed", /* Localizable */ "Removes an object specified by index",
+            new CommandInfo("addobject", /* Localizable */ "Adds a new object inside the array",
+                [
+                    new CommandArgumentInfo(
                     [
-                        new CommandArgumentInfo(
-                        [
-                            new CommandArgumentPart(true, "index", new CommandArgumentPartOptions()
-                            {
-                                IsNumeric = true
-                            })
-                        ],
-                        [
-                            new SwitchInfo("parentProperty", /* Localizable */ "Specifies the parent property", new SwitchOptions()
-                            {
-                                ArgumentsRequired = true
-                            })
-                        ])
-                    ], new RmObjectIndexedCommand(), CommandFlags.Obsolete)
-            },
+                        new CommandArgumentPart(true, "arrayName"),
+                        new CommandArgumentPart(true, "valueInArray")
+                    ],
+                    [
+                        new SwitchInfo("parentProperty", /* Localizable */ "Specifies the parent property", new SwitchOptions()
+                        {
+                            ArgumentsRequired = true
+                        })
+                    ])
+                ], new AddObjectCommand(), CommandFlags.Obsolete),
 
-            { "save",
-                new CommandInfo("save", /* Localizable */ "Saves the JSON file",
+            new CommandInfo("addobjectindexed", /* Localizable */ "Adds a new object inside an object specified by index",
+                [
+                    new CommandArgumentInfo(
                     [
-                        new CommandArgumentInfo(
-                        [
-                            new SwitchInfo("b", /* Localizable */ "Beautified JSON", new SwitchOptions()
-                            {
-                                ConflictsWith = ["m"],
-                                AcceptsValues = false
-                            }),
-                            new SwitchInfo("m", /* Localizable */ "Minified JSON", new SwitchOptions()
-                            {
-                                ConflictsWith = ["b"],
-                                AcceptsValues = false
-                            })
-                        ])
-                    ], new SaveCommand())
-            },
+                        new CommandArgumentPart(true, "index", new CommandArgumentPartOptions()
+                        {
+                            IsNumeric = true
+                        }),
+                        new CommandArgumentPart(true, "valueInArray")
+                    ],
+                    [
+                        new SwitchInfo("parentProperty", /* Localizable */ "Specifies the parent property", new SwitchOptions()
+                        {
+                            ArgumentsRequired = true
+                        })
+                    ])
+                ], new AddObjectIndexedCommand(), CommandFlags.Obsolete),
 
-            { "set",
-                new CommandInfo("set", /* Localizable */ "Sets a value to an existing array, object, or property",
-                    [
-                        new CommandArgumentInfo(
-                        [
-                            new CommandArgumentPart(true, "jsonValue")
-                        ],
-                        [
-                            new SwitchInfo("parentPath", /* Localizable */ "Specifies the parent path", new SwitchOptions()
-                            {
-                                ArgumentsRequired = true
-                            }),
-                            new SwitchInfo("type", /* Localizable */ "Specifies the type", new SwitchOptions()
-                            {
-                                ArgumentsRequired = true,
-                                IsRequired = true
-                            }),
-                            new SwitchInfo("propName", /* Localizable */ "Specifies the property name to be created with. This is used if the parent path is an object.", new SwitchOptions()
-                            {
-                                ArgumentsRequired = true
-                            }),
-                        ])
-                    ], new SetCommand())
-            },
+            new CommandInfo("clear", /* Localizable */ "Clears the JSON file",
+                [
+                    new CommandArgumentInfo()
+                ], new ClearCommand()),
 
-            { "tui",
-                new CommandInfo("tui", /* Localizable */ "Opens the JSON file in the interactive text editor TUI",
+            new CommandInfo("delproperty", /* Localizable */ "Removes a property from the JSON file",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "propertyName")
+                    })
+                ], new DelPropertyCommand(), CommandFlags.Obsolete),
+
+            new CommandInfo("exitnosave", /* Localizable */ "Exits the JSON shell without saving the changes",
+                [
+                    new CommandArgumentInfo()
+                ], new ExitNoSaveCommand()),
+
+            new CommandInfo("findproperty", /* Localizable */ "Finds a property",
+                [
+                    new CommandArgumentInfo(
                     [
-                        new CommandArgumentInfo()
-                    ], new TuiCommand())
-            },
+                        new CommandArgumentPart(true, "propertyName")
+                    ],
+                    [
+                        new SwitchInfo("parentProperty", /* Localizable */ "Specifies the parent property", new SwitchOptions()
+                        {
+                            ArgumentsRequired = true
+                        })
+                    ])
+                ], new FindPropertyCommand()),
+
+            new CommandInfo("jsoninfo", /* Localizable */ "Shows information about the JSON file",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new SwitchInfo("simplified", /* Localizable */ "Don't show individual properties", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                        new SwitchInfo("showvals", /* Localizable */ "Show all values", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        })
+                    ])
+                ], new JsonInfoCommand(), CommandFlags.Wrappable),
+
+            new CommandInfo("print", /* Localizable */ "Prints the JSON file",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(false, "propertyName")
+                    })
+                ], new PrintCommand(), CommandFlags.Wrappable),
+
+            new CommandInfo("rm", /* Localizable */ "Removes a target object",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "objectPath")
+                    })
+                ], new RmCommand()),
+
+            new CommandInfo("rmobject", /* Localizable */ "Removes an object",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "objectName")
+                    ],
+                    [
+                        new SwitchInfo("parentProperty", /* Localizable */ "Specifies the parent property", new SwitchOptions()
+                        {
+                            ArgumentsRequired = true
+                        })
+                    ])
+                ], new RmObjectCommand(), CommandFlags.Obsolete),
+
+            new CommandInfo("rmobjectindexed", /* Localizable */ "Removes an object specified by index",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "index", new CommandArgumentPartOptions()
+                        {
+                            IsNumeric = true
+                        })
+                    ],
+                    [
+                        new SwitchInfo("parentProperty", /* Localizable */ "Specifies the parent property", new SwitchOptions()
+                        {
+                            ArgumentsRequired = true
+                        })
+                    ])
+                ], new RmObjectIndexedCommand(), CommandFlags.Obsolete),
+
+            new CommandInfo("save", /* Localizable */ "Saves the JSON file",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new SwitchInfo("b", /* Localizable */ "Beautified JSON", new SwitchOptions()
+                        {
+                            ConflictsWith = ["m"],
+                            AcceptsValues = false
+                        }),
+                        new SwitchInfo("m", /* Localizable */ "Minified JSON", new SwitchOptions()
+                        {
+                            ConflictsWith = ["b"],
+                            AcceptsValues = false
+                        })
+                    ])
+                ], new SaveCommand()),
+
+            new CommandInfo("set", /* Localizable */ "Sets a value to an existing array, object, or property",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "jsonValue")
+                    ],
+                    [
+                        new SwitchInfo("parentPath", /* Localizable */ "Specifies the parent path", new SwitchOptions()
+                        {
+                            ArgumentsRequired = true
+                        }),
+                        new SwitchInfo("type", /* Localizable */ "Specifies the type", new SwitchOptions()
+                        {
+                            ArgumentsRequired = true,
+                            IsRequired = true
+                        }),
+                        new SwitchInfo("propName", /* Localizable */ "Specifies the property name to be created with. This is used if the parent path is an object.", new SwitchOptions()
+                        {
+                            ArgumentsRequired = true
+                        }),
+                    ])
+                ], new SetCommand()),
+
+            new CommandInfo("tui", /* Localizable */ "Opens the JSON file in the interactive text editor TUI",
+                [
+                    new CommandArgumentInfo()
+                ], new TuiCommand()),
         };
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()

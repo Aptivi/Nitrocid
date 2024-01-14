@@ -29,20 +29,19 @@ using Nitrocid.Shell.ShellBase.Shells;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Reflection;
 
 namespace Nitrocid.Extras.HttpShell
 {
     internal class HttpShellInit : IAddon
     {
-        private readonly Dictionary<string, CommandInfo> addonCommands = new()
+        private readonly List<CommandInfo> addonCommands = new()
         {
-            { "http",
-                new CommandInfo("http", /* Localizable */ "Starts the HTTP shell",
-                    [
-                        new CommandArgumentInfo()
-                    ], new HttpCommandExec())
-            },
+            new CommandInfo("http", /* Localizable */ "Starts the HTTP shell",
+                [
+                    new CommandArgumentInfo()
+                ], new HttpCommandExec())
         };
 
         string IAddon.AddonName =>
@@ -65,7 +64,7 @@ namespace Nitrocid.Extras.HttpShell
             ConfigTools.RegisterBaseSetting(config);
             ShellManager.reservedShells.Add("HTTPShell");
             ShellManager.RegisterShell("HTTPShell", new HTTPShellInfo());
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands.Values]);
+            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
         }
 
         void IAddon.StartAddon()
@@ -76,7 +75,7 @@ namespace Nitrocid.Extras.HttpShell
             ShellManager.availableShells.Remove("HTTPShell");
             PromptPresetManager.CurrentPresets.Remove("HTTPShell");
             ShellManager.reservedShells.Remove("HTTPShell");
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Keys]);
+            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
             ConfigTools.UnregisterBaseSetting(nameof(HttpConfig));
         }
     }

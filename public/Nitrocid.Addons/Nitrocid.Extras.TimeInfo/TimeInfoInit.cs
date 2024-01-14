@@ -28,29 +28,28 @@ using System.Reflection;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Modifications;
+using System.Linq;
 
 namespace Nitrocid.Extras.TimeInfo
 {
     internal class TimeInfoInit : IAddon
     {
-        private readonly Dictionary<string, CommandInfo> addonCommands = new()
+        private readonly List<CommandInfo> addonCommands = new()
         {
-            { "gettimeinfo",
-                new CommandInfo("gettimeinfo", /* Localizable */ "Gets the date and time information",
+            new CommandInfo("gettimeinfo", /* Localizable */ "Gets the date and time information",
+                [
+                    new CommandArgumentInfo(
                     [
-                        new CommandArgumentInfo(
-                        [
-                            new CommandArgumentPart(true, "date")
-                        ],
-                        [
-                            new SwitchInfo("now", /* Localizable */ "Gets the current date and time information", new SwitchOptions()
-                            {
-                                OptionalizeLastRequiredArguments = 1,
-                                AcceptsValues = false
-                            })
-                        ])
-                    ], new GetTimeInfoCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
-            },
+                        new CommandArgumentPart(true, "date")
+                    ],
+                    [
+                        new SwitchInfo("now", /* Localizable */ "Gets the current date and time information", new SwitchOptions()
+                        {
+                            OptionalizeLastRequiredArguments = 1,
+                            AcceptsValues = false
+                        })
+                    ])
+                ], new GetTimeInfoCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
         };
 
         string IAddon.AddonName =>
@@ -65,10 +64,10 @@ namespace Nitrocid.Extras.TimeInfo
         ReadOnlyDictionary<string, FieldInfo> IAddon.PubliclyAvailableFields => null;
 
         void IAddon.StartAddon() =>
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands.Values]);
+            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
 
         void IAddon.StopAddon() =>
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Keys]);
+            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
 
         void IAddon.FinalizeAddon()
         { }

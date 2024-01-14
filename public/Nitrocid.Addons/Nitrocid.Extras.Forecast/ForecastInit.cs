@@ -30,30 +30,29 @@ using System.Reflection;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Modifications;
+using System.Linq;
 
 namespace Nitrocid.Extras.Forecast
 {
     internal class ForecastInit : IAddon
     {
-        private readonly Dictionary<string, CommandInfo> addonCommands = new()
+        private readonly List<CommandInfo> addonCommands = new()
         {
-            { "weather",
-                new CommandInfo("weather", /* Localizable */ "Shows weather info for specified city. Uses OpenWeatherMap.",
+            new CommandInfo("weather", /* Localizable */ "Shows weather info for specified city. Uses OpenWeatherMap.",
+                [
+                    new CommandArgumentInfo(
                     [
-                        new CommandArgumentInfo(
-                        [
-                            new CommandArgumentPart(true, "CityID/CityName"),
-                            new CommandArgumentPart(false, "apikey"),
-                        ],
-                        [
-                            new SwitchInfo("list", /* Localizable */ "Shows all the available cities", new SwitchOptions()
-                            {
-                                OptionalizeLastRequiredArguments = 2,
-                                AcceptsValues = false
-                            })
-                        ])
-                    ], new WeatherCommand())
-            },
+                        new CommandArgumentPart(true, "CityID/CityName"),
+                        new CommandArgumentPart(false, "apikey"),
+                    ],
+                    [
+                        new SwitchInfo("list", /* Localizable */ "Shows all the available cities", new SwitchOptions()
+                        {
+                            OptionalizeLastRequiredArguments = 2,
+                            AcceptsValues = false
+                        })
+                    ])
+                ], new WeatherCommand())
         };
 
         string IAddon.AddonName =>
@@ -75,14 +74,14 @@ namespace Nitrocid.Extras.Forecast
 
         void IAddon.StartAddon()
         {
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands.Values]);
+            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
             var config = new ForecastConfig();
             ConfigTools.RegisterBaseSetting(config);
         }
 
         void IAddon.StopAddon()
         {
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Keys]);
+            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
             ConfigTools.UnregisterBaseSetting(nameof(ForecastConfig));
         }
     }

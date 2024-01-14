@@ -18,7 +18,9 @@
 //
 
 using Nitrocid.Languages;
+using Nitrocid.Shell.ShellBase.Aliases;
 using Nitrocid.Shell.ShellBase.Arguments;
+using System.Linq;
 
 namespace Nitrocid.Shell.ShellBase.Commands
 {
@@ -48,6 +50,13 @@ namespace Nitrocid.Shell.ShellBase.Commands
         /// Command properties
         /// </summary>
         public CommandFlags Flags { get; private set; }
+        /// <summary>
+        /// Aliases for this command
+        /// </summary>
+        public AliasInfo[] Aliases =>
+            AliasManager.builtinAliases.Union(AliasManager.aliases)
+                .Where((ai) => ai.Command == Command)
+                .ToArray();
 
         /// <summary>
         /// Installs a new instance of command info class

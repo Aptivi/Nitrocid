@@ -27,39 +27,36 @@ using System.Reflection;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Modifications;
+using System.Linq;
 
 namespace Nitrocid.Extras.Calculators
 {
     internal class CalculatorsInit : IAddon
     {
-        private readonly Dictionary<string, CommandInfo> addonCommands = new()
+        private readonly List<CommandInfo> addonCommands = new()
         {
-            { "calc",
-                new CommandInfo("calc", /* Localizable */ "Calculator to calculate expressions.",
+            new CommandInfo("calc", /* Localizable */ "Calculator to calculate expressions.",
+                [
+                    new CommandArgumentInfo(
                     [
-                        new CommandArgumentInfo(
-                        [
-                            new CommandArgumentPart(true, "expression"),
-                        ], true)
-                    ], new CalcCommand())
-            },
+                        new CommandArgumentPart(true, "expression"),
+                    ], true)
+                ], new CalcCommand()),
 
-            { "imaginary",
-                new CommandInfo("imaginary", /* Localizable */ "Show information about the imaginary number formula specified by a specified real and imaginary number",
-                    [
-                        new CommandArgumentInfo(new[]
+            new CommandInfo("imaginary", /* Localizable */ "Show information about the imaginary number formula specified by a specified real and imaginary number",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "real", new CommandArgumentPartOptions()
                         {
-                            new CommandArgumentPart(true, "real", new CommandArgumentPartOptions()
-                            {
-                                IsNumeric = true
-                            }),
-                            new CommandArgumentPart(true, "imaginary", new CommandArgumentPartOptions()
-                            {
-                                IsNumeric = true
-                            }),
-                        })
-                    ], new ImaginaryCommand())
-            },
+                            IsNumeric = true
+                        }),
+                        new CommandArgumentPart(true, "imaginary", new CommandArgumentPartOptions()
+                        {
+                            IsNumeric = true
+                        }),
+                    })
+                ], new ImaginaryCommand()),
         };
 
         string IAddon.AddonName =>
@@ -74,10 +71,10 @@ namespace Nitrocid.Extras.Calculators
         ReadOnlyDictionary<string, FieldInfo> IAddon.PubliclyAvailableFields => null;
 
         void IAddon.StartAddon() =>
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands.Values]);
+            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
 
         void IAddon.StopAddon() =>
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Keys]);
+            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
 
         void IAddon.FinalizeAddon()
         { }

@@ -35,11 +35,11 @@ namespace Nitrocid.Shell.ShellBase.Shells
         /// <summary>
         /// Built-in shell commands
         /// </summary>
-        Dictionary<string, CommandInfo> Commands { get; }
+        List<CommandInfo> Commands { get; }
         /// <summary>
         /// Mod commands
         /// </summary>
-        Dictionary<string, CommandInfo> ModCommands { get; }
+        List<CommandInfo> ModCommands { get; }
         /// <summary>
         /// Built-in shell presets
         /// </summary>

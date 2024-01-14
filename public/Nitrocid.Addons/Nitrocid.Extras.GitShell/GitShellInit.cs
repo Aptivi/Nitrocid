@@ -33,23 +33,22 @@ using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Shell.Prompts;
 using Nitrocid.Kernel;
 using Nitrocid.Modifications;
+using System.Linq;
 
 namespace Nitrocid.Extras.GitShell
 {
     internal class GitShellInit : IAddon
     {
         private static bool nativeLibIsSet = false;
-        private readonly Dictionary<string, CommandInfo> addonCommands = new()
+        private readonly List<CommandInfo> addonCommands = new()
         {
-            { "gitsh",
-                new CommandInfo("gitsh", /* Localizable */ "Git shell",
-                    [
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "repoPath")
-                        }),
-                    ], new GitCommandExec())
-            },
+            new CommandInfo("gitsh", /* Localizable */ "Git shell",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "repoPath")
+                    }),
+                ], new GitCommandExec())
         };
 
         string IAddon.AddonName =>
@@ -72,7 +71,7 @@ namespace Nitrocid.Extras.GitShell
             ConfigTools.RegisterBaseSetting(config);
             ShellManager.reservedShells.Add("GitShell");
             ShellManager.RegisterShell("GitShell", new GitShellInfo());
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands.Values]);
+            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
             if (!nativeLibIsSet)
             {
                 nativeLibIsSet = true;
@@ -88,7 +87,7 @@ namespace Nitrocid.Extras.GitShell
             ShellManager.availableShells.Remove("GitShell");
             PromptPresetManager.CurrentPresets.Remove("GitShell");
             ShellManager.reservedShells.Remove("GitShell");
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Keys]);
+            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
             ConfigTools.UnregisterBaseSetting(nameof(GitConfig));
         }
     }

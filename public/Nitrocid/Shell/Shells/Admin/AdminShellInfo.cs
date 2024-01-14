@@ -38,108 +38,86 @@ namespace Nitrocid.Shell.Shells.Admin
         /// <summary>
         /// Admin commands
         /// </summary>
-        public override Dictionary<string, CommandInfo> Commands => new()
+        public override List<CommandInfo> Commands => new()
         {
-            { "arghelp",
-                new CommandInfo("arghelp", /* Localizable */ "Kernel arguments help system",
-                    [
-                        new CommandArgumentInfo(new[]
+            new CommandInfo("arghelp", /* Localizable */ "Kernel arguments help system",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(false, "argument", new CommandArgumentPartOptions()
                         {
-                            new CommandArgumentPart(false, "argument", new CommandArgumentPartOptions()
-                            {
-                                AutoCompleter = (_) => ArgumentParse.AvailableCMDLineArgs.Keys.ToArray()
-                            })
+                            AutoCompleter = (_) => ArgumentParse.AvailableCMDLineArgs.Keys.ToArray()
                         })
-                    ], new ArgHelpCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
-            },
+                    })
+                ], new ArgHelpCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
-            { "bootlog",
-                new CommandInfo("bootlog", /* Localizable */ "Prints the boot log",
-                    [
-                        new CommandArgumentInfo()
-                    ], new BootLogCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
-            },
+            new CommandInfo("bootlog", /* Localizable */ "Prints the boot log",
+                [
+                    new CommandArgumentInfo()
+                ], new BootLogCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
-            { "cdbglog",
-                new CommandInfo("cdbglog", /* Localizable */ "Deletes everything in debug log",
-                    [
-                        new CommandArgumentInfo()
-                    ], new CdbgLogCommand())
-            },
+            new CommandInfo("cdbglog", /* Localizable */ "Deletes everything in debug log",
+                [
+                    new CommandArgumentInfo()
+                ], new CdbgLogCommand()),
 
-            { "clearfiredevents",
-                new CommandInfo("clearfiredevents", /* Localizable */ "Clears all fired events",
-                    [
-                        new CommandArgumentInfo()
-                    ], new ClearFiredEventsCommand())
-            },
+            new CommandInfo("clearfiredevents", /* Localizable */ "Clears all fired events",
+                [
+                    new CommandArgumentInfo()
+                ], new ClearFiredEventsCommand()),
 
-            { "journal",
-                new CommandInfo("journal", /* Localizable */ "Gets current kernel journal log",
-                    [
-                        new CommandArgumentInfo(new[]
+            new CommandInfo("journal", /* Localizable */ "Gets current kernel journal log",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(false, "sessionNum", new()
                         {
-                            new CommandArgumentPart(false, "sessionNum", new()
-                            {
-                                IsNumeric = true,
-                            }),
-                        })
-                    ], new JournalCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
-            },
+                            IsNumeric = true,
+                        }),
+                    })
+                ], new JournalCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
-            { "lsevents",
-                new CommandInfo("lsevents", /* Localizable */ "Lists all fired events",
-                    [
-                        new CommandArgumentInfo()
-                    ], new LsEventsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
-            },
+            new CommandInfo("lsevents", /* Localizable */ "Lists all fired events",
+                [
+                    new CommandArgumentInfo()
+                ], new LsEventsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
-            { "lsusers",
-                new CommandInfo("lsusers", /* Localizable */ "Lists the users",
-                    [
-                        new CommandArgumentInfo(true)
-                    ], new LsUsersCommand())
-            },
+            new CommandInfo("lsusers", /* Localizable */ "Lists the users",
+                [
+                    new CommandArgumentInfo(true)
+                ], new LsUsersCommand()),
 
-            { "savenotifs",
-                new CommandInfo("savenotifs", /* Localizable */ "Saves the recent notifications",
-                    [
-                        new CommandArgumentInfo()
-                    ], new SaveNotifsCommand())
-            },
+            new CommandInfo("savenotifs", /* Localizable */ "Saves the recent notifications",
+                [
+                    new CommandArgumentInfo()
+                ], new SaveNotifsCommand()),
 
-            { "userflag",
-                new CommandInfo("userflag", /* Localizable */ "Manipulates with the user main flags",
-                    [
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "user"),
-                            new CommandArgumentPart(true, "admin/anonymous/disabled"),
-                            new CommandArgumentPart(true, "false/true")
-                        })
-                    ], new UserFlagCommand())
-            },
+            new CommandInfo("userflag", /* Localizable */ "Manipulates with the user main flags",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "user"),
+                        new CommandArgumentPart(true, "admin/anonymous/disabled"),
+                        new CommandArgumentPart(true, "false/true")
+                    })
+                ], new UserFlagCommand()),
 
-            { "userinfo",
-                new CommandInfo("userinfo", /* Localizable */ "Gets the user information",
-                    [
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(false, "user")
-                        })
-                    ], new UserInfoCommand())
-            },
+            new CommandInfo("userinfo", /* Localizable */ "Gets the user information",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(false, "user")
+                    })
+                ], new UserInfoCommand()),
 
-            { "userlang",
-                new CommandInfo("userlang", /* Localizable */ "Changes the preferred user language",
-                    [
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "user"),
-                            new CommandArgumentPart(true, "lang/clear")
-                        })
-                    ], new UserLangCommand())
-            },
+            new CommandInfo("userlang", /* Localizable */ "Changes the preferred user language",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "user"),
+                        new CommandArgumentPart(true, "lang/clear")
+                    })
+                ], new UserLangCommand()),
         };
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()

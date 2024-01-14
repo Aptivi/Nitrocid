@@ -33,171 +33,168 @@ using System.Reflection;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Modifications;
+using System.Linq;
 
 namespace Nitrocid.Extras.Calendar
 {
     internal class CalendarInit : IAddon
     {
-        private readonly Dictionary<string, CommandInfo> addonCommands = new()
+        private readonly List<CommandInfo> addonCommands = new()
         {
-            { "altdate",
-                new CommandInfo("altdate", /* Localizable */ "Shows date and time",
+            new CommandInfo("altdate", /* Localizable */ "Shows date and time",
+                [
+                    new CommandArgumentInfo(
                     [
-                        new CommandArgumentInfo(
-                        [
-                            new CommandArgumentPart(true, "culture")
-                        ],
-                        [
-                            new SwitchInfo("date", /* Localizable */ "Shows just the date", new SwitchOptions()
-                            {
-                                ConflictsWith = ["full", "time"],
-                                AcceptsValues = false
-                            }),
-                            new SwitchInfo("time", /* Localizable */ "Shows just the time", new SwitchOptions()
-                            {
-                                ConflictsWith = ["date", "full"],
-                                AcceptsValues = false
-                            }),
-                            new SwitchInfo("full", /* Localizable */ "Shows date and time", new SwitchOptions()
-                            {
-                                ConflictsWith = ["date", "time"],
-                                AcceptsValues = false
-                            }),
-                            new SwitchInfo("utc", /* Localizable */ "Uses UTC instead of local", new SwitchOptions()
-                            {
-                                AcceptsValues = false
-                            })
-                        ], true)
-                    ], new AltDateCommand(), CommandFlags.RedirectionSupported)
-            },
+                        new CommandArgumentPart(true, "culture")
+                    ],
+                    [
+                        new SwitchInfo("date", /* Localizable */ "Shows just the date", new SwitchOptions()
+                        {
+                            ConflictsWith = ["full", "time"],
+                            AcceptsValues = false
+                        }),
+                        new SwitchInfo("time", /* Localizable */ "Shows just the time", new SwitchOptions()
+                        {
+                            ConflictsWith = ["date", "full"],
+                            AcceptsValues = false
+                        }),
+                        new SwitchInfo("full", /* Localizable */ "Shows date and time", new SwitchOptions()
+                        {
+                            ConflictsWith = ["date", "time"],
+                            AcceptsValues = false
+                        }),
+                        new SwitchInfo("utc", /* Localizable */ "Uses UTC instead of local", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        })
+                    ], true)
+                ], new AltDateCommand(), CommandFlags.RedirectionSupported),
 
-            { "calendar",
-                new CommandInfo("calendar", /* Localizable */ "Calendar, event, and reminder manager",
+            new CommandInfo("calendar", /* Localizable */ "Calendar, event, and reminder manager",
+                [
+                    new CommandArgumentInfo(
                     [
-                        new CommandArgumentInfo(
-                        [
-                            new CommandArgumentPart(true, "tui", new CommandArgumentPartOptions()
-                            {
-                                ExactWording = "tui"
-                            }),
-                            new CommandArgumentPart(false, "year", new CommandArgumentPartOptions()
-                            {
-                                IsNumeric = true
-                            }),
-                            new CommandArgumentPart(false, "month", new CommandArgumentPartOptions()
-                            {
-                                IsNumeric = true
-                            })
-                        ],
-                        [
-                            new SwitchInfo("calendar", /* Localizable */ "Calendar type to work on"),
-                            new SwitchInfo("legacy", /* Localizable */ "Use the table-based calendar viewer", new SwitchOptions()
-                            {
-                                AcceptsValues = false
-                            }),
-                        ]),
-                        new CommandArgumentInfo(new[]
+                        new CommandArgumentPart(true, "tui", new CommandArgumentPartOptions()
                         {
-                            new CommandArgumentPart(true, "event", new CommandArgumentPartOptions()
-                            {
-                                ExactWording = "event"
-                            }),
-                            new CommandArgumentPart(true, "add", new CommandArgumentPartOptions()
-                            {
-                                ExactWording = "add"
-                            }),
-                            new CommandArgumentPart(true, "date"),
-                            new CommandArgumentPart(true, "title")
+                            ExactWording = "tui"
                         }),
-                        new CommandArgumentInfo(new[]
+                        new CommandArgumentPart(false, "year", new CommandArgumentPartOptions()
                         {
-                            new CommandArgumentPart(true, "event", new CommandArgumentPartOptions()
-                            {
-                                ExactWording = "event"
-                            }),
-                            new CommandArgumentPart(true, "remove", new CommandArgumentPartOptions()
-                            {
-                                ExactWording = "remove"
-                            }),
-                            new CommandArgumentPart(true, "eventId", new CommandArgumentPartOptions()
-                            {
-                                IsNumeric = true
-                            })
+                            IsNumeric = true
                         }),
-                        new CommandArgumentInfo(new[]
+                        new CommandArgumentPart(false, "month", new CommandArgumentPartOptions()
                         {
-                            new CommandArgumentPart(true, "event", new CommandArgumentPartOptions()
-                            {
-                                ExactWording = "event"
-                            }),
-                            new CommandArgumentPart(true, "list", new CommandArgumentPartOptions()
-                            {
-                                ExactWording = "list"
-                            })
-                        }),
-                        new CommandArgumentInfo(new[]
+                            IsNumeric = true
+                        })
+                    ],
+                    [
+                        new SwitchInfo("calendar", /* Localizable */ "Calendar type to work on"),
+                        new SwitchInfo("legacy", /* Localizable */ "Use the table-based calendar viewer", new SwitchOptions()
                         {
-                            new CommandArgumentPart(true, "event", new CommandArgumentPartOptions()
-                            {
-                                ExactWording = "event"
-                            }),
-                            new CommandArgumentPart(true, "saveall", new CommandArgumentPartOptions()
-                            {
-                                ExactWording = "saveall"
-                            })
+                            AcceptsValues = false
                         }),
-                        new CommandArgumentInfo(new[]
+                    ]),
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "event", new CommandArgumentPartOptions()
                         {
-                            new CommandArgumentPart(true, "reminder", new CommandArgumentPartOptions()
-                            {
-                                ExactWording = "reminder"
-                            }),
-                            new CommandArgumentPart(true, "add", new CommandArgumentPartOptions()
-                            {
-                                ExactWording = "add"
-                            }),
-                            new CommandArgumentPart(true, "dateandtime"),
-                            new CommandArgumentPart(true, "title")
+                            ExactWording = "event"
                         }),
-                        new CommandArgumentInfo(new[]
+                        new CommandArgumentPart(true, "add", new CommandArgumentPartOptions()
                         {
-                            new CommandArgumentPart(true, "reminder", new CommandArgumentPartOptions()
-                            {
-                                ExactWording = "reminder"
-                            }),
-                            new CommandArgumentPart(true, "remove", new CommandArgumentPartOptions()
-                            {
-                                ExactWording = "remove"
-                            }),
-                            new CommandArgumentPart(true, "reminderid", new CommandArgumentPartOptions()
-                            {
-                                IsNumeric = true
-                            })
+                            ExactWording = "add"
                         }),
-                        new CommandArgumentInfo(new[]
+                        new CommandArgumentPart(true, "date"),
+                        new CommandArgumentPart(true, "title")
+                    }),
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "event", new CommandArgumentPartOptions()
                         {
-                            new CommandArgumentPart(true, "reminder", new CommandArgumentPartOptions()
-                            {
-                                ExactWording = "reminder"
-                            }),
-                            new CommandArgumentPart(true, "list", new CommandArgumentPartOptions()
-                            {
-                                ExactWording = "list"
-                            })
+                            ExactWording = "event"
                         }),
-                        new CommandArgumentInfo(new[]
+                        new CommandArgumentPart(true, "remove", new CommandArgumentPartOptions()
                         {
-                            new CommandArgumentPart(true, "reminder", new CommandArgumentPartOptions()
-                            {
-                                ExactWording = "reminder"
-                            }),
-                            new CommandArgumentPart(true, "saveall", new CommandArgumentPartOptions()
-                            {
-                                ExactWording = "saveall"
-                            })
+                            ExactWording = "remove"
                         }),
-                    ], new CalendarCommand())
-            },
+                        new CommandArgumentPart(true, "eventId", new CommandArgumentPartOptions()
+                        {
+                            IsNumeric = true
+                        })
+                    }),
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "event", new CommandArgumentPartOptions()
+                        {
+                            ExactWording = "event"
+                        }),
+                        new CommandArgumentPart(true, "list", new CommandArgumentPartOptions()
+                        {
+                            ExactWording = "list"
+                        })
+                    }),
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "event", new CommandArgumentPartOptions()
+                        {
+                            ExactWording = "event"
+                        }),
+                        new CommandArgumentPart(true, "saveall", new CommandArgumentPartOptions()
+                        {
+                            ExactWording = "saveall"
+                        })
+                    }),
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "reminder", new CommandArgumentPartOptions()
+                        {
+                            ExactWording = "reminder"
+                        }),
+                        new CommandArgumentPart(true, "add", new CommandArgumentPartOptions()
+                        {
+                            ExactWording = "add"
+                        }),
+                        new CommandArgumentPart(true, "dateandtime"),
+                        new CommandArgumentPart(true, "title")
+                    }),
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "reminder", new CommandArgumentPartOptions()
+                        {
+                            ExactWording = "reminder"
+                        }),
+                        new CommandArgumentPart(true, "remove", new CommandArgumentPartOptions()
+                        {
+                            ExactWording = "remove"
+                        }),
+                        new CommandArgumentPart(true, "reminderid", new CommandArgumentPartOptions()
+                        {
+                            IsNumeric = true
+                        })
+                    }),
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "reminder", new CommandArgumentPartOptions()
+                        {
+                            ExactWording = "reminder"
+                        }),
+                        new CommandArgumentPart(true, "list", new CommandArgumentPartOptions()
+                        {
+                            ExactWording = "list"
+                        })
+                    }),
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "reminder", new CommandArgumentPartOptions()
+                        {
+                            ExactWording = "reminder"
+                        }),
+                        new CommandArgumentPart(true, "saveall", new CommandArgumentPartOptions()
+                        {
+                            ExactWording = "saveall"
+                        })
+                    }),
+                ], new CalendarCommand()),
         };
 
         string IAddon.AddonName =>
@@ -230,14 +227,14 @@ namespace Nitrocid.Extras.Calendar
         {
             var config = new CalendarConfig();
             ConfigTools.RegisterBaseSetting(config);
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands.Values]);
+            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
         }
 
         void IAddon.StopAddon()
         {
             ReminderManager.Reminders.Clear();
             EventManager.CalendarEvents.Clear();
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Keys]);
+            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
             ConfigTools.UnregisterBaseSetting(nameof(CalendarConfig));
         }
     }

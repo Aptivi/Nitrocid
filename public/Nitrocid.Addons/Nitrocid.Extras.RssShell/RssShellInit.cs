@@ -32,25 +32,24 @@ using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Shell.Prompts;
 using Nitrocid.Modifications;
+using System.Linq;
 
 namespace Nitrocid.Extras.RssShell
 {
     internal class RssShellInit : IAddon
     {
-        private readonly Dictionary<string, CommandInfo> addonCommands = new()
+        private readonly List<CommandInfo> addonCommands = new()
         {
-            { "rss",
-                new CommandInfo("rss", /* Localizable */ "Opens an RSS shell to read the feeds",
+            new CommandInfo("rss", /* Localizable */ "Opens an RSS shell to read the feeds",
+                [
+                    new CommandArgumentInfo(
                     [
-                        new CommandArgumentInfo(
-                        [
-                            new CommandArgumentPart(false, "feedlink"),
-                        ],
-                        [
-                            new SwitchInfo("tui", /* Localizable */ "Opens an interactive RSS feed reader TUI"),
-                        ])
-                    ], new RssCommandExec())
-            },
+                        new CommandArgumentPart(false, "feedlink"),
+                    ],
+                    [
+                        new SwitchInfo("tui", /* Localizable */ "Opens an interactive RSS feed reader TUI"),
+                    ])
+                ], new RssCommandExec())
         };
 
         string IAddon.AddonName =>
@@ -77,7 +76,7 @@ namespace Nitrocid.Extras.RssShell
             ConfigTools.RegisterBaseSetting(config);
             ShellManager.reservedShells.Add("RSSShell");
             ShellManager.RegisterShell("RSSShell", new RSSShellInfo());
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands.Values]);
+            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
         }
 
         void IAddon.StartAddon()
@@ -88,7 +87,7 @@ namespace Nitrocid.Extras.RssShell
             ShellManager.availableShells.Remove("RSSShell");
             PromptPresetManager.CurrentPresets.Remove("RSSShell");
             ShellManager.reservedShells.Remove("RSSShell");
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Keys]);
+            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
             ConfigTools.UnregisterBaseSetting(nameof(RssConfig));
         }
     }

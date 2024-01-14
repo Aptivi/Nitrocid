@@ -29,8 +29,8 @@ namespace Nitrocid.Shell.ShellBase.Shells
     /// </summary>
     public abstract class BaseShellInfo : IShellInfo
     {
-        internal Dictionary<string, CommandInfo> modCommands = [];
-        internal Dictionary<string, CommandInfo> addonCommands = [];
+        internal List<CommandInfo> modCommands = [];
+        internal List<CommandInfo> addonCommands = [];
         internal Dictionary<string, PromptPresetBase> customShellPresets = [];
         internal static CommandInfo fallbackNonSlashCommand =
             new("slashreminder", /* Localizable */ "Reminder for the slash commands",
@@ -41,9 +41,9 @@ namespace Nitrocid.Shell.ShellBase.Shells
         /// <inheritdoc/>
         public virtual object ShellLock => new();
         /// <inheritdoc/>
-        public virtual Dictionary<string, CommandInfo> Commands => new();
+        public virtual List<CommandInfo> Commands => new();
         /// <inheritdoc/>
-        public virtual Dictionary<string, CommandInfo> ModCommands => modCommands;
+        public virtual List<CommandInfo> ModCommands => modCommands;
         /// <inheritdoc/>
         public virtual Dictionary<string, PromptPresetBase> ShellPresets => new();
         /// <inheritdoc/>

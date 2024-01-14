@@ -30,6 +30,7 @@ using System.Reflection;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Modifications;
+using System.Linq;
 
 namespace Nitrocid.Extras.Contacts
 {
@@ -39,14 +40,12 @@ namespace Nitrocid.Extras.Contacts
             new(".vcf", "Contacts", ContactsHandler.Handle, ContactsHandler.InfoHandle),
             new(".vcard", "Contacts", ContactsHandler.Handle, ContactsHandler.InfoHandle),
         ];
-        private readonly Dictionary<string, CommandInfo> addonCommands = new()
+        private readonly List<CommandInfo> addonCommands = new()
         {
-            { "contacts",
-                new CommandInfo("contacts", /* Localizable */ "Manages your contacts",
-                    [
-                        new CommandArgumentInfo()
-                    ], new ContactsCommand())
-            },
+            new CommandInfo("contacts", /* Localizable */ "Manages your contacts",
+                [
+                    new CommandArgumentInfo()
+                ], new ContactsCommand())
         };
 
         string IAddon.AddonName =>
@@ -65,7 +64,7 @@ namespace Nitrocid.Extras.Contacts
 
         void IAddon.StartAddon()
         {
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands.Values]);
+            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
             ExtensionHandlerTools.extensionHandlers.AddRange(handlers);
         }
 
@@ -74,7 +73,7 @@ namespace Nitrocid.Extras.Contacts
             // Unload all contacts
             ContactsManager.RemoveContacts(false);
             DebugWriter.WriteDebug(DebugLevel.I, "Unloaded all contacts");
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Keys]);
+            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
             foreach (var handler in handlers)
                 ExtensionHandlerTools.extensionHandlers.Remove(handler);
         }

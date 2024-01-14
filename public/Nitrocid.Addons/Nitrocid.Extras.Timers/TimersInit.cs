@@ -29,26 +29,23 @@ using System.Reflection;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Modifications;
+using System.Linq;
 
 namespace Nitrocid.Extras.Timers
 {
     internal class TimersInit : IAddon
     {
-        private readonly Dictionary<string, CommandInfo> addonCommands = new()
+        private readonly List<CommandInfo> addonCommands = new()
         {
-            { "stopwatch",
-                new CommandInfo("stopwatch", /* Localizable */ "A simple stopwatch",
-                    [
-                        new CommandArgumentInfo()
-                    ], new StopwatchCommand())
-            },
+            new CommandInfo("stopwatch", /* Localizable */ "A simple stopwatch",
+                [
+                    new CommandArgumentInfo()
+                ], new StopwatchCommand()),
 
-            { "timer",
-                new CommandInfo("timer", /* Localizable */ "A simple timer",
-                    [
-                        new CommandArgumentInfo()
-                    ], new TimerCommand())
-            },
+            new CommandInfo("timer", /* Localizable */ "A simple timer",
+                [
+                    new CommandArgumentInfo()
+                ], new TimerCommand()),
         };
 
         string IAddon.AddonName =>
@@ -69,12 +66,12 @@ namespace Nitrocid.Extras.Timers
         {
             var config = new TimersConfig();
             ConfigTools.RegisterBaseSetting(config);
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands.Values]);
+            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
         }
 
         void IAddon.StopAddon()
         {
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Keys]);
+            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
             ConfigTools.UnregisterBaseSetting(nameof(TimersConfig));
         }
 

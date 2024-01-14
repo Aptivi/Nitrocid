@@ -59,7 +59,7 @@ namespace Nitrocid.Shell.ShellBase.Aliases
         /// </summary>
         [JsonIgnore]
         public CommandInfo TargetCommand =>
-            CommandManager.GetCommand(Command, Type, false);
+            CommandManager.GetCommand(Command, Type);
 
         [JsonConstructor]
         internal AliasInfo()

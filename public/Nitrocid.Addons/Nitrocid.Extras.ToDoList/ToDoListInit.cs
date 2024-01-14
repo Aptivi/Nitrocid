@@ -29,50 +29,49 @@ using System.Reflection;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Modifications;
+using System.Linq;
 
 namespace Nitrocid.Extras.ToDoList
 {
     internal class ToDoListInit : IAddon
     {
-        private readonly Dictionary<string, CommandInfo> addonCommands = new()
+        private readonly List<CommandInfo> addonCommands = new()
         {
-            { "todo",
-                new CommandInfo("todo", /* Localizable */ "To-do task manager",
-                    [
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "add"),
-                            new CommandArgumentPart(true, "taskname"),
-                        }),
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "remove"),
-                            new CommandArgumentPart(true, "taskname"),
-                        }),
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "done"),
-                            new CommandArgumentPart(true, "taskname"),
-                        }),
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "undone"),
-                            new CommandArgumentPart(true, "taskname"),
-                        }),
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "list"),
-                        }),
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "save"),
-                        }),
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "load"),
-                        }),
-                    ], new TodoCommand())
-            },
+            new CommandInfo("todo", /* Localizable */ "To-do task manager",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "add"),
+                        new CommandArgumentPart(true, "taskname"),
+                    }),
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "remove"),
+                        new CommandArgumentPart(true, "taskname"),
+                    }),
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "done"),
+                        new CommandArgumentPart(true, "taskname"),
+                    }),
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "undone"),
+                        new CommandArgumentPart(true, "taskname"),
+                    }),
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "list"),
+                    }),
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "save"),
+                    }),
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "load"),
+                    }),
+                ], new TodoCommand()),
         };
 
         string IAddon.AddonName =>
@@ -94,9 +93,9 @@ namespace Nitrocid.Extras.ToDoList
         }
 
         void IAddon.StartAddon() =>
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands.Values]);
+            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
 
         void IAddon.StopAddon() =>
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Keys]);
+            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
     }
 }

@@ -35,46 +35,42 @@ namespace Nitrocid.Extras.UnitConv
 {
     internal class UnitConvInit : IAddon
     {
-        private readonly Dictionary<string, CommandInfo> addonCommands = new()
+        private readonly List<CommandInfo> addonCommands = new()
         {
-            { "listunits",
-                new CommandInfo("listunits", /* Localizable */ "Lists all available units",
-                    [
-                        new CommandArgumentInfo(new[]
+            new CommandInfo("listunits", /* Localizable */ "Lists all available units",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "type", new CommandArgumentPartOptions()
                         {
-                            new CommandArgumentPart(true, "type", new CommandArgumentPartOptions()
-                            {
-                                AutoCompleter = (_) => Quantity.Infos.Select((src) => src.Name).ToArray()
-                            }),
-                        })
-                    ], new ListUnitsCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
-            },
+                            AutoCompleter = (_) => Quantity.Infos.Select((src) => src.Name).ToArray()
+                        }),
+                    })
+                ], new ListUnitsCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
-            { "unitconv",
-                new CommandInfo("unitconv", /* Localizable */ "Unit converter",
+            new CommandInfo("unitconv", /* Localizable */ "Unit converter",
+                [
+                    new CommandArgumentInfo(
                     [
-                        new CommandArgumentInfo(
-                        [
-                            new CommandArgumentPart(true, "unittype", new CommandArgumentPartOptions()
-                            {
-                                AutoCompleter = (_) => Quantity.Infos.Select((src) => src.Name).ToArray()
-                            }),
-                            new CommandArgumentPart(true, "quantity", new CommandArgumentPartOptions()
-                            {
-                                IsNumeric = true
-                            }),
-                            new CommandArgumentPart(true, "sourceunit"),
-                            new CommandArgumentPart(true, "targetunit"),
-                        ],
-                        [
-                            new SwitchInfo("tui", /* Localizable */ "Use the TUI version of the unit converter", new SwitchOptions()
-                            {
-                                OptionalizeLastRequiredArguments = 4,
-                                AcceptsValues = false
-                            })
-                        ])
-                    ], new UnitConvCommand())
-            },
+                        new CommandArgumentPart(true, "unittype", new CommandArgumentPartOptions()
+                        {
+                            AutoCompleter = (_) => Quantity.Infos.Select((src) => src.Name).ToArray()
+                        }),
+                        new CommandArgumentPart(true, "quantity", new CommandArgumentPartOptions()
+                        {
+                            IsNumeric = true
+                        }),
+                        new CommandArgumentPart(true, "sourceunit"),
+                        new CommandArgumentPart(true, "targetunit"),
+                    ],
+                    [
+                        new SwitchInfo("tui", /* Localizable */ "Use the TUI version of the unit converter", new SwitchOptions()
+                        {
+                            OptionalizeLastRequiredArguments = 4,
+                            AcceptsValues = false
+                        })
+                    ])
+                ], new UnitConvCommand()),
         };
 
         string IAddon.AddonName =>
@@ -89,10 +85,10 @@ namespace Nitrocid.Extras.UnitConv
         ReadOnlyDictionary<string, FieldInfo> IAddon.PubliclyAvailableFields => null;
 
         void IAddon.StartAddon() =>
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands.Values]);
+            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
 
         void IAddon.StopAddon() =>
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Keys]);
+            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
 
         void IAddon.FinalizeAddon()
         { }

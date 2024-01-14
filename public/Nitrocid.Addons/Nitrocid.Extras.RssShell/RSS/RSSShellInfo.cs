@@ -37,103 +37,85 @@ namespace Nitrocid.Extras.RssShell.RSS
         /// <summary>
         /// RSS commands
         /// </summary>
-        public override Dictionary<string, CommandInfo> Commands => new()
+        public override List<CommandInfo> Commands => new()
         {
-            { "articleinfo",
-                new CommandInfo("articleinfo", /* Localizable */ "Gets the article info",
-                    [
-                        new CommandArgumentInfo(new[]
+            new CommandInfo("articleinfo", /* Localizable */ "Gets the article info",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "feednum", new CommandArgumentPartOptions()
                         {
-                            new CommandArgumentPart(true, "feednum", new CommandArgumentPartOptions()
-                            {
-                                IsNumeric = true
-                            })
+                            IsNumeric = true
                         })
-                    ], new ArticleInfoCommand())
-            },
+                    })
+                ], new ArticleInfoCommand()),
 
-            { "bookmark",
-                new CommandInfo("bookmark", /* Localizable */ "Bookmarks the feed",
-                    [
-                        new CommandArgumentInfo()
-                    ], new BookmarkCommand())
-            },
+            new CommandInfo("bookmark", /* Localizable */ "Bookmarks the feed",
+                [
+                    new CommandArgumentInfo()
+                ], new BookmarkCommand()),
 
-            { "detach",
-                new CommandInfo("detach", /* Localizable */ "Exits the shell without disconnecting",
-                    [
-                        new CommandArgumentInfo()
-                    ], new DetachCommand())
-            },
+            new CommandInfo("detach", /* Localizable */ "Exits the shell without disconnecting",
+                [
+                    new CommandArgumentInfo()
+                ], new DetachCommand()),
 
-            { "feedinfo",
-                new CommandInfo("feedinfo", /* Localizable */ "Gets the feed info",
-                    [
-                        new CommandArgumentInfo()
-                    ], new FeedInfoCommand())
-            },
+            new CommandInfo("feedinfo", /* Localizable */ "Gets the feed info",
+                [
+                    new CommandArgumentInfo()
+                ], new FeedInfoCommand()),
 
-            { "list",
-                new CommandInfo("list", /* Localizable */ "Lists all feeds",
-                    [
-                        new CommandArgumentInfo()
-                    ], new ListCommand(), CommandFlags.Wrappable)
-            },
+            new CommandInfo("list", /* Localizable */ "Lists all feeds",
+                [
+                    new CommandArgumentInfo()
+                ], new ListCommand(), CommandFlags.Wrappable),
 
-            { "listbookmark",
-                new CommandInfo("listbookmark", /* Localizable */ "Lists all bookmarked feeds",
-                    [
-                        new CommandArgumentInfo()
-                    ], new ListBookmarkCommand(), CommandFlags.Wrappable)
-            },
+            new CommandInfo("listbookmark", /* Localizable */ "Lists all bookmarked feeds",
+                [
+                    new CommandArgumentInfo()
+                ], new ListBookmarkCommand(), CommandFlags.Wrappable),
 
-            { "read",
-                new CommandInfo("read", /* Localizable */ "Reads a feed in a web browser",
-                    [
-                        new CommandArgumentInfo(new[]
+            new CommandInfo("read", /* Localizable */ "Reads a feed in a web browser",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "feednum", new CommandArgumentPartOptions()
                         {
-                            new CommandArgumentPart(true, "feednum", new CommandArgumentPartOptions()
-                            {
-                                IsNumeric = true
-                            })
+                            IsNumeric = true
                         })
-                    ], new ReadCommand())
-            },
+                    })
+                ], new ReadCommand()),
 
-            { "search",
-                new CommandInfo("search", /* Localizable */ "Searches the feed for a phrase in title and/or description",
+            new CommandInfo("search", /* Localizable */ "Searches the feed for a phrase in title and/or description",
+                [
+                    new CommandArgumentInfo(
                     [
-                        new CommandArgumentInfo(
-                        [
-                            new CommandArgumentPart(true, "phrase")
-                        ],
-                        [
-                            new SwitchInfo("t", /* Localizable */ "Search for title", new SwitchOptions()
-                            {
-                                AcceptsValues = false
-                            }),
-                            new SwitchInfo("d", /* Localizable */ "Search for description", new SwitchOptions()
-                            {
-                                AcceptsValues = false
-                            }),
-                            new SwitchInfo("a", /* Localizable */ "Search for title and description", new SwitchOptions()
-                            {
-                                AcceptsValues = false
-                            }),
-                            new SwitchInfo("cs", /* Localizable */ "Case sensitive search", new SwitchOptions()
-                            {
-                                AcceptsValues = false
-                            })
-                        ])
-                    ], new SearchCommand(), CommandFlags.Wrappable)
-            },
+                        new CommandArgumentPart(true, "phrase")
+                    ],
+                    [
+                        new SwitchInfo("t", /* Localizable */ "Search for title", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                        new SwitchInfo("d", /* Localizable */ "Search for description", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                        new SwitchInfo("a", /* Localizable */ "Search for title and description", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                        new SwitchInfo("cs", /* Localizable */ "Case sensitive search", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        })
+                    ])
+                ], new SearchCommand(), CommandFlags.Wrappable),
 
-            { "unbookmark",
-                new CommandInfo("unbookmark", /* Localizable */ "Removes the feed bookmark",
-                    [
-                        new CommandArgumentInfo()
-                    ], new UnbookmarkCommand())
-            },
+            new CommandInfo("unbookmark", /* Localizable */ "Removes the feed bookmark",
+                [
+                    new CommandArgumentInfo()
+                ], new UnbookmarkCommand()),
         };
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()
