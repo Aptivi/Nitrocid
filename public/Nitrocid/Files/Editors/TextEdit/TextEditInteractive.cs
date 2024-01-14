@@ -397,14 +397,21 @@ namespace Nitrocid.Files.Editors.TextEdit
             // Check the lines
             if (lines.Count == 0)
                 return lines;
-            if (lines[lineIdx].Length == 0)
-                return lines;
-            if (lineColIdx == 0)
-                return lines;
 
             // Delete a character
-            lines[lineIdx] = lines[lineIdx].Remove(lineColIdx - 1, 1);
-            MoveBackward(lines);
+            if (lineColIdx > 0)
+            {
+                lines[lineIdx] = lines[lineIdx].Remove(lineColIdx - 1, 1);
+                MoveBackward(lines);
+            }
+            else if (lineIdx > 0)
+            {
+                string substring = lines[lineIdx];
+                int oldLen = lines[lineIdx - 1].Length;
+                lines[lineIdx - 1] = lines[lineIdx - 1] + substring;
+                RemoveLine(lines);
+                UpdateColumnIndex(oldLen, lines);
+            }
             return lines;
         }
 
@@ -413,13 +420,17 @@ namespace Nitrocid.Files.Editors.TextEdit
             // Check the lines
             if (lines.Count == 0)
                 return lines;
-            if (lines[lineIdx].Length == 0 ||
-                lines[lineIdx].Length == lineColIdx)
+            if (lines[lineIdx].Length == lineColIdx && lineColIdx > 0)
                 return lines;
 
             // Delete a character
-            lines[lineIdx] = lines[lineIdx].Remove(lineColIdx, 1);
-            UpdateLineIndex(lineIdx, lines);
+            if (lines[lineIdx].Length > 0)
+            {
+                lines[lineIdx] = lines[lineIdx].Remove(lineColIdx, 1);
+                UpdateLineIndex(lineIdx, lines);
+            }
+            else
+                RemoveLine(lines);
             return lines;
         }
 
@@ -471,8 +482,16 @@ namespace Nitrocid.Files.Editors.TextEdit
             if (lines.Count == 0)
                 lines.Add("");
             else
-                lines.Insert(lineIdx + 1, "");
+            {
+                // Check to see if the current position is not at the end of the line
+                string substringNewLine = lines[lineIdx][lineColIdx..];
+                string substringOldLine = lines[lineIdx][..lineColIdx];
+                lines[lineIdx] = substringOldLine;
+                lines.Insert(lineIdx + 1, substringNewLine);
+            }
+
             MoveDown(lines);
+            UpdateColumnIndex(0, lines);
             return lines;
         }
 
