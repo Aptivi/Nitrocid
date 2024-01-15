@@ -63,6 +63,7 @@ using Nitrocid.Shell.Shells.Hex;
 using Nitrocid.Shell.Shells.Debug;
 using Textify.General;
 using Terminaux.Base;
+using Nitrocid.Misc.Screensaver;
 
 namespace Nitrocid.Shell.ShellBase.Shells
 {
@@ -349,8 +350,8 @@ namespace Nitrocid.Shell.ShellBase.Shells
                 DebugWriter.WriteDebug(DebugLevel.I, "Waiting for command");
                 string strcommand =
                     shellInfo.OneLineWrap ?
-                    Input.ReadLineWrapped("", "", settings, true) :
-                    Input.ReadLine("", "", settings, true);
+                    Input.ReadLineWrapped("", "", settings) :
+                    Input.ReadLine("", "", settings);
                 DebugWriter.WriteDebug(DebugLevel.I, "Waited for command [{0}]", strcommand);
                 if (strcommand == ";")
                     strcommand = "";

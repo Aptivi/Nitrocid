@@ -224,8 +224,8 @@ namespace Nitrocid.Misc.Screensaver
             {
                 // Show the screensaver and wait for input
                 ShowSavers();
-                EventsManager.FireEvent(EventType.PreUnlock, DefaultSaverName);
                 SpinWait.SpinUntil(() => ConsoleWrapper.KeyAvailable);
+                EventsManager.FireEvent(EventType.PreUnlock, DefaultSaverName);
 
                 // Bail from screensaver and optionally prompt for password
                 ScreensaverDisplayer.BailFromScreensaver();
