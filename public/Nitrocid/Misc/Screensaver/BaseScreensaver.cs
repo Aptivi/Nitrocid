@@ -47,12 +47,12 @@ namespace Nitrocid.Misc.Screensaver
         /// </summary>
         public virtual void ScreensaverSeizureWarning()
         {
-            ConsoleWrapper.CursorVisible = false;
             ColorTools.LoadBack();
             InfoBoxColor.WriteInfoBoxColorBack(
                 Translate.DoTranslation("Photosensitive seizure warning") + CharManager.NewLine + CharManager.NewLine +
                 Translate.DoTranslation("This screensaver may contain flashing images and fast-paced animations that may cause seizures for the photosensitive. It's recommended to seek a medical specialist for more information about such seizure before continuing. If you want to get rid of this warning, you can turn this off from the screensaver settings."),
                 false, ConsoleColors.White, ConsoleColors.Red);
+            ConsoleWrapper.CursorVisible = false;
             ThreadManager.SleepUntilInput(10000);
         }
 
@@ -68,7 +68,8 @@ namespace Nitrocid.Misc.Screensaver
         /// <summary>
         /// Screensaver logic
         /// </summary>
-        public virtual void ScreensaverLogic() => ThreadManager.SleepNoBlock(10L, ScreensaverDisplayer.ScreensaverDisplayerThread);
+        public virtual void ScreensaverLogic() =>
+            ThreadManager.SleepNoBlock(10L, ScreensaverDisplayer.ScreensaverDisplayerThread);
 
         /// <summary>
         /// Screensaver outro
