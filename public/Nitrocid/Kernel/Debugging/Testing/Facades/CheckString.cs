@@ -18,7 +18,7 @@
 //
 
 using Nitrocid.ConsoleBase.Colors;
-using Terminaux.Inputs;
+using Nitrocid.ConsoleBase.Inputs;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
@@ -34,7 +34,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
         {
             string Text = args.Length > 0 ? args[0] : "";
             if (string.IsNullOrEmpty(Text))
-                Text = Input.ReadLine(Translate.DoTranslation("Write a translatable string to check:") + " ");
+                Text = InputTools.ReadLine(Translate.DoTranslation("Write a translatable string to check:") + " ");
             var LocalizedStrings = LanguageManager.Languages["eng"].Strings;
             if (LocalizedStrings.ContainsKey(Text))
             {

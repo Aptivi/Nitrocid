@@ -19,7 +19,6 @@
 
 using System;
 using Nitrocid.ConsoleBase.Colors;
-using Terminaux.Inputs;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Extras.SftpShell.SFTP;
@@ -29,6 +28,7 @@ using Nitrocid.Languages;
 using Nitrocid.Misc.Text.Probers.Placeholder;
 using Nitrocid.Network.Base.Connections;
 using Renci.SshNet;
+using Nitrocid.ConsoleBase.Inputs;
 
 namespace Nitrocid.Extras.SftpShell.Tools
 {
@@ -68,7 +68,7 @@ namespace Nitrocid.Extras.SftpShell.Tools
                 {
                     TextWriters.Write(Translate.DoTranslation("Username for {0}: "), false, KernelColorType.Input, address);
                 }
-                SFTPShellCommon.SFTPUser = Input.ReadLine();
+                SFTPShellCommon.SFTPUser = InputTools.ReadLine();
                 if (string.IsNullOrEmpty(SFTPShellCommon.SFTPUser))
                 {
                     DebugWriter.WriteDebug(DebugLevel.W, "User is not provided. Fallback to \"anonymous\"");

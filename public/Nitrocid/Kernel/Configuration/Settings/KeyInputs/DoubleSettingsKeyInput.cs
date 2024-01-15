@@ -18,12 +18,13 @@
 //
 
 using Nitrocid.ConsoleBase.Colors;
-using Terminaux.Inputs;
+using Nitrocid.ConsoleBase.Inputs;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel.Configuration.Instances;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
 using Terminaux.Base;
+using Terminaux.Inputs;
 
 namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
 {
@@ -42,7 +43,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             // Write the prompt
             TextWriters.Write($"{Translate.DoTranslation("Write a floating-point number in the below prompt. Make sure that this number is of this format")}: 0.0\n", KernelColorType.Tip);
             TextWriters.Write("[{0}] ", false, KernelColorType.Input, KeyDefaultValue);
-            string AnswerString = Input.ReadLine();
+            string AnswerString = InputTools.ReadLine();
 
             // Neutralize path if required with the assumption that the keytype is not list
             double answer = 0;

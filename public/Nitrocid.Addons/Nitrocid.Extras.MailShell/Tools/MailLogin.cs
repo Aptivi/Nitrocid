@@ -27,7 +27,6 @@ using MailKit.Net.Smtp;
 using MimeKit.Cryptography;
 using Nettify.MailAddress;
 using Nitrocid.ConsoleBase.Colors;
-using Terminaux.Inputs;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Extras.MailShell.Tools.PGP;
@@ -37,6 +36,7 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Text.Probers.Placeholder;
 using Nitrocid.Network.Base.Connections;
+using Nitrocid.ConsoleBase.Inputs;
 
 namespace Nitrocid.Extras.MailShell.Tools
 {
@@ -94,7 +94,7 @@ namespace Nitrocid.Extras.MailShell.Tools
             }
 
             // Try to get the username or e-mail address from the input
-            string InputMailAddress = Input.ReadLine();
+            string InputMailAddress = InputTools.ReadLine();
             return PromptPassword(InputMailAddress);
         }
 
@@ -115,7 +115,7 @@ namespace Nitrocid.Extras.MailShell.Tools
             {
                 TextWriters.Write(Translate.DoTranslation("Enter password: "), false, KernelColorType.Input);
             }
-            Authentication.Password = Input.ReadLineNoInput();
+            Authentication.Password = InputTools.ReadLineNoInput();
 
             string DynamicAddressIMAP = ServerDetect(Username, ServerType.IMAP);
             string DynamicAddressSMTP = ServerDetect(Username, ServerType.SMTP);
@@ -144,7 +144,7 @@ namespace Nitrocid.Extras.MailShell.Tools
             {
                 TextWriters.Write(Translate.DoTranslation("Enter IMAP server address and port (<address> or <address>:[port]): "), false, KernelColorType.Input);
             }
-            IMAP_Address = Input.ReadLine();
+            IMAP_Address = InputTools.ReadLine();
             DebugWriter.WriteDebug(DebugLevel.I, "IMAP Server: \"{0}\"", IMAP_Address);
 
             // SMTP server address and port
@@ -156,7 +156,7 @@ namespace Nitrocid.Extras.MailShell.Tools
             {
                 TextWriters.Write(Translate.DoTranslation("Enter SMTP server address and port (<address> or <address>:[port]): "), false, KernelColorType.Input);
             }
-            string SMTP_Address = Input.ReadLine();
+            string SMTP_Address = InputTools.ReadLine();
             SMTP_Port = 587;
             DebugWriter.WriteDebug(DebugLevel.I, "SMTP Server: \"{0}\"", SMTP_Address);
 

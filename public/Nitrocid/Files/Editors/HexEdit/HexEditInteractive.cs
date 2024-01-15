@@ -24,7 +24,6 @@ using System.Text;
 using Textify.Sequences.Builder.Types;
 using Textify.Sequences.Tools;
 using Nitrocid.Kernel.Debugging;
-using Terminaux.Inputs;
 using Nitrocid.Shell.Shells.Hex;
 using Nitrocid.Files.Operations;
 using Nitrocid.Languages;
@@ -40,6 +39,7 @@ using Nitrocid.Files.Operations.Querying;
 using Textify.General;
 using Terminaux.Colors;
 using Terminaux.Base;
+using Terminaux.Inputs;
 
 namespace Nitrocid.Files.Editors.HexEdit
 {

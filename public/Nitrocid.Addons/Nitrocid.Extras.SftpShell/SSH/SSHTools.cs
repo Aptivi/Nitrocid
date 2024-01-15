@@ -37,6 +37,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel;
 using Textify.General;
 using Terminaux.Base;
+using Nitrocid.ConsoleBase.Inputs;
 
 namespace Nitrocid.Extras.SftpShell.SSH
 {
@@ -90,7 +91,7 @@ namespace Nitrocid.Extras.SftpShell.SSH
                 TextWriters.Write("1) " + Translate.DoTranslation("Private key file"), true, KernelColorType.Option);
                 TextWriters.Write("2) " + Translate.DoTranslation("Password") + CharManager.NewLine, true, KernelColorType.Option);
                 TextWriters.Write(">> ", false, KernelColorType.Input);
-                if (int.TryParse(Input.ReadLine(), out Answer))
+                if (int.TryParse(InputTools.ReadLine(), out Answer))
                 {
                     // Check for answer
                     bool exitWhile = false;
@@ -134,13 +135,13 @@ namespace Nitrocid.Extras.SftpShell.SSH
 
                         // Ask for location
                         TextWriters.Write(Translate.DoTranslation("Enter the location of the private key for {0}. Write \"q\" to finish adding keys: "), false, KernelColorType.Input, Username);
-                        PrivateKeyFile = Input.ReadLine();
+                        PrivateKeyFile = InputTools.ReadLine();
                         PrivateKeyFile = FilesystemTools.NeutralizePath(PrivateKeyFile);
                         if (Checking.FileExists(PrivateKeyFile))
                         {
                             // Ask for passphrase
                             TextWriters.Write(Translate.DoTranslation("Enter the passphrase for key {0}: "), false, KernelColorType.Input, PrivateKeyFile);
-                            PrivateKeyPassphrase = Input.ReadLineNoInput();
+                            PrivateKeyPassphrase = InputTools.ReadLineNoInput();
 
                             // Add authentication method
                             try
@@ -173,7 +174,7 @@ namespace Nitrocid.Extras.SftpShell.SSH
 
                     // Ask for password
                     TextWriters.Write(Translate.DoTranslation("Enter the password for {0}: "), false, KernelColorType.Input, Username);
-                    Pass = Input.ReadLineNoInput();
+                    Pass = InputTools.ReadLineNoInput();
 
                     // Add authentication method
                     AuthenticationMethods.Add(new PasswordAuthenticationMethod(Username, Pass));

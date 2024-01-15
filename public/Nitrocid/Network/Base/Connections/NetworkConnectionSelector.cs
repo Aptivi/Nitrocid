@@ -17,11 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Inputs;
 using Terminaux.Inputs.Styles.Selection;
 using Nitrocid.Languages;
 using System.Collections.Generic;
 using System.Linq;
+using Terminaux.Inputs;
 
 namespace Nitrocid.Network.Base.Connections
 {

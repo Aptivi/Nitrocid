@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Inputs;
+using Nitrocid.ConsoleBase.Inputs;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Files.Operations;
 using Nitrocid.Languages;
@@ -32,7 +32,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
         public override object TestExpectedValue => false;
         public override void Run(params string[] args)
         {
-            string TextPath = Input.ReadLine(Translate.DoTranslation("Write a translatable string list file path to check:") + " ");
+            string TextPath = InputTools.ReadLine(Translate.DoTranslation("Write a translatable string list file path to check:") + " ");
             var LocalizedStrings = LanguageManager.Languages["eng"].Strings;
             var Texts = Reading.ReadContents(TextPath);
             bool hasMissingEntries = false;

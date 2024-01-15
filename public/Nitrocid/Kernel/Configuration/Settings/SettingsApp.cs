@@ -21,7 +21,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Nitrocid.ConsoleBase.Colors;
-using Terminaux.Inputs;
+using Nitrocid.ConsoleBase.Inputs;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs.Styles.Selection;
 using Nitrocid.ConsoleBase.Writers;
@@ -32,6 +32,7 @@ using Nitrocid.Languages;
 using Nitrocid.Security.Permissions;
 using Textify.General;
 using Terminaux.Base;
+using Terminaux.Inputs;
 
 namespace Nitrocid.Kernel.Configuration.Settings
 {
@@ -313,7 +314,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
                 TextWriterColor.Write(Translate.DoTranslation("Write what do you want to search for."));
                 DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for searching...");
                 TextWriters.Write(">> ", false, KernelColorType.Input);
-                string SearchFor = Input.ReadLine();
+                string SearchFor = InputTools.ReadLine();
 
                 // Search for the setting
                 ConsoleWrapper.CursorVisible = false;

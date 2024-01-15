@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Inputs;
 using Terminaux.Inputs.Styles.Choice;
 using Terminaux.Inputs.Styles.Selection;
 using Nitrocid.ConsoleBase.Themes;
@@ -32,6 +31,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Terminaux.Colors;
 using Textify.General;
+using Terminaux.Inputs;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {

@@ -30,7 +30,6 @@ using Newtonsoft.Json.Linq;
 using Nitrocid.Kernel.Configuration.Settings;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Files;
-using Terminaux.Inputs;
 using Nitrocid.Misc.Reflection;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
@@ -39,6 +38,7 @@ using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Events;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Files.Operations.Querying;
+using Terminaux.Inputs;
 
 namespace Nitrocid.Kernel.Configuration
 {

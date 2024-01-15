@@ -19,7 +19,7 @@
 
 using MimeKit.Cryptography;
 using Nitrocid.ConsoleBase.Colors;
-using Terminaux.Inputs;
+using Nitrocid.ConsoleBase.Inputs;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Text.Probers.Placeholder;
@@ -48,7 +48,7 @@ namespace Nitrocid.Extras.MailShell.Tools.PGP
             {
                 TextWriters.Write(Translate.DoTranslation("Write password for key ID {0}") + ": ", false, KernelColorType.Input, key.KeyId);
             }
-            string Password = Input.ReadLineNoInput();
+            string Password = InputTools.ReadLineNoInput();
             return Password;
         }
     }

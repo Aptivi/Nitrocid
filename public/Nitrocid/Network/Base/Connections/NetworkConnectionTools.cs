@@ -22,7 +22,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Kernel.Debugging;
-using Terminaux.Inputs;
+using Nitrocid.ConsoleBase.Inputs;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Inputs.Styles.Selection;
@@ -30,6 +30,7 @@ using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Network.Base.SpeedDial;
 using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Inputs;
 
 namespace Nitrocid.Network.Base.Connections
 {
@@ -429,7 +430,7 @@ namespace Nitrocid.Network.Base.Connections
                     {
                         // Prompt the user to provide connection information
                         DebugWriter.WriteDebug(DebugLevel.I, "Letting user provide connection info...");
-                        address = Input.ReadLine(Translate.DoTranslation("Enter the server address:") + " ");
+                        address = InputTools.ReadLine(Translate.DoTranslation("Enter the server address:") + " ");
                         connection = establisher(address);
                     }
                     else if (selectedConnection == availableConnections + 2)
@@ -455,7 +456,7 @@ namespace Nitrocid.Network.Base.Connections
                         {
                             // User selected to create a new connection
                             DebugWriter.WriteDebug(DebugLevel.I, "Letting user provide connection info...");
-                            address = Input.ReadLine(Translate.DoTranslation("Enter the server address:") + " ");
+                            address = InputTools.ReadLine(Translate.DoTranslation("Enter the server address:") + " ");
                             connection = establisher(address);
                         }
                         else

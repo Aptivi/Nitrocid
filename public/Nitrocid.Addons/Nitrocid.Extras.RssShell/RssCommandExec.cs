@@ -19,7 +19,6 @@
 
 using Nettify.Rss.Instance;
 using Nitrocid.ConsoleBase.Colors;
-using Terminaux.Inputs;
 using Terminaux.Inputs.Interactive;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Extras.RssShell.RSS.Interactive;
@@ -30,6 +29,7 @@ using Nitrocid.Network.Base.Connections;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Switches;
 using System;
+using Nitrocid.ConsoleBase.Inputs;
 
 namespace Nitrocid.Extras.RssShell
 {
@@ -48,7 +48,7 @@ namespace Nitrocid.Extras.RssShell
                 }
                 else
                 {
-                    string address = Input.ReadLine(Translate.DoTranslation("Enter the RSS feed URL") + ": ", Config.MainConfig.RssHeadlineUrl, true);
+                    string address = InputTools.ReadLine(Translate.DoTranslation("Enter the RSS feed URL") + ": ", Config.MainConfig.RssHeadlineUrl);
                     if (string.IsNullOrEmpty(address) || !Uri.TryCreate(address, UriKind.Absolute, out Uri uri))
                     {
                         TextWriters.Write(Translate.DoTranslation("Error trying to parse the address. Make sure that you've written the address correctly."), KernelColorType.Error);
@@ -68,7 +68,7 @@ namespace Nitrocid.Extras.RssShell
         private NetworkConnection EstablishRssConnection(string address)
         {
             if (string.IsNullOrEmpty(address))
-                address = Input.ReadLine(Translate.DoTranslation("Enter the server address:") + " ");
+                address = InputTools.ReadLine(Translate.DoTranslation("Enter the server address:") + " ");
             return NetworkConnectionTools.EstablishConnection("RSS connection", address, NetworkConnectionType.RSS, new RSSFeed(address, RSSFeedType.Infer));
         }
 

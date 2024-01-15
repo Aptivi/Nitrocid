@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Inputs;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs.Styles.Selection;
 using Nitrocid.Kernel.Configuration.Instances;
@@ -28,6 +27,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Terminaux.Base;
+using Terminaux.Inputs;
 
 namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
 {

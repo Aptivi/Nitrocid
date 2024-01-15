@@ -18,7 +18,7 @@
 //
 
 using Nitrocid.ConsoleBase.Colors;
-using Terminaux.Inputs;
+using Nitrocid.ConsoleBase.Inputs;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Drivers.Encryption;
@@ -28,6 +28,7 @@ using System.Linq;
 using System.Threading;
 using Terminaux.Colors;
 using Terminaux.Base;
+using Terminaux.Inputs;
 
 namespace Nitrocid.Users.Login.Handlers.Logins
 {
@@ -85,7 +86,7 @@ namespace Nitrocid.Users.Login.Handlers.Logins
 
             // The password is not empty. Prompt for password.
             TextWriterColor.Write(Translate.DoTranslation("Enter the password for user") + " {0}: ", false, user);
-            string password = Input.ReadLineNoInput();
+            string password = InputTools.ReadLineNoInput();
 
             // Validate the password
             pass = password;

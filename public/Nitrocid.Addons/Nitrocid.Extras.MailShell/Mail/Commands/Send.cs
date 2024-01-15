@@ -19,7 +19,6 @@
 
 using MimeKit;
 using Nitrocid.ConsoleBase.Colors;
-using Terminaux.Inputs;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Extras.MailShell.Tools.Transfer;
@@ -30,6 +29,7 @@ using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
 using Textify.General;
+using Nitrocid.ConsoleBase.Inputs;
 
 namespace Nitrocid.Extras.MailShell.Mail.Commands
 {
@@ -70,7 +70,7 @@ namespace Nitrocid.Extras.MailShell.Mail.Commands
 
             // Prompt for receiver e-mail address
             TextWriters.Write(Translate.DoTranslation("Enter recipient mail address:") + " ", false, KernelColorType.Input);
-            Receiver = Input.ReadLine();
+            Receiver = InputTools.ReadLine();
             DebugWriter.WriteDebug(DebugLevel.I, "Recipient: {0}", Receiver);
 
             // Check for mail format
@@ -80,7 +80,7 @@ namespace Nitrocid.Extras.MailShell.Mail.Commands
 
                 // Prompt for subject
                 TextWriters.Write(Translate.DoTranslation("Enter the subject:") + " ", false, KernelColorType.Input);
-                Subject = Input.ReadLine();
+                Subject = InputTools.ReadLine();
                 DebugWriter.WriteDebug(DebugLevel.I, "Subject: {0} ({1} chars)", Subject, Subject.Length);
 
                 // Prompt for body
@@ -88,7 +88,7 @@ namespace Nitrocid.Extras.MailShell.Mail.Commands
                 string BodyLine = "";
                 while (BodyLine.ToUpper() != "EOF")
                 {
-                    BodyLine = Input.ReadLine();
+                    BodyLine = InputTools.ReadLine();
                     if (BodyLine.ToUpper() != "EOF")
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Body line: {0} ({1} chars)", BodyLine, BodyLine.Length);
@@ -102,7 +102,7 @@ namespace Nitrocid.Extras.MailShell.Mail.Commands
                 while (!string.IsNullOrEmpty(PathLine))
                 {
                     TextWriters.Write("> ", false, KernelColorType.Input);
-                    PathLine = Input.ReadLine();
+                    PathLine = InputTools.ReadLine();
                     if (!string.IsNullOrEmpty(PathLine))
                     {
                         PathLine = FilesystemTools.NeutralizePath(PathLine);

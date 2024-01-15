@@ -18,7 +18,6 @@
 //
 
 using Nitrocid.ConsoleBase.Colors;
-using Terminaux.Inputs;
 using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel.Configuration.Instances;
@@ -26,6 +25,7 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
 using System;
 using Terminaux.Base;
+using Terminaux.Inputs;
 
 namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
 {

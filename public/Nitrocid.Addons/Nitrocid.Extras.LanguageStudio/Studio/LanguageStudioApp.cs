@@ -35,6 +35,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Textify.General;
 using Terminaux.Base;
+using Nitrocid.ConsoleBase.Inputs;
 
 namespace Nitrocid.Extras.LanguageStudio.Studio
 {
@@ -150,7 +151,7 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
                 if (selectedStringNum == englishLines.Count + 1)
                 {
                     // User chose to make a new string.
-                    string newString = Input.ReadLine(Translate.DoTranslation("Enter a new string") + ": ");
+                    string newString = InputTools.ReadLine(Translate.DoTranslation("Enter a new string") + ": ");
                     englishLines.Add(newString);
                     foreach (var translatedLang in translatedLines.Keys)
                         translatedLines[translatedLang].Add(translatedLang == "eng" ? newString : "???");
@@ -221,7 +222,7 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
 
                 // Try to get a language and prompt the user for the translation
                 string selectedLang = targetLanguages[selectedLangNum - 1];
-                string translated = Input.ReadLine(Translate.DoTranslation("Write your translation of") + $" \"{str}\": ");
+                string translated = InputTools.ReadLine(Translate.DoTranslation("Write your translation of") + $" \"{str}\": ");
                 translatedLines[selectedLang][index] = translated;
             }
         }

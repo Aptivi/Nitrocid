@@ -18,7 +18,7 @@
 //
 
 using Nitrocid.ConsoleBase.Colors;
-using Terminaux.Inputs;
+using Nitrocid.ConsoleBase.Inputs;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Files;
 using Nitrocid.Files.Folders;
@@ -46,7 +46,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             // Write the prompt
             TextWriters.Write($"{Translate.DoTranslation("Write any text to use. Remember, follow the description of the option that you've chosen.")}\n", KernelColorType.Tip);
             TextWriters.Write("[{0}] ", false, KernelColorType.Input, KeyDefaultValue);
-            string AnswerString = Input.ReadLine();
+            string AnswerString = InputTools.ReadLine();
             AnswerString = (string)TranslateStringValueWithDefault(key, AnswerString, KeyDefaultValue);
             bail = true;
             return AnswerString;

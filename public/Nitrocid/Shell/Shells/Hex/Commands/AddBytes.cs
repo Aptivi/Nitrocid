@@ -19,7 +19,7 @@
 
 using System.Collections.Generic;
 using Nitrocid.ConsoleBase.Colors;
-using Terminaux.Inputs;
+using Nitrocid.ConsoleBase.Inputs;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Files.Editors.HexEdit;
@@ -47,7 +47,7 @@ namespace Nitrocid.Shell.Shells.Hex.Commands
             while (FinalByte != "EOF")
             {
                 TextWriters.Write(">> ", false, KernelColorType.Input);
-                FinalByte = Input.ReadLine();
+                FinalByte = InputTools.ReadLine();
                 if (FinalByte != "EOF")
                 {
                     if (byte.TryParse(FinalByte, System.Globalization.NumberStyles.HexNumber, null, out byte ByteContent))

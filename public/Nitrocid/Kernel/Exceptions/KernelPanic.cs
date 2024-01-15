@@ -18,7 +18,6 @@
 //
 
 using Nitrocid.ConsoleBase.Colors;
-using Terminaux.Inputs;
 using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Files.Operations;
@@ -41,6 +40,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using Textify.General;
+using Terminaux.Inputs;
 
 namespace Nitrocid.Kernel.Exceptions
 {

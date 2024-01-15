@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Inputs;
+using Nitrocid.ConsoleBase.Inputs;
 using Nitrocid.Files;
 using Nitrocid.Languages;
 using System.Reflection;
@@ -32,7 +32,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
         {
             string path = args.Length > 0 ? args[0] : "";
             if (string.IsNullOrEmpty(path))
-                path = Input.ReadLine(Translate.DoTranslation("Write a path to assembly file:") + " ");
+                path = InputTools.ReadLine(Translate.DoTranslation("Write a path to assembly file:") + " ");
             path = FilesystemTools.NeutralizePath(path);
             Assembly.LoadFrom(path).EntryPoint.Invoke("", []);
         }

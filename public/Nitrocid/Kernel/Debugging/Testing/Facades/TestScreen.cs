@@ -19,7 +19,6 @@
 
 using Terminaux.Base.Buffered;
 using Nitrocid.ConsoleBase.Colors;
-using Terminaux.Inputs;
 using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Languages;
 using System;
@@ -28,6 +27,7 @@ using Terminaux.Colors;
 using Textify.Sequences.Builder.Types;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
+using Terminaux.Inputs;
 
 namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {

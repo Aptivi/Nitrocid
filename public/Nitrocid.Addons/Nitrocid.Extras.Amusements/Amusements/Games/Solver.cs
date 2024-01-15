@@ -21,12 +21,12 @@ using System;
 using System.Data;
 using System.Linq;
 using Nitrocid.ConsoleBase.Colors;
-using Terminaux.Inputs;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
+using Nitrocid.ConsoleBase.Inputs;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games
 {
@@ -83,7 +83,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 TextWriters.Write(RandomExpression, true, KernelColorType.Input);
 
                 // Wait for response
-                UserEvaluated = SolverShowInput ? Input.ReadLine() : Input.ReadLineNoInput(Convert.ToChar("\0"));
+                UserEvaluated = SolverShowInput ? InputTools.ReadLine() : InputTools.ReadLineNoInput(Convert.ToChar("\0"));
                 DebugWriter.WriteDebug(DebugLevel.I, "Evaluated: {0}", UserEvaluated);
 
                 // Check to see if the user has entered the correct answer

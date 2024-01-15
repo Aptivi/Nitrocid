@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Inputs;
+using Nitrocid.ConsoleBase.Inputs;
 using Nitrocid.Languages;
 using Nitrocid.Network.Base.Connections;
 using Nitrocid.Shell.ShellBase.Commands;
@@ -38,7 +38,7 @@ namespace Nitrocid.Extras.HttpShell
         private NetworkConnection EstablishHttpConnection(string address)
         {
             if (string.IsNullOrEmpty(address))
-                address = Input.ReadLine(Translate.DoTranslation("Enter the server address:") + " ");
+                address = InputTools.ReadLine(Translate.DoTranslation("Enter the server address:") + " ");
             return NetworkConnectionTools.EstablishConnection("HTTP connection", address, NetworkConnectionType.HTTP, new HttpClient());
         }
 

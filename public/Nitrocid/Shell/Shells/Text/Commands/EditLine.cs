@@ -19,7 +19,7 @@
 
 using System;
 using Nitrocid.ConsoleBase.Colors;
-using Terminaux.Inputs;
+using Nitrocid.ConsoleBase.Inputs;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
@@ -47,7 +47,7 @@ namespace Nitrocid.Shell.Shells.Text.Commands
                 {
                     string OriginalLine = TextEditShellCommon.FileLines[lineNum - 1];
                     TextWriters.Write(">> ", false, KernelColorType.Input);
-                    string EditedLine = Input.ReadLine("", OriginalLine, OneLineWrap: false, true);
+                    string EditedLine = InputTools.ReadLine("", OriginalLine);
                     TextEditShellCommon.FileLines[lineNum - 1] = EditedLine;
                     return 0;
                 }

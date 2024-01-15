@@ -21,11 +21,11 @@ using System;
 using System.Linq;
 using Nettify.Weather;
 using Nitrocid.ConsoleBase.Colors;
-using Terminaux.Inputs;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.ConsoleBase.Inputs;
 
 namespace Nitrocid.Extras.Forecast.Forecast.Commands
 {
@@ -73,7 +73,7 @@ namespace Nitrocid.Extras.Forecast.Forecast.Commands
                 {
                     TextWriterColor.Write(Translate.DoTranslation("You can get your own API key at https://home.openweathermap.org/api_keys."));
                     TextWriters.Write(Translate.DoTranslation("Enter your API key:") + " ", false, KernelColorType.Input);
-                    APIKey = Input.ReadLineNoInput();
+                    APIKey = InputTools.ReadLineNoInput();
                     Forecast.ApiKey = APIKey;
                 }
                 Forecast.PrintWeatherInfo(parameters.ArgumentsList[0], APIKey);

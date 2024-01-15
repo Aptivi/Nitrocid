@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Inputs;
 using Terminaux.Inputs.Styles.Selection;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
@@ -25,6 +24,7 @@ using Nitrocid.Misc.Screensaver;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Switches;
 using System.Linq;
+using Terminaux.Inputs;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {

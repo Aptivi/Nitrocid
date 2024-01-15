@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Inputs;
+using Nitrocid.ConsoleBase.Inputs;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using Terminaux.Colors;
@@ -35,11 +35,11 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
             string TextG = args.Length > 1 ? args[1] : "";
             string TextB = args.Length > 2 ? args[2] : "";
             if (string.IsNullOrEmpty(TextR))
-                TextR = Input.ReadLine("R - " + Translate.DoTranslation("Write a color number ranging from 1 to 255:") + " ");
+                TextR = InputTools.ReadLine("R - " + Translate.DoTranslation("Write a color number ranging from 1 to 255:") + " ");
             if (string.IsNullOrEmpty(TextG))
-                TextG = Input.ReadLine("G - " + Translate.DoTranslation("Write a color number ranging from 1 to 255:") + " ");
+                TextG = InputTools.ReadLine("G - " + Translate.DoTranslation("Write a color number ranging from 1 to 255:") + " ");
             if (string.IsNullOrEmpty(TextB))
-                TextB = Input.ReadLine("B - " + Translate.DoTranslation("Write a color number ranging from 1 to 255:") + " ");
+                TextB = InputTools.ReadLine("B - " + Translate.DoTranslation("Write a color number ranging from 1 to 255:") + " ");
             if (int.TryParse(TextR, out int r) && int.TryParse(TextG, out int g) && int.TryParse(TextB, out int b))
             {
                 var color = new Color(r, g, b);

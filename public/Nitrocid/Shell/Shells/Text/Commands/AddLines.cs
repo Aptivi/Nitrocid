@@ -19,7 +19,7 @@
 
 using System.Collections.Generic;
 using Nitrocid.ConsoleBase.Colors;
-using Terminaux.Inputs;
+using Nitrocid.ConsoleBase.Inputs;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Files.Editors.TextEdit;
@@ -47,7 +47,7 @@ namespace Nitrocid.Shell.Shells.Text.Commands
             while (FinalLine != "EOF")
             {
                 TextWriters.Write(">> ", false, KernelColorType.Input);
-                FinalLine = Input.ReadLine();
+                FinalLine = InputTools.ReadLine();
                 if (FinalLine != "EOF")
                 {
                     FinalLines.Add(FinalLine);

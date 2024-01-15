@@ -38,7 +38,6 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Shell.ShellBase.Commands.ProcessExecution;
 using Nitrocid.Files;
 using Nitrocid.Shell.ShellBase.Arguments;
-using Terminaux.Inputs;
 using Nitrocid.Drivers;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.ConsoleBase.Writers;
@@ -63,7 +62,7 @@ using Nitrocid.Shell.Shells.Hex;
 using Nitrocid.Shell.Shells.Debug;
 using Textify.General;
 using Terminaux.Base;
-using Nitrocid.Misc.Screensaver;
+using Nitrocid.ConsoleBase.Inputs;
 
 namespace Nitrocid.Shell.ShellBase.Shells
 {
@@ -350,8 +349,8 @@ namespace Nitrocid.Shell.ShellBase.Shells
                 DebugWriter.WriteDebug(DebugLevel.I, "Waiting for command");
                 string strcommand =
                     shellInfo.OneLineWrap ?
-                    Input.ReadLineWrapped("", "", settings) :
-                    Input.ReadLine("", "", settings);
+                    InputTools.ReadLineWrapped("", "", settings) :
+                    InputTools.ReadLine("", "", settings);
                 DebugWriter.WriteDebug(DebugLevel.I, "Waited for command [{0}]", strcommand);
                 if (strcommand == ";")
                     strcommand = "";

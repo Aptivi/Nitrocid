@@ -66,7 +66,7 @@ namespace Nitrocid.Analyzers.ConsoleBase
                 // Get the method
                 var idName = ((IdentifierNameSyntax)typeDecl.Name).Identifier.Text;
 
-                // We need to have a syntax that calls Input.ReadLine
+                // We need to have a syntax that calls InputTools.ReadLine
                 var classSyntax = SyntaxFactory.IdentifierName("Input");
                 var methodSyntax = SyntaxFactory.IdentifierName("ReadLine");
                 var resultSyntax = SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, classSyntax, methodSyntax);

@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Inputs;
+using Nitrocid.ConsoleBase.Inputs;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using System.Globalization;
@@ -30,7 +30,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
         public override TestSection TestSection => TestSection.Languages;
         public override void Run(params string[] args)
         {
-            string Text = Input.ReadLine(Translate.DoTranslation("Write a search term:") + " ");
+            string Text = InputTools.ReadLine(Translate.DoTranslation("Write a search term:") + " ");
             var Cults = CultureInfo.GetCultures(CultureTypes.AllCultures);
             foreach (CultureInfo Cult in Cults)
             {

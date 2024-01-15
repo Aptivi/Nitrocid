@@ -19,11 +19,11 @@
 
 using System;
 using Nitrocid.Shell.ShellBase.Commands;
-using Terminaux.Inputs;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Inputs;
 
 namespace Nitrocid.Shell.Shells.Debug.Commands
 {

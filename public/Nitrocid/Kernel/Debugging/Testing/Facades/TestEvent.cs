@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Inputs;
+using Nitrocid.ConsoleBase.Inputs;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Events;
 using Nitrocid.Languages;
@@ -31,7 +31,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
         public override TestSection TestSection => TestSection.Kernel;
         public override void Run(params string[] args)
         {
-            string Text = Input.ReadLine(Translate.DoTranslation("Write an event name:") + " ");
+            string Text = InputTools.ReadLine(Translate.DoTranslation("Write an event name:") + " ");
             string[] eventArgs = ["RanByTest"];
             if (Enum.TryParse(Text, out EventType eventType))
                 EventsManager.FireEvent(eventType, eventArgs);

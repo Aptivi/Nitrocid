@@ -25,7 +25,6 @@ using Textify.Sequences.Builder.Types;
 using System.Collections.Generic;
 using Nitrocid.Shell.Shells.Text;
 using Nitrocid.Kernel.Debugging;
-using Terminaux.Inputs;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
 using Terminaux.Writer.FancyWriters;
@@ -38,6 +37,7 @@ using Nitrocid.Files.Operations.Querying;
 using Textify.General;
 using Terminaux.Colors;
 using Terminaux.Base;
+using Terminaux.Inputs;
 
 namespace Nitrocid.Files.Editors.TextEdit
 {

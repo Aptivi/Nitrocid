@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Inputs;
+using Nitrocid.ConsoleBase.Inputs;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using System.Linq;
@@ -35,9 +35,9 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
             string Text = args.Length > 0 ? args[0] : "";
             string Regex = args.Length > 1 ? args[1] : "";
             if (string.IsNullOrEmpty(Text))
-                Text = Input.ReadLine(Translate.DoTranslation("Write a string to check:") + " ");
+                Text = InputTools.ReadLine(Translate.DoTranslation("Write a string to check:") + " ");
             if (string.IsNullOrEmpty(Regex))
-                Regex = Input.ReadLine(Translate.DoTranslation("Write a regular expression:") + " ");
+                Regex = InputTools.ReadLine(Translate.DoTranslation("Write a regular expression:") + " ");
             var Reg = new Regex(Regex);
             var Matches = Reg.Matches(Text);
             int MatchNum = 1;

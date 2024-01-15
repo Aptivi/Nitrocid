@@ -34,6 +34,7 @@ using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
 using Terminaux.Colors;
+using Nitrocid.ConsoleBase.Inputs;
 
 namespace Nitrocid.Extras.FtpShell.Tools
 {
@@ -95,7 +96,7 @@ namespace Nitrocid.Extras.FtpShell.Tools
                 TextWriters.Write(Translate.DoTranslation("Password for {0}: "), false, KernelColorType.Input, user);
 
             // Get input
-            FTPShellCommon.FtpPass = Input.ReadLineNoInput();
+            FTPShellCommon.FtpPass = InputTools.ReadLineNoInput();
 
             // Set up credentials
             clientFTP.Credentials = new NetworkCredential(user, FTPShellCommon.FtpPass);
@@ -154,7 +155,7 @@ namespace Nitrocid.Extras.FtpShell.Tools
                 {
                     TextWriters.Write(Translate.DoTranslation("Username for {0}: "), false, KernelColorType.Input, address);
                 }
-                FTPShellCommon.FtpUser = Input.ReadLine();
+                FTPShellCommon.FtpUser = InputTools.ReadLine();
                 if (string.IsNullOrEmpty(FTPShellCommon.FtpUser))
                 {
                     DebugWriter.WriteDebug(DebugLevel.W, "User is not provided. Fallback to \"anonymous\"");
@@ -209,7 +210,7 @@ namespace Nitrocid.Extras.FtpShell.Tools
                     while (!profanswered)
                     {
                         TextWriters.Write(CharManager.NewLine + ">> ", false, KernelColorType.Input);
-                        profanswer = Input.ReadLine();
+                        profanswer = InputTools.ReadLine();
                         DebugWriter.WriteDebug(DebugLevel.I, "Selection: {0}", profanswer);
                         if (TextTools.IsStringNumeric(profanswer))
                         {

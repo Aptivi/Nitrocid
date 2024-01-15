@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Inputs;
 using Terminaux.Inputs.Presentation;
 using Terminaux.Inputs.Presentation.Elements;
 using Terminaux.Writer.ConsoleWriters;
@@ -30,6 +29,7 @@ using System.Text;
 using Terminaux.Colors;
 using Textify.General;
 using Terminaux.Base;
+using Terminaux.Inputs;
 
 namespace Nitrocid.Kernel
 {

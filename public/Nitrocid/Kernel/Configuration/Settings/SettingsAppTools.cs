@@ -18,7 +18,6 @@
 //
 
 using Nitrocid.ConsoleBase.Colors;
-using Terminaux.Inputs;
 using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Files;
 using Nitrocid.Files.Operations.Querying;
@@ -30,6 +29,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Terminaux.Base;
+using Terminaux.Inputs;
 
 #if SPECIFIERREL
 #if !PACKAGEMANAGERBUILD

@@ -19,7 +19,6 @@
 
 using Microsoft.Data.Sqlite;
 using Nitrocid.ConsoleBase.Colors;
-using Terminaux.Inputs;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Extras.SqlShell.Tools;
 using Nitrocid.Kernel.Exceptions;
@@ -27,6 +26,7 @@ using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
 using System.Collections.Generic;
 using Textify.General;
+using Nitrocid.ConsoleBase.Inputs;
 
 namespace Nitrocid.Extras.SqlShell.Sql.Commands
 {
@@ -47,7 +47,7 @@ namespace Nitrocid.Extras.SqlShell.Sql.Commands
             {
                 if (StringArg.StartsWith("@"))
                 {
-                    string paramValue = Input.ReadLine(TextTools.FormatString(Translate.DoTranslation("Enter parameter value for {0}:"), StringArg) + " ");
+                    string paramValue = InputTools.ReadLine(TextTools.FormatString(Translate.DoTranslation("Enter parameter value for {0}:"), StringArg) + " ");
                     sqlParameters.Add(new SqliteParameter(StringArg, paramValue));
                 }
             }

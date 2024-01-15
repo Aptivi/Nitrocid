@@ -23,6 +23,7 @@ using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using Terminaux.Base;
+using Nitrocid.ConsoleBase.Inputs;
 
 namespace Nitrocid.Legacy.HddUncleaner
 {
@@ -76,7 +77,7 @@ namespace Nitrocid.Legacy.HddUncleaner
             TextWriterColor.Write("              : +-------------------------+ :");
             TextWriterColor.Write("              +---End support of HC 1.0.0---+");
             TextWriterColor.Write();
-            string option = Input.ReadLine("    Your option:");
+            string option = InputTools.ReadLine("    Your option:");
 
             // :main - Checking for option (line 165)
             ConsoleWrapper.Clear();
@@ -130,7 +131,7 @@ namespace Nitrocid.Legacy.HddUncleaner
                     TextWriterColor.Write("1. Click on \"Hibernate\" tab");
                     TextWriterColor.Write("2. Clear the check box \"Enable Hibernation\"");
                     TextWriterColor.Write("3. Click on OK or Apply button");
-                    Input.ReadLine("  Your OS:");
+                    InputTools.ReadLine("  Your OS:");
                     break;
                 case "8":
                     // User selected the exit option. Translate this to the :exihdc tag
@@ -160,7 +161,7 @@ namespace Nitrocid.Legacy.HddUncleaner
             TextWriterColor.Write();
 
             // Prompt for option. "HDD Cleaner" didn't check for option validity.
-            Input.ReadLine("    Your option:");
+            InputTools.ReadLine("    Your option:");
         }
     }
 }
