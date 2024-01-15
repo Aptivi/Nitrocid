@@ -17,7 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Presentation;
+using Terminaux.Inputs.Presentation;
+using Nitrocid.Kernel.Debugging.Testing.Facades.FacadeData;
 using Nitrocid.Languages;
 
 namespace Nitrocid.Kernel.Debugging.Testing.Facades

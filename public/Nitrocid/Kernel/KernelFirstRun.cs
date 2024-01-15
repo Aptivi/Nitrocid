@@ -18,8 +18,8 @@
 //
 
 using Terminaux.Inputs;
-using Nitrocid.ConsoleBase.Presentation;
-using Nitrocid.ConsoleBase.Presentation.Elements;
+using Terminaux.Inputs.Presentation;
+using Terminaux.Inputs.Presentation.Elements;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Debugging;

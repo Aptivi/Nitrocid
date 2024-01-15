@@ -18,8 +18,8 @@
 //
 
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Presentation;
-using Nitrocid.ConsoleBase.Presentation.Elements;
+using Terminaux.Inputs.Presentation;
+using Terminaux.Inputs.Presentation.Elements;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
 using Terminaux.Colors;

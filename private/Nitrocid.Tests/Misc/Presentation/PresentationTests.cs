@@ -17,8 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Presentation.Elements;
-using Nitrocid.ConsoleBase.Presentation;
+using Terminaux.Inputs.Presentation.Elements;
+using Terminaux.Inputs.Presentation;
 using NUnit.Framework;
 using Shouldly;
 using System;

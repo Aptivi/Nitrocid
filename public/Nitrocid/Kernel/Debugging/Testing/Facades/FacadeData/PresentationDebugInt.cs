@@ -18,15 +18,16 @@
 //
 
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Presentation.Elements;
+using Terminaux.Inputs.Presentation.Elements;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Time.Renderers;
 using System.Linq;
 using Terminaux.Colors;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
+using Terminaux.Inputs.Presentation;
 
-namespace Nitrocid.ConsoleBase.Presentation
+namespace Nitrocid.Kernel.Debugging.Testing.Facades.FacadeData
 {
     internal static class PresentationDebugInt
     {
