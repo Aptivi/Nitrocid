@@ -103,7 +103,7 @@ namespace Nitrocid.Tests.ConsoleBase
         public void TestConvertFromHexToYiq()
         {
             Console.WriteLine("Converting #0F0F0F...");
-            KernelColorConversionTools.ConvertFromHexToYiq("#0F0F0F").ShouldBe("yiq:0.058823529411764705;-3.483052626275001E-18;-3.483052626275001E-18");
+            KernelColorConversionTools.ConvertFromHexToYiq("#0F0F0F").ShouldBe("yiq:15;128;128");
         }
 
         /// <summary>
@@ -256,8 +256,8 @@ namespace Nitrocid.Tests.ConsoleBase
         [Description("Conversion")]
         public void TestConvertFromYiqSequenceToHex()
         {
-            Console.WriteLine("Converting 0.058823529411764705;-3.483052626275001E-18;-3.483052626275001E-18...");
-            KernelColorConversionTools.ConvertFromYiqToHex("yiq:0.058823529411764705;-3.483052626275001E-18;-3.483052626275001E-18").ShouldBe("#0F0F0F");
+            Console.WriteLine("Converting 15;128;128...");
+            KernelColorConversionTools.ConvertFromYiqToHex("yiq:15;128;128").ShouldBe("#0F0F0F");
         }
 
         /// <summary>
@@ -267,8 +267,8 @@ namespace Nitrocid.Tests.ConsoleBase
         [Description("Conversion")]
         public void TestConvertFromYiqNumbersToHex()
         {
-            Console.WriteLine("Converting 0.058823529411764705, -3.483052626275001E-18, -3.483052626275001E-18...");
-            KernelColorConversionTools.ConvertFromYiqToHex(0.058823529411764705, -3.483052626275001E-18, -3.483052626275001E-18).ShouldBe("#0F0F0F");
+            Console.WriteLine("Converting 15, 128, 128...");
+            KernelColorConversionTools.ConvertFromYiqToHex(15, 128, 128).ShouldBe("#0F0F0F");
         }
 
         /// <summary>
@@ -276,12 +276,10 @@ namespace Nitrocid.Tests.ConsoleBase
         /// </summary>
         [Test]
         [Description("Conversion")]
-        // TODO: Deal with the below ignore attribute on Terminaux 2.5.0.
-        [Ignore("Terminaux has a bug where the Y component of the YUV specifier is not accepting values larger than 1.0.")]
         public void TestConvertFromYuvSequenceToHex()
         {
             Console.WriteLine("Converting 15;128;128...");
-            KernelColorConversionTools.ConvertFromYuvToHex("yuv:15;128;128").ShouldBe("#0F0F0F");
+            KernelColorConversionTools.ConvertFromYuvToHex("yuv:15;128;128").ShouldBe("#0F0F11");
         }
 
         /// <summary>
@@ -289,11 +287,10 @@ namespace Nitrocid.Tests.ConsoleBase
         /// </summary>
         [Test]
         [Description("Conversion")]
-        [Ignore("Terminaux has a bug where the Y component of the YUV specifier is not accepting values larger than 1.0.")]
         public void TestConvertFromYuvNumbersToHex()
         {
             Console.WriteLine("Converting 15, 128, 128...");
-            KernelColorConversionTools.ConvertFromYuvToHex(15, 128, 128).ShouldBe("#0F0F0F");
+            KernelColorConversionTools.ConvertFromYuvToHex(15, 128, 128).ShouldBe("#0F0F11");
         }
 
         /// <summary>
@@ -414,7 +411,7 @@ namespace Nitrocid.Tests.ConsoleBase
         public void TestConvertFromRgbSequenceToYiq()
         {
             Console.WriteLine("Converting 15;15;15...");
-            KernelColorConversionTools.ConvertFromRgbToYiq("15;15;15").ShouldBe("yiq:0.058823529411764705;-3.483052626275001E-18;-3.483052626275001E-18");
+            KernelColorConversionTools.ConvertFromRgbToYiq("15;15;15").ShouldBe("yiq:15;128;128");
         }
 
         /// <summary>
@@ -425,7 +422,7 @@ namespace Nitrocid.Tests.ConsoleBase
         public void TestConvertFromRgbNumbersToYiq()
         {
             Console.WriteLine("Converting 15, 15, 15...");
-            KernelColorConversionTools.ConvertFromRgbToYiq(15, 15, 15).ShouldBe("yiq:0.058823529411764705;-3.483052626275001E-18;-3.483052626275001E-18");
+            KernelColorConversionTools.ConvertFromRgbToYiq(15, 15, 15).ShouldBe("yiq:15;128;128");
         }
 
         /// <summary>
@@ -568,7 +565,7 @@ namespace Nitrocid.Tests.ConsoleBase
         public void TestConvertFromRybSequenceToYiq()
         {
             Console.WriteLine("Converting 15;15;15...");
-            KernelColorConversionTools.ConvertFromRybToYiq("ryb:15;15;15").ShouldBe("yiq:0.058823529411764705;-3.483052626275001E-18;-3.483052626275001E-18");
+            KernelColorConversionTools.ConvertFromRybToYiq("ryb:15;15;15").ShouldBe("yiq:15;128;128");
         }
 
         /// <summary>
@@ -579,7 +576,7 @@ namespace Nitrocid.Tests.ConsoleBase
         public void TestConvertFromRybNumbersToYiq()
         {
             Console.WriteLine("Converting 15, 15, 15...");
-            KernelColorConversionTools.ConvertFromRybToYiq(15, 15, 15).ShouldBe("yiq:0.058823529411764705;-3.483052626275001E-18;-3.483052626275001E-18");
+            KernelColorConversionTools.ConvertFromRybToYiq(15, 15, 15).ShouldBe("yiq:15;128;128");
         }
 
         /// <summary>
@@ -722,7 +719,7 @@ namespace Nitrocid.Tests.ConsoleBase
         public void TestConvertFromHslSequenceToYiq()
         {
             Console.WriteLine("Converting 0;0;5...");
-            KernelColorConversionTools.ConvertFromHslToYiq("hsl:0;0;5").ShouldBe("yiq:0.05098039215686274;-3.483052626275001E-18;-3.483052626275001E-18");
+            KernelColorConversionTools.ConvertFromHslToYiq("hsl:0;0;5").ShouldBe("yiq:12;128;128");
         }
 
         /// <summary>
@@ -733,7 +730,7 @@ namespace Nitrocid.Tests.ConsoleBase
         public void TestConvertFromHslNumbersToYiq()
         {
             Console.WriteLine("Converting 0, 0, 5...");
-            KernelColorConversionTools.ConvertFromHslToYiq(0, 0, 5).ShouldBe("yiq:0.05098039215686274;-3.483052626275001E-18;-3.483052626275001E-18");
+            KernelColorConversionTools.ConvertFromHslToYiq(0, 0, 5).ShouldBe("yiq:12;128;128");
         }
 
         /// <summary>
@@ -744,7 +741,7 @@ namespace Nitrocid.Tests.ConsoleBase
         public void TestConvertFromHslSequenceToYuv()
         {
             Console.WriteLine("Converting 0;0;5...");
-            KernelColorConversionTools.ConvertFromHslToYuv("hsl:0;0;5").ShouldBe("yuv:12.999999999999998;128;128");
+            KernelColorConversionTools.ConvertFromHslToYuv("hsl:0;0;5").ShouldBe("yuv:12;128;128");
         }
 
         /// <summary>
@@ -755,7 +752,7 @@ namespace Nitrocid.Tests.ConsoleBase
         public void TestConvertFromHslNumbersToYuv()
         {
             Console.WriteLine("Converting 0, 0, 5...");
-            KernelColorConversionTools.ConvertFromHslToYuv(0, 0, 5).ShouldBe("yuv:12.999999999999998;128;128");
+            KernelColorConversionTools.ConvertFromHslToYuv(0, 0, 5).ShouldBe("yuv:12;128;128");
         }
 
         /// <summary>
@@ -876,7 +873,7 @@ namespace Nitrocid.Tests.ConsoleBase
         public void TestConvertFromHsvSequenceToYiq()
         {
             Console.WriteLine("Converting 0;0;5...");
-            KernelColorConversionTools.ConvertFromHsvToYiq("hsv:0;0;5").ShouldBe("yiq:0.05098039215686274;-3.483052626275001E-18;-3.483052626275001E-18");
+            KernelColorConversionTools.ConvertFromHsvToYiq("hsv:0;0;5").ShouldBe("yiq:12;128;128");
         }
 
         /// <summary>
@@ -887,7 +884,7 @@ namespace Nitrocid.Tests.ConsoleBase
         public void TestConvertFromHsvNumbersToYiq()
         {
             Console.WriteLine("Converting 0, 0, 5...");
-            KernelColorConversionTools.ConvertFromHsvToYiq(0, 0, 5).ShouldBe("yiq:0.05098039215686274;-3.483052626275001E-18;-3.483052626275001E-18");
+            KernelColorConversionTools.ConvertFromHsvToYiq(0, 0, 5).ShouldBe("yiq:12;128;128");
         }
 
         /// <summary>
@@ -898,7 +895,7 @@ namespace Nitrocid.Tests.ConsoleBase
         public void TestConvertFromHsvSequenceToYuv()
         {
             Console.WriteLine("Converting 0;0;5...");
-            KernelColorConversionTools.ConvertFromHsvToYuv("hsv:0;0;5").ShouldBe("yuv:12.999999999999998;128;128");
+            KernelColorConversionTools.ConvertFromHsvToYuv("hsv:0;0;5").ShouldBe("yuv:12;128;128");
         }
 
         /// <summary>
@@ -909,7 +906,7 @@ namespace Nitrocid.Tests.ConsoleBase
         public void TestConvertFromHsvNumbersToYuv()
         {
             Console.WriteLine("Converting 0, 0, 5...");
-            KernelColorConversionTools.ConvertFromHsvToYuv(0, 0, 5).ShouldBe("yuv:12.999999999999998;128;128");
+            KernelColorConversionTools.ConvertFromHsvToYuv(0, 0, 5).ShouldBe("yuv:12;128;128");
         }
 
         /// <summary>
@@ -1030,7 +1027,7 @@ namespace Nitrocid.Tests.ConsoleBase
         public void TestConvertFromCmykSequenceToYiq()
         {
             Console.WriteLine("Converting 0;0;0;94...");
-            KernelColorConversionTools.ConvertFromCmykToYiq("cmyk:0;0;0;94").ShouldBe("yiq:0.058823529411764705;-3.483052626275001E-18;-3.483052626275001E-18");
+            KernelColorConversionTools.ConvertFromCmykToYiq("cmyk:0;0;0;94").ShouldBe("yiq:15;128;128");
         }
 
         /// <summary>
@@ -1041,7 +1038,7 @@ namespace Nitrocid.Tests.ConsoleBase
         public void TestConvertFromCmykNumbersToYiq()
         {
             Console.WriteLine("Converting 0, 0, 0, 94...");
-            KernelColorConversionTools.ConvertFromCmykToYiq(0, 0, 0, 94).ShouldBe("yiq:0.058823529411764705;-3.483052626275001E-18;-3.483052626275001E-18");
+            KernelColorConversionTools.ConvertFromCmykToYiq(0, 0, 0, 94).ShouldBe("yiq:15;128;128");
         }
 
         /// <summary>
@@ -1184,7 +1181,7 @@ namespace Nitrocid.Tests.ConsoleBase
         public void TestConvertFromCmySequenceToYiq()
         {
             Console.WriteLine("Converting 94;94;94...");
-            KernelColorConversionTools.ConvertFromCmyToYiq("cmy:94;94;94").ShouldBe("yiq:0.058823529411764705;-3.483052626275001E-18;-3.483052626275001E-18");
+            KernelColorConversionTools.ConvertFromCmyToYiq("cmy:94;94;94").ShouldBe("yiq:15;128;128");
         }
 
         /// <summary>
@@ -1195,7 +1192,7 @@ namespace Nitrocid.Tests.ConsoleBase
         public void TestConvertFromCmyNumbersToYiq()
         {
             Console.WriteLine("Converting 94, 94, 94...");
-            KernelColorConversionTools.ConvertFromCmyToYiq(94, 94, 94).ShouldBe("yiq:0.058823529411764705;-3.483052626275001E-18;-3.483052626275001E-18");
+            KernelColorConversionTools.ConvertFromCmyToYiq(94, 94, 94).ShouldBe("yiq:15;128;128");
         }
 
         /// <summary>
@@ -1227,8 +1224,8 @@ namespace Nitrocid.Tests.ConsoleBase
         [Description("Conversion")]
         public void TestConvertFromYiqSequenceToRgb()
         {
-            Console.WriteLine("Converting 0.058823529411764705;-3.483052626275001E-18;-3.483052626275001E-18...");
-            KernelColorConversionTools.ConvertFromYiqToRgb("yiq:0.058823529411764705;-3.483052626275001E-18;-3.483052626275001E-18").ShouldBe("15;15;15");
+            Console.WriteLine("Converting 15;128;128...");
+            KernelColorConversionTools.ConvertFromYiqToRgb("yiq:15;128;128").ShouldBe("15;15;15");
         }
 
         /// <summary>
@@ -1238,8 +1235,8 @@ namespace Nitrocid.Tests.ConsoleBase
         [Description("Conversion")]
         public void TestConvertFromYiqNumbersToRgb()
         {
-            Console.WriteLine("Converting 0.058823529411764705, -3.483052626275001E-18, -3.483052626275001E-18...");
-            KernelColorConversionTools.ConvertFromYiqToRgb(0.058823529411764705, -3.483052626275001E-18, -3.483052626275001E-18).ShouldBe("15;15;15");
+            Console.WriteLine("Converting 15, 128, 128...");
+            KernelColorConversionTools.ConvertFromYiqToRgb(15, 128, 128).ShouldBe("15;15;15");
         }
 
         /// <summary>
@@ -1249,8 +1246,8 @@ namespace Nitrocid.Tests.ConsoleBase
         [Description("Conversion")]
         public void TestConvertFromYiqSequenceToRyb()
         {
-            Console.WriteLine("Converting 0.058823529411764705;-3.483052626275001E-18;-3.483052626275001E-18...");
-            KernelColorConversionTools.ConvertFromYiqToRyb("yiq:0.058823529411764705;-3.483052626275001E-18;-3.483052626275001E-18").ShouldBe("ryb:15;15;15");
+            Console.WriteLine("Converting 15;128;128...");
+            KernelColorConversionTools.ConvertFromYiqToRyb("yiq:15;128;128").ShouldBe("ryb:15;15;15");
         }
 
         /// <summary>
@@ -1260,8 +1257,8 @@ namespace Nitrocid.Tests.ConsoleBase
         [Description("Conversion")]
         public void TestConvertFromYiqNumbersToRyb()
         {
-            Console.WriteLine("Converting 0.058823529411764705, -3.483052626275001E-18, -3.483052626275001E-18...");
-            KernelColorConversionTools.ConvertFromYiqToRyb(0.058823529411764705, -3.483052626275001E-18, -3.483052626275001E-18).ShouldBe("ryb:15;15;15");
+            Console.WriteLine("Converting 15, 128, 128...");
+            KernelColorConversionTools.ConvertFromYiqToRyb(15, 128, 128).ShouldBe("ryb:15;15;15");
         }
 
         /// <summary>
@@ -1271,8 +1268,8 @@ namespace Nitrocid.Tests.ConsoleBase
         [Description("Conversion")]
         public void TestConvertFromYiqSequenceToHsl()
         {
-            Console.WriteLine("Converting 0.058823529411764705;-3.483052626275001E-18;-3.483052626275001E-18...");
-            KernelColorConversionTools.ConvertFromYiqToHsl("yiq:0.058823529411764705;-3.483052626275001E-18;-3.483052626275001E-18").ShouldBe("hsl:0;0;5");
+            Console.WriteLine("Converting 15;128;128...");
+            KernelColorConversionTools.ConvertFromYiqToHsl("yiq:15;128;128").ShouldBe("hsl:0;0;5");
         }
 
         /// <summary>
@@ -1282,8 +1279,8 @@ namespace Nitrocid.Tests.ConsoleBase
         [Description("Conversion")]
         public void TestConvertFromYiqNumbersToHsl()
         {
-            Console.WriteLine("Converting 0.058823529411764705, -3.483052626275001E-18, -3.483052626275001E-18...");
-            KernelColorConversionTools.ConvertFromYiqToHsl(0.058823529411764705, -3.483052626275001E-18, -3.483052626275001E-18).ShouldBe("hsl:0;0;5");
+            Console.WriteLine("Converting 15, 128, 128...");
+            KernelColorConversionTools.ConvertFromYiqToHsl(15, 128, 128).ShouldBe("hsl:0;0;5");
         }
 
         /// <summary>
@@ -1293,8 +1290,8 @@ namespace Nitrocid.Tests.ConsoleBase
         [Description("Conversion")]
         public void TestConvertFromYiqSequenceToHsv()
         {
-            Console.WriteLine("Converting 0.058823529411764705;-3.483052626275001E-18;-3.483052626275001E-18...");
-            KernelColorConversionTools.ConvertFromYiqToHsv("yiq:0.058823529411764705;-3.483052626275001E-18;-3.483052626275001E-18").ShouldBe("hsv:0;0;5");
+            Console.WriteLine("Converting 15;128;128...");
+            KernelColorConversionTools.ConvertFromYiqToHsv("yiq:15;128;128").ShouldBe("hsv:0;0;5");
         }
 
         /// <summary>
@@ -1304,8 +1301,8 @@ namespace Nitrocid.Tests.ConsoleBase
         [Description("Conversion")]
         public void TestConvertFromYiqNumbersToHsv()
         {
-            Console.WriteLine("Converting 0.058823529411764705, -3.483052626275001E-18, -3.483052626275001E-18...");
-            KernelColorConversionTools.ConvertFromYiqToHsv(0.058823529411764705, -3.483052626275001E-18, -3.483052626275001E-18).ShouldBe("hsv:0;0;5");
+            Console.WriteLine("Converting 15, 128, 128...");
+            KernelColorConversionTools.ConvertFromYiqToHsv(15, 128, 128).ShouldBe("hsv:0;0;5");
         }
 
         /// <summary>
@@ -1315,8 +1312,8 @@ namespace Nitrocid.Tests.ConsoleBase
         [Description("Conversion")]
         public void TestConvertFromYiqSequenceToCmyk()
         {
-            Console.WriteLine("Converting 0.058823529411764705;-3.483052626275001E-18;-3.483052626275001E-18...");
-            KernelColorConversionTools.ConvertFromYiqToCmyk("yiq:0.058823529411764705;-3.483052626275001E-18;-3.483052626275001E-18").ShouldBe("cmyk:0;0;0;94");
+            Console.WriteLine("Converting 15;128;128...");
+            KernelColorConversionTools.ConvertFromYiqToCmyk("yiq:15;128;128").ShouldBe("cmyk:0;0;0;94");
         }
 
         /// <summary>
@@ -1326,8 +1323,8 @@ namespace Nitrocid.Tests.ConsoleBase
         [Description("Conversion")]
         public void TestConvertFromYiqNumbersToCmyk()
         {
-            Console.WriteLine("Converting 0.058823529411764705, -3.483052626275001E-18, -3.483052626275001E-18...");
-            KernelColorConversionTools.ConvertFromYiqToCmyk(0.058823529411764705, -3.483052626275001E-18, -3.483052626275001E-18).ShouldBe("cmyk:0;0;0;94");
+            Console.WriteLine("Converting 15, 128, 128...");
+            KernelColorConversionTools.ConvertFromYiqToCmyk(15, 128, 128).ShouldBe("cmyk:0;0;0;94");
         }
 
         /// <summary>
@@ -1337,8 +1334,8 @@ namespace Nitrocid.Tests.ConsoleBase
         [Description("Conversion")]
         public void TestConvertFromYiqSequenceToCmy()
         {
-            Console.WriteLine("Converting 0.058823529411764705;-3.483052626275001E-18;-3.483052626275001E-18...");
-            KernelColorConversionTools.ConvertFromYiqToCmy("yiq:0.058823529411764705;-3.483052626275001E-18;-3.483052626275001E-18").ShouldBe("cmy:94;94;94");
+            Console.WriteLine("Converting 15;128;128...");
+            KernelColorConversionTools.ConvertFromYiqToCmy("yiq:15;128;128").ShouldBe("cmy:94;94;94");
         }
 
         /// <summary>
@@ -1348,8 +1345,8 @@ namespace Nitrocid.Tests.ConsoleBase
         [Description("Conversion")]
         public void TestConvertFromYiqNumbersToCmy()
         {
-            Console.WriteLine("Converting 0.058823529411764705, -3.483052626275001E-18, -3.483052626275001E-18...");
-            KernelColorConversionTools.ConvertFromYiqToCmy(0.058823529411764705, -3.483052626275001E-18, -3.483052626275001E-18).ShouldBe("cmy:94;94;94");
+            Console.WriteLine("Converting 15, 128, 128...");
+            KernelColorConversionTools.ConvertFromYiqToCmy(15, 128, 128).ShouldBe("cmy:94;94;94");
         }
 
         /// <summary>
@@ -1359,8 +1356,8 @@ namespace Nitrocid.Tests.ConsoleBase
         [Description("Conversion")]
         public void TestConvertFromYiqSequenceToYuv()
         {
-            Console.WriteLine("Converting 0.058823529411764705;-3.483052626275001E-18;-3.483052626275001E-18...");
-            KernelColorConversionTools.ConvertFromYiqToYuv("yiq:0.058823529411764705;-3.483052626275001E-18;-3.483052626275001E-18").ShouldBe("yuv:15;128;128");
+            Console.WriteLine("Converting 15;128;128...");
+            KernelColorConversionTools.ConvertFromYiqToYuv("yiq:15;128;128").ShouldBe("yuv:15;128;128");
         }
 
         /// <summary>
@@ -1370,8 +1367,8 @@ namespace Nitrocid.Tests.ConsoleBase
         [Description("Conversion")]
         public void TestConvertFromYiqNumbersToYuv()
         {
-            Console.WriteLine("Converting 0.058823529411764705, -3.483052626275001E-18, -3.483052626275001E-18...");
-            KernelColorConversionTools.ConvertFromYiqToYuv(0.058823529411764705, -3.483052626275001E-18, -3.483052626275001E-18).ShouldBe("yuv:15;128;128");
+            Console.WriteLine("Converting 15, 128, 128...");
+            KernelColorConversionTools.ConvertFromYiqToYuv(15, 128, 128).ShouldBe("yuv:15;128;128");
         }
 
         /// <summary>
@@ -1379,11 +1376,10 @@ namespace Nitrocid.Tests.ConsoleBase
         /// </summary>
         [Test]
         [Description("Conversion")]
-        [Ignore("Terminaux has a bug where the Y component of the YUV specifier is not accepting values larger than 1.0.")]
         public void TestConvertFromYuvSequenceToRgb()
         {
             Console.WriteLine("Converting 15;128;128...");
-            KernelColorConversionTools.ConvertFromYuvToRgb("yuv:15;128;128").ShouldBe("15;15;15");
+            KernelColorConversionTools.ConvertFromYuvToRgb("yuv:15;128;128").ShouldBe("15;15;17");
         }
 
         /// <summary>
@@ -1391,11 +1387,10 @@ namespace Nitrocid.Tests.ConsoleBase
         /// </summary>
         [Test]
         [Description("Conversion")]
-        [Ignore("Terminaux has a bug where the Y component of the YUV specifier is not accepting values larger than 1.0.")]
         public void TestConvertFromYuvNumbersToRgb()
         {
             Console.WriteLine("Converting 15, 128, 128...");
-            KernelColorConversionTools.ConvertFromYuvToRgb(15, 128, 128).ShouldBe("15;15;15");
+            KernelColorConversionTools.ConvertFromYuvToRgb(15, 128, 128).ShouldBe("15;15;17");
         }
 
         /// <summary>
@@ -1403,11 +1398,10 @@ namespace Nitrocid.Tests.ConsoleBase
         /// </summary>
         [Test]
         [Description("Conversion")]
-        [Ignore("Terminaux has a bug where the Y component of the YUV specifier is not accepting values larger than 1.0.")]
         public void TestConvertFromYuvSequenceToRyb()
         {
             Console.WriteLine("Converting 15;128;128...");
-            KernelColorConversionTools.ConvertFromYuvToRyb("yuv:15;128;128").ShouldBe("ryb:15;15;15");
+            KernelColorConversionTools.ConvertFromYuvToRyb("yuv:15;128;128").ShouldBe("ryb:15;15;17");
         }
 
         /// <summary>
@@ -1415,11 +1409,10 @@ namespace Nitrocid.Tests.ConsoleBase
         /// </summary>
         [Test]
         [Description("Conversion")]
-        [Ignore("Terminaux has a bug where the Y component of the YUV specifier is not accepting values larger than 1.0.")]
         public void TestConvertFromYuvNumbersToRyb()
         {
             Console.WriteLine("Converting 15, 128, 128...");
-            KernelColorConversionTools.ConvertFromYuvToRyb(15, 128, 128).ShouldBe("ryb:15;15;15");
+            KernelColorConversionTools.ConvertFromYuvToRyb(15, 128, 128).ShouldBe("ryb:15;15;17");
         }
 
         /// <summary>
@@ -1427,11 +1420,10 @@ namespace Nitrocid.Tests.ConsoleBase
         /// </summary>
         [Test]
         [Description("Conversion")]
-        [Ignore("Terminaux has a bug where the Y component of the YUV specifier is not accepting values larger than 1.0.")]
         public void TestConvertFromYuvSequenceToHsl()
         {
             Console.WriteLine("Converting 15;128;128...");
-            KernelColorConversionTools.ConvertFromYuvToHsl("yuv:15;128;128").ShouldBe("hsl:0;0;5");
+            KernelColorConversionTools.ConvertFromYuvToHsl("yuv:15;128;128").ShouldBe("hsl:240;6;6");
         }
 
         /// <summary>
@@ -1439,11 +1431,10 @@ namespace Nitrocid.Tests.ConsoleBase
         /// </summary>
         [Test]
         [Description("Conversion")]
-        [Ignore("Terminaux has a bug where the Y component of the YUV specifier is not accepting values larger than 1.0.")]
         public void TestConvertFromYuvNumbersToHsl()
         {
             Console.WriteLine("Converting 15, 128, 128...");
-            KernelColorConversionTools.ConvertFromYuvToHsl(15, 128, 128).ShouldBe("hsl:0;0;5");
+            KernelColorConversionTools.ConvertFromYuvToHsl(15, 128, 128).ShouldBe("hsl:240;6;6");
         }
 
         /// <summary>
@@ -1451,11 +1442,10 @@ namespace Nitrocid.Tests.ConsoleBase
         /// </summary>
         [Test]
         [Description("Conversion")]
-        [Ignore("Terminaux has a bug where the Y component of the YUV specifier is not accepting values larger than 1.0.")]
         public void TestConvertFromYuvSequenceToHsv()
         {
             Console.WriteLine("Converting 15;128;128...");
-            KernelColorConversionTools.ConvertFromYuvToHsv("yuv:15;128;128").ShouldBe("hsv:0;0;5");
+            KernelColorConversionTools.ConvertFromYuvToHsv("yuv:15;128;128").ShouldBe("hsv:240;11;6");
         }
 
         /// <summary>
@@ -1463,11 +1453,10 @@ namespace Nitrocid.Tests.ConsoleBase
         /// </summary>
         [Test]
         [Description("Conversion")]
-        [Ignore("Terminaux has a bug where the Y component of the YUV specifier is not accepting values larger than 1.0.")]
         public void TestConvertFromYuvNumbersToHsv()
         {
             Console.WriteLine("Converting 15, 128, 128...");
-            KernelColorConversionTools.ConvertFromYuvToHsv(15, 128, 128).ShouldBe("hsv:0;0;5");
+            KernelColorConversionTools.ConvertFromYuvToHsv(15, 128, 128).ShouldBe("hsv:240;11;6");
         }
 
         /// <summary>
@@ -1475,11 +1464,10 @@ namespace Nitrocid.Tests.ConsoleBase
         /// </summary>
         [Test]
         [Description("Conversion")]
-        [Ignore("Terminaux has a bug where the Y component of the YUV specifier is not accepting values larger than 1.0.")]
         public void TestConvertFromYuvSequenceToCmyk()
         {
             Console.WriteLine("Converting 15;128;128...");
-            KernelColorConversionTools.ConvertFromYuvToCmyk("yuv:15;128;128").ShouldBe("cmyk:0;0;0;94");
+            KernelColorConversionTools.ConvertFromYuvToCmyk("yuv:15;128;128").ShouldBe("cmyk:11;11;0;93");
         }
 
         /// <summary>
@@ -1487,11 +1475,10 @@ namespace Nitrocid.Tests.ConsoleBase
         /// </summary>
         [Test]
         [Description("Conversion")]
-        [Ignore("Terminaux has a bug where the Y component of the YUV specifier is not accepting values larger than 1.0.")]
         public void TestConvertFromYuvNumbersToCmyk()
         {
             Console.WriteLine("Converting 15, 128, 128...");
-            KernelColorConversionTools.ConvertFromYuvToCmyk(15, 128, 128).ShouldBe("cmyk:0;0;0;94");
+            KernelColorConversionTools.ConvertFromYuvToCmyk(15, 128, 128).ShouldBe("cmyk:11;11;0;93");
         }
 
         /// <summary>
@@ -1499,11 +1486,10 @@ namespace Nitrocid.Tests.ConsoleBase
         /// </summary>
         [Test]
         [Description("Conversion")]
-        [Ignore("Terminaux has a bug where the Y component of the YUV specifier is not accepting values larger than 1.0.")]
         public void TestConvertFromYuvSequenceToCmy()
         {
             Console.WriteLine("Converting 15;128;128...");
-            KernelColorConversionTools.ConvertFromYuvToCmy("yuv:15;128;128").ShouldBe("cmy:94;94;94");
+            KernelColorConversionTools.ConvertFromYuvToCmy("yuv:15;128;128").ShouldBe("cmy:94;94;93");
         }
 
         /// <summary>
@@ -1511,11 +1497,10 @@ namespace Nitrocid.Tests.ConsoleBase
         /// </summary>
         [Test]
         [Description("Conversion")]
-        [Ignore("Terminaux has a bug where the Y component of the YUV specifier is not accepting values larger than 1.0.")]
         public void TestConvertFromYuvNumbersToCmy()
         {
             Console.WriteLine("Converting 15, 128, 128...");
-            KernelColorConversionTools.ConvertFromYuvToCmy(15, 128, 128).ShouldBe("cmy:94;94;94");
+            KernelColorConversionTools.ConvertFromYuvToCmy(15, 128, 128).ShouldBe("cmy:94;94;93");
         }
 
         /// <summary>
@@ -1523,11 +1508,10 @@ namespace Nitrocid.Tests.ConsoleBase
         /// </summary>
         [Test]
         [Description("Conversion")]
-        [Ignore("Terminaux has a bug where the Y component of the YUV specifier is not accepting values larger than 1.0.")]
         public void TestConvertFromYuvSequenceToYiq()
         {
             Console.WriteLine("Converting 15;128;128...");
-            KernelColorConversionTools.ConvertFromYuvToYiq("yuv:15;128;128").ShouldBe("yiq:0.058823529411764705;-3.483052626275001E-18;-3.483052626275001E-18");
+            KernelColorConversionTools.ConvertFromYuvToYiq("yuv:15;128;128").ShouldBe("yiq:15;127;128");
         }
 
         /// <summary>
@@ -1535,11 +1519,10 @@ namespace Nitrocid.Tests.ConsoleBase
         /// </summary>
         [Test]
         [Description("Conversion")]
-        [Ignore("Terminaux has a bug where the Y component of the YUV specifier is not accepting values larger than 1.0.")]
         public void TestConvertFromYuvNumbersToYiq()
         {
             Console.WriteLine("Converting 15, 128, 128...");
-            KernelColorConversionTools.ConvertFromYuvToYiq(15, 128, 128).ShouldBe("yiq:0.058823529411764705;-3.483052626275001E-18;-3.483052626275001E-18");
+            KernelColorConversionTools.ConvertFromYuvToYiq(15, 128, 128).ShouldBe("yiq:15;127;128");
         }
 
     }

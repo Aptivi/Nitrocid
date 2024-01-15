@@ -39,17 +39,17 @@ namespace Nitrocid.Extras.ColorConvert.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             // Check to see if we have the numeric arguments
-            if (!double.TryParse(parameters.ArgumentsList[0], out double Y))
+            if (!int.TryParse(parameters.ArgumentsList[0], out int Y))
             {
                 TextWriters.Write(Translate.DoTranslation("The Y component level must be numeric."), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.Color;
             }
-            if (!double.TryParse(parameters.ArgumentsList[1], out double I))
+            if (!int.TryParse(parameters.ArgumentsList[1], out int I))
             {
                 TextWriters.Write(Translate.DoTranslation("The I component level must be numeric."), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.Color;
             }
-            if (!double.TryParse(parameters.ArgumentsList[2], out double Q))
+            if (!int.TryParse(parameters.ArgumentsList[2], out int Q))
             {
                 TextWriters.Write(Translate.DoTranslation("The Q component level must be numeric."), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.Color;
