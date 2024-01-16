@@ -45,6 +45,7 @@ namespace Nitrocid.Shell.Shells.Admin.Commands
 
                 // Now, change the language in the user config
                 UserManagement.Users[userIndex].PreferredLanguage = null;
+                UserManagement.SaveUsers();
                 TextWriterColor.Write(Translate.DoTranslation("Preferred user language set to {0}. You may want to log in again."), lang);
             }
             else if (LanguageManager.Languages.TryGetValue(lang, out LanguageInfo langInfo))
@@ -54,6 +55,7 @@ namespace Nitrocid.Shell.Shells.Admin.Commands
 
                 // Now, change the language in the user config
                 UserManagement.Users[userIndex].PreferredLanguage = lang;
+                UserManagement.SaveUsers();
                 TextWriterColor.Write(Translate.DoTranslation("Preferred user language set to {0}. You may want to log in again."), lang);
             }
             else
