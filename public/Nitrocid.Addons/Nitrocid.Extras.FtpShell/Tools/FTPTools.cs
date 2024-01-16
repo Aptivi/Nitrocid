@@ -279,20 +279,20 @@ namespace Nitrocid.Extras.FtpShell.Tools
                 else
                 {
                     string Answer = "";
-                    while (Answer.ToLower() != "y" || Answer.ToLower() != "n")
+                    while (!Answer.Equals("y", StringComparison.OrdinalIgnoreCase) || !Answer.Equals("n", StringComparison.OrdinalIgnoreCase))
                     {
                         TextWriters.Write(Translate.DoTranslation("Are you sure that you want to connect?") + " (y/n) ", false, KernelColorType.Question);
                         ColorTools.SetConsoleColor(KernelColorTools.GetColor(KernelColorType.Input));
                         Answer = Convert.ToString(Input.DetectKeypress().KeyChar);
                         TextWriterColor.Write();
                         DebugWriter.WriteDebug(DebugLevel.I, $"Answer is {Answer}");
-                        if (Answer.ToLower() == "y")
+                        if (Answer.Equals("y", StringComparison.OrdinalIgnoreCase))
                         {
                             DebugWriter.WriteDebug(DebugLevel.W, "Certificate accepted, although there are errors.");
                             DebugWriter.WriteDebug(DebugLevel.I, e.Certificate.GetRawCertDataString());
                             e.Accept = true;
                         }
-                        else if (Answer.ToLower() != "n")
+                        else if (!Answer.Equals("n", StringComparison.OrdinalIgnoreCase))
                         {
                             DebugWriter.WriteDebug(DebugLevel.W, "Invalid answer.");
                             TextWriters.Write(Translate.DoTranslation("Invalid answer. Please try again."), true, KernelColorType.Error);

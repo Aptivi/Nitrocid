@@ -94,7 +94,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
                 return;
 
             // Check to see if the user intended to clear the variable to make it consist of nothing
-            if (AnswerString.ToLower() == "/clear")
+            if (AnswerString.Equals("/clear", StringComparison.OrdinalIgnoreCase))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "User requested clear.");
                 AnswerString = "";

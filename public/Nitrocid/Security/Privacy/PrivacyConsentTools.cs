@@ -90,7 +90,7 @@ namespace Nitrocid.Security.Privacy
             );
             if (!SplashReport.KernelBooted)
                 SplashManager.EndSplashOut(SplashManager.CurrentSplashContext);
-            if (consentAnswer.ToLower() != "y")
+            if (!consentAnswer.Equals("y", System.StringComparison.OrdinalIgnoreCase))
                 return false;
 
             // Add the consented permission to the list of consents

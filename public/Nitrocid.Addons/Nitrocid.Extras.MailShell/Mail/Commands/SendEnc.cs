@@ -86,10 +86,10 @@ namespace Nitrocid.Extras.MailShell.Mail.Commands
                 // Prompt for body
                 TextWriters.Write(Translate.DoTranslation("Enter your message below. Write \"EOF\" to confirm."), true, KernelColorType.Input);
                 string BodyLine = "";
-                while (BodyLine.ToUpper() != "EOF")
+                while (!BodyLine.Equals("EOF", System.StringComparison.OrdinalIgnoreCase))
                 {
                     BodyLine = InputTools.ReadLine();
-                    if (BodyLine.ToUpper() != "EOF")
+                    if (!BodyLine.Equals("EOF", System.StringComparison.OrdinalIgnoreCase))
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Body line: {0} ({1} chars)", BodyLine, BodyLine.Length);
                         Body.TextBody += BodyLine + CharManager.NewLine;

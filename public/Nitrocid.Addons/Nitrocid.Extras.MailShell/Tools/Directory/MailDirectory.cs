@@ -145,7 +145,7 @@ namespace Nitrocid.Extras.MailShell.Tools.Directory
                 DebugWriter.WriteDebug(DebugLevel.I, "Namespace: {0}", nmspc.Path);
                 foreach (MailFolder dir in ((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).GetFolders(nmspc).Cast<MailFolder>())
                 {
-                    if (dir.Name.ToLower() == FolderString.ToLower())
+                    if (dir.Name.Equals(FolderString, StringComparison.OrdinalIgnoreCase))
                     {
                         dir.Open(FolderMode);
                         Opened = dir;
@@ -159,7 +159,7 @@ namespace Nitrocid.Extras.MailShell.Tools.Directory
                 DebugWriter.WriteDebug(DebugLevel.I, "Namespace: {0}", nmspc.Path);
                 foreach (MailFolder dir in ((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).GetFolders(nmspc).Cast<MailFolder>())
                 {
-                    if (dir.Name.ToLower() == FolderString.ToLower())
+                    if (dir.Name.Equals(FolderString, StringComparison.OrdinalIgnoreCase))
                     {
                         dir.Open(FolderMode);
                         Opened = dir;
@@ -173,7 +173,7 @@ namespace Nitrocid.Extras.MailShell.Tools.Directory
                 DebugWriter.WriteDebug(DebugLevel.I, "Namespace: {0}", nmspc.Path);
                 foreach (MailFolder dir in ((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).GetFolders(nmspc).Cast<MailFolder>())
                 {
-                    if (dir.Name.ToLower() == FolderString.ToLower())
+                    if (dir.Name.Equals(FolderString, StringComparison.OrdinalIgnoreCase))
                     {
                         dir.Open(FolderMode);
                         Opened = dir;

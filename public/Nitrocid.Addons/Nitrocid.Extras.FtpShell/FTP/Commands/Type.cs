@@ -37,7 +37,7 @@ namespace Nitrocid.Extras.FtpShell.FTP.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            if (parameters.ArgumentsList[0].ToLower() == "a")
+            if (parameters.ArgumentsList[0].Equals("a", System.StringComparison.OrdinalIgnoreCase))
             {
                 ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).Config.DownloadDataType = FtpDataType.ASCII;
                 ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).Config.ListingDataType = FtpDataType.ASCII;
@@ -46,7 +46,7 @@ namespace Nitrocid.Extras.FtpShell.FTP.Commands
                 TextWriters.Write(Translate.DoTranslation("Beware that most files won't download or upload properly using this mode, so we highly recommend using the Binary mode on most situations."), true, KernelColorType.Warning);
                 return 0;
             }
-            else if (parameters.ArgumentsList[0].ToLower() == "b")
+            else if (parameters.ArgumentsList[0].Equals("b", System.StringComparison.OrdinalIgnoreCase))
             {
                 ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).Config.DownloadDataType = FtpDataType.Binary;
                 ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).Config.ListingDataType = FtpDataType.Binary;

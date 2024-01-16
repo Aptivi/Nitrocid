@@ -68,7 +68,7 @@ namespace Nitrocid.Shell.Shells.Text.Commands
                         return 10000 + (int)KernelExceptionType.TextEditor;
                     }
                 }
-                else if (parameters.ArgumentsList[1].ToLower() == "all")
+                else if (parameters.ArgumentsList[1].Equals("all", StringComparison.OrdinalIgnoreCase))
                 {
                     var QueriedChars = TextEditTools.QueryChar(Convert.ToChar(parameters.ArgumentsList[0]));
                     foreach (var QueriedChar in QueriedChars)

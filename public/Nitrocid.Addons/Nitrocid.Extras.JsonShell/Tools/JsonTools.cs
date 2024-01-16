@@ -264,10 +264,10 @@ namespace Nitrocid.Extras.JsonShell.Tools
                 throw new KernelException(KernelExceptionType.JsonEditor, Translate.DoTranslation("The parent token is not found. Make sure that you've written the path '{0}' correctly."), parent);
 
             // Then, the new object type
-            if (type.ToLower() != "array" &&
-                type.ToLower() != "object" &&
-                type.ToLower() != "property" &&
-                type.ToLower() != "raw")
+            if (!type.Equals("array", StringComparison.OrdinalIgnoreCase) &&
+                !type.Equals("object", StringComparison.OrdinalIgnoreCase) &&
+                !type.Equals("property", StringComparison.OrdinalIgnoreCase) &&
+                !type.Equals("raw", StringComparison.OrdinalIgnoreCase))
                 throw new KernelException(KernelExceptionType.JsonEditor, Translate.DoTranslation("The specified type '{0}' is invalid."), type);
 
             // Then, the new object's property name (if applicable)
@@ -335,10 +335,10 @@ namespace Nitrocid.Extras.JsonShell.Tools
                 throw new KernelException(KernelExceptionType.JsonEditor, Translate.DoTranslation("The parent token is not found. Make sure that you've written the path '{0}' correctly."), parent);
 
             // Then, the new object type
-            if (type.ToLower() != "array" &&
-                type.ToLower() != "object" &&
-                type.ToLower() != "property" &&
-                type.ToLower() != "raw")
+            if (!type.Equals("array", StringComparison.OrdinalIgnoreCase) &&
+                !type.Equals("object", StringComparison.OrdinalIgnoreCase) &&
+                !type.Equals("property", StringComparison.OrdinalIgnoreCase) &&
+                !type.Equals("raw", StringComparison.OrdinalIgnoreCase))
                 throw new KernelException(KernelExceptionType.JsonEditor, Translate.DoTranslation("The specified type '{0}' is invalid."), type);
 
             // Then, the new object's property name (if applicable)
