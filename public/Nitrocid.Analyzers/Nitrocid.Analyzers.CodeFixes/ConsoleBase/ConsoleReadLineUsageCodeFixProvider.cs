@@ -67,7 +67,7 @@ namespace Nitrocid.Analyzers.ConsoleBase
                 var idName = ((IdentifierNameSyntax)typeDecl.Name).Identifier.Text;
 
                 // We need to have a syntax that calls InputTools.ReadLine
-                var classSyntax = SyntaxFactory.IdentifierName("Input");
+                var classSyntax = SyntaxFactory.IdentifierName("InputTools");
                 var methodSyntax = SyntaxFactory.IdentifierName("ReadLine");
                 var resultSyntax = SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, classSyntax, methodSyntax);
                 var replacedSyntax = resultSyntax
@@ -80,10 +80,12 @@ namespace Nitrocid.Analyzers.ConsoleBase
 
                 // Check the imports
                 var compilation = finalNode as CompilationUnitSyntax;
-                if (compilation?.Usings.Any(u => u.Name.ToString() == "Terminaux.Inputs") == false)
+                if (compilation?.Usings.Any(u => u.Name.ToString() == "Nitrocid.ConsoleBase.Inputs") == false)
                 {
                     var name = SyntaxFactory.QualifiedName(
-                        SyntaxFactory.IdentifierName("Terminaux"),
+                        SyntaxFactory.QualifiedName(
+                            SyntaxFactory.IdentifierName("Nitrocid"),
+                            SyntaxFactory.IdentifierName("ConsoleBase")),
                         SyntaxFactory.IdentifierName("Inputs"));
                     compilation = compilation
                         .AddUsings(SyntaxFactory.UsingDirective(name));
