@@ -82,6 +82,35 @@ namespace Nitrocid.Misc.Splash.Splashes
                     $"{Translate.DoTranslation("Starting")} {KernelReleaseInfo.ConsoleTitle}..."
                 )
             );
+
+            // Append the kernel mode under the message
+            if (KernelEntry.SafeMode)
+            {
+                builder.Append(
+                    CenteredTextColor.RenderCentered(
+                        consoleY + 1,
+                        Translate.DoTranslation("Safe Mode")
+                    )
+                );
+            }
+            else if (KernelEntry.Maintenance)
+            {
+                builder.Append(
+                    CenteredTextColor.RenderCentered(
+                        consoleY + 1,
+                        Translate.DoTranslation("Maintenance Mode")
+                    )
+                );
+            }
+            else if (KernelEntry.DebugMode)
+            {
+                builder.Append(
+                    CenteredTextColor.RenderCentered(
+                        consoleY + 1,
+                        Translate.DoTranslation("Debug Mode")
+                    )
+                );
+            }
             return builder.ToString();
         }
 
