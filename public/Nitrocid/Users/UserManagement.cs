@@ -631,7 +631,10 @@ namespace Nitrocid.Users
         public static bool IsLocked(string User) =>
             LockedUsers.Any((ui) => ui.Username == User);
 
-        internal static void SaveUsers()
+        /// <summary>
+        /// Saves all the users and their changes
+        /// </summary>
+        public static void SaveUsers()
         {
             // Make a JSON file to save all user information files
             string userInfosSerialized = JsonConvert.SerializeObject(Users.ToArray(), Formatting.Indented);
