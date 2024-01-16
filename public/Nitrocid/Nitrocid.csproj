@@ -198,10 +198,4 @@
     <RemoveDir Directories="KSBuild\" />
   </Target>
   <!-- KS extra targets End -->
-  
-  <!-- KS Misc properties -->
-  <ItemGroup>
-    <Folder Include="Drivers\RNG\Bases\References\" />
-  </ItemGroup>
-  <!-- KS Misc properties End -->
 </Project>
