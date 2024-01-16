@@ -102,6 +102,15 @@ namespace Nitrocid.Shell.Shells.Admin
                     })
                 ], new UserFlagCommand()),
 
+            new CommandInfo("userfullname", /* Localizable */ "Changes the user's full name (display name)",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "user"),
+                        new CommandArgumentPart(true, "name/clear")
+                    })
+                ], new UserFullNameCommand()),
+
             new CommandInfo("userinfo", /* Localizable */ "Gets the user information",
                 [
                     new CommandArgumentInfo(new[]
