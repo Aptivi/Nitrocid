@@ -28,6 +28,7 @@ using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Reflection;
 using Nitrocid.Modifications;
+using Nitrocid.Security.Signing;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -120,6 +121,22 @@ namespace Nitrocid.Kernel.Extensions
                 if (!ReflectionCommon.IsDotnetAssemblyFile(addonPath, out AssemblyName asmName))
                 {
                     DebugWriter.WriteDebug(DebugLevel.W, "Skipping addon entry {0} because of invalid .NET assembly file [{1}]...", addon, addonPath);
+                    return;
+                }
+
+                // Verify that the addon holds the same key as the Nitrocid main executable
+                if (!AssemblySigning.IsStronglySigned(asmName))
+                {
+                    DebugWriter.WriteDebug(DebugLevel.W, "Skipping addon entry {0} because of no public key signing [{1}]...", addon, addonPath);
+                    return;
+                }
+                var mainKey = AssemblySigning.PublicKeyToken(Assembly.GetEntryAssembly());
+                var addonKey = AssemblySigning.PublicKeyToken(asmName);
+                if (!mainKey.SequenceEqual(addonKey))
+                {
+                    DebugWriter.WriteDebug(DebugLevel.W, "Skipping addon entry {0} because of key mismatch [{1}]...", addon, addonPath);
+                    DebugWriter.WriteDebug(DebugLevel.W, "Expected key: {0}", string.Join(", ", mainKey));
+                    DebugWriter.WriteDebug(DebugLevel.W, "Actual key:   {1}", string.Join(", ", addonKey));
                     return;
                 }
 
