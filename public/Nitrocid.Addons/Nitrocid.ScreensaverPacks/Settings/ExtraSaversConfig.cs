@@ -48,7 +48,7 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// <summary>
         /// [ColorMix] Screensaver background color
         /// </summary>
-        public string ColorMixBackgroundColor { get; set; } = new Color(ConsoleColors.Red).PlainSequence;
+        public string ColorMixBackgroundColor { get; set; } = new Color(ConsoleColors.Black).PlainSequence;
         /// <summary>
         /// [ColorMix] The minimum red color level (true color)
         /// </summary>
