@@ -45,6 +45,11 @@ namespace Nitrocid.Users
     public static class UserManagement
     {
 
+        internal static readonly UserInfo fallbackRootAccount = new("root", Encryption.GetEncryptedString("", "SHA256"), [], "System Account", "", [], UserFlags.Administrator, []);
+        internal static UserInfo CurrentUserInfo = fallbackRootAccount;
+        internal static List<UserInfo> Users = [CurrentUserInfo];
+        private static readonly List<UserInfo> LockedUsers = [];
+
         /// <summary>
         /// Include anonymous users in list
         /// </summary>
@@ -61,12 +66,6 @@ namespace Nitrocid.Users
         public static UserInfo CurrentUser =>
             CurrentUserInfo;
 
-        internal static readonly UserInfo fallbackRootAccount = new("root", Encryption.GetEncryptedString("", "SHA256"), [], "System Account", "", [], UserFlags.Administrator, []);
-        internal static UserInfo CurrentUserInfo = fallbackRootAccount;
-        internal static List<UserInfo> Users = [CurrentUserInfo];
-        private static readonly List<UserInfo> LockedUsers = [];
-
-        // ---------- User Management ----------
         /// <summary>
         /// Initializes the uninitialized user (usually a new user)
         /// </summary>
