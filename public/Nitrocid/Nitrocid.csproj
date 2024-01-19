@@ -106,6 +106,15 @@
   </ItemGroup>
   <!-- KS Non-private Dependencies Information End -->
 
+  <!-- KS CMD Launchers -->
+  <ItemGroup>
+    <Assets Include="..\..\assets\*.cmd" />
+  </ItemGroup>
+  <Target Name="UpdateCmdLaunchers" BeforeTargets="Compile">
+    <Copy SourceFiles="@(Assets)" DestinationFolder="$(OutDir)" />
+  </Target>
+  <!-- KS CMD Launchers End -->
+
   <!-- KS Analyzers -->
   <ItemGroup>
     <Compile Remove="KSAnalyzer\**" />
