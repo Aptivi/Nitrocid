@@ -33,6 +33,8 @@ using Nitrocid.Kernel.Events;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Power;
+using Terminaux.Colors;
+using Nitrocid.Misc.Splash;
 
 namespace Nitrocid.Users.Login
 {
@@ -219,6 +221,8 @@ namespace Nitrocid.Users.Login
 
         internal static void PromptMaintenanceLogin()
         {
+            if (SplashManager.EnableSplash)
+                ColorTools.LoadBack();
             TextWriterColor.Write(Translate.DoTranslation("Enter the admin password for maintenance."));
             string user = "root";
             if (UserManagement.UserExists(user))
