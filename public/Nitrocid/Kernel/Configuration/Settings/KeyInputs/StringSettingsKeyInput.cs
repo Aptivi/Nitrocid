@@ -28,6 +28,7 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
 using System;
 using Terminaux.Base;
+using Terminaux.Inputs.Styles.Infobox;
 
 namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
 {
@@ -44,9 +45,9 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             TextWriters.Write(finalSection + "\n", true, KernelColorType.Question);
 
             // Write the prompt
-            TextWriters.Write($"{Translate.DoTranslation("Write any text to use. Remember, follow the description of the option that you've chosen.")}\n", KernelColorType.Tip);
-            TextWriters.Write("[{0}] ", false, KernelColorType.Input, KeyDefaultValue);
-            string AnswerString = InputTools.ReadLine();
+            string AnswerString = InfoBoxInputColor.WriteInfoBoxInput(key.Name, $"{Translate.DoTranslation("Write any text to use. Remember, follow the description of the option that you've chosen.")} [{KeyDefaultValue}]");
+
+            // Neutralize path if required with the assumption that the keytype is not list
             AnswerString = (string)TranslateStringValueWithDefault(key, AnswerString, KeyDefaultValue);
             bail = true;
             return AnswerString;

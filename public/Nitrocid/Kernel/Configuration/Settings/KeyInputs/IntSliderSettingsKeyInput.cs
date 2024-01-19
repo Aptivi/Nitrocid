@@ -47,7 +47,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             {
                 // Show the current value
                 double slider = 100d * (CurrentValue / (double)key.MaximumValue);
-                InfoBoxProgressColor.WriteInfoBoxProgress(slider, Translate.DoTranslation("Current value:") + " {0} / {1} - {2}", CurrentValue, key.MinimumValue, key.MaximumValue);
+                InfoBoxProgressColor.WriteInfoBoxProgress(key.Name, slider, Translate.DoTranslation("Current value:") + " {0} / {1} - {2}", CurrentValue, key.MinimumValue, key.MaximumValue);
 
                 // Parse the user input
                 PressedKey = Input.DetectKeypress();
