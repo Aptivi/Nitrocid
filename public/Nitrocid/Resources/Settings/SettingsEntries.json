@@ -206,6 +206,12 @@
                 "SelectionFunctionType": "TimeZones",
                 "SelectionFallback": [ "Etc/UTC", "GMT" ],
                 "Description": "The kernel-wide time zone to use"
+            },
+            {
+                "Name": "Show the license information box",
+                "Type": "SBoolean",
+                "Variable": "ShowLicenseInfoBox",
+                "Description": "Whether to show the modal license information box for three seconds after each login. It's recommended to keep it on."
             }
         ]
     },

@@ -39,6 +39,8 @@ using Textify.General;
 using Nitrocid.ConsoleBase.Writers.MiscWriters;
 using Terminaux.Base.Checks;
 using Nitrocid.Users.Login.Motd;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Kernel.Threading;
 
 namespace Nitrocid.Kernel
 {
@@ -96,12 +98,17 @@ namespace Nitrocid.Kernel
             }
 
             // Show the license infobox
-            string rendered = Translate.DoTranslation("License information");
-            string dashes = new('=', rendered.Length);
-            InfoBoxColor.WriteInfoBoxColor(
-                Translate.DoTranslation("License information") + CharManager.NewLine +
-                dashes + CharManager.NewLine +
-                WelcomeMessage.GetLicenseString(), KernelColorTools.GetColor(KernelColorType.License));
+            if (Config.MainConfig.ShowLicenseInfoBox)
+            {
+                string rendered = Translate.DoTranslation("License information");
+                string dashes = new('=', rendered.Length);
+                InfoBoxColor.WriteInfoBoxColor(
+                    rendered + CharManager.NewLine +
+                    dashes + CharManager.NewLine +
+                    WelcomeMessage.GetLicenseString(), false, KernelColorTools.GetColor(KernelColorType.License)
+                );
+                ThreadManager.SleepUntilInput(3000);
+            }
 
             // Start the main loop
             DebugWriter.WriteDebug(DebugLevel.I, "Main Loop start.");
