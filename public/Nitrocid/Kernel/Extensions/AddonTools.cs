@@ -130,7 +130,7 @@ namespace Nitrocid.Kernel.Extensions
                     DebugWriter.WriteDebug(DebugLevel.W, "Skipping addon entry {0} because of no public key signing [{1}]...", addon, addonPath);
                     return;
                 }
-                var mainKey = AssemblySigning.PublicKeyToken(Assembly.GetEntryAssembly());
+                var mainKey = AssemblySigning.PublicKeyToken(Assembly.GetExecutingAssembly());
                 var addonKey = AssemblySigning.PublicKeyToken(asmName);
                 if (!mainKey.SequenceEqual(addonKey))
                 {
