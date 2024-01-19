@@ -45,6 +45,7 @@ using Nitrocid.Drivers.Encoding.Bases;
 using Nitrocid.Drivers.HardwareProber.Bases;
 using Nitrocid.Drivers.Sorting.Bases;
 using Nitrocid.Drivers.Input.Bases;
+using Nitrocid.ConsoleBase.Inputs;
 
 namespace Nitrocid.Drivers
 {
@@ -885,8 +886,8 @@ namespace Nitrocid.Drivers
                 return;
 
             // Try to set the driver
-            SetDriverLocal(driverType, name);
             begunLocal = true;
+            SetDriverLocal(driverType, name);
             DebugWriter.WriteDebug(DebugLevel.I, "Local driver {0} has begun.", name);
         }
 
@@ -918,12 +919,12 @@ namespace Nitrocid.Drivers
                 return;
 
             // Try to set the driver
+            begunLocal = true;
             var drivers = GetDrivers(driverType);
             if (!drivers.ContainsKey(name))
                 SetDriverLocal(driverType, "Default");
             else
                 SetDriverLocal(driverType, name);
-            begunLocal = true;
             DebugWriter.WriteDebug(DebugLevel.I, "Local driver {0} has begun.", name);
         }
 
@@ -955,6 +956,13 @@ namespace Nitrocid.Drivers
             // Try to set the driver
             currentDriversLocal[driverType] = currentDrivers[driverType];
             begunLocal = false;
+
+            // Edge case for terminal drivers: Reset the Terminaux handler
+            if (driverType == DriverTypes.Console)
+            {
+                InputTools.isWrapperInitialized = false;
+                InputTools.InitializeTerminauxWrappers();
+            }
             DebugWriter.WriteDebug(DebugLevel.I, "Local driver has ended.");
         }
 
@@ -973,6 +981,13 @@ namespace Nitrocid.Drivers
             // Try to set the driver
             DebugWriter.WriteDebug(DebugLevel.I, "Trying to set driver to {0} for type {1}...", name, driverType.ToString());
             currentDriversLocal[driverType] = GetDriver(driverType, name);
+
+            // Edge case for terminal drivers: Reset the Terminaux handler
+            if (driverType == DriverTypes.Console)
+            {
+                InputTools.isWrapperInitialized = false;
+                InputTools.InitializeTerminauxWrappers();
+            }
         }
 
         internal static DriverTypes InferDriverTypeFromDriverInterfaceType<T>()

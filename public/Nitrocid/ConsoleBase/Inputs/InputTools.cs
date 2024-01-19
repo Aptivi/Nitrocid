@@ -33,7 +33,7 @@ namespace Nitrocid.ConsoleBase.Inputs
     {
         internal static TermReaderSettings globalSettings = new();
         internal static string currentMask = "*";
-        private static bool isWrapperInitialized;
+        internal static bool isWrapperInitialized;
 
         /// <summary>
         /// Default input choice output type
