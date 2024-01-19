@@ -33,7 +33,7 @@ namespace Nitrocid.Kernel.Threading.Watchdog
         private static readonly KernelThread watchdogThread = new("Kernel thread watchdog thread", true, Watch) { isCritical = true };
         private static readonly string[] whitelistedThreads =
         [
-            "Console Resize Listener Thread",
+            "Notification Thread",
             "Remote Debug Chat Thread",
             "Remote Debug Thread",
             "Screensaver timeout thread",
