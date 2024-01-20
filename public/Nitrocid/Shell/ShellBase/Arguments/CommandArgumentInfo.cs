@@ -111,8 +111,9 @@ namespace Nitrocid.Shell.ShellBase.Arguments
                 {
                     bool required = Argument.ArgumentRequired;
                     bool justNumeric = Argument.IsNumeric;
-                    string requiredTagStart = required ? "<" : "[";
-                    string requiredTagEnd = required ? ">" : "]";
+                    bool hasWordingRequirement = !string.IsNullOrWhiteSpace(Argument.ExactWording);
+                    string requiredTagStart = hasWordingRequirement ? "" : required ? "<" : "[";
+                    string requiredTagEnd = hasWordingRequirement ? "" : required ? ">" : "]";
                     string numericRender = justNumeric ? ":int" : "";
                     string renderedArgument =
                         $"{requiredTagStart}{Argument.ArgumentExpression}{numericRender}{requiredTagEnd} ";
