@@ -17,21 +17,38 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Nitrocid.Extras.JsonShell.Commands;
 using Nitrocid.Extras.JsonShell.Json;
 using Nitrocid.Extras.JsonShell.Settings;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Modifications;
 using Nitrocid.Shell.Prompts;
+using Nitrocid.Shell.ShellBase.Arguments;
+using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Shells;
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Reflection;
 
 namespace Nitrocid.Extras.JsonShell
 {
     internal class JsonShellInit : IAddon
     {
+        private readonly List<CommandInfo> addonCommands =
+        [
+            new CommandInfo("jsondiff", /* Localizable */ "Shows the difference between two JSON files",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "file1"),
+                        new CommandArgumentPart(true, "file2"),
+                    })
+                ], new JsonDiffCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
+        ];
+
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasJsonShell);
 
@@ -52,6 +69,7 @@ namespace Nitrocid.Extras.JsonShell
             ConfigTools.RegisterBaseSetting(config);
             ShellManager.reservedShells.Add("JsonShell");
             ShellManager.RegisterShell("JsonShell", new JsonShellInfo());
+            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
         }
 
         void IAddon.StartAddon()
@@ -62,6 +80,7 @@ namespace Nitrocid.Extras.JsonShell
             ShellManager.availableShells.Remove("JsonShell");
             PromptPresetManager.CurrentPresets.Remove("JsonShell");
             ShellManager.reservedShells.Remove("JsonShell");
+            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
             ConfigTools.UnregisterBaseSetting(nameof(JsonConfig));
         }
     }
