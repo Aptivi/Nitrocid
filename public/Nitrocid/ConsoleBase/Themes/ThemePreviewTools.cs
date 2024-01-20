@@ -30,6 +30,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Base;
 using Terminaux.Inputs;
+using Terminaux.Inputs.Styles.Selection;
 
 namespace Nitrocid.ConsoleBase.Themes
 {
@@ -62,20 +63,30 @@ namespace Nitrocid.ConsoleBase.Themes
             if (ThemeTools.IsTrueColorRequired(colors) && !ConsoleTools.ConsoleSupportsTrueColor)
                 throw new KernelException(KernelExceptionType.UnsupportedConsole, Translate.DoTranslation("Your console must support true color to use this theme."));
 
-            // Write the prompt
-            StringBuilder themeColorPromptText = new();
-            ConsoleWrapper.Clear();
-            themeColorPromptText.AppendLine(Translate.DoTranslation("Here's how your theme will look like:"));
-
-            // Print every possibility of color types
+            // Render the choices
+            var choices = new List<InputChoiceInfo>();
             for (int key = 0; key < colors.Count; key++)
             {
                 var type = colors.Keys.ElementAt(key);
                 var color = colors.Values.ElementAt(key);
-                themeColorPromptText.Append($"\n{KernelColorTools.GetColor(KernelColorType.Option).VTSequenceForeground}*) {type}: ");
-                themeColorPromptText.Append($"[{color.PlainSequence}]{color.VTSequenceForeground} Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
+                choices.Add(
+                    new(type.ToString(), $"[{color.PlainSequence}]{color.VTSequenceForeground} Lorem ipsum dolor sit amet, consectetur adipiscing elit.")
+                );
             }
-            TextWriters.WriteWrapped(themeColorPromptText.ToString(), false, KernelColorType.Option);
+
+            // Alt choices for exiting
+            var altChoices = new List<InputChoiceInfo>
+            {
+                new(Translate.DoTranslation("Exit"), Translate.DoTranslation("Exit the preview"))
+            };
+
+            // Give a prompt for theme preview
+            while (true)
+            {
+                int prev = SelectionStyle.PromptSelection(Translate.DoTranslation("Here's how your theme will look like:"), choices, altChoices, true);
+                if (prev == choices.Count + 1)
+                    break;
+            }
         }
 
         /// <summary>

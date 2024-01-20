@@ -159,10 +159,6 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
                     // Preview...
                     DebugWriter.WriteDebug(DebugLevel.I, "Printing text with colors of theme...");
                     ThemePreviewTools.PreviewThemeSimple(ThemeStudioTools.SelectedColors);
-
-                    // Pause until a key is pressed
-                    TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation("Press any key to go back."));
-                    Input.DetectKeypress();
                 }
                 else if (response == ThemeStudioTools.SelectedColors.Count + 9)
                 {
