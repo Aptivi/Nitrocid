@@ -1071,16 +1071,33 @@ namespace Nitrocid.Shell.Shells.UESH
                     new CommandArgumentInfo()
                 ], new RdebugCommand(), CommandFlags.Strict),
 
-            new CommandInfo("reboot", /* Localizable */ "Restarts your computer (WARNING: No syncing, because it is not a final kernel)",
+            new CommandInfo("reboot", /* Localizable */ "Restarts the kernel",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
-                        new CommandArgumentPart(false, "ip/safe/maintenance/debug"),
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(false, "ip"),
                         new CommandArgumentPart(false, "port", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true
                         }),
-                    })
+                    ],
+                    [
+                        new SwitchInfo("safe", /* Localizable */ "Restarts the kernel to safe mode.", new()
+                        {
+                            AcceptsValues = false,
+                            ConflictsWith = ["maintenance", "debug"]
+                        }),
+                        new SwitchInfo("maintenance", /* Localizable */ "Restarts the kernel to maintenance mode.", new()
+                        {
+                            AcceptsValues = false,
+                            ConflictsWith = ["safe", "debug"]
+                        }),
+                        new SwitchInfo("debug", /* Localizable */ "Restarts the kernel to debug mode.", new()
+                        {
+                            AcceptsValues = false,
+                            ConflictsWith = ["safe", "maintenance"]
+                        }),
+                    ])
                 ], new RebootCommand()),
 
             new CommandInfo("reloadconfig", /* Localizable */ "Reloads configuration file that is edited.",

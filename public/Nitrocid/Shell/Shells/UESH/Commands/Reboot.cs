@@ -19,6 +19,7 @@
 
 using Nitrocid.Kernel.Power;
 using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.Shell.ShellBase.Switches;
 using System;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
@@ -37,21 +38,12 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
+            bool debug = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-debug");
+            bool safe = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-safe");
+            bool maintenance = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-maintenance");
             if (parameters.ArgumentsList.Length != 0)
             {
-                if (parameters.ArgumentsList[0] == "safe")
-                {
-                    PowerManager.PowerManage(PowerMode.RebootSafe);
-                }
-                else if (parameters.ArgumentsList[0] == "maintenance")
-                {
-                    PowerManager.PowerManage(PowerMode.RebootMaintenance);
-                }
-                else if (parameters.ArgumentsList[0] == "debug")
-                {
-                    PowerManager.PowerManage(PowerMode.RebootDebug);
-                }
-                else if (!string.IsNullOrEmpty(parameters.ArgumentsList[0]))
+                if (!string.IsNullOrEmpty(parameters.ArgumentsList[0]))
                 {
                     if (parameters.ArgumentsList.Length > 1)
                     {
@@ -62,14 +54,15 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                         PowerManager.PowerManage(PowerMode.RemoteRestart, parameters.ArgumentsList[0]);
                     }
                 }
-                else
-                {
-                    PowerManager.PowerManage(PowerMode.Reboot);
-                }
             }
             else
             {
-                PowerManager.PowerManage(PowerMode.Reboot);
+                PowerManager.PowerManage(
+                    debug ? PowerMode.RebootDebug :
+                    safe ? PowerMode.RebootSafe :
+                    maintenance ? PowerMode.RebootMaintenance :
+                    PowerMode.Reboot
+                );
             }
             return 0;
         }
