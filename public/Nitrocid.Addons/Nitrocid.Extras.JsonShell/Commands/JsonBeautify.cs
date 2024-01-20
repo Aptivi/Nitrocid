@@ -28,7 +28,7 @@ using Nitrocid.Languages;
 using Nitrocid.Misc.Text;
 using Nitrocid.Shell.ShellBase.Commands;
 
-namespace Nitrocid.Shell.Shells.UESH.Commands
+namespace Nitrocid.Extras.JsonShell.Commands
 {
     /// <summary>
     /// Beautifies a JSON file

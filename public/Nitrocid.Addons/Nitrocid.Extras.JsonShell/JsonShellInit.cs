@@ -46,7 +46,25 @@ namespace Nitrocid.Extras.JsonShell
                         new CommandArgumentPart(true, "file1"),
                         new CommandArgumentPart(true, "file2"),
                     })
-                ], new JsonDiffCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
+                ], new JsonDiffCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
+
+            new CommandInfo("jsonbeautify", /* Localizable */ "Beautifies the JSON file",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "jsonfile"),
+                        new CommandArgumentPart(true, "output"),
+                    ], true)
+                ], new JsonBeautifyCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
+
+            new CommandInfo("jsonminify", /* Localizable */ "Minifies the JSON file",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "jsonfile"),
+                        new CommandArgumentPart(true, "output"),
+                    ], true)
+                ], new JsonMinifyCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
         ];
 
         string IAddon.AddonName =>

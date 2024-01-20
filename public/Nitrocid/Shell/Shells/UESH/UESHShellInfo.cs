@@ -793,24 +793,6 @@ namespace Nitrocid.Shell.Shells.UESH
                     ], true)
                 ], new InputPassCommand()),
 
-            new CommandInfo("jsonbeautify", /* Localizable */ "Beautifies the JSON file",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "jsonfile"),
-                        new CommandArgumentPart(true, "output"),
-                    ], true)
-                ], new JsonBeautifyCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
-
-            new CommandInfo("jsonminify", /* Localizable */ "Minifies the JSON file",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "jsonfile"),
-                        new CommandArgumentPart(true, "output"),
-                    ], true)
-                ], new JsonMinifyCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
-
             new CommandInfo("langman", /* Localizable */ "Manage your languages",
                 [
                     new CommandArgumentInfo(new[]
