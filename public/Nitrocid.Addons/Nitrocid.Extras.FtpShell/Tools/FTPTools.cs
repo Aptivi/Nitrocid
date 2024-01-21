@@ -27,7 +27,6 @@ using Nitrocid.Kernel.Debugging;
 using Terminaux.Inputs;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
-using Nitrocid.Network.Base.Connections;
 using Terminaux.Writer.FancyWriters;
 using Nitrocid.Misc.Text.Probers.Placeholder;
 using Nitrocid.ConsoleBase.Colors;
@@ -35,6 +34,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
 using Terminaux.Colors;
 using Nitrocid.ConsoleBase.Inputs;
+using Nitrocid.Network.Connections;
 
 namespace Nitrocid.Extras.FtpShell.Tools
 {

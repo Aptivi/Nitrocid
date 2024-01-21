@@ -19,7 +19,7 @@
 
 using Nitrocid.ConsoleBase.Inputs;
 using Nitrocid.Languages;
-using Nitrocid.Network.Base.Connections;
+using Nitrocid.Network.Connections;
 using Nitrocid.Shell.ShellBase.Commands;
 using System.Net.Http;
 

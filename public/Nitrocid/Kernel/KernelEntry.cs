@@ -34,13 +34,13 @@ using Nitrocid.Misc.Text.Probers.Placeholder;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Power;
-using Nitrocid.Network.RSS;
 using Textify.General;
 using Nitrocid.ConsoleBase.Writers.MiscWriters;
 using Terminaux.Base.Checks;
 using Nitrocid.Users.Login.Motd;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Threading;
+using Nitrocid.Network.Types.RSS;
 
 namespace Nitrocid.Kernel
 {

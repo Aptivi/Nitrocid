@@ -26,7 +26,7 @@ using Nitrocid.Kernel.Threading;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Splash;
 
-namespace Nitrocid.Network.RPC
+namespace Nitrocid.Network.Types.RPC
 {
     /// <summary>
     /// Remote procedure module

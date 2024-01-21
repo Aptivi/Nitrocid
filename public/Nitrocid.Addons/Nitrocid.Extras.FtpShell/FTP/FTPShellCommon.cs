@@ -19,7 +19,7 @@
 
 using System.Collections.Generic;
 using FluentFTP;
-using Nitrocid.Network.Base.Connections;
+using Nitrocid.Network.Connections;
 using Nitrocid.Shell.ShellBase.Commands;
 
 namespace Nitrocid.Extras.FtpShell.FTP

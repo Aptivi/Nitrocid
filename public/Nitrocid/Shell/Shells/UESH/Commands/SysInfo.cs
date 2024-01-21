@@ -30,9 +30,9 @@ using Nitrocid.Users.Login.Handlers;
 using Nitrocid.Kernel.Time;
 using Nitrocid.Kernel.Hardware;
 using Nitrocid.Users;
-using Nitrocid.Network.Base;
 using Nitrocid.Misc.Text.Probers.Placeholder;
 using Nitrocid.Users.Login.Motd;
+using Nitrocid.Network;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {

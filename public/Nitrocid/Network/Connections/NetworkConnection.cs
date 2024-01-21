@@ -22,7 +22,7 @@ using Nitrocid.Kernel.Threading;
 using Nitrocid.Languages;
 using System;
 
-namespace Nitrocid.Network.Base.Connections
+namespace Nitrocid.Network.Connections
 {
     /// <summary>
     /// A class for network connection information

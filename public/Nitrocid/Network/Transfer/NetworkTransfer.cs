@@ -32,7 +32,7 @@ using Nitrocid.Misc.Reflection;
 using Nitrocid.Misc.Text.Probers.Placeholder;
 using Terminaux.Base;
 
-namespace Nitrocid.Network.Base.Transfer
+namespace Nitrocid.Network.Transfer
 {
     /// <summary>
     /// Network transfer module

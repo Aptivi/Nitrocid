@@ -32,13 +32,13 @@ using Nitrocid.Files.Folders;
 using Nitrocid.Kernel.Time.Renderers;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Network.Base;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Kernel.Events;
 using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Power;
 using Nitrocid.Kernel.Time.Timezones;
 using Textify.General;
+using Nitrocid.Network;
 
 namespace Nitrocid.Misc.Text.Probers.Placeholder
 {

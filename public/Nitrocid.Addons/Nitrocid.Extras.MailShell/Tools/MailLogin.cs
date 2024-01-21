@@ -35,8 +35,8 @@ using Nitrocid.Kernel;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Text.Probers.Placeholder;
-using Nitrocid.Network.Base.Connections;
 using Nitrocid.ConsoleBase.Inputs;
+using Nitrocid.Network.Connections;
 
 namespace Nitrocid.Extras.MailShell.Tools
 {

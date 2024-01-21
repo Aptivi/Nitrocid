@@ -22,8 +22,8 @@ using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
-using Nitrocid.Network.Base;
 using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.Network;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {

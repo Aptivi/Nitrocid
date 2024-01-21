@@ -39,7 +39,7 @@
 
 using Newtonsoft.Json;
 
-namespace Nitrocid.Network.Base.SpeedDial
+namespace Nitrocid.Network.SpeedDial
 {
     /// <summary>
     /// Speed dial entry

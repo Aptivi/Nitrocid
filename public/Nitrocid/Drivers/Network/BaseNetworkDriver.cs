@@ -33,10 +33,10 @@ using Nitrocid.Files.Folders;
 using Nitrocid.Misc.Notifications;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Network.Base;
 using Nitrocid.Misc.Progress;
-using Nitrocid.Network.Base.Transfer;
 using Terminaux.Writer.ConsoleWriters;
+using Nitrocid.Network;
+using Nitrocid.Network.Transfer;
 
 namespace Nitrocid.Drivers.Network
 {

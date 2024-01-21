@@ -26,10 +26,10 @@ using Nitrocid.Languages;
 using Nitrocid.Misc.Notifications;
 using Nitrocid.Misc.Splash;
 using Nitrocid.Modifications;
-using Nitrocid.Network.RPC;
 using Nitrocid.Users;
 using Nitrocid.Users.Groups;
 using Nitrocid.ConsoleBase.Writers.MiscWriters;
+using Nitrocid.Network.Types.RPC;
 
 namespace Nitrocid.Kernel.Starting
 {

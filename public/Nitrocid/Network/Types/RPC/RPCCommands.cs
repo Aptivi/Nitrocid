@@ -36,7 +36,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Power;
 using Textify.General;
 
-namespace Nitrocid.Network.RPC
+namespace Nitrocid.Network.Types.RPC
 {
     /// <summary>
     /// RPC commands module

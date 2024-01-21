@@ -21,7 +21,7 @@ using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
-using Nitrocid.Network.Base;
+using Nitrocid.Network;
 using Nitrocid.Shell.ShellBase.Commands;
 using System;
 using System.Net;

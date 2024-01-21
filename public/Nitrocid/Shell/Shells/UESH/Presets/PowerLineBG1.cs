@@ -27,10 +27,10 @@ using Nitrocid.Users;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Files.Folders;
 using Nitrocid.Languages;
-using Nitrocid.Network.Base;
 using Nitrocid.Shell.Prompts;
 using Terminaux.Writer.FancyWriters.Tools;
 using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Network;
 
 namespace Nitrocid.Shell.Shells.UESH.Presets
 {

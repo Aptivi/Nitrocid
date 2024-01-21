@@ -26,9 +26,9 @@ using Nitrocid.Drivers;
 using Nitrocid.Kernel;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.Network.Base.Transfer;
+using Nitrocid.Network.Transfer;
 
-namespace Nitrocid.Network.Base
+namespace Nitrocid.Network
 {
     /// <summary>
     /// Network tools module

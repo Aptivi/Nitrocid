@@ -25,11 +25,11 @@ using Nitrocid.Extras.RssShell.RSS.Interactive;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
-using Nitrocid.Network.Base.Connections;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Switches;
 using System;
 using Nitrocid.ConsoleBase.Inputs;
+using Nitrocid.Network.Connections;
 
 namespace Nitrocid.Extras.RssShell
 {

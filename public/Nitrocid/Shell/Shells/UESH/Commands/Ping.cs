@@ -25,10 +25,10 @@ using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Shell.ShellBase.Switches;
 using Nitrocid.Languages;
 using Terminaux.Writer.FancyWriters;
-using Nitrocid.Network.Base;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
+using Nitrocid.Network;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {

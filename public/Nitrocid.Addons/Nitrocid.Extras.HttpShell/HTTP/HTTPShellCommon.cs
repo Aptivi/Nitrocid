@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Network.Base.Connections;
+using Nitrocid.Network.Connections;
 
 namespace Nitrocid.Extras.HttpShell.HTTP
 {

@@ -18,8 +18,8 @@
 //
 
 using Nitrocid.Kernel.Threading;
-using Nitrocid.Network.Base;
-using Nitrocid.Network.Base.Connections;
+using Nitrocid.Network;
+using Nitrocid.Network.Connections;
 using Nitrocid.Tests.Network.Connections;
 using NUnit.Framework;
 using Shouldly;

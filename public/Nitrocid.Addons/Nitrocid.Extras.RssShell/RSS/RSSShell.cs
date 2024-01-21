@@ -23,12 +23,12 @@ using Nettify.Rss.Instance;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.Network.Base.Connections;
-using Nitrocid.Network.Base.SpeedDial;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Colors;
 using Textify.General;
+using Nitrocid.Network.SpeedDial;
+using Nitrocid.Network.Connections;
 
 namespace Nitrocid.Extras.RssShell.RSS
 {

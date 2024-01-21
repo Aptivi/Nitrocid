@@ -28,10 +28,10 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Network.Base.Connections;
 using Nitrocid.Files.Paths;
-using Nitrocid.Network.Base.SpeedDial;
 using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Network.SpeedDial;
+using Nitrocid.Network.Connections;
 
 namespace Nitrocid.Extras.FtpShell.FTP
 {

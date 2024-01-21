@@ -22,7 +22,7 @@ using System.Net.Http;
 using Nettify.Rss.Instance;
 using Nitrocid.Extras.RssShell.Tools;
 using Nitrocid.Kernel.Threading;
-using Nitrocid.Network.Base.Connections;
+using Nitrocid.Network.Connections;
 
 namespace Nitrocid.Extras.RssShell.RSS
 {

@@ -22,7 +22,7 @@ using Newtonsoft.Json.Linq;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Extensions;
-using Nitrocid.Network.Base.Transfer;
+using Nitrocid.Network.Transfer;
 
 #if SPECIFIERREL
 using Nitrocid.Files.Paths;

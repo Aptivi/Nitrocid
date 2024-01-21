@@ -18,7 +18,7 @@
 //
 
 using Newtonsoft.Json.Linq;
-using Nitrocid.Network.Base.Transfer;
+using Nitrocid.Network.Transfer;
 using System.Text;
 using Textify.General;
 

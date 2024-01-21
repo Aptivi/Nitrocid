@@ -30,7 +30,6 @@ using Nitrocid.Kernel.Time;
 using Nitrocid.Kernel.Time.Renderers;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Text;
-using Nitrocid.Network.RSS;
 using Nitrocid.Users.Login;
 using System;
 using System.Text;
@@ -39,6 +38,7 @@ using Textify.General;
 using Textify.Sequences.Builder.Types;
 using Terminaux.Base;
 using Nitrocid.Users.Login.Motd;
+using Nitrocid.Network.Types.RSS;
 
 namespace Nitrocid.Extras.Docking.Dock.Docks
 {

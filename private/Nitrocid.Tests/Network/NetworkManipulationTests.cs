@@ -18,7 +18,7 @@
 //
 
 using Nitrocid.Kernel.Configuration;
-using Nitrocid.Network.Base;
+using Nitrocid.Network;
 using NUnit.Framework;
 using Shouldly;
 

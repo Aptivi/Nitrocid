@@ -18,8 +18,8 @@
 //
 
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Network.Base;
 using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.Network;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {

@@ -38,17 +38,17 @@ using Nitrocid.Misc.Notifications;
 using Nitrocid.Kernel.Exceptions;
 using Terminaux.Inputs.Styles.Choice;
 using Nitrocid.Misc.Text;
-using Nitrocid.Network.Base;
 using Nitrocid.Shell.Prompts;
 using Nitrocid.Users.Login.Handlers;
 using Nitrocid.Files.Paths;
 using Terminaux.Writer.FancyWriters.Tools;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Files.Operations.Querying;
-using Nitrocid.Network.RPC;
 using Nitrocid.Kernel.Debugging.RemoteDebug.RemoteChat;
 using Nitrocid.Kernel.Time.Timezones;
 using Nitrocid.ConsoleBase.Writers.MiscWriters;
+using Nitrocid.Network.Types.RPC;
+using Nitrocid.Network;
 
 namespace Nitrocid.Kernel.Configuration.Instances
 {

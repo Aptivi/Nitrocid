@@ -19,7 +19,7 @@
 
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
-using Nitrocid.Network.Base;
+using Nitrocid.Network;
 
 namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {

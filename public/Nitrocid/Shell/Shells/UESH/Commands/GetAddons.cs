@@ -25,7 +25,7 @@ using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Kernel.Updates;
 using Nitrocid.Languages;
-using Nitrocid.Network.Base.Transfer;
+using Nitrocid.Network.Transfer;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Switches;
 using System;

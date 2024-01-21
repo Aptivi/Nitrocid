@@ -26,7 +26,7 @@ using Nitrocid.Kernel.Exceptions;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Kernel.Extensions;
 
-namespace Nitrocid.Network.RSS
+namespace Nitrocid.Network.Types.RSS
 {
     /// <summary>
     /// RSS tools module

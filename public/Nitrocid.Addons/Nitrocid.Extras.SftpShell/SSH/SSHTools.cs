@@ -25,7 +25,6 @@ using Renci.SshNet.Common;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Files;
-using Nitrocid.Network.Base.Connections;
 using Nitrocid.Kernel.Events;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.ConsoleBase.Writers;
@@ -38,6 +37,7 @@ using Nitrocid.Kernel;
 using Textify.General;
 using Terminaux.Base;
 using Nitrocid.ConsoleBase.Inputs;
+using Nitrocid.Network.Connections;
 
 namespace Nitrocid.Extras.SftpShell.SSH
 {

@@ -24,11 +24,11 @@ using System.Linq;
 using Nitrocid.Files.Operations;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Network.Base.Connections;
 using Nitrocid.Files.Paths;
 using Nitrocid.Files.Operations.Querying;
+using Nitrocid.Network.Connections;
 
-namespace Nitrocid.Network.Base.SpeedDial
+namespace Nitrocid.Network.SpeedDial
 {
     /// <summary>
     /// Speed dial management tools

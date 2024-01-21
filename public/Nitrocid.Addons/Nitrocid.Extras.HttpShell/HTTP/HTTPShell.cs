@@ -23,8 +23,8 @@ using System.Threading;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
-using Nitrocid.Network.Base.Connections;
-using Nitrocid.Network.Base.SpeedDial;
+using Nitrocid.Network.Connections;
+using Nitrocid.Network.SpeedDial;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Shells;
 

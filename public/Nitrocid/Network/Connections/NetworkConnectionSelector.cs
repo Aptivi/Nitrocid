@@ -23,7 +23,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Terminaux.Inputs;
 
-namespace Nitrocid.Network.Base.Connections
+namespace Nitrocid.Network.Connections
 {
     internal static class NetworkConnectionSelector
     {

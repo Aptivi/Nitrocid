@@ -18,8 +18,8 @@
 //
 
 using Nitrocid.Extras.SftpShell.Tools;
-using Nitrocid.Network.Base.Connections;
-using Nitrocid.Network.Base.SpeedDial;
+using Nitrocid.Network.Connections;
+using Nitrocid.Network.SpeedDial;
 using Nitrocid.Shell.ShellBase.Commands;
 
 namespace Nitrocid.Extras.SftpShell.Commands

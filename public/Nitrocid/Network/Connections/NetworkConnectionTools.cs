@@ -28,11 +28,11 @@ using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Inputs.Styles.Selection;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Network.Base.SpeedDial;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Inputs;
+using Nitrocid.Network.SpeedDial;
 
-namespace Nitrocid.Network.Base.Connections
+namespace Nitrocid.Network.Connections
 {
     /// <summary>
     /// Network connection tools to manipulate with connections

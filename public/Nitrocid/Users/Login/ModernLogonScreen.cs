@@ -34,10 +34,10 @@ using Terminaux.Writer.FancyWriters;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Base.Buffered;
 using Nitrocid.Kernel.Extensions;
-using Nitrocid.Network.RSS;
 using Textify.General;
 using Terminaux.Base;
 using Nitrocid.Users.Login.Motd;
+using Nitrocid.Network.Types.RSS;
 
 namespace Nitrocid.Users.Login
 {

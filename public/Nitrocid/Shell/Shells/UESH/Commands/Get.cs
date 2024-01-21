@@ -25,10 +25,10 @@ using Nitrocid.Files;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
-using Nitrocid.Network.Base;
-using Nitrocid.Network.Base.Transfer;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Switches;
+using Nitrocid.Network;
+using Nitrocid.Network.Transfer;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {

@@ -21,8 +21,8 @@ using System;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Languages;
 using Terminaux.Writer.FancyWriters;
-using Nitrocid.Network.Base.Connections;
 using Terminaux.Writer.ConsoleWriters;
+using Nitrocid.Network.Connections;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
