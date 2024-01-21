@@ -1399,6 +1399,19 @@ namespace Nitrocid.Shell.Shells.UESH
                     })
                 ], new SymlinkCommand()),
 
+            new CommandInfo("sysinfo", /* Localizable */ "System information",
+                [
+                    new CommandArgumentInfo([],
+                    [
+                        new SwitchInfo("s", /* Localizable */ "Shows the system information"),
+                        new SwitchInfo("h", /* Localizable */ "Shows the hardware information"),
+                        new SwitchInfo("u", /* Localizable */ "Shows the user information"),
+                        new SwitchInfo("m", /* Localizable */ "Shows the message of the day"),
+                        new SwitchInfo("l", /* Localizable */ "Shows the message of the day after login"),
+                        new SwitchInfo("a", /* Localizable */ "Shows all information"),
+                    ])
+                ], new SysInfoCommand()),
+
             new CommandInfo("taskman", /* Localizable */ "Task manager",
                 [
                     new CommandArgumentInfo()
