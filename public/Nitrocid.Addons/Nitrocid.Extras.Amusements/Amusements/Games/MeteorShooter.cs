@@ -40,7 +40,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
     public static class MeteorShooter
     {
 
-        internal readonly static KernelThread MeteorDrawThread = new("Meteor Shooter Draw Thread", true, DrawGame);
+        internal readonly static KernelThread MeteorDrawThread = new("Meteor Shooter Draw Thread", true, (dodge) => DrawGame((bool)dodge));
         internal static bool GameEnded = false;
         internal static bool GameExiting = false;
         internal static int meteorSpeed = 10;
@@ -56,6 +56,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
         /// </summary>
         public static bool MeteorUsePowerLine =>
             AmusementsInit.AmusementsConfig.MeteorUsePowerLine;
+
         /// <summary>
         /// Meteor speed in milliseconds
         /// </summary>
@@ -68,7 +69,9 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
         /// <summary>
         /// Initializes the Meteor game
         /// </summary>
-        public static void InitializeMeteor(bool simulation = false)
+        /// <param name="simulation">Whether to make the player a CPU or not</param>
+        /// <param name="dodge">Whether to disable shooting to enable dodge mode or not</param>
+        public static void InitializeMeteor(bool simulation = false, bool dodge = false)
         {
             // Clear screen
             ColorTools.LoadBackDry(0);
@@ -85,7 +88,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
 
             // Start the draw thread
             MeteorDrawThread.Stop();
-            MeteorDrawThread.Start();
+            MeteorDrawThread.Start(dodge);
 
             // Remove the cursor
             ConsoleWrapper.CursorVisible = false;
@@ -101,7 +104,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     {
                         // Read the key and handle it
                         Keypress = Input.DetectKeypress();
-                        HandleKeypress(Keypress.Key);
+                        HandleKeypress(Keypress.Key, dodge);
                     }
                 }
             }
@@ -109,7 +112,10 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             {
                 // Simulation mode
                 ConsoleKey Keypress = 0;
-                ConsoleKey[] possibleKeys = [ConsoleKey.UpArrow, ConsoleKey.DownArrow, ConsoleKey.Spacebar];
+                ConsoleKey[] possibleKeys =
+                    dodge ?
+                    [ConsoleKey.UpArrow, ConsoleKey.DownArrow] :
+                    [ConsoleKey.UpArrow, ConsoleKey.DownArrow, ConsoleKey.Spacebar];
                 while (!GameEnded)
                 {
                     float PossibilityToChange = (float)RandomDriver.RandomDouble();
@@ -117,7 +123,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                         Keypress = possibleKeys[RandomDriver.RandomIdx(possibleKeys.Length)];
 
                     // Select command based on key value
-                    HandleKeypress(Keypress);
+                    HandleKeypress(Keypress, dodge);
                     ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
                 }
             }
@@ -129,7 +135,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             GameExiting = false;
         }
 
-        private static void HandleKeypress(ConsoleKey Keypress)
+        private static void HandleKeypress(ConsoleKey Keypress, bool dodge)
         {
             switch (Keypress)
             {
@@ -142,6 +148,10 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                         SpaceshipHeight += 1;
                     break;
                 case ConsoleKey.Spacebar:
+                    if (dodge)
+                        return;
+
+                    // Shoot the bullet!
                     if (Bullets.Count < MaxBullets)
                         Bullets.Add((1, SpaceshipHeight));
                     break;
@@ -152,7 +162,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             }
         }
 
-        private static void DrawGame()
+        private static void DrawGame(bool dodge)
         {
             try
             {
@@ -227,6 +237,10 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                         int MeteorX = ConsoleWrapper.WindowWidth - 1;
                         int MeteorY = RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight - 1);
                         Meteors.Add((MeteorX, MeteorY));
+
+                        // If on dodge mode, increase score for every draw
+                        if (dodge)
+                            score++;
                     }
 
                     // Draw the meteor, the bullet, and the spaceship if any of them are updated

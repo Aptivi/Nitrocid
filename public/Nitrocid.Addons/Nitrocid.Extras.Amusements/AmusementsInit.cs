@@ -68,6 +68,11 @@ namespace Nitrocid.Extras.Amusements
                     new CommandArgumentInfo()
                 ], new MeteorCommand()),
 
+            new CommandInfo("meteordodge", /* Localizable */ "You are a spaceship and the meteors are coming to destroy you. Can you dodge them?",
+                [
+                    new CommandArgumentInfo()
+                ], new MeteorDodgeCommand()),
+
             new CommandInfo("quote", /* Localizable */ "Gets a random quote",
                 [
                     new CommandArgumentInfo()
@@ -169,6 +174,7 @@ namespace Nitrocid.Extras.Amusements
         {
             CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
             ScreensaverManager.AddonSavers.Add("meteor", new MeteorDisplay());
+            ScreensaverManager.AddonSavers.Add("meteordodge", new MeteorDodgeDisplay());
             ScreensaverManager.AddonSavers.Add("quote", new QuoteDisplay());
             ScreensaverManager.AddonSavers.Add("shipduet", new ShipDuetDisplay());
             ScreensaverManager.AddonSavers.Add("snaker", new SnakerDisplay());
@@ -191,6 +197,7 @@ namespace Nitrocid.Extras.Amusements
         {
             CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
             ScreensaverManager.AddonSavers.Remove("meteor");
+            ScreensaverManager.AddonSavers.Remove("meteordodge");
             ScreensaverManager.AddonSavers.Remove("quote");
             ScreensaverManager.AddonSavers.Remove("shipduet");
             ScreensaverManager.AddonSavers.Remove("snaker");
