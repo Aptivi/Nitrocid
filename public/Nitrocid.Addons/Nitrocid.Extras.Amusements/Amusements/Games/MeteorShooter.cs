@@ -30,6 +30,7 @@ using Nitrocid.Misc.Screensaver;
 using Terminaux.Inputs;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
+using Nitrocid.Kernel.Debugging;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games
 {
@@ -274,18 +275,35 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             catch (Exception ex)
             {
                 // Game is over with an unexpected error.
-                TextWriterWhereColor.WriteWhereColor(Translate.DoTranslation("Unexpected error") + ": {0}", 0, ConsoleWrapper.WindowHeight - 1, false, ConsoleColors.Red, vars: ex.Message);
-                ThreadManager.SleepNoBlock(3000L, MeteorDrawThread);
-                GameExiting = true;
-                ConsoleWrapper.Clear();
+                try
+                {
+                    TextWriterWhereColor.WriteWhereColor(Translate.DoTranslation("Unexpected error") + ": {0}", 0, ConsoleWrapper.WindowHeight - 1, false, ConsoleColors.Red, vars: ex.Message);
+                    ThreadManager.SleepNoBlock(3000L, MeteorDrawThread);
+                }
+                catch
+                {
+                    DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.E, "Can't display error message on meteor shooter.");
+                }
+                finally
+                {
+                    GameExiting = true;
+                    ConsoleWrapper.Clear();
+                }
             }
             finally
             {
                 // Write game over if not exiting
                 if (!GameExiting)
                 {
-                    TextWriterWhereColor.WriteWhereColor(Translate.DoTranslation("Game over"), 0, ConsoleWrapper.WindowHeight - 1, false, ConsoleColors.Red);
-                    ThreadManager.SleepNoBlock(3000L, MeteorDrawThread);
+                    try
+                    {
+                        TextWriterWhereColor.WriteWhereColor(Translate.DoTranslation("Game over"), 0, ConsoleWrapper.WindowHeight - 1, false, ConsoleColors.Red);
+                        ThreadManager.SleepNoBlock(3000L, MeteorDrawThread);
+                    }
+                    catch
+                    {
+                        DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.E, "Can't display game over on meteor shooter.");
+                    }
                 }
                 ConsoleWrapper.Clear();
             }

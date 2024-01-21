@@ -30,6 +30,7 @@ using Nitrocid.Misc.Screensaver;
 using Terminaux.Inputs;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
+using Nitrocid.Kernel.Debugging;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games
 {
@@ -333,21 +334,38 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             catch (Exception ex)
             {
                 // Game is over with an unexpected error.
-                TextWriterWhereColor.WriteWhereColor(Translate.DoTranslation("Unexpected error") + ": {0}", 0, ConsoleWrapper.WindowHeight - 1, false, ConsoleColors.Red, vars: ex.Message);
-                ThreadManager.SleepNoBlock(3000L, ShipDuetDrawThread);
-                GameExiting = true;
-                ConsoleWrapper.Clear();
+                try
+                {
+                    TextWriterWhereColor.WriteWhereColor(Translate.DoTranslation("Unexpected error") + ": {0}", 0, ConsoleWrapper.WindowHeight - 1, false, ConsoleColors.Red, vars: ex.Message);
+                    ThreadManager.SleepNoBlock(3000L, ShipDuetDrawThread);
+                }
+                catch
+                {
+                    DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.E, "Can't display error message on meteor shooter.");
+                }
+                finally
+                {
+                    GameExiting = true;
+                    ConsoleWrapper.Clear();
+                }
             }
             finally
             {
                 // Write who is the winner
                 if (!GameExiting)
                 {
-                    if (player1Won && player2Won || !player1Won && !player2Won)
-                        TextWriterWhereColor.WriteWhereColor(Translate.DoTranslation("It's a draw."), 0, ConsoleWrapper.WindowHeight - 1, false, ConsoleColors.Red);
-                    else if (player1Won || player2Won)
-                        TextWriterWhereColor.WriteWhereColor(Translate.DoTranslation("Player {0} wins!"), 0, ConsoleWrapper.WindowHeight - 1, false, ConsoleColors.Red, vars: player1Won ? 1 : 2);
-                    ThreadManager.SleepNoBlock(3000L, ShipDuetDrawThread);
+                    try
+                    {
+                        if (player1Won && player2Won || !player1Won && !player2Won)
+                            TextWriterWhereColor.WriteWhereColor(Translate.DoTranslation("It's a draw."), 0, ConsoleWrapper.WindowHeight - 1, false, ConsoleColors.Red);
+                        else if (player1Won || player2Won)
+                            TextWriterWhereColor.WriteWhereColor(Translate.DoTranslation("Player {0} wins!"), 0, ConsoleWrapper.WindowHeight - 1, false, ConsoleColors.Red, vars: player1Won ? 1 : 2);
+                        ThreadManager.SleepNoBlock(3000L, ShipDuetDrawThread);
+                    }
+                    catch
+                    {
+                        DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.E, "Can't display game over on meteor shooter.");
+                    }
                 }
                 ConsoleWrapper.Clear();
             }
