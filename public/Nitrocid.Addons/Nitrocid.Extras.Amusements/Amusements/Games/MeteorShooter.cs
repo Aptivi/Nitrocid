@@ -239,7 +239,6 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                         {
                             // The spaceship crashed! Game ended.
                             GameEnded = true;
-                            GameExiting = true;
                         }
                     }
 
