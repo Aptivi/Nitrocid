@@ -104,7 +104,7 @@ namespace Nitrocid.Kernel.Time.Renderers
                 (
                     Translate.DoTranslation("Today is") + " {0} @ {1} ({2}), {3} @ UTC",
                     TimeDateRenderers.Render(), TimeZones.GetCurrentZoneInfo().StandardName, TimeZoneRenderers.ShowTimeZoneUtcOffsetStringLocal(),
-                    TimeDateRenderersUtc.RenderTimeUtc()
+                    TimeDateRenderersUtc.RenderUtc()
                 );
             }
             catch (KernelException kex) when (kex.ExceptionType == KernelExceptionType.TimeDate)
@@ -112,7 +112,7 @@ namespace Nitrocid.Kernel.Time.Renderers
                 TextWriterColor.Write
                 (
                     Translate.DoTranslation("Today is") + " {0}, {1} @ UTC",
-                    TimeDateRenderers.Render(), TimeDateRenderersUtc.RenderTimeUtc()
+                    TimeDateRenderers.Render(), TimeDateRenderersUtc.RenderUtc()
                 );
             }
             catch (Exception ex)
