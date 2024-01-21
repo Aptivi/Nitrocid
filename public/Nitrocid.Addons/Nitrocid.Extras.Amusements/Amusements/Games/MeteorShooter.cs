@@ -45,6 +45,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
         internal static bool GameExiting = false;
         internal static int meteorSpeed = 10;
         private static int SpaceshipHeight = 0;
+        private static int score = 0;
         private readonly static int MaxBullets = 10;
         private readonly static List<(int, int)> Bullets = [];
         private readonly static int MaxMeteors = 10;
@@ -75,6 +76,9 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             // Clear all bullets and meteors
             Bullets.Clear();
             Meteors.Clear();
+
+            // Reset the score
+            score = 0;
 
             // Make the spaceship height in the center
             SpaceshipHeight = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d);
@@ -167,6 +171,12 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                             );
                     }
 
+                    // Show the score
+                    buffer.Append(
+                        new Color(ConsoleColors.Green).VTSequenceForeground +
+                        TextWriterWhereColor.RenderWherePlain($"{score}", ConsoleWrapper.WindowWidth - $"{score}".Length, 0)
+                    );
+
                     // Move the meteors left
                     for (int Meteor = 0; Meteor <= Meteors.Count - 1; Meteor++)
                     {
@@ -258,6 +268,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                                 buffer.Append(TextWriterWhereColor.RenderWherePlain(" ", Bullet.Item1, Bullet.Item2));
                                 Bullets.RemoveAt(BulletIndex);
                                 Meteors.RemoveAt(MeteorIndex);
+                                score++;
                             }
                         }
                     }
