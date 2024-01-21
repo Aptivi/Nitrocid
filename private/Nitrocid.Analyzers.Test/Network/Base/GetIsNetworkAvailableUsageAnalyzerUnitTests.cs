@@ -95,7 +95,7 @@ namespace Nitrocid.Analyzers.Test.Network.Base
                 using System.Threading.Tasks;
                 using System.Diagnostics;
                 using System.Net.NetworkInformation;
-                using Nitrocid.Network.Base;
+                using Nitrocid.Network;
 
                 namespace ConsoleApplication1
                 {
