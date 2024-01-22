@@ -139,34 +139,5 @@ namespace Nitrocid.ConsoleBase
             ConsoleWrapper.CursorVisible = false;
         }
 
-        #region Windows-specific
-        private const string winKernel = "kernel32.dll";
-
-        [DllImport(winKernel, SetLastError = true)]
-        private static extern bool SetConsoleMode(nint hConsoleHandle, int mode);
-
-        [DllImport(winKernel, SetLastError = true)]
-        private static extern bool GetConsoleMode(nint handle, out int mode);
-
-        [DllImport(winKernel, SetLastError = true)]
-        private static extern nint GetStdHandle(int handle);
-
-        internal static bool InitializeSequences()
-        {
-            nint stdHandle = GetStdHandle(-11);
-            int mode = CheckForConHostSequenceSupport();
-            if (mode != 7)
-                return SetConsoleMode(stdHandle, mode | 4);
-            return true;
-        }
-
-        internal static int CheckForConHostSequenceSupport()
-        {
-            nint stdHandle = GetStdHandle(-11);
-            GetConsoleMode(stdHandle, out int mode);
-            return mode;
-        }
-        #endregion
-
     }
 }

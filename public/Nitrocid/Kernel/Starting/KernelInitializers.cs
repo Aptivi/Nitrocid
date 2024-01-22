@@ -75,7 +75,7 @@ namespace Nitrocid.Kernel.Starting
                 // Initialize crucial things
                 if (!KernelPlatform.IsOnUnix())
                 {
-                    if (!ConsoleTools.InitializeSequences())
+                    if (!ConsoleExtensions.InitializeSequences())
                     {
                         TextWriterColor.Write("Can not initialize VT sequences for your Windows terminal. Make sure that you're running Windows 10 or later.");
                         InputTools.DetectKeypress();
