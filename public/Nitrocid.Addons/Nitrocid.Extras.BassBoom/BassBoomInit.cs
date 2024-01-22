@@ -131,13 +131,8 @@ namespace Nitrocid.Extras.BassBoom
             ConfigTools.RegisterBaseSetting(saversConfig);
             ConfigTools.RegisterBaseSetting(bbConfig);
 
-            var privateReflection = BindingFlags.NonPublic | BindingFlags.Static | BindingFlags.GetField;
-            var startInfoType = typeof(InitBasolia);
-            var envVarsField = startInfoType.GetField("_basoliaInited", privateReflection);
-            var inited = (bool)envVarsField.GetValue(null);
-
             // Additionally, register a custom extension handler that handles music playback
-            if (!inited)
+            if (!InitBasolia.BasoliaInitialized)
                 InitBasolia.Init(PathsManagement.AddonsPath + "/Extras.BassBoom");
             ExtensionHandlerTools.extensionHandlers.AddRange(handlers);
         }
