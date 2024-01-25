@@ -28,8 +28,9 @@ using Nitrocid.Kernel.Threading;
 using Terminaux.Colors;
 using Textify.Sequences.Builder.Types;
 using Terminaux.Base;
+using Nitrocid.Misc.Screensaver;
 
-namespace Nitrocid.Misc.Screensaver.Displays
+namespace Nitrocid.ScreensaverPacks.Screensavers
 {
     /// <summary>
     /// Settings for Matrix
@@ -44,13 +45,13 @@ namespace Nitrocid.Misc.Screensaver.Displays
         {
             get
             {
-                return Config.SaverConfig.MatrixDelay;
+                return ScreensaverPackInit.SaversConfig.MatrixDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 10;
-                Config.SaverConfig.MatrixDelay = value;
+                ScreensaverPackInit.SaversConfig.MatrixDelay = value;
             }
         }
         /// <summary>
@@ -60,13 +61,13 @@ namespace Nitrocid.Misc.Screensaver.Displays
         {
             get
             {
-                return Config.SaverConfig.MatrixMaxSteps;
+                return ScreensaverPackInit.SaversConfig.MatrixMaxSteps;
             }
             set
             {
                 if (value <= 0)
                     value = 25;
-                Config.SaverConfig.MatrixMaxSteps = value;
+                ScreensaverPackInit.SaversConfig.MatrixMaxSteps = value;
             }
         }
 

@@ -1,5 +1,23 @@
 [
     {
+        "Name": "Matrix",
+        "Desc": "The falling binary number in your screen.",
+        "Keys": [
+            {
+                "Name": "Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "MatrixDelay",
+                "Description": "How many milliseconds to wait before making the next write?"
+            },
+            {
+                "Name": "Max Fade Steps",
+                "Type": "SInt",
+                "Variable": "MatrixMaxSteps",
+                "Description": "How many fade steps to do?"
+            }
+        ]
+    },
+    {
         "Name": "ColorMix",
         "Desc": "Mixing colors and printing them to the console.",
         "Keys": [

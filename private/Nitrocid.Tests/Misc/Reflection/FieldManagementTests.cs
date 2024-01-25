@@ -39,7 +39,7 @@ namespace Nitrocid.Tests.Misc.Reflection
         [Test]
         [Description("Management")]
         public void TestCheckField() =>
-            FieldManager.CheckField(nameof(KernelSaverConfig.MatrixDelay)).ShouldBeFalse();
+            FieldManager.CheckField(nameof(KernelSaverConfig.MatrixBleedDelay)).ShouldBeFalse();
 
         /// <summary>
         /// Tests getting value

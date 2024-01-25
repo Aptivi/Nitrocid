@@ -41,7 +41,7 @@ namespace Nitrocid.Tests.Misc.Reflection
         [Test]
         [Description("Management")]
         public void TestCheckProperty() =>
-            PropertyManager.CheckProperty(nameof(KernelSaverConfig.MatrixDelay)).ShouldBeTrue();
+            PropertyManager.CheckProperty(nameof(KernelSaverConfig.MatrixBleedDelay)).ShouldBeTrue();
 
         /// <summary>
         /// Tests getting value
@@ -50,7 +50,7 @@ namespace Nitrocid.Tests.Misc.Reflection
         [Description("Management")]
         public void TestGetPropertyValueInstance()
         {
-            string Value = Convert.ToString(PropertyManager.GetPropertyValueInstance(Config.SaverConfig, nameof(KernelSaverConfig.MatrixDelay)));
+            string Value = Convert.ToString(PropertyManager.GetPropertyValueInstance(Config.SaverConfig, nameof(KernelSaverConfig.MatrixBleedDelay)));
             Value.ShouldNotBeNullOrEmpty();
         }
 
@@ -61,8 +61,8 @@ namespace Nitrocid.Tests.Misc.Reflection
         [Description("Management")]
         public void TestSetPropertyValueInstance()
         {
-            PropertyManager.SetPropertyValueInstance(Config.SaverConfig, nameof(KernelSaverConfig.MatrixDelay), 50);
-            int Value = Convert.ToInt32(PropertyManager.GetPropertyValueInstance(Config.SaverConfig, nameof(KernelSaverConfig.MatrixDelay)));
+            PropertyManager.SetPropertyValueInstance(Config.SaverConfig, nameof(KernelSaverConfig.MatrixBleedDelay), 50);
+            int Value = Convert.ToInt32(PropertyManager.GetPropertyValueInstance(Config.SaverConfig, nameof(KernelSaverConfig.MatrixBleedDelay)));
             Value.ShouldBe(50);
         }
 
@@ -96,8 +96,8 @@ namespace Nitrocid.Tests.Misc.Reflection
         [Description("Management")]
         public void TestGetConfigProperty()
         {
-            var PropertyInfo = PropertyManager.GetProperty(nameof(KernelSaverConfig.MatrixDelay));
-            PropertyInfo.Name.ShouldBe(nameof(KernelSaverConfig.MatrixDelay));
+            var PropertyInfo = PropertyManager.GetProperty(nameof(KernelSaverConfig.MatrixBleedDelay));
+            PropertyInfo.Name.ShouldBe(nameof(KernelSaverConfig.MatrixBleedDelay));
         }
 
         /// <summary>

@@ -55,7 +55,6 @@ namespace Nitrocid.Misc.Screensaver
         // Private variables
         internal static Dictionary<string, BaseScreensaver> Screensavers = new()
         {
-            { "matrix", new MatrixDisplay() },
             { "matrixbleed", new MatrixBleedDisplay() },
             { "plain", new PlainDisplay() }
         };

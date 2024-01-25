@@ -37,6 +37,17 @@ namespace Nitrocid.ScreensaverPacks.Settings
         public override SettingsEntry[] SettingsEntries =>
             ConfigTools.GetSettingsEntries(Resources.AddonResources.AddonSaverSettings);
 
+        #region Matrix
+        /// <summary>
+        /// [Matrix] How many milliseconds to wait before making the next write?
+        /// </summary>
+        public int MatrixDelay { get; set; } = 10;
+        /// <summary>
+        /// [Matrix] How many fade steps to do?
+        /// </summary>
+        public int MatrixMaxSteps { get; set; } = 25;
+        #endregion
+
         /// <summary>
         /// [ColorMix] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>

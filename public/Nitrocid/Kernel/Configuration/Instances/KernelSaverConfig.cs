@@ -32,17 +32,6 @@ namespace Nitrocid.Kernel.Configuration.Instances
         public override SettingsEntry[] SettingsEntries =>
             ConfigTools.GetSettingsEntries(Resources.SettingsResources.ScreensaverSettingsEntries);
 
-        #region Matrix
-        /// <summary>
-        /// [Matrix] How many milliseconds to wait before making the next write?
-        /// </summary>
-        public int MatrixDelay { get; set; } = 10;
-        /// <summary>
-        /// [Matrix] How many fade steps to do?
-        /// </summary>
-        public int MatrixMaxSteps { get; set; } = 25;
-        #endregion
-
         #region MatrixBleed
         /// <summary>
         /// [MatrixBleed] How many milliseconds to wait before making the next write?
