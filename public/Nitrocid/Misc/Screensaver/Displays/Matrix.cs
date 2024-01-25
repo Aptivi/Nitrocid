@@ -133,15 +133,15 @@ namespace Nitrocid.Misc.Screensaver.Displays
                     break;
 
                 // Set thresholds
-                double ThresholdRed = foreground.R / (double)MatrixSettings.MatrixMaxSteps;
-                double ThresholdGreen = foreground.G / (double)MatrixSettings.MatrixMaxSteps;
-                double ThresholdBlue = foreground.B / (double)MatrixSettings.MatrixMaxSteps;
+                double ThresholdRed = foreground.RGB.R / (double)MatrixSettings.MatrixMaxSteps;
+                double ThresholdGreen = foreground.RGB.G / (double)MatrixSettings.MatrixMaxSteps;
+                double ThresholdBlue = foreground.RGB.B / (double)MatrixSettings.MatrixMaxSteps;
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Color threshold (R;G;B: {0})", ThresholdRed, ThresholdGreen, ThresholdBlue);
 
                 // Set color fade steps
-                int CurrentColorRedOut = (int)Math.Round(foreground.R - ThresholdRed * StepNum);
-                int CurrentColorGreenOut = (int)Math.Round(foreground.G - ThresholdGreen * StepNum);
-                int CurrentColorBlueOut = (int)Math.Round(foreground.B - ThresholdBlue * StepNum);
+                int CurrentColorRedOut = (int)Math.Round(foreground.RGB.R - ThresholdRed * StepNum);
+                int CurrentColorGreenOut = (int)Math.Round(foreground.RGB.G - ThresholdGreen * StepNum);
+                int CurrentColorBlueOut = (int)Math.Round(foreground.RGB.B - ThresholdBlue * StepNum);
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut);
 
                 // Get the positions and write the block with new color

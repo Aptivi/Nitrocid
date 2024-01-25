@@ -42,7 +42,7 @@ namespace Nitrocid.ConsoleBase.Colors
             if (ParsingTools.IsSpecifierAndValueValidRgbHash(Hex))
             {
                 var color = new Color(Hex);
-                DebugWriter.WriteDebug(DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", color.R, color.G, color.B);
+                DebugWriter.WriteDebug(DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", color.RGB.R, color.RGB.G, color.RGB.B);
                 return color.RGB.ToString();
             }
             else

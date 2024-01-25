@@ -109,14 +109,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Prepare the colors
             int steps = BloomSettings.BloomSteps;
-            double thresholdR = (currentColor.R - nextColor.R) / (double)steps;
-            double thresholdG = (currentColor.G - nextColor.G) / (double)steps;
-            double thresholdB = (currentColor.B - nextColor.B) / (double)steps;
+            double thresholdR = (currentColor.RGB.R - nextColor.RGB.R) / (double)steps;
+            double thresholdG = (currentColor.RGB.G - nextColor.RGB.G) / (double)steps;
+            double thresholdB = (currentColor.RGB.B - nextColor.RGB.B) / (double)steps;
 
             // Now, transition from black to the target color
-            double currentR = currentColor.R;
-            double currentG = currentColor.G;
-            double currentB = currentColor.B;
+            double currentR = currentColor.RGB.R;
+            double currentG = currentColor.RGB.G;
+            double currentB = currentColor.RGB.B;
             for (int currentStep = 1; currentStep <= steps; currentStep++)
             {
                 if (ConsoleResizeHandler.WasResized(false))

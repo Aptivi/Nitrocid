@@ -57,11 +57,11 @@ namespace Nitrocid.Extras.ColorConvert.Commands
             // Do the job
             var color = new Color($"yuv:{Y};{U};{V}");
             TextWriters.Write("- " + Translate.DoTranslation("Red color level:") + " ", false, KernelColorType.ListEntry);
-            TextWriters.Write($"{color.R}", true, KernelColorType.ListValue);
+            TextWriters.Write($"{color.RGB.R}", true, KernelColorType.ListValue);
             TextWriters.Write("- " + Translate.DoTranslation("Green color level:") + " ", false, KernelColorType.ListEntry);
-            TextWriters.Write($"{color.G}", true, KernelColorType.ListValue);
+            TextWriters.Write($"{color.RGB.G}", true, KernelColorType.ListValue);
             TextWriters.Write("- " + Translate.DoTranslation("Blue color level:") + " ", false, KernelColorType.ListEntry);
-            TextWriters.Write($"{color.B}", true, KernelColorType.ListValue);
+            TextWriters.Write($"{color.RGB.B}", true, KernelColorType.ListValue);
             variableValue = color.PlainSequence;
             return 0;
         }

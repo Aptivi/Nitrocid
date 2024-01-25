@@ -75,9 +75,9 @@ namespace Nitrocid.SplashPacks.Splashes
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Splash displaying.");
                 ConsoleWrapper.CursorVisible = false;
-                int RedColorNum = _currentColor.R;
-                int GreenColorNum = _currentColor.G;
-                int BlueColorNum = _currentColor.B;
+                int RedColorNum = _currentColor.RGB.R;
+                int GreenColorNum = _currentColor.RGB.G;
+                int BlueColorNum = _currentColor.RGB.B;
 
                 // Check the text
                 DebugWriter.WriteDebug(DebugLevel.I, "Selected left and top: {0}, {1}", _left, _top);

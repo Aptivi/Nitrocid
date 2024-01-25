@@ -116,9 +116,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                 // Finally, fade out
                 int steps = 25;
-                int currentR = color.R;
-                int currentG = color.G;
-                int currentB = color.B;
+                int currentR = color.RGB.R;
+                int currentG = color.RGB.G;
+                int currentB = color.RGB.B;
                 double thresholdRed = currentR / (double)steps;
                 double thresholdGreen = currentG / (double)steps;
                 double thresholdBlue = currentB / (double)steps;
@@ -129,9 +129,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                     // Fade out to black by getting its threshold
                     RefreshStars();
-                    currentR = (int)Math.Round(color.R - thresholdRed * j);
-                    currentG = (int)Math.Round(color.G - thresholdGreen * j);
-                    currentB = (int)Math.Round(color.B - thresholdBlue * j);
+                    currentR = (int)Math.Round(color.RGB.R - thresholdRed * j);
+                    currentG = (int)Math.Round(color.RGB.G - thresholdGreen * j);
+                    currentB = (int)Math.Round(color.RGB.B - thresholdBlue * j);
                     Color result = new(currentR, currentG, currentB);
 
                     // Actually print things out

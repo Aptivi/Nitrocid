@@ -84,18 +84,18 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         ColorTools.LoadBackDry(black);
 
                         // Get the color thresholds
-                        double thresholdGR = green.R / (double)colorSteps;
-                        double thresholdGG = green.G / (double)colorSteps;
-                        double thresholdGB = green.B / (double)colorSteps;
-                        double thresholdRR = red.R / (double)colorSteps;
-                        double thresholdRG = red.G / (double)colorSteps;
-                        double thresholdRB = red.B / (double)colorSteps;
-                        double thresholdPR = pink.R / (double)colorSteps;
-                        double thresholdPG = pink.G / (double)colorSteps;
-                        double thresholdPB = pink.B / (double)colorSteps;
-                        double thresholdBR = blue.R / (double)colorSteps;
-                        double thresholdBG = blue.G / (double)colorSteps;
-                        double thresholdBB = blue.B / (double)colorSteps;
+                        double thresholdGR = green.RGB.R / (double)colorSteps;
+                        double thresholdGG = green.RGB.G / (double)colorSteps;
+                        double thresholdGB = green.RGB.B / (double)colorSteps;
+                        double thresholdRR = red.RGB.R / (double)colorSteps;
+                        double thresholdRG = red.RGB.G / (double)colorSteps;
+                        double thresholdRB = red.RGB.B / (double)colorSteps;
+                        double thresholdPR = pink.RGB.R / (double)colorSteps;
+                        double thresholdPG = pink.RGB.G / (double)colorSteps;
+                        double thresholdPB = pink.RGB.B / (double)colorSteps;
+                        double thresholdBR = blue.RGB.R / (double)colorSteps;
+                        double thresholdBG = blue.RGB.G / (double)colorSteps;
+                        double thresholdBB = blue.RGB.B / (double)colorSteps;
 
                         // Now, transition
                         for (int currentStep = 1; currentStep <= colorSteps; currentStep++)
@@ -286,18 +286,18 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     // Step 6: With the figlet text, the background fades out
                     case 6:
                         // Get the color thresholds
-                        double thresholdR = green.R / (double)colorSteps;
-                        double thresholdG = green.G / (double)colorSteps;
-                        double thresholdB = green.B / (double)colorSteps;
-                        double thresholdBGR = white.R / (double)colorSteps;
-                        double thresholdBGG = white.G / (double)colorSteps;
-                        double thresholdBGB = white.B / (double)colorSteps;
-                        currentR = green.R;
-                        currentG = green.G;
-                        currentB = green.B;
-                        int currentBGR = white.R;
-                        int currentBGG = white.G;
-                        int currentBGB = white.B;
+                        double thresholdR = green.RGB.R / (double)colorSteps;
+                        double thresholdG = green.RGB.G / (double)colorSteps;
+                        double thresholdB = green.RGB.B / (double)colorSteps;
+                        double thresholdBGR = white.RGB.R / (double)colorSteps;
+                        double thresholdBGG = white.RGB.G / (double)colorSteps;
+                        double thresholdBGB = white.RGB.B / (double)colorSteps;
+                        currentR = green.RGB.R;
+                        currentG = green.RGB.G;
+                        currentB = green.RGB.B;
+                        int currentBGR = white.RGB.R;
+                        int currentBGG = white.RGB.G;
+                        int currentBGB = white.RGB.B;
                         for (int currentStep = 1; currentStep <= colorSteps; currentStep++)
                         {
                             if (ConsoleResizeHandler.WasResized(false))

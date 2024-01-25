@@ -74,9 +74,9 @@ namespace Nitrocid.ScreensaverPacks.Animations.BeatEdgePulse
                 var UserColor = new Color(Settings.BeatEdgePulseBeatColor);
                 if (UserColor.Type == ColorType.TrueColor)
                 {
-                    RedColorNum = UserColor.R;
-                    GreenColorNum = UserColor.G;
-                    BlueColorNum = UserColor.B;
+                    RedColorNum = UserColor.RGB.R;
+                    GreenColorNum = UserColor.RGB.G;
+                    BlueColorNum = UserColor.RGB.B;
                 }
                 else
                 {

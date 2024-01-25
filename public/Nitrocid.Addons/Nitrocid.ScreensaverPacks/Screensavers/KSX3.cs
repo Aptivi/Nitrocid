@@ -88,15 +88,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         int colorSteps = 30;
 
                         // Get the color thresholds
-                        double thresholdGR = green.R / (double)colorSteps;
-                        double thresholdGG = green.G / (double)colorSteps;
-                        double thresholdGB = green.B / (double)colorSteps;
-                        double thresholdRR = red.R / (double)colorSteps;
-                        double thresholdRG = red.G / (double)colorSteps;
-                        double thresholdRB = red.B / (double)colorSteps;
-                        double thresholdPR = pink.R / (double)colorSteps;
-                        double thresholdPG = pink.G / (double)colorSteps;
-                        double thresholdPB = pink.B / (double)colorSteps;
+                        double thresholdGR = green.RGB.R / (double)colorSteps;
+                        double thresholdGG = green.RGB.G / (double)colorSteps;
+                        double thresholdGB = green.RGB.B / (double)colorSteps;
+                        double thresholdRR = red.RGB.R / (double)colorSteps;
+                        double thresholdRG = red.RGB.G / (double)colorSteps;
+                        double thresholdRB = red.RGB.B / (double)colorSteps;
+                        double thresholdPR = pink.RGB.R / (double)colorSteps;
+                        double thresholdPG = pink.RGB.G / (double)colorSteps;
+                        double thresholdPB = pink.RGB.B / (double)colorSteps;
 
                         // Now, transition
                         int currentR = 0;
@@ -193,9 +193,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         colorSteps = 30;
 
                         // Get the color thresholds
-                        thresholdPR = pink.R / (double)colorSteps;
-                        thresholdPG = pink.G / (double)colorSteps;
-                        thresholdPB = pink.B / (double)colorSteps;
+                        thresholdPR = pink.RGB.R / (double)colorSteps;
+                        thresholdPG = pink.RGB.G / (double)colorSteps;
+                        thresholdPB = pink.RGB.B / (double)colorSteps;
 
                         // Now, transition from target color to black
                         int currentBackR = 0;
@@ -225,9 +225,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         colorSteps = 30;
 
                         // Get the color thresholds
-                        thresholdPR = pink.R / (double)colorSteps;
-                        thresholdPG = pink.G / (double)colorSteps;
-                        thresholdPB = pink.B / (double)colorSteps;
+                        thresholdPR = pink.RGB.R / (double)colorSteps;
+                        thresholdPG = pink.RGB.G / (double)colorSteps;
+                        thresholdPB = pink.RGB.B / (double)colorSteps;
 
                         // Now, transition from target color to black
                         currentR = 255;
@@ -404,17 +404,17 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         colorSteps = 30;
 
                         // Get the color thresholds
-                        double transitionThresholdR = (selectedColor.R - white.R) / (double)colorSteps;
-                        double transitionThresholdG = (selectedColor.G - white.G) / (double)colorSteps;
-                        double transitionThresholdB = (selectedColor.B - white.B) / (double)colorSteps;
-                        double thresholdR = selectedColor.R / (double)colorSteps;
-                        double thresholdG = selectedColor.G / (double)colorSteps;
-                        double thresholdB = selectedColor.B / (double)colorSteps;
+                        double transitionThresholdR = (selectedColor.RGB.R - white.RGB.R) / (double)colorSteps;
+                        double transitionThresholdG = (selectedColor.RGB.G - white.RGB.G) / (double)colorSteps;
+                        double transitionThresholdB = (selectedColor.RGB.B - white.RGB.B) / (double)colorSteps;
+                        double thresholdR = selectedColor.RGB.R / (double)colorSteps;
+                        double thresholdG = selectedColor.RGB.G / (double)colorSteps;
+                        double thresholdB = selectedColor.RGB.B / (double)colorSteps;
 
                         // Now, transition from black to the target color
-                        currentR = white.R;
-                        currentG = white.G;
-                        currentB = white.B;
+                        currentR = white.RGB.R;
+                        currentG = white.RGB.G;
+                        currentB = white.RGB.B;
                         for (int currentStep = 1; currentStep <= colorSteps; currentStep++)
                         {
                             if (ConsoleResizeHandler.WasResized(false))
@@ -456,9 +456,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         colorSteps = 30;
 
                         // Get the color thresholds
-                        thresholdR = selectedColor.R / (double)colorSteps;
-                        thresholdG = selectedColor.G / (double)colorSteps;
-                        thresholdB = selectedColor.B / (double)colorSteps;
+                        thresholdR = selectedColor.RGB.R / (double)colorSteps;
+                        thresholdG = selectedColor.RGB.G / (double)colorSteps;
+                        thresholdB = selectedColor.RGB.B / (double)colorSteps;
 
                         // Now, transition from black to the target color
                         currentR = 0;
@@ -490,9 +490,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                                 break;
 
                             // Remove the values according to the threshold
-                            currentR = (int)Math.Round(selectedColor.R - thresholdR * currentStep);
-                            currentG = (int)Math.Round(selectedColor.G - thresholdG * currentStep);
-                            currentB = (int)Math.Round(selectedColor.B - thresholdB * currentStep);
+                            currentR = (int)Math.Round(selectedColor.RGB.R - thresholdR * currentStep);
+                            currentG = (int)Math.Round(selectedColor.RGB.G - thresholdG * currentStep);
+                            currentB = (int)Math.Round(selectedColor.RGB.B - thresholdB * currentStep);
 
                             // Now, make a color and write the X character using figlet
                             Color col = new(currentR, currentG, currentB);
@@ -570,9 +570,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         colorSteps = 30;
 
                         // Get the color thresholds
-                        thresholdR = selectedColor.R / (double)colorSteps;
-                        thresholdG = selectedColor.G / (double)colorSteps;
-                        thresholdB = selectedColor.B / (double)colorSteps;
+                        thresholdR = selectedColor.RGB.R / (double)colorSteps;
+                        thresholdG = selectedColor.RGB.G / (double)colorSteps;
+                        thresholdB = selectedColor.RGB.B / (double)colorSteps;
 
                         // Now, transition from target color to black
                         for (int currentStep = 1; currentStep <= colorSteps; currentStep++)
@@ -581,9 +581,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                                 break;
 
                             // Remove the values according to the threshold
-                            currentR = (int)Math.Round(selectedColor.R - thresholdR * currentStep);
-                            currentG = (int)Math.Round(selectedColor.G - thresholdG * currentStep);
-                            currentB = (int)Math.Round(selectedColor.B - thresholdB * currentStep);
+                            currentR = (int)Math.Round(selectedColor.RGB.R - thresholdR * currentStep);
+                            currentG = (int)Math.Round(selectedColor.RGB.G - thresholdG * currentStep);
+                            currentB = (int)Math.Round(selectedColor.RGB.B - thresholdB * currentStep);
 
                             // Now, make a color and fill the console with it
                             Color col = new(currentR, currentG, currentB);

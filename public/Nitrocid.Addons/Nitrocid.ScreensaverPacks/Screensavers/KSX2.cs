@@ -83,9 +83,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         int colorSteps = 30;
 
                         // Get the color thresholds
-                        double thresholdR = white.R / (double)colorSteps;
-                        double thresholdG = white.G / (double)colorSteps;
-                        double thresholdB = white.B / (double)colorSteps;
+                        double thresholdR = white.RGB.R / (double)colorSteps;
+                        double thresholdG = white.RGB.G / (double)colorSteps;
+                        double thresholdB = white.RGB.B / (double)colorSteps;
 
                         // Now, transition from target color to black
                         for (int currentStep = 1; currentStep <= colorSteps; currentStep++)
@@ -94,9 +94,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                                 break;
 
                             // Remove the values according to the threshold
-                            int currentRColor = (int)Math.Round(white.R - thresholdR * currentStep);
-                            int currentGColor = (int)Math.Round(white.G - thresholdG * currentStep);
-                            int currentBColor = (int)Math.Round(white.B - thresholdB * currentStep);
+                            int currentRColor = (int)Math.Round(white.RGB.R - thresholdR * currentStep);
+                            int currentGColor = (int)Math.Round(white.RGB.G - thresholdG * currentStep);
+                            int currentBColor = (int)Math.Round(white.RGB.B - thresholdB * currentStep);
 
                             // Now, make a color and fill the console with it
                             Color col = new(currentRColor, currentGColor, currentBColor);
@@ -111,12 +111,12 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         colorSteps = 30;
 
                         // Get the color thresholds
-                        thresholdR = darkGreen.R / (double)colorSteps;
-                        thresholdG = darkGreen.G / (double)colorSteps;
-                        thresholdB = darkGreen.B / (double)colorSteps;
-                        double transitionThresholdR = (darkRed.R - darkGreen.R) / (double)colorSteps;
-                        double transitionThresholdG = (darkRed.G - darkGreen.G) / (double)colorSteps;
-                        double transitionThresholdB = (darkRed.B - darkGreen.B) / (double)colorSteps;
+                        thresholdR = darkGreen.RGB.R / (double)colorSteps;
+                        thresholdG = darkGreen.RGB.G / (double)colorSteps;
+                        thresholdB = darkGreen.RGB.B / (double)colorSteps;
+                        double transitionThresholdR = (darkRed.RGB.R - darkGreen.RGB.R) / (double)colorSteps;
+                        double transitionThresholdG = (darkRed.RGB.G - darkGreen.RGB.G) / (double)colorSteps;
+                        double transitionThresholdB = (darkRed.RGB.B - darkGreen.RGB.B) / (double)colorSteps;
 
                         // Now, transition from black to the target color
                         int currentR = 0;
@@ -283,12 +283,12 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     // Step 9: Show a figlet text "X" while flashing between yellow and red, the yellow color slowly changing to green
                     case 9:
                         maxFlashes = 50;
-                        double toGreenThresholdR = (green.R - yellow.R) / maxFlashes;
-                        double toGreenThresholdG = (green.G - yellow.G) / maxFlashes;
-                        double toGreenThresholdB = (green.B - yellow.B) / maxFlashes;
-                        int currentRotR = yellow.R;
-                        int currentRotG = yellow.G;
-                        int currentRotB = yellow.B;
+                        double toGreenThresholdR = (green.RGB.R - yellow.RGB.R) / maxFlashes;
+                        double toGreenThresholdG = (green.RGB.G - yellow.RGB.G) / maxFlashes;
+                        double toGreenThresholdB = (green.RGB.B - yellow.RGB.B) / maxFlashes;
+                        int currentRotR = yellow.RGB.R;
+                        int currentRotG = yellow.RGB.G;
+                        int currentRotB = yellow.RGB.B;
                         for (int flashes = 0; flashes <= maxFlashes; flashes++)
                         {
                             bool showRot = flashes % 2 != 0;
@@ -328,14 +328,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         colorSteps = 30;
 
                         // Get the color thresholds
-                        double toBlackThresholdR = (black.R - red.R) / colorSteps;
-                        double toBlackThresholdG = (black.G - red.G) / colorSteps;
-                        double toBlackThresholdB = (black.B - red.B) / colorSteps;
+                        double toBlackThresholdR = (black.RGB.R - red.RGB.R) / colorSteps;
+                        double toBlackThresholdG = (black.RGB.G - red.RGB.G) / colorSteps;
+                        double toBlackThresholdB = (black.RGB.B - red.RGB.B) / colorSteps;
 
                         // Now, transition from red to black
-                        int currentFigletR = red.R;
-                        int currentFigletG = red.G;
-                        int currentFigletB = red.B;
+                        int currentFigletR = red.RGB.R;
+                        int currentFigletG = red.RGB.G;
+                        int currentFigletB = red.RGB.B;
                         for (int currentStep = 1; currentStep <= colorSteps; currentStep++)
                         {
                             if (ConsoleResizeHandler.WasResized(false))
@@ -360,9 +360,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         colorSteps = 30;
 
                         // Get the color thresholds
-                        thresholdR = red.R / (double)colorSteps;
-                        thresholdG = red.G / (double)colorSteps;
-                        thresholdB = red.B / (double)colorSteps;
+                        thresholdR = red.RGB.R / (double)colorSteps;
+                        thresholdG = red.RGB.G / (double)colorSteps;
+                        thresholdB = red.RGB.B / (double)colorSteps;
 
                         // Now, transition from target color to black
                         for (int currentStep = 1; currentStep <= colorSteps; currentStep++)
@@ -371,9 +371,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                                 break;
 
                             // Remove the values according to the threshold
-                            int currentRColor = (int)Math.Round(red.R - thresholdR * currentStep);
-                            int currentGColor = (int)Math.Round(red.G - thresholdG * currentStep);
-                            int currentBColor = (int)Math.Round(red.B - thresholdB * currentStep);
+                            int currentRColor = (int)Math.Round(red.RGB.R - thresholdR * currentStep);
+                            int currentGColor = (int)Math.Round(red.RGB.G - thresholdG * currentStep);
+                            int currentBColor = (int)Math.Round(red.RGB.B - thresholdB * currentStep);
 
                             // Now, make a color and fill the console with it
                             Color col = new(currentRColor, currentGColor, currentBColor);

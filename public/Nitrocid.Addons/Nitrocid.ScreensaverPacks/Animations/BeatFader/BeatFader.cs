@@ -76,9 +76,9 @@ namespace Nitrocid.ScreensaverPacks.Animations.BeatFader
                 var UserColor = new Color(Settings.BeatFaderBeatColor);
                 if (UserColor.Type == ColorType.TrueColor)
                 {
-                    RedColorNum = UserColor.R;
-                    GreenColorNum = UserColor.G;
-                    BlueColorNum = UserColor.B;
+                    RedColorNum = UserColor.RGB.R;
+                    GreenColorNum = UserColor.RGB.G;
+                    BlueColorNum = UserColor.RGB.B;
                 }
                 else
                 {

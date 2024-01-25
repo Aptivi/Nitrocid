@@ -80,9 +80,9 @@ namespace Nitrocid.ScreensaverPacks.Animations.ExcaliBeats
                 var UserColor = new Color(Settings.ExcaliBeatsBeatColor);
                 if (UserColor.Type == ColorType.TrueColor)
                 {
-                    RedColorNum = UserColor.R;
-                    GreenColorNum = UserColor.G;
-                    BlueColorNum = UserColor.B;
+                    RedColorNum = UserColor.RGB.R;
+                    GreenColorNum = UserColor.RGB.G;
+                    BlueColorNum = UserColor.RGB.B;
                 }
                 else
                 {

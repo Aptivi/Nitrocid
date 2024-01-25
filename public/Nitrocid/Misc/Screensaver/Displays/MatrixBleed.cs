@@ -206,15 +206,15 @@ namespace Nitrocid.Misc.Screensaver.Displays
                 return;
 
             // Set thresholds
-            double ThresholdRed = foreground.R / (double)MatrixBleedSettings.MatrixBleedMaxSteps;
-            double ThresholdGreen = foreground.G / (double)MatrixBleedSettings.MatrixBleedMaxSteps;
-            double ThresholdBlue = foreground.B / (double)MatrixBleedSettings.MatrixBleedMaxSteps;
+            double ThresholdRed = foreground.RGB.R / (double)MatrixBleedSettings.MatrixBleedMaxSteps;
+            double ThresholdGreen = foreground.RGB.G / (double)MatrixBleedSettings.MatrixBleedMaxSteps;
+            double ThresholdBlue = foreground.RGB.B / (double)MatrixBleedSettings.MatrixBleedMaxSteps;
             DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Color threshold (R;G;B: {0})", ThresholdRed, ThresholdGreen, ThresholdBlue);
 
             // Set color fade steps
-            int CurrentColorRedOut = (int)Math.Round(foreground.R - ThresholdRed * fadeStep);
-            int CurrentColorGreenOut = (int)Math.Round(foreground.G - ThresholdGreen * fadeStep);
-            int CurrentColorBlueOut = (int)Math.Round(foreground.B - ThresholdBlue * fadeStep);
+            int CurrentColorRedOut = (int)Math.Round(foreground.RGB.R - ThresholdRed * fadeStep);
+            int CurrentColorGreenOut = (int)Math.Round(foreground.RGB.G - ThresholdGreen * fadeStep);
+            int CurrentColorBlueOut = (int)Math.Round(foreground.RGB.B - ThresholdBlue * fadeStep);
             DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut);
 
             // Get the positions and write the block with new color

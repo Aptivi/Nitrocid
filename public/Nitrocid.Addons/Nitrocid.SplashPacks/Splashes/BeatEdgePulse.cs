@@ -87,9 +87,9 @@ namespace Nitrocid.SplashPacks.Splashes
                     var UserColor = new Color(_beatedgepulseBeatColor);
                     if (UserColor.Type == ColorType.TrueColor)
                     {
-                        RedColorNum = UserColor.R;
-                        GreenColorNum = UserColor.G;
-                        BlueColorNum = UserColor.B;
+                        RedColorNum = UserColor.RGB.R;
+                        GreenColorNum = UserColor.RGB.G;
+                        BlueColorNum = UserColor.RGB.B;
                     }
                     else
                     {
@@ -122,9 +122,9 @@ namespace Nitrocid.SplashPacks.Splashes
                 ThreadManager.SleepNoBlock(BeatIntervalStep);
 
                 // If we're cycling colors, set them. Else, use the user-provided color
-                int RedColorNum = _currentColor.R;
-                int GreenColorNum = _currentColor.G;
-                int BlueColorNum = _currentColor.B;
+                int RedColorNum = _currentColor.RGB.R;
+                int GreenColorNum = _currentColor.RGB.G;
+                int BlueColorNum = _currentColor.RGB.B;
                 builder.Append(_currentColor.VTSequenceBackground);
 
                 // Set thresholds

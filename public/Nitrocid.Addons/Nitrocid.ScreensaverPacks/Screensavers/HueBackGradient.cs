@@ -115,9 +115,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Set thresholds for color ramp
             int RampFrameSpaces = ConsoleWrapper.WindowWidth;
-            int RampColorRedThreshold = color.R - reverseColor.R;
-            int RampColorGreenThreshold = color.G - reverseColor.G;
-            int RampColorBlueThreshold = color.B - reverseColor.B;
+            int RampColorRedThreshold = color.RGB.R - reverseColor.RGB.R;
+            int RampColorGreenThreshold = color.RGB.G - reverseColor.RGB.G;
+            int RampColorBlueThreshold = color.RGB.B - reverseColor.RGB.B;
             double RampColorRedSteps = RampColorRedThreshold / RampFrameSpaces;
             double RampColorGreenSteps = RampColorGreenThreshold / RampFrameSpaces;
             double RampColorBlueSteps = RampColorBlueThreshold / RampFrameSpaces;
@@ -125,9 +125,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Steps by {0} spaces (RGB: {1};{2};{3})", RampFrameSpaces, RampColorRedSteps, RampColorGreenSteps, RampColorBlueSteps);
 
             // Set the current colors
-            double RampCurrentColorRed = color.R;
-            double RampCurrentColorGreen = color.G;
-            double RampCurrentColorBlue = color.B;
+            double RampCurrentColorRed = color.RGB.R;
+            double RampCurrentColorGreen = color.RGB.G;
+            double RampCurrentColorBlue = color.RGB.B;
 
             // Fill the entire screen
             StringBuilder gradientBuilder = new();

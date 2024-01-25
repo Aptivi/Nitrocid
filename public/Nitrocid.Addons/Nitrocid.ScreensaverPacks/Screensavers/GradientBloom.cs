@@ -116,20 +116,20 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Prepare the colors
             int steps = GradientBloomSettings.GradientBloomSteps;
-            double thresholdLeftR = (currentColorLeft.R - nextColorLeft.R) / (double)steps;
-            double thresholdLeftG = (currentColorLeft.G - nextColorLeft.G) / (double)steps;
-            double thresholdLeftB = (currentColorLeft.B - nextColorLeft.B) / (double)steps;
-            double thresholdRightR = (currentColorRight.R - nextColorRight.R) / (double)steps;
-            double thresholdRightG = (currentColorRight.G - nextColorRight.G) / (double)steps;
-            double thresholdRightB = (currentColorRight.B - nextColorRight.B) / (double)steps;
+            double thresholdLeftR = (currentColorLeft.RGB.R - nextColorLeft.RGB.R) / (double)steps;
+            double thresholdLeftG = (currentColorLeft.RGB.G - nextColorLeft.RGB.G) / (double)steps;
+            double thresholdLeftB = (currentColorLeft.RGB.B - nextColorLeft.RGB.B) / (double)steps;
+            double thresholdRightR = (currentColorRight.RGB.R - nextColorRight.RGB.R) / (double)steps;
+            double thresholdRightG = (currentColorRight.RGB.G - nextColorRight.RGB.G) / (double)steps;
+            double thresholdRightB = (currentColorRight.RGB.B - nextColorRight.RGB.B) / (double)steps;
 
             // Now, transition from black to the target color
-            double currentLeftR = currentColorLeft.R;
-            double currentLeftG = currentColorLeft.G;
-            double currentLeftB = currentColorLeft.B;
-            double currentRightR = currentColorRight.R;
-            double currentRightG = currentColorRight.G;
-            double currentRightB = currentColorRight.B;
+            double currentLeftR = currentColorLeft.RGB.R;
+            double currentLeftG = currentColorLeft.RGB.G;
+            double currentLeftB = currentColorLeft.RGB.B;
+            double currentRightR = currentColorRight.RGB.R;
+            double currentRightG = currentColorRight.RGB.G;
+            double currentRightB = currentColorRight.RGB.B;
             for (int currentStep = 1; currentStep <= steps; currentStep++)
             {
                 if (ConsoleResizeHandler.WasResized(false))
@@ -146,14 +146,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 // Now, make a color
                 Color colLeft = new((int)currentLeftR, (int)currentLeftG, (int)currentLeftB);
                 Color colRight = new((int)currentRightR, (int)currentRightG, (int)currentRightB);
-                double currentR = colLeft.R;
-                double currentG = colLeft.G;
-                double currentB = colLeft.B;
+                double currentR = colLeft.RGB.R;
+                double currentG = colLeft.RGB.G;
+                double currentB = colLeft.RGB.B;
 
                 // Populate final thresholds
-                double thresholdR = (colLeft.R - colRight.R) / (double)ConsoleWrapper.WindowWidth;
-                double thresholdG = (colLeft.G - colRight.G) / (double)ConsoleWrapper.WindowWidth;
-                double thresholdB = (colLeft.B - colRight.B) / (double)ConsoleWrapper.WindowWidth;
+                double thresholdR = (colLeft.RGB.R - colRight.RGB.R) / (double)ConsoleWrapper.WindowWidth;
+                double thresholdG = (colLeft.RGB.G - colRight.RGB.G) / (double)ConsoleWrapper.WindowWidth;
+                double thresholdB = (colLeft.RGB.B - colRight.RGB.B) / (double)ConsoleWrapper.WindowWidth;
 
                 // Now, make a final color and make a gradient.
                 StringBuilder buffered = new();

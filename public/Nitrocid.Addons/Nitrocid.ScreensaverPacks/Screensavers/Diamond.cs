@@ -94,7 +94,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             int maxLeft = halfWidth + 8;
 
             // Get the color shades
-            var colorShaded = new Color(selectedColor.R / 3, selectedColor.G / 3, selectedColor.B / 3);
+            var colorShaded = new Color(selectedColor.RGB.R / 3, selectedColor.RGB.G / 3, selectedColor.RGB.B / 3);
             int shinePlaceX = halfWidth;
             int shinePlaceY = halfHeight - (halfWidth - minLeft);
             int shinePlaceX2 = minLeft;
@@ -149,13 +149,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             if (shining)
             {
                 // Get the shined color
-                int shinedR = selectedColor.R * 2;
+                int shinedR = selectedColor.RGB.R * 2;
                 if (shinedR > 255)
                     shinedR = 255;
-                int shinedG = selectedColor.G * 2;
+                int shinedG = selectedColor.RGB.G * 2;
                 if (shinedG > 255)
                     shinedG = 255;
-                int shinedB = selectedColor.B * 2;
+                int shinedB = selectedColor.RGB.B * 2;
                 if (shinedB > 255)
                     shinedB = 255;
                 var shined = new Color(shinedR, shinedG, shinedB);
@@ -163,26 +163,26 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 // Get the threshold from either the shade (for the bottom), the diamond color (for the center), or the
                 // black color (the rest of the directions)
                 var black = new Color(ConsoleColors.Black);
-                double thresholdBottomR = (colorShaded.R - shined.R) / (double)maxShineSteps;
-                double thresholdBottomG = (colorShaded.G - shined.G) / (double)maxShineSteps;
-                double thresholdBottomB = (colorShaded.B - shined.B) / (double)maxShineSteps;
-                double thresholdCenterR = (selectedColor.R - shined.R) / (double)maxShineSteps;
-                double thresholdCenterG = (selectedColor.G - shined.G) / (double)maxShineSteps;
-                double thresholdCenterB = (selectedColor.B - shined.B) / (double)maxShineSteps;
-                double thresholdRestR = (black.R - shined.R) / (double)maxShineSteps;
-                double thresholdRestG = (black.G - shined.G) / (double)maxShineSteps;
-                double thresholdRestB = (black.B - shined.B) / (double)maxShineSteps;
+                double thresholdBottomR = (colorShaded.RGB.R - shined.RGB.R) / (double)maxShineSteps;
+                double thresholdBottomG = (colorShaded.RGB.G - shined.RGB.G) / (double)maxShineSteps;
+                double thresholdBottomB = (colorShaded.RGB.B - shined.RGB.B) / (double)maxShineSteps;
+                double thresholdCenterR = (selectedColor.RGB.R - shined.RGB.R) / (double)maxShineSteps;
+                double thresholdCenterG = (selectedColor.RGB.G - shined.RGB.G) / (double)maxShineSteps;
+                double thresholdCenterB = (selectedColor.RGB.B - shined.RGB.B) / (double)maxShineSteps;
+                double thresholdRestR = (black.RGB.R - shined.RGB.R) / (double)maxShineSteps;
+                double thresholdRestG = (black.RGB.G - shined.RGB.G) / (double)maxShineSteps;
+                double thresholdRestB = (black.RGB.B - shined.RGB.B) / (double)maxShineSteps;
 
                 // Now, transition to the target color
-                double currentBottomR = colorShaded.R;
-                double currentBottomG = colorShaded.G;
-                double currentBottomB = colorShaded.B;
-                double currentCenterR = selectedColor.R;
-                double currentCenterG = selectedColor.G;
-                double currentCenterB = selectedColor.B;
-                double currentRestR = black.R;
-                double currentRestG = black.G;
-                double currentRestB = black.B;
+                double currentBottomR = colorShaded.RGB.R;
+                double currentBottomG = colorShaded.RGB.G;
+                double currentBottomB = colorShaded.RGB.B;
+                double currentCenterR = selectedColor.RGB.R;
+                double currentCenterG = selectedColor.RGB.G;
+                double currentCenterB = selectedColor.RGB.B;
+                double currentRestR = black.RGB.R;
+                double currentRestG = black.RGB.G;
+                double currentRestB = black.RGB.B;
                 for (int currentStep = 1; currentStep <= maxShineSteps; currentStep++)
                 {
                     if (ConsoleResizeHandler.WasResized(false))

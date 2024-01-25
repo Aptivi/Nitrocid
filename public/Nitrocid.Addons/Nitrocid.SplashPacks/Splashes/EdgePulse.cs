@@ -72,9 +72,9 @@ namespace Nitrocid.SplashPacks.Splashes
                 ConsoleWrapper.CursorVisible = false;
 
                 // Get color levels
-                int RedColorNum = _currentColor.R;
-                int GreenColorNum = _currentColor.G;
-                int BlueColorNum = _currentColor.B;
+                int RedColorNum = _currentColor.RGB.R;
+                int GreenColorNum = _currentColor.RGB.G;
+                int BlueColorNum = _currentColor.RGB.B;
 
                 // Set thresholds
                 double ThresholdRed = RedColorNum / (double)_edgepulseMaxSteps;

@@ -80,9 +80,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         int colorSteps = 30;
 
                         // Get the color thresholds
-                        double thresholdR = darkGreen.R / (double)colorSteps;
-                        double thresholdG = darkGreen.G / (double)colorSteps;
-                        double thresholdB = darkGreen.B / (double)colorSteps;
+                        double thresholdR = darkGreen.RGB.R / (double)colorSteps;
+                        double thresholdG = darkGreen.RGB.G / (double)colorSteps;
+                        double thresholdB = darkGreen.RGB.B / (double)colorSteps;
 
                         // Now, transition from black to the target color
                         int currentR = 0;
@@ -129,9 +129,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         colorSteps = 30;
 
                         // Get the color thresholds
-                        thresholdR = darkGreen.R / (double)colorSteps;
-                        thresholdG = darkGreen.G / (double)colorSteps;
-                        thresholdB = darkGreen.B / (double)colorSteps;
+                        thresholdR = darkGreen.RGB.R / (double)colorSteps;
+                        thresholdG = darkGreen.RGB.G / (double)colorSteps;
+                        thresholdB = darkGreen.RGB.B / (double)colorSteps;
 
                         // Now, transition from black to the target color
                         for (int currentStep = 1; currentStep <= colorSteps; currentStep++)
@@ -140,9 +140,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                                 break;
 
                             // Remove the values according to the threshold
-                            currentR = (int)Math.Round(darkGreen.R - thresholdR * currentStep);
-                            currentG = (int)Math.Round(darkGreen.G - thresholdG * currentStep);
-                            currentB = (int)Math.Round(darkGreen.B - thresholdB * currentStep);
+                            currentR = (int)Math.Round(darkGreen.RGB.R - thresholdR * currentStep);
+                            currentG = (int)Math.Round(darkGreen.RGB.G - thresholdG * currentStep);
+                            currentB = (int)Math.Round(darkGreen.RGB.B - thresholdB * currentStep);
 
                             // Now, make a color and write the X character using figlet
                             Color col = new(currentR, currentG, currentB);
@@ -219,9 +219,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         colorSteps = 30;
 
                         // Get the color thresholds
-                        thresholdR = darkGreen.R / (double)colorSteps;
-                        thresholdG = darkGreen.G / (double)colorSteps;
-                        thresholdB = darkGreen.B / (double)colorSteps;
+                        thresholdR = darkGreen.RGB.R / (double)colorSteps;
+                        thresholdG = darkGreen.RGB.G / (double)colorSteps;
+                        thresholdB = darkGreen.RGB.B / (double)colorSteps;
 
                         // Now, transition from target color to black
                         for (int currentStep = 1; currentStep <= colorSteps; currentStep++)
@@ -230,9 +230,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                                 break;
 
                             // Remove the values according to the threshold
-                            currentR = (int)Math.Round(darkGreen.R - thresholdR * currentStep);
-                            currentG = (int)Math.Round(darkGreen.G - thresholdG * currentStep);
-                            currentB = (int)Math.Round(darkGreen.B - thresholdB * currentStep);
+                            currentR = (int)Math.Round(darkGreen.RGB.R - thresholdR * currentStep);
+                            currentG = (int)Math.Round(darkGreen.RGB.G - thresholdG * currentStep);
+                            currentB = (int)Math.Round(darkGreen.RGB.B - thresholdB * currentStep);
 
                             // Now, make a color and fill the console with it
                             Color col = new(currentR, currentG, currentB);
@@ -431,9 +431,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         colorSteps = 30;
 
                         // Get the color thresholds
-                        thresholdR = white.R / (double)colorSteps;
-                        thresholdG = white.G / (double)colorSteps;
-                        thresholdB = white.B / (double)colorSteps;
+                        thresholdR = white.RGB.R / (double)colorSteps;
+                        thresholdG = white.RGB.G / (double)colorSteps;
+                        thresholdB = white.RGB.B / (double)colorSteps;
 
                         // Now, transition from target color to black
                         for (int currentStep = 1; currentStep <= colorSteps; currentStep++)
@@ -442,9 +442,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                                 break;
 
                             // Remove the values according to the threshold
-                            currentR = (int)Math.Round(white.R - thresholdR * currentStep);
-                            currentG = (int)Math.Round(white.G - thresholdG * currentStep);
-                            currentB = (int)Math.Round(white.B - thresholdB * currentStep);
+                            currentR = (int)Math.Round(white.RGB.R - thresholdR * currentStep);
+                            currentG = (int)Math.Round(white.RGB.G - thresholdG * currentStep);
+                            currentB = (int)Math.Round(white.RGB.B - thresholdB * currentStep);
 
                             // Now, make a color and fill the console with it
                             Color col = new(currentR, currentG, currentB);

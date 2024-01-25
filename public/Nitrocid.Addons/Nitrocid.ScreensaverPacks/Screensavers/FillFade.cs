@@ -272,9 +272,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         break;
 
                     // Set the thresholds
-                    int RedColorNum = currentColor.R;
-                    int GreenColorNum = currentColor.G;
-                    int BlueColorNum = currentColor.B;
+                    int RedColorNum = currentColor.RGB.R;
+                    int GreenColorNum = currentColor.RGB.G;
+                    int BlueColorNum = currentColor.RGB.B;
                     double ThresholdRed = RedColorNum / (double)maxSteps;
                     double ThresholdGreen = GreenColorNum / (double)maxSteps;
                     double ThresholdBlue = BlueColorNum / (double)maxSteps;

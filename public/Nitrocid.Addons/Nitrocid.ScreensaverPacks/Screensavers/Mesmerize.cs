@@ -252,9 +252,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             int maxPositions = ConsoleWrapper.WindowWidth / 2;
             for (int i = 0; i < maxPositions; i++)
             {
-                int finalR = (int)(dotColor.R * ((maxPositions - i - 1) / (double)(maxPositions - 1)));
-                int finalG = (int)(dotColor.G * ((maxPositions - i - 1) / (double)(maxPositions - 1)));
-                int finalB = (int)(dotColor.B * ((maxPositions - i - 1) / (double)(maxPositions - 1)));
+                int finalR = (int)(dotColor.RGB.R * ((maxPositions - i - 1) / (double)(maxPositions - 1)));
+                int finalG = (int)(dotColor.RGB.G * ((maxPositions - i - 1) / (double)(maxPositions - 1)));
+                int finalB = (int)(dotColor.RGB.B * ((maxPositions - i - 1) / (double)(maxPositions - 1)));
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", finalR, finalG, finalB);
                 Color colorShade = new(finalR, finalG, finalB);
                 dotColorShades.Add(colorShade);

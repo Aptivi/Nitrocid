@@ -366,15 +366,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 return;
 
             // Set thresholds
-            double ThresholdRed = ColorStorage.R / (double)ColorBleedSettings.ColorBleedMaxSteps;
-            double ThresholdGreen = ColorStorage.G / (double)ColorBleedSettings.ColorBleedMaxSteps;
-            double ThresholdBlue = ColorStorage.B / (double)ColorBleedSettings.ColorBleedMaxSteps;
+            double ThresholdRed = ColorStorage.RGB.R / (double)ColorBleedSettings.ColorBleedMaxSteps;
+            double ThresholdGreen = ColorStorage.RGB.G / (double)ColorBleedSettings.ColorBleedMaxSteps;
+            double ThresholdBlue = ColorStorage.RGB.B / (double)ColorBleedSettings.ColorBleedMaxSteps;
             DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Color threshold (R;G;B: {0})", ThresholdRed, ThresholdGreen, ThresholdBlue);
 
             // Set color fade steps
-            int CurrentColorRedOut = (int)Math.Round(ColorStorage.R - ThresholdRed * fadeStep);
-            int CurrentColorGreenOut = (int)Math.Round(ColorStorage.G - ThresholdGreen * fadeStep);
-            int CurrentColorBlueOut = (int)Math.Round(ColorStorage.B - ThresholdBlue * fadeStep);
+            int CurrentColorRedOut = (int)Math.Round(ColorStorage.RGB.R - ThresholdRed * fadeStep);
+            int CurrentColorGreenOut = (int)Math.Round(ColorStorage.RGB.G - ThresholdGreen * fadeStep);
+            int CurrentColorBlueOut = (int)Math.Round(ColorStorage.RGB.B - ThresholdBlue * fadeStep);
             DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut);
 
             // Get the positions and write the block with new color
