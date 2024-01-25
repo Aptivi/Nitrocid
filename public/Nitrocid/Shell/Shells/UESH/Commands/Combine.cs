@@ -69,13 +69,13 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             // Make a combined content array
             if (AreAllInputsText)
             {
-                var CombinedContents = Combination.CombineTextFiles(InputPath, CombineInputPaths);
+                var CombinedContents = Manipulation.CombineTextFiles(InputPath, CombineInputPaths);
                 Making.MakeFile(OutputPath, false);
                 Writing.WriteContents(OutputPath, CombinedContents);
             }
             else
             {
-                var CombinedContents = Combination.CombineBinaryFiles(InputPath, CombineInputPaths);
+                var CombinedContents = Manipulation.CombineBinaryFiles(InputPath, CombineInputPaths);
                 Making.MakeFile(OutputPath, false);
                 Writing.WriteAllBytes(OutputPath, CombinedContents);
             }

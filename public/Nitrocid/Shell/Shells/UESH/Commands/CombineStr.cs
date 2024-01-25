@@ -39,7 +39,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             var CombineInputPaths = parameters.ArgumentsList.Skip(1).ToArray();
 
             // Make a combined content array
-            var CombinedContents = Combination.CombineTextFiles(InputPath, CombineInputPaths);
+            var CombinedContents = Manipulation.CombineTextFiles(InputPath, CombineInputPaths);
             string combinedContentsStr = string.Join("\n", CombinedContents);
             TextWriterColor.Write(combinedContentsStr);
             variableValue = combinedContentsStr;
