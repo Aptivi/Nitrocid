@@ -43,6 +43,7 @@ using Nitrocid.Kernel.Power;
 using Nitrocid.Misc.Screensaver.Displays;
 using Terminaux.Colors;
 using Terminaux.Base;
+using Nitrocid.Kernel;
 
 namespace Nitrocid.Misc.Screensaver
 {
@@ -378,7 +379,7 @@ namespace Nitrocid.Misc.Screensaver
 
         internal static void StartTimeout()
         {
-            if (!Timeout.IsAlive && scrnTimeoutEnabled)
+            if (!Timeout.IsAlive && scrnTimeoutEnabled && KernelPlatform.IsOnUsualEnvironment())
                 Timeout.Start();
         }
 
