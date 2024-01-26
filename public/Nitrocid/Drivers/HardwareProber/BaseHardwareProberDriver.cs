@@ -29,12 +29,14 @@ using Nitrocid.Languages;
 using Terminaux.Writer.FancyWriters;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Writer.ConsoleWriters;
+using System.Runtime.Serialization;
 
 namespace Nitrocid.Drivers.HardwareProber
 {
     /// <summary>
     /// Base Hardware prober driver
     /// </summary>
+    [DataContract]
     public abstract class BaseHardwareProberDriver : IHardwareProberDriver
     {
         /// <inheritdoc/>

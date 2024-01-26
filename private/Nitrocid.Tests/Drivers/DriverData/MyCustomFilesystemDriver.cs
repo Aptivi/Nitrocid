@@ -18,9 +18,11 @@
 //
 
 using Nitrocid.Drivers.Filesystem;
+using System.Runtime.Serialization;
 
 namespace Nitrocid.Tests.Drivers.DriverData
 {
+    [DataContract]
     internal class MyCustomFilesystemDriver : BaseFilesystemDriver, IFilesystemDriver
     {
         public override string DriverName => "MyCustom";

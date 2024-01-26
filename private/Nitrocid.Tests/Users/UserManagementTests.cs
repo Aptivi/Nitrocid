@@ -31,6 +31,8 @@ namespace Nitrocid.Tests.Users
     public class UserManagementTests
     {
 
+        private static bool inited = false;
+
         /// <summary>
         /// Tests user addition
         /// </summary>
@@ -40,6 +42,9 @@ namespace Nitrocid.Tests.Users
         public static void TestAddUser(TestContext tc)
 #pragma warning restore IDE0060
         {
+            if (inited)
+                return;
+            inited = true;
             UserManagement.AddUser("Account1");
             UserManagement.AddUser("Account2", "password");
             UserManagement.UserExists("Account1").ShouldBeTrue();

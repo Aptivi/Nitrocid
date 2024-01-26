@@ -205,5 +205,12 @@ namespace Nitrocid.Tests.Kernel.Debugging
             Should.Throw(() => DebugCheck.AssertFail("Always false"), typeof(KernelException));
         }
 
+        [ClassCleanup]
+        public static void RestoreSettings()
+        {
+            DriverHandler.SetDriver<IConsoleDriver>("Default");
+            DriverHandler.UnregisterDriver(DriverTypes.Console, "MyCustom");
+        }
+
     }
 }

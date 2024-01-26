@@ -18,9 +18,11 @@
 //
 
 using Nitrocid.Drivers.Network;
+using System.Runtime.Serialization;
 
 namespace Nitrocid.Tests.Drivers.DriverData
 {
+    [DataContract]
     internal class MyCustomNetworkDriver : BaseNetworkDriver, INetworkDriver
     {
         public override string DriverName => "MyCustom";

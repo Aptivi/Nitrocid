@@ -18,9 +18,11 @@
 //
 
 using Nitrocid.Drivers.Input;
+using System.Runtime.Serialization;
 
 namespace Nitrocid.Tests.Drivers.DriverData
 {
+    [DataContract]
     internal class MyCustomInputDriver : BaseInputDriver, IInputDriver
     {
         public override string DriverName => "MyCustom";

@@ -18,9 +18,11 @@
 //
 
 using Nitrocid.Drivers.Encryption;
+using System.Runtime.Serialization;
 
 namespace Nitrocid.Tests.Drivers.DriverData
 {
+    [DataContract]
     internal class MyCustomEncryptionDriver : BaseEncryptionDriver, IEncryptionDriver
     {
         public override string DriverName => "MyCustom";

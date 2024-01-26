@@ -28,12 +28,14 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Colors;
+using System.Runtime.Serialization;
 
 namespace Nitrocid.Drivers.Console
 {
     /// <summary>
     /// Base console driver
     /// </summary>
+    [DataContract]
     public abstract class BaseConsoleDriver : IConsoleDriver
     {
         internal static readonly object WriteLock = new();
@@ -197,6 +199,7 @@ namespace Nitrocid.Drivers.Console
         }
 
         /// <inheritdoc/>
+        [IgnoreDataMember]
         public virtual TextEncoding OutputEncoding
         {
             get
@@ -213,6 +216,7 @@ namespace Nitrocid.Drivers.Console
         }
 
         /// <inheritdoc/>
+        [IgnoreDataMember]
         public virtual TextEncoding InputEncoding
         {
             get

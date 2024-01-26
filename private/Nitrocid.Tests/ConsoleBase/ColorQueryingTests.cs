@@ -142,7 +142,7 @@ namespace Nitrocid.Tests.ConsoleBase
         [Description("Querying")]
         public void TestGetGrayLight()
         {
-            var expected = KernelColorTools.GetColor(KernelColorType.NeutralText);
+            var expected = new Color(ConsoleColors.Gray);
             Should.NotThrow(() => KernelColorTools.SetColor(KernelColorType.Background, new Color(255, 255, 255)));
             var color = ColorTools.GetGray();
             color.ShouldBe(expected);

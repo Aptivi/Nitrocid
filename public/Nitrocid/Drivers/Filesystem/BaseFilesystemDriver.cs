@@ -49,12 +49,14 @@ using Nitrocid.Kernel.Extensions;
 using Textify.General;
 using Terminaux.Base;
 using Nitrocid.Misc.Progress;
+using System.Runtime.Serialization;
 
 namespace Nitrocid.Drivers.Filesystem
 {
     /// <summary>
     /// Base Filesystem driver
     /// </summary>
+    [DataContract]
     public abstract class BaseFilesystemDriver : IFilesystemDriver
     {
         /// <inheritdoc/>

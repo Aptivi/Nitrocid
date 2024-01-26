@@ -18,9 +18,11 @@
 //
 
 using Nitrocid.Drivers.DebugLogger;
+using System.Runtime.Serialization;
 
 namespace Nitrocid.Tests.Drivers.DriverData
 {
+    [DataContract]
     internal class MyCustomDebugLoggerDriver : BaseDebugLoggerDriver, IDebugLoggerDriver
     {
         public override string DriverName => "MyCustom";

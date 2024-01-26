@@ -20,6 +20,7 @@
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using System.Diagnostics.CodeAnalysis;
+using System.Runtime.Serialization;
 using System.Text.RegularExpressions;
 using Textify.General;
 
@@ -28,6 +29,7 @@ namespace Nitrocid.Drivers.Regexp
     /// <summary>
     /// Base regexp driver
     /// </summary>
+    [DataContract]
     public abstract class BaseRegexpDriver : IRegexpDriver
     {
         /// <inheritdoc/>

@@ -18,9 +18,11 @@
 //
 
 using Nitrocid.Drivers.Sorting;
+using System.Runtime.Serialization;
 
 namespace Nitrocid.Tests.Drivers.DriverData
 {
+    [DataContract]
     internal class MyCustomSortingDriver : BaseSortingDriver, ISortingDriver
     {
         public override string DriverName => "MyCustom";
