@@ -23,13 +23,13 @@ using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Configuration.Instances;
 using Nitrocid.Kernel.Updates;
 using Nitrocid.Misc.Reflection;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 
 namespace Nitrocid.Tests.Misc.Reflection
 {
 
-    [TestFixture]
+    [TestClass]
     public class PropertyManagementTests
     {
 
@@ -38,7 +38,7 @@ namespace Nitrocid.Tests.Misc.Reflection
         /// <summary>
         /// Tests checking property
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestCheckProperty() =>
             PropertyManager.CheckProperty(nameof(KernelSaverConfig.MatrixBleedDelay)).ShouldBeTrue();
@@ -46,7 +46,7 @@ namespace Nitrocid.Tests.Misc.Reflection
         /// <summary>
         /// Tests getting value
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestGetPropertyValueInstance()
         {
@@ -57,7 +57,7 @@ namespace Nitrocid.Tests.Misc.Reflection
         /// <summary>
         /// Tests setting value
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestSetPropertyValueInstance()
         {
@@ -69,7 +69,7 @@ namespace Nitrocid.Tests.Misc.Reflection
         /// <summary>
         /// Tests getting value
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestGetPropertyValue()
         {
@@ -80,7 +80,7 @@ namespace Nitrocid.Tests.Misc.Reflection
         /// <summary>
         /// Tests setting value
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestSetPropertyValue()
         {
@@ -92,7 +92,7 @@ namespace Nitrocid.Tests.Misc.Reflection
         /// <summary>
         /// Tests getting variable
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestGetConfigProperty()
         {
@@ -103,7 +103,7 @@ namespace Nitrocid.Tests.Misc.Reflection
         /// <summary>
         /// Tests getting property
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestGetProperty()
         {
@@ -116,7 +116,7 @@ namespace Nitrocid.Tests.Misc.Reflection
         /// <summary>
         /// Tests getting property
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestGetPropertyGeneral()
         {
@@ -129,7 +129,7 @@ namespace Nitrocid.Tests.Misc.Reflection
         /// <summary>
         /// Tests getting properties
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestGetProperties()
         {
@@ -141,7 +141,7 @@ namespace Nitrocid.Tests.Misc.Reflection
         /// <summary>
         /// Tests getting properties
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestGetPropertiesNoEvaluation()
         {

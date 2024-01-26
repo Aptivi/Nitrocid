@@ -19,22 +19,23 @@
 
 using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Files.Paths;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System;
 using System.IO;
+using Nitrocid.Kernel;
 
 namespace Nitrocid.Tests.Files
 {
 
-    [TestFixture]
+    [TestClass]
     public class FilesystemQueryingTests
     {
 
         /// <summary>
         /// Tests checking if file exists
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestFileExists()
         {
@@ -47,7 +48,7 @@ namespace Nitrocid.Tests.Files
         /// <summary>
         /// Tests checking if directory exists
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestDirectoryExists()
         {
@@ -60,7 +61,7 @@ namespace Nitrocid.Tests.Files
         /// <summary>
         /// Tests getting the kernel path for each entry
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestGetKernelPaths()
         {
@@ -76,7 +77,7 @@ namespace Nitrocid.Tests.Files
         /// <summary>
         /// Tests checking for path registration
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestIsKernelPathRegistered()
         {
@@ -92,7 +93,7 @@ namespace Nitrocid.Tests.Files
         /// <summary>
         /// Tests checking for built-in path registration
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestIsKernelPathBuiltin()
         {
@@ -108,7 +109,7 @@ namespace Nitrocid.Tests.Files
         /// <summary>
         /// Tests the custom path registration, querying, and unregistration
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestCustomPath()
         {
@@ -122,7 +123,7 @@ namespace Nitrocid.Tests.Files
         /// <summary>
         /// Tests getting a numbered file name
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestGetNumberedFileName()
         {
@@ -133,7 +134,7 @@ namespace Nitrocid.Tests.Files
         /// <summary>
         /// Tests getting a random file name
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestGetRandomFileName()
         {
@@ -145,7 +146,7 @@ namespace Nitrocid.Tests.Files
         /// <summary>
         /// Tests getting a random directory name
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestGetRandomFolderName()
         {
@@ -157,22 +158,43 @@ namespace Nitrocid.Tests.Files
         /// <summary>
         /// Tests trying to parse the path name
         /// </summary>
-        [TestCase(@"C:\Windows", IncludePlatform = "win", ExpectedResult = true)]
-        [TestCase(@"C:\Windows<>", IncludePlatform = "win", ExpectedResult = false)]
-        [TestCase("/usr/bin", IncludePlatform = "linux,unix,macosx", ExpectedResult = true)]
-        [TestCase("/usr/bin\0", IncludePlatform = "linux,unix,macosx", ExpectedResult = false)]
+        [DataRow("/usr/bin", true)]
+        [DataRow("/usr/bin\0", false)]
         [Description("Querying")]
-        public bool TestTryParsePath(string Path) =>
-            Parsing.TryParsePath(Path);
+        public void TestTryParsePathUnix(string Path, bool expected)
+        {
+            if (KernelPlatform.IsOnUnix())
+            {
+                bool actual = Parsing.TryParsePath(Path);
+                actual.ShouldBe(expected);
+            }
+        }
+
+        /// <summary>
+        /// Tests trying to parse the path name
+        /// </summary>
+        [DataRow(@"C:\Windows", true)]
+        [DataRow(@"C:\Windows<>", false)]
+        [Description("Querying")]
+        public void TestTryParsePathWindows(string Path, bool expected)
+        {
+            if (KernelPlatform.IsOnWindows())
+            {
+                bool actual = Parsing.TryParsePath(Path);
+                actual.ShouldBe(expected);
+            }
+        }
 
         /// <summary>
         /// Tests trying to parse the file name
         /// </summary>
-        [TestCase("Windows", ExpectedResult = true)]
-        [TestCase(@"Windows/System32\", ExpectedResult = false)]
+        [DataRow("Windows", true)]
+        [DataRow(@"Windows/System32\", false)]
         [Description("Querying")]
-        public bool TestTryParseFileName(string Path) =>
-            Parsing.TryParseFileName(Path);
-
+        public void TestTryParseFileName(string Path, bool expected)
+        {
+            bool actual = Parsing.TryParseFileName(Path);
+            actual.ShouldBe(expected);
+        }
     }
 }

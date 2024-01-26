@@ -18,18 +18,18 @@
 //
 
 using Nitrocid.Shell.ShellBase.Switches;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 
 namespace Nitrocid.Tests.Shell.ShellBase.Commands
 {
-    [TestFixture]
+    [TestClass]
     public class SwitchManagerTests
     {
         /// <summary>
         /// Tests getting switch values
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestGetSwitchValues()
         {
@@ -55,7 +55,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         /// <summary>
         /// Tests getting switch values
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestGetSwitchValuesWithNonValue()
         {
@@ -82,7 +82,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         /// <summary>
         /// Tests getting switch values
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestGetSwitchValuesOneNoValue()
         {
@@ -108,7 +108,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         /// <summary>
         /// Tests getting switch values
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestGetSwitchValuesOneNoValueWithNonValue()
         {
@@ -135,7 +135,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         /// <summary>
         /// Tests getting switch values
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestGetSwitchValuesJustNonValue()
         {
@@ -149,7 +149,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         /// <summary>
         /// Tests getting switch values
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestGetSwitchValuesJustNonValueWithNonValue()
         {
@@ -164,7 +164,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         /// <summary>
         /// Tests getting switch values
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestGetSwitchValuesEmpty()
         {
@@ -176,7 +176,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         /// <summary>
         /// Tests getting switch values
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestIsSwitchValueNumeric()
         {

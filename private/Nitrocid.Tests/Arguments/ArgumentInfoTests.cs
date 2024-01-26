@@ -20,12 +20,12 @@
 using System;
 using Nitrocid.Arguments;
 using Nitrocid.Shell.ShellBase.Arguments;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 
 namespace Nitrocid.Tests.Arguments
 {
-    [TestFixture]
+    [TestClass]
     public class ArgumentInfoTests
     {
         private static ArgumentExecutor ArgumentInstance;
@@ -33,7 +33,7 @@ namespace Nitrocid.Tests.Arguments
         /// <summary>
         /// Tests initializing ArgumentInfo instance from a command line argument
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeArgumentInfoInstanceFromCommandLineArg()
         {
@@ -56,7 +56,7 @@ namespace Nitrocid.Tests.Arguments
         /// <summary>
         /// Tests initializing the argument instance from base
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeArgumentFromBase()
         {
@@ -70,7 +70,7 @@ namespace Nitrocid.Tests.Arguments
         /// <summary>
         /// Tests initializing the argument instance from base
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializedArgumentExecution()
         {
@@ -81,7 +81,7 @@ namespace Nitrocid.Tests.Arguments
         /// <summary>
         /// Tests initializing the argument instance from base
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializedArgumentExecutionWithArguments()
         {
@@ -92,7 +92,7 @@ namespace Nitrocid.Tests.Arguments
         /// <summary>
         /// Tests initializing the argument instance from base
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializedArgumentExecutionWithSwitches()
         {
@@ -103,7 +103,7 @@ namespace Nitrocid.Tests.Arguments
         /// <summary>
         /// Tests initializing the argument instance from base
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializedArgumentExecutionWithArgumentsAndSwitches()
         {

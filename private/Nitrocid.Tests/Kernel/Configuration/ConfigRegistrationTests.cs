@@ -20,22 +20,24 @@
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Configuration.Instances;
 using Nitrocid.Tests.Kernel.Configuration.CustomConfigs;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 
 namespace Nitrocid.Tests.Kernel.Configuration
 {
-    [TestFixture]
+    [TestClass]
     public class ConfigRegistrationTests
     {
-        private readonly string name = nameof(KernelCustomSettings);
+        private readonly static string name = nameof(KernelCustomSettings);
 
         /// <summary>
         /// Tests registering a custom config
         /// </summary>
-        [OneTimeSetUp]
+        [ClassInitialize]
         [Description("Management")]
-        public void TestRegisterConfig()
+#pragma warning disable IDE0060
+        public static void InitRegisterConfig(TestContext tc)
+#pragma warning restore IDE0060
         {
             var customSettings = new KernelCustomSettings();
             ConfigTools.RegisterCustomSetting(customSettings);
@@ -44,9 +46,9 @@ namespace Nitrocid.Tests.Kernel.Configuration
         /// <summary>
         /// Tests checking the built-in settings
         /// </summary>
-        [Test]
-        [TestCase(nameof(KernelMainConfig))]
-        [TestCase(nameof(KernelSaverConfig))]
+        [TestMethod]
+        [DataRow(nameof(KernelMainConfig))]
+        [DataRow(nameof(KernelSaverConfig))]
         [Description("Management")]
         public void TestCheckBuiltinConfig(string name)
         {
@@ -57,7 +59,7 @@ namespace Nitrocid.Tests.Kernel.Configuration
         /// <summary>
         /// Tests checking the custom settings
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestCheckCustomConfig()
         {
@@ -68,9 +70,9 @@ namespace Nitrocid.Tests.Kernel.Configuration
         /// <summary>
         /// Tests checking built-in settings resources (shallow)
         /// </summary>
-        [Test]
-        [TestCase(nameof(KernelMainConfig))]
-        [TestCase(nameof(KernelSaverConfig))]
+        [TestMethod]
+        [DataRow(nameof(KernelMainConfig))]
+        [DataRow(nameof(KernelSaverConfig))]
         [Description("Management")]
         public void TestCheckBuiltinSettingsResourcesShallow(string name)
         {
@@ -85,9 +87,9 @@ namespace Nitrocid.Tests.Kernel.Configuration
         /// <summary>
         /// Tests checking built-in settings resources (deep)
         /// </summary>
-        [Test]
-        [TestCase(nameof(KernelMainConfig))]
-        [TestCase(nameof(KernelSaverConfig))]
+        [TestMethod]
+        [DataRow(nameof(KernelMainConfig))]
+        [DataRow(nameof(KernelSaverConfig))]
         [Description("Management")]
         public void TestCheckBuiltinSettingsResourcesDeep(string name)
         {
@@ -112,9 +114,9 @@ namespace Nitrocid.Tests.Kernel.Configuration
         /// <summary>
         /// Tests checking built-in settings resources (deep with evaluation)
         /// </summary>
-        [Test]
-        [TestCase(nameof(KernelMainConfig))]
-        [TestCase(nameof(KernelSaverConfig))]
+        [TestMethod]
+        [DataRow(nameof(KernelMainConfig))]
+        [DataRow(nameof(KernelSaverConfig))]
         [Description("Management")]
         public void TestCheckBuiltinSettingsResourcesDeepEval(string name)
         {
@@ -144,7 +146,7 @@ namespace Nitrocid.Tests.Kernel.Configuration
         /// <summary>
         /// Tests checking custom settings resources (shallow)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestCheckCustomSettingsResourcesShallow()
         {
@@ -159,7 +161,7 @@ namespace Nitrocid.Tests.Kernel.Configuration
         /// <summary>
         /// Tests checking custom settings resources (deep)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestCheckCustomSettingsResourcesDeep()
         {
@@ -184,7 +186,7 @@ namespace Nitrocid.Tests.Kernel.Configuration
         /// <summary>
         /// Tests checking custom settings resources (deep with evaluation)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestCheckCustomSettingsResourcesDeepEval()
         {
@@ -215,9 +217,9 @@ namespace Nitrocid.Tests.Kernel.Configuration
         /// <summary>
         /// Tests unregistering a custom config
         /// </summary>
-        [OneTimeTearDown]
+        [ClassCleanup]
         [Description("Management")]
-        public void TestUnregisterConfig()
+        public static void UninitUnregisterConfig()
         {
             ConfigTools.UnregisterCustomSetting(name);
             ConfigTools.IsCustomSettingRegistered(name).ShouldBeFalse();

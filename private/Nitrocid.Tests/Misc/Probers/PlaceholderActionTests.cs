@@ -18,21 +18,23 @@
 //
 
 using Nitrocid.Misc.Text.Probers.Placeholder;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 
 namespace Nitrocid.Tests.Misc.Probers
 {
 
-    [TestFixture]
+    [TestClass]
     public class PlaceholderActionTests
     {
 
         /// <summary>
         /// Tests registering the placeholder
         /// </summary>
-        [OneTimeSetUp]
-        public void TestRegisterPlaceholder()
+        [ClassInitialize]
+#pragma warning disable IDE0060
+        public static void TestRegisterPlaceholder(TestContext tc)
+#pragma warning restore IDE0060
         {
             PlaceParse.RegisterCustomPlaceholder("greeting", (_) => "Hello!");
             PlaceParse.IsPlaceholderRegistered("<greeting>").ShouldBeTrue();
@@ -42,33 +44,33 @@ namespace Nitrocid.Tests.Misc.Probers
         /// <summary>
         /// Tests parsing placeholders
         /// </summary>
-        [Test]
-        [TestCase("Hostname is <host>")]
-        [TestCase("Short date is <shortdate>")]
-        [TestCase("Long date is <longdate>")]
-        [TestCase("Short time is <shorttime>")]
-        [TestCase("Long time is <longtime>")]
-        [TestCase("Date is <date>")]
-        [TestCase("Time is <time>")]
-        [TestCase("Timezone is <timezone>")]
-        [TestCase("Summer timezone is <summertimezone>")]
-        [TestCase("Operating system is <system>")]
-        [TestCase("Newline is <newline>")]
-        [TestCase("User is <user>")]
-        [TestCase("Random File is <randomfile>")]
-        [TestCase("Random Folder is <randomfolder>")]
-        [TestCase("RID is <rid>")]
-        [TestCase("RID is <ridgeneric>")]
-        [TestCase("Terminal emulator is <termemu>")]
-        [TestCase("Terminal type is <termtype>")]
-        [TestCase("Foreground reset is <fgreset>here")]
-        [TestCase("Background reset is <bgreset>here")]
-        [TestCase("Foreground color is <f:4>0-15")]
-        [TestCase("Foreground color is <b:4>0-15")]
-        [TestCase("Foreground color is <f:254>0-255")]
-        [TestCase("Foreground color is <b:254>0-255")]
-        [TestCase("Foreground color is <f:255;255;255>truecolor")]
-        [TestCase("Foreground color is <b:255;255;255>truecolor")]
+        [TestMethod]
+        [DataRow("Hostname is <host>")]
+        [DataRow("Short date is <shortdate>")]
+        [DataRow("Long date is <longdate>")]
+        [DataRow("Short time is <shorttime>")]
+        [DataRow("Long time is <longtime>")]
+        [DataRow("Date is <date>")]
+        [DataRow("Time is <time>")]
+        [DataRow("Timezone is <timezone>")]
+        [DataRow("Summer timezone is <summertimezone>")]
+        [DataRow("Operating system is <system>")]
+        [DataRow("Newline is <newline>")]
+        [DataRow("User is <user>")]
+        [DataRow("Random File is <randomfile>")]
+        [DataRow("Random Folder is <randomfolder>")]
+        [DataRow("RID is <rid>")]
+        [DataRow("RID is <ridgeneric>")]
+        [DataRow("Terminal emulator is <termemu>")]
+        [DataRow("Terminal type is <termtype>")]
+        [DataRow("Foreground reset is <fgreset>here")]
+        [DataRow("Background reset is <bgreset>here")]
+        [DataRow("Foreground color is <f:4>0-15")]
+        [DataRow("Foreground color is <b:4>0-15")]
+        [DataRow("Foreground color is <f:254>0-255")]
+        [DataRow("Foreground color is <b:254>0-255")]
+        [DataRow("Foreground color is <f:255;255;255>truecolor")]
+        [DataRow("Foreground color is <b:255;255;255>truecolor")]
         [Description("Action")]
         public void TestParsePlaceholders(string stringToProbe)
         {
@@ -80,11 +82,11 @@ namespace Nitrocid.Tests.Misc.Probers
         /// <summary>
         /// Tests parsing placeholders
         /// </summary>
-        [Test]
-        [TestCase("<greeting>", "Hello!")]
-        [TestCase("Nitrocid, <greeting>", "Nitrocid, Hello!")]
-        [TestCase("<greeting> How are you?", "Hello! How are you?")]
-        [TestCase("Nitrocid, <greeting> How are you?", "Nitrocid, Hello! How are you?")]
+        [TestMethod]
+        [DataRow("<greeting>", "Hello!")]
+        [DataRow("Nitrocid, <greeting>", "Nitrocid, Hello!")]
+        [DataRow("<greeting> How are you?", "Hello! How are you?")]
+        [DataRow("Nitrocid, <greeting> How are you?", "Nitrocid, Hello! How are you?")]
         [Description("Action")]
         public void TestParseCustomPlaceholder(string stringToProbe, string expectedString)
         {
@@ -95,28 +97,28 @@ namespace Nitrocid.Tests.Misc.Probers
         /// <summary>
         /// Tests checking to see if the placeholders are built-in
         /// </summary>
-        [Test]
-        [TestCase("<host>", true)]
-        [TestCase("<shortdate>", true)]
-        [TestCase("<longdate>", true)]
-        [TestCase("<shorttime>", true)]
-        [TestCase("<longtime>", true)]
-        [TestCase("<date>", true)]
-        [TestCase("<time>", true)]
-        [TestCase("<timezone>", true)]
-        [TestCase("<summertimezone>", true)]
-        [TestCase("<system>", true)]
-        [TestCase("<newline>", true)]
-        [TestCase("<user>", true)]
-        [TestCase("<randomfile>", true)]
-        [TestCase("<randomfolder>", true)]
-        [TestCase("<rid>", true)]
-        [TestCase("<ridgeneric>", true)]
-        [TestCase("<termemu>", true)]
-        [TestCase("<termtype>", true)]
-        [TestCase("<f:reset>", true)]
-        [TestCase("<b:reset>", true)]
-        [TestCase("<greeting>", false)]
+        [TestMethod]
+        [DataRow("<host>", true)]
+        [DataRow("<shortdate>", true)]
+        [DataRow("<longdate>", true)]
+        [DataRow("<shorttime>", true)]
+        [DataRow("<longtime>", true)]
+        [DataRow("<date>", true)]
+        [DataRow("<time>", true)]
+        [DataRow("<timezone>", true)]
+        [DataRow("<summertimezone>", true)]
+        [DataRow("<system>", true)]
+        [DataRow("<newline>", true)]
+        [DataRow("<user>", true)]
+        [DataRow("<randomfile>", true)]
+        [DataRow("<randomfolder>", true)]
+        [DataRow("<rid>", true)]
+        [DataRow("<ridgeneric>", true)]
+        [DataRow("<termemu>", true)]
+        [DataRow("<termtype>", true)]
+        [DataRow("<f:reset>", true)]
+        [DataRow("<b:reset>", true)]
+        [DataRow("<greeting>", false)]
         [Description("Action")]
         public void TestIsBuiltin(string placeholder, bool expectedBuiltin)
         {
@@ -127,29 +129,29 @@ namespace Nitrocid.Tests.Misc.Probers
         /// <summary>
         /// Tests checking to see if the placeholders are registered
         /// </summary>
-        [Test]
-        [TestCase("<host>", true)]
-        [TestCase("<shortdate>", true)]
-        [TestCase("<longdate>", true)]
-        [TestCase("<shorttime>", true)]
-        [TestCase("<longtime>", true)]
-        [TestCase("<date>", true)]
-        [TestCase("<time>", true)]
-        [TestCase("<timezone>", true)]
-        [TestCase("<summertimezone>", true)]
-        [TestCase("<system>", true)]
-        [TestCase("<newline>", true)]
-        [TestCase("<user>", true)]
-        [TestCase("<randomfile>", true)]
-        [TestCase("<randomfolder>", true)]
-        [TestCase("<rid>", true)]
-        [TestCase("<ridgeneric>", true)]
-        [TestCase("<termemu>", true)]
-        [TestCase("<termtype>", true)]
-        [TestCase("<f:reset>", true)]
-        [TestCase("<b:reset>", true)]
-        [TestCase("<greeting>", true)]
-        [TestCase("<nonexistent>", false)]
+        [TestMethod]
+        [DataRow("<host>", true)]
+        [DataRow("<shortdate>", true)]
+        [DataRow("<longdate>", true)]
+        [DataRow("<shorttime>", true)]
+        [DataRow("<longtime>", true)]
+        [DataRow("<date>", true)]
+        [DataRow("<time>", true)]
+        [DataRow("<timezone>", true)]
+        [DataRow("<summertimezone>", true)]
+        [DataRow("<system>", true)]
+        [DataRow("<newline>", true)]
+        [DataRow("<user>", true)]
+        [DataRow("<randomfile>", true)]
+        [DataRow("<randomfolder>", true)]
+        [DataRow("<rid>", true)]
+        [DataRow("<ridgeneric>", true)]
+        [DataRow("<termemu>", true)]
+        [DataRow("<termtype>", true)]
+        [DataRow("<f:reset>", true)]
+        [DataRow("<b:reset>", true)]
+        [DataRow("<greeting>", true)]
+        [DataRow("<nonexistent>", false)]
         [Description("Action")]
         public void TestIsRegistered(string placeholder, bool expectedBuiltin)
         {
@@ -160,8 +162,8 @@ namespace Nitrocid.Tests.Misc.Probers
         /// <summary>
         /// Tests unregistering the placeholder
         /// </summary>
-        [OneTimeTearDown]
-        public void TestUnregisterPlaceholder()
+        [ClassCleanup]
+        public static void TestUnregisterPlaceholder()
         {
             PlaceParse.UnregisterCustomPlaceholder("<greeting>");
             PlaceParse.IsPlaceholderRegistered("<greeting>").ShouldBeFalse();

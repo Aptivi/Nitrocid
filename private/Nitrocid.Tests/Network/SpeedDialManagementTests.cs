@@ -19,20 +19,20 @@
 
 using Nitrocid.Network.Connections;
 using Nitrocid.Network.SpeedDial;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 
 namespace Nitrocid.Tests.Network
 {
 
-    [TestFixture]
+    [TestClass]
     public class SpeedDialManagementTests
     {
 
         /// <summary>
         /// Tests adding speed dial entry
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestAddEntryToSpeedDial() =>
             SpeedDialTools.TryAddEntryToSpeedDial("ftp.riken.jp", 21, NetworkConnectionType.FTP, false, "anonymous").ShouldBeTrue();
@@ -40,7 +40,7 @@ namespace Nitrocid.Tests.Network
         /// <summary>
         /// Tests listing speed dial entries
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestListSpeedDialEntries() =>
             SpeedDialTools.ListSpeedDialEntries().ShouldNotBeEmpty();

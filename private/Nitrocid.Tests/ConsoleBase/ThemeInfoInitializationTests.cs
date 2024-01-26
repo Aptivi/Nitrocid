@@ -19,7 +19,7 @@
 
 using System.IO;
 using Nitrocid.ConsoleBase.Themes;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System;
 using System.Linq;
@@ -28,14 +28,14 @@ using Nitrocid.ConsoleBase.Colors;
 namespace Nitrocid.Tests.ConsoleBase
 {
 
-    [TestFixture]
+    [TestClass]
     public class ThemeInfoInitializationTests
     {
 
         /// <summary>
         /// Tests initializing an instance of ThemeInfo from KS resources
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeThemeInfoFromResources()
         {
@@ -54,7 +54,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests initializing an instance of ThemeInfo from all KS resources
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestGetThemeInfoFromAllResources()
         {
@@ -88,7 +88,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests initializing an instance of ThemeInfo from file
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeThemeInfoFromFile()
         {
@@ -110,7 +110,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests initializing an instance of ThemeInfo from file
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeThemeInfoFromFilePath()
         {

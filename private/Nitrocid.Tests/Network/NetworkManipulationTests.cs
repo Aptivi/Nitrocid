@@ -19,21 +19,21 @@
 
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Network;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 
 namespace Nitrocid.Tests.Network
 {
 
     // Warning: Don't implement the unit tests related to downloading or uploading files. This causes AppVeyor to choke.
-    [TestFixture]
+    [TestClass]
     public class NetworkManipulationTests
     {
 
         /// <summary>
         /// Tests hostname change
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Manipulation")]
         public void TestChangeHostname()
         {

@@ -18,21 +18,21 @@
 //
 
 using Nitrocid.ConsoleBase.Colors;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System;
 
 namespace Nitrocid.Tests.ConsoleBase
 {
 
-    [TestFixture]
+    [TestClass]
     public class ColorConversionTests
     {
 
         /// <summary>
         /// Tests trying to convert from hex to RGB
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromHexToRgb()
         {
@@ -43,7 +43,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from hex to RYB
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromHexToRyb()
         {
@@ -54,7 +54,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from hex to CMYK
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromHexToCmyk()
         {
@@ -65,7 +65,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from hex to CMY
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromHexToCmy()
         {
@@ -76,7 +76,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from hex to HSL
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromHexToHsl()
         {
@@ -87,7 +87,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from hex to HSV
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromHexToHsv()
         {
@@ -98,7 +98,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from hex to YIQ
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromHexToYiq()
         {
@@ -109,7 +109,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from hex to YUV
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromHexToYuv()
         {
@@ -120,7 +120,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from RGB sequence to hex
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromRgbSequenceToHex()
         {
@@ -131,7 +131,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from RGB numbers to hex
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromRgbNumbersToHex()
         {
@@ -142,7 +142,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from RYB sequence to hex
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromRybSequenceToHex()
         {
@@ -153,7 +153,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from RYB numbers to hex
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromRybNumbersToHex()
         {
@@ -164,7 +164,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from CMYK sequence to hex
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromCmykSequenceToHex()
         {
@@ -175,7 +175,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from CMYK numbers to hex
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromCmykNumbersToHex()
         {
@@ -186,7 +186,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from CMY sequence to hex
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromCmySequenceToHex()
         {
@@ -197,7 +197,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from CMY numbers to hex
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromCmyNumbersToHex()
         {
@@ -208,7 +208,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from HSL sequence to hex
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromHSLSequenceToHex()
         {
@@ -219,7 +219,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from HSL numbers to hex
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromHSLNumbersToHex()
         {
@@ -230,7 +230,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from HSV sequence to hex
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromHSVSequenceToHex()
         {
@@ -241,7 +241,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from HSV numbers to hex
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromHSVNumbersToHex()
         {
@@ -252,7 +252,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from YIQ sequence to hex
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromYiqSequenceToHex()
         {
@@ -263,7 +263,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from YIQ numbers to hex
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromYiqNumbersToHex()
         {
@@ -274,7 +274,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from YUV sequence to hex
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromYuvSequenceToHex()
         {
@@ -285,7 +285,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from YUV numbers to hex
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromYuvNumbersToHex()
         {
@@ -296,7 +296,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from RGB sequence to CMYK
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromRgbSequenceToCmyk()
         {
@@ -307,7 +307,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from RGB numbers to CMYK
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromRgbNumbersToCmyk()
         {
@@ -318,7 +318,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from RGB sequence to RYB
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromRgbSequenceToRyb()
         {
@@ -329,7 +329,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from RGB numbers to RYB
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromRgbNumbersToRyb()
         {
@@ -340,7 +340,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from RGB sequence to CMY
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromRgbSequenceToCmy()
         {
@@ -351,7 +351,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from RGB numbers to CMY
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromRgbNumbersToCmy()
         {
@@ -362,7 +362,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from RGB sequence to HSL
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromRgbSequenceToHsl()
         {
@@ -373,7 +373,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from RGB numbers to HSL
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromRgbNumbersToHsl()
         {
@@ -384,7 +384,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from RGB sequence to HSV
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromRgbSequenceToHsv()
         {
@@ -395,7 +395,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from RGB numbers to HSV
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromRgbNumbersToHsv()
         {
@@ -406,7 +406,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from RGB sequence to YIQ
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromRgbSequenceToYiq()
         {
@@ -417,7 +417,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from RGB numbers to YIQ
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromRgbNumbersToYiq()
         {
@@ -428,7 +428,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from RGB sequence to YUV
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromRgbSequenceToYuv()
         {
@@ -439,7 +439,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from RGB numbers to YUV
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromRgbNumbersToYuv()
         {
@@ -450,7 +450,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from RYB sequence to CMYK
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromRybSequenceToCmyk()
         {
@@ -461,7 +461,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from RYB numbers to CMYK
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromRybNumbersToCmyk()
         {
@@ -472,7 +472,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from RYB sequence to RGB
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromRybSequenceToRgb()
         {
@@ -483,7 +483,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from RYB numbers to RGB
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromRybNumbersToRgb()
         {
@@ -494,7 +494,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from RYB sequence to CMY
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromRybSequenceToCmy()
         {
@@ -505,7 +505,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from RYB numbers to CMY
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromRybNumbersToCmy()
         {
@@ -516,7 +516,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from RYB sequence to HSL
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromRybSequenceToHsl()
         {
@@ -527,7 +527,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from RYB numbers to HSL
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromRybNumbersToHsl()
         {
@@ -538,7 +538,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from RYB sequence to HSV
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromRybSequenceToHsv()
         {
@@ -549,7 +549,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from RYB numbers to HSV
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromRybNumbersToHsv()
         {
@@ -560,7 +560,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from RYB sequence to YIQ
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromRybSequenceToYiq()
         {
@@ -571,7 +571,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from RYB numbers to YIQ
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromRybNumbersToYiq()
         {
@@ -582,7 +582,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from RYB sequence to YUV
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromRybSequenceToYuv()
         {
@@ -593,7 +593,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from RYB numbers to YUV
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromRybNumbersToYuv()
         {
@@ -604,7 +604,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from HSL sequence to RGB
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromHslSequenceToRgb()
         {
@@ -615,7 +615,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from HSL numbers to RGB
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromHslNumbersToRgb()
         {
@@ -626,7 +626,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from HSL sequence to RYB
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromHslSequenceToRyb()
         {
@@ -637,7 +637,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from HSL numbers to RYB
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromHslNumbersToRyb()
         {
@@ -648,7 +648,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from HSL sequence to CMYK
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromHslSequenceToCmyk()
         {
@@ -659,7 +659,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from HSL numbers to CMYK
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromHslNumbersToCmyk()
         {
@@ -670,7 +670,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from HSL sequence to CMY
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromHslSequenceToCmy()
         {
@@ -681,7 +681,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from HSL numbers to CMY
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromHslNumbersToCmy()
         {
@@ -692,7 +692,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from HSL sequence to HSV
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromHslSequenceToHsv()
         {
@@ -703,7 +703,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from HSL numbers to HSV
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromHslNumbersToHsv()
         {
@@ -714,7 +714,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from HSL sequence to YIQ
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromHslSequenceToYiq()
         {
@@ -725,7 +725,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from HSL numbers to YIQ
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromHslNumbersToYiq()
         {
@@ -736,7 +736,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from HSL sequence to YUV
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromHslSequenceToYuv()
         {
@@ -747,7 +747,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from HSL numbers to YUV
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromHslNumbersToYuv()
         {
@@ -758,7 +758,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from HSV sequence to RGB
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromHsvSequenceToRgb()
         {
@@ -769,7 +769,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from HSV numbers to RGB
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromHsvNumbersToRgb()
         {
@@ -780,7 +780,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from HSV sequence to RYB
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromHsvSequenceToRyb()
         {
@@ -791,7 +791,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from HSV numbers to RYB
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromHsvNumbersToRyb()
         {
@@ -802,7 +802,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from HSV sequence to CMYK
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromHsvSequenceToCmyk()
         {
@@ -813,7 +813,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from HSV numbers to CMYK
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromHsvNumbersToCmyk()
         {
@@ -824,7 +824,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from HSV sequence to CMY
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromHsvSequenceToCmy()
         {
@@ -835,7 +835,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from HSV numbers to CMY
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromHsvNumbersToCmy()
         {
@@ -846,7 +846,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from HSV sequence to HSL
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromHsvSequenceToHsl()
         {
@@ -857,7 +857,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from HSV numbers to HSL
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromHsvNumbersToHsl()
         {
@@ -868,7 +868,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from HSV sequence to YIQ
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromHsvSequenceToYiq()
         {
@@ -879,7 +879,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from HSV numbers to YIQ
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromHsvNumbersToYiq()
         {
@@ -890,7 +890,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from HSV sequence to YUV
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromHsvSequenceToYuv()
         {
@@ -901,7 +901,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from HSV numbers to YUV
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromHsvNumbersToYuv()
         {
@@ -912,7 +912,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from CMYK sequence to RGB
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromCmykSequenceToRgb()
         {
@@ -923,7 +923,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from CMYK numbers to RGB
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromCmykNumbersToRgb()
         {
@@ -934,7 +934,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from CMYK sequence to RYB
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromCmykSequenceToRyb()
         {
@@ -945,7 +945,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from CMYK numbers to RYB
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromCmykNumbersToRyb()
         {
@@ -956,7 +956,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from CMYK sequence to HSL
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromCmykSequenceToHsl()
         {
@@ -967,7 +967,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from CMYK numbers to HSL
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromCmykNumbersToHsl()
         {
@@ -978,7 +978,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from CMYK sequence to HSV
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromCmykSequenceToHsv()
         {
@@ -989,7 +989,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from CMYK numbers to HSV
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromCmykNumbersToHsv()
         {
@@ -1000,7 +1000,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from CMYK sequence to CMY
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromCmykSequenceToCmy()
         {
@@ -1011,7 +1011,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from CMYK numbers to CMY
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromCmykNumbersToCmy()
         {
@@ -1022,7 +1022,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from CMYK sequence to YIQ
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromCmykSequenceToYiq()
         {
@@ -1033,7 +1033,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from CMYK numbers to YIQ
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromCmykNumbersToYiq()
         {
@@ -1044,7 +1044,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from CMYK sequence to YUV
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromCmykSequenceToYuv()
         {
@@ -1055,7 +1055,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from CMYK numbers to YUV
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromCmykNumbersToYuv()
         {
@@ -1066,7 +1066,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from CMY sequence to RGB
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromCmySequenceToRgb()
         {
@@ -1077,7 +1077,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from CMY numbers to RGB
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromCmyNumbersToRgb()
         {
@@ -1088,7 +1088,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from CMY sequence to RYB
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromCmySequenceToRyb()
         {
@@ -1099,7 +1099,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from CMY numbers to RYB
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromCmyNumbersToRyb()
         {
@@ -1110,7 +1110,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from CMY sequence to HSL
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromCmySequenceToHsl()
         {
@@ -1121,7 +1121,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from CMY numbers to HSL
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromCmyNumbersToHsl()
         {
@@ -1132,7 +1132,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from CMY sequence to HSV
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromCmySequenceToHsv()
         {
@@ -1143,7 +1143,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from CMY numbers to HSV
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromCmyNumbersToHsv()
         {
@@ -1154,7 +1154,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from CMY sequence to CMYK
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromCmySequenceToCmyk()
         {
@@ -1165,7 +1165,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from CMY numbers to CMYK
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromCmyNumbersToCmyk()
         {
@@ -1176,7 +1176,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from CMY sequence to YIQ
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromCmySequenceToYiq()
         {
@@ -1187,7 +1187,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from CMY numbers to YIQ
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromCmyNumbersToYiq()
         {
@@ -1198,7 +1198,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from CMY sequence to YUV
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromCmySequenceToYuv()
         {
@@ -1209,7 +1209,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from CMY numbers to YUV
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromCmyNumbersToYuv()
         {
@@ -1220,7 +1220,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from YIQ sequence to RGB
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromYiqSequenceToRgb()
         {
@@ -1231,7 +1231,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from YIQ numbers to RGB
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromYiqNumbersToRgb()
         {
@@ -1242,7 +1242,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from YIQ sequence to RYB
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromYiqSequenceToRyb()
         {
@@ -1253,7 +1253,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from YIQ numbers to RYB
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromYiqNumbersToRyb()
         {
@@ -1264,7 +1264,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from YIQ sequence to HSL
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromYiqSequenceToHsl()
         {
@@ -1275,7 +1275,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from YIQ numbers to HSL
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromYiqNumbersToHsl()
         {
@@ -1286,7 +1286,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from YIQ sequence to HSV
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromYiqSequenceToHsv()
         {
@@ -1297,7 +1297,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from YIQ numbers to HSV
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromYiqNumbersToHsv()
         {
@@ -1308,7 +1308,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from YIQ sequence to CMYK
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromYiqSequenceToCmyk()
         {
@@ -1319,7 +1319,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from YIQ numbers to CMYK
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromYiqNumbersToCmyk()
         {
@@ -1330,7 +1330,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from YIQ sequence to CMY
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromYiqSequenceToCmy()
         {
@@ -1341,7 +1341,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from YIQ numbers to CMY
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromYiqNumbersToCmy()
         {
@@ -1352,7 +1352,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from YIQ sequence to YUV
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromYiqSequenceToYuv()
         {
@@ -1363,7 +1363,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from YIQ numbers to YUV
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromYiqNumbersToYuv()
         {
@@ -1374,7 +1374,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from YUV sequence to RGB
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromYuvSequenceToRgb()
         {
@@ -1385,7 +1385,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from YUV numbers to RGB
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromYuvNumbersToRgb()
         {
@@ -1396,7 +1396,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from YUV sequence to RYB
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromYuvSequenceToRyb()
         {
@@ -1407,7 +1407,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from YUV numbers to RYB
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromYuvNumbersToRyb()
         {
@@ -1418,7 +1418,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from YUV sequence to HSL
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromYuvSequenceToHsl()
         {
@@ -1429,7 +1429,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from YUV numbers to HSL
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromYuvNumbersToHsl()
         {
@@ -1440,7 +1440,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from YUV sequence to HSV
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromYuvSequenceToHsv()
         {
@@ -1451,7 +1451,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from YUV numbers to HSV
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromYuvNumbersToHsv()
         {
@@ -1462,7 +1462,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from YUV sequence to CMYK
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromYuvSequenceToCmyk()
         {
@@ -1473,7 +1473,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from YUV numbers to CMYK
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromYuvNumbersToCmyk()
         {
@@ -1484,7 +1484,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from YUV sequence to CMY
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromYuvSequenceToCmy()
         {
@@ -1495,7 +1495,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from YUV numbers to CMY
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromYuvNumbersToCmy()
         {
@@ -1506,7 +1506,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from YUV sequence to YIQ
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromYuvSequenceToYiq()
         {
@@ -1517,7 +1517,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to convert from YUV numbers to YIQ
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestConvertFromYuvNumbersToYiq()
         {

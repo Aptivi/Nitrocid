@@ -18,20 +18,20 @@
 //
 
 using Nitrocid.Shell.ShellBase.Scripting;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 
 namespace Nitrocid.Tests.Shell.ShellBase.Scripting
 {
 
-    [TestFixture]
+    [TestClass]
     public class UESHVariableTests
     {
 
         /// <summary>
         /// Tests sanitizing variable name
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSanitizeVariableNamesWithDollarSign()
         {
@@ -43,7 +43,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Scripting
         /// <summary>
         /// Tests sanitizing variable name
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSanitizeVariableNamesWithoutDollarSign()
         {
@@ -55,7 +55,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Scripting
         /// <summary>
         /// Tests initializing, setting, and getting $variable
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestVariables()
         {
@@ -77,7 +77,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Scripting
         /// <summary>
         /// Tests converting the environment variables to UESH's declaration
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestConvertEnvVariables()
         {
@@ -90,10 +90,10 @@ namespace Nitrocid.Tests.Shell.ShellBase.Scripting
         /// <summary>
         /// Tests initializing the variables from...
         /// </summary>
-        [Test]
-        [TestCase("", "", "")]
-        [TestCase("$test=bar", "$test", "bar")]
-        [TestCase("$test2=bars $test3=\"Nitrocid KS\"", "$test2|$test3", "bars|Nitrocid KS")]
+        [TestMethod]
+        [DataRow("", "", "")]
+        [DataRow("$test=bar", "$test", "bar")]
+        [DataRow("$test2=bars $test3=\"Nitrocid KS\"", "$test2|$test3", "bars|Nitrocid KS")]
         [Description("Action")]
         public void TestInitializeVariablesFrom(string expression, string expectedKeys, string expectedValues)
         {
@@ -111,10 +111,10 @@ namespace Nitrocid.Tests.Shell.ShellBase.Scripting
         /// <summary>
         /// Tests getting the variables from...
         /// </summary>
-        [Test]
-        [TestCase("", "", "")]
-        [TestCase("$test=bar", "$test", "bar")]
-        [TestCase("$test2=bars $test3=\"Nitrocid KS\"", "$test2|$test3", "bars|\"Nitrocid KS\"")]
+        [TestMethod]
+        [DataRow("", "", "")]
+        [DataRow("$test=bar", "$test", "bar")]
+        [DataRow("$test2=bars $test3=\"Nitrocid KS\"", "$test2|$test3", "bars|\"Nitrocid KS\"")]
         [Description("Action")]
         public void TestGetVariablesFrom(string expression, string expectedKeys, string expectedValues)
         {

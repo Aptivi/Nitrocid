@@ -21,22 +21,24 @@ using Nitrocid.Drivers;
 using Nitrocid.Drivers.Encryption;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Users;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 
 namespace Nitrocid.Tests.Users
 {
 
-    [TestFixture]
+    [TestClass]
     public class UserManagementTests
     {
 
         /// <summary>
         /// Tests user addition
         /// </summary>
-        [Test]
+        [ClassInitialize]
         [Description("Management")]
-        public void TestAddUser()
+#pragma warning disable IDE0060
+        public static void TestAddUser(TestContext tc)
+#pragma warning restore IDE0060
         {
             UserManagement.AddUser("Account1");
             UserManagement.AddUser("Account2", "password");
@@ -47,7 +49,7 @@ namespace Nitrocid.Tests.Users
         /// <summary>
         /// Tests username change
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestChangeUser() =>
             UserManagement.TryChangeUsername("Account2", "Account3").ShouldBeTrue();
@@ -55,7 +57,7 @@ namespace Nitrocid.Tests.Users
         /// <summary>
         /// Tests listing all users
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestListAllUsers()
         {
@@ -70,7 +72,7 @@ namespace Nitrocid.Tests.Users
         /// <summary>
         /// Tests locking a user
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestLockUser()
         {
@@ -84,7 +86,7 @@ namespace Nitrocid.Tests.Users
         /// <summary>
         /// Tests removing user
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestRemoveUser()
         {
@@ -94,7 +96,7 @@ namespace Nitrocid.Tests.Users
         /// <summary>
         /// Tests selecting user
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestSelectUser()
         {
@@ -105,7 +107,7 @@ namespace Nitrocid.Tests.Users
         /// <summary>
         /// Tests getting user
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestGetUser()
         {
@@ -136,7 +138,7 @@ namespace Nitrocid.Tests.Users
         /// <summary>
         /// Tests getting index of user
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestGetUserIndex()
         {
@@ -169,15 +171,17 @@ namespace Nitrocid.Tests.Users
         /// <summary>
         /// Tests validating username
         /// </summary>
-        [Test]
-        [TestCase("myvalidname", ExpectedResult = true)]
-        [TestCase("MyValidName", ExpectedResult = true)]
-        [TestCase("My!Valid?Name", ExpectedResult = false)]
-        [TestCase("My Valid Name", ExpectedResult = false)]
-        [TestCase("", ExpectedResult = false)]
+        [TestMethod]
+        [DataRow("myvalidname", true)]
+        [DataRow("MyValidName", true)]
+        [DataRow("My!Valid?Name", false)]
+        [DataRow("My Valid Name", false)]
+        [DataRow("", false)]
         [Description("Management")]
-        public bool TestValidateUsername(string name) =>
-           UserManagement.ValidateUsername(name, false);
-
+        public void TestValidateUsername(string name, bool expected)
+        {
+            bool actual = UserManagement.ValidateUsername(name, false);
+            actual.ShouldBe(expected);
+        }
     }
 }

@@ -17,37 +17,45 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Shouldly;
 using Textify.General;
 
 namespace Nitrocid.Tests.Misc.Editors
 {
 
-    [TestFixture]
+    [TestClass]
     public class TextToolsActionTests
     {
 
         /// <summary>
         /// Tests checking to see if the string is numeric
         /// </summary>
-        [TestCase("64", ExpectedResult = true)]
-        [TestCase("64.5", ExpectedResult = true)]
-        [TestCase("64-5", ExpectedResult = false)]
-        [TestCase("Alsalaam 3lekom", ExpectedResult = false)]
-        [TestCase("Nitrocid", ExpectedResult = false)]
+        [TestMethod]
+        [DataRow("64", true)]
+        [DataRow("64.5", true)]
+        [DataRow("64-5", false)]
+        [DataRow("Alsalaam 3lekom", false)]
+        [DataRow("Nitrocid", false)]
         [Description("Action")]
-        public bool TestIsStringNumeric(string Expression) =>
-            TextTools.IsStringNumeric(Expression);
+        public void TestIsStringNumeric(string Expression, bool expected)
+        {
+            bool actual = TextTools.IsStringNumeric(Expression);
+            actual.ShouldBe(expected);
+        }
 
         /// <summary>
         /// Tests formatting the string
         /// </summary>
-        [TestCase("Hello, {0}!", "Alex", ExpectedResult = "Hello, Alex!")]
-        [TestCase("We have 0x{0:X2} faults!", 15, ExpectedResult = "We have 0x0F faults!")]
-        [TestCase("Destroy {0 ships!", 3, ExpectedResult = "Destroy {0 ships!")]
+        [TestMethod]
+        [DataRow("Hello, Alex!", "Hello, {0}!", "Alex")]
+        [DataRow("We have 0x0F faults!", "We have 0x{0:X2} faults!", 15)]
+        [DataRow("Destroy {0 ships!", "Destroy {0 ships!", 3)]
         [Description("Action")]
-        public string TestFormatString(string Expression, params object[] Vars) =>
-            TextTools.FormatString(Expression, Vars);
-
+        public void TestFormatString(string expected, string Expression, params object[] Vars)
+        {
+            string actual = TextTools.FormatString(Expression, Vars);
+            actual.ShouldBe(expected);
+        }
     }
 }

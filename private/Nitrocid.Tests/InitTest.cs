@@ -19,7 +19,7 @@
 
 using System;
 using System.IO;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Nitrocid.Kernel;
 using Nitrocid.Files;
 using Nitrocid.Files.Paths;
@@ -30,9 +30,11 @@ using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Modifications;
 
+[assembly: ClassCleanupExecution(ClassCleanupBehavior.EndOfClass)]
+
 namespace Nitrocid.Tests
 {
-    [SetUpFixture]
+    [TestClass]
     public class InitTest
     {
         internal static string PathToTestSlotFolder = "";
@@ -40,8 +42,10 @@ namespace Nitrocid.Tests
         /// <summary>
         /// Initialize everything that is required before starting unit tests
         /// </summary>
-        [OneTimeSetUp]
-        public static void ReadyEverything()
+        [AssemblyInitialize]
+#pragma warning disable IDE0060
+        public static void ReadyEverything(TestContext tc)
+#pragma warning restore IDE0060
         {
             if (!Checking.FileExists(PathsManagement.GetKernelPath(KernelPathType.Configuration)))
             {
@@ -59,10 +63,6 @@ namespace Nitrocid.Tests
                 Config.CreateConfig();
             }
             Config.ReadConfig(Config.MainConfig, PathsManagement.GetKernelPath(KernelPathType.Configuration));
-
-            // NUnit sets current directory to a wrong directory, so set it to the test context directory
-            string TestAssemblyDir = TestContext.CurrentContext.TestDirectory;
-            Environment.CurrentDirectory = TestAssemblyDir;
             PathToTestSlotFolder = Path.GetFullPath("FilesystemSlot");
             PathToTestSlotFolder = FilesystemTools.NeutralizePath(PathToTestSlotFolder);
 
@@ -71,7 +71,7 @@ namespace Nitrocid.Tests
                 Making.MakeDirectory(PathToTestSlotFolder, false);
 
             // Enable debugging
-            string debugPath = TestAssemblyDir + "/UnitTestDebug.log";
+            string debugPath = Environment.CurrentDirectory + "/UnitTestDebug.log";
             DebugWriter.DebugPath = debugPath;
             KernelEntry.DebugMode = true;
 
@@ -83,7 +83,7 @@ namespace Nitrocid.Tests
         /// <summary>
         /// Clean up everything that the unit tests made
         /// </summary>
-        [OneTimeTearDown]
+        [AssemblyCleanup]
         public static void CleanEverything()
         {
             if (Checking.FolderExists(Path.GetFullPath("ResultSlot")))

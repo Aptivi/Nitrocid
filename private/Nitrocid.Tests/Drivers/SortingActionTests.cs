@@ -17,18 +17,18 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System.Linq;
 using Nitrocid.Misc.Reflection;
 
 namespace Nitrocid.Tests.Drivers
 {
-    [TestFixture]
+    [TestClass]
     public class SortingActionTests
     {
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSortNumbersInt8BestCase()
         {
@@ -38,7 +38,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSortNumbersInt16BestCase()
         {
@@ -48,7 +48,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSortNumbersInt32BestCase()
         {
@@ -58,7 +58,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSortNumbersInt64BestCase()
         {
@@ -68,7 +68,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSortNumbersInt128BestCase()
         {
@@ -78,7 +78,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSortNumbersFloatBestCase()
         {
@@ -88,7 +88,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSortNumbersDoubleBestCase()
         {
@@ -98,7 +98,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSortNumbersInt8MidCase()
         {
@@ -108,7 +108,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSortNumbersInt16MidCase()
         {
@@ -118,7 +118,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSortNumbersInt32MidCase()
         {
@@ -128,7 +128,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSortNumbersInt64MidCase()
         {
@@ -138,7 +138,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSortNumbersInt128MidCase()
         {
@@ -148,7 +148,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSortNumbersFloatMidCase()
         {
@@ -158,7 +158,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSortNumbersDoubleMidCase()
         {
@@ -168,7 +168,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSortNumbersInt8WorstCase()
         {
@@ -178,7 +178,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSortNumbersInt16WorstCase()
         {
@@ -188,7 +188,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSortNumbersInt32WorstCase()
         {
@@ -198,7 +198,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSortNumbersInt64WorstCase()
         {
@@ -208,7 +208,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSortNumbersInt128WorstCase()
         {
@@ -218,7 +218,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSortNumbersFloatWorstCase()
         {
@@ -228,7 +228,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSortNumbersDoubleWorstCase()
         {
@@ -238,7 +238,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSortNumbersInt8BestCaseUsingExtension()
         {
@@ -248,7 +248,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSortNumbersInt16BestCaseUsingExtension()
         {
@@ -258,7 +258,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSortNumbersInt32BestCaseUsingExtension()
         {
@@ -268,7 +268,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSortNumbersInt64BestCaseUsingExtension()
         {
@@ -278,7 +278,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSortNumbersInt128BestCaseUsingExtension()
         {
@@ -288,7 +288,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSortNumbersFloatBestCaseUsingExtension()
         {
@@ -298,7 +298,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSortNumbersDoubleBestCaseUsingExtension()
         {
@@ -308,7 +308,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSortNumbersInt8MidCaseUsingExtension()
         {
@@ -318,7 +318,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSortNumbersInt16MidCaseUsingExtension()
         {
@@ -328,7 +328,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSortNumbersInt32MidCaseUsingExtension()
         {
@@ -338,7 +338,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSortNumbersInt64MidCaseUsingExtension()
         {
@@ -348,7 +348,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSortNumbersInt128MidCaseUsingExtension()
         {
@@ -358,7 +358,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSortNumbersFloatMidCaseUsingExtension()
         {
@@ -368,7 +368,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSortNumbersDoubleMidCaseUsingExtension()
         {
@@ -378,7 +378,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSortNumbersInt8WorstCaseUsingExtension()
         {
@@ -388,7 +388,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSortNumbersInt16WorstCaseUsingExtension()
         {
@@ -398,7 +398,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSortNumbersInt32WorstCaseUsingExtension()
         {
@@ -408,7 +408,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSortNumbersInt64WorstCaseUsingExtension()
         {
@@ -418,7 +418,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSortNumbersInt128WorstCaseUsingExtension()
         {
@@ -428,7 +428,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSortNumbersFloatWorstCaseUsingExtension()
         {
@@ -438,7 +438,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSortNumbersDoubleWorstCaseUsingExtension()
         {
@@ -448,7 +448,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Default").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestQuickSortNumbersInt8BestCase()
         {
@@ -458,7 +458,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Quick").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestQuickSortNumbersInt16BestCase()
         {
@@ -468,7 +468,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Quick").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestQuickSortNumbersInt32BestCase()
         {
@@ -478,7 +478,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Quick").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestQuickSortNumbersInt64BestCase()
         {
@@ -488,7 +488,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Quick").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestQuickSortNumbersInt128BestCase()
         {
@@ -498,7 +498,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Quick").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestQuickSortNumbersFloatBestCase()
         {
@@ -508,7 +508,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Quick").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestQuickSortNumbersDoubleBestCase()
         {
@@ -518,7 +518,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Quick").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestQuickSortNumbersInt8MidCase()
         {
@@ -528,7 +528,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Quick").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestQuickSortNumbersInt16MidCase()
         {
@@ -538,7 +538,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Quick").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestQuickSortNumbersInt32MidCase()
         {
@@ -548,7 +548,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Quick").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestQuickSortNumbersInt64MidCase()
         {
@@ -558,7 +558,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Quick").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestQuickSortNumbersInt128MidCase()
         {
@@ -568,7 +568,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Quick").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestQuickSortNumbersFloatMidCase()
         {
@@ -578,7 +578,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Quick").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestQuickSortNumbersDoubleMidCase()
         {
@@ -588,7 +588,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Quick").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestQuickSortNumbersInt8WorstCase()
         {
@@ -598,7 +598,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Quick").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestQuickSortNumbersInt16WorstCase()
         {
@@ -608,7 +608,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Quick").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestQuickSortNumbersInt32WorstCase()
         {
@@ -618,7 +618,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Quick").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestQuickSortNumbersInt64WorstCase()
         {
@@ -628,7 +628,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Quick").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestQuickSortNumbersInt128WorstCase()
         {
@@ -638,7 +638,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Quick").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestQuickSortNumbersFloatWorstCase()
         {
@@ -648,7 +648,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Quick").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestQuickSortNumbersDoubleWorstCase()
         {
@@ -658,7 +658,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Quick").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestQuickSortNumbersInt8BestCaseUsingExtension()
         {
@@ -668,7 +668,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Quick").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestQuickSortNumbersInt16BestCaseUsingExtension()
         {
@@ -678,7 +678,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Quick").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestQuickSortNumbersInt32BestCaseUsingExtension()
         {
@@ -688,7 +688,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Quick").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestQuickSortNumbersInt64BestCaseUsingExtension()
         {
@@ -698,7 +698,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Quick").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestQuickSortNumbersInt128BestCaseUsingExtension()
         {
@@ -708,7 +708,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Quick").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestQuickSortNumbersFloatBestCaseUsingExtension()
         {
@@ -718,7 +718,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Quick").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestQuickSortNumbersDoubleBestCaseUsingExtension()
         {
@@ -728,7 +728,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Quick").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestQuickSortNumbersInt8MidCaseUsingExtension()
         {
@@ -738,7 +738,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Quick").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestQuickSortNumbersInt16MidCaseUsingExtension()
         {
@@ -748,7 +748,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Quick").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestQuickSortNumbersInt32MidCaseUsingExtension()
         {
@@ -758,7 +758,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Quick").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestQuickSortNumbersInt64MidCaseUsingExtension()
         {
@@ -768,7 +768,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Quick").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestQuickSortNumbersInt128MidCaseUsingExtension()
         {
@@ -778,7 +778,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Quick").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestQuickSortNumbersFloatMidCaseUsingExtension()
         {
@@ -788,7 +788,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Quick").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestQuickSortNumbersDoubleMidCaseUsingExtension()
         {
@@ -798,7 +798,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Quick").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestQuickSortNumbersInt8WorstCaseUsingExtension()
         {
@@ -808,7 +808,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Quick").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestQuickSortNumbersInt16WorstCaseUsingExtension()
         {
@@ -818,7 +818,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Quick").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestQuickSortNumbersInt32WorstCaseUsingExtension()
         {
@@ -828,7 +828,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Quick").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestQuickSortNumbersInt64WorstCaseUsingExtension()
         {
@@ -838,7 +838,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Quick").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestQuickSortNumbersInt128WorstCaseUsingExtension()
         {
@@ -848,7 +848,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Quick").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestQuickSortNumbersFloatWorstCaseUsingExtension()
         {
@@ -858,7 +858,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Quick").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestQuickSortNumbersDoubleWorstCaseUsingExtension()
         {
@@ -868,7 +868,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Quick").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSelectionSortNumbersInt8BestCase()
         {
@@ -878,7 +878,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Selection").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSelectionSortNumbersInt16BestCase()
         {
@@ -888,7 +888,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Selection").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSelectionSortNumbersInt32BestCase()
         {
@@ -898,7 +898,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Selection").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSelectionSortNumbersInt64BestCase()
         {
@@ -908,7 +908,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Selection").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSelectionSortNumbersInt128BestCase()
         {
@@ -918,7 +918,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Selection").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSelectionSortNumbersFloatBestCase()
         {
@@ -928,7 +928,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Selection").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSelectionSortNumbersDoubleBestCase()
         {
@@ -938,7 +938,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Selection").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSelectionSortNumbersInt8MidCase()
         {
@@ -948,7 +948,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Selection").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSelectionSortNumbersInt16MidCase()
         {
@@ -958,7 +958,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Selection").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSelectionSortNumbersInt32MidCase()
         {
@@ -968,7 +968,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Selection").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSelectionSortNumbersInt64MidCase()
         {
@@ -978,7 +978,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Selection").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSelectionSortNumbersInt128MidCase()
         {
@@ -988,7 +988,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Selection").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSelectionSortNumbersFloatMidCase()
         {
@@ -998,7 +998,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Selection").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSelectionSortNumbersDoubleMidCase()
         {
@@ -1008,7 +1008,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Selection").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSelectionSortNumbersInt8WorstCase()
         {
@@ -1018,7 +1018,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Selection").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSelectionSortNumbersInt16WorstCase()
         {
@@ -1028,7 +1028,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Selection").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSelectionSortNumbersInt32WorstCase()
         {
@@ -1038,7 +1038,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Selection").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSelectionSortNumbersInt64WorstCase()
         {
@@ -1048,7 +1048,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Selection").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSelectionSortNumbersInt128WorstCase()
         {
@@ -1058,7 +1058,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Selection").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSelectionSortNumbersFloatWorstCase()
         {
@@ -1068,7 +1068,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Selection").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSelectionSortNumbersDoubleWorstCase()
         {
@@ -1078,7 +1078,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Selection").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSelectionSortNumbersInt8BestCaseUsingExtension()
         {
@@ -1088,7 +1088,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Selection").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSelectionSortNumbersInt16BestCaseUsingExtension()
         {
@@ -1098,7 +1098,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Selection").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSelectionSortNumbersInt32BestCaseUsingExtension()
         {
@@ -1108,7 +1108,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Selection").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSelectionSortNumbersInt64BestCaseUsingExtension()
         {
@@ -1118,7 +1118,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Selection").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSelectionSortNumbersInt128BestCaseUsingExtension()
         {
@@ -1128,7 +1128,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Selection").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSelectionSortNumbersFloatBestCaseUsingExtension()
         {
@@ -1138,7 +1138,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Selection").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSelectionSortNumbersDoubleBestCaseUsingExtension()
         {
@@ -1148,7 +1148,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Selection").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSelectionSortNumbersInt8MidCaseUsingExtension()
         {
@@ -1158,7 +1158,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Selection").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSelectionSortNumbersInt16MidCaseUsingExtension()
         {
@@ -1168,7 +1168,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Selection").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSelectionSortNumbersInt32MidCaseUsingExtension()
         {
@@ -1178,7 +1178,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Selection").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSelectionSortNumbersInt64MidCaseUsingExtension()
         {
@@ -1188,7 +1188,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Selection").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSelectionSortNumbersInt128MidCaseUsingExtension()
         {
@@ -1198,7 +1198,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Selection").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSelectionSortNumbersFloatMidCaseUsingExtension()
         {
@@ -1208,7 +1208,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Selection").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSelectionSortNumbersDoubleMidCaseUsingExtension()
         {
@@ -1218,7 +1218,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Selection").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSelectionSortNumbersInt8WorstCaseUsingExtension()
         {
@@ -1228,7 +1228,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Selection").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSelectionSortNumbersInt16WorstCaseUsingExtension()
         {
@@ -1238,7 +1238,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Selection").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSelectionSortNumbersInt32WorstCaseUsingExtension()
         {
@@ -1248,7 +1248,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Selection").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSelectionSortNumbersInt64WorstCaseUsingExtension()
         {
@@ -1258,7 +1258,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Selection").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSelectionSortNumbersInt128WorstCaseUsingExtension()
         {
@@ -1268,7 +1268,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Selection").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSelectionSortNumbersFloatWorstCaseUsingExtension()
         {
@@ -1278,7 +1278,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Selection").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestSelectionSortNumbersDoubleWorstCaseUsingExtension()
         {
@@ -1288,7 +1288,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Selection").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestMergeSortNumbersInt8BestCase()
         {
@@ -1298,7 +1298,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Merge").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestMergeSortNumbersInt16BestCase()
         {
@@ -1308,7 +1308,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Merge").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestMergeSortNumbersInt32BestCase()
         {
@@ -1318,7 +1318,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Merge").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestMergeSortNumbersInt64BestCase()
         {
@@ -1328,7 +1328,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Merge").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestMergeSortNumbersInt128BestCase()
         {
@@ -1338,7 +1338,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Merge").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestMergeSortNumbersFloatBestCase()
         {
@@ -1348,7 +1348,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Merge").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestMergeSortNumbersDoubleBestCase()
         {
@@ -1358,7 +1358,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Merge").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestMergeSortNumbersInt8MidCase()
         {
@@ -1368,7 +1368,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Merge").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestMergeSortNumbersInt16MidCase()
         {
@@ -1378,7 +1378,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Merge").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestMergeSortNumbersInt32MidCase()
         {
@@ -1388,7 +1388,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Merge").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestMergeSortNumbersInt64MidCase()
         {
@@ -1398,7 +1398,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Merge").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestMergeSortNumbersInt128MidCase()
         {
@@ -1408,7 +1408,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Merge").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestMergeSortNumbersFloatMidCase()
         {
@@ -1418,7 +1418,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Merge").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestMergeSortNumbersDoubleMidCase()
         {
@@ -1428,7 +1428,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Merge").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestMergeSortNumbersInt8WorstCase()
         {
@@ -1438,7 +1438,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Merge").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestMergeSortNumbersInt16WorstCase()
         {
@@ -1448,7 +1448,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Merge").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestMergeSortNumbersInt32WorstCase()
         {
@@ -1458,7 +1458,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Merge").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestMergeSortNumbersInt64WorstCase()
         {
@@ -1468,7 +1468,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Merge").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestMergeSortNumbersInt128WorstCase()
         {
@@ -1478,7 +1478,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Merge").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestMergeSortNumbersFloatWorstCase()
         {
@@ -1488,7 +1488,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Merge").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestMergeSortNumbersDoubleWorstCase()
         {
@@ -1498,7 +1498,7 @@ namespace Nitrocid.Tests.Drivers
             ArrayTools.SortNumbers(data, "Merge").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestMergeSortNumbersInt8BestCaseUsingExtension()
         {
@@ -1508,7 +1508,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Merge").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestMergeSortNumbersInt16BestCaseUsingExtension()
         {
@@ -1518,7 +1518,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Merge").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestMergeSortNumbersInt32BestCaseUsingExtension()
         {
@@ -1528,7 +1528,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Merge").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestMergeSortNumbersInt64BestCaseUsingExtension()
         {
@@ -1538,7 +1538,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Merge").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestMergeSortNumbersInt128BestCaseUsingExtension()
         {
@@ -1548,7 +1548,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Merge").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestMergeSortNumbersFloatBestCaseUsingExtension()
         {
@@ -1558,7 +1558,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Merge").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestMergeSortNumbersDoubleBestCaseUsingExtension()
         {
@@ -1568,7 +1568,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Merge").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestMergeSortNumbersInt8MidCaseUsingExtension()
         {
@@ -1578,7 +1578,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Merge").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestMergeSortNumbersInt16MidCaseUsingExtension()
         {
@@ -1588,7 +1588,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Merge").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestMergeSortNumbersInt32MidCaseUsingExtension()
         {
@@ -1598,7 +1598,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Merge").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestMergeSortNumbersInt64MidCaseUsingExtension()
         {
@@ -1608,7 +1608,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Merge").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestMergeSortNumbersInt128MidCaseUsingExtension()
         {
@@ -1618,7 +1618,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Merge").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestMergeSortNumbersFloatMidCaseUsingExtension()
         {
@@ -1628,7 +1628,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Merge").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestMergeSortNumbersDoubleMidCaseUsingExtension()
         {
@@ -1638,7 +1638,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Merge").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestMergeSortNumbersInt8WorstCaseUsingExtension()
         {
@@ -1648,7 +1648,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Merge").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestMergeSortNumbersInt16WorstCaseUsingExtension()
         {
@@ -1658,7 +1658,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Merge").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestMergeSortNumbersInt32WorstCaseUsingExtension()
         {
@@ -1668,7 +1668,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Merge").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestMergeSortNumbersInt64WorstCaseUsingExtension()
         {
@@ -1678,7 +1678,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Merge").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestMergeSortNumbersInt128WorstCaseUsingExtension()
         {
@@ -1688,7 +1688,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Merge").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestMergeSortNumbersFloatWorstCaseUsingExtension()
         {
@@ -1698,7 +1698,7 @@ namespace Nitrocid.Tests.Drivers
             data.SortNumbers("Merge").SequenceEqual(expected).ShouldBeTrue();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestMergeSortNumbersDoubleWorstCaseUsingExtension()
         {

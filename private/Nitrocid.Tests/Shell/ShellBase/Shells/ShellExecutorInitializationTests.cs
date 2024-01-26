@@ -18,26 +18,27 @@
 //
 
 using Nitrocid.Shell.ShellBase.Shells;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System;
 
 namespace Nitrocid.Tests.Shell.ShellBase.Shells
 {
 
-    [TestFixture]
+    [TestClass]
     public class ShellExecutorInitializationTests
     {
 
-        private static BaseShell ShellInstance;
+        private static ShellTest ShellInstance;
 
         /// <summary>
         /// Tests initializing the shell instance from base
         /// </summary>
-        [Test]
         [Description("Initialization")]
-        [SetUp]
-        public void TestInitializeShellExecutorFromBase()
+        [ClassInitialize]
+#pragma warning disable IDE0060
+        public static void TestInitializeShellExecutorFromBase(TestContext tc)
+#pragma warning restore IDE0060
         {
             // Create instance
             ShellInstance = new ShellTest();
@@ -49,7 +50,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Shells
         /// <summary>
         /// Tests initializing the shell instance from base
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializedShellExecution()
         {
@@ -60,7 +61,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Shells
         /// <summary>
         /// Tests initializing the shell instance from base
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializedShellExecutionWithArguments()
         {
@@ -71,7 +72,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Shells
         /// <summary>
         /// Tests registering the shell instance from base
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestRegisteredShellExecution()
         {
@@ -102,7 +103,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Shells
         /// <summary>
         /// Tests registering the shell instance from base
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestRegisteredShellExecutionWithArguments()
         {
@@ -133,7 +134,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Shells
         /// <summary>
         /// Tests checking to see if the shell is built in
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestIsShellBuiltin()
         {
@@ -144,12 +145,12 @@ namespace Nitrocid.Tests.Shell.ShellBase.Shells
         /// <summary>
         /// Tests getting shell info
         /// </summary>
-        [Test]
-        [TestCase(ShellType.Shell)]
-        [TestCase(ShellType.AdminShell)]
-        [TestCase(ShellType.DebugShell)]
-        [TestCase(ShellType.HexShell)]
-        [TestCase(ShellType.TextShell)]
+        [TestMethod]
+        [DataRow(ShellType.Shell)]
+        [DataRow(ShellType.AdminShell)]
+        [DataRow(ShellType.DebugShell)]
+        [DataRow(ShellType.HexShell)]
+        [DataRow(ShellType.TextShell)]
         [Description("Initialization")]
         public void TestGetShellInfo(ShellType type)
         {
@@ -161,12 +162,12 @@ namespace Nitrocid.Tests.Shell.ShellBase.Shells
         /// <summary>
         /// Tests getting shell info
         /// </summary>
-        [Test]
-        [TestCase("Shell")]
-        [TestCase("AdminShell")]
-        [TestCase("DebugShell")]
-        [TestCase("HexShell")]
-        [TestCase("TextShell")]
+        [TestMethod]
+        [DataRow("Shell")]
+        [DataRow("AdminShell")]
+        [DataRow("DebugShell")]
+        [DataRow("HexShell")]
+        [DataRow("TextShell")]
         [Description("Initialization")]
         public void TestGetShellInfo(string type)
         {

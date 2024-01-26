@@ -18,7 +18,7 @@
 //
 
 using Nitrocid.Misc.Notifications;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System.Collections.Generic;
 using Terminaux.Colors;
@@ -26,14 +26,14 @@ using Terminaux.Colors;
 namespace Nitrocid.Tests.Misc.Notifications
 {
 
-    [TestFixture]
+    [TestClass]
     public class NotificationTests
     {
 
         /// <summary>
         /// Tests notification creation
         /// </summary>
-        [Test]
+        [TestMethod]
         public void TestNotifyCreate()
         {
             var Notif = new Notification("This is the title.", "This is the description.", NotificationPriority.Medium, NotificationType.Normal);
@@ -43,7 +43,7 @@ namespace Nitrocid.Tests.Misc.Notifications
         /// <summary>
         /// Tests custom notification creation
         /// </summary>
-        [Test]
+        [TestMethod]
         public void TestNotifyCreateCustom()
         {
             var Notif = new Notification("This is the title.", "This is the description.", NotificationPriority.Custom, NotificationType.Normal)
@@ -69,7 +69,7 @@ namespace Nitrocid.Tests.Misc.Notifications
         /// <summary>
         /// Tests notification sending
         /// </summary>
-        [Test]
+        [TestMethod]
         public void TestNotifySend()
         {
             var Notif = new Notification("Notification title", "This is a high priority notification", NotificationPriority.High, NotificationType.Normal);
@@ -80,7 +80,7 @@ namespace Nitrocid.Tests.Misc.Notifications
         /// <summary>
         /// Tests notifications sending
         /// </summary>
-        [Test]
+        [TestMethod]
         public void TestNotifySendRange()
         {
             var Notif1 = new Notification("High notification title", "This is a high priority notification", NotificationPriority.High, NotificationType.Normal);
@@ -94,7 +94,7 @@ namespace Nitrocid.Tests.Misc.Notifications
         /// <summary>
         /// Tests notification dismiss
         /// </summary>
-        [Test]
+        [TestMethod]
         public void TestNotifyDismiss()
         {
             var Notif = new Notification("Redundant title", "This is a redundant notification", NotificationPriority.Low, NotificationType.Normal);
@@ -105,7 +105,7 @@ namespace Nitrocid.Tests.Misc.Notifications
         /// <summary>
         /// Tests notification dismiss all
         /// </summary>
-        [Test]
+        [TestMethod]
         public void TestNotifyDismissAll()
         {
             NotificationManager.NotifDismissAll().ShouldBeTrue();
@@ -115,7 +115,7 @@ namespace Nitrocid.Tests.Misc.Notifications
         /// <summary>
         /// Tests notification equality
         /// </summary>
-        [Test]
+        [TestMethod]
         public void TestNotifyEquality()
         {
             var Notif = new Notification("A title", "This is a notification", NotificationPriority.Low, NotificationType.Normal);
@@ -127,7 +127,7 @@ namespace Nitrocid.Tests.Misc.Notifications
         /// <summary>
         /// Tests notification inequality
         /// </summary>
-        [Test]
+        [TestMethod]
         public void TestNotifyInequality()
         {
             var Notif = new Notification("A title", "This is a notification", NotificationPriority.Low, NotificationType.Normal);

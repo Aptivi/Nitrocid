@@ -18,20 +18,20 @@
 //
 
 using Nitrocid.Languages;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 
 namespace Nitrocid.Tests.Languages
 {
 
-    [TestFixture]
+    [TestClass]
     public class LocalizationQueryingTests
     {
 
         /// <summary>
         /// Tests getting cultures from current language
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestGetCulturesFromCurrentLang()
         {
@@ -43,7 +43,7 @@ namespace Nitrocid.Tests.Languages
         /// <summary>
         /// Tests getting cultures from specific language
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestGetCulturesFromLang()
         {
@@ -55,7 +55,7 @@ namespace Nitrocid.Tests.Languages
         /// <summary>
         /// Tests getting cultures from current language
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestGetCultureNamesFromCurrentLang()
         {
@@ -67,7 +67,7 @@ namespace Nitrocid.Tests.Languages
         /// <summary>
         /// Tests getting cultures from specific language
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestGetCultureNamesFromLang()
         {
@@ -79,7 +79,7 @@ namespace Nitrocid.Tests.Languages
         /// <summary>
         /// Tests getting languages
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestListLanguages()
         {
@@ -92,7 +92,7 @@ namespace Nitrocid.Tests.Languages
         /// <summary>
         /// Tests getting all languages
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestListAllLanguages()
         {

@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System.Text.RegularExpressions;
 using Nitrocid.Drivers;
@@ -26,34 +26,40 @@ using Nitrocid.Misc.Text.Probers.Regexp;
 
 namespace Nitrocid.Tests.Drivers
 {
-    [TestFixture]
+    [TestClass]
     public class RegexpTests
     {
 
-        [Test]
-        [TestCase(@"^[\w.-]+$", ExpectedResult = true)]
-        [TestCase(@"", ExpectedResult = true)]
-        [TestCase("^[\\w.-\"]+$", ExpectedResult = false)]
+        [TestMethod]
+        [DataRow(@"^[\w.-]+$", true)]
+        [DataRow(@"", true)]
+        [DataRow("^[\\w.-\"]+$", false)]
         [Description("Action")]
-        public bool TestIsValidRegex(string pattern) =>
-            RegexpTools.IsValidRegex(pattern);
+        public void TestIsValidRegex(string pattern, bool expected)
+        {
+            bool actual = RegexpTools.IsValidRegex(pattern);
+            actual.ShouldBe(expected);
+        }
 
-        [Test]
-        [TestCase("twitch", @"^[\w.-]+$", ExpectedResult = true)]
-        [TestCase("twi?tch", @"^[\w.-]+$", ExpectedResult = false)]
-        [TestCase("twitch", "", ExpectedResult = true)]
-        [TestCase("", @"^[\w.-]+$", ExpectedResult = false)]
-        [TestCase("", "", ExpectedResult = true)]
+        [TestMethod]
+        [DataRow("twitch", @"^[\w.-]+$", true)]
+        [DataRow("twi?tch", @"^[\w.-]+$", false)]
+        [DataRow("twitch", "", true)]
+        [DataRow("", @"^[\w.-]+$", false)]
+        [DataRow("", "", true)]
         [Description("Action")]
-        public bool TestIsMatch(string text, string pattern) =>
-            RegexpTools.IsMatch(text, pattern);
+        public void TestIsMatch(string text, string pattern, bool expected)
+        {
+            bool actual = RegexpTools.IsMatch(text, pattern);
+            actual.ShouldBe(expected);
+        }
 
-        [Test]
-        [TestCase("twitch", @"^[\w.-]+$")]
-        [TestCase("twi?tch", @"^[\w.-]+$")]
-        [TestCase("twitch", "")]
-        [TestCase("", @"^[\w.-]+$")]
-        [TestCase("", "")]
+        [TestMethod]
+        [DataRow("twitch", @"^[\w.-]+$")]
+        [DataRow("twi?tch", @"^[\w.-]+$")]
+        [DataRow("twitch", "")]
+        [DataRow("", @"^[\w.-]+$")]
+        [DataRow("", "")]
         [Description("Action")]
         public void TestMatch(string text, string pattern)
         {
@@ -61,10 +67,10 @@ namespace Nitrocid.Tests.Drivers
             Should.NotThrow(() => match = DriverHandler.CurrentRegexpDriverLocal.Match(text, pattern));
         }
 
-        [Test]
-        [TestCase("twitch", "^[\\w.-\"]+$")]
-        [TestCase("twi?tch", "^[\\w.-\"]+$")]
-        [TestCase("", "^[\\w.-\"]+$")]
+        [TestMethod]
+        [DataRow("twitch", "^[\\w.-\"]+$")]
+        [DataRow("twi?tch", "^[\\w.-\"]+$")]
+        [DataRow("", "^[\\w.-\"]+$")]
         [Description("Action")]
         public void TestMatchInvalid(string text, string pattern)
         {
@@ -72,12 +78,12 @@ namespace Nitrocid.Tests.Drivers
             Should.Throw(() => match = DriverHandler.CurrentRegexpDriverLocal.Match(text, pattern), typeof(KernelException));
         }
 
-        [Test]
-        [TestCase("twitch", @"^[\w.-]+$")]
-        [TestCase("twi?tch", @"^[\w.-]+$")]
-        [TestCase("twitch", "")]
-        [TestCase("", @"^[\w.-]+$")]
-        [TestCase("", "")]
+        [TestMethod]
+        [DataRow("twitch", @"^[\w.-]+$")]
+        [DataRow("twi?tch", @"^[\w.-]+$")]
+        [DataRow("twitch", "")]
+        [DataRow("", @"^[\w.-]+$")]
+        [DataRow("", "")]
         [Description("Action")]
         public void TestMatches(string text, string pattern)
         {
@@ -85,10 +91,10 @@ namespace Nitrocid.Tests.Drivers
             Should.NotThrow(() => match = DriverHandler.CurrentRegexpDriverLocal.Matches(text, pattern));
         }
 
-        [Test]
-        [TestCase("twitch", "^[\\w.-\"]+$")]
-        [TestCase("twi?tch", "^[\\w.-\"]+$")]
-        [TestCase("", "^[\\w.-\"]+$")]
+        [TestMethod]
+        [DataRow("twitch", "^[\\w.-\"]+$")]
+        [DataRow("twi?tch", "^[\\w.-\"]+$")]
+        [DataRow("", "^[\\w.-\"]+$")]
         [Description("Action")]
         public void TestMatchesInvalid(string text, string pattern)
         {
@@ -96,24 +102,24 @@ namespace Nitrocid.Tests.Drivers
             Should.Throw(() => match = DriverHandler.CurrentRegexpDriverLocal.Matches(text, pattern), typeof(KernelException));
         }
 
-        [Test]
-        [TestCase("twitch", @"^[\w.-]+$", ExpectedResult = "")]
-        [TestCase("twi?tch", @"^[\w.-]+$", ExpectedResult = "twi?tch")]
-        [TestCase("twitch", "", ExpectedResult = "twitch")]
-        [TestCase("", @"^[\w.-]+$", ExpectedResult = "")]
-        [TestCase("", "", ExpectedResult = "")]
+        [TestMethod]
+        [DataRow("twitch", @"^[\w.-]+$", "")]
+        [DataRow("twi?tch", @"^[\w.-]+$", "twi?tch")]
+        [DataRow("twitch", "", "twitch")]
+        [DataRow("", @"^[\w.-]+$", "")]
+        [DataRow("", "", "")]
         [Description("Action")]
-        public string TestFilter(string text, string pattern)
+        public void TestFilter(string text, string pattern, string expected)
         {
             string filtered = default;
             Should.NotThrow(() => filtered = DriverHandler.CurrentRegexpDriverLocal.Filter(text, pattern));
-            return filtered;
+            filtered.ShouldBe(expected);
         }
 
-        [Test]
-        [TestCase("twitch", "^[\\w.-\"]+$")]
-        [TestCase("twi?tch", "^[\\w.-\"]+$")]
-        [TestCase("", "^[\\w.-\"]+$")]
+        [TestMethod]
+        [DataRow("twitch", "^[\\w.-\"]+$")]
+        [DataRow("twi?tch", "^[\\w.-\"]+$")]
+        [DataRow("", "^[\\w.-\"]+$")]
         [Description("Action")]
         public void TestFilterInvalid(string text, string pattern)
         {
@@ -121,24 +127,24 @@ namespace Nitrocid.Tests.Drivers
             Should.Throw(() => filtered = DriverHandler.CurrentRegexpDriverLocal.Filter(text, pattern), typeof(KernelException));
         }
 
-        [Test]
-        [TestCase("twitch", @"^[\w.-]+$", "switch", ExpectedResult = "switch")]
-        [TestCase("twi?tch", @"^[\w.-]+$", "switch", ExpectedResult = "twi?tch")]
-        [TestCase("twitch", "", "switch", ExpectedResult = "switchtswitchwswitchiswitchtswitchcswitchhswitch")]
-        [TestCase("", @"^[\w.-]+$", "switch", ExpectedResult = "")]
-        [TestCase("", "", "switch", ExpectedResult = "switch")]
+        [TestMethod]
+        [DataRow("twitch", @"^[\w.-]+$", "switch", "switch")]
+        [DataRow("twi?tch", @"^[\w.-]+$", "switch", "twi?tch")]
+        [DataRow("twitch", "", "switch", "switchtswitchwswitchiswitchtswitchcswitchhswitch")]
+        [DataRow("", @"^[\w.-]+$", "switch", "")]
+        [DataRow("", "", "switch", "switch")]
         [Description("Action")]
-        public string TestFilter(string text, string pattern, string replaceWith)
+        public void TestFilter(string text, string pattern, string replaceWith, string expected)
         {
             string filtered = default;
             Should.NotThrow(() => filtered = DriverHandler.CurrentRegexpDriverLocal.Filter(text, pattern, replaceWith));
-            return filtered;
+            filtered.ShouldBe(expected);
         }
 
-        [Test]
-        [TestCase("twitch", "^[\\w.-\"]+$", "switch")]
-        [TestCase("twi?tch", "^[\\w.-\"]+$", "switch")]
-        [TestCase("", "^[\\w.-\"]+$", "switch")]
+        [TestMethod]
+        [DataRow("twitch", "^[\\w.-\"]+$", "switch")]
+        [DataRow("twi?tch", "^[\\w.-\"]+$", "switch")]
+        [DataRow("", "^[\\w.-\"]+$", "switch")]
         [Description("Action")]
         public void TestFilterInvalid(string text, string pattern, string replaceWith)
         {
@@ -146,24 +152,24 @@ namespace Nitrocid.Tests.Drivers
             Should.Throw(() => filtered = DriverHandler.CurrentRegexpDriverLocal.Filter(text, pattern, replaceWith), typeof(KernelException));
         }
 
-        [Test]
-        [TestCase("twitch-switch", @"[st]", ExpectedResult = new string[] { "", "wi", "ch-", "wi", "ch" })]
-        [TestCase("twi?tch-switch", @"[st]", ExpectedResult = new string[] { "", "wi?", "ch-", "wi", "ch" })]
-        [TestCase("twitch", "", ExpectedResult = new string[] { "", "t", "w", "i", "t", "c", "h", "" })]
-        [TestCase("", @"[st]", ExpectedResult = new string[] { "" })]
-        [TestCase("", "", ExpectedResult = new string[] { "", "" })]
+        [TestMethod]
+        [DataRow("twitch-switch", @"[st]", new string[] { "", "wi", "ch-", "wi", "ch" })]
+        [DataRow("twi?tch-switch", @"[st]", new string[] { "", "wi?", "ch-", "wi", "ch" })]
+        [DataRow("twitch", "", new string[] { "", "t", "w", "i", "t", "c", "h", "" })]
+        [DataRow("", @"[st]", new string[] { "" })]
+        [DataRow("", "", new string[] { "", "" })]
         [Description("Action")]
-        public string[] TestSplit(string text, string pattern)
+        public void TestSplit(string text, string pattern, string[] expected)
         {
             string[] split = default;
             Should.NotThrow(() => split = DriverHandler.CurrentRegexpDriverLocal.Split(text, pattern));
-            return split;
+            split.ShouldBe(expected);
         }
 
-        [Test]
-        [TestCase("twitch", "^[\\w.-\"]+$")]
-        [TestCase("twi?tch", "^[\\w.-\"]+$")]
-        [TestCase("", "^[\\w.-\"]+$")]
+        [TestMethod]
+        [DataRow("twitch", "^[\\w.-\"]+$")]
+        [DataRow("twi?tch", "^[\\w.-\"]+$")]
+        [DataRow("", "^[\\w.-\"]+$")]
         [Description("Action")]
         public void TestSplitInvalid(string text, string pattern)
         {
@@ -171,50 +177,50 @@ namespace Nitrocid.Tests.Drivers
             Should.Throw(() => split = DriverHandler.CurrentRegexpDriverLocal.Split(text, pattern), typeof(KernelException));
         }
 
-        [Test]
-        [TestCase(@"Twi\tch", ExpectedResult = @"Twi\\tch")]
-        [TestCase(@"Twi*tch", ExpectedResult = @"Twi\*tch")]
-        [TestCase(@"Twi+tch", ExpectedResult = @"Twi\+tch")]
-        [TestCase(@"Twi?tch", ExpectedResult = @"Twi\?tch")]
-        [TestCase(@"Twi|tch", ExpectedResult = @"Twi\|tch")]
-        [TestCase(@"Twi(tch", ExpectedResult = @"Twi\(tch")]
-        [TestCase(@"Twi{tch", ExpectedResult = @"Twi\{tch")]
-        [TestCase(@"Twi[tch", ExpectedResult = @"Twi\[tch")]
-        [TestCase(@"Twi)tch", ExpectedResult = @"Twi\)tch")]
-        [TestCase(@"Twi^tch", ExpectedResult = @"Twi\^tch")]
-        [TestCase(@"Twi$tch", ExpectedResult = @"Twi\$tch")]
-        [TestCase(@"Twi.tch", ExpectedResult = @"Twi\.tch")]
-        [TestCase(@"Twi#tch", ExpectedResult = @"Twi\#tch")]
-        [TestCase(@"Twi tch", ExpectedResult = @"Twi\ tch")]
+        [TestMethod]
+        [DataRow(@"Twi\tch", @"Twi\\tch")]
+        [DataRow(@"Twi*tch", @"Twi\*tch")]
+        [DataRow(@"Twi+tch", @"Twi\+tch")]
+        [DataRow(@"Twi?tch", @"Twi\?tch")]
+        [DataRow(@"Twi|tch", @"Twi\|tch")]
+        [DataRow(@"Twi(tch", @"Twi\(tch")]
+        [DataRow(@"Twi{tch", @"Twi\{tch")]
+        [DataRow(@"Twi[tch", @"Twi\[tch")]
+        [DataRow(@"Twi)tch", @"Twi\)tch")]
+        [DataRow(@"Twi^tch", @"Twi\^tch")]
+        [DataRow(@"Twi$tch", @"Twi\$tch")]
+        [DataRow(@"Twi.tch", @"Twi\.tch")]
+        [DataRow(@"Twi#tch", @"Twi\#tch")]
+        [DataRow(@"Twi tch", @"Twi\ tch")]
         [Description("Action")]
-        public string TestEscape(string text)
+        public void TestEscape(string text, string expected)
         {
             string final = default;
             Should.NotThrow(() => final = DriverHandler.CurrentRegexpDriverLocal.Escape(text));
-            return final;
+            final.ShouldBe(expected);
         }
 
-        [Test]
-        [TestCase(@"Twi\\tch", ExpectedResult = @"Twi\tch")]
-        [TestCase(@"Twi\*tch", ExpectedResult = @"Twi*tch")]
-        [TestCase(@"Twi\+tch", ExpectedResult = @"Twi+tch")]
-        [TestCase(@"Twi\?tch", ExpectedResult = @"Twi?tch")]
-        [TestCase(@"Twi\|tch", ExpectedResult = @"Twi|tch")]
-        [TestCase(@"Twi\(tch", ExpectedResult = @"Twi(tch")]
-        [TestCase(@"Twi\{tch", ExpectedResult = @"Twi{tch")]
-        [TestCase(@"Twi\[tch", ExpectedResult = @"Twi[tch")]
-        [TestCase(@"Twi\)tch", ExpectedResult = @"Twi)tch")]
-        [TestCase(@"Twi\^tch", ExpectedResult = @"Twi^tch")]
-        [TestCase(@"Twi\$tch", ExpectedResult = @"Twi$tch")]
-        [TestCase(@"Twi\.tch", ExpectedResult = @"Twi.tch")]
-        [TestCase(@"Twi\#tch", ExpectedResult = @"Twi#tch")]
-        [TestCase(@"Twi\ tch", ExpectedResult = @"Twi tch")]
+        [TestMethod]
+        [DataRow(@"Twi\\tch", @"Twi\tch")]
+        [DataRow(@"Twi\*tch", @"Twi*tch")]
+        [DataRow(@"Twi\+tch", @"Twi+tch")]
+        [DataRow(@"Twi\?tch", @"Twi?tch")]
+        [DataRow(@"Twi\|tch", @"Twi|tch")]
+        [DataRow(@"Twi\(tch", @"Twi(tch")]
+        [DataRow(@"Twi\{tch", @"Twi{tch")]
+        [DataRow(@"Twi\[tch", @"Twi[tch")]
+        [DataRow(@"Twi\)tch", @"Twi)tch")]
+        [DataRow(@"Twi\^tch", @"Twi^tch")]
+        [DataRow(@"Twi\$tch", @"Twi$tch")]
+        [DataRow(@"Twi\.tch", @"Twi.tch")]
+        [DataRow(@"Twi\#tch", @"Twi#tch")]
+        [DataRow(@"Twi\ tch", @"Twi tch")]
         [Description("Action")]
-        public string TestUnescape(string text)
+        public void TestUnescape(string text, string expected)
         {
             string final = default;
             Should.NotThrow(() => final = DriverHandler.CurrentRegexpDriverLocal.Unescape(text));
-            return final;
+            final.ShouldBe(expected);
         }
     }
 }

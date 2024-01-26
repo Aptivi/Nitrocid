@@ -20,20 +20,21 @@
 using Nitrocid.Files;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Exceptions;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
+using Nitrocid.Kernel;
 
 namespace Nitrocid.Tests.Files
 {
 
-    [TestFixture]
+    [TestClass]
     public class FilesystemNeutralizationTests
     {
 
         /// <summary>
         /// Tests path neutralization on a folder in home directory
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Neutralization")]
         public void TestNeutralizePaths()
         {
@@ -47,26 +48,35 @@ namespace Nitrocid.Tests.Files
         /// <summary>
         /// Tests path neutralization on a folder in a custom directory
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Neutralization")]
-        [Platform("Unix,Linux")]
         public void TestNeutralizePathsCustom()
         {
-            string TestPath = "sources.list";
-            string TargetPath = "/etc/apt";
-            string NeutPath = FilesystemTools.NeutralizePath(TestPath, TargetPath);
-            NeutPath.ShouldBe(TargetPath + "/" + TestPath);
+            if (KernelPlatform.IsOnUnix())
+            {
+                string TestPath = "sources.list";
+                string TargetPath = "/etc/apt";
+                string NeutPath = FilesystemTools.NeutralizePath(TestPath, TargetPath);
+                NeutPath.ShouldBe(TargetPath + "/" + TestPath);
+            }
+            else
+            {
+                string TestPath = "cmd.exe";
+                string TargetPath = "C:/WINDOWS/SYSTEM32";
+                string NeutPath = FilesystemTools.NeutralizePath(TestPath, TargetPath);
+                NeutPath.ShouldBe(TargetPath + "/" + TestPath);
+            }
         }
 
         /// <summary>
         /// Tests throwing on invalid path
         /// </summary>
-        [Test]
-        [TestCase(null)]
-        [TestCase("")]
-        [TestCase("/usr/lib")]
-        [TestCase("C:/Program Files")]
-        [TestCase("Music")]
+        [TestMethod]
+        [DataRow(null)]
+        [DataRow("")]
+        [DataRow("/usr/lib")]
+        [DataRow("C:/Program Files")]
+        [DataRow("Music")]
         [Description("Neutralization")]
         public void TestThrowOnInvalidPathValid(string path) =>
             Should.NotThrow(() => FilesystemTools.ThrowOnInvalidPath(path));
@@ -74,13 +84,14 @@ namespace Nitrocid.Tests.Files
         /// <summary>
         /// Tests throwing on invalid path
         /// </summary>
-        [Test]
-        [TestCase("\\\\.\\globalroot\\device\\condrv\\kernelconnect")]
-        [TestCase("C:\\$i30")]
-        [Platform("Win")]
+        [TestMethod]
+        [DataRow("\\\\.\\globalroot\\device\\condrv\\kernelconnect")]
+        [DataRow("C:\\$i30")]
         [Description("Neutralization")]
-        public void TestThrowOnInvalidPathInvalid(string path) =>
-            Should.Throw(() => FilesystemTools.ThrowOnInvalidPath(path), typeof(KernelException));
-
+        public void TestThrowOnInvalidPathInvalid(string path)
+        {
+            if (KernelPlatform.IsOnWindows())
+                Should.Throw(() => FilesystemTools.ThrowOnInvalidPath(path), typeof(KernelException));
+        }
     }
 }

@@ -19,21 +19,21 @@
 
 using Nitrocid.Kernel.Time.Calendars;
 using Nitrocid.Kernel.Time.Converters;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System;
 
 namespace Nitrocid.Tests.Kernel.Time
 {
 
-    [TestFixture]
+    [TestClass]
     public class TimeConversionTests
     {
 
         /// <summary>
         /// Tests converting the date to Unix time (seconds since 1970/1/1)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestDateToUnix()
         {
@@ -47,7 +47,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests converting the Unix time (seconds since 1970/1/1) to date
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Conversion")]
         public void TestUnixToDate()
         {
@@ -61,15 +61,15 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests getting date from calendar
         /// </summary>
-        [Test]
-        [TestCase(CalendarTypes.Chinese, 2014, 9, 20)]
-        [TestCase(CalendarTypes.Gregorian, 2014, 9, 20)]
-        [TestCase(CalendarTypes.Hijri, 1435, 11, 26)]
-        [TestCase(CalendarTypes.Japanese, 26, 9, 20)]
-        [TestCase(CalendarTypes.Persian, 1393, 6, 29)]
-        [TestCase(CalendarTypes.SaudiHijri, 1435, 11, 25)]
-        [TestCase(CalendarTypes.Taiwanese, 103, 9, 20)]
-        [TestCase(CalendarTypes.ThaiBuddhist, 2557, 9, 20)]
+        [TestMethod]
+        [DataRow(CalendarTypes.Chinese, 2014, 9, 20)]
+        [DataRow(CalendarTypes.Gregorian, 2014, 9, 20)]
+        [DataRow(CalendarTypes.Hijri, 1435, 11, 26)]
+        [DataRow(CalendarTypes.Japanese, 26, 9, 20)]
+        [DataRow(CalendarTypes.Persian, 1393, 6, 29)]
+        [DataRow(CalendarTypes.SaudiHijri, 1435, 11, 25)]
+        [DataRow(CalendarTypes.Taiwanese, 103, 9, 20)]
+        [DataRow(CalendarTypes.ThaiBuddhist, 2557, 9, 20)]
         [Description("Conversion")]
         public void GetDateFromCalendar(CalendarTypes calendarType, int year, int month, int day)
         {
@@ -84,15 +84,15 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests getting date from calendar without accessing the culture information
         /// </summary>
-        [Test]
-        [TestCase(CalendarTypes.Chinese, 2014, 9, 20)]
-        [TestCase(CalendarTypes.Gregorian, 2014, 9, 20)]
-        [TestCase(CalendarTypes.Hijri, 1435, 11, 26)]
-        [TestCase(CalendarTypes.Japanese, 26, 9, 20)]
-        [TestCase(CalendarTypes.Persian, 1393, 6, 29)]
-        [TestCase(CalendarTypes.SaudiHijri, 1435, 11, 25)]
-        [TestCase(CalendarTypes.Taiwanese, 103, 9, 20)]
-        [TestCase(CalendarTypes.ThaiBuddhist, 2557, 9, 20)]
+        [TestMethod]
+        [DataRow(CalendarTypes.Chinese, 2014, 9, 20)]
+        [DataRow(CalendarTypes.Gregorian, 2014, 9, 20)]
+        [DataRow(CalendarTypes.Hijri, 1435, 11, 26)]
+        [DataRow(CalendarTypes.Japanese, 26, 9, 20)]
+        [DataRow(CalendarTypes.Persian, 1393, 6, 29)]
+        [DataRow(CalendarTypes.SaudiHijri, 1435, 11, 25)]
+        [DataRow(CalendarTypes.Taiwanese, 103, 9, 20)]
+        [DataRow(CalendarTypes.ThaiBuddhist, 2557, 9, 20)]
         [Description("Conversion")]
         public void GetDateFromCalendarNoCulture(CalendarTypes calendarType, int year, int month, int day)
         {

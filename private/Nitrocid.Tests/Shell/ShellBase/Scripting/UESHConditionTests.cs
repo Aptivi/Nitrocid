@@ -21,20 +21,20 @@ using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Shell.ShellBase.Scripting;
 using Nitrocid.Shell.ShellBase.Scripting.Conditions;
 using Nitrocid.Tests.Shell.ShellBase.Scripting.CustomConditions;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 
 namespace Nitrocid.Tests.Shell.ShellBase.Scripting
 {
 
-    [TestFixture]
+    [TestClass]
     public class UESHConditionTests
     {
 
         /// <summary>
         /// Tests querying available conditions
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestQueryAvailableConditions()
         {
@@ -45,19 +45,19 @@ namespace Nitrocid.Tests.Shell.ShellBase.Scripting
         /// <summary>
         /// Tests querying available conditions
         /// </summary>
-        [Test]
-        [TestCase(false, "1 eq 1", "", "", "", "", ExpectedResult = true)]
-        [TestCase(false, "1 eq 2", "", "", "", "", ExpectedResult = false)]
-        [TestCase(true, "$firstVar eq 1", "firstVar", "1", "", "", ExpectedResult = true)]
-        [TestCase(true, "$firstVar eq 2", "firstVar", "1", "", "", ExpectedResult = false)]
-        [TestCase(true, "$firstVar eq $secondVar", "firstVar", "1", "secondVar", "1", ExpectedResult = true)]
-        [TestCase(true, "$firstVar eq $secondVar", "firstVar", "1", "secondVar", "2", ExpectedResult = false)]
-        [TestCase(false, "ter.txt isfname", "", "", "", "", ExpectedResult = true)]
-        [TestCase(false, "?><\"\0.zfu isfname", "", "", "", "", ExpectedResult = false)]
-        [TestCase(true, "$firstVar isfname", "firstVar", "ter.txt", "", "", ExpectedResult = true)]
-        [TestCase(true, "$firstVar isfname", "firstVar", "?><\"\0.zfu", "", "", ExpectedResult = false)]
+        [TestMethod]
+        [DataRow(false, "1 eq 1", "", "", "", "", true)]
+        [DataRow(false, "1 eq 2", "", "", "", "", false)]
+        [DataRow(true, "$firstVar eq 1", "firstVar", "1", "", "", true)]
+        [DataRow(true, "$firstVar eq 2", "firstVar", "1", "", "", false)]
+        [DataRow(true, "$firstVar eq $secondVar", "firstVar", "1", "secondVar", "1", true)]
+        [DataRow(true, "$firstVar eq $secondVar", "firstVar", "1", "secondVar", "2", false)]
+        [DataRow(false, "ter.txt isfname", "", "", "", "", true)]
+        [DataRow(false, "?><\"\0.zfu isfname", "", "", "", "", false)]
+        [DataRow(true, "$firstVar isfname", "firstVar", "ter.txt", "", "", true)]
+        [DataRow(true, "$firstVar isfname", "firstVar", "?><\"\0.zfu", "", "", false)]
         [Description("Action")]
-        public bool TestConditionSatisfied(bool varMode, string condition, string variable, string variableValue, string variable2, string variableValue2)
+        public void TestConditionSatisfied(bool varMode, string condition, string variable, string variableValue, string variable2, string variableValue2, bool expected)
         {
             if (varMode)
             {
@@ -69,13 +69,14 @@ namespace Nitrocid.Tests.Shell.ShellBase.Scripting
                 UESHVariables.InitializeVariable(variable2);
                 UESHVariables.SetVariable(variable2, variableValue2).ShouldBeTrue();
             }
-            return UESHConditional.ConditionSatisfied(condition);
+            bool actual = UESHConditional.ConditionSatisfied(condition);
+            actual.ShouldBe(expected);
         }
 
         /// <summary>
         /// Tests registering the condition and testing it
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRegisterConditionAndTestSatisfaction()
         {
@@ -87,7 +88,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Scripting
         /// <summary>
         /// Tests registering the condition and testing it
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestUnregisterConditionAndTestSatisfaction()
         {

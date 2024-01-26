@@ -27,21 +27,21 @@ using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel;
 using Nitrocid.Kernel.Configuration;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using Shouldly.ShouldlyExtensionMethods;
 
 namespace Nitrocid.Tests.Files
 {
 
-    [TestFixture]
+    [TestClass]
     public class FilesystemManipulationTests
     {
 
         /// <summary>
         /// Tests copying directory to directory
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Manipulation")]
         public void TestCopyDirectoryToDirectory()
         {
@@ -55,7 +55,7 @@ namespace Nitrocid.Tests.Files
         /// <summary>
         /// Tests copying file to directory
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Manipulation")]
         public void TestCopyFileToDirectory()
         {
@@ -68,7 +68,7 @@ namespace Nitrocid.Tests.Files
         /// <summary>
         /// Tests copying file to file
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Manipulation")]
         public void TestCopyFileToFile()
         {
@@ -81,7 +81,7 @@ namespace Nitrocid.Tests.Files
         /// <summary>
         /// Tests making directory
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Manipulation")]
         public void TestMakeDirectory()
         {
@@ -92,7 +92,7 @@ namespace Nitrocid.Tests.Files
         /// <summary>
         /// Tests making file
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Manipulation")]
         public void TestMakeFile()
         {
@@ -103,7 +103,7 @@ namespace Nitrocid.Tests.Files
         /// <summary>
         /// Tests making file
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Manipulation")]
         public void TestMakeJsonFile()
         {
@@ -114,7 +114,7 @@ namespace Nitrocid.Tests.Files
         /// <summary>
         /// Tests moving directory to directory
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Manipulation")]
         public void TestMoveDirectoryToDirectory()
         {
@@ -128,7 +128,7 @@ namespace Nitrocid.Tests.Files
         /// <summary>
         /// Tests moving file to directory
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Manipulation")]
         public void TestMoveFileToDirectory()
         {
@@ -141,7 +141,7 @@ namespace Nitrocid.Tests.Files
         /// <summary>
         /// Tests moving file to file
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Manipulation")]
         public void TestMoveFileToFile()
         {
@@ -154,7 +154,7 @@ namespace Nitrocid.Tests.Files
         /// <summary>
         /// Tests the theory of attribute removal implementation
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Manipulation")]
         public void TestRemoveAttribute()
         {
@@ -167,7 +167,7 @@ namespace Nitrocid.Tests.Files
         /// <summary>
         /// Tests removing directory
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Manipulation")]
         public void TestRemoveDirectory()
         {
@@ -179,7 +179,7 @@ namespace Nitrocid.Tests.Files
         /// <summary>
         /// Tests removing file
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Manipulation")]
         public void TestRemoveFile()
         {
@@ -191,7 +191,7 @@ namespace Nitrocid.Tests.Files
         /// <summary>
         /// Tests searching file for string
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Manipulation")]
         public void TestSearchFileForString()
         {
@@ -205,7 +205,7 @@ namespace Nitrocid.Tests.Files
         /// <summary>
         /// Tests searching file for string using regular expressions
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Manipulation")]
         public void TestSearchFileForStringRegexp()
         {
@@ -219,7 +219,7 @@ namespace Nitrocid.Tests.Files
         /// <summary>
         /// Tests adding attribute
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Manipulation")]
         public void TestAddAttribute()
         {
@@ -231,7 +231,7 @@ namespace Nitrocid.Tests.Files
         /// <summary>
         /// Tests deleting attribute
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Manipulation")]
         public void TestDeleteAttribute()
         {
@@ -243,7 +243,7 @@ namespace Nitrocid.Tests.Files
         /// <summary>
         /// Tests reading all lines without roadblocks
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Manipulation")]
         public void TestReadAllLinesNoBlock()
         {
@@ -257,7 +257,7 @@ namespace Nitrocid.Tests.Files
         /// <summary>
         /// Tests reading all lines
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Manipulation")]
         public void TestReadContents()
         {
@@ -271,7 +271,7 @@ namespace Nitrocid.Tests.Files
         /// <summary>
         /// Tests reading all text without roadblocks
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Manipulation")]
         public void TestReadAllTextNoBlock()
         {
@@ -285,7 +285,7 @@ namespace Nitrocid.Tests.Files
         /// <summary>
         /// Tests reading all text
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Manipulation")]
         public void TestReadContentsText()
         {
@@ -299,7 +299,7 @@ namespace Nitrocid.Tests.Files
         /// <summary>
         /// Tests reading all lines without roadblocks
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Manipulation")]
         public void TestWriteAllLinesNoBlock()
         {
@@ -320,7 +320,7 @@ namespace Nitrocid.Tests.Files
         /// <summary>
         /// Tests reading all lines
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Manipulation")]
         public void TestWriteContents()
         {
@@ -341,7 +341,7 @@ namespace Nitrocid.Tests.Files
         /// <summary>
         /// Tests reading all text without roadblocks
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Manipulation")]
         public void TestWriteAllTextNoBlock()
         {
@@ -362,7 +362,7 @@ namespace Nitrocid.Tests.Files
         /// <summary>
         /// Tests reading all text
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Manipulation")]
         public void TestWriteContentsText()
         {
@@ -383,7 +383,7 @@ namespace Nitrocid.Tests.Files
         /// <summary>
         /// Tests getting lookup path list
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Manipulation")]
         public void TestGetPathList()
         {
@@ -394,7 +394,7 @@ namespace Nitrocid.Tests.Files
         /// <summary>
         /// Tests adding a neutralized path to lookup
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Manipulation")]
         public void TestAddToPathLookupNeutralized()
         {
@@ -407,7 +407,7 @@ namespace Nitrocid.Tests.Files
         /// <summary>
         /// Tests adding a non-neutralized path to lookup
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Manipulation")]
         public void TestAddToPathLookupNonNeutralized()
         {
@@ -420,7 +420,7 @@ namespace Nitrocid.Tests.Files
         /// <summary>
         /// Tests adding a neutralized path to lookup with the root path specified
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Manipulation")]
         public void TestAddToPathLookupNeutralizedWithRootPath()
         {
@@ -434,7 +434,7 @@ namespace Nitrocid.Tests.Files
         /// <summary>
         /// Tests adding a non-neutralized path to lookup with the root path specified
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Manipulation")]
         public void TestAddToPathLookupNonNeutralizedWithRootPath()
         {
@@ -448,7 +448,7 @@ namespace Nitrocid.Tests.Files
         /// <summary>
         /// Tests removing a neutralized path to lookup
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Manipulation")]
         public void TestRemoveFromPathLookupNeutralized()
         {
@@ -460,7 +460,7 @@ namespace Nitrocid.Tests.Files
         /// <summary>
         /// Tests removing a non-neutralized path to lookup
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Manipulation")]
         public void TestRemoveFromPathLookupNonNeutralized()
         {
@@ -472,7 +472,7 @@ namespace Nitrocid.Tests.Files
         /// <summary>
         /// Tests removing a neutralized path to lookup with the root path specified
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Manipulation")]
         public void TestRemoveFromPathLookupNeutralizedWithRootPath()
         {
@@ -485,7 +485,7 @@ namespace Nitrocid.Tests.Files
         /// <summary>
         /// Tests removing a non-neutralized path to lookup with the root path specified
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Manipulation")]
         public void TestRemoveFromPathLookupNonNeutralizedWithRootPath()
         {
@@ -499,7 +499,7 @@ namespace Nitrocid.Tests.Files
         /// <summary>
         /// Tests checking to see if the file exists in any of the lookup paths
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Manipulation")]
         public void TestFileExistsInPath()
         {
@@ -512,7 +512,7 @@ namespace Nitrocid.Tests.Files
         /// <summary>
         /// Tests creating filesystem entries list
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Manipulation")]
         public void TestCreateList()
         {
@@ -523,7 +523,7 @@ namespace Nitrocid.Tests.Files
         /// <summary>
         /// Tests combining files
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Manipulation")]
         public void TestCombineFiles()
         {
@@ -539,7 +539,7 @@ namespace Nitrocid.Tests.Files
         /// <summary>
         /// Tests removing attribute
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Manipulation")]
         public void TestRemoveAttributeExtension()
         {

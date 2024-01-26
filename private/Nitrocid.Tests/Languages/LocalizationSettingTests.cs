@@ -18,20 +18,20 @@
 //
 
 using Nitrocid.Languages;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 
 namespace Nitrocid.Tests.Languages
 {
 
-    [TestFixture]
+    [TestClass]
     public class LocalizationSettingTests
     {
 
         /// <summary>
         /// Tests updating the culture
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Setting")]
         public void TestUpdateCulture()
         {
@@ -44,7 +44,7 @@ namespace Nitrocid.Tests.Languages
         /// <summary>
         /// Tests updating the culture
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Setting")]
         public void TestUpdateCultureDry()
         {
@@ -57,7 +57,7 @@ namespace Nitrocid.Tests.Languages
         /// <summary>
         /// Tests updating the culture using custom culture
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Setting")]
         public void TestUpdateCultureCustom()
         {
@@ -70,7 +70,7 @@ namespace Nitrocid.Tests.Languages
         /// <summary>
         /// Tests language setting
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Setting")]
         public void TestSetLang()
         {
@@ -95,7 +95,7 @@ namespace Nitrocid.Tests.Languages
         /// <summary>
         /// Tests language setting
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Setting")]
         public void TestSetLangDry()
         {
@@ -120,8 +120,8 @@ namespace Nitrocid.Tests.Languages
         /// <summary>
         /// Restores the language
         /// </summary>
-        [TearDown]
-        public void RestoreLanguage() =>
+        [ClassCleanup]
+        public static void RestoreLanguage() =>
             LanguageManager.SetLang("eng");
 
     }

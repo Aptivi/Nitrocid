@@ -20,7 +20,7 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Nitrocid.Misc.Text;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System.IO;
 using Textify.General;
@@ -28,7 +28,7 @@ using Textify.General;
 namespace Nitrocid.Tests.Misc.Text
 {
 
-    [TestFixture]
+    [TestClass]
     public class JsonToolsTest
     {
 
@@ -46,7 +46,7 @@ namespace Nitrocid.Tests.Misc.Text
         /// <summary>
         /// Tests beautifying the JSON text
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestBeautifyJsonText()
         {
@@ -58,7 +58,7 @@ namespace Nitrocid.Tests.Misc.Text
         /// <summary>
         /// Tests beautifying the JSON text (already done)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestBeautifyJsonTextAlreadyDone()
         {
@@ -70,7 +70,7 @@ namespace Nitrocid.Tests.Misc.Text
         /// <summary>
         /// Tests beautifying the JSON text
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestBeautifyJsonFile()
         {
@@ -83,7 +83,7 @@ namespace Nitrocid.Tests.Misc.Text
         /// <summary>
         /// Tests minifying the JSON text
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestMinifyJsonText()
         {
@@ -95,7 +95,7 @@ namespace Nitrocid.Tests.Misc.Text
         /// <summary>
         /// Tests minifying the JSON text (already done)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestMinifyJsonTextAlreadyDone()
         {
@@ -107,7 +107,7 @@ namespace Nitrocid.Tests.Misc.Text
         /// <summary>
         /// Tests minifying the JSON text
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestMinifyJsonFile()
         {
@@ -145,7 +145,7 @@ namespace Nitrocid.Tests.Misc.Text
         /// <summary>
         /// Tests finding a difference between two different objects
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestFindDifferenceObjectDifferent()
         {
@@ -167,7 +167,7 @@ namespace Nitrocid.Tests.Misc.Text
         /// <summary>
         /// Tests finding a difference between two identical objects
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestFindDifferenceObjectIdentical()
         {
@@ -202,7 +202,7 @@ namespace Nitrocid.Tests.Misc.Text
         /// <summary>
         /// Tests finding a difference between two different arrays
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestFindDifferenceArrayDifferent()
         {
@@ -218,7 +218,7 @@ namespace Nitrocid.Tests.Misc.Text
         /// <summary>
         /// Tests finding a difference between two identical arrays
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestFindDifferenceArrayIdentical()
         {
@@ -239,7 +239,7 @@ namespace Nitrocid.Tests.Misc.Text
         /// <summary>
         /// Tests finding a difference between two different other objects
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestFindDifferenceOtherDifferent()
         {
@@ -255,7 +255,7 @@ namespace Nitrocid.Tests.Misc.Text
         /// <summary>
         /// Tests finding a difference between two identical other objects
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestFindDifferenceOtherIdentical()
         {

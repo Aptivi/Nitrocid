@@ -18,21 +18,21 @@
 //
 
 using Nitrocid.Kernel.Exceptions;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System;
 
 namespace Nitrocid.Tests.Kernel.Exceptions
 {
 
-    [TestFixture]
+    [TestClass]
     public class KernelExceptionsTests
     {
 
         /// <summary>
         /// Tests raising the kernel error exception
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Misc")]
         public void TestRaiseKernelErrorException()
         {
@@ -44,7 +44,7 @@ namespace Nitrocid.Tests.Kernel.Exceptions
         /// <summary>
         /// Tests raising the kernel exception
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Misc")]
         public void TestRaiseKernelException()
         {
@@ -57,7 +57,7 @@ namespace Nitrocid.Tests.Kernel.Exceptions
         /// <summary>
         /// Tests getting the kernel exception message
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Misc")]
         public void TestGetFinalExceptionMessage()
         {
@@ -76,7 +76,7 @@ namespace Nitrocid.Tests.Kernel.Exceptions
         /// <summary>
         /// Tests getting the kernel exception message
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Misc")]
         public void TestGetFinalExceptionMessageWithNoExtraMessage()
         {
@@ -95,7 +95,7 @@ namespace Nitrocid.Tests.Kernel.Exceptions
         /// <summary>
         /// Tests getting the kernel exception message
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Misc")]
         public void TestGetFinalExceptionMessageWithException()
         {
@@ -116,7 +116,7 @@ namespace Nitrocid.Tests.Kernel.Exceptions
         /// <summary>
         /// Tests getting the kernel exception message
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Misc")]
         public void TestGetFinalExceptionMessageWithExceptionWithNoExtraMessage()
         {
@@ -137,7 +137,7 @@ namespace Nitrocid.Tests.Kernel.Exceptions
         /// <summary>
         /// Tests getting the kernel exception message
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Misc")]
         public void TestGetFinalExceptionMessageWithUnknownType()
         {

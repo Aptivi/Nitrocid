@@ -18,18 +18,18 @@
 //
 
 using Nitrocid.Shell.ShellBase.Arguments;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 
 namespace Nitrocid.Tests.Arguments
 {
-    [TestFixture]
+    [TestClass]
     public class ArgumentParseTests
     {
         /// <summary>
         /// Tests initializing <see cref="ProvidedArgumentArgumentsInfo"/> instance from a command line argument
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeProvidedArgumentArgumentInfoInstanceFromCommandLineArgNoArg()
         {
@@ -51,7 +51,7 @@ namespace Nitrocid.Tests.Arguments
         /// <summary>
         /// Tests initializing <see cref="ProvidedArgumentArgumentsInfo"/> instance from a command line argument
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeProvidedArgumentArgumentInfoInstanceFromCommandLineArgWithArg()
         {
@@ -76,7 +76,7 @@ namespace Nitrocid.Tests.Arguments
         /// <summary>
         /// Tests initializing <see cref="ProvidedArgumentArgumentsInfo"/> instance from a command line argument
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeProvidedArgumentArgumentInfoInstanceFromCommandLineArgWithSwitch()
         {
@@ -100,7 +100,7 @@ namespace Nitrocid.Tests.Arguments
         /// <summary>
         /// Tests initializing <see cref="ProvidedArgumentArgumentsInfo"/> instance from a command line argument
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeProvidedArgumentArgumentInfoInstanceFromCommandLineArgFull()
         {

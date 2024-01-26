@@ -18,18 +18,18 @@
 //
 
 using Nitrocid.Users;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 
 namespace Nitrocid.Tests.Users
 {
-    [TestFixture]
+    [TestClass]
     public class UserInitializationTests
     {
         /// <summary>
         /// Tests user initialization
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeUsers() => Should.NotThrow(UserManagement.InitializeUsers);
     }

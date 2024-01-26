@@ -19,7 +19,7 @@
 
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Themes;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System;
 using System.Collections.Generic;
@@ -30,14 +30,14 @@ using Terminaux.Colors.Data;
 namespace Nitrocid.Tests.ConsoleBase
 {
 
-    [TestFixture]
+    [TestClass]
     public class ColorQueryingTests
     {
 
         /// <summary>
         /// Tests getting color from the kernel type
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestGetColor()
         {
@@ -54,7 +54,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests setting color from the kernel type
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestSetColor()
         {
@@ -79,7 +79,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests populating colors
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestPopulateColorsCurrent()
         {
@@ -99,7 +99,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests populating colors
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestPopulateColorsDefault()
         {
@@ -120,7 +120,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests populating colors
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestPopulateColorsEmpty()
         {
@@ -138,8 +138,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests getting gray color
         /// </summary>
-        [Test]
-        [Order(0)]
+        [TestMethod]
         [Description("Querying")]
         public void TestGetGrayLight()
         {
@@ -152,8 +151,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests getting gray color
         /// </summary>
-        [Test]
-        [Order(1)]
+        [TestMethod]
         [Description("Querying")]
         public void TestGetGrayDark()
         {
@@ -166,7 +164,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests getting random color
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestGetRandomColorDefault()
         {
@@ -179,7 +177,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests getting random color
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestGetRandomColor()
         {
@@ -200,7 +198,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests getting random color
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestGetRandomColorBlackSelection()
         {
@@ -220,7 +218,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests getting random color
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestGetRandomColorNoBlackSelection()
         {
@@ -240,76 +238,80 @@ namespace Nitrocid.Tests.ConsoleBase
         /// <summary>
         /// Tests trying to parse the color from hex
         /// </summary>
-        [TestCase("#0F0F0F", ExpectedResult = true)]
-        [TestCase("#0G0G0G", ExpectedResult = false)]
+        [DataRow("#0F0F0F", true)]
+        [DataRow("#0G0G0G", false)]
         [Description("Querying")]
-        public bool TestTryParseColorFromHex(string TargetHex)
+        public void TestTryParseColorFromHex(string TargetHex, bool expected)
         {
             Console.WriteLine($"Trying {TargetHex}...");
-            return ColorTools.TryParseColor(TargetHex);
+            bool actual = ColorTools.TryParseColor(TargetHex);
+            actual.ShouldBe(expected);
         }
 
         /// <summary>
         /// Tests trying to parse the color from color numbers
         /// </summary>
-        [TestCase(26, ExpectedResult = true)]
-        [TestCase(260, ExpectedResult = false)]
-        [TestCase(-26, ExpectedResult = false)]
+        [DataRow(26, true)]
+        [DataRow(260, false)]
+        [DataRow(-26, false)]
         [Description("Querying")]
-        public bool TestTryParseColorFromColorNum(int TargetColorNum)
+        public void TestTryParseColorFromColorNum(int TargetColorNum, bool expected)
         {
             Console.WriteLine($"Trying colornum {TargetColorNum}...");
-            return ColorTools.TryParseColor(TargetColorNum);
+            bool actual = ColorTools.TryParseColor(TargetColorNum);
+            actual.ShouldBe(expected);
         }
 
         /// <summary>
         /// Tests trying to parse the color from RGB
         /// </summary>
-        [TestCase(4, 4, 4, ExpectedResult = true)]
-        [TestCase(400, 4, 4, ExpectedResult = false)]
-        [TestCase(4, 400, 4, ExpectedResult = false)]
-        [TestCase(4, 4, 400, ExpectedResult = false)]
-        [TestCase(4, 400, 400, ExpectedResult = false)]
-        [TestCase(400, 4, 400, ExpectedResult = false)]
-        [TestCase(400, 400, 4, ExpectedResult = false)]
-        [TestCase(400, 400, 400, ExpectedResult = false)]
-        [TestCase(-4, 4, 4, ExpectedResult = false)]
-        [TestCase(4, -4, 4, ExpectedResult = false)]
-        [TestCase(4, 4, -4, ExpectedResult = false)]
-        [TestCase(4, -4, -4, ExpectedResult = false)]
-        [TestCase(-4, 4, -4, ExpectedResult = false)]
-        [TestCase(-4, -4, 4, ExpectedResult = false)]
-        [TestCase(-4, -4, -4, ExpectedResult = false)]
+        [DataRow(4, 4, 4, true)]
+        [DataRow(400, 4, 4, false)]
+        [DataRow(4, 400, 4, false)]
+        [DataRow(4, 4, 400, false)]
+        [DataRow(4, 400, 400, false)]
+        [DataRow(400, 4, 400, false)]
+        [DataRow(400, 400, 4, false)]
+        [DataRow(400, 400, 400, false)]
+        [DataRow(-4, 4, 4, false)]
+        [DataRow(4, -4, 4, false)]
+        [DataRow(4, 4, -4, false)]
+        [DataRow(4, -4, -4, false)]
+        [DataRow(-4, 4, -4, false)]
+        [DataRow(-4, -4, 4, false)]
+        [DataRow(-4, -4, -4, false)]
         [Description("Querying")]
-        public bool TestTryParseColorFromRGB(int R, int G, int B)
+        public void TestTryParseColorFromRGB(int R, int G, int B, bool expected)
         {
             Console.WriteLine($"Trying rgb {R}, {G}, {B}...");
-            return ColorTools.TryParseColor(R, G, B);
+            bool actual = ColorTools.TryParseColor(R, G, B);
+            actual.ShouldBe(expected);
         }
 
         /// <summary>
         /// Tests trying to parse the color from RGB
         /// </summary>
-        [TestCase("4;4;4", ExpectedResult = true)]
-        [TestCase("400;4;4", ExpectedResult = false)]
-        [TestCase("4;400;4", ExpectedResult = false)]
-        [TestCase("4;4;400", ExpectedResult = false)]
-        [TestCase("4;400;400", ExpectedResult = false)]
-        [TestCase("400;4;400", ExpectedResult = false)]
-        [TestCase("400;400;4", ExpectedResult = false)]
-        [TestCase("400;400;400", ExpectedResult = false)]
-        [TestCase("-4;4;4", ExpectedResult = false)]
-        [TestCase("4;-4;4", ExpectedResult = false)]
-        [TestCase("4;4;-4", ExpectedResult = false)]
-        [TestCase("4;-4;-4", ExpectedResult = false)]
-        [TestCase("-4;4;-4", ExpectedResult = false)]
-        [TestCase("-4;-4;4", ExpectedResult = false)]
-        [TestCase("-4;-4;-4", ExpectedResult = false)]
+        [DataRow("4;4;4", true)]
+        [DataRow("400;4;4", false)]
+        [DataRow("4;400;4", false)]
+        [DataRow("4;4;400", false)]
+        [DataRow("4;400;400", false)]
+        [DataRow("400;4;400", false)]
+        [DataRow("400;400;4", false)]
+        [DataRow("400;400;400", false)]
+        [DataRow("-4;4;4", false)]
+        [DataRow("4;-4;4", false)]
+        [DataRow("4;4;-4", false)]
+        [DataRow("4;-4;-4", false)]
+        [DataRow("-4;4;-4", false)]
+        [DataRow("-4;-4;4", false)]
+        [DataRow("-4;-4;-4", false)]
         [Description("Querying")]
-        public bool TestTryParseColorFromSpecifier(string specifier)
+        public void TestTryParseColorFromSpecifier(string specifier, bool expected)
         {
             Console.WriteLine($"Trying rgb specifier {specifier}...");
-            return ColorTools.TryParseColor(specifier);
+            bool actual = ColorTools.TryParseColor(specifier);
+            actual.ShouldBe(expected);
         }
 
     }

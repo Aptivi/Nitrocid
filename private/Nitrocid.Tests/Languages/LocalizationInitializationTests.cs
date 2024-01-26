@@ -20,13 +20,13 @@
 using Newtonsoft.Json;
 using Nitrocid.Languages;
 using Nitrocid.Languages.Decoy;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 
 namespace Nitrocid.Tests.Languages
 {
 
-    [TestFixture]
+    [TestClass]
     public class LocalizationInitializationTests
     {
 
@@ -45,7 +45,7 @@ namespace Nitrocid.Tests.Languages
         /// <summary>
         /// Tests creating the new instance of the language information
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestProbeLocalizations()
         {

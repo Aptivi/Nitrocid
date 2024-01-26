@@ -18,29 +18,29 @@
 //
 
 using Nitrocid.Misc.Reflection;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 
 namespace Nitrocid.Tests.Misc.Reflection
 {
-    [TestFixture]
+    [TestClass]
     public class AssemblyLookupTests
     {
 
         /// <summary>
         /// Tests adding path to assembly search path
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Management")]
-        public static void TestAddPathToAssemblySearchPath() =>
+        public void TestAddPathToAssemblySearchPath() =>
             Should.NotThrow(() => AssemblyLookup.AddPathToAssemblySearchPath("Dependencies"));
 
         /// <summary>
         /// Tests removing path from assembly search path
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Management")]
-        public static void TestRemovePathFromAssemblySearchPath() =>
+        public void TestRemovePathFromAssemblySearchPath() =>
             Should.NotThrow(() => AssemblyLookup.RemovePathFromAssemblySearchPath("Dependencies"));
 
     }

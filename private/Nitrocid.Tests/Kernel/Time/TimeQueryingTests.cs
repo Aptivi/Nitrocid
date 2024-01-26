@@ -20,7 +20,7 @@
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Time.Renderers;
 using Nitrocid.Kernel.Time.Timezones;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System;
 using System.Linq;
@@ -28,14 +28,14 @@ using System.Linq;
 namespace Nitrocid.Tests.Kernel.Time
 {
 
-    [TestFixture]
+    [TestClass]
     public class TimeQueryingTests
     {
 
         /// <summary>
         /// Tests getting remaining time from now
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestGetRemainingTimeFromNow()
         {
@@ -47,7 +47,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests getting remaining time from specified time
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestGetRemainingTimeFrom()
         {
@@ -59,7 +59,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests getting remaining time from now
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestGetRemainingTimeFromNowFormatted()
         {
@@ -71,7 +71,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests getting remaining time from specified time
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestGetRemainingTimeFromFormatted()
         {
@@ -83,7 +83,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests showing UTC offset for time zone
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestShowTimeZoneUtcOffset()
         {
@@ -102,7 +102,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests showing UTC offset for time zone
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestShowTimeZoneUtcOffsetString()
         {
@@ -121,7 +121,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests showing UTC offset for time zone
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestShowTimeZoneUtcOffsetLocal()
         {
@@ -137,7 +137,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests showing UTC offset for time zone
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestShowTimeZoneUtcOffsetStringLocal()
         {

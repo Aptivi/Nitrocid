@@ -21,13 +21,13 @@ using Nitrocid.Drivers.Encryption;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Security.Permissions;
 using Nitrocid.Users;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System.Linq;
 
 namespace Nitrocid.Tests.Security.Permissions
 {
-    [TestFixture]
+    [TestClass]
     public class PermissionManagerTests
     {
 
@@ -37,8 +37,10 @@ namespace Nitrocid.Tests.Security.Permissions
         /// Add necessary user for testing
         /// </summary>
         [Description("Management")]
-        [OneTimeSetUp]
-        public void AddNecessaryUser()
+        [ClassInitialize]
+#pragma warning disable IDE0060
+        public static void AddNecessaryUser(TestContext tc)
+#pragma warning restore IDE0060
         {
             UserManagement.AddUser("account");
             UserManagement.UserExists("account").ShouldBeTrue();
@@ -47,7 +49,7 @@ namespace Nitrocid.Tests.Security.Permissions
         /// <summary>
         /// Tests querying permission grant for root
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestIsPermissionGrantedForRoot() =>
             PermissionsTools.IsPermissionGranted("root", PermissionTypes.ManageUsers).ShouldBeTrue();
@@ -55,7 +57,7 @@ namespace Nitrocid.Tests.Security.Permissions
         /// <summary>
         /// Tests querying permission grant for normal user
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestIsPermissionGrantedForNormalUser() =>
             PermissionsTools.IsPermissionGranted("account", PermissionTypes.ManageUsers).ShouldBeFalse();
@@ -63,7 +65,7 @@ namespace Nitrocid.Tests.Security.Permissions
         /// <summary>
         /// Tests demand for root
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestDemandForRoot() =>
             Should.NotThrow(() => PermissionsTools.Demand(PermissionTypes.ManageUsers));
@@ -71,7 +73,7 @@ namespace Nitrocid.Tests.Security.Permissions
         /// <summary>
         /// Tests demand for normal user
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestDemandForNormalUser()
         {
@@ -84,8 +86,8 @@ namespace Nitrocid.Tests.Security.Permissions
         /// Remove necessary user for testing
         /// </summary>
         [Description("Management")]
-        [OneTimeTearDown]
-        public void RemoveNecessaryUser() =>
+        [ClassCleanup]
+        public static void RemoveNecessaryUser() =>
             UserManagement.TryRemoveUser("account").ShouldBeTrue();
 
     }

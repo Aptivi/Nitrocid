@@ -18,20 +18,20 @@
 //
 
 using Nitrocid.Misc.Splash;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 
 namespace Nitrocid.Tests.Misc.Splash
 {
 
-    [TestFixture]
+    [TestClass]
     public class SplashTests
     {
 
         /// <summary>
         /// Tests getting splash names
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Setting")]
         public void TestGetSplashNames()
         {
@@ -44,7 +44,7 @@ namespace Nitrocid.Tests.Misc.Splash
         /// <summary>
         /// Tests getting splash from name
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Setting")]
         public void TestGetSplashFromName()
         {

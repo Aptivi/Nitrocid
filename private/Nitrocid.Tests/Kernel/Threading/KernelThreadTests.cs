@@ -18,7 +18,7 @@
 //
 
 using Nitrocid.Kernel.Threading;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System;
 using System.Threading;
@@ -26,7 +26,7 @@ using System.Threading;
 namespace Nitrocid.Tests.Kernel.Threading
 {
 
-    [TestFixture]
+    [TestClass]
     public class KernelThreadTests
     {
 
@@ -40,7 +40,7 @@ namespace Nitrocid.Tests.Kernel.Threading
         /// <summary>
         /// Tests initializing kernel thread
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeKernelThread() =>
             TargetThread = new KernelThread("Unit test thread #1", true, KernelThreadTestHelper.WriteHello);
@@ -48,7 +48,7 @@ namespace Nitrocid.Tests.Kernel.Threading
         /// <summary>
         /// Tests initializing kernel parameterized thread
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeKernelParameterizedThread() =>
             TargetParameterizedThread = new KernelThread("Unit test thread #2", true, (_) => KernelThreadTestHelper.WriteHelloWithArgument("Hello"));
@@ -56,7 +56,7 @@ namespace Nitrocid.Tests.Kernel.Threading
         /// <summary>
         /// Tests initializing kernel thread
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeKernelThreadWithChildThread()
         {
@@ -69,7 +69,7 @@ namespace Nitrocid.Tests.Kernel.Threading
         /// <summary>
         /// Tests initializing kernel parameterized thread
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeKernelParameterizedThreadWithChildThread()
         {
@@ -82,7 +82,7 @@ namespace Nitrocid.Tests.Kernel.Threading
         /// <summary>
         /// Tests initializing kernel thread
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeKernelThreadWithAppendingChildThread()
         {
@@ -95,7 +95,7 @@ namespace Nitrocid.Tests.Kernel.Threading
         /// <summary>
         /// Tests initializing kernel parameterized thread
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeKernelParameterizedThreadWithAppendingChildThread()
         {
@@ -108,7 +108,7 @@ namespace Nitrocid.Tests.Kernel.Threading
         /// <summary>
         /// Tests starting kernel thread
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestStartKernelThread() =>
             TargetThread.Start();
@@ -116,7 +116,7 @@ namespace Nitrocid.Tests.Kernel.Threading
         /// <summary>
         /// Tests starting kernel parameterized thread
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestStartKernelParameterizedThread() =>
             TargetParameterizedThread.Start("Agustin");
@@ -124,7 +124,7 @@ namespace Nitrocid.Tests.Kernel.Threading
         /// <summary>
         /// Tests starting kernel thread
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestStartKernelThreadWithChildThread() =>
             TargetThreadWithChild.Start();
@@ -132,7 +132,7 @@ namespace Nitrocid.Tests.Kernel.Threading
         /// <summary>
         /// Tests starting kernel parameterized thread
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestStartKernelParameterizedThreadWithChildThread() =>
             TargetParameterizedThreadWithChild.Start("Agustin");
@@ -140,7 +140,7 @@ namespace Nitrocid.Tests.Kernel.Threading
         /// <summary>
         /// Tests starting kernel thread
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestStartKernelThreadWithAppendingChildThread()
         {
@@ -154,7 +154,7 @@ namespace Nitrocid.Tests.Kernel.Threading
         /// <summary>
         /// Tests starting kernel parameterized thread
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestStartKernelParameterizedThreadWithAppendingChildThread()
         {
@@ -168,7 +168,7 @@ namespace Nitrocid.Tests.Kernel.Threading
         /// <summary>
         /// Tests stopping kernel thread
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestStopKernelThread()
         {
@@ -181,7 +181,7 @@ namespace Nitrocid.Tests.Kernel.Threading
         /// <summary>
         /// Tests stopping kernel parameterized thread
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestStopKernelParameterizedThread()
         {
@@ -194,7 +194,7 @@ namespace Nitrocid.Tests.Kernel.Threading
         /// <summary>
         /// Tests stopping kernel thread
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestStopKernelThreadWithChildThread()
         {
@@ -212,7 +212,7 @@ namespace Nitrocid.Tests.Kernel.Threading
         /// <summary>
         /// Tests stopping kernel parameterized thread
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestStopKernelParameterizedThreadWithChildThread()
         {
@@ -230,7 +230,7 @@ namespace Nitrocid.Tests.Kernel.Threading
         /// <summary>
         /// Tests stopping kernel thread
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestStopKernelThreadWithAppendingChildThread()
         {
@@ -248,7 +248,7 @@ namespace Nitrocid.Tests.Kernel.Threading
         /// <summary>
         /// Tests stopping kernel parameterized thread
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestStopKernelParameterizedThreadWithAppendingChildThread()
         {
@@ -266,7 +266,7 @@ namespace Nitrocid.Tests.Kernel.Threading
         /// <summary>
         /// Tests getting actual milliseconds
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestGetActualMilliseconds()
         {
@@ -277,7 +277,7 @@ namespace Nitrocid.Tests.Kernel.Threading
         /// <summary>
         /// Tests getting actual milliseconds
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestGetActualMillisecondsRecursive()
         {
@@ -291,7 +291,7 @@ namespace Nitrocid.Tests.Kernel.Threading
         /// <summary>
         /// Tests getting actual ticks
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestGetActualTicks()
         {
@@ -302,7 +302,7 @@ namespace Nitrocid.Tests.Kernel.Threading
         /// <summary>
         /// Tests getting actual ticks
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestGetActualTicksRecursive()
         {
@@ -316,7 +316,7 @@ namespace Nitrocid.Tests.Kernel.Threading
         /// <summary>
         /// Tests getting actual milliseconds
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestGetActualTimeSpan()
         {
@@ -329,7 +329,7 @@ namespace Nitrocid.Tests.Kernel.Threading
         /// <summary>
         /// Tests getting actual milliseconds
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestGetActualTimeSpanRecursive()
         {

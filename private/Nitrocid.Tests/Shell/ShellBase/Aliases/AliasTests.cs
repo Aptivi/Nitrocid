@@ -17,28 +17,27 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Nitrocid.Shell.ShellBase.Aliases;
 using Nitrocid.Shell.ShellBase.Shells;
-using NUnit.Framework;
 using Shouldly;
 
 namespace Nitrocid.Tests.Shell.ShellBase.Aliases
 {
 
-    [TestFixture]
+    [TestClass]
     public class AliasTests
     {
 
         /// <summary>
         /// Tests adding alias
         /// </summary>
-        [Test]
-        [Order(1)]
-        [TestCase(ShellType.Shell, "shutdown", "poweroff")]
-        [TestCase(ShellType.AdminShell, "journal", "j")]
-        [TestCase(ShellType.DebugShell, "keyinfo", "key")]
-        [TestCase(ShellType.HexShell, "clear", "wipe")]
-        [TestCase(ShellType.TextShell, "clear", "wipe")]
+        [TestMethod]
+        [DataRow(ShellType.Shell, "shutdown", "poweroff")]
+        [DataRow(ShellType.AdminShell, "journal", "j")]
+        [DataRow(ShellType.DebugShell, "keyinfo", "key")]
+        [DataRow(ShellType.HexShell, "clear", "wipe")]
+        [DataRow(ShellType.TextShell, "clear", "wipe")]
         [Description("Action")]
         public void TestAddAlias(ShellType type, string source, string target)
         {
@@ -50,13 +49,12 @@ namespace Nitrocid.Tests.Shell.ShellBase.Aliases
         /// <summary>
         /// Tests adding alias
         /// </summary>
-        [Test]
-        [Order(2)]
-        [TestCase("Shell", "cls", "clear")]
-        [TestCase("AdminShell", "lsevents", "lse")]
-        [TestCase("DebugShell", "currentbt", "cbt")]
-        [TestCase("HexShell", "print", "pr")]
-        [TestCase("TextShell", "save", "s")]
+        [TestMethod]
+        [DataRow("Shell", "cls", "clear")]
+        [DataRow("AdminShell", "lsevents", "lse")]
+        [DataRow("DebugShell", "currentbt", "cbt")]
+        [DataRow("HexShell", "print", "pr")]
+        [DataRow("TextShell", "save", "s")]
         [Description("Action")]
         public void TestAddAlias(string type, string source, string target)
         {
@@ -68,13 +66,12 @@ namespace Nitrocid.Tests.Shell.ShellBase.Aliases
         /// <summary>
         /// Tests adding alias
         /// </summary>
-        [Test]
-        [Order(1)]
-        [TestCase(ShellType.Shell)]
-        [TestCase(ShellType.AdminShell)]
-        [TestCase(ShellType.DebugShell)]
-        [TestCase(ShellType.HexShell)]
-        [TestCase(ShellType.TextShell)]
+        [TestMethod]
+        [DataRow(ShellType.Shell)]
+        [DataRow(ShellType.AdminShell)]
+        [DataRow(ShellType.DebugShell)]
+        [DataRow(ShellType.HexShell)]
+        [DataRow(ShellType.TextShell)]
         [Description("Action")]
         public void TestAddAliasForUnifiedCommand(ShellType type)
         {
@@ -86,13 +83,12 @@ namespace Nitrocid.Tests.Shell.ShellBase.Aliases
         /// <summary>
         /// Tests adding alias
         /// </summary>
-        [Test]
-        [Order(2)]
-        [TestCase("Shell")]
-        [TestCase("AdminShell")]
-        [TestCase("DebugShell")]
-        [TestCase("HexShell")]
-        [TestCase("TextShell")]
+        [TestMethod]
+        [DataRow("Shell")]
+        [DataRow("AdminShell")]
+        [DataRow("DebugShell")]
+        [DataRow("HexShell")]
+        [DataRow("TextShell")]
         [Description("Action")]
         public void TestAddAliasForUnifiedCommand(string type)
         {
@@ -104,13 +100,12 @@ namespace Nitrocid.Tests.Shell.ShellBase.Aliases
         /// <summary>
         /// Tests removing alias
         /// </summary>
-        [Test]
-        [Order(3)]
-        [TestCase(ShellType.Shell, "poweroff")]
-        [TestCase(ShellType.AdminShell, "j")]
-        [TestCase(ShellType.DebugShell, "key")]
-        [TestCase(ShellType.HexShell, "wipe")]
-        [TestCase(ShellType.TextShell, "wipe")]
+        [TestMethod]
+        [DataRow(ShellType.Shell, "poweroff")]
+        [DataRow(ShellType.AdminShell, "j")]
+        [DataRow(ShellType.DebugShell, "key")]
+        [DataRow(ShellType.HexShell, "wipe")]
+        [DataRow(ShellType.TextShell, "wipe")]
         [Description("Action")]
         public void TestRemoveAlias(ShellType type, string target)
         {
@@ -123,13 +118,12 @@ namespace Nitrocid.Tests.Shell.ShellBase.Aliases
         /// <summary>
         /// Tests removing alias
         /// </summary>
-        [Test]
-        [Order(4)]
-        [TestCase("Shell", "clear")]
-        [TestCase("AdminShell", "lse")]
-        [TestCase("DebugShell", "cbt")]
-        [TestCase("HexShell", "pr")]
-        [TestCase("TextShell", "s")]
+        [TestMethod]
+        [DataRow("Shell", "clear")]
+        [DataRow("AdminShell", "lse")]
+        [DataRow("DebugShell", "cbt")]
+        [DataRow("HexShell", "pr")]
+        [DataRow("TextShell", "s")]
         [Description("Action")]
         public void TestRemoveAlias(string type, string target)
         {
@@ -142,13 +136,12 @@ namespace Nitrocid.Tests.Shell.ShellBase.Aliases
         /// <summary>
         /// Tests removing alias
         /// </summary>
-        [Test]
-        [Order(3)]
-        [TestCase(ShellType.Shell)]
-        [TestCase(ShellType.AdminShell)]
-        [TestCase(ShellType.DebugShell)]
-        [TestCase(ShellType.HexShell)]
-        [TestCase(ShellType.TextShell)]
+        [TestMethod]
+        [DataRow(ShellType.Shell)]
+        [DataRow(ShellType.AdminShell)]
+        [DataRow(ShellType.DebugShell)]
+        [DataRow(ShellType.HexShell)]
+        [DataRow(ShellType.TextShell)]
         [Description("Action")]
         public void TestRemoveAliasForUnifiedCommand(ShellType type)
         {
@@ -161,13 +154,12 @@ namespace Nitrocid.Tests.Shell.ShellBase.Aliases
         /// <summary>
         /// Tests removing alias
         /// </summary>
-        [Test]
-        [Order(4)]
-        [TestCase("Shell")]
-        [TestCase("AdminShell")]
-        [TestCase("DebugShell")]
-        [TestCase("HexShell")]
-        [TestCase("TextShell")]
+        [TestMethod]
+        [DataRow("Shell")]
+        [DataRow("AdminShell")]
+        [DataRow("DebugShell")]
+        [DataRow("HexShell")]
+        [DataRow("TextShell")]
         [Description("Action")]
         public void TestRemoveAliasForUnifiedCommand(string type)
         {

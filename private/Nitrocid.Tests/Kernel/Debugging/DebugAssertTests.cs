@@ -22,21 +22,21 @@ using Nitrocid.Drivers.Console;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Tests.Drivers.DriverData;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System;
 
 namespace Nitrocid.Tests.Kernel.Debugging
 {
 
-    [TestFixture]
+    [TestClass]
     public class DebugAssertTests
     {
 
         /// <summary>
         /// Tests assertion...
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Misc")]
         public void TestAssertNormal() =>
             Should.NotThrow(() => DebugCheck.Assert(true));
@@ -44,7 +44,7 @@ namespace Nitrocid.Tests.Kernel.Debugging
         /// <summary>
         /// Tests assertion...
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Misc")]
         public void TestAssertNormalFailing()
         {
@@ -56,7 +56,7 @@ namespace Nitrocid.Tests.Kernel.Debugging
         /// <summary>
         /// Tests assertion...
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Misc")]
         public void TestAssertNormalMessage() =>
             Should.NotThrow(() => DebugCheck.Assert(true, "Always true"));
@@ -64,7 +64,7 @@ namespace Nitrocid.Tests.Kernel.Debugging
         /// <summary>
         /// Tests assertion...
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Misc")]
         public void TestAssertNormalMessageFailing()
         {
@@ -76,7 +76,7 @@ namespace Nitrocid.Tests.Kernel.Debugging
         /// <summary>
         /// Tests assertion...
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Misc")]
         public void TestAssertNotNormal() =>
             Should.NotThrow(() => DebugCheck.AssertNot(false));
@@ -84,7 +84,7 @@ namespace Nitrocid.Tests.Kernel.Debugging
         /// <summary>
         /// Tests assertion...
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Misc")]
         public void TestAssertNotNormalFailing()
         {
@@ -96,7 +96,7 @@ namespace Nitrocid.Tests.Kernel.Debugging
         /// <summary>
         /// Tests assertion...
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Misc")]
         public void TestAssertNotNormalMessage() =>
             Should.NotThrow(() => DebugCheck.AssertNot(false, "Always false"));
@@ -104,7 +104,7 @@ namespace Nitrocid.Tests.Kernel.Debugging
         /// <summary>
         /// Tests assertion...
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Misc")]
         public void TestAssertNotNormalMessageFailing()
         {
@@ -116,7 +116,7 @@ namespace Nitrocid.Tests.Kernel.Debugging
         /// <summary>
         /// Tests assertion...
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Misc")]
         public void TestAssertNull() =>
             Should.NotThrow(() => DebugCheck.AssertNull(Array.Empty<string>()));
@@ -124,7 +124,7 @@ namespace Nitrocid.Tests.Kernel.Debugging
         /// <summary>
         /// Tests assertion...
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Misc")]
         public void TestAssertNullFailing()
         {
@@ -136,7 +136,7 @@ namespace Nitrocid.Tests.Kernel.Debugging
         /// <summary>
         /// Tests assertion...
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Misc")]
         public void TestAssertNullMessage() =>
             Should.NotThrow(() => DebugCheck.AssertNull(Array.Empty<string>(), "Always true"));
@@ -144,7 +144,7 @@ namespace Nitrocid.Tests.Kernel.Debugging
         /// <summary>
         /// Tests assertion...
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Misc")]
         public void TestAssertNullMessageFailing()
         {
@@ -156,7 +156,7 @@ namespace Nitrocid.Tests.Kernel.Debugging
         /// <summary>
         /// Tests assertion...
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Misc")]
         public void TestAssertNotNull() =>
             Should.NotThrow(() => DebugCheck.AssertNotNull<string[]>(null));
@@ -164,7 +164,7 @@ namespace Nitrocid.Tests.Kernel.Debugging
         /// <summary>
         /// Tests assertion...
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Misc")]
         public void TestAssertNotNullFailing()
         {
@@ -176,7 +176,7 @@ namespace Nitrocid.Tests.Kernel.Debugging
         /// <summary>
         /// Tests assertion...
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Misc")]
         public void TestAssertNotNullMessage() =>
             Should.NotThrow(() => DebugCheck.AssertNotNull<string[]>(null, "Always true"));
@@ -184,7 +184,7 @@ namespace Nitrocid.Tests.Kernel.Debugging
         /// <summary>
         /// Tests assertion...
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Misc")]
         public void TestAssertNotNullMessageFailing()
         {
@@ -196,7 +196,7 @@ namespace Nitrocid.Tests.Kernel.Debugging
         /// <summary>
         /// Tests assertion...
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Misc")]
         public void TestAssertForceFail()
         {

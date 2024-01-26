@@ -19,21 +19,21 @@
 
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Configuration.Instances;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System.Linq;
 
 namespace Nitrocid.Tests.Kernel.Configuration
 {
-    [TestFixture]
+    [TestClass]
     public class ConfigManagementTests
     {
         /// <summary>
         /// Tests checking the three settings instance variables
         /// </summary>
-        [Test]
-        [TestCase(nameof(KernelMainConfig), nameof(KernelMainConfig))]
-        [TestCase(nameof(KernelSaverConfig), nameof(KernelSaverConfig))]
+        [TestMethod]
+        [DataRow(nameof(KernelMainConfig), nameof(KernelMainConfig))]
+        [DataRow(nameof(KernelSaverConfig), nameof(KernelSaverConfig))]
         [Description("Management")]
         public void TestCheckSettingsInstances(string type, string expectedType)
         {
@@ -45,9 +45,9 @@ namespace Nitrocid.Tests.Kernel.Configuration
         /// <summary>
         /// Tests checking settings resources (shallow)
         /// </summary>
-        [Test]
-        [TestCase(nameof(KernelMainConfig))]
-        [TestCase(nameof(KernelSaverConfig))]
+        [TestMethod]
+        [DataRow(nameof(KernelMainConfig))]
+        [DataRow(nameof(KernelSaverConfig))]
         [Description("Management")]
         public void TestCheckSettingsResourcesShallowGet(string type)
         {
@@ -62,9 +62,9 @@ namespace Nitrocid.Tests.Kernel.Configuration
         /// <summary>
         /// Tests checking settings resources (deep)
         /// </summary>
-        [Test]
-        [TestCase(nameof(KernelMainConfig))]
-        [TestCase(nameof(KernelSaverConfig))]
+        [TestMethod]
+        [DataRow(nameof(KernelMainConfig))]
+        [DataRow(nameof(KernelSaverConfig))]
         [Description("Management")]
         public void TestCheckSettingsResourcesDeepGet(string type)
         {
@@ -89,9 +89,9 @@ namespace Nitrocid.Tests.Kernel.Configuration
         /// <summary>
         /// Tests checking settings resources (deep with evaluation)
         /// </summary>
-        [Test]
-        [TestCase(nameof(KernelMainConfig))]
-        [TestCase(nameof(KernelSaverConfig))]
+        [TestMethod]
+        [DataRow(nameof(KernelMainConfig))]
+        [DataRow(nameof(KernelSaverConfig))]
         [Description("Management")]
         public void TestCheckSettingsResourcesDeepEvalGet(string type)
         {
@@ -121,7 +121,7 @@ namespace Nitrocid.Tests.Kernel.Configuration
         /// <summary>
         /// Tests checking the settings variables
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestCheckConfigVariables()
         {

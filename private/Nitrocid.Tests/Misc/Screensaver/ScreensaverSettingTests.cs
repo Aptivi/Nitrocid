@@ -18,20 +18,20 @@
 //
 
 using Nitrocid.Misc.Screensaver;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 
 namespace Nitrocid.Tests.Misc.Screensaver
 {
 
-    [TestFixture]
+    [TestClass]
     public class ScreensaverSettingTests
     {
 
         /// <summary>
         /// Tests setting default screensaver
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Setting")]
         public void TestSetDefaultScreensaver()
         {
@@ -42,7 +42,7 @@ namespace Nitrocid.Tests.Misc.Screensaver
         /// <summary>
         /// Tests getting screensaver names
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Setting")]
         public void TestGetScreensaverNames()
         {

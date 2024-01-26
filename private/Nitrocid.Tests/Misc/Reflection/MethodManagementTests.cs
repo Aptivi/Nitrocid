@@ -20,21 +20,21 @@
 using Nitrocid.Languages;
 using Nitrocid.Misc.Reflection;
 using Nitrocid.Shell.ShellBase.Commands;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System.Globalization;
 
 namespace Nitrocid.Tests.Misc.Reflection
 {
 
-    [TestFixture]
+    [TestClass]
     public class MethodManagementTests
     {
 
         /// <summary>
         /// Tests getting a method (static)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestGetMethodStatic()
         {
@@ -45,7 +45,7 @@ namespace Nitrocid.Tests.Misc.Reflection
         /// <summary>
         /// Tests getting a method
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestGetMethod()
         {
@@ -58,7 +58,7 @@ namespace Nitrocid.Tests.Misc.Reflection
         /// <summary>
         /// Tests invoking a method (static)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestInvokeMethodStatic()
         {
@@ -70,7 +70,7 @@ namespace Nitrocid.Tests.Misc.Reflection
         /// <summary>
         /// Tests invoking a method (non-static)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestInvokeMethod()
         {

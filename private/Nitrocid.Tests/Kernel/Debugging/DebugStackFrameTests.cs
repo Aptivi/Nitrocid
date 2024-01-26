@@ -18,20 +18,20 @@
 //
 
 using Nitrocid.Kernel.Debugging.Trace;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 
 namespace Nitrocid.Tests.Kernel.Debugging
 {
 
-    [TestFixture]
+    [TestClass]
     public class DebugStackFrameTests
     {
 
         /// <summary>
         /// Tests making a new instance of the debug stack frame
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Misc")]
         public void TestDebugStackFrame()
         {

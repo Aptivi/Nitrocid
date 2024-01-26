@@ -20,21 +20,48 @@
 using Nitrocid.Files.Operations;
 using Nitrocid.Files.Paths;
 using Nitrocid.Users.Login.Motd;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
+using Nitrocid.Misc.Text.Probers.Placeholder;
+using System.IO;
 
 namespace Nitrocid.Tests.Misc.Probers
 {
 
-    [TestFixture]
-    [Order(2)]
+    [TestClass]
     public class MOTDManagementTests
     {
 
         /// <summary>
+        /// Tests setting MOTD
+        /// </summary>
+        [TestMethod]
+        [Description("Setting")]
+        public void TestInitMOTD()
+        {
+            MotdParse.SetMotd(PlaceParse.ProbePlaces("Hello, I am on <system>"));
+            var MOTDFile = new StreamReader(PathsManagement.GetKernelPath(KernelPathType.MOTD));
+            MOTDFile.ReadLine().ShouldBe(PlaceParse.ProbePlaces("Hello, I am on <system>"));
+            MOTDFile.Close();
+        }
+
+        /// <summary>
+        /// Tests setting MAL
+        /// </summary>
+        [TestMethod]
+        [Description("Setting")]
+        public void TestInitMAL()
+        {
+            MalParse.SetMal(PlaceParse.ProbePlaces("Hello, I am on <system>"));
+            var MALFile = new StreamReader(PathsManagement.GetKernelPath(KernelPathType.MAL));
+            MALFile.ReadLine().ShouldBe(PlaceParse.ProbePlaces("Hello, I am on <system>"));
+            MALFile.Close();
+        }
+
+        /// <summary>
         /// Tests reading MOTD from file
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestReadMOTDFromFile()
         {
@@ -46,7 +73,7 @@ namespace Nitrocid.Tests.Misc.Probers
         /// <summary>
         /// Tests reading MAL from file
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestReadMALFromFile()
         {

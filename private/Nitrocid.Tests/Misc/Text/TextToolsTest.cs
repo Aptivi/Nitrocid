@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System.Linq;
 using Textify.General;
@@ -25,16 +25,16 @@ using Textify.General;
 namespace Nitrocid.Tests.Misc.Text
 {
 
-    [TestFixture]
+    [TestClass]
     public class TextToolsTest
     {
 
         /// <summary>
         /// Tests getting wrapped sentences
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
-        public static void TestGetWrappedSentences()
+        public void TestGetWrappedSentences()
         {
             var sentences = TextTools.GetWrappedSentences("Nitrocid", 4);
             sentences.ShouldNotBeNull();
@@ -47,9 +47,9 @@ namespace Nitrocid.Tests.Misc.Text
         /// <summary>
         /// Tests getting wrapped sentences
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
-        public static void TestGetWrappedSentencesIndented()
+        public void TestGetWrappedSentencesIndented()
         {
             var sentences = TextTools.GetWrappedSentences("Nitrocid", 4, 2);
             sentences.ShouldNotBeNull();
@@ -63,7 +63,7 @@ namespace Nitrocid.Tests.Misc.Text
         /// <summary>
         /// Tests replacing last occurrence of a string
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestReplaceLastOccurrence()
         {
@@ -77,7 +77,7 @@ namespace Nitrocid.Tests.Misc.Text
         /// <summary>
         /// Tests replacing all specified occurrences of strings with a single string
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestReplaceAll()
         {
@@ -90,7 +90,7 @@ namespace Nitrocid.Tests.Misc.Text
         /// <summary>
         /// Tests replacing all specified occurrences of strings with multiple strings
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestReplaceAllRange()
         {
@@ -103,7 +103,7 @@ namespace Nitrocid.Tests.Misc.Text
         /// <summary>
         /// Tests truncating...
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestTruncate()
         {
@@ -117,7 +117,7 @@ namespace Nitrocid.Tests.Misc.Text
         /// <summary>
         /// Tests string formatting
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestFormatString()
         {
@@ -133,7 +133,7 @@ namespace Nitrocid.Tests.Misc.Text
         /// <summary>
         /// Tests string formatting with reference to null
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestFormatStringNullReference()
         {
@@ -146,7 +146,7 @@ namespace Nitrocid.Tests.Misc.Text
         /// <summary>
         /// Tests reserving orders of characters in a string
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestReverse()
         {
@@ -158,81 +158,81 @@ namespace Nitrocid.Tests.Misc.Text
         /// <summary>
         /// Tests releasing a string from double quotes
         /// </summary>
-        [Test]
-        [TestCase("", "")]
-        [TestCase("\"Hi!\"", "Hi!")]
-        [TestCase("'Hi!'", "Hi!")]
-        [TestCase("`Hi!`", "Hi!")]
-        [TestCase("Hi!", "Hi!")]
-        [TestCase("\"Hi! as in \"Hello!\"\"", "Hi! as in \"Hello!\"")]
-        [TestCase("\"Hi! as in \"Hello!\"", "Hi! as in \"Hello!")]
-        [TestCase("'Hi! as in \"Hello!\"'", "Hi! as in \"Hello!\"")]
-        [TestCase("'Hi! as in \"Hello!'", "Hi! as in \"Hello!")]
-        [TestCase("`Hi! as in \"Hello!\"`", "Hi! as in \"Hello!\"")]
-        [TestCase("`Hi! as in \"Hello!`", "Hi! as in \"Hello!")]
-        [TestCase("\"Hi! as in 'Hello!'\"", "Hi! as in 'Hello!'")]
-        [TestCase("\"Hi! as in 'Hello!\"", "Hi! as in 'Hello!")]
-        [TestCase("'Hi! as in 'Hello!''", "Hi! as in 'Hello!'")]
-        [TestCase("'Hi! as in 'Hello!'", "Hi! as in 'Hello!")]
-        [TestCase("`Hi! as in 'Hello!'`", "Hi! as in 'Hello!'")]
-        [TestCase("`Hi! as in 'Hello!`", "Hi! as in 'Hello!")]
-        [TestCase("\"Hi! as in `Hello!`\"", "Hi! as in `Hello!`")]
-        [TestCase("\"Hi! as in `Hello!\"", "Hi! as in `Hello!")]
-        [TestCase("'Hi! as in `Hello!`'", "Hi! as in `Hello!`")]
-        [TestCase("'Hi! as in `Hello!'", "Hi! as in `Hello!")]
-        [TestCase("`Hi! as in `Hello!``", "Hi! as in `Hello!`")]
-        [TestCase("`Hi! as in `Hello!`", "Hi! as in `Hello!")]
-        [TestCase("\"Hi! as in \"Hello!`\"", "Hi! as in \"Hello!`")]
-        [TestCase("'Hi! as in \"Hello!`'", "Hi! as in \"Hello!`")]
-        [TestCase("`Hi! as in \"Hello!``", "Hi! as in \"Hello!`")]
-        [TestCase("\"Hi! as in 'Hello!`\"", "Hi! as in 'Hello!`")]
-        [TestCase("'Hi! as in 'Hello!`'", "Hi! as in 'Hello!`")]
-        [TestCase("`Hi! as in 'Hello!``", "Hi! as in 'Hello!`")]
-        [TestCase("\"Hi! as in `Hello!'\"", "Hi! as in `Hello!'")]
-        [TestCase("'Hi! as in `Hello!''", "Hi! as in `Hello!'")]
-        [TestCase("`Hi! as in `Hello!'`", "Hi! as in `Hello!'")]
-        [TestCase("Hi! as in \"Hello!\"", "Hi! as in \"Hello!\"")]
-        [TestCase("Hi! as in \"Hello!", "Hi! as in \"Hello!")]
-        [TestCase("Hi! as in 'Hello!'", "Hi! as in 'Hello!'")]
-        [TestCase("Hi! as in 'Hello!", "Hi! as in 'Hello!")]
-        [TestCase("Hi! as in `Hello!`", "Hi! as in `Hello!`")]
-        [TestCase("Hi! as in `Hello!", "Hi! as in `Hello!")]
-        [TestCase("\"\"\"", "\"")]
-        [TestCase("\"'\"", "'")]
-        [TestCase("\"`\"", "`")]
-        [TestCase("'\"'", "\"")]
-        [TestCase("'''", "'")]
-        [TestCase("'`'", "`")]
-        [TestCase("`\"`", "\"")]
-        [TestCase("`'`", "'")]
-        [TestCase("```", "`")]
-        [TestCase("\"", "\"")]
-        [TestCase("'", "'")]
-        [TestCase("`", "`")]
-        [TestCase("\"\"\"\"", "\"\"")]
-        [TestCase("\"''\"", "''")]
-        [TestCase("\"``\"", "``")]
-        [TestCase("'\"\"'", "\"\"")]
-        [TestCase("''''", "''")]
-        [TestCase("'``'", "``")]
-        [TestCase("`\"\"`", "\"\"")]
-        [TestCase("`''`", "''")]
-        [TestCase("````", "``")]
-        [TestCase("\"\"", "")]
-        [TestCase("''", "")]
-        [TestCase("``", "")]
-        [TestCase("\"\"`\"", "\"`")]
-        [TestCase("\"'`\"", "'`")]
-        [TestCase("\"`'\"", "`'")]
-        [TestCase("'\"`'", "\"`")]
-        [TestCase("''`'", "'`")]
-        [TestCase("'`''", "`'")]
-        [TestCase("`\"'`", "\"'")]
-        [TestCase("`'``", "'`")]
-        [TestCase("``'`", "`'")]
-        [TestCase("\"'", "\"'")]
-        [TestCase("'`", "'`")]
-        [TestCase("`'", "`'")]
+        [TestMethod]
+        [DataRow("", "")]
+        [DataRow("\"Hi!\"", "Hi!")]
+        [DataRow("'Hi!'", "Hi!")]
+        [DataRow("`Hi!`", "Hi!")]
+        [DataRow("Hi!", "Hi!")]
+        [DataRow("\"Hi! as in \"Hello!\"\"", "Hi! as in \"Hello!\"")]
+        [DataRow("\"Hi! as in \"Hello!\"", "Hi! as in \"Hello!")]
+        [DataRow("'Hi! as in \"Hello!\"'", "Hi! as in \"Hello!\"")]
+        [DataRow("'Hi! as in \"Hello!'", "Hi! as in \"Hello!")]
+        [DataRow("`Hi! as in \"Hello!\"`", "Hi! as in \"Hello!\"")]
+        [DataRow("`Hi! as in \"Hello!`", "Hi! as in \"Hello!")]
+        [DataRow("\"Hi! as in 'Hello!'\"", "Hi! as in 'Hello!'")]
+        [DataRow("\"Hi! as in 'Hello!\"", "Hi! as in 'Hello!")]
+        [DataRow("'Hi! as in 'Hello!''", "Hi! as in 'Hello!'")]
+        [DataRow("'Hi! as in 'Hello!'", "Hi! as in 'Hello!")]
+        [DataRow("`Hi! as in 'Hello!'`", "Hi! as in 'Hello!'")]
+        [DataRow("`Hi! as in 'Hello!`", "Hi! as in 'Hello!")]
+        [DataRow("\"Hi! as in `Hello!`\"", "Hi! as in `Hello!`")]
+        [DataRow("\"Hi! as in `Hello!\"", "Hi! as in `Hello!")]
+        [DataRow("'Hi! as in `Hello!`'", "Hi! as in `Hello!`")]
+        [DataRow("'Hi! as in `Hello!'", "Hi! as in `Hello!")]
+        [DataRow("`Hi! as in `Hello!``", "Hi! as in `Hello!`")]
+        [DataRow("`Hi! as in `Hello!`", "Hi! as in `Hello!")]
+        [DataRow("\"Hi! as in \"Hello!`\"", "Hi! as in \"Hello!`")]
+        [DataRow("'Hi! as in \"Hello!`'", "Hi! as in \"Hello!`")]
+        [DataRow("`Hi! as in \"Hello!``", "Hi! as in \"Hello!`")]
+        [DataRow("\"Hi! as in 'Hello!`\"", "Hi! as in 'Hello!`")]
+        [DataRow("'Hi! as in 'Hello!`'", "Hi! as in 'Hello!`")]
+        [DataRow("`Hi! as in 'Hello!``", "Hi! as in 'Hello!`")]
+        [DataRow("\"Hi! as in `Hello!'\"", "Hi! as in `Hello!'")]
+        [DataRow("'Hi! as in `Hello!''", "Hi! as in `Hello!'")]
+        [DataRow("`Hi! as in `Hello!'`", "Hi! as in `Hello!'")]
+        [DataRow("Hi! as in \"Hello!\"", "Hi! as in \"Hello!\"")]
+        [DataRow("Hi! as in \"Hello!", "Hi! as in \"Hello!")]
+        [DataRow("Hi! as in 'Hello!'", "Hi! as in 'Hello!'")]
+        [DataRow("Hi! as in 'Hello!", "Hi! as in 'Hello!")]
+        [DataRow("Hi! as in `Hello!`", "Hi! as in `Hello!`")]
+        [DataRow("Hi! as in `Hello!", "Hi! as in `Hello!")]
+        [DataRow("\"\"\"", "\"")]
+        [DataRow("\"'\"", "'")]
+        [DataRow("\"`\"", "`")]
+        [DataRow("'\"'", "\"")]
+        [DataRow("'''", "'")]
+        [DataRow("'`'", "`")]
+        [DataRow("`\"`", "\"")]
+        [DataRow("`'`", "'")]
+        [DataRow("```", "`")]
+        [DataRow("\"", "\"")]
+        [DataRow("'", "'")]
+        [DataRow("`", "`")]
+        [DataRow("\"\"\"\"", "\"\"")]
+        [DataRow("\"''\"", "''")]
+        [DataRow("\"``\"", "``")]
+        [DataRow("'\"\"'", "\"\"")]
+        [DataRow("''''", "''")]
+        [DataRow("'``'", "``")]
+        [DataRow("`\"\"`", "\"\"")]
+        [DataRow("`''`", "''")]
+        [DataRow("````", "``")]
+        [DataRow("\"\"", "")]
+        [DataRow("''", "")]
+        [DataRow("``", "")]
+        [DataRow("\"\"`\"", "\"`")]
+        [DataRow("\"'`\"", "'`")]
+        [DataRow("\"`'\"", "`'")]
+        [DataRow("'\"`'", "\"`")]
+        [DataRow("''`'", "'`")]
+        [DataRow("'`''", "`'")]
+        [DataRow("`\"'`", "\"'")]
+        [DataRow("`'``", "'`")]
+        [DataRow("``'`", "`'")]
+        [DataRow("\"'", "\"'")]
+        [DataRow("'`", "'`")]
+        [DataRow("`'", "`'")]
         [Description("Querying")]
         public void TestReleaseDoubleQuotes(string TargetString, string expected)
         {
@@ -242,81 +242,81 @@ namespace Nitrocid.Tests.Misc.Text
         /// <summary>
         /// Tests getting the enclosed double quotes type from the string
         /// </summary>
-        [Test]
-        [TestCase("", EnclosedDoubleQuotesType.None)]
-        [TestCase("\"Hi!\"", EnclosedDoubleQuotesType.DoubleQuotes)]
-        [TestCase("'Hi!'", EnclosedDoubleQuotesType.SingleQuotes)]
-        [TestCase("`Hi!`", EnclosedDoubleQuotesType.Backticks)]
-        [TestCase("Hi!", EnclosedDoubleQuotesType.None)]
-        [TestCase("\"Hi! as in \"Hello!\"\"", EnclosedDoubleQuotesType.DoubleQuotes)]
-        [TestCase("\"Hi! as in \"Hello!\"", EnclosedDoubleQuotesType.DoubleQuotes)]
-        [TestCase("'Hi! as in \"Hello!\"'", EnclosedDoubleQuotesType.SingleQuotes)]
-        [TestCase("'Hi! as in \"Hello!'", EnclosedDoubleQuotesType.SingleQuotes)]
-        [TestCase("`Hi! as in \"Hello!\"`", EnclosedDoubleQuotesType.Backticks)]
-        [TestCase("`Hi! as in \"Hello!`", EnclosedDoubleQuotesType.Backticks)]
-        [TestCase("\"Hi! as in 'Hello!'\"", EnclosedDoubleQuotesType.DoubleQuotes)]
-        [TestCase("\"Hi! as in 'Hello!\"", EnclosedDoubleQuotesType.DoubleQuotes)]
-        [TestCase("'Hi! as in 'Hello!''", EnclosedDoubleQuotesType.SingleQuotes)]
-        [TestCase("'Hi! as in 'Hello!'", EnclosedDoubleQuotesType.SingleQuotes)]
-        [TestCase("`Hi! as in 'Hello!'`", EnclosedDoubleQuotesType.Backticks)]
-        [TestCase("`Hi! as in 'Hello!`", EnclosedDoubleQuotesType.Backticks)]
-        [TestCase("\"Hi! as in `Hello!`\"", EnclosedDoubleQuotesType.DoubleQuotes)]
-        [TestCase("\"Hi! as in `Hello!\"", EnclosedDoubleQuotesType.DoubleQuotes)]
-        [TestCase("'Hi! as in `Hello!`'", EnclosedDoubleQuotesType.SingleQuotes)]
-        [TestCase("'Hi! as in `Hello!'", EnclosedDoubleQuotesType.SingleQuotes)]
-        [TestCase("`Hi! as in `Hello!``", EnclosedDoubleQuotesType.Backticks)]
-        [TestCase("`Hi! as in `Hello!`", EnclosedDoubleQuotesType.Backticks)]
-        [TestCase("\"Hi! as in \"Hello!`\"", EnclosedDoubleQuotesType.DoubleQuotes)]
-        [TestCase("'Hi! as in \"Hello!`'", EnclosedDoubleQuotesType.SingleQuotes)]
-        [TestCase("`Hi! as in \"Hello!``", EnclosedDoubleQuotesType.Backticks)]
-        [TestCase("\"Hi! as in 'Hello!`\"", EnclosedDoubleQuotesType.DoubleQuotes)]
-        [TestCase("'Hi! as in 'Hello!`'", EnclosedDoubleQuotesType.SingleQuotes)]
-        [TestCase("`Hi! as in 'Hello!``", EnclosedDoubleQuotesType.Backticks)]
-        [TestCase("\"Hi! as in `Hello!'\"", EnclosedDoubleQuotesType.DoubleQuotes)]
-        [TestCase("'Hi! as in `Hello!''", EnclosedDoubleQuotesType.SingleQuotes)]
-        [TestCase("`Hi! as in `Hello!'`", EnclosedDoubleQuotesType.Backticks)]
-        [TestCase("Hi! as in \"Hello!\"", EnclosedDoubleQuotesType.None)]
-        [TestCase("Hi! as in \"Hello!", EnclosedDoubleQuotesType.None)]
-        [TestCase("Hi! as in 'Hello!'", EnclosedDoubleQuotesType.None)]
-        [TestCase("Hi! as in 'Hello!", EnclosedDoubleQuotesType.None)]
-        [TestCase("Hi! as in `Hello!`", EnclosedDoubleQuotesType.None)]
-        [TestCase("Hi! as in `Hello!", EnclosedDoubleQuotesType.None)]
-        [TestCase("\"\"\"", EnclosedDoubleQuotesType.DoubleQuotes)]
-        [TestCase("\"'\"", EnclosedDoubleQuotesType.DoubleQuotes)]
-        [TestCase("\"`\"", EnclosedDoubleQuotesType.DoubleQuotes)]
-        [TestCase("'\"'", EnclosedDoubleQuotesType.SingleQuotes)]
-        [TestCase("'''", EnclosedDoubleQuotesType.SingleQuotes)]
-        [TestCase("'`'", EnclosedDoubleQuotesType.SingleQuotes)]
-        [TestCase("`\"`", EnclosedDoubleQuotesType.Backticks)]
-        [TestCase("`'`", EnclosedDoubleQuotesType.Backticks)]
-        [TestCase("```", EnclosedDoubleQuotesType.Backticks)]
-        [TestCase("\"", EnclosedDoubleQuotesType.None)]
-        [TestCase("'", EnclosedDoubleQuotesType.None)]
-        [TestCase("`", EnclosedDoubleQuotesType.None)]
-        [TestCase("\"\"\"\"", EnclosedDoubleQuotesType.DoubleQuotes)]
-        [TestCase("\"''\"", EnclosedDoubleQuotesType.DoubleQuotes)]
-        [TestCase("\"``\"", EnclosedDoubleQuotesType.DoubleQuotes)]
-        [TestCase("'\"\"'", EnclosedDoubleQuotesType.SingleQuotes)]
-        [TestCase("''''", EnclosedDoubleQuotesType.SingleQuotes)]
-        [TestCase("'``'", EnclosedDoubleQuotesType.SingleQuotes)]
-        [TestCase("`\"\"`", EnclosedDoubleQuotesType.Backticks)]
-        [TestCase("`''`", EnclosedDoubleQuotesType.Backticks)]
-        [TestCase("````", EnclosedDoubleQuotesType.Backticks)]
-        [TestCase("\"\"", EnclosedDoubleQuotesType.DoubleQuotes)]
-        [TestCase("''", EnclosedDoubleQuotesType.SingleQuotes)]
-        [TestCase("``", EnclosedDoubleQuotesType.Backticks)]
-        [TestCase("\"\"`\"", EnclosedDoubleQuotesType.DoubleQuotes)]
-        [TestCase("\"'`\"", EnclosedDoubleQuotesType.DoubleQuotes)]
-        [TestCase("\"`'\"", EnclosedDoubleQuotesType.DoubleQuotes)]
-        [TestCase("'\"`'", EnclosedDoubleQuotesType.SingleQuotes)]
-        [TestCase("''`'", EnclosedDoubleQuotesType.SingleQuotes)]
-        [TestCase("'`''", EnclosedDoubleQuotesType.SingleQuotes)]
-        [TestCase("`\"'`", EnclosedDoubleQuotesType.Backticks)]
-        [TestCase("`'``", EnclosedDoubleQuotesType.Backticks)]
-        [TestCase("``'`", EnclosedDoubleQuotesType.Backticks)]
-        [TestCase("\"'", EnclosedDoubleQuotesType.None)]
-        [TestCase("'`", EnclosedDoubleQuotesType.None)]
-        [TestCase("`'", EnclosedDoubleQuotesType.None)]
+        [TestMethod]
+        [DataRow("", EnclosedDoubleQuotesType.None)]
+        [DataRow("\"Hi!\"", EnclosedDoubleQuotesType.DoubleQuotes)]
+        [DataRow("'Hi!'", EnclosedDoubleQuotesType.SingleQuotes)]
+        [DataRow("`Hi!`", EnclosedDoubleQuotesType.Backticks)]
+        [DataRow("Hi!", EnclosedDoubleQuotesType.None)]
+        [DataRow("\"Hi! as in \"Hello!\"\"", EnclosedDoubleQuotesType.DoubleQuotes)]
+        [DataRow("\"Hi! as in \"Hello!\"", EnclosedDoubleQuotesType.DoubleQuotes)]
+        [DataRow("'Hi! as in \"Hello!\"'", EnclosedDoubleQuotesType.SingleQuotes)]
+        [DataRow("'Hi! as in \"Hello!'", EnclosedDoubleQuotesType.SingleQuotes)]
+        [DataRow("`Hi! as in \"Hello!\"`", EnclosedDoubleQuotesType.Backticks)]
+        [DataRow("`Hi! as in \"Hello!`", EnclosedDoubleQuotesType.Backticks)]
+        [DataRow("\"Hi! as in 'Hello!'\"", EnclosedDoubleQuotesType.DoubleQuotes)]
+        [DataRow("\"Hi! as in 'Hello!\"", EnclosedDoubleQuotesType.DoubleQuotes)]
+        [DataRow("'Hi! as in 'Hello!''", EnclosedDoubleQuotesType.SingleQuotes)]
+        [DataRow("'Hi! as in 'Hello!'", EnclosedDoubleQuotesType.SingleQuotes)]
+        [DataRow("`Hi! as in 'Hello!'`", EnclosedDoubleQuotesType.Backticks)]
+        [DataRow("`Hi! as in 'Hello!`", EnclosedDoubleQuotesType.Backticks)]
+        [DataRow("\"Hi! as in `Hello!`\"", EnclosedDoubleQuotesType.DoubleQuotes)]
+        [DataRow("\"Hi! as in `Hello!\"", EnclosedDoubleQuotesType.DoubleQuotes)]
+        [DataRow("'Hi! as in `Hello!`'", EnclosedDoubleQuotesType.SingleQuotes)]
+        [DataRow("'Hi! as in `Hello!'", EnclosedDoubleQuotesType.SingleQuotes)]
+        [DataRow("`Hi! as in `Hello!``", EnclosedDoubleQuotesType.Backticks)]
+        [DataRow("`Hi! as in `Hello!`", EnclosedDoubleQuotesType.Backticks)]
+        [DataRow("\"Hi! as in \"Hello!`\"", EnclosedDoubleQuotesType.DoubleQuotes)]
+        [DataRow("'Hi! as in \"Hello!`'", EnclosedDoubleQuotesType.SingleQuotes)]
+        [DataRow("`Hi! as in \"Hello!``", EnclosedDoubleQuotesType.Backticks)]
+        [DataRow("\"Hi! as in 'Hello!`\"", EnclosedDoubleQuotesType.DoubleQuotes)]
+        [DataRow("'Hi! as in 'Hello!`'", EnclosedDoubleQuotesType.SingleQuotes)]
+        [DataRow("`Hi! as in 'Hello!``", EnclosedDoubleQuotesType.Backticks)]
+        [DataRow("\"Hi! as in `Hello!'\"", EnclosedDoubleQuotesType.DoubleQuotes)]
+        [DataRow("'Hi! as in `Hello!''", EnclosedDoubleQuotesType.SingleQuotes)]
+        [DataRow("`Hi! as in `Hello!'`", EnclosedDoubleQuotesType.Backticks)]
+        [DataRow("Hi! as in \"Hello!\"", EnclosedDoubleQuotesType.None)]
+        [DataRow("Hi! as in \"Hello!", EnclosedDoubleQuotesType.None)]
+        [DataRow("Hi! as in 'Hello!'", EnclosedDoubleQuotesType.None)]
+        [DataRow("Hi! as in 'Hello!", EnclosedDoubleQuotesType.None)]
+        [DataRow("Hi! as in `Hello!`", EnclosedDoubleQuotesType.None)]
+        [DataRow("Hi! as in `Hello!", EnclosedDoubleQuotesType.None)]
+        [DataRow("\"\"\"", EnclosedDoubleQuotesType.DoubleQuotes)]
+        [DataRow("\"'\"", EnclosedDoubleQuotesType.DoubleQuotes)]
+        [DataRow("\"`\"", EnclosedDoubleQuotesType.DoubleQuotes)]
+        [DataRow("'\"'", EnclosedDoubleQuotesType.SingleQuotes)]
+        [DataRow("'''", EnclosedDoubleQuotesType.SingleQuotes)]
+        [DataRow("'`'", EnclosedDoubleQuotesType.SingleQuotes)]
+        [DataRow("`\"`", EnclosedDoubleQuotesType.Backticks)]
+        [DataRow("`'`", EnclosedDoubleQuotesType.Backticks)]
+        [DataRow("```", EnclosedDoubleQuotesType.Backticks)]
+        [DataRow("\"", EnclosedDoubleQuotesType.None)]
+        [DataRow("'", EnclosedDoubleQuotesType.None)]
+        [DataRow("`", EnclosedDoubleQuotesType.None)]
+        [DataRow("\"\"\"\"", EnclosedDoubleQuotesType.DoubleQuotes)]
+        [DataRow("\"''\"", EnclosedDoubleQuotesType.DoubleQuotes)]
+        [DataRow("\"``\"", EnclosedDoubleQuotesType.DoubleQuotes)]
+        [DataRow("'\"\"'", EnclosedDoubleQuotesType.SingleQuotes)]
+        [DataRow("''''", EnclosedDoubleQuotesType.SingleQuotes)]
+        [DataRow("'``'", EnclosedDoubleQuotesType.SingleQuotes)]
+        [DataRow("`\"\"`", EnclosedDoubleQuotesType.Backticks)]
+        [DataRow("`''`", EnclosedDoubleQuotesType.Backticks)]
+        [DataRow("````", EnclosedDoubleQuotesType.Backticks)]
+        [DataRow("\"\"", EnclosedDoubleQuotesType.DoubleQuotes)]
+        [DataRow("''", EnclosedDoubleQuotesType.SingleQuotes)]
+        [DataRow("``", EnclosedDoubleQuotesType.Backticks)]
+        [DataRow("\"\"`\"", EnclosedDoubleQuotesType.DoubleQuotes)]
+        [DataRow("\"'`\"", EnclosedDoubleQuotesType.DoubleQuotes)]
+        [DataRow("\"`'\"", EnclosedDoubleQuotesType.DoubleQuotes)]
+        [DataRow("'\"`'", EnclosedDoubleQuotesType.SingleQuotes)]
+        [DataRow("''`'", EnclosedDoubleQuotesType.SingleQuotes)]
+        [DataRow("'`''", EnclosedDoubleQuotesType.SingleQuotes)]
+        [DataRow("`\"'`", EnclosedDoubleQuotesType.Backticks)]
+        [DataRow("`'``", EnclosedDoubleQuotesType.Backticks)]
+        [DataRow("``'`", EnclosedDoubleQuotesType.Backticks)]
+        [DataRow("\"'", EnclosedDoubleQuotesType.None)]
+        [DataRow("'`", EnclosedDoubleQuotesType.None)]
+        [DataRow("`'", EnclosedDoubleQuotesType.None)]
         [Description("Querying")]
         public void TestGetEnclosedDoubleQuotesType(string TargetString, EnclosedDoubleQuotesType expected)
         {
@@ -326,7 +326,7 @@ namespace Nitrocid.Tests.Misc.Text
         /// <summary>
         /// Tests getting all indexes of a character
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestAllIndexesOf()
         {
@@ -340,7 +340,7 @@ namespace Nitrocid.Tests.Misc.Text
         /// <summary>
         /// Tests checking if the string contains any of the target strings.
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestContainsAnyOf()
         {
@@ -352,7 +352,7 @@ namespace Nitrocid.Tests.Misc.Text
         /// <summary>
         /// Tests checking to see if the string starts with any of the values
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestStartsWithAnyOf()
         {
@@ -363,7 +363,7 @@ namespace Nitrocid.Tests.Misc.Text
         /// <summary>
         /// Tests splitting a string with new lines (vbCrLf)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestSplitNewLinesCrLf()
         {
@@ -375,7 +375,7 @@ namespace Nitrocid.Tests.Misc.Text
         /// <summary>
         /// Tests splitting a string with new lines (vbLf)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestSplitNewLinesLf()
         {
@@ -387,7 +387,7 @@ namespace Nitrocid.Tests.Misc.Text
         /// <summary>
         /// Tests splitting a string with new lines (vbCr)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestSplitNewLinesCr()
         {
@@ -399,7 +399,7 @@ namespace Nitrocid.Tests.Misc.Text
         /// <summary>
         /// Tests splitting a string with new lines (vbCrLf + vbCr)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestSplitNewLinesCrLfCr()
         {
@@ -411,7 +411,7 @@ namespace Nitrocid.Tests.Misc.Text
         /// <summary>
         /// Tests splitting a string with new lines (vbCrLf + vbLf)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestSplitNewLinesCrLfLf()
         {
@@ -423,7 +423,7 @@ namespace Nitrocid.Tests.Misc.Text
         /// <summary>
         /// Tests splitting a string with new lines (vbCrLf + vbCrLf)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestSplitNewLinesCrLfCrLf()
         {
@@ -435,7 +435,7 @@ namespace Nitrocid.Tests.Misc.Text
         /// <summary>
         /// Tests splitting a string with new lines (vbCrLf)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestSplitNewLinesOldCrLf()
         {
@@ -447,7 +447,7 @@ namespace Nitrocid.Tests.Misc.Text
         /// <summary>
         /// Tests splitting a string with new lines (vbLf)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestSplitNewLinesOldLf()
         {
@@ -459,7 +459,7 @@ namespace Nitrocid.Tests.Misc.Text
         /// <summary>
         /// Tests splitting a string with new lines (vbCr)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestSplitNewLinesOldCr()
         {
@@ -471,7 +471,7 @@ namespace Nitrocid.Tests.Misc.Text
         /// <summary>
         /// Tests splitting a string with new lines (vbCrLf + vbCr)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestSplitNewLinesOldCrLfCr()
         {
@@ -483,7 +483,7 @@ namespace Nitrocid.Tests.Misc.Text
         /// <summary>
         /// Tests splitting a string with new lines (vbCrLf + vbLf)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestSplitNewLinesOldCrLfLf()
         {
@@ -495,7 +495,7 @@ namespace Nitrocid.Tests.Misc.Text
         /// <summary>
         /// Tests splitting a string with new lines (vbCrLf + vbCrLf)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestSplitNewLinesOldCrLfCrLf()
         {
@@ -507,7 +507,7 @@ namespace Nitrocid.Tests.Misc.Text
         /// <summary>
         /// Tests splitting a string with double quotes enclosed
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestSplitEncloseDoubleQuotes()
         {
@@ -520,7 +520,7 @@ namespace Nitrocid.Tests.Misc.Text
         /// <summary>
         /// Tests splitting a string with double quotes enclosed without releasing them
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestSplitEncloseDoubleQuotesNoRelease()
         {
@@ -533,7 +533,7 @@ namespace Nitrocid.Tests.Misc.Text
         /// <summary>
         /// Tests checking to see if the string is numeric
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestIsStringNumeric()
         {
@@ -544,7 +544,7 @@ namespace Nitrocid.Tests.Misc.Text
         /// <summary>
         /// [Counterexample] Tests checking to see if the string is numeric
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestIsStringNumericCounterexample()
         {
@@ -555,15 +555,15 @@ namespace Nitrocid.Tests.Misc.Text
         /// <summary>
         /// Gets a BASE64-encoded string
         /// </summary>
-        [Test]
-        [TestCase("", "")]
-        [TestCase("Hello", "SGVsbG8=")]
-        [TestCase("Nitrocid KS", "Tml0cm9jaWQgS1M=")]
-        [TestCase("Test text", "VGVzdCB0ZXh0")]
-        [TestCase("123456789", "MTIzNDU2Nzg5")]
-        [TestCase("Test with :[]:", "VGVzdCB3aXRoIDpbXTo=")]
-        [TestCase("Test with this long text", "VGVzdCB3aXRoIHRoaXMgbG9uZyB0ZXh0")]
-        [TestCase("Test with this even longer text", "VGVzdCB3aXRoIHRoaXMgZXZlbiBsb25nZXIgdGV4dA==")]
+        [TestMethod]
+        [DataRow("", "")]
+        [DataRow("Hello", "SGVsbG8=")]
+        [DataRow("Nitrocid KS", "Tml0cm9jaWQgS1M=")]
+        [DataRow("Test text", "VGVzdCB0ZXh0")]
+        [DataRow("123456789", "MTIzNDU2Nzg5")]
+        [DataRow("Test with :[]:", "VGVzdCB3aXRoIDpbXTo=")]
+        [DataRow("Test with this long text", "VGVzdCB3aXRoIHRoaXMgbG9uZyB0ZXh0")]
+        [DataRow("Test with this even longer text", "VGVzdCB3aXRoIHRoaXMgZXZlbiBsb25nZXIgdGV4dA==")]
         [Description("Querying")]
         public void TestGetBase64Encoded(string text, string expectedEncoded)
         {
@@ -574,15 +574,15 @@ namespace Nitrocid.Tests.Misc.Text
         /// <summary>
         /// Gets a BASE64-decoded string
         /// </summary>
-        [Test]
-        [TestCase("", "")]
-        [TestCase("SGVsbG8=", "Hello")]
-        [TestCase("Tml0cm9jaWQgS1M=", "Nitrocid KS")]
-        [TestCase("VGVzdCB0ZXh0", "Test text")]
-        [TestCase("MTIzNDU2Nzg5", "123456789")]
-        [TestCase("VGVzdCB3aXRoIDpbXTo=", "Test with :[]:")]
-        [TestCase("VGVzdCB3aXRoIHRoaXMgbG9uZyB0ZXh0", "Test with this long text")]
-        [TestCase("VGVzdCB3aXRoIHRoaXMgZXZlbiBsb25nZXIgdGV4dA==", "Test with this even longer text")]
+        [TestMethod]
+        [DataRow("", "")]
+        [DataRow("SGVsbG8=", "Hello")]
+        [DataRow("Tml0cm9jaWQgS1M=", "Nitrocid KS")]
+        [DataRow("VGVzdCB0ZXh0", "Test text")]
+        [DataRow("MTIzNDU2Nzg5", "123456789")]
+        [DataRow("VGVzdCB3aXRoIDpbXTo=", "Test with :[]:")]
+        [DataRow("VGVzdCB3aXRoIHRoaXMgbG9uZyB0ZXh0", "Test with this long text")]
+        [DataRow("VGVzdCB3aXRoIHRoaXMgZXZlbiBsb25nZXIgdGV4dA==", "Test with this even longer text")]
         [Description("Querying")]
         public void TestGetBase64Decoded(string text, string expectedDecoded)
         {

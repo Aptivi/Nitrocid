@@ -18,23 +18,23 @@
 //
 
 using Nitrocid.Tests.Misc.Interactive.Interactives;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System;
 
 namespace Nitrocid.Tests.Misc.Interactive
 {
 
-    [TestFixture]
+    [TestClass]
     public class InteractiveTests
     {
 
         /// <summary>
         /// Tests building the base interactive TUI
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Management")]
-        public static void BuildBaseInteractiveTui()
+        public void BuildBaseInteractiveTui()
         {
             var tui = new MyCustomInteractiveTui();
             tui.ShouldNotBeNull();

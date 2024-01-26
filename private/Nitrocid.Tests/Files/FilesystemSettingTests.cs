@@ -20,20 +20,20 @@
 using Nitrocid.Files.Folders;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Configuration;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 
 namespace Nitrocid.Tests.Files
 {
 
-    [TestFixture]
+    [TestClass]
     public class FilesystemSettingTests
     {
 
         /// <summary>
         /// Tests current directory setting
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Setting")]
         public void TestSetCurrDir()
         {
@@ -46,7 +46,7 @@ namespace Nitrocid.Tests.Files
         /// <summary>
         /// Tests current directory setting
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Setting")]
         public void TestTrySetCurrDir()
         {
@@ -59,7 +59,7 @@ namespace Nitrocid.Tests.Files
         /// <summary>
         /// Tests saving the current directory value
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Manipulation")]
         public void TestSaveCurrDir()
         {

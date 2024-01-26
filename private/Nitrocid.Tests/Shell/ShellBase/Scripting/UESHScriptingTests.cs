@@ -19,21 +19,21 @@
 
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Shell.ShellBase.Scripting;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System.IO;
 
 namespace Nitrocid.Tests.Shell.ShellBase.Scripting
 {
 
-    [TestFixture]
+    [TestClass]
     public class UESHScriptingTests
     {
 
         /// <summary>
         /// Tests linting a valid UESH script
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestLintUESHScriptValid() =>
             Should.NotThrow(() => UESHParse.Execute(Path.GetFullPath("TestData/ScriptValid.uesh"), "", true));
@@ -41,7 +41,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Scripting
         /// <summary>
         /// Tests linting a invalid UESH script
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestLintUESHScriptInvalid() =>
             Should.Throw(() => UESHParse.Execute(Path.GetFullPath("TestData/ScriptInvalid.uesh"), "", true), typeof(KernelException));
@@ -49,7 +49,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Scripting
         /// <summary>
         /// Tests linting an empty UESH script
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestLintUESHScriptEmpty() =>
             Should.NotThrow(() => UESHParse.Execute(Path.GetFullPath("TestData/ScriptEmpty.uesh"), "", true));

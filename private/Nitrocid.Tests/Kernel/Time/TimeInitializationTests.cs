@@ -21,7 +21,7 @@ using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Time.Converters;
 using Nitrocid.Kernel.Time.Renderers;
 using Nitrocid.Kernel.Time.Timezones;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System;
 using System.Linq;
@@ -29,14 +29,14 @@ using System.Linq;
 namespace Nitrocid.Tests.Kernel.Time
 {
 
-    [TestFixture]
+    [TestClass]
     public class TimeInitializationTests
     {
 
         /// <summary>
         /// Tests initializing current times in all timezones
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestGetTimeZones()
         {
@@ -48,7 +48,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests getting time from timezone
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestGetZoneTime()
         {
@@ -64,7 +64,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests getting time from timezone
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestGetDateTimeFromZone()
         {
@@ -80,7 +80,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests getting time from timezone
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestGetZoneTimeString()
         {
@@ -96,7 +96,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests checking to see if a specified time zone exists
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestTimeZoneExists()
         {
@@ -109,7 +109,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests checking to see if a nonexistent time zone exists
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestTimeZoneExistsNonexistent() =>
             TimeZones.TimeZoneExists("GMT Version 2.0").ShouldBeFalse();

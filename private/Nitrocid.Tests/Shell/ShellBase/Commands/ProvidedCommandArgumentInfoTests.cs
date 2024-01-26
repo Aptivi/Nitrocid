@@ -19,23 +19,23 @@
 
 using Nitrocid.Shell.ShellBase.Arguments;
 using Nitrocid.Shell.ShellBase.Shells;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 
 namespace Nitrocid.Tests.Shell.ShellBase.Commands
 {
-    [TestFixture]
+    [TestClass]
     public class ProvidedCommandArgumentInfoTests
     {
         /// <summary>
         /// Tests initializing <see cref="ProvidedArgumentsInfo"/> instance from a command line argument
         /// </summary>
-        [Test]
-        [TestCase(ShellType.Shell)]
-        [TestCase(ShellType.AdminShell)]
-        [TestCase(ShellType.DebugShell)]
-        [TestCase(ShellType.HexShell)]
-        [TestCase(ShellType.TextShell)]
+        [TestMethod]
+        [DataRow(ShellType.Shell)]
+        [DataRow(ShellType.AdminShell)]
+        [DataRow(ShellType.DebugShell)]
+        [DataRow(ShellType.HexShell)]
+        [DataRow(ShellType.TextShell)]
         [Description("Initialization")]
         public void TestInitializeProvidedCommandArgumentsInfoInstanceFromCommandLineArgNoArg(ShellType type)
         {
@@ -57,12 +57,12 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         /// <summary>
         /// Tests initializing <see cref="ProvidedArgumentsInfo"/> instance from a command line argument
         /// </summary>
-        [Test]
-        [TestCase(ShellType.Shell)]
-        [TestCase(ShellType.AdminShell)]
-        [TestCase(ShellType.DebugShell)]
-        [TestCase(ShellType.HexShell)]
-        [TestCase(ShellType.TextShell)]
+        [TestMethod]
+        [DataRow(ShellType.Shell)]
+        [DataRow(ShellType.AdminShell)]
+        [DataRow(ShellType.DebugShell)]
+        [DataRow(ShellType.HexShell)]
+        [DataRow(ShellType.TextShell)]
         [Description("Initialization")]
         public void TestInitializeProvidedCommandArgumentsInfoInstanceFromCommandLineArgWithArg(ShellType type)
         {
@@ -87,12 +87,12 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         /// <summary>
         /// Tests initializing <see cref="ProvidedArgumentsInfo"/> instance from a command line argument
         /// </summary>
-        [Test]
-        [TestCase(ShellType.Shell)]
-        [TestCase(ShellType.AdminShell)]
-        [TestCase(ShellType.DebugShell)]
-        [TestCase(ShellType.HexShell)]
-        [TestCase(ShellType.TextShell)]
+        [TestMethod]
+        [DataRow(ShellType.Shell)]
+        [DataRow(ShellType.AdminShell)]
+        [DataRow(ShellType.DebugShell)]
+        [DataRow(ShellType.HexShell)]
+        [DataRow(ShellType.TextShell)]
         [Description("Initialization")]
         public void TestInitializeProvidedCommandArgumentsInfoInstanceFromCommandLineArgWithSwitch(ShellType type)
         {
@@ -116,12 +116,12 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         /// <summary>
         /// Tests initializing <see cref="ProvidedArgumentsInfo"/> instance from a command line argument
         /// </summary>
-        [Test]
-        [TestCase(ShellType.Shell)]
-        [TestCase(ShellType.AdminShell)]
-        [TestCase(ShellType.DebugShell)]
-        [TestCase(ShellType.HexShell)]
-        [TestCase(ShellType.TextShell)]
+        [TestMethod]
+        [DataRow(ShellType.Shell)]
+        [DataRow(ShellType.AdminShell)]
+        [DataRow(ShellType.DebugShell)]
+        [DataRow(ShellType.HexShell)]
+        [DataRow(ShellType.TextShell)]
         [Description("Initialization")]
         public void TestInitializeProvidedCommandArgumentsInfoInstanceFromCommandLineArgFull(ShellType type)
         {
@@ -148,12 +148,12 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         /// <summary>
         /// Tests initializing <see cref="ProvidedArgumentsInfo"/> instance from a command line argument
         /// </summary>
-        [Test]
-        [TestCase("Shell")]
-        [TestCase("AdminShell")]
-        [TestCase("DebugShell")]
-        [TestCase("HexShell")]
-        [TestCase("TextShell")]
+        [TestMethod]
+        [DataRow("Shell")]
+        [DataRow("AdminShell")]
+        [DataRow("DebugShell")]
+        [DataRow("HexShell")]
+        [DataRow("TextShell")]
         [Description("Initialization")]
         public void TestInitializeProvidedCommandArgumentsInfoInstanceFromCommandLineArgNoArg(string type)
         {
@@ -175,12 +175,12 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         /// <summary>
         /// Tests initializing <see cref="ProvidedArgumentsInfo"/> instance from a command line argument
         /// </summary>
-        [Test]
-        [TestCase("Shell")]
-        [TestCase("AdminShell")]
-        [TestCase("DebugShell")]
-        [TestCase("HexShell")]
-        [TestCase("TextShell")]
+        [TestMethod]
+        [DataRow("Shell")]
+        [DataRow("AdminShell")]
+        [DataRow("DebugShell")]
+        [DataRow("HexShell")]
+        [DataRow("TextShell")]
         [Description("Initialization")]
         public void TestInitializeProvidedCommandArgumentsInfoInstanceFromCommandLineArgWithArg(string type)
         {
@@ -205,12 +205,12 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         /// <summary>
         /// Tests initializing <see cref="ProvidedArgumentsInfo"/> instance from a command line argument
         /// </summary>
-        [Test]
-        [TestCase("Shell")]
-        [TestCase("AdminShell")]
-        [TestCase("DebugShell")]
-        [TestCase("HexShell")]
-        [TestCase("TextShell")]
+        [TestMethod]
+        [DataRow("Shell")]
+        [DataRow("AdminShell")]
+        [DataRow("DebugShell")]
+        [DataRow("HexShell")]
+        [DataRow("TextShell")]
         [Description("Initialization")]
         public void TestInitializeProvidedCommandArgumentsInfoInstanceFromCommandLineArgWithSwitch(string type)
         {
@@ -234,12 +234,12 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         /// <summary>
         /// Tests initializing <see cref="ProvidedArgumentsInfo"/> instance from a command line argument
         /// </summary>
-        [Test]
-        [TestCase("Shell")]
-        [TestCase("AdminShell")]
-        [TestCase("DebugShell")]
-        [TestCase("HexShell")]
-        [TestCase("TextShell")]
+        [TestMethod]
+        [DataRow("Shell")]
+        [DataRow("AdminShell")]
+        [DataRow("DebugShell")]
+        [DataRow("HexShell")]
+        [DataRow("TextShell")]
         [Description("Initialization")]
         public void TestInitializeProvidedCommandArgumentsInfoInstanceFromCommandLineArgFull(string type)
         {

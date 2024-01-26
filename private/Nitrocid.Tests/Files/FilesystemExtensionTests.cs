@@ -19,21 +19,23 @@
 
 using Nitrocid.Files.Extensions;
 using Nitrocid.Kernel.Debugging;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 
 namespace Nitrocid.Tests.Files
 {
-    [TestFixture]
+    [TestClass]
     public class FilesystemExtensionTests
     {
 
         /// <summary>
         /// Tests registering a custom file handler
         /// </summary>
-        [OneTimeSetUp]
+        [ClassInitialize]
         [Description("Extension")]
-        public void TestRegisterHandler()
+#pragma warning disable IDE0060
+        public static void RegisterUnitHandler(TestContext tc)
+#pragma warning restore IDE0060
         {
             ExtensionHandlerTools.RegisterHandler(".ext", "ext", (path) =>
             {
@@ -47,7 +49,7 @@ namespace Nitrocid.Tests.Files
         /// <summary>
         /// Tests getting an extension handler
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Extension")]
         public void TestGetFirstExtensionHandler()
         {
@@ -61,7 +63,7 @@ namespace Nitrocid.Tests.Files
         /// <summary>
         /// Tests getting an extension handler
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Extension")]
         public void TestGetExtensionHandler()
         {
@@ -75,7 +77,7 @@ namespace Nitrocid.Tests.Files
         /// <summary>
         /// Tests getting extension handlers
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Extension")]
         public void TestGetExtensionHandlers()
         {
@@ -93,10 +95,10 @@ namespace Nitrocid.Tests.Files
         /// <summary>
         /// Tests checking to see if the handler is built-in and registered
         /// </summary>
-        [Test]
-        [TestCase(".ext", false, true)]
-        [TestCase(".bin", true, true)]
-        [TestCase(".invalidformat", false, false)]
+        [TestMethod]
+        [DataRow(".ext", false, true)]
+        [DataRow(".bin", true, true)]
+        [DataRow(".invalidformat", false, false)]
         [Description("Extension")]
         public void TestIsHandlerBuiltinAndRegistered(string extension, bool expectedBuiltin, bool expectedRegged)
         {
@@ -109,10 +111,10 @@ namespace Nitrocid.Tests.Files
         /// <summary>
         /// Tests checking to see if the handler is registered
         /// </summary>
-        [Test]
-        [TestCase(".ext", true)]
-        [TestCase(".bin", true)]
-        [TestCase(".invalidformat", false)]
+        [TestMethod]
+        [DataRow(".ext", true)]
+        [DataRow(".bin", true)]
+        [DataRow(".invalidformat", false)]
         [Description("Extension")]
         public void TestIsHandlerRegistered(string extension, bool expectedRegged)
         {
@@ -123,10 +125,10 @@ namespace Nitrocid.Tests.Files
         /// <summary>
         /// Tests checking to see if the handler is built-in
         /// </summary>
-        [Test]
-        [TestCase(".ext", false)]
-        [TestCase(".bin", true)]
-        [TestCase(".invalidformat", false)]
+        [TestMethod]
+        [DataRow(".ext", false)]
+        [DataRow(".bin", true)]
+        [DataRow(".invalidformat", false)]
         [Description("Extension")]
         public void TestIsHandlerBuiltin(string extension, bool expectedBuiltin)
         {
@@ -137,9 +139,9 @@ namespace Nitrocid.Tests.Files
         /// <summary>
         /// Tests unregistering a custom file handler
         /// </summary>
-        [OneTimeTearDown]
+        [ClassCleanup]
         [Description("Extension")]
-        public void TestUnregisterHandler()
+        public static void UnregisterUnitHandler()
         {
             var handler = ExtensionHandlerTools.GetFirstExtensionHandler(".ext");
             ExtensionHandlerTools.UnregisterHandler(".ext", handler);

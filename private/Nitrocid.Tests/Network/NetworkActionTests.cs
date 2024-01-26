@@ -21,7 +21,7 @@ using Nitrocid.Kernel.Threading;
 using Nitrocid.Network;
 using Nitrocid.Network.Connections;
 using Nitrocid.Tests.Network.Connections;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System.Collections.Generic;
 using System.Threading;
@@ -29,31 +29,31 @@ using System.Threading;
 namespace Nitrocid.Tests.Network
 {
 
-    [TestFixture]
+    [TestClass]
     public class NetworkActionTests
     {
 
-        private static IEnumerable<TestCaseData> Connections =>
-            new[] {
-                //               ---------- Provided ----------
-                new TestCaseData("FTP client", "ftp.fabrikam.com", NetworkConnectionType.FTP, ConnectionThreads.ftpThread),
-                new TestCaseData("HTTP client", "api.fabrikam.com", NetworkConnectionType.HTTP, ConnectionThreads.httpThread),
-                new TestCaseData("Mail client", "mail@fabrikam.com", NetworkConnectionType.Mail, ConnectionThreads.mailThread),
-                new TestCaseData("RSS client", "feed.fabrikam.com/atom", NetworkConnectionType.RSS, ConnectionThreads.rssThread),
-                new TestCaseData("SFTP client", "sftp.fabrikam.com", NetworkConnectionType.SFTP, ConnectionThreads.sftpThread),
-                new TestCaseData("SSH client", "freeshell.fabrikam.com", NetworkConnectionType.SSH, ConnectionThreads.sshThread),
+        private static IEnumerable<(string, string, NetworkConnectionType, object)> Connections =>
+            new (string, string, NetworkConnectionType, object)[] {
+                // ---------- Provided ----------
+                ("FTP client", "ftp.fabrikam.com", NetworkConnectionType.FTP, ConnectionThreads.ftpThread),
+                ("HTTP client", "api.fabrikam.com", NetworkConnectionType.HTTP, ConnectionThreads.httpThread),
+                ("Mail client", "mail@fabrikam.com", NetworkConnectionType.Mail, ConnectionThreads.mailThread),
+                ("RSS client", "feed.fabrikam.com/atom", NetworkConnectionType.RSS, ConnectionThreads.rssThread),
+                ("SFTP client", "sftp.fabrikam.com", NetworkConnectionType.SFTP, ConnectionThreads.sftpThread),
+                ("SSH client", "freeshell.fabrikam.com", NetworkConnectionType.SSH, ConnectionThreads.sshThread),
             };
 
         /// <summary>
         /// Tests establishing network connection (instances)
         /// </summary>
-        [Test]
-        [TestCase("FTP client", "ftp.fabrikam.com", NetworkConnectionType.FTP, null)]
-        [TestCase("HTTP client", "api.fabrikam.com", NetworkConnectionType.HTTP, null)]
-        [TestCase("Mail client", "mail@fabrikam.com", NetworkConnectionType.Mail, null)]
-        [TestCase("RSS client", "feed.fabrikam.com/atom", NetworkConnectionType.RSS, null)]
-        [TestCase("SFTP client", "sftp.fabrikam.com", NetworkConnectionType.SFTP, null)]
-        [TestCase("SSH client", "freeshell.fabrikam.com", NetworkConnectionType.SSH, null)]
+        [TestMethod]
+        [DataRow("FTP client", "ftp.fabrikam.com", NetworkConnectionType.FTP, null)]
+        [DataRow("HTTP client", "api.fabrikam.com", NetworkConnectionType.HTTP, null)]
+        [DataRow("Mail client", "mail@fabrikam.com", NetworkConnectionType.Mail, null)]
+        [DataRow("RSS client", "feed.fabrikam.com/atom", NetworkConnectionType.RSS, null)]
+        [DataRow("SFTP client", "sftp.fabrikam.com", NetworkConnectionType.SFTP, null)]
+        [DataRow("SSH client", "freeshell.fabrikam.com", NetworkConnectionType.SSH, null)]
         [Description("Action")]
         public void TestEstablishConnectionInstance(string name, string url, NetworkConnectionType type, object connectionClient)
         {
@@ -71,8 +71,8 @@ namespace Nitrocid.Tests.Network
         /// <summary>
         /// Tests establishing network connection (threads)
         /// </summary>
-        [Test]
-        [TestCaseSource(nameof(Connections))]
+        [TestMethod]
+        [DynamicData(nameof(Connections), DynamicDataDisplayNameDeclaringType = typeof(NetworkActionTests))]
         [Description("Action")]
         public void TestEstablishConnectionInstance(string name, string url, NetworkConnectionType type, KernelThread connectionClient)
         {
@@ -90,13 +90,13 @@ namespace Nitrocid.Tests.Network
         /// <summary>
         /// Tests getting network connections
         /// </summary>
-        [Test]
-        [TestCase(NetworkConnectionType.FTP)]
-        [TestCase(NetworkConnectionType.HTTP)]
-        [TestCase(NetworkConnectionType.Mail)]
-        [TestCase(NetworkConnectionType.RSS)]
-        [TestCase(NetworkConnectionType.SFTP)]
-        [TestCase(NetworkConnectionType.SSH)]
+        [TestMethod]
+        [DataRow(NetworkConnectionType.FTP)]
+        [DataRow(NetworkConnectionType.HTTP)]
+        [DataRow(NetworkConnectionType.Mail)]
+        [DataRow(NetworkConnectionType.RSS)]
+        [DataRow(NetworkConnectionType.SFTP)]
+        [DataRow(NetworkConnectionType.SSH)]
         [Description("Action")]
         public void TestGetNetworkConnections(NetworkConnectionType type)
         {
@@ -108,13 +108,13 @@ namespace Nitrocid.Tests.Network
         /// <summary>
         /// Tests getting network connections
         /// </summary>
-        [Test]
-        [TestCase(NetworkConnectionType.FTP, 0)]
-        [TestCase(NetworkConnectionType.HTTP, 1)]
-        [TestCase(NetworkConnectionType.Mail, 2)]
-        [TestCase(NetworkConnectionType.RSS, 3)]
-        [TestCase(NetworkConnectionType.SFTP, 4)]
-        [TestCase(NetworkConnectionType.SSH, 5)]
+        [TestMethod]
+        [DataRow(NetworkConnectionType.FTP, 0)]
+        [DataRow(NetworkConnectionType.HTTP, 1)]
+        [DataRow(NetworkConnectionType.Mail, 2)]
+        [DataRow(NetworkConnectionType.RSS, 3)]
+        [DataRow(NetworkConnectionType.SFTP, 4)]
+        [DataRow(NetworkConnectionType.SSH, 5)]
         [Description("Action")]
         public void TestGetConnectionIndex(NetworkConnectionType type, int expectedIdx)
         {
@@ -130,13 +130,13 @@ namespace Nitrocid.Tests.Network
         /// <summary>
         /// Tests getting network connections from a specific type
         /// </summary>
-        [Test]
-        [TestCase(NetworkConnectionType.FTP)]
-        [TestCase(NetworkConnectionType.HTTP)]
-        [TestCase(NetworkConnectionType.Mail)]
-        [TestCase(NetworkConnectionType.RSS)]
-        [TestCase(NetworkConnectionType.SFTP)]
-        [TestCase(NetworkConnectionType.SSH)]
+        [TestMethod]
+        [DataRow(NetworkConnectionType.FTP)]
+        [DataRow(NetworkConnectionType.HTTP)]
+        [DataRow(NetworkConnectionType.Mail)]
+        [DataRow(NetworkConnectionType.RSS)]
+        [DataRow(NetworkConnectionType.SFTP)]
+        [DataRow(NetworkConnectionType.SSH)]
         [Description("Action")]
         public void TestGetConnectionIndexSpecific(NetworkConnectionType type)
         {
@@ -152,13 +152,13 @@ namespace Nitrocid.Tests.Network
         /// <summary>
         /// Tests getting network connections
         /// </summary>
-        [Test]
-        [TestCase(NetworkConnectionType.FTP, 0)]
-        [TestCase(NetworkConnectionType.HTTP, 1)]
-        [TestCase(NetworkConnectionType.Mail, 2)]
-        [TestCase(NetworkConnectionType.RSS, 3)]
-        [TestCase(NetworkConnectionType.SFTP, 4)]
-        [TestCase(NetworkConnectionType.SSH, 5)]
+        [TestMethod]
+        [DataRow(NetworkConnectionType.FTP, 0)]
+        [DataRow(NetworkConnectionType.HTTP, 1)]
+        [DataRow(NetworkConnectionType.Mail, 2)]
+        [DataRow(NetworkConnectionType.RSS, 3)]
+        [DataRow(NetworkConnectionType.SFTP, 4)]
+        [DataRow(NetworkConnectionType.SSH, 5)]
         [Description("Action")]
         public void TestGetConnectionFromIndex(NetworkConnectionType type, int expectedIdx)
         {
@@ -173,13 +173,13 @@ namespace Nitrocid.Tests.Network
         /// <summary>
         /// Tests getting network connections from a specific type
         /// </summary>
-        [Test]
-        [TestCase(NetworkConnectionType.FTP)]
-        [TestCase(NetworkConnectionType.HTTP)]
-        [TestCase(NetworkConnectionType.Mail)]
-        [TestCase(NetworkConnectionType.RSS)]
-        [TestCase(NetworkConnectionType.SFTP)]
-        [TestCase(NetworkConnectionType.SSH)]
+        [TestMethod]
+        [DataRow(NetworkConnectionType.FTP)]
+        [DataRow(NetworkConnectionType.HTTP)]
+        [DataRow(NetworkConnectionType.Mail)]
+        [DataRow(NetworkConnectionType.RSS)]
+        [DataRow(NetworkConnectionType.SFTP)]
+        [DataRow(NetworkConnectionType.SSH)]
         [Description("Action")]
         public void TestGetConnectionFromIndexSpecific(NetworkConnectionType type)
         {
@@ -194,7 +194,7 @@ namespace Nitrocid.Tests.Network
         /// <summary>
         /// Tests pinging with custom timeout and buffer
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestGetFilenameFromUrl()
         {
@@ -207,7 +207,7 @@ namespace Nitrocid.Tests.Network
         /// <summary>
         /// Tests registering, establishing, closing, and unregistering a custom connection type
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestCustomConnectionType()
         {

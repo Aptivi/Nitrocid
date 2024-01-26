@@ -18,7 +18,7 @@
 //
 
 using System.Globalization;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System;
 using Nitrocid.Kernel.Time.Calendars;
@@ -28,14 +28,14 @@ using Nitrocid.Kernel.Time;
 namespace Nitrocid.Tests.Kernel.Time
 {
 
-    [TestFixture]
+    [TestClass]
     public class TimeActionTests
     {
 
         /// <summary>
         /// Tests rendering kernel date
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderKernelDate() =>
             TimeDateRenderers.RenderDate().ShouldNotBeNullOrEmpty();
@@ -43,7 +43,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering kernel date with specific format type
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderKernelDateType()
         {
@@ -54,7 +54,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering kernel date with specified culture
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderKernelDateCult()
         {
@@ -65,7 +65,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering kernel date with specified culture and format type
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderKernelDateCultType()
         {
@@ -77,7 +77,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering kernel date with specified calendar
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderKernelDateCalendar()
         {
@@ -88,7 +88,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering kernel date with specified calendar and format type
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderKernelDateCalendarType()
         {
@@ -100,7 +100,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering kernel date (UTC)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderKernelDateUtc() =>
             TimeDateRenderersUtc.RenderDateUtc().ShouldNotBeNullOrEmpty();
@@ -108,7 +108,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering kernel date with specific format type (UTC)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderKernelDateUtcType()
         {
@@ -119,7 +119,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering kernel date with specified culture (UTC)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderKernelDateUtcCult()
         {
@@ -130,7 +130,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering kernel date with specified culture and format type (UTC)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderKernelDateUtcCultType()
         {
@@ -142,7 +142,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering kernel date with specified calendar (UTC)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderKernelDateUtcCalendar()
         {
@@ -153,7 +153,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering kernel date with specified calendar and format type (UTC)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderKernelDateUtcCalendarType()
         {
@@ -165,7 +165,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering custom date
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderCustomDate()
         {
@@ -176,7 +176,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering custom date
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderCustomDateType()
         {
@@ -188,7 +188,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering custom date with specified culture
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderCustomDateCult()
         {
@@ -200,7 +200,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering custom date with specified culture
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderCustomDateCultType()
         {
@@ -213,7 +213,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering custom date with specified calendar
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderCustomDateCalendar()
         {
@@ -225,7 +225,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering custom date with specified calendar and format type
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderCustomDateCalendarType()
         {
@@ -238,7 +238,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering custom date (UTC)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderCustomDateUtc()
         {
@@ -249,7 +249,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering custom date (UTC)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderCustomDateUtcType()
         {
@@ -261,7 +261,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering custom date with specified culture (UTC)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderCustomDateUtcCult()
         {
@@ -273,7 +273,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering custom date with specified culture (UTC)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderCustomDateUtcCultType()
         {
@@ -286,7 +286,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering custom date with specified calendar
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderCustomDateUtcCalendar()
         {
@@ -298,7 +298,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering custom date with specified calendar and format type
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderCustomDateUtcCalendarType()
         {
@@ -311,7 +311,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering kernel time
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderKernelTime() =>
             TimeDateRenderers.RenderTime().ShouldNotBeNullOrEmpty();
@@ -319,7 +319,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering kernel time
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderKernelTimeType()
         {
@@ -330,7 +330,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering kernel time with specified culture
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderKernelTimeCult()
         {
@@ -341,7 +341,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering kernel time with specified culture
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderKernelTimeCultType()
         {
@@ -353,7 +353,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering kernel time with specified calendar
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderKernelTimeCalendar()
         {
@@ -364,7 +364,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering kernel time with specified calendar
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderKernelTimeCalendarType()
         {
@@ -376,7 +376,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering kernel time (UTC)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderKernelTimeUtc() =>
             TimeDateRenderersUtc.RenderTimeUtc().ShouldNotBeNullOrEmpty();
@@ -384,7 +384,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering kernel time with specific format type (UTC)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderKernelTimeUtcType()
         {
@@ -395,7 +395,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering kernel time with specified culture (UTC)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderKernelTimeUtcCult()
         {
@@ -406,7 +406,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering kernel time with specified culture and format type (UTC)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderKernelTimeUtcCultType()
         {
@@ -418,7 +418,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering kernel time with specified calendar (UTC)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderKernelTimeUtcCalendar()
         {
@@ -429,7 +429,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering kernel time with specified calendar (UTC)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderKernelTimeUtcCalendarType()
         {
@@ -441,7 +441,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering custom time
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderCustomTime()
         {
@@ -452,7 +452,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering custom time
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderCustomTimeType()
         {
@@ -464,7 +464,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering custom time with specified culture
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderCustomTimeCult()
         {
@@ -476,7 +476,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering custom time with specified culture
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderCustomTimeCultType()
         {
@@ -489,7 +489,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering custom time with specified calendar
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderCustomTimeCalendar()
         {
@@ -501,7 +501,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering custom time with specified calendar
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderCustomTimeCalendarType()
         {
@@ -514,7 +514,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering custom time (UTC)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderCustomTimeUtc()
         {
@@ -525,7 +525,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering custom time (UTC)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderCustomTimeUtcType()
         {
@@ -537,7 +537,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering custom time with specified culture (UTC)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderCustomTimeUtcCult()
         {
@@ -549,7 +549,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering custom time with specified culture (UTC)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderCustomTimeUtcCultType()
         {
@@ -562,7 +562,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering custom time with specified calendar (UTC)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderCustomTimeUtcCalendar()
         {
@@ -574,7 +574,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering custom time with specified calendar (UTC)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderCustomTimeUtcCalendarType()
         {
@@ -587,7 +587,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering kernel date
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderKernel() =>
             TimeDateRenderers.Render().ShouldNotBeNullOrEmpty();
@@ -595,7 +595,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering kernel date
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderKernelType()
         {
@@ -606,7 +606,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering kernel date with custom format
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderKernelCustomFormat()
         {
@@ -619,7 +619,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering kernel date with specified culture
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderKernelCult()
         {
@@ -630,7 +630,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering kernel date with specified culture and format
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderKernelCultType()
         {
@@ -642,7 +642,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering kernel date with specified culture and custom format
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderKernelCultCustomFormat()
         {
@@ -656,7 +656,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering kernel date with specified calendar
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderKernelCalendar()
         {
@@ -667,7 +667,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering kernel date with specified calendar and format
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderKernelCalendarType()
         {
@@ -679,7 +679,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering kernel date with specified calendar and custom format
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderKernelCalendarCustomFormat()
         {
@@ -693,7 +693,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering kernel date (UTC)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderKernelUtc() =>
             TimeDateRenderersUtc.RenderUtc().ShouldNotBeNullOrEmpty();
@@ -701,7 +701,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering kernel date with specific format type (UTC)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderKernelUtcType()
         {
@@ -712,7 +712,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering kernel date with custom format (UTC)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderKernelUtcCustomFormat()
         {
@@ -725,7 +725,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering kernel date with specified culture (UTC)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderKernelUtcCult()
         {
@@ -736,7 +736,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering kernel date with specified culture and format type (UTC)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderKernelUtcCultType()
         {
@@ -748,7 +748,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering kernel date with specified culture and custom format (UTC)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderKernelUtcCultCustomFormat()
         {
@@ -762,7 +762,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering kernel date with specified calendar (UTC)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderKernelUtcCalendar()
         {
@@ -773,7 +773,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering kernel date with specified calendar and format (UTC)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderKernelUtcCalendarType()
         {
@@ -785,7 +785,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering kernel date with specified calendar and custom format (UTC)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderKernelUtcCalendarCustomFormat()
         {
@@ -799,7 +799,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering custom date
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderCustom()
         {
@@ -810,7 +810,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering custom date
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderCustomType()
         {
@@ -822,7 +822,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering custom date with custom format
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderCustomFormat()
         {
@@ -836,7 +836,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering custom date with specified culture
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderCustomCult()
         {
@@ -848,7 +848,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering custom date with specified culture
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderCustomCultType()
         {
@@ -861,7 +861,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering custom date with custom format
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderCustomCultFormat()
         {
@@ -876,7 +876,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering custom date with specified calendar
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderCustomCalendar()
         {
@@ -888,7 +888,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering custom date with specified calendar
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderCustomCalendarType()
         {
@@ -901,7 +901,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering custom date with custom format
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderCustomCalendarFormat()
         {
@@ -916,7 +916,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering custom date (UTC)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderCustomUtc()
         {
@@ -927,7 +927,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering custom date (UTC)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderCustomUtcType()
         {
@@ -939,7 +939,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering custom date with custom format (UTC)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderCustomUtcFormat()
         {
@@ -953,7 +953,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering custom date with specified culture (UTC)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderCustomUtcCult()
         {
@@ -965,7 +965,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering custom date with specified culture (UTC)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderCustomUtcCultType()
         {
@@ -978,7 +978,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering custom date with specified culture and custom format (UTC)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderCustomUtcCultFormat()
         {
@@ -993,7 +993,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering custom date with specified calendar (UTC)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderCustomUtcCalendar()
         {
@@ -1005,7 +1005,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering custom date with specified calendar (UTC)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderCustomUtcCalendarType()
         {
@@ -1018,7 +1018,7 @@ namespace Nitrocid.Tests.Kernel.Time
         /// <summary>
         /// Tests rendering custom date with custom format (UTC)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestRenderCustomUtcCalendarFormat()
         {

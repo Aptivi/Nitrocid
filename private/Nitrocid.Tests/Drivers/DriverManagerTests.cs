@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System.Collections.Generic;
 using Nitrocid.Tests.Drivers.DriverData;
@@ -36,113 +36,134 @@ using Nitrocid.Drivers.DebugLogger;
 
 namespace Nitrocid.Tests.Drivers
 {
-    [TestFixture]
+    [TestClass]
     public class DriverManagerTests
     {
 
-        private static IEnumerable<TestCaseData> ExpectedDriverNames =>
-            new[] {
-                //               ---------- Actual ----------                       ---------- Expected ----------
-                new TestCaseData(DriverHandler.CurrentConsoleDriver,                "Default"),
-                new TestCaseData(DriverHandler.CurrentConsoleDriverLocal,           "Default"),
-                new TestCaseData(DriverHandler.CurrentEncryptionDriver,             "Default"),
-                new TestCaseData(DriverHandler.CurrentEncryptionDriverLocal,        "Default"),
-                new TestCaseData(DriverHandler.CurrentFilesystemDriver,             "Default"),
-                new TestCaseData(DriverHandler.CurrentFilesystemDriverLocal,        "Default"),
-                new TestCaseData(DriverHandler.CurrentNetworkDriver,                "Default"),
-                new TestCaseData(DriverHandler.CurrentNetworkDriverLocal,           "Default"),
-                new TestCaseData(DriverHandler.CurrentRandomDriver,                 "Default"),
-                new TestCaseData(DriverHandler.CurrentRandomDriverLocal,            "Default"),
-                new TestCaseData(DriverHandler.CurrentRegexpDriver,                 "Default"),
-                new TestCaseData(DriverHandler.CurrentRegexpDriverLocal,            "Default"),
-                new TestCaseData(DriverHandler.CurrentDebugLoggerDriver,            "Default"),
-                new TestCaseData(DriverHandler.CurrentDebugLoggerDriverLocal,       "Default"),
-                new TestCaseData(DriverHandler.CurrentEncodingDriver,               "Default"),
-                new TestCaseData(DriverHandler.CurrentEncodingDriverLocal,          "Default"),
-                new TestCaseData(DriverHandler.CurrentHardwareProberDriver,         "Default"),
-                new TestCaseData(DriverHandler.CurrentHardwareProberDriverLocal,    "Default"),
-                new TestCaseData(DriverHandler.CurrentSortingDriver,                "Default"),
-                new TestCaseData(DriverHandler.CurrentSortingDriverLocal,           "Default"),
-                new TestCaseData(DriverHandler.CurrentInputDriver,                  "Default"),
-                new TestCaseData(DriverHandler.CurrentInputDriverLocal,             "Default"),
+        private static IEnumerable<object[]> ExpectedDriverNames =>
+            new object[][] {
+                // ---------- Actual ----------                                               ---------- Expected ----------
+                [DriverTypes.Console, DriverHandler.CurrentConsoleDriver,                    "Default"],
+                [DriverTypes.Console, DriverHandler.CurrentConsoleDriverLocal,               "Default"],
+                [DriverTypes.Encryption, DriverHandler.CurrentEncryptionDriver,              "Default"],
+                [DriverTypes.Encryption, DriverHandler.CurrentEncryptionDriverLocal,         "Default"],
+                [DriverTypes.Filesystem, DriverHandler.CurrentFilesystemDriver,              "Default"],
+                [DriverTypes.Filesystem, DriverHandler.CurrentFilesystemDriverLocal,         "Default"],
+                [DriverTypes.Network, DriverHandler.CurrentNetworkDriver,                    "Default"],
+                [DriverTypes.Network, DriverHandler.CurrentNetworkDriverLocal,               "Default"],
+                [DriverTypes.RNG, DriverHandler.CurrentRandomDriver,                         "Default"],
+                [DriverTypes.RNG, DriverHandler.CurrentRandomDriverLocal,                    "Default"],
+                [DriverTypes.Regexp, DriverHandler.CurrentRegexpDriver,                      "Default"],
+                [DriverTypes.Regexp, DriverHandler.CurrentRegexpDriverLocal,                 "Default"],
+                [DriverTypes.DebugLogger, DriverHandler.CurrentDebugLoggerDriver,            "Default"],
+                [DriverTypes.DebugLogger, DriverHandler.CurrentDebugLoggerDriverLocal,       "Default"],
+                [DriverTypes.Encoding, DriverHandler.CurrentEncodingDriver,                  "Default"],
+                [DriverTypes.Encoding, DriverHandler.CurrentEncodingDriverLocal,             "Default"],
+                [DriverTypes.HardwareProber, DriverHandler.CurrentHardwareProberDriver,      "Default"],
+                [DriverTypes.HardwareProber, DriverHandler.CurrentHardwareProberDriverLocal, "Default"],
+                [DriverTypes.Sorting, DriverHandler.CurrentSortingDriver,                    "Default"],
+                [DriverTypes.Sorting, DriverHandler.CurrentSortingDriverLocal,               "Default"],
+                [DriverTypes.Input, DriverHandler.CurrentInputDriver,                        "Default"],
+                [DriverTypes.Input, DriverHandler.CurrentInputDriverLocal,                   "Default"],
             };
 
-        private static IEnumerable<TestCaseData> RegisteredConsoleDriver =>
-            new[] {
-                //               ---------- Provided ----------
-                new TestCaseData(DriverTypes.Console, new MyCustomConsoleDriver()),
+        private static IEnumerable<object[]> RegisteredConsoleDriver =>
+            new object[][] {
+                //                     ---------- Provided ----------
+                [DriverTypes.Console, new MyCustomConsoleDriver()],
             };
 
-        private static IEnumerable<TestCaseData> RegisteredEncryptionDriver =>
-            new[] {
-                //               ---------- Provided ----------
-                new TestCaseData(DriverTypes.Encryption, new MyCustomEncryptionDriver()),
+        private static IEnumerable<object[]> RegisteredEncryptionDriver =>
+            new object[][] {
+                //                       ---------- Provided ----------
+                [DriverTypes.Encryption, new MyCustomEncryptionDriver()],
             };
 
-        private static IEnumerable<TestCaseData> RegisteredFilesystemDriver =>
-            new[] {
-                //               ---------- Provided ----------
-                new TestCaseData(DriverTypes.Filesystem, new MyCustomFilesystemDriver()),
+        private static IEnumerable<object[]> RegisteredFilesystemDriver =>
+            new object[][] {
+                //                        ---------- Provided ----------
+                [DriverTypes.Filesystem, new MyCustomFilesystemDriver()],
             };
 
-        private static IEnumerable<TestCaseData> RegisteredNetworkDriver =>
-            new[] {
-                //               ---------- Provided ----------
-                new TestCaseData(DriverTypes.Network, new MyCustomNetworkDriver()),
+        private static IEnumerable<object[]> RegisteredNetworkDriver =>
+            new object[][] {
+                //                     ---------- Provided ----------
+                [DriverTypes.Network, new MyCustomNetworkDriver()],
             };
 
-        private static IEnumerable<TestCaseData> RegisteredRNGDriver =>
-            new[] {
-                //               ---------- Provided ----------
-                new TestCaseData(DriverTypes.RNG, new MyCustomRNGDriver()),
+        private static IEnumerable<object[]> RegisteredRNGDriver =>
+            new object[][] {
+                //                 ---------- Provided ----------
+                [DriverTypes.RNG, new MyCustomRNGDriver()],
             };
 
-        private static IEnumerable<TestCaseData> RegisteredRegexpDriver =>
-            new[] {
-                //               ---------- Provided ----------
-                new TestCaseData(DriverTypes.Regexp, new MyCustomRegexpDriver()),
+        private static IEnumerable<object[]> RegisteredRegexpDriver =>
+            new object[][] {
+                //                    ---------- Provided ----------
+                [DriverTypes.Regexp, new MyCustomRegexpDriver()],
             };
 
-        private static IEnumerable<TestCaseData> RegisteredDebugLoggerDriver =>
-            new[] {
-                //               ---------- Provided ----------
-                new TestCaseData(DriverTypes.DebugLogger, new MyCustomDebugLoggerDriver()),
+        private static IEnumerable<object[]> RegisteredDebugLoggerDriver =>
+            new object[][] {
+                //                         ---------- Provided ----------
+                [DriverTypes.DebugLogger, new MyCustomDebugLoggerDriver()],
             };
 
-        private static IEnumerable<TestCaseData> RegisteredEncodingDriver =>
-            new[] {
-                //               ---------- Provided ----------
-                new TestCaseData(DriverTypes.Encoding, new MyCustomEncodingDriver()),
+        private static IEnumerable<object[]> RegisteredEncodingDriver =>
+            new object[][] {
+                //                      ---------- Provided ----------
+                [DriverTypes.Encoding, new MyCustomEncodingDriver()],
             };
 
-        private static IEnumerable<TestCaseData> RegisteredHardwareProberDriver =>
-            new[] {
-                //               ---------- Provided ----------
-                new TestCaseData(DriverTypes.HardwareProber, new MyCustomHardwareProberDriver()),
+        private static IEnumerable<object[]> RegisteredHardwareProberDriver =>
+            new object[][] {
+                //                            ---------- Provided ----------
+                [DriverTypes.HardwareProber, new MyCustomHardwareProberDriver()],
             };
 
-        private static IEnumerable<TestCaseData> RegisteredSortingDriver =>
-            new[] {
-                //               ---------- Provided ----------
-                new TestCaseData(DriverTypes.Sorting, new MyCustomSortingDriver()),
+        private static IEnumerable<object[]> RegisteredSortingDriver =>
+            new object[][] {
+                //                     ---------- Provided ----------
+                [DriverTypes.Sorting, new MyCustomSortingDriver()],
             };
 
-        private static IEnumerable<TestCaseData> RegisteredInputDriver =>
-            new[] {
-                //               ---------- Provided ----------
-                new TestCaseData(DriverTypes.Input, new MyCustomInputDriver()),
+        private static IEnumerable<object[]> RegisteredInputDriver =>
+            new object[][] {
+                //                   ---------- Provided ----------
+                [DriverTypes.Input, new MyCustomInputDriver()],
             };
 
-        [Test]
+        [ClassInitialize]
         [Description("Management")]
-        public void TestSetConsoleDriver()
+#pragma warning disable IDE0060
+        public static void TestSetConsoleDriver(TestContext tc)
+#pragma warning restore IDE0060
         {
             ConsoleDriverTools.SetConsoleDriver("Default");
             DriverHandler.CurrentConsoleDriver.DriverName.ShouldBe("Default");
             DriverHandler.CurrentConsoleDriverLocal.DriverName.ShouldBe("Default");
         }
 
-        [Test]
+        [TestMethod]
+        [DynamicData(nameof(RegisteredConsoleDriver), DynamicDataDisplayNameDeclaringType = typeof(DriverManagerTests))]
+        [DynamicData(nameof(RegisteredEncryptionDriver), DynamicDataDisplayNameDeclaringType = typeof(DriverManagerTests))]
+        [DynamicData(nameof(RegisteredFilesystemDriver), DynamicDataDisplayNameDeclaringType = typeof(DriverManagerTests))]
+        [DynamicData(nameof(RegisteredNetworkDriver), DynamicDataDisplayNameDeclaringType = typeof(DriverManagerTests))]
+        [DynamicData(nameof(RegisteredRNGDriver), DynamicDataDisplayNameDeclaringType = typeof(DriverManagerTests))]
+        [DynamicData(nameof(RegisteredRegexpDriver), DynamicDataDisplayNameDeclaringType = typeof(DriverManagerTests))]
+        [DynamicData(nameof(RegisteredDebugLoggerDriver), DynamicDataDisplayNameDeclaringType = typeof(DriverManagerTests))]
+        [DynamicData(nameof(RegisteredEncodingDriver), DynamicDataDisplayNameDeclaringType = typeof(DriverManagerTests))]
+        [DynamicData(nameof(RegisteredHardwareProberDriver), DynamicDataDisplayNameDeclaringType = typeof(DriverManagerTests))]
+        [DynamicData(nameof(RegisteredSortingDriver), DynamicDataDisplayNameDeclaringType = typeof(DriverManagerTests))]
+        [DynamicData(nameof(RegisteredInputDriver), DynamicDataDisplayNameDeclaringType = typeof(DriverManagerTests))]
+        [Description("Management")]
+        public void TestAddDriver(DriverTypes type, IDriver driver)
+        {
+            Should.NotThrow(() => DriverHandler.RegisterDriver(type, driver));
+            DriverHandler.IsRegistered(type, driver).ShouldBeTrue();
+        }
+
+        [TestMethod]
         [Description("Management")]
         public void TestGetConsoleDrivers()
         {
@@ -150,7 +171,7 @@ namespace Nitrocid.Tests.Drivers
             drivers.ShouldNotBeEmpty();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestGetConsoleDriverNames()
         {
@@ -158,7 +179,7 @@ namespace Nitrocid.Tests.Drivers
             drivers.ShouldNotBeEmpty();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestSetEncryptionDriver()
         {
@@ -167,7 +188,7 @@ namespace Nitrocid.Tests.Drivers
             DriverHandler.CurrentEncryptionDriverLocal.DriverName.ShouldBe("SHA384");
         }
 
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestGetEncryptionDrivers()
         {
@@ -175,7 +196,7 @@ namespace Nitrocid.Tests.Drivers
             drivers.ShouldNotBeEmpty();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestGetEncryptionDriverNames()
         {
@@ -183,7 +204,7 @@ namespace Nitrocid.Tests.Drivers
             drivers.ShouldNotBeEmpty();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestSetFilesystemDriver()
         {
@@ -192,7 +213,7 @@ namespace Nitrocid.Tests.Drivers
             DriverHandler.CurrentFilesystemDriverLocal.DriverName.ShouldBe("Default");
         }
 
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestGetFilesystemDrivers()
         {
@@ -200,7 +221,7 @@ namespace Nitrocid.Tests.Drivers
             drivers.ShouldNotBeEmpty();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestGetFilesystemDriverNames()
         {
@@ -208,7 +229,7 @@ namespace Nitrocid.Tests.Drivers
             drivers.ShouldNotBeEmpty();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestSetNetworkDriver()
         {
@@ -217,7 +238,7 @@ namespace Nitrocid.Tests.Drivers
             DriverHandler.CurrentNetworkDriverLocal.DriverName.ShouldBe("Default");
         }
 
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestGetNetworkDrivers()
         {
@@ -225,7 +246,7 @@ namespace Nitrocid.Tests.Drivers
             drivers.ShouldNotBeEmpty();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestGetNetworkDriverNames()
         {
@@ -233,7 +254,7 @@ namespace Nitrocid.Tests.Drivers
             drivers.ShouldNotBeEmpty();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestSetRandomDriver()
         {
@@ -242,7 +263,7 @@ namespace Nitrocid.Tests.Drivers
             DriverHandler.CurrentRandomDriverLocal.DriverName.ShouldBe("Standard");
         }
 
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestGetRandomDrivers()
         {
@@ -250,7 +271,7 @@ namespace Nitrocid.Tests.Drivers
             drivers.ShouldNotBeEmpty();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestGetRandomDriverNames()
         {
@@ -258,7 +279,7 @@ namespace Nitrocid.Tests.Drivers
             drivers.ShouldNotBeEmpty();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestSetRegexpDriver()
         {
@@ -267,7 +288,7 @@ namespace Nitrocid.Tests.Drivers
             DriverHandler.CurrentRegexpDriverLocal.DriverName.ShouldBe("Default");
         }
 
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestGetRegexpDrivers()
         {
@@ -275,7 +296,7 @@ namespace Nitrocid.Tests.Drivers
             drivers.ShouldNotBeEmpty();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestGetRegexpDriverNames()
         {
@@ -283,7 +304,7 @@ namespace Nitrocid.Tests.Drivers
             drivers.ShouldNotBeEmpty();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestSetDebugLoggerDriver()
         {
@@ -292,7 +313,7 @@ namespace Nitrocid.Tests.Drivers
             DriverHandler.CurrentDebugLoggerDriverLocal.DriverName.ShouldBe("Default");
         }
 
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestGetDebugLoggerDrivers()
         {
@@ -300,7 +321,7 @@ namespace Nitrocid.Tests.Drivers
             drivers.ShouldNotBeEmpty();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestGetDebugLoggerDriverNames()
         {
@@ -308,7 +329,7 @@ namespace Nitrocid.Tests.Drivers
             drivers.ShouldNotBeEmpty();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestSetEncodingDriver()
         {
@@ -317,7 +338,7 @@ namespace Nitrocid.Tests.Drivers
             DriverHandler.CurrentEncodingDriverLocal.DriverName.ShouldBe("AES");
         }
 
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestGetEncodingDrivers()
         {
@@ -325,7 +346,7 @@ namespace Nitrocid.Tests.Drivers
             drivers.ShouldNotBeEmpty();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestGetEncodingDriverNames()
         {
@@ -333,7 +354,7 @@ namespace Nitrocid.Tests.Drivers
             drivers.ShouldNotBeEmpty();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestSetHardwareProberDriver()
         {
@@ -342,7 +363,7 @@ namespace Nitrocid.Tests.Drivers
             DriverHandler.CurrentHardwareProberDriverLocal.DriverName.ShouldBe("Default");
         }
 
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestGetHardwareProberDrivers()
         {
@@ -350,7 +371,7 @@ namespace Nitrocid.Tests.Drivers
             drivers.ShouldNotBeEmpty();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestGetHardwareProberDriverNames()
         {
@@ -358,7 +379,7 @@ namespace Nitrocid.Tests.Drivers
             drivers.ShouldNotBeEmpty();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestSetSortingDriver()
         {
@@ -367,7 +388,7 @@ namespace Nitrocid.Tests.Drivers
             DriverHandler.CurrentSortingDriverLocal.DriverName.ShouldBe("Default");
         }
 
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestGetSortingDrivers()
         {
@@ -375,7 +396,7 @@ namespace Nitrocid.Tests.Drivers
             drivers.ShouldNotBeEmpty();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestGetSortingDriverNames()
         {
@@ -383,7 +404,7 @@ namespace Nitrocid.Tests.Drivers
             drivers.ShouldNotBeEmpty();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestSetInputDriver()
         {
@@ -392,7 +413,7 @@ namespace Nitrocid.Tests.Drivers
             DriverHandler.CurrentInputDriverLocal.DriverName.ShouldBe("Default");
         }
 
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestGetInputDrivers()
         {
@@ -400,7 +421,7 @@ namespace Nitrocid.Tests.Drivers
             drivers.ShouldNotBeEmpty();
         }
 
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestGetInputDriverNames()
         {
@@ -408,39 +429,18 @@ namespace Nitrocid.Tests.Drivers
             drivers.ShouldNotBeEmpty();
         }
 
-        [Test]
-        [TestCase<IConsoleDriver>("Null", DriverTypes.Console)]
-        [TestCase<IEncryptionDriver>("SHA384", DriverTypes.Encryption)]
-        [TestCase<IFilesystemDriver>("Default", DriverTypes.Filesystem)]
-        [TestCase<INetworkDriver>("Default", DriverTypes.Network)]
-        [TestCase<IRandomDriver>("Standard", DriverTypes.RNG)]
-        [TestCase<IRegexpDriver>("Default", DriverTypes.Regexp)]
-        [TestCase<IDebugLoggerDriver>("Default", DriverTypes.DebugLogger)]
-        [TestCase<IEncodingDriver>("RSA", DriverTypes.Encoding)]
-        [TestCase<IHardwareProberDriver>("Default", DriverTypes.HardwareProber)]
-        [TestCase<ISortingDriver>("Default", DriverTypes.Sorting)]
-        [TestCase<IInputDriver>("Default", DriverTypes.Input)]
-        [Description("Management")]
-        public void TestGetDriver<T>(string driverName, DriverTypes expectedType)
-            where T : IDriver
-        {
-            var driver = DriverHandler.GetDriver<T>(driverName);
-            ((IDriver)driver).DriverName.ShouldBe(driverName);
-            ((IDriver)driver).DriverType.ShouldBe(expectedType);
-        }
-
-        [Test]
-        [TestCase("Null", DriverTypes.Console)]
-        [TestCase("SHA384", DriverTypes.Encryption)]
-        [TestCase("Default", DriverTypes.Filesystem)]
-        [TestCase("Default", DriverTypes.Network)]
-        [TestCase("Standard", DriverTypes.RNG)]
-        [TestCase("Default", DriverTypes.Regexp)]
-        [TestCase("Default", DriverTypes.DebugLogger)]
-        [TestCase("RSA", DriverTypes.Encoding)]
-        [TestCase("Default", DriverTypes.HardwareProber)]
-        [TestCase("Default", DriverTypes.Sorting)]
-        [TestCase("Default", DriverTypes.Input)]
+        [TestMethod]
+        [DataRow("Null", DriverTypes.Console)]
+        [DataRow("SHA384", DriverTypes.Encryption)]
+        [DataRow("Default", DriverTypes.Filesystem)]
+        [DataRow("Default", DriverTypes.Network)]
+        [DataRow("Standard", DriverTypes.RNG)]
+        [DataRow("Default", DriverTypes.Regexp)]
+        [DataRow("Default", DriverTypes.DebugLogger)]
+        [DataRow("RSA", DriverTypes.Encoding)]
+        [DataRow("Default", DriverTypes.HardwareProber)]
+        [DataRow("Default", DriverTypes.Sorting)]
+        [DataRow("Default", DriverTypes.Input)]
         [Description("Management")]
         public void TestGetDriver(string driverName, DriverTypes expectedType)
         {
@@ -449,58 +449,27 @@ namespace Nitrocid.Tests.Drivers
             driver.DriverType.ShouldBe(expectedType);
         }
 
-        [Test]
-        [TestCaseSource<IConsoleDriver>(nameof(ExpectedDriverNames))]
-        [TestCaseSource<IEncryptionDriver>(nameof(ExpectedDriverNames))]
-        [TestCaseSource<IFilesystemDriver>(nameof(ExpectedDriverNames))]
-        [TestCaseSource<INetworkDriver>(nameof(ExpectedDriverNames))]
-        [TestCaseSource<IRandomDriver>(nameof(ExpectedDriverNames))]
-        [TestCaseSource<IRegexpDriver>(nameof(ExpectedDriverNames))]
-        [TestCaseSource<IDebugLoggerDriver>(nameof(ExpectedDriverNames))]
-        [TestCaseSource<IEncodingDriver>(nameof(ExpectedDriverNames))]
-        [TestCaseSource<IHardwareProberDriver>(nameof(ExpectedDriverNames))]
-        [TestCaseSource<ISortingDriver>(nameof(ExpectedDriverNames))]
-        [TestCaseSource<IInputDriver>(nameof(ExpectedDriverNames))]
+        [TestMethod]
+        [DynamicData(nameof(ExpectedDriverNames), DynamicDataDisplayNameDeclaringType = typeof(DriverManagerTests))]
         [Description("Management")]
-        public void TestGetDriverName<T>(IDriver driver, string expectedName)
-            where T : IDriver
+        public void TestGetDriverName(DriverTypes type, IDriver driver, string expected)
         {
-            string driverName = DriverHandler.GetDriverName<T>(driver);
-            driverName.ShouldBe(expectedName);
+            string driverName = DriverHandler.GetDriverName(type, driver);
+            driverName.ShouldBe(expected);
         }
 
-        [Test]
-        [TestCase<IConsoleDriver>]
-        [TestCase<IEncryptionDriver>]
-        [TestCase<IFilesystemDriver>]
-        [TestCase<INetworkDriver>]
-        [TestCase<IRandomDriver>]
-        [TestCase<IRegexpDriver>]
-        [TestCase<IDebugLoggerDriver>]
-        [TestCase<IEncodingDriver>]
-        [TestCase<IHardwareProberDriver>]
-        [TestCase<ISortingDriver>]
-        [TestCase<IInputDriver>]
-        [Description("Management")]
-        public void TestGetDrivers<T>()
-            where T : IDriver
-        {
-            var driver = DriverHandler.GetDrivers<T>();
-            driver.ShouldNotBeEmpty();
-        }
-
-        [Test]
-        [TestCase(DriverTypes.Console)]
-        [TestCase(DriverTypes.Encryption)]
-        [TestCase(DriverTypes.Filesystem)]
-        [TestCase(DriverTypes.Network)]
-        [TestCase(DriverTypes.RNG)]
-        [TestCase(DriverTypes.Regexp)]
-        [TestCase(DriverTypes.DebugLogger)]
-        [TestCase(DriverTypes.Encoding)]
-        [TestCase(DriverTypes.HardwareProber)]
-        [TestCase(DriverTypes.Sorting)]
-        [TestCase(DriverTypes.Input)]
+        [TestMethod]
+        [DataRow(DriverTypes.Console)]
+        [DataRow(DriverTypes.Encryption)]
+        [DataRow(DriverTypes.Filesystem)]
+        [DataRow(DriverTypes.Network)]
+        [DataRow(DriverTypes.RNG)]
+        [DataRow(DriverTypes.Regexp)]
+        [DataRow(DriverTypes.DebugLogger)]
+        [DataRow(DriverTypes.Encoding)]
+        [DataRow(DriverTypes.HardwareProber)]
+        [DataRow(DriverTypes.Sorting)]
+        [DataRow(DriverTypes.Input)]
         [Description("Management")]
         public void TestGetDrivers(DriverTypes type)
         {
@@ -508,38 +477,18 @@ namespace Nitrocid.Tests.Drivers
             driver.ShouldNotBeEmpty();
         }
 
-        [Test]
-        [TestCase<IConsoleDriver>]
-        [TestCase<IEncryptionDriver>]
-        [TestCase<IFilesystemDriver>]
-        [TestCase<INetworkDriver>]
-        [TestCase<IRandomDriver>]
-        [TestCase<IRegexpDriver>]
-        [TestCase<IDebugLoggerDriver>]
-        [TestCase<IEncodingDriver>]
-        [TestCase<IHardwareProberDriver>]
-        [TestCase<ISortingDriver>]
-        [TestCase<IInputDriver>]
-        [Description("Management")]
-        public void TestGetDriverNames<T>()
-            where T : IDriver
-        {
-            string[] driverNames = DriverHandler.GetDriverNames<T>();
-            driverNames.ShouldNotBeEmpty();
-        }
-
-        [Test]
-        [TestCase(DriverTypes.Console)]
-        [TestCase(DriverTypes.Encryption)]
-        [TestCase(DriverTypes.Filesystem)]
-        [TestCase(DriverTypes.Network)]
-        [TestCase(DriverTypes.RNG)]
-        [TestCase(DriverTypes.Regexp)]
-        [TestCase(DriverTypes.DebugLogger)]
-        [TestCase(DriverTypes.Encoding)]
-        [TestCase(DriverTypes.HardwareProber)]
-        [TestCase(DriverTypes.Sorting)]
-        [TestCase(DriverTypes.Input)]
+        [TestMethod]
+        [DataRow(DriverTypes.Console)]
+        [DataRow(DriverTypes.Encryption)]
+        [DataRow(DriverTypes.Filesystem)]
+        [DataRow(DriverTypes.Network)]
+        [DataRow(DriverTypes.RNG)]
+        [DataRow(DriverTypes.Regexp)]
+        [DataRow(DriverTypes.DebugLogger)]
+        [DataRow(DriverTypes.Encoding)]
+        [DataRow(DriverTypes.HardwareProber)]
+        [DataRow(DriverTypes.Sorting)]
+        [DataRow(DriverTypes.Input)]
         [Description("Management")]
         public void TestGetDriverNames(DriverTypes type)
         {
@@ -547,39 +496,18 @@ namespace Nitrocid.Tests.Drivers
             driverNames.ShouldNotBeEmpty();
         }
 
-        [Test]
-        [TestCase<IConsoleDriver>("Default")]
-        [TestCase<IEncryptionDriver>("SHA256")]
-        [TestCase<IFilesystemDriver>("Default")]
-        [TestCase<INetworkDriver>("Default")]
-        [TestCase<IRandomDriver>("Default")]
-        [TestCase<IRegexpDriver>("Default")]
-        [TestCase<IDebugLoggerDriver>("Default")]
-        [TestCase<IEncodingDriver>("AES")]
-        [TestCase<IHardwareProberDriver>("Default")]
-        [TestCase<ISortingDriver>("Default")]
-        [TestCase<IInputDriver>("Default")]
-        [Description("Management")]
-        public void TestGetFallbackDriver<T>(string driverName)
-            where T : IDriver
-        {
-            var driver = DriverHandler.GetFallbackDriver<T>();
-            ((IDriver)driver).ShouldNotBeNull();
-            ((IDriver)driver).DriverName.ShouldBe(driverName);
-        }
-
-        [Test]
-        [TestCase(DriverTypes.Console, "Default")]
-        [TestCase(DriverTypes.Encryption, "SHA256")]
-        [TestCase(DriverTypes.Filesystem, "Default")]
-        [TestCase(DriverTypes.Network, "Default")]
-        [TestCase(DriverTypes.RNG, "Default")]
-        [TestCase(DriverTypes.Regexp, "Default")]
-        [TestCase(DriverTypes.DebugLogger, "Default")]
-        [TestCase(DriverTypes.Encoding, "AES")]
-        [TestCase(DriverTypes.HardwareProber, "Default")]
-        [TestCase(DriverTypes.Sorting, "Default")]
-        [TestCase(DriverTypes.Input, "Default")]
+        [TestMethod]
+        [DataRow(DriverTypes.Console, "Default")]
+        [DataRow(DriverTypes.Encryption, "SHA256")]
+        [DataRow(DriverTypes.Filesystem, "Default")]
+        [DataRow(DriverTypes.Network, "Default")]
+        [DataRow(DriverTypes.RNG, "Default")]
+        [DataRow(DriverTypes.Regexp, "Default")]
+        [DataRow(DriverTypes.DebugLogger, "Default")]
+        [DataRow(DriverTypes.Encoding, "AES")]
+        [DataRow(DriverTypes.HardwareProber, "Default")]
+        [DataRow(DriverTypes.Sorting, "Default")]
+        [DataRow(DriverTypes.Input, "Default")]
         [Description("Management")]
         public void TestGetFallbackDriver(DriverTypes type, string driverName)
         {
@@ -588,40 +516,18 @@ namespace Nitrocid.Tests.Drivers
             driver.DriverName.ShouldBe(driverName);
         }
 
-        [Test]
-        [TestCase<IConsoleDriver>]
-        [TestCase<IEncryptionDriver>]
-        [TestCase<IFilesystemDriver>]
-        [TestCase<INetworkDriver>]
-        [TestCase<IRandomDriver>]
-        [TestCase<IRegexpDriver>]
-        [TestCase<IDebugLoggerDriver>]
-        [TestCase<IEncodingDriver>]
-        [TestCase<IHardwareProberDriver>]
-        [TestCase<ISortingDriver>]
-        [TestCase<IInputDriver>]
-        [Description("Management")]
-        public void TestGetFallbackDriverName<T>()
-            where T : IDriver
-        {
-            string driverName = DriverHandler.GetFallbackDriverName<T>();
-            driverName.ShouldNotBeNull();
-            driverName.ShouldNotBeEmpty();
-            driverName.ShouldBe("Default");
-        }
-
-        [Test]
-        [TestCase(DriverTypes.Console)]
-        [TestCase(DriverTypes.Encryption)]
-        [TestCase(DriverTypes.Filesystem)]
-        [TestCase(DriverTypes.Network)]
-        [TestCase(DriverTypes.RNG)]
-        [TestCase(DriverTypes.Regexp)]
-        [TestCase(DriverTypes.DebugLogger)]
-        [TestCase(DriverTypes.Encoding)]
-        [TestCase(DriverTypes.HardwareProber)]
-        [TestCase(DriverTypes.Sorting)]
-        [TestCase(DriverTypes.Input)]
+        [TestMethod]
+        [DataRow(DriverTypes.Console)]
+        [DataRow(DriverTypes.Encryption)]
+        [DataRow(DriverTypes.Filesystem)]
+        [DataRow(DriverTypes.Network)]
+        [DataRow(DriverTypes.RNG)]
+        [DataRow(DriverTypes.Regexp)]
+        [DataRow(DriverTypes.DebugLogger)]
+        [DataRow(DriverTypes.Encoding)]
+        [DataRow(DriverTypes.HardwareProber)]
+        [DataRow(DriverTypes.Sorting)]
+        [DataRow(DriverTypes.Input)]
         [Description("Management")]
         public void TestGetFallbackDriverName(DriverTypes type)
         {
@@ -631,18 +537,18 @@ namespace Nitrocid.Tests.Drivers
             driverName.ShouldBe("Default");
         }
 
-        [Test]
-        [TestCase(DriverTypes.Console, "Default")]
-        [TestCase(DriverTypes.Encryption, "SHA256")]
-        [TestCase(DriverTypes.Filesystem, "Default")]
-        [TestCase(DriverTypes.Network, "Default")]
-        [TestCase(DriverTypes.RNG, "Default")]
-        [TestCase(DriverTypes.Regexp, "Default")]
-        [TestCase(DriverTypes.DebugLogger, "Default")]
-        [TestCase(DriverTypes.Encoding, "AES")]
-        [TestCase(DriverTypes.HardwareProber, "Default")]
-        [TestCase(DriverTypes.Sorting, "Default")]
-        [TestCase(DriverTypes.Input, "Default")]
+        [TestMethod]
+        [DataRow(DriverTypes.Console, "Default")]
+        [DataRow(DriverTypes.Encryption, "SHA256")]
+        [DataRow(DriverTypes.Filesystem, "Default")]
+        [DataRow(DriverTypes.Network, "Default")]
+        [DataRow(DriverTypes.RNG, "Default")]
+        [DataRow(DriverTypes.Regexp, "Default")]
+        [DataRow(DriverTypes.DebugLogger, "Default")]
+        [DataRow(DriverTypes.Encoding, "AES")]
+        [DataRow(DriverTypes.HardwareProber, "Default")]
+        [DataRow(DriverTypes.Sorting, "Default")]
+        [DataRow(DriverTypes.Input, "Default")]
         [Description("Management")]
         public void TestGetCurrentDriver(DriverTypes driverType, string expectedName)
         {
@@ -650,18 +556,18 @@ namespace Nitrocid.Tests.Drivers
             currentDriver.DriverName.ShouldBe(expectedName);
         }
 
-        [Test]
-        [TestCase(DriverTypes.Console, "Default")]
-        [TestCase(DriverTypes.Encryption, "SHA256")]
-        [TestCase(DriverTypes.Filesystem, "Default")]
-        [TestCase(DriverTypes.Network, "Default")]
-        [TestCase(DriverTypes.RNG, "Default")]
-        [TestCase(DriverTypes.Regexp, "Default")]
-        [TestCase(DriverTypes.DebugLogger, "Default")]
-        [TestCase(DriverTypes.Encoding, "AES")]
-        [TestCase(DriverTypes.HardwareProber, "Default")]
-        [TestCase(DriverTypes.Sorting, "Default")]
-        [TestCase(DriverTypes.Input, "Default")]
+        [TestMethod]
+        [DataRow(DriverTypes.Console, "Default")]
+        [DataRow(DriverTypes.Encryption, "SHA256")]
+        [DataRow(DriverTypes.Filesystem, "Default")]
+        [DataRow(DriverTypes.Network, "Default")]
+        [DataRow(DriverTypes.RNG, "Default")]
+        [DataRow(DriverTypes.Regexp, "Default")]
+        [DataRow(DriverTypes.DebugLogger, "Default")]
+        [DataRow(DriverTypes.Encoding, "AES")]
+        [DataRow(DriverTypes.HardwareProber, "Default")]
+        [DataRow(DriverTypes.Sorting, "Default")]
+        [DataRow(DriverTypes.Input, "Default")]
         [Description("Management")]
         public void TestGetCurrentDriverLocal(DriverTypes driverType, string expectedName)
         {
@@ -669,77 +575,18 @@ namespace Nitrocid.Tests.Drivers
             currentDriver.DriverName.ShouldBe(expectedName);
         }
 
-        [Test]
-        [TestCase<IConsoleDriver>("Default")]
-        [TestCase<IEncryptionDriver>("SHA256")]
-        [TestCase<IFilesystemDriver>("Default")]
-        [TestCase<INetworkDriver>("Default")]
-        [TestCase<IRandomDriver>("Default")]
-        [TestCase<IRegexpDriver>("Default")]
-        [TestCase<IDebugLoggerDriver>("Default")]
-        [TestCase<IEncodingDriver>("AES")]
-        [TestCase<IHardwareProberDriver>("Default")]
-        [TestCase<ISortingDriver>("Default")]
-        [TestCase<IInputDriver>("Default")]
-        [Description("Management")]
-        public void TestGetCurrentDriver<T>(string expectedName)
-            where T : IDriver
-        {
-            var currentDriver = DriverHandler.GetCurrentDriver<T>() as IDriver;
-            currentDriver.DriverName.ShouldBe(expectedName);
-        }
-
-        [Test]
-        [TestCase<IConsoleDriver>("Default")]
-        [TestCase<IEncryptionDriver>("SHA256")]
-        [TestCase<IFilesystemDriver>("Default")]
-        [TestCase<INetworkDriver>("Default")]
-        [TestCase<IRandomDriver>("Default")]
-        [TestCase<IRegexpDriver>("Default")]
-        [TestCase<IDebugLoggerDriver>("Default")]
-        [TestCase<IEncodingDriver>("AES")]
-        [TestCase<IHardwareProberDriver>("Default")]
-        [TestCase<ISortingDriver>("Default")]
-        [TestCase<IInputDriver>("Default")]
-        [Description("Management")]
-        public void TestGetCurrentDriverLocal<T>(string expectedName)
-            where T : IDriver
-        {
-            var currentDriver = DriverHandler.GetCurrentDriverLocal<T>() as IDriver;
-            currentDriver.DriverName.ShouldBe(expectedName);
-        }
-
-        [Test]
-        [TestCaseSource(nameof(RegisteredConsoleDriver))]
-        [TestCaseSource(nameof(RegisteredEncryptionDriver))]
-        [TestCaseSource(nameof(RegisteredFilesystemDriver))]
-        [TestCaseSource(nameof(RegisteredNetworkDriver))]
-        [TestCaseSource(nameof(RegisteredRNGDriver))]
-        [TestCaseSource(nameof(RegisteredRegexpDriver))]
-        [TestCaseSource(nameof(RegisteredDebugLoggerDriver))]
-        [TestCaseSource(nameof(RegisteredEncodingDriver))]
-        [TestCaseSource(nameof(RegisteredHardwareProberDriver))]
-        [TestCaseSource(nameof(RegisteredSortingDriver))]
-        [TestCaseSource(nameof(RegisteredInputDriver))]
-        [Description("Management")]
-        public void TestRegisterDriver(DriverTypes type, IDriver driver)
-        {
-            Should.NotThrow(() => DriverHandler.RegisterDriver(type, driver));
-            DriverHandler.IsRegistered(type, driver).ShouldBeTrue();
-        }
-
-        [Test]
-        [TestCase(DriverTypes.Console, "MyCustom")]
-        [TestCase(DriverTypes.Encryption, "MyCustom")]
-        [TestCase(DriverTypes.Filesystem, "MyCustom")]
-        [TestCase(DriverTypes.Network, "MyCustom")]
-        [TestCase(DriverTypes.RNG, "MyCustom")]
-        [TestCase(DriverTypes.Regexp, "MyCustom")]
-        [TestCase(DriverTypes.DebugLogger, "MyCustom")]
-        [TestCase(DriverTypes.Encoding, "MyCustom")]
-        [TestCase(DriverTypes.HardwareProber, "MyCustom")]
-        [TestCase(DriverTypes.Sorting, "MyCustom")]
-        [TestCase(DriverTypes.Input, "MyCustom")]
+        [TestMethod]
+        [DataRow(DriverTypes.Console, "MyCustom")]
+        [DataRow(DriverTypes.Encryption, "MyCustom")]
+        [DataRow(DriverTypes.Filesystem, "MyCustom")]
+        [DataRow(DriverTypes.Network, "MyCustom")]
+        [DataRow(DriverTypes.RNG, "MyCustom")]
+        [DataRow(DriverTypes.Regexp, "MyCustom")]
+        [DataRow(DriverTypes.DebugLogger, "MyCustom")]
+        [DataRow(DriverTypes.Encoding, "MyCustom")]
+        [DataRow(DriverTypes.HardwareProber, "MyCustom")]
+        [DataRow(DriverTypes.Sorting, "MyCustom")]
+        [DataRow(DriverTypes.Input, "MyCustom")]
         [Description("Management")]
         public void TestUnregisterDriver(DriverTypes type, string name)
         {
@@ -747,120 +594,94 @@ namespace Nitrocid.Tests.Drivers
             DriverHandler.IsRegistered(type, name).ShouldBeFalse();
         }
 
-        [Test]
-        [TestCase<IConsoleDriver>(DriverTypes.Console, "File", "File")]
-        [TestCase<IEncryptionDriver>(DriverTypes.Encryption, "SHA384", "SHA384")]
-        [TestCase<IFilesystemDriver>(DriverTypes.Filesystem, "Default", "Default")]
-        [TestCase<INetworkDriver>(DriverTypes.Network, "Default", "Default")]
-        [TestCase<IRandomDriver>(DriverTypes.RNG, "Standard", "Standard")]
-        [TestCase<IRegexpDriver>(DriverTypes.Regexp, "Default", "Default")]
-        [TestCase<IDebugLoggerDriver>(DriverTypes.DebugLogger, "Default", "Default")]
-        [TestCase<IEncodingDriver>(DriverTypes.Encoding, "RSA", "RSA")]
-        [TestCase<IHardwareProberDriver>(DriverTypes.HardwareProber, "Default", "Default")]
-        [TestCase<ISortingDriver>(DriverTypes.Sorting, "Default", "Default")]
-        [TestCase<IInputDriver>(DriverTypes.Input, "Default", "Default")]
+        [TestMethod]
+        [DataRow(DriverTypes.Console, "File", "File")]
+        [DataRow(DriverTypes.Encryption, "SHA384", "SHA384")]
+        [DataRow(DriverTypes.Filesystem, "Default", "Default")]
+        [DataRow(DriverTypes.Network, "Default", "Default")]
+        [DataRow(DriverTypes.RNG, "Standard", "Standard")]
+        [DataRow(DriverTypes.Regexp, "Default", "Default")]
+        [DataRow(DriverTypes.DebugLogger, "Default", "Default")]
+        [DataRow(DriverTypes.Encoding, "RSA", "RSA")]
+        [DataRow(DriverTypes.HardwareProber, "Default", "Default")]
+        [DataRow(DriverTypes.Sorting, "Default", "Default")]
+        [DataRow(DriverTypes.Input, "Default", "Default")]
         [Description("Management")]
-        public void TestSetDriver<T>(DriverTypes type, string name, string expectedName)
-            where T : IDriver
+        public void TestSetDriver(DriverTypes type, string name, string expectedName)
         {
-            Should.NotThrow(() => DriverHandler.SetDriver<T>(name));
+            Should.NotThrow(() => DriverHandler.SetDriver(type, name));
             DriverHandler.currentDrivers[type].DriverName.ShouldBe(expectedName);
             DriverHandler.currentDriversLocal[type].DriverName.ShouldBe(expectedName);
         }
 
-        [Test]
-        [TestCase<IConsoleDriver>(DriverTypes.Console, "File", "Default")]
-        [TestCase<IEncryptionDriver>(DriverTypes.Encryption, "SHA384", "SHA384")]
-        [TestCase<IFilesystemDriver>(DriverTypes.Filesystem, "Default", "Default")]
-        [TestCase<INetworkDriver>(DriverTypes.Network, "Default", "Default")]
-        [TestCase<IRandomDriver>(DriverTypes.RNG, "Standard", "Standard")]
-        [TestCase<IRegexpDriver>(DriverTypes.Regexp, "Default", "Default")]
-        [TestCase<IDebugLoggerDriver>(DriverTypes.DebugLogger, "Default", "Default")]
-        [TestCase<IEncodingDriver>(DriverTypes.Encoding, "RSA", "RSA")]
-        [TestCase<IHardwareProberDriver>(DriverTypes.HardwareProber, "Default", "Default")]
-        [TestCase<ISortingDriver>(DriverTypes.Sorting, "Default", "Default")]
-        [TestCase<IInputDriver>(DriverTypes.Input, "Default", "Default")]
+        [TestMethod]
+        [DataRow(DriverTypes.Console, "File", "Default")]
+        [DataRow(DriverTypes.Encryption, "SHA384", "SHA384")]
+        [DataRow(DriverTypes.Filesystem, "Default", "Default")]
+        [DataRow(DriverTypes.Network, "Default", "Default")]
+        [DataRow(DriverTypes.RNG, "Standard", "Standard")]
+        [DataRow(DriverTypes.Regexp, "Default", "Default")]
+        [DataRow(DriverTypes.DebugLogger, "Default", "Default")]
+        [DataRow(DriverTypes.Encoding, "RSA", "RSA")]
+        [DataRow(DriverTypes.HardwareProber, "Default", "Default")]
+        [DataRow(DriverTypes.Sorting, "Default", "Default")]
+        [DataRow(DriverTypes.Input, "Default", "Default")]
         [Description("Management")]
-        public void TestSetDriverSafe<T>(DriverTypes type, string name, string expectedName)
-            where T : IDriver
+        public void TestSetDriverSafe(DriverTypes type, string name, string expectedName)
         {
-            Should.NotThrow(() => DriverHandler.SetDriverSafe<T>(name));
+            Should.NotThrow(() => DriverHandler.SetDriverSafe(type, name));
             DriverHandler.currentDrivers[type].DriverName.ShouldBe(expectedName);
             DriverHandler.currentDriversLocal[type].DriverName.ShouldBe(expectedName);
         }
 
-        [Test]
-        [TestCase<IConsoleDriver>(DriverTypes.Console, "File", "File", "Default")]
-        [TestCase<IEncryptionDriver>(DriverTypes.Encryption, "SHA384", "SHA384", "SHA256")]
-        [TestCase<IFilesystemDriver>(DriverTypes.Filesystem, "Default", "Default", "Default")]
-        [TestCase<INetworkDriver>(DriverTypes.Network, "Default", "Default", "Default")]
-        [TestCase<IRandomDriver>(DriverTypes.RNG, "Standard", "Standard", "Default")]
-        [TestCase<IRegexpDriver>(DriverTypes.Regexp, "Default", "Default", "Default")]
-        [TestCase<IDebugLoggerDriver>(DriverTypes.DebugLogger, "UnitTest", "UnitTest", "Default")]
-        [TestCase<IEncodingDriver>(DriverTypes.Encoding, "RSA", "RSA", "AES")]
-        [TestCase<IHardwareProberDriver>(DriverTypes.HardwareProber, "Default", "Default", "Default")]
-        [TestCase<ISortingDriver>(DriverTypes.Sorting, "Default", "Default", "Default")]
-        [TestCase<IInputDriver>(DriverTypes.Input, "Default", "Default", "Default")]
+        [TestMethod]
+        [DataRow(DriverTypes.Console, "File", "File", "Default")]
+        [DataRow(DriverTypes.Encryption, "SHA384", "SHA384", "SHA256")]
+        [DataRow(DriverTypes.Filesystem, "Default", "Default", "Default")]
+        [DataRow(DriverTypes.Network, "Default", "Default", "Default")]
+        [DataRow(DriverTypes.RNG, "Standard", "Standard", "Default")]
+        [DataRow(DriverTypes.Regexp, "Default", "Default", "Default")]
+        [DataRow(DriverTypes.DebugLogger, "UnitTest", "UnitTest", "Default")]
+        [DataRow(DriverTypes.Encoding, "RSA", "RSA", "AES")]
+        [DataRow(DriverTypes.HardwareProber, "Default", "Default", "Default")]
+        [DataRow(DriverTypes.Sorting, "Default", "Default", "Default")]
+        [DataRow(DriverTypes.Input, "Default", "Default", "Default")]
         [Description("Management")]
-        public void TestBeginLocalDriver<T>(DriverTypes type, string name, string expectedName, string expectedNameAfterLocal)
-            where T : IDriver
+        public void TestBeginLocalDriver(DriverTypes type, string name, string expectedName, string expectedNameAfterLocal)
         {
-            Should.NotThrow(() => DriverHandler.BeginLocalDriver<T>(name));
+            Should.NotThrow(() => DriverHandler.BeginLocalDriver(type, name));
             DriverHandler.currentDrivers[type].DriverName.ShouldBe(expectedNameAfterLocal);
             DriverHandler.currentDriversLocal[type].DriverName.ShouldBe(expectedName);
-            Should.NotThrow(DriverHandler.EndLocalDriver<T>);
+            Should.NotThrow(() => DriverHandler.EndLocalDriver(type));
             DriverHandler.currentDrivers[type].DriverName.ShouldBe(expectedNameAfterLocal);
             DriverHandler.currentDriversLocal[type].DriverName.ShouldBe(expectedNameAfterLocal);
         }
 
-        [Test]
-        [TestCase<IConsoleDriver>(DriverTypes.Console, "File", "Default", "Default")]
-        [TestCase<IEncryptionDriver>(DriverTypes.Encryption, "SHA384", "SHA384", "SHA256")]
-        [TestCase<IFilesystemDriver>(DriverTypes.Filesystem, "Default", "Default", "Default")]
-        [TestCase<INetworkDriver>(DriverTypes.Network, "Default", "Default", "Default")]
-        [TestCase<IRandomDriver>(DriverTypes.RNG, "Standard", "Standard", "Default")]
-        [TestCase<IRegexpDriver>(DriverTypes.Regexp, "Default", "Default", "Default")]
-        [TestCase<IDebugLoggerDriver>(DriverTypes.DebugLogger, "UnitTest", "Default", "Default")]
-        [TestCase<IEncodingDriver>(DriverTypes.Encoding, "RSA", "RSA", "AES")]
-        [TestCase<IHardwareProberDriver>(DriverTypes.HardwareProber, "Default", "Default", "Default")]
-        [TestCase<ISortingDriver>(DriverTypes.Sorting, "Default", "Default", "Default")]
-        [TestCase<IInputDriver>(DriverTypes.Input, "Default", "Default", "Default")]
+        [TestMethod]
+        [DataRow(DriverTypes.Console, "File", "Default", "Default")]
+        [DataRow(DriverTypes.Encryption, "SHA384", "SHA384", "SHA256")]
+        [DataRow(DriverTypes.Filesystem, "Default", "Default", "Default")]
+        [DataRow(DriverTypes.Network, "Default", "Default", "Default")]
+        [DataRow(DriverTypes.RNG, "Standard", "Standard", "Default")]
+        [DataRow(DriverTypes.Regexp, "Default", "Default", "Default")]
+        [DataRow(DriverTypes.DebugLogger, "UnitTest", "Default", "Default")]
+        [DataRow(DriverTypes.Encoding, "RSA", "RSA", "AES")]
+        [DataRow(DriverTypes.HardwareProber, "Default", "Default", "Default")]
+        [DataRow(DriverTypes.Sorting, "Default", "Default", "Default")]
+        [DataRow(DriverTypes.Input, "Default", "Default", "Default")]
         [Description("Management")]
-        public void TestBeginLocalDriverSafe<T>(DriverTypes type, string name, string expectedName, string expectedNameAfterLocal)
-            where T : IDriver
+        public void TestBeginLocalDriverSafe(DriverTypes type, string name, string expectedName, string expectedNameAfterLocal)
         {
-            Should.NotThrow(() => DriverHandler.BeginLocalDriverSafe<T>(name));
+            Should.NotThrow(() => DriverHandler.BeginLocalDriverSafe(type, name));
             DriverHandler.currentDrivers[type].DriverName.ShouldBe(expectedNameAfterLocal);
             DriverHandler.currentDriversLocal[type].DriverName.ShouldBe(expectedName);
-            Should.NotThrow(DriverHandler.EndLocalDriver<T>);
+            Should.NotThrow(() => DriverHandler.EndLocalDriver(type));
             DriverHandler.currentDrivers[type].DriverName.ShouldBe(expectedNameAfterLocal);
             DriverHandler.currentDriversLocal[type].DriverName.ShouldBe(expectedNameAfterLocal);
         }
 
-        [Test]
-        [TestCase<IConsoleDriver>(DriverTypes.Console)]
-        [TestCase<IEncryptionDriver>(DriverTypes.Encryption)]
-        [TestCase<IFilesystemDriver>(DriverTypes.Filesystem)]
-        [TestCase<INetworkDriver>(DriverTypes.Network)]
-        [TestCase<IRandomDriver>(DriverTypes.RNG)]
-        [TestCase<IRegexpDriver>(DriverTypes.Regexp)]
-        [TestCase<IDebugLoggerDriver>(DriverTypes.DebugLogger)]
-        [TestCase<IEncodingDriver>(DriverTypes.Encoding)]
-        [TestCase<IHardwareProberDriver>(DriverTypes.HardwareProber)]
-        [TestCase<ISortingDriver>(DriverTypes.Sorting)]
-        [TestCase<IInputDriver>(DriverTypes.Input)]
-        [Description("Management")]
-        public void TestInferDriverTypeFromDriverInterfaceType<T>(DriverTypes type)
-            where T : IDriver
-        {
-            var actualType = DriverHandler.InferDriverTypeFromDriverInterfaceType<T>();
-            actualType.ShouldBe(type);
-        }
-
-        [TearDown]
-        public void RevertUnitTestDebug()
-        {
+        [ClassCleanup]
+        public static void UnsetUnitTestDebug() =>
             DriverHandler.SetDriver<IDebugLoggerDriver>("Default");
-        }
     }
 }

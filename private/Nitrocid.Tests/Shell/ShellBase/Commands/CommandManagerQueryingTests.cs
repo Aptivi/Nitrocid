@@ -20,20 +20,20 @@
 using System;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Shells;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 
 namespace Nitrocid.Tests.Shell.ShellBase.Commands
 {
 
-    [TestFixture]
+    [TestClass]
     public class CommandManagerQueryingTests
     {
 
         /// <summary>
         /// Tests getting list of commands from specific shell type
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestGetCommandListFromSpecificShell()
         {
@@ -47,12 +47,12 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         /// <summary>
         /// Tests getting list of commands from all shells
         /// </summary>
-        [Test]
-        [TestCase(ShellType.Shell)]
-        [TestCase(ShellType.AdminShell)]
-        [TestCase(ShellType.DebugShell)]
-        [TestCase(ShellType.HexShell)]
-        [TestCase(ShellType.TextShell)]
+        [TestMethod]
+        [DataRow(ShellType.Shell)]
+        [DataRow(ShellType.AdminShell)]
+        [DataRow(ShellType.DebugShell)]
+        [DataRow(ShellType.HexShell)]
+        [DataRow(ShellType.TextShell)]
         [Description("Querying")]
         public void TestGetCommandListFromAllShells(ShellType type)
         {
@@ -66,12 +66,12 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         /// <summary>
         /// Tests getting list of commands from all shells
         /// </summary>
-        [Test]
-        [TestCase("Shell")]
-        [TestCase("AdminShell")]
-        [TestCase("DebugShell")]
-        [TestCase("HexShell")]
-        [TestCase("TextShell")]
+        [TestMethod]
+        [DataRow("Shell")]
+        [DataRow("AdminShell")]
+        [DataRow("DebugShell")]
+        [DataRow("HexShell")]
+        [DataRow("TextShell")]
         [Description("Querying")]
         public void TestGetCommandListFromAllShells(string type)
         {

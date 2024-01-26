@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using Nitrocid.Files;
 using Nitrocid.Files.Paths;
@@ -26,14 +26,14 @@ using Nitrocid.Modifications;
 namespace Nitrocid.Tests.Modifications
 {
 
-    [TestFixture]
+    [TestClass]
     public class BlacklistManipulationTests
     {
 
         /// <summary>
         /// Tests adding a mod to the blacklist
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestAddModToBlacklist()
         {
@@ -44,7 +44,7 @@ namespace Nitrocid.Tests.Modifications
         /// <summary>
         /// Tests removing a mod from the blacklist
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestRemoveModFromBlacklist()
         {

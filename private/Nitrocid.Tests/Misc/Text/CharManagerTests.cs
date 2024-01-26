@@ -17,23 +17,23 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using Textify.General;
 
 namespace Nitrocid.Tests.Misc.Text
 {
 
-    [TestFixture]
+    [TestClass]
     public class CharManagerTests
     {
 
         /// <summary>
         /// Tests getting all letters and numbers
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
-        public static void TestGetAllLettersAndNumbers()
+        public void TestGetAllLettersAndNumbers()
         {
             var chars = CharManager.GetAllLettersAndNumbers();
             chars.ShouldNotBeNull();
@@ -45,9 +45,9 @@ namespace Nitrocid.Tests.Misc.Text
         /// <summary>
         /// Tests getting all letters
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
-        public static void TestGetAllLetters()
+        public void TestGetAllLetters()
         {
             var chars = CharManager.GetAllLetters();
             chars.ShouldNotBeNull();
@@ -59,9 +59,9 @@ namespace Nitrocid.Tests.Misc.Text
         /// <summary>
         /// Tests getting all numbers
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
-        public static void TestGetAllNumbers()
+        public void TestGetAllNumbers()
         {
             var chars = CharManager.GetAllNumbers();
             chars.ShouldNotBeNull();
@@ -73,9 +73,9 @@ namespace Nitrocid.Tests.Misc.Text
         /// <summary>
         /// Tests getting escape character
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
-        public static void TestGetEsc()
+        public void TestGetEsc()
         {
             var esc = CharManager.GetEsc();
             esc.ShouldBe('\x1b');
@@ -84,25 +84,28 @@ namespace Nitrocid.Tests.Misc.Text
         /// <summary>
         /// Tests checking to see if the letter is a real control character
         /// </summary>
-        [Test]
-        [TestCase('\x00', ExpectedResult = false)]
-        [TestCase('\x07', ExpectedResult = true)]
-        [TestCase('\x08', ExpectedResult = false)]
-        [TestCase('\x0a', ExpectedResult = false)]
-        [TestCase('\x0d', ExpectedResult = false)]
-        [TestCase('\x20', ExpectedResult = false)]
-        [TestCase('a', ExpectedResult = false)]
-        [TestCase('1', ExpectedResult = false)]
+        [TestMethod]
+        [DataRow('\x00', false)]
+        [DataRow('\x07', true)]
+        [DataRow('\x08', false)]
+        [DataRow('\x0a', false)]
+        [DataRow('\x0d', false)]
+        [DataRow('\x20', false)]
+        [DataRow('a', false)]
+        [DataRow('1', false)]
         [Description("Querying")]
-        public static bool TestIsControlChar(char possiblyControlChar) =>
-            CharManager.IsControlChar(possiblyControlChar);
+        public void TestIsControlChar(char possiblyControlChar, bool expected)
+        {
+            bool actual = CharManager.IsControlChar(possiblyControlChar);
+            actual.ShouldBe(expected);
+        }
 
         /// <summary>
         /// Tests checking to see if the letter is a real control character
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
-        public static void TestIsControlCharDynamic()
+        public void TestIsControlCharDynamic()
         {
             for (char ch = (char)0; ch < (char)30; ch++)
             {

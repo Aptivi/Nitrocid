@@ -19,23 +19,23 @@
 
 using Terminaux.Inputs.Presentation.Elements;
 using Terminaux.Inputs.Presentation;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System;
 
 namespace Nitrocid.Tests.Misc.Presentation
 {
 
-    [TestFixture]
+    [TestClass]
     public class PresentationTests
     {
 
         /// <summary>
         /// Tests building the presentation
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Management")]
-        public static void BuildPresentation()
+        public void BuildPresentation()
         {
             // Presentation...
             var presentation = new Slideshow("MyPresentation",

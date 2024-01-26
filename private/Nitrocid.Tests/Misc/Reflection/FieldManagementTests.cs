@@ -21,13 +21,13 @@ using System;
 using Nitrocid.Kernel.Configuration.Instances;
 using Nitrocid.Kernel.Updates;
 using Nitrocid.Misc.Reflection;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 
 namespace Nitrocid.Tests.Misc.Reflection
 {
 
-    [TestFixture]
+    [TestClass]
     public class FieldManagementTests
     {
 
@@ -36,7 +36,7 @@ namespace Nitrocid.Tests.Misc.Reflection
         /// <summary>
         /// Tests checking field
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestCheckField() =>
             FieldManager.CheckField(nameof(KernelSaverConfig.MatrixBleedDelay)).ShouldBeFalse();
@@ -44,7 +44,7 @@ namespace Nitrocid.Tests.Misc.Reflection
         /// <summary>
         /// Tests getting value
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestGetFieldValue()
         {
@@ -55,7 +55,7 @@ namespace Nitrocid.Tests.Misc.Reflection
         /// <summary>
         /// Tests setting value
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestSetFieldValue()
         {
@@ -67,7 +67,7 @@ namespace Nitrocid.Tests.Misc.Reflection
         /// <summary>
         /// Tests getting fields
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestGetFields()
         {
@@ -79,7 +79,7 @@ namespace Nitrocid.Tests.Misc.Reflection
         /// <summary>
         /// Tests getting fields
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Management")]
         public void TestGetFieldsNoEvaluation()
         {

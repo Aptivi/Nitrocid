@@ -18,14 +18,14 @@
 //
 
 using Nitrocid.Shell.ShellBase.Commands;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System;
 
 namespace Nitrocid.Tests.Shell.ShellBase.Commands
 {
 
-    [TestFixture]
+    [TestClass]
     public class CommandExecutorInitializationTests
     {
 
@@ -34,7 +34,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         /// <summary>
         /// Tests initializing the command instance from base
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeCommandExecutorFromBase()
         {
@@ -48,7 +48,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         /// <summary>
         /// Tests initializing the command instance from base
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializedCommandExecution()
         {
@@ -60,7 +60,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         /// <summary>
         /// Tests initializing the command instance from base
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializedCommandExecutionWithArguments()
         {
@@ -72,7 +72,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         /// <summary>
         /// Tests initializing the command instance from base
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializedCommandExecutionWithSwitches()
         {
@@ -84,7 +84,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         /// <summary>
         /// Tests initializing the command instance from base
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializedCommandExecutionWithArgumentsAndSwitches()
         {

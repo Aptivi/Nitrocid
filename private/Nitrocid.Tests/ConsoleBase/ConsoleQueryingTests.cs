@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System;
 using Terminaux.Base;
@@ -26,14 +26,14 @@ using Textify.General;
 namespace Nitrocid.Tests.ConsoleBase
 {
 
-    [TestFixture]
+    [TestClass]
     public class ConsoleQueryingTests
     {
 
         /// <summary>
         /// Tests filtering the VT sequences that matches the regex
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestFilterVTSequences()
         {

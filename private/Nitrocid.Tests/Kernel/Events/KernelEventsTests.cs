@@ -18,7 +18,7 @@
 //
 
 using Nitrocid.Kernel.Events;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System;
 using System.Linq;
@@ -26,14 +26,14 @@ using System.Linq;
 namespace Nitrocid.Tests.Kernel.Events
 {
 
-    [TestFixture]
+    [TestClass]
     public class KernelEventsTests
     {
 
         /// <summary>
         /// Tests raising an event and adding it to the fired events list
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Misc")]
         public void TestRaiseEvent()
         {
@@ -44,7 +44,7 @@ namespace Nitrocid.Tests.Kernel.Events
         /// <summary>
         /// Tests raising all events and adding them to the fired events list
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Misc")]
         public void TestRaiseEvents()
         {
@@ -60,7 +60,7 @@ namespace Nitrocid.Tests.Kernel.Events
         /// <summary>
         /// Tests clearing the events list
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Misc")]
         public void TestClearEvents()
         {
@@ -71,7 +71,7 @@ namespace Nitrocid.Tests.Kernel.Events
         /// <summary>
         /// Tests registering the event handler, testing it, and unregistering the handler
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Misc")]
         public void TestEventHandler()
         {
@@ -86,7 +86,7 @@ namespace Nitrocid.Tests.Kernel.Events
         /// <summary>
         /// Tests registering the event handler, testing it, and unregistering the handler
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Misc")]
         public void TestEventHandlerParameterized()
         {

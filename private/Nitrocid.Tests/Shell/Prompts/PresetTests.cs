@@ -19,57 +19,59 @@
 
 using Nitrocid.Shell.Prompts;
 using Nitrocid.Shell.ShellBase.Shells;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 
 namespace Nitrocid.Tests.Shell.Prompts
 {
-    [TestFixture]
+    [TestClass]
     public class PresetTests
     {
         /// <summary>
         /// Tests setting preset
         /// </summary>
-        [Test]
-        [TestCase("PowerLine1", ShellType.Shell, ExpectedResult = "PowerLine1")]
-        [TestCase("PowerLine1", ShellType.AdminShell, ExpectedResult = "PowerLine1")]
-        [TestCase("PowerLine1", ShellType.DebugShell, ExpectedResult = "PowerLine1")]
-        [TestCase("PowerLine1", ShellType.HexShell, ExpectedResult = "PowerLine1")]
-        [TestCase("PowerLine1", ShellType.TextShell, ExpectedResult = "PowerLine1")]
+        [TestMethod]
+        [DataRow("PowerLine1", ShellType.Shell, "PowerLine1")]
+        [DataRow("PowerLine1", ShellType.AdminShell, "PowerLine1")]
+        [DataRow("PowerLine1", ShellType.DebugShell, "PowerLine1")]
+        [DataRow("PowerLine1", ShellType.HexShell, "PowerLine1")]
+        [DataRow("PowerLine1", ShellType.TextShell, "PowerLine1")]
         [Description("Action")]
-        public static string TestSetPresetDry(string presetName, ShellType type)
+        public void TestSetPresetDry(string presetName, ShellType type, string expected)
         {
             PromptPresetManager.SetPreset(presetName, type);
-            return PromptPresetManager.GetCurrentPresetBaseFromShell(presetName).PresetName;
+            string baseName = PromptPresetManager.GetCurrentPresetBaseFromShell(presetName).PresetName;
+            baseName.ShouldBe(expected);
         }
 
         /// <summary>
         /// Tests setting preset
         /// </summary>
-        [Test]
-        [TestCase("PowerLine1", "Shell", ExpectedResult = "PowerLine1")]
-        [TestCase("PowerLine1", "AdminShell", ExpectedResult = "PowerLine1")]
-        [TestCase("PowerLine1", "DebugShell", ExpectedResult = "PowerLine1")]
-        [TestCase("PowerLine1", "HexShell", ExpectedResult = "PowerLine1")]
-        [TestCase("PowerLine1", "TextShell", ExpectedResult = "PowerLine1")]
+        [TestMethod]
+        [DataRow("PowerLine1", "Shell", "PowerLine1")]
+        [DataRow("PowerLine1", "AdminShell", "PowerLine1")]
+        [DataRow("PowerLine1", "DebugShell", "PowerLine1")]
+        [DataRow("PowerLine1", "HexShell", "PowerLine1")]
+        [DataRow("PowerLine1", "TextShell", "PowerLine1")]
         [Description("Action")]
-        public static string TestSetPresetDry(string presetName, string type)
+        public void TestSetPresetDry(string presetName, string type, string expected)
         {
             PromptPresetManager.SetPreset(presetName, type);
-            return PromptPresetManager.GetCurrentPresetBaseFromShell(presetName).PresetName;
+            string baseName = PromptPresetManager.GetCurrentPresetBaseFromShell(presetName).PresetName;
+            baseName.ShouldBe(expected);
         }
 
         /// <summary>
         /// Tests getting preset list from shell
         /// </summary>
-        [Test]
-        [TestCase(ShellType.Shell)]
-        [TestCase(ShellType.AdminShell)]
-        [TestCase(ShellType.DebugShell)]
-        [TestCase(ShellType.HexShell)]
-        [TestCase(ShellType.TextShell)]
+        [TestMethod]
+        [DataRow(ShellType.Shell)]
+        [DataRow(ShellType.AdminShell)]
+        [DataRow(ShellType.DebugShell)]
+        [DataRow(ShellType.HexShell)]
+        [DataRow(ShellType.TextShell)]
         [Description("Action")]
-        public static void TestGetPresetsFromShell(ShellType type)
+        public void TestGetPresetsFromShell(ShellType type)
         {
             var presets = PromptPresetManager.GetPresetsFromShell(type);
             presets.ShouldNotBeNull();
@@ -80,14 +82,14 @@ namespace Nitrocid.Tests.Shell.Prompts
         /// <summary>
         /// Tests getting preset list from shell
         /// </summary>
-        [Test]
-        [TestCase("Shell")]
-        [TestCase("AdminShell")]
-        [TestCase("DebugShell")]
-        [TestCase("HexShell")]
-        [TestCase("TextShell")]
+        [TestMethod]
+        [DataRow("Shell")]
+        [DataRow("AdminShell")]
+        [DataRow("DebugShell")]
+        [DataRow("HexShell")]
+        [DataRow("TextShell")]
         [Description("Action")]
-        public static void TestGetPresetsFromShell(string type)
+        public void TestGetPresetsFromShell(string type)
         {
             var presets = PromptPresetManager.GetPresetsFromShell(type);
             presets.ShouldNotBeNull();

@@ -20,20 +20,20 @@
 using System.IO;
 using Nitrocid.Files.Editors.TextEdit;
 using Nitrocid.Shell.Shells.Text;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 
 namespace Nitrocid.Tests.Misc.Editors
 {
 
-    [TestFixture]
+    [TestClass]
     public class TextEditorInitializationTests
     {
 
         /// <summary>
         /// Tests opening, saving, and closing text file
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestOpenSaveCloseTextFile()
         {

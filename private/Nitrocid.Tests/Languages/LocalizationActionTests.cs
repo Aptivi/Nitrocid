@@ -18,20 +18,20 @@
 //
 
 using Nitrocid.Languages;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 
 namespace Nitrocid.Tests.Languages
 {
 
-    [TestFixture]
+    [TestClass]
     public class LocalizationActionTests
     {
 
         /// <summary>
         /// Tests string translation
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Action")]
         public void TestTranslate()
         {
