@@ -76,12 +76,12 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 TextWriters.Write(KernelMain.Version.ToString(), true, KernelColorType.ListValue);
                 TextWriters.Write(Translate.DoTranslation("Debug Mode:") + " ", false, KernelColorType.ListEntry);
                 TextWriters.Write(KernelEntry.DebugMode.ToString(), true, KernelColorType.ListValue);
-                TextWriters.Write(Translate.DoTranslation("Help command simplified:") + " ", false, KernelColorType.ListEntry);
-                TextWriters.Write(HelpPrintTools.SimHelp.ToString(), true, KernelColorType.ListValue);
-                TextWriters.Write(Translate.DoTranslation("MOTD on Login:") + " ", false, KernelColorType.ListEntry);
-                TextWriters.Write(BaseLoginHandler.ShowMOTD.ToString(), true, KernelColorType.ListValue);
-                TextWriters.Write(Translate.DoTranslation("Time/Date on corner:") + " ", false, KernelColorType.ListEntry);
-                TextWriters.Write(TimeDateTools.CornerTimeDate.ToString(), true, KernelColorType.ListValue);
+                TextWriters.Write(Translate.DoTranslation("Running from GRILO:") + " ", false, KernelColorType.ListEntry);
+                TextWriters.Write(KernelPlatform.IsRunningFromGrilo().ToString(), true, KernelColorType.ListValue);
+                TextWriters.Write(Translate.DoTranslation("Running on usual environment:") + " ", false, KernelColorType.ListEntry);
+                TextWriters.Write(KernelPlatform.IsOnUsualEnvironment().ToString(), true, KernelColorType.ListValue);
+                TextWriters.Write(Translate.DoTranslation("Safe Mode:") + " ", false, KernelColorType.ListEntry);
+                TextWriters.Write(KernelEntry.SafeMode.ToString(), true, KernelColorType.ListValue);
                 TextWriterColor.Write();
             }
 
