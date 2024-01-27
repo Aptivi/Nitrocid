@@ -158,11 +158,20 @@ namespace Nitrocid.ConsoleBase.Writers.MiscWriters
 
             // Show development disclaimer
             if (SplashManager.EnableSplash)
-                InfoBoxColor.WriteInfoBoxColor(
-                    title: Translate.DoTranslation("Development notice"),
-                    $"{message}\n\n" + Translate.DoTranslation("To dismiss forever, enable \"Development notice acknowledged\" in the kernel settings. Press any key to continue.")
-                    , KernelColorTools.GetColor(KernelColorType.DevelopmentWarning)
+            {
+                string[] answers = [
+                    Translate.DoTranslation("OK"),
+                    Translate.DoTranslation("Acknowledged")
+                ];
+                int answer = InfoBoxButtonsColor.WriteInfoBoxButtonsColor(
+                    Translate.DoTranslation("Development notice"),
+                    answers,
+                    $"{message}\n\n" + Translate.DoTranslation("To dismiss forever, press ENTER on \"Acknowledged\" or enable \"Development notice acknowledged\" in the kernel settings."),
+                    KernelColorTools.GetColor(KernelColorType.DevelopmentWarning)
                 );
+                if (answer == 1)
+                    Config.MainConfig.DevNoticeConsented = true;
+            }
             else
                 TextWriters.Write($"* {message}", true, KernelColorType.DevelopmentWarning);
 #endif
