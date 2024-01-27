@@ -105,6 +105,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
 
             // Get the snake color ready
             var SnakeColor = ChangeSnakeColor();
+            var snakeForeColor = ColorTools.GetGray(SnakeColor, ColorContrastType.Ntsc);
 
             // A typical snake usually starts in the middle.
             if (!ConsoleResizeHandler.WasResized(false))
@@ -151,6 +152,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
 
                     // Set the snake color
                     ColorTools.SetConsoleColorDry(SnakeColor, true);
+                    ColorTools.SetConsoleColorDry(snakeForeColor);
 
                     // Draw an apple
                     if (!AppleDrawn)
