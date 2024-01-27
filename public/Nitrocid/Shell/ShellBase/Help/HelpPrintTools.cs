@@ -235,9 +235,16 @@ namespace Nitrocid.Shell.ShellBase.Help
                     command;
                 string HelpDefinition = FinalCommandList[FinalCommand].GetTranslatedHelpEntry();
 
+                // Write the description now
+                if (string.IsNullOrEmpty(HelpDefinition))
+                    HelpDefinition = Translate.DoTranslation("Command defined by ") + command;
+                TextWriters.Write(Translate.DoTranslation("Command:"), false, KernelColorType.ListEntry);
+                TextWriters.Write($" {FinalCommand}", KernelColorType.ListValue);
+                TextWriters.Write(Translate.DoTranslation("Description:"), false, KernelColorType.ListEntry);
+                TextWriters.Write($" {HelpDefinition}", KernelColorType.ListValue);
+
                 // Iterate through command argument information instances
-                var argumentInfos = FinalCommandList[FinalCommand].CommandArgumentInfo ??
-                    [];
+                var argumentInfos = FinalCommandList[FinalCommand].CommandArgumentInfo ?? [];
                 foreach (var argumentInfo in argumentInfos)
                 {
                     var Arguments = Array.Empty<CommandArgumentPart>();
@@ -251,26 +258,22 @@ namespace Nitrocid.Shell.ShellBase.Help
                     }
 
                     // Print usage information
-                    TextWriters.Write(Translate.DoTranslation("Usage:") + $" {FinalCommand} {argumentInfo.RenderedUsage}", true, KernelColorType.ListEntry);
+                    TextWriters.Write(Translate.DoTranslation("Usage:"), false, KernelColorType.ListEntry);
+                    TextWriters.Write($" {FinalCommand} {argumentInfo.RenderedUsage}", KernelColorType.ListValue);
 
                     // If we have switches, print their descriptions
                     if (Switches.Length != 0)
                     {
-                        TextWriterColor.Write(Translate.DoTranslation("This command has the below switches that change how it works:"));
+                        TextWriters.Write(Translate.DoTranslation("This command has the below switches that change how it works:"), KernelColorType.NeutralText);
                         foreach (var Switch in Switches)
                         {
                             string switchName = Switch.SwitchName;
                             string switchDesc = Switch.GetTranslatedHelpEntry();
                             TextWriters.Write($"  -{switchName}: ", false, KernelColorType.ListEntry);
-                            TextWriters.Write(switchDesc, true, KernelColorType.ListValue);
+                            TextWriters.Write(switchDesc, KernelColorType.ListValue);
                         }
                     }
                 }
-
-                // Write the description now
-                if (string.IsNullOrEmpty(HelpDefinition))
-                    HelpDefinition = Translate.DoTranslation("Command defined by ") + command;
-                TextWriters.Write(Translate.DoTranslation("Description:") + $" {HelpDefinition}", true, KernelColorType.ListValue);
 
                 // Extra help action for some commands
                 FinalCommandList[FinalCommand].CommandBase?.HelpHelper();
