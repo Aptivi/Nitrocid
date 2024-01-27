@@ -291,7 +291,10 @@ namespace Nitrocid.Shell.ShellBase.Aliases
         {
             if (!DoesAliasExist(TargetAlias, Type))
                 throw new KernelException(KernelExceptionType.AliasNoSuchAlias, Translate.DoTranslation("Alias {0} is not found to be queried."), TargetAlias);
-            return aliases.Single((info) => info.Alias == TargetAlias && info.Type == Type);
+
+            // Get the list of available aliases and get an alias matching the target alias
+            var aliases = GetEntireAliasListFromType(Type);
+            return aliases.Single((info) => info.Alias == TargetAlias);
         }
     }
 }
