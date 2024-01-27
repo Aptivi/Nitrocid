@@ -38,13 +38,20 @@ namespace Nitrocid.Extras.MailShell
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("mail", /* Localizable */ "Opens the mail client",
+            new CommandInfo("mail", /* Localizable */ "Opens the IMAP mail client",
                 [
                     new CommandArgumentInfo(new[]
                     {
                         new CommandArgumentPart(false, "emailAddress"),
                     })
-                ], new MailCommandExec())
+                ], new MailCommandExec()),
+            new CommandInfo("popmail", /* Localizable */ "Opens the POP3 mail client",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(false, "emailAddress"),
+                    })
+                ], new PopMailCommandExec()),
         ];
 
         string IAddon.AddonName =>
