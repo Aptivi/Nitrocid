@@ -52,6 +52,7 @@ namespace Nitrocid.Shell.ShellBase.Arguments
             { "perm",       (_) => Enum.GetNames<PermissionTypes>() },
             { "cmd",        (_) => PopulateCommands() },
             { "command",    (_) => PopulateCommands() },
+            { "shell",      (_) => ShellManager.AvailableShells.Keys.ToArray() },
         };
 
         /// <summary>

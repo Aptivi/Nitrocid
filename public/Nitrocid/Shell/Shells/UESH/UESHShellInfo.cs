@@ -84,7 +84,7 @@ namespace Nitrocid.Shell.Shells.UESH
                     new CommandArgumentInfo(new[]
                     {
                         new CommandArgumentPart(true, "rem/add"),
-                        new CommandArgumentPart(true, $"{string.Join("/", Enum.GetNames(typeof(ShellType)))}"),
+                        new CommandArgumentPart(true, "shell"),
                         new CommandArgumentPart(true, "alias"),
                         new CommandArgumentPart(false, "cmd"),
                     })
