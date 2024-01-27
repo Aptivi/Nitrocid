@@ -51,6 +51,10 @@ namespace Nitrocid.Drivers.HardwareProber
         public virtual bool DriverInternal => false;
 
         /// <inheritdoc/>
+        public string[] SupportedHardwareTypes =>
+            ["HDD", "CPU", "GPU", "RAM"];
+
+        /// <inheritdoc/>
         public virtual IEnumerable ProbeGraphics() =>
             HwProber.Video;
 
@@ -222,10 +226,9 @@ namespace Nitrocid.Drivers.HardwareProber
                 return;
             }
 
-            string[] supportedTypes = ["CPU", "RAM", "HDD", "GPU"];
             if (hardwareType == "all")
             {
-                foreach (string supportedType in supportedTypes)
+                foreach (string supportedType in SupportedHardwareTypes)
                     ListHardwareInternal(supportedType);
             }
             else

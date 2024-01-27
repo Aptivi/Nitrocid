@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Nitrocid.Kernel.Hardware;
 using System.Collections;
 
 namespace Nitrocid.Drivers.HardwareProber
@@ -26,6 +27,11 @@ namespace Nitrocid.Drivers.HardwareProber
     /// </summary>
     public interface IHardwareProberDriver : IDriver
     {
+        /// <summary>
+        /// List of supported hardware types for <see cref="HardwareList"/>
+        /// </summary>
+        string[] SupportedHardwareTypes { get; }
+
         /// <summary>
         /// Probes the processor
         /// </summary>

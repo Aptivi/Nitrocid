@@ -42,8 +42,6 @@ namespace Nitrocid.Shell.Shells.UESH
     /// </summary>
     internal class UESHShellInfo : BaseShellInfo, IShellInfo
     {
-        private static readonly string[] hardwareTypes = ["HDD", "CPU", "GPU", "RAM", "all"];
-
         /// <summary>
         /// List of commands
         /// </summary>
@@ -754,7 +752,7 @@ namespace Nitrocid.Shell.Shells.UESH
                     {
                         new CommandArgumentPart(true, "HardwareType", new CommandArgumentPartOptions()
                         {
-                            AutoCompleter = (_) => hardwareTypes
+                            AutoCompleter = (_) => DriverHandler.CurrentHardwareProberDriverLocal.SupportedHardwareTypes.Union(["all"]).ToArray()
                         })
                     })
                 ], new HwInfoCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
