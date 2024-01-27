@@ -19,11 +19,14 @@
 
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Aliases;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Shells;
+using System;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -44,32 +47,65 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
+            string mode = parameters.ArgumentsList[0];
+            string type = parameters.ArgumentsList[1];
+            string aliasCmd = parameters.ArgumentsList[2];
+            bool shouldSave = false;
             if (parameters.ArgumentsList.Length > 3)
             {
-                if (parameters.ArgumentsList[0] == "add" & ShellManager.AvailableShells.ContainsKey(parameters.ArgumentsList[1]))
+                string destCmd = parameters.ArgumentsList[3];
+                if (mode == "add" & ShellManager.AvailableShells.ContainsKey(type))
                 {
-                    AliasManager.ManageAlias(parameters.ArgumentsList[0], parameters.ArgumentsList[1], parameters.ArgumentsList[2], parameters.ArgumentsList[3]);
+                    // User tries to add an alias.
+                    try
+                    {
+                        AliasManager.AddAlias(destCmd, aliasCmd, type);
+                        shouldSave = true;
+                        TextWriters.Write(Translate.DoTranslation("You can now run '{0}' as '{1}'!"), KernelColorType.Success, aliasCmd, destCmd);
+                    }
+                    catch (Exception ex)
+                    {
+                        DebugWriter.WriteDebug(DebugLevel.E, "Failed to add alias. {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTrace(ex);
+                        TextWriters.Write(ex.Message, KernelColorType.Error);
+                    }
                     return 0;
                 }
                 else
                 {
-                    TextWriters.Write(Translate.DoTranslation("Invalid type {0}."), true, KernelColorType.Error, parameters.ArgumentsList[1]);
+                    TextWriters.Write(Translate.DoTranslation("Invalid type {0}."), KernelColorType.Error, type);
                     return 10000 + (int)KernelExceptionType.AliasNoSuchType;
                 }
             }
             else if (parameters.ArgumentsList.Length == 3)
             {
-                if (parameters.ArgumentsList[0] == "rem" & ShellManager.AvailableShells.ContainsKey(parameters.ArgumentsList[1]))
+                if (parameters.ArgumentsList[0] == "rem" & ShellManager.AvailableShells.ContainsKey(type))
                 {
-                    AliasManager.ManageAlias(parameters.ArgumentsList[0], parameters.ArgumentsList[1], parameters.ArgumentsList[2]);
+                    // User tries to remove an alias
+                    try
+                    {
+                        AliasManager.RemoveAlias(aliasCmd, type);
+                        shouldSave = true;
+                        TextWriters.Write(Translate.DoTranslation("Removed alias {0} successfully."), KernelColorType.Success, aliasCmd);
+                    }
+                    catch (Exception ex)
+                    {
+                        DebugWriter.WriteDebug(DebugLevel.E, "Failed to remove alias. Stack trace written using WStkTrc(). {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTrace(ex);
+                        TextWriters.Write(ex.Message, KernelColorType.Error);
+                    }
                     return 0;
                 }
                 else
                 {
-                    TextWriters.Write(Translate.DoTranslation("Invalid type {0}."), true, KernelColorType.Error, parameters.ArgumentsList[1]);
+                    TextWriters.Write(Translate.DoTranslation("Invalid type {0}."), KernelColorType.Error, type);
                     return 10000 + (int)KernelExceptionType.AliasNoSuchType;
                 }
             }
+
+            // Save all aliases if the addition or the removal is successful
+            if (shouldSave)
+                AliasManager.SaveAliases();
             return 0;
         }
 

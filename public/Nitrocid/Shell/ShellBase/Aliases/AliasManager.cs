@@ -77,6 +77,8 @@ namespace Nitrocid.Shell.ShellBase.Aliases
         /// <param name="Type">Alias type (Shell or Remote Debug)</param>
         /// <param name="AliasCmd">A specified alias</param>
         /// <param name="DestCmd">A destination command (target)</param>
+        [Obsolete("This function was used for the \"alias\" command. However, it was designed as a wrapper. " +
+                 $"Use {nameof(AddAlias)} or {nameof(RemoveAlias)} instead.")]
         public static void ManageAlias(string mode, ShellType Type, string AliasCmd, string DestCmd = "") =>
             ManageAlias(mode, ShellManager.GetShellTypeName(Type), AliasCmd, DestCmd);
 
@@ -87,6 +89,8 @@ namespace Nitrocid.Shell.ShellBase.Aliases
         /// <param name="Type">Alias type (Shell or Remote Debug)</param>
         /// <param name="AliasCmd">A specified alias</param>
         /// <param name="DestCmd">A destination command (target)</param>
+        [Obsolete("This function was used for the \"alias\" command. However, it was designed as a wrapper. " +
+                 $"Use {nameof(AddAlias)} or {nameof(RemoveAlias)} instead.")]
         public static void ManageAlias(string mode, string Type, string AliasCmd, string DestCmd = "")
         {
             if (Enum.IsDefined(typeof(ShellType), Type))
