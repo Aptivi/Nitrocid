@@ -54,8 +54,7 @@ namespace Nitrocid.Extras.SqlShell
         {
             var config = new SqlConfig();
             ConfigTools.RegisterBaseSetting(config);
-            ShellManager.reservedShells.Add("SqlShell");
-            ShellManager.RegisterShell("SqlShell", new SqlShellInfo());
+            ShellManager.RegisterAddonShell("SqlShell", new SqlShellInfo());
         }
 
         void IAddon.StartAddon()
@@ -63,9 +62,7 @@ namespace Nitrocid.Extras.SqlShell
 
         void IAddon.StopAddon()
         {
-            ShellManager.availableShells.Remove("SqlShell");
-            PromptPresetManager.CurrentPresets.Remove("SqlShell");
-            ShellManager.reservedShells.Remove("SqlShell");
+            ShellManager.UnregisterAddonShell("SqlShell");
             ConfigTools.UnregisterBaseSetting(nameof(SqlConfig));
         }
     }

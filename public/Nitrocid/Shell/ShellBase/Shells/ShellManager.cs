@@ -73,7 +73,6 @@ namespace Nitrocid.Shell.ShellBase.Shells
     {
 
         internal static List<ShellExecuteInfo> ShellStack = [];
-        internal static List<string> reservedShells = [];
         internal static string lastCommand = "";
         internal static KernelThread ProcessStartCommandThread = new("Executable Command Thread", false, (processParams) => ProcessExecutor.ExecuteProcess((ExecuteProcessThreadParameters)processParams));
         internal static Dictionary<string, List<string>> histories = new()
@@ -209,6 +208,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
             { "AdminShell", new AdminShellInfo() },
             { "DebugShell", new DebugShellInfo() }
         };
+        internal readonly static Dictionary<string, BaseShellInfo> availableCustomShells = new();
 
         /// <summary>
         /// List of unified commands
@@ -220,7 +220,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
         /// List of available shells
         /// </summary>
         public static ReadOnlyDictionary<string, BaseShellInfo> AvailableShells =>
-            new(availableShells);
+            new(availableShells.Union(availableCustomShells).ToDictionary());
 
         /// <summary>
         /// Current shell type
@@ -770,11 +770,86 @@ namespace Nitrocid.Shell.ShellBase.Shells
             GetShellInfo(ShellType).ShellBase;
 
         /// <summary>
-        /// Registers the custom shell. Should be called when the mods start up.
+        /// Registers the custom shell. Should be called when mods start up.
         /// </summary>
         /// <param name="ShellType">The shell type</param>
         /// <param name="ShellTypeInfo">The shell type information</param>
         public static void RegisterShell(string ShellType, BaseShellInfo ShellTypeInfo)
+        {
+            if (!ShellTypeExists(ShellType))
+            {
+                // First, add the shell
+                availableCustomShells.Add(ShellType, ShellTypeInfo);
+
+                // Then, add the default preset if the current preset is not found
+                if (PromptPresetManager.CurrentPresets.ContainsKey(ShellType))
+                    return;
+
+                // Rare state.
+                DebugWriter.WriteDebug(DebugLevel.I, "Reached rare state or unconfigurable shell.");
+                var presets = ShellTypeInfo.ShellPresets;
+                var basePreset = new PromptPresetBase();
+                if (presets is not null)
+                {
+                    // Add a default preset
+                    if (presets.ContainsKey("Default"))
+                        PromptPresetManager.CurrentPresets.Add(ShellType, "Default");
+                    else
+                        PromptPresetManager.CurrentPresets.Add(ShellType, basePreset.PresetName);
+                }
+                else
+                {
+                    // Make a base shell preset and set it as default.
+                    PromptPresetManager.CurrentPresets.Add(ShellType, basePreset.PresetName);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Unregisters the custom shell. Should be called when mods shut down.
+        /// </summary>
+        /// <param name="ShellType">The shell type</param>
+        public static void UnregisterShell(string ShellType)
+        {
+            if (!IsShellBuiltin(ShellType))
+            {
+                // First, remove the shell
+                availableCustomShells.Remove(ShellType);
+
+                // Then, remove the preset
+                PromptPresetManager.CurrentPresets.Remove(ShellType);
+            }
+        }
+
+        /// <summary>
+        /// Is the shell pre-defined in Nitrocid KS?
+        /// </summary>
+        /// <param name="ShellType">Shell type</param>
+        /// <returns>If available in ShellType, then it's a built-in shell, thus returning true. Otherwise, false for custom shells.</returns>
+        public static bool IsShellBuiltin(string ShellType) =>
+            availableShells.ContainsKey(ShellType);
+
+        /// <summary>
+        /// Does the shell exist?
+        /// </summary>
+        /// <param name="ShellType">Shell type to check</param>
+        /// <returns>True if it exists; false otherwise.</returns>
+        public static bool ShellTypeExists(string ShellType) =>
+            AvailableShells.ContainsKey(ShellType);
+
+        /// <summary>
+        /// Is the current shell a mother shell?
+        /// </summary>
+        /// <returns>True if the shell stack is at most one shell. False if running in the second shell or higher.</returns>
+        public static bool IsOnMotherShell() =>
+            ShellStack.Count < 2;
+
+        /// <summary>
+        /// Registers the addon shell. Should be called when addons start up.
+        /// </summary>
+        /// <param name="ShellType">The shell type</param>
+        /// <param name="ShellTypeInfo">The shell type information</param>
+        internal static void RegisterAddonShell(string ShellType, BaseShellInfo ShellTypeInfo)
         {
             if (!ShellTypeExists(ShellType))
             {
@@ -806,12 +881,12 @@ namespace Nitrocid.Shell.ShellBase.Shells
         }
 
         /// <summary>
-        /// Unregisters the custom shell. Should be called when the mods shut down.
+        /// Unregisters the addon shell. Should be called when addons shut down.
         /// </summary>
         /// <param name="ShellType">The shell type</param>
-        public static void UnregisterShell(string ShellType)
+        internal static void UnregisterAddonShell(string ShellType)
         {
-            if (!IsShellBuiltin(ShellType))
+            if (IsShellBuiltin(ShellType))
             {
                 // First, remove the shell
                 availableShells.Remove(ShellType);
@@ -820,29 +895,6 @@ namespace Nitrocid.Shell.ShellBase.Shells
                 PromptPresetManager.CurrentPresets.Remove(ShellType);
             }
         }
-
-        /// <summary>
-        /// Is the shell pre-defined in Nitrocid KS?
-        /// </summary>
-        /// <param name="ShellType">Shell type</param>
-        /// <returns>If available in ShellType, then it's a built-in shell, thus returning true. Otherwise, false for custom shells.</returns>
-        public static bool IsShellBuiltin(string ShellType) =>
-            Enum.IsDefined(typeof(ShellType), ShellType) || reservedShells.Contains(ShellType);
-
-        /// <summary>
-        /// Does the shell exist?
-        /// </summary>
-        /// <param name="ShellType">Shell type to check</param>
-        /// <returns>True if it exists; false otherwise.</returns>
-        public static bool ShellTypeExists(string ShellType) =>
-            AvailableShells.ContainsKey(ShellType);
-
-        /// <summary>
-        /// Is the current shell a mother shell?
-        /// </summary>
-        /// <returns>True if the shell stack is at most one shell. False if running in the second shell or higher.</returns>
-        public static bool IsOnMotherShell() =>
-            ShellStack.Count < 2;
 
         internal static void SaveHistories() =>
             FileIO.WriteAllText(PathsManagement.ShellHistoriesPath, JsonConvert.SerializeObject(histories, Formatting.Indented));

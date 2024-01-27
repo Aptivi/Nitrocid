@@ -74,8 +74,7 @@ namespace Nitrocid.Extras.RssShell
         {
             var config = new RssConfig();
             ConfigTools.RegisterBaseSetting(config);
-            ShellManager.reservedShells.Add("RSSShell");
-            ShellManager.RegisterShell("RSSShell", new RSSShellInfo());
+            ShellManager.RegisterAddonShell("RSSShell", new RSSShellInfo());
             CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
         }
 
@@ -84,9 +83,7 @@ namespace Nitrocid.Extras.RssShell
 
         void IAddon.StopAddon()
         {
-            ShellManager.availableShells.Remove("RSSShell");
-            PromptPresetManager.CurrentPresets.Remove("RSSShell");
-            ShellManager.reservedShells.Remove("RSSShell");
+            ShellManager.UnregisterAddonShell("RSSShell");
             CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
             ConfigTools.UnregisterBaseSetting(nameof(RssConfig));
         }
