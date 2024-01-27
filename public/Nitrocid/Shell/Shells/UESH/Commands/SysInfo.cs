@@ -33,6 +33,7 @@ using Nitrocid.Users;
 using Nitrocid.Misc.Text.Probers.Placeholder;
 using Nitrocid.Users.Login.Motd;
 using Nitrocid.Network;
+using Nitrocid.Users.Windows;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -90,7 +91,11 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 // Hardware section
                 TextFancyWriters.WriteSeparator(Translate.DoTranslation("Hardware settings"), true, KernelColorType.Separator);
                 HardwareList.ListHardware();
-                TextWriters.Write(Translate.DoTranslation("Use \"hwinfo\" for extended information about hardware."), true, KernelColorType.Tip);
+
+                if (!WindowsUserTools.IsAdministrator())
+                    TextWriters.Write(Translate.DoTranslation("You'll need to restart the kernel as elevated in order to be able to show hardware information."), true, KernelColorType.Error);
+                else
+                    TextWriters.Write(Translate.DoTranslation("Use \"hwinfo\" for extended information about hardware."), true, KernelColorType.Tip);
                 TextWriterColor.Write();
             }
 

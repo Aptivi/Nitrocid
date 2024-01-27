@@ -30,6 +30,7 @@ using Terminaux.Writer.FancyWriters;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using System.Runtime.Serialization;
+using Nitrocid.Users.Windows;
 
 namespace Nitrocid.Drivers.HardwareProber
 {
@@ -156,25 +157,31 @@ namespace Nitrocid.Drivers.HardwareProber
         /// <inheritdoc/>
         public virtual void ListHardware(IEnumerable processors, IEnumerable memory, IEnumerable graphics, IEnumerable hardDrives)
         {
+            if (!WindowsUserTools.IsAdministrator())
+            {
+                SplashReport.ReportProgressError(Translate.DoTranslation("You'll need to restart the kernel as elevated in order to be able to show hardware information."));
+                return;
+            }
+
             // Verify the types
             if (processors is not ProcessorPart[] procDict)
             {
-                SplashReport.ReportProgress("CPU: " + Translate.DoTranslation("Failed to parse the CPU info. Ensure that it's a valid info list."));
+                SplashReport.ReportProgressError("CPU: " + Translate.DoTranslation("Failed to parse the CPU info. Ensure that it's a valid info list."));
                 return;
             }
             if (memory is not MemoryPart[] memList)
             {
-                SplashReport.ReportProgress("RAM: " + Translate.DoTranslation("Failed to parse the RAM info. Ensure that it's a valid info list."));
+                SplashReport.ReportProgressError("RAM: " + Translate.DoTranslation("Failed to parse the RAM info. Ensure that it's a valid info list."));
                 return;
             }
             if (graphics is not VideoPart[] gpuDict)
             {
-                SplashReport.ReportProgress("GPU: " + Translate.DoTranslation("Failed to parse the GPU info. Ensure that it's a valid info list."));
+                SplashReport.ReportProgressError("GPU: " + Translate.DoTranslation("Failed to parse the GPU info. Ensure that it's a valid info list."));
                 return;
             }
             if (hardDrives is not HardDiskPart[] hddDict)
             {
-                SplashReport.ReportProgress("HDD: " + Translate.DoTranslation("Failed to parse the HDD info. Ensure that it's a valid info list."));
+                SplashReport.ReportProgressError("HDD: " + Translate.DoTranslation("Failed to parse the HDD info. Ensure that it's a valid info list."));
                 return;
             }
 
@@ -209,6 +216,12 @@ namespace Nitrocid.Drivers.HardwareProber
         /// <inheritdoc/>
         public virtual void ListHardware(string hardwareType)
         {
+            if (!WindowsUserTools.IsAdministrator())
+            {
+                SplashReport.ReportProgressError(Translate.DoTranslation("You'll need to restart the kernel as elevated in order to be able to show hardware information."));
+                return;
+            }
+
             string[] supportedTypes = ["CPU", "RAM", "HDD", "GPU"];
             if (hardwareType == "all")
             {

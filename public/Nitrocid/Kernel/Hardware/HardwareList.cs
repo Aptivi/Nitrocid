@@ -22,6 +22,7 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Reflection;
 using Nitrocid.Misc.Splash;
+using Nitrocid.Users.Windows;
 
 namespace Nitrocid.Kernel.Hardware
 {
@@ -36,6 +37,10 @@ namespace Nitrocid.Kernel.Hardware
         /// </summary>
         internal static void ListHardware()
         {
+            // First, check to see if we're running elevated
+            if (!WindowsUserTools.IsAdministrator())
+                return;
+
             // Some variables
             var processors = HardwareProbe.processors;
             var pcMemory = HardwareProbe.pcMemory;
@@ -77,9 +82,8 @@ namespace Nitrocid.Kernel.Hardware
         /// <summary>
         /// Lists information about hardware
         /// </summary>
-        /// <param name="HardwareType">Hardware type defined by Inxi.NET. If "all", prints all information.</param>
+        /// <param name="HardwareType">Hardware type. If "all", prints all information.</param>
         public static void ListHardware(string HardwareType) =>
             HardwareProberDriver.ListHardware(HardwareType);
-
     }
 }
