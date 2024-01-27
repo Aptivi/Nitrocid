@@ -5942,6 +5942,12 @@
                 "Type": "SBoolean",
                 "Variable": "MazerHighlightUncovered",
                 "Description": "If enabled, highlights the non-covered positions with the gray background color. Otherwise, they render as boxes."
+            },
+            {
+                "Name": "Use Schwartzian Transform",
+                "Type": "SBoolean",
+                "Variable": "MazerUseSchwartzian",
+                "Description": "If enabled, this screensaver uses Schwartzian's transform to shuffle the maze edges. Otherwise, it uses the plain method of transformation."
             }
         ]
     },

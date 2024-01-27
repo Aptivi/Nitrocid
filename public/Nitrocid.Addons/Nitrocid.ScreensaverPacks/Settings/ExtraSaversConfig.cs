@@ -3193,6 +3193,10 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// </summary>
         public bool MazerHighlightUncovered { get; set; } = false;
         /// <summary>
+        /// [Mazer] Specifies whether to choose the <seealso href="http://en.wikipedia.org/wiki/Schwartzian_transform">Schwartzian transform</seealso> or to use <see cref="Random.Shuffle{T}(T[])"/>
+        /// </summary>
+        public bool MazerUseSchwartzian { get; set; } = true;
+        /// <summary>
         /// [TwoSpins] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
         public bool TwoSpinsTrueColor { get; set; } = true;

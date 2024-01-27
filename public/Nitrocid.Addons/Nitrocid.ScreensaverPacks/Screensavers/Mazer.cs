@@ -27,6 +27,7 @@ using Terminaux.Colors;
 using Textify.General;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
+using System;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -75,6 +76,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get => ScreensaverPackInit.SaversConfig.MazerHighlightUncovered;
             set => ScreensaverPackInit.SaversConfig.MazerHighlightUncovered = value;
+        }
+        /// <summary>
+        /// [Mazer] Specifies whether to choose the <seealso href="http://en.wikipedia.org/wiki/Schwartzian_transform">Schwartzian transform</seealso> or to use <see cref="Random.Shuffle{T}(T[])"/>
+        /// </summary>
+        public static bool MazerUseSchwartzian
+        {
+            get => ScreensaverPackInit.SaversConfig.MazerUseSchwartzian;
+            set => ScreensaverPackInit.SaversConfig.MazerUseSchwartzian = value;
         }
 
     }
@@ -153,7 +162,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         plainEdges.Add((x, y, Direction.West));
                 }
             }
-            var edges = plainEdges.ToArray().RandomizeArray();
+            var edgesArray = plainEdges.ToArray();
+            var edges =
+                MazerSettings.MazerUseSchwartzian ?
+                edgesArray.RandomizeArray() :
+                edgesArray.RandomizeArraySystem();
 
             // Iterate through all the edges to display the maze in a spectacular way
             foreach (var (x, y, direction) in edges)
