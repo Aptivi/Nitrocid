@@ -43,7 +43,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             // Variables
             int SnakeLength = 1;
             var SnakeMassPositions = new List<string>();
-            var Direction = SnakeDirection.Bottom;
+            var Direction = Enum.Parse<SnakeDirection>(RandomDriver.Random(3).ToString());
             ConsoleWrapper.CursorVisible = false;
             ColorTools.LoadBackDry(0);
 
