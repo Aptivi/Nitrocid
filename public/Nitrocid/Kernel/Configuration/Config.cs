@@ -392,7 +392,7 @@ namespace Nitrocid.Kernel.Configuration
                 foreach (var diff in diffObj)
                 {
                     // Get the key and the diff type
-                    string modifiedKey = diff.Key;
+                    string modifiedKey = diff.Key[1..];
                     string modifiedType = string.Join("", diff.Value.Select((diffToken) => ((JProperty)diffToken).Name));
 
                     // Now, work on how to add or remove the key to the current object, but ignore all the modifications since they're usually valid.
