@@ -168,7 +168,13 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                         int PositionX = Convert.ToInt32(PositionStrings[0]);
                         int PositionY = Convert.ToInt32(PositionStrings[1]);
                         ConsoleWrapper.SetCursorPosition(PositionX, PositionY);
-                        ConsoleWrapper.Write(" ");
+                        string snakeHead = PositionIndex < SnakeMassPositions.Count - 1 ? " " :
+                            Direction == SnakeDirection.Top ? "^" :
+                            Direction == SnakeDirection.Bottom ? "v" :
+                            Direction == SnakeDirection.Left ? "<" :
+                            Direction == SnakeDirection.Right ? ">" :
+                            " ";
+                        ConsoleWrapper.Write(snakeHead);
                         ConsoleWrapper.SetCursorPosition(PositionX, PositionY);
                         DebugWriter.WriteDebug(DebugLevel.I, "Drawn snake at ({0}, {1}) for mass {2}/{3}", PositionX, PositionY, PositionIndex + 1, SnakeMassPositions.Count);
                     }
