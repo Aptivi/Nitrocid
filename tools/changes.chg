@@ -1,6 +1,51 @@
 Nitrocid KS 0.1.0 Release Candidate changes
 ===========================================
 
-Released February 1st, 2024.
+Released February 1st, 2024; codename Furious Magic.
 
-TBD...
+Since the third beta of the kernel, we've made many changes that make this
+version of the kernel more exciting than the third beta, while making it more
+suitable for release. This is called the release candidate, a stage where we
+finally managed to successfully implement many amazing performance and general
+improvements to the kernel, as well as some aesthetical changes that make it
+more beautiful than the previous kernel versions.
+
+Driver management from UESH
+---------------------------
+
+Starting from the release candidate of the upcoming kernel, we've added a
+command that allows you to manage the kernel drivers on the go without having
+to open the kernel settings. This allows your scripts to manage the drivers,
+including the following actions:
+
+  - Listing the available driver types
+  - Listing the available drivers for a specific type
+  - Setting a kernel driver using "driverman change <type> <driver>"
+
+Additionally, the driver management has been moved from the kernel settings to
+its own kernel settings file. You can easily access this configuration by
+executing the "settings -driver" command to open the kernel driver settings.
+From there, you can set the kernel drivers interactively.
+
+Splash loading changes
+----------------------
+
+You no longer need to separately provide splash DLL files in order for your
+custom splashes to load thanks to the newly-implemented mod loading priority
+feature that prioritizes the mod loading from important mods that load early
+to optional mods that load at very late stages of the kernel start-up. This
+allows you to seamlessly register your splash screens before the kernel
+configuration is loaded, allowing your configuration to set the kernel splash
+when loaded to your custom splash provided by your mod.
+
+We've changed the registration logic from separate DLL files to a simpler
+load and unload mechanism (register and unregister here) to make adding your
+splashes easier than before.
+
+More changes
+------------
+
+In addition to these two hit features, we've made additional changes that will
+surprise you when you transition from the third beta to the release candidate.
+
+We hope that 0.1.0 gets released on March 11th, 2024! Stay tuned!
