@@ -1,3 +1,9 @@
+kernel-simulator (3.0.25.411-0.1.0~rc-1) noble; urgency=medium
+
+  * Consult changes.chg in the Git repo for more info.
+
+ -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Sat, 27 Jan 2024 22:32:16 +0300
+
 kernel-simulator (3.0.25.377-0.1.0~beta3-1) noble; urgency=medium
 
   * Changed version number
