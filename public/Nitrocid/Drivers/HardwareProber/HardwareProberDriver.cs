@@ -73,7 +73,7 @@ namespace Nitrocid.Drivers.HardwareProber
         /// <summary>
         /// Lists all the probed hardware. Please note that this overload probes all the hardware
         /// </summary>
-        /// <param name="hardwareType">Hardware type defined by Inxi.NET and supported by the prober driver. If "all", prints all information.</param>
+        /// <param name="hardwareType">Hardware type supported by the prober driver. If "all", prints all information.</param>
         public static void ListHardware(string hardwareType) =>
             DriverHandler.CurrentHardwareProberDriverLocal.ListHardware(hardwareType);
 
