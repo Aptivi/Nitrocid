@@ -159,18 +159,18 @@ namespace Nitrocid.Kernel.Extensions
                     {
                         addonInstance.StartAddon();
                         DebugWriter.WriteDebug(DebugLevel.I, "Started!");
+
+                        // Add the addon
+                        AddonInfo info = new(addonInstance);
+                        if (!addons.Where((addon) => addonInstance.AddonName == addon.AddonName).Any())
+                            addons.Add(info);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Loaded addon!");
                     }
                     catch (Exception ex)
                     {
                         DebugWriter.WriteDebug(DebugLevel.E, "Failed to start addon {0}. {1}", addon, ex.Message);
                         DebugWriter.WriteDebugStackTrace(ex);
                     }
-
-                    // Add the addon
-                    AddonInfo info = new(addonInstance);
-                    if (!addons.Where((addon) => addonInstance.AddonName == addon.AddonName).Any())
-                        addons.Add(info);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Loaded addon!");
                 }
             }
             catch (Exception ex)
