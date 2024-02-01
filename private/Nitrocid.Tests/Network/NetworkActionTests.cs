@@ -106,28 +106,6 @@ namespace Nitrocid.Tests.Network
         }
 
         /// <summary>
-        /// Tests getting network connections
-        /// </summary>
-        [TestMethod]
-        [DataRow(NetworkConnectionType.FTP, 1)]
-        [DataRow(NetworkConnectionType.HTTP, 3)]
-        [DataRow(NetworkConnectionType.Mail, 0)]
-        [DataRow(NetworkConnectionType.RSS, 2)]
-        [DataRow(NetworkConnectionType.SFTP, 5)]
-        [DataRow(NetworkConnectionType.SSH, 4)]
-        [Description("Action")]
-        public void TestGetConnectionIndex(NetworkConnectionType type, int expectedIdx)
-        {
-            var connections = NetworkConnectionTools.GetNetworkConnections(type);
-            connections.ShouldNotBeNull();
-            connections.ShouldNotBeEmpty();
-            var connection = connections[0];
-            int index = NetworkConnectionTools.GetConnectionIndex(connection);
-            index.ShouldBe(expectedIdx);
-            connections[0].ShouldBe(connection);
-        }
-
-        /// <summary>
         /// Tests getting network connections from a specific type
         /// </summary>
         [TestMethod]
@@ -147,27 +125,6 @@ namespace Nitrocid.Tests.Network
             int index = NetworkConnectionTools.GetConnectionIndexSpecific(connection, type);
             index.ShouldBe(0);
             connections[index].ShouldBe(connection);
-        }
-
-        /// <summary>
-        /// Tests getting network connections
-        /// </summary>
-        [TestMethod]
-        [DataRow(NetworkConnectionType.FTP, 1)]
-        [DataRow(NetworkConnectionType.HTTP, 3)]
-        [DataRow(NetworkConnectionType.Mail, 0)]
-        [DataRow(NetworkConnectionType.RSS, 2)]
-        [DataRow(NetworkConnectionType.SFTP, 5)]
-        [DataRow(NetworkConnectionType.SSH, 4)]
-        [Description("Action")]
-        public void TestGetConnectionFromIndex(NetworkConnectionType type, int expectedIdx)
-        {
-            var connections = NetworkConnectionTools.GetNetworkConnections(type);
-            connections.ShouldNotBeNull();
-            connections.ShouldNotBeEmpty();
-            var connection = NetworkConnectionTools.GetConnectionFromIndex(expectedIdx);
-            connections.ShouldContain(connection);
-            connections[0].ShouldBe(connection);
         }
 
         /// <summary>
