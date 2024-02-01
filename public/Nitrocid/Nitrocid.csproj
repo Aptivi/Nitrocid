@@ -55,7 +55,7 @@
     <NitrocidModAPIVersionMajor>3.0.25</NitrocidModAPIVersionMajor>
 
     <!-- Increment NitrocidModAPIVersionChangeset every time there is a breaking change or an API addition in the N-KS API. -->
-    <NitrocidModAPIVersionChangeset>411</NitrocidModAPIVersionChangeset>
+    <NitrocidModAPIVersionChangeset>412</NitrocidModAPIVersionChangeset>
 
     <!-- To be installed to the file version -->
     <NitrocidModAPIVersion>$(NitrocidModAPIVersionMajor).$(NitrocidModAPIVersionChangeset)</NitrocidModAPIVersion>
@@ -103,6 +103,7 @@
     <PackageReference Include="Terminaux.ResizeListener" Version="2.7.2" PrivateAssets="contentfiles;analyzers;build;runtime" />
     <PackageReference Include="Textify.Offline" Version="1.3.1" PrivateAssets="contentfiles;analyzers;build;runtime" />
     <PackageReference Include="Nettify" Version="1.1.0" PrivateAssets="contentfiles;analyzers;build;runtime" />
+    <PackageReference Include="EnumMagic" Version="0.1.0" PrivateAssets="contentfiles;analyzers;build;runtime" />
   </ItemGroup>
   <!-- KS Non-private Dependencies Information End -->
 

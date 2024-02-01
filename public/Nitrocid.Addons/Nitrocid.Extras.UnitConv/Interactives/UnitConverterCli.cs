@@ -26,7 +26,7 @@ using FluentFTP.Helpers;
 using Terminaux.Inputs.Interactive;
 using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Languages;
-using Nitrocid.Misc.Reflection;
+using EnumMagic;
 
 namespace Nitrocid.Extras.UnitConv.Interactives
 {
@@ -85,7 +85,7 @@ namespace Nitrocid.Extras.UnitConv.Interactives
                     var parser = UnitsNetSetup.Default.UnitParser;
                     var unitNames = GetUnitTypeNames();
                     var units = GetUnits();
-                    string UnitType = (string)EnumerableTools.GetElementFromIndex(unitNames, InteractiveTuiStatus.FirstPaneCurrentSelection - 1);
+                    string UnitType = (string)unitNames.GetElementFromIndex(InteractiveTuiStatus.FirstPaneCurrentSelection - 1);
                     int QuantityNum = Convert.ToInt32(answer);
                     string wholeUnit = units.OfType<string>().ElementAt(InteractiveTuiStatus.SecondPaneCurrentSelection - 1);
                     string SourceUnit = wholeUnit[..wholeUnit.IndexOf(' ')];

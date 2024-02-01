@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using EnumMagic;
 using Nitrocid.Drivers.HardwareProber;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
@@ -48,28 +49,28 @@ namespace Nitrocid.Kernel.Hardware
             var hardDrive = HardwareProbe.hardDrive;
 
             // We are checking to see if any of the probers reported a failure starting with CPU
-            if (processors is null || processors is not null && EnumerableTools.CountElements(processors) == 0)
+            if (processors is null || processors is not null && processors.Length() == 0)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "CPU failed to probe.");
                 SplashReport.ReportProgressError(Translate.DoTranslation("One or more of the CPU cores failed to probe. Showing information anyway..."));
             }
 
             // then RAM
-            if (pcMemory is null || pcMemory is not null && EnumerableTools.CountElements(pcMemory) == 0)
+            if (pcMemory is null || pcMemory is not null && pcMemory.Length() == 0)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "RAM failed to probe.");
                 SplashReport.ReportProgressError(Translate.DoTranslation("One or more of the RAM chips failed to probe. Showing information anyway..."));
             }
 
             // then GPU
-            if (graphics is null || graphics is not null && EnumerableTools.CountElements(graphics) == 0)
+            if (graphics is null || graphics is not null && graphics.Length() == 0)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "GPU failed to probe.");
                 SplashReport.ReportProgressError(Translate.DoTranslation("One or more of the graphics cards failed to probe. Showing information anyway..."));
             }
 
             // and finally HDD
-            if (hardDrive is null || hardDrive is not null && EnumerableTools.CountElements(hardDrive) == 0)
+            if (hardDrive is null || hardDrive is not null && hardDrive.Length() == 0)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "HDD failed to probe.");
                 SplashReport.ReportProgressError(Translate.DoTranslation("One or more of the hard drives failed to probe. Showing information anyway..."));
