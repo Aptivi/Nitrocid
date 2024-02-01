@@ -30,6 +30,7 @@ using Nitrocid.Misc.Text;
 using Nitrocid.Misc.Text.Probers.Placeholder;
 using Textify.General;
 using Terminaux.Base;
+using Terminaux.Inputs;
 
 namespace Nitrocid.ConsoleBase.Writers.MiscWriters
 {
@@ -159,9 +160,9 @@ namespace Nitrocid.ConsoleBase.Writers.MiscWriters
             // Show development disclaimer
             if (SplashManager.EnableSplash)
             {
-                string[] answers = [
-                    Translate.DoTranslation("OK"),
-                    Translate.DoTranslation("Acknowledged")
+                InputChoiceInfo[] answers = [
+                    new InputChoiceInfo("ok", Translate.DoTranslation("OK")),
+                    new InputChoiceInfo("acknowledged", Translate.DoTranslation("Acknowledged")),
                 ];
                 int answer = InfoBoxButtonsColor.WriteInfoBoxButtonsColor(
                     Translate.DoTranslation("Development notice"),

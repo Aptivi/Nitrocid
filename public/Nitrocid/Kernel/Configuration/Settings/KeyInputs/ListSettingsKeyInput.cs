@@ -75,9 +75,9 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
                     int selectedItemIdx = selectionAnswer - 1;
                     int result = InfoBoxButtonsColor.WriteInfoBoxButtons(
                         [
-                            Translate.DoTranslation("Keep it"),
-                            Translate.DoTranslation("Remove it"),
-                            Translate.DoTranslation("Add new item"),
+                            new InputChoiceInfo("keep", Translate.DoTranslation("Keep it")),
+                            new InputChoiceInfo("remove", Translate.DoTranslation("Remove it")),
+                            new InputChoiceInfo("add", Translate.DoTranslation("Add new item")),
                         ],
                         Translate.DoTranslation("What do you want to do with this item?")
                     ) + 1;

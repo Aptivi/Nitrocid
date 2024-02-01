@@ -139,14 +139,15 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 SelectedChar = Convert.ToChar(RandomEngine.Next(97, 122));
 
                 // Prompt user for character
-                try
-                {
-                    TextWriterColor.Write(Translate.DoTranslation("Current character:") + " {0}", SelectedChar);
-                    TextWriters.Write("> ", false, KernelColorType.Input);
-                    WrittenChar = Input.ReadKeyTimeout(false, TimeSpan.FromMilliseconds(SpeedTimeout));
-                    TextWriterColor.Write();
+                TextWriterColor.Write(Translate.DoTranslation("Current character:") + " {0}", SelectedChar);
+                TextWriters.Write("> ", false, KernelColorType.Input);
+                var (result, provided) = Input.ReadKeyTimeout(false, TimeSpan.FromMilliseconds(SpeedTimeout));
+                WrittenChar = result;
+                TextWriterColor.Write();
 
-                    // Check to see if the user has pressed the correct character
+                // Check to see if the user has pressed the correct character
+                if (provided)
+                {
                     if (WrittenChar.KeyChar == SelectedChar)
                     {
                         TextWriters.Write(Translate.DoTranslation("You've pressed the right character!"), true, KernelColorType.Success);
@@ -156,7 +157,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                         TextWriters.Write(Translate.DoTranslation("You've pressed the wrong character."), true, KernelColorType.Warning);
                     }
                 }
-                catch (KernelException kex) when (kex.ExceptionType == KernelExceptionType.ConsoleReadTimeout)
+                else
                 {
                     TextWriterColor.Write();
                     TextWriters.Write(Translate.DoTranslation("Character not pressed on time."), true, KernelColorType.Warning);

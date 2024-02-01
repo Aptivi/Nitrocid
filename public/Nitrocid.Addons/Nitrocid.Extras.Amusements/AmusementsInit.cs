@@ -35,6 +35,7 @@ using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Misc.Splash;
 using Nitrocid.Modifications;
 using System.Linq;
+using Textify.Data;
 
 namespace Nitrocid.Extras.Amusements
 {
@@ -172,6 +173,10 @@ namespace Nitrocid.Extras.Amusements
 
         void IAddon.StartAddon()
         {
+            // Initialize data
+            DataInitializer.Initialize();
+
+            // Initialize everything
             CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
             ScreensaverManager.AddonSavers.Add("meteor", new MeteorDisplay());
             ScreensaverManager.AddonSavers.Add("meteordodge", new MeteorDodgeDisplay());

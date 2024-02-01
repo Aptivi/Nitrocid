@@ -26,6 +26,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Terminaux.Base;
+using Terminaux.Inputs;
 
 namespace Nitrocid.Kernel.Debugging.Testing
 {
@@ -297,9 +298,9 @@ namespace Nitrocid.Kernel.Debugging.Testing
                         // Prompt the user to check to see if the test ran as expected
                         int answer = InfoBoxButtonsColor.WriteInfoBoxButtons(
                             [
-                                Translate.DoTranslation("Yes!"),
-                                Translate.DoTranslation("No"),
-                                Translate.DoTranslation("Retry"),
+                                new InputChoiceInfo("yes", Translate.DoTranslation("Yes!")),
+                                new InputChoiceInfo("no", Translate.DoTranslation("No")),
+                                new InputChoiceInfo("retry", Translate.DoTranslation("Retry")),
                             ],
                             Translate.DoTranslation("Did the test run as expected?")
                         );

@@ -33,6 +33,7 @@ using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Misc.Screensaver;
 using Nitrocid.Modifications;
 using System.Linq;
+using Textify.Data;
 
 namespace Nitrocid.Extras.NameGen
 {
@@ -134,6 +135,10 @@ namespace Nitrocid.Extras.NameGen
 
         void IAddon.StartAddon()
         {
+            // Initialize data
+            DataInitializer.Initialize();
+
+            // Initialize everything
             CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
             ScreensaverManager.AddonSavers.Add("personlookup", new PersonLookupDisplay());
 
