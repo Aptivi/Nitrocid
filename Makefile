@@ -21,7 +21,7 @@ BINARIES = assets/ks-n assets/ks-jl
 MANUALS = assets/*.1
 DESKTOPS = assets/ks.desktop
 BRANDINGS = public/Nitrocid/OfficialAppIcon-KernelSimulator-512.png
-ARCH := $(shell if [[ `uname -m` == "x86_64" ]]; then echo "linux-x64"; else echo "linux-arm64"; fi)
+ARCH := $(shell if [ `uname -m` == "x86_64" ]; then echo "linux-x64"; else echo "linux-arm64"; fi)
 
 .PHONY: all debian-install
 
