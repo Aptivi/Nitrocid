@@ -109,12 +109,12 @@ namespace Nitrocid.Tests.Network
         /// Tests getting network connections
         /// </summary>
         [TestMethod]
-        [DataRow(NetworkConnectionType.FTP, 0)]
-        [DataRow(NetworkConnectionType.HTTP, 1)]
-        [DataRow(NetworkConnectionType.Mail, 2)]
-        [DataRow(NetworkConnectionType.RSS, 3)]
-        [DataRow(NetworkConnectionType.SFTP, 4)]
-        [DataRow(NetworkConnectionType.SSH, 5)]
+        [DataRow(NetworkConnectionType.FTP, 1)]
+        [DataRow(NetworkConnectionType.HTTP, 3)]
+        [DataRow(NetworkConnectionType.Mail, 0)]
+        [DataRow(NetworkConnectionType.RSS, 2)]
+        [DataRow(NetworkConnectionType.SFTP, 5)]
+        [DataRow(NetworkConnectionType.SSH, 4)]
         [Description("Action")]
         public void TestGetConnectionIndex(NetworkConnectionType type, int expectedIdx)
         {
@@ -153,12 +153,12 @@ namespace Nitrocid.Tests.Network
         /// Tests getting network connections
         /// </summary>
         [TestMethod]
-        [DataRow(NetworkConnectionType.FTP, 0)]
-        [DataRow(NetworkConnectionType.HTTP, 1)]
-        [DataRow(NetworkConnectionType.Mail, 2)]
-        [DataRow(NetworkConnectionType.RSS, 3)]
-        [DataRow(NetworkConnectionType.SFTP, 4)]
-        [DataRow(NetworkConnectionType.SSH, 5)]
+        [DataRow(NetworkConnectionType.FTP, 1)]
+        [DataRow(NetworkConnectionType.HTTP, 3)]
+        [DataRow(NetworkConnectionType.Mail, 0)]
+        [DataRow(NetworkConnectionType.RSS, 2)]
+        [DataRow(NetworkConnectionType.SFTP, 5)]
+        [DataRow(NetworkConnectionType.SSH, 4)]
         [Description("Action")]
         public void TestGetConnectionFromIndex(NetworkConnectionType type, int expectedIdx)
         {

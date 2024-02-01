@@ -188,7 +188,7 @@ namespace Nitrocid.Tests.ConsoleBase
                 var type = (ColorType)Enum.Parse(typeof(ColorType), typeName);
                 Should.NotThrow(() => color = ColorTools.GetRandomColor(type));
                 type = color.PlainSequence.Contains(';') ?
-                       ColorType.TrueColor : color.ColorEnum255 != (ConsoleColors)(-1) ?
+                       ColorType.TrueColor : color.ColorId.ColorId >= 16 ?
                        ColorType._255Color : ColorType._16Color;
                 color.ShouldNotBeNull();
                 color.Type.ShouldBe(type);
