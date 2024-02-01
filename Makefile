@@ -21,6 +21,7 @@ BINARIES = assets/ks-n assets/ks-jl
 MANUALS = assets/*.1
 DESKTOPS = assets/ks.desktop
 BRANDINGS = public/Nitrocid/OfficialAppIcon-KernelSimulator-512.png
+ARCH := $(shell if [[ `uname -m` == "x86_64" ]]; then echo "linux-x64"; else echo "linux-arm64"; fi)
 
 .PHONY: all debian-install
 
@@ -48,13 +49,15 @@ debian-install:
 	install -m 755 -t debian/kernel-simulator/usr/share/applications/ $(DESKTOPS)
 	install -m 755 -t debian/kernel-simulator/usr/lib/ks/ $(BRANDINGS)
 	mv debian/kernel-simulator/usr/bin/ks-n debian/kernel-simulator/usr/bin/ks
-	# We only support running debian-install for linux-x64 at the moment.
-	find debian/kernel-simulator/usr/lib/ks/runtimes/ -mindepth 1 -maxdepth 1 -not -name "linux-x64" -type d -exec rm -rf {} \;
-	find debian/kernel-simulator/usr/lib/ks/Addons/Extras.BassBoom/runtimes/ -mindepth 1 -maxdepth 1 -not -name "linux-x64" -type d -exec rm -rf {} \;
-	find debian/kernel-simulator/usr/lib/ks/Addons/Extras.GitShell/runtimes/ -mindepth 1 -maxdepth 1 -not -name "linux-x64" -type d -exec rm -rf {} \;
-	find debian/kernel-simulator/usr/lib/ks/Addons/Extras.Contacts/runtimes/ -mindepth 1 -maxdepth 1 -not -name "linux-x64" -type d -exec rm -rf {} \;
-	find debian/kernel-simulator/usr/lib/ks/Addons/Extras.MailShell/runtimes/ -mindepth 1 -maxdepth 1 -not -name "linux-x64" -type d -exec rm -rf {} \;
-	find debian/kernel-simulator/usr/lib/ks/Addons/Extras.SqlShell/runtimes/ -mindepth 1 -maxdepth 1 -not -name "linux-x64" -type d -exec rm -rf {} \;
+	find debian/kernel-simulator/usr/lib/ks/runtimes/ -mindepth 1 -maxdepth 1 -not -name $(ARCH) -type d -exec rm -rf {} \;
+	find debian/kernel-simulator/usr/lib/ks/Addons/Extras.BassBoom/runtimes/ -mindepth 1 -maxdepth 1 -not -name $(ARCH) -type d -exec rm -rf {} \;
+	find debian/kernel-simulator/usr/lib/ks/Addons/Extras.GitShell/runtimes/ -mindepth 1 -maxdepth 1 -not -name $(ARCH) -type d -exec rm -rf {} \;
+	find debian/kernel-simulator/usr/lib/ks/Addons/Extras.Contacts/runtimes/ -mindepth 1 -maxdepth 1 -not -name $(ARCH) -type d -exec rm -rf {} \;
+	find debian/kernel-simulator/usr/lib/ks/Addons/Extras.MailShell/runtimes/ -mindepth 1 -maxdepth 1 -not -name $(ARCH) -type d -exec rm -rf {} \;
+	find debian/kernel-simulator/usr/lib/ks/Addons/Extras.SqlShell/runtimes/ -mindepth 1 -maxdepth 1 -not -name $(ARCH) -type d -exec rm -rf {} \;
+
+echo-arch:
+	@echo $(ARCH)
 
 clean:
 	rm -rf $(OUTPUTS)
