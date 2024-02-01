@@ -18,4 +18,4 @@ If you wish to contribute to the documentation of the API, go to the Nitrocid KS
 
 Any meaningful contributions are welcome.
 
-Copyright (c) 2018 - 2023 Aptivi. All rights reserved.
+Copyright (c) 2018 - 2024 Aptivi. All rights reserved.
