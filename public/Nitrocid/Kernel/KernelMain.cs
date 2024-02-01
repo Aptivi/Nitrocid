@@ -48,7 +48,7 @@ namespace Nitrocid.Kernel
         private static readonly Version kernelVersion =
             Assembly.GetExecutingAssembly().GetName().Version;
         private static readonly SemVer kernelVersionFull =
-            SemVer.ParseWithRev($"{kernelVersion}-rc");
+            SemVer.ParseWithRev($"{kernelVersion}");
         private static readonly Version kernelApiVersion =
             new(FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).FileVersion);
 
