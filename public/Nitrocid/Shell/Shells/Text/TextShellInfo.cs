@@ -223,7 +223,7 @@ namespace Nitrocid.Shell.Shells.Text
                     new CommandArgumentInfo()
                 ], new SaveCommand()),
 
-            new CommandInfo("tui", /* Localizable */ "Opens the interactive text editor TUI",
+            new CommandInfo("tui", /* Localizable */ "Opens the interactive editor",
                 [
                     new CommandArgumentInfo()
                 ], new TuiCommand()),

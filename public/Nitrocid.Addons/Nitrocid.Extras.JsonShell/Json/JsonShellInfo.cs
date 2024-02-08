@@ -157,7 +157,7 @@ namespace Nitrocid.Extras.JsonShell.Json
                     ])
                 ], new SetCommand()),
 
-            new CommandInfo("tui", /* Localizable */ "Opens the JSON file in the interactive text editor TUI",
+            new CommandInfo("tui", /* Localizable */ "Opens the JSON file in the interactive editor",
                 [
                     new CommandArgumentInfo()
                 ], new TuiCommand()),

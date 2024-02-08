@@ -26,7 +26,7 @@ using System.Collections.Generic;
 namespace Nitrocid.Extras.JsonShell.Json.Commands
 {
     /// <summary>
-    /// Opens the JSON file in the interactive text editor TUI
+    /// Opens the JSON file in the interactive editor
     /// </summary>
     /// <remarks>
     /// This command will open the currently open JSON file in the interactive text editor.
