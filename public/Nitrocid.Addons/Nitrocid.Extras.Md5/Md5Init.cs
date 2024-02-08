@@ -25,14 +25,14 @@ using System;
 using System.Collections.ObjectModel;
 using System.Reflection;
 
-namespace Nitrocid.Extras.Crc32
+namespace Nitrocid.Extras.Md5
 {
-    internal class Crc32Init : IAddon
+    internal class Md5Init : IAddon
     {
-        private readonly CRC32 singleton = new();
+        private readonly MD5 singleton = new();
 
         string IAddon.AddonName =>
-            InterAddonTranslations.GetAddonName(KnownAddons.ExtrasCrc32);
+            InterAddonTranslations.GetAddonName(KnownAddons.ExtrasMd5);
 
         ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
 

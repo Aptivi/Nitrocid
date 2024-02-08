@@ -121,6 +121,10 @@ namespace Nitrocid.Kernel.Extensions
         /// </summary>
         ExtrasMailShell,
         /// <summary>
+        /// MD5 Extras addon
+        /// </summary>
+        ExtrasMd5,
+        /// <summary>
         /// Name Generator Extras addon
         /// </summary>
         ExtrasNameGen,

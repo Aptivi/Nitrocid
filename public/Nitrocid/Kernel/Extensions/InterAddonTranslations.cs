@@ -55,6 +55,7 @@ namespace Nitrocid.Kernel.Extensions
             { KnownAddons.ExtrasJsonShell,              /* Localizable */ "Extras - JSON Shell" },
             { KnownAddons.ExtrasLanguageStudio,         /* Localizable */ "Extras - Language Studio" },
             { KnownAddons.ExtrasMailShell,              /* Localizable */ "Extras - Mail Shell" },
+            { KnownAddons.ExtrasMd5,                    /* Localizable */ "Extras - MD5" },
             { KnownAddons.ExtrasNameGen,                /* Localizable */ "Extras - NameGen" },
             { KnownAddons.ExtrasNotes,                  /* Localizable */ "Extras - Notes" },
             { KnownAddons.ExtrasRssShell,               /* Localizable */ "Extras - RSS Shell" },

@@ -108,7 +108,6 @@ namespace Nitrocid.Drivers
                 DriverTypes.Encryption, new()
                 {
                     { "Default", new SHA256() },
-                    { "MD5", new MD5() },
                     { "SHA1", new SHA1() },
                     { "SHA256", new SHA256() },
                     { "SHA384", new SHA384() },
