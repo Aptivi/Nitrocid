@@ -62,83 +62,10 @@ namespace Nitrocid.Extras.JsonShell.Json
                     ])
                 ], new AddCommand()),
 
-            new CommandInfo("addarray", /* Localizable */ "Adds a new property containing the array",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "propName"),
-                        new CommandArgumentPart(true, "propValue1"),
-                        new CommandArgumentPart(false, "propValue2"),
-                        new CommandArgumentPart(false, "propValue3...")
-                    ],
-                    [
-                        new SwitchInfo("parentProperty", /* Localizable */ "Specifies the parent property", new SwitchOptions()
-                        {
-                            ArgumentsRequired = true
-                        })
-                    ])
-                ], new AddArrayCommand(), CommandFlags.Obsolete),
-
-            new CommandInfo("addproperty", /* Localizable */ "Adds a new property at the end of the JSON file",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "propName"),
-                        new CommandArgumentPart(true, "propValue")
-                    ],
-                    [
-                        new SwitchInfo("parentProperty", /* Localizable */ "Specifies the parent property", new SwitchOptions()
-                        {
-                            ArgumentsRequired = true
-                        })
-                    ])
-                ], new AddPropertyCommand(), CommandFlags.Obsolete),
-
-            new CommandInfo("addobject", /* Localizable */ "Adds a new object inside the array",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "arrayName"),
-                        new CommandArgumentPart(true, "valueInArray")
-                    ],
-                    [
-                        new SwitchInfo("parentProperty", /* Localizable */ "Specifies the parent property", new SwitchOptions()
-                        {
-                            ArgumentsRequired = true
-                        })
-                    ])
-                ], new AddObjectCommand(), CommandFlags.Obsolete),
-
-            new CommandInfo("addobjectindexed", /* Localizable */ "Adds a new object inside an object specified by index",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "index", new CommandArgumentPartOptions()
-                        {
-                            IsNumeric = true
-                        }),
-                        new CommandArgumentPart(true, "valueInArray")
-                    ],
-                    [
-                        new SwitchInfo("parentProperty", /* Localizable */ "Specifies the parent property", new SwitchOptions()
-                        {
-                            ArgumentsRequired = true
-                        })
-                    ])
-                ], new AddObjectIndexedCommand(), CommandFlags.Obsolete),
-
             new CommandInfo("clear", /* Localizable */ "Clears the JSON file",
                 [
                     new CommandArgumentInfo()
                 ], new ClearCommand()),
-
-            new CommandInfo("delproperty", /* Localizable */ "Removes a property from the JSON file",
-                [
-                    new CommandArgumentInfo(new[]
-                    {
-                        new CommandArgumentPart(true, "propertyName")
-                    })
-                ], new DelPropertyCommand(), CommandFlags.Obsolete),
 
             new CommandInfo("exitnosave", /* Localizable */ "Exits the JSON shell without saving the changes",
                 [
@@ -189,37 +116,6 @@ namespace Nitrocid.Extras.JsonShell.Json
                         new CommandArgumentPart(true, "objectPath")
                     })
                 ], new RmCommand()),
-
-            new CommandInfo("rmobject", /* Localizable */ "Removes an object",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "objectName")
-                    ],
-                    [
-                        new SwitchInfo("parentProperty", /* Localizable */ "Specifies the parent property", new SwitchOptions()
-                        {
-                            ArgumentsRequired = true
-                        })
-                    ])
-                ], new RmObjectCommand(), CommandFlags.Obsolete),
-
-            new CommandInfo("rmobjectindexed", /* Localizable */ "Removes an object specified by index",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "index", new CommandArgumentPartOptions()
-                        {
-                            IsNumeric = true
-                        })
-                    ],
-                    [
-                        new SwitchInfo("parentProperty", /* Localizable */ "Specifies the parent property", new SwitchOptions()
-                        {
-                            ArgumentsRequired = true
-                        })
-                    ])
-                ], new RmObjectIndexedCommand(), CommandFlags.Obsolete),
 
             new CommandInfo("save", /* Localizable */ "Saves the JSON file",
                 [
