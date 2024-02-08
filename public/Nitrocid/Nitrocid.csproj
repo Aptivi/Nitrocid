@@ -14,6 +14,7 @@
     <!-- MSBuild Tags -->
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <IncludeSymbols>True</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <PackageOutputPath>KSBuild</PackageOutputPath>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <!-- Repository set up -->

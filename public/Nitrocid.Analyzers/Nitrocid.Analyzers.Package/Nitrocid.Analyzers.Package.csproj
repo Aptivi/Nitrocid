@@ -21,6 +21,7 @@
     <!-- MSBuild Tags -->
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <IncludeSymbols>True</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <PackageOutputPath>../../Nitrocid/KSAnalyzer</PackageOutputPath>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <!-- Repository set up -->
@@ -52,11 +53,11 @@
     </ItemGroup>
   </Target>
 
-<!-- KS Package Files -->
-<ItemGroup>
+  <!-- KS Package Files -->
+  <ItemGroup>
     <None Include="..\..\Nitrocid\OfficialAppIcon-KernelSimulator-512.png" Pack="true" PackagePath="\" />
     <None Include="..\..\..\README.md" Pack="true" PackagePath="\" />
-</ItemGroup>
-<!-- KS Package Files End -->
+  </ItemGroup>
+  <!-- KS Package Files End -->
 
 </Project>

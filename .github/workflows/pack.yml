@@ -20,5 +20,5 @@ jobs:
     - name: Solution Compilation
       run: dotnet build --configuration Release
     - name: Package Publication
-      run: dotnet nuget push "public/Nitrocid/KSBuild/*.symbols.nupkg" --api-key ${{ secrets.NUGET_APIKEY }} --source "nuget.org"
+      run: dotnet nuget push "public/Nitrocid/KSBuild/*.nupkg" --api-key ${{ secrets.NUGET_APIKEY }} --source "nuget.org"
         
