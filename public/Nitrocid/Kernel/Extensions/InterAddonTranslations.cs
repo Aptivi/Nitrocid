@@ -60,6 +60,7 @@ namespace Nitrocid.Kernel.Extensions
             { KnownAddons.ExtrasNotes,                  /* Localizable */ "Extras - Notes" },
             { KnownAddons.ExtrasRssShell,               /* Localizable */ "Extras - RSS Shell" },
             { KnownAddons.ExtrasSftpShell,              /* Localizable */ "Extras - SFTP Shell" },
+            { KnownAddons.ExtrasSha1,                   /* Localizable */ "Extras - SHA1" },
             { KnownAddons.ExtrasSqlShell,               /* Localizable */ "Extras - SQL Shell" },
             { KnownAddons.ExtrasThemeStudio,            /* Localizable */ "Extras - Theme Studio" },
             { KnownAddons.ExtrasTimeInfo,               /* Localizable */ "Extras - Time Info" },

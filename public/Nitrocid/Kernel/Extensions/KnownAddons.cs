@@ -141,6 +141,10 @@ namespace Nitrocid.Kernel.Extensions
         /// </summary>
         ExtrasSftpShell,
         /// <summary>
+        /// SHA1 Extras addon
+        /// </summary>
+        ExtrasSha1,
+        /// <summary>
         /// SQL Shell Extras addon
         /// </summary>
         ExtrasSqlShell,
