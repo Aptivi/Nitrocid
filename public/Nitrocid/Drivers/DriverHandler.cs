@@ -109,7 +109,6 @@ namespace Nitrocid.Drivers
                 {
                     { "Default", new SHA256() },
                     { "SHA256", new SHA256() },
-                    { "SHA384", new SHA384() },
                     { "SHA512", new SHA512() }
                 }
             },

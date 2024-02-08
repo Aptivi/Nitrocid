@@ -17,6 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Nitrocid.Drivers;
+using Nitrocid.Drivers.Encryption;
 using Nitrocid.Kernel.Debugging;
 using System.IO;
 using System.Text.RegularExpressions;
@@ -24,7 +26,7 @@ using Encryptor = System.Security.Cryptography.SHA384;
 using FS = Nitrocid.Files.FilesystemTools;
 using TextEncoding = System.Text.Encoding;
 
-namespace Nitrocid.Drivers.Encryption.Bases
+namespace Nitrocid.Extras.Sha384
 {
     /// <summary>
     /// SHA384 encryptor

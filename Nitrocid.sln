@@ -152,6 +152,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nitrocid.Extras.Md5", "publ
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nitrocid.Extras.Sha1", "public\Nitrocid.Addons\Nitrocid.Extras.Sha1\Nitrocid.Extras.Sha1.csproj", "{BB2BCBE2-1F15-4B5F-927F-172B4B7FE9D4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nitrocid.Extras.Sha384", "public\Nitrocid.Addons\Nitrocid.Extras.Sha384\Nitrocid.Extras.Sha384.csproj", "{600337A5-0D56-476A-9428-52B1EF665950}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -366,6 +368,10 @@ Global
 		{BB2BCBE2-1F15-4B5F-927F-172B4B7FE9D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB2BCBE2-1F15-4B5F-927F-172B4B7FE9D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB2BCBE2-1F15-4B5F-927F-172B4B7FE9D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{600337A5-0D56-476A-9428-52B1EF665950}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{600337A5-0D56-476A-9428-52B1EF665950}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{600337A5-0D56-476A-9428-52B1EF665950}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{600337A5-0D56-476A-9428-52B1EF665950}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -428,6 +434,7 @@ Global
 		{6524403F-F55E-4E8D-8A63-8A7D2FA518D3} = {5427F963-3094-4111-AB05-DAE364A8DF67}
 		{CE5F80A9-B27E-4D16-AEBB-A09677E63012} = {B60F276A-FE12-4001-916E-080344ED1FD9}
 		{BB2BCBE2-1F15-4B5F-927F-172B4B7FE9D4} = {B60F276A-FE12-4001-916E-080344ED1FD9}
+		{600337A5-0D56-476A-9428-52B1EF665950} = {B60F276A-FE12-4001-916E-080344ED1FD9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {424D8E7A-CFEB-40AE-A79C-437D603177FD}
