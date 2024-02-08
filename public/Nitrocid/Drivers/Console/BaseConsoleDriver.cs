@@ -261,8 +261,8 @@ namespace Nitrocid.Drivers.Console
             {
                 if (loadBack)
                     SystemConsole.Write(ColorTools.CurrentBackgroundColor.VTSequenceBackground);
-                SystemConsole.Write(CsiSequences.GenerateCsiEraseInDisplay(2));
                 SetCursorPosition(0, 0);
+                SystemConsole.Write(CsiSequences.GenerateCsiEraseInDisplay(0));
             }
         }
 

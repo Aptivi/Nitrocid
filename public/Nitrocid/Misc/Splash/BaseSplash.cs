@@ -54,8 +54,8 @@ namespace Nitrocid.Misc.Splash
             DebugWriter.WriteDebug(DebugLevel.I, "Splash opening. Clearing console...");
             ColorTools.SetConsoleColor(KernelColorTools.GetColor(KernelColorType.Background), true);
             builder.Append(
-                CsiSequences.GenerateCsiEraseInDisplay(2) +
-                CsiSequences.GenerateCsiCursorPosition(1, 1)
+                CsiSequences.GenerateCsiCursorPosition(1, 1) +
+                CsiSequences.GenerateCsiEraseInDisplay(0)
             );
             return builder.ToString();
         }
@@ -81,8 +81,8 @@ namespace Nitrocid.Misc.Splash
             DebugWriter.WriteDebug(DebugLevel.I, "Splash closing. Clearing console...");
             ColorTools.SetConsoleColor(KernelColorTools.GetColor(KernelColorType.Background), true);
             builder.Append(
-                CsiSequences.GenerateCsiEraseInDisplay(2) +
-                CsiSequences.GenerateCsiCursorPosition(1, 1)
+                CsiSequences.GenerateCsiCursorPosition(1, 1) +
+                CsiSequences.GenerateCsiEraseInDisplay(0)
             );
             delayRequired = false;
             return builder.ToString();
