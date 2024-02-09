@@ -281,6 +281,7 @@ namespace Nitrocid.Kernel.Starting
 
         internal static void ResetEverything()
         {
+            var context = !PowerManager.KernelShutdown ? SplashContext.Rebooting : SplashContext.ShuttingDown;
             try
             {
                 // Reset every variable below
@@ -373,29 +374,20 @@ namespace Nitrocid.Kernel.Starting
             {
                 // We could fail with the debugger enabled
                 ColorTools.LoadBack();
-                if (!PowerManager.KernelShutdown)
-                    SplashManager.BeginSplashOut(SplashContext.Rebooting);
-                else
-                    SplashManager.BeginSplashOut(SplashContext.ShuttingDown);
+                SplashManager.BeginSplashOut(context);
                 DebugWriter.WriteDebug(DebugLevel.E, $"Failed to reset everything! {ex.Message}");
                 DebugWriter.WriteDebugStackTrace(ex);
                 InfoBoxColor.WriteInfoBox(
                     Translate.DoTranslation("The kernel failed to reset all the configuration to their initial states. Some of the components might have not unloaded correctly. If you're experiencing problems after the reboot, this might be the cause. Please shut down the kernel once rebooted.") + "\n\n" +
                     Translate.DoTranslation("Error information:") + $" {ex.Message}"
                 );
-                if (!PowerManager.KernelShutdown)
-                    SplashManager.BeginSplashOut(SplashContext.Rebooting);
-                else
-                    SplashManager.EndSplashOut(SplashContext.ShuttingDown);
+                SplashManager.EndSplashOut(context);
             }
             finally
             {
                 // Unload all custom splashes
                 SplashReport.ReportProgress(Translate.DoTranslation("Goodbye!"));
-                if (!PowerManager.KernelShutdown)
-                    SplashManager.CloseSplash(SplashContext.Rebooting);
-                else
-                    SplashManager.CloseSplash(SplashContext.ShuttingDown);
+                SplashManager.CloseSplash(context);
                 SplashManager.customSplashes.Clear();
 
                 // Clear remaining lists
