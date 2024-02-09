@@ -43,17 +43,12 @@ namespace Nitrocid.Shell.ShellBase.Commands
         /// </summary>
         Obsolete = 4,
         /// <summary>
-        /// The command is setting a variable.
-        /// </summary>
-        [Obsolete("-set=varname already exists. Use the AcceptsSet parameter from the CommandArgumentInfo constructor instead of this flag.")]
-        SettingVariable = 8,
-        /// <summary>
         /// Redirection is supported, meaning that all the output to the commands can be redirected to a file.
         /// </summary>
-        RedirectionSupported = 16,
+        RedirectionSupported = 8,
         /// <summary>
         /// This command is wrappable to pages.
         /// </summary>
-        Wrappable = 32,
+        Wrappable = 16,
     }
 }
