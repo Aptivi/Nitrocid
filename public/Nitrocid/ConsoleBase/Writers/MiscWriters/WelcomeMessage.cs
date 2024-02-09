@@ -156,6 +156,7 @@ namespace Nitrocid.ConsoleBase.Writers.MiscWriters
                 Translate.DoTranslation("We recommend against running this version of the kernel, because it is unsupported. If you have downloaded this kernel from unknown sources, this message may appear. Please download from our official downloads page.")
 #endif
             ;
+            string tip = Translate.DoTranslation("To dismiss forever, either press ENTER on the \"Acknowledged\" button here by highlighting it using the left arrow on your keyboard, or enable \"Development notice acknowledged\" in the kernel settings.");
 
             // Show development disclaimer
             if (SplashManager.EnableSplash)
@@ -167,14 +168,14 @@ namespace Nitrocid.ConsoleBase.Writers.MiscWriters
                 int answer = InfoBoxButtonsColor.WriteInfoBoxButtonsColor(
                     Translate.DoTranslation("Development notice"),
                     answers,
-                    $"{message}\n\n" + Translate.DoTranslation("To dismiss forever, press ENTER on \"Acknowledged\" or enable \"Development notice acknowledged\" in the kernel settings."),
+                    $"{message}\n\n{tip}",
                     KernelColorTools.GetColor(KernelColorType.DevelopmentWarning)
                 );
                 if (answer == 1)
                     Config.MainConfig.DevNoticeConsented = true;
             }
             else
-                TextWriters.Write($"* {message}", true, KernelColorType.DevelopmentWarning);
+                TextWriters.Write($"* {message}\n* {tip}", true, KernelColorType.DevelopmentWarning);
 #endif
         }
 
