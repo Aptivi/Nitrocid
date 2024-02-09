@@ -24,6 +24,7 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Events;
 using Nitrocid.Misc.Screensaver;
 using Terminaux.ResizeListener;
+using Terminaux.Reader;
 
 namespace Nitrocid.ConsoleBase
 {
@@ -64,6 +65,10 @@ namespace Nitrocid.ConsoleBase
             // Also, tell the screensaver application to refresh itself
             if (ScreensaverManager.InSaver)
                 ScreensaverDisplayer.displayingSaver.ScreensaverResizeSync();
+
+            // Also, tell the input reader to reset
+            if (TermReaderTools.Busy)
+                TermReaderTools.Refresh();
         }
     }
 }
