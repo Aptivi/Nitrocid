@@ -52,13 +52,13 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 else
                 {
                     TextWriterColor.Write(Translate.DoTranslation("Partition doesn't exist"));
-                    return 10000 + (int)KernelExceptionType.Hardware;
+                    return KernelExceptionTools.GetErrorCode(KernelExceptionType.Hardware);
                 }
             }
             else
             {
                 TextWriterColor.Write(Translate.DoTranslation("Disk doesn't exist"));
-                return 10000 + (int)KernelExceptionType.Hardware;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.Hardware);
             }
         }
 

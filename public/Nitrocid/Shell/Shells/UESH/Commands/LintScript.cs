@@ -46,7 +46,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 TextWriters.Write(Translate.DoTranslation("Script lint failed. Most likely there is a syntax error. Check your script for errors and retry running the linter."), true, KernelColorType.Error);
                 TextWriters.Write(kex.Message, true, KernelColorType.Error);
                 variableValue = "0";
-                return 10000 + (int)kex.ExceptionType;
+                return KernelExceptionTools.GetErrorCode(kex.ExceptionType);
             }
             catch (Exception ex)
             {

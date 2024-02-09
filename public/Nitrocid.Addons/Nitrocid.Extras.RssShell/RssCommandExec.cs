@@ -52,7 +52,7 @@ namespace Nitrocid.Extras.RssShell
                     if (string.IsNullOrEmpty(address) || !Uri.TryCreate(address, UriKind.Absolute, out Uri uri))
                     {
                         TextWriters.Write(Translate.DoTranslation("Error trying to parse the address. Make sure that you've written the address correctly."), KernelColorType.Error);
-                        return 10000 + (int)KernelExceptionType.RSSNetwork;
+                        return KernelExceptionTools.GetErrorCode(KernelExceptionType.RSSNetwork);
                     }
                     RssReaderCli.rssConnection = EstablishRssConnection(address);
                     ((RSSFeed)RssReaderCli.rssConnection.ConnectionInstance).Refresh();

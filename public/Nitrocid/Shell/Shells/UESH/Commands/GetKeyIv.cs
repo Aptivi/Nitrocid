@@ -44,7 +44,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             if (!driver.IsSymmetric)
             {
                 TextWriters.Write(Translate.DoTranslation("Only symmetric encoding algorithms which use both the key and the initialization vector are supported."), true, KernelColorType.Error);
-                return 10000 + (int)KernelExceptionType.Encoding;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.Encoding);
             }
 
             // Now, get the key and the IV

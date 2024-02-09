@@ -46,7 +46,7 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
             {
                 // There is invalid session number being requested
                 TextWriters.Write(Translate.DoTranslation("Invalid session number") + $" {sessionNumStr}", true, KernelColorType.Error);
-                return 10000 + (int)KernelExceptionType.Debug;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.Debug);
             }
 
             // Now, check to see if we have this session number. Get all the debug logs and compare.
@@ -70,7 +70,7 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
             {
                 // There is no such session number being requested
                 TextWriters.Write(Translate.DoTranslation("No such session number") + $" {sessionNumStr}", true, KernelColorType.Error);
-                return 10000 + (int)KernelExceptionType.Debug;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.Debug);
             }
 
             // Get the contents of the file and write it to the console

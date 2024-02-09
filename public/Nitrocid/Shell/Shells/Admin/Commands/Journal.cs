@@ -44,7 +44,7 @@ namespace Nitrocid.Shell.Shells.Admin.Commands
                 if (!int.TryParse(parameters.ArgumentsList[0], out int sessionNum))
                 {
                     TextWriters.Write(Translate.DoTranslation("Session number is invalid."), KernelColorType.Error);
-                    return 10000 + (int)KernelExceptionType.Journaling;
+                    return KernelExceptionTools.GetErrorCode(KernelExceptionType.Journaling);
                 }
                 var entries = JournalManager.GetJournalEntries(sessionNum);
                 JournalManager.PrintJournalLog(entries);

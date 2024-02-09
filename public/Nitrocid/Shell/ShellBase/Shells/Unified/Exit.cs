@@ -39,7 +39,7 @@ namespace Nitrocid.Shell.ShellBase.Shells.Unified
             if (ShellManager.IsOnMotherShell())
             {
                 TextWriters.Write(Translate.DoTranslation("You can't exit the mother shell. Did you mean to log out of your account, shut the kernel down, or reboot it?"), KernelColorType.Error);
-                return 10000 + (int)KernelExceptionType.ShellOperation;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.ShellOperation);
             }
             ShellManager.KillShell();
             return 0;

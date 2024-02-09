@@ -51,7 +51,7 @@ namespace Nitrocid.Extras.MailShell.Mail.Commands
                 else
                 {
                     TextWriters.Write(Translate.DoTranslation("Page is not a numeric value."), true, KernelColorType.Error);
-                    return 10000 + (int)KernelExceptionType.Mail;
+                    return KernelExceptionTools.GetErrorCode(KernelExceptionType.Mail);
                 }
             }
             else

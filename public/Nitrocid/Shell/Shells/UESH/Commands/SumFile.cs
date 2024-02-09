@@ -98,7 +98,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 else
                 {
                     TextWriters.Write(Translate.DoTranslation("Invalid encryption algorithm."), true, KernelColorType.Error);
-                    return 10000 + (int)KernelExceptionType.Encryption;
+                    return KernelExceptionTools.GetErrorCode(KernelExceptionType.Encryption);
                 }
                 if (!string.IsNullOrEmpty(@out))
                 {
@@ -111,7 +111,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             else
             {
                 TextWriters.Write(Translate.DoTranslation("{0} is not found."), true, KernelColorType.Error, file);
-                return 10000 + (int)KernelExceptionType.Encryption;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.Encryption);
             }
         }
 

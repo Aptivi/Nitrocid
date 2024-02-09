@@ -48,7 +48,7 @@ namespace Nitrocid.Extras.FtpShell.FTP.Commands
             else
             {
                 TextWriters.Write(Translate.DoTranslation("Failed to set permissions of {0} to {1}."), true, KernelColorType.Error, parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
-                return 10000 + (int)KernelExceptionType.FTPFilesystem;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.FTPFilesystem);
             }
         }
 

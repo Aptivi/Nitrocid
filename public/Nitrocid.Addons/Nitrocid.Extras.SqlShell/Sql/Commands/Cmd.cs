@@ -64,7 +64,7 @@ namespace Nitrocid.Extras.SqlShell.Sql.Commands
             else
             {
                 TextWriters.Write(Translate.DoTranslation("SQL command failed."), true, KernelColorType.Error);
-                return 10000 + (int)KernelExceptionType.SqlEditor;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.SqlEditor);
             }
         }
     }

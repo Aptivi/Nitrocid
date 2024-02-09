@@ -49,7 +49,7 @@ namespace Nitrocid.Extras.SftpShell.SFTP.Commands
             {
                 TextWriterColor.Write();
                 TextWriters.Write(Translate.DoTranslation("Download failed for file {0}."), true, KernelColorType.Error, parameters.ArgumentsList[0]);
-                return 10000 + (int)KernelExceptionType.SFTPFilesystem;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.SFTPFilesystem);
             }
         }
 

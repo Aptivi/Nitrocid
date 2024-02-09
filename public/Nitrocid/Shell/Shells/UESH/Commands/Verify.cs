@@ -94,19 +94,19 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             {
                 DebugWriter.WriteDebugStackTrace(ihae);
                 TextWriters.Write(Translate.DoTranslation("Invalid encryption algorithm."), true, KernelColorType.Error);
-                return 10000 + (int)ihae.ExceptionType;
+                return KernelExceptionTools.GetErrorCode(ihae.ExceptionType);
             }
             catch (KernelException ihe) when (ihe.ExceptionType == KernelExceptionType.InvalidHash)
             {
                 DebugWriter.WriteDebugStackTrace(ihe);
                 TextWriters.Write(Translate.DoTranslation("Hashes are malformed."), true, KernelColorType.Error);
-                return 10000 + (int)ihe.ExceptionType;
+                return KernelExceptionTools.GetErrorCode(ihe.ExceptionType);
             }
             catch (FileNotFoundException fnfe)
             {
                 DebugWriter.WriteDebugStackTrace(fnfe);
                 TextWriters.Write(Translate.DoTranslation("{0} is not found."), true, KernelColorType.Error, parameters.ArgumentsList[3]);
-                return 10000 + (int)KernelExceptionType.Encryption;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.Encryption);
             }
         }
 

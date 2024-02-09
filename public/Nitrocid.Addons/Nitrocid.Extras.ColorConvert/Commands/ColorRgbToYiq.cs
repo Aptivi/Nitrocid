@@ -41,17 +41,17 @@ namespace Nitrocid.Extras.ColorConvert.Commands
             if (!int.TryParse(parameters.ArgumentsList[0], out int R))
             {
                 TextWriters.Write(Translate.DoTranslation("The red color level must be numeric."), true, KernelColorType.Error);
-                return 10000 + (int)KernelExceptionType.Color;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.Color);
             }
             if (!int.TryParse(parameters.ArgumentsList[1], out int G))
             {
                 TextWriters.Write(Translate.DoTranslation("The green color level must be numeric."), true, KernelColorType.Error);
-                return 10000 + (int)KernelExceptionType.Color;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.Color);
             }
             if (!int.TryParse(parameters.ArgumentsList[2], out int B))
             {
                 TextWriters.Write(Translate.DoTranslation("The blue color level must be numeric."), true, KernelColorType.Error);
-                return 10000 + (int)KernelExceptionType.Color;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.Color);
             }
 
             // Do the job

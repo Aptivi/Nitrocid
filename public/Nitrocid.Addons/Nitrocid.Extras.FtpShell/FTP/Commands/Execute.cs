@@ -50,7 +50,7 @@ namespace Nitrocid.Extras.FtpShell.FTP.Commands
                 TextWriters.Write(">>> [{0}] M: {1}", true, KernelColorType.Error, ExecutedReply.Code, ExecutedReply.Message);
                 TextWriters.Write(">>> [{0}] I: {1}", true, KernelColorType.Error, ExecutedReply.Code, ExecutedReply.InfoMessages);
                 TextWriters.Write(">>> [{0}] E: {1}", true, KernelColorType.Error, ExecutedReply.Code, ExecutedReply.ErrorMessage);
-                return 10000 + (int)KernelExceptionType.FTPShell;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.FTPShell);
             }
         }
 

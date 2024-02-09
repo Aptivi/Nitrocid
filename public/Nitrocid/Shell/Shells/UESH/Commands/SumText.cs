@@ -73,7 +73,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             else
             {
                 TextWriters.Write(Translate.DoTranslation("Invalid encryption algorithm."), true, KernelColorType.Error);
-                return 10000 + (int)KernelExceptionType.Encryption;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.Encryption);
             }
             return 0;
         }

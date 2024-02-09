@@ -50,7 +50,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 if (parameters.ArgumentsList[3].Contains(' '))
                 {
                     TextWriters.Write(Translate.DoTranslation("Spaces are not allowed."), true, KernelColorType.Error);
-                    return 10000 + (int)KernelExceptionType.UserManagement;
+                    return KernelExceptionTools.GetErrorCode(KernelExceptionType.UserManagement);
                 }
                 else if (parameters.ArgumentsList[3] == parameters.ArgumentsList[2])
                 {
@@ -60,7 +60,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 else if (parameters.ArgumentsList[3] != parameters.ArgumentsList[2])
                 {
                     TextWriters.Write(Translate.DoTranslation("Passwords doesn't match."), true, KernelColorType.Error);
-                    return 10000 + (int)KernelExceptionType.UserManagement;
+                    return KernelExceptionTools.GetErrorCode(KernelExceptionType.UserManagement);
                 }
             }
             catch (Exception ex)

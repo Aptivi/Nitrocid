@@ -85,7 +85,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                     else
                     {
                         TextWriters.Write(Translate.DoTranslation("To get additional screensavers, install the screensaver pack addon."), true, KernelColorType.Error);
-                        return 10000 + (int)KernelExceptionType.Config;
+                        return KernelExceptionTools.GetErrorCode(KernelExceptionType.Config);
                     }
                 }
                 else if (parameters.SwitchesList[0] == "-splash")
@@ -95,7 +95,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                     else
                     {
                         TextWriters.Write(Translate.DoTranslation("To get additional splashes, install the splash pack addon."), true, KernelColorType.Error);
-                        return 10000 + (int)KernelExceptionType.Config;
+                        return KernelExceptionTools.GetErrorCode(KernelExceptionType.Config);
                     }
                 }
                 else if (parameters.SwitchesList[0] == "-driver")

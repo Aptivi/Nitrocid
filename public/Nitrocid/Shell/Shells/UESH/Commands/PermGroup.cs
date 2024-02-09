@@ -49,7 +49,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             {
                 // Permission not found
                 TextWriters.Write(Translate.DoTranslation("No such permission"), true, KernelColorType.Error);
-                return 10000 + (int)KernelExceptionType.PermissionManagement;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.PermissionManagement);
             }
 
             if (mode == "allow")
@@ -62,7 +62,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             {
                 // No mode
                 TextWriters.Write(Translate.DoTranslation("No such permission mode"), true, KernelColorType.Error);
-                return 10000 + (int)KernelExceptionType.PermissionManagement;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.PermissionManagement);
             }
             return 0;
         }

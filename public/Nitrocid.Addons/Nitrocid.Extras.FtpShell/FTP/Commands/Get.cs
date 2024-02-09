@@ -52,7 +52,7 @@ namespace Nitrocid.Extras.FtpShell.FTP.Commands
             {
                 TextWriterColor.Write();
                 TextWriters.Write(Translate.DoTranslation("Download failed for file {0}."), true, KernelColorType.Error, RemoteFile);
-                return 10000 + (int)KernelExceptionType.FTPNetwork;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.FTPNetwork);
             }
         }
 

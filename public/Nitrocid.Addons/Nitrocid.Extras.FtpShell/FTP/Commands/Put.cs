@@ -56,7 +56,7 @@ namespace Nitrocid.Extras.FtpShell.FTP.Commands
             {
                 TextWriterColor.Write();
                 TextWriters.Write(Translate.DoTranslation("Failed to upload {0}"), true, KernelColorType.Error, LocalFile);
-                return 10000 + (int)KernelExceptionType.FTPFilesystem;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.FTPFilesystem);
             }
         }
 

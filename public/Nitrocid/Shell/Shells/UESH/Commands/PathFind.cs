@@ -48,7 +48,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             {
                 TextWriters.Write(Translate.DoTranslation("File not found in path lookup directories."), true, KernelColorType.Warning);
                 variableValue = "";
-                return 10000 + (int)KernelExceptionType.Filesystem;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.Filesystem);
             }
         }
     }

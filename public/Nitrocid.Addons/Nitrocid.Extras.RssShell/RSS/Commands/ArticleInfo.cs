@@ -47,7 +47,7 @@ namespace Nitrocid.Extras.RssShell.RSS.Commands
             {
                 TextWriters.Write(Translate.DoTranslation("Article number couldn't be bigger than the available articles."), true, KernelColorType.Error);
                 DebugWriter.WriteDebug(DebugLevel.E, "Tried to access article number {0}, but count is {1}.", ArticleIndex, RSSShellCommon.RSSFeedInstance.FeedArticles.Count - 1);
-                return 10000 + (int)KernelExceptionType.RSSShell;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.RSSShell);
             }
             else
             {

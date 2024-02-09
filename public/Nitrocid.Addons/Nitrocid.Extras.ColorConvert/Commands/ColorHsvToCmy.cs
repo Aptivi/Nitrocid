@@ -42,17 +42,17 @@ namespace Nitrocid.Extras.ColorConvert.Commands
             if (!int.TryParse(parameters.ArgumentsList[0], out int H))
             {
                 TextWriters.Write(Translate.DoTranslation("The hue level must be numeric."), true, KernelColorType.Error);
-                return 10000 + (int)KernelExceptionType.Color;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.Color);
             }
             if (!int.TryParse(parameters.ArgumentsList[1], out int S))
             {
                 TextWriters.Write(Translate.DoTranslation("The saturation level must be numeric."), true, KernelColorType.Error);
-                return 10000 + (int)KernelExceptionType.Color;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.Color);
             }
             if (!int.TryParse(parameters.ArgumentsList[2], out int V))
             {
                 TextWriters.Write(Translate.DoTranslation("The value level must be numeric."), true, KernelColorType.Error);
-                return 10000 + (int)KernelExceptionType.Color;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.Color);
             }
 
             // Do the job

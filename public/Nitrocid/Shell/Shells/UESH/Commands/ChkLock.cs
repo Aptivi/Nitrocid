@@ -58,7 +58,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                     return 0;
                 }
                 else
-                    return 10000 + (int)KernelExceptionType.Filesystem;
+                    return KernelExceptionTools.GetErrorCode(KernelExceptionType.Filesystem);
             }
             else
                 TextWriters.Write(Translate.DoTranslation("File or folder is not in use."), true, KernelColorType.Success);

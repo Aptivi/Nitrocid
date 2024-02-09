@@ -52,7 +52,7 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
             if (!contextValid)
             {
                 TextWriters.Write(Translate.DoTranslation("The splash context is not valid"), true, KernelColorType.Error);
-                return 10000 + (int)KernelExceptionType.Splash;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.Splash);
             }
 
             if (parameters.ArgumentsList.Length > 0)

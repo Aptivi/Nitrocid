@@ -63,7 +63,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 DebugWriter.WriteDebug(DebugLevel.E, $"Error trying to fetch the addon package: {ex.Message}");
                 DebugWriter.WriteDebugStackTrace(ex);
                 TextWriters.Write(Translate.DoTranslation("Failed to fetch the addon package") + $": {ex.Message}", KernelColorType.Error);
-                return 10000 + (int)KernelExceptionType.AddonManagement;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.AddonManagement);
             }
 
             // Now, try to download the addons package
@@ -77,7 +77,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 DebugWriter.WriteDebug(DebugLevel.E, $"Error trying to download the addon package: {ex.Message}");
                 DebugWriter.WriteDebugStackTrace(ex);
                 TextWriters.Write(Translate.DoTranslation("Failed to download the addon package") + $": {ex.Message}", KernelColorType.Error);
-                return 10000 + (int)KernelExceptionType.AddonManagement;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.AddonManagement);
             }
 
             // Finally, try to install the addons package
@@ -91,7 +91,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 DebugWriter.WriteDebug(DebugLevel.E, $"Error trying to install the addon package: {ex.Message}");
                 DebugWriter.WriteDebugStackTrace(ex);
                 TextWriters.Write(Translate.DoTranslation("Failed to install the addon package") + $": {ex.Message}", KernelColorType.Error);
-                return 10000 + (int)KernelExceptionType.AddonManagement;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.AddonManagement);
             }
             return 0;
         }

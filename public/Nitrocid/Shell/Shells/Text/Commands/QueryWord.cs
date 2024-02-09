@@ -65,7 +65,7 @@ namespace Nitrocid.Shell.Shells.Text.Commands
                     else
                     {
                         TextWriters.Write(Translate.DoTranslation("The specified line number may not be larger than the last file line number."), true, KernelColorType.Error);
-                        return 10000 + (int)KernelExceptionType.TextEditor;
+                        return KernelExceptionTools.GetErrorCode(KernelExceptionType.TextEditor);
                     }
                 }
                 else if (parameters.ArgumentsList[1].Equals("all", StringComparison.OrdinalIgnoreCase))
@@ -120,7 +120,7 @@ namespace Nitrocid.Shell.Shells.Text.Commands
                     else
                     {
                         TextWriters.Write(Translate.DoTranslation("The specified line number may not be larger than the last file line number."), true, KernelColorType.Error);
-                        return 10000 + (int)KernelExceptionType.TextEditor;
+                        return KernelExceptionTools.GetErrorCode(KernelExceptionType.TextEditor);
                     }
                 }
             }

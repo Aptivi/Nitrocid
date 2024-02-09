@@ -47,12 +47,12 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             if (!Checking.Exists(target))
             {
                 TextWriters.Write(Translate.DoTranslation("The target file or directory isn't found."), KernelColorType.Error);
-                return 10000 + (int)KernelExceptionType.Filesystem;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.Filesystem);
             }
             if (Checking.Exists(linkName))
             {
                 TextWriters.Write(Translate.DoTranslation("Can't overwrite an existing file or directory with a symbolic link."), KernelColorType.Error);
-                return 10000 + (int)KernelExceptionType.Filesystem;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.Filesystem);
             }
             try
             {
@@ -61,7 +61,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             catch (Exception ex)
             {
                 TextWriters.Write(Translate.DoTranslation("Can't make a symbolic link.") + $"{ex.Message}", KernelColorType.Error);
-                return 10000 + (int)KernelExceptionType.Filesystem;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.Filesystem);
             }
             return 0;
         }

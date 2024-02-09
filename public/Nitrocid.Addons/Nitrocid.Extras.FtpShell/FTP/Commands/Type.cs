@@ -57,7 +57,7 @@ namespace Nitrocid.Extras.FtpShell.FTP.Commands
             else
             {
                 TextWriters.Write(Translate.DoTranslation("Invalid data type."), true, KernelColorType.Error);
-                return 10000 + (int)KernelExceptionType.FTPFilesystem;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.FTPFilesystem);
             }
         }
 

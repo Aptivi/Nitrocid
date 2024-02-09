@@ -46,12 +46,12 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             if (!Checking.FileExists(pathOne))
             {
                 TextWriters.Write(Translate.DoTranslation("Source file doesn't exist."), KernelColorType.Error);
-                return 10000 + (int)KernelExceptionType.Filesystem;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.Filesystem);
             }
             if (!Checking.FileExists(pathTwo))
             {
                 TextWriters.Write(Translate.DoTranslation("Target file doesn't exist."), KernelColorType.Error);
-                return 10000 + (int)KernelExceptionType.Filesystem;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.Filesystem);
             }
             var compared = Manipulation.Compare(pathOne, pathTwo);
             if (compared.Length == 0)

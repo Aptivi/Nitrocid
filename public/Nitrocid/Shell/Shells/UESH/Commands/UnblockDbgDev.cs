@@ -50,13 +50,13 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 else
                 {
                     TextWriterColor.Write(Translate.DoTranslation("Failed to unblock {0}."), address);
-                    return 10000 + (int)KernelExceptionType.Debug;
+                    return KernelExceptionTools.GetErrorCode(KernelExceptionType.Debug);
                 }
             }
             else
             {
                 TextWriterColor.Write(Translate.DoTranslation("{0} is not blocked yet."), address);
-                return 10000 + (int)KernelExceptionType.Debug;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.Debug);
             }
         }
 

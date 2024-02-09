@@ -59,7 +59,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 else
                 {
                     TextWriters.Write(Translate.DoTranslation("Passwords don't match."), true, KernelColorType.Error);
-                    return 10000 + (int)KernelExceptionType.UserManagement;
+                    return KernelExceptionTools.GetErrorCode(KernelExceptionType.UserManagement);
                 }
             }
             return 0;

@@ -50,7 +50,7 @@ namespace Nitrocid.Shell.Shells.Admin.Commands
             else
             {
                 TextWriterColor.Write(Translate.DoTranslation("The full name is empty."));
-                return 10000 + (int)KernelExceptionType.UserManagement;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.UserManagement);
             }
             return 0;
         }

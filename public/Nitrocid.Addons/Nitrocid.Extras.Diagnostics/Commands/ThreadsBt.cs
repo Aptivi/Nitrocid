@@ -45,7 +45,7 @@ namespace Nitrocid.Extras.Diagnostics.Commands
             if (KernelPlatform.IsOnWindows() && !OperatingSystem.IsWindowsVersionAtLeast(6, 3))
             {
                 TextWriters.Write(Translate.DoTranslation("We believe that you're running Windows 8 or lower. This operation is not supported."), true, KernelColorType.Error);
-                return 10000 + (int)KernelExceptionType.Debug;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.Debug);
             }
 
             // Print the list
@@ -67,7 +67,7 @@ namespace Nitrocid.Extras.Diagnostics.Commands
             if (KernelPlatform.IsOnWindows() && !OperatingSystem.IsWindowsVersionAtLeast(6, 3))
             {
                 TextWriters.Write(Translate.DoTranslation("We believe that you're running Windows 8 or lower. This operation is not supported."), true, KernelColorType.Error);
-                return 10000 + (int)KernelExceptionType.Debug;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.Debug);
             }
 
             // Print the list in a dumb-friendly way

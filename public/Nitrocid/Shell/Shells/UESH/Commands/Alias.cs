@@ -74,7 +74,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 else
                 {
                     TextWriters.Write(Translate.DoTranslation("Invalid type {0}."), KernelColorType.Error, type);
-                    return 10000 + (int)KernelExceptionType.AliasNoSuchType;
+                    return KernelExceptionTools.GetErrorCode(KernelExceptionType.AliasNoSuchType);
                 }
             }
             else if (parameters.ArgumentsList.Length == 3)
@@ -99,7 +99,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 else
                 {
                     TextWriters.Write(Translate.DoTranslation("Invalid type {0}."), KernelColorType.Error, type);
-                    return 10000 + (int)KernelExceptionType.AliasNoSuchType;
+                    return KernelExceptionTools.GetErrorCode(KernelExceptionType.AliasNoSuchType);
                 }
             }
 

@@ -40,22 +40,22 @@ namespace Nitrocid.Extras.ColorConvert.Commands
             if (!int.TryParse(parameters.ArgumentsList[0], out int C))
             {
                 TextWriters.Write(Translate.DoTranslation("The cyan color level must be numeric."), true, KernelColorType.Error);
-                return 10000 + (int)KernelExceptionType.Color;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.Color);
             }
             if (!int.TryParse(parameters.ArgumentsList[1], out int M))
             {
                 TextWriters.Write(Translate.DoTranslation("The magenta color level must be numeric."), true, KernelColorType.Error);
-                return 10000 + (int)KernelExceptionType.Color;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.Color);
             }
             if (!int.TryParse(parameters.ArgumentsList[2], out int Y))
             {
                 TextWriters.Write(Translate.DoTranslation("The yellow color level must be numeric."), true, KernelColorType.Error);
-                return 10000 + (int)KernelExceptionType.Color;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.Color);
             }
             if (!int.TryParse(parameters.ArgumentsList[3], out int K))
             {
                 TextWriters.Write(Translate.DoTranslation("The black key level must be numeric."), true, KernelColorType.Error);
-                return 10000 + (int)KernelExceptionType.Color;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.Color);
             }
 
             // Do the job

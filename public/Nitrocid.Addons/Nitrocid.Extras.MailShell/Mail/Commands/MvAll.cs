@@ -45,7 +45,7 @@ namespace Nitrocid.Extras.MailShell.Mail.Commands
             else
             {
                 TextWriters.Write(Translate.DoTranslation("Failed to move all mail made by {0}."), true, KernelColorType.Error, parameters.ArgumentsList[0]);
-                return 10000 + (int)KernelExceptionType.Mail;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.Mail);
             }
         }
 

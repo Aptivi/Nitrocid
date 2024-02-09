@@ -50,7 +50,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             else
             {
                 TextWriters.Write(Translate.DoTranslation("Error trying to dismiss notification."), true, KernelColorType.Error);
-                return 10000 + (int)KernelExceptionType.NotificationManagement;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.NotificationManagement);
             }
         }
 

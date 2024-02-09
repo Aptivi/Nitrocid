@@ -57,7 +57,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             else
             {
                 TextWriters.Write(Translate.DoTranslation("Debugging not enabled."), true, KernelColorType.Error);
-                return 10000 + (int)KernelExceptionType.Debug;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.Debug);
             }
         }
 

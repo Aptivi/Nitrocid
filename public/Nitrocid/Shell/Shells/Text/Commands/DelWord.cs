@@ -54,14 +54,14 @@ namespace Nitrocid.Shell.Shells.Text.Commands
                     else
                     {
                         TextWriters.Write(Translate.DoTranslation("The specified line number may not be larger than the last file line number."), true, KernelColorType.Error);
-                        return 10000 + (int)KernelExceptionType.TextEditor;
+                        return KernelExceptionTools.GetErrorCode(KernelExceptionType.TextEditor);
                     }
                 }
                 else
                 {
                     TextWriters.Write(Translate.DoTranslation("Specified line number {0} is not a valid number."), true, KernelColorType.Error, parameters.ArgumentsList[1]);
                     DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", parameters.ArgumentsList[1]);
-                    return 10000 + (int)KernelExceptionType.TextEditor;
+                    return KernelExceptionTools.GetErrorCode(KernelExceptionType.TextEditor);
                 }
             }
             else if (parameters.ArgumentsList.Length > 2)
@@ -83,14 +83,14 @@ namespace Nitrocid.Shell.Shells.Text.Commands
                     else
                     {
                         TextWriters.Write(Translate.DoTranslation("The specified line number may not be larger than the last file line number."), true, KernelColorType.Error);
-                        return 10000 + (int)KernelExceptionType.TextEditor;
+                        return KernelExceptionTools.GetErrorCode(KernelExceptionType.TextEditor);
                     }
                 }
                 else
                 {
                     TextWriters.Write(Translate.DoTranslation("Specified line number {0} is not a valid number."), true, KernelColorType.Error, parameters.ArgumentsList[1]);
                     DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", parameters.ArgumentsList[1]);
-                    return 10000 + (int)KernelExceptionType.TextEditor;
+                    return KernelExceptionTools.GetErrorCode(KernelExceptionType.TextEditor);
                 }
             }
             return 0;

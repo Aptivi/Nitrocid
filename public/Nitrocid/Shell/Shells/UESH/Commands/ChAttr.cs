@@ -85,7 +85,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                         else
                         {
                             TextWriterColor.Write(Translate.DoTranslation("Failed to add attribute.") + " {0}", parameters.ArgumentsList[2]);
-                            return 10000 + (int)KernelExceptionType.Filesystem;
+                            return KernelExceptionTools.GetErrorCode(KernelExceptionType.Filesystem);
                         }
                     }
                     else if (parameters.ArgumentsList[1] == "rem")
@@ -99,20 +99,20 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                         else
                         {
                             TextWriterColor.Write(Translate.DoTranslation("Failed to remove attribute.") + " {0}", parameters.ArgumentsList[2]);
-                            return 10000 + (int)KernelExceptionType.Filesystem;
+                            return KernelExceptionTools.GetErrorCode(KernelExceptionType.Filesystem);
                         }
                     }
                 }
                 else
                 {
                     TextWriters.Write(Translate.DoTranslation("Attribute \"{0}\" is invalid."), true, KernelColorType.Error, parameters.ArgumentsList[2]);
-                    return 10000 + (int)KernelExceptionType.Filesystem;
+                    return KernelExceptionTools.GetErrorCode(KernelExceptionType.Filesystem);
                 }
             }
             else
             {
                 TextWriters.Write(Translate.DoTranslation("File not found."), true, KernelColorType.Error);
-                return 10000 + (int)KernelExceptionType.Filesystem;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.Filesystem);
             }
             return 0;
         }

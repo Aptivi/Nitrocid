@@ -59,7 +59,7 @@ namespace Nitrocid.Shell.Shells.Hex.Commands
                     {
                         TextWriters.Write(Translate.DoTranslation("The byte number is not numeric."), true, KernelColorType.Error);
                         DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", parameters.ArgumentsList[0]);
-                        return 10000 + (int)KernelExceptionType.HexEditor;
+                        return KernelExceptionTools.GetErrorCode(KernelExceptionType.HexEditor);
                     }
                 }
                 else
@@ -79,7 +79,7 @@ namespace Nitrocid.Shell.Shells.Hex.Commands
                     {
                         TextWriters.Write(Translate.DoTranslation("The byte number is not numeric."), true, KernelColorType.Error);
                         DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", parameters.ArgumentsList[0]);
-                        return 10000 + (int)KernelExceptionType.HexEditor;
+                        return KernelExceptionTools.GetErrorCode(KernelExceptionType.HexEditor);
                     }
                 }
             }

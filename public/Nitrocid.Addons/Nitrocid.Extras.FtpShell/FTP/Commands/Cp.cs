@@ -52,7 +52,7 @@ namespace Nitrocid.Extras.FtpShell.FTP.Commands
             else
             {
                 TextWriters.Write(CharManager.NewLine + Translate.DoTranslation("Failed to copy {0} to {1}."), true, KernelColorType.Error, parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
-                return 10000 + (int)KernelExceptionType.Filesystem;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.Filesystem);
             }
         }
 

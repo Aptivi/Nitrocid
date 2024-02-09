@@ -115,14 +115,14 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                         {
                             TextWriters.Write(Translate.DoTranslation("Invalid command {0}. Check the usage below:"), true, KernelColorType.Error, CommandDriver);
                             HelpPrint.ShowHelp("driverman");
-                            return 10000 + (int)KernelExceptionType.DriverManagement;
+                            return KernelExceptionTools.GetErrorCode(KernelExceptionType.DriverManagement);
                         }
                 }
             }
             else
             {
                 TextWriters.Write(Translate.DoTranslation("Driver management is disabled in safe mode."), true, KernelColorType.Error);
-                return 10000 + (int)KernelExceptionType.DriverManagement;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.DriverManagement);
             }
             return 0;
         }

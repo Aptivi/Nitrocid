@@ -50,7 +50,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             if (UserManagement.CurrentUserInfo == root)
             {
                 TextWriterColor.Write(Translate.DoTranslation("You are already a superuser!"));
-                return 10000 + (int)KernelExceptionType.ShellOperation;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.ShellOperation);
             }
 
             // Now, prompt for the current username's password
@@ -74,7 +74,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                     ShellManager.GetLine(parameters.ArgumentsText);
                 }
                 else
-                    return 10000 + (int)KernelExceptionType.ShellOperation;
+                    return KernelExceptionTools.GetErrorCode(KernelExceptionType.ShellOperation);
             }
             catch (Exception ex)
             {

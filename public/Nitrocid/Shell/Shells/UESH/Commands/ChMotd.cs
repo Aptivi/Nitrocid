@@ -51,7 +51,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 if (string.IsNullOrEmpty(parameters.ArgumentsText))
                 {
                     TextWriters.Write(Translate.DoTranslation("Blank message of the day."), true, KernelColorType.Error);
-                    return 10000 + (int)KernelExceptionType.MOTD;
+                    return KernelExceptionTools.GetErrorCode(KernelExceptionType.MOTD);
                 }
                 else
                 {

@@ -61,7 +61,7 @@ namespace Nitrocid.Shell.Shells.Admin.Commands
             else
             {
                 TextWriterColor.Write(Translate.DoTranslation("You must turn on debug mode before you can clear debug log."));
-                return 10000 + (int)KernelExceptionType.Debug;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.Debug);
             }
         }
 

@@ -61,7 +61,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             else
             {
                 TextWriters.Write(Translate.DoTranslation("Screensaver {0} not found."), true, KernelColorType.Error, finalSaverName);
-                return 10000 + (int)KernelExceptionType.NoSuchScreensaver;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.NoSuchScreensaver);
             }
         }
 

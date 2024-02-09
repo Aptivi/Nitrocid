@@ -75,7 +75,7 @@ namespace Nitrocid.Shell.Shells.Admin.Commands
                     break;
                 default:
                     TextWriterColor.Write(Translate.DoTranslation("The specified main flag type is invalid") + ": {0}", type);
-                    return 10000 + (int)KernelExceptionType.UserManagement;
+                    return KernelExceptionTools.GetErrorCode(KernelExceptionType.UserManagement);
             }
             UserManagement.Users[userIndex].Flags = flags;
             UserManagement.SaveUsers();

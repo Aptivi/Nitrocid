@@ -65,13 +65,13 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                                 if (!(Parsing.TryParsePath(TargetLanguagePath) && Checking.FileExists(TargetLanguagePath)) && !LanguageManager.Languages.ContainsKey(TargetLanguage))
                                 {
                                     TextWriters.Write(Translate.DoTranslation("Language not found or file has invalid characters."), true, KernelColorType.Error);
-                                    return 10000 + (int)KernelExceptionType.NoSuchLanguage;
+                                    return KernelExceptionTools.GetErrorCode(KernelExceptionType.NoSuchLanguage);
                                 }
                             }
                             else
                             {
                                 TextWriters.Write(Translate.DoTranslation("Language is not specified."), true, KernelColorType.Error);
-                                return 10000 + (int)KernelExceptionType.NoSuchLanguage;
+                                return KernelExceptionTools.GetErrorCode(KernelExceptionType.NoSuchLanguage);
                             }
 
                             break;
@@ -133,14 +133,14 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                         {
                             TextWriters.Write(Translate.DoTranslation("Invalid command {0}. Check the usage below:"), true, KernelColorType.Error, CommandMode);
                             HelpPrint.ShowHelp("langman");
-                            return 10000 + (int)KernelExceptionType.LanguageManagement;
+                            return KernelExceptionTools.GetErrorCode(KernelExceptionType.LanguageManagement);
                         }
                 }
             }
             else
             {
                 TextWriters.Write(Translate.DoTranslation("Language management is disabled in safe mode."), true, KernelColorType.Error);
-                return 10000 + (int)KernelExceptionType.LanguageManagement;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.LanguageManagement);
             }
             return 0;
         }

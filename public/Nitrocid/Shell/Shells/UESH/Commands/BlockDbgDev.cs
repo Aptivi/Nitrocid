@@ -52,13 +52,13 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 else
                 {
                     TextWriterColor.Write(Translate.DoTranslation("Failed to block {0}."), address);
-                    return 10000 + (int)KernelExceptionType.RemoteDebugDeviceOperation;
+                    return KernelExceptionTools.GetErrorCode(KernelExceptionType.RemoteDebugDeviceOperation);
                 }
             }
             else
             {
                 TextWriterColor.Write(Translate.DoTranslation("{0} is already blocked."), address);
-                return 10000 + (int)KernelExceptionType.RemoteDebugDeviceOperation;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.RemoteDebugDeviceOperation);
             }
         }
 

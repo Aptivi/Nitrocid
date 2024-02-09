@@ -50,12 +50,12 @@ namespace Nitrocid.Extras.JsonShell.Json.Commands
             catch (KernelException kex)
             {
                 TextWriters.Write(kex.Message, KernelColorType.Error);
-                return 10000 + (int)KernelExceptionType.JsonEditor;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.JsonEditor);
             }
             catch (Exception ex)
             {
                 TextWriters.Write(Translate.DoTranslation("The JSON shell failed to set an item.") + $" {ex.Message}", KernelColorType.Error);
-                return 10000 + (int)KernelExceptionType.JsonEditor;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.JsonEditor);
             }
             return 0;
         }

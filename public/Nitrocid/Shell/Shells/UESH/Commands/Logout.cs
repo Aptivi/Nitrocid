@@ -48,7 +48,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             else
             {
                 TextWriters.Write(Translate.DoTranslation("Cannot log out from the subshell."), true, KernelColorType.Error);
-                return 10000 + (int)KernelExceptionType.ShellOperation;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.ShellOperation);
             }
         }
 

@@ -47,7 +47,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             if (!LanguageManager.ListAllLanguages().ContainsKey(language))
             {
                 TextWriters.Write(Translate.DoTranslation("Invalid language") + $" {language}", true, KernelColorType.Error);
-                return 10000 + (int)KernelExceptionType.NoSuchLanguage;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.NoSuchLanguage);
             }
 
             // Change the language

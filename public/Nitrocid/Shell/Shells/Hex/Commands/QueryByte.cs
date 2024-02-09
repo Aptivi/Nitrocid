@@ -59,7 +59,7 @@ namespace Nitrocid.Shell.Shells.Hex.Commands
                     else
                     {
                         TextWriters.Write(Translate.DoTranslation("The specified byte number may not be larger than the file size."), true, KernelColorType.Error);
-                        return 10000 + (int)KernelExceptionType.HexEditor;
+                        return KernelExceptionTools.GetErrorCode(KernelExceptionType.HexEditor);
                     }
                 }
             }
@@ -79,7 +79,7 @@ namespace Nitrocid.Shell.Shells.Hex.Commands
                     else
                     {
                         TextWriters.Write(Translate.DoTranslation("The specified byte number may not be larger than the file size."), true, KernelColorType.Error);
-                        return 10000 + (int)KernelExceptionType.HexEditor;
+                        return KernelExceptionTools.GetErrorCode(KernelExceptionType.HexEditor);
                     }
                 }
             }

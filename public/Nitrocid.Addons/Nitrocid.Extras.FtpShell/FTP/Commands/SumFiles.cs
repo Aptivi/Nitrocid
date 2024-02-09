@@ -56,7 +56,7 @@ namespace Nitrocid.Extras.FtpShell.FTP.Commands
             else
             {
                 TextWriters.Write(Translate.DoTranslation("Invalid encryption algorithm."), true, KernelColorType.Error);
-                return 10000 + (int)KernelExceptionType.FTPFilesystem;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.FTPFilesystem);
             }
         }
 

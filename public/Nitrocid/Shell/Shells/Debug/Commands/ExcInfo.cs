@@ -43,7 +43,7 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
             {
                 // There is no such exception number being requested
                 TextWriters.Write(Translate.DoTranslation("No such exception type") + $" {exceptionStr}", true, KernelColorType.Error);
-                return 10000 + (int)KernelExceptionType.Debug;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.Debug);
             }
 
             // Get the exception type and its message

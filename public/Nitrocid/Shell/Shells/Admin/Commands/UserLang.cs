@@ -61,7 +61,7 @@ namespace Nitrocid.Shell.Shells.Admin.Commands
             else
             {
                 TextWriterColor.Write(Translate.DoTranslation("Invalid language") + " {0}", lang);
-                return 10000 + (int)KernelExceptionType.NoSuchLanguage;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.NoSuchLanguage);
             }
             return 0;
         }

@@ -52,14 +52,14 @@ namespace Nitrocid.Shell.Shells.Hex.Commands
                 else
                 {
                     TextWriters.Write(Translate.DoTranslation("The specified byte number may not be larger than the file size."), true, KernelColorType.Error);
-                    return 10000 + (int)KernelExceptionType.HexEditor;
+                    return KernelExceptionTools.GetErrorCode(KernelExceptionType.HexEditor);
                 }
             }
             else
             {
                 TextWriters.Write(Translate.DoTranslation("The byte number is not numeric."), true, KernelColorType.Error);
                 DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", parameters.ArgumentsList[1]);
-                return 10000 + (int)KernelExceptionType.HexEditor;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.HexEditor);
             }
         }
 

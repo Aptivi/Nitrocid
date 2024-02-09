@@ -49,7 +49,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Commands
             else
             {
                 TextWriters.Write(Translate.DoTranslation("File doesn't exist."), true, KernelColorType.Error);
-                return 10000 + (int)KernelExceptionType.Filesystem;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.Filesystem);
             }
             return 0;
         }

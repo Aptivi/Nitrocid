@@ -49,7 +49,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             if (!ModManager.Mods.TryGetValue(modName, out ModInfo mod))
             {
                 TextWriters.Write(Translate.DoTranslation("Tried to query the manuals for nonexistent mod {0}."), true, KernelColorType.Error, modName);
-                return 10000 + (int)KernelExceptionType.NoSuchMod;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.NoSuchMod);
             }
 
             // Check for accompanying manual pages for mods

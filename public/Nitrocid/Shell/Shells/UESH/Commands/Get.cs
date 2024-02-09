@@ -75,13 +75,13 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                         else
                         {
                             TextWriters.Write(Translate.DoTranslation("Specify the address"), true, KernelColorType.Error);
-                            return 10000 + (int)KernelExceptionType.HTTPNetwork;
+                            return KernelExceptionTools.GetErrorCode(KernelExceptionType.HTTPNetwork);
                         }
                     }
                     else
                     {
                         TextWriters.Write(Translate.DoTranslation("Please use \"ftp\" if you are going to download files from the FTP server."), true, KernelColorType.Error);
-                        return 10000 + (int)KernelExceptionType.HTTPNetwork;
+                        return KernelExceptionTools.GetErrorCode(KernelExceptionType.HTTPNetwork);
                     }
                 }
                 catch (Exception ex)

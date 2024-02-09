@@ -63,7 +63,7 @@ namespace Nitrocid.Extras.JsonShell.Commands
             else
             {
                 TextWriters.Write(Translate.DoTranslation("File {0} not found."), true, KernelColorType.Error, JsonFile);
-                return 10000 + (int)KernelExceptionType.JsonEditor;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.JsonEditor);
             }
         }
 

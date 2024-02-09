@@ -126,14 +126,14 @@ namespace Nitrocid.Extras.MailShell.Mail.Commands
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "See debug output to find what's wrong.");
                     TextWriters.Write(Translate.DoTranslation("Error sending message."), true, KernelColorType.Error);
-                    return 10000 + (int)KernelExceptionType.Mail;
+                    return KernelExceptionTools.GetErrorCode(KernelExceptionType.Mail);
                 }
             }
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Mail format unsatisfied." + Receiver);
                 TextWriters.Write(Translate.DoTranslation("Invalid e-mail address. Make sure you've written the address correctly and that it matches the format of the example shown:") + " john.s@example.com", true, KernelColorType.Error);
-                return 10000 + (int)KernelExceptionType.Mail;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.Mail);
             }
         }
 

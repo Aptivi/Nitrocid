@@ -63,7 +63,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             if (!AreAllInputsBinary && !AreAllInputsText)
             {
                 TextWriters.Write(Translate.DoTranslation("Can't combine a mix of text and binary files."), true, KernelColorType.Error);
-                return 10000 + (int)KernelExceptionType.Filesystem;
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.Filesystem);
             }
 
             // Make a combined content array
