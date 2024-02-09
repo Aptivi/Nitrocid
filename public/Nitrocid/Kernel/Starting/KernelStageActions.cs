@@ -45,6 +45,14 @@ namespace Nitrocid.Kernel.Starting
                 SplashManager.EndSplashOut(SplashManager.CurrentSplashContext);
             }
 
+            // If running on unusual environment, interrupt boot and show a message.
+            if (!KernelPlatform.IsOnUsualEnvironment())
+            {
+                SplashManager.BeginSplashOut(SplashManager.CurrentSplashContext);
+                WelcomeMessage.ShowUnusualEnvironmentWarning();
+                SplashManager.EndSplashOut(SplashManager.CurrentSplashContext);
+            }
+
             // Now, initialize remote debugger if the kernel is running in debug mode
             if (RemoteDebugger.RDebugAutoStart & KernelEntry.DebugMode)
             {

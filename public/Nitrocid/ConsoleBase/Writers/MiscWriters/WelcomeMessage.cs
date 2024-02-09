@@ -178,6 +178,27 @@ namespace Nitrocid.ConsoleBase.Writers.MiscWriters
 #endif
         }
 
+        internal static void ShowUnusualEnvironmentWarning()
+        {
+            string message = Translate.DoTranslation("You're running Nitrocid KS on an unusual environment. Please verify that you've started the kernel either directly or through GRILO. If you're sure that you've started the kernel in a usual way, it might be because you're running an unsupported version of Nitrocid KS.");
+
+            // Show unusual environment notice
+            if (SplashManager.EnableSplash)
+            {
+                InputChoiceInfo[] answers = [
+                    new InputChoiceInfo("ok", Translate.DoTranslation("OK")),
+                ];
+                int answer = InfoBoxButtonsColor.WriteInfoBoxButtonsColor(
+                    Translate.DoTranslation("Unusual environment notice"),
+                    answers,
+                    message,
+                    KernelColorTools.GetColor(KernelColorType.Warning)
+                );
+            }
+            else
+                TextWriters.Write($"* {message}", true, KernelColorType.Warning);
+        }
+
         internal static string GetRandomTip()
         {
             // Get a random tip
