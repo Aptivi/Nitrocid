@@ -333,13 +333,15 @@ namespace Nitrocid.Shell.ShellBase.Shells
                 // We need to put a synclock in the below steps, because the cancellation handlers seem to be taking their time to try to suppress the
                 // thread abort error messages. If the shell tried to write to the console while these handlers were still working, the command prompt
                 // would either be incomplete or not printed to the console at all.
+                string prompt = "";
                 lock (CancellationHandlers.GetCancelSyncLock(ShellType))
                 {
                     // Print a prompt
+                    var preset = PromptPresetManager.GetCurrentPresetBaseFromShell(ShellType);
                     if (!string.IsNullOrEmpty(FullCommand))
-                        PromptPresetManager.WriteShellCompletionPrompt(ShellType);
+                        prompt = preset.PresetPromptCompletion;
                     else
-                        PromptPresetManager.WriteShellPrompt(ShellType);
+                        prompt = preset.PresetPrompt;
                 }
 
                 // Raise shell initialization event
@@ -349,8 +351,8 @@ namespace Nitrocid.Shell.ShellBase.Shells
                 DebugWriter.WriteDebug(DebugLevel.I, "Waiting for command");
                 string strcommand =
                     shellInfo.OneLineWrap ?
-                    InputTools.ReadLineWrapped("", "", settings) :
-                    InputTools.ReadLine("", "", settings);
+                    InputTools.ReadLineWrapped(prompt, "", settings) :
+                    InputTools.ReadLine(prompt, "", settings);
                 DebugWriter.WriteDebug(DebugLevel.I, "Waited for command [{0}]", strcommand);
                 if (strcommand == ";")
                     strcommand = "";
