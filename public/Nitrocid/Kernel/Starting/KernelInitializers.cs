@@ -77,7 +77,7 @@ namespace Nitrocid.Kernel.Starting
                 {
                     if (!ConsoleExtensions.InitializeSequences())
                     {
-                        TextWriterColor.Write("Can not initialize VT sequences for your Windows terminal. Make sure that you're running Windows 10 or later.");
+                        TextWriterColor.Write(Translate.DoTranslation("Can not initialize VT sequences for your Windows terminal. Make sure that you're running Windows 10 or later."));
                         InputTools.DetectKeypress();
                     }
                 }
@@ -105,7 +105,7 @@ namespace Nitrocid.Kernel.Starting
             }
             catch (Exception ex)
             {
-                TextWriterColor.Write($"{ex}");
+                TextWriterColor.Write(Translate.DoTranslation("Failed to start critical components") + $": {ex}");
                 throw;
             }
         }
