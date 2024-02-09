@@ -915,17 +915,18 @@ namespace Nitrocid.Shell.ShellBase.Shells
         private static string InitializeRedirection(string Command)
         {
             // If requested command has output redirection sign after arguments, remove it from final command string and set output to that file
-            string RedirectionPattern = /*lang=regex*/ @"( (>>|>>>) .+?)+$";
+            string RedirectionPattern = /*lang=regex*/ @"(?:( (?:>>|>>>) )(.+?))+$";
             if (RegexpTools.IsMatch(Command, RedirectionPattern))
             {
                 var outputMatch = Regex.Match(Command, RedirectionPattern);
-                var outputFiles = outputMatch.Groups[1].Captures.Select((cap) => cap.Value);
+                var outputFiles = outputMatch.Groups[2].Captures.Select((cap) => cap.Value).ToArray();
+                var outputFileModes = outputMatch.Groups[1].Captures.Select((cap) => cap.Value).ToArray();
                 List<string> filePaths = [];
-                foreach (var outputFile in outputFiles)
+                for (int i = 0; i < outputFiles.Length; i++)
                 {
-                    bool isOverwrite = !outputFile.StartsWith(" >>> ");
-                    string OutputFileName = outputFile[(outputFile.LastIndexOf(">") + 2)..];
-                    string OutputFilePath = FilesystemTools.NeutralizePath(OutputFileName);
+                    string outputFile = outputFiles[i];
+                    bool isOverwrite = outputFileModes[i] != " >>> ";
+                    string OutputFilePath = FilesystemTools.NeutralizePath(outputFile);
                     DebugWriter.WriteDebug(DebugLevel.I, "Output redirection found for file {1} with overwrite mode [{0}].", isOverwrite, OutputFilePath);
                     if (isOverwrite)
                         Manipulation.ClearFile(OutputFilePath);
