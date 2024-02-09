@@ -87,10 +87,7 @@ namespace Nitrocid.Kernel.Starting
 
                 // Check to see if we have an appdata folder for KS
                 if (!Checking.FolderExists(PathsManagement.AppDataPath))
-                {
-                    KernelEntry.FirstTime = true;
                     Making.MakeDirectory(PathsManagement.AppDataPath, false);
-                }
 
                 // Set the first time run variable
                 if (Listing.GetFilesystemEntries(PathsManagement.AppDataPath).Length == 0)
