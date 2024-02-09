@@ -32,6 +32,7 @@ using Nitrocid.Kernel.Time.Renderers;
 using Nitrocid.Kernel.Time;
 using Nitrocid.Languages;
 using Terminaux.Base;
+using Nitrocid.Kernel.Configuration;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -69,7 +70,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             Color white = new(255, 255, 255);
             Color selectedColor = Color.Empty;
             string year = "2018";
-            var font = FigletTools.GetFigletFont(FigletTextTools.DefaultFigletFontName);
+            var font = FigletTools.GetFigletFont(Config.MainConfig.DefaultFigletFontName);
 
             // Start stepping
             for (step = 1; step <= maxSteps; step++)

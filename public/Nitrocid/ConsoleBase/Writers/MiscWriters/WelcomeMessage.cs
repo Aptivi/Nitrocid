@@ -110,7 +110,7 @@ namespace Nitrocid.ConsoleBase.Writers.MiscWriters
                     TextWriters.Write(MessageWrite, true, KernelColorType.Banner, KernelMain.VersionFullStr);
                 }
 
-                string FigletRenderedBanner = FigletTools.RenderFiglet($"{KernelMain.VersionFullStr}", FigletTextTools.DefaultFigletFontName);
+                string FigletRenderedBanner = FigletTools.RenderFiglet($"{KernelMain.VersionFullStr}", Config.MainConfig.DefaultFigletFontName);
                 TextWriterColor.Write(CharManager.NewLine + FigletRenderedBanner + CharManager.NewLine);
                 ConsoleWrapper.CursorVisible = true;
             }

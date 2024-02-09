@@ -28,6 +28,7 @@ using Nitrocid.Misc.Text;
 using Terminaux.Colors;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
+using Nitrocid.Kernel.Configuration;
 
 namespace Nitrocid.ScreensaverPacks.Animations.ExcaliBeats
 {
@@ -107,7 +108,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.ExcaliBeats
 
             // Populate the text
             string exStr = Settings.ExcaliBeatsExplicit ? "EXCALIBUR" : "EXCALIBEATS";
-            var figFont = FigletTools.GetFigletFont(FigletTextTools.DefaultFigletFontName);
+            var figFont = FigletTools.GetFigletFont(Config.MainConfig.DefaultFigletFontName);
 
             // Fade out
             for (int CurrentStep = 1; CurrentStep <= maxSteps; CurrentStep++)

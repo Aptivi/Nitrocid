@@ -108,7 +108,7 @@ namespace Nitrocid.Users.Login
                                 CsiSequences.GenerateCsiEraseInDisplay(0)
                             );
                             cachedTimeStr = TimeDateRenderers.RenderTime(FormatType.Short);
-                            var figFont = FigletTools.GetFigletFont(FigletTextTools.DefaultFigletFontName);
+                            var figFont = FigletTools.GetFigletFont(Config.MainConfig.DefaultFigletFontName);
                             int figHeight = FigletTools.GetFigletHeight(timeStr, figFont) / 2;
                             display.Append(
                                 KernelColorTools.GetColor(KernelColorType.Stage).VTSequenceForeground +

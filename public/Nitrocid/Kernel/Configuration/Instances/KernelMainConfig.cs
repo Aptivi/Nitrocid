@@ -62,6 +62,9 @@ namespace Nitrocid.Kernel.Configuration.Instances
         public override SettingsEntry[] SettingsEntries =>
             ConfigTools.GetSettingsEntries(Resources.SettingsResources.SettingsEntries);
 
+        [JsonIgnore]
+        private string defaultFigletFontName = "speed";
+
         #region General
         /// <summary>
         /// Each startup, it will check for updates.
@@ -1379,8 +1382,8 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public string DefaultFigletFontName
         {
-            get => FigletTextTools.defaultFigletFontName;
-            set => FigletTextTools.defaultFigletFontName = FigletTools.GetFigletFonts().ContainsKey(value) ? value : "speed";
+            get => defaultFigletFontName;
+            set => defaultFigletFontName = FigletTools.GetFigletFonts().ContainsKey(value) ? value : "speed";
         }
         /// <summary>
         /// Whether to update the CPU usage or not

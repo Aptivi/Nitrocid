@@ -29,6 +29,7 @@ using Nitrocid.Misc.Text;
 using Nitrocid.ScreensaverPacks.Animations.Glitch;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Time.Renderers;
+using Nitrocid.Kernel.Configuration;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -64,7 +65,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             Color blue = new(0, 0, 255);
             Color black = new(0, 0, 0);
             Color white = new(255, 255, 255);
-            var font = FigletTools.GetFigletFont(FigletTextTools.DefaultFigletFontName);
+            var font = FigletTools.GetFigletFont(Config.MainConfig.DefaultFigletFontName);
             int colorSteps = 30;
             int currentR = 0;
             int currentG = 0;

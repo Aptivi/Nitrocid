@@ -39,6 +39,7 @@ using Textify.Sequences.Builder.Types;
 using Terminaux.Base;
 using Nitrocid.Users.Login.Motd;
 using Nitrocid.Network.Types.RSS;
+using Nitrocid.Kernel.Configuration;
 
 namespace Nitrocid.Extras.Docking.Dock.Docks
 {
@@ -112,7 +113,7 @@ namespace Nitrocid.Extras.Docking.Dock.Docks
                             CsiSequences.GenerateCsiEraseInDisplay(0)
                         );
                         cachedTimeStr = TimeDateRenderers.RenderTime(FormatType.Short);
-                        var figFont = FigletTools.GetFigletFont(FigletTextTools.DefaultFigletFontName);
+                        var figFont = FigletTools.GetFigletFont(Config.MainConfig.DefaultFigletFontName);
                         int figHeight = FigletTools.GetFigletHeight(timeStr, figFont) / 2;
                         display.Append(
                             clockColor.VTSequenceForeground +
