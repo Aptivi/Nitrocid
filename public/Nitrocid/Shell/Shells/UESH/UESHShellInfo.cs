@@ -1388,6 +1388,18 @@ namespace Nitrocid.Shell.Shells.UESH
                     ])
                 ], new SumFilesCommand()),
 
+            new CommandInfo("sumtext", /* Localizable */ "Calculates text sums.",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "algorithm/all", new CommandArgumentPartOptions()
+                        {
+                            AutoCompleter = (_) => EncryptionDriverTools.GetEncryptionDriverNames()
+                        }),
+                        new CommandArgumentPart(true, "text"),
+                    ])
+                ], new SumTextCommand()),
+
             new CommandInfo("symlink", /* Localizable */ "Creates a symbolic link to a file or a folder",
                 [
                     new CommandArgumentInfo(new[]
