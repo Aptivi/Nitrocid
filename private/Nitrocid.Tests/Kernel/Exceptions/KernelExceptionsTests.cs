@@ -147,5 +147,21 @@ namespace Nitrocid.Tests.Kernel.Exceptions
             message.ShouldContain("The module didn't provide the exception information, so it's usually an indicator that something is wrong.");
         }
 
+        /// <summary>
+        /// Tests getting the kernel exception error codes
+        /// </summary>
+        [TestMethod]
+        [Description("Misc")]
+        public void TestGetErrorCodes()
+        {
+            var exceptionTypes = Enum.GetNames(typeof(KernelExceptionType));
+            foreach (var type in exceptionTypes)
+            {
+                var exceptionType = (KernelExceptionType)Enum.Parse(typeof(KernelExceptionType), type);
+                int code = KernelExceptionTools.GetErrorCode(exceptionType);
+                code.ShouldBe(10000 + (int)exceptionType);
+            }
+        }
+
     }
 }
