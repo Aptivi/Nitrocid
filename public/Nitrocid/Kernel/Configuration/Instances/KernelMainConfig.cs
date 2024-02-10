@@ -222,6 +222,10 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// Shows an informational box for the program license for three seconds after each login
         /// </summary>
         public bool ShowLicenseInfoBox { get; set; } = true;
+        /// <summary>
+        /// Uses the legacy log style
+        /// </summary>
+        public bool DebugLegacyLogStyle { get; set; } = true;
         #endregion
 
         #region Colors

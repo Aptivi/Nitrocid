@@ -80,6 +80,12 @@ namespace Nitrocid.Kernel.Debugging
             Config.MainConfig.DebugQuotaLines;
 
         /// <summary>
+        /// Uses the legacy log style
+        /// </summary>
+        public static bool DebugLegacyLogStyle =>
+            Config.MainConfig.DebugLegacyLogStyle;
+
+        /// <summary>
         /// Outputs the text into the debugger file, and sets the time stamp. Censors all secure arguments if <see cref="DebugCensorPrivateInfo"/> is on.
         /// </summary>
         /// <param name="Level">Debug level</param>
@@ -151,14 +157,14 @@ namespace Nitrocid.Kernel.Debugging
                         CheckDebugQuota();
 
                         // Populate the debug stack frame
-                        var STrace = new DebugStackFrameBasic();
+                        var STrace = new DebugStackFrame();
                         StringBuilder message = new();
 
                         // Descend a frame until we're out of this class
                         int unwound = 0;
                         while (STrace.RoutinePath.Contains(nameof(DebugWriter)))
                         {
-                            STrace = new DebugStackFrameBasic(unwound);
+                            STrace = new DebugStackFrame(unwound);
                             unwound++;
                         }
 
@@ -171,19 +177,38 @@ namespace Nitrocid.Kernel.Debugging
                         foreach (string splitText in texts)
                         {
                             string routinePath = STrace.RoutinePath;
+                            string date = TimeDateTools.KernelDateTime.ToShortDateString();
+                            string time = TimeDateTools.KernelDateTime.ToShortTimeString();
 
-                            // Check to see if source file name is not empty.
-                            if (routinePath != lastRoutinePath)
+                            // We need to check to see if we're going to use the legacy log style
+                            if (DebugLegacyLogStyle)
                             {
-                                message.Append('\n');
-                                message.Append($"{TimeDateTools.KernelDateTime.ToShortDateString()} {TimeDateTools.KernelDateTime.ToShortTimeString()} ");
-                                message.Append($"({routinePath})\n");
-                                message.Append(new string('-', message.Length - 2));
-                                message.Append($"\n\n");
+                                string routineName = STrace.RoutineName;
+                                string fileName = STrace.RoutineFileName;
+                                int fileLineNumber = STrace.RoutineLineNumber;
+
+                                // Check to see if source file name is not empty.
+                                message.Append($"{date} {time} [{Level}] ");
+                                if (fileName is not null && fileLineNumber != 0)
+                                    message.Append($"({routineName} - {fileName}:{fileLineNumber}): ");
+                                message.Append($"{splitText}\n");
+                            }
+                            else
+                            {
+                                // Check to see if source routine is the same.
+                                if (routinePath != lastRoutinePath)
+                                {
+                                    string renderedRoutinePath = $"{date} {time} ({routinePath})";
+                                    message.Append($"\n{renderedRoutinePath}\n");
+                                    message.Append(new string('-', renderedRoutinePath.Length));
+                                    message.Append($"\n\n");
+                                }
+
+                                // Show stack information
+                                message.Append($"[{Level}] : {splitText}\n");
                             }
 
-                            // Show stack information
-                            message.Append($"[{Level}] : {splitText}\n");
+                            // Set teh last routine path for modern debug logs
                             lastRoutinePath = routinePath;
                         }
 

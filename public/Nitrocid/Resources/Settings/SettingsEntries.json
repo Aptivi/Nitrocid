@@ -212,6 +212,12 @@
                 "Type": "SBoolean",
                 "Variable": "ShowLicenseInfoBox",
                 "Description": "Whether to show the modal license information box for three seconds after each login. It's recommended to keep it on."
+            },
+            {
+                "Name": "Legacy logging style for debug logs",
+                "Type": "SBoolean",
+                "Variable": "DebugLegacyLogStyle",
+                "Description": "Whether to enable the legacy logging style for debug logs or to enable grouped debug logs."
             }
         ]
     },
