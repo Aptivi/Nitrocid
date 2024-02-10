@@ -87,13 +87,6 @@ namespace Nitrocid.Kernel.Threading
         public int ThreadId => BaseThread.ManagedThreadId;
 
         /// <summary>
-        /// Native Thread ID for this kernel thread (unstable, don't use unless necessary)
-        /// </summary>
-        [Obsolete("This ID is unstable and is inaccurate.")]
-        public ulong NativeThreadId =>
-            (ulong)BaseThread.GetType().GetProperty("CurrentOSThreadId", BindingFlags.Static | BindingFlags.GetProperty | BindingFlags.NonPublic).GetValue(null);
-
-        /// <summary>
         /// Makes a new kernel thread
         /// </summary>
         /// <param name="ThreadName">The thread name</param>
