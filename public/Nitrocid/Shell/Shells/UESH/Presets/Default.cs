@@ -40,14 +40,6 @@ namespace Nitrocid.Shell.Shells.UESH.Presets
         /// <inheritdoc/>
         public override string PresetName { get; } = "Default";
 
-        /// <inheritdoc/>
-        public override string PresetPrompt =>
-            PresetPromptBuilder();
-
-        /// <inheritdoc/>
-        public override string PresetPromptShowcase =>
-            PresetPromptBuilderShowcase();
-
         internal override string PresetPromptBuilder()
         {
             var PresetStringBuilder = new StringBuilder();

@@ -18,7 +18,6 @@
 //
 
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.Kernel.Exceptions;
 
 namespace Nitrocid.Shell.Prompts
 {
@@ -32,51 +31,59 @@ namespace Nitrocid.Shell.Prompts
         public virtual string PresetName { get; } = "BasePreset";
 
         /// <inheritdoc/>
-        public virtual string PresetPrompt { get; } = "> ";
+        public virtual string PresetPrompt =>
+            PresetPromptBuilder();
 
         /// <inheritdoc/>
-        public virtual string PresetPromptCompletion { get; } = "[+] > ";
+        public virtual string PresetPromptCompletion =>
+            PresetPromptCompletionBuilder();
 
         /// <inheritdoc/>
-        public virtual string PresetPromptShowcase { get; } = "> ";
+        public virtual string PresetPromptShowcase =>
+            PresetPromptBuilderShowcase();
 
         /// <inheritdoc/>
-        public virtual string PresetPromptCompletionShowcase { get; } = "[+] > ";
+        public virtual string PresetPromptCompletionShowcase =>
+            PresetPromptCompletionBuilderShowcase();
 
         /// <inheritdoc/>
         public virtual string PresetShellType { get; } = "Shell";
 
         internal virtual string PresetPromptBuilder()
         {
-            DebugWriter.WriteDebug(DebugLevel.E, "Tried to call prompt builder on base.");
-            throw new KernelException(KernelExceptionType.NotImplementedYet);
+            DebugWriter.WriteDebug(DebugLevel.W, "Tried to call prompt builder on base.");
+            return "> ";
         }
 
-        string IPromptPreset.PresetPromptBuilder() => PresetPromptBuilder();
+        string IPromptPreset.PresetPromptBuilder() =>
+            PresetPromptBuilder();
 
         internal virtual string PresetPromptCompletionBuilder()
         {
-            DebugWriter.WriteDebug(DebugLevel.E, "Tried to call prompt builder on base.");
-            throw new KernelException(KernelExceptionType.NotImplementedYet);
+            DebugWriter.WriteDebug(DebugLevel.W, "Tried to call prompt builder on base.");
+            return "[+] > ";
         }
 
-        string IPromptPreset.PresetPromptCompletionBuilder() => PresetPromptCompletionBuilder();
+        string IPromptPreset.PresetPromptCompletionBuilder() =>
+            PresetPromptCompletionBuilder();
 
         internal virtual string PresetPromptBuilderShowcase()
         {
-            DebugWriter.WriteDebug(DebugLevel.E, "Tried to call prompt builder on base.");
-            throw new KernelException(KernelExceptionType.NotImplementedYet);
+            DebugWriter.WriteDebug(DebugLevel.W, "Tried to call prompt builder on base.");
+            return "> ";
         }
 
-        string IPromptPreset.PresetPromptBuilderShowcase() => PresetPromptBuilderShowcase();
+        string IPromptPreset.PresetPromptBuilderShowcase() =>
+            PresetPromptBuilderShowcase();
 
         internal virtual string PresetPromptCompletionBuilderShowcase()
         {
-            DebugWriter.WriteDebug(DebugLevel.E, "Tried to call prompt builder on base.");
-            throw new KernelException(KernelExceptionType.NotImplementedYet);
+            DebugWriter.WriteDebug(DebugLevel.W, "Tried to call prompt builder on base.");
+            return "[+] > ";
         }
 
-        string IPromptPreset.PresetPromptCompletionBuilderShowcase() => PresetPromptCompletionBuilderShowcase();
+        string IPromptPreset.PresetPromptCompletionBuilderShowcase() =>
+            PresetPromptCompletionBuilderShowcase();
 
     }
 }
