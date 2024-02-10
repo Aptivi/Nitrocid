@@ -318,6 +318,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
                 Suggestions = (text, index, _) => CommandAutoComplete.GetSuggestions(text, index),
                 SuggestionsDelimiters = [' '],
                 TreatCtrlCAsInput = true,
+                InputForegroundColor = KernelColorTools.GetColor(KernelColorType.Input),
             };
             TermReaderTools.SetHistory(histories[ShellType]);
 
