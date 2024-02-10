@@ -117,15 +117,15 @@ namespace Nitrocid.ConsoleBase.Writers
                 try
                 {
                     // Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                    KernelColorTools.SetConsoleColor(colorType, Highlight, false);
-                    KernelColorTools.SetConsoleColor(KernelColorType.Background, !Highlight, false);
+                    KernelColorTools.SetConsoleColorDry(colorType, Highlight, false);
+                    KernelColorTools.SetConsoleColorDry(KernelColorType.Background, !Highlight, false);
 
                     // Write the text to console
                     if (Highlight)
                     {
                         TextWriterColor.WritePlain(Text, false, vars);
-                        KernelColorTools.SetConsoleColor(colorType);
-                        KernelColorTools.SetConsoleColor(KernelColorType.Background, true);
+                        KernelColorTools.SetConsoleColorDry(colorType);
+                        KernelColorTools.SetConsoleColorDry(KernelColorType.Background, true);
                         TextWriterColor.WritePlain("", Line);
                     }
                     else
@@ -178,15 +178,15 @@ namespace Nitrocid.ConsoleBase.Writers
                 try
                 {
                     // Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                    KernelColorTools.SetConsoleColor(colorTypeForeground, Highlight, false);
-                    KernelColorTools.SetConsoleColor(colorTypeBackground, !Highlight, false);
+                    KernelColorTools.SetConsoleColorDry(colorTypeForeground, Highlight, false);
+                    KernelColorTools.SetConsoleColorDry(colorTypeBackground, !Highlight, false);
 
                     // Write the text to console
                     if (Highlight)
                     {
                         TextWriterColor.WritePlain(Text, false, vars);
-                        KernelColorTools.SetConsoleColor(colorTypeForeground);
-                        KernelColorTools.SetConsoleColor(colorTypeBackground, true);
+                        KernelColorTools.SetConsoleColorDry(colorTypeForeground);
+                        KernelColorTools.SetConsoleColorDry(colorTypeBackground, true);
                         TextWriterColor.WritePlain("", Line);
                     }
                     else
@@ -217,7 +217,7 @@ namespace Nitrocid.ConsoleBase.Writers
                 try
                 {
                     // Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                    KernelColorTools.SetConsoleColor(colorType);
+                    KernelColorTools.SetConsoleColorDry(colorType);
 
                     // Write text slowly
                     TextWriterSlowColor.WriteSlowlyPlain(msg, Line, MsEachLetter, vars);
@@ -246,8 +246,8 @@ namespace Nitrocid.ConsoleBase.Writers
                 try
                 {
                     // Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                    KernelColorTools.SetConsoleColor(colorTypeForeground);
-                    KernelColorTools.SetConsoleColor(colorTypeBackground, true);
+                    KernelColorTools.SetConsoleColorDry(colorTypeForeground);
+                    KernelColorTools.SetConsoleColorDry(colorTypeBackground, true);
 
                     // Write text slowly
                     TextWriterSlowColor.WriteSlowlyPlain(msg, Line, MsEachLetter, vars);
@@ -409,7 +409,7 @@ namespace Nitrocid.ConsoleBase.Writers
                 try
                 {
                     // Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                    KernelColorTools.SetConsoleColor(colorType);
+                    KernelColorTools.SetConsoleColorDry(colorType);
 
                     // Write text in another place slowly
                     TextWriterWhereSlowColor.WriteWhereSlowly(msg, Line, Left, Top, MsEachLetter, Return, RightMargin, vars);
@@ -471,8 +471,8 @@ namespace Nitrocid.ConsoleBase.Writers
                 try
                 {
                     // Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                    KernelColorTools.SetConsoleColor(colorTypeForeground);
-                    KernelColorTools.SetConsoleColor(colorTypeBackground, true);
+                    KernelColorTools.SetConsoleColorDry(colorTypeForeground);
+                    KernelColorTools.SetConsoleColorDry(colorTypeBackground, true);
 
                     // Write text in another place slowly
                     TextWriterWhereSlowColor.WriteWhereSlowlyPlain(msg, Line, Left, Top, MsEachLetter, Return, RightMargin, vars);
@@ -499,7 +499,7 @@ namespace Nitrocid.ConsoleBase.Writers
                 try
                 {
                     // Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                    KernelColorTools.SetConsoleColor(colorType);
+                    KernelColorTools.SetConsoleColorDry(colorType);
 
                     // Write wrapped output
                     TextWriterWrappedColor.WriteWrappedPlain(Text, Line, vars);
@@ -527,8 +527,8 @@ namespace Nitrocid.ConsoleBase.Writers
                 try
                 {
                     // Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                    KernelColorTools.SetConsoleColor(colorTypeForeground);
-                    KernelColorTools.SetConsoleColor(colorTypeBackground, true);
+                    KernelColorTools.SetConsoleColorDry(colorTypeForeground);
+                    KernelColorTools.SetConsoleColorDry(colorTypeBackground, true);
 
                     // Write wrapped output
                     TextWriterWrappedColor.WriteWrappedPlain(Text, Line, vars);

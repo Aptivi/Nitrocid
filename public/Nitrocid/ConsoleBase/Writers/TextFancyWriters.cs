@@ -614,7 +614,7 @@ namespace Nitrocid.ConsoleBase.Writers
             try
             {
                 // Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                KernelColorTools.SetConsoleColor(ColTypes);
+                KernelColorTools.SetConsoleColorDry(ColTypes);
 
                 // Actually write
                 FigletWhereColor.WriteFigletWherePlain(Text, Left, Top, Return, FigletFont, Vars);
@@ -642,8 +642,8 @@ namespace Nitrocid.ConsoleBase.Writers
             try
             {
                 // Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                KernelColorTools.SetConsoleColor(colorTypeForeground);
-                KernelColorTools.SetConsoleColor(colorTypeBackground, true);
+                KernelColorTools.SetConsoleColorDry(colorTypeForeground);
+                KernelColorTools.SetConsoleColorDry(colorTypeBackground, true);
 
                 // Actually write
                 FigletWhereColor.WriteFigletWherePlain(Text, Left, Top, Return, FigletFont, Vars);

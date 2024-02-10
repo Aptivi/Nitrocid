@@ -207,5 +207,53 @@ namespace Nitrocid.ConsoleBase.Colors
             }
         }
 
+        /// <summary>
+        /// Sets the console color
+        /// </summary>
+        /// <param name="colorType">A type of colors that will be changed.</param>
+        /// <param name="resetBack">If the color is not a background, do we reset the background color?</param>
+        public static void SetConsoleColorDry(KernelColorType colorType, bool resetBack = true) =>
+            SetConsoleColorDry(colorType, false, resetBack);
+
+        /// <summary>
+        /// Sets the console color
+        /// </summary>
+        /// <param name="colorType">A type of colors that will be changed.</param>
+        /// <param name="Background">Is the color a background color?</param>
+        /// <param name="resetBack">If the color is not a background, do we reset the background color?</param>
+        public static void SetConsoleColorDry(KernelColorType colorType, bool Background, bool resetBack = true)
+        {
+            ColorTools.SetConsoleColorDry(GetColor(colorType), Background);
+            if (!Background && resetBack)
+                ColorTools.SetConsoleColorDry(GetColor(KernelColorType.Background), true);
+        }
+
+        /// <summary>
+        /// Sets the console color
+        /// </summary>
+        /// <param name="colorType">A type of colors that will be changed.</param>
+        /// <returns>True if successful; False if unsuccessful</returns>
+        public static bool TrySetConsoleColorDry(KernelColorType colorType) =>
+            TrySetConsoleColorDry(colorType, false);
+
+        /// <summary>
+        /// Sets the console color
+        /// </summary>
+        /// <param name="colorType">A type of colors that will be changed.</param>
+        /// <param name="Background">Is the color a background color?</param>
+        /// <returns>True if successful; False if unsuccessful</returns>
+        public static bool TrySetConsoleColorDry(KernelColorType colorType, bool Background)
+        {
+            try
+            {
+                SetConsoleColorDry(colorType, Background);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
     }
 }
