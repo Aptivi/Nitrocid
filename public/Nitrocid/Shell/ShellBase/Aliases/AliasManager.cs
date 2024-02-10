@@ -52,10 +52,9 @@ namespace Nitrocid.Shell.ShellBase.Aliases
         public static void InitAliases()
         {
             // Get all aliases from file
-            Making.MakeFile(PathsManagement.GetKernelPath(KernelPathType.Aliases), false);
+            Making.MakeJsonFile(PathsManagement.GetKernelPath(KernelPathType.Aliases), false, true);
             string AliasJsonContent = Reading.ReadContentsText(PathsManagement.GetKernelPath(KernelPathType.Aliases));
-            var aliasesArray = JsonConvert.DeserializeObject<AliasInfo[]>(AliasJsonContent) ??
-                [];
+            var aliasesArray = JsonConvert.DeserializeObject<AliasInfo[]>(AliasJsonContent);
             aliases = [.. aliasesArray];
         }
 
