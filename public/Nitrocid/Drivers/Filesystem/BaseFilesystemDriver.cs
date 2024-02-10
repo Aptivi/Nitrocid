@@ -50,6 +50,7 @@ using Textify.General;
 using Terminaux.Base;
 using Nitrocid.Misc.Progress;
 using System.Runtime.Serialization;
+using Nitrocid.Files;
 
 namespace Nitrocid.Drivers.Filesystem
 {
@@ -858,7 +859,7 @@ namespace Nitrocid.Drivers.Filesystem
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, "Failed to combine files: {0}", ex.Message);
             }
-            return Entries;
+            return Entries.Select((path) => FS.NeutralizePath(path)).ToArray();
         }
 
         /// <inheritdoc/>

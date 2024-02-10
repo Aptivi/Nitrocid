@@ -208,7 +208,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
             { "AdminShell", new AdminShellInfo() },
             { "DebugShell", new DebugShellInfo() }
         };
-        internal readonly static Dictionary<string, BaseShellInfo> availableCustomShells = new();
+        internal readonly static Dictionary<string, BaseShellInfo> availableCustomShells = [];
 
         /// <summary>
         /// List of unified commands
