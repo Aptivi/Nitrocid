@@ -182,7 +182,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
             );
         }
 
-        internal static bool ValidatePlatformCompatibility(SettingsKey settings)
+        internal static bool IsUnsupported(SettingsKey settings)
         {
             string[] keyUnsupportedPlatforms = settings.UnsupportedPlatforms.ToArray() ?? [];
             bool platformUnsupported = false;

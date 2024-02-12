@@ -282,6 +282,10 @@ namespace Nitrocid.Kernel.Configuration.Settings
         public string Tip =>
             tip;
 
+        [JsonIgnore]
+        internal bool Unsupported =>
+            SettingsAppTools.IsUnsupported(this);
+
         internal ISettingsKeyInput KeyInput
         {
             get

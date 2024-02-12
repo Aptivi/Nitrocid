@@ -170,30 +170,31 @@ namespace Nitrocid.Kernel.Configuration.Settings
                 {
                     // Populate sections
                     var sections = new List<InputChoiceInfo>();
-                    var displayUnsupportedConfigs = new List<string>();
 
+                    // Check for platform compatibility
                     string Notes = "";
-                    int offset = 0;
+                    var unsupportedConfigs = SectionToken.Where((sk) => sk.Unsupported).ToArray();
+                    var unsupportedConfigNames = unsupportedConfigs.Select((sk) => Translate.DoTranslation(sk.Name)).ToArray();
+                    bool hasUnsupportedConfigs = unsupportedConfigs.Length > 0;
+                    if (hasUnsupportedConfigs)
+                        Notes = Translate.DoTranslation("One or more of the following settings found in this section are unsupported in your platform:") + $" {string.Join(", ", unsupportedConfigNames)}";
+
+                    // Populate sections
                     for (int SectionIndex = 0; SectionIndex <= MaxOptions - 1; SectionIndex++)
                     {
                         var Setting = SectionToken[SectionIndex];
-
-                        // Check to see if the host platform is supported
-                        bool platformUnsupported = SettingsAppTools.ValidatePlatformCompatibility(Setting);
-                        if (platformUnsupported)
-                        {
-                            displayUnsupportedConfigs.Add(Translate.DoTranslation(Setting.Name));
-                            Notes = Translate.DoTranslation("One or more of the following settings found in this section are unsupported in your platform:") + $" {string.Join(", ", displayUnsupportedConfigs)}";
-                            offset++;
+                        if (Setting.Unsupported)
                             continue;
-                        }
 
                         // Now, populate the input choice info
                         object CurrentValue = ConfigTools.GetValueFromEntry(Setting, settingsType);
+                        string choiceName = $"{SectionIndex + 1}";
+                        string choiceTitle = $"{Translate.DoTranslation(Setting.Name)} [{CurrentValue}]";
+                        string choiceDesc = Translate.DoTranslation(Setting.Description);
                         var ici = new InputChoiceInfo(
-                            $"{SectionIndex + 1 - offset}/{SectionIndex + 1}",
-                            $"{Translate.DoTranslation(Setting.Name)} [{CurrentValue}]",
-                            Translate.DoTranslation(Setting.Description)
+                            choiceName,
+                            choiceTitle,
+                            choiceDesc
                         );
                         sections.Add(ici);
                     }
@@ -202,7 +203,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
                     // Populate the alt sections correctly
                     var altSections = new List<InputChoiceInfo>()
                     {
-                        new($"{MaxOptions + 1 - offset}/{MaxOptions + 1}", Translate.DoTranslation("Go Back..."))
+                        new($"{MaxOptions + 1}", Translate.DoTranslation("Go Back..."))
                     };
 
                     // Prompt user and check for input
@@ -221,8 +222,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
                     // Check the answer
                     var allSections = sections.Union(altSections).ToArray();
                     string answerChoice = allSections[Answer - 1].ChoiceName;
-                    string answerNumberReal = answerChoice[(answerChoice.IndexOf('/') + 1)..];
-                    int finalAnswer = Answer < 0 ? 0 : Convert.ToInt32(answerNumberReal);
+                    int finalAnswer = Answer < 0 ? 0 : Convert.ToInt32(answerChoice);
                     DebugWriter.WriteDebug(DebugLevel.I, "Succeeded. Checking the answer if it points to the right direction...");
                     if (finalAnswer >= 1 & finalAnswer <= MaxOptions)
                     {
