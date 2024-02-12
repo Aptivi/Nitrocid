@@ -4,13 +4,13 @@
     <PackageId>KS</PackageId>
     <Authors>Aptivi</Authors>
     <Title>Nitrocid KS</Title>
-    <PackageDescription>Simulates our future-planned kernel</PackageDescription>
+    <PackageDescription>Simulates our future-planned kernel, Nitrocid Kernel. This package contains Nitrocid API that you can use for your mods.</PackageDescription>
     <PackageTags>kernel;simulator;csharp</PackageTags>
     <!-- URL settings -->
     <PackageProjectUrl>https://github.com/Aptivi/NitrocidKS</PackageProjectUrl>
     <PackageIcon>OfficialAppIcon-KernelSimulator-512.png</PackageIcon>
     <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
-    <PackageReleaseNotes>Detailed explanation: https://aptivi.gitbook.io/kernel-simulator-manual/versions-and-compatibility/version-release-notes/v0.1.x.x-series</PackageReleaseNotes>
+    <PackageReleaseNotes>Detailed explanation: https://aptivi.gitbook.io/nitrocid-ks-manual/versions-and-compatibility/version-release-notes/v0.1.x.x-series</PackageReleaseNotes>
     <!-- MSBuild Tags -->
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <IncludeSymbols>True</IncludeSymbols>
@@ -29,23 +29,19 @@
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <DebugSymbols>true</DebugSymbols>
-    <DefineTrace>true</DefineTrace>
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>portable</DebugType>
     <OutputType>Exe</OutputType>
     <LangVersion>latest</LangVersion>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C7B37899-C361-423D-9512-FE0A87A46866}</ProjectGuid>
     <AssemblyName>Nitrocid</AssemblyName>
-    <AssemblyTitle>Simulates our future kernel, Nitrocid Kernel</AssemblyTitle>
-    <Description>Simulates our future kernel, Nitrocid Kernel</Description>
+    <AssemblyTitle>Nitrocid KS</AssemblyTitle>
+    <Description>Simulates our future-planned kernel, Nitrocid Kernel</Description>
     <Company>Aptivi</Company>
     <Product>Nitrocid</Product>
     <Copyright>Copyright © Aptivi 2018 - 2024</Copyright>
     <OutputPath>KSBuild\</OutputPath>
     <ApplicationIcon>OfficialAppIcon-KernelSimulator.ico</ApplicationIcon>
-    <Version>0.1.0</Version>
-    <PackageVersion>0.1.0.0</PackageVersion>
+    <Version>0.1.0.0</Version>
+    <PackageVersion>$(Version)</PackageVersion>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <Deterministic>true</Deterministic>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -76,14 +72,13 @@
   -->
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
     <Optimize>false</Optimize>
-    <DebugType>portable</DebugType>
     <DefineConstants>SPECIFIERDEV;$(NitrocidFlags.Replace(",",";"))</DefineConstants>
   </PropertyGroup>
   
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
     <DefineConstants>SPECIFIERREL;$(NitrocidFlags.Replace(",",";"))</DefineConstants>
   </PropertyGroup>
   <!-- KS Platform Information End -->
