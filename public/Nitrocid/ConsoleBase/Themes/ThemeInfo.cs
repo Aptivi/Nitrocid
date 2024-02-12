@@ -30,6 +30,7 @@ using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Time;
 using Nitrocid.Kernel.Time.Calendars;
 using Terminaux.Colors;
+using Nitrocid.Kernel.Debugging;
 
 namespace Nitrocid.ConsoleBase.Themes
 {
@@ -124,6 +125,7 @@ namespace Nitrocid.ConsoleBase.Themes
         internal void UpdateColors()
         {
             // Populate the colors
+            DebugWriter.WriteDebug(DebugLevel.I, $"Updating color according to theme info for {Name}...");
             useAccentTypes = metadata.UseAccentTypes.Where((type) => Enum.IsDefined(typeof(KernelColorType), type[..^5])).ToArray();
             for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(KernelColorType)).Length; typeIndex++)
             {
@@ -133,7 +135,10 @@ namespace Nitrocid.ConsoleBase.Themes
                 string fullTypeName = $"{type}Color";
                 var colorToken = metadataToken.SelectToken(fullTypeName);
                 if (colorToken is null)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.W, $"{fullTypeName} is not defined in the theme metadata. Using defaults...");
                     ThemeColors[type] = KernelColorTools.PopulateColorsDefault()[type];
+                }
                 else
                     ThemeColors[type] =
                         UseAccentTypes.Contains(fullTypeName) && Config.MainConfig.UseAccentColors ?
@@ -177,10 +182,10 @@ namespace Nitrocid.ConsoleBase.Themes
             metadataToken = ThemeResourceJson;
 
             // Populate colors
+            Name = metadata.Name;
             UpdateColors();
 
             // Install some info to the class
-            Name = metadata.Name;
             Description = metadata.Description;
             TrueColorRequired = ThemeTools.IsTrueColorRequired(ThemeColors);
             Category = metadata.Category;
