@@ -186,6 +186,10 @@ namespace Nitrocid.Kernel.Starting
                 // Populate debug devices
                 RemoteDebugTools.LoadAllDevices();
                 DebugWriter.WriteDebug(DebugLevel.I, "Loaded remote debug devices.");
+
+                // Show first-time color calibration for first-time run
+                if (KernelEntry.FirstTime)
+                    ConsoleTools.ShowColorRampAndSet();
             }
             catch (Exception ex)
             {

@@ -23,6 +23,16 @@ using Nitrocid.Kernel;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Threading;
 using Terminaux.Base;
+using System.Text;
+using Nitrocid.Kernel.Debugging;
+using Terminaux.Colors;
+using System;
+using Textify.General;
+using Terminaux.Base.Buffered;
+using Textify.Sequences.Builder;
+using Nitrocid.Languages;
+using Terminaux.Reader;
+using Terminaux.Inputs;
 
 namespace Nitrocid.ConsoleBase
 {
@@ -136,6 +146,90 @@ namespace Nitrocid.ConsoleBase
             TextWriterColor.Write("\u001b[?1049h");
             ConsoleWrapper.SetCursorPosition(0, 0);
             ConsoleWrapper.CursorVisible = false;
+        }
+
+        internal static void ShowColorRampAndSet()
+        {
+            var screen = new Screen();
+            var rampPart = new ScreenPart();
+            bool clear = true;
+            ScreenTools.SetCurrent(screen);
+
+            // Clear screen if needed
+            rampPart.AddDynamicText(() =>
+            {
+                if (clear || Terminaux.Base.ConsoleResizeHandler.WasResized())
+                {
+                    clear = false;
+                    return
+                        VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, 1, 1) +
+                        VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiEraseInDisplay, 0);
+                }
+                return "";
+            });
+
+            // Show a tip
+            rampPart.AddDynamicText(() =>
+            {
+                string message =
+                    KernelPlatform.IsOnWindows() ?
+                    Translate.DoTranslation("You must be running either ConEmu or a Windows 10 command prompt with VT processing enabled.") + "\n" :
+                    Translate.DoTranslation("Your terminal is {0} on {1}.") + "\n";
+                return TextWriterWhereColor.RenderWherePlain(TextTools.FormatString(message, KernelPlatform.GetTerminalType(), KernelPlatform.GetTerminalEmulator()), 3, 2);
+            });
+
+            // Show three color bands
+            rampPart.AddDynamicText(() =>
+            {
+                var band = new StringBuilder();
+                int times = ConsoleWrapper.WindowWidth - 9;
+                DebugWriter.WriteDebug(DebugLevel.I, "Band length: {0} cells", times);
+                double threshold = 255 / (double)times;
+                band.Append("    ");
+                for (double i = 0; i <= times; i++)
+                    band.Append($"{new Color(Convert.ToInt32(i * threshold), 0, 0).VTSequenceBackground} ");
+                band.AppendLine();
+                band.Append("    ");
+                for (double i = 0; i <= times; i++)
+                    band.Append($"{new Color(0, Convert.ToInt32(i * threshold), 0).VTSequenceBackground} ");
+                band.AppendLine();
+                band.Append("    ");
+                for (double i = 0; i <= times; i++)
+                    band.Append($"{new Color(0, 0, Convert.ToInt32(i * threshold)).VTSequenceBackground} ");
+                band.AppendLine();
+                band.Append($"{CharManager.GetEsc() + $"[49m"}");
+                band.AppendLine();
+
+                // Now, show the hue band
+                double hueThreshold = 360 / (double)times;
+                band.Append("    ");
+                for (double h = 0; h <= times; h++)
+                    band.Append($"{new Color($"hsl:{Convert.ToInt32(h * hueThreshold)};100;50").VTSequenceBackground} ");
+                band.AppendLine();
+                band.Append($"{CharManager.GetEsc() + $"[49m"}");
+                return band.ToString();
+            });
+
+            // Tell the user to select either Y or N
+            rampPart.AddDynamicText(() =>
+            {
+                return TextWriterWhereColor.RenderWherePlain(Translate.DoTranslation("Do these ramps look right to you? They should transition smoothly.") + " <y/n>", 3, ConsoleWrapper.WindowHeight - 2);
+            });
+            screen.AddBufferedPart("Ramp screen part", rampPart);
+            ConsoleKey answer = ConsoleKey.None;
+            while (answer != ConsoleKey.N && answer != ConsoleKey.Y)
+            {
+                ScreenTools.Render();
+                answer = Input.DetectKeypress().Key;
+            }
+
+            // Set the appropriate config
+            bool supports256Color = answer == ConsoleKey.Y;
+            Config.MainConfig.ConsoleSupportsTrueColor = supports256Color;
+
+            // Clear the screen and remove the screen
+            ScreenTools.UnsetCurrent(screen);
+            ColorTools.LoadBack();
         }
 
     }

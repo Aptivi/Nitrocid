@@ -43,7 +43,6 @@ namespace Nitrocid.Kernel
                 string user = "owner";
                 string stepFailureReason = "";
                 string langCode = "eng";
-                bool supportsTrueColor = true;
                 bool moveOn = false;
 
                 // Populate the first run presentations in case language changed during the first start-up
@@ -210,65 +209,6 @@ namespace Nitrocid.Kernel
 
                     // Presentation list
                     [
-                        // Fourth page - Console test
-                        new PresentationPage(
-                            // Page name
-                            Translate.DoTranslation("Testing your console for true-color support"),
-
-                            // Page elements
-                            [
-                                new TextElement()
-                                {
-                                    Arguments =
-                                    [
-                                        KernelPlatform.IsOnWindows() ?
-                                            Translate.DoTranslation("You must be running either ConEmu or a Windows 10 command prompt with VT processing enabled.") + "\n" :
-                                            Translate.DoTranslation("Your terminal is {0} on {1}.") + "\n",
-                                        KernelPlatform.GetTerminalType(),
-                                        KernelPlatform.GetTerminalEmulator()
-                                    ]
-                                },
-                                new TextElement()
-                                {
-                                    Arguments =
-                                    [
-                                        RenderBandsForFirstRun()
-                                    ]
-                                },
-                                new ChoiceInputElement()
-                                {
-                                    Arguments =
-                                    [
-                                        Translate.DoTranslation("Do these ramps look right to you? They should transition smoothly."),
-                                        "y",
-                                        "n"
-                                    ],
-                                    InvokeActionInput =
-                                        (args) =>
-                                        {
-                                            supportsTrueColor = (string)args[0] == "y";
-                                            moveOn = true;
-                                            DebugWriter.WriteDebug(DebugLevel.I, "Let's move on!");
-                                        }
-                                },
-                                new TextElement()
-                                {
-                                    Arguments =
-                                    [
-                                        Translate.DoTranslation("Press the ENTER key to continue.") + "\n"
-                                    ]
-                                }
-                            ]
-                        )
-                    ]
-                );
-
-                Slideshow firstRunPresStep4 = new(
-                    // Presentation name
-                    Translate.DoTranslation("Kernel first-run"),
-
-                    // Presentation list
-                    [
                         // Fifth page - Automatic updates
                         new PresentationPage(
                             // Page name
@@ -380,7 +320,6 @@ namespace Nitrocid.Kernel
                     firstRunPresStep1,
                     firstRunPresStep2,
                     firstRunPresStep3,
-                    firstRunPresStep4,
 
                     // Outro
                     firstRunPresOutro
