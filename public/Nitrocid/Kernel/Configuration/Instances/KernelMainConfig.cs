@@ -705,6 +705,14 @@ namespace Nitrocid.Kernel.Configuration.Instances
             get => KernelColorTools.GetColor(KernelColorType.TuiBoxForeground).PlainSequence;
             set => KernelColorTools.SetColor(KernelColorType.TuiBoxForeground, new Color(value));
         }
+        /// <summary>
+        /// Disabled option color
+        /// </summary>
+        public string DisabledOptionColor
+        {
+            get => KernelColorTools.GetColor(KernelColorType.DisabledOption).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.DisabledOption, new Color(value));
+        }
         #endregion
 
         #region Hardware

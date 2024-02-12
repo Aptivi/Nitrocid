@@ -529,6 +529,11 @@
                 "Name": "Interactive TUI box foreground color",
                 "Type": "SColor",
                 "Variable": "TuiBoxForegroundColor"
+            },
+            {
+                "Name": "Disabled option color",
+                "Type": "SColor",
+                "Variable": "DisabledOptionColor"
             }
         ]
     },

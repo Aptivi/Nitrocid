@@ -248,5 +248,9 @@ namespace Nitrocid.ConsoleBase.Colors
         /// Interactive TUI box foreground color
         /// </summary>
         TuiBoxForeground,
+        /// <summary>
+        /// Disabled option
+        /// </summary>
+        DisabledOption,
     }
 }
