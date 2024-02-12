@@ -50,7 +50,6 @@ using Textify.General;
 using Terminaux.Base;
 using Nitrocid.Misc.Progress;
 using System.Runtime.Serialization;
-using Nitrocid.Files;
 
 namespace Nitrocid.Drivers.Filesystem
 {

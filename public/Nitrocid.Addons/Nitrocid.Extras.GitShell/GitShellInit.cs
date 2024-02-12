@@ -30,7 +30,6 @@ using System.Reflection;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Files.Paths;
 using Nitrocid.Shell.ShellBase.Shells;
-using Nitrocid.Shell.Prompts;
 using Nitrocid.Kernel;
 using Nitrocid.Modifications;
 using System.Linq;

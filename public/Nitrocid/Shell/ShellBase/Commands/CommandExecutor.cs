@@ -21,7 +21,6 @@ using System;
 using System.Threading;
 using System.Linq;
 using System.Runtime;
-using Nitrocid.Shell.ShellBase.Help;
 using Nitrocid.Shell.ShellBase.Scripting;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Kernel.Debugging;

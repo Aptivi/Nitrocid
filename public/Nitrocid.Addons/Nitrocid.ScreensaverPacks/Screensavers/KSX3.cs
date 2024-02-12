@@ -25,7 +25,6 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Misc.Screensaver;
 using Terminaux.Writer.FancyWriters;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Misc.Text;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Time.Renderers;

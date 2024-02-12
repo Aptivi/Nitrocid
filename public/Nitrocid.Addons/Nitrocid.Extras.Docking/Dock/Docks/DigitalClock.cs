@@ -29,7 +29,6 @@ using Nitrocid.Kernel.Threading;
 using Nitrocid.Kernel.Time;
 using Nitrocid.Kernel.Time.Renderers;
 using Nitrocid.Languages;
-using Nitrocid.Misc.Text;
 using Nitrocid.Users.Login;
 using System;
 using System.Text;

@@ -21,7 +21,6 @@ using EnumMagic;
 using Nitrocid.Drivers.HardwareProber;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
-using Nitrocid.Misc.Reflection;
 using Nitrocid.Misc.Splash;
 using Nitrocid.Users.Windows;
 

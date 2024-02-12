@@ -25,7 +25,6 @@ using Terminaux.Base;
 using System;
 using Terminaux.Writer.FancyWriters;
 using Figletize;
-using Nitrocid.Misc.Text;
 using Nitrocid.ScreensaverPacks.Animations.Glitch;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Time.Renderers;

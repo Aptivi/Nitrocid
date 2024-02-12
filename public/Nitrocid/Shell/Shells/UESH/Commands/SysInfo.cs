@@ -20,14 +20,10 @@
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Switches;
-using Terminaux.Writer.FancyWriters;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel;
-using Nitrocid.Shell.ShellBase.Help;
-using Nitrocid.Users.Login.Handlers;
-using Nitrocid.Kernel.Time;
 using Nitrocid.Kernel.Hardware;
 using Nitrocid.Users;
 using Nitrocid.Misc.Text.Probers.Placeholder;

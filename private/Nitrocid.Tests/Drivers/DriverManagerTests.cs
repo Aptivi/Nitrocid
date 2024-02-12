@@ -33,7 +33,6 @@ using Nitrocid.Drivers.Input;
 using Nitrocid.Drivers.Console;
 using Nitrocid.Drivers.Encryption;
 using Nitrocid.Drivers.DebugLogger;
-using Nitrocid.Kernel.Debugging;
 
 namespace Nitrocid.Tests.Drivers
 {

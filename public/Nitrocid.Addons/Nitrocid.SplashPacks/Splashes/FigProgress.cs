@@ -28,7 +28,6 @@ using Nitrocid.Misc.Splash;
 using Terminaux.Writer.FancyWriters;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.Misc.Text;
 using Nitrocid.Languages;
 using Nitrocid.Kernel;
 using Terminaux.Base;

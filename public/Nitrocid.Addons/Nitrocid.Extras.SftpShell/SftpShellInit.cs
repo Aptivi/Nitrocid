@@ -29,7 +29,6 @@ using System.Collections.ObjectModel;
 using System.Reflection;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
-using Nitrocid.Shell.Prompts;
 using Nitrocid.Modifications;
 using System.Linq;
 

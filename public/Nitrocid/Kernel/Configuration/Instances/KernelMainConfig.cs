@@ -37,7 +37,6 @@ using Nitrocid.Languages;
 using Nitrocid.Misc.Notifications;
 using Nitrocid.Kernel.Exceptions;
 using Terminaux.Inputs.Styles.Choice;
-using Nitrocid.Misc.Text;
 using Nitrocid.Shell.Prompts;
 using Nitrocid.Users.Login.Handlers;
 using Nitrocid.Files.Paths;

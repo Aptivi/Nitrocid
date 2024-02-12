@@ -22,7 +22,6 @@ using Nitrocid.Extras.SqlShell.Sql;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Modifications;
-using Nitrocid.Shell.Prompts;
 using Nitrocid.Shell.ShellBase.Shells;
 using System;
 using System.Collections.Generic;
