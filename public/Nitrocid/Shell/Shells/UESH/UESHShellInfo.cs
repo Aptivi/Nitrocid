@@ -492,7 +492,7 @@ namespace Nitrocid.Shell.Shells.UESH
                     {
                         new CommandArgumentPart(true, "change", new()
                         {
-                            ExactWording = "change"
+                            ExactWording = ["change"]
                         }),
                         new CommandArgumentPart(true, "type", (_) => Enum.GetNames<DriverTypes>()),
                         new CommandArgumentPart(true, "driver", (args) => DriverHandler.GetDriverNames(DriverHandler.InferDriverTypeFromTypeName(args[1]))),
@@ -501,7 +501,7 @@ namespace Nitrocid.Shell.Shells.UESH
                     {
                         new CommandArgumentPart(true, "list", new()
                         {
-                            ExactWording = "list"
+                            ExactWording = ["list"]
                         }),
                         new CommandArgumentPart(true, "type", (_) => Enum.GetNames<DriverTypes>()),
                     }),
@@ -509,7 +509,7 @@ namespace Nitrocid.Shell.Shells.UESH
                     {
                         new CommandArgumentPart(true, "types", new()
                         {
-                            ExactWording = "types"
+                            ExactWording = ["types"]
                         }),
                     }),
                 ], new DriverManCommand(), CommandFlags.Strict),
@@ -938,12 +938,18 @@ namespace Nitrocid.Shell.Shells.UESH
                 [
                     new CommandArgumentInfo(new[]
                     {
-                        new CommandArgumentPart(true, "start/stop/info/reload/install/uninstall"),
+                        new CommandArgumentPart(true, "start/stop/info/reload/install/uninstall", new()
+                        {
+                            ExactWording = ["start", "stop", "info", "reload", "install", "uninstall"]
+                        }),
                         new CommandArgumentPart(true, "modfilename"),
                     }),
                     new CommandArgumentInfo(new[]
                     {
-                        new CommandArgumentPart(true, "list/reloadall/stopall/startall"),
+                        new CommandArgumentPart(true, "list/reloadall/stopall/startall", new()
+                        {
+                            ExactWording = ["list", "reloadall", "stopall", "startall"]
+                        }),
                     }),
                 ], new ModManCommand(), CommandFlags.Strict),
 

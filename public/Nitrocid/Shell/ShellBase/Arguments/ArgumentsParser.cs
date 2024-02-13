@@ -348,7 +348,7 @@ namespace Nitrocid.Shell.ShellBase.Arguments
 
                     // Check to see if the argument expects a number and that the provided argument is numeric
                     // or if the argument allows string values
-                    if (!string.IsNullOrEmpty(argPart.ExactWording) && arg != argPart.ExactWording)
+                    if (argPart.ExactWording.Length > 0 && !argPart.ExactWording.Contains(arg))
                         exactWordingProvided = false;
                 }
 

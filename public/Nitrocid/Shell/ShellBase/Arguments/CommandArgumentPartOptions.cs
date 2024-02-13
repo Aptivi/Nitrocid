@@ -36,9 +36,9 @@ namespace Nitrocid.Shell.ShellBase.Arguments
         /// </summary>
         public bool IsNumeric { get; set; }
         /// <summary>
-        /// User is required to provide this exact wording
+        /// User is required to provide one of the exact wordings
         /// </summary>
-        public string ExactWording { get; set; }
+        public string[] ExactWording { get; set; }
 
         /// <summary>
         /// Makes a new instance of the command argument part options

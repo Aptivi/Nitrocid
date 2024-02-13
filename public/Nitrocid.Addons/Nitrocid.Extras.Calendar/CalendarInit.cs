@@ -76,7 +76,7 @@ namespace Nitrocid.Extras.Calendar
                     [
                         new CommandArgumentPart(true, "tui", new CommandArgumentPartOptions()
                         {
-                            ExactWording = "tui"
+                            ExactWording = ["tui"]
                         }),
                         new CommandArgumentPart(false, "year", new CommandArgumentPartOptions()
                         {
@@ -98,11 +98,11 @@ namespace Nitrocid.Extras.Calendar
                     {
                         new CommandArgumentPart(true, "event", new CommandArgumentPartOptions()
                         {
-                            ExactWording = "event"
+                            ExactWording = ["event"]
                         }),
                         new CommandArgumentPart(true, "add", new CommandArgumentPartOptions()
                         {
-                            ExactWording = "add"
+                            ExactWording = ["add"]
                         }),
                         new CommandArgumentPart(true, "date"),
                         new CommandArgumentPart(true, "title")
@@ -111,11 +111,11 @@ namespace Nitrocid.Extras.Calendar
                     {
                         new CommandArgumentPart(true, "event", new CommandArgumentPartOptions()
                         {
-                            ExactWording = "event"
+                            ExactWording = ["event"]
                         }),
                         new CommandArgumentPart(true, "remove", new CommandArgumentPartOptions()
                         {
-                            ExactWording = "remove"
+                            ExactWording = ["remove"]
                         }),
                         new CommandArgumentPart(true, "eventId", new CommandArgumentPartOptions()
                         {
@@ -126,33 +126,33 @@ namespace Nitrocid.Extras.Calendar
                     {
                         new CommandArgumentPart(true, "event", new CommandArgumentPartOptions()
                         {
-                            ExactWording = "event"
+                            ExactWording = ["event"]
                         }),
                         new CommandArgumentPart(true, "list", new CommandArgumentPartOptions()
                         {
-                            ExactWording = "list"
+                            ExactWording = ["list"]
                         })
                     }),
                     new CommandArgumentInfo(new[]
                     {
                         new CommandArgumentPart(true, "event", new CommandArgumentPartOptions()
                         {
-                            ExactWording = "event"
+                            ExactWording = ["event"]
                         }),
                         new CommandArgumentPart(true, "saveall", new CommandArgumentPartOptions()
                         {
-                            ExactWording = "saveall"
+                            ExactWording = ["saveall"]
                         })
                     }),
                     new CommandArgumentInfo(new[]
                     {
                         new CommandArgumentPart(true, "reminder", new CommandArgumentPartOptions()
                         {
-                            ExactWording = "reminder"
+                            ExactWording = ["reminder"]
                         }),
                         new CommandArgumentPart(true, "add", new CommandArgumentPartOptions()
                         {
-                            ExactWording = "add"
+                            ExactWording = ["add"]
                         }),
                         new CommandArgumentPart(true, "dateandtime"),
                         new CommandArgumentPart(true, "title")
@@ -161,11 +161,11 @@ namespace Nitrocid.Extras.Calendar
                     {
                         new CommandArgumentPart(true, "reminder", new CommandArgumentPartOptions()
                         {
-                            ExactWording = "reminder"
+                            ExactWording = ["reminder"]
                         }),
                         new CommandArgumentPart(true, "remove", new CommandArgumentPartOptions()
                         {
-                            ExactWording = "remove"
+                            ExactWording = ["remove"]
                         }),
                         new CommandArgumentPart(true, "reminderid", new CommandArgumentPartOptions()
                         {
@@ -176,22 +176,22 @@ namespace Nitrocid.Extras.Calendar
                     {
                         new CommandArgumentPart(true, "reminder", new CommandArgumentPartOptions()
                         {
-                            ExactWording = "reminder"
+                            ExactWording = ["reminder"]
                         }),
                         new CommandArgumentPart(true, "list", new CommandArgumentPartOptions()
                         {
-                            ExactWording = "list"
+                            ExactWording = ["list"]
                         })
                     }),
                     new CommandArgumentInfo(new[]
                     {
                         new CommandArgumentPart(true, "reminder", new CommandArgumentPartOptions()
                         {
-                            ExactWording = "reminder"
+                            ExactWording = ["reminder"]
                         }),
                         new CommandArgumentPart(true, "saveall", new CommandArgumentPartOptions()
                         {
-                            ExactWording = "saveall"
+                            ExactWording = ["saveall"]
                         })
                     }),
                 ], new CalendarCommand()),
