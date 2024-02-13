@@ -139,6 +139,10 @@ namespace Nitrocid.Kernel.Starting
                     SplashReport.ReportProgress(Translate.DoTranslation("Starting Nitrocid..."));
                 }
 
+                // Turn on safe mode in unusual environments
+                if (!KernelPlatform.IsOnUsualEnvironment())
+                    KernelEntry.SafeMode = true;
+
                 // Initialize journal path
                 JournalManager.JournalPath = Getting.GetNumberedFileName(Path.GetDirectoryName(PathsManagement.GetKernelPath(KernelPathType.Journaling)), PathsManagement.GetKernelPath(KernelPathType.Journaling));
 
