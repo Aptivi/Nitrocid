@@ -1166,7 +1166,7 @@ namespace Nitrocid.Shell.Shells.UESH
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(false, "saver"),
+                        new CommandArgumentPart(false, "saver/random"),
                     ],
                     [
                         new SwitchInfo("select", /* Localizable */ "Gives you an option to select the screensaver to try out", new()

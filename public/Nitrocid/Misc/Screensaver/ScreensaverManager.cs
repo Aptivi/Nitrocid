@@ -152,6 +152,10 @@ namespace Nitrocid.Misc.Screensaver
         {
             try
             {
+                // Select a random screensaver if asked
+                bool randomProvided = saver.Equals("random", StringComparison.OrdinalIgnoreCase);
+                saver = randomProvided ? SelectRandomScreensaver() : saver.ToLower();
+
                 // Check to see if the scrensaver exists
                 EventsManager.FireEvent(EventType.PreShowScreensaver);
                 DebugWriter.WriteDebug(DebugLevel.I, "Requested screensaver: {0}", saver);
@@ -162,50 +166,26 @@ namespace Nitrocid.Misc.Screensaver
                     return;
                 }
 
-                // Now, judge how to launch the screensaver
+                // Now, launch the screensaver
                 screenRefresh = true;
-                string saverName = saver.ToLower();
-                if (saverName == "random")
+                if (IsScreensaverRegistered(saver))
                 {
-                    // Random screensaver selection function
-                    static string SelectRandom()
-                    {
-                        var savers = GetScreensaverNames();
-                        int ScreensaverIndex = RandomDriver.RandomIdx(savers.Length);
-                        string ScreensaverName = savers[ScreensaverIndex];
-                        return ScreensaverName;
-                    }
-
-                    // Get a random screensaver name
-                    int ScreensaverIndex = RandomDriver.RandomIdx(Screensavers.Count);
-                    string ScreensaverName = SelectRandom();
-
-                    // We don't want another "random" screensaver showing up, so keep selecting until it's no longer "random"
-                    while (ScreensaverName == "random")
-                        ScreensaverName = SelectRandom();
-
-                    // Run the screensaver
-                    ShowSavers(ScreensaverName, true);
-                }
-                else if (IsScreensaverRegistered(saverName))
-                {
-                    saver = saverName;
+                    // Get the base screensaver
                     var BaseSaver =
                         AddonSavers.TryGetValue(saver, out BaseScreensaver @base) ? @base :
                         CustomSavers.TryGetValue(saver, out BaseScreensaver customBase) ? customBase :
                         Screensavers[saver];
-                    if (BaseSaver.ScreensaverContainsFlashingImages && !noSeizureWarning)
+
+                    // Show the seizure warning if required
+                    if (BaseSaver.ScreensaverContainsFlashingImages && !noSeizureWarning && !randomProvided)
                         BaseSaver.ScreensaverSeizureWarning();
+
+                    // Start the screensaver thread
                     inSaver = true;
                     ScrnTimeReached = true;
                     ScreensaverDisplayer.ScreensaverDisplayerThread.Start(BaseSaver);
                     DebugWriter.WriteDebug(DebugLevel.I, "{0} started", saver);
                 }
-            }
-            catch (InvalidOperationException ex)
-            {
-                TextWriters.Write(Translate.DoTranslation("Error when trying to start screensaver, because of an invalid operation."), true, KernelColorType.Error);
-                DebugWriter.WriteDebugStackTrace(ex);
             }
             catch (Exception ex)
             {
@@ -296,8 +276,7 @@ namespace Nitrocid.Misc.Screensaver
             return
                 Screensavers.ContainsKey(name) ||
                 AddonSavers.ContainsKey(name) ||
-                CustomSavers.ContainsKey(name) ||
-                name == "random";
+                CustomSavers.ContainsKey(name);
         }
 
         /// <summary>
@@ -436,6 +415,26 @@ namespace Nitrocid.Misc.Screensaver
                 DebugWriter.WriteDebug(DebugLevel.E, "Shutting down screensaver timeout thread: {0}", ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
+        }
+
+        private static string SelectRandomScreensaver()
+        {
+            static string SelectRandom()
+            {
+                var savers = GetScreensaverNames();
+                int ScreensaverIndex = RandomDriver.RandomIdx(savers.Length);
+                string ScreensaverName = savers[ScreensaverIndex];
+                return ScreensaverName;
+            }
+
+            // Get a random screensaver name
+            string ScreensaverName = SelectRandom();
+
+            // We don't want another "random" screensaver showing up, so keep selecting until it's no longer "random"
+            while (ScreensaverName == "random")
+                ScreensaverName = SelectRandom();
+
+            return ScreensaverName.ToLower();
         }
 
     }
