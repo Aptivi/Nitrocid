@@ -148,12 +148,6 @@ namespace Nitrocid.Kernel.Starting
                 LanguageManager.InstallCustomLanguages();
                 DebugWriter.WriteDebug(DebugLevel.I, "Loaded custom languages.");
 
-                // Initialize important mods
-                if (KernelEntry.TalkativePreboot)
-                    SplashReport.ReportProgress(Translate.DoTranslation("Loading important mods..."));
-                ModManager.StartMods(ModLoadPriority.Important);
-                DebugWriter.WriteDebug(DebugLevel.I, "Loaded important mods.");
-
                 // Initialize addons
                 if (KernelEntry.TalkativePreboot)
                     SplashReport.ReportProgress(Translate.DoTranslation("Loading important kernel addons..."));
@@ -182,6 +176,15 @@ namespace Nitrocid.Kernel.Starting
                 // Load splash
                 SplashManager.OpenSplash(SplashContext.StartingUp);
                 DebugWriter.WriteDebug(DebugLevel.I, "Loaded splash.");
+
+                // Initialize important mods
+                if (ModManager.StartKernelMods)
+                {
+                    if (KernelEntry.TalkativePreboot)
+                        SplashReport.ReportProgress(Translate.DoTranslation("Loading important mods..."));
+                    ModManager.StartMods(ModLoadPriority.Important);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Loaded important mods.");
+                }
 
                 // Populate debug devices
                 RemoteDebugTools.LoadAllDevices();
