@@ -33,6 +33,7 @@ using Textify.Sequences.Builder;
 using Nitrocid.Languages;
 using Terminaux.Reader;
 using Terminaux.Inputs;
+using Terminaux.Writer.FancyWriters;
 
 namespace Nitrocid.ConsoleBase
 {
@@ -175,53 +176,61 @@ namespace Nitrocid.ConsoleBase
                     KernelPlatform.IsOnWindows() ?
                     Translate.DoTranslation("You must be running either ConEmu or a Windows 10 command prompt with VT processing enabled.") + "\n" :
                     Translate.DoTranslation("Your terminal is {0} on {1}.") + "\n";
-                return TextWriterWhereColor.RenderWherePlain(TextTools.FormatString(message, KernelPlatform.GetTerminalType(), KernelPlatform.GetTerminalEmulator()), 3, 2);
+                return TextWriterWhereColor.RenderWhere(TextTools.FormatString(message, KernelPlatform.GetTerminalType(), KernelPlatform.GetTerminalEmulator()), 3, 1, KernelColorTools.GetColor(KernelColorType.Warning), KernelColorTools.GetColor(KernelColorType.Background));
             });
 
             // Show three color bands
             rampPart.AddDynamicText(() =>
             {
                 var band = new StringBuilder();
-                int times = ConsoleWrapper.WindowWidth - 9;
+
+                // First, render a box
+                int times = ConsoleWrapper.WindowWidth - 10;
                 DebugWriter.WriteDebug(DebugLevel.I, "Band length: {0} cells", times);
+                band.Append(BoxFrameColor.RenderBoxFrame(3, 3, times + 1, 3));
+                band.Append(BoxFrameColor.RenderBoxFrame(3, 9, times + 1, 1));
+                band.Append(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, 5, 5));
+
+                // Then, render the three bands, starting from the red color
                 double threshold = 255 / (double)times;
-                band.Append("    ");
                 for (double i = 0; i <= times; i++)
                     band.Append($"{new Color(Convert.ToInt32(i * threshold), 0, 0).VTSequenceBackground} ");
-                band.AppendLine();
-                band.Append("    ");
+                band.Append(CharManager.GetEsc() + $"[49m");
+                band.Append(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, 5, 6));
+
+                // The green color
                 for (double i = 0; i <= times; i++)
                     band.Append($"{new Color(0, Convert.ToInt32(i * threshold), 0).VTSequenceBackground} ");
-                band.AppendLine();
-                band.Append("    ");
+                band.Append(CharManager.GetEsc() + $"[49m");
+                band.Append(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, 5, 7));
+
+                // The blue color
                 for (double i = 0; i <= times; i++)
                     band.Append($"{new Color(0, 0, Convert.ToInt32(i * threshold)).VTSequenceBackground} ");
-                band.AppendLine();
-                band.Append($"{CharManager.GetEsc() + $"[49m"}");
-                band.AppendLine();
+                band.Append(CharManager.GetEsc() + $"[49m");
+                band.Append(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, 5, 11));
 
                 // Now, show the hue band
                 double hueThreshold = 360 / (double)times;
-                band.Append("    ");
                 for (double h = 0; h <= times; h++)
                     band.Append($"{new Color($"hsl:{Convert.ToInt32(h * hueThreshold)};100;50").VTSequenceBackground} ");
                 band.AppendLine();
-                band.Append($"{CharManager.GetEsc() + $"[49m"}");
-                return band.ToString();
+                band.Append(CharManager.GetEsc() + $"[49m");
+                return TextWriterWhereColor.RenderWherePlain(TextTools.FormatString(band.ToString(), KernelPlatform.GetTerminalType(), KernelPlatform.GetTerminalEmulator()), 3, 3);
             });
 
             // Tell the user to select either Y or N
             rampPart.AddDynamicText(() =>
             {
-                return TextWriterWhereColor.RenderWherePlain(Translate.DoTranslation("Do these ramps look right to you? They should transition smoothly.") + " <y/n>", 3, ConsoleWrapper.WindowHeight - 2);
+                return
+                    TextWriterWhereColor.RenderWhere(Translate.DoTranslation("Do these ramps look right to you? They should transition smoothly.") + " <y/n>", 3, ConsoleWrapper.WindowHeight - 2, KernelColorTools.GetColor(KernelColorType.Question), KernelColorTools.GetColor(KernelColorType.Background)) +
+                    KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground;
             });
             screen.AddBufferedPart("Ramp screen part", rampPart);
             ConsoleKey answer = ConsoleKey.None;
+            ScreenTools.Render();
             while (answer != ConsoleKey.N && answer != ConsoleKey.Y)
-            {
-                ScreenTools.Render();
                 answer = Input.DetectKeypress().Key;
-            }
 
             // Set the appropriate config
             bool supports256Color = answer == ConsoleKey.Y;
