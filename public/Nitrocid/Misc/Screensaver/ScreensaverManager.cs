@@ -44,6 +44,7 @@ using Nitrocid.Misc.Screensaver.Displays;
 using Terminaux.Colors;
 using Terminaux.Base;
 using Nitrocid.Kernel;
+using System.Linq;
 
 namespace Nitrocid.Misc.Screensaver
 {
@@ -63,7 +64,6 @@ namespace Nitrocid.Misc.Screensaver
         internal static Dictionary<string, BaseScreensaver> CustomSavers = [];
         internal static bool scrnTimeoutEnabled = true;
         internal static int scrnTimeout = 300000;
-        internal static string defSaverName = "matrixbleed";
         internal static bool LockMode;
         internal static bool inSaver;
         internal static bool screenRefresh;
@@ -102,7 +102,7 @@ namespace Nitrocid.Misc.Screensaver
         /// Default screensaver name
         /// </summary>
         public static string DefaultSaverName =>
-            Config.MainConfig.DefaultSaverName;
+            GetScreensaverNames().Contains(Config.MainConfig.DefaultSaverName) ? Config.MainConfig.DefaultSaverName : "matrixbleed";
 
         /// <summary>
         /// Whether the screen refresh is required

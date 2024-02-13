@@ -1015,11 +1015,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// <summary>
         /// Which screensaver do you want to lock your screen with?
         /// </summary>
-        public string DefaultSaverName
-        {
-            get => ScreensaverManager.defSaverName;
-            set => ScreensaverManager.defSaverName = ScreensaverManager.GetScreensaverNames().Contains(value) ? value : "plain";
-        }
+        public string DefaultSaverName { get; set; } = "matrixbleed";
         /// <summary>
         /// Whether the screen timeout is enabled or not
         /// </summary>
