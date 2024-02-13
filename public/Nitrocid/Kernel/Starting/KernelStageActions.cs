@@ -84,20 +84,20 @@ namespace Nitrocid.Kernel.Starting
                 HardwareList.ListHardware();
         }
 
-        internal static void Stage04KernelModifications()
-        {
-            if (ModManager.StartKernelMods)
-                ModManager.StartMods();
-        }
-
-        internal static void Stage05OptionalComponents() =>
+        internal static void Stage04OptionalComponents() =>
             KernelInitializers.InitializeOptional();
 
-        internal static void Stage06UserInitialization()
+        internal static void Stage05UserInitialization()
         {
             UserManagement.InitializeUsers();
             GroupManagement.InitializeGroups();
             SplashReport.ReportProgress(Translate.DoTranslation("Users initialized"), 5);
+        }
+
+        internal static void Stage06KernelModifications()
+        {
+            if (ModManager.StartKernelMods)
+                ModManager.StartMods();
         }
 
         internal static void Stage07SysIntegrity()
