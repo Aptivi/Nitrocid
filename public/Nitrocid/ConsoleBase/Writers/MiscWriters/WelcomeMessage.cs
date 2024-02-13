@@ -101,13 +101,9 @@ namespace Nitrocid.ConsoleBase.Writers.MiscWriters
 
                 // Finally, write the message
                 if (StartScroll)
-                {
-                    TextWriters.WriteSlowly(MessageWrite, true, 10d, KernelColorType.Banner, KernelMain.VersionFullStr);
-                }
+                    TextDynamicWriters.WriteSlowly(MessageWrite, true, 10d, KernelColorType.Banner, KernelMain.VersionFullStr);
                 else
-                {
                     TextWriters.Write(MessageWrite, true, KernelColorType.Banner, KernelMain.VersionFullStr);
-                }
 
                 string FigletRenderedBanner = FigletTools.RenderFiglet($"{KernelMain.VersionFullStr}", Config.MainConfig.DefaultFigletFontName);
                 TextWriterColor.Write(CharManager.NewLine + FigletRenderedBanner + CharManager.NewLine);
