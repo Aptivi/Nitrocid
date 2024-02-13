@@ -98,7 +98,7 @@ namespace Nitrocid.Shell.ShellBase.Commands
                 if (!argSatisfied)
                 {
                     DebugWriter.WriteDebug(DebugLevel.W, "Arguments not satisfied.");
-                    TextWriters.Write(Translate.DoTranslation("Required arguments are not provided for all usages. See below for more info:"), true, KernelColorType.Error);
+                    TextWriters.Write(Translate.DoTranslation("Required arguments are not provided for all usages below:"), true, KernelColorType.Error);
                     for (int i = 0; i < total.Length; i++)
                     {
                         ProvidedArgumentsInfo unsatisfied = total[i];
