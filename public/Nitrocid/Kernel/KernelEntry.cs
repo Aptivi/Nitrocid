@@ -113,7 +113,6 @@ namespace Nitrocid.Kernel
             // Start the main loop
             DebugWriter.WriteDebug(DebugLevel.I, "Main Loop start.");
             MainLoop();
-            ShellManager.PurgeShells();
             DebugWriter.WriteDebug(DebugLevel.I, "Main Loop end.");
         }
 
@@ -184,6 +183,7 @@ namespace Nitrocid.Kernel
             else
                 SplashManager.OpenSplash(SplashContext.ShuttingDown);
             DebugWriter.WriteDebug(DebugLevel.I, "Loaded splash for reboot or shutdown.");
+            ShellManager.PurgeShells();
         }
     }
 }
