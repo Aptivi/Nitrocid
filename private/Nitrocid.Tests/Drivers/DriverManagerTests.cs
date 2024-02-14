@@ -169,7 +169,7 @@ namespace Nitrocid.Tests.Drivers
 
         [TestMethod]
         [DataRow("Null", DriverTypes.Console)]
-        [DataRow("SHA384", DriverTypes.Encryption)]
+        [DataRow("SHA512", DriverTypes.Encryption)]
         [DataRow("Default", DriverTypes.Filesystem)]
         [DataRow("Default", DriverTypes.Network)]
         [DataRow("Standard", DriverTypes.RNG)]
@@ -315,7 +315,7 @@ namespace Nitrocid.Tests.Drivers
 
         [TestMethod]
         [DataRow(DriverTypes.Console, "File", "File", "Default")]
-        [DataRow(DriverTypes.Encryption, "SHA384", "SHA384", "SHA256")]
+        [DataRow(DriverTypes.Encryption, "SHA512", "SHA512", "SHA256")]
         [DataRow(DriverTypes.Filesystem, "Default", "Default", "Default")]
         [DataRow(DriverTypes.Network, "Default", "Default", "Default")]
         [DataRow(DriverTypes.RNG, "Standard", "Standard", "Default")]
@@ -338,7 +338,7 @@ namespace Nitrocid.Tests.Drivers
 
         [TestMethod]
         [DataRow(DriverTypes.Console, "File", "Default", "Default")]
-        [DataRow(DriverTypes.Encryption, "SHA384", "SHA384", "SHA256")]
+        [DataRow(DriverTypes.Encryption, "SHA512", "SHA512", "SHA256")]
         [DataRow(DriverTypes.Filesystem, "Default", "Default", "Default")]
         [DataRow(DriverTypes.Network, "Default", "Default", "Default")]
         [DataRow(DriverTypes.RNG, "Standard", "Standard", "Default")]
@@ -379,9 +379,9 @@ namespace Nitrocid.Tests.Drivers
         [Description("Management")]
         public void TestSetEncryptionDriver()
         {
-            EncryptionDriverTools.SetEncryptionDriver("SHA384");
-            DriverHandler.CurrentEncryptionDriver.DriverName.ShouldBe("SHA384");
-            DriverHandler.CurrentEncryptionDriverLocal.DriverName.ShouldBe("SHA384");
+            EncryptionDriverTools.SetEncryptionDriver("SHA512");
+            DriverHandler.CurrentEncryptionDriver.DriverName.ShouldBe("SHA512");
+            DriverHandler.CurrentEncryptionDriverLocal.DriverName.ShouldBe("SHA512");
         }
 
         [TestMethod]
@@ -647,7 +647,7 @@ namespace Nitrocid.Tests.Drivers
 
         [TestMethod]
         [DataRow(DriverTypes.Console, "File", "File")]
-        [DataRow(DriverTypes.Encryption, "SHA384", "SHA384")]
+        [DataRow(DriverTypes.Encryption, "SHA512", "SHA512")]
         [DataRow(DriverTypes.Filesystem, "Default", "Default")]
         [DataRow(DriverTypes.Network, "Default", "Default")]
         [DataRow(DriverTypes.RNG, "Standard", "Standard")]
@@ -667,7 +667,7 @@ namespace Nitrocid.Tests.Drivers
 
         [TestMethod]
         [DataRow(DriverTypes.Console, "File", "Default")]
-        [DataRow(DriverTypes.Encryption, "SHA384", "SHA384")]
+        [DataRow(DriverTypes.Encryption, "SHA512", "SHA512")]
         [DataRow(DriverTypes.Filesystem, "Default", "Default")]
         [DataRow(DriverTypes.Network, "Default", "Default")]
         [DataRow(DriverTypes.RNG, "Standard", "Standard")]
