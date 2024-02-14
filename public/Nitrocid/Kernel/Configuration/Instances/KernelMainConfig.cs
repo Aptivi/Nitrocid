@@ -22,7 +22,6 @@ using System;
 using Terminaux.Colors;
 using Terminaux.Colors.Transformation;
 using Figletize;
-using System.Linq;
 using Nitrocid.Kernel.Configuration.Settings;
 using Nitrocid.Shell.Shells.Text;
 using Nitrocid.Shell.ShellBase.Shells;

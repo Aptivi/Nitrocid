@@ -20,7 +20,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System.Text.RegularExpressions;
-using Nitrocid.Drivers;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Misc.Text.Probers.Regexp;
 
@@ -64,7 +63,7 @@ namespace Nitrocid.Tests.Drivers
         public void TestMatch(string text, string pattern)
         {
             Match match = default;
-            Should.NotThrow(() => match = DriverHandler.CurrentRegexpDriverLocal.Match(text, pattern));
+            Should.NotThrow(() => match = RegexpTools.Match(text, pattern));
         }
 
         [TestMethod]
@@ -75,7 +74,7 @@ namespace Nitrocid.Tests.Drivers
         public void TestMatchInvalid(string text, string pattern)
         {
             Match match = default;
-            Should.Throw(() => match = DriverHandler.CurrentRegexpDriverLocal.Match(text, pattern), typeof(KernelException));
+            Should.Throw(() => match = RegexpTools.Match(text, pattern), typeof(KernelException));
         }
 
         [TestMethod]
@@ -88,7 +87,7 @@ namespace Nitrocid.Tests.Drivers
         public void TestMatches(string text, string pattern)
         {
             MatchCollection match = default;
-            Should.NotThrow(() => match = DriverHandler.CurrentRegexpDriverLocal.Matches(text, pattern));
+            Should.NotThrow(() => match = RegexpTools.Matches(text, pattern));
         }
 
         [TestMethod]
@@ -99,7 +98,7 @@ namespace Nitrocid.Tests.Drivers
         public void TestMatchesInvalid(string text, string pattern)
         {
             MatchCollection match = default;
-            Should.Throw(() => match = DriverHandler.CurrentRegexpDriverLocal.Matches(text, pattern), typeof(KernelException));
+            Should.Throw(() => match = RegexpTools.Matches(text, pattern), typeof(KernelException));
         }
 
         [TestMethod]
@@ -112,7 +111,7 @@ namespace Nitrocid.Tests.Drivers
         public void TestFilter(string text, string pattern, string expected)
         {
             string filtered = default;
-            Should.NotThrow(() => filtered = DriverHandler.CurrentRegexpDriverLocal.Filter(text, pattern));
+            Should.NotThrow(() => filtered = RegexpTools.Filter(text, pattern));
             filtered.ShouldBe(expected);
         }
 
@@ -124,7 +123,7 @@ namespace Nitrocid.Tests.Drivers
         public void TestFilterInvalid(string text, string pattern)
         {
             string filtered = default;
-            Should.Throw(() => filtered = DriverHandler.CurrentRegexpDriverLocal.Filter(text, pattern), typeof(KernelException));
+            Should.Throw(() => filtered = RegexpTools.Filter(text, pattern), typeof(KernelException));
         }
 
         [TestMethod]
@@ -137,7 +136,7 @@ namespace Nitrocid.Tests.Drivers
         public void TestFilter(string text, string pattern, string replaceWith, string expected)
         {
             string filtered = default;
-            Should.NotThrow(() => filtered = DriverHandler.CurrentRegexpDriverLocal.Filter(text, pattern, replaceWith));
+            Should.NotThrow(() => filtered = RegexpTools.Filter(text, pattern, replaceWith));
             filtered.ShouldBe(expected);
         }
 
@@ -149,7 +148,7 @@ namespace Nitrocid.Tests.Drivers
         public void TestFilterInvalid(string text, string pattern, string replaceWith)
         {
             string filtered = default;
-            Should.Throw(() => filtered = DriverHandler.CurrentRegexpDriverLocal.Filter(text, pattern, replaceWith), typeof(KernelException));
+            Should.Throw(() => filtered = RegexpTools.Filter(text, pattern, replaceWith), typeof(KernelException));
         }
 
         [TestMethod]
@@ -162,7 +161,7 @@ namespace Nitrocid.Tests.Drivers
         public void TestSplit(string text, string pattern, string[] expected)
         {
             string[] split = default;
-            Should.NotThrow(() => split = DriverHandler.CurrentRegexpDriverLocal.Split(text, pattern));
+            Should.NotThrow(() => split = RegexpTools.Split(text, pattern));
             split.ShouldBe(expected);
         }
 
@@ -174,7 +173,7 @@ namespace Nitrocid.Tests.Drivers
         public void TestSplitInvalid(string text, string pattern)
         {
             string[] split = default;
-            Should.Throw(() => split = DriverHandler.CurrentRegexpDriverLocal.Split(text, pattern), typeof(KernelException));
+            Should.Throw(() => split = RegexpTools.Split(text, pattern), typeof(KernelException));
         }
 
         [TestMethod]
@@ -196,7 +195,7 @@ namespace Nitrocid.Tests.Drivers
         public void TestEscape(string text, string expected)
         {
             string final = default;
-            Should.NotThrow(() => final = DriverHandler.CurrentRegexpDriverLocal.Escape(text));
+            Should.NotThrow(() => final = RegexpTools.Escape(text));
             final.ShouldBe(expected);
         }
 
@@ -219,7 +218,7 @@ namespace Nitrocid.Tests.Drivers
         public void TestUnescape(string text, string expected)
         {
             string final = default;
-            Should.NotThrow(() => final = DriverHandler.CurrentRegexpDriverLocal.Unescape(text));
+            Should.NotThrow(() => final = RegexpTools.Unescape(text));
             final.ShouldBe(expected);
         }
     }

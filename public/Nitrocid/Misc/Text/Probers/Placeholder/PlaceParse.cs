@@ -27,7 +27,6 @@ using Nitrocid.Kernel.Time;
 using Nitrocid.Shell.ShellBase.Scripting;
 using Nitrocid.Users;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.Drivers;
 using Nitrocid.Files.Folders;
 using Nitrocid.Kernel.Time.Renderers;
 using Nitrocid.Languages;
@@ -39,6 +38,7 @@ using Nitrocid.Kernel.Power;
 using Nitrocid.Kernel.Time.Timezones;
 using Textify.General;
 using Nitrocid.Network;
+using Nitrocid.Misc.Text.Probers.Regexp;
 
 namespace Nitrocid.Misc.Text.Probers.Placeholder
 {
@@ -92,7 +92,7 @@ namespace Nitrocid.Misc.Text.Probers.Placeholder
             {
                 // Parse the text for the following placeholders:
                 DebugWriter.WriteDebug(DebugLevel.I, "Parsing text for placeholders...");
-                var placeMatches = DriverHandler.CurrentRegexpDriverLocal.Matches(text, /* lang=regex */ @"\<.*\>").ToArray();
+                var placeMatches = RegexpTools.Matches(text, /* lang=regex */ @"\<.*\>").ToArray();
 
                 // Get all the placeholder matches and replace them as appropriate
                 foreach (var placeMatch in placeMatches)

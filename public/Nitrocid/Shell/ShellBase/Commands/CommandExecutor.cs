@@ -37,6 +37,7 @@ using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Threading;
 using Textify.General;
+using Nitrocid.Misc.Text.Probers.Regexp;
 
 namespace Nitrocid.Shell.ShellBase.Commands
 {
@@ -182,10 +183,10 @@ namespace Nitrocid.Shell.ShellBase.Commands
                 // Now, assume that an argument is satisfied
                 var ArgumentInfo = satisfied;
                 Command = ArgumentInfo.Command;
-                var Args = ArgumentInfo.ArgumentsList.Select(DriverHandler.CurrentRegexpDriverLocal.Unescape).ToArray();
+                var Args = ArgumentInfo.ArgumentsList.Select(RegexpTools.Unescape).ToArray();
                 var ArgsOrig = ArgumentInfo.ArgumentsListOrig;
-                var Switches = ArgumentInfo.SwitchesList.Select(DriverHandler.CurrentRegexpDriverLocal.Unescape).ToArray();
-                string StrArgs = DriverHandler.CurrentRegexpDriverLocal.Unescape(ArgumentInfo.ArgumentsText);
+                var Switches = ArgumentInfo.SwitchesList.Select(RegexpTools.Unescape).ToArray();
+                string StrArgs = RegexpTools.Unescape(ArgumentInfo.ArgumentsText);
                 string StrArgsOrig = ArgumentInfo.ArgumentsTextOrig;
                 bool containsSetSwitch = SwitchManager.ContainsSwitch(Switches, "-set");
                 string variable = "";

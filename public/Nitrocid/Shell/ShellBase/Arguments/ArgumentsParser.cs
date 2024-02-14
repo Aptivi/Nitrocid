@@ -18,8 +18,8 @@
 //
 
 using Nitrocid.Arguments;
-using Nitrocid.Drivers;
 using Nitrocid.Kernel.Debugging;
+using Nitrocid.Misc.Text.Probers.Regexp;
 using Nitrocid.Modifications;
 using Nitrocid.Shell.ShellBase.Aliases;
 using Nitrocid.Shell.ShellBase.Commands;
@@ -156,11 +156,11 @@ namespace Nitrocid.Shell.ShellBase.Arguments
             // Split the switches properly now
             string switchRegex =
                 /* lang=regex */ @"((?<= )-\S+=((""(.+?)(?<![^\\]\\)"")|('(.+?)(?<![^\\]\\)')|(`(.+?)(?<![^\\]\\)`)|(?:[^\\\s]|\\.)+|\S+))|(?<= )-\S+";
-            var EnclosedSwitches = DriverHandler.CurrentRegexpDriverLocal
+            var EnclosedSwitches = RegexpTools
                 .Matches(CommandText, switchRegex)
                 .Select((match) => match.Value)
                 .ToArray();
-            CommandText = DriverHandler.CurrentRegexpDriverLocal.Filter(CommandText, switchRegex);
+            CommandText = RegexpTools.Filter(CommandText, switchRegex);
 
             // Split the requested command string into words
             var words = CommandText.SplitEncloseDoubleQuotes();

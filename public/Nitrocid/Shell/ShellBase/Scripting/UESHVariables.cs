@@ -21,10 +21,10 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using Nitrocid.Drivers;
 using Nitrocid.Kernel;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
+using Nitrocid.Misc.Text.Probers.Regexp;
 using Nitrocid.Shell.ShellBase.Arguments;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Shells;
@@ -247,7 +247,7 @@ namespace Nitrocid.Shell.ShellBase.Scripting
             expression = string.IsNullOrEmpty(expression) ? "" : expression;
             string localVarStoreValuesMatch = /* lang=regex */
                 @"((?'key'\$\S+)=(?'value'(""(.+?)(?<![^\\]\\)"")|('(.+?)(?<![^\\]\\)')|(`(.+?)(?<![^\\]\\)`)|(?:[^\\\s\)]|\\.)+))+";
-            var varStoreMatches = DriverHandler.CurrentRegexpDriverLocal.Matches(expression, localVarStoreValuesMatch);
+            var varStoreMatches = RegexpTools.Matches(expression, localVarStoreValuesMatch);
             var varStoreKeys = varStoreMatches
                 .Select((match) => match.Groups["key"].Value).ToArray();
             var varStoreValues = varStoreMatches

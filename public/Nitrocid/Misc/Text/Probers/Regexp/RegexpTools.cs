@@ -19,6 +19,7 @@
 
 using Nitrocid.Drivers;
 using System.Diagnostics.CodeAnalysis;
+using System.Text.RegularExpressions;
 
 namespace Nitrocid.Misc.Text.Probers.Regexp
 {
@@ -43,5 +44,67 @@ namespace Nitrocid.Misc.Text.Probers.Regexp
         /// <returns>True if there are matches. Otherwise, false</returns>
         public static bool IsMatch(string text, [StringSyntax(StringSyntaxAttribute.Regex)] string pattern) =>
             DriverHandler.CurrentRegexpDriverLocal.IsMatch(text, pattern);
+
+        /// <summary>
+        /// Matches the pattern with the text given
+        /// </summary>
+        /// <param name="text">The text to be matched</param>
+        /// <param name="pattern">Regular expression pattern for matching</param>
+        /// <returns>A <see cref="System.Text.RegularExpressions.Match"/> that contains information about the current match</returns>
+        public static Match Match(string text, [StringSyntax(StringSyntaxAttribute.Regex)] string pattern) =>
+            DriverHandler.CurrentRegexpDriverLocal.Match(text, pattern);
+
+        /// <summary>
+        /// Matches the pattern with the text given
+        /// </summary>
+        /// <param name="text">The text to be matched</param>
+        /// <param name="pattern">Regular expression pattern for matching</param>
+        /// <returns>Collection of <see cref="System.Text.RegularExpressions.Match"/>es that contains information about the current match</returns>
+        public static MatchCollection Matches(string text, [StringSyntax(StringSyntaxAttribute.Regex)] string pattern) =>
+            DriverHandler.CurrentRegexpDriverLocal.Matches(text, pattern);
+
+        /// <summary>
+        /// Filters the string from the substrings matched by the given pattern
+        /// </summary>
+        /// <param name="text">The text to be processed</param>
+        /// <param name="pattern">Regular expression pattern for replacing</param>
+        /// <returns>Filtered text</returns>
+        public static string Filter(string text, [StringSyntax(StringSyntaxAttribute.Regex)] string pattern) =>
+            DriverHandler.CurrentRegexpDriverLocal.Filter(text, pattern);
+
+        /// <summary>
+        /// Filters the string from the substrings matched by the given pattern
+        /// </summary>
+        /// <param name="text">The text to be processed</param>
+        /// <param name="pattern">Regular expression pattern for replacing</param>
+        /// <param name="replaceWith">Replaces the matched substrings with the specified text</param>
+        /// <returns>Filtered text</returns>
+        public static string Filter(string text, [StringSyntax(StringSyntaxAttribute.Regex)] string pattern, string replaceWith) =>
+            DriverHandler.CurrentRegexpDriverLocal.Filter(text, pattern, replaceWith);
+
+        /// <summary>
+        /// Splits the string using the matched substrings as the delimiters
+        /// </summary>
+        /// <param name="text">The text to be split</param>
+        /// <param name="pattern">Regular expression pattern for splitting</param>
+        /// <returns>Array of strings</returns>
+        public static string[] Split(string text, [StringSyntax(StringSyntaxAttribute.Regex)] string pattern) =>
+            DriverHandler.CurrentRegexpDriverLocal.Split(text, pattern);
+
+        /// <summary>
+        /// Escapes the invalid characters from the string
+        /// </summary>
+        /// <param name="text">The text containing invalid characters to escape</param>
+        /// <returns>Escaped string</returns>
+        public static string Escape(string text) =>
+            DriverHandler.CurrentRegexpDriverLocal.Escape(text);
+
+        /// <summary>
+        /// Unescapes the escaped characters from the string
+        /// </summary>
+        /// <param name="text">The text containing escaped characters to unescape</param>
+        /// <returns>Unescaped string</returns>
+        public static string Unescape(string text) =>
+            DriverHandler.CurrentRegexpDriverLocal.Unescape(text);
     }
 }

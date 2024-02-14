@@ -17,9 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Drivers;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
+using Nitrocid.Misc.Text.Probers.Regexp;
 using System;
 using System.Collections.Generic;
 using Textify.General;
@@ -65,7 +65,7 @@ namespace Nitrocid.Shell.ShellBase.Scripting.Conditions.Types
             { "double",     (value) => value is not null && double.TryParse(value, out _) },
             { "f64",        (value) => value is not null && double.TryParse(value, out _) },
             { "bool",       (value) => value is not null && bool.TryParse(value, out _) },
-            { "regex",      (value) => value is not null && DriverHandler.CurrentRegexpDriverLocal.IsValidRegex(value) },
+            { "regex",      (value) => value is not null && RegexpTools.IsValidRegex(value) },
         };
 
         /// <inheritdoc/>

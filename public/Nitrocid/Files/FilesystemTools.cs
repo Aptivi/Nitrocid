@@ -25,13 +25,13 @@ using System.Threading;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.Drivers;
 using Nitrocid.Files.Folders;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Files.Instances;
 using Nitrocid.Files.Operations.Querying;
 using Textify.General;
+using Nitrocid.Misc.Text.Probers.Regexp;
 
 namespace Nitrocid.Files
 {
@@ -100,8 +100,8 @@ namespace Nitrocid.Files
             ThrowOnInvalidPath(Source);
 
             // Unescape the characters
-            Path = DriverHandler.CurrentRegexpDriverLocal.Unescape(Path.Replace(@"\", "/"));
-            Source = DriverHandler.CurrentRegexpDriverLocal.Unescape(Source.Replace(@"\", "/"));
+            Path = RegexpTools.Unescape(Path.Replace(@"\", "/"));
+            Source = RegexpTools.Unescape(Source.Replace(@"\", "/"));
 
             // Append current directory to path
             if (!Checking.Rooted(Path))

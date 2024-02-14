@@ -409,7 +409,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
 
                 // Initialize local UESH variables (if found)
                 string localVarStoreMatchRegex = /* lang=regex */ @"^\((.+)\)\s+";
-                var localVarStoreMatch = DriverHandler.CurrentRegexpDriverLocal.Match(Command, localVarStoreMatchRegex);
+                var localVarStoreMatch = RegexpTools.Match(Command, localVarStoreMatchRegex);
                 string varStoreString = localVarStoreMatch.Groups[1].Value;
                 DebugWriter.WriteDebug(DebugLevel.I, "varStoreString is: {0}", varStoreString);
                 string varStoreStringFull = localVarStoreMatch.Value;
@@ -440,7 +440,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
                     string arguments = string.Join(' ', words.Skip(1));
 
                     // Get the target file and path
-                    TargetFile = DriverHandler.CurrentRegexpDriverLocal.Unescape(commandName);
+                    TargetFile = RegexpTools.Unescape(commandName);
                     bool existsInPath = PathLookupTools.FileExistsInPath(commandName, ref TargetFile);
                     bool pathValid = Parsing.TryParsePath(TargetFile);
                     if (!existsInPath || string.IsNullOrEmpty(TargetFile))
