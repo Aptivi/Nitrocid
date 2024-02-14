@@ -34,7 +34,7 @@ namespace Nitrocid.Tests.Network
     {
 
         private static IEnumerable<(string, string, NetworkConnectionType, object)> Connections =>
-            new (string, string, NetworkConnectionType, object)[] {
+            [
                 // ---------- Provided ----------
                 ("FTP client", "ftp.fabrikam.com", NetworkConnectionType.FTP, ConnectionThreads.ftpThread),
                 ("HTTP client", "api.fabrikam.com", NetworkConnectionType.HTTP, ConnectionThreads.httpThread),
@@ -42,7 +42,7 @@ namespace Nitrocid.Tests.Network
                 ("RSS client", "feed.fabrikam.com/atom", NetworkConnectionType.RSS, ConnectionThreads.rssThread),
                 ("SFTP client", "sftp.fabrikam.com", NetworkConnectionType.SFTP, ConnectionThreads.sftpThread),
                 ("SSH client", "freeshell.fabrikam.com", NetworkConnectionType.SSH, ConnectionThreads.sshThread),
-            };
+            ];
 
         /// <summary>
         /// Tests establishing network connection (instances)

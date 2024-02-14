@@ -122,7 +122,7 @@ namespace Nitrocid.Extras.UnitConv.Interactives
                 var unitValues = QuantityInfo.UnitInfos.Select(x => x.Value);
                 foreach (Enum UnitValue in unitValues)
                 {
-                    var remainingUnitValues = unitValues.Except(new[] { UnitValue });
+                    var remainingUnitValues = unitValues.Except([UnitValue]);
                     foreach (Enum remainingUnitValue in remainingUnitValues)
                     {
                         string abbreviationSource = abbreviations.GetDefaultAbbreviation(UnitValue.GetType(), Convert.ToInt32(UnitValue));

@@ -41,7 +41,7 @@ namespace Nitrocid.Tests.Drivers
     {
 
         private static IEnumerable<object[]> ExpectedDriverNames =>
-            new object[][] {
+            [
                 // ---------- Actual ----------                                               ---------- Expected ----------
                 [DriverTypes.Console, DriverHandler.CurrentConsoleDriver,                    "Default"],
                 [DriverTypes.Console, DriverHandler.CurrentConsoleDriverLocal,               "Default"],
@@ -65,73 +65,73 @@ namespace Nitrocid.Tests.Drivers
                 [DriverTypes.Sorting, DriverHandler.CurrentSortingDriverLocal,               "Default"],
                 [DriverTypes.Input, DriverHandler.CurrentInputDriver,                        "Default"],
                 [DriverTypes.Input, DriverHandler.CurrentInputDriverLocal,                   "Default"],
-            };
+            ];
 
         private static IEnumerable<object[]> RegisteredConsoleDriver =>
-            new object[][] {
+            [
                 //                     ---------- Provided ----------
                 [DriverTypes.Console, new MyCustomConsoleDriver()],
-            };
+            ];
 
         private static IEnumerable<object[]> RegisteredEncryptionDriver =>
-            new object[][] {
+            [
                 //                       ---------- Provided ----------
                 [DriverTypes.Encryption, new MyCustomEncryptionDriver()],
-            };
+            ];
 
         private static IEnumerable<object[]> RegisteredFilesystemDriver =>
-            new object[][] {
+            [
                 //                        ---------- Provided ----------
                 [DriverTypes.Filesystem, new MyCustomFilesystemDriver()],
-            };
+            ];
 
         private static IEnumerable<object[]> RegisteredNetworkDriver =>
-            new object[][] {
+            [
                 //                     ---------- Provided ----------
                 [DriverTypes.Network, new MyCustomNetworkDriver()],
-            };
+            ];
 
         private static IEnumerable<object[]> RegisteredRNGDriver =>
-            new object[][] {
+            [
                 //                 ---------- Provided ----------
                 [DriverTypes.RNG, new MyCustomRNGDriver()],
-            };
+            ];
 
         private static IEnumerable<object[]> RegisteredRegexpDriver =>
-            new object[][] {
+            [
                 //                    ---------- Provided ----------
                 [DriverTypes.Regexp, new MyCustomRegexpDriver()],
-            };
+            ];
 
         private static IEnumerable<object[]> RegisteredDebugLoggerDriver =>
-            new object[][] {
+            [
                 //                         ---------- Provided ----------
                 [DriverTypes.DebugLogger, new MyCustomDebugLoggerDriver()],
-            };
+            ];
 
         private static IEnumerable<object[]> RegisteredEncodingDriver =>
-            new object[][] {
+            [
                 //                      ---------- Provided ----------
                 [DriverTypes.Encoding, new MyCustomEncodingDriver()],
-            };
+            ];
 
         private static IEnumerable<object[]> RegisteredHardwareProberDriver =>
-            new object[][] {
+            [
                 //                            ---------- Provided ----------
                 [DriverTypes.HardwareProber, new MyCustomHardwareProberDriver()],
-            };
+            ];
 
         private static IEnumerable<object[]> RegisteredSortingDriver =>
-            new object[][] {
+            [
                 //                     ---------- Provided ----------
                 [DriverTypes.Sorting, new MyCustomSortingDriver()],
-            };
+            ];
 
         private static IEnumerable<object[]> RegisteredInputDriver =>
-            new object[][] {
+            [
                 //                   ---------- Provided ----------
                 [DriverTypes.Input, new MyCustomInputDriver()],
-            };
+            ];
 
         // NOTE: Ordering of the functions below is important for new MSTest as it fails when we keep it as it is. The
         //       new MSTest .exe way of running tests runs tests in the source code ordered way (TestAddDriver before

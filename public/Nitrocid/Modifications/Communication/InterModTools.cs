@@ -248,7 +248,7 @@ namespace Nitrocid.Modifications.Communication
                 return;
 
             // The property instance is valid. Try to get a value from it.
-            set.Invoke(null, new[] { value });
+            set.Invoke(null, [value]);
         }
 
         /// <summary>

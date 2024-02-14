@@ -242,7 +242,7 @@ namespace Nitrocid.Shell.ShellBase.Commands
                                     if (@switch == setValue && ArgInfo.AcceptsSet)
                                     {
                                         variable = SwitchManager.GetSwitchValue(Switches, "-set");
-                                        Switches = Switches.Except(new[] { setValue }).ToArray();
+                                        Switches = Switches.Except([setValue]).ToArray();
                                         break;
                                     }
                                 }

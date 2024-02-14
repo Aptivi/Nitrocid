@@ -273,8 +273,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Populate the laser ends
             laserEnds.AddRange(
-                new[]
-                {
+                [
                     (0, (ConsoleWrapper.WindowHeight * 5 / 5) - 1),
                     (0, (ConsoleWrapper.WindowHeight * 4 / 5) - 1),
                     (0, (ConsoleWrapper.WindowHeight * 3 / 5) - 1),
@@ -286,7 +285,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     ((ConsoleWrapper.WindowWidth * 3 / 5) - 1, 0),
                     ((ConsoleWrapper.WindowWidth * 4 / 5) - 1, 0),
                     ((ConsoleWrapper.WindowWidth * 5 / 5) - 1, 0),
-                }
+                ]
             );
 
             // Draw few beams
