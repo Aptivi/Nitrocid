@@ -9,7 +9,7 @@
     <OutputType>Exe</OutputType>
     <IsPackable>false</IsPackable>
     <IsTestProject>true</IsTestProject>
-    <TestingPlatformDotnetTestSupport>false</TestingPlatformDotnetTestSupport>
+    <TestingPlatformDotnetTestSupport>true</TestingPlatformDotnetTestSupport>
     <SignAssembly>True</SignAssembly>
     <AssemblyOriginatorKeyFile>..\..\aptivi_snk.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
