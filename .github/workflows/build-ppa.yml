@@ -36,6 +36,7 @@ jobs:
           sudo ip netns add no-net
           chmod +x tools/initializeoffline.sh
           make debian-init-offline
+          make clean
         
       - name: Try to build
         run: |
