@@ -1,4 +1,4 @@
-name: Build Project (Linux)
+name: Build Project (Debug)
 
 on:
   push:

@@ -42,7 +42,6 @@ namespace Nitrocid.Drivers.Encryption
         /// <exception cref="FileNotFoundException"></exception>
         public static bool VerifyHashFromHashesFile(string FileName, string HashType, string HashesFile, string ActualHash)
         {
-            int ExpectedHashLength;
             string ExpectedHash = "";
 
             FileName = FS.NeutralizePath(FileName);
@@ -52,7 +51,6 @@ namespace Nitrocid.Drivers.Encryption
             if (Checking.FileExists(FileName))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Hash type: {0} ({1})", HashType, HashType.ToString());
-                ExpectedHashLength = GetExpectedHashLength(HashType);
 
                 // Verify the hash
                 if (Checking.FileExists(HashesFile))
@@ -91,26 +89,8 @@ namespace Nitrocid.Drivers.Encryption
                     throw new KernelException(KernelExceptionType.Encryption, "Hashes file {0} not found.", HashesFile);
                 }
 
-                if (ActualHash.Length == ExpectedHashLength & ExpectedHash.Length == ExpectedHashLength)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Hashes are consistent.");
-                    DebugWriter.WriteDebug(DebugLevel.I, "Hashes {0} and {1}", ActualHash, ExpectedHash);
-                    if (ActualHash == ExpectedHash)
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Hashes match.");
-                        return true;
-                    }
-                    else
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.W, "Hashes don't match.");
-                        return false;
-                    }
-                }
-                else
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, "{0} ({1}) or {2} ({3}) is malformed. Check the algorithm ({4}). Expected length: {5}", ActualHash, ActualHash.Length, ExpectedHash, ExpectedHash.Length, HashType, ExpectedHashLength);
-                    throw new KernelException(KernelExceptionType.InvalidHash, "{0} ({1}) or {2} ({3}) is malformed. Check the algorithm ({4}). Expected length: {5}", ActualHash, ActualHash.Length, ExpectedHash, ExpectedHash.Length, HashType, ExpectedHashLength);
-                }
+                // Verify the hash
+                return VerifyHashPlain(HashType, ExpectedHash, ActualHash);
             }
             else
             {
@@ -129,8 +109,6 @@ namespace Nitrocid.Drivers.Encryption
         /// <exception cref="FileNotFoundException"></exception>
         public static bool VerifyHashFromHash(string FileName, string HashType, string ExpectedHash, string ActualHash)
         {
-            int ExpectedHashLength;
-
             FileName = FS.NeutralizePath(FileName);
             ExpectedHash = ExpectedHash.ToUpper();
             ActualHash = ActualHash.ToUpper();
@@ -138,29 +116,9 @@ namespace Nitrocid.Drivers.Encryption
             if (Checking.FileExists(FileName))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Hash type: {0} ({1})", HashType, HashType.ToString());
-                ExpectedHashLength = GetExpectedHashLength(HashType);
 
                 // Verify the hash
-                if (ActualHash.Length == ExpectedHashLength & ExpectedHash.Length == ExpectedHashLength)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Hashes are consistent.");
-                    DebugWriter.WriteDebug(DebugLevel.I, "Hashes {0} and {1}", ActualHash, ExpectedHash);
-                    if (ActualHash == ExpectedHash)
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Hashes match.");
-                        return true;
-                    }
-                    else
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.W, "Hashes don't match.");
-                        return false;
-                    }
-                }
-                else
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, "{0} ({1}) or {2} ({3}) is malformed. Check the algorithm ({4}). Expected length: {5}", ActualHash, ActualHash.Length, ExpectedHash, ExpectedHash.Length, HashType, ExpectedHashLength);
-                    throw new KernelException(KernelExceptionType.InvalidHash, "{0} ({1}) or {2} ({3}) is malformed. Check the algorithm ({4}). Expected length: {5}", ActualHash, ActualHash.Length, ExpectedHash, ExpectedHash.Length, HashType, ExpectedHashLength);
-                }
+                return VerifyHashPlain(HashType, ExpectedHash, ActualHash);
             }
             else
             {
@@ -178,7 +136,6 @@ namespace Nitrocid.Drivers.Encryption
         /// <exception cref="FileNotFoundException"></exception>
         public static bool VerifyUncalculatedHashFromHashesFile(string FileName, string HashType, string HashesFile)
         {
-            int ExpectedHashLength;
             string ExpectedHash = "";
             string ActualHash = "";
 
@@ -189,7 +146,6 @@ namespace Nitrocid.Drivers.Encryption
             if (Checking.FileExists(FileName))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Hash type: {0} ({1})", HashType, HashType.ToString());
-                ExpectedHashLength = GetExpectedHashLength(HashType);
 
                 // Verify the hash
                 if (Checking.FileExists(HashesFile))
@@ -228,26 +184,8 @@ namespace Nitrocid.Drivers.Encryption
                     throw new KernelException(KernelExceptionType.Encryption, "Hashes file {0} not found.", HashesFile);
                 }
 
-                if (ActualHash.Length == ExpectedHashLength & ExpectedHash.Length == ExpectedHashLength)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Hashes are consistent.");
-                    DebugWriter.WriteDebug(DebugLevel.I, "Hashes {0} and {1}", ActualHash, ExpectedHash);
-                    if (ActualHash == ExpectedHash)
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Hashes match.");
-                        return true;
-                    }
-                    else
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.W, "Hashes don't match.");
-                        return false;
-                    }
-                }
-                else
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, "{0} ({1}) or {2} ({3}) is malformed. Check the algorithm ({4}). Expected length: {5}", ActualHash, ActualHash.Length, ExpectedHash, ExpectedHash.Length, HashType, ExpectedHashLength);
-                    throw new KernelException(KernelExceptionType.InvalidHash, "{0} ({1}) or {2} ({3}) is malformed. Check the algorithm ({4}). Expected length: {5}", ActualHash, ActualHash.Length, ExpectedHash, ExpectedHash.Length, HashType, ExpectedHashLength);
-                }
+                // Verify the hash
+                return VerifyHashPlain(HashType, ExpectedHash, ActualHash);
             }
             else
             {
@@ -265,7 +203,6 @@ namespace Nitrocid.Drivers.Encryption
         /// <exception cref="FileNotFoundException"></exception>
         public static bool VerifyUncalculatedHashFromHash(string FileName, string HashType, string ExpectedHash)
         {
-            int ExpectedHashLength;
             string ActualHash;
             FileName = FS.NeutralizePath(FileName);
             ExpectedHash = ExpectedHash.ToUpper();
@@ -273,36 +210,69 @@ namespace Nitrocid.Drivers.Encryption
             if (Checking.FileExists(FileName))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Hash type: {0} ({1})", HashType, HashType.ToString());
-                ExpectedHashLength = GetExpectedHashLength(HashType);
 
                 // Calculate the file hash
                 ActualHash = Encryption.GetEncryptedFile(FileName, HashType).ToUpper();
 
                 // Verify the hash
-                if (ActualHash.Length == ExpectedHashLength & ExpectedHash.Length == ExpectedHashLength)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Hashes are consistent.");
-                    DebugWriter.WriteDebug(DebugLevel.I, "Hashes {0} and {1}", ActualHash, ExpectedHash);
-                    if (ActualHash == ExpectedHash)
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Hashes match.");
-                        return true;
-                    }
-                    else
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.W, "Hashes don't match.");
-                        return false;
-                    }
-                }
-                else
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, "{0} ({1}) or {2} ({3}) is malformed. Check the algorithm ({4}). Expected length: {5}", ActualHash, ActualHash.Length, ExpectedHash, ExpectedHash.Length, HashType, ExpectedHashLength);
-                    throw new KernelException(KernelExceptionType.InvalidHash, "{0} ({1}) or {2} ({3}) is malformed. Check the algorithm ({4}). Expected length: {5}", ActualHash, ActualHash.Length, ExpectedHash, ExpectedHash.Length, HashType, ExpectedHashLength);
-                }
+                return VerifyHashPlain(HashType, ExpectedHash, ActualHash);
             }
             else
             {
                 throw new KernelException(KernelExceptionType.Encryption, "File {0} not found.", FileName);
+            }
+        }
+
+        /// <summary>
+        /// Verifies the provided hash sum from expected hash
+        /// </summary>
+        /// <param name="HashType">Hash algorithm</param>
+        /// <param name="ExpectedHash">Expected hash</param>
+        /// <param name="ActualHash">Actual hash calculated from hash tool</param>
+        /// <returns>True if they match; else, false.</returns>
+        /// <exception cref="FileNotFoundException"></exception>
+        public static bool VerifyHashPlain(string HashType, string ExpectedHash, string ActualHash)
+        {
+            ExpectedHash = ExpectedHash.ToUpper();
+            ActualHash = ActualHash.ToUpper();
+            DebugWriter.WriteDebug(DebugLevel.I, "Hash type: {0} ({1})", HashType, HashType.ToString());
+            int ExpectedHashLength = GetExpectedHashLength(HashType);
+
+            // Verify the hash
+            bool actualLengthValid = ActualHash.Length == ExpectedHashLength;
+            bool expectedLengthValid = ExpectedHash.Length == ExpectedHashLength;
+            if (actualLengthValid && expectedLengthValid)
+            {
+                DebugWriter.WriteDebug(DebugLevel.I, "Hashes are consistent.");
+                DebugWriter.WriteDebug(DebugLevel.I, "Hashes {0} and {1}", ActualHash, ExpectedHash);
+                if (ActualHash == ExpectedHash)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.I, "Hashes match.");
+                    return true;
+                }
+                else
+                {
+                    DebugWriter.WriteDebug(DebugLevel.W, "Hashes don't match.");
+                    return false;
+                }
+            }
+            else
+            {
+                if (actualLengthValid)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, "The actual hash {0} ({1}) is malformed. Check the algorithm ({2}). Expected length: {3}", ActualHash, ActualHash.Length, HashType, ExpectedHashLength);
+                    throw new KernelException(KernelExceptionType.InvalidHash, "The actual hash {0} ({1}) is malformed. Check the algorithm ({2}). Expected length: {3}", ActualHash, ActualHash.Length, HashType, ExpectedHashLength);
+                }
+                else if (expectedLengthValid)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, "The expected hash {0} ({1}) is malformed. Check the algorithm ({2}). Expected length: {3}", ExpectedHash, ExpectedHash.Length, HashType, ExpectedHashLength);
+                    throw new KernelException(KernelExceptionType.InvalidHash, "The expected hash {0} ({1}) is malformed. Check the algorithm ({2}). Expected length: {3}", ExpectedHash, ExpectedHash.Length, HashType, ExpectedHashLength);
+                }
+                else
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, "Expected {0} ({1}) and actual {2} ({3}) are malformed. Check the algorithm ({4}). Expected length: {5}", ActualHash, ActualHash.Length, ExpectedHash, ExpectedHash.Length, HashType, ExpectedHashLength);
+                    throw new KernelException(KernelExceptionType.InvalidHash, "Expected {0} ({1}) and actual {2} ({3}) are malformed. Check the algorithm ({4}). Expected length: {5}", ActualHash, ActualHash.Length, ExpectedHash, ExpectedHash.Length, HashType, ExpectedHashLength);
+                }
             }
         }
 
