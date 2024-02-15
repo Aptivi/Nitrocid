@@ -88,7 +88,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Shells
             shellInfo.ShellType.ShouldBe("Basic debug shell");
 
             // Start the shell
-            Should.NotThrow(new Action(() => ShellManager.StartShellForced("Basic debug shell")));
+            Should.NotThrow(new Action(() => ShellManager.StartShellInternal("Basic debug shell")));
 
             // Make sure that the shell stack is empty due to manual Bail.
             ShellManager.ShellStack.ShouldBeEmpty();
@@ -119,7 +119,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Shells
             shellInfo.ShellType.ShouldBe("Basic debug shell");
 
             // Start the shell
-            Should.NotThrow(new Action(() => ShellManager.StartShellForced("Basic debug shell", "Hello", "World")));
+            Should.NotThrow(new Action(() => ShellManager.StartShellInternal("Basic debug shell", "Hello", "World")));
 
             // Make sure that the shell stack is empty due to manual Bail.
             ShellManager.ShellStack.ShouldBeEmpty();

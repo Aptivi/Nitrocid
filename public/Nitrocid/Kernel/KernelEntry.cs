@@ -173,7 +173,7 @@ namespace Nitrocid.Kernel
 
                 // Initialize shell
                 DebugWriter.WriteDebug(DebugLevel.I, "Shell is being initialized.");
-                ShellManager.StartShellForced(ShellType.Shell);
+                ShellManager.StartShellInternal(ShellType.Shell);
             }
 
             // Load splash

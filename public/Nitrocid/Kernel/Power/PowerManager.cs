@@ -158,8 +158,7 @@ namespace Nitrocid.Kernel.Power
                         KernelShutdown = true;
 
                         // Kill all shells and interrupt any input
-                        for (int i = ShellManager.ShellStack.Count - 1; i >= 0; i--)
-                            ShellManager.KillShellForced();
+                        ShellManager.KillAllShells();
                         TermReaderTools.Interrupt();
                         break;
                     }
@@ -184,8 +183,7 @@ namespace Nitrocid.Kernel.Power
                         DebugWriter.WriteDebug(DebugLevel.I, "Debug mode changed to {0}", rebootingToDebugMode);
 
                         // Kill all shells and interrupt any input
-                        for (int i = ShellManager.ShellStack.Count - 1; i >= 0; i--)
-                            ShellManager.KillShellForced();
+                        ShellManager.KillAllShells();
                         TermReaderTools.Interrupt();
                         break;
                     }

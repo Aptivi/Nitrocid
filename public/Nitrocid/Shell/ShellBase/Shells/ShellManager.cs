@@ -661,68 +661,10 @@ namespace Nitrocid.Shell.ShellBase.Shells
             if (ShellStack.Count >= 1)
             {
                 // The shell stack has a mother shell. Start another shell.
-                StartShellForced(ShellType, ShellArgs);
+                StartShellInternal(ShellType, ShellArgs);
             }
-        }
-
-        /// <summary>
-        /// Force starts the shell
-        /// </summary>
-        /// <param name="ShellType">The shell type</param>
-        /// <param name="ShellArgs">Arguments to pass to shell</param>
-        public static void StartShellForced(ShellType ShellType, params object[] ShellArgs) =>
-            StartShellForced(GetShellTypeName(ShellType), ShellArgs);
-
-        /// <summary>
-        /// Force starts the shell
-        /// </summary>
-        /// <param name="ShellType">The shell type</param>
-        /// <param name="ShellArgs">Arguments to pass to shell</param>
-        public static void StartShellForced(string ShellType, params object[] ShellArgs)
-        {
-            int shellCount = ShellStack.Count;
-            try
-            {
-                // Make a shell executor based on shell type to select a specific executor (if the shell type is not UESH, and if the new shell isn't a mother shell)
-                // Please note that the remote debug shell is not supported because it works on its own space, so it can't be interfaced using the standard IShell.
-                var ShellExecute = GetShellExecutor(ShellType);
-
-                // Make a new instance of shell information
-                var ShellCommandThread = new KernelThread($"{ShellType} Command Thread", false, (cmdThreadParams) => CommandExecutor.ExecuteCommand((CommandExecutorParameters)cmdThreadParams));
-                var ShellInfo = new ShellExecuteInfo(ShellType, ShellExecute, ShellCommandThread);
-
-                // Add a new shell to the shell stack to indicate that we have a new shell (a visitor)!
-                ShellStack.Add(ShellInfo);
-                if (!histories.ContainsKey(ShellType))
-                    histories.Add(ShellType, []);
-
-                // Reset title in case we're going to another shell
-                ConsoleExtensions.SetTitle(KernelReleaseInfo.ConsoleTitle);
-                ShellExecute.InitializeShell(ShellArgs);
-            }
-            catch (Exception ex)
-            {
-                // There is an exception trying to run the shell. Throw the message to the debugger and to the caller.
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed initializing shell!!! Type: {0}, Message: {1}", ShellType, ex.Message);
-                DebugWriter.WriteDebug(DebugLevel.E, "Additional info: Args: {0} [{1}], Shell Stack: {2} shells, shellCount: {3} shells", ShellArgs.Length, string.Join(", ", ShellArgs), ShellStack.Count, shellCount);
-                DebugWriter.WriteDebug(DebugLevel.E, "This shell needs to be killed in order for the shell manager to proceed. Passing exception to caller...");
-                DebugWriter.WriteDebugStackTrace(ex);
-                DebugWriter.WriteDebug(DebugLevel.E, "If you don't see \"Purge\" from {0} after few lines, this indicates that we're in a seriously corrupted state.", nameof(StartShellForced));
-                throw new KernelException(KernelExceptionType.ShellOperation, Translate.DoTranslation("Failed trying to initialize shell"), ex);
-            }
-            finally
-            {
-                // There is either an unknown shell error trying to be initialized or a shell has manually set Bail to true prior to exiting, like the JSON shell
-                // that sets this property when it fails to open the JSON file due to syntax error or something. If we haven't added the shell to the shell stack,
-                // do nothing. Else, purge that shell with KillShell(). Otherwise, we'll get another shell's commands in the wrong shell and other problems will
-                // occur until the ghost shell has exited either automatically or manually, so check to see if we have added the newly created shell to the shell
-                // stack and kill that faulted shell so that we can have the correct shell in the most recent shell, ^1, from the stack.
-                int newShellCount = ShellStack.Count;
-                DebugWriter.WriteDebug(DebugLevel.I, "Purge: newShellCount: {0} shells, shellCount: {1} shells", newShellCount, shellCount);
-                if (newShellCount > shellCount)
-                    KillShellForced();
-                TermReaderTools.SetHistory(histories[LastShellType]);
-            }
+            else
+                throw new KernelException(KernelExceptionType.ShellOperation, Translate.DoTranslation("Shells can't start unless the mother shell has started."));
         }
 
         /// <summary>
@@ -735,20 +677,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
                 throw new KernelException(KernelExceptionType.ShellOperation, Translate.DoTranslation("Can not kill the mother shell!"));
 
             // Not a mother shell, so bail.
-            ShellStack[^1].ShellBase.Bail = true;
-            PurgeShells();
-        }
-
-        /// <summary>
-        /// Force kills the last running shell
-        /// </summary>
-        public static void KillShellForced()
-        {
-            if (ShellStack.Count >= 1)
-            {
-                ShellStack[^1].ShellBase.Bail = true;
-                PurgeShells();
-            }
+            KillShellInternal();
         }
 
         /// <summary>
@@ -908,6 +837,88 @@ namespace Nitrocid.Shell.ShellBase.Shells
             if (!Checking.FileExists(path))
                 return;
             histories = JsonConvert.DeserializeObject<Dictionary<string, List<string>>>(FileIO.ReadAllText(path));
+        }
+
+        /// <summary>
+        /// Force starts the shell
+        /// </summary>
+        /// <param name="ShellType">The shell type</param>
+        /// <param name="ShellArgs">Arguments to pass to shell</param>
+        internal static void StartShellInternal(ShellType ShellType, params object[] ShellArgs) =>
+            StartShellInternal(GetShellTypeName(ShellType), ShellArgs);
+
+        /// <summary>
+        /// Force starts the shell
+        /// </summary>
+        /// <param name="ShellType">The shell type</param>
+        /// <param name="ShellArgs">Arguments to pass to shell</param>
+        internal static void StartShellInternal(string ShellType, params object[] ShellArgs)
+        {
+            int shellCount = ShellStack.Count;
+            try
+            {
+                // Make a shell executor based on shell type to select a specific executor (if the shell type is not UESH, and if the new shell isn't a mother shell)
+                // Please note that the remote debug shell is not supported because it works on its own space, so it can't be interfaced using the standard IShell.
+                var ShellExecute = GetShellExecutor(ShellType);
+
+                // Make a new instance of shell information
+                var ShellCommandThread = new KernelThread($"{ShellType} Command Thread", false, (cmdThreadParams) => CommandExecutor.ExecuteCommand((CommandExecutorParameters)cmdThreadParams));
+                var ShellInfo = new ShellExecuteInfo(ShellType, ShellExecute, ShellCommandThread);
+
+                // Add a new shell to the shell stack to indicate that we have a new shell (a visitor)!
+                ShellStack.Add(ShellInfo);
+                if (!histories.ContainsKey(ShellType))
+                    histories.Add(ShellType, []);
+
+                // Reset title in case we're going to another shell
+                ConsoleExtensions.SetTitle(KernelReleaseInfo.ConsoleTitle);
+                ShellExecute.InitializeShell(ShellArgs);
+            }
+            catch (Exception ex)
+            {
+                // There is an exception trying to run the shell. Throw the message to the debugger and to the caller.
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed initializing shell!!! Type: {0}, Message: {1}", ShellType, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Additional info: Args: {0} [{1}], Shell Stack: {2} shells, shellCount: {3} shells", ShellArgs.Length, string.Join(", ", ShellArgs), ShellStack.Count, shellCount);
+                DebugWriter.WriteDebug(DebugLevel.E, "This shell needs to be killed in order for the shell manager to proceed. Passing exception to caller...");
+                DebugWriter.WriteDebugStackTrace(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "If you don't see \"Purge\" from {0} after few lines, this indicates that we're in a seriously corrupted state.", nameof(StartShellInternal));
+                throw new KernelException(KernelExceptionType.ShellOperation, Translate.DoTranslation("Failed trying to initialize shell"), ex);
+            }
+            finally
+            {
+                // There is either an unknown shell error trying to be initialized or a shell has manually set Bail to true prior to exiting, like the JSON shell
+                // that sets this property when it fails to open the JSON file due to syntax error or something. If we haven't added the shell to the shell stack,
+                // do nothing. Else, purge that shell with KillShell(). Otherwise, we'll get another shell's commands in the wrong shell and other problems will
+                // occur until the ghost shell has exited either automatically or manually, so check to see if we have added the newly created shell to the shell
+                // stack and kill that faulted shell so that we can have the correct shell in the most recent shell, ^1, from the stack.
+                int newShellCount = ShellStack.Count;
+                DebugWriter.WriteDebug(DebugLevel.I, "Purge: newShellCount: {0} shells, shellCount: {1} shells", newShellCount, shellCount);
+                if (newShellCount > shellCount)
+                    KillShellInternal();
+                TermReaderTools.SetHistory(histories[LastShellType]);
+            }
+        }
+
+        /// <summary>
+        /// Force kills the last running shell
+        /// </summary>
+        internal static void KillShellInternal()
+        {
+            if (ShellStack.Count >= 1)
+            {
+                ShellStack[^1].ShellBase.Bail = true;
+                PurgeShells();
+            }
+        }
+
+        /// <summary>
+        /// Kills all the shells
+        /// </summary>
+        internal static void KillAllShells()
+        {
+            for (int i = ShellStack.Count - 1; i >= 0; i--)
+                ShellStack[i].ShellBase.Bail = true;
+            PurgeShells();
         }
 
         /// <summary>
