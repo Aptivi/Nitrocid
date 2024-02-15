@@ -144,7 +144,7 @@ namespace Nitrocid.Kernel
 
                 // Check to see if login handler requested power action
                 if (PowerManager.RebootRequested || PowerManager.KernelShutdown)
-                    return;
+                    continue;
 
                 // Show current time
                 if (TimeDateTools.ShowCurrentTimeBeforeLogin)
