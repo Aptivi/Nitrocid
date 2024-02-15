@@ -66,20 +66,25 @@
     Note for constants: All Nitrocid flags should be defined by defining NitrocidFlags, not DefineConstants. Here's how you
     define such flags: -p:NitrocidFlags=PACKAGEMANAGERBUILD
     
-    Supported constants:
+    Supported constants (NitrocidFlags):
       - PACKAGEMANAGERBUILD: Indicates that this build is a package manager build suitable for Launchpad PPA
     
+    Possible specifiers (NitrocidReleaseSpecifier):
+      - REL: Final release
+      - DEV: Developer preview
+      - ALPHA: Alpha release
+      - BETA: Beta release
+      - RC: Release candidate
+    
   -->
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
-    <DefineDebug>true</DefineDebug>
-    <DefineTrace>true</DefineTrace>
-    <Optimize>false</Optimize>
-    <DefineConstants>SPECIFIERDEV;$(NitrocidFlags.Replace(",",";"))</DefineConstants>
-  </PropertyGroup>
-  
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+  <PropertyGroup>
+    <DefineDebug Condition="'$(Configuration)' == 'Debug'">true</DefineDebug>
+    <DefineTrace Condition="'$(Configuration)' == 'Debug'">true</DefineTrace>
     <Optimize>true</Optimize>
-    <DefineConstants>SPECIFIERREL;$(NitrocidFlags.Replace(",",";"))</DefineConstants>
+    <Optimize Condition="'$(Configuration)' == 'Debug'">false</Optimize>
+    <NitrocidReleaseSpecifier>REL</NitrocidReleaseSpecifier>
+    <NitrocidReleaseSpecifier Condition="'$(Configuration)' == 'Debug'">DEV</NitrocidReleaseSpecifier>
+    <DefineConstants>SPECIFIER$(NitrocidReleaseSpecifier);$(NitrocidFlags.Replace(",",";"))</DefineConstants>
   </PropertyGroup>
   <!-- KS Platform Information End -->
 

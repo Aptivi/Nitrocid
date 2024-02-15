@@ -22,21 +22,21 @@ namespace Nitrocid.Kernel
     internal static class KernelReleaseInfo
     {
 
-        // Release specifiers (SPECIFIER: REL or DEV | MILESTONESPECIFIER: ALPHA, BETA, RC, or NONE | None satisfied: Unsupported Release)
+        // Release specifiers (SPECIFIER: REL, DEV, ALPHA, BETA, or RC | None satisfied: Unsupported Release)
         internal readonly static string ReleaseSpecifier = ""
-#if SPECIFIERDEV
-#if MILESTONESPECIFIERALPHA
+#if !SPECIFIERREL
+#if SPECIFIERALPHA
                                     + "Alpha"
-#elif MILESTONESPECIFIERBETA
+#elif SPECIFIERBETA
                                     + "Beta"
-#elif MILESTONESPECIFIERRC
+#elif SPECIFIERRC
                                     + "Release Candidate"
-#else
+#elif SPECIFIERDEV
                                     + "Developer Preview"
-#endif // MILESTONESPECIFIERALPHA
-#elif !SPECIFIERREL
+#else
                                     + "UNSUPPORTED"
-#endif // SPECIFIERDEV
+#endif // MILESTONESPECIFIERALPHA
+#endif // !SPECIFIERREL
         ;
 
         // Final console window title
