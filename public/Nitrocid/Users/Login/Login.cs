@@ -93,10 +93,14 @@ namespace Nitrocid.Users.Login
                         UserManagement.fallbackRootAccount;
 
                     // Now, show the Login screen
-                    handler.LoginScreen();
+                    bool proceed = handler.LoginScreen();
 
                     // The login screen may provide an option to perform power options.
                     if (PowerManager.RebootRequested || PowerManager.KernelShutdown)
+                        continue;
+
+                    // The login screen may provide an option to refresh itself.
+                    if (!proceed)
                         continue;
 
                     // Prompt for username

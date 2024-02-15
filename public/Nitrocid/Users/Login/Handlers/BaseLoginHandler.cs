@@ -64,7 +64,7 @@ namespace Nitrocid.Users.Login.Handlers
             Config.MainConfig.ShowAvailableUsers;
 
         /// <inheritdoc/>
-        public virtual void LoginScreen()
+        public virtual bool LoginScreen()
         {
             // Clear console if ClearOnLogin is set to True (If a user has enabled Clear Screen on Login)
             if (ClearOnLogin)
@@ -90,6 +90,7 @@ namespace Nitrocid.Users.Login.Handlers
                 TextWriterColor.Write(Translate.DoTranslation("You can log in to these accounts:"));
                 ListWriterColor.WriteList(UsersList);
             }
+            return true;
         }
 
         /// <inheritdoc/>

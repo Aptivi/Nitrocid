@@ -36,7 +36,7 @@ namespace Nitrocid.Users.Login.Handlers.Logins
 {
     internal class ModernLogin : BaseLoginHandler, ILoginHandler
     {
-        public override void LoginScreen()
+        public override bool LoginScreen()
         {
             // Clear the console
             ConsoleWrapper.CursorVisible = false;
@@ -57,6 +57,7 @@ namespace Nitrocid.Users.Login.Handlers.Logins
             ModernLogonScreen.renderedFully = false;
 
             // Check to see if user requested power actions
+            bool proceed = true;
             if (key == ConsoleKey.Escape)
             {
                 int answer = InfoBoxButtonsColor.WriteInfoBoxButtons([
@@ -68,7 +69,9 @@ namespace Nitrocid.Users.Login.Handlers.Logins
                     PowerManager.PowerManage(PowerMode.Shutdown);
                 else if (answer == 1)
                     PowerManager.PowerManage(PowerMode.Reboot);
+                proceed = answer == 2;
             }
+            return proceed;
         }
 
         public override string UserSelector()

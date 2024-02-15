@@ -27,7 +27,8 @@ namespace Nitrocid.Users.Login.Handlers
         /// <summary>
         /// Login screen
         /// </summary>
-        void LoginScreen();
+        /// <returns>True if we need to proceed to the user selector. Otherwise, false.</returns>
+        bool LoginScreen();
 
         /// <summary>
         /// Username selector
