@@ -86,7 +86,7 @@ namespace Nitrocid.Misc.Splash.Splashes
             builder.Append(
                 col.VTSequenceForeground +
                 CenteredFigletTextColor.RenderCenteredFiglet(figFont, text) +
-                CenteredTextColor.RenderCentered(consoleY - 1, bottomText)
+                CenteredTextColor.RenderCenteredOneLine(consoleY - 1, bottomText)
             );
             return builder.ToString();
         }
