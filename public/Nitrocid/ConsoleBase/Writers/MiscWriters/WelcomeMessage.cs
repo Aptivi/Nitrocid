@@ -185,7 +185,7 @@ namespace Nitrocid.ConsoleBase.Writers.MiscWriters
                 InputChoiceInfo[] answers = [
                     new InputChoiceInfo("ok", Translate.DoTranslation("OK")),
                 ];
-                int answer = InfoBoxButtonsColor.WriteInfoBoxButtonsColor(
+                InfoBoxButtonsColor.WriteInfoBoxButtonsColor(
                     Translate.DoTranslation("Unusual environment notice"),
                     answers,
                     message + "\n\n" + message2,
