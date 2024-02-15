@@ -1016,7 +1016,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public string DefaultSaverName { get; set; } = "matrixbleed";
         /// <summary>
-        /// Whether the screen timeout is enabled or not
+        /// Whether the screen idling is enabled or not
         /// </summary>
         public bool ScreenTimeoutEnabled
         {
@@ -1031,12 +1031,31 @@ namespace Nitrocid.Kernel.Configuration.Instances
             }
         }
         /// <summary>
-        /// Write when to launch screensaver after specified milliseconds. It must be numeric
+        /// Minimum idling interval to launch screensaver
         /// </summary>
-        public int ScreenTimeout
+        public string ScreenTimeout
         {
-            get => ScreensaverManager.scrnTimeout;
-            set => ScreensaverManager.scrnTimeout = value < 0 ? 300000 : value;
+            get => ScreensaverManager.scrnTimeout.ToString();
+            set
+            {
+                // First, deal with merging milliseconds from old configs
+                TimeSpan fallback = new(0, 5, 0);
+                TimeSpan span;
+                bool isOldFormat = int.TryParse(value, out int milliseconds);
+                if (isOldFormat)
+                {
+                    span = TimeSpan.FromMilliseconds(milliseconds);
+                    ScreensaverManager.scrnTimeout = span.TotalMinutes < 1.0d ? fallback : span;
+                    return;
+                }
+
+                // Then, parse the timespan
+                bool spanParsed = TimeSpan.TryParse(value, out span);
+                if (!spanParsed)
+                    ScreensaverManager.scrnTimeout = fallback;
+                else
+                    ScreensaverManager.scrnTimeout = span.TotalMinutes < 1.0d ? fallback : span;
+            }
         }
         /// <summary>
         /// Enables debugging for screensavers. Please note that it may quickly fill the debug log and slightly slow the screensaver down, depending on the screensaver used. Only works if kernel debugging is enabled for diagnostic purposes.

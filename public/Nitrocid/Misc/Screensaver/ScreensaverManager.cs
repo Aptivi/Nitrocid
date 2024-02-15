@@ -63,7 +63,7 @@ namespace Nitrocid.Misc.Screensaver
         internal static Dictionary<string, BaseScreensaver> AddonSavers = [];
         internal static Dictionary<string, BaseScreensaver> CustomSavers = [];
         internal static bool scrnTimeoutEnabled = true;
-        internal static int scrnTimeout = 300000;
+        internal static TimeSpan scrnTimeout = new(0, 5, 0);
         internal static bool LockMode;
         internal static bool inSaver;
         internal static bool screenRefresh;
@@ -93,10 +93,17 @@ namespace Nitrocid.Misc.Screensaver
             inSaver;
 
         /// <summary>
-        /// Screen timeout in milliseconds
+        /// Screen timeout interval
         /// </summary>
-        public static int ScreenTimeout =>
-            Config.MainConfig.ScreenTimeout;
+        public static TimeSpan ScreenTimeout
+        {
+            get
+            {
+                if (!TimeSpan.TryParse(Config.MainConfig.ScreenTimeout, out TimeSpan timeout))
+                    return new(0, 5, 0);
+                return timeout;
+            }
+        }
 
         /// <summary>
         /// Default screensaver name
@@ -397,7 +404,7 @@ namespace Nitrocid.Misc.Screensaver
                         }, ScreenTimeout);
 
                         // Check to see if we're locking
-                        bool locking = !hasMoved && stopwatch.ElapsedMilliseconds >= ScreenTimeout;
+                        bool locking = !hasMoved && stopwatch.Elapsed >= ScreenTimeout;
                         stopwatch.Reset();
                         if (PowerManager.KernelShutdown || PowerManager.RebootRequested)
                             break;

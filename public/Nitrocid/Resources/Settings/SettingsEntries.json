@@ -944,16 +944,16 @@
                 "Description": "Which screensaver do you want to lock your screen with?"
             },
             {
-                "Name": "Enable Screensaver Timeout",
+                "Name": "Enable screensaver locking when idle",
                 "Type": "SBoolean",
                 "Variable": "ScreenTimeoutEnabled",
                 "Description": "If enabled, the screensaver automatically launches after idling for the specified period."
             },
             {
-                "Name": "Screensaver Timeout in ms",
-                "Type": "SInt",
+                "Name": "Screensaver minimum idling interval",
+                "Type": "SString",
                 "Variable": "ScreenTimeout",
-                "Description": "Write when to launch screensaver after specified milliseconds. It must be numeric."
+                "Description": "Minimum idling interval to launch screensaver. The unit is in time span format (HH:MM:SS)."
             },
             {
                 "Name": "Enable screensaver debugging",
