@@ -184,8 +184,8 @@ namespace Nitrocid.Misc.Notifications
                             string Title, Desc;
                             DebugWriter.WriteDebug(DebugLevel.I, "Title: {0}", NewNotification.Title);
                             DebugWriter.WriteDebug(DebugLevel.I, "Desc: {0}", NewNotification.Desc);
-                            Title = useSimplified ? "*" : NewNotification.Title.Truncate(36);
-                            Desc = useSimplified ? "" : NewNotification.Desc.Truncate(36);
+                            Title = useSimplified ? "*" : NewNotification.Title.Truncate(35);
+                            Desc = useSimplified ? "" : NewNotification.Desc.Truncate(35);
                             DebugWriter.WriteDebug(DebugLevel.I, "Truncated title: {0}", Title);
                             DebugWriter.WriteDebug(DebugLevel.I, "Truncated desc: {0}", Desc);
                             DebugWriter.WriteDebug(DebugLevel.I, "Truncated title length: {0}", Title.Length);
