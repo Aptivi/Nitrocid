@@ -76,7 +76,7 @@ namespace Nitrocid.Extras.Notes.Management
         /// </summary>
         /// <returns>An array of note contents</returns>
         internal static string[] ListNotes() =>
-            notes.ToArray();
+            [.. notes];
 
         /// <summary>
         /// Saves all notes

@@ -75,7 +75,7 @@ namespace Nitrocid.Shell.Shells.Debug
                     {
                         new CommandArgumentPart(true, "field", new CommandArgumentPartOptions()
                         {
-                            AutoCompleter = (_) => FieldManager.GetAllFieldsNoEvaluation().Keys.ToArray(),
+                            AutoCompleter = (_) => [.. FieldManager.GetAllFieldsNoEvaluation().Keys],
                         })
                     }, true)
                 ], new GetFieldValueCommand()),
@@ -86,7 +86,7 @@ namespace Nitrocid.Shell.Shells.Debug
                     {
                         new CommandArgumentPart(true, "property", new CommandArgumentPartOptions()
                         {
-                            AutoCompleter = (_) => PropertyManager.GetAllPropertiesNoEvaluation().Keys.ToArray(),
+                            AutoCompleter = (_) => [.. PropertyManager.GetAllPropertiesNoEvaluation().Keys],
                         })
                     }, true)
                 ], new GetPropertyValueCommand()),

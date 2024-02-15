@@ -106,7 +106,7 @@ namespace Nitrocid.Shell.ShellBase.Arguments
                 if (!done && argumentExpression.Contains('/'))
                 {
                     string[] expressions = argumentExpression.Split('/');
-                    autoCompleter = (_) => expressions.ToArray();
+                    autoCompleter = (_) => [.. expressions];
                     done = true;
                 }
             }

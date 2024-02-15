@@ -989,7 +989,7 @@ namespace Nitrocid.Drivers.Filesystem
 
         /// <inheritdoc/>
         public virtual List<string> GetPathList() =>
-            PathLookupTools.PathsToLookup.Split(Convert.ToChar(PathLookupTools.PathLookupDelimiter)).ToList();
+            [.. PathLookupTools.PathsToLookup.Split(Convert.ToChar(PathLookupTools.PathLookupDelimiter))];
 
         /// <inheritdoc/>
         public string GetRandomFileName() =>

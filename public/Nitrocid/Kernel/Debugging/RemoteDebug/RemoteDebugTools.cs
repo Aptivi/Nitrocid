@@ -303,7 +303,7 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug
         /// Lists all devices and puts them into an array
         /// </summary>
         public static RemoteDebugDeviceInfo[] ListDevices() =>
-            remoteDebugDevices.ToArray();
+            [.. remoteDebugDevices];
 
         /// <summary>
         /// Gets a device by IP address

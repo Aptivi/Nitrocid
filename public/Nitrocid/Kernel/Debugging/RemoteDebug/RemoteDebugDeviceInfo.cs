@@ -67,7 +67,7 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug
         /// </summary>
         [JsonIgnore]
         public string[] ChatHistory =>
-            chatHistory.ToArray();
+            [.. chatHistory];
 
         [JsonConstructor]
         internal RemoteDebugDeviceInfo()

@@ -282,7 +282,7 @@ namespace Nitrocid.Shell.Shells.UESH
                     {
                         new CommandArgumentPart(true, "oldUserName", new CommandArgumentPartOptions()
                         {
-                            AutoCompleter = (_) => UserManagement.ListAllUsers().ToArray()
+                            AutoCompleter = (_) => [.. UserManagement.ListAllUsers()]
                         }),
                         new CommandArgumentPart(true, "newUserName"),
                     })
@@ -798,7 +798,7 @@ namespace Nitrocid.Shell.Shells.UESH
                         new CommandArgumentPart(true, "reload/load/unload"),
                         new CommandArgumentPart(true, "customlanguagename", new CommandArgumentPartOptions()
                         {
-                            AutoCompleter = (_) => LanguageManager.CustomLanguages.Keys.ToArray()
+                            AutoCompleter = (_) => [.. LanguageManager.CustomLanguages.Keys]
                         }),
                     }),
                     new CommandArgumentInfo(new[]

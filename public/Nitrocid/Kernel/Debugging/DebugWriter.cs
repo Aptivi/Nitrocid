@@ -53,7 +53,7 @@ namespace Nitrocid.Kernel.Debugging
         /// Debug stack trace list
         /// </summary>
         public static string[] DebugStackTraces =>
-            debugStackTraces.ToArray();
+            [.. debugStackTraces];
 
         /// <summary>
         /// Censor private information that may be printed to the debug logs.

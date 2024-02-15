@@ -209,7 +209,7 @@ namespace Nitrocid.Misc.Interactives
         /// Selected files. If not selected yet and bailed earlier, this list is empty.
         /// </summary>
         public string[] SelectedFiles =>
-            selectedFiles.ToArray();
+            [.. selectedFiles];
 
         private static void SelectOrGoTo(FileSystemEntry currentFileSystemEntry)
         {

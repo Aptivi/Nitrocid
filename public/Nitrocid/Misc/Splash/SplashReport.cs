@@ -72,7 +72,7 @@ namespace Nitrocid.Misc.Splash
         /// Log buffer of the boot process
         /// </summary>
         public static string[] LogBuffer =>
-            logBuffer.ToArray();
+            [.. logBuffer];
 
         /// <summary>
         /// Reports the progress for the splash screen while the kernel is booting.

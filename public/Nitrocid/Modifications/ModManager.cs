@@ -369,7 +369,7 @@ namespace Nitrocid.Modifications
         /// <summary>
         /// Gets the blacklisted mods list
         /// </summary>
-        public static List<string> GetBlacklistedMods() => BlacklistedModsString.Split(';').ToList();
+        public static List<string> GetBlacklistedMods() => [.. BlacklistedModsString.Split(';')];
 
         /// <summary>
         /// Installs the mod DLL or single code file to the mod directory

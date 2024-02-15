@@ -186,7 +186,7 @@ namespace Nitrocid.Network.SpeedDial
         /// </summary>
         /// <returns>A list</returns>
         public static SpeedDialEntry[] ListSpeedDialEntries() =>
-            speedDialEntries.ToArray();
+            [.. speedDialEntries];
 
         /// <summary>
         /// Lists all speed dial entries by type

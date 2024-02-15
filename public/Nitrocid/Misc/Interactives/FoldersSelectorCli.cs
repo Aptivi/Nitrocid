@@ -211,7 +211,7 @@ namespace Nitrocid.Misc.Interactives
         /// Selected files. If not selected yet and bailed earlier, this list is empty.
         /// </summary>
         public string[] SelectedFolders =>
-            selectedFolders.ToArray();
+            [.. selectedFolders];
 
         private static void Select(FileSystemEntry currentFileSystemEntry)
         {
