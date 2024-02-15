@@ -45,6 +45,7 @@ namespace Nitrocid.ConsoleBase.Themes
         {
             { "Default", new ThemeInfo(JToken.Parse(ThemesResources.Default)) },
             { "Dynamic", new ThemeInfo(JToken.Parse(ThemesResources.Dynamic)) },
+            { "NitricAcid", new ThemeInfo(JToken.Parse(ThemesResources.NitricAcid)) },
         };
 
         /// <summary>

@@ -111,5 +111,29 @@ namespace Nitrocid.Resources {
                 return ResourceManager.GetString("Dynamic", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
+        ///    &quot;Metadata&quot;: {
+        ///        &quot;Name&quot;: &quot;Nitric Acid - HNO3&quot;,
+        ///        &quot;Description&quot;: &quot;Colorless, fuming, and highly corrosive liquid&quot;,
+        ///        &quot;Localizable&quot;: true,
+        ///        &quot;Category&quot;: &quot;Mesmerizing&quot;
+        ///    },
+        ///    &quot;InputColor&quot;: &quot;#AC9B03&quot;,
+        ///    &quot;LicenseColor&quot;: &quot;#AC9B03&quot;,
+        ///    &quot;ContKernelErrorColor&quot;: &quot;#AC9B03&quot;,
+        ///    &quot;UncontKernelErrorColor&quot;: &quot;#AC9B03&quot;,
+        ///    &quot;HostNameShellColor&quot;: &quot;#AC9B03&quot;,
+        ///    &quot;UserNameShellColor&quot;: &quot;#AC9B03&quot;,
+        ///    &quot;BackgroundColor&quot;: &quot;#0A0A00&quot;,
+        ///    &quot;NeutralTextColor&quot;: &quot;#AC9B03&quot;,
+        ///    &quot;ListEntr [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string NitricAcid {
+            get {
+                return ResourceManager.GetString("NitricAcid", resourceCulture);
+            }
+        }
     }
 }
