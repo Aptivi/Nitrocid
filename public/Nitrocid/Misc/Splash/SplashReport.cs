@@ -84,7 +84,7 @@ namespace Nitrocid.Misc.Splash
         /// it will report the progress to the splash system. You can force it to report the progress by passing force.
         /// </remarks>
         public static void ReportProgress(string Text, params object[] Vars) =>
-            ReportProgress(Text, 0, false, SplashManager.CurrentSplash, Vars);
+            ReportProgress(Text, 0, false, null, SplashReportSeverity.Info, SplashManager.CurrentSplash, Vars);
 
         /// <summary>
         /// Reports the progress for the splash screen while the kernel is booting.
@@ -97,69 +97,7 @@ namespace Nitrocid.Misc.Splash
         /// it will report the progress to the splash system. You can force it to report the progress by passing force.
         /// </remarks>
         public static void ReportProgress(string Text, int Progress, params object[] Vars) =>
-            ReportProgress(Text, Progress, false, SplashManager.CurrentSplash, Vars);
-
-        /// <summary>
-        /// Reports the progress for the splash screen while the kernel is booting.
-        /// </summary>
-        /// <param name="Text">The progress text to indicate how did the kernel progress</param>
-        /// <param name="Progress">The progress percentage from 0 to 100 to increment to the overall percentage</param>
-        /// <param name="force">Force report progress to splash</param>
-        /// <param name="splash">Splash interface</param>
-        /// <param name="Vars">Variables to be expanded to text</param>
-        /// <remarks>
-        /// If the kernel has booted successfully, it will act like the normal printing command. If this routine was called during boot,<br></br>
-        /// it will report the progress to the splash system. You can force it to report the progress by passing force.
-        /// </remarks>
-        public static void ReportProgress(string Text, int Progress, bool force = false, ISplash splash = null, params object[] Vars)
-        {
-            if (!KernelBooted && (SplashManager.EnableSplash && InSplash || !SplashManager.EnableSplash && !KernelEntry.QuietKernel) || force)
-            {
-                // Check the progress value
-                if (Progress < 0)
-                    Progress = 0;
-                if (Progress > 100)
-                    Progress = 100;
-
-                // Increment and check
-                _Progress += Progress;
-                if (_Progress >= 100)
-                    _Progress = 100;
-
-                // Set the progress text
-                _ProgressText = Text;
-
-                // Report it
-                if (SplashManager.CurrentSplashInfo.DisplaysProgress)
-                {
-                    if (SplashManager.EnableSplash && splash != null)
-                    {
-                        var openingPart = new ScreenPart();
-                        DebugWriter.WriteDebug(DebugLevel.I, "Invoking splash to report {0}...", Text);
-                        openingPart.AddDynamicText(() => splash.Report(_Progress, Text, Vars));
-                        if (SplashManager.splashScreen.CheckBufferedPart("Splash report"))
-                            SplashManager.splashScreen.EditBufferedPart("Splash report", openingPart);
-                        else
-                            SplashManager.splashScreen.AddBufferedPart("Splash report", openingPart);
-                        ScreenTools.Render();
-                    }
-                    else if (!KernelEntry.QuietKernel)
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Kernel not booted and not quiet. Reporting {0}...", Text);
-                        TextWriters.Write($"  [{_Progress}%] {Text}", true, KernelColorType.Tip, Vars);
-                    }
-                }
-
-                // Add to the log buffer
-                logBuffer.Add($"[{TimeDateRenderers.Render(FormatType.Short)}] [{_Progress}%] Info: {TextTools.FormatString(Text, Vars)}");
-            }
-            else if (KernelBooted || SplashManager.EnableSplash && !InSplash || !SplashManager.EnableSplash && !KernelEntry.QuietKernel || !SplashManager.EnableSplash)
-            {
-                DebugWriter.WriteDebug(DebugLevel.I, "Kernel booted or not in splash. Reporting {0}...", Text);
-                TextWriters.Write(Text, true, KernelColorType.Tip, Vars);
-            }
-            JournalManager.WriteJournal(Text, Vars);
-        }
+            ReportProgress(Text, Progress, false, null, SplashReportSeverity.Info, SplashManager.CurrentSplash, Vars);
 
         /// <summary>
         /// Reports the progress for the splash screen while the kernel is booting.
@@ -198,38 +136,8 @@ namespace Nitrocid.Misc.Splash
         /// If the kernel has booted successfully, it will act like the normal printing command. If this routine was called during boot,<br></br>
         /// it will report the progress to the splash system. You can force it to report the progress by passing force.
         /// </remarks>
-        public static void ReportProgressWarning(string Text, bool force = false, ISplash splash = null, Exception exception = null, params object[] Vars)
-        {
-            if (!KernelBooted && (SplashManager.EnableSplash && InSplash || !SplashManager.EnableSplash && !KernelEntry.QuietKernel) || force)
-            {
-                // Set the progress text
-                _ProgressText = Text;
-
-                // Report it
-                if (SplashManager.CurrentSplashInfo.DisplaysProgress)
-                {
-                    if (SplashManager.EnableSplash && splash != null)
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.W, "Invoking splash to report {0}...", Text);
-                        splash.ReportWarning(_Progress, Text, exception, Vars);
-                    }
-                    else if (!KernelEntry.QuietKernel)
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.W, "Kernel not booted and not quiet. Reporting {0}...", Text);
-                        TextWriters.Write($"  [{_Progress}%] Warning: {Text}", true, KernelColorType.Warning, Vars);
-                    }
-                }
-
-                // Add to the log buffer
-                logBuffer.Add($"[{TimeDateRenderers.Render(FormatType.Short)}] [{_Progress}%] Warning: {TextTools.FormatString(Text, Vars)}");
-            }
-            else if (KernelBooted || SplashManager.EnableSplash && !InSplash || !SplashManager.EnableSplash && !KernelEntry.QuietKernel || !SplashManager.EnableSplash)
-            {
-                DebugWriter.WriteDebug(DebugLevel.W, "Kernel booted. Reporting {0}...", Text);
-                TextWriters.Write(Text, true, KernelColorType.Warning, Vars);
-            }
-            JournalManager.WriteJournal(Text, JournalStatus.Warning, Vars);
-        }
+        public static void ReportProgressWarning(string Text, bool force = false, ISplash splash = null, Exception exception = null, params object[] Vars) =>
+            ReportProgress(Text, 0, force, exception, SplashReportSeverity.Warning, splash, Vars);
 
         /// <summary>
         /// Reports the progress for the splash screen while the kernel is booting.
@@ -268,10 +176,45 @@ namespace Nitrocid.Misc.Splash
         /// If the kernel has booted successfully, it will act like the normal printing command. If this routine was called during boot,<br></br>
         /// it will report the progress to the splash system. You can force it to report the progress by passing force.
         /// </remarks>
-        public static void ReportProgressError(string Text, bool force = false, ISplash splash = null, Exception exception = null, params object[] Vars)
+        public static void ReportProgressError(string Text, bool force = false, ISplash splash = null, Exception exception = null, params object[] Vars) =>
+            ReportProgress(Text, 0, force, exception, SplashReportSeverity.Error, splash, Vars);
+
+        /// <summary>
+        /// Reports the progress for the splash screen while the kernel is booting.
+        /// </summary>
+        /// <param name="Text">The progress text to indicate how did the kernel progress</param>
+        /// <param name="Progress">The progress percentage from 0 to 100 to increment to the overall percentage</param>
+        /// <param name="force">Force report progress to splash</param>
+        /// <param name="exception">Exception to use for warnings and errors</param>
+        /// <param name="severity">The severity of the report</param>
+        /// <param name="splash">Splash interface. Use <see langword="null"/> to use default splash.</param>
+        /// <param name="Vars">Variables to be expanded to text</param>
+        /// <remarks>
+        /// If the kernel has booted successfully, it will act like the normal printing command. If this routine was called during boot,<br></br>
+        /// it will report the progress to the splash system. You can force it to report the progress by passing force.
+        /// </remarks>
+        public static void ReportProgress(string Text, int Progress, bool force = false, Exception exception = null, SplashReportSeverity severity = SplashReportSeverity.Info, ISplash splash = null, params object[] Vars)
         {
+            KernelColorType finalColor =
+                severity == SplashReportSeverity.Warning ? KernelColorType.Warning :
+                severity == SplashReportSeverity.Error ? KernelColorType.Error :
+                KernelColorType.Tip;
             if (!KernelBooted && (SplashManager.EnableSplash && InSplash || !SplashManager.EnableSplash && !KernelEntry.QuietKernel) || force)
             {
+                // Check the progress value
+                if (Progress < 0)
+                    Progress = 0;
+                if (Progress > 100)
+                    Progress = 100;
+
+                // Increment and check
+                if (severity == SplashReportSeverity.Info)
+                {
+                    _Progress += Progress;
+                    if (_Progress >= 100)
+                        _Progress = 100;
+                }
+
                 // Set the progress text
                 _ProgressText = Text;
 
@@ -280,25 +223,37 @@ namespace Nitrocid.Misc.Splash
                 {
                     if (SplashManager.EnableSplash && splash != null)
                     {
-                        DebugWriter.WriteDebug(DebugLevel.E, "Invoking splash to report {0}...", Text);
-                        splash.ReportError(_Progress, Text, exception, Vars);
+                        var openingPart = new ScreenPart();
+                        DebugWriter.WriteDebug(DebugLevel.I, "Invoking splash to report {0}...", Text);
+                        openingPart.AddDynamicText(() =>
+                        {
+                            return
+                                severity == SplashReportSeverity.Warning ? splash.ReportWarning(_Progress, Text, exception, Vars) :
+                                severity == SplashReportSeverity.Error ? splash.ReportError(_Progress, Text, exception, Vars) :
+                                splash.Report(_Progress, Text, Vars);
+                        });
+                        if (SplashManager.splashScreen.CheckBufferedPart("Splash report"))
+                            SplashManager.splashScreen.EditBufferedPart("Splash report", openingPart);
+                        else
+                            SplashManager.splashScreen.AddBufferedPart("Splash report", openingPart);
+                        ScreenTools.Render();
                     }
                     else if (!KernelEntry.QuietKernel)
                     {
-                        DebugWriter.WriteDebug(DebugLevel.E, "Kernel not booted and not quiet. Reporting {0}...", Text);
-                        TextWriters.Write($"  [{_Progress}%] Error: {Text}", true, KernelColorType.Error, Vars);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Kernel not booted and not quiet. Reporting {0}...", Text);
+                        TextWriters.Write($"  [{_Progress}%] {Text}", true, finalColor, Vars);
                     }
                 }
 
                 // Add to the log buffer
-                logBuffer.Add($"[{TimeDateRenderers.Render(FormatType.Short)}] [{_Progress}%] Error: {TextTools.FormatString(Text, Vars)}");
+                logBuffer.Add($"[{TimeDateRenderers.Render(FormatType.Short)}] [{_Progress}%] {severity.ToString()[0]}: {TextTools.FormatString(Text, Vars)}");
             }
             else if (KernelBooted || SplashManager.EnableSplash && !InSplash || !SplashManager.EnableSplash && !KernelEntry.QuietKernel || !SplashManager.EnableSplash)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Kernel booted. Reporting {0}...", Text);
-                TextWriters.Write(Text, true, KernelColorType.Error, Vars);
+                DebugWriter.WriteDebug(DebugLevel.I, "Kernel booted or not in splash. Reporting {0}...", Text);
+                TextWriters.Write(Text, true, finalColor, Vars);
             }
-            JournalManager.WriteJournal(Text, JournalStatus.Error, Vars);
+            JournalManager.WriteJournal(Text, Vars);
         }
 
         /// <summary>
