@@ -128,7 +128,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 if (Checking.FileExists(ThemePath))
                     Theme = new ThemeInfo(ThemePath);
                 else
-                    Theme = ThemeTools.GetThemeInfo(selectedTheme);
+                    Theme = ThemeTools.GetThemeInfo(selectedTheme, true);
 
                 // Immediately bail if -y is passed
                 if (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-y"))

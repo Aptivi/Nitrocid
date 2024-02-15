@@ -69,11 +69,14 @@ namespace Nitrocid.ConsoleBase.Themes
         /// Gets the theme information
         /// </summary>
         /// <param name="theme">Theme name</param>
-        public static ThemeInfo GetThemeInfo(string theme)
+        /// <param name="throwNotFound">Throws an exception if the theme is not found</param>
+        public static ThemeInfo GetThemeInfo(string theme, bool throwNotFound = false)
         {
             var themes = GetInstalledThemes();
             if (themes.TryGetValue(theme, out ThemeInfo resultingTheme))
                 return resultingTheme;
+            if (throwNotFound)
+                throw new KernelException(KernelExceptionType.NoSuchTheme, Translate.DoTranslation("Invalid color template {0}"), theme);
             return themes["Default"];
         }
 
