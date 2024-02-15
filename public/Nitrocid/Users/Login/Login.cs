@@ -95,6 +95,10 @@ namespace Nitrocid.Users.Login
                     // Now, show the Login screen
                     handler.LoginScreen();
 
+                    // The login screen may provide an option to perform power options.
+                    if (PowerManager.RebootRequested || PowerManager.KernelShutdown)
+                        continue;
+
                     // Prompt for username
                     user = handler.UserSelector();
 

@@ -29,6 +29,8 @@ using System.Threading;
 using Terminaux.Colors;
 using Terminaux.Base;
 using Terminaux.Inputs;
+using System;
+using Nitrocid.Kernel.Power;
 
 namespace Nitrocid.Users.Login.Handlers.Logins
 {
@@ -48,11 +50,25 @@ namespace Nitrocid.Users.Login.Handlers.Logins
             DebugWriter.WriteDebug(DebugLevel.I, "Rendering...");
             SpinWait.SpinUntil(() => ModernLogonScreen.renderedFully);
             DebugWriter.WriteDebug(DebugLevel.I, "Rendered fully!");
-            Input.DetectKeypress();
+            var key = Input.DetectKeypress().Key;
 
             // Stop the thread
             ModernLogonScreen.DateTimeUpdateThread.Stop();
             ModernLogonScreen.renderedFully = false;
+
+            // Check to see if user requested power actions
+            if (key == ConsoleKey.Escape)
+            {
+                int answer = InfoBoxButtonsColor.WriteInfoBoxButtons([
+                    new InputChoiceInfo("shutdown", Translate.DoTranslation("Shut down")),
+                    new InputChoiceInfo("reboot", Translate.DoTranslation("Restart")),
+                    new InputChoiceInfo("login", Translate.DoTranslation("Login")),
+                ], Translate.DoTranslation("What do you want to do?"));
+                if (answer == 0)
+                    PowerManager.PowerManage(PowerMode.Shutdown);
+                else if (answer == 1)
+                    PowerManager.PowerManage(PowerMode.Reboot);
+            }
         }
 
         public override string UserSelector()

@@ -149,7 +149,7 @@ namespace Nitrocid.Users.Login
                             }
 
                             // Print the instructions
-                            string instStr = Translate.DoTranslation("Press any key to start...");
+                            string instStr = Translate.DoTranslation("Press any key to start, or ESC for more options...");
                             int consoleInstY = ConsoleWrapper.WindowHeight - 2;
                             display.Append(
                                 CenteredTextColor.RenderCenteredOneLine(consoleInstY, instStr)
