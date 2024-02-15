@@ -52,7 +52,11 @@ namespace Nitrocid.Misc.Screensaver
 
                 // Execute the actual screensaver logic
                 while (!OutOfSaver)
+                {
+                    if (ConsoleWrapper.CursorVisible)
+                        ConsoleWrapper.CursorVisible = false;
                     Screensaver.ScreensaverLogic();
+                }
             }
             catch (ThreadInterruptedException)
             {
