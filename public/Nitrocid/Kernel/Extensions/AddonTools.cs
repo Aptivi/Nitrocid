@@ -168,7 +168,7 @@ namespace Nitrocid.Kernel.Extensions
                         if (!addons.Where((addon) => addonInstance.AddonName == addon.AddonName).Any())
                             addons.Add(info);
                         DebugWriter.WriteDebug(DebugLevel.I, "Loaded addon!");
-                        SplashReport.ReportProgress(Translate.DoTranslation("Started kernel addon") + " {0}!", addonInstance.AddonName);
+                        SplashReport.ReportProgress(Translate.DoTranslation("Started kernel addon") + " {0}!", 1, addonInstance.AddonName);
                     }
                     catch (Exception ex)
                     {
