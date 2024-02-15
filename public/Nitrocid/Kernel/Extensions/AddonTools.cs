@@ -27,6 +27,7 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Reflection;
+using Nitrocid.Misc.Splash;
 using Nitrocid.Modifications;
 using Nitrocid.Security.Signing;
 using System;
@@ -146,6 +147,7 @@ namespace Nitrocid.Kernel.Extensions
                     DebugWriter.WriteDebug(DebugLevel.W, "Skipping addon entry {0} because of conflicts with the already-loaded addon in the queue [{1}]...", addon, addonPath);
                     return;
                 }
+                SplashReport.ReportProgress(Translate.DoTranslation("Initializing kernel addon") + " {0}...", Path.GetFileName(addon));
                 probedAddons.Add(addonPath);
                 var asm = Assembly.LoadFrom(addonPath);
                 var addonInstance = GetAddonInstance(asm) ??
@@ -157,6 +159,7 @@ namespace Nitrocid.Kernel.Extensions
                     // Call the start function
                     try
                     {
+                        SplashReport.ReportProgress(Translate.DoTranslation("Starting kernel addon") + " {0}...", addonInstance.AddonName);
                         addonInstance.StartAddon();
                         DebugWriter.WriteDebug(DebugLevel.I, "Started!");
 
@@ -165,9 +168,11 @@ namespace Nitrocid.Kernel.Extensions
                         if (!addons.Where((addon) => addonInstance.AddonName == addon.AddonName).Any())
                             addons.Add(info);
                         DebugWriter.WriteDebug(DebugLevel.I, "Loaded addon!");
+                        SplashReport.ReportProgress(Translate.DoTranslation("Started kernel addon") + " {0}!", addonInstance.AddonName);
                     }
                     catch (Exception ex)
                     {
+                        SplashReport.ReportProgress(Translate.DoTranslation("Failed to start kernel addon") + " {0}.", addonInstance.AddonName);
                         DebugWriter.WriteDebug(DebugLevel.E, "Failed to start addon {0}. {1}", addon, ex.Message);
                         DebugWriter.WriteDebugStackTrace(ex);
                     }
@@ -175,6 +180,7 @@ namespace Nitrocid.Kernel.Extensions
             }
             catch (Exception ex)
             {
+                SplashReport.ReportProgress(Translate.DoTranslation("Failed to initialize kernel addon") + " {0}.", Path.GetFileName(addon));
                 DebugWriter.WriteDebug(DebugLevel.E, "Failed to load addon {0}. {1}", addon, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
