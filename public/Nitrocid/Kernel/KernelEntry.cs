@@ -41,6 +41,7 @@ using Nitrocid.Users.Login.Motd;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Network.Types.RSS;
+using Terminaux.Colors;
 
 namespace Nitrocid.Kernel
 {
@@ -98,7 +99,7 @@ namespace Nitrocid.Kernel
             }
 
             // Show the license infobox
-            if (Config.MainConfig.ShowLicenseInfoBox)
+            if (Config.MainConfig.ShowLicenseInfoBox && SplashManager.EnableSplash)
             {
                 string rendered = Translate.DoTranslation("License information");
                 string dashes = new('=', rendered.Length);
@@ -108,6 +109,7 @@ namespace Nitrocid.Kernel
                     WelcomeMessage.GetLicenseString(), false, KernelColorTools.GetColor(KernelColorType.License)
                 );
                 ThreadManager.SleepUntilInput(3000);
+                ColorTools.LoadBack();
             }
 
             // Start the main loop
