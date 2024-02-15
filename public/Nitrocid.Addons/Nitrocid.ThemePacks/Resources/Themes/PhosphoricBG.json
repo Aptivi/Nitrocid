@@ -60,5 +60,6 @@
     "TuiKeyBindingOptionColor": "0",
     "TuiOptionForegroundColor": "0",
     "TuiBoxBackgroundColor": "3",
-    "TuiBoxForegroundColor": "0"
+    "TuiBoxForegroundColor": "0",
+    "DisabledOptionColor": "0"
 }

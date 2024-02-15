@@ -42,7 +42,7 @@
     "TableHeaderColor": "10",
     "TableValueColor": "2",
     "SelectedOptionColor": "10",
-    "AlternativeOptionColor": "10",
+    "AlternativeOptionColor": "7",
     "WeekendDayColor": "10",
     "EventDayColor": "10",
     "TableTitleColor": "10",
@@ -60,5 +60,6 @@
     "TuiKeyBindingOptionColor": "10",
     "TuiOptionForegroundColor": "10",
     "TuiBoxBackgroundColor": "8",
-    "TuiBoxForegroundColor": "10"
+    "TuiBoxForegroundColor": "10",
+    "DisabledOptionColor": "8"
 }
