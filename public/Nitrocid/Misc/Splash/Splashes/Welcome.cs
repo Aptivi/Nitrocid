@@ -62,55 +62,32 @@ namespace Nitrocid.Misc.Splash.Splashes
                 );
             }
 
-            // Write a glorious Welcome screen
-            Color col = KernelColorTools.GetColor(KernelColorType.Stage);
+            // Populate some text
             string text =
                 (context == SplashContext.Preboot ?
                  Translate.DoTranslation("Please wait") :
                  Translate.DoTranslation("Loading"))
                 .ToUpper();
+            string bottomText =
+                context == SplashContext.Preboot ? Translate.DoTranslation("Please wait while the kernel is initializing") :
+                context == SplashContext.ShuttingDown ? Translate.DoTranslation("Please wait while the kernel is shutting down") :
+                context == SplashContext.Rebooting ? Translate.DoTranslation("Please wait while the kernel is restarting") :
+                $"{Translate.DoTranslation("Starting")} {KernelReleaseInfo.ConsoleTitle}";
+            bottomText +=
+                KernelEntry.SafeMode ? $" - {Translate.DoTranslation("Safe Mode")}"  :
+                KernelEntry.Maintenance ? $" - {Translate.DoTranslation("Maintenance Mode")}" :
+                KernelEntry.DebugMode ? $" - {Translate.DoTranslation("Debug Mode")}" :
+                "";
+
+            // Write a glorious Welcome screen
+            Color col = KernelColorTools.GetColor(KernelColorType.Stage);
             var figFont = FigletTools.GetFigletFont(Config.MainConfig.DefaultFigletFontName);
             int consoleY = (ConsoleWrapper.WindowHeight / 2) + FigletTools.GetFigletHeight(text, figFont);
             builder.Append(
                 col.VTSequenceForeground +
                 CenteredFigletTextColor.RenderCenteredFiglet(figFont, text) +
-                CenteredTextColor.RenderCentered(
-                    consoleY - 1,
-                    context == SplashContext.Preboot ? Translate.DoTranslation("Please wait while the kernel is initializing...") :
-                    context == SplashContext.ShuttingDown ? Translate.DoTranslation("Please wait while the kernel is shutting down...") :
-                    context == SplashContext.Rebooting ? Translate.DoTranslation("Please wait while the kernel is restarting...") :
-                    $"{Translate.DoTranslation("Starting")} {KernelReleaseInfo.ConsoleTitle}..."
-                )
+                CenteredTextColor.RenderCentered(consoleY - 1, bottomText)
             );
-
-            // Append the kernel mode under the message
-            if (KernelEntry.SafeMode)
-            {
-                builder.Append(
-                    CenteredTextColor.RenderCentered(
-                        consoleY + 1,
-                        Translate.DoTranslation("Safe Mode")
-                    )
-                );
-            }
-            else if (KernelEntry.Maintenance)
-            {
-                builder.Append(
-                    CenteredTextColor.RenderCentered(
-                        consoleY + 1,
-                        Translate.DoTranslation("Maintenance Mode")
-                    )
-                );
-            }
-            else if (KernelEntry.DebugMode)
-            {
-                builder.Append(
-                    CenteredTextColor.RenderCentered(
-                        consoleY + 1,
-                        Translate.DoTranslation("Debug Mode")
-                    )
-                );
-            }
             return builder.ToString();
         }
 
