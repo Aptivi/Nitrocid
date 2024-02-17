@@ -100,7 +100,7 @@ namespace Nitrocid.Shell.ShellBase.Help
             {
                 TextWriters.Write(CharManager.NewLine + Translate.DoTranslation("General commands:") + (ShowCommandsCount & ShowShellCommandsCount ? " [{0}]" : ""), true, KernelColorType.ListTitle, commandList.Count);
                 if (commandList.Count == 0)
-                    TextWriters.Write("- " + Translate.DoTranslation("Shell commands not implemented!!!"), true, KernelColorType.Warning);
+                    TextWriters.Write("  - " + Translate.DoTranslation("Shell commands not implemented!!!"), true, KernelColorType.Warning);
                 foreach (var cmd in commandList)
                 {
                     if ((!cmd.Flags.HasFlag(CommandFlags.Strict) | cmd.Flags.HasFlag(CommandFlags.Strict) & UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator)) & (KernelEntry.Maintenance & !cmd.Flags.HasFlag(CommandFlags.NoMaintenance) | !KernelEntry.Maintenance))
@@ -116,7 +116,7 @@ namespace Nitrocid.Shell.ShellBase.Help
             {
                 TextWriters.Write(CharManager.NewLine + Translate.DoTranslation("Kernel addon commands:") + (ShowCommandsCount & ShowAddonCommandsCount ? " [{0}]" : ""), true, KernelColorType.ListTitle, AddonCommandList.Count);
                 if (AddonCommandList.Count == 0)
-                    TextWriters.Write("- " + Translate.DoTranslation("No kernel addon commands."), true, KernelColorType.Warning);
+                    TextWriters.Write("  - " + Translate.DoTranslation("No kernel addon commands."), true, KernelColorType.Warning);
                 foreach (var cmd in AddonCommandList)
                 {
                     if ((!cmd.Flags.HasFlag(CommandFlags.Strict) | cmd.Flags.HasFlag(CommandFlags.Strict) & UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator)) & (KernelEntry.Maintenance & !cmd.Flags.HasFlag(CommandFlags.NoMaintenance) | !KernelEntry.Maintenance))
@@ -132,7 +132,7 @@ namespace Nitrocid.Shell.ShellBase.Help
             {
                 TextWriters.Write(CharManager.NewLine + Translate.DoTranslation("Mod commands:") + (ShowCommandsCount & ShowModCommandsCount ? " [{0}]" : ""), true, KernelColorType.ListTitle, ModCommandList.Length);
                 if (ModCommandList.Length == 0)
-                    TextWriters.Write("- " + Translate.DoTranslation("No mod commands."), true, KernelColorType.Warning);
+                    TextWriters.Write("  - " + Translate.DoTranslation("No mod commands."), true, KernelColorType.Warning);
                 foreach (var cmd in ModCommandList)
                 {
                     if ((!cmd.Flags.HasFlag(CommandFlags.Strict) | cmd.Flags.HasFlag(CommandFlags.Strict) & UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator)) & (KernelEntry.Maintenance & !cmd.Flags.HasFlag(CommandFlags.NoMaintenance) | !KernelEntry.Maintenance))
@@ -148,7 +148,7 @@ namespace Nitrocid.Shell.ShellBase.Help
             {
                 TextWriters.Write(CharManager.NewLine + Translate.DoTranslation("Alias commands:") + (ShowCommandsCount & ShowShellAliasesCount ? " [{0}]" : ""), true, KernelColorType.ListTitle, AliasedCommandList.Count);
                 if (AliasedCommandList.Count == 0)
-                    TextWriters.Write("- " + Translate.DoTranslation("No alias commands."), true, KernelColorType.Warning);
+                    TextWriters.Write("  - " + Translate.DoTranslation("No alias commands."), true, KernelColorType.Warning);
                 foreach (var cmd in AliasedCommandList)
                 {
                     if ((!cmd.Value.Flags.HasFlag(CommandFlags.Strict) | cmd.Value.Flags.HasFlag(CommandFlags.Strict) & UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator)) & (KernelEntry.Maintenance & !cmd.Value.Flags.HasFlag(CommandFlags.NoMaintenance) | !KernelEntry.Maintenance))
@@ -164,7 +164,7 @@ namespace Nitrocid.Shell.ShellBase.Help
             {
                 TextWriters.Write(CharManager.NewLine + Translate.DoTranslation("Unified commands:") + (ShowCommandsCount & ShowUnifiedCommandsCount ? " [{0}]" : ""), true, KernelColorType.ListTitle, unifiedCommandList.Count);
                 if (unifiedCommandList.Count == 0)
-                    TextWriters.Write("- " + Translate.DoTranslation("Unified commands not implemented!!!"), true, KernelColorType.Warning);
+                    TextWriters.Write("  - " + Translate.DoTranslation("Unified commands not implemented!!!"), true, KernelColorType.Warning);
                 foreach (var cmd in unifiedCommandList)
                 {
                     if ((!cmd.Flags.HasFlag(CommandFlags.Strict) | cmd.Flags.HasFlag(CommandFlags.Strict) & UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator)) & (KernelEntry.Maintenance & !cmd.Flags.HasFlag(CommandFlags.NoMaintenance) | !KernelEntry.Maintenance))
