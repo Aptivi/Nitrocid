@@ -19,4 +19,3 @@ echo Build and pack successful.
 goto :finished
 
 :finished
-pause
