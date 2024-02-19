@@ -24,10 +24,11 @@ using Nitrocid.Languages;
 using System;
 using System.Text;
 using Terminaux.Colors;
-using Textify.Sequences.Builder.Types;
+using Terminaux.Sequences.Builder.Types;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
 using Terminaux.Inputs;
+using Terminaux.Reader;
 
 namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
@@ -43,7 +44,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
             {
                 var stickScreenPart = new ScreenPart();
                 stickScreenPart.Position(0, 1);
-                stickScreenPart.BackgroundColor(new Color(ConsoleColors.Gray));
+                stickScreenPart.BackgroundColor(new Color(ConsoleColors.Silver));
                 stickScreenPart.AddDynamicText(GenerateWidthStick);
                 stickScreenPart.AddDynamicText(GenerateHeightStick);
                 stickScreenPart.AddDynamicText(() => KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground);
@@ -51,7 +52,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
                 stickScreen.AddBufferedPart("Test", stickScreenPart);
                 ScreenTools.SetCurrent(stickScreen);
                 ScreenTools.Render();
-                Input.DetectKeypress();
+                TermReader.ReadKey();
             }
             catch (Exception ex)
             {

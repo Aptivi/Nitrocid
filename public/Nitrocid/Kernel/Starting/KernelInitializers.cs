@@ -60,6 +60,7 @@ using Nitrocid.Users.Login.Motd;
 using Nitrocid.Network.Types.RPC;
 using Nitrocid.Network.SpeedDial;
 using Nitrocid.Network.Connections;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Kernel.Starting
 {
@@ -75,7 +76,7 @@ namespace Nitrocid.Kernel.Starting
                 // Initialize crucial things
                 if (!KernelPlatform.IsOnUnix())
                 {
-                    if (!ConsoleExtensions.InitializeSequences())
+                    if (!ConsolePositioning.InitializeSequences())
                     {
                         TextWriterColor.Write(Translate.DoTranslation("Can not initialize VT sequences for your Windows terminal. Make sure that you're running Windows 10 or later."));
                         InputTools.DetectKeypress();
@@ -123,7 +124,7 @@ namespace Nitrocid.Kernel.Starting
                 }
 
                 // A title
-                ConsoleExtensions.SetTitle(KernelReleaseInfo.ConsoleTitle);
+                ConsoleMisc.SetTitle(KernelReleaseInfo.ConsoleTitle);
 
                 // Initialize pre-boot splash (if enabled)
                 if (KernelEntry.PrebootSplash)

@@ -23,6 +23,7 @@ using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Shell.ShellBase.Commands;
 using Textify.General;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Extras.RssShell.RSS.Commands
 {

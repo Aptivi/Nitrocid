@@ -32,7 +32,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
             ColorTools.SetConsoleColor(new Color(ConsoleColors.White));
 
             // Simulate a null pointer dereference
-            TextWriterColor.WritePlain(
+            TextWriterRaw.WritePlain(
                 $"Unable to handle kernel NULL pointer dereference at virtual address {RandomDriver.Random():X8}\n" +
                  " printing eip:\n" +
                  "*pde = 00000000\n" +

@@ -25,6 +25,7 @@ using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Switches;
 using System.Linq;
 using Terminaux.Inputs;
+using Terminaux.Reader;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -86,7 +87,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
         {
             if (ScreensaverManager.inSaver)
             {
-                Input.DetectKeypress();
+                TermReader.ReadKey();
                 ScreensaverDisplayer.BailFromScreensaver();
             }
         }

@@ -66,7 +66,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
                 ];
 
                 // Wait for an answer and handle it
-                int selectionAnswer = SelectionStyle.PromptSelection(finalSection, choices, altChoices, true);
+                int selectionAnswer = SelectionStyle.PromptSelection(finalSection, [.. choices], [.. altChoices], true);
                 if (selectionAnswer == choices.Count + 1)
                     promptBail = true;
                 else

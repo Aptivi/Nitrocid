@@ -444,7 +444,7 @@ namespace Nitrocid.Network.Connections
                             DebugWriter.WriteDebug(DebugLevel.I, "Speed dial info: {0}.", connectionUrl);
                             connectionsChoiceList.Add(new InputChoiceInfo($"{i + 1}", connectionUrl));
                         }
-                        int selectedSpeedDial = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a connection from the speed dial list."), connectionsChoiceList, [
+                        int selectedSpeedDial = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a connection from the speed dial list."), [.. connectionsChoiceList], [
                             new InputChoiceInfo($"{speedDials.Length + 1}", Translate.DoTranslation("Create a new connection")),
                         ]);
                         DebugWriter.WriteDebug(DebugLevel.I, "Selected speed dial {0} out of {1} servers", selectedSpeedDial, speedDials.Length);
@@ -494,7 +494,7 @@ namespace Nitrocid.Network.Connections
                         }
 
                         // Get connection from user selection
-                        int selectedConnectionNumber = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a connection."), connectionsChoiceList);
+                        int selectedConnectionNumber = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a connection."), [.. connectionsChoiceList]);
                         DebugWriter.WriteDebug(DebugLevel.I, "Selected connection {0} out of {1} connections", selectedConnectionNumber, availableConnectionInstances.Length);
                         if (selectedConnectionNumber == -1)
                             return;

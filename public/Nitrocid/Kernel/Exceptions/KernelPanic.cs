@@ -41,6 +41,7 @@ using System.Text;
 using System.Threading;
 using Textify.General;
 using Terminaux.Inputs;
+using Terminaux.Reader;
 
 namespace Nitrocid.Kernel.Exceptions
 {
@@ -152,7 +153,7 @@ namespace Nitrocid.Kernel.Exceptions
                     SplashReport.ReportProgressError(Translate.DoTranslation("[{0}] panic: {1} -- Press any key to shutdown."), Exc, ErrorType, Description);
                     if (ShowStackTraceOnKernelError & Exc is not null)
                         SplashReport.ReportProgressError(Exc.StackTrace);
-                    Input.DetectKeypress();
+                    TermReader.ReadKey();
                     PowerManager.PowerManage(PowerMode.Shutdown);
                 }
             }

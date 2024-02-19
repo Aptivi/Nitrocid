@@ -140,7 +140,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 }
 
                 // Now, write the diamond buffer
-                TextWriterColor.WritePlain(buffer.ToString(), false);
+                TextWriterRaw.WritePlain(buffer.ToString(), false);
                 buffer.Clear();
                 seen = true;
             }
@@ -225,7 +225,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     );
 
                     // Now, write the diamond buffer
-                    TextWriterColor.WritePlain(buffer.ToString(), false);
+                    TextWriterRaw.WritePlain(buffer.ToString(), false);
                     buffer.Clear();
 
                     // Sleep
@@ -273,7 +273,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     );
 
                     // Now, write the diamond buffer
-                    TextWriterColor.WritePlain(buffer.ToString(), false);
+                    TextWriterRaw.WritePlain(buffer.ToString(), false);
                     buffer.Clear();
 
                     // Sleep

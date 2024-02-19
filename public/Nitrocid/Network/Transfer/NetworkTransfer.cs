@@ -31,6 +31,7 @@ using Nitrocid.Misc.Notifications;
 using Nitrocid.Misc.Reflection;
 using Nitrocid.Misc.Text.Probers.Placeholder;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Network.Transfer
 {
@@ -253,7 +254,7 @@ namespace Nitrocid.Network.Transfer
                             {
                                 TextWriters.WriteWhere(" {2:000.00}% | " + indicator, 0, ConsoleWrapper.CursorTop, false, KernelColorType.NeutralText, TransferInfo.DoneSize.SizeString(), TransferInfo.FileSize.SizeString(), Progress);
                             }
-                            ConsoleExtensions.ClearLineToRight();
+                            ConsoleClearing.ClearLineToRight();
                         }
                     }
                     else

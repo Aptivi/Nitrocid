@@ -87,7 +87,7 @@ namespace Nitrocid.Extras.MailShell.Tools.Transfer
                 }
 
                 // Prepare view
-                TextWriterColor.Write();
+                TextWriterRaw.Write();
 
                 // Print all the addresses that sent the mail
                 DebugWriter.WriteDebug(DebugLevel.I, "{0} senders.", Msg.From.Count);
@@ -110,7 +110,7 @@ namespace Nitrocid.Extras.MailShell.Tools.Transfer
                 TextWriters.Write(Translate.DoTranslation("- Sent at {0} in {1}"), true, KernelColorType.ListEntry, TimeDateRenderers.RenderTime(Msg.Date.DateTime), TimeDateRenderers.RenderDate(Msg.Date.DateTime));
 
                 // Prepare subject
-                TextWriterColor.Write();
+                TextWriterRaw.Write();
                 DebugWriter.WriteDebug(DebugLevel.I, "Subject length: {0}, {1}", Msg.Subject.Length, Msg.Subject);
                 TextWriters.Write($"- {Msg.Subject}", false, KernelColorType.ListEntry);
 
@@ -122,11 +122,11 @@ namespace Nitrocid.Extras.MailShell.Tools.Transfer
                 }
                 else
                 {
-                    TextWriterColor.Write();
+                    TextWriterRaw.Write();
                 }
 
                 // Prepare body
-                TextWriterColor.Write();
+                TextWriterRaw.Write();
                 DebugWriter.WriteDebug(DebugLevel.I, "Displaying body...");
                 var DecryptedMessage = default(Dictionary<string, MimeEntity>);
                 DebugWriter.WriteDebug(DebugLevel.I, "To decrypt: {0}", Decrypt);
@@ -174,7 +174,7 @@ namespace Nitrocid.Extras.MailShell.Tools.Transfer
                 {
                     TextWriters.Write(Msg.GetTextBody(MailShellCommon.TextFormat), true, KernelColorType.ListValue);
                 }
-                TextWriterColor.Write();
+                TextWriterRaw.Write();
 
                 // Populate attachments
                 if (Msg.Attachments.Any())

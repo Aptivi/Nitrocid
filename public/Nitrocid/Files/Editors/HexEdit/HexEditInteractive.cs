@@ -21,8 +21,8 @@ using System;
 using System.Globalization;
 using System.Linq;
 using System.Text;
-using Textify.Sequences.Builder.Types;
-using Textify.Sequences.Tools;
+using Terminaux.Sequences.Builder.Types;
+using Terminaux.Sequences;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Shell.Shells.Hex;
 using Nitrocid.Files.Operations;
@@ -40,6 +40,8 @@ using Textify.General;
 using Terminaux.Colors;
 using Terminaux.Base;
 using Terminaux.Inputs;
+using Terminaux.Reader;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Files.Editors.HexEdit
 {
@@ -112,7 +114,7 @@ namespace Nitrocid.Files.Editors.HexEdit
 
                     // Wait for a keypress
                     ScreenTools.Render(screen);
-                    var keypress = Input.DetectKeypress();
+                    var keypress = TermReader.ReadKey();
                     HandleKeypress(keypress, ref bytes);
 
                     // Reset, in case selection changed
@@ -155,7 +157,7 @@ namespace Nitrocid.Files.Editors.HexEdit
                             $"{InteractiveTuiStatus.OptionForegroundColor.VTSequenceForeground}" +
                             $"{InteractiveTuiStatus.BackgroundColor.VTSequenceBackground}" +
                             $" {(binding._localizable ? Translate.DoTranslation(binding.Name) : binding.Name)}  " +
-                            ConsoleExtensions.GetClearLineToRightSequence()
+                            ConsoleClearing.GetClearLineToRightSequence()
                         );
                     }
                     else
@@ -167,7 +169,7 @@ namespace Nitrocid.Files.Editors.HexEdit
                             $"{InteractiveTuiStatus.KeyBindingOptionColor.VTSequenceForeground}" +
                             $"{InteractiveTuiStatus.OptionBackgroundColor.VTSequenceBackground}" +
                             " K " +
-                            ConsoleExtensions.GetClearLineToRightSequence()
+                            ConsoleClearing.GetClearLineToRightSequence()
                         );
                         break;
                     }
@@ -187,7 +189,7 @@ namespace Nitrocid.Files.Editors.HexEdit
                 builder.Append(
                     $"{InteractiveTuiStatus.ForegroundColor.VTSequenceForeground}" +
                     $"{InteractiveTuiStatus.BackgroundColor.VTSequenceBackground}" +
-                    $"{TextWriterWhereColor.RenderWherePlain(status + ConsoleExtensions.GetClearLineToRightSequence(), 0, 0)}"
+                    $"{TextWriterWhereColor.RenderWhere(status + ConsoleClearing.GetClearLineToRightSequence(), 0, 0)}"
                 );
                 return builder.ToString();
             });
@@ -245,7 +247,7 @@ namespace Nitrocid.Files.Editors.HexEdit
                 builder.Append(
                     $"{InteractiveTuiStatus.ForegroundColor.VTSequenceForeground}" +
                     $"{InteractiveTuiStatus.BackgroundColor.VTSequenceBackground}" +
-                    $"{TextWriterWhereColor.RenderWherePlain(rendered, 1, 2)}"
+                    $"{TextWriterWhereColor.RenderWhere(rendered, 1, 2)}"
                 );
                 return builder.ToString();
             });

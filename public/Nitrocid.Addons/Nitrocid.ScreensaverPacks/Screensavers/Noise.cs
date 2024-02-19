@@ -86,7 +86,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             double NoiseDense = (NoiseSettings.NoiseDensity > 100 ? 100 : NoiseSettings.NoiseDensity) / 100d;
 
             ConsoleWrapper.CursorVisible = false;
-            ColorTools.LoadBackDry(new Color(ConsoleColors.DarkGray));
+            ColorTools.LoadBackDry(new Color(ConsoleColors.Grey));
             ConsoleWrapper.Clear();
             ColorTools.SetConsoleColorDry(ConsoleColors.Black, true);
 

@@ -36,7 +36,7 @@ namespace Nitrocid.Extras.RssShell.RSS.Interactive
     /// <summary>
     /// RSS Reader TUI class
     /// </summary>
-    public class RssReaderCli : BaseInteractiveTui, IInteractiveTui
+    public class RssReaderCli : BaseInteractiveTui<RSSArticle>, IInteractiveTui<RSSArticle>
     {
         internal static NetworkConnection rssConnection;
 
@@ -62,14 +62,14 @@ namespace Nitrocid.Extras.RssShell.RSS.Interactive
         ];
 
         /// <inheritdoc/>
-        public override IEnumerable PrimaryDataSource =>
+        public override IEnumerable<RSSArticle> PrimaryDataSource =>
             Feed.FeedArticles;
 
         /// <inheritdoc/>
-        public override string GetInfoFromItem(object item)
+        public override string GetInfoFromItem(RSSArticle item)
         {
             // Get some info from the article
-            RSSArticle selectedArticle = (RSSArticle)item;
+            RSSArticle selectedArticle = item;
             bool hasTitle = !string.IsNullOrEmpty(selectedArticle.ArticleTitle);
             bool hasDescription = !string.IsNullOrEmpty(selectedArticle.ArticleDescription);
 
@@ -92,16 +92,16 @@ namespace Nitrocid.Extras.RssShell.RSS.Interactive
         }
 
         /// <inheritdoc/>
-        public override void RenderStatus(object item)
+        public override void RenderStatus(RSSArticle item)
         {
-            RSSArticle article = (RSSArticle)item;
+            RSSArticle article = item;
             InteractiveTuiStatus.Status = article.ArticleTitle;
         }
 
         /// <inheritdoc/>
-        public override string GetEntryFromItem(object item)
+        public override string GetEntryFromItem(RSSArticle item)
         {
-            RSSArticle article = (RSSArticle)item;
+            RSSArticle article = item;
             return article.ArticleTitle;
         }
 

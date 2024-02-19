@@ -31,6 +31,7 @@ using Terminaux.Inputs;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
 using Nitrocid.Kernel.Debugging;
+using Terminaux.Reader;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games
 {
@@ -103,7 +104,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     if (ConsoleWrapper.KeyAvailable)
                     {
                         // Read the key and handle it
-                        Keypress = Input.DetectKeypress();
+                        Keypress = TermReader.ReadKey();
                         HandleKeypress(Keypress.Key, dodge);
                     }
                 }
@@ -177,21 +178,21 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                         if (y != SpaceshipHeight)
                             buffer.Append(
                                 new Color(ConsoleColors.Black).VTSequenceBackground +
-                                TextWriterWhereColor.RenderWherePlain(" ", 0, y)
+                                TextWriterWhereColor.RenderWhere(" ", 0, y)
                             );
                     }
 
                     // Show the score
                     buffer.Append(
                         new Color(ConsoleColors.Green).VTSequenceForeground +
-                        TextWriterWhereColor.RenderWherePlain($"{score}", ConsoleWrapper.WindowWidth - $"{score}".Length, 0)
+                        TextWriterWhereColor.RenderWhere($"{score}", ConsoleWrapper.WindowWidth - $"{score}".Length, 0)
                     );
 
                     // Move the meteors left
                     for (int Meteor = 0; Meteor <= Meteors.Count - 1; Meteor++)
                     {
                         buffer.Append(new Color(ConsoleColors.Black).VTSequenceBackground);
-                        buffer.Append(TextWriterWhereColor.RenderWherePlain(" ", Meteors[Meteor].Item1, Meteors[Meteor].Item2));
+                        buffer.Append(TextWriterWhereColor.RenderWhere(" ", Meteors[Meteor].Item1, Meteors[Meteor].Item2));
                         int MeteorX = Meteors[Meteor].Item1 - 1;
                         int MeteorY = Meteors[Meteor].Item2;
                         Meteors[Meteor] = (MeteorX, MeteorY);
@@ -201,7 +202,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     for (int Bullet = 0; Bullet <= Bullets.Count - 1; Bullet++)
                     {
                         buffer.Append(new Color(ConsoleColors.Black).VTSequenceBackground);
-                        buffer.Append(TextWriterWhereColor.RenderWherePlain(" ", Bullets[Bullet].Item1, Bullets[Bullet].Item2));
+                        buffer.Append(TextWriterWhereColor.RenderWhere(" ", Bullets[Bullet].Item1, Bullets[Bullet].Item2));
                         int BulletX = Bullets[Bullet].Item1 + 1;
                         int BulletY = Bullets[Bullet].Item2;
                         Bullets[Bullet] = (BulletX, BulletY);
@@ -278,8 +279,8 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                             {
                                 // The meteor crashed! Remove both the bullet and the meteor
                                 buffer.Append(new Color(ConsoleColors.Black).VTSequenceBackground);
-                                buffer.Append(TextWriterWhereColor.RenderWherePlain(" ", Meteor.Item1, Meteor.Item2));
-                                buffer.Append(TextWriterWhereColor.RenderWherePlain(" ", Bullet.Item1, Bullet.Item2));
+                                buffer.Append(TextWriterWhereColor.RenderWhere(" ", Meteor.Item1, Meteor.Item2));
+                                buffer.Append(TextWriterWhereColor.RenderWhere(" ", Bullet.Item1, Bullet.Item2));
                                 Bullets.RemoveAt(BulletIndex);
                                 Meteors.RemoveAt(MeteorIndex);
                                 score++;
@@ -288,7 +289,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     }
 
                     // Wait for a few milliseconds
-                    TextWriterColor.WritePlain(buffer.ToString(), false);
+                    TextWriterRaw.WritePlain(buffer.ToString(), false);
                     ThreadManager.SleepNoBlock(MeteorSpeed, MeteorDrawThread);
                 }
             }
@@ -350,7 +351,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
         private static string DrawBullet(int BulletX, int BulletY)
         {
             char BulletSymbol = '-';
-            return TextWriterWhereColor.RenderWhere(Convert.ToString(BulletSymbol), BulletX, BulletY, false, ConsoleColors.Cyan, ConsoleColors.Black);
+            return TextWriterWhereColor.RenderWhere(Convert.ToString(BulletSymbol), BulletX, BulletY, false, ConsoleColors.Aqua, ConsoleColors.Black);
         }
 
     }

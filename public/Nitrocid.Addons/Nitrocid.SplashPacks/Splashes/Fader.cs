@@ -109,7 +109,7 @@ namespace Nitrocid.SplashPacks.Splashes
                     var color = new Color($"{CurrentColorRedOut};{CurrentColorGreenOut};{CurrentColorBlueOut}");
                     builder.Append(
                         color.VTSequenceForeground +
-                        TextWriterWhereColor.RenderWherePlain(_faderWrite, _left, _top, true)
+                        TextWriterWhereColor.RenderWhere(_faderWrite, _left, _top, true)
                     );
                     _currentStep++;
                     if (_currentStep > _faderMaxSteps)
@@ -133,7 +133,7 @@ namespace Nitrocid.SplashPacks.Splashes
                     var color = new Color($"{CurrentColorRedIn};{CurrentColorGreenIn};{CurrentColorBlueIn}");
                     builder.Append(
                         color.VTSequenceForeground +
-                        TextWriterWhereColor.RenderWherePlain(_faderWrite, _left, _top, true)
+                        TextWriterWhereColor.RenderWhere(_faderWrite, _left, _top, true)
                     );
                     _currentStep++;
                     if (_currentStep > _faderMaxSteps)

@@ -59,7 +59,7 @@ namespace Nitrocid.Shell.Shells.Text.Commands
                             string word = Words[wordIndex];
                             TextWriters.Write($"{(QueriedChars.Contains(wordIndex) ? KernelColorTools.GetColor(KernelColorType.Success).VTSequenceForeground : "")}{word} ", false, KernelColorType.ListValue);
                         }
-                        TextWriterColor.Write();
+                        TextWriterRaw.Write();
                         return 0;
                     }
                     else
@@ -85,7 +85,7 @@ namespace Nitrocid.Shell.Shells.Text.Commands
                             string word = Words[wordIndex];
                             TextWriters.Write($"{(QueriedChars.Contains(wordIndex) ? KernelColorTools.GetColor(KernelColorType.Success).VTSequenceForeground : "")}{word} ", false, KernelColorType.ListValue);
                         }
-                        TextWriterColor.Write();
+                        TextWriterRaw.Write();
                     }
                     return 0;
                 }
@@ -113,7 +113,7 @@ namespace Nitrocid.Shell.Shells.Text.Commands
                                 string word = Words[wordIndex];
                                 TextWriters.Write($"{(QueriedChars.Contains(wordIndex) ? KernelColorTools.GetColor(KernelColorType.Success).VTSequenceForeground : "")}{word} ", false, KernelColorType.ListValue);
                             }
-                            TextWriterColor.Write();
+                            TextWriterRaw.Write();
                         }
                         return 0;
                     }

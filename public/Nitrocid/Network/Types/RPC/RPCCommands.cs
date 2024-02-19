@@ -263,7 +263,7 @@ namespace Nitrocid.Network.Types.RPC
             if (Login.LoggedIn)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Exec confirmed from remote access.");
-                TextWriterColor.Write();
+                TextWriterRaw.Write();
                 ShellManager.GetLine(Command);
             }
             else

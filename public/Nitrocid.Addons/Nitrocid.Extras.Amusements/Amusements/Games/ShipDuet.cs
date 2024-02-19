@@ -31,6 +31,7 @@ using Terminaux.Inputs;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
 using Nitrocid.Kernel.Debugging;
+using Terminaux.Reader;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games
 {
@@ -103,7 +104,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     if (ConsoleWrapper.KeyAvailable)
                     {
                         // Read the key and handle it
-                        Keypress = Input.DetectKeypress();
+                        Keypress = TermReader.ReadKey();
                         HandleKeypress(Keypress.Key);
                     }
                 }
@@ -193,12 +194,12 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                         if (y != SpaceshipHeightPlayer1)
                             buffer.Append(
                                 new Color(ConsoleColors.Black).VTSequenceBackground +
-                                TextWriterWhereColor.RenderWherePlain(" ", 0, y)
+                                TextWriterWhereColor.RenderWhere(" ", 0, y)
                             );
                         if (y != SpaceshipHeightPlayer2)
                             buffer.Append(
                                 new Color(ConsoleColors.Black).VTSequenceBackground +
-                                TextWriterWhereColor.RenderWherePlain(" ", ConsoleWrapper.WindowWidth - 1, y)
+                                TextWriterWhereColor.RenderWhere(" ", ConsoleWrapper.WindowWidth - 1, y)
                             );
                     }
 
@@ -207,7 +208,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     {
                         buffer.Append(
                             new Color(ConsoleColors.Black).VTSequenceBackground +
-                            TextWriterWhereColor.RenderWherePlain(" ", BulletsPlayer1[Bullet].Item1, BulletsPlayer1[Bullet].Item2)
+                            TextWriterWhereColor.RenderWhere(" ", BulletsPlayer1[Bullet].Item1, BulletsPlayer1[Bullet].Item2)
                         );
                         int BulletX = BulletsPlayer1[Bullet].Item1 + 1;
                         int BulletY = BulletsPlayer1[Bullet].Item2;
@@ -219,7 +220,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     {
                         buffer.Append(
                             new Color(ConsoleColors.Black).VTSequenceBackground +
-                            TextWriterWhereColor.RenderWherePlain(" ", BulletsPlayer2[Bullet].Item1, BulletsPlayer2[Bullet].Item2)
+                            TextWriterWhereColor.RenderWhere(" ", BulletsPlayer2[Bullet].Item1, BulletsPlayer2[Bullet].Item2)
                         );
                         int BulletX = BulletsPlayer2[Bullet].Item1 - 1;
                         int BulletY = BulletsPlayer2[Bullet].Item2;
@@ -231,7 +232,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     {
                         buffer.Append(
                             new Color(ConsoleColors.Black).VTSequenceBackground +
-                            TextWriterWhereColor.RenderWherePlain(" ", Stars[Star].Item1, Stars[Star].Item2)
+                            TextWriterWhereColor.RenderWhere(" ", Stars[Star].Item1, Stars[Star].Item2)
                         );
                         int StarX = Stars[Star].Item1 - 1;
                         int StarY = Stars[Star].Item2;
@@ -322,7 +323,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     }
 
                     // Wait for a few milliseconds
-                    TextWriterColor.WritePlain(buffer.ToString(), false);
+                    TextWriterRaw.WritePlain(buffer.ToString(), false);
                     ThreadManager.SleepNoBlock(ShipDuetSpeed, ShipDuetDrawThread);
                 }
             }
@@ -388,7 +389,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
         private static string DrawBullet(int BulletX, int BulletY)
         {
             char BulletSymbol = '-';
-            return TextWriterWhereColor.RenderWhere(Convert.ToString(BulletSymbol), BulletX, BulletY, false, ConsoleColors.Cyan, ConsoleColors.Black);
+            return TextWriterWhereColor.RenderWhere(Convert.ToString(BulletSymbol), BulletX, BulletY, false, ConsoleColors.Aqua, ConsoleColors.Black);
         }
 
     }

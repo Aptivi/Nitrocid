@@ -76,7 +76,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
                 foreach (var change in renamed)
                     TextWriters.Write($"[R] / {change.OldPath} -> {change.Path}", KernelColorType.ListEntry);
             }
-            TextWriterColor.Write();
+            TextWriterRaw.Write();
 
             if (doPatch)
             {

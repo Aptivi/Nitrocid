@@ -33,7 +33,7 @@ namespace Nitrocid.Extras.UnitConv.Interactives
     /// <summary>
     /// Unit converter TUI class
     /// </summary>
-    public class UnitConverterCli : BaseInteractiveTui, IInteractiveTui
+    public class UnitConverterCli : BaseInteractiveTui<object>, IInteractiveTui<object>
     {
         /// <summary>
         /// Contact manager bindings
@@ -49,12 +49,12 @@ namespace Nitrocid.Extras.UnitConv.Interactives
             true;
 
         /// <inheritdoc/>
-        public override IEnumerable PrimaryDataSource =>
-            GetUnitTypeNames();
+        public override IEnumerable<object> PrimaryDataSource =>
+            GetUnitTypeNames().OfType<object>();
 
         /// <inheritdoc/>
-        public override IEnumerable SecondaryDataSource =>
-            GetUnits();
+        public override IEnumerable<object> SecondaryDataSource =>
+            GetUnits().OfType<object>();
 
         /// <inheritdoc/>
         public override void RenderStatus(object item) =>

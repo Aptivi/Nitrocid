@@ -89,7 +89,7 @@ namespace Nitrocid.Kernel
             SplashManager.CloseSplash(SplashContext.StartingUp);
             SplashReport._KernelBooted = true;
             if (!SplashManager.EnableSplash)
-                TextWriterColor.Write();
+                TextWriterRaw.Write();
 
             // If this is the first time, run the first run presentation
             if (FirstTime)
@@ -150,7 +150,7 @@ namespace Nitrocid.Kernel
                 if (TimeDateTools.ShowCurrentTimeBeforeLogin)
                 {
                     TimeDateMiscRenderers.ShowCurrentTimes();
-                    TextWriterColor.Write();
+                    TextWriterRaw.Write();
                 }
 
                 // Show the tip

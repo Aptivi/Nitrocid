@@ -251,14 +251,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     if (ConsoleWrapper.CursorLeft >= EndLeft && ConsoleWrapper.CursorTop >= EndTop)
                     {
                         ColorTools.SetConsoleColorDry(currentColor, true);
-                        TextWriterColor.WritePlain(" ", false);
+                        TextWriterRaw.WritePlain(" ", false);
                         DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "We're now dissolving... L: {0} = {1} | T: {2} = {3}", ConsoleWrapper.CursorLeft, EndLeft, ConsoleWrapper.CursorTop, EndTop);
                         ColorFilled = true;
                     }
                     else
                     {
                         ColorTools.SetConsoleColorDry(currentColor, true);
-                        TextWriterColor.WritePlain(" ", false);
+                        TextWriterRaw.WritePlain(" ", false);
                     }
                 }
             }

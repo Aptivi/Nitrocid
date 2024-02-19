@@ -35,6 +35,7 @@ using Nitrocid.Kernel.Time;
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Languages;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -198,7 +199,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                                         // Write the current character
                                         TextWriterColor.WriteColorBack(sample[currentIdx].ToString(), false, darkGreen, black);
-                                        TextWriterColor.Write();
+                                        TextWriterRaw.Write();
                                     }
                                 }
                             }
@@ -334,7 +335,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             long travelledTickFromCurrent = currentTick - travelledTicks;
                             DateTime travelled = new(travelledTickFromCurrent);
                             string timeWarpCurrentDate = $"Travelled: {TimeDateRenderers.RenderDate(travelled)}";
-                            TextWriterWhereColor.WriteWhereColorBack(timeWarpCurrentDate + $"{$"{ConsoleExtensions.GetClearLineToRightSequence()}"}", progPosX, textTravelledPosY, black, darkGreen);
+                            TextWriterWhereColor.WriteWhereColorBack(timeWarpCurrentDate + ConsoleClearing.GetClearLineToRightSequence(), progPosX, textTravelledPosY, black, darkGreen);
 
                             // Now, do the glitch
                             bool isGlitch = RandomDriver.RandomChance(currentProg);

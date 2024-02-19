@@ -28,14 +28,14 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
     {
         public override void Simulate()
         {
-            ColorTools.LoadBackDry(new Color(ConsoleColors.DarkBlue_000087));
+            ColorTools.LoadBackDry(new Color(ConsoleColors.DarkBlue));
             ColorTools.SetConsoleColor(new Color(ConsoleColors.White));
 
             // Windows header
             string headerText = " Windows ";
             int headerStartLeft = ConsoleWrapper.WindowWidth / 2 - headerText.Length / 2;
             int headerStartTop = ConsoleWrapper.WindowHeight / 2 - 5;
-            TextWriterWhereColor.WriteWhereColorBack(headerText, headerStartLeft, headerStartTop, new Color(ConsoleColors.DarkBlue_000087), new Color(ConsoleColors.White));
+            TextWriterWhereColor.WriteWhereColorBack(headerText, headerStartLeft, headerStartTop, new Color(ConsoleColors.DarkBlue), new Color(ConsoleColors.White));
 
             // Write error
             int errorLeft = ConsoleWrapper.WindowWidth / 2 - 35;
@@ -45,7 +45,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
                                             "*  Press CTRL+ALT+DEL again to restart your computer. You will\n" +
                                             "   lose any unsaved information in all applications.\n\n" +
                                             "                      Press any key to continue",
-                                            errorLeft, headerStartTop + 2, new Color(ConsoleColors.White), new Color(ConsoleColors.DarkBlue_000087));
+                                            errorLeft, headerStartTop + 2, new Color(ConsoleColors.White), new Color(ConsoleColors.DarkBlue));
         }
     }
 }

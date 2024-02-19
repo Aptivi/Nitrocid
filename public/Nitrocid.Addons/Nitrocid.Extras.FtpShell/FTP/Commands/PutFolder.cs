@@ -49,13 +49,13 @@ namespace Nitrocid.Extras.FtpShell.FTP.Commands
             bool Result = !string.IsNullOrWhiteSpace(LocalFolder) ? FTPTransfer.FTPUploadFolder(RemoteFolder, LocalFolder) : FTPTransfer.FTPUploadFolder(RemoteFolder);
             if (Result)
             {
-                TextWriterColor.Write();
+                TextWriterRaw.Write();
                 TextWriters.Write(CharManager.NewLine + Translate.DoTranslation("Uploaded folder {0}"), true, KernelColorType.Success, parameters.ArgumentsList[0]);
                 return 0;
             }
             else
             {
-                TextWriterColor.Write();
+                TextWriterRaw.Write();
                 TextWriters.Write(CharManager.NewLine + Translate.DoTranslation("Failed to upload {0}"), true, KernelColorType.Error, parameters.ArgumentsList[0]);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.FTPFilesystem);
             }

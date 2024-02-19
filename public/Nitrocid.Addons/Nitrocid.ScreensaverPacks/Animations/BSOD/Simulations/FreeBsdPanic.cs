@@ -32,7 +32,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
             ColorTools.SetConsoleColor(new Color(ConsoleColors.White));
 
             // Simulate a FreeBSD kernel panic
-            TextWriterColor.WritePlain(
+            TextWriterRaw.WritePlain(
                  "Fatal trap 9: general protection fault while in kernel mode\n" +
                  "cpuid = 4; apic id = 14\n" +
                 $"instruction pointer     = 0x{RandomDriver.Random():x2}:0x{RandomDriver.Random():x16}\n" +

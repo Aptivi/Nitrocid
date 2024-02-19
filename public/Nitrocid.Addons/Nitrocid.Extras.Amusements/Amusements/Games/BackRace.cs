@@ -32,6 +32,7 @@ using Nitrocid.Drivers.RNG;
 using Terminaux.Inputs;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
+using Terminaux.Reader;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games
 {
@@ -153,7 +154,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
 
                     // Wait for the input
                     winner = 0;
-                    var input = Input.DetectKeypress().Key;
+                    var input = TermReader.ReadKey().Key;
                     switch (input)
                     {
                         case ConsoleKey.UpArrow:

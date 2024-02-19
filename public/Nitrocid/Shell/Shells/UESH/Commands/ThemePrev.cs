@@ -67,7 +67,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                         );
                         themeCategoryChoices.Add(ici);
                     }
-                    int categoryIndex = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a category"), themeCategoryChoices, themeCategoryAltChoices) - 1;
+                    int categoryIndex = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a category"), [.. themeCategoryChoices], [.. themeCategoryAltChoices]) - 1;
 
                     // If the color index is -2, exit. PromptSelection returns -1 if ESC is pressed to cancel selecting. However, the index just decreases to -2
                     // even if that PromptSelection returned the abovementioned value, so bail if index is -2
@@ -96,7 +96,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                         );
                         themeChoices.Add(ici);
                     }
-                    int colorIndex = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a theme"), themeChoices, themeAltChoices) - 1;
+                    int colorIndex = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a theme"), [.. themeChoices], [.. themeAltChoices]) - 1;
 
                     // If the color index is -2, exit. PromptSelection returns -1 if ESC is pressed to cancel selecting. However, the index just decreases to -2
                     // even if that PromptSelection returned the abovementioned value, so bail if index is -2

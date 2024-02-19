@@ -30,10 +30,10 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Events;
 using Nitrocid.Languages;
 using Terminaux.Colors;
-using Terminaux.Colors.Selector;
 using Textify.General;
 using Terminaux.Base;
 using Nitrocid.ConsoleBase.Inputs;
+using Terminaux.Inputs.Styles;
 
 namespace Nitrocid.Extras.ThemeStudio.Studio
 {
@@ -83,7 +83,7 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
                 TextWriterColor.Write(Translate.DoTranslation("Making a new theme \"{0}\".") + CharManager.NewLine, ThemeName);
 
                 // Prompt user
-                int response = SelectionStyle.PromptSelection(TextTools.FormatString(Translate.DoTranslation("Making a new theme \"{0}\"."), ThemeName), choices, altChoices, true);
+                int response = SelectionStyle.PromptSelection(TextTools.FormatString(Translate.DoTranslation("Making a new theme \"{0}\"."), ThemeName), [.. choices], [.. altChoices], true);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got response: {0}", response);
 
                 // Check for response integrity

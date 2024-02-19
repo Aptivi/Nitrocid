@@ -78,7 +78,7 @@ namespace Nitrocid.Shell.ShellBase.Commands
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Locking to cancel...");
                     CancelRequested = true;
-                    TextWriterColor.Write();
+                    TextWriterRaw.Write();
                     DriverHandler.SetDriver<IConsoleDriver>("Null");
                     cts.Cancel();
                     ProcessStartCommandThread.Stop();

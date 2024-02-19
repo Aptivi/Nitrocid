@@ -491,7 +491,7 @@ namespace Nitrocid.Drivers.Filesystem
                         ByteNumberEachSixteen = 1;
                     }
                 }
-                TextWriterColor.Write();
+                TextWriterRaw.Write();
             }
             else if (StartByte > FileByte.LongLength)
             {
@@ -1397,7 +1397,7 @@ namespace Nitrocid.Drivers.Filesystem
                         TextWriters.Write(": ", false, KernelColorType.ListEntry);
                         TextWriters.Write(Translate.DoTranslation("{0}, Created in {1} {2}, Modified in {3} {4}"), false, KernelColorType.ListValue, TotalSize.SizeString(), finalDirInfo.CreationTime.ToShortDateString(), finalDirInfo.CreationTime.ToShortTimeString(), finalDirInfo.LastWriteTime.ToShortDateString(), finalDirInfo.LastWriteTime.ToShortTimeString());
                     }
-                    TextWriterColor.Write();
+                    TextWriterRaw.Write();
                 }
             }
             else
@@ -1435,7 +1435,7 @@ namespace Nitrocid.Drivers.Filesystem
                     {
                         TextWriters.Write(Translate.DoTranslation("{0}, Created in {1} {2}, Modified in {3} {4}"), false, KernelColorType.ListValue, ((FileInfo)FileInfo.BaseEntry).Length.SizeString(), FileInfo.BaseEntry.CreationTime.ToShortDateString(), FileInfo.BaseEntry.CreationTime.ToShortTimeString(), FileInfo.BaseEntry.LastWriteTime.ToShortDateString(), FileInfo.BaseEntry.LastWriteTime.ToShortTimeString());
                     }
-                    TextWriterColor.Write();
+                    TextWriterRaw.Write();
                 }
             }
             else

@@ -279,7 +279,7 @@ namespace Nitrocid.ConsoleBase.Themes
 
             // Now, check for 255-color requirement
             for (int key = 0; key < colors.Count; key++)
-                if (colors.Values.ElementAt(key).Type == ColorType._255Color)
+                if (colors.Values.ElementAt(key).Type == ColorType.EightBitColor)
                     return true;
 
             // Else, 255 color support is not required

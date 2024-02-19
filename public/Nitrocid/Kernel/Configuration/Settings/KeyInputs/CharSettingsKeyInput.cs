@@ -26,6 +26,7 @@ using System;
 using Textify.General;
 using Terminaux.Base;
 using Terminaux.Inputs;
+using Terminaux.Reader;
 
 namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
 {
@@ -44,7 +45,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             // Write the prompt
             TextWriters.Write($"{Translate.DoTranslation("Press any letter on your keyboard to set it to that character.")}\n", KernelColorType.Tip);
             TextWriters.Write("[{0}] ", false, KernelColorType.Input, KeyDefaultValue);
-            var keypressTerm = Input.DetectKeypress();
+            var keypressTerm = TermReader.ReadKey();
             var keypress = keypressTerm.KeyChar;
             keypress =
                 CharManager.IsControlChar(keypress) ? '\0' :

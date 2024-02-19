@@ -35,6 +35,7 @@ using Textify.General;
 using Terminaux.Colors;
 using Nitrocid.ConsoleBase.Inputs;
 using Nitrocid.Network.Connections;
+using Terminaux.Reader;
 
 namespace Nitrocid.Extras.FtpShell.Tools
 {
@@ -283,8 +284,8 @@ namespace Nitrocid.Extras.FtpShell.Tools
                     {
                         TextWriters.Write(Translate.DoTranslation("Are you sure that you want to connect?") + " (y/n) ", false, KernelColorType.Question);
                         ColorTools.SetConsoleColor(KernelColorTools.GetColor(KernelColorType.Input));
-                        Answer = Convert.ToString(Input.DetectKeypress().KeyChar);
-                        TextWriterColor.Write();
+                        Answer = Convert.ToString(TermReader.ReadKey().KeyChar);
+                        TextWriterRaw.Write();
                         DebugWriter.WriteDebug(DebugLevel.I, $"Answer is {Answer}");
                         if (Answer.Equals("y", StringComparison.OrdinalIgnoreCase))
                         {

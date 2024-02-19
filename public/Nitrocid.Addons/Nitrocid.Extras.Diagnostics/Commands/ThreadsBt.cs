@@ -56,7 +56,7 @@ namespace Nitrocid.Extras.Diagnostics.Commands
                 string[] threadTrace = trace.Value;
                 TextWriters.Write(Translate.DoTranslation("Thread stack trace information for {0}") + "\n", true, KernelColorType.ListTitle, threadAddress);
                 ListWriterColor.WriteList(threadTrace);
-                TextWriterColor.Write();
+                TextWriterRaw.Write();
             }
             return 0;
         }
@@ -79,7 +79,7 @@ namespace Nitrocid.Extras.Diagnostics.Commands
                 TextWriters.Write(Translate.DoTranslation("Thread stack trace information for {0}") + "\n", true, KernelColorType.ListTitle, threadAddress);
                 foreach (string threadTraceStr in threadTrace)
                     TextWriterColor.Write(threadTraceStr);
-                TextWriterColor.Write();
+                TextWriterRaw.Write();
             }
             return 0;
         }

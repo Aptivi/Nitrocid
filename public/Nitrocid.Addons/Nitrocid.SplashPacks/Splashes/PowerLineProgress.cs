@@ -29,6 +29,7 @@ using Nitrocid.Misc.Text;
 using Terminaux.Writer.FancyWriters;
 using Textify.General;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.SplashPacks.Splashes
 {
@@ -121,8 +122,8 @@ namespace Nitrocid.SplashPacks.Splashes
             // Display the text and percentage
             builder.Append(
                 KernelColorTools.GetColor(KernelColorType.Progress).VTSequenceForeground +
-                TextWriterWhereColor.RenderWherePlain(PresetStringBuilder.ToString(), 0, ProgressWritePositionY, false, KernelColorType.Progress, Vars) +
-                ConsoleExtensions.GetClearLineToRightSequence()
+                TextWriterWhereColor.RenderWhere(PresetStringBuilder.ToString(), 0, ProgressWritePositionY, false, KernelColorType.Progress, Vars) +
+                ConsoleClearing.GetClearLineToRightSequence()
             );
 
             // Display the progress bar

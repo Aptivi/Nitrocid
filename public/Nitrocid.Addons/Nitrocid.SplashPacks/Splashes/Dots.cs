@@ -19,7 +19,7 @@
 
 using System.Threading;
 using Terminaux.Colors;
-using Textify.Sequences.Tools;
+using Terminaux.Sequences;
 using System.Text;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Misc.Splash;
@@ -27,6 +27,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Base;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Colors.Data;
+using Terminaux.Colors.Transformation.Contrast;
 
 namespace Nitrocid.SplashPacks.Splashes
 {
@@ -70,7 +71,7 @@ namespace Nitrocid.SplashPacks.Splashes
                     $"{fifthDotColor.VTSequenceForeground}*";
                 int dotsPosX = ConsoleWrapper.WindowWidth / 2 - VtSequenceTools.FilterVTSequences(dots).Length / 2;
                 int dotsPosY = ConsoleWrapper.WindowHeight - 2;
-                builder.Append(TextWriterWhereColor.RenderWherePlain(dots, dotsPosX, dotsPosY));
+                builder.Append(TextWriterWhereColor.RenderWhere(dots, dotsPosX, dotsPosY));
                 if (!noAppend)
                 {
                     dotStep++;

@@ -70,7 +70,7 @@ namespace Nitrocid.Extras.Amusements.Splashes
                     string str = quoteSplit[i];
                     builder.Append(
                         _quoteColor.VTSequenceForeground +
-                        TextWriterWhereColor.RenderWherePlain(str, quotePosX, currentY)
+                        TextWriterWhereColor.RenderWhere(str, quotePosX, currentY)
                     );
                 }
             }

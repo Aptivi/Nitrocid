@@ -28,6 +28,8 @@ using Nitrocid.Languages;
 using Terminaux.Inputs;
 using Terminaux.Base.Buffered;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
+using Terminaux.Reader;
 
 namespace Nitrocid.Extras.Timers.Timers
 {
@@ -98,7 +100,7 @@ namespace Nitrocid.Extras.Timers.Timers
                 // Print informational messages
                 builder.Append(
                     TextWriterWhereColor.RenderWhere(status, 1, 0, false, KernelColorTools.GetColor(KernelColorType.NeutralText), KernelColorTools.GetColor(KernelColorType.Background)) +
-                    ConsoleExtensions.GetClearLineToRightSequence()
+                    ConsoleClearing.GetClearLineToRightSequence()
                 );
 
                 // Print the laps list
@@ -134,12 +136,12 @@ namespace Nitrocid.Extras.Timers.Timers
                 {
                     // Wait for a keypress
                     if (ConsoleWrapper.KeyAvailable)
-                        KeysKeypress = Input.DetectKeypress().Key;
+                        KeysKeypress = TermReader.ReadKey().Key;
                 }
                 else
                 {
                     // Wait for a keypress
-                    KeysKeypress = Input.DetectKeypress().Key;
+                    KeysKeypress = TermReader.ReadKey().Key;
                 }
 
                 // Check for a keypress

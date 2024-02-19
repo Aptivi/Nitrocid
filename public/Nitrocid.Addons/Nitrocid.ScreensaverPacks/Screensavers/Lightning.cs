@@ -24,7 +24,7 @@ using Nitrocid.Misc.Screensaver;
 using System;
 using System.Text;
 using Terminaux.Colors;
-using Textify.Sequences.Builder.Types;
+using Terminaux.Sequences.Builder.Types;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
 
@@ -120,7 +120,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         var strike = new StringBuilder();
 
                         // Draw the flashes first
-                        strike.Append(new Color(ConsoleColors.Yellow3_d7d700).VTSequenceBackground);
+                        strike.Append(new Color(ConsoleColors.Yellow3Alt).VTSequenceBackground);
                         for (int y = 0; y < boltFirstHalfEndY; y++)
                         {
                             int x = (int)Math.Round(boltTopEdgeX + boltFromTopToFirstHalfX * y, MidpointRounding.ToZero);
@@ -206,7 +206,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         }
 
                         // Write the rendered strike
-                        TextWriterColor.WritePlain(strike.ToString(), false);
+                        TextWriterRaw.WritePlain(strike.ToString(), false);
                         ThreadManager.SleepNoBlock(LightningSettings.LightningDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
                     }
                     else

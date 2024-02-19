@@ -33,6 +33,7 @@ using Nitrocid.Security.Permissions;
 using Textify.General;
 using Terminaux.Base;
 using Terminaux.Inputs;
+using Terminaux.Reader;
 
 namespace Nitrocid.Kernel.Configuration.Settings
 {
@@ -209,7 +210,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
                     // Prompt user and check for input
                     string finalSection = SectionTranslateName ? Translate.DoTranslation(SectionDisplayName) : SectionDisplayName;
                     int Answer = SelectionStyle.PromptSelection(RenderHeader(finalSection, Translate.DoTranslation(SectionDescription), Notes),
-                        sections, altSections);
+                        [.. sections], [.. altSections]);
 
                     // We need to check for exit early
                     if (Answer == -1)
@@ -240,7 +241,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
                         DebugWriter.WriteDebug(DebugLevel.W, "Option is not valid. Returning...");
                         TextWriters.Write(Translate.DoTranslation("Specified option {0} is invalid."), true, KernelColorType.Error, Answer);
                         TextWriters.Write(Translate.DoTranslation("Press any key to go back."), true, KernelColorType.Error);
-                        Input.DetectKeypress();
+                        TermReader.ReadKey();
                     }
                 }
             }
@@ -328,7 +329,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
                     while (sel != Results.Count + 1)
                     {
                         // Prompt for setting
-                        sel = SelectionStyle.PromptSelection(Translate.DoTranslation("These settings are found. Please select one."), Results, Back);
+                        sel = SelectionStyle.PromptSelection(Translate.DoTranslation("These settings are found. Please select one."), [.. Results], [.. Back]);
 
                         // If pressed back, bail
                         if (sel == Results.Count + 1 || sel == -1)

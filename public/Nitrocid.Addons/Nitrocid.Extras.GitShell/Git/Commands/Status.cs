@@ -57,7 +57,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
             }
             else
                 TextWriters.Write(Translate.DoTranslation("No untracked files."), true, KernelColorType.ListValue);
-            TextWriterColor.Write();
+            TextWriterRaw.Write();
 
             // ...added...
             TextWriters.Write(Translate.DoTranslation("Added files") + ":", true, KernelColorType.ListEntry);
@@ -68,7 +68,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
             }
             else
                 TextWriters.Write(Translate.DoTranslation("No added files."), true, KernelColorType.ListValue);
-            TextWriterColor.Write();
+            TextWriterRaw.Write();
 
             // ...modified...
             TextWriters.Write(Translate.DoTranslation("Modified files") + ":", true, KernelColorType.ListEntry);
@@ -79,7 +79,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
             }
             else
                 TextWriters.Write(Translate.DoTranslation("No modified files."), true, KernelColorType.ListValue);
-            TextWriterColor.Write();
+            TextWriterRaw.Write();
 
             // ...removed...
             TextWriters.Write(Translate.DoTranslation("Removed files") + ":", true, KernelColorType.ListEntry);
@@ -90,7 +90,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
             }
             else
                 TextWriters.Write(Translate.DoTranslation("No removed files."), true, KernelColorType.ListValue);
-            TextWriterColor.Write();
+            TextWriterRaw.Write();
 
             // ...staged...
             TextWriters.Write(Translate.DoTranslation("Staged files") + ":", true, KernelColorType.ListEntry);
@@ -101,7 +101,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
             }
             else
                 TextWriters.Write(Translate.DoTranslation("No staged files."), true, KernelColorType.ListValue);
-            TextWriterColor.Write();
+            TextWriterRaw.Write();
 
             // ...renamed...
             TextWriters.Write(Translate.DoTranslation("Renamed staged files") + ":", true, KernelColorType.ListEntry);
@@ -112,7 +112,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
             }
             else
                 TextWriters.Write(Translate.DoTranslation("No renamed staged files."), true, KernelColorType.ListValue);
-            TextWriterColor.Write();
+            TextWriterRaw.Write();
 
             // ...renamed unstaged...
             TextWriters.Write(Translate.DoTranslation("Renamed files") + ":", true, KernelColorType.ListEntry);
@@ -123,7 +123,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
             }
             else
                 TextWriters.Write(Translate.DoTranslation("No renamed files."), true, KernelColorType.ListValue);
-            TextWriterColor.Write();
+            TextWriterRaw.Write();
 
             // ...and missing
             TextWriters.Write(Translate.DoTranslation("Missing files") + ":", true, KernelColorType.ListEntry);
@@ -134,7 +134,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
             }
             else
                 TextWriters.Write(Translate.DoTranslation("No missing files."), true, KernelColorType.ListValue);
-            TextWriterColor.Write();
+            TextWriterRaw.Write();
             return 0;
         }
 

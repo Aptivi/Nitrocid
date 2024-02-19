@@ -41,13 +41,13 @@ namespace Nitrocid.Extras.SftpShell.SFTP.Commands
             TextWriters.Write(Translate.DoTranslation("Downloading file {0}..."), false, KernelColorType.Progress, parameters.ArgumentsList[0]);
             if (SFTPTransfer.SFTPGetFile(parameters.ArgumentsList[0]))
             {
-                TextWriterColor.Write();
+                TextWriterRaw.Write();
                 TextWriters.Write(Translate.DoTranslation("Downloaded file {0}."), true, KernelColorType.Success, parameters.ArgumentsList[0]);
                 return 0;
             }
             else
             {
-                TextWriterColor.Write();
+                TextWriterRaw.Write();
                 TextWriters.Write(Translate.DoTranslation("Download failed for file {0}."), true, KernelColorType.Error, parameters.ArgumentsList[0]);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.SFTPFilesystem);
             }

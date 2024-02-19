@@ -29,7 +29,7 @@ namespace Nitrocid.Misc.Interactives
     /// <summary>
     /// Time zone showing class
     /// </summary>
-    public class TimeZoneShowCli : BaseInteractiveTui, IInteractiveTui
+    public class TimeZoneShowCli : BaseInteractiveTui<string>, IInteractiveTui<string>
     {
 
         private static readonly string[] zones = TimeZones.GetTimeZoneNames();
@@ -40,7 +40,7 @@ namespace Nitrocid.Misc.Interactives
         public override List<InteractiveTuiBinding> Bindings { get; set; } = [];
 
         /// <inheritdoc/>
-        public override IEnumerable PrimaryDataSource =>
+        public override IEnumerable<string> PrimaryDataSource =>
             zones;
 
         /// <inheritdoc/>
@@ -48,7 +48,7 @@ namespace Nitrocid.Misc.Interactives
             1000;
 
         /// <inheritdoc/>
-        public override string GetInfoFromItem(object item)
+        public override string GetInfoFromItem(string item)
         {
             string selectedZone = (string)item;
             var time = TimeZones.GetTimeZoneTimes()[selectedZone];
@@ -61,7 +61,7 @@ namespace Nitrocid.Misc.Interactives
         }
 
         /// <inheritdoc/>
-        public override void RenderStatus(object item)
+        public override void RenderStatus(string item)
         {
             string selectedZone = (string)item;
             var time = TimeZones.GetTimeZoneTimes()[selectedZone];
@@ -69,7 +69,7 @@ namespace Nitrocid.Misc.Interactives
         }
 
         /// <inheritdoc/>
-        public override string GetEntryFromItem(object item)
+        public override string GetEntryFromItem(string item)
         {
             string selectedZone = (string)item;
             return selectedZone;

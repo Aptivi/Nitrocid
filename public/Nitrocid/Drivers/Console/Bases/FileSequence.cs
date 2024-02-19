@@ -21,7 +21,7 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Threading;
-using Textify.Sequences.Tools;
+using Terminaux.Sequences;
 using TextEncoding = System.Text.Encoding;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Files.Operations;

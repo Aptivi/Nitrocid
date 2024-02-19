@@ -569,7 +569,7 @@ namespace Nitrocid.ConsoleBase.Writers
         {
             try
             {
-                TextWriterColor.WritePlain(FigletColor.RenderFigletPlain(Text, FigletFont, KernelColorTools.GetColor(ColTypes), KernelColorTools.GetColor(KernelColorType.Background), Vars), false);
+                TextWriterRaw.WritePlain(FigletColor.RenderFigletPlain(Text, FigletFont, KernelColorTools.GetColor(ColTypes), KernelColorTools.GetColor(KernelColorType.Background), Vars), false);
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
@@ -590,7 +590,7 @@ namespace Nitrocid.ConsoleBase.Writers
         {
             try
             {
-                TextWriterColor.WritePlain(FigletColor.RenderFigletPlain(Text, FigletFont, KernelColorTools.GetColor(colorTypeForeground), KernelColorTools.GetColor(colorTypeBackground), Vars), false);
+                TextWriterRaw.WritePlain(FigletColor.RenderFigletPlain(Text, FigletFont, KernelColorTools.GetColor(colorTypeForeground), KernelColorTools.GetColor(colorTypeBackground), Vars), false);
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
@@ -791,7 +791,7 @@ namespace Nitrocid.ConsoleBase.Writers
         {
             try
             {
-                TextWriterColor.WritePlain(ProgressBarColor.RenderProgress(Progress, Left, Top, LeftWidthOffset, RightWidthOffset, KernelColorTools.GetColor(ProgressColor), KernelColorTools.GetColor(FrameColor), KernelColorTools.GetColor(BackgroundColor), DrawBorder, Targeted));
+                TextWriterRaw.WritePlain(ProgressBarColor.RenderProgress(Progress, Left, Top, LeftWidthOffset, RightWidthOffset, KernelColorTools.GetColor(ProgressColor), KernelColorTools.GetColor(FrameColor), KernelColorTools.GetColor(BackgroundColor), DrawBorder, Targeted));
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
@@ -876,7 +876,7 @@ namespace Nitrocid.ConsoleBase.Writers
         {
             try
             {
-                TextWriterColor.WritePlain(ProgressBarVerticalColor.RenderVerticalProgress(Progress, Left, Top, TopHeightOffset, BottomHeightOffset, KernelColorTools.GetColor(ProgressColor), KernelColorTools.GetColor(FrameColor), DrawBorder));
+                TextWriterRaw.WritePlain(ProgressBarVerticalColor.RenderVerticalProgress(Progress, Left, Top, TopHeightOffset, BottomHeightOffset, KernelColorTools.GetColor(ProgressColor), KernelColorTools.GetColor(FrameColor), DrawBorder));
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {

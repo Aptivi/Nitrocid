@@ -59,7 +59,7 @@ namespace Nitrocid.Shell.Shells.Text.Commands
                             char Character = text[charIndex];
                             TextWriters.Write($"{(QueriedChars.Contains(charIndex) ? KernelColorTools.GetColor(KernelColorType.Success).VTSequenceForeground : "")}{Character}", false, KernelColorType.ListValue);
                         }
-                        TextWriterColor.Write();
+                        TextWriterRaw.Write();
                         return 0;
                     }
                     else
@@ -84,7 +84,7 @@ namespace Nitrocid.Shell.Shells.Text.Commands
                             char Character = text[charIndex];
                             TextWriters.Write($"{(queried.Contains(charIndex) ? KernelColorTools.GetColor(KernelColorType.Success).VTSequenceForeground : "")}{Character}", false, KernelColorType.ListValue);
                         }
-                        TextWriterColor.Write();
+                        TextWriterRaw.Write();
                     }
                     return 0;
                 }
@@ -111,7 +111,7 @@ namespace Nitrocid.Shell.Shells.Text.Commands
                                 char Character = text[charIndex];
                                 TextWriters.Write($"{(QueriedChars.Contains(charIndex) ? KernelColorTools.GetColor(KernelColorType.Success).VTSequenceForeground : "")}{Character}", false, KernelColorType.ListValue);
                             }
-                            TextWriterColor.Write();
+                            TextWriterRaw.Write();
                         }
                         return 0;
                     }

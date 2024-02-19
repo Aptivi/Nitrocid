@@ -306,11 +306,11 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
         {
             // Windows 7's BSOD is the same as Windows XP's and Windows Vista's BSOD.
             var bugParams = BugChecks[BugCheckCode];
-            ColorTools.LoadBackDry(new Color(ConsoleColors.DarkBlue_000087));
+            ColorTools.LoadBackDry(new Color(ConsoleColors.DarkBlue));
             ColorTools.SetConsoleColor(new Color(ConsoleColors.White));
 
             // First, write the introduction
-            TextWriterColor.WritePlain("\nA problem has been detected and Windows has been shut down to prevent damage\n" +
+            TextWriterRaw.WritePlain("\nA problem has been detected and Windows has been shut down to prevent damage\n" +
                                        "to your computer.\n", true);
 
             // Then, get the message
@@ -319,36 +319,36 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
                                      // We're not displaying message, but display code if Russian Roulette returned true.
                                      displayCodeName ? BugCheckCode.ToString() : "";
             if (!string.IsNullOrEmpty(bugCheckMessage))
-                TextWriterColor.WritePlain($"{bugCheckMessage}\n", true);
+                TextWriterRaw.WritePlain($"{bugCheckMessage}\n", true);
 
             // If this is the first time...
-            TextWriterColor.WritePlain("If this is the first time you've seen this Stop error screen,\n" +
+            TextWriterRaw.WritePlain("If this is the first time you've seen this Stop error screen,\n" +
                                        "restart your computer. If this screen appears again, follow\n" +
                                        "these steps:\n", true);
 
             // Display some steps as to how to update your software and hardware drivers through Windows Update
-            TextWriterColor.WritePlain("Check to make sure any new hardware or software is properly installed.\n" +
+            TextWriterRaw.WritePlain("Check to make sure any new hardware or software is properly installed.\n" +
                                        "If this is a new installation, ask your hardware or software manufacturer\n" +
                                        "for any Windows updates you might need.\n", true);
 
             // Display an unhelpful step that only applies to 2001-era computers or older
-            TextWriterColor.WritePlain("If problems continue, disable or remove any newly installed hardware\n" +
+            TextWriterRaw.WritePlain("If problems continue, disable or remove any newly installed hardware\n" +
                                        "or software. Disable BIOS memory options such as caching or shadowing.", true);
 
             // Safe mode...
-            TextWriterColor.WritePlain("If you need to use Safe Mode to remove or disable components, restart\n" +
+            TextWriterRaw.WritePlain("If you need to use Safe Mode to remove or disable components, restart\n" +
                                        "your computer, press F8 to select Advanced Startup Options, and then\n" +
                                        "select Safe Mode.\n", true);
 
             // Display technical information
-            TextWriterColor.WritePlain("Technical information:\n\n" +
+            TextWriterRaw.WritePlain("Technical information:\n\n" +
                                       $"*** STOP: 0x{bugParams.WindowsBugCheckCode:X8} (0x{RandomDriver.Random():X8}, 0x{RandomDriver.Random():X8}, 0x{RandomDriver.Random():X8}, 0x{RandomDriver.Random():X8})\n", true);
 
             // Display dumping message and stop here
-            TextWriterColor.WritePlain("Collecting data for crash dump...\n" +
+            TextWriterRaw.WritePlain("Collecting data for crash dump...\n" +
                                        "Initializing disk for crash dump...\n" +
                                        "Beginning dump of physical memory.", true);
-            TextWriterColor.WritePlain("Dumping physical memory to disk:  ", false);
+            TextWriterRaw.WritePlain("Dumping physical memory to disk:  ", false);
         }
     }
 }

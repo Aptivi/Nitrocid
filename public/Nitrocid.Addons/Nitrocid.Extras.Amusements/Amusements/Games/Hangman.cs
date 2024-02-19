@@ -29,6 +29,7 @@ using Nitrocid.Languages;
 using Terminaux.Colors;
 using Textify.Words;
 using Terminaux.Base;
+using Terminaux.Reader;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games
 {
@@ -167,7 +168,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 else
                 {
                     // Wait for character
-                    var input = Input.DetectKeypress();
+                    var input = TermReader.ReadKey();
                     var inputChar = input.KeyChar;
                     if (RandomWord.Contains(inputChar))
                     {

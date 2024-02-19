@@ -19,6 +19,7 @@
 
 using Terminaux.Inputs.Styles;
 using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Reader;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -33,7 +34,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            string Answer = InputStyle.PromptInput(parameters.ArgumentsList[0]);
+            string Answer = TermReader.Read(parameters.ArgumentsList[0]);
             variableValue = Answer;
             return 0;
         }

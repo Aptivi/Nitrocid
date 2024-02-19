@@ -29,6 +29,8 @@ using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Base;
 using Terminaux.Inputs;
 using Terminaux.Inputs.Styles.Selection;
+using Terminaux.Base.Extensions;
+using Terminaux.Reader;
 
 namespace Nitrocid.ConsoleBase.Themes
 {
@@ -81,7 +83,7 @@ namespace Nitrocid.ConsoleBase.Themes
             // Give a prompt for theme preview
             while (true)
             {
-                int prev = SelectionStyle.PromptSelection(Translate.DoTranslation("Here's how your theme will look like:"), choices, altChoices, true);
+                int prev = SelectionStyle.PromptSelection(Translate.DoTranslation("Here's how your theme will look like:"), [.. choices], [.. altChoices], true);
                 if (prev == choices.Count + 1)
                     break;
             }
@@ -139,7 +141,7 @@ namespace Nitrocid.ConsoleBase.Themes
 
                 // Render the type name and some info
                 int typeY = ConsoleWrapper.WindowHeight - 6;
-                TextWriterWhereColor.WriteWhere(ConsoleExtensions.GetClearLineToRightSequence(), 0, typeY);
+                TextWriterWhereColor.WriteWhere(ConsoleClearing.GetClearLineToRightSequence(), 0, typeY);
                 CenteredTextColor.WriteCentered(typeY, $"{colorType} - {colorInstance.PlainSequence} [{colorInstance.PlainSequenceTrueColor}]");
 
                 // Render the color box
@@ -153,7 +155,7 @@ namespace Nitrocid.ConsoleBase.Themes
                 BoxColor.WriteBox(startExteriorX + 1, startExteriorY, diffInteriorX, diffInteriorY, colorInstance);
 
                 // Wait for input
-                var input = Input.DetectKeypress();
+                var input = TermReader.ReadKey();
                 switch (input.Key)
                 {
                     case ConsoleKey.Enter:

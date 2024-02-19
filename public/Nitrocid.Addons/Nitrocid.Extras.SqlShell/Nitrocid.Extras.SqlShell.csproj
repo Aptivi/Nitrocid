@@ -62,7 +62,7 @@
   <!-- Extras.SqlShell addon Platform Information End -->
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Data.Sqlite" Version="8.0.1" />
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="8.0.2" />
   </ItemGroup>
 
   <ItemGroup>

@@ -24,7 +24,7 @@ using System.Linq;
 using System.Text;
 using System.Collections;
 using System.Reflection;
-using Textify.Sequences.Tools;
+using Terminaux.Sequences;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Files;
@@ -50,7 +50,7 @@ namespace Nitrocid.Misc.Interactives
     /// <summary>
     /// Folder selector class, a descendant of the file manager
     /// </summary>
-    public class FolderSelectorCli : BaseInteractiveTui, IInteractiveTui
+    public class FolderSelectorCli : BaseInteractiveTui<FileSystemEntry>, IInteractiveTui<FileSystemEntry>
     {
         internal string selectedFolder = "";
         internal string firstPanePath = PathsManagement.HomePath;
@@ -92,7 +92,7 @@ namespace Nitrocid.Misc.Interactives
         ];
 
         /// <inheritdoc/>
-        public override IEnumerable PrimaryDataSource
+        public override IEnumerable<FileSystemEntry> PrimaryDataSource
         {
             get
             {
@@ -119,9 +119,9 @@ namespace Nitrocid.Misc.Interactives
             true;
 
         /// <inheritdoc/>
-        public override void RenderStatus(object item)
+        public override void RenderStatus(FileSystemEntry item)
         {
-            FileSystemEntry FileInfoCurrentPane = (FileSystemEntry)item;
+            FileSystemEntry FileInfoCurrentPane = item;
 
             // Check to see if we're given the file system info
             if (FileInfoCurrentPane == null)
@@ -156,11 +156,11 @@ namespace Nitrocid.Misc.Interactives
         }
 
         /// <inheritdoc/>
-        public override string GetInfoFromItem(object item)
+        public override string GetInfoFromItem(FileSystemEntry item)
         {
             try
             {
-                FileSystemEntry file = (FileSystemEntry)item;
+                FileSystemEntry file = item;
                 bool isDirectory = file.Type == FileSystemEntryType.Directory;
                 bool isSelected = SelectedFolder == file.FilePath;
                 var size = file.FileSize;
@@ -187,11 +187,11 @@ namespace Nitrocid.Misc.Interactives
         }
 
         /// <inheritdoc/>
-        public override string GetEntryFromItem(object item)
+        public override string GetEntryFromItem(FileSystemEntry item)
         {
             try
             {
-                FileSystemEntry file = (FileSystemEntry)item;
+                FileSystemEntry file = item;
                 bool isDirectory = file.Type == FileSystemEntryType.Directory;
                 bool isSelected = SelectedFolder == file.FilePath;
                 return $" [{(isDirectory ? "/" : "*")}] [{(isSelected ? "+" : " ")}] {file.BaseEntry.Name}";

@@ -42,7 +42,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
                 new("lunar", "23.04 (Lunar Lobster)", "Ubuntu 23.04 Lunar Lobster is an interim release, released 20 April 2023."),
                 new("mantic", "23.10 (Mantic Minotaur)", "Ubuntu 23.10 Mantic Minotaur is an interim release, scheduled 12 October 2023."),
             };
-            SelectionStyle.PromptSelection("Which Ubuntu version would you like to run?", choices, altChoices);
+            SelectionStyle.PromptSelection("Which Ubuntu version would you like to run?", [.. choices], [.. altChoices]);
         }
     }
 }

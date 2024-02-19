@@ -30,6 +30,7 @@ using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel.Time.Renderers;
 using Nitrocid.Kernel.Threading;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -859,7 +860,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Cycling colors...");
                 if (CurrentTicks >= ProgressClockSettings.ProgressClockCycleColorsTicks)
                 {
-                    var type = ProgressClockSettings.ProgressClockTrueColor ? ColorType.TrueColor : ColorType._255Color;
+                    var type = ProgressClockSettings.ProgressClockTrueColor ? ColorType.TrueColor : ColorType.EightBitColor;
                     DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Current tick equals the maximum ticks to change color.");
                     ColorStorageHours =
                         ColorTools.GetRandomColor(type, ProgressClockSettings.ProgressClockMinimumColorLevelHours, ProgressClockSettings.ProgressClockMaximumColorLevelHours,
@@ -939,17 +940,17 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 if (TimeDateTools.KernelDateTime.Hour != 0)
                 {
                     TextWriters.WriteWhere(new string(' ', ConsoleWrapper.WindowWidth - 10), 5, ProgressFillPositionHours, true, KernelColorType.NeutralText, KernelColorType.Background);
-                    TextWriterWhereColor.WriteWhereColorBack(new string(' ', ConsoleExtensions.PercentRepeat(TimeDateTools.KernelDateTime.Hour, 24, 10)), 5, ProgressFillPositionHours, true, Color.Empty, ColorStorageHours);
+                    TextWriterWhereColor.WriteWhereColorBack(new string(' ', ConsoleMisc.PercentRepeat(TimeDateTools.KernelDateTime.Hour, 24, 10)), 5, ProgressFillPositionHours, true, Color.Empty, ColorStorageHours);
                 }
                 if (TimeDateTools.KernelDateTime.Minute != 0)
                 {
                     TextWriters.WriteWhere(new string(' ', ConsoleWrapper.WindowWidth - 10), 5, ProgressFillPositionMinutes, true, KernelColorType.NeutralText, KernelColorType.Background);
-                    TextWriterWhereColor.WriteWhereColorBack(new string(' ', ConsoleExtensions.PercentRepeat(TimeDateTools.KernelDateTime.Minute, 60, 10)), 5, ProgressFillPositionMinutes, true, Color.Empty, ColorStorageMinutes);
+                    TextWriterWhereColor.WriteWhereColorBack(new string(' ', ConsoleMisc.PercentRepeat(TimeDateTools.KernelDateTime.Minute, 60, 10)), 5, ProgressFillPositionMinutes, true, Color.Empty, ColorStorageMinutes);
                 }
                 if (TimeDateTools.KernelDateTime.Second != 0)
                 {
                     TextWriters.WriteWhere(new string(' ', ConsoleWrapper.WindowWidth - 10), 5, ProgressFillPositionSeconds, true, KernelColorType.NeutralText, KernelColorType.Background);
-                    TextWriterWhereColor.WriteWhereColorBack(new string(' ', ConsoleExtensions.PercentRepeat(TimeDateTools.KernelDateTime.Second, 60, 10)), 5, ProgressFillPositionSeconds, true, Color.Empty, ColorStorageSeconds);
+                    TextWriterWhereColor.WriteWhereColorBack(new string(' ', ConsoleMisc.PercentRepeat(TimeDateTools.KernelDateTime.Second, 60, 10)), 5, ProgressFillPositionSeconds, true, Color.Empty, ColorStorageSeconds);
                 }
 
                 // Print information

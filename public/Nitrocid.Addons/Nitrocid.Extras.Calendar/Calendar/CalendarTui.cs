@@ -22,8 +22,8 @@ using Nitrocid.Extras.Calendar.Calendar.Reminders;
 using System;
 using System.Linq;
 using System.Text;
-using Textify.Sequences.Builder.Types;
-using Textify.Sequences.Tools;
+using Terminaux.Sequences.Builder.Types;
+using Terminaux.Sequences;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Time.Calendars;
 using Terminaux.Inputs.Styles.Infobox;
@@ -39,6 +39,8 @@ using Nitrocid.Kernel.Time;
 using Textify.General;
 using Terminaux.Colors;
 using Terminaux.Base;
+using Terminaux.Reader;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Extras.Calendar.Calendar
 {
@@ -100,7 +102,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
 
                     // Wait for a keypress
                     ScreenTools.Render(screen);
-                    var keypress = Input.DetectKeypress();
+                    var keypress = TermReader.ReadKey();
                     HandleKeypress(keypress, ref state);
 
                     // Reset, in case selection changed
@@ -173,7 +175,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
                 builder.Append(
                     $"{InteractiveTuiStatus.ForegroundColor.VTSequenceForeground}" +
                     $"{KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground}" +
-                    $"{TextWriterWhereColor.RenderWherePlain(status + ConsoleExtensions.GetClearLineToRightSequence(), 0, 0)}"
+                    $"{TextWriterWhereColor.RenderWhere(status + ConsoleClearing.GetClearLineToRightSequence(), 0, 0)}"
                 );
                 return builder.ToString();
             });

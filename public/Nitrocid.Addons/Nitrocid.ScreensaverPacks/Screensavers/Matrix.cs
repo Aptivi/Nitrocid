@@ -25,7 +25,7 @@ using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Threading;
 using Terminaux.Colors;
-using Textify.Sequences.Builder.Types;
+using Terminaux.Sequences.Builder.Types;
 using Terminaux.Base;
 using Nitrocid.Misc.Screensaver;
 

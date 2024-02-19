@@ -20,6 +20,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System.Linq;
+using Terminaux.Base.Extensions;
 using Textify.General;
 
 namespace Nitrocid.Tests.Misc.Text

@@ -31,7 +31,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
             ColorTools.SetConsoleColor(new Color(ConsoleColors.White));
 
             // Simulate a Haiku bootloader failure
-            TextWriterColor.WritePlain("bios_ia32 stage1: Failed to load OS. Press any key to reboot...", true);
+            TextWriterRaw.WritePlain("bios_ia32 stage1: Failed to load OS. Press any key to reboot...", true);
         }
     }
 }

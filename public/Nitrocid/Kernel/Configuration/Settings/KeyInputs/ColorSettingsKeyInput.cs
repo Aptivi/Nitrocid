@@ -24,7 +24,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
-using Terminaux.Colors.Selector;
+using Terminaux.Inputs.Styles;
 
 namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
 {

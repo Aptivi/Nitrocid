@@ -39,6 +39,7 @@ using Nitrocid.ConsoleBase.Writers;
 using Textify.General;
 using Terminaux.Colors;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Extras.BassBoom.Animations.Lyrics
 {

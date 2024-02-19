@@ -21,7 +21,7 @@ using System.Threading;
 using System;
 using Figletize;
 using System.Text;
-using Textify.Sequences.Builder.Types;
+using Terminaux.Sequences.Builder.Types;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Time;
 using Nitrocid.Kernel.Debugging;

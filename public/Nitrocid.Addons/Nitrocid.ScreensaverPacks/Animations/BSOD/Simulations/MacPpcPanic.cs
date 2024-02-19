@@ -32,7 +32,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
             ColorTools.SetConsoleColor(new Color(ConsoleColors.White));
 
             // Simulate a Mac OS X 10.0 PowerPC kernel panic on boot
-            TextWriterColor.WritePlain(
+            TextWriterRaw.WritePlain(
                  "panic (cpu 0): Couldn't register lo modules\n\n" +
                 $"backtrace: 0x{RandomDriver.Random():x8} 0x{RandomDriver.Random():x8} 0x{RandomDriver.Random():x8} 0x{RandomDriver.Random():x8} 0x{RandomDriver.Random():x8} 0x{RandomDriver.Random():x8} 0x{RandomDriver.Random():x8} 0x{RandomDriver.Random():x8}\n\n" +
                  "No debugger configured - dumping debug information\n\n" +

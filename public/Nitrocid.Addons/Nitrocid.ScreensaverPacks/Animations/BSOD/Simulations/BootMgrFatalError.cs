@@ -45,15 +45,15 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
             switch (excVariant)
             {
                 case Variant.Missing:
-                    TextWriterColor.WritePlain("BOOTMGR is missing.", true);
-                    TextWriterColor.WritePlain("Press Ctrl+Alt+Del to restart...", true);
+                    TextWriterRaw.WritePlain("BOOTMGR is missing.", true);
+                    TextWriterRaw.WritePlain("Press Ctrl+Alt+Del to restart...", true);
                     break;
                 case Variant.Compressed:
-                    TextWriterColor.WritePlain("BOOTMGR is compressed.", true);
-                    TextWriterColor.WritePlain("Press Ctrl+Alt+Del to restart...", true);
+                    TextWriterRaw.WritePlain("BOOTMGR is compressed.", true);
+                    TextWriterRaw.WritePlain("Press Ctrl+Alt+Del to restart...", true);
                     break;
                 case Variant.Corrupted:
-                    TextWriterColor.WritePlain("BOOTMGR image is corrupt.  The system cannot boot.", true);
+                    TextWriterRaw.WritePlain("BOOTMGR image is corrupt.  The system cannot boot.", true);
                     break;
             }
         }

@@ -27,6 +27,7 @@ using Nitrocid.Misc.Splash;
 using Nitrocid.Misc.Text;
 using Textify.General;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.SplashPacks.Splashes
 {
@@ -104,10 +105,10 @@ namespace Nitrocid.SplashPacks.Splashes
             string RenderedText = ProgressReport.Truncate(ConsoleWrapper.WindowWidth - ProgressReportWritePositionX - ProgressWritePositionX - 3);
             rendered.Append(
                 KernelColorTools.GetColor(KernelColorType.Progress).VTSequenceForeground +
-                TextWriterWhereColor.RenderWherePlain("{0:000}%", ProgressWritePositionX, ProgressWritePositionY, true, vars: Progress) +
+                TextWriterWhereColor.RenderWhere("{0:000}%", ProgressWritePositionX, ProgressWritePositionY, true, vars: Progress) +
                 finalColor.VTSequenceForeground +
-                TextWriterWhereColor.RenderWherePlain($"{indicator}{RenderedText}", ProgressReportWritePositionX, ProgressReportWritePositionY, false, Vars) +
-                ConsoleExtensions.GetClearLineToRightSequence()
+                TextWriterWhereColor.RenderWhere($"{indicator}{RenderedText}", ProgressReportWritePositionX, ProgressReportWritePositionY, false, Vars) +
+                ConsoleClearing.GetClearLineToRightSequence()
             );
             return rendered.ToString();
         }

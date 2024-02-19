@@ -28,33 +28,33 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
     {
         public override void Simulate()
         {
-            ColorTools.LoadBackDry(new Color(ConsoleColors.DarkBlue_000087));
+            ColorTools.LoadBackDry(new Color(ConsoleColors.DarkBlue));
             ColorTools.SetConsoleColor(new Color(ConsoleColors.White));
 
             // Display technical information
-            TextWriterColor.WritePlain($"\n*** STOP: 0x0000007B (0x{RandomDriver.Random():X8},0x{RandomDriver.Random():X8},0x{RandomDriver.Random():X8},0x{RandomDriver.Random():X8})", true);
-            TextWriterColor.WritePlain($"PROCESS1_INITIALIZATION_FAILED\n", true);
-            TextWriterColor.WritePlain($"CPUID:GenuineIntel 7.2.5 irql:0  SYSVER 0xf000069b\n", true);
+            TextWriterRaw.WritePlain($"\n*** STOP: 0x0000007B (0x{RandomDriver.Random():X8},0x{RandomDriver.Random():X8},0x{RandomDriver.Random():X8},0x{RandomDriver.Random():X8})", true);
+            TextWriterRaw.WritePlain($"PROCESS1_INITIALIZATION_FAILED\n", true);
+            TextWriterRaw.WritePlain($"CPUID:GenuineIntel 7.2.5 irql:0  SYSVER 0xf000069b\n", true);
 
             // Display DLL bases
-            TextWriterColor.WritePlain($"Dll base DateStmp - Name               Dll base DateStmp - Name", true);
-            TextWriterColor.WritePlain($"{RandomDriver.Random():X8} {RandomDriver.Random():X8} - ntoskrnl.exe       {RandomDriver.Random():X8} {RandomDriver.Random():X8} - hal.dll", true);
-            TextWriterColor.WritePlain($"{RandomDriver.Random():X8} {RandomDriver.Random():X8} - setupdd.sys        {RandomDriver.Random():X8} {RandomDriver.Random():X8} - pcmcia.sys", true);
-            TextWriterColor.WritePlain($"{RandomDriver.Random():X8} {RandomDriver.Random():X8} - SCSIPORT.SYS       {RandomDriver.Random():X8} {RandomDriver.Random():X8} - vga.sys", true);
-            TextWriterColor.WritePlain($"{RandomDriver.Random():X8} {RandomDriver.Random():X8} - VIDEOPRT.SYS       {RandomDriver.Random():X8} {RandomDriver.Random():X8} - floppy.sys", true);
-            TextWriterColor.WritePlain($"{RandomDriver.Random():X8} {RandomDriver.Random():X8} - i8042prt.sys       {RandomDriver.Random():X8} {RandomDriver.Random():X8} - kbdclass.sys", true);
-            TextWriterColor.WritePlain($"{RandomDriver.Random():X8} {RandomDriver.Random():X8} - fastfat.sys\n", true);
+            TextWriterRaw.WritePlain($"Dll base DateStmp - Name               Dll base DateStmp - Name", true);
+            TextWriterRaw.WritePlain($"{RandomDriver.Random():X8} {RandomDriver.Random():X8} - ntoskrnl.exe       {RandomDriver.Random():X8} {RandomDriver.Random():X8} - hal.dll", true);
+            TextWriterRaw.WritePlain($"{RandomDriver.Random():X8} {RandomDriver.Random():X8} - setupdd.sys        {RandomDriver.Random():X8} {RandomDriver.Random():X8} - pcmcia.sys", true);
+            TextWriterRaw.WritePlain($"{RandomDriver.Random():X8} {RandomDriver.Random():X8} - SCSIPORT.SYS       {RandomDriver.Random():X8} {RandomDriver.Random():X8} - vga.sys", true);
+            TextWriterRaw.WritePlain($"{RandomDriver.Random():X8} {RandomDriver.Random():X8} - VIDEOPRT.SYS       {RandomDriver.Random():X8} {RandomDriver.Random():X8} - floppy.sys", true);
+            TextWriterRaw.WritePlain($"{RandomDriver.Random():X8} {RandomDriver.Random():X8} - i8042prt.sys       {RandomDriver.Random():X8} {RandomDriver.Random():X8} - kbdclass.sys", true);
+            TextWriterRaw.WritePlain($"{RandomDriver.Random():X8} {RandomDriver.Random():X8} - fastfat.sys\n", true);
 
             // Display addresses
-            TextWriterColor.WritePlain($"Address  dword dump   Build [1057]                           - Name", true);
+            TextWriterRaw.WritePlain($"Address  dword dump   Build [1057]                           - Name", true);
             for (int i = 0; i < RandomDriver.Random(5, 20); i++)
-                TextWriterColor.WritePlain($"{RandomDriver.Random():X8} {RandomDriver.Random():X8} {RandomDriver.Random():X8} {RandomDriver.Random():X8} {RandomDriver.Random():X8} {RandomDriver.Random():X8} {RandomDriver.Random():X8} - ntoskrnl.exe", true);
-            TextWriterColor.WritePlain("", true);
+                TextWriterRaw.WritePlain($"{RandomDriver.Random():X8} {RandomDriver.Random():X8} {RandomDriver.Random():X8} {RandomDriver.Random():X8} {RandomDriver.Random():X8} {RandomDriver.Random():X8} {RandomDriver.Random():X8} - ntoskrnl.exe", true);
+            TextWriterRaw.WritePlain("", true);
 
             // Display outro
-            TextWriterColor.WritePlain("Restart and set the recovery options in the system control panel", true);
-            TextWriterColor.WritePlain("or the /CRASHDEBUG system start option. If this message reappears,", true);
-            TextWriterColor.WritePlain("contact your system administrator or technical support group.", true);
+            TextWriterRaw.WritePlain("Restart and set the recovery options in the system control panel", true);
+            TextWriterRaw.WritePlain("or the /CRASHDEBUG system start option. If this message reappears,", true);
+            TextWriterRaw.WritePlain("contact your system administrator or technical support group.", true);
         }
     }
 }

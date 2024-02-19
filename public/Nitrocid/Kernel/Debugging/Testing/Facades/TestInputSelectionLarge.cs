@@ -33,7 +33,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
             var choices = new List<InputChoiceInfo>();
             for (int i = 0; i < 1000; i++)
                 choices.Add(new InputChoiceInfo($"{i + 1}", $"Number #{i + 1}"));
-            SelectionStyle.PromptSelection("Select a choice.", choices);
+            SelectionStyle.PromptSelection("Select a choice.", [.. choices]);
         }
     }
 }

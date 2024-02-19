@@ -31,6 +31,7 @@ using Nitrocid.Kernel.Threading;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Splash.Splashes;
 using Terminaux.Base;
+using Terminaux.Colors;
 
 namespace Nitrocid.Misc.Splash
 {
@@ -204,7 +205,8 @@ namespace Nitrocid.Misc.Splash
                 ScreenTools.SetCurrent(splashScreen);
 
                 // Finally, render it
-                ScreenTools.Render(true);
+                ColorTools.LoadBack();
+                ScreenTools.Render();
 
                 // Render the display
                 SplashThread.Stop();

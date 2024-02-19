@@ -32,7 +32,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
             ColorTools.SetConsoleColor(new Color(ConsoleColors.White));
 
             // Simulate a BeOS 5.0 load failure
-            TextWriterColor.WritePlain(
+            TextWriterRaw.WritePlain(
                  "PANIC: no shell!\n" +
                  "kernel debugger: Welcome to Kernel Debugging Land...\n" +
                 $" eax {RandomDriver.Random():x8}  ebp {RandomDriver.Random():x8}  cs {RandomDriver.Random():x4} | area {RandomDriver.Random():x8}  (kernel_intel_text)\n" +

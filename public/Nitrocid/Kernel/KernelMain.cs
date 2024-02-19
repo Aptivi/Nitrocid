@@ -37,6 +37,7 @@ using Nitrocid.Arguments.Help;
 using Nitrocid.Kernel.Power;
 using Terminaux.Colors;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Kernel
 {
@@ -152,7 +153,7 @@ namespace Nitrocid.Kernel
 
                 // Reset colors and clear the console
                 if (!PowerManager.hardShutdown)
-                    ConsoleExtensions.ResetAll();
+                    ConsoleClearing.ResetAll();
                 else
                     ConsoleTools.ResetColors();
 

@@ -48,7 +48,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                     {
                         TextWriters.Write($" ({Notif.Progress}%)", false, Notif.ProgressState == NotificationProgressState.Failure ? KernelColorType.Error : KernelColorType.Success);
                     }
-                    TextWriterColor.Write();
+                    TextWriterRaw.Write();
                     Count += 1;
                 }
             }

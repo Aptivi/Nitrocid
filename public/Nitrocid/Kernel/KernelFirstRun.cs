@@ -30,6 +30,7 @@ using Terminaux.Colors;
 using Textify.General;
 using Terminaux.Base;
 using Terminaux.Inputs;
+using Terminaux.Reader;
 
 namespace Nitrocid.Kernel
 {
@@ -354,7 +355,7 @@ namespace Nitrocid.Kernel
                 ConsoleWrapper.Clear();
                 TextWriterColor.Write(Translate.DoTranslation("We apologize for your inconvenience, but the out-of-box experience has crashed. If you're sure that this is a defect in the experience, please report the crash to us with debugging logs.") + " {0}", ex.Message);
                 TextWriterColor.Write(Translate.DoTranslation("Press any key to start the shell anyways, but please note that you may have to create your new user manually."));
-                Input.DetectKeypress();
+                TermReader.ReadKey();
             }
         }
 

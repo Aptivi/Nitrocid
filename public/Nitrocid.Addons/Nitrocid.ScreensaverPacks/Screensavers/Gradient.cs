@@ -25,7 +25,7 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Screensaver;
 using Terminaux.Colors;
-using Textify.Sequences.Builder.Types;
+using Terminaux.Sequences.Builder.Types;
 using Terminaux.Base;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
@@ -328,7 +328,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 RotCurrentColorBlue -= RotColorBlueSteps;
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got new current colors (R;G;B: {0};{1};{2}) subtracting from {3};{4};{5}", RotCurrentColorRed, RotCurrentColorGreen, RotCurrentColorBlue, RotColorRedSteps, RotColorGreenSteps, RotColorBlueSteps);
             }
-            TextWriterColor.WritePlain(gradientBuilder.ToString(), false);
+            TextWriterRaw.WritePlain(gradientBuilder.ToString(), false);
 
             // Reset resize sync
             ThreadManager.SleepNoBlock(GradientSettings.GradientNextRotDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);

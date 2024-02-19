@@ -19,7 +19,7 @@
 
 using System.Threading;
 using Terminaux.Colors;
-using Textify.Sequences.Tools;
+using Terminaux.Sequences;
 using Figletize;
 using System;
 using System.Text;
@@ -33,6 +33,8 @@ using Nitrocid.Kernel.Power;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
 using Nitrocid.Kernel.Configuration;
+using Terminaux.Colors.Transformation.Contrast;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Misc.Splash.Splashes
 {
@@ -121,7 +123,7 @@ namespace Nitrocid.Misc.Splash.Splashes
                     $"{fifthDotColor.VTSequenceForeground}*";
                 int dotsPosX = ConsoleWrapper.WindowWidth / 2 - VtSequenceTools.FilterVTSequences(dots).Length / 2;
                 int dotsPosY = ConsoleWrapper.WindowHeight - 2;
-                builder.Append(TextWriterWhereColor.RenderWherePlain(dots, dotsPosX, dotsPosY));
+                builder.Append(TextWriterWhereColor.RenderWhere(dots, dotsPosX, dotsPosY));
                 if (!noAppend)
                 {
                     dotStep++;
@@ -199,7 +201,7 @@ namespace Nitrocid.Misc.Splash.Splashes
             int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
             builder.Append(
                 col.VTSequenceForeground +
-                TextWriterWhereColor.RenderWherePlain(ConsoleExtensions.GetClearLineToRightSequence(), 0, consoleY - 2, true, Vars) +
+                TextWriterWhereColor.RenderWhere(ConsoleClearing.GetClearLineToRightSequence(), 0, consoleY - 2, true, Vars) +
                 CenteredTextColor.RenderCenteredOneLine(consoleY - 2, $"{Progress}% - {ProgressReport}", Vars)
             );
             return builder.ToString();

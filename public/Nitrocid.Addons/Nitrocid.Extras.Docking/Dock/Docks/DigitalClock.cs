@@ -34,11 +34,12 @@ using System;
 using System.Text;
 using Terminaux.Colors;
 using Textify.General;
-using Textify.Sequences.Builder.Types;
+using Terminaux.Sequences.Builder.Types;
 using Terminaux.Base;
 using Nitrocid.Users.Login.Motd;
 using Nitrocid.Network.Types.RSS;
 using Nitrocid.Kernel.Configuration;
+using Terminaux.Reader;
 
 namespace Nitrocid.Extras.Docking.Dock.Docks
 {
@@ -171,7 +172,7 @@ namespace Nitrocid.Extras.Docking.Dock.Docks
                 ThreadManager.SleepNoBlock(1);
             }
             if (ConsoleWrapper.KeyAvailable)
-                Input.DetectKeypress();
+                TermReader.ReadKey();
             ScreenTools.UnsetCurrent(screen);
         }
     }

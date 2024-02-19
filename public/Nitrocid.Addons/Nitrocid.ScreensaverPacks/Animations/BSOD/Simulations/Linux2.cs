@@ -31,7 +31,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
             ColorTools.SetConsoleColor(new Color(ConsoleColors.White));
 
             // Simulate a null pointer dereference
-            TextWriterColor.WritePlain(
+            TextWriterRaw.WritePlain(
                  "IP Protocols: IGMP, ICMP, UDP, TCP\n" +
                  "VFS: Diskquotas version dquot_5.6.0 initialized\n" +
                  "Checking 386/387 coupling... Ok, fpu using exception 16 reporting.\n" +

@@ -31,6 +31,7 @@ using Terminaux.Base;
 using Terminaux.Inputs;
 using System;
 using Nitrocid.Kernel.Power;
+using Terminaux.Reader;
 
 namespace Nitrocid.Users.Login.Handlers.Logins
 {
@@ -50,7 +51,7 @@ namespace Nitrocid.Users.Login.Handlers.Logins
             DebugWriter.WriteDebug(DebugLevel.I, "Rendering...");
             SpinWait.SpinUntil(() => ModernLogonScreen.renderedFully);
             DebugWriter.WriteDebug(DebugLevel.I, "Rendered fully!");
-            var key = Input.DetectKeypress().Key;
+            var key = TermReader.ReadKey().Key;
 
             // Stop the thread
             ModernLogonScreen.DateTimeUpdateThread.Stop();

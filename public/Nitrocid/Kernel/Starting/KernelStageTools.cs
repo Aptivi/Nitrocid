@@ -97,7 +97,7 @@ namespace Nitrocid.Kernel.Starting
                 if (StageNumber > Stages.Count)
                 {
                     StageTimer.Reset();
-                    TextWriterColor.Write();
+                    TextWriterRaw.Write();
                 }
                 else
                     StageTimer.Restart();
@@ -108,7 +108,7 @@ namespace Nitrocid.Kernel.Starting
             {
                 if (!SplashManager.EnableSplash & !KernelEntry.QuietKernel)
                 {
-                    TextWriterColor.Write();
+                    TextWriterRaw.Write();
                     TextFancyWriters.WriteSeparator(StageText, false, KernelColorType.Stage);
                 }
                 DebugWriter.WriteDebug(DebugLevel.I, $"- Kernel stage {StageNumber} | Text: {StageText}");

@@ -32,7 +32,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
             ColorTools.SetConsoleColor(new Color(ConsoleColors.White));
 
             // Simulate a FreeBSD boot failure
-            TextWriterColor.WritePlain(
+            TextWriterRaw.WritePlain(
                  "FreeBSD/x86 boot\n" +
                  "\n" +
                 $"int={RandomDriver.Random():x8}  err={RandomDriver.Random():x8}  efl={RandomDriver.Random():x8}  eip={RandomDriver.Random():x8}\n" +

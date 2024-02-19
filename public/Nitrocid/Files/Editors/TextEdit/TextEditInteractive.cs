@@ -20,8 +20,8 @@
 using System;
 using System.Linq;
 using System.Text;
-using Textify.Sequences.Tools;
-using Textify.Sequences.Builder.Types;
+using Terminaux.Sequences;
+using Terminaux.Sequences.Builder.Types;
 using System.Collections.Generic;
 using Nitrocid.Shell.Shells.Text;
 using Nitrocid.Kernel.Debugging;
@@ -38,6 +38,8 @@ using Textify.General;
 using Terminaux.Colors;
 using Terminaux.Base;
 using Terminaux.Inputs;
+using Terminaux.Reader;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Files.Editors.TextEdit
 {
@@ -115,7 +117,7 @@ namespace Nitrocid.Files.Editors.TextEdit
 
                     // Wait for a keypress
                     ScreenTools.Render(screen);
-                    var keypress = Input.DetectKeypress();
+                    var keypress = TermReader.ReadKey();
                     HandleKeypress(keypress, ref lines);
 
                     // Reset, in case selection changed
@@ -159,7 +161,7 @@ namespace Nitrocid.Files.Editors.TextEdit
                             $"{InteractiveTuiStatus.OptionForegroundColor.VTSequenceForeground}" +
                             $"{InteractiveTuiStatus.BackgroundColor.VTSequenceBackground}" +
                             $" {(binding._localizable ? Translate.DoTranslation(binding.Name) : binding.Name)}  " +
-                            ConsoleExtensions.GetClearLineToRightSequence()
+                            ConsoleClearing.GetClearLineToRightSequence()
                         );
                     }
                     else
@@ -171,7 +173,7 @@ namespace Nitrocid.Files.Editors.TextEdit
                             $"{InteractiveTuiStatus.KeyBindingOptionColor.VTSequenceForeground}" +
                             $"{InteractiveTuiStatus.OptionBackgroundColor.VTSequenceBackground}" +
                             " K " +
-                            ConsoleExtensions.GetClearLineToRightSequence()
+                            ConsoleClearing.GetClearLineToRightSequence()
                         );
                         break;
                     }
@@ -191,7 +193,7 @@ namespace Nitrocid.Files.Editors.TextEdit
                 builder.Append(
                     $"{InteractiveTuiStatus.ForegroundColor.VTSequenceForeground}" +
                     $"{InteractiveTuiStatus.BackgroundColor.VTSequenceBackground}" +
-                    $"{TextWriterWhereColor.RenderWherePlain(status + ConsoleExtensions.GetClearLineToRightSequence(), 0, 0)}"
+                    $"{TextWriterWhereColor.RenderWhere(status + ConsoleClearing.GetClearLineToRightSequence(), 0, 0)}"
                 );
                 return builder.ToString();
             });

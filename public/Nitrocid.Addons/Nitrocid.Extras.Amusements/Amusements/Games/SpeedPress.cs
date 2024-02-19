@@ -24,6 +24,7 @@ using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using Textify.General;
+using Terminaux.Reader;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games
 {
@@ -140,9 +141,9 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 // Prompt user for character
                 TextWriterColor.Write(Translate.DoTranslation("Current character:") + " {0}", SelectedChar);
                 TextWriters.Write("> ", false, KernelColorType.Input);
-                var (result, provided) = Input.ReadKeyTimeout(false, TimeSpan.FromMilliseconds(SpeedTimeout));
+                var (result, provided) = TermReader.ReadKeyTimeout(false, TimeSpan.FromMilliseconds(SpeedTimeout));
                 WrittenChar = result;
-                TextWriterColor.Write();
+                TextWriterRaw.Write();
 
                 // Check to see if the user has pressed the correct character
                 if (provided)
@@ -158,7 +159,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 }
                 else
                 {
-                    TextWriterColor.Write();
+                    TextWriterRaw.Write();
                     TextWriters.Write(Translate.DoTranslation("Character not pressed on time."), true, KernelColorType.Warning);
                 }
             }

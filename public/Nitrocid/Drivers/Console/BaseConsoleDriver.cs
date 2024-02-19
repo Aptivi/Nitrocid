@@ -22,13 +22,14 @@ using System.IO;
 using System.Threading;
 using SystemConsole = System.Console;
 using TextEncoding = System.Text.Encoding;
-using Textify.Sequences.Builder.Types;
+using Terminaux.Sequences.Builder.Types;
 using Nitrocid.Kernel;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Colors;
 using System.Runtime.Serialization;
+using Terminaux.Writer.DynamicWriters;
 
 namespace Nitrocid.Drivers.Console
 {
@@ -408,7 +409,7 @@ namespace Nitrocid.Drivers.Console
 
         /// <inheritdoc/>
         public virtual void WritePlain() =>
-            TextWriterColor.Write();
+            TextWriterRaw.Write();
 
         /// <inheritdoc/>
         public virtual void WriteSlowlyPlain(string msg, bool Line, double MsEachLetter, params object[] vars) =>
@@ -428,15 +429,15 @@ namespace Nitrocid.Drivers.Console
 
         /// <inheritdoc/>
         public virtual string RenderWherePlain(string msg, int Left, int Top, params object[] vars) =>
-            TextWriterWhereColor.RenderWherePlain(msg, Left, Top, false, 0, vars);
+            TextWriterWhereColor.RenderWhere(msg, Left, Top, false, 0, vars);
 
         /// <inheritdoc/>
         public virtual string RenderWherePlain(string msg, int Left, int Top, bool Return, params object[] vars) =>
-            TextWriterWhereColor.RenderWherePlain(msg, Left, Top, Return, 0, vars);
+            TextWriterWhereColor.RenderWhere(msg, Left, Top, Return, 0, vars);
 
         /// <inheritdoc/>
         public virtual string RenderWherePlain(string msg, int Left, int Top, bool Return, int RightMargin, params object[] vars) =>
-            TextWriterWhereColor.RenderWherePlain(msg, Left, Top, Return, RightMargin, vars);
+            TextWriterWhereColor.RenderWhere(msg, Left, Top, Return, RightMargin, vars);
 
         /// <inheritdoc/>
         public virtual void WriteWhereSlowlyPlain(string msg, bool Line, int Left, int Top, double MsEachLetter, params object[] vars) =>

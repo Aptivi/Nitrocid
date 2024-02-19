@@ -125,7 +125,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 Stars.Clear();
             }
             else
-                TextWriterColor.WritePlain(starsBuffer.ToString(), false);
+                TextWriterRaw.WritePlain(starsBuffer.ToString(), false);
 
             // Reset resize sync
             ConsoleResizeHandler.WasResized();

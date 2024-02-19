@@ -123,14 +123,14 @@ namespace Nitrocid.ConsoleBase.Writers
                     // Write the text to console
                     if (Highlight)
                     {
-                        TextWriterColor.WritePlain(Text, false, vars);
+                        TextWriterRaw.WritePlain(Text, false, vars);
                         KernelColorTools.SetConsoleColorDry(colorType);
                         KernelColorTools.SetConsoleColorDry(KernelColorType.Background, true);
-                        TextWriterColor.WritePlain("", Line);
+                        TextWriterRaw.WritePlain("", Line);
                     }
                     else
                     {
-                        TextWriterColor.WritePlain(Text, Line, vars);
+                        TextWriterRaw.WritePlain(Text, Line, vars);
                     }
                 }
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
@@ -184,14 +184,14 @@ namespace Nitrocid.ConsoleBase.Writers
                     // Write the text to console
                     if (Highlight)
                     {
-                        TextWriterColor.WritePlain(Text, false, vars);
+                        TextWriterRaw.WritePlain(Text, false, vars);
                         KernelColorTools.SetConsoleColorDry(colorTypeForeground);
                         KernelColorTools.SetConsoleColorDry(colorTypeBackground, true);
-                        TextWriterColor.WritePlain("", Line);
+                        TextWriterRaw.WritePlain("", Line);
                     }
                     else
                     {
-                        TextWriterColor.WritePlain(Text, Line, vars);
+                        TextWriterRaw.WritePlain(Text, Line, vars);
                     }
                 }
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))

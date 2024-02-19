@@ -31,8 +31,8 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
             ColorTools.SetConsoleColor(new Color(ConsoleColors.White));
 
             // Simulate a Haiku bootloader failure
-            TextWriterColor.WritePlain("OS/2 !! SYS02025", true);
-            TextWriterColor.WritePlain("OS/2 !! SYS02027", true);
+            TextWriterRaw.WritePlain("OS/2 !! SYS02025", true);
+            TextWriterRaw.WritePlain("OS/2 !! SYS02027", true);
         }
     }
 }

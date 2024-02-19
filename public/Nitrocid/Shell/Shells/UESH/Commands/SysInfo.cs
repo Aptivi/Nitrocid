@@ -79,7 +79,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 TextWriters.Write(KernelPlatform.IsOnUsualEnvironment().ToString(), true, KernelColorType.ListValue);
                 TextWriters.Write(Translate.DoTranslation("Safe Mode:") + " ", false, KernelColorType.ListEntry);
                 TextWriters.Write(KernelEntry.SafeMode.ToString(), true, KernelColorType.ListValue);
-                TextWriterColor.Write();
+                TextWriterRaw.Write();
             }
 
             if (ShowHardwareInfo)
@@ -92,7 +92,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                     TextWriters.Write(Translate.DoTranslation("You'll need to restart the kernel as elevated in order to be able to show hardware information."), true, KernelColorType.Error);
                 else
                     TextWriters.Write(Translate.DoTranslation("Use \"hwinfo\" for extended information about hardware."), true, KernelColorType.Tip);
-                TextWriterColor.Write();
+                TextWriterRaw.Write();
             }
 
             if (ShowUserInfo)
@@ -105,7 +105,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 TextWriters.Write(NetworkTools.HostName, true, KernelColorType.ListValue);
                 TextWriters.Write(Translate.DoTranslation("Available usernames:") + " ", false, KernelColorType.ListEntry);
                 TextWriters.Write(string.Join(", ", UserManagement.ListAllUsers()), true, KernelColorType.ListValue);
-                TextWriterColor.Write();
+                TextWriterRaw.Write();
             }
 
             if (ShowMessageOfTheDay)
@@ -113,7 +113,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 // Show MOTD
                 TextFancyWriters.WriteSeparator("MOTD", true, KernelColorType.Separator);
                 TextWriters.Write(PlaceParse.ProbePlaces(MotdParse.MotdMessage), true, KernelColorType.NeutralText);
-                TextWriterColor.Write();
+                TextWriterRaw.Write();
             }
 
             if (ShowMal)

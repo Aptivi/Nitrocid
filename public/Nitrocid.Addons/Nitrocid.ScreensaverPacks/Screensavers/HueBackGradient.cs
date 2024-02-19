@@ -25,7 +25,7 @@ using System;
 using System.Text;
 using Terminaux.Colors;
 using Terminaux.Colors.Models.Conversion;
-using Textify.Sequences.Builder.Types;
+using Terminaux.Sequences.Builder.Types;
 using Terminaux.Base;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
@@ -147,7 +147,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 RampCurrentColorBlue -= RampColorBlueSteps;
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got new current colors (R;G;B: {0};{1};{2}) subtracting from {3};{4};{5}", RampCurrentColorRed, RampCurrentColorGreen, RampCurrentColorBlue, RampColorRedSteps, RampColorGreenSteps, RampColorBlueSteps);
             }
-            TextWriterColor.WritePlain(gradientBuilder.ToString(), false);
+            TextWriterRaw.WritePlain(gradientBuilder.ToString(), false);
 
             // Set the hue angle
             ThreadManager.SleepNoBlock(HueBackGradientSettings.HueBackGradientDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);

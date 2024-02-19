@@ -25,6 +25,7 @@ using Nitrocid.Languages;
 using Nitrocid.Misc.Reflection;
 using Nitrocid.Misc.Text.Probers.Placeholder;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Extras.MailShell.Tools.Transfer
 {
@@ -41,11 +42,11 @@ namespace Nitrocid.Extras.MailShell.Tools.Transfer
             {
                 if (!string.IsNullOrWhiteSpace(MailShellCommon.ProgressStyle))
                 {
-                    TextWriters.WriteWhere(PlaceParse.ProbePlaces(MailShellCommon.ProgressStyle) + $"{ConsoleExtensions.GetClearLineToRightSequence()}", 0, ConsoleWrapper.CursorTop, true, KernelColorType.Progress, bytesTransferred.SizeString(), totalSize.SizeString());
+                    TextWriters.WriteWhere(PlaceParse.ProbePlaces(MailShellCommon.ProgressStyle) + $"{ConsoleClearing.GetClearLineToRightSequence()}", 0, ConsoleWrapper.CursorTop, true, KernelColorType.Progress, bytesTransferred.SizeString(), totalSize.SizeString());
                 }
                 else
                 {
-                    TextWriters.WriteWhere("{0}/{1} " + Translate.DoTranslation("of mail transferred...") + $"{ConsoleExtensions.GetClearLineToRightSequence()}", 0, ConsoleWrapper.CursorTop, true, KernelColorType.Progress, bytesTransferred.SizeString(), totalSize.SizeString());
+                    TextWriters.WriteWhere("{0}/{1} " + Translate.DoTranslation("of mail transferred...") + $"{ConsoleClearing.GetClearLineToRightSequence()}", 0, ConsoleWrapper.CursorTop, true, KernelColorType.Progress, bytesTransferred.SizeString(), totalSize.SizeString());
                 }
             }
         }
@@ -57,11 +58,11 @@ namespace Nitrocid.Extras.MailShell.Tools.Transfer
             {
                 if (!string.IsNullOrWhiteSpace(MailShellCommon.ProgressStyleSingle))
                 {
-                    TextWriters.WriteWhere(PlaceParse.ProbePlaces(MailShellCommon.ProgressStyleSingle) + $"{ConsoleExtensions.GetClearLineToRightSequence()}", 0, ConsoleWrapper.CursorTop, true, KernelColorType.Progress, bytesTransferred.SizeString());
+                    TextWriters.WriteWhere(PlaceParse.ProbePlaces(MailShellCommon.ProgressStyleSingle) + $"{ConsoleClearing.GetClearLineToRightSequence()}", 0, ConsoleWrapper.CursorTop, true, KernelColorType.Progress, bytesTransferred.SizeString());
                 }
                 else
                 {
-                    TextWriters.WriteWhere("{0} " + Translate.DoTranslation("of mail transferred...") + $"{ConsoleExtensions.GetClearLineToRightSequence()}", 0, ConsoleWrapper.CursorTop, true, KernelColorType.Progress, bytesTransferred.SizeString());
+                    TextWriters.WriteWhere("{0} " + Translate.DoTranslation("of mail transferred...") + $"{ConsoleClearing.GetClearLineToRightSequence()}", 0, ConsoleWrapper.CursorTop, true, KernelColorType.Progress, bytesTransferred.SizeString());
                 }
             }
         }

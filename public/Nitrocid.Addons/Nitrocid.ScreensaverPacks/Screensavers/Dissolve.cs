@@ -284,7 +284,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     {
                         ColorTools.SetConsoleColorDry(Color.Empty);
                         ColorTools.SetConsoleColorDry(colorStorage, true);
-                        TextWriterColor.WritePlain(" ", false);
+                        TextWriterRaw.WritePlain(" ", false);
                         DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "We're now dissolving... L: {0} = {1} | T: {2} = {3}", ConsoleWrapper.CursorLeft, EndLeft, ConsoleWrapper.CursorTop, EndTop);
                         ColorFilled = true;
                     }
@@ -292,7 +292,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     {
                         ColorTools.SetConsoleColorDry(Color.Empty);
                         ColorTools.SetConsoleColorDry(colorStorage, true);
-                        TextWriterColor.WritePlain(" ", false);
+                        TextWriterRaw.WritePlain(" ", false);
                     }
                 }
             }

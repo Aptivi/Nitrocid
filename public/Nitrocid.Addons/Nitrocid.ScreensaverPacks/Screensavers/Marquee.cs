@@ -23,6 +23,7 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Screensaver;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Textify.General;
 
@@ -317,7 +318,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 }
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Written result: {0}", MarqueeWritten);
                 if (!MarqueeSettings.MarqueeUseConsoleAPI)
-                    MarqueeWritten += $"{ConsoleExtensions.GetClearLineToRightSequence()}";
+                    MarqueeWritten += $"{ConsoleClearing.GetClearLineToRightSequence()}";
 
                 // Set the appropriate cursor position and write the results
                 ConsoleWrapper.SetCursorPosition(CurrentLeft, TopPrinted);

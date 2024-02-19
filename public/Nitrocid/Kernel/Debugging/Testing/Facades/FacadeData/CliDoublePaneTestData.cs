@@ -25,7 +25,7 @@ using System.Collections.Generic;
 
 namespace Nitrocid.Kernel.Debugging.Testing.Facades.FacadeData
 {
-    internal class CliDoublePaneTestData : BaseInteractiveTui, IInteractiveTui
+    internal class CliDoublePaneTestData : BaseInteractiveTui<string>, IInteractiveTui<string>
     {
         internal static List<string> strings = [];
         internal static List<string> strings2 = [];
@@ -38,11 +38,11 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades.FacadeData
         ];
 
         /// <inheritdoc/>
-        public override IEnumerable PrimaryDataSource =>
+        public override IEnumerable<string> PrimaryDataSource =>
             strings;
 
         /// <inheritdoc/>
-        public override IEnumerable SecondaryDataSource =>
+        public override IEnumerable<string> SecondaryDataSource =>
             strings2;
 
         public override bool SecondPaneInteractable =>
@@ -53,9 +53,9 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades.FacadeData
             true;
 
         /// <inheritdoc/>
-        public override void RenderStatus(object item)
+        public override void RenderStatus(string item)
         {
-            string selected = (string)item;
+            string selected = item;
 
             // Check to see if we're given the test info
             if (string.IsNullOrEmpty(selected))
@@ -65,9 +65,9 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades.FacadeData
         }
 
         /// <inheritdoc/>
-        public override string GetEntryFromItem(object item)
+        public override string GetEntryFromItem(string item)
         {
-            string selected = (string)item;
+            string selected = item;
             return selected;
         }
 

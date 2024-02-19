@@ -33,6 +33,7 @@ using System.Text;
 using Terminaux.Writer.FancyWriters;
 using Terminaux.Colors;
 using Terminaux.Base;
+using Terminaux.Reader;
 
 namespace Nitrocid.Extras.Timers.Timers
 {
@@ -177,12 +178,12 @@ namespace Nitrocid.Extras.Timers.Timers
                 {
                     // Wait for a keypress
                     if (ConsoleWrapper.KeyAvailable)
-                        KeysKeypress = Input.DetectKeypress().Key;
+                        KeysKeypress = TermReader.ReadKey().Key;
                 }
                 else
                 {
                     // Wait for a keypress
-                    KeysKeypress = Input.DetectKeypress().Key;
+                    KeysKeypress = TermReader.ReadKey().Key;
                 }
 
                 // Check for a keypress

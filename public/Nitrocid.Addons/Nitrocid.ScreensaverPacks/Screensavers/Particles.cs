@@ -24,7 +24,7 @@ using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Screensaver;
 using System.Text;
 using Terminaux.Colors;
-using Textify.Sequences.Builder.Types;
+using Terminaux.Sequences.Builder.Types;
 using Terminaux.Base;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
@@ -276,7 +276,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 particlesBuffer.Append(CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + 1));
                 particlesBuffer.Append(' ');
             }
-            TextWriterColor.WritePlain(particlesBuffer.ToString(), false);
+            TextWriterRaw.WritePlain(particlesBuffer.ToString(), false);
 
             // Reset resize sync
             ConsoleResizeHandler.WasResized();

@@ -59,7 +59,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Commands
                 }
                 else
                 {
-                    TextWriterColor.Write();
+                    TextWriterRaw.Write();
                 }
             }
             return 0;

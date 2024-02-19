@@ -40,7 +40,7 @@ namespace Nitrocid.Extras.JsonShell.Json.Commands
             TextWriterColor.Write(Translate.DoTranslation("Base has values") + ": {0}", true, false, JsonShellCommon.FileToken.HasValues);
             TextWriterColor.Write(Translate.DoTranslation("Children token count") + ": {0}", JsonShellCommon.FileToken.Count());
             TextWriterColor.Write(Translate.DoTranslation("Base path") + ": {0}", JsonShellCommon.FileToken.Path);
-            TextWriterColor.Write();
+            TextWriterRaw.Write();
 
             // Individual properties
             if (!parameters.SwitchesList.Contains("-simplified"))
@@ -54,7 +54,7 @@ namespace Nitrocid.Extras.JsonShell.Json.Commands
                     TextWriterColor.Write(Translate.DoTranslation("Token path") + ": {0}", token.Path);
                     if (parameters.SwitchesList.Contains("-showvals"))
                         TextWriterColor.Write(Translate.DoTranslation("Token value") + ": {0}", token);
-                    TextWriterColor.Write();
+                    TextWriterRaw.Write();
 
                     // Check to see if the token is a property
                     if (token.Type == JTokenType.Property)
@@ -66,7 +66,7 @@ namespace Nitrocid.Extras.JsonShell.Json.Commands
                         TextWriterColor.Write(Translate.DoTranslation("Property path") + ": {0}", ((JProperty)token).Path);
                         if (parameters.SwitchesList.Contains("-showvals"))
                             TextWriterColor.Write(Translate.DoTranslation("Property value") + ": {0}", ((JProperty)token).Value);
-                        TextWriterColor.Write();
+                        TextWriterRaw.Write();
                     }
                 }
             }

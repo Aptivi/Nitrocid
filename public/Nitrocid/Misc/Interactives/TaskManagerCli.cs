@@ -31,7 +31,7 @@ namespace Nitrocid.Misc.Interactives
     /// <summary>
     /// Task manager class
     /// </summary>
-    public class TaskManagerCli : BaseInteractiveTui, IInteractiveTui
+    public class TaskManagerCli : BaseInteractiveTui<object>, IInteractiveTui<object>
     {
 
         private static string taskStatus = "";
@@ -50,8 +50,17 @@ namespace Nitrocid.Misc.Interactives
         ];
 
         /// <inheritdoc/>
-        public override IEnumerable PrimaryDataSource =>
-            osThreadMode ? ThreadManager.OperatingSystemThreads : ThreadManager.KernelThreads;
+        public override IEnumerable<object> PrimaryDataSource
+        {
+            get
+            {
+                IEnumerable objects = osThreadMode ? ThreadManager.OperatingSystemThreads : ThreadManager.KernelThreads;
+                List<object> result = [];
+                foreach (object obj in objects)
+                    result.Add(obj);
+                return result;
+            }
+        }
 
         /// <inheritdoc/>
         public override int RefreshInterval =>

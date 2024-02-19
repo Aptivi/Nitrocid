@@ -25,7 +25,7 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Screensaver;
 using Terminaux.Colors;
-using Textify.Sequences.Builder.Types;
+using Terminaux.Sequences.Builder.Types;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
 
@@ -334,7 +334,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             laserBeamsBuilder.Append($"{new Color(ConsoleColors.White).VTSequenceBackground}{CsiSequences.GenerateCsiCursorPosition(ConsoleWrapper.WindowWidth + 1, ConsoleWrapper.WindowHeight + 1)} ");
 
             // Write the result
-            TextWriterColor.WritePlain(laserBeamsBuilder.ToString(), false);
+            TextWriterRaw.WritePlain(laserBeamsBuilder.ToString(), false);
 
             // Reset resize sync
             laserEnds.Clear();

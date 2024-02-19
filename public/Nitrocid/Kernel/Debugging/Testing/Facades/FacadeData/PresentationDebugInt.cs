@@ -63,7 +63,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades.FacadeData
                             {
                                 Arguments = [
                                     "Enjoying yet? {0}Color treat!",
-                                    new Color(ConsoleColors.Purple4_5f00af).VTSequenceForeground
+                                    new Color(ConsoleColors.Purple4Alt).VTSequenceForeground
                                 ]
                             }
                         ]

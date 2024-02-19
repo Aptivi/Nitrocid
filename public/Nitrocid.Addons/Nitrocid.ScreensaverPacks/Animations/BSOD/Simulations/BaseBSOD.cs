@@ -29,7 +29,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
         {
             ColorTools.LoadBackDry(new Color(ConsoleColors.Black));
             ColorTools.SetConsoleColor(new Color(ConsoleColors.White));
-            TextWriterColor.WritePlain("No operating system found.", true);
+            TextWriterRaw.WritePlain("No operating system found.", true);
         }
     }
 }

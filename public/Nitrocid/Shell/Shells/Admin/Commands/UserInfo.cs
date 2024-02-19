@@ -54,13 +54,13 @@ namespace Nitrocid.Shell.Shells.Admin.Commands
                 TextWriters.Write(user.PreferredLanguage, true, KernelColorType.ListValue);
                 TextWriters.Write(Translate.DoTranslation("Flags") + ": ", false, KernelColorType.ListEntry);
                 TextWriters.Write(string.Join(", ", user.Flags), true, KernelColorType.ListValue);
-                TextWriterColor.Write();
+                TextWriterRaw.Write();
 
                 // Now, the permissions.
                 TextFancyWriters.WriteSeparator(Translate.DoTranslation("Permissions"), true, KernelColorType.ListTitle);
                 foreach (string perm in user.Permissions)
                     TextWriters.Write($"  - {perm}", true, KernelColorType.ListValue);
-                TextWriterColor.Write();
+                TextWriterRaw.Write();
 
                 // Now, the groups.
                 TextFancyWriters.WriteSeparator(Translate.DoTranslation("Groups"), true, KernelColorType.ListTitle);

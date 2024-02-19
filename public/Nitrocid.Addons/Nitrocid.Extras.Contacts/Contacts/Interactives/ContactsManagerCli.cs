@@ -35,7 +35,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
     /// <summary>
     /// Contacts manager class
     /// </summary>
-    public class ContactsManagerCli : BaseInteractiveTui, IInteractiveTui
+    public class ContactsManagerCli : BaseInteractiveTui<Card>, IInteractiveTui<Card>
     {
         /// <summary>
         /// Contact manager bindings
@@ -56,7 +56,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
         ];
 
         /// <inheritdoc/>
-        public override IEnumerable PrimaryDataSource =>
+        public override IEnumerable<Card> PrimaryDataSource =>
             ContactsManager.GetContacts();
 
         /// <inheritdoc/>
@@ -64,10 +64,10 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             true;
 
         /// <inheritdoc/>
-        public override string GetInfoFromItem(object item)
+        public override string GetInfoFromItem(Card item)
         {
             // Get some info from the contact
-            Card selectedContact = (Card)item;
+            Card selectedContact = item;
             if (selectedContact is null)
                 return Translate.DoTranslation("There is no contact. If you'd like to import contacts, please use the import options using the keystrokes defined at the bottom of the screen.");
 
@@ -91,10 +91,10 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
         }
 
         /// <inheritdoc/>
-        public override void RenderStatus(object item)
+        public override void RenderStatus(Card item)
         {
             // Get some info from the contact
-            Card selectedContact = (Card)item;
+            Card selectedContact = item;
             if (selectedContact is null)
                 return;
 
@@ -106,9 +106,9 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
         }
 
         /// <inheritdoc/>
-        public override string GetEntryFromItem(object item)
+        public override string GetEntryFromItem(Card item)
         {
-            Card contact = (Card)item;
+            Card contact = item;
             if (contact is null)
                 return "";
             return contact.ContactFullName;

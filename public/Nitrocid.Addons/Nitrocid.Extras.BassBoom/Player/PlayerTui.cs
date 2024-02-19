@@ -48,7 +48,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using Terminaux.Colors;
-using Textify.Sequences.Builder.Types;
+using Terminaux.Sequences.Builder.Types;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ConsoleBase.Colors;
@@ -60,6 +60,8 @@ using Terminaux.Inputs;
 using Textify.General;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
+using Terminaux.Base.Extensions;
+using Terminaux.Reader;
 
 namespace Nitrocid.Extras.BassBoom.Player
 {
@@ -150,7 +152,7 @@ namespace Nitrocid.Extras.BassBoom.Player
                                 {
                                     var buffer = new StringBuilder();
                                     buffer.Append(
-                                        TextWriterWhereColor.RenderWhere(ConsoleExtensions.GetClearLineToRightSequence(), 0, ConsoleWrapper.WindowHeight - 10, KernelColorTools.GetColor(KernelColorType.NeutralText), KernelColorTools.GetColor(KernelColorType.Background)) +
+                                        TextWriterWhereColor.RenderWhere(ConsoleClearing.GetClearLineToRightSequence(), 0, ConsoleWrapper.WindowHeight - 10, KernelColorTools.GetColor(KernelColorType.NeutralText), KernelColorTools.GetColor(KernelColorType.Background)) +
                                         CenteredTextColor.RenderCentered(ConsoleWrapper.WindowHeight - 10, lyricInstance.GetLastLineCurrent(), KernelColorTools.GetColor(KernelColorType.NeutralText), KernelColorTools.GetColor(KernelColorType.Background))
                                     );
                                     return buffer.ToString();
@@ -167,7 +169,7 @@ namespace Nitrocid.Extras.BassBoom.Player
                         {
                             var buffer = new StringBuilder();
                             buffer.Append(
-                                TextWriterWhereColor.RenderWhere(ConsoleExtensions.GetClearLineToRightSequence(), 0, ConsoleWrapper.WindowHeight - 10, KernelColorTools.GetColor(KernelColorType.NeutralText), KernelColorTools.GetColor(KernelColorType.Background))
+                                TextWriterWhereColor.RenderWhere(ConsoleClearing.GetClearLineToRightSequence(), 0, ConsoleWrapper.WindowHeight - 10, KernelColorTools.GetColor(KernelColorType.NeutralText), KernelColorTools.GetColor(KernelColorType.Background))
                             );
                             return buffer.ToString();
                         });
@@ -180,7 +182,7 @@ namespace Nitrocid.Extras.BassBoom.Player
                     // Handle the keystroke
                     if (ConsoleWrapper.KeyAvailable)
                     {
-                        var keystroke = Input.DetectKeypress();
+                        var keystroke = TermReader.ReadKey();
                         if (PlaybackTools.Playing)
                             HandleKeypressPlayMode(keystroke);
                         else
@@ -351,7 +353,7 @@ namespace Nitrocid.Extras.BassBoom.Player
                         populate = true;
                     currentSong = musicFiles.IndexOf(musicFile) + 1;
                     PlayerControls.PopulateMusicFileInfo(musicFile);
-                    TextWriterColor.WritePlain(PlayerControls.RenderSongName(musicFile), false);
+                    TextWriterRaw.WritePlain(PlayerControls.RenderSongName(musicFile), false);
                     if (paused)
                     {
                         paused = false;
@@ -392,7 +394,7 @@ namespace Nitrocid.Extras.BassBoom.Player
             drawn.Append(CenteredTextColor.RenderCentered(ConsoleWrapper.WindowHeight - 4, separator));
 
             // Write powered by...
-            drawn.Append(TextWriterWhereColor.RenderWherePlain($"[ {Translate.DoTranslation("Powered by BassBoom")} ]", 2, ConsoleWrapper.WindowHeight - 4));
+            drawn.Append(TextWriterWhereColor.RenderWhere($"[ {Translate.DoTranslation("Powered by BassBoom")} ]", 2, ConsoleWrapper.WindowHeight - 4));
 
             // In case we have no songs in the playlist...
             if (musicFiles.Count == 0)
@@ -431,7 +433,7 @@ namespace Nitrocid.Extras.BassBoom.Player
                 }
 
                 // Render an entry
-                var finalForeColor = finalIndex == currentSong - 1 ? new Color(ConsoleColors.Green) : new Color(ConsoleColors.Gray);
+                var finalForeColor = finalIndex == currentSong - 1 ? new Color(ConsoleColors.Green) : new Color(ConsoleColors.Silver);
                 int top = startPos + finalIndex - startIndex;
                 playlist.Append(
                     $"{CsiSequences.GenerateCsiCursorPosition(1, top + 1)}" +

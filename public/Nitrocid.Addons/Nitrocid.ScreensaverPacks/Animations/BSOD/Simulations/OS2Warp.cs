@@ -32,23 +32,23 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
             ColorTools.SetConsoleColor(new Color(ConsoleColors.White));
 
             // Simulate an OS/2 kernel failure
-            TextWriterColor.WritePlain("Exception in module: OS2KRNL", true);
-            TextWriterColor.WritePlain("TRAP 000d       ERRCD=00c0  ERACC=****  ERLIM=********", true);
-            TextWriterColor.WritePlain("EAX=00000008  EBX=0000fdf0  ECX=00001616  EDX=00000000", true);
-            TextWriterColor.WritePlain($"ESI={RandomDriver.Random():x8}  EDI={RandomDriver.Random():x8}  EBP={RandomDriver.Random():x8}  FLG={RandomDriver.Random():x8}", true);
-            TextWriterColor.WritePlain($"CS:EIP=0140:{RandomDriver.Random():x8}  CSACC=009b  CSLIM={RandomDriver.Random():x8}", true);
-            TextWriterColor.WritePlain($"SS:ESP=0030:{RandomDriver.Random():x8}  SSACC=009b  SSLIM={RandomDriver.Random():x8}", true);
-            TextWriterColor.WritePlain($"DS=0a00  DSACC=00f3  DSLIM={RandomDriver.Random():x8}  CR0={RandomDriver.Random():x8}", true);
-            TextWriterColor.WritePlain($"ES=0a00  ESACC=00f3  ESLIM={RandomDriver.Random():x8}  CR2={RandomDriver.Random():x8}", true);
-            TextWriterColor.WritePlain($"FS=0000  FSACC=****  FSLIM=********", true);
-            TextWriterColor.WritePlain($"GS=0000  GSACC=****  GSLIM=********\n", true);
-            TextWriterColor.WritePlain("The system detected an internal processing error at", true);
-            TextWriterColor.WritePlain($"location ##0168:{RandomDriver.Random():x8} - 000e:cb1c", true);
-            TextWriterColor.WritePlain("60000, 9084\n", true);
-            TextWriterColor.WritePlain($"{RandomDriver.Random():x8}", true);
-            TextWriterColor.WritePlain("Internal revision 14.086_W4\n", true);
-            TextWriterColor.WritePlain("The system is stopped.  Record all of the above information and", true);
-            TextWriterColor.WritePlain("contact your service representative.", true);
+            TextWriterRaw.WritePlain("Exception in module: OS2KRNL", true);
+            TextWriterRaw.WritePlain("TRAP 000d       ERRCD=00c0  ERACC=****  ERLIM=********", true);
+            TextWriterRaw.WritePlain("EAX=00000008  EBX=0000fdf0  ECX=00001616  EDX=00000000", true);
+            TextWriterRaw.WritePlain($"ESI={RandomDriver.Random():x8}  EDI={RandomDriver.Random():x8}  EBP={RandomDriver.Random():x8}  FLG={RandomDriver.Random():x8}", true);
+            TextWriterRaw.WritePlain($"CS:EIP=0140:{RandomDriver.Random():x8}  CSACC=009b  CSLIM={RandomDriver.Random():x8}", true);
+            TextWriterRaw.WritePlain($"SS:ESP=0030:{RandomDriver.Random():x8}  SSACC=009b  SSLIM={RandomDriver.Random():x8}", true);
+            TextWriterRaw.WritePlain($"DS=0a00  DSACC=00f3  DSLIM={RandomDriver.Random():x8}  CR0={RandomDriver.Random():x8}", true);
+            TextWriterRaw.WritePlain($"ES=0a00  ESACC=00f3  ESLIM={RandomDriver.Random():x8}  CR2={RandomDriver.Random():x8}", true);
+            TextWriterRaw.WritePlain($"FS=0000  FSACC=****  FSLIM=********", true);
+            TextWriterRaw.WritePlain($"GS=0000  GSACC=****  GSLIM=********\n", true);
+            TextWriterRaw.WritePlain("The system detected an internal processing error at", true);
+            TextWriterRaw.WritePlain($"location ##0168:{RandomDriver.Random():x8} - 000e:cb1c", true);
+            TextWriterRaw.WritePlain("60000, 9084\n", true);
+            TextWriterRaw.WritePlain($"{RandomDriver.Random():x8}", true);
+            TextWriterRaw.WritePlain("Internal revision 14.086_W4\n", true);
+            TextWriterRaw.WritePlain("The system is stopped.  Record all of the above information and", true);
+            TextWriterRaw.WritePlain("contact your service representative.", true);
         }
     }
 }

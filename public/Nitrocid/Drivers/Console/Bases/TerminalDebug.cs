@@ -18,7 +18,7 @@
 //
 
 using Nitrocid.Kernel.Debugging;
-using Textify.Sequences.Tools;
+using Terminaux.Sequences;
 
 namespace Nitrocid.Drivers.Console.Bases
 {

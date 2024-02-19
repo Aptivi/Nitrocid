@@ -32,9 +32,9 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
             ColorTools.SetConsoleColor(new Color(ConsoleColors.White));
 
             // Simulate a Haiku bootloader failure
-            TextWriterColor.WritePlain("error: unknown filesystem.", true);
-            TextWriterColor.WritePlain("Entering rescue mode...", true);
-            TextWriterColor.WritePlain("grub rescue> ", false);
+            TextWriterRaw.WritePlain("error: unknown filesystem.", true);
+            TextWriterRaw.WritePlain("Entering rescue mode...", true);
+            TextWriterRaw.WritePlain("grub rescue> ", false);
             ConsoleWrapper.CursorVisible = true;
         }
     }

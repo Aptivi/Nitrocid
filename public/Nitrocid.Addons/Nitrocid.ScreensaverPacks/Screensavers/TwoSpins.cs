@@ -26,7 +26,7 @@ using Nitrocid.Misc.Screensaver;
 using System.Collections.Generic;
 using System.Text;
 using Terminaux.Colors;
-using Textify.Sequences.Builder.Types;
+using Terminaux.Sequences.Builder.Types;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
 
@@ -428,7 +428,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             }
 
             // Write the spin buffer
-            TextWriterColor.WritePlain(spinBuffer.ToString(), false);
+            TextWriterRaw.WritePlain(spinBuffer.ToString(), false);
 
             // Reset resize sync
             ConsoleResizeHandler.WasResized();
@@ -454,7 +454,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     " "
                 );
             }
-            TextWriterColor.WritePlain(clearBuffer.ToString(), false);
+            TextWriterRaw.WritePlain(clearBuffer.ToString(), false);
         }
 
     }

@@ -71,7 +71,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                         var Style = LineEndingsTools.GetLineEndingFromFile(FilePath);
                         TextWriterColor.Write(Translate.DoTranslation("Newline style:") + " {0}", Style.ToString());
                     }
-                    TextWriterColor.Write();
+                    TextWriterRaw.Write();
 
                     // .NET managed info
                     SeparatorWriterColor.WriteSeparator(Translate.DoTranslation(".NET assembly info"), true);
@@ -87,7 +87,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                     {
                         TextWriterColor.Write(Translate.DoTranslation("File is not a valid .NET assembly."));
                     }
-                    TextWriterColor.Write();
+                    TextWriterRaw.Write();
 
                     // Other info handled by the extension handler
                     SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Extra info"), true);

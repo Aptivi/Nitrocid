@@ -71,7 +71,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
 
             // Populate the calendar data
             TextWriters.WriteWhere(CalendarTitle, (int)Math.Round((ConsoleWrapper.WindowWidth - CalendarTitle.Length) / 2d), ConsoleWrapper.CursorTop, true, KernelColorType.TableTitle);
-            TextWriterColor.Write();
+            TextWriterRaw.Write();
             for (int CurrentDay = 1; CurrentDay <= DateTo.Day; CurrentDay++)
             {
                 var CurrentDate = new DateTime(year, month, CurrentDay);

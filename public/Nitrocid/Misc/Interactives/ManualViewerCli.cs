@@ -32,7 +32,7 @@ namespace Nitrocid.Misc.Interactives
     /// <summary>
     /// Manual viewer class
     /// </summary>
-    public class ManualViewerCli : BaseInteractiveTui, IInteractiveTui
+    public class ManualViewerCli : BaseInteractiveTui<Manual>, IInteractiveTui<Manual>
     {
         internal string modName = "";
 
@@ -43,18 +43,18 @@ namespace Nitrocid.Misc.Interactives
         [
             // Operations
             new InteractiveTuiBinding("Info", ConsoleKey.F1,
-                (manual, _) => ShowManualInfo(manual))
+                (manual, _) => ShowManualInfo((Manual)manual))
         ];
 
         /// <inheritdoc/>
-        public override IEnumerable PrimaryDataSource =>
+        public override IEnumerable<Manual> PrimaryDataSource =>
             PageManager.ListAllPagesByMod(modName);
 
         /// <inheritdoc/>
-        public override string GetInfoFromItem(object item)
+        public override string GetInfoFromItem(Manual item)
         {
             // Get some info from the manual
-            Manual selectedManual = (Manual)item;
+            Manual selectedManual = item;
             bool hasTitle = !string.IsNullOrEmpty(selectedManual.Title);
             bool hasBody = !string.IsNullOrEmpty(selectedManual.Body.ToString());
 
@@ -76,10 +76,10 @@ namespace Nitrocid.Misc.Interactives
         }
 
         /// <inheritdoc/>
-        public override void RenderStatus(object item)
+        public override void RenderStatus(Manual item)
         {
             // Get some info from the manual
-            Manual selectedManual = (Manual)item;
+            Manual selectedManual = item;
             bool hasTitle = !string.IsNullOrEmpty(selectedManual.Title);
 
             // Generate the rendered text
@@ -92,17 +92,17 @@ namespace Nitrocid.Misc.Interactives
         }
 
         /// <inheritdoc/>
-        public override string GetEntryFromItem(object item)
+        public override string GetEntryFromItem(Manual item)
         {
-            Manual manual = (Manual)item;
+            Manual manual = item;
             return manual.Name;
         }
 
-        private static void ShowManualInfo(object item)
+        private static void ShowManualInfo(Manual item)
         {
             // Render the final information string
             var finalInfoRendered = new StringBuilder();
-            Manual manual = (Manual)item;
+            Manual manual = item;
             bool hasTitle = !string.IsNullOrEmpty(manual.Title);
             bool hasBody = !string.IsNullOrEmpty(manual.Body.ToString());
 

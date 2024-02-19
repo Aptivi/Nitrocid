@@ -145,7 +145,7 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
                 [
                     new InputChoiceInfo($"{englishLines.Count + 1}", Translate.DoTranslation("Go Back...")),
                 ];
-                int selectedStringNum = SelectionStyle.PromptSelection("- " + finalTitle + " " + new string('-', ConsoleWrapper.WindowWidth - ("- " + finalTitle + " ").Length) + CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation("Select a string to translate:"), choices, altChoices);
+                int selectedStringNum = SelectionStyle.PromptSelection("- " + finalTitle + " " + new string('-', ConsoleWrapper.WindowWidth - ("- " + finalTitle + " ").Length) + CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation("Select a string to translate:"), [.. choices], [.. altChoices]);
 
                 // Check the answer
                 if (selectedStringNum == englishLines.Count + 1)
@@ -160,7 +160,7 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
                 {
                     // User chose to remove a string.
                     finalTitle = Translate.DoTranslation("Remove string");
-                    int selectedRemovedStringNum = SelectionStyle.PromptSelection("- " + finalTitle + " " + new string('-', ConsoleWrapper.WindowWidth - ("- " + finalTitle + " ").Length) + CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation("Select a string to remove:"), choices, altChoicesRemove);
+                    int selectedRemovedStringNum = SelectionStyle.PromptSelection("- " + finalTitle + " " + new string('-', ConsoleWrapper.WindowWidth - ("- " + finalTitle + " ").Length) + CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation("Select a string to remove:"), [.. choices], [.. altChoicesRemove]);
                     if (selectedRemovedStringNum == englishLines.Count + 1 || selectedRemovedStringNum == -1)
                         continue;
                     else
@@ -216,7 +216,7 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
                     new InputChoiceInfo($"{targetLanguages.Length + 1}", Translate.DoTranslation("Go Back...")),
                 ];
                 string finalTitle = Translate.DoTranslation("Select language");
-                int selectedLangNum = SelectionStyle.PromptSelection("- " + finalTitle + " " + new string('-', ConsoleWrapper.WindowWidth - ("- " + finalTitle + " ").Length) + CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation("Select a language to translate this string to:"), choices, altChoices);
+                int selectedLangNum = SelectionStyle.PromptSelection("- " + finalTitle + " " + new string('-', ConsoleWrapper.WindowWidth - ("- " + finalTitle + " ").Length) + CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation("Select a language to translate this string to:"), [.. choices], [.. altChoices]);
                 if (selectedLangNum == targetLanguages.Length + 1 || selectedLangNum == -1)
                     return;
 

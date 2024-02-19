@@ -153,7 +153,7 @@ namespace Nitrocid.Drivers.Network
             // We're done downloading. Check to see if it's actually an error
             NetworkTools.TransferFinished = false;
             if (ShowProgress & !NetworkTransfer.SuppressDownloadMessage)
-                TextWriterColor.Write();
+                TextWriterRaw.Write();
             NetworkTransfer.SuppressDownloadMessage = false;
             if (NetworkTransfer.IsError)
             {
@@ -252,7 +252,7 @@ namespace Nitrocid.Drivers.Network
             // We're done downloading. Check to see if it's actually an error
             NetworkTools.TransferFinished = false;
             if (ShowProgress & !NetworkTransfer.SuppressDownloadMessage)
-                TextWriterColor.Write();
+                TextWriterRaw.Write();
             NetworkTransfer.SuppressDownloadMessage = false;
             if (NetworkTransfer.IsError)
             {
@@ -325,7 +325,7 @@ namespace Nitrocid.Drivers.Network
             // We're done uploading. Check to see if it's actually an error
             NetworkTools.TransferFinished = false;
             if (ShowProgress & !NetworkTransfer.SuppressUploadMessage)
-                TextWriterColor.Write();
+                TextWriterRaw.Write();
             NetworkTransfer.SuppressUploadMessage = false;
             if (NetworkTransfer.IsError)
             {
@@ -392,7 +392,7 @@ namespace Nitrocid.Drivers.Network
             // We're done uploading. Check to see if it's actually an error
             NetworkTools.TransferFinished = false;
             if (ShowProgress & !NetworkTransfer.SuppressUploadMessage)
-                TextWriterColor.Write();
+                TextWriterRaw.Write();
             NetworkTransfer.SuppressUploadMessage = false;
             if (NetworkTransfer.IsError)
             {

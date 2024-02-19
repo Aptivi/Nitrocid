@@ -63,6 +63,7 @@ using Nitrocid.Shell.Shells.Debug;
 using Textify.General;
 using Terminaux.Base;
 using Nitrocid.ConsoleBase.Inputs;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Shell.ShellBase.Shells
 {
@@ -455,7 +456,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
                     {
                         // Set title
                         if (Config.MainConfig.SetTitleOnCommandExecution)
-                            ConsoleExtensions.SetTitle($"{KernelReleaseInfo.ConsoleTitle} - {Command}");
+                            ConsoleMisc.SetTitle($"{KernelReleaseInfo.ConsoleTitle} - {Command}");
 
                         // Check the command
                         bool exists = Commands.Any((ci) => ci.Command == commandName || ci.Aliases.Any((ai) => ai.Alias == commandName));
@@ -617,7 +618,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
             }
 
             // Restore title and cancel possibility state
-            ConsoleExtensions.SetTitle(KernelReleaseInfo.ConsoleTitle);
+            ConsoleMisc.SetTitle(KernelReleaseInfo.ConsoleTitle);
             CancellationHandlers.InhibitCancel();
             lastCommand = FullCommand;
         }
@@ -871,7 +872,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
                     histories.Add(ShellType, []);
 
                 // Reset title in case we're going to another shell
-                ConsoleExtensions.SetTitle(KernelReleaseInfo.ConsoleTitle);
+                ConsoleMisc.SetTitle(KernelReleaseInfo.ConsoleTitle);
                 ShellExecute.InitializeShell(ShellArgs);
             }
             catch (Exception ex)

@@ -20,24 +20,24 @@
 using Terminaux.Inputs.Interactive;
 using Nitrocid.Extras.Notes.Management;
 using Nitrocid.Languages;
-using System.Collections;
+using System.Collections.Generic;
 
 namespace Nitrocid.Extras.Notes.Interactive
 {
     /// <summary>
     /// Notes viewer class
     /// </summary>
-    public class NoteViewerCli : BaseInteractiveTui, IInteractiveTui
+    public class NoteViewerCli : BaseInteractiveTui<string>, IInteractiveTui<string>
     {
         /// <inheritdoc/>
-        public override IEnumerable PrimaryDataSource =>
+        public override IEnumerable<string> PrimaryDataSource =>
             NoteManagement.ListNotes();
 
         /// <inheritdoc/>
-        public override string GetInfoFromItem(object item)
+        public override string GetInfoFromItem(string item)
         {
             // Get some info from the note
-            string noteInstance = (string)item;
+            string noteInstance = item;
             bool noteEmpty = string.IsNullOrEmpty(noteInstance);
 
             // Generate the rendered text
@@ -50,10 +50,10 @@ namespace Nitrocid.Extras.Notes.Interactive
         }
 
         /// <inheritdoc/>
-        public override void RenderStatus(object item)
+        public override void RenderStatus(string item)
         {
             // Get some info from the note
-            string noteInstance = (string)item;
+            string noteInstance = item;
             bool noteEmpty = string.IsNullOrEmpty(noteInstance);
 
             // Generate the rendered text
@@ -66,10 +66,10 @@ namespace Nitrocid.Extras.Notes.Interactive
         }
 
         /// <inheritdoc/>
-        public override string GetEntryFromItem(object item)
+        public override string GetEntryFromItem(string item)
         {
             // Get some info from the note
-            string noteInstance = (string)item;
+            string noteInstance = item;
             bool noteEmpty = string.IsNullOrEmpty(noteInstance);
 
             // Generate the rendered text

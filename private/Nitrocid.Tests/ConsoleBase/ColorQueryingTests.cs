@@ -142,7 +142,7 @@ namespace Nitrocid.Tests.ConsoleBase
         [Description("Querying")]
         public void TestGetGrayLight()
         {
-            var expected = new Color(ConsoleColors.Gray);
+            var expected = new Color(ConsoleColors.Silver);
             Should.NotThrow(() => KernelColorTools.SetColor(KernelColorType.Background, new Color(255, 255, 255)));
             var color = ColorTools.GetGray();
             color.ShouldBe(expected);
@@ -155,7 +155,7 @@ namespace Nitrocid.Tests.ConsoleBase
         [Description("Querying")]
         public void TestGetGrayDark()
         {
-            var expected = new Color(ConsoleColors.Gray);
+            var expected = new Color(ConsoleColors.Silver);
             Should.NotThrow(() => KernelColorTools.SetColor(KernelColorType.Background, new Color(0, 0, 0)));
             var color = ColorTools.GetGray();
             color.ShouldBe(expected);
@@ -189,7 +189,7 @@ namespace Nitrocid.Tests.ConsoleBase
                 Should.NotThrow(() => color = ColorTools.GetRandomColor(type));
                 type = color.PlainSequence.Contains(';') ?
                        ColorType.TrueColor : color.ColorId.ColorId >= 16 ?
-                       ColorType._255Color : ColorType._16Color;
+                       ColorType.EightBitColor : ColorType.FourBitColor;
                 color.ShouldNotBeNull();
                 color.Type.ShouldBe(type);
             }

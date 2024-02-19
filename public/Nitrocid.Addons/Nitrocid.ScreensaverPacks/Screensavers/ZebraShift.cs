@@ -24,7 +24,7 @@ using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Screensaver;
 using System.Text;
 using Terminaux.Colors;
-using Textify.Sequences.Builder.Types;
+using Terminaux.Sequences.Builder.Types;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
 
@@ -296,7 +296,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             inverse = !inverse;
 
             // Write the shift buffer
-            TextWriterColor.WritePlain(zebraBuffer.ToString(), false);
+            TextWriterRaw.WritePlain(zebraBuffer.ToString(), false);
 
             // Reset resize sync
             ConsoleResizeHandler.WasResized();

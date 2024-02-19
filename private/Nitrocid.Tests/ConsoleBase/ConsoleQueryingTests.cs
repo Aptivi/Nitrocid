@@ -21,6 +21,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 using Textify.General;
 
 namespace Nitrocid.Tests.ConsoleBase
@@ -39,8 +40,8 @@ namespace Nitrocid.Tests.ConsoleBase
         {
             char BellChar = Convert.ToChar(7);
             char EscapeChar = CharManager.GetEsc();
-            ConsoleExtensions.FilterVTSequences($"Hello!{EscapeChar}[38;5;43m").ShouldBe("Hello!");
-            ConsoleExtensions.FilterVTSequences($"{EscapeChar}]0;This is the title{BellChar}Hello!").ShouldBe("Hello!");
+            ConsoleMisc.FilterVTSequences($"Hello!{EscapeChar}[38;5;43m").ShouldBe("Hello!");
+            ConsoleMisc.FilterVTSequences($"{EscapeChar}]0;This is the title{BellChar}Hello!").ShouldBe("Hello!");
         }
 
     }

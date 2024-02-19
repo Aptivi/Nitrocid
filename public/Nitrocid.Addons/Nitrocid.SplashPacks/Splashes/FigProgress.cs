@@ -19,7 +19,7 @@
 
 using System.Threading;
 using Terminaux.Colors;
-using Textify.Sequences.Tools;
+using Terminaux.Sequences;
 using Figletize;
 using System;
 using System.Text;
@@ -33,6 +33,8 @@ using Nitrocid.Kernel;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
 using Nitrocid.Kernel.Configuration;
+using Terminaux.Colors.Transformation.Contrast;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.SplashPacks.Splashes
 {
@@ -68,7 +70,7 @@ namespace Nitrocid.SplashPacks.Splashes
                 consoleY = ConsoleWrapper.WindowHeight / 2;
                 builder.Append(
                     col.VTSequenceForeground +
-                    TextWriterWhereColor.RenderWherePlain(text, consoleX, consoleY, true)
+                    TextWriterWhereColor.RenderWhere(text, consoleX, consoleY, true)
                 );
             }
             else
@@ -117,7 +119,7 @@ namespace Nitrocid.SplashPacks.Splashes
                     $"{fifthDotColor.VTSequenceForeground}*";
                 int dotsPosX = (ConsoleWrapper.WindowWidth / 2) - (VtSequenceTools.FilterVTSequences(dots).Length / 2);
                 int dotsPosY = ConsoleWrapper.WindowHeight - 2;
-                builder.Append(TextWriterWhereColor.RenderWherePlain(dots, dotsPosX, dotsPosY));
+                builder.Append(TextWriterWhereColor.RenderWhere(dots, dotsPosX, dotsPosY));
                 dotStep++;
                 if (dotStep > 5)
                     dotStep = 0;
@@ -172,7 +174,7 @@ namespace Nitrocid.SplashPacks.Splashes
                     consoleY = height / 2;
                     builder.Append(
                         col.VTSequenceForeground +
-                        TextWriterWhereColor.RenderWherePlain(text, consoleX, consoleY, true)
+                        TextWriterWhereColor.RenderWhere(text, consoleX, consoleY, true)
                     );
                 }
                 else
@@ -223,10 +225,10 @@ namespace Nitrocid.SplashPacks.Splashes
                 col.VTSequenceForeground
             );
             for (int i = consoleY; i <= consoleY + figHeight; i++)
-                builder.Append(TextWriterWhereColor.RenderWherePlain(ConsoleExtensions.GetClearLineToRightSequence(), 0, i, true));
+                builder.Append(TextWriterWhereColor.RenderWhere(ConsoleClearing.GetClearLineToRightSequence(), 0, i, true));
             builder.Append(
                 CenteredFigletTextColor.RenderCenteredFiglet(consoleY, figFont, text, Vars) +
-                TextWriterWhereColor.RenderWherePlain(ConsoleExtensions.GetClearLineToRightSequence(), 0, consoleY - 2, true) +
+                TextWriterWhereColor.RenderWhere(ConsoleClearing.GetClearLineToRightSequence(), 0, consoleY - 2, true) +
                 CenteredTextColor.RenderCenteredOneLine(consoleY - 2, ProgressReport, Vars)
             );
             return builder.ToString();

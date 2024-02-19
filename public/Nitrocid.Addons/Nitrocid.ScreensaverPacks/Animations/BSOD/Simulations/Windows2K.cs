@@ -28,26 +28,26 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
     {
         public override void Simulate()
         {
-            ColorTools.LoadBackDry(new Color(ConsoleColors.DarkBlue_000087));
+            ColorTools.LoadBackDry(new Color(ConsoleColors.DarkBlue));
             ColorTools.SetConsoleColor(new Color(ConsoleColors.White));
 
             // Display technical information
-            TextWriterColor.WritePlain($"\n*** STOP: 0x0000007B (0x{RandomDriver.Random():X8}, 0x{RandomDriver.Random():X8}, 0x{RandomDriver.Random():X8}, 0x{RandomDriver.Random():X8})\n", true);
+            TextWriterRaw.WritePlain($"\n*** STOP: 0x0000007B (0x{RandomDriver.Random():X8}, 0x{RandomDriver.Random():X8}, 0x{RandomDriver.Random():X8}, 0x{RandomDriver.Random():X8})\n", true);
 
             // If this is the first time...
-            TextWriterColor.WritePlain("If this is the first time you've seen this Stop error screen,\n" +
+            TextWriterRaw.WritePlain("If this is the first time you've seen this Stop error screen,\n" +
                                        "restart your computer. If this screen appears again, follow\n" +
                                        "these steps:\n", true);
 
             // Display some steps
-            TextWriterColor.WritePlain("Check for viruses on your computer. Remove any newly installed.\n" +
+            TextWriterRaw.WritePlain("Check for viruses on your computer. Remove any newly installed.\n" +
                                        "hard drives or hard drive controllers. Check your hard drive\n" +
                                        "to make sure it is properly configured and terminated.\n" +
                                        "Run CHKDSK /F to check for hard drive corruption, and then\n" +
                                        "restart your computer.\n", true);
 
             // Getting Started manual reference
-            TextWriterColor.WritePlain("Refer to your Getting Started manual for more information on\n" +
+            TextWriterRaw.WritePlain("Refer to your Getting Started manual for more information on\n" +
                                        "troubleshooting Stop errors.", true);
         }
     }

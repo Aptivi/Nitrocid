@@ -22,6 +22,7 @@ using System.Threading;
 using Terminaux.Colors;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
+using Terminaux.Writer.DynamicWriters;
 
 namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
 {
@@ -33,17 +34,17 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
             ColorTools.SetConsoleColor(new Color(ConsoleColors.White));
 
             // Simulate a Yaboot failure
-            TextWriterColor.WritePlain("Welcome to yaboot version 1.3.17", true);
-            TextWriterColor.WritePlain("Enter \"help\" to get some basic usage information", true);
-            TextWriterColor.WritePlain("boot: ", false);
+            TextWriterRaw.WritePlain("Welcome to yaboot version 1.3.17", true);
+            TextWriterRaw.WritePlain("Enter \"help\" to get some basic usage information", true);
+            TextWriterRaw.WritePlain("boot: ", false);
             ConsoleWrapper.CursorVisible = true;
             Thread.Sleep(3000);
             TextWriterSlowColor.WriteSlowlyPlain("Linux", true, 140);
             ConsoleWrapper.CursorVisible = false;
-            TextWriterColor.WritePlain("Please wait, loading kernel...", true);
+            TextWriterRaw.WritePlain("Please wait, loading kernel...", true);
             Thread.Sleep(60);
-            TextWriterColor.WritePlain("/pci@f2000000/mac-io@17/ata-4@1f000/disk@0:4,/boot/kernel/genkernel-ppc-3.12.21-gentoo-r1: Unknown or corrupt filesystem", true);
-            TextWriterColor.WritePlain("boot: ", false);
+            TextWriterRaw.WritePlain("/pci@f2000000/mac-io@17/ata-4@1f000/disk@0:4,/boot/kernel/genkernel-ppc-3.12.21-gentoo-r1: Unknown or corrupt filesystem", true);
+            TextWriterRaw.WritePlain("boot: ", false);
             ConsoleWrapper.CursorVisible = true;
         }
     }

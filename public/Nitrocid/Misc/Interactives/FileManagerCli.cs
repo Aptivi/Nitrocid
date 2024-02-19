@@ -24,7 +24,7 @@ using System.Linq;
 using System.Text;
 using System.Collections;
 using System.Reflection;
-using Textify.Sequences.Tools;
+using Terminaux.Sequences;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Files;
@@ -51,7 +51,7 @@ namespace Nitrocid.Misc.Interactives
     /// <summary>
     /// File manager class relating to the interactive file manager planned back in 2018
     /// </summary>
-    public class FileManagerCli : BaseInteractiveTui, IInteractiveTui
+    public class FileManagerCli : BaseInteractiveTui<FileSystemEntry>, IInteractiveTui<FileSystemEntry>
     {
         internal string firstPanePath = PathsManagement.HomePath;
         internal string secondPanePath = PathsManagement.HomePath;
@@ -103,7 +103,7 @@ namespace Nitrocid.Misc.Interactives
             true;
 
         /// <inheritdoc/>
-        public override IEnumerable PrimaryDataSource
+        public override IEnumerable<FileSystemEntry> PrimaryDataSource
         {
             get
             {
@@ -126,7 +126,7 @@ namespace Nitrocid.Misc.Interactives
         }
 
         /// <inheritdoc/>
-        public override IEnumerable SecondaryDataSource
+        public override IEnumerable<FileSystemEntry> SecondaryDataSource
         {
             get
             {
@@ -153,9 +153,9 @@ namespace Nitrocid.Misc.Interactives
             true;
 
         /// <inheritdoc/>
-        public override void RenderStatus(object item)
+        public override void RenderStatus(FileSystemEntry item)
         {
-            FileSystemEntry FileInfoCurrentPane = (FileSystemEntry)item;
+            FileSystemEntry FileInfoCurrentPane = item;
 
             // Check to see if we're given the file system info
             if (FileInfoCurrentPane == null)
@@ -189,11 +189,11 @@ namespace Nitrocid.Misc.Interactives
         }
 
         /// <inheritdoc/>
-        public override string GetEntryFromItem(object item)
+        public override string GetEntryFromItem(FileSystemEntry item)
         {
             try
             {
-                FileSystemEntry file = (FileSystemEntry)item;
+                FileSystemEntry file = item;
                 bool isDirectory = file.Type == FileSystemEntryType.Directory;
                 return $" [{(isDirectory ? "/" : "*")}] {file.BaseEntry.Name}";
             }

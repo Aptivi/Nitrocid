@@ -72,7 +72,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
                 TextWriters.Write($"{initialStart}", true, KernelColorType.ListValue);
                 TextWriters.Write("- " + Translate.DoTranslation("Final line number") + ": ", false, KernelColorType.ListEntry);
                 TextWriters.Write($"{finalStart}", true, KernelColorType.ListValue);
-                TextWriterColor.Write();
+                TextWriterRaw.Write();
 
                 // Initial commit info
                 TextWriters.Write("- " + Translate.DoTranslation("Initial commit"), true, KernelColorType.ListEntry);
@@ -86,7 +86,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
                 TextWriters.Write($"{initialCommit.Committer.Name} <{initialCommit.Committer.Email}>", true, KernelColorType.ListValue);
                 TextWriters.Write("  - " + Translate.DoTranslation("Number of parents") + ": ", false, KernelColorType.ListEntry);
                 TextWriters.Write($"{initialCommit.Parents.Count()}", true, KernelColorType.ListValue);
-                TextWriterColor.Write();
+                TextWriterRaw.Write();
 
                 // Final commit info
                 TextWriters.Write("- " + Translate.DoTranslation("Final commit"), true, KernelColorType.ListEntry);
@@ -100,7 +100,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
                 TextWriters.Write($"{finalCommit.Committer.Name} <{finalCommit.Committer.Email}>", true, KernelColorType.ListValue);
                 TextWriters.Write("  - " + Translate.DoTranslation("Number of parents") + ": ", false, KernelColorType.ListEntry);
                 TextWriters.Write($"{finalCommit.Parents.Count()}", true, KernelColorType.ListValue);
-                TextWriterColor.Write();
+                TextWriterRaw.Write();
 
                 // Increment the hunk number for display
                 hunkNum++;

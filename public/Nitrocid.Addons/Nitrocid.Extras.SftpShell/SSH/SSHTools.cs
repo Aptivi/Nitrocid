@@ -38,6 +38,7 @@ using Textify.General;
 using Terminaux.Base;
 using Nitrocid.ConsoleBase.Inputs;
 using Nitrocid.Network.Connections;
+using Terminaux.Reader;
 
 namespace Nitrocid.Extras.SftpShell.SSH
 {
@@ -105,7 +106,7 @@ namespace Nitrocid.Extras.SftpShell.SSH
                             DebugWriter.WriteDebug(DebugLevel.W, "Option is not valid. Returning...");
                             TextWriters.Write(Translate.DoTranslation("Specified option {0} is invalid."), true, KernelColorType.Error, Answer);
                             TextWriters.Write(Translate.DoTranslation("Press any key to go back."), true, KernelColorType.Error);
-                            Input.DetectKeypress();
+                            TermReader.ReadKey();
                             break;
                     }
 
@@ -117,7 +118,7 @@ namespace Nitrocid.Extras.SftpShell.SSH
                     DebugWriter.WriteDebug(DebugLevel.W, "Answer is not numeric.");
                     TextWriters.Write(Translate.DoTranslation("The answer must be numeric."), true, KernelColorType.Error);
                     TextWriters.Write(Translate.DoTranslation("Press any key to go back."), true, KernelColorType.Error);
-                    Input.DetectKeypress();
+                    TermReader.ReadKey();
                 }
             }
 

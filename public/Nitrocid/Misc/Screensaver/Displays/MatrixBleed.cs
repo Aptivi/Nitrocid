@@ -26,7 +26,7 @@ using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Threading;
 using Terminaux.Colors;
-using Textify.Sequences.Builder.Types;
+using Terminaux.Sequences.Builder.Types;
 using Terminaux.Base;
 
 namespace Nitrocid.Misc.Screensaver.Displays
@@ -156,7 +156,7 @@ namespace Nitrocid.Misc.Screensaver.Displays
             // Draw and clean the buffer
             string buffer = MatrixBleedState.bleedBuffer.ToString();
             MatrixBleedState.bleedBuffer.Clear();
-            TextWriterColor.WritePlain(buffer);
+            TextWriterRaw.WritePlain(buffer);
 
             // Reset resize sync
             ConsoleResizeHandler.WasResized();

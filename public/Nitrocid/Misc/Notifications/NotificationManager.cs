@@ -42,6 +42,7 @@ using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Power;
 using Textify.General;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Misc.Notifications
 {
@@ -295,7 +296,7 @@ namespace Nitrocid.Misc.Notifications
                             }
 
                             // Go to the original position and print
-                            TextWriterColor.WritePlain(printBuffer.ToString(), false);
+                            TextWriterRaw.WritePlain(printBuffer.ToString(), false);
                             printBuffer.Clear();
                             ConsoleWrapper.SetCursorPosition(x, y);
 
@@ -341,7 +342,7 @@ namespace Nitrocid.Misc.Notifications
                                     Thread.Sleep(indeterminate ? 250 : 1);
 
                                     // Print the buffer
-                                    TextWriterColor.WritePlain(printBuffer.ToString(), false);
+                                    TextWriterRaw.WritePlain(printBuffer.ToString(), false);
                                     printBuffer.Clear();
                                     ConsoleWrapper.SetCursorPosition(x, y);
                                 }
@@ -353,7 +354,7 @@ namespace Nitrocid.Misc.Notifications
                                     printBuffer.Append(TextWriterWhereColor.RenderWhere(renderedProgressTitleSuccess, notifLeftAgnostic, notifTitleTop, NotifyProgressSuccessColor, background));
 
                                 // Print the buffer
-                                TextWriterColor.WritePlain(printBuffer.ToString(), false);
+                                TextWriterRaw.WritePlain(printBuffer.ToString(), false);
                                 printBuffer.Clear();
                                 ConsoleWrapper.SetCursorPosition(x, y);
                             }
@@ -390,7 +391,7 @@ namespace Nitrocid.Misc.Notifications
                                     );
 
                                 // Render it
-                                TextWriterColor.WritePlain(printBuffer.ToString(), false);
+                                TextWriterRaw.WritePlain(printBuffer.ToString(), false);
                                 printBuffer.Clear();
                                 ConsoleWrapper.SetCursorPosition(x, y);
                             }

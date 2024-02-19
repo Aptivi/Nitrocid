@@ -549,7 +549,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                                         // Write the current character
                                         TextWriterColor.WriteColorBack(sample[currentIdx].ToString(), false, selectedColor, black);
-                                        TextWriterColor.Write();
+                                        TextWriterRaw.Write();
                                     }
                                 }
                             }

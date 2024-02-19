@@ -22,6 +22,7 @@ using Nitrocid.Languages;
 using System;
 using System.Threading;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Drivers.Console.Bases
 {
@@ -41,7 +42,7 @@ namespace Nitrocid.Drivers.Console.Bases
                 {
                     // Get the filtered positions first.
                     int FilteredLeft = default, FilteredTop = default;
-                    var pos = ConsoleExtensions.GetFilteredPositions(Text, Line, vars);
+                    var pos = ConsolePositioning.GetFilteredPositions(Text, Line, vars);
                     FilteredLeft = pos.Item1;
                     FilteredTop = pos.Item2;
 

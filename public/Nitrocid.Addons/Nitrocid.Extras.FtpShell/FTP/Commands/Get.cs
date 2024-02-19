@@ -44,13 +44,13 @@ namespace Nitrocid.Extras.FtpShell.FTP.Commands
             bool Result = !string.IsNullOrWhiteSpace(LocalFile) ? FTPTransfer.FTPGetFile(RemoteFile, LocalFile) : FTPTransfer.FTPGetFile(RemoteFile);
             if (Result)
             {
-                TextWriterColor.Write();
+                TextWriterRaw.Write();
                 TextWriters.Write(Translate.DoTranslation("Downloaded file {0}."), true, KernelColorType.Success, RemoteFile);
                 return 0;
             }
             else
             {
-                TextWriterColor.Write();
+                TextWriterRaw.Write();
                 TextWriters.Write(Translate.DoTranslation("Download failed for file {0}."), true, KernelColorType.Error, RemoteFile);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.FTPNetwork);
             }

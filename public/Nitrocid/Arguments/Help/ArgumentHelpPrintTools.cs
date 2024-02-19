@@ -114,7 +114,7 @@ namespace Nitrocid.Arguments.Help
                         DebugWriter.WriteDebug(DebugLevel.I, "Rendered argument: {0}", renderedArgument);
                         TextWriters.Write(renderedArgument, false, KernelColorType.ListEntry);
                     }
-                    TextWriterColor.Write();
+                    TextWriterRaw.Write();
                 }
                 else
                     TextWriters.Write(Translate.DoTranslation("Usage:") + $" {argument}", true, KernelColorType.ListEntry);

@@ -29,10 +29,11 @@ using Terminaux.Colors;
 using System;
 using Textify.General;
 using Terminaux.Base.Buffered;
-using Textify.Sequences.Builder;
+using Terminaux.Sequences.Builder;
 using Nitrocid.Languages;
 using Terminaux.Inputs;
 using Terminaux.Writer.FancyWriters;
+using Terminaux.Reader;
 
 namespace Nitrocid.ConsoleBase
 {
@@ -94,7 +95,7 @@ namespace Nitrocid.ConsoleBase
             if (useKernelColors)
                 KernelColorTools.SetConsoleColor(KernelColorType.Background, Background: true);
             else
-                ConsoleExtensions.ResetBackground();
+                ColorTools.ResetBackground();
         }
 
         /// <summary>
@@ -106,7 +107,7 @@ namespace Nitrocid.ConsoleBase
             if (useKernelColors)
                 KernelColorTools.SetConsoleColor(KernelColorType.NeutralText);
             else
-                ConsoleExtensions.ResetForeground();
+                ColorTools.ResetForeground();
         }
 
         internal static void PreviewMainBuffer()
@@ -215,7 +216,7 @@ namespace Nitrocid.ConsoleBase
                     band.Append($"{new Color($"hsl:{Convert.ToInt32(h * hueThreshold)};100;50").VTSequenceBackground} ");
                 band.AppendLine();
                 band.Append(CharManager.GetEsc() + $"[49m");
-                return TextWriterWhereColor.RenderWherePlain(TextTools.FormatString(band.ToString(), KernelPlatform.GetTerminalType(), KernelPlatform.GetTerminalEmulator()), 3, 3);
+                return TextWriterWhereColor.RenderWhere(TextTools.FormatString(band.ToString(), KernelPlatform.GetTerminalType(), KernelPlatform.GetTerminalEmulator()), 3, 3);
             });
 
             // Tell the user to select either Y or N
@@ -229,7 +230,7 @@ namespace Nitrocid.ConsoleBase
             ConsoleKey answer = ConsoleKey.None;
             ScreenTools.Render();
             while (answer != ConsoleKey.N && answer != ConsoleKey.Y)
-                answer = Input.DetectKeypress().Key;
+                answer = TermReader.ReadKey().Key;
 
             // Set the appropriate config
             bool supports256Color = answer == ConsoleKey.Y;

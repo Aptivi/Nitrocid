@@ -34,7 +34,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
             var choices = new List<InputChoiceInfo>();
             for (int i = 0; i < 1000; i++)
                 choices.Add(new InputChoiceInfo($"{i + 1}", $"Number #{i + 1}"));
-            var answers = SelectionMultipleStyle.PromptMultipleSelection("Select a choice.", choices);
+            var answers = SelectionMultipleStyle.PromptMultipleSelection("Select a choice.", [.. choices]);
             TextWriterColor.Write(string.Join(", ", answers));
         }
     }
