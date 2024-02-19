@@ -64,6 +64,10 @@ namespace Nitrocid.Shell.ShellBase.Commands
         /// </summary>
         public string[] SwitchesList =>
             listSwitchesOnly;
+        /// <summary>
+        /// Whether the <c>-set=var</c> switch has been passed to the command or not
+        /// </summary>
+        public bool SwitchSetPassed { get; internal set; }
 
         internal CommandParameters(string stringArgs, string[] listArgsOnly, string stringArgsOrig, string[] listArgsOnlyOrig, string[] listSwitchesOnly, string commandName)
         {

@@ -257,7 +257,10 @@ namespace Nitrocid.Shell.ShellBase.Commands
                 if (argSatisfied)
                 {
                     // Prepare the command parameter instance
-                    var parameters = new CommandParameters(StrArgs, Args, StrArgsOrig, ArgsOrig, Switches, Command);
+                    var parameters = new CommandParameters(StrArgs, Args, StrArgsOrig, ArgsOrig, Switches, Command)
+                    {
+                        SwitchSetPassed = containsSetSwitch
+                    };
 
                     // Now, get the base command and execute it
                     DebugWriter.WriteDebug(DebugLevel.I, "Really executing command {0} with args {1}", Command, StrArgs);

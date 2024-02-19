@@ -17,6 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
@@ -32,6 +36,11 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
+            if (!parameters.SwitchSetPassed)
+            {
+                TextWriters.Write(Translate.DoTranslation("You must pass the -set switch with the variable that you want to set this value to."), KernelColorType.Error);
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.ShellOperation);
+            }
             variableValue = parameters.ArgumentsList[0];
             return 0;
         }
