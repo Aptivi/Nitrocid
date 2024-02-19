@@ -37,8 +37,8 @@ namespace Nitrocid.Extras.JsonShell.Json
         /// <summary>
         /// JSON commands
         /// </summary>
-        public override List<CommandInfo> Commands => new()
-        {
+        public override List<CommandInfo> Commands =>
+        [
             new CommandInfo("add", /* Localizable */ "Adds a new array, object, or property",
                 [
                     new CommandArgumentInfo(
@@ -161,7 +161,7 @@ namespace Nitrocid.Extras.JsonShell.Json
                 [
                     new CommandArgumentInfo()
                 ], new TuiCommand()),
-        };
+        ];
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()
         {

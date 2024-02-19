@@ -18,7 +18,6 @@
 //
 
 using System.Collections.Generic;
-using System.Linq;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Misc.Reflection;
@@ -40,8 +39,8 @@ namespace Nitrocid.Shell.Shells.Debug
         /// <summary>
         /// Debug commands
         /// </summary>
-        public override List<CommandInfo> Commands => new()
-        {
+        public override List<CommandInfo> Commands =>
+        [
             new CommandInfo("currentbt", /* Localizable */ "Gets current backtrace",
                 [
                     new CommandArgumentInfo()
@@ -188,7 +187,7 @@ namespace Nitrocid.Shell.Shells.Debug
                 [
                     new CommandArgumentInfo()
                 ], new ShowMainBufferCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
-        };
+        ];
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()
         {

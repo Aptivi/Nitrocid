@@ -22,7 +22,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Collections;
 using System.Reflection;
 using Terminaux.Sequences;
 using Nitrocid.Kernel.Configuration;
@@ -107,7 +106,7 @@ namespace Nitrocid.Misc.Interactives
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to get current directory list for the first pane [{0}]: {1}", firstPanePath, ex.Message);
                     DebugWriter.WriteDebugStackTrace(ex);
-                    return new List<FileSystemEntry>();
+                    return [];
                 }
             }
         }

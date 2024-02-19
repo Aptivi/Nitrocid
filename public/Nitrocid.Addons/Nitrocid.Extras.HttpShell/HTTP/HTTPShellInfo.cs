@@ -36,8 +36,8 @@ namespace Nitrocid.Extras.HttpShell.HTTP
         /// <summary>
         /// HTTP commands
         /// </summary>
-        public override List<CommandInfo> Commands => new()
-        {
+        public override List<CommandInfo> Commands =>
+        [
             new CommandInfo("addheader", /* Localizable */ "Adds a header with the key and the value to all the upcoming requests",
                 [
                     new CommandArgumentInfo(new[]
@@ -146,7 +146,7 @@ namespace Nitrocid.Extras.HttpShell.HTTP
                         new CommandArgumentPart(true, "userAgent")
                     })
                 ], new SetAgentCommand()),
-        };
+        ];
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()
         {

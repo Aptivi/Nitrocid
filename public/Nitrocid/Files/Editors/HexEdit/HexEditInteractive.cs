@@ -39,7 +39,6 @@ using Nitrocid.Files.Operations.Querying;
 using Textify.General;
 using Terminaux.Colors;
 using Terminaux.Base;
-using Terminaux.Inputs;
 using Terminaux.Reader;
 using Terminaux.Base.Extensions;
 

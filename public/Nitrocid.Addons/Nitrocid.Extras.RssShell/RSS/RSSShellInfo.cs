@@ -37,8 +37,8 @@ namespace Nitrocid.Extras.RssShell.RSS
         /// <summary>
         /// RSS commands
         /// </summary>
-        public override List<CommandInfo> Commands => new()
-        {
+        public override List<CommandInfo> Commands =>
+        [
             new CommandInfo("articleinfo", /* Localizable */ "Gets the article info",
                 [
                     new CommandArgumentInfo(new[]
@@ -116,7 +116,7 @@ namespace Nitrocid.Extras.RssShell.RSS
                 [
                     new CommandArgumentInfo()
                 ], new UnbookmarkCommand()),
-        };
+        ];
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()
         {

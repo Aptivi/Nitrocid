@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Inputs.Styles;
 using Nitrocid.Shell.ShellBase.Commands;
 using Terminaux.Reader;
 

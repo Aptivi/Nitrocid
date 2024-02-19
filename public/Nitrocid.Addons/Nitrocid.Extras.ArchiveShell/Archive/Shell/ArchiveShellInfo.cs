@@ -37,8 +37,8 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
         /// <summary>
         /// Archive commands
         /// </summary>
-        public override List<CommandInfo> Commands => new()
-        {
+        public override List<CommandInfo> Commands =>
+        [
             new CommandInfo("cdir", /* Localizable */ "Gets current local directory",
                 [
                     new CommandArgumentInfo()
@@ -88,7 +88,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
                         new CommandArgumentPart(false, "where")
                     })
                 ], new PackCommand()),
-        };
+        ];
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()
         {

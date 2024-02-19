@@ -56,8 +56,6 @@ using Terminaux.Base.Buffered;
 using Nitrocid.Misc.Screensaver;
 using Nitrocid.Languages;
 using Terminaux.Writer.FancyWriters;
-using Terminaux.Inputs;
-using Textify.General;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
 using Terminaux.Base.Extensions;

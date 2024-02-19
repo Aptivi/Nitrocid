@@ -27,7 +27,6 @@ using Terminaux.Colors;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
-using Terminaux.Inputs;
 using Terminaux.Reader;
 
 namespace Nitrocid.Kernel.Debugging.Testing.Facades

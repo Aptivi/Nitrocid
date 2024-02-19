@@ -25,7 +25,6 @@ using Nitrocid.Languages;
 using System;
 using Textify.General;
 using Terminaux.Base;
-using Terminaux.Inputs;
 using Terminaux.Reader;
 
 namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs

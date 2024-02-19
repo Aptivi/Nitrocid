@@ -18,7 +18,6 @@
 //
 
 using System.Collections.Generic;
-using System.Collections;
 using Nitrocid.Kernel.Time.Renderers;
 using Nitrocid.Languages;
 using Terminaux.Inputs.Interactive;

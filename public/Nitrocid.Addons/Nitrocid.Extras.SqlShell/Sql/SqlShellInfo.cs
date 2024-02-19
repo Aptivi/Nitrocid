@@ -36,8 +36,8 @@ namespace Nitrocid.Extras.SqlShell.Sql
         /// <summary>
         /// Sql commands
         /// </summary>
-        public override List<CommandInfo> Commands => new()
-        {
+        public override List<CommandInfo> Commands =>
+        [
             new CommandInfo("cmd", /* Localizable */ "Executes an SQL query",
                 [
                     new CommandArgumentInfo()
@@ -52,7 +52,7 @@ namespace Nitrocid.Extras.SqlShell.Sql
                 [
                     new CommandArgumentInfo()
                 ], new TuiCommand()),
-        };
+        ];
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()
         {

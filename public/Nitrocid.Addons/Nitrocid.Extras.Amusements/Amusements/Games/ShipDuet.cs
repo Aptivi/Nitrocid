@@ -27,7 +27,6 @@ using Nitrocid.Kernel.Threading;
 using Nitrocid.Languages;
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Misc.Screensaver;
-using Terminaux.Inputs;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
 using Nitrocid.Kernel.Debugging;

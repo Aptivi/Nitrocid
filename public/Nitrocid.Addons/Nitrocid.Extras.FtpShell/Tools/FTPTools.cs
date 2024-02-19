@@ -24,7 +24,6 @@ using FluentFTP;
 using FluentFTP.Client.BaseClient;
 using Nitrocid.Extras.FtpShell.FTP;
 using Nitrocid.Kernel.Debugging;
-using Terminaux.Inputs;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
 using Terminaux.Writer.FancyWriters;

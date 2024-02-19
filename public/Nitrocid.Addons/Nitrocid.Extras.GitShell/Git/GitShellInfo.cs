@@ -37,8 +37,8 @@ namespace Nitrocid.Extras.GitShell.Git
         /// <summary>
         /// Git commands
         /// </summary>
-        public override List<CommandInfo> Commands => new()
-        {
+        public override List<CommandInfo> Commands =>
+        [
             new CommandInfo("blame", /* Localizable */ "Fetches the list of changes in a file line by line",
                 [
                     new CommandArgumentInfo(new[]
@@ -219,7 +219,7 @@ namespace Nitrocid.Extras.GitShell.Git
                 [
                     new CommandArgumentInfo()
                 ], new UnstageAllCommand()),
-        };
+        ];
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()
         {

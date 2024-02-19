@@ -20,7 +20,6 @@
 using Terminaux.Inputs.Interactive;
 using Nitrocid.Languages;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 
 namespace Nitrocid.Kernel.Debugging.Testing.Facades.FacadeData

@@ -31,7 +31,6 @@ using Textify.General;
 using Terminaux.Base.Buffered;
 using Terminaux.Sequences.Builder;
 using Nitrocid.Languages;
-using Terminaux.Inputs;
 using Terminaux.Writer.FancyWriters;
 using Terminaux.Reader;
 

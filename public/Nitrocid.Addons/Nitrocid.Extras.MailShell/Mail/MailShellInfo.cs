@@ -36,8 +36,8 @@ namespace Nitrocid.Extras.MailShell.Mail
         /// <summary>
         /// Mail commands
         /// </summary>
-        public override List<CommandInfo> Commands => new()
-        {
+        public override List<CommandInfo> Commands =>
+        [
             new CommandInfo("cd", /* Localizable */ "Changes current mail directory",
                 [
                     new CommandArgumentInfo(new[]
@@ -163,7 +163,7 @@ namespace Nitrocid.Extras.MailShell.Mail
                 [
                     new CommandArgumentInfo()
                 ], new SendEncCommand()),
-        };
+        ];
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()
         {

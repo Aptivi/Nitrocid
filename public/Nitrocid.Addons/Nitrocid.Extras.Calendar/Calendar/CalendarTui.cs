@@ -30,7 +30,6 @@ using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Base.Buffered;
-using Terminaux.Inputs;
 using Nitrocid.Languages;
 using Terminaux.Inputs.Interactive;
 using Terminaux.Writer.FancyWriters;

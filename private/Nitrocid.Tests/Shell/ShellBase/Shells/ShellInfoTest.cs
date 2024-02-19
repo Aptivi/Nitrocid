@@ -28,12 +28,12 @@ namespace Nitrocid.Tests.Shell.ShellBase.Shells
     class ShellInfoTest : BaseShellInfo, IShellInfo
     {
 
-        public override List<CommandInfo> Commands => new()
-        {
+        public override List<CommandInfo> Commands =>
+        [
             new CommandInfo("test", "Test command", [
                 new CommandArgumentInfo()
             ], null)
-        };
+        ];
 
         public override BaseShell ShellBase => new ShellTest();
 

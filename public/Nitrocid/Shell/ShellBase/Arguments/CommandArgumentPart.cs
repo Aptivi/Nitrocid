@@ -18,7 +18,6 @@
 //
 
 using System;
-using System.Linq;
 
 namespace Nitrocid.Shell.ShellBase.Arguments
 {

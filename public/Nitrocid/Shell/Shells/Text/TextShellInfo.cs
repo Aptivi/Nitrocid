@@ -36,8 +36,8 @@ namespace Nitrocid.Shell.Shells.Text
         /// <summary>
         /// Text commands
         /// </summary>
-        public override List<CommandInfo> Commands => new()
-        {
+        public override List<CommandInfo> Commands =>
+        [
             new CommandInfo("addline", /* Localizable */ "Adds a new line with text at the end of the file",
                 [
                     new CommandArgumentInfo(new[]
@@ -227,7 +227,7 @@ namespace Nitrocid.Shell.Shells.Text
                 [
                     new CommandArgumentInfo()
                 ], new TuiCommand()),
-        };
+        ];
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()
         {

@@ -37,8 +37,8 @@ namespace Nitrocid.Extras.FtpShell.FTP
         /// <summary>
         /// FTP commands
         /// </summary>
-        public override List<CommandInfo> Commands => new()
-        {
+        public override List<CommandInfo> Commands =>
+        [
             new CommandInfo("cat", /* Localizable */ "Reads the content of a remote file to the console",
                 [
                     new CommandArgumentInfo(new[]
@@ -223,7 +223,7 @@ namespace Nitrocid.Extras.FtpShell.FTP
                         new CommandArgumentPart(true, "a/b")
                     })
                 ], new TypeCommand()),
-        };
+        ];
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()
         {

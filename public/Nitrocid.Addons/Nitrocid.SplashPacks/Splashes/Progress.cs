@@ -27,7 +27,6 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Misc.Text;
 using Terminaux.Writer.FancyWriters;
-using Textify.General;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 

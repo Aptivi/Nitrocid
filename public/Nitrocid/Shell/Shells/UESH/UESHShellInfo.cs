@@ -45,8 +45,8 @@ namespace Nitrocid.Shell.Shells.UESH
         /// <summary>
         /// List of commands
         /// </summary>
-        public override List<CommandInfo> Commands => new()
-        {
+        public override List<CommandInfo> Commands =>
+        [
             new CommandInfo("addgroup", /* Localizable */ "Adds groups",
                 [
                     new CommandArgumentInfo(new[]
@@ -1584,7 +1584,7 @@ namespace Nitrocid.Shell.Shells.UESH
                         })
                     ])
                 ], new ZipCommand()),
-        };
+        ];
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()
         {

@@ -36,7 +36,6 @@ using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Screensaver;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Writers;
-using Textify.General;
 using Terminaux.Colors;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;

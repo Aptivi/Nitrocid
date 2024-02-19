@@ -29,7 +29,6 @@ using Terminaux.Writer.FancyWriters;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Drivers.RNG;
-using Terminaux.Inputs;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
 using Terminaux.Reader;

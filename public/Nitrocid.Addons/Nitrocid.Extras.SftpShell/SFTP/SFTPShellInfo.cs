@@ -37,8 +37,8 @@ namespace Nitrocid.Extras.SftpShell.SFTP
         /// <summary>
         /// SFTP commands
         /// </summary>
-        public override List<CommandInfo> Commands => new()
-        {
+        public override List<CommandInfo> Commands =>
+        [
             new CommandInfo("cat", /* Localizable */ "Reads the content of a remote file to the console",
                 [
                     new CommandArgumentInfo(new[]
@@ -133,7 +133,7 @@ namespace Nitrocid.Extras.SftpShell.SFTP
                 [
                     new CommandArgumentInfo()
                 ], new PwdrCommand()),
-        };
+        ];
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()
         {

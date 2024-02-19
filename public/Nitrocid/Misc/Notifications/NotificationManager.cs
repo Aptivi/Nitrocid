@@ -40,7 +40,6 @@ using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Kernel.Events;
 using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Power;
-using Textify.General;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 

@@ -30,7 +30,6 @@ using Nitrocid.Extras.MailShell.Mail;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
-using Textify.General;
 using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Extras.MailShell.Tools.Directory

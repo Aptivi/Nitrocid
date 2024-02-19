@@ -36,8 +36,8 @@ namespace Nitrocid.Shell.Shells.Hex
         /// <summary>
         /// Hex commands
         /// </summary>
-        public override List<CommandInfo> Commands => new()
-        {
+        public override List<CommandInfo> Commands =>
+        [
             new CommandInfo("addbyte", /* Localizable */ "Adds a new byte at the end of the file",
                 [
                     new CommandArgumentInfo(new[]
@@ -148,7 +148,7 @@ namespace Nitrocid.Shell.Shells.Hex
                 [
                     new CommandArgumentInfo()
                 ], new TuiCommand()),
-        };
+        ];
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()
         {

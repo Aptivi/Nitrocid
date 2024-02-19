@@ -21,7 +21,6 @@ using System;
 using System.Collections.Generic;
 using VisualCard.Parts;
 using System.Text;
-using System.Collections;
 using Nitrocid.Kernel.Debugging;
 using Terminaux.Inputs.Interactive;
 using Terminaux.Inputs.Styles.Infobox;

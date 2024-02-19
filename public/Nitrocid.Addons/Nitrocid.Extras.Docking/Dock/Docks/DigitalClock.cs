@@ -20,7 +20,6 @@
 using Figletize;
 using Terminaux.Base.Buffered;
 using Nitrocid.ConsoleBase.Colors;
-using Terminaux.Inputs;
 using Terminaux.Writer.FancyWriters;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;

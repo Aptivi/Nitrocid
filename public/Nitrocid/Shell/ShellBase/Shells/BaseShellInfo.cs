@@ -41,11 +41,11 @@ namespace Nitrocid.Shell.ShellBase.Shells
         /// <inheritdoc/>
         public virtual object ShellLock => new();
         /// <inheritdoc/>
-        public virtual List<CommandInfo> Commands => new();
+        public virtual List<CommandInfo> Commands => [];
         /// <inheritdoc/>
         public virtual List<CommandInfo> ModCommands => modCommands;
         /// <inheritdoc/>
-        public virtual Dictionary<string, PromptPresetBase> ShellPresets => new();
+        public virtual Dictionary<string, PromptPresetBase> ShellPresets => [];
         /// <inheritdoc/>
         public virtual Dictionary<string, PromptPresetBase> CustomShellPresets => customShellPresets;
         /// <inheritdoc/>

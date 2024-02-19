@@ -23,7 +23,6 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
 using System;
 using System.Threading;
-using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.DynamicWriters;
 
 namespace Nitrocid.ConsoleBase.Writers

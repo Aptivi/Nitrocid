@@ -25,7 +25,6 @@ using Terminaux.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Languages;
-using Terminaux.Inputs;
 using Terminaux.Base.Buffered;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;

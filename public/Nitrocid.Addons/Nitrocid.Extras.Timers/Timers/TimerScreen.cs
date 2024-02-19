@@ -27,7 +27,6 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Kernel.Time.Renderers;
 using Nitrocid.Languages;
-using Terminaux.Inputs;
 using Terminaux.Base.Buffered;
 using System.Text;
 using Terminaux.Writer.FancyWriters;

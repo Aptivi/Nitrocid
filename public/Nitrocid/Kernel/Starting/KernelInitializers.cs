@@ -55,7 +55,6 @@ using Nitrocid.Kernel.Threading.Watchdog;
 using Terminaux.Colors;
 using Nitrocid.ConsoleBase.Writers.MiscWriters;
 using Terminaux.Base.Checks;
-using Terminaux.Base;
 using Nitrocid.Users.Login.Motd;
 using Nitrocid.Network.Types.RPC;
 using Nitrocid.Network.SpeedDial;

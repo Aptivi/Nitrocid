@@ -21,7 +21,6 @@ using BassBoom.Basolia.File;
 using BassBoom.Basolia.Format;
 using BassBoom.Basolia.Playback;
 using Nitrocid.ConsoleBase.Colors;
-using Terminaux.Inputs;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Files;

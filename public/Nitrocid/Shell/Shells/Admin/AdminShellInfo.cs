@@ -18,7 +18,6 @@
 //
 
 using System.Collections.Generic;
-using System.Linq;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Arguments;
@@ -38,8 +37,8 @@ namespace Nitrocid.Shell.Shells.Admin
         /// <summary>
         /// Admin commands
         /// </summary>
-        public override List<CommandInfo> Commands => new()
-        {
+        public override List<CommandInfo> Commands =>
+        [
             new CommandInfo("arghelp", /* Localizable */ "Kernel arguments help system",
                 [
                     new CommandArgumentInfo(new[]
@@ -127,7 +126,7 @@ namespace Nitrocid.Shell.Shells.Admin
                         new CommandArgumentPart(true, "lang/clear")
                     })
                 ], new UserLangCommand()),
-        };
+        ];
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()
         {
