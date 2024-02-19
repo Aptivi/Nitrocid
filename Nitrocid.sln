@@ -174,6 +174,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Benchmarks", "Benchmarks", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nitrocid.Benchmarks", "private\Nitrocid.Benchmarks\Nitrocid.Benchmarks.csproj", "{32EFC1E5-CE9A-457D-BDC3-3EDE638DE5F3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Templates", "Templates", "{0F3600BA-D929-4E70-957D-71992819CE61}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "templatepack", "public\Nitrocid.Templates\templatepack.csproj", "{6F4FFE84-4F9B-474F-8FA4-A2DCCF5415C2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -396,6 +400,10 @@ Global
 		{32EFC1E5-CE9A-457D-BDC3-3EDE638DE5F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{32EFC1E5-CE9A-457D-BDC3-3EDE638DE5F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{32EFC1E5-CE9A-457D-BDC3-3EDE638DE5F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F4FFE84-4F9B-474F-8FA4-A2DCCF5415C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F4FFE84-4F9B-474F-8FA4-A2DCCF5415C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F4FFE84-4F9B-474F-8FA4-A2DCCF5415C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F4FFE84-4F9B-474F-8FA4-A2DCCF5415C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -461,6 +469,8 @@ Global
 		{600337A5-0D56-476A-9428-52B1EF665950} = {B60F276A-FE12-4001-916E-080344ED1FD9}
 		{EA27625C-C2DE-4080-9253-A572114EDC21} = {61916ED1-66D6-4938-9F1A-D0DF38D16E20}
 		{32EFC1E5-CE9A-457D-BDC3-3EDE638DE5F3} = {EA27625C-C2DE-4080-9253-A572114EDC21}
+		{0F3600BA-D929-4E70-957D-71992819CE61} = {A32F9CED-BCDB-48A7-A42D-E98E33BD6E65}
+		{6F4FFE84-4F9B-474F-8FA4-A2DCCF5415C2} = {0F3600BA-D929-4E70-957D-71992819CE61}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {424D8E7A-CFEB-40AE-A79C-437D603177FD}

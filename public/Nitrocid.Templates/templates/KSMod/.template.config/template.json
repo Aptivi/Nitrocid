@@ -1,0 +1,14 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "Aptivi",
+    "classifications": [ "Library" ],
+    "identity": "KSMod",
+    "name": "Nitrocid KS Mod",
+    "shortName": "KSMod",
+    "tags": {
+        "language": "C#",
+        "type": "project"
+    },
+    "sourceName": "KSMod",
+    "preferNameDirectory": true
+}
