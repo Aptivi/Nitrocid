@@ -3,7 +3,7 @@ name: Prepare release draft
 on:
   push:
     tags:
-      - '**'
+      - 'v0.1.*'
     
 jobs:
   build:
@@ -36,3 +36,4 @@ jobs:
         draft: true
         files: |
           tools/*.zip
+          tools/*-changes.chg
