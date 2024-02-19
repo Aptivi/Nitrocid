@@ -1,0 +1,48 @@
+{
+    "profiles": {
+        "Nitrocid.Benchmarks - EncodingAes": {
+            "commandName": "Project",
+            "commandLineArgs": "EncodingAes"
+        },
+        "Nitrocid.Benchmarks - EncodingRsa": {
+            "commandName": "Project",
+            "commandLineArgs": "EncodingRsa"
+        },
+        "Nitrocid.Benchmarks - EncryptionSha256": {
+            "commandName": "Project",
+            "commandLineArgs": "EncryptionSha256"
+        },
+        "Nitrocid.Benchmarks - EncryptionSha512": {
+            "commandName": "Project",
+            "commandLineArgs": "EncryptionSha512"
+        },
+        "Nitrocid.Benchmarks - RngDefault": {
+            "commandName": "Project",
+            "commandLineArgs": "RngDefault"
+        },
+        "Nitrocid.Benchmarks - RngOptimized": {
+            "commandName": "Project",
+            "commandLineArgs": "RngOptimized"
+        },
+        "Nitrocid.Benchmarks - RngStandard": {
+            "commandName": "Project",
+            "commandLineArgs": "RngStandard"
+        },
+        "Nitrocid.Benchmarks - SortingDefault": {
+            "commandName": "Project",
+            "commandLineArgs": "SortingDefault"
+        },
+        "Nitrocid.Benchmarks - SortingMerge": {
+            "commandName": "Project",
+            "commandLineArgs": "SortingMerge"
+        },
+        "Nitrocid.Benchmarks - SortingQuick": {
+            "commandName": "Project",
+            "commandLineArgs": "SortingQuick"
+        },
+        "Nitrocid.Benchmarks - SortingSelection": {
+            "commandName": "Project",
+            "commandLineArgs": "SortingSelection"
+        }
+    }
+}
