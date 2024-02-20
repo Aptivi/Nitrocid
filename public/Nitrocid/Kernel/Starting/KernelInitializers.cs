@@ -104,7 +104,7 @@ namespace Nitrocid.Kernel.Starting
                 PowerSignalHandlers.RegisterHandlers();
 
                 // Resize handler
-                ConsoleBase.ConsoleResizeHandler.StartHandler();
+                ConsoleResizeHandler.StartHandler();
                 InputTools.InitializeTerminauxWrappers();
             }
             catch (Exception ex)
