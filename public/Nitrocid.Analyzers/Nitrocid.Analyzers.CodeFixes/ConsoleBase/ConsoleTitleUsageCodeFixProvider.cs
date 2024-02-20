@@ -64,7 +64,7 @@ namespace Nitrocid.Analyzers.ConsoleBase
             if (typeDecl.Expression is IdentifierNameSyntax identifier)
             {
                 // Build the replacement syntax
-                var classSyntax = SyntaxFactory.IdentifierName("ConsoleExtensions");
+                var classSyntax = SyntaxFactory.IdentifierName("ConsoleMisc");
                 var methodSyntax = SyntaxFactory.IdentifierName("SetTitle");
                 var maeSyntax = SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, classSyntax, methodSyntax);
                 var parentSyntax = (AssignmentExpressionSyntax)typeDecl.Parent;
@@ -78,11 +78,13 @@ namespace Nitrocid.Analyzers.ConsoleBase
 
                 // Check the imports
                 var compilation = finalNode as CompilationUnitSyntax;
-                if (compilation?.Usings.Any(u => u.Name.ToString() == "Terminaux.Base") == false)
+                if (compilation?.Usings.Any(u => u.Name.ToString() == "Terminaux.Base.Extensions") == false)
                 {
                     var name = SyntaxFactory.QualifiedName(
-                        SyntaxFactory.IdentifierName("Terminaux"),
-                        SyntaxFactory.IdentifierName("Base"));
+                        SyntaxFactory.QualifiedName(
+                            SyntaxFactory.IdentifierName("Terminaux"),
+                            SyntaxFactory.IdentifierName("Base")),
+                        SyntaxFactory.IdentifierName("Extensions"));
                     compilation = compilation
                         .AddUsings(SyntaxFactory.UsingDirective(name));
                 }
