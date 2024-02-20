@@ -72,6 +72,10 @@ namespace Nitrocid.Kernel.Starting
                 // Check for terminal
                 ConsoleChecker.CheckConsole();
 
+                // Allow fore/background colors
+                ColorTools.AllowForeground = true;
+                ColorTools.AllowBackground = true;
+
                 // Initialize crucial things
                 if (!KernelPlatform.IsOnUnix())
                 {

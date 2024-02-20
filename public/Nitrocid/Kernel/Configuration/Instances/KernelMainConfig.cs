@@ -256,6 +256,30 @@ namespace Nitrocid.Kernel.Configuration.Instances
             set => ColorTools.GlobalSettings.UseTerminalPalette = value;
         }
         /// <summary>
+        /// Whether to allow foreground color
+        /// </summary>
+        public bool AllowForegroundColor
+        {
+            get => KernelColorTools.allowForeground;
+            set
+            {
+                KernelColorTools.allowForeground = value;
+                ColorTools.AllowForeground = KernelColorTools.allowForeground;
+            }
+        }
+        /// <summary>
+        /// Whether to allow background color
+        /// </summary>
+        public bool AllowBackgroundColor
+        {
+            get => KernelColorTools.allowBackground;
+            set
+            {
+                KernelColorTools.allowBackground = value;
+                ColorTools.AllowBackground = KernelColorTools.allowBackground;
+            }
+        }
+        /// <summary>
         /// User Name Shell Color
         /// </summary>
         public string UserNameShellColor

@@ -251,6 +251,18 @@
                 "Description": "When this is set to true, the color palette defined by the terminal is used."
             },
             {
+                "Name": "Allow foreground color",
+                "Type": "SBoolean",
+                "Variable": "AllowForegroundColor",
+                "Description": "When this is set to true, the current foreground color is honored. Else, it uses your terminal's default colors."
+            },
+            {
+                "Name": "Allow background color",
+                "Type": "SBoolean",
+                "Variable": "AllowBackgroundColor",
+                "Description": "When this is set to true, the current background color is honored. Else, it uses your terminal's default colors."
+            },
+            {
                 "Name": "User Name Shell Color",
                 "Type": "SColor",
                 "Variable": "UserNameShellColor"
