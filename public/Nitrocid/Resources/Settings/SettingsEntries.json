@@ -189,7 +189,7 @@
                 "Name": "Debug quota line count",
                 "Type": "SInt",
                 "Variable": "DebugQuotaLines",
-                "Description": "How many lines to print to the debug buffer before reaching the quota limit? Please note that it doesn't represent how many lines are in the debug log files.'"
+                "Description": "How many lines to print to the debug buffer before reaching the quota limit? Please note that it doesn't represent how many lines are in the debug log files."
             },
             {
                 "Name": "Use system time zone",
