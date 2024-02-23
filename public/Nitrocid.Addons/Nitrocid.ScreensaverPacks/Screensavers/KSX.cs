@@ -120,7 +120,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                             // Pulse the X character, alternating between darkGreen and Green colors
                             var figFont = FigletTools.GetFigletFont("banner");
-                            CenteredFigletTextColor.WriteCenteredFigletColor(figFont, "X", finalCol, black);
+                            CenteredFigletTextColor.WriteCenteredFigletColorBack(figFont, "X", finalCol, black);
 
                             // Sleep
                             ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
@@ -148,7 +148,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             // Now, make a color and write the X character using figlet
                             Color col = new(currentR, currentG, currentB);
                             var figFont = FigletTools.GetFigletFont("banner");
-                            CenteredFigletTextColor.WriteCenteredFigletColor(figFont, "X", col, black);
+                            CenteredFigletTextColor.WriteCenteredFigletColorBack(figFont, "X", col, black);
 
                             // Sleep
                             ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
