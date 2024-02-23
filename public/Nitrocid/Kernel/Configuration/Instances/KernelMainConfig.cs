@@ -163,7 +163,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(ColorTools.GlobalSettings.EnableColorTransformation)} [{value}]: {ex.Message}");
+                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to enable/disable {nameof(ColorTools.GlobalSettings.EnableColorTransformation)} [{value}]: {ex.Message}");
                 }
             }
         }
@@ -191,7 +191,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(ColorTools.GlobalSettings.ColorTransformationFormula)} [{value}]: {ex.Message}");
+                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to enable/disable {nameof(ColorTools.GlobalSettings.ColorTransformationFormula)} [{value}]: {ex.Message}");
                 }
             }
         }
@@ -219,7 +219,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(ColorTools.GlobalSettings.ColorBlindnessSeverity)} [{value}]: {ex.Message}");
+                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to enable/disable {nameof(ColorTools.GlobalSettings.ColorBlindnessSeverity)} [{value}]: {ex.Message}");
                 }
             }
         }
@@ -255,7 +255,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(ColorTools.GlobalSettings.ColorTransformationMethod)} [{value}]: {ex.Message}");
+                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to enable/disable {nameof(ColorTools.GlobalSettings.ColorTransformationMethod)} [{value}]: {ex.Message}");
                 }
             }
         }
@@ -319,56 +319,16 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public string AccentForegroundColor
         {
-            get
-            {
-                try
-                {
-                    return KernelColorTools.accentForegroundColor.PlainSequence;
-                }
-                catch
-                {
-                    return "11";
-                }
-            }
-            set
-            {
-                try
-                {
-                    KernelColorTools.accentForegroundColor = new Color(value);
-                }
-                catch (Exception ex)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(KernelColorTools.accentForegroundColor)} [{value}]: {ex.Message}");
-                }
-            }
+            get => KernelColorTools.accentForegroundColor.PlainSequence;
+            set => KernelColorTools.accentForegroundColor = new Color(value);
         }
         /// <summary>
         /// Accent color (background)
         /// </summary>
         public string AccentBackgroundColor
         {
-            get
-            {
-                try
-                {
-                    return KernelColorTools.accentBackgroundColor.PlainSequence;
-                }
-                catch
-                {
-                    return "0";
-                }
-            }
-            set
-            {
-                try
-                {
-                    KernelColorTools.accentBackgroundColor = new Color(value);
-                }
-                catch (Exception ex)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(KernelColorTools.accentBackgroundColor)} [{value}]: {ex.Message}");
-                }
-            }
+            get => KernelColorTools.accentBackgroundColor.PlainSequence;
+            set => KernelColorTools.accentBackgroundColor = new Color(value);
         }
         /// <summary>
         /// Whether to use accent colors for themes that support accents
@@ -394,7 +354,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(ColorTools.GlobalSettings.UseTerminalPalette)} [{value}]: {ex.Message}");
+                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to enable/disable {nameof(ColorTools.GlobalSettings.UseTerminalPalette)} [{value}]: {ex.Message}");
                 }
             }
         }
@@ -413,7 +373,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(ColorTools.AllowForeground)} [{value}]: {ex.Message}");
+                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to enable/disable {nameof(ColorTools.AllowForeground)} [{value}]: {ex.Message}");
                 }
             }
         }
@@ -432,7 +392,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(ColorTools.AllowBackground)} [{value}]: {ex.Message}");
+                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to enable/disable {nameof(ColorTools.AllowBackground)} [{value}]: {ex.Message}");
                 }
             }
         }
@@ -441,141 +401,44 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public string UserNameShellColor
         {
-            get
-            {
-                try
-                {
-                    return KernelColorTools.GetColor(KernelColorType.UserNameShell).PlainSequence;
-                }
-                catch
-                {
-                    return "10";
-                }
-            }
-            set
-            {
-                try
-                {
-                    KernelColorTools.SetColor(KernelColorType.UserNameShell, new Color(value));
-                }
-                catch (Exception ex)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(KernelColorType.UserNameShell)} [{value}]: {ex.Message}");
-                }
-            }
+            get => KernelColorTools.GetColor(KernelColorType.UserNameShell).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.UserNameShell, new Color(value));
         }
         /// <summary>
         /// Host Name Shell Color
         /// </summary>
         public string HostNameShellColor
         {
-            get
-            {
-                try
-                {
-                    return KernelColorTools.GetColor(KernelColorType.HostNameShell).PlainSequence;
-                }
-                catch
-                {
-                    return "2";
-                }
-            }
-            set
-            {
-                try
-                {
-                    KernelColorTools.SetColor(KernelColorType.HostNameShell, new Color(value));
-                }
-                catch (Exception ex)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(KernelColorType.HostNameShell)} [{value}]: {ex.Message}");
-                }
-            }
+            get => KernelColorTools.GetColor(KernelColorType.HostNameShell).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.HostNameShell, new Color(value));
         }
         /// <summary>
         /// Continuable Kernel Error Color
         /// </summary>
         public string ContinuableKernelErrorColor
         {
-            get
-            {
-                try
-                {
-                    return KernelColorTools.GetColor(KernelColorType.ContKernelError).PlainSequence;
-                }
-                catch
-                {
-                    return "11";
-                }
-            }
-            set
-            {
-                try
-                {
-                    KernelColorTools.SetColor(KernelColorType.ContKernelError, new Color(value));
-                }
-                catch (Exception ex)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(KernelColorType.ContKernelError)} [{value}]: {ex.Message}");
-                }
-            }
+            get => KernelColorTools.GetColor(KernelColorType.ContKernelError).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.ContKernelError, new Color(value));
         }
         /// <summary>
         /// Uncontinuable Kernel Error Color
         /// </summary>
         public string UncontinuableKernelErrorColor
         {
-            get
-            {
-                try
-                {
-                    return KernelColorTools.GetColor(KernelColorType.UncontKernelError).PlainSequence;
-                }
-                catch
-                {
-                    return "9";
-                }
-            }
-            set
-            {
-                try
-                {
-                    KernelColorTools.SetColor(KernelColorType.UncontKernelError, new Color(value));
-                }
-                catch (Exception ex)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(KernelColorType.UncontKernelError)} [{value}]: {ex.Message}");
-                }
-            }
+            get => KernelColorTools.GetColor(KernelColorType.UncontKernelError).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.UncontKernelError, new Color(value));
         }
         /// <summary>
         /// Text Color
         /// </summary>
         public string TextColor
         {
-            get
-            {
-                try
-                {
-                    return KernelColorTools.GetColor(KernelColorType.NeutralText).PlainSequence;
-                }
-                catch
-                {
-                    return "7";
-                }
-            }
+            get => KernelColorTools.GetColor(KernelColorType.NeutralText).PlainSequence;
             set
             {
-                try
-                {
-                    var color = new Color(value);
-                    KernelColorTools.SetColor(KernelColorType.NeutralText, color);
-                    SelectionStyleSettings.GlobalSettings.TextColor = color;
-                }
-                catch (Exception ex)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(KernelColorType.NeutralText)} [{value}]: {ex.Message}");
-                }
+                var color = new Color(value);
+                KernelColorTools.SetColor(KernelColorType.NeutralText, color);
+                SelectionStyleSettings.GlobalSettings.TextColor = color;
             }
         }
         /// <summary>
@@ -583,85 +446,28 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public string LicenseColor
         {
-            get
-            {
-                try
-                {
-                    return KernelColorTools.GetColor(KernelColorType.License).PlainSequence;
-                }
-                catch
-                {
-                    return "15";
-                }
-            }
-            set
-            {
-                try
-                {
-                    KernelColorTools.SetColor(KernelColorType.License, new Color(value));
-                }
-                catch (Exception ex)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(KernelColorType.License)} [{value}]: {ex.Message}");
-                }
-            }
+            get => KernelColorTools.GetColor(KernelColorType.License).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.License, new Color(value));
         }
         /// <summary>
         /// Background Color
         /// </summary>
         public string BackgroundColor
         {
-            get
-            {
-                try
-                {
-                    return KernelColorTools.GetColor(KernelColorType.Background).PlainSequence;
-                }
-                catch
-                {
-                    return "0";
-                }
-            }
-            set
-            {
-                try
-                {
-                    KernelColorTools.SetColor(KernelColorType.Background, new Color(value));
-                }
-                catch (Exception ex)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(KernelColorType.Background)} [{value}]: {ex.Message}");
-                }
-            }
+            get => KernelColorTools.GetColor(KernelColorType.Background).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.Background, new Color(value));
         }
         /// <summary>
         /// Input Color
         /// </summary>
         public string InputColor
         {
-            get
-            {
-                try
-                {
-                    return KernelColorTools.GetColor(KernelColorType.Input).PlainSequence;
-                }
-                catch
-                {
-                    return "15";
-                }
-            }
+            get => KernelColorTools.GetColor(KernelColorType.Input).PlainSequence;
             set
             {
-                try
-                {
-                    var color = new Color(value);
-                    KernelColorTools.SetColor(KernelColorType.Input, color);
-                    SelectionStyleSettings.GlobalSettings.InputColor = color;
-                }
-                catch (Exception ex)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(KernelColorType.Input)} [{value}]: {ex.Message}");
-                }
+                var color = new Color(value);
+                KernelColorTools.SetColor(KernelColorType.Input, color);
+                SelectionStyleSettings.GlobalSettings.InputColor = color;
             }
         }
         /// <summary>
@@ -709,29 +515,12 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public string OptionColor
         {
-            get
-            {
-                try
-                {
-                    return KernelColorTools.GetColor(KernelColorType.Option).PlainSequence;
-                }
-                catch
-                {
-                    return "3";
-                }
-            }
+            get => KernelColorTools.GetColor(KernelColorType.Option).PlainSequence;
             set
             {
-                try
-                {
-                    var color = new Color(value);
-                    KernelColorTools.SetColor(KernelColorType.Option, color);
-                    SelectionStyleSettings.GlobalSettings.OptionColor = color;
-                }
-                catch (Exception ex)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(KernelColorType.Option)} [{value}]: {ex.Message}");
-                }
+                var color = new Color(value);
+                KernelColorTools.SetColor(KernelColorType.Option, color);
+                SelectionStyleSettings.GlobalSettings.OptionColor = color;
             }
         }
         /// <summary>
@@ -824,29 +613,12 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public string SeparatorColor
         {
-            get
-            {
-                try
-                {
-                    return KernelColorTools.GetColor(KernelColorType.Separator).PlainSequence;
-                }
-                catch
-                {
-                    return "7";
-                }
-            }
+            get => KernelColorTools.GetColor(KernelColorType.Separator).PlainSequence;
             set
             {
-                try
-                {
-                    var color = new Color(value);
-                    KernelColorTools.SetColor(KernelColorType.Separator, color);
-                    SelectionStyleSettings.GlobalSettings.SeparatorColor = color;
-                }
-                catch (Exception ex)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(KernelColorType.Separator)} [{value}]: {ex.Message}");
-                }
+                var color = new Color(value);
+                KernelColorTools.SetColor(KernelColorType.Separator, color);
+                SelectionStyleSettings.GlobalSettings.SeparatorColor = color;
             }
         }
         /// <summary>
@@ -942,29 +714,12 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public string SelectedOptionColor
         {
-            get
-            {
-                try
-                {
-                    return KernelColorTools.GetColor(KernelColorType.SelectedOption).PlainSequence;
-                }
-                catch
-                {
-                    return "14";
-                }
-            }
+            get => KernelColorTools.GetColor(KernelColorType.SelectedOption).PlainSequence;
             set
             {
-                try
-                {
-                    var color = new Color(value);
-                    KernelColorTools.SetColor(KernelColorType.SelectedOption, color);
-                    SelectionStyleSettings.GlobalSettings.SelectedOptionColor = color;
-                }
-                catch (Exception ex)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(KernelColorType.SelectedOption)} [{value}]: {ex.Message}");
-                }
+                var color = new Color(value);
+                KernelColorTools.SetColor(KernelColorType.SelectedOption, color);
+                SelectionStyleSettings.GlobalSettings.SelectedOptionColor = color;
             }
         }
         /// <summary>
@@ -972,29 +727,12 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public string AlternativeOptionColor
         {
-            get
-            {
-                try
-                {
-                    return KernelColorTools.GetColor(KernelColorType.AlternativeOption).PlainSequence;
-                }
-                catch
-                {
-                    return "11";
-                }
-            }
+            get => KernelColorTools.GetColor(KernelColorType.AlternativeOption).PlainSequence;
             set
             {
-                try
-                {
-                    var color = new Color(value);
-                    KernelColorTools.SetColor(KernelColorType.AlternativeOption, color);
-                    SelectionStyleSettings.GlobalSettings.AltOptionColor = color;
-                }
-                catch (Exception ex)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(KernelColorType.AlternativeOption)} [{value}]: {ex.Message}");
-                }
+                var color = new Color(value);
+                KernelColorTools.SetColor(KernelColorType.AlternativeOption, color);
+                SelectionStyleSettings.GlobalSettings.AltOptionColor = color;
             }
         }
         /// <summary>
@@ -1034,29 +772,12 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public string TuiBackgroundColor
         {
-            get
-            {
-                try
-                {
-                    return KernelColorTools.GetColor(KernelColorType.TuiBackground).PlainSequence;
-                }
-                catch
-                {
-                    return "0";
-                }
-            }
+            get => KernelColorTools.GetColor(KernelColorType.TuiBackground).PlainSequence;
             set
             {
-                try
-                {
-                    var color = new Color(value);
-                    KernelColorTools.SetColor(KernelColorType.TuiBackground, color);
-                    InteractiveTuiStatus.BackgroundColor = color;
-                }
-                catch (Exception ex)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(KernelColorType.TuiBackground)} [{value}]: {ex.Message}");
-                }
+				var color = new Color(value);
+				KernelColorTools.SetColor(KernelColorType.TuiBackground, color);
+                InteractiveTuiStatus.BackgroundColor = color;
             }
         }
         /// <summary>
@@ -1064,29 +785,12 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public string TuiForegroundColor
         {
-            get
-            {
-                try
-                {
-                    return KernelColorTools.GetColor(KernelColorType.TuiForeground).PlainSequence;
-                }
-                catch
-                {
-                    return "11";
-                }
-            }
+            get => KernelColorTools.GetColor(KernelColorType.TuiForeground).PlainSequence;
             set
             {
-                try
-                {
-                    var color = new Color(value);
-                    KernelColorTools.SetColor(KernelColorType.TuiForeground, color);
-                    InteractiveTuiStatus.ForegroundColor = color;
-                }
-                catch (Exception ex)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(KernelColorType.TuiForeground)} [{value}]: {ex.Message}");
-                }
+                var color = new Color(value);
+                KernelColorTools.SetColor(KernelColorType.TuiBoxForeground, color);
+                InteractiveTuiStatus.ForegroundColor = color;
             }
         }
         /// <summary>
@@ -1094,29 +798,12 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public string TuiPaneBackgroundColor
         {
-            get
-            {
-                try
-                {
-                    return KernelColorTools.GetColor(KernelColorType.TuiPaneBackground).PlainSequence;
-                }
-                catch
-                {
-                    return "0";
-                }
-            }
+            get => KernelColorTools.GetColor(KernelColorType.TuiPaneBackground).PlainSequence;
             set
             {
-                try
-                {
-                    var color = new Color(value);
-                    KernelColorTools.SetColor(KernelColorType.TuiPaneBackground, color);
-                    InteractiveTuiStatus.PaneBackgroundColor = color;
-                }
-                catch (Exception ex)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(KernelColorType.TuiPaneBackground)} [{value}]: {ex.Message}");
-                }
+                var color = new Color(value);
+                KernelColorTools.SetColor(KernelColorType.TuiPaneBackground, color);
+                InteractiveTuiStatus.PaneBackgroundColor = color;
             }
         }
         /// <summary>
@@ -1124,29 +811,12 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public string TuiPaneSeparatorColor
         {
-            get
-            {
-                try
-                {
-                    return KernelColorTools.GetColor(KernelColorType.TuiPaneSeparator).PlainSequence;
-                }
-                catch
-                {
-                    return "2";
-                }
-            }
+            get => KernelColorTools.GetColor(KernelColorType.TuiPaneSeparator).PlainSequence;
             set
             {
-                try
-                {
-                    var color = new Color(value);
-                    KernelColorTools.SetColor(KernelColorType.TuiPaneSeparator, color);
-                    InteractiveTuiStatus.PaneSeparatorColor = color;
-                }
-                catch (Exception ex)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(KernelColorType.TuiPaneSeparator)} [{value}]: {ex.Message}");
-                }
+                var color = new Color(value);
+                KernelColorTools.SetColor(KernelColorType.TuiPaneSeparator, color);
+                InteractiveTuiStatus.PaneSeparatorColor = color;
             }
         }
         /// <summary>
@@ -1154,29 +824,12 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public string TuiPaneSelectedSeparatorColor
         {
-            get
-            {
-                try
-                {
-                    return KernelColorTools.GetColor(KernelColorType.TuiPaneSelectedSeparator).PlainSequence;
-                }
-                catch
-                {
-                    return "10";
-                }
-            }
+            get => KernelColorTools.GetColor(KernelColorType.TuiPaneSelectedSeparator).PlainSequence;
             set
             {
-                try
-                {
-                    var color = new Color(value);
-                    KernelColorTools.SetColor(KernelColorType.TuiPaneSelectedSeparator, color);
-                    InteractiveTuiStatus.PaneSelectedSeparatorColor = color;
-                }
-                catch (Exception ex)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(KernelColorType.TuiPaneSelectedSeparator)} [{value}]: {ex.Message}");
-                }
+                var color = new Color(value);
+                KernelColorTools.SetColor(KernelColorType.TuiPaneSelectedSeparator, color);
+                InteractiveTuiStatus.PaneSelectedSeparatorColor = color;
             }
         }
         /// <summary>
@@ -1184,29 +837,12 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public string TuiPaneSelectedItemForeColor
         {
-            get
-            {
-                try
-                {
-                    return KernelColorTools.GetColor(KernelColorType.TuiPaneSelectedItemFore).PlainSequence;
-                }
-                catch
-                {
-                    return "0";
-                }
-            }
+            get => KernelColorTools.GetColor(KernelColorType.TuiPaneSelectedItemFore).PlainSequence;
             set
             {
-                try
-                {
-                    var color = new Color(value);
-                    KernelColorTools.SetColor(KernelColorType.TuiPaneSelectedItemFore, color);
-                    InteractiveTuiStatus.PaneSelectedItemForeColor = color;
-                }
-                catch (Exception ex)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(KernelColorType.TuiPaneSelectedItemFore)} [{value}]: {ex.Message}");
-                }
+                var color = new Color(value);
+                KernelColorTools.SetColor(KernelColorType.TuiPaneSelectedItemFore, color);
+                InteractiveTuiStatus.PaneSelectedItemForeColor = color;
             }
         }
         /// <summary>
@@ -1214,29 +850,12 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public string TuiPaneSelectedItemBackColor
         {
-            get
-            {
-                try
-                {
-                    return KernelColorTools.GetColor(KernelColorType.TuiPaneSelectedItemBack).PlainSequence;
-                }
-                catch
-                {
-                    return "3";
-                }
-            }
+            get => KernelColorTools.GetColor(KernelColorType.TuiPaneSelectedItemBack).PlainSequence;
             set
             {
-                try
-                {
-                    var color = new Color(value);
-                    KernelColorTools.SetColor(KernelColorType.TuiPaneSelectedItemBack, color);
-                    InteractiveTuiStatus.PaneSelectedItemBackColor = color;
-                }
-                catch (Exception ex)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(KernelColorType.TuiPaneSelectedItemBack)} [{value}]: {ex.Message}");
-                }
+                var color = new Color(value);
+                KernelColorTools.SetColor(KernelColorType.TuiPaneSelectedItemBack, color);
+                InteractiveTuiStatus.PaneSelectedItemBackColor = color;
             }
         }
         /// <summary>
@@ -1244,29 +863,12 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public string TuiPaneItemForeColor
         {
-            get
-            {
-                try
-                {
-                    return KernelColorTools.GetColor(KernelColorType.TuiPaneItemFore).PlainSequence;
-                }
-                catch
-                {
-                    return "3";
-                }
-            }
+            get => KernelColorTools.GetColor(KernelColorType.TuiPaneItemFore).PlainSequence;
             set
             {
-                try
-                {
-                    var color = new Color(value);
-                    KernelColorTools.SetColor(KernelColorType.TuiPaneItemFore, color);
-                    InteractiveTuiStatus.PaneItemForeColor = color;
-                }
-                catch (Exception ex)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(KernelColorType.TuiPaneItemFore)} [{value}]: {ex.Message}");
-                }
+                var color = new Color(value);
+                KernelColorTools.SetColor(KernelColorType.TuiPaneItemFore, color);
+                InteractiveTuiStatus.PaneItemForeColor = color;
             }
         }
         /// <summary>
@@ -1274,29 +876,12 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public string TuiPaneItemBackColor
         {
-            get
-            {
-                try
-                {
-                    return KernelColorTools.GetColor(KernelColorType.TuiPaneItemBack).PlainSequence;
-                }
-                catch
-                {
-                    return "0";
-                }
-            }
+            get => KernelColorTools.GetColor(KernelColorType.TuiPaneItemBack).PlainSequence;
             set
             {
-                try
-                {
-                    var color = new Color(value);
-                    KernelColorTools.SetColor(KernelColorType.TuiPaneItemBack, color);
-                    InteractiveTuiStatus.PaneItemBackColor = color;
-                }
-                catch (Exception ex)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(KernelColorType.TuiPaneItemBack)} [{value}]: {ex.Message}");
-                }
+                var color = new Color(value);
+                KernelColorTools.SetColor(KernelColorType.TuiPaneItemBack, color);
+                InteractiveTuiStatus.PaneItemBackColor = color;
             }
         }
         /// <summary>
@@ -1304,29 +889,12 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public string TuiOptionBackgroundColor
         {
-            get
-            {
-                try
-                {
-                    return KernelColorTools.GetColor(KernelColorType.TuiOptionBackground).PlainSequence;
-                }
-                catch
-                {
-                    return "3";
-                }
-            }
+            get => KernelColorTools.GetColor(KernelColorType.TuiOptionBackground).PlainSequence;
             set
             {
-                try
-                {
-                    var color = new Color(value);
-                    KernelColorTools.SetColor(KernelColorType.TuiOptionBackground, color);
-                    InteractiveTuiStatus.OptionBackgroundColor = color;
-                }
-                catch (Exception ex)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(KernelColorType.TuiOptionBackground)} [{value}]: {ex.Message}");
-                }
+                var color = new Color(value);
+                KernelColorTools.SetColor(KernelColorType.TuiOptionBackground, color);
+                InteractiveTuiStatus.OptionBackgroundColor = color;
             }
         }
         /// <summary>
@@ -1334,29 +902,12 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public string TuiOptionForegroundColor
         {
-            get
-            {
-                try
-                {
-                    return KernelColorTools.GetColor(KernelColorType.TuiOptionForeground).PlainSequence;
-                }
-                catch
-                {
-                    return "11";
-                }
-            }
+            get => KernelColorTools.GetColor(KernelColorType.TuiOptionForeground).PlainSequence;
             set
             {
-                try
-                {
-                    var color = new Color(value);
-                    KernelColorTools.SetColor(KernelColorType.TuiOptionForeground, color);
-                    InteractiveTuiStatus.OptionForegroundColor = color;
-                }
-                catch (Exception ex)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(KernelColorType.TuiOptionForeground)} [{value}]: {ex.Message}");
-                }
+                var color = new Color(value);
+                KernelColorTools.SetColor(KernelColorType.TuiOptionForeground, color);
+                InteractiveTuiStatus.OptionForegroundColor = color;
             }
         }
         /// <summary>
@@ -1364,29 +915,12 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public string TuiKeyBindingOptionColor
         {
-            get
-            {
-                try
-                {
-                    return KernelColorTools.GetColor(KernelColorType.TuiKeyBindingOption).PlainSequence;
-                }
-                catch
-                {
-                    return "0";
-                }
-            }
+            get => KernelColorTools.GetColor(KernelColorType.TuiKeyBindingOption).PlainSequence;
             set
             {
-                try
-                {
-                    var color = new Color(value);
-                    KernelColorTools.SetColor(KernelColorType.TuiKeyBindingOption, color);
-                    InteractiveTuiStatus.KeyBindingOptionColor = color;
-                }
-                catch (Exception ex)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(KernelColorType.TuiKeyBindingOption)} [{value}]: {ex.Message}");
-                }
+                var color = new Color(value);
+                KernelColorTools.SetColor(KernelColorType.TuiKeyBindingOption, color);
+                InteractiveTuiStatus.KeyBindingOptionColor = color;
             }
         }
         /// <summary>
@@ -1394,29 +928,12 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public string TuiBoxBackgroundColor
         {
-            get
-            {
-                try
-                {
-                    return KernelColorTools.GetColor(KernelColorType.TuiBoxBackground).PlainSequence;
-                }
-                catch
-                {
-                    return "9";
-                }
-            }
+            get => KernelColorTools.GetColor(KernelColorType.TuiBoxBackground).PlainSequence;
             set
             {
-                try
-                {
-                    var color = new Color(value);
-                    KernelColorTools.SetColor(KernelColorType.TuiBoxBackground, color);
-                    InteractiveTuiStatus.BoxBackgroundColor = color;
-                }
-                catch (Exception ex)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(KernelColorType.TuiBoxBackground)} [{value}]: {ex.Message}");
-                }
+                var color = new Color(value);
+                KernelColorTools.SetColor(KernelColorType.TuiBoxBackground, color);
+                InteractiveTuiStatus.BoxBackgroundColor = color;
             }
         }
         /// <summary>
@@ -1424,29 +941,12 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public string TuiBoxForegroundColor
         {
-            get
-            {
-                try
-                {
-                    return KernelColorTools.GetColor(KernelColorType.TuiBoxForeground).PlainSequence;
-                }
-                catch
-                {
-                    return "15";
-                }
-            }
+            get => KernelColorTools.GetColor(KernelColorType.TuiBoxForeground).PlainSequence;
             set
             {
-                try
-                {
-                    var color = new Color(value);
-                    KernelColorTools.SetColor(KernelColorType.TuiBoxForeground, color);
-                    InteractiveTuiStatus.BoxForegroundColor = color;
-                }
-                catch (Exception ex)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(KernelColorType.TuiBoxForeground)} [{value}]: {ex.Message}");
-                }
+                var color = new Color(value);
+                KernelColorTools.SetColor(KernelColorType.TuiBoxForeground, color);
+                InteractiveTuiStatus.BoxForegroundColor = color;
             }
         }
         /// <summary>
@@ -1454,29 +954,12 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public string DisabledOptionColor
         {
-            get
-            {
-                try
-                {
-                    return KernelColorTools.GetColor(KernelColorType.DisabledOption).PlainSequence;
-                }
-                catch
-                {
-                    return "8";
-                }
-            }
+            get => KernelColorTools.GetColor(KernelColorType.DisabledOption).PlainSequence;
             set
             {
-                try
-                {
-                    var color = new Color(value);
-                    KernelColorTools.SetColor(KernelColorType.DisabledOption, color);
-                    SelectionStyleSettings.GlobalSettings.DisabledOptionColor = color;
-                }
-                catch (Exception ex)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(KernelColorType.DisabledOption)} [{value}]: {ex.Message}");
-                }
+                var color = new Color(value);
+                KernelColorTools.SetColor(KernelColorType.DisabledOption, color);
+                SelectionStyleSettings.GlobalSettings.DisabledOptionColor = color;
             }
         }
         #endregion
