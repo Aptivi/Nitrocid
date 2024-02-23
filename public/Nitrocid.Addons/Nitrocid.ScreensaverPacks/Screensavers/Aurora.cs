@@ -113,7 +113,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 builder.Append($"{storage.VTSequenceBackground}{new string(' ', ConsoleWrapper.WindowWidth)}");
             }
             if (!ConsoleResizeHandler.WasResized(false))
-                TextWriterColor.Write(builder.ToString());
+                TextWriterRaw.WriteRaw(builder.ToString());
             ConsoleWrapper.SetCursorPosition(0, 0);
             ThreadManager.SleepNoBlock(AuroraSettings.AuroraDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
 
