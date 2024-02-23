@@ -25,8 +25,6 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
 using Nitrocid.Users;
 using System;
-using System.Text;
-using Terminaux.Colors;
 using Textify.General;
 using Terminaux.Base;
 using Terminaux.Reader;
@@ -356,34 +354,6 @@ namespace Nitrocid.Kernel
                 TextWriterColor.Write(Translate.DoTranslation("Press any key to start the shell anyways, but please note that you may have to create your new user manually."));
                 TermReader.ReadKey();
             }
-        }
-
-        private static string RenderBandsForFirstRun()
-        {
-            // Show three color bands
-            var band = new StringBuilder();
-            int times = ConsoleWrapper.WindowWidth - PresentationTools.PresentationUpperInnerBorderLeft * 2 - 1;
-            DebugWriter.WriteDebug(DebugLevel.I, "Band length: {0} cells", times);
-            double threshold = 255 / (double)times;
-            for (double i = 0; i <= times; i++)
-                band.Append($"{new Color(Convert.ToInt32(i * threshold), 0, 0).VTSequenceBackground} ");
-            band.AppendLine();
-            for (double i = 0; i <= times; i++)
-                band.Append($"{new Color(0, Convert.ToInt32(i * threshold), 0).VTSequenceBackground} ");
-            band.AppendLine();
-            for (double i = 0; i <= times; i++)
-                band.Append($"{new Color(0, 0, Convert.ToInt32(i * threshold)).VTSequenceBackground} ");
-            band.AppendLine();
-            band.Append($"{CharManager.GetEsc() + $"[49m"}");
-            band.AppendLine();
-
-            // Now, show the hue band
-            double hueThreshold = 360 / (double)times;
-            for (double h = 0; h <= times; h++)
-                band.Append($"{new Color($"hsl:{Convert.ToInt32(h * hueThreshold)};100;50").VTSequenceBackground} ");
-            band.AppendLine();
-            band.Append($"{CharManager.GetEsc() + $"[49m"}");
-            return band.ToString();
         }
     }
 }
