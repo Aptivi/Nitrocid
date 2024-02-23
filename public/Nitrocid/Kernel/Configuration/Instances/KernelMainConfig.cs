@@ -999,29 +999,12 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public string QuestionColor
         {
-            get
-            {
-                try
-                {
-                    return KernelColorTools.GetColor(KernelColorType.Question).PlainSequence;
-                }
-                catch
-                {
-                    return "11";
-                }
-            }
+            get => KernelColorTools.GetColor(KernelColorType.Question).PlainSequence;
             set
             {
-                try
-                {
-                    var color = new Color(value);
-                    KernelColorTools.SetColor(KernelColorType.Question, color);
-                    SelectionStyleSettings.GlobalSettings.QuestionColor = color;
-                }
-                catch (Exception ex)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(KernelColorType.Question)} [{value}]: {ex.Message}");
-                }
+                var color = new Color(value);
+                KernelColorTools.SetColor(KernelColorType.Question, color);
+                SelectionStyleSettings.GlobalSettings.QuestionColor = color;
             }
         }
         /// <summary>
