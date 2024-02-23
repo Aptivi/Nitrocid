@@ -76,7 +76,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             set
             {
                 if (value <= 0)
-                    value = 1;
+                    value = 100;
                 ScreensaverPackInit.SaversConfig.BarWaveDelay = value;
             }
         }

@@ -2231,7 +2231,7 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// <summary>
         /// [BarWave] How many milliseconds to wait before making the next write?
         /// </summary>
-        public int BarWaveDelay { get; set; } = 1;
+        public int BarWaveDelay { get; set; } = 100;
         /// <summary>
         /// [BarWave] The level of the frequency. This is the denominator of the Pi value (3.1415926...) in mathematics, defined by <see cref="Math.PI"/>.
         /// </summary>
