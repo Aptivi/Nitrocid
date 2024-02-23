@@ -662,7 +662,6 @@ namespace Nitrocid.Shell.ShellBase.Shells
             if (ShellStack.Count >= 1)
             {
                 // The shell stack has a mother shell. Start another shell.
-                ConsoleMisc.SetTitle(KernelReleaseInfo.ConsoleTitle);
                 StartShellInternal(ShellType, ShellArgs);
             }
             else
@@ -872,7 +871,8 @@ namespace Nitrocid.Shell.ShellBase.Shells
                 if (!histories.ContainsKey(ShellType))
                     histories.Add(ShellType, []);
 
-                // Initialize shell
+                // Reset title in case we're going to another shell
+                ConsoleMisc.SetTitle(KernelReleaseInfo.ConsoleTitle);
                 ShellExecute.InitializeShell(ShellArgs);
             }
             catch (Exception ex)
