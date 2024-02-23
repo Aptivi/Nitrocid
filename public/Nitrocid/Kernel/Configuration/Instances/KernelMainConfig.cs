@@ -403,7 +403,17 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public bool AllowForegroundColor
         {
-            get => KernelColorTools.allowForeground;
+            get
+            {
+                try
+                {
+                    return KernelColorTools.allowForeground;
+                }
+                catch
+                {
+                    return true;
+                }
+            }
             set
             {
                 try
@@ -422,7 +432,17 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public bool AllowBackgroundColor
         {
-            get => KernelColorTools.allowBackground;
+            get
+            {
+                try
+                {
+                    return KernelColorTools.allowBackground;
+                }
+                catch
+                {
+                    return true;
+                }
+            }
             set
             {
                 try
