@@ -49,7 +49,6 @@ using Nitrocid.Network.Types.RPC;
 using Nitrocid.Network;
 using Terminaux.Inputs.Styles.Selection;
 using Terminaux.Inputs.Interactive;
-using Nitrocid.Kernel.Debugging;
 
 namespace Nitrocid.Kernel.Configuration.Instances
 {
@@ -144,84 +143,24 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public bool ColorBlind
         {
-            get
-            {
-                try
-                {
-                    return ColorTools.GlobalSettings.EnableColorTransformation;
-                }
-                catch
-                {
-                    return false;
-                }
-            }
-            set
-            {
-                try
-                {
-                    ColorTools.GlobalSettings.EnableColorTransformation = value;
-                }
-                catch (Exception ex)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to enable/disable {nameof(ColorTools.GlobalSettings.EnableColorTransformation)} [{value}]: {ex.Message}");
-                }
-            }
+            get => ColorTools.GlobalSettings.EnableColorTransformation;
+            set => ColorTools.GlobalSettings.EnableColorTransformation = value;
         }
         /// <summary>
         /// The type of color blindness, whether it's protan, deuter, or tritan.
         /// </summary>
         public int BlindnessTransformationFormula
         {
-            get
-            {
-                try
-                {
-                    return (int)ColorTools.GlobalSettings.ColorTransformationFormula;
-                }
-                catch
-                {
-                    return (int)TransformationFormula.Deutan;
-                }
-            }
-            set
-            {
-                try
-                {
-                    ColorTools.GlobalSettings.ColorTransformationFormula = (TransformationFormula)value;
-                }
-                catch (Exception ex)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to enable/disable {nameof(ColorTools.GlobalSettings.ColorTransformationFormula)} [{value}]: {ex.Message}");
-                }
-            }
+            get => (int)ColorTools.GlobalSettings.ColorTransformationFormula;
+            set => ColorTools.GlobalSettings.ColorTransformationFormula = (TransformationFormula)value;
         }
         /// <summary>
         /// How severe is the color blindness?
         /// </summary>
         public double BlindnessSeverity
         {
-            get
-            {
-                try
-                {
-                    return ColorTools.GlobalSettings.ColorBlindnessSeverity;
-                }
-                catch
-                {
-                    return 0.6d;
-                }
-            }
-            set
-            {
-                try
-                {
-                    ColorTools.GlobalSettings.ColorBlindnessSeverity = value;
-                }
-                catch (Exception ex)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to enable/disable {nameof(ColorTools.GlobalSettings.ColorBlindnessSeverity)} [{value}]: {ex.Message}");
-                }
-            }
+            get => ColorTools.GlobalSettings.ColorBlindnessSeverity;
+            set => ColorTools.GlobalSettings.ColorBlindnessSeverity = value;
         }
         /// <summary>
         /// Enables beeping upon shutting down the kernel.
@@ -236,28 +175,8 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public bool ColorBlindSimple
         {
-            get
-            {
-                try
-                {
-                    return ColorTools.GlobalSettings.ColorTransformationMethod == TransformationMethod.Vienot1999;
-                }
-                catch
-                {
-                    return false;
-                }
-            }
-            set
-            {
-                try
-                {
-                    ColorTools.GlobalSettings.ColorTransformationMethod = value ? TransformationMethod.Vienot1999 : TransformationMethod.Brettel1997;
-                }
-                catch (Exception ex)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to enable/disable {nameof(ColorTools.GlobalSettings.ColorTransformationMethod)} [{value}]: {ex.Message}");
-                }
-            }
+            get => ColorTools.GlobalSettings.ColorTransformationMethod == TransformationMethod.Vienot1999;
+            set => ColorTools.GlobalSettings.ColorTransformationMethod = value ? TransformationMethod.Vienot1999 : TransformationMethod.Brettel1997;
         }
         /// <summary>
         /// If you are sure that the console supports true color, or if you want to change your terminal to a terminal that supports true color, change this value.
@@ -335,28 +254,8 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public bool UseConsoleColorPalette
         {
-            get
-            {
-                try
-                {
-                    return ColorTools.GlobalSettings.UseTerminalPalette;
-                }
-                catch
-                {
-                    return true;
-                }
-            }
-            set
-            {
-                try
-                {
-                    ColorTools.GlobalSettings.UseTerminalPalette = value;
-                }
-                catch (Exception ex)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to enable/disable {nameof(ColorTools.GlobalSettings.UseTerminalPalette)} [{value}]: {ex.Message}");
-                }
-            }
+            get => ColorTools.GlobalSettings.UseTerminalPalette;
+            set => ColorTools.GlobalSettings.UseTerminalPalette = value;
         }
         /// <summary>
         /// Whether to allow foreground color
@@ -366,15 +265,8 @@ namespace Nitrocid.Kernel.Configuration.Instances
             get => KernelColorTools.allowForeground;
             set
             {
-                try
-                {
-                    KernelColorTools.allowForeground = value;
-                    ColorTools.AllowForeground = KernelColorTools.allowForeground;
-                }
-                catch (Exception ex)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to enable/disable {nameof(ColorTools.AllowForeground)} [{value}]: {ex.Message}");
-                }
+                KernelColorTools.allowForeground = value;
+                ColorTools.AllowForeground = KernelColorTools.allowForeground;
             }
         }
         /// <summary>
@@ -385,15 +277,8 @@ namespace Nitrocid.Kernel.Configuration.Instances
             get => KernelColorTools.allowBackground;
             set
             {
-                try
-                {
-                    KernelColorTools.allowBackground = value;
-                    ColorTools.AllowBackground = KernelColorTools.allowBackground;
-                }
-                catch (Exception ex)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to enable/disable {nameof(ColorTools.AllowBackground)} [{value}]: {ex.Message}");
-                }
+                KernelColorTools.allowBackground = value;
+                ColorTools.AllowBackground = KernelColorTools.allowBackground;
             }
         }
         /// <summary>
