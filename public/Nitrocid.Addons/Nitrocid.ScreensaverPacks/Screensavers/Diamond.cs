@@ -119,7 +119,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                         // Determine the color by draw mode
                         var finalColor = drawingEdge ? selectedColor : colorShaded;
-                        buffer.Append(TextWriterWhereColor.RenderWhere(" ", left, top, Color.Empty, finalColor));
+                        buffer.Append(TextWriterWhereColor.RenderWhereColorBack(" ", left, top, Color.Empty, finalColor));
                     }
                 }
 
@@ -135,7 +135,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                         // Determine the color by draw mode
                         var finalColor = drawingEdge ? selectedColor : colorShaded;
-                        buffer.Append(TextWriterWhereColor.RenderWhere(" ", left, top, Color.Empty, finalColor));
+                        buffer.Append(TextWriterWhereColor.RenderWhereColorBack(" ", left, top, Color.Empty, finalColor));
                     }
                 }
 
@@ -204,24 +204,24 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     Color colCenter = new((int)currentCenterR, (int)currentCenterG, (int)currentCenterB);
                     Color colRest = new((int)currentRestR, (int)currentRestG, (int)currentRestB);
                     buffer.Append(
-                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX, shinePlaceY, Color.Empty, colCenter) +
-                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX, shinePlaceY + 1, Color.Empty, colBottom) +
-                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX, shinePlaceY + 2, Color.Empty, colBottom) +
-                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX, shinePlaceY - 1, Color.Empty, colRest) +
-                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX, shinePlaceY - 2, Color.Empty, colRest) +
-                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX - 1, shinePlaceY, Color.Empty, colRest) +
-                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX - 2, shinePlaceY, Color.Empty, colRest) +
-                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX + 1, shinePlaceY, Color.Empty, colRest) +
-                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX + 2, shinePlaceY, Color.Empty, colRest) +
-                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX2, shinePlaceY2, Color.Empty, colCenter) +
-                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX2, shinePlaceY2 + 1, Color.Empty, colRest) +
-                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX2, shinePlaceY2 + 2, Color.Empty, colRest) +
-                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX2, shinePlaceY2 - 1, Color.Empty, colRest) +
-                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX2, shinePlaceY2 - 2, Color.Empty, colRest) +
-                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX2 - 1, shinePlaceY2, Color.Empty, colRest) +
-                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX2 - 2, shinePlaceY2, Color.Empty, colRest) +
-                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX2 + 1, shinePlaceY2, Color.Empty, colBottom) +
-                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX2 + 2, shinePlaceY2, Color.Empty, colBottom)
+                        TextWriterWhereColor.RenderWhereColorBack(" ", shinePlaceX, shinePlaceY, Color.Empty, colCenter) +
+                        TextWriterWhereColor.RenderWhereColorBack(" ", shinePlaceX, shinePlaceY + 1, Color.Empty, colBottom) +
+                        TextWriterWhereColor.RenderWhereColorBack(" ", shinePlaceX, shinePlaceY + 2, Color.Empty, colBottom) +
+                        TextWriterWhereColor.RenderWhereColorBack(" ", shinePlaceX, shinePlaceY - 1, Color.Empty, colRest) +
+                        TextWriterWhereColor.RenderWhereColorBack(" ", shinePlaceX, shinePlaceY - 2, Color.Empty, colRest) +
+                        TextWriterWhereColor.RenderWhereColorBack(" ", shinePlaceX - 1, shinePlaceY, Color.Empty, colRest) +
+                        TextWriterWhereColor.RenderWhereColorBack(" ", shinePlaceX - 2, shinePlaceY, Color.Empty, colRest) +
+                        TextWriterWhereColor.RenderWhereColorBack(" ", shinePlaceX + 1, shinePlaceY, Color.Empty, colRest) +
+                        TextWriterWhereColor.RenderWhereColorBack(" ", shinePlaceX + 2, shinePlaceY, Color.Empty, colRest) +
+                        TextWriterWhereColor.RenderWhereColorBack(" ", shinePlaceX2, shinePlaceY2, Color.Empty, colCenter) +
+                        TextWriterWhereColor.RenderWhereColorBack(" ", shinePlaceX2, shinePlaceY2 + 1, Color.Empty, colRest) +
+                        TextWriterWhereColor.RenderWhereColorBack(" ", shinePlaceX2, shinePlaceY2 + 2, Color.Empty, colRest) +
+                        TextWriterWhereColor.RenderWhereColorBack(" ", shinePlaceX2, shinePlaceY2 - 1, Color.Empty, colRest) +
+                        TextWriterWhereColor.RenderWhereColorBack(" ", shinePlaceX2, shinePlaceY2 - 2, Color.Empty, colRest) +
+                        TextWriterWhereColor.RenderWhereColorBack(" ", shinePlaceX2 - 1, shinePlaceY2, Color.Empty, colRest) +
+                        TextWriterWhereColor.RenderWhereColorBack(" ", shinePlaceX2 - 2, shinePlaceY2, Color.Empty, colRest) +
+                        TextWriterWhereColor.RenderWhereColorBack(" ", shinePlaceX2 + 1, shinePlaceY2, Color.Empty, colBottom) +
+                        TextWriterWhereColor.RenderWhereColorBack(" ", shinePlaceX2 + 2, shinePlaceY2, Color.Empty, colBottom)
                     );
 
                     // Now, write the diamond buffer
@@ -252,24 +252,24 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     Color colCenter = new((int)currentCenterR, (int)currentCenterG, (int)currentCenterB);
                     Color colRest = new((int)currentRestR, (int)currentRestG, (int)currentRestB);
                     buffer.Append(
-                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX, shinePlaceY, Color.Empty, colCenter) +
-                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX, shinePlaceY + 1, Color.Empty, colBottom) +
-                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX, shinePlaceY + 2, Color.Empty, colBottom) +
-                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX, shinePlaceY - 1, Color.Empty, colRest) +
-                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX, shinePlaceY - 2, Color.Empty, colRest) +
-                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX - 1, shinePlaceY, Color.Empty, colRest) +
-                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX - 2, shinePlaceY, Color.Empty, colRest) +
-                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX + 1, shinePlaceY, Color.Empty, colRest) +
-                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX + 2, shinePlaceY, Color.Empty, colRest) +
-                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX2, shinePlaceY2, Color.Empty, colCenter) +
-                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX2, shinePlaceY2 + 1, Color.Empty, colRest) +
-                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX2, shinePlaceY2 + 2, Color.Empty, colRest) +
-                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX2, shinePlaceY2 - 1, Color.Empty, colRest) +
-                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX2, shinePlaceY2 - 2, Color.Empty, colRest) +
-                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX2 - 1, shinePlaceY2, Color.Empty, colRest) +
-                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX2 - 2, shinePlaceY2, Color.Empty, colRest) +
-                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX2 + 1, shinePlaceY2, Color.Empty, colBottom) +
-                        TextWriterWhereColor.RenderWhere(" ", shinePlaceX2 + 2, shinePlaceY2, Color.Empty, colBottom)
+                        TextWriterWhereColor.RenderWhereColorBack(" ", shinePlaceX, shinePlaceY, Color.Empty, colCenter) +
+                        TextWriterWhereColor.RenderWhereColorBack(" ", shinePlaceX, shinePlaceY + 1, Color.Empty, colBottom) +
+                        TextWriterWhereColor.RenderWhereColorBack(" ", shinePlaceX, shinePlaceY + 2, Color.Empty, colBottom) +
+                        TextWriterWhereColor.RenderWhereColorBack(" ", shinePlaceX, shinePlaceY - 1, Color.Empty, colRest) +
+                        TextWriterWhereColor.RenderWhereColorBack(" ", shinePlaceX, shinePlaceY - 2, Color.Empty, colRest) +
+                        TextWriterWhereColor.RenderWhereColorBack(" ", shinePlaceX - 1, shinePlaceY, Color.Empty, colRest) +
+                        TextWriterWhereColor.RenderWhereColorBack(" ", shinePlaceX - 2, shinePlaceY, Color.Empty, colRest) +
+                        TextWriterWhereColor.RenderWhereColorBack(" ", shinePlaceX + 1, shinePlaceY, Color.Empty, colRest) +
+                        TextWriterWhereColor.RenderWhereColorBack(" ", shinePlaceX + 2, shinePlaceY, Color.Empty, colRest) +
+                        TextWriterWhereColor.RenderWhereColorBack(" ", shinePlaceX2, shinePlaceY2, Color.Empty, colCenter) +
+                        TextWriterWhereColor.RenderWhereColorBack(" ", shinePlaceX2, shinePlaceY2 + 1, Color.Empty, colRest) +
+                        TextWriterWhereColor.RenderWhereColorBack(" ", shinePlaceX2, shinePlaceY2 + 2, Color.Empty, colRest) +
+                        TextWriterWhereColor.RenderWhereColorBack(" ", shinePlaceX2, shinePlaceY2 - 1, Color.Empty, colRest) +
+                        TextWriterWhereColor.RenderWhereColorBack(" ", shinePlaceX2, shinePlaceY2 - 2, Color.Empty, colRest) +
+                        TextWriterWhereColor.RenderWhereColorBack(" ", shinePlaceX2 - 1, shinePlaceY2, Color.Empty, colRest) +
+                        TextWriterWhereColor.RenderWhereColorBack(" ", shinePlaceX2 - 2, shinePlaceY2, Color.Empty, colRest) +
+                        TextWriterWhereColor.RenderWhereColorBack(" ", shinePlaceX2 + 1, shinePlaceY2, Color.Empty, colBottom) +
+                        TextWriterWhereColor.RenderWhereColorBack(" ", shinePlaceX2 + 2, shinePlaceY2, Color.Empty, colBottom)
                     );
 
                     // Now, write the diamond buffer
