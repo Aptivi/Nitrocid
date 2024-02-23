@@ -689,40 +689,140 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public string ListEntryColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.ListEntry).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.ListEntry, new Color(value));
+            get
+            {
+                try
+                {
+                    return KernelColorTools.GetColor(KernelColorType.ListEntry).PlainSequence;
+                }
+                catch
+                {
+                    return "3";
+                }
+            }
+            set
+            {
+                try
+                {
+                    KernelColorTools.SetColor(KernelColorType.ListEntry, new Color(value));
+                }
+                catch (Exception ex)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(KernelColorType.ListEntry)} [{value}]: {ex.Message}");
+                }
+            }
         }
         /// <summary>
         /// List Value Color
         /// </summary>
         public string ListValueColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.ListValue).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.ListValue, new Color(value));
+            get
+            {
+                try
+                {
+                    return KernelColorTools.GetColor(KernelColorType.ListValue).PlainSequence;
+                }
+                catch
+                {
+                    return "8";
+                }
+            }
+            set
+            {
+                try
+                {
+                    KernelColorTools.SetColor(KernelColorType.ListValue, new Color(value));
+                }
+                catch (Exception ex)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(KernelColorType.ListValue)} [{value}]: {ex.Message}");
+                }
+            }
         }
         /// <summary>
         /// Kernel Stage Color
         /// </summary>
         public string KernelStageColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.Stage).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.Stage, new Color(value));
+            get
+            {
+                try
+                {
+                    return KernelColorTools.GetColor(KernelColorType.Stage).PlainSequence;
+                }
+                catch
+                {
+                    return "10";
+                }
+            }
+            set
+            {
+                try
+                {
+                    KernelColorTools.SetColor(KernelColorType.Stage, new Color(value));
+                }
+                catch (Exception ex)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(KernelColorType.Stage)} [{value}]: {ex.Message}");
+                }
+            }
         }
         /// <summary>
         /// Error Text Color
         /// </summary>
         public string ErrorTextColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.Error).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.Error, new Color(value));
+            get
+            {
+                try
+                {
+                    return KernelColorTools.GetColor(KernelColorType.Error).PlainSequence;
+                }
+                catch
+                {
+                    return "9";
+                }
+            }
+            set
+            {
+                try
+                {
+                    KernelColorTools.SetColor(KernelColorType.Error, new Color(value));
+                }
+                catch (Exception ex)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(KernelColorType.Error)} [{value}]: {ex.Message}");
+                }
+            }
         }
         /// <summary>
         /// Warning Text Color
         /// </summary>
         public string WarningTextColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.Warning).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.Warning, new Color(value));
+            get
+            {
+                try
+                {
+                    return KernelColorTools.GetColor(KernelColorType.Warning).PlainSequence;
+                }
+                catch
+                {
+                    return "11";
+                }
+            }
+            set
+            {
+                try
+                {
+                    KernelColorTools.SetColor(KernelColorType.Warning, new Color(value));
+                }
+                catch (Exception ex)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(KernelColorType.Warning)} [{value}]: {ex.Message}");
+                }
+            }
         }
         /// <summary>
         /// Option Color
@@ -759,40 +859,140 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public string BannerColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.Banner).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.Banner, new Color(value));
+            get
+            {
+                try
+                {
+                    return KernelColorTools.GetColor(KernelColorType.Banner).PlainSequence;
+                }
+                catch
+                {
+                    return "10";
+                }
+            }
+            set
+            {
+                try
+                {
+                    KernelColorTools.SetColor(KernelColorType.Banner, new Color(value));
+                }
+                catch (Exception ex)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(KernelColorType.Banner)} [{value}]: {ex.Message}");
+                }
+            }
         }
         /// <summary>
         /// Notification Title Color
         /// </summary>
         public string NotificationTitleColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.NotificationTitle).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.NotificationTitle, new Color(value));
+            get
+            {
+                try
+                {
+                    return KernelColorTools.GetColor(KernelColorType.NotificationTitle).PlainSequence;
+                }
+                catch
+                {
+                    return "10";
+                }
+            }
+            set
+            {
+                try
+                {
+                    KernelColorTools.SetColor(KernelColorType.NotificationTitle, new Color(value));
+                }
+                catch (Exception ex)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(KernelColorType.NotificationTitle)} [{value}]: {ex.Message}");
+                }
+            }
         }
         /// <summary>
         /// Notification Description Color
         /// </summary>
         public string NotificationDescriptionColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.NotificationDescription).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.NotificationDescription, new Color(value));
+            get
+            {
+                try
+                {
+                    return KernelColorTools.GetColor(KernelColorType.NotificationDescription).PlainSequence;
+                }
+                catch
+                {
+                    return "7";
+                }
+            }
+            set
+            {
+                try
+                {
+                    KernelColorTools.SetColor(KernelColorType.NotificationDescription, new Color(value));
+                }
+                catch (Exception ex)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(KernelColorType.NotificationDescription)} [{value}]: {ex.Message}");
+                }
+            }
         }
         /// <summary>
         /// Notification Progress Color
         /// </summary>
         public string NotificationProgressColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.NotificationProgress).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.NotificationProgress, new Color(value));
+            get
+            {
+                try
+                {
+                    return KernelColorTools.GetColor(KernelColorType.NotificationProgress).PlainSequence;
+                }
+                catch
+                {
+                    return "3";
+                }
+            }
+            set
+            {
+                try
+                {
+                    KernelColorTools.SetColor(KernelColorType.NotificationProgress, new Color(value));
+                }
+                catch (Exception ex)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(KernelColorType.NotificationProgress)} [{value}]: {ex.Message}");
+                }
+            }
         }
         /// <summary>
         /// Notification Failure Color
         /// </summary>
         public string NotificationFailureColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.NotificationFailure).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.NotificationFailure, new Color(value));
+            get
+            {
+                try
+                {
+                    return KernelColorTools.GetColor(KernelColorType.NotificationFailure).PlainSequence;
+                }
+                catch
+                {
+                    return "9";
+                }
+            }
+            set
+            {
+                try
+                {
+                    KernelColorTools.SetColor(KernelColorType.NotificationFailure, new Color(value));
+                }
+                catch (Exception ex)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(KernelColorType.NotificationFailure)} [{value}]: {ex.Message}");
+                }
+            }
         }
         /// <summary>
         /// Question Color
@@ -812,32 +1012,112 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public string SuccessColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.Success).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.Success, new Color(value));
+            get
+            {
+                try
+                {
+                    return KernelColorTools.GetColor(KernelColorType.Success).PlainSequence;
+                }
+                catch
+                {
+                    return "10";
+                }
+            }
+            set
+            {
+                try
+                {
+                    KernelColorTools.SetColor(KernelColorType.Success, new Color(value));
+                }
+                catch (Exception ex)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(KernelColorType.Success)} [{value}]: {ex.Message}");
+                }
+            }
         }
         /// <summary>
         /// User Dollar Color
         /// </summary>
         public string UserDollarColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.UserDollar).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.UserDollar, new Color(value));
+            get
+            {
+                try
+                {
+                    return KernelColorTools.GetColor(KernelColorType.UserDollar).PlainSequence;
+                }
+                catch
+                {
+                    return "7";
+                }
+            }
+            set
+            {
+                try
+                {
+                    KernelColorTools.SetColor(KernelColorType.UserDollar, new Color(value));
+                }
+                catch (Exception ex)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(KernelColorType.UserDollar)} [{value}]: {ex.Message}");
+                }
+            }
         }
         /// <summary>
         /// Tip Color
         /// </summary>
         public string TipColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.Tip).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.Tip, new Color(value));
+            get
+            {
+                try
+                {
+                    return KernelColorTools.GetColor(KernelColorType.Tip).PlainSequence;
+                }
+                catch
+                {
+                    return "11";
+                }
+            }
+            set
+            {
+                try
+                {
+                    KernelColorTools.SetColor(KernelColorType.Tip, new Color(value));
+                }
+                catch (Exception ex)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(KernelColorType.Tip)} [{value}]: {ex.Message}");
+                }
+            }
         }
         /// <summary>
         /// Separator Text Color
         /// </summary>
         public string SeparatorTextColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.SeparatorText).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.SeparatorText, new Color(value));
+            get
+            {
+                try
+                {
+                    return KernelColorTools.GetColor(KernelColorType.SeparatorText).PlainSequence;
+                }
+                catch
+                {
+                    return "15";
+                }
+            }
+            set
+            {
+                try
+                {
+                    KernelColorTools.SetColor(KernelColorType.SeparatorText, new Color(value));
+                }
+                catch (Exception ex)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(KernelColorType.SeparatorText)} [{value}]: {ex.Message}");
+                }
+            }
         }
         /// <summary>
         /// Separator Color
@@ -874,88 +1154,308 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public string ListTitleColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.ListTitle).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.ListTitle, new Color(value));
+            get
+            {
+                try
+                {
+                    return KernelColorTools.GetColor(KernelColorType.ListTitle).PlainSequence;
+                }
+                catch
+                {
+                    return "15";
+                }
+            }
+            set
+            {
+                try
+                {
+                    KernelColorTools.SetColor(KernelColorType.ListTitle, new Color(value));
+                }
+                catch (Exception ex)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(KernelColorType.ListTitle)} [{value}]: {ex.Message}");
+                }
+            }
         }
         /// <summary>
         /// Development Warning Color
         /// </summary>
         public string DevelopmentWarningColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.DevelopmentWarning).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.DevelopmentWarning, new Color(value));
+            get
+            {
+                try
+                {
+                    return KernelColorTools.GetColor(KernelColorType.DevelopmentWarning).PlainSequence;
+                }
+                catch
+                {
+                    return "11";
+                }
+            }
+            set
+            {
+                try
+                {
+                    KernelColorTools.SetColor(KernelColorType.DevelopmentWarning, new Color(value));
+                }
+                catch (Exception ex)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(KernelColorType.DevelopmentWarning)} [{value}]: {ex.Message}");
+                }
+            }
         }
         /// <summary>
         /// Stage Time Color
         /// </summary>
         public string StageTimeColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.StageTime).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.StageTime, new Color(value));
+            get
+            {
+                try
+                {
+                    return KernelColorTools.GetColor(KernelColorType.StageTime).PlainSequence;
+                }
+                catch
+                {
+                    return "7";
+                }
+            }
+            set
+            {
+                try
+                {
+                    KernelColorTools.SetColor(KernelColorType.StageTime, new Color(value));
+                }
+                catch (Exception ex)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(KernelColorType.StageTime)} [{value}]: {ex.Message}");
+                }
+            }
         }
         /// <summary>
         /// Progress Color
         /// </summary>
         public string ProgressColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.Progress).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.Progress, new Color(value));
+            get
+            {
+                try
+                {
+                    return KernelColorTools.GetColor(KernelColorType.Progress).PlainSequence;
+                }
+                catch
+                {
+                    return "3";
+                }
+            }
+            set
+            {
+                try
+                {
+                    KernelColorTools.SetColor(KernelColorType.Progress, new Color(value));
+                }
+                catch (Exception ex)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(KernelColorType.Progress)} [{value}]: {ex.Message}");
+                }
+            }
         }
         /// <summary>
         /// Back Option Color
         /// </summary>
         public string BackOptionColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.BackOption).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.BackOption, new Color(value));
+            get
+            {
+                try
+                {
+                    return KernelColorTools.GetColor(KernelColorType.BackOption).PlainSequence;
+                }
+                catch
+                {
+                    return "1";
+                }
+            }
+            set
+            {
+                try
+                {
+                    KernelColorTools.SetColor(KernelColorType.BackOption, new Color(value));
+                }
+                catch (Exception ex)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(KernelColorType.BackOption)} [{value}]: {ex.Message}");
+                }
+            }
         }
         /// <summary>
         /// Low Priority Border Color
         /// </summary>
         public string LowPriorityBorderColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.LowPriorityBorder).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.LowPriorityBorder, new Color(value));
+            get
+            {
+                try
+                {
+                    return KernelColorTools.GetColor(KernelColorType.LowPriorityBorder).PlainSequence;
+                }
+                catch
+                {
+                    return "15";
+                }
+            }
+            set
+            {
+                try
+                {
+                    KernelColorTools.SetColor(KernelColorType.LowPriorityBorder, new Color(value));
+                }
+                catch (Exception ex)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(KernelColorType.LowPriorityBorder)} [{value}]: {ex.Message}");
+                }
+            }
         }
         /// <summary>
         /// Medium Priority Border Color
         /// </summary>
         public string MediumPriorityBorderColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.MediumPriorityBorder).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.MediumPriorityBorder, new Color(value));
+            get
+            {
+                try
+                {
+                    return KernelColorTools.GetColor(KernelColorType.MediumPriorityBorder).PlainSequence;
+                }
+                catch
+                {
+                    return "11";
+                }
+            }
+            set
+            {
+                try
+                {
+                    KernelColorTools.SetColor(KernelColorType.MediumPriorityBorder, new Color(value));
+                }
+                catch (Exception ex)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(KernelColorType.MediumPriorityBorder)} [{value}]: {ex.Message}");
+                }
+            }
         }
         /// <summary>
         /// High Priority Border Color
         /// </summary>
         public string HighPriorityBorderColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.HighPriorityBorder).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.HighPriorityBorder, new Color(value));
+            get
+            {
+                try
+                {
+                    return KernelColorTools.GetColor(KernelColorType.HighPriorityBorder).PlainSequence;
+                }
+                catch
+                {
+                    return "9";
+                }
+            }
+            set
+            {
+                try
+                {
+                    KernelColorTools.SetColor(KernelColorType.HighPriorityBorder, new Color(value));
+                }
+                catch (Exception ex)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(KernelColorType.HighPriorityBorder)} [{value}]: {ex.Message}");
+                }
+            }
         }
         /// <summary>
         /// Table Separator Color
         /// </summary>
         public string TableSeparatorColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.TableSeparator).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.TableSeparator, new Color(value));
+            get
+            {
+                try
+                {
+                    return KernelColorTools.GetColor(KernelColorType.TableSeparator).PlainSequence;
+                }
+                catch
+                {
+                    return "8";
+                }
+            }
+            set
+            {
+                try
+                {
+                    KernelColorTools.SetColor(KernelColorType.TableSeparator, new Color(value));
+                }
+                catch (Exception ex)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(KernelColorType.TableSeparator)} [{value}]: {ex.Message}");
+                }
+            }
         }
         /// <summary>
         /// Table Header Color
         /// </summary>
         public string TableHeaderColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.TableHeader).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.TableHeader, new Color(value));
+            get
+            {
+                try
+                {
+                    return KernelColorTools.GetColor(KernelColorType.TableHeader).PlainSequence;
+                }
+                catch
+                {
+                    return "15";
+                }
+            }
+            set
+            {
+                try
+                {
+                    KernelColorTools.SetColor(KernelColorType.TableHeader, new Color(value));
+                }
+                catch (Exception ex)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(KernelColorType.TableHeader)} [{value}]: {ex.Message}");
+                }
+            }
         }
         /// <summary>
         /// Table Value Color
         /// </summary>
         public string TableValueColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.TableValue).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.TableValue, new Color(value));
+            get
+            {
+                try
+                {
+                    return KernelColorTools.GetColor(KernelColorType.TableValue).PlainSequence;
+                }
+                catch
+                {
+                    return "7";
+                }
+            }
+            set
+            {
+                try
+                {
+                    KernelColorTools.SetColor(KernelColorType.TableValue, new Color(value));
+                }
+                catch (Exception ex)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(KernelColorType.TableValue)} [{value}]: {ex.Message}");
+                }
+            }
         }
         /// <summary>
         /// Selected Option Color
@@ -1022,32 +1522,112 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public string WeekendDayColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.WeekendDay).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.WeekendDay, new Color(value));
+            get
+            {
+                try
+                {
+                    return KernelColorTools.GetColor(KernelColorType.WeekendDay).PlainSequence;
+                }
+                catch
+                {
+                    return "14";
+                }
+            }
+            set
+            {
+                try
+                {
+                    KernelColorTools.SetColor(KernelColorType.WeekendDay, new Color(value));
+                }
+                catch (Exception ex)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(KernelColorType.WeekendDay)} [{value}]: {ex.Message}");
+                }
+            }
         }
         /// <summary>
         /// Event Day Color
         /// </summary>
         public string EventDayColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.EventDay).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.EventDay, new Color(value));
+            get
+            {
+                try
+                {
+                    return KernelColorTools.GetColor(KernelColorType.EventDay).PlainSequence;
+                }
+                catch
+                {
+                    return "14";
+                }
+            }
+            set
+            {
+                try
+                {
+                    KernelColorTools.SetColor(KernelColorType.EventDay, new Color(value));
+                }
+                catch (Exception ex)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(KernelColorType.EventDay)} [{value}]: {ex.Message}");
+                }
+            }
         }
         /// <summary>
         /// Table Title Color
         /// </summary>
         public string TableTitleColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.TableTitle).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.TableTitle, new Color(value));
+            get
+            {
+                try
+                {
+                    return KernelColorTools.GetColor(KernelColorType.TableTitle).PlainSequence;
+                }
+                catch
+                {
+                    return "14";
+                }
+            }
+            set
+            {
+                try
+                {
+                    KernelColorTools.SetColor(KernelColorType.TableTitle, new Color(value));
+                }
+                catch (Exception ex)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(KernelColorType.TableTitle)} [{value}]: {ex.Message}");
+                }
+            }
         }
         /// <summary>
         /// Today Day Color
         /// </summary>
         public string TodayDayColor
         {
-            get => KernelColorTools.GetColor(KernelColorType.TodayDay).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.TodayDay, new Color(value));
+            get
+            {
+                try
+                {
+                    return KernelColorTools.GetColor(KernelColorType.TodayDay).PlainSequence;
+                }
+                catch
+                {
+                    return "10";
+                }
+            }
+            set
+            {
+                try
+                {
+                    KernelColorTools.SetColor(KernelColorType.TodayDay, new Color(value));
+                }
+                catch (Exception ex)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, $"Failed to set {nameof(KernelColorType.TodayDay)} [{value}]: {ex.Message}");
+                }
+            }
         }
         /// <summary>
         /// Interactive TUI background color
