@@ -150,6 +150,11 @@ namespace Nitrocid.Users.Login
             // Prompts user to enter a user's password
             while (!PowerManager.RebootRequested && !PowerManager.KernelShutdown)
             {
+                // Sanity check...
+                string handlerName = LoginHandlerTools.CurrentHandlerName;
+                var handler = LoginHandlerTools.GetHandler(handlerName) ??
+                    throw new KernelException(KernelExceptionType.LoginHandler, Translate.DoTranslation("The login handler is not found!") + $" {handlerName}");
+
                 // Get the password from dictionary
                 int userIndex = UserManagement.GetUserIndex(usernamerequested);
                 string UserPassword = UserManagement.Users[userIndex].Password;
@@ -159,14 +164,8 @@ namespace Nitrocid.Users.Login
                 {
                     // Wait for input
                     DebugWriter.WriteDebug(DebugLevel.I, "Password not empty");
-                    if (!string.IsNullOrWhiteSpace(PasswordPrompt))
-                        TextWriters.Write(PlaceParse.ProbePlaces(PasswordPrompt), false, KernelColorType.Input);
-                    else
-                        TextWriters.Write(Translate.DoTranslation("{0}'s password: "), false, KernelColorType.Input, usernamerequested);
-
-                    // Get input
-                    string answerpass = InputTools.ReadLineNoInputUnsafe();
-
+                    string answerpass = "";
+                    handler.PasswordHandler(usernamerequested, ref answerpass);
                     if (UserManagement.ValidatePassword(usernamerequested, answerpass))
                         return true;
                     else
