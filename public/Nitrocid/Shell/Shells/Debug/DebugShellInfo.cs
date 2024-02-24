@@ -202,8 +202,5 @@ namespace Nitrocid.Shell.Shells.Debug
 
         public override BaseShell ShellBase => new DebugShell();
 
-        public override PromptPresetBase CurrentPreset =>
-            PromptPresetManager.GetAllPresetsFromShell(ShellType)[PromptPresetManager.CurrentPresets[ShellType]];
-
     }
 }

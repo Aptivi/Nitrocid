@@ -1599,8 +1599,5 @@ namespace Nitrocid.Shell.Shells.UESH
 
         public override BaseShell ShellBase => new UESHShell();
 
-        public override PromptPresetBase CurrentPreset =>
-            PromptPresetManager.GetAllPresetsFromShell(ShellType)[PromptPresetManager.CurrentPresets[ShellType]];
-
     }
 }

@@ -67,8 +67,5 @@ namespace Nitrocid.Extras.SqlShell.Sql
 
         public override BaseShell ShellBase => new SqlShell();
 
-        public override PromptPresetBase CurrentPreset =>
-            PromptPresetManager.GetAllPresetsFromShell(ShellType)[PromptPresetManager.CurrentPresets[ShellType]];
-
     }
 }

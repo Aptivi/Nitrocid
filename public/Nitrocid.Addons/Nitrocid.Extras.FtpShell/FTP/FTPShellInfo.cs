@@ -238,9 +238,6 @@ namespace Nitrocid.Extras.FtpShell.FTP
 
         public override BaseShell ShellBase => new FTPShell();
 
-        public override PromptPresetBase CurrentPreset =>
-            PromptPresetManager.GetAllPresetsFromShell(ShellType)[PromptPresetManager.CurrentPresets[ShellType]];
-
         public override bool AcceptsNetworkConnection => true;
 
         public override string NetworkConnectionType => "FTP";

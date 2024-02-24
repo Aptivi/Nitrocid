@@ -51,7 +51,9 @@ namespace Nitrocid.Shell.ShellBase.Shells
         /// <inheritdoc/>
         public virtual BaseShell ShellBase => null;
         /// <inheritdoc/>
-        public virtual PromptPresetBase CurrentPreset => null;
+        public virtual PromptPresetBase CurrentPreset =>
+            
+            PromptPresetManager.GetAllPresetsFromShell(ShellType)[PromptPresetManager.CurrentPresets[ShellType]];
         /// <inheritdoc/>
         public virtual bool AcceptsNetworkConnection => false;
         /// <inheritdoc/>

@@ -242,8 +242,5 @@ namespace Nitrocid.Shell.Shells.Text
 
         public override BaseShell ShellBase => new TextShell();
 
-        public override PromptPresetBase CurrentPreset =>
-            PromptPresetManager.GetAllPresetsFromShell(ShellType)[PromptPresetManager.CurrentPresets[ShellType]];
-
     }
 }

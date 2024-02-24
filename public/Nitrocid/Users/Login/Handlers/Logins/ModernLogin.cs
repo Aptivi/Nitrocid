@@ -18,9 +18,7 @@
 //
 
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Inputs;
 using Terminaux.Inputs.Styles.Infobox;
-using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Drivers.Encryption;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;

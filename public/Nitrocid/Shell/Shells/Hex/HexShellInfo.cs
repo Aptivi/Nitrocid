@@ -163,8 +163,5 @@ namespace Nitrocid.Shell.Shells.Hex
 
         public override BaseShell ShellBase => new HexShell();
 
-        public override PromptPresetBase CurrentPreset =>
-            PromptPresetManager.GetAllPresetsFromShell(ShellType)[PromptPresetManager.CurrentPresets[ShellType]];
-
     }
 }

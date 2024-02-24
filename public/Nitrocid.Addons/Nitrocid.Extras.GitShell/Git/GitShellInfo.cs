@@ -234,8 +234,5 @@ namespace Nitrocid.Extras.GitShell.Git
 
         public override BaseShell ShellBase => new GitShell();
 
-        public override PromptPresetBase CurrentPreset =>
-            PromptPresetManager.GetAllPresetsFromShell(ShellType)[PromptPresetManager.CurrentPresets[ShellType]];
-
     }
 }

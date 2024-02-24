@@ -148,9 +148,6 @@ namespace Nitrocid.Extras.SftpShell.SFTP
 
         public override BaseShell ShellBase => new SFTPShell();
 
-        public override PromptPresetBase CurrentPreset =>
-            PromptPresetManager.GetAllPresetsFromShell(ShellType)[PromptPresetManager.CurrentPresets[ShellType]];
-
         public override bool AcceptsNetworkConnection => true;
 
         public override string NetworkConnectionType => "SFTP";

@@ -141,8 +141,5 @@ namespace Nitrocid.Shell.Shells.Admin
 
         public override BaseShell ShellBase => new AdminShell();
 
-        public override PromptPresetBase CurrentPreset =>
-            PromptPresetManager.GetAllPresetsFromShell(ShellType)[PromptPresetManager.CurrentPresets[ShellType]];
-
     }
 }

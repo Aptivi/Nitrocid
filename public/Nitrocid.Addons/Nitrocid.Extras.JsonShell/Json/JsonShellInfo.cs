@@ -176,8 +176,5 @@ namespace Nitrocid.Extras.JsonShell.Json
 
         public override BaseShell ShellBase => new JsonShell();
 
-        public override PromptPresetBase CurrentPreset =>
-            PromptPresetManager.GetAllPresetsFromShell(ShellType)[PromptPresetManager.CurrentPresets[ShellType]];
-
     }
 }

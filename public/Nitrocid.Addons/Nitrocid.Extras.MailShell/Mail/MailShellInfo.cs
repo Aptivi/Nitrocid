@@ -178,9 +178,6 @@ namespace Nitrocid.Extras.MailShell.Mail
 
         public override BaseShell ShellBase => new MailShell();
 
-        public override PromptPresetBase CurrentPreset =>
-            PromptPresetManager.GetAllPresetsFromShell(ShellType)[PromptPresetManager.CurrentPresets[ShellType]];
-
         public override bool AcceptsNetworkConnection => true;
 
         public override string NetworkConnectionType => "Mail";

@@ -161,9 +161,6 @@ namespace Nitrocid.Extras.HttpShell.HTTP
 
         public override BaseShell ShellBase => new HTTPShell();
 
-        public override PromptPresetBase CurrentPreset =>
-            PromptPresetManager.GetAllPresetsFromShell(ShellType)[PromptPresetManager.CurrentPresets[ShellType]];
-
         public override bool AcceptsNetworkConnection => true;
 
         public override string NetworkConnectionType => "HTTP";
