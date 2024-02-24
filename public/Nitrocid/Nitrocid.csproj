@@ -178,7 +178,6 @@
 
   <!-- KS Package Files -->
   <ItemGroup>
-    <None Include="OfficialAppIcon-KernelSimulator.ico" Pack="true" PackagePath="\" />
     <None Include="OfficialAppIcon-KernelSimulator-512.png" Pack="true" PackagePath="\" />
     <None Include="..\..\README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
