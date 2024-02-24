@@ -117,7 +117,7 @@ namespace Nitrocid.ConsoleBase.Writers.MiscWriters
         public static void WriteLicense()
         {
             TextFancyWriters.WriteSeparator(Translate.DoTranslation("License information"), true, KernelColorType.Stage);
-            TextWriters.Write(GetLicenseString(), true, KernelColorType.License);
+            TextWriters.Write("\n" + GetLicenseString(), true, KernelColorType.License);
         }
 
         /// <summary>
@@ -126,7 +126,8 @@ namespace Nitrocid.ConsoleBase.Writers.MiscWriters
         /// <returns></returns>
         public static string GetLicenseString() =>
             $"""
-            
+            {Translate.DoTranslation("This program is licensed under GNU General Public License 3.0 or later.")}
+
                 Nitrocid KS  Copyright (C) 2018-2024  Aptivi
                 This program comes with ABSOLUTELY NO WARRANTY, not even
                 MERCHANTABILITY or FITNESS for particular purposes.

@@ -101,11 +101,8 @@ namespace Nitrocid.Kernel
             // Show the license infobox
             if (Config.MainConfig.ShowLicenseInfoBox && SplashManager.EnableSplash)
             {
-                string rendered = Translate.DoTranslation("License information");
-                string dashes = new('=', rendered.Length);
                 InfoBoxColor.WriteInfoBoxColor(
-                    rendered + CharManager.NewLine +
-                    dashes + CharManager.NewLine +
+                    Translate.DoTranslation("License information"),
                     WelcomeMessage.GetLicenseString(), false, KernelColorTools.GetColor(KernelColorType.License)
                 );
                 ThreadManager.SleepUntilInput(3000);
