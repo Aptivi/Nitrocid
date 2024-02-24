@@ -56,6 +56,10 @@ namespace Nitrocid.Shell.ShellBase.Arguments
         /// </summary>
         public bool AcceptsSet { get; private set; }
         /// <summary>
+        /// Whether to accept infinite number of arguments
+        /// </summary>
+        public bool InfiniteBounds { get; private set; }
+        /// <summary>
         /// Rendered usage
         /// </summary>
         public string RenderedUsage
@@ -119,6 +123,8 @@ namespace Nitrocid.Shell.ShellBase.Arguments
                         $"{requiredTagStart}{Argument.ArgumentExpression}{numericRender}{requiredTagEnd} ";
                     usageBuilder.Append(renderedArgument);
                 }
+                string infiniteIndicator = InfiniteBounds ? "..." : "";
+                usageBuilder.Append(infiniteIndicator);
 
                 return usageBuilder.ToString().Trim();
             }
@@ -128,7 +134,7 @@ namespace Nitrocid.Shell.ShellBase.Arguments
         /// Installs a new instance of the command argument info class
         /// </summary>
         public CommandArgumentInfo()
-            : this([], [], false)
+            : this([], [], false, false)
         { }
 
         /// <summary>
@@ -136,7 +142,16 @@ namespace Nitrocid.Shell.ShellBase.Arguments
         /// </summary>
         /// <param name="AcceptsSet">Whether to accept the -set switch or not</param>
         public CommandArgumentInfo(bool AcceptsSet)
-            : this([], [], AcceptsSet)
+            : this([], [], AcceptsSet, false)
+        { }
+
+        /// <summary>
+        /// Installs a new instance of the command argument info class
+        /// </summary>
+        /// <param name="AcceptsSet">Whether to accept the -set switch or not</param>
+        /// <param name="infiniteBounds">Whether to accept infinite number of arguments or not</param>
+        public CommandArgumentInfo(bool AcceptsSet, bool infiniteBounds)
+            : this([], [], AcceptsSet, infiniteBounds)
         { }
 
         /// <summary>
@@ -144,7 +159,7 @@ namespace Nitrocid.Shell.ShellBase.Arguments
         /// </summary>
         /// <param name="Arguments">Command arguments</param>
         public CommandArgumentInfo(CommandArgumentPart[] Arguments)
-            : this(Arguments, [], false)
+            : this(Arguments, [], false, false)
         { }
 
         /// <summary>
@@ -153,7 +168,17 @@ namespace Nitrocid.Shell.ShellBase.Arguments
         /// <param name="Arguments">Command arguments</param>
         /// <param name="AcceptsSet">Whether to accept the -set switch or not</param>
         public CommandArgumentInfo(CommandArgumentPart[] Arguments, bool AcceptsSet)
-            : this(Arguments, [], AcceptsSet)
+            : this(Arguments, [], AcceptsSet, false)
+        { }
+
+        /// <summary>
+        /// Installs a new instance of the command argument info class
+        /// </summary>
+        /// <param name="Arguments">Command arguments</param>
+        /// <param name="AcceptsSet">Whether to accept the -set switch or not</param>
+        /// <param name="infiniteBounds">Whether to accept infinite number of arguments or not</param>
+        public CommandArgumentInfo(CommandArgumentPart[] Arguments, bool AcceptsSet, bool infiniteBounds)
+            : this(Arguments, [], AcceptsSet, infiniteBounds)
         { }
 
         /// <summary>
@@ -161,7 +186,7 @@ namespace Nitrocid.Shell.ShellBase.Arguments
         /// </summary>
         /// <param name="Switches">Command switches</param>
         public CommandArgumentInfo(SwitchInfo[] Switches)
-            : this([], Switches, false)
+            : this([], Switches, false, false)
         { }
 
         /// <summary>
@@ -170,7 +195,17 @@ namespace Nitrocid.Shell.ShellBase.Arguments
         /// <param name="Switches">Command switches</param>
         /// <param name="AcceptsSet">Whether to accept the -set switch or not</param>
         public CommandArgumentInfo(SwitchInfo[] Switches, bool AcceptsSet)
-            : this([], Switches, AcceptsSet)
+            : this([], Switches, AcceptsSet, false)
+        { }
+
+        /// <summary>
+        /// Installs a new instance of the command argument info class
+        /// </summary>
+        /// <param name="Switches">Command switches</param>
+        /// <param name="AcceptsSet">Whether to accept the -set switch or not</param>
+        /// <param name="infiniteBounds">Whether to accept infinite number of arguments or not</param>
+        public CommandArgumentInfo(SwitchInfo[] Switches, bool AcceptsSet, bool infiniteBounds)
+            : this([], Switches, AcceptsSet, infiniteBounds)
         { }
 
         /// <summary>
@@ -179,7 +214,7 @@ namespace Nitrocid.Shell.ShellBase.Arguments
         /// <param name="Arguments">Command arguments</param>
         /// <param name="Switches">Command switches</param>
         public CommandArgumentInfo(CommandArgumentPart[] Arguments, SwitchInfo[] Switches)
-            : this(Arguments, Switches, false)
+            : this(Arguments, Switches, false, false)
         { }
 
         /// <summary>
@@ -189,6 +224,17 @@ namespace Nitrocid.Shell.ShellBase.Arguments
         /// <param name="Switches">Command switches</param>
         /// <param name="AcceptsSet">Whether to accept the -set switch or not</param>
         public CommandArgumentInfo(CommandArgumentPart[] Arguments, SwitchInfo[] Switches, bool AcceptsSet)
+            : this(Arguments, Switches, AcceptsSet, false)
+        { }
+
+        /// <summary>
+        /// Installs a new instance of the command argument info class
+        /// </summary>
+        /// <param name="Arguments">Command arguments</param>
+        /// <param name="Switches">Command switches</param>
+        /// <param name="AcceptsSet">Whether to accept the -set switch or not</param>
+        /// <param name="infiniteBounds">Whether to accept infinite number of arguments or not</param>
+        public CommandArgumentInfo(CommandArgumentPart[] Arguments, SwitchInfo[] Switches, bool AcceptsSet, bool infiniteBounds)
         {
             var finalArgs = Arguments ?? [];
             var finalSwitches = Switches ?? [];
@@ -198,6 +244,7 @@ namespace Nitrocid.Shell.ShellBase.Arguments
             else
                 this.Switches = finalSwitches;
             this.AcceptsSet = AcceptsSet;
+            InfiniteBounds = infiniteBounds;
         }
 
     }

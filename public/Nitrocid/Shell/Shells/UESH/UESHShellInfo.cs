@@ -229,7 +229,7 @@ namespace Nitrocid.Shell.Shells.UESH
                         new CommandArgumentPart(true, "answers"),
                         new CommandArgumentPart(true, "input"),
                         new CommandArgumentPart(false, "answertitle1"),
-                        new CommandArgumentPart(false, "answertitle2 ..."),
+                        new CommandArgumentPart(false, "answertitle2"),
                     ],
                     [
                         new SwitchInfo("o", /* Localizable */ "One line choice style", new SwitchOptions()
@@ -262,7 +262,7 @@ namespace Nitrocid.Shell.Shells.UESH
                             ConflictsWith = ["single"],
                             AcceptsValues = false
                         })
-                    ], true)
+                    ], true, true)
                 ], new ChoiceCommand()),
 
             new CommandInfo("chpwd", /* Localizable */ "Changes password for current user",
@@ -299,8 +299,8 @@ namespace Nitrocid.Shell.Shells.UESH
                     [
                         new CommandArgumentPart(true, "input"),
                         new CommandArgumentPart(true, "input2"),
-                        new CommandArgumentPart(false, "input3 ..."),
-                    ], true)
+                        new CommandArgumentPart(false, "input3"),
+                    ], true, true)
                 ], new CombineStrCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
             new CommandInfo("combine", /* Localizable */ "Combines the two text files or more into the output file.",
@@ -310,8 +310,8 @@ namespace Nitrocid.Shell.Shells.UESH
                         new CommandArgumentPart(true, "output"),
                         new CommandArgumentPart(true, "input"),
                         new CommandArgumentPart(true, "input2"),
-                        new CommandArgumentPart(false, "input3 ..."),
-                    })
+                        new CommandArgumentPart(false, "input3"),
+                    }, false, true)
                 ], new CombineCommand()),
 
             new CommandInfo("compare", /* Localizable */ "Compares between the two text files.",
@@ -1018,7 +1018,7 @@ namespace Nitrocid.Shell.Shells.UESH
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "Address1"),
-                        new CommandArgumentPart(false, "Address2 ..."),
+                        new CommandArgumentPart(false, "Address2"),
                     ],
                     [
                         new SwitchInfo("times", /* Localizable */ "Specifies number of times to ping", new SwitchOptions()
@@ -1026,7 +1026,7 @@ namespace Nitrocid.Shell.Shells.UESH
                             ArgumentsRequired = true,
                             IsNumeric = true
                         })
-                    ])
+                    ], false, true)
                 ], new PingCommand()),
 
             new CommandInfo("platform", /* Localizable */ "Gets the current platform",
@@ -1207,8 +1207,8 @@ namespace Nitrocid.Shell.Shells.UESH
                         new CommandArgumentPart(true, "answers"),
                         new CommandArgumentPart(true, "input"),
                         new CommandArgumentPart(false, "answertitle1"),
-                        new CommandArgumentPart(false, "answertitle2 ..."),
-                    ], true)
+                        new CommandArgumentPart(false, "answertitle2"),
+                    ], true, true)
                 ], new SelectCommand()),
 
             new CommandInfo("setsaver", /* Localizable */ "Sets up kernel screensavers",
@@ -1295,8 +1295,8 @@ namespace Nitrocid.Shell.Shells.UESH
                     [
                         new CommandArgumentPart(true, "value"),
                         new CommandArgumentPart(false, "value2"),
-                        new CommandArgumentPart(false, "value3 ..."),
-                    ], true)
+                        new CommandArgumentPart(false, "value3"),
+                    ], true, true)
                 ], new SetRangeCommand()),
 
             new CommandInfo("shownotifs", /* Localizable */ "Shows all received notifications",
