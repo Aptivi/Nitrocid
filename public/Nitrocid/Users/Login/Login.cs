@@ -241,9 +241,13 @@ namespace Nitrocid.Users.Login
                         SignIn(user);
                     else
                     {
+                        ColorTools.LoadBack();
                         TextWriterColor.Write(Translate.DoTranslation("Incorrect admin password. You have {0} tries."), 3 - (tries + 1), true, KernelColorType.Error);
                         if (tries == 2)
+                        {
                             TextWriters.Write(Translate.DoTranslation("Out of chances. Rebooting..."), true, KernelColorType.Error);
+                            PowerManager.PowerManage(PowerMode.Reboot);
+                        }
                     }
                 }
             }
