@@ -263,7 +263,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
         /// </summary>
         /// <remarks>All new shells implemented either in KS or by mods should use this routine to allow effective and consistent line parsing.</remarks>
         public static void GetLine() =>
-            GetLine("", "", CurrentShellType);
+            GetLine("", "", CurrentShellType, true, Config.MainConfig.SetTitleOnCommandExecution);
 
         /// <summary>
         /// Parses a specified command.
@@ -271,7 +271,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
         /// <param name="FullCommand">The full command string</param>
         /// <remarks>All new shells implemented either in KS or by mods should use this routine to allow effective and consistent line parsing.</remarks>
         public static void GetLine(string FullCommand) =>
-            GetLine(FullCommand, "", CurrentShellType);
+            GetLine(FullCommand, "", CurrentShellType, true, Config.MainConfig.SetTitleOnCommandExecution);
 
         /// <summary>
         /// Parses a specified command.
@@ -280,7 +280,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
         /// <param name="OutputPath">Optional (non-)neutralized output path</param>
         /// <remarks>All new shells implemented either in KS or by mods should use this routine to allow effective and consistent line parsing.</remarks>
         public static void GetLine(string FullCommand, string OutputPath = "") =>
-            GetLine(FullCommand, OutputPath, CurrentShellType);
+            GetLine(FullCommand, OutputPath, CurrentShellType, true, Config.MainConfig.SetTitleOnCommandExecution);
 
         /// <summary>
         /// Parses a specified command.
@@ -290,7 +290,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
         /// <param name="ShellType">Shell type</param>
         /// <remarks>All new shells implemented either in KS or by mods should use this routine to allow effective and consistent line parsing.</remarks>
         public static void GetLine(string FullCommand, string OutputPath = "", ShellType ShellType = ShellType.Shell) =>
-            GetLine(FullCommand, OutputPath, GetShellTypeName(ShellType));
+            GetLine(FullCommand, OutputPath, GetShellTypeName(ShellType), true, Config.MainConfig.SetTitleOnCommandExecution);
 
         /// <summary>
         /// Parses a specified command.
@@ -300,7 +300,19 @@ namespace Nitrocid.Shell.ShellBase.Shells
         /// <param name="ShellType">Shell type</param>
         /// <param name="restoreDriver">Whether to restore the driver to the previous state</param>
         /// <remarks>All new shells implemented either in KS or by mods should use this routine to allow effective and consistent line parsing.</remarks>
-        public static void GetLine(string FullCommand, string OutputPath = "", string ShellType = "Shell", bool restoreDriver = true)
+        public static void GetLine(string FullCommand, string OutputPath = "", string ShellType = "Shell", bool restoreDriver = true) =>
+            GetLine(FullCommand, OutputPath, ShellType, restoreDriver, Config.MainConfig.SetTitleOnCommandExecution);
+
+        /// <summary>
+        /// Parses a specified command.
+        /// </summary>
+        /// <param name="FullCommand">The full command string</param>
+        /// <param name="OutputPath">Optional (non-)neutralized output path</param>
+        /// <param name="ShellType">Shell type</param>
+        /// <param name="restoreDriver">Whether to restore the driver to the previous state</param>
+        /// <param name="setTitle">Whether to set the console title</param>
+        /// <remarks>All new shells implemented either in KS or by mods should use this routine to allow effective and consistent line parsing.</remarks>
+        internal static void GetLine(string FullCommand, string OutputPath = "", string ShellType = "Shell", bool restoreDriver = true, bool setTitle = true)
         {
             // Check for sanity
             if (string.IsNullOrEmpty(FullCommand))
@@ -455,7 +467,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
                     try
                     {
                         // Set title
-                        if (Config.MainConfig.SetTitleOnCommandExecution)
+                        if (setTitle)
                             ConsoleMisc.SetTitle($"{KernelReleaseInfo.ConsoleTitle} - {Command}");
 
                         // Check the command
@@ -618,7 +630,8 @@ namespace Nitrocid.Shell.ShellBase.Shells
             }
 
             // Restore title and cancel possibility state
-            ConsoleMisc.SetTitle(KernelReleaseInfo.ConsoleTitle);
+            if (setTitle)
+                ConsoleMisc.SetTitle(KernelReleaseInfo.ConsoleTitle);
             CancellationHandlers.InhibitCancel();
             lastCommand = FullCommand;
         }

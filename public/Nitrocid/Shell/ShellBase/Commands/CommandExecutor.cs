@@ -381,7 +381,7 @@ namespace Nitrocid.Shell.ShellBase.Commands
                 // Then, initialize the buffered writer and execute the commands
                 DriverHandler.BeginLocalDriver<IConsoleDriver>("Buffered");
                 DebugWriter.WriteDebug(DebugLevel.I, "Buffering...");
-                ShellManager.GetLine(Command, "", currentType, false);
+                ShellManager.GetLine(Command, "", currentType, false, false);
                 CancellationHandlers.AllowCancel();
                 buffered = true;
 
