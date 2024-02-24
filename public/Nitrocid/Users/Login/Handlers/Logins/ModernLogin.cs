@@ -105,12 +105,11 @@ namespace Nitrocid.Users.Login.Handlers.Logins
                 return true;
 
             // The password is not empty. Prompt for password.
-            TextWriterColor.Write(Translate.DoTranslation("Enter the password for user") + " {0}: ", false, user);
-            string password = InputTools.ReadLineNoInput();
+            pass = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Enter the password for user") + $" {user}: ");
+            ColorTools.LoadBack();
 
             // Validate the password
-            pass = password;
-            if (UserManagement.ValidatePassword(user, password))
+            if (UserManagement.ValidatePassword(user, pass))
                 // Password written correctly. Log in.
                 return true;
             else
