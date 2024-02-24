@@ -94,7 +94,7 @@ namespace Nitrocid.Shell.Shells.UESH.Presets
             {
                 // Opening
                 PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
-                PresetStringBuilder.AppendFormat("[1:");
+                PresetStringBuilder.AppendFormat($"[{(Config.MainConfig.ShowShellCount ? $"1:" : "")}");
 
                 // Current username
                 PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground);

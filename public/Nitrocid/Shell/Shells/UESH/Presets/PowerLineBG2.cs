@@ -106,7 +106,7 @@ namespace Nitrocid.Shell.Shells.UESH.Presets
             [
                 new PowerLineSegment(new Color(255, 85, 255), new Color(25, 25, 25), "user", default, TransitionPartChar),
                 new PowerLineSegment(new Color(255, 85, 255), new Color(25, 25, 25), "host", PadlockChar, TransitionPartChar),
-                new PowerLineSegment(new Color(255, 85, 255), new Color(25, 25, 25), "/home/user [1]", default, TransitionPartChar),
+                new PowerLineSegment(new Color(255, 85, 255), new Color(25, 25, 25), $"/home/user{(Config.MainConfig.ShowShellCount ? $" [1]" : "")}", default, TransitionPartChar),
             ];
 
             // Builder
