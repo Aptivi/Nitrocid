@@ -402,6 +402,7 @@ namespace Nitrocid.Extras.BassBoom.Player
                 [R]                 {{Translate.DoTranslation("Remove current song")}}
                 [CTRL] + [R]        {{Translate.DoTranslation("Remove all songs")}}
                 [S]                 {{Translate.DoTranslation("Selectively seek")}}
+                [E]                 {{Translate.DoTranslation("Open equalizer")}}
                 """
             );
             PlayerTui.rerender = true;

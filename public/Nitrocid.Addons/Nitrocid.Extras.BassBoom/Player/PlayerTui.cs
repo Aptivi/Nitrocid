@@ -182,9 +182,9 @@ namespace Nitrocid.Extras.BassBoom.Player
                     {
                         var keystroke = TermReader.ReadKey();
                         if (PlaybackTools.Playing)
-                            HandleKeypressPlayMode(keystroke);
+                            HandleKeypressPlayMode(keystroke, playerScreen);
                         else
-                            HandleKeypressIdleMode(keystroke);
+                            HandleKeypressIdleMode(keystroke, playerScreen);
                     }
                 }
                 catch (BasoliaException bex)
@@ -222,7 +222,7 @@ namespace Nitrocid.Extras.BassBoom.Player
             ScreenTools.UnsetCurrent(playerScreen);
         }
 
-        private static void HandleKeypressIdleMode(ConsoleKeyInfo keystroke)
+        private static void HandleKeypressIdleMode(ConsoleKeyInfo keystroke, Screen playerScreen)
         {
             switch (keystroke.Key)
             {
@@ -268,13 +268,17 @@ namespace Nitrocid.Extras.BassBoom.Player
                     else
                         PlayerControls.RemoveCurrentSong();
                     break;
+                case ConsoleKey.E:
+                    Equalizer.OpenEqualizer(playerScreen);
+                    rerender = true;
+                    break;
                 case ConsoleKey.Q:
                     PlayerControls.Exit();
                     break;
             }
         }
 
-        private static void HandleKeypressPlayMode(ConsoleKeyInfo keystroke)
+        private static void HandleKeypressPlayMode(ConsoleKeyInfo keystroke, Screen playerScreen)
         {
             switch (keystroke.Key)
             {
@@ -332,6 +336,10 @@ namespace Nitrocid.Extras.BassBoom.Player
                     break;
                 case ConsoleKey.S:
                     PlayerControls.PromptSeek();
+                    break;
+                case ConsoleKey.E:
+                    Equalizer.OpenEqualizer(playerScreen);
+                    rerender = true;
                     break;
                 case ConsoleKey.Q:
                     PlayerControls.Exit();
