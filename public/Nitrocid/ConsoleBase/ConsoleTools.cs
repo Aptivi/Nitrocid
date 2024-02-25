@@ -194,19 +194,19 @@ namespace Nitrocid.ConsoleBase
                 double threshold = 255 / (double)times;
                 for (double i = 0; i <= times; i++)
                     band.Append($"{new Color(Convert.ToInt32(i * threshold), 0, 0).VTSequenceBackground} ");
-                band.Append(CharManager.GetEsc() + $"[49m");
+                band.Append(ColorTools.RenderResetBackground());
                 band.Append(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, 5, 6));
 
                 // The green color
                 for (double i = 0; i <= times; i++)
                     band.Append($"{new Color(0, Convert.ToInt32(i * threshold), 0).VTSequenceBackground} ");
-                band.Append(CharManager.GetEsc() + $"[49m");
+                band.Append(ColorTools.RenderResetBackground());
                 band.Append(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, 5, 7));
 
                 // The blue color
                 for (double i = 0; i <= times; i++)
                     band.Append($"{new Color(0, 0, Convert.ToInt32(i * threshold)).VTSequenceBackground} ");
-                band.Append(CharManager.GetEsc() + $"[49m");
+                band.Append(ColorTools.RenderResetBackground());
                 band.Append(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, 5, 11));
 
                 // Now, show the hue band
@@ -214,7 +214,7 @@ namespace Nitrocid.ConsoleBase
                 for (double h = 0; h <= times; h++)
                     band.Append($"{new Color($"hsl:{Convert.ToInt32(h * hueThreshold)};100;50").VTSequenceBackground} ");
                 band.AppendLine();
-                band.Append(CharManager.GetEsc() + $"[49m");
+                band.Append(ColorTools.RenderResetBackground());
                 return TextWriterWhereColor.RenderWhere(TextTools.FormatString(band.ToString(), KernelPlatform.GetTerminalType(), KernelPlatform.GetTerminalEmulator()), 3, 3);
             });
 
@@ -222,7 +222,7 @@ namespace Nitrocid.ConsoleBase
             rampPart.AddDynamicText(() =>
             {
                 return
-                    TextWriterWhereColor.RenderWhere(Translate.DoTranslation("Do these ramps look right to you? They should transition smoothly.") + " <y/n>", 3, ConsoleWrapper.WindowHeight - 2, KernelColorTools.GetColor(KernelColorType.Question), KernelColorTools.GetColor(KernelColorType.Background)) +
+                    TextWriterWhereColor.RenderWhereColorBack(Translate.DoTranslation("Do these ramps look right to you? They should transition smoothly.") + " <y/n>", 3, ConsoleWrapper.WindowHeight - 2, KernelColorTools.GetColor(KernelColorType.Question), KernelColorTools.GetColor(KernelColorType.Background)) +
                     KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground;
             });
             screen.AddBufferedPart("Ramp screen part", rampPart);
