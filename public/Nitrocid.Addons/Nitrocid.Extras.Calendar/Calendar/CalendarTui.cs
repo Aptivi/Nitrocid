@@ -233,14 +233,14 @@ namespace Nitrocid.Extras.Calendar.Calendar
                 int boxLeft = 4;
                 int boxTop = 3;
                 int boxWidth = 4 + (6 * 6);
-                int boxHeight = 11;
+                int boxHeight = 13;
                 builder.Append(
                     BorderColor.RenderBorder(CalendarTitle, boxLeft, boxTop, boxWidth, boxHeight, boxForeground, background)
                 );
 
                 // Make a calendar
                 int dayPosX = boxLeft + 1;
-                int dayPosY = 4;
+                int dayPosY = 6;
                 for (int CurrentDay = 1; CurrentDay <= DateTo.Day; CurrentDay++)
                 {
                     // Populate some variables
@@ -301,6 +301,21 @@ namespace Nitrocid.Extras.Calendar.Calendar
                         $"{foreground.VTSequenceForeground}" +
                         $"{background.VTSequenceBackground}" +
                         CurrentDayMark
+                    );
+                }
+
+                // Make a single-letter day indicator
+                int dayIndicatorPosX = boxLeft + 1;
+                int dayIndicatorPosY = 4;
+                for (int i = 0; i < CalendarDays.Length; i++)
+                {
+                    string dayName = CalendarDays[i];
+                    char dayChar = char.ToUpper(dayName[0]);
+                    builder.Append(
+                        CsiSequences.GenerateCsiCursorPosition(dayIndicatorPosX + (6 * i) + 2, dayIndicatorPosY + 1) +
+                        $"{boxForeground.VTSequenceForeground}" +
+                        $"{background.VTSequenceBackground}" +
+                        dayChar
                     );
                 }
 
