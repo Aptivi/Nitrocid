@@ -324,15 +324,11 @@ namespace Nitrocid.Extras.Calendar.Calendar
                     // Populate some variables
                     var CurrentDate = new DateTime(year, month, CurrentDay);
                     int CurrentWeekIndex = CurrentWeek - 1;
-                    builder.Append(
-                        TextWriterWhereColor.RenderWhere($"{month}/{CurrentDay}/{year}", eventEntryLeft, eventEntryTop, boxForeground, background)
-                    );
-                    eventEntryLeft += 2;
-                    eventEntryTop++;
 
                     // Some flags
                     bool ReminderMarked = false;
                     bool EventMarked = false;
+                    bool dayMarked = false;
                     bool IsWeekend = CurrentDate.DayOfWeek == DayOfWeek.Friday || CurrentDate.DayOfWeek == DayOfWeek.Saturday;
                     bool IsToday = CurrentDate == new DateTime(state.Year, state.Month, state.Day);
                     var foreground =
@@ -352,6 +348,17 @@ namespace Nitrocid.Extras.Calendar.Calendar
                             eventEntryTop++;
                             if (eventEntryTop - 1 > eventBoxHeight + eventBoxTop)
                                 break;
+                            if (!dayMarked)
+                            {
+                                dayMarked = true;
+                                builder.Append(
+                                    TextWriterWhereColor.RenderWhere($"{month}/{CurrentDay}/{year}", eventEntryLeft, eventEntryTop - 1, boxForeground, background)
+                                );
+                                eventEntryLeft += 2;
+                                eventEntryTop++;
+                                if (eventEntryTop - 1 > eventBoxHeight + eventBoxTop)
+                                    break;
+                            }
                             builder.Append(
                                 TextWriterWhereColor.RenderWhere(Reminder.ReminderTitle.Truncate(eventBoxWidth - 5), eventEntryLeft, eventEntryTop - 1, boxForeground, background)
                             );
@@ -377,6 +384,17 @@ namespace Nitrocid.Extras.Calendar.Calendar
                             eventEntryTop++;
                             if (eventEntryTop - 1 > eventBoxHeight + eventBoxTop)
                                 break;
+                            if (!dayMarked)
+                            {
+                                dayMarked = true;
+                                builder.Append(
+                                    TextWriterWhereColor.RenderWhere($"{month}/{CurrentDay}/{year}", eventEntryLeft, eventEntryTop - 1, boxForeground, background)
+                                );
+                                eventEntryLeft += 2;
+                                eventEntryTop++;
+                                if (eventEntryTop - 1 > eventBoxHeight + eventBoxTop)
+                                    break;
+                            }
                             builder.Append(
                                 TextWriterWhereColor.RenderWhere(EventInstance.EventTitle.Truncate(eventBoxWidth - 5), eventEntryLeft, eventEntryTop - 1, boxForeground, background)
                             );
