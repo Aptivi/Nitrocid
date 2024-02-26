@@ -30,7 +30,6 @@ using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Colors;
 using System.Runtime.Serialization;
 using Terminaux.Writer.DynamicWriters;
-using SpecProbe.Platform;
 
 namespace Nitrocid.Drivers.Console
 {
@@ -263,13 +262,8 @@ namespace Nitrocid.Drivers.Console
             {
                 if (loadBack)
                     SystemConsole.Write(ColorTools.CurrentBackgroundColor.VTSequenceBackground);
-                if (PlatformHelper.IsOnWindowsOrWsl())
-                    SystemConsole.Clear();
-                else
-                {
-                    SetCursorPosition(0, 0);
-                    SystemConsole.Write(CsiSequences.GenerateCsiEraseInDisplay(0));
-                }
+                SetCursorPosition(0, 0);
+                SystemConsole.Write(CsiSequences.GenerateCsiEraseInDisplay(0));
             }
         }
 

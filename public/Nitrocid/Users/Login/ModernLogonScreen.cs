@@ -102,7 +102,10 @@ namespace Nitrocid.Users.Login
                             var display = new StringBuilder();
 
                             // Clear the console and write the time using figlet
-                            ConsoleWrapper.ClearLoadBack();
+                            display.Append(
+                                CsiSequences.GenerateCsiCursorPosition(1, 1) +
+                                CsiSequences.GenerateCsiEraseInDisplay(0)
+                            );
                             cachedTimeStr = TimeDateRenderers.RenderTime(FormatType.Short);
                             var figFont = FigletTools.GetFigletFont(Config.MainConfig.DefaultFigletFontName);
                             int figHeight = FigletTools.GetFigletHeight(timeStr, figFont) / 2;
