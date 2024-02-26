@@ -91,9 +91,9 @@ namespace Nitrocid.Extras.Calendar.Calendar
                     RenderKeybindings(ref screen);
 
                     // Render the box
-                    RenderHexViewBox(ref screen);
+                    RenderViewBox(ref screen);
 
-                    // Now, render the visual hex with the current selection
+                    // Now, render the calendar with the current selection
                     RenderCalendar(state, ref screen);
 
                     // Render the status
@@ -161,7 +161,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
                 }
                 return bindingsBuilder.ToString();
             });
-            screen.AddBufferedPart("Interactive calendar interactive - Keybindings", part);
+            screen.AddBufferedPart("Interactive calendar - Keybindings", part);
         }
 
         private static void RenderStatus(ref Screen screen)
@@ -178,10 +178,10 @@ namespace Nitrocid.Extras.Calendar.Calendar
                 );
                 return builder.ToString();
             });
-            screen.AddBufferedPart("Interactive calendar interactive - Status", part);
+            screen.AddBufferedPart("Interactive calendar - Status", part);
         }
 
-        private static void RenderHexViewBox(ref Screen screen)
+        private static void RenderViewBox(ref Screen screen)
         {
             // Make a screen part
             var part = new ScreenPart();
@@ -202,7 +202,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
                 );
                 return builder.ToString();
             });
-            screen.AddBufferedPart("Interactive calendar interactive - Hex view box", part);
+            screen.AddBufferedPart("Interactive calendar - View box", part);
         }
 
         private static void RenderCalendar((int Year, int Month, int Day, CalendarTypes calendar) state, ref Screen screen)
@@ -391,7 +391,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
                 );
                 return builder.ToString();
             });
-            screen.AddBufferedPart("Interactive calendar interactive - Contents", part);
+            screen.AddBufferedPart("Interactive calendar - Contents", part);
         }
 
         private static void StatusNumInfo((int Year, int Month, int Day, CalendarTypes calendar) state)
