@@ -1535,10 +1535,6 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public bool ClassicSettingsHeaderStyle { get; set; }
         /// <summary>
-        /// If enabled, opts you in to the new color selector.
-        /// </summary>
-        public bool UseNewColorSelector { get; set; } = true;
-        /// <summary>
         /// Specifies the default figlet font name
         /// </summary>
         public string DefaultFigletFontName

@@ -1299,12 +1299,6 @@
                 "Description": "This provides you an option to switch to either the modern or the classic header look of the settings application."
             },
             {
-                "Name": "Use the new color selector",
-                "Type": "SBoolean",
-                "Variable": "UseNewColorSelector",
-                "Description": "If enabled, opts you in to the new color selector."
-            },
-            {
                 "Name": "Default figlet font",
                 "Type": "SFiglet",
                 "Variable": "DefaultFigletFontName",

@@ -64,12 +64,6 @@ namespace Nitrocid.ConsoleBase
             Config.MainConfig.EnableScrollBarInSelection;
 
         /// <summary>
-        /// Opts in to the new color selector
-        /// </summary>
-        public static bool UseNewColorSelector =>
-            Config.MainConfig.UseNewColorSelector;
-
-        /// <summary>
         /// Wraps the list outputs
         /// </summary>
         public static bool WrapListOutputs =>
