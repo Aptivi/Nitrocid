@@ -60,6 +60,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
             var calendarInstance = CalendarTools.GetCalendar(calendar);
             var CalendarDays = calendarInstance.Culture.DateTimeFormat.DayNames;
             var CalendarMonths = calendarInstance.Culture.DateTimeFormat.MonthNames;
+            var CalendarWeek = calendarInstance.Culture.DateTimeFormat.FirstDayOfWeek;
             var CalendarData = new string[6, CalendarDays.Length];
             var maxDate = calendarInstance.Calendar.GetDaysInMonth(Year, Month);
             var selectedDate = new DateTime(Year, Month, TimeDateTools.KernelDateTime.Day > maxDate ? 1 : TimeDateTools.KernelDateTime.Day);
@@ -69,19 +70,32 @@ namespace Nitrocid.Extras.Calendar.Calendar
             string CalendarTitle = CalendarMonths[month - 1] + " " + year;
             var CalendarCellOptions = new List<CellOptions>();
 
+            // Re-arrange the days according to the first day of week
+            Dictionary<DayOfWeek, int> mappedDays = [];
+            int dayOfWeek = (int)CalendarWeek;
+            for (int i = 0; i < CalendarDays.Length; i++)
+            {
+                var day = (DayOfWeek)dayOfWeek;
+                mappedDays.Add(day, i);
+                dayOfWeek++;
+                if (dayOfWeek > 6)
+                    dayOfWeek = 0;
+            }
+
             // Populate the calendar data
             TextWriters.WriteWhere(CalendarTitle, (int)Math.Round((ConsoleWrapper.WindowWidth - CalendarTitle.Length) / 2d), ConsoleWrapper.CursorTop, true, KernelColorType.TableTitle);
             TextWriterRaw.Write();
             for (int CurrentDay = 1; CurrentDay <= DateTo.Day; CurrentDay++)
             {
                 var CurrentDate = new DateTime(year, month, CurrentDay);
-                if (CurrentDate.DayOfWeek == 0)
+                if (CurrentDate.DayOfWeek == CalendarWeek)
                     CurrentWeek += 1;
                 int CurrentWeekIndex = CurrentWeek - 1;
+                int currentDay = mappedDays[CurrentDate.DayOfWeek] + 1;
                 string CurrentDayMark;
                 bool ReminderMarked = false;
                 bool EventMarked = false;
-                bool IsWeekend = CurrentDate.DayOfWeek == DayOfWeek.Friday || CurrentDate.DayOfWeek == DayOfWeek.Saturday;
+                bool IsWeekend = currentDay > 5;
                 bool IsToday = CurrentDate == TimeDateTools.KernelDateTime.Date;
 
                 // Dim out the weekends
