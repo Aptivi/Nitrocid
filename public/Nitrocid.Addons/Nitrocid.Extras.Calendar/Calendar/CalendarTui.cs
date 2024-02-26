@@ -288,7 +288,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
                         if (((EventInstance.IsYearly && CurrentDate >= sDate && CurrentDate <= eDate) ||
                              (!EventInstance.IsYearly && CurrentDate == nDate)) && !EventMarked)
                         {
-                            foreground = KernelColorTools.GetColor(KernelColorType.EventDay);
+                            foreground = IsToday ? KernelColorTools.GetColor(KernelColorType.TodayDay) : KernelColorTools.GetColor(KernelColorType.EventDay);
                             EventMarked = true;
                         }
                     }
@@ -379,7 +379,6 @@ namespace Nitrocid.Extras.Calendar.Calendar
                         if (((EventInstance.IsYearly && CurrentDate >= sDate && CurrentDate <= eDate) ||
                              (!EventInstance.IsYearly && CurrentDate == nDate)) && !EventMarked)
                         {
-                            foreground = KernelColorTools.GetColor(KernelColorType.EventDay);
                             EventMarked = true;
                             eventEntryTop++;
                             if (eventEntryTop - 1 > eventBoxHeight + eventBoxTop)
