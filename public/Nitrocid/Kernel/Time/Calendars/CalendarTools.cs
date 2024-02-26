@@ -38,6 +38,7 @@ namespace Nitrocid.Kernel.Time.Calendars
             { CalendarTypes.SaudiHijri, new SaudiHijriCalendar() },
             { CalendarTypes.Taiwanese, new TaiwaneseCalendar() },
             { CalendarTypes.ThaiBuddhist, new ThaiBuddhistCalendar() },
+            { CalendarTypes.Variant, new VariantCalendar() },
         };
 
         /// <summary>

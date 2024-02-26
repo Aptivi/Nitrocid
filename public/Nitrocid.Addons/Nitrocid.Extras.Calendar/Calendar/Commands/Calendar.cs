@@ -53,7 +53,7 @@ namespace Nitrocid.Extras.Calendar.Calendar.Commands
                 case "tui":
                     {
                         // User chose to show the calendar TUI
-                        var calendar = CalendarTypes.Gregorian;
+                        var calendar = CalendarTypes.Variant;
                         bool useLegacy = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-legacy");
                         if (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-calendar"))
                             calendar = Enum.Parse<CalendarTypes>(SwitchManager.GetSwitchValue(parameters.SwitchesList, "-calendar"));

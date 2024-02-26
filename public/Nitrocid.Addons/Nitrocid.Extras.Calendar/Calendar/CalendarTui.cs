@@ -72,7 +72,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
         /// <summary>
         /// Opens an interactive calendar
         /// </summary>
-        internal static void OpenInteractive(int Year, int Month, int Day, CalendarTypes calendar = CalendarTypes.Gregorian)
+        internal static void OpenInteractive(int Year, int Month, int Day, CalendarTypes calendar = CalendarTypes.Variant)
         {
             // Set status
             state = (Year, Month, Day, calendar);

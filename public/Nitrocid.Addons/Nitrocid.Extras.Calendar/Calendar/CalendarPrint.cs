@@ -55,7 +55,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
         /// <summary>
         /// Prints the table of the calendar
         /// </summary>
-        public static void PrintCalendar(int Year, int Month, CalendarTypes calendar = CalendarTypes.Gregorian)
+        public static void PrintCalendar(int Year, int Month, CalendarTypes calendar = CalendarTypes.Variant)
         {
             var calendarInstance = CalendarTools.GetCalendar(calendar);
             var CalendarDays = calendarInstance.Culture.DateTimeFormat.DayNames;

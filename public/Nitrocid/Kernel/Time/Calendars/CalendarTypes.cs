@@ -56,5 +56,9 @@ namespace Nitrocid.Kernel.Time.Calendars
         /// The Taiwanese calendar (zh-TW culture)
         /// </summary>
         Taiwanese,
+        /// <summary>
+        /// Variant calendar that adapts to the current kernel culture
+        /// </summary>
+        Variant,
     }
 }
