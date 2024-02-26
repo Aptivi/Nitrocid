@@ -143,21 +143,7 @@ namespace Nitrocid.Kernel
                 if (PowerManager.RebootRequested || PowerManager.KernelShutdown)
                     continue;
 
-                // Show current time
-                if (TimeDateTools.ShowCurrentTimeBeforeLogin)
-                {
-                    TimeDateMiscRenderers.ShowCurrentTimes();
-                    TextWriterRaw.Write();
-                }
-
-                // Show the tip
-                if (WelcomeMessage.ShowTip)
-                    WelcomeMessage.ShowRandomTip();
-
-                // Show a tip telling users to see license information
-                TextWriters.Write("* " + Translate.DoTranslation("Run 'license' to see the license information.") + CharManager.NewLine, KernelColorType.Tip);
-
-                // Show MOTD
+                // Show MAL
                 BaseLoginHandler.ShowMOTDOnceFlag = true;
                 if (BaseLoginHandler.ShowMAL)
                 {
@@ -166,9 +152,21 @@ namespace Nitrocid.Kernel
                 }
                 DebugWriter.WriteDebug(DebugLevel.I, "Loaded MAL.");
 
+                // Show current time
+                if (TimeDateTools.ShowCurrentTimeBeforeLogin)
+                    TimeDateMiscRenderers.ShowCurrentTimes();
+                TextWriterRaw.Write();
+
                 // Show headline
                 RSSTools.ShowHeadlineLogin();
                 DebugWriter.WriteDebug(DebugLevel.I, "Loaded headline.");
+
+                // Show the tip
+                if (WelcomeMessage.ShowTip)
+                    WelcomeMessage.ShowRandomTip();
+
+                // Show a tip telling users to see license information
+                TextWriters.Write("* " + Translate.DoTranslation("Run 'license' to see the license information."), KernelColorType.Tip);
 
                 // Initialize shell
                 DebugWriter.WriteDebug(DebugLevel.I, "Shell is being initialized.");
