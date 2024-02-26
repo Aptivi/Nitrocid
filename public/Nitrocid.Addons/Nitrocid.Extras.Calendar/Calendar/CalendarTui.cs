@@ -621,7 +621,6 @@ namespace Nitrocid.Extras.Calendar.Calendar
             {
                 // Populate some variables
                 var CurrentDate = new DateTime(year, month, CurrentDay);
-                builder.AppendLine($"{month}/{CurrentDay}/{year}");
 
                 // Render the reminders
                 foreach (ReminderInfo Reminder in ReminderManager.Reminders)
@@ -630,7 +629,10 @@ namespace Nitrocid.Extras.Calendar.Calendar
                     var (rYear, rMonth, rDay, _) = TimeDateConverters.GetDateFromCalendar(new DateTime(rDate.Year, rDate.Month, rDate.Day), state.calendar);
                     rDate = new(rYear, rMonth, rDay);
                     if (rDate == CurrentDate)
+                    {
+                        builder.AppendLine($"{month}/{CurrentDay}/{year}");
                         builder.AppendLine($"  {Reminder.ReminderTitle}");
+                    }
                 }
             }
             InfoBoxColor.WriteInfoBox(builder.ToString());
@@ -649,7 +651,6 @@ namespace Nitrocid.Extras.Calendar.Calendar
             {
                 // Populate some variables
                 var CurrentDate = new DateTime(year, month, CurrentDay);
-                builder.AppendLine($"{month}/{CurrentDay}/{year}");
 
                 // Render the events
                 foreach (EventInfo EventInstance in EventManager.CalendarEvents.Union(EventManager.baseEvents))
@@ -666,7 +667,10 @@ namespace Nitrocid.Extras.Calendar.Calendar
                     eDate = new(eYear, eMonth, eDay);
                     if (((EventInstance.IsYearly && CurrentDate >= sDate && CurrentDate <= eDate) ||
                          (!EventInstance.IsYearly && CurrentDate == nDate)))
+                    {
+                        builder.AppendLine($"{month}/{CurrentDay}/{year}");
                         builder.AppendLine($"  {EventInstance.EventTitle}");
+                    }
                 }
             }
             InfoBoxColor.WriteInfoBox(builder.ToString());
