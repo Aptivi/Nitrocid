@@ -415,7 +415,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
         {
             // Change the status to reflect the selected day
             status =
-                $"MM/DD/YYYY: {state.Month}/{state.Day}/{state.Year} | {state.calendar}";
+                $"MM/DD/YYYY: {state.Month}/{state.Day}/{state.Year} | {Translate.DoTranslation("Calendar type")}: {state.calendar}";
         }
 
         private static void HandleKeypress(ConsoleKeyInfo key, ref (int Year, int Month, int Day, CalendarTypes calendar) state)
