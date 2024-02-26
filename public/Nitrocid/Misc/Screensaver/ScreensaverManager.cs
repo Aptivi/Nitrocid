@@ -138,6 +138,28 @@ namespace Nitrocid.Misc.Screensaver
         }
 
         /// <summary>
+        /// Gets the screensaver instance
+        /// </summary>
+        /// <param name="saver">Saver name</param>
+        /// <returns>An instance of <see cref="BaseScreensaver"/> that represents the selected screensaver</returns>
+        public static BaseScreensaver GetScreensaver(string saver)
+        {
+            // Check to see if there is a screensaver with this name
+            if (!IsScreensaverRegistered(saver))
+            {
+                DebugWriter.WriteDebug(DebugLevel.W, "{0} is not found.", saver);
+                throw new KernelException(KernelExceptionType.NoSuchScreensaver, Translate.DoTranslation("Screensaver {0} not found in database. Check the name and try again."), saver);
+            }
+
+            // Now, get the screensaver instance
+            var BaseSaver =
+                AddonSavers.TryGetValue(saver, out BaseScreensaver @base) ? @base :
+                CustomSavers.TryGetValue(saver, out BaseScreensaver customBase) ? customBase :
+                Screensavers[saver];
+            return BaseSaver;
+        }
+
+        /// <summary>
         /// Shows the screensaver
         /// </summary>
         public static void ShowSavers() =>

@@ -26,6 +26,8 @@ using Nitrocid.Shell.ShellBase.Switches;
 using System.Linq;
 using Terminaux.Inputs;
 using Terminaux.Reader;
+using Terminaux.Inputs.Interactive;
+using Nitrocid.Misc.Interactives;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -42,30 +44,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
         {
             bool selectionMode = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-select");
             if (selectionMode)
-            {
-                // Get the names and build the choices
-                var saverNames = ScreensaverManager.GetScreensaverNames();
-                var saverNums = saverNames.Select((_, idx) => $"{idx + 1}").ToArray();
-                var saverChoices = InputChoiceTools.GetInputChoices(saverNums, saverNames);
-                var saverExit = new InputChoiceInfo[]
-                {
-                    new($"{saverNames.Length + 1}", Translate.DoTranslation("Exit"))
-                };
-
-                // Main loop
-                while (true)
-                {
-                    // Prompt for screensaver selection
-                    int selected = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a screensaver to showcase"), [.. saverChoices], saverExit);
-                    if (selected == -1 || selected == saverNames.Length + 1)
-                        break;
-
-                    // Now, showcase the selected screensaver
-                    string name = saverNames[selected - 1];
-                    ScreensaverManager.ShowSavers(name);
-                    PressAndBailHelper();
-                }
-            }
+                InteractiveTuiTools.OpenInteractiveTui(new ScreensaverTui());
             else
             {
                 if (parameters.ArgumentsList.Length != 0)
