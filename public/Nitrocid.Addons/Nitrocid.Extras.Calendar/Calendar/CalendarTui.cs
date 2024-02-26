@@ -40,6 +40,7 @@ using Terminaux.Colors;
 using Terminaux.Base;
 using Terminaux.Reader;
 using Terminaux.Base.Extensions;
+using Nitrocid.Kernel.Time.Renderers;
 
 namespace Nitrocid.Extras.Calendar.Calendar
 {
@@ -415,7 +416,9 @@ namespace Nitrocid.Extras.Calendar.Calendar
         {
             // Change the status to reflect the selected day
             status =
-                $"MM/DD/YYYY: {state.Month}/{state.Day}/{state.Year} | {Translate.DoTranslation("Calendar type")}: {state.calendar}";
+                $"MM/DD/YYYY: {state.Month}/{state.Day}/{state.Year} | " +
+                $"{Translate.DoTranslation("Long form")}: {TimeDateRenderers.RenderDate(new DateTime(state.Year, state.Month, state.Day), FormatType.Long)} | " +
+                $"{Translate.DoTranslation("Calendar type")}: {state.calendar}";
         }
 
         private static void HandleKeypress(ConsoleKeyInfo key, ref (int Year, int Month, int Day, CalendarTypes calendar) state)
