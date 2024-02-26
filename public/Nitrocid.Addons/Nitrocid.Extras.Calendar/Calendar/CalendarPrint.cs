@@ -101,7 +101,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
                 // Dim out the weekends
                 if (IsWeekend)
                 {
-                    var WeekendOptions = new CellOptions((int)CurrentDate.DayOfWeek + 1, CurrentWeek)
+                    var WeekendOptions = new CellOptions(currentDay, CurrentWeek)
                     {
                         ColoredCell = true,
                         CellColor = KernelColorTools.GetColor(KernelColorType.WeekendDay),
@@ -113,7 +113,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
                 // Highlight today
                 if (IsToday)
                 {
-                    var TodayOptions = new CellOptions((int)CurrentDate.DayOfWeek + 1, CurrentWeek)
+                    var TodayOptions = new CellOptions(currentDay, CurrentWeek)
                     {
                         ColoredCell = true,
                         CellColor = KernelColorTools.GetColor(KernelColorType.TodayDay),
@@ -146,7 +146,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
                     if (((EventInstance.IsYearly && CurrentDate >= sDate && CurrentDate <= eDate) ||
                          (!EventInstance.IsYearly && CurrentDate == nDate)) && !EventMarked)
                     {
-                        var EventCell = new CellOptions((int)CurrentDate.DayOfWeek + 1, CurrentWeek)
+                        var EventCell = new CellOptions(currentDay, CurrentWeek)
                         {
                             ColoredCell = true,
                             CellColor = KernelColorTools.GetColor(KernelColorType.EventDay),
@@ -159,9 +159,9 @@ namespace Nitrocid.Extras.Calendar.Calendar
                 string markStart = ReminderMarked && EventMarked ? "[" : ReminderMarked ? "(" : EventMarked ? "<" : " ";
                 string markEnd = ReminderMarked && EventMarked ? "]" : ReminderMarked ? ")" : EventMarked ? ">" : " ";
                 CurrentDayMark = $"{markStart}{CurrentDay}{markEnd}";
-                CalendarData[CurrentWeekIndex, (int)CurrentDate.DayOfWeek] = CurrentDayMark;
+                CalendarData[CurrentWeekIndex, currentDay - 1] = CurrentDayMark;
             }
-            TableColor.WriteTable(CalendarDays, CalendarData, 2, true, CalendarCellOptions);
+            TableColor.WriteTable(mappedDays.Keys.Select((dow) => $"{CalendarDays[(int)dow]}").ToArray(), CalendarData, 2, true, CalendarCellOptions);
         }
 
     }
