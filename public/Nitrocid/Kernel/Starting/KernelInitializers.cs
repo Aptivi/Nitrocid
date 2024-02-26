@@ -60,6 +60,7 @@ using Nitrocid.Network.Types.RPC;
 using Nitrocid.Network.SpeedDial;
 using Nitrocid.Network.Connections;
 using Terminaux.Base.Extensions;
+using System.Text;
 
 namespace Nitrocid.Kernel.Starting
 {
@@ -79,11 +80,15 @@ namespace Nitrocid.Kernel.Starting
                 // Initialize crucial things
                 if (!KernelPlatform.IsOnUnix())
                 {
+                    // Initialize the VT sequences
                     if (!ConsolePositioning.InitializeSequences())
                     {
                         TextWriterColor.Write(Translate.DoTranslation("Can not initialize VT sequences for your Windows terminal. Make sure that you're running Windows 10 or later."));
                         InputTools.DetectKeypress();
                     }
+
+                    // Set the codepage
+                    Console.OutputEncoding = Encoding.UTF8;
                 }
 
                 // Load the assembly resolver
