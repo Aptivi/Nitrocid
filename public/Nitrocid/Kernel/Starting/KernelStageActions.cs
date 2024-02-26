@@ -78,7 +78,7 @@ namespace Nitrocid.Kernel.Starting
         internal static void Stage03HardwareProbe()
         {
             if (!HardwareProbe.QuietHardwareProbe)
-                SplashReport.ReportProgress(Translate.DoTranslation("hwprobe: Your hardware will be probed. Please wait..."), 15);
+                SplashReport.ReportProgress(Translate.DoTranslation("Please wait while the kernel initializes your hardware..."), 15);
             HardwareProbe.StartProbing();
             if (!SplashManager.EnableSplash & !KernelEntry.QuietKernel)
                 HardwareList.ListHardware();
