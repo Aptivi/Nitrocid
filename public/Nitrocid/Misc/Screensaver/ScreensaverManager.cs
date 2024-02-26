@@ -458,11 +458,6 @@ namespace Nitrocid.Misc.Screensaver
 
             // Get a random screensaver name
             string ScreensaverName = SelectRandom();
-
-            // We don't want another "random" screensaver showing up, so keep selecting until it's no longer "random"
-            while (ScreensaverName == "random")
-                ScreensaverName = SelectRandom();
-
             return ScreensaverName.ToLower();
         }
 
