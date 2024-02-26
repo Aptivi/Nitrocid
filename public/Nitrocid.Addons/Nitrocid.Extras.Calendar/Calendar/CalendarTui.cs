@@ -617,6 +617,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
             var selectedDate = new DateTime(state.Year, state.Month, TimeDateTools.KernelDateTime.Day > maxDate ? 1 : TimeDateTools.KernelDateTime.Day);
             var (year, month, _, _) = TimeDateConverters.GetDateFromCalendar(selectedDate, state.calendar);
             var DateTo = new DateTime(year, month, calendarInstance.Calendar.GetDaysInMonth(year, month));
+            bool found = false;
             for (int CurrentDay = 1; CurrentDay <= DateTo.Day; CurrentDay++)
             {
                 // Populate some variables
@@ -630,11 +631,14 @@ namespace Nitrocid.Extras.Calendar.Calendar
                     rDate = new(rYear, rMonth, rDay);
                     if (rDate == CurrentDate)
                     {
+                        found = true;
                         builder.AppendLine($"{month}/{CurrentDay}/{year}");
                         builder.AppendLine($"  {Reminder.ReminderTitle}");
                     }
                 }
             }
+            if (!found)
+                builder.AppendLine(Translate.DoTranslation("No reminders found for the selected month"));
             InfoBoxColor.WriteInfoBox(builder.ToString());
             return state;
         }
@@ -647,6 +651,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
             var selectedDate = new DateTime(state.Year, state.Month, TimeDateTools.KernelDateTime.Day > maxDate ? 1 : TimeDateTools.KernelDateTime.Day);
             var (year, month, _, _) = TimeDateConverters.GetDateFromCalendar(selectedDate, state.calendar);
             var DateTo = new DateTime(year, month, calendarInstance.Calendar.GetDaysInMonth(year, month));
+            bool found = false;
             for (int CurrentDay = 1; CurrentDay <= DateTo.Day; CurrentDay++)
             {
                 // Populate some variables
@@ -668,11 +673,14 @@ namespace Nitrocid.Extras.Calendar.Calendar
                     if (((EventInstance.IsYearly && CurrentDate >= sDate && CurrentDate <= eDate) ||
                          (!EventInstance.IsYearly && CurrentDate == nDate)))
                     {
+                        found = true;
                         builder.AppendLine($"{month}/{CurrentDay}/{year}");
                         builder.AppendLine($"  {EventInstance.EventTitle}");
                     }
                 }
             }
+            if (!found)
+                builder.AppendLine(Translate.DoTranslation("No events found for the selected month"));
             InfoBoxColor.WriteInfoBox(builder.ToString());
             return state;
         }
