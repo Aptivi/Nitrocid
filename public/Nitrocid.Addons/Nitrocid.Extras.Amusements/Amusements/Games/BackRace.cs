@@ -46,7 +46,6 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             // Some essential variables
             int chance = 30;
             BackRaceHorse[] horses;
-            Color[] horseColors;
 
             // Reset all the horses
             void ResetAll()
@@ -58,14 +57,6 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     new BackRaceHorse(3),
                     new BackRaceHorse(4),
                     new BackRaceHorse(5),
-                ];
-                horseColors =
-                [
-                    ColorTools.GetRandomColor(ColorType.TrueColor),
-                    ColorTools.GetRandomColor(ColorType.TrueColor),
-                    ColorTools.GetRandomColor(ColorType.TrueColor),
-                    ColorTools.GetRandomColor(ColorType.TrueColor),
-                    ColorTools.GetRandomColor(ColorType.TrueColor)
                 ];
             }
             ResetAll();
@@ -85,9 +76,10 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 for (int i = 0; i < 5; i++)
                 {
                     // Indicate the selected horse by coloring it white
-                    int height = consoleSixthsHeight * i + 2;
-                    var finalColor = i + 1 == selected ? ConsoleColors.White : horseColors[i];
+                    int height = consoleSixthsHeight * i + 3;
                     var horse = horses[i];
+                    var finalColor = i + 1 == selected ? ConsoleColors.White : horse.HorseColor;
+                    TextWriterWhereColor.WriteWhereColor(Translate.DoTranslation("Horse") + $" {horse.HorseNumber}", 1, height - 1, finalColor);
                     BorderColor.WriteBorder(boxLeft, height, boxWidth, 1, finalColor);
                     TextWriterWhereColor.WriteWhereColor($"{horse.HorseProgress:000}%", 2, height + 1, finalColor);
                     ProgressBarColor.WriteProgress(horse.HorseProgress, progressLeft, height, finalColor, finalColor);
@@ -108,10 +100,9 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                         .ToArray();
                     List<string> positions = [];
                     for (int i = 0; i < horsesSorted.Length; i++)
-                        positions.Add(Translate.DoTranslation("Horse") + $" {horsesSorted[i].HorseNumber}: #{i + 1}");
+                        positions.Add($"{KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground}#{i + 1}: {horsesSorted[i].HorseColor.VTSequenceForeground}{Translate.DoTranslation("Horse")} {horsesSorted[i].HorseNumber}{KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground}");
                     string renderedPositions = string.Join(" | ", positions);
-                    int positionsPositionX = ConsoleWrapper.WindowWidth / 2 - renderedPositions.Length / 2;
-                    TextWriters.WriteWhere(renderedPositions, positionsPositionX, bindingsPositionY, KernelColorType.NeutralText);
+                    TextFancyWriters.WriteCentered(bindingsPositionY, renderedPositions, KernelColorType.NeutralText);
 
                     // Update each horse with their own movement
                     for (int i = 0; i < 5; i++)
@@ -187,10 +178,12 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
     {
         internal int HorseNumber { get; private set; }
         internal int HorseProgress { get; set; } = 0;
+        internal Color HorseColor { get; private set; }
 
         internal BackRaceHorse(int horseNumber)
         {
             HorseNumber = horseNumber;
+            HorseColor = ColorTools.GetRandomColor(ColorType.TrueColor);
         }
     }
 }
