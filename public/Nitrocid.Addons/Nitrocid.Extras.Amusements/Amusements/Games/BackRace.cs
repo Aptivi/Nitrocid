@@ -32,23 +32,26 @@ using Nitrocid.Drivers.RNG;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
 using Terminaux.Reader;
+using Terminaux.Base.Buffered;
+using System.Text;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games
 {
     static class BackRace
     {
+        internal static BackRaceHorse[] horses;
+
         internal static void OpenBackRace()
         {
             // Clear the screen
             ConsoleWrapper.CursorVisible = false;
-            ConsoleWrapper.Clear();
+            ColorTools.LoadBack();
 
             // Some essential variables
             int chance = 30;
-            BackRaceHorse[] horses;
 
             // Reset all the horses
-            void ResetAll()
+            static void ResetAll()
             {
                 horses =
                 [
@@ -61,13 +64,19 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             }
             ResetAll();
 
-            // Main game loop
-            bool exiting = false;
-            bool racing = false;
+            // Add a buffer
+            Screen screen = new();
+            ScreenPart part = new();
+
+            // Add a UI rendering logic
             int selected = 1;
+            bool racing = false;
             int winner = 0;
-            while (!exiting)
+            Color color = KernelColorTools.GetColor(KernelColorType.NeutralText);
+            part.AddDynamicText(() =>
             {
+                StringBuilder builder = new();
+
                 // We need to show five boxes and five progress bars representing the horses
                 int consoleSixthsHeight = ConsoleWrapper.WindowHeight / 6;
                 int boxLeft = 1;
@@ -79,10 +88,12 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     int height = consoleSixthsHeight * i + 3;
                     var horse = horses[i];
                     var finalColor = i + 1 == selected ? ConsoleColors.White : horse.HorseColor;
-                    TextWriterWhereColor.WriteWhereColor(Translate.DoTranslation("Horse") + $" {horse.HorseNumber}", 1, height - 1, finalColor);
-                    BorderColor.WriteBorder(boxLeft, height, boxWidth, 1, finalColor);
-                    TextWriterWhereColor.WriteWhereColor($"{horse.HorseProgress:000}%", 2, height + 1, finalColor);
-                    ProgressBarColor.WriteProgress(horse.HorseProgress, progressLeft, height, finalColor, finalColor);
+                    builder.Append(
+                        TextWriterWhereColor.RenderWhereColor(Translate.DoTranslation("Horse") + $" {horse.HorseNumber}", 1, height - 1, finalColor) +
+                        BorderColor.RenderBorder(boxLeft, height, boxWidth, 1, finalColor) +
+                        TextWriterWhereColor.RenderWhereColor($"{horse.HorseProgress:000}%", 2, height + 1, finalColor) +
+                        ProgressBarColor.RenderProgress(horse.HorseProgress, progressLeft, height, 8, 2, finalColor, finalColor)
+                    );
                 }
 
                 // Check to see if we're on the rest mode or on the race mode
@@ -91,19 +102,38 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 int bindingsPositionY = ConsoleWrapper.WindowHeight - 2;
                 if (racing)
                 {
-                    // Race mode. Wipe the keybindings
-                    TextWriters.WriteWhere(new string(' ', bindings.Length), bindingsPositionX, bindingsPositionY, KernelColorType.NeutralText);
-
                     // Write the positions
                     var horsesSorted = horses
                         .OrderByDescending((progress) => progress.HorseProgress)
                         .ToArray();
                     List<string> positions = [];
                     for (int i = 0; i < horsesSorted.Length; i++)
-                        positions.Add($"{KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground}#{i + 1}: {horsesSorted[i].HorseColor.VTSequenceForeground}{Translate.DoTranslation("Horse")} {horsesSorted[i].HorseNumber}{KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground}");
+                        positions.Add($"{ColorTools.RenderSetConsoleColor(color)}#{i + 1}: {ColorTools.RenderSetConsoleColor(horsesSorted[i].HorseColor)}{Translate.DoTranslation("Horse")} {horsesSorted[i].HorseNumber}{ColorTools.RenderSetConsoleColor(color)}");
                     string renderedPositions = string.Join(" | ", positions);
-                    TextFancyWriters.WriteCentered(bindingsPositionY, renderedPositions, KernelColorType.NeutralText);
+                    builder.Append(
+                        CenteredTextColor.RenderCentered(bindingsPositionY, renderedPositions, color)
+                    );
+                }
+                else
+                {
+                    builder.Append(
+                        TextWriterWhereColor.RenderWhereColor(bindings, bindingsPositionX, bindingsPositionY, color)
+                    );
+                }
 
+                // Return the result
+                return builder.ToString();
+            });
+            screen.AddBufferedPart("Back Race - UI", part);
+            ScreenTools.SetCurrent(screen);
+
+            // Main game loop
+            bool exiting = false;
+            while (!exiting)
+            {
+                ScreenTools.Render();
+                if (racing)
+                {
                     // Update each horse with their own movement
                     for (int i = 0; i < 5; i++)
                     {
@@ -117,6 +147,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                         {
                             racing = false;
                             winner = i + 1;
+                            screen.RequireRefresh();
                         }
                     }
 
@@ -139,9 +170,6 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 }
                 else
                 {
-                    // Rest mode. Write the keybindings
-                    TextWriters.WriteWhere(bindings, bindingsPositionX, bindingsPositionY, KernelColorType.NeutralText);
-
                     // Wait for the input
                     winner = 0;
                     var input = TermReader.ReadKey().Key;
@@ -162,6 +190,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                         case ConsoleKey.Enter:
                             // Started the race
                             racing = true;
+                            screen.RequireRefresh();
                             break;
                         case ConsoleKey.Escape:
                             // Exited the game
@@ -170,7 +199,10 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     }
                 }
             }
-            ConsoleWrapper.Clear();
+
+            // Reset everything
+            ScreenTools.UnsetCurrent(screen);
+            ColorTools.LoadBack();
         }
     }
 
