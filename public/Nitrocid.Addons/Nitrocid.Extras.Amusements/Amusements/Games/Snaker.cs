@@ -27,9 +27,11 @@ using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Screensaver;
 using Terminaux.Base;
-using Terminaux.Colors.Data;
 using Terminaux.Reader;
 using Terminaux.Colors.Transformation.Contrast;
+using Terminaux.Base.Buffered;
+using System.Text;
+using Terminaux.Sequences.Builder.Types;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games
 {
@@ -41,19 +43,28 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
         /// </summary>
         public static void InitializeSnaker(bool Simulation)
         {
+            // Clear the screen
+            ConsoleWrapper.CursorVisible = false;
+            ColorTools.LoadBack();
+
             // Variables
             int SnakeLength = 1;
             var SnakeMassPositions = new List<string>();
             var Direction = Enum.Parse<SnakeDirection>(RandomDriver.Random(3).ToString());
-            ConsoleWrapper.CursorVisible = false;
-            ColorTools.LoadBackDry(0);
 
             // Get the floor color ready
             var FloorColor = ChangeSnakeColor();
 
+            // Add a buffer
+            Screen screen = new();
+            ScreenPart part = new();
+
             // Draw the floor
-            if (!ConsoleResizeHandler.WasResized(false))
+            part.BackgroundColor(FloorColor);
+            part.AddDynamicText(() =>
             {
+                StringBuilder floor = new();
+
                 int FloorTopLeftEdge = 2;
                 int FloorBottomLeftEdge = 2;
                 DebugWriter.WriteDebug(DebugLevel.I, "Top left edge: {0}, Bottom left edge: {1}", FloorTopLeftEdge, FloorBottomLeftEdge);
@@ -69,312 +80,291 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 int FloorLeftEdge = 2;
                 int FloorRightEdge = ConsoleWrapper.WindowWidth - 4;
                 DebugWriter.WriteDebug(DebugLevel.I, "Left edge: {0}, Right edge: {1}", FloorLeftEdge, FloorRightEdge);
-                ColorTools.SetConsoleColorDry(FloorColor, true);
 
                 // First, draw the floor top edge
                 for (int x = FloorTopLeftEdge; x <= FloorTopRightEdge; x++)
                 {
-                    ConsoleWrapper.SetCursorPosition(x, 1);
                     DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor top edge ({0}, {1})", x, 1);
-                    ConsoleWrapper.Write(" ");
+                    floor.Append(
+                        CsiSequences.GenerateCsiCursorPosition(x + 1, 2) +
+                        " "
+                    );
                 }
 
                 // Second, draw the floor bottom edge
                 for (int x = FloorBottomLeftEdge; x <= FloorBottomRightEdge; x++)
                 {
-                    ConsoleWrapper.SetCursorPosition(x, FloorBottomEdge);
                     DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor bottom edge ({0}, {1})", x, FloorBottomEdge);
-                    ConsoleWrapper.Write(" ");
+                    floor.Append(
+                        CsiSequences.GenerateCsiCursorPosition(x + 1, FloorBottomEdge + 1) +
+                        " "
+                    );
                 }
 
                 // Third, draw the floor left edge
                 for (int y = FloorTopEdge; y <= FloorBottomEdge; y++)
                 {
-                    ConsoleWrapper.SetCursorPosition(FloorLeftEdge, y);
                     DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor left edge ({0}, {1})", FloorLeftEdge, y);
-                    ConsoleWrapper.Write("  ");
+                    floor.Append(
+                        CsiSequences.GenerateCsiCursorPosition(FloorLeftEdge + 1, y + 1) +
+                        " "
+                    );
                 }
 
                 // Finally, draw the floor right edge
                 for (int y = FloorTopEdge; y <= FloorBottomEdge; y++)
                 {
-                    ConsoleWrapper.SetCursorPosition(FloorRightEdge, y);
                     DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor right edge ({0}, {1})", FloorRightEdge, y);
-                    ConsoleWrapper.Write("  ");
+                    floor.Append(
+                        CsiSequences.GenerateCsiCursorPosition(FloorRightEdge + 2, y + 1) +
+                        " "
+                    );
                 }
-            }
+
+                // Render the result
+                return floor.ToString();
+            });
 
             // Get the snake color ready
             var SnakeColor = ChangeSnakeColor();
             var snakeForeColor = ColorTools.GetGray(SnakeColor, ColorContrastType.Ntsc);
 
             // A typical snake usually starts in the middle.
-            if (!ConsoleResizeHandler.WasResized(false))
+            int FloorTopEdge = 1;
+            int FloorBottomEdge = ConsoleWrapper.WindowHeight - 2;
+            int FloorLeftEdge = 3;
+            int FloorRightEdge = ConsoleWrapper.WindowWidth - 4;
+            DebugWriter.WriteDebug(DebugLevel.I, "Floor top edge {0}", FloorTopEdge);
+            DebugWriter.WriteDebug(DebugLevel.I, "Floor bottom edge {0}", FloorBottomEdge);
+            DebugWriter.WriteDebug(DebugLevel.I, "Floor left edge {0}", FloorLeftEdge);
+            DebugWriter.WriteDebug(DebugLevel.I, "Floor right edge {0}", FloorRightEdge);
+
+            int SnakeCurrentX = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d);
+            int SnakeCurrentY = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d);
+            DebugWriter.WriteDebug(DebugLevel.I, "Initial snake position ({0}, {1})", SnakeCurrentX, SnakeCurrentY);
+
+            int SnakeAppleX = RandomDriver.Random(FloorLeftEdge + 1, FloorRightEdge - 1);
+            int SnakeAppleY = RandomDriver.Random(FloorTopEdge + 1, FloorBottomEdge - 1);
+            DebugWriter.WriteDebug(DebugLevel.I, "Initial snake apple position ({0}, {1})", SnakeAppleX, SnakeAppleY);
+
+            bool Dead = false;
+            bool DidHorizontal = false;
+            bool DidVertical = false;
+            int SnakePreviousX = SnakeCurrentX;
+            int SnakePreviousY = SnakeCurrentY;
+            var SnakeLastTailToWipeX = 0;
+            var SnakeLastTailToWipeY = 0;
+            part.AddDynamicText(() =>
             {
-                bool Dead = false;
-                int FloorTopEdge = 1;
-                int FloorBottomEdge = ConsoleWrapper.WindowHeight - 2;
-                int FloorLeftEdge = 3;
-                int FloorRightEdge = ConsoleWrapper.WindowWidth - 4;
-                DebugWriter.WriteDebug(DebugLevel.I, "Floor top edge {0}", FloorTopEdge);
-                DebugWriter.WriteDebug(DebugLevel.I, "Floor bottom edge {0}", FloorBottomEdge);
-                DebugWriter.WriteDebug(DebugLevel.I, "Floor left edge {0}", FloorLeftEdge);
-                DebugWriter.WriteDebug(DebugLevel.I, "Floor right edge {0}", FloorRightEdge);
+                StringBuilder buffer = new();
+                FloorBottomEdge = ConsoleWrapper.WindowHeight - 2;
+                FloorRightEdge = ConsoleWrapper.WindowWidth - 4;
 
-                int SnakeCurrentX = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d);
-                int SnakeCurrentY = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d);
-                DebugWriter.WriteDebug(DebugLevel.I, "Initial snake position ({0}, {1})", SnakeCurrentX, SnakeCurrentY);
+                // Remove excess mass and set the snake color
+                buffer.Append(
+                    CsiSequences.GenerateCsiCursorPosition(SnakeLastTailToWipeX + 1, SnakeLastTailToWipeY + 1) +
+                    $"{ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true)} " +
+                    ColorTools.RenderSetConsoleColor(SnakeColor, true) +
+                    ColorTools.RenderSetConsoleColor(snakeForeColor)
+                );
 
-                int SnakeAppleX = RandomDriver.Random(FloorLeftEdge + 1, FloorRightEdge - 1);
-                int SnakeAppleY = RandomDriver.Random(FloorTopEdge + 1, FloorBottomEdge - 1);
-                DebugWriter.WriteDebug(DebugLevel.I, "Initial snake apple position ({0}, {1})", SnakeAppleX, SnakeAppleY);
+                // Draw an apple
+                buffer.Append(
+                    CsiSequences.GenerateCsiCursorPosition(SnakeAppleX + 1, SnakeAppleY + 1) +
+                    "+"
+                );
+                DebugWriter.WriteDebug(DebugLevel.I, "Drawn apple at ({0}, {1})", SnakeAppleX, SnakeAppleY);
 
-                bool DidHorizontal = false;
-                bool DidVertical = false;
-                bool AppleDrawn = false;
-                int SnakePreviousX;
-                int SnakePreviousY;
-                var SnakeLastTailToWipeX = 0;
-                var SnakeLastTailToWipeY = 0;
-
-                while (!Dead)
+                // Make a snake
+                for (int PositionIndex = SnakeMassPositions.Count - 1; PositionIndex >= 0; PositionIndex -= 1)
                 {
-                    // Delay
-                    if (Simulation)
-                        ThreadManager.SleepNoBlock(SnakerSettings.SnakerDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
-                    else
-                        Thread.Sleep(SnakerSettings.SnakerDelay);
-                    if (ConsoleResizeHandler.WasResized(false))
-                        break;
+                    var PositionStrings = SnakeMassPositions[PositionIndex].Split('/');
+                    int PositionX = Convert.ToInt32(PositionStrings[0]);
+                    int PositionY = Convert.ToInt32(PositionStrings[1]);
+                    string snakeHead = PositionIndex < SnakeMassPositions.Count - 1 ? " " :
+                        Direction == SnakeDirection.Top ? "^" :
+                        Direction == SnakeDirection.Bottom ? "v" :
+                        Direction == SnakeDirection.Left ? "<" :
+                        Direction == SnakeDirection.Right ? ">" :
+                        " ";
+                    buffer.Append(
+                        CsiSequences.GenerateCsiCursorPosition(PositionX + 1, PositionY + 1) +
+                        snakeHead
+                    );
+                    DebugWriter.WriteDebug(DebugLevel.I, "Drawn snake at ({0}, {1}) for mass {2}/{3}", PositionX, PositionY, PositionIndex + 1, SnakeMassPositions.Count);
+                }
 
-                    // Remove excess mass
-                    ConsoleWrapper.SetCursorPosition(SnakeLastTailToWipeX, SnakeLastTailToWipeY);
-                    ConsoleWrapper.Write($"{new Color(ConsoleColors.Black).VTSequenceBackground} ");
+                // If dead, show dead face to indicate that the dead snake died. Dead snake is game over.
+                if (Dead)
+                {
+                    buffer.Append(
+                        CsiSequences.GenerateCsiCursorPosition(SnakePreviousX + 1, SnakePreviousY + 1) +
+                        "X"
+                    );
+                    DebugWriter.WriteDebug(DebugLevel.I, "Snake died at {0}/{1}.", SnakePreviousX, SnakePreviousY);
+                }
 
-                    // Set the snake color
-                    ColorTools.SetConsoleColorDry(SnakeColor, true);
-                    ColorTools.SetConsoleColorDry(snakeForeColor);
+                // Return the result
+                return buffer.ToString();
+            });
+            screen.AddBufferedPart("Snaker - UI", part);
+            ScreenTools.SetCurrent(screen);
 
-                    // Draw an apple
-                    if (!AppleDrawn)
+            // Main loop
+            while (!Dead)
+            {
+                // Delay
+                if (Simulation)
+                    ThreadManager.SleepNoBlock(SnakerSettings.SnakerDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                else
+                    Thread.Sleep(SnakerSettings.SnakerDelay);
+                ScreenTools.Render();
+
+                // Move the snake according to the mode
+                if (Simulation)
+                {
+                    // Change the snake direction
+                    float PossibilityToChange = (float)RandomDriver.RandomDouble();
+                    if ((int)Math.Round(PossibilityToChange) == 1)
                     {
-                        AppleDrawn = true;
-                        ConsoleWrapper.SetCursorPosition(SnakeAppleX, SnakeAppleY);
-                        ConsoleWrapper.Write("+");
-                        DebugWriter.WriteDebug(DebugLevel.I, "Drawn apple at ({0}, {1})", SnakeAppleX, SnakeAppleY);
+                        DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Change guaranteed. {0}", PossibilityToChange);
+                        DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Horizontal? {0}, Vertical? {1}", DidHorizontal, DidVertical);
+                        if (DidHorizontal)
+                            Direction = (SnakeDirection)Convert.ToInt32(Enum.Parse(typeof(SnakeDirection), RandomDriver.RandomIdx(2).ToString()));
+                        else if (DidVertical)
+                            Direction = (SnakeDirection)Convert.ToInt32(Enum.Parse(typeof(SnakeDirection), RandomDriver.RandomIdx(2, 4).ToString()));
                     }
-
-                    // Make a snake
-                    for (int PositionIndex = SnakeMassPositions.Count - 1; PositionIndex >= 0; PositionIndex -= 1)
+                    switch (Direction)
                     {
-                        var PositionStrings = SnakeMassPositions[PositionIndex].Split('/');
-                        int PositionX = Convert.ToInt32(PositionStrings[0]);
-                        int PositionY = Convert.ToInt32(PositionStrings[1]);
-                        ConsoleWrapper.SetCursorPosition(PositionX, PositionY);
-                        string snakeHead = PositionIndex < SnakeMassPositions.Count - 1 ? " " :
-                            Direction == SnakeDirection.Top ? "^" :
-                            Direction == SnakeDirection.Bottom ? "v" :
-                            Direction == SnakeDirection.Left ? "<" :
-                            Direction == SnakeDirection.Right ? ">" :
-                            " ";
-                        ConsoleWrapper.Write(snakeHead);
-                        ConsoleWrapper.SetCursorPosition(PositionX, PositionY);
-                        DebugWriter.WriteDebug(DebugLevel.I, "Drawn snake at ({0}, {1}) for mass {2}/{3}", PositionX, PositionY, PositionIndex + 1, SnakeMassPositions.Count);
-                    }
-
-                    // Set the previous positions
-                    SnakePreviousX = SnakeCurrentX;
-                    SnakePreviousY = SnakeCurrentY;
-
-                    if (Simulation)
-                    {
-                        // Change the snake direction
-                        float PossibilityToChange = (float)RandomDriver.RandomDouble();
-                        if ((int)Math.Round(PossibilityToChange) == 1)
-                        {
-                            DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Change guaranteed. {0}", PossibilityToChange);
-                            DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Horizontal? {0}, Vertical? {1}", DidHorizontal, DidVertical);
-                            if (DidHorizontal)
-                            {
-                                Direction = (SnakeDirection)Convert.ToInt32(Enum.Parse(typeof(SnakeDirection), RandomDriver.RandomIdx(2).ToString()));
-                            }
-                            else if (DidVertical)
-                            {
-                                Direction = (SnakeDirection)Convert.ToInt32(Enum.Parse(typeof(SnakeDirection), RandomDriver.RandomIdx(2, 4).ToString()));
-                            }
-                        }
-                        switch (Direction)
-                        {
-                            case SnakeDirection.Bottom:
-                                {
-                                    SnakeCurrentY += 1;
-                                    DidHorizontal = false;
-                                    DidVertical = true;
-                                    DebugWriter.WriteDebug(DebugLevel.I, "Increased vertical snake position from {0} to {1}", SnakePreviousY, SnakeCurrentY);
-                                    break;
-                                }
-                            case SnakeDirection.Top:
-                                {
-                                    SnakeCurrentY -= 1;
-                                    DidHorizontal = false;
-                                    DidVertical = true;
-                                    DebugWriter.WriteDebug(DebugLevel.I, "Decreased vertical snake position from {0} to {1}", SnakePreviousY, SnakeCurrentY);
-                                    break;
-                                }
-                            case SnakeDirection.Left:
-                                {
-                                    SnakeCurrentX -= 1;
-                                    DidHorizontal = true;
-                                    DidVertical = false;
-                                    DebugWriter.WriteDebug(DebugLevel.I, "Decreased horizontal snake position from {0} to {1}", SnakePreviousX, SnakeCurrentX);
-                                    break;
-                                }
-                            case SnakeDirection.Right:
-                                {
-                                    SnakeCurrentX += 1;
-                                    DidHorizontal = true;
-                                    DidVertical = false;
-                                    DebugWriter.WriteDebug(DebugLevel.I, "Increased horizontal snake position from {0} to {1}", SnakePreviousX, SnakeCurrentX);
-                                    break;
-                                }
-                        }
-                    }
-                    else
-                    {
-                        // User pressed the arrow button to move the snake
-                        if (ConsoleWrapper.KeyAvailable)
-                        {
-                            var Pressed = TermReader.ReadKey().Key;
-                            switch (Pressed)
-                            {
-                                case ConsoleKey.DownArrow:
-                                    {
-                                        if (DidHorizontal)
-                                        {
-                                            Direction = SnakeDirection.Bottom;
-                                        }
-
-                                        break;
-                                    }
-                                case ConsoleKey.UpArrow:
-                                    {
-                                        if (DidHorizontal)
-                                        {
-                                            Direction = SnakeDirection.Top;
-                                        }
-
-                                        break;
-                                    }
-                                case ConsoleKey.LeftArrow:
-                                    {
-                                        if (DidVertical)
-                                        {
-                                            Direction = SnakeDirection.Left;
-                                        }
-
-                                        break;
-                                    }
-                                case ConsoleKey.RightArrow:
-                                    {
-                                        if (DidVertical)
-                                        {
-                                            Direction = SnakeDirection.Right;
-                                        }
-
-                                        break;
-                                    }
-                            }
-                        }
-                        switch (Direction)
-                        {
-                            case SnakeDirection.Bottom:
-                                {
-                                    SnakeCurrentY += 1;
-                                    DidHorizontal = false;
-                                    DidVertical = true;
-                                    DebugWriter.WriteDebug(DebugLevel.I, "Increased vertical snake position from {0} to {1}", SnakePreviousY, SnakeCurrentY);
-                                    break;
-                                }
-                            case SnakeDirection.Top:
-                                {
-                                    SnakeCurrentY -= 1;
-                                    DidHorizontal = false;
-                                    DidVertical = true;
-                                    DebugWriter.WriteDebug(DebugLevel.I, "Decreased vertical snake position from {0} to {1}", SnakePreviousY, SnakeCurrentY);
-                                    break;
-                                }
-                            case SnakeDirection.Left:
-                                {
-                                    SnakeCurrentX -= 1;
-                                    DidHorizontal = true;
-                                    DidVertical = false;
-                                    DebugWriter.WriteDebug(DebugLevel.I, "Decreased horizontal snake position from {0} to {1}", SnakePreviousX, SnakeCurrentX);
-                                    break;
-                                }
-                            case SnakeDirection.Right:
-                                {
-                                    SnakeCurrentX += 1;
-                                    DidHorizontal = true;
-                                    DidVertical = false;
-                                    DebugWriter.WriteDebug(DebugLevel.I, "Increased horizontal snake position from {0} to {1}", SnakePreviousX, SnakeCurrentX);
-                                    break;
-                                }
-                        }
-                    }
-                    DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Snake is facing {0}.", Direction.ToString());
-
-                    // Check death using mass position check
-                    Dead = SnakeMassPositions.Contains($"{SnakeCurrentX}/{SnakeCurrentY}");
-                    DebugWriter.WriteDebug(DebugLevel.I, "Mass position contains the current position ({0}, {1})? {2}", SnakeCurrentX, SnakeCurrentY, Dead);
-
-                    // Add the mass position
-                    if (!Dead)
-                        SnakeMassPositions.Add($"{SnakeCurrentX}/{SnakeCurrentY}");
-                    if (SnakeMassPositions.Count > SnakeLength)
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Mass position count {0} exceeds snake length of {1}. Removing index 0...", SnakeMassPositions.Count, SnakeLength);
-                        var LastTailPositionStrings = SnakeMassPositions[0].Split('/');
-                        SnakeLastTailToWipeX = Convert.ToInt32(LastTailPositionStrings[0]);
-                        SnakeLastTailToWipeY = Convert.ToInt32(LastTailPositionStrings[1]);
-                        SnakeMassPositions.RemoveAt(0);
-                    }
-
-                    // Check death state
-                    if (!Dead)
-                        Dead = SnakeCurrentY == FloorTopEdge;
-                    DebugWriter.WriteDebug(DebugLevel.I, "Dead? {0} because current Y is {1} and top edge is {2}", Dead, SnakeCurrentY, FloorTopEdge);
-                    if (!Dead)
-                        Dead = SnakeCurrentY == FloorBottomEdge;
-                    DebugWriter.WriteDebug(DebugLevel.I, "Dead? {0} because current Y is {1} and bottom edge is {2}", Dead, SnakeCurrentY, FloorBottomEdge);
-                    if (!Dead)
-                        Dead = SnakeCurrentX == FloorLeftEdge;
-                    DebugWriter.WriteDebug(DebugLevel.I, "Dead? {0} because current X is {1} and left edge is {2}", Dead, SnakeCurrentX, FloorLeftEdge);
-                    if (!Dead)
-                        Dead = SnakeCurrentX == FloorRightEdge;
-                    DebugWriter.WriteDebug(DebugLevel.I, "Dead? {0} because current X is {1} and right edge is {2}", Dead, SnakeCurrentX, FloorRightEdge);
-
-                    // If dead, show dead face
-                    if (Dead)
-                    {
-                        ConsoleWrapper.SetCursorPosition(SnakePreviousX, SnakePreviousY);
-                        ConsoleWrapper.Write("X");
-                        DebugWriter.WriteDebug(DebugLevel.I, "Snake dead at {0}/{1}.", SnakePreviousX, SnakePreviousY);
-                    }
-
-                    // If the snake ate the apple, grow it up
-                    if (SnakeCurrentX == SnakeAppleX & SnakeCurrentY == SnakeAppleY)
-                    {
-                        SnakeLength += 1;
-                        DebugWriter.WriteDebug(DebugLevel.I, "Snake grew up to {0}.", SnakeLength);
-
-                        // Relocate the apple
-                        SnakeAppleX = RandomDriver.Random(FloorLeftEdge + 1, FloorRightEdge - 1);
-                        SnakeAppleY = RandomDriver.Random(FloorTopEdge + 1, FloorBottomEdge - 1);
-                        AppleDrawn = false;
-                        DebugWriter.WriteDebug(DebugLevel.I, "New snake apple position ({0}, {1})", SnakeAppleX, SnakeAppleY);
+                        case SnakeDirection.Bottom:
+                            SnakeCurrentY += 1;
+                            DidHorizontal = false;
+                            DidVertical = true;
+                            DebugWriter.WriteDebug(DebugLevel.I, "Increased vertical snake position from {0} to {1}", SnakePreviousY, SnakeCurrentY);
+                            break;
+                        case SnakeDirection.Top:
+                            SnakeCurrentY -= 1;
+                            DidHorizontal = false;
+                            DidVertical = true;
+                            DebugWriter.WriteDebug(DebugLevel.I, "Decreased vertical snake position from {0} to {1}", SnakePreviousY, SnakeCurrentY);
+                            break;
+                        case SnakeDirection.Left:
+                            SnakeCurrentX -= 1;
+                            DidHorizontal = true;
+                            DidVertical = false;
+                            DebugWriter.WriteDebug(DebugLevel.I, "Decreased horizontal snake position from {0} to {1}", SnakePreviousX, SnakeCurrentX);
+                            break;
+                        case SnakeDirection.Right:
+                            SnakeCurrentX += 1;
+                            DidHorizontal = true;
+                            DidVertical = false;
+                            DebugWriter.WriteDebug(DebugLevel.I, "Increased horizontal snake position from {0} to {1}", SnakePreviousX, SnakeCurrentX);
+                            break;
                     }
                 }
+                else
+                {
+                    // User pressed the arrow button to move the snake
+                    if (ConsoleWrapper.KeyAvailable)
+                    {
+                        var Pressed = TermReader.ReadKey().Key;
+                        switch (Pressed)
+                        {
+                            case ConsoleKey.DownArrow:
+                                if (DidHorizontal)
+                                    Direction = SnakeDirection.Bottom;
+                                break;
+                            case ConsoleKey.UpArrow:
+                                if (DidHorizontal)
+                                    Direction = SnakeDirection.Top;
+                                break;
+                            case ConsoleKey.LeftArrow:
+                                if (DidVertical)
+                                    Direction = SnakeDirection.Left;
+                                break;
+                            case ConsoleKey.RightArrow:
+                                if (DidVertical)
+                                    Direction = SnakeDirection.Right;
+                                break;
+                        }
+                    }
+                    switch (Direction)
+                    {
+                        case SnakeDirection.Bottom:
+                            SnakeCurrentY += 1;
+                            DidHorizontal = false;
+                            DidVertical = true;
+                            DebugWriter.WriteDebug(DebugLevel.I, "Increased vertical snake position from {0} to {1}", SnakePreviousY, SnakeCurrentY);
+                            break;
+                        case SnakeDirection.Top:
+                            SnakeCurrentY -= 1;
+                            DidHorizontal = false;
+                            DidVertical = true;
+                            DebugWriter.WriteDebug(DebugLevel.I, "Decreased vertical snake position from {0} to {1}", SnakePreviousY, SnakeCurrentY);
+                            break;
+                        case SnakeDirection.Left:
+                            SnakeCurrentX -= 1;
+                            DidHorizontal = true;
+                            DidVertical = false;
+                            DebugWriter.WriteDebug(DebugLevel.I, "Decreased horizontal snake position from {0} to {1}", SnakePreviousX, SnakeCurrentX);
+                            break;
+                        case SnakeDirection.Right:
+                            SnakeCurrentX += 1;
+                            DidHorizontal = true;
+                            DidVertical = false;
+                            DebugWriter.WriteDebug(DebugLevel.I, "Increased horizontal snake position from {0} to {1}", SnakePreviousX, SnakeCurrentX);
+                            break;
+                    }
+                }
+                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Snake is facing {0}.", Direction.ToString());
+
+                // Check death using mass position check
+                Dead = SnakeMassPositions.Contains($"{SnakeCurrentX}/{SnakeCurrentY}");
+                DebugWriter.WriteDebug(DebugLevel.I, "Mass position contains the current position ({0}, {1})? {2}", SnakeCurrentX, SnakeCurrentY, Dead);
+
+                // Add the mass position
+                if (!Dead)
+                    SnakeMassPositions.Add($"{SnakeCurrentX}/{SnakeCurrentY}");
+                if (SnakeMassPositions.Count > SnakeLength)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.I, "Mass position count {0} exceeds snake length of {1}. Removing index 0...", SnakeMassPositions.Count, SnakeLength);
+                    var LastTailPositionStrings = SnakeMassPositions[0].Split('/');
+                    SnakeLastTailToWipeX = Convert.ToInt32(LastTailPositionStrings[0]);
+                    SnakeLastTailToWipeY = Convert.ToInt32(LastTailPositionStrings[1]);
+                    SnakeMassPositions.RemoveAt(0);
+                }
+
+                // Check death state
+                if (!Dead)
+                    Dead = SnakeCurrentY == FloorTopEdge;
+                DebugWriter.WriteDebug(DebugLevel.I, "Dead? {0} because current Y is {1} and top edge is {2}", Dead, SnakeCurrentY, FloorTopEdge);
+                if (!Dead)
+                    Dead = SnakeCurrentY == FloorBottomEdge;
+                DebugWriter.WriteDebug(DebugLevel.I, "Dead? {0} because current Y is {1} and bottom edge is {2}", Dead, SnakeCurrentY, FloorBottomEdge);
+                if (!Dead)
+                    Dead = SnakeCurrentX == FloorLeftEdge;
+                DebugWriter.WriteDebug(DebugLevel.I, "Dead? {0} because current X is {1} and left edge is {2}", Dead, SnakeCurrentX, FloorLeftEdge);
+                if (!Dead)
+                    Dead = SnakeCurrentX == FloorRightEdge;
+                DebugWriter.WriteDebug(DebugLevel.I, "Dead? {0} because current X is {1} and right edge is {2}", Dead, SnakeCurrentX, FloorRightEdge);
+
+                // If the snake ate the apple, grow it up
+                if (SnakeCurrentX == SnakeAppleX & SnakeCurrentY == SnakeAppleY)
+                {
+                    SnakeLength += 1;
+                    DebugWriter.WriteDebug(DebugLevel.I, "Snake grew up to {0}.", SnakeLength);
+
+                    // Relocate the apple
+                    SnakeAppleX = RandomDriver.Random(FloorLeftEdge + 1, FloorRightEdge - 1);
+                    SnakeAppleY = RandomDriver.Random(FloorTopEdge + 1, FloorBottomEdge - 1);
+                    DebugWriter.WriteDebug(DebugLevel.I, "New snake apple position ({0}, {1})", SnakeAppleX, SnakeAppleY);
+                }
+
+                // Set the previous positions
+                SnakePreviousX = SnakeCurrentX;
+                SnakePreviousY = SnakeCurrentY;
             }
+            ScreenTools.Render();
 
             // Show the stage for few seconds before wiping
             if (Simulation)
