@@ -29,6 +29,8 @@ using Terminaux.Base.Buffered;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Reader;
+using Nitrocid.Drivers;
+using Nitrocid.Drivers.RNG;
 
 namespace Nitrocid.Extras.Timers.Timers
 {
@@ -39,7 +41,7 @@ namespace Nitrocid.Extras.Timers.Timers
     {
 
         internal static List<LapDisplayInfo> Laps = [];
-        internal static Color LapColor = KernelColorTools.GetColor(KernelColorType.NeutralText);
+        internal static Color LapColor;
         internal static Stopwatch Stopwatch = new();
         internal static Stopwatch LappedStopwatch = new();
         internal static bool running;
@@ -55,6 +57,12 @@ namespace Nitrocid.Extras.Timers.Timers
             ColorTools.LoadBack();
             string status = Translate.DoTranslation("Stopwatch is ready.");
             bool resetting = false;
+
+            // Set the random lap color
+            int RedValue = RandomDriver.Random(255);
+            int GreenValue = RandomDriver.Random(255);
+            int BlueValue = RandomDriver.Random(255);
+            LapColor = new Color(RedValue, GreenValue, BlueValue);
 
             // Add a dynamic text that shows you the time dynamically
             watchScreenPart.AddDynamicText(() =>
@@ -84,13 +92,13 @@ namespace Nitrocid.Extras.Timers.Timers
 
                 // Print the keys text
                 builder.Append(
-                    TextWriterWhereColor.RenderWhere(KeysText, KeysTextLeftPosition, KeysTextTopPosition, true, KernelColorTools.GetColor(KernelColorType.Tip), KernelColorTools.GetColor(KernelColorType.Background))
+                    TextWriterWhereColor.RenderWhereColorBack(KeysText, KeysTextLeftPosition, KeysTextTopPosition, true, KernelColorTools.GetColor(KernelColorType.Tip), KernelColorTools.GetColor(KernelColorType.Background))
                 );
 
                 // Print the time interval and the current lap
                 builder.Append(
-                    TextWriterWhereColor.RenderWhere(Stopwatch.Elapsed.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCult), TimeLeftPosition, TimeTopPosition, true, LapColor, KernelColorTools.GetColor(KernelColorType.Background)) +
-                    TextWriterWhereColor.RenderWhere(LapsText + " {0}: {1}", LapsCurrentLapLeftPosition, LapsCurrentLapTopPosition, true, LapColor, KernelColorTools.GetColor(KernelColorType.Background), Laps.Count + 1, LappedStopwatch.Elapsed.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCult))
+                    TextWriterWhereColor.RenderWhereColorBack(Stopwatch.Elapsed.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCult), TimeLeftPosition, TimeTopPosition, true, LapColor, KernelColorTools.GetColor(KernelColorType.Background)) +
+                    TextWriterWhereColor.RenderWhereColorBack(LapsText + " {0}: {1}", LapsCurrentLapLeftPosition, LapsCurrentLapTopPosition, true, LapColor, KernelColorTools.GetColor(KernelColorType.Background), Laps.Count + 1, LappedStopwatch.Elapsed.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCult))
                 );
 
                 // Print the border
@@ -98,7 +106,7 @@ namespace Nitrocid.Extras.Timers.Timers
 
                 // Print informational messages
                 builder.Append(
-                    TextWriterWhereColor.RenderWhere(status, 1, 0, false, KernelColorTools.GetColor(KernelColorType.NeutralText), KernelColorTools.GetColor(KernelColorType.Background)) +
+                    TextWriterWhereColor.RenderWhereColorBack(status, 1, 0, false, KernelColorTools.GetColor(KernelColorType.NeutralText), KernelColorTools.GetColor(KernelColorType.Background)) +
                     ConsoleClearing.GetClearLineToRightSequence()
                 );
 
@@ -116,7 +124,7 @@ namespace Nitrocid.Extras.Timers.Timers
                     LapsListBuilder.AppendLine(Lap.LapColor.VTSequenceForeground + Translate.DoTranslation("Lap") + $" {LapIndex + 1}: {Lap.LapInterval.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCult)}");
                 }
                 builder.Append(
-                    TextWriterWhereColor.RenderWhere(LapsListBuilder.ToString(), LapsLapsListLeftPosition, LapsLapsListTopPosition, true, LapColor, KernelColorTools.GetColor(KernelColorType.Background))
+                    TextWriterWhereColor.RenderWhereColorBack(LapsListBuilder.ToString(), LapsLapsListLeftPosition, LapsLapsListTopPosition, true, LapColor, KernelColorTools.GetColor(KernelColorType.Background))
                 );
 
                 // Return the resultant buffer
@@ -169,10 +177,9 @@ namespace Nitrocid.Extras.Timers.Timers
                                 LappedStopwatch.Restart();
 
                                 // Select random color
-                                var Randomizer = new Random();
-                                int RedValue = Randomizer.Next(255);
-                                int GreenValue = Randomizer.Next(255);
-                                int BlueValue = Randomizer.Next(255);
+                                RedValue = RandomDriver.Random(255);
+                                GreenValue = RandomDriver.Random(255);
+                                BlueValue = RandomDriver.Random(255);
                                 LapColor = new Color(RedValue, GreenValue, BlueValue);
                                 status = Translate.DoTranslation("New lap!") + $" {Lap.LapInterval}";
                             }
@@ -223,18 +230,18 @@ namespace Nitrocid.Extras.Timers.Timers
             int KeysTextTopPosition = ConsoleWrapper.WindowHeight - 2;
             int HalfWidth = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d);
             border.Append(
-                TextWriterWhereColor.RenderWhere(new string('═', ConsoleWrapper.WindowWidth), 0, KeysTextTopPosition - 2, true, ColorTools.GetGray(), KernelColorTools.GetColor(KernelColorType.Background)) +
-                TextWriterWhereColor.RenderWhere(new string('═', ConsoleWrapper.WindowWidth), 0, 1, true, ColorTools.GetGray(), KernelColorTools.GetColor(KernelColorType.Background))
+                TextWriterWhereColor.RenderWhereColorBack(new string('═', ConsoleWrapper.WindowWidth), 0, KeysTextTopPosition - 2, true, ColorTools.GetGray(), KernelColorTools.GetColor(KernelColorType.Background)) +
+                TextWriterWhereColor.RenderWhereColorBack(new string('═', ConsoleWrapper.WindowWidth), 0, 1, true, ColorTools.GetGray(), KernelColorTools.GetColor(KernelColorType.Background))
             );
             for (int Height = 2; Height <= KeysTextTopPosition - 2; Height++)
             {
                 border.Append(
-                    TextWriterWhereColor.RenderWhere("║", HalfWidth, Height, true, ColorTools.GetGray(), KernelColorTools.GetColor(KernelColorType.Background))
+                    TextWriterWhereColor.RenderWhereColorBack("║", HalfWidth, Height, true, ColorTools.GetGray(), KernelColorTools.GetColor(KernelColorType.Background))
                 );
             }
             border.Append(
-                TextWriterWhereColor.RenderWhere("╩", HalfWidth, KeysTextTopPosition - 2, true, ColorTools.GetGray(), KernelColorTools.GetColor(KernelColorType.Background)) +
-                TextWriterWhereColor.RenderWhere("╦", HalfWidth, 1, true, ColorTools.GetGray(), KernelColorTools.GetColor(KernelColorType.Background))
+                TextWriterWhereColor.RenderWhereColorBack("╩", HalfWidth, KeysTextTopPosition - 2, true, ColorTools.GetGray(), KernelColorTools.GetColor(KernelColorType.Background)) +
+                TextWriterWhereColor.RenderWhereColorBack("╦", HalfWidth, 1, true, ColorTools.GetGray(), KernelColorTools.GetColor(KernelColorType.Background))
             );
             return border.ToString();
         }
