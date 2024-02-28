@@ -138,7 +138,7 @@ namespace Nitrocid.Extras.Timers.Timers
 
                 // Print the keys text
                 builder.Append(
-                    CenteredTextColor.RenderCenteredOneLine(KeysTextTopPosition, KeysText, true, KernelColorType.Tip)
+                    CenteredTextColor.RenderCenteredOneLine(KeysTextTopPosition, KeysText, KernelColorTools.GetColor(KernelColorType.Tip))
                 );
 
                 // Print the time interval
@@ -151,13 +151,13 @@ namespace Nitrocid.Extras.Timers.Timers
                 else
                 {
                     builder.Append(
-                        TextWriterWhereColor.RenderWhere(UntilText, TimeLeftPosition, TimeTopPosition, true, KernelColorTools.GetColor(KernelColorType.NeutralText), KernelColorTools.GetColor(KernelColorType.Background))
+                        TextWriterWhereColor.RenderWhereColorBack(UntilText, TimeLeftPosition, TimeTopPosition, true, KernelColorTools.GetColor(KernelColorType.NeutralText), KernelColorTools.GetColor(KernelColorType.Background))
                     );
                 }
 
                 // Print the border
                 builder.Append(
-                    TextWriterWhereColor.RenderWhere(new string('═', ConsoleWrapper.WindowWidth), 0, KeysTextTopPosition - 2, true, ColorTools.GetGray(), KernelColorTools.GetColor(KernelColorType.Background))
+                    TextWriterWhereColor.RenderWhereColorBack(new string('═', ConsoleWrapper.WindowWidth), 0, KeysTextTopPosition - 2, true, ColorTools.GetGray(), KernelColorTools.GetColor(KernelColorType.Background))
                 );
 
                 // Return the final result
