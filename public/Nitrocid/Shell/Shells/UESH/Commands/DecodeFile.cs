@@ -36,7 +36,8 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            string algorithm = parameters.ArgumentsList.Length > 1 ? parameters.ArgumentsList[1] : DriverHandler.CurrentEncodingDriverLocal.DriverName;
+            bool useCustomAlgorithm = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-algorithm");
+            string algorithm = useCustomAlgorithm ? SwitchManager.GetSwitchValue(parameters.SwitchesList, "-algorithm") : DriverHandler.CurrentEncodingDriverLocal.DriverName;
             string path = FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]);
             string keyValue = SwitchManager.GetSwitchValue(parameters.SwitchesList, "-key");
             string ivValue = SwitchManager.GetSwitchValue(parameters.SwitchesList, "-iv");

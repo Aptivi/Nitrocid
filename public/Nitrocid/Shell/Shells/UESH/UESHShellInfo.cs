@@ -396,10 +396,6 @@ namespace Nitrocid.Shell.Shells.UESH
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "file"),
-                        new CommandArgumentPart(false, "algorithm", new CommandArgumentPartOptions()
-                        {
-                            AutoCompleter = (_) => EncodingDriverTools.GetEncodingDriverNames()
-                        }),
                     ],
                     [
                         new SwitchInfo("key", /* Localizable */ "Specifies the key", new SwitchOptions()
@@ -407,6 +403,10 @@ namespace Nitrocid.Shell.Shells.UESH
                             ArgumentsRequired = true,
                         }),
                         new SwitchInfo("iv", /* Localizable */ "Specifies the initialization vector", new SwitchOptions()
+                        {
+                            ArgumentsRequired = true,
+                        }),
+                        new SwitchInfo("algorithm", /* Localizable */ "Specifies the initialization vector", new SwitchOptions()
                         {
                             ArgumentsRequired = true,
                         }),
@@ -418,10 +418,6 @@ namespace Nitrocid.Shell.Shells.UESH
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "encodedString"),
-                        new CommandArgumentPart(false, "algorithm", new CommandArgumentPartOptions()
-                        {
-                            AutoCompleter = (_) => EncodingDriverTools.GetEncodingDriverNames()
-                        }),
                     ],
                     [
                         new SwitchInfo("key", /* Localizable */ "Specifies the key", new SwitchOptions()
@@ -429,6 +425,10 @@ namespace Nitrocid.Shell.Shells.UESH
                             ArgumentsRequired = true,
                         }),
                         new SwitchInfo("iv", /* Localizable */ "Specifies the initialization vector", new SwitchOptions()
+                        {
+                            ArgumentsRequired = true,
+                        }),
+                        new SwitchInfo("algorithm", /* Localizable */ "Specifies the initialization vector", new SwitchOptions()
                         {
                             ArgumentsRequired = true,
                         }),
@@ -560,10 +560,6 @@ namespace Nitrocid.Shell.Shells.UESH
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "file"),
-                        new CommandArgumentPart(false, "algorithm", new CommandArgumentPartOptions()
-                        {
-                            AutoCompleter = (_) => EncodingDriverTools.GetEncodingDriverNames()
-                        }),
                     ],
                     [
                         new SwitchInfo("key", /* Localizable */ "Specifies the key", new SwitchOptions()
@@ -571,6 +567,10 @@ namespace Nitrocid.Shell.Shells.UESH
                             ArgumentsRequired = true,
                         }),
                         new SwitchInfo("iv", /* Localizable */ "Specifies the initialization vector", new SwitchOptions()
+                        {
+                            ArgumentsRequired = true,
+                        }),
+                        new SwitchInfo("algorithm", /* Localizable */ "Specifies the initialization vector", new SwitchOptions()
                         {
                             ArgumentsRequired = true,
                         }),
@@ -582,10 +582,6 @@ namespace Nitrocid.Shell.Shells.UESH
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "string"),
-                        new CommandArgumentPart(false, "algorithm", new CommandArgumentPartOptions()
-                        {
-                            AutoCompleter = (_) => EncodingDriverTools.GetEncodingDriverNames()
-                        }),
                     ],
                     [
                         new SwitchInfo("key", /* Localizable */ "Specifies the key", new SwitchOptions()
@@ -593,6 +589,10 @@ namespace Nitrocid.Shell.Shells.UESH
                             ArgumentsRequired = true,
                         }),
                         new SwitchInfo("iv", /* Localizable */ "Specifies the initialization vector", new SwitchOptions()
+                        {
+                            ArgumentsRequired = true,
+                        }),
+                        new SwitchInfo("algorithm", /* Localizable */ "Specifies the initialization vector", new SwitchOptions()
                         {
                             ArgumentsRequired = true,
                         }),
