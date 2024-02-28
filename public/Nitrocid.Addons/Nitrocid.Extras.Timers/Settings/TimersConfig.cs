@@ -37,7 +37,7 @@ namespace Nitrocid.Extras.Timers.Settings
         /// <summary>
         /// If enabled, will use figlet for timer. Please note that it needs a big console screen in order to render the time properly with Figlet enabled.
         /// </summary>
-        public bool EnableFigletTimer { get; set; }
+        public bool EnableFigletTimer { get; set; } = true;
         /// <summary>
         /// Write a figlet font that is supported by the Figletize library. Consult the library documentation for more information
         /// </summary>
