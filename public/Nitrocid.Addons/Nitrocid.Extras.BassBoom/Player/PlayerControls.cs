@@ -119,7 +119,6 @@ namespace Nitrocid.Extras.BassBoom.Player
                 // There could be a chance that the music has fully stopped without any user interaction.
                 PlaybackPositioningTools.SeekToTheBeginning();
             PlayerTui.advance = true;
-            PlayerTui.rerender = true;
             PlayerTui.playerThread.Start();
             SpinWait.SpinUntil(() => PlaybackTools.Playing || PlayerTui.failedToPlay);
             PlayerTui.failedToPlay = false;
@@ -177,7 +176,6 @@ namespace Nitrocid.Extras.BassBoom.Player
             }
             else
                 InfoBoxColor.WriteInfoBox(Translate.DoTranslation("File \"{0}\" doesn't exist."), path);
-            PlayerTui.rerender = true;
         }
 
         internal static void PromptForAddDirectory()
@@ -201,7 +199,6 @@ namespace Nitrocid.Extras.BassBoom.Player
             }
             else
                 InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Music library directory is not found."));
-            PlayerTui.rerender = true;
         }
 
         internal static void Exit()
@@ -251,7 +248,6 @@ namespace Nitrocid.Extras.BassBoom.Player
             }
             else
             {
-                PlayerTui.rerender = true;
                 InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Loading BassBoom to open {0}..."), false, musicPath);
                 PlayerTui.total = AudioInfoTools.GetDuration(true);
                 PlayerTui.totalSpan = AudioInfoTools.GetDurationSpanFromSamples(PlayerTui.total);
@@ -351,7 +347,6 @@ namespace Nitrocid.Extras.BassBoom.Player
                 PlayerTui.populate = true;
                 PopulateMusicFileInfo(PlayerTui.musicFiles[PlayerTui.currentSong - 1]);
             }
-            PlayerTui.rerender = true;
         }
 
         internal static void RemoveAllSongs()
@@ -379,7 +374,6 @@ namespace Nitrocid.Extras.BassBoom.Player
                     PlayerTui.position = PlayerTui.total;
                 PlaybackPositioningTools.SeekToFrame(PlayerTui.position);
             }
-            PlayerTui.rerender = true;
         }
 
         internal static void ShowHelp()
@@ -405,7 +399,6 @@ namespace Nitrocid.Extras.BassBoom.Player
                 [E]                 {{Translate.DoTranslation("Open equalizer")}}
                 """
             );
-            PlayerTui.rerender = true;
         }
 
         internal static void ShowSongInfo()
@@ -446,7 +439,6 @@ namespace Nitrocid.Extras.BassBoom.Player
                 {{textsBuilder}}
                 """
             );
-            PlayerTui.rerender = true;
         }
     }
 }

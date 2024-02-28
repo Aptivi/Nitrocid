@@ -73,7 +73,6 @@ namespace Nitrocid.Extras.BassBoom.Player
         internal static TimeSpan totalSpan = new();
         internal static int total = 0;
         internal static (long rate, int channels, int encoding) formatInfo = new();
-        internal static bool rerender = true;
         internal static int currentSong = 1;
         internal static double volume = 1.0;
         internal static bool exiting = false;
@@ -93,7 +92,6 @@ namespace Nitrocid.Extras.BassBoom.Player
 
             volume = PlaybackTools.GetVolume().baseLinear;
             exiting = false;
-            rerender = true;
             paused = false;
             populate = true;
             advance = false;
@@ -102,79 +100,72 @@ namespace Nitrocid.Extras.BassBoom.Player
             Screen playerScreen = new();
             ScreenTools.SetCurrent(playerScreen);
 
-            // First, clear the screen to draw our TUI
+            // First, make a screen part to draw our TUI
+            ScreenPart screenPart = new();
+
+            // Redraw if necessary
+            bool wasRerendered = true;
+            screenPart.AddDynamicText(HandleDraw);
+
+            // Current duration
+            screenPart.AddDynamicText(() =>
+            {
+                var buffer = new StringBuilder();
+                position = FileTools.IsOpened ? PlaybackPositioningTools.GetCurrentDuration() : 0;
+                var posSpan = FileTools.IsOpened ? PlaybackPositioningTools.GetCurrentDurationSpan() : new();
+                string indicator =
+                    Translate.DoTranslation("Seek") + $": {PlayerControls.seekRate:0.00} | " +
+                    Translate.DoTranslation("Volume") + $": {volume:0.00}";
+                buffer.Append(
+                    ProgressBarColor.RenderProgress(100 * (position / (double)total), 2, ConsoleWrapper.WindowHeight - 8, 3, 3, KernelColorTools.GetColor(KernelColorType.Progress), ColorTools.GetGray(), KernelColorTools.GetColor(KernelColorType.Background)) +
+                    TextWriterWhereColor.RenderWhere($"{posSpan} / {totalSpan}", 3, ConsoleWrapper.WindowHeight - 9, KernelColorTools.GetColor(KernelColorType.NeutralText), KernelColorTools.GetColor(KernelColorType.Background)) +
+                    TextWriterWhereColor.RenderWhere(indicator, ConsoleWrapper.WindowWidth - indicator.Length - 3, ConsoleWrapper.WindowHeight - 9, KernelColorTools.GetColor(KernelColorType.NeutralText), KernelColorTools.GetColor(KernelColorType.Background))
+                );
+                return buffer.ToString();
+            });
+
+            // Get the lyrics
+            screenPart.AddDynamicText(() =>
+            {
+                var buffer = new StringBuilder();
+                if (PlaybackTools.Playing)
+                {
+                    // Print the lyrics, if any
+                    if (lyricInstance is not null)
+                    {
+                        string current = lyricInstance.GetLastLineCurrent();
+                        if (current != cachedLyric || wasRerendered)
+                        {
+                            cachedLyric = current;
+                            buffer.Append(
+                                TextWriterWhereColor.RenderWhere(ConsoleClearing.GetClearLineToRightSequence(), 0, ConsoleWrapper.WindowHeight - 10, KernelColorTools.GetColor(KernelColorType.NeutralText), KernelColorTools.GetColor(KernelColorType.Background)) +
+                                CenteredTextColor.RenderCentered(ConsoleWrapper.WindowHeight - 10, lyricInstance.GetLastLineCurrent(), KernelColorTools.GetColor(KernelColorType.NeutralText), KernelColorTools.GetColor(KernelColorType.Background))
+                            );
+                        }
+                    }
+                    else
+                        cachedLyric = "";
+                }
+                else
+                {
+                    cachedLyric = "";
+                    buffer.Append(
+                        TextWriterWhereColor.RenderWhere(ConsoleClearing.GetClearLineToRightSequence(), 0, ConsoleWrapper.WindowHeight - 10, KernelColorTools.GetColor(KernelColorType.NeutralText), KernelColorTools.GetColor(KernelColorType.Background))
+                    );
+                }
+                return buffer.ToString();
+            });
+
+            // Render the buffer
+            playerScreen.AddBufferedPart("BassBoom Player", screenPart);
+
+            // Then, the main loop
             while (!exiting)
             {
-                ScreenPart screenPart = new();
                 Thread.Sleep(1);
                 try
                 {
-                    // Redraw if necessary
-                    if (ConsoleResizeHandler.WasResized(true))
-                        rerender = true;
-                    bool wasRerendered = rerender;
-                    if (rerender)
-                    {
-                        rerender = false;
-                        screenPart.AddDynamicText(HandleDraw);
-                    }
-
-                    // Current duration
-                    position = FileTools.IsOpened ? PlaybackPositioningTools.GetCurrentDuration() : 0;
-                    var posSpan = FileTools.IsOpened ? PlaybackPositioningTools.GetCurrentDurationSpan() : new();
-                    string indicator =
-                        Translate.DoTranslation("Seek") + $": {PlayerControls.seekRate:0.00} | " +
-                        Translate.DoTranslation("Volume") + $": {volume:0.00}";
-                    screenPart.AddDynamicText(() =>
-                    {
-                        var buffer = new StringBuilder();
-                        buffer.Append(
-                            ProgressBarColor.RenderProgress(100 * (position / (double)total), 2, ConsoleWrapper.WindowHeight - 8, 3, 3, KernelColorTools.GetColor(KernelColorType.Progress), ColorTools.GetGray(), KernelColorTools.GetColor(KernelColorType.Background)) +
-                            TextWriterWhereColor.RenderWhere($"{posSpan} / {totalSpan}", 3, ConsoleWrapper.WindowHeight - 9, KernelColorTools.GetColor(KernelColorType.NeutralText), KernelColorTools.GetColor(KernelColorType.Background)) +
-                            TextWriterWhereColor.RenderWhere(indicator, ConsoleWrapper.WindowWidth - indicator.Length - 3, ConsoleWrapper.WindowHeight - 9, KernelColorTools.GetColor(KernelColorType.NeutralText), KernelColorTools.GetColor(KernelColorType.Background))
-                        );
-                        return buffer.ToString();
-                    });
-
-                    // Get the lyrics
-                    if (PlaybackTools.Playing)
-                    {
-                        // Print the lyrics, if any
-                        if (lyricInstance is not null)
-                        {
-                            string current = lyricInstance.GetLastLineCurrent();
-                            if (current != cachedLyric || wasRerendered)
-                            {
-                                cachedLyric = current;
-                                screenPart.AddDynamicText(() =>
-                                {
-                                    var buffer = new StringBuilder();
-                                    buffer.Append(
-                                        TextWriterWhereColor.RenderWhere(ConsoleClearing.GetClearLineToRightSequence(), 0, ConsoleWrapper.WindowHeight - 10, KernelColorTools.GetColor(KernelColorType.NeutralText), KernelColorTools.GetColor(KernelColorType.Background)) +
-                                        CenteredTextColor.RenderCentered(ConsoleWrapper.WindowHeight - 10, lyricInstance.GetLastLineCurrent(), KernelColorTools.GetColor(KernelColorType.NeutralText), KernelColorTools.GetColor(KernelColorType.Background))
-                                    );
-                                    return buffer.ToString();
-                                });
-                            }
-                        }
-                        else
-                            cachedLyric = "";
-                    }
-                    else
-                    {
-                        cachedLyric = "";
-                        screenPart.AddDynamicText(() =>
-                        {
-                            var buffer = new StringBuilder();
-                            buffer.Append(
-                                TextWriterWhereColor.RenderWhere(ConsoleClearing.GetClearLineToRightSequence(), 0, ConsoleWrapper.WindowHeight - 10, KernelColorTools.GetColor(KernelColorType.NeutralText), KernelColorTools.GetColor(KernelColorType.Background))
-                            );
-                            return buffer.ToString();
-                        });
-                    }
-
-                    // Render the buffer
-                    playerScreen.AddBufferedPart("BassBoom Player", screenPart);
+                    wasRerendered = ConsoleResizeHandler.WasResized(false);
                     ScreenTools.Render();
 
                     // Handle the keystroke
@@ -192,23 +183,22 @@ namespace Nitrocid.Extras.BassBoom.Player
                     if (PlaybackTools.Playing)
                         PlaybackTools.Stop();
                     InfoBoxColor.WriteInfoBox(Translate.DoTranslation("There's an error with Basolia when trying to process the music file.") + "\n\n" + bex.Message);
-                    rerender = true;
+                    playerScreen.RequireRefresh();
                 }
                 catch (BasoliaOutException bex)
                 {
                     if (PlaybackTools.Playing)
                         PlaybackTools.Stop();
                     InfoBoxColor.WriteInfoBox(Translate.DoTranslation("There's an error with Basolia output when trying to process the music file.") + "\n\n" + bex.Message);
-                    rerender = true;
+                    playerScreen.RequireRefresh();
                 }
                 catch (Exception ex)
                 {
                     if (PlaybackTools.Playing)
                         PlaybackTools.Stop();
                     InfoBoxColor.WriteInfoBox(Translate.DoTranslation("There's an unknown error when trying to process the music file.") + "\n\n" + ex.Message);
-                    rerender = true;
+                    playerScreen.RequireRefresh();
                 }
-                playerScreen.RemoveBufferedParts();
             }
 
             // Close the file if open
@@ -219,6 +209,7 @@ namespace Nitrocid.Extras.BassBoom.Player
             ConsoleWrapper.CursorVisible = true;
             ColorTools.LoadBack();
             ScreensaverManager.AllowLock();
+            playerScreen.RemoveBufferedParts();
             ScreenTools.UnsetCurrent(playerScreen);
         }
 
@@ -270,7 +261,7 @@ namespace Nitrocid.Extras.BassBoom.Player
                     break;
                 case ConsoleKey.E:
                     Equalizer.OpenEqualizer(playerScreen);
-                    rerender = true;
+                    playerScreen.RequireRefresh();
                     break;
                 case ConsoleKey.Q:
                     PlayerControls.Exit();
@@ -339,7 +330,7 @@ namespace Nitrocid.Extras.BassBoom.Player
                     break;
                 case ConsoleKey.E:
                     Equalizer.OpenEqualizer(playerScreen);
-                    rerender = true;
+                    playerScreen.RequireRefresh();
                     break;
                 case ConsoleKey.Q:
                     PlayerControls.Exit();
@@ -376,7 +367,6 @@ namespace Nitrocid.Extras.BassBoom.Player
             finally
             {
                 lyricInstance = null;
-                rerender = true;
             }
         }
 
@@ -385,7 +375,6 @@ namespace Nitrocid.Extras.BassBoom.Player
             // Prepare things
             var drawn = new StringBuilder();
             ConsoleWrapper.CursorVisible = false;
-            ColorTools.LoadBack();
 
             // First, print the keystrokes
             string keystrokes =
