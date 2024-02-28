@@ -34,7 +34,7 @@ namespace Nitrocid.Drivers.Encryption
     public abstract class BaseEncryptionDriver : IEncryptionDriver
     {
         /// <inheritdoc/>
-        public virtual string DriverName => "SHA256";
+        public virtual string DriverName => "Default";
 
         /// <inheritdoc/>
         public virtual DriverTypes DriverType => DriverTypes.Encryption;

@@ -40,14 +40,14 @@ namespace Nitrocid.Drivers.Network
         /// Gets the network drivers
         /// </summary>
         /// <exception cref="KernelException"></exception>
-        public static Dictionary<string, IDriver> GetNetworkDrivers()
+        public static List<IDriver> GetNetworkDrivers()
         {
             // First, exclude internal drivers from the list
-            var filteredDrivers = DriverHandler.drivers[DriverTypes.Network].Where((kvp) => !kvp.Value.DriverInternal);
-            var filteredCustomDrivers = DriverHandler.customDrivers[DriverTypes.Network].Where((kvp) => !kvp.Value.DriverInternal);
+            var filteredDrivers = DriverHandler.drivers[DriverTypes.Network].Where((kvp) => !kvp.DriverInternal);
+            var filteredCustomDrivers = DriverHandler.customDrivers[DriverTypes.Network].Where((kvp) => !kvp.DriverInternal);
 
             // Then, get the list of drivers
-            return filteredDrivers.Union(filteredCustomDrivers).ToDictionary((kvp) => kvp.Key, (kvp) => kvp.Value);
+            return filteredDrivers.Union(filteredCustomDrivers).ToList();
         }
 
         /// <summary>
@@ -58,7 +58,7 @@ namespace Nitrocid.Drivers.Network
         {
             // Get the drivers and fetch their names
             var drivers = GetNetworkDrivers();
-            return drivers.Select((kvp) => kvp.Key).ToArray();
+            return drivers.Select((kvp) => kvp.DriverName).ToArray();
         }
     }
 }

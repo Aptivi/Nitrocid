@@ -236,13 +236,13 @@ namespace Nitrocid.Tests.Drivers
 
         [TestMethod]
         [DataRow(DriverTypes.Console, "Default")]
-        [DataRow(DriverTypes.Encryption, "SHA256")]
+        [DataRow(DriverTypes.Encryption, "Default")]
         [DataRow(DriverTypes.Filesystem, "Default")]
         [DataRow(DriverTypes.Network, "Default")]
         [DataRow(DriverTypes.RNG, "Default")]
         [DataRow(DriverTypes.Regexp, "Default")]
         [DataRow(DriverTypes.DebugLogger, "Default")]
-        [DataRow(DriverTypes.Encoding, "AES")]
+        [DataRow(DriverTypes.Encoding, "Default")]
         [DataRow(DriverTypes.HardwareProber, "Default")]
         [DataRow(DriverTypes.Sorting, "Default")]
         [DataRow(DriverTypes.Input, "Default")]
@@ -277,13 +277,13 @@ namespace Nitrocid.Tests.Drivers
 
         [TestMethod]
         [DataRow(DriverTypes.Console, "Default")]
-        [DataRow(DriverTypes.Encryption, "SHA256")]
+        [DataRow(DriverTypes.Encryption, "Default")]
         [DataRow(DriverTypes.Filesystem, "Default")]
         [DataRow(DriverTypes.Network, "Default")]
         [DataRow(DriverTypes.RNG, "Default")]
         [DataRow(DriverTypes.Regexp, "Default")]
         [DataRow(DriverTypes.DebugLogger, "Default")]
-        [DataRow(DriverTypes.Encoding, "AES")]
+        [DataRow(DriverTypes.Encoding, "Default")]
         [DataRow(DriverTypes.HardwareProber, "Default")]
         [DataRow(DriverTypes.Sorting, "Default")]
         [DataRow(DriverTypes.Input, "Default")]
@@ -296,13 +296,13 @@ namespace Nitrocid.Tests.Drivers
 
         [TestMethod]
         [DataRow(DriverTypes.Console, "Default")]
-        [DataRow(DriverTypes.Encryption, "SHA256")]
+        [DataRow(DriverTypes.Encryption, "Default")]
         [DataRow(DriverTypes.Filesystem, "Default")]
         [DataRow(DriverTypes.Network, "Default")]
         [DataRow(DriverTypes.RNG, "Default")]
         [DataRow(DriverTypes.Regexp, "Default")]
         [DataRow(DriverTypes.DebugLogger, "Default")]
-        [DataRow(DriverTypes.Encoding, "AES")]
+        [DataRow(DriverTypes.Encoding, "Default")]
         [DataRow(DriverTypes.HardwareProber, "Default")]
         [DataRow(DriverTypes.Sorting, "Default")]
         [DataRow(DriverTypes.Input, "Default")]
@@ -315,13 +315,13 @@ namespace Nitrocid.Tests.Drivers
 
         [TestMethod]
         [DataRow(DriverTypes.Console, "File", "File", "Default")]
-        [DataRow(DriverTypes.Encryption, "SHA512", "SHA512", "SHA256")]
+        [DataRow(DriverTypes.Encryption, "SHA512", "SHA512", "Default")]
         [DataRow(DriverTypes.Filesystem, "Default", "Default", "Default")]
         [DataRow(DriverTypes.Network, "Default", "Default", "Default")]
         [DataRow(DriverTypes.RNG, "Standard", "Standard", "Default")]
         [DataRow(DriverTypes.Regexp, "Default", "Default", "Default")]
         [DataRow(DriverTypes.DebugLogger, "UnitTest", "UnitTest", "Default")]
-        [DataRow(DriverTypes.Encoding, "RSA", "RSA", "AES")]
+        [DataRow(DriverTypes.Encoding, "RSA", "RSA", "Default")]
         [DataRow(DriverTypes.HardwareProber, "Default", "Default", "Default")]
         [DataRow(DriverTypes.Sorting, "Default", "Default", "Default")]
         [DataRow(DriverTypes.Input, "Default", "Default", "Default")]
@@ -338,13 +338,13 @@ namespace Nitrocid.Tests.Drivers
 
         [TestMethod]
         [DataRow(DriverTypes.Console, "File", "Default", "Default")]
-        [DataRow(DriverTypes.Encryption, "SHA512", "SHA512", "SHA256")]
+        [DataRow(DriverTypes.Encryption, "SHA512", "SHA512", "Default")]
         [DataRow(DriverTypes.Filesystem, "Default", "Default", "Default")]
         [DataRow(DriverTypes.Network, "Default", "Default", "Default")]
         [DataRow(DriverTypes.RNG, "Standard", "Standard", "Default")]
         [DataRow(DriverTypes.Regexp, "Default", "Default", "Default")]
         [DataRow(DriverTypes.DebugLogger, "UnitTest", "Default", "Default")]
-        [DataRow(DriverTypes.Encoding, "RSA", "RSA", "AES")]
+        [DataRow(DriverTypes.Encoding, "RSA", "RSA", "Default")]
         [DataRow(DriverTypes.HardwareProber, "Default", "Default", "Default")]
         [DataRow(DriverTypes.Sorting, "Default", "Default", "Default")]
         [DataRow(DriverTypes.Input, "Default", "Default", "Default")]
@@ -530,8 +530,8 @@ namespace Nitrocid.Tests.Drivers
         public void TestSetEncodingDriver()
         {
             EncodingDriverTools.SetEncodingDriver("AES");
-            DriverHandler.CurrentEncodingDriver.DriverName.ShouldBe("AES");
-            DriverHandler.CurrentEncodingDriverLocal.DriverName.ShouldBe("AES");
+            DriverHandler.CurrentEncodingDriver.DriverName.ShouldBe("Default");
+            DriverHandler.CurrentEncodingDriverLocal.DriverName.ShouldBe("Default");
         }
 
         [TestMethod]

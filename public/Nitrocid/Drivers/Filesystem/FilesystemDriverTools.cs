@@ -40,14 +40,14 @@ namespace Nitrocid.Drivers.Filesystem
         /// Gets the filesystem drivers
         /// </summary>
         /// <exception cref="KernelException"></exception>
-        public static Dictionary<string, IDriver> GetFilesystemDrivers()
+        public static List<IDriver> GetFilesystemDrivers()
         {
             // First, exclude internal drivers from the list
-            var filteredDrivers = DriverHandler.drivers[DriverTypes.Filesystem].Where((kvp) => !kvp.Value.DriverInternal);
-            var filteredCustomDrivers = DriverHandler.customDrivers[DriverTypes.Filesystem].Where((kvp) => !kvp.Value.DriverInternal);
+            var filteredDrivers = DriverHandler.drivers[DriverTypes.Filesystem].Where((kvp) => !kvp.DriverInternal);
+            var filteredCustomDrivers = DriverHandler.customDrivers[DriverTypes.Filesystem].Where((kvp) => !kvp.DriverInternal);
 
             // Then, get the list of drivers
-            return filteredDrivers.Union(filteredCustomDrivers).ToDictionary((kvp) => kvp.Key, (kvp) => kvp.Value);
+            return filteredDrivers.Union(filteredCustomDrivers).ToList();
         }
 
         /// <summary>
@@ -58,7 +58,7 @@ namespace Nitrocid.Drivers.Filesystem
         {
             // Get the drivers and fetch their names
             var drivers = GetFilesystemDrivers();
-            return drivers.Select((kvp) => kvp.Key).ToArray();
+            return drivers.Select((kvp) => kvp.DriverName).ToArray();
         }
     }
 }

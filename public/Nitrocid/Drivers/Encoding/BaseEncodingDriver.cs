@@ -40,7 +40,7 @@ namespace Nitrocid.Drivers.Encoding
         private Aes aes;
 
         /// <inheritdoc/>
-        public virtual string DriverName => "AES";
+        public virtual string DriverName => "Default";
 
         /// <inheritdoc/>
         public virtual DriverTypes DriverType => DriverTypes.Encoding;

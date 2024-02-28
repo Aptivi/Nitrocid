@@ -40,14 +40,14 @@ namespace Nitrocid.Drivers.Regexp
         /// Gets the regular expression drivers
         /// </summary>
         /// <exception cref="KernelException"></exception>
-        public static Dictionary<string, IDriver> GetRegexpDrivers()
+        public static List<IDriver> GetRegexpDrivers()
         {
             // First, exclude internal drivers from the list
-            var filteredDrivers = DriverHandler.drivers[DriverTypes.Regexp].Where((kvp) => !kvp.Value.DriverInternal);
-            var filteredCustomDrivers = DriverHandler.customDrivers[DriverTypes.Regexp].Where((kvp) => !kvp.Value.DriverInternal);
+            var filteredDrivers = DriverHandler.drivers[DriverTypes.Regexp].Where((kvp) => !kvp.DriverInternal);
+            var filteredCustomDrivers = DriverHandler.customDrivers[DriverTypes.Regexp].Where((kvp) => !kvp.DriverInternal);
 
             // Then, get the list of drivers
-            return filteredDrivers.Union(filteredCustomDrivers).ToDictionary((kvp) => kvp.Key, (kvp) => kvp.Value);
+            return filteredDrivers.Union(filteredCustomDrivers).ToList();
         }
 
         /// <summary>
@@ -58,7 +58,7 @@ namespace Nitrocid.Drivers.Regexp
         {
             // Get the drivers and fetch their names
             var drivers = GetRegexpDrivers();
-            return drivers.Select((kvp) => kvp.Key).ToArray();
+            return drivers.Select((kvp) => kvp.DriverName).ToArray();
         }
     }
 }
