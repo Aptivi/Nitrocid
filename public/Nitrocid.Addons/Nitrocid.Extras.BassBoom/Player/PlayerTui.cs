@@ -165,6 +165,8 @@ namespace Nitrocid.Extras.BassBoom.Player
                 Thread.Sleep(1);
                 try
                 {
+                    if (!playerScreen.CheckBufferedPart("BassBoom Player"))
+                        playerScreen.AddBufferedPart("BassBoom Player", screenPart);
                     wasRerendered = ConsoleResizeHandler.WasResized(false);
                     ScreenTools.Render();
 
@@ -241,15 +243,19 @@ namespace Nitrocid.Extras.BassBoom.Player
                     break;
                 case ConsoleKey.H:
                     PlayerControls.ShowHelp();
+                    playerScreen.RequireRefresh();
                     break;
                 case ConsoleKey.I:
                     PlayerControls.ShowSongInfo();
+                    playerScreen.RequireRefresh();
                     break;
                 case ConsoleKey.A:
                     PlayerControls.PromptForAddSong();
+                    playerScreen.RequireRefresh();
                     break;
                 case ConsoleKey.S:
                     PlayerControls.PromptForAddDirectory();
+                    playerScreen.RequireRefresh();
                     break;
                 case ConsoleKey.R:
                     PlayerControls.Stop(false);
@@ -321,12 +327,15 @@ namespace Nitrocid.Extras.BassBoom.Player
                     break;
                 case ConsoleKey.H:
                     PlayerControls.ShowHelp();
+                    playerScreen.RequireRefresh();
                     break;
                 case ConsoleKey.I:
                     PlayerControls.ShowSongInfo();
+                    playerScreen.RequireRefresh();
                     break;
                 case ConsoleKey.S:
                     PlayerControls.PromptSeek();
+                    playerScreen.RequireRefresh();
                     break;
                 case ConsoleKey.E:
                     Equalizer.OpenEqualizer(playerScreen);
