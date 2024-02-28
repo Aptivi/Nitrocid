@@ -33,6 +33,7 @@ using Terminaux.Writer.FancyWriters;
 using Terminaux.Colors;
 using Terminaux.Base;
 using Terminaux.Reader;
+using Nitrocid.Drivers.RNG;
 
 namespace Nitrocid.Extras.Timers.Timers
 {
@@ -46,6 +47,7 @@ namespace Nitrocid.Extras.Timers.Timers
         internal static int FigletTimeOldWidthEnd;
         internal static string timerFigletFont = "Small";
         internal static bool running;
+        internal static Color timerColor;
         private static Timer _Timer;
 
         internal static Timer Timer
@@ -94,6 +96,10 @@ namespace Nitrocid.Extras.Timers.Timers
             ColorTools.LoadBack();
 
             // Populate the figlet font (if any)
+            int RedValue = RandomDriver.Random(255);
+            int GreenValue = RandomDriver.Random(255);
+            int BlueValue = RandomDriver.Random(255);
+            timerColor = new(RedValue, GreenValue, BlueValue);
             var FigletFont = FigletTools.GetFigletFont(TimerFigletFont);
 
             // Populate the time
@@ -145,13 +151,13 @@ namespace Nitrocid.Extras.Timers.Timers
                 if (TimersInit.TimersConfig.EnableFigletTimer)
                 {
                     builder.Append(
-                        FigletWhereColor.RenderFigletWhere(UntilText, TimeLeftPosition, TimeTopPosition, true, FigletFont, KernelColorTools.GetColor(KernelColorType.NeutralText), KernelColorTools.GetColor(KernelColorType.Background))
+                        FigletWhereColor.RenderFigletWhere(UntilText, TimeLeftPosition, TimeTopPosition, true, FigletFont, timerColor, KernelColorTools.GetColor(KernelColorType.Background))
                     );
                 }
                 else
                 {
                     builder.Append(
-                        TextWriterWhereColor.RenderWhereColorBack(UntilText, TimeLeftPosition, TimeTopPosition, true, KernelColorTools.GetColor(KernelColorType.NeutralText), KernelColorTools.GetColor(KernelColorType.Background))
+                        TextWriterWhereColor.RenderWhereColorBack(UntilText, TimeLeftPosition, TimeTopPosition, true, timerColor, KernelColorTools.GetColor(KernelColorType.Background))
                     );
                 }
 
@@ -236,6 +242,10 @@ namespace Nitrocid.Extras.Timers.Timers
         {
             running = false;
             Timer.Stop();
+            int RedValue = RandomDriver.Random(255);
+            int GreenValue = RandomDriver.Random(255);
+            int BlueValue = RandomDriver.Random(255);
+            timerColor = new(RedValue, GreenValue, BlueValue);
         }
 
         /// <summary>
@@ -284,12 +294,12 @@ namespace Nitrocid.Extras.Timers.Timers
                     for (int Position = FigletOldWidth - 1; Position <= FigletTimeLeftPosition - 1; Position++)
                     {
                         ConsoleWrapper.CursorLeft = Position;
-                        TextWriterColor.WriteColorBack(" ", false, KernelColorTools.GetColor(KernelColorType.NeutralText), KernelColorTools.GetColor(KernelColorType.Background));
+                        TextWriterColor.Write(" ", false);
                     }
                     for (int Position = FigletOldWidthEnd; Position <= FigletTimeLeftEndPosition + 1; Position++)
                     {
                         ConsoleWrapper.CursorLeft = Position;
-                        TextWriterColor.WriteColorBack(" ", false, KernelColorTools.GetColor(KernelColorType.NeutralText), KernelColorTools.GetColor(KernelColorType.Background));
+                        TextWriterColor.Write(" ", false);
                     }
                 }
             }
