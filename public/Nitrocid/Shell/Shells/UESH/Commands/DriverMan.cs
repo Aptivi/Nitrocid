@@ -86,11 +86,11 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                         }
                     case "list":
                         {
+                            TextFancyWriters.WriteSeparator(Translate.DoTranslation("Drivers for") + $" {typeTerm}", KernelColorType.Separator);
                             foreach (var driver in DriverHandler.GetDrivers(typeTerm))
                             {
                                 if (!driver.DriverInternal)
                                 {
-                                    SeparatorWriterColor.WriteSeparator(driver.DriverName, true);
                                     TextWriters.Write("- " + Translate.DoTranslation("Driver name") + ": ", false, KernelColorType.ListEntry);
                                     TextWriters.Write(driver.DriverName, true, KernelColorType.ListValue);
                                 }
