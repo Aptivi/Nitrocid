@@ -35,6 +35,7 @@ using Terminaux.Base;
 using Terminaux.Reader;
 using Nitrocid.Drivers.RNG;
 using Terminaux.Sequences.Builder.Types;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Extras.Timers.Timers
 {
@@ -105,20 +106,14 @@ namespace Nitrocid.Extras.Timers.Timers
 
             // Populate the time
             double TimerInterval = 60000d;
-            bool prompted = false;
             Timer.Interval = TimerInterval;
 
             // Add a dynamic text that shows you the remaining time dynamically
             timerScreenPart.AddDynamicText(() =>
             {
                 // If prompted, clear the console
-                if (prompted || ConsoleResizeHandler.WasResized())
-                {
-                    prompted = false;
-                    ColorTools.LoadBack();
-                }
-                ConsoleWrapper.CursorVisible = false;
                 var builder = new StringBuilder();
+                ConsoleWrapper.CursorVisible = false;
 
                 // Populate the positions for time
                 var Until =
@@ -223,7 +218,7 @@ namespace Nitrocid.Extras.Timers.Timers
                             InfoBoxColor.WriteInfoBoxColor(Translate.DoTranslation("Indicated timeout is not numeric."), KernelColorTools.GetColor(KernelColorType.Error));
                             TimerInterval = 60000d;
                         }
-                        prompted = true;
+                        timerScreen.RequireRefresh();
                         break;
                     case ConsoleKey.Escape:
                         // Stop the timer
