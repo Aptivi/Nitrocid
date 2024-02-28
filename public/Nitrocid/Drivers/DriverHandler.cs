@@ -131,6 +131,7 @@ namespace Nitrocid.Drivers
                 {
                     { "Default", new AesEncoding() },
                     { "RSA", new RsaEncoding() },
+                    { "BASE64", new Base64Encoding() },
                 }
             },
             {
