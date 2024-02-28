@@ -111,7 +111,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                         positions.Add($"{ColorTools.RenderSetConsoleColor(color)}#{i + 1}: {ColorTools.RenderSetConsoleColor(horsesSorted[i].HorseColor)}{Translate.DoTranslation("Horse")} {horsesSorted[i].HorseNumber}{ColorTools.RenderSetConsoleColor(color)}");
                     string renderedPositions = string.Join(" | ", positions);
                     builder.Append(
-                        CenteredTextColor.RenderCentered(bindingsPositionY, renderedPositions, color)
+                        CenteredTextColor.RenderCenteredOneLine(bindingsPositionY, renderedPositions, color)
                     );
                 }
                 else
