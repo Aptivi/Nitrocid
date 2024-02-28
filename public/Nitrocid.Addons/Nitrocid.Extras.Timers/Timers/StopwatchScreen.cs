@@ -56,7 +56,6 @@ namespace Nitrocid.Extras.Timers.Timers
             ScreenTools.SetCurrent(watchScreen);
             ColorTools.LoadBack();
             string status = Translate.DoTranslation("Stopwatch is ready.");
-            bool resetting = false;
 
             // Set the random lap color
             int RedValue = RandomDriver.Random(255);
@@ -68,11 +67,6 @@ namespace Nitrocid.Extras.Timers.Timers
             watchScreenPart.AddDynamicText(() =>
             {
                 // If resized, clear the console
-                if (resetting || ConsoleResizeHandler.WasResized())
-                {
-                    resetting = false;
-                    ColorTools.LoadBack();
-                }
                 ConsoleWrapper.CursorVisible = false;
                 var builder = new StringBuilder();
 
@@ -192,7 +186,7 @@ namespace Nitrocid.Extras.Timers.Timers
                             if (Stopwatch.IsRunning)
                                 Stopwatch.Reset();
                             running = false;
-                            resetting = true;
+                            watchScreen.RequireRefresh();
 
                             // Clear the laps
                             Laps.Clear();
