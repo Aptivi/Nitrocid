@@ -132,7 +132,8 @@ namespace Nitrocid.Extras.Timers.Timers
 
                 // Prepare the display
                 UpdateRemainingPositions(UntilText, ref TimeLeftPosition, ref TimeTopPosition);
-                ClearRemainingTimeDisplay(UntilText, FigletTimeOldWidth, FigletTimeOldWidthEnd);
+                if (FigletTimeOldWidth > 0 && FigletTimeOldWidthEnd > 0)
+                    ClearRemainingTimeDisplay(UntilText, FigletTimeOldWidth, FigletTimeOldWidthEnd);
 
                 // Update the old positions
                 FigletTimeOldWidth = (int)Math.Round(HalfWidth - FigletTools.GetFigletWidth(UntilText, FigletFont) / 2d);
