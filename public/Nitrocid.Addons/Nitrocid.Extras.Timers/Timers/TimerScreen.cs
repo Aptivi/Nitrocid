@@ -34,6 +34,7 @@ using Terminaux.Colors;
 using Terminaux.Base;
 using Terminaux.Reader;
 using Nitrocid.Drivers.RNG;
+using Terminaux.Sequences.Builder.Types;
 
 namespace Nitrocid.Extras.Timers.Timers
 {
@@ -133,7 +134,11 @@ namespace Nitrocid.Extras.Timers.Timers
                 // Prepare the display
                 UpdateRemainingPositions(UntilText, ref TimeLeftPosition, ref TimeTopPosition);
                 if (FigletTimeOldWidth > 0 && FigletTimeOldWidthEnd > 0)
-                    ClearRemainingTimeDisplay(UntilText, FigletTimeOldWidth, FigletTimeOldWidthEnd);
+                {
+                    builder.Append(
+                        ClearRemainingTimeDisplay(UntilText, FigletTimeOldWidth, FigletTimeOldWidthEnd)
+                    );
+                }
 
                 // Update the old positions
                 FigletTimeOldWidth = (int)Math.Round(HalfWidth - FigletTools.GetFigletWidth(UntilText, FigletFont) / 2d);
@@ -274,9 +279,10 @@ namespace Nitrocid.Extras.Timers.Timers
             }
         }
 
-        private static void ClearRemainingTimeDisplay(string RemainingTimeText, int FigletOldWidth, int FigletOldWidthEnd)
+        private static string ClearRemainingTimeDisplay(string RemainingTimeText, int FigletOldWidth, int FigletOldWidthEnd)
         {
             // Some initial variables
+            var builder = new StringBuilder();
             var FigletFont = FigletTools.GetFigletFont(TimerFigletFont);
             int HalfWidth = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d);
             int HalfHeight = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d);
@@ -295,20 +301,23 @@ namespace Nitrocid.Extras.Timers.Timers
                     ConsoleWrapper.CursorTop = FigletTimePosition;
                     for (int Position = FigletOldWidth - 1; Position <= FigletTimeLeftPosition - 1; Position++)
                     {
-                        ConsoleWrapper.CursorLeft = Position;
-                        TextWriterColor.Write(" ", false);
+                        builder.Append(
+                            CsiSequences.GenerateCsiCursorPosition(FigletTimePosition + 1, Position + 1) +
+                            " "
+                        );
                     }
                     for (int Position = FigletOldWidthEnd; Position <= FigletTimeLeftEndPosition + 1; Position++)
                     {
-                        ConsoleWrapper.CursorLeft = Position;
-                        TextWriterColor.Write(" ", false);
+                        builder.Append(
+                            CsiSequences.GenerateCsiCursorPosition(FigletTimePosition + 1, Position + 1) +
+                            " "
+                        );
                     }
                 }
             }
 
-            // Update the old positions
-            FigletTimeOldWidth = (int)Math.Round(HalfWidth - FigletTools.GetFigletWidth(RemainingTimeText, FigletFont) / 2d);
-            FigletTimeOldWidthEnd = (int)Math.Round(HalfWidth + FigletTools.GetFigletWidth(RemainingTimeText, FigletFont) / 2d);
+            // Return the result
+            return builder.ToString();
         }
 
     }
