@@ -146,21 +146,7 @@ namespace Nitrocid.ConsoleBase
         {
             var screen = new Screen();
             var rampPart = new ScreenPart();
-            bool clear = true;
             ScreenTools.SetCurrent(screen);
-
-            // Clear screen if needed
-            rampPart.AddDynamicText(() =>
-            {
-                if (clear || Terminaux.Base.ConsoleResizeHandler.WasResized())
-                {
-                    clear = false;
-                    return
-                        VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, 1, 1) +
-                        VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiEraseInDisplay, 0);
-                }
-                return "";
-            });
 
             // Show a tip
             rampPart.AddDynamicText(() =>
