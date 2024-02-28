@@ -24,5 +24,4 @@ override_dh_auto_build:
 	$(MAKE) debian-all-offline
 
 override_dh_auto_install:
-	$(MAKE) echo-arch
 	$(MAKE) debian-install

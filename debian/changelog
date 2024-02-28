@@ -1,3 +1,10 @@
+kernel-simulator (3.0.25.437-0.1.0-1) noble; urgency=medium
+
+  * New generation of Nitrocid KS! It contains a huge amount of changes!
+  * Consult changes.chg in the Git repo for more info.
+
+ -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Wed, 28 Feb 2024 14:29:50 +0300
+
 kernel-simulator (3.0.25.411-0.1.0~rc-1) noble; urgency=medium
 
   * Consult changes.chg in the Git repo for more info.
