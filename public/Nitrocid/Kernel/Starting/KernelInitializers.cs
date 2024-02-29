@@ -327,8 +327,10 @@ namespace Nitrocid.Kernel.Starting
                 DebugWriter.WriteDebug(DebugLevel.I, "Remote debugger stopped");
 
                 // Reset languages
+                SplashManager.BeginSplashOut(context);
                 LanguageManager.SetLangDry(LanguageManager.CurrentLanguage);
                 LanguageManager.currentUserLanguage = LanguageManager.Languages[LanguageManager.CurrentLanguage];
+                SplashManager.EndSplashOut(context);
 
                 // Save extension handlers
                 ExtensionHandlerTools.SaveAllHandlers();
