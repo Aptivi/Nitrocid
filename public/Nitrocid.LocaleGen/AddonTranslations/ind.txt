@@ -1216,3 +1216,2336 @@ spesaship pradaan karane ke lie paavaralain ka prayog karen
 ulka khel kee gati
 spesaship ko rendar karane ke lie povaralain ka istemaal karana hai ya kairektar se bade staindard ka istemaal karana hai. yadi aap ulka ke saath powairlinai ka upayog karana chaahate hain, to aapako powairlinai samarthan ke saath ek upayukt font sthaapit karane kee aavashyakata hai.
 mileesekand mein khel kee gati nirdisht karata hai.
+trminl dibga mod sksm krtaa hai
+krnel ko vaiklpik bfer kaa upyoga krne se roktaa hai
+praarnbhik pri-but privesh bhaasaa set krtaa hai
+vijual studiyo dibgar ko naaitrosid ke is udaahrn se jodaa hai
+pri-but privesh ke lie vrboje sndesh chaalu krtaa hai
+konfeigareshn lod hone se phle pri-but splaish chhupaataa hai
+ajnyaat trk
+aapko VT prosesinga sksm hone ke saath ConEmu yaa Windows 10 kmaand prompt chlaanaa hogaaa.
+aapkaa trminl {1} pr {0} hai.
+kyaa ye rainp aapko shi lgate hain? unhen suchaaru rup se privrtn krnaa chaahie.
+koee feolbaik draaivr nhin milaa.
+kisi gaair-draaivr yaa shuny draaivr ko pnjikrit nhin kiyaa jaa sktaa.
+ajnyaat prkaar se draaivr prkaar kaa anumaan lgaaane men vifl
+fail {0} nhin mili.
+fail yaa feoldr {0} nhin milaa.
+fail yaa feoldr {0} {1} seknd tk prtiksaa krne ke baad bhi lok hai.
+laaisens ki jaankaari dekhne ke lie 'laaisens' chlaaen.
+krnel prthm-rn
+naaitrosid krnel men aapkaa svaagat hai! isaajaane ke lie dhnyvaad!
+aarnbh krne ke lie, ENTER dbaaen.
+apni bhaasaa kaa chyn kren
+apni bhaasaa kaa chyn kren. difeolt rup se, krnel angareji bhaasaa kaa upyoga krtaa hai, lekin aap yhaan kisi any bhaasaa kaa chyn kr skte hain.
+aapke sistm pr aapki bhaasaa setingas kaadhaar pr, upyukt bhaasaa hai
+niche suchibddh bhaasaa kod likhen:
+jaari rkhne ke lie ENTER kunji dbaaen.
+apnaa phlaa upyogakrtaa bnaaen
+hm aapko apnaa svyn kaa upyogakrtaa naam bnaane men mdd krengae. apnaa ichchhit koee bhi naam chunen. yh aapkaa upnaam yaa aapkaa snksipt naam ho sktaa hai, jb tk ki aapke upyogakrtaa naam men rikt sthaan aur vishes vrn n hon aur yh phle se maujud n ho. nimnlikhit upyogakrtaa naam pnjikrit hain:
+upyoktaanaam drj kren
+paasvrd drj kre
+upyoktaanaam bnaane men vifl. kripyaa sunishchit kren ki aapke upyogakrtaa naam men rikt sthaan aur vishes vrn nhin hain.
+svchaalit adytn
+naaitrosid kees vrtmaan men nvintm snskrn praapt krne ke lie khud ko apdet krtaa hai jismen saamaany sudhaar aur bga fiks shaamil hain. ne prmukh snskrnon men aamtaur pr mhtvpurn privrtn aur nee romaanchk suvidhaaen shaamil hoti hain.
+kyaa aap chaahte hain ki naaitrosid kees apdet ke lie svchaalit rup se jaanch kre?
+apdet ke lie svchaalit rup se jaanch krne kalaavaa, naaitrosid kees svchaalit rup sapdet fail bhi daaunlod kr sktaa hai.
+kyaa aap chaahte hain ki naaitrosid kees svchaalit rup sapdet daaunlod kre?
+aap hmeshaa "apdet" kmaand kaa upyoga krke krnel apdet ki jaanch kr skte hain.
+shuru ho jaao!
+bdhaaee ho! ab aapke paas ek upyogakrtaa khaataa hai, {0}!
+krnel kaa upyoga aarnbh krnaur apne ne khaate men loga-in krne ke lie ENTER kunji dbaaen. aapko kaamyaabi mile!
+aapki asuvidhaa ke lie hmen khed hai, lekin aaut-aufe-boks anubhv kraish ho gayaa hai. ydi aap aashvst hain ki yh anubhv men koee dos hai, to kripyaa dibgainga loga ke saath hmen kraish ki riport kren.
+shel ko praarnbh krne ke lie kisi bhi kunji ko dbaaen, lekin kripyaa dhyaan den ki aapko apnaa nyaa upyogakrtaa mainyual rup se bnaanaa pde sktaa hai.
+krnel pryaavrn truti:
+naaitrosid kees ne ek smsyaa kaa ptaa lgaaayaa hai aur ise bnd kr diyaa gayaa hai.
+kstm bhaasaa sthaapit krne ke liaavshyk maadaa jaankaari maujud nhin hai.
+kstm bhaasaa ko aninstol krne ke liaavshyk maadaa jaankaari maujud nhin hai.
+mod skript shuny nhin ho skti.
+mod lod ho rhe hain...
+koee mod nhin paayaa gayaa.
+mod rok rhaa hai...
+mod ko rok rhaa hai {0}...
+mod dridhaa se hstaaksrit nhin hai. ismen avishvsniy kod ho sktaa hai.
+mod ko lod nhin kiyaa jaa sktaa kyonki krnel ke is snskrn aur is mod ke bich asngattaa hai:
+yhaan trutiyon ki ek suchi di gaee hai jo is asngati ki jaanch krne men aapki shaaytaa kr skti hai:
+mod {0} ko bilkul epiaaee snskrn {1} ki aavshyktaa hai, lekin aapke paas snskrn {2} hai. naaitrosid kees aur/yaa mod ko apgared krne saamtaur pr mdd milti hai. mod paarsinga vifl.
+mod {0} is epiaaee snskrn ke saath thik se kaam nhin kr sktaa hai. mod praarnbh hone men vifl ho sktaa hai. nvintm prti praapt krne ke lie mod vikraa se snprk kren.
+mod {0} kaa naam nhin hai. mod paarsinga vifl. srot kod ki smiksaa kren.
+mod {0} kaa snskrn nhin hai. mod paarsinga vifl. srot kod ki smiksaa kren.
+mod {0} men amaany snskrn hai. mod paarsinga vifl. snskrn thaa
+maujudaa khaataa lok hone pr use snshodhit krne kaa pryaas kiyaa jaa rhaa hai
+upyogakrtaaon ki suchi men anenkripted paasvrd jodene kaa pryaas kiyaa jaa rhaa hai.
+upyoktaanaam nhin joda jaa sktaa. sunishchit kren ki upyogakrtaa naam maujud nhin hai.
+upyoktaanaam nhin htaayaa jaa sktaa. sunishchit kren ki upyogakrtaa naam maujud hai.
+krnel dibgar ki prtiksaa kr rhaa hai...
+dibgar snlgan krne men vifl rhaa. vaise bhi shuru ho rhaa hai...
+naaitrosid ko ismen snlgan krne men sksm hone se phle sunishchit kren ki aapke sistm men ek upyukt dibgar sthaapit hai.
+fail ko mitaayaa nhin jaa sktaa
+dnp fail ko mitaayaa nhin jaa sktaa
+nimnlikhit failen mitaaee nhin gaee hain:
+kyaa aap nishchit rup se in failon ko mitaa dengae?
+vividh fail ko mitaayaa nhin jaa sktaa
+trk "{0}" ke lie koee shaaytaa nhin.
+koee trk shaaytaa vivrn nhin
+amaany RYB rnga vinirdeshk.
+amaany CMY rnga vinirdeshk.
+amaany CMYK rnga vinirdeshk.
+amaany echesel rnga vinirdeshk.
+amaany HSV rnga vinirdeshk.
+amaany YIQ rnga vinirdeshk.
+amaany YUV rnga vinirdeshk.
+is thim kaa upyoga krne ke liaapke knsol ko shi rnga kaa smrthn krnaa chaahie.
+purvaavlokn se baahr niklen
+ho gayaa
+svich prkaar
+thim {0} ek kaarykrm kaa jshn mnaati hai, lekin aap ismen bhaaga lene ke lie yaa to bhut jldi hain yaa bhut der se hain. prtyek vrs, yh thim {1}/{2} se {3}/{4} tk phunch yogay hai.
+thim {0} ko vaastvik rnga smrthn ki aavshyktaa hai, lekin aapkaa knsol iskaa smrthn nhin krtaa hai.
+paath khaali nhin honaa chaahie.
+enkoded paath khaali nhin honaa chaahie.
+raastaa khaali nhin honaa chaahie.
+fail maujud nhin hai.
+tekst failon ko snyojit krne ke lie, upyukt fenkshn kaa upyoga kren.
+baainri failon ko snyojit krne ke lie, upyukt fenkshn kaa upyoga kren.
+srot yaa to nhin milaa yaa fail nhin hai.
+baait snkhyaa 1 se praarnbh honi chaahie.
+nirdist baait snkhyaa amaany hai.
+amaany raulr ekspreshn sintaiks.
+lksy fail yaa nirdeshikaa nhin mili.
+kisi maujudaa fail yaa nirdeshikaa ko prtikaatmk link ke saath adhilekhit nhin kiyaa jaa sktaa.
+stringa "{0}" se mel khaane vaali fail dhundhne men asmrth: {1}
+aapke dvaaraa prdaan ki gaee fail, {0}, ek maany tekst fail nhin hai. ydi yh fail ek JSON fail hai, to yh fenkshn isapthniy bnaa sktaa hai. aapki fail ki surksaa ke lie, fail bhrstaachaar ko rokne ke lie yh kaarrvaaee rok di gaee hai.
+aapke dvaaraa prdaan ki gaee srot fail, {0}, ek maany tekst fail nhin hai.
+aapke dvaaraa prdaan ki gaee lksy fail, {0}, ek maany tekst fail nhin hai.
+disk maujud nhin hai
+vibhaajn astitv men nhin hai
+haardveyr jaanch laaibreri haard draaiv ki jaanch krne men vifl rhi hai. ydi aap vindoje chlaa rhe hain, to sbse snbhaavit kaarn yh hai ki aapke paas haard draaiv jaankaari tk phunchne ke liapryaapt anumtiyaan hain. haard draaiv ko paars krne men sksm hone ke lie unnt prshaasnik vishaadhikaaron ke saath naaitrosid ko punah aarnbh kren.
+haardveyr jaankaari dikhaane men sksm hone ke liaapko krnel ko unnt rup men punraarnbh krnaa hogaaa.
+CPU jaankaari paars krne men vifl. sunishchit kren ki yh ek vaidh jaankaari suchi hai.
+RAM jaankaari paars krne men vifl. sunishchit kren ki yh ek vaidh jaankaari suchi hai.
+GPU jaankaari paars krne men vifl. sunishchit kren ki yh ek vaidh jaankaari suchi hai.
+HDD jaankaari ko paars krne men vifl. sunishchit kren ki yh ek vaidh jaankaari suchi hai.
+prosesr vikraa:
+ghdi ki gati:
+kul kor:
+kaish aakaar:
+kul pryoga krne yogay memori:
+aarksit smriti:
+disk snkhyaa:
+vibhaajn:
+vibhaajn snkhyaa:
+garaafeiks kaard kaa naam:
+SpecProbe kuchh haardveyr ko paars krne men vifl rhaa. SpecProbe dvaaraa riport ki gaee trutiyaan niche di gaee hain:
+koeatirikt jaankaari nhin.
+fail haish raashi
+is ekstenshn ke lie koee difeolt ekstenshn haindlr nhin milaa.
+ekstenshn bindu se praarnbh hone chaahie. snket daa:
+aisaa koee kaaryaanvynkrtaa nhin.
+ekstenshn nirdist nhin hai.
+kaaryaanvynkrtaa kaa naam nirdist nhin hai.
+ekstenshn ke lie haindlr pnjikrit nhin hai.
+aisaa lgataa hai ki aapke paas JSON shel aidaun sthaapit nhin hai. iske dvaaraa prdaan ki jaane vaali atirikt suvidhaaen praapt krne ke lie, aidaun paik sthaapit kren.
+aisaa lgataa hai ki aapke paas SQL ​​shel aidaun sthaapit nhin hai. iske dvaaraa prdaan ki jaane vaali atirikt suvidhaaen praapt krne ke lie, aidaun paik sthaapit kren.
+is ekstenshn ko snbhaalne ke lie koee haindlr nhin hai.
+{0} ke lie jaankaari praapt krne men vifl.
+nirdeshikaa men suchibddh krte smy ajnyaat truti: {0}
+andhikrit
+galti
+gaair-maujud fail yaa nirdeshikaa saadhaar prvisti praapt nhin ki jaa skti.
+kevl tekst failen smrthit hain.
+shmti n hone ke kaarn pth pr prvesh vrjit hai.
+khaali krnel pth prkaar.
+krnel pth prkaar phle se hi pnjikrit hai.
+khali raastaa.
+krnel pth prkaar pnjikrit nhin hai.
+tin konfeigareshn failon ko sngarhit krne ke lie ek maujudaa feoldr nirdist kren.
+konfeigareshn fail ke lie maujudaa pth nirdist kren
+maany konfeigareshn vrga nhin hai.
+konfeigareshn fail amaany hai.
+konfeigareshn ko pdhene kaa pryaas krte smy ek truti huee: {0}.
+krnel konfeigareshn thik se kaam nhin kraaa. amaany kunjiyaan hain
+prmaanikrn vifl rhaa!
+pdhaa vifl rhaa!
+konfeigareshn thik krne kaa pryaas kiyaa jaa rhaa hai...
+koee prkaar nirdist n hone pr konfeigareshn veriebl ki jaanch nhin ki jaa skti.
+jb koee prvistiyaan nirdist nhin ki jaati hain to konfeigareshn chr ki jaanch nhin ki jaa skti.
+binaa kisi saamgari ke ek kstm setinga pnjikrit krne kaa pryaas kiyaa jaa rhaa hai.
+amaany saamgari ke saath ek kstm setinga pnjikrit krne kaa pryaas kiyaa jaa rhaa hai. amaany kunjiyaan hain
+binaa naam vaali ek kstm setinga ko apnjikrit krne kaa pryaas kiyaa jaa rhaa hai.
+kstm setinga pnjikrit nhin hai.
+ek khaali kstm setinga ko kveri krne kaa pryaas kiyaa jaa rhaa hai.
+setinga prkaar nhin milaa.
+setingas kunji nirdist chr se mel nhin khaati.
+setingas prvistiyaan JSON maan rikt hai.
+binaa kisi saamgari kaadhaar setinga pnjikrit krne kaa pryaas kiyaa jaa rhaa hai.
+amaany saamgari ke saath aadhaar setinga pnjikrit krne kaa pryaas kiyaa jaa rhaa hai. amaany kunjiyaan hain
+binaa naam vaali aadhaar setinga ko apnjikrit krne kaa pryaas kiyaa jaa rhaa hai.
+daavaa vifltaa.
+ivent {0} nhin milaa.
+krnel ivent skriy kiyaa gayaa:
+ek vaidh ghtnaa kaarrvaaee prdaan kren
+ajnyaat krnel truti.
+nirdist upnaam phle se maujud hai. sunishchit kren ki aap koee bhinn upnaam chunen.
+aapkanurodh ko snsaadhit krne kaa pryaas krte smy upnaam sistm ko ek amaany aupreshn kaa saamnaa krnaa pda.
+nirdist upnaam nhin milaa.
+nirdist aadesh ko upnaam ke rup men nhin paayaa gayaa hai.
+nirdist upnaam prkaar nhin milaa.
+rnga anurodh ko snsaadhit krne kaa pryaas krte smy ek truti utpnn huee. saamaany galtiyon men galt rnga vinirdeshk nirdist krnaa shaamil hai.
+ek krnel konfeigareshn truti utpnn huee.
+ek saamaany fail sistm truti utpnn huee. yh sunishchit krne ke lie jaanchen ki nirdist pth shi hai, aur fail yaa nirdeshikaa vaastv men maujud hai.
+ek saamaany FTP fail sistm truti utpnn huee. yh sunishchit krne ke lie jaanchen ki nirdist pth shi hai, aur fail yaa nirdeshikaa vaastv men maujud hai.
+ek saamaany FTP netvrk truti utpnn huee. yh sunishchit krne ke lie jaanchen ki aapkaa intrnet knekshn kaam kr rhaa hai.
+ek saamaany FTP shel truti utpnn huee.
+ek smuh prbndhn truti utpnn huee.
+hostnaam truti.
+ek saamaany HTTP shel truti utpnn huee.
+paagal knsol kaa ptaa chlaa hai. naaitrosid kees chlnaa jaari nhin rkh sktaa, kyonki aapkaa knsol hmaari aavshyktaaon ke saath asngat hai.
+amaany RSS feid.
+amaany RSS feid link.
+amaany haish elgaorithm. ydi aap kstm haish sm draaivr kaa upyoga kr rhe hain, to yh sunishchit krne ke lie jaanchen ki draaivr lod hai.
+amaany haish raashi. yh sunishchit krne ke lie jaanchen ki aapne haish raashi ko shi dhnga se kopi aur pest kiyaa hai. ydi aap kstm haish sm draaivr kaa upyoga kr rhe hain, to yh sunishchit krne ke lie jaanchen ki draaivr lod hai aur yh apeksaa kanurup kaam krtaa hai.
+amaany krnel pth.
+amaany mainual pej. yh sunishchit krne ke lie jaanchen ki vaidh mainual pristhon vaalaa mod lod kiyaa gayaa hai.
+amaany mod. ydi aapkaa mod ek vaidh .NET asenbli hai, to yh sunishchit krne ke lie jaanchen ki yh vaastv men us intrfees ko laagau krtaa hai jo mod shuru krne ke liaavshyk hai.
+amaany fail sistm pth. yh sunishchit krne ke lie jaanchen ki yh shi dhnga se likhaa gayaa hai.
+amaany plesholdr. adhik jaankaari ke lie krnel dstaaveje dekhen.
+kstm bhaasaa sthaapit krne men vifl rhi. yh sunishchit krne ke lie jaanchen ki bhaasaa fail shi dhnga se bnaaee gaee hai. aamtaur pr, sthaaniy jnretr aapki kstm bhaasaa ke lie sthaaniykrn jaankaari bnaane men achchhaa kaam krtaa hai.
+kstm bhaasaa lod hone men vifl rhi. yh sunishchit krne ke lie jaanchen ki bhaasaa fail shi dhnga se bnaaee gaee hai. aamtaur pr, sthaaniy jnretr aapki kstm bhaasaa ke lie sthaaniykrn jaankaari bnaane men achchhaa kaam krtaa hai.
+kstm bhaasaa aninstol krne men vifl rhi.
+mel sistm men ek truti aaee.
+mod sthaapit krne men vifl rhaa. yh sunishchit krne ke lie jaanchen ki yh ek vaidh mod fail hai. ydi aapkaa mod ek vaidh .NET asenbli hai, to yh sunishchit krne ke lie jaanchen ki yh vaastv men us intrfees ko laagau krtaa hai jo mod shuru krne ke liaavshyk hai.
+mod men koee mod instens nhin hai. nee prti ke lie mod vikraa se praamrsh len.
+mod aninstoleshn vifl ho gayaa hai.
+din kaa sndesh pdhene yaa set krne kaa pryaas krte smy ek truti utpnn huee.
+is naam kaa koeaayojn nhin hai.
+is naam ki koee bhaasaa nhin hai.
+is naam ki koee mel nirdeshikaa nhin hai.
+is naam kaa koee mod nhin hai.
+is naam kaa koee prtibinb gaun nhin hai.
+is naam kaa koee prtibinb chr nhin hai.
+is naam kaa koee skrinsevr nhin hai.
+is naam se koee shel priset nhin hai.
+is naam ki koee thim nhin hai.
+snpurn krnel men shuny upyogakrtaa hain. hm ek atynt durlbh sthiti men phunch gae hain. krnel jaari nhin rh sktaa.
+anumtiyaan prbndhit krne kaa pryaas krte smy ek truti utpnn huee
+rimot dibga divaais phle se maujud hai.
+rimot dibga divaais nhin milaa. yh sunishchit krne ke lie jaanchen ki aapne divaais kaa aaeepi ptaa shi likhaa hai.
+rimot dibga divaais aupreshn vifl rhaa.
+RSS netvrk truti utpnn huee. yh sunishchit krne ke lie jaanchen ki aapkaa intrnet knekshn kaam kr rhaa hai.
+RSS shel truti utpnn huee.
+aupreshn ke dauraan skrinsevr prbndhn truti utpnn huee.
+ek saamaany SFTP fail sistm truti utpnn huee. yh sunishchit krne ke lie jaanchen ki nirdist pth shi hai, aur fail yaa nirdeshikaa vaastv men maujud hai.
+ek saamaany SFTP netvrk truti utpnn huee. yh sunishchit krne ke lie jaanchen ki aapkaa intrnet knekshn kaam kr rhaa hai.
+ek saamaany SFTP shel truti utpnn huee.
+sthiti paarsinga vifl rhi. kripyaa aupretr kapeksit dijain ko puraa krne ke liapne sintaiks ki jaanch kren.
+yueeesech skript fail ko paars krne kaa pryaas krte smy ek truti utpnn huee. trutiyon ke liapni skript fail ki jaanch kren aur unhen thik kren.
+ek upyogakrtaa nirmaan truti utpnn huee.
+ek upyogakrtaa prbndhn truti utpnn huee.
+ek saamaany netvrk truti utpnn huee. ydi aap kisi dursth chhor se knekt krne kaa pryaas kr rhe hain, to sunishchit kren ki aap intrnet yaa apne sthaaniy netvrk se knekt hain.
+ek asmrthit knsol kaa ptaa chlaa hai.
+krnel men ek abhikthn vifltaa kaa ptaa chlaa hai! yh snbhvtah krnel modyul men ek bga hai jise hmaari or se thik kiyaa jaanaa chaahie.
+netvrkinga se snbndhit snchaaln krne men sksm hone se phlaapkaa netvrk aunlaain honaa aavshyk hai. apnaa netvrk edoptr knekt kren aur punah pryaas kren.
+aupreshn krne ki koshish krne ki anumti se inkaar kr diyaa gayaa.
+upyogakrtaa maujud nhin hai. yh sunishchit krne ke lie jaanchen ki aapne upyogakrtaa ko shi dhnga se likhaa hai.
+draaivr maujud nhin hai. yh sunishchit krne ke lie jaanchen ki aapne draaivr kaa naam shi likhaa hai, aur draaivr thik se pnjikrit hai.
+dhaagaaa abhi taiyaar nhin hai. upyogakrtaa kod mainyual rup se rokne ke baad krnel thred ko pun: utpnn krnaa bhul gayaa hogaaa.
+vrtmaan sthiti men thred aupreshn amaany hai. atirikt jaankaari ke lie krnel thred mainejr dvaaraa aapko diyaa gayaa atirikt sndesh dekhen.
+ek amaany shel aupreshn kaa pryaas kiyaa jaa rhaa hai.
+yh fenkshn yaa suvidhaa abhi tk laagau nhin ki gaee hai.
+dursth prkriyaa prnaali pr ek aupreshn kaa pryaas kiyaa gayaa jo amaany hai.
+ek amaany enkripshn aupreshn kiyaa jaa rhaa hai.
+ek amaany dibgainga kaarrvaaee nispaadit ki jaa rhi hai.
+ek amaany sngarh kaarrvaaee nispaadit ki jaa rhi hai.
+ek amaany heks snpaadk kaarrvaaee nispaadit ki jaa rhi hai.
+ek amaany JSON snpaadk kaarrvaaee nispaadit ki jaa rhi hai.
+ek amaany paath snpaadk kaarrvaaee nispaadit ki jaa rhi hai.
+jb krnel ne nirdist mod ko lod krne kaa pryaas kiyaa, to usne "krnel simyuletr" lod krne kaa anurodh kiyaa. chunki mukhy eplikeshn kaa naam bdlkr naaitrosid kees kr diyaa gayaa hai, islie is mod ko surksit rup se nhin chlaayaa jaa sktaa hai. hm aapko mod ko apgared krne ki slaah dete hain.
+anurodhit kaarrvaaee krne kaa pryaas krte smy ek snprk prbndhk truti utpnn huee. sunishchit kren ki snprk fail shi feoldr men maujud hai aur yh ek vaidh vCard 2.1, 3.0, yaa 4.0 snprk fail hai.
+anurodhit aupreshn nispaadit krte smy ek yueeesech sthiti prnaali vifl ho gaee. adhik vivrn ke lie niche truti sndesh dekhen.
+ek amaany SQL snpaadk kaarrvaaee nispaadit ki jaa rhi hai.
+smuh maujud nhin hai. yh sunishchit krne ke lie jaanchen ki aapne smuh kaa naam shi dhnga se likhaa hai.
+intrektiv tiyuaaee kaaryaanvyn men ek truti utpnn huee.
+upyogakrtaaon ke lie kstm setinga prbndhk men ek truti utpnn huee.
+netvrk knekshn prbndhk men koee truti utpnn huee.
+ek saamaany HTTP netvrk truti utpnn huee. yh sunishchit krne ke lie jaanchen ki aapkaa intrnet knekshn kaam kr rhaa hai.
+ek saamaany kmaand prbndhk truti utpnn huee. yh sunishchit krne ke lie jaanchen ki aapne kmaand yaa shel prkaar shi dhnga se likhaa hai.
+bhaasaaon ke lie JSON failen jenret krne kaa pryaas krte smy lokel jenretr tul ne ek truti lautaa di.
+smy aur dinaank modyul men koee truti utpnn huee. yh sunishchit krne ke lie jaanchen ki aapne smy aur taarikh shi dhnga se nirdist ki hai, aur smy ksetr maujud hai.
+mod mainyual paarsr men koee truti utpnn huee. kripyaa sunishchit kren ki aapki mainyual fail vaidh hai aur mod praarnbh ho gayaa hai.
+kailendr prbndhk men koee truti utpnn huee.
+adhisuchnaa prbndhn men koee truti huee.
+bhaasaa prbndhn men truti huee.
+mod prbndhn men koee truti thi.
+praavrtn prnaali men koee truti thi.
+thim prbndhn ke lie koee kaarrvaaee krne kaa pryaas krte smy ek truti huee.
+krnel ivent prbndhn ke lie ek aupreshn krne kaa pryaas krte smy ek truti huee.
+krnel aidaun prbndhn ke lie ek aupreshn krne kaa pryaas krte smy ek truti huee.
+not prbndhn ke lie koee kaarrvaaee krne kaa pryaas krte smy ek truti huee.
+haardveyr ghtk prbndhn vifl rhaa.
+logain haindlr vifl rhaa. kripyaa sunishchit kren ki yh thik se pnjikrit hai aur yh apeksaa kanurup apnaa kaam krtaa hai.
+enkodinga vifl ho gaee hai. yh sunishchit krne ke lie jaanchen ki aapkaa enkodinga draaivr shi dhnga se kaam krtaa hai aur ydi koee smsyaa aati hai to use thik kren, fir punah pryaas kren.
+amaany gaopniytaa shmti kaarrvaaee. kripyaa sunishchit kren ki shmti shi hai aur punah pryaas kren.
+splaish prbndhk aapkanurodhit aupreshn ko nispaadit krne men vifl rhaa hai. kripyaa splaish naam jaanchen aur punah pryaas kren.
+tekst tul aapkanurodh ko snsaadhit krne men vifl rhe.
+amaany plesholdr kaarrvaaee. adhik jaankaari ke lie krnel dstaaveje dekhen.
+draaivr haindlr yh kriyaa krne men vifl rhaa kyonki ho sktaa hai ki aapne galt pairaamitr prdaan kie hon. ydi aap aashvst hain ki ve shi dhnga se nirdist hain, to sunishchit kren ki aapne shi draaivr naam aur prkaar prdaan kiyaa hai.
+prgati haindlr anurodhit kaarrvaaee krne men vifl rhaa hai.
+knsol aupreshn aavshyk kaary krne men vifl rhaa.
+krnel jrnlinga aupreshn aavshyk kaary krne men vifl rhaa.
+sistm dokinga aupreshn aavshyk kaary krne men vifl rhaa.
+surksaa aupreshn aavshyk kaary krne men vifl rhaa.
+krnel draaivr prbndhn ke lie koee kaarrvaaee krne kaa pryaas krte smy ek truti huee.
+krnel men koee truti hai, krnel aidaun men se ek, aapke mod men se ek, yaa krnel ghtkon men se ek. ydi rutin naapke input ko snsaadhit krne kaa pryaas kiyaa hai, to sunishchit kren ki aapne sbhi pairaamitr shi dhnga se likhe hain.
+apvaad jaankaari
+truti prkaar
+truti sndesh
+atirikt jaankaari
+jis modyul ke kaarn gadebdei huee, usne yh atirikt jaankaari prdaan ki jo aapko aagae mdd kr skti hai
+jis modyul ke kaarn gadebdei huee, usnatirikt jaankaari nhin di.
+apvaad vivrn
+ydi uprokt atirikt jaankaari aapko smsyaa kaa ptaa lgaaane men mdd nhin krti hai, to issaapko smsyaa kaa ptaa lgaaane men mdd mil skti hai.
+modyul napvaad jaankaari prdaan nhin ki, islie yh aamtaur pr ek snketk hai ki kuchh galt hai.
+aantrik apvaad vivrn
+jb rutin ne is aupreshn ko krne kaa pryaas kiyaa to atirikt trutiyaan paaee gaeen
+ydi aap sunishchit hain ki yh truti aprtyaashit hai, to dibgainga sksm hone pr krnel ko punraarnbh krne kaa pryaas kren aur kaarrvaaee kaa punah pryaas krne ke baad loga ki jaanch kren.
+durbhaagay se, ek amaany sndesh prkaar diyaa gayaa thaa, islie yh snbhv hai ki kuchh gadebde hai. dibgar chaalu krnaur smsyaa ko pun: utpnn krne kaa pryaas kren.
+{0} -- {1} seknd men ribut ho rhaa hai...
+stt krnel truti utpnn huee:
+yh truti krnel yaa anupryogaon men asthirtaa paidaa kr skti hai. aap apne jokhim pr krnel kaa upyoga jaari rkh skte hain.
+truti kaa gahn vishlesn
+apvaad prkaar
+truti kod
+truti srot
+ajnyaat truti srot vidhi
+truti vivrn
+staik tres
+krnel truti jaankaari
+krnel truti huee
+koeapvaad shaamil hai?
+krnel truti vivrn
+aantrik truti, snkhyaa kaa vishlesn
+antim aantrik truti mul kaarn hai, jo snkhyaa hai
+ferem vishlesn
+vishlesn krne ke lie koee ferem nhin hain.
+ferem vishlesn vifl rhaa. ho sktaa hai ki kuchh jaankaari puri n ho.
+durbhaagay se, smsyaa kaa vishlesn krne men aapki shaaytaa ke lie koee upyogai truti jaankaari uplbdh nhin kraaee gaee hai.
+sbhi krnel dhaagae
+dhaagaaa jivit hai
+thred ek baikgaraaund thred hai
+thred sistm-mhtvpurn hai
+dhaagaaa taiyaar hai
+dhaagaaa ruk rhaa hai
+kul dhaagae
+thred vishlesn vifl rhaa. ho sktaa hai ki kuchh jaankaari puri n ho.
+sbhi aupretinga sistm thred
+aupretinga sistm thred vishlesn vifl rhaa. ho sktaa hai ki kuchh jaankaari puri n ho.
+sbhi thred baiktres
+thred baiktres khaali hai. yaa to yh jaankaari uplbdh nhin hai, ise laate smy koee truti huee, yaa daayganostiks ekstraa aidaun sthaapit nhin hai. dibga loga ki jaanch kren.
+dhaagae ke lie staik tres
+thred baiktres vishlesn vifl rhaa. ho sktaa hai ki kuchh jaankaari puri n ho.
+snskrn jaankaari
+garilo se bhaaga rhe hain?
+dnp jnretr krnel truti ke kaarn dnp krne men vifl rhaa
+aapki asuvidhaa ke lie hm ksmaa chaahte hain, lekin aisaa lgataa hai ki krnel ko but krne men smsyaa aa rhi thi. niche diyaa gayaa truti sndesh mdd kr sktaa hai:
+aagae ki jaanch ke lie, krnel pr dibgainga mod sksm kren aur smsyaa ko pun: utpnn krne kaa pryaas kren. saath hi, bnaaee gaee nvintm dnp fail ki jaanch krne kaa pryaas kren.
+krnel aidaun praarnbh kiyaa jaa rhaa hai
+yh aidaun vaidh aidaun nhin hai.
+krnel aidaun praarnbh krnaa
+krnel aidaun praarnbh kiyaa gayaa
+krnel aidaun praarnbh krne men vifl
+krnel aidaun aarnbh krne men vifl
+aidaun ko antim rup dene men vifl. niche die gaaid-aun antim rup dene men vifl rhe hain:
+aidaun rokne men vifl. niche die gaaidaun rokne men vifl rhe hain:
+kaaryon ki suchi praapt nhin ho ski
+snpttiyon ki suchi praapt nhin ho ski
+feild ki suchi praapt nhin ki jaa skti
+gaair-maujud aidaun ke saath kstm fenkshn nispaadit nhin kiyaa jaa sktaa
+aidaun '{1}' men fenkshn '{0}' nhin mil skaa.
+aidaun '{1}' men snptti '{0}' nhin mil ski.
+aidaun '{1}' men feild '{0}' nhin mil skaa.
+atirikt bhaasaa paik
+atirikt skrinsevr paik
+atirikt splaish paik
+atirikt thims paik
+atirikt - mnornjn
+atirikt - puraalekh shail
+atirikt - baasbum
+atirikt - kaifin
+atirikt - kailkuletr
+atirikt - kailendr
+atirikt - rnga privrtk
+atirikt - snprk
+atirikt - CRC32
+atirikt - nidaan
+atirikt - shbdkosh
+atirikt - dokinga
+atirikt - purvaanumaan
+atirikt - efetipi shel
+atirikt - gait shail
+atirikt - HTTP shel
+atirikt - intrnet rediyo suchnaa
+atirikt - JSON shel
+atirikt - bhaasaa studiyo
+atirikt - mel shail
+atirikt - emdi5
+atirikt - NameGen
+atirikt - nots
+atirikt - aareses shail
+atirikt - eseftipi shel
+atirikt - SHA1
+atirikt - SHA384
+atirikt - eskyuel shel
+atirikt - thim studiyo
+atirikt - smy ki jaankaari
+atirikt - taaimr
+atirikt - krnel yuktiyaan
+atirikt - kaary suchi
+atirikt - ikaaee privrtk
+ligaesi - echdidi anklinr 2015
+aisaa koeaidaun prkaar '{0}' nhin
+ek yaa adhik sipiyu kor jaanch krne men vifl rhe. fir bhi jaankaari dikhaa rhaa hun...
+ek yaa adhik raim chips jaanch men vifl rhe. fir bhi jaankaari dikhaa rhaa hun...
+ek yaa adhik garaafeiks kaard jaanch men vifl rhe. fir bhi jaankaari dikhaa rhaa hun...
+ek yaa adhik haard draaiv jaanch men vifl rhe. fir bhi jaankaari dikhaa rhaa hun...
+apryaapt vishaadhikaaron ke kaarn haardveyr ko paars nhin kiyaa jaaaaa. eliveted mod men naaitrosid ko punah aarnbh krne ke lie "vaainlevet" kaa upyoga kren.
+haardveyr ki jaanch krte smy ek truti huee: {0}
+jrnl fail '{0}' maujud nhin hai.
+rimot paavr prbndhn laagau:
+aapke vindoje trminl ke lie viti anukrm praarnbh nhin kiyaa jaa sktaa. sunishchit kren ki aap Windows 10 yaa uske baad kaa snskrn chlaa rhe hain.
+mhtvpurn ghtkon ko praarnbh krne men vifl
+naaitrosid shuru ho rhaa hai...
+kstm bhaasaaen lod ho rhi hain...
+mhtvpurn krnel aidaun lod ho rhe hain...
+konfeigareshn lod ho rhaa hai...
+mhtvpurn mod lod ho rhe hain...
+krnel kuchh aavshyk ghtkon ko aarnbh krne men vifl rhaa. is bindu pr krnel thik se kaam nhin kraaa.
+truti jaankaari:
+krnel pryaavrn ki jaankaari
+krnel kuchh vaiklpik ghtkon ko aarnbh krne men vifl rhaa. ydi yh kisi konfeigareshn fail ko pdhene kaa pryaas kr rhaa hai, to sunishchit kren ki yh shi dhnga se svrupit hai.
+saamaany chr riset
+sheje gae shel kmaand itihaas.
+konfeigareshn shaa gayaa.
+atirikt krnel fenkshns aur unke pnjikrit ghtk bnd ho gae.
+krnel sbhi konfeigareshn ko unki praarnbhik sthiti men riset krne men vifl rhaa. ho sktaa hai ki kuchh ghtk thik sanlod n hue hon. ydi aap ribut ke baad smsyaaon kaa saamnaa kr rhe hain, to iskaa kaarn yh ho sktaa hai. ribut hone pr kripyaa krnel ko bnd kr den.
+alvidaa!
+kripyaa tb tk prtiksaa kren jb tk krnel aapke haardveyr ko praarnbh n kr de...
+sistm akhndtaa kaa styaapn
+konfeigareshn truti adhisuchit ki jaaai
+vinyaas truti
+konfeigareshn failon men se ek men koee smsyaa hai. kripyaa iski saamgari jaanchen.
+sistm aarnbhikrn
+krnel adytn
+haardveyr kaa ptaa lgaaanaa
+vaiklpik ghtk
+upyogakrtaa aarnbhikrn
+krnel snshodhn
+sistm akhndtaa styaapn
+avsthaa
+rkhrkhaav mod men chl rhaa hai. mnch chhodaa...
+krnel thred ko pun: utpnn nhin kiyaa jaa sktaa jbki vhi thred phle se hi chl rhaa hai.
+chaaild thred praarnbh kriyaa shuny nhin ho skti.
+krnel thred {0} vifl rhaa.
+aapnapne paikej mainejr kaa upyoga krke naaitrosid kees sthaapit kiyaa hai. kripyaa iske bjaay apne krnel ko apgared krne ke lie iskaa upyoga kren.
+koee suchnaa nhin.
+fail yaa feoldr nhin khol skte
+is vindo ko bnd krne ke lie koee bhi kunji dbaaen.
+nyulaain shaili:
+baainri fail:
+maaim maadaa:
+puraa naam
+snskrn
+snskriti kaa naam
+saamgari prkaar
+fail maany .NET asenbli nhin hai.\n
+fail sistm jaankaari nhin mil ski
+fail yaa nirdeshikaa ki prtilipi nhin bnaaee jaa skti
+fail yaa nirdeshikaa ko sthaanaantrit nhin kiyaa jaa sktaa
+fail yaa nirdeshikaa ko htaayaa nhin jaa sktaa
+feoldr maujud nhin hai. sunishchit kren ki aapne shi pth likhaa hai.
+chynit fail ki prtilipi bnaane ke lie gantvy feoldr men pth yaa purn pth drj kren.
+sunishchit kren ki aapne shi pth likhaa hai.
+fail maujud nhin hai. sunishchit kren ki aapne shi pth likhaa hai.
+chynit fail ko sthaanaantrit krne ke lie gantvy feoldr men pth yaa purn pth drj kren.
+ek nyaa fail naam drj kren.
+sunishchit kren ki aapne shi fail naam likhaa hai.
+fail phle se hi maujud hai. naam pr kisi any fail kaa kbja nhin honaa chaahie.
+ek nyaa nirdeshikaa naam drj kren.
+feoldr phle se maujud hai. naam pr kisi any feoldr kaa kbja nhin honaa chaahie.
+chynit prvisti koee fail nhin hai.
+haish draaivr drj kren:
+haish draaivr nhin milaa.
+apnaa apeksit haish drj kren
+do haish mel khaate hain!
+do haish mel nhin khaate.
+chynit
+fail kaa naam
+ek nirdeshikaa hai
+chynit hai
+fail kaa saaije
+dstaavej pth
+'{0}' chynit. baahr niklnaur chyn ki pusti krne ke lie ESC dbaaen.
+feoldr nhin khol skte yaa fail kaa chyn nhin kr skte
+kisi sthaaniy feoldr men pth yaa purn pth drj kren.
+adhik jaankaari ke lie SPACE dbaaen
+'{0}' chynit. baahr niklnaur chyn ki pusti krne ke lie ESC dbaaen.
+'{0}' ko achynit kiyaa gayaa. baahr niklnaur chyn ki pusti krne ke lie ESC dbaaen.
+koee chynit fail nhin.
+feoldr nhin khul skaa
+feoldr kaa chyn nhin kiyaa jaa sktaa
+koee chynit feoldr nhin.
+durbhaagay se, is mainual pej men koee saamgari nhin hai. haalaanki, yh dstaaveje mod vikraa ke vebpej kantrgat paayaa jaa sktaa hai. ydi aapko abhi bhi yh dstaaveje nhin mil rhaa hai, to adhik jaankaari ke lie mod ke devlprs se puchhen.
+dvaaraa aapke smks prstut hai
+kntent ki lmbaaee
+koee saamgari nhin.
+koee snshodhn nhin.
+skrinsevr naam
+skrinsevr men chmkti chhviyaan hain
+kaary aaeedi
+vishaadhikaar praapt prosesr smy
+upyogakrtaa prosesr smy
+kul prosesr smy
+kaary sthiti
+praathmiktaa str
+kaary smriti ptaa
+kaary kaa naam
+jivit
+pristhbhumi
+ganbhir
+taiyaar
+krnel kaary phle hi khetm ho chukaa hai.
+krnel kaary mhtvpurn hai aur ise smaapt nhin kiyaa jaa sktaa.
+OS threds ko khetm nhin kiyaa jaa sktaa.
+taarikh
+smy
+prdrshit hone vaalaa naam
+maank naam
+sfltaa
+asfltaa
+prgati haindlr shuny nhin ho sktaa.
+prsnskrn...
+vidhi prkaar ko aadhaar naaitrosid prkaar suchi men pribhaasit nhin kiyaa gayaa hai.
+yh vidhi astitvhin hai.
+yh vidhi sthir hai. gaair-vstu adhibhaar kaa pryoga kren.
+yh vidhi sthir nhin hai. aubjekt ovrlod kaa upyoga kren.
+prkaashsnvednshil jbti chaavni
+is skrinsevr men chmkti chhviyaan aur teje gati vaale enimeshn ho skte hain jo fotosensitiv ke lie daure kaa kaarn bn skte hain. jaari rkhne se phle is trh ke daure ke baare men adhik jaankaari ke lie ek chikitsaa vishesjny se snprk krne ki sifaarish ki jaati hai. ydi aap is chaavni se chhutkaaraa paanaa chaahte hain, to aap ise skrinsevr setingas se bnd kr skte hain.
+kstm skrinsevr phle se maujud hai.
+kstm skrinsevr nhin milaa.
+khali splaish drj nhin kiyaa jaa sktaa
+binaa naam ke splaish drj nhin kiyaa jaa sktaa
+binaa prvesh bindu ke splaish drj nhin kiyaa jaa sktaa
+splaish punah pnjikrit nhin kiyaa jaa sktaa. aapko phle us splaish ko apnjikrit krnaa hogaaa.
+binaa naam vaale splaish ko apnjikrit nhin kiyaa jaa sktaa
+gaair-maujud splaish ko apnjikrit nhin kiyaa jaa sktaa
+smaapn splaish prdrshit krne men vifl rhaa hai
+hm {0}% tk phunch gae hain!
+lod ho rhaa hai...
+gaair-maujud mod ke saath kstm fenkshn nispaadit nhin kiyaa jaa sktaa
+gaair-maujud mod ke saath kstm proprti nispaadit nhin ki jaa skti
+gaair-maujud mod ke saath kstm feild nispaadit nhin kiyaa jaa sktaa
+nirbhrtaa asntust. vifl nirbhrtaaen niche suchibddh hain:
+astitvhin mod {0} ke lie mainual se puchhtaachh krne kaa pryaas kiyaa gayaa.
+astitvhin mod {1} ke lie mainual {0} ko aarnbh krne kaa pryaas kiyaa gayaa.
+astitvhin mod {1} ke lie mainyual fail {0} ko praarnbh krne kaa pryaas kiyaa gayaa.
+mainyual fail {0} ko praarnbh krne kaa pryaas kiyaa gayaa jo mod {1} ke lie maujud nhin hai.
+yh proprti kevl threds ke saath knekshn ke lie maany hai. instens knekshn ke lie, is proprti ko kol krne ke bjaay instens pr hi upyukt proprti ko kol kren.
+ek knekshn chunen. ydi aapke paas koee knekshn nhin hai, to aapko ek nyaa knekshn bnaanaa hogaaa. iskatirikt, aap srvr se shighrtaa se judene ke lie spid daayl suvidhaa kaa upyoga kr skte hain.
+ek nyaa knekshn bnaaen
+spid daayl kaa pryoga kren
+knekshn prkaar nhin milaa
+knekshn nhin milaa.
+knekshn ke liamaany link.
+{0} ke saath knekshn sthaapit krne men vifl.
+knekshn abhi tk sthaapit nhin huaa hai.
+knekshn suchkaank simaa se baahr hai.
+knekshn prkaar phle se maujud hai
+shel {0} netvrk knekshn svikaar nhin krtaa hai.
+srvr ptaa drj kren:
+spid daayl suchi se ek knekshn chunen.
+ek knekshn chunen.
+ajnyaat netvrk shel truti:
+gaair-maujud prkaar vaalaa spid daayl nhin joda jaa sktaa.
+{1} men se {0} aplod kiyaa gayaa.
+anumti ki maanga kr rhe hain
+anumti nhin di gaee
+khaali anumti pr shmti nhin di jaa skti.
+aisaa lgataa hai ki {0} ke rut nemspes vaalaa ek mod {1} ki anumti saapke daa tk phunchne kaa pryaas krtaa hai. kyaa aap is mod ko apne daa tk phunchne ki anumti daa chaahte hain?
+aapne koeasenbli nirdist nhin ki.
+aapnasenbli pth nirdist nhin kiyaa hai.
+aapnasenbli naam nirdist nhin kiyaa.
+smaan naam se koee smuh nhin joda jaa sktaa.
+astitvhin smuh ko htaayaa nhin jaa sktaa.
+kisi upyogakrtaa ko astitvhin smuh men nhin joda jaa sktaa.
+upyogakrtaa phle hi smuh men shaamil ho chukaa hai!
+kisi upyogakrtaa ko astitvhin smuh se nhin htaayaa jaa sktaa.
+upyogakrtaa phle hi smuh chhode chukaa hai!
+kisi gaair-maujud smuh se kisi upyogakrtaa se puchhtaachh nhin ki jaa skti.
+logain haindlr nhin milaa!
+gaelt upyoktaanaam yaa upyoktaanaam nhin milaa.
+logain haindlr kraish ho gayaa hai!
+gaelt vyvsthaapk paasvrd. aapke paas {0} pryaas hain.
+snbhaavnaa se baahr. ribut ho rhaa hai...
+kisi durbhaavnaapurn mod ne rut khaataa htaa diyaa, yaa durlbh sthiti utpnn hueaur vh chlaa gayaa.
+se
+koee chaaraa nhin.
+RSS shel ekstraa aidaun instol kren!
+praarnbh krne ke lie koee bhi kunji dbaaen, yaa adhik viklpon ke lie ESC dbaaen...
+nirdist kunji, {0}, phle se maujud hai.
+nirdist kunji, {0}, maujud nhin hai.
+naaitrosid krnel men aapkaa svaagat hai! - snskrn
+yh progaraam GNU jnrl pblik laaisens 3.0 yaa uske baad ke snskrn ke tht laaisens praapt hai.
+aap krnel kaa vikaas snskrn chlaa rhe hain. haalaanki aap aagaaami suvidhaaon kaa anubhv kr skte hain jo antim rilije men maujud ho skti hain, aapko bga, asthirtaa yaa yhaan tk ki daa haani kaa bhi saamnaa krnaa pde sktaa hai. ydi snbhv ho to hm sthir snskrn kaa upyoga krne ki slaah dete hain.
+aap krnel kaa rilije kaindidet snskrn chlaa rhe hain. jb aap antim sprsh kaa anubhv kr skte hain, to aapko bga, asthirtaa yaa yhaan tk ​​ki daa haani kaa saamnaa krnaa pde sktaa hai. ydi snbhv ho to hm sthir snskrn kaa upyoga krne ki slaah dete hain.
+hm krnel ke is snskrn ko n chlaane ki anushnsaa krte hain, kyonki yh asmrthit hai. ydi aapne is krnel ko ajnyaat sroton se daaunlod kiyaa hai, to yh sndesh dikhaaee de sktaa hai. kripyaa hmaaraadhikaarik daaunlod pristh se daaunlod kren.
+hmeshaa ke lie khaarij krne ke lie, yaa to apne kibord pr baaen tir kaa upyoga krke ise haailaait krke "svikrit" btn pr ENTER dbaaen, yaa krnel setingas men "vikaas suchnaa svikrit" sksm kren.
+thik hai
+svikaar kiyaa
+vikaas suchnaa
+aap ek asaamaany vaataavrn men naaitrosid kees chlaa rhe hain. kripyaa styaapit kren ki aapne krnel ko sidhe yaa GRILO ke maadhym se praarnbh kiyaa hai. ydi aap aashvst hain ki aapne krnel ko saamaany trike se praarnbh kiyaa hai, to aisaa islie ho sktaa hai kyonki aap naaitrosid kees kaa ek asmrthit snskrn chlaa rhe hain.
+kripyaa dhyaan den ki naaitrosid kees ko asaamaany vaataavrn men chlaane kaa mtlb hai ki kuchh suvidhaaen simit hain. aap mod aur konfeigareshn lod nhin kr paaengae.
+asaamaany vaataavrn suchnaa
+ki aap naaitrosid ke purn nirmaan ke saath bheje gae krnel aidaun satirikt yuktiyaan praapt kr skte hain?
+pro tip: kyaa aap jaante hain
+BASE64 kunjiyon kaa smrthn nhin krtaa
+BASE64 inishiylaaijeeshn vaiktr kaa smrthn nhin krtaa hai
+aarese kunjiyon kaa smrthn nhin krtaa
+aaresaarnbhikrn vaiktr kaa smrthn nhin krtaa hai
+kunji baaindinga
+daalnaa
+nikaalnaa
+prtisthaapit kren
+sbko bdli kren
+sbhi ko bdlen kyaa
+nnbr ki jaankaari
+heks snpaadk vifl:
+uplbdh kunjiyaan
+baait snkhyaa ko heksaadesiml maan ke saath likhen.
+nirdist baait snkhyaa maany nhin hai.
+{0} ko prtisthaapit krne ke lie heksaadesiml maan ke saath baait snkhyaa likhen.
+prtisthaapit kie jaane vaale heksaadesiml maan ke saath baait snkhyaa likhen.
+snkhyaa ki jaankaari:
+heksaadesiml
+astbhujaakaar
+snkhyaa
+dviaadhaari
+is kibaaindinga men koee kriyaa nhin hai.
+yh aupreshn kisi shuny srni pr nhin kiyaa jaa sktaa.
+prvesh krnaa...
+laain htaaen
+prvesh krnaa bnd kro
+nee pnkti
+paath snpaadk vifl:
+khojne ke lie stringa likhen
+prtisthaapn stringa likhen
+pnktiyaan
+stnbh
+pnkti
+bin
+taib
+yh kaarrvaaee shuny pnkti suchi pr nhin ki jaa skti.
+setinga prkaar nhin milaa.
+ek viklp khojen
+aapko kisi setinga prvisti ko uske shirsk yaa uske maan kaa upyoga krkaasaani se khojne ki anumti daa hai.
+setingas sev kren
+aapke krnel konfeigareshn privrtnon ko eplikeshn daa feoldr men paaee gaee konfeigareshn fail men shejtaa hai.
+setingas ko is rup men shejen
+aapke krnel konfeigareshn privrtnon ko nirdist feoldr men mili konfeigareshn fail men shejtaa hai.
+se setinga lod kren
+nirdist konfeigareshn fail se krnel konfeigareshn lod krtaa hai.
+setingas punah lod kren
+kisi bhi baahri privrtn ke lie krnel konfeigareshn ko punah lod krtaa hai
+sistm apdet ki jaanch kren
+vyvsthaa jaankaari
+aap {0} setinga ke laindinga pristh pr hain. aarnbh krne ke lie ek anubhaaga yaa viklp chunen. aapne kaun si setingas bdli hain, uskaadhaar pr aapko krnel ko punraarnbh krne ki aavshyktaa ho skti hai.
+anubhaaga lod ho rhaa hai...
+is anubhaaga men paaee gaee nimn men se ek yaa adhik setingas aapke pletfeorm men smrthit nhin hain:
+amaany anubhaaga. kripyaa vaaps jaaen.
+amaany kunji. kripyaa vaaps jaaen.
+setingas khoji jaa rhi hain...
+ye setingas paaee jaati hain. kripyaa ek kaa chyn kren.
+aapki anurodhit setinga dhundhne men vifl.
+setingas sheji jaa rhi hain...
+setingas ko shaa jaa rhaa hai
+setinga lod ho rhi hai...
+setinga punah lod ho rhi hai...
+vikaas snskrnon pr adytnon ki jaanch aksm hai.
+krnel snskrn
+krnel epiaaee snskrn
+host aaeedi
+host jenerik aaeedi
+aap kho chuke hain!
+ydi aap aashvst hain ki aapne shi anubhaaga kholaa hai, to krnel dibgar chaalu kren, pun: utpnn kren, aur loga ki jaanch krne kaa pryaas kren.
+ydi aap uprokt sndesh ko nhin smjhte hain, to krnel dibgar chaalu kren, pun: utpnn kren aur loga ki jaanch krne kaa pryaas kren.
+>> rimot dibga: snskrn
+>> svaagat hai! yh aapkaa phli baar dursth dibga men prvesh hai. pnjikrn krne ke lie "/register <name>" kaa upyoga kren.
+blok krne ke lie divaais nhin milaa.
+bes knsol priksn
+draaivr priksn
+fail sistm priksn
+mukhy krnel ghtk priksn
+bhaasaa aur sthaaniykrn priksn
+vividh priksn
+krnel snshodhn priksn
+netvrk sistm priksn
+yueeesech shel priksn
+upyogakrtaa priksn
+aankdee
+sht daaun
+vrtmaan priksn aankdee dikhaataa hai
+priksn mod se baahr nikltaa hai aur krnel ko bnd kr daa hai
+chlaane ke lie ek priksn anubhaaga chunen
+sbhi kaa priksn kren
+sbhi phluon kaa priksn krtaa hai
+anubhaaga chyn pr vaaps jaataa hai
+chlaane ke lie ek priksn phlu chunen
+is priksn men vaiklpik pairaamitr shaamil hain. priksn pairaamitr men jodene ke lie pairaamitr kaa maan drj kren.
+pairaamitr gainti
+haan!
+nhin
+pun: pryaas kren
+kyaa priksn apeksaa kanurup chlaa?
+priksn vifl rhaa. apeksit muly {0} hai, lekin vaastvik muly {1} hai.
+priksn aprtyaashit rup se vifl rhaa.
+sfl priksn:
+asfl priksn:
+chlaae jaane vaale priksn:
+staik ferem snkhyaa ferem ki vrtmaan maatraa sadhik nhin honi chaahie yaa nkaaraatmk nhin honi chaahie.
+naaitrosid ke.es
+krnel thred pryveksk naise {0} mhtvpurn thred kaa ptaa lgaaayaa hai jo abhi tk shuru nhin hue hain.
+krnel thred pryveksk ko {0} mrit threds kaa ptaa chlaa.
+krnel thred pryveksk vifl rhaa
+alaarm bj uthaa!
+alaarm kaa naam khaali hai.
+alaarm nhin milaa.
+shuny-aadhaarit alaarm nnbr amaany hai.
+aaj hai
+vrtmaan smy dikhaane men vifl:
+smy ksetr {0} nhin milaa
+smy ksetr nhin milaa.
+aapke links sistm pr smy ksetr suchnaa paikej abhi tk sthaapit nhin hai. apne vitrn ke paikej prbndhk kaa upyoga krke 'tzdata' sthaapit kren.
+kripyaa prtiksaa kren
+lod ho rhaa hai
+kripyaa krnel praarnbh hone tk prtiksaa kren
+kripyaa krnel bnd hone tk prtiksaa kren
+kripyaa krnel ke punraarnbh hone tk prtiksaa kren
+shuruaat
+surksit mod
+dibga mod
+nvintm smaachaar se
+nvintm smaachaar praapt krne men sksm hone ke lie, aapko RSS shel ekstraajaidaun instol krnaa hogaaa. aap sbhi aidaun praapt krne ke lie 'gaetaun' kmaand kaa upyoga kr skte hain!
+upnaam {0} se puchhtaachh nhin ki gaee hai.
+aautput kaa maan chynit UESH veriebl pr set krtaa hai
+niche sbhi upyogaon ke liaavshyk trk prdaan nhin kie gae hain:
+aavshyk trk uplbdh nhin kraae gae hain.
+aavshyk svich uplbdh nhin kraae gae hain.
+svichon men se ek ke lie ek maan ki aavshyktaa hoti hai jo prdaan nhin kiyaa gayaa hai.
+niche suchibddh svich ajnyaat hain.
+niche suchibddh svich ek dusre ke saath virodh krte hain.
+niche die gae svich maan svikaar nhin krte hain.
+ek yaa adhik trk snkhyaatmk maan ki apeksaa krte hain, lekin aapne ek amaany snkhyaa prdaan ki hai.
+ek yaa adhik trk stik shbdon ki apeksaa krte hain, lekin aapne ek amaany shbd prdaan kiyaa hai.
+ek yaa adhik svich ek snkhyaatmk maan ki apeksaa krte hain, lekin aapne ek amaany snkhyaa prdaan ki hai.
+adhik jaankaari ke lie is aadesh se praamrsh len
+aadesh nirst kr diyaa gayaa hai.
+aapko is kmaand ko raipd mod men sidhe nispaadit nhin krnaa chaahie.
+kmaand aautput ko lpetne kaa pryaas krte smy ek truti utpnn huee
+nimnlikhit kaarn saadesh nirst kiyaa gayaa:
+amaany aadesh paitrn prdaan kiyaa gayaa.
+yh kmaand nhin milaa.
+shel prkaar {0} maujud nhin hai.
+aapko kmaand bes prdaan krnaa hogaaa.
+aapko aadesh prdaan krnaa hogaaa.
+nirdist aadesh phle hi joda jaa chukaa hai! yh snbhv hai ki aapke paas prspr virodhi mod hon.
+aadesh pribhaasit nhin hai
+kuchh kstm kmaand lod nhin kie jaa skte.
+nirdist kstm kmaand nhin milaa.
+kuchh kstm kmaand anlod nhin kie jaa skte.
+nirdist aadesh phle hi joda jaa chukaa hai! yh snbhv hai ki aapke paas prspr virodhi aidaun hon.
+kuchh aidaun kmaand lod nhin kie jaa skte.
+nirdist aidaun kmaand nhin milaa.
+kuchh aidaun kmaand anlod nhin kie jaa skte.
+yh shel kmaand ko nispaadit krne ke lie slaish kmaand kaa upyoga krtaa hai. aarnbh krne ke lie kripyaa kmaand ki shuruaat men slaish prtik '/' jodeen. udaahrn ke lie:
+uplbdh aadesh:
+krnel aidaun kmaand:
+koee krnel aidaun aadesh nhin.
+ekikrit aadesh:
+ekikrit aadesh laagau nhin kiye gaye!!!
+aajnyaa:
+kmaand "{0}" ke lie koee mdd nhin.
+aap shrton yaa lup jaise nirmaan kaa smrthn krne vaale bhaav daalne se phle ne blok ki ghosnaa nhin kr skte. staik snkhyaa {0} hai.
+nyaa blok shuru krte smy, sunishchit kren ki aapne staik ko shi dhnga se indent kiyaa hai. staik snkhyaa {0} hai.
+skript khaab hai. skript ki jaanch kren aur kisi bhi truti kaa smaadhaan kren.
+slaish kmaand ke lianusmaark
+ek baahri prkriyaa nispaadit krtaa hai
+shel thred ko baadhit kie binaa prkriyaa nispaadit krtaa hai. ek alga vindo bnaaee jaaai.
+vrtmaan shel prkaar men uplbdh kmaand dhundhtaa hai
+mod kmaand dikhaataa hai
+upnaamit aadesh dikhaataa hai
+ekikrit aadesh dikhaataa hai
+krnel aidaun kmaand dikhaataa hai
+sbhi aadesh dikhaataa hai
+srlikrit shaaytaa kaa upyoga krtaa hai
+shail itihaas lod krtaa hai
+antim kriyaa yaa nirdist aadesh ko dohraataa hai
+shel itihaas shejtaa hai
+ek yaadrichchhik krnel tip dikhaataa hai
+"{0}" praarnbh krne men vifl: {1}
+shail tb tk praarnbh nhin ho skte jb tk ki maatri shail praarnbh n ho jaae.
+shel praarnbh krne kaa pryaas vifl rhaa
+prshaasnik shel men truti: {0}
+krnel trk shaaytaa prnaali
+but loga print krtaa hai
+vrtmaan krnel jrnl loga praapt krtaa hai
+upyogakrtaaon ko suchibddh krtaa hai
+haal ki suchnaaen shejtaa hai
+upyogakrtaa ke mukhy jhndon ke saath chhedechhaade krtaa hai
+upyogakrtaa ki jaankaari praapt krtaa hai
+psndidaa upyogakrtaa bhaasaa bdltaa hai
+dibga shel kaa upyoga krne se phlaapko dibga mod sksm krnaa hogaaa.
+vrtmaan baiktres praapt krtaa hai
+str snkhyaa kaa upyoga krkaasaani se dibga loga jaankaari praapt krtaa hai
+krnel apvaad prkaar se sndesh praapt krtaa hai. dibgainga ke lie upyogai
+feild maan praapt hotaa hai
+snptti kaa muly miltaa hai
+sbhi uplbdh aidaun suchibddh krtaa hai
+nirdist aidaun se sbhi uplbdh feild suchibddh krtaa hai
+nirdist aidaun se sbhi uplbdh kaaryon ko suchibddh krtaa hai
+nirdist aidaun se sbhi uplbdh snpttiyon ko suchibddh krtaa hai
+sbhi aadhaar aidaun aur unki sthiti ko suchibddh krtaa hai
+sbhi uplbdh saarvjnik feild suchibddh krtaa hai
+truti sndeshon ko dbaa daa hai
+sbhi uplbdh saarvjnik snpttiyon ki suchi
+sbhi uplbdh shailon ki suchi bnaaen
+chhpaak kaa purvaavlokn krtaa hai
+nirdist krtaa hai ki splaish pr mhtvpurn sndesh suvidhaa kaa priksn krnaa hai yaa nhin
+splaish skrin prsnga nirdist krtaa hai
+nirdist sthaan pr ek nyaa baait jodaa hai
+intraiktiv heks snpaadk tiyuaaee kholtaa hai
+intraiktiv snpaadk kholtaa hai
+smuh jodaa hai
+upyogakrtaaon ko ek smuh men jodaa hai
+prshaasnik kvch
+knsol se bip
+chynit praarup men failon ke smuh kaa naam bdlen
+saamgari ke saath laain nnbr print krtaa hai
+kevl saamgari mudrit krtaa hai
+baainri failon ko saade paath ke rup men maanne pr bl den
+vrtmaan nirdeshikaa praapt krtaa hai
+naaitrosid ke is snskrn men nyaa kyaa hai?
+fail yaa feoldr lok ki jaanch krtaa hai
+fail yaa feoldr anlok hone tk prtiksaa krtaa hai
+bhaasaa bdlti hai
+bhaasaa kaa anumaan lgaaane kaa pryaas krne ke lie sistm bhaasaa setingas kaa upyoga krtaa hai
+sistm bhaasaa ke bjaay upyogakrtaa bhaasaa ko bdltaa hai
+ek pnkti chyn shaili
+do pnktiyon ki psnd shaili
+aadhunik psnd shaili
+taalikaa chyn shaili
+aautput kevl ek aksr kaa ho sktaa hai
+aautput ek kairektr sadhik ho sktaa hai
+knsol men do yaa adhik tekst failon ko snyojit krtaa hai.
+do paath failon ke bich tulnaa krtaa hai.
+pnkti kant ko vindoje praarup men privrtit krtaa hai
+pnkti kant ko yuniks praarup men privrtit krtaa hai
+pnkti kant ko Mac OS 9 praarup men privrtit krtaa hai
+rupaantrn smaapt krne vaali rekhaa ko baadhy krtaa hai
+sirf taarikh dikhaataa hai
+sirf smy dikhaataa hai
+sthaaniy ke bjaay yutisi kaa upyoga krtaa hai
+dibga shel praarnbh krtaa hai
+enkoded fail ko dikod krtaa hai
+kunji nirdist krtaa hai
+aarnbhikrn vektr nirdist krtaa hai
+enkoded tekst ko dikod krtaa hai
+BASE64 prtinidhitv se paath ko dikod krtaa hai
+disk ke baare men jaankaari prdaan krtaa hai
+apne draaivron ko prbndhit kren
+binaa kisi plesholdr paarsinga ke tekst ko vaise hi print krtaa hai jaise vh hai
+kisi fail ko snpaadit krtaa hai
+tekst mod ko baadhy krtaa hai
+heks mod ko baadhy krtaa hai
+JSON mod ko baadhy krtaa hai
+SQL mod ko baadhy krtaa hai
+fail ko enkod krtaa hai
+paath ko enkod krtaa hai
+tekst ko BASE64 prtinidhitv men enkod krtaa hai
+kisi fail ko punraavrti rup se khojtaa hai
+kisi fail pr ek kmaand nispaadit krtaa hai
+raulr ekspreshn kaa upyoga krke nirdist nirdeshikaa men yaa vrtmaan nirdeshikaa men ek fail dhundhtaa hai
+ek aur udaahrn bnaane ke lie yueeesech shel ko fork krtaa hai
+aautput pth nirdist krtaa hai
+aadhikaarik daaunlod pej se sbhi aidaun praapt kren aur unhen instol kren
+aidaun ko punah instol krtaa hai
+sbhi ekstenshn se sbhi ekstenshn haindlr praapt krtaa hai
+ek konfeigareshn vairiebl aur uskaa maan praapt krtaa hai
+nirdist ekstenshn se difeolt ekstenshn haindlr praapt krtaa hai
+sbhi ekstenshn se difeolt ekstenshn haindlr praapt krtaa hai
+nirdist ekstenshn se ekstenshn haindlr praapt krtaa hai
+smmit enkodinga ke lie kunji aur aarnbhikrn vektr praapt krtaa hai
+vrtmaan host naam praapt krtaa hai
+intrektiv sistm host fail prbndhk
+upyogakrtaa ko paasvrd ke rup men input drj krne ki anumti daa hai
+krnel ke lie laaisens jaankaari dikhaataa hai
+sintaiks trutiyon ke lie yueeesech skript ki jaanch krtaa hai
+kstprd "anumti asvikrit" sndeshon ko dbaa daa hai
+kisi feoldr ko punraavrti rup se suchibddh krtaa hai
+tri form kaa upyoga krke ek feoldr suchibddh krtaa hai
+sbhi uplbdh konfeigareshn suchibddh krtaa hai
+unki prvistiyon shit sbhi konfeigareshn ke baare men gahn vivrn
+sbhi konfeigareshn chr aur unke maan suchibddh krtaa hai
+sbhi uplbdh knekshn suchibddh krtaa hai
+uplbdh ekstenshn haindlr ki suchi bnaaen
+sbhi disk vibhaajnon ko suchibddh krtaa hai
+sbhi disk ko suchibddh krtaa hai
+aunlaain netvrk divaais suchibddh krtaa hai
+nirdist disk se vibhaajn ke baare men jaankaari prdaan krtaa hai
+pth lukap nirdeshikaaon se kisi die gae fail naam ko dhundhtaa hai
+smuhon ke lianumtiyaan prbndhit kren
+pinga krne ki snkhyaa nirdist krtaa hai
+vrtmaan pletfaarm miltaa hai
+pletfeorm kaa naam dikhaataa hai
+pletfeorm snskrn dikhaataa hai
+pletfeorm bits dikhaataa hai
+.NET pletfeorm snskrn dikhaataa hai
+.NET pletfeorm rntaaim phchaankrtaa dikhaataa hai
+krnel ko punah praarnbh krtaa hai
+krnel ko surksit mod men punraarnbh krtaa hai.
+krnel ko rkhrkhaav mod men punraarnbh krtaa hai.
+dibga mod men krnel ko punraarnbh krtaa hai.
+kisi fail yaa nirdeshikaa ko surksit rup se htaa daa hai
+kisi smuh ko suchi se htaa daa hai
+kisi upyogakrtaa ko smuh se htaa daa hai
+vrtmaan krnel konfeigareshn ko apni fail men shejtaa hai
+aapko aajaane ke lie skrinsevr chunne kaa viklp daa hai
+aidaun skrinsevr setingas kholtaa hai
+draaivr setingas kholtaa hai
+kstm setingas kholtaa hai
+ek konfeigareshn vairiebl ko ek nirdist maan pr set krtaa hai
+nirdist ekstenshn ke difeolt ekstenshn haindlr ko vishist kaaryaanvynkrtaa pr set krtaa hai
+ek intraiktiv tiyuaaee kholtaa hai jismen aap vaastvik smy men vishv ghdei dekh paaengae
+nirdist milisekend ke lie sotaa hai
+kmaand ko rut yujr ke rup men chlaataa hai
+paath yoga ki gannaa krtaa hai.
+kisi fail yaa feoldr ke lie ek prtikaatmk link bnaataa hai
+sistm ki jaankaari dikhaataa hai
+haardveyr jaankaari dikhaataa hai
+upyogakrtaa ki jaankaari dikhaataa hai
+din kaa sndesh dikhaataa hai
+loga in krne kagale din kaa sndesh dikhaataa hai
+saari jaankaari dikhaataa hai
+kaary prbndhk
+kisi thim kaa purvaavlokn krtaa hai
+ek thim kaa chyn krtaa hai aur use set krtaa hai
+chyn pr turnt thim set kren
+UESH veriebl suchi se ek veriebl htaataa hai
+vairiebl maan ko htaae binaa bs use mitaa daa hai
+krnel aptaaim dikhaataa hai
+mainual ke lie do upyogai yuaarel dikhaataa hai.
+vrtmaan snskrn miltaa hai
+krnel mod epiaaee snskrn dikhaataa hai
+krnel snskrn dikhaataa hai
+vrtmaan upyogakrtaa naam praapt krtaa hai
+tekst fail ko lpettaa hai
+prti pnkti kolm nirdist krtaa hai
+aap in khaaton men loga in kr skte hain:
+apne din kaa aannd len
+MAL set krne kaa pryaas krte smy truti: {0}
+MAL praapt krne kaa pryaas krte smy truti: {0}
+logain kagale din kaa sndesh shuny nhin ho sktaa.
+naaitrosid krnel men aapkaa svaagat hai!
+MOTD set krne kaa pryaas krte smy truti: {0}
+MOTD praapt krne kaa pryaas krte smy truti: {0}
+din kaa sndesh shuny nhin ho sktaa.
+apne kibord pr kisi bhi aksr ko us aksr pr set krne ke lie dbaaen.
+niche die gae prompt men ek felotinga-point nnbr likhen. sunishchit kren ki yh snkhyaa isi praarup ki hai
+niche die gae snket men ek praakritik snkhyaa likhen.
+ise rkhen
+ise htaa do
+nyaa aaitm jodeen
+aap is vstu ke saath kyaa krnaa chaahte hain?
+nyaaitm ke lie ek maan drj kren
+amaany kriyaa chynit.
+upyoga krne ke lie koee bhi paath likhen. yaad rkhen, aapke dvaaraa chune gae viklp ke vivrn kaa paaln kren.
+aapke rimot dibga divaais pr aapkaa naam pnjikrit krtaa hai
+rimot dibgar se disknekt ho jaataa hai
+krnel loga ko myut yaa anmyut krtaa hai
+pryaapt trk nhin the. upyoga ke lie niche dekhen:
+>> rimot chait: snskrn
+>> svaagat hai! aap phli baar dursth chait men prvesh kr rhe hain. rimot dibgar men, rjistr krne ke lie "/register <naam>" kaa upyoga kren. jb tk aap rjistr nhin ho jaate tb tk aap baat nhin kr skte.
+kevl ek miliseknd sone men vaastv men kitne miliseknd lgae?
+kevl ek milisekend ke lie sone men vaastv men kitne tik lgae?
+bhaasaa ko aapki psndidaa bhaasaa men bdlne kaa priksn
+apni bhaasaa chunen
+jaanchne ke lie ek anuvaad yogay stringa likhen:
+jaanchne ke lie ek anuvaad yogay stringa suchi fail pth likhen:
+dohre flk intrekshn ke saath intraiktiv tiyuaaee prnaali kaa priksn krtaa hai
+ekl flk intrekshn ke saath intraiktiv tiyuaaee prnaali kaa priksn krtaa hai
+ekl flk intraikshn ke saath aur dusre flk ki jaankaari ko taaja krne ke saath intraiktiv tiyuaaee prnaali kaa priksn krtaa hai
+1 se 255 tk ki rnga snkhyaa likhen:
+dibgar ko sksm krtaa hai
+pichhlaa maan
+vrtmaan muly
+sbhi bheje gae notifikeshn ko khaarij krtaa hai
+adhisuchnaa prnaali sksm krtaa hai
+krnel adytn kaaryksmtaa kaa priksn krtaa hai
+kyaa krnel adytit hai?
+intrnet se knekshn ki jaanch krtaa hai
+intrnet ki uplbdhtaa hai
+chaaild krnel thred kaa priksn krtaa hai
+krnel thred kaa priksn krtaa hai
+ek khoj shbd likhen:
+netvrk knekshn ki jaanch krtaa hai
+netvrk uplbdhtaa hai
+knsol ke lie ek stringa print kren
+dibgar krne ke lie ek stringa print kren
+feormetinga ke saath dibgar krne ke lie ek stringa print kren
+feormetinga ke saath knsol krne ke lie ek stringa print kren
+knsol ke lie ek feigalet stringa print kren
+feormetinga ke saath knsol krne ke lie ek feigalet stringa print kren
+haailaait ke saath knsol krne ke lie ek stringa print kren
+knsol ke lie ek vibhaajk print kren
+rnga ke saath knsol krne ke lie ek vibhaajk print kren
+feormetinga aur rnga ke saath knsol krne ke lie ek vibhaajk print kren
+feormetinga ke saath knsol krne ke lie ek vibhaajk print kren
+stringa men nee pnktiyon ke saath knsol krne ke lie ek stringa print kren
+shuny vrnon ke saath knsol krne ke lie ek stringa print kren
+rimot dibgar ko sksm krtaa hai
+priksn adhisuchnaa
+vivrn yhaan hai
+priksn prgati adhisuchnaa
+risivr kaa priksn krne ke lie ek asfl prgati adhisuchnaa bhejtaa hai
+priksn vifl hone ki suchnaa
+anishchit adhisuchnaa kaa priksn kren
+risivr kaa priksn krne ke lie taaraankn chihn ke rup men ek adhisuchnaa bhejtaa hai
+srl adhisuchnaa kaa priksn kren
+trkon kaa priksn krtaa hai
+kriptogaraafeik rup se surksit yaadrichchhik snkhyaa jnretr kaa priksn krtaa hai
+lautaae gae nnbr:
+kisi ghtnaa kaa priksn krtaa hai
+ivent kaa naam likhen:
+asenbli fail ke lie pth likhen:
+fail chynkrtaa kaa priksn krtaa hai
+aapne chyn kr liyaa hai
+aadhik failen chynkrtaa kaa priksn krtaa hai
+feoldr chynkrtaa kaa priksn krtaa hai
+aadhik feoldr chynkrtaa kaa priksn krtaa hai
+suchnaatmk boks men btnon kaa priksn krtaa hai
+suchnaatmk boks men rngain input boks kaa priksn krtaa hai
+suchnaa boks men input boks kaa priksn krtaa hai
+suchnaatmk boks men input aadhik chyn shaili kaa priksn krtaa hai
+suchnaatmk boks men input chyn shaili kaa priksn krtaa hai
+input aadhik chyn shaili kaa priksn krtaa hai
+input chyn shaili kaa priksn krtaa hai
+suchi prvisti lekhk kaa priksn krtaa hai
+indent 1:
+indent 2:
+prstutikrn prnaali kaa priksn krtaa hai
+prgati haindlr kaa priksn krtaa hai
+praarnbh kiyaa jaa rhaa hai...
+jaanchne ke lie ek stringa likhen:
+niymit abhivykti likhen:
+yaadrichchhik snkhyaa jnretr kaa priksn krtaa hai
+knsol ke lie skrin suvidhaa kaa priksn krtaa hai
+skrin rendr krne men vifl:
+priksn svich
+plesholdr shuny nhin ho sktaa
+plesholdr kaarrvaaee shuny nhin ho skti
+plesholdr pnjikrit nhin hai
+plesholdr ko is praarup ko puraa krnaa hogaaa
+shrt ant men rkhni hogai.
+phle se maujud kisi shrt ko pnjikrit nhin kiyaa jaa sktaa.
+khaali sthiti drj nhin ki jaa skti.
+aisi shrt ko apnjikrit nhin kiyaa jaa sktaa jo astitv men hi nhin hai.
+aap maatri shail se baahr nhin nikl skte. kyaa aap apne khaate se loga aaut krnaa chaahte the, krnel ko bnd krnaa chaahte the, yaa ise ribut krnaa chaahte the?
+koeaadesh nhin milaa.
+kee baar amaany snkhyaa.
+svyn ko dohraa nhin skte.
+str krmaank amaany hai.
+nirdist mukhy dhvj prkaar amaany hai
+puraa naam {0} pr set kiyaa gayaa. aap fir se loga in krnaa chaah skte hain.
+puraa naam khaali hai.
+buniyaadi upyogakrtaa jaankaari
+psndidaa bhaasaa
+jhnde
+anumtiyaan
+smuh
+psndidaa upyogakrtaa bhaasaa {0} pr set hai. aap fir se loga in krnaa chaah skte hain.
+prshaask shail
+amaany str krmaank
+aisaa koee str krmaank nhin
+aisaa koeapvaad prkaar nhin
+apvaad prkaar kaa naam
+sndesh
+ke lie feild jaankaari
+kimt
+feild jaankaari praapt krne men vifl
+ke lie snptti ki jaankaari
+ke lie snptti ki jaankaari praapt krne men vifl
+kunji vrn kod dbaayaa gayaa
+ke lie feild ki suchi
+ke lie kaaryon ki suchi
+ke lie snpttiyon ki suchi
+aidaun ki suchi
+aadhaar aidaun ki suchi
+sipiyon ki suchi
+splaish prsnga maany nhin hai
+uplbdh chhinte:
+yh aadesh vindoje pr smrthit nhin hai.
+dibga shail
+apni laain pr ek baait drj kren jisaap fail kant men jodaa chaahte hain. jb aapkaa kaam puraa ho jaae, to uski apni laain pr "EOF" likhen.
+nirdist baait snkhyaa {0} maany snkhyaa nhin hai.
+vh tekst drj kren jisaap fail kant men jodaa chaahte hain. jb aapkaa kaam puraa ho jaae, to uski apni laain pr "EOF" likhen.
+smuh bnaayaa jaa rhaa hai {0}...
+upyogakrtaa {0} ko smuh {1} men joda jaa rhaa hai...
+ab aap '{0}' ko '{1}' ke rup men chlaa skte hain!
+vishestaa "{0}" amaany hai.
+fail yaa feoldr phle se hi upyoga men hai.
+fail yaa feoldr anlok hone tk prtiksaa kren...
+fail yaa feoldr upyoga men nhin hai.
+privrtnon ko prbhaavi krne ke liaapko loga aaut krnaur vaaps loga in krne ki aavshyktaa ho skti hai.
+MAL bdl rhaa hai...
+emotidi bdl rhaa hai...
+paasvrd mel nhin khaate.
+tekst aur baainri failon kaa mishrn snyojit nhin kiyaa jaa sktaa.
+srot fail maujud nhin hai.
+lksy fail maujud nhin hai.
+donon failen smaan hain.
+donon failen alga-alga hain.
+alga
+baainri fail pr pnkti kant ko privrtit nhin kiyaa jaa sktaa kyonki iske prinaamsvrup fail dusit ho jaati hai.
+draaivr nhin milaa.
+ke lie draaivr
+chaalk kaa naam
+draaivr prkaar kaa naam
+chaalk prkaar
+surksit mod men draaivr prbndhn aksm hai.
+fail {0} ko snpaadit nhin kiyaa jaa sktaa kyonki yh nhin mili hai.
+kunji kaa upyoga kiyaa gayaa
+inishiylaaijeeshn vektr kaa upyoga kiyaa gayaa
+.NET asenbli jaankaari
+fail maany .NET asenbli nhin hai.
+atirikt jaankaari
+ydi aap efetipi srvr se failen daaunlod krne jaa rhe hain to kripyaa "efetipi" kaa upyoga kren.
+aapke kuchh yaa sbhi aidaun instol ho chuke hain. ydi aap unhen punah sthaapit krnaa chaahte hain, to -riinstol svich kaa upyoga kren.
+aidaun paikej laayaa jaa rhaa hai...
+aidaun paikej laane men vifl
+aidaun paikej daaunlod ho rhaa hai...
+aidaun paikej daaunlod krne men vifl
+aidaun paikej sthaapit kiyaa jaa rhaa hai...
+aidaun paikej sthaapit krne men vifl
+vistaar
+ekstenshn haindlr
+kunji kaa naam
+mukhy vivrn
+kunji prkaar
+kunji chr
+kunji praapt nhin huee.
+konfeigareshn nhin milaa.
+uplbdh konfeigareshn prkaar
+aisaa koee ekstenshn nhin.
+difeolt ekstenshn haindlr
+kevl smmit enkodinga elgaoridm jo kunji aur aarnbhikrn vektr donon kaa upyoga krte hain, smrthit hain.
+skript lint sfl rhi.
+skript lint vifl. sbsadhik snbhaavnaa hai ki koee sintaiks truti hai. trutiyon ke liapni skript ki jaanch kren aur lintr chlaane kaa punah pryaas kren.
+skript lintr aapki skript ko paars krne kaa pryaas krne men aprtyaashit rup se vifl rhaa.
+ke lie jaankaari
+prvistiyaan gainti
+prvesh naam
+ke rup men prdrshit kiyaa jaa rhaa hai
+vivrn
+kunji gainti
+alga-alga kunjiyaan praapt krne ke lie {0} kmaand kaa upyoga kren
+ke lie konfeigareshn chr
+prkaar ke lie knekshn
+udaahrn
+ke lie ekstenshn haindlr jaankaari
+haindlr kaaryaanvynkrtaa
+haindlr maadaa
+haindlr fenkshn shaamil hai
+jaankaari haindlr fenkshn shaamil hai
+ajnyaat mejaan
+fail pth men mili:
+pth lukap nirdeshikaaon men fail nhin mili.
+aisi koeanumti nhin
+aisaa koeanumti mod nhin
+ydi aap efetipi srvr pr failen aplod krne jaa rhe hain to kripyaa "efetipi" kaa upyoga kren.
+smuh {0} htaayaa gayaa.
+{0} ko smuh {1} se htaa diyaa gayaa.
+uplbdh skrinsevr:
+{1} ke lie {0} ki khoj vifl rhi.
+aapko us veriebl ke saath -set svich paas krnaa hogaaa jis pr aap yh maan set krnaa chaahte hain.
+jhaan sevr hogaaa
+atirikt skrinsevr praapt krne ke lie, skrinsevr paik aidaun instol kren.
+atirikt splaish praapt krne ke lie, splaish paik aidaun sthaapit kren.
+aap nimn setingas kholne ke lie prkaar svich kaa upyoga kr skte hain
+aadhaar setingas
+kstm setingas
+aap phle se hi ek supryujr hain!
+supryujr ke rup men kmaand nispaadit krne men vifl.
+koee prtikaatmk link nhin bnaa skte.
+krnel setingas
+krnel snskrn:
+dibga mod:
+garilo se chl rhaa hai:
+saamaany vaataavrn pr chl rhaa hai:
+surksit mod:
+haardveyr setingas
+haardveyr ke baare men vistrit jaankaari ke lie "hwinfo" kaa upyoga kren.
+upyogakrtaa setinga
+vrtmaan upyogakrtaa naam:
+vrtmaan host naam:
+uplbdh upyogakrtaa naam:
+ek shreni chunen
+pichhe
+khtm ho chukaa
+uplbdh
+ek visy kaa chyn kren
+kyaa aap yh thim set krnaa chaahengae?
+haan, ise set kren!
+nhin, ise set n kren.
+naaitrosid ke saamaany upyoga ke lie upyogakrtaa pustikaa tk phunchne ke lie, kripyaa niche die gae link pr jaaen:
+krnel snshodhn aur skrinsevr bnaane kadytn trikon ke lie devlpr ke mainual tk phunchne ke lie, kripyaa niche die gae link pr jaaen:
+aap phle se hi unnt naaitrosid str chlaa rhe hain!
+aapke naaitrosid str ko unnt kiyaa jaa rhaa hai...
+yh aadesh aapke pletfeorm ke lie uplbdh nhin hai.
+stnbhon ki amaany snkhyaa.
+sht daaun
+punah aarnbh kren
+loga in kren
+aap kyaa krnaa chaahte hain?
+vh upyogakrtaa khaataa chunen jissaap loga in krnaa chaahte hain.
+upyogakrtaa ke lie paasvrd drj kren
+upyogakrtaa ke lie galt paasvrd.
+pnjikrn sfltaapurvk ho gayaa hai! nmste, {0}!
+koee dursth dibga kmaand vivrn nhin
+nirdist daa prkaar {0} amaany hai.
+nirdist pletfeorm {0} amaany hai.
+kyaa aap gaelt ghodee kaa smrthn krte hain?
+jllaad khel shuru hotaa hai
+ek galt ptr aur aap faansi pr chdhe jaayengae!
+ek yaadrichchhik ptr fenkkr apne jllaad kaushl kaa priksn kren.
+aap ek antriks yaan hain aur ulkaaen aapko nst krnaa rhi hain. kyaa aap unhen chkmaa de skte hain?
+ek yaadrichchhik uddhrn miltaa hai
+rusi rule
+do antriks yaan aaps men ldaee kr rhe hain. ek shot aur antriks yaan ude jaaaaa. yh ek sthaaniy do khilaadeiyon vaalaa khel hai.
+vrdl gaem simyuletr
+mul rup se vrdl gaem khelen
+krnel rilije ki 5vin vrsgaaanth mnaataa hai
+sngarh fail ko sngarh shel men kholtaa hai
+gait fail se sbhi gait pnktiyaan praapt krtaa hai
+ek intraiktiv myujik pleyr kholtaa hai
+ek gait fail chlaataa hai
+ek dhvni bjaataa hai
+aapki chaay yaa kofei kaa kp taiyaar hone pr aapko schet krne ke lie ek alaarm jodaa hai.
+us alaarm ko bnd kr daa hai jo aapki chaay yaa kofi kaa kp taiyaar hone pr aapko schet krtaa hai.
+nirdist vaastvik aur kaalpnik snkhyaa dvaaraa nirdist kaalpnik snkhyaa sutr ke baare men jaankaari dikhaaen
+kailendr, eevent aur anusmaark prbndhk
+kaam krne ke lie kailendr prkaar
+taalikaa-aadhaarit kailendr vyuar kaa upyoga kren
+rnga ke heksaadesiml prtinidhitv ko RYB snkhyaaon men privrtit krtaa hai.
+rnga ke heksaadesiml prtinidhitv ko kees praarup men aarvaaeebi snkhyaaon men privrtit krtaa hai.
+rnga ke heksaadesiml prtinidhitv ko CMYK snkhyaaon men privrtit krtaa hai.
+rnga ke heksaadesiml prtinidhitv ko kees praarup men siemvaaeeke snkhyaaon men privrtit krtaa hai.
+rnga ke heksaadesiml prtinidhitv ko CMY snkhyaaon men privrtit krtaa hai.
+rnga ke heksaadesiml prtinidhitv ko kees praarup men siemvaaee snkhyaaon men privrtit krtaa hai.
+rnga ke heksaadesiml prtinidhitv ko echesel snkhyaaon men privrtit krtaa hai.
+rnga ke heksaadesiml prtinidhitv ko kees praarup men echesel snkhyaaon men privrtit krtaa hai.
+rnga ke heksaadesiml prtinidhitv ko echesvi snkhyaaon men privrtit krtaa hai.
+rnga ke heksaadesiml prtinidhitv ko kees praarup men echesvi snkhyaaon men privrtit krtaa hai.
+rnga ke heksaadesiml prtinidhitv ko YIQ snkhyaaon men privrtit krtaa hai.
+rnga ke heksaadesiml prtinidhitv ko KS praarup men YIQ snkhyaaon men privrtit krtaa hai.
+rnga ke heksaadesiml prtinidhitv ko YUV snkhyaaon men privrtit krtaa hai.
+rnga ke heksaadesiml prtinidhitv ko kees praarup men YUV snkhyaaon men privrtit krtaa hai.
+rngain RGB snkhyaaon ko CMYK men privrtit krtaa hai.
+rngain aarjibi snkhyaaon ko kees praarup men siemvaaeeke men privrtit krtaa hai.
+rngain RGB nnbron ko CMY men privrtit krtaa hai.
+rngain aarjibi snkhyaaon ko kees praarup men siemvaaee men privrtit krtaa hai.
+rngain RGB nnbron ko HSL men privrtit krtaa hai.
+rngain aarjibi nnbron ko kees praarup men echesel men privrtit krtaa hai.
+rngain RGB nnbron ko HSV men privrtit krtaa hai.
+rngain aarjibi nnbron ko kees praarup men echesvi men privrtit krtaa hai.
+rngain RGB snkhyaaon ko RYB men privrtit krtaa hai.
+rngain RGB snkhyaaon ko KS praarup men RYB men privrtit krtaa hai.
+rngain RGB nnbron ko YIQ men privrtit krtaa hai.
+rngain RGB snkhyaaon ko KS praarup men YIQ men privrtit krtaa hai.
+rnga RGB snkhyaaon ko YUV men privrtit krtaa hai.
+rngain RGB snkhyaaon ko KS praarup men YUV men privrtit krtaa hai.
+rnga RYB snkhyaaon ko heks men privrtit krtaa hai.
+rnga RYB snkhyaaon ko CMYK men privrtit krtaa hai.
+rnga RYB snkhyaaon ko KS praarup men CMYK men privrtit krtaa hai.
+rnga RYB snkhyaaon ko CMY men privrtit krtaa hai.
+rnga RYB snkhyaaon ko KS praarup men CMY men privrtit krtaa hai.
+rnga RYB snkhyaaon ko HSL men privrtit krtaa hai.
+rnga RYB snkhyaaon ko KS praarup men HSL men privrtit krtaa hai.
+rnga RYB snkhyaaon ko HSV men privrtit krtaa hai.
+rngain RYB snkhyaaon ko KS praarup men HSV men privrtit krtaa hai.
+rnga RYB snkhyaaon ko RGB men privrtit krtaa hai.
+rnga RYB snkhyaaon ko KS praarup men RGB men privrtit krtaa hai.
+rnga RYB snkhyaaon ko YIQ men privrtit krtaa hai.
+rnga RYB snkhyaaon ko KS praarup men YIQ men privrtit krtaa hai.
+rnga RYB snkhyaaon ko YUV men privrtit krtaa hai.
+rnga RYB snkhyaaon ko KS praarup men YUV men privrtit krtaa hai.
+rnga echesel snkhyaaon ko heks men privrtit krtaa hai.
+rngain echesel nnbron ko siemvaaeeke men privrtit krtaa hai.
+rngain echesel nnbron ko kees praarup men siemvaaeeke men privrtit krtaa hai.
+rngain echesel nnbron ko siemvaaee men privrtit krtaa hai.
+rngain echesel nnbron ko kees praarup men siemvaaee men privrtit krtaa hai.
+rngain echesel nnbron ko echesvi men privrtit krtaa hai.
+rngain echesel nnbron ko kees praarup men echesvi men privrtit krtaa hai.
+rngain echesel nnbron ko aarjibi men privrtit krtaa hai.
+rngain echesel nnbron ko kees praarup men aarjibi men privrtit krtaa hai.
+rngain HSL nnbron ko RYB men privrtit krtaa hai.
+rngain echesel nnbron ko kees praarup men aarvaaeebi men privrtit krtaa hai.
+rngain HSL nnbron ko YIQ men privrtit krtaa hai.
+rngain HSL nnbron ko KS praarup men YIQ men privrtit krtaa hai.
+rnga HSL nnbron ko YUV men privrtit krtaa hai.
+rngain echesel nnbron ko kees praarup men vaaeeyuvi men privrtit krtaa hai.
+rngain echesvi snkhyaaon ko heks men privrtit krtaa hai.
+rngain echesvi snkhyaaon ko siemvaaeeke men privrtit krtaa hai.
+rngain echesvi snkhyaaon ko kees praarup men siemvaaeeke men privrtit krtaa hai.
+rngain echesvi snkhyaaon ko siemvaaee men privrtit krtaa hai.
+rngain echesvi snkhyaaon ko kees praarup men siemvaaee men privrtit krtaa hai.
+rngain echesvi nnbron ko echesel men privrtit krtaa hai.
+rngain echesvi nnbron ko kees praarup men echesel men privrtit krtaa hai.
+rngain echesvi nnbron ko aarjibi men privrtit krtaa hai.
+rngain echesvi snkhyaaon ko kees praarup men aarjibi men privrtit krtaa hai.
+rngain HSV snkhyaaon ko RYB men privrtit krtaa hai.
+rngain echesvi snkhyaaon ko kees praarup men aarvaaeebi men privrtit krtaa hai.
+rngain HSV snkhyaaon ko YIQ men privrtit krtaa hai.
+rngain HSV snkhyaaon ko KS praarup men YIQ men privrtit krtaa hai.
+rngain HSV snkhyaaon ko YUV men privrtit krtaa hai.
+rngain echesvi snkhyaaon ko kees praarup men vaaeeyuvi men privrtit krtaa hai.
+rnga CMYK snkhyaaon ko heks men privrtit krtaa hai.
+rngain CMYK snkhyaaon ko RGB men privrtit krtaa hai.
+rngain CMYK snkhyaaon ko KS praarup men RGB men privrtit krtaa hai.
+rngain CMYK snkhyaaon ko RYB men privrtit krtaa hai.
+rngain CMYK snkhyaaon ko KS praarup men RYB men privrtit krtaa hai.
+rngain CMYK nnbron ko HSL men privrtit krtaa hai.
+rngain siemvaaeeke nnbron ko kees praarup men echesel men privrtit krtaa hai.
+rngain CMYK nnbron ko HSV men privrtit krtaa hai.
+rngain siemvaaeeke nnbron ko kees praarup men echesvi men privrtit krtaa hai.
+rnga CMYK snkhyaaon ko CMY men privrtit krtaa hai.
+rngain siemvaaeeke snkhyaaon ko kees praarup men siemvaaee men privrtit krtaa hai.
+rngain CMYK snkhyaaon ko YIQ men privrtit krtaa hai.
+rngain CMYK snkhyaaon ko KS praarup men YIQ men privrtit krtaa hai.
+rnga CMYK snkhyaaon ko YUV men privrtit krtaa hai.
+rngain CMYK snkhyaaon ko KS praarup men YUV men privrtit krtaa hai.
+rngain CMY snkhyaaon ko heks men privrtit krtaa hai.
+rngain CMY snkhyaaon ko CMYK men privrtit krtaa hai.
+rngain siemvaaee snkhyaaon ko kees praarup men siemvaaeeke men privrtit krtaa hai.
+rngain CMY nnbron ko HSL men privrtit krtaa hai.
+rngain siemvaaee nnbron ko kees praarup men echesel men privrtit krtaa hai.
+rngain CMY nnbron ko HSV men privrtit krtaa hai.
+rngain siemvaaee snkhyaaon ko kees praarup men echesvi men privrtit krtaa hai.
+rngain CMY snkhyaaon ko RGB men privrtit krtaa hai.
+rngain siemvaaee snkhyaaon ko kees praarup men aarjibi men privrtit krtaa hai.
+rngain CMY snkhyaaon ko RYB men privrtit krtaa hai.
+rngain CMY snkhyaaon ko KS praarup men RYB men privrtit krtaa hai.
+rngain CMY snkhyaaon ko YIQ men privrtit krtaa hai.
+rngain CMY snkhyaaon ko KS praarup men YIQ men privrtit krtaa hai.
+rnga CMY snkhyaaon ko YUV men privrtit krtaa hai.
+rngain CMY snkhyaaon ko KS praarup men YUV men privrtit krtaa hai.
+rnga YIQ snkhyaaon ko heks men privrtit krtaa hai.
+rnga YIQ snkhyaaon ko CMYK men privrtit krtaa hai.
+rnga YIQ snkhyaaon ko KS praarup men CMYK men privrtit krtaa hai.
+rnga YIQ snkhyaaon ko CMY men privrtit krtaa hai.
+rnga YIQ snkhyaaon ko KS praarup men CMY men privrtit krtaa hai.
+rnga YIQ nnbron ko HSL men privrtit krtaa hai.
+rnga YIQ snkhyaaon ko KS praarup men HSL men privrtit krtaa hai.
+rnga YIQ snkhyaaon ko HSV men privrtit krtaa hai.
+rngain YIQ snkhyaaon ko KS praarup men HSV men privrtit krtaa hai.
+rnga YIQ snkhyaaon ko RGB men privrtit krtaa hai.
+rnga YIQ snkhyaaon ko KS praarup men RGB men privrtit krtaa hai.
+rnga YIQ snkhyaaon ko RYB men privrtit krtaa hai.
+rnga YIQ snkhyaaon ko KS praarup men RYB men privrtit krtaa hai.
+rnga YIQ snkhyaaon ko YUV men privrtit krtaa hai.
+rnga YIQ snkhyaaon ko KS praarup men YUV men privrtit krtaa hai.
+rnga YUV snkhyaaon ko heks men privrtit krtaa hai.
+rngain YUV nnbron ko CMYK men privrtit krtaa hai.
+rngain YUV nnbron ko KS praarup men CMYK men privrtit krtaa hai.
+rngain YUV nnbron ko CMY men privrtit krtaa hai.
+rngain YUV nnbron ko KS praarup men CMY men privrtit krtaa hai.
+rngain YUV nnbron ko HSL men privrtit krtaa hai.
+rngain YUV nnbron ko KS praarup men HSL men privrtit krtaa hai.
+rngain YUV nnbron ko HSV men privrtit krtaa hai.
+rngain YUV nnbron ko KS praarup men HSV men privrtit krtaa hai.
+rngain YUV nnbron ko RGB men privrtit krtaa hai.
+rngain YUV nnbron ko KS praarup men RGB men privrtit krtaa hai.
+rnga YUV snkhyaaon ko RYB men privrtit krtaa hai.
+rngain YUV snkhyaaon ko KS praarup men RYB men privrtit krtaa hai.
+rnga YUV snkhyaaon ko YUV men privrtit krtaa hai.
+rngain YUV nnbron ko KS praarup men YIQ men privrtit krtaa hai.
+aapke snprkon ko prbndhit krtaa hai
+sbhi threds ke lie baiktres praapt krtaa hai
+aapko ek chynit dok drishy ke baare men ek purn-skrin avlokn dikhaataa hai taaki aap ise ek suchnaa painl ke rup men upyoga kr sken
+gait shail
+aapkaunlaain rediyo steshn ke baare men jaankaari praapt krtaa hai
+do JSON failon ke bich antr dikhaataa hai
+ek nee bhaasaa bnaataa hai
+IMAP mel klaaint kholtaa hai
+POP3 mel klaaint kholtaa hai
+POP3 mel 0.0.20.0 se laut rhaa hai, lekin filhaal hm ise is snskrn men jaari krne ki yojnaa nhin bnaa rhe hain. agale snskrn ki prtiksaa kren.
+prthm naam khojk
+purus naamon ki suchi kaa upyoga krke naam bnaaen
+mhilaa naamon ki suchi kaa upyoga krke naam bnaaen
+ekikrit naam suchi kaa upyoga krke naam utpnn kren
+upnaam khojk
+ek not jodaa hai
+ek not nikaaltaa hai
+sbhi not htaa daa hai
+sbhi nots suchibddh krtaa hai
+sbhi not shejtaa hai
+sbhi nots punah lod krtaa hai
+nots drshk tiyuaaee
+RSS feid URL drj kren
+pte ko paars krne kaa pryaas krne men truti. sunishchit kren ki aapne ptaa shi likhaa hai.
+ek intraiktiv aareses feid ridr tiyuaaee kholtaa hai
+vrtmaan dinaank aur smy ki jaankaari praapt krtaa hai
+aap prkriyaa aadeshon ko do trikon se nispaadit kr skte hain: sidhe nispaadn yogay fail naam drj krnaa, aur 'exec' kmaand kaa upyoga krnaa?
+kyaa aap 'lokskrin' kmaand kaa upyoga krkapni skrin ko lok kr skte hain?
+ki aap C# aur vijal besik kaa upyoga krkapnaa svyn kaa krnel snshodhn bnaa skte hain?
+ki aap kmaand ke bich ardhviraam kaa upyoga krke aadhik kmaand kaa upyoga kr skte hain?
+kyaa aap aadesh nispaadit krte smy uddhrit trkon kandr dohre uddhrn chihnon se bch skte hain?
+ki aap 'setingas' kmaand kaa upyoga krke krnel setingas bdl skte hain?
+ki aap 'sevskrin' kmaand kaa upyoga krkapni skrin ko sev kr skte hain?
+ki aap naaitrosid ke gaithb projekt pej pr jaakr hmen bga ki riport kr skte hain?
+ki aap 'upnaam' kmaand kaa upyoga krkapne ichchhit kmaand kaa shortkt bnaa skte hain?
+ki aap C# aur vijal besik kaa upyoga krkapni svyn ki splaish skrin bnaa skte hain?
+ki aap apne krnel ko adhik upyogai aur mnornjk bnaane ke liatirikt aidaun sthaapit kr skte hain?
+ki aap 'mktheme' kmaand kaa upyoga krkapni khud ki adbhut thim bnaa skte hain?
+ki aap 'setingas' kmaand kaa upyoga krke yaa purv-nirmit thimon men se kisi ek kaa upyoga krkapne krnel rnga bdl skte hain?
+ki aap 'riset' trk kaa upyoga krkapne krnel ko feaiktri difeolt pr riset kr skte hain?
+ki aap hmaare GitBook pej pr hmaare vyaapk dstaaveje tk phunch skte hain?
+kyaa dirghkaalik rilije ko mukhy smrthn ke lie paanch saal aur surksaa adytn ke lie tin saal tk smrthit kiyaa jaataa hai?
+vh 0.0.1 naaitrosid kees kaa phlaa snskrn thaa jo 22 frvri, 2018 ko jaari kiyaa gayaa thaa?
+ki 0.0.24.x shrrinkhlaa ekmaatr snskrn shrrinkhlaa thi jismen API v2.1 snskrn thaa?
+ki alpkaalik rilije kevl nau mhinon ke lie smrthit hain?
+vh 0.1.x shrrinkhlaa 0.0.24.x shrrinkhlaa yaa puraani ke saath pshchgaaami-asngat hai?
+ki aap Nitrocid KS ko Linux, macOS aur Android pr chlaa skte hain?
+kyaa aap apne mod bnaane men mdd ke lie epiaaee dstaaveje kaa sndrbh le skte hain?
+kyaa aap atirikt aidaun instol krke haingamain aur shipduet jaise kee shaandaar gaem praapt kr skte hain?
+ki, ulkaa men, ydi aap laal ulkaa tufaan se tkraate hain, to aapkaa antriks yaan durghtnaagarst ho jaataa hai?
+kyaa aap dokinga suvidhaa kaa upyoga krkapne krnel ko suchnaa kendron men privrtit kr skte hain?
+ki aap upyogakrtaa khaaton ko vyvsthit krne ke lie upyogakrtaa smuh bnaa skte hain?
+ydi aap kisi aise smuh ke sdsy hain jo kuchh anumtiyaan daa hai, to kyaa aapko aise kaary krne ki anumti hai?
+ki aap apne host sistm ko prbhaavit kie binaa apnaa krnel smy ksetr bdl skte hain?
+ki aap smy bchaane ke lie intraiktiv tekst aur heks snpaadk kaa upyoga kr skte hain?
+phle yuniks sistm ke saath kaam krne ke lie jaanaa jaane vaalaa sbse puraanaa tekst editr ed hai, 1973 men jaari kiyaa gayaa sbse puraanaa tekst editr eti end ti bel laibs men pidipi-7 pr yuniks sistm ke saath bhaa gayaa thaa?
+ki aap snpaadk ko ek vishist prkaar men lonch krne ke lie snpaadn kmaand ko bhi baadhy kr skte hain?
+ki intraiktiv tekst snpaadk sbse lokpriy yuniks tekst snpaadkon, vi aur vim ki sbse buniyaadi vishestaaon kaa anukrn krne kaa pryaas krtaa hai?
+jb tk aap yh nhin jaante ki aap baainri fail ke saath kyaa kr rhe hain, aisi fail ko is trh se snpaadit krne se daa bhrstaachaar ho jaaaaa yaa lksit fail men daa haani ho jaaai?
+links sistm pr, shel ko loga-in haindlr aur sistm inishiylaaijeeshn progaraam donon ki mdd se shuru kiyaa jaataa hai, jo aamtaur pr /sbin/init men paayaa jaataa hai?
+ki aap saamaany fail snchaaln kr skte hain, jaise prtilipi bnaanaa, sthaanaantrit krnaa, htaanaa, snpaadn krnaa ityaadi?
+fail prbndhk kaa intraiktiv tiyuaaee midnaait kmaandr ki kaaryksmtaa kaa anukrn krtaa hai?
+ydi krnel kraish ho jaataa hai, to yh aamtaur pr ek dnp fail bnaataa hai?
+ki aap antrnihit dibga kaaryksmtaa kaa upyoga krke krnel ko dibga krke uskaa nidaan kr skte hain?
+ki aap sidhe yueeesech shel se failen daaunlod aur aplod kr skte hain?
+ki krnel ko 'lainga' trk ke saath shuru krke pri-but chrnon men bhi anuvaadit kiyaa jaa sktaa hai?
+ki aap unhen apne mod men pnjikrit krkapne svyn ke skrinsevr bnaa skte hain?
+phlaa skrinsevr jisne mul aaeebiem pisi pr tin mint ki niskriytaa ke baad skrin ko khaali kr diyaa thaa, skrnsev, 1983 men jon sochaa dvaaraa bnaayaa gayaa thaa?
+kyaa kuchh teje gati vaale skrinsevr prkaash-snvednshil daure kaa kaarn bn skte hain?
+ki krnel jrnl kaa upyoga but aur shtdaaun loga ke rup men kiyaa jaataa hai?
+ki aap GRILO kaa upyoga krke naaitrosid men butlodr ko but krne kaa anukrn kr skte hain?
+kyaa aapke mod ab anuvaad yogay ho skte hain?
+kyaa aapke mod krnel aidaun aur any mod ke saath snchaar kr skte hain, kisi prkaar kaa snchaar bnaa skte hain aur intrauprebiliti praapt kr skte hain?
+ki aap rimot dibgar saur vaiklpik rup se chait srvr se knekt kr skte hain?
+ki aap dibga shel kaa upyoga kr skte hain, jo kevl vikaas snskrnon ke lie uplbdh hai?
+kyaa aapke mod ab apni snbddh kksaaon ko pnjikrit krkapnaa svyn kaa konfeigareshn praapt kr skte hain?
+ki aapke mod apne svyn ke shel pnjikrit kr skte hain?
+kyaa aapke mod istaal kie jaa skne vaale kmaand ki maatraa bdhane ke lie maujudaa shel men kmaand jode skte hain?
+ki aapki kmaand kksaaen paarit trkon aur svichon kaa stik rup se prtinidhitv kr skti hain?
+ki aap krnel epiaaee men paae jaane vaale svich prbndhn vrgaon kaa upyoga krke paarit svich se puchhtaachh kr skte hain?
+kyaa yueeesech men skript bnaanaur chlaane ki suvidhaa ke lie skriptinga kaaryksmtaa shaamil hai?
+ki shel men skriy anupryogaon ke lie rddikrn ko rokne ki kaaryksmtaa shaamil hai?
+tejaur behtr prtipaadn ki anumti dene ke lie naaitrosid ko trminoks ke saath gahraaee se ekikrit kiyaa gayaa hai?
+ki ab aap aautput ke dusit hone ki chintaa kie binaa intraiktiv eplikeshn kaa aakaar bdl skte hain?
+kyaa aise kmaand hain jo upyogakrtaa se input maangate hain, jo skript ke lie upyogai hain?
+ki aap apne upyogakrtaa input prshn ko kee trikon se prstut kr skte hain, jaise viklp, taalikaa, srl, chyn, ityaadi?
+kyaa aap un plesholdrs ko apne tekst men rkh skte hain jo unkaa smrthn krte hain?
+kisi vishist aupreshn ke kaam krne ke trike ko bdlne ke liaap vibhinn krnel draaivron kaa upyoga kr skte hain?
+ki aap C# yaa vijal besik men apne svyn ke skrinsevr aur splaish bnaa skte hain?
+ki aap krnel pletfeorm klaas kaa upyoga krke host sistm aur trminl emuletr ko kveri kr skte hain?
+ki aap apne mod men kuchh snvednshil krne se phle gaopniytaa shmti maanga skte hain?
+kyaa aap du not distrb suvidhaa kaa upyoga krke suchnaaen bnd kr skte hain?
+kyaa aap adhisuchnaa prbndhk men paae gae fenkshn kaa upyoga krkadhisuchnaa itihaas shej skte hain?
+ki aap yh bdl skte hain ki draaivr ko bdlkr yaadrichchhik snkhyaaen kaise utpnn hoti hain?
+vividh epiaaeaapke mod ke lie upyogai kaary prdaan krte hain?
+krne yogay kaary prbndhk
+sbhi uplbdh ikaaiyon ko suchibddh krtaa hai
+yunit knvrtr ke tiyuaaee snskrn kaa upyoga kren
+yh "mok aip" "echdidi klinr 2.1" kaa anukrn krtaa hai, jo 24 nvnbr 2015 ko jaari kiyaa gayaa thaa. hm ise "echdidi anklinr 2015" khengae. yh mul rup se naaitrosid kees epiaaee kaa upyoga krke knsol pr sndesh prdrshit krne kalaavaa kuchh nhin kraaa. yh anukrn krne kaa pryaas kraaa ki yh sngarhit progaraam kaisaa dikhtaa hai. kripyaa ise bhut shaabdik rup se n len kyonki yh sirf aapkaa mnornjn krne ke lie bnaayaa gayaa ek chutkulaa kaarykrm hai. yh "autorikvri" rutin jaisi baahri suvidhaaon kaa anukrn bhi nhin krtaa hai. kripyaa dhyaan den ki hmaaraa iskaa sthaaniykrn krne kaa koee iraadaa nhin hai. praarnbh krne ke lie koee bhi kunji dbaaen.
+mjak kaarykrm, echdidi anklinr 2015 shuru krtaa hai.
+krnel ki 5vin vrsgaaanth kaa smrnotsv
+phli baar rilij
+is krnel ko phli baar 22 frvri, 2018 ko ek nyuntm simyuletr bnaane ke lie jaari kiyaa gayaa thaa jo vaastv men anukrn krtaa hai ki krnel kaa kor kaise kaam krtaa hai.
+yh kevl ek shel aur kuchh kmaand ko host krtaa thaa, aur vindoj mainejment instrumenteshn tul ke upyoga ke kaarn yh kevl vindoj ke saath kaam krtaa thaa.
+iskaa apnaa dstaavej bhi nhin thaa.
+krnel shodhn
+krnel ke snskrn jaari kie gae, jaise ki rnga aur buniyaadi suvidhaaon ko jodene ke lie dusri prmukh rilij, aur konfeigareshn ko jodene ke lie chauthi prmukh rilij.
+chhthi prmukh rilije pr dstaavejeikrn shuru huaa, aur vibhinn achchhi chijeen dhire-dhire krnel men jodei gaeen.
+vrtmaan snskrn
+yh snskrn ab krnel ko is hd tk priskrit krtaa hai ki yh ab puraane snskrnon ki trh vyvhaar nhin krtaa hai.
+chunki neabhutpurv suvidhaaen jaari ho gaeen, islie hmne is krnel ko naam dene kaa nirny liyaa...
+5vin saalgairh mubaark!
+kuchh bhi nhin nikaal skte.
+puraalekh likhne yogay nhin hai kyonki prkaar hai
+aarsi fail kaa pth nirdist krnaa sunishchit kren.
+sngait fail nirdist nhin hai.
+sngait fail '{0}' maujud nhin hai.
+baisbum siaaeaidaun men ganbhir truti.
+fail nhin milne ke kaarn dhvni nhin bjaaee jaa skti.
+sngait fail sfltaapurvk kholi gaee.
+sngait fail nhin khul skti.
+smy smaapt hone ke kaarn dhvni nhin bjaaee jaa skti.
+ajnyaat klaakaar
+ajnyaat shaili
+naam
+klaakaar
+shaili
+avdhi
+khelnaa bnd krne ke lie 'q' dbaaen.
+dhvni nhin bjaa skte.
+ikvlaaijer aupreshn ko snsaadhit krne kaa pryaas krte smy bsoliyaa men ek truti huee hai.
+ikvlaaijer aupreshn ko snsaadhit krne kaa pryaas krte smy bsoliyaa aautput men ek truti hai.
+ikvlaaijer aupreshn ko snsaadhit krne kaa pryaas krte smy ek ajnyaat truti huee hai.
+privrtn
+baind chunen
+baasbum dvaaraa snchaalit
+sngait fail ke lie pth drj kren
+fail "{0}" maujud nhin hai.
+sngait laaibreri nirdeshikaa ke lie ek pth drj kren
+sngait laaibreri nirdeshikaa nhin mili.
+{0} nhin khul sktaa: {1}
+{0} kholne ke lie baisbum lod ho rhaa hai...
+ab khel rhe hain
+gait fail kholne kaa pryaas kr rhaa hun
+gait fail nhin kholi jaa skti
+is praarup men lksy sthiti likhen
+uplbdh kistroks
+chaalu kre roke
+ruknaa
+dhvni niyntrn
+niyntrn ki tlaash kren
+avdhi niyntrn ki tlaash kren
+gaaane ki jaankaari
+ek sngait fail jodeen
+plelist men ek sngait nirdeshikaa jodeen
+pichhlaa gaaanaa
+agalaa gaaanaa
+vrtmaan gait htaaen
+sbhi gaaane htaaen
+chun-chun kr khojo
+tulykaark kholen
+ajnyaat
+shirsk
+elbm
+tippni
+bol
+pnktiyaan
+koee gait nhin
+prt jaankaari
+prt
+dr
+trikaa
+mod ekstenshn
+chaukhtaa kaa aakr
+jeor
+bitret
+ebiaar dr
+privrtniy bitret
+paath aur atirikt
+sngait fail '{0}' nhin kholi jaa skti kyonki yh nhin mili hai.
+gait kaa naam
+gait klaakaar
+gait shaili
+tlaash
+aaytn
+sngait fail ko snsaadhit krne kaa pryaas krte smy bsoliyaa men ek truti huee.
+sngait fail ko snsaadhit krne kaa pryaas krte smy bsoliyaa aautput men ek truti hai.
+sngait fail ko snsaadhit krne kaa pryaas krte smy ek ajnyaat truti huee.
+plaik vifltaa
+mdd
+plelist men ek gaaanaa daalne ke lie 'e' dbaaen, yaa puri sngait laaibreri daalne ke lie 'es' dbaaen.
+amerikn kofei
+laal chaay
+hri chaay
+garbhpaat ke lie koee kaifin alrt nhin.
+aapkaa kp kitne seknd men taiyaar ho jaaaaa, yh amaany hai.
+ydi aap pey kaa naam dene kaa pryaas kr rhe hain, to niche di gaee suchi dekhen:
+aapkaa kp ab taiyaar hai!
+vaastvik snkhyaa maany nhin hai.
+kaalpnik snkhyaa maany nhin hai.
+sutr:
+trijyaa:
+rediyns men vaastvik se trijyaa:
+rediyn men trijyaa se kaalpnik:
+rediyns men kon:
+ghaatiy:
+trikoniy:
+aayojn...
+anusmaark...
+intraiktiv kailendr vifl:
+ghtnaaon aur anusmaark ke lie
+lnbaa prptr
+kailendr prkaar
+chynit maah ke lie koeanusmaark nhin milaa
+chynit maah ke lie koee eevent nhin milaa
+siyaan rnga kaa str snkhyaatmk honaa chaahie.
+maijentaa rnga kaa str snkhyaatmk honaa chaahie.
+pile rnga kaa str snkhyaatmk honaa chaahie.
+kaali kunji kaa str snkhyaatmk honaa chaahie.
+siyaan str:
+maijentaa str:
+pilaa str:
+siemvaaee rnga anukrm:
+rnga:
+sntripti:
+echesel rnga anukrm:
+kimt:
+echesvi rnga anukrm:
+pilaa rnga str:
+aarvaaeebi rnga anukrm:
+lumaa:
+chrnbddh:
+chturbhuj:
+YIQ rnga anukrm:
+yu-kromaa:
+vi-kromaa:
+YUV rnga anukrm:
+kaali kunji:
+siemvaaeeke rnga anukrm:
+rnga kaa str snkhyaatmk honaa chaahie.
+sntripti str snkhyaatmk honaa chaahie.
+chmk yaa roshni kaa str snkhyaatmk honaa chaahie.
+maan str snkhyaatmk honaa chaahie.
+Y ghtk str snkhyaatmk honaa chaahie.
+I ghtk str snkhyaatmk honaa chaahie.
+Q ghtk str snkhyaatmk honaa chaahie.
+yu ghtk str snkhyaatmk honaa chaahie.
+V ghtk str snkhyaatmk honaa chaahie.
+fail '{0}' nhin mil paane ke kaarn ise nhin kholaa jaa sktaa.
+snprk sfltaapurvk aayaatit.
+fail '{0}' nhin kholi jaa skti kyonki kaard fail amaany hai.
+snprk fail maujud nhin hai.
+snprk mile
+snprk fail amaany hai.
+Mard sintaiks khaali nhin ho sktaa.
+kuchh snprk jodee nhin jaa skte. {1} men se kevl {0} snprk jodee gae.
+yaa to prdaan ki gaee snprk fail men kisi snprk ke baare men jaankaari nhin hai yaa vh maany nhin hai.
+snprkon ko paars krne men vifl. adhik jaankaari ke lie truti vivrn dekhen.
+snprk suchkaank simaa se baahr hai. adhiktm suchkaank {0} hai jbki prdaan kiyaa gayaa suchkaank {1} hai.
+paane ke lie koee snprk nhin hai.
+khojne ke lie koee snprk nhin hain.
+niymit abhivykti amaany hai.
+hmaaraa maannaa ​​hai ki aap vindoje 8 yaa usse niche kaa snskrn chlaa rhe hain. yh aupreshn smrthit nhin hai.
+{0} ke lie thred staik tres jaankaari
+naaitrosid kees dhaagaaa nhin
+is naam ki koee dok skrin nhin hai.
+is naam se koee skrin dok nhin hai.
+koee skrin dok nhin hai.
+skrin dok kraish ho gayaa hai
+rimot fail ki saamgari ko knsol pr pdhaa hai
+binaa disknekt kie shel se baahr nikl jaataa hai
+sunishchit kren ki aapne port shi dhnga se nirdist kiyaa hai.
+ek sadhik profail milin. ek kaa chyn kren:
+bhndaar nirdist nhin hai. shel se baahr nikl rhaa hai...
+bhndaar kholne men vifl. shel se baahr nikl rhaa hai...
+kisi fail men privrtnon ki suchi ko pnkti dr pnkti praapt krtaa hai
+ek shaakhaa ki jaanch krtaa hai
+ek prtibddhtaa bnaataa hai
+ek prtibddhtaa kaa vrnn krtaa hai
+vrtmaan kmit aur sthaaniy failon ke bich antr dikhaataa hai
+paich hnk form men unki saamgari dvaaraa vrtmaan prtibddhtaa aur sthaaniy failon ke bich antr dikhaataa hai
+vrtmaan prtibddhtaa aur sthaaniy failon ke bich unkastitv santr dikhaataa hai
+vrtmaan prtibddhtaa aur sthaaniy failon ke bich unkastitv aur unki saamgari kaadhaar pr antr dikhaataa hai
+rimot se sbhi apdet praapt krtaa hai
+fail sthiti praapt krtaa hai
+ek srl bhndaar jaankaari praapt krtaa hai
+sbhi shaakhaaon ki suchi
+sbhi prtibddhtaaon ko suchibddh krtaa hai
+sbhi rimot suchibddh krtaa hai
+sbhi taiga suchibddh krtaa hai
+HEAD se ek taiga bnaataa hai
+srvr se sbhi apdet khinch laa hai
+sbhi apdet ko srvr pr bhejtaa hai
+sthaaniy ripojitri ko riset krtaa hai
+ek soft riset krtaa hai
+ek mishrit riset krtaa hai
+haard riset krtaa hai
+aapki phchaan sthaapit krtaa hai
+privrtn kaa chrn
+chrn sbhi privrtn
+bhndaar sthiti
+privrtn ko asthir krtaa hai
+sbhi privrtnon ko asthir krtaa hai
+sbhi aagaaami anurodhon ke lie kunji aur maan ke saath ek hedr jodaa hai
+vrtmaan upyogakrtaa ejent praapt krtaa hai
+sbhi aagaaami anurodhon ke lie hedr pr ek kunji snpaadit krtaa hai
+anurodh shirslekh suchibddh krtaa hai
+nirdist anurodh kaa upyoga krke fail ko HTTP srvr pr rkhtaa hai
+nirdist anurodh kaa upyoga krke stringa ko HTTP srvr pr daaltaa hai
+nirdist anurodh kaa upyoga krke fail ko HTTP srvr pr post krtaa hai
+nirdist anurodh kaa upyoga krke stringa ko HTTP srvr pr post krtaa hai
+sbhi aagaaami anurodhon ke lie hedr pr ek kunji htaa daa hai
+ek upyogakrtaa ejent set krtaa hai
+vh shirslekh jodaa jo phle se maujud hai.
+jo hedr maujud nhin hai use htaayaa jaa rhaa hai.
+vh shirslekh snpaadit kiyaa jaa rhaa hai jo maujud nhin hai.
+aapkaunlaain rediyo kaa port nnbr amaany hai.
+puraa yuaarel
+vrtmaan shrotaa
+chrm shrotaa
+adhiktm shrotaa
+advitiy shrotaa
+strim
+skriy dhaaraaen
+aaeedi ke lie strim jaankaari
+pth
+is smy khel rhaa hai
+aptaaim
+ek nee srni, aubjekt yaa proprti jodaa hai
+mul pth nirdist krtaa hai
+prkaar nirdist krtaa hai
+us snptti kaa naam nirdist krtaa hai jiske saath bnaayaa jaanaa hai. ydi mul pth ek aubjekt hai to iskaa upyoga kiyaa jaataa hai.
+JSON fail saafe krtaa hai
+ek snptti dhundhtaa hai
+mul snptti nirdist krtaa hai
+JSON fail ke baare men jaankaari dikhaataa hai
+vyktigat gaun n dikhaaen
+sbhi maan dikhaaen
+kisi lksy vstu ko htaa daa hai
+sushobhit JSON
+chhotaa JSON
+kisi maujudaa srni, aubjekt yaa proprti ke lie maan set krtaa hai
+intraiktiv snpaadk men JSON fail kholtaa hai
+JSON fail kandr tokn nhin milaa.
+mul tokn nhin milaa. sunishchit kren ki aapne pth '{0}' shi dhnga se likhaa hai.
+nirdist prkaar '{0}' amaany hai.
+'{0}' ke mul tokn prkaar ke saath snptti ke naam ke saath ek nyaa aaitm nhin joda jaa sktaa.
+'{1}' ke mul tokn prkaar ke saath proprti naam '{0}' ke saath ek nyaa aaitm nhin joda jaa sktaa.
+snptti kaa naam '{0}' mul '{1}' ke bhitr, prkaar '{2}', maujud nhin hai
+aadhaar angarejei stringa fail maujud nhin hai. kyaa aap ek khaali bnaanaa chaahte hain? yaa kyaa aap naaitrosid ki angareji stringas kaa upyoga krnaa chaahte hain?
+koee maany bhaasaa nirdist nhin hai.
+bhaasaa studiyo men aapkaa svaagat hai!
+nee stringa
+stringa htaaen
+anuvaad shejen
+anuvaad krne ke lie ek stringa chunen:
+ek nee stringa drj kren
+htaane ke lie ek stringa kaa chyn kren:
+bhaasaa sheji jaa rhi hai...
+bhaasaa chune
+is stringa kaa anuvaad krne ke lie ek bhaasaa chunen:
+kaa apnaa anuvaad likhen
+unhen dekhne ke lie "mel" kholen.
+not aaeedi ek not nnbr honaa chaahie
+yh not khaali hai
+astitvhin not ko htaayaa nhin jaa sktaa
+shirsk aur/yaa vivrn men kisi vaakyaansh ke lie feid khojtaa hai
+shirsk khojen
+vivrn khojen
+shirsk aur vivrn khojen
+kes snvednshil khoj
+feid URL ko paars krne men vifl:
+koee vivrn nhin
+failon aur feoldron kaa vivrn dikhaataa hai
+"andhikrit" sndeshon ko dbaa daa hai
+{0} ke lie niji kunji kaa sthaan drj kren. kunjiyaan jodaa smaapt krne ke lie "q" likhen:
+{0} se knekt krne kaa pryaas kiyaa jaa rhaa hai...
+SQL kveri nispaadit krtaa hai
+daabes jaankaari
+intraiktiv heks snpaadk tiyuaaee men eskyuel fail kholtaa hai
+fail se thim lod kren...
+ek nee thim "{0}" bnaanaa.
+thim ko yhaan shejne ke lie nirdeshikaa nirdist kren:
+ki jaankaari
+stopvoch taiyaar hai.
+stopvoch chl rhi hai!
+nee gaod!
+ulti gainti shuru kren
+aisi koee ikaaee prkaar nhin:
+uplbdh ikaaee prkaar:
+privrtit krne ke lie ikaaiyaan
+knvrt krne ke lie ek nnbr drj kren...
+aapne knvrt krne ke lie koee snkhyaa drj nhin ki hai.
+drj kiyaa gayaa nnbr amaany hai.
+ikaaee privrtit nhin kr skte.
+0.0.1 ke baad se 6,000vin prtibddhtaa kaa jshn mnaa rhaa hun!
+krne ke lie jaari...
+smaapt
+ne saal ki shubhkaamnaaen!
+kripyaa krnel praarnbh hone tk prtiksaa kren...
+kripyaa krnel bnd hone tk prtiksaa kren...
+ajnyaat truti!
+ghoda
+[prvesh] daude shuru kren | [eeessi] baahr niklen | [oopr/niche] chyn ko sthaanaantrit kren
+aapke ghodee ne daude jit li!
+aapkaa ghoda daude haar gayaa!
+tumhen ltkaa diyaa gayaa hai!
+aap jitte hain!
+aapkaa daanv kyaa hai?
+aapne shi anumaan lgaaayaa!
+aapne isse galt liyaa.
+lekin, tum bdkismt ho. praast.
+tum bhaagayshaali ho! vijaa!
+yh dro hai.
+khilaadei {0} jit gayaa!
+baahr niklne ke lie "q" dbaaen.
+vrtmaan chritr:
+aapne shi shbd kaa anumaan lgaaayaa! aap jitte hain!
+yh sngarh prkaar smrthit nhin hai.
+aarsi praarup men apni gait failon vaali nirdeshikaa kaa pth nirdist krnaa sunishchit kren. aap gait failon vaalapne sngait laaibreri feoldr ke lie ek kstm pth bhi nirdist kr skte hain.
+yh gait fail maujud nhin hai.
+snskriti nhin milti.
+kailendr dikhaane men vifl.
+anusmaark jodene men vifl.
+anusmaark jodene ke lie pryaapt trk uplbdh nhin kraae gae.
+anusmaark htaane men vifl.
+anusmaark ko htaane ke lie pryaapt trk uplbdh nhin kraae gae.
+naaitrosid kees rilije vrsgaaanth\", sty, 2, 22, 2, 22, \"garaoriyn
+rmjan\", sch, 9, 1, 10, 1, \"hijri
+koeaayojn nhin hai.
+koeanusmaark nhin hai.
+koee snprk nhin hai. ydi aap snprk aayaat krnaa chaahte hain, to kripyaa skrin ke niche pribhaasit kistroks kaa upyoga krkaayaat viklpon kaa upyoga kren.
+kuchh snprk aayaat nhin kiye jaa skte.
+apne snprk vaali visief fail kaa pth drj kren. endroid ki contacts2.db fail bhi smrthit hai.
+fail maujud nhin hai. sunishchit kren ki aapne VCF fail yaa contacts2.db fail ke lie shi pth likhaa hai.
+apne snprk kaa vaidh maard prtinidhitv drj kren.
+snprk mikaard sintaiks amaany hai.
+snprk mikaard sintaiks khaali nhin ho sktaa
+snprkon ko khojne ke lie raulr ekspreshn drj kren.
+aisaa koee snprk nhin hai jismen aapki anurodhit abhivykti shaamil ho.
+snprk naam
+koee snprk naam nhin
+snprk ptaa
+mel se snprk kren
+koee snprk mel nhin
+sngathn se snprk kren
+koee snprk sngathn nhin
+telifon se snprk kren
+koee snprk telifon nhin
+snprk yuaarel
+koee snprk URL nhin
+jiyo se snprk kren
+koee snprk jiyo nhin
+IMPP se snprk kren
+koee snprk nhin IMPP
+snprk upnaam
+koee snprk upnaam nhin
+snprk bhumikaa
+koee snprk bhumikaa nhin
+snprk shirsk
+koee snprk shirsk nhin
+snprk nots
+koee snprk not nhin
+dijitl ghdei
+krnel pr vaaps jaane ke lie koee bhi kunji dbaaen...
+apni epiaaee kunji drj kren:
+aap yaa to shhron ki unki aaeedi ke saath suchi ke lie niche die gae link se praamrsh le skte hain, yaa, is kmaand ko "-suchi" paas kr skte hain.
+kyaa aap vaakee {0} ko htaanaa chaahte hain?
+upyogakrtaa
+saait
+koee simlink jaankaari nhin
+pr snshodhit
+ek dursth nirdeshikaa drj kren. ".." pichhe jaanaa
+ek sthaaniy nirdeshikaa drj kren. ".." pichhe jaanaa.
+fail ke lie dos sthiti
+hnk nnbr
+pnktiyon ki snkhyaa
+praarnbhik pnkti snkhyaa
+antim pnkti snkhyaa
+praarnbhik prtibddhtaa
+SHA prtibddh kren
+prtibddh sndesh
+prtibddh lekhk
+prtibddh prtibddh
+maataa-pitaa ki snkhyaa
+antim prtibddhtaa
+kisi shaakhaa ki jaanch krne se phle ek kmit bnaakr apnaa kaam shejen.
+shaakhaa maujud nhin hai.
+is aadesh kaa upyoga krne se phlaapko svyn ko phchaanne ki aavshyktaa hai. upyoga
+apnaap ko phchaanne ke lie.
+nee prtibddhtaa ke saath adytn bhndaar
+prtibddhtaa ke lie vivrn
+men saamaany privrtn
+saamgari men privrtn hotaa hai
+rimot maujud nhin hai.
+apdet khinchne ke lie koee rimot nhin milaa.
+fail ke lie sthiti
+nngae bhndaar
+sir alga
+koee sndrbh nhin
+uthlaa klon
+.git kaa pth
+kaaryshil nirdeshikaa kaa pth
+shaakhaa ke lie prtibddh hai
+ek nyaa taiga bnaayaa gayaa! yhaan aapkaa taiga vivrn hai:
+repo ki aapki sthaaniy prti adytit hai!
+teji sagaresit kiyaa gayaa
+ripojitri ko adytn kiyaa gayaa
+aapke vily ke prinaamsvrup tkraav huaa. kripyaa kisi bhi vivaad kaa smaadhaan kren.
+aapne sfltaapurvk apni phchaan bnaa li hai
+mnchn men koee snshodhn nhin kiyaa gayaa hai.
+chrnbddh fail {0} sfltaapurvk!
+fail {0} ko chrnbddh krne men vifl.
+shaakhaa {0} ke lie sthiti...
+koee snshodhn nhin kiyaa gayaa hai.
+traik n ki gaee failen
+koeantraik fail nhin.
+failen jodei gaeen
+koee fail nhin jodei gaee.
+snshodhit failen
+koee snshodhit failen nhin.
+failen htaa di gaeen
+koee htaaee gaee failen nhin.
+chrnbddh failen
+koee chrnbddh failen nhin.
+chrnbddh failon kaa naam bdlaa gayaa
+koee punrnaamit chrnbddh failen nhin.
+naamit failen
+koee naamaankit fail nhin.
+gaum failen
+koee gaum faail nhin.
+mnch ko asthir krne ke lie koee snshodhn nhin kiyaa jaataa hai.
+chrnhin fail {0} sfltaapurvk!
+fail {0} ko anstej krne men vifl.
+fail {0} post ki jaa rhi hai...
+stringa ko {0} pr post kiyaa jaa rhaa hai...
+stringa ko {0} pr aplod kiyaa jaa rhaa hai...
+JSON shel koeaaitm jodene men vifl rhaa.
+men snptti paaee jaati hai
+snptti nhin mili
+bes JSON tokn jaankaari
+aadhaar prkaar
+aadhaar ke maan hain
+bchchon ke tokn gainti
+aadhaar pth
+vyktigat JSON tokn jaankaari
+tokn prkaar
+tokn ke muly hain
+saanketik pth
+saanketik muly
+ke lie snptti ki jaankaari
+smptti ke prkaar
+snptti gainti
+snptti kaa naam
+snptti pth
+snptti muly
+JSON shel kisi aaitm ko htaane men vifl rhaa.
+JSON shel ek aaitm set krne men vifl rhaa.
+apnaa sndesh niche drj kren. pusti krne ke lie "EOF" likhen.
+sndesh {0} ko {1} se sthaanaantrit kiyaa gayaa. {2} sndesh paars krne ke lie shes hain.
+anulgank:
+is knekshn men ek amaany RSS feid udaahrn shaamil hai.
+ajnyaat lekh shirsk
+durbhaagayvsh, is aalekh men koee saamgari nhin hai. aap abhi bhi lekh kaa anusrn kr skte hain
+is lekh men koee link nhin hai.
+host braaujer ko lekh link pr nhin kholaa jaa sktaa.
+snshodhit:
+{0} ke lie pairaamitr maan drj kren:
+SQL kmaand sfl huaa. yhaan uttr hain:
+SQL kmaand vifl.
+daabes pth:
+srvr snskrn:
+knekshn sthiti:
+knekshn stringa:
+daabes kaa naam:
+koee kaary jodene yaa htaane men vifl.
+kripyaa apne kaary ke lie ek naam prdaan kren.
+kisi kaary ko chihnit krne men vifl.
+yh anubhaaga draaivr setingas ko suchibddh krtaa hai.
+krnel draaivr setingas
+vrtmaan knsol draaivr
+aap kis knsol draaivr kaa upyoga krnaa chaahengae?
+vrtmaan yaadrichchhik snkhyaa jnretr draaivr
+aap kis yaadrichchhik snkhyaa jnretr draaivr kaa upyoga krnaa chaahengae?
+vrtmaan netvrk draaivr
+aap kis netvrk draaivr kaa upyoga krnaa chaahengae?
+vrtmaan fail sistm draaivr
+aap kis fail sistm draaivr kaa upyoga krnaa chaahengae?
+vrtmaan enkripshn draaivr
+aap kis enkripshn draaivr kaa upyoga krnaa chaahengae?
+vrtmaan raulr ekspreshn draaivr
+aap kis raulr ekspreshn draaivr kaa upyoga krnaa chaahengae?
+vrtmaan dibga logar draaivr
+aap kis dibga logar draaivr kaa upyoga krnaa chaahengae?
+vrtmaan enkodinga draaivr
+aap kis enkodinga draaivr kaa upyoga krnaa chaahengae?
+vrtmaan haardveyr jaanchkrtaa draaivr
+aap kis haardveyr probr draaivr kaa upyoga krnaa chaahengae?
+vrtmaan sortinga draaivr
+aap kis sortinga draaivr kaa upyoga krnaa chaahengae?
+maitriks snkhyaaon ki gairti rekhaa.
+maukaa chhodeo
+ek ne gairte maitriks ko gairaane kaa maukaa
+yh anubhaaga sbhi saamaany krnel setingas ko suchibddh krtaa hai, mukhy rup se krnel ko bnaae rkhne ke lie.
+saamaany krnel setingas
+bhaasaa
+krnel bhaasaa nirdist krtaa hai.
+snskriti
+rnga andhaapn sksm kren
+ydi aap klr blaaind hain yaa aap klr blaaindnes kaa anukrn krnaa chaahte hain, to aap ise sksm kr skte hain.
+rnga andhaapn privrtn sutr
+rnga andhaapn kaa prkaar, chaahe vh protaan, dyutr yaa traaitn ho.
+rnga andhaapn ganbhirtaa
+rnga andhaapn kitnaa ganbhir hai?
+shtdaaun yaa ribut pr bip kren
+krnel ko bnd krne pr bip sksm krtaa hai.
+shtdaaun yaa ribut pr deri
+krnel ko bnd krne pr vilnb sksm krtaa hai.
+srl rnga andhaapn sksm kren
+ydi aap chaahte hain ki rnga andhaapn kaa anukrn srl ho, to ise sksm kren. kripyaa dhyaan den ki is simuleshn pddhti men pryukt sutr stik nhin ho sktaa hai.
+knsol asli rnga kaa smrthn krtaa hai
+ydi aap aashvst hain ki knsol shi rnga kaa smrthn krtaa hai, yaa ydi aap apne trminl ko aise trminl men bdlnaa chaahte hain jo shi rnga kaa smrthn krtaa hai, to is maan ko bdlen.
+kodpej set kren
+bhaasaaen bdlne pr bhaasaa kodpej set kren.
+vikaas suchnaa svikaar ki gaee
+ydi shi pr set kiyaa jaataa hai, to hr baar jb aap vikaas snskrnon men krnel ko but krte hain to krnel aapko vikaas suchnaa nhin dikhaaaaa.
+avishvsniy mod lod krne ki anumti den
+ydi shi pr set kiyaa jaataa hai, to krnel un mods ko lod krne pr truti nhin kraaa jinmen hstaaksrit saarvjnik kunji nhin hai.
+dibga kotaa sksm kiyaa gayaa
+ydi yh viklp sksm hai, to kotaa paar ho jaane pr dibga lekhk dibga loga fail ko ghumaataa hai.
+dibga kotaa laain gainti
+kotaa simaa tk phunchne se phle dibga bfer pr kitni pnktiyaan print krni hongai? kripyaa dhyaan den ki yh yh nhin drshaataa hai ki dibga loga failon men kitni pnktiyaan hain.
+sistm smy ksetr kaa upyoga kren
+ydi yh viklp sksm hai, to krnel aapke knpyutr setingas se smy ksetr kaa upyoga krtaa hai. anythaa, krnel-vyaapi smy ksetr kaa upyoga krtaa hai jise konfeigar kiyaa jaa sktaa hai.
+krnel-vyaapi smy ksetr
+upyoga krne ke lie krnel-vyaapi smy ksetr
+laaisens suchnaa boks dikhaaen
+prtyek logain ke baad tin seknd ke lie modl laaisens suchnaa boks dikhaanaa hai yaa nhin. ise chaalu rkhne ki anushnsaa ki jaati hai.
+dibga loga ke lie ligaesi logainga shaili
+kyaa dibga loga ke lie ligaesi logainga shaili ko sksm krnaa hai yaa smuhikrit dibga loga ko sksm krnaa hai.
+yh anubhaaga aapko yh chunne daa hai ki aap kis prkaar kaa rnga bdlnaa chaahte hain.
+rnga setinga
+uchchaarn rngaon kaa pryoga kren
+ydi shi pr set kiyaa jaataa hai, to thim prbndhk thim dvaaraa smrthit vishist rnga prkaaron ke lie uchchaarn rngaon ko popyulet krtaa hai.
+agarbhumi uchchaarn rnga
+un visyon ke lie jo uchchaarn kaa smrthn krte hain, yh uchchaarn vaalaa agargaaami rnga hai.
+pristhbhumi uchchaarn rnga
+un visyon ke lie jo uchchaarn kaa smrthn krte hain, yh uchchaarn vaalaa baikgaaaund rnga hai.
+knsol rnga pailet kaa upyoga kren
+jb ise sty pr set kiyaa jaataa hai, to trminl dvaaraa pribhaasit rnga pailet kaa upyoga kiyaa jaataa hai.
+agarbhumi rnga ki anumti den
+jb ise sty pr set kiyaa jaataa hai, to vrtmaan agarbhumi rnga ko smmaanit kiyaa jaataa hai. anythaa, yh aapke trminl ke difeolt rngaon kaa upyoga krtaa hai.
+pristhbhumi rnga ki anumti den
+jb ise sty pr set kiyaa jaataa hai, to vrtmaan pristhbhumi rnga ko smmaanit kiyaa jaataa hai. anythaa, yh aapke trminl ke difeolt rngaon kaa upyoga krtaa hai.
+upyoktaa naam shail rnga
+host naam shail rnga
+stt krnel truti rnga
+anvrt krnel truti rnga
+paath kaa rnga
+laaisens kaa rnga
+pristhbhumi kaa rnga
+input rnga
+suchi prvisti rnga
+suchi maan rnga
+krnel stej rnga
+truti paath rnga
+chaavni paath kaa rnga
+viklp rnga
+bainr kaa rnga
+adhisuchnaa shirsk rnga
+adhisuchnaa vivrn rnga
+adhisuchnaa prgati rnga
+adhisuchnaa vifltaa rnga
+prshn rnga
+sfltaa kaa rnga
+upyogakrtaa dolr kaa rnga
+tip kaa rnga
+vibhaajk paath rnga
+vibhaajk rnga
+suchi shirsk rnga
+vikaas chaavni rnga
+mnch smy rnga
+prgati rnga
+pichhlaa viklp rnga
+km praathmiktaa vaalaa bordr rnga
+mdhym praathmiktaa simaa rnga
+uchch praathmiktaa simaa rnga
+tebl vibhaajk rnga
+tebl haidr kaa rnga
+taalikaa maan rnga
+chynit viklp rnga
+vaiklpik viklp rnga
+sptaahaant divs kaa rnga
+ghtnaa divs kaa rnga
+taalikaa shirsk rnga
+aaj din kaa rnga
+intrektiv tiyuaaee pristhbhumi rnga
+intraiktiv tiyuaaeagarbhumi rnga
+intrektiv tiyuaaee flk pristhbhumi rnga
+intrektiv tiyuaaee flk vibhaajk rnga
+intrektiv tiyuaaee chynit flk vibhaajk rnga
+intrektiv tiyuaaee chynit flk aaitm agarbhumi rnga
+intrektiv tiyuaaee chynit flk aaitm pristhbhumi rnga
+intrektiv tiyuaaee flk aaitm agarbhumi rnga
+intrektiv tiyuaaee flk aaitm pristhbhumi rnga
+intrektiv tiyuaaee viklp pristhbhumi rnga
+intraiktiv tiyuaaee viklp agarbhumi rnga
+intrektiv tiyuaaee viklp baaindinga naam rnga
+intrektiv tiyuaaee boks pristhbhumi rnga
+intrektiv tiyuaaee boks agarbhumi rnga
+aksm viklp rnga
+yh anubhaaga haardveyr jaanch vyvhaar ko bdltaa hai.
+yh anubhaaga logain setingas kaa prtinidhitv krtaa hai. privrtnon ko prbhaavi krne ke liapne khaate se loga aaut kren.
+logain setingas
+baaki knpyutron ke saath snchaar krne ke lie krnel host naam
+uplbdh upyoktaanaam dikhaaen
+emotidi pth
+emeel pth
+loga-in pr MAL dikhaaen
+aadhunik logaaun ghdei ke nichle bhaaga men emotidi aur hedlaain
+kyaa MOTD aur hedlaain ko ghdei ke niche yaa oopr dikhaanaa hai
+logain haindlr
+saain-in snketon ke lie upyoga krne hetu logain haindlr.
+yh anubhaaga shel setingas ko suchibddh krtaa hai.
+saamaany shel setingas
+koln dvaaraa alga kie gae pthon kaa smuh. yh PATH ki trh hi kaam krtaa hai. kisi feoldr yaa feoldr naam kaa puraa pth likhen.
+kmaand nispaadn pr knsol shirsk set kren
+kmaand nispaadn pr knsol shirsk set krtaa hai.
+shail snkhyaa dikhaaen
+yh anubhaaga shel priset setingas ko suchibddh krtaa hai.
+shail purv nirdhaarit setingas
+shighr purv nirdhaarit
+tekst edit prompt priset
+heks edit prompt priset
+edmin shel prompt priset
+dibga shel prompt priset
+yh anubhaaga fail sistm setingas ko suchibddh krtaa hai.
+fail sistm setingas
+"kait" kmaand fail ki laain snkhyaaon ko print krtaa hai.
+yh anubhaaga netvrk setingas ko suchibddh krtaa hai, jaise efetipi shel, netvrk-snbndhit kmaand setingas aur rimot dibga setingas.
+saamaany netvrkinga setingas
+chait port dibga kren
+ek dursth dibgar chait port likhen. yh snkhyaatmk honaa chaahie, aur phle se hi upyoga nhin kiyaa jaanaa chaahie. anythaa, rimot dibgar chait port kholne men vifl ho jaaai.
+likhen ki "praapt kren" kmaand ko kitni baar vifl daaunlod kaa punah pryaas krnaa chaahie. yh snkhyaatmk honaa chaahie.
+pun: pryaas kaa smy aplod kren
+likhen ki "put" kmaand ko kitni baar vifl aplod kaa punah pryaas krnaa chaahie. yh snkhyaatmk honaa chaahie.
+"gaet" yaa "put" kmaand se daaunlod yaa aplod krte smy prgati baar dikhaaen
+ydi sty hai, to yh daaunlod yaa aplod krte smy prgati ptti ko "praapt kren" yaa "put" dikhaataa hai.
+yh anubhaaga saamaany skrinsevr setingas suchibddh krtaa hai. vyktigat skrinsevr setingas ke lie, setingas se baahr niklen aur skrinsevr setingas kholen.
+buniyaadi skrinsevr setingas
+skrin sevr
+aap kis skrinsevr sapni skrin lok krnaa chaahte hain?
+niskriy hone pr skrinsevr lokinga sksm kren
+ydi sksm kiyaa gayaa hai, to skrinsevr nirdist avdhi ke lie niskriy rhne ke baad svchaalit rup se lonch hotaa hai.
+skrinsevr nyuntm niskriy antraal
+fotosensitiv jbti chaavni ko svikaar kren
+ydi aap teje gati vaale enimeshn ke prti snvednshil nhin hain jo kuchh skrinsevr aapko dikhaate hain, to aap is viklp ko sksm krke is chaavni ko aksm kr skte hain. kripyaa dhyaan den ki aise enimeshn se hone vaale dusprbhaavon ke lie hm jeimmaar nhin hain. adhik jaankaari ke lie kisi peshevr chikitsaa vishesjny se snprk kren.
+jo setingas unke upyukt anubhaagaon men fit nhin hotin ve yhaan aati hain.
+vividh setingas
+ydi autosev sksm hai, to tekst fail prtyek "en" seknd ke lie sheji jaaai.
+un mods ke fail naam likhen jo staartap pr nhin chlengae. jb aapkaa kaam puraa ho jaae, to "q" likhen. kisi maujudaa mod ko htaane ke lie pth kaagae rin chihn likhen.
+ek vrn jo oopri daaen kone jaisaa dikhtaa hai. sunishchit kren ki kevl ek aksr hi input kren.
+ek vrn jo nichle daaen kone jaisaa dikhtaa hai. sunishchit kren ki kevl ek aksr hi input kren.
+kmaand suchi men kmaand ki gainti dikhaataa hai, vibhinn prkaar ke kmaand ke lie kaaunt sho svich dvaaraa niyntrit kiyaa jaataa hai.
+help kmaand men suchibddh krte smy shel kmaand ki gainti dikhaaen
+shaaytaa kmaand men suchibddh krte smy krnel snshodhn kmaand ki gainti dikhaaen
+shaaytaa kmaand men suchibddh krte smy upnaam aadeshon ki snkhyaa dikhaaen
+shaaytaa pr bhrosaa krte hue ekikrit kmaand dikhaaen
+shaaytaa kmaand men suchibddh krte smy ekikrit shel kmaand ki gainti dikhaaen
+shaaytaa pr nirbhr aidaun kmaand dikhaaen
+shaaytaa kmaand men suchibddh krte smy krnel aidaun kmaand ki gainti dikhaaen
+prgati pttiyon ke lie oopri baaen kone kaa vrn
+prgati pttiyon ke lie oopri daaen kone kaa vrn
+prgati pttiyon ke lie nichle baaen kone kaa vrn
+prgati pttiyon ke lie nichle daaen kone kaa vrn
+prgati pttiyon ke lie oopri ferem vrn
+prgati pttiyon ke lie nichlaa ferem vrn
+prgati pttiyon ke lie baayaan ferem vrn
+prgati pttiyon ke lie shi ferem vrn
+chyn men skrol baar sksm kren
+chyn skrin men skrol baar ko sksm krtaa hai
+preshaan n kren
+ydi du not distrb sksm hai, to praapt sbhi suchnaaen disple se dbaa di jaaengai. iskaa mtlb yh hai ki aap dhyaan kendrit krne men mdd krne vaali koee bhi adhisuchnaa nhin dekh paaengae.
+saamaany simaa ke lie oopri baaen kone kaa vrn
+saamaany simaa ke lie oopri daaen kone kaa vrn
+saamaany simaa ke lie nichle baaen kone kaa vrn
+saamaany bordr ke lie nichle daaen kone kaa vrn
+saamaany bordr ke lie oopri ferem vrn
+saamaany bordr ke lie nichlaa ferem vrn
+saamaany simaa ke lie baayaan ferem vrn
+saamaany bordr ke lie daayaan ferem vrn
+dibga loga pr niji jaankaari sensr kren
+sensr niji jaankaari jise dibga loga pr mudrit kiyaa jaa sktaa hai.
+nee suchnaaon ko taaraankn ke rup men prdrshit kren
+sbhi nee suchnaaon ko taaraankn ke rup men dikhaataa hai. prgati ptti vaali suchnaaon men is viklp ko andekhaa kr diyaa jaataa hai.
+fail mainejr men fail kaa aakaar dikhaaen
+stets men fail kaa aakaar dikhaanaa hai yaa nhin.
+setinga aip men hedr ki klaasik shaili kaa upyoga kren
+yh aapko setinga eplikeshn kaadhunik yaa klaasik hedr luk pr svich krne kaa viklp prdaan krtaa hai.
+difeolt feigalet feont
+aapki aadhunik logain skrin shit krnel ke kee ksetron ke saath upyoga ke lie difeolt feigalet feont.
+sipiyu upyoga dibga sksm
+ydi sksm kiyaa gayaa hai, to sipiyu upyoga dibga apdet antraal men nirdist do antraalon ke bich sipiyu upyoga ko print krtaa hai.
+sipiyu upyoga dibga adytn antraal
+sipiyu upyoga ko apdet krnaur ise dibgar pr print krne se phle kitne milisekend tk intjaar krnaa hogaaa?
+saanp kaa khel.
+aapko achchhe prsiddh uddhrn dikhaataa hai.
+yh anubhaaga aapko yh konfeigar krne daa hai ki mnornjn kaise kaam krtaa hai.
+apni psndidaa kthinaaee chunen, jhaan 0 aasaan hai, 1 mdhym hai, 2 kthin hai, 3 bhut kthin hai aur 4 kstm hai.
+shipduet men antriks yaan prstut krne ke lie paavrlaain kaa upyoga kren
+kyaa antriks yaan ko prstut krne ke lie paavrlaain kaa upyoga krnaa hai yaa chritr sadhik maank kaa upyoga krnaa hai. ydi aap shipduet ke saath povrlaain kaa upyoga krnaa chaahte hain, to aapko povrlaain smrthn ke saath ek upyukt feont sthaapit krnaa hogaaa.
+shipduet men gaem ki gati
+yh anubhaaga aapko yh konfeigar krne daa hai ki sngarh shel kaise kaam krtaa hai.
+is skrinsevr ke lie setingas yhaan uplbdh hain.
+yh anubhaaga aapko yh konfeigar krne daa hai ki baisbum aidaun kaise kaam krtaa hai.
+gait pth
+.lrc failon ke smuh vaale feoldr kaa pth set krtaa hai. kisi bhi maujudaa nirdeshikaa ke lie ek purn pth likhen.
+yh anubhaaga aapko yh konfeigar krne daa hai ki kailendr kaise kaam krtaa hai.
+yh anubhaaga aapko yh konfeigar krne daa hai ki purvaanumaan kaise kaam krtaa hai.
+yh anubhaaga aapko yh konfeigar krne daa hai ki efetipi shel kaise kaam krtaa hai.
+yh anubhaaga aapko yh konfeigar krne daa hai ki Git shel kaise kaam krtaa hai.
+yh anubhaaga aapko yh konfeigar krne daa hai ki HTTP shel kaise kaam krtaa hai.
+yh anubhaaga aapko yh konfeigar krne daa hai ki JSON shel kaise kaam krtaa hai.
+JSON shel prompt priset
+JSON snpaadk svtah shejnaa sksm kren
+JSON snpaadk autosev suvidhaa ko chaalu yaa bnd krtaa hai.
+JSON snpaadk autosev antraal
+yh anubhaaga aapko yh konfeigar krne daa hai ki mel shel kaise kaam krtaa hai.
+ek pristh men ee-mel ki adhiktm snkhyaa
+ek pristh pr kitne ee-mel sndesh prdrshit krne hain?
+kisi yaadrichchhik vykti ke lie daabes lukap kaa anukrn krtaa hai.
+yh anubhaaga aapko yh konfeigar krne daa hai ki RSS shel kaise kaam krtaa hai.
+aareses prompt priset
+yh anubhaaga aapko yh konfeigar krne daa hai ki SFTP shel kaise kaam krtaa hai.
+yh anubhaaga aapko yh konfeigar krne daa hai ki SQL shel kaise kaam krtaa hai.
+SQL shel prompt priset
+yh anubhaaga aapko yh konfeigar krne daa hai ki taaimr kaise kaam krte hain.
+yh anubhaaga aapko yh konfeigar krne daa hai ki yuktiyaan kaise kaam krti hain.
+krnel yuktiyaan dikhaaen
+ydi sksm kiyaa gayaa hai, to shel aapko prtyek logain pr yuktiyaan dikhaataa hai.
+aapki skrin pr gairti baainri snkhyaa.
+rngaon ko milaakr unhen knsol pr print krnaa.
+yh disko laait hai, jo sbse phle skrinsevr men se ek hai.
+skrin pr rnga chmkte hain.
+ek rekhaa jo knsol ke chaaron or lnbvt ghumti hai.
+betrtib rngaon ko gholtaa hai.
+aapko ek rngain blok dikhaataa hai jo knsol pr uchhltaa hai.
+aapko tin prgati pttiyaan dikhaataa hai jo smy kaa prtinidhitv krti hain.
+prkaash blok.
+skrin ko rnga se ponchhtaa hai.
+srl maitriks.
+maitriks snkhyaaen jo skrin pr betrtib dhnga se failti hain.
+aapko ek tekst dikhaataa hai jo knsol ke chaaron or uchhltaa hai.
+andr aur baahr lupt hotaa paath.
+andr aur baahr lupt hoti pristhbhumi.
+bits men andr aur baahr lupt hotaa paath.
+rnga maaro
+taaipo ke saath paath likhne vaale vykti kaa anukrn krtaa hai.
+aapko daaen se baaen skrol krne vaalaa tekst dikhaataa hai.
+puraane smy men linotaaip kibord men akhbaar ke lie tekst likhne vaale vykti kaa anukrn krtaa hai.
+"laain fil" ko trigar krne se phle kitnaksr likhne hongae?
+laain bhrn paitrn prkaar. 0 aoin vrnon ke jnyaat paitrn ko print krtaa hai, 1 aoin vrnon kaa puraa paitrn print krtaa hai, aur 2 pnkti ko tejei se bhrne ke lie vrnon ke yaadrichchhik set ko print krtaa hai.
+paath likhne vaale vykti kaa aadrsh rup sanukrn krtaa hai.
+tir ki sthiti dikhaaen
+skrin ke niche ek tir dikhaakr taaipraaitr aksr kolm ki sthiti dikhaataa hai
+aapki skrin pr chmkte rnga.
+ek spotlaait kaa anukrn krtaa hai jo aapke paath ko khojtaa hai.
+raimp ko dhaal rngaon se bhr daa hai.
+bkson ko skrin pr dher kr den.
+ek baar kaa anukrn krtaa hai jo kisi any pristhbhumi rnga ke saath sde jaataa hai, jisse ek garedient bntaa hai.
+aapko aatishbaajei dikhaataa hai jo shuru hoti hain aur fut jaati hain.
+aapko ek rngain figalet tekst dikhaataa hai.
+indrdhnus mod
+indrdhnus rnga mod sksm krtaa hai
+aapko ek rngain chmktaa paath dikhaaen.
+ek tivi sthaitik shor kaa anukrn krtaa hai.
+skrin ke mdhy men srl dinaank aur smy.
+aapki skrin pr ek gadebdei kaa anukrn krtaa hai.
+aapko ek gairti huee rekhaa dikhaataa hai jo niche jaati hai aur lupt ho jaati hai.
+aapko ek anishchit prgati ptti dikhaataa hai.
+aapko ek spndit pristhbhumi dikhaataa hai.
+aapko dhdeknon men spndit pristhbhumi dikhaataa hai.
+ydi bitpls sksm hai to yh yaadrichchhik rngaon kaa chyn kraaa. anythaa, konfiga se rngaon kaa upyoga kren.
+aapko ek spndit dhaar dikhaataa hai.
+aapko dhdeknon men spndit dhaar dikhaataa hai.
+ydi yh sksm hai to BeatEdgePulse yaadrichchhik rngaon kaa chyn kraaa. anythaa, konfiga se rngaon kaa upyoga kren.
+aapko rnga se bhri ek skrin dikhaataa hai jo dhire-dhire khud ko dusre rnga men bdl laa hai, jisse garedient bnte hain.
+agalaa garedient rot antraal
+agali skrin khaab hone se phle kitne milisekend intjar krnaa hogaaa?
+aapko aapki skrin men ek garedient dikhaataa hai.
+aapko 2di men ek sitaaraa yaatraa dikhaataa hai.
+nirdhaarit rngaon kanusaar pristhbhumi bdltaa hai, jo ek saayrn kaa anukrn krtaa hai.
+saayrn shaili
+saayrn shaili.
+ghumte hue tukdee.
+knsol ko saanp jaise rnga se bhr daa hai.
+aapko ek ikvlaaijer dikhaataa hai jo aapko baas, mdhy aur trebl dikhaataa hai.
+agali skrin vilnb miliseknd men
+vibhinn aupretinga sistm se sistm trutiyon kaa anukrn krtaa hai.
+yaadrichchhik sthaanaantrn se rnga utpnn hotaa hai.
+aapko ek paath dikhaataa hai jo fikaa pde jaataa hai aur dhdeknon men chmktaa hai.
+ydi yh sksm hai to ExcaliBeats yaadrichchhik rngaon kaa chyn kraaa. anythaa, konfiga se rngaon kaa upyoga kren.
+spst vidhaa
+tekst ko spst rup se ekskailibr men bdlen
+traans mod
+traans mod - traans sngait shaili kaa anukrn krne ke lie bipiem ko 2 se gaunaa krtaa hai
+aapko baaron men trngaon kaa ek smuh dikhaataa hai.
+aavritti str
+aavritti kaa str. yh ganit men paaee maan kaa hr hai.
+aapko ek lhr dikhaataa hai jo svyn utpnn hoti hai aur aagae bdheti hai.
+aapko ek mntrmugadh kr dene vaalaa ehsaas daa hai.
+aroraa borelis kaa anukrn krtaa hai.
+aapko ek chmkti huee bijli dikhaataa hai.
+hdaal ki snbhaavnaa
+maukaa, prtisht men, hdaal krne ke lie
+aapko dhire-dhire bdltaa pristhbhumi rnga dikhaataa hai.
+gahre rnga
+chaahe gahre rngaon kaa pryoga kren yaa hlke rngaon kaa.
+rnga chrn
+do rngaon ke bich privrtn ke lie kitne rnga chrn hain?
+aapko ek shbd aur uskaa haish yoga dikhaataa hai.
+aapko chaaron konon men ek lupt hotaa vrga dikhaataa hai.
+vrga ko lupt krne se phle kitne miliseknd tk prtiksaa krni hogai?
+snkhyaa ko snpurn skrin pr bikher daa hai.
+aapko ek boks paitrn daa hai.
+rngaon ki gairti rekhaa.
+ek nyaa gairtaa huaa rnga chhodene kaa maukaa
+aapko ek srl paath dikhaataa hai.
+aapko tekst boks men ek saadhaarn tekst dikhaataa hai.
+aapko ek shbd dikhaataa hai jo dhire-dhire likhaa jaataa hai aur uskaa haish yoga.
+ek saayrn kaa anukrn krtaa hai jo aapki thim ko rngaon ke set ke rup men upyoga krtaa hai.
+krnel thim se saayrn shaili
+aapko jhaaj ke saamne ke drishy men taaron kaa ek smuh dikhaataa hai.
+aapko jhaaj ke saamne ke drishy men dhbbon kaa ek smuh dikhaataa hai.
+aapko snpurn skrin pr bikhraa huaa ek aksr dikhaataa hai.
+aapko anek pnktiyaan dikhaataa hai.
+aapko lejer kirnen dikhaataa hai.
+aapko ek tekst dikhaataa hai jo knsol pr ghumtaa rhtaa hai.
+shaandaar paitrn bnaane ke lie lhr ko ksaitij aur lnbvt rup se ghumaaen.
+ksaitij aavritti str
+ksaitij aavritti kaa str. yh ganit men paaee maan kaa hr hai. sundr lhrdaar kundaa bnaane ke lie iskaa upyoga kren!
+lnbvt aavritti str
+oordhvaadhr aavritti kaa str. yh ganit men paaee maan kaa hr hai. sundr lhrdaar kundaa bnaane ke lie iskaa upyoga kren!
+drvaaja kholnaur bnd krne kaa anukrn krtaa hai.
+aapko gatishil rup se bdlti garedient dikhaataa hai.
+aasmaan pr ek dhumketu teji se daude rhaa hai.
+hiraa jo chmktaa hai.
+bdhete rnga kanusaar pristhbhumi kaa rnga bdlnaa. indrdhnus!
+rnga rnga sntripti
+rnga kitnaa gahraa hai?
+rnga kitnaa hlkaa hai?
+bdhete rnga kanusaar pristhbhumi kaa rnga bdlnaa. aur adhik indrdhnus!
+rnga-birngae kn!
+knon kaa ghntv
+kn kitne ghne hain?
+smy ksetr bdlne se phle taaja krnaa aavshyk hai
+smy ksetr bdlne se phle kitne baar taaja kiyaa gayaa?
+snpurn skrin ko blok dr blok bhrtaa hai aur fir use fikaa kr daa hai.
+aapko nrity pnktiyaan dikhaataa hai.
+kruskl ke elgaoridm kaa upyoga krkachchhi bhulbhulaiyaa utpnn krtaa hai.
+miliseknd men nee bhulbhulaiyaa vilnb
+pidhei ki gati
+bhulbhulaiyaa nirmaan ki gati milisekend men
+khule sthaanon ko haailaait kren
+ydi sksm kiyaa gayaa hai, to gaair-kvr sthitiyon ko gare pristhbhumi rnga se haailaait krtaa hai. anythaa, ve bkse ke rup men prstut hote hain.
+shvaartjeiyn traansfeorm kaa upyoga kren
+ydi sksm kiyaa gayaa hai, to yh skrinsevr bhulbhulaiyaa ke kinaaron ko ferne ke lie shvaartjeiyn ke traansform kaa upyoga krtaa hai. anythaa, yh privrtn ki srl vidhi kaa upyoga krtaa hai.
+knsol ke donon hisson men ghumte binduon ke do smuh.
+prtyek 1000vin prtibddhtaa kaa jshn mnaataa hai.
+aapko taare chhidekte hue dikhaataa hai.
+skrin pr do rekhaaen apnaa rnga bdl rhi hain.
+srl splaish skrin.
+ek splaish skrin jo aapki prgati dikhaati hai.
+ek splaish skrin jo aapko povrlaain tekst kaa upyoga krke prgati dikhaati hai.

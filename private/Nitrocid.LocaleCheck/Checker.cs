@@ -115,14 +115,14 @@ namespace Nitrocid.LocaleCheck
                 // Print unlocalized strings
                 foreach (string unlocalizedString in unlocalizedStrings)
                 {
-                    TextWriterColor.Write($"Unlocalized string: {unlocalizedString}", true, ConsoleColors.Yellow);
+                    TextWriterColor.WriteColor($"Unlocalized string: {unlocalizedString}", true, ConsoleColors.Yellow);
                     File.AppendAllText("unlocalized.txt", $"{unlocalizedString}\n");
                 }
                 return 0;
             }
             else
             {
-                TextWriterColor.Write("This internal program needs to be run within the Nitrocid KS repository.", true, ConsoleColors.Red);
+                TextWriterColor.WriteColor("This internal program needs to be run within the Nitrocid KS repository.", true, ConsoleColors.Red);
                 return 1;
             }
         }

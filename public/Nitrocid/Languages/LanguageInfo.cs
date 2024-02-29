@@ -170,7 +170,10 @@ namespace Nitrocid.Languages
                 {
                     string UntranslatedProperty = LanguageResourceEnglish[i];
                     string TranslatedProperty = LanguageResource[i];
-                    langStrings.Add(UntranslatedProperty, TranslatedProperty);
+                    if (langStrings.ContainsKey(UntranslatedProperty))
+                        DebugWriter.WriteDebug(DebugLevel.W, "Fix: Duplicate string found in line {0}: {1}.", i + 1, UntranslatedProperty);
+                    else
+                        langStrings.Add(UntranslatedProperty, TranslatedProperty);
                 }
                 DebugWriter.WriteDebug(DebugLevel.I, "{0} strings.", langStrings.Count);
                 strings = langStrings;
@@ -231,7 +234,10 @@ namespace Nitrocid.Languages
                 {
                     string UntranslatedProperty = LanguageResourceEnglish[i];
                     string TranslatedProperty = LanguageToken[i];
-                    langStrings.Add(UntranslatedProperty, TranslatedProperty);
+                    if (langStrings.ContainsKey(UntranslatedProperty))
+                        DebugWriter.WriteDebug(DebugLevel.W, "Fix: Duplicate string found in line {0}: {1}.", i + 1, UntranslatedProperty);
+                    else
+                        langStrings.Add(UntranslatedProperty, TranslatedProperty);
                 }
 
                 DebugWriter.WriteDebug(DebugLevel.I, "{0} strings.", langStrings.Count);

@@ -1216,3 +1216,2336 @@ Ispolʹzuyte PowerLine dlya renderinga kosmicheskogo korablya
 Meteor skorostʹ igry
 Ispolʹzovatʹ li PowerLine dlya renderinga kosmicheskogo korablya ili ispolʹzovatʹ standartnyy simvol bolʹshe, chem simvol. Yesli vy khotite ispolʹzovatʹ PowerLine s Meteor, vam neobkhodimo ustanovitʹ sootvet·stvuyushchiy shrift s podderzhkoy PowerLine.
 Opredelyayet skorostʹ igry v millisekundakh.
+Vkliuchaet rezhim otladki terminala
+Zapreshchaet iadru ispolzovat alternativnyi bufer
+Ustanavlivaet iskhodnyi iazyk predzagruzochnoi sredy.
+Prikrepliaet otladchik Visual Studio k etomu ekzempliaru Nitrocid.
+Vkliuchaet podrobnye soobshcheniia dlia sredy pered zagruzkoi.
+Skryvaet zastavku pered zagruzkoi pered zagruzkoi konfiguratsii.
+Neizvestnyi argument
+Vy dolzhny zapustit ConEmu ili komandnuiu stroku Windows 10 s vkliuchennoi obrabotkoi VT.
+Vash terminal — {0} na {1}.
+Vam podkhodiat eti pandusy? Oni dolzhny perekhodit plavno.
+Rezervnyi draiver ne naiden.
+Nevozmozhno zaregistrirovat ne-draiver ili nulevoi draiver.
+Ne udalos opredelit tip draivera po neizvestnomu tipu.
+Fail {0} ne naiden.
+Fail ili papka {0} ne naideny.
+Fail ili papka {0} po-prezhnemu zablokirovany dazhe posle ozhidaniia v techenie {1} sekund.
+Zapustite «License», chtoby prosmotret informatsiiu o litsenzii.
+Pervyi zapusk iadra
+Dobro pozhalovat v Nitrocid Kernel! Spasibo, chto poprobovali!
+Chtoby nachat, nazhmite ENTER.
+Vyberite vash iazyk
+Vyberite vash iazyk. Po umolchaniiu iadro ​​ispolzuet angliiskii iazyk, no vy mozhete vybrat zdes liuboi drugoi iazyk.
+V zavisimosti ot iazykovykh nastroek vashei sistemy podkhodiashchim iazykom iavliaetsia
+Napishite kod iazyka, ukazannyi nizhe:
+Nazhmite klavishu ENTER, chtoby prodolzhit.
+Sozdaite svoego pervogo polzovatelia
+My pomozhem vam sozdat sobstvennoe imia polzovatelia. Vyberite liuboe imia. Eto mozhet byt vash psevdonim ili korotkoe imia, esli vashe imia polzovatelia ne soderzhit probelov i spetsialnykh simvolov i eshche ne sushchestvuet. Zaregistrirovany sleduiushchie imena polzovatelei:
+Vvedite imia polzovatelia
+Vvedite parol
+Ne udalos sozdat imia polzovatelia. Pozhaluista, ubedites, chto vashe imia polzovatelia ne soderzhit probelov i spetsialnykh simvolov.
+Avtomaticheskie obnovleniia
+Nitrocid KS v nastoiashchee vremia obnovliaetsia, chtoby poluchit samuiu posledniuiu versiiu, vkliuchaiushchuiu obshchie uluchsheniia i ispravleniia oshibok. Novye osnovnye versii obychno vkliuchaiut kardinalnye izmeneniia i novye interesnye funktsii.
+Khotite, chtoby Nitrocid KS avtomaticheski proverial nalichie obnovlenii?
+Pomimo avtomaticheskoi proverki obnovlenii, Nitrocid KS takzhe mozhet avtomaticheski zagruzhat fail obnovleniia.
+Khotite, chtoby Nitrocid KS avtomaticheski zagruzhal obnovleniia?
+Vy vsegda mozhete proverit nalichie obnovlenii iadra s pomoshchiu komandy «obnovit».
+Nachat!
+Pozdravliaem! Teper u vas est uchetnaia zapis polzovatelia {0}!
+Nazhmite klavishu ENTER, chtoby nachat ispolzovat iadro, i voidite v svoiu novuiu uchetnuiu zapis. Udachi!
+Prinosim izvineniia za neudobstva, no standartnaia versiia ne rabotaet. Esli vy uvereny, chto eto defekt v rabote, soobshchite nam o sboe s pomoshchiu zhurnalov otladki.
+V liubom sluchae nazhmite liubuiu klavishu, chtoby zapustit obolochku, no uchtite, chto vam, vozmozhno, pridetsia sozdat novogo polzovatelia vruchnuiu.
+Oshibka sredy iadra:
+Nitrocid KS obnaruzhil problemu i byl otkliuchen.
+Metadannye, neobkhodimye dlia ustanovki polzovatelskogo iazyka, ne sushchestvuiut.
+Metadannye, neobkhodimye dlia udaleniia polzovatelskogo iazyka, ne sushchestvuiut.
+Skript moda ne mozhet byt nulevym.
+Zagruzka modov...
+Mody ne obnaruzheny.
+Ostanovka modov...
+Ostanovka moda {0}...
+Mod ne strogo podpisan. On mozhet soderzhat nenadezhnyi kod.
+Mod ne mozhet byt zagruzhen, tak kak sushchestvuet nesovmestimost etoi versii iadra i etogo moda:
+Vot spisok oshibok, kotorye mogut pomoch vam issledovat etu nesovmestimost:
+Modu {0} trebuetsia imenno versiia API {1}, no u vas est versiia {2}. Obnovlenie Nitrocid KS i/ili moda obychno pomogaet. Razbor moda ne udalsia.
+Mod {0} mozhet rabotat nepravilno s etoi versiei API. Mod mozhet ne zapustitsia. Sviazhites s postavshchikom moda, chtoby poluchit posledniuiu versiiu.
+U moda {0} net imeni. Razbor moda ne udalsia. Prosmotrite iskhodnyi kod.
+U moda {0} net ukazannoi versii. Razbor moda ne udalsia. Prosmotrite iskhodnyi kod.
+Mod {0} soderzhit nedopustimuiu versiiu. Razbor moda ne udalsia. Versiia byla
+Popytka izmenit sushchestvuiushchuiu uchetnuiu zapis, poka ona zablokirovana
+Pytaius dobavit nezashifrovannyi parol v spisok polzovatelei.
+Ne mogu dobavit imia polzovatelia. Ubedites, chto imia polzovatelia ne sushchestvuet.
+Ne mogu udalit imia polzovatelia. Ubedites, chto imia polzovatelia sushchestvuet.
+Iadro zhdet otladchika...
+Otladchik ne smog podkliuchitsia. V liubom sluchae nachnem...
+Ubedites, chto v vashei sisteme ustanovlen sootvetstvuiushchii otladchik, prezhde chem vy smozhete podkliuchit k nemu Nitrocid.
+Ne mogu steret fail
+Ne mogu steret fail dampa
+Sleduiushchie faily ne udaliaiutsia:
+Vy uvereny, chto udalite eti faily?
+Ne mogu steret raznye faily
+Nikakoi pomoshchi po argumentu "{0}".
+Net argumentov, spravka po opisaniiu
+Nevernyi spetsifikator tsveta RYB.
+Nevernyi spetsifikator tsveta CMY.
+Nevernyi spetsifikator tsveta CMYK.
+Nevernyi spetsifikator tsveta HSL.
+Nevernyi spetsifikator tsveta HSV.
+Nevernyi spetsifikator tsveta YIQ.
+Nevernyi spetsifikator tsveta YUV.
+Chtoby ispolzovat etu temu, vasha konsol dolzhna podderzhivat nastoiashchii tsvet.
+Vyiti iz predvaritelnogo prosmotra
+Sdelannyi
+Tipy perekliuchatelei
+Tema {0} posviashchena sobytiiu, no vy libo slishkom rano, libo slishkom pozdno prishli na nego. Kazhdyi god eta tema dostupna s {1}/{2} po {3}/{4}.
+Teme {0} nuzhna podderzhka nastoiashchikh tsvetov, no vasha konsol ee ne podderzhivaet.
+Tekst ne dolzhen byt pustym.
+Zakodirovannyi tekst ne dolzhen byt pustym.
+Put ne dolzhen byt pustym.
+Fail ne sushchestvuet.
+Dlia obieedineniia tekstovykh failov ispolzuite sootvetstvuiushchuiu funktsiiu.
+Dlia obieedineniia dvoichnykh failov ispolzuite sootvetstvuiushchuiu funktsiiu.
+Istochnik libo ne naiden, libo ne iavliaetsia failom.
+Nomer baita dolzhen nachinatsia s 1.
+Ukazannyi nomer baita nedeistvitelen.
+Nevernyi sintaksis reguliarnogo vyrazheniia.
+Tselevoi fail ili katalog ne naiden.
+Nevozmozhno perezapisat sushchestvuiushchii fail ili katalog simvolicheskoi ssylkoi.
+Nevozmozhno naiti fail, sootvetstvuiushchii stroke "{0}": {1}
+Predostavlennyi vami fail {0} ne iavliaetsia dopustimym tekstovym failom. Esli etot fail iavliaetsia failom JSON, eta funktsiia mozhet sdelat ego nechitaemym. V tseliakh bezopasnosti vashego faila eta operatsiia ostanovlena, chtoby predotvratit povrezhdenie faila.
+Predostavlennyi vami iskhodnyi fail {0} ne iavliaetsia dopustimym tekstovym failom.
+Predostavlennyi vami tselevoi fail {0} ne iavliaetsia dopustimym tekstovym failom.
+Disk ne sushchestvuet
+Razdel ne sushchestvuet
+Biblioteke proverki oborudovaniia ne udalos proverit zhestkie diski. Esli vy ispolzuete Windows, naibolee veroiatnaia prichina zakliuchaetsia v tom, chto u vas nedostatochno prav dlia dostupa k informatsii na zhestkom diske. Perezapustite Nitrocid s povyshennymi pravami administratora, chtoby imet vozmozhnost analizirovat zhestkie diski.
+Vam nuzhno budet perezapustit iadro ​​s povyshennymi pravami, chtoby imet vozmozhnost otobrazhat informatsiiu ob oborudovanii.
+Ne udalos proanalizirovat informatsiiu o protsessore. Ubedites, chto eto deistvitelnyi informatsionnyi spisok.
+Ne udalos proanalizirovat informatsiiu ob operativnoi pamiati. Ubedites, chto eto deistvitelnyi informatsionnyi spisok.
+Ne udalos proanalizirovat informatsiiu o graficheskom protsessore. Ubedites, chto eto deistvitelnyi informatsionnyi spisok.
+Ne udalos proanalizirovat informatsiiu o zhestkom diske. Ubedites, chto eto deistvitelnyi informatsionnyi spisok.
+Proizvoditel protsessora:
+Taktovaia chastota:
+Vsego iader:
+Razmery kesha:
+Obshchii obieem dostupnoi pamiati:
+Rezervnaia pamiat:
+Nomer diska:
+Razdely:
+Nomer razdela:
+Nazvanie videokarty:
+SpecProbe ne udalos proanalizirovat chast oborudovaniia. Nizhe privedeny oshibki, o kotorykh soobshchil SpecProbe:
+Nikakoi dopolnitelnoi informatsii.
+Khesh-summa faila
+Dlia etogo rasshireniia ne naiden obrabotchik rasshireniia po umolchaniiu.
+Rasshireniia dolzhny nachinatsia s tochki. Namekat:
+Net takogo realizatora.
+Rasshirenie ne ukazano.
+Imia realizatora ne ukazano.
+Obrabotchik rasshireniia ne zaregistrirovan.
+Pokhozhe, u vas ne ustanovleno dopolnenie obolochki JSON. Chtoby poluchit dopolnitelnye funktsii, kotorye on predlagaet, ustanovite paket dopolnenii.
+Pokhozhe, u vas ne ustanovleno dopolnenie obolochki SQL. Chtoby poluchit dopolnitelnye funktsii, kotorye on predlagaet, ustanovite paket dopolnenii.
+Net obrabotchika dlia obrabotki etogo rasshireniia.
+Ne udalos poluchit informatsiiu dlia {0}.
+Neizvestnaia oshibka pri dobavlenii v katalog: {0}
+Nesanktsionirovannyi
+Oshibka
+Nevozmozhno poluchit bazovuiu zapis iz nesushchestvuiushchego faila ili kataloga.
+Podderzhivaiutsia tolko tekstovye faily.
+Dostup k puti zapreshchen iz-za otsutstviia soglasiia.
+Pustoi tip puti k iadru.
+Tip puti k iadru uzhe zaregistrirovan.
+Pustoi put.
+Tip puti k iadru ne zaregistrirovan.
+Ukazhite sushchestvuiushchuiu papku dlia khraneniia trekh failov konfiguratsii.
+Ukazhite sushchestvuiushchii put k failu konfiguratsii
+Nedopustimyi klass konfiguratsii.
+Fail konfiguratsii nedeistvitelen.
+Proizoshla oshibka pri popytke prochitat konfiguratsiiu: {0}.
+Konfiguratsiia iadra ne budet rabotat dolzhnym obrazom. Nedeistvitelnye kliuchi
+Proverka ne udalas!
+Chtenie ne udalos!
+Pytaius ispravit konfiguratsiiu...
+Nevozmozhno proverit peremennye konfiguratsii, esli tip ne ukazan.
+Nevozmozhno proverit peremennye konfiguratsii, esli zapisi ne ukazany.
+Popytka zaregistrirovat polzovatelskuiu nastroiku bez soderzhimogo.
+Popytka zaregistrirovat polzovatelskuiu nastroiku s nedopustimym soderzhimym. Nedeistvitelnye kliuchi
+Popytka otmenit registratsiiu polzovatelskoi nastroiki bez imeni.
+Polzovatelskaia nastroika ne zaregistrirovana.
+Popytka zaprosit pustuiu polzovatelskuiu nastroiku.
+Tip nastroek ne naiden.
+Kliuch nastroek ne naiden, sootvetstvuiushchii ukazannoi peremennoi.
+Znachenie JSON zapisei nastroek pusto.
+Popytka zaregistrirovat bazovuiu nastroiku bez soderzhimogo.
+Popytka zaregistrirovat bazovuiu nastroiku s nedopustimym soderzhimym. Nedeistvitelnye kliuchi
+Popytka otmenit registratsiiu bazovoi nastroiki bez imeni.
+Oshibka utverzhdeniia.
+Sobytie {0} ne naideno.
+Sobytie iadra zapushcheno:
+Ukazhite dopustimoe deistvie sobytiia
+Neizvestnaia oshibka iadra.
+Ukazannyi psevdonim uzhe sushchestvuet. Ubedites, chto vy vybrali drugoi psevdonim.
+Sistema psevdonimov obnaruzhila nedopustimuiu operatsiiu pri obrabotke vashego zaprosa.
+Ukazannyi psevdonim ne naiden.
+Ukazannaia komanda ne naidena dlia psevdonima.
+Ukazannyi tip psevdonima ne naiden.
+Proizoshla oshibka pri popytke obrabotat zapros tsveta. Rasprostranennye oshibki vkliuchaiut ukazanie nepravilnogo spetsifikatora tsveta.
+Proizoshla oshibka konfiguratsii iadra.
+Proizoshla obshchaia oshibka failovoi sistemy. Ubedites, chto ukazannyi put veren i chto fail ili katalog deistvitelno sushchestvuet.
+Proizoshla obshchaia oshibka failovoi sistemy FTP. Ubedites, chto ukazannyi put veren i chto fail ili katalog deistvitelno sushchestvuet.
+Proizoshla obshchaia oshibka seti FTP. Proverte, rabotaet li vashe internet-soedinenie.
+Proizoshla obshchaia oshibka obolochki FTP.
+Proizoshla oshibka upravleniia gruppoi.
+Oshibka imeni khosta.
+Proizoshla obshchaia oshibka obolochki HTTP.
+Obnaruzhena bezumnaia konsol. Nitrocid KS ne mozhet prodolzhat rabotu, poskolku vasha konsol nesovmestima s nashimi trebovaniiami.
+Nevernyi RSS-kanal.
+Nevernaia ssylka na RSS-kanal.
+Nevernyi algoritm kheshirovaniia. Esli vy ispolzuete sobstvennyi draiver khesh-summy, ubedites, chto draiver zagruzhen.
+Nevernaia khesh-summa. Ubedites, chto vy pravilno skopirovali i vstavili khesh-summu. Esli vy ispolzuete sobstvennyi draiver khesh-summy, ubedites, chto draiver zagruzhen i rabotaet dolzhnym obrazom.
+Nevernyi put k iadru.
+Nevernaia stranitsa rukovodstva. Ubedites, chto zagruzhen mod, soderzhashchii deistvitelnye stranitsy rukovodstva.
+Nevernyi mod. Esli vash mod iavliaetsia dopustimoi sborkoi .NET, ubedites, chto on deistvitelno realizuet interfeis, neobkhodimyi dlia zapuska moda.
+Nevernyi put k failovoi sisteme. Proverte, pravilno li napisano.
+Nedopustimyi zapolnitel. Dopolnitelnuiu informatsiiu mozhno naiti v dokumentatsii iadra.
+Polzovatelskii iazyk ne udalos ustanovit. Proverte, pravilno li sformirovan iazykovoi fail. Obychno generator lokali khorosho spravliaetsia s sozdaniem informatsii o lokalizatsii dlia vashego polzovatelskogo iazyka.
+Polzovatelskii iazyk ne udalos zagruzit. Proverte, pravilno li sformirovan iazykovoi fail. Obychno generator lokali khorosho spravliaetsia s sozdaniem informatsii o lokalizatsii dlia vashego polzovatelskogo iazyka.
+Polzovatelskii iazyk ne udalos udalit.
+V pochtovoi sisteme proizoshla oshibka.
+Mod ne udalos ustanovit. Ubedites, chto eto deistvitelnyi fail moda. Esli vash mod iavliaetsia dopustimoi sborkoi .NET, ubedites, chto on deistvitelno realizuet interfeis, neobkhodimyi dlia zapuska moda.
+Mod ne soderzhit ekzempliara moda. Prokonsultiruites s postavshchikom moda po povodu novoi kopii.
+Udalenie moda ne udalos.
+Proizoshla oshibka pri popytke prochitat ili ustanovit soobshchenie dnia.
+Meropriiatiia s takim nazvaniem net.
+Iazyka s takim nazvaniem ne sushchestvuet.
+Pochtovogo kataloga s takim imenem ne sushchestvuet.
+Modov s takim nazvaniem net.
+Svoistva otrazheniia s takim imenem ne sushchestvuet.
+Peremennoi otrazheniia s takim imenem ne sushchestvuet.
+Zastavki s takim nazvaniem ne sushchestvuet.
+Predustanovki obolochki s takim imenem ne sushchestvuet.
+Net temy s takim nazvaniem.
+Vo vsem iadre nol polzovatelei. My popali v chrezvychaino redkuiu situatsiiu. Iadro ne mozhet prodolzhat rabotu.
+Proizoshla oshibka pri popytke upravliat razresheniiami.
+Ustroistvo udalennoi otladki uzhe sushchestvuet.
+Ustroistvo udalennoi otladki ne naideno. Proverte, pravilno li vy napisali IP-adres ustroistva.
+Ne udalos vypolnit operatsiiu ustroistva udalennoi otladki.
+Proizoshla oshibka seti RSS. Proverte, rabotaet li vashe internet-soedinenie.
+Proizoshla oshibka obolochki RSS.
+Vo vremia operatsii proizoshla oshibka upravleniia zastavkoi.
+Proizoshla obshchaia oshibka failovoi sistemy SFTP. Ubedites, chto ukazannyi put veren i chto fail ili katalog deistvitelno sushchestvuet.
+Proizoshla obshchaia oshibka seti SFTP. Proverte, rabotaet li vashe internet-soedinenie.
+Proizoshla obshchaia oshibka obolochki SFTP.
+Razbor uslovii ne udalsia. Pozhaluista, proverte svoi sintaksis, chtoby on sootvetstvoval ozhidaemomu dizainu operatora.
+Proizoshla oshibka pri popytke analiza faila stsenariia UESH. Proverte fail stsenariia na nalichie oshibok i ispravte ikh.
+Proizoshla oshibka sozdaniia polzovatelia.
+Proizoshla oshibka upravleniia polzovateliami.
+Proizoshla obshchaia oshibka seti. Esli vy pytaetes podkliuchitsia k udalennomu kontsu, ubedites, chto vy podkliucheny k Internetu ili k lokalnoi seti.
+Obnaruzhena nepodderzhivaemaia konsol.
+V iadre obnaruzhen sboi utverzhdeniia! Skoree vsego, eto oshibka v module iadra, kotoruiu sleduet ispravit s nashei storony.
+Vasha set dolzhna byt podkliuchena k seti, prezhde chem vy smozhete vypolniat operatsii, sviazannye s setiu. Podkliuchite setevoi adapter i povtorite popytku.
+Razreshenie otkloneno pri popytke vypolnit operatsiiu.
+Polzovatel ne sushchestvuet. Proverte, pravilno li vy napisali polzovatelia.
+Draiver ne sushchestvuet. Ubedites, chto vy pravilno napisali imia draivera i chto draiver pravilno zaregistrirovan.
+Tema eshche ne gotova. Polzovatelskii kod mog zabyt vosstanovit potok iadra posle ego ostanovki vruchnuiu.
+Operatsiia potoka nedeistvitelna v tekushchem sostoianii. Obratites k dopolnitelnomu soobshcheniiu, kotoroe dal vam menedzher potokov iadra, dlia polucheniia dopolnitelnoi informatsii.
+Predpriniata popytka nedopustimoi operatsii obolochki.
+Eta funktsiia ili funktsiia eshche ne realizovana.
+V sisteme udalennykh protsedur byla predpriniata nedopustimaia operatsiia.
+Vypolniaetsia nedopustimaia operatsiia shifrovaniia.
+Vypolniaetsia nedopustimaia operatsiia otladki.
+Vypolniaetsia nedopustimaia operatsiia arkhivirovaniia.
+Vypolniaetsia nedopustimaia operatsiia shestnadtsaterichnogo redaktora.
+Vypolniaetsia nedopustimaia operatsiia redaktora JSON.
+Vypolniaetsia nedopustimaia operatsiia tekstovogo redaktora.
+Kogda iadro ​​popytalos zagruzit ukazannyi mod, ono zaprosilo zagruzku «Kernel Simulator». Poskolku osnovnoe prilozhenie pereimenovano v Nitrocid KS, etot mod nevozmozhno zapustit bezopasno. Sovetuem vam obnovit mod.
+Pri popytke vypolnit zaproshennuiu operatsiiu proizoshla oshibka dispetchera kontaktov. Ubedites, chto fail kontaktov sushchestvuet v pravilnoi papke i chto eto deistvitelnyi fail kontaktov vCard 2.1, 3.0 ili 4.0.
+V sisteme uslovii UESH proizoshel sboi pri vypolnenii zaproshennoi operatsii. Bolee podrobnuiu informatsiiu smotrite v soobshchenii ob oshibke nizhe.
+Vypolniaetsia nedopustimaia operatsiia redaktora SQL.
+Gruppa ne sushchestvuet. Proverte, pravilno li vy napisali nazvanie gruppy.
+Proizoshla oshibka v realizatsii interaktivnogo TUI.
+Proizoshla oshibka v menedzhere polzovatelskikh nastroek dlia polzovatelei.
+Proizoshla oshibka v dispetchere setevykh podkliuchenii.
+Proizoshla obshchaia oshibka seti HTTP. Proverte, rabotaet li vashe internet-soedinenie.
+Proizoshla obshchaia oshibka dispetchera komand. Proverte, pravilno li vy napisali komandu ili tip obolochki.
+Instrument generatora lokali vozvratil oshibku pri popytke sozdat faily JSON dlia iazykov.
+Proizoshla oshibka v module vremeni i daty. Ubedites, chto vy pravilno ukazali vremia i datu i sushchestvuet li chasovoi poias.
+Proizoshla oshibka v ruchnom analizatore moda. Pozhaluista, ubedites, chto vash fail rukovodstva deistvitelen i chto mod zapushchen.
+Proizoshla oshibka v menedzhere kalendaria.
+Proizoshla oshibka v upravlenii uvedomleniiami.
+Proizoshla oshibka v upravlenii iazykom.
+Proizoshla oshibka v upravlenii modom.
+Proizoshla oshibka v sisteme otrazheniia.
+Proizoshla oshibka pri popytke vypolnit operatsiiu po upravleniiu temoi.
+Proizoshla oshibka pri popytke vypolnit operatsiiu upravleniia sobytiiami iadra.
+Proizoshla oshibka pri popytke vypolnit operatsiiu upravleniia nadstroikami iadra.
+Proizoshla oshibka pri popytke vypolnit operatsiiu po upravleniiu zametkami.
+Sboi upravleniia apparatnymi komponentami.
+Oshibka obrabotchika vkhoda. Ubedites, chto on zaregistrirovan pravilno i vypolniaet svoiu rabotu dolzhnym obrazom.
+Kodirovanie ne udalos. Ubedites, chto vash draiver kodirovaniia rabotaet pravilno, ustranite problemy, esli oni obnaruzheny, a zatem povtorite popytku.
+Nedopustimaia operatsiia soglasiia na konfidentsialnost. Ubedites, chto soglasie verno, i povtorite popytku.
+Menedzheru Splash ne udalos vypolnit zaproshennuiu vami operatsiiu. Pozhaluista, proverte imia-zastavku i povtorite popytku.
+Tekstovye instrumenty ne smogli obrabotat vash zapros.
+Nedopustimoe deistvie zapolnitelia. Dopolnitelnuiu informatsiiu mozhno naiti v dokumentatsii iadra.
+Obrabotchiku draivera ne udalos vypolnit eto deistvie, poskolku vy mogli ukazat nepravilnye parametry. Esli vy uvereny, chto oni ukazany pravilno, ubedites, chto vy ukazali pravilnoe imia i tip draivera.
+Obrabotchiku progressa ne udalos vypolnit zaproshennuiu operatsiiu.
+Konsolnoi operatsii ne udalos vypolnit trebuemuiu zadachu.
+Operatsii vedeniia zhurnala iadra ne udalos vypolnit trebuemuiu zadachu.
+Operatsiia stykovki sistemy ne smogla vypolnit trebuemuiu zadachu.
+Operatsii bezopasnosti ne udalos vypolnit trebuemuiu zadachu.
+Proizoshla oshibka pri popytke vypolnit operatsiiu upravleniia draiverom iadra.
+Oshibka v iadre, odnom iz dopolnenii iadra, odnom iz vashikh modov ili odnom iz komponentov iadra. Esli programma popytalas obrabotat vvedennye vami dannye, ubedites, chto vy pravilno zapisali vse parametry.
+Informatsiia ob iskliuchenii
+Tip oshibki
+Soobshchenie ob oshibke
+Dopolnitelnaia informatsiia
+Modul, vyzvavshii neispravnost, predostavil dopolnitelnuiu informatsiiu, kotoraia mozhet pomoch vam v dalneishem.
+Modul, vyzvavshii neispravnost, ne predostavil dopolnitelnoi informatsii.
+Podrobnosti iskliucheniia
+Esli dopolnitelnaia informatsiia, privedennaia vyshe, ne pomogaet vam opredelit problemu, eto mozhet pomoch vam opredelit ee.
+Modul ne predostavil informatsiiu ob iskliuchenii, poetomu obychno eto ukazyvaet na to, chto chto-to ne tak.
+Podrobnosti vnutrennego iskliucheniia
+Dopolnitelnye oshibki byli obnaruzheny, kogda programma pytalas vypolnit etu operatsiiu.
+Esli vy uvereny, chto eta oshibka iavliaetsia neozhidannoi, poprobuite perezapustit iadro ​​s vkliuchennoi otladkoi i izuchite zhurnaly posle povtornoi popytki deistviia.
+K sozhaleniiu, ukazan nevernyi tip soobshcheniia, poetomu vozmozhno, chto-to ne tak. Poprobuite vkliuchit otladchik i vosproizvesti problemu.
+{0} – perezagruzka cherez {1} sekund...
+Proizoshla postoiannaia oshibka iadra:
+Eta oshibka mozhet privesti k nestabilnoi rabote iadra ili prilozhenii. Vy mozhete prodolzhat ispolzovat iadro ​​na svoi strakh i risk.
+Uglublennyi analiz oshibki
+Tip iskliucheniia
+Kod oshibki
+Istochnik oshibki
+Neizvestnyi metod istochnika oshibki
+Opisanie oshibki
+Trassirovki steka
+Informatsiia ob oshibkakh iadra
+Oshibka iadra proizoshla v
+Soderzhit iskliuchenie?
+Opisanie oshibki iadra
+Analiz vnutrennei oshibki, kolichestvo
+Posledniaia vnutrenniaia oshibka iavliaetsia pervoprichinoi, kotoroi iavliaetsia chislo
+Analiz kadra
+Net kadrov dlia analiza.
+Analiz kadra ne udalsia. Nekotoraia informatsiia mozhet byt nepolnoi.
+K sozhaleniiu, ne predostavlena ​​poleznaia informatsiia ob oshibkakh, kotoraia mogla by pomoch vam proanalizirovat problemu.
+Vse potoki iadra
+Tema zhiva
+Potok — fonovyi potok.
+Potok kriticheski vazhen dlia sistemy
+Tema gotova
+Potok ostanavlivaetsia
+Vsego potokov
+Analiz potoka ne udalsia. Nekotoraia informatsiia mozhet byt nepolnoi.
+Vse potoki operatsionnoi sistemy
+Ne udalos vypolnit analiz potokov operatsionnoi sistemy. Nekotoraia informatsiia mozhet byt nepolnoi.
+Vse trassirovki potokov
+Obratnye trassirovki potoka pusty. Libo eta informatsiia nedostupna, libo proizoshla oshibka pri ee poluchenii, libo ne ustanovleno dopolnenie «Dopolnitelnaia diagnostika». Izuchite zhurnaly otladki.
+Trassirovka steka dlia potoka
+Analiz obratnoi trassirovki potoka ne udalsia. Nekotoraia informatsiia mozhet byt nepolnoi.
+Informatsiia o versii
+Bezhish ot GRILO?
+Generatoru dampa ne udalos sozdat damp oshibki iadra, vyzvannoi
+Prinosim izvineniia za neudobstva, no, pokhozhe, u iadra voznikli problemy s zagruzkoi. Privedennoe nizhe soobshchenie ob oshibke mozhet pomoch:
+Dlia dalneishego izucheniia vkliuchite rezhim otladki iadra i popytaites vosproizvesti problemu. Takzhe poprobuite izuchit poslednii sozdannyi fail dampa.
+Initsializatsiia addona iadra
+Etot addon ne iavliaetsia deistvitelnym addonom.
+Zapusk addona iadra
+Zapushchen addon iadra
+Ne udalos zapustit dopolnenie iadra.
+Ne udalos initsializirovat nadstroiku iadra.
+Ne udalos zavershit nadstroiki. Nizheukazannye dopolneniia ne udalos zavershit:
+Ne udalos ostanovit addony. Nizheukazannye addony ne udalos ostanovit:
+Ne mogu poluchit spisok funktsii
+Ne mogu poluchit spisok svoistv
+Ne mogu poluchit spisok polei
+Nevozmozhno vypolnit polzovatelskuiu funktsiiu s nesushchestvuiushchim dopolneniem.
+Nevozmozhno naiti funktsiiu «{0}» v dopolnenii «{1}».
+Nevozmozhno naiti svoistvo «{0}» v dopolnenii «{1}».
+Nevozmozhno naiti pole «{0}» v dopolnenii «{1}».
+Paket dopolnitelnykh iazykov
+Dopolnitelnyi paket zastavok
+Dopolnitelnyi paket bryzg
+Dopolnitelnyi paket tem
+Dopolnitelno - Razvlecheniia
+Dopolnitelno - Arkhivnaia obolochka
+Dopolnitelno - BassBoom
+Dopolnitelno – Kofein
+Dopolnitelno - Kalkuliatory
+Dopolnitelno - Kalendar
+Dopolnitelno - Konverter tsvetov
+Dopolnitelno - Kontakty
+Dopolnitelno - CRC32
+Dopolnitelno - Diagnostika
+Dopolnitelno - Slovar
+Dopolnitelno — dok-stantsiia
+Dopolnitelno - Prognoz
+Dopolnitelno - FTP-obolochka
+Dopolnitelno — Git Shell
+Dopolnitelno — HTTP-obolochka
+Dopolnitelno - Informatsiia ob internet-radio
+Dopolnitelno — JSON Shell
+Dopolnitelno - iazykovaia studiia
+Dopolnitelno - Pochtovaia obolochka
+Ekstra - MD5
+Dopolnitelno — NameGen
+Dopolnitelno - Primechaniia
+Dopolnitelno — RSS-obolochka
+Dopolnitelno — SFTP-obolochka
+Dopolnitelno – SHA1
+Dopolnitelno – SHA384
+Dopolnitelno — SQL Shell
+Dopolnitelno — Tematicheskaia studiia
+Dopolnitelno – Informatsiia o vremeni
+Dopolnitelno - Taimery
+Dopolnitelno — Sovety po iadru
+Dopolnitelno — spisok del
+Dopolnitelno — Konverter edinits izmereniia
+Legacy - HDD Uncleaner 2015
+Net takogo tipa dopolneniia '{0}'
+Ne udalos proverit odno ili neskolko iader TSP. Vse ravno pokazyvaiu informatsiiu...
+Ne udalos proverit odin ili neskolko chipov OZU. Vse ravno pokazyvaiu informatsiiu...
+Ne udalos vypolnit proverku odnoi ili neskolkikh videokart. Vse ravno pokazyvaiu informatsiiu...
+Ne udalos proverit odin ili neskolko zhestkikh diskov. Vse ravno pokazyvaiu informatsiiu...
+Oborudovanie ne budet analizirovatsia iz-za nedostatochnykh privilegii. Ispolzuite «winelevate», chtoby perezapustit Nitrocid v povyshennom rezhime.
+Pri proverke oborudovaniia proizoshla oshibka: {0}
+Fail zhurnala «{0}» ne sushchestvuet.
+Vyzov udalennogo upravleniia pitaniem:
+Nevozmozhno initsializirovat posledovatelnosti VT dlia vashego terminala Windows. Ubedites, chto vy ispolzuete Windows 10 ili bolee pozdniuiu versiiu.
+Ne udalos zapustit kriticheski vazhnye komponenty.
+Zapusk nitrotsida...
+Zagruzka polzovatelskikh iazykov...
+Zagruzka vazhnykh dopolnenii iadra...
+Zagruzka konfiguratsii...
+Zagruzka vazhnykh modov...
+Iadru ne udalos initsializirovat nekotorye vazhnye komponenty. Na etom etape iadro ​​ne budet rabotat dolzhnym obrazom.
+Informatsiia ob oshibke:
+Informatsiia o srede iadra
+Iadru ne udalos initsializirovat nekotorye dopolnitelnye komponenty. Esli on pytaetsia prochitat fail konfiguratsii, ubedites, chto on otformatirovan pravilno.
+Sbros obshchikh peremennykh
+Sokhranennaia istoriia komand obolochki.
+Konfiguratsiia sokhranena.
+Dopolnitelnye funktsii iadra i ikh zaregistrirovannye komponenty ostanovleny.
+Iadru ne udalos sbrosit vsiu konfiguratsiiu v iskhodnoe sostoianie. Nekotorye komponenty mogli byt vygruzheny nepravilno. Esli u vas voznikli problemy posle perezagruzki, vozmozhno, prichina v etom. Pozhaluista, vykliuchite iadro ​​posle perezagruzki.
+Do svidaniia!
+Pozhaluista, podozhdite, poka iadro ​​initsializiruet vashe oborudovanie...
+Proverka tselostnosti sistemy
+Oshibka konfiguratsii budet uvedomlena
+Oshibka konfiguratsii
+Voznikla problema s odnim iz failov konfiguratsii. Pozhaluista, proverte ego soderzhimoe.
+Initsializatsiia sistemy
+Obnovleniia iadra
+Obnaruzhenie oborudovaniia
+Dopolnitelnye komponenty
+Initsializatsiia polzovatelia
+Modifikatsii iadra
+Proverka tselostnosti sistemy
+Etap
+Rabota v rezhime obsluzhivaniia. Propusk etapa...
+Nevozmozhno povtorno sozdat potok iadra, poka tot zhe potok uzhe zapushchen.
+Deistvie zapuska dochernego potoka ne mozhet imet znachenie NULL.
+Sboi potoka iadra {0}.
+Vy ustanovili Nitrocid KS s pomoshchiu menedzhera paketov. Vmesto etogo ispolzuite ego dlia obnovleniia iadra.
+Net informatsii.
+Ne mogu otkryt fail ili papku
+Nazhmite liubuiu klavishu, chtoby zakryt eto okno.
+Stil novoi stroki:
+Binarnyi fail:
+Metadannye MIME:
+Polnoe imia
+Versiia
+Nazvanie kultury
+Tip soderzhimogo
+Fail ne iavliaetsia dopustimoi sborkoi .NET.\n
+Ne mogu poluchit informatsiiu o failovoi sisteme
+Ne mogu skopirovat fail ili katalog
+Ne mogu peremestit fail ili katalog
+Ne mogu udalit fail ili katalog
+Papka ne sushchestvuet. Ubedites, chto vy napisali pravilnyi put.
+Vvedite put ili polnyi put k papke naznacheniia, v kotoruiu nuzhno skopirovat vybrannyi fail.
+Ubedites, chto vy napisali pravilnyi put.
+Fail ne sushchestvuet. Ubedites, chto vy napisali pravilnyi put.
+Vvedite put ili polnyi put k papke naznacheniia, v kotoruiu nuzhno peremestit vybrannyi fail.
+Vvedite novoe imia faila.
+Ubedites, chto vy napisali pravilnoe imia faila.
+Fail uzhe sushchestvuet. Imia ne dolzhno byt zaniato drugim failom.
+Vvedite novoe imia kataloga.
+Papka uzhe sushchestvuet. Imia ne dolzhno byt zaniato drugoi papkoi.
+Vybrannaia zapis ne iavliaetsia failom.
+Vvedite khesh-draiver:
+Khesh-draiver ne naiden.
+Vvedite ozhidaemyi khesh
+Dva khesha sovpadaiut!
+Dva khesha ne sovpadaiut.
+Vybrano
+Imia faila
+Eto katalog
+Vybran
+Razmer faila
+Put k failu
+Vybran «{0}». Nazhmite ESC, chtoby vyiti i podtverdit vybor.
+Ne mogu otkryt papku ili vybrat fail
+Vvedite put ili polnyi put k lokalnoi papke.
+Nazhmite PROBEL, chtoby poluchit dopolnitelnuiu informatsiiu.
+Vybran «{0}». Nazhmite ESC, chtoby vyiti i podtverdit vybor.
+Nevybrannyi '{0}'. Nazhmite ESC, chtoby vyiti i podtverdit vybor.
+Net vybrannykh failov.
+Ne mogu otkryt papku
+Ne mogu vybrat papku
+Net vybrannykh papok.
+K sozhaleniiu, eta stranitsa rukovodstva ne imeet nikakogo soderzhaniia. Odnako etu dokumentatsiiu mozhno bylo naiti na veb-stranitse postavshchika moda. Esli vy vse eshche ne mozhete naiti etu dokumentatsiiu, obratites za dopolnitelnoi informatsiei k razrabotchikam moda.
+Predstavleno vam
+Dlina kontenta
+Net soderzhaniia.
+Nikakoi revizii.
+Nazvanie zastavki
+Zastavka soderzhit migaiushchie izobrazheniia.
+Identifikator zadachi
+Privilegirovannoe protsessornoe vremia
+Vremia protsessora polzovatelia
+Obshchee vremia protsessora
+Sostoianie zadachi
+Uroven prioriteta
+Adres pamiati zadachi
+Nazvanie zadachi
+Zhivoi
+Fon
+Kriticheskii
+Gotovyi
+Zadacha iadra uzhe ubita.
+Zadacha iadra iavliaetsia kriticheskoi i ne mozhet byt otmenena.
+Potoki OS ne mogut byt unichtozheny.
+Data
+Vremia
+Otobrazhaemoe imia
+Standartnoe imia
+Uspekh
+Otkaz
+Obrabotchik progressa ne mozhet byt nulevym.
+Obrabotka...
+Tip metoda ne opredelen v bazovom spiske tipov nitrotsida.
+Etogo metoda ne sushchestvuet.
+Etot metod iavliaetsia staticheskim. Ispolzuite neobieektnuiu peregruzku.
+Etot metod ne statichen. Ispolzuite peregruzku obieekta.
+Preduprezhdenie o svetochuvstvitelnom pristupe
+Eta zastavka mozhet soderzhat migaiushchie izobrazheniia i dinamichnuiu animatsiiu, kotoraia mozhet vyzvat sudorogi u svetochuvstvitelnykh liudei. Prezhde chem prodolzhit, rekomenduetsia obratitsia k meditsinskomu spetsialistu dlia polucheniia dopolnitelnoi informatsii o takikh pripadkakh. Esli vy khotite izbavitsia ot etogo preduprezhdeniia, vy mozhete otkliuchit ego v nastroikakh zastavki.
+Polzovatelskaia zastavka uzhe sushchestvuet.
+Polzovatelskaia zastavka ne naidena.
+Ne mogu zaregistrirovat pustuiu zastavku
+Ne mogu zaregistrirovat zastavku bez imeni
+Nevozmozhno zaregistrirovat vsplesk bez tochki vkhoda
+Ne mogu pereregistrirovat Splash. Snachala vam nuzhno otmenit registratsiiu etogo zastavki.
+Ne mogu otmenit registratsiiu Splash bez imeni
+Ne mogu otmenit registratsiiu nesushchestvuiushchei zastavki
+Ne udalos otobrazit zakliuchitelnuiu zastavku
+My dostigli {0}%!
+Zagruzka...
+Nevozmozhno vypolnit polzovatelskuiu funktsiiu s nesushchestvuiushchim modom.
+Nevozmozhno vypolnit polzovatelskoe svoistvo s nesushchestvuiushchim modom.
+Nevozmozhno vypolnit polzovatelskoe pole s nesushchestvuiushchim modom.
+Zavisimost neudovletvorennaia. Neudachnye zavisimosti perechisleny nizhe:
+Pytalsia zaprosit rukovodstva po nesushchestvuiushchemu modu {0}.
+Pytalsia initsializirovat vruchnuiu {0} dlia nesushchestvuiushchego moda {1}.
+Popytalsia initsializirovat fail rukovodstva {0} dlia nesushchestvuiushchego moda {1}.
+Popytalsia initsializirovat fail rukovodstva {0}, kotorogo ne sushchestvuet dlia moda {1}.
+Eto svoistvo deistvitelno tolko dlia soedinenii s potokami. Naprimer, dlia soedinenii ekzempliara vyzovite sootvetstvuiushchee svoistvo samogo ekzempliara vmesto vyzova etogo svoistva.
+Vyberite soedinenie. Esli u vas net podkliuchenii, vam pridetsia sozdat novoe podkliuchenie. Krome togo, vy mozhete ispolzovat funktsiiu bystrogo nabora dlia bystrogo podkliucheniia k serveram.
+Sozdat novoe soedinenie
+Ispolzuite bystryi nabor
+Tip podkliucheniia ne naiden
+Soedinenie ne naideno.
+Nevernaia ssylka dlia podkliucheniia.
+Ne udalos ustanovit soedinenie s {0}.
+Soedinenie eshche ne ustanovleno.
+Indeks soedineniia vykhodit za predely dopustimogo diapazona.
+Tip podkliucheniia uzhe sushchestvuet
+Obolochka {0} ne prinimaet setevye podkliucheniia.
+Vvedite adres servera:
+Vyberite soedinenie iz spiska bystrogo nabora.
+Vyberite soedinenie.
+Neizvestnaia oshibka setevoi obolochki:
+Nevozmozhno dobavit bystryi nabor nesushchestvuiushchego tipa.
+Zagruzheno {0} iz {1}.
+Trebovanie razresheniia
+Razreshenie ne predostavleno
+Nevozmozhno dat pustoe razreshenie.
+Pokhozhe, chto mod s kornevym prostranstvom imen {0} pytaetsia poluchit dostup k vashim dannym s razresheniia {1}. Vy khotite razreshit etomu modu dostup k vashim dannym?
+Vy ne ukazali sborku.
+Vy ne ukazali put sborki.
+Vy ne ukazali imia sborki.
+Ne mogu dobavit gruppu s takim zhe nazvaniem.
+Ne mogu udalit nesushchestvuiushchuiu gruppu.
+Ne mogu dobavit polzovatelia v nesushchestvuiushchuiu gruppu.
+Polzovatel uzhe prisoedinilsia k gruppe!
+Nevozmozhno udalit polzovatelia iz nesushchestvuiushchei gruppy.
+Polzovatel uzhe pokinul gruppu!
+Nevozmozhno zaprosit polzovatelia iz nesushchestvuiushchei gruppy.
+Obrabotchik vkhoda v sistemu ne naiden!
+Nepravilnoe imia polzovatelia ili imia polzovatelia ne naideno.
+Obrabotchik vkhoda v sistemu slomalsia!
+Nepravilnyi parol administratora. U vas est {0} popytok.
+Vne shansov. Perezagruzka...
+Kakoi-to vredonosnyi mod udalil uchetnuiu zapis root, ili proizoshla redkaia situatsiia, i ona ischezla.
+Ot
+Net korma.
+Ustanovite dopolnenie RSS Shell Extras!
+Nazhmite liubuiu klavishu, chtoby nachat, ili ESC, chtoby poluchit dostup k dopolnitelnym parametram...
+Ukazannyi kliuch {0} uzhe sushchestvuet.
+Ukazannyi kliuch {0} ne sushchestvuet.
+Dobro pozhalovat v Nitrocid Kernel! - Versiia
+Eta programma rasprostraniaetsia po litsenzii GNU General Public License 3.0 ili bolee pozdnei versii.
+Vy ispolzuete versiiu iadra dlia razrabotki. Khotia vy mozhete ispytat budushchie funktsii, kotorye mogut poiavitsia v finalnoi versii, vy mozhete stolknutsia s oshibkami, nestabilnostiu ili dazhe poterei dannykh. My rekomenduem ispolzovat stabilnuiu versiiu, esli eto vozmozhno.
+Vy ispolzuete versiiu iadra-kandidata na vypusk. Khotia vy mozhete vnesti poslednie shtrikhi, vy mozhete stolknutsia s oshibkami, nestabilnostiu ili dazhe poterei dannykh. My rekomenduem ispolzovat stabilnuiu versiiu, esli eto vozmozhno.
+My ne rekomenduem ispolzovat etu versiiu iadra, poskolku ona ne podderzhivaetsia. Esli vy zagruzili eto iadro ​​iz neizvestnykh istochnikov, mozhet poiavitsia eto soobshchenie. Zagruzite ego s nashei ofitsialnoi stranitsy zagruzok.
+Chtoby zakryt navsegda, libo nazhmite VVOD na knopke «Podtverzhdeno», vydeliv ee s pomoshchiu strelki vlevo na klaviature, libo vkliuchite «Uvedomlenie o razrabotke podtverzhdeno» v nastroikakh iadra.
+KHOROSHO
+Priznano
+Uvedomlenie o razrabotke
+Vy ispolzuete Nitrocid KS v neobychnoi srede. Pozhaluista, ubedites, chto vy zapustili iadro ​​napriamuiu ili cherez GRILO. Esli vy uvereny, chto zapustili iadro ​​obychnym sposobom, vozmozhno, vy ispolzuete nepodderzhivaemuiu versiiu Nitrocid KS.
+Obratite vnimanie, chto zapusk Nitrocid KS v neobychnoi srede oznachaet, chto nekotorye funktsii budut ogranicheny. Vy ne smozhete zagruzhat mody i konfiguratsii.
+Uvedomlenie o neobychnoi obstanovke
+chto vy mozhete poluchit dopolnitelnye sovety ot dopolneniia iadra, postavliaemogo s polnoi sborkoi Nitrocid?
+Sovet dlia professionalov: znaete li vy
+BASE64 ne podderzhivaet kliuchi
+BASE64 ne podderzhivaet vektory initsializatsii.
+RSA ne podderzhivaet kliuchi
+RSA ne podderzhivaet vektory initsializatsii
+Sochetaniia klavish
+Vstavliat
+Udaliat
+Zameniat
+Zamenit vse
+Zamenit vse chto
+Informatsiia o nomere
+Shestnadtsaterichnyi redaktor ne udalsia:
+Dostupnye kliuchi
+Zapishite nomer baita s shestnadtsaterichnym znacheniem.
+Ukazannyi nomer baita nedeistvitelen.
+Zapishite nomer baita shestnadtsaterichnym znacheniem, na kotoroe nuzhno zamenit {0}.
+Zapishite nomer baita s shestnadtsaterichnym znacheniem, kotoroe neobkhodimo zamenit.
+Informatsiia o nomere:
+Shestnadtsaterichnyi
+Vosmerichnyi
+Chislo
+Dvoichnyi
+Eta kombinatsiia klavish ne soderzhit nikakikh deistvii.
+Nevozmozhno vypolnit etu operatsiiu s pustym massivom.
+Vkhodit...
+Udalit stroku
+Prekratit vkhod
+Novaia liniia
+Tekstovyi redaktor ne udalsia:
+Napishite stroku, chtoby naiti
+Napishite stroku zameny
+Linii
+Stolbets
+Riad
+Bin
+Vkladka
+Nevozmozhno vypolnit etu operatsiiu so spiskom pustykh strok.
+Tip nastroek ne naiden.
+Naidite variant
+Pozvoliaet legko iskat zapis nastroek, ispolzuia ee zagolovok ili znachenie.
+Sokhranit nastroiki
+Sokhraniaet izmeneniia konfiguratsii iadra v faile konfiguratsii, kotoryi nakhoditsia v papke dannykh prilozheniia.
+Sokhranit nastroiki kak
+Sokhraniaet izmeneniia konfiguratsii iadra v faile konfiguratsii, raspolozhennom v ukazannoi papke.
+Zagruzit nastroiki iz
+Zagruzhaet konfiguratsiiu iadra iz ukazannogo faila konfiguratsii.
+Obnovit nastroiki
+Perezagruzhaet konfiguratsiiu iadra dlia liubykh vneshnikh izmenenii.
+Proverte nalichie obnovlenii sistemy
+Sistemnaia informatsiia
+Vy nakhodites na tselevoi stranitse nastroek {0}. Vyberite razdel ili optsiiu, chtoby nachat. V zavisimosti ot togo, kakie nastroiki vy izmenili, vam mozhet potrebovatsia perezapustit iadro.
+Zagruzka razdela...
+Odin ili neskolko iz sleduiushchikh parametrov, naidennykh v etom razdele, ne podderzhivaiutsia vashei platformoi:
+Nevernyi razdel. Pozhaluista, vernites.
+Nepravilnyi kliuch. Pozhaluista, vernites.
+Ishchem nastroiki...
+Eti nastroiki naideny. Pozhaluista, vyberite odin.
+Ne udalos naiti zaproshennuiu nastroiku.
+Sokhranenie nastroek...
+Sokhranenie nastroek v
+Zagruzka nastroek...
+Perezagruzka nastroek...
+Proverka obnovlenii otkliuchena v razrabatyvaemykh versiiakh.
+Versiia iadra
+Versiia API iadra
+Identifikator khosta
+Obshchii identifikator khosta
+Ty zabludilsia!
+Esli vy uvereny, chto otkryli pravilnyi razdel, vkliuchite otladchik iadra, vosproizvedite i poprobuite izuchit logi.
+Esli vy ne ponimaete privedennoe vyshe soobshchenie, vkliuchite otladchik iadra, vosproizvedite ego i popytaites izuchit zhurnaly.
+>> Udalennaia otladka: versiia
+>> Dobro pozhalovat! Vy vpervye vkhodite v udalennuiu otladku. Dlia registratsii ispolzuite «/register <imia>».
+Ustroistvo ne naideno dlia blokirovki.
+Bazovye konsolnye testy
+Testy draiverov
+Testy failovoi sistemy
+Testy osnovnykh komponentov iadra
+Iazykovye i lokalizatsionnye testy
+Raznye testy
+Testy modifikatsii iadra
+Testy setevoi sistemy
+Ispytaniia obolochki UESH
+Polzovatelskie testy
+Statistika
+Neispravnost
+Pokazyvaet tekushchuiu statistiku testirovaniia
+Vykhod iz rezhima testirovaniia i zavershenie raboty iadra
+Vyberite razdel testa dlia zapuska
+Proverit vse
+Testiruet vse fasady
+Vozvrashchaetsia k vyboru razdela
+Vyberite testovyi fasad dlia zapuska
+Etot test soderzhit neobiazatelnye parametry. Vvedite znachenie parametra, kotoryi nuzhno dobavit k parametram testa.
+Kolichestvo parametrov
+Da!
+Net
+Povtorit popytku
+Test proshel tak, kak ozhidalos?
+Test provalilsia. Ozhidaemoe znachenie — {0}, no fakticheskoe znachenie — {1}.
+Test neozhidanno provalilsia.
+Uspeshnye ispytaniia:
+Neudachnye testy:
+Testy, kotorye neobkhodimo vypolnit:
+Nomer kadra steka ne dolzhen prevyshat tekushchee kolichestvo kadrov ili ne dolzhen byt otritsatelnym.
+Nitrotsid KS
+Supervizor potokov iadra obnaruzhil {0} kriticheskikh potokov, kotorye eshche ne zapushcheny.
+Supervizor potokov iadra obnaruzhil {0} mertvykh potokov.
+Oshibka dispetchera potokov iadra
+Srabotala signalizatsiia!
+Imia trevogi pusto.
+Trevoga ne obnaruzhena.
+Nomer trevogi, otschityvaemyi ot nulia, nedeistvitelen.
+Segodnia
+Ne udalos pokazat tekushchee vremia:
+Chasovoi poias {0} ne naiden
+Chasovoi poias ne naiden.
+Paket informatsii o chasovom poiase eshche ne ustanovlen v vashei sisteme Linux. Ustanovite «tzdata» s pomoshchiu menedzhera paketov vashego distributiva.
+pozhaluista, podozhdite
+Zagruzka
+Pozhaluista, podozhdite, poka initsializiruetsia iadro.
+Pozhaluista, podozhdite, poka iadro ​​vykliuchitsia.
+Pozhaluista, podozhdite, poka iadro ​​perezagruzhaetsia
+Nachalo
+Bezopasnyi rezhim
+Rezhim otladki
+Poslednie novosti ot
+Chtoby poluchat poslednie novosti, neobkhodimo ustanovit dopolnenie RSS Shell Extras. Vy mozhete ispolzovat komandu getaddons, chtoby poluchit vse dopolneniia!
+Psevdonim {0} ne naiden dlia zaprosa.
+Ustanavlivaet vykhodnoe znachenie vybrannoi peremennoi UESH.
+Obiazatelnye argumenty ne ukazany dlia vsekh sluchaev ispolzovaniia nizhe:
+Obiazatelnye argumenty ne predostavleny.
+Neobkhodimye perekliuchateli ne predusmotreny.
+Dlia odnogo iz perekliuchatelei trebuetsia znachenie, kotoroe ne ukazano.
+Perekliuchateli, perechislennye nizhe, neizvestny.
+Perechislennye nizhe perekliuchateli konfliktuiut drug s drugom.
+Sleduiushchie perekliuchateli ne prinimaiut znacheniia.
+Odin ili neskolko argumentov ozhidaiut chislovogo znacheniia, no vy ukazali nedopustimoe chislo.
+Odin ili neskolko argumentov ozhidaiut tochnoi formulirovki, no vy ukazali nedopustimoe slovo.
+Odin ili neskolko perekliuchatelei ozhidaiut chislovoe znachenie, no vy ukazali nedopustimoe chislo.
+Obratites k etoi komande dlia polucheniia dopolnitelnoi informatsii
+Komanda prervana.
+Vy ne dolzhny napriamuiu vypolniat etu komandu v obernutom rezhime.
+Proizoshla oshibka pri popytke obernut vyvod komandy.
+Komanda prervana po sleduiushchei prichine:
+Predostavlen nevernyi shablon komandy.
+Komanda ne naidena.
+Tip obolochki {0} ne sushchestvuet.
+Vy dolzhny predostavit komandnuiu bazu.
+Vy dolzhny predostavit komandu.
+Ukazannaia komanda uzhe dobavlena! Vozmozhno u vas konfliktuiushchie mody.
+Komanda ne opredelena
+Nekotorye polzovatelskie komandy ne mogut byt zagruzheny.
+Ukazannaia polzovatelskaia komanda ne naidena.
+Nekotorye polzovatelskie komandy nevozmozhno vygruzit.
+Ukazannaia komanda uzhe dobavlena! Vozmozhno, u vas konfliktuiushchie dopolneniia.
+Nekotorye komandy dopolneniia ne mogut byt zagruzheny.
+Ukazannaia komanda dopolneniia ne naidena.
+Nekotorye komandy addona ne mogut byt vygruzheny.
+Eta obolochka ispolzuet kosuiu chertu dlia vypolneniia komand. Chtoby nachat, dobavte kosuiu chertu «/» v nachalo komandy. Naprimer:
+Dostupnye komandy:
+Komandy dopolneniia iadra:
+Nikakikh dopolnitelnykh komand iadra.
+Edinye komandy:
+Unifitsirovannye komandy ne realizovany!!!
+Komanda:
+Nikakoi pomoshchi po komande "{0}".
+Vy ne mozhete obieiavit novyi blok do razmeshcheniia vyrazhenii, podderzhivaiushchikh ego sozdanie, takikh kak usloviia ili tsikly. Nomer steka – {0}.
+Nachinaia novyi blok, ubedites, chto vy sdelali otstup v steke pravilno. Nomer steka – {0}.
+Skript nevernyi. Proverte stsenarii i ustranite vse oshibki.
+Napominanie o komandakh slesha
+Vypolniaet vneshnii protsess
+Vypolniaet protsess, ne preryvaia potok obolochki. Budet sozdano otdelnoe okno.
+Nakhodit dostupnye komandy v tekushchem tipe obolochki.
+Pokazyvaet komandy moda
+Pokazyvaet komandy s psevdonimami
+Pokazyvaet unifitsirovannye komandy
+Pokazyvaet komandy dopolneniia iadra
+Pokazyvaet vse komandy
+Ispolzuet uproshchennuiu spravku
+Zagruzhaet istoriiu obolochek
+Povtoriaet poslednee deistvie ili ukazannuiu komandu
+Sokhraniaet istoriiu obolochek
+Pokazyvaet sluchainyi sovet po iadru
+Ne udalos zapustit "{0}": {1}
+Obolochki ne mogut zapustitsia, poka ne zapustitsia materinskaia obolochka.
+Ne udalos initsializirovat obolochku
+Oshibka v administrativnoi obolochke: {0}
+Spravochnaia sistema po argumentam iadra
+Raspechatyvaet zhurnal zagruzki
+Poluchaet tekushchii zhurnal zhurnala iadra
+Perechisliaet polzovatelei
+Sokhraniaet poslednie uvedomleniia
+Manipuliruet osnovnymi flagami polzovatelia.
+Poluchaet informatsiiu o polzovatele
+Izmeniaet predpochtitelnyi iazyk polzovatelia
+Prezhde chem ispolzovat obolochku otladki, neobkhodimo vkliuchit rezhim otladki.
+Poluchaet tekushchuiu obratnuiu trassirovku
+Legko izvlekaet informatsiiu zhurnala otladki, ispolzuia nomer seansa.
+Poluchaet soobshchenie ot tipa iskliucheniia iadra. Polezno dlia otladki
+Poluchaet znachenie polia
+Poluchaet stoimost nedvizhimosti
+Perechisliaet vse dostupnye dopolneniia
+Perechisliaet vse dostupnye polia iz ukazannogo dopolneniia.
+Perechisliaet vse dostupnye funktsii iz ukazannogo dopolneniia.
+Perechisliaet vse dostupnye svoistva iz ukazannogo dopolneniia.
+Perechisliaet vse bazovye addony i ikh status.
+Perechisliaet vse dostupnye obshchedostupnye polia.
+Podavliaet soobshcheniia ob oshibkakh
+Perechisliaet vse dostupnye obshchedostupnye svoistva.
+Perechisliaet vse dostupnye obolochki
+Predvaritelnyi prosmotr zastavki
+Ukazyvaet, sleduet li testirovat funktsiiu vazhnykh soobshchenii na zastavke.
+Opredeliaet kontekst zastavki
+Dobavliaet novyi bait v ukazannuiu pozitsiiu
+Otkryvaet interaktivnyi shestnadtsaterichnyi redaktor TUI.
+Otkryvaet interaktivnyi redaktor
+Dobavliaet gruppy
+Dobavliaet polzovatelei v gruppu
+Administrativnaia obolochka
+Zvukovye signaly iz konsoli
+Pereimenovyvaet gruppu failov v vybrannyi format.
+Pechataet nomera strok riadom s soderzhimym
+Pechataet tolko soderzhimoe
+Prinuditelno obrabatyvat dvoichnye faily kak obychnyi tekst
+Poluchaet tekushchii katalog
+Chto novogo v etoi versii Nitrotsida?
+Proveriaet blokirovku faila ili papki
+Zhdet, poka fail ili papka ne budut razblokirovany.
+Meniaet iazyk
+Ispolzuet nastroiki iazyka sistemy, chtoby popytatsia opredelit iazyk po
+Izmeniaet iazyk polzovatelia vmesto iazyka sistemy.
+Stil vybora odnoi linii
+Stil vybora dvukh linii
+Sovremennyi stil vybora
+Stil vybora tablitsy
+Vyvod mozhet sostoiat tolko iz odnogo simvola
+Vyvod mozhet byt bolshe, chem simvol
+Obieediniaet dva ili bolee tekstovykh faila v konsol.
+Sravnivaet dva tekstovykh faila.
+Preobrazuet okonchaniia strok v format Windows.
+Preobrazuet okonchaniia strok v format Unix.
+Preobrazuet okonchaniia strok v format Mac OS 9.
+Prinuditelnoe preobrazovanie kontsa stroki
+Pokazyvaet tolko datu
+Pokazyvaet tolko vremia
+Ispolzuet UTC vmesto lokalnogo
+Zapuskaet obolochku otladki
+Dekodiruet zakodirovannyi fail
+Ukazyvaet kliuch
+Zadaet vektor initsializatsii
+Dekodiruet zakodirovannyi tekst
+Dekodiruet tekst iz predstavleniia BASE64.
+Predostavliaet informatsiiu o diske
+Upravliaite svoimi voditeliami
+Pechataet tekst kak est, bez analiza zapolnitelei.
+Redaktiruet fail
+Prinuditelnyi tekstovyi rezhim
+Prinuditelnyi shestnadtsaterichnyi rezhim
+Prinuditelno vkliuchaet rezhim JSON
+Prinuditelnyi rezhim SQL
+Kodiruet fail
+Kodiruet tekst
+Kodiruet tekst v predstavlenie BASE64.
+Rekursivno ishchet fail
+Vypolniaet komandu nad failom
+Nakhodit fail v ukazannom kataloge ili v tekushchem kataloge s pomoshchiu reguliarnykh vyrazhenii.
+Razvetvliaet obolochku UESH dlia sozdaniia drugogo ekzempliara.
+Ukazyvaet put vyvoda
+Poluchaet vse dopolneniia s ofitsialnoi stranitsy zagruzki i ustanavlivaet ikh.
+Pereustanavlivaet dopolneniia
+Poluchaet vse obrabotchiki rasshirenii iz vsekh rasshirenii.
+Poluchaet peremennuiu konfiguratsii i ee znachenie.
+Poluchaet obrabotchik rasshireniia po umolchaniiu iz ukazannogo rasshireniia.
+Poluchaet obrabotchiki rasshirenii po umolchaniiu iz vsekh rasshirenii.
+Poluchaet obrabotchiki rasshireniia iz ukazannogo rasshireniia.
+Poluchaet kliuch i vektor initsializatsii dlia simmetrichnogo kodirovaniia.
+Poluchaet tekushchee imia khosta
+Interaktivnyi failovyi menedzher khosta sistemy
+Pozvoliaet polzovateliu vvodit dannye v kachestve parolia
+Pokazyvaet informatsiiu o litsenzii dlia iadra
+Proveriaet skript UESH na nalichie sintaksicheskikh oshibok.
+Podavliaet razdrazhaiushchie soobshcheniia «otkazano v dostupe».
+Rekursivno vyvodit spisok papok
+Vyvodit spisok papok v vide dereva
+Perechisliaet vse dostupnye konfiguratsii
+Podrobnaia informatsiia obo vsekh konfiguratsiiakh, vkliuchaia ikh zapisi.
+Perechisliaet vse peremennye konfiguratsii i ikh znacheniia.
+Perechisliaet vse dostupnye soedineniia
+Perechisliaet dostupnye obrabotchiki rasshirenii.
+Perechisliaet vse razdely diska
+Perechisliaet vse diski
+Perechisliaet onlain-setevye ustroistva
+Predostavliaet informatsiiu o razdele ukazannogo diska.
+Nakhodit zadannoe imia faila v katalogakh poiska putei.
+Upravlenie razresheniiami dlia grupp
+Ukazyvaet kolichestvo pingov
+Poluchaet tekushchuiu platformu
+Pokazyvaet nazvanie platformy
+Pokazyvaet versiiu platformy
+Pokazyvaet bity platformy
+Pokazyvaet versiiu platformy .NET.
+Pokazyvaet identifikator sredy vypolneniia platformy .NET.
+Perezapuskaet iadro
+Perezapuskaet iadro ​​v bezopasnom rezhime.
+Perezapuskaet iadro ​​v rezhim obsluzhivaniia.
+Perezapuskaet iadro ​​v rezhime otladki.
+Bezopasnoe udalenie faila ili kataloga
+Udaliaet gruppu iz spiska
+Udaliaet polzovatelia iz gruppy
+Sokhraniaet tekushchuiu konfiguratsiiu iadra v svoi fail.
+Daet vam vozmozhnost vybrat zastavku, chtoby oprobovat ee.
+Otkryvaet nastroiki zastavki addona.
+Otkryvaet nastroiki draivera
+Otkryvaet polzovatelskie nastroiki
+Ustanavlivaet peremennuiu konfiguratsii v ukazannoe znachenie
+Ustanavlivaet obrabotchik rasshireniia po umolchaniiu dlia ukazannogo rasshireniia dlia konkretnogo realizatora.
+Otkryvaet interaktivnyi TUI, v kotorom vy smozhete videt mirovye chasy v rezhime realnogo vremeni.
+Spit v techenie ukazannykh millisekund
+Zapuskaet komandu ot imeni polzovatelia root
+Vychisliaet tekstovye summy.
+Sozdaet simvolicheskuiu ssylku na fail ili papku
+Pokazyvaet informatsiiu o sisteme
+Pokazyvaet informatsiiu ob oborudovanii
+Pokazyvaet informatsiiu o polzovatele
+Pokazyvaet soobshchenie dnia
+Pokazyvaet soobshchenie dnia posle vkhoda v sistemu
+Pokazyvaet vsiu informatsiiu
+Dispetcher zadach
+Predvaritelnyi prosmotr temy
+Vybiraet temu i ustanavlivaet ee
+Srazu ustanovit temu na vybor
+Udaliaet peremennuiu iz spiska peremennykh UESH.
+Prosto stiraet znachenie peremennoi, ne udaliaia ego.
+Pokazyvaet vremia raboty iadra
+Pokazyvaet dva poleznykh URL-adresa dlia rukovodstva.
+Poluchaet tekushchuiu versiiu
+Pokazyvaet versiiu API moda iadra.
+Pokazyvaet versiiu iadra
+Poluchaet tekushchee imia polzovatelia
+Obertyvaet tekstovyi fail
+Ukazyvaet stolbtsy v stroke
+Vy mozhete voiti v eti akkaunty:
+Udachnogo dnia
+Oshibka pri popytke ustanovit MAL: {0}
+Oshibka pri popytke poluchit MAL: {0}
+Soobshchenie dnia posle vkhoda v sistemu ne mozhet byt nulevym.
+Dobro pozhalovat v Nitrocid Kernel!
+Oshibka pri popytke ustanovit MOTD: {0}
+Oshibka pri popytke poluchit MOTD: {0}
+Soobshchenie dnia ne mozhet byt nulevym.
+Nazhmite liubuiu bukvu na klaviature, chtoby ustanovit ee na etot simvol.
+Vvedite chislo s plavaiushchei zapiatoi v priglashenii nizhe. Ubedites, chto eto chislo imeet etot format
+Vpishite naturalnoe chislo v privedennuiu nizhe podskazku.
+Ostav eto
+Uberi eto
+Dobavit novyi element
+Chto vy khotite sdelat s etim predmetom?
+Vvedite znachenie dlia novogo elementa
+Vybrano nedopustimoe deistvie.
+Napishite liuboi tekst dlia ispolzovaniia. Pomnite, sleduite opisaniiu vybrannogo vami varianta.
+Registriruet vashe imia na udalennom ustroistve otladki.
+Otkliuchaetsia ot udalennogo otladchika
+Otkliuchaet ili vkliuchaet zvuk zhurnalov iadra
+Argumentov ne khvatilo. Sm. nizhe ispolzovanie:
+>> Udalennyi chat: versiia
+>> Dobro pozhalovat! Vy vpervye vkhodite v udalennyi chat. V udalennom otladchike dlia registratsii ispolzuite «/register <imia>». Vy ne smozhete obshchatsia, poka ne zaregistriruetes.
+Skolko millisekund na samom dele potrebovalos, chtoby zasnut vsego na odnu millisekundu?
+Skolko taktov na samom dele potrebovalos, chtoby zasnut vsego na odnu millisekundu?
+Testy po izmeneniiu iazyka na predpochitaemyi vami iazyk
+Vyberite vash iazyk
+Napishite perevodimuiu stroku dlia proverki:
+Napishite put k failu spiska perevodimykh strok dlia proverki:
+Testiruet interaktivnuiu sistemu TUI s vzaimodeistviem s dvumia paneliami.
+Testiruet interaktivnuiu sistemu TUI s pomoshchiu vzaimodeistviia s odnoi paneliu.
+Testiruet interaktivnuiu sistemu TUI s vzaimodeistviem s odnoi paneliu i obnovleniem informatsii na vtoroi paneli.
+Napishite nomer tsveta ot 1 do 255:
+Vkliuchaet otladchik
+Predydushchee znachenie
+Tekushchaia stoimost
+Otkloniaet vse otpravlennye uvedomleniia
+Vkliuchaet sistemu uvedomlenii
+Testiruet funktsionalnost obnovleniia iadra
+Iadro aktualnoe?
+Proveriaet podkliuchenie k Internetu
+Dostupnost Interneta est
+Testiruet dochernii potok iadra
+Testiruet potok iadra
+Napishite poiskovyi zapros:
+Proveriaet podkliuchenie k seti
+Dostupnost seti
+Vyvesti stroku na konsol
+Raspechatat stroku v otladchike
+Raspechatat stroku v otladchike s formatirovaniem
+Vyvesti stroku na konsol s formatirovaniem
+Raspechataite stroku figlet na konsol
+Raspechataite stroku figlet na konsol s formatirovaniem
+Raspechataite stroku na konsoli s podsvetkoi
+Raspechataite razdelitel na konsoli
+Napechataite razdelitel na konsoli tsvetom
+Raspechataite razdelitel na konsoli s formatirovaniem i tsvetom.
+Raspechataite razdelitel na konsol s formatirovaniem
+Vyvedite stroku na konsol s novymi strokami v stroke
+Vyvedite na konsol stroku s nulevymi simvolami
+Vkliuchaet udalennyi otladchik
+Uvedomlenie o testirovanii
+Opisanie zdes
+Uvedomlenie o khode testirovaniia
+Otpravliaet uvedomlenie o sboe vypolneniia dlia proverki poluchatelia.
+Uvedomlenie o neudachnom teste
+Testovoe neopredelennoe uvedomlenie
+Otpravliaet uvedomlenie v vide zvezdochki dlia proverki poluchatelia.
+Protestiruite prostoe uvedomlenie
+Argumenty testov
+Testiruet kriptograficheski bezopasnyi generator sluchainykh chisel.
+Vozvrashchennye chisla:
+Testiruet sobytie
+Napishite nazvanie sobytiia:
+Propishite put k failu sborki:
+Testiruet selektor failov
+Vy vybrali
+Testiruet selektor neskolkikh failov
+Testiruet selektor papok
+Testiruet selektor neskolkikh papok
+Testiruet knopki v informatsionnom okne
+Proveriaet tsvetnoe pole vvoda v informatsionnom pole.
+Proveriaet pole vvoda v informatsionnom pole
+Proveriaet stil mnozhestvennogo vybora vvoda v informatsionnom okne.
+Proveriaet stil vybora vvoda v informatsionnom okne.
+Testiruet stil mnozhestvennogo vybora vvoda
+Proveriaet stil vybora vvoda
+Testiruet sredstvo zapisi zapisi spiska
+Otstup 1:
+Otstup 2:
+Testiruet sistemu prezentatsii
+Testiruet obrabotchik progressa
+Initsializatsiia...
+Napishite stroku dlia proverki:
+Napishite reguliarnoe vyrazhenie:
+Testiruet generator sluchainykh chisel
+Testiruet funktsiiu ekrana dlia konsoli.
+Ekran ne udalos otobrazit:
+Testy perekliuchatelei
+Zapolnitel ne mozhet byt nulevym
+Deistvie zapolnitelia ne mozhet byt nulevym.
+Zapolnitel ne zaregistrirovan
+Zapolnitel dolzhen sootvetstvovat etomu formatu
+Uslovie nuzhno postavit v kontse.
+Nevozmozhno zaregistrirovat uzhe sushchestvuiushchee uslovie.
+Nevozmozhno zaregistrirovat pustoe uslovie.
+Nevozmozhno otmenit registratsiiu nesushchestvuiushchego usloviia.
+Vy ne mozhete vyiti iz materinskoi obolochki. Vy imeli v vidu vyiti iz svoei uchetnoi zapisi, vykliuchit iadro ​​ili perezagruzit ego?
+Komandy ne naideny.
+Nedopustimoe kolichestvo raz.
+Ne mogu povtorit sebia.
+Nomer seansa nedeistvitelen.
+Ukazannyi tip osnovnogo flaga nedeistvitelen.
+Polnoe imia ustanovleno kak {0}. Vozmozhno, vy zakhotite voiti v sistemu eshche raz.
+Polnoe imia pusto.
+Osnovnaia informatsiia o polzovatele
+Predpochtitelnyi iazyk
+Flagi
+Razresheniia
+Gruppy
+Predpochtitelnyi iazyk polzovatelia ustanovlen na {0}. Vozmozhno, vy zakhotite voiti v sistemu eshche raz.
+Administratorskaia obolochka
+Nevernyi nomer seansa
+Net takogo nomera seansa
+Net takogo tipa iskliucheniia
+Imia tipa iskliucheniia
+Soobshchenie
+Informatsiia o pole dlia
+Tsenit
+Ne udalos poluchit informatsiiu o pole dlia
+Informatsiia o nedvizhimosti dlia
+Ne udalos poluchit informatsiiu o nedvizhimosti dlia
+Kod simvola nazhatoi klavishi
+Spisok polei dlia
+Spisok funktsii dlia
+Spisok nedvizhimosti dlia
+Spisok dopolnenii
+Spisok bazovykh addonov
+Spisok obolochek
+Kontekst zastavki nedeistvitelen.
+Dostupnye spleshi:
+Eta komanda ne podderzhivaetsia v Windows.
+Otladochnaia obolochka
+Vvedite v otdelnoi stroke bait, kotoryi vy khotite dobavit v konets faila. Kogda vy zakonchite, napishite «EOF» na otdelnoi stroke.
+Ukazannyi nomer baita {0} ne iavliaetsia dopustimym chislom.
+Vvedite tekst, kotoryi vy khotite dobavit v konets faila. Kogda vy zakonchite, napishite «EOF» na otdelnoi stroke.
+Sozdanie gruppy {0}...
+Dobavlenie polzovatelia {0} v gruppu {1}...
+Teper vy mozhete zapuskat «{0}» kak «{1}»!
+Atribut "{0}" nedeistvitelen.
+Fail ili papka uzhe ispolzuetsia.
+Ozhidanie, poka fail ili papka ne razblokiruiutsia...
+Fail ili papka ne ispolzuetsia.
+Vozmozhno, vam pridetsia vyiti iz sistemy i snova voiti v nee, chtoby izmeneniia vstupili v silu.
+Izmenenie MAL...
+Izmenenie MTD...
+Paroli ne sovpadaiut.
+Nevozmozhno obieedinit tekstovye i dvoichnye faily.
+Iskhodnyi fail ne sushchestvuet.
+Tselevoi fail ne sushchestvuet.
+Eti dva faila identichny.
+Eti dva faila raznye.
+Drugoi
+Nevozmozhno preobrazovat okonchaniia strok v dvoichnom faile, poskolku eto privodit k povrezhdeniiu faila.
+Draiver ne naiden.
+Draivery dlia
+Imia voditelia
+Nazvanie tipa draivera
+Tip draivera
+Upravlenie draiverami otkliucheno v bezopasnom rezhime.
+Nevozmozhno redaktirovat fail {0}, poskolku on ne naiden.
+Ispolzuemyi kliuch
+Ispolzuemyi vektor initsializatsii
+Informatsiia o sborke .NET
+Fail ne iavliaetsia dopustimoi sborkoi .NET.
+Dopolnitelnaia informatsiia
+Pozhaluista, ispolzuite «ftp», esli vy sobiraetes zagruzhat faily s FTP-servera.
+Nekotorye ili vse vashi dopolneniia byli ustanovleny. Esli vy khotite pereustanovit ikh, ispolzuite kliuch -reinstall.
+Poluchenie paketa dopolnenii...
+Ne udalos poluchit paket dopolneniia.
+Zagruzka paketa dopolnenii...
+Ne udalos zagruzit paket dopolnenii.
+Ustanovka paketa dopolnenii...
+Ne udalos ustanovit paket dopolnenii.
+Rasshirenie
+Obrabotchik rasshireniia
+Imia kliucha
+Opisanie kliucha
+Tip kliucha
+Kliuchevaia peremennaia
+Kliuch ne naiden.
+Konfiguratsiia ne naidena.
+Dostupnye tipy konfiguratsii
+Net takogo rasshireniia.
+Obrabotchik rasshireniia po umolchaniiu
+Podderzhivaiutsia tolko algoritmy simmetrichnogo kodirovaniia, ispolzuiushchie kak kliuch, tak i vektor initsializatsii.
+Proverka stsenariia vypolnena uspeshno.
+Proverka stsenariia ne udalas. Skoree vsego, eto sintaksicheskaia oshibka. Proverte vash skript na nalichie oshibok i povtorite zapusk lintera.
+Linter stsenariev neozhidanno poterpel neudachu pri popytke proanalizirovat vash stsenarii.
+Informatsiia dlia
+Kolichestvo zapisei
+Imia zapisi
+Otobrazhenie kak
+Opisanie
+Kolichestvo kliuchei
+Ispolzuite komandu {0}, chtoby poluchit otdelnye kliuchi.
+Peremennye konfiguratsii dlia
+Soedineniia dlia tipa
+Primer
+Informatsiia ob obrabotchike rasshireniia dlia
+Razrabotchik obrabotchika
+Metadannye obrabotchika
+Soderzhit funktsiiu-obrabotchik
+Soderzhit funktsiiu obrabotchika informatsii
+Neizvestnyi khost
+Fail naiden po puti:
+Fail ne naiden v katalogakh poiska puti.
+Net takogo razresheniia
+Net takogo rezhima razresheniia
+Pozhaluista, ispolzuite «ftp», esli vy sobiraetes zagruzhat faily na FTP-server.
+Gruppa {0} udalena.
+Udalen {0} iz gruppy {1}.
+Dostupnye zastavki:
+Poisk {0} po zaprosu {1} ​​ne udalsia.
+Vy dolzhny peredat kliuch -set vmeste s peremennoi, kotoroi vy khotite ustanovit eto znachenie.
+gde budet zastavka
+Chtoby poluchit dopolnitelnye zastavki, ustanovite nadstroiku paketa zastavok.
+Chtoby poluchit dopolnitelnye zastavki, ustanovite nadstroiku paketa zastavki.
+Vy mozhete ispolzovat perekliuchatel tipa, chtoby otkryt sleduiushchie nastroiki
+Bazovye nastroiki
+Polzovatelskie nastroiki
+Vy uzhe superpolzovatel!
+Ne udalos vypolnit komandu ot imeni superpolzovatelia.
+Ne mogu sdelat simvolicheskuiu ssylku.
+Nastroiki iadra
+Versiia iadra:
+Rezhim otladki:
+Beg ot GRILO:
+Zapusk v obychnoi srede:
+Bezopasnyi rezhim:
+Nastroiki oborudovaniia
+Ispolzuite «hwinfo» dlia polucheniia rasshirennoi informatsii ob oborudovanii.
+Polzovatelskie nastroiki
+Tekushchee imia polzovatelia:
+Tekushchee imia khosta:
+Dostupnye imena polzovatelei:
+Vyberite kategoriiu
+Nazad
+Istekshii
+Dostupnyi
+Vyberite temu
+Khotite ustanovit etu temu?
+Da, stav!
+Net, ne ustanavlivaite.
+Chtoby poluchit dostup k rukovodstvu polzovatelia po obshchemu ispolzovaniiu nitrotsida, pereidite po ssylke nizhe:
+Chtoby poluchit dostup k rukovodstvu razrabotchika s obnovlennymi sposobami vneseniia izmenenii v iadro ​​i zastavkami, pereidite po ssylke nizhe:
+Vy uzhe provodite seans povyshennogo nitrotsida!
+Povyshenie effektivnosti seansa nitrotsida...
+Eta komanda nedostupna dlia vashei platformy.
+Nedopustimoe kolichestvo stolbtsov.
+Neispravnost
+Perezapusk
+Avtorizovatsia
+Chto ty khochesh delat?
+Vyberite uchetnuiu zapis polzovatelia, pod kotoroi vy khotite voiti.
+Vvedite parol dlia polzovatelia
+Nepravilnyi parol dlia polzovatelia.
+Uspeshno zaregistrirovan! Privet, {0}!
+Net opisaniia komandy udalennoi otladki
+Ukazan nedopustimyi tip dannykh {0}.
+Ukazana nedeistvitelnaia platforma {0}.
+Vy podderzhivaete ne tu loshad?
+Zapuskaet igru Palach.
+Odna nepravilnaia bukva i ty povesilsia!
+Proverte svoi navyki Palacha, brosiv sluchainoe pismo.
+Vy kosmicheskii korabl, i meteory priblizhaiutsia, chtoby unichtozhit vas. Smozhete li vy uvernutsia ot nikh?
+Poluchaet sluchainuiu tsitatu
+Russkaia ruletka
+Dva kosmicheskikh korablia srazhaiutsia drug s drugom. Odin vystrel i kosmicheskii korabl vzorvetsia. Eto lokalnaia igra dlia dvukh igrokov.
+Simuliator igry Wordle
+Igraite v igru Wordle iznachalno
+Otmechaet 5-letie vypuska iadra
+Otkryvaet fail arkhiva v obolochke arkhiva.
+Poluchaet vse stroki teksta iz faila teksta.
+Otkryvaet interaktivnyi muzykalnyi proigryvatel
+Vosproizvodit fail s tekstom pesni
+Vosproizvodit zvuk
+Dobavliaet budilnik, kotoryi opovestit vas, kogda chashka chaia ili kofe budet gotova.
+Otmeniaet signal trevogi, kotoryi preduprezhdaet vas, kogda chashka chaia ili kofe gotova.
+Pokazat informatsiiu o formule mnimogo chisla, zadannoi ukazannym deistvitelnym i mnimym chislom.
+Menedzher kalendaria, sobytii i napominanii
+Tip kalendaria dlia raboty
+Ispolzuite tablichnoe sredstvo prosmotra kalendaria
+Preobrazuet shestnadtsaterichnoe predstavlenie tsveta v chisla RYB.
+Preobrazuet shestnadtsaterichnoe predstavlenie tsveta v chisla RYB v formate KS.
+Preobrazuet shestnadtsaterichnoe predstavlenie tsveta v chisla CMYK.
+Preobrazuet shestnadtsaterichnoe predstavlenie tsveta v chisla CMYK v formate KS.
+Preobrazuet shestnadtsaterichnoe predstavlenie tsveta v chisla CMY.
+Preobrazuet shestnadtsaterichnoe predstavlenie tsveta v chisla CMY v formate KS.
+Preobrazuet shestnadtsaterichnoe predstavlenie tsveta v chisla HSL.
+Preobrazuet shestnadtsaterichnoe predstavlenie tsveta v chisla HSL v formate KS.
+Preobrazuet shestnadtsaterichnoe predstavlenie tsveta v chisla HSV.
+Preobrazuet shestnadtsaterichnoe predstavlenie tsveta v chisla HSV v formate KS.
+Preobrazuet shestnadtsaterichnoe predstavlenie tsveta v chisla YIQ.
+Preobrazuet shestnadtsaterichnoe predstavlenie tsveta v chisla YIQ v formate KS.
+Preobrazuet shestnadtsaterichnoe predstavlenie tsveta v chisla YUV.
+Preobrazuet shestnadtsaterichnoe predstavlenie tsveta v chisla YUV v formate KS.
+Preobrazuet tsvetovye chisla RGB v CMYK.
+Preobrazuet tsvetovye chisla RGB v CMYK v formate KS.
+Preobrazuet tsvetovye chisla RGB v CMY.
+Preobrazuet tsvetovye chisla RGB v CMY v formate KS.
+Preobrazuet tsvetovye chisla RGB v HSL.
+Preobrazuet tsvetovye chisla RGB v HSL v formate KS.
+Preobrazuet tsvetovye chisla RGB v HSV.
+Preobrazuet tsvetovye chisla RGB v HSV v formate KS.
+Preobrazuet tsvetovye chisla RGB v RYB.
+Preobrazuet tsvetovye chisla RGB v RYB v formate KS.
+Preobrazuet tsvetovye chisla RGB v YIQ.
+Preobrazuet tsvetovye chisla RGB v YIQ v formate KS.
+Preobrazuet tsvetovye chisla RGB v YUV.
+Preobrazuet tsvetovye chisla RGB v YUV v formate KS.
+Preobrazuet tsvetnye chisla RYB v shestnadtsaterichnye.
+Preobrazuet tsvetovye nomera RYB v CMYK.
+Preobrazuet tsvetnye chisla RYB v CMYK v formate KS.
+Preobrazuet tsvetovye chisla RYB v CMY.
+Preobrazuet tsvetnye chisla RYB v CMY v formate KS.
+Preobrazuet tsvetnye chisla RYB v HSL.
+Preobrazuet tsvetnye chisla RYB v HSL v formate KS.
+Preobrazuet tsvetnye chisla RYB v HSV.
+Preobrazuet tsvetnye chisla RYB v HSV v formate KS.
+Preobrazuet tsvetovye chisla RYB v RGB.
+Preobrazuet tsvetnye chisla RYB v RGB v formate KS.
+Preobrazuet tsvetnye chisla RYB v YIQ.
+Preobrazuet tsvetnye chisla RYB v YIQ v formate KS.
+Preobrazuet tsvetovye chisla RYB v YUV.
+Preobrazuet tsvetnye chisla RYB v YUV v formate KS.
+Preobrazuet tsvetnye chisla HSL v shestnadtsaterichnye.
+Preobrazuet tsvetovye nomera HSL v CMYK.
+Preobrazuet tsvetnye nomera HSL v CMYK v formate KS.
+Preobrazuet tsvetovye nomera HSL v CMY.
+Preobrazuet tsvetnye nomera HSL v CMY v formate KS.
+Preobrazuet tsvetnye nomera HSL v HSV.
+Preobrazuet tsvetnye nomera HSL v HSV v formate KS.
+Preobrazuet tsvetovye chisla HSL v RGB.
+Preobrazuet tsvetnye chisla HSL v RGB v formate KS.
+Preobrazuet tsvetnye nomera HSL v RYB.
+Preobrazuet tsvetnye nomera HSL v RYB v formate KS.
+Preobrazuet tsvetnye chisla HSL v YIQ.
+Preobrazuet tsvetnye chisla HSL v YIQ v formate KS.
+Preobrazuet tsvetovye nomera HSL v YUV.
+Preobrazuet tsvetnye nomera HSL v YUV v formate KS.
+Preobrazuet tsvetnye chisla HSV v shestnadtsaterichnye.
+Preobrazuet nomera tsvetov HSV v CMYK.
+Preobrazuet tsvetnye nomera HSV v CMYK v formate KS.
+Preobrazuet nomera tsvetov HSV v CMY.
+Preobrazuet nomera tsvetov HSV v CMY v formate KS.
+Preobrazuet tsvetnye nomera HSV v HSL.
+Preobrazuet tsvetnye nomera HSV v HSL v formate KS.
+Preobrazuet tsvetovye chisla HSV v RGB.
+Preobrazuet tsvetovye chisla HSV v RGB v formate KS.
+Preobrazuet nomera tsvetov HSV v RYB.
+Preobrazuet tsvetnye nomera HSV v RYB v formate KS.
+Preobrazuet tsvetnye chisla HSV v YIQ.
+Preobrazuet tsvetnye chisla HSV v YIQ v formate KS.
+Preobrazuet nomera tsvetov HSV v YUV.
+Preobrazuet tsvetnye nomera HSV v YUV v formate KS.
+Preobrazuet tsvetnye chisla CMYK v shestnadtsaterichnye.
+Preobrazuet tsvetnye chisla CMYK v RGB.
+Preobrazuet tsvetnye chisla CMYK v RGB v formate KS.
+Preobrazuet tsvetnye chisla CMYK v RYB.
+Preobrazuet tsvetnye chisla CMYK v RYB v formate KS.
+Preobrazuet tsvetnye chisla CMYK v HSL.
+Preobrazuet tsvetnye chisla CMYK v HSL v formate KS.
+Preobrazuet tsvetnye chisla CMYK v HSV.
+Preobrazuet tsvetnye chisla CMYK v HSV v formate KS.
+Preobrazuet tsvetnye chisla CMYK v CMY.
+Preobrazuet tsvetnye chisla CMYK v CMY v formate KS.
+Preobrazuet tsvetnye chisla CMYK v YIQ.
+Preobrazuet tsvetnye chisla CMYK v YIQ v formate KS.
+Preobrazuet tsvetnye chisla CMYK v YUV.
+Preobrazuet tsvetnye chisla CMYK v YUV v formate KS.
+Preobrazuet tsvetnye chisla CMY v shestnadtsaterichnye.
+Preobrazuet tsvetovye chisla CMY v CMYK.
+Preobrazuet tsvetnye chisla CMY v CMYK v formate KS.
+Preobrazuet tsvetovye chisla CMY v HSL.
+Preobrazuet tsvetnye chisla CMY v HSL v formate KS.
+Preobrazuet tsvetovye chisla CMY v HSV.
+Preobrazuet tsvetnye chisla CMY v HSV v formate KS.
+Preobrazuet tsvetovye chisla CMY v RGB.
+Preobrazuet tsvetnye chisla CMY v RGB v formate KS.
+Preobrazuet tsvetnye chisla CMY v RYB.
+Preobrazuet tsvetnye chisla CMY v RYB v formate KS.
+Preobrazuet tsvetovye chisla CMY v YIQ.
+Preobrazuet tsvetnye chisla CMY v YIQ v formate KS.
+Preobrazuet tsvetovye chisla CMY v YUV.
+Preobrazuet tsvetnye chisla CMY v YUV v formate KS.
+Preobrazuet tsvetnye chisla YIQ v shestnadtsaterichnye.
+Preobrazuet tsvetovye chisla YIQ v CMYK.
+Preobrazuet tsvetnye chisla YIQ v CMYK v formate KS.
+Preobrazuet tsvetovye chisla YIQ v CMY.
+Preobrazuet tsvetovye chisla YIQ v CMY v formate KS.
+Preobrazuet tsvetnye chisla YIQ v HSL.
+Preobrazuet tsvetnye chisla YIQ v HSL v formate KS.
+Preobrazuet tsvetnye chisla YIQ v HSV.
+Preobrazuet tsvetnye chisla YIQ v HSV v formate KS.
+Preobrazuet tsvetovye chisla YIQ v RGB.
+Preobrazuet tsvetovye chisla YIQ v RGB v formate KS.
+Preobrazuet tsvetnye chisla YIQ v RYB.
+Preobrazuet tsvetnye chisla YIQ v RYB v formate KS.
+Preobrazuet tsvetovye chisla YIQ v YUV.
+Preobrazuet tsvetnye chisla YIQ v YUV v formate KS.
+Preobrazuet tsvetnye chisla YUV v shestnadtsaterichnye.
+Preobrazuet tsvetovye nomera YUV v CMYK.
+Preobrazuet tsvetovye nomera YUV v CMYK v formate KS.
+Preobrazuet tsvetovye nomera YUV v CMY.
+Preobrazuet tsvetovye nomera YUV v CMY v formate KS.
+Preobrazuet tsvetovye nomera YUV v HSL.
+Preobrazuet tsvetnye nomera YUV v HSL v formate KS.
+Preobrazuet tsvetovye nomera YUV v HSV.
+Preobrazuet tsvetnye nomera YUV v HSV v formate KS.
+Preobrazuet tsvetovye chisla YUV v RGB.
+Preobrazuet tsvetovye chisla YUV v RGB v formate KS.
+Preobrazuet tsvetovye nomera YUV v RYB.
+Preobrazuet tsvetnye nomera YUV v RYB v formate KS.
+Preobrazuet tsvetovye chisla YUV v YUV.
+Preobrazuet tsvetnye chisla YUV v YIQ v formate KS.
+Upravliaet vashimi kontaktami
+Poluchaet obratnuiu trassirovku dlia vsekh potokov
+Pokazyvaet polnoekrannyi obzor vybrannogo vida zakrepleniia, chtoby ego mozhno bylo ispolzovat v kachestve informatsionnoi paneli.
+Git-obolochka
+Poluchaet informatsiiu o vashei onlain-radiostantsii.
+Pokazyvaet raznitsu mezhdu dvumia failami JSON.
+Sozdaet novyi iazyk
+Otkryvaet pochtovyi klient IMAP.
+Otkryvaet pochtovyi klient POP3.
+Pochta POP3 vozvrashchaetsia iz versii 0.0.20.0, no v nastoiashchee vremia my ne planiruem vypuskat ee v etoi versii. Zhdite sleduiushchei versii.
+Poisk po imeni
+Sozdavaite imena, ispolzuia spisok muzhskikh imen.
+Sozdavaite imena, ispolzuia spisok zhenskikh imen.
+Generiruite imena, ispolzuia spisok unifitsirovannykh imen.
+Poisk familii
+Dobavliaet zametku
+Udaliaet zametku
+Udaliaet vse zametki
+Perechisliaet vse zametki
+Sokhraniaet vse zametki
+Perezagruzhaet vse zametki
+Prosmotrshchik zametok TUI
+Vvedite URL-adres RSS-kanala
+Oshibka pri popytke analiza adresa. Ubedites, chto vy pravilno napisali adres.
+Otkryvaet interaktivnyi interfeis chteniia RSS-kanalov TUI.
+Poluchaet tekushchuiu informatsiiu o date i vremeni
+chto vy mozhete vypolniat komandy protsessa dvumia sposobami: napriamuiu vvodia imia ispolniaemogo faila i ispolzuia komandu «exec»?
+chto vy mozhete zablokirovat ekran s pomoshchiu komandy «lockscreen»?
+chto vy mozhete sozdavat svoi sobstvennye modifikatsii iadra, ispolzuia C# i Visual Basic?
+chto vy mozhete ispolzovat neskolko komand, ispolzuia tochku s zapiatoi mezhdu komandami?
+chto vy mozhete izbezhat dvoinykh kavychek vnutri argumentov v kavychkakh pri vypolnenii komand?
+chto vy mozhete izmenit nastroiki iadra s pomoshchiu komandy «Nastroiki»?
+chto vy mozhete sokhranit svoi ekran s pomoshchiu komandy savescreen?
+chto vy mozhete soobshchat nam ob oshibkakh, pereidia na stranitsu proekta Nitrocid na GitHub?
+chto vy mozhete sozdat iarlyk dlia nuzhnoi komandy, ispolzuia komandu «psevdonim»?
+chto vy mozhete sozdat svoi sobstvennyi ekran-zastavku, ispolzuia C# i Visual Basic?
+chto vy mozhete ustanovit dopolnitelnye dopolneniia, chtoby sdelat vashe iadro ​​bolee poleznym i interesnym?
+chto vy mozhete sozdavat svoi sobstvennye potriasaiushchie temy s pomoshchiu komandy mktheme?
+chto vy mozhete izmenit tsveta iadra, ispolzuia komandu «Nastroiki» ili odnu iz gotovykh tem?
+chto vy mozhete sbrosit iadro ​​do zavodskikh nastroek po umolchaniiu, ispolzuia argument «sbros»?
+chto vy mozhete poluchit dostup k nashei obshirnoi dokumentatsii na nashei stranitse GitBook?
+chto dolgosrochnye vypuski podderzhivaiutsia v techenie piati let dlia osnovnoi podderzhki i trekh let dlia obnovlenii bezopasnosti?
+chto 0.0.1 byla samoi pervoi versiei Nitrocid KS, vypushchennoi 22 fevralia 2018 goda?
+chto seriia 0.0.24.x byla edinstvennoi seriei versii, soderzhashchei versiiu API v2.1?
+chto kratkosrochnye vypuski podderzhivaiutsia vsego deviat mesiatsev?
+chto seriia 0.1.x obratno nesovmestima s seriei 0.0.24.x ili starshe?
+chto vy mozhete zapustit Nitrocid KS na Linux, macOS i Android?
+chto vy mozhete obratitsia k dokumentatsii API, chtoby pomoch vam sozdavat svoi mody?
+chto vy smozhete poluchit neskolko zamechatelnykh igr, takikh kak Hangman i ShipDuet, ustanoviv dopolnitelnye dopolneniia?
+chto v «Meteore» esli vy poterpite krushenie v krasnoi meteoritnoi bure, vash kosmicheskii korabl razobetsia?
+chto vy mozhete preobrazovat svoe iadro ​​v informatsionnye tsentry, ispolzuia funktsiiu stykovki?
+chto vy mozhete sozdavat gruppy polzovatelei dlia organizatsii uchetnykh zapisei polzovatelei?
+chto esli vy iavliaetes chlenom gruppy, predostavliaiushchei opredelennye razresheniia, vam razresheno vypolniat takie operatsii?
+chto vy mozhete izmenit chasovoi poias iadra, ne zatragivaia vashu khost-sistemu?
+chto vy mozhete ispolzovat interaktivnyi tekstovyi i shestnadtsaterichnyi redaktor, chtoby sekonomit vremia?
+chto samyi staryi tekstovyi redaktor, kotoryi, kak izvestno, rabotal s pervoi sistemoi Unix, - eto ed, samyi rannii tekstovyi redaktor, vypushchennyi v 1973 godu i postavliaemyi s sistemoi Unix, naidennyi na PDP-7 v AT&T Bell Labs?
+chto vy takzhe mozhete zastavit komandu redaktirovaniia zapuskat redaktor opredelennogo tipa?
+chto interaktivnyi tekstovyi redaktor pytaetsia imitirovat samye osnovnye funktsii samykh populiarnykh tekstovykh redaktorov Unix, vi i vim?
+chto, esli vy ne znaete, chto delaete s dvoichnym failom, redaktirovanie takogo faila takim obrazom privedet k povrezhdeniiu dannykh ili potere dannykh v tselevom faile?
+chto v sistemakh Linux obolochka zapuskaetsia kak s pomoshchiu obrabotchika vkhoda v sistemu, tak i s pomoshchiu programmy initsializatsii sistemy, obychno nakhodiashcheisia v /sbin/init?
+chto vy mozhete vypolniat tipichnye operatsii s failami, takie kak kopirovanie, peremeshchenie, udalenie, redaktirovanie i t. d.?
+chto interaktivnyi interfeis failovogo menedzhera imitiruet funktsionalnost Midnight Commander?
+chto esli iadro ​​vykhodit iz stroia, ono obychno sozdaet fail dampa?
+chto vy mozhete diagnostirovat iadro, otladiv ego s pomoshchiu vstroennoi funktsii otladki?
+chto mozhno skachivat i zagruzhat faily priamo iz obolochki UESH?
+chto iadro ​​mozhno translirovat dazhe na etape predvaritelnoi zagruzki, zapustiv ego s argumentom lang?
+chto vy mozhete sozdavat svoi sobstvennye zastavki, registriruia ikh v svoem mode?
+chto pervaia zastavka, kotoraia gasila ekran posle trekh minut bezdeistviia na originalnykh kompiuterakh IBM PC, scrnsave, byla sozdana v 1983 godu Dzhonom Socha?
+chto nekotorye iz dinamichnykh zastavok mogut vyzvat svetochuvstvitelnye pripadki?
+chto zhurnaly iadra ispolzuiutsia v kachestve zhurnalov zagruzki i zaversheniia raboty?
+chto vy mozhete smodelirovat zagruzku zagruzchika Nitrocid s pomoshchiu GRILO?
+chto vashi mody teper mozhno perevodit?
+chto vashi mody mogut vzaimodeistvovat s addonami iadra i drugimi modami, sozdavaia nekuiu sviaz i obespechivaia sovmestimost?
+chto mozhno podkliuchitsia k udalennomu otladchiku i, pri neobkhodimosti, k chat-serveru?
+chto vy mozhete ispolzovat obolochku otladki, kotoraia dostupna tolko dlia versii dlia razrabotki?
+chto vashi mody teper mogut imet sobstvennuiu konfiguratsiiu, zaregistrirovav sviazannye s nimi klassy?
+chto vashi mody mogut registrirovat svoi obolochki?
+chto vashi mody mogut dobavliat komandy v sushchestvuiushchie obolochki, chtoby uvelichit kolichestvo komand, kotorye mozhno ispolzovat?
+chto vashi klassy komand mogut tochno predstavliat peredannye argumenty i perekliuchateli?
+chto vy mozhete zaprashivat peredannye perekliuchateli, ispolzuia klassy upravleniia perekliuchateliami, nakhodiashchiesia v API iadra?
+chto UESH vkliuchaet v sebia funktsiiu napisaniia stsenariev, uproshchaiushchuiu sozdanie i zapusk stsenariev?
+chto obolochka vkliuchaet v sebia funktsiiu zapreta otmeny aktivnykh prilozhenii?
+chto Nitrocid gluboko integrirovan s Terminaux, chtoby obespechit bolee bystryi i luchshii rendering?
+chto teper vy mozhete izmeniat razmer interaktivnykh prilozhenii, ne bespokoias o tom, chto vykhodnye dannye budut povrezhdeny?
+chto sushchestvuiut komandy, zaprashivaiushchie vvod dannykh polzovatelem, kotorye polezny dlia stsenariev?
+chto vy mozhete predstavit vvodimyi polzovatelem vopros neskolkimi sposobami, takimi kak vybor, tablitsa, prostoi, vybor i t. d.?
+chto vy mozhete razmestit zapolniteli v tekste, kotoryi ikh podderzhivaet?
+chto vy mozhete ispolzovat raznye draivery iadra, chtoby izmenit rabotu konkretnoi operatsii?
+chto vy mozhete sozdavat svoi sobstvennye zastavki i zastavki na C# ili Visual Basic?
+chto vy mozhete zaprosit khost-sistemu i emuliator terminala, ispolzuia klass platformy iadra?
+chto vy mozhete zaprosit soglasie na konfidentsialnost, prezhde chem delat chto-to konfidentsialnoe v svoem mode?
+chto mozhno otkliuchit uvedomleniia s pomoshchiu funktsii «Ne bespokoit»?
+chto vy mozhete sokhranit istoriiu uvedomlenii s pomoshchiu funktsii, naidennoi v dispetchere uvedomlenii?
+chto vy mozhete izmenit sposob generatsii sluchainykh chisel, izmeniv draiver?
+chto razlichnye API predostavliaiut poleznye funktsii dlia vashikh modov?
+Menedzher zadach
+Perechisliaet vse dostupnye iunity
+Ispolzuite versiiu konvertera edinits TUI.
+Eto «fiktivnoe prilozhenie» iavliaetsia parodiei na «HDD Cleaner 2.1», vypushchennoe 24 noiabria 2015 goda. My nazovem ego «HDD Uncleaner 2015». Po suti, on nichego ne delaet, krome otobrazheniia soobshchenii na konsoli s pomoshchiu API Nitrocid KS. On popytaetsia smodelirovat, kak vygliadit eta zaarkhivirovannaia programma. Pozhaluista, ne vosprinimaite eto slishkom bukvalno, eto vsego lish programma-shutka, prizvannaia vas razvlech. On takzhe ne imitiruet postoronnie funktsii, takie kak protsedura «Avtovosstanovlenie». Obratite vnimanie, chto my ne sobiraemsia lokalizovat eto. Nazhmite liubuiu klavishu, chtoby nachat.
+Zapuskaet programmu-shutku HDD Uncleaner 2015.
+Prazdnovanie 5-letiia iadra
+Pervyi vypusk
+Eto iadro ​​bylo vpervye vypushcheno 22 fevralia 2018 goda s tseliu sozdaniia minimalistichnogo simuliatora, kotoryi fakticheski imitiruet rabotu iadra iadra.
+Ranshe na nem razmeshchalas tolko odna obolochka i neskolko komand, i on rabotal tolko s Windows iz-za ispolzovaniia instrumenta upravleniia Windows.
+U nego takzhe ne bylo sobstvennoi dokumentatsii.
+Utochnenie iadra
+Byli vypushcheny versii iadra, takie kak vtoroi osnovnoi vypusk s dobavleniem raskraski i osnovnykh funktsii i chetvertyi osnovnoi vypusk s dobavleniem konfiguratsii.
+Nachalas dokumentatsiia shestogo osnovnogo vypuska, i v iadro ​​postepenno dobavlialis razlichnye priiatnye veshchi.
+Tekushchaia versiia
+V etoi versii iadro ​​usovershenstvovano do takoi stepeni, chto ono bolshe ne vedet sebia kak starye versii.
+Poskolku byli vypushcheny novye revoliutsionnye funktsii, my reshili nazvat eto iadro...
+S 5-letnim iubileem!
+Nichego ne mogu izvlech.
+Arkhiv nedostupen dlia zapisi, poskolku tip
+Obiazatelno ukazhite put k failu LRC.
+Muzykalnyi fail ne ukazan.
+Muzykalnyi fail «{0}» ne sushchestvuet.
+Neustranimaia oshibka v addone BassBoom CLI.
+Nevozmozhno vosproizvesti zvuk, poskolku fail ne naiden.
+Muzykalnyi fail otkryt uspeshno.
+Ne mogu otkryt muzykalnyi fail.
+Nevozmozhno vosproizvesti zvuk iz-za taim-auta.
+Neizvestnyi artist
+Neizvestnyi zhanr
+Imia
+Khudozhnik
+Zhanr
+Prodolzhitelnost
+Nazhmite «q», chtoby ostanovit vosproizvedenie.
+Ne mogu vosproizvesti zvuk.
+Pri popytke obrabotki ekvalaizera v Basolia voznikaet oshibka.
+Pri popytke obrabotki operatsii ekvalaizera voznikaet oshibka vyvoda Basolia.
+Pri popytke obrabotat operatsiiu ekvalaizera proizoshla neizvestnaia oshibka.
+Izmeniat
+Vyberite gruppu
+Pri podderzhke BassBoom
+Vvedite put k muzykalnomu failu
+Fail "{0}" ne sushchestvuet.
+Vvedite put k katalogu muzykalnoi biblioteki
+Katalog muzykalnoi biblioteki ne naiden.
+Ne mogu otkryt {0}: {1}
+Zagruzka BassBoom, chtoby otkryt {0}...
+Seichas igraet
+Pytaius otkryt fail s tekstami pesen
+Ne mogu otkryt fail s tekstom pesni
+Napishite tselevuiu pozitsiiu v etom formate
+Dostupnye nazhatiia klavish
+Vosproizvedenie/Pauza
+Ostanavlivatsia
+Kontrol gromkosti
+Ishchite kontrol
+Ishchite kontrol prodolzhitelnosti
+Informatsiia o pesne
+Dobavit muzykalnyi fail
+Dobavte muzykalnyi katalog v spisok vosproizvedeniia
+Predydushchaia pesnia
+Sleduiushchaia pesnia
+Udalit tekushchuiu pesniu
+Udalit vse pesni
+Vyborochnyi poisk
+Otkryt ekvalaizer
+Neizvestnyi
+Zagolovok
+Albom
+Kommentarii
+Tekst pesni
+linii
+Net tekstov
+Informatsiia o sloe
+Sloi
+Stavka
+Rezhim
+Rezhim Vneshnii
+Razmer kadra
+Aktsent
+Bitreit
+ABR kurs
+Peremennyi bitreit
+Teksty i dopolneniia
+Nevozmozhno otkryt muzykalnyi fail «{0}», poskolku on ne naiden.
+Nazvanie pesni
+Ispolnitel pesni
+Zhanr pesni
+Iskat
+Obieem
+Pri popytke obrabotki muzykalnogo faila v Basolia voznikaet oshibka.
+Pri popytke obrabotki muzykalnogo faila voznikla oshibka vyvoda Basolia.
+Pri popytke obrabotki muzykalnogo faila proizoshla neizvestnaia oshibka.
+Oshibka vosproizvedeniia
+Pomoshch
+Nazhmite «A», chtoby vstavit odnu pesniu v spisok vosproizvedeniia, ili «S», chtoby vstavit vsiu muzykalnuiu biblioteku.
+Amerikanskii kofe
+Krasnyi chai
+Zelenyi chai
+Nikakikh preduprezhdenii o kofeine dlia preryvaniia.
+Sekundy, cherez kotorye vasha chashka budet gotova, nedeistvitelny.
+Esli vy pytaetes ukazat nazvanie napitka, oznakomtes so spiskom nizhe:
+Vasha chashka gotova!
+Realnyi nomer nedeistvitelen.
+Mnimoe chislo nedeistvitelno.
+Formula:
+Radius:
+Deistvitelnoe znachenie v Radiany:
+Mnimyi k radiusu v radianakh:
+Ugol v radianakh:
+Eksponenta:
+Treugolnyi:
+Sobytiia...
+Napominaniia...
+Interaktivnyi kalendar ne udalos:
+Sobytiia i napominaniia dlia
+Polnaia forma
+Tip kalendaria
+Napominanii za vybrannyi mesiats ne naideno
+Za vybrannyi mesiats sobytii ne naideno
+Uroven golubogo tsveta dolzhen byt chislovym.
+Uroven purpurnogo tsveta dolzhen byt chislovym.
+Uroven zheltogo tsveta dolzhen byt chislovym.
+Uroven chernogo kliucha dolzhen byt chislovym.
+Goluboi uroven:
+Purpurnyi uroven:
+Zheltyi uroven:
+Tsvetovaia posledovatelnost CMY:
+Khiue:
+Nasyshchennost:
+Posledovatelnost tsvetov HSL:
+Tsenit:
+Posledovatelnost tsvetov HSV:
+Uroven zheltogo tsveta:
+Posledovatelnost tsvetov RYB:
+Luma:
+V faze:
+Kvadratura:
+Tsvetovaia posledovatelnost YIQ:
+U-tsvetnost:
+V-tsvetnost:
+Tsvetovaia posledovatelnost YUV:
+Chernyi kliuch:
+Tsvetovaia posledovatelnost CMYK:
+Uroven ottenka dolzhen byt chislovym.
+Uroven nasyshchennosti dolzhen byt chislovym.
+Iarkost ili uroven osveshcheniia dolzhny byt chislovymi.
+Uroven znacheniia dolzhen byt chislovym.
+Uroven komponenta Y dolzhen byt chislovym.
+Uroven komponenta I dolzhen byt chislovym.
+Uroven komponenta Q dolzhen byt chislovym.
+Uroven komponenta U dolzhen byt chislovym.
+Uroven komponenta V dolzhen byt chislovym.
+Nevozmozhno otkryt fail «{0}», poskolku on ne naiden.
+Kontakty uspeshno importirovany.
+Nevozmozhno otkryt fail «{0}», poskolku fail karty nedeistvitelen.
+Fail kontaktov ne sushchestvuet.
+kontakty naideny
+Fail kontaktov nedeistvitelen.
+Sintaksis MeCard ne mozhet byt pustym.
+Nekotorye kontakty ne mogut byt dobavleny. Bylo dobavleno tolko {0} iz {1} kontaktov.
+Libo v predostavlennom faile kontaktov net informatsii ni o kakom kontakte, libo on nedeistvitelen.
+Ne udalos proanalizirovat kontakty. Dopolnitelnye svedeniia sm. v opisanii oshibki.
+Indeks kontakta vykhodit za predely dopustimogo diapazona. Maksimalnyi indeks — {0}, a predostavlennyi indeks — {1}.
+Net kontaktov, kotorye mozhno bylo by poluchit.
+Net kontaktov dlia poiska.
+Nedopustimoe reguliarnoe vyrazhenie.
+My polagaem, chto vy ispolzuete Windows 8 ili bolee ranniuiu versiiu. Eta operatsiia ne podderzhivaetsia.
+Informatsiia trassirovki steka potokov dlia {0}
+Eto ne rezba Nitrocid KS.
+Dok-ekrana s takim nazvaniem ne sushchestvuet.
+Doka s takim imenem ne sushchestvuet.
+Net dok-stantsii dlia ekrana.
+Ekrannaia dok-stantsiia vyshla iz stroia
+Schityvaet soderzhimoe udalennogo faila na konsol
+Vykhod iz obolochki bez otkliucheniia
+Ubedites, chto vy pravilno ukazali port.
+Naideno bolee odnogo profilia. Vyberi odin:
+Repozitorii ne ukazan. Vykhod iz obolochki...
+Ne udalos otkryt repozitorii. Vykhod iz obolochki...
+Postrochno izvlekaet spisok izmenenii v faile.
+Proveriaet vetku
+Delaet kommit
+Opisyvaet kommit
+Pokazyvaet raznitsu mezhdu tekushchim kommitom i lokalnymi failami.
+Pokazyvaet raznitsu mezhdu tekushchim kommitom i lokalnymi failami po ikh soderzhimomu v forme fragmenta ispravleniia.
+Pokazyvaet raznitsu mezhdu tekushchim kommitom i lokalnymi failami po ikh sushchestvovaniiu.
+Pokazyvaet raznitsu mezhdu tekushchim kommitom i lokalnymi failami po ikh sushchestvovaniiu i soderzhimomu.
+Poluchaet vse obnovleniia s udalennogo kompiutera
+Poluchaet status faila
+Poluchaet prostuiu informatsiiu o repozitorii
+Perechisliaet vse filialy
+Perechisliaet vse kommity
+Perechisliaet vse pulty
+Perechisliaet vse tegi
+Delaet teg iz HEAD
+Beret vse obnovleniia s servera
+Otpravliaet vse obnovleniia na server
+Sbrasyvaet lokalnyi repozitorii
+Delaet miagkii sbros
+Delaet smeshannyi sbros
+Delaet li khard reset
+Ustanavlivaet vashu lichnost
+Stadiia izmeneniia
+Stadiia vsekh izmenenii
+Status repozitoriia
+Otmeniaet izmenenie
+Otmeniaet vse izmeneniia
+Dobavliaet zagolovok s kliuchom i znacheniem ko vsem predstoiashchim zaprosam.
+Poluchaet tekushchii polzovatelskii agent
+Redaktiruet kliuch v zagolovke dlia vsekh predstoiashchikh zaprosov.
+Perechisliaet zagolovki zaprosa
+Pomeshchaet fail na HTTP-server, ispolzuia ukazannyi zapros.
+Pomeshchaet stroku na HTTP-server, ispolzuia ukazannyi zapros.
+Otpravliaet fail na HTTP-server, ispolzuia ukazannyi zapros.
+Otpravliaet stroku na HTTP-server, ispolzuia ukazannyi zapros.
+Udaliaet kliuch v zagolovke dlia vsekh predstoiashchikh zaprosov.
+Ustanavlivaet polzovatelskii agent
+Dobavlenie uzhe sushchestvuiushchego zagolovka.
+Udalenie zagolovka, kotorogo ne sushchestvuet.
+Redaktirovanie nesushchestvuiushchego zagolovka.
+Nomer porta vashego onlain-radio nedeistvitelen.
+Polnyi URL-adres
+Tekushchie slushateli
+Pik slushatelei
+Maksimalnoe kolichestvo slushatelei
+Unikalnye slushateli
+Potoki
+Aktivnye potoki
+Informatsiia o potoke dlia identifikatora
+Put
+Seichas igraiu
+Vremia raboty
+Dobavliaet novyi massiv, obieekt ili svoistvo.
+Ukazyvaet roditelskii put
+Ukazyvaet tip
+Ukazyvaet imia svoistva, s kotorym budet sozdano. Eto ispolzuetsia, esli roditelskii put iavliaetsia obieektom.
+Ochishchaet fail JSON
+Nakhodit nedvizhimost
+Ukazyvaet roditelskoe svoistvo
+Pokazyvaet informatsiiu o faile JSON.
+Ne pokazyvat otdelnye svoistva
+Pokazat vse znacheniia
+Udaliaet tselevoi obieekt
+Ukrashennyi JSON
+Minimizirovannyi JSON
+Ustanavlivaet znachenie sushchestvuiushchego massiva, obieekta ili svoistva.
+Otkryvaet fail JSON v interaktivnom redaktore.
+Token vnutri faila JSON ne naiden.
+Roditelskii token ne naiden. Ubedites, chto vy pravilno napisali put «{0}».
+Ukazannyi tip "{0}" nedeistvitelen.
+Nevozmozhno dobavit novyi element s imenem svoistva s tipom roditelskogo tokena "{0}".
+Nevozmozhno dobavit novyi element s imenem svoistva "{0}" s tipom roditelskogo tokena "{1}".
+Imia svoistva "{0}" v roditelskom elemente "{1}", tip "{2}", ne sushchestvuet.
+Fail bazovykh angliiskikh strok ne sushchestvuet. Khotite sozdat pustoi? Ili vy khotite ispolzovat angliiskie struny Nitrocid?
+Ne ukazan dopustimyi iazyk.
+Dobro pozhalovat v iazykovuiu studiiu!
+Novaia stroka
+Udalit stroku
+Sokhraniaite perevody
+Vyberite stroku dlia perevoda:
+Vvedite novuiu stroku
+Vyberite stroku dlia udaleniia:
+Sokhraniaem iazyk...
+Vyberite iazyk
+Vyberite iazyk, na kotoryi nuzhno perevesti etu stroku:
+Napishite svoi perevod
+Otkroite «pochtu», chtoby uvidet ikh.
+Identifikator zametki dolzhen byt nomerom zametki.
+Eta zametka pusta
+Ne mogu udalit nesushchestvuiushchuiu zametku
+Ishchet v lente frazu v zagolovke i/ili opisanii.
+Poisk po nazvaniiu
+Iskat opisanie
+Poisk po nazvaniiu i opisaniiu
+Poisk s uchetom registra
+Ne udalos proanalizirovat URL-adres kanala:
+bez opisaniia
+Pokazyvaet podrobnuiu informatsiiu o failakh i papkakh
+Podavliaet «neavtorizovannye» soobshcheniia
+Vvedite mestopolozhenie zakrytogo kliucha dlia {0}. Napishite «q», chtoby zavershit dobavlenie kliuchei:
+Popytka podkliuchitsia k {0}...
+Vypolniaet SQL-zapros
+Informatsiia o baze dannykh
+Otkryvaet fail SQL v interaktivnom shestnadtsaterichnom redaktore TUI.
+Zagruzit temu iz faila...
+Sozdanie novoi temy "{0}".
+Ukazhite katalog dlia sokhraneniia temy:
+Informatsiia dlia
+Sekundomer gotov.
+Sekundomer rabotaet!
+Novyi krug!
+Nachat obratnyi otschet
+Net takogo tipa iunita:
+Dostupnye tipy iunitov:
+edinitsy dlia konvertatsii
+Vvedite chislo, chtoby preobrazovat...
+Vy ne vveli chislo dlia konvertatsii.
+Vvedennyi nomer nedeistvitelen.
+Nevozmozhno preobrazovat edinitsu izmereniia.
+Otmechaem 6000-i kommit s momenta vykhoda versii 0.0.1!
+Prodolzhenie sleduet...
+Konets
+S Novym Godom!
+Pozhaluista, podozhdite, poka iadro ​​initsializiruetsia...
+Pozhaluista, podozhdite, poka iadro ​​vykliuchitsia...
+Neizvestnaia oshibka!
+Loshad
+[VVOD] Nachat gonku | [ESC] Vykhod | [VVERKH/VNIZ] Peremeshchenie vybora
+Vasha loshad vyigrala gonku!
+Vasha loshad proigrala gonku!
+Ty povesilsia!
+Ty pobedil!
+Kakova vasha stavka?
+Vy pravilno dogadalis!
+Ty ne pravilno ponial.
+No tebe ne povezlo. Neudachnik.
+Ty schastlivchik! Pobeditel!
+Eto nichia.
+Igrok {0} pobezhdaet!
+Nazhmite «q», chtoby vyiti.
+Tekushchii personazh:
+Vy ugadali pravilnoe slovo! Ty pobedil!
+Etot tip arkhiva ne podderzhivaetsia.
+Obiazatelno ukazhite put k katalogu, soderzhashchemu vashi faily s tekstami pesen v formate LRC. Vy takzhe mozhete ukazat sobstvennyi put k papke vashei muzykalnoi biblioteki, soderzhashchei faily s tekstami pesen.
+Etot fail s tekstom pesni ne sushchestvuet.
+Kultury ne obnaruzheno.
+Ne udalos otobrazit kalendar.
+Ne udalos dobavit napominanie.
+Nedostatochno argumentov dlia dobavleniia napominaniia.
+Ne udalos udalit napominanie.
+Nedostatochno argumentov dlia udaleniia napominaniia.
+Godovshchina vypuska Nitrocid KS», pravda, 2, 22, 2, 22, \"grigorianskii
+Ramadan», pravda, 9, 1, 10, 1, «Khidzhra»
+Net nikakogo sobytiia.
+Napominaniia net.
+Kontakta net. Esli vy khotite importirovat kontakty, ispolzuite parametry importa, ispolzuia nazhatiia klavish, opredelennye v nizhnei chasti ekrana.
+Nekotorye kontakty nevozmozhno importirovat.
+Vvedite put k failu VCF, soderzhashchemu vash kontakt. Takzhe podderzhivaetsia fail Contacts2.db dlia Android.
+Fail ne sushchestvuet. Ubedites, chto vy ukazali pravilnyi put k failu VCF ili failu contact2.db.
+Vvedite deistvitelnoe predstavlenie MeCard vashego kontakta.
+Sintaksis Contact MeCard nedeistvitelen.
+Sintaksis Contact MeCard ne mozhet byt pustym.
+Vvedite reguliarnoe vyrazhenie dlia poiska kontaktov.
+Net kontaktov, soderzhashchikh zaproshennoe vami vyrazhenie.
+Kontaktnoe litso
+Net imeni kontakta
+Kontaktnyi adres
+Kontaktnaia pochta
+Net kontaktnoi pochty
+Kontaktnaia organizatsiia
+Net kontaktnoi organizatsii
+Kontaktnyi telefon
+Net kontaktnogo telefona
+Kontaktnyi URL-adres
+Net URL-adresa kontakta
+Kontaktnyi region
+Net geo kontakta
+Sviazatsia s IMPP
+Net kontakta IMPP
+Kontaktnyi psevdonim
+Net kontaktnogo psevdonima
+Kontaktnaia rol
+Net kontaktnoi roli
+Kontaktnoe litso
+Net nazvaniia kontakta
+Kontaktnye primechaniia
+Net zapisei o kontaktakh
+Tsifrovye chasy
+Nazhmite liubuiu klavishu, chtoby vernutsia v iadro...
+Vvedite svoi kliuch API:
+Vy mozhete prosmotret spisok gorodov s ikh identifikatorami po ssylke nizhe ili peredat etoi komande «-list».
+Vy uvereny, chto khotite udalit {0}?
+Polzovatel
+Sait
+Net informatsii o simvolicheskoi ssylke
+Izmeneno
+Vvedite udalennyi katalog. ".." vernutsia nazad
+Vvedite lokalnyi katalog. ".." vernutsia nazad.
+Status vinovnika faila
+Nomer-khank
+Kolichestvo strok
+Nachalnyi nomer stroki
+Konechnyi nomer stroki
+Pervonachalnaia fiksatsiia
+Zafiksirovat SHA
+Zafiksirovat soobshchenie
+Zafiksirovat avtora
+Kommitter
+Kolichestvo roditelei
+Okonchatelnyi kommit
+Snachala sokhranite svoiu rabotu, sozdav fiksatsiiu, prezhde chem proveriat vetku.
+Filial ne sushchestvuet.
+Prezhde chem ispolzovat etu komandu, vam neobkhodimo identifitsirovat sebia. Ispolzovat
+chtoby identifitsirovat sebia.
+Obnovlen repozitorii s novym kommitom
+Opisanie dlia fiksatsii
+Obshchie izmeneniia v
+Izmeneniia v kontente
+Udalennogo ne sushchestvuet.
+Ne naideno pultov, s kotorykh mozhno bylo by poluchat obnovleniia.
+Status faila
+Golyi repozitorii
+Golova otdelena
+Net ssylki
+Melkii klon
+Put k .git
+Put k rabochemu katalogu
+Kommity dlia filiala
+Sozdal novyi teg! Vot dannye vashego tega:
+Vasha lokalnaia kopiia repozitoriia obnovlena!
+Perenapravleno na
+Obnovlen repozitorii dlia
+Vashe sliianie privelo k konfliktam. Pozhaluista, razreshite vse konflikty.
+Vy uspeshno identifitsirovali sebia kak
+Nikakie izmeneniia v stsene ne proizvodiatsia.
+Proindeksirovannyi fail {0} uspeshno podgotovlen!
+Ne udalos proindeksirovat fail {0}.
+Status filiala {0}...
+Nikakikh modifikatsii ne delaetsia.
+Neotslezhivaemye faily
+Net neotslezhivaemykh failov.
+Dobavleny faily
+Nikakikh dobavlennykh failov.
+Izmenennye faily
+Nikakikh modifitsirovannykh failov.
+Udalennye faily
+Nikakikh udalennykh failov.
+Proindeksirovannye faily
+Nikakikh podgotovlennykh failov.
+Pereimenovannye promezhutochnye faily
+Net pereimenovannykh promezhutochnykh failov.
+Pereimenovannye faily
+Net pereimenovannykh failov.
+Otsutstvuiushchie faily
+Nikakikh nedostaiushchikh failov.
+Nikakikh izmenenii dlia otmeny stseny ne vnositsia.
+Neproindeksirovannyi fail {0} uspeshno!
+Ne udalos udalit fail {0}.
+Publikatsiia faila {0}...
+Publikatsiia stroki v {0}...
+Zagruzka stroki v {0}...
+Obolochke JSON ne udalos dobavit element.
+Nedvizhimost nakhoditsia v
+Nedvizhimost ne naidena
+Bazovaia informatsiia o tokene JSON
+Bazovyi tip
+Baza imeet znacheniia
+Kolichestvo zhetonov detei
+Bazovyi put
+Individualnaia informatsiia o tokene JSON
+Tip tokena
+Token imeet znacheniia
+Put tokena
+Stoimost tokena
+Informatsiia o nedvizhimosti dlia
+Tip nedvizhimosti
+Kolichestvo nedvizhimosti
+Imia svoistva
+Put k svoistvu
+Stoimost imushchestva
+Obolochke JSON ne udalos udalit element.
+Obolochke JSON ne udalos ustanovit element.
+Vvedite svoe soobshchenie nizhe. Napishite «EOF» dlia podtverzhdeniia.
+Soobshchenie {0} ot polzovatelia {1} peremeshcheno. {2} soobshchenii ostalos dlia analiza.
+Vlozheniia:
+Eto soedinenie soderzhit nedopustimyi ekzempliar RSS-kanala.
+Neizvestnoe nazvanie stati
+K sozhaleniiu, eta statia ne imeet nikakogo soderzhaniia. Vy vse eshche mozhete sledit za statei na
+V etoi state net ssylki.
+Nevozmozhno otkryt v khost-brauzere ssylku na statiu.
+Izmeneno:
+Vvedite znachenie parametra dlia {0}:
+Komanda SQL vypolnena uspeshno. Vot otvety:
+Komanda SQL ne udalas.
+Put k baze dannykh:
+Versiia servera:
+Sostoianie soedineniia:
+Stroka podkliucheniia:
+Imia bazy dannykh:
+Ne udalos dobavit ili udalit zadachu.
+Ukazhite nazvanie vashei zadachi.
+Ne udalos otmetit zadachu.
+V etom razdele perechisleny nastroiki draivera.
+Nastroiki draivera iadra
+Tekushchii draiver konsoli
+Kakoi draiver konsoli vy by khoteli ispolzovat?
+Tekushchii draiver generatora sluchainykh chisel
+Kakoi draiver generatora sluchainykh chisel vy by khoteli ispolzovat?
+Tekushchii setevoi draiver
+Kakoi setevoi draiver vy by khoteli ispolzovat?
+Tekushchii draiver failovoi sistemy
+Kakoi draiver failovoi sistemy vy by khoteli ispolzovat?
+Tekushchii draiver shifrovaniia
+Kakoi draiver shifrovaniia vy by khoteli ispolzovat?
+Tekushchii draiver reguliarnykh vyrazhenii
+Kakoi draiver reguliarnykh vyrazhenii vy by khoteli ispolzovat?
+Tekushchii draiver zhurnala otladki
+Kakoi draiver zhurnala otladki vy by khoteli ispolzovat?
+Tekushchii draiver kodirovaniia
+Kakoi draiver kodirovaniia vy by khoteli ispolzovat?
+Tekushchii draiver apparatnogo sredstva proverki
+Kakoi draiver apparatnogo probera vy by khoteli ispolzovat?
+Tekushchii draiver sortirovki
+Kakoi draiver sortirovki vy by khoteli ispolzovat?
+Padaiushchaia liniia matrichnykh chisel.
+Shans vypadeniia
+Shans vybrosit novuiu padaiushchuiu matritsu
+V etom razdele perechisleny vse obshchie nastroiki iadra, v osnovnom dlia obsluzhivaniia iadra.
+Obshchie nastroiki iadra
+Iazyk
+Ukazyvaet iazyk iadra.
+Kultura
+Vkliuchit daltonizm
+Esli vy daltonik ili khotite imitirovat daltonizm, vy mozhete vkliuchit ego.
+Tsvetovaia slepota. TransformationFormula
+Tip daltonizma, bud to protan, deiter ili tritan.
+Stepen daltonizma
+Naskolko serezna daltonizm?
+Zvukovoi signal pri vykliuchenii ili perezagruzke
+Vkliuchaet zvukovoi signal pri zavershenii raboty iadra.
+Zaderzhka pri vykliuchenii ili perezagruzke
+Vkliuchaet zaderzhku pri zavershenii raboty iadra.
+Vkliuchit prostuiu tsvetovuiu slepotu
+Esli vy khotite, chtoby imitatsiia daltonizma byla prostoi, vkliuchite eto. Obratite vnimanie, chto formula, ispolzuemaia v etom metode modelirovaniia, mozhet byt netochnoi.
+Konsol podderzhivaet nastoiashchii tsvet
+Esli vy uvereny, chto konsol podderzhivaet nastoiashchii tsvet, ili khotite izmenit svoi terminal na terminal, podderzhivaiushchii nastoiashchii tsvet, izmenite eto znachenie.
+Ustanovit kodovuiu stranitsu
+Ustanovite kodovuiu stranitsu iazyka pri perekliuchenii iazykov.
+Uvedomlenie o razrabotke podtverzhdeno
+Esli ustanovleno znachenie true, iadro ​​ne budet pokazyvat vam uvedomlenie o razrabotke kazhdyi raz, kogda vy zagruzhaete iadro ​​v razrabatyvaemykh versiiakh.
+Razreshit zagruzku nenadezhnykh modov
+Esli ustanovleno znachenie true, iadro ​​ne budet vydavat oshibku pri zagruzke modov, u kotorykh net podpisannogo otkrytogo kliucha.
+Kvota otladki vkliuchena
+Esli etot parametr vkliuchen, modul zapisi otladki meniaet fail zhurnala otladki, esli kvota prevyshena.
+Kolichestvo strok kvoty otladki
+Skolko strok nuzhno napechatat v bufere otladki, prezhde chem budet dostignut predel kvoty? Obratite vnimanie, chto eto ne otrazhaet kolichestvo strok v failakh zhurnala otladki.
+Ispolzovat sistemnyi chasovoi poias
+Esli eta optsiia vkliuchena, iadro ​​ispolzuet chasovoi poias iz nastroek vashego kompiutera. V protivnom sluchae ispolzuetsia chasovoi poias vsego iadra, kotoryi mozhno nastroit.
+Chasovoi poias iadra
+Chasovoi poias iadra, kotoryi nuzhno ispolzovat
+Pokazat okno s informatsiei o litsenzii
+Pokazyvat li modalnoe okno s informatsiei o litsenzii v techenie trekh sekund posle kazhdogo vkhoda v sistemu. Rekomenduetsia ostavit ego vkliuchennym.
+Ustarevshii stil vedeniia zhurnalov otladki
+Vkliuchit li ustarevshii stil vedeniia zhurnalov otladki ili vkliuchit sgruppirovannye zhurnaly otladki.
+V etom razdele vy mozhete vybrat, kakoi tip tsveta vy khotite izmenit.
+Nastroiki tsveta
+Ispolzuite aktsentnye tsveta
+Esli ustanovleno znachenie true, menedzher tem zapolniaet aktsentnye tsveta dlia opredelennykh tipov tsvetov, kotorye podderzhivaet tema.
+Aktsentnyi tsvet perednego plana
+Dlia tem, podderzhivaiushchikh aktsenty, eto aktsentirovannyi tsvet perednego plana.
+Aktsentnyi tsvet fona
+Dlia tem, podderzhivaiushchikh aktsenty, eto aktsentirovannyi fonovyi tsvet.
+Ispolzovat tsvetovuiu palitru konsoli
+Esli dlia etogo parametra ustanovleno znachenie true, ispolzuetsia tsvetovaia palitra, opredelennaia terminalom.
+Razreshit tsvet perednego plana
+Esli dlia etogo parametra ustanovleno znachenie true, uchityvaetsia tekushchii tsvet perednego plana. V protivnom sluchae on ispolzuet tsveta vashego terminala po umolchaniiu.
+Razreshit tsvet fona
+Esli dlia etogo parametra ustanovleno znachenie true, uchityvaetsia tekushchii tsvet fona. V protivnom sluchae on ispolzuet tsveta vashego terminala po umolchaniiu.
+Imia polzovatelia Tsvet korpusa
+Imia khosta Tsvet obolochki
+Prodolzhaemyi tsvet oshibki iadra
+Nepreryvnyi tsvet oshibki iadra
+Tsvet teksta
+Tsvet litsenzii
+Fonovyi tsvet
+Tsvet vvoda
+Tsvet zapisi spiska
+Tsvet znacheniia spiska
+Tsvet stseny iadra
+Tsvet teksta oshibki
+Tsvet teksta preduprezhdeniia
+Variant Tsvet
+Tsvet bannera
+Tsvet zagolovka uvedomleniia
+Uvedomlenie Opisanie Tsvet
+Tsvet khoda uvedomleniia
+Tsvet oshibki uvedomleniia
+Tsvet voprosa
+Tsvet uspekha
+Tsvet dollara polzovatelia
+Tsvet nakonechnika
+Tsvet teksta-razdelitelia
+Tsvet razdelitelia
+Tsvet zagolovka spiska
+Tsvet preduprezhdeniia o razvitii
+Tsvet stseny
+Tsvet progressa
+Nazad Variant Tsvet
+Tsvet granitsy s nizkim prioritetom
+Tsvet granitsy srednego prioriteta
+Tsvet granitsy s vysokim prioritetom
+Tsvet razdelitelia tablitsy
+Tsvet zagolovka tablitsy
+Tablitsa Znachenie Tsvet
+Tsvet vybrannogo varianta
+Alternativnyi variant tsveta
+Tsvet vykhodnogo dnia
+Tsvet dnia meropriiatiia
+Tsvet zagolovka tablitsy
+Tsvet segodniashnego dnia
+Interaktivnyi tsvet fona TUI
+Interaktivnyi tsvet perednego plana TUI
+Tsvet fona interaktivnoi paneli TUI
+Tsvet razdelitelia interaktivnoi paneli TUI
+Interaktivnyi TUI vybrannyi tsvet razdelitelia panelei
+Tsvet perednego plana vybrannogo elementa paneli interaktivnogo TUI
+Tsvet fona vybrannogo elementa paneli interaktivnogo TUI
+Tsvet perednego plana elementa interaktivnoi paneli TUI
+Tsvet fona elementa interaktivnoi paneli TUI
+Tsvet fona interaktivnoi optsii TUI
+Tsvet perednego plana interaktivnoi optsii TUI
+Tsvet imeni priviazki interaktivnogo parametra TUI
+Tsvet fona interaktivnogo okna TUI
+Tsvet perednego plana interaktivnogo okna TUI
+Tsvet otkliuchennoi optsii
+V etom razdele izmeniaetsia povedenie apparatnogo datchika.
+V etom razdele predstavleny nastroiki vkhoda. Vyidite iz svoei uchetnoi zapisi, chtoby izmeneniia vstupili v silu.
+Nastroiki vkhoda
+Imia khosta iadra dlia sviazi s ostalnymi kompiuterami.
+Pokazat dostupnye imena polzovatelei
+Put MOTD
+Put MAL
+Pokazyvat MAL pri vkhode v sistemu
+MOTD i zagolovok v nizhnei chasti sovremennykh chasov vkhoda v sistemu.
+Pokazyvat li MOTD i zagolovok vnizu ili vverkhu chasov.
+Obrabotchik vkhoda
+Obrabotchik vkhoda, kotoryi budet ispolzovatsia dlia priglashenii na vkhod.
+V etom razdele perechisleny nastroiki obolochki.
+Obshchie nastroiki obolochki
+Gruppa putei, razdelennykh dvoetochiem. On rabotaet tak zhe, kak PATH. Napishite polnyi put k papke ili imia papki.
+Ustanovit zagolovok konsoli pri vypolnenii komandy
+Ustanavlivaet zagolovok konsoli pri vypolnenii komandy.
+Pokazat kolichestvo snariadov
+V etom razdele perechisleny predustanovlennye nastroiki obolochki.
+Predvaritelnye nastroiki obolochki
+Podskazka predustanovki
+Predustanovka podskazki dlia redaktirovaniia teksta
+Predustanovka podskazki shestnadtsaterichnogo redaktirovaniia
+Predvaritelnye nastroiki komandnoi stroki administratora
+Predvaritelnaia nastroika priglasheniia obolochki otladki
+V etom razdele perechisleny nastroiki failovoi sistemy.
+Nastroiki failovoi sistemy
+Zastavliaet komandu «cat» pechatat nomera strok faila.
+V etom razdele perechisleny setevye nastroiki, takie kak obolochka FTP, nastroiki setevykh komand i nastroiki udalennoi otladki.
+Obshchie nastroiki seti
+Otladka porta chata
+Napishite port chata udalennogo otladchika. Ono dolzhno byt chislovym i ne dolzhno byt uzhe ispolzovano. V protivnom sluchae chat udalennogo otladchika ne smozhet otkryt port.
+Napishite, skolko raz komanda "get" dolzhna povtorit neudachnye zagruzki. Ono dolzhno byt chislovym.
+Zagruzit vremia povtora
+Napishite, skolko raz komanda «put» dolzhna povtorit neudachnuiu zagruzku. Ono dolzhno byt chislovym.
+Pokazyvat indikator vypolneniia vo vremia zagruzki ili vygruzki s pomoshchiu komandy «poluchit» ili «pomestit».
+Esli eto pravda, to komandy «get» ili «put» otobrazhaiut indikator vypolneniia vo vremia zagruzki ili vygruzki.
+V etom razdele perechisleny obshchie nastroiki zastavki. Dlia nastroiki otdelnykh zastavok vyidite iz «Nastroiki» i otkroite «Nastroiki zastavki».
+Osnovnye nastroiki zastavki
+Zastavka
+Kakoi zastavkoi vy khotite zablokirovat ekran?
+Vkliuchit blokirovku zastavki vo vremia prostoia
+Esli etot parametr vkliuchen, skrinseiver avtomaticheski zapuskaetsia posle prostoia v techenie ukazannogo perioda.
+Zastavka minimalnogo intervala kholostogo khoda
+Primite k svedeniiu preduprezhdenie o svetochuvstvitelnykh pristupakh
+Esli vy ne svetochuvstvitelny k dinamichnoi animatsii, kotoruiu pokazyvaiut nekotorye zastavki, vy mozhete otkliuchit eto preduprezhdenie, vkliuchiv etu optsiiu. Obratite vnimanie, chto my ne nesem otvetstvennosti za pobochnye effekty, kotorye mogut vozniknut v rezultate ispolzovaniia takikh animatsii. Dlia polucheniia dopolnitelnoi informatsii obratites k professionalnomu meditsinskomu spetsialistu.
+Siuda popadaiut nastroiki, kotorye ne pomeshchaiutsia v sootvetstvuiushchie razdely.
+Raznye nastroiki
+Esli avtosokhranenie vkliucheno, tekstovyi fail budet sokhraniatsia kazhdye «n» sekund.
+Napishite imena failov modov, kotorye ne zapuskaiutsia pri zapuske. Kogda zakonchite, napishite «q». Napishite znak minus riadom s putem udaleniia sushchestvuiushchego moda.
+Personazh, napominaiushchii pravyi verkhnii ugol. Obiazatelno vvodite tolko odin simvol.
+Personazh, napominaiushchii pravyi nizhnii ugol. Obiazatelno vvodite tolko odin simvol.
+Pokazyvaet kolichestvo komand v spiske komand, upravliaemoe perekliuchateliami count dlia razlichnykh tipov komand.
+Pokazyvat kolichestvo komand obolochki pri ikh perechislenii v komande spravki.
+Pokazyvat kolichestvo komand modifikatsii iadra pri ikh perechislenii v komande spravki.
+Pokazyvat kolichestvo komand s psevdonimami pri ikh perechislenii v komande spravki.
+Pokazat unifitsirovannye komandy, rasschityvaiushchie na pomoshch
+Pokazyvat kolichestvo unifitsirovannykh komand obolochki pri ikh perechislenii v komande spravki.
+Pokazat komandy dopolneniia, rasschityvaiushchie na pomoshch
+Pokazyvat kolichestvo dopolnitelnykh komand iadra pri ikh perechislenii v komande spravki.
+Simvol v verkhnem levom uglu dlia indikatorov vypolneniia
+Simvol v pravom verkhnem uglu indikatora vypolneniia
+Simvol v nizhnem levom uglu dlia indikatorov vypolneniia
+Simvol v pravom nizhnem uglu indikatora vypolneniia
+Simvol verkhnego kadra dlia indikatorov vypolneniia
+Simvol nizhnego kadra dlia indikatorov vypolneniia
+Simvol levogo kadra dlia indikatorov vypolneniia
+Simvol pravogo kadra dlia indikatorov vypolneniia
+Vkliuchit polosu prokrutki pri vybore
+Vkliuchaet polosu prokrutki na ekranakh vybora.
+Prosba ne bespokoit
+Esli rezhim «Ne bespokoit» vkliuchen, vse poluchennye uvedomleniia budut skryty ot displeia. Eto oznachaet, chto vy ne smozhete videt nikakikh uvedomlenii, kotorye pomogut vam sosredotochitsia.
+Simvol v verkhnem levom uglu dlia obshchei granitsy
+Simvol v verkhnem pravom uglu dlia obshchei granitsy
+Simvol nizhnego levogo ugla dlia obshchei granitsy
+Simvol v pravom nizhnem uglu dlia obshchei granitsy
+Simvol verkhnego kadra dlia obshchei granitsy
+Simvol nizhnego kadra dlia obshchei granitsy
+Simvol levogo kadra dlia obshchei granitsy
+Simvol pravogo kadra dlia obshchei granitsy
+Tsenzurirovat lichnuiu informatsiiu v zhurnalakh otladki
+Tsenzurirovat lichnuiu informatsiiu, kotoraia mozhet byt napechatana v zhurnalakh otladki.
+Otobrazhat novye uvedomleniia v vide zvezdochek
+Pokazyvaet vse novye uvedomleniia zvezdochkami. Eta optsiia ignoriruetsia v uvedomleniiakh s indikatorom vypolneniia.
+Pokazat razmer faila v failovom menedzhere
+Pokazyvat li razmer faila v statuse.
+Ispolzuite klassicheskii stil zagolovkov v prilozhenii «Nastroiki».
+Eto daet vam vozmozhnost perekliuchitsia na sovremennyi ili klassicheskii vid zagolovka prilozheniia nastroek.
+Shrift figleta po umolchaniiu
+Shrift figlet po umolchaniiu dlia ispolzovaniia v neskolkikh oblastiakh iadra, vkliuchaia sovremennyi ekran vkhoda v sistemu.
+Otladka ispolzovaniia TSP vkliuchena
+Esli etot parametr vkliuchen, pechataetsia informatsiia ob ispolzovanii TSP mezhdu dvumia intervalami, ukazannymi v intervale obnovleniia otladki ispolzovaniia TSP.
+Interval obnovleniia otladki ispolzovaniia TSP
+Skolko millisekund nuzhno podozhdat, prezhde chem obnovliat informatsiiu ob ispolzovanii TSP i pechatat ee v otladchike?
+Igra «Zmeia».
+Pokazyvaet vam khoroshie izvestnye tsitaty.
+V etom razdele vy mozhete nastroit rabotu razvlechenii.
+Vyberite predpochitaemuiu slozhnost: 0 — legko, 1 — sredne, 2 — slozhno, 3 — ochen slozhno i 4 — individualno.
+Ispolzuite PowerLine dlia renderinga kosmicheskogo korablia v ShipDuet
+Ispolzovat li PowerLine dlia vizualizatsii kosmicheskogo korablia ili ispolzovat standart «bolshe, chem simvol». Esli vy khotite ispolzovat PowerLine s ShipDuet, vam neobkhodimo ustanovit sootvetstvuiushchii shrift s podderzhkoi PowerLine.
+Skorost igry v ShipDuet
+V etom razdele mozhno nastroit rabotu obolochki arkhiva.
+Nastroiki etoi zastavki dostupny zdes.
+V etom razdele vy mozhete nastroit rabotu dopolneniia BassBoom.
+Teksty pesen Put
+Ustanavlivaet put k papke, soderzhashchei gruppu failov .lrc. Napishite absoliutnyi put k liubomu sushchestvuiushchemu katalogu.
+V etom razdele vy mozhete nastroit rabotu Kalendaria.
+V etom razdele vy mozhete nastroit rabotu prognoza.
+V etom razdele mozhno nastroit rabotu obolochki FTP.
+V etom razdele vy mozhete nastroit rabotu obolochki Git.
+V etom razdele mozhno nastroit rabotu obolochki HTTP.
+V etom razdele mozhno nastroit rabotu obolochki JSON.
+Predustanovka podskazki obolochki JSON
+Vkliuchit avtosokhranenie redaktora JSON
+Vkliuchaet ili vykliuchaet funktsiiu avtosokhraneniia redaktora JSON.
+Interval avtosokhraneniia redaktora JSON
+Etot razdel pozvoliaet nastroit rabotu pochtovoi obolochki.
+Maksimalnoe kolichestvo pisem na odnoi stranitse
+Skolko soobshchenii elektronnoi pochty otobrazhat na odnoi stranitse?
+Imitiruet poisk v baze dannykh sluchainogo cheloveka.
+V etom razdele mozhno nastroit rabotu obolochki RSS.
+Predvaritelnaia nastroika RSS-podskazki
+V etom razdele mozhno nastroit rabotu obolochki SFTP.
+V etom razdele mozhno nastroit rabotu obolochki SQL.
+Predvaritelnye nastroiki priglasheniia obolochki SQL
+V etom razdele vy mozhete nastroit rabotu taimerov.
+V etom razdele vy mozhete nastroit rabotu podskazok.
+Pokazat sovety po iadru
+Esli etot parametr vkliuchen, obolochka pokazyvaet podskazki pri kazhdom vkhode v sistemu.
+Padaiushchee dvoichnoe chislo na vashem ekrane.
+Smeshivanie tsvetov i vyvod ikh na konsol.
+Eto svet disko, odna iz samykh pervykh zastavok.
+Tsvet blestit po ekranu.
+Liniia, kotoraia bluzhdaet po konsoli vertikalno.
+Rastvoriaet sluchainye tsveta.
+Pokazyvaet vam krasochnyi blok, kotoryi prygaet po konsoli.
+Pokazyvaet tri indikatora vypolneniia, oboznachaiushchikh vremia.
+Svetovye bloki.
+Protiraet ekran tsvetom.
+Prostaia matritsa.
+Matrichnye chisla, kotorye sluchainym obrazom rasprostraniaiutsia po ekranu.
+Pokazyvaet tekst, kotoryi prygaet po konsoli.
+Zatukhanie i ischeznovenie teksta.
+Zatemnenie fona.
+Postepennoe poiavlenie i ischeznovenie teksta.
+Udar tsveta
+Imitiruet cheloveka, pishushchego tekst s opechatkami.
+Pokazyvaet prokruchivaemyi tekst sprava nalevo.
+Imitiruet cheloveka, pishushchego tekst dlia gazety na klaviature linotipa v starinu.
+Skolko simvolov nuzhno napisat, prezhde chem vyzvat «zapolnenie stroki»?
+Tip uzora zalivki linii. 0 pechataet izvestnyi shablon simvolov etaoina, 1 pechataet polnyi shablon simvolov etaoina, a 2 pechataet sluchainyi nabor simvolov dlia bystrogo zapolneniia stroki.
+Prekrasno imitiruet cheloveka, pishushchego tekst.
+Pokazat polozhenie strelki
+Pokazyvaet polozhenie stolbtsa bukv pishushchei mashinki, pokazyvaia strelku v nizhnei chasti ekrana.
+Migaiushchie tsveta na ekrane.
+Imitiruet prozhektor, kotoryi peremeshchaetsia po tekstu.
+Zapolniaet rampu gradientnymi tsvetami.
+Skladyvaet korobki po ekranu.
+Imitiruet gniluiu polosu s drugim tsvetom fona, sozdavaia gradient.
+Pokazyvaet feierverki, kotorye zapuskaiutsia i vzryvaiutsia.
+Pokazyvaet tsvetnoi tekst figletov.
+Rezhim radugi
+Vkliuchaet rezhim tsvetov radugi.
+Pokazhite vam tsvetnoi migaiushchii tekst.
+Imitiruet staticheskii shum televizora.
+Prostaia data i vremia v tsentre ekrana.
+Imitiruet sboi na ekrane.
+Pokazyvaet vam niskhodiashchuiu liniiu, kotoraia idet vniz i ischezaet.
+Pokazyvaet neopredelennyi indikator vypolneniia.
+Pokazyvaet vam pulsiruiushchii fon.
+Pokazyvaet pulsiruiushchii fon v bitakh.
+BeatPulse budet vybirat sluchainye tsveta, esli on vkliuchen. V protivnom sluchae ispolzuite tsveta iz konfiguratsii.
+Pokazyvaet vam pulsiruiushchii krai.
+Pokazyvaet pulsiruiushchuiu dinamiku v bitakh.
+BeatEdgePulse budet vybirat sluchainye tsveta, esli on vkliuchen. V protivnom sluchae ispolzuite tsveta iz konfiguratsii.
+Pokazyvaet ekran, zapolnennyi tsvetom, kotoryi medlenno prevrashchaetsia v drugoi tsvet, sozdavaia gradienty.
+Sleduiushchii interval gradientnoi gnili
+Skolko millisekund zhdat, prezhde chem sgniet sleduiushchii ekran?
+Pokazyvaet gradient na ekrane.
+Pokazyvaet vam zvezdnoe puteshestvie v 2D.
+Meniaet fon v sootvetstvii s zadannymi tsvetami, imitiruia sirenu.
+Stil sireny
+Stil sireny.
+Vrashchaiushchiesia udary.
+Zapolniaet konsol tsvetom zmei.
+Pokazyvaet ekvalaizer, kotoryi pokazyvaet nizkie, srednie i vysokie chastoty.
+Zaderzhka sleduiushchego ekrana v millisekundakh
+Imitiruet sistemnye oshibki raznykh operatsionnykh sistem.
+Generiruet tsveta iz sluchainogo smeshcheniia.
+Pokazyvaet tekst, kotoryi postepenno ischezaet i migaet.
+ExcaliBeats budet vybirat sluchainye tsveta, esli on vkliuchen. V protivnom sluchae ispolzuite tsveta iz konfiguratsii.
+Iavnyi rezhim
+Iavno izmenite tekst na Ekskalibur.
+Rezhim transa
+Rezhim transa — umnozhaet BPM na 2, chtoby imitirovat stil muzyki trans.
+Pokazyvaet vam gruppu voln v barakh.
+Uroven chastoty
+Uroven chastoty. Eto znamenatel znacheniia Pi v matematike.
+Pokazyvaet vam volnu, kotoraia generiruetsia i prodvigaetsia vpered.
+Darit zavorazhivaiushchee oshchushchenie.
+Imitiruet severnoe siianie.
+Pokazyvaet vam iarkuiu molniiu.
+Veroiatnost udara
+Shans, v protsentakh, nanesti udar
+Pokazyvaet medlenno meniaiushchiisia tsvet fona.
+Temnye tsveta
+Ispolzovat li temnye tsveta ili svetlye tsveta.
+Tsvetovye shagi
+Skolko tsvetovykh shagov dlia perekhoda mezhdu dvumia tsvetami?
+Pokazyvaet slovo i ego khesh-summu.
+Pokazyvaet ischezaiushchii kvadrat v chetyrekh uglakh.
+Skolko millisekund nuzhno podozhdat, prezhde chem kvadrat ischeznet?
+Raskidyvaet chislo po vsemu ekranu.
+Daet vam obrazets korobki.
+Padaiushchaia liniia tsvetov.
+Shans vybrosit novyi padaiushchii tsvet
+Pokazyvaet prostoi tekst.
+Pokazyvaet prostoi tekst v tekstovom pole.
+Pokazyvaet slovo, kotoroe pishetsia medlenno, i ego khesh-summu.
+Imitiruet sirenu, ispolzuiushchuiu vashu temu v vide nabora tsvetov.
+Stil sireny iz temy iadra
+Pokazyvaet gruppu zvezd na perednem plane korablia.
+Pokazyvaet gruppu piaten na vid speredi korablia.
+Pokazyvaet vam razbrosannuiu bukvu po vsemu ekranu.
+Pokazyvaet neskolko strok.
+Pokazyvaet vam lazernye luchi.
+Pokazyvaet tekst, kotoryi bluzhdaet po konsoli.
+Povorotnaia volna po gorizontali i vertikali pozvoliaet sozdavat velikolepnye uzory.
+Gorizontalnyi uroven chastoty
+Uroven gorizontalnoi chastoty. Eto znamenatel znacheniia Pi v matematike. Ispolzuite eto, chtoby sozdat krasivye volnistye vertliugi!
+Uroven vertikalnoi chastoty
+Uroven vertikalnoi chastoty. Eto znamenatel znacheniia Pi v matematike. Ispolzuite eto, chtoby sozdat krasivye volnistye vertliugi!
+Imitiruet otkrytie i zakrytie dveri.
+Pokazyvaet dinamicheski izmeniaiushchiisia gradient.
+Po nebu bystro mchitsia kometa.
+Brilliant, kotoryi siiaet.
+Izmenenie tsveta fona v zavisimosti ot uvelicheniia ottenka. Raduga!
+Nasyshchennost tsvetovogo ottenka
+Naskolko intensiven tsvet?
+Naskolko svetlyi tsvet?
+Izmenenie tsveta fona v zavisimosti ot uvelicheniia ottenka. Bolshe radugi!
+Krasochnye chastitsy!
+Plotnost chastits
+Naskolko plotny chastitsy?
+Pered izmeneniem chasovogo poiasa trebuetsia obnovlenie
+Skolko obnovlenii proiskhodit do smeny chasovogo poiasa?
+Blok za blokom zapolniaet ves ekran, a zatem zatemniaet ego.
+Pokazyvaet vam tantsevalnye linii.
+Generiruet krasivye labirinty, ispolzuia algoritm Kraskala.
+Novaia zaderzhka v labirinte v millisekundakh
+Skorost generatsii
+Skorost sozdaniia labirinta v millisekundakh
+Vydelit nepokrytye pozitsii
+Esli vkliucheno, nezakrytye pozitsii vydeliaiutsia serym tsvetom fona. V protivnom sluchae oni otobrazhaiutsia kak korobki.
+Ispolzuite preobrazovanie Shvartsa
+Esli etot parametr vkliuchen, eta zastavka ispolzuet preobrazovanie Shvartsa dlia peremeshivaniia kraev labirinta. V protivnom sluchae ispolzuetsia prostoi metod preobrazovaniia.
+Dve gruppy tochek vrashchaiutsia po dvum polovinam konsoli.
+Otmechaet vekhu fiksatsii kazhdogo 1000-go kommita.
+Pokazyvaet, kak raspyliaiutsia zvezdy.
+Dve linii, meniaiushchie tsvet na ekrane.
+Prostaia zastavka.
+Zastavka, pokazyvaiushchaia vash progress.
+Zastavka, pokazyvaiushchaia vash progress s pomoshchiu teksta PowerLine.
