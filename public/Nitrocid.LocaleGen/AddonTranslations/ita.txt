@@ -1286,7 +1286,6 @@ Impossibile cancellare il file dump
 I seguenti file non vengono cancellati:
 Cancellare questi file?
 Impossibile cancellare file vari
-Nessun aiuto per l'argomento "{0}".
 Nessun argomento aiuta la descrizione
 Identificatore di colore RYB non valido.
 Identificatore di colore CMY non valido.
@@ -1313,7 +1312,6 @@ Il numero di byte specificato non è valido.
 Sintassi dell'espressione regolare non valida.
 Impossibile trovare il file o la directory di destinazione.
 Non è possibile sovrascrivere un file o una directory esistente con un collegamento simbolico.
-Impossibile trovare il file che corrisponda alla stringa "{0}": {1}
 Il file fornito, {0}, non è un file di testo valido. Se questo file è un file JSON, questa funzione potrebbe renderlo illeggibile. Per la sicurezza del tuo file, questa operazione viene interrotta per prevenire il danneggiamento del file.
 Il file di origine fornito, {0}, non è un file di testo valido.
 Il file di destinazione fornito, {0}, non è un file di testo valido.
@@ -1971,7 +1969,6 @@ Nessun comando aggiuntivo del kernel.
 Comandi unificati:
 Comandi unificati non implementati!!!
 Comando:
-Nessun aiuto per il comando "{0}".
 Non puoi dichiarare il nuovo blocco prima di inserire espressioni che supportano la creazione, come condizioni o cicli. Il numero dello stack è {0}.
 Quando inizi un nuovo blocco, assicurati di aver rientrato correttamente lo stack. Il numero dello stack è {0}.
 Lo script non è valido. Controlla lo script e risolvi eventuali errori.
@@ -1989,7 +1986,6 @@ Carica le cronologie della shell
 Ripete l'ultima azione o il comando specificato
 Salva le cronologie della shell
 Mostra un suggerimento casuale del kernel
-Impossibile avviare "{0}": {1}
 Le shell non possono avviarsi a meno che non sia avviata la shell madre.
 Impossibile tentare di inizializzare la shell
 Errore nella shell amministrativa: {0}
@@ -2087,7 +2083,6 @@ File manager host del sistema interattivo
 Consente all'utente di inserire input come password
 Mostra le informazioni sulla licenza per il kernel
 Verifica la presenza di errori di sintassi in uno script UESH
-Sopprime i fastidiosi messaggi "permesso negato".
 Elenca una cartella in modo ricorsivo
 Elenca una cartella utilizzando il formato ad albero
 Elenca tutte le configurazioni disponibili
@@ -2292,13 +2287,10 @@ Il contesto splash non è valido
 Spruzzi disponibili:
 Questo comando non è supportato su Windows.
 Eseguire il debug della shell
-Inserisci un byte su una riga separata che desideri aggiungere alla fine del file. Quando hai finito, scrivi "EOF" sulla sua riga.
 Il numero di byte specificato {0} non è un numero valido.
-Inserisci il testo che desideri aggiungere alla fine del file. Quando hai finito, scrivi "EOF" sulla sua riga.
 Creazione del gruppo {0}...
 Aggiunta dell'utente {0} al gruppo {1}...
 Ora puoi eseguire '{0}' come '{1}'!
-L'attributo "{0}" non è valido.
 Il file o la cartella sono già in uso.
 In attesa dello sblocco del file o della cartella...
 Il file o la cartella non sono in uso.
@@ -2325,7 +2317,6 @@ Vettore di inizializzazione utilizzato
 Informazioni sull'assemblaggio .NET
 Il file non è un assembly .NET valido.
 Informazioni aggiuntive
-Utilizzare "ftp" se si intende scaricare file dal server FTP.
 Alcuni o tutti i tuoi componenti aggiuntivi sono stati installati. Se desideri reinstallarli, utilizza l'opzione -reinstall.
 Recupero del pacchetto dei componenti aggiuntivi in ​​corso...
 Impossibile recuperare il pacchetto aggiuntivo
@@ -2368,7 +2359,6 @@ File trovato nel percorso:
 File non trovato nelle directory di ricerca del percorso.
 Nessun permesso del genere
 Nessuna modalità di autorizzazione di questo tipo
-Utilizza "ftp" se intendi caricare file sul server FTP.
 Gruppo {0} rimosso.
 Rimosso {0} dal gruppo {1}.
 Screensaver disponibili:
@@ -2937,7 +2927,6 @@ Salvataggio della lingua...
 Seleziona la lingua
 Seleziona una lingua in cui tradurre questa stringa:
 Scrivi la tua traduzione di
-Apri "mail" per vederli.
 L'ID della nota deve essere un numero di nota
 Questa nota è vuota
 Impossibile rimuovere una nota inesistente
@@ -2956,7 +2945,6 @@ Esegue una query SQL
 Informazioni sulla banca dati
 Apre il file SQL nell'interfaccia utente interattiva dell'editor esadecimale
 Carica tema dal file...
-Creazione di un nuovo tema "{0}".
 Specifica la directory in cui salvare il tema:
 Informazioni per
 Il cronometro è pronto.
@@ -2990,7 +2978,6 @@ Ma sei sfortunato. Perdente.
 Sei fortunato! Vincitore!
 È un pareggio.
 Il giocatore {0} vince!
-Premere "q" per uscire.
 Personaggio attuale:
 Hai indovinato la parola giusta! Hai vinto!
 Questo tipo di archivio non è supportato.
@@ -3047,8 +3034,6 @@ Utente
 Luogo
 Nessuna informazione sul collegamento simbolico
 Modificato il
-Immettere una directory remota. ".." tornare indietro
-Immettere una directory locale. ".." tornare indietro.
 Stato di colpa per il file
 Numero di pezzo
 Numero di righe
@@ -3133,7 +3118,6 @@ Percorso della proprietà
 Costo dell'immobile
 La shell JSON non è riuscita a rimuovere un elemento.
 La shell JSON non è riuscita a impostare un elemento.
-Inserisci il tuo messaggio qui sotto. Scrivi "EOF" per confermare.
 Il messaggio {0} da {1} è stato spostato. {2} messaggi rimanenti da analizzare.
 Allegati:
 Questa connessione contiene un'istanza di feed RSS non valida.
@@ -3318,11 +3302,7 @@ Questa sezione elenca le impostazioni di rete, come la shell FTP, le impostazion
 Impostazioni generali di rete
 Porta chat di debug
 Scrivere una porta chat del debugger remoto. Deve essere numerico e non deve essere già utilizzato. In caso contrario, la chat del debugger remoto non riuscirà ad aprire la porta.
-Scrivi quante volte il comando "get" dovrebbe ritentare i download non riusciti. Deve essere numerico.
 Carica tempi di tentativi
-Scrivi quante volte il comando "put" dovrebbe ritentare i caricamenti non riusciti. Deve essere numerico.
-Mostra la barra di avanzamento durante il download o il caricamento dal comando "get" o "put".
-Se vero, fa sì che "get" o "put" mostrino la barra di avanzamento durante il download o il caricamento.
 Questa sezione elenca le impostazioni generali del salvaschermo. Per le impostazioni individuali del salvaschermo, esci da Impostazioni e apri Impostazioni salvaschermo.
 Impostazioni di base del salvaschermo
 Salvaschermo
@@ -3334,8 +3314,6 @@ Riconoscere l'avviso di crisi fotosensibile
 Se non sei fotosensibile alle animazioni frenetiche che ti mostrano alcuni screensaver, puoi disattivare questo avviso abilitando questa opzione. Tieni presente che non siamo responsabili per gli effetti collaterali che potrebbero derivare da tali animazioni. Cercare un medico specialista per ulteriori informazioni.
 Le impostazioni che non rientrano nelle sezioni appropriate arrivano qui.
 Impostazioni varie
-Se il salvataggio automatico è abilitato, il file di testo verrà salvato ogni "n" secondi.
-Scrivi i nomi dei file delle mod che non verranno eseguite all'avvio. Quando hai finito, scrivi "q". Scrivi un segno meno accanto al percorso per rimuovere una mod esistente.
 Un carattere che assomiglia all'angolo in alto a destra. Assicurati di inserire solo un carattere.
 Un carattere che assomiglia all'angolo in basso a destra. Assicurati di inserire solo un carattere.
 Mostra il conteggio dei comandi nell'elenco dei comandi, controllato dagli interruttori count show per diversi tipi di comandi.
@@ -3435,7 +3413,6 @@ Batti il ​​colore
 Simula una persona che scrive un testo con errori di battitura.
 Mostra un testo scorrevole da destra a sinistra.
 Simula una persona che scriveva un testo per un giornale sulla tastiera del linotype ai vecchi tempi.
-Quanti caratteri scrivere prima di attivare il "riempimento riga"?
 Tipo di motivo di riempimento linea. 0 stampa lo schema noto di caratteri etaoin, 1 stampa lo schema completo di caratteri etaoin e 2 stampa l'insieme casuale di caratteri per riempire rapidamente la riga.
 Simula perfettamente una persona che scrive un testo.
 Mostra la posizione della freccia

@@ -1286,7 +1286,6 @@ Can't wipe dump file
 The following files are not wiped:
 Are you sure to wipe these files?
 Can't wipe miscellaneous file
-No help for argument "{0}".
 No argument help description
 Invalid RYB colour specifier.
 Invalid CMY colour specifier.
@@ -1313,7 +1312,6 @@ The specified byte number is invalid.
 Invalid regular expression syntax.
 The target file or directory isn't found.
 Can't overwrite an existing file or directory with a symbolic link.
-Unable to find file to match string "{0}": {1}
 The file you provided, {0}, is not a valid text file. If this file is a JSON file, this function might cause it to be unreadable. For your file's safety, this operation is halted to prevent file corruption.
 The source file you provided, {0}, is not a valid text file.
 The target file you provided, {0}, is not a valid text file.
@@ -1971,7 +1969,6 @@ No kernel addon commands.
 Unified commands:
 Unified commands not implemented!!!
 Command:
-No help for command "{0}".
 You can't declare the new block before you place expressions that support the creation, like conditions or loops. The stack number is {0}.
 When starting a new block, make sure that you've indented the stack correctly. The stack number is {0}.
 The script is malformed. Cheque the script and resolve any errors.
@@ -1989,7 +1986,6 @@ Loads shell histories
 Repeats the last action or the specified command
 Saves shell histories
 Shows a random kernel tip
-Failed to start "{0}": {1}
 Shells can't start unless the mother shell has started.
 Failed trying to initialise shell
 Error in administrative shell: {0}
@@ -2087,7 +2083,6 @@ Interactive system host file manager
 Allows user to enter input as password
 Shows licence information for the kernel
 Cheques a UESH script for syntax errors
-Suppresses the annoying "permission denied" messages
 Lists a folder recursively
 Lists a folder using the tree form
 Lists all available configurations
@@ -2292,13 +2287,10 @@ The splash context is not valid
 Available splashes:
 This command is not supported on Windows.
 Debug Shell
-Enter a byte on its own line that you want to append to the end of the file. When you're done, write "EOF" on its own line.
 Specified Byte number {0} is not a valid number.
-Enter the text that you want to append to the end of the file. When you're done, write "EOF" on its own line.
 Creating group {0}...
 Adding user {0} to group {1}...
 You can now run '{0}' as '{1}'!
-Attribute "{0}" is invalid.
 File or folder is already in use.
 Waiting until the file or the folder is unlocked...
 File or folder is not in use.
@@ -2325,7 +2317,6 @@ Initialisation vector used
 .NET assembly info
 File is not a valid .NET assembly.
 Extra info
-Please use "ftp" if you are going to download files from the FTP server.
 Some or all your addons have been installed. If you wish to re-install them, use the -reinstall switch.
 Fetching the addons package...
 Failed to fetch the addon package
@@ -2368,7 +2359,6 @@ File found in path:
 File not found in path lookup directories.
 No such permission
 No such permission mode
-Please use "ftp" if you are going to upload files to the FTP server.
 Group {0} removed.
 Removed {0} from group {1}.
 Available screensavers:
@@ -2937,7 +2927,6 @@ Saving language...
 Select language
 Select a language to translate this string to:
 Write your translation of
-Open "mail" to see them.
 The note ID must be a note number
 This note is empty
 Can't remove non-existent note
@@ -2956,7 +2945,6 @@ Executes an SQL query
 Database info
 Opens the SQL file in the interactive hex editor TUI
 Load Theme From File...
-Making a new theme "{0}".
 Specify directory to save theme to:
 Information for
 Stopwatch is ready.
@@ -2990,7 +2978,6 @@ But, you're unlucky. Loser.
 You're lucky! Winner!
 It's a draw.
 Player {0} wins!
-Press "q" to exit.
 Current character:
 You guessed the right word! You win!
 This archive type is not supported.
@@ -3047,8 +3034,6 @@ User
 Site
 No symlink info
 Modified on
-Enter a remote directory. ".." to go back
-Enter a local directory. ".." to go back.
 Blame status for file
 Hunk number
 Number of lines
@@ -3133,7 +3118,6 @@ Property path
 Property value
 The JSON shell failed to remove an item.
 The JSON shell failed to set an item.
-Enter your message below. Write "EOF" to confirm.
 Message {0} from {1} moved. {2} messages remaining to parse.
 Attachments:
 This connection contains an invalid RSS feed instance.
@@ -3318,11 +3302,7 @@ This section lists the network settings, like the FTP shell, the network-related
 General networking settings
 Debug Chat Port
 Write a remote debugger chat port. It must be numeric, and must not be already used. Otherwise, remote debugger chat will fail to open the port.
-Write how many times the "get" command should retry failed downloads. It must be numeric.
 Upload Retry Times
-Write how many times the "put" command should retry failed uploads. It must be numeric.
-Show progress bar while downloading or uploading from "get" or "put" command
-If true, it makes "get" or "put" show the progress bar while downloading or uploading.
 This section lists the general screensaver settings. For individual screensaver settings, exit Settings and open Screensaver Settings.
 Basic screensaver settings
 Screensaver
@@ -3334,8 +3314,6 @@ Acknowledge the photosensitive seizure warning
 If you aren't photosensitive to the fast-paced animations that some of the screensavers show you, you can disable this warning by enabling this option. Please note that we aren't responsible for the side effects that may have come from such animations. Seek a professional medical specialist for more information.
 Settings that don't fit in their appropriate sections land here.
 Miscellaneous settings
-If autosave is enabled, the text file will be saved for each "n" seconds.
-Write the filenames of the mods that will not run on startup. When you're finished, write "q". Write a minus sign next to the path to remove an existing mod.
 A character that resembles the upper right corner. Be sure to only input one character.
 A character that resembles the lower right corner. Be sure to only input one character.
 Shows the commands count in the command list, controlled by the count show switches for different kinds of commands.
@@ -3435,7 +3413,6 @@ Beat colour
 Simulates a person writing text with typos.
 Shows you a scrolling text from the right to the left.
 Simulates a person writing text for a newspaper in the linotype keyboard in the old times.
-How many characters to write before triggering the "line fill"?
 Line fill pattern type. 0 prints the known pattern of etaoin characters, 1 prints the complete pattern of etaoin characters, and 2 prints the random set of characters to rapidly fill in the line.
 Simulates a person writing text perfectly.
 Show arrow position

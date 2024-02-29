@@ -1286,7 +1286,6 @@ Impossible d'effacer le fichier de vidage
 Les fichiers suivants ne sont pas effacés :
 Êtes-vous sûr d'effacer ces fichiers ?
 Impossible d'effacer les fichiers divers
-Aucune aide pour l'argument "{0}".
 Description de l'aide sans argument
 Spécificateur de couleur RYB non valide.
 Spécificateur de couleur CMJ non valide.
@@ -1313,7 +1312,6 @@ Le numéro d'octet spécifié n'est pas valide.
 Syntaxe d'expression régulière invalide.
 Le fichier ou le répertoire cible est introuvable.
 Impossible d'écraser un fichier ou un répertoire existant avec un lien symbolique.
-Impossible de trouver le fichier correspondant à la chaîne "{0}" : {1}
 Le fichier que vous avez fourni, {0}, n'est pas un fichier texte valide. Si ce fichier est un fichier JSON, cette fonction peut le rendre illisible. Pour la sécurité de votre fichier, cette opération est interrompue pour éviter toute corruption du fichier.
 Le fichier source que vous avez fourni, {0}, n'est pas un fichier texte valide.
 Le fichier cible que vous avez fourni, {0}, n'est pas un fichier texte valide.
@@ -1971,7 +1969,6 @@ Aucune commande complémentaire du noyau.
 Commandes unifiées :
 Commandes unifiées non implémentées !!!
 Commande:
-Aucune aide pour la commande "{0}".
 Vous ne pouvez pas déclarer le nouveau bloc avant de placer des expressions qui prennent en charge la création, comme des conditions ou des boucles. Le numéro de pile est {0}.
 Lorsque vous démarrez un nouveau bloc, assurez-vous que vous avez correctement indenté la pile. Le numéro de pile est {0}.
 Le script est mal formé. Vérifiez le script et résolvez les erreurs.
@@ -1989,7 +1986,6 @@ Charge les historiques de shell
 Répète la dernière action ou la commande spécifiée
 Enregistre les historiques de shell
 Affiche une astuce aléatoire du noyau
-Échec du démarrage de "{0}" : {1}
 Les shells ne peuvent démarrer que si le shell mère a démarré.
 Échec de la tentative d'initialisation du shell
 Erreur dans le shell d'administration : {0}
@@ -2087,7 +2083,6 @@ Gestionnaire de fichiers hôte du système interactif
 Permet à l'utilisateur de saisir une entrée comme mot de passe
 Affiche les informations de licence pour le noyau
 Vérifie un script UESH pour les erreurs de syntaxe
-Supprime les messages ennuyeux « autorisation refusée »
 Répertorie un dossier de manière récursive
 Répertorie un dossier sous forme d'arborescence
 Répertorie toutes les configurations disponibles
@@ -2292,13 +2287,10 @@ Le contexte splash n'est pas valide
 Splash disponibles :
 Cette commande n'est pas prise en charge sous Windows.
 Shell de débogage
-Entrez un octet sur sa propre ligne que vous souhaitez ajouter à la fin du fichier. Lorsque vous avez terminé, écrivez « EOF » sur sa propre ligne.
 Le numéro d'octet spécifié {0} n'est pas un nombre valide.
-Saisissez le texte que vous souhaitez ajouter à la fin du fichier. Lorsque vous avez terminé, écrivez « EOF » sur sa propre ligne.
 Création du groupe {0}...
 Ajout de l'utilisateur {0} au groupe {1}...
 Vous pouvez désormais exécuter « {0} » en tant que « {1} » !
-L'attribut "{0}" n'est pas valide.
 Le fichier ou le dossier est déjà utilisé.
 En attendant que le fichier ou le dossier soit déverrouillé...
 Le fichier ou le dossier n'est pas utilisé.
@@ -2325,7 +2317,6 @@ Vecteur d'initialisation utilisé
 Informations sur l'assemblage .NET
 Le fichier n’est pas un assembly .NET valide.
 Informaitons supplémentaires
-Veuillez utiliser "ftp" si vous souhaitez télécharger des fichiers depuis le serveur FTP.
 Certains ou tous vos modules complémentaires ont été installés. Si vous souhaitez les réinstaller, utilisez le commutateur -reinstall.
 Récupération du package d'addons...
 Échec de la récupération du package complémentaire
@@ -2368,7 +2359,6 @@ Fichier trouvé dans le chemin :
 Fichier introuvable dans les répertoires de recherche de chemin.
 Aucune autorisation de ce type
 Aucun mode d'autorisation de ce type
-Veuillez utiliser "ftp" si vous souhaitez télécharger des fichiers sur le serveur FTP.
 Groupe {0} supprimé.
 {0} a été supprimé du groupe {1}.
 Économiseurs d'écran disponibles :
@@ -2937,7 +2927,6 @@ Sauvegarder la langue...
 Choisir la langue
 Sélectionnez une langue dans laquelle traduire cette chaîne :
 Écrivez votre traduction de
-Ouvrez "mail" pour les voir.
 L'ID de la note doit être un numéro de note
 Cette note est vide
 Impossible de supprimer une note inexistante
@@ -2956,7 +2945,6 @@ Exécute une requête SQL
 Informations sur la base de données
 Ouvre le fichier SQL dans l'éditeur hexadécimal interactif TUI
 Charger le thème à partir du fichier...
-Création d'un nouveau thème "{0}".
 Spécifiez le répertoire dans lequel enregistrer le thème :
 Information pour
 Le chronomètre est prêt.
@@ -2990,7 +2978,6 @@ Mais tu n'as pas de chance. Perdant.
 Tu es chanceux! Gagnant!
 C'est un match nul.
 Le joueur {0} gagne !
-Appuyez sur "q" pour quitter.
 Caractère actuel :
 Vous avez deviné le bon mot ! Vous gagnez!
 Ce type d'archive n'est pas pris en charge.
@@ -3047,8 +3034,6 @@ Utilisateur
 Site
 Aucune information sur le lien symbolique
 Modifié le
-Entrez un répertoire distant. ".." retourner
-Entrez un répertoire local. ".." retourner.
 Statut de faute pour le dossier
 Numéro de morceau
 Nombre de lignes
@@ -3133,7 +3118,6 @@ Chemin de propriété
 Valeur de la propriété
 Le shell JSON n'a pas réussi à supprimer un élément.
 Le shell JSON n'a pas réussi à définir un élément.
-Entrez votre message ci-dessous. Écrivez « EOF » pour confirmer.
 Message {0} de {1} déplacé. {2} messages restants à analyser.
 Pièces jointes :
 Cette connexion contient une instance de flux RSS non valide.
@@ -3318,11 +3302,7 @@ Cette section répertorie les paramètres réseau, tels que le shell FTP, les pa
 Paramètres réseau généraux
 Port de discussion de débogage
 Écrivez un port de discussion du débogueur distant. Il doit être numérique et ne doit pas être déjà utilisé. Sinon, la discussion du débogueur à distance ne parviendra pas à ouvrir le port.
-Écrivez combien de fois la commande « get » doit réessayer les téléchargements ayant échoué. Il doit être numérique.
 Temps de nouvelle tentative de téléchargement
-Écrivez combien de fois la commande "put" doit réessayer les téléchargements ayant échoué. Il doit être numérique.
-Afficher la barre de progression lors du téléchargement ou du téléchargement à partir de la commande "get" ou "put"
-Si c'est vrai, "get" ou "put" affiche la barre de progression lors du téléchargement ou du téléchargement.
 Cette section répertorie les paramètres généraux de l'économiseur d'écran. Pour les paramètres d'économiseur d'écran individuels, quittez Paramètres et ouvrez Paramètres de l'économiseur d'écran.
 Paramètres de base de l'économiseur d'écran
 Économiseur d'écran
@@ -3334,8 +3314,6 @@ Accepter l'avertissement de crise photosensible
 Si vous n'êtes pas photosensible aux animations rapides que certains écrans de veille vous montrent, vous pouvez désactiver cet avertissement en activant cette option. Veuillez noter que nous ne sommes pas responsables des effets secondaires pouvant provenir de telles animations. Recherchez un médecin spécialiste pour plus d’informations.
 Les paramètres qui ne rentrent pas dans leurs sections appropriées atterrissent ici.
 Paramètres divers
-Si la sauvegarde automatique est activée, le fichier texte sera enregistré toutes les "n" secondes.
-Écrivez les noms de fichiers des mods qui ne s'exécuteront pas au démarrage. Lorsque vous avez terminé, écrivez « q ». Écrivez un signe moins à côté du chemin pour supprimer un mod existant.
 Un caractère qui ressemble au coin supérieur droit. Assurez-vous de ne saisir qu'un seul caractère.
 Un caractère qui ressemble au coin inférieur droit. Assurez-vous de ne saisir qu'un seul caractère.
 Affiche le nombre de commandes dans la liste des commandes, contrôlé par les commutateurs count show pour différents types de commandes.
@@ -3435,7 +3413,6 @@ Battre la couleur
 Simule une personne écrivant un texte avec des fautes de frappe.
 Vous montre un texte défilant de droite à gauche.
 Simule une personne écrivant du texte pour un journal sur le clavier linotype dans les temps anciens.
-Combien de caractères écrire avant de déclencher le "remplissage de ligne" ?
 Type de motif de remplissage de ligne. 0 imprime le modèle connu de caractères etaoin, 1 imprime le modèle complet de caractères etaoin et 2 imprime l'ensemble aléatoire de caractères pour remplir rapidement la ligne.
 Simule parfaitement une personne qui écrit un texte.
 Afficher la position de la flèche

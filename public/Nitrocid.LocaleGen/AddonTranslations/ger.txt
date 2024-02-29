@@ -1286,7 +1286,6 @@ Dump-Datei kann nicht gelöscht werden
 Die folgenden Dateien werden nicht gelöscht:
 Möchten Sie diese Dateien wirklich löschen?
 Verschiedene Dateien können nicht gelöscht werden
-Keine Hilfe für Argument „{0}“.
 Keine Argumenthilfebeschreibung
 Ungültiger RYB-Farbspezifizierer.
 Ungültiger CMY-Farbspezifizierer.
@@ -1313,7 +1312,6 @@ Die angegebene Bytenummer ist ungültig.
 Ungültige Syntax für reguläre Ausdrücke.
 Die Zieldatei oder das Zielverzeichnis wurde nicht gefunden.
 Eine vorhandene Datei oder ein vorhandenes Verzeichnis kann nicht mit einem symbolischen Link überschrieben werden.
-Die mit der Zeichenfolge „{0}“ übereinstimmende Datei konnte nicht gefunden werden: {1}
 Die von Ihnen bereitgestellte Datei {0} ist keine gültige Textdatei. Wenn es sich bei dieser Datei um eine JSON-Datei handelt, kann diese Funktion dazu führen, dass sie nicht lesbar ist. Zur Sicherheit Ihrer Datei wird dieser Vorgang angehalten, um eine Beschädigung der Datei zu verhindern.
 Die von Ihnen angegebene Quelldatei {0} ist keine gültige Textdatei.
 Die von Ihnen angegebene Zieldatei {0} ist keine gültige Textdatei.
@@ -1971,7 +1969,6 @@ Keine Kernel-Addon-Befehle.
 Einheitliche Befehle:
 Einheitliche Befehle nicht implementiert!!!
 Befehl:
-Keine Hilfe für Befehl „{0}“.
 Sie können den neuen Block nicht deklarieren, bevor Sie Ausdrücke platziert haben, die die Erstellung unterstützen, wie Bedingungen oder Schleifen. Die Stapelnummer ist {0}.
 Stellen Sie beim Starten eines neuen Blocks sicher, dass Sie den Stapel richtig eingerückt haben. Die Stapelnummer ist {0}.
 Das Skript ist fehlerhaft. Überprüfen Sie das Skript und beheben Sie etwaige Fehler.
@@ -1989,7 +1986,6 @@ Lädt Shell-Verläufe
 Wiederholt die letzte Aktion oder den angegebenen Befehl
 Speichert Shell-Verläufe
 Zeigt einen zufälligen Kernel-Tipp
-„{0}“ konnte nicht gestartet werden: {1}
 Shells können erst gestartet werden, wenn die Mutter-Shell gestartet wurde.
 Der Versuch, die Shell zu initialisieren, ist fehlgeschlagen
 Fehler in der Verwaltungsshell: {0}
@@ -2087,7 +2083,6 @@ Interaktiver System-Host-Dateimanager
 Ermöglicht dem Benutzer die Eingabe eines Passworts
 Zeigt Lizenzinformationen für den Kernel an
 Überprüft ein UESH-Skript auf Syntaxfehler
-Unterdrückt die lästigen „Berechtigung verweigert“-Meldungen
 Listet einen Ordner rekursiv auf
 Listet einen Ordner mithilfe der Baumstruktur auf
 Listet alle verfügbaren Konfigurationen auf
@@ -2292,13 +2287,10 @@ Der Splash-Kontext ist ungültig
 Verfügbare Spritzer:
 Dieser Befehl wird unter Windows nicht unterstützt.
 Debug-Shell
-Geben Sie in einer eigenen Zeile ein Byte ein, das Sie am Ende der Datei anhängen möchten. Wenn Sie fertig sind, schreiben Sie „EOF“ in eine eigene Zeile.
 Die angegebene Bytenummer {0} ist keine gültige Zahl.
-Geben Sie den Text ein, den Sie am Ende der Datei anhängen möchten. Wenn Sie fertig sind, schreiben Sie „EOF“ in eine eigene Zeile.
 Gruppe {0} wird erstellt...
 Benutzer {0} wird zur Gruppe {1} hinzugefügt...
 Sie können „{0}“ jetzt als „{1}“ ausführen!
-Das Attribut „{0}“ ist ungültig.
 Datei oder Ordner wird bereits verwendet.
 Warten, bis die Datei oder der Ordner entsperrt ist ...
 Datei oder Ordner wird nicht verwendet.
@@ -2325,7 +2317,6 @@ Verwendeter Initialisierungsvektor
 Informationen zur .NET-Assembly
 Die Datei ist keine gültige .NET-Assembly.
 Zusatzinformation
-Bitte verwenden Sie „ftp“, wenn Sie Dateien vom FTP-Server herunterladen möchten.
 Einige oder alle Ihrer Add-ons wurden installiert. Wenn Sie sie erneut installieren möchten, verwenden Sie den Schalter -reinstall.
 Das Add-on-Paket wird abgerufen...
 Das Add-on-Paket konnte nicht abgerufen werden
@@ -2368,7 +2359,6 @@ Datei im Pfad gefunden:
 Die Datei wurde in den Pfadsuchverzeichnissen nicht gefunden.
 Keine solche Erlaubnis
 Kein solcher Berechtigungsmodus
-Bitte verwenden Sie „ftp“, wenn Sie Dateien auf den FTP-Server hochladen möchten.
 Gruppe {0} entfernt.
 {0} aus Gruppe {1} entfernt.
 Verfügbare Bildschirmschoner:
@@ -2937,7 +2927,6 @@ Sprache speichern...
 Sprache auswählen
 Wählen Sie eine Sprache aus, in die diese Zeichenfolge übersetzt werden soll:
 Schreiben Sie Ihre Übersetzung von
-Öffnen Sie „Mail“, um sie anzuzeigen.
 Die Notiz-ID muss eine Notiznummer sein
 Diese Notiz ist leer
 Nicht vorhandene Notiz kann nicht entfernt werden
@@ -2956,7 +2945,6 @@ Führt eine SQL-Abfrage aus
 Datenbankinformationen
 Öffnet die SQL-Datei im interaktiven Hex-Editor TUI
 Theme aus Datei laden...
-Erstellen eines neuen Themas „{0}“.
 Geben Sie das Verzeichnis an, in dem das Design gespeichert werden soll:
 Information für
 Stoppuhr ist fertig.
@@ -2990,7 +2978,6 @@ Aber du hast Pech. Verlierer.
 Du hast Glück! Gewinner!
 Es ist eine Zeichnung.
 Spieler {0} gewinnt!
-Drücken Sie „q“, um den Vorgang zu beenden.
 Aktueller Charakter:
 Du hast das richtige Wort erraten! Du gewinnst!
 Dieser Archivtyp wird nicht unterstützt.
@@ -3047,8 +3034,6 @@ Benutzer
 Website
 Keine Symlink-Informationen
 Geändert am
-Geben Sie ein Remote-Verzeichnis ein. ".." zurück zu gehen
-Geben Sie ein lokales Verzeichnis ein. ".." zurück zu gehen.
 Schuldstatus für die Datei
 Hunk-Nummer
 Anzahl der Zeilen
@@ -3133,7 +3118,6 @@ Eigenschaftspfad
 Eigentumswert
 Die JSON-Shell konnte ein Element nicht entfernen.
 Die JSON-Shell konnte ein Element nicht festlegen.
-Geben Sie unten Ihre Nachricht ein. Schreiben Sie zur Bestätigung „EOF“.
 Nachricht {0} von {1} verschoben. {2} Nachrichten müssen noch analysiert werden.
 Anhänge:
 Diese Verbindung enthält eine ungültige RSS-Feed-Instanz.
@@ -3318,11 +3302,7 @@ In diesem Abschnitt werden die Netzwerkeinstellungen aufgeführt, z. B. die FTP-
 Allgemeine Netzwerkeinstellungen
 Chat-Port debuggen
 Schreiben Sie einen Remote-Debugger-Chat-Port. Es muss numerisch sein und darf nicht bereits verwendet werden. Andernfalls kann der Remote-Debugger-Chat den Port nicht öffnen.
-Geben Sie an, wie oft der Befehl „get“ fehlgeschlagene Downloads wiederholen soll. Es muss numerisch sein.
 Wiederholungszeiten hochladen
-Schreiben Sie, wie oft der Befehl „put“ fehlgeschlagene Uploads wiederholen soll. Es muss numerisch sein.
-Fortschrittsbalken beim Herunterladen oder Hochladen über den Befehl „get“ oder „put“ anzeigen
-Wenn dies der Fall ist, wird bei „get“ oder „put“ beim Herunterladen oder Hochladen der Fortschrittsbalken angezeigt.
 In diesem Abschnitt werden die allgemeinen Bildschirmschonereinstellungen aufgeführt. Für individuelle Bildschirmschonereinstellungen verlassen Sie die Einstellungen und öffnen Sie die Bildschirmschonereinstellungen.
 Grundlegende Bildschirmschonereinstellungen
 Bildschirmschoner
@@ -3334,8 +3314,6 @@ Bestätigen Sie die Warnung vor lichtempfindlichen Anfällen
 Wenn Sie nicht auf die rasanten Animationen einiger Bildschirmschoner reagieren, können Sie diese Warnung deaktivieren, indem Sie diese Option aktivieren. Bitte beachten Sie, dass wir nicht für die Nebenwirkungen verantwortlich sind, die durch solche Animationen entstehen können. Weitere Informationen erhalten Sie von einem Facharzt.
 Einstellungen, die nicht in die entsprechenden Abschnitte passen, landen hier.
 Verschiedene Einstellungen
-Wenn die automatische Speicherung aktiviert ist, wird die Textdatei alle „n“ Sekunden gespeichert.
-Schreiben Sie die Dateinamen der Mods, die beim Start nicht ausgeführt werden. Wenn Sie fertig sind, schreiben Sie „q“. Schreiben Sie ein Minuszeichen neben den Pfad, um einen vorhandenen Mod zu entfernen.
 Ein Zeichen, das der oberen rechten Ecke ähnelt. Achten Sie darauf, nur ein Zeichen einzugeben.
 Ein Zeichen, das der unteren rechten Ecke ähnelt. Achten Sie darauf, nur ein Zeichen einzugeben.
 Zeigt die Anzahl der Befehle in der Befehlsliste an, gesteuert durch die Count-Show-Schalter für verschiedene Arten von Befehlen.
@@ -3435,7 +3413,6 @@ Farbe schlagen
 Simuliert eine Person, die Text mit Tippfehlern schreibt.
 Zeigt Ihnen einen Lauftext von rechts nach links.
 Simuliert eine Person, die früher auf der Linotype-Tastatur Text für eine Zeitung schrieb.
-Wie viele Zeichen müssen geschrieben werden, bevor die „Zeilenfüllung“ ausgelöst wird?
 Typ des Linienfüllmusters. 0 druckt das bekannte Muster von Etaoin-Zeichen, 1 druckt das vollständige Muster von Etaoin-Zeichen und 2 druckt den zufälligen Satz von Zeichen, um die Zeile schnell zu füllen.
 Simuliert perfekt eine Person, die einen Text schreibt.
 Pfeilposition anzeigen

@@ -1286,7 +1286,6 @@ Kan dumpbestand niet wissen
 De volgende bestanden worden niet gewist:
 Weet u zeker dat u deze bestanden wilt wissen?
 Kan diverse bestanden niet wissen
-Geen hulp voor argument "{0}".
 Geen argumenthulpbeschrijving
 Ongeldige RYB-kleurspecificatie.
 Ongeldige CMY-kleurspecificatie.
@@ -1313,7 +1312,6 @@ Het opgegeven bytenummer is ongeldig.
 Ongeldige syntaxis van reguliere expressies.
 Het doelbestand of de doelmap is niet gevonden.
 Kan een bestaand bestand of map met een symbolische link niet overschrijven.
-Kan bestand niet vinden dat overeenkomt met tekenreeks '{0}': {1}
 Het door u opgegeven bestand, {0}, is geen geldig tekstbestand. Als dit bestand een JSON-bestand is, kan deze functie ervoor zorgen dat het onleesbaar is. Voor de veiligheid van uw bestand wordt deze bewerking stopgezet om bestandsbeschadiging te voorkomen.
 Het bronbestand dat u heeft opgegeven, {0}, is geen geldig tekstbestand.
 Het doelbestand dat u heeft opgegeven, {0}, is geen geldig tekstbestand.
@@ -1971,7 +1969,6 @@ Geen kernel-add-on-opdrachten.
 Uniforme opdrachten:
 Uniforme commando's niet geïmplementeerd!!!
 Commando:
-Geen hulp voor opdracht "{0}".
 Je kunt het nieuwe blok niet declareren voordat je expressies hebt geplaatst die de creatie ondersteunen, zoals voorwaarden of lussen. Het stapelnummer is {0}.
 Wanneer u een nieuw blok start, zorg er dan voor dat u de stapel correct hebt ingesprongen. Het stapelnummer is {0}.
 Het script is verkeerd opgemaakt. Controleer het script en los eventuele fouten op.
@@ -1989,7 +1986,6 @@ Laadt shell-geschiedenissen
 Herhaalt de laatste actie of het opgegeven commando
 Slaat shellgeschiedenissen op
 Toont een willekeurige kerneltip
-Kan '{0}' niet starten: {1}
 Shells kunnen niet starten tenzij de moedershell is gestart.
 Kan de shell niet initialiseren
 Fout in administratieve shell: {0}
@@ -2087,7 +2083,6 @@ Interactieve systeemhostbestandsbeheerder
 Hiermee kan de gebruiker invoer als wachtwoord invoeren
 Toont licentie-informatie voor de kernel
 Controleert een UESH-script op syntaxisfouten
-Onderdrukt de vervelende berichten "toestemming geweigerd".
 Geeft een map recursief weer
 Geeft een map weer met behulp van het boomformulier
 Geeft een overzicht van alle beschikbare configuraties
@@ -2292,13 +2287,10 @@ De splash-context is niet geldig
 Beschikbare spatten:
 Deze opdracht wordt niet ondersteund in Windows.
 Debug-shell
-Voer een byte in op een eigen regel die u aan het einde van het bestand wilt toevoegen. Als je klaar bent, schrijf je 'EOF' op een eigen regel.
 Opgegeven bytenummer {0} is geen geldig nummer.
-Voer de tekst in die u aan het einde van het bestand wilt toevoegen. Als je klaar bent, schrijf je 'EOF' op een eigen regel.
 Groep {0} maken...
 Gebruiker {0} toevoegen aan groep {1}...
 U kunt nu '{0}' uitvoeren als '{1}'!
-Kenmerk '{0}' is ongeldig.
 Bestand of map is al in gebruik.
 Wachten tot het bestand of de map is ontgrendeld...
 Bestand of map is niet in gebruik.
@@ -2325,7 +2317,6 @@ Initialisatievector gebruikt
 .NET-assemblage-informatie
 Bestand is geen geldige .NET-assembly.
 Extra info
-Gebruik "ftp" als u bestanden van de FTP-server gaat downloaden.
 Sommige of al uw add-ons zijn geïnstalleerd. Als u ze opnieuw wilt installeren, gebruikt u de schakelaar -reinstall.
 Het add-onspakket ophalen...
 Kan het add-onpakket niet ophalen
@@ -2368,7 +2359,6 @@ Bestand gevonden in pad:
 Bestand niet gevonden in de opzoekmappen van het pad.
 Geen dergelijke toestemming
 Een dergelijke toestemmingsmodus bestaat niet
-Gebruik "ftp" als u bestanden naar de FTP-server gaat uploaden.
 Groep {0} verwijderd.
 {0} verwijderd uit groep {1}.
 Beschikbare schermbeveiligingen:
@@ -2937,7 +2927,6 @@ Taal opslaan...
 Selecteer taal
 Selecteer een taal om deze tekenreeks naar te vertalen:
 Schrijf uw vertaling van
-Open "mail" om ze te zien.
 Het biljet-ID moet een biljetnummer zijn
 Deze notitie is leeg
 Kan niet-bestaande notitie niet verwijderen
@@ -2956,7 +2945,6 @@ Voert een SQL-query uit
 Database-informatie
 Opent het SQL-bestand in de interactieve hex-editor TUI
 Thema uit bestand laden...
-Een nieuw thema maken "{0}".
 Geef de map op waarin u het thema wilt opslaan:
 Informatie voor
 Stopwatch is klaar.
@@ -2990,7 +2978,6 @@ Maar je hebt pech. Verliezer.
 Jij hebt geluk! Winnaar!
 Het is een tekening.
 Speler {0} wint!
-Druk op "q" om af te sluiten.
 Huidig ​​karakter:
 Je raadt het juiste woord! Jij wint!
 Dit archieftype wordt niet ondersteund.
@@ -3047,8 +3034,6 @@ Gebruiker
 Locatie
 Geen symlink-info
 Gewijzigd op
-Voer een externe map in. ".." terug gaan
-Voer een lokale map in. ".." terug gaan.
 Schuldstatus voor bestand
 Hunk nummer
 Aantal regels
@@ -3133,7 +3118,6 @@ Eigenschapspad
 Eigendoms-waarde
 De JSON-shell kan een item niet verwijderen.
 De JSON-shell kan geen item instellen.
-Vul hieronder uw bericht in. Schrijf "EOF" om te bevestigen.
 Bericht {0} van {1} verplaatst. Er zijn nog {2} berichten die nog moeten worden geparseerd.
 Bijlagen:
 Deze verbinding bevat een ongeldige RSS-feedinstantie.
@@ -3318,11 +3302,7 @@ In dit gedeelte worden de netwerkinstellingen vermeld, zoals de FTP-shell, de ne
 Algemene netwerkinstellingen
 Foutopsporing in chatpoort
 Schrijf een chatpoort voor externe debugger. Het moet numeriek zijn en mag niet al worden gebruikt. Anders kan de externe debugger-chat de poort niet openen.
-Schrijf op hoe vaak de opdracht "get" mislukte downloads opnieuw moet proberen. Het moet numeriek zijn.
 Tijden voor opnieuw proberen uploaden
-Schrijf op hoe vaak de opdracht "put" mislukte uploads opnieuw moet proberen. Het moet numeriek zijn.
-Toon de voortgangsbalk tijdens het downloaden of uploaden via de opdracht "get" of "put".
-Indien waar, zorgt het ervoor dat "get" of "put" de voortgangsbalk toont tijdens het downloaden of uploaden.
 In dit gedeelte worden de algemene instellingen voor de schermbeveiliging vermeld. Voor individuele screensaver-instellingen sluit u Instellingen af ​​en opent u Screensaver-instellingen.
 Basisinstellingen voor de screensaver
 Screensaver
@@ -3334,8 +3314,6 @@ Erken de waarschuwing voor een lichtgevoelige aanval
 Als u niet lichtgevoelig bent voor de snelle animaties die sommige screensavers u laten zien, kunt u deze waarschuwing uitschakelen door deze optie in te schakelen. Houd er rekening mee dat wij niet verantwoordelijk zijn voor de bijwerkingen die mogelijk voortvloeien uit dergelijke animaties. Zoek een professionele medisch specialist voor meer informatie.
 Instellingen die niet in de juiste secties passen, komen hier terecht.
 Diverse instellingen
-Als automatisch opslaan is ingeschakeld, wordt het tekstbestand elke "n" seconden opgeslagen.
-Schrijf de bestandsnamen van de mods die niet zullen worden uitgevoerd bij het opstarten. Als je klaar bent, schrijf je 'q'. Schrijf een minteken naast het pad om een ​​bestaande mod te verwijderen.
 Een teken dat lijkt op de rechterbovenhoek. Zorg ervoor dat u slechts één teken invoert.
 Een teken dat lijkt op de rechter benedenhoek. Zorg ervoor dat u slechts één teken invoert.
 Toont het aantal commando's in de commandolijst, bestuurd door de schakelaars voor het tonen van tellingen voor verschillende soorten commando's.
@@ -3435,7 +3413,6 @@ Versla kleur
 Simuleert een persoon die tekst schrijft met typefouten.
 Toont u een scrollende tekst van rechts naar links.
 Simuleert een persoon die vroeger tekst voor een krant schreef met het linotype-toetsenbord.
-Hoeveel tekens moeten worden geschreven voordat de "regelvulling" wordt geactiveerd?
 Type lijnopvulpatroon. 0 drukt het bekende patroon van etaoin-tekens af, 1 drukt het volledige patroon van etaoin-tekens af, en 2 drukt de willekeurige reeks tekens af om de regel snel te vullen.
 Simuleert perfect een persoon die tekst schrijft.
 Toon pijlpositie

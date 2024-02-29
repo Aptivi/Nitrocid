@@ -1286,7 +1286,6 @@ dnp fail ko mitaayaa nhin jaa sktaa
 nimnlikhit failen mitaaee nhin gaee hain:
 kyaa aap nishchit rup se in failon ko mitaa dengae?
 vividh fail ko mitaayaa nhin jaa sktaa
-trk "{0}" ke lie koee shaaytaa nhin.
 koee trk shaaytaa vivrn nhin
 amaany RYB rnga vinirdeshk.
 amaany CMY rnga vinirdeshk.
@@ -1313,7 +1312,6 @@ nirdist baait snkhyaa amaany hai.
 amaany raulr ekspreshn sintaiks.
 lksy fail yaa nirdeshikaa nhin mili.
 kisi maujudaa fail yaa nirdeshikaa ko prtikaatmk link ke saath adhilekhit nhin kiyaa jaa sktaa.
-stringa "{0}" se mel khaane vaali fail dhundhne men asmrth: {1}
 aapke dvaaraa prdaan ki gaee fail, {0}, ek maany tekst fail nhin hai. ydi yh fail ek JSON fail hai, to yh fenkshn isapthniy bnaa sktaa hai. aapki fail ki surksaa ke lie, fail bhrstaachaar ko rokne ke lie yh kaarrvaaee rok di gaee hai.
 aapke dvaaraa prdaan ki gaee srot fail, {0}, ek maany tekst fail nhin hai.
 aapke dvaaraa prdaan ki gaee lksy fail, {0}, ek maany tekst fail nhin hai.
@@ -1971,7 +1969,6 @@ koee krnel aidaun aadesh nhin.
 ekikrit aadesh:
 ekikrit aadesh laagau nhin kiye gaye!!!
 aajnyaa:
-kmaand "{0}" ke lie koee mdd nhin.
 aap shrton yaa lup jaise nirmaan kaa smrthn krne vaale bhaav daalne se phle ne blok ki ghosnaa nhin kr skte. staik snkhyaa {0} hai.
 nyaa blok shuru krte smy, sunishchit kren ki aapne staik ko shi dhnga se indent kiyaa hai. staik snkhyaa {0} hai.
 skript khaab hai. skript ki jaanch kren aur kisi bhi truti kaa smaadhaan kren.
@@ -1989,7 +1986,6 @@ shail itihaas lod krtaa hai
 antim kriyaa yaa nirdist aadesh ko dohraataa hai
 shel itihaas shejtaa hai
 ek yaadrichchhik krnel tip dikhaataa hai
-"{0}" praarnbh krne men vifl: {1}
 shail tb tk praarnbh nhin ho skte jb tk ki maatri shail praarnbh n ho jaae.
 shel praarnbh krne kaa pryaas vifl rhaa
 prshaasnik shel men truti: {0}
@@ -2087,7 +2083,6 @@ intrektiv sistm host fail prbndhk
 upyogakrtaa ko paasvrd ke rup men input drj krne ki anumti daa hai
 krnel ke lie laaisens jaankaari dikhaataa hai
 sintaiks trutiyon ke lie yueeesech skript ki jaanch krtaa hai
-kstprd "anumti asvikrit" sndeshon ko dbaa daa hai
 kisi feoldr ko punraavrti rup se suchibddh krtaa hai
 tri form kaa upyoga krke ek feoldr suchibddh krtaa hai
 sbhi uplbdh konfeigareshn suchibddh krtaa hai
@@ -2292,13 +2287,10 @@ splaish prsnga maany nhin hai
 uplbdh chhinte:
 yh aadesh vindoje pr smrthit nhin hai.
 dibga shail
-apni laain pr ek baait drj kren jisaap fail kant men jodaa chaahte hain. jb aapkaa kaam puraa ho jaae, to uski apni laain pr "EOF" likhen.
 nirdist baait snkhyaa {0} maany snkhyaa nhin hai.
-vh tekst drj kren jisaap fail kant men jodaa chaahte hain. jb aapkaa kaam puraa ho jaae, to uski apni laain pr "EOF" likhen.
 smuh bnaayaa jaa rhaa hai {0}...
 upyogakrtaa {0} ko smuh {1} men joda jaa rhaa hai...
 ab aap '{0}' ko '{1}' ke rup men chlaa skte hain!
-vishestaa "{0}" amaany hai.
 fail yaa feoldr phle se hi upyoga men hai.
 fail yaa feoldr anlok hone tk prtiksaa kren...
 fail yaa feoldr upyoga men nhin hai.
@@ -2325,7 +2317,6 @@ inishiylaaijeeshn vektr kaa upyoga kiyaa gayaa
 .NET asenbli jaankaari
 fail maany .NET asenbli nhin hai.
 atirikt jaankaari
-ydi aap efetipi srvr se failen daaunlod krne jaa rhe hain to kripyaa "efetipi" kaa upyoga kren.
 aapke kuchh yaa sbhi aidaun instol ho chuke hain. ydi aap unhen punah sthaapit krnaa chaahte hain, to -riinstol svich kaa upyoga kren.
 aidaun paikej laayaa jaa rhaa hai...
 aidaun paikej laane men vifl
@@ -2368,7 +2359,6 @@ fail pth men mili:
 pth lukap nirdeshikaaon men fail nhin mili.
 aisi koeanumti nhin
 aisaa koeanumti mod nhin
-ydi aap efetipi srvr pr failen aplod krne jaa rhe hain to kripyaa "efetipi" kaa upyoga kren.
 smuh {0} htaayaa gayaa.
 {0} ko smuh {1} se htaa diyaa gayaa.
 uplbdh skrinsevr:
@@ -2937,7 +2927,6 @@ bhaasaa sheji jaa rhi hai...
 bhaasaa chune
 is stringa kaa anuvaad krne ke lie ek bhaasaa chunen:
 kaa apnaa anuvaad likhen
-unhen dekhne ke lie "mel" kholen.
 not aaeedi ek not nnbr honaa chaahie
 yh not khaali hai
 astitvhin not ko htaayaa nhin jaa sktaa
@@ -2956,7 +2945,6 @@ SQL kveri nispaadit krtaa hai
 daabes jaankaari
 intraiktiv heks snpaadk tiyuaaee men eskyuel fail kholtaa hai
 fail se thim lod kren...
-ek nee thim "{0}" bnaanaa.
 thim ko yhaan shejne ke lie nirdeshikaa nirdist kren:
 ki jaankaari
 stopvoch taiyaar hai.
@@ -2990,7 +2978,6 @@ lekin, tum bdkismt ho. praast.
 tum bhaagayshaali ho! vijaa!
 yh dro hai.
 khilaadei {0} jit gayaa!
-baahr niklne ke lie "q" dbaaen.
 vrtmaan chritr:
 aapne shi shbd kaa anumaan lgaaayaa! aap jitte hain!
 yh sngarh prkaar smrthit nhin hai.
@@ -3047,8 +3034,6 @@ upyogakrtaa
 saait
 koee simlink jaankaari nhin
 pr snshodhit
-ek dursth nirdeshikaa drj kren. ".." pichhe jaanaa
-ek sthaaniy nirdeshikaa drj kren. ".." pichhe jaanaa.
 fail ke lie dos sthiti
 hnk nnbr
 pnktiyon ki snkhyaa
@@ -3133,7 +3118,6 @@ snptti pth
 snptti muly
 JSON shel kisi aaitm ko htaane men vifl rhaa.
 JSON shel ek aaitm set krne men vifl rhaa.
-apnaa sndesh niche drj kren. pusti krne ke lie "EOF" likhen.
 sndesh {0} ko {1} se sthaanaantrit kiyaa gayaa. {2} sndesh paars krne ke lie shes hain.
 anulgank:
 is knekshn men ek amaany RSS feid udaahrn shaamil hai.
@@ -3318,11 +3302,7 @@ yh anubhaaga netvrk setingas ko suchibddh krtaa hai, jaise efetipi shel, netvrk-
 saamaany netvrkinga setingas
 chait port dibga kren
 ek dursth dibgar chait port likhen. yh snkhyaatmk honaa chaahie, aur phle se hi upyoga nhin kiyaa jaanaa chaahie. anythaa, rimot dibgar chait port kholne men vifl ho jaaai.
-likhen ki "praapt kren" kmaand ko kitni baar vifl daaunlod kaa punah pryaas krnaa chaahie. yh snkhyaatmk honaa chaahie.
 pun: pryaas kaa smy aplod kren
-likhen ki "put" kmaand ko kitni baar vifl aplod kaa punah pryaas krnaa chaahie. yh snkhyaatmk honaa chaahie.
-"gaet" yaa "put" kmaand se daaunlod yaa aplod krte smy prgati baar dikhaaen
-ydi sty hai, to yh daaunlod yaa aplod krte smy prgati ptti ko "praapt kren" yaa "put" dikhaataa hai.
 yh anubhaaga saamaany skrinsevr setingas suchibddh krtaa hai. vyktigat skrinsevr setingas ke lie, setingas se baahr niklen aur skrinsevr setingas kholen.
 buniyaadi skrinsevr setingas
 skrin sevr
@@ -3334,8 +3314,6 @@ fotosensitiv jbti chaavni ko svikaar kren
 ydi aap teje gati vaale enimeshn ke prti snvednshil nhin hain jo kuchh skrinsevr aapko dikhaate hain, to aap is viklp ko sksm krke is chaavni ko aksm kr skte hain. kripyaa dhyaan den ki aise enimeshn se hone vaale dusprbhaavon ke lie hm jeimmaar nhin hain. adhik jaankaari ke lie kisi peshevr chikitsaa vishesjny se snprk kren.
 jo setingas unke upyukt anubhaagaon men fit nhin hotin ve yhaan aati hain.
 vividh setingas
-ydi autosev sksm hai, to tekst fail prtyek "en" seknd ke lie sheji jaaai.
-un mods ke fail naam likhen jo staartap pr nhin chlengae. jb aapkaa kaam puraa ho jaae, to "q" likhen. kisi maujudaa mod ko htaane ke lie pth kaagae rin chihn likhen.
 ek vrn jo oopri daaen kone jaisaa dikhtaa hai. sunishchit kren ki kevl ek aksr hi input kren.
 ek vrn jo nichle daaen kone jaisaa dikhtaa hai. sunishchit kren ki kevl ek aksr hi input kren.
 kmaand suchi men kmaand ki gainti dikhaataa hai, vibhinn prkaar ke kmaand ke lie kaaunt sho svich dvaaraa niyntrit kiyaa jaataa hai.
@@ -3435,7 +3413,6 @@ rnga maaro
 taaipo ke saath paath likhne vaale vykti kaa anukrn krtaa hai.
 aapko daaen se baaen skrol krne vaalaa tekst dikhaataa hai.
 puraane smy men linotaaip kibord men akhbaar ke lie tekst likhne vaale vykti kaa anukrn krtaa hai.
-"laain fil" ko trigar krne se phle kitnaksr likhne hongae?
 laain bhrn paitrn prkaar. 0 aoin vrnon ke jnyaat paitrn ko print krtaa hai, 1 aoin vrnon kaa puraa paitrn print krtaa hai, aur 2 pnkti ko tejei se bhrne ke lie vrnon ke yaadrichchhik set ko print krtaa hai.
 paath likhne vaale vykti kaa aadrsh rup sanukrn krtaa hai.
 tir ki sthiti dikhaaen

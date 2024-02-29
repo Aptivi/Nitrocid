@@ -1286,7 +1286,6 @@ Não é possível limpar o arquivo dump
 Os seguintes arquivos não são apagados:
 Tem certeza de limpar esses arquivos?
 Não é possível limpar arquivos diversos
-Não há ajuda para o argumento "{0}".
 Nenhum argumento ajuda descrição
 Especificador de cor RYB inválido.
 Especificador de cor CMY inválido.
@@ -1313,7 +1312,6 @@ O número de bytes especificado é inválido.
 Sintaxe de expressão regular inválida.
 O arquivo ou diretório de destino não foi encontrado.
 Não é possível substituir um arquivo ou diretório existente por um link simbólico.
-Não foi possível localizar o arquivo que corresponde à sequência "{0}": {1}
 O arquivo fornecido, {0}, não é um arquivo de texto válido. Se este arquivo for um arquivo JSON, esta função poderá torná-lo ilegível. Para a segurança do seu arquivo, esta operação é interrompida para evitar a corrupção do arquivo.
 O arquivo de origem fornecido, {0}, não é um arquivo de texto válido.
 O arquivo de destino fornecido, {0}, não é um arquivo de texto válido.
@@ -1971,7 +1969,6 @@ Nenhum comando adicional do kernel.
 Comandos unificados:
 Comandos unificados não implementados!!!
 Comando:
-Não há ajuda para o comando "{0}".
 Você não pode declarar o novo bloco antes de colocar expressões que suportem a criação, como condições ou loops. O número da pilha é {0}.
 Ao iniciar um novo bloco, certifique-se de ter recuado a pilha corretamente. O número da pilha é {0}.
 O script está malformado. Verifique o script e resolva quaisquer erros.
@@ -1989,7 +1986,6 @@ Carrega históricos de shell
 Repete a última ação ou o comando especificado
 Salva históricos de shell
 Mostra uma dica aleatória do kernel
-Falha ao iniciar "{0}": {1}
 Os shells não podem ser iniciados a menos que o shell mãe tenha sido iniciado.
 Falha ao tentar inicializar o shell
 Erro no shell administrativo: {0}
@@ -2087,7 +2083,6 @@ Gerenciador de arquivos host do sistema interativo
 Permite que o usuário insira a entrada como senha
 Mostra informações de licença do kernel
 Verifica um script UESH em busca de erros de sintaxe
-Suprime as irritantes mensagens de "permissão negada"
 Lista uma pasta recursivamente
 Lista uma pasta usando a forma de árvore
 Lista todas as configurações disponíveis
@@ -2292,13 +2287,10 @@ O contexto inicial não é válido
 Salpicos disponíveis:
 Este comando não é compatível com Windows.
 Shell de depuração
-Insira um byte em sua própria linha que você deseja anexar ao final do arquivo. Quando terminar, escreva “EOF” em sua própria linha.
 O número de byte especificado {0} não é um número válido.
-Digite o texto que deseja anexar ao final do arquivo. Quando terminar, escreva “EOF” em sua própria linha.
 Criando grupo {0}...
 Adicionando usuário {0} ao grupo {1}...
 Agora você pode executar '{0}' como '{1}'!
-O atributo "{0}" é inválido.
 O arquivo ou pasta já está em uso.
 Aguardando até que o arquivo ou pasta seja desbloqueado...
 Arquivo ou pasta não está em uso.
@@ -2325,7 +2317,6 @@ Vetor de inicialização usado
 Informações de montagem do .NET
 O arquivo não é um assembly .NET válido.
 Informação extra
-Por favor, use "ftp" se for baixar arquivos do servidor FTP.
 Alguns ou todos os seus complementos foram instalados. Se desejar reinstalá-los, use a opção -reinstall.
 Buscando o pacote de complementos...
 Falha ao buscar o pacote adicional
@@ -2368,7 +2359,6 @@ Arquivo encontrado no caminho:
 Arquivo não encontrado nos diretórios de pesquisa de caminho.
 Não existe essa permissão
 Não existe esse modo de permissão
-Por favor, use "ftp" se for enviar arquivos para o servidor FTP.
 Grupo {0} removido.
 {0} removido do grupo {1}.
 Protetores de tela disponíveis:
@@ -2937,7 +2927,6 @@ Salvando idioma...
 Selecione o idioma
 Selecione um idioma para traduzir esta string:
 Escreva sua tradução de
-Abra "mail" para vê-los.
 O ID da nota deve ser um número de nota
 Esta nota está vazia
 Não é possível remover nota inexistente
@@ -2956,7 +2945,6 @@ Executa uma consulta SQL
 Informações do banco de dados
 Abre o arquivo SQL no editor hexadecimal interativo TUI
 Carregar tema do arquivo...
-Criando um novo tema "{0}".
 Especifique o diretório para salvar o tema:
 Informações para
 O cronômetro está pronto.
@@ -2990,7 +2978,6 @@ Mas você não tem sorte. Perdedor.
 Você é sortudo! Ganhador!
 É um empate.
 O jogador {0} vence!
-Pressione "q" para sair.
 Personagem atual:
 Você adivinhou a palavra certa! Você ganha!
 Este tipo de arquivo não é suportado.
@@ -3047,8 +3034,6 @@ Do utilizador
 Site
 Nenhuma informação de link simbólico
 Modificado em
-Insira um diretório remoto. ".." voltar
-Insira um diretório local. ".." voltar.
 Status de culpa do arquivo
 Número do pedaço
 Número de linhas
@@ -3133,7 +3118,6 @@ Caminho da propriedade
 Valor da propriedade
 O shell JSON não conseguiu remover um item.
 O shell JSON falhou ao definir um item.
-Digite sua mensagem abaixo. Escreva "EOF" para confirmar.
 Mensagem {0} de {1} movida. {2} mensagens restantes para análise.
 Anexos:
 Esta conexão contém uma instância de feed RSS inválida.
@@ -3318,11 +3302,7 @@ Esta seção lista as configurações de rede, como o shell FTP, as configuraç�
 Configurações gerais de rede
 Depurar porta de bate-papo
 Escreva uma porta de bate-papo do depurador remoto. Deve ser numérico e ainda não deve estar em uso. Caso contrário, o bate-papo do depurador remoto não conseguirá abrir a porta.
-Escreva quantas vezes o comando “get” deve tentar novamente os downloads com falha. Deve ser numérico.
 Tempos de novas tentativas de upload
-Escreva quantas vezes o comando "put" deve tentar novamente os uploads com falha. Deve ser numérico.
-Mostrar barra de progresso durante o download ou upload do comando "get" ou "put"
-Se for verdade, faz com que "get" ou "put" mostre a barra de progresso durante o download ou upload.
 Esta seção lista as configurações gerais do protetor de tela. Para configurações individuais do protetor de tela, saia das Configurações e abra Configurações do protetor de tela.
 Configurações básicas do protetor de tela
 Protetor de tela
@@ -3334,8 +3314,6 @@ Reconheça o aviso de convulsão fotossensível
 Se você não é fotossensível às animações aceleradas que alguns dos protetores de tela mostram, você pode desativar este aviso ativando esta opção. Observe que não somos responsáveis ​​pelos efeitos colaterais que possam advir de tais animações. Procure um profissional médico especialista para mais informações.
 As configurações que não cabem nas seções apropriadas chegam aqui.
 Configurações Diversas
-Se o salvamento automático estiver habilitado, o arquivo de texto será salvo a cada “n” segundos.
-Escreva os nomes dos arquivos dos mods que não serão executados na inicialização. Quando terminar, escreva "q". Escreva um sinal de menos próximo ao caminho para remover um mod existente.
 Um personagem que se assemelha ao canto superior direito. Certifique-se de inserir apenas um caractere.
 Um personagem que se assemelha ao canto inferior direito. Certifique-se de inserir apenas um caractere.
 Mostra a contagem de comandos na lista de comandos, controlada pelas opções de exibição de contagem para diferentes tipos de comandos.
@@ -3435,7 +3413,6 @@ Bater cor
 Simula uma pessoa escrevendo um texto com erros de digitação.
 Mostra um texto de rolagem da direita para a esquerda.
 Simula uma pessoa escrevendo texto para um jornal no teclado linotipo de antigamente.
-Quantos caracteres escrever antes de acionar o "preenchimento de linha"?
 Tipo de padrão de preenchimento de linha. 0 imprime o padrão conhecido de caracteres etaoin, 1 imprime o padrão completo de caracteres etaoin e 2 imprime o conjunto aleatório de caracteres para preencher rapidamente a linha.
 Simula perfeitamente uma pessoa escrevendo um texto.
 Mostrar posição da seta

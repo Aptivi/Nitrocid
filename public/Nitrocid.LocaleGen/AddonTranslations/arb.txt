@@ -1286,7 +1286,6 @@ lā īmkn msḥ mlf al-tfrīġ
 lā ītm msḥ al-mlfāt al-tālīẗ:
 hl ant mtʾakd mn msḥ hḏh al-mlfāt?
 lā īmkn msḥ al-mlfāt al-mtnūʿẗ
-lā tūǧd msāʿdẗ llūsīṭẗ "{0}".
 lā īūǧd ūṣf msāʿdẗ ḥǧẗ
 mḥdd lūn RYB ġīr ṣālḥ.
 mḥdd lūn CMY ġīr ṣālḥ.
@@ -1313,7 +1312,6 @@ rqm al-bāīt al-mḥdd ġīr ṣālḥ.
 bnāʾ ǧmlẗ al-tʿbīr al-ʿādī ġīr ṣālḥ.
 lm ītm al-ʿṯūr ʿli al-mlf aū al-dlīl al-hdf.
 lā īmkn al-ktābẗ fūq mlf aū dlīl mūǧūd brābṭ rmzī.
-ġīr qādr ʿli al-ʿṯūr ʿli al-mlf al-ḏī īṭābq al-slslẗ "{0}": {1}
 al-mlf al-ḏī qdmth, {0}, līs mlfًā nṣīًā ṣālḥًā. iḏā kān hḏā al-mlf ʿbārẗ ʿn mlf JSON, fqd ttsbb hḏh al-ūẓīfẗ fī ǧʿlh ġīr qābl llqrāʾẗ. lslāmẗ mlfk, tm īqāf hḏh al-ʿmlīẗ lmnʿ tlf al-mlf.
 al-mlf al-mṣdr al-ḏī qdmth, {0}, līs mlfًā nṣīًā ṣālḥًā.
 al-mlf al-hdf al-ḏī qdmth, {0}, līs mlfًā nṣīًā ṣālḥًā.
@@ -1971,7 +1969,6 @@ lā tūǧd awāmr iḍāfīẗ llnwāẗ.
 al-ʾawāmr al-mūḥdẗ:
 al-ʾawāmr al-mūḥdẗ lm tnfḏ!!!
 īʾamr:
-lā īūǧd msāʿdẗ llʾamr "{0}".
 lā īmknk al-iʿlān ʿn al-ktlẗ al-ǧdīdẗ qbl ūḍʿ al-tʿbīrāt al-tī tdʿm al-inšāʾ, mṯl al-šrūṭ aū al-ḥlqāt. rqm al-mkds hū {0}.
 ʿnd bdʾ ktlẗ ǧdīdẗ, tʾakd mn ūḍʿ msāfẗ bādʾiẗ llmkds bškl ṣḥīḥ. rqm al-mkds hū {0}.
 al-brnāmǧ al-nṣī ġīr ṣḥīḥ. tḥqq mn al-brnāmǧ al-nṣī ūḥl aī aẖṭāʾ.
@@ -1989,7 +1986,6 @@ tḏkīr lʾawāmr al-qṭʿ
 īkrr al-iǧrāʾ al-ʾaẖīr aū al-ʾamr al-mḥdd
 īḥfẓ tārīẖ al-ṣdfẗ
 īẓhr nṣīḥẗ nwāẗ ʿšwāʾīẗ
-fšl bdʾ "{0}": {1}
 lā īmkn an tbdʾa al-qḏāʾif ilā iḏā bdʾat al-qḏīfẗ al-ʾam.
 fšlt mḥāūlẗ thīʾiẗ al-ṣdfẗ
 ẖṭʾa fī al-ṣdfẗ al-idārīẗ: {0}
@@ -2087,7 +2083,6 @@ mdīr al-mlfāt al-mḍīfẗ llnẓām al-tfāʿlī
 īsmḥ llmstẖdm bidẖāl al-idẖāl kklmẗ mrūr
 īʿrḍ mʿlūmāt al-trẖīṣ llnwāẗ
 al-tḥqq mn al-brnāmǧ al-nṣī UESH bḥṯًā ʿn aẖṭāʾ fī bnāʾ al-ǧmlẗ
-īmnʿ rsāʾil "tm rfḍ al-iḏn" al-mzʿǧẗ
 īsrd mǧld bškl mtkrr
 īsrd mǧlddā bāstẖdām nmūḏǧ al-šǧrẗ
 īsrd kāfẗ al-tkwynāt al-mtāḥẗ
@@ -2292,13 +2287,10 @@ sīāq al-bdāīẗ ġīr ṣālḥ
 al-bqʿ al-mtāḥẗ:
 hḏā al-ʾamr ġīr mdʿūm ʿli nẓām al-tšġīl Windows.
 tṣḥīḥ šl
-adẖl bāīttā fī al-sṭr al-ẖāṣ bh wālḏī trīd ilḥāqh bnhāīẗ al-mlf. ʿnd al-ānthāʾ, aktb "EOF" ʿli al-sṭr al-ẖāṣ bh.
 rqm al-bāīt al-mḥdd {0} līs rqmmā ṣālḥًā.
-adẖl al-nṣ al-ḏī trīd ilḥāqh bnhāīẗ al-mlf. ʿnd al-ānthāʾ, aktb "EOF" ʿli al-sṭr al-ẖāṣ bh.
 ǧārٍ inšāʾ al-mǧmūʿẗ {0}...
 ǧārٍ iḍāfẗ al-mstẖdm {0} ili al-mǧmūʿẗ {1}...
 īmknk al-ʾān tšġīl '{0}' k. '{1}'!
-al-smẗ "{0}" ġīr ṣālḥẗ.
 al-mlf aū al-mǧld qīd al-āstẖdām bālfʿl.
 al-āntẓār ḥti ītm ilġāʾ qfl al-mlf aū al-mǧld...
 al-mlf aū al-mǧld līs qīd al-āstẖdām.
@@ -2325,7 +2317,6 @@ tm astẖdām nāql al-thīʾiẗ
 mʿlūmāt al-tǧmīʿ .NET
 al-mlf līs tǧmīʿًā ṣālḥًā l. .NET.
 mʿlūmāt aḍāfīẗ
-īrǧi astẖdām "ftp" iḏā knt stqūm btnzīl al-mlfāt mn ẖādm FTP.
 tm tṯbīt bʿḍ aū kl al-iḍāfāt al-ẖāṣẗ bk. iḏā knt trġb fī iʿādẗ tṯbīthā, astẖdm mftāḥ -reinstall.
 ǧārٍ ǧlb ḥzmẗ al-iḍāfāt...
 fšl ǧlb al-ḥzmẗ al-iḍāfīẗ
@@ -2368,7 +2359,6 @@ al-mlf mūǧūd fī al-msār:
 lm ītm al-ʿṯūr ʿli al-mlf fī adlẗ al-bḥṯ ʿn al-msār.
 lā īūǧd mṯl hḏā al-iḏn
 lā īūǧd mṯl hḏā al-ūḍʿ al-iḏn
-al-rǧāʾ astẖdām "ftp" iḏā knt stqūm btḥmīl al-mlfāt ili ẖādm FTP.
 tmt izālẗ al-mǧmūʿẗ {0}.
 tmt izālẗ {0} mn al-mǧmūʿẗ {1}.
 šāšāt al-tūqf al-mtāḥẗ:
@@ -2937,7 +2927,6 @@ adẖl slslẗ ǧdīdẗ
 aẖtār al-lġẗ
 ḥdd lġẗ ltrǧmẗ hḏh al-slslẗ ilīhā:
 aktb trǧmtk l
-aftḥ "ālbrīd" lruʾīthm.
 īǧb an īkūn mʿrf al-mlāḥẓẗ rqm mlāḥẓẗ
 hḏh al-mḏkrẗ fārġẗ
 lā īmkn izālẗ al-mlāḥẓẗ ġīr al-mūǧūdẗ
@@ -2956,7 +2945,6 @@ adẖl mūqʿ al-mftāḥ al-ẖāṣ l. {0}. aktb "q" linhāʾ iḍāfẗ al-mf
 mʿlūmāt qāʿdẗ al-bīānāt
 īftḥ mlf SQL fī al-mḥrr al-sdāsī al-tfāʿlī TUI
 tḥmīl al-smẗ mn al-mlf...
-inšāʾ smẗ ǧdīdẗ "{0}".
 ḥdd al-dlīl lḥfẓ al-smẗ fī:
 mʿlūmāt ʿn
 sāʿẗ al-tūqīt ǧāhzẗ.
@@ -2990,7 +2978,6 @@ lknk ġīr mḥẓūẓ. al-ẖāsr.
 ant mḥẓūẓ! al-fāʾiz!
 inh tʿādl.
 al-lāʿb {0} īfūz!
-aḍġṭ ʿli "f" llẖrūǧ.
 al-ḥrf al-ḥālī:
 lqd ẖmnt al-klmẗ al-ṣḥīḥẗ! fzt!
 hḏā al-nūʿ mn al-ʾaršīf ġīr mdʿūm.
@@ -3047,8 +3034,6 @@ mstẖdm
 mūqʿ
 lā tūǧd mʿlūmāt al-ārtbāṭ al-rmzī
 tʿdīl ʿli
-adẖl al-dlīl al-bʿīd. ".." llʿūdẗ
-adẖl al-dlīl al-mḥlī. ".." llʿūdẗ.
 ḥālẗ al-lūm llmlf
 rqm qṭʿẗ kbīrẗ
 ʿdd al-ẖṭūṭ
@@ -3133,7 +3118,6 @@ msār al-mlkīẗ
 qīmẗ al-ʿqār
 fšlt qḏīfẗ JSON fī izālẗ ʿnṣr.
 fšlt qḏīfẗ JSON fī tʿyin ʿnṣr.
-adẖl rsāltk adnāh. aktb "EOF" lltʾakīd.
 tm nql al-rsālẗ {0} mn {1}. {2} al-rsāʾil al-mtbqīẗ lltḥlīl.
 al-mrfqāt:
 īḥtwy hḏā al-ātṣāl ʿli mṯīl mūǧz RSS ġīr ṣālḥ.
@@ -3318,11 +3302,7 @@ iʿdādāt nẓām al-mlfāt
 iʿdādāt al-šbkẗ al-ʿāmẗ
 tṣḥīḥ mnfḏ al-drdšẗ
 ktābẗ mnfḏ drdšẗ mṣḥḥ al-ʾaẖṭāʾ ʿn bʿd. wyǧb an īkūn rqmīًā, wyǧb al-ā īkūn mstẖdmmā bālfʿl. wilā, stfšl mḥādṯẗ mṣḥḥ al-ʾaẖṭāʾ ʿn bʿd fī ftḥ al-mnfḏ.
-aktb ʿdd al-mrāt al-tī īǧb an īʿīd fīhā al-ʾamr "get" mḥāūlẗ al-tnzīlāt al-fāšlẗ. īǧb an tkūn rqmīẗ.
 tḥmīl mrāt iʿādẗ al-mḥāūlẗ
-aktb ʿdd al-mrāt al-tī īǧb an īʿīd fīhā amr "put" mḥāūlẗ al-tḥmīlāt al-fāšlẗ. īǧb an tkūn rqmīẗ.
-iẓhār šrīṭ al-tqdm aṯnāʾ al-tnzīl aū al-tḥmīl mn amr "get" aū "put".
-iḏā kān ṣḥīḥًā, finh īǧʿl "ālḥṣūl ʿli" aū "ūḍʿ" īẓhr šrīṭ al-tqdm aṯnāʾ al-tnzīl aū al-tḥmīl.
 īsrd hḏā al-qsm iʿdādāt šāšẗ al-tūqf al-ʿāmẗ. bālnsbẗ liʿdādāt šāšẗ al-tūqf al-frdīẗ, qm bālẖrūǧ mn al-iʿdādāt wāftḥ iʿdādāt šāšẗ al-tūqf.
 iʿdādāt šāšẗ al-tūqf al-ʾasāsīẗ
 šāšẗ al-tūqf
@@ -3334,8 +3314,6 @@ nʿtrf btḥḏīr al-āstīlāʾ ʿli ḥsāsīẗ llḍūʾ
 iḏā lm tkn ḥsāssā tǧāh al-rsūm al-mtḥrkẗ srīʿẗ al-ūtīrẗ al-tī tʿrḍhā lk bʿḍ šāšāt al-tūqf, fīmknk tʿṭīl hḏā al-tḥḏīr ʿn ṭrīq tmkīn hḏā al-ẖīār. īrǧi mlāḥẓẗ annā lsnā msuʾūlīn ʿn al-ʾāṯār al-ǧānbīẗ al-tī qd tʾatī mn hḏh al-rsūm al-mtḥrkẗ. abḥṯ ʿn aẖṣāʾī ṭbī mḥtrf lmzīd mn al-mʿlūmāt.
 al-iʿdādāt al-tī lā ttnāsb mʿ al-ʾaqsām al-mnāsbẗ lhā thbṭ hnā.
 iʿdādāt mtnūʿẗ
-iḏā tm tmkīn al-ḥfẓ al-tlqāʾī, fsītm ḥfẓ al-mlf al-nṣī lkl ṯānīẗ "n".
-aktb asmāʾ al-mlfāt al-ẖāṣẗ bāltʿdīlāt al-tī ln ītm tšġīlhā ʿnd bdʾ al-tšġīl. ʿnd al-ānthāʾ, aktb "s". aktb ʿlāmẗ al-ṭrḥ bǧwār al-msār lizālẗ tʿdīl mūǧūd.
 ḥrf īšbh al-zāwyẗ al-īmni al-ʿlīā. tʾakd mn idẖāl ḥrf wāḥd fqṭ.
 ḥrf īšbh al-zāwyẗ al-īmni al-sfli. tʾakd mn idẖāl ḥrf wāḥd fqṭ.
 īuẓhr ʿdd al-ʾawāmr fī qāʾimẗ al-ʾawāmr, al-tī ītm al-tḥkm fīhā bwāsṭẗ al-ʿd, wyuẓhr mfātīḥ al-tbdīl lʾanwāʿ mẖtlfẗ mn al-ʾawāmr.
@@ -3435,7 +3413,6 @@ fāz al-lūn
 īḥākī al-šẖṣ al-ḏī īktb al-nṣ mʿ al-ʾaẖṭāʾ al-mṭbʿīẗ.
 īẓhr lk nṣًā mtḥrkًā mn al-īmīn ili al-īsār.
 īḥākī šẖṣ īktb nṣā lṣḥīfẗ fī lūḥẗ al-mfātīḥ al-ẖṭīẗ fī al-ʿṣūr al-qdīmẗ.
-km ʿdd al-ʾaḥrf al-tī īǧb ktābthā qbl tšġīl "mlʾ al-sṭr"?
 nūʿ nmṭ tʿbʾiẗ al-ẖṭ. 0 īṭbʿ al-nmṭ al-mʿrūf lʾaḥrf etaoin, 1 īṭbʿ al-nmṭ al-kāml lʾaḥrf etaoin, ū2 īṭbʿ al-mǧmūʿẗ al-ʿšwāʾīẗ mn al-ʾaḥrf lmlʾ al-sṭr bsrʿẗ.
 īḥākī al-šẖṣ al-ḏī īktb al-nṣ bškl mṯālī.
 iẓhār mūḍʿ al-shm
