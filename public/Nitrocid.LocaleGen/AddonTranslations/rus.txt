@@ -1,5 +1,4 @@
 Nevernyy tsvetovoy shablon {0}
-hwprobe: Vashe oborudovaniye budet provereno. Pozhaluysta, podozhdite...
 Vvedite parol' administratora dlya obsluzhivaniya.
 Oshibka yadra pri zagruzke: {0}
 DVOYNAYA PANIKA: Vremya perezagruzki prevyshayet maksimal'no dopustimoye vremya perezagruzki {0}. Vy nashli oshibku v yadre.
@@ -30,7 +29,6 @@ Zaproshennaya zastavka {0} ne naydena.
 Zastavka {0} ne naydena v baze dannykh. Prover'te imya i poprobuyte snova.
 Pri pechati teksta voznikayet ser'yeznaya oshibka.
 Mod ne mozhet byt' zagruzhen iz-za sleduyushchego:
-Mod {0} ne imeyet imeni. Prosmotrite iskhodnyy kod.
 {0} v {1} zapushchen
 Net opredeleniya dlya komandy {0}.
 Komanda opredelyayetsya
@@ -59,9 +57,7 @@ Perechislyayet udalennyy katalog
 Zagruzhayet lokal'nyy fayl v udalennyy katalog, ispol'zuya dvoichnyy ili tekstovyy
 Psevdonim ne mozhet sovpadat' s imenem komandy.
 Komanda ne naydena dlya psevdonima {0}.
-Teper' vy mozhete zapustit' "{0}" kak komandu: "{1}".
 Psevdonim {0} ne nayden dlya udaleniya.
-Nevernyy rezhim {0}.
 Katalog {0} ne nayden
 Pustoye imya khosta.
 Menyayetsya s: {0} na {1} ...
@@ -85,7 +81,6 @@ Pokazat' soderzhimoye fayla / papki v tekushchey papke
 Blokiruyet vash ekran s pomoshch'yu parolya
 Vykhodit iz sistemy
 Sozdayet katalog
-Perezagruzka komp'yutera (VNIMANIYe: sinkhronizatsiya ne vypolnyayetsya, poskol'ku eto ne okonchatel'noye yadro)
 Perezagruzhayet fayl konfiguratsii, kotoryy otredaktirovan.
 Spasayet vash ekran ot vygoraniya
 Ustanavlivayet zastavki yadra
@@ -93,7 +88,6 @@ Pokazyvayet datu i vremya
 Pokazyvayet datu i vremya v zonakh
 Yadro budet zakryto
 Ispol'zovaniye:
-gde budet customsaver
 Proizoshla oshibka v obolochke.
 U vas net razresheniya na ispol'zovaniye {0}
 Soobshcheniye obolochki: Zaproshennaya komanda {0} ne mozhet byt' zapushchena v rezhime obsluzhivaniya.
@@ -113,7 +107,6 @@ Pozhaluysta, ispol'zuyte «ftp», yesli vy sobirayetes' zagruzhat' fayly s FTP-s
 Zagruzhayet fayl v tekushchiy rabochiy katalog
 Otklyuchit' otladochnoye ustroystvo
 Spiski ustroystv otladki podklyucheny
-Ustroystvo otladki {0} ne naydeno.
 Ustroystvo {0} otklyucheno.
 Otladka proslushivaniya vsekh adresov s ispol'zovaniyem porta {0}.
 Psevdonim uzhe nayden: {0}
@@ -124,7 +117,6 @@ Ukazhite adres
 Chasovoy poyas ukazan neverno.
 Nevernyy vybor profilya.
 Popytka podklyuchit'sya k {0} s profilem {1} ...
-Oshibka pri popytke zapustit' zastavku iz-za nedopustimoy operatsii.
 Parsing modov ne razreshen v bezopasnom rezhime.
 Put' ne yavlyayetsya ni faylom, ni katalogom.
 Sozdayet druguyu kopiyu fayla v drugom kataloge ili imeni.
@@ -217,7 +209,6 @@ Udalyayet simvol iz nomera simvola v ukazannoy stroke
 Udalena stroka.
 Ukazannyy nomer stroki {0} ne yavlyayetsya dopustimym nomerom.
 Rabotayet v bezopasnom rezhime. Propusk etapa ...
->> Udalennaya otladka i chat: versiya
 >> Vash adres: {0}.
 >> Vashe imya {0}.
 Indeks {0} nedeystvitelen. Yest' {1} sledov steka. Indeks nachinayetsya s nulya, poetomu poprobuyte vychest' 1.
@@ -230,8 +221,6 @@ Blokirovka ustroystva otladki po IP-adresu
 {0} yeshche ne zablokirovan.
 Oshibka zagruzki nastroyek
 Pri zagruzke nastroyek proizoshla oshibka. Vozmozhno, vam potrebuyetsya proverit' fayl nastroyek.
-Vyberite razdel:
-Sokhranit' nastroyki
 Vykhod
 Ukazannaya optsiya {0} nedeystvitel'na.
 Otvet dolzhen byt' chislovym.
@@ -246,7 +235,6 @@ Login FTP-pol'zovatelya
 Zhurnal IP-adresa FTP
 Vernut' tol'ko pervyy profil' FTP
 Pokazat' vremya / datu v verkhnem pravom uglu
-Taym-aut zastavki v ms
 Rezhim analiza razmera
 Vydeleniye pri zapuske
 Dolgoye vremya i data
@@ -254,7 +242,6 @@ Pokazat' skrytyye fayly
 Vernites' nazad...
 Napishite port udalennogo otladchika. On dolzhen byt' chislovym, i yego nel'zya uzhe ispol'zovat'. V protivnom sluchaye udalennyy otladchik ne smozhet otkryt' port.
 Napishite, skol'ko raz komanda "" get "dolzhna povtoryat' popytki zagruzki posle sboya. On dolzhen byt' chislovym.
-Napishite, kogda zapuskat' zastavku cherez ukazannyye millisekundy. On dolzhen byt' chislovym.
 Otvet ne mozhet byt' otritsatel'nym.
 Peremennaya {0} ne naydena ni v odnom iz moduley.
 Izmenyayet konfiguratsiyu yadra
@@ -323,7 +310,6 @@ Vremya i data budut dlinneye, budut otobrazhat'sya polnyye nazvaniya mesyatsev i
 Pokazyvayet skrytyye fayly.
 Mod {0} ostanovlen
 {0} v {1} ostanovlen
-U moda {0} net nazvaniya detali. Ne udalos' proanalizirovat' mod. Prosmotrite iskhodnyy kod.
 Pered ochistkoy zhurnala otladki neobkhodimo vklyuchit' rezhim otladki.
 Vo vkhodyashchiye postupilo novykh soobshcheniy: {0}.
 Otkroyte «mail», chtoby uvidet' ikh.
@@ -428,10 +414,7 @@ Sokhranit' temu v tekushchiy katalog
 Sokhranit' temu v drugoy katalog ...
 Pechatayet informatsiyu ob oborudovanii
 Imya protsessora:
-Bity protsessora:
-Faylovaya sistema razdela:
 Razmer razdela:
->> Dobro pozhalovat'! Eto vash pervyy vkhod v udalennuyu otladku i chat. Ispol'zuyte "/ register <name>" dlya registratsii.
 Ustroystvo uzhe sushchestvuyet.
 Net takogo ustroystva.
 Vyvodit soderzhimoye fayla na konsol'
@@ -440,8 +423,6 @@ Oborachivayet vyvod konsoli
 Komanda ne oborachivayetsya. Eti komandy mozhno obernut':
 Izvlekayet ZIP-arkhiv
 Sozdayet ZIP-arkhiv
-Oshibka pri zagruzke dannykh otladki
-Oshibka pri zagruzke dannykh otladki. Prover'te vashe internet-soyedineniye.
 Ne udalos' zavershit' mod {0}: {1}
 Perechislyayet vse zapushchennyye sobytiya
 Tekushchiy katalog
@@ -480,14 +461,11 @@ Komandy moda:
 Komandy psevdonima:
 Rezhim obsluzhivaniya
 Katalogi poiska
-Gruppa putey, razdelennykh dvoyetochiyem. On rabotayet tak zhe, kak PATH. Napishite polnyy put' k papke ili imya papki. Kogda vy zakonchite, napishite «q». Napishite znak minus ryadom s putem, chtoby udalit' sushchestvuyushchiy katalog.
 Nikakikh mod-komand.
 Nikakikh psevdonimov komand.
 Oborachivayemaya komanda ne naydena.
 Zaprashivayet slovo v ukazannoy stroke ili vo vsekh strokakh
 Skachano {0} iz {1}.
-Proveryayet sredstvo oshibki yadra
-Testiruyet sredstvo oshibok yadra s podderzhkoy formata
 Testy, perevodyashchiye stroku, kotoraya sushchestvuyet v resursakh, na opredelennyy yazyk
 Vyvodit stroku na konsol' i analiziruyet naydennyye zapolniteli
 Proveryayet sredstvo regulyarnykh vyrazheniy
@@ -601,8 +579,6 @@ Slovar' massivov simvolov:
 Pokazat' progress operatsiy s faylovoy sistemoy
 Pokazyvayet, kakoy fayl obrabatyvayetsya vo vremya operatsiy faylovoy sistemy
 Libo tip oborudovaniya {0} ne proveryayetsya, libo nedeystvitelen.
-Tip oborudovaniya {0} yeshche ne issledovan. Yesli vy uvereny, chto eto provereno, perezapustite yadro ​​s vklyuchennoy otladkoy.
-Razdely ne pomeshcheny v spisok.
 Vsegda po tsentru
 Napishite lyuboy tekst, kotoryy khotite pokazat'.
 Vsegda li tekst, otobrazhayemyy v ramke, nakhoditsya po tsentru.
@@ -610,17 +586,13 @@ V zastavke voznikla oshibka pri otobrazhenii: {0}. Nazhmite lyubuyu klavishu dly
 Predvaritel'nyy prosmotr ...
 Vot kak budet vyglyadet' vasha tema:
 Oborachivayemyye komandy:
-Detali moda:
 Ispol'zovat' konsol'nyy API
 Sleduyet li ispol'zovat' konsol'nyy API dlya ochistki teksta ili ispol'zovat' boleye bystruyu posledovatel'nost' VT dlya ochistki stroki. Yesli False, Marquee budet ispol'zovat' sootvetstvuyushchuyu posledovatel'nost' VT. V protivnom sluchaye on budet ispol'zovat', veroyatno, boleye medlennyy konsol'nyy API.
 Otkrytiye URL ... Obyazatel'no sleduyte instruktsiyam na ekrane.
-V mode net detaley.
 Nazvaniye moda:
 Imya fayla moda:
 Put' k faylu moda:
-Versiya detali:
 Papka pusta.
-Uspeshno issledovano {0}.
 Podrobnyy zond
 Sdelayte soobshcheniya proverki oborudovaniya nemnogo razgovorchivymi.
 Ukrashayet fayl JSON
@@ -649,7 +621,6 @@ Skol'ko simvolov nuzhno napisat', prezhde chem zapuskayetsya «zalivka stroki»?
 Vozmozhnost' togo, chto obrazets zalivki linii budet napechatan zaglavnymi bukvami v protsentakh
 Otvet ne mozhet byt' nulevym.
 Otvet ne mozhet prevyshat' kolichestvo predstavlennykh zapisey.
-Sokhranit' izmeneniya...
 Upravlyayte svoimi modami
 V bezopasnom rezhime upravleniye modami otklyucheno.
 Nedeystvitel'naya komanda {0}. Prover'te ispol'zovaniye nizhe:
@@ -657,8 +628,6 @@ Mod ne nayden ili fayl soderzhit nedopustimyye simvoly.
 Veroyatnost' promakha v protsentakh
 Vklyuchit' otladku zastavki
 Vklyuchayet otladku zastavok. Obratite vnimaniye, chto on mozhet bystro zapolnit' zhurnal otladki i nemnogo zamedlit' rabotu zastavki, v zavisimosti ot ispol'zuyemoy zastavki. Rabotayet, tol'ko yesli otladka yadra vklyuchena dlya diagnosticheskikh tseley.
-Net seti pri zagruzke dannykh otladki
-Prover'te podklyucheniye k Internetu i poprobuyte yeshche raz.
 Stranitsa rukovodstva {0} nedeystvitel'na.
 Rassmotrite vozmozhnost' zapolneniya etoy stranitsy rukovodstva.
 Rukovodstvo po modu
@@ -669,21 +638,13 @@ Shifruyet stroku s pomoshch'yu SHA384.
 Shifruyet stroku s pomoshch'yu SHA256.
 Shifruyet stroku s pomoshch'yu SHA1
 Shifruyet stroku s pomoshch'yu MD5
-gde budet vstroyennaya zastavka
-Mod chast' nichego.
 Ostanovka modov ne razreshena v bezopasnom rezhime.
 Mod uzhe zapushchen!
 Mod yeshche ne zapushchen!
-Imya fayla detali:
-Put' k faylu detali:
 Oshibka pri popytke zapuska skrinseyvera:
 Nedopustimyy tip puti yadra.
 Predydushchaya zagruzka ne udalas'
 Redaktor JSON yeshche ne otkryl faylovyy potok.
-Svoystvo vnutri fayla JSON ne naydeno.
-Udalennoye svoystvo.
-Dobavlyayet novoye svoystvo v konets fayla JSON.
-Udalyayet svoystvo iz fayla JSON
 Vykhod iz obolochki JSON bez sokhraneniya izmeneniy
 Sokhranyayet fayl JSON
 Pechatayet fayl JSON
@@ -707,7 +668,6 @@ Mod {0} zanesen v chernyy spisok.
 Perezagruzhayet vse mody
 Dobavlyayet mod v chernyy spisok
 Udalyayet mod iz chernogo spiska
-Vremya i data v formate UTC: {0}
 Pokazyvat' informatsiyu o prilozhenii vo vremya zagruzki
 Pokazat' vremya okonchaniya etapa
 Zapusk modifikatsiy yadra pri zagruzke
@@ -926,11 +886,9 @@ Obshcheye kolichestvo protsessorov:
 Razmer diska:
 Obshchiy ob"yem pamyati:
 Videokarta:
-Model' diska:
 Yesli vy uvereny, chto otkryli nuzhnyy razdel, prover'te eto soobshcheniye:
 Vypolnyayet komandu FTP-servera
 Shifruyet stroku s pomoshch'yu CRC32
-Otkryvayet pochtovyy kliyent
 pochty peredano...
 Proveryayet funktsional'nost' tablitsy
 Redaktiruyet ukazannuyu stroku
@@ -948,10 +906,6 @@ Progress peredachi pochty (odin)
 Yesli vklyucheno, pochtovaya obolochka budet pokazyvat', skol'ko bayt peredano pri zagruzke pochty.
 Napishite, kak vy khotite, chtoby vash stil' peredachi pochty byl. Ostav'te pustym, chtoby ispol'zovat' stil' po umolchaniyu. Zapolniteli analiziruyutsya. {0} dlya peredannogo razmera i {1} dlya obshchego razmera.
 Napishite, kak vy khotite, chtoby vash stil' peredachi pochty byl. Ostav'te pustym, chtoby ispol'zovat' stil' po umolchaniyu. Zapolniteli analiziruyutsya. {0} dlya peredannogo razmera.
-Chasovoy poyas:
-Segodnya {0}
-Tekushcheye vremya: {0}
-Vozmozhnyye otvety
 Fayl moda ne ukazan.
 Pytayus' ustanovit' uzhe ustanovlennyy mod. Obnovleniye moda...
 Ustanovka ne udalas' dlya
@@ -996,12 +950,10 @@ Skol'ko millisekund zhdat' nazhatiya klavishi do istecheniya vremeni ozhidaniya?
 Zamenyayet slovo ili frazu drugim s pomoshch'yu regulyarnykh vyrazheniy
 Zamenyayet slovo ili frazu drugim v stroke s pomoshch'yu regulyarnykh vyrazheniy
 Zaprashivayet slovo v ukazannoy stroke ili vo vsekh strokakh s ispol'zovaniyem regulyarnykh vyrazheniy.
-Naydite nastroyku
 Napishite, chto vy khotite nayti.
 Nichego ne naydeno. Ubedites', chto vy pravil'no zapisali nastroyku.
 Zapakovyvayet lokal'nyy fayl v arkhiv
 Ne mogu nichego upakovat'.
-Opisaniye otveta
 Dlya polucheniya dopolnitel'noy informatsii ob usloviyakh ispol'zovaniya etogo programmnogo obespecheniya posetite
 Tip vyvoda po umolchaniyu
 Proveryayet vse nastroyki KS na pravil'nost' napisaniya peremennykh
@@ -1025,8 +977,6 @@ URL-adres zagolovka RSS, kotoryy budet ispol'zovat'sya pri pokaze poslednego zag
 Ne udalos' poluchit' posledniye novosti.
 Pokazat' trassirovku steka pri oshibke yadra
 Yesli yest' kakaya-libo oshibka yadra, vyberite, sleduyet li vyvodit' trassirovku steka na konsol'.
-Sokhranit' nastroyki kak
-Zagruzit' nastroyki iz
 Gde vy khotite sokhranit' tekushchiye nastroyki yadra?
 Ne udayetsya sokhranit' nastroyki yadra poverkh sushchestvuyushchego fayla.
 Otkuda vy khotite zagruzit' tekushchiye nastroyki yadra?
@@ -1136,11 +1086,6 @@ Figlet shrift dlya taymera
 Vklyuchit' Figlet dlya taymera
 Yesli vklyucheno, budet ispol'zovat' figlet dlya taymera. Obratite vnimaniye, chto dlya pravil'nogo otobrazheniya vremeni s vklyuchennym Figlet trebuyetsya bol'shoy ekran konsoli.
 Sbrasyvayet yadro ​​k zavodskim nastroykam
-Obkhodit opredeleniye razmera konsoli
-Pokhozhe, vy obkhodite opredeleniye razmera konsoli. Na malen'kikh ekranakh vse mozhet rabotat' nepravil'no.
-Dlya bol'shego udobstva izmenite razmer okna konsoli, ostavayas' na etom ekrane. Nazhmite lyubuyu klavishu chtoby prodolzhit'...
-Vasha konsol' slishkom mala dlya pravil'noy raboty:
-Bannernyy shrift
 Pokazat' kolichestvo komand v spravke
 Pokazat' kolichestvo komand obolochki v spravke
 Pokazat' kolichestvo komand moda v spravke
@@ -1238,9 +1183,6 @@ Uroven' krasnogo tsveta dolzhen byt' chislovym.
 Uroven' zelenogo tsveta dolzhen byt' chislovym.
 Uroven' sinego tsveta dolzhen byt' chislovym.
 Shestnadtsaterichnoye predstavleniye tsveta:
-Nazvaniye chasti moda:
-Imya fayla chasti moda:
-Put' k faylu chasti moda:
 Teperʹ mozhno bezopasno vyklyuchitʹ kompʹyuter.
 Imitirovatʹ rezhim bez APM
 Imitirovatʹ li situatsiyu, kogda net dostupnogo APM. Yesli on vklyuchen, on informiruyet polʹzovatelya o tom, chto teperʹ bezopasno vyklyuchatʹ kompʹyuter posle vyklyucheniya.
@@ -1262,7 +1204,6 @@ Obyazatelʹno ispolʹzuyte konsolʹnyy shrift, podderzhivayushchiy glify PowerLi
 Otkryvayet biblioteku presetov obolochki
 Ukazannyy preset {0} ne nayden.
 Vy kosmicheskiy korablʹ, i meteory priletayut, chtoby unichtozhitʹ vas. Vy mozhete spasti yego?
-Retro-simulyator yadra na osnove 0.0.4.1
 Ustroystvo uzhe sushchestvuyet v chernom spiske.
 Ustroystvo ot·sut·stvuyet v chernom spiske.
 Proveryayet vypolneniye tochki vkhoda sborki
@@ -1271,10 +1212,6 @@ Konverter
 Dostupnyye tipy yunitov i ikh yunity:
 Igra zakonchena
 Neozhidannaya oshibka
-Proverka obnovleniy...
-Skachivaniye versii
-Ustanovka versii
-Vozvrashchayasʹ k 2018 godu...
 Ispolʹzuyte PowerLine dlya renderinga kosmicheskogo korablya
 Meteor skorostʹ igry
 Ispolʹzovatʹ li PowerLine dlya renderinga kosmicheskogo korablya ili ispolʹzovatʹ standartnyy simvol bolʹshe, chem simvol. Yesli vy khotite ispolʹzovatʹ PowerLine s Meteor, vam neobkhodimo ustanovitʹ sootvet·stvuyushchiy shrift s podderzhkoy PowerLine.

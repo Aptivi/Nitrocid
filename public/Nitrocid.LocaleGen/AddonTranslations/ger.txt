@@ -1,5 +1,4 @@
 Ungültige Farbvorlage {0}
-hwprobe: Ihre Hardware wird geprüft. Bitte warten ...
 Geben Sie das Administratorkennwort für die Wartung ein.
 Kernelfehler beim Booten: {0}
 DOUBLE PANIC: Die Neustartzeit überschreitet die maximal erlaubte Fehlerzeit für den Neustart von {0}. Du hast einen Kernel-Fehler gefunden.
@@ -30,7 +29,6 @@ Der angeforderte Bildschirmschoner {0} wurde nicht gefunden.
 Der Bildschirmschoner {0} wurde nicht in der Datenbank gefunden. Überprüfen Sie den Namen und versuchen Sie es erneut.
 Beim Drucken von Text ist ein schwerwiegender Fehler aufgetreten.
 Der Mod kann wegen folgendem nicht geladen werden:
-Mod {0} hat keinen Namen. Überprüfen Sie den Quellcode.
 {0} v {1} gestartet
 Keine Definition für den Befehl {0}.
 Befehl definiert durch 
@@ -59,9 +57,7 @@ Listet das entfernte Verzeichnis auf
 Lädt die lokale Datei unter Verwendung von Binärcode oder Text in das Remoteverzeichnis hoch
 Alias ​​kann nicht derselbe Name wie ein Befehl sein.
 Befehl wurde nicht gefunden, um zu {0} zu führen.
-Sie können jetzt "{0}" als Befehl ausführen: "{1}".
 Alias ​​{0} wird nicht entfernt.
-Ungültiger Modus {0}
 Verzeichnis {0} nicht gefunden
 Leerer Hostname
 Wechseln von: {0} zu {1} ...
@@ -85,7 +81,6 @@ Listet den Inhalt der Datei / des Ordners im aktuellen Ordner auf
 Sperrt Ihren Bildschirm mit einem Passwort
 Meldet dich ab
 Erstellt ein Verzeichnis
-Startet den Computer neu (WARNUNG: Keine Synchronisierung, da es sich nicht um einen endgültigen Kernel handelt)
 Lädt die Konfigurationsdatei neu, die bearbeitet wurde.
 Speichert Ihren Bildschirm vor Ausbrennungen
 Richtet Kernel-Bildschirmschoner ein
@@ -93,7 +88,6 @@ Zeigt Datum und Uhrzeit an
 Zeigt Datum und Uhrzeit in Zonen an
 Der Kernel wird heruntergefahren
 Verwendung:
-wo customsaver wird
 In der Shell ist ein Fehler aufgetreten.
 Sie sind nicht berechtigt, {0} zu verwenden
 Shell-Nachricht: Der angeforderte Befehl {0} darf nicht im Wartungsmodus ausgeführt werden.
@@ -113,7 +107,6 @@ Bitte verwenden Sie "ftp", wenn Sie Dateien vom FTP-Server herunterladen möchte
 Lädt eine Datei in das aktuelle Arbeitsverzeichnis herunter
 Trennen Sie ein Debug-Gerät
 Listet die verbundenen Debugging-Geräte auf
-Debug-Gerät {0} nicht gefunden.
 Gerät {0} nicht verbunden.
 Debuggen Sie das Abhören aller Adressen über Port {0}.
 Alias bereits gefunden: {0}
@@ -124,7 +117,6 @@ Geben Sie die Adresse an
 Die Zeitzone ist falsch angegeben.
 Ungültige Profilauswahl.
 Es wird versucht, eine Verbindung zu {0} mit dem Profil {1} herzustellen ...
-Fehler beim Versuch, den Bildschirmschoner zu starten, aufgrund eines ungültigen Vorgangs.
 Parsing-Mods im abgesicherten Modus nicht erlaubt.
 Der Pfad ist weder eine Datei noch ein Verzeichnis.
 Erstellt eine weitere Kopie einer Datei unter einem anderen Verzeichnis oder Namen.
@@ -217,7 +209,6 @@ Löscht ein Zeichen aus der Zeichennummer in der angegebenen Zeile
 Zeile entfernt.
 Die angegebene Zeilennummer {0} ist keine gültige Nummer.
 Laufen im abgesicherten Modus. Überspringphase ...
->> Remote Debug und Chat: Version
 >> Ihre Adresse ist {0}.
 >> Ihr Name ist {0}.
 Index {0} ungültig. Es gibt {1} Stapelspuren. Der Index basiert auf Null. Versuchen Sie also, von 1 zu subtrahieren.
@@ -230,8 +221,6 @@ Blockieren Sie ein Debug-Gerät anhand der IP-Adresse
 {0} ist noch nicht blockiert.
 Fehler beim Laden der Einstellungen
 Beim Laden der Einstellungen ist ein Fehler aufgetreten. Möglicherweise müssen Sie die Einstellungsdatei überprüfen.
-Abschnitt auswählen:
-Einstellungen speichern
 Ausgang
 Die angegebene Option {0} ist ungültig.
 Die Antwort muss numerisch sein.
@@ -246,7 +235,6 @@ Protokollieren Sie den FTP-Benutzernamen
 Protokollieren Sie die FTP-IP-Adresse
 Gibt nur das erste FTP-Profil zurück
 Zeit / Datum in der oberen rechten Ecke anzeigen
-Bildschirmschoner-Timeout in ms
 Größenanalyse-Modus
 Festzelt beim Start
 Lange Zeit und Datum
@@ -254,7 +242,6 @@ Zeige versteckte Dateien
 Geh zurück...
 Schreiben Sie einen Remote-Debugger-Port. Es muss numerisch sein und darf nicht bereits verwendet werden. Andernfalls kann der Remote-Debugger den Port nicht öffnen.
 Schreiben Sie, wie oft der Befehl "" get "" fehlgeschlagene Downloads wiederholen soll. Es muss numerisch sein.
-Schreiben Sie, wann der Bildschirmschoner nach den angegebenen Millisekunden gestartet werden soll. Es muss numerisch sein.
 Die Antwort darf nicht negativ sein.
 Die Variable {0} wurde in keinem der Module gefunden.
 Ändert die Kernelkonfiguration
@@ -323,7 +310,6 @@ Die Uhrzeit und das Datum sind länger und zeigen die vollständigen Monatsnamen
 Zeigt versteckte Dateien an.
 Mod {0} gestoppt
 {0} v {1} gestoppt
-Mod {0} hat keinen Teilenamen. Mod-Analyse fehlgeschlagen. Überprüfen Sie den Quellcode.
 Sie müssen den Debug-Modus aktivieren, bevor Sie das Debug-Protokoll löschen können.
 {0} Neue Nachrichten sind im Posteingang eingetroffen.
 Öffnen Sie "mail", um sie zu sehen.
@@ -428,10 +414,7 @@ Thema im aktuellen Verzeichnis speichern
 Thema in einem anderen Verzeichnis speichern...
 Druckt Hardwareinformationen
 Prozessorname:
-Prozessorbits:
-Partitionsdateisystem:
 Partitionsgröße:
->> Willkommen! Dies ist das erste Mal, dass Sie Remote-Debugging und -Chat aufrufen. Verwenden Sie "/register <name>", um sich zu registrieren.
 Gerät ist bereits vorhanden.
 Kein solches Gerät.
 Druckt den Inhalt der Datei auf die Konsole
@@ -440,8 +423,6 @@ Umschließt die Konsolenausgabe
 Der Befehl ist nicht umschließbar. Diese Befehle können verpackt werden:
 Extrahiert ein ZIP-Archiv
 Erstellt ein ZIP-Archiv
-Fehler beim Herunterladen der Debug-Daten
-Beim Herunterladen der Debug-Daten ist ein Fehler aufgetreten. Prüfe deine Internetverbindung.
 Fehler beim Fertigstellen von Mod {0}: {1}
 Listet alle ausgelösten Ereignisse auf
 Aktuelles Verzeichnis
@@ -480,14 +461,11 @@ Mod-Befehle:
 Alias-Befehle:
 Wartungsmodus
 Verzeichnisse suchen
-Gruppe von Pfaden, die durch den Doppelpunkt getrennt sind. Es funktioniert genauso wie PATH. Schreiben Sie einen vollständigen Pfad zu einem Ordner oder einen Ordnernamen. Wenn Sie fertig sind, schreiben Sie "q". Schreiben Sie ein Minuszeichen neben den Pfad, um ein vorhandenes Verzeichnis zu entfernen.
 Keine Mod-Befehle.
 Keine Alias-Befehle.
 Der Wrapping-Befehl wurde nicht gefunden.
 Fragt ein Wort in einer bestimmten Zeile oder allen Zeilen ab
 {0} von {1} heruntergeladen.
-Testet die Kernel-Fehlerfunktion
-Testet die Kernel-Fehlerfunktion mit Formatunterstützung
 Testet die Übersetzung einer in Ressourcen vorhandenen Zeichenfolge in eine bestimmte Sprache
 Gibt eine Zeichenfolge zur Konsole aus und analysiert die gefundenen Platzhalter
 Testet die Funktion für reguläre Ausdrücke
@@ -601,8 +579,6 @@ Array-Zeichen-Wörterbuch:
 Fortschritt bei Dateisystemvorgängen anzeigen
 Zeigt an, welche Datei während der Dateisystemoperationen verarbeitet wird
 Entweder wird der Hardwaretyp {0} nicht geprüft oder er ist ungültig.
-Der Hardwaretyp {0} wird noch nicht untersucht. Wenn Sie sicher sind, dass es sondiert wurde, starten Sie den Kernel mit aktiviertem Debugging neu.
-Partitionen nicht in die Liste geparst.
 Immer zentriert
 Schreiben Sie einen beliebigen Text, der angezeigt werden soll.
 Ob der auf dem Laufschriftrahmen angezeigte Text immer zentriert ist.
@@ -610,17 +586,13 @@ Beim Bildschirmschoner ist bei der Anzeige ein Fehler aufgetreten: {0}. Zum Verl
 Vorschau...
 So sieht Ihr Theme aus:
 Umwickelbare Befehle:
-Mod-Teile:
 Konsolen-API verwenden
 Ob die Konsolen-API zum Löschen von Text oder die schnellere VT-Sequenz zum Löschen von Zeilen verwendet werden soll. Bei False verwendet Marquee die entsprechende VT-Sequenz. Andernfalls wird die wahrscheinlich langsamere Konsolen-API verwendet.
 URL öffnen... Befolgen Sie die auf dem Bildschirm angezeigten Schritte.
-Es gibt keine Teile im Mod.
 Mod-Name:
 Name der Mod-Datei:
 Pfad der Mod-Datei:
-Teilversion:
 Der Ordner ist leer.
-{0} erfolgreich getestet.
 Ausführliche Sonde
 Machen Sie Hardware-Probing-Meldungen etwas gesprächig.
 Verschönert die JSON-Datei
@@ -649,7 +621,6 @@ Wie viele Zeichen müssen geschrieben werden, bevor die "Zeilenfüllung" ausgel�
 Möglichkeit, dass das Linienfüllmuster in Großbuchstaben in Prozent gedruckt wird
 Die Antwort darf nicht null sein.
 Die Antwort darf die angezeigten Einträge nicht überschreiten.
-Änderungen speichern...
 Verwalten Sie Ihre Mods
 Die Mod-Verwaltung ist im abgesicherten Modus deaktiviert.
 Ungültiger Befehl {0}. Überprüfen Sie die Verwendung unten:
@@ -657,8 +628,6 @@ Mod nicht gefunden oder Datei enthält ungültige Zeichen.
 Verfehlungswahrscheinlichkeit in Prozent
 Bildschirmschoner-Debugging aktivieren
 Aktiviert das Debuggen für Bildschirmschoner. Bitte beachten Sie, dass es je nach verwendetem Bildschirmschoner das Debug-Protokoll schnell füllen und den Bildschirmschoner etwas verlangsamen kann. Funktioniert nur, wenn das Kernel-Debugging für Diagnosezwecke aktiviert ist.
-Kein Netzwerk beim Herunterladen von Debug-Daten
-Überprüfen Sie Ihre Internetverbindung und versuchen Sie es erneut.
 Die Handbuchseite {0} ist ungültig.
 Ziehen Sie in Betracht, diese Handbuchseite auszufüllen.
 Mod-Handbuch
@@ -669,21 +638,13 @@ Verschlüsselt eine Zeichenfolge mit SHA384
 Verschlüsselt eine Zeichenfolge mit SHA256
 Verschlüsselt eine Zeichenfolge mit SHA1
 Verschlüsselt eine Zeichenfolge mit MD5
-wo builtinsaver sein wird
-Mod-Teil ist nichts.
 Mods stoppen ist im abgesicherten Modus nicht erlaubt.
 Mod wurde bereits gestartet!
 Mod hat noch nicht begonnen!
-Dateiname des Teils:
-Dateipfad des Teils:
 Fehler beim Versuch, den Bildschirmschoner zu starten:
 Ungültiger Kernel-Pfadtyp.
 Vorheriger Start fehlgeschlagen
 Der JSON-Editor hat noch keinen Dateistream geöffnet.
-Die Eigenschaft in der JSON-Datei wurde nicht gefunden.
-Entferntes Eigentum.
-Fügt eine neue Eigenschaft am Ende der JSON-Datei hinzu
-Entfernt eine Eigenschaft aus der JSON-Datei
 Beendet die JSON-Shell, ohne die Änderungen zu speichern
 Speichert die JSON-Datei
 Druckt die JSON-Datei
@@ -707,7 +668,6 @@ Mod {0} ist auf der schwarzen Liste.
 Lädt alle Mods neu
 Fügt einen Mod zur Blacklist hinzu
 Entfernt einen Mod von der Blacklist
-Uhrzeit und Datum in UTC: {0}
 App-Informationen während des Bootens anzeigen
 Etappenendzeiten anzeigen
 Kernel-Modifikationen beim Booten starten
@@ -926,11 +886,9 @@ Gesamtzahl der Prozessoren:
 Festplattengröße:
 Gesamtspeicher:
 Grafikkarte:
-Festplattenmodell:
 Wenn Sie sicher sind, dass Sie den richtigen Abschnitt geöffnet haben, sehen Sie sich diese Nachricht an:
 Führt einen FTP-Serverbefehl aus
 Verschlüsselt einen String mit CRC32
-Öffnet den Mailclient
 der E-Mail übertragen ...
 Testet die Tabellenfunktion
 Bearbeitet die angegebene Zeile
@@ -948,10 +906,6 @@ E-Mail-Übertragungsfortschritt (einzeln)
 Wenn diese Option aktiviert ist, zeigt die Mail-Shell an, wie viele Bytes beim Herunterladen von E-Mails übertragen werden.
 Schreiben Sie, wie Ihr E-Mail-Übertragungsfortschritt aussehen soll. Lassen Sie das Feld leer, um den Standardstil zu verwenden. Platzhalter werden analysiert. {0} für die übertragene Größe und {1} für die Gesamtgröße.
 Schreiben Sie, wie Ihr E-Mail-Übertragungsfortschritt aussehen soll. Lassen Sie das Feld leer, um den Standardstil zu verwenden. Platzhalter werden analysiert. {0} für übertragene Größe.
-Zeitzone:
-Heute ist {0}
-Aktuelle Zeit ist {0}
-Mögliche Antworten
 Mod-Datei ist nicht angegeben.
 Versuch, einen bereits installierten Mod zu installieren. Mod aktualisieren...
 Installation fehlgeschlagen für
@@ -996,12 +950,10 @@ Wie viele Millisekunden soll vor dem Timeout auf den Tastendruck gewartet werden
 Ersetzt ein Wort oder einen Satz durch einen anderen unter Verwendung regulärer Ausdrücke
 Ersetzt ein Wort oder einen Satz durch ein anderes in einer Zeile unter Verwendung regulärer Ausdrücke
 Fragt ein Wort in einer angegebenen Zeile oder in allen Zeilen mit regulären Ausdrücken ab
-Finden Sie eine Einstellung
 Schreiben Sie, wonach Sie suchen möchten.
 Es wird nichts gefunden. Stellen Sie sicher, dass Sie die Einstellung richtig geschrieben haben.
 Packt eine lokale Datei in das Archiv
 Kann nichts packen.
-Antwortbeschreibung
 Weitere Informationen zu den Nutzungsbedingungen dieser Software finden Sie unter
 Ausgangstyp der Standardauswahl
 Überprüft alle KS-Einstellungen, um zu sehen, ob die Variablen korrekt geschrieben sind
@@ -1025,8 +977,6 @@ RSS-Schlagzeilen-URL, die verwendet werden soll, wenn die neueste Schlagzeile an
 Die neuesten Nachrichten konnten nicht abgerufen werden.
 Stack-Trace bei Kernel-Fehler anzeigen
 Wenn ein Kernelfehler auftritt, wählen Sie aus, ob der Stack-Trace auf der Konsole gedruckt werden soll oder nicht.
-Einstellungen speichern unter
-Einstellungen laden von
 Wo möchten Sie die aktuellen Kernel-Einstellungen speichern?
 Die Kernel-Einstellungen können nicht über der vorhandenen Datei gespeichert werden.
 Woher möchten Sie die aktuellen Kernel-Einstellungen laden?
@@ -1136,11 +1086,6 @@ Figlet-Schriftart für Timer
 Aktivieren Sie Figlet für den Timer
 Wenn aktiviert, wird Figlet als Timer verwendet. Bitte beachten Sie, dass es einen großen Konsolenbildschirm benötigt, um die Zeit mit aktiviertem Figlet richtig darzustellen.
 Setzt den Kernel auf die Werkseinstellungen zurück
-Umgeht die Erkennung der Konsolengröße
-Sieht so aus, als würden Sie die Erkennung der Konsolengröße umgehen. Auf kleinen Bildschirmen funktionieren die Dinge möglicherweise nicht richtig.
-Um ein besseres Erlebnis zu haben, ändern Sie die Größe Ihres Konsolenfensters, während Sie sich noch auf diesem Bildschirm befinden. Drücken Sie eine beliebige Taste, um fortzufahren...
-Ihre Konsole ist zu klein, um ordnungsgemäß ausgeführt zu werden:
-Banner-Filet-Schriftart
 Zeigen Sie die Befehle an, die auf Hilfe zählen
 Zeigen Sie die Anzahl der Shell-Befehle in der Hilfe an
 Zeigen Sie die Mod-Befehle an, die auf Hilfe zählen
@@ -1238,9 +1183,6 @@ Die rote Farbstufe muss numerisch sein.
 Die grüne Farbstufe muss numerisch sein.
 Die blaue Farbstufe muss numerisch sein.
 Hexadezimale Farbdarstellung:
-Name des Mod-Teils:
-Dateiname des Mod-Teils:
-Dateipfad des Mod-Teils:
 Sie können Ihren Computer jetzt sicher ausschalten.
 Simulieren Sie keinen APM-Modus
 Ob eine Situation simuliert werden soll, in der kein APM verfügbar ist. Wenn aktiviert, informiert es den Benutzer, dass es jetzt sicher ist, den Computer beim Herunterfahren auszuschalten.
@@ -1262,7 +1204,6 @@ Stellen Sie sicher, dass Sie eine Konsolenschriftart verwenden, die PowerLine-Gl
 Öffnet die Shell-Preset-Bibliothek
 Die angegebene Voreinstellung {0} wurde nicht gefunden.
 Du bist ein Raumschiff und die Meteore kommen, um dich zu zerstören. Kannst du es speichern?
-Retro-Nitrocid-KS basierend auf 0.0.4.1
 Gerät existiert bereits in der Sperrliste.
 Das Gerät existiert nicht in der Sperrliste.
 Testet die Ausführung des Assembly-Einstiegspunkts
@@ -1271,10 +1212,6 @@ Einheitenumwandler
 Verfügbare Einheitentypen und ihre Einheiten:
 Spiel ist aus
 Unerwarteter Fehler
-Suche nach Aktualisierungen...
-Version herunterladen
-Version installieren
-Zurück ins Jahr 2018...
 Verwenden Sie PowerLine zum Rendern von Raumschiffen
 Meteor-Spielgeschwindigkeit
 Ob PowerLine verwendet werden soll, um das Raumschiff zu rendern, oder ob das Standardgrößer-als-Zeichen verwendet werden soll. Wenn Sie PowerLine mit Meteor verwenden möchten, müssen Sie eine entsprechende Schriftart mit PowerLine-Unterstützung installieren.

@@ -1,5 +1,4 @@
 Wúxiào de yánsè múbǎn {0}
-hwprobe: Nín de yìngjiàn jiāng bèi tàncè. Qǐng shāo děng...
 Shūrù guǎnlǐ yuán mìmǎ jìnxíng wéihù.
 Qǐdòng shí chūxiàn nèihé cuòwù:{0}
 Shuāngchóng kǒnghuāng: Chóngxīn qǐdòng shíjiān chāoguò yǔnxǔ de zuìdà {0} cuòwù chóngxīn qǐdòng shíjiān. Nín fāxiànle yīgè nèihé cuòwù.
@@ -30,7 +29,6 @@ Wèi zhǎodào qǐngqiú de píngmù bǎohù chéngxù {0}.
 Zài shùjùkù zhōng zhǎo bù dào píngmù bǎohù chéngxù {0}. Jiǎnchá míngchēng bìng chóng shì.
 Dǎyìn wénběn shí chūxiàn yánzhòng cuòwù.
 Yóuyú yǐxià yuányīn, wúfǎ jiāzài Mod:
-Mod {0} méiyǒu míngchēng. Chákàn yuán dàimǎ.
 {0} V{1} yǐ kāishǐ
 mìnglìng {0} méiyǒu dìngyì.
 Dìngyì de mìnglìng
@@ -59,9 +57,7 @@ liè chū yuǎnchéng mùlù
 shǐyòng èr jìn zhì huò wénběn jiāng běndì wénjiàn shàngchuán dào yuǎnchéng mùlù
 Biémíng bùnéng yǔ mìnglìng tóngmíng.
 Zhǎo bù dào biémíng wèi {0} de mìnglìng.
-Nín xiànzài kěyǐ jiāng “{0}” zuòwéi mìnglìng yùnxíng:“{1}”.
 Wèi fāxiàn yào shānchú biémíng {0}.
-Wúxiào móshì {0}.
 Zhǎo bù dào mùlù {0}
 kòngbái zhǔjī míng.
 Cóng:{0} Gēnggǎi wèi {1}...
@@ -85,7 +81,6 @@ liè chū dāngqiáng wénjiàn jiā zhōng de wénjiàn/wénjiàn jiā nèirón
 shǐyòng mìmǎ suǒdìng nín de píngmù
 jiāng nín zhùxiāo
 chuàngjiàn mùlù
-chóngxīn qǐdòng nín de jìsuànjī (jǐnggào: Bù tóngbù, yīnwèi tā bùshì zuìzhōng nèihé)
 chóngxīn jiāzài yǐ biānjí de pèizhì wénjiàn.
 Bǎohù nín de píngmù miǎn yú shāo huài
 shèzhì nèihé píngmù bǎohù chéngxù
@@ -93,7 +88,6 @@ xiǎnshì rìqí hé shíjiān
 xiǎnshì qūyù zhōng de rìqí hé shíjiān
 nèihé jiāng bèi guānbì
 Yòngfǎ:
-hǎiguān rényuán huì zài nǎlǐ
 Wàiké zhōng yǒu cuò​​wù.
 Nín wú quán shǐyòng {0}
 Shell xiāoxī: Qǐngqiú de mìnglìng {0} bù yǔnxǔ zài wéihù móshì xià yùnxíng.
@@ -113,7 +107,6 @@ Rúguǒ nín yào cóng FTP fúwùqì xiàzài wénjiàn, qǐng shǐyòng “ftp
 Jiāng wénjiàn xiàzài dào dāngqián gōngzuò mùlù
 duàn kāi tiáoshì shèbèi
 liè chū liánjiē de tiáoshì shèbèi
-wèi zhǎodào tiáoshì shèbèi {0}.
 Shèbèi {0} yǐ duàn kāi liánjiē.
 Shǐyòng duānkǒu {0} tiáoshì zhēn tīng suǒyǒu dìzhǐ.
 yǐ zhǎodào biémíng:{0}
@@ -124,7 +117,6 @@ Zhǐdìng dìzhǐ
 Shíqū zhǐdìng bù zhèngquè.
 Pèizhì wénjiàn xuǎnzé wúxiào.
 Zhèngzài chángshì shǐyòng pèizhì wénjiàn {1} liánjiē dào {0}...
-Yóuyú cāozuò wúxiào, chángshì qǐdòng píngmù bǎohù chéngxù shí chūcuò.
 Zài ānquán móshì xià bù yǔnxǔ jiěxī mó zǔ.
 Lùjìng jì bùshì wénjiàn yě bùshì mùlù.
 Zài bùtóng de mùlù huò míngchēng xià chuàngjiàn wénjiàn de lìng yīgè fùběn.
@@ -217,7 +209,6 @@ cóng zhǐdìng xíng de zìfú hào zhōng shānchú yīgè zìfú
 shānchú de xíng.
 Zhǐdìng de xíng hào {0} bùshì yǒuxiào shùzì.
 Zài ānquán móshì xià yùnxíng. Tiàoguò jiēduàn...
->> Yuǎnchéng tiáoshì hé liáotiān: Bǎnběn
 >> nín dì dìzhǐ shì {0}.
 >> Nǐ de míngzì shì {0}.
 Suǒyǐn {0} wúxiào. Yǒu {1} gè duīzhàn gēnzōng. Suǒyǐn cóng líng kāishǐ, yīncǐ qǐng chángshì jiǎn qù 1.
@@ -230,8 +221,6 @@ tōngguò IP dìzhǐ zǔzhǐ tiáoshì shèbèi
 {0} Shàngwèi bèi zǔzhǐ.
 Jiāzài shèzhì shí chūcuò
 jiāzài shèzhì shí chūcuò. Nín kěnéng xūyào jiǎnchá shèzhì wénjiàn.
-Xuǎnzé bùfèn:
-Bǎocún shèzhì
 chūkǒu
 zhǐdìng de xuǎnxiàng {0} wúxiào.
 Dá'àn bìxū shì shùzì.
@@ -246,7 +235,6 @@ jìlù FTP yònghù míng
 jìlù FTP IP dìzhǐ
 jǐn fǎnhuí dì yī gè FTP pèizhì wénjiàn
 zài yòushàng jiǎo xiǎnshì shíjiān/rìqí
-píngmù bǎohù chéngxù chāo shí (yǐ háomiǎo wèi dānwèi)
 dàxiǎo jiěxī móshì
 qǐdòng shí xuǎn kuāng
 cháng shíjiān hé rìqí
@@ -254,7 +242,6 @@ xiǎnshì yǐn zàng wénjiàn
 Huíqù...
 Biānxiě yuǎnchéng tiáoshì qì duānkǒu. Tā bìxū shì shùzì, bìngqiě bùdéyǐ bèi shǐyòng. Fǒuzé, yuǎnchéng tiáoshì qì jiāng wúfǎ dǎkāi gāi duānkǒu.
 Xiě xià “get” mìnglìng yīnggāi chóng shì shībài xiàzài de cìshù. Tā bìxū shì shùzì.
-Xiě rù zhǐdìng háomiǎo hòu qǐdòng píngmù bǎohù chéngxù de shíjiān. Tā bìxū shì shùzì.
 Dá'àn kěnéng bù huì shìfǒudìng de.
 Zài rènhé mókuài shàng dū zhǎo bù dào biànliàng {0}.
 Gēnggǎi nèihé pèizhì
@@ -323,7 +310,6 @@ shíjiān hé rìqí huì gèng zhǎng, xiǎnshì wánzhěng de yuèfèn míngch
 Xiǎnshì yǐn zàng wénjiàn.
 Mod {0} yǐ tíngzhǐ
 {0} v{1} yǐ tíngzhǐ
-Mod {0} méiyǒu língjiàn míngchēng. Mod jiěxī shībài. Chákàn yuán dàimǎ.
 Nín bìxū xiān dǎkāi tiáoshì móshì, ránhòu cáinéng qīngchú tiáoshì rìzhì.
 {0} Fēng xīn yóujiàn dàodá shōu jiàn xiāng.
 Dǎkāi “lsmail” yǐ chákàn tāmen.
@@ -428,10 +414,7 @@ Jiāng zhǔtí bǎocún dào dāngqián mùlù
 jiāng zhǔtí bǎocún dào lìng yīgè mùlù...
 Dǎyìn yìngjiàn xìnxī
 Chǔlǐ qì míngchēng:
-Chǔlǐ qì wèi:
-Fēnqū wénjiàn xìtǒng:
 Fēnqū dàxiǎo:
->> Huānyíng! Zhè shì nín dì yī cì jìnrù yuǎnchéng tiáoshì hé liáotiān. Shǐyòng “/register <name>” jìnxíng zhùcè.
 Shèbèi yǐ cúnzài.
 Wú cǐ shèbèi.
 Jiāng wénjiàn nèiróng dǎyìn dào kòngzhì tái
@@ -440,8 +423,6 @@ Bāozhuāng kòngzhì tái shūchū
 gāi mìnglìng bùkě bāozhuāng. Zhèxiē mìnglìng shì kě bāozhuāng de:
 Tíqǔ ZIP cúndàng
 chuàngjiàn ZIP cúndàng
-xià zǎi tiáoshì shùjù shí chūcuò
-xià zǎi tiáoshì shùjù shí chūcuò. Jiǎnchá nín de hùliánwǎng liánjiē.
 Wèi néng wánchéng mod {0}:{1}
 Liè chū suǒyǒu chùfā de shìjiàn
 dāngqián mùlù
@@ -480,14 +461,11 @@ Mó zǔ zhǐlìng:
 Biémíng mìnglìng:
 Wéihù móshì
 cházhǎo mùlù
-yóu màohào fēngé de yī zǔ lùjìng. Tā de gōngzuò yuánlǐ yǔ PATH xiāngtóng. Xiě rù wénjiàn jiā huò wénjiàn jiā míngchēng de wánzhěng lùjìng. Wánchéng hòu, xiě “q”. Zài lùjìng pángbiān xiě yīgè jiǎn hào yǐ shānchú xiànyǒu mùlù.
 Méiyǒu mod mìnglìng.
 Méiyǒu biémíng mìnglìng.
 Zhǎo bù dào kě bāozhuāng mìnglìng.
 Cháxún zhǐdìng xíng huò suǒyǒu xíng de dāncí
 yǐ xiàzài {0} gè, gòng {1} gè.
-cèshì nèihé cuòwù gōngjù
-shǐyòng géshì zhīchí cèshì nèihé cuòwù gōngjù
 cèshì jiāng zīyuán zhōng cúnzài de zìfú chuàn fānyì chéng tèdìng yǔyán
 jiāng zìfú chuàn dǎyìn dào kòngzhì tái bìng jiěxī zhǎodào de zhàn wèi fú
 cèshì zhèngzé biǎodá shì gōngjù
@@ -601,8 +579,6 @@ Shùzǔ zìfú zìdiǎn:
 Xiǎnshì wénjiàn xìtǒng cāozuò de jìndù
 xiǎnshì wénjiàn xìtǒng cāozuò qíjiān zhèngzài chǔlǐ de wénjiàn
 yìngjiàn lèixíng {0} wèi tàncè dào, huò wúxiào.
-Shàngwèi tàncè yìngjiàn lèixíng {0}. Rúguǒ nín quèdìng tā yǐ bèi tàncè, qǐng zài qǐyòng tiáoshì de qíngkuàng xià chóngxīn qǐdòng nèihé.
-Wèi jiěxī wèi lièbiǎo de fēnqū.
 shǐzhōng jūzhōng
 Xiě xià nín xiǎng yào xiǎnshì de rènhé wénběn.
 Xuǎnqǔ kuāng shàng xiǎnshì de wénběn shìfǒu shǐzhōng jūzhōng.
@@ -610,17 +586,13 @@ píngmù bǎohù chéngxù zài xiǎnshì:{0} Shí yù dào cuòwù. Àn rènhé
 Yùlǎn...
 Yǐxià shì nín de zhǔtí de wàiguān:
 Kě bāozhuāng mìnglìng:
-Mó zǔ bùfèn:
 Shǐyòng kòngzhì tái API
 shì shǐyòng kòngzhì tái API qīngchú wénběn huán shì shǐyòng gèng kuài de xíng qīngchú VT xùliè. Rúguǒ wèi False,Marquee jiāng shǐyòng shìdàng de VT xùliè. Fǒuzé, tā jiāng shǐyòng kěnéng jiào màn de Console API.
 Zhèngzài dǎkāi URL... Quèbǎo ànzhào píngmù shàng xiǎnshì de bùzhòu jìnxíng cāozuò.
-Mod zhōng méiyǒu língjiàn.
 Mó zǔ míngchēng:
 Mó zǔ wénjiàn míng:
 Xiūgǎi wénjiàn lùjìng:
-Bùfèn bǎnběn:
 wénjiàn jiā wèi kōng.
-Chénggōng tàncè {0}.
 Xiángxì tàn zhēn
 shǐ yìngjiàn tàncè xiāoxī yǒudiǎn jiàntán.
 Měihuà JSON wénjiàn
@@ -649,7 +621,6 @@ Zài chùfā “xíng tiánchōng” zhīqián yào xiě duōshǎo gè zìfú?
 Xiàntiáo tiánchōng tú'àn jiāng yǐ bǎifēnbǐ xíngshì dǎyìn zài suǒyǒu dàxiě zìmǔ zhōng de kěnéng xìng
 dá'àn kěnéng bùshì líng.
 Dá'àn bùdé chāoguò xiǎnshì de tiáomù.
-Bǎocún gēnggǎi...
 Guǎnlǐ nǐ de mó zǔ
 Mod guǎnlǐ zài ānquán móshì xià bèi jìnyòng.
 Wúxiào de mìnglìng {0}. Jiǎnchá yǐ xià yòngfǎ:
@@ -657,8 +628,6 @@ Wèi zhǎodào Mod huò wénjiàn bāohán wúxiào zìfú.
 Yǐ bǎifēnbǐ biǎoshì de wèi mìngzhòng gàilǜ
 qǐyòng píngmù bǎohù chéngxù tiáoshì
 qǐyòng píngmù bǎohù chéngxù tiáoshì. Qǐng zhùyì, tā kěnéng huì xùnsù tián mǎn tiáoshì rìzhì bìng shāowéi jiǎn màn píngmù bǎohù chéngxù de sùdù, jùtǐ qǔjué yú suǒ shǐyòng de píngmù bǎohù chéngxù. Zhǐyǒu zài wèi zhěnduàn mùdì qǐyòng nèihé tiáoshì shí cái yǒuxiào.
-Xià zǎi tiáoshì shùjù shí méiyǒu wǎngluò
-jiǎnchá nín de hùliánwǎng liánjiē, ránhòu chóng shì.
 Shǒucè yè {0} wúxiào.
 Kǎolǜ tiánxiě běn shǒucè yè.
 Mó zǔ shǒucè
@@ -669,21 +638,13 @@ shǐyòng SHA384 jiāmì zìfú chuàn
 shǐyòng SHA256 jiāmì zìfú chuàn
 shǐyòng SHA1 jiāmì zìfú chuàn
 shǐyòng MD5 jiāmì zìfú chuàn
-builtinsaver jiàng zài nǎlǐ
-Mod bùfèn shénme dōu bùshì.
 Zài ānquán móshì xià bù yǔnxǔ tíngzhǐ mó zǔ.
 Mó zǔ yǐjīng kāishǐle!
 Mó zǔ hái méi kāishǐ!
-Língjiàn wénjiàn míng:
-Língjiàn wénjiàn lùjìng:
 Chángshì qǐdòng píngmù bǎohù chéngxù shí chūcuò:
 Nèihé lùjìng lèixíng wúxiào.
 Shàng yīcì qǐdòng shībài
 JSON biānjí qì shàngwèi dǎkāi wénjiàn liú.
-Wèi zhǎodào JSON wénjiàn zhōng de shǔxìng.
-Shānchú de shǔxìng.
-Zài JSON wénjiàn mòwěi tiānjiā yīgè xīn shǔxìng
-cóng JSON wénjiàn zhōng shānchú yīgè shǔxìng
 tuìchū JSON shell ér bù bǎocún gēnggǎi
 bǎocún JSON wénjiàn
 dǎyìn JSON wénjiàn
@@ -707,7 +668,6 @@ Mod {0} bèi liè rù hēi míngdān.
 Chóngxīn jiāzài suǒyǒu mó zǔ
 jiāng mó zǔ tiānjiā dào hēi míngdān
 cóng hēi míngdān zhōng shānchú yīgè mó zǔ
-UTC shíjiān hé rìqí:{0}
 Zài qǐdòng qíjiān xiǎnshì yìngyòng chéngxù xìnxī
 xiǎnshì jiēduàn wánchéng shíjiān
 qǐdòng shí qǐdòng nèihé xiūgǎi
@@ -926,11 +886,9 @@ Chǔlǐ qì zǒngshù:
 Cípán dàxiǎo:
 Zǒng nèicún:
 Xiǎnkǎ:
-Cípán xíng hào:
 rúguǒ nín quèdìng nín dǎkāile zhèngquè de bùfèn, qǐng chákàn cǐ xiāoxī:
 Zhíxíng FTP fúwùqì mìnglìng
 Shǐyòng CRC32 jiāmì zìfú chuàn
-dǎkāi yóujiàn kèhù duān
 zhuǎn jì de yóujiàn...
 Cèshì biǎogé gōngnéng
 biānjí zhǐdìng xíng
@@ -948,10 +906,6 @@ yóujiàn chuánshū jìndù (dān)
 rúguǒ qǐyòng, yóujiàn wàiké jiāng xiǎnshì xiàzài yóujiàn shí chuánshūle duōshǎo zì jié.
 Xiě xià nín xīwàng de yóujiàn chuánshū jìndù yàngshì. Liú kōng yǐ shǐyòng mòrèn yàngshì. Zhàn wèi fú bèi jiěxī. {0} Biǎoshì chuánshū de dàxiǎo,{1} biǎoshì zǒng dàxiǎo.
 Xiě xià nín xīwàng de yóujiàn chuánshū jìndù yàngshì. Liú kōng yǐ shǐyòng mòrèn yàngshì. Zhàn wèi fú bèi jiěxī. {0} Yòng yú chuánshū de dàxiǎo.
-Shíqū:
-Jīntiān shì {0}
-dāngqián shíjiān shì {0}
-kěnéng de dá'àn
 wèi zhǐdìng Mod wénjiàn.
 Chángshì ānzhuāng yǐ ānzhuāng de mod. Gēngxīn móshì...
 Ānzhuāng shībài
@@ -996,12 +950,10 @@ Zài chāo shí zhīqián děngdài ànjiàn duōshǎo háomiǎo? (Zì dìngyì 
 shǐyòng zhèngzé biǎodá shì jiāng dāncí huò duǎn yǔ tìhuàn wèi lìng yīgè dāncí huò duǎn yǔ
 shǐyòng zhèngzé biǎodá shì jiāng yīgè dāncí huò duǎn yǔ tìhuàn wéi yīxíng zhōng de lìng yīgè dāncí huò duǎn yǔ
 shǐyòng zhèngzé biǎodá shì cháxún zhǐdìng xíng huò suǒyǒu xíng zhōng de dāncí
-cházhǎo shèzhì
 xiě xià nín yào sōusuǒ de nèiróng.
 Shénme dōu zhǎo bù dào. Quèbǎo nín yǐ zhèngquè biānxiě shèzhì.
 Jiāng běndì wénjiàn dǎbāo dào cúndàng zhōng
 shénme dōu zhuāng bùxià.
-Dá'àn shuōmíng
 yǒuguān shǐyòng cǐ ruǎnjiàn de tiáokuǎn hé tiáojiàn de gèng duō xìnxī, qǐng fǎngwèn
 mòrèn xuǎnzé shūchū lèixíng
 jiǎnchá suǒyǒu KS shèzhì yǐ chákàn biànliàng shìfǒu zhèngquè xiě rù
@@ -1025,8 +977,6 @@ Xiǎnshì zuìxīn biāotí shí shǐyòng de RSS biāotí URL. Zhè tōngcháng
 Wèi néng huòdé zuìxīn xiāoxī.
 xiǎnshì nèihé cuòwù de duīzhàn gēnzōng
 Rúguǒ yǒu rènhé nèihé cuòwù, qǐng xuǎnzé shìfǒu jiāng duīzhàn gēnzōng dǎyìn dào kòngzhì tái.
-Jiāng shèzhì lìngcún wèi
-jiāzài shèzhì zì
 nín xiǎng zài nǎlǐ bǎocún dāngqián de nèihé shèzhì?
 Wúfǎ zài xiànyǒu wénjiàn zhī shàng bǎocún nèihé shèzhì.
 Nǐ xiǎng cóng nǎlǐ jiāzài dāngqián de nèihé shèzhì?
@@ -1136,11 +1086,6 @@ Jìshí qì de Figlet zìtǐ
 wèi jìshí qì qǐyòng Figlet
 rúguǒ qǐyòng, jiāng shǐyòng figlet zuòwéi jìshí qì. Qǐng zhùyì, tā xūyào yīgè dà de kòngzhì tái píngmù cáinéng zài qǐyòng Figlet de qíngkuàng xià zhèngquè chéngxiàn shíjiān.
 Jiāng nèihé chóng zhì wéi chūchǎng shèzhì
-ràoguò kòngzhì tái dàxiǎo jiǎncè
-kàn qǐlái nín zhèngzài ràoguò kòngzhì tái dàxiǎo jiǎncè. Zài xiǎo píngmù shàng kěnéng wúfǎ zhèngcháng gōngzuò.
-Yào huòdé gèng hǎo de tǐyàn, qǐng zài réng zài cǐ píngmù shàng de tóngshí tiáozhěng kòngzhì tái chuāngkǒu de dàxiǎo. Àn rènyì jiàn jìxù...
-Nín de kòngzhì tái tài xiǎo ér wúfǎ zhèngcháng yùnxíng:
-Héngfú figlet zìtǐ
 Xiǎnshì mìnglìng yīkào bāngzhù
 xiǎnshì shell mìnglìng yīkào bāngzhù
 xiǎnshì mod mìnglìng yīkào bāngzhù
@@ -1238,9 +1183,6 @@ Hóngsè jíbié bìxū shì shùzì.
 Lǜsè jíbié bìxū shì shùzì.
 Lán sè jíbié bìxū shì shùzì.
 Yánsè shíliù jìn zhì biǎoshì:
-Mó zǔ míngchēng:
-Mó zǔ bùfèn wénjiàn míng:
-Mod bùfèn wénjiàn lùjìng:
 Xiànzài kěyǐ ānquán de guānbì jìsuànjīle.
 Mónǐ wú APM móshì
 shìfǒu mónǐ méiyǒu kěyòng APM de qíngkuàng. Rúguǒ qǐyòng, tā huì tōngzhī yònghù xiànzài kěyǐ ānquán de zài guānjī shí guānbì jìsuànjī.
@@ -1262,7 +1204,6 @@ qǐng wùbì shǐyòng zhīchí PowerLine zìxíng de kòngzhì tái zìtǐ, fǒ
 dǎkāi wàiké yù shè kù
 wèi zhǎodào zhǐdìng de yù shè {0}.
 Nǐ shì yī sōu yǔzhòu fēichuán, liúxīng zhèngzài cuīhuǐ nǐ. Nǐ néng bǎocún ma?
-Jīyú 0.0.4.1 De fùgǔ nèihé mónǐ qì
 shèbèi yǐ cúnzài yú zǔzhǐ lièbiǎo zhōng.
 Shèbèi bù cúnzài yú zǔzhǐ lièbiǎo zhōng.
 Cèshì chéngxù jí rùkǒu diǎn zhíxíng
@@ -1271,10 +1212,6 @@ Dānwèi huànsuàn
 kěyòng de dānwèi lèixíng jí qí dānwèi:
 Yóuxì jiéshù
 yìwài de cuòwù
-Cháxún gēngxīn...
-Xiàzài bǎnběn
-ānzhuāng bǎnběn
-huí dào 2018 nián……
 Shǐyòng PowerLine xuànrǎn yǔzhòu fēichuán
 liúxīng yóuxì sùdù
 shì shǐyòng PowerLine xuànrǎn fēichuán háishì shǐyòng biāozhǔn dàyú zìfú. Rúguǒ nín xiǎng jiāng PowerLine yǔ Meteor yīqǐ shǐyòng, zé xūyào ānzhuāng zhīchí PowerLine de shìdàng zìtǐ.

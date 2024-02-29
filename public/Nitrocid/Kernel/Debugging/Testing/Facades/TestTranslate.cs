@@ -29,9 +29,9 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
         public override int TestOptionalParameters => 2;
         public override void Run(params string[] args)
         {
-            string str = args.Length > 0 ? args[0] : "Welcome to Kernel!";
             string lang = args.Length > 1 ? args[1] : "spa";
-            TextWriterColor.Write(Translate.DoTranslation(str, lang));
+            string str = args.Length > 0 ? Translate.DoTranslation(args[0], lang) : Translate.DoTranslation("Welcome to Kernel!", lang);
+            TextWriterColor.Write(str);
         }
     }
 }

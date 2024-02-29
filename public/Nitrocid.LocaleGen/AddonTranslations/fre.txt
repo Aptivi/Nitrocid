@@ -1,5 +1,4 @@
 Modèle de couleur non valide {0}
-hwprobe: Votre matériel sera sondé. S'il vous plaît, attendez...
 Entrez le mot de passe administrateur pour la maintenance.
 Erreur du noyau lors du démarrage: {0}
 DOUBLE PANIQUE: le temps de redémarrage dépasse le temps de redémarrage maximal autorisé {0}. Vous avez trouvé un bogue dans le noyau.
@@ -30,7 +29,6 @@ L'économiseur d'écran demandé {0} est introuvable.
 Économiseur d'écran {0} introuvable dans la base de données. Vérifiez le nom et réessayez.
 Il y a une grave erreur lors de l’impression de texte.
 Mod ne peut pas être chargé pour les raisons suivantes:
-Mod {0} n'a pas le nom. Vérifiez le code source.
 {0} v {1} a commencé
 Aucune définition pour la commande {0}.
 Commande définie par 
@@ -59,9 +57,7 @@ Répertorie le répertoire distant
 Télécharge un fichier local dans un répertoire distant à l'aide de binaire ou de texte
 L'alias ne peut pas être le même nom qu'une commande.
 Commande introuvable pour un alias pour {0}.
-Vous pouvez maintenant exécuter "{0}" en tant que commande: "{1}".
 L'alias {0} ne semble pas avoir été supprimé.
-Mode non valide {0}.
 Répertoire {0} introuvable
 Nom d'hôte vide.
 Passage de: {0} à {1} ...
@@ -85,7 +81,6 @@ Liste le contenu du fichier / dossier dans le dossier actuel
 Verrouille votre écran avec un mot de passe
 Vous déconnecte
 Crée un répertoire
-Redémarre votre ordinateur (ATTENTION: pas de synchronisation, car ce n'est pas un noyau final)
 Recharge le fichier de configuration qui est édité.
 Enregistre votre écran des burn-out
 Configure les écrans de veille du noyau
@@ -93,7 +88,6 @@ Affiche la date et l'heure
 Affiche la date et l'heure dans les zones
 Le noyau sera arrêté
 Usage:
-où customsaver sera
 Il y avait une erreur dans le shell.
 Vous n'êtes pas autorisé à utiliser {0}
 Message Shell: La commande demandée {0} n'est pas autorisée à être exécutée en mode maintenance.
@@ -113,7 +107,6 @@ Veuillez utiliser "ftp" si vous allez télécharger des fichiers depuis le serve
 Télécharge un fichier dans le répertoire de travail courant
 Déconnecter un périphérique de débogage
 Répertorie les périphériques de débogage connectés
-Dispositif de débogage {0} introuvable.
 Périphérique {0} déconnecté.
 Déboguer l’écoute sur toutes les adresses en utilisant le port {0}.
 Alias déjà trouvé: {0}
@@ -124,7 +117,6 @@ Spécifiez l'adresse
 Le fuseau horaire est spécifié de manière incorrecte.
 Sélection de profil invalide.
 Vous essayez de vous connecter à {0} avec le profil {1} ...
-Erreur lors de la tentative de démarrage de l'économiseur d'écran, en raison d'une opération non valide.
 L'analyse des mods n'est pas autorisée en mode sans échec.
 Le chemin n'est ni un fichier ni un répertoire.
 Crée une autre copie d'un fichier sous un répertoire ou un nom différent.
@@ -217,7 +209,6 @@ Supprime un caractère du numéro de caractère dans la ligne spécifiée
 Ligne supprimée.
 Le numéro de ligne spécifié {0} n'est pas un nombre valide.
 Exécution en mode sans échec. Sauter l'étage ...
->> Débogage et discussion à distance: version
 >> Votre adresse est {0}.
 >> Votre nom est {0}.
 Index {0} non valide. Il existe {1} traces de pile. L'index est basé sur zéro, alors essayez de soustraire par 1.
@@ -230,8 +221,6 @@ Bloquer un périphérique de débogage par adresse IP
 {0} n'est pas encore bloqué.
 Erreur lors du chargement des paramètres
 Une erreur s'est produite lors du chargement des paramètres. Vous devrez peut-être vérifier le fichier de paramètres.
-Sélectionnez la section:
-Enregistrer les paramètres
 Sortie
 L'option spécifiée {0} n'est pas valide.
 La réponse doit être numérique.
@@ -246,7 +235,6 @@ Enregistrer le nom d'utilisateur FTP
 Adresse IP FTP du journal
 Renvoyer uniquement le premier profil FTP
 Afficher l'heure / la date dans le coin supérieur droit
-Délai d'attente de l'économiseur d'écran en ms
 Mode d'analyse de taille
 Marquee au démarrage
 Heure et date longues
@@ -254,7 +242,6 @@ Montrer les fichiers cachés
 Retourner...
 Ecrivez un port de débogage distant. Il doit être numérique et ne doit pas être déjà utilisé. Sinon, le débogueur distant ne parviendra pas à ouvrir le port.
 Indiquez combien de fois la commande "" get "" doit réessayer les téléchargements ayant échoué. Il doit être numérique.
-Écrivez quand lancer l'économiseur d'écran après des millisecondes spécifiées. Il doit être numérique.
 La réponse n'est peut-être pas négative.
 La variable {0} n'est trouvée sur aucun des modules.
 Modifie la configuration du noyau
@@ -323,7 +310,6 @@ L'heure et la date seront plus longues, affichant les noms complets des mois, et
 Affiche les fichiers cachés.
 Mod {0} arrêté
 {0} v {1} arrêté
-Le mod {0} n'a pas le nom de la pièce. L'analyse du mod a échoué. Vérifiez le code source.
 Vous devez activer le mode débogage avant de pouvoir effacer le journal de débogage.
 {0} nouveaux messages sont arrivés dans la boîte de réception.
 Ouvrez «mail» pour les voir.
@@ -428,10 +414,7 @@ Enregistrer le thème dans le répertoire actuel
 Enregistrer le thème dans un autre répertoire...
 Imprime les informations sur le matériel
 Nom du processeur :
-Bits du processeur :
-Partitionner le système de fichiers :
 Taille de la partition:
->> Bienvenue ! C'est la première fois que vous entrez dans le débogage et le chat à distance. Utilisez "/register <nom>" pour vous inscrire.
 L'appareil existe déjà.
 Pas de tel appareil.
 Imprime le contenu du fichier sur la console
@@ -440,8 +423,6 @@ Enveloppe la sortie de la console
 La commande n'est pas enveloppable. Ces commandes sont enveloppables :
 Extrait une archive ZIP
 Crée une archive ZIP
-Erreur lors du téléchargement des données de débogage
-Une erreur s'est produite lors du téléchargement des données de débogage. Vérifiez votre connection internet.
 Échec de la finalisation du module {0} : {1}
 Répertorie tous les événements déclenchés
 Répertoire actuel
@@ -480,14 +461,11 @@ Commandes de modules :
 Commandes d'alias :
 Mode de Maintenance
 Répertoires de recherche
-Groupe de chemins séparés par les deux points. Cela fonctionne de la même manière que PATH. Écrivez un chemin complet vers un dossier ou un nom de dossier. Lorsque vous avez terminé, écrivez "q". Écrivez un signe moins à côté du chemin pour supprimer un répertoire existant.
 Aucune commande de mod.
 Aucune commande d'alias.
 La commande enveloppable est introuvable.
 Interroge un mot dans une ligne spécifiée ou toutes les lignes
 {0} sur {1} téléchargés.
-Teste la fonction d'erreur du noyau
-Teste la fonction d'erreur du noyau avec la prise en charge du format
 Teste la traduction d'une chaîne qui existe dans les ressources vers une langue spécifique
 Imprime une chaîne dans la console et analyse les espaces réservés trouvés
 Teste la fonction d'expression régulière
@@ -601,8 +579,6 @@ Dictionnaire de caractères de tableau :
 Afficher la progression des opérations du système de fichiers
 Affiche quel fichier est en cours de traitement pendant les opérations du système de fichiers
 Soit le type de matériel {0} n'est pas testé, soit il n'est pas valide.
-Le type de matériel {0} n'est pas encore sondé. Si vous êtes sûr qu'il est testé, redémarrez le noyau avec le débogage activé.
-Partitions non analysées pour la liste.
 Toujours centré
 Écrivez le texte que vous souhaitez afficher.
 Si le texte affiché sur le rectangle de sélection est toujours centré.
@@ -610,17 +586,13 @@ L'économiseur d'écran a rencontré une erreur lors de l'affichage : {0}. Appuy
 Aperçu...
 Voici à quoi ressemblera votre thème :
 Commandes enveloppables :
-Pièces de modules :
 Utiliser l'API de la console
 Que ce soit pour utiliser l'API de la console pour effacer le texte ou pour utiliser la séquence VT d'effacement de ligne plus rapide. Si False, Marquee utilisera la séquence VT appropriée. Sinon, il utilisera l'API de la console probablement plus lente.
 URL d'ouverture... Assurez-vous de suivre les étapes affichées à l'écran.
-Il n'y a pas de pièces dans le mod.
 Nom du module :
 Nom du fichier mod :
 Chemin du fichier de modification :
-Version de la pièce :
 Le dossier est vide.
-{0} erfolgreich getestet.
 Ausführliche Sonde
 Machen Sie Hardware-Probing-Meldungen etwas gesprächig.
 Verschönert die JSON-Datei
@@ -649,7 +621,6 @@ Combien de caractères écrire avant de déclencher le "remplissage de ligne" ?
 Possibilité que le motif de remplissage de ligne soit imprimé en majuscules en pourcentage
 La réponse peut ne pas être zéro.
 La réponse ne doit pas dépasser les entrées affichées.
-Sauvegarder les modifications...
 Gérez vos modules
 La gestion des mods est désactivée en mode sans échec.
 Commande {0} non valide. Vérifiez l'utilisation ci-dessous :
@@ -657,8 +628,6 @@ Mod introuvable ou le fichier contient des caractères invalides.
 Probabilité d'échec en pourcentage
 Activer le débogage de l'économiseur d'écran
 Active le débogage pour les économiseurs d'écran. Veuillez noter que cela peut rapidement remplir le journal de débogage et ralentir légèrement l'économiseur d'écran, selon l'économiseur d'écran utilisé. Ne fonctionne que si le débogage du noyau est activé à des fins de diagnostic.
-Pas de réseau lors du téléchargement des données de débogage
-Vérifiez votre connexion Internet et réessayez.
 La page de manuel {0} n'est pas valide.
 Pensez à remplir cette page de manuel.
 Mode d'emploi
@@ -669,21 +638,13 @@ Crypte une chaîne à l'aide de SHA384
 Crypte une chaîne à l'aide de SHA256
 Crypte une chaîne à l'aide de SHA1
 Crypte une chaîne à l'aide de MD5
-où sera builtinsaver
-La partie mod n'est rien.
 L'arrêt des mods n'est pas autorisé en mode sans échec.
 Le mod a déjà été lancé !
 Le mod n'a pas encore commencé !
-Nom du fichier pièce :
-Chemin d'accès au fichier partiel :
 Erreur lors de la tentative de démarrage de l'économiseur d'écran :
 Type de chemin d'accès au noyau non valide.
 Le démarrage précédent a échoué
 L'éditeur JSON n'a pas encore ouvert de flux de fichiers.
-La propriété à l'intérieur du fichier JSON est introuvable.
-Propriété supprimée.
-Ajoute une nouvelle propriété à la fin du fichier JSON
-Supprime une propriété du fichier JSON
 Quitte le shell JSON sans enregistrer les modifications
 Enregistre le fichier JSON
 Imprime le fichier JSON
@@ -707,7 +668,6 @@ Le mod {0} est sur liste noire.
 Recharge tous les mods
 Ajoute un mod à la liste noire
 Supprime un mod de la liste noire
-Heure et date en UTC : {0}
 Afficher les informations de l'application au démarrage
 Afficher les heures d'arrivée des étapes
 Démarrer les modifications du noyau au démarrage
@@ -926,11 +886,9 @@ Nombre total de processeurs :
 Taille du disque :
 Mémoire totale:
 Carte graphique:
-Modèle de disque :
 Si vous êtes sûr d'avoir ouvert la bonne section, consultez ce message :
 Exécute une commande de serveur FTP
 Crypte une chaîne en utilisant CRC32
-Ouvre le client de messagerie
 du courrier transféré...
 Teste la fonctionnalité du tableau
 Modifie la ligne spécifiée
@@ -948,10 +906,6 @@ Progression du transfert de courrier (unique)
 S'il est activé, le shell de messagerie affichera le nombre d'octets transmis lors du téléchargement du courrier.
 Écrivez comment vous voulez que votre style de progression de transfert de courrier soit. Laissez vide pour utiliser le style par défaut. Les espaces réservés sont analysés. {0} pour la taille transférée et {1} pour la taille totale.
 Écrivez comment vous voulez que votre style de progression de transfert de courrier soit. Laissez vide pour utiliser le style par défaut. Les espaces réservés sont analysés. {0} pour la taille transférée.
-Fuseau horaire:
-Aujourd'hui, c'est {0}
-L'heure actuelle est {0}
-Des réponses possibles
 Le fichier de mod n'est pas spécifié.
 Essayer d'installer un mod déjà installé. Mise à jour du module...
 Échec de l'installation pour
@@ -996,12 +950,10 @@ Combien de millisecondes attendre l'appui sur la touche avant l'expiration du d�
 Remplace un mot ou une phrase par un autre en utilisant des expressions régulières
 Remplace un mot ou une phrase par un autre dans une ligne à l'aide d'expressions régulières
 Interroge un mot dans une ligne spécifiée ou toutes les lignes à l'aide d'expressions régulières
-Trouver un paramètre
 Écrivez ce que vous voulez rechercher.
 Rien n'est trouvé. Assurez-vous que vous avez correctement écrit le paramètre.
 Emballe un fichier local dans l'archive
 Je ne peux rien emballer.
-Description de la réponse
 Pour plus d'informations sur les termes et conditions d'utilisation de ce logiciel, visitez
 Type de sortie de choix par défaut
 Vérifie tous les paramètres KS pour voir si les variables sont écrites correctement
@@ -1025,8 +977,6 @@ URL du titre RSS à utiliser lors de l'affichage du dernier titre. Il s'agit gé
 Impossible d'obtenir les dernières nouvelles.
 Afficher la trace de la pile en cas d'erreur du noyau
 S'il y a une erreur de noyau, choisissez d'imprimer ou non la trace de la pile sur la console.
-Enregistrer les paramètres sous
-Charger les paramètres depuis
 Où voulez-vous enregistrer les paramètres actuels du noyau ?
 Impossible d'enregistrer les paramètres du noyau sur le fichier existant.
 D'où voulez-vous charger les paramètres actuels du noyau ?
@@ -1136,11 +1086,6 @@ Police Figlet pour la minuterie
 Activer Figlet pour la minuterie
 Si activé, utilisera figlet pour la minuterie. Veuillez noter qu'il a besoin d'un grand écran de console pour afficher correctement l'heure avec Figlet activé.
 Réinitialise le noyau aux paramètres d'usine
-Contourne la détection de la taille de la console
-On dirait que vous contournez la détection de la taille de la console. Les choses peuvent ne pas fonctionner correctement sur les petits écrans.
-Pour avoir une meilleure expérience, redimensionnez la fenêtre de votre console tout en étant toujours sur cet écran. Appuyez sur n'importe quelle touche pour continuer...
-Votre console est trop petite pour fonctionner correctement :
-Police figlet de la bannière
 Afficher le nombre de commandes dans l'aide
 Afficher le nombre de commandes shell dans l'aide
 Afficher les commandes de mod comptent sur l'aide
@@ -1238,9 +1183,6 @@ Le niveau de couleur rouge doit être numérique.
 Le niveau de couleur verte doit être numérique.
 Le niveau de couleur bleu doit être numérique.
 Représentation hexadécimale en couleur :
-Nom de la partie mod :
-Nom du fichier de partie mod :
-Chemin d'accès au fichier de la partie mod :
 Vous pouvez maintenant éteindre votre ordinateur en toute sécurité.
 Simuler aucun mode APM
 S'il faut simuler une situation où il n'y a pas d'APM disponible. S'il est activé, il informe l'utilisateur qu'il est maintenant sûr d'éteindre l'ordinateur lors de l'arrêt.
@@ -1262,7 +1204,6 @@ Assurez-vous d'utiliser une police de console prenant en charge les glyphes Powe
 Ouvre la bibliothèque de préréglages du shell
 Le préréglage spécifié {0} est introuvable.
 Vous êtes un vaisseau spatial et les météores viennent vous détruire. Pouvez-vous le sauver?
-Simulateur de noyau rétro basé sur 0.0.4.1
 L'appareil existe déjà dans la liste de blocage.
 L'appareil n'existe pas dans la liste de blocage.
 Teste l'exécution du point d'entrée de l'assemblage
@@ -1271,10 +1212,6 @@ Convertisseur d'unité
 Types d'unités disponibles et leurs unités :
 Jeu terminé
 Erreur inattendue
-Vérification des mises à jour...
-Version de téléchargement
-Version d'installation
-Retour en 2018...
 Utilisez PowerLine pour le rendu du vaisseau spatial
 Vitesse de jeu Meteor
 Que ce soit pour utiliser PowerLine pour rendre le vaisseau spatial ou pour utiliser le caractère standard supérieur à. Si vous souhaitez utiliser PowerLine avec Meteor, vous devez installer une police appropriée avec le support PowerLine.

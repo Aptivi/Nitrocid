@@ -1,5 +1,4 @@
 Modello di colore non valido {0}
-hwprobe: il tuo hardware verrà verificato. Attendere prego...
 Immettere la password dell'amministratore per la manutenzione.
 Errore del kernel durante l'avvio: {0}
 DOPPIO PANICO: il tempo di riavvio supera il tempo massimo consentito per il riavvio dell'errore {0}. Hai trovato un bug del kernel.
@@ -30,7 +29,6 @@ Lo screensaver richiesto {0} non è stato trovato.
 Screensaver {0} non trovato nel database. Controlla il nome e riprova.
 Si è verificato un errore grave durante la stampa del testo.
 Mod non può essere caricato a causa di quanto segue:
-Il mod {0} non ha il nome. Rivedere il codice sorgente
 {0} v {1} avviato
 Nessuna definizione per il comando {0}.
 Comando definito da
@@ -59,9 +57,7 @@ Elenca la directory remota
 Carica il file locale nella directory remota usando binari o testo
 L'alias non può essere lo stesso nome di un comando.
 Comando non trovato per l'alias su {0}.
-Ora puoi eseguire "{0}" come comando: "{1}".
 Alias ​​{0} non è stato trovato per essere rimosso.
-Modalità non valida {0}.
 Directory {0} non trovata
 Nome host vuoto.
 Passaggio da: {0} a {1} ...
@@ -85,7 +81,6 @@ Elenca il contenuto del file / cartella nella cartella corrente
 Blocca lo schermo con una password
 Esci
 Crea una directory
-Riavvia il computer (ATTENZIONE: nessuna sincronizzazione, perché non è un kernel finale)
 Ricarica il file di configurazione che è stato modificato.
 Salva lo schermo dai burn out
 Imposta gli screensaver del kernel
@@ -93,7 +88,6 @@ Mostra data e ora
 Mostra data e ora nelle zone
 Il kernel verrà spento
 Uso:
-dove sarà customsaver
 Si è verificato un errore nella shell.
 Non hai il permesso di usare {0}
 Messaggio shell: il comando richiesto {0} non può essere eseguito in modalità di manutenzione.
@@ -113,7 +107,6 @@ Utilizzare "ftp" se si intende scaricare file dal server FTP.
 Scarica un file nella directory di lavoro corrente
 Disconnetti un dispositivo di debug
 Elenca i dispositivi di debug collegati
-Dispositivo di debug {0} non trovato.
 Dispositivo {0} disconnesso.
 Debug in ascolto su tutti gli indirizzi utilizzando la porta {0}.
 Alias già trovato: {0}
@@ -124,7 +117,6 @@ Specifica l'indirizzo
 Il fuso orario non è specificato correttamente.
 Selezione profilo non valida.
 Tentativo di connessione a {0} con il profilo {1} ...
-Errore durante il tentativo di avvio dello screensaver, a causa di un'operazione non valida.
 Mod di analisi non consentite in modalità provvisoria.
 Il percorso non è né un file né una directory.
 Crea un'altra copia di un file con directory o nome diversi.
@@ -217,7 +209,6 @@ Elimina un carattere dal numero di carattere nella riga specificata
 Linea rimossa.
 Il numero di riga specificato {0} non è un numero valido.
 In esecuzione in modalità provvisoria. Saltare il palco ...
->> Debug remoto e chat: versione
 >> Il tuo indirizzo è {0}.
 >> Il tuo nome è {0}.
 Indice {0} non valido. Ci sono {1} tracce dello stack. L'indice è a base zero, quindi prova a sottrarre 1.
@@ -230,8 +221,6 @@ Blocca un dispositivo di debug per indirizzo IP
 {0} non è ancora bloccato.
 Errore durante il caricamento delle impostazioni
 Si è verificato un errore durante il caricamento delle impostazioni. Potrebbe essere necessario controllare il file delle impostazioni.
-Seleziona sezione:
-Salva le impostazioni
 Uscita
 L'opzione specificata {0} non è valida.
 La risposta deve essere numerica.
@@ -246,7 +235,6 @@ Accedi al nome utente FTP
 Registra indirizzo IP FTP
 Restituisce solo il primo profilo FTP
 Mostra ora / data nell'angolo superiore destro
-Timeout salvaschermo in ms
 Modalità di analisi delle dimensioni
 Marquee all'avvio
 Tempo e data lunghi
@@ -254,7 +242,6 @@ Mostra file nascosti
 Torna indietro...
 Scrivi una porta del debugger remoto. Deve essere numerico e non deve essere già utilizzato. In caso contrario, il debugger remoto non riuscirà ad aprire la porta.
 Scrivi quante volte il comando "" get "" deve ritentare i download non riusciti. Deve essere numerico.
-Scrivi quando avviare lo screensaver dopo i millisecondi specificati. Deve essere numerico.
 La risposta potrebbe non essere negativa.
 La variabile {0} non è stata trovata su nessuno dei moduli.
 Modifica la configurazione del kernel
@@ -323,7 +310,6 @@ L'ora e la data saranno più lunghe, mostrando i nomi completi dei mesi, ecc.
 Mostra i file nascosti.
 Mod {0} interrotto
 {0} v {1} interrotto
-La mod {0} non ha il nome della parte. Analisi mod non riuscita. Rivedi il codice sorgente.
 È necessario attivare la modalità di debug prima di poter cancellare il registro di debug.
 {0} nuovi messaggi sono arrivati ​​nella Posta in arrivo.
 Apri "mail" per vederli.
@@ -428,10 +414,7 @@ Salva tema nella directory corrente
 Salva tema in un'altra directory...
 Stampa le informazioni sull'hardware
 Nome del processore:
-Bit del processore:
-File system della partizione:
 Dimensione della partizione:
->> Benvenuto! Questa è la prima volta che accedi al debug e alla chat remoti. Usa "/register <name>" per registrarti.
 Il dispositivo esiste già.
 Nessun apparecchio di questo tipo.
 Stampa il contenuto del file sulla console
@@ -440,8 +423,6 @@ Avvolge l'output della console
 Il comando non è avvolgente. Questi comandi sono wrappabili:
 Estrae un archivio ZIP
 Crea un archivio ZIP
-Errore durante il download dei dati di debug
-Si è verificato un errore durante il download dei dati di debug. Controlla la tua connessione Internet.
 Impossibile finalizzare la mod {0}: {1}
 Elenca tutti gli eventi attivati
 Elenco corrente
@@ -480,14 +461,11 @@ Comandi mod:
 Comandi alias:
 Modalità di manutenzione
 Directory di ricerca
-Gruppo di percorsi separati dai due punti. Funziona come PATH. Scrivi un percorso completo di una cartella o il nome di una cartella. Quando hai finito, scrivi "q". Scrivi un segno meno accanto al percorso per rimuovere una directory esistente.
 Nessun comando mod.
 Nessun comando alias.
 Il comando wrappable non è stato trovato.
 Interroga una parola in una riga specificata o in tutte le righe
 {0} di {1} scaricati.
-Verifica la funzionalità di errore del kernel
-Verifica la funzione di errore del kernel con il supporto del formato
 Verifica la traduzione di una stringa esistente nelle risorse in una lingua specifica
 Stampa una stringa su console e analizza i segnaposto trovati
 Verifica la funzione di espressione regolare
@@ -601,8 +579,6 @@ Dizionario dei caratteri di matrice:
 Mostra i progressi sulle operazioni del filesystem file
 Mostra quale file viene elaborato durante le operazioni del filesystem
 Il tipo di hardware {0} non è stato verificato o non è valido.
-Il tipo di hardware {0} non è ancora stato verificato. Se sei sicuro che sia stato verificato, riavvia il kernel con il debug abilitato.
-Partizioni non analizzate nell'elenco.
 Sempre centrato
 Scrivi il testo che vuoi mostrare.
 Se il testo mostrato sul riquadro di selezione è sempre centrato.
@@ -610,17 +586,13 @@ Screensaver ha riscontrato un errore durante la visualizzazione: {0}. Premi qual
 Anteprima...
 Ecco come sarà il tuo tema:
 Comandi a capo:
-Parti del modulo:
 Usa l'API della console
 Se utilizzare l'API della console per cancellare il testo o utilizzare la sequenza VT di cancellazione della riga più veloce. Se False, Marquee utilizzerà la sequenza VT appropriata. In caso contrario, utilizzerà l'API Console probabilmente più lenta.
 Apertura URL... Assicurati di seguire i passaggi mostrati sullo schermo.
-Non ci sono parti nel mod.
 Nome del modulo:
 Nome del file del modulo:
 Percorso file mod:
-Versione parziale:
 La cartella è vuota.
-Sondaggio {0} riuscito.
 Sonda verbosa
 Rendi un po' loquaci i messaggi di ispezione dell'hardware.
 Abbellisce il file JSON
@@ -649,7 +621,6 @@ Quanti caratteri scrivere prima di attivare il "riempimento riga"?
 Possibilità che il modello di riempimento della linea venga stampato in maiuscolo in percentuale
 La risposta potrebbe non essere zero.
 La risposta non può superare le voci mostrate.
-Salvare le modifiche...
 Gestisci le tue mod
 La gestione della mod è disabilitata in modalità provvisoria.
 Comando non valido {0}. Controllare l'utilizzo di seguito:
@@ -657,8 +628,6 @@ Mod non trovata o il file contiene caratteri non validi.
 Probabilità di perdere in percentuale
 Abilita il debug del salvaschermo
 Abilita il debug per gli screensaver. Si noti che potrebbe riempire rapidamente il registro di debug e rallentare leggermente lo screensaver, a seconda dello screensaver utilizzato. Funziona solo se il debug del kernel è abilitato per scopi diagnostici.
-Nessuna rete durante il download dei dati di debug
-Controlla la tua connessione Internet e riprova.
 La pagina di manuale {0} non è valida.
 Considera di riempire questa pagina di manuale.
 Manuale del modulo
@@ -669,21 +638,13 @@ Crittografa una stringa usando SHA384
 Crittografa una stringa usando SHA256
 Crittografa una stringa usando SHA1
 Crittografa una stringa usando MD5
-dove sarà builtinsaver
-La parte mod non è niente.
 Arresto delle mod non consentito in modalità provvisoria.
 La mod è già stata avviata!
 La mod non è ancora iniziata!
-Nome file parte:
-Percorso del file di parti:
 Errore durante il tentativo di avviare lo screensaver:
 Tipo di percorso del kernel non valido.
 Avvio precedente non riuscito
 L'editor JSON non ha ancora aperto un flusso di file.
-La proprietà all'interno del file JSON non è stata trovata.
-Proprietà rimossa.
-Aggiunge una nuova proprietà alla fine del file JSON
-Rimuove una proprietà dal file JSON
 Esce dalla shell JSON senza salvare le modifiche
 Salva il file JSON
 Stampa il file JSON
@@ -707,7 +668,6 @@ Il mod {0} è nella lista nera.
 Ricarica tutte le mod
 Aggiunge una mod alla lista nera
 Rimuove una mod dalla lista nera
-Ora e data in UTC: {0}
 Mostra le informazioni sull'app durante l'avvio
 Mostra i tempi di fine della fase
 Avvia le modifiche al kernel all'avvio
@@ -926,11 +886,9 @@ Numero totale di processori:
 Dimensione del disco:
 Memoria totale:
 Scheda grafica:
-Modello del disco:
 Se sei sicuro di aver aperto la sezione giusta, controlla questo messaggio:
 Esegue un comando del server FTP
 Crittografa una stringa usando CRC32
-Apre il client di posta
 di posta trasferita...
 Verifica la funzionalità della tabella
 Modifica la riga specificata
@@ -948,10 +906,6 @@ Avanzamento del trasferimento di posta (singolo)
 Se abilitata, la shell di posta mostrerà quanti byte sono stati trasmessi durante il download della posta.
 Scrivi come vuoi che sia lo stile di avanzamento del tuo trasferimento di posta. Lascia vuoto per usare lo stile predefinito. I segnaposto vengono analizzati. {0} per la dimensione trasferita e {1} per la dimensione totale.
 Scrivi come vuoi che sia lo stile di avanzamento del tuo trasferimento di posta. Lascia vuoto per usare lo stile predefinito. I segnaposto vengono analizzati. {0} per la dimensione trasferita.
-Fuso orario:
-Oggi è {0}
-L'ora attuale è {0}
-Possibili risposte
 Il file mod non è specificato.
 Tentativo di installare una mod già installata. Aggiornamento mod...
 Installazione non riuscita per
@@ -996,12 +950,10 @@ Quanti millisecondi devono attendere la pressione del tasto prima del timeout? (
 Sostituisce una parola o una frase con un'altra utilizzando espressioni regolari
 Sostituisce una parola o una frase con un'altra in una riga utilizzando espressioni regolari
 Interroga una parola in una riga specificata o in tutte le righe utilizzando espressioni regolari
-Trova un'impostazione
 Scrivi cosa vuoi cercare.
 Non si trova nulla. Assicurati di aver scritto l'impostazione correttamente.
 Impacchetta un file locale nell'archivio
 Non posso imballare nulla.
-Descrizione della risposta
 Per ulteriori informazioni sui termini e le condizioni di utilizzo di questo software, visitare
 Tipo di output predefinito
 Controlla tutte le impostazioni di KS per vedere se le variabili sono scritte correttamente
@@ -1025,8 +977,6 @@ URL del titolo RSS da utilizzare durante la visualizzazione dell'ultimo titolo. 
 Impossibile ricevere le ultime notizie.
 Mostra traccia dello stack in caso di errore del kernel
 Se si verifica un errore del kernel, scegliere se stampare o meno la traccia dello stack sulla console.
-Salva impostazioni come
-Carica impostazioni da
 Dove vuoi salvare le impostazioni correnti del kernel?
 Impossibile salvare le impostazioni del kernel sopra il file esistente.
 Da dove vuoi caricare le impostazioni correnti del kernel?
@@ -1136,11 +1086,6 @@ Carattere Figlet per timer
 Abilita Figlet per il timer
 Se abilitato, utilizzerà figlet per il timer. Tieni presente che ha bisogno di un grande schermo della console per visualizzare correttamente l'ora con Figlet abilitato.
 Ripristina il kernel alle impostazioni di fabbrica
-Ignora il rilevamento delle dimensioni della console
-Sembra che tu stia ignorando il rilevamento delle dimensioni della console. Le cose potrebbero non funzionare correttamente su schermi piccoli.
-Per avere un'esperienza migliore, ridimensiona la finestra della console mentre sei ancora su questa schermata. Premere un tasto qualsiasi per continuare...
-La tua console è troppo piccola per funzionare correttamente:
-Carattere di Figlet Banner
 Mostra i comandi contano sull'aiuto
 Mostra i comandi della shell contano sull'aiuto
 Mostra i comandi mod contano sull'aiuto
@@ -1238,9 +1183,6 @@ Il livello di colore rosso deve essere numerico.
 Il livello di colore verde deve essere numerico.
 Il livello di colore blu deve essere numerico.
 Rappresentazione esadecimale del colore:
-Nome parte mod:
-Nome del file della parte mod:
-Percorso del file della parte mod:
 Ora è possibile spegnere il computer.
 Simula la modalità senza APM
 Se simulare una situazione in cui non è disponibile APM. Se abilitato, informa l'utente che ora è possibile spegnere il computer allo spegnimento.
@@ -1262,7 +1204,6 @@ Assicurati di utilizzare un carattere della console che supporti i glifi PowerLi
 Apre la libreria dei preset della shell
 La preimpostazione specificata {0} non è stata trovata.
 Sei un'astronave e le meteore stanno arrivando per distruggerti. Puoi salvarlo?
-Simulatore di kernel retrò basato su 0.0.4.1
 Il dispositivo esiste già nell'elenco dei blocchi.
 Il dispositivo non esiste nell'elenco dei blocchi.
 Verifica l'esecuzione del punto di ingresso dell'assieme
@@ -1271,10 +1212,6 @@ Convertitore di unità
 Tipi di unità disponibili e relative unità:
 Gioco finito
 Errore inaspettato
-Verifica aggiornamenti...
-Download della versione
-Installazione della versione
-Tornando al 2018...
 Usa PowerLine per il rendering dell'astronave
 Velocità di gioco della meteora
 Se utilizzare PowerLine per rendere l'astronave o utilizzare lo standard maggiore del carattere. Se si desidera utilizzare PowerLine con Meteor, è necessario installare un font appropriato con supporto PowerLine.

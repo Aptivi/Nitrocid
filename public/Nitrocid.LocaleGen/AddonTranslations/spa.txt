@@ -1,5 +1,4 @@
 Plantilla de color no válida {0}
-hwprobe: Su hardware será probado. Por favor espere ...
 Introduzca la contraseña de administrador para el mantenimiento.
 Error del núcleo durante el arranque: {0}
 DOBLE PÁNICO: el tiempo de reinicio excede el máximo permitido {0} tiempo de reinicio de error. Has encontrado un error en el kernel.
@@ -30,7 +29,6 @@ El protector de pantalla solicitado {0} no se encuentra.
 No se encontró el protector de pantalla {0} en la base de datos. Verifique el nombre e intente nuevamente.
 Hay un error grave al imprimir texto.
 El mod no se puede cargar debido a lo siguiente: 
-Mod {0} no tiene el nombre. Revise el código fuente.
 {0} v {1} comenzó
 No hay definición para el comando {0}.
 Comando definido por 
@@ -59,9 +57,7 @@ Lista del directorio remoto
 Carga el archivo local al directorio remoto usando binario o texto
 Alias ​​no puede ser el mismo nombre que un comando.
 Comando no encontrado alias a {0}.
-Ahora puede ejecutar "{0}" como comando: "{1}".
 El alias {0} no se encuentra eliminado.
-Modo no válido {0}.
 Directorio {0} no encontrado
 Nombre de host en blanco.
 Cambiando de: {0} a {1} ...
@@ -85,7 +81,6 @@ Lista de contenidos de carpetas / archivos en la carpeta actual
 Bloquea tu pantalla con una contraseña
 Cierra la sesión
 Crea un directorio
-Reinicia su computadora (ADVERTENCIA: No se sincroniza, porque no es un núcleo final)
 Vuelve a cargar el archivo de configuración que se edita.
 Guarda tu pantalla de quemados
 Configura los salvapantallas del kernel
@@ -93,7 +88,6 @@ Muestra fecha y hora
 Muestra fecha y hora en zonas
 El núcleo se cerrará
 Uso:
-donde customsaver será
 Hubo un error en el shell.
 No tienes permiso para usar {0}
 Mensaje de shell: el comando solicitado {0} no se puede ejecutar en modo de mantenimiento.
@@ -113,7 +107,6 @@ Użyj „ftp”, jeśli zamierzasz pobierać pliki z serwera FTP.
 Pobiera plik do bieżącego katalogu roboczego
 Desconectar un dispositivo de depuración
 Enumera los dispositivos de depuración conectados
-Dispositivo de depuración {0} no encontrado.
 Dispositivo {0} desconectado.
 Depure la escucha en todas las direcciones utilizando el puerto {0}.
 Alias ya encontrado: {0}
@@ -124,7 +117,6 @@ Especifique la dirección
 La zona horaria está especificada incorrectamente.
 Selección de perfil no válida
 Intentando conectarse a {0} con el perfil {1} ...
-Error al intentar iniciar el protector de pantalla, debido a una operación no válida.
 No se permiten las modificaciones de análisis en modo seguro.
 La ruta no es ni un archivo ni un directorio.
 Crea otra copia de un archivo en un directorio o nombre diferente.
@@ -217,7 +209,6 @@ Elimina un carácter del número de carácter en la línea especificada
 Línea eliminada
 El número de línea especificado {0} no es un número válido.
 Corriendo en modo seguro. Saltando la etapa ...
->> Depuración remota y chat: versión
 >> Su dirección es {0}.
 >> Tu nombre es {0}.
 Índice {0} inválido. Hay {1} trazas de pila. El índice está basado en cero, así que intenta restar por 1.
@@ -230,8 +221,6 @@ Bloquear un dispositivo de depuración por dirección IP
 {0} aún no está bloqueado.
 Error al cargar la configuración
 Hay un error al cargar la configuración. Es posible que deba verificar el archivo de configuración.
-Seleccionar sección:
-Guardar ajustes
 Salida
 La opción {0} especificada no es válida.
 La respuesta debe ser numérica.
@@ -246,7 +235,6 @@ Registrar nombre de usuario FTP
 Registrar la dirección IP de FTP
 Devuelve solo el primer perfil FTP
 Mostrar hora / fecha en la esquina superior derecha
-Tiempo de espera del salvapantallas en ms
 Modo de análisis de tamaño
 Marquesina al inicio
 Hora y fecha largas
@@ -254,7 +242,6 @@ Mostrar archivos ocultos
 Regresa...
 Escribe un puerto depurador remoto. Debe ser numérico y no debe estar ya en uso. De lo contrario, el depurador remoto no podrá abrir el puerto.
 Escriba cuántas veces el comando "" get "" debe reintentar descargas fallidas. Debe ser numérico.
-Escriba cuándo iniciar el protector de pantalla después de milisegundos especificados. Debe ser numérico.
 Puede que la respuesta no sea negativa.
 La variable {0} no se encuentra en ninguno de los módulos.
 Cambia la configuración del kernel
@@ -323,7 +310,6 @@ La hora y la fecha serán más largas, mostrando los nombres de los meses comple
 Muestra archivos ocultos.
 Mod {0} detenido
 {0} v {1} detenido
-El mod {0} no tiene el nombre de la pieza. Error al analizar el mod. Revise el código fuente.
 Debe activar el modo de depuración antes de poder borrar el registro de depuración.
 {0} mensajes nuevos llegaron a la bandeja de entrada.
 Abra "mail" para verlos.
@@ -428,10 +414,7 @@ Guardar tema en el directorio actual
 Guardar tema en otro directorio ...
 Imprime información de hardware
 Nombre del procesador:
-Bits del procesador:
-Sistema de archivos de partición:
 Tamaño de la partición:
->> ¡Bienvenidos! Esta es la primera vez que ingresa a la depuración y el chat remotos. Utilice "/ register <nombre>" para registrarse.
 El dispositivo ya existe.
 Hay tal dispositivo.
 Imprime el contenido del archivo en la consola
@@ -440,8 +423,6 @@ Envuelve la salida de la consola
 El comando no se puede envolver. Estos comandos se pueden envolver:
 Extrae un archivo ZIP
 Crea un archivo ZIP
-Error al descargar datos de depuración
-Hay un error al descargar los datos de depuración. Comprueba tu conexión a Internet.
 No se pudo finalizar el mod {0}: {1}
 Muestra todos los eventos disparados
 Directorio actual
@@ -480,14 +461,11 @@ Comandos de mod:
 Comandos de alias:
 Modo de mantenimiento
 Directorios de búsqueda
-Grupo de caminos separados por dos puntos. Funciona igual que PATH. Escriba una ruta completa a una carpeta o un nombre de carpeta. Cuando haya terminado, escriba "q". Escriba un signo menos junto a la ruta para eliminar un directorio existente.
 Sin comandos de modificación.
 Sin comandos de alias.
 No se encuentra el comando wrappable.
 Consulta una palabra en una línea específica o en todas las líneas.
 {0} de {1} descargado.
-Prueba la facilidad de error del kernel
-Prueba la función de error del kernel con soporte de formato
 Prueba la traducción de una cadena que existe en recursos a un idioma específico
 Imprime una cadena en la consola y analiza los marcadores de posición encontrados
 Prueba la facilidad de expresión regular
@@ -601,8 +579,6 @@ Diccionario de caracteres de matriz:
 Muestra el progreso en las operaciones del sistema de archivos
 Muestra qué archivo se está procesando durante las operaciones del sistema de archivos
 El tipo de hardware {0} no está probado o no es válido.
-El tipo de hardware {0} aún no se ha probado. Si está seguro de que está probado, reinicie el kernel con la depuración habilitada.
-Particiones no analizadas para listar.
 Siempre centrado
 Escriba el texto que desee que se muestre.
 Si el texto que se muestra en el recuadro siempre está centrado.
@@ -610,17 +586,13 @@ El protector de pantalla experimentó un error al mostrar: {0}. Presiona cualqui
 Avance...
 Así es como se verá su tema:
 Comandos envolventes:
-Partes mod:
 Usar API de consola
 Ya sea para usar la API de la consola para borrar texto o para usar la secuencia VT de limpieza de línea más rápida. Si es False, Marquee utilizará la secuencia VT apropiada. De lo contrario, utilizará la API de consola probablemente más lenta.
 Abriendo URL ... Asegúrese de seguir los pasos que se muestran en la pantalla.
-No hay partes en el mod.
 Nombre del mod:
 Nombre del archivo Mod:
 Ruta del archivo Mod:
-Versión de la pieza:
 La carpeta está vacía.
-Probado con éxito {0}.
 Sonda detallada
 Haga que los mensajes de sondeo de hardware sean un poco locuaces.
 Embellece el archivo JSON
@@ -649,7 +621,6 @@ Las columnas de texto que se imprimirán.
 Posibilidad de que el patrón de relleno de línea se imprima en mayúsculas en porcentaje
 Puede que la respuesta no sea cero.
 La respuesta no puede exceder las entradas mostradas.
-Guardar cambios...
 Administra tus modificaciones
 La gestión de mod está deshabilitada en modo seguro.
 Comando no válido {0}. Compruebe el uso a continuación:
@@ -657,8 +628,6 @@ Mod no encontrado o el archivo tiene caracteres no válidos.
 Probabilidad de falla en porcentaje
 Habilitar la depuración del protector de pantalla
 Habilita la depuración de protectores de pantalla. Tenga en cuenta que puede llenar rápidamente el registro de depuración y ralentizar ligeramente el protector de pantalla, según el protector de pantalla utilizado. Solo funciona si la depuración del kernel está habilitada para fines de diagnóstico.
-No hay red mientras se descargan datos de depuración
-Verifique su conexión a Internet y vuelva a intentarlo.
 La página de manual {0} no es válida.
 Considere llenar esta página del manual.
 Mod manual
@@ -669,21 +638,13 @@ Cifra una cadena usando SHA384
 Cifra una cadena usando SHA256
 Cifra una cadena usando SHA1
 Cifra una cadena usando MD5
-donde estará el ahorrador incorporado
-La parte mod no es nada.
 Detener mods no permitidos en modo seguro.
 Mod ya se ha iniciado!
 Mod no ha comenzado todavía!
-Nombre del archivo de pieza:
-Ruta del archivo de pieza:
 Error al intentar iniciar el protector de pantalla:
 Tipo de ruta de kernel no válido.
 El arranque anterior falló
 El editor JSON aún no ha abierto un flujo de archivos.
-No se encuentra la propiedad dentro del archivo JSON.
-Propiedad eliminada.
-Agrega una nueva propiedad al final del archivo JSON
-Elimina una propiedad del archivo JSON
 Sale del shell JSON sin guardar los cambios.
 Guarda el archivo JSON
 Imprime el archivo JSON
@@ -707,7 +668,6 @@ Mod {0} está en la lista negra.
 Recarga todos los mods
 Agrega un mod a la lista negra
 Elimina un mod de la lista negra
-Hora y fecha en UTC: {0}
 Mostrar información de la aplicación durante el arranque
 Mostrar tiempos de finalización de etapa
 Iniciar modificaciones del kernel en el arranque
@@ -926,11 +886,9 @@ Número total de procesadores:
 Tamaño del disco:
 Memoria total:
 Tarjeta grafica:
-Modelo de disco:
 Si está seguro de haber abierto la sección correcta, consulte este mensaje:
 Ejecuta un comando de servidor FTP
 Cifra una cadena usando CRC32
-Abre el cliente de correo.
 de correo transferido...
 Prueba la funcionalidad de la tabla.
 Edita la línea especificada
@@ -948,10 +906,6 @@ Progreso de transferencia de correo (único)
 Si está habilitado, el shell de correo mostrará cuántos bytes se transmiten al descargar el correo.
 Escribe cómo quieres que sea el estilo de progreso de tu transferencia de correo. Déjelo en blanco para usar el estilo predeterminado. Los marcadores de posición se analizan. {0} para el tamaño transferido y {1} para el tamaño total.
 Escribe cómo quieres que sea el estilo de progreso de tu transferencia de correo. Déjelo en blanco para usar el estilo predeterminado. Los marcadores de posición se analizan. {0} para el tamaño transferido.
-Zona horaria:
-hoy es {0}
-La hora actual es {0}
-Respuestas posibles
 El archivo de modificación no está especificado.
 Intentando instalar un mod ya instalado. Actualizando mod...
 La instalación falló para
@@ -996,12 +950,10 @@ Tiempo de espera de pulsación de tecla para SpeedPress
 Reemplaza una palabra o frase por otra usando expresiones regulares
 Reemplaza una palabra o frase con otra en una línea usando expresiones regulares
 Consulta una palabra en una línea específica o en todas las líneas usando expresiones regulares
-Encuentra una configuración
 Escribe lo que quieres buscar.
 No se encuentra nada. Asegúrese de haber escrito la configuración correctamente.
 Empaqueta un archivo local en el archivo
 No puedo empacar nada.
-Descripción de la respuesta
 Para obtener más información sobre los términos y condiciones de uso de este software, visite
 Tipo de salida de elección predeterminada
 Comprueba todas las configuraciones de KS para ver si las variables están escritas correctamente
@@ -1025,8 +977,6 @@ URL del título RSS que se utilizará cuando se muestre el título más reciente
 Error al obtener las últimas noticias.
 Mostrar seguimiento de pila en error de kernel
 Si hay algún error del kernel, elija si desea o no imprimir el seguimiento de la pila en la consola.
-Guardar configuración como
-Cargar configuración desde
 ¿Dónde desea guardar la configuración actual del kernel?
 No se puede guardar la configuración del kernel sobre el archivo existente.
 ¿Desde dónde desea cargar la configuración actual del kernel?
@@ -1136,11 +1086,6 @@ Fuente Figlet para temporizador
 Habilitar Figlet para el temporizador
 Si está habilitado, utilizará figlet para el temporizador. Tenga en cuenta que necesita una pantalla de consola grande para mostrar la hora correctamente con Figlet habilitado.
 Restablece el kernel a la configuración de fábrica
-Omite la detección del tamaño de la consola
-Parece que estás pasando por alto la detección del tamaño de la consola. Es posible que las cosas no funcionen correctamente en pantallas pequeñas.
-Para tener una mejor experiencia, cambie el tamaño de la ventana de su consola mientras aún está en esta pantalla. Pulse cualquier tecla para continuar...
-Su consola es demasiado pequeña para funcionar correctamente:
-Fuente de banner figlet
 Mostrar los comandos contar con ayuda
 Mostrar los comandos de shell contar con ayuda
 Mostrar los comandos mod contar con ayuda
@@ -1238,9 +1183,6 @@ El nivel de color rojo debe ser numérico.
 El nivel de color verde debe ser numérico.
 El nivel de color azul debe ser numérico.
 Color representación hexadecimal:
-Nombre de la parte de la modificación:
-Nombre del archivo de la pieza de modificación:
-Ruta del archivo de la pieza de modificación:
 Ahora es seguro apagar su computadora.
 Simular modo sin APM
 Ya sea para simular una situación en la que no hay APM disponible. Si está habilitado, informa al usuario que ahora es seguro apagar la computadora al apagarla.
@@ -1262,7 +1204,6 @@ Asegúrese de utilizar una fuente de consola compatible con los glifos PowerLine
 Abre la biblioteca de ajustes preestablecidos de shell
 No se encuentra el preajuste especificado {0}.
 Eres una nave espacial y los meteoritos vienen a destruirte. ¿Puedes guardarlo?
-Simulador de núcleo retro basado en 0.0.4.1
 El dispositivo ya existe en la lista de bloqueo.
 El dispositivo no existe en la lista de bloqueo.
 Prueba la ejecución del punto de entrada del ensamblaje
@@ -1271,10 +1212,6 @@ Convertidor de unidades
 Tipos de unidades disponibles y sus unidades:
 Juego terminado
 Error inesperado
-Comprobando actualizaciones...
-Descargando versión
-Versión de instalación
-Volviendo al 2018...
 Usa PowerLine para renderizar una nave espacial
 Velocidad del juego de meteoritos
 Ya sea para usar PowerLine para renderizar la nave espacial o para usar el carácter estándar mayor que. Si desea utilizar PowerLine con Meteor, debe instalar una fuente adecuada compatible con PowerLine.
