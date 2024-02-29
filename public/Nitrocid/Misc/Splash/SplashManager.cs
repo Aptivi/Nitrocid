@@ -284,13 +284,13 @@ namespace Nitrocid.Misc.Splash
                     // screen is closing.
                     splash.SplashClosing = false;
 
-                    // Reset the state
-                    SplashReport._InSplash = false;
-                    ScreenTools.UnsetCurrent(splashScreen);
-
                     // Wait for 3 seconds
                     if (delay)
                         Thread.Sleep(3000);
+
+                    // Reset the state
+                    SplashReport._InSplash = false;
+                    ScreenTools.UnsetCurrent(splashScreen);
 
                     // Reset the cursor visibility
                     ConsoleWrapper.CursorVisible = true;
