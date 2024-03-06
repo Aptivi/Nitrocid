@@ -1,0 +1,14 @@
+[
+    {
+        "Name": "BassBoom",
+        "Desc": "This section lets you configure how the BassBoom addon works.",
+        "Keys": [
+            {
+                "Name": "Lyrics Path",
+                "Type": "SString",
+                "Variable": "LyricsPath",
+                "Description": "Sets the path to a folder containing a group of .lrc files. Write an absolute path to any existing directory."
+            }
+        ]
+    }
+]

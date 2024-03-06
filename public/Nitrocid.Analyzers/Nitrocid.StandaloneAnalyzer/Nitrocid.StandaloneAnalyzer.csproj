@@ -1,0 +1,51 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- LocaleGen General Information -->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DF07F4E1-47B2-452D-A200-F15F558C4977}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineTrace>true</DefineTrace>
+    <RootNamespace>Nitrocid.StandaloneAnalyzer</RootNamespace>
+    <AssemblyName>Nitrocid.StandaloneAnalyzer</AssemblyName>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <OutputPath>..\..\Nitrocid\KSAnalyzer\</OutputPath>
+    <Description>Nitrocid KS Standalone Analyzer</Description>
+    <AssemblyTitle>Nitrocid KS Standalone Analyzer</AssemblyTitle>
+    <Company>Aptivi</Company>
+    <Product>Nitrocid</Product>
+    <Copyright>Copyright © Aptivi 2018 - 2024</Copyright>
+    <ApplicationIcon>../../Nitrocid/OfficialAppIcon-KernelSimulator.ico</ApplicationIcon>
+    <Version>0.1.0</Version>
+    <Configurations>Debug;Release</Configurations>
+    <LangVersion>latest</LangVersion>
+    <TargetFramework>net8.0</TargetFramework>
+    <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\..\..\aptivi_snk.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <!-- LocaleGen General Information End -->
+
+  <!-- LocaleGen Platform Information -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>portable</DebugType>
+    <DefineDebug>true</DefineDebug>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <!-- LocaleGen Platform Information End -->
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Build.Locator" Version="1.7.1" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.4" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="4.8.0" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Workspaces.MSBuild" Version="4.8.0" />
+    <PackageReference Include="Terminaux" Version="3.1.2" />
+  </ItemGroup>
+
+</Project>

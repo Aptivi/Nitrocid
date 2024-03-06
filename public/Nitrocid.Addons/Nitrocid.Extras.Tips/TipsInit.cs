@@ -1,0 +1,63 @@
+﻿//
+// Nitrocid KS  Copyright (C) 2018-2024  Aptivi
+//
+// This file is part of Nitrocid KS
+//
+// Nitrocid KS is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Nitrocid KS is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY, without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
+//
+
+using Nitrocid.Extras.Tips.Settings;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Kernel.Extensions;
+using Nitrocid.Modifications;
+using System;
+using System.Collections.ObjectModel;
+using System.Reflection;
+using Nitrocid.ConsoleBase.Writers.MiscWriters;
+
+namespace Nitrocid.Extras.Tips
+{
+    internal class TipsInit : IAddon
+    {
+        string IAddon.AddonName =>
+            InterAddonTranslations.GetAddonName(KnownAddons.ExtrasTips);
+
+        ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
+
+        internal static TipsConfig TipsConfig =>
+            (TipsConfig)Config.baseConfigurations[nameof(TipsConfig)];
+
+        ReadOnlyDictionary<string, Delegate> IAddon.PubliclyAvailableFunctions => null;
+
+        ReadOnlyDictionary<string, PropertyInfo> IAddon.PubliclyAvailableProperties => null;
+
+        ReadOnlyDictionary<string, FieldInfo> IAddon.PubliclyAvailableFields => null;
+
+        void IAddon.FinalizeAddon() =>
+            WelcomeMessage.tips = TipsList.tips;
+
+        void IAddon.StartAddon()
+        {
+            var config = new TipsConfig();
+            ConfigTools.RegisterBaseSetting(config);
+            WelcomeMessage.ShowTip = TipsConfig.ShowTip;
+        }
+
+        void IAddon.StopAddon()
+        {
+            WelcomeMessage.tips = [];
+            ConfigTools.UnregisterBaseSetting(nameof(TipsConfig));
+        }
+    }
+}

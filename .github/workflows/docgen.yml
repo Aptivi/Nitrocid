@@ -3,11 +3,11 @@ name: KS API Documentation
 on:
   push:
     branches:
-      - master
+      - main
       - servicing
   pull_request:
     branches:
-      - master
+      - main
       - servicing
 
 jobs:
@@ -15,9 +15,9 @@ jobs:
     name: "Make API Reference"
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         name: Fetching the KS source
-      - uses: "nunit/docfx-action@v1.7.0"
+      - uses: "nunit/docfx-action@master"
         name: Generating documentation
         with:
           args: DocGen/docfx.json

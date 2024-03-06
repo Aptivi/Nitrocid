@@ -1,15 +1,15 @@
 @echo off
 
-REM    Kernel Simulator  Copyright (C) 2018-2022  EoflaOE
+REM    Nitrocid KS  Copyright (C) 2018-2022  Aptivi
 REM
-REM    This file is part of Kernel Simulator
+REM    This file is part of Nitrocid KS
 REM
-REM    Kernel Simulator is free software: you can redistribute it and/or modify
+REM    Nitrocid KS is free software: you can redistribute it and/or modify
 REM    it under the terms of the GNU General Public License as published by
 REM    the Free Software Foundation, either version 3 of the License, or
 REM    (at your option) any later version.
 REM
-REM    Kernel Simulator is distributed in the hope that it will be useful,
+REM    Nitrocid KS is distributed in the hope that it will be useful,
 REM    but WITHOUT ANY WARRANTY; without even the implied warranty of
 REM    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 REM    GNU General Public License for more details.
@@ -26,7 +26,7 @@ echo You don't have DocFX installed. Download and install Chocolatey and DocFX.
 goto :finished
 
 :build
-echo Building Kernel Simulator Documentation...
+echo Building Nitrocid KS Documentation...
 %ProgramData%\chocolatey\bin\docfx.exe "..\DocGen\docfx.json"
 if %errorlevel% == 0 goto :success
 echo There was an error trying to build documentation (%errorlevel%).

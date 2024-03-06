@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>KS</id>
+    <version>0.1.0</version>
+    <packageSourceUrl>http://github.com/Aptivi/NitrocidKS</packageSourceUrl>
+
+    <title>Nitrocid KS</title>
+    <authors>Aptivi</authors>
+    <projectUrl>http://github.com/Aptivi/NitrocidKS</projectUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/Aptivi/NitrocidKS@latest/public/Nitrocid/OfficialAppIcon-KernelSimulator.ico</iconUrl>
+    <copyright>Copyright © 2018-2024 Aptivi, All rights reserved.</copyright>
+    <licenseUrl>https://github.com/Aptivi/NitrocidKS/blob/main/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <tags>ks kernel simulator vb.net</tags>
+    <summary>Simulates our future-planned kernel, Nitrocid Kernel!</summary>
+    <description>Nitrocid KS is the program that lets you simulate the early aspects of our future-planned kernel, Nitrocid Kernel!</description>
+    <releaseNotes>https://aptivi.gitbook.io/kernel-simulator-manual/versions-and-compatibility/version-release-notes/v0.1.x.x-series</releaseNotes>
+
+    <dependencies>
+      <dependency id="dotnet-8.0-runtime" version="8.0.0"/>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>

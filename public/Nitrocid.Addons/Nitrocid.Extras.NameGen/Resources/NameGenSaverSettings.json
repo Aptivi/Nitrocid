@@ -1,0 +1,52 @@
+[
+    {
+        "Name": "PersonLookup",
+        "Desc": "Simulates a database lookup for a random person.",
+        "Keys": [
+            {
+                "Name": "Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "PersonLookupDelay",
+                "Description": "How many milliseconds to wait before making the next write?"
+            },
+            {
+                "Name": "New Screen Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "PersonLookupLookedUpDelay",
+                "Description": "How many milliseconds to wait before writing in the new screen?"
+            },
+            {
+                "Name": "Minimum names count",
+                "Type": "SIntSlider",
+                "Variable": "PersonLookupMinimumNames",
+                "Description": "Minimum amount of names to generate",
+                "MinimumValue": 10,
+                "MaximumValue": 1000
+            },
+            {
+                "Name": "Maximum names count",
+                "Type": "SIntSlider",
+                "Variable": "PersonLookupMaximumNames",
+                "Description": "Maximum amount of names to generate",
+                "MinimumValue": 10,
+                "MaximumValue": 1000
+            },
+            {
+                "Name": "Minimum age years count",
+                "Type": "SIntSlider",
+                "Variable": "PersonLookupMinimumNames",
+                "Description": "Minimum amount of age years to generate",
+                "MinimumValue": 18,
+                "MaximumValue": 100
+            },
+            {
+                "Name": "Maximum age years count",
+                "Type": "SIntSlider",
+                "Variable": "PersonLookupMaximumNames",
+                "Description": "Maximum amount of age years to generate",
+                "MinimumValue": 18,
+                "MaximumValue": 100
+            }
+        ]
+    }
+]

@@ -1,0 +1,43 @@
+name: Build Project (for Launchpad PPA)
+
+on:
+  push:
+    branches:
+      - main
+      - servicing
+  pull_request:
+    branches:
+      - main
+      - servicing
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: 'true'
+
+      - name: Install required packages
+        run: |
+          sudo rm /etc/apt/sources.list.d/microsoft-prod.list
+          sudo apt update
+          sudo apt purge dotnet* firefox*
+          sudo apt autoremove
+          sudo sed -i 's/jammy/noble/g' /etc/apt/sources.list
+          sudo sed -i 's/jammy/noble/g' /etc/apt/sources.list.d/*
+          sudo apt update
+          sudo apt install curl locales-all cli-common-dev libunwind8-dev libcurl4-openssl-dev dotnet-sdk-8.0 libjack0 libportaudio2 libopenal1 libsdl2-2.0-0 libpulse0 libaudio2 devscripts debhelper-compat dput
+        
+      - name: Initialize offline package
+        run: |
+          sudo ip netns add no-net
+          chmod +x tools/initializeoffline.sh
+          make debian-init-offline
+          make clean
+        
+      - name: Try to build
+        run: |
+          sudo ip netns exec no-net make debian-all-offline

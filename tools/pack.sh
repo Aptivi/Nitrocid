@@ -1,15 +1,15 @@
 #!/bin/bash
 
-#    Kernel Simulator  Copyright (C) 2018-2021  EoflaOE
+#    Nitrocid KS  Copyright (C) 2018-2021  Aptivi
 #
-#    This file is part of Kernel Simulator
+#    This file is part of Nitrocid KS
 #
-#    Kernel Simulator is free software: you can redistribute it and/or modify
+#    Nitrocid KS is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
 #    the Free Software Foundation, either version 3 of the License, or
 #    (at your option) any later version.
 #
-#    Kernel Simulator is distributed in the hope that it will be useful,
+#    Nitrocid KS is distributed in the hope that it will be useful,
 #    but WITHOUT ANY WARRANTY; without even the implied warranty of
 #    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 #    GNU General Public License for more details.
@@ -21,22 +21,30 @@
 ksversion=$(cat version)
 
 # Check for dependencies
-rarpath=`which rar`
+zippath=`which zip`
 if [ ! $? == 0 ]; then
-	echo rar is not found.
+	echo zip is not found.
 	exit 1
 fi
 
 # Pack binary
 echo Packing binary...
-"$rarpath" a -ep1 -r -m5 /tmp/$ksversion-bin.rar "../Kernel Simulator/KSBuild/net48/"
+cd "../public/Nitrocid/KSBuild/net8.0/" && "$zippath" -r /tmp/$ksversion-bin.zip . && cd -
+cd "../public/Nitrocid/KSBuild/net8.0/" && "$zippath" -r /tmp/$ksversion-bin-lite.zip . -x "./Addons/*" && cd -
+cd "../public/Nitrocid/KSBuild/net8.0/Addons/" && "$zippath" -r /tmp/$ksversion-addons.zip . && cd -
+cd "../public/Nitrocid/KSAnalyzer/netstandard2.0/" && "$zippath" -r /tmp/$ksversion-analyzers.zip . && cd -
+cd "../public/Nitrocid/KSAnalyzer/net8.0/" && "$zippath" -r /tmp/$ksversion-mod-analyzer.zip . && cd -
 if [ ! $? == 0 ]; then
-	echo Packing using rar failed.
+	echo Packing failed.
 	exit 1
 fi
 
 # Inform success
-mv ~/tmp/$ksversion-bin.rar .
-cp "../Kernel Simulator/KSBuild/net48/Kernel Simulator.pdb" ./$ksversion.pdb
+mv /tmp/$ksversion-bin.zip .
+mv /tmp/$ksversion-bin-lite.zip .
+mv /tmp/$ksversion-addons.zip .
+mv /tmp/$ksversion-analyzers.zip .
+mv /tmp/$ksversion-mod-analyzer.zip .
+cp changes.chg $ksversion-changes.chg
 echo Build and pack successful.
 exit 0

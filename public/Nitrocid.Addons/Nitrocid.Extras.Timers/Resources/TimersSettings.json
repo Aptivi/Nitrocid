@@ -1,0 +1,20 @@
+[
+    {
+        "Name": "Timers",
+        "Desc": "This section lets you configure how the timers work.",
+        "Keys": [
+            {
+                "Name": "Enable Figlet for timer",
+                "Type": "SBoolean",
+                "Variable": "EnableFigletTimer",
+                "Description": "If enabled, will use figlet for timer. Please note that it needs a big console screen in order to render the time properly with Figlet enabled."
+            },
+            {
+                "Name": "Figlet font for timer",
+                "Type": "SFiglet",
+                "Variable": "TimerFigletFont",
+                "Description": "Write a figlet font that is supported by the Figgle library. Consult the library documentation for more information"
+            }
+        ]
+    }
+]

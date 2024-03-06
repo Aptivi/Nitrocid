@@ -1,0 +1,14 @@
+[
+    {
+        "Name": "Tips",
+        "Desc": "This section lets you configure how Tips works.",
+        "Keys": [
+            {
+                "Name": "Show kernel tips",
+                "Type": "SBoolean",
+                "Variable": "ShowTip",
+                "Description": "If enabled, the shell shows you the tips on every login."
+            }
+        ]
+    }
+]

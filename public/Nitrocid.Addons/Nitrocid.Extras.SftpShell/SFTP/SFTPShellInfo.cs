@@ -1,0 +1,156 @@
+﻿//
+// Nitrocid KS  Copyright (C) 2018-2024  Aptivi
+//
+// This file is part of Nitrocid KS
+//
+// Nitrocid KS is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Nitrocid KS is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY, without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
+//
+
+using System.Collections.Generic;
+using Nitrocid.Shell.ShellBase.Switches;
+using Nitrocid.Shell.ShellBase.Arguments;
+using Nitrocid.Extras.SftpShell.SFTP.Presets;
+using Nitrocid.Extras.SftpShell.SFTP.Commands;
+using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.Shell.ShellBase.Shells;
+using Nitrocid.Shell.Prompts;
+
+namespace Nitrocid.Extras.SftpShell.SFTP
+{
+    /// <summary>
+    /// Common SFTP shell class
+    /// </summary>
+    internal class SFTPShellInfo : BaseShellInfo, IShellInfo
+    {
+
+        /// <summary>
+        /// SFTP commands
+        /// </summary>
+        public override List<CommandInfo> Commands =>
+        [
+            new CommandInfo("cat", /* Localizable */ "Reads the content of a remote file to the console",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "file")
+                    })
+                ], new CatCommand(), CommandFlags.Wrappable),
+
+            new CommandInfo("cdl", /* Localizable */ "Changes local directory to download to or upload from",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "directory")
+                    })
+                ], new CdlCommand()),
+
+            new CommandInfo("cdr", /* Localizable */ "Changes remote directory to download from or upload to",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "directory")
+                    })
+                ], new CdrCommand()),
+
+            new CommandInfo("del", /* Localizable */ "Deletes remote file from server",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "file")
+                    })
+                ], new DelCommand()),
+
+            new CommandInfo("detach", /* Localizable */ "Exits the shell without disconnecting",
+                [
+                    new CommandArgumentInfo()
+                ], new DetachCommand()),
+
+            new CommandInfo("get", /* Localizable */ "Downloads remote file to local directory using binary or text",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "file")
+                    })
+                ], new GetCommand()),
+
+            new CommandInfo("lsl", /* Localizable */ "Lists local directory",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(false, "dir")
+                    ],
+                    [
+                        new SwitchInfo("showdetails", /* Localizable */ "Shows the details of the files and folders", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                        new SwitchInfo("suppressmessages", /* Localizable */ "Suppresses the \"unauthorized\" messages", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        })
+                    ])
+                ], new LslCommand(), CommandFlags.Wrappable),
+
+            new CommandInfo("lsr", /* Localizable */ "Lists remote directory",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(false, "dir")
+                    ],
+                    [
+                        new SwitchInfo("showdetails", /* Localizable */ "Shows the details of the files and folders", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        })
+                    ])
+                ], new LsrCommand(), CommandFlags.Wrappable),
+
+            new CommandInfo("put", /* Localizable */ "Uploads local file to remote directory using binary or text",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "file")
+                    })
+                ], new PutCommand()),
+
+            new CommandInfo("pwdl", /* Localizable */ "Gets current local directory",
+                [
+                    new CommandArgumentInfo()
+                ], new PwdlCommand()),
+
+            new CommandInfo("pwdr", /* Localizable */ "Gets current remote directory",
+                [
+                    new CommandArgumentInfo()
+                ], new PwdrCommand()),
+        ];
+
+        public override Dictionary<string, PromptPresetBase> ShellPresets => new()
+        {
+            { "Default", new SFTPDefaultPreset() },
+            { "PowerLine1", new SftpPowerLine1Preset() },
+            { "PowerLine2", new SftpPowerLine2Preset() },
+            { "PowerLine3", new SftpPowerLine3Preset() },
+            { "PowerLineBG1", new SftpPowerLineBG1Preset() },
+            { "PowerLineBG2", new SftpPowerLineBG2Preset() },
+            { "PowerLineBG3", new SftpPowerLineBG3Preset() }
+        };
+
+        public override BaseShell ShellBase => new SFTPShell();
+
+        public override bool AcceptsNetworkConnection => true;
+
+        public override string NetworkConnectionType => "SFTP";
+
+    }
+}

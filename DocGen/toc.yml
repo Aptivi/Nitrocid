@@ -1,7 +1,4 @@
 - name: Home
   href: index.md
-- name: KS API
+- name: API Documentation
   href: api/
-- name: KS Wiki
-  href: wiki/
-  homepage: wiki/Home.md

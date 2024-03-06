@@ -1,0 +1,64 @@
+[
+    {
+        "Name": "Amusements",
+        "Desc": "This section lets you configure how the amusements work.",
+        "Keys": [
+            {
+                "Name": "Solver minimum number",
+                "Type": "SInt",
+                "Variable": "SolverMinimumNumber",
+                "Description": "What is the minimum number to choose?"
+            },
+            {
+                "Name": "Solver maximum number",
+                "Type": "SInt",
+                "Variable": "SolverMaximumNumber",
+                "Description": "What is the maximum number to choose?"
+            },
+            {
+                "Name": "Solver show input",
+                "Type": "SBoolean",
+                "Variable": "SolverShowInput",
+                "Description": "Whether to show what's written in the input prompt."
+            },
+            {
+                "Name": "Default difficulty for SpeedPress",
+                "Type": "SIntSlider",
+                "Variable": "SpeedPressCurrentDifficulty",
+                "Description": "Select your preferred difficulty, where 0 is easy, 1 is medium, 2 is hard, 3 is very hard, and 4 is custom.",
+                "MinimumValue": 0,
+                "MaximumValue": 4
+            },
+            {
+                "Name": "Keypress timeout for SpeedPress",
+                "Type": "SInt",
+                "Variable": "SpeedPressTimeout",
+                "Description": "How many milliseconds to wait for the keypress before the timeout? (In custom difficulty)"
+            },
+            {
+                "Name": "Use PowerLine for rendering spaceship",
+                "Type": "SBoolean",
+                "Variable": "MeteorUsePowerLine",
+                "Description": "Whether to use PowerLine to render the spaceship or to use the standard greater than character. If you want to use PowerLine with Meteor, you need to install an appropriate font with PowerLine support."
+            },
+            {
+                "Name": "Meteor game speed",
+                "Type": "SInt",
+                "Variable": "MeteorSpeed",
+                "Description": "Specifies the game speed in milliseconds."
+            },
+            {
+                "Name": "Use PowerLine for rendering spaceship in ShipDuet",
+                "Type": "SBoolean",
+                "Variable": "ShipDuetUsePowerLine",
+                "Description": "Whether to use PowerLine to render the spaceship or to use the standard greater than character. If you want to use PowerLine with ShipDuet, you need to install an appropriate font with PowerLine support."
+            },
+            {
+                "Name": "Game speed in ShipDuet",
+                "Type": "SInt",
+                "Variable": "ShipDuetSpeed",
+                "Description": "Specifies the game speed in milliseconds."
+            }
+        ]
+    }
+]

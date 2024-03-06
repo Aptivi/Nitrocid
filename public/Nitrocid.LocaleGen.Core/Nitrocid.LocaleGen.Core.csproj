@@ -1,0 +1,85 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- LocaleGen NuGet Information -->
+  <PropertyGroup>
+    <PackageId>Nitrocid.LocaleGen.Core</PackageId>
+    <Authors>Aptivi</Authors>
+    <Title>Nitrocid KS - Locale Generator</Title>
+    <PackageDescription>Simulates our future-planned kernel</PackageDescription>
+    <PackageTags>kernel;simulator;csharp</PackageTags>
+    <PackageVersion>0.1.0</PackageVersion>
+    <!-- URL settings -->
+    <PackageProjectUrl>https://github.com/Aptivi/NitrocidKS</PackageProjectUrl>
+    <PackageIcon>OfficialAppIcon-KernelSimulator-512.png</PackageIcon>
+    <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
+    <PackageReleaseNotes>Detailed explanation: https://aptivi.gitbook.io/kernel-simulator-manual/versions-and-compatibility/version-release-notes/v0.1.x.x-series</PackageReleaseNotes>
+    <!-- MSBuild Tags -->
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <IncludeSymbols>True</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PackageOutputPath>../Nitrocid/KSBuild</PackageOutputPath>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <!-- Repository set up -->
+    <RepositoryUrl>https://github.com/Aptivi/NitrocidKS.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <Configurations>Debug;Release</Configurations>
+  </PropertyGroup>
+  <!-- LocaleGen NuGet Information End -->
+    
+  <!-- LocaleGen General Information -->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineTrace>true</DefineTrace>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <OutputPath>..\Nitrocid\KSBuild\</OutputPath>
+    <Description>Nitrocid KS Locale Generator</Description>
+    <AssemblyTitle>Nitrocid KS Locale Generator</AssemblyTitle>
+    <Copyright>Copyright © Aptivi 2018 - 2024</Copyright>
+    <Company>Aptivi</Company>
+    <Product>Nitrocid</Product>
+    <Version>0.1.0</Version>
+    <Configurations>Debug;Release</Configurations>
+    <LangVersion>latest</LangVersion>
+    <TargetFramework>net8.0</TargetFramework>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\..\aptivi_snk.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <!-- LocaleGen General Information End -->
+
+  <!-- LocaleGen Platform Information -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>portable</DebugType>
+    <DefineDebug>true</DefineDebug>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <!-- LocaleGen Platform Information End -->
+  
+  <!-- LocaleGen Dependencies Information -->
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+  <!-- LocaleGen Dependencies Information End -->
+
+  <!-- KS Package Files -->
+  <ItemGroup>
+    <None Include="..\Nitrocid\OfficialAppIcon-KernelSimulator-512.png" Pack="true" PackagePath="\" />
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+  <!-- KS Package Files End -->
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="all" />
+  </ItemGroup>
+  <PropertyGroup>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,49 @@
+﻿//
+// Nitrocid KS  Copyright (C) 2018-2024  Aptivi
+//
+// This file is part of Nitrocid KS
+//
+// Nitrocid KS is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Nitrocid KS is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY, without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
+//
+
+using Terminaux.Writer.ConsoleWriters;
+using Nitrocid.Languages;
+using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.Users;
+
+namespace Nitrocid.Shell.Shells.UESH.Commands
+{
+    /// <summary>
+    /// Removes uninvited or redundant user
+    /// </summary>
+    /// <remarks>
+    /// This command lets you remove the uninvited or redundant user from the user dictionary that is initialized at the start of the kernel. It also removes password from the removed user if it has one.
+    /// <br></br>
+    /// However you can't remove your own user that is signed in.
+    /// <br></br>
+    /// The user must have at least the administrative privileges before they can run the below commands.
+    /// </remarks>
+    class RmUserCommand : BaseCommand, ICommand
+    {
+
+        public override int Execute(CommandParameters parameters, ref string variableValue)
+        {
+            UserManagement.RemoveUser(parameters.ArgumentsList[0]);
+            if (!UserManagement.UserExists(parameters.ArgumentsList[0]))
+                TextWriterColor.Write(Translate.DoTranslation("User {0} removed."), parameters.ArgumentsList[0]);
+            return 0;
+        }
+
+    }
+}

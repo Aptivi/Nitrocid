@@ -1,0 +1,167 @@
+Nitrocid KS 0.1.0 changes
+=========================
+
+Released March 11th, 2024; codename Magic Bloom.
+
+Nitrocid KS 0.1.0 hosts an innumerable number of changes that will surprise
+you with more-than-stellar features and improvements. It also brings a lot of
+improvements for both the core kernel and the API for your mods to be even
+more powerful. Codenamed Magic Bloom, we've been working on this particular
+version for more than a year and a half to bring to you the final version of
+the first real beta version of Nitrocid KS!
+
+When you first use Nitrocid KS 0.1.0 after using 0.0.24.0 or earlier, you'll
+notice a lot of improvements, especially the speed-related improvements that
+makes the simulated kernel be lightning-fast compared to the older versions.
+Afterwards, you'll notice a lot of new features and changes being made to
+the kernel aesthetics to make everything more clear than before. We've made
+a huge amount of improvements to all the different areas of the kernel, from
+converting its codebase to C# to employing the kernel addon system to using
+Terminaux to host a lot of console features.
+
+We can't list every single change made to the kernel simulator, but we've
+repeatedly listed the most hit changes, including the codebase conversion in
+the second milestone, implementation of the kernel addons in the third beta,
+and the new configuration reader and writer in the first beta. This new
+configuration reader and writer ensures that your configuration is handled
+not only by the base kernel itself, but also by the kernel addons. In
+addition to this, your kernel modifications can now have their own config
+classes and their associated entries JSON files to modify the behavior of
+your kernel modifications without having to resort to making your own
+configuration reader and writer.
+
+The configuration reader and writer has also seen many improvement attempts,
+first started on 0.0.16.0 released on June 12th, 2021. Since then, we've been
+trying to look for ways to speed them up, and 0.1.0 is the result of all the
+hard work thanks to the serialization and the deserialization methods that
+accelerated the entire process.
+
+Unfortunately, we've also had to remove .NET Framework 4.8 support, because
+we've been using features that are exclusive to the modern .NET versions, such
+as .NET 8.0 that this version of the kernel makes use of. Previously, we had
+to maintain two copies: .NET Framework, and .NET 6.0. This version now only
+supports .NET 8.0, so your computer must have the .NET 8.0 runtime installed.
+
+To help you get the best advice for your mods, we've introduced the kernel mod
+code analyzers, which allow you to analyze your own mod code in case of using
+the non-trivial ways of certain operations, such as using Console.Write()
+instead of the Terminaux-provided text writer. This analyzer will issue
+warnings and messages related to your kernel modifications in your IDE,
+advising you to seek for alternatives to the operations that you're currently
+performing in your mod code.
+
+In celebration of the fifth-year anniversary of the first release of Nitrocid
+KS, 0.0.1, we've decided to give the simulated kernel a name: Nitrocid. This
+name is a portmanteau of Nitric and Acid with an O letter in the middle of the
+name. The "Nitro" part indicates that this kernel runs faster than before due
+to recent improvements that we've done, and the "cid" part inicates that this
+kernel is more flexible than before. A dedicated theme, NitricAcid, celebrates
+this renaming event.
+
+We've also changed the aesthetics when you start the kernel up, indicating
+that we've achieved a major milestone throughout the entire project lifetime
+from 2018. From the kernel startup to the kernel shell to the interactive
+TUIs, we've changed their appearance to fit in with the rest of the Nitrocid
+aesthetics that we've envisioned before 0.0.24.0's development even started.
+
+As for the interactive TUIs, we've made interactive console user interfaces to
+make performing tasks easier than before, such as the file manager introduced
+in this release. You can run this file manager using the "ifm" command. We've
+planned for this in 2018, but we've never actually executed it, because we
+felt that this task would be more suited for when the kernel would actually
+stabilize in its "alpha" stage, which actually finished with the release of
+0.0.24.0, which gave us a boilerplate to start working on this awesome
+installment!
+
+The interactive file manager now allows you to more easily manage your files.
+It contains all the basic file manager features, such as opening folders,
+opening files (thanks to the file extension handler that your mods can use to
+handle certain extensions not handled by the kernel and its addons), copying
+files/folders, deleting them, and so on. We've also made sure that the basic
+operations pass the grandmother test for simplicity.
+
+In addition to that, we've introduced the color filter system as an
+accessibility feature for color-blind users thanks to Terminaux 3.0. You can
+now adjust the kernel colors by changing the color blindness settings in the
+kernel configuration system that you can access by executing the "settings"
+command in the normal shell.
+
+For the documentation lovers, we've built the documentation on GitBook, and
+published it when Beta 1 was released to give you access to more comprehensive
+documentation. This documentation hosted on GitBook was more clear than the
+older documentation that didn't thoroughly explain everything and applied only
+to older versions of Nitrocid KS going back as far as 0.0.6! That version of
+the documentation was originally found inside the application as manual pages,
+but we've later moved them to the project wiki, which moved to a DocFX site.
+
+The first start-up experience was re-made. This feature was first introduced
+in 0.0.16.0 that asked you only to set your own account up. This revamped
+version treats newcomers nicer than before and makes them feel more welcome
+than before. It also asks you to select your language and infers the language
+based on your computer settings. For example, if your computer is set to use
+the Dutch language and the Dutch locale, you'll notice that Nitrocid suggests
+Dutch as your language, but it doesn't try to force you to use this language;
+it leaves your choice of language up to you.
+
+Kernel drivers are interfaces that allow you to modify the kernel's behavior
+in different ways, such as coming up with better ways to copy files, delete
+files, encrypt a string, write to the console, write debug messages to the
+log, and much more to come! Kernel drivers are also customizable by the
+kernel settings, and are flexible thanks to being able to register and
+unregister your kernel drivers in your mods.
+
+One of the massive improvements done is using the screen feature introduced
+in Terminaux. This feature allows you to make your interactive applications
+resizable without worrying that your output will become corrupt. Not only can
+they become resizable, but they're also buffered in one write to avoid
+slowdowns. This led to the spawn of interactive text and hex editors that are
+introduced in the third beta of the kernel, and are stabilized to come to the
+final version of the kernel. This eases the task of making your interactive
+applications flexible to resize operations.
+
+The color wheel has also been re-designed to more visually provide you with
+information about your currently-selected color, and technical information
+about said color is hidden under an informational box that you can easily
+reveal by pressing the I key. This is also introduced in Terminaux, so parts
+of Nitrocid 0.1.0 features are released in batches to let other applications
+use them to mak their interactive TUIs flexible.
+
+If you depend on other mods to do work for your mods, you can easily achieve
+this by using mod dependencies and inter-mod communication! Starting from this
+release, you can now fully utilize these features to communicate with other
+mods that provide you their list of available functions, properties, and
+fields to be able to change your mod's behavior based on them. You can also
+open some of your mod's functions, properties, and fields for other mods to
+be able to communicate with your mods!
+
+The debug quota was removed in the past for being too slow, but we've come up
+with another method to implement this feature, but this time, we've used a
+list of printed lines instead of the old-and-slow checking for file line count
+method. This way, this feature checks your debug quota faster than before,
+therefore killing the biggest and the most notorious performance hit when you
+have debug quotas enabled.
+
+When it comes to the kernel shell, we've made it more flexible than before!
+Not only you can make your own shells more easily, but you can also make a
+list of your commands in easier ways. This way, we've given you a key to be
+able to use your own shell with your own commands faster than before, making
+you more productive than before! Also, we've introduced the command switches,
+allowing you to change your ommand's behavior based on the switches that the
+users provided in the shell. The rigidity in the 0.0.24.0 and the earlier
+shells have made us do this core re-write to make the entire UESH shell system
+more powerful than before, giving you a more streamlined process of
+implementing your shells and your commands. What we've introduced to you in
+the shell management namespace is left for you as an exercise to surprise you
+with a huge amount of management tools waiting for you to use!
+
+We've added a huge amount of screensavers and themes for you to discover.
+We've also added a huge amount of features and improvements waiting for you to
+discover them!
+
+A huge thanks to everyone, including you, for using the "early access"
+versions of the kernel, including the 0.0.1.0 version, but we've now
+officially taken away this title from this application as we're close to the
+actualization of the real kernel that the future PCs are waiting for!
+
+For those who are still curious about the "early access"-era kernels, you can
+still download them from the official GitHub releases page!

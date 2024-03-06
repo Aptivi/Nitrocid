@@ -1,0 +1,211 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <!-- KS NuGet Information -->
+  <PropertyGroup>
+    <PackageId>KS</PackageId>
+    <Authors>Aptivi</Authors>
+    <Title>Nitrocid KS</Title>
+    <PackageDescription>Simulates our future-planned kernel, Nitrocid Kernel. This package contains Nitrocid API that you can use for your mods.</PackageDescription>
+    <PackageTags>kernel;simulator;csharp</PackageTags>
+    <!-- URL settings -->
+    <PackageProjectUrl>https://github.com/Aptivi/NitrocidKS</PackageProjectUrl>
+    <PackageIcon>OfficialAppIcon-KernelSimulator-512.png</PackageIcon>
+    <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
+    <PackageReleaseNotes>Detailed explanation: https://aptivi.gitbook.io/nitrocid-ks-manual/versions-and-compatibility/version-release-notes/v0.1.x.x-series</PackageReleaseNotes>
+    <!-- MSBuild Tags -->
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <IncludeSymbols>True</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PackageOutputPath>KSBuild</PackageOutputPath>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <!-- Repository set up -->
+    <RepositoryUrl>https://github.com/Aptivi/NitrocidKS.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <Configurations>Debug;Release</Configurations>
+    <Platforms>AnyCPU</Platforms>
+  </PropertyGroup>
+  <!-- KS NuGet Information End -->
+
+  <!-- KS General Information -->
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>portable</DebugType>
+    <OutputType>Exe</OutputType>
+    <LangVersion>latest</LangVersion>
+    <AssemblyName>Nitrocid</AssemblyName>
+    <AssemblyTitle>Nitrocid KS</AssemblyTitle>
+    <Description>Simulates our future-planned kernel, Nitrocid Kernel</Description>
+    <Company>Aptivi</Company>
+    <Product>Nitrocid</Product>
+    <Copyright>Copyright © Aptivi 2018 - 2024</Copyright>
+    <OutputPath>KSBuild\</OutputPath>
+    <ApplicationIcon>OfficialAppIcon-KernelSimulator.ico</ApplicationIcon>
+    <Version>0.1.0.0</Version>
+    <PackageVersion>$(Version)</PackageVersion>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <Deterministic>true</Deterministic>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\..\aptivi_snk.snk</AssemblyOriginatorKeyFile>
+    
+    <!-- Increment NitrocidModAPIVersionMajor every time there is a new version of Nitrocid KS. For example, N-KS 0.1.1 is 3.0.26. -->
+    <NitrocidModAPIVersionMajor>3.0.25</NitrocidModAPIVersionMajor>
+
+    <!-- Increment NitrocidModAPIVersionChangeset every time there is a breaking change or an API addition in the N-KS API. -->
+    <NitrocidModAPIVersionChangeset>437</NitrocidModAPIVersionChangeset>
+
+    <!-- To be installed to the file version -->
+    <NitrocidModAPIVersion>$(NitrocidModAPIVersionMajor).$(NitrocidModAPIVersionChangeset)</NitrocidModAPIVersion>
+    <FileVersion>$(NitrocidModAPIVersion)</FileVersion>
+  </PropertyGroup>
+  <!-- KS General Information End -->
+
+  <!-- KS Platform Information -->
+  <!--
+  
+    Note for constants: All Nitrocid flags should be defined by defining NitrocidFlags, not DefineConstants. Here's how you
+    define such flags: -p:NitrocidFlags=PACKAGEMANAGERBUILD
+    
+    Supported constants (NitrocidFlags):
+      - PACKAGEMANAGERBUILD: Indicates that this build is a package manager build suitable for Launchpad PPA
+    
+    Possible specifiers (NitrocidReleaseSpecifier):
+      - REL: Final release
+      - DEV: Developer preview
+      - ALPHA: Alpha release
+      - BETA: Beta release
+      - RC: Release candidate
+    
+  -->
+  <PropertyGroup>
+    <DefineDebug Condition="'$(Configuration)' == 'Debug'">true</DefineDebug>
+    <DefineTrace Condition="'$(Configuration)' == 'Debug'">true</DefineTrace>
+    <Optimize>true</Optimize>
+    <Optimize Condition="'$(Configuration)' == 'Debug'">false</Optimize>
+    <NitrocidReleaseSpecifier>REL</NitrocidReleaseSpecifier>
+    <NitrocidReleaseSpecifier Condition="'$(Configuration)' == 'Debug'">DEV</NitrocidReleaseSpecifier>
+    <DefineConstants>SPECIFIER$(NitrocidReleaseSpecifier);$(NitrocidFlags.Replace(",",";"))</DefineConstants>
+  </PropertyGroup>
+  <!-- KS Platform Information End -->
+
+  <!-- KS Dependencies Information -->
+  <ItemGroup>
+    <PackageReference Include="GRILO.Boot" Version="0.1.0.4" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="8.0.2" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="all" />
+    <PackageReference Include="Newtonsoft.Json.Schema" Version="3.0.15" PrivateAssets="all" />
+    <PackageReference Include="SpecProbe" Version="1.4.2" PrivateAssets="all" />
+  </ItemGroup>
+  <!-- KS Dependencies Information End -->
+
+  <!-- KS Non-private Dependencies Information -->
+  <ItemGroup>
+    <PackageReference Include="Terminaux" Version="3.1.2" PrivateAssets="contentfiles;analyzers;build;runtime" />
+    <PackageReference Include="Terminaux.ResizeListener" Version="3.1.2" PrivateAssets="contentfiles;analyzers;build;runtime" />
+    <PackageReference Include="Textify.Offline" Version="1.4.0" PrivateAssets="contentfiles;analyzers;build;runtime" />
+    <PackageReference Include="Nettify" Version="1.1.0.1" PrivateAssets="contentfiles;analyzers;build;runtime" />
+    <PackageReference Include="EnumMagic" Version="0.1.0.1" PrivateAssets="contentfiles;analyzers;build;runtime" />
+  </ItemGroup>
+  <!-- KS Non-private Dependencies Information End -->
+
+  <!-- KS CMD Launchers -->
+  <ItemGroup>
+    <Assets Include="..\..\assets\*.cmd" />
+  </ItemGroup>
+  <Target Name="UpdateCmdLaunchers" BeforeTargets="Compile">
+    <Copy SourceFiles="@(Assets)" DestinationFolder="$(OutDir)" />
+  </Target>
+  <!-- KS CMD Launchers End -->
+
+  <!-- KS Analyzers -->
+  <ItemGroup>
+    <Compile Remove="KSAnalyzer\**" />
+    <EmbeddedResource Remove="KSAnalyzer\**" />
+    <None Remove="KSAnalyzer\**" />
+  </ItemGroup>
+  <!-- KS Analyzers End -->
+
+  <!-- KS Manifest -->
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\SchemasResources.resx">
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>Nitrocid.Resources</CustomToolNamespace>
+      <LastGenOutput>SchemasResources.Designer.cs</LastGenOutput>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\ThemesResources.resx">
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>Nitrocid.Resources</CustomToolNamespace>
+      <LastGenOutput>ThemesResources.Designer.cs</LastGenOutput>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\SettingsResources.resx">
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>Nitrocid.Resources</CustomToolNamespace>
+      <LastGenOutput>SettingsResources.Designer.cs</LastGenOutput>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\LanguageResources.resx">
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>Nitrocid.Resources</CustomToolNamespace>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>LanguageResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Resources\SchemasResources.Designer.cs">
+      <DependentUpon>SchemasResources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Resources\ThemesResources.Designer.cs">
+      <DependentUpon>ThemesResources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Resources\SettingsResources.Designer.cs">
+      <DependentUpon>SettingsResources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Resources\LanguageResources.Designer.cs">
+      <DependentUpon>LanguageResources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+  </ItemGroup>
+  <!-- KS Manifest End -->
+
+  <!-- KS Package Files -->
+  <ItemGroup>
+    <None Include="OfficialAppIcon-KernelSimulator-512.png" Pack="true" PackagePath="\" />
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+  <!-- KS Package Files End -->
+  
+  <!-- KS GRILO boot metadata -->
+  <ItemGroup>
+    <None Update="BootMetadata.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <!-- KS GRILO boot metadata End -->
+
+  <!-- KS Source Link properties -->
+  <PropertyGroup>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+  </PropertyGroup>
+  <!-- KS Source Link properties End -->
+
+  <!-- KS extra targets -->
+  <Target Name="WipeBuild" AfterTargets="Clean">
+    <ItemGroup>
+      <BuildDirs Include="KSBuild\**\*" />
+    </ItemGroup>
+    <Message Importance="high" Text="N: Removing whole KSBuild directory..." />
+    <Delete Files="@(BuildDirs)" />
+    <RemoveDir Directories="KSBuild\" />
+  </Target>
+  <!-- KS extra targets End -->
+</Project>

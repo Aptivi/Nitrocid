@@ -1,0 +1,43 @@
+name: Push to PPA (amend with original source)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: 'true'
+      
+      - name: Import GPG
+        uses: crazy-max/ghaction-import-gpg@v5
+        with:
+          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
+          passphrase: ${{ secrets.PASSPHRASE }}
+
+      - name: Install required packages
+        run: |
+          sudo rm /etc/apt/sources.list.d/microsoft-prod.list
+          sudo apt update
+          sudo apt purge dotnet* firefox*
+          sudo apt autoremove
+          sudo sed -i 's/jammy/noble/g' /etc/apt/sources.list
+          sudo sed -i 's/jammy/noble/g' /etc/apt/sources.list.d/*
+          sudo apt update
+          sudo apt dist-upgrade
+          sudo apt install curl locales-all cli-common-dev libunwind8-dev libcurl4-openssl-dev dotnet-sdk-8.0 libjack0 libportaudio2 libopenal1 libsdl2-2.0-0 libpulse0 libaudio2 devscripts debhelper-compat dput
+        
+      - name: Download original source
+        run: |
+          wget --output-document=../kernel-simulator_3.0.25.437-0.1.0.orig.tar.xz https://launchpad.net/~eofla/+archive/ubuntu/kernel-sim/+sourcefiles/kernel-simulator/3.0.25.437-0.1.0/kernel-simulator_3.0.25.437-0.1.0.orig.tar.xz
+          tar xf ../kernel-simulator_3.0.25.437-0.1.0.orig.tar.xz .
+          mv .github ..
+
+      - name: Build source package
+        run: debuild -S
+        
+      - name: Push to Launchpad
+        run: dput ppa:eofla/kernel-sim ../kernel-simulator_*_source.changes

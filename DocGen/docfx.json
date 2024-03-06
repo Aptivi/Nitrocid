@@ -3,7 +3,10 @@
         {
             "src": [
                 {
-                    "files": [ "Kernel Simulator/Kernel Simulator.vbproj" ],
+                    "files": [
+                        "public/Nitrocid/Nitrocid.csproj",
+                        "public/Nitrocid.LocaleGen.Core/Nitrocid.LocaleGen.Core.csproj"
+                    ],
                     "src": ".."
                 }
             ],
@@ -21,19 +24,20 @@
                     "index.md",
                     "toc.yml"
                 ]
-            },
-            {
-                "files": [ "wiki/**/*.md" ]
             }
         ],
         "resource": [
             {
-                "files": [ "images/**" ]
+                "files": [ 
+                    "images/**",
+                    "logo.svg",
+                    "favicon.ico"
+                ]
             }
         ],
         "dest": "../docs",
         "globalMetadata": {
-            "_appTitle": "Kernel Simulator API - Aptivi",
+            "_appTitle": "Nitrocid KS API - Aptivi",
             "_enableSearch": true
         },
         "globalMetadataFiles": [],
@@ -46,7 +50,7 @@
         "cleanupCacheHistory": false,
         "disableGitFeatures": false,
         "sitemap": {
-            "baseUrl": "https://aptivi.github.io/Kernel-Simulator/"
+            "baseUrl": "https://aptivi.github.io/NitrocidKS/"
         }
     }
 }

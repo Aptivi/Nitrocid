@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <!-- KS NuGet Information -->
+  <PropertyGroup>
+    <PackageId>KS.Templates</PackageId>
+    <PackageType>Template</PackageType>
+    <PackageVersion>0.1.0</PackageVersion>
+    <Authors>Aptivi</Authors>
+    <Title>Nitrocid KS Templates</Title>
+    <Description>Simulates our future-planned kernel, Nitrocid Kernel. This package contains templates to use when creating N-KS mods, screensavers, and splashes</Description>
+    <PackageTags>dotnet-new;templats;ks;kernel;simulator</PackageTags>
+    <!-- URL settings -->
+    <PackageProjectUrl>https://github.com/Aptivi/NitrocidKS</PackageProjectUrl>
+    <PackageIcon>OfficialAppIcon-KernelSimulator-512.png</PackageIcon>
+    <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
+    <PackageReleaseNotes>Detailed explanation: https://aptivi.gitbook.io/nitrocid-ks-manual/versions-and-compatibility/version-release-notes/v0.1.x.x-series</PackageReleaseNotes>
+    <!-- MSBuild Tags -->
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageOutputPath>../Nitrocid/KSBuild</PackageOutputPath>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <!-- Repository set up -->
+    <RepositoryUrl>https://github.com/Aptivi/NitrocidKS.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <Configurations>Debug;Release</Configurations>
+    <Platforms>AnyCPU</Platforms>
+  </PropertyGroup>
+  <!-- KS NuGet Information End -->
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <IncludeContentInPack>true</IncludeContentInPack>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <ContentTargetFolders>content</ContentTargetFolders>
+    <NoWarn>$(NoWarn);NU5128</NoWarn>
+    <NoDefaultExcludes>true</NoDefaultExcludes>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="templates\**\*" Exclude="templates\**\bin\**;templates\**\obj\**" />
+    <Compile Remove="**\*" />
+  </ItemGroup>
+
+  <!-- KS Package Files -->
+  <ItemGroup>
+    <None Include="..\..\public\Nitrocid\OfficialAppIcon-KernelSimulator-512.png" Pack="true" PackagePath="\" />
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+  <!-- KS Package Files End -->
+
+</Project>

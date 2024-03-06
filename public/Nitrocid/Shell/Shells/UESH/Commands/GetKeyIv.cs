@@ -1,0 +1,63 @@
+﻿//
+// Nitrocid KS  Copyright (C) 2018-2024  Aptivi
+//
+// This file is part of Nitrocid KS
+//
+// Nitrocid KS is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Nitrocid KS is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY, without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
+//
+
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Drivers;
+using Nitrocid.Drivers.Encoding;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
+using Nitrocid.Shell.ShellBase.Commands;
+
+namespace Nitrocid.Shell.Shells.UESH.Commands
+{
+    /// <summary>
+    /// Gets the key and the initialization vector for symmetrical encoding
+    /// </summary>
+    /// <remarks>
+    /// This command will get the key and the initialization vector from the specified symmetrical encoding driver.
+    /// </remarks>
+    class GetKeyIvCommand : BaseCommand, ICommand
+    {
+
+        public override int Execute(CommandParameters parameters, ref string variableValue)
+        {
+            string algorithm = parameters.ArgumentsList.Length > 0 ? parameters.ArgumentsList[0] : DriverHandler.CurrentEncodingDriverLocal.DriverName;
+            var driver = DriverHandler.GetDriver<IEncodingDriver>(algorithm);
+            driver.Initialize();
+            if (!driver.IsSymmetric)
+            {
+                TextWriters.Write(Translate.DoTranslation("Only symmetric encoding algorithms which use both the key and the initialization vector are supported."), true, KernelColorType.Error);
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.Encoding);
+            }
+
+            // Now, get the key and the IV
+            byte[] key = driver.Key;
+            byte[] iv = driver.Iv;
+            string keyDecomposed = driver.DecomposeBytesFromString(key);
+            string ivDecomposed = driver.DecomposeBytesFromString(iv);
+            TextWriters.Write("- " + Translate.DoTranslation("Key used") + ": ", false, KernelColorType.ListEntry);
+            TextWriters.Write(keyDecomposed, true, KernelColorType.ListValue);
+            TextWriters.Write("- " + Translate.DoTranslation("Initialization vector used") + ": ", false, KernelColorType.ListEntry);
+            TextWriters.Write(ivDecomposed, true, KernelColorType.ListValue);
+            variableValue = $"[{keyDecomposed}, {ivDecomposed}]";
+            return 0;
+        }
+    }
+}

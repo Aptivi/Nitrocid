@@ -1,0 +1,18 @@
+[
+    {
+        "Name": "Quote",
+        "Desc": "Shows you nice famous quotes.",
+        "Keys": [
+            {
+                "Name": "Progress text location",
+                "Type": "SSelection",
+                "Variable": "QuoteProgressTextLocation",
+                "IsEnumeration": true,
+                "EnumerationInternal": true,
+                "Enumeration": "Misc.Text.TextLocation",
+                "EnumerationZeroBased": true,
+                "Description": "Select your preferred progress text location."
+            }
+        ]
+    }
+]

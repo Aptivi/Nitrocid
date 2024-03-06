@@ -1,0 +1,174 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <!-- LocaleGen General Information -->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8EDAE674-CC21-0D06-0641-064C500DE0CC}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineTrace>true</DefineTrace>
+    <StartupObject>Nitrocid.LocaleGen.Generator</StartupObject>
+    <RootNamespace>Nitrocid.LocaleGen</RootNamespace>
+    <AssemblyName>Nitrocid.LocaleGen</AssemblyName>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <OutputPath>..\Nitrocid\KSBuild\</OutputPath>
+    <Description>Nitrocid KS Locale Generator</Description>
+    <AssemblyTitle>Nitrocid KS Locale Generator</AssemblyTitle>
+    <Company>Aptivi</Company>
+    <Product>Nitrocid</Product>
+    <Copyright>Copyright © Aptivi 2018 - 2024</Copyright>
+    <ApplicationIcon>../Nitrocid/OfficialAppIcon-KernelSimulator.ico</ApplicationIcon>
+    <Version>0.1.0</Version>
+    <Configurations>Debug;Release</Configurations>
+    <LangVersion>latest</LangVersion>
+    <TargetFramework>net8.0</TargetFramework>
+    <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\..\aptivi_snk.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <!-- LocaleGen General Information End -->
+
+  <!-- LocaleGen Platform Information -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>portable</DebugType>
+    <DefineDebug>true</DefineDebug>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <!-- LocaleGen Platform Information End -->
+
+  <!-- LocaleGen Dependencies Information -->
+  <ItemGroup>
+    <ProjectReference Include="..\Nitrocid.LocaleGen.Core\Nitrocid.LocaleGen.Core.csproj" />
+    <ProjectReference Include="..\Nitrocid\Nitrocid.csproj">
+      <Project>{c7b37899-c361-423d-9512-fe0a87a46866}</Project>
+      <Name>Nitrocid</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <!-- LocaleGen Dependencies Information End -->
+
+  <!-- LocaleGen Language Metadata and Base -->
+  <ItemGroup>
+    <None Include="CustomLanguages\Metadata.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Translations\Metadata.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Translations\eng.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="CustomLanguages\eng.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="AddonTranslations\eng.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <!-- LocaleGen Language Metadata and Base End -->
+
+  <!-- LocaleGen Translations -->
+  <ItemGroup>
+    <None Include="AddonTranslations\Metadata.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="AddonTranslations\arb-T.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="AddonTranslations\arb.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="AddonTranslations\chi-T.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="AddonTranslations\chi.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="AddonTranslations\cnt-T.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="AddonTranslations\cnt.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="AddonTranslations\dtc.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="AddonTranslations\enk.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="AddonTranslations\fre.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="AddonTranslations\frs.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="AddonTranslations\ger.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="AddonTranslations\grk.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="AddonTranslations\ind-T.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="AddonTranslations\ind.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="AddonTranslations\ita.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="AddonTranslations\jpn.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="AddonTranslations\kor-T.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="AddonTranslations\kor.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="AddonTranslations\ltn.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="AddonTranslations\Metadata.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="AddonTranslations\ptg.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="AddonTranslations\rmn.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="AddonTranslations\rus-T.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="AddonTranslations\rus.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="AddonTranslations\spa.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <Target Name="UpdateEng" BeforeTargets="Compile">
+    <Copy SourceFiles="Translations\eng.txt" DestinationFolder="AddonTranslations" />
+    <Copy SourceFiles="Translations\eng.txt" DestinationFolder="CustomLanguages" />
+  </Target>
+  <!-- LocaleGen Translations End -->
+
+  <ItemGroup>
+    <PackageReference Include="Terminaux" Version="3.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="all" />
+  </ItemGroup>
+  <PropertyGroup>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+  </PropertyGroup>
+  
+</Project>

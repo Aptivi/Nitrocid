@@ -6,15 +6,12 @@ apiRules:
 - exclude:
     # inherited members from Control
     uidRegex: ^System\.Windows\.Forms\.Control\..*$
-    type: Member
+    type: Member	
 - exclude:
     # mentioning types from System.* namespace
     uidRegex: ^System\..*$
-    type: Type
+    type: Type	
 - exclude:
     # mentioning types from Microsoft.* namespace
     uidRegex: ^Microsoft\..*$
     type: Type
-- exclude:
-    # KS resources
-    uidRegex: ^KS\.My\.Resources\..*$

@@ -18,6 +18,10 @@ mono_crash.*
 
 # Build results
 [Dd]ebug/
+!public/*/Shell/Shells/Debug/
+!public/*/Shell/Shells/Debug/**
+!public/*/Shell/Prompts/Presets/Debug/
+!public/*/Shell/Prompts/Presets/Debug/**
 [Dd]ebugPublic/
 [Rr]elease/
 [Rr]eleases/
@@ -33,6 +37,7 @@ bld/
 [Ll]ogs/
 KSBuild/
 KSTest/
+KSAnalyzer/
 
 # Visual Studio 2015/2017 cache/options directory
 .vs/
@@ -398,3 +403,10 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+# DocGen
+docs/
+DocGen/api/
+
+# Vim
+*.swp

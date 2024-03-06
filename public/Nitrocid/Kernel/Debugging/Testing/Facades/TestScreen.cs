@@ -1,0 +1,80 @@
+﻿//
+// Nitrocid KS  Copyright (C) 2018-2024  Aptivi
+//
+// This file is part of Nitrocid KS
+//
+// Nitrocid KS is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Nitrocid KS is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY, without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
+//
+
+using Terminaux.Base.Buffered;
+using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Inputs.Styles.Infobox;
+using Nitrocid.Languages;
+using System;
+using System.Text;
+using Terminaux.Colors;
+using Terminaux.Sequences.Builder.Types;
+using Terminaux.Base;
+using Terminaux.Colors.Data;
+using Terminaux.Reader;
+
+namespace Nitrocid.Kernel.Debugging.Testing.Facades
+{
+    internal class TestScreen : TestFacade
+    {
+        public override string TestName => Translate.DoTranslation("Tests the screen feature for the console");
+        public override TestSection TestSection => TestSection.ConsoleBase;
+        public override void Run(params string[] args)
+        {
+            // Show the screen measurement sticks
+            var stickScreen = new Screen();
+            try
+            {
+                var stickScreenPart = new ScreenPart();
+                stickScreenPart.Position(0, 1);
+                stickScreenPart.BackgroundColor(new Color(ConsoleColors.Silver));
+                stickScreenPart.AddDynamicText(GenerateWidthStick);
+                stickScreenPart.AddDynamicText(GenerateHeightStick);
+                stickScreenPart.AddDynamicText(() => KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground);
+                stickScreenPart.AddDynamicText(() => KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground);
+                stickScreen.AddBufferedPart("Test", stickScreenPart);
+                ScreenTools.SetCurrent(stickScreen);
+                ScreenTools.Render();
+                TermReader.ReadKey();
+            }
+            catch (Exception ex)
+            {
+                InfoBoxColor.WriteInfoBoxColor(Translate.DoTranslation("Screen failed to render:") + $" {ex.Message}", KernelColorTools.GetColor(KernelColorType.Error));
+            }
+            finally
+            {
+                ScreenTools.UnsetCurrent(stickScreen);
+            }
+        }
+
+        private static string GenerateWidthStick() =>
+            new(' ', ConsoleWrapper.WindowWidth);
+
+        private static string GenerateHeightStick()
+        {
+            var stick = new StringBuilder();
+            for (int i = 0; i < ConsoleWrapper.WindowHeight; i++)
+            {
+                stick.Append(CsiSequences.GenerateCsiCursorPosition(2, i));
+                stick.Append(' ');
+            }
+            return stick.ToString();
+        }
+    }
+}

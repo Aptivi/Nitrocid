@@ -1,0 +1,62 @@
+name: Build Project (Debian Package)
+
+on:
+  push:
+    branches:
+      - main
+      - servicing
+  pull_request:
+    branches:
+      - main
+      - servicing
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: 'true'
+      
+      - name: Import GPG
+        uses: crazy-max/ghaction-import-gpg@v5
+        with:
+          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
+          passphrase: ${{ secrets.PASSPHRASE }}
+
+      - name: Install required packages
+        run: |
+          sudo rm /etc/apt/sources.list.d/microsoft-prod.list
+          sudo apt update
+          sudo apt purge dotnet* firefox*
+          sudo apt autoremove
+          sudo sed -i 's/jammy/noble/g' /etc/apt/sources.list
+          sudo sed -i 's/jammy/noble/g' /etc/apt/sources.list.d/*
+          sudo apt update
+          sudo apt install curl locales-all cli-common-dev libunwind8-dev libcurl4-openssl-dev dotnet-sdk-8.0 libjack0 libportaudio2 libopenal1 libsdl2-2.0-0 libpulse0 libaudio2 devscripts debhelper-compat dput
+        
+      - name: Initialize offline package
+        run: |
+          chmod +x tools/initializeoffline.sh
+          make debian-init-offline
+          make clean
+        
+      - name: Make original package
+        run: |
+          mv debian ..
+          mv .github ..
+          tar cfv ../kernel-simulator_3.0.25.437-0.1.0.orig.tar .
+          xz ../kernel-simulator_3.0.25.437-0.1.0.orig.tar
+          mv ../debian .
+
+      - name: Build package
+        run: |
+          debuild --no-lintian -us -uc
+          cp ../*.deb .
+        
+      - name: Upload package to artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: Nitrocid-KS-Debian-Package
+          path: "*.deb"

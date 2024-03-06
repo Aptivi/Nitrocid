@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+
+  <!--
+      String format code fix
+  -->
+  <data name="StringFormatCodeFixTitle" xml:space="preserve">
+    <value>Use TextTools.FormatString()</value>
+  </data>
+
+  <!--
+      ConsoleWrapper usage code fix
+  -->
+  <data name="ConsoleWrapperUsageCodeFixTitle" xml:space="preserve">
+    <value>Use ConsoleWrapper</value>
+  </data>
+
+  <!--
+      ConsoleTitle usage code fix
+  -->
+  <data name="ConsoleTitleUsageCodeFixTitle" xml:space="preserve">
+    <value>Use SetTitle() from ConsoleExtensions</value>
+  </data>
+
+  <!--
+      ConsoleForeColor usage code fix
+  -->
+  <data name="ConsoleForeColorUsageCodeFixTitle" xml:space="preserve">
+    <value>Use SetConsoleColor(Color) from KernelColorTools</value>
+  </data>
+
+  <!--
+      ConsoleBackColor usage code fix
+  -->
+  <data name="ConsoleBackColorUsageCodeFixTitle" xml:space="preserve">
+    <value>Use SetConsoleColor(Color, true) from KernelColorTools</value>
+  </data>
+
+  <!--
+      ConsoleReadLine usage code fix
+  -->
+  <data name="ConsoleReadLineUsageCodeFixTitle" xml:space="preserve">
+    <value>Use ReadLine() from Input</value>
+  </data>
+
+  <!--
+      ConsoleWrite usage code fix
+  -->
+  <data name="ConsoleWriteUsageCodeFixTitle" xml:space="preserve">
+    <value>Use TWC.Write()</value>
+  </data>
+
+  <!--
+      ConsoleWriteLine usage code fix
+  -->
+  <data name="ConsoleWriteLineUsageCodeFixTitle" xml:space="preserve">
+    <value>Use TWC.Write()</value>
+  </data>
+
+  <!--
+      ConsoleResetColor usage code fix
+  -->
+  <data name="ConsoleResetColorUsageCodeFixTitle" xml:space="preserve">
+    <value>Use ConsoleExtensions.ResetColors()</value>
+  </data>
+
+  <!--
+      GetFileSystemEntries usage code fix
+  -->
+  <data name="DirectoryGetFileSystemEntriesUsageCodeFixTitle" xml:space="preserve">
+    <value>Use Listing.CreateList()</value>
+  </data>
+
+  <!--
+      GetFileSystemEntries usage code fix
+  -->
+  <data name="DirectoryGetFileSystemEntriesAltUsageCodeFixTitle" xml:space="preserve">
+    <value>Use Listing.GetFileSystemEntries()</value>
+  </data>
+
+  <!--
+      FileCopy usage code fix
+  -->
+  <data name="FileCopyUsageCodeFixTitle" xml:space="preserve">
+    <value>Use Copying.CopyFileOrDir()</value>
+  </data>
+
+  <!--
+      DirectoryCreateDirectory usage code fix
+  -->
+  <data name="DirectoryCreateDirectoryUsageCodeFixTitle" xml:space="preserve">
+    <value>Use Making.MakeDirectory()</value>
+  </data>
+
+  <!--
+      FileCreate usage code fix
+  -->
+  <data name="FileCreateUsageCodeFixTitle" xml:space="preserve">
+    <value>Use Making.MakeFile()</value>
+  </data>
+
+  <!--
+      FileMove usage code fix
+  -->
+  <data name="FileMoveUsageCodeFixTitle" xml:space="preserve">
+    <value>Use Moving.MoveFileOrDir()</value>
+  </data>
+
+  <!--
+      FileDelete usage code fix
+  -->
+  <data name="FileDeleteUsageCodeFixTitle" xml:space="preserve">
+    <value>Use Removing.RemoveFile()</value>
+  </data>
+
+  <!--
+      DirectoryDelete usage code fix
+  -->
+  <data name="DirectoryDeleteUsageCodeFixTitle" xml:space="preserve">
+    <value>Use Removing.RemoveDirectory()</value>
+  </data>
+
+  <!--
+      FileExists usage code fix
+  -->
+  <data name="FileExistsUsageCodeFixTitle" xml:space="preserve">
+    <value>Use Checking.FileExists()</value>
+  </data>
+
+  <!--
+      DirectoryExists usage code fix
+  -->
+  <data name="DirectoryExistsUsageCodeFixTitle" xml:space="preserve">
+    <value>Use Checking.FolderExists()</value>
+  </data>
+
+  <!--
+      PathExists usage code fix
+  -->
+  <data name="PathExistsUsageCodeFixTitle" xml:space="preserve">
+    <value>Use Checking.Exists()</value>
+  </data>
+
+  <!--
+      PathIsPathRooted usage code fix
+  -->
+  <data name="PathIsPathRootedUsageCodeFixTitle" xml:space="preserve">
+    <value>Use Checking.Rooted()</value>
+  </data>
+
+  <!--
+      PathGetInvalidPathChars usage code fix
+  -->
+  <data name="PathGetInvalidPathCharsUsageCodeFixTitle" xml:space="preserve">
+    <value>Use Parsing.GetInvalidPathChars()</value>
+  </data>
+
+  <!--
+      PathGetFullPath usage code fix
+  -->
+  <data name="PathGetFullPathUsageCodeFixTitle" xml:space="preserve">
+    <value>Use Filesystem.NeutralizePath()</value>
+  </data>
+
+  <!--
+      TimeZoneInfoLocal usage code fix
+  -->
+  <data name="TimeZoneInfoLocalUsageCodeFixTitle" xml:space="preserve">
+    <value>Use TimeZones.GetCurrentZoneInfo()</value>
+  </data>
+
+  <!--
+      KernelDateTimeToTimeString usage code fix
+  -->
+  <data name="KernelDateTimeToTimeStringUsageCodeFixTitle" xml:space="preserve">
+    <value>Use TimeDateRenderers.RenderTime()</value>
+  </data>
+
+  <!--
+      KernelDateTimeToDateString usage code fix
+  -->
+  <data name="KernelDateTimeToDateStringUsageCodeFixTitle" xml:space="preserve">
+    <value>Use TimeDateRenderers.RenderDate()</value>
+  </data>
+
+  <!--
+      KernelDateTimeToString usage code fix
+  -->
+  <data name="KernelDateTimeToStringUsageCodeFixTitle" xml:space="preserve">
+    <value>Use TimeDateRenderers.Render()</value>
+  </data>
+
+  <!--
+      KernelDateTimeToTimeStringUtc usage code fix
+  -->
+  <data name="KernelDateTimeToTimeStringUtcUsageCodeFixTitle" xml:space="preserve">
+    <value>Use TimeDateRenderersUtc.RenderTimeUtc()</value>
+  </data>
+
+  <!--
+      KernelDateTimeToDateStringUtc usage code fix
+  -->
+  <data name="KernelDateTimeToDateStringUtcUsageCodeFixTitle" xml:space="preserve">
+    <value>Use TimeDateRenderersUtc.RenderDateUtc()</value>
+  </data>
+
+  <!--
+      KernelDateTimeToStringUtc usage code fix
+  -->
+  <data name="KernelDateTimeToStringUtcUsageCodeFixTitle" xml:space="preserve">
+    <value>Use TimeDateRenderersUtc.RenderUtc()</value>
+  </data>
+
+  <!--
+      PlatformIdWin32Nt usage code fix
+  -->
+  <data name="PlatformIdWin32NtUsageCodeFixTitle" xml:space="preserve">
+    <value>Use KernelPlatform.IsOnWindows()</value>
+  </data>
+
+  <!--
+      PlatformIdUnix usage code fix
+  -->
+  <data name="PlatformIdUnixUsageCodeFixTitle" xml:space="preserve">
+    <value>Use KernelPlatform.IsOnUnix()</value>
+  </data>
+
+  <!--
+      IsOsPlatformWindows usage code fix
+  -->
+  <data name="IsOsPlatformWindowsUsageCodeFixTitle" xml:space="preserve">
+    <value>Use KernelPlatform.IsOnWindows()</value>
+  </data>
+
+  <!--
+      IsOsPlatformLinux usage code fix
+  -->
+  <data name="IsOsPlatformLinuxUsageCodeFixTitle" xml:space="preserve">
+    <value>Use KernelPlatform.IsOnUnix()</value>
+  </data>
+
+  <!--
+      IsOsPlatformOSX usage code fix
+  -->
+  <data name="IsOsPlatformOSXUsageCodeFixTitle" xml:space="preserve">
+    <value>Use KernelPlatform.IsOnMacOs()</value>
+  </data>
+  
+  <!--
+      TermProgram usage code fix
+  -->
+  <data name="TermProgramUsageCodeFixTitle" xml:space="preserve">
+    <value>Use KernelPlatform.GetTerminalEmulator()</value>
+  </data>
+  
+  <!--
+      Term usage code fix
+  -->
+  <data name="TermUsageCodeFixTitle" xml:space="preserve">
+    <value>Use KernelPlatform.GetTerminalType()</value>
+  </data>
+  
+  <!--
+      Tmux usage code fix
+  -->
+  <data name="TmuxUsageCodeFixTitle" xml:space="preserve">
+    <value>Use KernelPlatform.IsRunningFromTmux()</value>
+  </data>
+  
+  <!--
+      Screen usage code fix
+  -->
+  <data name="ScreenUsageCodeFixTitle" xml:space="preserve">
+    <value>Use KernelPlatform.IsRunningFromScreen()</value>
+  </data>
+  
+  <!--
+      CurrentUICultureGet usage code fix
+  -->
+  <data name="CurrentUICultureGetUsageCodeFixTitle" xml:space="preserve">
+    <value>Use CultureManager.CurrentCult</value>
+  </data>
+  
+  <!--
+      CurrentUICultureGetName usage code fix
+  -->
+  <data name="CurrentUICultureGetNameUsageCodeFixTitle" xml:space="preserve">
+    <value>Use CultureManager.CurrentCultStr</value>
+  </data>
+  
+  <!--
+      CurrentUICultureSet usage code fix
+  -->
+  <data name="CurrentUICultureSetUsageCodeFixTitle" xml:space="preserve">
+    <value>Use CultureManager.UpdateCulture</value>
+  </data>
+  
+  <!--
+      GetIsNetworkAvailable usage code fix
+  -->
+  <data name="GetIsNetworkAvailableUsageCodeFixTitle" xml:space="preserve">
+    <value>Use NetworkTools.NetworkAvailable</value>
+  </data>
+  
+  <!--
+      NewLineSplitLinuxLiteral usage code fix
+  -->
+  <data name="NewLineSplitLinuxLiteralUsageCodeFixTitle" xml:space="preserve">
+    <value>Use TextTools.SplitNewLines()</value>
+  </data>
+  
+  <!--
+      NewLineSplitWindowsLiteral usage code fix
+  -->
+  <data name="NewLineSplitWindowsLiteralUsageCodeFixTitle" xml:space="preserve">
+    <value>Use TextTools.SplitNewLines()</value>
+  </data>
+  
+  <!--
+      NewLineSplitEnvironmentNewLine usage code fix
+  -->
+  <data name="NewLineSplitEnvironmentNewLineUsageCodeFixTitle" xml:space="preserve">
+    <value>Use TextTools.SplitNewLines()</value>
+  </data>
+  
+  <!--
+      NewLineSplitCharManagerNewLine usage code fix
+  -->
+  <data name="NewLineSplitCharManagerNewLineUsageCodeFixTitle" xml:space="preserve">
+    <value>Use TextTools.SplitNewLines()</value>
+  </data>
+
+  <!--
+      NewLineSplitMacOS9Literal usage code fix
+  -->
+  <data name="NewLineSplitMacOS9LiteralUsageCodeFixTitle" xml:space="preserve">
+    <value>Use TextTools.SplitNewLines()</value>
+  </data>
+  
+  <!--
+      NewLineSplitLinuxLiteral usage code fix
+  -->
+  <data name="NewLineSplitLinuxLiteralUsageAltCodeFixTitle" xml:space="preserve">
+    <value>Use TextTools.SplitNewLinesOld()</value>
+  </data>
+  
+  <!--
+      NewLineSplitWindowsLiteral usage code fix
+  -->
+  <data name="NewLineSplitWindowsLiteralUsageAltCodeFixTitle" xml:space="preserve">
+    <value>Use TextTools.SplitNewLinesOld()</value>
+  </data>
+  
+  <!--
+      NewLineSplitEnvironmentNewLine usage code fix
+  -->
+  <data name="NewLineSplitEnvironmentNewLineUsageAltCodeFixTitle" xml:space="preserve">
+    <value>Use TextTools.SplitNewLinesOld()</value>
+  </data>
+  
+  <!--
+      NewLineSplitCharManagerNewLine usage code fix
+  -->
+  <data name="NewLineSplitCharManagerNewLineUsageAltCodeFixTitle" xml:space="preserve">
+    <value>Use TextTools.SplitNewLinesOld()</value>
+  </data>
+
+  <!--
+      NewLineSplitMacOS9Literal usage code fix
+  -->
+  <data name="NewLineSplitMacOS9LiteralUsageAltCodeFixTitle" xml:space="preserve">
+    <value>Use TextTools.SplitNewLinesOld()</value>
+  </data>
+
+  <!--
+      NewLineSplitOld usage code fix
+  -->
+  <data name="NewLineSplitOldUsageCodeFixTitle" xml:space="preserve">
+    <value>Use TextTools.SplitNewLines()</value>
+  </data>
+</root>

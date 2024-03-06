@@ -1,22 +1,48 @@
-[*.vb]
-
-# BC42304: XML documentation parse error
-dotnet_diagnostic.BC42304.severity = none
-
-# BC42030: Variable is passed by reference before it has been assigned a value
-dotnet_diagnostic.BC42030.severity = none
-
-
 root = true
 
 [*]
 end_of_line = crlf
 insert_final_newline = true
+indent_style = space
+indent_size = 4
+file_header_template = \nNitrocid KS  Copyright (C) 2018-2024  Aptivi\n\nThis file is part of Nitrocid KS\n\nNitrocid KS is free software: you can redistribute it and/or modify\nit under the terms of the GNU General Public License as published by\nthe Free Software Foundation, either version 3 of the License, or\n(at your option) any later version.\n\nNitrocid KS is distributed in the hope that it will be useful,\nbut WITHOUT ANY WARRANTY, without even the implied warranty of\nMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\nGNU General Public License for more details.\n\nYou should have received a copy of the GNU General Public License\nalong with this program.  If not, see <https://www.gnu.org/licenses/>.\n
+
+# IDE0060: Remove unused parameter
+dotnet_diagnostic.IDE0060.severity = warning
+dotnet_diagnostic.CA1822.severity  = none
 
 [*.md]
 charset = utf-8
-indent_style = space
-indent_size = 4
 
 [*.sh]
 end_of_line = lf
+
+[*.resx]
+end_of_line = crlf
+insert_final_newline = true
+indent_style = space
+indent_size = 2
+
+[*.csproj]
+end_of_line = crlf
+insert_final_newline = true
+indent_style = space
+indent_size = 2
+
+[*.xml]
+end_of_line = crlf
+insert_final_newline = true
+indent_style = space
+indent_size = 2
+
+[*.json]
+end_of_line = crlf
+insert_final_newline = true
+indent_style = space
+indent_size = 4
+
+[*.yml]
+end_of_line = crlf
+insert_final_newline = true
+indent_style = space
+indent_size = 2

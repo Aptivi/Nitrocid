@@ -1,0 +1,14 @@
+[
+    {
+        "Name": "Calendar",
+        "Desc": "This section lets you configure how Calendar works.",
+        "Keys": [
+            {
+                "Name": "Save all events and/or reminders destructively",
+                "Type": "SBoolean",
+                "Variable": "SaveEventsRemindersDestructively",
+                "Description": "If enabled, deletes all events and/or reminders before saving all of them using the calendar command."
+            }
+        ]
+    }
+]

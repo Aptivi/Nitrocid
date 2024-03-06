@@ -1,0 +1,757 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+
+  <!--
+      String format analyzer
+  -->
+  <data name="StringFormatAnalyzerTitle" xml:space="preserve">
+    <value>Use TextTools.FormatString() instead of string.Format()</value>
+  </data>
+  <data name="StringFormatAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses string.Format() instead of TextTools.FormatString()</value>
+  </data>
+  <data name="StringFormatAnalyzerDescription" xml:space="preserve">
+    <value>TextTools.FormatString() uses the error handler to handle unknown formatting errors and returns the unformatted string if such errors happen, but string.Format() immediately throws.</value>
+  </data>
+
+  <!--
+      ConsoleWrapper usage analyzer
+  -->
+  <data name="ConsoleWrapperUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use ConsoleWrapper instead of Console</value>
+  </data>
+  <data name="ConsoleWrapperUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses Console instead of ConsoleWrapper</value>
+  </data>
+  <data name="ConsoleWrapperUsageAnalyzerDescription" xml:space="preserve">
+    <value>ConsoleWrapper makes sure that your console is not a dumb console. This class is a wrapper for the Console class so that it works cross-platform, while Console contains some platform-dependent APIs.</value>
+  </data>
+
+  <!--
+      ConsoleTitle usage analyzer
+  -->
+  <data name="ConsoleTitleUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use SetTitle() instead of Console.Title</value>
+  </data>
+  <data name="ConsoleTitleUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses Console.Title instead of SetTitle()</value>
+  </data>
+  <data name="ConsoleTitleUsageAnalyzerDescription" xml:space="preserve">
+    <value>SetTitle() uses the VT sequence to set the title, while Console.Title works in certain conditions.</value>
+  </data>
+
+  <!--
+      ConsoleForeColor usage analyzer
+  -->
+  <data name="ConsoleForeColorUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use SetConsoleColor(Color) instead of Console.ForegroundColor</value>
+  </data>
+  <data name="ConsoleForeColorUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses Console.ForegroundColor instead of SetConsoleColor(Color)</value>
+  </data>
+  <data name="ConsoleForeColorUsageAnalyzerDescription" xml:space="preserve">
+    <value>SetConsoleColor(Color) not only brings better color support provided by the appropriate VT sequences, but it can also use true color. Console.ForegroundColor only handles 16 colors.</value>
+  </data>
+
+  <!--
+      ConsoleBackColor usage analyzer
+  -->
+  <data name="ConsoleBackColorUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use SetConsoleColor(Color, true) instead of Console.BackgroundColor</value>
+  </data>
+  <data name="ConsoleBackColorUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses Console.BackgroundColor instead of SetConsoleColor(Color, true)</value>
+  </data>
+  <data name="ConsoleBackColorUsageAnalyzerDescription" xml:space="preserve">
+    <value>SetConsoleColor(Color, true) not only brings better color support provided by the appropriate VT sequences, but it can also use true color. Console.BackgroundColor only handles 16 colors.</value>
+  </data>
+
+  <!--
+      ConsoleReadLine usage analyzer
+  -->
+  <data name="ConsoleReadLineUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use ReadLine() instead of Console.ReadLine</value>
+  </data>
+  <data name="ConsoleReadLineUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses Console.ReadLine instead of ReadLine()</value>
+  </data>
+  <data name="ConsoleReadLineUsageAnalyzerDescription" xml:space="preserve">
+    <value>ReadLine() provided by the input helper from Nitrocid allows you to seamlessly read a user input with settings provided by Terminaux.</value>
+  </data>
+
+  <!--
+      ConsoleWrite usage analyzer
+  -->
+  <data name="ConsoleWriteUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use TWC.Write() instead of Console.Write</value>
+  </data>
+  <data name="ConsoleWriteUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses Console.Write instead of TWC.Write()</value>
+  </data>
+  <data name="ConsoleWriteUsageAnalyzerDescription" xml:space="preserve">
+    <value>TextWriterColor.Write() contains workarounds for VT sequences needed for Linux hosts to properly report the correct position post-write. Its overloads also allow you to specify the color and the line writing.</value>
+  </data>
+
+  <!--
+      ConsoleWriteLine usage analyzer
+  -->
+  <data name="ConsoleWriteLineUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use TWC.Write() instead of Console.WriteLine</value>
+  </data>
+  <data name="ConsoleWriteLineUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses Console.WriteLine instead of TWC.Write()</value>
+  </data>
+  <data name="ConsoleWriteLineUsageAnalyzerDescription" xml:space="preserve">
+    <value>TextWriterColor.Write() contains workarounds for VT sequences needed for Linux hosts to properly report the correct position post-write. Its overloads also allow you to specify the color and the line writing.</value>
+  </data>
+
+  <!--
+      ConsoleResetColor usage analyzer
+  -->
+  <data name="ConsoleResetColorUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use ConsoleExtensions.ResetColors() instead of Console.ResetColor</value>
+  </data>
+  <data name="ConsoleResetColorUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses Console.ResetColor instead of ConsoleExtensions.ResetColors()</value>
+  </data>
+  <data name="ConsoleResetColorUsageAnalyzerDescription" xml:space="preserve">
+    <value>ConsoleExtensions.ResetColors() contains VT sequences that help reset colors in a portable way.</value>
+  </data>
+
+  <!--
+      GetFileSystemEntries usage analyzer
+  -->
+  <data name="DirectoryGetFileSystemEntriesUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use Listing.CreateList() instead of Directory.GetFileSystemEntries</value>
+  </data>
+  <data name="DirectoryGetFileSystemEntriesUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses Directory.GetFileSystemEntries instead of Listing.CreateList()</value>
+  </data>
+  <data name="DirectoryGetFileSystemEntriesUsageAnalyzerDescription" xml:space="preserve">
+    <value>Listing.CreateList() returns a list of FileSystemEntry instances that provides you information about a file, as well as a wrapper to the FileSystemInfo instance for that file.</value>
+  </data>
+
+  <!--
+      GetFileSystemEntries usage analyzer
+  -->
+  <data name="DirectoryGetFileSystemEntriesAltUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use Listing.GetFileSystemEntries() instead of Directory.GetFileSystemEntries</value>
+  </data>
+  <data name="DirectoryGetFileSystemEntriesAltUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses Directory.GetFileSystemEntries instead of Listing.GetFileSystemEntries()</value>
+  </data>
+  <data name="DirectoryGetFileSystemEntriesAltUsageAnalyzerDescription" xml:space="preserve">
+    <value>Alternatively, Listing.GetFileSystemEntries() returns a list of paths to files or folders with better support for patterns. You can also use GetFilesystemEntriesRegex() for regular expression support.</value>
+  </data>
+
+  <!--
+      FileCopy usage analyzer
+  -->
+  <data name="FileCopyUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use Copying.CopyFileOrDir() instead of File.Copy</value>
+  </data>
+  <data name="FileCopyUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses File.Copy instead of Copying.CopyFileOrDir()</value>
+  </data>
+  <data name="FileCopyUsageAnalyzerDescription" xml:space="preserve">
+    <value>Copying.CopyFileOrDir() neutralizes the provided paths to their absolute correct paths, while File.Copy operates at the executable directory (Environment.CurrentDirectory), which may not be what you want.</value>
+  </data>
+
+  <!--
+      DirectoryCreateDirectory usage analyzer
+  -->
+  <data name="DirectoryCreateDirectoryUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use Making.MakeDirectory() instead of Directory.CreateDirectory</value>
+  </data>
+  <data name="DirectoryCreateDirectoryUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses Directory.CreateDirectory instead of Making.MakeDirectory()</value>
+  </data>
+  <data name="DirectoryCreateDirectoryUsageAnalyzerDescription" xml:space="preserve">
+    <value>Making.MakeDirectory() neutralizes the provided path to its absolute correct path, while Directory.CreateDirectory operates at the executable directory (Environment.CurrentDirectory), which may not be what you want.</value>
+  </data>
+
+  <!--
+      FileCreate usage analyzer
+  -->
+  <data name="FileCreateUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use Making.MakeFile() instead of File.Create</value>
+  </data>
+  <data name="FileCreateUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses File.Create instead of Making.MakeFile()</value>
+  </data>
+  <data name="FileCreateUsageAnalyzerDescription" xml:space="preserve">
+    <value>Making.MakeFile() neutralizes the provided path to its absolute correct path, while File.Create operates at the executable directory (Environment.CurrentDirectory), which may not be what you want.</value>
+  </data>
+
+  <!--
+      FileMove usage analyzer
+  -->
+  <data name="FileMoveUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use Moving.MoveFileOrDir() instead of File.Move</value>
+  </data>
+  <data name="FileMoveUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses File.Move instead of Moving.MoveFileOrDir()</value>
+  </data>
+  <data name="FileMoveUsageAnalyzerDescription" xml:space="preserve">
+    <value>Moving.MoveFileOrDir() neutralizes the provided paths to their absolute correct paths, while File.Move operates at the executable directory (Environment.CurrentDirectory), which may not be what you want.</value>
+  </data>
+
+  <!--
+      FileDelete usage analyzer
+  -->
+  <data name="FileDeleteUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use Removing.RemoveFile() instead of File.Delete</value>
+  </data>
+  <data name="FileDeleteUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses File.Delete instead of Removing.RemoveFile()</value>
+  </data>
+  <data name="FileDeleteUsageAnalyzerDescription" xml:space="preserve">
+    <value>Removing.RemoveFile() neutralizes the provided path to its absolute correct path, while File.Delete operates at the executable directory (Environment.CurrentDirectory), which may not be what you want.</value>
+  </data>
+
+  <!--
+      DirectoryDelete usage analyzer
+  -->
+  <data name="DirectoryDeleteUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use Removing.RemoveDirectory() instead of Directory.Delete</value>
+  </data>
+  <data name="DirectoryDeleteUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses Directory.Delete instead of Removing.RemoveDirectory()</value>
+  </data>
+  <data name="DirectoryDeleteUsageAnalyzerDescription" xml:space="preserve">
+    <value>Removing.RemoveDirectory() neutralizes the provided path to its absolute correct path, while Directory.Delete operates at the executable directory (Environment.CurrentDirectory), which may not be what you want.</value>
+  </data>
+
+  <!--
+      FileExists usage analyzer
+  -->
+  <data name="FileExistsUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use Checking.FileExists() instead of File.Exists</value>
+  </data>
+  <data name="FileExistsUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses File.Exists instead of Checking.FileExists()</value>
+  </data>
+  <data name="FileExistsUsageAnalyzerDescription" xml:space="preserve">
+    <value>Checking.FileExists() neutralizes the provided path to its absolute correct path, while File.Exists operates at the executable directory (Environment.CurrentDirectory), which may not be what you want.</value>
+  </data>
+
+  <!--
+      DirectoryExists usage analyzer
+  -->
+  <data name="DirectoryExistsUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use Checking.DirectoryExists() instead of Directory.Exists</value>
+  </data>
+  <data name="DirectoryExistsUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses Directory.Exists instead of Checking.DirectoryExists()</value>
+  </data>
+  <data name="DirectoryExistsUsageAnalyzerDescription" xml:space="preserve">
+    <value>Checking.DirectoryExists() neutralizes the provided path to its absolute correct path, while Directory.Exists operates at the executable directory (Environment.CurrentDirectory), which may not be what you want.</value>
+  </data>
+
+  <!--
+      PathExists usage analyzer
+  -->
+  <data name="PathExistsUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use Checking.Exists() instead of Path.Exists</value>
+  </data>
+  <data name="PathExistsUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses Path.Exists instead of Checking.Exists()</value>
+  </data>
+  <data name="PathExistsUsageAnalyzerDescription" xml:space="preserve">
+    <value>Checking.Exists() neutralizes the provided path to its absolute correct path, while Path.Exists operates at the executable Path (Environment.CurrentPath), which may not be what you want.</value>
+  </data>
+
+  <!--
+      PathIsPathRooted usage analyzer
+  -->
+  <data name="PathIsPathRootedUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use Checking.Rooted() instead of Path.IsPathRooted</value>
+  </data>
+  <data name="PathIsPathRootedUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses Path.IsPathRooted instead of Checking.Rooted()</value>
+  </data>
+  <data name="PathIsPathRootedUsageAnalyzerDescription" xml:space="preserve">
+    <value>Checking.Rooted() uses the filesystem driver to call Path.IsPathRooted.</value>
+  </data>
+
+  <!--
+      PathGetInvalidPathChars usage analyzer
+  -->
+  <data name="PathGetInvalidPathCharsUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use Parsing.GetInvalidPathChars() instead of Path.GetInvalidPathChars</value>
+  </data>
+  <data name="PathGetInvalidPathCharsUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses Path.GetInvalidPathChars instead of Parsing.GetInvalidPathChars()</value>
+  </data>
+  <data name="PathGetInvalidPathCharsUsageAnalyzerDescription" xml:space="preserve">
+    <value>Parsing.GetInvalidPathChars() always returns invalid characters for Windows paths, regardless of the host operating system, while Path.GetInvalidPathChars returns a list of forbidden path characters for an operating system, which may be wrong in .NET 6.0 or later for the following characters: '"', '&lt;', '&gt;'.</value>
+  </data>
+
+  <!--
+      PathGetFullPath usage analyzer
+  -->
+  <data name="PathGetFullPathUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use Filesystem.NeutralizePath() instead of Path.GetFullPath</value>
+  </data>
+  <data name="PathGetFullPathUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses Path.GetFullPath instead of Filesystem.NeutralizePath()</value>
+  </data>
+  <data name="PathGetFullPathUsageAnalyzerDescription" xml:space="preserve">
+    <value>Filesystem.NeutralizePath() neutralizes the provided path to its absolute correct path, but also gives a path separated by the platform-agnostic path separator.</value>
+  </data>
+
+  <!--
+      TimeZoneInfoLocal usage analyzer
+  -->
+  <data name="TimeZoneInfoLocalUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use TimeZones.GetCurrentZoneInfo() instead of TimeZoneInfo.Local</value>
+  </data>
+  <data name="TimeZoneInfoLocalUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses TimeZoneInfo.Local instead of TimeZones.GetCurrentZoneInfo()</value>
+  </data>
+  <data name="TimeZoneInfoLocalUsageAnalyzerDescription" xml:space="preserve">
+    <value>TimeZones.GetCurrentZoneInfo() gets your local time zone and respects your kernel settings based on that. It either gets your local time zone from your system or from your kernel configuration.</value>
+  </data>
+
+  <!--
+      KernelDateTimeToTimeString usage analyzer
+  -->
+  <data name="KernelDateTimeToTimeStringUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use TimeDateRenderers.RenderTime() instead of TimeDateTools.KernelDateTime.ToString</value>
+  </data>
+  <data name="KernelDateTimeToTimeStringUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses TimeDateTools.KernelDateTime.ToString instead of TimeDateRenderers.RenderTime()</value>
+  </data>
+  <data name="KernelDateTimeToTimeStringUsageAnalyzerDescription" xml:space="preserve">
+    <value>TimeDateRenderers.RenderTime() respects your kernel settings when rendering time.</value>
+  </data>
+
+  <!--
+      KernelDateTimeToDateString usage analyzer
+  -->
+  <data name="KernelDateTimeToDateStringUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use TimeDateRenderers.RenderDate() instead of TimeDateTools.KernelDateTime.ToString</value>
+  </data>
+  <data name="KernelDateTimeToDateStringUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses TimeDateTools.KernelDateTime.ToString instead of TimeDateRenderers.RenderDate()</value>
+  </data>
+  <data name="KernelDateTimeToDateStringUsageAnalyzerDescription" xml:space="preserve">
+    <value>TimeDateRenderers.RenderDate() respects your kernel settings when rendering date.</value>
+  </data>
+
+  <!--
+      KernelDateTimeToString usage analyzer
+  -->
+  <data name="KernelDateTimeToStringUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use TimeDateRenderers.Render() instead of TimeDateTools.KernelDateTime.ToString</value>
+  </data>
+  <data name="KernelDateTimeToStringUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses TimeDateTools.KernelDateTime.ToString instead of TimeDateRenderers.Render()</value>
+  </data>
+  <data name="KernelDateTimeToStringUsageAnalyzerDescription" xml:space="preserve">
+    <value>TimeDateRenderers.Render() respects your kernel settings when rendering date and time.</value>
+  </data>
+
+  <!--
+      KernelDateTimeToTimeStringUtc usage analyzer
+  -->
+  <data name="KernelDateTimeToTimeStringUtcUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use TimeDateRenderersUtc.RenderTimeUtc() instead of TimeDateTools.KernelDateTimeUtc.ToString</value>
+  </data>
+  <data name="KernelDateTimeToTimeStringUtcUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses TimeDateTools.KernelDateTimeUtc.ToString instead of TimeDateRenderersUtc.RenderTimeUtc()</value>
+  </data>
+  <data name="KernelDateTimeToTimeStringUtcUsageAnalyzerDescription" xml:space="preserve">
+    <value>TimeDateRenderersUtc.RenderTimeUtc() respects your kernel settings when rendering time.</value>
+  </data>
+
+  <!--
+      KernelDateTimeToDateStringUtc usage analyzer
+  -->
+  <data name="KernelDateTimeToDateStringUtcUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use TimeDateRenderersUtc.RenderDateUtc() instead of TimeDateTools.KernelDateTimeUtc.ToString</value>
+  </data>
+  <data name="KernelDateTimeToDateStringUtcUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses TimeDateTools.KernelDateTimeUtc.ToString instead of TimeDateRenderersUtc.RenderDateUtc()</value>
+  </data>
+  <data name="KernelDateTimeToDateStringUtcUsageAnalyzerDescription" xml:space="preserve">
+    <value>TimeDateRenderersUtc.RenderDateUtc() respects your kernel settings when rendering date.</value>
+  </data>
+
+  <!--
+      KernelDateTimeToStringUtc usage analyzer
+  -->
+  <data name="KernelDateTimeToStringUtcUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use TimeDateRenderersUtc.RenderUtc() instead of TimeDateTools.KernelDateTimeUtc.ToString</value>
+  </data>
+  <data name="KernelDateTimeToStringUtcUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses TimeDateTools.KernelDateTimeUtc.ToString instead of TimeDateRenderersUtc.RenderUtc()</value>
+  </data>
+  <data name="KernelDateTimeToStringUtcUsageAnalyzerDescription" xml:space="preserve">
+    <value>TimeDateRenderersUtc.RenderUtc() respects your kernel settings when rendering date and time.</value>
+  </data>
+
+  <!--
+      PlatformIdWin32Nt usage analyzer
+  -->
+  <data name="PlatformIdWin32NtUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use KernelPlatform.IsOnWindows() instead of Environment.OSVersion.Platform == PlatformID.Win32NT</value>
+  </data>
+  <data name="PlatformIdWin32NtUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses Environment.OSVersion.Platform == PlatformID.Win32NT instead of KernelPlatform.IsOnWindows()</value>
+  </data>
+  <data name="PlatformIdWin32NtUsageAnalyzerDescription" xml:space="preserve">
+    <value>KernelPlatform.IsOnWindows() is more readable and less verbose than Environment.OSVersion.Platform == PlatformID.Win32NT.</value>
+  </data>
+
+  <!--
+      PlatformIdUnix usage analyzer
+  -->
+  <data name="PlatformIdUnixUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use KernelPlatform.IsOnUnix() instead of Environment.OSVersion.Platform == PlatformID.Unix</value>
+  </data>
+  <data name="PlatformIdUnixUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses Environment.OSVersion.Platform == PlatformID.Unix instead of KernelPlatform.IsOnUnix()</value>
+  </data>
+  <data name="PlatformIdUnixUsageAnalyzerDescription" xml:space="preserve">
+    <value>KernelPlatform.IsOnUnix() is more readable and less verbose than Environment.OSVersion.Platform == PlatformID.Unix.</value>
+  </data>
+
+  <!--
+      IsOsPlatformWindows usage analyzer
+  -->
+  <data name="IsOsPlatformWindowsUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use KernelPlatform.IsOnWindows() instead of RuntimeInformation.IsOSPlatform(OSPlatform.Windows)</value>
+  </data>
+  <data name="IsOsPlatformWindowsUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses RuntimeInformation.IsOSPlatform(OSPlatform.Windows) instead of KernelPlatform.IsOnWindows()</value>
+  </data>
+  <data name="IsOsPlatformWindowsUsageAnalyzerDescription" xml:space="preserve">
+    <value>KernelPlatform.IsOnWindows() is more readable and less verbose than RuntimeInformation.IsOSPlatform(OSPlatform.Windows).</value>
+  </data>
+
+  <!--
+      IsOsPlatformLinux usage analyzer
+  -->
+  <data name="IsOsPlatformLinuxUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use KernelPlatform.IsOnUnix() instead of RuntimeInformation.IsOSPlatform(OSPlatform.Linux)</value>
+  </data>
+  <data name="IsOsPlatformLinuxUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses RuntimeInformation.IsOSPlatform(OSPlatform.Linux) instead of KernelPlatform.IsOnUnix()</value>
+  </data>
+  <data name="IsOsPlatformLinuxUsageAnalyzerDescription" xml:space="preserve">
+    <value>KernelPlatform.IsOnUnix() is more readable and less verbose than RuntimeInformation.IsOSPlatform(OSPlatform.Linux).</value>
+  </data>
+
+  <!--
+      IsOsPlatformOSX usage analyzer
+  -->
+  <data name="IsOsPlatformOSXUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use KernelPlatform.IsOnMacOS() instead of RuntimeInformation.IsOSPlatform(OSPlatform.OSX)</value>
+  </data>
+  <data name="IsOsPlatformOSXUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses RuntimeInformation.IsOSPlatform(OSPlatform.OSX) instead of KernelPlatform.IsOnMacOS()</value>
+  </data>
+  <data name="IsOsPlatformOSXUsageAnalyzerDescription" xml:space="preserve">
+    <value>KernelPlatform.IsOnMacOS() is more readable and less verbose than RuntimeInformation.IsOSPlatform(OSPlatform.OSX).</value>
+  </data>
+
+  <!--
+      TermProgram usage analyzer
+  -->
+  <data name="TermProgramUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use KernelPlatform.GetTerminalEmulator() instead of Environment.GetEnvironmentVariable("TERM_PROGRAM")</value>
+  </data>
+  <data name="TermProgramUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses Environment.GetEnvironmentVariable("TERM_PROGRAM") instead of KernelPlatform.GetTerminalEmulator()</value>
+  </data>
+  <data name="TermProgramUsageAnalyzerDescription" xml:space="preserve">
+    <value>KernelPlatform.GetTerminalEmulator() is more readable and less verbose than Environment.GetEnvironmentVariable("TERM_PROGRAM").</value>
+  </data>
+
+  <!--
+      Term usage analyzer
+  -->
+  <data name="TermUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use KernelPlatform.GetTerminalType() instead of Environment.GetEnvironmentVariable("TERM")</value>
+  </data>
+  <data name="TermUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses Environment.GetEnvironmentVariable("TERM") instead of KernelPlatform.GetTerminalType()</value>
+  </data>
+  <data name="TermUsageAnalyzerDescription" xml:space="preserve">
+    <value>KernelPlatform.GetTerminalType() is more readable and less verbose than Environment.GetEnvironmentVariable("TERM").</value>
+  </data>
+
+  <!--
+      Tmux usage analyzer
+  -->
+  <data name="TmuxUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use KernelPlatform.IsRunningFromTmux() instead of Environment.GetEnvironmentVariable("TMUX")</value>
+  </data>
+  <data name="TmuxUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses Environment.GetEnvironmentVariable("TMUX") instead of KernelPlatform.IsRunningFromTmux()</value>
+  </data>
+  <data name="TmuxUsageAnalyzerDescription" xml:space="preserve">
+    <value>KernelPlatform.IsRunningFromTmux() is more readable and less verbose than Environment.GetEnvironmentVariable("TMUX").</value>
+  </data>
+
+  <!--
+      Screen usage analyzer
+  -->
+  <data name="ScreenUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use KernelPlatform.IsRunningFromScreen() instead of Environment.GetEnvironmentVariable("STY")</value>
+  </data>
+  <data name="ScreenUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses Environment.GetEnvironmentVariable("STY") instead of KernelPlatform.IsRunningFromScreen()</value>
+  </data>
+  <data name="ScreenUsageAnalyzerDescription" xml:space="preserve">
+    <value>KernelPlatform.IsRunningFromScreen() is more readable and less verbose than Environment.GetEnvironmentVariable("STY").</value>
+  </data>
+
+  <!--
+      CurrentUICultureGet usage analyzer
+  -->
+  <data name="CurrentUICultureGetUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use CultureManager.CurrentCult instead of CultureInfo.CurrentUICulture</value>
+  </data>
+  <data name="CurrentUICultureGetUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses CultureInfo.CurrentUICulture instead of CultureManager.CurrentCult</value>
+  </data>
+  <data name="CurrentUICultureGetUsageAnalyzerDescription" xml:space="preserve">
+    <value>CultureManager.CurrentCult gives you a current culture that is set by the kernel settings without affecting the host system.</value>
+  </data>
+
+  <!--
+      CurrentUICultureGetName usage analyzer
+  -->
+  <data name="CurrentUICultureGetNameUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use CultureManager.CurrentCultStr instead of CultureInfo.CurrentUICulture.Name</value>
+  </data>
+  <data name="CurrentUICultureGetNameUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses CultureInfo.CurrentUICulture.Name instead of CultureManager.CurrentCultStr</value>
+  </data>
+  <data name="CurrentUICultureGetNameUsageAnalyzerDescription" xml:space="preserve">
+    <value>CultureManager.CurrentCultStr gives you a current culture that is set by the kernel settings without affecting the host system.</value>
+  </data>
+
+  <!--
+      CurrentUICultureSet usage analyzer
+  -->
+  <data name="CurrentUICultureSetUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use CultureManager.UpdateCulture() instead of setting CultureInfo.CurrentUICulture</value>
+  </data>
+  <data name="CurrentUICultureSetUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses CultureInfo.CurrentUICulture instead of CultureManager.UpdateCulture()</value>
+  </data>
+  <data name="CurrentUICultureSetUsageAnalyzerDescription" xml:space="preserve">
+    <value>CultureManager.UpdateCulture() sets a current culture without affecting the host system. It also updates the settings so that it holds the new culture.</value>
+  </data>
+
+  <!--
+      GetIsNetworkAvailable usage analyzer
+  -->
+  <data name="GetIsNetworkAvailableUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use NetworkTools.NetworkAvailable instead of NetworkInterface.GetIsNetworkAvailable</value>
+  </data>
+  <data name="GetIsNetworkAvailableUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses NetworkInterface.GetIsNetworkAvailable instead of NetworkTools.NetworkAvailable</value>
+  </data>
+  <data name="GetIsNetworkAvailableUsageAnalyzerDescription" xml:space="preserve">
+    <value>While NetworkInterface.GetIsNetworkAvailable checks your network, it doesn't work on Android systems, so it's better to use NetworkTools.NetworkAvailable. Please note that this will return false if there is no connectivity for Android systems.</value>
+  </data>
+
+  <!--
+      NewLineSplitLinuxLiteral usage analyzer
+  -->
+  <data name="NewLineSplitLinuxLiteralUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use TextTools.SplitNewLines() instead of .Split("\n")</value>
+  </data>
+  <data name="NewLineSplitLinuxLiteralUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses .Split("\n") instead of TextTools.SplitNewLines()</value>
+  </data>
+  <data name="NewLineSplitLinuxLiteralUsageAnalyzerDescription" xml:space="preserve">
+    <value>TextTools.SplitNewLines() simplifies the readability of the split by new lines function.</value>
+  </data>
+
+  <!--
+      NewLineSplitWindowsLiteral usage analyzer
+  -->
+  <data name="NewLineSplitWindowsLiteralUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use TextTools.SplitNewLines() instead of .Split("\r\n")</value>
+  </data>
+  <data name="NewLineSplitWindowsLiteralUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses .Split("\r\n") instead of TextTools.SplitNewLines()</value>
+  </data>
+  <data name="NewLineSplitWindowsLiteralUsageAnalyzerDescription" xml:space="preserve">
+    <value>TextTools.SplitNewLines() simplifies the readability of the split by new lines function.</value>
+  </data>
+
+  <!--
+      NewLineSplitEnvironmentNewLine usage analyzer
+  -->
+  <data name="NewLineSplitEnvironmentNewLineUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use TextTools.SplitNewLines() instead of Environment.NewLine</value>
+  </data>
+  <data name="NewLineSplitEnvironmentNewLineUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses Environment.NewLine instead of TextTools.SplitNewLines()</value>
+  </data>
+  <data name="NewLineSplitEnvironmentNewLineUsageAnalyzerDescription" xml:space="preserve">
+    <value>TextTools.SplitNewLines() simplifies the readability of the split by new lines function.</value>
+  </data>
+
+  <!--
+      NewLineSplitCharManagerNewLine usage analyzer
+  -->
+  <data name="NewLineSplitCharManagerNewLineUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use TextTools.SplitNewLines() instead of CharManager.NewLine</value>
+  </data>
+  <data name="NewLineSplitCharManagerNewLineUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses CharManager.NewLine instead of TextTools.SplitNewLines()</value>
+  </data>
+  <data name="NewLineSplitCharManagerNewLineUsageAnalyzerDescription" xml:space="preserve">
+    <value>TextTools.SplitNewLines() simplifies the readability of the split by new lines function.</value>
+  </data>
+
+  <!--
+      NewLineSplitMacOS9Literal usage analyzer
+  -->
+  <data name="NewLineSplitMacOS9LiteralUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use TextTools.SplitNewLines() instead of .Split("\r")</value>
+  </data>
+  <data name="NewLineSplitMacOS9LiteralUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses .Split("\r") instead of TextTools.SplitNewLines()</value>
+  </data>
+  <data name="NewLineSplitMacOS9LiteralUsageAnalyzerDescription" xml:space="preserve">
+    <value>TextTools.SplitNewLines() simplifies the readability of the split by new lines function.</value>
+  </data>
+
+  <!--
+      NewLineSplitOld usage analyzer
+  -->
+  <data name="NewLineSplitOldUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use TextTools.SplitNewLines() instead of TextTools.SplitNewLinesOld()</value>
+  </data>
+  <data name="NewLineSplitOldUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses TextTools.SplitNewLinesOld() instead of TextTools.SplitNewLines()</value>
+  </data>
+  <data name="NewLineSplitOldUsageAnalyzerDescription" xml:space="preserve">
+    <value>TextTools.SplitNewLines() is able to correctly split text with Mac OS 9 newline characters and mixed new line characters, while TextTools.SplitNewLinesOld() can't split such strings properly.</value>
+  </data>
+</root>

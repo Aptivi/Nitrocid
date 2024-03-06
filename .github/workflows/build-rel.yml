@@ -1,0 +1,37 @@
+name: Build Project (Release)
+
+on:
+  push:
+    branches:
+      - main
+      - servicing
+  pull_request:
+    branches:
+      - main
+      - servicing
+    
+jobs:
+  build:
+    strategy:
+      matrix:
+        runs-on: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.runs-on }}
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        ref: ${{ github.ref }}
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x'
+    - name: Solution Compilation
+      run: dotnet build -maxCpuCount:1 --configuration Release
+    - name: Testing
+      run: dotnet test --no-build --configuration Release
+    - uses: actions/upload-artifact@v4
+      if: success() || failure()
+      with:
+        name: unit-test-log-${{ matrix.runs-on }}
+        path: "private/Nitrocid.Tests/KSTest/net8.0/UnitTestDebug.log"
+        
