@@ -94,6 +94,7 @@ namespace Nitrocid.Files.Editors.TextEdit
 
             // Main loop
             lineIdx = 0;
+            lineColIdx = 0;
             var screen = new Screen();
             ScreenTools.SetCurrent(screen);
             ConsoleWrapper.CursorVisible = false;
