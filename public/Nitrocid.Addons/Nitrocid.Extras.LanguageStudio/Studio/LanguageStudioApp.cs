@@ -145,7 +145,7 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
                 [
                     new InputChoiceInfo($"{englishLines.Count + 1}", Translate.DoTranslation("Go Back...")),
                 ];
-                int selectedStringNum = SelectionStyle.PromptSelection("- " + finalTitle + " " + new string('-', ConsoleWrapper.WindowWidth - ("- " + finalTitle + " ").Length) + CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation("Select a string to translate:"), [.. choices], [.. altChoices]);
+                int selectedStringNum = SelectionStyle.PromptSelection("\n  * " + finalTitle + " " + CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation("Select a string to translate:"), [.. choices], [.. altChoices]);
 
                 // Check the answer
                 if (selectedStringNum == englishLines.Count + 1)
