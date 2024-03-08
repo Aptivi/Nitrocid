@@ -338,19 +338,19 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
         {
             char PowerLineSpaceship = Convert.ToChar(0xE0B0);
             char SpaceshipSymbol = MeteorUsePowerLine ? PowerLineSpaceship : '>';
-            return TextWriterWhereColor.RenderWhere(Convert.ToString(SpaceshipSymbol), 0, SpaceshipHeight, false, ConsoleColors.Green, ConsoleColors.Black);
+            return TextWriterWhereColor.RenderWhereColorBack(Convert.ToString(SpaceshipSymbol), 0, SpaceshipHeight, false, ConsoleColors.Green, ConsoleColors.Black);
         }
 
         private static string DrawMeteor(int MeteorX, int MeteorY)
         {
             char MeteorSymbol = '*';
-            return TextWriterWhereColor.RenderWhere(Convert.ToString(MeteorSymbol), MeteorX, MeteorY, false, ConsoleColors.Red, ConsoleColors.Black);
+            return TextWriterWhereColor.RenderWhereColorBack(Convert.ToString(MeteorSymbol), MeteorX, MeteorY, false, ConsoleColors.Red, ConsoleColors.Black);
         }
 
         private static string DrawBullet(int BulletX, int BulletY)
         {
             char BulletSymbol = '-';
-            return TextWriterWhereColor.RenderWhere(Convert.ToString(BulletSymbol), BulletX, BulletY, false, ConsoleColors.Aqua, ConsoleColors.Black);
+            return TextWriterWhereColor.RenderWhereColorBack(Convert.ToString(BulletSymbol), BulletX, BulletY, false, ConsoleColors.Aqua, ConsoleColors.Black);
         }
 
     }

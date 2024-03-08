@@ -296,7 +296,11 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                         char StarSymbol = '*';
                         int StarX = Star.Item1;
                         int StarY = Star.Item2;
-                        buffer.Append(TextWriterWhereColor.RenderWhere(Convert.ToString(StarSymbol), StarX, StarY, false, ConsoleColors.White, ConsoleColors.Black));
+                        buffer.Append(
+                            new Color(ConsoleColors.White).VTSequenceForeground +
+                            new Color(ConsoleColors.Black).VTSequenceBackground +
+                            TextWriterWhereColor.RenderWhere(Convert.ToString(StarSymbol), StarX, StarY, false)
+                        );
                     }
 
                     // Check to see if the spaceship is blown up by the opposing spaceship
@@ -379,8 +383,8 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             char SpaceshipSymbolP1 = ShipDuetUsePowerLine ? PowerLineSpaceshipP1 : '>';
             char SpaceshipSymbolP2 = ShipDuetUsePowerLine ? PowerLineSpaceshipP2 : '<';
             builder.Append(
-                TextWriterWhereColor.RenderWhere(Convert.ToString(SpaceshipSymbolP1), 0, SpaceshipHeightPlayer1, false, ConsoleColors.Green, ConsoleColors.Black) +
-                TextWriterWhereColor.RenderWhere(Convert.ToString(SpaceshipSymbolP2), ConsoleWrapper.WindowWidth - 1, SpaceshipHeightPlayer2, false, ConsoleColors.DarkGreen, ConsoleColors.Black)
+                TextWriterWhereColor.RenderWhereColorBack(Convert.ToString(SpaceshipSymbolP1), 0, SpaceshipHeightPlayer1, false, ConsoleColors.Green, ConsoleColors.Black) +
+                TextWriterWhereColor.RenderWhereColorBack(Convert.ToString(SpaceshipSymbolP2), ConsoleWrapper.WindowWidth - 1, SpaceshipHeightPlayer2, false, ConsoleColors.DarkGreen, ConsoleColors.Black)
             );
             return builder.ToString();
         }
@@ -388,7 +392,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
         private static string DrawBullet(int BulletX, int BulletY)
         {
             char BulletSymbol = '-';
-            return TextWriterWhereColor.RenderWhere(Convert.ToString(BulletSymbol), BulletX, BulletY, false, ConsoleColors.Aqua, ConsoleColors.Black);
+            return TextWriterWhereColor.RenderWhereColorBack(Convert.ToString(BulletSymbol), BulletX, BulletY, false, ConsoleColors.Aqua, ConsoleColors.Black);
         }
 
     }
