@@ -20,6 +20,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using Nitrocid.Files;
 using Nitrocid.Files.Operations.Querying;
@@ -33,7 +34,7 @@ namespace Nitrocid.Misc.Reflection
     /// </summary>
     public static class AssemblyLookup
     {
-
+        internal readonly static List<string> baseAssemblyLookupPaths = [];
         private readonly static List<string> AssemblyLookupPaths = [];
 
         /// <summary>
@@ -83,7 +84,8 @@ namespace Nitrocid.Misc.Reflection
                 throw new KernelException(KernelExceptionType.OldModDetected);
 
             // Try to load assembly from lookup path
-            foreach (string LookupPath in AssemblyLookupPaths)
+            var paths = baseAssemblyLookupPaths.Union(AssemblyLookupPaths).ToArray();
+            foreach (string LookupPath in paths)
             {
                 string DepAssemblyFilePath = Path.Combine(LookupPath, DepAssemblyName + ".dll");
                 try
@@ -110,6 +112,5 @@ namespace Nitrocid.Misc.Reflection
             // Get the final assembly
             return FinalAssembly;
         }
-
     }
 }

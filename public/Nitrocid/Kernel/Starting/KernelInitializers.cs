@@ -421,6 +421,9 @@ namespace Nitrocid.Kernel.Starting
                 PowerManager.RebootRequested = false;
                 Login.LogoutRequested = false;
 
+                // Reset base lookup paths
+                AssemblyLookup.baseAssemblyLookupPaths.Clear();
+
                 // Set modes as appropriate
                 KernelEntry.SafeMode = PowerManager.RebootingToSafeMode;
                 KernelEntry.Maintenance = PowerManager.RebootingToMaintenanceMode;

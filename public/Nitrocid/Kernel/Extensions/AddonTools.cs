@@ -149,6 +149,7 @@ namespace Nitrocid.Kernel.Extensions
                 }
                 SplashReport.ReportProgress(Translate.DoTranslation("Initializing kernel addon") + " {0}...", Path.GetFileName(addon));
                 probedAddons.Add(addonPath);
+                AssemblyLookup.baseAssemblyLookupPaths.Add(addon);
                 var asm = Assembly.LoadFrom(addonPath);
                 var addonInstance = GetAddonInstance(asm) ??
                     throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("This addon is not a valid addon.") + $" {addonPath}");
