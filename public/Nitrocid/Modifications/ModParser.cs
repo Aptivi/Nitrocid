@@ -157,7 +157,7 @@ namespace Nitrocid.Modifications
                 {
                     // Add mod dependencies folder (if any) to the private appdomain lookup folder
                     string ModDepPath = ModPath + "Deps/" + Path.GetFileNameWithoutExtension(modFile) + "-" + FileVersionInfo.GetVersionInfo(ModPath + modFile).FileVersion + "/";
-                    AssemblyLookup.AddPathToAssemblySearchPath(ModDepPath);
+                    AssemblyLookup.baseAssemblyLookupPaths.Add(ModDepPath);
 
                     // Check the API version defined by mod to ensure that we don't load mods that are API incompatible
                     try

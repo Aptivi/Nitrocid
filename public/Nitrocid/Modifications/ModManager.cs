@@ -199,7 +199,7 @@ namespace Nitrocid.Modifications
 
                         // Remove the mod dependency from the lookup
                         string ModDepPath = ModPath + "Deps/" + Path.GetFileNameWithoutExtension(TargetMod.ModFilePath) + "-" + FileVersionInfo.GetVersionInfo(TargetMod.ModFilePath).FileVersion + "/";
-                        AssemblyLookup.RemovePathFromAssemblySearchPath(ModDepPath);
+                        AssemblyLookup.baseAssemblyLookupPaths.Remove(ModDepPath);
                     }
 
                     // Clear all mod commands list, since we've stopped all mods.
@@ -280,7 +280,7 @@ namespace Nitrocid.Modifications
 
                 // Remove the mod dependency from the lookup
                 string ModDepPath = ModPath + "Deps/" + Path.GetFileNameWithoutExtension(ModFilename) + "-" + FileVersionInfo.GetVersionInfo(ModPath + ModFilename).FileVersion + "/";
-                AssemblyLookup.RemovePathFromAssemblySearchPath(ModDepPath);
+                AssemblyLookup.baseAssemblyLookupPaths.Remove(ModDepPath);
             }
         }
 
