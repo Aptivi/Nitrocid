@@ -414,6 +414,7 @@ namespace Nitrocid.Network.Connections
             // Now, do the job!
             try
             {
+                NetworkConnection connection;
                 if (string.IsNullOrEmpty(address))
                 {
                     // Select a connection according to user input
@@ -425,7 +426,6 @@ namespace Nitrocid.Network.Connections
                         return;
 
                     // Now, check to see if the user selected "Create a new connection"
-                    NetworkConnection connection;
                     if (selectedConnection == availableConnections + 1)
                     {
                         // Prompt the user to provide connection information
@@ -474,10 +474,6 @@ namespace Nitrocid.Network.Connections
                         DebugWriter.WriteDebug(DebugLevel.I, "Establishing connection to {0}...", selectedConnection);
                         connection = availableConnectionInstances[selectedConnection - 1];
                     }
-
-                    // Use that information to start the shell
-                    DebugWriter.WriteDebug(DebugLevel.I, "Opening shell to connection {0}...", selectedConnection);
-                    ShellManager.StartShell(shellType, connection);
                 }
                 else
                 {
@@ -498,15 +494,23 @@ namespace Nitrocid.Network.Connections
                         DebugWriter.WriteDebug(DebugLevel.I, "Selected connection {0} out of {1} connections", selectedConnectionNumber, availableConnectionInstances.Length);
                         if (selectedConnectionNumber == -1)
                             return;
-                        DebugWriter.WriteDebug(DebugLevel.I, "Opening shell to selected connection...");
-                        ShellManager.StartShell(shellType, availableConnectionInstances[selectedConnectionNumber - 1]);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Opening shell to selected connection number {0}...", selectedConnectionNumber);
+                        connection = availableConnectionInstances[selectedConnectionNumber - 1];
                     }
                     else
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Opening shell to selected connection created by the invoker for address {0}...", address);
-                        ShellManager.StartShell(shellType, establisher(address));
+                        connection = establisher(address);
                     }
                 }
+
+                // Check the connection for validity
+                if (connection is null)
+                    throw new KernelException(KernelExceptionType.NetworkConnection);
+
+                // Use that information to start the shell
+                DebugWriter.WriteDebug(DebugLevel.I, "Finalizing the shell...");
+                ShellManager.StartShell(shellType, connection);
             }
             catch (Exception ex)
             {
