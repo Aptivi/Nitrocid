@@ -242,7 +242,7 @@ namespace Nitrocid.ConsoleBase.Writers
                 try
                 {
                     // Write text in another place. By the way, we check the text for newlines and console width excess
-                    ConsoleWrapper.Write(TextWriterWhereColor.RenderWhere(msg, Left, Top, Return, RightMargin, KernelColorTools.GetColor(colorType), KernelColorTools.GetColor(KernelColorType.Background), vars));
+                    ConsoleWrapper.Write(TextWriterWhereColor.RenderWhereColorBack(msg, Left, Top, Return, RightMargin, KernelColorTools.GetColor(colorType), KernelColorTools.GetColor(KernelColorType.Background), vars));
                 }
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
@@ -295,7 +295,7 @@ namespace Nitrocid.ConsoleBase.Writers
                 try
                 {
                     // Write text in another place. By the way, we check the text for newlines and console width excess
-                    ConsoleWrapper.Write(TextWriterWhereColor.RenderWhere(msg, Left, Top, Return, RightMargin, KernelColorTools.GetColor(colorTypeForeground), KernelColorTools.GetColor(colorTypeBackground), vars));
+                    ConsoleWrapper.Write(TextWriterWhereColor.RenderWhereColorBack(msg, Left, Top, Return, RightMargin, KernelColorTools.GetColor(colorTypeForeground), KernelColorTools.GetColor(colorTypeBackground), vars));
                 }
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
