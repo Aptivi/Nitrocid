@@ -3526,3 +3526,5 @@ Twee lijnen die over het scherm van kleur wisselen.
 Eenvoudig splash-scherm.
 Een splash-scherm dat je voortgang laat zien.
 Een splash-scherm dat u de voortgang laat zien met behulp van de PowerLine-tekst.
+Huidige invoerstuurprogramma
+Welke invoerdriver wilt u gebruiken?

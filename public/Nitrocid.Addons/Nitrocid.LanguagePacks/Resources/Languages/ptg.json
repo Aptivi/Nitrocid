@@ -3529,6 +3529,8 @@
     "Duas linhas trocando de cores na tela.",
     "Tela inicial simples.",
     "Uma tela inicial que mostra o progresso.",
-    "Uma tela inicial que mostra o progresso usando o texto PowerLine."
+    "Uma tela inicial que mostra o progresso usando o texto PowerLine.",
+    "Driver de entrada atual",
+    "Qual driver de entrada você gostaria de usar?"
   ]
 }

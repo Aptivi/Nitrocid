@@ -3526,3 +3526,5 @@ Due linee che si scambiano i colori sullo schermo.
 Schermata iniziale semplice.
 Una schermata iniziale che mostra i progressi.
 Una schermata iniziale che mostra i progressi utilizzando il testo PowerLine.
+Driver di ingresso corrente
+Quale driver di input desideri utilizzare?

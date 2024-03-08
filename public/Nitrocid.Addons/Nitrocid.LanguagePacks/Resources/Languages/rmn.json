@@ -3529,6 +3529,8 @@
     "Două linii schimbându-și culorile pe ecran.",
     "Ecran de splash simplu.",
     "Un ecran de deschidere care vă arată progresul.",
-    "Un ecran de deschidere care vă arată progresul utilizând textul PowerLine."
+    "Un ecran de deschidere care vă arată progresul utilizând textul PowerLine.",
+    "Driver de intrare curent",
+    "Ce driver de intrare ați dori să utilizați?"
   ]
 }

@@ -30,6 +30,7 @@ using Nitrocid.Drivers.DebugLogger;
 using Nitrocid.Drivers.Encryption;
 using Nitrocid.Drivers.Regexp;
 using Nitrocid.Drivers.Console;
+using Nitrocid.Drivers.Input;
 
 namespace Nitrocid.Kernel.Configuration.Instances
 {
@@ -123,6 +124,14 @@ namespace Nitrocid.Kernel.Configuration.Instances
         {
             get => DriverHandler.GetDriverName<ISortingDriver>(DriverHandler.CurrentSortingDriver);
             set => SortingDriverTools.SetSortingDriver(value);
+        }
+        /// <summary>
+        /// Current input driver
+        /// </summary>
+        public string CurrentInputDriver
+        {
+            get => DriverHandler.GetDriverName<IInputDriver>(DriverHandler.CurrentInputDriver);
+            set => InputDriverTools.SetInputDriver(value);
         }
         #endregion
     }

@@ -3529,6 +3529,8 @@
     "Deux lignes échangeant leurs couleurs sur l'écran.",
     "Écran de démarrage simple.",
     "Un écran de démarrage qui vous montre vos progrès.",
-    "Un écran de démarrage qui vous montre votre progression en utilisant le texte PowerLine."
+    "Un écran de démarrage qui vous montre votre progression en utilisant le texte PowerLine.",
+    "Pilote d'entrée actuel",
+    "Quel pilote d'entrée souhaitez-vous utiliser ?"
   ]
 }

@@ -103,6 +103,16 @@
                 "SelectionFunctionType": "SortingDriverTools",
                 "SelectionFallback": [ "Default" ],
                 "Description": "Which sorting driver would you like to use?"
+            },
+            {
+                "Name": "Current input driver",
+                "Type": "SSelection",
+                "Variable": "CurrentInputDriver",
+                "IsEnumeration": false,
+                "SelectionFunctionName": "GetInputDriverNames",
+                "SelectionFunctionType": "InputDriverTools",
+                "SelectionFallback": [ "Default" ],
+                "Description": "Which input driver would you like to use?"
             }
         ]
     }

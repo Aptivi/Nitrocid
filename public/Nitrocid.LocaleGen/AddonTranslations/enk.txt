@@ -3526,3 +3526,5 @@ Two lines swapping their colours across the screen.
 Simple splash screen.
 A splash screen that shows you progress.
 A splash screen that shows you progress using the PowerLine text.
+Current input driver
+Which input driver would you like to use?

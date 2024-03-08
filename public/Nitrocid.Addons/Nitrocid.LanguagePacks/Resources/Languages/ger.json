@@ -3529,6 +3529,8 @@
     "Zwei Linien wechseln ihre Farben auf dem Bildschirm.",
     "Einfacher Begrüßungsbildschirm.",
     "Ein Begrüßungsbildschirm, der Ihnen den Fortschritt anzeigt.",
-    "Ein Begrüßungsbildschirm, der Ihnen den Fortschritt mithilfe des PowerLine-Textes anzeigt."
+    "Ein Begrüßungsbildschirm, der Ihnen den Fortschritt mithilfe des PowerLine-Textes anzeigt.",
+    "Aktueller Eingabetreiber",
+    "Welchen Eingabetreiber möchten Sie verwenden?"
   ]
 }

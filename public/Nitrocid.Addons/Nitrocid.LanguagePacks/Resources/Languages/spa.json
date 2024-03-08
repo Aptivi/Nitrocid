@@ -3529,6 +3529,8 @@
     "Dos líneas que intercambian sus colores en la pantalla.",
     "Pantalla de presentación sencilla.",
     "Una pantalla de presentación que muestra tu progreso.",
-    "Una pantalla de presentación que muestra su progreso usando el texto PowerLine."
+    "Una pantalla de presentación que muestra su progreso usando el texto PowerLine.",
+    "Controlador de entrada actual",
+    "¿Qué controlador de entrada le gustaría usar?"
   ]
 }
