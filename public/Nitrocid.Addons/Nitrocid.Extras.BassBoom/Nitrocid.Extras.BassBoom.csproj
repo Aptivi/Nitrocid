@@ -48,7 +48,7 @@
   <!-- Extras.BassBoom addon Platform Information End -->
 
   <ItemGroup>
-    <PackageReference Include="BassBoom.Basolia" Version="0.0.5" />
+    <PackageReference Include="BassBoom.Basolia" Version="0.0.6" />
   </ItemGroup>
 
   <ItemGroup>
