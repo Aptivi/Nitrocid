@@ -6035,7 +6035,7 @@
     },
     {
         "Name": "CommitMilestone",
-        "Desc": "Celebrates the commit milestoen each 1000th commit.",
+        "Desc": "Celebrates the commit milestone each 1000th commit.",
         "Keys": [
             {
                 "Name": "Activate true colors",
