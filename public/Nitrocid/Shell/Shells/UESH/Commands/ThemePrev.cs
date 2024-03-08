@@ -43,85 +43,93 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            string selectedTheme = parameters.ArgumentsList.Length > 0 ? parameters.ArgumentsList[0] : "";
+            string selectedTheme;
             string ThemePath;
 
-            // Let the user select a theme
-            if (parameters.ArgumentsList.Length == 0)
+            bool bail = false;
+            while (!bail)
             {
-                while (true)
+                // Selected theme null for now
+                selectedTheme = parameters.ArgumentsList.Length > 0 ? parameters.ArgumentsList[0] : "";
+                if (parameters.ArgumentsList.Length == 0)
                 {
-                    // Let the user select a theme category
-                    string[] categoryNames = Enum.GetNames(typeof(ThemeCategory));
-                    List<InputChoiceInfo> themeCategoryChoices = [];
-                    List<InputChoiceInfo> themeCategoryAltChoices =
-                    [
-                        new($"{categoryNames.Length + 1}", Translate.DoTranslation("Exit"))
-                    ];
-                    for (int i = 0; i < categoryNames.Length; i++)
+                    while (true)
                     {
-                        string category = categoryNames[i];
-                        var ici = new InputChoiceInfo(
-                            $"{i + 1}",
-                            $"{category}"
-                        );
-                        themeCategoryChoices.Add(ici);
-                    }
-                    int categoryIndex = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a category"), [.. themeCategoryChoices], [.. themeCategoryAltChoices]) - 1;
+                        // Let the user select a theme category
+                        string[] categoryNames = Enum.GetNames(typeof(ThemeCategory));
+                        List<InputChoiceInfo> themeCategoryChoices = [];
+                        List<InputChoiceInfo> themeCategoryAltChoices =
+                        [
+                            new($"{categoryNames.Length + 1}", Translate.DoTranslation("Exit"))
+                        ];
+                        for (int i = 0; i < categoryNames.Length; i++)
+                        {
+                            string category = categoryNames[i];
+                            var ici = new InputChoiceInfo(
+                                $"{i + 1}",
+                                $"{category}"
+                            );
+                            themeCategoryChoices.Add(ici);
+                        }
+                        int categoryIndex = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a category"), [.. themeCategoryChoices], [.. themeCategoryAltChoices]) - 1;
 
-                    // If the color index is -2, exit. PromptSelection returns -1 if ESC is pressed to cancel selecting. However, the index just decreases to -2
-                    // even if that PromptSelection returned the abovementioned value, so bail if index is -2
-                    if (categoryIndex == -2 || categoryIndex >= categoryNames.Length)
-                    {
-                        ColorTools.LoadBack();
-                        return 3;
-                    }
+                        // If the color index is -2, exit. PromptSelection returns -1 if ESC is pressed to cancel selecting. However, the index just decreases to -2
+                        // even if that PromptSelection returned the abovementioned value, so bail if index is -2
+                        if (categoryIndex == -2 || categoryIndex >= categoryNames.Length)
+                        {
+                            ColorTools.LoadBack();
+                            return 3;
+                        }
 
-                    // Let the user select a theme
-                    var finalCategory = Enum.Parse<ThemeCategory>(categoryNames[categoryIndex]);
-                    List<InputChoiceInfo> themeChoices = [];
-                    List<InputChoiceInfo> themeAltChoices =
-                    [
-                        new("<--", Translate.DoTranslation("Back"))
-                    ];
-                    foreach (string theme in ThemeTools.GetInstalledThemesByCategory(finalCategory).Keys)
-                    {
-                        var themeInstance = ThemeTools.GetThemeInfo(theme);
-                        string name = themeInstance.Name;
-                        string desc = themeInstance.Localizable ? Translate.DoTranslation(themeInstance.Description) : themeInstance.Description;
-                        var ici = new InputChoiceInfo(
-                            theme,
-                            $"{name}{(themeInstance.IsEvent ? $" - [{themeInstance.StartMonth}/{themeInstance.StartDay} -> {themeInstance.EndMonth}/{themeInstance.EndDay} / {(themeInstance.IsExpired ? Translate.DoTranslation("Expired") : Translate.DoTranslation("Available"))}]" : "")}",
-                            desc
-                        );
-                        themeChoices.Add(ici);
-                    }
-                    int colorIndex = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a theme"), [.. themeChoices], [.. themeAltChoices]) - 1;
+                        // Let the user select a theme
+                        var finalCategory = Enum.Parse<ThemeCategory>(categoryNames[categoryIndex]);
+                        List<InputChoiceInfo> themeChoices = [];
+                        List<InputChoiceInfo> themeAltChoices =
+                        [
+                            new("<--", Translate.DoTranslation("Back"))
+                        ];
+                        foreach (string theme in ThemeTools.GetInstalledThemesByCategory(finalCategory).Keys)
+                        {
+                            var themeInstance = ThemeTools.GetThemeInfo(theme);
+                            string name = themeInstance.Name;
+                            string desc = themeInstance.Localizable ? Translate.DoTranslation(themeInstance.Description) : themeInstance.Description;
+                            var ici = new InputChoiceInfo(
+                                theme,
+                                $"{name}{(themeInstance.IsEvent ? $" - [{themeInstance.StartMonth}/{themeInstance.StartDay} -> {themeInstance.EndMonth}/{themeInstance.EndDay} / {(themeInstance.IsExpired ? Translate.DoTranslation("Expired") : Translate.DoTranslation("Available"))}]" : "")}",
+                                desc
+                            );
+                            themeChoices.Add(ici);
+                        }
+                        int colorIndex = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a theme"), [.. themeChoices], [.. themeAltChoices]) - 1;
 
-                    // If the color index is -2, exit. PromptSelection returns -1 if ESC is pressed to cancel selecting. However, the index just decreases to -2
-                    // even if that PromptSelection returned the abovementioned value, so bail if index is -2
-                    if (colorIndex == -2)
-                    {
-                        ColorTools.LoadBack();
-                        return 3;
+                        // If the color index is -2, exit. PromptSelection returns -1 if ESC is pressed to cancel selecting. However, the index just decreases to -2
+                        // even if that PromptSelection returned the abovementioned value, so bail if index is -2
+                        if (colorIndex == -2)
+                        {
+                            ColorTools.LoadBack();
+                            return 3;
+                        }
+                        else if (colorIndex != themeChoices.Count)
+                        {
+                            // Get the theme name from index
+                            selectedTheme = ThemeTools.GetInstalledThemesByCategory(finalCategory).Keys.ElementAt(colorIndex);
+                            break;
+                        }
                     }
-                    else if (colorIndex != themeChoices.Count)
-                    {
-                        // Get the theme name from index
-                        selectedTheme = ThemeTools.GetInstalledThemesByCategory(finalCategory).Keys.ElementAt(colorIndex);
-                    }
-
-                    // Load the theme to the instance
-                    ThemePath = FilesystemTools.NeutralizePath(selectedTheme);
-                    ThemeInfo Theme;
-                    if (Checking.FileExists(ThemePath))
-                        Theme = new ThemeInfo(ThemePath);
-                    else
-                        Theme = ThemeTools.GetThemeInfo(selectedTheme);
-
-                    // Now, preview the theme
-                    ThemePreviewTools.PreviewTheme(Theme);
                 }
+                else
+                    bail = true;
+
+                // Load the theme to the instance
+                ThemePath = FilesystemTools.NeutralizePath(selectedTheme);
+                ThemeInfo Theme;
+                if (Checking.FileExists(ThemePath))
+                    Theme = new ThemeInfo(ThemePath);
+                else
+                    Theme = ThemeTools.GetThemeInfo(selectedTheme, true);
+
+                // Now, preview the theme
+                ThemePreviewTools.PreviewTheme(Theme);
             }
             return 0;
         }
