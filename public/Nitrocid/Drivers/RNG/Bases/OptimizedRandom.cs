@@ -40,6 +40,9 @@ namespace Nitrocid.Drivers.RNG.Bases
         public override DriverTypes DriverType => DriverTypes.RNG;
 
         /// <inheritdoc/>
+        public override string DriverName => "Optimized";
+
+        /// <inheritdoc/>
         public override int Random() =>
             Random(int.MaxValue);
 
