@@ -123,7 +123,7 @@ namespace Nitrocid.Extras.RssShell.RSS.Interactive
                 Translate.DoTranslation("Unfortunately, this article doesn't have any contents. You can still follow the article at") + $" {article.ArticleLink}.";
             string finalRenderedArticleVars =
                 hasVars ?
-                $"  - {string.Join("\n  - ", article.ArticleVariables.Select((kvp) => $"{kvp.Key} [{kvp.Value}]"))}" :
+                $"  - {string.Join("\n  - ", article.ArticleVariables.Select((kvp) => $"{kvp.Key} [{kvp.Value.InnerText}]"))}" :
                 Translate.DoTranslation("No revision.");
             finalInfoRendered.AppendLine(finalRenderedArticleTitle);
             finalInfoRendered.AppendLine(finalRenderedArticleBody);
