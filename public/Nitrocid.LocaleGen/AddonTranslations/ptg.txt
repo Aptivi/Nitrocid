@@ -257,7 +257,7 @@ Muda MOTD, a mensagem do dia
 Altera o nome do usuário
 Gerenciar permissões para usuários
 Remove um usuário da lista
-Alias ​​removido {0} com sucesso.
+Alias removido {0} com sucesso.
 Falha ao verificar atualizações.
 Não há mais usuários restantes na lista.
 Erro ao tentar dispensar notificação.
@@ -956,10 +956,10 @@ Empacota um arquivo local para o arquivo
 Não pode embalar nada.
 Para obter mais informações sobre os termos e condições de uso deste software, visite
 Tipo de saída de escolha padrão
-Verifica todas as configurações do KS para ver se as variáveis ​​estão escritas corretamente
-Essas entradas de configuração têm variáveis ​​ou enumerações inválidas e precisam ser corrigidas:
+Verifica todas as configurações do KS para ver se as variáveis estão escritas corretamente
+Essas entradas de configuração têm variáveis ou enumerações inválidas e precisam ser corrigidas:
 Arquivo {0} não encontrado
-Cria um array de variáveis ​​com os valores fornecidos
+Cria um array de variáveis com os valores fornecidos
 Verifica todos os números de linha de texto de localização para ver se são todos iguais
 Incompatibilidade de linha em
 Incluir usuários anônimos
@@ -1104,7 +1104,7 @@ Arquivo não especificado. Saindo do escudo...
 Cor da barra de progresso
 Abre as configurações do protetor de tela
 Abre as configurações de splash
-Lista as variáveis ​​UESH disponíveis
+Lista as variáveis UESH disponíveis
 Localização do texto do progresso
 Selecione seu local de texto de progresso preferido.
 Você só pode escrever os números.
@@ -1365,8 +1365,8 @@ A configuração do kernel não funcionará corretamente. As chaves inválidas s
 Falha na validação!
 A leitura falhou!
 Tentando corrigir a configuração...
-Não é possível verificar variáveis ​​de configuração quando nenhum tipo é especificado.
-Não é possível verificar variáveis ​​de configuração quando nenhuma entrada é especificada.
+Não é possível verificar variáveis de configuração quando nenhum tipo é especificado.
+Não é possível verificar variáveis de configuração quando nenhuma entrada é especificada.
 Tentando registrar uma configuração personalizada sem conteúdo.
 Tentando registrar uma configuração personalizada com conteúdo inválido. As chaves inválidas são
 Tentando cancelar o registro de uma configuração personalizada sem nome.
@@ -1620,7 +1620,7 @@ O kernel falhou ao inicializar alguns dos componentes essenciais. O kernel não 
 Informações de erro:
 Informações do ambiente do kernel
 O kernel falhou ao inicializar alguns dos componentes opcionais. Se estiver tentando ler um arquivo de configuração, certifique-se de que esteja formatado corretamente.
-Redefinição de variáveis ​​gerais
+Redefinição de variáveis gerais
 Históricos de comandos shell salvos.
 Configuração salva.
 Funções extras do kernel e seus componentes registrados foram interrompidos.
@@ -2087,7 +2087,7 @@ Lista uma pasta recursivamente
 Lista uma pasta usando a forma de árvore
 Lista todas as configurações disponíveis
 Detalhes detalhados sobre todas as configurações, incluindo suas entradas
-Lista todas as variáveis ​​de configuração e seus valores
+Lista todas as variáveis de configuração e seus valores
 Lista todas as conexões disponíveis
 Lista manipuladores de extensão disponíveis
 Lista todas as partições do disco
@@ -2132,7 +2132,7 @@ Gerenciador de tarefas
 Visualiza um tema
 Seleciona um tema e o define
 Defina imediatamente o tema na seleção
-Remove uma variável da lista de variáveis ​​UESH
+Remove uma variável da lista de variáveis UESH
 Apenas apaga o valor da variável sem removê-lo
 Mostra o tempo de atividade do kernel
 Mostra os dois URLs úteis para manual.
@@ -2346,7 +2346,7 @@ Exibindo como
 Descrição
 Contagem de chaves
 Use o comando {0} para obter as chaves individuais
-Variáveis ​​de configuração para
+Variáveis de configuração para
 Conexões por tipo
 Instância
 Informações do manipulador de extensão para
@@ -2634,7 +2634,7 @@ que o kernel pode ser traduzido mesmo nos estágios de pré-inicialização, ini
 que você pode construir seus próprios protetores de tela registrando-os em seu mod?
 que o primeiro protetor de tela que apagava a tela após três minutos de inatividade nos PCs IBM originais, scrnsave, foi criado em 1983 por John Socha?
 que alguns dos protetores de tela de ritmo acelerado podem causar convulsões fotossensíveis?
-que os diários do kernel são usados ​​como logs de inicialização e desligamento?
+que os diários do kernel são usados como logs de inicialização e desligamento?
 que você pode simular um bootloader inicializando no Nitrocid usando GRILO?
 que seus mods agora podem se tornar traduzíveis?
 que seus mods podem se comunicar com addons de kernel e outros mods, criando algum tipo de comunicação e alcançando interoperabilidade?
@@ -2644,7 +2644,7 @@ que seus mods agora podem ter configurações próprias registrando suas classes
 que seus mods podem registrar seus próprios shells?
 que seus mods podem adicionar comandos aos shells existentes para aumentar a quantidade de comandos que podem ser usados?
 que suas classes de comando podem representar com precisão argumentos e opções passadas?
-que você pode consultar switches passados ​​​​usando as classes de gerenciamento de switches encontradas na API do kernel?
+que você pode consultar switches passados usando as classes de gerenciamento de switches encontradas na API do kernel?
 que o UESH inclui a funcionalidade de script para facilitar a criação e execução de scripts?
 que o shell inclui funcionalidade para inibir o cancelamento de aplicativos ativos?
 que o Nitrocid está profundamente integrado ao Terminaux para permitir uma renderização melhor e mais rápida?
@@ -3169,7 +3169,7 @@ Especifica o idioma do kernel.
 Cultura
 Ativar daltonismo
 Se você é daltônico ou deseja simular daltonismo, você pode ativá-lo.
-Fórmula de transformação para daltonismo
+Tipo de daltonismo
 O tipo de daltonismo, seja protan, deuter ou tritan.
 Gravidade do daltonismo
 Quão grave é o daltonismo?
@@ -3311,7 +3311,7 @@ Ative o bloqueio do protetor de tela quando estiver inativo
 Se ativado, o protetor de tela é iniciado automaticamente após ficar inativo durante o período especificado.
 Intervalo mínimo de inatividade do protetor de tela
 Reconheça o aviso de convulsão fotossensível
-Se você não é fotossensível às animações aceleradas que alguns dos protetores de tela mostram, você pode desativar este aviso ativando esta opção. Observe que não somos responsáveis ​​pelos efeitos colaterais que possam advir de tais animações. Procure um profissional médico especialista para mais informações.
+Se você não é fotossensível às animações aceleradas que alguns dos protetores de tela mostram, você pode desativar este aviso ativando esta opção. Observe que não somos responsáveis pelos efeitos colaterais que possam advir de tais animações. Procure um profissional médico especialista para mais informações.
 As configurações que não cabem nas seções apropriadas chegam aqui.
 Configurações Diversas
 Um personagem que se assemelha ao canto superior direito. Certifique-se de inserir apenas um caractere.

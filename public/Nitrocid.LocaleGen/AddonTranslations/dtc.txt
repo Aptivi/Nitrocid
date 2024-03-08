@@ -55,9 +55,9 @@ Download het externe bestand naar de lokale map met binair of tekst
 Geeft een lokale map weer
 Geeft de externe map weer
 Uploadt lokaal bestand naar de externe map met binaire of tekst
-Alias ​​kan niet dezelfde naam zijn als een opdracht.
+Alias kan niet dezelfde naam zijn als een opdracht.
 Opdracht niet gevonden als alias naar {0}.
-Alias ​​{0} kan niet worden verwijderd.
+Alias {0} kan niet worden verwijderd.
 Directory {0} niet gevonden
 Lege hostnaam.
 Wijzigen van: {0} naar {1} ...
@@ -68,7 +68,7 @@ Wachtwoorden komen niet overeen.
 Gebruikersnaam is gewijzigd in {0}!
 De nieuwe naam die u hebt ingevoerd, is al gevonden.
 {0} is niet gevonden.
-Configuratie opnieuw geladen. Mogelijk moet u de kernel opnieuw opstarten om een ​​aantal wijzigingen door te voeren.
+Configuratie opnieuw geladen. Mogelijk moet u de kernel opnieuw opstarten om een aantal wijzigingen door te voeren.
 Een of meer van de kleuren is ongeldig.
 Screensaver {0} niet gevonden.
 Fout bij proberen opdracht uit te voeren
@@ -117,7 +117,7 @@ Geef het adres op
 Tijdzone is onjuist opgegeven.
 Ongeldige profielselectie.
 Probeer verbinding te maken met {0} met profiel {1} ...
-Mods voor parseren niet toegestaan ​​in veilige modus.
+Mods voor parseren niet toegestaan in veilige modus.
 Het pad is noch een bestand, noch een map.
 Maakt een andere kopie van een bestand onder een andere map of naam.
 Verplaatst een bestand naar een andere map
@@ -257,7 +257,7 @@ Verandert MOTD, de boodschap van de dag
 Verandert gebruikersnaam
 Beheer machtigingen voor gebruikers
 Verwijdert een gebruiker uit de lijst
-Alias ​​{0} verwijderd.
+Alias {0} verwijderd.
 Controleren op updates is mislukt.
 Er zijn geen gebruikers meer in de lijst.
 Fout bij het negeren van melding.
@@ -443,7 +443,7 @@ Directory {0} bestaat niet
 Archiefmap {0} bestaat niet
 Max aantal posities
 Hoeveel standen branden er voordat er wordt gedimd?
-Maakt verbinding met een SSH-server om een ​​opdracht uit te voeren.
+Maakt verbinding met een SSH-server om een opdracht uit te voeren.
 Stelt een variabele in op een waarde in een script
 Er is een fout opgetreden in de FTP-shell:
 Er is een fout opgetreden in de SFTP-shell:
@@ -464,7 +464,7 @@ Directory's opzoeken
 Geen mod-commando's.
 Geen alias-opdrachten.
 De wrappable-opdracht is niet gevonden.
-Vraagt ​​een woord in een opgegeven regel of alle regels
+Vraagt een woord in een opgegeven regel of alle regels
 {0} van {1} gedownload.
 Tests die een tekenreeks vertalen die in bronnen voorkomt naar een specifieke taal
 Drukt een string af naar console en analyseert de gevonden tijdelijke aanduidingen
@@ -638,7 +638,7 @@ Codeert een string met SHA384
 Codeert een string met SHA256
 Versleutelt een string met SHA1
 Codeert een string met MD5
-Het stoppen van mods is niet toegestaan ​​in de veilige modus.
+Het stoppen van mods is niet toegestaan in de veilige modus.
 Mod is al gestart!
 Mod is nog niet begonnen!
 Fout bij het starten van de screensaver:
@@ -663,7 +663,7 @@ Toont de datum en tijd van de UTC-kernel
 Welk bestand is het MOTD-tekstbestand? Schrijf een absoluut pad naar het tekstbestand.
 Welk bestand is het MAL-tekstbestand? Schrijf een absoluut pad naar het tekstbestand.
 Mods op de zwarte lijst
-Schrijf de bestandsnamen van de mods die niet worden uitgevoerd bij het opstarten. Als je klaar bent, schrijf je "q". Schrijf een minteken naast het pad om een ​​bestaande mod te verwijderen.
+Schrijf de bestandsnamen van de mods die niet worden uitgevoerd bij het opstarten. Als je klaar bent, schrijf je "q". Schrijf een minteken naast het pad om een bestaande mod te verwijderen.
 Mod {0} staat op de zwarte lijst.
 Herlaadt alle mods
 Voegt een mod toe aan de zwarte lijst
@@ -674,7 +674,7 @@ Start kernel-modificaties bij het opstarten
 Toon huidige tijd voor inloggen
 Melden voor elke fout tijdens het opstarten
 Toont korte informatie over de toepassing bij het opstarten.
-Toont hoeveel tijd de kernel nodig had om een ​​fase te voltooien.
+Toont hoeveel tijd de kernel nodig had om een fase te voltooien.
 Start automatisch de kernelwijzigingen bij het opstarten.
 Toont de huidige tijd, tijdzone en datum voordat u zich aanmeldt.
 Als er een kleine fout optreedt tijdens het opstarten van de kernel, wordt de gebruiker hiervan op de hoogte gesteld.
@@ -740,7 +740,7 @@ Hoeveel milliseconden moet ik wachten voordat de time-out wordt aangegeven?
 Schrijf hoe u wilt dat uw uploadpercentagetekst is. Laat leeg om de standaardstijl te gebruiken. Tijdelijke aanduidingen worden geparseerd. {0} voor geüploade grootte, {1} voor doelgrootte, {2} voor percentage.
 Schrijf hoe u wilt dat uw downloadpercentagetekst is. Laat leeg om de standaardstijl te gebruiken. Tijdelijke aanduidingen worden geparseerd. {0} voor gedownloade grootte, {1} voor doelgrootte, {2} voor percentage.
 Wachtwoord vragen na vergrendeling
-Vraag na het vergrendelen van het scherm om een ​​wachtwoord
+Vraag na het vergrendelen van het scherm om een wachtwoord
 Minimaal rood kleurniveau
 Minimaal groen kleurniveau
 Minimaal blauw kleurniveau
@@ -759,7 +759,7 @@ Maximaal blauw kleurniveau. De minimaal geaccepteerde waarde is 0 en de maximaal
 Maximaal kleurniveau. De minimaal geaccepteerde waarde is 0 en de maximaal geaccepteerde waarde is 255 voor 255 kleuren of 16 voor 16 kleuren.
 Voorgrondkleur
 Lijnteken
-Een teken om een ​​lijn te vormen. Zorg ervoor dat u slechts één teken invoert.
+Een teken om een lijn te vormen. Zorg ervoor dat u slechts één teken invoert.
 Teken in de linkerbovenhoek voor de urenbalk
 Teken in de linkerbovenhoek voor minutenbalk
 Teken in de linkerbovenhoek voor secondenbalk
@@ -980,7 +980,7 @@ Als er een kernelfout is, kiest u of u de stacktracering naar de console wilt af
 Waar wil je de huidige kernelinstellingen opslaan?
 Kan kernelinstellingen niet opslaan bovenop een bestaand bestand.
 Waar wil je de huidige kernelinstellingen vandaan laden?
-Controles om te zien of de vertaalbare strings bestaan ​​in de KS-resources
+Controles om te zien of de vertaalbare strings bestaan in de KS-resources
 Combineert de twee tekstbestanden of meer in het uitvoerbestand.
 Kan bestanden niet combineren.
 Time-out voor ophalen van RSS-feed
@@ -993,8 +993,8 @@ Volgende hellingrot-interval
 Hoeveel milliseconden moet je wachten voordat het ene uiteinde van de volgende helling verrot?
 Kan geen evenement toevoegen.
 Kan een evenement niet verwijderen.
-Er zijn niet genoeg argumenten opgegeven om een ​​evenement toe te voegen.
-Er zijn niet genoeg argumenten opgegeven om een ​​gebeurtenis te verwijderen.
+Er zijn niet genoeg argumenten opgegeven om een evenement toe te voegen.
+Er zijn niet genoeg argumenten opgegeven om een gebeurtenis te verwijderen.
 Er zijn niet genoeg argumenten gegeven voor het manipuleren van gebeurtenissen.
 Er zijn niet genoeg argumenten gegeven voor het manipuleren van herinneringen.
 Naamloze herinnering
@@ -1126,7 +1126,7 @@ Verwijdert een byte met behulp van het bytenummer
 Verwijdert het bereik van bytes
 Sluit de hex-editor af
 Drukt de inhoud van het bestand met bytenummers af naar de console
-Vraagt ​​een byte op in een gespecificeerd bereik van bytes of alle bytes
+Vraagt een byte op in een gespecificeerd bereik van bytes of alle bytes
 Vervangt een byte door een andere
 Byte vervangen.
 De hex-editor heeft nog geen bestandsstream geopend.
@@ -1333,7 +1333,7 @@ Schijfnummer:
 Partities:
 Partitienummer:
 Naam grafische kaart:
-SpecProbe is er niet in geslaagd een deel van de hardware te parseren. Hieronder staan ​​de fouten gerapporteerd door SpecProbe:
+SpecProbe is er niet in geslaagd een deel van de hardware te parseren. Hieronder staan de fouten gerapporteerd door SpecProbe:
 Geen extra informatie.
 Hashsom van bestand
 Er is geen standaardextensiehandler gevonden voor deze extensie.
@@ -1443,7 +1443,7 @@ Er is een algemene netwerkfout opgetreden. Als u probeert verbinding te maken me
 Er is een niet-ondersteunde console gedetecteerd.
 Er is een beweringsfout gedetecteerd in de kernel! Dit is hoogstwaarschijnlijk een bug in de kernelmodule die aan onze kant moet worden opgelost.
 Uw netwerk moet online zijn voordat u bewerkingen met betrekking tot netwerken kunt uitvoeren. Sluit uw netwerkadapter aan en probeer het opnieuw.
-Toestemming geweigerd bij poging om een ​​bewerking uit te voeren.
+Toestemming geweigerd bij poging om een bewerking uit te voeren.
 Gebruiker bestaat niet. Controleer of u de gebruiker correct heeft geschreven.
 Bestuurder bestaat niet. Controleer of u de naam van het stuurprogramma correct hebt geschreven en of het stuurprogramma correct is geregistreerd.
 Het draadje is nog niet klaar. De gebruikerscode is mogelijk vergeten de kernelthread opnieuw te genereren nadat deze handmatig is gestopt.
@@ -1726,7 +1726,7 @@ Deze methode bestaat niet.
 Deze methode is statisch. Gebruik de niet-objectoverbelasting.
 Deze methode is niet statisch. Gebruik de objectoverbelasting.
 Waarschuwing voor lichtgevoelige aanvallen
-Deze screensaver kan flitsende beelden en snelle animaties bevatten die epileptische aanvallen kunnen veroorzaken bij lichtgevoeligen. Het wordt aanbevolen om een ​​medisch specialist te raadplegen voor meer informatie over een dergelijke aanval voordat u doorgaat. Als u deze waarschuwing wilt verwijderen, kunt u dit uitschakelen via de schermbeveiligingsinstellingen.
+Deze screensaver kan flitsende beelden en snelle animaties bevatten die epileptische aanvallen kunnen veroorzaken bij lichtgevoeligen. Het wordt aanbevolen om een medisch specialist te raadplegen voor meer informatie over een dergelijke aanval voordat u doorgaat. Als u deze waarschuwing wilt verwijderen, kunt u dit uitschakelen via de schermbeveiligingsinstellingen.
 Er bestaat al een aangepaste screensaver.
 Aangepaste screensaver niet gevonden.
 Kan lege plons niet registreren
@@ -1931,7 +1931,7 @@ Veilige modus
 Foutopsporingsmodus
 Laatste nieuws van
 Om het laatste nieuws te kunnen ontvangen, moet u de add-on RSS Shell Extras installeren. U kunt de opdracht 'getaddons' gebruiken om alle add-ons te verkrijgen!
-Alias ​​{0} blijkt niet te zijn opgevraagd.
+Alias {0} blijkt niet te zijn opgevraagd.
 Stelt de waarde van de uitvoer in op de geselecteerde UESH-variabele
 Vereiste argumenten worden niet voor alle onderstaande toepassingen gegeven:
 Vereiste argumenten worden niet gegeven.
@@ -2068,7 +2068,7 @@ Codeert de tekst naar een BASE64-weergave
 Zoekt recursief naar een bestand
 Voert een opdracht uit op een bestand
 Zoekt een bestand in de opgegeven map of in de huidige map met behulp van reguliere expressies
-Splitst de UESH-shell om een ​​andere instantie te maken
+Splitst de UESH-shell om een andere instantie te maken
 Specificeert het uitvoerpad
 Haalt alle add-ons op van de officiële downloadpagina en installeert ze
 Installeert de add-ons opnieuw
@@ -2198,10 +2198,10 @@ Druk een tekenreeks af naar de console met opmaak
 Druk een figletstring af om te troosten
 Druk een figlet-string af om te console met opmaak
 Druk een string af om te troosten met hoogtepunt
-Druk een scheidingsteken af ​​op de console
-Druk een scheidingsteken af ​​om te console met kleur
-Druk een scheidingsteken af ​​naar de console met opmaak en kleur
-Druk een scheidingsteken af ​​naar de console met opmaak
+Druk een scheidingsteken af op de console
+Druk een scheidingsteken af om te console met kleur
+Druk een scheidingsteken af naar de console met opmaak en kleur
+Druk een scheidingsteken af naar de console met opmaak
 Druk een string af om te consoleren met nieuwe regels in de string
 Druk een string af naar console met nultekens
 Schakelt de externe foutopsporing in
@@ -2225,8 +2225,8 @@ Test de selectie van meerdere bestanden
 Test de mapkiezer
 Test de selector voor meerdere mappen
 Test de knoppen in het informatievak
-Test het gekleurde invoervak ​​in het informatievak
-Test het invoervak ​​in het informatievak
+Test het gekleurde invoervak in het informatievak
+Test het invoervak in het informatievak
 Test de meervoudige selectiestijl voor invoer in het informatievak
 Test de invoerselectiestijl in het informatievak
 Test de invoerstijl voor meervoudige selectie
@@ -2647,7 +2647,7 @@ dat uw opdrachtklassen doorgegeven argumenten en schakelaars nauwkeurig kunnen w
 dat u doorgegeven switches kunt opvragen met behulp van de switchbeheerklassen in de kernel-API?
 dat UESH de scriptfunctionaliteit bevat om het maken en uitvoeren van scripts te vergemakkelijken?
 dat de shell functionaliteit bevat om annulering voor actieve applicaties te voorkomen?
-dat Nitrocid diep geïntegreerd is met Terminaux om een ​​snellere en betere weergave mogelijk te maken?
+dat Nitrocid diep geïntegreerd is met Terminaux om een snellere en betere weergave mogelijk te maken?
 dat u nu het formaat van de interactieve toepassingen kunt wijzigen zonder dat u zich zorgen hoeft te maken dat de uitvoer beschadigd raakt?
 dat er commando's zijn die om gebruikersinvoer vragen, wat handig is voor scripts?
 dat u uw gebruikersinvoervraag op verschillende manieren kunt presenteren, zoals keuze, tabel, eenvoudig, selectie, enzovoort?
@@ -2667,14 +2667,14 @@ Deze "nep-app" bespot "HDD Cleaner 2.1", die op 24 november 2015 werd uitgebrach
 Start het grapprogramma HDD Uncleaner 2015.
 Ter herdenking van het 5-jarig jubileum van de kernel
 Eerste uitgave ooit
-Deze kernel werd voor het eerst uitgebracht op 22 februari 2018 om een ​​minimalistische simulator te maken die feitelijk simuleert hoe de kern van de kernel werkt.
+Deze kernel werd voor het eerst uitgebracht op 22 februari 2018 om een minimalistische simulator te maken die feitelijk simuleert hoe de kern van de kernel werkt.
 Vroeger hostte het slechts één shell en een paar opdrachten, en het werkte alleen met Windows vanwege het gebruik van de Windows Management Instrumentation-tool.
 Het had ook geen eigen documentatie.
 Kernelverfijning
 Er zijn versies van de kernel uitgebracht, zoals de tweede grote release om kleuren en basisfuncties toe te voegen, en de vierde grote release om configuratie toe te voegen.
 De documentatie begon bij de zesde grote release en er zijn langzaam verschillende leuke dingen aan de kernel toegevoegd.
 Huidige versie
-Deze versie verfijnt nu de kernel tot het punt dat deze zich niet langer gedraagt ​​als de oude versies.
+Deze versie verfijnt nu de kernel tot het punt dat deze zich niet langer gedraagt als de oude versies.
 Omdat de nieuwe baanbrekende functies zijn vrijgegeven, hebben we besloten deze kernel de naam te geven...
 Gelukkig 5-jarig jubileum!
 Kan niets extraheren.
@@ -2722,7 +2722,7 @@ Voeg een muziekbestand toe
 Voeg een muziekmap toe aan de afspeellijst
 Vorig nummer
 Volgende liedje
-Huidig ​​nummer verwijderen
+Huidig nummer verwijderen
 Verwijder alle nummers
 Selectief zoeken
 Gelijkmaker openen
@@ -2755,7 +2755,7 @@ Er is een fout opgetreden bij de Basolia-uitvoer bij het verwerken van het muzie
 Er is een onbekende fout opgetreden bij het verwerken van het muziekbestand.
 Afspeelfout
 Hulp
-Druk op 'A' om een ​​enkel nummer aan de afspeellijst toe te voegen, of op 'S' om de hele muziekbibliotheek in te voegen.
+Druk op 'A' om een enkel nummer aan de afspeellijst toe te voegen, of op 'S' om de hele muziekbibliotheek in te voegen.
 Amerikaanse koffie
 Rode thee
 Groene thee
@@ -2847,7 +2847,7 @@ Beschrijft een commit
 Toont een verschil tussen de huidige commit en de lokale bestanden
 Toont een verschil tussen de huidige commit en de lokale bestanden op basis van hun inhoud in een patch-hunk-vorm
 Toont een verschil tussen de huidige commit en de lokale bestanden op basis van hun bestaan
-Toont een verschil tussen de huidige commit en de lokale bestanden door hun bestaan ​​en door hun inhoud
+Toont een verschil tussen de huidige commit en de lokale bestanden door hun bestaan en door hun inhoud
 Haalt alle updates op van een afstandsbediening
 Haalt de bestandsstatus op
 Krijgt eenvoudige repository-informatie
@@ -2978,7 +2978,7 @@ Maar je hebt pech. Verliezer.
 Jij hebt geluk! Winnaar!
 Het is een tekening.
 Speler {0} wint!
-Huidig ​​karakter:
+Huidig karakter:
 Je raadt het juiste woord! Jij wint!
 Dit archieftype wordt niet ondersteund.
 Zorg ervoor dat u het pad specificeert naar een map die uw songtekstbestanden bevat in het LRC-formaat. U kunt ook een aangepast pad opgeven naar uw muziekbibliotheekmap die de songtekstbestanden bevat.
@@ -2986,9 +2986,9 @@ Dit tekstbestand bestaat niet.
 Cultuur wordt niet gevonden.
 Kan de kalender niet weergeven.
 Kan geen herinnering toevoegen.
-Er zijn niet voldoende argumenten opgegeven om een ​​herinnering toe te voegen.
+Er zijn niet voldoende argumenten opgegeven om een herinnering toe te voegen.
 Kan een herinnering niet verwijderen.
-Er zijn niet genoeg argumenten opgegeven om een ​​herinnering te verwijderen.
+Er zijn niet genoeg argumenten opgegeven om een herinnering te verwijderen.
 Nitrocid KS Release-verjaardag\", waar, 2, 22, 2, 22, \"Gregoriaans
 Ramadan\", waar, 9, 1, 10, 1, \"Hijri
 Er is geen evenement.
@@ -3139,29 +3139,29 @@ Geef een naam op voor uw taak.
 Kan een taak niet markeren.
 In dit gedeelte worden de stuurprogramma-instellingen vermeld.
 Instellingen voor kernelstuurprogramma
-Huidig ​​consolestuurprogramma
+Huidig consolestuurprogramma
 Welk consolestuurprogramma wilt u gebruiken?
 Huidige driver voor willekeurige nummergenerator
 Welke driver voor de generator van willekeurige getallen wilt u gebruiken?
-Huidig ​​netwerkstuurprogramma
+Huidig netwerkstuurprogramma
 Welke netwerkdriver wilt u gebruiken?
-Huidig ​​bestandssysteemstuurprogramma
+Huidig bestandssysteemstuurprogramma
 Welk bestandssysteemstuurprogramma wilt u gebruiken?
-Huidig ​​versleutelingsstuurprogramma
+Huidig versleutelingsstuurprogramma
 Welk versleutelingsstuurprogramma wilt u gebruiken?
-Huidig ​​stuurprogramma voor reguliere expressies
+Huidig stuurprogramma voor reguliere expressies
 Welk stuurprogramma voor reguliere expressies wilt u gebruiken?
-Huidig ​​stuurprogramma voor debug-logger
+Huidig stuurprogramma voor debug-logger
 Welk stuurprogramma voor debug-logger wilt u gebruiken?
-Huidig ​​coderingsstuurprogramma
+Huidig coderingsstuurprogramma
 Welk coderingsstuurprogramma wilt u gebruiken?
 Huidige hardware-prober-stuurprogramma
 Welk hardwareprober-stuurprogramma wilt u gebruiken?
-Huidig ​​sorteerstuurprogramma
+Huidig sorteerstuurprogramma
 Welke sorteerdriver wilt u gebruiken?
 Dalende lijn van matrixnummers.
 Laat de kans vallen
-Kans om een ​​nieuwe vallende matrix te laten vallen
+Kans om een nieuwe vallende matrix te laten vallen
 In deze sectie worden alle algemene kernelinstellingen vermeld, voornamelijk voor het onderhouden van de kernel.
 Algemene kernelinstellingen
 Taal
@@ -3169,7 +3169,7 @@ Specificeert de kerneltaal.
 Cultuur
 Schakel kleurenblindheid in
 Als u kleurenblind bent of kleurenblindheid wilt simuleren, kunt u dit inschakelen.
-Kleurenblindheid TransformatieFormule
+Type kleurenblindheid
 Het type kleurenblindheid, of het nu protan, deuter of tritan is.
 Ernst van kleurenblindheid
 Hoe ernstig is kleurenblindheid?
@@ -3303,7 +3303,7 @@ Algemene netwerkinstellingen
 Foutopsporing in chatpoort
 Schrijf een chatpoort voor externe debugger. Het moet numeriek zijn en mag niet al worden gebruikt. Anders kan de externe debugger-chat de poort niet openen.
 Tijden voor opnieuw proberen uploaden
-In dit gedeelte worden de algemene instellingen voor de schermbeveiliging vermeld. Voor individuele screensaver-instellingen sluit u Instellingen af ​​en opent u Screensaver-instellingen.
+In dit gedeelte worden de algemene instellingen voor de schermbeveiliging vermeld. Voor individuele screensaver-instellingen sluit u Instellingen af en opent u Screensaver-instellingen.
 Basisinstellingen voor de screensaver
 Screensaver
 Met welke screensaver wil je je scherm vergrendelen?
@@ -3478,7 +3478,7 @@ Hoeveel milliseconden moet je wachten voordat het vierkant verdwijnt?
 Verspreidt het nummer over het hele scherm.
 Geeft je een doospatroon.
 Dalende lijn van kleuren.
-Kans om een ​​nieuwe vallende kleur te laten vallen
+Kans om een nieuwe vallende kleur te laten vallen
 Toont u een eenvoudige tekst.
 Toont u een eenvoudige tekst in een tekstvak.
 Toont u een woord dat langzaam schrijft en de hash-som ervan.

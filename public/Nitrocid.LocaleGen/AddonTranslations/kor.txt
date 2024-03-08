@@ -676,7 +676,7 @@ buting jung olyu allim
 buting si eung-yong peulogeulaem-e daehan ganlyaghan jeongboleul pyosihabnida.
 keoneol-i dangyeleul wanlyohaneun de geollin sigan-eul boyeojubnida.
 buting si keoneol sujeong-eul jadong-eulo sijaghabnida.
-logeu-inhagi jeon-ui hyeonjae sigan, sigandae mich naljjaleul ​​pyosihabnida.
+logeu-inhagi jeon-ui hyeonjae sigan, sigandae mich naljjaleul pyosihabnida.
 keoneol buting jung sasohan olyuga balsaenghamyeon sayongja-ege allibnida.
 sayongja ileum peulompeuteu seutail
 bimilbeonho peulompeuteu seutail
@@ -2868,15 +2868,15 @@ modeun byeongyeong sahangeul dangyejeogeuro jinhaeng
 jeojangso sangtae
 byeongyeongsahangeul eonseuteijinghapnida.
 modeun byeongyeong sahangeul eonseuteijinghapnida.
-dagaoneun modeun yocheonge ​​kiwa gapsi pohamdoen hedeoreul chugahapnida.
+dagaoneun modeun yocheonge kiwa gapsi pohamdoen hedeoreul chugahapnida.
 hyeonjae sayongja eijeonteureul gajyeoopnida.
-dagaoneun modeun yocheonge ​​daehan hedeoui kireul pyeonjiphapnida.
+dagaoneun modeun yocheonge daehan hedeoui kireul pyeonjiphapnida.
 yocheong hedeoreul nayeolhapnida.
 jijeongdoen yocheongeul sayonghayeo paireul HTTP seobeoe neohseupnida.
 jijeongdoen yocheongeul sayonghayeo munjayeoreul HTTP seobeoe neohseupnida.
 jijeongdoen yocheongeul sayonghayeo HTTP seobeoe paireul gesihapnida.
 jijeongdoen yocheongeul sayonghayeo munjayeoreul HTTP seobeoe gesihapnida.
-dagaoneun modeun yocheonge ​​daehan hedeoui kireul jegeohapnida.
+dagaoneun modeun yocheonge daehan hedeoui kireul jegeohapnida.
 sayongja eijeonteureul seoljeonghapnida
 imi jonjaehaneun hedeoreul chugahapnida.
 jonjaehaji anhneun hedeoreul jegeohapnida.
@@ -3169,7 +3169,7 @@ keoneol eoneoreul jijeonghapnida.
 munhwa
 saekmaeng hwalseonghwa
 saekmaengigeona saekmaengeul simyulleisyeonharyeoneun gyeongu i gineungeul hwalseonghwahal su issseupnida.
-saekmaeng byeonhwangongsik
+saegmaeng yuhyeong
 saekmaengui yuhyeong(peurotan, dyuteo, teuritan)
 saekmaeng simgakdo
 saekmaengeun eolmana simgakhangayo?

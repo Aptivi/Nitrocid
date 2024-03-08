@@ -3169,7 +3169,7 @@ Spécifie la langue du noyau.
 Culture
 Activer le daltonisme
 Si vous êtes daltonien ou si vous souhaitez simuler le daltonisme, vous pouvez l'activer.
-Formule de transformation du daltonisme
+Type de daltonisme
 Le type de daltonisme, qu'il s'agisse de protan, deuter ou de tritan.
 Gravité du daltonisme
 Quelle est la gravité du daltonisme ?

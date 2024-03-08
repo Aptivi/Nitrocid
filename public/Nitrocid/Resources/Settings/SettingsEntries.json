@@ -120,7 +120,7 @@
                 "Description": "If you are color blind or if you want to simulate color blindness, then you can enable it."
             },
             {
-                "Name": "Color blindness TransformationFormula",
+                "Name": "Color blindness type",
                 "Type": "SSelection",
                 "Variable": "BlindnessTransformationFormula",
                 "IsEnumeration": true,

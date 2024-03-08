@@ -57,7 +57,7 @@ Listează directorul de la distanță
 Încarcă fișierul local în directorul de la distanță folosind binar sau text
 Aliasul nu poate fi același nume cu o comandă.
 Comanda nu a fost găsită pentru alias la {0}.
-Alias ​​{0} nu a fost eliminat.
+Alias {0} nu a fost eliminat.
 Directorul {0} nu a fost găsit
 Nume gazdă necompletat.
 Se schimbă de la: {0} la {1}...
@@ -109,7 +109,7 @@ Deconectați un dispozitiv de depanare
 Listează dispozitivele de depanare conectate
 Dispozitivul {0} a fost deconectat.
 Depanați ascultarea la toate adresele folosind portul {0}.
-Alias ​​găsit deja: {0}
+Alias găsit deja: {0}
 Jurnalul de depanare a fost eliminat. Toate dispozitivele de depanare conectate pot vedea în continuare mesajele.
 Eliminarea jurnalului de depanare a eșuat: {0}
 Schimbarea directorului a eșuat: {0}
@@ -120,7 +120,7 @@ Se încearcă să se conecteze la {0} cu profilul {1}...
 Analizarea modurilor nu este permisă în modul sigur.
 Calea nu este nici un fișier, nici un director.
 Creează o altă copie a unui fișier sub alt director sau nume.
-Mută ​​un fișier într-un alt director
+Mută un fișier într-un alt director
 Potrivire {0} ({1}): {2}
 Potrivire {0}: {1}
 Timp petrecut: {0} milisecunde
@@ -275,14 +275,14 @@ Nu s-au putut elimina toate mesajele trimise de {0}.
 Eroare la trimiterea mesajului.
 Se mută {0} în {1}...
 Mutat cu succes
-Mută ​​fișierul sau directorul într-un alt fișier sau director. Puteți folosi asta și pentru a redenumi fișierele.
+Mută fișierul sau directorul într-un alt fișier sau director. Puteți folosi asta și pentru a redenumi fișierele.
 Nu s-a mutat {0} în {1}.
 Se copiează {0} în {1}...
 Copiat cu succes
 Copiază fișierul sau directorul într-un alt fișier sau director.
 Nu s-a putut copia {0} în {1}.
-Mută ​​un mesaj
-Mută ​​toate mesajele de la destinatar
+Mută un mesaj
+Mută toate mesajele de la destinatar
 Toate e-mailurile trimise de {0} au fost mutate cu succes.
 Nu s-au mutat toate mesajele trimise de {0}.
 Mesajul {0} de la {1} a fost mutat din {2}. {3} mesaje rămase de analizat.
@@ -458,7 +458,7 @@ Fișierul cheie {0} nu există.
 Eroare la încercarea de a adăuga cheia privată:
 Comenzi generale:
 Comenzi de mod:
-Alias ​​comenzi:
+Alias comenzi:
 modul de întreținere
 Directoare de căutare
 Fără comenzi de mod.
@@ -1931,7 +1931,7 @@ Modul sigur
 Modul de depanare
 Ultimele știri de la
 Pentru a putea primi cele mai recente știri, trebuie să instalați addonul RSS Shell Extras. Puteți folosi comanda „getaddons” pentru a obține toate suplimentele!
-Alias ​​{0} nu a fost găsit pentru a fi interogat.
+Alias {0} nu a fost găsit pentru a fi interogat.
 Setează valoarea ieșirii la variabila UESH selectată
 Argumentele necesare nu sunt furnizate pentru toate utilizările de mai jos:
 Argumentele necesare nu sunt furnizate.
@@ -2966,7 +2966,7 @@ Vă rugăm să așteptați până când nucleul se inițializează...
 Vă rugăm să așteptați până când nucleul se închide...
 Eroare necunoscută!
 Cal
-[ENTER] Începe cursa | [ESC] Ieșire | [SUS/JOS] Mută ​​selecția
+[ENTER] Începe cursa | [ESC] Ieșire | [SUS/JOS] Mută selecția
 Calul tău a câștigat cursa!
 Calul tău a pierdut cursa!
 Ești spânzurat!
@@ -3169,7 +3169,7 @@ Specifică limbajul nucleului.
 Cultură
 Activați daltonismul
 Dacă sunteți daltonism sau dacă doriți să simulați daltonismul, atunci îl puteți activa.
-Daltonism TransformationFormula
+Tip de daltonism
 Tipul de daltonism, fie că este protan, deuter sau tritan.
 Severitatea daltonismului
 Cât de gravă este daltonismul?
@@ -3306,7 +3306,7 @@ Timp de reîncercare a încărcării
 Această secțiune listează setările generale ale screensaverului. Pentru setările individuale ale screensaverului, ieșiți din Setări și deschideți Setări Screensaver.
 Setări de bază pentru screensaver
 Screen saver
-Cu ce ​​screensaver vrei să-ți blochezi ecranul?
+Cu ce screensaver vrei să-ți blochezi ecranul?
 Activați blocarea screensaverului când este inactiv
 Dacă este activat, screensaver-ul se lansează automat după ce a rămas inactiv pentru perioada specificată.
 Interval minim de inactivitate pentru screensaver

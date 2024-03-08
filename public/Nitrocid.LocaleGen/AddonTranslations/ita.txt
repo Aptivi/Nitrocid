@@ -57,7 +57,7 @@ Elenca la directory remota
 Carica il file locale nella directory remota usando binari o testo
 L'alias non può essere lo stesso nome di un comando.
 Comando non trovato per l'alias su {0}.
-Alias ​​{0} non è stato trovato per essere rimosso.
+Alias {0} non è stato trovato per essere rimosso.
 Directory {0} non trovata
 Nome host vuoto.
 Passaggio da: {0} a {1} ...
@@ -257,7 +257,7 @@ Cambia MOTD, il messaggio del giorno
 Modifica il nome utente
 Gestisci le autorizzazioni per gli utenti
 Rimuove un utente dall'elenco
-Alias ​​rimosso {0} correttamente.
+Alias rimosso {0} correttamente.
 Impossibile controllare gli aggiornamenti.
 Non ci sono più utenti rimasti nell'elenco.
 Errore durante il tentativo di ignorare la notifica.
@@ -311,7 +311,7 @@ Mostra i file nascosti.
 Mod {0} interrotto
 {0} v {1} interrotto
 È necessario attivare la modalità di debug prima di poter cancellare il registro di debug.
-{0} nuovi messaggi sono arrivati ​​nella Posta in arrivo.
+{0} nuovi messaggi sono arrivati nella Posta in arrivo.
 Apri "mail" per vederli.
 Rimuove una directory o un file
 Impossibile rimuovere {0} perché non esiste.
@@ -1424,7 +1424,7 @@ Non esiste alcuna variabile di riflessione con questo nome.
 Non esiste uno screensaver con questo nome.
 Non esiste una shell preimpostata con questo nome.
 Non esiste un tema con questo nome.
-Non ci sono utenti nell'intero kernel. Siamo arrivati ​​ad una situazione estremamente rara. Il kernel non può continuare.
+Non ci sono utenti nell'intero kernel. Siamo arrivati ad una situazione estremamente rara. Il kernel non può continuare.
 Si è verificato un errore durante il tentativo di gestire le autorizzazioni
 Il dispositivo di debug remoto esiste già.
 Impossibile trovare il dispositivo di debug remoto. Assicurati di aver scritto correttamente l'indirizzo IP del dispositivo.
@@ -1958,7 +1958,7 @@ Comando non definito
 Alcuni comandi personalizzati non possono essere caricati.
 Il comando personalizzato specificato non è stato trovato.
 Alcuni comandi personalizzati non possono essere scaricati.
-Il comando specificato è già aggiunto! È possibile che tu abbia componenti aggiuntivi in ​​conflitto.
+Il comando specificato è già aggiunto! È possibile che tu abbia componenti aggiuntivi in conflitto.
 Alcuni comandi aggiuntivi non possono essere caricati.
 Il comando aggiuntivo specificato non è stato trovato.
 Alcuni comandi aggiuntivi non possono essere scaricati.
@@ -2318,9 +2318,9 @@ Informazioni sull'assemblaggio .NET
 Il file non è un assembly .NET valido.
 Informazioni aggiuntive
 Alcuni o tutti i tuoi componenti aggiuntivi sono stati installati. Se desideri reinstallarli, utilizza l'opzione -reinstall.
-Recupero del pacchetto dei componenti aggiuntivi in ​​corso...
+Recupero del pacchetto dei componenti aggiuntivi in corso...
 Impossibile recuperare il pacchetto aggiuntivo
-Download del pacchetto dei componenti aggiuntivi in ​​corso...
+Download del pacchetto dei componenti aggiuntivi in corso...
 Impossibile scaricare il pacchetto aggiuntivo
 Installazione del pacchetto componenti aggiuntivi...
 Impossibile installare il pacchetto aggiuntivo
@@ -3169,7 +3169,7 @@ Specifica la lingua del kernel.
 Cultura
 Abilita daltonismo
 Se sei daltonico o se desideri simulare il daltonismo, puoi abilitarlo.
-Daltonismo TransformationFormula
+Tipo daltonismo
 Il tipo di daltonismo, che sia protan, deuter o tritan.
 Gravità del daltonismo
 Quanto è grave il daltonismo?
@@ -3185,7 +3185,7 @@ Imposta la tabella codici
 Imposta la codepage della lingua quando si cambia lingua.
 Avviso di sviluppo riconosciuto
 Se impostato su true, il kernel non mostrerà l'avviso di sviluppo ogni volta che si avvia il kernel nelle versioni di sviluppo.
-Consenti il ​​caricamento di mod non attendibili
+Consenti il caricamento di mod non attendibili
 Se impostato su true, il kernel non genererà errori durante il caricamento di mod che non hanno la chiave pubblica firmata.
 Quota di debug abilitata
 Se questa opzione è abilitata, il writer del debug ruota il file di registro del debug se la quota viene superata.
@@ -3409,7 +3409,7 @@ Ti mostra un testo che rimbalza sulla console.
 Dissolvenza del testo in entrata e in uscita.
 Sfumatura dello sfondo in entrata e in uscita.
 Dissolvenza del testo in entrata e in uscita in battute.
-Batti il ​​colore
+Batti il colore
 Simula una persona che scrive un testo con errori di battitura.
 Mostra un testo scorrevole da destra a sinistra.
 Simula una persona che scriveva un testo per un giornale sulla tastiera del linotype ai vecchi tempi.

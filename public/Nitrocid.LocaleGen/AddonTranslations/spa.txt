@@ -55,7 +55,7 @@ Descarga el archivo remoto al directorio local usando binario o texto
 Lista del directorio local
 Lista del directorio remoto
 Carga el archivo local al directorio remoto usando binario o texto
-Alias ​​no puede ser el mismo nombre que un comando.
+Alias no puede ser el mismo nombre que un comando.
 Comando no encontrado alias a {0}.
 El alias {0} no se encuentra eliminado.
 Directorio {0} no encontrado
@@ -2644,7 +2644,7 @@ que en los sistemas Linux, el shell se inicia con la ayuda tanto del controlador
 ¿Que tus mods pueden registrar sus propios proyectiles?
 ¿Que tus mods pueden agregar comandos a los shells existentes para aumentar la cantidad de comandos que se pueden usar?
 ¿Que sus clases de comando pueden representar con precisión los argumentos y modificadores pasados?
-¿Que puede consultar los conmutadores pasados ​​utilizando las clases de administración de conmutadores que se encuentran en la API del kernel?
+¿Que puede consultar los conmutadores pasados utilizando las clases de administración de conmutadores que se encuentran en la API del kernel?
 ¿Que UESH incluye la funcionalidad de secuencias de comandos para facilitar la creación y ejecución de secuencias de comandos?
 ¿Que el shell incluye funcionalidad para inhibir la cancelación de aplicaciones activas?
 ¿Que Nitrocid está profundamente integrado con Terminaux para permitir un renderizado mejor y más rápido?
@@ -2668,7 +2668,7 @@ Inicia el programa de broma HDD Uncleaner 2015.
 Conmemorando el 5º aniversario del kernel
 Primer lanzamiento
 Este kernel se lanzó por primera vez el 22 de febrero de 2018 para crear un simulador minimalista que realmente simula cómo funciona el núcleo del kernel.
-Solía ​​albergar solo un shell y algunos comandos, y solo funcionaba con Windows debido al uso de la herramienta Instrumental de administración de Windows.
+Solía albergar solo un shell y algunos comandos, y solo funcionaba con Windows debido al uso de la herramienta Instrumental de administración de Windows.
 Tampoco contaba con documentación propia.
 Refinamiento del núcleo
 Se lanzaron versiones del kernel, como la segunda versión principal para agregar colores y características básicas, y la cuarta versión principal para agregar configuración.
@@ -3169,7 +3169,7 @@ Especifica el idioma del núcleo.
 Cultura
 Habilitar el daltonismo
 Si es daltónico o si desea simular el daltonismo, puede habilitarlo.
-Fórmula de transformación del daltonismo
+Tipo de daltonismo
 El tipo de daltonismo, ya sea protan, deuter o tritan.
 Gravedad del daltonismo
 ¿Qué tan grave es el daltonismo?

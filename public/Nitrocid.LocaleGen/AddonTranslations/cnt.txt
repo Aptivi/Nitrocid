@@ -88,7 +88,7 @@ xiǎnshì rìqí hé shíjiān
 xiǎnshì qūyù zhōng de rìqí hé shíjiān
 nèihé jiāng bèi guānbì
 Yòngfǎ:
-Wàiké zhōng yǒu cuò​​wù.
+Wàiké zhōng yǒu cuòwù.
 Nín wú quán shǐyòng {0}
 Shell xiāoxī: Qǐngqiú de mìnglìng {0} bù yǔnxǔ zài wéihù móshì xià yùnxíng.
 Shell xiāoxī: Wèi zhǎodào qǐngqiú de mìnglìng {0}. Yǒuguān kěyòng mìnglìng, qǐng cānyuè “bāngzhù”.
@@ -3169,7 +3169,7 @@ zhǐ dìng nèi hé yǔ yán 。
 wén huà
 qǐ yòng sè máng
 rú guǒ nín shì sè máng huò xiǎng yào mó nǐ sè máng ， zé kě yǐ qǐ yòng tā 。
-sè máng zhuǎn huàn gōng shì
+Sèmáng lèixíng
 sè máng de lèi xíng ， wú lùn shì protan、deuter huán shì tritan。
 sè máng yán zhòng chéng dù
 sè máng yǒu duō yán zhòng ？

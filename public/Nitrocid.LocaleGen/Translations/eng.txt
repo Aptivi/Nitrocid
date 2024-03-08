@@ -3169,7 +3169,7 @@ Specifies the kernel language.
 Culture
 Enable color blindness
 If you are color blind or if you want to simulate color blindness, then you can enable it.
-Color blindness TransformationFormula
+Color blindness type
 The type of color blindness, whether it's protan, deuter, or tritan.
 Color blindness severity
 How severe is the color blindness?

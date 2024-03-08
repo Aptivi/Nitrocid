@@ -304,7 +304,7 @@ Nuzhno li registrirovat' imya pol'zovatelya FTP.
 Registrirovat' IP-adres FTP ili net.
 Vybirat' pervyy profil' tol'ko pri podklyuchenii.
 Vremya i data budut otobrazhat'sya v pravom verkhnem uglu ekrana.
-Yesli etot parametr vklyuchen, yadro ​​proanaliziruyet vsyu papku na predmet yeye obshchego razmera. V protivnom sluchaye budet analizirovat'sya tol'ko poverkhnost'.
+Yesli etot parametr vklyuchen, yadro proanaliziruyet vsyu papku na predmet yeye obshchego razmera. V protivnom sluchaye budet analizirovat'sya tol'ko poverkhnost'.
 Vklyuchayet eyecandy pri zapuske
 Vremya i data budut dlinneye, budut otobrazhat'sya polnyye nazvaniya mesyatsev i t. D.
 Pokazyvayet skrytyye fayly.
@@ -923,7 +923,7 @@ Proveryayet, sushchestvuyet li perevodimaya stroka v resursakh KS.
 Stroka naydena v resursakh lokalizatsii.
 Stroka ne naydena v resursakh lokalizatsii.
 Tikho zapuskayet yadro
-Zapuskayet yadro ​​v bezopasnom rezhime, otklyuchaya vse mody
+Zapuskayet yadro v bezopasnom rezhime, otklyuchaya vse mody
 Kak bezopasnyy rezhim, no takzhe otklyuchayet mnogopol'zovatel'skiy rezhim i nekotoryye nastroyki.
 Ne khvatilo argumentov.
 Tsvet verkhnego levogo ugla dlya rampy
@@ -1031,7 +1031,7 @@ Formatirovaniye JSON po umolchaniyu dlya obolochki JSON
 Vybirayet formatirovaniye JSON po umolchaniyu (uluchshennoye ili umen'shennoye) dlya sokhraneniya obolochki JSON.
 Obnovleniye uspeshno skachano!
 Avtomaticheski zagruzhat' obnovleniya
-Yesli yest' kakoye-libo obnovleniye, yadro ​​avtomaticheski zagruzit yego.
+Yesli yest' kakoye-libo obnovleniye, yadro avtomaticheski zagruzit yego.
 Radius vzryva feyyerverka
 Skol'ko blokov (do 10) sostavlyayet radius vzryva feyyerverka pri podzhiganii?
 Eta komanda imeyet sleduyushchiye pereklyuchateli, kotoryye izmenyayut yeye rabotu:
@@ -1085,7 +1085,7 @@ Yesli vklyucheno, budet ispol'zovat' sistemu uvedomleniy dlya uvedomleniya khost
 Figlet shrift dlya taymera
 Vklyuchit' Figlet dlya taymera
 Yesli vklyucheno, budet ispol'zovat' figlet dlya taymera. Obratite vnimaniye, chto dlya pravil'nogo otobrazheniya vremeni s vklyuchennym Figlet trebuyetsya bol'shoy ekran konsoli.
-Sbrasyvayet yadro ​​k zavodskim nastroykam
+Sbrasyvayet yadro k zavodskim nastroykam
 Pokazat' kolichestvo komand v spravke
 Pokazat' kolichestvo komand obolochki v spravke
 Pokazat' kolichestvo komand moda v spravke
@@ -1237,7 +1237,7 @@ Pervyi zapusk iadra
 Dobro pozhalovat v Nitrocid Kernel! Spasibo, chto poprobovali!
 Chtoby nachat, nazhmite ENTER.
 Vyberite vash iazyk
-Vyberite vash iazyk. Po umolchaniiu iadro ​​ispolzuet angliiskii iazyk, no vy mozhete vybrat zdes liuboi drugoi iazyk.
+Vyberite vash iazyk. Po umolchaniiu iadro ispolzuet angliiskii iazyk, no vy mozhete vybrat zdes liuboi drugoi iazyk.
 V zavisimosti ot iazykovykh nastroek vashei sistemy podkhodiashchim iazykom iavliaetsia
 Napishite kod iazyka, ukazannyi nizhe:
 Nazhmite klavishu ENTER, chtoby prodolzhit.
@@ -1318,7 +1318,7 @@ Predostavlennyi vami tselevoi fail {0} ne iavliaetsia dopustimym tekstovym failo
 Disk ne sushchestvuet
 Razdel ne sushchestvuet
 Biblioteke proverki oborudovaniia ne udalos proverit zhestkie diski. Esli vy ispolzuete Windows, naibolee veroiatnaia prichina zakliuchaetsia v tom, chto u vas nedostatochno prav dlia dostupa k informatsii na zhestkom diske. Perezapustite Nitrocid s povyshennymi pravami administratora, chtoby imet vozmozhnost analizirovat zhestkie diski.
-Vam nuzhno budet perezapustit iadro ​​s povyshennymi pravami, chtoby imet vozmozhnost otobrazhat informatsiiu ob oborudovanii.
+Vam nuzhno budet perezapustit iadro s povyshennymi pravami, chtoby imet vozmozhnost otobrazhat informatsiiu ob oborudovanii.
 Ne udalos proanalizirovat informatsiiu o protsessore. Ubedites, chto eto deistvitelnyi informatsionnyi spisok.
 Ne udalos proanalizirovat informatsiiu ob operativnoi pamiati. Ubedites, chto eto deistvitelnyi informatsionnyi spisok.
 Ne udalos proanalizirovat informatsiiu o graficheskom protsessore. Ubedites, chto eto deistvitelnyi informatsionnyi spisok.
@@ -1457,7 +1457,7 @@ Vypolniaetsia nedopustimaia operatsiia arkhivirovaniia.
 Vypolniaetsia nedopustimaia operatsiia shestnadtsaterichnogo redaktora.
 Vypolniaetsia nedopustimaia operatsiia redaktora JSON.
 Vypolniaetsia nedopustimaia operatsiia tekstovogo redaktora.
-Kogda iadro ​​popytalos zagruzit ukazannyi mod, ono zaprosilo zagruzku «Kernel Simulator». Poskolku osnovnoe prilozhenie pereimenovano v Nitrocid KS, etot mod nevozmozhno zapustit bezopasno. Sovetuem vam obnovit mod.
+Kogda iadro popytalos zagruzit ukazannyi mod, ono zaprosilo zagruzku «Kernel Simulator». Poskolku osnovnoe prilozhenie pereimenovano v Nitrocid KS, etot mod nevozmozhno zapustit bezopasno. Sovetuem vam obnovit mod.
 Pri popytke vypolnit zaproshennuiu operatsiiu proizoshla oshibka dispetchera kontaktov. Ubedites, chto fail kontaktov sushchestvuet v pravilnoi papke i chto eto deistvitelnyi fail kontaktov vCard 2.1, 3.0 ili 4.0.
 V sisteme uslovii UESH proizoshel sboi pri vypolnenii zaproshennoi operatsii. Bolee podrobnuiu informatsiiu smotrite v soobshchenii ob oshibke nizhe.
 Vypolniaetsia nedopustimaia operatsiia redaktora SQL.
@@ -1505,11 +1505,11 @@ Esli dopolnitelnaia informatsiia, privedennaia vyshe, ne pomogaet vam opredelit 
 Modul ne predostavil informatsiiu ob iskliuchenii, poetomu obychno eto ukazyvaet na to, chto chto-to ne tak.
 Podrobnosti vnutrennego iskliucheniia
 Dopolnitelnye oshibki byli obnaruzheny, kogda programma pytalas vypolnit etu operatsiiu.
-Esli vy uvereny, chto eta oshibka iavliaetsia neozhidannoi, poprobuite perezapustit iadro ​​s vkliuchennoi otladkoi i izuchite zhurnaly posle povtornoi popytki deistviia.
+Esli vy uvereny, chto eta oshibka iavliaetsia neozhidannoi, poprobuite perezapustit iadro s vkliuchennoi otladkoi i izuchite zhurnaly posle povtornoi popytki deistviia.
 K sozhaleniiu, ukazan nevernyi tip soobshcheniia, poetomu vozmozhno, chto-to ne tak. Poprobuite vkliuchit otladchik i vosproizvesti problemu.
 {0} – perezagruzka cherez {1} sekund...
 Proizoshla postoiannaia oshibka iadra:
-Eta oshibka mozhet privesti k nestabilnoi rabote iadra ili prilozhenii. Vy mozhete prodolzhat ispolzovat iadro ​​na svoi strakh i risk.
+Eta oshibka mozhet privesti k nestabilnoi rabote iadra ili prilozhenii. Vy mozhete prodolzhat ispolzovat iadro na svoi strakh i risk.
 Uglublennyi analiz oshibki
 Tip iskliucheniia
 Kod oshibki
@@ -1526,7 +1526,7 @@ Posledniaia vnutrenniaia oshibka iavliaetsia pervoprichinoi, kotoroi iavliaetsia
 Analiz kadra
 Net kadrov dlia analiza.
 Analiz kadra ne udalsia. Nekotoraia informatsiia mozhet byt nepolnoi.
-K sozhaleniiu, ne predostavlena ​​poleznaia informatsiia ob oshibkakh, kotoraia mogla by pomoch vam proanalizirovat problemu.
+K sozhaleniiu, ne predostavlena poleznaia informatsiia ob oshibkakh, kotoraia mogla by pomoch vam proanalizirovat problemu.
 Vse potoki iadra
 Tema zhiva
 Potok — fonovyi potok.
@@ -1616,7 +1616,7 @@ Zagruzka polzovatelskikh iazykov...
 Zagruzka vazhnykh dopolnenii iadra...
 Zagruzka konfiguratsii...
 Zagruzka vazhnykh modov...
-Iadru ne udalos initsializirovat nekotorye vazhnye komponenty. Na etom etape iadro ​​ne budet rabotat dolzhnym obrazom.
+Iadru ne udalos initsializirovat nekotorye vazhnye komponenty. Na etom etape iadro ne budet rabotat dolzhnym obrazom.
 Informatsiia ob oshibke:
 Informatsiia o srede iadra
 Iadru ne udalos initsializirovat nekotorye dopolnitelnye komponenty. Esli on pytaetsia prochitat fail konfiguratsii, ubedites, chto on otformatirovan pravilno.
@@ -1624,9 +1624,9 @@ Sbros obshchikh peremennykh
 Sokhranennaia istoriia komand obolochki.
 Konfiguratsiia sokhranena.
 Dopolnitelnye funktsii iadra i ikh zaregistrirovannye komponenty ostanovleny.
-Iadru ne udalos sbrosit vsiu konfiguratsiiu v iskhodnoe sostoianie. Nekotorye komponenty mogli byt vygruzheny nepravilno. Esli u vas voznikli problemy posle perezagruzki, vozmozhno, prichina v etom. Pozhaluista, vykliuchite iadro ​​posle perezagruzki.
+Iadru ne udalos sbrosit vsiu konfiguratsiiu v iskhodnoe sostoianie. Nekotorye komponenty mogli byt vygruzheny nepravilno. Esli u vas voznikli problemy posle perezagruzki, vozmozhno, prichina v etom. Pozhaluista, vykliuchite iadro posle perezagruzki.
 Do svidaniia!
-Pozhaluista, podozhdite, poka iadro ​​initsializiruet vashe oborudovanie...
+Pozhaluista, podozhdite, poka iadro initsializiruet vashe oborudovanie...
 Proverka tselostnosti sistemy
 Oshibka konfiguratsii budet uvedomlena
 Oshibka konfiguratsii
@@ -1794,12 +1794,12 @@ Dobro pozhalovat v Nitrocid Kernel! - Versiia
 Eta programma rasprostraniaetsia po litsenzii GNU General Public License 3.0 ili bolee pozdnei versii.
 Vy ispolzuete versiiu iadra dlia razrabotki. Khotia vy mozhete ispytat budushchie funktsii, kotorye mogut poiavitsia v finalnoi versii, vy mozhete stolknutsia s oshibkami, nestabilnostiu ili dazhe poterei dannykh. My rekomenduem ispolzovat stabilnuiu versiiu, esli eto vozmozhno.
 Vy ispolzuete versiiu iadra-kandidata na vypusk. Khotia vy mozhete vnesti poslednie shtrikhi, vy mozhete stolknutsia s oshibkami, nestabilnostiu ili dazhe poterei dannykh. My rekomenduem ispolzovat stabilnuiu versiiu, esli eto vozmozhno.
-My ne rekomenduem ispolzovat etu versiiu iadra, poskolku ona ne podderzhivaetsia. Esli vy zagruzili eto iadro ​​iz neizvestnykh istochnikov, mozhet poiavitsia eto soobshchenie. Zagruzite ego s nashei ofitsialnoi stranitsy zagruzok.
+My ne rekomenduem ispolzovat etu versiiu iadra, poskolku ona ne podderzhivaetsia. Esli vy zagruzili eto iadro iz neizvestnykh istochnikov, mozhet poiavitsia eto soobshchenie. Zagruzite ego s nashei ofitsialnoi stranitsy zagruzok.
 Chtoby zakryt navsegda, libo nazhmite VVOD na knopke «Podtverzhdeno», vydeliv ee s pomoshchiu strelki vlevo na klaviature, libo vkliuchite «Uvedomlenie o razrabotke podtverzhdeno» v nastroikakh iadra.
 KHOROSHO
 Priznano
 Uvedomlenie o razrabotke
-Vy ispolzuete Nitrocid KS v neobychnoi srede. Pozhaluista, ubedites, chto vy zapustili iadro ​​napriamuiu ili cherez GRILO. Esli vy uvereny, chto zapustili iadro ​​obychnym sposobom, vozmozhno, vy ispolzuete nepodderzhivaemuiu versiiu Nitrocid KS.
+Vy ispolzuete Nitrocid KS v neobychnoi srede. Pozhaluista, ubedites, chto vy zapustili iadro napriamuiu ili cherez GRILO. Esli vy uvereny, chto zapustili iadro obychnym sposobom, vozmozhno, vy ispolzuete nepodderzhivaemuiu versiiu Nitrocid KS.
 Obratite vnimanie, chto zapusk Nitrocid KS v neobychnoi srede oznachaet, chto nekotorye funktsii budut ogranicheny. Vy ne smozhete zagruzhat mody i konfiguratsii.
 Uvedomlenie o neobychnoi obstanovke
 chto vy mozhete poluchit dopolnitelnye sovety ot dopolneniia iadra, postavliaemogo s polnoi sborkoi Nitrocid?
@@ -1924,8 +1924,8 @@ Paket informatsii o chasovom poiase eshche ne ustanovlen v vashei sisteme Linux.
 pozhaluista, podozhdite
 Zagruzka
 Pozhaluista, podozhdite, poka initsializiruetsia iadro.
-Pozhaluista, podozhdite, poka iadro ​​vykliuchitsia.
-Pozhaluista, podozhdite, poka iadro ​​perezagruzhaetsia
+Pozhaluista, podozhdite, poka iadro vykliuchitsia.
+Pozhaluista, podozhdite, poka iadro perezagruzhaetsia
 Nachalo
 Bezopasnyi rezhim
 Rezhim otladki
@@ -2104,9 +2104,9 @@ Pokazyvaet bity platformy
 Pokazyvaet versiiu platformy .NET.
 Pokazyvaet identifikator sredy vypolneniia platformy .NET.
 Perezapuskaet iadro
-Perezapuskaet iadro ​​v bezopasnom rezhime.
-Perezapuskaet iadro ​​v rezhim obsluzhivaniia.
-Perezapuskaet iadro ​​v rezhime otladki.
+Perezapuskaet iadro v bezopasnom rezhime.
+Perezapuskaet iadro v rezhim obsluzhivaniia.
+Perezapuskaet iadro v rezhime otladki.
 Bezopasnoe udalenie faila ili kataloga
 Udaliaet gruppu iz spiska
 Udaliaet polzovatelia iz gruppy
@@ -2251,7 +2251,7 @@ Uslovie nuzhno postavit v kontse.
 Nevozmozhno zaregistrirovat uzhe sushchestvuiushchee uslovie.
 Nevozmozhno zaregistrirovat pustoe uslovie.
 Nevozmozhno otmenit registratsiiu nesushchestvuiushchego usloviia.
-Vy ne mozhete vyiti iz materinskoi obolochki. Vy imeli v vidu vyiti iz svoei uchetnoi zapisi, vykliuchit iadro ​​ili perezagruzit ego?
+Vy ne mozhete vyiti iz materinskoi obolochki. Vy imeli v vidu vyiti iz svoei uchetnoi zapisi, vykliuchit iadro ili perezagruzit ego?
 Komandy ne naideny.
 Nedopustimoe kolichestvo raz.
 Ne mogu povtorit sebia.
@@ -2362,7 +2362,7 @@ Net takogo rezhima razresheniia
 Gruppa {0} udalena.
 Udalen {0} iz gruppy {1}.
 Dostupnye zastavki:
-Poisk {0} po zaprosu {1} ​​ne udalsia.
+Poisk {0} po zaprosu {1} ne udalsia.
 Vy dolzhny peredat kliuch -set vmeste s peremennoi, kotoroi vy khotite ustanovit eto znachenie.
 gde budet zastavka
 Chtoby poluchit dopolnitelnye zastavki, ustanovite nadstroiku paketa zastavok.
@@ -2394,7 +2394,7 @@ Khotite ustanovit etu temu?
 Da, stav!
 Net, ne ustanavlivaite.
 Chtoby poluchit dostup k rukovodstvu polzovatelia po obshchemu ispolzovaniiu nitrotsida, pereidite po ssylke nizhe:
-Chtoby poluchit dostup k rukovodstvu razrabotchika s obnovlennymi sposobami vneseniia izmenenii v iadro ​​i zastavkami, pereidite po ssylke nizhe:
+Chtoby poluchit dostup k rukovodstvu razrabotchika s obnovlennymi sposobami vneseniia izmenenii v iadro i zastavkami, pereidite po ssylke nizhe:
 Vy uzhe provodite seans povyshennogo nitrotsida!
 Povyshenie effektivnosti seansa nitrotsida...
 Eta komanda nedostupna dlia vashei platformy.
@@ -2601,10 +2601,10 @@ chto vy mozhete sokhranit svoi ekran s pomoshchiu komandy savescreen?
 chto vy mozhete soobshchat nam ob oshibkakh, pereidia na stranitsu proekta Nitrocid na GitHub?
 chto vy mozhete sozdat iarlyk dlia nuzhnoi komandy, ispolzuia komandu «psevdonim»?
 chto vy mozhete sozdat svoi sobstvennyi ekran-zastavku, ispolzuia C# i Visual Basic?
-chto vy mozhete ustanovit dopolnitelnye dopolneniia, chtoby sdelat vashe iadro ​​bolee poleznym i interesnym?
+chto vy mozhete ustanovit dopolnitelnye dopolneniia, chtoby sdelat vashe iadro bolee poleznym i interesnym?
 chto vy mozhete sozdavat svoi sobstvennye potriasaiushchie temy s pomoshchiu komandy mktheme?
 chto vy mozhete izmenit tsveta iadra, ispolzuia komandu «Nastroiki» ili odnu iz gotovykh tem?
-chto vy mozhete sbrosit iadro ​​do zavodskikh nastroek po umolchaniiu, ispolzuia argument «sbros»?
+chto vy mozhete sbrosit iadro do zavodskikh nastroek po umolchaniiu, ispolzuia argument «sbros»?
 chto vy mozhete poluchit dostup k nashei obshirnoi dokumentatsii na nashei stranitse GitBook?
 chto dolgosrochnye vypuski podderzhivaiutsia v techenie piati let dlia osnovnoi podderzhki i trekh let dlia obnovlenii bezopasnosti?
 chto 0.0.1 byla samoi pervoi versiei Nitrocid KS, vypushchennoi 22 fevralia 2018 goda?
@@ -2615,7 +2615,7 @@ chto vy mozhete zapustit Nitrocid KS na Linux, macOS i Android?
 chto vy mozhete obratitsia k dokumentatsii API, chtoby pomoch vam sozdavat svoi mody?
 chto vy smozhete poluchit neskolko zamechatelnykh igr, takikh kak Hangman i ShipDuet, ustanoviv dopolnitelnye dopolneniia?
 chto v «Meteore» esli vy poterpite krushenie v krasnoi meteoritnoi bure, vash kosmicheskii korabl razobetsia?
-chto vy mozhete preobrazovat svoe iadro ​​v informatsionnye tsentry, ispolzuia funktsiiu stykovki?
+chto vy mozhete preobrazovat svoe iadro v informatsionnye tsentry, ispolzuia funktsiiu stykovki?
 chto vy mozhete sozdavat gruppy polzovatelei dlia organizatsii uchetnykh zapisei polzovatelei?
 chto esli vy iavliaetes chlenom gruppy, predostavliaiushchei opredelennye razresheniia, vam razresheno vypolniat takie operatsii?
 chto vy mozhete izmenit chasovoi poias iadra, ne zatragivaia vashu khost-sistemu?
@@ -2627,10 +2627,10 @@ chto, esli vy ne znaete, chto delaete s dvoichnym failom, redaktirovanie takogo 
 chto v sistemakh Linux obolochka zapuskaetsia kak s pomoshchiu obrabotchika vkhoda v sistemu, tak i s pomoshchiu programmy initsializatsii sistemy, obychno nakhodiashcheisia v /sbin/init?
 chto vy mozhete vypolniat tipichnye operatsii s failami, takie kak kopirovanie, peremeshchenie, udalenie, redaktirovanie i t. d.?
 chto interaktivnyi interfeis failovogo menedzhera imitiruet funktsionalnost Midnight Commander?
-chto esli iadro ​​vykhodit iz stroia, ono obychno sozdaet fail dampa?
+chto esli iadro vykhodit iz stroia, ono obychno sozdaet fail dampa?
 chto vy mozhete diagnostirovat iadro, otladiv ego s pomoshchiu vstroennoi funktsii otladki?
 chto mozhno skachivat i zagruzhat faily priamo iz obolochki UESH?
-chto iadro ​​mozhno translirovat dazhe na etape predvaritelnoi zagruzki, zapustiv ego s argumentom lang?
+chto iadro mozhno translirovat dazhe na etape predvaritelnoi zagruzki, zapustiv ego s argumentom lang?
 chto vy mozhete sozdavat svoi sobstvennye zastavki, registriruia ikh v svoem mode?
 chto pervaia zastavka, kotoraia gasila ekran posle trekh minut bezdeistviia na originalnykh kompiuterakh IBM PC, scrnsave, byla sozdana v 1983 godu Dzhonom Socha?
 chto nekotorye iz dinamichnykh zastavok mogut vyzvat svetochuvstvitelnye pripadki?
@@ -2667,14 +2667,14 @@ Eto «fiktivnoe prilozhenie» iavliaetsia parodiei na «HDD Cleaner 2.1», vypus
 Zapuskaet programmu-shutku HDD Uncleaner 2015.
 Prazdnovanie 5-letiia iadra
 Pervyi vypusk
-Eto iadro ​​bylo vpervye vypushcheno 22 fevralia 2018 goda s tseliu sozdaniia minimalistichnogo simuliatora, kotoryi fakticheski imitiruet rabotu iadra iadra.
+Eto iadro bylo vpervye vypushcheno 22 fevralia 2018 goda s tseliu sozdaniia minimalistichnogo simuliatora, kotoryi fakticheski imitiruet rabotu iadra iadra.
 Ranshe na nem razmeshchalas tolko odna obolochka i neskolko komand, i on rabotal tolko s Windows iz-za ispolzovaniia instrumenta upravleniia Windows.
 U nego takzhe ne bylo sobstvennoi dokumentatsii.
 Utochnenie iadra
 Byli vypushcheny versii iadra, takie kak vtoroi osnovnoi vypusk s dobavleniem raskraski i osnovnykh funktsii i chetvertyi osnovnoi vypusk s dobavleniem konfiguratsii.
-Nachalas dokumentatsiia shestogo osnovnogo vypuska, i v iadro ​​postepenno dobavlialis razlichnye priiatnye veshchi.
+Nachalas dokumentatsiia shestogo osnovnogo vypuska, i v iadro postepenno dobavlialis razlichnye priiatnye veshchi.
 Tekushchaia versiia
-V etoi versii iadro ​​usovershenstvovano do takoi stepeni, chto ono bolshe ne vedet sebia kak starye versii.
+V etoi versii iadro usovershenstvovano do takoi stepeni, chto ono bolshe ne vedet sebia kak starye versii.
 Poskolku byli vypushcheny novye revoliutsionnye funktsii, my reshili nazvat eto iadro...
 S 5-letnim iubileem!
 Nichego ne mogu izvlech.
@@ -2962,8 +2962,8 @@ Otmechaem 6000-i kommit s momenta vykhoda versii 0.0.1!
 Prodolzhenie sleduet...
 Konets
 S Novym Godom!
-Pozhaluista, podozhdite, poka iadro ​​initsializiruetsia...
-Pozhaluista, podozhdite, poka iadro ​​vykliuchitsia...
+Pozhaluista, podozhdite, poka iadro initsializiruetsia...
+Pozhaluista, podozhdite, poka iadro vykliuchitsia...
 Neizvestnaia oshibka!
 Loshad
 [VVOD] Nachat gonku | [ESC] Vykhod | [VVERKH/VNIZ] Peremeshchenie vybora
@@ -3169,7 +3169,7 @@ Ukazyvaet iazyk iadra.
 Kultura
 Vkliuchit daltonizm
 Esli vy daltonik ili khotite imitirovat daltonizm, vy mozhete vkliuchit ego.
-Tsvetovaia slepota. TransformationFormula
+Tip tsvetovoy slepoty
 Tip daltonizma, bud to protan, deiter ili tritan.
 Stepen daltonizma
 Naskolko serezna daltonizm?
@@ -3184,15 +3184,15 @@ Esli vy uvereny, chto konsol podderzhivaet nastoiashchii tsvet, ili khotite izme
 Ustanovit kodovuiu stranitsu
 Ustanovite kodovuiu stranitsu iazyka pri perekliuchenii iazykov.
 Uvedomlenie o razrabotke podtverzhdeno
-Esli ustanovleno znachenie true, iadro ​​ne budet pokazyvat vam uvedomlenie o razrabotke kazhdyi raz, kogda vy zagruzhaete iadro ​​v razrabatyvaemykh versiiakh.
+Esli ustanovleno znachenie true, iadro ne budet pokazyvat vam uvedomlenie o razrabotke kazhdyi raz, kogda vy zagruzhaete iadro v razrabatyvaemykh versiiakh.
 Razreshit zagruzku nenadezhnykh modov
-Esli ustanovleno znachenie true, iadro ​​ne budet vydavat oshibku pri zagruzke modov, u kotorykh net podpisannogo otkrytogo kliucha.
+Esli ustanovleno znachenie true, iadro ne budet vydavat oshibku pri zagruzke modov, u kotorykh net podpisannogo otkrytogo kliucha.
 Kvota otladki vkliuchena
 Esli etot parametr vkliuchen, modul zapisi otladki meniaet fail zhurnala otladki, esli kvota prevyshena.
 Kolichestvo strok kvoty otladki
 Skolko strok nuzhno napechatat v bufere otladki, prezhde chem budet dostignut predel kvoty? Obratite vnimanie, chto eto ne otrazhaet kolichestvo strok v failakh zhurnala otladki.
 Ispolzovat sistemnyi chasovoi poias
-Esli eta optsiia vkliuchena, iadro ​​ispolzuet chasovoi poias iz nastroek vashego kompiutera. V protivnom sluchae ispolzuetsia chasovoi poias vsego iadra, kotoryi mozhno nastroit.
+Esli eta optsiia vkliuchena, iadro ispolzuet chasovoi poias iz nastroek vashego kompiutera. V protivnom sluchae ispolzuetsia chasovoi poias vsego iadra, kotoryi mozhno nastroit.
 Chasovoi poias iadra
 Chasovoi poias iadra, kotoryi nuzhno ispolzovat
 Pokazat okno s informatsiei o litsenzii
