@@ -284,14 +284,14 @@ namespace Nitrocid.Misc.Notifications
                             {
                                 // Simplified way
                                 DebugWriter.WriteDebug(DebugLevel.I, "Where to store: ({0}, {1})", notifLeft, notifTop);
-                                printBuffer.Append(TextWriterWhereColor.RenderWhere(Title, notifLeft, notifTop, NotifyBorderColor, background));
+                                printBuffer.Append(TextWriterWhereColor.RenderWhereColorBack(Title, notifLeft, notifTop, NotifyBorderColor, background));
                             }
                             else
                             {
                                 // Normal way
                                 DebugWriter.WriteDebug(DebugLevel.I, "Where to store: ({0}, {1}), Title top: {2}, Desc top: {3}, Wipe top: {4}, Tip top: {5}", notifLeft, notifTop, notifTitleTop, notifDescTop, notifWipeTop, notifTipTop);
-                                printBuffer.Append(TextWriterWhereColor.RenderWhere(Title + new string(' ', notifWidth - Title.Length), notifLeft, notifTitleTop, NotifyTitleColor, background));
-                                printBuffer.Append(TextWriterWhereColor.RenderWhere(Desc + new string(' ', notifWidth - Desc.Length), notifLeft, notifDescTop, NotifyDescColor, background));
+                                printBuffer.Append(TextWriterWhereColor.RenderWhereColorBack(Title + new string(' ', notifWidth - Title.Length), notifLeft, notifTitleTop, NotifyTitleColor, background));
+                                printBuffer.Append(TextWriterWhereColor.RenderWhereColorBack(Desc + new string(' ', notifWidth - Desc.Length), notifLeft, notifDescTop, NotifyDescColor, background));
                             }
 
                             // Go to the original position and print
@@ -330,8 +330,8 @@ namespace Nitrocid.Misc.Notifications
                                     DebugWriter.WriteDebug(DebugLevel.I, "Progress: {0}", NewNotification.Progress);
 
                                     // Write the title, the description, and the progress
-                                    printBuffer.Append(TextWriterWhereColor.RenderWhere(renderedProgressTitle, notifLeftAgnostic, notifTitleTop, NotifyTitleColor, background));
-                                    printBuffer.Append(TextWriterWhereColor.RenderWhere(Desc, notifLeftAgnostic, notifDescTop, NotifyDescColor, background));
+                                    printBuffer.Append(TextWriterWhereColor.RenderWhereColorBack(renderedProgressTitle, notifLeftAgnostic, notifTitleTop, NotifyTitleColor, background));
+                                    printBuffer.Append(TextWriterWhereColor.RenderWhereColorBack(Desc, notifLeftAgnostic, notifDescTop, NotifyDescColor, background));
 
                                     // For indeterminate progresses, flash the box inside the progress bar
                                     ProgressBarColor.WriteProgress(indeterminate ? 100 * indeterminateStep : NewNotification.Progress, notifLeftAgnostic, notifTipTop, notifLeftAgnostic, 6, NotifyProgressColor, NotifyBorderColor, KernelColorTools.GetColor(KernelColorType.Background), DrawBorderNotification);
@@ -348,9 +348,9 @@ namespace Nitrocid.Misc.Notifications
 
                                 // Now, check to see if the progress failed or succeeded
                                 if (NewNotification.ProgressState == NotificationProgressState.Failure)
-                                    printBuffer.Append(TextWriterWhereColor.RenderWhere(renderedProgressTitleFailure, notifLeftAgnostic, notifTitleTop, NotifyProgressFailureColor, background));
+                                    printBuffer.Append(TextWriterWhereColor.RenderWhereColorBack(renderedProgressTitleFailure, notifLeftAgnostic, notifTitleTop, NotifyProgressFailureColor, background));
                                 else if (NewNotification.ProgressState == NotificationProgressState.Success)
-                                    printBuffer.Append(TextWriterWhereColor.RenderWhere(renderedProgressTitleSuccess, notifLeftAgnostic, notifTitleTop, NotifyProgressSuccessColor, background));
+                                    printBuffer.Append(TextWriterWhereColor.RenderWhereColorBack(renderedProgressTitleSuccess, notifLeftAgnostic, notifTitleTop, NotifyProgressSuccessColor, background));
 
                                 // Print the buffer
                                 TextWriterRaw.WritePlain(printBuffer.ToString(), false);
@@ -369,24 +369,24 @@ namespace Nitrocid.Misc.Notifications
                                 // Clear the area
                                 string spaces = new(' ', width);
                                 printBuffer.Append(
-                                    TextWriterWhereColor.RenderWhere(spaces, left, notifTitleTop, textColor, background) +
-                                    TextWriterWhereColor.RenderWhere(spaces, left, notifDescTop, textColor, background) +
-                                    TextWriterWhereColor.RenderWhere(spaces, left, notifTipTop, textColor, background)
+                                    TextWriterWhereColor.RenderWhereColorBack(spaces, left, notifTitleTop, textColor, background) +
+                                    TextWriterWhereColor.RenderWhereColorBack(spaces, left, notifDescTop, textColor, background) +
+                                    TextWriterWhereColor.RenderWhereColorBack(spaces, left, notifTipTop, textColor, background)
                                 );
 
                                 // Also, clear the border area
                                 if (DrawBorderNotification)
                                 {
                                     printBuffer.Append(
-                                        TextWriterWhereColor.RenderWhere(spaces, left, notifTopAgnostic, textColor, background) +
-                                        TextWriterWhereColor.RenderWhere(spaces, left, notifWipeTop, textColor, background)
+                                        TextWriterWhereColor.RenderWhereColorBack(spaces, left, notifTopAgnostic, textColor, background) +
+                                        TextWriterWhereColor.RenderWhereColorBack(spaces, left, notifWipeTop, textColor, background)
                                     );
                                 }
 
                                 // Also, clear the progress area
                                 if (NewNotification.Type == NotificationType.Progress)
                                     printBuffer.Append(
-                                        TextWriterWhereColor.RenderWhere(spaces, left, notifWipeTop + 1, textColor, background)
+                                        TextWriterWhereColor.RenderWhereColorBack(spaces, left, notifWipeTop + 1, textColor, background)
                                     );
 
                                 // Render it
