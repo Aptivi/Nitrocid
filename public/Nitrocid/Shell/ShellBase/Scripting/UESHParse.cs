@@ -133,16 +133,15 @@ namespace Nitrocid.Shell.ShellBase.Scripting
                     // See if the line contains argument placeholder, and replace every instance of it with its value
                     var SplitArguments = ScriptArguments.SplitEncloseDoubleQuotes();
                     if (SplitArguments is not null)
-                        // Iterate every word
-                        for (int i = 0; i <= SplitWords.Length - 1; i++)
-                            // Iterate every script argument
-                            for (int j = 0; j <= SplitArguments.Length - 1; j++)
-                                // If there is a placeholder variable like so:
-                                //     echo Hello, {0}
-                                // ...then proceed to replace the placeholder that contains an index of argument with the
-                                // actual value
-                                if (SplitWords[i] == $"{{{j}}}")
-                                    Line = Line.Replace(SplitWords[i], SplitArguments[j]);
+                        // Iterate every script argument
+                        for (int j = 0; j <= SplitArguments.Length - 1; j++)
+                            // If there is a placeholder variable like so:
+                            //     echo Hello, {0}
+                            // ...or...
+                            //     echo {0}ification
+                            // ...then proceed to replace the placeholder that contains an index of argument with the
+                            // actual value
+                            Line = Line.Replace($"{{{j}}}", SplitArguments[j]);
 
                     // See if the line is a command that starts with the if statement
                     if (SplitWords is not null)
