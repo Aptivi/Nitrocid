@@ -24,6 +24,7 @@ using System.Linq;
 using System.Reflection;
 using Nitrocid.Files;
 using Nitrocid.Files.Operations.Querying;
+using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 
@@ -80,33 +81,46 @@ namespace Nitrocid.Misc.Reflection
             string ReqAssemblyName = args.RequestingAssembly is not null ? args.RequestingAssembly.GetName().Name : "An unknown assembly";
             DebugWriter.WriteDebug(DebugLevel.I, "{0} has requested to load {1}.", ReqAssemblyName, args.Name);
 
+            // Guard against the old version of Nitrocid KS (0.1.0 Milestone X or lower)
             if (DepAssemblyName == "Kernel Simulator")
                 throw new KernelException(KernelExceptionType.OldModDetected);
+
+            // Helper function
+            void AssignAsm(string path)
+            {
+                try
+                {
+                    // Check to see if the dependency file exists
+                    if (!Checking.FileExists(path))
+                    {
+                        DebugWriter.WriteDebug(DebugLevel.W, "Assembly {0} doesn't exist...", path);
+                        return;
+                    }
+
+                    // Try loading
+                    DebugWriter.WriteDebug(DebugLevel.I, "Loading from {0}...", path);
+                    FinalAssembly = Assembly.LoadFrom(path);
+                }
+                catch (Exception ex)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to load {0} from {1}: {2}", args.Name, path, ex.Message);
+                    DebugWriter.WriteDebugStackTrace(ex);
+                }
+            }
 
             // Try to load assembly from lookup path
             var paths = baseAssemblyLookupPaths.Union(AssemblyLookupPaths).ToArray();
             foreach (string LookupPath in paths)
             {
+                DebugWriter.WriteDebug(DebugLevel.E, "Lookup Path: {0}", LookupPath);
                 string DepAssemblyFilePath = Path.Combine(LookupPath, DepAssemblyName + ".dll");
-                try
-                {
-                    // Check to see if the dependency file exists
-                    if (!Checking.FileExists(DepAssemblyFilePath))
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.W, "Assembly {0} doesn't exist...", DepAssemblyFilePath);
-                        continue;
-                    }
-
-                    // Try loading
-                    DebugWriter.WriteDebug(DebugLevel.I, "Loading from {0}...", DepAssemblyFilePath);
-                    FinalAssembly = Assembly.LoadFrom(DepAssemblyFilePath);
-                }
-                catch (Exception ex)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to load {0} from {1}: {2}", args.Name, DepAssemblyFilePath, ex.Message);
-                    DebugWriter.WriteDebugStackTrace(ex);
-                    DebugWriter.WriteDebug(DebugLevel.E, "Trying another path...");
-                }
+                AssignAsm(DepAssemblyFilePath);
+            }
+            if (FinalAssembly is null)
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, "Using Nitrocid execuable path {0} for lookup", PathsManagement.ExecPath);
+                string DepAssemblyFilePath = Path.Combine(PathsManagement.ExecPath, DepAssemblyName + ".dll");
+                AssignAsm(DepAssemblyFilePath);
             }
 
             // Get the final assembly
