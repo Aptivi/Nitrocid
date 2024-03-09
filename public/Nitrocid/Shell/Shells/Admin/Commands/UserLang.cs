@@ -51,7 +51,11 @@ namespace Nitrocid.Shell.Shells.Admin.Commands
             else if (LanguageManager.Languages.TryGetValue(lang, out LanguageInfo langInfo))
             {
                 // Do it locally
-                LanguageManager.currentUserLanguage = langInfo;
+                if (UserManagement.CurrentUser.Username == userName)
+                {
+                    LanguageManager.currentUserLanguage = langInfo;
+                    UserManagement.CurrentUser.PreferredLanguage = lang;
+                }
 
                 // Now, change the language in the user config
                 UserManagement.Users[userIndex].PreferredLanguage = lang;
