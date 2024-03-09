@@ -4,11 +4,9 @@ on:
   push:
     branches:
       - main
-      - servicing
   pull_request:
     branches:
       - main
-      - servicing
 
 jobs:
   build:
@@ -16,11 +14,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        name: Fetching the KS source
-      - uses: "nunit/docfx-action@master"
-        name: Generating documentation
+        name: Fetching the source
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
         with:
-          args: DocGen/docfx.json
+          dotnet-version: '8.0.x'
+      - name: Setup DocFX
+        run: dotnet tool install --global docfx --version 2.75.2
+      - name: Solution Compilation
+        run: dotnet build --configuration Release
+      - name: Generating documentation
+        run: docfx DocGen/docfx.json
       - name: Saving changes to gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
