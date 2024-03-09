@@ -297,14 +297,14 @@ namespace Nitrocid.Extras.Timers.Timers
                     for (int Position = FigletOldWidth - 1; Position <= FigletTimeLeftPosition - 1; Position++)
                     {
                         builder.Append(
-                            CsiSequences.GenerateCsiCursorPosition(FigletTimePosition + 1, Position + 1) +
+                            CsiSequences.GenerateCsiCursorPosition(Position + 1, FigletTimePosition + 1) +
                             " "
                         );
                     }
                     for (int Position = FigletOldWidthEnd; Position <= FigletTimeLeftEndPosition + 1; Position++)
                     {
                         builder.Append(
-                            CsiSequences.GenerateCsiCursorPosition(FigletTimePosition + 1, Position + 1) +
+                            CsiSequences.GenerateCsiCursorPosition(Position + 1, FigletTimePosition + 1) +
                             " "
                         );
                     }
