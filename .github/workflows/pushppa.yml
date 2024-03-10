@@ -29,7 +29,6 @@ jobs:
           sudo sed -i 's/jammy/noble/g' /etc/apt/sources.list
           sudo sed -i 's/jammy/noble/g' /etc/apt/sources.list.d/*
           sudo apt update
-          sudo apt dist-upgrade
           sudo apt install curl locales-all cli-common-dev libunwind8-dev libcurl4-openssl-dev dotnet-sdk-8.0 libjack0 libportaudio2 libopenal1 libsdl2-2.0-0 libpulse0 libaudio2 devscripts debhelper-compat dput
         
       - name: Initialize offline package
@@ -41,8 +40,8 @@ jobs:
         run: |
           mv debian ..
           mv .github ..
-          tar cfv ../kernel-simulator_3.0.25.437-0.1.0.orig.tar .
-          xz ../kernel-simulator_3.0.25.437-0.1.0.orig.tar
+          tar cfv ../kernel-simulator_3.0.25.438-0.1.0.1.orig.tar .
+          xz ../kernel-simulator_3.0.25.438-0.1.0.1.orig.tar
           mv ../debian .
 
       - name: Build source package

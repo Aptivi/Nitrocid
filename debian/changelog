@@ -1,3 +1,9 @@
+kernel-simulator (3.0.25.438-0.1.0.1-1) noble; urgency=medium
+
+  * Patch 1 of 0.1.0
+
+ -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Sun, 10 Mar 2024 20:50:00 +0300
+
 kernel-simulator (3.0.25.437-0.1.0-1) noble; urgency=medium
 
   * New generation of Nitrocid KS! It contains a huge amount of changes!
