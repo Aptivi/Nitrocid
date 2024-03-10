@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Id="Nitrocid.Analyzers.9e6ed597-4035-4f19-9265-c360a7730da4" Version="0.1.0.1" Language="en-US" Publisher="Aptivi"/>
+    <Identity Id="Nitrocid.Analyzers.9e6ed597-4035-4f19-9265-c360a7730da4" Version="0.1.0.2" Language="en-US" Publisher="Aptivi"/>
     <DisplayName>Nitrocid KS - Analyzers Pack</DisplayName>
     <Description xml:space="preserve">Simulates our future-planned kernel, Nitrocid Kernel. This package contains Nitrocid API analyzers that you can use for your mods.</Description>
   </Metadata>

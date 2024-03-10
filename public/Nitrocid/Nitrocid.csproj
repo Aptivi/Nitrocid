@@ -40,7 +40,7 @@
     <Copyright>Copyright © Aptivi 2018 - 2024</Copyright>
     <OutputPath>KSBuild\</OutputPath>
     <ApplicationIcon>OfficialAppIcon-KernelSimulator.ico</ApplicationIcon>
-    <Version>0.1.0.1</Version>
+    <Version>0.1.0.2</Version>
     <PackageVersion>$(Version)</PackageVersion>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <Deterministic>true</Deterministic>
