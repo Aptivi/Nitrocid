@@ -428,6 +428,9 @@ namespace Nitrocid.Kernel.Starting
                 KernelEntry.SafeMode = PowerManager.RebootingToSafeMode;
                 KernelEntry.Maintenance = PowerManager.RebootingToMaintenanceMode;
                 KernelEntry.DebugMode = PowerManager.RebootingToDebugMode;
+
+                // Unload the assembly resolver
+                AppDomain.CurrentDomain.AssemblyResolve -= AssemblyLookup.LoadFromAssemblySearchPaths;
             }
         }
     }

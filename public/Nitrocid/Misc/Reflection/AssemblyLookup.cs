@@ -84,6 +84,8 @@ namespace Nitrocid.Misc.Reflection
             // Guard against the old version of Nitrocid KS (0.1.0 Milestone X or lower)
             if (DepAssemblyName == "Kernel Simulator")
                 throw new KernelException(KernelExceptionType.OldModDetected);
+            if (args.Name.Contains(".resources"))
+                return FinalAssembly;
 
             // Helper function
             void AssignAsm(string path)
