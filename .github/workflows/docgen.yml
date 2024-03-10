@@ -20,7 +20,7 @@ jobs:
         with:
           dotnet-version: '8.0.x'
       - name: Setup DocFX
-        run: dotnet tool install --global docfx --version 2.75.2
+        run: dotnet tool install --global docfx
       - name: Solution Compilation
         run: dotnet build --configuration Release
       - name: Generating documentation

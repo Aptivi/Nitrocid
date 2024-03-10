@@ -19,10 +19,8 @@ jobs:
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: '8.0.x'
-    - name: Setup docfx
-      uses: crazy-max/ghaction-chocolatey@v3
-      with:
-        args: install docfx
+    - name: Setup DocFX
+      run: dotnet tool install --global docfx
     - name: Release Asset Preparation
       run: |
         cd tools ; ./build.cmd ; cd ..
