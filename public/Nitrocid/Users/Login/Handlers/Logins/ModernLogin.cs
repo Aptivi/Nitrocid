@@ -76,17 +76,17 @@ namespace Nitrocid.Users.Login.Handlers.Logins
         public override string UserSelector()
         {
             // First, get the user number from the selection input
-            var users = UserManagement.ListAllUsers().ToArray();
-            var userFullNames = users.Select(
+            var users = UserManagement.ListAllUsers().Select(
                 (user) =>
-                    UserManagement.GetUser(user).FullName is not null ?
-                    UserManagement.GetUser(user).FullName :
-                    ""
+                {
+                    var fullName = UserManagement.GetUser(user).FullName;
+                    return (user, fullName is null ? "" : fullName);
+                }
             ).ToArray();
 
             // Then, make the choices and prompt for the selection
             ColorTools.LoadBack();
-            var choices = InputChoiceTools.GetInputChoices(users, userFullNames);
+            var choices = InputChoiceTools.GetInputChoices(users);
             int userNum = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choices], Translate.DoTranslation("Select a user account you want to log in with.")) + 1;
             return
                 userNum != 0 ?

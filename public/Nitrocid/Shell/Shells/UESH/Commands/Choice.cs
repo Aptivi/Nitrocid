@@ -71,7 +71,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            var Titles = new List<string>();
+            var Titles = new List<(string, string)>();
             var PressEnter = false;
             var OutputType = InputTools.DefaultChoiceOutputType;
             if (parameters.SwitchesList.Contains("-multiple"))
@@ -81,7 +81,16 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
 
             // Add the provided working titles
             if (parameters.ArgumentsList.Length > 2)
-                Titles.AddRange(parameters.ArgumentsList.Skip(2));
+            {
+                var titles = parameters.ArgumentsList.Skip(2).ToArray();
+                var split = parameters.ArgumentsText.Split('/');
+                for (int i = 0; i < split.Length; i++)
+                {
+                    string answer = split[i];
+                    string title = i >= titles.Length ? $"[{i + 1}]" : titles[i];
+                    Titles.Add((answer, title));
+                }
+            }
 
             // Check for output type switches
             if (parameters.SwitchesList.Length > 0)
@@ -97,7 +106,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             }
 
             // Prompt for choice
-            string Answer = ChoiceStyle.PromptChoice(parameters.ArgumentsList[1], parameters.ArgumentsList[0], [.. Titles], OutputType, PressEnter);
+            string Answer = ChoiceStyle.PromptChoice(parameters.ArgumentsList[1], [.. Titles], OutputType, PressEnter);
             variableValue = Answer;
             return 0;
         }

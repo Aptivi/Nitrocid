@@ -167,23 +167,18 @@ namespace Nitrocid.Kernel.Debugging.Testing
             // List sections and alt options
             int sectionCount = sections.Count;
             var listFacadesCodeNames = sections.Keys.Select((sec) => sec).ToArray();
-            var listFacadesDescs = sections.Values.Select(Translate.DoTranslation).ToArray();
-            var listFacadesAltOptionName = new string[]
+            var listFacades = sections.Select((kvp) => ($"{kvp.Key}", Translate.DoTranslation(kvp.Value))).ToArray();
+            var listFacadesAlt = new (string, string)[]
             {
-                Translate.DoTranslation("Stats"),
-                Translate.DoTranslation("Shutdown"),
-            };
-            var listFacadesAltOptionDesc = new string[]
-            {
-                Translate.DoTranslation("Shows the current test statistics"),
-                Translate.DoTranslation("Exits the testing mode and shuts down the kernel"),
+                (Translate.DoTranslation("Stats"), Translate.DoTranslation("Shows the current test statistics")),
+                (Translate.DoTranslation("Shutdown"), Translate.DoTranslation("Exits the testing mode and shuts down the kernel"))
             };
 
             // Prompt for section
             while (!exiting)
             {
                 // Now, prompt for the selection of the section
-                int sel = SelectionStyle.PromptSelection(Translate.DoTranslation("Choose a test section to run"), string.Join("/", listFacadesCodeNames), listFacadesDescs, string.Join("/", listFacadesAltOptionName), listFacadesAltOptionDesc, true);
+                int sel = SelectionStyle.PromptSelection(Translate.DoTranslation("Choose a test section to run"), listFacades, listFacadesAlt, true);
                 if (sel <= sectionCount)
                 {
                     OpenSection(listFacadesCodeNames[sel - 1]);
@@ -215,31 +210,24 @@ namespace Nitrocid.Kernel.Debugging.Testing
                 .ToDictionary((kvp) => kvp.Key, (kvp) => kvp.Value);
             int facadeCount = facadesList.Count;
             var listFacadesCodeNames = facadesList.Keys.Select((fac) => fac).ToArray();
-            var listFacadesAltOptionName = new string[]
+            var listFacadesAlt = new (string, string)[]
             {
-                Translate.DoTranslation("Test All"),
-                Translate.DoTranslation("Stats"),
-                Translate.DoTranslation("Go Back..."),
-            };
-            var listFacadesAltOptionDesc = new string[]
-            {
-                Translate.DoTranslation("Tests all facades"),
-                Translate.DoTranslation("Shows the current test statistics"),
-                Translate.DoTranslation("Goes back to the section selection"),
+                (Translate.DoTranslation("Test All"), Translate.DoTranslation("Tests all facades")),
+                (Translate.DoTranslation("Stats"), Translate.DoTranslation("Shows the current test statistics")),
+                (Translate.DoTranslation("Go Back..."), Translate.DoTranslation("Goes back to the section selection"))
             };
 
             // Prompt for facade
             while (!sectionExiting)
             {
                 // We need to update the names in case the status updated
-                var listFacadesFinalCodeNames = facadesList.Select((fac) =>
-                    $"[{(fac.Value.TestStatus == TestStatus.Success ? "+" : fac.Value.TestStatus == TestStatus.Failed ? "X" : "-")}|" +
+                var listFacadesFinal = facadesList.Select((fac) =>
+                    ($"[{(fac.Value.TestStatus == TestStatus.Success ? "+" : fac.Value.TestStatus == TestStatus.Failed ? "X" : "-")}|" +
                     $"{(fac.Value.TestOptionalParameters > 0 ? "O" : " ")}] " +
-                    fac.Key).ToArray();
-                var listFacadesNames = facadesList.Values.Select((fac) => fac.TestName).ToArray();
+                    fac.Key, fac.Value.TestName)).ToArray();
 
                 // Now, prompt for the selection of the facade
-                int sel = SelectionStyle.PromptSelection(Translate.DoTranslation("Choose a test facade to run"), listFacadesFinalCodeNames, listFacadesNames, listFacadesAltOptionName, listFacadesAltOptionDesc, true);
+                int sel = SelectionStyle.PromptSelection(Translate.DoTranslation("Choose a test facade to run"), listFacadesFinal, listFacadesAlt, true);
                 if (sel <= facadeCount)
                 {
                     RunFacade(facadesList[listFacadesCodeNames[sel - 1]]);

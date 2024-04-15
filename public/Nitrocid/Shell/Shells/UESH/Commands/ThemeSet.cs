@@ -167,10 +167,10 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
 
                 // Pause until a key is pressed
                 answer = ChoiceStyle.PromptChoice(
-                    TextTools.FormatString(Translate.DoTranslation("Would you like to set this theme?") + "\n{0}: {1}", selectedTheme, Theme.Localizable ? Translate.DoTranslation(Theme.Description) : Theme.Description), "y/n",
+                    TextTools.FormatString(Translate.DoTranslation("Would you like to set this theme?") + "\n{0}: {1}", selectedTheme, Theme.Localizable ? Translate.DoTranslation(Theme.Description) : Theme.Description),
                     [
-                        Translate.DoTranslation("Yes, set it!"),
-                        Translate.DoTranslation("No, don't set it.")
+                        ("y", Translate.DoTranslation("Yes, set it!")),
+                        ("n", Translate.DoTranslation("No, don't set it."))
                     ],
                     ChoiceOutputType.Modern
                 );

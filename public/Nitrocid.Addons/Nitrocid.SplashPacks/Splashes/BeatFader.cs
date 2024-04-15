@@ -72,10 +72,10 @@ namespace Nitrocid.SplashPacks.Splashes
                     }
                     else
                     {
-                        var ConsoleColor = new ConsoleColorsInfo((ConsoleColors)RandomDriver.Random(_beatFaderMinimumColorLevel, _beatFaderMaximumColorLevel));
-                        RedColorNum = ConsoleColor.R;
-                        GreenColorNum = ConsoleColor.G;
-                        BlueColorNum = ConsoleColor.B;
+                        var ConsoleColor = new Color((ConsoleColors)RandomDriver.Random(_beatFaderMinimumColorLevel, _beatFaderMaximumColorLevel));
+                        RedColorNum = ConsoleColor.RGB.R;
+                        GreenColorNum = ConsoleColor.RGB.G;
+                        BlueColorNum = ConsoleColor.RGB.B;
                     }
                     DebugWriter.WriteDebug(DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                 }
@@ -92,10 +92,10 @@ namespace Nitrocid.SplashPacks.Splashes
                     }
                     else
                     {
-                        var ConsoleColor = new ConsoleColorsInfo((ConsoleColors)Convert.ToInt32(UserColor.PlainSequence));
-                        RedColorNum = ConsoleColor.R;
-                        GreenColorNum = ConsoleColor.G;
-                        BlueColorNum = ConsoleColor.B;
+                        var ConsoleColor = new Color((ConsoleColors)Convert.ToInt32(UserColor.PlainSequence));
+                        RedColorNum = ConsoleColor.RGB.R;
+                        GreenColorNum = ConsoleColor.RGB.G;
+                        BlueColorNum = ConsoleColor.RGB.B;
                     }
                     DebugWriter.WriteDebug(DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                 }

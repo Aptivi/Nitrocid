@@ -20,7 +20,6 @@
 using Terminaux.Inputs.Styles.Selection;
 using Nitrocid.Languages;
 using System.Linq;
-using Terminaux.Inputs;
 
 namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
@@ -30,8 +29,8 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
         public override TestSection TestSection => TestSection.Languages;
         public override void Run(params string[] args)
         {
-            var langCodes = InputChoiceTools.GetInputChoices(string.Join("/", LanguageManager.Languages.Keys), LanguageManager.Languages.Values.Select((lang) => lang.FullLanguageName).ToArray());
-            int langIndex = SelectionStyle.PromptSelection(Translate.DoTranslation("Choose your language"), langCodes) - 1;
+            var langChoices = LanguageManager.Languages.Select(kvp => (kvp.Key, kvp.Value.FullLanguageName)).ToArray();
+            int langIndex = SelectionStyle.PromptSelection(Translate.DoTranslation("Choose your language"), langChoices) - 1;
             if (langIndex < 0)
                 return;
             string lang = LanguageManager.Languages.Keys.ElementAt(langIndex);

@@ -62,10 +62,10 @@ namespace Nitrocid.ScreensaverPacks.Animations.BeatFader
                 }
                 else
                 {
-                    var ConsoleColor = new ConsoleColorsInfo((ConsoleColors)RandomDriver.Random(Settings.BeatFaderMinimumColorLevel, Settings.BeatFaderMaximumColorLevel));
-                    RedColorNum = ConsoleColor.R;
-                    GreenColorNum = ConsoleColor.G;
-                    BlueColorNum = ConsoleColor.B;
+                    var ConsoleColor = new Color((ConsoleColors)RandomDriver.Random(Settings.BeatFaderMinimumColorLevel, Settings.BeatFaderMaximumColorLevel));
+                    RedColorNum = ConsoleColor.RGB.R;
+                    GreenColorNum = ConsoleColor.RGB.G;
+                    BlueColorNum = ConsoleColor.RGB.B;
                 }
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
             }
@@ -82,10 +82,10 @@ namespace Nitrocid.ScreensaverPacks.Animations.BeatFader
                 }
                 else
                 {
-                    var ConsoleColor = new ConsoleColorsInfo((ConsoleColors)Convert.ToInt32(UserColor.PlainSequence));
-                    RedColorNum = ConsoleColor.R;
-                    GreenColorNum = ConsoleColor.G;
-                    BlueColorNum = ConsoleColor.B;
+                    var ConsoleColor = new Color((ConsoleColors)Convert.ToInt32(UserColor.PlainSequence));
+                    RedColorNum = ConsoleColor.RGB.R;
+                    GreenColorNum = ConsoleColor.RGB.G;
+                    BlueColorNum = ConsoleColor.RGB.B;
                 }
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
             }

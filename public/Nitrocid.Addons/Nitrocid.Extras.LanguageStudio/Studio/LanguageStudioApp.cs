@@ -64,7 +64,9 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
 
             if (!Checking.FileExists(englishFile))
             {
-                string answer = ChoiceStyle.PromptChoice(Translate.DoTranslation("The base English strings file doesn't exist. Do you want to create an empty one? Or do you want to use Nitrocid's English strings?"), "E/N").ToLower();
+                string answer = ChoiceStyle.PromptChoice(
+                    Translate.DoTranslation("The base English strings file doesn't exist. Do you want to create an empty one? Or do you want to use Nitrocid's English strings?"), [("e", "Empty"), ("n", "Nitrocid's English strings")]
+                ).ToLower();
                 switch (answer)
                 {
                     case "E":

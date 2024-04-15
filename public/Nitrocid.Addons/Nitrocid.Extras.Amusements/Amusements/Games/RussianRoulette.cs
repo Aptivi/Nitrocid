@@ -33,7 +33,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
         {
             // First, tell them to select either true or false
             int bet =
-                ChoiceStyle.PromptChoice(Translate.DoTranslation("What's your bet?"), "t/f") == "t" ? 1 : 0;
+                ChoiceStyle.PromptChoice(Translate.DoTranslation("What's your bet?"), [("t", "True"), ("f", "False")]) == "t" ? 1 : 0;
 
             // Then, compare the value to the randomly selected value for the roulette
             bool unlucky = RandomDriver.RandomRussianRoulette();

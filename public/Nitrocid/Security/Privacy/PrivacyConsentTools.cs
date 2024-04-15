@@ -86,7 +86,7 @@ namespace Nitrocid.Security.Privacy
                 TextTools.FormatString(
                     Translate.DoTranslation("It looks like that a mod with the root namespace of {0} tries to access your data with the permission of {1}. Do you want to allow this mod to access your data?"),
                     consent.Type.ToString(), consent.Context
-                ), "y/n"
+                ), [("y", "Yes"), ("n", "No")]
             );
             if (!SplashReport.KernelBooted)
                 SplashManager.EndSplashOut(SplashManager.CurrentSplashContext);

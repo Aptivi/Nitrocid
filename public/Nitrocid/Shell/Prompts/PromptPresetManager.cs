@@ -215,9 +215,8 @@ namespace Nitrocid.Shell.Prompts
                 Presets.Add(PresetName, Presets[PresetName]);
 
             // Now, prompt the user
-            var PresetNames = Presets.Keys.ToArray();
-            var PresetDisplays = Presets.Values.Select(Preset => Preset.PresetPromptShowcase).ToArray();
-            int SelectedPreset = SelectionStyle.PromptSelection(TextTools.FormatString(Translate.DoTranslation("Select preset for {0}:"), shellType), string.Join("/", PresetNames), PresetDisplays);
+            var PresetNames = Presets.Select((kvp) => (kvp.Key, kvp.Value.PresetPromptShowcase)).ToArray();
+            int SelectedPreset = SelectionStyle.PromptSelection(TextTools.FormatString(Translate.DoTranslation("Select preset for {0}:"), shellType), PresetNames);
             if (SelectedPreset == -1)
                 return "Default";
             string SelectedPresetName = Presets.Keys.ElementAt(SelectedPreset - 1);
