@@ -20,7 +20,7 @@
 using System;
 using Figletize;
 using Terminaux.Colors;
-using Textify.Words;
+using Textify.Data.Analysis.Words;
 using Nitrocid.Drivers;
 using Nitrocid.Misc.Screensaver;
 using Terminaux.Writer.ConsoleWriters;

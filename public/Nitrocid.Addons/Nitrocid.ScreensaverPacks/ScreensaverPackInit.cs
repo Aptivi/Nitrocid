@@ -143,9 +143,6 @@ namespace Nitrocid.ScreensaverPacks
 
         void IAddon.StartAddon()
         {
-            // Initialize data
-            DataInitializer.Initialize();
-
             // First, initialize screensavers
             foreach (var saver in Screensavers.Keys)
                 ScreensaverManager.AddonSavers.Add(saver, Screensavers[saver]);

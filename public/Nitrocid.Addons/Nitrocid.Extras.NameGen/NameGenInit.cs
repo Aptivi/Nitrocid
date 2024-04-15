@@ -135,9 +135,6 @@ namespace Nitrocid.Extras.NameGen
 
         void IAddon.StartAddon()
         {
-            // Initialize data
-            DataInitializer.Initialize();
-
             // Initialize everything
             CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
             ScreensaverManager.AddonSavers.Add("personlookup", new PersonLookupDisplay());

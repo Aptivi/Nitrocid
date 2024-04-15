@@ -20,7 +20,7 @@
 using System.Linq;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Shell.ShellBase.Commands;
-using Textify.NameGen;
+using Textify.Data.Analysis.NameGen;
 
 namespace Nitrocid.Extras.NameGen.Commands
 {

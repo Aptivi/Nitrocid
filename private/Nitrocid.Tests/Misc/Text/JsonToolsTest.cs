@@ -24,6 +24,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System.IO;
 using Textify.General;
+using Textify.Json;
 
 namespace Nitrocid.Tests.Misc.Text
 {

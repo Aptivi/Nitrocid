@@ -173,9 +173,6 @@ namespace Nitrocid.Extras.Amusements
 
         void IAddon.StartAddon()
         {
-            // Initialize data
-            DataInitializer.Initialize();
-
             // Initialize everything
             CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
             ScreensaverManager.AddonSavers.Add("meteor", new MeteorDisplay());

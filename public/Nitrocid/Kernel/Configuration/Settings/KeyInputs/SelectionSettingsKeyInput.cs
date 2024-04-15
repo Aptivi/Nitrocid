@@ -30,6 +30,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using Terminaux.Reader;
+using Terminaux.Inputs;
 
 namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
 {
@@ -52,23 +53,17 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
 
             // Populate items
             int MaxKeyOptions = SelectFrom.Count();
-            var items = new List<string>();
-            var itemNums = new List<int>();
-            var altSections = new List<string>()
+            var items = new List<(string, string)>();
+            var altItems = new List<(string, string)>()
             {
-                Translate.DoTranslation("Go Back...")
-            };
-            var altSectionNums = new List<int>()
-            {
-                MaxKeyOptions + 1
+                (Translate.DoTranslation("Go Back..."), $"{MaxKeyOptions + 1}")
             };
 
             // Since there is no way to index the SelectFrom enumerable, we have to manually initialize a counter. Ugly!
             int itemCount = 1;
             foreach (var item in SelectFrom)
             {
-                items.Add(item.ToString());
-                itemNums.Add(itemCount);
+                items.Add(($"{itemCount}", item.ToString()));
                 itemCount++;
             }
 
@@ -77,8 +72,8 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             string keyDesc = Translate.DoTranslation(key.Description);
             string finalSection = SettingsApp.RenderHeader(keyName, keyDesc);
             int Answer = SelectionStyle.PromptSelection(finalSection,
-                string.Join("/", itemNums), [.. items],
-                string.Join("/", altSectionNums), [.. altSections]);
+                InputChoiceTools.GetInputChoices([.. items]),
+                InputChoiceTools.GetInputChoices([.. altItems]));
             bail = true;
             return Answer;
         }

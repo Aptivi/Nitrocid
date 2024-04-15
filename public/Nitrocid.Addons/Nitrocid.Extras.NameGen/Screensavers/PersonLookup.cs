@@ -18,7 +18,7 @@
 //
 
 using System;
-using Textify.NameGen;
+using Textify.Data.Analysis.NameGen;
 using Nitrocid.Misc.Screensaver;
 using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Drivers.RNG;

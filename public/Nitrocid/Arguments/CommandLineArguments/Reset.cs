@@ -100,7 +100,7 @@ namespace Nitrocid.Arguments.CommandLineArguments
             {
                 TextWriters.Write(Translate.DoTranslation("The following files are not wiped:"), true, KernelColorType.Warning);
                 ListWriterColor.WriteList(files);
-                string answer = ChoiceStyle.PromptChoice(Translate.DoTranslation("Are you sure to wipe these files?"), "y/n");
+                string answer = ChoiceStyle.PromptChoice(Translate.DoTranslation("Are you sure to wipe these files?"), [("y", "Yes"), ("n", "No")]);
                 if (answer == "y")
                 {
                     foreach (string file in files)

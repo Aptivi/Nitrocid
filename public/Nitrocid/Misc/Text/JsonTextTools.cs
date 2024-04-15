@@ -23,7 +23,7 @@ using Newtonsoft.Json.Linq;
 using Nitrocid.Files;
 using Nitrocid.Files.Operations;
 using Nitrocid.Kernel.Debugging;
-using Textify.General;
+using Textify.Json;
 
 namespace Nitrocid.Misc.Text
 {

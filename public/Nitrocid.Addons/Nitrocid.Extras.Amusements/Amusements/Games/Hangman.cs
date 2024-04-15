@@ -20,13 +20,12 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Threading;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
 using Terminaux.Colors;
-using Textify.Words;
+using Textify.Data.Analysis.Words;
 using Terminaux.Base;
 using Terminaux.Reader;
 using Terminaux.Base.Buffered;
