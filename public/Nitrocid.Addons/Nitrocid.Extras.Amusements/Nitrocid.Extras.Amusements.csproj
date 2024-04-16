@@ -49,7 +49,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="all" />
-    <PackageReference Include="Textify.Offline.Data.Analysis" Version="1.6.0.1" />
+    <PackageReference Include="Textify.Offline.Data.Analysis" Version="1.6.0.2" />
   </ItemGroup>
   <PropertyGroup>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>

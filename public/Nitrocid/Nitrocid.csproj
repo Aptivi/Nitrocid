@@ -102,10 +102,10 @@
   <ItemGroup>
     <PackageReference Include="Terminaux" Version="3.2.0" PrivateAssets="contentfiles;analyzers;build;runtime" />
     <PackageReference Include="Terminaux.ResizeListener" Version="3.2.0" PrivateAssets="contentfiles;analyzers;build;runtime" />
-    <PackageReference Include="Textify.Offline" Version="1.6.0.1" PrivateAssets="contentfiles;analyzers;build;runtime" />
+    <PackageReference Include="Textify.Offline" Version="1.6.0.2" PrivateAssets="contentfiles;analyzers;build;runtime" />
     <PackageReference Include="Nettify" Version="1.1.0.1" PrivateAssets="contentfiles;analyzers;build;runtime" />
     <PackageReference Include="EnumMagic" Version="0.1.0.1" PrivateAssets="contentfiles;analyzers;build;runtime" />
-    <PackageReference Include="Textify.Offline.Json" Version="1.6.0.1" />
+    <PackageReference Include="Textify.Offline.Json" Version="1.6.0.2" />
   </ItemGroup>
   <!-- KS Non-private Dependencies Information End -->
 
