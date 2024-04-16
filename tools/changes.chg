@@ -1,7 +1,19 @@
 Nitrocid KS 0.1.0 changes
 =========================
 
-Released March 11th, 2024; codename Magic Bloom - Revision 1 (0.1.0.1)
+Released March 11th, 2024; codename Magic Bloom - Revision 2 (0.1.0.2)
+
+=============================================================================
+
+Security notice: LibGit2Sharp has been updated to version 0.30.0 due to a
+security bug found in earlier libgit2 versions. For more information, visit
+this URL:
+
+https://github.com/libgit2/libgit2/security/advisories/GHSA-j2v7-4f6v-gpg8
+
+It's recommended to ditch 0.1.0.0 and 0.1.0.1 to keep your system secure!
+
+=============================================================================
 
 Nitrocid KS 0.1.0 hosts an innumerable number of changes that will surprise
 you with more-than-stellar features and improvements. It also brings a lot of
