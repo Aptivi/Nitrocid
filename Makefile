@@ -1,20 +1,3 @@
-#
-#    Nitrocid KS  Copyright (C) 2018-2024  Aptivi
-# 
-#    Nitrocid KS is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU General Public License as published by
-#    the Free Software Foundation, either version 3 of the License, or
-#    (at your option) any later version.
-#
-#    Nitrocid KS is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU General Public License for more details.
-#
-#    You should have received a copy of the GNU General Public License
-#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
-#
-
 OUTPUTS = public/Nitrocid/KSBuild public/*/obj public/*/*/obj private/*/bin private/*/obj debian/kernel-simulator
 OUTPUT = public/Nitrocid/KSBuild/net8.0
 BINARIES = assets/ks-n assets/ks-jl
@@ -31,6 +14,15 @@ all: all-online
 
 all-online:
 	$(MAKE) -C tools invoke-build
+
+dbg:
+	$(MAKE) -C tools invoke-build ENVIRONMENT=Debug
+
+doc:
+	$(MAKE) -C tools invoke-doc-build
+
+clean:
+	rm -rf $(OUTPUTS)
 
 # Below targets are for Debian packaging only
 
@@ -55,11 +47,5 @@ debian-install:
 	find debian/kernel-simulator/usr/lib/ks/Addons/Extras.Contacts/runtimes/ -mindepth 1 -maxdepth 1 -not -name $(ARCH) -type d -exec rm -rf {} \;
 	find debian/kernel-simulator/usr/lib/ks/Addons/Extras.MailShell/runtimes/ -mindepth 1 -maxdepth 1 -not -name $(ARCH) -type d -exec rm -rf {} \;
 	find debian/kernel-simulator/usr/lib/ks/Addons/Extras.SqlShell/runtimes/ -mindepth 1 -maxdepth 1 -not -name $(ARCH) -type d -exec rm -rf {} \;
-
-echo-arch:
-	@echo $(ARCH)
-
-clean:
-	rm -rf $(OUTPUTS)
 
 # This makefile is just a wrapper for tools scripts.
