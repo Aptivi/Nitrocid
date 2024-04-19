@@ -17,7 +17,7 @@
     <Copyright>Copyright © Aptivi 2018 - 2024</Copyright>
     <Company>Aptivi</Company>
     <Product>Nitrocid</Product>
-    <Version>0.1.0.2</Version>
+    <Version>0.1.0.3</Version>
     <Configurations>Debug;Release</Configurations>
     <LangVersion>latest</LangVersion>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
