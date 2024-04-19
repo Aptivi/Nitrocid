@@ -56,7 +56,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             var items = new List<(string, string)>();
             var altItems = new List<(string, string)>()
             {
-                (Translate.DoTranslation("Go Back..."), $"{MaxKeyOptions + 1}")
+                ($"{MaxKeyOptions + 1}", Translate.DoTranslation("Go Back..."))
             };
 
             // Since there is no way to index the SelectFrom enumerable, we have to manually initialize a counter. Ugly!
