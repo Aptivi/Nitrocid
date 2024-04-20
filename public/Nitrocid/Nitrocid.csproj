@@ -41,7 +41,6 @@
     <OutputPath>KSBuild\</OutputPath>
     <ApplicationIcon>OfficialAppIcon-KernelSimulator.ico</ApplicationIcon>
     <Version>0.1.0.3</Version>
-    <PackageVersion>$(Version)</PackageVersion>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <Deterministic>true</Deterministic>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
