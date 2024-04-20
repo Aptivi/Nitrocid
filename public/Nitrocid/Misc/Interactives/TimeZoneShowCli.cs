@@ -36,7 +36,7 @@ namespace Nitrocid.Misc.Interactives
         /// <summary>
         /// Time zone showing CLI bindings
         /// </summary>
-        public override List<InteractiveTuiBinding> Bindings { get; set; } = [];
+        public override InteractiveTuiBinding[] Bindings { get; } = [];
 
         /// <inheritdoc/>
         public override IEnumerable<string> PrimaryDataSource =>
@@ -60,11 +60,11 @@ namespace Nitrocid.Misc.Interactives
         }
 
         /// <inheritdoc/>
-        public override void RenderStatus(string item)
+        public override string GetStatusFromItem(string item)
         {
             string selectedZone = (string)item;
             var time = TimeZones.GetTimeZoneTimes()[selectedZone];
-            InteractiveTuiStatus.Status = $"{TimeDateRenderers.Render(time)}";
+            return $"{TimeDateRenderers.Render(time)}";
         }
 
         /// <inheritdoc/>

@@ -29,7 +29,7 @@ namespace Nitrocid.Misc.Interactives
 {
     internal class ScreensaverTui : BaseInteractiveTui<string>, IInteractiveTui<string>
     {
-        public override List<InteractiveTuiBinding> Bindings { get; set; } =
+        public override InteractiveTuiBinding[] Bindings { get; } =
         [
             // Operations
             new InteractiveTuiBinding("Preview", ConsoleKey.Enter,
@@ -58,8 +58,8 @@ namespace Nitrocid.Misc.Interactives
         }
 
         /// <inheritdoc/>
-        public override void RenderStatus(string item) =>
-            InteractiveTuiStatus.Status = item;
+        public override string GetStatusFromItem(string item) =>
+            item;
 
         /// <inheritdoc/>
         public override string GetEntryFromItem(string item) =>

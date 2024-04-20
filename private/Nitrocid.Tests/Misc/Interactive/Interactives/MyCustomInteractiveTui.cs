@@ -19,13 +19,12 @@
 
 using Terminaux.Inputs.Interactive;
 using System;
-using System.Collections.Generic;
 
 namespace Nitrocid.Tests.Misc.Interactive.Interactives
 {
     internal class MyCustomInteractiveTui : BaseInteractiveTui<int>, IInteractiveTui<int>
     {
-        public override List<InteractiveTuiBinding> Bindings =>
+        public override InteractiveTuiBinding[] Bindings =>
         [
             new InteractiveTuiBinding("Test", ConsoleKey.F1, (_, idx) => Console.WriteLine(idx))
         ];

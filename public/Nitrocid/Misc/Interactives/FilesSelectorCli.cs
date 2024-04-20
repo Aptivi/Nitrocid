@@ -59,7 +59,7 @@ namespace Nitrocid.Misc.Interactives
         /// <summary>
         /// File Selector bindings
         /// </summary>
-        public override List<InteractiveTuiBinding> Bindings { get; set; } =
+        public override InteractiveTuiBinding[] Bindings { get; } =
         [
             // Operations
             new InteractiveTuiBinding("Select", ConsoleKey.Enter,
@@ -118,23 +118,21 @@ namespace Nitrocid.Misc.Interactives
             true;
 
         /// <inheritdoc/>
-        public override void RenderStatus(FileSystemEntry item)
+        public override string GetStatusFromItem(FileSystemEntry item)
         {
             FileSystemEntry FileInfoCurrentPane = item;
 
             // Check to see if we're given the file system info
             if (FileInfoCurrentPane == null)
-            {
-                InteractiveTuiStatus.Status = Translate.DoTranslation("No info.");
-                return;
-            }
+                return Translate.DoTranslation("No info.");
 
             // Now, populate the info to the status
             try
             {
                 bool infoIsDirectory = FileInfoCurrentPane.Type == FileSystemEntryType.Directory;
+                string status = "";
                 if (Config.MainConfig.IfmShowFileSize)
-                    InteractiveTuiStatus.Status =
+                    status =
                         // Name and directory indicator
                         $"[{(infoIsDirectory ? "/" : "*")}] {FileInfoCurrentPane.BaseEntry.Name} | " +
 
@@ -145,14 +143,15 @@ namespace Nitrocid.Misc.Interactives
                         $"{(!infoIsDirectory ? TimeDateRenderers.Render(((FileInfo)FileInfoCurrentPane.BaseEntry).LastWriteTime) : "")}"
                     ;
                 else
-                    InteractiveTuiStatus.Status = $"[{(infoIsDirectory ? "/" : "*")}] {FileInfoCurrentPane.BaseEntry.Name}";
+                    status = $"[{(infoIsDirectory ? "/" : "*")}] {FileInfoCurrentPane.BaseEntry.Name}";
+                if (selectedFiles.Count > 0)
+                    status = $"{Translate.DoTranslation("Selected")}: {selectedFiles.Count} - {Translate.DoTranslation("Press SPACE for more info")} - {status}";
+                return status;
             }
             catch (Exception ex)
             {
-                InteractiveTuiStatus.Status = Translate.DoTranslation(ex.Message);
+                return Translate.DoTranslation(ex.Message);
             }
-            if (selectedFiles.Count > 0)
-                InteractiveTuiStatus.Status = $"{Translate.DoTranslation("Selected")}: {selectedFiles.Count} - {Translate.DoTranslation("Press SPACE for more info")} - {InteractiveTuiStatus.Status}";
         }
 
         /// <inheritdoc/>
@@ -227,7 +226,7 @@ namespace Nitrocid.Misc.Interactives
                 {
                     // We're dealing with a folder. Open it in the selected pane.
                     ((FilesSelectorCli)Instance).firstPanePath = FilesystemTools.NeutralizePath(currentFileSystemEntry.FilePath + "/");
-                    InteractiveTuiStatus.FirstPaneCurrentSelection = 1;
+                    InteractiveTuiTools.SelectionMovement(Instance, 1);
                     ((FilesSelectorCli)Instance).refreshFirstPaneListing = true;
                 }
                 else if (currentFileSystemEntry.Type == FileSystemEntryType.File)
@@ -254,7 +253,7 @@ namespace Nitrocid.Misc.Interactives
         private static void GoUp()
         {
             ((FilesSelectorCli)Instance).firstPanePath = FilesystemTools.NeutralizePath(((FilesSelectorCli)Instance).firstPanePath + "/..");
-            InteractiveTuiStatus.FirstPaneCurrentSelection = 1;
+            InteractiveTuiTools.SelectionMovement(Instance, 1);
             ((FilesSelectorCli)Instance).refreshFirstPaneListing = true;
         }
 
@@ -365,7 +364,7 @@ namespace Nitrocid.Misc.Interactives
             path = FilesystemTools.NeutralizePath(path, ((FilesSelectorCli)Instance).firstPanePath);
             if (Checking.FolderExists(path))
             {
-                InteractiveTuiStatus.FirstPaneCurrentSelection = 1;
+                InteractiveTuiTools.SelectionMovement(Instance, 1);
                 ((FilesSelectorCli)Instance).firstPanePath = path;
                 ((FilesSelectorCli)Instance).refreshFirstPaneListing = true;
             }

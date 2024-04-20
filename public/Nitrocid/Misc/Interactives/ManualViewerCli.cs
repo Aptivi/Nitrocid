@@ -38,7 +38,7 @@ namespace Nitrocid.Misc.Interactives
         /// <summary>
         /// Manual viewer keybindings
         /// </summary>
-        public override List<InteractiveTuiBinding> Bindings { get; set; } =
+        public override InteractiveTuiBinding[] Bindings { get; } =
         [
             // Operations
             new InteractiveTuiBinding("Info", ConsoleKey.F1,
@@ -75,7 +75,7 @@ namespace Nitrocid.Misc.Interactives
         }
 
         /// <inheritdoc/>
-        public override void RenderStatus(Manual item)
+        public override string GetStatusFromItem(Manual item)
         {
             // Get some info from the manual
             Manual selectedManual = item;
@@ -87,7 +87,7 @@ namespace Nitrocid.Misc.Interactives
                 selectedManual.Name;
 
             // Render them to the status
-            InteractiveTuiStatus.Status = finalRenderedManualName;
+            return finalRenderedManualName;
         }
 
         /// <inheritdoc/>

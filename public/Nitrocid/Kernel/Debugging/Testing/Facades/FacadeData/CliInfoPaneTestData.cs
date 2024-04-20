@@ -28,7 +28,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades.FacadeData
     {
         internal static List<string> strings = [];
 
-        public override List<InteractiveTuiBinding> Bindings { get; set; } =
+        public override InteractiveTuiBinding[] Bindings { get; } =
         [
             new InteractiveTuiBinding("Add", ConsoleKey.F1, (_, index) => Add(index)),
             new InteractiveTuiBinding("Delete", ConsoleKey.F2, (_, index) => Remove(index)),
@@ -44,26 +44,16 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades.FacadeData
             true;
 
         /// <inheritdoc/>
-        public override string GetInfoFromItem(string item)
-        {
-            string selected = item;
-
-            // Check to see if we're given the test info
-            if (string.IsNullOrEmpty(selected))
-                InteractiveTuiStatus.Status = Translate.DoTranslation("No info.");
-            else
-                InteractiveTuiStatus.Status = $"{selected}";
-
-            // Now, populate the info to the status
-            return $" {InteractiveTuiStatus.Status}";
-        }
+        public override string GetStatusFromItem(string item) =>
+            string.IsNullOrEmpty(item) ? Translate.DoTranslation("No info.") : item;
 
         /// <inheritdoc/>
-        public override string GetEntryFromItem(string item)
-        {
-            string selected = item;
-            return selected;
-        }
+        public override string GetInfoFromItem(string item) =>
+            item;
+
+        /// <inheritdoc/>
+        public override string GetEntryFromItem(string item) =>
+            item;
 
         private static void Add(int index)
         {

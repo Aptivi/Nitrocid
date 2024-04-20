@@ -62,7 +62,7 @@ namespace Nitrocid.Misc.Interactives
         /// <summary>
         /// File manager bindings
         /// </summary>
-        public override List<InteractiveTuiBinding> Bindings { get; set; } =
+        public override InteractiveTuiBinding[] Bindings { get; } =
         [
             // Operations
             new InteractiveTuiBinding("Open", ConsoleKey.Enter,
@@ -152,23 +152,20 @@ namespace Nitrocid.Misc.Interactives
             true;
 
         /// <inheritdoc/>
-        public override void RenderStatus(FileSystemEntry item)
+        public override string GetStatusFromItem(FileSystemEntry item)
         {
             FileSystemEntry FileInfoCurrentPane = item;
 
             // Check to see if we're given the file system info
             if (FileInfoCurrentPane == null)
-            {
-                InteractiveTuiStatus.Status = Translate.DoTranslation("No info.");
-                return;
-            }
+                return Translate.DoTranslation("No info.");
 
             // Now, populate the info to the status
             try
             {
                 bool infoIsDirectory = FileInfoCurrentPane.Type == FileSystemEntryType.Directory;
                 if (Config.MainConfig.IfmShowFileSize)
-                    InteractiveTuiStatus.Status =
+                    return
                         // Name and directory indicator
                         $"[{(infoIsDirectory ? "/" : "*")}] {FileInfoCurrentPane.BaseEntry.Name} | " +
 
@@ -179,11 +176,11 @@ namespace Nitrocid.Misc.Interactives
                         $"{(!infoIsDirectory ? TimeDateRenderers.Render(((FileInfo)FileInfoCurrentPane.BaseEntry).LastWriteTime) : "")}"
                     ;
                 else
-                    InteractiveTuiStatus.Status = $"[{(infoIsDirectory ? "/" : "*")}] {FileInfoCurrentPane.BaseEntry.Name}";
+                    return $"[{(infoIsDirectory ? "/" : "*")}] {FileInfoCurrentPane.BaseEntry.Name}";
             }
             catch (Exception ex)
             {
-                InteractiveTuiStatus.Status = Translate.DoTranslation(ex.Message);
+                return Translate.DoTranslation(ex.Message);
             }
         }
 
@@ -223,15 +220,14 @@ namespace Nitrocid.Misc.Interactives
                     if (InteractiveTuiStatus.CurrentPane == 2)
                     {
                         ((FileManagerCli)Instance).secondPanePath = FilesystemTools.NeutralizePath(currentFileSystemEntry.FilePath + "/");
-                        InteractiveTuiStatus.SecondPaneCurrentSelection = 1;
                         ((FileManagerCli)Instance).refreshSecondPaneListing = true;
                     }
                     else
                     {
                         ((FileManagerCli)Instance).firstPanePath = FilesystemTools.NeutralizePath(currentFileSystemEntry.FilePath + "/");
-                        InteractiveTuiStatus.FirstPaneCurrentSelection = 1;
                         ((FileManagerCli)Instance).refreshFirstPaneListing = true;
                     }
+                    InteractiveTuiTools.SelectionMovement(Instance, 1);
                 }
                 else if (currentFileSystemEntry.Type == FileSystemEntryType.File)
                 {
@@ -254,15 +250,14 @@ namespace Nitrocid.Misc.Interactives
             if (InteractiveTuiStatus.CurrentPane == 2)
             {
                 ((FileManagerCli)Instance).secondPanePath = FilesystemTools.NeutralizePath(((FileManagerCli)Instance).secondPanePath + "/..");
-                InteractiveTuiStatus.SecondPaneCurrentSelection = 1;
                 ((FileManagerCli)Instance).refreshSecondPaneListing = true;
             }
             else
             {
                 ((FileManagerCli)Instance).firstPanePath = FilesystemTools.NeutralizePath(((FileManagerCli)Instance).firstPanePath + "/..");
-                InteractiveTuiStatus.FirstPaneCurrentSelection = 1;
                 ((FileManagerCli)Instance).refreshFirstPaneListing = true;
             }
+            InteractiveTuiTools.SelectionMovement(Instance, 1);
         }
 
         private static void PrintFileSystemEntry(FileSystemEntry currentFileSystemEntry)
@@ -430,16 +425,15 @@ namespace Nitrocid.Misc.Interactives
             {
                 if (InteractiveTuiStatus.CurrentPane == 2)
                 {
-                    InteractiveTuiStatus.SecondPaneCurrentSelection = 1;
                     ((FileManagerCli)Instance).secondPanePath = path;
                     ((FileManagerCli)Instance).refreshSecondPaneListing = true;
                 }
                 else
                 {
-                    InteractiveTuiStatus.FirstPaneCurrentSelection = 1;
                     ((FileManagerCli)Instance).firstPanePath = path;
                     ((FileManagerCli)Instance).refreshFirstPaneListing = true;
                 }
+                InteractiveTuiTools.SelectionMovement(Instance, 1);
             }
             else
                 InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Folder doesn't exist. Make sure that you've written the correct path."), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);

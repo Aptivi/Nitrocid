@@ -50,7 +50,7 @@ namespace Nitrocid.Extras.Notes.Interactive
         }
 
         /// <inheritdoc/>
-        public override void RenderStatus(string item)
+        public override string GetStatusFromItem(string item)
         {
             // Get some info from the note
             string noteInstance = item;
@@ -62,7 +62,7 @@ namespace Nitrocid.Extras.Notes.Interactive
                 $"{noteInstance}";
 
             // Render them to the status
-            InteractiveTuiStatus.Status = finalRenderedNote;
+            return finalRenderedNote;
         }
 
         /// <inheritdoc/>

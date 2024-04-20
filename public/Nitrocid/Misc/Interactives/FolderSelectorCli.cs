@@ -59,7 +59,7 @@ namespace Nitrocid.Misc.Interactives
         /// <summary>
         /// Folder Selector bindings
         /// </summary>
-        public override List<InteractiveTuiBinding> Bindings { get; set; } =
+        public override InteractiveTuiBinding[] Bindings { get; } =
         [
             // Operations
             new InteractiveTuiBinding("Open", ConsoleKey.Enter,
@@ -118,23 +118,21 @@ namespace Nitrocid.Misc.Interactives
             true;
 
         /// <inheritdoc/>
-        public override void RenderStatus(FileSystemEntry item)
+        public override string GetStatusFromItem(FileSystemEntry item)
         {
             FileSystemEntry FileInfoCurrentPane = item;
 
             // Check to see if we're given the file system info
             if (FileInfoCurrentPane == null)
-            {
-                InteractiveTuiStatus.Status = Translate.DoTranslation("No info.");
-                return;
-            }
+                return Translate.DoTranslation("No info.");
 
             // Now, populate the info to the status
             try
             {
                 bool infoIsDirectory = FileInfoCurrentPane.Type == FileSystemEntryType.Directory;
+                string status = "";
                 if (Config.MainConfig.IfmShowFileSize)
-                    InteractiveTuiStatus.Status =
+                    status =
                         // Name and directory indicator
                         $"[{(infoIsDirectory ? "/" : "*")}] {FileInfoCurrentPane.BaseEntry.Name} | " +
 
@@ -145,13 +143,15 @@ namespace Nitrocid.Misc.Interactives
                         $"{(!infoIsDirectory ? TimeDateRenderers.Render(((FileInfo)FileInfoCurrentPane.BaseEntry).LastWriteTime) : "")}"
                     ;
                 else
-                    InteractiveTuiStatus.Status = $"[{(infoIsDirectory ? "/" : "*")}] {FileInfoCurrentPane.BaseEntry.Name}";
+                    status = $"[{(infoIsDirectory ? "/" : "*")}] {FileInfoCurrentPane.BaseEntry.Name}";
+                if (!string.IsNullOrEmpty(selectedFolder))
+                    status = $"{Translate.DoTranslation("Selected")} {selectedFolder} - {status}";
+                return status;
             }
             catch (Exception ex)
             {
-                InteractiveTuiStatus.Status = Translate.DoTranslation(ex.Message);
+                return Translate.DoTranslation(ex.Message);
             }
-            InteractiveTuiStatus.Status = $"{Translate.DoTranslation("Selected")} {selectedFolder} - {InteractiveTuiStatus.Status}";
         }
 
         /// <inheritdoc/>
@@ -226,7 +226,7 @@ namespace Nitrocid.Misc.Interactives
                 {
                     // We're dealing with a folder. Open it in the selected pane.
                     ((FolderSelectorCli)Instance).firstPanePath = FilesystemTools.NeutralizePath(currentFileSystemEntry.FilePath + "/");
-                    InteractiveTuiStatus.FirstPaneCurrentSelection = 1;
+                    InteractiveTuiTools.SelectionMovement(Instance, 1);
                     ((FolderSelectorCli)Instance).refreshFirstPaneListing = true;
                 }
             }
@@ -270,7 +270,7 @@ namespace Nitrocid.Misc.Interactives
         private static void GoUp()
         {
             ((FolderSelectorCli)Instance).firstPanePath = FilesystemTools.NeutralizePath(((FolderSelectorCli)Instance).firstPanePath + "/..");
-            InteractiveTuiStatus.FirstPaneCurrentSelection = 1;
+            InteractiveTuiTools.SelectionMovement(Instance, 1);
             ((FolderSelectorCli)Instance).refreshFirstPaneListing = true;
         }
 
@@ -381,7 +381,7 @@ namespace Nitrocid.Misc.Interactives
             path = FilesystemTools.NeutralizePath(path, ((FolderSelectorCli)Instance).firstPanePath);
             if (Checking.FolderExists(path))
             {
-                InteractiveTuiStatus.FirstPaneCurrentSelection = 1;
+                InteractiveTuiTools.SelectionMovement(Instance, 1);
                 ((FolderSelectorCli)Instance).firstPanePath = path;
                 ((FolderSelectorCli)Instance).refreshFirstPaneListing = true;
             }

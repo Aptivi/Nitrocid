@@ -40,7 +40,7 @@ namespace Nitrocid.Misc.Interactives
         /// <summary>
         /// Task manager bindings
         /// </summary>
-        public override List<InteractiveTuiBinding> Bindings { get; set; } =
+        public override InteractiveTuiBinding[] Bindings { get; } =
         [
             // Operations
             new InteractiveTuiBinding("Kill", ConsoleKey.F1,
@@ -108,25 +108,27 @@ namespace Nitrocid.Misc.Interactives
         }
 
         /// <inheritdoc/>
-        public override void RenderStatus(object item)
+        public override string GetStatusFromItem(object item)
         {
+            string status = "";
             if (osThreadMode)
             {
                 ProcessThread thread = (ProcessThread)item;
                 if (string.IsNullOrEmpty(taskStatus))
-                    InteractiveTuiStatus.Status = $"{thread.Id}";
+                    status = $"{thread.Id}";
                 else
-                    InteractiveTuiStatus.Status = $"{thread.Id} - {taskStatus}";
+                    status = $"{thread.Id} - {taskStatus}";
             }
             else
             {
                 KernelThread thread = (KernelThread)item;
                 if (string.IsNullOrEmpty(taskStatus))
-                    InteractiveTuiStatus.Status = $"{thread.Name}";
+                    status = $"{thread.Name}";
                 else
-                    InteractiveTuiStatus.Status = $"{thread.Name} - {taskStatus}";
+                    status = $"{thread.Name} - {taskStatus}";
             }
             taskStatus = "";
+            return status;
         }
 
         /// <inheritdoc/>
@@ -160,7 +162,7 @@ namespace Nitrocid.Misc.Interactives
         private static void SwitchMode()
         {
             osThreadMode = !osThreadMode;
-            InteractiveTuiStatus.FirstPaneCurrentSelection = 1;
+            InteractiveTuiTools.SelectionMovement(Instance, 1);
         }
     }
 }

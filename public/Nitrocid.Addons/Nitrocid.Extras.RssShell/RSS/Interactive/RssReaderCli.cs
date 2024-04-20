@@ -52,7 +52,7 @@ namespace Nitrocid.Extras.RssShell.RSS.Interactive
         /// <summary>
         /// Article viewer keybindings
         /// </summary>
-        public override List<InteractiveTuiBinding> Bindings { get; set; } =
+        public override InteractiveTuiBinding[] Bindings { get; } =
         [
             // Operations
             new InteractiveTuiBinding("Info", ConsoleKey.F1, (article, _) => ShowArticleInfo(article)),
@@ -91,10 +91,10 @@ namespace Nitrocid.Extras.RssShell.RSS.Interactive
         }
 
         /// <inheritdoc/>
-        public override void RenderStatus(RSSArticle item)
+        public override string GetStatusFromItem(RSSArticle item)
         {
             RSSArticle article = item;
-            InteractiveTuiStatus.Status = article.ArticleTitle;
+            return article.ArticleTitle;
         }
 
         /// <inheritdoc/>

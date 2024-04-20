@@ -38,7 +38,7 @@ namespace Nitrocid.Extras.UnitConv.Interactives
         /// <summary>
         /// Contact manager bindings
         /// </summary>
-        public override List<InteractiveTuiBinding> Bindings { get; set; } =
+        public override InteractiveTuiBinding[] Bindings { get; } =
         [
             // Operations
             new InteractiveTuiBinding("Convert...", ConsoleKey.F1, (_, _) => OpenConvert()),
@@ -57,8 +57,8 @@ namespace Nitrocid.Extras.UnitConv.Interactives
             GetUnits().OfType<object>();
 
         /// <inheritdoc/>
-        public override void RenderStatus(object item) =>
-            InteractiveTuiStatus.Status = $"{GetUnits().OfType<string>().Count()} " + Translate.DoTranslation("units to convert");
+        public override string GetStatusFromItem(object item) =>
+            $"{GetUnits().OfType<string>().Count()} " + Translate.DoTranslation("units to convert");
 
         /// <inheritdoc/>
         public override string GetEntryFromItem(object item) =>

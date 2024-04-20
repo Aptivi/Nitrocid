@@ -39,7 +39,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
         /// <summary>
         /// Contact manager bindings
         /// </summary>
-        public override List<InteractiveTuiBinding> Bindings { get; set; } =
+        public override InteractiveTuiBinding[] Bindings { get; } =
         [
             // Operations
             new InteractiveTuiBinding("Delete", ConsoleKey.F1, (_, index) => RemoveContact(index)),
@@ -90,18 +90,18 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
         }
 
         /// <inheritdoc/>
-        public override void RenderStatus(Card item)
+        public override string GetStatusFromItem(Card item)
         {
             // Get some info from the contact
             Card selectedContact = item;
             if (selectedContact is null)
-                return;
+                return "";
 
             // Generate the rendered text
             string finalRenderedContactName = GetContactNameFinal(selectedContact);
 
             // Render them to the status
-            InteractiveTuiStatus.Status = finalRenderedContactName;
+            return finalRenderedContactName;
         }
 
         /// <inheritdoc/>
@@ -258,7 +258,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                 // Get the index from the instance
                 int idx = Array.FindIndex(contacts, (card) => card == foundCard);
                 DebugCheck.Assert(idx != -1, "contact index is -1!!!");
-                InteractiveTuiStatus.FirstPaneCurrentSelection = idx + 1;
+                InteractiveTuiTools.SelectionMovement(Instance, idx + 1);
             }
         }
 

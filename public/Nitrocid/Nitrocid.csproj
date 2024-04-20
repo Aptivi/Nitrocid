@@ -51,7 +51,7 @@
     <NitrocidModAPIVersionMajor>3.0.25</NitrocidModAPIVersionMajor>
 
     <!-- Increment NitrocidModAPIVersionChangeset every time there is a breaking change or an API addition in the N-KS API. -->
-    <NitrocidModAPIVersionChangeset>438</NitrocidModAPIVersionChangeset>
+    <NitrocidModAPIVersionChangeset>439</NitrocidModAPIVersionChangeset>
 
     <!-- To be installed to the file version -->
     <NitrocidModAPIVersion>$(NitrocidModAPIVersionMajor).$(NitrocidModAPIVersionChangeset)</NitrocidModAPIVersion>
@@ -99,12 +99,12 @@
 
   <!-- KS Non-private Dependencies Information -->
   <ItemGroup>
-    <PackageReference Include="Terminaux" Version="3.2.0" PrivateAssets="contentfiles;analyzers;build;runtime" />
-    <PackageReference Include="Terminaux.ResizeListener" Version="3.2.0" PrivateAssets="contentfiles;analyzers;build;runtime" />
-    <PackageReference Include="Textify.Offline" Version="1.6.0.2" PrivateAssets="contentfiles;analyzers;build;runtime" />
+    <PackageReference Include="Terminaux" Version="3.3.0.1" PrivateAssets="contentfiles;analyzers;build;runtime" />
+    <PackageReference Include="Terminaux.ResizeListener" Version="3.3.0.1" PrivateAssets="contentfiles;analyzers;build;runtime" />
+    <PackageReference Include="Textify.Offline" Version="1.7.0" PrivateAssets="contentfiles;analyzers;build;runtime" />
     <PackageReference Include="Nettify" Version="1.1.0.1" PrivateAssets="contentfiles;analyzers;build;runtime" />
     <PackageReference Include="EnumMagic" Version="0.1.0.1" PrivateAssets="contentfiles;analyzers;build;runtime" />
-    <PackageReference Include="Textify.Offline.Json" Version="1.6.0.2" />
+    <PackageReference Include="Textify.Offline.Json" Version="1.7.0" />
   </ItemGroup>
   <!-- KS Non-private Dependencies Information End -->
 
