@@ -80,7 +80,7 @@ namespace Nitrocid.Users.Login.Handlers.Logins
                 (user) =>
                 {
                     var fullName = UserManagement.GetUser(user).FullName;
-                    return (user, fullName is null ? "" : fullName);
+                    return (user, string.IsNullOrEmpty(fullName) ? user : fullName);
                 }
             ).ToArray();
 
