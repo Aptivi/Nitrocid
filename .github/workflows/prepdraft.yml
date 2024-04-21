@@ -35,3 +35,4 @@ jobs:
         files: |
           tools/*.zip
           tools/*-changes.chg
+          tools/hashsums.txt

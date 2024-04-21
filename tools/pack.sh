@@ -26,6 +26,11 @@ if [ ! $? == 0 ]; then
 	echo zip is not found.
 	exit 1
 fi
+shapath=`which sha256sum`
+if [ ! $? == 0 ]; then
+	echo sha256sum is not found.
+	exit 1
+fi
 
 # Pack binary
 echo Packing binary...
@@ -40,6 +45,8 @@ if [ ! $? == 0 ]; then
 fi
 
 # Inform success
+"$shapath" /tmp/$ksversion-bin.zip >> hashsums.txt
+"$shapath" /tmp/$ksversion-bin-lite.zip >> hashsums.txt
 mv /tmp/$ksversion-bin.zip .
 mv /tmp/$ksversion-bin-lite.zip .
 mv /tmp/$ksversion-addons.zip .

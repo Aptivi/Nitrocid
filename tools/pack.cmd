@@ -31,6 +31,11 @@ echo There was an error trying to pack binary (%errorlevel%).
 goto :finished
 
 :complete
+REM Necessary for Chocolatey
+"%ProgramFiles%\7-Zip\7z.exe" h -scrcSHA256 %temp%\%ksversion%-bin.zip >> hashsums.txt
+"%ProgramFiles%\7-Zip\7z.exe" h -scrcSHA256 %temp%\%ksversion%-bin-lite.zip >> hashsums.txt
+
+REM Move to the current directory
 move %temp%\%ksversion%-bin.zip
 move %temp%\%ksversion%-bin-lite.zip
 move %temp%\%ksversion%-addons.zip
