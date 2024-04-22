@@ -55,9 +55,9 @@ namespace Nitrocid.Analyzers.Test
 
             test.ExpectedDiagnostics.AddRange(expected);
             test.ReferenceAssemblies = References.Net80;
-            test.TestState.AdditionalReferences.Add(MetadataReference.CreateFromFile("../../../../../public/Nitrocid/KSBuild/net8.0/Nitrocid.dll"));
-            test.TestState.AdditionalReferences.Add(MetadataReference.CreateFromFile("../../../../../public/Nitrocid/KSBuild/net8.0/Terminaux.dll"));
-            test.TestState.AdditionalReferences.Add(MetadataReference.CreateFromFile("../../../../../public/Nitrocid/KSBuild/net8.0/Textify.dll"));
+            test.TestState.AdditionalReferences.Add(MetadataReference.CreateFromFile("../../../public/Nitrocid/KSBuild/net8.0/Nitrocid.dll"));
+            test.TestState.AdditionalReferences.Add(MetadataReference.CreateFromFile("../../../public/Nitrocid/KSBuild/net8.0/Terminaux.dll"));
+            test.TestState.AdditionalReferences.Add(MetadataReference.CreateFromFile("../../../public/Nitrocid/KSBuild/net8.0/Textify.dll"));
             await test.RunAsync(CancellationToken.None);
         }
 
@@ -80,9 +80,9 @@ namespace Nitrocid.Analyzers.Test
 
             test.ExpectedDiagnostics.AddRange(expected);
             test.ReferenceAssemblies = References.Net80;
-            test.TestState.AdditionalReferences.Add(MetadataReference.CreateFromFile("../../../../../public/Nitrocid/KSBuild/net8.0/Nitrocid.dll"));
-            test.TestState.AdditionalReferences.Add(MetadataReference.CreateFromFile("../../../../../public/Nitrocid/KSBuild/net8.0/Terminaux.dll"));
-            test.TestState.AdditionalReferences.Add(MetadataReference.CreateFromFile("../../../../../public/Nitrocid/KSBuild/net8.0/Textify.dll"));
+            test.TestState.AdditionalReferences.Add(MetadataReference.CreateFromFile("../../../public/Nitrocid/KSBuild/net8.0/Nitrocid.dll"));
+            test.TestState.AdditionalReferences.Add(MetadataReference.CreateFromFile("../../../public/Nitrocid/KSBuild/net8.0/Terminaux.dll"));
+            test.TestState.AdditionalReferences.Add(MetadataReference.CreateFromFile("../../../public/Nitrocid/KSBuild/net8.0/Textify.dll"));
             await test.RunAsync(CancellationToken.None);
         }
     }
