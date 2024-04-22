@@ -158,6 +158,7 @@ namespace Nitrocid.Tests.Files
         /// <summary>
         /// Tests trying to parse the path name
         /// </summary>
+        [TestMethod]
         [DataRow("/usr/bin", true)]
         [DataRow("/usr/bin\0", false)]
         [Description("Querying")]
@@ -173,6 +174,7 @@ namespace Nitrocid.Tests.Files
         /// <summary>
         /// Tests trying to parse the path name
         /// </summary>
+        [TestMethod]
         [DataRow(@"C:\Windows", true)]
         [DataRow(@"C:\Windows<>", false)]
         [Description("Querying")]
@@ -188,6 +190,7 @@ namespace Nitrocid.Tests.Files
         /// <summary>
         /// Tests trying to parse the file name
         /// </summary>
+        [TestMethod]
         [DataRow("Windows", true)]
         [DataRow(@"Windows/System32\", false)]
         [Description("Querying")]
