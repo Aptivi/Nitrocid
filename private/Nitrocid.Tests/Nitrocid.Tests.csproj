@@ -1,19 +1,15 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="MSTest.Sdk/3.3.1">
+
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
     <LangVersion>latest</LangVersion>
     <OutputPath>KSTest\</OutputPath>
-    <EnableMSTestRunner>true</EnableMSTestRunner>
-    <OutputType>Exe</OutputType>
-    <IsPackable>false</IsPackable>
-    <IsTestProject>true</IsTestProject>
-    <TestingPlatformDotnetTestSupport>true</TestingPlatformDotnetTestSupport>
-    <TestingPlatformShowTestsFailure>true</TestingPlatformShowTestsFailure>
     <SignAssembly>True</SignAssembly>
     <AssemblyOriginatorKeyFile>..\..\aptivi_snk.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
+
   <ItemGroup>
     <None Include="TestData\TestMove.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -67,17 +63,19 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
+
   <ItemGroup>
     <PackageReference Include="Shouldly" Version="4.2.1" />
-    <PackageReference Include="MSTest" Version="3.2.2" />
     <PackageReference Include="Terminaux" Version="3.3.0.1" />
   </ItemGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\..\public\Nitrocid\Nitrocid.csproj">
       <Project>{c7b37899-c361-423d-9512-fe0a87a46866}</Project>
       <Name>Nitrocid</Name>
     </ProjectReference>
   </ItemGroup>
+  
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
     <Copy SourceFiles="..\..\public\Nitrocid.Addons\Nitrocid.ThemePacks\Resources\Themes\Hacker.json" DestinationFolder="TestData"></Copy>
   </Target>
