@@ -8,7 +8,7 @@ fi
 
 # Push packages
 echo Pushing packages...
-dotnet nuget push "public/Nitrocid/KSBuild/*.nupkg" --api-key $NUGET_APIKEY --source "nuget.org"
+dotnet nuget push "../public/Nitrocid/KSBuild/*.nupkg" --api-key $NUGET_APIKEY --source "nuget.org"
 if [ ! $? == 0 ]; then
 	echo Push failed.
 	exit 1
