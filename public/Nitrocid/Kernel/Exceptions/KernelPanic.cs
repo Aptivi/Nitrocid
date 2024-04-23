@@ -76,7 +76,7 @@ namespace Nitrocid.Kernel.Exceptions
         {
             KernelErrored = true;
             LastKernelErrorException = Exc ??
-                new KernelException(KernelExceptionType.Unknown);
+                new KernelException(KernelExceptionType.Unknown, Description, Variables);
             NotifyKernelError = true;
 
             try
