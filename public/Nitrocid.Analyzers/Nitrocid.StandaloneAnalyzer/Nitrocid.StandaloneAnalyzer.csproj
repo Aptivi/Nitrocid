@@ -19,7 +19,7 @@
     <Product>Nitrocid</Product>
     <Copyright>Copyright © Aptivi 2018 - 2024</Copyright>
     <ApplicationIcon>../../Nitrocid/OfficialAppIcon-KernelSimulator.ico</ApplicationIcon>
-    <Version>0.1.0.3</Version>
+    <Version>0.1.0.4</Version>
     <Configurations>Debug;Release</Configurations>
     <LangVersion>latest</LangVersion>
     <TargetFramework>net8.0</TargetFramework>
