@@ -155,7 +155,10 @@ namespace Nitrocid.Misc.Notifications
                         OldNotificationsList = new List<Notification>(NotifRecents);
                         continue;
                     }
-                    NewNotificationsList = NotifRecents.Except(OldNotificationsList).ToList();
+                    lock (NotifRecents)
+                    {
+                        NewNotificationsList = NotifRecents.Except(OldNotificationsList).ToList();
+                    }
                     if (NewNotificationsList.Count > 0 & !ScreensaverManager.InSaver)
                     {
                         // Update the old notifications list
@@ -414,9 +417,12 @@ namespace Nitrocid.Misc.Notifications
             DebugWriter.WriteDebug(DebugLevel.I, "List contains this notification? {0}", NotifRecents.Contains(notif));
             if (!NotifRecents.Contains(notif))
             {
-                NotifRecents.Add(notif);
-                sent = true;
-                EventsManager.FireEvent(EventType.NotificationSent, notif);
+                lock (NotifRecents)
+                {
+                    NotifRecents.Add(notif);
+                    sent = true;
+                    EventsManager.FireEvent(EventType.NotificationSent, notif);
+                }
             }
         }
 
@@ -439,10 +445,13 @@ namespace Nitrocid.Misc.Notifications
         {
             try
             {
-                NotifRecents.RemoveAt(ind);
-                DebugWriter.WriteDebug(DebugLevel.I, "Removed index {0} from notification list", ind);
-                EventsManager.FireEvent(EventType.NotificationDismissed);
-                dismissing = true;
+                lock (NotifRecents)
+                {
+                    NotifRecents.RemoveAt(ind);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Removed index {0} from notification list", ind);
+                    EventsManager.FireEvent(EventType.NotificationDismissed);
+                    dismissing = true;
+                }
                 return true;
             }
             catch (Exception ex)
