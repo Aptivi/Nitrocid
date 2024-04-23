@@ -29,6 +29,8 @@ using System.Linq;
 using System.Text;
 using Textify.General;
 using Nitrocid.Network.Connections;
+using Nitrocid.Shell.ShellBase.Commands.ProcessExecution;
+using Nitrocid.Kernel;
 
 namespace Nitrocid.Extras.RssShell.RSS.Interactive
 {
@@ -145,7 +147,12 @@ namespace Nitrocid.Extras.RssShell.RSS.Interactive
             // Now, open the host browser
             try
             {
-                Process.Start(article.ArticleLink);
+                if (KernelPlatform.IsOnWindows())
+                    ProcessExecutor.ExecuteProcess("cmd.exe", $"/c \"start {article.ArticleLink}\"");
+                else if (KernelPlatform.IsOnMacOS())
+                    ProcessExecutor.ExecuteProcess("open", article.ArticleLink);
+                else
+                    ProcessExecutor.ExecuteProcess("xdg-open", article.ArticleLink);
             }
             catch (Exception e)
             {

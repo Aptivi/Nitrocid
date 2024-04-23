@@ -30,6 +30,8 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Notifications;
 using Textify.General;
+using Nitrocid.Kernel;
+using Nitrocid.Shell.ShellBase.Commands.ProcessExecution;
 
 namespace Nitrocid.Extras.MailShell.Tools
 {
@@ -57,7 +59,12 @@ namespace Nitrocid.Extras.MailShell.Tools
             DebugWriter.WriteDebug(DebugLevel.I, "WebAlert URI: {0}", e.WebUri.AbsoluteUri);
             TextWriters.Write(e.Message, true, KernelColorType.Warning);
             TextWriterColor.Write(Translate.DoTranslation("Opening URL... Make sure to follow the steps shown on the screen."));
-            Process.Start(e.WebUri.AbsoluteUri).WaitForExit();
+            if (KernelPlatform.IsOnWindows())
+                ProcessExecutor.ExecuteProcess("cmd.exe", $"/c \"start {e.WebUri.AbsoluteUri}\"");
+            else if (KernelPlatform.IsOnMacOS())
+                ProcessExecutor.ExecuteProcess("open", e.WebUri.AbsoluteUri);
+            else
+                ProcessExecutor.ExecuteProcess("xdg-open", e.WebUri.AbsoluteUri);
         }
 
         /// <summary>
