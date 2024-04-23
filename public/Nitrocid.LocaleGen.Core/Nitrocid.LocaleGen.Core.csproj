@@ -21,7 +21,6 @@
     <!-- Repository set up -->
     <RepositoryUrl>https://github.com/Aptivi/NitrocidKS.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <Configurations>Debug;Release</Configurations>
   </PropertyGroup>
   <!-- LocaleGen NuGet Information End -->
     
@@ -32,7 +31,6 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DefineTrace>true</DefineTrace>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <OutputPath>..\Nitrocid\KSBuild\</OutputPath>
     <Description>Nitrocid KS Locale Generator</Description>
@@ -41,7 +39,6 @@
     <Company>Aptivi</Company>
     <Product>Nitrocid</Product>
     <Version>0.1.0.4</Version>
-    <Configurations>Debug;Release</Configurations>
     <LangVersion>latest</LangVersion>
     <TargetFramework>net8.0</TargetFramework>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>

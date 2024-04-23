@@ -11,7 +11,6 @@
     <StartupObject>Nitrocid.LocaleGen.Generator</StartupObject>
     <RootNamespace>Nitrocid.LocaleGen</RootNamespace>
     <AssemblyName>Nitrocid.LocaleGen</AssemblyName>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <OutputPath>..\Nitrocid\KSBuild\</OutputPath>
     <Description>Nitrocid KS Locale Generator</Description>
@@ -21,7 +20,6 @@
     <Copyright>Copyright © Aptivi 2018 - 2024</Copyright>
     <ApplicationIcon>../Nitrocid/OfficialAppIcon-KernelSimulator.ico</ApplicationIcon>
     <Version>0.1.0.4</Version>
-    <Configurations>Debug;Release</Configurations>
     <LangVersion>latest</LangVersion>
     <TargetFramework>net8.0</TargetFramework>
     <SignAssembly>True</SignAssembly>
