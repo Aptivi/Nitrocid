@@ -1,0 +1,57 @@
+<Project>
+    <!-- KS General Information -->
+    <PropertyGroup>
+        <!-- Versioning and some info to be installed to all the Nitrocid projects, including the addons -->
+        <Version>0.1.0.5</Version>
+        <Copyright>Copyright © Aptivi 2018 - 2024</Copyright>
+        <Company>Aptivi</Company>
+        <Product>Nitrocid</Product>
+        <LangVersion>latest</LangVersion>
+        <Deterministic>true</Deterministic>
+        <TargetFramework>net8.0</TargetFramework>
+        <SignAssembly>True</SignAssembly>
+        <AssemblyOriginatorKeyFile>..\..\aptivi_snk.snk</AssemblyOriginatorKeyFile>
+
+        <!--
+          Increment NitrocidModAPIVersionMajor every time there is a new version of Nitrocid KS. For example, N-KS 0.1.1 is
+          3.0.26. Also, increment NitrocidModAPIVersionChangeset every time there is a breaking change or an API addition
+          in the N-KS API. Don't forget to document it in the GitBook instance so the mod developers are aware of the breaking
+          changes!
+        -->
+        <NitrocidModAPIVersionMajor>3.0.25</NitrocidModAPIVersionMajor>
+        <NitrocidModAPIVersionChangeset>439</NitrocidModAPIVersionChangeset>
+
+        <!-- The above two properties are to be installed to the file version -->
+        <NitrocidModAPIVersion>$(NitrocidModAPIVersionMajor).$(NitrocidModAPIVersionChangeset)</NitrocidModAPIVersion>
+        <FileVersion>$(NitrocidModAPIVersion)</FileVersion>
+    </PropertyGroup>
+    <!-- KS General Information End -->
+
+    <!-- KS Platform Information -->
+    <!--
+
+      Note for constants: All Nitrocid flags should be defined by defining NitrocidFlags, not DefineConstants. Here's how you
+      define such flags: -p:NitrocidFlags=PACKAGEMANAGERBUILD
+
+      Supported constants (NitrocidFlags):
+          - PACKAGEMANAGERBUILD: Indicates that this build is a package manager build suitable for Launchpad PPA
+
+      Possible specifiers (NitrocidReleaseSpecifier):
+          - REL: Final release
+          - DEV: Developer preview
+          - ALPHA: Alpha release
+          - BETA: Beta release
+          - RC: Release candidate
+
+    -->
+    <PropertyGroup>
+        <DefineDebug Condition="'$(Configuration)' == 'Debug'">true</DefineDebug>
+        <DefineTrace Condition="'$(Configuration)' == 'Debug'">true</DefineTrace>
+        <Optimize>true</Optimize>
+        <Optimize Condition="'$(Configuration)' == 'Debug'">false</Optimize>
+        <NitrocidReleaseSpecifier>REL</NitrocidReleaseSpecifier>
+        <NitrocidReleaseSpecifier Condition="'$(Configuration)' == 'Debug'">DEV</NitrocidReleaseSpecifier>
+        <DefineConstants>SPECIFIER$(NitrocidReleaseSpecifier);$(NitrocidFlags.Replace(",",";"))</DefineConstants>
+    </PropertyGroup>
+    <!-- KS Platform Information End -->
+</Project>

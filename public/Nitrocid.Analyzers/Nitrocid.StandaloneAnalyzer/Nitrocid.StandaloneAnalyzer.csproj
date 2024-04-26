@@ -10,18 +10,10 @@
     <DefineTrace>true</DefineTrace>
     <RootNamespace>Nitrocid.StandaloneAnalyzer</RootNamespace>
     <AssemblyName>Nitrocid.StandaloneAnalyzer</AssemblyName>
-    <Deterministic>true</Deterministic>
     <OutputPath>..\..\Nitrocid\KSAnalyzer\</OutputPath>
     <Description>Nitrocid KS Standalone Analyzer</Description>
     <AssemblyTitle>Nitrocid KS Standalone Analyzer</AssemblyTitle>
-    <Company>Aptivi</Company>
-    <Product>Nitrocid</Product>
-    <Copyright>Copyright © Aptivi 2018 - 2024</Copyright>
     <ApplicationIcon>../../Nitrocid/OfficialAppIcon-KernelSimulator.ico</ApplicationIcon>
-    <Version>0.1.0.5</Version>
-    <LangVersion>latest</LangVersion>
-    <TargetFramework>net8.0</TargetFramework>
-    <SignAssembly>True</SignAssembly>
     <AssemblyOriginatorKeyFile>..\..\..\aptivi_snk.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <!-- LocaleGen General Information End -->
