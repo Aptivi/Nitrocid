@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <OutputPath>..\KSTest\</OutputPath>
+    <TestingPlatformShowTestsFailure>true</TestingPlatformShowTestsFailure>
   </PropertyGroup>
 
   <ItemGroup>
