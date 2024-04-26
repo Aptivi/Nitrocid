@@ -149,7 +149,7 @@
   <!-- LocaleGen Translations End -->
 
   <ItemGroup>
-    <PackageReference Include="Terminaux" Version="3.3.0.2" />
+    <PackageReference Include="Terminaux" Version="3.4.0" />
   </ItemGroup>
 
   <ItemGroup>

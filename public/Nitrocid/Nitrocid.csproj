@@ -50,8 +50,8 @@
 
   <!-- KS Non-private Dependencies Information -->
   <ItemGroup>
-    <PackageReference Include="Terminaux" Version="3.3.0.2" PrivateAssets="contentfiles;analyzers;build;runtime" />
-    <PackageReference Include="Terminaux.ResizeListener" Version="3.3.0.2" PrivateAssets="contentfiles;analyzers;build;runtime" />
+    <PackageReference Include="Terminaux" Version="3.4.0" PrivateAssets="contentfiles;analyzers;build;runtime" />
+    <PackageReference Include="Terminaux.ResizeListener" Version="3.4.0" PrivateAssets="contentfiles;analyzers;build;runtime" />
     <PackageReference Include="Textify.Offline" Version="1.7.0" PrivateAssets="contentfiles;analyzers;build;runtime" />
     <PackageReference Include="Nettify" Version="1.1.0.1" PrivateAssets="contentfiles;analyzers;build;runtime" />
     <PackageReference Include="EnumMagic" Version="0.1.0.1" PrivateAssets="contentfiles;analyzers;build;runtime" />

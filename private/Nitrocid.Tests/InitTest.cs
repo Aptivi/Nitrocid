@@ -48,7 +48,6 @@ namespace Nitrocid.Tests
         public static void ReadyEverything(TestContext tc)
 #pragma warning restore IDE0060
         {
-            GeneralColorTools.CheckConsoleOnCall = false;
             if (!Checking.FileExists(PathsManagement.GetKernelPath(KernelPathType.Configuration)))
             {
                 // Check to see if we have an appdata folder for KS
