@@ -41,11 +41,6 @@ debian-install:
 	install -m 755 -t debian/kernel-simulator/usr/share/applications/ $(DESKTOPS)
 	install -m 755 -t debian/kernel-simulator/usr/lib/ks/ $(BRANDINGS)
 	mv debian/kernel-simulator/usr/bin/ks-n debian/kernel-simulator/usr/bin/ks
-	find debian/kernel-simulator/usr/lib/ks/runtimes/ -mindepth 1 -maxdepth 1 -not -name $(ARCH) -type d -exec rm -rf {} \;
-	find debian/kernel-simulator/usr/lib/ks/Addons/Extras.BassBoom/runtimes/ -mindepth 1 -maxdepth 1 -not -name $(ARCH) -type d -exec rm -rf {} \;
-	find debian/kernel-simulator/usr/lib/ks/Addons/Extras.GitShell/runtimes/ -mindepth 1 -maxdepth 1 -not -name $(ARCH) -type d -exec rm -rf {} \;
-	find debian/kernel-simulator/usr/lib/ks/Addons/Extras.Contacts/runtimes/ -mindepth 1 -maxdepth 1 -not -name $(ARCH) -type d -exec rm -rf {} \;
-	find debian/kernel-simulator/usr/lib/ks/Addons/Extras.MailShell/runtimes/ -mindepth 1 -maxdepth 1 -not -name $(ARCH) -type d -exec rm -rf {} \;
-	find debian/kernel-simulator/usr/lib/ks/Addons/Extras.SqlShell/runtimes/ -mindepth 1 -maxdepth 1 -not -name $(ARCH) -type d -exec rm -rf {} \;
+	find 'debian/kernel-simulator/usr/lib/' -type d -name "runtimes" -exec sh -c 'find $$0 -mindepth 1 -maxdepth 1 -not -name $(ARCH) -type d -exec rm -rf \{\} \;' {} \;
 
 # This makefile is just a wrapper for tools scripts.
