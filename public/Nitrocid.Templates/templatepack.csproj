@@ -3,7 +3,7 @@
   <PropertyGroup>
     <PackageId>KS.Templates</PackageId>
     <PackageType>Template</PackageType>
-    <PackageVersion>0.1.0.4</PackageVersion>
+    <PackageVersion>0.1.0.5</PackageVersion>
     <Authors>Aptivi</Authors>
     <Title>Nitrocid KS Templates</Title>
     <Description>Simulates our future-planned kernel, Nitrocid Kernel. This package contains templates to use when creating N-KS mods, screensavers, and splashes</Description>

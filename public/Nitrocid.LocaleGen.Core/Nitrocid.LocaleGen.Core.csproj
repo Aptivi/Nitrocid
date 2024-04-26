@@ -6,7 +6,7 @@
     <Title>Nitrocid KS - Locale Generator</Title>
     <PackageDescription>Simulates our future-planned kernel</PackageDescription>
     <PackageTags>kernel;simulator;csharp</PackageTags>
-    <PackageVersion>0.1.0.4</PackageVersion>
+    <PackageVersion>0.1.0.5</PackageVersion>
     <!-- URL settings -->
     <PackageProjectUrl>https://github.com/Aptivi/NitrocidKS</PackageProjectUrl>
     <PackageIcon>OfficialAppIcon-KernelSimulator-512.png</PackageIcon>
@@ -38,7 +38,7 @@
     <Copyright>Copyright © Aptivi 2018 - 2024</Copyright>
     <Company>Aptivi</Company>
     <Product>Nitrocid</Product>
-    <Version>0.1.0.4</Version>
+    <Version>0.1.0.5</Version>
     <LangVersion>latest</LangVersion>
     <TargetFramework>net8.0</TargetFramework>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>

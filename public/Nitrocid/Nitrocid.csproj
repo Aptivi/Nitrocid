@@ -38,7 +38,7 @@
     <Copyright>Copyright © Aptivi 2018 - 2024</Copyright>
     <OutputPath>KSBuild\</OutputPath>
     <ApplicationIcon>OfficialAppIcon-KernelSimulator.ico</ApplicationIcon>
-    <Version>0.1.0.4</Version>
+    <Version>0.1.0.5</Version>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <Deterministic>true</Deterministic>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -87,7 +87,7 @@
 
   <!-- KS Dependencies Information -->
   <ItemGroup>
-    <PackageReference Include="GRILO.Boot" Version="0.1.0.4" PrivateAssets="all" />
+    <PackageReference Include="GRILO.Boot" Version="0.1.0.5" PrivateAssets="all" />
     <PackageReference Include="Microsoft.Data.Sqlite" Version="8.0.2" PrivateAssets="all" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="all" />
     <PackageReference Include="Newtonsoft.Json.Schema" Version="3.0.15" PrivateAssets="all" />
