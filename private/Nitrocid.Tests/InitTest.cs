@@ -29,7 +29,6 @@ using Nitrocid.Files.Operations;
 using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Modifications;
-using Terminaux.Colors;
 using Terminaux.Base.Checks;
 using System.Reflection;
 
@@ -38,7 +37,7 @@ using System.Reflection;
 namespace Nitrocid.Tests
 {
     [TestClass]
-    public class InitTest
+    public static class InitTest
     {
         internal static string PathToTestSlotFolder = "";
 
