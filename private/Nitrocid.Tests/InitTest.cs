@@ -30,6 +30,8 @@ using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Modifications;
 using Terminaux.Colors;
+using Terminaux.Base.Checks;
+using System.Reflection;
 
 [assembly: ClassCleanupExecution(ClassCleanupBehavior.EndOfClass)]
 
@@ -44,10 +46,11 @@ namespace Nitrocid.Tests
         /// Initialize everything that is required before starting unit tests
         /// </summary>
         [AssemblyInitialize]
-#pragma warning disable IDE0060
         public static void ReadyEverything(TestContext tc)
-#pragma warning restore IDE0060
         {
+            var asm = Assembly.GetEntryAssembly();
+            if (asm is not null)
+                ConsoleChecker.AddToCheckWhitelist(asm);
             if (!Checking.FileExists(PathsManagement.GetKernelPath(KernelPathType.Configuration)))
             {
                 // Check to see if we have an appdata folder for KS
@@ -79,6 +82,7 @@ namespace Nitrocid.Tests
             // Load necessary addons for testing
             AddonTools.ProcessAddons(ModLoadPriority.Important);
             AddonTools.ProcessAddons(ModLoadPriority.Optional);
+            tc.WriteLine("Loaded all necessary test assets");
         }
 
         /// <summary>
