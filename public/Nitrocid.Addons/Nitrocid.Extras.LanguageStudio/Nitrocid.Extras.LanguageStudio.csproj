@@ -12,7 +12,6 @@
     <Description>Nitrocid KS Extras - Language Studio</Description>
     <AssemblyTitle>Nitrocid KS Extras - Language Studio</AssemblyTitle>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
-    <AssemblyOriginatorKeyFile>..\..\..\aptivi_snk.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <!-- Extras.LanguageStudio addon General Information End -->
 

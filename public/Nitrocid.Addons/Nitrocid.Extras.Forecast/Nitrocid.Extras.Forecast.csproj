@@ -12,7 +12,6 @@
     <Description>Nitrocid KS Extras - Forecast</Description>
     <AssemblyTitle>Nitrocid KS Extras - Forecast</AssemblyTitle>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
-    <AssemblyOriginatorKeyFile>..\..\..\aptivi_snk.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <!-- Extras.Forecast addon General Information End -->
 

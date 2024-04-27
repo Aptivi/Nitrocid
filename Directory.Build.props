@@ -10,7 +10,8 @@
         <Deterministic>true</Deterministic>
         <TargetFramework>net8.0</TargetFramework>
         <SignAssembly>True</SignAssembly>
-        <AssemblyOriginatorKeyFile>..\..\aptivi_snk.snk</AssemblyOriginatorKeyFile>
+        <RootPath>$(MSBuildThisFileDirectory)</RootPath>
+        <AssemblyOriginatorKeyFile>$(RootPath)\aptivi_snk.snk</AssemblyOriginatorKeyFile>
 
         <!--
           Increment NitrocidModAPIVersionMajor every time there is a new version of Nitrocid KS. For example, N-KS 0.1.1 is

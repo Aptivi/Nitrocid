@@ -12,7 +12,6 @@
     <Description>Nitrocid KS Extras - Docking</Description>
     <AssemblyTitle>Nitrocid KS Extras - Docking</AssemblyTitle>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
-    <AssemblyOriginatorKeyFile>..\..\..\aptivi_snk.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <!-- Extras.Docking addon General Information End -->
 

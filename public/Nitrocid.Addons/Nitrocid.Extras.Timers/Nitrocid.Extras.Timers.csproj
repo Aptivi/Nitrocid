@@ -12,7 +12,6 @@
     <Description>Nitrocid KS Extras - Timers</Description>
     <AssemblyTitle>Nitrocid KS Extras - Timers</AssemblyTitle>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
-    <AssemblyOriginatorKeyFile>..\..\..\aptivi_snk.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <!-- Extras.Timers addon General Information End -->
 

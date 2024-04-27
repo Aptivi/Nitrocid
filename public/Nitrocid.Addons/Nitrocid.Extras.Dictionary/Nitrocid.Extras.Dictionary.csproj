@@ -12,7 +12,6 @@
     <Description>Nitrocid KS Extras - Dictionary</Description>
     <AssemblyTitle>Nitrocid KS Extras - Dictionary</AssemblyTitle>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
-    <AssemblyOriginatorKeyFile>..\..\..\aptivi_snk.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <!-- Extras.Dictionary addon General Information End -->
 

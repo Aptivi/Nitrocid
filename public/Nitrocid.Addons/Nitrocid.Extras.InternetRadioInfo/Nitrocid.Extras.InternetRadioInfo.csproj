@@ -12,7 +12,6 @@
     <Description>Nitrocid KS Extras - Internet Radio Info</Description>
     <AssemblyTitle>Nitrocid KS Extras - Internet Radio Info</AssemblyTitle>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
-    <AssemblyOriginatorKeyFile>..\..\..\aptivi_snk.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <!-- Extras.InternetRadioInfo addon General Information End -->
 

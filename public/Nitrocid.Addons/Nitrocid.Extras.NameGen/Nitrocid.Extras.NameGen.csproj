@@ -13,7 +13,6 @@
     <AssemblyTitle>Nitrocid KS Extras - NameGen</AssemblyTitle>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
-    <AssemblyOriginatorKeyFile>..\..\..\aptivi_snk.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <!-- Extras.NameGen addon General Information End -->
 

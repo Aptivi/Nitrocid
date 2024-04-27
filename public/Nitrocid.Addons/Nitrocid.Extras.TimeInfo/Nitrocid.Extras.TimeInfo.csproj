@@ -12,7 +12,6 @@
     <Description>Nitrocid KS Extras - TimeInfo</Description>
     <AssemblyTitle>Nitrocid KS Extras - TimeInfo</AssemblyTitle>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
-    <AssemblyOriginatorKeyFile>..\..\..\aptivi_snk.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <!-- Extras.TimeInfo addon General Information End -->
 

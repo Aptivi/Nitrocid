@@ -12,7 +12,6 @@
     <Description>Nitrocid KS Extras - SHA1</Description>
     <AssemblyTitle>Nitrocid KS Extras - SHA1</AssemblyTitle>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
-    <AssemblyOriginatorKeyFile>..\..\..\aptivi_snk.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <!-- Extras.Sha1 addon General Information End -->
 

@@ -12,7 +12,6 @@
     <Description>Nitrocid KS Extras - Calendar</Description>
     <AssemblyTitle>Nitrocid KS Extras - Calendar</AssemblyTitle>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
-    <AssemblyOriginatorKeyFile>..\..\..\aptivi_snk.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <!-- Extras.Calendar addon General Information End -->
 

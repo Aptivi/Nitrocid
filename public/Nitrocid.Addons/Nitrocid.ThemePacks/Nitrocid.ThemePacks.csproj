@@ -12,7 +12,6 @@
     <Description>Nitrocid KS Theme Packs</Description>
     <AssemblyTitle>Nitrocid KS Theme Packs</AssemblyTitle>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
-    <AssemblyOriginatorKeyFile>..\..\..\aptivi_snk.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <!-- ThemePacks addon General Information End -->
 

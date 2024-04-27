@@ -13,7 +13,6 @@
     <AssemblyTitle>Nitrocid KS Extras - SQL Shell</AssemblyTitle>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
-    <AssemblyOriginatorKeyFile>..\..\..\aptivi_snk.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <!-- Extras.SqlShell addon General Information End -->
 

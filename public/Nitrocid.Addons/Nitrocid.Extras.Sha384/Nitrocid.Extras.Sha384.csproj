@@ -12,7 +12,6 @@
     <Description>Nitrocid KS Extras - SHA384</Description>
     <AssemblyTitle>Nitrocid KS Extras - SHA384</AssemblyTitle>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
-    <AssemblyOriginatorKeyFile>..\..\..\aptivi_snk.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <!-- Extras.Sha384 addon General Information End -->
 

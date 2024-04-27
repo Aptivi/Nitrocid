@@ -12,7 +12,6 @@
     <Description>Nitrocid KS Splash Packs</Description>
     <AssemblyTitle>Nitrocid KS Splash Packs</AssemblyTitle>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
-    <AssemblyOriginatorKeyFile>..\..\..\aptivi_snk.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <!-- SplashPacks addon General Information End -->
 

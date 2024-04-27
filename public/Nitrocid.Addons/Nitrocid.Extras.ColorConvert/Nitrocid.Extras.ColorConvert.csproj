@@ -12,7 +12,6 @@
     <Description>Nitrocid KS Extras - Color Conversion Tools</Description>
     <AssemblyTitle>Nitrocid KS Extras - Color Conversion Tools</AssemblyTitle>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
-    <AssemblyOriginatorKeyFile>..\..\..\aptivi_snk.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <!-- Extras.ColorConvert addon General Information End -->
 

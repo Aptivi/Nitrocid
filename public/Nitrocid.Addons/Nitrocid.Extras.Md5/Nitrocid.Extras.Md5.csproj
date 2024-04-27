@@ -12,7 +12,6 @@
     <Description>Nitrocid KS Extras - MD5</Description>
     <AssemblyTitle>Nitrocid KS Extras - MD5</AssemblyTitle>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
-    <AssemblyOriginatorKeyFile>..\..\..\aptivi_snk.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <!-- Extras.Md5 addon General Information End -->
 

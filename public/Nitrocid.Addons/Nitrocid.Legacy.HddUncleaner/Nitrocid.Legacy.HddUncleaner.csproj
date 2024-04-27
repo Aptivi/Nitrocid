@@ -12,7 +12,6 @@
     <Description>Nitrocid KS Legacy - HDD Uncleaner 2015</Description>
     <AssemblyTitle>Nitrocid KS Legacy - HDD Uncleaner 2015</AssemblyTitle>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
-    <AssemblyOriginatorKeyFile>..\..\..\aptivi_snk.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <!-- Legacy.HddUncleaner addon General Information End -->
 

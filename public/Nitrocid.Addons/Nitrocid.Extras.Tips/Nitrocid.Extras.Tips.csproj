@@ -12,7 +12,6 @@
     <Description>Nitrocid KS Extras - Tips</Description>
     <AssemblyTitle>Nitrocid KS Extras - Tips</AssemblyTitle>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
-    <AssemblyOriginatorKeyFile>..\..\..\aptivi_snk.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <!-- Extras.Tips addon General Information End -->
 

@@ -12,7 +12,6 @@
     <Description>Nitrocid KS Extras - JSON Shell</Description>
     <AssemblyTitle>Nitrocid KS Extras - JSON Shell</AssemblyTitle>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
-    <AssemblyOriginatorKeyFile>..\..\..\aptivi_snk.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <!-- Extras.JsonShell addon General Information End -->
 

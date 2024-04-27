@@ -6,7 +6,6 @@
     <RootNamespace>Nitrocid.Analyzers.Vsix</RootNamespace>
     <AssemblyName>Nitrocid.Analyzers.Vsix</AssemblyName>
     <OutputPath>..\..\Nitrocid\KSAnalyzer\</OutputPath>
-    <AssemblyOriginatorKeyFile>..\..\..\aptivi_snk.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <PropertyGroup>

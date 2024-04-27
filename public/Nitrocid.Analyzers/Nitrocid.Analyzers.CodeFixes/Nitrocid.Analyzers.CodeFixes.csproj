@@ -5,7 +5,6 @@
     <IsPackable>false</IsPackable>
     <OutputPath>..\..\Nitrocid\KSAnalyzer\</OutputPath>
     <RootNamespace>Nitrocid.Analyzers</RootNamespace>
-    <AssemblyOriginatorKeyFile>..\..\..\aptivi_snk.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <ItemGroup>

@@ -12,7 +12,6 @@
     <Description>Nitrocid KS Extras - To-do List</Description>
     <AssemblyTitle>Nitrocid KS Extras - To-do List</AssemblyTitle>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
-    <AssemblyOriginatorKeyFile>..\..\..\aptivi_snk.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <!-- Extras.ToDoList addon General Information End -->
 

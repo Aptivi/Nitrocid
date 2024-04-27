@@ -12,7 +12,6 @@
     <Description>Nitrocid KS Extras - Theme Studio</Description>
     <AssemblyTitle>Nitrocid KS Extras - Theme Studio</AssemblyTitle>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
-    <AssemblyOriginatorKeyFile>..\..\..\aptivi_snk.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <!-- Extras.ThemeStudio addon General Information End -->
 

@@ -12,7 +12,6 @@
     <Description>Nitrocid KS Extras - HTTP Shell</Description>
     <AssemblyTitle>Nitrocid KS Extras - HTTP Shell</AssemblyTitle>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
-    <AssemblyOriginatorKeyFile>..\..\..\aptivi_snk.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <!-- Extras.HttpShell addon General Information End -->
 
