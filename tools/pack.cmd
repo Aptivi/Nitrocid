@@ -17,7 +17,8 @@ REM
 REM    You should have received a copy of the GNU General Public License
 REM    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-for /f "tokens=* USEBACKQ" %%f in (`type version`) do set ksversion=%%f
+for /f "tokens=*" %%g in ('findstr "<Version>" ..\Directory.Build.props') do (set MIDVER=%%g)
+for /f "tokens=1 delims=<" %%a in ("%MIDVER:~9%") do (set ksversion=%%a)
 
 :packbin
 echo Packing binary...

@@ -1,7 +1,8 @@
 @echo off
 
 REM This script builds KS documentation and packs the artifacts. Use when you have VS installed.
-for /f "tokens=* USEBACKQ" %%f in (`type version`) do set ksversion=%%f
+for /f "tokens=*" %%g in ('findstr "<Version>" ..\Directory.Build.props') do (set MIDVER=%%g)
+for /f "tokens=1 delims=<" %%a in ("%MIDVER:~9%") do (set ksversion=%%a)
 
 :pack
 echo Packing documentation...

@@ -18,7 +18,7 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 # This script builds KS and packs the artifacts. Use when you have MSBuild installed.
-ksversion=$(cat version)
+ksversion=$(grep "<Version>" ../Directory.Build.props | cut -d "<" -f 2 | cut -d ">" -f 2)
 
 # Check for dependencies
 zippath=`which zip`
