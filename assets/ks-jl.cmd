@@ -19,4 +19,5 @@ REM    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 REM This script runs Nitrocid KS JL. This is a shortcut for running
 REM KS-JL so that you don't have to write the full name of the executable.
-"Nitrocid.LocaleGen.exe" %*
+set ROOTPATH=%~dp0
+dotnet "%ROOTPATH%Nitrocid.LocaleGen.dll" %*

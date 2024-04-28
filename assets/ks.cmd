@@ -22,4 +22,5 @@ REM Simulator so that you don't have to write the full name of the executable.
 
 REM Please note that we don't support updating in this script, because we use
 REM Chocolatey and NuGet to manage updates for KS.
-"Nitrocid.exe" %*
+set ROOTPATH=%~dp0
+dotnet "%ROOTPATH%Nitrocid.dll" %*
