@@ -3528,3 +3528,6 @@ jinhaeng sanghwangeul boyeojuneun seupeullaesi hwamyeon.
 Powerrine tekseuteureul sayonghayeo jinhaeng sanghwangeul boyeojuneun seupeullaesi hwamyeon.
 hyeonjae iblyeog deulaibeo
 eotteon iblyeog deulaibeoleul sayonghasigessseubnikka?
+ijeon guseong maigeuleisyeon
+ijeon beojeon-ui keoneol-eseo ijeon guseong jung ilbuleul maigeuleisyeonhabnida.
+guseong maigeuleisyeon-i seong-gongjeog-eulo wanlyodoeji anh-ass-eul su issseubnida. guseong pail-i yuhyohadago hwagsinhaneun gyeong-u dibeogeu logeuleul josahayeo jasehan naeyong-eul hwag-inhaseyo.

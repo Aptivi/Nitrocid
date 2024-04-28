@@ -3531,6 +3531,9 @@
     "Un écran de démarrage qui vous montre vos progrès.",
     "Un écran de démarrage qui vous montre votre progression en utilisant le texte PowerLine.",
     "Pilote d'entrée actuel",
-    "Quel pilote d'entrée souhaitez-vous utiliser ?"
+    "Quel pilote d'entrée souhaitez-vous utiliser ?",
+    "Migrer l'ancienne configuration",
+    "Migre une partie de votre ancienne configuration à partir d'anciennes versions du noyau",
+    "La migration de la configuration n'a peut-être pas été effectuée correctement. Si vous êtes sûr que vos fichiers de configuration sont valides, examinez les journaux de débogage pour plus d'informations."
   ]
 }

@@ -3528,3 +3528,6 @@ A splash screen that shows you progress.
 A splash screen that shows you progress using the PowerLine text.
 Current input driver
 Which input driver would you like to use?
+Migrate old configuration
+Migrates some of your old configuration from older versions of the kernel
+Configuration migration may not have been completed successfully. If you're sure that your configuration files are valid, investigate the debug logs for more info.

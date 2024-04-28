@@ -3528,3 +3528,6 @@ Een splash-scherm dat je voortgang laat zien.
 Een splash-scherm dat u de voortgang laat zien met behulp van de PowerLine-tekst.
 Huidige invoerstuurprogramma
 Welke invoerdriver wilt u gebruiken?
+Migreer oude configuratie
+Migreert een deel van uw oude configuratie van oudere versies van de kernel
+De configuratiemigratie is mogelijk niet met succes voltooid. Als u zeker weet dat uw configuratiebestanden geldig zijn, onderzoekt u de foutopsporingslogboeken voor meer informatie.

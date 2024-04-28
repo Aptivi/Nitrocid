@@ -3528,3 +3528,6 @@ Una pantalla de presentación que muestra tu progreso.
 Una pantalla de presentación que muestra su progreso usando el texto PowerLine.
 Controlador de entrada actual
 ¿Qué controlador de entrada le gustaría usar?
+Migrar configuración anterior
+Migra parte de su configuración anterior desde versiones anteriores del kernel
+Es posible que la migración de la configuración no se haya completado correctamente. Si está seguro de que sus archivos de configuración son válidos, investigue los registros de depuración para obtener más información.

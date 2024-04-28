@@ -3531,6 +3531,9 @@
     "Uma tela inicial que mostra o progresso.",
     "Uma tela inicial que mostra o progresso usando o texto PowerLine.",
     "Driver de entrada atual",
-    "Qual driver de entrada você gostaria de usar?"
+    "Qual driver de entrada você gostaria de usar?",
+    "Migrar configuração antiga",
+    "Migra algumas de suas configurações antigas de versões mais antigas do kernel",
+    "A migração da configuração pode não ter sido concluída com êxito. Se tiver certeza de que seus arquivos de configuração são válidos, investigue os logs de depuração para obter mais informações."
   ]
 }

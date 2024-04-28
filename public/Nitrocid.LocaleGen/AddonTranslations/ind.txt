@@ -3528,3 +3528,6 @@ ek splaish skrin jo aapki prgati dikhaati hai.
 ek splaish skrin jo aapko povrlaain tekst kaa upyoga krke prgati dikhaati hai.
 vartamaan inaput draivar
 aap kis inaput draivar ka upayog karana chaahenge?
+puraane konfigareshan ko maigret karen
+aapake kuchh puraane konfigareshan ko karnel ke puraane sanskaranon se maigret karata hai
+ho sakata hai ki konfigareshan maigreshan saphalataapoorvak poora na hua ho. yadi aap aashvast hain ki aapakee konfigareshan failen maany hain, to adhik jaanakaaree ke lie dibag log kee jaanch karen.

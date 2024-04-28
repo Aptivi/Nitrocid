@@ -3528,3 +3528,6 @@ Una schermata iniziale che mostra i progressi.
 Una schermata iniziale che mostra i progressi utilizzando il testo PowerLine.
 Driver di ingresso corrente
 Quale driver di input desideri utilizzare?
+Migrare la vecchia configurazione
+Migra parte della tua vecchia configurazione dalle versioni precedenti del kernel
+La migrazione della configurazione potrebbe non essere stata completata correttamente. Se sei sicuro che i file di configurazione siano validi, esamina i log di debug per ulteriori informazioni.

@@ -3531,6 +3531,9 @@
     "Ein Begrüßungsbildschirm, der Ihnen den Fortschritt anzeigt.",
     "Ein Begrüßungsbildschirm, der Ihnen den Fortschritt mithilfe des PowerLine-Textes anzeigt.",
     "Aktueller Eingabetreiber",
-    "Welchen Eingabetreiber möchten Sie verwenden?"
+    "Welchen Eingabetreiber möchten Sie verwenden?",
+    "Alte Konfiguration migrieren",
+    "Migriert einen Teil Ihrer alten Konfiguration von älteren Versionen des Kernels",
+    "Die Konfigurationsmigration wurde möglicherweise nicht erfolgreich abgeschlossen. Wenn Sie sicher sind, dass Ihre Konfigurationsdateien gültig sind, untersuchen Sie die Debug-Protokolle auf weitere Informationen."
   ]
 }

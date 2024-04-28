@@ -3531,6 +3531,9 @@
     "Zastavka, pokazyvaiushchaia vash progress.",
     "Zastavka, pokazyvaiushchaia vash progress s pomoshchiu teksta PowerLine.",
     "Tekushchiy vkhodnoy drayver",
-    "Kakoy drayver vvoda vy by khoteli ispol'zovat'?"
+    "Kakoy drayver vvoda vy by khoteli ispol'zovat'?",
+    "Perenos staroy konfiguratsii",
+    "Perenosit chast' vashey staroy konfiguratsii iz starykh versiy yadra.",
+    "Vozmozhno, migratsiya konfiguratsii ne zavershilas' uspeshno. Yesli vy uvereny, chto vashi fayly konfiguratsii deystvitel'ny, izuchite zhurnaly otladki dlya polucheniya dopolnitel'noy informatsii."
   ]
 }

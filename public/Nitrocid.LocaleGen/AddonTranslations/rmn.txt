@@ -3528,3 +3528,6 @@ Un ecran de deschidere care vă arată progresul.
 Un ecran de deschidere care vă arată progresul utilizând textul PowerLine.
 Driver de intrare curent
 Ce driver de intrare ați dori să utilizați?
+Migrați configurația veche
+Migrează o parte din configurația dvs. veche din versiunile mai vechi ale nucleului
+Este posibil ca migrarea configurației să nu fi fost finalizată cu succes. Dacă sunteți sigur că fișierele dvs. de configurare sunt valide, investigați jurnalele de depanare pentru mai multe informații.
