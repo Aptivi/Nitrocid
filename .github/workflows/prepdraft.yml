@@ -8,7 +8,7 @@ on:
 jobs:
   build:
 
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
@@ -23,10 +23,11 @@ jobs:
       run: dotnet tool install --global docfx
     - name: Release Asset Preparation
       run: |
-        cd tools ; ./build.cmd ; cd ..
-        cd tools ; ./pack.cmd ; cd ..
-        cd tools ; ./docgen.cmd ; cd ..
-        cd tools ; ./docgen-pack.cmd ; cd ..
+        chmod +x tools/*.sh
+        make
+        cd tools ; ./pack.sh ; cd ..
+        make doc
+        cd tools ; ./docgen-pack.sh ; cd ..
     - name: Release Draft Making
       uses: softprops/action-gh-release@v1
       with:
