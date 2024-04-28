@@ -34,6 +34,7 @@ using Textify.General;
 using Terminaux.Base;
 using Terminaux.Inputs;
 using Terminaux.Reader;
+using Nitrocid.Kernel.Configuration.Migration;
 
 namespace Nitrocid.Kernel.Configuration.Settings
 {
@@ -82,7 +83,8 @@ namespace Nitrocid.Kernel.Configuration.Settings
                     new($"{MaxSections + 5}", Translate.DoTranslation("Reload settings"), Translate.DoTranslation("Reloads the kernel configuration for any external changes")),
                     new($"{MaxSections + 6}", Translate.DoTranslation("Check for system updates"), Translate.DoTranslation("Checks for system updates (requires an active Internet connection).")),
                     new($"{MaxSections + 7}", Translate.DoTranslation("System information"), Translate.DoTranslation("Shows you basic system information (more info available in the 'sysinfo' command).")),
-                    new($"{MaxSections + 8}", Translate.DoTranslation("Exit")),
+                    new($"{MaxSections + 8}", Translate.DoTranslation("Migrate old configuration"), Translate.DoTranslation("Migrates some of your old configuration from older versions of the kernel")),
+                    new($"{MaxSections + 9}", Translate.DoTranslation("Exit")),
                 };
 
                 // Prompt for selection and check the answer
@@ -132,7 +134,13 @@ namespace Nitrocid.Kernel.Configuration.Settings
                     // The selected answer is "System information"
                     SettingsAppTools.SystemInformation();
                 }
-                else if (Answer == MaxSections + 8 || Answer == -1)
+                else if (Answer == MaxSections + 8)
+                {
+                    // The selected answer is "Migrate old configuration"
+                    if (!ConfigMigration.MigrateAllConfig())
+                        InfoBoxColor.WriteInfoBoxColor(Translate.DoTranslation("Configuration migration may not have been completed successfully. If you're sure that your configuration files are valid, investigate the debug logs for more info.") + " " + Translate.DoTranslation("Press any key to go back."), true, KernelColorTools.GetColor(KernelColorType.Error));
+                }
+                else if (Answer == MaxSections + 9 || Answer == -1)
                 {
                     // The selected answer is "Exit"
                     DebugWriter.WriteDebug(DebugLevel.W, "Exiting...");
