@@ -18,8 +18,6 @@ REM    You should have received a copy of the GNU General Public License
 REM    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 REM This script builds the documentation and packs the artifacts. Use when you have VS installed.
-for /f "tokens=* USEBACKQ" %%f in (`type version`) do set ksversion=%%f
-
 echo Finding DocFX...
 if exist %USERPROFILE%\.dotnet\tools\docfx.exe goto :build
 echo You don't have DocFX installed. Download and install .NET and DocFX.

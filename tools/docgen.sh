@@ -18,8 +18,6 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 # This script builds KS and packs the artifacts. Use when you have MSBuild installed.
-ksversion=$(cat version)
-
 # Check for dependencies
 msbuildpath=`which docfx`
 if [ ! $? == 0 ]; then

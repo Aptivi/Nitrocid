@@ -18,7 +18,6 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 # This script builds KS. Use when you have dotnet installed.
-ksversion=$(cat version)
 ksreleaseconf=$1
 if [ -z $ksreleaseconf ]; then
 	ksreleaseconf=Release
