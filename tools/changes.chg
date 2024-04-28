@@ -1,9 +1,23 @@
 Nitrocid KS 0.1.0 changes
 =========================
 
-Released March 11th, 2024; codename Magic Bloom - Revision 4 (0.1.0.4)
+Released March 11th, 2024; codename Magic Bloom - Revision 5 (0.1.0.5)
 
 =============================================================================
+
+From 0.1.0.5 onwards
+--------------------
+
+You can now migrate your old second-gen configuration files, such as those
+that 0.0.24.0 or older generates. It supports migrating configurations that
+are as old as 0.0.16.0, released on June 12th, 2021!
+
+=============================================================================
+
+=============================================================================
+
+From 0.1.0.2 onwards
+--------------------
 
 Security notice: LibGit2Sharp has been updated to version 0.30.0 due to a
 security bug found in earlier libgit2 versions. For more information, visit

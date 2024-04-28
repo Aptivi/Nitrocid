@@ -1,3 +1,10 @@
+kernel-simulator (3.0.25.439-0.1.0.5-1) noble; urgency=medium
+
+  * Added config migration!
+  * Fixed a regression in the alias command
+
+ -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Sun, 28 Apr 2024 12:16:13 +0300
+
 kernel-simulator (3.0.25.439-0.1.0.4-1) noble; urgency=medium
 
   * Patch 4 of 0.1.0
