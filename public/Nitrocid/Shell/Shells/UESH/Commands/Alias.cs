@@ -68,7 +68,6 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                         DebugWriter.WriteDebugStackTrace(ex);
                         TextWriters.Write(ex.Message, KernelColorType.Error);
                     }
-                    return 0;
                 }
                 else
                 {
@@ -93,7 +92,6 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                         DebugWriter.WriteDebugStackTrace(ex);
                         TextWriters.Write(ex.Message, KernelColorType.Error);
                     }
-                    return 0;
                 }
                 else
                 {
