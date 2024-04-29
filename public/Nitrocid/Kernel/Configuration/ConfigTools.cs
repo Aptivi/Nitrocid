@@ -25,7 +25,6 @@ using Terminaux.Colors;
 using Newtonsoft.Json;
 using System.Linq;
 using Newtonsoft.Json.Schema;
-using Nitrocid.Resources;
 using Newtonsoft.Json.Linq;
 using Nitrocid.Kernel.Configuration.Settings;
 using Nitrocid.Kernel.Debugging;
@@ -39,6 +38,7 @@ using Nitrocid.Kernel.Events;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Files.Operations.Querying;
 using Terminaux.Inputs;
+using Nitrocid.Misc.Reflection.Internal;
 
 namespace Nitrocid.Kernel.Configuration
 {
@@ -425,7 +425,7 @@ namespace Nitrocid.Kernel.Configuration
                 throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("The settings entries JSON value is empty."));
 
             // Verify that the configuration is of a valid format
-            string schemaStr = SchemasResources.SettingsSchema;
+            string schemaStr = ResourcesManager.GetData("SettingsSchema.json", ResourcesType.Schemas);
             var schema = JSchema.Parse(schemaStr);
             var configObj = JArray.Parse(entriesText);
             configObj.Validate(schema);

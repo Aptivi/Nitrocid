@@ -31,6 +31,7 @@ using Nitrocid.Drivers.Encryption;
 using Nitrocid.Drivers.Regexp;
 using Nitrocid.Drivers.Console;
 using Nitrocid.Drivers.Input;
+using Nitrocid.Misc.Reflection.Internal;
 
 namespace Nitrocid.Kernel.Configuration.Instances
 {
@@ -42,7 +43,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// <inheritdoc/>
         [JsonIgnore]
         public override SettingsEntry[] SettingsEntries =>
-            ConfigTools.GetSettingsEntries(Resources.SettingsResources.DriverSettingsEntries);
+            ConfigTools.GetSettingsEntries(ResourcesManager.GetData("DriverSettingsEntries.json", ResourcesType.Settings));
 
         #region Drivers
         /// <summary>

@@ -19,6 +19,7 @@
 
 using Newtonsoft.Json;
 using Nitrocid.Kernel.Configuration.Settings;
+using Nitrocid.Misc.Reflection.Internal;
 
 namespace Nitrocid.Kernel.Configuration.Instances
 {
@@ -30,7 +31,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// <inheritdoc/>
         [JsonIgnore]
         public override SettingsEntry[] SettingsEntries =>
-            ConfigTools.GetSettingsEntries(Resources.SettingsResources.ScreensaverSettingsEntries);
+            ConfigTools.GetSettingsEntries(ResourcesManager.GetData("ScreensaverSettingsEntries.json", ResourcesType.Settings));
 
         #region MatrixBleed
         /// <summary>

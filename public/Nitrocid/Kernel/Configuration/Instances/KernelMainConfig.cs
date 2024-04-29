@@ -49,6 +49,7 @@ using Nitrocid.Network.Types.RPC;
 using Nitrocid.Network;
 using Terminaux.Inputs.Styles.Selection;
 using Terminaux.Inputs.Interactive;
+using Nitrocid.Misc.Reflection.Internal;
 
 namespace Nitrocid.Kernel.Configuration.Instances
 {
@@ -60,7 +61,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// <inheritdoc/>
         [JsonIgnore]
         public override SettingsEntry[] SettingsEntries =>
-            ConfigTools.GetSettingsEntries(Resources.SettingsResources.SettingsEntries);
+            ConfigTools.GetSettingsEntries(ResourcesManager.GetData("SettingsEntries.json", ResourcesType.Settings));
 
         [JsonIgnore]
         private string defaultFigletFontName = "speed";

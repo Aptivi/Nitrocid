@@ -22,7 +22,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Terminaux.Colors;
-using Nitrocid.Resources;
 using Newtonsoft.Json.Linq;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Debugging;
@@ -31,6 +30,7 @@ using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Kernel.Events;
+using Nitrocid.Misc.Reflection.Internal;
 
 namespace Nitrocid.ConsoleBase.Themes
 {
@@ -43,9 +43,9 @@ namespace Nitrocid.ConsoleBase.Themes
         internal static bool cacheInvalidated = true;
         internal readonly static Dictionary<string, ThemeInfo> themes = new()
         {
-            { "Default", new ThemeInfo(JToken.Parse(ThemesResources.Default)) },
-            { "Dynamic", new ThemeInfo(JToken.Parse(ThemesResources.Dynamic)) },
-            { "NitricAcid", new ThemeInfo(JToken.Parse(ThemesResources.NitricAcid)) },
+            { "Default", new ThemeInfo(JToken.Parse(ResourcesManager.GetData("Default.json", ResourcesType.Themes))) },
+            { "Dynamic", new ThemeInfo(JToken.Parse(ResourcesManager.GetData("Dynamic.json", ResourcesType.Themes))) },
+            { "NitricAcid", new ThemeInfo(JToken.Parse(ResourcesManager.GetData("NitricAcid.json", ResourcesType.Themes))) },
         };
 
         /// <summary>

@@ -78,52 +78,10 @@
 
   <!-- KS Manifest -->
   <ItemGroup>
-    <EmbeddedResource Update="Resources\SchemasResources.resx">
-      <SubType>Designer</SubType>
-      <CustomToolNamespace>Nitrocid.Resources</CustomToolNamespace>
-      <LastGenOutput>SchemasResources.Designer.cs</LastGenOutput>
-      <Generator>PublicResXFileCodeGenerator</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Resources\ThemesResources.resx">
-      <SubType>Designer</SubType>
-      <CustomToolNamespace>Nitrocid.Resources</CustomToolNamespace>
-      <LastGenOutput>ThemesResources.Designer.cs</LastGenOutput>
-      <Generator>PublicResXFileCodeGenerator</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Resources\SettingsResources.resx">
-      <SubType>Designer</SubType>
-      <CustomToolNamespace>Nitrocid.Resources</CustomToolNamespace>
-      <LastGenOutput>SettingsResources.Designer.cs</LastGenOutput>
-      <Generator>PublicResXFileCodeGenerator</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Resources\LanguageResources.resx">
-      <SubType>Designer</SubType>
-      <CustomToolNamespace>Nitrocid.Resources</CustomToolNamespace>
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>LanguageResources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Update="Resources\SchemasResources.Designer.cs">
-      <DependentUpon>SchemasResources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Update="Resources\ThemesResources.Designer.cs">
-      <DependentUpon>ThemesResources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Update="Resources\SettingsResources.Designer.cs">
-      <DependentUpon>SettingsResources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Update="Resources\LanguageResources.Designer.cs">
-      <DependentUpon>LanguageResources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
+    <EmbeddedResource Include="Resources\Schemas\*.json" />
+    <EmbeddedResource Include="Resources\Themes\*.json" />
+    <EmbeddedResource Include="Resources\Settings\*.json" />
+    <EmbeddedResource Include="Resources\Languages\*.json" />
   </ItemGroup>
   <!-- KS Manifest End -->
 

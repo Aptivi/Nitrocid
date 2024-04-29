@@ -22,7 +22,6 @@ using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Linq;
-using Nitrocid.Resources;
 using System.Globalization;
 using Newtonsoft.Json;
 using Nitrocid.Kernel;
@@ -36,6 +35,7 @@ using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Events;
 using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Languages.Decoy;
+using Nitrocid.Misc.Reflection.Internal;
 
 namespace Nitrocid.Languages
 {
@@ -45,7 +45,7 @@ namespace Nitrocid.Languages
     public static class LanguageManager
     {
 
-        internal readonly static LanguageMetadata[] LanguageMetadata = JsonConvert.DeserializeObject<LanguageMetadata[]>(LanguageResources.LanguageMetadata);
+        internal readonly static LanguageMetadata[] LanguageMetadata = JsonConvert.DeserializeObject<LanguageMetadata[]>(ResourcesManager.GetData("Metadata.json", ResourcesType.Languages));
         internal static Dictionary<string, LanguageInfo> BaseLanguages = [];
         internal static Dictionary<string, LanguageInfo> CustomLanguages = [];
         internal static LanguageInfo currentLanguage = Languages[CurrentLanguage];

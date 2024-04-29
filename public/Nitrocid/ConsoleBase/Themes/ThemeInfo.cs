@@ -21,7 +21,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Nitrocid.Resources;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Nitrocid.ConsoleBase.Colors;
@@ -31,6 +30,7 @@ using Nitrocid.Kernel.Time;
 using Nitrocid.Kernel.Time.Calendars;
 using Terminaux.Colors;
 using Nitrocid.Kernel.Debugging;
+using Nitrocid.Misc.Reflection.Internal;
 
 namespace Nitrocid.ConsoleBase.Themes
 {
@@ -151,7 +151,7 @@ namespace Nitrocid.ConsoleBase.Themes
         /// Generates a new theme info from KS resources
         /// </summary>
         public ThemeInfo() :
-            this(JToken.Parse(ThemesResources.Default))
+            this(JToken.Parse(ResourcesManager.GetData("Default.json", ResourcesType.Themes)))
         { }
 
         /// <summary>

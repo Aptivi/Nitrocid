@@ -20,11 +20,11 @@
 using System.Collections.Generic;
 using System.Globalization;
 using Newtonsoft.Json;
-using Nitrocid.Resources;
 using System.Diagnostics;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages.Decoy;
+using Nitrocid.Misc.Reflection.Internal;
 
 namespace Nitrocid.Languages
 {
@@ -129,7 +129,7 @@ namespace Nitrocid.Languages
         public LanguageInfo(string LangName, string FullLanguageName, bool Transliterable, int Codepage = 65001, string cultureCode = "", string country = "")
         {
             // Check to see if the language being installed is found in resources
-            string localizationTokenValue = LanguageResources.ResourceManager.GetString(LangName.Replace("-", "_"));
+            string localizationTokenValue = ResourcesManager.GetData($"{LangName}.json", ResourcesType.Languages);
             if (!string.IsNullOrEmpty(localizationTokenValue))
             {
                 // Install values to the object instance
@@ -161,7 +161,7 @@ namespace Nitrocid.Languages
 
                 // Get instance of language resource
                 string[] LanguageResource = JsonConvert.DeserializeObject<LanguageLocalizations>(localizationTokenValue).Localizations;
-                string[] LanguageResourceEnglish = JsonConvert.DeserializeObject<LanguageLocalizations>(LanguageResources.eng).Localizations;
+                string[] LanguageResourceEnglish = JsonConvert.DeserializeObject<LanguageLocalizations>(ResourcesManager.GetData("eng.json", ResourcesType.Languages)).Localizations;
                 custom = false;
 
                 // Populate language strings
@@ -223,7 +223,7 @@ namespace Nitrocid.Languages
             this.cultureCode = cultureCode;
 
             // Install it
-            string[] LanguageResourceEnglish = JsonConvert.DeserializeObject<LanguageLocalizations>(LanguageResources.eng).Localizations;
+            string[] LanguageResourceEnglish = JsonConvert.DeserializeObject<LanguageLocalizations>(ResourcesManager.GetData("eng.json", ResourcesType.Languages)).Localizations;
             custom = true;
             DebugWriter.WriteDebug(DebugLevel.I, "{0} should be {1} from English strings list.", LanguageToken.Length, LanguageResourceEnglish.Length);
             if (LanguageToken.Length == LanguageResourceEnglish.Length)
