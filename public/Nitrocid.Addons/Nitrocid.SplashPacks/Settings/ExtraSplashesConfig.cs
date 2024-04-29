@@ -22,6 +22,7 @@ using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Configuration.Instances;
 using Nitrocid.Kernel.Configuration.Settings;
+using Nitrocid.Misc.Reflection.Internal;
 using Nitrocid.Misc.Text;
 
 namespace Nitrocid.SplashPacks.Settings
@@ -34,7 +35,7 @@ namespace Nitrocid.SplashPacks.Settings
         /// <inheritdoc/>
         [JsonIgnore]
         public override SettingsEntry[] SettingsEntries =>
-            ConfigTools.GetSettingsEntries(Resources.AddonResources.AddonSplashSettings);
+            ConfigTools.GetSettingsEntries(ResourcesManager.GetData("AddonSplashSettings.json", ResourcesType.Misc, typeof(ExtraSplashesConfig).Assembly));
 
         /// <summary>
         /// [Simple] The progress text location

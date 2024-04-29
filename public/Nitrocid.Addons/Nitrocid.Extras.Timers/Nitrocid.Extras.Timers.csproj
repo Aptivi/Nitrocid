@@ -29,18 +29,7 @@
     <ProjectReference Include="..\..\Nitrocid\Nitrocid.csproj" Private="false" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Resources\AddonResources.Designer.cs">
-      <DependentUpon>AddonResources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Update="Resources\AddonResources.resx">
-      <SubType>Designer</SubType>
-      <LastGenOutput>AddonResources.Designer.cs</LastGenOutput>
-      <Generator>ResXFileCodeGenerator</Generator>
-    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\*" />
   </ItemGroup>
   <ItemGroup>
     <None Update="AddonMetadata.json">

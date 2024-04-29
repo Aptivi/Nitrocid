@@ -28,23 +28,11 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Nitrocid\Nitrocid.csproj" Private="false" />
   </ItemGroup>
-  <!-- ThemePacks addon Platform Information End -->
+  <!-- LanguagePacks addon Platform Information End -->
 
-  <!-- ThemePacks addon metadata -->
+  <!-- LanguagePacks addon metadata -->
   <ItemGroup>
-    <Compile Update="Resources\LanguageResources.Designer.cs">
-      <DependentUpon>LanguageResources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Update="Resources\LanguageResources.resx">
-      <SubType>Designer</SubType>
-      <CustomToolNamespace>Nitrocid.LanguagePacks.Resources</CustomToolNamespace>
-      <LastGenOutput>LanguageResources.Designer.cs</LastGenOutput>
-      <Generator>PublicResXFileCodeGenerator</Generator>
-    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Languages\*" />
   </ItemGroup>
   <ItemGroup>
     <None Update="AddonMetadata.json">

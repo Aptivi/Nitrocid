@@ -22,6 +22,7 @@ using Newtonsoft.Json;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Configuration.Instances;
 using Nitrocid.Kernel.Configuration.Settings;
+using Nitrocid.Misc.Reflection.Internal;
 
 namespace Nitrocid.Extras.Forecast.Settings
 {
@@ -33,7 +34,7 @@ namespace Nitrocid.Extras.Forecast.Settings
         /// <inheritdoc/>
         [JsonIgnore]
         public override SettingsEntry[] SettingsEntries =>
-            ConfigTools.GetSettingsEntries(Resources.AddonResources.ForecastSettings);
+            ConfigTools.GetSettingsEntries(ResourcesManager.GetData("ForecastSettings.json", ResourcesType.Misc, typeof(ForecastConfig).Assembly));
 
         /// <summary>
         /// Select your preferred unit for temperature (this only applies to the "weather" command)

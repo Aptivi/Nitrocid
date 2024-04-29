@@ -37,19 +37,7 @@
   <!-- Extras.NameGen addon Platform Information End -->
 
   <ItemGroup>
-    <Compile Update="Resources\AddonResources.Designer.cs">
-      <DependentUpon>AddonResources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Update="Resources\AddonResources.resx">
-      <SubType>Designer</SubType>
-      <LastGenOutput>AddonResources.Designer.cs</LastGenOutput>
-      <Generator>ResXFileCodeGenerator</Generator>
-    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\*" />
   </ItemGroup>
 
   <ItemGroup>

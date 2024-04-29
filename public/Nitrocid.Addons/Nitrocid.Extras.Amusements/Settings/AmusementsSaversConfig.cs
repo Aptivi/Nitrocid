@@ -21,6 +21,7 @@ using Newtonsoft.Json;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Configuration.Instances;
 using Nitrocid.Kernel.Configuration.Settings;
+using Nitrocid.Misc.Reflection.Internal;
 
 namespace Nitrocid.Extras.Amusements.Settings
 {
@@ -32,7 +33,7 @@ namespace Nitrocid.Extras.Amusements.Settings
         /// <inheritdoc/>
         [JsonIgnore]
         public override SettingsEntry[] SettingsEntries =>
-            ConfigTools.GetSettingsEntries(Resources.AddonResources.AmusementsSaverSettings);
+            ConfigTools.GetSettingsEntries(ResourcesManager.GetData("AmusementsSaverSettings.json", ResourcesType.Misc, typeof(AmusementsConfig).Assembly));
 
         /// <summary>
         /// [Snaker] Enable truecolor support. Has a higher priority than 255 color support.

@@ -21,6 +21,7 @@ using Newtonsoft.Json;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Configuration.Instances;
 using Nitrocid.Kernel.Configuration.Settings;
+using Nitrocid.Misc.Reflection.Internal;
 using Nitrocid.Shell.Prompts;
 
 namespace Nitrocid.Extras.ArchiveShell.Settings
@@ -33,7 +34,7 @@ namespace Nitrocid.Extras.ArchiveShell.Settings
         /// <inheritdoc/>
         [JsonIgnore]
         public override SettingsEntry[] SettingsEntries =>
-            ConfigTools.GetSettingsEntries(Resources.AddonResources.ArchiveSettings);
+            ConfigTools.GetSettingsEntries(ResourcesManager.GetData("ArchiveSettings.json", ResourcesType.Misc, typeof(ArchiveConfig).Assembly));
 
         /// <summary>
         /// Prompt Preset

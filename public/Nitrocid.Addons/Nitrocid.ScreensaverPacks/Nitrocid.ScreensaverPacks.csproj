@@ -37,18 +37,7 @@
   <!-- ScreensaverPacks addon Platform Information End -->
 
   <ItemGroup>
-    <Compile Update="Resources\AddonResources.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>AddonResources.resx</DependentUpon>
-    </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Update="Resources\AddonResources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>AddonResources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\*" />
   </ItemGroup>
 
   <ItemGroup>

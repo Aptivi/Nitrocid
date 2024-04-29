@@ -22,6 +22,7 @@ using Nitrocid.Extras.JsonShell.Json;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Configuration.Instances;
 using Nitrocid.Kernel.Configuration.Settings;
+using Nitrocid.Misc.Reflection.Internal;
 using Nitrocid.Shell.Prompts;
 
 namespace Nitrocid.Extras.JsonShell.Settings
@@ -34,7 +35,7 @@ namespace Nitrocid.Extras.JsonShell.Settings
         /// <inheritdoc/>
         [JsonIgnore]
         public override SettingsEntry[] SettingsEntries =>
-            ConfigTools.GetSettingsEntries(Resources.AddonResources.JsonSettings);
+            ConfigTools.GetSettingsEntries(ResourcesManager.GetData("JsonSettings.json", ResourcesType.Misc, typeof(JsonConfig).Assembly));
 
         /// <summary>
         /// Prompt Preset

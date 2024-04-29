@@ -18,7 +18,6 @@
 //
 
 using System;
-using System.Diagnostics;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel;

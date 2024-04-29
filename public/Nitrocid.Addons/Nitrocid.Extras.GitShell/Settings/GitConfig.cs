@@ -21,6 +21,7 @@ using Newtonsoft.Json;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Configuration.Instances;
 using Nitrocid.Kernel.Configuration.Settings;
+using Nitrocid.Misc.Reflection.Internal;
 using Nitrocid.Shell.Prompts;
 
 namespace Nitrocid.Extras.GitShell.Settings
@@ -33,7 +34,7 @@ namespace Nitrocid.Extras.GitShell.Settings
         /// <inheritdoc/>
         [JsonIgnore]
         public override SettingsEntry[] SettingsEntries =>
-            ConfigTools.GetSettingsEntries(Resources.AddonResources.GitSettings);
+            ConfigTools.GetSettingsEntries(ResourcesManager.GetData("GitSettings.json", ResourcesType.Misc, typeof(GitConfig).Assembly));
 
         /// <summary>
         /// Prompt Preset

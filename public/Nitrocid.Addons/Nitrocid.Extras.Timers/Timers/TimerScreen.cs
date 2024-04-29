@@ -35,7 +35,6 @@ using Terminaux.Base;
 using Terminaux.Reader;
 using Nitrocid.Drivers.RNG;
 using Terminaux.Sequences.Builder.Types;
-using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Extras.Timers.Timers
 {

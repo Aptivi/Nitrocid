@@ -20,15 +20,15 @@
 using Newtonsoft.Json;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Extensions;
-using Nitrocid.LanguagePacks.Resources;
 using Nitrocid.Languages;
 using Nitrocid.Languages.Decoy;
-using Nitrocid.Misc.Reflection;
+using Nitrocid.Misc.Reflection.Internal;
 using Nitrocid.Modifications;
 using System;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Reflection;
+using Textify.General;
 
 namespace Nitrocid.LanguagePacks
 {
@@ -48,13 +48,13 @@ namespace Nitrocid.LanguagePacks
         void IAddon.StartAddon()
         {
             // Add them all!
-            string[] languageResNames = GetLanguageResourceNames();
-            var languageMetadataToken = JsonConvert.DeserializeObject<LanguageMetadata[]>(LanguageResources.LanguageMetadata);
+            string[] languageResNames = ResourcesManager.GetResourceNames(typeof(LanguagePackInit).Assembly).Except(["Languages.Metadata.json"]).ToArray();
+            var languageMetadataToken = JsonConvert.DeserializeObject<LanguageMetadata[]>(ResourcesManager.GetData("Metadata.json", ResourcesType.Languages, typeof(LanguagePackInit).Assembly));
             for (int i = 0; i < languageResNames.Length; i++)
             {
                 var metadata = languageMetadataToken[i];
-                string key = languageResNames[i].Replace("_", "-");
-                var languageToken = JsonConvert.DeserializeObject<LanguageLocalizations>(LanguageResources.ResourceManager.GetString(languageResNames[i]));
+                string key = languageResNames[i].RemovePrefix("Languages.");
+                var languageToken = JsonConvert.DeserializeObject<LanguageLocalizations>(ResourcesManager.GetData(key, ResourcesType.Languages, typeof(LanguagePackInit).Assembly));
                 LanguageManager.AddBaseLanguage(metadata, true, languageToken.Localizations);
                 DebugWriter.WriteDebug(DebugLevel.I, "Added {0}", key);
             }
@@ -63,28 +63,16 @@ namespace Nitrocid.LanguagePacks
         void IAddon.StopAddon()
         {
             // Remove them all!
-            string[] languageResNames = GetLanguageResourceNames();
-            foreach (string key in languageResNames)
+            string[] languageResNames = ResourcesManager.GetResourceNames(typeof(LanguagePackInit).Assembly).Except(["Languages.Metadata.json"]).ToArray();
+            foreach (string resource in languageResNames)
             {
-                string keyNormalized = key.Replace("_", "-");
-                bool result = LanguageManager.BaseLanguages.Remove(keyNormalized);
-                DebugWriter.WriteDebug(DebugLevel.I, "Removed {0}: {1}", keyNormalized, result);
+                string key = resource.RemovePrefix("Languages.");
+                bool result = LanguageManager.BaseLanguages.Remove(key);
+                DebugWriter.WriteDebug(DebugLevel.I, "Removed {0}: {1}", key, result);
             }
         }
 
         void IAddon.FinalizeAddon()
         { }
-
-        private string[] GetLanguageResourceNames()
-        {
-            // Get all the languages provided by this pack
-            string[] nonLanguages =
-            [
-                nameof(LanguageResources.Culture),
-                nameof(LanguageResources.ResourceManager),
-                nameof(LanguageResources.LanguageMetadata),
-            ];
-            return PropertyManager.GetPropertiesNoEvaluation(typeof(LanguageResources)).Keys.Except(nonLanguages).ToArray();
-        }
     }
 }

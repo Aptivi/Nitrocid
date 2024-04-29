@@ -20,6 +20,7 @@
 using Nitrocid.Kernel.Exceptions;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using Textify.General;
 
@@ -33,6 +34,7 @@ namespace Nitrocid.Misc.Reflection.Internal
         {
             asm ??= Assembly.GetExecutingAssembly();
             data = "";
+            InitializeData(asm);
             if (!assemblies.TryGetValue(asm, out Dictionary<string, string> asmResources))
                 return false;
             return
@@ -44,13 +46,25 @@ namespace Nitrocid.Misc.Reflection.Internal
         internal static string GetData(string resource, ResourcesType type, Assembly asm = null)
         {
             asm ??= Assembly.GetExecutingAssembly();
+            InitializeData(asm);
             if (!DataExists(resource, type, out string data, asm))
                 throw new KernelException(KernelExceptionType.Reflection, $"Resource {resource} not found for type {type} in between {assemblies.Count} assemblies");
             return data;
         }
 
+        internal static string[] GetResourceNames(Assembly asm)
+        {
+            asm ??= Assembly.GetExecutingAssembly();
+            InitializeData(asm);
+            if (!assemblies.TryGetValue(asm, out Dictionary<string, string> asmResources))
+                return [];
+            return asmResources.Select((kvp) => kvp.Key).ToArray();
+        }
+
         internal static void InitializeData(Assembly assembly)
         {
+            if (assemblies.ContainsKey(assembly))
+                return;
             var resourceFullNames = assembly.GetManifestResourceNames();
             var asmResources = new Dictionary<string, string>();
             foreach (string resourceFullName in resourceFullNames)
@@ -64,10 +78,8 @@ namespace Nitrocid.Misc.Reflection.Internal
                 // Afterwards, add the resulting content to the resources dictionary to cache it
                 asmResources.Add(fileName, content);
             }
-            assemblies.TryAdd(assembly, asmResources);
+            if (asmResources.Count > 0)
+                assemblies.TryAdd(assembly, asmResources);
         }
-
-        static ResourcesManager() =>
-            InitializeData(typeof(ResourcesManager).Assembly);
     }
 }

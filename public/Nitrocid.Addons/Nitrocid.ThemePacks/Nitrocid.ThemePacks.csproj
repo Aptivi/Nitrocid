@@ -37,19 +37,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Resources\ThemesResources.Designer.cs">
-      <DependentUpon>ThemesResources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Update="Resources\ThemesResources.resx">
-      <SubType>Designer</SubType>
-      <CustomToolNamespace>Nitrocid.ThemePacks.Resources</CustomToolNamespace>
-      <LastGenOutput>ThemesResources.Designer.cs</LastGenOutput>
-      <Generator>PublicResXFileCodeGenerator</Generator>
-    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Themes\*" />
   </ItemGroup>
   <!-- ThemePacks addon metadata End -->
 

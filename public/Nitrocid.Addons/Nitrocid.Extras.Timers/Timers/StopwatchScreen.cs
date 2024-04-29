@@ -29,7 +29,6 @@ using Terminaux.Base.Buffered;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Reader;
-using Nitrocid.Drivers;
 using Nitrocid.Drivers.RNG;
 
 namespace Nitrocid.Extras.Timers.Timers

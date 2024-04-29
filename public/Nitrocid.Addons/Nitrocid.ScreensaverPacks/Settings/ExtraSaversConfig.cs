@@ -21,6 +21,7 @@ using Newtonsoft.Json;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Configuration.Instances;
 using Nitrocid.Kernel.Configuration.Settings;
+using Nitrocid.Misc.Reflection.Internal;
 using System;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
@@ -35,7 +36,7 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// <inheritdoc/>
         [JsonIgnore]
         public override SettingsEntry[] SettingsEntries =>
-            ConfigTools.GetSettingsEntries(Resources.AddonResources.AddonSaverSettings);
+            ConfigTools.GetSettingsEntries(ResourcesManager.GetData("AddonSaverSettings.json", ResourcesType.Misc, typeof(ExtraSaversConfig).Assembly));
 
         #region Matrix
         /// <summary>

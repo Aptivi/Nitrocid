@@ -21,6 +21,7 @@ using Newtonsoft.Json;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Configuration.Instances;
 using Nitrocid.Kernel.Configuration.Settings;
+using Nitrocid.Misc.Reflection.Internal;
 using Nitrocid.Shell.Prompts;
 
 namespace Nitrocid.Extras.SftpShell.Settings
@@ -33,7 +34,7 @@ namespace Nitrocid.Extras.SftpShell.Settings
         /// <inheritdoc/>
         [JsonIgnore]
         public override SettingsEntry[] SettingsEntries =>
-            ConfigTools.GetSettingsEntries(Resources.AddonResources.SftpSettings);
+            ConfigTools.GetSettingsEntries(ResourcesManager.GetData("SftpSettings.json", ResourcesType.Misc, typeof(SftpConfig).Assembly));
 
         /// <summary>
         /// SFTP Prompt Preset

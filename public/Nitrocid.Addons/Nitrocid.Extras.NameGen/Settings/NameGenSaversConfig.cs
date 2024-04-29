@@ -21,6 +21,7 @@ using Newtonsoft.Json;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Configuration.Instances;
 using Nitrocid.Kernel.Configuration.Settings;
+using Nitrocid.Misc.Reflection.Internal;
 
 namespace Nitrocid.Extras.NameGen.Settings
 {
@@ -32,7 +33,7 @@ namespace Nitrocid.Extras.NameGen.Settings
         /// <inheritdoc/>
         [JsonIgnore]
         public override SettingsEntry[] SettingsEntries =>
-            ConfigTools.GetSettingsEntries(Resources.AddonResources.NameGenSaverSettings);
+            ConfigTools.GetSettingsEntries(ResourcesManager.GetData("NameGenSaverSettings.json", ResourcesType.Misc, typeof(NameGenSaversConfig).Assembly));
 
         /// <summary>
         /// [PersonLookup] How many milliseconds to wait before getting the new name?

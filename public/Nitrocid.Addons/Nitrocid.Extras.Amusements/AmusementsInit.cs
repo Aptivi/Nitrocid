@@ -35,7 +35,6 @@ using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Misc.Splash;
 using Nitrocid.Modifications;
 using System.Linq;
-using Textify.Data;
 
 namespace Nitrocid.Extras.Amusements
 {

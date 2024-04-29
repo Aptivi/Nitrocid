@@ -33,7 +33,6 @@ using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Misc.Screensaver;
 using Nitrocid.Modifications;
 using System.Linq;
-using Textify.Data;
 
 namespace Nitrocid.Extras.NameGen
 {

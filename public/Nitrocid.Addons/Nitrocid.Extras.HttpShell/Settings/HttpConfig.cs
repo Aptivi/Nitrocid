@@ -21,6 +21,7 @@ using Newtonsoft.Json;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Configuration.Instances;
 using Nitrocid.Kernel.Configuration.Settings;
+using Nitrocid.Misc.Reflection.Internal;
 using Nitrocid.Shell.Prompts;
 
 namespace Nitrocid.Extras.HttpShell.Settings
@@ -33,7 +34,7 @@ namespace Nitrocid.Extras.HttpShell.Settings
         /// <inheritdoc/>
         [JsonIgnore]
         public override SettingsEntry[] SettingsEntries =>
-            ConfigTools.GetSettingsEntries(Resources.AddonResources.HttpSettings);
+            ConfigTools.GetSettingsEntries(ResourcesManager.GetData("HttpSettings.json", ResourcesType.Misc, typeof(HttpConfig).Assembly));
 
 
         /// <summary>

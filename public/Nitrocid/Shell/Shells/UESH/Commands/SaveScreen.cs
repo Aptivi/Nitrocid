@@ -17,14 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Inputs.Styles.Selection;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Screensaver;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Switches;
-using System.Linq;
-using Terminaux.Inputs;
 using Terminaux.Reader;
 using Terminaux.Inputs.Interactive;
 using Nitrocid.Misc.Interactives;

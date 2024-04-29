@@ -21,6 +21,7 @@ using Newtonsoft.Json;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Configuration.Instances;
 using Nitrocid.Kernel.Configuration.Settings;
+using Nitrocid.Misc.Reflection.Internal;
 
 namespace Nitrocid.Extras.Tips.Settings
 {
@@ -32,7 +33,7 @@ namespace Nitrocid.Extras.Tips.Settings
         /// <inheritdoc/>
         [JsonIgnore]
         public override SettingsEntry[] SettingsEntries =>
-            ConfigTools.GetSettingsEntries(Resources.AddonResources.TipsSettings);
+            ConfigTools.GetSettingsEntries(ResourcesManager.GetData("TipsSettings.json", ResourcesType.Misc, typeof(TipsConfig).Assembly));
 
         /// <summary>
         /// Show the tip after logging in.

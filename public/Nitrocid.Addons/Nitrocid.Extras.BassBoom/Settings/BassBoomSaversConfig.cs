@@ -21,6 +21,7 @@ using Newtonsoft.Json;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Configuration.Instances;
 using Nitrocid.Kernel.Configuration.Settings;
+using Nitrocid.Misc.Reflection.Internal;
 
 namespace Nitrocid.Extras.BassBoom.Settings
 {
@@ -32,7 +33,7 @@ namespace Nitrocid.Extras.BassBoom.Settings
         /// <inheritdoc/>
         [JsonIgnore]
         public override SettingsEntry[] SettingsEntries =>
-            ConfigTools.GetSettingsEntries(Resources.AddonResources.BassBoomSaverSettings);
+            ConfigTools.GetSettingsEntries(ResourcesManager.GetData("BassBoomSaverSettings.json", ResourcesType.Misc, typeof(BassBoomConfig).Assembly));
 
         /// <summary>
         /// [Lyrics] How many milliseconds to wait before the next lyric?

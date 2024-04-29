@@ -22,6 +22,7 @@ using Nitrocid.Extras.RssShell.RSS;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Configuration.Instances;
 using Nitrocid.Kernel.Configuration.Settings;
+using Nitrocid.Misc.Reflection.Internal;
 using Nitrocid.Shell.Prompts;
 
 namespace Nitrocid.Extras.RssShell.Settings
@@ -34,7 +35,7 @@ namespace Nitrocid.Extras.RssShell.Settings
         /// <inheritdoc/>
         [JsonIgnore]
         public override SettingsEntry[] SettingsEntries =>
-            ConfigTools.GetSettingsEntries(Resources.AddonResources.RssSettings);
+            ConfigTools.GetSettingsEntries(ResourcesManager.GetData("RssSettings.json", ResourcesType.Misc, typeof(RssConfig).Assembly));
 
         /// <summary>
         /// RSS Prompt Preset

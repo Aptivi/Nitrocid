@@ -21,6 +21,7 @@ using Newtonsoft.Json;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Configuration.Instances;
 using Nitrocid.Kernel.Configuration.Settings;
+using Nitrocid.Misc.Reflection.Internal;
 
 namespace Nitrocid.Extras.Timers.Settings
 {
@@ -32,7 +33,7 @@ namespace Nitrocid.Extras.Timers.Settings
         /// <inheritdoc/>
         [JsonIgnore]
         public override SettingsEntry[] SettingsEntries =>
-            ConfigTools.GetSettingsEntries(Resources.AddonResources.TimersSettings);
+            ConfigTools.GetSettingsEntries(ResourcesManager.GetData("TimersSettings.json", ResourcesType.Misc, typeof(TimersConfig).Assembly));
 
         /// <summary>
         /// If enabled, will use figlet for timer. Please note that it needs a big console screen in order to render the time properly with Figlet enabled.

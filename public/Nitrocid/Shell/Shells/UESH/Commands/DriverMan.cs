@@ -22,7 +22,6 @@ using Nitrocid.Shell.ShellBase.Help;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
-using Terminaux.Writer.FancyWriters;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Security.Permissions;
 using Nitrocid.ConsoleBase.Colors;

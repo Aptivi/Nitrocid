@@ -20,14 +20,13 @@
 using Nitrocid.ConsoleBase.Themes;
 using Newtonsoft.Json.Linq;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.ThemePacks.Resources;
 using System;
 using System.Collections.ObjectModel;
-using System.Linq;
 using System.Reflection;
 using Nitrocid.Kernel.Extensions;
-using Nitrocid.Misc.Reflection;
 using Nitrocid.Modifications;
+using Nitrocid.Misc.Reflection.Internal;
+using Textify.General;
 
 namespace Nitrocid.ThemePacks
 {
@@ -47,38 +46,31 @@ namespace Nitrocid.ThemePacks
         void IAddon.StartAddon()
         {
             // Add them all!
-            string[] themeResNames = GetThemeResourceNames();
-            foreach (string key in themeResNames)
+            string[] themeResNames = ResourcesManager.GetResourceNames(typeof(ThemePackInit).Assembly);
+            foreach (string resource in themeResNames)
             {
-                var themeToken = JToken.Parse(ThemesResources.ResourceManager.GetString(key));
-                bool result = ThemeTools.themes.TryAdd(key, new ThemeInfo(themeToken));
-                DebugWriter.WriteDebug(DebugLevel.I, "Added {0}: {1}", key, result);
+                string key = resource.RemovePrefix("Themes.");
+                string themeName = key.RemoveSuffix(".json");
+                var themeToken = JToken.Parse(ResourcesManager.GetData(key, ResourcesType.Themes, typeof(ThemePackInit).Assembly));
+                bool result = ThemeTools.themes.TryAdd(themeName, new ThemeInfo(themeToken));
+                DebugWriter.WriteDebug(DebugLevel.I, "Added {0}: {1}", themeName, result);
             }
         }
 
         void IAddon.StopAddon()
         {
             // Remove them all!
-            string[] themeResNames = GetThemeResourceNames();
-            foreach (string key in themeResNames)
+            string[] themeResNames = ResourcesManager.GetResourceNames(typeof(ThemePackInit).Assembly);
+            foreach (string resource in themeResNames)
             {
-                bool result = ThemeTools.themes.Remove(key);
-                DebugWriter.WriteDebug(DebugLevel.I, "Removed {0}: {1}", key, result);
+                string key = resource.RemovePrefix("Themes.");
+                string themeName = key.RemoveSuffix(".json");
+                bool result = ThemeTools.themes.Remove(themeName);
+                DebugWriter.WriteDebug(DebugLevel.I, "Removed {0}: {1}", themeName, result);
             }
         }
 
         void IAddon.FinalizeAddon()
         { }
-
-        private string[] GetThemeResourceNames()
-        {
-            // Get all the themes provided by this pack
-            string[] nonThemes =
-            [
-                nameof(ThemesResources.Culture),
-                nameof(ThemesResources.ResourceManager)
-            ];
-            return PropertyManager.GetPropertiesNoEvaluation(typeof(ThemesResources)).Keys.Except(nonThemes).ToArray();
-        }
     }
 }

@@ -23,6 +23,7 @@ using Nitrocid.Extras.FtpShell.FTP;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Configuration.Instances;
 using Nitrocid.Kernel.Configuration.Settings;
+using Nitrocid.Misc.Reflection.Internal;
 using Nitrocid.Shell.Prompts;
 
 namespace Nitrocid.Extras.FtpShell.Settings
@@ -35,7 +36,7 @@ namespace Nitrocid.Extras.FtpShell.Settings
         /// <inheritdoc/>
         [JsonIgnore]
         public override SettingsEntry[] SettingsEntries =>
-            ConfigTools.GetSettingsEntries(Resources.AddonResources.FtpSettings);
+            ConfigTools.GetSettingsEntries(ResourcesManager.GetData("FtpSettings.json", ResourcesType.Misc, typeof(FtpConfig).Assembly));
 
         /// <summary>
         /// FTP Prompt Preset
