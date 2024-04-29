@@ -45,13 +45,20 @@ if [ ! $? == 0 ]; then
 fi
 
 # Inform success
+echo "---------------------------------------------------------------"
+echo SHA256 sums of packed zip files for Chocolatey packaging
 "$shapath" /tmp/$ksversion-bin.zip >> hashsums.txt
 "$shapath" /tmp/$ksversion-bin-lite.zip >> hashsums.txt
+cat hashsums.txt
+echo "---------------------------------------------------------------"
+echo Finalizing...
+
 mv /tmp/$ksversion-bin.zip .
 mv /tmp/$ksversion-bin-lite.zip .
 mv /tmp/$ksversion-addons.zip .
 mv /tmp/$ksversion-analyzers.zip .
 mv /tmp/$ksversion-mod-analyzer.zip .
 cp changes.chg $ksversion-changes.chg
+
 echo Build and pack successful.
 exit 0

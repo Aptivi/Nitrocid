@@ -33,8 +33,13 @@ goto :finished
 
 :complete
 REM Necessary for Chocolatey
+echo ---------------------------------------------------------------
+echo SHA256 sums of packed zip files for Chocolatey packaging
 "%ProgramFiles%\7-Zip\7z.exe" h -scrcSHA256 %temp%\%ksversion%-bin.zip >> hashsums.txt
 "%ProgramFiles%\7-Zip\7z.exe" h -scrcSHA256 %temp%\%ksversion%-bin-lite.zip >> hashsums.txt
+type hashsums.txt
+echo ---------------------------------------------------------------
+echo Finalizing...
 
 REM Move to the current directory
 move %temp%\%ksversion%-bin.zip
