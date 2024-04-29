@@ -1,3 +1,11 @@
+kernel-simulator (3.0.25.439-0.1.0.6-1) noble; urgency=medium
+
+  * Used embedded resources
+  * Fixed Chocolatey batch files
+  * General improvements
+
+ -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Mon, 29 Apr 2024 12:40:31 +0300
+
 kernel-simulator (3.0.25.439-0.1.0.5-1) noble; urgency=medium
 
   * Added config migration!
