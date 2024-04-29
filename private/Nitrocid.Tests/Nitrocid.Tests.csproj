@@ -80,4 +80,13 @@
   <Target Name="CopyAddon" AfterTargets="Compile">
     <Copy SourceFiles="@(AddonsFolders)" DestinationFiles="@(AddonsFolders->'KSTest\$(TargetFramework)\Addons\%(RecursiveDir)%(Filename)%(Extension)')" />
   </Target>
+
+  <Target Name="WipeBuild" AfterTargets="Clean">
+    <ItemGroup>
+      <BuildDirs Include="KSTest\**\*" />
+    </ItemGroup>
+    <Message Importance="high" Text="N: Removing whole KSTest directory..." />
+    <Delete Files="@(BuildDirs)" />
+    <RemoveDir Directories="KSTest\" />
+  </Target>
 </Project>

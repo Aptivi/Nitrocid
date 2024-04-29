@@ -59,21 +59,10 @@ namespace Nitrocid.Tests.ConsoleBase
         public void TestGetThemeInfoFromAllResources()
         {
             var installedThemes = ThemeTools.GetInstalledThemes();
-            foreach (string ResourceName in ThemeTools.GetInstalledThemes().Keys)
+            foreach (string themeName in ThemeTools.GetInstalledThemes().Keys)
             {
-                // Special naming cases
-                string ThemeName = ResourceName.Replace(" ", "_");
-                switch (ResourceName)
-                {
-                    case "3Y-Diamond":
-                        {
-                            ThemeName = "_3Y_Diamond";
-                            break;
-                        }
-                }
-
                 // Create instance
-                var ThemeInfoInstance = installedThemes[ThemeName];
+                var ThemeInfoInstance = installedThemes[themeName];
 
                 // Check for null
                 ThemeInfoInstance.ThemeColors.ShouldNotBeNull();
