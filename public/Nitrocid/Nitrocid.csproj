@@ -55,7 +55,7 @@
     <PackageReference Include="Textify.Offline" Version="1.7.0" PrivateAssets="contentfiles;analyzers;build;runtime" />
     <PackageReference Include="Nettify" Version="1.1.0.1" PrivateAssets="contentfiles;analyzers;build;runtime" />
     <PackageReference Include="EnumMagic" Version="0.1.0.1" PrivateAssets="contentfiles;analyzers;build;runtime" />
-    <PackageReference Include="Textify.Offline.Json" Version="1.7.0" />
+    <PackageReference Include="Textify.Offline.Json" Version="1.7.0" PrivateAssets="contentfiles;analyzers;build;runtime" />
   </ItemGroup>
   <!-- KS Non-private Dependencies Information End -->
 
