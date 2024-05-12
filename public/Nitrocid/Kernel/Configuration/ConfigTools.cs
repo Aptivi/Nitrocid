@@ -136,7 +136,7 @@ namespace Nitrocid.Kernel.Configuration
                         string KeyName = Translate.DoTranslation(Setting.Name) + $" [{CurrentValue}]";
                         if (Regex.IsMatch(KeyName, Pattern, RegexOptions.IgnoreCase))
                         {
-                            string desc = Setting.Description;
+                            string desc = Translate.DoTranslation(Setting.Description);
                             InputChoiceInfo ici = new($"{SectionIndex + 1}/{SettingIndex + 1}", KeyName, desc);
                             DebugWriter.WriteDebug(DebugLevel.I, "Found setting {0} under section {1}, key {2}", KeyName, SectionIndex + 1, SettingIndex + 1);
                             Results.Add(ici);
