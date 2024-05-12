@@ -1,3 +1,9 @@
+kernel-simulator (3.0.25.439-0.1.0.7-1) noble; urgency=medium
+
+  * Fixed translation of descriptions in the config finder
+
+ -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Sun, 12 May 2024 15:58:16 +0300
+
 kernel-simulator (3.0.25.439-0.1.0.6-1) noble; urgency=medium
 
   * Used embedded resources
