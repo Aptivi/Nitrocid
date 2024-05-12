@@ -1,26 +1,26 @@
 [
     {
-        "OverrideTitle": "Nitrocid 0.1.0.6",
+        "OverrideTitle": "Nitrocid 0.1.0.7",
         "Arguments": [ "noaltbuffer" ]
     },
     {
-        "OverrideTitle": "Nitrocid 0.1.0.6 - debug",
+        "OverrideTitle": "Nitrocid 0.1.0.7 - debug",
         "Arguments": [ "noaltbuffer", "debug" ]
     },
     {
-        "OverrideTitle": "Nitrocid 0.1.0.6 - force on small console",
+        "OverrideTitle": "Nitrocid 0.1.0.7 - force on small console",
         "Arguments": [ "noaltbuffer", "bypasssizedetection" ]
     },
     {
-        "OverrideTitle": "Nitrocid 0.1.0.6 - safe mode",
+        "OverrideTitle": "Nitrocid 0.1.0.7 - safe mode",
         "Arguments": [ "noaltbuffer", "safe" ]
     },
     {
-        "OverrideTitle": "Nitrocid 0.1.0.6 - maintenance mode",
+        "OverrideTitle": "Nitrocid 0.1.0.7 - maintenance mode",
         "Arguments": [ "noaltbuffer", "maintenance" ]
     },
     {
-        "OverrideTitle": "Nitrocid 0.1.0.6 - verbose",
+        "OverrideTitle": "Nitrocid 0.1.0.7 - verbose",
         "Arguments": [ "noaltbuffer", "verbosepreboot" ]
     }
 ]
