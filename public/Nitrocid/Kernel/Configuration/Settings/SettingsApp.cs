@@ -320,36 +320,36 @@ namespace Nitrocid.Kernel.Configuration.Settings
                 ];
 
                 // Prompt the user
-                TextWriterColor.Write(Translate.DoTranslation("Write what do you want to search for."));
                 DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for searching...");
-                TextWriters.Write(">> ", false, KernelColorType.Input);
-                string SearchFor = InputTools.ReadLine();
+                string SearchFor = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Write what do you want to search for."));
 
                 // Search for the setting
                 ConsoleWrapper.CursorVisible = false;
                 InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Searching for settings..."), false);
                 Results = ConfigTools.FindSetting(SearchFor, configType);
+                InputChoiceInfo[] finalResults = Results.Union(Back).ToArray();
 
                 // Write the settings
                 if (Results.Count > 0)
                 {
                     int sel = 0;
-                    while (sel != Results.Count + 1)
+                    while (sel != Results.Count)
                     {
                         // Prompt for setting
-                        sel = SelectionStyle.PromptSelection(Translate.DoTranslation("These settings are found. Please select one."), [.. Results], [.. Back]);
+                        sel = InfoBoxSelectionColor.WriteInfoBoxSelection([.. finalResults], Translate.DoTranslation("These settings are found. Please select one."));
 
                         // If pressed back, bail
-                        if (sel == Results.Count + 1 || sel == -1)
+                        if (sel == Results.Count || sel == -1)
                             break;
 
                         // Go to setting
-                        var ChosenSetting = Results[sel - 1];
+                        var ChosenSetting = Results[sel];
                         int SectionIndex = Convert.ToInt32(ChosenSetting.ChoiceName.Split('/')[0]) - 1;
                         int KeyNumber = Convert.ToInt32(ChosenSetting.ChoiceName.Split('/')[1]);
                         var Section = configType.SettingsEntries[SectionIndex];
                         OpenKey(KeyNumber, Section, configType);
                         Results = ConfigTools.FindSetting(SearchFor, configType);
+                        finalResults = Results.Union(Back).ToArray();
                     }
                 }
                 else
