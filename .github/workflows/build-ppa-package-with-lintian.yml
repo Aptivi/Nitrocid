@@ -2,13 +2,9 @@ name: Build Project (Debian Package, Lintian)
 
 on:
   push:
-    branches:
-      - main
-      - servicing
+    branches: [ "main", "v0.1.0.x-saas" ]
   pull_request:
-    branches:
-      - main
-      - servicing
+    branches: [ "main", "v0.1.0.x-saas" ]
 
 jobs:
   build:
