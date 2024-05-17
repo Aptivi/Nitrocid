@@ -43,6 +43,7 @@ namespace Nitrocid.Kernel.Configuration.Migration
         internal static bool MigrateAllConfig()
         {
             bool migratedMain = MigrateMainKernelConfig();
+            bool migratedSaver = MigrateScreensaverKernelConfig();
             bool migratedAliases = MigrateAliases();
             bool migratedUsers = MigrateUsers();
             bool migratedFtp = MigrateFtpSpeedDial();
@@ -50,7 +51,7 @@ namespace Nitrocid.Kernel.Configuration.Migration
             bool migratedDevices = MigrateDebugDevices();
             bool migratedMotd = MigrateMotd();
             bool migratedMal = MigrateMal();
-            return migratedMain && migratedAliases && migratedUsers && migratedFtp && migratedSftp && migratedDevices && migratedMotd && migratedMal;
+            return migratedMain && migratedSaver && migratedAliases && migratedUsers && migratedFtp && migratedSftp && migratedDevices && migratedMotd && migratedMal;
         }
 
         private static bool MigrateMainKernelConfig()
@@ -80,13 +81,14 @@ namespace Nitrocid.Kernel.Configuration.Migration
                 // Find the known sections and get all the matching configuration names inside them to compare them to the
                 // Nitrocid settings entry so that we can get the variable from just the name
                 var configEntries = Config.MainConfig.SettingsEntries;
-                var configTypeInstance = typeof(KernelMainConfig);
                 foreach (var configEntry in configEntries)
                 {
                     // Parse this section
                     var keys = configEntry.Keys;
                     string section = configEntry.Name == "Shell Presets" ? "Shell" : configEntry.Name;
                     var sectionToken = oldMainKernelConfigToken[section];
+                    if (sectionToken is null)
+                        continue;
                     foreach (var key in keys)
                     {
                         // Parse this key
@@ -124,6 +126,91 @@ namespace Nitrocid.Kernel.Configuration.Migration
             catch (Exception ex)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, $"Failed to migrate main kernel config! {ex.Message}");
+                DebugWriter.WriteDebugStackTrace(ex);
+                return false;
+            }
+            return true;
+        }
+
+        private static bool MigrateScreensaverKernelConfig()
+        {
+            // Locate the old user config file and parse it
+            string oldMainKernelConfigPath = ConfigOldPaths.GetOldKernelPath(ConfigOldPathType.Configuration);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got old kernel config path {0}.", oldMainKernelConfigPath);
+            if (!Checking.FileExists(oldMainKernelConfigPath))
+            {
+                DebugWriter.WriteDebug(DebugLevel.W, "Can't find old kernel config path.");
+                return true;
+            }
+
+            // Configuration file could be zero bytes, so check it.
+            string contents = Reading.ReadAllTextNoBlock(oldMainKernelConfigPath);
+            if (contents.Length == 0)
+            {
+                DebugWriter.WriteDebug(DebugLevel.W, "Old kernel config file has zero bytes.");
+                return true;
+            }
+            var oldMainKernelConfigToken = JToken.Parse(contents);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got old kernel config token.");
+
+            // Handle any possible errors here.
+            try
+            {
+                // Find the known sections and get all the matching configuration names inside them to compare them to the
+                // Nitrocid settings entry so that we can get the variable from just the name
+                var extraSaversConfig = Config.GetKernelConfig("ExtraSaversConfig");
+                bool isAddonSaverInstalled = extraSaversConfig is not null;
+
+                // Parse also the base saver config entries, just in case we promote an old screensaver to the base kernel
+                // in a future release.
+                var baseSaverConfigEntries = Config.SaverConfig.SettingsEntries;
+                SettingsEntry[][] configEntryGroups = isAddonSaverInstalled ? [baseSaverConfigEntries, extraSaversConfig.SettingsEntries] : [baseSaverConfigEntries];
+                for (int i = 0; i < configEntryGroups.Length; i++)
+                {
+                    SettingsEntry[] configEntries = configEntryGroups[i];
+                    foreach (var configEntry in configEntries)
+                    {
+                        // Parse this section
+                        var keys = configEntry.Keys;
+                        string section = configEntry.Name;
+                        var sectionToken = oldMainKernelConfigToken["Screensaver"][section];
+                        if (sectionToken is null)
+                            continue;
+                        foreach (var key in keys)
+                        {
+                            // Parse this key
+                            string keyName = key.Name;
+                            string keyVar = key.Variable;
+                            var keyToken = sectionToken[keyName];
+                            if ((PropertyManager.CheckProperty(keyVar) || PropertyManager.CheckProperty(keyVar, extraSaversConfig.GetType())) && keyToken is JValue keyValue)
+                            {
+                                // Prepare the property to be set
+                                var property = PropertyManager.GetProperty(keyVar) ?? PropertyManager.GetProperty(keyVar, extraSaversConfig.GetType());
+                                var setMethod = property.GetSetMethod();
+
+                                // For character settings, we need to convert the value to a string to get its first character, because
+                                // this value in the old configuration could consist of more than one character, and the SettingsKeyType.SChar
+                                // requires exactly one character.
+                                var value =
+                                    key.Type == SettingsKeyType.SChar ? keyValue.Value<string>()[0] :
+                                    key.Type == SettingsKeyType.SBoolean ? keyValue.Value<int>() :
+                                    key.Type == SettingsKeyType.SInt ? keyValue.Value<int>() :
+                                    key.Type == SettingsKeyType.SIntSlider ? keyValue.Value<int>() :
+                                    keyValue.Value;
+
+                                // Now, set the value
+                                key.KeyInput.SetValue(key, value, i == 0 ? Config.SaverConfig : extraSaversConfig);
+                            }
+                        }
+                    }
+                }
+
+                // Save the configuration
+                Config.CreateConfig();
+            }
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, $"Failed to migrate screensaver kernel config! {ex.Message}");
                 DebugWriter.WriteDebugStackTrace(ex);
                 return false;
             }
