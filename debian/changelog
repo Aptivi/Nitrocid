@@ -1,3 +1,11 @@
+kernel-simulator (3.0.25.439-0.1.0.8-1) noble; urgency=medium
+
+  * Updated libraries
+  * Improved settings migration to support screensavers
+  * Fixed migration not working for integer-based settings
+
+ -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Fri, 17 May 2024 13:35:42 +0300
+
 kernel-simulator (3.0.25.439-0.1.0.7-1) noble; urgency=medium
 
   * Fixed translation of descriptions in the config finder
