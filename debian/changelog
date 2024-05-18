@@ -1,3 +1,9 @@
+kernel-simulator (3.0.25.439-0.1.0.9-1) noble; urgency=medium
+
+  * General improvements
+
+ -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Sat, 18 May 2024 09:00:20 +0300
+
 kernel-simulator (3.0.25.439-0.1.0.8-1) noble; urgency=medium
 
   * Updated libraries
