@@ -89,4 +89,8 @@
     <Delete Files="@(BuildDirs)" />
     <RemoveDir Directories="KSTest\" />
   </Target>
+
+  <ItemGroup>
+    <PackageReference Update="Microsoft.Testing.Extensions.TrxReport" Version="1.2.0" />
+  </ItemGroup>
 </Project>
