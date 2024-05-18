@@ -112,6 +112,8 @@ namespace Nitrocid.Kernel.Configuration.Migration
                             var value =
                                 key.Type == SettingsKeyType.SChar ? keyValue.Value<string>()[0] :
                                 key.Type == SettingsKeyType.SBoolean ? keyValue.Value<int>() :
+                                key.Type == SettingsKeyType.SInt ? keyValue.Value<int>() :
+                                key.Type == SettingsKeyType.SIntSlider ? keyValue.Value<int>() :
                                 keyValue.Value;
 
                             // Now, set the value
