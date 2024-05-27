@@ -59,7 +59,7 @@ namespace Nitrocid.Kernel
                                 {
                                     Arguments =
                                     [
-                                        Translate.DoTranslation("Welcome to Nitrocid Kernel! Thank you for trying it out!") + "\n"
+                                        Translate.DoTranslation("Welcome to Nitrocid Kernel! Thank you for trying it out!")
                                     ]
                                 },
                                 new TextElement()
@@ -74,7 +74,7 @@ namespace Nitrocid.Kernel
                             // Page inputs
                             [
                                 new InputInfo(
-                                    "1", Translate.DoTranslation("Select your language."),
+                                    Translate.DoTranslation("Language"), Translate.DoTranslation("Select your language."),
                                     new SelectionInputMethod()
                                     {
                                         Question = Translate.DoTranslation("Select your language. By default, the kernel uses the English language, but you can select any other language here.") + " " +
@@ -92,8 +92,9 @@ namespace Nitrocid.Kernel
                 DebugWriter.WriteDebug(DebugLevel.I, "Out of introductory run. Going straight to the rest once language configuration has been saved.");
 
                 // Save all the changes
-                InfoBoxColor.WriteInfoBoxPlain(Translate.DoTranslation("Saving settings..."));
-                string selectedLanguage = (string)firstRunPres.Pages[0].Inputs[0].InputMethod.Input;
+                InfoBoxColor.WriteInfoBoxPlain(Translate.DoTranslation("Saving settings..."), false);
+                int selectedLanguageIdx = (int)firstRunPres.Pages[0].Inputs[0].InputMethod.Input;
+                string selectedLanguage = LanguageManager.Languages.ElementAt(selectedLanguageIdx).Key;
                 DebugWriter.WriteDebug(DebugLevel.I, "Got selectedLanguage {0}.", selectedLanguage);
                 LanguageManager.SetLang(selectedLanguage);
 
@@ -136,7 +137,7 @@ namespace Nitrocid.Kernel
                                 {
                                     Arguments =
                                     [
-                                        Translate.DoTranslation("We'll help you create your own username. Select any name you want. This could be your nickname or your short name, as long as your username doesn't contain spaces and special characters and that it doesn't already exist. The following usernames are registered:") + '\n'
+                                        Translate.DoTranslation("We'll help you create your own username. Select any name you want. This could be your nickname or your short name, as long as your username doesn't contain spaces and special characters and that it doesn't already exist. The following usernames are registered:")
                                     ]
                                 },
                                 new DynamicTextElement()
@@ -149,7 +150,7 @@ namespace Nitrocid.Kernel
                                             string list = string.Join(", ", userList);
                                             if (string.IsNullOrEmpty(userStepFailureReason))
                                                 return $"{list}\n";
-                                            return $"{list}\n{userStepFailureReason}\n";
+                                            return $"{list}\n{userStepFailureReason}";
                                         }
                                     ]
                                 }
@@ -158,14 +159,14 @@ namespace Nitrocid.Kernel
                             // Page inputs
                             [
                                 new InputInfo(
-                                    "1", Translate.DoTranslation("Enter the username"),
+                                    Translate.DoTranslation("Username"), Translate.DoTranslation("Enter the username"),
                                     new TextInputMethod()
                                     {
                                         Question = Translate.DoTranslation("Enter your new username. You should enter a new username that doesn't already exist."),
                                     }, true
                                 ),
                                 new InputInfo(
-                                    "2", Translate.DoTranslation("Enter the password"),
+                                    Translate.DoTranslation("Password"), Translate.DoTranslation("Enter the password"),
                                     new TextInputMethod()
                                     {
                                         Question = Translate.DoTranslation("Enter your user password. You should choose a strong password for increased security."),
@@ -215,8 +216,8 @@ namespace Nitrocid.Kernel
                                 {
                                     Arguments =
                                     [
-                                        Translate.DoTranslation("Nitrocid KS currently updates itself to get the most recent version that includes general improvements and bug fixes. New major versions usually include breaking changes and new exciting features.") + "\n" +
-                                        Translate.DoTranslation("In addition to automatically checking for updates, Nitrocid KS can also download the update file automatically.") + "\n" +
+                                        Translate.DoTranslation("Nitrocid KS currently updates itself to get the most recent version that includes general improvements and bug fixes. New major versions usually include breaking changes and new exciting features.") + " " +
+                                        Translate.DoTranslation("In addition to automatically checking for updates, Nitrocid KS can also download the update file automatically.") + " " +
                                         Translate.DoTranslation("You can always check for kernel updates using the \"update\" command.")
                                     ]
                                 }
@@ -225,7 +226,7 @@ namespace Nitrocid.Kernel
                             // Page inputs
                             [
                                 new InputInfo(
-                                    "1", Translate.DoTranslation("Automatic Update Check"),
+                                    Translate.DoTranslation("Automatic Update Check"), Translate.DoTranslation("Automatic Update Check"),
                                     new SelectionInputMethod()
                                     {
                                         Question = Translate.DoTranslation("Do you want Nitrocid KS to automatically check for updates?"),
@@ -237,7 +238,7 @@ namespace Nitrocid.Kernel
                                     }
                                 ),
                                 new InputInfo(
-                                    "2", Translate.DoTranslation("Automatic Update Download"),
+                                    Translate.DoTranslation("Automatic Update Download"), Translate.DoTranslation("Automatic Update Download"),
                                     new SelectionInputMethod()
                                     {
                                         Question = Translate.DoTranslation("Do you want Nitrocid KS to automatically download updates?"),
@@ -253,8 +254,8 @@ namespace Nitrocid.Kernel
                     ]
                 );
                 PresentationTools.Present(firstRunPresUpdates, true, true);
-                bool needsAutoCheck = (bool?)firstRunPresUpdates.Pages[0].Inputs[0].InputMethod.Input ?? true;
-                bool needsAutoDownload = (bool?)firstRunPresUpdates.Pages[0].Inputs[1].InputMethod.Input ?? true;
+                bool needsAutoCheck = (int)firstRunPresUpdates.Pages[0].Inputs[0].InputMethod.Input == 0;
+                bool needsAutoDownload = (int)firstRunPresUpdates.Pages[0].Inputs[1].InputMethod.Input == 0;
                 Config.MainConfig.CheckUpdateStart = needsAutoCheck;
                 Config.MainConfig.AutoDownloadUpdate = needsAutoDownload;
 
@@ -275,14 +276,14 @@ namespace Nitrocid.Kernel
                                 {
                                     Arguments =
                                     [
-                                        () => TextTools.FormatString(Translate.DoTranslation("Congratulations! You now have a user account, {0}!"), user) + "\n"
+                                        () => TextTools.FormatString(Translate.DoTranslation("Congratulations! You now have a user account, {0}!"), user)
                                     ]
                                 },
                                 new TextElement()
                                 {
                                     Arguments =
                                     [
-                                        Translate.DoTranslation("Press the ENTER key to get started using the kernel and log-in to your new account. Good luck!") + "\n"
+                                        Translate.DoTranslation("Press the ENTER key to get started using the kernel and log-in to your new account. Good luck!")
                                     ]
                                 }
                             ]
