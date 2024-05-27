@@ -18,7 +18,6 @@
 //
 
 using Nitrocid.Shell.ShellBase.Commands;
-using Terminaux.Writer.FancyWriters;
 using Nitrocid.Shell.ShellBase.Switches;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Writers;

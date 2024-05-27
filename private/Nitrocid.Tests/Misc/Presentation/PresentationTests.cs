@@ -21,7 +21,6 @@ using Terminaux.Inputs.Presentation.Elements;
 using Terminaux.Inputs.Presentation;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
-using System;
 using Terminaux.Inputs.Presentation.Inputs;
 
 namespace Nitrocid.Tests.Misc.Presentation
