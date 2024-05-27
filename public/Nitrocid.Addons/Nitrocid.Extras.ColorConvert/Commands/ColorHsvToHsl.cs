@@ -57,7 +57,7 @@ namespace Nitrocid.Extras.ColorConvert.Commands
 
             // Do the job
             var hsv = new Color($"hsv:{H};{S};{V}");
-            var hsl = HslConversionTools.ConvertFrom(hsv.RGB);
+            var hsl = ConversionTools.ToHsl(hsv.RGB);
             TextWriters.Write("- " + Translate.DoTranslation("Hue:") + " ", false, KernelColorType.ListEntry);
             TextWriters.Write($"{hsl.HueWhole} [{hsl.Hue:0.00}]", true, KernelColorType.ListValue);
             TextWriters.Write("- " + Translate.DoTranslation("Saturation:") + " ", false, KernelColorType.ListEntry);

@@ -57,7 +57,7 @@ namespace Nitrocid.Extras.ColorConvert.Commands
 
             // Do the job
             var ryb = new Color($"ryb:{R};{Y};{B}");
-            var hsl = HslConversionTools.ConvertFrom(ryb.RGB);
+            var hsl = ConversionTools.ToHsl(ryb.RGB);
             TextWriters.Write("- " + Translate.DoTranslation("Hue:") + " ", false, KernelColorType.ListEntry);
             TextWriters.Write($"{hsl.HueWhole} [{hsl.Hue:0.00}]", true, KernelColorType.ListValue);
             TextWriters.Write("- " + Translate.DoTranslation("Saturation:") + " ", false, KernelColorType.ListEntry);

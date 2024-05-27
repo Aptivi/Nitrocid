@@ -59,7 +59,7 @@ namespace Nitrocid.Kernel.Starting
                 var stage = Stages[stageIdx];
 
                 // Report the stage to the splash manager
-                ReportNewStage(stageNum, $"- {Translate.DoTranslation("Stage")} {stageNum}: {Translate.DoTranslation(stage.StageName)}");
+                ReportNewStage(stageNum, $"{Translate.DoTranslation("Stage")} {stageNum}: {Translate.DoTranslation(stage.StageName)}");
                 if (KernelEntry.SafeMode && stage.StageRunsInSafeMode || !KernelEntry.SafeMode)
                 {
                     if (KernelEntry.Maintenance && stage.StageRunsInMaintenance || !KernelEntry.Maintenance)
@@ -109,7 +109,7 @@ namespace Nitrocid.Kernel.Starting
                 if (!SplashManager.EnableSplash & !KernelEntry.QuietKernel)
                 {
                     TextWriterRaw.Write();
-                    TextFancyWriters.WriteSeparator(StageText, false, KernelColorType.Stage);
+                    TextFancyWriters.WriteSeparator(StageText, KernelColorType.Stage);
                 }
                 DebugWriter.WriteDebug(DebugLevel.I, $"- Kernel stage {StageNumber} | Text: {StageText}");
             }

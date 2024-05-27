@@ -21,7 +21,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Timers;
 using Timer = System.Timers.Timer;
-using Figletize;
+using Textify.Figlet;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ConsoleBase.Colors;

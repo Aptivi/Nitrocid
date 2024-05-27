@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Figletize;
+using Textify.Figlet;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
@@ -32,7 +32,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
         public override void Run(params string[] args)
         {
             string rendered = args.Length > 0 ? args[0] : "Hi, {0}!";
-            TextFancyWriters.WriteFiglet(rendered, FigletizeFonts.TryGetByName("small"), KernelColorType.Success, "Nitrocid KS");
+            TextFancyWriters.WriteFiglet(rendered, FigletFonts.TryGetByName("small"), KernelColorType.Success, "Nitrocid KS");
         }
     }
 }

@@ -131,13 +131,13 @@ namespace Nitrocid.SplashPacks.Splashes
             {
                 var ProgressColor = new Color(SplashPackInit.SplashConfig.PowerLineProgressProgressColor);
                 builder.Append(
-                    ProgressBarColor.RenderProgress(Progress, 3, ConsoleWrapper.WindowHeight - 4, 4, 4, ProgressColor, ProgressColor, KernelColorTools.GetColor(KernelColorType.Background))
+                    ProgressBarColor.RenderProgress(Progress, 3, ConsoleWrapper.WindowHeight - 4, ConsoleWrapper.WindowWidth - 8, ProgressColor, ProgressColor, KernelColorTools.GetColor(KernelColorType.Background))
                 );
             }
             else
             {
                 builder.Append(
-                    ProgressBarColor.RenderProgress(Progress, 3, ConsoleWrapper.WindowHeight - 4, 4, 4, KernelColorTools.GetColor(KernelColorType.Progress), ColorTools.GetGray(), KernelColorTools.GetColor(KernelColorType.Background))
+                    ProgressBarColor.RenderProgress(Progress, 3, ConsoleWrapper.WindowHeight - 4, ConsoleWrapper.WindowWidth - 8, KernelColorTools.GetColor(KernelColorType.Progress), ColorTools.GetGray(), KernelColorTools.GetColor(KernelColorType.Background))
                 );
             }
             return builder.ToString();

@@ -57,7 +57,7 @@ namespace Nitrocid.Extras.ColorConvert.Commands
 
             // Do the job
             var yiq = new Color($"yiq:{Y};{I};{Q}");
-            var cmy = CmyConversionTools.ConvertFrom(yiq.RGB);
+            var cmy = ConversionTools.ToCmy(yiq.RGB);
             TextWriters.Write("- " + Translate.DoTranslation("Cyan level:") + " ", false, KernelColorType.ListEntry);
             TextWriters.Write($"{cmy.CWhole} [{cmy.C:0.00}]", true, KernelColorType.ListValue);
             TextWriters.Write("- " + Translate.DoTranslation("Magenta level:") + " ", false, KernelColorType.ListEntry);

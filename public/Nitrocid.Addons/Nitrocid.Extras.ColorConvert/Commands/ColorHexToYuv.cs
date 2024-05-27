@@ -41,7 +41,7 @@ namespace Nitrocid.Extras.ColorConvert.Commands
 
             // Do the job
             Color color = new(Hex);
-            var yuv = YuvConversionTools.ConvertFrom(color.RGB);
+            var yuv = ConversionTools.ToYuv(color.RGB);
             TextWriters.Write("- " + Translate.DoTranslation("Luma:") + " ", false, KernelColorType.ListEntry);
             TextWriters.Write($"{yuv.Luma}", true, KernelColorType.ListValue);
             TextWriters.Write("- " + Translate.DoTranslation("U-Chroma:") + " ", false, KernelColorType.ListEntry);

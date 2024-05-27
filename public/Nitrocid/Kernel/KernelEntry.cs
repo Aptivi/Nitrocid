@@ -94,7 +94,7 @@ namespace Nitrocid.Kernel
             if (FirstTime)
             {
                 FirstTime = false;
-                KernelFirstRun.PresentFirstRun();
+                KernelFirstRun.PresentFirstRunIntro();
             }
 
             // Show the license infobox

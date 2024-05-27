@@ -64,6 +64,7 @@ using Textify.General;
 using Terminaux.Base;
 using Nitrocid.ConsoleBase.Inputs;
 using Terminaux.Base.Extensions;
+using Terminaux.Reader.History;
 
 namespace Nitrocid.Shell.ShellBase.Shells
 {
@@ -332,8 +333,8 @@ namespace Nitrocid.Shell.ShellBase.Shells
                 SuggestionsDelimiters = [' '],
                 TreatCtrlCAsInput = true,
                 InputForegroundColor = KernelColorTools.GetColor(KernelColorType.Input),
+                HistoryName = ShellType,
             };
-            TermReaderTools.SetHistory(histories[ShellType]);
 
             // Check to see if the full command string ends with the semicolon
             while (FullCommand.EndsWith(";") || string.IsNullOrEmpty(FullCommand))
@@ -390,7 +391,6 @@ namespace Nitrocid.Shell.ShellBase.Shells
 
             // Check for a type of command
             CancellationHandlers.AllowCancel();
-            TermReaderTools.SetHistory(histories["General"]);
             var SplitCommands = FullCommand.Split(new[] { " ; " }, StringSplitOptions.RemoveEmptyEntries);
             var Commands = CommandManager.GetCommands(ShellType);
             for (int i = 0; i < SplitCommands.Length; i++)
@@ -881,8 +881,8 @@ namespace Nitrocid.Shell.ShellBase.Shells
 
                 // Add a new shell to the shell stack to indicate that we have a new shell (a visitor)!
                 ShellStack.Add(ShellInfo);
-                if (!histories.ContainsKey(ShellType))
-                    histories.Add(ShellType, []);
+                if (!HistoryTools.IsHistoryRegistered(ShellType))
+                    HistoryTools.LoadFromInstance(new HistoryInfo(ShellType, []));
 
                 // Reset title in case we're going to another shell
                 ConsoleMisc.SetTitle(KernelReleaseInfo.ConsoleTitle);
@@ -909,7 +909,6 @@ namespace Nitrocid.Shell.ShellBase.Shells
                 DebugWriter.WriteDebug(DebugLevel.I, "Purge: newShellCount: {0} shells, shellCount: {1} shells", newShellCount, shellCount);
                 if (newShellCount > shellCount)
                     KillShellInternal();
-                TermReaderTools.SetHistory(histories[LastShellType]);
             }
         }
 

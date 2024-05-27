@@ -41,21 +41,23 @@
   <!-- KS Dependencies Information -->
   <ItemGroup>
     <PackageReference Include="GRILO.Boot" Version="0.1.0.4" PrivateAssets="all" />
-    <PackageReference Include="Microsoft.Data.Sqlite" Version="8.0.2" PrivateAssets="all" />
+    <PackageReference Include="Magico" Version="1.0.0" />
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="8.0.5" PrivateAssets="all" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="all" />
-    <PackageReference Include="Newtonsoft.Json.Schema" Version="3.0.15" PrivateAssets="all" />
+    <PackageReference Include="Newtonsoft.Json.Schema" Version="3.0.16" PrivateAssets="all" />
     <PackageReference Include="SpecProbe" Version="1.4.2" PrivateAssets="all" />
   </ItemGroup>
   <!-- KS Dependencies Information End -->
 
   <!-- KS Non-private Dependencies Information -->
   <ItemGroup>
-    <PackageReference Include="Terminaux" Version="3.4.1" PrivateAssets="contentfiles;analyzers;build;runtime" />
-    <PackageReference Include="Terminaux.ResizeListener" Version="3.4.1" PrivateAssets="contentfiles;analyzers;build;runtime" />
-    <PackageReference Include="Textify.Offline" Version="1.7.0" PrivateAssets="contentfiles;analyzers;build;runtime" />
-    <PackageReference Include="Nettify" Version="1.1.0.1" PrivateAssets="contentfiles;analyzers;build;runtime" />
-    <PackageReference Include="EnumMagic" Version="0.1.0.1" PrivateAssets="contentfiles;analyzers;build;runtime" />
-    <PackageReference Include="Textify.Offline.Json" Version="1.7.0" PrivateAssets="contentfiles;analyzers;build;runtime" />
+    <PackageReference Include="Terminaux" Version="4.0.0.2" PrivateAssets="contentfiles;analyzers;build;runtime" />
+    <PackageReference Include="Terminaux.ResizeListener" Version="4.0.0.2" PrivateAssets="contentfiles;analyzers;build;runtime" />
+    <PackageReference Include="Textify.Offline" Version="1.9.0.1" PrivateAssets="contentfiles;analyzers;build;runtime">
+      <Aliases>global,TextifyDep</Aliases>
+    </PackageReference>
+    <PackageReference Include="Nettify" Version="1.3.0" PrivateAssets="contentfiles;analyzers;build;runtime" />
+    <PackageReference Include="Textify.Offline.Json" Version="1.9.0.1" PrivateAssets="contentfiles;analyzers;build;runtime" />
   </ItemGroup>
   <!-- KS Non-private Dependencies Information End -->
 

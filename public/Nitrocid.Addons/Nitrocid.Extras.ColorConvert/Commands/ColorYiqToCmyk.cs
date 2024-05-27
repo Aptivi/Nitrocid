@@ -57,7 +57,7 @@ namespace Nitrocid.Extras.ColorConvert.Commands
 
             // Do the job
             var yiq = new Color($"yiq:{Y};{I};{Q}");
-            var cmyk = CmykConversionTools.ConvertFrom(yiq.RGB);
+            var cmyk = ConversionTools.ToCmyk(yiq.RGB);
             var cmy = cmyk.CMY;
             TextWriters.Write("- " + Translate.DoTranslation("Black key:") + " ", false, KernelColorType.ListEntry);
             TextWriters.Write($"{cmyk.KWhole} [{cmyk.K:0.00}]", true, KernelColorType.ListValue);

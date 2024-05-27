@@ -228,7 +228,7 @@ namespace Nitrocid.Kernel.Starting
             // Some information
             if (WelcomeMessage.ShowAppInfoOnBoot & !SplashManager.EnableSplash)
             {
-                TextFancyWriters.WriteSeparator(Translate.DoTranslation("Kernel environment information"), true, KernelColorType.Stage);
+                TextFancyWriters.WriteSeparator(Translate.DoTranslation("Kernel environment information"), KernelColorType.Stage);
                 TextWriterColor.Write("  OS: " + Translate.DoTranslation("Running on {0}"), System.Environment.OSVersion.ToString());
                 TextWriterColor.Write("  KS: " + Translate.DoTranslation("Running from GRILO?") + $" {KernelPlatform.IsRunningFromGrilo()}");
                 TextWriterColor.Write("  KSAPI: " + $"v{KernelMain.ApiVersion}");

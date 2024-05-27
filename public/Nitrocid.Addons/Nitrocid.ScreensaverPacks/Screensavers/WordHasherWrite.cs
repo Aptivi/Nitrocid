@@ -19,7 +19,7 @@
 
 using System;
 using System.Text;
-using Figletize;
+using Textify.Figlet;
 using Terminaux.Colors;
 using Textify.Data.Analysis.Words;
 using Nitrocid.Drivers;

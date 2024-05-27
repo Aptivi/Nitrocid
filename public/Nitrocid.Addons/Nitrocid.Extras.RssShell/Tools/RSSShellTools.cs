@@ -41,7 +41,7 @@ namespace Nitrocid.Extras.RssShell.Tools
             {
                 var Feed = new RSSFeed(url, RSSFeedType.Infer);
                 Feed.Refresh();
-                if (Feed.FeedArticles.Count > 0)
+                if (Feed.FeedArticles.Length > 0)
                     return (Feed.FeedTitle, Feed.FeedArticles[0].ArticleTitle);
                 if (!string.IsNullOrEmpty(Feed.FeedDescription))
                     return (Feed.FeedTitle, Feed.FeedDescription);
@@ -77,7 +77,7 @@ namespace Nitrocid.Extras.RssShell.Tools
                         if (NewFeedsList.Count > 0 && NewFeedsList[0].ArticleTitle != OldFeedTitle)
                         {
                             // Update the list
-                            DebugWriter.WriteDebug(DebugLevel.W, "Feeds received! Recents count was {0}, Old count was {1}", RSSShellCommon.RSSFeedInstance.FeedArticles.Count, OldFeedsList.Count);
+                            DebugWriter.WriteDebug(DebugLevel.W, "Feeds received! Recents count was {0}, Old count was {1}", RSSShellCommon.RSSFeedInstance.FeedArticles.Length, OldFeedsList.Count);
                             OldFeedsList = new List<RSSArticle>(RSSShellCommon.RSSFeedInstance.FeedArticles);
                             foreach (RSSArticle NewFeed in NewFeedsList)
                             {

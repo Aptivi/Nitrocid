@@ -21,6 +21,7 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Terminaux.Colors;
+using Terminaux.Colors.Models;
 using Terminaux.Colors.Models.Conversion;
 using Terminaux.Colors.Models.Parsing;
 
@@ -58,7 +59,7 @@ namespace Nitrocid.ConsoleBase.Colors
         {
             if (ParsingTools.IsSpecifierAndValueValidRgbHash(Hex))
             {
-                var ryb = RybConversionTools.ConvertFrom(new Color(ConvertFromHexToRgb(Hex)).RGB);
+                var ryb = ConversionTools.ToRyb(new Color(ConvertFromHexToRgb(Hex)).RGB);
                 string rybSeq = ryb.ToString();
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color (RYB: {0})", rybSeq);
                 return rybSeq;
@@ -76,7 +77,7 @@ namespace Nitrocid.ConsoleBase.Colors
         {
             if (ParsingTools.IsSpecifierAndValueValidRgbHash(Hex))
             {
-                var cmyk = CmykConversionTools.ConvertFrom(new Color(ConvertFromHexToRgb(Hex)).RGB);
+                var cmyk = ConversionTools.ToCmyk(new Color(ConvertFromHexToRgb(Hex)).RGB);
                 string cmykSeq = cmyk.ToString();
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color (CMYK: {0})", cmykSeq);
                 return cmykSeq;
@@ -94,7 +95,7 @@ namespace Nitrocid.ConsoleBase.Colors
         {
             if (ParsingTools.IsSpecifierAndValueValidRgbHash(Hex))
             {
-                var cmy = CmyConversionTools.ConvertFrom(new Color(ConvertFromHexToRgb(Hex)).RGB);
+                var cmy = ConversionTools.ToCmy(new Color(ConvertFromHexToRgb(Hex)).RGB);
                 string cmySeq = cmy.ToString();
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color (CMY: {0})", cmySeq);
                 return cmySeq;
@@ -112,7 +113,7 @@ namespace Nitrocid.ConsoleBase.Colors
         {
             if (ParsingTools.IsSpecifierAndValueValidRgbHash(Hex))
             {
-                var hsl = HslConversionTools.ConvertFrom(new Color(ConvertFromHexToRgb(Hex)).RGB);
+                var hsl = ConversionTools.ToHsl(new Color(ConvertFromHexToRgb(Hex)).RGB);
                 string hslSeq = hsl.ToString();
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color (HSL: {0})", hslSeq);
                 return hslSeq;
@@ -130,7 +131,7 @@ namespace Nitrocid.ConsoleBase.Colors
         {
             if (ParsingTools.IsSpecifierAndValueValidRgbHash(Hex))
             {
-                var hsv = HsvConversionTools.ConvertFrom(new Color(ConvertFromHexToRgb(Hex)).RGB);
+                var hsv = ConversionTools.ToHsv(new Color(ConvertFromHexToRgb(Hex)).RGB);
                 string hsvSeq = hsv.ToString();
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color (HSV: {0})", hsvSeq);
                 return hsvSeq;
@@ -148,7 +149,7 @@ namespace Nitrocid.ConsoleBase.Colors
         {
             if (ParsingTools.IsSpecifierAndValueValidRgbHash(Hex))
             {
-                var yiq = YiqConversionTools.ConvertFrom(new Color(ConvertFromHexToRgb(Hex)).RGB);
+                var yiq = ConversionTools.ToYiq(new Color(ConvertFromHexToRgb(Hex)).RGB);
                 string yiqSeq = yiq.ToString();
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color (YIQ: {0})", yiqSeq);
                 return yiqSeq;
@@ -166,7 +167,7 @@ namespace Nitrocid.ConsoleBase.Colors
         {
             if (ParsingTools.IsSpecifierAndValueValidRgbHash(Hex))
             {
-                var yuv = YuvConversionTools.ConvertFrom(new Color(ConvertFromHexToRgb(Hex)).RGB);
+                var yuv = ConversionTools.ToYuv(new Color(ConvertFromHexToRgb(Hex)).RGB);
                 string yuvSeq = yuv.ToString();
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color (YUV: {0})", yuvSeq);
                 return yuvSeq;
@@ -236,7 +237,7 @@ namespace Nitrocid.ConsoleBase.Colors
             if (ParsingTools.IsSpecifierAndValueValid(RGBSequence))
             {
                 var rgb = new Color(RGBSequence).RGB;
-                var ryb = RybConversionTools.ConvertFrom(rgb);
+                var ryb = ConversionTools.ToRyb(rgb);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", ryb.ToString());
                 return ryb.ToString();
             }
@@ -266,7 +267,7 @@ namespace Nitrocid.ConsoleBase.Colors
             if (ParsingTools.IsSpecifierAndValueValid(RGBSequence))
             {
                 var rgb = new Color(RGBSequence).RGB;
-                var cmyk = CmykConversionTools.ConvertFrom(rgb);
+                var cmyk = ConversionTools.ToCmyk(rgb);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", cmyk.ToString());
                 return cmyk.ToString();
             }
@@ -296,7 +297,7 @@ namespace Nitrocid.ConsoleBase.Colors
             if (ParsingTools.IsSpecifierAndValueValid(RGBSequence))
             {
                 var rgb = new Color(RGBSequence).RGB;
-                var cmy = CmyConversionTools.ConvertFrom(rgb);
+                var cmy = ConversionTools.ToCmy(rgb);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", cmy.ToString());
                 return cmy.ToString();
             }
@@ -326,7 +327,7 @@ namespace Nitrocid.ConsoleBase.Colors
             if (ParsingTools.IsSpecifierAndValueValid(RGBSequence))
             {
                 var rgb = new Color(RGBSequence).RGB;
-                var hsl = HslConversionTools.ConvertFrom(rgb);
+                var hsl = ConversionTools.ToHsl(rgb);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", hsl.ToString());
                 return hsl.ToString();
             }
@@ -356,7 +357,7 @@ namespace Nitrocid.ConsoleBase.Colors
             if (ParsingTools.IsSpecifierAndValueValid(RGBSequence))
             {
                 var rgb = new Color(RGBSequence).RGB;
-                var hsv = HsvConversionTools.ConvertFrom(rgb);
+                var hsv = ConversionTools.ToHsv(rgb);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", hsv.ToString());
                 return hsv.ToString();
             }
@@ -386,7 +387,7 @@ namespace Nitrocid.ConsoleBase.Colors
             if (ParsingTools.IsSpecifierAndValueValid(RGBSequence))
             {
                 var rgb = new Color(RGBSequence).RGB;
-                var yiq = YiqConversionTools.ConvertFrom(rgb);
+                var yiq = ConversionTools.ToYiq(rgb);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", yiq.ToString());
                 return yiq.ToString();
             }
@@ -416,7 +417,7 @@ namespace Nitrocid.ConsoleBase.Colors
             if (ParsingTools.IsSpecifierAndValueValid(RGBSequence))
             {
                 var rgb = new Color(RGBSequence).RGB;
-                var yuv = YuvConversionTools.ConvertFrom(rgb);
+                var yuv = ConversionTools.ToYuv(rgb);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", yuv.ToString());
                 return yuv.ToString();
             }
@@ -445,7 +446,7 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <returns>A hexadecimal representation of a color (#AABBCC for example)</returns>
         public static string ConvertFromRybToHex(string RYBSequence)
         {
-            if (RybParsingTools.IsSpecifierAndValueValid(RYBSequence))
+            if (RedYellowBlue.IsSpecifierAndValueValid(RYBSequence))
             {
                 string hex = new Color(RYBSequence).Hex;
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color (#RRGGBB: {0})", hex);
@@ -474,7 +475,7 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <returns>&lt;R&gt;;&lt;G&gt;;&lt;B&gt;</returns>
         public static string ConvertFromRybToRgb(string RYBSequence)
         {
-            if (RybParsingTools.IsSpecifierAndValueValid(RYBSequence))
+            if (RedYellowBlue.IsSpecifierAndValueValid(RYBSequence))
             {
                 var rgb = new Color(RYBSequence).RGB;
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", rgb.ToString());
@@ -503,10 +504,10 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <returns>cmyk:&lt;C&gt;;&lt;M&gt;;&lt;Y&gt;;&lt;K&gt;</returns>
         public static string ConvertFromRybToCmyk(string RYBSequence)
         {
-            if (RybParsingTools.IsSpecifierAndValueValid(RYBSequence))
+            if (RedYellowBlue.IsSpecifierAndValueValid(RYBSequence))
             {
                 var rgb = new Color(RYBSequence).RGB;
-                var cmyk = CmykConversionTools.ConvertFrom(rgb);
+                var cmyk = ConversionTools.ToCmyk(rgb);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", cmyk.ToString());
                 return cmyk.ToString();
             }
@@ -533,10 +534,10 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <returns>cmy:&lt;C&gt;;&lt;M&gt;;&lt;Y&gt;</returns>
         public static string ConvertFromRybToCmy(string RYBSequence)
         {
-            if (RybParsingTools.IsSpecifierAndValueValid(RYBSequence))
+            if (RedYellowBlue.IsSpecifierAndValueValid(RYBSequence))
             {
                 var rgb = new Color(RYBSequence).RGB;
-                var cmy = CmyConversionTools.ConvertFrom(rgb);
+                var cmy = ConversionTools.ToCmy(rgb);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", cmy.ToString());
                 return cmy.ToString();
             }
@@ -563,10 +564,10 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <returns>hsl:&lt;H&gt;;&lt;S&gt;;&lt;L&gt;</returns>
         public static string ConvertFromRybToHsl(string RYBSequence)
         {
-            if (RybParsingTools.IsSpecifierAndValueValid(RYBSequence))
+            if (RedYellowBlue.IsSpecifierAndValueValid(RYBSequence))
             {
                 var rgb = new Color(RYBSequence).RGB;
-                var hsl = HslConversionTools.ConvertFrom(rgb);
+                var hsl = ConversionTools.ToHsl(rgb);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", hsl.ToString());
                 return hsl.ToString();
             }
@@ -593,10 +594,10 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <returns>hsv:&lt;H&gt;;&lt;S&gt;;&lt;V&gt;</returns>
         public static string ConvertFromRybToHsv(string RYBSequence)
         {
-            if (RybParsingTools.IsSpecifierAndValueValid(RYBSequence))
+            if (RedYellowBlue.IsSpecifierAndValueValid(RYBSequence))
             {
                 var rgb = new Color(RYBSequence).RGB;
-                var hsv = HsvConversionTools.ConvertFrom(rgb);
+                var hsv = ConversionTools.ToHsv(rgb);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", hsv.ToString());
                 return hsv.ToString();
             }
@@ -623,10 +624,10 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <returns>yiq:&lt;Y&gt;;&lt;I&gt;;&lt;Q&gt;</returns>
         public static string ConvertFromRybToYiq(string RYBSequence)
         {
-            if (RybParsingTools.IsSpecifierAndValueValid(RYBSequence))
+            if (RedYellowBlue.IsSpecifierAndValueValid(RYBSequence))
             {
                 var rgb = new Color(RYBSequence).RGB;
-                var yiq = YiqConversionTools.ConvertFrom(rgb);
+                var yiq = ConversionTools.ToYiq(rgb);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", yiq.ToString());
                 return yiq.ToString();
             }
@@ -653,10 +654,10 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <returns>yuv:&lt;Y&gt;;&lt;U&gt;;&lt;V&gt;</returns>
         public static string ConvertFromRybToYuv(string RYBSequence)
         {
-            if (RybParsingTools.IsSpecifierAndValueValid(RYBSequence))
+            if (RedYellowBlue.IsSpecifierAndValueValid(RYBSequence))
             {
                 var rgb = new Color(RYBSequence).RGB;
-                var yuv = YuvConversionTools.ConvertFrom(rgb);
+                var yuv = ConversionTools.ToYuv(rgb);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", yuv.ToString());
                 return yuv.ToString();
             }
@@ -685,7 +686,7 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <returns>A hexadecimal representation of a color (#AABBCC for example)</returns>
         public static string ConvertFromCmyToHex(string CMYSequence)
         {
-            if (CmyParsingTools.IsSpecifierAndValueValid(CMYSequence))
+            if (CyanMagentaYellow.IsSpecifierAndValueValid(CMYSequence))
             {
                 string hex = new Color(CMYSequence).Hex;
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color (#RRGGBB: {0})", hex);
@@ -714,7 +715,7 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <returns>&lt;R&gt;;&lt;G&gt;;&lt;B&gt;</returns>
         public static string ConvertFromCmyToRgb(string CMYSequence)
         {
-            if (CmyParsingTools.IsSpecifierAndValueValid(CMYSequence))
+            if (CyanMagentaYellow.IsSpecifierAndValueValid(CMYSequence))
             {
                 var rgb = new Color(CMYSequence).RGB;
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", rgb.ToString());
@@ -743,10 +744,10 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <returns>ryb:&lt;R&gt;;&lt;Y&gt;;&lt;B&gt;</returns>
         public static string ConvertFromCmyToRyb(string CMYSequence)
         {
-            if (CmyParsingTools.IsSpecifierAndValueValid(CMYSequence))
+            if (CyanMagentaYellow.IsSpecifierAndValueValid(CMYSequence))
             {
                 var rgb = new Color(CMYSequence).RGB;
-                var ryb = RybConversionTools.ConvertFrom(rgb);
+                var ryb = ConversionTools.ToRyb(rgb);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", ryb.ToString());
                 return ryb.ToString();
             }
@@ -773,10 +774,10 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <returns>hsl:&lt;H&gt;;&lt;S&gt;;&lt;L&gt;</returns>
         public static string ConvertFromCmyToHsl(string CMYSequence)
         {
-            if (CmyParsingTools.IsSpecifierAndValueValid(CMYSequence))
+            if (CyanMagentaYellow.IsSpecifierAndValueValid(CMYSequence))
             {
                 var rgb = new Color(CMYSequence).RGB;
-                var hsl = HslConversionTools.ConvertFrom(rgb);
+                var hsl = ConversionTools.ToHsl(rgb);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", hsl.ToString());
                 return hsl.ToString();
             }
@@ -803,10 +804,10 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <returns>hsv:&lt;H&gt;;&lt;S&gt;;&lt;V&gt;</returns>
         public static string ConvertFromCmyToHsv(string CMYSequence)
         {
-            if (CmyParsingTools.IsSpecifierAndValueValid(CMYSequence))
+            if (CyanMagentaYellow.IsSpecifierAndValueValid(CMYSequence))
             {
                 var rgb = new Color(CMYSequence).RGB;
-                var hsv = HsvConversionTools.ConvertFrom(rgb);
+                var hsv = ConversionTools.ToHsv(rgb);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", hsv.ToString());
                 return hsv.ToString();
             }
@@ -833,10 +834,10 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <returns>cmyk:&lt;C&gt;;&lt;M&gt;;&lt;Y&gt;;&lt;K&gt;</returns>
         public static string ConvertFromCmyToCmyk(string CMYSequence)
         {
-            if (CmyParsingTools.IsSpecifierAndValueValid(CMYSequence))
+            if (CyanMagentaYellow.IsSpecifierAndValueValid(CMYSequence))
             {
                 var rgb = new Color(CMYSequence).RGB;
-                var cmyk = CmykConversionTools.ConvertFrom(rgb);
+                var cmyk = ConversionTools.ToCmyk(rgb);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", cmyk.ToString());
                 return cmyk.ToString();
             }
@@ -863,10 +864,10 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <returns>yiq:&lt;Y&gt;;&lt;I&gt;;&lt;Q&gt;</returns>
         public static string ConvertFromCmyToYiq(string CMYSequence)
         {
-            if (CmyParsingTools.IsSpecifierAndValueValid(CMYSequence))
+            if (CyanMagentaYellow.IsSpecifierAndValueValid(CMYSequence))
             {
                 var rgb = new Color(CMYSequence).RGB;
-                var yiq = YiqConversionTools.ConvertFrom(rgb);
+                var yiq = ConversionTools.ToYiq(rgb);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", yiq.ToString());
                 return yiq.ToString();
             }
@@ -893,10 +894,10 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <returns>yuv:&lt;Y&gt;;&lt;U&gt;;&lt;V&gt;</returns>
         public static string ConvertFromCmyToYuv(string CMYSequence)
         {
-            if (CmyParsingTools.IsSpecifierAndValueValid(CMYSequence))
+            if (CyanMagentaYellow.IsSpecifierAndValueValid(CMYSequence))
             {
                 var rgb = new Color(CMYSequence).RGB;
-                var yuv = YuvConversionTools.ConvertFrom(rgb);
+                var yuv = ConversionTools.ToYuv(rgb);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", yuv.ToString());
                 return yuv.ToString();
             }
@@ -926,7 +927,7 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <returns>A hexadecimal representation of a color (#AABBCC for example)</returns>
         public static string ConvertFromCmykToHex(string CMYKSequence)
         {
-            if (CmykParsingTools.IsSpecifierAndValueValid(CMYKSequence))
+            if (CyanMagentaYellowKey.IsSpecifierAndValueValid(CMYKSequence))
             {
                 string hex = new Color(CMYKSequence).Hex;
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color (#RRGGBB: {0})", hex);
@@ -956,7 +957,7 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <returns>&lt;R&gt;;&lt;G&gt;;&lt;B&gt;</returns>
         public static string ConvertFromCmykToRgb(string CMYKSequence)
         {
-            if (CmykParsingTools.IsSpecifierAndValueValid(CMYKSequence))
+            if (CyanMagentaYellowKey.IsSpecifierAndValueValid(CMYKSequence))
             {
                 var rgb = new Color(CMYKSequence).RGB;
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", rgb.ToString());
@@ -986,10 +987,10 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <returns>ryb:&lt;R&gt;;&lt;Y&gt;;&lt;B&gt;</returns>
         public static string ConvertFromCmykToRyb(string CMYKSequence)
         {
-            if (CmykParsingTools.IsSpecifierAndValueValid(CMYKSequence))
+            if (CyanMagentaYellowKey.IsSpecifierAndValueValid(CMYKSequence))
             {
                 var rgb = new Color(CMYKSequence).RGB;
-                var ryb = RybConversionTools.ConvertFrom(rgb);
+                var ryb = ConversionTools.ToRyb(rgb);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", ryb.ToString());
                 return ryb.ToString();
             }
@@ -1017,10 +1018,10 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <returns>cmy:&lt;C&gt;;&lt;M&gt;;&lt;Y&gt;</returns>
         public static string ConvertFromCmykToCmy(string CMYKSequence)
         {
-            if (CmykParsingTools.IsSpecifierAndValueValid(CMYKSequence))
+            if (CyanMagentaYellowKey.IsSpecifierAndValueValid(CMYKSequence))
             {
                 var rgb = new Color(CMYKSequence).RGB;
-                var cmy = CmyConversionTools.ConvertFrom(rgb);
+                var cmy = ConversionTools.ToCmy(rgb);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", cmy.ToString());
                 return cmy.ToString();
             }
@@ -1048,10 +1049,10 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <returns>hsv:&lt;H&gt;;&lt;S&gt;;&lt;V&gt;</returns>
         public static string ConvertFromCmykToHsv(string CMYKSequence)
         {
-            if (CmykParsingTools.IsSpecifierAndValueValid(CMYKSequence))
+            if (CyanMagentaYellowKey.IsSpecifierAndValueValid(CMYKSequence))
             {
                 var rgb = new Color(CMYKSequence).RGB;
-                var hsv = HsvConversionTools.ConvertFrom(rgb);
+                var hsv = ConversionTools.ToHsv(rgb);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", hsv.ToString());
                 return hsv.ToString();
             }
@@ -1079,10 +1080,10 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <returns>hsl:&lt;H&gt;;&lt;S&gt;;&lt;L&gt;</returns>
         public static string ConvertFromCmykToHsl(string CMYKSequence)
         {
-            if (CmykParsingTools.IsSpecifierAndValueValid(CMYKSequence))
+            if (CyanMagentaYellowKey.IsSpecifierAndValueValid(CMYKSequence))
             {
                 var rgb = new Color(CMYKSequence).RGB;
-                var hsl = HslConversionTools.ConvertFrom(rgb);
+                var hsl = ConversionTools.ToHsl(rgb);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", hsl.ToString());
                 return hsl.ToString();
             }
@@ -1110,10 +1111,10 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <returns>yiq:&lt;Y&gt;;&lt;I&gt;;&lt;Q&gt;</returns>
         public static string ConvertFromCmykToYiq(string CMYKSequence)
         {
-            if (CmykParsingTools.IsSpecifierAndValueValid(CMYKSequence))
+            if (CyanMagentaYellowKey.IsSpecifierAndValueValid(CMYKSequence))
             {
                 var rgb = new Color(CMYKSequence).RGB;
-                var yiq = YiqConversionTools.ConvertFrom(rgb);
+                var yiq = ConversionTools.ToYiq(rgb);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", yiq.ToString());
                 return yiq.ToString();
             }
@@ -1141,10 +1142,10 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <returns>yuv:&lt;Y&gt;;&lt;U&gt;;&lt;V&gt;</returns>
         public static string ConvertFromCmykToYuv(string CMYKSequence)
         {
-            if (CmykParsingTools.IsSpecifierAndValueValid(CMYKSequence))
+            if (CyanMagentaYellowKey.IsSpecifierAndValueValid(CMYKSequence))
             {
                 var rgb = new Color(CMYKSequence).RGB;
-                var yuv = YuvConversionTools.ConvertFrom(rgb);
+                var yuv = ConversionTools.ToYuv(rgb);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", yuv.ToString());
                 return yuv.ToString();
             }
@@ -1173,7 +1174,7 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <returns>A hexadecimal representation of a color (#AABBCC for example)</returns>
         public static string ConvertFromHslToHex(string HSLSequence)
         {
-            if (HslParsingTools.IsSpecifierAndValueValid(HSLSequence))
+            if (HueSaturationLightness.IsSpecifierAndValueValid(HSLSequence))
             {
                 string hex = new Color(HSLSequence).Hex;
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", hex);
@@ -1202,7 +1203,7 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <returns>&lt;R&gt;;&lt;G&gt;;&lt;B&gt;</returns>
         public static string ConvertFromHslToRgb(string HSLSequence)
         {
-            if (HslParsingTools.IsSpecifierAndValueValid(HSLSequence))
+            if (HueSaturationLightness.IsSpecifierAndValueValid(HSLSequence))
             {
                 var rgb = new Color(HSLSequence).RGB;
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", rgb.ToString());
@@ -1231,10 +1232,10 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <returns>ryb:&lt;R&gt;;&lt;Y&gt;;&lt;B&gt;</returns>
         public static string ConvertFromHslToRyb(string HSLSequence)
         {
-            if (HslParsingTools.IsSpecifierAndValueValid(HSLSequence))
+            if (HueSaturationLightness.IsSpecifierAndValueValid(HSLSequence))
             {
                 var rgb = new Color(HSLSequence).RGB;
-                var ryb = RybConversionTools.ConvertFrom(rgb);
+                var ryb = ConversionTools.ToRyb(rgb);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", ryb.ToString());
                 return ryb.ToString();
             }
@@ -1261,10 +1262,10 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <returns>cmyk:&lt;C&gt;;&lt;M&gt;;&lt;Y&gt;;&lt;K&gt;</returns>
         public static string ConvertFromHslToCmyk(string HSLSequence)
         {
-            if (HslParsingTools.IsSpecifierAndValueValid(HSLSequence))
+            if (HueSaturationLightness.IsSpecifierAndValueValid(HSLSequence))
             {
                 var rgb = new Color(HSLSequence).RGB;
-                var cmyk = CmykConversionTools.ConvertFrom(rgb);
+                var cmyk = ConversionTools.ToCmyk(rgb);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", cmyk.ToString());
                 return cmyk.ToString();
             }
@@ -1291,10 +1292,10 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <returns>cmy:&lt;C&gt;;&lt;M&gt;;&lt;Y&gt;</returns>
         public static string ConvertFromHslToCmy(string HSLSequence)
         {
-            if (HslParsingTools.IsSpecifierAndValueValid(HSLSequence))
+            if (HueSaturationLightness.IsSpecifierAndValueValid(HSLSequence))
             {
                 var rgb = new Color(HSLSequence).RGB;
-                var cmy = CmyConversionTools.ConvertFrom(rgb);
+                var cmy = ConversionTools.ToCmy(rgb);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", cmy.ToString());
                 return cmy.ToString();
             }
@@ -1321,10 +1322,10 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <returns>hsv:&lt;H&gt;;&lt;S&gt;;&lt;V&gt;</returns>
         public static string ConvertFromHslToHsv(string HSLSequence)
         {
-            if (HslParsingTools.IsSpecifierAndValueValid(HSLSequence))
+            if (HueSaturationLightness.IsSpecifierAndValueValid(HSLSequence))
             {
                 var rgb = new Color(HSLSequence).RGB;
-                var hsv = HsvConversionTools.ConvertFrom(rgb);
+                var hsv = ConversionTools.ToHsv(rgb);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", hsv.ToString());
                 return hsv.ToString();
             }
@@ -1351,10 +1352,10 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <returns>yiq:&lt;Y&gt;;&lt;I&gt;;&lt;Q&gt;</returns>
         public static string ConvertFromHslToYiq(string HSLSequence)
         {
-            if (HslParsingTools.IsSpecifierAndValueValid(HSLSequence))
+            if (HueSaturationLightness.IsSpecifierAndValueValid(HSLSequence))
             {
                 var rgb = new Color(HSLSequence).RGB;
-                var yiq = YiqConversionTools.ConvertFrom(rgb);
+                var yiq = ConversionTools.ToYiq(rgb);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", yiq.ToString());
                 return yiq.ToString();
             }
@@ -1381,10 +1382,10 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <returns>yuv:&lt;Y&gt;;&lt;U&gt;;&lt;V&gt;</returns>
         public static string ConvertFromHslToYuv(string HSLSequence)
         {
-            if (HslParsingTools.IsSpecifierAndValueValid(HSLSequence))
+            if (HueSaturationLightness.IsSpecifierAndValueValid(HSLSequence))
             {
                 var rgb = new Color(HSLSequence).RGB;
-                var yuv = YuvConversionTools.ConvertFrom(rgb);
+                var yuv = ConversionTools.ToYuv(rgb);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", yuv.ToString());
                 return yuv.ToString();
             }
@@ -1413,7 +1414,7 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <returns>A hexadecimal representation of a color (#AABBCC for example)</returns>
         public static string ConvertFromHsvToHex(string HSVSequence)
         {
-            if (HsvParsingTools.IsSpecifierAndValueValid(HSVSequence))
+            if (HueSaturationValue.IsSpecifierAndValueValid(HSVSequence))
             {
                 string hex = new Color(HSVSequence).Hex;
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", hex);
@@ -1442,7 +1443,7 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <returns>&lt;R&gt;;&lt;G&gt;;&lt;B&gt;</returns>
         public static string ConvertFromHsvToRgb(string HSVSequence)
         {
-            if (HsvParsingTools.IsSpecifierAndValueValid(HSVSequence))
+            if (HueSaturationValue.IsSpecifierAndValueValid(HSVSequence))
             {
                 var rgb = new Color(HSVSequence).RGB;
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", rgb.ToString());
@@ -1471,10 +1472,10 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <returns>ryb:&lt;C&gt;;&lt;M&gt;;&lt;Y&gt;;&lt;K&gt;</returns>
         public static string ConvertFromHsvToRyb(string HSVSequence)
         {
-            if (HsvParsingTools.IsSpecifierAndValueValid(HSVSequence))
+            if (HueSaturationValue.IsSpecifierAndValueValid(HSVSequence))
             {
                 var rgb = new Color(HSVSequence).RGB;
-                var ryb = RybConversionTools.ConvertFrom(rgb);
+                var ryb = ConversionTools.ToRyb(rgb);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", ryb.ToString());
                 return ryb.ToString();
             }
@@ -1501,10 +1502,10 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <returns>cmyk:&lt;C&gt;;&lt;M&gt;;&lt;Y&gt;;&lt;K&gt;</returns>
         public static string ConvertFromHsvToCmyk(string HSVSequence)
         {
-            if (HsvParsingTools.IsSpecifierAndValueValid(HSVSequence))
+            if (HueSaturationValue.IsSpecifierAndValueValid(HSVSequence))
             {
                 var rgb = new Color(HSVSequence).RGB;
-                var cmyk = CmykConversionTools.ConvertFrom(rgb);
+                var cmyk = ConversionTools.ToCmyk(rgb);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", cmyk.ToString());
                 return cmyk.ToString();
             }
@@ -1531,10 +1532,10 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <returns>cmyk:&lt;C&gt;;&lt;M&gt;;&lt;Y&gt;</returns>
         public static string ConvertFromHsvToCmy(string HSVSequence)
         {
-            if (HsvParsingTools.IsSpecifierAndValueValid(HSVSequence))
+            if (HueSaturationValue.IsSpecifierAndValueValid(HSVSequence))
             {
                 var rgb = new Color(HSVSequence).RGB;
-                var cmy = CmyConversionTools.ConvertFrom(rgb);
+                var cmy = ConversionTools.ToCmy(rgb);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", cmy.ToString());
                 return cmy.ToString();
             }
@@ -1561,10 +1562,10 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <returns>hsl:&lt;H&gt;;&lt;S&gt;;&lt;L&gt;</returns>
         public static string ConvertFromHsvToHsl(string HSVSequence)
         {
-            if (HsvParsingTools.IsSpecifierAndValueValid(HSVSequence))
+            if (HueSaturationValue.IsSpecifierAndValueValid(HSVSequence))
             {
                 var rgb = new Color(HSVSequence).RGB;
-                var hsl = HslConversionTools.ConvertFrom(rgb);
+                var hsl = ConversionTools.ToHsl(rgb);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", hsl.ToString());
                 return hsl.ToString();
             }
@@ -1591,10 +1592,10 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <returns>yiq:&lt;H&gt;;&lt;S&gt;;&lt;L&gt;</returns>
         public static string ConvertFromHsvToYiq(string HSVSequence)
         {
-            if (HsvParsingTools.IsSpecifierAndValueValid(HSVSequence))
+            if (HueSaturationValue.IsSpecifierAndValueValid(HSVSequence))
             {
                 var rgb = new Color(HSVSequence).RGB;
-                var yiq = YiqConversionTools.ConvertFrom(rgb);
+                var yiq = ConversionTools.ToYiq(rgb);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", yiq.ToString());
                 return yiq.ToString();
             }
@@ -1621,10 +1622,10 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <returns>yuv:&lt;H&gt;;&lt;S&gt;;&lt;L&gt;</returns>
         public static string ConvertFromHsvToYuv(string HSVSequence)
         {
-            if (HsvParsingTools.IsSpecifierAndValueValid(HSVSequence))
+            if (HueSaturationValue.IsSpecifierAndValueValid(HSVSequence))
             {
                 var rgb = new Color(HSVSequence).RGB;
-                var yuv = YuvConversionTools.ConvertFrom(rgb);
+                var yuv = ConversionTools.ToYuv(rgb);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", yuv.ToString());
                 return yuv.ToString();
             }
@@ -1653,7 +1654,7 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <returns>A hexadecimal representation of a color (#AABBCC for example)</returns>
         public static string ConvertFromYiqToHex(string YIQSequence)
         {
-            if (YiqParsingTools.IsSpecifierAndValueValid(YIQSequence))
+            if (LumaInPhaseQuadrature.IsSpecifierAndValueValid(YIQSequence))
             {
                 string hex = new Color(YIQSequence).Hex;
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", hex);
@@ -1682,7 +1683,7 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <returns>&lt;R&gt;;&lt;G&gt;;&lt;B&gt;</returns>
         public static string ConvertFromYiqToRgb(string YIQSequence)
         {
-            if (YiqParsingTools.IsSpecifierAndValueValid(YIQSequence))
+            if (LumaInPhaseQuadrature.IsSpecifierAndValueValid(YIQSequence))
             {
                 var rgb = new Color(YIQSequence).RGB;
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", rgb.ToString());
@@ -1711,10 +1712,10 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <returns>ryb:&lt;C&gt;;&lt;M&gt;;&lt;Y&gt;;&lt;K&gt;</returns>
         public static string ConvertFromYiqToRyb(string YIQSequence)
         {
-            if (YiqParsingTools.IsSpecifierAndValueValid(YIQSequence))
+            if (LumaInPhaseQuadrature.IsSpecifierAndValueValid(YIQSequence))
             {
                 var rgb = new Color(YIQSequence).RGB;
-                var ryb = RybConversionTools.ConvertFrom(rgb);
+                var ryb = ConversionTools.ToRyb(rgb);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", ryb.ToString());
                 return ryb.ToString();
             }
@@ -1741,10 +1742,10 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <returns>cmyk:&lt;C&gt;;&lt;M&gt;;&lt;Y&gt;;&lt;K&gt;</returns>
         public static string ConvertFromYiqToCmyk(string YIQSequence)
         {
-            if (YiqParsingTools.IsSpecifierAndValueValid(YIQSequence))
+            if (LumaInPhaseQuadrature.IsSpecifierAndValueValid(YIQSequence))
             {
                 var rgb = new Color(YIQSequence).RGB;
-                var cmyk = CmykConversionTools.ConvertFrom(rgb);
+                var cmyk = ConversionTools.ToCmyk(rgb);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", cmyk.ToString());
                 return cmyk.ToString();
             }
@@ -1771,10 +1772,10 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <returns>cmy:&lt;C&gt;;&lt;M&gt;;&lt;Y&gt;</returns>
         public static string ConvertFromYiqToCmy(string YIQSequence)
         {
-            if (YiqParsingTools.IsSpecifierAndValueValid(YIQSequence))
+            if (LumaInPhaseQuadrature.IsSpecifierAndValueValid(YIQSequence))
             {
                 var rgb = new Color(YIQSequence).RGB;
-                var cmy = CmyConversionTools.ConvertFrom(rgb);
+                var cmy = ConversionTools.ToCmy(rgb);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", cmy.ToString());
                 return cmy.ToString();
             }
@@ -1801,10 +1802,10 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <returns>hsl:&lt;H&gt;;&lt;S&gt;;&lt;L&gt;</returns>
         public static string ConvertFromYiqToHsl(string YIQSequence)
         {
-            if (YiqParsingTools.IsSpecifierAndValueValid(YIQSequence))
+            if (LumaInPhaseQuadrature.IsSpecifierAndValueValid(YIQSequence))
             {
                 var rgb = new Color(YIQSequence).RGB;
-                var hsl = HslConversionTools.ConvertFrom(rgb);
+                var hsl = ConversionTools.ToHsl(rgb);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", hsl.ToString());
                 return hsl.ToString();
             }
@@ -1831,10 +1832,10 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <returns>hsv:&lt;H&gt;;&lt;S&gt;;&lt;V&gt;</returns>
         public static string ConvertFromYiqToHsv(string YIQSequence)
         {
-            if (YiqParsingTools.IsSpecifierAndValueValid(YIQSequence))
+            if (LumaInPhaseQuadrature.IsSpecifierAndValueValid(YIQSequence))
             {
                 var rgb = new Color(YIQSequence).RGB;
-                var hsv = HsvConversionTools.ConvertFrom(rgb);
+                var hsv = ConversionTools.ToHsv(rgb);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", hsv.ToString());
                 return hsv.ToString();
             }
@@ -1861,10 +1862,10 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <returns>yuv:&lt;H&gt;;&lt;S&gt;;&lt;L&gt;</returns>
         public static string ConvertFromYiqToYuv(string YIQSequence)
         {
-            if (YiqParsingTools.IsSpecifierAndValueValid(YIQSequence))
+            if (LumaInPhaseQuadrature.IsSpecifierAndValueValid(YIQSequence))
             {
                 var rgb = new Color(YIQSequence).RGB;
-                var yuv = YuvConversionTools.ConvertFrom(rgb);
+                var yuv = ConversionTools.ToYuv(rgb);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", yuv.ToString());
                 return yuv.ToString();
             }
@@ -1893,7 +1894,7 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <returns>A hexadecimal representation of a color (#AABBCC for example)</returns>
         public static string ConvertFromYuvToHex(string YUVSequence)
         {
-            if (YuvParsingTools.IsSpecifierAndValueValid(YUVSequence))
+            if (LumaChromaUv.IsSpecifierAndValueValid(YUVSequence))
             {
                 string hex = new Color(YUVSequence).Hex;
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", hex);
@@ -1922,7 +1923,7 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <returns>&lt;R&gt;;&lt;G&gt;;&lt;B&gt;</returns>
         public static string ConvertFromYuvToRgb(string YUVSequence)
         {
-            if (YuvParsingTools.IsSpecifierAndValueValid(YUVSequence))
+            if (LumaChromaUv.IsSpecifierAndValueValid(YUVSequence))
             {
                 var rgb = new Color(YUVSequence).RGB;
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", rgb.ToString());
@@ -1951,10 +1952,10 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <returns>ryb:&lt;C&gt;;&lt;M&gt;;&lt;Y&gt;;&lt;K&gt;</returns>
         public static string ConvertFromYuvToRyb(string YUVSequence)
         {
-            if (YuvParsingTools.IsSpecifierAndValueValid(YUVSequence))
+            if (LumaChromaUv.IsSpecifierAndValueValid(YUVSequence))
             {
                 var rgb = new Color(YUVSequence).RGB;
-                var ryb = RybConversionTools.ConvertFrom(rgb);
+                var ryb = ConversionTools.ToRyb(rgb);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", ryb.ToString());
                 return ryb.ToString();
             }
@@ -1981,10 +1982,10 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <returns>cmyk:&lt;C&gt;;&lt;M&gt;;&lt;Y&gt;;&lt;K&gt;</returns>
         public static string ConvertFromYuvToCmyk(string YUVSequence)
         {
-            if (YuvParsingTools.IsSpecifierAndValueValid(YUVSequence))
+            if (LumaChromaUv.IsSpecifierAndValueValid(YUVSequence))
             {
                 var rgb = new Color(YUVSequence).RGB;
-                var cmyk = CmykConversionTools.ConvertFrom(rgb);
+                var cmyk = ConversionTools.ToCmyk(rgb);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", cmyk.ToString());
                 return cmyk.ToString();
             }
@@ -2011,10 +2012,10 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <returns>cmy:&lt;C&gt;;&lt;M&gt;;&lt;Y&gt;</returns>
         public static string ConvertFromYuvToCmy(string YUVSequence)
         {
-            if (YuvParsingTools.IsSpecifierAndValueValid(YUVSequence))
+            if (LumaChromaUv.IsSpecifierAndValueValid(YUVSequence))
             {
                 var rgb = new Color(YUVSequence).RGB;
-                var cmy = CmyConversionTools.ConvertFrom(rgb);
+                var cmy = ConversionTools.ToCmy(rgb);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", cmy.ToString());
                 return cmy.ToString();
             }
@@ -2041,10 +2042,10 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <returns>hsl:&lt;H&gt;;&lt;S&gt;;&lt;L&gt;</returns>
         public static string ConvertFromYuvToHsl(string YUVSequence)
         {
-            if (YuvParsingTools.IsSpecifierAndValueValid(YUVSequence))
+            if (LumaChromaUv.IsSpecifierAndValueValid(YUVSequence))
             {
                 var rgb = new Color(YUVSequence).RGB;
-                var hsl = HslConversionTools.ConvertFrom(rgb);
+                var hsl = ConversionTools.ToHsl(rgb);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", hsl.ToString());
                 return hsl.ToString();
             }
@@ -2071,10 +2072,10 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <returns>hsv:&lt;H&gt;;&lt;S&gt;;&lt;V&gt;</returns>
         public static string ConvertFromYuvToHsv(string YUVSequence)
         {
-            if (YuvParsingTools.IsSpecifierAndValueValid(YUVSequence))
+            if (LumaChromaUv.IsSpecifierAndValueValid(YUVSequence))
             {
                 var rgb = new Color(YUVSequence).RGB;
-                var hsv = HsvConversionTools.ConvertFrom(rgb);
+                var hsv = ConversionTools.ToHsv(rgb);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", hsv.ToString());
                 return hsv.ToString();
             }
@@ -2101,10 +2102,10 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <returns>yiq:&lt;Y&gt;;&lt;I&gt;;&lt;Q&gt;</returns>
         public static string ConvertFromYuvToYiq(string YUVSequence)
         {
-            if (YuvParsingTools.IsSpecifierAndValueValid(YUVSequence))
+            if (LumaChromaUv.IsSpecifierAndValueValid(YUVSequence))
             {
                 var rgb = new Color(YUVSequence).RGB;
-                var yiq = YiqConversionTools.ConvertFrom(rgb);
+                var yiq = ConversionTools.ToYiq(rgb);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", yiq.ToString());
                 return yiq.ToString();
             }

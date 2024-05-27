@@ -57,7 +57,7 @@ namespace Nitrocid.Extras.ColorConvert.Commands
 
             // Do the job
             var yiq = new Color($"yiq:{Y};{I};{Q}");
-            var hsv = HsvConversionTools.ConvertFrom(yiq.RGB);
+            var hsv = ConversionTools.ToHsv(yiq.RGB);
             TextWriters.Write("- " + Translate.DoTranslation("Hue:") + " ", false, KernelColorType.ListEntry);
             TextWriters.Write($"{hsv.HueWhole} [{hsv.Hue:0.00}]", true, KernelColorType.ListValue);
             TextWriters.Write("- " + Translate.DoTranslation("Saturation:") + " ", false, KernelColorType.ListEntry);

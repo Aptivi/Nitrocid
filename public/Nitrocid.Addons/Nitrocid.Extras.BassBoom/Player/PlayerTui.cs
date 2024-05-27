@@ -117,7 +117,7 @@ namespace Nitrocid.Extras.BassBoom.Player
                     Translate.DoTranslation("Seek") + $": {PlayerControls.seekRate:0.00} | " +
                     Translate.DoTranslation("Volume") + $": {volume:0.00}";
                 buffer.Append(
-                    ProgressBarColor.RenderProgress(100 * (position / (double)total), 2, ConsoleWrapper.WindowHeight - 8, 3, 3, KernelColorTools.GetColor(KernelColorType.Progress), ColorTools.GetGray(), KernelColorTools.GetColor(KernelColorType.Background)) +
+                    ProgressBarColor.RenderProgress(100 * (position / (double)total), 2, ConsoleWrapper.WindowHeight - 8, ConsoleWrapper.WindowWidth - 6, KernelColorTools.GetColor(KernelColorType.Progress), ColorTools.GetGray(), KernelColorTools.GetColor(KernelColorType.Background)) +
                     TextWriterWhereColor.RenderWhere($"{posSpan} / {totalSpan}", 3, ConsoleWrapper.WindowHeight - 9, KernelColorTools.GetColor(KernelColorType.NeutralText), KernelColorTools.GetColor(KernelColorType.Background)) +
                     TextWriterWhereColor.RenderWhere(indicator, ConsoleWrapper.WindowWidth - indicator.Length - 3, ConsoleWrapper.WindowHeight - 9, KernelColorTools.GetColor(KernelColorType.NeutralText), KernelColorTools.GetColor(KernelColorType.Background))
                 );

@@ -55,15 +55,6 @@ namespace Nitrocid.ConsoleBase.Colors
         }
 
         /// <summary>
-        /// Enables simple color blindness using the Vienot 1999 formula (may not be accurate for tritanopia)
-        /// </summary>
-        public static bool ColorBlindSimple
-        {
-            get => Config.MainConfig.ColorBlindSimple;
-            set => Config.MainConfig.ColorBlindSimple = value;
-        }
-
-        /// <summary>
         /// Color blindness transformation formula
         /// </summary>
         public static TransformationFormula BlindnessTransformationFormula

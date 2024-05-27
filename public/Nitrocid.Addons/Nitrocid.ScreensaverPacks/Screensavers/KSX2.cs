@@ -18,7 +18,7 @@
 //
 
 using System;
-using Figletize;
+using Textify.Figlet;
 using Nitrocid.ScreensaverPacks.Animations.Glitch;
 using Terminaux.Colors;
 using Nitrocid.Kernel.Debugging;

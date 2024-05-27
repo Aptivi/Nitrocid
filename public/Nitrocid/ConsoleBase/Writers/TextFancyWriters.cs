@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Figletize.Utilities;
+using Textify.Figlet.Utilities.Lines;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.FancyWriters;
@@ -28,6 +28,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 using Terminaux.Colors;
+using Terminaux.Base;
 
 namespace Nitrocid.ConsoleBase.Writers
 {
@@ -442,7 +443,7 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered figlet.</param>
         /// <param name="ColTypes">A type of colors that will be changed.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredFiglet(int top, FigletizeFont FigletFont, string Text, KernelColorType ColTypes, params object[] Vars) =>
+        public static void WriteCenteredFiglet(int top, FigletFont FigletFont, string Text, KernelColorType ColTypes, params object[] Vars) =>
             CenteredFigletTextColor.WriteCenteredFigletColorBack(top, FigletFont, Text, KernelColorTools.GetColor(ColTypes), KernelColorTools.GetColor(KernelColorType.Background), Vars);
 
         /// <summary>
@@ -454,7 +455,7 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
         /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredFiglet(int top, FigletizeFont FigletFont, string Text, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] Vars) =>
+        public static void WriteCenteredFiglet(int top, FigletFont FigletFont, string Text, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] Vars) =>
             CenteredFigletTextColor.WriteCenteredFigletColorBack(top, FigletFont, Text, KernelColorTools.GetColor(colorTypeForeground), KernelColorTools.GetColor(colorTypeBackground), Vars);
 
         /// <summary>
@@ -464,7 +465,7 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered figlet.</param>
         /// <param name="ColTypes">A type of colors that will be changed.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredFiglet(FigletizeFont FigletFont, string Text, KernelColorType ColTypes, params object[] Vars) =>
+        public static void WriteCenteredFiglet(FigletFont FigletFont, string Text, KernelColorType ColTypes, params object[] Vars) =>
             CenteredFigletTextColor.WriteCenteredFigletColorBack(FigletFont, Text, KernelColorTools.GetColor(ColTypes), KernelColorTools.GetColor(KernelColorType.Background), Vars);
 
         /// <summary>
@@ -475,7 +476,7 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
         /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredFiglet(FigletizeFont FigletFont, string Text, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] Vars) =>
+        public static void WriteCenteredFiglet(FigletFont FigletFont, string Text, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] Vars) =>
             CenteredFigletTextColor.WriteCenteredFigletColorBack(FigletFont, Text, KernelColorTools.GetColor(colorTypeForeground), KernelColorTools.GetColor(colorTypeBackground), Vars);
 
         /// <summary>
@@ -565,7 +566,7 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="FigletFont">Figlet font to use in the text.</param>
         /// <param name="ColTypes">A type of colors that will be changed.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteFiglet(string Text, FigletizeFont FigletFont, KernelColorType ColTypes, params object[] Vars)
+        public static void WriteFiglet(string Text, FigletFont FigletFont, KernelColorType ColTypes, params object[] Vars)
         {
             try
             {
@@ -586,7 +587,7 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
         /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteFiglet(string Text, FigletizeFont FigletFont, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] Vars)
+        public static void WriteFiglet(string Text, FigletFont FigletFont, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] Vars)
         {
             try
             {
@@ -609,7 +610,7 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="FigletFont">Figlet font to use in the text.</param>
         /// <param name="ColTypes">A type of colors that will be changed.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteFigletWhere(string Text, int Left, int Top, bool Return, FigletizeFont FigletFont, KernelColorType ColTypes, params object[] Vars)
+        public static void WriteFigletWhere(string Text, int Left, int Top, bool Return, FigletFont FigletFont, KernelColorType ColTypes, params object[] Vars)
         {
             try
             {
@@ -637,7 +638,7 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
         /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteFigletWhere(string Text, int Left, int Top, bool Return, FigletizeFont FigletFont, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] Vars)
+        public static void WriteFigletWhere(string Text, int Left, int Top, bool Return, FigletFont FigletFont, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] Vars)
         {
             try
             {
@@ -672,9 +673,8 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="Top">The progress position from the top</param>
         /// <param name="ProgressColor">The progress bar color</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
-        /// <param name="Targeted">Targeted percentage?</param>
-        public static void WriteProgress(double Progress, int Left, int Top, KernelColorType ProgressColor, bool DrawBorder = true, bool Targeted = false) =>
-            ProgressBarColor.WriteProgress(Progress, Left, Top, 10, 0, KernelColorTools.GetColor(ProgressColor), ColorTools.GetGray(), DrawBorder, Targeted);
+        public static void WriteProgress(double Progress, int Left, int Top, KernelColorType ProgressColor, bool DrawBorder = true) =>
+            ProgressBarColor.WriteProgress(Progress, Left, Top, ConsoleWrapper.WindowWidth - 10, KernelColorTools.GetColor(ProgressColor), ColorTools.GetGray(), DrawBorder);
 
         /// <summary>
         /// Writes the progress bar
@@ -683,25 +683,10 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="Left">The progress position from the upper left corner</param>
         /// <param name="Top">The progress position from the top</param>
         /// <param name="ProgressColor">The progress bar color</param>
-        /// <param name="WidthOffset">Width offset</param>
+        /// <param name="width">Progress bar width</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
-        /// <param name="Targeted">Targeted percentage?</param>
-        public static void WriteProgress(double Progress, int Left, int Top, int WidthOffset, KernelColorType ProgressColor, bool DrawBorder = true, bool Targeted = false) =>
-            ProgressBarColor.WriteProgress(Progress, Left, Top, WidthOffset, 0, KernelColorTools.GetColor(ProgressColor), ColorTools.GetGray(), DrawBorder, Targeted);
-
-        /// <summary>
-        /// Writes the progress bar
-        /// </summary>
-        /// <param name="Progress">The progress percentage</param>
-        /// <param name="Left">The progress position from the upper left corner</param>
-        /// <param name="Top">The progress position from the top</param>
-        /// <param name="ProgressColor">The progress bar color</param>
-        /// <param name="LeftWidthOffset">Width offset from the left</param>
-        /// <param name="RightWidthOffset">Width offset from the right</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        /// <param name="Targeted">Targeted percentage?</param>
-        public static void WriteProgress(double Progress, int Left, int Top, int LeftWidthOffset, int RightWidthOffset, KernelColorType ProgressColor, bool DrawBorder = true, bool Targeted = false) =>
-            ProgressBarColor.WriteProgress(Progress, Left, Top, LeftWidthOffset, RightWidthOffset, KernelColorTools.GetColor(ProgressColor), ColorTools.GetGray(), DrawBorder, Targeted);
+        public static void WriteProgress(double Progress, int Left, int Top, int width, KernelColorType ProgressColor, bool DrawBorder = true) =>
+            ProgressBarColor.WriteProgress(Progress, Left, Top, width, KernelColorTools.GetColor(ProgressColor), ColorTools.GetGray(), DrawBorder);
 
         /// <summary>
         /// Writes the progress bar
@@ -712,9 +697,8 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="ProgressColor">The progress bar color</param>
         /// <param name="FrameColor">The progress bar frame color</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
-        /// <param name="Targeted">Targeted percentage?</param>
-        public static void WriteProgress(double Progress, int Left, int Top, KernelColorType ProgressColor, KernelColorType FrameColor, bool DrawBorder = true, bool Targeted = false) =>
-            WriteProgress(Progress, Left, Top, 10, 0, ProgressColor, FrameColor, DrawBorder, Targeted);
+        public static void WriteProgress(double Progress, int Left, int Top, KernelColorType ProgressColor, KernelColorType FrameColor, bool DrawBorder = true) =>
+            WriteProgress(Progress, Left, Top, ConsoleWrapper.WindowWidth - 10, ProgressColor, FrameColor, DrawBorder);
 
         /// <summary>
         /// Writes the progress bar
@@ -724,26 +708,10 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="Top">The progress position from the top</param>
         /// <param name="ProgressColor">The progress bar color</param>
         /// <param name="FrameColor">The progress bar frame color</param>
-        /// <param name="WidthOffset">Width offset</param>
+        /// <param name="width">Progress bar width</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
-        /// <param name="Targeted">Targeted percentage?</param>
-        public static void WriteProgress(double Progress, int Left, int Top, int WidthOffset, KernelColorType ProgressColor, KernelColorType FrameColor, bool DrawBorder = true, bool Targeted = false) =>
-            WriteProgress(Progress, Left, Top, WidthOffset, 0, ProgressColor, FrameColor, DrawBorder, Targeted);
-
-        /// <summary>
-        /// Writes the progress bar
-        /// </summary>
-        /// <param name="Progress">The progress percentage</param>
-        /// <param name="Left">The progress position from the upper left corner</param>
-        /// <param name="Top">The progress position from the top</param>
-        /// <param name="ProgressColor">The progress bar color</param>
-        /// <param name="FrameColor">The progress bar frame color</param>
-        /// <param name="LeftWidthOffset">Width offset from the left</param>
-        /// <param name="RightWidthOffset">Width offset from the right</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        /// <param name="Targeted">Targeted percentage?</param>
-        public static void WriteProgress(double Progress, int Left, int Top, int LeftWidthOffset, int RightWidthOffset, KernelColorType ProgressColor, KernelColorType FrameColor, bool DrawBorder = true, bool Targeted = false) =>
-            WriteProgress(Progress, Left, Top, LeftWidthOffset, RightWidthOffset, ProgressColor, FrameColor, KernelColorType.Background, DrawBorder, Targeted);
+        public static void WriteProgress(double Progress, int Left, int Top, int width, KernelColorType ProgressColor, KernelColorType FrameColor, bool DrawBorder = true) =>
+            WriteProgress(Progress, Left, Top, width, ProgressColor, FrameColor, DrawBorder);
 
         /// <summary>
         /// Writes the progress bar
@@ -755,9 +723,8 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="FrameColor">The progress bar frame color</param>
         /// <param name="BackgroundColor">The progress bar background color</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
-        /// <param name="Targeted">Targeted percentage?</param>
-        public static void WriteProgress(double Progress, int Left, int Top, KernelColorType ProgressColor, KernelColorType FrameColor, KernelColorType BackgroundColor, bool DrawBorder = true, bool Targeted = false) =>
-            WriteProgress(Progress, Left, Top, 10, 0, ProgressColor, FrameColor, BackgroundColor, DrawBorder, Targeted);
+        public static void WriteProgress(double Progress, int Left, int Top, KernelColorType ProgressColor, KernelColorType FrameColor, KernelColorType BackgroundColor, bool DrawBorder = true) =>
+            WriteProgress(Progress, Left, Top, ConsoleWrapper.WindowWidth - 10, ProgressColor, FrameColor, BackgroundColor, DrawBorder);
 
         /// <summary>
         /// Writes the progress bar
@@ -768,30 +735,13 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="ProgressColor">The progress bar color</param>
         /// <param name="FrameColor">The progress bar frame color</param>
         /// <param name="BackgroundColor">The progress bar background color</param>
-        /// <param name="WidthOffset">Width offset</param>
+        /// <param name="width">Progress bar width</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
-        /// <param name="Targeted">Targeted percentage?</param>
-        public static void WriteProgress(double Progress, int Left, int Top, int WidthOffset, KernelColorType ProgressColor, KernelColorType FrameColor, KernelColorType BackgroundColor, bool DrawBorder = true, bool Targeted = false) =>
-            WriteProgress(Progress, Left, Top, WidthOffset, 0, ProgressColor, FrameColor, BackgroundColor, DrawBorder, Targeted);
-
-        /// <summary>
-        /// Writes the progress bar
-        /// </summary>
-        /// <param name="Progress">The progress percentage</param>
-        /// <param name="Left">The progress position from the upper left corner</param>
-        /// <param name="Top">The progress position from the top</param>
-        /// <param name="ProgressColor">The progress bar color</param>
-        /// <param name="FrameColor">The progress bar frame color</param>
-        /// <param name="BackgroundColor">The progress bar background color</param>
-        /// <param name="LeftWidthOffset">Width offset from the left</param>
-        /// <param name="RightWidthOffset">Width offset from the right</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        /// <param name="Targeted">Targeted percentage?</param>
-        public static void WriteProgress(double Progress, int Left, int Top, int LeftWidthOffset, int RightWidthOffset, KernelColorType ProgressColor, KernelColorType FrameColor, KernelColorType BackgroundColor, bool DrawBorder = true, bool Targeted = false)
+        public static void WriteProgress(double Progress, int Left, int Top, int width, KernelColorType ProgressColor, KernelColorType FrameColor, KernelColorType BackgroundColor, bool DrawBorder = true)
         {
             try
             {
-                TextWriterRaw.WritePlain(ProgressBarColor.RenderProgress(Progress, Left, Top, LeftWidthOffset, RightWidthOffset, KernelColorTools.GetColor(ProgressColor), KernelColorTools.GetColor(FrameColor), KernelColorTools.GetColor(BackgroundColor), DrawBorder, Targeted));
+                TextWriterRaw.WritePlain(ProgressBarColor.RenderProgress(Progress, Left, Top, width, KernelColorTools.GetColor(ProgressColor), KernelColorTools.GetColor(FrameColor), KernelColorTools.GetColor(BackgroundColor), DrawBorder));
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
@@ -809,7 +759,7 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="ProgressColor">The progress bar color</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         public static void WriteVerticalProgress(double Progress, int Left, int Top, KernelColorType ProgressColor, bool DrawBorder = true) =>
-            ProgressBarVerticalColor.WriteVerticalProgress(Progress, Left, Top, 2, 0, KernelColorTools.GetColor(ProgressColor), ColorTools.GetGray(), DrawBorder);
+            ProgressBarVerticalColor.WriteVerticalProgress(Progress, Left, Top, ConsoleWrapper.WindowHeight - 2, KernelColorTools.GetColor(ProgressColor), ColorTools.GetGray(), DrawBorder);
 
         /// <summary>
         /// Writes the progress bar
@@ -818,23 +768,10 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="Left">The progress position from the upper left corner</param>
         /// <param name="Top">The progress position from the top</param>
         /// <param name="ProgressColor">The progress bar color</param>
-        /// <param name="HeightOffset">Height offset</param>
+        /// <param name="height">Progress bar height</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteVerticalProgress(double Progress, int Left, int Top, int HeightOffset, KernelColorType ProgressColor, bool DrawBorder = true) =>
-            ProgressBarVerticalColor.WriteVerticalProgress(Progress, Left, Top, HeightOffset, 0, KernelColorTools.GetColor(ProgressColor), ColorTools.GetGray(), DrawBorder);
-
-        /// <summary>
-        /// Writes the progress bar
-        /// </summary>
-        /// <param name="Progress">The progress percentage</param>
-        /// <param name="Left">The progress position from the upper left corner</param>
-        /// <param name="Top">The progress position from the top</param>
-        /// <param name="ProgressColor">The progress bar color</param>
-        /// <param name="TopHeightOffset">Height offset from the top</param>
-        /// <param name="BottomHeightOffset">Height offset from the bottom</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteVerticalProgress(double Progress, int Left, int Top, int TopHeightOffset, int BottomHeightOffset, KernelColorType ProgressColor, bool DrawBorder = true) =>
-            ProgressBarVerticalColor.WriteVerticalProgress(Progress, Left, Top, TopHeightOffset, BottomHeightOffset, KernelColorTools.GetColor(ProgressColor), ColorTools.GetGray(), DrawBorder);
+        public static void WriteVerticalProgress(double Progress, int Left, int Top, int height, KernelColorType ProgressColor, bool DrawBorder = true) =>
+            ProgressBarVerticalColor.WriteVerticalProgress(Progress, Left, Top, height, KernelColorTools.GetColor(ProgressColor), ColorTools.GetGray(), DrawBorder);
 
         /// <summary>
         /// Writes the progress bar
@@ -846,7 +783,7 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="FrameColor">The progress bar frame color</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         public static void WriteVerticalProgress(double Progress, int Left, int Top, KernelColorType ProgressColor, KernelColorType FrameColor, bool DrawBorder = true) =>
-            WriteVerticalProgress(Progress, Left, Top, 2, 0, ProgressColor, FrameColor, DrawBorder);
+            WriteVerticalProgress(Progress, Left, Top, ConsoleWrapper.WindowHeight - 2, ProgressColor, FrameColor, DrawBorder);
 
         /// <summary>
         /// Writes the progress bar
@@ -856,27 +793,13 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="Top">The progress position from the top</param>
         /// <param name="ProgressColor">The progress bar color</param>
         /// <param name="FrameColor">The progress bar frame color</param>
-        /// <param name="HeightOffset">Height offset</param>
+        /// <param name="height">Progress bar height</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteVerticalProgress(double Progress, int Left, int Top, int HeightOffset, KernelColorType ProgressColor, KernelColorType FrameColor, bool DrawBorder = true) =>
-            WriteVerticalProgress(Progress, Left, Top, HeightOffset, 0, ProgressColor, FrameColor, DrawBorder);
-
-        /// <summary>
-        /// Writes the progress bar
-        /// </summary>
-        /// <param name="Progress">The progress percentage</param>
-        /// <param name="Left">The progress position from the upper left corner</param>
-        /// <param name="Top">The progress position from the top</param>
-        /// <param name="ProgressColor">The progress bar color</param>
-        /// <param name="FrameColor">The progress bar frame color</param>
-        /// <param name="TopHeightOffset">Height offset from the top</param>
-        /// <param name="BottomHeightOffset">Height offset from the bottom</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteVerticalProgress(double Progress, int Left, int Top, int TopHeightOffset, int BottomHeightOffset, KernelColorType ProgressColor, KernelColorType FrameColor, bool DrawBorder = true)
+        public static void WriteVerticalProgress(double Progress, int Left, int Top, int height, KernelColorType ProgressColor, KernelColorType FrameColor, bool DrawBorder = true)
         {
             try
             {
-                TextWriterRaw.WritePlain(ProgressBarVerticalColor.RenderVerticalProgress(Progress, Left, Top, TopHeightOffset, BottomHeightOffset, KernelColorTools.GetColor(ProgressColor), KernelColorTools.GetColor(FrameColor), DrawBorder));
+                TextWriterRaw.WritePlain(ProgressBarVerticalColor.RenderVerticalProgress(Progress, Left, Top, height, KernelColorTools.GetColor(ProgressColor), KernelColorTools.GetColor(FrameColor), DrawBorder));
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
@@ -892,7 +815,7 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="ColTypes">A type of colors that will be changed.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
         public static void WriteSeparator(string Text, KernelColorType ColTypes, params object[] Vars) =>
-            SeparatorWriterColor.WriteSeparatorColorBack(Text, true, KernelColorTools.GetColor(ColTypes), KernelColorTools.GetColor(KernelColorType.Background), false, Vars);
+            SeparatorWriterColor.WriteSeparatorColorBack(Text, KernelColorTools.GetColor(ColTypes), KernelColorTools.GetColor(KernelColorType.Background), false, Vars);
 
         /// <summary>
         /// Draw a separator with text
@@ -902,28 +825,7 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
         public static void WriteSeparator(string Text, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] Vars) =>
-            SeparatorWriterColor.WriteSeparatorColorBack(Text, true, KernelColorTools.GetColor(colorTypeForeground), KernelColorTools.GetColor(colorTypeBackground), false, Vars);
-
-        /// <summary>
-        /// Draw a separator with text
-        /// </summary>
-        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
-        /// <param name="PrintSuffix">Whether or not to print the leading suffix. Only use if you don't have suffix on your text.</param>
-        /// <param name="ColTypes">A type of colors that will be changed.</param>
-        /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteSeparator(string Text, bool PrintSuffix, KernelColorType ColTypes, params object[] Vars) =>
-            SeparatorWriterColor.WriteSeparatorColorBack(Text, PrintSuffix, KernelColorTools.GetColor(ColTypes), KernelColorTools.GetColor(KernelColorType.Background), false, Vars);
-
-        /// <summary>
-        /// Draw a separator with text
-        /// </summary>
-        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
-        /// <param name="PrintSuffix">Whether or not to print the leading suffix. Only use if you don't have suffix on your text.</param>
-        /// <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
-        /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
-        /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteSeparator(string Text, bool PrintSuffix, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] Vars) =>
-            SeparatorWriterColor.WriteSeparatorColorBack(Text, PrintSuffix, KernelColorTools.GetColor(colorTypeForeground), KernelColorTools.GetColor(colorTypeBackground), false, Vars);
+            SeparatorWriterColor.WriteSeparatorColorBack(Text, KernelColorTools.GetColor(colorTypeForeground), KernelColorTools.GetColor(colorTypeBackground), false, Vars);
 
         /// <summary>
         /// Draw a table with text

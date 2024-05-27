@@ -18,7 +18,7 @@
 //
 
 using System;
-using Figletize;
+using Textify.Figlet;
 using Terminaux.Writer.FancyWriters;
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Debugging;

@@ -45,7 +45,7 @@ namespace Nitrocid.Shell.Shells.Admin.Commands
             if (user is not null)
             {
                 // First off, basic user information
-                TextFancyWriters.WriteSeparator(Translate.DoTranslation("Basic user info"), true, KernelColorType.ListTitle);
+                TextFancyWriters.WriteSeparator(Translate.DoTranslation("Basic user info"), KernelColorType.ListTitle);
                 TextWriters.Write(Translate.DoTranslation("Username") + ": ", false, KernelColorType.ListEntry);
                 TextWriters.Write(user.Username, true, KernelColorType.ListValue);
                 TextWriters.Write(Translate.DoTranslation("Full name") + ": ", false, KernelColorType.ListEntry);
@@ -57,13 +57,13 @@ namespace Nitrocid.Shell.Shells.Admin.Commands
                 TextWriterRaw.Write();
 
                 // Now, the permissions.
-                TextFancyWriters.WriteSeparator(Translate.DoTranslation("Permissions"), true, KernelColorType.ListTitle);
+                TextFancyWriters.WriteSeparator(Translate.DoTranslation("Permissions"), KernelColorType.ListTitle);
                 foreach (string perm in user.Permissions)
                     TextWriters.Write($"  - {perm}", true, KernelColorType.ListValue);
                 TextWriterRaw.Write();
 
                 // Now, the groups.
-                TextFancyWriters.WriteSeparator(Translate.DoTranslation("Groups"), true, KernelColorType.ListTitle);
+                TextFancyWriters.WriteSeparator(Translate.DoTranslation("Groups"), KernelColorType.ListTitle);
                 foreach (string group in user.Groups)
                     TextWriters.Write($"  - {group}", true, KernelColorType.ListValue);
             }

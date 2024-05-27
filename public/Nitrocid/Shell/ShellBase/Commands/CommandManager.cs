@@ -17,6 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+extern alias TextifyDep;
+
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
@@ -26,7 +28,7 @@ using Nitrocid.Modifications;
 using Nitrocid.Shell.ShellBase.Shells;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
+using TextifyDep::System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Textify.General;
 

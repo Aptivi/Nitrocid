@@ -149,12 +149,6 @@
                 "Description": "Enables delaying upon shutting down the kernel."
             },
             {
-                "Name": "Enable simple color blindness",
-                "Type": "SBoolean",
-                "Variable": "ColorBlindSimple",
-                "Description": "If you want the simulation of color blindness to be simple, enable this. Please note that the formula used in this simulation method may not be accurate."
-            },
-            {
                 "Name": "Console supports true color",
                 "Type": "SBoolean",
                 "Variable": "ConsoleSupportsTrueColor",

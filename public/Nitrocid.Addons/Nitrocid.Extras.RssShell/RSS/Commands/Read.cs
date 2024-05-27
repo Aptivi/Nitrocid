@@ -41,7 +41,7 @@ namespace Nitrocid.Extras.RssShell.RSS.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             int ArticleIndex = (int)Math.Round(Convert.ToDouble(parameters.ArgumentsList[0]) - 1d);
-            int articleCount = RSSShellCommon.RSSFeedInstance.FeedArticles.Count;
+            int articleCount = RSSShellCommon.RSSFeedInstance.FeedArticles.Length;
             var article = RSSShellCommon.RSSFeedInstance.FeedArticles[ArticleIndex];
             if (ArticleIndex > articleCount - 1)
             {

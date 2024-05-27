@@ -310,8 +310,8 @@ namespace Nitrocid.Files.Editors.TextEdit
                             endLineIndex = source.Length;
                         int vtSeqLength = 0;
                         var vtSeqMatches = VtSequenceTools.MatchVTSequences(line);
-                        foreach (var match in vtSeqMatches)
-                            vtSeqLength += match.Sum((mat) => mat.Length);
+                        foreach (var (type, matches) in vtSeqMatches)
+                            vtSeqLength += matches.Sum((mat) => mat.Length);
                         source = source[startLineIndex..endLineIndex];
                         line = line[startLineIndex..(endLineIndex + vtSeqLength)];
                     }

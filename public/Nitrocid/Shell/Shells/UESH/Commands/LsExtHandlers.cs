@@ -39,7 +39,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             var handlers = ExtensionHandlerTools.GetExtensionHandlers();
             foreach (var handler in handlers)
             {
-                TextFancyWriters.WriteSeparator(Translate.DoTranslation("Extension handler information for") + $" {handler.Extension}", true, KernelColorType.ListTitle);
+                TextFancyWriters.WriteSeparator(Translate.DoTranslation("Extension handler information for") + $" {handler.Extension}", KernelColorType.ListTitle);
                 TextWriters.Write("- " + Translate.DoTranslation("Handler implementer") + $": ", false, KernelColorType.ListEntry);
                 TextWriters.Write(handler.Implementer, true, KernelColorType.ListValue);
                 TextWriters.Write("- " + Translate.DoTranslation("Handler metadata") + $": ", false, KernelColorType.ListEntry);

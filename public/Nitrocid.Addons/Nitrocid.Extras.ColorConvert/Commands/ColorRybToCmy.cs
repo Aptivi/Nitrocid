@@ -57,7 +57,7 @@ namespace Nitrocid.Extras.ColorConvert.Commands
 
             // Do the job
             var ryb = new Color($"ryb:{R};{Y};{B}");
-            var cmy = CmyConversionTools.ConvertFrom(ryb.RGB);
+            var cmy = ConversionTools.ToCmy(ryb.RGB);
             TextWriters.Write("- " + Translate.DoTranslation("Cyan level:") + " ", false, KernelColorType.ListEntry);
             TextWriters.Write($"{cmy.CWhole} [{cmy.C:0.00}]", true, KernelColorType.ListValue);
             TextWriters.Write("- " + Translate.DoTranslation("Magenta level:") + " ", false, KernelColorType.ListEntry);

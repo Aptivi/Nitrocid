@@ -22,6 +22,7 @@ using Terminaux.Inputs.Presentation;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System;
+using Terminaux.Inputs.Presentation.Inputs;
 
 namespace Nitrocid.Tests.Misc.Presentation
 {
@@ -44,17 +45,12 @@ namespace Nitrocid.Tests.Misc.Presentation
                 [
                     new TextElement()
                     {
-                        Arguments = ["Hello, world!"],
-                        InvokeAction = () => Console.WriteLine("Invoke action")
+                        Arguments = ["Hello, world!"]
                     }
                 ]),
-                new PresentationPage("Page two",
+                new PresentationPage("Page two", [],
                 [
-                    new InputElement()
-                    {
-                        Arguments = ["Hello, world!"],
-                        InvokeActionInput = (obj) => Console.WriteLine(obj.ToString())
-                    }
+                    new InputInfo("Input test", "The description of the input test", new TextInputMethod(){ Question = "Hello, world!" })
                 ]),
             ]);
 
@@ -75,26 +71,34 @@ namespace Nitrocid.Tests.Misc.Presentation
             pageOne.Elements.ShouldNotBeNull();
             pageTwo.Elements.ShouldNotBeNull();
             pageOne.Elements.ShouldNotBeEmpty();
-            pageTwo.Elements.ShouldNotBeEmpty();
+            pageTwo.Elements.ShouldBeEmpty();
+            pageOne.Inputs.ShouldNotBeNull();
+            pageTwo.Inputs.ShouldNotBeNull();
+            pageOne.Inputs.ShouldBeEmpty();
+            pageTwo.Inputs.ShouldNotBeEmpty();
 
             // Individual elements
             var elementForPageOne = pageOne.Elements[0];
-            var elementForPageTwo = pageTwo.Elements[0];
 
             // Checking their correctness...
             elementForPageOne.ShouldNotBeNull();
-            elementForPageTwo.ShouldNotBeNull();
-            elementForPageOne.IsInput.ShouldBeFalse();
-            elementForPageTwo.IsInput.ShouldBeTrue();
             elementForPageOne.Arguments.ShouldNotBeNull();
-            elementForPageTwo.Arguments.ShouldNotBeNull();
             elementForPageOne.Arguments.ShouldNotBeEmpty();
-            elementForPageTwo.Arguments.ShouldNotBeEmpty();
-            elementForPageOne.InvokeAction.ShouldNotBeNull();
-            elementForPageTwo.InvokeActionInput.ShouldNotBeNull();
 
-            // Verification...
-            PresentationTools.PresentationContainsInput(presentation).ShouldBeTrue();
+            // Individual inputs
+            var inputForPageTwo = pageTwo.Inputs[0];
+
+            // Checking their correctness...
+            inputForPageTwo.ShouldNotBeNull();
+            inputForPageTwo.InputName.ShouldNotBeNullOrEmpty();
+            inputForPageTwo.InputName.ShouldBe("Input test");
+            inputForPageTwo.InputDescription.ShouldNotBeNullOrEmpty();
+            inputForPageTwo.InputDescription.ShouldBe("The description of the input test");
+            inputForPageTwo.InputMethod.ShouldNotBeNull();
+            inputForPageTwo.InputMethod.ShouldBeOfType<BaseInputMethod<string>>();
+            inputForPageTwo.InputMethod.ShouldBeOfType<TextInputMethod>();
+            inputForPageTwo.InputMethod.Question.ShouldNotBeNullOrEmpty();
+            inputForPageTwo.InputMethod.Question.ShouldBe("Hello, world!");
         }
 
     }

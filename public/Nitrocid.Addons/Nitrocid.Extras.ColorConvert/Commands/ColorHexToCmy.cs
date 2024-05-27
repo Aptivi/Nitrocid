@@ -41,7 +41,7 @@ namespace Nitrocid.Extras.ColorConvert.Commands
 
             // Do the job
             Color color = new(Hex);
-            var cmy = CmyConversionTools.ConvertFrom(color.RGB);
+            var cmy = ConversionTools.ToCmy(color.RGB);
             TextWriters.Write("- " + Translate.DoTranslation("Cyan level:") + " ", false, KernelColorType.ListEntry);
             TextWriters.Write($"{cmy.CWhole} [{cmy.C:0.00}]", true, KernelColorType.ListValue);
             TextWriters.Write("- " + Translate.DoTranslation("Magenta level:") + " ", false, KernelColorType.ListEntry);

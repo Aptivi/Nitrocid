@@ -31,7 +31,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
         public override void Run(params string[] args)
         {
             string rendered = args.Length > 0 ? args[0] : "Hi, {0}!";
-            TextFancyWriters.WriteSeparator(rendered, true, KernelColorType.Success, "Nitrocid KS");
+            TextFancyWriters.WriteSeparator(rendered, KernelColorType.Success, "Nitrocid KS");
         }
     }
 }

@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nettify.Radio;
 using Nitrocid.Shell.ShellBase.Commands;
 using Terminaux.Writer.FancyWriters;
 using Nitrocid.Shell.ShellBase.Switches;
@@ -44,6 +43,10 @@ namespace Nitrocid.Extras.InternetRadioInfo.Commands
                 return 25;
             }
 
+            // Wait until BassBoom 0.1.0 is out
+            TextWriters.Write("BassBoom 0.1.0 replaces Nettify's implementation. Wait...", false, KernelColorType.Error);
+
+#if false
             // Now, get the server info
             var internetFm = new ShoutcastServer(internetFmUrl, internetFmPortInt, https);
             internetFm.Refresh();
@@ -78,6 +81,7 @@ namespace Nitrocid.Extras.InternetRadioInfo.Commands
                 TextWriters.Write(Translate.DoTranslation("Uptime") + ": ", false, KernelColorType.ListEntry);
                 TextWriters.Write($"{stream.StreamUptimeSpan}", true, KernelColorType.ListValue);
             }
+#endif
 
             return 0;
         }

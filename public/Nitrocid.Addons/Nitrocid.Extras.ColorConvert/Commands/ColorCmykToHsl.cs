@@ -62,7 +62,7 @@ namespace Nitrocid.Extras.ColorConvert.Commands
 
             // Do the job
             var rgb = new Color($"cmyk:{C};{M};{Y};{K}");
-            var hsl = HslConversionTools.ConvertFrom(rgb.RGB);
+            var hsl = ConversionTools.ToHsl(rgb.RGB);
             TextWriters.Write("- " + Translate.DoTranslation("Hue:") + " ", false, KernelColorType.ListEntry);
             TextWriters.Write($"{hsl.HueWhole} [{hsl.Hue:0.00}]", true, KernelColorType.ListValue);
             TextWriters.Write("- " + Translate.DoTranslation("Saturation:") + " ", false, KernelColorType.ListEntry);

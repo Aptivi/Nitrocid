@@ -41,7 +41,7 @@ namespace Nitrocid.Extras.ColorConvert.Commands
 
             // Do the job
             Color color = new(Hex);
-            var ryb = RybConversionTools.ConvertFrom(color.RGB);
+            var ryb = ConversionTools.ToRyb(color.RGB);
             TextWriters.Write("- " + Translate.DoTranslation("Red color level:") + " ", false, KernelColorType.ListEntry);
             TextWriters.Write($"{ryb.R}", true, KernelColorType.ListValue);
             TextWriters.Write("- " + Translate.DoTranslation("Yellow color level:") + " ", false, KernelColorType.ListEntry);

@@ -17,7 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System.Diagnostics.CodeAnalysis;
+extern alias TextifyDep;
+
+using TextifyDep::System.Diagnostics.CodeAnalysis;
 using System.Text.RegularExpressions;
 
 namespace Nitrocid.Drivers.Regexp

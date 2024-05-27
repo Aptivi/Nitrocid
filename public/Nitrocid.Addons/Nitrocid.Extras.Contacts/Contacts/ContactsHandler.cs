@@ -24,6 +24,7 @@ using Nitrocid.Languages;
 using System;
 using System.Text;
 using VisualCard;
+using VisualCard.Parts.Implementations;
 
 namespace Nitrocid.Extras.Contacts.Contacts
 {
@@ -57,13 +58,10 @@ namespace Nitrocid.Extras.Contacts.Contacts
             try
             {
                 var builder = new StringBuilder();
-                var parsers = CardTools.GetCardParsers(path);
-                builder.AppendLine($"{parsers.Count} {Translate.DoTranslation("contacts found")}");
-                foreach (var parser in parsers)
-                {
-                    var card = parser.Parse();
-                    builder.AppendLine($"  - {card.ContactFullName}");
-                }
+                var cards = CardTools.GetCards(path);
+                builder.AppendLine($"{cards.Length} {Translate.DoTranslation("contacts found")}");
+                foreach (var card in cards)
+                    builder.AppendLine($"  - {card.GetPartsArray<FullNameInfo>()[0].FullName}");
                 return builder.ToString();
             }
             catch (Exception ex)

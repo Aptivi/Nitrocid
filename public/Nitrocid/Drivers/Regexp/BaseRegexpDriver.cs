@@ -17,12 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+extern alias TextifyDep;
+
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
-using System.Diagnostics.CodeAnalysis;
 using System.Runtime.Serialization;
 using System.Text.RegularExpressions;
 using Textify.General;
+using TextifyDep::System.Diagnostics.CodeAnalysis;
 
 namespace Nitrocid.Drivers.Regexp
 {

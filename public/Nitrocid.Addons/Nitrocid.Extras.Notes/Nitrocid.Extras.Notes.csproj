@@ -36,7 +36,7 @@
   <!-- Extras.Notes addon Platform Information End -->
 
   <ItemGroup>
-    <PackageReference Include="FluentFTP" Version="49.0.2" />
+    <PackageReference Include="FluentFTP" Version="50.0.1" />
   </ItemGroup>
 
   <ItemGroup>

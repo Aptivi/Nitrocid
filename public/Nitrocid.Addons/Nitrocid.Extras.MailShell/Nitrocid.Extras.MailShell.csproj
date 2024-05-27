@@ -43,7 +43,7 @@
   <!-- Extras.MailShell addon Platform Information End -->
 
   <ItemGroup>
-    <PackageReference Include="MailKit" Version="4.4.0" />
+    <PackageReference Include="MailKit" Version="4.6.0" />
   </ItemGroup>
 
   <ItemGroup>

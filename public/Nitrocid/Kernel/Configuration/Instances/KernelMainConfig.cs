@@ -21,7 +21,7 @@ using Newtonsoft.Json;
 using System;
 using Terminaux.Colors;
 using Terminaux.Colors.Transformation;
-using Figletize;
+using Textify.Figlet;
 using Nitrocid.Kernel.Configuration.Settings;
 using Nitrocid.Shell.Shells.Text;
 using Nitrocid.Shell.ShellBase.Shells;
@@ -171,14 +171,6 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// Enables delaying upon shutting down the kernel.
         /// </summary>
         public bool DelayOnShutdown { get; set; }
-        /// <summary>
-        /// If you want the simulation of color blindness to be simple, enable this. Please note that the formula used in this simulation method may not be accurate.
-        /// </summary>
-        public bool ColorBlindSimple
-        {
-            get => ColorTools.GlobalSettings.ColorTransformationMethod == TransformationMethod.Vienot1999;
-            set => ColorTools.GlobalSettings.ColorTransformationMethod = value ? TransformationMethod.Vienot1999 : TransformationMethod.Brettel1997;
-        }
         /// <summary>
         /// If you are sure that the console supports true color, or if you want to change your terminal to a terminal that supports true color, change this value.
         /// </summary>

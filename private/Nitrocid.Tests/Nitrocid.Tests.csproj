@@ -1,4 +1,4 @@
-﻿<Project Sdk="MSTest.Sdk/3.3.1">
+﻿<Project Sdk="MSTest.Sdk/3.4.0">
 
   <PropertyGroup>
     <OutputPath>KSTest\</OutputPath>
@@ -61,7 +61,7 @@
 
   <ItemGroup>
     <PackageReference Include="Shouldly" Version="4.2.1" />
-    <PackageReference Include="Terminaux" Version="3.4.1" />
+    <PackageReference Include="Terminaux" Version="4.0.0.2" />
   </ItemGroup>
 
   <ItemGroup>
@@ -89,8 +89,4 @@
     <Delete Files="@(BuildDirs)" />
     <RemoveDir Directories="KSTest\" />
   </Target>
-
-  <ItemGroup>
-    <PackageReference Update="Microsoft.Testing.Extensions.TrxReport" Version="1.2.0" />
-  </ItemGroup>
 </Project>

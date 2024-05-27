@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using EnumMagic;
+using Magico.Enumeration;
 using Nitrocid.Drivers.HardwareProber;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;

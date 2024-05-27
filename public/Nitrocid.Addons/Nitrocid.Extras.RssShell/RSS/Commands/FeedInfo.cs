@@ -44,7 +44,7 @@ namespace Nitrocid.Extras.RssShell.RSS.Commands
             TextWriters.Write("- " + Translate.DoTranslation("Feed type:") + " ", false, KernelColorType.ListEntry);
             TextWriters.Write(RSSShellCommon.RSSFeedInstance.FeedType.ToString(), true, KernelColorType.ListValue);
             TextWriters.Write("- " + Translate.DoTranslation("Number of articles:") + " ", false, KernelColorType.ListEntry);
-            TextWriters.Write(RSSShellCommon.RSSFeedInstance.FeedArticles.Count.ToString(), true, KernelColorType.ListValue);
+            TextWriters.Write(RSSShellCommon.RSSFeedInstance.FeedArticles.Length.ToString(), true, KernelColorType.ListValue);
             return 0;
         }
 

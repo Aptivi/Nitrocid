@@ -56,7 +56,7 @@ namespace Nitrocid.Extras.ColorConvert.Commands
 
             // Do the job
             var rgb = new Color(R, G, B);
-            var yiq = YiqConversionTools.ConvertFrom(rgb.RGB);
+            var yiq = ConversionTools.ToYiq(rgb.RGB);
             TextWriters.Write("- " + Translate.DoTranslation("Luma:") + " ", false, KernelColorType.ListEntry);
             TextWriters.Write($"{yiq.Luma}", true, KernelColorType.ListValue);
             TextWriters.Write("- " + Translate.DoTranslation("In-phase:") + " ", false, KernelColorType.ListEntry);

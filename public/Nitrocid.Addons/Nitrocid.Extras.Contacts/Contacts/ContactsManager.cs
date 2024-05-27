@@ -24,7 +24,6 @@ using System;
 using System.Linq;
 using System.IO;
 using VisualCard.Converters;
-using VisualCard.Parsers;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Files.Folders;
 using Nitrocid.Kernel.Exceptions;
@@ -34,6 +33,7 @@ using Nitrocid.Files.Operations;
 using Nitrocid.Languages;
 using Nitrocid.Drivers.Encryption;
 using Nitrocid.Misc.Text.Probers.Regexp;
+using VisualCard.Parts.Implementations;
 
 namespace Nitrocid.Extras.Contacts.Contacts
 {
@@ -131,7 +131,7 @@ namespace Nitrocid.Extras.Contacts.Contacts
             var parsers =
                 isAndroidContactDb ?
                 AndroidContactsDb.GetContactsFromDb(pathToContactFile) :
-                CardTools.GetCardParsers(pathToContactFile);
+                CardTools.GetCards(pathToContactFile);
             InstallContacts(parsers, saveToPath);
         }
 
@@ -154,68 +154,41 @@ namespace Nitrocid.Extras.Contacts.Contacts
         /// <summary>
         /// Installs the contacts to the manager
         /// </summary>
-        /// <param name="parsers">How many parsers are there?</param>
+        /// <param name="cards">How many cards are there?</param>
         /// <param name="saveToPath">Saves the added contact to a VCF file in <see cref="KernelPathType.Contacts"/></param>
-        internal static void InstallContacts(List<BaseVcardParser> parsers, bool saveToPath = true)
+        internal static void InstallContacts(Card[] cards, bool saveToPath = true)
         {
             try
             {
                 string contactsPath = PathsManagement.GetKernelPath(KernelPathType.Contacts);
-                DebugWriter.WriteDebug(DebugLevel.I, "Got {0} parsers.", parsers.Count);
-
-                // Iterate through the contacts
-                List<Card> addedCards = [];
-                foreach (var parser in parsers)
+                DebugWriter.WriteDebug(DebugLevel.I, "Got {0} cards.", cards.Length);
+                if (cards is null || cards.Length == 0)
                 {
-                    try
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Parser card version: {0}", parser.CardVersion);
-                        DebugWriter.WriteDebug(DebugLevel.D, "Contents:");
-                        DebugWriter.WriteDebugPrivacy(DebugLevel.D, "{0}", [0], parser.CardContent);
-
-                        // Now, parse the card
-                        var card = parser.Parse();
-                        if (!cards.Where((c) => c == card).Any())
-                            cards.Add(card);
-                        addedCards.Add(card);
-                        DebugWriter.WriteDebugPrivacy(DebugLevel.I, "Parser successfully processed contact {0}.", [0], cards[^1].ContactFullName);
-                        DebugWriter.WriteDebug(DebugLevel.I, "Cards: {0}", cards.Count);
-                        DebugWriter.WriteDebug(DebugLevel.I, "Added cards: {0}", addedCards.Count);
-                    }
-                    catch (Exception ex)
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.E, "Failed to parse contacts: {0}", ex.Message);
-                        DebugWriter.WriteDebugStackTrace(ex);
-                    }
+                    DebugWriter.WriteDebug(DebugLevel.E, "There are no added cards. Marking contact file as invalid...");
+                    throw new KernelException(KernelExceptionType.Contacts, Translate.DoTranslation("Either the provided contacts file doesn't have information about any contact or isn't valid."));
                 }
+
+                // Debug.
+                foreach (var vcard in cards)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.I, "VCard version: {0}", vcard.CardVersion);
+                    DebugWriter.WriteDebug(DebugLevel.D, "Contents:");
+                    DebugWriter.WriteDebugPrivacy(DebugLevel.D, "{0}", [0], vcard.ToString());
+                    DebugWriter.WriteDebugPrivacy(DebugLevel.I, "Parser successfully processed contact {0}.", [0], vcard.GetPartsArray<FullNameInfo>()[0].FullName);
+                }
+                DebugWriter.WriteDebug(DebugLevel.I, "Cards: {0}", cards.Length);
 
                 // Save the contacts to the contacts path if possible
                 if (saveToPath)
                 {
-                    for (int i = 0; i < addedCards.Count; i++)
+                    for (int i = 0; i < cards.Length; i++)
                     {
-                        Card card = addedCards[i];
+                        Card card = cards[i];
                         string path = contactsPath + $"/contact-{Encryption.GetEncryptedString(card.SaveToString(), "SHA256")}.vcf";
                         DebugWriter.WriteDebug(DebugLevel.I, "Saving contact to {0}...", path);
                         if (!Checking.FileExists(path))
                             card.SaveTo(path);
                     }
-                }
-
-                // Check the added cards count and the parsers count
-                if (addedCards.Count > 0)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Final added cards: {0}", addedCards.Count);
-                    if (parsers.Count != addedCards.Count)
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.E, "Added cards count {0} doesn't match expected contacts count {1}. Errors in the parser might tell you why.", addedCards.Count, parsers.Count);
-                        throw new KernelException(KernelExceptionType.Contacts, Translate.DoTranslation("Some of the contacts can't be added. Only {0} out of {1} contacts were added."), addedCards.Count, parsers.Count);
-                    }
-                }
-                else
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, "There are no added cards. Marking contact file as invalid...");
-                    throw new KernelException(KernelExceptionType.Contacts, Translate.DoTranslation("Either the provided contacts file doesn't have information about any contact or isn't valid."));
                 }
             }
             catch (Exception ex)
@@ -353,7 +326,7 @@ namespace Nitrocid.Extras.Contacts.Contacts
                 cachedSearchExpression = expression;
 
                 // Get the list of cards satisfying the expression
-                var satisfiedCards = cards.Where((card) => RegexpTools.IsMatch(card.ContactFullName, expression)).ToArray();
+                var satisfiedCards = cards.Where((card) => RegexpTools.IsMatch(card.GetPartsArray<FullNameInfo>()[0].FullName, expression)).ToArray();
 
                 // Return a card if the index is valid
                 if (satisfiedCards.Length > 0)
@@ -398,7 +371,7 @@ namespace Nitrocid.Extras.Contacts.Contacts
                     throw new KernelException(KernelExceptionType.Contacts, Translate.DoTranslation("Regular expression is invalid."));
 
                 // Get the list of cards satisfying the expression
-                var satisfiedCards = cards.Where((card) => RegexpTools.IsMatch(card.ContactFullName, expression)).ToArray();
+                var satisfiedCards = cards.Where((card) => RegexpTools.IsMatch(card.GetPartsArray<FullNameInfo>()[0].FullName, expression)).ToArray();
 
                 // Compare between the cached expression and the given expression
                 if (expression == cachedSearchExpression)

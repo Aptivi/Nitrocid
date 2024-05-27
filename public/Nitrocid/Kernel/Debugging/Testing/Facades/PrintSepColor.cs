@@ -31,7 +31,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
         public override void Run(params string[] args)
         {
             string rendered = args.Length > 0 ? args[0] : "Hello world!";
-            TextFancyWriters.WriteSeparator(rendered, true, KernelColorType.Success);
+            TextFancyWriters.WriteSeparator(rendered, KernelColorType.Success);
         }
     }
 }

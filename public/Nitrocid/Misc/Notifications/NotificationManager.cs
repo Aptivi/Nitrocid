@@ -337,7 +337,7 @@ namespace Nitrocid.Misc.Notifications
                                     printBuffer.Append(TextWriterWhereColor.RenderWhereColorBack(Desc, notifLeftAgnostic, notifDescTop, NotifyDescColor, background));
 
                                     // For indeterminate progresses, flash the box inside the progress bar
-                                    ProgressBarColor.WriteProgress(indeterminate ? 100 * indeterminateStep : NewNotification.Progress, notifLeftAgnostic, notifTipTop, notifLeftAgnostic, 6, NotifyProgressColor, NotifyBorderColor, KernelColorTools.GetColor(KernelColorType.Background), DrawBorderNotification);
+                                    ProgressBarColor.WriteProgress(indeterminate ? 100 * indeterminateStep : NewNotification.Progress, notifLeftAgnostic, notifTipTop, 42, NotifyProgressColor, NotifyBorderColor, KernelColorTools.GetColor(KernelColorType.Background), DrawBorderNotification);
                                     indeterminateStep++;
                                     if (indeterminateStep > 1)
                                         indeterminateStep = 0;
