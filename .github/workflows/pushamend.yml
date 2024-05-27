@@ -20,6 +20,7 @@ jobs:
 
       - name: Install required packages
         run: |
+          sudo rm /etc/apt/sources.list.d/*
           sudo apt autoremove dotnet*
           sudo apt update
           sudo apt install curl locales-all cli-common-dev libunwind8-dev libcurl4-openssl-dev dotnet-sdk-8.0 libjack0 libportaudio2 libopenal1 libsdl2-2.0-0 libpulse0 libaudio2 devscripts debhelper-compat dput build-essential
