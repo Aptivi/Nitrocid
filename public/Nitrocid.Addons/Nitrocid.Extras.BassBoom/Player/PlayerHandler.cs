@@ -36,8 +36,8 @@ namespace Nitrocid.Extras.BassBoom.Player
                 InfoBoxColor.WriteInfoBoxColor(Translate.DoTranslation("Can't open music file '{0}' because it's not found."), KernelColorTools.GetColor(KernelColorType.Error), path);
                 return;
             }
-            if (!PlayerTui.musicFiles.Contains(path))
-                PlayerTui.musicFiles.Add(path);
+            if (!PlayerTui.passedMusicPaths.Contains(path))
+                PlayerTui.passedMusicPaths.Add(path);
             PlayerControls.PopulateMusicFileInfo(path);
             PlayerTui.PlayerLoop();
         }

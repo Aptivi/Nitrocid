@@ -19,12 +19,12 @@
 
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Extras.BassBoom.Player;
-using Nitrocid.Files;
 using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
 using System;
+using System.Linq;
 
 namespace Nitrocid.Extras.BassBoom.Commands
 {
@@ -42,28 +42,27 @@ namespace Nitrocid.Extras.BassBoom.Commands
             try
             {
                 // First, prompt for the music path if no arguments are provided.
+                bool isRadio = parameters.SwitchesList.Contains("-r");
                 if (parameters.ArgumentsList.Length != 0)
                 {
-                    string musicPath = FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]);
+                    string musicPath = parameters.ArgumentsList[0];
 
                     // Check for existence.
-                    if (string.IsNullOrEmpty(musicPath))
-                    {
-                        TextWriterColor.Write(Translate.DoTranslation("Music file not specified."));
-                        return 30;
-                    }
-                    if (!Checking.FileExists(musicPath))
+                    if (string.IsNullOrEmpty(musicPath) || (!isRadio && !Checking.FileExists(musicPath)))
                     {
                         TextWriterColor.Write(Translate.DoTranslation("Music file '{0}' doesn't exist."), musicPath);
                         return 31;
                     }
-                    if (!PlayerTui.musicFiles.Contains(musicPath))
-                        PlayerTui.musicFiles.Add(musicPath);
-                    PlayerControls.PopulateMusicFileInfo(musicPath);
+                    if (!isRadio)
+                        PlayerTui.passedMusicPaths.Add(musicPath);
                 }
 
                 // Now, open an interactive TUI
-                PlayerTui.PlayerLoop();
+                Common.exiting = false;
+                if (isRadio)
+                    Radio.RadioLoop();
+                else
+                    PlayerTui.PlayerLoop();
             }
             catch (Exception ex)
             {

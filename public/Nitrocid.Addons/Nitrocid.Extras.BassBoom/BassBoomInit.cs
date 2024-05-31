@@ -55,11 +55,17 @@ using Nitrocid.Misc.Screensaver;
 using Nitrocid.Files.Paths;
 using Nitrocid.Modifications;
 using System.Linq;
+using Terminaux.Colors;
+using Terminaux.Colors.Data;
+using Nitrocid.Shell.ShellBase.Switches;
 
 namespace Nitrocid.Extras.BassBoom
 {
     internal class BassBoomInit : IAddon
     {
+        internal static Version mpgVer;
+        internal static Version outVer;
+        internal static Color white = new(ConsoleColors.White);
         private readonly ExtensionHandler[] handlers = [
             new(".mp3", "Mp3BassBoom", PlayerHandler.Handle, PlayerHandler.InfoHandle),
             new(".mp2", "Mp3BassBoom", PlayerHandler.Handle, PlayerHandler.InfoHandle),
@@ -80,10 +86,13 @@ namespace Nitrocid.Extras.BassBoom
 
             new CommandInfo("musicplayer", /* Localizable */ "Opens an interactive music player",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(false, "musicFile"),
-                    })
+                    ],
+                    [
+                        new SwitchInfo("r", /* Localizable */ "Opens the radio station player instead")
+                    ])
                 ], new MusicPlayerCommand()),
 
             new CommandInfo("playlyric", /* Localizable */ "Plays a lyric file",
@@ -135,6 +144,10 @@ namespace Nitrocid.Extras.BassBoom
             if (!InitBasolia.BasoliaInitialized)
                 InitBasolia.Init(PathsManagement.AddonsPath + "/Extras.BassBoom");
             ExtensionHandlerTools.extensionHandlers.AddRange(handlers);
+
+            // Initialize versions
+            mpgVer = InitBasolia.MpgLibVersion;
+            outVer = InitBasolia.OutLibVersion;
         }
 
         void IAddon.StopAddon()

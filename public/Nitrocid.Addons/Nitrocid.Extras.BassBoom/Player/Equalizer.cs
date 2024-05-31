@@ -1,28 +1,7 @@
 ﻿//
-// Nitrocid KS  Copyright (C) 2018-2024  Aptivi
-//
-// This file is part of Nitrocid KS
-//
-// Nitrocid KS is free software: you can redistribute it and/or modify
-// it under the terms of the GNU General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or
-// (at your option) any later version.
-//
-// Nitrocid KS is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY, without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-//
-// You should have received a copy of the GNU General Public License
-// along with this program.  If not, see <https://www.gnu.org/licenses/>.
-//
-
-// This file was taken from BassBoom. License notes below:
-
-//
 // BassBoom  Copyright (C) 2023  Aptivi
 //
-// This file is part of Nitrocid KS
+// This file is part of BassBoom
 //
 // BassBoom is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -47,9 +26,11 @@ using Terminaux.Colors.Data;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.FancyWriters;
-using Terminaux.Sequences.Builder.Types;
-using Terminaux.Base.Extensions;
 using Terminaux.Reader;
+using Terminaux.Inputs;
+using System.Collections.Generic;
+using Terminaux.Inputs.Styles.Selection;
+using Terminaux.Base.Extensions;
 using Nitrocid.Languages;
 
 namespace Nitrocid.Extras.BassBoom.Player
@@ -64,9 +45,8 @@ namespace Nitrocid.Extras.BassBoom.Player
             // First, initialize a screen part to handle drawing
             ScreenPart screenPart = new();
             screenPart.AddDynamicText(HandleDraw);
+            screen.RemoveBufferedParts();
             screen.AddBufferedPart("BassBoom Player - Equalizer", screenPart);
-            if (screen.CheckBufferedPart("BassBoom Player"))
-                screen.RemoveBufferedPart("BassBoom Player");
 
             // Then, clear the screen to draw our TUI
             while (!exiting)
@@ -96,8 +76,7 @@ namespace Nitrocid.Extras.BassBoom.Player
 
             // Restore state
             exiting = false;
-            if (screen.CheckBufferedPart("BassBoom Player - Equalizer"))
-                screen.RemoveBufferedPart("BassBoom Player - Equalizer");
+            screen.RemoveBufferedParts();
             ColorTools.LoadBack();
         }
 
@@ -153,53 +132,50 @@ namespace Nitrocid.Extras.BassBoom.Player
                 $" - [Q] {Translate.DoTranslation("Exit")}";
             drawn.Append(CenteredTextColor.RenderCentered(ConsoleWrapper.WindowHeight - 2, keystrokes));
 
-            // Print the separator
-            string separator = new('=', ConsoleWrapper.WindowWidth);
+            // Print the separator and the music file info
+            string separator = new('═', ConsoleWrapper.WindowWidth);
             drawn.Append(CenteredTextColor.RenderCentered(ConsoleWrapper.WindowHeight - 4, separator));
 
             // Write powered by...
-            drawn.Append(TextWriterWhereColor.RenderWhere($"[ {Translate.DoTranslation("Powered by BassBoom")} ]", 2, ConsoleWrapper.WindowHeight - 4));
+            drawn.Append(TextWriterWhereColor.RenderWhere($"╣ {Translate.DoTranslation("Powered by BassBoom")} ╠", 2, ConsoleWrapper.WindowHeight - 4));
 
             // Write current song
-            if (PlayerTui.musicFiles.Count > 0)
-                drawn.Append(PlayerControls.RenderSongName(PlayerTui.musicFiles[PlayerTui.currentSong - 1]));
+            if (Common.cachedInfos.Count > 0)
+            {
+                if (Common.isRadioMode)
+                    drawn.Append(RadioControls.RenderStationName());
+                else
+                    drawn.Append(PlayerControls.RenderSongName(Common.CurrentCachedInfo.MusicPath));
+            }
+            else
+                drawn.Append(
+                    TextWriterWhereColor.RenderWhere(ConsoleClearing.GetClearLineToRightSequence(), 0, 1) +
+                    CenteredTextColor.RenderCentered(1, Translate.DoTranslation("Not playing. Music player is idle."), ConsoleColors.White)
+                );
 
             // Now, print the list of bands and their values.
-            int startPos = 3;
-            int endPos = ConsoleWrapper.WindowHeight - 5;
-            int songsPerPage = endPos - startPos;
-            int currentPage = currentBandIdx / songsPerPage;
-            int startIndex = songsPerPage * currentPage;
-            var eqs = new StringBuilder();
-            for (int i = 0; i <= songsPerPage - 1; i++)
+            var choices = new List<InputChoiceInfo>();
+            int startPos = 4;
+            int endPos = ConsoleWrapper.WindowHeight - 6;
+            int bandsPerPage = endPos - startPos;
+            for (int i = 0; i < 32; i++)
             {
-                // Populate the first pane
-                string finalEntry = "";
-                int finalIndex = i + startIndex;
-                bool selected = finalIndex == currentBandIdx;
-                if (finalIndex <= 31)
-                {
-                    // Here, it's getting uglier as we don't have ElementAt() in IEnumerable, too!
-                    double val = EqualizerControls.GetEqualizer(finalIndex);
-                    string eqKey = $"Equalizer Band #{finalIndex + 1}";
-                    string renderedVal = $"[{val:0.00}] {(selected ? "<<<" : "   ")}";
-                    string dataObject = $"  {(selected ? ">>>" : "   ")} {eqKey}".Truncate(ConsoleWrapper.WindowWidth - renderedVal.Length - 5);
-                    string spaces = new(' ', ConsoleWrapper.WindowWidth - 2 - renderedVal.Length - dataObject.Length);
-                    finalEntry = dataObject + spaces + renderedVal;
-                }
+                // Get the equalizer value for this band
+                double val = EqualizerControls.GetEqualizer(i);
+                string eqType =
+                    i == 0 ? Translate.DoTranslation("Bass") :
+                    i == 1 ? Translate.DoTranslation("Upper Mid") :
+                    i > 1 ? Translate.DoTranslation("Treble") :
+                    Translate.DoTranslation("Unknown band type");
 
-                // Render an entry
-                var finalForeColor = selected ? new Color(ConsoleColors.Green) : new Color(ConsoleColors.Silver);
-                int top = startPos + finalIndex - startIndex;
-                eqs.Append(
-                    $"{CsiSequences.GenerateCsiCursorPosition(1, top + 1)}" +
-                    $"{finalForeColor.VTSequenceForeground}" +
-                    finalEntry +
-                    new string(' ', ConsoleWrapper.WindowWidth - finalEntry.Length) +
-                    $"{ColorTools.CurrentForegroundColor.VTSequenceForeground}"
-                );
+                // Now, render it
+                string bandData = $"[{val:0.00}] {Translate.DoTranslation("Equalizer Band")} #{i + 1} - {eqType}";
+                choices.Add(new($"{i + 1}", bandData));
             }
-            drawn.Append(eqs);
+            drawn.Append(
+                BoxFrameColor.RenderBoxFrame(2, 3, ConsoleWrapper.WindowWidth - 6, bandsPerPage) +
+                SelectionInputTools.RenderSelections([.. choices], 3, 4, currentBandIdx, bandsPerPage, ConsoleWrapper.WindowWidth - 6, selectedForegroundColor: new Color(ConsoleColors.Green), foregroundColor: new Color(ConsoleColors.Silver))
+            );
             return drawn.ToString();
         }
     }
