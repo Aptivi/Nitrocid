@@ -3325,5 +3325,49 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [ZebraShift] The maximum color level (255 colors or 16 colors)
         /// </summary>
         public int ZebraShiftMaximumColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [AnalogClock] Enable truecolor support. Has a higher priority than 255 color support.
+        /// </summary>
+        public bool AnalogClockTrueColor { get; set; } = true;
+        /// <summary>
+        /// [AnalogClock] How many milliseconds to wait before making the next write?
+        /// </summary>
+        public int AnalogClockDelay { get; set; } = 1000;
+        /// <summary>
+        /// [AnalogClock] Shows the seconds hand.
+        /// </summary>
+        public bool AnalogClockShowSecondsHand { get; set; } = true;
+        /// <summary>
+        /// [AnalogClock] The minimum red color level (true color)
+        /// </summary>
+        public int AnalogClockMinimumRedColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [AnalogClock] The minimum green color level (true color)
+        /// </summary>
+        public int AnalogClockMinimumGreenColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [AnalogClock] The minimum blue color level (true color)
+        /// </summary>
+        public int AnalogClockMinimumBlueColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [AnalogClock] The minimum color level (255 colors or 16 colors)
+        /// </summary>
+        public int AnalogClockMinimumColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [AnalogClock] The maximum red color level (true color)
+        /// </summary>
+        public int AnalogClockMaximumRedColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [AnalogClock] The maximum green color level (true color)
+        /// </summary>
+        public int AnalogClockMaximumGreenColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [AnalogClock] The maximum blue color level (true color)
+        /// </summary>
+        public int AnalogClockMaximumBlueColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [AnalogClock] The maximum color level (255 colors or 16 colors)
+        /// </summary>
+        public int AnalogClockMaximumColorLevel { get; set; } = 255;
     }
 }
