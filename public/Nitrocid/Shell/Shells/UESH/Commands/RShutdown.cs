@@ -24,17 +24,20 @@ using System;
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
     /// <summary>
-    /// Shuts down your computer
+    /// Shuts down a remote computer
     /// </summary>
     /// <remarks>
-    /// If you're finished with everything and don't want to do something else on your computer, instead of leaving it on to consume energy and pay high energy bills, you have to use this command to shutdown your computer and conserve power.
+    /// If you want to shut down a remote Nitrocid instance hosted by another computer, you can do so using this command.
     /// </remarks>
-    class ShutdownCommand : BaseCommand, ICommand
+    class RShutdownCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            PowerManager.PowerManage(PowerMode.Shutdown);
+            if (parameters.ArgumentsList.Length == 1)
+                PowerManager.PowerManage(PowerMode.RemoteShutdown, parameters.ArgumentsList[0]);
+            else
+                PowerManager.PowerManage(PowerMode.RemoteShutdown, parameters.ArgumentsList[0], Convert.ToInt32(parameters.ArgumentsList[1]));
             return 0;
         }
 

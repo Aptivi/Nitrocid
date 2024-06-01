@@ -1079,13 +1079,6 @@ namespace Nitrocid.Shell.Shells.UESH
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(false, "ip"),
-                        new CommandArgumentPart(false, "port", new CommandArgumentPartOptions()
-                        {
-                            IsNumeric = true
-                        }),
-                    ],
-                    [
                         new SwitchInfo("safe", /* Localizable */ "Restarts the kernel to safe mode.", new()
                         {
                             AcceptsValues = false,
@@ -1162,6 +1155,47 @@ namespace Nitrocid.Shell.Shells.UESH
                         new CommandArgumentPart(true, "GroupName"),
                     })
                 ], new RmUserFromGroupCommand(), CommandFlags.Strict),
+
+            new CommandInfo("rreboot", /* Localizable */ "Restarts a remote kernel instance",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "ip"),
+                        new CommandArgumentPart(false, "port", new CommandArgumentPartOptions()
+                        {
+                            IsNumeric = true
+                        }),
+                    ],
+                    [
+                        new SwitchInfo("safe", /* Localizable */ "Restarts the kernel to safe mode.", new()
+                        {
+                            AcceptsValues = false,
+                            ConflictsWith = ["maintenance", "debug"]
+                        }),
+                        new SwitchInfo("maintenance", /* Localizable */ "Restarts the kernel to maintenance mode.", new()
+                        {
+                            AcceptsValues = false,
+                            ConflictsWith = ["safe", "debug"]
+                        }),
+                        new SwitchInfo("debug", /* Localizable */ "Restarts the kernel to debug mode.", new()
+                        {
+                            AcceptsValues = false,
+                            ConflictsWith = ["safe", "maintenance"]
+                        }),
+                    ])
+                ], new RebootCommand()),
+
+            new CommandInfo("rshutdown", /* Localizable */ "The kernel in the remote instance will be shut down",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "ip"),
+                        new CommandArgumentPart(false, "port", new CommandArgumentPartOptions()
+                        {
+                            IsNumeric = true
+                        }),
+                    })
+                ], new RShutdownCommand()),
 
             new CommandInfo("saveconfig", /* Localizable */ "Saves the current kernel configuration to its file",
                 [
@@ -1331,14 +1365,7 @@ namespace Nitrocid.Shell.Shells.UESH
 
             new CommandInfo("shutdown", /* Localizable */ "The kernel will be shut down",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
-                        new CommandArgumentPart(false, "ip"),
-                        new CommandArgumentPart(false, "port", new CommandArgumentPartOptions()
-                        {
-                            IsNumeric = true
-                        }),
-                    })
+                    new CommandArgumentInfo()
                 ], new ShutdownCommand()),
 
             new CommandInfo("sleep", /* Localizable */ "Sleeps for specified milliseconds",
