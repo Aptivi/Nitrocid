@@ -258,8 +258,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            int ToRad(int degrees) =>
-                (int)(degrees * Math.PI / 180d);
+            double ToRad(int degrees) =>
+                degrees * (Math.PI / 180d);
 
             // Get the date and time
             string renderedDate = TimeDateRenderers.RenderDate();
@@ -279,9 +279,10 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             // Now, draw the bezel
             int bezelTop = 2;
             int bezelHeight = ConsoleWrapper.WindowHeight - bezelTop * 2 - 3;
+            int bezelWidth = bezelHeight * 2;
             int bezelLeft = ConsoleWrapper.WindowWidth / 2 - bezelHeight;
-            (int x, int y) radius = (bezelLeft + bezelHeight / 2, bezelTop + bezelHeight / 2);
-            int bezelRadius = radius.x - bezelLeft;
+            (int x, int y) radius = (bezelLeft + bezelWidth / 2, bezelTop + bezelHeight / 2);
+            int bezelRadius = radius.y - bezelTop;
             var bezel = new Circle(bezelHeight, bezelLeft, bezelTop, false, bezelColor);
             TextWriterRaw.WriteRaw(bezel.Render());
 
@@ -290,10 +291,10 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             int minutesPos = TimeDateTools.KernelDateTime.Minute;
             int hoursRadius = (int)(bezelRadius / 3d);
             int minutesRadius = (int)(bezelRadius * 2 / 3d);
-            int hoursAngle = (int)(360 * (hoursPos / 12d));
-            int minutesAngle = (int)(360 * (minutesPos / 60d));
-            (int x, int y) hours = ((int)(radius.x + hoursRadius * Math.Cos(ToRad(hoursAngle))), (int)(radius.y + hoursRadius * Math.Cos(ToRad(hoursAngle))));
-            (int x, int y) minutes = ((int)(radius.x + minutesRadius * Math.Cos(ToRad(minutesAngle))), (int)(radius.y + minutesRadius * Math.Cos(ToRad(minutesAngle))));
+            int hoursAngle = (int)(360 * (hoursPos / 12d)) - 90;
+            int minutesAngle = (int)(360 * (minutesPos / 60d)) - 90;
+            (int x, int y) hours = ((int)(radius.x + hoursRadius * Math.Cos(ToRad(hoursAngle))), (int)(radius.y + hoursRadius * Math.Sin(ToRad(hoursAngle))));
+            (int x, int y) minutes = ((int)(radius.x + minutesRadius * Math.Cos(ToRad(minutesAngle))), (int)(radius.y + minutesRadius * Math.Sin(ToRad(minutesAngle))));
             TextWriterRaw.WriteRaw(GraphicsTools.RenderLine(radius, hours, handsColor));
             TextWriterRaw.WriteRaw(GraphicsTools.RenderLine(radius, minutes, handsColor));
 
@@ -302,8 +303,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             {
                 int secondsPos = TimeDateTools.KernelDateTime.Second;
                 int secondsRadius = (int)(bezelRadius * 2.5 / 3d);
-                int secondsAngle = (int)(360 * (secondsPos / 60d));
-                (int x, int y) seconds = ((int)(radius.x + secondsRadius * Math.Cos(ToRad(secondsAngle))), (int)(radius.y + secondsRadius * Math.Cos(ToRad(secondsAngle))));
+                int secondsAngle = (int)(360 * (secondsPos / 60d)) - 90;
+                (int x, int y) seconds = ((int)(radius.x + secondsRadius * Math.Cos(ToRad(secondsAngle))), (int)(radius.y + secondsRadius * Math.Sin(ToRad(secondsAngle))));
                 TextWriterRaw.WriteRaw(GraphicsTools.RenderLine(radius, seconds, secondsHandColor));
             }
 
