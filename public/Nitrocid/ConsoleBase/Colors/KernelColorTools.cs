@@ -43,7 +43,7 @@ namespace Nitrocid.ConsoleBase.Colors
 
         // Variables to allow/disallow background/foreground color
         internal static bool allowForeground = true;
-        internal static bool allowBackground = true;
+        internal static bool allowBackground = false;
 
         /// <summary>
         /// Enables color blindness

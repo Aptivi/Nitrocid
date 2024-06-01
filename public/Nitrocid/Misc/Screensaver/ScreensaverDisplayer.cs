@@ -23,6 +23,7 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Kernel.Events;
 using Terminaux.Base;
+using Terminaux.Colors;
 
 namespace Nitrocid.Misc.Screensaver
 {
@@ -43,11 +44,13 @@ namespace Nitrocid.Misc.Screensaver
         internal static void DisplayScreensaver(BaseScreensaver Screensaver)
         {
             bool initialVisible = ConsoleWrapper.CursorVisible;
+            bool initialBack = ColorTools.AllowBackground;
             try
             {
                 // Preparations
                 OutOfSaver = false;
                 displayingSaver = Screensaver;
+                ColorTools.AllowBackground = true;
                 Screensaver.ScreensaverPreparation();
 
                 // Execute the actual screensaver logic
@@ -70,6 +73,8 @@ namespace Nitrocid.Misc.Screensaver
             {
                 OutOfSaver = true;
                 Screensaver.ScreensaverOutro();
+                ColorTools.AllowBackground = initialBack;
+                ColorTools.LoadBack();
             }
         }
 
