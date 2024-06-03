@@ -241,6 +241,10 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         private Color handsColor = Color.Empty;
         private Color secondsHandColor = Color.Empty;
         private string lastRendered = "";
+        private (int x, int y) lastCenter = (0, 0);
+        private (int x, int y) lastHours = (0, 0);
+        private (int x, int y) lastMinutes = (0, 0);
+        private (int x, int y) lastSeconds = (0, 0);
 
         /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "AnalogClock";
@@ -252,6 +256,10 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             bezelColor = ChangeAnalogClockColor();
             handsColor = ChangeAnalogClockColor();
             secondsHandColor = ChangeAnalogClockColor();
+            lastCenter = (0, 0);
+            lastHours = (0, 0);
+            lastMinutes = (0, 0);
+            lastSeconds = (0, 0);
             base.ScreensaverPreparation();
         }
 
@@ -272,6 +280,12 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             int oldPosX = ConsoleWrapper.WindowWidth / 2 - lastRendered.Length / 2;
             TextWriterWhereColor.WriteWhereColor(new string(' ', ConsoleChar.EstimateCellWidth(lastRendered)), oldPosX, posY, timeColor);
 
+            // Clear old bezels
+            TextWriterRaw.WriteRaw(GraphicsTools.RenderLine(lastCenter, lastHours, ColorTools.CurrentBackgroundColor));
+            TextWriterRaw.WriteRaw(GraphicsTools.RenderLine(lastCenter, lastMinutes, ColorTools.CurrentBackgroundColor));
+            if (AnalogClockSettings.AnalogClockShowSecondsHand)
+                TextWriterRaw.WriteRaw(GraphicsTools.RenderLine(lastCenter, lastSeconds, ColorTools.CurrentBackgroundColor));
+
             // Write date and time
             TextWriterWhereColor.WriteWhereColor(rendered, posX, posY, timeColor);
             lastRendered = rendered;
@@ -285,6 +299,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             int bezelRadius = radius.y - bezelTop;
             var bezel = new Circle(bezelHeight, bezelLeft, bezelTop, false, bezelColor);
             TextWriterRaw.WriteRaw(bezel.Render());
+            lastCenter = radius;
 
             // Draw the hands (hours and minutes)
             int hoursPos = 12 - TimeDateTools.KernelDateTime.Hour % 12;
@@ -295,8 +310,12 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             int minutesAngle = (int)(360 * (minutesPos / 60d)) - 90;
             (int x, int y) hours = ((int)(radius.x + hoursRadius * Math.Cos(ToRad(hoursAngle))), (int)(radius.y + hoursRadius * Math.Sin(ToRad(hoursAngle))));
             (int x, int y) minutes = ((int)(radius.x + minutesRadius * Math.Cos(ToRad(minutesAngle))), (int)(radius.y + minutesRadius * Math.Sin(ToRad(minutesAngle))));
+            hours.x += (hours.x - radius.x);
+            minutes.x += (minutes.x - radius.x);
             TextWriterRaw.WriteRaw(GraphicsTools.RenderLine(radius, hours, handsColor));
             TextWriterRaw.WriteRaw(GraphicsTools.RenderLine(radius, minutes, handsColor));
+            lastHours = hours;
+            lastMinutes = minutes;
 
             // Draw the seconds hand (optional)
             if (AnalogClockSettings.AnalogClockShowSecondsHand)
@@ -305,7 +324,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 int secondsRadius = (int)(bezelRadius * 2.5 / 3d);
                 int secondsAngle = (int)(360 * (secondsPos / 60d)) - 90;
                 (int x, int y) seconds = ((int)(radius.x + secondsRadius * Math.Cos(ToRad(secondsAngle))), (int)(radius.y + secondsRadius * Math.Sin(ToRad(secondsAngle))));
+                seconds.x += (seconds.x - radius.x);
                 TextWriterRaw.WriteRaw(GraphicsTools.RenderLine(radius, seconds, secondsHandColor));
+                lastSeconds = seconds;
             }
 
             // Delay
