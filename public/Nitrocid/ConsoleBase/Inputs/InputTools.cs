@@ -226,9 +226,13 @@ namespace Nitrocid.ConsoleBase.Inputs
             ConsoleWrapperTools.ActionKeyAvailable = () => DriverHandler.CurrentConsoleDriverLocal.KeyAvailable;
             ConsoleWrapperTools.ActionReadKey = DriverHandler.CurrentConsoleDriverLocal.ReadKey;
             ConsoleWrapperTools.ActionSetCursorPosition = DriverHandler.CurrentConsoleDriverLocal.SetCursorPosition;
+            ConsoleWrapperTools.ActionSetWindowDimensions = DriverHandler.CurrentConsoleDriverLocal.SetWindowDimensions;
+            ConsoleWrapperTools.ActionSetBufferDimensions = DriverHandler.CurrentConsoleDriverLocal.SetBufferDimensions;
             ConsoleWrapperTools.ActionTreatCtrlCAsInput = (value) => DriverHandler.CurrentConsoleDriverLocal.TreatCtrlCAsInput = value;
             ConsoleWrapperTools.ActionGetTreatCtrlCAsInput = () => DriverHandler.CurrentConsoleDriverLocal.TreatCtrlCAsInput;
+            ConsoleWrapperTools.ActionSetWindowHeight = DriverHandler.CurrentConsoleDriverLocal.SetWindowHeight;
             ConsoleWrapperTools.ActionWindowHeight = () => DriverHandler.CurrentConsoleDriverLocal.WindowHeight;
+            ConsoleWrapperTools.ActionSetWindowWidth = DriverHandler.CurrentConsoleDriverLocal.SetWindowWidth;
             ConsoleWrapperTools.ActionWindowWidth = () => DriverHandler.CurrentConsoleDriverLocal.WindowWidth;
             ConsoleWrapperTools.ActionWriteChar = DriverHandler.CurrentConsoleDriverLocal.Write;
             ConsoleWrapperTools.ActionWriteLine = DriverHandler.CurrentConsoleDriverLocal.WriteLine;

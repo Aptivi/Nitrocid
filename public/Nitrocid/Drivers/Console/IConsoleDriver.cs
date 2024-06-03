@@ -237,6 +237,44 @@ namespace Nitrocid.Drivers.Console
         void SetCursorPosition(int left, int top);
 
         /// <summary>
+        /// Sets the window dimensions
+        /// </summary>
+        /// <param name="width">The window width to be set (from 0)</param>
+        /// <param name="height">The window height to be set (from 0)</param>
+        void SetWindowDimensions(int width, int height);
+
+        /// <summary>
+        /// Sets the buffer dimensions
+        /// </summary>
+        /// <param name="width">The buffer width to be set (from 0)</param>
+        /// <param name="height">The buffer height to be set (from 0)</param>
+        void SetBufferDimensions(int width, int height);
+
+        /// <summary>
+        /// Sets the window width
+        /// </summary>
+        /// <param name="width">The window width to be set (from 0)</param>
+        void SetWindowWidth(int width);
+
+        /// <summary>
+        /// Sets the window height
+        /// </summary>
+        /// <param name="height">The window height to be set (from 0)</param>
+        void SetWindowHeight(int height);
+
+        /// <summary>
+        /// Sets the buffer width
+        /// </summary>
+        /// <param name="width">The buffer width to be set (from 0)</param>
+        void SetBufferWidth(int width);
+
+        /// <summary>
+        /// Sets the buffer height
+        /// </summary>
+        /// <param name="height">The buffer height to be set (from 0)</param>
+        void SetBufferHeight(int height);
+
+        /// <summary>
         /// Resets console colors
         /// </summary>
         void ResetColor();
