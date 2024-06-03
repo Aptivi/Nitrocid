@@ -30,6 +30,10 @@ using Nitrocid.Users;
 using Nitrocid.Users.Groups;
 using Nitrocid.ConsoleBase.Writers.MiscWriters;
 using Nitrocid.Network.Types.RPC;
+using Nitrocid.Kernel.Starting.Bootloader.Apps;
+using Nitrocid.Kernel.Starting.Bootloader;
+using Nitrocid.Kernel.Starting.Environment;
+using Nitrocid.Kernel.Power;
 
 namespace Nitrocid.Kernel.Starting
 {
@@ -121,6 +125,26 @@ namespace Nitrocid.Kernel.Starting
 
             // Check for critical threads
             ThreadWatchdog.EnsureAllCriticalThreadsStarted();
+        }
+
+        internal static void Stage08Bootables()
+        {
+            SplashReport.ReportProgress(Translate.DoTranslation("Checking for multiple installed environments"), 5);
+
+            // Check for multiple environments
+            if (BootManager.GetBootApps().Count > 1)
+            {
+                // End the splash temporarily while we load the bootloader
+                SplashManager.BeginSplashOut(SplashManager.CurrentSplashContext);
+                BootloaderMain.StartBootloader();
+
+                // Request reboot if we need to reboot to another environment
+                if (EnvironmentTools.environment != EnvironmentTools.mainEnvironment)
+                    PowerManager.PowerManage(PowerMode.Reboot);
+
+                // Open the splash
+                SplashManager.EndSplashOut(SplashManager.CurrentSplashContext);
+            }
         }
     }
 }

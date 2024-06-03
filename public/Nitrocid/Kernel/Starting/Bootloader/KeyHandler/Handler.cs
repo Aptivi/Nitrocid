@@ -17,24 +17,28 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using GRILO.Boot;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Kernel.Starting.Bootloader.Style;
+using System;
 
-namespace Nitrocid.Kernel
+namespace Nitrocid.Kernel.Starting.Bootloader.KeyHandler
 {
-    class KernelGRILOBoot : IBootable
+    /// <summary>
+    /// Key handling module
+    /// </summary>
+    internal static class Handler
     {
-
-        public string Title { get; private set; } = "Nitrocid KS";
-
-        public bool ShutdownRequested { get; set; }
-
-        public void Boot(string[] args)
+        /// <summary>
+        /// Handles the key
+        /// </summary>
+        /// <param name="cki">Key information</param>
+        internal static void HandleKey(ConsoleKeyInfo cki)
         {
-            KernelMain.Main(args);
-
-            // GRILO needs ShutdownRequested to be set; otherwise, boot fails.
-            ShutdownRequested = true;
+            var bootStyle = BootStyleManager.GetBootStyle(Config.MainConfig.BootStyle);
+            if (bootStyle.CustomKeys is null || bootStyle.CustomKeys.Count == 0)
+                return;
+            if (bootStyle.CustomKeys.TryGetValue(cki, out var action))
+                action.Invoke();
         }
-
     }
 }

@@ -17,27 +17,26 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Languages;
-using System;
-
-namespace Nitrocid.Kernel.Starting.Environment
+namespace Nitrocid.Kernel.Starting.Bootloader
 {
     /// <summary>
-    /// Base environment
+    /// Stores the bootloader state
     /// </summary>
-    public abstract class BaseEnvironment : IEnvironment
+    public static class BootloaderState
     {
+        internal static bool waitingForBootKey = true;
+        internal static bool waitingForFirstBootKey = true;
+
         /// <summary>
-        /// Arguments to provide this environment
+        /// Specifies whether the bootloader is waiting for any key to be pressed
         /// </summary>
-        public string[] Arguments { get; internal set; }
+        public static bool WaitingForBootKey =>
+            waitingForBootKey;
 
-        /// <inheritdoc/>
-        public virtual string Name =>
-            Translate.DoTranslation("Nitrocid KS");
-
-        /// <inheritdoc/>
-        public virtual Action EnvironmentEntry =>
-            new(() => KernelEntry.EntryPoint(Arguments));
+        /// <summary>
+        /// Specifies whether the bootloader is waiting for any key to be pressed for the first time
+        /// </summary>
+        public static bool WaitingForFirstBootKey =>
+            waitingForFirstBootKey;
     }
 }

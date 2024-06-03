@@ -212,6 +212,26 @@
                 "Type": "SBoolean",
                 "Variable": "DebugLegacyLogStyle",
                 "Description": "Whether to enable the legacy logging style for debug logs or to enable grouped debug logs."
+            },
+            {
+                "Name": "Bootloader style",
+                "Type": "SString",
+                "Variable": "BootStyle",
+                "Description": "Select a bootloader style to match your preference."
+            },
+            {
+                "Name": "Bootloader default selection timeout",
+                "Type": "SIntSlider",
+                "Variable": "BootSelectTimeoutSeconds",
+                "Description": "Timeout in seconds to boot to the default selection.",
+                "MinimumValue": 0,
+                "MaximumValue": 600
+            },
+            {
+                "Name": "Bootloader default selection",
+                "Type": "SInt",
+                "Variable": "BootSelect",
+                "Description": "Default boot entry selection. This number is zero-based, so the first element is index 0, and so on."
             }
         ]
     },

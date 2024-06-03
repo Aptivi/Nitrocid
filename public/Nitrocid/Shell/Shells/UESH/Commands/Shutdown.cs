@@ -19,7 +19,6 @@
 
 using Nitrocid.Kernel.Power;
 using Nitrocid.Shell.ShellBase.Commands;
-using System;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {

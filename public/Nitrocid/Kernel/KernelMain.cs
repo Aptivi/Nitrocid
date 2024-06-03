@@ -96,11 +96,13 @@ namespace Nitrocid.Kernel
                 }
 
                 // This is a kernel entry point
+                EnvironmentTools.kernelArguments = Args;
+                EnvironmentTools.ResetEnvironment();
                 while (!PowerManager.KernelShutdown)
                 {
                     try
                     {
-                        EnvironmentTools.ExecuteEnvironment(Args);
+                        EnvironmentTools.ExecuteEnvironment();
                     }
                     catch (KernelException icde) when (icde.ExceptionType == KernelExceptionType.InsaneConsoleDetected)
                     {
@@ -129,10 +131,16 @@ namespace Nitrocid.Kernel
                         }
 
                         // Always switch back to the main environment
-                        if (EnvironmentTools.resetEnvironment)
+                        if (EnvironmentTools.anotherEnvPending)
                         {
-                            EnvironmentTools.resetEnvironment = false;
-                            EnvironmentTools.ResetEnvironment();
+                            if (EnvironmentTools.resetEnvironment)
+                            {
+                                EnvironmentTools.anotherEnvPending = false;
+                                EnvironmentTools.resetEnvironment = false;
+                                EnvironmentTools.ResetEnvironment();
+                            }
+                            else
+                                EnvironmentTools.resetEnvironment = true;
                         }
                     }
                 }

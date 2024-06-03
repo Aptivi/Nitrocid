@@ -112,6 +112,15 @@ namespace Nitrocid.Kernel
             DebugWriter.WriteDebug(DebugLevel.I, "Main Loop start.");
             MainLoop();
             DebugWriter.WriteDebug(DebugLevel.I, "Main Loop end.");
+
+            // Load splash for reboot or shutdown
+            SplashReport._KernelBooted = false;
+            if (!PowerManager.KernelShutdown)
+                SplashManager.OpenSplash(SplashContext.Rebooting);
+            else
+                SplashManager.OpenSplash(SplashContext.ShuttingDown);
+            DebugWriter.WriteDebug(DebugLevel.I, "Loaded splash for reboot or shutdown.");
+            ShellManager.PurgeShells();
         }
 
         /// <summary>
@@ -171,15 +180,6 @@ namespace Nitrocid.Kernel
                 DebugWriter.WriteDebug(DebugLevel.I, "Shell is being initialized.");
                 ShellManager.StartShellInternal(ShellType.Shell);
             }
-
-            // Load splash
-            SplashReport._KernelBooted = false;
-            if (!PowerManager.KernelShutdown)
-                SplashManager.OpenSplash(SplashContext.Rebooting);
-            else
-                SplashManager.OpenSplash(SplashContext.ShuttingDown);
-            DebugWriter.WriteDebug(DebugLevel.I, "Loaded splash for reboot or shutdown.");
-            ShellManager.PurgeShells();
         }
     }
 }

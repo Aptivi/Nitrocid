@@ -480,5 +480,13 @@ namespace Nitrocid.Kernel.Exceptions
         /// There was an error when trying to perform an operation for the kernel driver management.
         /// </summary>
         DriverManagement,
+        /// <summary>
+        /// There was an error when trying to perform an operation for the environment management.
+        /// </summary>
+        Environment,
+        /// <summary>
+        /// There was an error when trying to process a bootloader operation.
+        /// </summary>
+        Bootloader,
     }
 }

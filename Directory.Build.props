@@ -19,8 +19,8 @@
           in the N-KS API. Don't forget to document it in the GitBook instance so the mod developers are aware of the breaking
           changes!
         -->
-        <NitrocidModAPIVersionMajor>3.0.25</NitrocidModAPIVersionMajor>
-        <NitrocidModAPIVersionChangeset>439</NitrocidModAPIVersionChangeset>
+        <NitrocidModAPIVersionMajor>3.0.26</NitrocidModAPIVersionMajor>
+        <NitrocidModAPIVersionChangeset>2</NitrocidModAPIVersionChangeset>
 
         <!-- The above two properties are to be installed to the file version -->
         <NitrocidModAPIVersion>$(NitrocidModAPIVersionMajor).$(NitrocidModAPIVersionChangeset)</NitrocidModAPIVersion>

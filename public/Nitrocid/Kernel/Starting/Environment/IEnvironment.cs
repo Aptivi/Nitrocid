@@ -21,7 +21,10 @@ using System;
 
 namespace Nitrocid.Kernel.Starting.Environment
 {
-    internal interface IEnvironment
+    /// <summary>
+    /// Environment interface
+    /// </summary>
+    public interface IEnvironment
     {
         /// <summary>
         /// Environment name
@@ -30,6 +33,6 @@ namespace Nitrocid.Kernel.Starting.Environment
         /// <summary>
         /// Environment entry point method
         /// </summary>
-        Action<string[]> EnvironmentEntry { get; }
+        Action EnvironmentEntry { get; }
     }
 }

@@ -219,6 +219,18 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// Uses the legacy log style
         /// </summary>
         public bool DebugLegacyLogStyle { get; set; } = true;
+        /// <summary>
+        /// Bootloader style
+        /// </summary>
+        public string BootStyle { get; set; } = "Default";
+        /// <summary>
+        /// Timeout to boot to the default selection
+        /// </summary>
+        public int BootSelectTimeoutSeconds { get; set; } = 10;
+        /// <summary>
+        /// The default boot entry selection. This number is zero-based, so the first element is index 0, and so on.
+        /// </summary>
+        public int BootSelect { get; set; } = 0;
         #endregion
 
         #region Colors

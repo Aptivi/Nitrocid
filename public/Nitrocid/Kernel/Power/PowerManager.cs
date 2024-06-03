@@ -235,7 +235,7 @@ namespace Nitrocid.Kernel.Power
                 {
                     UseShellExecute = true,
                     Verb = "runas",
-                    Arguments = string.Join(" ", EnvironmentTools.arguments)
+                    Arguments = string.Join(" ", EnvironmentTools.kernelArguments)
                 },
             };
             selfProcess.StartInfo = ProcessExecutor.StripEnvironmentVariables(selfProcess.StartInfo);

@@ -41,6 +41,7 @@ namespace Nitrocid.Kernel.Starting
             new KernelStage( /* Localizable */ "User initialization", KernelStageActions.Stage05UserInitialization, true, false),
             new KernelStage( /* Localizable */ "Kernel modifications", KernelStageActions.Stage06KernelModifications, false, false),
             new KernelStage( /* Localizable */ "System integrity verification", KernelStageActions.Stage07SysIntegrity),
+            new KernelStage( /* Localizable */ "Multiple environments", KernelStageActions.Stage08Bootables, false, false),
         ];
 
         /// <summary>

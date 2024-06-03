@@ -20,7 +20,6 @@
 using Nitrocid.Kernel.Power;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Switches;
-using System;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
