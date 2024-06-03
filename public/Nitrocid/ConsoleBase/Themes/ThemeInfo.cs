@@ -187,7 +187,7 @@ namespace Nitrocid.ConsoleBase.Themes
 
             // Install some info to the class
             Description = metadata.Description;
-            TrueColorRequired = ThemeTools.IsTrueColorRequired(ThemeColors);
+            TrueColorRequired = ThemeTools.MinimumTypeRequired(ThemeColors, ColorType.TrueColor);
             Category = metadata.Category;
             localizable = metadata.Localizable;
 
