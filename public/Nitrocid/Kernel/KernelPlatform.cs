@@ -18,8 +18,7 @@
 //
 
 using Nitrocid.Files.Operations.Querying;
-using Nitrocid.Kernel.Debugging;
-using SpecProbe.Software.Kernel;
+using SpecProbe.Platform;
 using System;
 using System.Reflection;
 using System.Runtime.InteropServices;
@@ -43,49 +42,28 @@ namespace Nitrocid.Kernel
         /// </summary>
         /// <returns>True if running on Windows (Windows 10, Windows 11, etc.). Otherwise, false.</returns>
         public static bool IsOnWindows() =>
-            Environment.OSVersion.Platform == PlatformID.Win32NT;
+            PlatformHelper.IsOnWindows();
 
         /// <summary>
         /// Is this system a Unix system? True for macOS, too!
         /// </summary>
         /// <returns>True if running on Unix (Linux, *nix, etc.). Otherwise, false.</returns>
         public static bool IsOnUnix() =>
-            Environment.OSVersion.Platform == PlatformID.Unix;
+            PlatformHelper.IsOnUnix();
 
         /// <summary>
         /// Is this system a Unix system that contains musl libc?
         /// </summary>
         /// <returns>True if running on Unix systems that use musl libc. Otherwise, false.</returns>
-        public static bool IsOnUnixMusl()
-        {
-            try
-            {
-                if (!IsOnUnix() || IsOnMacOS() || IsOnWindows())
-                    return false;
-                var gnuRel = gnuGetLibcVersion();
-                return false;
-            }
-            catch
-            {
-                return true;
-            }
-        }
+        public static bool IsOnUnixMusl() =>
+            PlatformHelper.IsOnUnixMusl();
 
         /// <summary>
         /// Is this system a macOS system?
         /// </summary>
         /// <returns>True if running on macOS (MacBook, iMac, etc.). Otherwise, false.</returns>
-        public static bool IsOnMacOS()
-        {
-            if (IsOnUnix())
-            {
-                string System = UnameManager.GetUname(UnameTypes.KernelName);
-                DebugWriter.WriteDebug(DebugLevel.I, "Trying to find \"Darwin\" in {0}...", System);
-                return System.Contains("Darwin");
-            }
-            else
-                return false;
-        }
+        public static bool IsOnMacOS() =>
+            PlatformHelper.IsOnMacOS();
 
         /// <summary>
         /// Is this system an Android system?
@@ -103,13 +81,13 @@ namespace Nitrocid.Kernel
         /// Polls $TERM_PROGRAM to get terminal emulator
         /// </summary>
         public static string GetTerminalEmulator() =>
-            Environment.GetEnvironmentVariable("TERM_PROGRAM") ?? "";
+            PlatformHelper.GetTerminalEmulator();
 
         /// <summary>
         /// Polls $TERM to get terminal type (vt100, dumb, ...)
         /// </summary>
         public static string GetTerminalType() =>
-            Environment.GetEnvironmentVariable("TERM") ?? "";
+            PlatformHelper.GetTerminalType();
 
         /// <summary>
         /// Is Nitrocid KS running from GRILO?
@@ -121,13 +99,13 @@ namespace Nitrocid.Kernel
         /// Is Nitrocid KS running from TMUX?
         /// </summary>
         public static bool IsRunningFromTmux() =>
-            Environment.GetEnvironmentVariable("TMUX") is not null;
+            PlatformHelper.IsRunningFromTmux();
 
         /// <summary>
         /// Is Nitrocid KS running from GNU Screen?
         /// </summary>
         public static bool IsRunningFromScreen() =>
-            Environment.GetEnvironmentVariable("STY") is not null;
+            PlatformHelper.IsRunningFromScreen();
 
         /// <summary>
         /// Gets the current runtime identifier
@@ -144,11 +122,6 @@ namespace Nitrocid.Kernel
             $"{(IsOnWindows() ? "win" : IsOnMacOS() ? "osx" : IsOnUnix() ? "linux" : "freebsd")}-" +
             $"{(IsOnUnixMusl() ? "musl-" : "")}" +
             $"{RuntimeInformation.OSArchitecture.ToString().ToLower()}";
-
-        #region Interop
-        [DllImport("libc", EntryPoint = "gnu_get_libc_version")]
-        private static extern nint gnuGetLibcVersion();
-        #endregion
 
     }
 }

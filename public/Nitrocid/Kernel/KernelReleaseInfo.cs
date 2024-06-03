@@ -35,7 +35,7 @@ namespace Nitrocid.Kernel
                                     + "Developer Preview"
 #else
                                     + "UNSUPPORTED"
-#endif // MILESTONESPECIFIERALPHA
+#endif // SPECIFIERALPHA
 #endif // !SPECIFIERREL
         ;
 
