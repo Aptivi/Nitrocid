@@ -156,8 +156,8 @@ namespace Nitrocid.Kernel
             finally
             {
                 // Load main buffer
-                if (!KernelPlatform.IsOnWindows() && ConsoleTools.UseAltBuffer && ConsoleTools.HasSetAltBuffer && !PowerManager.hardShutdown)
-                    ConsoleTools.ShowMainBuffer();
+                if (!KernelPlatform.IsOnWindows() && ConsoleTools.UseAltBuffer && ConsoleMisc.IsOnAltBuffer && !PowerManager.hardShutdown)
+                    ConsoleMisc.ShowMainBuffer();
 
                 // Reset colors and clear the console
                 if (!PowerManager.hardShutdown)

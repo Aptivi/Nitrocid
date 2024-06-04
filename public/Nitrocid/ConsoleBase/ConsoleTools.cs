@@ -33,6 +33,7 @@ using Terminaux.Sequences.Builder;
 using Nitrocid.Languages;
 using Terminaux.Writer.FancyWriters;
 using Terminaux.Reader;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ConsoleBase
 {
@@ -43,7 +44,6 @@ namespace Nitrocid.ConsoleBase
     {
 
         internal static bool UseAltBuffer = true;
-        internal static bool HasSetAltBuffer;
 
         /// <summary>
         /// Does your console support true color?
@@ -107,39 +107,17 @@ namespace Nitrocid.ConsoleBase
         {
             if (KernelPlatform.IsOnWindows())
                 return;
-            if (!(HasSetAltBuffer && UseAltBuffer))
+            if (!(ConsoleMisc.IsOnAltBuffer && UseAltBuffer))
                 return;
 
             // Show the main buffer
-            ShowMainBuffer();
+            ConsoleMisc.ShowMainBuffer();
 
             // Sleep for five seconds
             ThreadManager.SleepNoBlock(5000);
 
             // Show the alternative buffer
-            ShowAltBuffer();
-        }
-
-        internal static void ShowMainBuffer()
-        {
-            if (KernelPlatform.IsOnWindows())
-                return;
-            if (!UseAltBuffer)
-                return;
-
-            TextWriterColor.Write("\u001b[?1049l");
-        }
-
-        internal static void ShowAltBuffer()
-        {
-            if (KernelPlatform.IsOnWindows())
-                return;
-            if (!UseAltBuffer)
-                return;
-
-            TextWriterColor.Write("\u001b[?1049h");
-            ConsoleWrapper.SetCursorPosition(0, 0);
-            ConsoleWrapper.CursorVisible = false;
+            ConsoleMisc.ShowAltBuffer();
         }
 
         internal static void ShowColorRampAndSet()

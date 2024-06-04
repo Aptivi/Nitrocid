@@ -86,9 +86,6 @@ namespace Nitrocid.Kernel.Starting
                         TextWriterColor.Write(Translate.DoTranslation("Can not initialize VT sequences for your Windows terminal. Make sure that you're running Windows 10 or later."));
                         InputTools.DetectKeypress();
                     }
-
-                    // Set the codepage
-                    Console.OutputEncoding = Encoding.UTF8;
                 }
 
                 // Load the assembly resolver
@@ -126,8 +123,7 @@ namespace Nitrocid.Kernel.Starting
                 // Load alternative buffer (only supported on Linux, because Windows doesn't seem to respect CursorVisible = false on alt buffers)
                 if (!KernelPlatform.IsOnWindows() && ConsoleTools.UseAltBuffer)
                 {
-                    ConsoleTools.ShowAltBuffer();
-                    ConsoleTools.HasSetAltBuffer = true;
+                    ConsoleMisc.ShowAltBuffer();
                     DebugWriter.WriteDebug(DebugLevel.I, "Loaded alternative buffer.");
                 }
 
@@ -306,7 +302,6 @@ namespace Nitrocid.Kernel.Starting
             {
                 // Reset every variable below
                 KernelEntry.QuietKernel = false;
-                ConsoleTools.HasSetAltBuffer = false;
                 SplashReport._Progress = 0;
                 SplashReport._ProgressText = "";
                 SplashReport._KernelBooted = false;
