@@ -35,6 +35,8 @@ namespace Nitrocid.Users.Login.Handlers.Logins
 {
     internal class ModernLogin : BaseLoginHandler, ILoginHandler
     {
+        private int screenNum = 1;
+
         public override bool LoginScreen()
         {
             // Clear the console
@@ -42,18 +44,24 @@ namespace Nitrocid.Users.Login.Handlers.Logins
             ConsoleWrapper.Clear();
             DebugWriter.WriteDebug(DebugLevel.I, "Loading modern logon... This shouldn't take long.");
 
-            // Start the date and time update thread to show time and date in the modern way
-            ModernLogonScreen.DateTimeUpdateThread.Start();
+            if (screenNum == 1)
+            {
+                // Start the date and time update thread to show time and date in the modern way
+                ModernLogonScreen.DateTimeUpdateThread.Start();
 
-            // Wait for the keypress
-            DebugWriter.WriteDebug(DebugLevel.I, "Rendering...");
-            SpinWait.SpinUntil(() => ModernLogonScreen.renderedFully);
-            DebugWriter.WriteDebug(DebugLevel.I, "Rendered fully!");
+                // Wait for the keypress
+                DebugWriter.WriteDebug(DebugLevel.I, "Rendering...");
+                SpinWait.SpinUntil(() => ModernLogonScreen.renderedFully);
+                DebugWriter.WriteDebug(DebugLevel.I, "Rendered fully!");
+            }
             var key = TermReader.ReadKey().Key;
 
-            // Stop the thread
-            ModernLogonScreen.DateTimeUpdateThread.Stop();
-            ModernLogonScreen.renderedFully = false;
+            // Stop the thread if screen number indicates that we're on the main screen
+            if (screenNum == 1)
+            {
+                ModernLogonScreen.DateTimeUpdateThread.Stop();
+                ModernLogonScreen.renderedFully = false;
+            }
 
             // Check to see if user requested power actions
             bool proceed = true;
@@ -69,6 +77,12 @@ namespace Nitrocid.Users.Login.Handlers.Logins
                 else if (answer == 1)
                     PowerManager.PowerManage(PowerMode.Reboot);
                 proceed = answer == 2;
+            }
+            else if (key == ConsoleKey.LeftArrow || key == ConsoleKey.RightArrow)
+            {
+                proceed = false;
+                if (key == ConsoleKey.LeftArrow)
+                    screenNum--;
             }
             return proceed;
         }
