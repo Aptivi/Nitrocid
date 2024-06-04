@@ -63,13 +63,16 @@ namespace Nitrocid.Kernel.Extensions
                 return;
             var addonFolders = Listing.GetFilesystemEntries(addonFolder);
             DebugWriter.WriteDebug(DebugLevel.I, "Found {0} files under the addon folder {1}.", addonFolders.Length, addonFolder);
-            foreach (var addon in addonFolders)
-                ProcessAddon(addon, type);
+            for (int i = 0; i < addonFolders.Length; i++)
+            {
+                string addon = addonFolders[i];
+                ProcessAddon(addon, type, i + 1, addonFolders.Length);
+            }
             DebugWriter.WriteDebug(DebugLevel.I, "Loaded all addons!");
             probedAddons.Clear();
         }
 
-        internal static void ProcessAddon(string addon, ModLoadPriority type)
+        internal static void ProcessAddon(string addon, ModLoadPriority type, int current = 1, int length = 1)
         {
             try
             {
@@ -147,7 +150,7 @@ namespace Nitrocid.Kernel.Extensions
                     DebugWriter.WriteDebug(DebugLevel.W, "Skipping addon entry {0} because of conflicts with the already-loaded addon in the queue [{1}]...", addon, addonPath);
                     return;
                 }
-                SplashReport.ReportProgress(Translate.DoTranslation("Initializing kernel addon") + " {0}...", Path.GetFileName(addon));
+                SplashReport.ReportProgress($"[{current}/{length}] " + Translate.DoTranslation("Initializing kernel addon") + " {0}...", Path.GetFileName(addon));
                 probedAddons.Add(addonPath);
                 AssemblyLookup.baseAssemblyLookupPaths.Add(addon);
                 var asm = Assembly.LoadFrom(addonPath);
@@ -160,7 +163,7 @@ namespace Nitrocid.Kernel.Extensions
                     // Call the start function
                     try
                     {
-                        SplashReport.ReportProgress(Translate.DoTranslation("Starting kernel addon") + " {0}...", addonInstance.AddonName);
+                        SplashReport.ReportProgress($"[{current}/{length}] " + Translate.DoTranslation("Starting kernel addon") + " {0}...", addonInstance.AddonName);
                         addonInstance.StartAddon();
                         DebugWriter.WriteDebug(DebugLevel.I, "Started!");
 
@@ -169,11 +172,11 @@ namespace Nitrocid.Kernel.Extensions
                         if (!addons.Where((addon) => addonInstance.AddonName == addon.AddonName).Any())
                             addons.Add(info);
                         DebugWriter.WriteDebug(DebugLevel.I, "Loaded addon!");
-                        SplashReport.ReportProgress(Translate.DoTranslation("Started kernel addon") + " {0}!", 1, addonInstance.AddonName);
+                        SplashReport.ReportProgress($"[{current}/{length}] " + Translate.DoTranslation("Started kernel addon") + " {0}!", 1, addonInstance.AddonName);
                     }
                     catch (Exception ex)
                     {
-                        SplashReport.ReportProgress(Translate.DoTranslation("Failed to start kernel addon") + " {0}.", addonInstance.AddonName);
+                        SplashReport.ReportProgress($"[{current}/{length}] " + Translate.DoTranslation("Failed to start kernel addon") + " {0}.", addonInstance.AddonName);
                         DebugWriter.WriteDebug(DebugLevel.E, "Failed to start addon {0}. {1}", addon, ex.Message);
                         DebugWriter.WriteDebugStackTrace(ex);
                     }
@@ -181,7 +184,7 @@ namespace Nitrocid.Kernel.Extensions
             }
             catch (Exception ex)
             {
-                SplashReport.ReportProgress(Translate.DoTranslation("Failed to initialize kernel addon") + " {0}.", Path.GetFileName(addon));
+                SplashReport.ReportProgress($"[{current}/{length}] " + Translate.DoTranslation("Failed to initialize kernel addon") + " {0}.", Path.GetFileName(addon));
                 DebugWriter.WriteDebug(DebugLevel.E, "Failed to load addon {0}. {1}", addon, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
