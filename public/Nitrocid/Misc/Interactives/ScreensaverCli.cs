@@ -27,7 +27,7 @@ using Textify.General;
 
 namespace Nitrocid.Misc.Interactives
 {
-    internal class ScreensaverTui : BaseInteractiveTui<string>, IInteractiveTui<string>
+    internal class ScreensaverCli : BaseInteractiveTui<string>, IInteractiveTui<string>
     {
         public override InteractiveTuiBinding[] Bindings { get; } =
         [

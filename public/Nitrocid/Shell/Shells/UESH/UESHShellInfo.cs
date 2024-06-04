@@ -1335,7 +1335,13 @@ namespace Nitrocid.Shell.Shells.UESH
 
             new CommandInfo("shownotifs", /* Localizable */ "Shows all received notifications",
                 [
-                    new CommandArgumentInfo()
+                    new CommandArgumentInfo(
+                    [
+                        new SwitchInfo("tui", /* Localizable */ "Shows all received notifications in an interactive TUI", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        })
+                    ])
                 ], new ShowNotifsCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
             new CommandInfo("showtd", /* Localizable */ "Shows date and time",

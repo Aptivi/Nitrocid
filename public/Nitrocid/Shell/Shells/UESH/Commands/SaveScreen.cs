@@ -41,7 +41,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
         {
             bool selectionMode = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-select");
             if (selectionMode)
-                InteractiveTuiTools.OpenInteractiveTui(new ScreensaverTui());
+                InteractiveTuiTools.OpenInteractiveTui(new ScreensaverCli());
             else
             {
                 if (parameters.ArgumentsList.Length != 0)

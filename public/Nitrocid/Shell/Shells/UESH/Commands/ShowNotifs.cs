@@ -23,6 +23,9 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Notifications;
 using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.Shell.ShellBase.Switches;
+using Terminaux.Inputs.Interactive;
+using Nitrocid.Misc.Interactives;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -37,24 +40,29 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            int Count = 1;
-            if (NotificationManager.NotifRecents.Count != 0)
-            {
-                foreach (Notification Notif in NotificationManager.NotifRecents)
-                {
-                    TextWriters.Write($"[{Count}/{NotificationManager.NotifRecents.Count}] {Notif.Title}: ", false, KernelColorType.ListEntry);
-                    TextWriters.Write(Notif.Desc, false, KernelColorType.ListValue);
-                    if (Notif.Type == NotificationType.Progress)
-                    {
-                        TextWriters.Write($" ({Notif.Progress}%)", false, Notif.ProgressState == NotificationProgressState.Failure ? KernelColorType.Error : KernelColorType.Success);
-                    }
-                    TextWriterRaw.Write();
-                    Count += 1;
-                }
-            }
+            if (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-tui"))
+                InteractiveTuiTools.OpenInteractiveTui(new NotificationsCli());
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("No recent notifications"));
+                int Count = 1;
+                if (NotificationManager.NotifRecents.Count != 0)
+                {
+                    foreach (Notification Notif in NotificationManager.NotifRecents)
+                    {
+                        TextWriters.Write($"[{Count}/{NotificationManager.NotifRecents.Count}] {Notif.Title}: ", false, KernelColorType.ListEntry);
+                        TextWriters.Write(Notif.Desc, false, KernelColorType.ListValue);
+                        if (Notif.Type == NotificationType.Progress)
+                        {
+                            TextWriters.Write($" ({Notif.Progress}%)", false, Notif.ProgressState == NotificationProgressState.Failure ? KernelColorType.Error : KernelColorType.Success);
+                        }
+                        TextWriterRaw.Write();
+                        Count += 1;
+                    }
+                }
+                else
+                {
+                    TextWriterColor.Write(Translate.DoTranslation("No recent notifications"));
+                }
             }
             return 0;
         }
