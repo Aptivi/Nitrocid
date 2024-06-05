@@ -815,7 +815,7 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="ColTypes">A type of colors that will be changed.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
         public static void WriteSeparator(string Text, KernelColorType ColTypes, params object[] Vars) =>
-            SeparatorWriterColor.WriteSeparatorColorBack(Text, KernelColorTools.GetColor(ColTypes), KernelColorTools.GetColor(KernelColorType.Background), false, Vars);
+            SeparatorWriterColor.WriteSeparatorColorBack(Text, KernelColorTools.GetColor(ColTypes), KernelColorTools.GetColor(KernelColorType.Background), true, Vars);
 
         /// <summary>
         /// Draw a separator with text
@@ -825,7 +825,7 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
         public static void WriteSeparator(string Text, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] Vars) =>
-            SeparatorWriterColor.WriteSeparatorColorBack(Text, KernelColorTools.GetColor(colorTypeForeground), KernelColorTools.GetColor(colorTypeBackground), false, Vars);
+            SeparatorWriterColor.WriteSeparatorColorBack(Text, KernelColorTools.GetColor(colorTypeForeground), KernelColorTools.GetColor(colorTypeBackground), true, Vars);
 
         /// <summary>
         /// Draw a table with text
