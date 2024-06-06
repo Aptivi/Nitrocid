@@ -46,12 +46,7 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
         /// <param name="BoxBorderColor">Border color from Nitrocid KS's <see cref="KernelColorType"/></param>
         public static void WriteBorder(int Left, int Top, int InteriorWidth, int InteriorHeight, KernelColorType BoxBorderColor) =>
-            WriteBorder(Left, Top, InteriorWidth, InteriorHeight,
-                        BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
-                        BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
-                        BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
-                        BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        BoxBorderColor, KernelColorType.Background);
+            WriteBorder(Left, Top, InteriorWidth, InteriorHeight, BorderSettings.GlobalSettings, BoxBorderColor, KernelColorType.Background);
 
         /// <summary>
         /// Writes the border plainly
@@ -63,12 +58,7 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="BoxBorderColor">Border color from Nitrocid KS's <see cref="KernelColorType"/></param>
         /// <param name="BackgroundColor">Border background color from Nitrocid KS's <see cref="KernelColorType"/></param>
         public static void WriteBorder(int Left, int Top, int InteriorWidth, int InteriorHeight, KernelColorType BoxBorderColor, KernelColorType BackgroundColor) =>
-            WriteBorder(Left, Top, InteriorWidth, InteriorHeight,
-                        BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
-                        BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
-                        BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
-                        BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        BoxBorderColor, BackgroundColor);
+            WriteBorder(Left, Top, InteriorWidth, InteriorHeight, BorderSettings.GlobalSettings, BoxBorderColor, BackgroundColor);
 
         /// <summary>
         /// Writes the border plainly
@@ -77,20 +67,10 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="Top">Where to place the border vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
-        /// <param name="UpperLeftCornerChar">Upper left corner character for border</param>
-        /// <param name="LowerLeftCornerChar">Lower left corner character for border</param>
-        /// <param name="UpperRightCornerChar">Upper right corner character for border</param>
-        /// <param name="LowerRightCornerChar">Lower right corner character for border</param>
-        /// <param name="UpperFrameChar">Upper frame character for border</param>
-        /// <param name="LowerFrameChar">Lower frame character for border</param>
-        /// <param name="LeftFrameChar">Left frame character for border</param>
-        /// <param name="RightFrameChar">Right frame character for border</param>
+        /// <param name="settings">Border settings</param>
         /// <param name="BoxBorderColor">Border color from Nitrocid KS's <see cref="KernelColorType"/></param>
-        public static void WriteBorder(int Left, int Top, int InteriorWidth, int InteriorHeight,
-                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
-                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-                                       KernelColorType BoxBorderColor) =>
-            WriteBorder(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, BoxBorderColor, KernelColorType.Background);
+        public static void WriteBorder(int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, KernelColorType BoxBorderColor) =>
+            WriteBorder(Left, Top, InteriorWidth, InteriorHeight, settings, BoxBorderColor, KernelColorType.Background);
 
         /// <summary>
         /// Writes the border plainly
@@ -99,25 +79,15 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="Top">Where to place the border vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
-        /// <param name="UpperLeftCornerChar">Upper left corner character for border</param>
-        /// <param name="LowerLeftCornerChar">Lower left corner character for border</param>
-        /// <param name="UpperRightCornerChar">Upper right corner character for border</param>
-        /// <param name="LowerRightCornerChar">Lower right corner character for border</param>
-        /// <param name="UpperFrameChar">Upper frame character for border</param>
-        /// <param name="LowerFrameChar">Lower frame character for border</param>
-        /// <param name="LeftFrameChar">Left frame character for border</param>
-        /// <param name="RightFrameChar">Right frame character for border</param>
+        /// <param name="settings">Border settings</param>
         /// <param name="BoxBorderColor">Border color from Nitrocid KS's <see cref="KernelColorType"/></param>
         /// <param name="BackgroundColor">Border background color from Nitrocid KS's <see cref="KernelColorType"/></param>
-        public static void WriteBorder(int Left, int Top, int InteriorWidth, int InteriorHeight,
-                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
-                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-                                       KernelColorType BoxBorderColor, KernelColorType BackgroundColor)
+        public static void WriteBorder(int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, KernelColorType BoxBorderColor, KernelColorType BackgroundColor)
         {
             try
             {
                 // StringBuilder to put out the final rendering text
-                string rendered = BorderColor.RenderBorderPlain(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
+                string rendered = BorderColor.RenderBorderPlain(Left, Top, InteriorWidth, InteriorHeight, settings);
                 TextWriterWhereColor.WriteWhereColorBack(rendered, Left, Top, false, KernelColorTools.GetColor(BoxBorderColor), KernelColorTools.GetColor(BackgroundColor));
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
@@ -138,12 +108,7 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
         /// <param name="BoxBorderColor">Border color from Nitrocid KS's <see cref="KernelColorType"/></param>
         public static void WriteBorderText(string text, int Left, int Top, int InteriorWidth, int InteriorHeight, KernelColorType BoxBorderColor, params object[] vars) =>
-            WriteBorderText(text, Left, Top, InteriorWidth, InteriorHeight,
-                        BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
-                        BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
-                        BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
-                        BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        BoxBorderColor, KernelColorType.Background, vars);
+            WriteBorderText(text, Left, Top, InteriorWidth, InteriorHeight, BorderSettings.GlobalSettings, BoxBorderColor, KernelColorType.Background, vars);
 
         /// <summary>
         /// Writes the border plainly
@@ -157,12 +122,7 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="BoxBorderColor">Border color from Nitrocid KS's <see cref="KernelColorType"/></param>
         /// <param name="BackgroundColor">Border background color from Nitrocid KS's <see cref="KernelColorType"/></param>
         public static void WriteBorderText(string text, int Left, int Top, int InteriorWidth, int InteriorHeight, KernelColorType BoxBorderColor, KernelColorType BackgroundColor, params object[] vars) =>
-            WriteBorderText(text, Left, Top, InteriorWidth, InteriorHeight,
-                        BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
-                        BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
-                        BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
-                        BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        BoxBorderColor, BackgroundColor, vars);
+            WriteBorderText(text, Left, Top, InteriorWidth, InteriorHeight, BorderSettings.GlobalSettings, BoxBorderColor, BackgroundColor, vars);
 
         /// <summary>
         /// Writes the border plainly
@@ -173,20 +133,10 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="Top">Where to place the border vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
-        /// <param name="UpperLeftCornerChar">Upper left corner character for border</param>
-        /// <param name="LowerLeftCornerChar">Lower left corner character for border</param>
-        /// <param name="UpperRightCornerChar">Upper right corner character for border</param>
-        /// <param name="LowerRightCornerChar">Lower right corner character for border</param>
-        /// <param name="UpperFrameChar">Upper frame character for border</param>
-        /// <param name="LowerFrameChar">Lower frame character for border</param>
-        /// <param name="LeftFrameChar">Left frame character for border</param>
-        /// <param name="RightFrameChar">Right frame character for border</param>
+        /// <param name="settings">Border settings</param>
         /// <param name="BoxBorderColor">Border color from Nitrocid KS's <see cref="KernelColorType"/></param>
-        public static void WriteBorderText(string text, int Left, int Top, int InteriorWidth, int InteriorHeight,
-                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
-                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-                                       KernelColorType BoxBorderColor, params object[] vars) =>
-            WriteBorderText(text, Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, BoxBorderColor, KernelColorType.Background, vars);
+        public static void WriteBorderText(string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, KernelColorType BoxBorderColor, params object[] vars) =>
+            WriteBorderText(text, Left, Top, InteriorWidth, InteriorHeight, settings, BoxBorderColor, KernelColorType.Background, vars);
 
         /// <summary>
         /// Writes the border plainly
@@ -197,25 +147,15 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="Top">Where to place the border vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
-        /// <param name="UpperLeftCornerChar">Upper left corner character for border</param>
-        /// <param name="LowerLeftCornerChar">Lower left corner character for border</param>
-        /// <param name="UpperRightCornerChar">Upper right corner character for border</param>
-        /// <param name="LowerRightCornerChar">Lower right corner character for border</param>
-        /// <param name="UpperFrameChar">Upper frame character for border</param>
-        /// <param name="LowerFrameChar">Lower frame character for border</param>
-        /// <param name="LeftFrameChar">Left frame character for border</param>
-        /// <param name="RightFrameChar">Right frame character for border</param>
+        /// <param name="settings">Border settings</param>
         /// <param name="BoxBorderColor">Border color from Nitrocid KS's <see cref="KernelColorType"/></param>
         /// <param name="BackgroundColor">Border background color from Nitrocid KS's <see cref="KernelColorType"/></param>
-        public static void WriteBorderText(string text, int Left, int Top, int InteriorWidth, int InteriorHeight,
-                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
-                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-                                       KernelColorType BoxBorderColor, KernelColorType BackgroundColor, params object[] vars)
+        public static void WriteBorderText(string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, KernelColorType BoxBorderColor, KernelColorType BackgroundColor, params object[] vars)
         {
             try
             {
                 // StringBuilder to put out the final rendering text
-                string rendered = BorderColor.RenderBorderPlain(text, Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, vars);
+                string rendered = BorderColor.RenderBorderPlain(text, Left, Top, InteriorWidth, InteriorHeight, settings, vars);
                 TextWriterWhereColor.WriteWhereColorBack(rendered, Left, Top, false, KernelColorTools.GetColor(BoxBorderColor), KernelColorTools.GetColor(BackgroundColor));
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
@@ -256,12 +196,7 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
         /// <param name="BoxFrameColor">BoxFrame color from Nitrocid KS's <see cref="KernelColorType"/></param>
         public static void WriteBoxFrame(int Left, int Top, int InteriorWidth, int InteriorHeight, KernelColorType BoxFrameColor) =>
-            WriteBoxFrame(Left, Top, InteriorWidth, InteriorHeight,
-                        BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
-                        BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
-                        BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
-                        BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        BoxFrameColor, KernelColorType.Background);
+            WriteBoxFrame(Left, Top, InteriorWidth, InteriorHeight, BorderSettings.GlobalSettings, BoxFrameColor, KernelColorType.Background);
 
         /// <summary>
         /// Writes the box frame plainly
@@ -273,12 +208,7 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="BoxFrameColor">BoxFrame color from Nitrocid KS's <see cref="KernelColorType"/></param>
         /// <param name="BackgroundColor">BoxFrame background color from Nitrocid KS's <see cref="KernelColorType"/></param>
         public static void WriteBoxFrame(int Left, int Top, int InteriorWidth, int InteriorHeight, KernelColorType BoxFrameColor, KernelColorType BackgroundColor) =>
-            WriteBoxFrame(Left, Top, InteriorWidth, InteriorHeight,
-                        BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
-                        BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
-                        BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
-                        BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        BoxFrameColor, BackgroundColor);
+            WriteBoxFrame(Left, Top, InteriorWidth, InteriorHeight, BorderSettings.GlobalSettings, BoxFrameColor, BackgroundColor);
 
         /// <summary>
         /// Writes the box frame plainly
@@ -287,20 +217,10 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="Top">Where to place the box frame vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
-        /// <param name="UpperLeftCornerChar">Upper left corner character for box frame</param>
-        /// <param name="LowerLeftCornerChar">Lower left corner character for box frame</param>
-        /// <param name="UpperRightCornerChar">Upper right corner character for box frame</param>
-        /// <param name="LowerRightCornerChar">Lower right corner character for box frame</param>
-        /// <param name="UpperFrameChar">Upper frame character for box frame</param>
-        /// <param name="LowerFrameChar">Lower frame character for box frame</param>
-        /// <param name="LeftFrameChar">Left frame character for box frame</param>
-        /// <param name="RightFrameChar">Right frame character for box frame</param>
+        /// <param name="settings">Border settings</param>
         /// <param name="BoxFrameColor">BoxFrame color from Nitrocid KS's <see cref="KernelColorType"/></param>
-        public static void WriteBoxFrame(int Left, int Top, int InteriorWidth, int InteriorHeight,
-                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
-                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-                                       KernelColorType BoxFrameColor) =>
-            WriteBoxFrame(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, BoxFrameColor, KernelColorType.Background);
+        public static void WriteBoxFrame(int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, KernelColorType BoxFrameColor) =>
+            WriteBoxFrame(Left, Top, InteriorWidth, InteriorHeight, settings, BoxFrameColor, KernelColorType.Background);
 
         /// <summary>
         /// Writes the box frame plainly
@@ -309,25 +229,15 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="Top">Where to place the box frame vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
-        /// <param name="UpperLeftCornerChar">Upper left corner character for box frame</param>
-        /// <param name="LowerLeftCornerChar">Lower left corner character for box frame</param>
-        /// <param name="UpperRightCornerChar">Upper right corner character for box frame</param>
-        /// <param name="LowerRightCornerChar">Lower right corner character for box frame</param>
-        /// <param name="UpperFrameChar">Upper frame character for box frame</param>
-        /// <param name="LowerFrameChar">Lower frame character for box frame</param>
-        /// <param name="LeftFrameChar">Left frame character for box frame</param>
-        /// <param name="RightFrameChar">Right frame character for box frame</param>
+        /// <param name="settings">Border settings</param>
         /// <param name="FrameColor">BoxFrame color from Nitrocid KS's <see cref="KernelColorType"/></param>
         /// <param name="BackgroundColor">BoxFrame background color from Nitrocid KS's <see cref="KernelColorType"/></param>
-        public static void WriteBoxFrame(int Left, int Top, int InteriorWidth, int InteriorHeight,
-                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
-                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-                                       KernelColorType FrameColor, KernelColorType BackgroundColor)
+        public static void WriteBoxFrame(int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, KernelColorType FrameColor, KernelColorType BackgroundColor)
         {
             try
             {
                 // Render the box frame
-                string frame = BoxFrameColor.RenderBoxFrame(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
+                string frame = BoxFrameColor.RenderBoxFrame(Left, Top, InteriorWidth, InteriorHeight, settings);
                 TextWriterWhereColor.WriteWhereColorBack(frame, Left, Top, false, KernelColorTools.GetColor(FrameColor), KernelColorTools.GetColor(BackgroundColor));
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
@@ -348,12 +258,7 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
         /// <param name="BoxFrameColor">BoxFrame color from Nitrocid KS's <see cref="KernelColorType"/></param>
         public static void WriteBoxFrame(string text, int Left, int Top, int InteriorWidth, int InteriorHeight, KernelColorType BoxFrameColor, params object[] vars) =>
-            WriteBoxFrame(text, Left, Top, InteriorWidth, InteriorHeight,
-                        BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
-                        BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
-                        BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
-                        BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        BoxFrameColor, KernelColorType.Background, vars);
+            WriteBoxFrame(text, Left, Top, InteriorWidth, InteriorHeight, BorderSettings.GlobalSettings, BoxFrameColor, KernelColorType.Background, vars);
 
         /// <summary>
         /// Writes the box frame plainly
@@ -367,12 +272,7 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="BoxFrameColor">BoxFrame color from Nitrocid KS's <see cref="KernelColorType"/></param>
         /// <param name="BackgroundColor">BoxFrame background color from Nitrocid KS's <see cref="KernelColorType"/></param>
         public static void WriteBoxFrame(string text, int Left, int Top, int InteriorWidth, int InteriorHeight, KernelColorType BoxFrameColor, KernelColorType BackgroundColor, params object[] vars) =>
-            WriteBoxFrame(text, Left, Top, InteriorWidth, InteriorHeight,
-                        BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
-                        BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
-                        BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
-                        BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        BoxFrameColor, BackgroundColor, vars);
+            WriteBoxFrame(text, Left, Top, InteriorWidth, InteriorHeight, BorderSettings.GlobalSettings, BoxFrameColor, BackgroundColor, vars);
 
         /// <summary>
         /// Writes the box frame plainly
@@ -383,20 +283,10 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="Top">Where to place the box frame vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
-        /// <param name="UpperLeftCornerChar">Upper left corner character for box frame</param>
-        /// <param name="LowerLeftCornerChar">Lower left corner character for box frame</param>
-        /// <param name="UpperRightCornerChar">Upper right corner character for box frame</param>
-        /// <param name="LowerRightCornerChar">Lower right corner character for box frame</param>
-        /// <param name="UpperFrameChar">Upper frame character for box frame</param>
-        /// <param name="LowerFrameChar">Lower frame character for box frame</param>
-        /// <param name="LeftFrameChar">Left frame character for box frame</param>
-        /// <param name="RightFrameChar">Right frame character for box frame</param>
+        /// <param name="settings">Border settings</param>
         /// <param name="BoxFrameColor">BoxFrame color from Nitrocid KS's <see cref="KernelColorType"/></param>
-        public static void WriteBoxFrame(string text, int Left, int Top, int InteriorWidth, int InteriorHeight,
-                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
-                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-                                       KernelColorType BoxFrameColor, params object[] vars) =>
-            WriteBoxFrame(text, Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, BoxFrameColor, KernelColorType.Background, vars);
+        public static void WriteBoxFrame(string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, KernelColorType BoxFrameColor, params object[] vars) =>
+            WriteBoxFrame(text, Left, Top, InteriorWidth, InteriorHeight, settings, BoxFrameColor, KernelColorType.Background, vars);
 
         /// <summary>
         /// Writes the box frame plainly
@@ -407,25 +297,15 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="Top">Where to place the box frame vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
-        /// <param name="UpperLeftCornerChar">Upper left corner character for box frame</param>
-        /// <param name="LowerLeftCornerChar">Lower left corner character for box frame</param>
-        /// <param name="UpperRightCornerChar">Upper right corner character for box frame</param>
-        /// <param name="LowerRightCornerChar">Lower right corner character for box frame</param>
-        /// <param name="UpperFrameChar">Upper frame character for box frame</param>
-        /// <param name="LowerFrameChar">Lower frame character for box frame</param>
-        /// <param name="LeftFrameChar">Left frame character for box frame</param>
-        /// <param name="RightFrameChar">Right frame character for box frame</param>
+        /// <param name="settings">Border settings</param>
         /// <param name="FrameColor">BoxFrame color from Nitrocid KS's <see cref="KernelColorType"/></param>
         /// <param name="BackgroundColor">BoxFrame background color from Nitrocid KS's <see cref="KernelColorType"/></param>
-        public static void WriteBoxFrame(string text, int Left, int Top, int InteriorWidth, int InteriorHeight,
-                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
-                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-                                       KernelColorType FrameColor, KernelColorType BackgroundColor, params object[] vars)
+        public static void WriteBoxFrame(string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, KernelColorType FrameColor, KernelColorType BackgroundColor, params object[] vars)
         {
             try
             {
                 // Render the box frame
-                string frame = BoxFrameColor.RenderBoxFrame(text, Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, vars);
+                string frame = BoxFrameColor.RenderBoxFrame(text, Left, Top, InteriorWidth, InteriorHeight, settings, vars);
                 TextWriterWhereColor.WriteWhereColorBack(frame, Left, Top, false, KernelColorTools.GetColor(FrameColor), KernelColorTools.GetColor(BackgroundColor));
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))

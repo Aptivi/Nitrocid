@@ -42,6 +42,7 @@ using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Power;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
+using Terminaux.Writer.FancyWriters.Tools;
 
 namespace Nitrocid.Misc.Notifications
 {
@@ -270,14 +271,20 @@ namespace Nitrocid.Misc.Notifications
                                 }
 
                                 // Just draw the border!
+                                var borderSettings = new BorderSettings()
+                                {
+                                    BorderUpperLeftCornerChar = CurrentNotifyUpperLeftCornerChar,
+                                    BorderLowerLeftCornerChar = CurrentNotifyLowerLeftCornerChar,
+                                    BorderUpperRightCornerChar = CurrentNotifyUpperRightCornerChar,
+                                    BorderLowerRightCornerChar = CurrentNotifyLowerRightCornerChar,
+                                    BorderUpperFrameChar = CurrentNotifyUpperFrameChar,
+                                    BorderLowerFrameChar = CurrentNotifyLowerFrameChar,
+                                    BorderLeftFrameChar = CurrentNotifyLeftFrameChar,
+                                    BorderRightFrameChar = CurrentNotifyRightFrameChar,
+                                };
                                 printBuffer.Append(
                                     BorderColor.RenderBorder(
-                                        notifLeftAgnostic - 1, notifTopAgnostic, notifWidth, 3,
-                                        CurrentNotifyUpperLeftCornerChar, CurrentNotifyLowerLeftCornerChar,
-                                        CurrentNotifyUpperRightCornerChar, CurrentNotifyLowerRightCornerChar,
-                                        CurrentNotifyUpperFrameChar, CurrentNotifyLowerFrameChar,
-                                        CurrentNotifyLeftFrameChar, CurrentNotifyRightFrameChar,
-                                        NotifyBorderColor, background
+                                        notifLeftAgnostic - 1, notifTopAgnostic, notifWidth, 3, borderSettings, NotifyBorderColor, background
                                     )
                                 );
                             }

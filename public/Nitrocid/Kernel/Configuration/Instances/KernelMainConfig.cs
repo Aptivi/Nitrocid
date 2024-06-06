@@ -263,18 +263,6 @@ namespace Nitrocid.Kernel.Configuration.Instances
             set => ColorTools.GlobalSettings.UseTerminalPalette = value;
         }
         /// <summary>
-        /// Whether to allow foreground color
-        /// </summary>
-        public bool AllowForegroundColor
-        {
-            get => KernelColorTools.allowForeground;
-            set
-            {
-                KernelColorTools.allowForeground = value;
-                ColorTools.AllowForeground = KernelColorTools.allowForeground;
-            }
-        }
-        /// <summary>
         /// Whether to allow background color
         /// </summary>
         public bool AllowBackgroundColor
@@ -1370,70 +1358,6 @@ namespace Nitrocid.Kernel.Configuration.Instances
             set => InputTools.currentMask = string.IsNullOrEmpty(value) ? "*" : value[0].ToString();
         }
         /// <summary>
-        /// A character that resembles the upper left corner. Be sure to only input one character
-        /// </summary>
-        public char ProgressUpperLeftCornerChar
-        {
-            get => ProgressTools.ProgressUpperLeftCornerChar;
-            set => ProgressTools.ProgressUpperLeftCornerChar = value;
-        }
-        /// <summary>
-        /// A character that resembles the upper right corner. Be sure to only input one character
-        /// </summary>
-        public char ProgressUpperRightCornerChar
-        {
-            get => ProgressTools.ProgressUpperRightCornerChar;
-            set => ProgressTools.ProgressUpperRightCornerChar = value;
-        }
-        /// <summary>
-        /// A character that resembles the lower left corner. Be sure to only input one character
-        /// </summary>
-        public char ProgressLowerLeftCornerChar
-        {
-            get => ProgressTools.ProgressLowerLeftCornerChar;
-            set => ProgressTools.ProgressLowerLeftCornerChar = value;
-        }
-        /// <summary>
-        /// A character that resembles the lower right corner. Be sure to only input one character
-        /// </summary>
-        public char ProgressLowerRightCornerChar
-        {
-            get => ProgressTools.ProgressLowerRightCornerChar;
-            set => ProgressTools.ProgressLowerRightCornerChar = value;
-        }
-        /// <summary>
-        /// A character that resembles the upper frame. Be sure to only input one character
-        /// </summary>
-        public char ProgressUpperFrameChar
-        {
-            get => ProgressTools.ProgressUpperFrameChar;
-            set => ProgressTools.ProgressUpperFrameChar = value;
-        }
-        /// <summary>
-        /// A character that resembles the lower frame. Be sure to only input one character
-        /// </summary>
-        public char ProgressLowerFrameChar
-        {
-            get => ProgressTools.ProgressLowerFrameChar;
-            set => ProgressTools.ProgressLowerFrameChar = value;
-        }
-        /// <summary>
-        /// A character that resembles the left frame. Be sure to only input one character
-        /// </summary>
-        public char ProgressLeftFrameChar
-        {
-            get => ProgressTools.ProgressLeftFrameChar;
-            set => ProgressTools.ProgressLeftFrameChar = value;
-        }
-        /// <summary>
-        /// A character that resembles the right frame. Be sure to only input one character
-        /// </summary>
-        public char ProgressRightFrameChar
-        {
-            get => ProgressTools.ProgressRightFrameChar;
-            set => ProgressTools.ProgressRightFrameChar = value;
-        }
-        /// <summary>
         /// Whether the input history is enabled or not. If enabled, you can access recently typed commands using the up or down arrow keys.
         /// </summary>
         public bool InputHistoryEnabled
@@ -1464,64 +1388,64 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public char BorderUpperLeftCornerChar
         {
-            get => BorderTools.BorderUpperLeftCornerChar;
-            set => BorderTools.BorderUpperLeftCornerChar = value;
+            get => BorderSettings.GlobalSettings.BorderUpperLeftCornerChar;
+            set => BorderSettings.GlobalSettings.BorderUpperLeftCornerChar = value;
         }
         /// <summary>
         /// A character that resembles the upper right corner. Be sure to only input one character.
         /// </summary>
         public char BorderUpperRightCornerChar
         {
-            get => BorderTools.BorderUpperRightCornerChar;
-            set => BorderTools.BorderUpperRightCornerChar = value;
+            get => BorderSettings.GlobalSettings.BorderUpperRightCornerChar;
+            set => BorderSettings.GlobalSettings.BorderUpperRightCornerChar = value;
         }
         /// <summary>
         /// A character that resembles the lower left corner. Be sure to only input one character.
         /// </summary>
         public char BorderLowerLeftCornerChar
         {
-            get => BorderTools.BorderLowerLeftCornerChar;
-            set => BorderTools.BorderLowerLeftCornerChar = value;
+            get => BorderSettings.GlobalSettings.BorderLowerLeftCornerChar;
+            set => BorderSettings.GlobalSettings.BorderLowerLeftCornerChar = value;
         }
         /// <summary>
         /// A character that resembles the lower right corner. Be sure to only input one character.
         /// </summary>
         public char BorderLowerRightCornerChar
         {
-            get => BorderTools.BorderLowerRightCornerChar;
-            set => BorderTools.BorderLowerRightCornerChar = value;
+            get => BorderSettings.GlobalSettings.BorderLowerRightCornerChar;
+            set => BorderSettings.GlobalSettings.BorderLowerRightCornerChar = value;
         }
         /// <summary>
         /// A character that resembles the upper frame. Be sure to only input one character.
         /// </summary>
         public char BorderUpperFrameChar
         {
-            get => BorderTools.BorderUpperFrameChar;
-            set => BorderTools.BorderUpperFrameChar = value;
+            get => BorderSettings.GlobalSettings.BorderUpperFrameChar;
+            set => BorderSettings.GlobalSettings.BorderUpperFrameChar = value;
         }
         /// <summary>
         /// A character that resembles the lower frame. Be sure to only input one character.
         /// </summary>
         public char BorderLowerFrameChar
         {
-            get => BorderTools.BorderLowerFrameChar;
-            set => BorderTools.BorderLowerFrameChar = value;
+            get => BorderSettings.GlobalSettings.BorderLowerFrameChar;
+            set => BorderSettings.GlobalSettings.BorderLowerFrameChar = value;
         }
         /// <summary>
         /// A character that resembles the left frame. Be sure to only input one character.
         /// </summary>
         public char BorderLeftFrameChar
         {
-            get => BorderTools.BorderLeftFrameChar;
-            set => BorderTools.BorderLeftFrameChar = value;
+            get => BorderSettings.GlobalSettings.BorderLeftFrameChar;
+            set => BorderSettings.GlobalSettings.BorderLeftFrameChar = value;
         }
         /// <summary>
         /// A character that resembles the right frame. Be sure to only input one character.
         /// </summary>
         public char BorderRightFrameChar
         {
-            get => BorderTools.BorderRightFrameChar;
-            set => BorderTools.BorderRightFrameChar = value;
+            get => BorderSettings.GlobalSettings.BorderRightFrameChar;
+            set => BorderSettings.GlobalSettings.BorderRightFrameChar = value;
         }
         /// <summary>
         /// Censor private information that may be printed to the debug logs.

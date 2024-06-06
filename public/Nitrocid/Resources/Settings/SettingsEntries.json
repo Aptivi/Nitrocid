@@ -265,12 +265,6 @@
                 "Description": "When this is set to true, the color palette defined by the terminal is used."
             },
             {
-                "Name": "Allow foreground color",
-                "Type": "SBoolean",
-                "Variable": "AllowForegroundColor",
-                "Description": "When this is set to true, the current foreground color is honored. Else, it uses your terminal's default colors."
-            },
-            {
                 "Name": "Allow background color",
                 "Type": "SBoolean",
                 "Variable": "AllowBackgroundColor",
@@ -1173,54 +1167,6 @@
                 "Type": "SChar",
                 "Variable": "CurrentMask",
                 "Description": "A character that masks the password. Leave blank for more security."
-            },
-            {
-                "Name": "Upper left corner character for progress bars",
-                "Type": "SChar",
-                "Variable": "ProgressUpperLeftCornerChar",
-                "Description": "A character that resembles the upper left corner. Be sure to only input one character."
-            },
-            {
-                "Name": "Upper right corner character for progress bars",
-                "Type": "SChar",
-                "Variable": "ProgressUpperRightCornerChar",
-                "Description": "A character that resembles the upper right corner. Be sure to only input one character."
-            },
-            {
-                "Name": "Lower left corner character for progress bars",
-                "Type": "SChar",
-                "Variable": "ProgressLowerLeftCornerChar",
-                "Description": "A character that resembles the lower left corner. Be sure to only input one character."
-            },
-            {
-                "Name": "Lower right corner character for progress bars",
-                "Type": "SChar",
-                "Variable": "ProgressLowerRightCornerChar",
-                "Description": "A character that resembles the lower right corner. Be sure to only input one character."
-            },
-            {
-                "Name": "Upper frame character for progress bars",
-                "Type": "SChar",
-                "Variable": "ProgressUpperFrameChar",
-                "Description": "A character that resembles the upper frame. Be sure to only input one character."
-            },
-            {
-                "Name": "Lower frame character for progress bars",
-                "Type": "SChar",
-                "Variable": "ProgressLowerFrameChar",
-                "Description": "A character that resembles the lower frame. Be sure to only input one character."
-            },
-            {
-                "Name": "Left frame character for progress bars",
-                "Type": "SChar",
-                "Variable": "ProgressLeftFrameChar",
-                "Description": "A character that resembles the left frame. Be sure to only input one character."
-            },
-            {
-                "Name": "Right frame character for progress bars",
-                "Type": "SChar",
-                "Variable": "ProgressRightFrameChar",
-                "Description": "A character that resembles the right frame. Be sure to only input one character."
             },
             {
                 "Name": "Input history enabled",

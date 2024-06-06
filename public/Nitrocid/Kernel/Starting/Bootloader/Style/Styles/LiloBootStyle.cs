@@ -26,6 +26,7 @@ using Terminaux.Writer.FancyWriters;
 using Terminaux.Base;
 using Nitrocid.Kernel.Starting.Bootloader.Apps;
 using Nitrocid.Kernel.Configuration;
+using Terminaux.Writer.FancyWriters.Tools;
 
 namespace Nitrocid.Kernel.Starting.Bootloader.Style.Styles
 {
@@ -51,9 +52,19 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style.Styles
             int extraEndX = ConsoleWrapper.WindowWidth / 2 + (interiorWidth + 4) / 2;
             int startY = 1;
             int endY = bootPrompt + startY - 2;
+            var borderSettings = new BorderSettings()
+            {
+                BorderUpperLeftCornerChar = '╓',
+                BorderLowerLeftCornerChar = '╙',
+                BorderUpperRightCornerChar = '╖',
+                BorderLowerRightCornerChar = '╜',
+                BorderUpperFrameChar = '─',
+                BorderLowerFrameChar = '─',
+                BorderLeftFrameChar = '║',
+                BorderRightFrameChar = '║',
+            };
             builder.Append(
-                BorderColor.RenderBorder(halfX, startY, interiorWidth, interiorHeight,
-                    '╓', '╙', '╖', '╜', '─', '─', '║', '║', new Color(boxBorderColor), new Color(boxBorderBackgroundColor))
+                BorderColor.RenderBorder(halfX, startY, interiorWidth, interiorHeight, borderSettings, new Color(boxBorderColor), new Color(boxBorderBackgroundColor))
             );
             for (int y = startY; y < endY; y++)
             {

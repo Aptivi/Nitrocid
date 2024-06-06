@@ -60,7 +60,6 @@ using Nitrocid.Network.Types.RPC;
 using Nitrocid.Network.SpeedDial;
 using Nitrocid.Network.Connections;
 using Terminaux.Base.Extensions;
-using System.Text;
 
 namespace Nitrocid.Kernel.Starting
 {
@@ -73,8 +72,7 @@ namespace Nitrocid.Kernel.Starting
                 // Check for terminal
                 ConsoleChecker.CheckConsole();
 
-                // Allow fore/background colors
-                ColorTools.AllowForeground = true;
+                // Allow background colors
                 ColorTools.AllowBackground = true;
 
                 // Initialize crucial things
