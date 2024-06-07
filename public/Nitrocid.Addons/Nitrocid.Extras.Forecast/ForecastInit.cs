@@ -38,7 +38,24 @@ namespace Nitrocid.Extras.Forecast
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("weather", /* Localizable */ "Shows weather info for specified city. Uses OpenWeatherMap.",
+            new CommandInfo("weather", /* Localizable */ "Shows weather info for specified city. Uses The Weather Channel from IBM.",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "latitude"),
+                        new CommandArgumentPart(true, "longitude"),
+                        new CommandArgumentPart(false, "apikey"),
+                    ],
+                    [
+                        new SwitchInfo("list", /* Localizable */ "Shows all the available cities and their latitude/longitude pairs", new SwitchOptions()
+                        {
+                            OptionalizeLastRequiredArguments = 3,
+                            AcceptsValues = true,
+                            ArgumentsRequired = true,
+                        })
+                    ])
+                ], new WeatherCommand()),
+            new CommandInfo("weather-old", /* Localizable */ "Shows weather info for specified city. Uses OpenWeatherMap.",
                 [
                     new CommandArgumentInfo(
                     [
@@ -52,7 +69,7 @@ namespace Nitrocid.Extras.Forecast
                             AcceptsValues = false
                         })
                     ])
-                ], new WeatherCommand())
+                ], new WeatherOldCommand()),
         ];
 
         string IAddon.AddonName =>
