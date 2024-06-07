@@ -488,5 +488,9 @@ namespace Nitrocid.Kernel.Exceptions
         /// There was an error when trying to process a bootloader operation.
         /// </summary>
         Bootloader,
+        /// <summary>
+        /// There was an error when trying to process an alarm system operation.
+        /// </summary>
+        Alarm,
     }
 }

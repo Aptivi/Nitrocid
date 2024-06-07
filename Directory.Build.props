@@ -20,7 +20,7 @@
           changes!
         -->
         <NitrocidModAPIVersionMajor>3.0.26</NitrocidModAPIVersionMajor>
-        <NitrocidModAPIVersionChangeset>4</NitrocidModAPIVersionChangeset>
+        <NitrocidModAPIVersionChangeset>6</NitrocidModAPIVersionChangeset>
 
         <!-- The above two properties are to be installed to the file version -->
         <NitrocidModAPIVersion>$(NitrocidModAPIVersionMajor).$(NitrocidModAPIVersionChangeset)</NitrocidModAPIVersion>
