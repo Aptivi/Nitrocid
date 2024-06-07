@@ -55,6 +55,7 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
             // Maximum options is number of kernel colors plus more options
             int MaximumOptions = ThemeStudioTools.SelectedColors.Count + 9;
             var StudioExiting = false;
+            var originalColors = new Dictionary<KernelColorType, Color>(ThemeStudioTools.SelectedColors);
 
             while (!StudioExiting)
             {
@@ -68,7 +69,8 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
                 {
                     var colorType = colors.Keys.ElementAt(key);
                     var color = colors.Values.ElementAt(key).PlainSequence;
-                    choices.Add(new InputChoiceInfo($"{key + 1}", $"{colorType}: [{color}] "));
+                    bool changed = originalColors.Values.ElementAt(key) != colors.Values.ElementAt(key);
+                    choices.Add(new InputChoiceInfo($"{key + 1}{(changed ? "*" : "")}", $"{colorType}: [{color}]"));
                 }
                 List<InputChoiceInfo> altChoices =
                 [
