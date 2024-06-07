@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Starting.Bootloader.Apps;
 using Nitrocid.Languages;
@@ -27,6 +28,8 @@ using System.Linq;
 using System.Text;
 using Terminaux.Base;
 using Terminaux.Colors;
+using Terminaux.Inputs;
+using Terminaux.Inputs.Styles.Selection;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.FancyWriters;
 using Textify.General;
@@ -44,27 +47,23 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style
         /// <inheritdoc/>
         public virtual string Render()
         {
-            // Populate colors
-            ConsoleColor sectionTitle = ConsoleColor.Green;
-            ConsoleColor boxBorderColor = ConsoleColor.Gray;
-
             // Write the section title
             var builder = new StringBuilder();
             string finalRenderedSection = "-- " + Translate.DoTranslation("Select boot entry") + " --";
             int halfX = ConsoleWrapper.WindowWidth / 2 - finalRenderedSection.Length / 2;
             builder.Append(
-                TextWriterWhereColor.RenderWhereColor(finalRenderedSection, halfX, 1, new Color(sectionTitle))
+                TextWriterWhereColor.RenderWhereColor(finalRenderedSection, halfX, 1, KernelColorTools.GetColor(KernelColorType.SeparatorText))
             );
 
             // Now, render a box
             builder.Append(
-                BorderColor.RenderBorder(2, 3, ConsoleWrapper.WindowWidth - 6, ConsoleWrapper.WindowHeight - 8, new Color(boxBorderColor))
+                BorderColor.RenderBorder(2, 3, ConsoleWrapper.WindowWidth - 6, ConsoleWrapper.WindowHeight - 8, KernelColorTools.GetColor(KernelColorType.Separator))
             );
 
             // Offer help for new users
             string help = Translate.DoTranslation("SHIFT + H for help. Version") + $" {KernelMain.Version}";
             builder.Append(
-                TextWriterWhereColor.RenderWhereColor(help, ConsoleWrapper.WindowWidth - help.Length - 2, ConsoleWrapper.WindowHeight - 2, new Color(ConsoleColor.White))
+                TextWriterWhereColor.RenderWhereColor(help, ConsoleWrapper.WindowWidth - help.Length - 2, ConsoleWrapper.WindowHeight - 2, KernelColorTools.GetColor(KernelColorType.NeutralText))
             );
             return builder.ToString();
         }
@@ -72,40 +71,23 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style
         /// <inheritdoc/>
         public virtual string RenderHighlight(int chosenBootEntry)
         {
-            // Populate colors
-            ConsoleColor highlightedEntry = ConsoleColor.DarkGreen;
-            ConsoleColor normalEntry = ConsoleColor.Gray;
-            ConsoleColor pageNumberColor = ConsoleColor.Gray;
-
             // Populate boot entries inside the box
             var builder = new StringBuilder();
             var bootApps = BootManager.GetBootApps();
-            (int, int) upperLeftCornerInterior = (4, 5);
-            (int, int) lowerLeftCornerInterior = (4, ConsoleWrapper.WindowHeight - upperLeftCornerInterior.Item2);
+            (int, int) upperLeftCornerInterior = (3, 4);
+            (int, int) lowerLeftCornerInterior = (3, ConsoleWrapper.WindowHeight - upperLeftCornerInterior.Item2);
             int maxItemsPerPage = lowerLeftCornerInterior.Item2 - upperLeftCornerInterior.Item2;
             int pages = (int)Math.Truncate(bootApps.Count / (double)maxItemsPerPage);
             int currentPage = (int)Math.Truncate(chosenBootEntry / (double)maxItemsPerPage);
-            int startIndex = maxItemsPerPage * currentPage;
-            int endIndex = maxItemsPerPage * (currentPage + 1) - 1;
-            int renderedAnswers = 0;
-            for (int i = startIndex; i < endIndex; i++)
-            {
-                if (i + 1 > bootApps.Count)
-                    break;
-                string bootApp = BootManager.GetBootAppNameByIndex(i);
-                string rendered = $" >> {bootApp}";
-                var finalColor = i == chosenBootEntry ? highlightedEntry : normalEntry;
-                builder.Append(
-                    TextWriterWhereColor.RenderWhereColor(rendered, upperLeftCornerInterior.Item1, upperLeftCornerInterior.Item2 + renderedAnswers, new Color(finalColor))
-                );
-                renderedAnswers++;
-            }
+            builder.Append(
+                SelectionInputTools.RenderSelections(bootApps.Select((kvp, idx) => new InputChoiceInfo($"{idx + 1}", kvp.Key)).ToArray(), upperLeftCornerInterior.Item1, upperLeftCornerInterior.Item2, chosenBootEntry, maxItemsPerPage, ConsoleWrapper.WindowWidth - 6, foregroundColor: KernelColorTools.GetColor(KernelColorType.Option), selectedForegroundColor: KernelColorTools.GetColor(KernelColorType.SelectedOption))
+            );
 
             // Populate page number
             string renderedNumber = $"[{chosenBootEntry + 1}/{bootApps.Count}]═[{currentPage + 1}/{pages}]";
             (int, int) lowerRightCornerToWrite = (ConsoleWrapper.WindowWidth - renderedNumber.Length - 3, ConsoleWrapper.WindowHeight - 4);
             builder.Append(
-                TextWriterWhereColor.RenderWhereColor(renderedNumber, lowerRightCornerToWrite.Item1, lowerRightCornerToWrite.Item2, new Color(pageNumberColor))
+                TextWriterWhereColor.RenderWhereColor(renderedNumber, lowerRightCornerToWrite.Item1, lowerRightCornerToWrite.Item2, KernelColorTools.GetColor(KernelColorType.Separator))
             );
             return builder.ToString();
         }
@@ -114,10 +96,6 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style
         public virtual string RenderModalDialog(string content)
         {
             // Populate colors
-            ConsoleColor dialogBG = ConsoleColor.Black;
-            ConsoleColor dialogFG = ConsoleColor.Gray;
-            ColorTools.LoadBack();
-
             var splitLines = content.SplitNewLines();
             int maxWidth = splitLines.Max((str) => str.Length);
             int maxHeight = splitLines.Length;
@@ -127,7 +105,7 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style
                 maxHeight = ConsoleWrapper.WindowHeight - 4;
             int borderX = ConsoleWrapper.WindowWidth / 2 - maxWidth / 2 - 1;
             int borderY = ConsoleWrapper.WindowHeight / 2 - maxHeight / 2 - 1;
-            return BorderTextColor.RenderBorder(content, borderX, borderY, maxWidth, maxHeight, new Color(dialogFG), new Color(dialogBG));
+            return BorderTextColor.RenderBorder(content, borderX, borderY, maxWidth, maxHeight, KernelColorTools.GetColor(KernelColorType.Separator));
         }
 
         /// <inheritdoc/>
@@ -136,13 +114,13 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style
 
         /// <inheritdoc/>
         public virtual string RenderSelectTimeout(int timeout) =>
-            TextWriterWhereColor.RenderWhereColor($"{timeout} ", 2, ConsoleWrapper.WindowHeight - 2, true, new Color(ConsoleColor.White));
+            TextWriterWhereColor.RenderWhereColor($"{timeout} ", 2, ConsoleWrapper.WindowHeight - 2, true,KernelColorTools.GetColor(KernelColorType.NeutralText));
 
         /// <inheritdoc/>
         public virtual string ClearSelectTimeout()
         {
             string spaces = new(' ', Config.MainConfig.BootSelectTimeoutSeconds.GetDigits());
-            return TextWriterWhereColor.RenderWhereColor(spaces, 2, ConsoleWrapper.WindowHeight - 2, true, new Color(ConsoleColor.White));
+            return TextWriterWhereColor.RenderWhereColor(spaces, 2, ConsoleWrapper.WindowHeight - 2, true, KernelColorTools.GetColor(KernelColorType.NeutralText));
         }
     }
 }
