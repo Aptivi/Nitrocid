@@ -261,6 +261,22 @@ namespace Nitrocid.Shell.ShellBase.Help
                     TextWriters.Write(Translate.DoTranslation("Usage:"), false, KernelColorType.ListEntry);
                     TextWriters.Write($" {FinalCommand} {argumentInfo.RenderedUsage}", KernelColorType.ListValue);
 
+                    // If we have arguments, print their descriptions
+                    if (Arguments.Length != 0)
+                    {
+                        TextWriters.Write(Translate.DoTranslation("This command has the below arguments that change how it works:"), KernelColorType.NeutralText);
+                        foreach (var argument in Arguments)
+                        {
+                            string argumentDescUnlocalized = argument.Options.ArgumentDescription;
+                            if (string.IsNullOrWhiteSpace(argument.Options.ArgumentDescription))
+                                argumentDescUnlocalized = /* Localizable */ "Unspecified argument description";
+                            string argumentName = argument.ArgumentExpression;
+                            string argumentDesc = Translate.DoTranslation(argumentDescUnlocalized);
+                            TextWriters.Write($"  {argumentName}: ", false, KernelColorType.ListEntry);
+                            TextWriters.Write(argumentDesc, KernelColorType.ListValue);
+                        }
+                    }
+
                     // If we have switches, print their descriptions
                     if (Switches.Length != 0)
                     {
