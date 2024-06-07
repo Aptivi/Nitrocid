@@ -18,10 +18,12 @@
 //
 
 using Nitrocid.Kernel.Starting.Bootloader.Apps;
+using Nitrocid.Languages;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Writer.ConsoleWriters;
 
@@ -30,7 +32,6 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style.Styles
     internal class BootMgrBootStyle : BaseBootStyle, IBootStyle
     {
         internal List<(int, int)> bootEntryPositions = [];
-        public override Dictionary<ConsoleKeyInfo, Action> CustomKeys { get; }
 
         public override string Render()
         {
@@ -39,8 +40,8 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style.Styles
             int headerY = 0;
             int footerY = ConsoleWrapper.WindowHeight - 1;
             int barLength = ConsoleWrapper.WindowWidth - 4;
-            string header = "Windows Boot Manager";
-            string footer = "ENTER=Choose";
+            string header = Translate.DoTranslation("Windows Boot Manager");
+            string footer = Translate.DoTranslation("ENTER=Choose");
             int headerTextX = ConsoleWrapper.WindowWidth / 2 - header.Length / 2;
             var builder = new StringBuilder();
             ConsoleColor barColor = ConsoleColor.Gray;
@@ -58,9 +59,9 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style.Styles
             int chooseHelpY = 2;
             int optionHelpY = 12;
             builder.Append(
-                TextWriterWhereColor.RenderWhereColor("Choose an operating system to start, or press TAB to select a tool:", marginX, chooseHelpY, new Color(promptColor)) +
-                TextWriterWhereColor.RenderWhereColor("(Use the arrow keys to highlight your choice, then press ENTER.)", marginX, chooseHelpY + 1, new Color(hintColor)) +
-                TextWriterWhereColor.RenderWhereColor("To specify an advanced option for this choice, press F8.", marginX, optionHelpY, new Color(promptColor))
+                TextWriterWhereColor.RenderWhereColor(Translate.DoTranslation("Choose an operating system to start, or press TAB to select a tool:"), marginX, chooseHelpY, new Color(promptColor)) +
+                TextWriterWhereColor.RenderWhereColor(Translate.DoTranslation("(Use the arrow keys to highlight your choice, then press ENTER.)"), marginX, chooseHelpY + 1, new Color(hintColor)) +
+                TextWriterWhereColor.RenderWhereColor(Translate.DoTranslation("To specify an advanced option for this choice, press F8."), marginX, optionHelpY, new Color(promptColor))
             );
 
             // Return the result
@@ -99,54 +100,17 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style.Styles
             return builder.ToString();
         }
 
-        public override string RenderBootFailedMessage(string content)
-        {
-            // Render the header and footer
-            int marginX = 2;
-            int headerY = 0;
-            int footerY = ConsoleWrapper.WindowHeight - 1;
-            int barLength = ConsoleWrapper.WindowWidth - 4;
-            string header = "Windows Boot Manager";
-            string footer = "ENTER=Continue";
-            int headerTextX = ConsoleWrapper.WindowWidth / 2 - header.Length / 2;
-            var builder = new StringBuilder();
-            ConsoleColor barColor = ConsoleColor.Gray;
-            ConsoleColor barForeground = ConsoleColor.Black;
-            builder.Append(
-                TextWriterWhereColor.RenderWhereColorBack(new string(' ', barLength), marginX, headerY, new Color(barForeground), new Color(barColor)) +
-                TextWriterWhereColor.RenderWhereColorBack(new string(' ', barLength), marginX, footerY, new Color(barForeground), new Color(barColor)) +
-                TextWriterWhereColor.RenderWhereColorBack(header, headerTextX, headerY, new Color(barForeground), new Color(barColor)) +
-                TextWriterWhereColor.RenderWhereColorBack(footer, 3, footerY, new Color(barForeground), new Color(barColor))
-            );
-
-            // Render the hints first
-            ConsoleColor promptColor = ConsoleColor.White;
-            ConsoleColor hintColor = ConsoleColor.Gray;
-            int failedHelpY = 2;
-            builder.Append(
-                TextWriterWhereColor.RenderWhereColor("Windows failed to start. A recent hardware or software change might be the\ncause. To fix the problem:", marginX, failedHelpY, new Color(hintColor)) +
-                TextWriterWhereColor.RenderWhereColor("1. Insert your Windows installation disc and restart your computer.", marginX + 2, failedHelpY + 3, new Color(hintColor)) +
-                TextWriterWhereColor.RenderWhereColor("2. Choose your language settings, and then click \"Next.\"", marginX + 2, failedHelpY + 4, new Color(hintColor)) +
-                TextWriterWhereColor.RenderWhereColor("3. Click \"Repair your computer.\"", marginX + 2, failedHelpY + 5, new Color(hintColor)) +
-                TextWriterWhereColor.RenderWhereColor("If you do not have this disc, contact your system administrator or computer\nmanufacturer for assistance.", marginX, failedHelpY + 7, new Color(hintColor)) +
-                TextWriterWhereColor.RenderWhereColor($"File: {ColorTools.RenderSetConsoleColor(new Color(promptColor))}\\Boot\\BCD", marginX + 4, failedHelpY + 10, new Color(hintColor)) +
-                TextWriterWhereColor.RenderWhereColor($"Status: {ColorTools.RenderSetConsoleColor(new Color(promptColor))}0xc000000f", marginX + 4, failedHelpY + 12, new Color(hintColor)) +
-                TextWriterWhereColor.RenderWhereColor($"Info:", marginX + 4, failedHelpY + 14, new Color(hintColor)) +
-                TextWriterWhereColor.RenderWhereColor(content, marginX + 10, failedHelpY + 14, new Color(promptColor))
-            );
-            return builder.ToString();
-        }
-
         public override string RenderSelectTimeout(int timeout)
         {
             var builder = new StringBuilder();
             ConsoleColor hintColor = ConsoleColor.Gray;
             int marginX = 2;
             int optionHelpY = 12;
+            string secs = Translate.DoTranslation("Seconds until the highlighted choice will be started automatically:");
             builder.Append(
-                TextWriterWhereColor.RenderWhereColor("Seconds until the highlighted choice will be started automatically:", marginX, optionHelpY + 1, true, new Color(hintColor))
+                TextWriterWhereColor.RenderWhereColor(secs, marginX, optionHelpY + 1, true, new Color(hintColor))
             );
-            int timeoutX = marginX + "Seconds until the highlighted choice will be started automatically: ".Length;
+            int timeoutX = marginX + ConsoleChar.EstimateCellWidth(secs);
             int timeoutY = 13;
             builder.Append(
                 TextWriterWhereColor.RenderWhereColor($"{timeout} ", timeoutX, timeoutY, true, new Color(hintColor))

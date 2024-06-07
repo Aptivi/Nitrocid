@@ -19,6 +19,8 @@
 
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Starting.Bootloader.Apps;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Reflection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -48,7 +50,7 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style
 
             // Write the section title
             var builder = new StringBuilder();
-            string finalRenderedSection = "-- Select boot entry --";
+            string finalRenderedSection = "-- " + Translate.DoTranslation("Select boot entry") + " --";
             int halfX = ConsoleWrapper.WindowWidth / 2 - finalRenderedSection.Length / 2;
             builder.Append(
                 TextWriterWhereColor.RenderWhereColor(finalRenderedSection, halfX, 2, new Color(sectionTitle))
@@ -60,7 +62,7 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style
             );
 
             // Offer help for new users
-            string help = $"SHIFT + H for help. Version {KernelMain.Version}";
+            string help = Translate.DoTranslation("SHIFT + H for help. Version") + $" {KernelMain.Version}";
             builder.Append(
                 TextWriterWhereColor.RenderWhereColor(help, ConsoleWrapper.WindowWidth - help.Length - 2, ConsoleWrapper.WindowHeight - 2, new Color(ConsoleColor.White))
             );
@@ -130,11 +132,7 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style
 
         /// <inheritdoc/>
         public virtual string RenderBootingMessage(string chosenBootName) =>
-            $"Booting {chosenBootName}...";
-
-        /// <inheritdoc/>
-        public virtual string RenderBootFailedMessage(string content) =>
-            content;
+            Translate.DoTranslation("Booting {0}...").FormatString(chosenBootName);
 
         /// <inheritdoc/>
         public virtual string RenderSelectTimeout(int timeout) =>
@@ -143,11 +141,8 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style
         /// <inheritdoc/>
         public virtual string ClearSelectTimeout()
         {
-            string spaces = new(' ', GetDigits(Config.MainConfig.BootSelectTimeoutSeconds));
+            string spaces = new(' ', Config.MainConfig.BootSelectTimeoutSeconds.GetDigits());
             return TextWriterWhereColor.RenderWhereColor(spaces, 2, ConsoleWrapper.WindowHeight - 2, true, new Color(ConsoleColor.White));
         }
-
-        internal static int GetDigits(int Number) =>
-            Number == 0 ? 1 : (int)Math.Log10(Math.Abs(Number)) + 1;
     }
 }

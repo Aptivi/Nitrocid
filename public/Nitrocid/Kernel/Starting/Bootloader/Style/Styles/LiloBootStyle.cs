@@ -27,12 +27,12 @@ using Terminaux.Base;
 using Nitrocid.Kernel.Starting.Bootloader.Apps;
 using Nitrocid.Kernel.Configuration;
 using Terminaux.Writer.FancyWriters.Tools;
+using Nitrocid.Languages;
 
 namespace Nitrocid.Kernel.Starting.Bootloader.Style.Styles
 {
     internal class LiloBootStyle : BaseBootStyle, IBootStyle
     {
-        public override Dictionary<ConsoleKeyInfo, Action> CustomKeys { get; }
 
         public override string Render()
         {
@@ -113,9 +113,9 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style.Styles
             int textY = 11;
             int textX = halfX + 1;
             string help =
-                "Hit any key to cancel timeout\n" +
-                "Use arrow keys to make selection\n" +
-                "Enter choice & options, hit CR to boot";
+                Translate.DoTranslation("Hit any key to cancel timeout") + "\n" +
+                Translate.DoTranslation("Use arrow keys to make selection") + "\n" +
+                Translate.DoTranslation("Enter choice & options, hit CR to boot");
             builder.Append(
                 TextWriterWhereColor.RenderWhereColorBack(help, textX, textY, new Color(boxBorderColor), new Color(boxBorderBackgroundColor))
             );
@@ -157,9 +157,6 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style.Styles
             }
             return builder.ToString();
         }
-
-        public override string RenderBootFailedMessage(string content) =>
-            RenderModalDialog(content);
 
         public override string RenderSelectTimeout(int timeout)
         {

@@ -27,12 +27,13 @@ using Terminaux.Writer.FancyWriters;
 using Terminaux.Base;
 using Nitrocid.Kernel.Starting.Bootloader.Apps;
 using Nitrocid.Kernel.Configuration;
+using Nitrocid.Languages;
+using Textify.General;
 
 namespace Nitrocid.Kernel.Starting.Bootloader.Style.Styles
 {
     internal class GrubBootStyle : BaseBootStyle, IBootStyle
     {
-        public override Dictionary<ConsoleKeyInfo, Action> CustomKeys { get; }
 
         public override string Render()
         {
@@ -42,7 +43,7 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style.Styles
             ConsoleColor boxBorderColor = ConsoleColor.DarkGray;
 
             // Write the section title
-            string finalRenderedSection = "GNU GRUB  version 2.06";
+            string finalRenderedSection = Translate.DoTranslation("GNU GRUB  version 2.06");
             int halfX = ConsoleWrapper.WindowWidth / 2 - finalRenderedSection.Length / 2;
             builder.Append(
                 TextWriterWhereColor.RenderWhereColor(finalRenderedSection, halfX, 2, new Color(sectionTitle))
@@ -55,9 +56,9 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style.Styles
 
             // Offer help for new users
             string help =
-                $"Use the ↑ and ↓ keys to select which entry is highlighted.\n" +
-                $"Press enter to boot the selected OS, `e' to edit the commands\n" +
-                $"before booting or `c' for a command line.";
+                Translate.DoTranslation("Use the ↑ and ↓ keys to select which entry is highlighted.") + "\n" +
+                Translate.DoTranslation("Press enter to boot the selected OS, `e' to edit the commands") + "\n" +
+                Translate.DoTranslation("before booting or `c' for a command line.");
             int longest = help.Split(['\n']).Max((text) => text.Length);
             builder.Append(
                 TextWriterWhereColor.RenderWhereColor(help, ConsoleWrapper.WindowWidth / 2 - longest / 2 - 2, ConsoleWrapper.WindowHeight - 8, new Color(sectionTitle))
@@ -97,18 +98,15 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style.Styles
             return builder.ToString();
         }
 
-        public override string RenderBootFailedMessage(string content) =>
-            RenderModalDialog(content);
-
         public override string RenderSelectTimeout(int timeout)
         {
-            string help = $"The highlighted entry will be executed automatically in {timeout}s. ";
+            string help = Translate.DoTranslation("The highlighted entry will be executed automatically in {0}s.").FormatString(timeout) + " ";
             return TextWriterWhereColor.RenderWhereColor(help, 4, ConsoleWrapper.WindowHeight - 5, true, new Color(ConsoleColor.White));
         }
 
         public override string ClearSelectTimeout()
         {
-            string help = $"The highlighted entry will be executed automatically in {Config.MainConfig.BootSelectTimeoutSeconds}s. ";
+            string help = Translate.DoTranslation("The highlighted entry will be executed automatically in {0}s.").FormatString(Config.MainConfig.BootSelectTimeoutSeconds) + " ";
             return TextWriterWhereColor.RenderWhereColor(new string(' ', help.Length), 4, ConsoleWrapper.WindowHeight - 5, true, new Color(ConsoleColor.White));
         }
     }

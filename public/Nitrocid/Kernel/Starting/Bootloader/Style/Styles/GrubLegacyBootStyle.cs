@@ -17,6 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+extern alias TextifyDep;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,12 +29,13 @@ using Terminaux.Writer.FancyWriters;
 using Terminaux.Base;
 using Nitrocid.Kernel.Starting.Bootloader.Apps;
 using Nitrocid.Kernel.Configuration;
+using Nitrocid.Languages;
+using TextifyDep::Textify.General;
 
 namespace Nitrocid.Kernel.Starting.Bootloader.Style.Styles
 {
     internal class GrubLegacyBootStyle : BaseBootStyle, IBootStyle
     {
-        public override Dictionary<ConsoleKeyInfo, Action> CustomKeys { get; }
 
         public override string Render()
         {
@@ -42,7 +45,7 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style.Styles
             ConsoleColor boxBorderColor = ConsoleColor.DarkGray;
 
             // Write the section title
-            string finalRenderedSection = "GNU GRUB  version 0.97  (638K lower / 1046784K upper memory)";
+            string finalRenderedSection = Translate.DoTranslation("GNU GRUB  version 0.97  (638K lower / 1046784K upper memory)");
             int halfX = ConsoleWrapper.WindowWidth / 2 - finalRenderedSection.Length / 2;
             builder.Append(
                 TextWriterWhereColor.RenderWhereColor(finalRenderedSection, halfX, 2, new Color(sectionTitle))
@@ -55,9 +58,9 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style.Styles
 
             // Offer help for new users
             string help =
-                $"Use the ↑ and ↓ keys to select which entry is highlighted.\n" +
-                $"Press enter to boot the selected OS, `e' to edit the\n" +
-                $"commands before booting or `c' for a command line.";
+                Translate.DoTranslation("Use the ↑ and ↓ keys to select which entry is highlighted.") + "\n" +
+                Translate.DoTranslation("Press enter to boot the selected OS, `e' to edit the") + "\n" +
+                Translate.DoTranslation("commands before booting or `c' for a command line.");
             int longest = help.Split(['\n']).Max((text) => text.Length);
             builder.Append(
                 TextWriterWhereColor.RenderWhereColor(help, ConsoleWrapper.WindowWidth / 2 - longest / 2 - 2, ConsoleWrapper.WindowHeight - 8, new Color(sectionTitle))
@@ -99,23 +102,22 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style.Styles
 
         public override string RenderBootingMessage(string chosenBootName)
         {
+            string message1 = Translate.DoTranslation("Booting '{0}'").FormatString(chosenBootName);
+            string message2 = Translate.DoTranslation("Filesystem type is") + " fat, " + Translate.DoTranslation("partition type") + " 0x0C";
             return
-                $"  Booting '{chosenBootName}'\n\n" +
-                $" Filesystem type is fat, partition type 0x0C";
+                $"  {message1}\n\n" +
+                $" {message2}";
         }
-
-        public override string RenderBootFailedMessage(string content) =>
-            RenderModalDialog(content);
 
         public override string RenderSelectTimeout(int timeout)
         {
-            string help = $"The highlighted entry will be executed automatically in {timeout}s. ";
+            string help = Translate.DoTranslation("The highlighted entry will be executed automatically in {0}s.").FormatString(timeout) + " ";
             return TextWriterWhereColor.RenderWhereColor(help, 4, ConsoleWrapper.WindowHeight - 5, true, new Color(ConsoleColor.White));
         }
 
         public override string ClearSelectTimeout()
         {
-            string help = $"The highlighted entry will be executed automatically in {Config.MainConfig.BootSelectTimeoutSeconds}s. ";
+            string help = Translate.DoTranslation("The highlighted entry will be executed automatically in {0}s.").FormatString(Config.MainConfig.BootSelectTimeoutSeconds) + " ";
             return TextWriterWhereColor.RenderWhereColor(new string(' ', help.Length), 4, ConsoleWrapper.WindowHeight - 5, true, new Color(ConsoleColor.White));
         }
     }

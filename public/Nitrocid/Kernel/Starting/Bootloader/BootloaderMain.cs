@@ -23,10 +23,12 @@ using Nitrocid.Kernel.Starting.Bootloader.Apps;
 using Nitrocid.Kernel.Starting.Bootloader.KeyHandler;
 using Nitrocid.Kernel.Starting.Bootloader.Style;
 using Nitrocid.Kernel.Starting.Environment;
+using Nitrocid.Languages;
 using System;
 using System.Linq;
 using Terminaux.Base;
 using Terminaux.Base.Buffered;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Reader;
 using Terminaux.Writer.ConsoleWriters;
@@ -49,13 +51,11 @@ namespace Nitrocid.Kernel.Starting.Bootloader
             }
             catch (Exception ex)
             {
-                // Failed trying to preload the bootloader or failure in the bootloader (after preloading)
+                // Failure in the bootloader
                 DebugWriter.WriteDebug(DebugLevel.E, "Bootloader has failed: {0}", ex.Message);
-                TextWriterColor.Write("GRILO has experienced an internal error: {0}", ex.Message);
-
-                DebugWriter.WriteDebug(DebugLevel.E, "Stack trace:\n{0}", ex.StackTrace);
-                TextWriterColor.Write(ex.StackTrace);
-                TextWriterColor.Write("Press any key to exit.");
+                DebugWriter.WriteDebugStackTrace(ex);
+                TextWriterColor.Write(Translate.DoTranslation("GRILO has experienced an internal error") + ": {0}", ex.Message);
+                TextWriterColor.Write(Translate.DoTranslation("Press any key to exit."));
                 TermReader.ReadKey();
             }
             finally
@@ -155,25 +155,29 @@ namespace Nitrocid.Kernel.Starting.Bootloader
                             bootloaderBuffer.Clear();
                             bootloaderBuffer.AddDynamicText(() =>
                             {
-                                return BootStyleManager.RenderDialog(
-                                    $"""
-                                    Standard controls
-                                    -----------------
-
-                                    [UP ARROW]   | Selects the previous boot entry
-                                    [DOWN ARROW] | Selects the next boot entry
-                                    [HOME]       | Selects the first boot entry
-                                    [END]        | Selects the last boot entry
-                                    [SHIFT + H]  | Opens this help page
-                                    [ENTER]      | Boots the selected entry
-
-                                    Controls defined by custom boot style
-                                    -------------------------------------
-
-                                    {(style.CustomKeys is not null && style.CustomKeys.Count > 0 ?
+                                string section1 = Translate.DoTranslation("Standard controls");
+                                string section2 = Translate.DoTranslation("Controls defined by custom boot style");
+                                string renderedCustomKeys =
+                                    style.CustomKeys is not null && style.CustomKeys.Count > 0 ?
                                     string.Join("\n", style.CustomKeys
                                         .Select((cki) => $"[{string.Join(" + ", cki.Key.Modifiers)} + {cki.Key.Key}]")) :
-                                    "No controls defined by custom boot style")}
+                                    Translate.DoTranslation("No controls defined by custom boot style");
+                                return BootStyleManager.RenderDialog(
+                                    $"""
+                                    {section1}
+                                    {new string('=', ConsoleChar.EstimateCellWidth(section1))}
+
+                                    [UP ARROW]   | {Translate.DoTranslation("Selects the previous boot entry")}
+                                    [DOWN ARROW] | {Translate.DoTranslation("Selects the next boot entry")}
+                                    [HOME]       | {Translate.DoTranslation("Selects the first boot entry")}
+                                    [END]        | {Translate.DoTranslation("Selects the last boot entry")}
+                                    [SHIFT + H]  | {Translate.DoTranslation("Opens this help page")}
+                                    [ENTER]      | {Translate.DoTranslation("Boots the selected entry")}
+
+                                    {section2}
+                                    {new string('=', ConsoleChar.EstimateCellWidth(section2))}
+
+                                    {renderedCustomKeys}
                                     """
                                 );
                             });

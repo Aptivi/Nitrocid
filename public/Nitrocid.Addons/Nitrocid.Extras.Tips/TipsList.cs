@@ -69,7 +69,7 @@ namespace Nitrocid.Extras.Tips
             /* Localizable */ "that the first screensaver that blanked the screen after three minutes of inactivity on the original IBM PCs, scrnsave, was created on 1983 by John Socha?",
             /* Localizable */ "that some of the fast-paced screensavers may cause photosensitive seizures?",
             /* Localizable */ "that kernel journals are used as boot and shutdown logs?",
-            /* Localizable */ "that you can simulate a bootloader booting to Nitrocid using GRILO?",
+            /* Localizable */ "that you can make bootable programs using your kernel mods?",
             /* Localizable */ "that your mods can now become translatable?",
             /* Localizable */ "that your mods can communicate with kernel addons and other mods, creating some kind of communication and achieving interoperability?",
             /* Localizable */ "that you can connect to the remote debugger and, optionally, to the chat server?",

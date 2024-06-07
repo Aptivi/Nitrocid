@@ -17,22 +17,25 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+extern alias TextifyDep;
+
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Starting.Bootloader.Apps;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Reflection;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using Terminaux.Base;
 using Terminaux.Colors;
 using Terminaux.Writer.ConsoleWriters;
+using TextifyDep::Textify.General;
 
 namespace Nitrocid.Kernel.Starting.Bootloader.Style.Styles
 {
     internal class StandardBootStyle : BaseBootStyle, IBootStyle
     {
         internal List<(int, int)> bootEntryPositions = [];
-
-        public override Dictionary<ConsoleKeyInfo, Action> CustomKeys { get; }
 
         public override string Render()
         {
@@ -42,7 +45,7 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style.Styles
             // Prompt the user for selection
             var builder = new StringBuilder();
             var bootApps = BootManager.GetBootApps();
-            builder.AppendLine("\n  Select boot entry:\n");
+            builder.AppendLine("\n  " + Translate.DoTranslation("Select boot entry:") + "\n");
             for (int i = 0; i < bootApps.Count; i++)
             {
                 string bootApp = BootManager.GetBootAppNameByIndex(i);
@@ -63,17 +66,14 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style.Styles
         }
 
         public override string RenderBootingMessage(string chosenBootName) =>
-            $"Booting {chosenBootName}...";
-
-        public override string RenderBootFailedMessage(string content) =>
-            RenderModalDialog(content);
+            Translate.DoTranslation("Booting {0}...").FormatString(chosenBootName);
 
         public override string RenderSelectTimeout(int timeout) =>
             TextWriterWhereColor.RenderWhereColor($" {timeout}", ConsoleWrapper.WindowWidth - $" {timeout}".Length - 2, ConsoleWrapper.WindowHeight - 2, true, new Color(ConsoleColor.White));
 
         public override string ClearSelectTimeout()
         {
-            string spaces = new(' ', GetDigits(Config.MainConfig.BootSelectTimeoutSeconds));
+            string spaces = new(' ', Config.MainConfig.BootSelectTimeoutSeconds.GetDigits());
             return TextWriterWhereColor.RenderWhereColor(spaces, ConsoleWrapper.WindowWidth - spaces.Length - 2, ConsoleWrapper.WindowHeight - 2, true, new Color(ConsoleColor.White));
         }
     }

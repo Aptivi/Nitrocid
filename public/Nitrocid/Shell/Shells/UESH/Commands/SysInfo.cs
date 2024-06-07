@@ -73,8 +73,6 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 TextWriters.Write(KernelMain.Version.ToString(), true, KernelColorType.ListValue);
                 TextWriters.Write(Translate.DoTranslation("Debug Mode:") + " ", false, KernelColorType.ListEntry);
                 TextWriters.Write(KernelEntry.DebugMode.ToString(), true, KernelColorType.ListValue);
-                TextWriters.Write(Translate.DoTranslation("Running from GRILO:") + " ", false, KernelColorType.ListEntry);
-                TextWriters.Write(KernelPlatform.IsRunningFromGrilo().ToString(), true, KernelColorType.ListValue);
                 TextWriters.Write(Translate.DoTranslation("Running on usual environment:") + " ", false, KernelColorType.ListEntry);
                 TextWriters.Write(KernelPlatform.IsOnUsualEnvironment().ToString(), true, KernelColorType.ListValue);
                 TextWriters.Write(Translate.DoTranslation("Safe Mode:") + " ", false, KernelColorType.ListEntry);

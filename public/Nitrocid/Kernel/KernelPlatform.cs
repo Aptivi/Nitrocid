@@ -32,10 +32,10 @@ namespace Nitrocid.Kernel
     {
 
         /// <summary>
-        /// Checks to see if the kernel is running normally, from GRILO, or from somewhere else
+        /// Checks to see if the kernel is running normally or from somewhere else
         /// </summary>
         public static bool IsOnUsualEnvironment() =>
-            (Assembly.GetEntryAssembly().FullName == Assembly.GetExecutingAssembly().FullName && !IsRunningFromGrilo()) || IsRunningFromGrilo();
+            Assembly.GetEntryAssembly().FullName == Assembly.GetExecutingAssembly().FullName;
 
         /// <summary>
         /// Is this system a Windows system?
@@ -88,12 +88,6 @@ namespace Nitrocid.Kernel
         /// </summary>
         public static string GetTerminalType() =>
             PlatformHelper.GetTerminalType();
-
-        /// <summary>
-        /// Is Nitrocid KS running from GRILO?
-        /// </summary>
-        public static bool IsRunningFromGrilo() =>
-            (Assembly.GetEntryAssembly()?.GetName()?.Name?.StartsWith("GRILO")) ?? false;
 
         /// <summary>
         /// Is Nitrocid KS running from TMUX?

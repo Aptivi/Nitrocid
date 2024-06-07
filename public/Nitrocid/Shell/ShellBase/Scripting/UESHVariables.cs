@@ -40,7 +40,6 @@ namespace Nitrocid.Shell.ShellBase.Scripting
 
         internal static Dictionary<string, string> ShellVariables = new()
         {
-            { "$IsRunningFromGrilo", Convert.ToString(KernelPlatform.IsRunningFromGrilo()) },
             { "$FrameworkSpecificRid", KernelPlatform.GetCurrentRid() },
             { "$FrameworkRid", KernelPlatform.GetCurrentGenericRid() },
             { "$CurrentCulture", CultureManager.CurrentCultStr },

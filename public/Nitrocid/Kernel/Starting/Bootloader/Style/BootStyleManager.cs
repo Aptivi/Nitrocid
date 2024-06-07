@@ -116,18 +116,6 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style
         }
 
         /// <summary>
-        /// Renders the boot failed message
-        /// </summary>
-        /// <param name="content">Message to display</param>
-        public static string RenderBootFailedMessage(string content)
-        {
-            // Render it.
-            var bootStyle = GetCurrentBootStyle();
-            DebugWriter.WriteDebug(DebugLevel.I, "Rendering boot failed message with content: {0}...", content);
-            return bootStyle.RenderBootFailedMessage(content);
-        }
-
-        /// <summary>
         /// Renders the selection timeout
         /// </summary>
         /// <param name="timeout">Timeout interval in seconds</param>

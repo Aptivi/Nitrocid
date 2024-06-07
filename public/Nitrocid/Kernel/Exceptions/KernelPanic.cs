@@ -422,7 +422,6 @@ namespace Nitrocid.Kernel.Exceptions
                 WriteHeader(dumpBuilder, Translate.DoTranslation("Version information"));
                 dumpBuilder.AppendLine(KernelReleaseInfo.ConsoleTitle);
                 dumpBuilder.AppendLine(Environment.OSVersion.ToString());
-                dumpBuilder.AppendLine(Translate.DoTranslation("Running from GRILO?") + $" {KernelPlatform.IsRunningFromGrilo()}");
 
                 // Save the dump file
                 string filePath = $"{PathsManagement.AppDataPath}/dmp_{TimeDateRenderers.RenderDate(FormatType.Short).Replace("/", "-")}_{TimeDateRenderers.RenderTime(FormatType.Long).Replace(":", "-")}.txt";

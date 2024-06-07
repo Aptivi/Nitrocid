@@ -51,11 +51,6 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style
         /// <param name="chosenBootName">Chosen boot name</param>
         string RenderBootingMessage(string chosenBootName);
         /// <summary>
-        /// Renders the boot failed message
-        /// </summary>
-        /// <param name="content">Message to display</param>
-        string RenderBootFailedMessage(string content);
-        /// <summary>
         /// Renders the timeout for selection
         /// </summary>
         /// <param name="timeout">Target timeout in seconds to count down from</param>
