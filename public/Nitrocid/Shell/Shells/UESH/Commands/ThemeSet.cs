@@ -142,7 +142,6 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 else
                 {
                     proceed = true;
-                    bail = true;
                 }
 
                 if (!proceed)
