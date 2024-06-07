@@ -53,12 +53,12 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style
             string finalRenderedSection = "-- " + Translate.DoTranslation("Select boot entry") + " --";
             int halfX = ConsoleWrapper.WindowWidth / 2 - finalRenderedSection.Length / 2;
             builder.Append(
-                TextWriterWhereColor.RenderWhereColor(finalRenderedSection, halfX, 2, new Color(sectionTitle))
+                TextWriterWhereColor.RenderWhereColor(finalRenderedSection, halfX, 1, new Color(sectionTitle))
             );
 
             // Now, render a box
             builder.Append(
-                BorderColor.RenderBorder(2, 4, ConsoleWrapper.WindowWidth - 6, ConsoleWrapper.WindowHeight - 9, new Color(boxBorderColor))
+                BorderColor.RenderBorder(2, 3, ConsoleWrapper.WindowWidth - 6, ConsoleWrapper.WindowHeight - 8, new Color(boxBorderColor))
             );
 
             // Offer help for new users
@@ -80,8 +80,8 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style
             // Populate boot entries inside the box
             var builder = new StringBuilder();
             var bootApps = BootManager.GetBootApps();
-            (int, int) upperLeftCornerInterior = (4, 6);
-            (int, int) lowerLeftCornerInterior = (4, ConsoleWrapper.WindowHeight - 6);
+            (int, int) upperLeftCornerInterior = (4, 5);
+            (int, int) lowerLeftCornerInterior = (4, ConsoleWrapper.WindowHeight - upperLeftCornerInterior.Item2);
             int maxItemsPerPage = lowerLeftCornerInterior.Item2 - upperLeftCornerInterior.Item2;
             int pages = (int)Math.Truncate(bootApps.Count / (double)maxItemsPerPage);
             int currentPage = (int)Math.Truncate(chosenBootEntry / (double)maxItemsPerPage);
