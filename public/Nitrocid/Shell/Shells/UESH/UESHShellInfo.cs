@@ -1306,6 +1306,10 @@ namespace Nitrocid.Shell.Shells.UESH
                         {
                             ConflictsWith = ["saver", "splash", "addonsaver", "driver"],
                             ArgumentsRequired = true
+                        }),
+                        new SwitchInfo("sel", /* Localizable */ "Uses the legacy settings style", new SwitchOptions()
+                        {
+                            AcceptsValues = false
                         })
                     })
                 ], new SettingsCommand(), CommandFlags.Strict),

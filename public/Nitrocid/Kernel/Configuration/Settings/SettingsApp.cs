@@ -33,6 +33,8 @@ using Terminaux.Base;
 using Terminaux.Inputs;
 using Terminaux.Reader;
 using Nitrocid.Kernel.Configuration.Migration;
+using Terminaux.Inputs.Interactive;
+using Nitrocid.Misc.Interactives;
 
 namespace Nitrocid.Kernel.Configuration.Settings
 {
@@ -46,14 +48,16 @@ namespace Nitrocid.Kernel.Configuration.Settings
         /// Opens the main page for settings, listing all the sections that are configurable
         /// </summary>
         /// <param name="settingsType">Type of settings</param>
-        public static void OpenMainPage(string settingsType) =>
-            OpenMainPage(Config.GetKernelConfig(settingsType));
+        /// <param name="useSelection">Whether to use the selection style or the interactive TUI</param>
+        public static void OpenMainPage(string settingsType, bool useSelection = false) =>
+            OpenMainPage(Config.GetKernelConfig(settingsType), useSelection);
 
         /// <summary>
         /// Opens the main page for settings, listing all the sections that are configurable
         /// </summary>
         /// <param name="settingsType">Type of settings</param>
-        public static void OpenMainPage(BaseKernelConfig settingsType)
+        /// <param name="useSelection">Whether to use the selection style or the interactive TUI</param>
+        public static void OpenMainPage(BaseKernelConfig settingsType, bool useSelection = false)
         {
             // Verify that we actually have the type
             if (settingsType is null)
@@ -62,8 +66,18 @@ namespace Nitrocid.Kernel.Configuration.Settings
                 return;
             }
 
-            // Now, the main loop
+            // Verify the user permission
             PermissionsTools.Demand(PermissionTypes.ManipulateSettings);
+
+            // Decide whether to use the selection style
+            if (!useSelection)
+            {
+                SettingsCli.config = settingsType;
+                InteractiveTuiTools.OpenInteractiveTui(new SettingsCli());
+                return;
+            }
+
+            // Now, the main loop
             bool PromptFinished = false;
             SettingsEntry[] SettingsEntries = settingsType.SettingsEntries;
             int MaxSections = SettingsEntries.Length;
