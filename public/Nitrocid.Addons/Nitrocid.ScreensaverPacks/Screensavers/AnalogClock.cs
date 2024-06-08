@@ -302,7 +302,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             lastCenter = radius;
 
             // Draw the hands (hours and minutes)
-            int hoursPos = 12 - TimeDateTools.KernelDateTime.Hour % 12;
+            int hoursPos = TimeDateTools.KernelDateTime.Hour % 12;
             int minutesPos = TimeDateTools.KernelDateTime.Minute;
             int hoursRadius = (int)(bezelRadius / 3d);
             int minutesRadius = (int)(bezelRadius * 2 / 3d);
