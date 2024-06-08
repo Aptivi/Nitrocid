@@ -79,6 +79,25 @@ namespace Nitrocid.Shell.Shells.UESH
                     new CommandArgumentInfo()
                 ], new AdminCommand(), CommandFlags.Strict),
 
+            new CommandInfo("alarm", /* Localizable */ "Manage your alarms",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "start/stop", new()
+                        {
+                            ExactWording = ["start", "stop"]
+                        }),
+                        new CommandArgumentPart(true, "alarmname"),
+                    }),
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "list", new()
+                        {
+                            ExactWording = ["list"]
+                        }),
+                    }),
+                ], new AlarmCommand(), CommandFlags.Strict),
+
             new CommandInfo("alias", /* Localizable */ "Adds aliases to commands",
                 [
                     new CommandArgumentInfo(new[]
