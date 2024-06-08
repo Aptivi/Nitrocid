@@ -34,6 +34,9 @@ using Nitrocid.Files.Operations.Querying;
 using Terminaux.Writer.ConsoleWriters;
 using System;
 using Nitrocid.Kernel.Time.Alarm;
+using Nitrocid.Shell.ShellBase.Switches;
+using Terminaux.Inputs.Interactive;
+using Nitrocid.Misc.Interactives;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -48,7 +51,12 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            PermissionsTools.Demand(PermissionTypes.ManageMods);
+            bool launchTui = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-tui");
+            if (launchTui)
+            {
+                InteractiveTuiTools.OpenInteractiveTui(new AlarmCli());
+                return 0;
+            }
             string CommandMode = parameters.ArgumentsList[0].ToLower();
             string name = "";
             string interval = "";

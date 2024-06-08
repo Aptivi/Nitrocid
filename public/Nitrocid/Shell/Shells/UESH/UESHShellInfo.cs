@@ -83,6 +83,13 @@ namespace Nitrocid.Shell.Shells.UESH
                 [
                     new CommandArgumentInfo(new[]
                     {
+                        new SwitchInfo("tui", /* Localizable */ "Manage your alarms in an interactive TUI", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        })
+                    }),
+                    new CommandArgumentInfo(new[]
+                    {
                         new CommandArgumentPart(true, "start/stop", new()
                         {
                             ExactWording = ["start", "stop"]
