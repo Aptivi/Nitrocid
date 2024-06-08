@@ -84,15 +84,17 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             bool useSelection = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-sel");
-            var typeFinal =
-                SwitchManager.ContainsSwitch(parameters.SwitchesList, "-type") ?
-                SwitchManager.GetSwitchValue(parameters.SwitchesList, "-type") :
-                nameof(KernelMainConfig);
-            if (parameters.SwitchesList.Length > 0)
+            bool useType = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-type");
+            var typeFinal = useType ? SwitchManager.GetSwitchValue(parameters.SwitchesList, "-type") : nameof(KernelMainConfig);
+            if (parameters.SwitchesList.Length > 0 && !useType)
             {
-                if (parameters.SwitchesList[0] == "-saver")
+                bool isSaver = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-saver");
+                bool isAddonSaver = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-addonsaver");
+                bool isSplash = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-splash");
+                bool isDriver = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-driver");
+                if (isSaver)
                     typeFinal = nameof(KernelSaverConfig);
-                else if (parameters.SwitchesList[0] == "-addonsaver")
+                else if (isAddonSaver)
                 {
                     if (ConfigTools.IsCustomSettingBuiltin("ExtraSaversConfig"))
                         typeFinal = "ExtraSaversConfig";
@@ -102,7 +104,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.Config);
                     }
                 }
-                else if (parameters.SwitchesList[0] == "-splash")
+                else if (isSplash)
                 {
                     if (ConfigTools.IsCustomSettingBuiltin("ExtraSplashesConfig"))
                         typeFinal = "ExtraSplashesConfig";
@@ -112,7 +114,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.Config);
                     }
                 }
-                else if (parameters.SwitchesList[0] == "-driver")
+                else if (isDriver)
                     typeFinal = nameof(KernelDriverConfig);
             }
             SettingsApp.OpenMainPage(typeFinal, useSelection);
