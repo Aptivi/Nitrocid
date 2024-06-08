@@ -88,6 +88,15 @@ namespace Nitrocid.Files.Editors.TextEdit
             if (!Checking.FileExists(file))
                 throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("File not found.") + $" {file}");
 
+            OpenInteractive(ref lines);
+        }
+
+        /// <summary>
+        /// Opens an interactive text editor
+        /// </summary>
+        /// <param name="lines">Target number of lines</param>
+        internal static void OpenInteractive(ref List<string> lines)
+        {
             // Set status
             status = Translate.DoTranslation("Ready");
             bail = false;
