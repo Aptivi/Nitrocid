@@ -91,7 +91,6 @@ namespace Nitrocid.Shell.ShellBase.Commands
             try
             {
                 // Variables
-                string Command = "nonexistent-command";
                 var (satisfied, total) = ArgumentsParser.ParseShellCommandArguments(RequestedCommand, RequestedCommandInfo, ShellType);
 
                 // Check to see if we have satisfied arguments list
@@ -103,37 +102,37 @@ namespace Nitrocid.Shell.ShellBase.Commands
                     for (int i = 0; i < total.Length; i++)
                     {
                         ProvidedArgumentsInfo unsatisfied = total[i];
-                        Command = unsatisfied.Command;
+                        string command = unsatisfied.Command;
 
                         // Write usage number
                         string renderedUsage = !string.IsNullOrEmpty(unsatisfied.ArgumentInfo.RenderedUsage) ? " " + unsatisfied.ArgumentInfo.RenderedUsage : "";
-                        TextWriters.Write($"- [{i + 1}] {Command}{renderedUsage}", true, KernelColorType.ListEntry);
+                        TextWriters.Write($"- [{i + 1}] {command}{renderedUsage}", true, KernelColorType.ListEntry);
 
                         // Check for required arguments
                         if (!unsatisfied.RequiredArgumentsProvided)
                         {
-                            DebugWriter.WriteDebug(DebugLevel.W, "User hasn't provided enough arguments for {0}", Command);
+                            DebugWriter.WriteDebug(DebugLevel.W, "User hasn't provided enough arguments for {0}", command);
                             TextWriters.Write("  - " + Translate.DoTranslation("Required arguments are not provided."), true, KernelColorType.ListValue);
                         }
 
                         // Check for required switches
                         if (!unsatisfied.RequiredSwitchesProvided)
                         {
-                            DebugWriter.WriteDebug(DebugLevel.W, "User hasn't provided enough switches for {0}", Command);
+                            DebugWriter.WriteDebug(DebugLevel.W, "User hasn't provided enough switches for {0}", command);
                             TextWriters.Write("  - " + Translate.DoTranslation("Required switches are not provided."), true, KernelColorType.ListValue);
                         }
 
                         // Check for required switch arguments
                         if (!unsatisfied.RequiredSwitchArgumentsProvided)
                         {
-                            DebugWriter.WriteDebug(DebugLevel.W, "User hasn't provided a value for one of the switches for {0}", Command);
+                            DebugWriter.WriteDebug(DebugLevel.W, "User hasn't provided a value for one of the switches for {0}", command);
                             TextWriters.Write("  - " + Translate.DoTranslation("One of the switches requires a value that is not provided."), true, KernelColorType.ListValue);
                         }
 
                         // Check for unknown switches
                         if (unsatisfied.UnknownSwitchesList.Length > 0)
                         {
-                            DebugWriter.WriteDebug(DebugLevel.W, "User has provided unknown switches {0}", Command);
+                            DebugWriter.WriteDebug(DebugLevel.W, "User has provided unknown switches {0}", command);
                             TextWriters.Write("  - " + Translate.DoTranslation("Switches that are listed below are unknown."), true, KernelColorType.ListValue);
                             ListWriterColor.WriteList(unsatisfied.UnknownSwitchesList);
                         }
@@ -141,7 +140,7 @@ namespace Nitrocid.Shell.ShellBase.Commands
                         // Check for conflicting switches
                         if (unsatisfied.ConflictingSwitchesList.Length > 0)
                         {
-                            DebugWriter.WriteDebug(DebugLevel.W, "User has provided conflicting switches for {0}", Command);
+                            DebugWriter.WriteDebug(DebugLevel.W, "User has provided conflicting switches for {0}", command);
                             TextWriters.Write("  - " + Translate.DoTranslation("Switches that are listed below conflict with each other."), true, KernelColorType.ListValue);
                             ListWriterColor.WriteList(unsatisfied.ConflictingSwitchesList);
                         }
@@ -149,7 +148,7 @@ namespace Nitrocid.Shell.ShellBase.Commands
                         // Check for switches that don't accept values
                         if (unsatisfied.NoValueSwitchesList.Length > 0)
                         {
-                            DebugWriter.WriteDebug(DebugLevel.W, "User has provided switches that don't accept values for {0}", Command);
+                            DebugWriter.WriteDebug(DebugLevel.W, "User has provided switches that don't accept values for {0}", command);
                             TextWriters.Write("  - " + Translate.DoTranslation("The below switches don't accept values."), true, KernelColorType.ListValue);
                             ListWriterColor.WriteList(unsatisfied.NoValueSwitchesList);
                         }
@@ -157,32 +156,32 @@ namespace Nitrocid.Shell.ShellBase.Commands
                         // Check for invalid number in numeric arguments
                         if (!unsatisfied.NumberProvided)
                         {
-                            DebugWriter.WriteDebug(DebugLevel.W, "User has provided invalid number for one or more of the arguments for {0}", Command);
+                            DebugWriter.WriteDebug(DebugLevel.W, "User has provided invalid number for one or more of the arguments for {0}", command);
                             TextWriters.Write("  - " + Translate.DoTranslation("One or more of the arguments expect a numeric value, but you provided an invalid number."), true, KernelColorType.ListValue);
                         }
 
                         // Check for invalid exact wording
                         if (!unsatisfied.ExactWordingProvided)
                         {
-                            DebugWriter.WriteDebug(DebugLevel.W, "User has provided non-exact wording for {0}", Command);
+                            DebugWriter.WriteDebug(DebugLevel.W, "User has provided non-exact wording for {0}", command);
                             TextWriters.Write("  - " + Translate.DoTranslation("One or more of the arguments expect an exact wording, but you provided an invalid word."), true, KernelColorType.ListValue);
                         }
 
                         // Check for invalid number in numeric switches
                         if (!unsatisfied.SwitchNumberProvided)
                         {
-                            DebugWriter.WriteDebug(DebugLevel.W, "User has provided invalid number for one or more of the switches for {0}", Command);
+                            DebugWriter.WriteDebug(DebugLevel.W, "User has provided invalid number for one or more of the switches for {0}", command);
                             TextWriters.Write("  - " + Translate.DoTranslation("One or more of the switches expect a numeric value, but you provided an invalid number."), true, KernelColorType.ListValue);
                         }
                     }
-                    TextWriters.Write(Translate.DoTranslation("Consult this command for more info") + $": help {Command}", KernelColorType.NeutralText);
+                    TextWriters.Write(Translate.DoTranslation("Consult the help entry for this command for more info"), KernelColorType.NeutralText);
                     ShellInstance.LastErrorCode = -6;
                     return;
                 }
 
                 // Now, assume that an argument is satisfied
                 var ArgumentInfo = satisfied;
-                Command = ArgumentInfo.Command;
+                string Command = ArgumentInfo.Command;
                 var Args = ArgumentInfo.ArgumentsList.Select(RegexpTools.Unescape).ToArray();
                 var ArgsOrig = ArgumentInfo.ArgumentsListOrig;
                 var Switches = ArgumentInfo.SwitchesList.Select(RegexpTools.Unescape).ToArray();
