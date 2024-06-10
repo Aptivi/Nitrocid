@@ -43,7 +43,7 @@
     <PackageReference Include="Magico" Version="1.0.0" PrivateAssets="all" />
     <PackageReference Include="Microsoft.Data.Sqlite" Version="8.0.5" PrivateAssets="all" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="all" />
-    <PackageReference Include="Newtonsoft.Json.Schema" Version="3.0.16" PrivateAssets="all" />
+    <PackageReference Include="Newtonsoft.Json.Schema" Version="4.0.1" PrivateAssets="all" />
     <PackageReference Include="SpecProbe" Version="1.4.2" PrivateAssets="all" />
   </ItemGroup>
   <!-- KS Dependencies Information End -->
