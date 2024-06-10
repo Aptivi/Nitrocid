@@ -99,7 +99,7 @@ namespace Nitrocid.Shell.ShellBase.Arguments
                               cmdInfo;
             var fallback = new ProvidedArgumentsInfo(Command, arguments, words.Skip(1).ToArray(), argumentsOrig, wordsOrig.Skip(1).ToArray(), [], true, true, true, [], [], [], true, true, true, new());
 
-            // Change the command if a command with no slash is entered on a slash-enabled shells
+            // Change the command if a command with no slash is entered on slash-enabled shells
             var shellInfo = ShellManager.GetShellInfo(CommandType);
             if (shellInfo.SlashCommand)
             {
@@ -107,6 +107,11 @@ namespace Nitrocid.Shell.ShellBase.Arguments
                 {
                     // Change the command info to the non-slash one
                     CommandInfo = cmdInfo;
+                }
+                else
+                {
+                    // Strip the slash
+                    CommandText = CommandText[1..].Trim();
                 }
             }
 

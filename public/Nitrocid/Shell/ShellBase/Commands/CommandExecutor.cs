@@ -189,26 +189,10 @@ namespace Nitrocid.Shell.ShellBase.Commands
                 string StrArgsOrig = ArgumentInfo.ArgumentsTextOrig;
                 bool containsSetSwitch = SwitchManager.ContainsSwitch(Switches, "-set");
                 string variable = "";
-
-                // Change the command if a command with no slash is entered on a slash-enabled shells
                 var cmdInfo =
                     TargetCommands.Any((ci) => ci.Command == Command) ?
                     TargetCommands.Single((ci) => ci.Command == Command) :
                     RequestedCommandInfo;
-                var shellInfo = ShellManager.GetShellInfo(ShellType);
-                if (shellInfo.SlashCommand)
-                {
-                    if (!Command.StartsWith('/'))
-                    {
-                        // Change the command info to the non-slash one
-                        cmdInfo = RequestedCommandInfo;
-                    }
-                    else
-                    {
-                        // Strip the slash
-                        Command = Command[1..].Trim();
-                    }
-                }
 
                 // Check to see if a requested command is obsolete
                 if (cmdInfo.Flags.HasFlag(CommandFlags.Obsolete))
