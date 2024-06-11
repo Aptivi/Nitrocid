@@ -101,6 +101,10 @@ namespace Nitrocid.Files.Editors.TextEdit
             status = Translate.DoTranslation("Ready");
             bail = false;
 
+            // Check to see if the list of lines is empty
+            if (lines.Count == 0)
+                lines = [""];
+
             // Main loop
             lineIdx = 0;
             lineColIdx = 0;
