@@ -25,7 +25,6 @@ using System;
 using Nitrocid.Files.Editors.TextEdit;
 using Textify.General;
 using System.Linq;
-using Terminaux.Inputs.Styles.Infobox;
 
 namespace Nitrocid.Extras.Notes.Interactive
 {
@@ -39,7 +38,7 @@ namespace Nitrocid.Extras.Notes.Interactive
         [
             // Operations
             new InteractiveTuiBinding("Add", ConsoleKey.F1,
-                (_, _) => Add()),
+                (_, _) => Add(), true),
             new InteractiveTuiBinding("Edit", ConsoleKey.F2,
                 (_, noteIdx) => Edit(noteIdx)),
             new InteractiveTuiBinding("Remove", ConsoleKey.F3,

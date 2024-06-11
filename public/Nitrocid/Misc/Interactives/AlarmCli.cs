@@ -34,7 +34,7 @@ namespace Nitrocid.Misc.Interactives
         [
             // Operations
             new InteractiveTuiBinding("Add", ConsoleKey.A,
-                (_, _) => Start()),
+                (_, _) => Start(), true),
             new InteractiveTuiBinding("Remove", ConsoleKey.Delete,
                 (saver, _) => Stop((string)saver)),
         ];
@@ -94,7 +94,7 @@ namespace Nitrocid.Misc.Interactives
                 return;
             }
             string interval = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Write the alarm interval in this format") + ": HH:MM:SS");
-            if (TimeSpan.TryParse(interval, out TimeSpan span))
+            if (!TimeSpan.TryParse(interval, out TimeSpan span))
             {
                 InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Alarm interval is either not specified or is invalid."));
                 return;
