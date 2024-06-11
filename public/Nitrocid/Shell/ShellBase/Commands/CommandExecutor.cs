@@ -78,10 +78,7 @@ namespace Nitrocid.Shell.ShellBase.Commands
             }
         }
 
-        internal static void ExecuteCommand(CommandExecutorParameters ThreadParams) =>
-            ExecuteCommand(ThreadParams, CommandManager.GetCommands(ThreadParams.ShellType));
-
-        private static void ExecuteCommand(CommandExecutorParameters ThreadParams, CommandInfo[] TargetCommands)
+        internal static void ExecuteCommand(CommandExecutorParameters ThreadParams)
         {
             var RequestedCommand = ThreadParams.RequestedCommand;
             var RequestedCommandInfo = ThreadParams.RequestedCommandInfo;
@@ -189,20 +186,16 @@ namespace Nitrocid.Shell.ShellBase.Commands
                 string StrArgsOrig = ArgumentInfo.ArgumentsTextOrig;
                 bool containsSetSwitch = SwitchManager.ContainsSwitch(Switches, "-set");
                 string variable = "";
-                var cmdInfo =
-                    TargetCommands.Any((ci) => ci.Command == Command) ?
-                    TargetCommands.Single((ci) => ci.Command == Command) :
-                    RequestedCommandInfo;
 
                 // Check to see if a requested command is obsolete
-                if (cmdInfo.Flags.HasFlag(CommandFlags.Obsolete))
+                if (RequestedCommandInfo.Flags.HasFlag(CommandFlags.Obsolete))
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "The command requested {0} is obsolete", Command);
                     TextWriterColor.Write(Translate.DoTranslation("This command is obsolete and will be removed in a future release."));
                 }
 
                 // If there are enough arguments provided, execute. Otherwise, fail with not enough arguments.
-                var ArgInfos = cmdInfo.CommandArgumentInfo;
+                var ArgInfos = RequestedCommandInfo.CommandArgumentInfo;
                 for (int i = 0; i < ArgInfos.Length; i++)
                 {
                     argSatisfied = true;
@@ -247,7 +240,7 @@ namespace Nitrocid.Shell.ShellBase.Commands
 
                     // Now, get the base command and execute it
                     DebugWriter.WriteDebug(DebugLevel.I, "Really executing command {0} with args {1}", Command, StrArgs);
-                    var CommandBase = cmdInfo.CommandBase;
+                    var CommandBase = RequestedCommandInfo.CommandBase;
                     string value = "";
                     CancellationHandlers.cts = new CancellationTokenSource();
 #pragma warning disable SYSLIB0046

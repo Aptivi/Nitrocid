@@ -93,7 +93,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                     UserManagement.UnlockUser("root");
                 }
             }
-            return failed ? 10000 + (int)KernelExceptionType.ShellOperation : 0;
+            return failed ? KernelExceptionTools.GetErrorCode(KernelExceptionType.ShellOperation) : 0;
         }
 
     }
