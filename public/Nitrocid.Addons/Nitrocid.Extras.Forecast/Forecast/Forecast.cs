@@ -34,6 +34,7 @@ namespace Nitrocid.Extras.Forecast.Forecast
     {
 
         internal static string ApiKey = "";
+        internal static string ApiKeyOwm = "";
 
         /// <summary>
         /// Preferred unit for forecast measurements
@@ -42,12 +43,67 @@ namespace Nitrocid.Extras.Forecast.Forecast
             (UnitMeasurement)ForecastInit.ForecastConfig.PreferredUnit;
 
         /// <summary>
+        /// Gets current weather info from The Weather Channel by IBM
+        /// </summary>
+        /// <param name="latitude">Latitude</param>
+        /// <param name="longitude">Longitude</param>
+        /// <returns>A class containing properties of weather information</returns>
+        public static WeatherForecastInfo GetWeatherInfo(double latitude, double longitude) =>
+            WeatherForecast.GetWeatherInfo(latitude, longitude, ApiKey, PreferredUnit);
+
+        /// <summary>
+        /// Gets current weather info from The Weather Channel by IBM
+        /// </summary>
+        /// <param name="latitude">Latitude</param>
+        /// <param name="longitude">Longitude</param>
+        /// <param name="APIKey">API key</param>
+        /// <returns>A class containing properties of weather information</returns>
+        public static WeatherForecastInfo GetWeatherInfo(double latitude, double longitude, string APIKey) =>
+            WeatherForecast.GetWeatherInfo(latitude, longitude, APIKey, PreferredUnit);
+
+        /// <summary>
+        /// Prints the weather information to the console
+        /// </summary>
+        /// <param name="latitude">Latitude</param>
+        /// <param name="longitude">Longitude</param>
+        public static void PrintWeatherInfo(double latitude, double longitude) =>
+            PrintWeatherInfo(latitude, longitude, ApiKey);
+
+        /// <summary>
+        /// Prints the weather information to the console
+        /// </summary>
+        /// <param name="latitude">Latitude</param>
+        /// <param name="longitude">Longitude</param>
+        /// <param name="APIKey">API Key</param>
+        public static void PrintWeatherInfo(double latitude, double longitude, string APIKey)
+        {
+            WeatherForecastInfo WeatherInfo = GetWeatherInfo(latitude, longitude, APIKey);
+            string WeatherSpecifier = "°";
+            string WindSpeedSpecifier = "m.s";
+            SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("-- Weather info --"), false);
+            TextWriterColor.Write(Translate.DoTranslation("Weather: {0}"), WeatherInfo.Weather);
+            if (WeatherInfo.TemperatureMeasurement == UnitMeasurement.Metric)
+                WeatherSpecifier += "C";
+            else
+            {
+                WeatherSpecifier += "F";
+                WindSpeedSpecifier = "mph";
+            }
+            TextWriterColor.Write(Translate.DoTranslation("Temperature: {0}") + WeatherSpecifier, WeatherInfo.Temperature.ToString("N2"));
+            TextWriterColor.Write(Translate.DoTranslation("Wind speed: {0}") + " {1}", WeatherInfo.WindSpeed.ToString("N2"), WindSpeedSpecifier);
+            TextWriterColor.Write(Translate.DoTranslation("Wind direction: {0}") + "°", WeatherInfo.WindDirection.ToString("N2"));
+            TextWriterColor.Write(Translate.DoTranslation("Humidity: {0}") + "%", WeatherInfo.Humidity.ToString("N2"));
+            TextWriterColor.Write(Translate.DoTranslation("Latitude and Longitude") + ": {0}, {1}", latitude, longitude);
+        }
+
+        #region Legacy (OWM)
+        /// <summary>
         /// Gets current weather info from OpenWeatherMap
         /// </summary>
         /// <param name="CityID">City ID</param>
         /// <returns>A class containing properties of weather information</returns>
-        public static WeatherForecastInfo GetWeatherInfo(long CityID) =>
-            WeatherForecast.GetWeatherInfo(CityID: CityID, ApiKey, PreferredUnit);
+        public static WeatherForecastInfo GetWeatherInfoOwm(long CityID) =>
+            WeatherForecastOwm.GetWeatherInfo(CityID: CityID, ApiKey, PreferredUnit);
 
         /// <summary>
         /// Gets current weather info from OpenWeatherMap
@@ -55,16 +111,16 @@ namespace Nitrocid.Extras.Forecast.Forecast
         /// <param name="CityID">City ID</param>
         /// <param name="APIKey">API key</param>
         /// <returns>A class containing properties of weather information</returns>
-        public static WeatherForecastInfo GetWeatherInfo(long CityID, string APIKey) =>
-            WeatherForecast.GetWeatherInfo(CityID: CityID, APIKey, PreferredUnit);
+        public static WeatherForecastInfo GetWeatherInfoOwm(long CityID, string APIKey) =>
+            WeatherForecastOwm.GetWeatherInfo(CityID: CityID, APIKey, PreferredUnit);
 
         /// <summary>
         /// Gets current weather info from OpenWeatherMap
         /// </summary>
         /// <param name="CityName">City name</param>
         /// <returns>A class containing properties of weather information</returns>
-        public static WeatherForecastInfo GetWeatherInfo(string CityName) =>
-            WeatherForecast.GetWeatherInfo(CityName: CityName, ApiKey, PreferredUnit);
+        public static WeatherForecastInfo GetWeatherInfoOwm(string CityName) =>
+            WeatherForecastOwm.GetWeatherInfo(CityName: CityName, ApiKey, PreferredUnit);
 
         /// <summary>
         /// Gets current weather info from OpenWeatherMap
@@ -72,57 +128,52 @@ namespace Nitrocid.Extras.Forecast.Forecast
         /// <param name="CityName">City name</param>
         /// <param name="APIKey">API key</param>
         /// <returns>A class containing properties of weather information</returns>
-        public static WeatherForecastInfo GetWeatherInfo(string CityName, string APIKey) =>
-            WeatherForecast.GetWeatherInfo(CityName: CityName, APIKey, PreferredUnit);
+        public static WeatherForecastInfo GetWeatherInfoOwm(string CityName, string APIKey) =>
+            WeatherForecastOwm.GetWeatherInfo(CityName: CityName, APIKey, PreferredUnit);
 
         /// <summary>
         /// Prints the weather information to the console
         /// </summary>
         /// <param name="CityID">City ID or name</param>
-        public static void PrintWeatherInfo(string CityID) =>
-            PrintWeatherInfo(CityID, ApiKey);
+        public static void PrintWeatherInfoOwm(string CityID) =>
+            PrintWeatherInfoOwm(CityID, ApiKey);
 
         /// <summary>
         /// Prints the weather information to the console
         /// </summary>
         /// <param name="CityID">City ID or name</param>
         /// <param name="APIKey">API Key</param>
-        public static void PrintWeatherInfo(string CityID, string APIKey)
+        public static void PrintWeatherInfoOwm(string CityID, string APIKey)
         {
             WeatherForecastInfo WeatherInfo;
             string WeatherSpecifier = "°";
             string WindSpeedSpecifier = "m.s";
             if (TextTools.IsStringNumeric(CityID))
-            {
-                WeatherInfo = GetWeatherInfo(Convert.ToInt64(CityID), APIKey);
-            }
+                WeatherInfo = GetWeatherInfoOwm(Convert.ToInt64(CityID), APIKey);
             else
-            {
-                WeatherInfo = GetWeatherInfo(CityID, APIKey);
-            }
-            DebugWriter.WriteDebug(DebugLevel.I, "City name: {0}, City ID: {1}", WeatherInfo.CityName, WeatherInfo.CityID);
-            SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("-- Weather info for {0} --"), false, WeatherInfo.CityName);
+                WeatherInfo = GetWeatherInfoOwm(CityID, APIKey);
+            string name = (string)WeatherInfo.WeatherToken["name"];
+            double feelsLike = (double)WeatherInfo.WeatherToken["main"]["feels_like"];
+            double pressure = (double)WeatherInfo.WeatherToken["main"]["pressure"];
+            DebugWriter.WriteDebug(DebugLevel.I, "City name: {0}, City ID: {1}", name, CityID);
+            SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("-- Weather info for {0} --"), false, name);
             TextWriterColor.Write(Translate.DoTranslation("Weather: {0}"), WeatherInfo.Weather);
             if (WeatherInfo.TemperatureMeasurement == UnitMeasurement.Metric)
-            {
                 WeatherSpecifier += "C";
-            }
             else if (WeatherInfo.TemperatureMeasurement == UnitMeasurement.Kelvin)
-            {
                 WeatherSpecifier += "K";
-            }
             else if (WeatherInfo.TemperatureMeasurement == UnitMeasurement.Imperial)
             {
                 WeatherSpecifier += "F";
                 WindSpeedSpecifier = "mph";
             }
             TextWriterColor.Write(Translate.DoTranslation("Temperature: {0}") + WeatherSpecifier, WeatherInfo.Temperature.ToString("N2"));
-            TextWriterColor.Write(Translate.DoTranslation("Feels like: {0}") + WeatherSpecifier, WeatherInfo.FeelsLike.ToString("N2"));
+            TextWriterColor.Write(Translate.DoTranslation("Feels like: {0}") + WeatherSpecifier, feelsLike.ToString("N2"));
             TextWriterColor.Write(Translate.DoTranslation("Wind speed: {0}") + " {1}", WeatherInfo.WindSpeed.ToString("N2"), WindSpeedSpecifier);
             TextWriterColor.Write(Translate.DoTranslation("Wind direction: {0}") + "°", WeatherInfo.WindDirection.ToString("N2"));
-            TextWriterColor.Write(Translate.DoTranslation("Pressure: {0}") + " hPa", WeatherInfo.Pressure.ToString("N2"));
+            TextWriterColor.Write(Translate.DoTranslation("Pressure: {0}") + " hPa", pressure.ToString("N2"));
             TextWriterColor.Write(Translate.DoTranslation("Humidity: {0}") + "%", WeatherInfo.Humidity.ToString("N2"));
         }
-
+        #endregion
     }
 }

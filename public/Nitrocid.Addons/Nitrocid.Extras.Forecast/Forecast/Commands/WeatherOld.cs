@@ -59,12 +59,12 @@ namespace Nitrocid.Extras.Forecast.Forecast.Commands
                 ListMode = true;
             if (ListMode)
             {
-                var Cities = WeatherForecast.ListAllCities();
+                var Cities = WeatherForecastOwm.ListAllCities();
                 ListWriterColor.WriteList(Cities);
             }
             else
             {
-                string APIKey = Forecast.ApiKey;
+                string APIKey = Forecast.ApiKeyOwm;
                 if (parameters.ArgumentsList.Length > 1)
                 {
                     APIKey = parameters.ArgumentsList[1];
@@ -74,9 +74,9 @@ namespace Nitrocid.Extras.Forecast.Forecast.Commands
                     TextWriterColor.Write(Translate.DoTranslation("You can get your own API key at https://home.openweathermap.org/api_keys."));
                     TextWriters.Write(Translate.DoTranslation("Enter your API key:") + " ", false, KernelColorType.Input);
                     APIKey = InputTools.ReadLineNoInput();
-                    Forecast.ApiKey = APIKey;
+                    Forecast.ApiKeyOwm = APIKey;
                 }
-                Forecast.PrintWeatherInfo(parameters.ArgumentsList[0], APIKey);
+                Forecast.PrintWeatherInfoOwm(parameters.ArgumentsList[0], APIKey);
             }
             return 0;
         }

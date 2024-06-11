@@ -22,6 +22,10 @@ using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
+using System.Linq;
+using Nitrocid.ConsoleBase.Inputs;
+using Nettify.Weather;
+using Nitrocid.Shell.ShellBase.Switches;
 
 namespace Nitrocid.Extras.Forecast.Forecast.Commands
 {
@@ -50,14 +54,33 @@ namespace Nitrocid.Extras.Forecast.Forecast.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            TextWriters.Write("Coming soon...", KernelColorType.NeutralText);
+            string APIKey = Forecast.ApiKey;
+            if (parameters.ArgumentsList.Length > 2)
+            {
+                APIKey = parameters.ArgumentsList[2];
+            }
+            else if (string.IsNullOrEmpty(APIKey))
+            {
+                TextWriterColor.Write(Translate.DoTranslation("You can get your own API key by consulting the IBM website for guidance."));
+                TextWriters.Write(Translate.DoTranslation("Enter your API key:") + " ", false, KernelColorType.Input);
+                APIKey = InputTools.ReadLineNoInput();
+                Forecast.ApiKey = APIKey;
+            }
+            var ListMode = false;
+            if (parameters.SwitchesList.Contains("-list"))
+                ListMode = true;
+            if (ListMode)
+            {
+                var Cities = WeatherForecast.ListAllCities(SwitchManager.GetSwitchValue(parameters.SwitchesList, "-list"), APIKey);
+                ListWriterColor.WriteList(Cities);
+            }
+            else
+            {
+                double latitude = double.Parse(parameters.ArgumentsList[0]);
+                double longitude = double.Parse(parameters.ArgumentsList[1]);
+                Forecast.PrintWeatherInfo(latitude, longitude, APIKey);
+            }
             return 0;
-        }
-
-        public override void HelpHelper()
-        {
-            TextWriterColor.Write(Translate.DoTranslation("You can either consult the below link for the list of cities with their IDs, or, pass \"-list\" to this command."));
-            TextWriterColor.Write("http://bulk.openweathermap.org/sample/city.list.json.gz");
         }
 
     }
