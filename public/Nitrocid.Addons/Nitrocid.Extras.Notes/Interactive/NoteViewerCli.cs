@@ -23,6 +23,9 @@ using Nitrocid.Languages;
 using System.Collections.Generic;
 using System;
 using Nitrocid.Files.Editors.TextEdit;
+using Textify.General;
+using System.Linq;
+using Terminaux.Inputs.Styles.Infobox;
 
 namespace Nitrocid.Extras.Notes.Interactive
 {
@@ -35,8 +38,18 @@ namespace Nitrocid.Extras.Notes.Interactive
         public override InteractiveTuiBinding[] Bindings { get; } =
         [
             // Operations
-            new InteractiveTuiBinding("Edit", ConsoleKey.F1,
-                (note, _) => Edit((string)note)),
+            new InteractiveTuiBinding("Add", ConsoleKey.F1,
+                (_, _) => Add()),
+            new InteractiveTuiBinding("Edit", ConsoleKey.F2,
+                (_, noteIdx) => Edit(noteIdx)),
+            new InteractiveTuiBinding("Remove", ConsoleKey.F3,
+                (_, noteIdx) => Remove(noteIdx)),
+            new InteractiveTuiBinding("Remove All", ConsoleKey.F4,
+                (_, _) => RemoveAll()),
+            new InteractiveTuiBinding("Load", ConsoleKey.F5,
+                (_, _) => Load()),
+            new InteractiveTuiBinding("Save", ConsoleKey.F6,
+                (_, _) => Save()),
         ];
 
         /// <inheritdoc/>
@@ -69,7 +82,7 @@ namespace Nitrocid.Extras.Notes.Interactive
             // Generate the rendered text
             string finalRenderedNote = noteEmpty ?
                 Translate.DoTranslation("This note is empty") :
-                $"{noteInstance}";
+                $"{noteInstance.SplitNewLines()[0]}";
 
             // Render them to the status
             return finalRenderedNote;
@@ -85,15 +98,45 @@ namespace Nitrocid.Extras.Notes.Interactive
             // Generate the rendered text
             string finalRenderedNote = noteEmpty ?
                 Translate.DoTranslation("This note is empty") :
-                $"{noteInstance}";
+                $"{noteInstance.SplitNewLines()[0]}";
 
             // Render them to the second pane
             return finalRenderedNote;
         }
 
-        private static void Edit(string note)
+        private static void Add()
         {
-
+            List<string> lines = [];
+            TextEditInteractive.OpenInteractive(ref lines);
+            NoteManagement.NewNote(string.Join('\n', lines));
+            NoteManagement.SaveNotes();
         }
+
+        private static void Edit(int noteIdx)
+        {
+            string note = NoteManagement.notes[noteIdx];
+            var lines = note.SplitNewLines().ToList();
+            TextEditInteractive.OpenInteractive(ref lines);
+            NoteManagement.notes[noteIdx] = string.Join('\n', lines);
+            NoteManagement.SaveNotes();
+        }
+
+        private static void Remove(int noteIdx)
+        {
+            NoteManagement.RemoveNote(noteIdx);
+            NoteManagement.SaveNotes();
+        }
+
+        private static void RemoveAll()
+        {
+            NoteManagement.RemoveNotes();
+            NoteManagement.SaveNotes();
+        }
+
+        private static void Load() =>
+            NoteManagement.LoadNotes();
+
+        private static void Save() =>
+            NoteManagement.SaveNotes();
     }
 }
