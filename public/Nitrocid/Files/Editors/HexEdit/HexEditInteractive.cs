@@ -94,7 +94,6 @@ namespace Nitrocid.Files.Editors.HexEdit
             var screen = new Screen();
             ScreenTools.SetCurrent(screen);
             ConsoleWrapper.CursorVisible = false;
-            ColorTools.LoadBackDry(InteractiveTuiStatus.OptionBackgroundColor);
             try
             {
                 while (!bail)
@@ -150,11 +149,11 @@ namespace Nitrocid.Files.Editors.HexEdit
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Drawing binding {0} with description {1}...", GetBindingKeyShortcut(binding, false), binding.Name);
                         bindingsBuilder.Append(
-                            $"{InteractiveTuiStatus.KeyBindingOptionColor.VTSequenceForeground}" +
-                            $"{InteractiveTuiStatus.OptionBackgroundColor.VTSequenceBackground}" +
+                            $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.KeyBindingOptionColor)}" +
+                            $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.OptionBackgroundColor, true)}" +
                             GetBindingKeyShortcut(binding, false) +
-                            $"{InteractiveTuiStatus.OptionForegroundColor.VTSequenceForeground}" +
-                            $"{InteractiveTuiStatus.BackgroundColor.VTSequenceBackground}" +
+                            $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.OptionForegroundColor)}" +
+                            $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.BackgroundColor, true)}" +
                             $" {(binding._localizable ? Translate.DoTranslation(binding.Name) : binding.Name)}  " +
                             ConsoleClearing.GetClearLineToRightSequence()
                         );
@@ -165,8 +164,8 @@ namespace Nitrocid.Files.Editors.HexEdit
                         DebugWriter.WriteDebug(DebugLevel.I, "Bailing because of no space...");
                         bindingsBuilder.Append(
                             $"{CsiSequences.GenerateCsiCursorPosition(ConsoleWrapper.WindowWidth - 2, ConsoleWrapper.WindowHeight)}" +
-                            $"{InteractiveTuiStatus.KeyBindingOptionColor.VTSequenceForeground}" +
-                            $"{InteractiveTuiStatus.OptionBackgroundColor.VTSequenceBackground}" +
+                            $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.KeyBindingOptionColor)}" +
+                            $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.OptionBackgroundColor, true)}" +
                             " K " +
                             ConsoleClearing.GetClearLineToRightSequence()
                         );
@@ -186,8 +185,8 @@ namespace Nitrocid.Files.Editors.HexEdit
             {
                 var builder = new StringBuilder();
                 builder.Append(
-                    $"{InteractiveTuiStatus.ForegroundColor.VTSequenceForeground}" +
-                    $"{InteractiveTuiStatus.BackgroundColor.VTSequenceBackground}" +
+                    $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.ForegroundColor)}" +
+                    $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.BackgroundColor, true)}" +
                     $"{TextWriterWhereColor.RenderWhere(status + ConsoleClearing.GetClearLineToRightSequence(), 0, 0)}"
                 );
                 return builder.ToString();
@@ -210,8 +209,8 @@ namespace Nitrocid.Files.Editors.HexEdit
 
                 // Render the box
                 builder.Append(
-                    $"{InteractiveTuiStatus.PaneSeparatorColor.VTSequenceForeground}" +
-                    $"{InteractiveTuiStatus.BackgroundColor.VTSequenceBackground}" +
+                    $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.PaneSeparatorColor)}" +
+                    $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.BackgroundColor, true)}" +
                     $"{BorderColor.RenderBorderPlain(0, SeparatorMinimumHeight, SeparatorConsoleWidthInterior, SeparatorMaximumHeightInterior)}"
                 );
                 return builder.ToString();
@@ -244,8 +243,8 @@ namespace Nitrocid.Files.Editors.HexEdit
 
                 // Render the box
                 builder.Append(
-                    $"{InteractiveTuiStatus.ForegroundColor.VTSequenceForeground}" +
-                    $"{InteractiveTuiStatus.BackgroundColor.VTSequenceBackground}" +
+                    $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.ForegroundColor)}" +
+                    $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.BackgroundColor, true)}" +
                     $"{TextWriterWhereColor.RenderWhere(rendered, 1, 2)}"
                 );
                 return builder.ToString();

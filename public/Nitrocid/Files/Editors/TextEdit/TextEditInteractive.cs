@@ -111,7 +111,6 @@ namespace Nitrocid.Files.Editors.TextEdit
             var screen = new Screen();
             ScreenTools.SetCurrent(screen);
             ConsoleWrapper.CursorVisible = false;
-            ColorTools.LoadBackDry(InteractiveTuiStatus.OptionBackgroundColor);
             try
             {
                 while (!bail)
@@ -168,11 +167,11 @@ namespace Nitrocid.Files.Editors.TextEdit
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Drawing binding {0} with description {1}...", GetBindingKeyShortcut(binding, false), binding.Name);
                         bindingsBuilder.Append(
-                            $"{InteractiveTuiStatus.KeyBindingOptionColor.VTSequenceForeground}" +
-                            $"{InteractiveTuiStatus.OptionBackgroundColor.VTSequenceBackground}" +
+                            $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.KeyBindingOptionColor)}" +
+                            $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.OptionBackgroundColor, true)}" +
                             GetBindingKeyShortcut(binding, false) +
-                            $"{InteractiveTuiStatus.OptionForegroundColor.VTSequenceForeground}" +
-                            $"{InteractiveTuiStatus.BackgroundColor.VTSequenceBackground}" +
+                            $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.OptionForegroundColor)}" +
+                            $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.BackgroundColor, true)}" +
                             $" {(binding._localizable ? Translate.DoTranslation(binding.Name) : binding.Name)}  " +
                             ConsoleClearing.GetClearLineToRightSequence()
                         );
@@ -183,8 +182,8 @@ namespace Nitrocid.Files.Editors.TextEdit
                         DebugWriter.WriteDebug(DebugLevel.I, "Bailing because of no space...");
                         bindingsBuilder.Append(
                             $"{CsiSequences.GenerateCsiCursorPosition(ConsoleWrapper.WindowWidth - 2, ConsoleWrapper.WindowHeight)}" +
-                            $"{InteractiveTuiStatus.KeyBindingOptionColor.VTSequenceForeground}" +
-                            $"{InteractiveTuiStatus.OptionBackgroundColor.VTSequenceBackground}" +
+                            $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.KeyBindingOptionColor)}" +
+                            $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.OptionBackgroundColor, true)}" +
                             " K " +
                             ConsoleClearing.GetClearLineToRightSequence()
                         );
@@ -204,8 +203,8 @@ namespace Nitrocid.Files.Editors.TextEdit
             {
                 var builder = new StringBuilder();
                 builder.Append(
-                    $"{InteractiveTuiStatus.ForegroundColor.VTSequenceForeground}" +
-                    $"{InteractiveTuiStatus.BackgroundColor.VTSequenceBackground}" +
+                    $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.ForegroundColor)}" +
+                    $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.BackgroundColor, true)}" +
                     $"{TextWriterWhereColor.RenderWhere(status + ConsoleClearing.GetClearLineToRightSequence(), 0, 0)}"
                 );
                 return builder.ToString();
@@ -228,8 +227,8 @@ namespace Nitrocid.Files.Editors.TextEdit
 
                 // Render the box
                 builder.Append(
-                    $"{InteractiveTuiStatus.PaneSeparatorColor.VTSequenceForeground}" +
-                    $"{InteractiveTuiStatus.BackgroundColor.VTSequenceBackground}" +
+                    $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.PaneSeparatorColor)}" +
+                    $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.BackgroundColor, true)}" +
                     $"{BorderColor.RenderBorderPlain(0, SeparatorMinimumHeight, SeparatorConsoleWidthInterior, SeparatorMaximumHeightInterior)}"
                 );
                 return builder.ToString();
@@ -294,18 +293,18 @@ namespace Nitrocid.Files.Editors.TextEdit
                     {
                         if (lineColIdx + 1 > lineBuilder.Length)
                         {
-                            lineBuilder.Append(unhighlightedColorBackground.VTSequenceForeground);
-                            lineBuilder.Append(highlightedColorBackground.VTSequenceBackground);
+                            lineBuilder.Append(ColorTools.RenderSetConsoleColor(unhighlightedColorBackground));
+                            lineBuilder.Append(ColorTools.RenderSetConsoleColor(highlightedColorBackground, true, true));
                             lineBuilder.Append(' ');
-                            lineBuilder.Append(unhighlightedColorBackground.VTSequenceBackground);
-                            lineBuilder.Append(highlightedColorBackground.VTSequenceForeground);
+                            lineBuilder.Append(ColorTools.RenderSetConsoleColor(unhighlightedColorBackground, true));
+                            lineBuilder.Append(ColorTools.RenderSetConsoleColor(highlightedColorBackground));
                         }
                         else
                         {
-                            lineBuilder.Insert(lineColIdx + 1, unhighlightedColorBackground.VTSequenceBackground);
-                            lineBuilder.Insert(lineColIdx + 1, highlightedColorBackground.VTSequenceForeground);
-                            lineBuilder.Insert(lineColIdx, unhighlightedColorBackground.VTSequenceForeground);
-                            lineBuilder.Insert(lineColIdx, highlightedColorBackground.VTSequenceBackground);
+                            lineBuilder.Insert(lineColIdx + 1, ColorTools.RenderSetConsoleColor(unhighlightedColorBackground, true));
+                            lineBuilder.Insert(lineColIdx + 1, ColorTools.RenderSetConsoleColor(highlightedColorBackground));
+                            lineBuilder.Insert(lineColIdx, ColorTools.RenderSetConsoleColor(unhighlightedColorBackground));
+                            lineBuilder.Insert(lineColIdx, ColorTools.RenderSetConsoleColor(highlightedColorBackground, true, true));
                         }
                     }
 
@@ -333,8 +332,8 @@ namespace Nitrocid.Files.Editors.TextEdit
                     // Change the color depending on the highlighted line and column
                     sels.Append(
                         $"{CsiSequences.GenerateCsiCursorPosition(2, SeparatorMinimumHeightInterior + count + 1)}" +
-                        $"{highlightedColorBackground.VTSequenceForeground}" +
-                        $"{unhighlightedColorBackground.VTSequenceBackground}" +
+                        $"{ColorTools.RenderSetConsoleColor(highlightedColorBackground)}" +
+                        $"{ColorTools.RenderSetConsoleColor(unhighlightedColorBackground, true)}" +
                         line
                     );
                     count++;

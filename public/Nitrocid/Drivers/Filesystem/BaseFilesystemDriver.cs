@@ -50,6 +50,7 @@ using Textify.General;
 using Terminaux.Base;
 using Nitrocid.Misc.Progress;
 using System.Runtime.Serialization;
+using Terminaux.Colors;
 
 namespace Nitrocid.Drivers.Filesystem
 {
@@ -627,7 +628,7 @@ namespace Nitrocid.Drivers.Filesystem
                 var builder = new StringBuilder();
                 for (long CurrentByteNumber = StartByte; CurrentByteNumber <= EndByte; CurrentByteNumber += 16)
                 {
-                    builder.Append($"{unhighlightedColorBackground.VTSequenceBackground}{entryColor.VTSequenceForeground}0x{CurrentByteNumber - 1L:X8} ");
+                    builder.Append($"{ColorTools.RenderSetConsoleColor(unhighlightedColorBackground, true)}{entryColor.VTSequenceForeground}0x{CurrentByteNumber - 1L:X8} ");
 
                     // Iterate these number of bytes for the ASCII codes
                     long byteNum;
@@ -637,10 +638,10 @@ namespace Nitrocid.Drivers.Filesystem
                         DebugWriter.WriteDebug(DebugLevel.I, "Byte: {0}", CurrentByte);
                         builder.Append(
                             $"{(CurrentByteNumber + byteNum == ByteHighlight ? unhighlightedColorBackground : highlightedColorBackground).VTSequenceForeground}" +
-                            $"{(CurrentByteNumber + byteNum == ByteHighlight ? highlightedColorBackground : unhighlightedColorBackground).VTSequenceBackground}" +
+                            $"{ColorTools.RenderSetConsoleColor((CurrentByteNumber + byteNum == ByteHighlight ? highlightedColorBackground : unhighlightedColorBackground), true)}" +
                             $"{CurrentByte:X2}" +
                             $"{highlightedColorBackground.VTSequenceForeground}" +
-                            $"{unhighlightedColorBackground.VTSequenceBackground}" +
+                            $"{ColorTools.RenderSetConsoleColor(unhighlightedColorBackground, true)}" +
                             $" "
                         );
                     }
@@ -668,7 +669,7 @@ namespace Nitrocid.Drivers.Filesystem
                         DebugWriter.WriteDebug(DebugLevel.I, "Rendered byte char: {0}", ProjectedByteChar);
                         builder.Append(
                             $"{(CurrentByteNumber + byteNum == ByteHighlight ? unhighlightedColorBackground : highlightedColorBackground).VTSequenceForeground}" +
-                            $"{(CurrentByteNumber + byteNum == ByteHighlight ? highlightedColorBackground : unhighlightedColorBackground).VTSequenceBackground}" +
+                            $"{ColorTools.RenderSetConsoleColor((CurrentByteNumber + byteNum == ByteHighlight ? highlightedColorBackground : unhighlightedColorBackground), true)}" +
                             $"{RenderedByteChar}"
                         );
                     }
