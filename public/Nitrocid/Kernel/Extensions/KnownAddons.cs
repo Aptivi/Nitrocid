@@ -24,6 +24,7 @@ namespace Nitrocid.Kernel.Extensions
     /// </summary>
     public enum KnownAddons
     {
+        #region Since 0.1.0
         /// <summary>
         /// Language pack addon
         /// </summary>
@@ -180,5 +181,13 @@ namespace Nitrocid.Kernel.Extensions
         /// HDD Uncleaner 2015 Legacy addon
         /// </summary>
         LegacyHddUncleaner,
+        #endregion
+
+        #region Since 0.1.1
+        /// <summary>
+        /// Unit Converter App Extras addon
+        /// </summary>
+        ExtrasPastebin,
+        #endregion
     }
 }

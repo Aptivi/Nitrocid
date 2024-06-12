@@ -31,6 +31,7 @@ namespace Nitrocid.Kernel.Extensions
         private static readonly Dictionary<KnownAddons, string> knownAddons = new()
         {
             // Note: The names are not to be localized for usage with GetAddonName(), because they are constant addon names.
+            #region Since 0.1.0
             { KnownAddons.AddonLanguagePacks,           /* Localizable */ "Extra Languages Pack" },
             { KnownAddons.AddonScreensaverPacks,        /* Localizable */ "Extra Screensavers Pack" },
             { KnownAddons.AddonSplashPacks,             /* Localizable */ "Extra Splashes Pack" },
@@ -70,6 +71,11 @@ namespace Nitrocid.Kernel.Extensions
             { KnownAddons.ExtrasToDoList,               /* Localizable */ "Extras - To-do List" },
             { KnownAddons.ExtrasUnitConv,               /* Localizable */ "Extras - Unit Converter" },
             { KnownAddons.LegacyHddUncleaner,           /* Localizable */ "Legacy - HDD Uncleaner 2015" },
+            #endregion
+
+            #region Since 0.1.1
+            { KnownAddons.ExtrasPastebin,               /* Localizable */ "Extras - Pastebin" },
+            #endregion
         };
 
         /// <summary>
