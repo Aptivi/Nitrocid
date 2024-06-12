@@ -112,6 +112,14 @@ namespace Nitrocid.Extras.RssShell.RSS
                     ])
                 ], new SearchCommand(), CommandFlags.Wrappable),
 
+            new CommandInfo("selfeed", /* Localizable */ "Searches the feed library for a feed",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "phrase")
+                    ])
+                ], new SelFeedCommand(), CommandFlags.Wrappable),
+
             new CommandInfo("unbookmark", /* Localizable */ "Removes the feed bookmark",
                 [
                     new CommandArgumentInfo()
