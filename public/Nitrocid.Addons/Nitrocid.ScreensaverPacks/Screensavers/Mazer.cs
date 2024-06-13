@@ -32,63 +32,6 @@ using System;
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
     /// <summary>
-    /// Settings for Mazer
-    /// </summary>
-    public static class MazerSettings
-    {
-
-        /// <summary>
-        /// [Mazer] How many milliseconds to wait before generating a new maze?
-        /// </summary>
-        public static int MazerNewMazeDelay
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.MazerNewMazeDelay;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 10000;
-                ScreensaverPackInit.SaversConfig.MazerNewMazeDelay = value;
-            }
-        }
-        /// <summary>
-        /// [Mazer] Maze generation speed in milliseconds
-        /// </summary>
-        public static int MazerGenerationSpeed
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.MazerGenerationSpeed;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 20;
-                ScreensaverPackInit.SaversConfig.MazerGenerationSpeed = value;
-            }
-        }
-        /// <summary>
-        /// [Mazer] If enabled, highlights the non-covered positions with the gray background color. Otherwise, they render as boxes.
-        /// </summary>
-        public static bool MazerHighlightUncovered
-        {
-            get => ScreensaverPackInit.SaversConfig.MazerHighlightUncovered;
-            set => ScreensaverPackInit.SaversConfig.MazerHighlightUncovered = value;
-        }
-        /// <summary>
-        /// [Mazer] Specifies whether to choose the <seealso href="http://en.wikipedia.org/wiki/Schwartzian_transform">Schwartzian transform</seealso> or to use <see cref="Random.Shuffle{T}(T[])"/>
-        /// </summary>
-        public static bool MazerUseSchwartzian
-        {
-            get => ScreensaverPackInit.SaversConfig.MazerUseSchwartzian;
-            set => ScreensaverPackInit.SaversConfig.MazerUseSchwartzian = value;
-        }
-
-    }
-
-    /// <summary>
     /// Display code for Mazer
     /// </summary>
     public class MazerDisplay : BaseScreensaver, IScreensaver
@@ -108,7 +51,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Reset resize sync
             ConsoleResizeHandler.WasResized();
-            ThreadManager.SleepNoBlock(MazerSettings.MazerNewMazeDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.MazerNewMazeDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 
         private static void GenerateMaze()
@@ -116,7 +59,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             // Necessary variables for maze generation
             int width = (ConsoleWrapper.WindowWidth / 2) - 3;
             int height = ConsoleWrapper.WindowHeight - 3;
-            double delay = MazerSettings.MazerGenerationSpeed;
+            double delay = ScreensaverPackInit.SaversConfig.MazerGenerationSpeed;
 
             // Now, the directions and their opposites
             Dictionary<Direction, int> opposites = new()
@@ -164,7 +107,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             }
             var edgesArray = plainEdges.ToArray();
             var edges =
-                MazerSettings.MazerUseSchwartzian ?
+                ScreensaverPackInit.SaversConfig.MazerUseSchwartzian ?
                 edgesArray.RandomizeArray() :
                 edgesArray.RandomizeArraySystem();
 
@@ -218,7 +161,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 {
                     // Get the cell
                     int cell = grid[y, x];
-                    if (cell == 0 && MazerSettings.MazerHighlightUncovered)
+                    if (cell == 0 && ScreensaverPackInit.SaversConfig.MazerHighlightUncovered)
                         mazeBuilder.Append($"{CharManager.GetEsc()}[47m");
                     mazeBuilder.Append(IsDirection(cell, Direction.South) ? " " : "_");
 
@@ -229,7 +172,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     }
                     else
                         mazeBuilder.Append('|');
-                    if (cell == 0 && MazerSettings.MazerHighlightUncovered)
+                    if (cell == 0 && ScreensaverPackInit.SaversConfig.MazerHighlightUncovered)
                         mazeBuilder.Append($"{CharManager.GetEsc()}[m");
                 }
 

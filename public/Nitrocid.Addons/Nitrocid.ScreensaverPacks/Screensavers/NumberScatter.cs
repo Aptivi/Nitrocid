@@ -27,59 +27,6 @@ using Terminaux.Colors;
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
     /// <summary>
-    /// Settings for NumberScatter
-    /// </summary>
-    public static class NumberScatterSettings
-    {
-
-        /// <summary>
-        /// [NumberScatter] How many milliseconds to wait before making the next write?
-        /// </summary>
-        public static int NumberScatterDelay
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.NumberScatterDelay;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 1;
-                ScreensaverPackInit.SaversConfig.NumberScatterDelay = value;
-            }
-        }
-        /// <summary>
-        /// [NumberScatter] Screensaver background color
-        /// </summary>
-        public static string NumberScatterBackgroundColor
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.NumberScatterBackgroundColor;
-            }
-            set
-            {
-                ScreensaverPackInit.SaversConfig.NumberScatterBackgroundColor = new Color(value).PlainSequence;
-            }
-        }
-        /// <summary>
-        /// [NumberScatter] Screensaver foreground color
-        /// </summary>
-        public static string NumberScatterForegroundColor
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.NumberScatterForegroundColor;
-            }
-            set
-            {
-                ScreensaverPackInit.SaversConfig.NumberScatterForegroundColor = new Color(value).PlainSequence;
-            }
-        }
-
-    }
-
-    /// <summary>
     /// Display code for NumberScatter
     /// </summary>
     public class NumberScatterDisplay : BaseScreensaver, IScreensaver
@@ -92,8 +39,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            ColorTools.SetConsoleColor(new Color(NumberScatterSettings.NumberScatterForegroundColor));
-            ColorTools.LoadBackDry(new Color(NumberScatterSettings.NumberScatterBackgroundColor));
+            ColorTools.SetConsoleColor(new Color(ScreensaverPackInit.SaversConfig.NumberScatterForegroundColor));
+            ColorTools.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.NumberScatterBackgroundColor));
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
         }
 
@@ -117,7 +64,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Reset resize sync
             ConsoleResizeHandler.WasResized();
-            ThreadManager.SleepNoBlock(NumberScatterSettings.NumberScatterDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.NumberScatterDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 
     }

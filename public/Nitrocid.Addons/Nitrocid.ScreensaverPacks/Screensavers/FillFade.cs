@@ -30,175 +30,6 @@ using Terminaux.Base;
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
     /// <summary>
-    /// Settings for FillFade
-    /// </summary>
-    public static class FillFadeSettings
-    {
-
-        /// <summary>
-        /// [FillFade] Enable truecolor support. Has a higher priority than 255 color support.
-        /// </summary>
-        public static bool FillFadeTrueColor
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.FillFadeTrueColor;
-            }
-            set
-            {
-                ScreensaverPackInit.SaversConfig.FillFadeTrueColor = value;
-            }
-        }
-        /// <summary>
-        /// [FillFade] The minimum red color level (true color)
-        /// </summary>
-        public static int FillFadeMinimumRedColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.FillFadeMinimumRedColorLevel;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.FillFadeMinimumRedColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [FillFade] The minimum green color level (true color)
-        /// </summary>
-        public static int FillFadeMinimumGreenColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.FillFadeMinimumGreenColorLevel;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.FillFadeMinimumGreenColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [FillFade] The minimum blue color level (true color)
-        /// </summary>
-        public static int FillFadeMinimumBlueColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.FillFadeMinimumBlueColorLevel;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.FillFadeMinimumBlueColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [FillFade] The minimum color level (255 colors or 16 colors)
-        /// </summary>
-        public static int FillFadeMinimumColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.FillFadeMinimumColorLevel;
-            }
-            set
-            {
-                int FinalMinimumLevel = 255;
-                if (value <= 0)
-                    value = 0;
-                if (value > FinalMinimumLevel)
-                    value = FinalMinimumLevel;
-                ScreensaverPackInit.SaversConfig.FillFadeMinimumColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [FillFade] The maximum red color level (true color)
-        /// </summary>
-        public static int FillFadeMaximumRedColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.FillFadeMaximumRedColorLevel;
-            }
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.FillFadeMinimumRedColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.FillFadeMinimumRedColorLevel;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.FillFadeMaximumRedColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [FillFade] The maximum green color level (true color)
-        /// </summary>
-        public static int FillFadeMaximumGreenColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.FillFadeMaximumGreenColorLevel;
-            }
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.FillFadeMinimumGreenColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.FillFadeMinimumGreenColorLevel;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.FillFadeMaximumGreenColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [FillFade] The maximum blue color level (true color)
-        /// </summary>
-        public static int FillFadeMaximumBlueColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.FillFadeMaximumBlueColorLevel;
-            }
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.FillFadeMinimumBlueColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.FillFadeMinimumBlueColorLevel;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.FillFadeMaximumBlueColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [FillFade] The maximum color level (255 colors or 16 colors)
-        /// </summary>
-        public static int FillFadeMaximumColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.FillFadeMaximumColorLevel;
-            }
-            set
-            {
-                int FinalMaximumLevel = 255;
-                if (value <= ScreensaverPackInit.SaversConfig.FillFadeMinimumColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.FillFadeMinimumColorLevel;
-                if (value > FinalMaximumLevel)
-                    value = FinalMaximumLevel;
-                ScreensaverPackInit.SaversConfig.FillFadeMaximumColorLevel = value;
-            }
-        }
-
-    }
-
-    /// <summary>
     /// Display code for FillFade
     /// </summary>
     public class FillFadeDisplay : BaseScreensaver, IScreensaver
@@ -301,17 +132,17 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         private void ChangeColor()
         {
             currentColor = Color.Empty;
-            if (FillFadeSettings.FillFadeTrueColor)
+            if (ScreensaverPackInit.SaversConfig.FillFadeTrueColor)
             {
-                int RedColorNum = RandomDriver.Random(FillFadeSettings.FillFadeMinimumRedColorLevel, FillFadeSettings.FillFadeMaximumRedColorLevel);
-                int GreenColorNum = RandomDriver.Random(FillFadeSettings.FillFadeMinimumGreenColorLevel, FillFadeSettings.FillFadeMaximumGreenColorLevel);
-                int BlueColorNum = RandomDriver.Random(FillFadeSettings.FillFadeMinimumBlueColorLevel, FillFadeSettings.FillFadeMaximumBlueColorLevel);
+                int RedColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.FillFadeMinimumRedColorLevel, ScreensaverPackInit.SaversConfig.FillFadeMaximumRedColorLevel);
+                int GreenColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.FillFadeMinimumGreenColorLevel, ScreensaverPackInit.SaversConfig.FillFadeMaximumGreenColorLevel);
+                int BlueColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.FillFadeMinimumBlueColorLevel, ScreensaverPackInit.SaversConfig.FillFadeMaximumBlueColorLevel);
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                 currentColor = new Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}");
             }
             else
             {
-                int ColorNum = RandomDriver.Random(FillFadeSettings.FillFadeMinimumColorLevel, FillFadeSettings.FillFadeMaximumColorLevel);
+                int ColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.FillFadeMinimumColorLevel, ScreensaverPackInit.SaversConfig.FillFadeMaximumColorLevel);
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
                 currentColor = new Color(ColorNum);
             }

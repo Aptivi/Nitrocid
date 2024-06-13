@@ -24,31 +24,6 @@ using Terminaux.Base;
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
     /// <summary>
-    /// Settings for BSOD
-    /// </summary>
-    public static class BSODSettings
-    {
-
-        /// <summary>
-        /// [BSOD] How many milliseconds to wait before making the next write?
-        /// </summary>
-        public static int BSODDelay
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.BSODDelay;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 10000;
-                ScreensaverPackInit.SaversConfig.BSODDelay = value;
-            }
-        }
-
-    }
-
-    /// <summary>
     /// Display code for BSOD
     /// </summary>
     public class BSODDisplay : BaseScreensaver, IScreensaver
@@ -66,7 +41,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
             BSODSettingsInstance = new Animations.BSOD.BSODSettings()
             {
-                BSODDelay = BSODSettings.BSODDelay
+                BSODDelay = ScreensaverPackInit.SaversConfig.BSODDelay
             };
             base.ScreensaverPreparation();
         }

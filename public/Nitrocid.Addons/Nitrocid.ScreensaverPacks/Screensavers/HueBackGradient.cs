@@ -31,67 +31,6 @@ using Terminaux.Base;
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
     /// <summary>
-    /// Settings for HueBackGradient
-    /// </summary>
-    public static class HueBackGradientSettings
-    {
-
-        /// <summary>
-        /// [HueBackGradient] How many milliseconds to wait before making the next write?
-        /// </summary>
-        public static int HueBackGradientDelay
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.HueBackGradientDelay;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 50;
-                ScreensaverPackInit.SaversConfig.HueBackGradientDelay = value;
-            }
-        }
-        /// <summary>
-        /// [HueBackGradient] How intense is the color?
-        /// </summary>
-        public static int HueBackGradientSaturation
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.HueBackGradientSaturation;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 100;
-                if (value > 100)
-                    value = 100;
-                ScreensaverPackInit.SaversConfig.HueBackGradientSaturation = value;
-            }
-        }
-        /// <summary>
-        /// [HueBackGradient] How light is the color?
-        /// </summary>
-        public static int HueBackGradientLuminance
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.HueBackGradientLuminance;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 50;
-                if (value > 100)
-                    value = 100;
-                ScreensaverPackInit.SaversConfig.HueBackGradientLuminance = value;
-            }
-        }
-
-    }
-
-    /// <summary>
     /// Display code for HueBackGradient
     /// </summary>
     public class HueBackGradientDisplay : BaseScreensaver, IScreensaver
@@ -109,9 +48,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             ConsoleWrapper.CursorVisible = false;
 
             // Prepare the color
-            var color = new Color($"hsl:{currentHueAngle};{HueBackGradientSettings.HueBackGradientSaturation};{HueBackGradientSettings.HueBackGradientLuminance}");
+            var color = new Color($"hsl:{currentHueAngle};{ScreensaverPackInit.SaversConfig.HueBackGradientSaturation};{ScreensaverPackInit.SaversConfig.HueBackGradientLuminance}");
             var hsl = ConversionTools.ToHsl(color.RGB);
-            var reverseColor = new Color($"hsl:{hsl.ReverseHueWhole};{HueBackGradientSettings.HueBackGradientSaturation};{HueBackGradientSettings.HueBackGradientLuminance}");
+            var reverseColor = new Color($"hsl:{hsl.ReverseHueWhole};{ScreensaverPackInit.SaversConfig.HueBackGradientSaturation};{ScreensaverPackInit.SaversConfig.HueBackGradientLuminance}");
 
             // Set thresholds for color ramp
             int RampFrameSpaces = ConsoleWrapper.WindowWidth;
@@ -150,7 +89,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             TextWriterRaw.WritePlain(gradientBuilder.ToString(), false);
 
             // Set the hue angle
-            ThreadManager.SleepNoBlock(HueBackGradientSettings.HueBackGradientDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.HueBackGradientDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
             currentHueAngle++;
             if (currentHueAngle > 360)
                 currentHueAngle = 0;

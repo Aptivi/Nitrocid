@@ -30,31 +30,6 @@ using Terminaux.Base;
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
     /// <summary>
-    /// Settings for Aurora
-    /// </summary>
-    public static class AuroraSettings
-    {
-
-        /// <summary>
-        /// [Aurora] How many milliseconds to wait before making the next write?
-        /// </summary>
-        public static int AuroraDelay
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.AuroraDelay;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 100;
-                ScreensaverPackInit.SaversConfig.AuroraDelay = value;
-            }
-        }
-
-    }
-
-    /// <summary>
     /// Display code for Aurora
     /// </summary>
     public class AuroraDisplay : BaseScreensaver, IScreensaver
@@ -115,7 +90,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             if (!ConsoleResizeHandler.WasResized(false))
                 TextWriterRaw.WriteRaw(builder.ToString());
             ConsoleWrapper.SetCursorPosition(0, 0);
-            ThreadManager.SleepNoBlock(AuroraSettings.AuroraDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.AuroraDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
 
             // Reset resize sync
             ConsoleResizeHandler.WasResized();

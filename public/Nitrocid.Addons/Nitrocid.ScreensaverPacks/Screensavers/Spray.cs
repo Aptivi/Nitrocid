@@ -32,31 +32,6 @@ using Terminaux.Colors.Data;
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
     /// <summary>
-    /// Settings for Spray
-    /// </summary>
-    public static class SpraySettings
-    {
-
-        /// <summary>
-        /// [Spray] How many milliseconds to wait before making the next write?
-        /// </summary>
-        public static int SprayDelay
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.SprayDelay;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 10;
-                ScreensaverPackInit.SaversConfig.SprayDelay = value;
-            }
-        }
-
-    }
-
-    /// <summary>
     /// Display code for Spray
     /// </summary>
     public class SprayDisplay : BaseScreensaver, IScreensaver
@@ -139,7 +114,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Reset resize sync
             ConsoleResizeHandler.WasResized();
-            ThreadManager.SleepNoBlock(SpraySettings.SprayDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.SprayDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
             ColorTools.LoadBackDry(0);
         }
 

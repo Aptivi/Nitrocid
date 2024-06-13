@@ -33,205 +33,6 @@ using Terminaux.Graphics;
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
     /// <summary>
-    /// Settings for AnalogClock
-    /// </summary>
-    public static class AnalogClockSettings
-    {
-
-        /// <summary>
-        /// [AnalogClock] Enable truecolor support. Has a higher priority than 255 color support.
-        /// </summary>
-        public static bool AnalogClockTrueColor
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.AnalogClockTrueColor;
-            }
-            set
-            {
-                ScreensaverPackInit.SaversConfig.AnalogClockTrueColor = value;
-            }
-        }
-        /// <summary>
-        /// [AnalogClock] How many milliseconds to wait before making the next write?
-        /// </summary>
-        public static int AnalogClockDelay
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.AnalogClockDelay;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 1000;
-                ScreensaverPackInit.SaversConfig.AnalogClockDelay = value;
-            }
-        }
-        /// <summary>
-        /// [AnalogClock] Shows the seconds hand.
-        /// </summary>
-        public static bool AnalogClockShowSecondsHand
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.AnalogClockShowSecondsHand;
-            }
-            set
-            {
-                ScreensaverPackInit.SaversConfig.AnalogClockShowSecondsHand = value;
-            }
-        }
-        /// <summary>
-        /// [AnalogClock] The minimum red color level (true color)
-        /// </summary>
-        public static int AnalogClockMinimumRedColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.AnalogClockMinimumRedColorLevel;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.AnalogClockMinimumRedColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [AnalogClock] The minimum green color level (true color)
-        /// </summary>
-        public static int AnalogClockMinimumGreenColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.AnalogClockMinimumGreenColorLevel;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.AnalogClockMinimumGreenColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [AnalogClock] The minimum blue color level (true color)
-        /// </summary>
-        public static int AnalogClockMinimumBlueColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.AnalogClockMinimumBlueColorLevel;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.AnalogClockMinimumBlueColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [AnalogClock] The minimum color level (255 colors or 16 colors)
-        /// </summary>
-        public static int AnalogClockMinimumColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.AnalogClockMinimumColorLevel;
-            }
-            set
-            {
-                int FinalMinimumLevel = 255;
-                if (value <= 0)
-                    value = 0;
-                if (value > FinalMinimumLevel)
-                    value = FinalMinimumLevel;
-                ScreensaverPackInit.SaversConfig.AnalogClockMinimumColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [AnalogClock] The maximum red color level (true color)
-        /// </summary>
-        public static int AnalogClockMaximumRedColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.AnalogClockMaximumRedColorLevel;
-            }
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.AnalogClockMinimumRedColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.AnalogClockMinimumRedColorLevel;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.AnalogClockMaximumRedColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [AnalogClock] The maximum green color level (true color)
-        /// </summary>
-        public static int AnalogClockMaximumGreenColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.AnalogClockMaximumGreenColorLevel;
-            }
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.AnalogClockMinimumGreenColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.AnalogClockMinimumGreenColorLevel;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.AnalogClockMaximumGreenColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [AnalogClock] The maximum blue color level (true color)
-        /// </summary>
-        public static int AnalogClockMaximumBlueColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.AnalogClockMaximumBlueColorLevel;
-            }
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.AnalogClockMinimumBlueColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.AnalogClockMinimumBlueColorLevel;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.AnalogClockMaximumBlueColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [AnalogClock] The maximum color level (255 colors or 16 colors)
-        /// </summary>
-        public static int AnalogClockMaximumColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.AnalogClockMaximumColorLevel;
-            }
-            set
-            {
-                int FinalMaximumLevel = 255;
-                if (value <= ScreensaverPackInit.SaversConfig.AnalogClockMinimumColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.AnalogClockMinimumColorLevel;
-                if (value > FinalMaximumLevel)
-                    value = FinalMaximumLevel;
-                ScreensaverPackInit.SaversConfig.AnalogClockMaximumColorLevel = value;
-            }
-        }
-
-    }
-
-    /// <summary>
     /// Display code for AnalogClock
     /// </summary>
     public class AnalogClockDisplay : BaseScreensaver, IScreensaver
@@ -283,7 +84,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             // Clear old bezels
             TextWriterRaw.WriteRaw(GraphicsTools.RenderLine(lastCenter, lastHours, ColorTools.CurrentBackgroundColor));
             TextWriterRaw.WriteRaw(GraphicsTools.RenderLine(lastCenter, lastMinutes, ColorTools.CurrentBackgroundColor));
-            if (AnalogClockSettings.AnalogClockShowSecondsHand)
+            if (ScreensaverPackInit.SaversConfig.AnalogClockShowSecondsHand)
                 TextWriterRaw.WriteRaw(GraphicsTools.RenderLine(lastCenter, lastSeconds, ColorTools.CurrentBackgroundColor));
 
             // Write date and time
@@ -318,7 +119,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             lastMinutes = minutes;
 
             // Draw the seconds hand (optional)
-            if (AnalogClockSettings.AnalogClockShowSecondsHand)
+            if (ScreensaverPackInit.SaversConfig.AnalogClockShowSecondsHand)
             {
                 int secondsPos = TimeDateTools.KernelDateTime.Second;
                 int secondsRadius = (int)(bezelRadius * 2.5 / 3d);
@@ -330,7 +131,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             }
 
             // Delay
-            ThreadManager.SleepNoBlock(AnalogClockSettings.AnalogClockDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.AnalogClockDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 
         /// <summary>
@@ -339,16 +140,16 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public Color ChangeAnalogClockColor()
         {
             Color ColorInstance;
-            if (AnalogClockSettings.AnalogClockTrueColor)
+            if (ScreensaverPackInit.SaversConfig.AnalogClockTrueColor)
             {
-                int RedColorNum = RandomDriver.Random(AnalogClockSettings.AnalogClockMinimumRedColorLevel, AnalogClockSettings.AnalogClockMaximumRedColorLevel);
-                int GreenColorNum = RandomDriver.Random(AnalogClockSettings.AnalogClockMinimumGreenColorLevel, AnalogClockSettings.AnalogClockMaximumGreenColorLevel);
-                int BlueColorNum = RandomDriver.Random(AnalogClockSettings.AnalogClockMinimumBlueColorLevel, AnalogClockSettings.AnalogClockMaximumBlueColorLevel);
+                int RedColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.AnalogClockMinimumRedColorLevel, ScreensaverPackInit.SaversConfig.AnalogClockMaximumRedColorLevel);
+                int GreenColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.AnalogClockMinimumGreenColorLevel, ScreensaverPackInit.SaversConfig.AnalogClockMaximumGreenColorLevel);
+                int BlueColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.AnalogClockMinimumBlueColorLevel, ScreensaverPackInit.SaversConfig.AnalogClockMaximumBlueColorLevel);
                 ColorInstance = new Color(RedColorNum, GreenColorNum, BlueColorNum);
             }
             else
             {
-                int ColorNum = RandomDriver.Random(AnalogClockSettings.AnalogClockMinimumColorLevel, AnalogClockSettings.AnalogClockMaximumColorLevel);
+                int ColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.AnalogClockMinimumColorLevel, ScreensaverPackInit.SaversConfig.AnalogClockMaximumColorLevel);
                 ColorInstance = new Color(ColorNum);
             }
             return ColorInstance;

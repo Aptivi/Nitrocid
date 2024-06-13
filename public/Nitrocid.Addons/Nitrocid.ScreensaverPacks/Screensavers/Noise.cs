@@ -29,49 +29,6 @@ using Terminaux.Colors.Data;
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
     /// <summary>
-    /// Settings for Noise
-    /// </summary>
-    public static class NoiseSettings
-    {
-
-        /// <summary>
-        /// [Noise] How many milliseconds to wait before making the new screen?
-        /// </summary>
-        public static int NoiseNewScreenDelay
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.NoiseNewScreenDelay;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 5000;
-                ScreensaverPackInit.SaversConfig.NoiseNewScreenDelay = value;
-            }
-        }
-        /// <summary>
-        /// [Noise] The noise density in percent
-        /// </summary>
-        public static int NoiseDensity
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.NoiseDensity;
-            }
-            set
-            {
-                if (value < 0)
-                    value = 40;
-                if (value > 100)
-                    value = 40;
-                ScreensaverPackInit.SaversConfig.NoiseDensity = value;
-            }
-        }
-
-    }
-
-    /// <summary>
     /// Display code for Noise
     /// </summary>
     public class NoiseDisplay : BaseScreensaver, IScreensaver
@@ -83,7 +40,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            double NoiseDense = (NoiseSettings.NoiseDensity > 100 ? 100 : NoiseSettings.NoiseDensity) / 100d;
+            double NoiseDense = (ScreensaverPackInit.SaversConfig.NoiseDensity > 100 ? 100 : ScreensaverPackInit.SaversConfig.NoiseDensity) / 100d;
 
             ConsoleWrapper.CursorVisible = false;
             ColorTools.LoadBackDry(new Color(ConsoleColors.Grey));
@@ -114,7 +71,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Reset resize sync
             ConsoleResizeHandler.WasResized();
-            ThreadManager.SleepNoBlock(NoiseSettings.NoiseNewScreenDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.NoiseNewScreenDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 
     }

@@ -29,207 +29,6 @@ using Terminaux.Base;
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
     /// <summary>
-    /// Settings for BarWave
-    /// </summary>
-    public static class BarWaveSettings
-    {
-
-        /// <summary>
-        /// [BarWave] Enable truecolor support. Has a higher priority than 255 color support.
-        /// </summary>
-        public static bool BarWaveTrueColor
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.BarWaveTrueColor;
-            }
-            set
-            {
-                ScreensaverPackInit.SaversConfig.BarWaveTrueColor = value;
-            }
-        }
-        /// <summary>
-        /// [BarWave] The level of the frequency. This is the denominator of the Pi value (3.1415926...) in mathematics, defined by <see cref="Math.PI"/>.
-        /// </summary>
-        public static double BarWaveFrequencyLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.BarWaveFrequencyLevel;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 2;
-                ScreensaverPackInit.SaversConfig.BarWaveFrequencyLevel = value;
-            }
-        }
-        /// <summary>
-        /// [BarWave] How many milliseconds to wait before making the next write?
-        /// </summary>
-        public static int BarWaveDelay
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.BarWaveDelay;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 100;
-                ScreensaverPackInit.SaversConfig.BarWaveDelay = value;
-            }
-        }
-        /// <summary>
-        /// [BarWave] The minimum red color level (true color)
-        /// </summary>
-        public static int BarWaveMinimumRedColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.BarWaveMinimumRedColorLevel;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.BarWaveMinimumRedColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [BarWave] The minimum green color level (true color)
-        /// </summary>
-        public static int BarWaveMinimumGreenColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.BarWaveMinimumGreenColorLevel;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.BarWaveMinimumGreenColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [BarWave] The minimum blue color level (true color)
-        /// </summary>
-        public static int BarWaveMinimumBlueColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.BarWaveMinimumBlueColorLevel;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.BarWaveMinimumBlueColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [BarWave] The minimum color level (255 colors or 16 colors)
-        /// </summary>
-        public static int BarWaveMinimumColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.BarWaveMinimumColorLevel;
-            }
-            set
-            {
-                int FinalMinimumLevel = 255;
-                if (value <= 0)
-                    value = 0;
-                if (value > FinalMinimumLevel)
-                    value = FinalMinimumLevel;
-                ScreensaverPackInit.SaversConfig.BarWaveMinimumColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [BarWave] The maximum red color level (true color)
-        /// </summary>
-        public static int BarWaveMaximumRedColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.BarWaveMaximumRedColorLevel;
-            }
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.BarWaveMaximumRedColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.BarWaveMaximumRedColorLevel;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.BarWaveMaximumRedColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [BarWave] The maximum green color level (true color)
-        /// </summary>
-        public static int BarWaveMaximumGreenColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.BarWaveMaximumGreenColorLevel;
-            }
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.BarWaveMaximumGreenColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.BarWaveMaximumGreenColorLevel;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.BarWaveMaximumGreenColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [BarWave] The maximum blue color level (true color)
-        /// </summary>
-        public static int BarWaveMaximumBlueColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.BarWaveMaximumBlueColorLevel;
-            }
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.BarWaveMaximumBlueColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.BarWaveMaximumBlueColorLevel;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.BarWaveMaximumBlueColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [BarWave] The maximum color level (255 colors or 16 colors)
-        /// </summary>
-        public static int BarWaveMaximumColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.BarWaveMaximumColorLevel;
-            }
-            set
-            {
-                int FinalMaximumLevel = 255;
-                if (value <= ScreensaverPackInit.SaversConfig.BarWaveMaximumColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.BarWaveMaximumColorLevel;
-                if (value > FinalMaximumLevel)
-                    value = FinalMaximumLevel;
-                ScreensaverPackInit.SaversConfig.BarWaveMaximumColorLevel = value;
-            }
-        }
-
-    }
-
-    /// <summary>
     /// Display for BarWave
     /// </summary>
     public class BarWaveDisplay : BaseScreensaver, IScreensaver
@@ -255,7 +54,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Then, go ahead and make these bars wave themselves.
             int[] CurrentPos = new int[BarCount];
-            double Frequency = Math.PI / BarWaveSettings.BarWaveFrequencyLevel;
+            double Frequency = Math.PI / ScreensaverPackInit.SaversConfig.BarWaveFrequencyLevel;
 
             // Set the current positions
             for (int i = 0; i < BarCount; i++)
@@ -271,9 +70,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             {
                 int ThisBarLeft = (BarWidthOutside + 1) * i + 1;
                 int Pos = (int)(100 * (CurrentPos[i] / (double)BarHeight));
-                int RedColorNum = RandomDriver.Random(BarWaveSettings.BarWaveMinimumRedColorLevel, BarWaveSettings.BarWaveMaximumRedColorLevel);
-                int GreenColorNum = RandomDriver.Random(BarWaveSettings.BarWaveMinimumGreenColorLevel, BarWaveSettings.BarWaveMaximumGreenColorLevel);
-                int BlueColorNum = RandomDriver.Random(BarWaveSettings.BarWaveMinimumBlueColorLevel, BarWaveSettings.BarWaveMaximumBlueColorLevel);
+                int RedColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.BarWaveMinimumRedColorLevel, ScreensaverPackInit.SaversConfig.BarWaveMaximumRedColorLevel);
+                int GreenColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.BarWaveMinimumGreenColorLevel, ScreensaverPackInit.SaversConfig.BarWaveMaximumGreenColorLevel);
+                int BlueColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.BarWaveMinimumBlueColorLevel, ScreensaverPackInit.SaversConfig.BarWaveMaximumBlueColorLevel);
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                 var ColorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
                 if (!ConsoleResizeHandler.WasResized(false))
@@ -282,7 +81,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Reset resize sync
             ConsoleResizeHandler.WasResized();
-            ThreadManager.SleepNoBlock(BarWaveSettings.BarWaveDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.BarWaveDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 
         /// <inheritdoc/>

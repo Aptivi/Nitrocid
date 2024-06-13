@@ -32,207 +32,6 @@ using Terminaux.Base;
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
     /// <summary>
-    /// Settings for FallingLine
-    /// </summary>
-    public static class FallingLineSettings
-    {
-
-        /// <summary>
-        /// [FallingLine] Enable truecolor support. Has a higher priority than 255 color support.
-        /// </summary>
-        public static bool FallingLineTrueColor
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.FallingLineTrueColor;
-            }
-            set
-            {
-                ScreensaverPackInit.SaversConfig.FallingLineTrueColor = value;
-            }
-        }
-        /// <summary>
-        /// [FallingLine] How many milliseconds to wait before making the next write?
-        /// </summary>
-        public static int FallingLineDelay
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.FallingLineDelay;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 10;
-                ScreensaverPackInit.SaversConfig.FallingLineDelay = value;
-            }
-        }
-        /// <summary>
-        /// [FallingLine] How many fade steps to do?
-        /// </summary>
-        public static int FallingLineMaxSteps
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.FallingLineMaxSteps;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 25;
-                ScreensaverPackInit.SaversConfig.FallingLineMaxSteps = value;
-            }
-        }
-        /// <summary>
-        /// [FallingLine] The minimum red color level (true color)
-        /// </summary>
-        public static int FallingLineMinimumRedColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.FallingLineMinimumRedColorLevel;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.FallingLineMinimumRedColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [FallingLine] The minimum green color level (true color)
-        /// </summary>
-        public static int FallingLineMinimumGreenColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.FallingLineMinimumGreenColorLevel;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.FallingLineMinimumGreenColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [FallingLine] The minimum blue color level (true color)
-        /// </summary>
-        public static int FallingLineMinimumBlueColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.FallingLineMinimumBlueColorLevel;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.FallingLineMinimumBlueColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [FallingLine] The minimum color level (255 colors or 16 colors)
-        /// </summary>
-        public static int FallingLineMinimumColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.FallingLineMinimumColorLevel;
-            }
-            set
-            {
-                int FinalMinimumLevel = 255;
-                if (value <= 0)
-                    value = 0;
-                if (value > FinalMinimumLevel)
-                    value = FinalMinimumLevel;
-                ScreensaverPackInit.SaversConfig.FallingLineMinimumColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [FallingLine] The maximum red color level (true color)
-        /// </summary>
-        public static int FallingLineMaximumRedColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.FallingLineMaximumRedColorLevel;
-            }
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.FallingLineMinimumRedColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.FallingLineMinimumRedColorLevel;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.FallingLineMaximumRedColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [FallingLine] The maximum green color level (true color)
-        /// </summary>
-        public static int FallingLineMaximumGreenColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.FallingLineMaximumGreenColorLevel;
-            }
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.FallingLineMinimumGreenColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.FallingLineMinimumGreenColorLevel;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.FallingLineMaximumGreenColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [FallingLine] The maximum blue color level (true color)
-        /// </summary>
-        public static int FallingLineMaximumBlueColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.FallingLineMaximumBlueColorLevel;
-            }
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.FallingLineMinimumBlueColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.FallingLineMinimumBlueColorLevel;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.FallingLineMaximumBlueColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [FallingLine] The maximum color level (255 colors or 16 colors)
-        /// </summary>
-        public static int FallingLineMaximumColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.FallingLineMaximumColorLevel;
-            }
-            set
-            {
-                int FinalMaximumLevel = 255;
-                if (value <= ScreensaverPackInit.SaversConfig.FallingLineMinimumColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.FallingLineMinimumColorLevel;
-                if (value > FinalMaximumLevel)
-                    value = FinalMaximumLevel;
-                ScreensaverPackInit.SaversConfig.FallingLineMaximumColorLevel = value;
-            }
-        }
-
-    }
-
-    /// <summary>
     /// Display code for FallingLine
     /// </summary>
     public class FallingLineDisplay : BaseScreensaver, IScreensaver
@@ -265,18 +64,18 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Select the color
             Color ColorStorage;
-            if (FallingLineSettings.FallingLineTrueColor)
+            if (ScreensaverPackInit.SaversConfig.FallingLineTrueColor)
             {
-                int RedColorNum = RandomDriver.Random(FallingLineSettings.FallingLineMinimumRedColorLevel, FallingLineSettings.FallingLineMaximumRedColorLevel);
-                int GreenColorNum = RandomDriver.Random(FallingLineSettings.FallingLineMinimumGreenColorLevel, FallingLineSettings.FallingLineMaximumGreenColorLevel);
-                int BlueColorNum = RandomDriver.Random(FallingLineSettings.FallingLineMinimumBlueColorLevel, FallingLineSettings.FallingLineMaximumBlueColorLevel);
+                int RedColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.FallingLineMinimumRedColorLevel, ScreensaverPackInit.SaversConfig.FallingLineMaximumRedColorLevel);
+                int GreenColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.FallingLineMinimumGreenColorLevel, ScreensaverPackInit.SaversConfig.FallingLineMaximumGreenColorLevel);
+                int BlueColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.FallingLineMinimumBlueColorLevel, ScreensaverPackInit.SaversConfig.FallingLineMaximumBlueColorLevel);
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                 ColorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
                 ColorTools.SetConsoleColorDry(ColorStorage, true);
             }
             else
             {
-                int ColorNum = RandomDriver.Random(FallingLineSettings.FallingLineMinimumColorLevel, FallingLineSettings.FallingLineMaximumColorLevel);
+                int ColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.FallingLineMinimumColorLevel, ScreensaverPackInit.SaversConfig.FallingLineMaximumColorLevel);
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
                 ColorStorage = new Color(ColorNum);
                 ColorTools.SetConsoleColorDry(ColorStorage, true);
@@ -295,20 +94,20 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 CoveredPositions.Add(PositionTuple);
 
                 // Delay
-                ThreadManager.SleepNoBlock(FallingLineSettings.FallingLineDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.FallingLineDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
             }
 
             // Fade the line down. Please note that this requires true-color support in the terminal to work properly.
-            for (int StepNum = 0; StepNum <= FallingLineSettings.FallingLineMaxSteps; StepNum++)
+            for (int StepNum = 0; StepNum <= ScreensaverPackInit.SaversConfig.FallingLineMaxSteps; StepNum++)
             {
                 // Check to see if user decided to resize
                 if (ConsoleResizeHandler.WasResized(false))
                     break;
 
                 // Set thresholds
-                double ThresholdRed = ColorStorage.RGB.R / (double)FallingLineSettings.FallingLineMaxSteps;
-                double ThresholdGreen = ColorStorage.RGB.G / (double)FallingLineSettings.FallingLineMaxSteps;
-                double ThresholdBlue = ColorStorage.RGB.B / (double)FallingLineSettings.FallingLineMaxSteps;
+                double ThresholdRed = ColorStorage.RGB.R / (double)ScreensaverPackInit.SaversConfig.FallingLineMaxSteps;
+                double ThresholdGreen = ColorStorage.RGB.G / (double)ScreensaverPackInit.SaversConfig.FallingLineMaxSteps;
+                double ThresholdBlue = ColorStorage.RGB.B / (double)ScreensaverPackInit.SaversConfig.FallingLineMaxSteps;
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Color threshold (R;G;B: {0})", ThresholdRed, ThresholdGreen, ThresholdBlue);
 
                 // Set color fade steps
@@ -334,7 +133,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 TextWriterWhereColor.WriteWhereColorBack(bleedBuilder.ToString(), ColumnLine, 0, false, Color.Empty, CurrentFadeColor);
 
                 // Delay
-                ThreadManager.SleepNoBlock(FallingLineSettings.FallingLineDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.FallingLineDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
             }
 
             // Reset covered positions
@@ -342,7 +141,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Reset resize sync
             ConsoleResizeHandler.WasResized();
-            ThreadManager.SleepNoBlock(FallingLineSettings.FallingLineDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.FallingLineDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 
         /// <inheritdoc/>

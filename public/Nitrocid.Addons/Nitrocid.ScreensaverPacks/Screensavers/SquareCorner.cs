@@ -25,171 +25,6 @@ using Terminaux.Colors;
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
     /// <summary>
-    /// Settings for SquareCorner
-    /// </summary>
-    public static class SquareCornerSettings
-    {
-
-        /// <summary>
-        /// [SquareCorner] How many milliseconds to wait before making the next write?
-        /// </summary>
-        public static int SquareCornerDelay
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.SquareCornerDelay;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 50;
-                ScreensaverPackInit.SaversConfig.SquareCornerDelay = value;
-            }
-        }
-        /// <summary>
-        /// [SquareCorner] How many milliseconds to wait before fading the square out?
-        /// </summary>
-        public static int SquareCornerFadeOutDelay
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.SquareCornerFadeOutDelay;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 3000;
-                ScreensaverPackInit.SaversConfig.SquareCornerFadeOutDelay = value;
-            }
-        }
-        /// <summary>
-        /// [SquareCorner] How many fade steps to do?
-        /// </summary>
-        public static int SquareCornerMaxSteps
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.SquareCornerMaxSteps;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 25;
-                ScreensaverPackInit.SaversConfig.SquareCornerMaxSteps = value;
-            }
-        }
-        /// <summary>
-        /// [SquareCorner] The minimum red color level (true color)
-        /// </summary>
-        public static int SquareCornerMinimumRedColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.SquareCornerMinimumRedColorLevel;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.SquareCornerMinimumRedColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [SquareCorner] The minimum green color level (true color)
-        /// </summary>
-        public static int SquareCornerMinimumGreenColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.SquareCornerMinimumGreenColorLevel;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.SquareCornerMinimumGreenColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [SquareCorner] The minimum blue color level (true color)
-        /// </summary>
-        public static int SquareCornerMinimumBlueColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.SquareCornerMinimumBlueColorLevel;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.SquareCornerMinimumBlueColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [SquareCorner] The maximum red color level (true color)
-        /// </summary>
-        public static int SquareCornerMaximumRedColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.SquareCornerMaximumRedColorLevel;
-            }
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.SquareCornerMinimumRedColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.SquareCornerMinimumRedColorLevel;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.SquareCornerMaximumRedColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [SquareCorner] The maximum green color level (true color)
-        /// </summary>
-        public static int SquareCornerMaximumGreenColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.SquareCornerMaximumGreenColorLevel;
-            }
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.SquareCornerMinimumGreenColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.SquareCornerMinimumGreenColorLevel;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.SquareCornerMaximumGreenColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [SquareCorner] The maximum blue color level (true color)
-        /// </summary>
-        public static int SquareCornerMaximumBlueColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.SquareCornerMaximumBlueColorLevel;
-            }
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.SquareCornerMinimumBlueColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.SquareCornerMinimumBlueColorLevel;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.SquareCornerMaximumBlueColorLevel = value;
-            }
-        }
-
-    }
-
-    /// <summary>
     /// Display code for SquareCorner
     /// </summary>
     public class SquareCornerDisplay : BaseScreensaver, IScreensaver
@@ -207,15 +42,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
             SquareCornerSettingsInstance = new Animations.SquareCorner.SquareCornerSettings()
             {
-                SquareCornerDelay = SquareCornerSettings.SquareCornerDelay,
-                SquareCornerFadeOutDelay = SquareCornerSettings.SquareCornerFadeOutDelay,
-                SquareCornerMaxSteps = SquareCornerSettings.SquareCornerMaxSteps,
-                SquareCornerMinimumRedColorLevel = SquareCornerSettings.SquareCornerMinimumRedColorLevel,
-                SquareCornerMinimumGreenColorLevel = SquareCornerSettings.SquareCornerMinimumGreenColorLevel,
-                SquareCornerMinimumBlueColorLevel = SquareCornerSettings.SquareCornerMinimumBlueColorLevel,
-                SquareCornerMaximumRedColorLevel = SquareCornerSettings.SquareCornerMaximumRedColorLevel,
-                SquareCornerMaximumGreenColorLevel = SquareCornerSettings.SquareCornerMaximumGreenColorLevel,
-                SquareCornerMaximumBlueColorLevel = SquareCornerSettings.SquareCornerMaximumBlueColorLevel,
+                SquareCornerDelay = ScreensaverPackInit.SaversConfig.SquareCornerDelay,
+                SquareCornerFadeOutDelay = ScreensaverPackInit.SaversConfig.SquareCornerFadeOutDelay,
+                SquareCornerMaxSteps = ScreensaverPackInit.SaversConfig.SquareCornerMaxSteps,
+                SquareCornerMinimumRedColorLevel = ScreensaverPackInit.SaversConfig.SquareCornerMinimumRedColorLevel,
+                SquareCornerMinimumGreenColorLevel = ScreensaverPackInit.SaversConfig.SquareCornerMinimumGreenColorLevel,
+                SquareCornerMinimumBlueColorLevel = ScreensaverPackInit.SaversConfig.SquareCornerMinimumBlueColorLevel,
+                SquareCornerMaximumRedColorLevel = ScreensaverPackInit.SaversConfig.SquareCornerMaximumRedColorLevel,
+                SquareCornerMaximumGreenColorLevel = ScreensaverPackInit.SaversConfig.SquareCornerMaximumGreenColorLevel,
+                SquareCornerMaximumBlueColorLevel = ScreensaverPackInit.SaversConfig.SquareCornerMaximumBlueColorLevel,
             };
             ColorTools.LoadBackDry(0);
         }

@@ -32,31 +32,6 @@ using Terminaux.Colors.Data;
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
     /// <summary>
-    /// Settings for StarfieldWarp
-    /// </summary>
-    public static class StarfieldWarpSettings
-    {
-
-        /// <summary>
-        /// [StarfieldWarp] How many milliseconds to wait before making the next write?
-        /// </summary>
-        public static int StarfieldWarpDelay
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.StarfieldWarpDelay;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 10;
-                ScreensaverPackInit.SaversConfig.StarfieldWarpDelay = value;
-            }
-        }
-
-    }
-
-    /// <summary>
     /// Display code for StarfieldWarp
     /// </summary>
     public class StarfieldWarpDisplay : BaseScreensaver, IScreensaver
@@ -178,7 +153,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Reset resize sync
             ConsoleResizeHandler.WasResized();
-            ThreadManager.SleepNoBlock(StarfieldWarpSettings.StarfieldWarpDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.StarfieldWarpDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
             ColorTools.LoadBackDry(0);
         }
 

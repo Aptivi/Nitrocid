@@ -27,207 +27,6 @@ using Terminaux.Base;
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
     /// <summary>
-    /// Settings for TextWander
-    /// </summary>
-    public static class TextWanderSettings
-    {
-
-        /// <summary>
-        /// [TextWander] Enable truecolor support. Has a higher priority than 255 color support.
-        /// </summary>
-        public static bool TextWanderTrueColor
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.TextWanderTrueColor;
-            }
-            set
-            {
-                ScreensaverPackInit.SaversConfig.TextWanderTrueColor = value;
-            }
-        }
-        /// <summary>
-        /// [TextWander] How many milliseconds to wait before making the next write?
-        /// </summary>
-        public static int TextWanderDelay
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.TextWanderDelay;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 1000;
-                ScreensaverPackInit.SaversConfig.TextWanderDelay = value;
-            }
-        }
-        /// <summary>
-        /// [TextWander] TextWander for Bouncing TextWander. Shorter is better.
-        /// </summary>
-        public static string TextWanderWrite
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.TextWanderWrite;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "Nitrocid KS";
-                ScreensaverPackInit.SaversConfig.TextWanderWrite = value;
-            }
-        }
-        /// <summary>
-        /// [TextWander] The minimum red color level (true color)
-        /// </summary>
-        public static int TextWanderMinimumRedColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.TextWanderMinimumRedColorLevel;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.TextWanderMinimumRedColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [TextWander] The minimum green color level (true color)
-        /// </summary>
-        public static int TextWanderMinimumGreenColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.TextWanderMinimumGreenColorLevel;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.TextWanderMinimumGreenColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [TextWander] The minimum blue color level (true color)
-        /// </summary>
-        public static int TextWanderMinimumBlueColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.TextWanderMinimumBlueColorLevel;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.TextWanderMinimumBlueColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [TextWander] The minimum color level (255 colors or 16 colors)
-        /// </summary>
-        public static int TextWanderMinimumColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.TextWanderMinimumColorLevel;
-            }
-            set
-            {
-                int FinalMinimumLevel = 255;
-                if (value <= 0)
-                    value = 0;
-                if (value > FinalMinimumLevel)
-                    value = FinalMinimumLevel;
-                ScreensaverPackInit.SaversConfig.TextWanderMinimumColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [TextWander] The maximum red color level (true color)
-        /// </summary>
-        public static int TextWanderMaximumRedColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.TextWanderMaximumRedColorLevel;
-            }
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.TextWanderMinimumRedColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.TextWanderMinimumRedColorLevel;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.TextWanderMaximumRedColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [TextWander] The maximum green color level (true color)
-        /// </summary>
-        public static int TextWanderMaximumGreenColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.TextWanderMaximumGreenColorLevel;
-            }
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.TextWanderMinimumGreenColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.TextWanderMinimumGreenColorLevel;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.TextWanderMaximumGreenColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [TextWander] The maximum blue color level (true color)
-        /// </summary>
-        public static int TextWanderMaximumBlueColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.TextWanderMaximumBlueColorLevel;
-            }
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.TextWanderMinimumBlueColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.TextWanderMinimumBlueColorLevel;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.TextWanderMaximumBlueColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [TextWander] The maximum color level (255 colors or 16 colors)
-        /// </summary>
-        public static int TextWanderMaximumColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.TextWanderMaximumColorLevel;
-            }
-            set
-            {
-                int FinalMaximumLevel = 255;
-                if (value <= ScreensaverPackInit.SaversConfig.TextWanderMinimumColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.TextWanderMinimumColorLevel;
-                if (value > FinalMaximumLevel)
-                    value = FinalMaximumLevel;
-                ScreensaverPackInit.SaversConfig.TextWanderMaximumColorLevel = value;
-            }
-        }
-
-    }
-
-    /// <summary>
     /// Display code for TextWander
     /// </summary>
     public class TextWanderDisplay : BaseScreensaver, IScreensaver
@@ -241,7 +40,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             // Get the color and positions
             Color color = ChangeTextWanderColor();
-            string renderedTextWander = TextWanderSettings.TextWanderWrite;
+            string renderedTextWander = ScreensaverPackInit.SaversConfig.TextWanderWrite;
             int furthestX = ConsoleWrapper.WindowWidth - renderedTextWander.Length;
             int randomPosX = RandomDriver.RandomIdx(furthestX);
             int randomPosY = RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight);
@@ -250,7 +49,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             TextWriterWhereColor.WriteWhereColor(renderedTextWander, randomPosX, randomPosY, color);
 
             // Delay
-            ThreadManager.SleepNoBlock(TextWanderSettings.TextWanderDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.TextWanderDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
             TextWriterWhereColor.WriteWhereColor(new string(' ', renderedTextWander.Length), randomPosX, randomPosY, color);
         }
 
@@ -260,16 +59,16 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public Color ChangeTextWanderColor()
         {
             Color ColorInstance;
-            if (TextWanderSettings.TextWanderTrueColor)
+            if (ScreensaverPackInit.SaversConfig.TextWanderTrueColor)
             {
-                int RedColorNum = RandomDriver.Random(TextWanderSettings.TextWanderMinimumRedColorLevel, TextWanderSettings.TextWanderMaximumRedColorLevel);
-                int GreenColorNum = RandomDriver.Random(TextWanderSettings.TextWanderMinimumGreenColorLevel, TextWanderSettings.TextWanderMaximumGreenColorLevel);
-                int BlueColorNum = RandomDriver.Random(TextWanderSettings.TextWanderMinimumBlueColorLevel, TextWanderSettings.TextWanderMaximumBlueColorLevel);
+                int RedColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.TextWanderMinimumRedColorLevel, ScreensaverPackInit.SaversConfig.TextWanderMaximumRedColorLevel);
+                int GreenColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.TextWanderMinimumGreenColorLevel, ScreensaverPackInit.SaversConfig.TextWanderMaximumGreenColorLevel);
+                int BlueColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.TextWanderMinimumBlueColorLevel, ScreensaverPackInit.SaversConfig.TextWanderMaximumBlueColorLevel);
                 ColorInstance = new Color(RedColorNum, GreenColorNum, BlueColorNum);
             }
             else
             {
-                int ColorNum = RandomDriver.Random(TextWanderSettings.TextWanderMinimumColorLevel, TextWanderSettings.TextWanderMaximumColorLevel);
+                int ColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.TextWanderMinimumColorLevel, ScreensaverPackInit.SaversConfig.TextWanderMaximumColorLevel);
                 ColorInstance = new Color(ColorNum);
             }
             return ColorInstance;

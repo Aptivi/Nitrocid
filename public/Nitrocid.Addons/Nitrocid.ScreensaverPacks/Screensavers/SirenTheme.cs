@@ -26,46 +26,6 @@ using Terminaux.Colors;
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
     /// <summary>
-    /// Settings for SirenTheme
-    /// </summary>
-    public static class SirenThemeSettings
-    {
-
-        /// <summary>
-        /// [SirenTheme] How many milliseconds to wait before making the next write?
-        /// </summary>
-        public static int SirenThemeDelay
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.SirenThemeDelay;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 500;
-                ScreensaverPackInit.SaversConfig.SirenThemeDelay = value;
-            }
-        }
-
-        /// <summary>
-        /// [SirenTheme] The siren style
-        /// </summary>
-        public static string SirenThemeStyle
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.SirenThemeStyle;
-            }
-            set
-            {
-                ScreensaverPackInit.SaversConfig.SirenThemeStyle = ThemeTools.GetInstalledThemes().ContainsKey(value) ? value : "Default";
-            }
-        }
-
-    }
-
-    /// <summary>
     /// Display code for SirenTheme
     /// </summary>
     public class SirenThemeDisplay : BaseScreensaver, IScreensaver
@@ -112,7 +72,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverLogic()
         {
             // Get step color array from siren type
-            Color[] sirenColors = sirens[SirenThemeSettings.SirenThemeStyle];
+            Color[] sirenColors = sirens[ScreensaverPackInit.SaversConfig.SirenThemeStyle];
 
             // Step through the color
             step += 1;
@@ -123,7 +83,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             ColorTools.LoadBackDry(sirenColors[step]);
 
             // Delay
-            ThreadManager.SleepNoBlock(SirenThemeSettings.SirenThemeDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.SirenThemeDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 
     }

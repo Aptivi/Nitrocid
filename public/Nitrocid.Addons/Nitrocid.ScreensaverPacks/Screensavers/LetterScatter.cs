@@ -29,59 +29,6 @@ using Terminaux.Base;
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
     /// <summary>
-    /// Settings for LetterScatter
-    /// </summary>
-    public static class LetterScatterSettings
-    {
-
-        /// <summary>
-        /// [LetterScatter] How many milliseconds to wait before making the next write?
-        /// </summary>
-        public static int LetterScatterDelay
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.LetterScatterDelay;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 1;
-                ScreensaverPackInit.SaversConfig.LetterScatterDelay = value;
-            }
-        }
-        /// <summary>
-        /// [LetterScatter] Screensaver background color
-        /// </summary>
-        public static string LetterScatterBackgroundColor
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.LetterScatterBackgroundColor;
-            }
-            set
-            {
-                ScreensaverPackInit.SaversConfig.LetterScatterBackgroundColor = new Color(value).PlainSequence;
-            }
-        }
-        /// <summary>
-        /// [LetterScatter] Screensaver foreground color
-        /// </summary>
-        public static string LetterScatterForegroundColor
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.LetterScatterForegroundColor;
-            }
-            set
-            {
-                ScreensaverPackInit.SaversConfig.LetterScatterForegroundColor = new Color(value).PlainSequence;
-            }
-        }
-
-    }
-
-    /// <summary>
     /// Display code for LetterScatter
     /// </summary>
     public class LetterScatterDisplay : BaseScreensaver, IScreensaver
@@ -99,8 +46,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             // Variable preparations
             characters.Clear();
-            ColorTools.SetConsoleColor(new Color(LetterScatterSettings.LetterScatterForegroundColor));
-            ColorTools.LoadBackDry(new Color(LetterScatterSettings.LetterScatterBackgroundColor));
+            ColorTools.SetConsoleColor(new Color(ScreensaverPackInit.SaversConfig.LetterScatterForegroundColor));
+            ColorTools.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.LetterScatterBackgroundColor));
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
         }
 
@@ -132,7 +79,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Reset resize sync
             ConsoleResizeHandler.WasResized();
-            ThreadManager.SleepNoBlock(LetterScatterSettings.LetterScatterDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.LetterScatterDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 
     }

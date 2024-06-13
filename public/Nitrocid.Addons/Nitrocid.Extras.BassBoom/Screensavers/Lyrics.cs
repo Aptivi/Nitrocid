@@ -24,31 +24,6 @@ using Terminaux.Base;
 namespace Nitrocid.Extras.BassBoom.Screensavers
 {
     /// <summary>
-    /// Settings for Lyrics
-    /// </summary>
-    public static class LyricsSettings
-    {
-
-        /// <summary>
-        /// [Lyrics] How many milliseconds to wait before the next lyric?
-        /// </summary>
-        public static int LyricsDelay
-        {
-            get
-            {
-                return BassBoomInit.SaversConfig.LyricsDelay;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 10000;
-                BassBoomInit.SaversConfig.LyricsDelay = value;
-            }
-        }
-
-    }
-
-    /// <summary>
     /// Display code for Lyrics
     /// </summary>
     public class LyricsDisplay : BaseScreensaver, IScreensaver
@@ -65,7 +40,7 @@ namespace Nitrocid.Extras.BassBoom.Screensavers
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
             LyricsSettingsInstance = new Animations.Lyrics.LyricsSettings()
             {
-                LyricsDelay = LyricsSettings.LyricsDelay
+                LyricsDelay = BassBoomInit.SaversConfig.LyricsDelay
             };
             base.ScreensaverPreparation();
         }

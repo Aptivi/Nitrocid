@@ -25,31 +25,6 @@ using Terminaux.Base;
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
     /// <summary>
-    /// Settings for Spin
-    /// </summary>
-    public static class SpinSettings
-    {
-
-        /// <summary>
-        /// [Spin] How many milliseconds to wait before making the next write?
-        /// </summary>
-        public static int SpinDelay
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.SpinDelay;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 50;
-                ScreensaverPackInit.SaversConfig.SpinDelay = value;
-            }
-        }
-
-    }
-
-    /// <summary>
     /// Display code for Spin
     /// </summary>
     public class SpinDisplay : BaseScreensaver, IScreensaver
@@ -66,7 +41,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
             SpinSettingsInstance = new Animations.Spin.SpinSettings()
             {
-                SpinDelay = SpinSettings.SpinDelay
+                SpinDelay = ScreensaverPackInit.SaversConfig.SpinDelay
             };
             base.ScreensaverPreparation();
         }
@@ -75,7 +50,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverLogic()
         {
             Animations.Spin.Spin.Simulate(SpinSettingsInstance);
-            ThreadManager.SleepNoBlock(SpinSettings.SpinDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.SpinDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 
     }

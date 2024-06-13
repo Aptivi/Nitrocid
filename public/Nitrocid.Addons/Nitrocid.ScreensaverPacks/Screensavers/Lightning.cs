@@ -31,47 +31,6 @@ using Terminaux.Colors.Data;
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
     /// <summary>
-    /// Settings for Lightning
-    /// </summary>
-    public static class LightningSettings
-    {
-
-        /// <summary>
-        /// [Lightning] How many milliseconds to wait before making the next write?
-        /// </summary>
-        public static int LightningDelay
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.LightningDelay;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 100;
-                ScreensaverPackInit.SaversConfig.LightningDelay = value;
-            }
-        }
-        /// <summary>
-        /// [Lightning] Chance, in percent, to strike
-        /// </summary>
-        public static int LightningStrikeProbability
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.LightningStrikeProbability;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 5;
-                ScreensaverPackInit.SaversConfig.LightningStrikeProbability = value;
-            }
-        }
-
-    }
-
-    /// <summary>
     /// Display code for Lightning
     /// </summary>
     public class LightningDisplay : BaseScreensaver, IScreensaver
@@ -94,7 +53,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            bool striking = RandomDriver.RandomChance(LightningSettings.LightningStrikeProbability);
+            bool striking = RandomDriver.RandomChance(ScreensaverPackInit.SaversConfig.LightningStrikeProbability);
             if (striking)
             {
                 // First, determine the lightning bolt position
@@ -207,19 +166,19 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                         // Write the rendered strike
                         TextWriterRaw.WritePlain(strike.ToString(), false);
-                        ThreadManager.SleepNoBlock(LightningSettings.LightningDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                        ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.LightningDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
                     }
                     else
                     {
                         // Show only the white background
                         ColorTools.LoadBackDry(new Color(ConsoleColors.White));
-                        ThreadManager.SleepNoBlock(LightningSettings.LightningDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                        ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.LightningDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
                         ColorTools.LoadBackDry(new Color(ConsoleColors.Black));
                     }
                 }
                 ColorTools.LoadBackDry(new Color(ConsoleColors.Black));
             }
-            ThreadManager.SleepNoBlock(LightningSettings.LightningDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.LightningDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 
     }

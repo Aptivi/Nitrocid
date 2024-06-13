@@ -35,9 +35,25 @@ namespace Nitrocid.Extras.BassBoom.Settings
         public override SettingsEntry[] SettingsEntries =>
             ConfigTools.GetSettingsEntries(ResourcesManager.GetData("BassBoomSaverSettings.json", ResourcesType.Misc, typeof(BassBoomConfig).Assembly));
 
+        #region Lyrics
+        private int lyricsDelay = 10000;
+
         /// <summary>
         /// [Lyrics] How many milliseconds to wait before the next lyric?
         /// </summary>
-        public int LyricsDelay { get; set; } = 10000;
+        public int LyricsDelay
+        {
+            get
+            {
+                return lyricsDelay;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 10000;
+                lyricsDelay = value;
+            }
+        }
+        #endregion
     }
 }

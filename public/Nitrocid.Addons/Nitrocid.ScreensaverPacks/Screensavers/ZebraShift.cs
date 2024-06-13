@@ -31,191 +31,6 @@ using Terminaux.Colors.Data;
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
     /// <summary>
-    /// Settings for ZebraShift
-    /// </summary>
-    public static class ZebraShiftSettings
-    {
-
-        /// <summary>
-        /// [ZebraShift] Enable truecolor support. Has a higher priority than 255 color support.
-        /// </summary>
-        public static bool ZebraShiftTrueColor
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.ZebraShiftTrueColor;
-            }
-            set
-            {
-                ScreensaverPackInit.SaversConfig.ZebraShiftTrueColor = value;
-            }
-        }
-        /// <summary>
-        /// [ZebraShift] How many milliseconds to wait before making the next write?
-        /// </summary>
-        public static int ZebraShiftDelay
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.ZebraShiftDelay;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 25;
-                ScreensaverPackInit.SaversConfig.ZebraShiftDelay = value;
-            }
-        }
-        /// <summary>
-        /// [ZebraShift] The minimum red color level (true color)
-        /// </summary>
-        public static int ZebraShiftMinimumRedColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.ZebraShiftMinimumRedColorLevel;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.ZebraShiftMinimumRedColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [ZebraShift] The minimum green color level (true color)
-        /// </summary>
-        public static int ZebraShiftMinimumGreenColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.ZebraShiftMinimumGreenColorLevel;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.ZebraShiftMinimumGreenColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [ZebraShift] The minimum blue color level (true color)
-        /// </summary>
-        public static int ZebraShiftMinimumBlueColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.ZebraShiftMinimumBlueColorLevel;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.ZebraShiftMinimumBlueColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [ZebraShift] The minimum color level (255 colors or 16 colors)
-        /// </summary>
-        public static int ZebraShiftMinimumColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.ZebraShiftMinimumColorLevel;
-            }
-            set
-            {
-                int FinalMinimumLevel = 255;
-                if (value <= 0)
-                    value = 0;
-                if (value > FinalMinimumLevel)
-                    value = FinalMinimumLevel;
-                ScreensaverPackInit.SaversConfig.ZebraShiftMinimumColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [ZebraShift] The maximum red color level (true color)
-        /// </summary>
-        public static int ZebraShiftMaximumRedColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.ZebraShiftMaximumRedColorLevel;
-            }
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.ZebraShiftMinimumRedColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.ZebraShiftMinimumRedColorLevel;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.ZebraShiftMaximumRedColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [ZebraShift] The maximum green color level (true color)
-        /// </summary>
-        public static int ZebraShiftMaximumGreenColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.ZebraShiftMaximumGreenColorLevel;
-            }
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.ZebraShiftMinimumGreenColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.ZebraShiftMinimumGreenColorLevel;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.ZebraShiftMaximumGreenColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [ZebraShift] The maximum blue color level (true color)
-        /// </summary>
-        public static int ZebraShiftMaximumBlueColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.ZebraShiftMaximumBlueColorLevel;
-            }
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.ZebraShiftMinimumBlueColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.ZebraShiftMinimumBlueColorLevel;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.ZebraShiftMaximumBlueColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [ZebraShift] The maximum color level (255 colors or 16 colors)
-        /// </summary>
-        public static int ZebraShiftMaximumColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.ZebraShiftMaximumColorLevel;
-            }
-            set
-            {
-                int FinalMaximumLevel = 255;
-                if (value <= ScreensaverPackInit.SaversConfig.ZebraShiftMinimumColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.ZebraShiftMinimumColorLevel;
-                if (value > FinalMaximumLevel)
-                    value = FinalMaximumLevel;
-                ScreensaverPackInit.SaversConfig.ZebraShiftMaximumColorLevel = value;
-            }
-        }
-
-    }
-
-    /// <summary>
     /// Display code for ZebraShift
     /// </summary>
     public class ZebraShiftDisplay : BaseScreensaver, IScreensaver
@@ -237,15 +52,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             base.ScreensaverPreparation();
 
             // Select two colors for two lines
-            if (ZebraShiftSettings.ZebraShiftTrueColor)
+            if (ScreensaverPackInit.SaversConfig.ZebraShiftTrueColor)
             {
-                int firstGroupRedColorNum = RandomDriver.Random(ZebraShiftSettings.ZebraShiftMinimumRedColorLevel, ZebraShiftSettings.ZebraShiftMaximumRedColorLevel);
-                int firstGroupGreenColorNum = RandomDriver.Random(ZebraShiftSettings.ZebraShiftMinimumGreenColorLevel, ZebraShiftSettings.ZebraShiftMaximumGreenColorLevel);
-                int firstGroupBlueColorNum = RandomDriver.Random(ZebraShiftSettings.ZebraShiftMinimumBlueColorLevel, ZebraShiftSettings.ZebraShiftMaximumBlueColorLevel);
+                int firstGroupRedColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.ZebraShiftMinimumRedColorLevel, ScreensaverPackInit.SaversConfig.ZebraShiftMaximumRedColorLevel);
+                int firstGroupGreenColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.ZebraShiftMinimumGreenColorLevel, ScreensaverPackInit.SaversConfig.ZebraShiftMaximumGreenColorLevel);
+                int firstGroupBlueColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.ZebraShiftMinimumBlueColorLevel, ScreensaverPackInit.SaversConfig.ZebraShiftMaximumBlueColorLevel);
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color for first group (R;G;B: {0};{1};{2})", firstGroupRedColorNum, firstGroupGreenColorNum, firstGroupBlueColorNum);
-                int secondGroupRedColorNum = RandomDriver.Random(ZebraShiftSettings.ZebraShiftMinimumRedColorLevel, ZebraShiftSettings.ZebraShiftMaximumRedColorLevel);
-                int secondGroupGreenColorNum = RandomDriver.Random(ZebraShiftSettings.ZebraShiftMinimumGreenColorLevel, ZebraShiftSettings.ZebraShiftMaximumGreenColorLevel);
-                int secondGroupBlueColorNum = RandomDriver.Random(ZebraShiftSettings.ZebraShiftMinimumBlueColorLevel, ZebraShiftSettings.ZebraShiftMaximumBlueColorLevel);
+                int secondGroupRedColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.ZebraShiftMinimumRedColorLevel, ScreensaverPackInit.SaversConfig.ZebraShiftMaximumRedColorLevel);
+                int secondGroupGreenColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.ZebraShiftMinimumGreenColorLevel, ScreensaverPackInit.SaversConfig.ZebraShiftMaximumGreenColorLevel);
+                int secondGroupBlueColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.ZebraShiftMinimumBlueColorLevel, ScreensaverPackInit.SaversConfig.ZebraShiftMaximumBlueColorLevel);
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color for second group (R;G;B: {0};{1};{2})", secondGroupRedColorNum, secondGroupGreenColorNum, secondGroupBlueColorNum);
                 var firstGroupColorStorage = new Color(firstGroupRedColorNum, firstGroupGreenColorNum, firstGroupBlueColorNum);
                 var secondGroupColorStorage = new Color(secondGroupRedColorNum, secondGroupGreenColorNum, secondGroupBlueColorNum);
@@ -254,9 +69,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             }
             else
             {
-                int firstGroupColorNum = RandomDriver.Random(ZebraShiftSettings.ZebraShiftMinimumColorLevel, ZebraShiftSettings.ZebraShiftMaximumColorLevel);
+                int firstGroupColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.ZebraShiftMinimumColorLevel, ScreensaverPackInit.SaversConfig.ZebraShiftMaximumColorLevel);
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color for first group ({0})", firstGroupColorNum);
-                int secondGroupColorNum = RandomDriver.Random(ZebraShiftSettings.ZebraShiftMinimumColorLevel, ZebraShiftSettings.ZebraShiftMaximumColorLevel);
+                int secondGroupColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.ZebraShiftMinimumColorLevel, ScreensaverPackInit.SaversConfig.ZebraShiftMaximumColorLevel);
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color for second group ({0})", secondGroupColorNum);
                 firstLineColor = firstGroupColorNum;
                 secondLineColor = secondGroupColorNum;
@@ -300,7 +115,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Reset resize sync
             ConsoleResizeHandler.WasResized();
-            ThreadManager.SleepNoBlock(ZebraShiftSettings.ZebraShiftDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.ZebraShiftDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 
     }

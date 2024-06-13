@@ -30,263 +30,6 @@ using Terminaux.Colors.Data;
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
     /// <summary>
-    /// Settings for GradientRot
-    /// </summary>
-    public static class GradientRotSettings
-    {
-
-        /// <summary>
-        /// [GradientRot] How many milliseconds to wait before making the next write?
-        /// </summary>
-        public static int GradientRotDelay
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.GradientRotDelay;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 10;
-                ScreensaverPackInit.SaversConfig.GradientRotDelay = value;
-            }
-        }
-        /// <summary>
-        /// [GradientRot] How many milliseconds to wait before rotting the next screen?
-        /// </summary>
-        public static int GradientRotNextRampDelay
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.GradientRotNextRampDelay;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 250;
-                ScreensaverPackInit.SaversConfig.GradientRotNextRampDelay = value;
-            }
-        }
-        /// <summary>
-        /// [GradientRot] The minimum red color level (true color - start)
-        /// </summary>
-        public static int GradientRotMinimumRedColorLevelStart
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.GradientRotMinimumRedColorLevelStart;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.GradientRotMinimumRedColorLevelStart = value;
-            }
-        }
-        /// <summary>
-        /// [GradientRot] The minimum green color level (true color - start)
-        /// </summary>
-        public static int GradientRotMinimumGreenColorLevelStart
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.GradientRotMinimumGreenColorLevelStart;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.GradientRotMinimumGreenColorLevelStart = value;
-            }
-        }
-        /// <summary>
-        /// [GradientRot] The minimum blue color level (true color - start)
-        /// </summary>
-        public static int GradientRotMinimumBlueColorLevelStart
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.GradientRotMinimumBlueColorLevelStart;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.GradientRotMinimumBlueColorLevelStart = value;
-            }
-        }
-        /// <summary>
-        /// [GradientRot] The maximum red color level (true color - start)
-        /// </summary>
-        public static int GradientRotMaximumRedColorLevelStart
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.GradientRotMaximumRedColorLevelStart;
-            }
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.GradientRotMinimumRedColorLevelStart)
-                    value = ScreensaverPackInit.SaversConfig.GradientRotMinimumRedColorLevelStart;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.GradientRotMaximumRedColorLevelStart = value;
-            }
-        }
-        /// <summary>
-        /// [GradientRot] The maximum green color level (true color - start)
-        /// </summary>
-        public static int GradientRotMaximumGreenColorLevelStart
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.GradientRotMaximumGreenColorLevelStart;
-            }
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.GradientRotMinimumGreenColorLevelStart)
-                    value = ScreensaverPackInit.SaversConfig.GradientRotMinimumGreenColorLevelStart;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.GradientRotMaximumGreenColorLevelStart = value;
-            }
-        }
-        /// <summary>
-        /// [GradientRot] The maximum blue color level (true color - start)
-        /// </summary>
-        public static int GradientRotMaximumBlueColorLevelStart
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.GradientRotMaximumBlueColorLevelStart;
-            }
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.GradientRotMinimumBlueColorLevelStart)
-                    value = ScreensaverPackInit.SaversConfig.GradientRotMinimumBlueColorLevelStart;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.GradientRotMaximumBlueColorLevelStart = value;
-            }
-        }
-        /// <summary>
-        /// [GradientRot] The minimum red color level (true color - end)
-        /// </summary>
-        public static int GradientRotMinimumRedColorLevelEnd
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.GradientRotMinimumRedColorLevelEnd;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.GradientRotMinimumRedColorLevelEnd = value;
-            }
-        }
-        /// <summary>
-        /// [GradientRot] The minimum green color level (true color - end)
-        /// </summary>
-        public static int GradientRotMinimumGreenColorLevelEnd
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.GradientRotMinimumGreenColorLevelEnd;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.GradientRotMinimumGreenColorLevelEnd = value;
-            }
-        }
-        /// <summary>
-        /// [GradientRot] The minimum blue color level (true color - end)
-        /// </summary>
-        public static int GradientRotMinimumBlueColorLevelEnd
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.GradientRotMinimumBlueColorLevelEnd;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.GradientRotMinimumBlueColorLevelEnd = value;
-            }
-        }
-        /// <summary>
-        /// [GradientRot] The maximum red color level (true color - end)
-        /// </summary>
-        public static int GradientRotMaximumRedColorLevelEnd
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.GradientRotMaximumRedColorLevelEnd;
-            }
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.GradientRotMinimumRedColorLevelEnd)
-                    value = ScreensaverPackInit.SaversConfig.GradientRotMinimumRedColorLevelEnd;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.GradientRotMaximumRedColorLevelEnd = value;
-            }
-        }
-        /// <summary>
-        /// [GradientRot] The maximum green color level (true color - end)
-        /// </summary>
-        public static int GradientRotMaximumGreenColorLevelEnd
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.GradientRotMaximumGreenColorLevelEnd;
-            }
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.GradientRotMinimumGreenColorLevelEnd)
-                    value = ScreensaverPackInit.SaversConfig.GradientRotMinimumGreenColorLevelEnd;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.GradientRotMaximumGreenColorLevelEnd = value;
-            }
-        }
-        /// <summary>
-        /// [GradientRot] The maximum blue color level (true color - end)
-        /// </summary>
-        public static int GradientRotMaximumBlueColorLevelEnd
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.GradientRotMaximumBlueColorLevelEnd;
-            }
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.GradientRotMinimumBlueColorLevelEnd)
-                    value = ScreensaverPackInit.SaversConfig.GradientRotMinimumBlueColorLevelEnd;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.GradientRotMaximumBlueColorLevelEnd = value;
-            }
-        }
-
-    }
-
-    /// <summary>
     /// Display code for GradientRot
     /// </summary>
     public class GradientRotDisplay : BaseScreensaver, IScreensaver
@@ -301,12 +44,12 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             ConsoleWrapper.CursorVisible = false;
 
             // Select a color range for the ramp
-            int RedColorNumFrom = RandomDriver.Random(GradientRotSettings.GradientRotMinimumRedColorLevelStart, GradientRotSettings.GradientRotMaximumRedColorLevelStart);
-            int GreenColorNumFrom = RandomDriver.Random(GradientRotSettings.GradientRotMinimumGreenColorLevelStart, GradientRotSettings.GradientRotMaximumGreenColorLevelStart);
-            int BlueColorNumFrom = RandomDriver.Random(GradientRotSettings.GradientRotMinimumBlueColorLevelStart, GradientRotSettings.GradientRotMaximumBlueColorLevelStart);
-            int RedColorNumTo = RandomDriver.Random(GradientRotSettings.GradientRotMinimumRedColorLevelEnd, GradientRotSettings.GradientRotMaximumRedColorLevelEnd);
-            int GreenColorNumTo = RandomDriver.Random(GradientRotSettings.GradientRotMinimumGreenColorLevelEnd, GradientRotSettings.GradientRotMaximumGreenColorLevelEnd);
-            int BlueColorNumTo = RandomDriver.Random(GradientRotSettings.GradientRotMinimumBlueColorLevelEnd, GradientRotSettings.GradientRotMaximumBlueColorLevelEnd);
+            int RedColorNumFrom = RandomDriver.Random(ScreensaverPackInit.SaversConfig.GradientRotMinimumRedColorLevelStart, ScreensaverPackInit.SaversConfig.GradientRotMaximumRedColorLevelStart);
+            int GreenColorNumFrom = RandomDriver.Random(ScreensaverPackInit.SaversConfig.GradientRotMinimumGreenColorLevelStart, ScreensaverPackInit.SaversConfig.GradientRotMaximumGreenColorLevelStart);
+            int BlueColorNumFrom = RandomDriver.Random(ScreensaverPackInit.SaversConfig.GradientRotMinimumBlueColorLevelStart, ScreensaverPackInit.SaversConfig.GradientRotMaximumBlueColorLevelStart);
+            int RedColorNumTo = RandomDriver.Random(ScreensaverPackInit.SaversConfig.GradientRotMinimumRedColorLevelEnd, ScreensaverPackInit.SaversConfig.GradientRotMaximumRedColorLevelEnd);
+            int GreenColorNumTo = RandomDriver.Random(ScreensaverPackInit.SaversConfig.GradientRotMinimumGreenColorLevelEnd, ScreensaverPackInit.SaversConfig.GradientRotMaximumGreenColorLevelEnd);
+            int BlueColorNumTo = RandomDriver.Random(ScreensaverPackInit.SaversConfig.GradientRotMinimumBlueColorLevelEnd, ScreensaverPackInit.SaversConfig.GradientRotMaximumBlueColorLevelEnd);
             DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color from (R;G;B: {0};{1};{2}) to (R;G;B: {3};{4};{5})", RedColorNumFrom, GreenColorNumFrom, BlueColorNumFrom, RedColorNumTo, GreenColorNumTo, BlueColorNumTo);
 
             // Set thresholds for color ramp
@@ -432,11 +175,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 // Delay writing
                 RampCurrentPositionLeft = 0;
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Current left position: {0}", RampCurrentPositionLeft);
-                ThreadManager.SleepNoBlock(GradientRotSettings.GradientRotDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.GradientRotDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
             }
 
             // Clear the scene
-            ThreadManager.SleepNoBlock(GradientRotSettings.GradientRotNextRampDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.GradientRotNextRampDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
             ColorTools.LoadBackDry(new Color(ConsoleColors.Black));
 
             // Reset resize sync

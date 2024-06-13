@@ -32,31 +32,6 @@ using Terminaux.Colors.Data;
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
     /// <summary>
-    /// Settings for Equalizer
-    /// </summary>
-    public static class EqualizerSettings
-    {
-
-        /// <summary>
-        /// [Equalizer] How many milliseconds to wait before going to next equalizer preset?
-        /// </summary>
-        public static int EqualizerNextScreenDelay
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.EqualizerNextScreenDelay;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 3000;
-                ScreensaverPackInit.SaversConfig.EqualizerNextScreenDelay = value;
-            }
-        }
-
-    }
-
-    /// <summary>
     /// Display code for Equalizer
     /// </summary>
     public class EqualizerDisplay : BaseScreensaver, IScreensaver
@@ -114,7 +89,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             ProgressBarVerticalColor.WriteVerticalProgress(midHeight, oneSixthOfConsoleWidth * 3, 1, 6, new Color(ConsoleColors.Pink1));
             ProgressBarVerticalColor.WriteVerticalProgress(trebleHeight, oneSixthOfConsoleWidth * 5, 1, 6, new Color(ConsoleColors.Blue1));
             TextWriterWhereColor.WriteWhere(infoMessage, infoMessageWidth, infoMessageHeight);
-            ThreadManager.SleepNoBlock(EqualizerSettings.EqualizerNextScreenDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.EqualizerNextScreenDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 
     }

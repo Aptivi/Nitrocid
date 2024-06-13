@@ -24,49 +24,6 @@ using Terminaux.Base;
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
     /// <summary>
-    /// Settings for Glitch
-    /// </summary>
-    public static class GlitchSettings
-    {
-
-        /// <summary>
-        /// [Glitch] How many milliseconds to wait before making the next write?
-        /// </summary>
-        public static int GlitchDelay
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.GlitchDelay;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 10;
-                ScreensaverPackInit.SaversConfig.GlitchDelay = value;
-            }
-        }
-        /// <summary>
-        /// [Glitch] The Glitch density in percent
-        /// </summary>
-        public static int GlitchDensity
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.GlitchDensity;
-            }
-            set
-            {
-                if (value < 0)
-                    value = 40;
-                if (value > 100)
-                    value = 40;
-                ScreensaverPackInit.SaversConfig.GlitchDensity = value;
-            }
-        }
-
-    }
-
-    /// <summary>
     /// Display code for Glitch
     /// </summary>
     public class GlitchDisplay : BaseScreensaver, IScreensaver
@@ -83,8 +40,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
             GlitchSettingsInstance = new Animations.Glitch.GlitchSettings()
             {
-                GlitchDelay = GlitchSettings.GlitchDelay,
-                GlitchDensity = GlitchSettings.GlitchDensity
+                GlitchDelay = ScreensaverPackInit.SaversConfig.GlitchDelay,
+                GlitchDensity = ScreensaverPackInit.SaversConfig.GlitchDensity
             };
             base.ScreensaverPreparation();
         }

@@ -30,205 +30,6 @@ using Terminaux.Base;
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
     /// <summary>
-    /// Settings for CommitMilestone
-    /// </summary>
-    public static class CommitMilestoneSettings
-    {
-
-        /// <summary>
-        /// [CommitMilestone] Enable truecolor support. Has a higher priority than 255 color support.
-        /// </summary>
-        public static bool CommitMilestoneTrueColor
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.CommitMilestoneTrueColor;
-            }
-            set
-            {
-                ScreensaverPackInit.SaversConfig.CommitMilestoneTrueColor = value;
-            }
-        }
-        /// <summary>
-        /// [CommitMilestone] How many milliseconds to wait before making the next write?
-        /// </summary>
-        public static int CommitMilestoneDelay
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.CommitMilestoneDelay;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 1000;
-                ScreensaverPackInit.SaversConfig.CommitMilestoneDelay = value;
-            }
-        }
-        /// <summary>
-        /// [CommitMilestone] Enables the rainbow colors mode
-        /// </summary>
-        public static bool CommitMilestoneRainbowMode
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.CommitMilestoneRainbowMode;
-            }
-            set
-            {
-                ScreensaverPackInit.SaversConfig.CommitMilestoneRainbowMode = value;
-            }
-        }
-        /// <summary>
-        /// [CommitMilestone] The minimum red color level (true color)
-        /// </summary>
-        public static int CommitMilestoneMinimumRedColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.CommitMilestoneMinimumRedColorLevel;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.CommitMilestoneMinimumRedColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [CommitMilestone] The minimum green color level (true color)
-        /// </summary>
-        public static int CommitMilestoneMinimumGreenColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.CommitMilestoneMinimumGreenColorLevel;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.CommitMilestoneMinimumGreenColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [CommitMilestone] The minimum blue color level (true color)
-        /// </summary>
-        public static int CommitMilestoneMinimumBlueColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.CommitMilestoneMinimumBlueColorLevel;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.CommitMilestoneMinimumBlueColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [CommitMilestone] The minimum color level (255 colors or 16 colors)
-        /// </summary>
-        public static int CommitMilestoneMinimumColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.CommitMilestoneMinimumColorLevel;
-            }
-            set
-            {
-                int FinalMinimumLevel = 255;
-                if (value <= 0)
-                    value = 0;
-                if (value > FinalMinimumLevel)
-                    value = FinalMinimumLevel;
-                ScreensaverPackInit.SaversConfig.CommitMilestoneMinimumColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [CommitMilestone] The maximum red color level (true color)
-        /// </summary>
-        public static int CommitMilestoneMaximumRedColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.CommitMilestoneMaximumRedColorLevel;
-            }
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.CommitMilestoneMinimumRedColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.CommitMilestoneMinimumRedColorLevel;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.CommitMilestoneMaximumRedColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [CommitMilestone] The maximum green color level (true color)
-        /// </summary>
-        public static int CommitMilestoneMaximumGreenColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.CommitMilestoneMaximumGreenColorLevel;
-            }
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.CommitMilestoneMinimumGreenColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.CommitMilestoneMinimumGreenColorLevel;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.CommitMilestoneMaximumGreenColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [CommitMilestone] The maximum blue color level (true color)
-        /// </summary>
-        public static int CommitMilestoneMaximumBlueColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.CommitMilestoneMaximumBlueColorLevel;
-            }
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.CommitMilestoneMinimumBlueColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.CommitMilestoneMinimumBlueColorLevel;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.CommitMilestoneMaximumBlueColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [CommitMilestone] The maximum color level (255 colors or 16 colors)
-        /// </summary>
-        public static int CommitMilestoneMaximumColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.CommitMilestoneMaximumColorLevel;
-            }
-            set
-            {
-                int FinalMaximumLevel = 255;
-                if (value <= ScreensaverPackInit.SaversConfig.CommitMilestoneMinimumColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.CommitMilestoneMinimumColorLevel;
-                if (value > FinalMaximumLevel)
-                    value = FinalMaximumLevel;
-                ScreensaverPackInit.SaversConfig.CommitMilestoneMaximumColorLevel = value;
-            }
-        }
-
-    }
-
-    /// <summary>
     /// Display code for CommitMilestone
     /// </summary>
     public class CommitMilestoneDisplay : BaseScreensaver, IScreensaver
@@ -253,21 +54,21 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Set colors
             Color ColorStorage;
-            if (CommitMilestoneSettings.CommitMilestoneTrueColor)
+            if (ScreensaverPackInit.SaversConfig.CommitMilestoneTrueColor)
             {
-                int RedColorNum = RandomDriver.Random(CommitMilestoneSettings.CommitMilestoneMinimumRedColorLevel, CommitMilestoneSettings.CommitMilestoneMaximumRedColorLevel);
-                int GreenColorNum = RandomDriver.Random(CommitMilestoneSettings.CommitMilestoneMinimumGreenColorLevel, CommitMilestoneSettings.CommitMilestoneMaximumGreenColorLevel);
-                int BlueColorNum = RandomDriver.Random(CommitMilestoneSettings.CommitMilestoneMinimumBlueColorLevel, CommitMilestoneSettings.CommitMilestoneMaximumBlueColorLevel);
+                int RedColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.CommitMilestoneMinimumRedColorLevel, ScreensaverPackInit.SaversConfig.CommitMilestoneMaximumRedColorLevel);
+                int GreenColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.CommitMilestoneMinimumGreenColorLevel, ScreensaverPackInit.SaversConfig.CommitMilestoneMaximumGreenColorLevel);
+                int BlueColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.CommitMilestoneMinimumBlueColorLevel, ScreensaverPackInit.SaversConfig.CommitMilestoneMaximumBlueColorLevel);
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                 ColorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
             }
             else
             {
-                int ColorNum = RandomDriver.Random(CommitMilestoneSettings.CommitMilestoneMinimumColorLevel, CommitMilestoneSettings.CommitMilestoneMaximumColorLevel);
+                int ColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.CommitMilestoneMinimumColorLevel, ScreensaverPackInit.SaversConfig.CommitMilestoneMaximumColorLevel);
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
                 ColorStorage = new Color(ColorNum);
             }
-            if (CommitMilestoneSettings.CommitMilestoneRainbowMode)
+            if (ScreensaverPackInit.SaversConfig.CommitMilestoneRainbowMode)
             {
                 ColorStorage = new($"hsl:{currentHueAngle};100;50");
                 currentHueAngle++;
@@ -318,7 +119,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Reset resize sync
             ConsoleResizeHandler.WasResized();
-            int delay = CommitMilestoneSettings.CommitMilestoneRainbowMode ? 16 : CommitMilestoneSettings.CommitMilestoneDelay;
+            int delay = ScreensaverPackInit.SaversConfig.CommitMilestoneRainbowMode ? 16 : ScreensaverPackInit.SaversConfig.CommitMilestoneDelay;
             ThreadManager.SleepNoBlock(delay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 

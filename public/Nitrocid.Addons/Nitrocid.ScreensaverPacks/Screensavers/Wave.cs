@@ -32,193 +32,6 @@ using Terminaux.Base;
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
     /// <summary>
-    /// Settings for Wave
-    /// </summary>
-    public static class WaveSettings
-    {
-
-        /// <summary>
-        /// [Wave] How many milliseconds to wait before making the next write?
-        /// </summary>
-        public static int WaveDelay
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.WaveDelay;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 100;
-                ScreensaverPackInit.SaversConfig.WaveDelay = value;
-            }
-        }
-        /// <summary>
-        /// [Wave] The level of the frequency. This is the denominator of the Pi value (3.1415926...) in mathematics, defined by <see cref="Math.PI"/>.
-        /// </summary>
-        public static double WaveFrequencyLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.WaveFrequencyLevel;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 3;
-                ScreensaverPackInit.SaversConfig.WaveFrequencyLevel = value;
-            }
-        }
-        /// <summary>
-        /// [Wave] The minimum red color level (true color)
-        /// </summary>
-        public static int WaveMinimumRedColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.WaveMinimumRedColorLevel;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.WaveMinimumRedColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [Wave] The minimum green color level (true color)
-        /// </summary>
-        public static int WaveMinimumGreenColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.WaveMinimumGreenColorLevel;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.WaveMinimumGreenColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [Wave] The minimum blue color level (true color)
-        /// </summary>
-        public static int WaveMinimumBlueColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.WaveMinimumBlueColorLevel;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.WaveMinimumBlueColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [Wave] The minimum color level (255 colors or 16 colors)
-        /// </summary>
-        public static int WaveMinimumColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.WaveMinimumColorLevel;
-            }
-            set
-            {
-                int FinalMinimumLevel = 255;
-                if (value <= 0)
-                    value = 0;
-                if (value > FinalMinimumLevel)
-                    value = FinalMinimumLevel;
-                ScreensaverPackInit.SaversConfig.WaveMinimumColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [Wave] The maximum red color level (true color)
-        /// </summary>
-        public static int WaveMaximumRedColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.WaveMaximumRedColorLevel;
-            }
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.WaveMaximumRedColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.WaveMaximumRedColorLevel;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.WaveMaximumRedColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [Wave] The maximum green color level (true color)
-        /// </summary>
-        public static int WaveMaximumGreenColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.WaveMaximumGreenColorLevel;
-            }
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.WaveMaximumGreenColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.WaveMaximumGreenColorLevel;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.WaveMaximumGreenColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [Wave] The maximum blue color level (true color)
-        /// </summary>
-        public static int WaveMaximumBlueColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.WaveMaximumBlueColorLevel;
-            }
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.WaveMaximumBlueColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.WaveMaximumBlueColorLevel;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.WaveMaximumBlueColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [Wave] The maximum color level (255 colors or 16 colors)
-        /// </summary>
-        public static int WaveMaximumColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.WaveMaximumColorLevel;
-            }
-            set
-            {
-                int FinalMaximumLevel = 255;
-                if (value <= ScreensaverPackInit.SaversConfig.WaveMaximumColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.WaveMaximumColorLevel;
-                if (value > FinalMaximumLevel)
-                    value = FinalMaximumLevel;
-                ScreensaverPackInit.SaversConfig.WaveMaximumColorLevel = value;
-            }
-        }
-
-    }
-
-    /// <summary>
     /// Display for Wave
     /// </summary>
     public class WaveDisplay : BaseScreensaver, IScreensaver
@@ -246,7 +59,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Then, go ahead and make these bars wave themselves.
             List<int> CurrentPos = [];
-            double Frequency = Math.PI / WaveSettings.WaveFrequencyLevel;
+            double Frequency = Math.PI / ScreensaverPackInit.SaversConfig.WaveFrequencyLevel;
 
             // Set the current positions
             double TimeSecs = 0.0;
@@ -263,9 +76,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             }
 
             // Render the bars
-            int RedColorNum = RandomDriver.Random(WaveSettings.WaveMinimumRedColorLevel, WaveSettings.WaveMaximumRedColorLevel);
-            int GreenColorNum = RandomDriver.Random(WaveSettings.WaveMinimumGreenColorLevel, WaveSettings.WaveMaximumGreenColorLevel);
-            int BlueColorNum = RandomDriver.Random(WaveSettings.WaveMinimumBlueColorLevel, WaveSettings.WaveMaximumBlueColorLevel);
+            int RedColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.WaveMinimumRedColorLevel, ScreensaverPackInit.SaversConfig.WaveMaximumRedColorLevel);
+            int GreenColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.WaveMinimumGreenColorLevel, ScreensaverPackInit.SaversConfig.WaveMaximumGreenColorLevel);
+            int BlueColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.WaveMinimumBlueColorLevel, ScreensaverPackInit.SaversConfig.WaveMaximumBlueColorLevel);
             DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
             var ColorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
             for (int i = 0; i < Count; i++)
@@ -276,7 +89,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 int Pos = CurrentPos[posIdx] + Math.Abs(CurrentPos.Min()) + 2;
                 if (!ConsoleResizeHandler.WasResized(false))
                 {
-                    ThreadManager.SleepNoBlock(WaveSettings.WaveDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                    ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.WaveDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
                     for (int j = 0; j < ConsoleWrapper.WindowHeight; j++)
                         TextWriterWhereColor.WriteWhereColorBack(" ", i, j, Color.Empty, KernelColorTools.GetColor(KernelColorType.Background));
                     TextWriterWhereColor.WriteWhereColorBack(" ", i, Pos, Color.Empty, ColorStorage);
@@ -285,7 +98,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Reset resize sync
             ConsoleResizeHandler.WasResized();
-            ThreadManager.SleepNoBlock(WaveSettings.WaveDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.WaveDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 
     }

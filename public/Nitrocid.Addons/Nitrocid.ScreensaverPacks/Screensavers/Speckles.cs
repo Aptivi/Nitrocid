@@ -30,31 +30,6 @@ using Terminaux.Base;
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
     /// <summary>
-    /// Settings for Speckles
-    /// </summary>
-    public static class SpecklesSettings
-    {
-
-        /// <summary>
-        /// [Speckles] How many milliseconds to wait before making the next write?
-        /// </summary>
-        public static int SpecklesDelay
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.SpecklesDelay;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 10;
-                ScreensaverPackInit.SaversConfig.SpecklesDelay = value;
-            }
-        }
-
-    }
-
-    /// <summary>
     /// Display code for Speckles
     /// </summary>
     public class SpecklesDisplay : BaseScreensaver, IScreensaver
@@ -171,7 +146,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Reset resize sync
             ConsoleResizeHandler.WasResized();
-            ThreadManager.SleepNoBlock(SpecklesSettings.SpecklesDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.SpecklesDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
             ColorTools.LoadBack();
         }
 

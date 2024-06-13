@@ -17,8 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using GlitchSettings = Nitrocid.ScreensaverPacks.Screensavers.GlitchSettings;
-using BsodSettings = Nitrocid.ScreensaverPacks.Screensavers.BSODSettings;
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Misc.Screensaver;
 using Nitrocid.Kernel.Threading;
@@ -31,7 +29,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
         public override void Simulate()
         {
             int millisecondsElapsed = 0;
-            while (millisecondsElapsed < BsodSettings.BSODDelay || !ConsoleResizeHandler.WasResized(false))
+            while (millisecondsElapsed < ScreensaverPackInit.SaversConfig.BSODDelay || !ConsoleResizeHandler.WasResized(false))
             {
                 if (!ConsoleResizeHandler.WasResized(false))
                 {
@@ -48,8 +46,8 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
                     ConsoleWrapper.CursorVisible = false;
                     break;
                 }
-                ThreadManager.SleepNoBlock(GlitchSettings.GlitchDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
-                millisecondsElapsed += GlitchSettings.GlitchDelay;
+                ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.GlitchDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                millisecondsElapsed += ScreensaverPackInit.SaversConfig.GlitchDelay;
             }
         }
     }

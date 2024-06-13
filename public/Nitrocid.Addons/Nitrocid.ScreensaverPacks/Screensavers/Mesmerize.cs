@@ -29,177 +29,6 @@ using Terminaux.Base;
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
     /// <summary>
-    /// Settings for Mesmerize
-    /// </summary>
-    public static class MesmerizeSettings
-    {
-
-        /// <summary>
-        /// [Mesmerize] How many milliseconds to wait before making the next write?
-        /// </summary>
-        public static int MesmerizeDelay
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.MesmerizeDelay;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 10;
-                ScreensaverPackInit.SaversConfig.MesmerizeDelay = value;
-            }
-        }
-        /// <summary>
-        /// [Mesmerize] The minimum red color level (true color)
-        /// </summary>
-        public static int MesmerizeMinimumRedColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.MesmerizeMinimumRedColorLevel;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.MesmerizeMinimumRedColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [Mesmerize] The minimum green color level (true color)
-        /// </summary>
-        public static int MesmerizeMinimumGreenColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.MesmerizeMinimumGreenColorLevel;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.MesmerizeMinimumGreenColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [Mesmerize] The minimum blue color level (true color)
-        /// </summary>
-        public static int MesmerizeMinimumBlueColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.MesmerizeMinimumBlueColorLevel;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.MesmerizeMinimumBlueColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [Mesmerize] The minimum color level (255 colors or 16 colors)
-        /// </summary>
-        public static int MesmerizeMinimumColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.MesmerizeMinimumColorLevel;
-            }
-            set
-            {
-                int FinalMinimumLevel = 255;
-                if (value <= 0)
-                    value = 0;
-                if (value > FinalMinimumLevel)
-                    value = FinalMinimumLevel;
-                ScreensaverPackInit.SaversConfig.MesmerizeMinimumColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [Mesmerize] The maximum red color level (true color)
-        /// </summary>
-        public static int MesmerizeMaximumRedColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.MesmerizeMaximumRedColorLevel;
-            }
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.MesmerizeMaximumRedColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.MesmerizeMaximumRedColorLevel;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.MesmerizeMaximumRedColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [Mesmerize] The maximum green color level (true color)
-        /// </summary>
-        public static int MesmerizeMaximumGreenColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.MesmerizeMaximumGreenColorLevel;
-            }
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.MesmerizeMaximumGreenColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.MesmerizeMaximumGreenColorLevel;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.MesmerizeMaximumGreenColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [Mesmerize] The maximum blue color level (true color)
-        /// </summary>
-        public static int MesmerizeMaximumBlueColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.MesmerizeMaximumBlueColorLevel;
-            }
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.MesmerizeMaximumBlueColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.MesmerizeMaximumBlueColorLevel;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.MesmerizeMaximumBlueColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [Mesmerize] The maximum color level (255 colors or 16 colors)
-        /// </summary>
-        public static int MesmerizeMaximumColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.MesmerizeMaximumColorLevel;
-            }
-            set
-            {
-                int FinalMaximumLevel = 255;
-                if (value <= ScreensaverPackInit.SaversConfig.MesmerizeMaximumColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.MesmerizeMaximumColorLevel;
-                if (value > FinalMaximumLevel)
-                    value = FinalMaximumLevel;
-                ScreensaverPackInit.SaversConfig.MesmerizeMaximumColorLevel = value;
-            }
-        }
-
-    }
-
-    /// <summary>
     /// Display code for Mesmerize
     /// </summary>
     public class MesmerizeDisplay : BaseScreensaver, IScreensaver
@@ -242,9 +71,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             dotDirection = DirectionMode.CenterMiddleToCenterRight;
 
             // Assign a color to the dot
-            int RedColorNum = RandomDriver.Random(MesmerizeSettings.MesmerizeMinimumRedColorLevel, MesmerizeSettings.MesmerizeMaximumRedColorLevel);
-            int GreenColorNum = RandomDriver.Random(MesmerizeSettings.MesmerizeMinimumGreenColorLevel, MesmerizeSettings.MesmerizeMaximumGreenColorLevel);
-            int BlueColorNum = RandomDriver.Random(MesmerizeSettings.MesmerizeMinimumBlueColorLevel, MesmerizeSettings.MesmerizeMaximumBlueColorLevel);
+            int RedColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.MesmerizeMinimumRedColorLevel, ScreensaverPackInit.SaversConfig.MesmerizeMaximumRedColorLevel);
+            int GreenColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.MesmerizeMinimumGreenColorLevel, ScreensaverPackInit.SaversConfig.MesmerizeMaximumGreenColorLevel);
+            int BlueColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.MesmerizeMinimumBlueColorLevel, ScreensaverPackInit.SaversConfig.MesmerizeMaximumBlueColorLevel);
             DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
             dotColor = new Color(RedColorNum, GreenColorNum, BlueColorNum);
 
@@ -361,7 +190,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Reset resize sync
             ConsoleResizeHandler.WasResized();
-            ThreadManager.SleepNoBlock(MesmerizeSettings.MesmerizeDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.MesmerizeDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 
     }

@@ -31,209 +31,6 @@ using Terminaux.Base;
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
     /// <summary>
-    /// Settings for Swivel
-    /// </summary>
-    public static class SwivelSettings
-    {
-
-        /// <summary>
-        /// [Swivel] How many milliseconds to wait before making the next write?
-        /// </summary>
-        public static int SwivelDelay
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.SwivelDelay;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 100;
-                ScreensaverPackInit.SaversConfig.SwivelDelay = value;
-            }
-        }
-        /// <summary>
-        /// [Swivel] The level of the horizontal frequency. This is the denominator of the Pi value (3.1415926...) in mathematics, defined by <see cref="Math.PI"/>. Use this to create beautiful wavy swivels!
-        /// </summary>
-        public static double SwivelHorizontalFrequencyLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.SwivelHorizontalFrequencyLevel;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 3;
-                ScreensaverPackInit.SaversConfig.SwivelHorizontalFrequencyLevel = value;
-            }
-        }
-        /// <summary>
-        /// [Swivel] The level of the vertical frequency. This is the denominator of the Pi value (3.1415926...) in mathematics, defined by <see cref="Math.PI"/>. Use this to create beautiful wavy swivels!
-        /// </summary>
-        public static double SwivelVerticalFrequencyLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.SwivelVerticalFrequencyLevel;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 8;
-                ScreensaverPackInit.SaversConfig.SwivelVerticalFrequencyLevel = value;
-            }
-        }
-        /// <summary>
-        /// [Swivel] The minimum red color level (true color)
-        /// </summary>
-        public static int SwivelMinimumRedColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.SwivelMinimumRedColorLevel;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.SwivelMinimumRedColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [Swivel] The minimum green color level (true color)
-        /// </summary>
-        public static int SwivelMinimumGreenColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.SwivelMinimumGreenColorLevel;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.SwivelMinimumGreenColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [Swivel] The minimum blue color level (true color)
-        /// </summary>
-        public static int SwivelMinimumBlueColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.SwivelMinimumBlueColorLevel;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.SwivelMinimumBlueColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [Swivel] The minimum color level (255 colors or 16 colors)
-        /// </summary>
-        public static int SwivelMinimumColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.SwivelMinimumColorLevel;
-            }
-            set
-            {
-                int FinalMinimumLevel = 255;
-                if (value <= 0)
-                    value = 0;
-                if (value > FinalMinimumLevel)
-                    value = FinalMinimumLevel;
-                ScreensaverPackInit.SaversConfig.SwivelMinimumColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [Swivel] The maximum red color level (true color)
-        /// </summary>
-        public static int SwivelMaximumRedColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.SwivelMaximumRedColorLevel;
-            }
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.SwivelMaximumRedColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.SwivelMaximumRedColorLevel;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.SwivelMaximumRedColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [Swivel] The maximum green color level (true color)
-        /// </summary>
-        public static int SwivelMaximumGreenColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.SwivelMaximumGreenColorLevel;
-            }
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.SwivelMaximumGreenColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.SwivelMaximumGreenColorLevel;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.SwivelMaximumGreenColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [Swivel] The maximum blue color level (true color)
-        /// </summary>
-        public static int SwivelMaximumBlueColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.SwivelMaximumBlueColorLevel;
-            }
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.SwivelMaximumBlueColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.SwivelMaximumBlueColorLevel;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.SwivelMaximumBlueColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [Swivel] The maximum color level (255 colors or 16 colors)
-        /// </summary>
-        public static int SwivelMaximumColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.SwivelMaximumColorLevel;
-            }
-            set
-            {
-                int FinalMaximumLevel = 255;
-                if (value <= ScreensaverPackInit.SaversConfig.SwivelMaximumColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.SwivelMaximumColorLevel;
-                if (value > FinalMaximumLevel)
-                    value = FinalMaximumLevel;
-                ScreensaverPackInit.SaversConfig.SwivelMaximumColorLevel = value;
-            }
-        }
-
-    }
-
-    /// <summary>
     /// Display for Swivel
     /// </summary>
     public class SwivelDisplay : BaseScreensaver, IScreensaver
@@ -264,8 +61,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             // Then, go ahead and make these bars swivel themselves.
             List<int> CurrentPosVertical = [];
             List<int> CurrentPosHorizontal = [];
-            double FrequencyVertical = Math.PI / SwivelSettings.SwivelVerticalFrequencyLevel;
-            double FrequencyHorizontal = Math.PI / SwivelSettings.SwivelHorizontalFrequencyLevel;
+            double FrequencyVertical = Math.PI / ScreensaverPackInit.SaversConfig.SwivelVerticalFrequencyLevel;
+            double FrequencyHorizontal = Math.PI / ScreensaverPackInit.SaversConfig.SwivelHorizontalFrequencyLevel;
 
             // Set the current vertical positions
             double TimeSecsVertical = 0.0;
@@ -296,9 +93,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             }
 
             // Render the bars
-            int RedColorNum = RandomDriver.Random(SwivelSettings.SwivelMinimumRedColorLevel, SwivelSettings.SwivelMaximumRedColorLevel);
-            int GreenColorNum = RandomDriver.Random(SwivelSettings.SwivelMinimumGreenColorLevel, SwivelSettings.SwivelMaximumGreenColorLevel);
-            int BlueColorNum = RandomDriver.Random(SwivelSettings.SwivelMinimumBlueColorLevel, SwivelSettings.SwivelMaximumBlueColorLevel);
+            int RedColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.SwivelMinimumRedColorLevel, ScreensaverPackInit.SaversConfig.SwivelMaximumRedColorLevel);
+            int GreenColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.SwivelMinimumGreenColorLevel, ScreensaverPackInit.SaversConfig.SwivelMaximumGreenColorLevel);
+            int BlueColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.SwivelMinimumBlueColorLevel, ScreensaverPackInit.SaversConfig.SwivelMaximumBlueColorLevel);
             DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
             var ColorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
             posIdxVertical++;
@@ -311,13 +108,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             int PosHorizontal = CurrentPosHorizontal[posIdxHorizontal] + Math.Abs(CurrentPosHorizontal.Min()) + 2;
             if (!ConsoleResizeHandler.WasResized(false))
             {
-                ThreadManager.SleepNoBlock(SwivelSettings.SwivelDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.SwivelDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
                 TextWriterWhereColor.WriteWhereColorBack(" ", PosHorizontal, PosVertical, Color.Empty, ColorStorage);
             }
 
             // Reset resize sync
             ConsoleResizeHandler.WasResized();
-            ThreadManager.SleepNoBlock(SwivelSettings.SwivelDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.SwivelDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 
     }

@@ -29,31 +29,6 @@ using Terminaux.Base;
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
     /// <summary>
-    /// Settings for Memdump
-    /// </summary>
-    public static class MemdumpSettings
-    {
-
-        /// <summary>
-        /// [Memdump] How many milliseconds to wait before making the next write?
-        /// </summary>
-        public static int MemdumpDelay
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.MemdumpDelay;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 500;
-                ScreensaverPackInit.SaversConfig.MemdumpDelay = value;
-            }
-        }
-
-    }
-
-    /// <summary>
     /// Display code for Memdump
     /// </summary>
     public class MemdumpDisplay : BaseScreensaver, IScreensaver
@@ -105,7 +80,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Reset resize sync
             ConsoleResizeHandler.WasResized();
-            ThreadManager.SleepNoBlock(MemdumpSettings.MemdumpDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.MemdumpDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 
     }

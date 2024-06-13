@@ -232,8 +232,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Etaoin type: {0}", ScreensaverPackInit.SaversConfig.LinotypoEtaoinType);
                             switch (ScreensaverPackInit.SaversConfig.LinotypoEtaoinType)
                             {
-                                case (int)FillType.EtaoinComplete:
-                                case (int)FillType.EtaoinPattern:
+                                case FillType.EtaoinComplete:
+                                case FillType.EtaoinPattern:
                                     {
                                         if (ScreensaverPackInit.SaversConfig.LinotypoEtaoinType == (int)FillType.EtaoinPattern)
                                             LinotypeMaxColumnIndex = 1;
@@ -255,7 +255,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                                         break;
                                     }
-                                case (int)FillType.RandomChars:
+                                case FillType.RandomChars:
                                     {
                                         // Randomly select the linotype indexes
                                         LinotypeColumnIndex = RandomDriver.Random(0, 5);

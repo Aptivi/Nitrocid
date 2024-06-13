@@ -215,9 +215,9 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             {
                 // Delay
                 if (Simulation)
-                    ThreadManager.SleepNoBlock(SnakerSettings.SnakerDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                    ThreadManager.SleepNoBlock(AmusementsInit.SaversConfig.SnakerDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
                 else
-                    Thread.Sleep(SnakerSettings.SnakerDelay);
+                    Thread.Sleep(AmusementsInit.SaversConfig.SnakerDelay);
                 ScreenTools.Render();
 
                 // Move the snake according to the mode
@@ -368,9 +368,9 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
 
             // Show the stage for few seconds before wiping
             if (Simulation)
-                ThreadManager.SleepNoBlock(SnakerSettings.SnakerStageDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                ThreadManager.SleepNoBlock(AmusementsInit.SaversConfig.SnakerStageDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
             else
-                Thread.Sleep(SnakerSettings.SnakerStageDelay);
+                Thread.Sleep(AmusementsInit.SaversConfig.SnakerStageDelay);
 
             // Reset mass and console display
             SnakeMassPositions.Clear();
@@ -384,17 +384,17 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
         public static Color ChangeSnakeColor()
         {
             var RandomDriver = new Random();
-            if (SnakerSettings.SnakerTrueColor)
+            if (AmusementsInit.SaversConfig.SnakerTrueColor)
             {
-                int RedColorNum = RandomDriver.Next(SnakerSettings.SnakerMinimumRedColorLevel, SnakerSettings.SnakerMaximumRedColorLevel);
-                int GreenColorNum = RandomDriver.Next(SnakerSettings.SnakerMinimumGreenColorLevel, SnakerSettings.SnakerMaximumGreenColorLevel);
-                int BlueColorNum = RandomDriver.Next(SnakerSettings.SnakerMinimumBlueColorLevel, SnakerSettings.SnakerMaximumBlueColorLevel);
+                int RedColorNum = RandomDriver.Next(AmusementsInit.SaversConfig.SnakerMinimumRedColorLevel, AmusementsInit.SaversConfig.SnakerMaximumRedColorLevel);
+                int GreenColorNum = RandomDriver.Next(AmusementsInit.SaversConfig.SnakerMinimumGreenColorLevel, AmusementsInit.SaversConfig.SnakerMaximumGreenColorLevel);
+                int BlueColorNum = RandomDriver.Next(AmusementsInit.SaversConfig.SnakerMinimumBlueColorLevel, AmusementsInit.SaversConfig.SnakerMaximumBlueColorLevel);
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                 return new Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}");
             }
             else
             {
-                int ColorNum = RandomDriver.Next(SnakerSettings.SnakerMinimumColorLevel, SnakerSettings.SnakerMaximumColorLevel);
+                int ColorNum = RandomDriver.Next(AmusementsInit.SaversConfig.SnakerMinimumColorLevel, AmusementsInit.SaversConfig.SnakerMaximumColorLevel);
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
                 return new Color(ColorNum);
             }

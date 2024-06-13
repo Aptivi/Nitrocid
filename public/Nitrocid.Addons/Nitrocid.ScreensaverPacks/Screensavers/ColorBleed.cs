@@ -32,223 +32,6 @@ using Terminaux.Base;
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
     /// <summary>
-    /// Settings for ColorBleed
-    /// </summary>
-    public static class ColorBleedSettings
-    {
-
-        /// <summary>
-        /// [ColorBleed] Enable truecolor support. Has a higher priority than 255 color support.
-        /// </summary>
-        public static bool ColorBleedTrueColor
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.ColorBleedTrueColor;
-            }
-            set
-            {
-                ScreensaverPackInit.SaversConfig.ColorBleedTrueColor = value;
-            }
-        }
-        /// <summary>
-        /// [ColorBleed] How many milliseconds to wait before making the next write?
-        /// </summary>
-        public static int ColorBleedDelay
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.ColorBleedDelay;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 10;
-                ScreensaverPackInit.SaversConfig.ColorBleedDelay = value;
-            }
-        }
-        /// <summary>
-        /// [ColorBleed] How many fade steps to do?
-        /// </summary>
-        public static int ColorBleedMaxSteps
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.ColorBleedMaxSteps;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 25;
-                ScreensaverPackInit.SaversConfig.ColorBleedMaxSteps = value;
-            }
-        }
-        /// <summary>
-        /// [ColorBleed] Chance to drop a new falling color
-        /// </summary>
-        public static int ColorBleedDropChance
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.ColorBleedDropChance;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 40;
-                ScreensaverPackInit.SaversConfig.ColorBleedDropChance = value;
-            }
-        }
-        /// <summary>
-        /// [ColorBleed] The minimum red color level (true color)
-        /// </summary>
-        public static int ColorBleedMinimumRedColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.ColorBleedMinimumRedColorLevel;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.ColorBleedMinimumRedColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [ColorBleed] The minimum green color level (true color)
-        /// </summary>
-        public static int ColorBleedMinimumGreenColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.ColorBleedMinimumGreenColorLevel;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.ColorBleedMinimumGreenColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [ColorBleed] The minimum blue color level (true color)
-        /// </summary>
-        public static int ColorBleedMinimumBlueColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.ColorBleedMinimumBlueColorLevel;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.ColorBleedMinimumBlueColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [ColorBleed] The minimum color level (255 colors or 16 colors)
-        /// </summary>
-        public static int ColorBleedMinimumColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.ColorBleedMinimumColorLevel;
-            }
-            set
-            {
-                int FinalMinimumLevel = 255;
-                if (value <= 0)
-                    value = 0;
-                if (value > FinalMinimumLevel)
-                    value = FinalMinimumLevel;
-                ScreensaverPackInit.SaversConfig.ColorBleedMinimumColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [ColorBleed] The maximum red color level (true color)
-        /// </summary>
-        public static int ColorBleedMaximumRedColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.ColorBleedMaximumRedColorLevel;
-            }
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.ColorBleedMinimumRedColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.ColorBleedMinimumRedColorLevel;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.ColorBleedMaximumRedColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [ColorBleed] The maximum green color level (true color)
-        /// </summary>
-        public static int ColorBleedMaximumGreenColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.ColorBleedMaximumGreenColorLevel;
-            }
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.ColorBleedMinimumGreenColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.ColorBleedMinimumGreenColorLevel;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.ColorBleedMaximumGreenColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [ColorBleed] The maximum blue color level (true color)
-        /// </summary>
-        public static int ColorBleedMaximumBlueColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.ColorBleedMaximumBlueColorLevel;
-            }
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.ColorBleedMinimumBlueColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.ColorBleedMinimumBlueColorLevel;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.ColorBleedMaximumBlueColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [ColorBleed] The maximum color level (255 colors or 16 colors)
-        /// </summary>
-        public static int ColorBleedMaximumColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.ColorBleedMaximumColorLevel;
-            }
-            set
-            {
-                int FinalMaximumLevel = 255;
-                if (value <= ScreensaverPackInit.SaversConfig.ColorBleedMinimumColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.ColorBleedMinimumColorLevel;
-                if (value > FinalMaximumLevel)
-                    value = FinalMaximumLevel;
-                ScreensaverPackInit.SaversConfig.ColorBleedMaximumColorLevel = value;
-            }
-        }
-
-    }
-
-    /// <summary>
     /// Display code for ColorBleed
     /// </summary>
     public class ColorBleedDisplay : BaseScreensaver, IScreensaver
@@ -275,7 +58,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             int FallEnd = ConsoleWrapper.WindowHeight - 1;
 
             // Invoke the "chance"-based random number generator to decide whether a line is about to fall.
-            bool newFall = RandomDriver.RandomChance(ColorBleedSettings.ColorBleedDropChance);
+            bool newFall = RandomDriver.RandomChance(ScreensaverPackInit.SaversConfig.ColorBleedDropChance);
             if (newFall)
                 bleedStates.Add(new BleedState());
 
@@ -297,7 +80,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     case BleedFallState.Fading:
                         bleedState.Fade();
                         bleedState.fadeStep++;
-                        if (bleedState.fadeStep > ColorBleedSettings.ColorBleedMaxSteps)
+                        if (bleedState.fadeStep > ScreensaverPackInit.SaversConfig.ColorBleedMaxSteps)
                             bleedState.fallState = BleedFallState.Done;
                         break;
                 }
@@ -321,7 +104,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Reset resize sync
             ConsoleResizeHandler.WasResized();
-            ThreadManager.SleepNoBlock(ColorBleedSettings.ColorBleedDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.ColorBleedDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 
         /// <inheritdoc/>
@@ -366,9 +149,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 return;
 
             // Set thresholds
-            double ThresholdRed = ColorStorage.RGB.R / (double)ColorBleedSettings.ColorBleedMaxSteps;
-            double ThresholdGreen = ColorStorage.RGB.G / (double)ColorBleedSettings.ColorBleedMaxSteps;
-            double ThresholdBlue = ColorStorage.RGB.B / (double)ColorBleedSettings.ColorBleedMaxSteps;
+            double ThresholdRed = ColorStorage.RGB.R / (double)ScreensaverPackInit.SaversConfig.ColorBleedMaxSteps;
+            double ThresholdGreen = ColorStorage.RGB.G / (double)ScreensaverPackInit.SaversConfig.ColorBleedMaxSteps;
+            double ThresholdBlue = ColorStorage.RGB.B / (double)ScreensaverPackInit.SaversConfig.ColorBleedMaxSteps;
             DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Color threshold (R;G;B: {0})", ThresholdRed, ThresholdGreen, ThresholdBlue);
 
             // Set color fade steps
@@ -406,17 +189,17 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 columnLine = RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth);
             reservedColumns.Add(columnLine);
             ColumnLine = columnLine;
-            if (ColorBleedSettings.ColorBleedTrueColor)
+            if (ScreensaverPackInit.SaversConfig.ColorBleedTrueColor)
             {
-                int RedColorNum = RandomDriver.Random(ColorBleedSettings.ColorBleedMinimumRedColorLevel, ColorBleedSettings.ColorBleedMaximumRedColorLevel);
-                int GreenColorNum = RandomDriver.Random(ColorBleedSettings.ColorBleedMinimumGreenColorLevel, ColorBleedSettings.ColorBleedMaximumGreenColorLevel);
-                int BlueColorNum = RandomDriver.Random(ColorBleedSettings.ColorBleedMinimumBlueColorLevel, ColorBleedSettings.ColorBleedMaximumBlueColorLevel);
+                int RedColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.ColorBleedMinimumRedColorLevel, ScreensaverPackInit.SaversConfig.ColorBleedMaximumRedColorLevel);
+                int GreenColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.ColorBleedMinimumGreenColorLevel, ScreensaverPackInit.SaversConfig.ColorBleedMaximumGreenColorLevel);
+                int BlueColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.ColorBleedMinimumBlueColorLevel, ScreensaverPackInit.SaversConfig.ColorBleedMaximumBlueColorLevel);
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                 ColorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
             }
             else
             {
-                int ColorNum = RandomDriver.Random(ColorBleedSettings.ColorBleedMinimumColorLevel, ColorBleedSettings.ColorBleedMaximumColorLevel);
+                int ColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.ColorBleedMinimumColorLevel, ScreensaverPackInit.SaversConfig.ColorBleedMaximumColorLevel);
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
                 ColorStorage = new Color(ColorNum);
             }
