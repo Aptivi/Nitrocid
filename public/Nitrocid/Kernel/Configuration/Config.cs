@@ -48,9 +48,10 @@ namespace Nitrocid.Kernel.Configuration
         internal static Dictionary<string, BaseKernelConfig> customConfigurations = [];
         internal static Dictionary<string, BaseKernelConfig> baseConfigurations = new()
         {
-            { nameof(KernelMainConfig),   new KernelMainConfig() },
-            { nameof(KernelSaverConfig),  new KernelSaverConfig() },
-            { nameof(KernelDriverConfig), new KernelDriverConfig() },
+            { nameof(KernelMainConfig),    new KernelMainConfig() },
+            { nameof(KernelSaverConfig),   new KernelSaverConfig() },
+            { nameof(KernelDriverConfig),  new KernelDriverConfig() },
+            { nameof(KernelWidgetsConfig), new KernelWidgetsConfig() },
         };
 
         /// <summary>
@@ -68,6 +69,11 @@ namespace Nitrocid.Kernel.Configuration
         /// </summary>
         public static KernelDriverConfig DriverConfig =>
             baseConfigurations is not null ? (KernelDriverConfig)baseConfigurations[nameof(KernelDriverConfig)] : new KernelDriverConfig();
+        /// <summary>
+        /// Widget configuration entry for the kernel
+        /// </summary>
+        public static KernelWidgetsConfig WidgetConfig =>
+            baseConfigurations is not null ? (KernelWidgetsConfig)baseConfigurations[nameof(KernelWidgetsConfig)] : new KernelWidgetsConfig();
 
         /// <summary>
         /// Gets the kernel configuration
@@ -316,6 +322,11 @@ namespace Nitrocid.Kernel.Configuration
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "No driver config file found. Creating...");
                 CreateConfig(DriverConfig);
+            }
+            if (!Checking.FileExists(PathsManagement.GetKernelPath(KernelPathType.WidgetConfiguration)))
+            {
+                DebugWriter.WriteDebug(DebugLevel.W, "No widget config file found. Creating...");
+                CreateConfig(WidgetConfig);
             }
 
             // Validate config
