@@ -73,6 +73,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
             if (!useSelection)
             {
                 SettingsCli.config = settingsType;
+                SettingsCli.lastFirstPaneIdx = -1;
                 InteractiveTuiTools.OpenInteractiveTui(new SettingsCli());
                 return;
             }

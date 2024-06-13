@@ -28,7 +28,6 @@ using Terminaux.Inputs.Interactive;
 using Terminaux.Inputs.Styles.Infobox;
 using Textify.General;
 using Nitrocid.Kernel.Configuration.Instances;
-using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Misc.Interactives
 {
@@ -38,6 +37,9 @@ namespace Nitrocid.Misc.Interactives
     public class SettingsCli : BaseInteractiveTui<(string, int)>, IInteractiveTui<(string, int)>
     {
         internal static BaseKernelConfig config;
+        internal static int lastFirstPaneIdx = -1;
+        internal List<(string, int)> entryNames = [];
+        internal List<(string, int)> keyNames = [];
 
         /// <summary>
         /// File manager bindings
@@ -62,8 +64,22 @@ namespace Nitrocid.Misc.Interactives
             {
                 try
                 {
+                    if (lastFirstPaneIdx == InteractiveTuiStatus.FirstPaneCurrentSelection - 1)
+                        return entryNames;
                     var configs = config.SettingsEntries;
                     var configNames = configs.Select((se, idx) => (se.Name, idx)).ToArray();
+                    var entry = config.SettingsEntries[InteractiveTuiStatus.FirstPaneCurrentSelection - 1];
+                    var keys = entry.Keys;
+                    var finalkeyNames = keys.Select((key, idx) =>
+                    {
+                        object currentValue = ConfigTools.GetValueFromEntry(key, config);
+                        return ($"{key.Name} [{currentValue}]", idx);
+                    }).ToArray();
+                    entryNames.Clear();
+                    entryNames.AddRange(configNames);
+                    keyNames.Clear();
+                    keyNames.AddRange(finalkeyNames);
+                    lastFirstPaneIdx = InteractiveTuiStatus.FirstPaneCurrentSelection - 1;
                     return configNames;
                 }
                 catch (Exception ex)
@@ -82,13 +98,6 @@ namespace Nitrocid.Misc.Interactives
             {
                 try
                 {
-                    var entry = config.SettingsEntries[InteractiveTuiStatus.FirstPaneCurrentSelection - 1];
-                    var keys = entry.Keys;
-                    var keyNames = keys.Select((key, idx) =>
-                    {
-                        object currentValue = ConfigTools.GetValueFromEntry(key, config);
-                        return ($"{key.Name} [{currentValue}]", idx);
-                    }).ToArray();
                     return keyNames;
                 }
                 catch (Exception ex)
@@ -171,7 +180,10 @@ namespace Nitrocid.Misc.Interactives
                 var defaultValue = ConfigTools.GetValueFromEntry(key, config);
                 var input = key.KeyInput.PromptForSet(key, defaultValue, out bool provided);
                 if (provided)
+                {
                     key.KeyInput.SetValue(key, input, config);
+                    lastFirstPaneIdx = -1;
+                }
             }
             catch (Exception ex)
             {
