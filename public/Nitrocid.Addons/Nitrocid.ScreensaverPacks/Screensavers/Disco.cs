@@ -29,233 +29,6 @@ using Terminaux.Colors.Data;
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
     /// <summary>
-    /// Settings for Disco
-    /// </summary>
-    public static class DiscoSettings
-    {
-
-        /// <summary>
-        /// [Disco] Enable truecolor support. Has a higher priority than 255 color support.
-        /// </summary>
-        public static bool DiscoTrueColor
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.DiscoTrueColor;
-            }
-            set
-            {
-                ScreensaverPackInit.SaversConfig.DiscoTrueColor = value;
-            }
-        }
-        /// <summary>
-        /// [Disco] Enable color cycling
-        /// </summary>
-        public static bool DiscoCycleColors
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.DiscoCycleColors;
-            }
-            set
-            {
-                ScreensaverPackInit.SaversConfig.DiscoCycleColors = value;
-            }
-        }
-        /// <summary>
-        /// [Disco] How many milliseconds, or beats per minute, to wait before making the next write?
-        /// </summary>
-        public static int DiscoDelay
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.DiscoDelay;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 100;
-                ScreensaverPackInit.SaversConfig.DiscoDelay = value;
-            }
-        }
-        /// <summary>
-        /// [Disco] Whether to use the Beats Per Minute (1/4) to change the writing delay. If False, will use the standard milliseconds delay instead.
-        /// </summary>
-        public static bool DiscoUseBeatsPerMinute
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.DiscoUseBeatsPerMinute;
-            }
-            set
-            {
-                ScreensaverPackInit.SaversConfig.DiscoUseBeatsPerMinute = value;
-            }
-        }
-        /// <summary>
-        /// [Disco] Uses the black and white cycle to produce the same effect as the legacy "fed" screensaver introduced back in v0.0.1
-        /// </summary>
-        public static bool DiscoEnableFedMode
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.DiscoEnableFedMode;
-            }
-            set
-            {
-                ScreensaverPackInit.SaversConfig.DiscoEnableFedMode = value;
-            }
-        }
-        /// <summary>
-        /// [Disco] The minimum red color level (true color)
-        /// </summary>
-        public static int DiscoMinimumRedColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.DiscoMinimumRedColorLevel;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.DiscoMinimumRedColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [Disco] The minimum green color level (true color)
-        /// </summary>
-        public static int DiscoMinimumGreenColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.DiscoMinimumGreenColorLevel;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.DiscoMinimumGreenColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [Disco] The minimum blue color level (true color)
-        /// </summary>
-        public static int DiscoMinimumBlueColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.DiscoMinimumBlueColorLevel;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.DiscoMinimumBlueColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [Disco] The minimum color level (255 colors or 16 colors)
-        /// </summary>
-        public static int DiscoMinimumColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.DiscoMinimumColorLevel;
-            }
-            set
-            {
-                int FinalMinimumLevel = 255;
-                if (value <= 0)
-                    value = 0;
-                if (value > FinalMinimumLevel)
-                    value = FinalMinimumLevel;
-                ScreensaverPackInit.SaversConfig.DiscoMinimumColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [Disco] The maximum red color level (true color)
-        /// </summary>
-        public static int DiscoMaximumRedColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.DiscoMaximumRedColorLevel;
-            }
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.DiscoMaximumRedColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.DiscoMaximumRedColorLevel;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.DiscoMaximumRedColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [Disco] The maximum green color level (true color)
-        /// </summary>
-        public static int DiscoMaximumGreenColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.DiscoMaximumGreenColorLevel;
-            }
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.DiscoMaximumGreenColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.DiscoMaximumGreenColorLevel;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.DiscoMaximumGreenColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [Disco] The maximum blue color level (true color)
-        /// </summary>
-        public static int DiscoMaximumBlueColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.DiscoMaximumBlueColorLevel;
-            }
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.DiscoMaximumBlueColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.DiscoMaximumBlueColorLevel;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.DiscoMaximumBlueColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [Disco] The maximum color level (255 colors or 16 colors)
-        /// </summary>
-        public static int DiscoMaximumColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.DiscoMaximumColorLevel;
-            }
-            set
-            {
-                int FinalMaximumLevel = 255;
-                if (value <= ScreensaverPackInit.SaversConfig.DiscoMaximumColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.DiscoMaximumColorLevel;
-                if (value > FinalMaximumLevel)
-                    value = FinalMaximumLevel;
-                ScreensaverPackInit.SaversConfig.DiscoMaximumColorLevel = value;
-            }
-        }
-
-    }
-
-    /// <summary>
     /// Display code for Disco
     /// </summary>
     public class DiscoDisplay : BaseScreensaver, IScreensaver
@@ -273,23 +46,23 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            int MaximumColors = DiscoSettings.DiscoMaximumColorLevel;
+            int MaximumColors = ScreensaverPackInit.SaversConfig.DiscoMaximumColorLevel;
             DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", MaximumColors);
-            int MaximumColorsR = DiscoSettings.DiscoMaximumRedColorLevel;
+            int MaximumColorsR = ScreensaverPackInit.SaversConfig.DiscoMaximumRedColorLevel;
             DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Maximum red color level: {0}", MaximumColorsR);
-            int MaximumColorsG = DiscoSettings.DiscoMaximumGreenColorLevel;
+            int MaximumColorsG = ScreensaverPackInit.SaversConfig.DiscoMaximumGreenColorLevel;
             DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Maximum green color level: {0}", MaximumColorsG);
-            int MaximumColorsB = DiscoSettings.DiscoMaximumBlueColorLevel;
+            int MaximumColorsB = ScreensaverPackInit.SaversConfig.DiscoMaximumBlueColorLevel;
             DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Maximum blue color level: {0}", MaximumColorsB);
 
             // Select the background color
-            DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Cycling colors: {0}", DiscoSettings.DiscoCycleColors);
-            DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "fed (future-eyes-destroyer) mode: {0}", DiscoSettings.DiscoEnableFedMode);
-            if (!DiscoSettings.DiscoEnableFedMode)
+            DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Cycling colors: {0}", ScreensaverPackInit.SaversConfig.DiscoCycleColors);
+            DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "fed (future-eyes-destroyer) mode: {0}", ScreensaverPackInit.SaversConfig.DiscoEnableFedMode);
+            if (!ScreensaverPackInit.SaversConfig.DiscoEnableFedMode)
             {
-                if (DiscoSettings.DiscoTrueColor)
+                if (ScreensaverPackInit.SaversConfig.DiscoTrueColor)
                 {
-                    if (!DiscoSettings.DiscoCycleColors)
+                    if (!ScreensaverPackInit.SaversConfig.DiscoCycleColors)
                     {
                         int RedColorNum = RandomDriver.Random(255);
                         int GreenColorNum = RandomDriver.Random(255);
@@ -307,7 +80,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 }
                 else
                 {
-                    if (!DiscoSettings.DiscoCycleColors)
+                    if (!ScreensaverPackInit.SaversConfig.DiscoCycleColors)
                     {
                         int color = RandomDriver.Random(255);
                         DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color ({0})", color);
@@ -338,7 +111,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             ConsoleWrapper.Clear();
 
             // Switch to the next color
-            if (DiscoSettings.DiscoTrueColor)
+            if (ScreensaverPackInit.SaversConfig.DiscoTrueColor)
             {
                 if (CurrentColorR >= MaximumColorsR)
                 {
@@ -389,16 +162,16 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             }
 
             // Check to see if we're dealing with beats per minute
-            DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Using BPM: {0}", DiscoSettings.DiscoUseBeatsPerMinute);
-            if (DiscoSettings.DiscoUseBeatsPerMinute)
+            DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Using BPM: {0}", ScreensaverPackInit.SaversConfig.DiscoUseBeatsPerMinute);
+            if (ScreensaverPackInit.SaversConfig.DiscoUseBeatsPerMinute)
             {
-                int BeatInterval = (int)Math.Round(60000d / DiscoSettings.DiscoDelay);
-                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Beat interval from {0} BPM: {1} ms", DiscoSettings.DiscoDelay, BeatInterval);
+                int BeatInterval = (int)Math.Round(60000d / ScreensaverPackInit.SaversConfig.DiscoDelay);
+                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Beat interval from {0} BPM: {1} ms", ScreensaverPackInit.SaversConfig.DiscoDelay, BeatInterval);
                 ThreadManager.SleepNoBlock(BeatInterval, ScreensaverDisplayer.ScreensaverDisplayerThread);
             }
             else
             {
-                ThreadManager.SleepNoBlock(DiscoSettings.DiscoDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.DiscoDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
             }
         }
 

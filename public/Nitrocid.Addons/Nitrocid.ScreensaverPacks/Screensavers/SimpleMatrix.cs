@@ -28,31 +28,6 @@ using Terminaux.Colors.Data;
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
     /// <summary>
-    /// Settings for SimpleMatrix
-    /// </summary>
-    public static class SimpleMatrixSettings
-    {
-
-        /// <summary>
-        /// [SimpleMatrix] How many milliseconds to wait before making the next write?
-        /// </summary>
-        public static int SimpleMatrixDelay
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.SimpleMatrixDelay;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 1;
-                ScreensaverPackInit.SaversConfig.SimpleMatrixDelay = value;
-            }
-        }
-
-    }
-
-    /// <summary>
     /// Display code for SimpleMatrix
     /// </summary>
     public class SimpleMatrixDisplay : BaseScreensaver, IScreensaver
@@ -85,7 +60,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Reset resize sync
             ConsoleResizeHandler.WasResized();
-            ThreadManager.SleepNoBlock(SimpleMatrixSettings.SimpleMatrixDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.SimpleMatrixDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 
     }

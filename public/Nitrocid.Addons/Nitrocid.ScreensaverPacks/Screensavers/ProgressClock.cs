@@ -36,793 +36,6 @@ using Terminaux.Writer.FancyWriters.Tools;
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
     /// <summary>
-    /// Settings for ProgressClock
-    /// </summary>
-    public static class ProgressClockSettings
-    {
-
-        /// <summary>
-        /// [ProgressClock] Enable truecolor support. Has a higher priority than 255 color support.
-        /// </summary>
-        public static bool ProgressClockTrueColor
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockTrueColor;
-            set => ScreensaverPackInit.SaversConfig.ProgressClockTrueColor = value;
-        }
-        /// <summary>
-        /// [ProgressClock] Enable color cycling (uses RNG. If disabled, uses the <see cref="ProgressClockSecondsProgressColor"/>, <see cref="ProgressClockMinutesProgressColor"/>, and <see cref="ProgressClockHoursProgressColor"/> colors.)
-        /// </summary>
-        public static bool ProgressClockCycleColors
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockCycleColors;
-            set => ScreensaverPackInit.SaversConfig.ProgressClockCycleColors = value;
-        }
-        /// <summary>
-        /// [ProgressClock] The color of seconds progress bar. It can be 1-16, 1-255, or "1-255;1-255;1-255".
-        /// </summary>
-        public static string ProgressClockSecondsProgressColor
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockSecondsProgressColor;
-            set => ScreensaverPackInit.SaversConfig.ProgressClockSecondsProgressColor = new Color(value).PlainSequence;
-        }
-        /// <summary>
-        /// [ProgressClock] The color of minutes progress bar. It can be 1-16, 1-255, or "1-255;1-255;1-255".
-        /// </summary>
-        public static string ProgressClockMinutesProgressColor
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockMinutesProgressColor;
-            set => ScreensaverPackInit.SaversConfig.ProgressClockMinutesProgressColor = new Color(value).PlainSequence;
-        }
-        /// <summary>
-        /// [ProgressClock] The color of hours progress bar. It can be 1-16, 1-255, or "1-255;1-255;1-255".
-        /// </summary>
-        public static string ProgressClockHoursProgressColor
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockHoursProgressColor;
-            set => ScreensaverPackInit.SaversConfig.ProgressClockHoursProgressColor = new Color(value).PlainSequence;
-        }
-        /// <summary>
-        /// [ProgressClock] The color of date information. It can be 1-16, 1-255, or "1-255;1-255;1-255".
-        /// </summary>
-        public static string ProgressClockProgressColor
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockProgressColor;
-            set => ScreensaverPackInit.SaversConfig.ProgressClockProgressColor = new Color(value).PlainSequence;
-        }
-        /// <summary>
-        /// [ProgressClock] If color cycling is enabled, how many ticks before changing colors? 1 tick = 0.5 seconds
-        /// </summary>
-        public static long ProgressClockCycleColorsTicks
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockCycleColorsTicks;
-            set
-            {
-                if (value <= 0L)
-                    value = 20L;
-                ScreensaverPackInit.SaversConfig.ProgressClockCycleColorsTicks = (int)value;
-            }
-        }
-        /// <summary>
-        /// [ProgressClock] How many milliseconds to wait before making the next write?
-        /// </summary>
-        public static int ProgressClockDelay
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockDelay;
-            set
-            {
-                if (value <= 0)
-                    value = 500;
-                ScreensaverPackInit.SaversConfig.ProgressClockDelay = value;
-            }
-        }
-        /// <summary>
-        /// [ProgressClock] Upper left corner character for hours bar
-        /// </summary>
-        public static char ProgressClockUpperLeftCornerCharHours
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockUpperLeftCornerCharHours;
-            set => ScreensaverPackInit.SaversConfig.ProgressClockUpperLeftCornerCharHours = value;
-        }
-        /// <summary>
-        /// [ProgressClock] Upper left corner character for minutes bar
-        /// </summary>
-        public static char ProgressClockUpperLeftCornerCharMinutes
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockUpperLeftCornerCharMinutes;
-            set => ScreensaverPackInit.SaversConfig.ProgressClockUpperLeftCornerCharMinutes = value;
-        }
-        /// <summary>
-        /// [ProgressClock] Upper left corner character for seconds bar
-        /// </summary>
-        public static char ProgressClockUpperLeftCornerCharSeconds
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockUpperLeftCornerCharSeconds;
-            set => ScreensaverPackInit.SaversConfig.ProgressClockUpperLeftCornerCharSeconds = value;
-        }
-        /// <summary>
-        /// [ProgressClock] Upper right corner character for hours bar
-        /// </summary>
-        public static char ProgressClockUpperRightCornerCharHours
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockUpperRightCornerCharHours;
-            set => ScreensaverPackInit.SaversConfig.ProgressClockUpperRightCornerCharHours = value;
-        }
-        /// <summary>
-        /// [ProgressClock] Upper right corner character for minutes bar
-        /// </summary>
-        public static char ProgressClockUpperRightCornerCharMinutes
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockUpperRightCornerCharMinutes;
-            set => ScreensaverPackInit.SaversConfig.ProgressClockUpperRightCornerCharMinutes = value;
-        }
-        /// <summary>
-        /// [ProgressClock] Upper right corner character for seconds bar
-        /// </summary>
-        public static char ProgressClockUpperRightCornerCharSeconds
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockUpperRightCornerCharSeconds;
-            set => ScreensaverPackInit.SaversConfig.ProgressClockUpperRightCornerCharSeconds = value;
-        }
-        /// <summary>
-        /// [ProgressClock] Lower left corner character for hours bar
-        /// </summary>
-        public static char ProgressClockLowerLeftCornerCharHours
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockLowerLeftCornerCharHours;
-            set => ScreensaverPackInit.SaversConfig.ProgressClockLowerLeftCornerCharHours = value;
-        }
-        /// <summary>
-        /// [ProgressClock] Lower left corner character for minutes bar
-        /// </summary>
-        public static char ProgressClockLowerLeftCornerCharMinutes
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockLowerLeftCornerCharMinutes;
-            set => ScreensaverPackInit.SaversConfig.ProgressClockLowerLeftCornerCharMinutes = value;
-        }
-        /// <summary>
-        /// [ProgressClock] Lower left corner character for seconds bar
-        /// </summary>
-        public static char ProgressClockLowerLeftCornerCharSeconds
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockLowerLeftCornerCharSeconds;
-            set => ScreensaverPackInit.SaversConfig.ProgressClockLowerLeftCornerCharSeconds = value;
-        }
-        /// <summary>
-        /// [ProgressClock] Lower right corner character for hours bar
-        /// </summary>
-        public static char ProgressClockLowerRightCornerCharHours
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockLowerRightCornerCharHours;
-            set => ScreensaverPackInit.SaversConfig.ProgressClockLowerRightCornerCharHours = value;
-        }
-        /// <summary>
-        /// [ProgressClock] Lower right corner character for minutes bar
-        /// </summary>
-        public static char ProgressClockLowerRightCornerCharMinutes
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockLowerRightCornerCharMinutes;
-            set => ScreensaverPackInit.SaversConfig.ProgressClockLowerRightCornerCharMinutes = value;
-        }
-        /// <summary>
-        /// [ProgressClock] Lower right corner character for seconds bar
-        /// </summary>
-        public static char ProgressClockLowerRightCornerCharSeconds
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockLowerRightCornerCharSeconds;
-            set => ScreensaverPackInit.SaversConfig.ProgressClockLowerRightCornerCharSeconds = value;
-        }
-        /// <summary>
-        /// [ProgressClock] Upper frame character for hours bar
-        /// </summary>
-        public static char ProgressClockUpperFrameCharHours
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockUpperFrameCharHours;
-            set => ScreensaverPackInit.SaversConfig.ProgressClockUpperFrameCharHours = value;
-        }
-        /// <summary>
-        /// [ProgressClock] Upper frame character for minutes bar
-        /// </summary>
-        public static char ProgressClockUpperFrameCharMinutes
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockUpperFrameCharMinutes;
-            set => ScreensaverPackInit.SaversConfig.ProgressClockUpperFrameCharMinutes = value;
-        }
-        /// <summary>
-        /// [ProgressClock] Upper frame character for seconds bar
-        /// </summary>
-        public static char ProgressClockUpperFrameCharSeconds
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockUpperFrameCharSeconds;
-            set => ScreensaverPackInit.SaversConfig.ProgressClockUpperFrameCharSeconds = value;
-        }
-        /// <summary>
-        /// [ProgressClock] Lower frame character for hours bar
-        /// </summary>
-        public static char ProgressClockLowerFrameCharHours
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockLowerFrameCharHours;
-            set => ScreensaverPackInit.SaversConfig.ProgressClockLowerFrameCharHours = value;
-        }
-        /// <summary>
-        /// [ProgressClock] Lower frame character for minutes bar
-        /// </summary>
-        public static char ProgressClockLowerFrameCharMinutes
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockLowerFrameCharMinutes;
-            set => ScreensaverPackInit.SaversConfig.ProgressClockLowerFrameCharMinutes = value;
-        }
-        /// <summary>
-        /// [ProgressClock] Lower frame character for seconds bar
-        /// </summary>
-        public static char ProgressClockLowerFrameCharSeconds
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockLowerFrameCharSeconds;
-            set => ScreensaverPackInit.SaversConfig.ProgressClockLowerFrameCharSeconds = value;
-        }
-        /// <summary>
-        /// [ProgressClock] Left frame character for hours bar
-        /// </summary>
-        public static char ProgressClockLeftFrameCharHours
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockLeftFrameCharHours;
-            set => ScreensaverPackInit.SaversConfig.ProgressClockLeftFrameCharHours = value;
-        }
-        /// <summary>
-        /// [ProgressClock] Left frame character for minutes bar
-        /// </summary>
-        public static char ProgressClockLeftFrameCharMinutes
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockLeftFrameCharMinutes;
-            set => ScreensaverPackInit.SaversConfig.ProgressClockLeftFrameCharMinutes = value;
-        }
-        /// <summary>
-        /// [ProgressClock] Left frame character for seconds bar
-        /// </summary>
-        public static char ProgressClockLeftFrameCharSeconds
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockLeftFrameCharSeconds;
-            set => ScreensaverPackInit.SaversConfig.ProgressClockLeftFrameCharSeconds = value;
-        }
-        /// <summary>
-        /// [ProgressClock] Right frame character for hours bar
-        /// </summary>
-        public static char ProgressClockRightFrameCharHours
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockRightFrameCharHours;
-            set => ScreensaverPackInit.SaversConfig.ProgressClockRightFrameCharHours = value;
-        }
-        /// <summary>
-        /// [ProgressClock] Right frame character for minutes bar
-        /// </summary>
-        public static char ProgressClockRightFrameCharMinutes
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockRightFrameCharMinutes;
-            set => ScreensaverPackInit.SaversConfig.ProgressClockRightFrameCharMinutes = value;
-        }
-        /// <summary>
-        /// [ProgressClock] Right frame character for seconds bar
-        /// </summary>
-        public static char ProgressClockRightFrameCharSeconds
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockRightFrameCharSeconds;
-            set => ScreensaverPackInit.SaversConfig.ProgressClockRightFrameCharSeconds = value;
-        }
-        /// <summary>
-        /// [ProgressClock] Information text for hours bar
-        /// </summary>
-        public static string ProgressClockInfoTextHours
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockInfoTextHours;
-            set => ScreensaverPackInit.SaversConfig.ProgressClockInfoTextHours = value;
-        }
-        /// <summary>
-        /// [ProgressClock] Information text for minutes bar
-        /// </summary>
-        public static string ProgressClockInfoTextMinutes
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockInfoTextMinutes;
-            set => ScreensaverPackInit.SaversConfig.ProgressClockInfoTextMinutes = value;
-        }
-        /// <summary>
-        /// [ProgressClock] Information text for seconds bar
-        /// </summary>
-        public static string ProgressClockInfoTextSeconds
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockInfoTextSeconds;
-            set => ScreensaverPackInit.SaversConfig.ProgressClockInfoTextSeconds = value;
-        }
-        /// <summary>
-        /// [ProgressClock] The minimum red color level (true color - hours)
-        /// </summary>
-        public static int ProgressClockMinimumRedColorLevelHours
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockMinimumRedColorLevelHours;
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.ProgressClockMinimumRedColorLevelHours = value;
-            }
-        }
-        /// <summary>
-        /// [ProgressClock] The minimum green color level (true color - hours)
-        /// </summary>
-        public static int ProgressClockMinimumGreenColorLevelHours
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockMinimumGreenColorLevelHours;
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.ProgressClockMinimumGreenColorLevelHours = value;
-            }
-        }
-        /// <summary>
-        /// [ProgressClock] The minimum blue color level (true color - hours)
-        /// </summary>
-        public static int ProgressClockMinimumBlueColorLevelHours
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockMinimumBlueColorLevelHours;
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.ProgressClockMinimumBlueColorLevelHours = value;
-            }
-        }
-        /// <summary>
-        /// [ProgressClock] The minimum color level (255 colors or 16 colors - hours)
-        /// </summary>
-        public static int ProgressClockMinimumColorLevelHours
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockMinimumColorLevelHours;
-            set
-            {
-                int FinalMinimumLevel = 255;
-                if (value < 0)
-                    value = 1;
-                if (value > FinalMinimumLevel)
-                    value = FinalMinimumLevel;
-                ScreensaverPackInit.SaversConfig.ProgressClockMinimumColorLevelHours = value;
-            }
-        }
-        /// <summary>
-        /// [ProgressClock] The maximum red color level (true color - hours)
-        /// </summary>
-        public static int ProgressClockMaximumRedColorLevelHours
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockMaximumRedColorLevelHours;
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.ProgressClockMinimumRedColorLevelHours)
-                    value = ScreensaverPackInit.SaversConfig.ProgressClockMinimumRedColorLevelHours;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.ProgressClockMaximumRedColorLevelHours = value;
-            }
-        }
-        /// <summary>
-        /// [ProgressClock] The maximum green color level (true color - hours)
-        /// </summary>
-        public static int ProgressClockMaximumGreenColorLevelHours
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockMaximumGreenColorLevelHours;
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.ProgressClockMinimumGreenColorLevelHours)
-                    value = ScreensaverPackInit.SaversConfig.ProgressClockMinimumGreenColorLevelHours;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.ProgressClockMaximumGreenColorLevelHours = value;
-            }
-        }
-        /// <summary>
-        /// [ProgressClock] The maximum blue color level (true color - hours)
-        /// </summary>
-        public static int ProgressClockMaximumBlueColorLevelHours
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockMaximumBlueColorLevelHours;
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.ProgressClockMinimumBlueColorLevelHours)
-                    value = ScreensaverPackInit.SaversConfig.ProgressClockMinimumBlueColorLevelHours;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.ProgressClockMaximumBlueColorLevelHours = value;
-            }
-        }
-        /// <summary>
-        /// [ProgressClock] The maximum color level (255 colors or 16 colors - hours)
-        /// </summary>
-        public static int ProgressClockMaximumColorLevelHours
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockMaximumColorLevelHours;
-            set
-            {
-                int FinalMaximumLevel = 255;
-                if (value <= ScreensaverPackInit.SaversConfig.ProgressClockMinimumColorLevelHours)
-                    value = ScreensaverPackInit.SaversConfig.ProgressClockMinimumColorLevelHours;
-                if (value > FinalMaximumLevel)
-                    value = FinalMaximumLevel;
-                ScreensaverPackInit.SaversConfig.ProgressClockMaximumColorLevelHours = value;
-            }
-        }
-        /// <summary>
-        /// [ProgressClock] The minimum red color level (true color - minutes)
-        /// </summary>
-        public static int ProgressClockMinimumRedColorLevelMinutes
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockMinimumRedColorLevelMinutes;
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.ProgressClockMinimumRedColorLevelMinutes = value;
-            }
-        }
-        /// <summary>
-        /// [ProgressClock] The minimum green color level (true color - minutes)
-        /// </summary>
-        public static int ProgressClockMinimumGreenColorLevelMinutes
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockMinimumGreenColorLevelMinutes;
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.ProgressClockMinimumGreenColorLevelMinutes = value;
-            }
-        }
-        /// <summary>
-        /// [ProgressClock] The minimum blue color level (true color - minutes)
-        /// </summary>
-        public static int ProgressClockMinimumBlueColorLevelMinutes
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockMinimumBlueColorLevelMinutes;
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.ProgressClockMinimumBlueColorLevelMinutes = value;
-            }
-        }
-        /// <summary>
-        /// [ProgressClock] The minimum color level (255 colors or 16 colors - minutes)
-        /// </summary>
-        public static int ProgressClockMinimumColorLevelMinutes
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockMinimumColorLevelMinutes;
-            set
-            {
-                int FinalMinimumLevel = 255;
-                if (value < 0)
-                    value = 1;
-                if (value > FinalMinimumLevel)
-                    value = FinalMinimumLevel;
-                ScreensaverPackInit.SaversConfig.ProgressClockMinimumColorLevelMinutes = value;
-            }
-        }
-        /// <summary>
-        /// [ProgressClock] The maximum red color level (true color - minutes)
-        /// </summary>
-        public static int ProgressClockMaximumRedColorLevelMinutes
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockMaximumRedColorLevelMinutes;
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.ProgressClockMinimumRedColorLevelMinutes)
-                    value = ScreensaverPackInit.SaversConfig.ProgressClockMinimumRedColorLevelMinutes;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.ProgressClockMaximumRedColorLevelMinutes = value;
-            }
-        }
-        /// <summary>
-        /// [ProgressClock] The maximum green color level (true color - minutes)
-        /// </summary>
-        public static int ProgressClockMaximumGreenColorLevelMinutes
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockMaximumGreenColorLevelMinutes;
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.ProgressClockMinimumGreenColorLevelMinutes)
-                    value = ScreensaverPackInit.SaversConfig.ProgressClockMinimumGreenColorLevelMinutes;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.ProgressClockMaximumGreenColorLevelMinutes = value;
-            }
-        }
-        /// <summary>
-        /// [ProgressClock] The maximum blue color level (true color - minutes)
-        /// </summary>
-        public static int ProgressClockMaximumBlueColorLevelMinutes
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockMaximumBlueColorLevelMinutes;
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.ProgressClockMinimumBlueColorLevelMinutes)
-                    value = ScreensaverPackInit.SaversConfig.ProgressClockMinimumBlueColorLevelMinutes;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.ProgressClockMaximumBlueColorLevelMinutes = value;
-            }
-        }
-        /// <summary>
-        /// [ProgressClock] The maximum color level (255 colors or 16 colors - minutes)
-        /// </summary>
-        public static int ProgressClockMaximumColorLevelMinutes
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockMaximumColorLevelMinutes;
-            set
-            {
-                int FinalMaximumLevel = 255;
-                if (value <= ScreensaverPackInit.SaversConfig.ProgressClockMinimumColorLevelMinutes)
-                    value = ScreensaverPackInit.SaversConfig.ProgressClockMinimumColorLevelMinutes;
-                if (value > FinalMaximumLevel)
-                    value = FinalMaximumLevel;
-                ScreensaverPackInit.SaversConfig.ProgressClockMaximumColorLevelMinutes = value;
-            }
-        }
-        /// <summary>
-        /// [ProgressClock] The minimum red color level (true color - seconds)
-        /// </summary>
-        public static int ProgressClockMinimumRedColorLevelSeconds
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockMinimumRedColorLevelSeconds;
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.ProgressClockMinimumRedColorLevelSeconds = value;
-            }
-        }
-        /// <summary>
-        /// [ProgressClock] The minimum green color level (true color - seconds)
-        /// </summary>
-        public static int ProgressClockMinimumGreenColorLevelSeconds
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockMinimumGreenColorLevelSeconds;
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.ProgressClockMinimumGreenColorLevelSeconds = value;
-            }
-        }
-        /// <summary>
-        /// [ProgressClock] The minimum blue color level (true color - seconds)
-        /// </summary>
-        public static int ProgressClockMinimumBlueColorLevelSeconds
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockMinimumBlueColorLevelSeconds;
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.ProgressClockMinimumBlueColorLevelSeconds = value;
-            }
-        }
-        /// <summary>
-        /// [ProgressClock] The minimum color level (255 colors or 16 colors - seconds)
-        /// </summary>
-        public static int ProgressClockMinimumColorLevelSeconds
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockMinimumColorLevelSeconds;
-            set
-            {
-                int FinalMinimumLevel = 255;
-                if (value < 0)
-                    value = 1;
-                if (value > FinalMinimumLevel)
-                    value = FinalMinimumLevel;
-                ScreensaverPackInit.SaversConfig.ProgressClockMinimumColorLevelSeconds = value;
-            }
-        }
-        /// <summary>
-        /// [ProgressClock] The maximum red color level (true color - seconds)
-        /// </summary>
-        public static int ProgressClockMaximumRedColorLevelSeconds
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockMaximumRedColorLevelSeconds;
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.ProgressClockMinimumRedColorLevelSeconds)
-                    value = ScreensaverPackInit.SaversConfig.ProgressClockMinimumRedColorLevelSeconds;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.ProgressClockMaximumRedColorLevelSeconds = value;
-            }
-        }
-        /// <summary>
-        /// [ProgressClock] The maximum green color level (true color - seconds)
-        /// </summary>
-        public static int ProgressClockMaximumGreenColorLevelSeconds
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockMaximumGreenColorLevelSeconds;
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.ProgressClockMinimumGreenColorLevelSeconds)
-                    value = ScreensaverPackInit.SaversConfig.ProgressClockMinimumGreenColorLevelSeconds;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.ProgressClockMaximumGreenColorLevelSeconds = value;
-            }
-        }
-        /// <summary>
-        /// [ProgressClock] The maximum blue color level (true color - seconds)
-        /// </summary>
-        public static int ProgressClockMaximumBlueColorLevelSeconds
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockMaximumBlueColorLevelSeconds;
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.ProgressClockMinimumBlueColorLevelSeconds)
-                    value = ScreensaverPackInit.SaversConfig.ProgressClockMinimumBlueColorLevelSeconds;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.ProgressClockMaximumBlueColorLevelSeconds = value;
-            }
-        }
-        /// <summary>
-        /// [ProgressClock] The maximum color level (255 colors or 16 colors - seconds)
-        /// </summary>
-        public static int ProgressClockMaximumColorLevelSeconds
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockMaximumColorLevelSeconds;
-            set
-            {
-                int FinalMaximumLevel = 255;
-                if (value <= ScreensaverPackInit.SaversConfig.ProgressClockMinimumColorLevelSeconds)
-                    value = ScreensaverPackInit.SaversConfig.ProgressClockMinimumColorLevelSeconds;
-                if (value > FinalMaximumLevel)
-                    value = FinalMaximumLevel;
-                ScreensaverPackInit.SaversConfig.ProgressClockMaximumColorLevelSeconds = value;
-            }
-        }
-        /// <summary>
-        /// [ProgressClock] The minimum red color level (true color)
-        /// </summary>
-        public static int ProgressClockMinimumRedColorLevel
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockMinimumRedColorLevel;
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.ProgressClockMinimumRedColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [ProgressClock] The minimum green color level (true color)
-        /// </summary>
-        public static int ProgressClockMinimumGreenColorLevel
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockMinimumGreenColorLevel;
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.ProgressClockMinimumGreenColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [ProgressClock] The minimum blue color level (true color)
-        /// </summary>
-        public static int ProgressClockMinimumBlueColorLevel
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockMinimumBlueColorLevel;
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.ProgressClockMinimumBlueColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [ProgressClock] The minimum color level (255 colors or 16 colors)
-        /// </summary>
-        public static int ProgressClockMinimumColorLevel
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockMinimumColorLevel;
-            set
-            {
-                int FinalMinimumLevel = 255;
-                if (value < 0)
-                    value = 1;
-                if (value > FinalMinimumLevel)
-                    value = FinalMinimumLevel;
-                ScreensaverPackInit.SaversConfig.ProgressClockMinimumColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [ProgressClock] The maximum red color level (true color)
-        /// </summary>
-        public static int ProgressClockMaximumRedColorLevel
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockMaximumRedColorLevel;
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.ProgressClockMinimumRedColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.ProgressClockMinimumRedColorLevel;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.ProgressClockMaximumRedColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [ProgressClock] The maximum green color level (true color)
-        /// </summary>
-        public static int ProgressClockMaximumGreenColorLevel
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockMaximumGreenColorLevel;
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.ProgressClockMinimumGreenColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.ProgressClockMinimumGreenColorLevel;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.ProgressClockMaximumGreenColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [ProgressClock] The maximum blue color level (true color)
-        /// </summary>
-        public static int ProgressClockMaximumBlueColorLevel
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockMaximumBlueColorLevel;
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.ProgressClockMinimumBlueColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.ProgressClockMinimumBlueColorLevel;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.ProgressClockMaximumBlueColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [ProgressClock] The maximum color level (255 colors or 16 colors)
-        /// </summary>
-        public static int ProgressClockMaximumColorLevel
-        {
-            get => ScreensaverPackInit.SaversConfig.ProgressClockMaximumColorLevel;
-            set
-            {
-                int FinalMaximumLevel = 255;
-                if (value <= ScreensaverPackInit.SaversConfig.ProgressClockMinimumColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.ProgressClockMinimumColorLevel;
-                if (value > FinalMaximumLevel)
-                    value = FinalMaximumLevel;
-                ScreensaverPackInit.SaversConfig.ProgressClockMaximumColorLevel = value;
-            }
-        }
-
-    }
-
-    /// <summary>
     /// Display code for ProgressClock
     /// </summary>
     public class ProgressClockDisplay : BaseScreensaver, IScreensaver
@@ -842,7 +55,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            CurrentTicks = ProgressClockSettings.ProgressClockCycleColorsTicks;
+            CurrentTicks = ScreensaverPackInit.SaversConfig.ProgressClockCycleColorsTicks;
             base.ScreensaverPreparation();
         }
 
@@ -856,36 +69,36 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             int InformationPositionHours, InformationPositionMinutes, InformationPositionSeconds;
 
             DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Current tick: {0}", CurrentTicks);
-            if (ProgressClockSettings.ProgressClockCycleColors)
+            if (ScreensaverPackInit.SaversConfig.ProgressClockCycleColors)
             {
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Cycling colors...");
-                if (CurrentTicks >= ProgressClockSettings.ProgressClockCycleColorsTicks)
+                if (CurrentTicks >= ScreensaverPackInit.SaversConfig.ProgressClockCycleColorsTicks)
                 {
-                    var type = ProgressClockSettings.ProgressClockTrueColor ? ColorType.TrueColor : ColorType.EightBitColor;
+                    var type = ScreensaverPackInit.SaversConfig.ProgressClockTrueColor ? ColorType.TrueColor : ColorType.EightBitColor;
                     DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Current tick equals the maximum ticks to change color.");
                     ColorStorageHours =
-                        ColorTools.GetRandomColor(type, ProgressClockSettings.ProgressClockMinimumColorLevelHours, ProgressClockSettings.ProgressClockMaximumColorLevelHours,
-                                                        ProgressClockSettings.ProgressClockMinimumRedColorLevelHours, ProgressClockSettings.ProgressClockMaximumRedColorLevelHours,
-                                                        ProgressClockSettings.ProgressClockMinimumGreenColorLevelHours, ProgressClockSettings.ProgressClockMaximumGreenColorLevelHours,
-                                                        ProgressClockSettings.ProgressClockMinimumBlueColorLevelHours, ProgressClockSettings.ProgressClockMaximumBlueColorLevelHours);
+                        ColorTools.GetRandomColor(type, ScreensaverPackInit.SaversConfig.ProgressClockMinimumColorLevelHours, ScreensaverPackInit.SaversConfig.ProgressClockMaximumColorLevelHours,
+                                                        ScreensaverPackInit.SaversConfig.ProgressClockMinimumRedColorLevelHours, ScreensaverPackInit.SaversConfig.ProgressClockMaximumRedColorLevelHours,
+                                                        ScreensaverPackInit.SaversConfig.ProgressClockMinimumGreenColorLevelHours, ScreensaverPackInit.SaversConfig.ProgressClockMaximumGreenColorLevelHours,
+                                                        ScreensaverPackInit.SaversConfig.ProgressClockMinimumBlueColorLevelHours, ScreensaverPackInit.SaversConfig.ProgressClockMaximumBlueColorLevelHours);
                     DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color (Hours) (R;G;B: {0};{1};{2})", ColorStorageHours.RGB.R, ColorStorageHours.RGB.G, ColorStorageHours.RGB.B);
                     ColorStorageMinutes =
-                        ColorTools.GetRandomColor(type, ProgressClockSettings.ProgressClockMinimumColorLevelMinutes, ProgressClockSettings.ProgressClockMaximumColorLevelMinutes,
-                                                        ProgressClockSettings.ProgressClockMinimumRedColorLevelMinutes, ProgressClockSettings.ProgressClockMaximumRedColorLevelMinutes,
-                                                        ProgressClockSettings.ProgressClockMinimumGreenColorLevelMinutes, ProgressClockSettings.ProgressClockMaximumGreenColorLevelMinutes,
-                                                        ProgressClockSettings.ProgressClockMinimumBlueColorLevelMinutes, ProgressClockSettings.ProgressClockMaximumBlueColorLevelMinutes);
+                        ColorTools.GetRandomColor(type, ScreensaverPackInit.SaversConfig.ProgressClockMinimumColorLevelMinutes, ScreensaverPackInit.SaversConfig.ProgressClockMaximumColorLevelMinutes,
+                                                        ScreensaverPackInit.SaversConfig.ProgressClockMinimumRedColorLevelMinutes, ScreensaverPackInit.SaversConfig.ProgressClockMaximumRedColorLevelMinutes,
+                                                        ScreensaverPackInit.SaversConfig.ProgressClockMinimumGreenColorLevelMinutes, ScreensaverPackInit.SaversConfig.ProgressClockMaximumGreenColorLevelMinutes,
+                                                        ScreensaverPackInit.SaversConfig.ProgressClockMinimumBlueColorLevelMinutes, ScreensaverPackInit.SaversConfig.ProgressClockMaximumBlueColorLevelMinutes);
                     DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color (Minutes) (R;G;B: {0};{1};{2})", ColorStorageMinutes.RGB.R, ColorStorageMinutes.RGB.G, ColorStorageMinutes.RGB.B);
                     ColorStorageSeconds =
-                        ColorTools.GetRandomColor(type, ProgressClockSettings.ProgressClockMinimumColorLevelSeconds, ProgressClockSettings.ProgressClockMaximumColorLevelSeconds,
-                                                        ProgressClockSettings.ProgressClockMinimumRedColorLevelSeconds, ProgressClockSettings.ProgressClockMaximumRedColorLevelSeconds,
-                                                        ProgressClockSettings.ProgressClockMinimumGreenColorLevelSeconds, ProgressClockSettings.ProgressClockMaximumGreenColorLevelSeconds,
-                                                        ProgressClockSettings.ProgressClockMinimumBlueColorLevelSeconds, ProgressClockSettings.ProgressClockMaximumBlueColorLevelSeconds);
+                        ColorTools.GetRandomColor(type, ScreensaverPackInit.SaversConfig.ProgressClockMinimumColorLevelSeconds, ScreensaverPackInit.SaversConfig.ProgressClockMaximumColorLevelSeconds,
+                                                        ScreensaverPackInit.SaversConfig.ProgressClockMinimumRedColorLevelSeconds, ScreensaverPackInit.SaversConfig.ProgressClockMaximumRedColorLevelSeconds,
+                                                        ScreensaverPackInit.SaversConfig.ProgressClockMinimumGreenColorLevelSeconds, ScreensaverPackInit.SaversConfig.ProgressClockMaximumGreenColorLevelSeconds,
+                                                        ScreensaverPackInit.SaversConfig.ProgressClockMinimumBlueColorLevelSeconds, ScreensaverPackInit.SaversConfig.ProgressClockMaximumBlueColorLevelSeconds);
                     DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color (Seconds) (R;G;B: {0};{1};{2})", ColorStorageSeconds.RGB.R, ColorStorageSeconds.RGB.G, ColorStorageSeconds.RGB.B);
                     ColorStorage =
-                        ColorTools.GetRandomColor(type, ProgressClockSettings.ProgressClockMinimumColorLevel, ProgressClockSettings.ProgressClockMaximumColorLevel,
-                                                        ProgressClockSettings.ProgressClockMinimumRedColorLevel, ProgressClockSettings.ProgressClockMaximumRedColorLevel,
-                                                        ProgressClockSettings.ProgressClockMinimumGreenColorLevel, ProgressClockSettings.ProgressClockMaximumGreenColorLevel,
-                                                        ProgressClockSettings.ProgressClockMinimumBlueColorLevel, ProgressClockSettings.ProgressClockMaximumBlueColorLevel);
+                        ColorTools.GetRandomColor(type, ScreensaverPackInit.SaversConfig.ProgressClockMinimumColorLevel, ScreensaverPackInit.SaversConfig.ProgressClockMaximumColorLevel,
+                                                        ScreensaverPackInit.SaversConfig.ProgressClockMinimumRedColorLevel, ScreensaverPackInit.SaversConfig.ProgressClockMaximumRedColorLevel,
+                                                        ScreensaverPackInit.SaversConfig.ProgressClockMinimumGreenColorLevel, ScreensaverPackInit.SaversConfig.ProgressClockMaximumGreenColorLevel,
+                                                        ScreensaverPackInit.SaversConfig.ProgressClockMinimumBlueColorLevel, ScreensaverPackInit.SaversConfig.ProgressClockMaximumBlueColorLevel);
                     DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", ColorStorage.RGB.R, ColorStorage.RGB.G, ColorStorage.RGB.B);
                     CurrentTicks = 0L;
                 }
@@ -893,10 +106,10 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             else
             {
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Parsing colors...");
-                ColorStorageHours = new Color(ProgressClockSettings.ProgressClockHoursProgressColor);
-                ColorStorageMinutes = new Color(ProgressClockSettings.ProgressClockMinutesProgressColor);
-                ColorStorageSeconds = new Color(ProgressClockSettings.ProgressClockSecondsProgressColor);
-                ColorStorage = new Color(ProgressClockSettings.ProgressClockProgressColor);
+                ColorStorageHours = new Color(ScreensaverPackInit.SaversConfig.ProgressClockHoursProgressColor);
+                ColorStorageMinutes = new Color(ScreensaverPackInit.SaversConfig.ProgressClockMinutesProgressColor);
+                ColorStorageSeconds = new Color(ScreensaverPackInit.SaversConfig.ProgressClockSecondsProgressColor);
+                ColorStorage = new Color(ScreensaverPackInit.SaversConfig.ProgressClockProgressColor);
             }
             ProgressFillPositionHours = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d) - 10;
             DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Fill position for progress (Hours) {0}", ProgressFillPositionHours);
@@ -914,36 +127,36 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             // Populate the border settings
             var hoursBorder = new BorderSettings()
             {
-                BorderUpperLeftCornerChar = ProgressClockSettings.ProgressClockUpperLeftCornerCharHours,
-                BorderLowerLeftCornerChar = ProgressClockSettings.ProgressClockLowerLeftCornerCharHours,
-                BorderUpperRightCornerChar = ProgressClockSettings.ProgressClockUpperRightCornerCharHours,
-                BorderLowerRightCornerChar = ProgressClockSettings.ProgressClockLowerRightCornerCharHours,
-                BorderUpperFrameChar = ProgressClockSettings.ProgressClockUpperFrameCharHours,
-                BorderLowerFrameChar = ProgressClockSettings.ProgressClockLowerFrameCharHours,
-                BorderLeftFrameChar = ProgressClockSettings.ProgressClockLeftFrameCharHours,
-                BorderRightFrameChar = ProgressClockSettings.ProgressClockRightFrameCharHours,
+                BorderUpperLeftCornerChar = ScreensaverPackInit.SaversConfig.ProgressClockUpperLeftCornerCharHours,
+                BorderLowerLeftCornerChar = ScreensaverPackInit.SaversConfig.ProgressClockLowerLeftCornerCharHours,
+                BorderUpperRightCornerChar = ScreensaverPackInit.SaversConfig.ProgressClockUpperRightCornerCharHours,
+                BorderLowerRightCornerChar = ScreensaverPackInit.SaversConfig.ProgressClockLowerRightCornerCharHours,
+                BorderUpperFrameChar = ScreensaverPackInit.SaversConfig.ProgressClockUpperFrameCharHours,
+                BorderLowerFrameChar = ScreensaverPackInit.SaversConfig.ProgressClockLowerFrameCharHours,
+                BorderLeftFrameChar = ScreensaverPackInit.SaversConfig.ProgressClockLeftFrameCharHours,
+                BorderRightFrameChar = ScreensaverPackInit.SaversConfig.ProgressClockRightFrameCharHours,
             };
             var minutesBorder = new BorderSettings()
             {
-                BorderUpperLeftCornerChar = ProgressClockSettings.ProgressClockUpperLeftCornerCharMinutes,
-                BorderLowerLeftCornerChar = ProgressClockSettings.ProgressClockLowerLeftCornerCharMinutes,
-                BorderUpperRightCornerChar = ProgressClockSettings.ProgressClockUpperRightCornerCharMinutes,
-                BorderLowerRightCornerChar = ProgressClockSettings.ProgressClockLowerRightCornerCharMinutes,
-                BorderUpperFrameChar = ProgressClockSettings.ProgressClockUpperFrameCharMinutes,
-                BorderLowerFrameChar = ProgressClockSettings.ProgressClockLowerFrameCharMinutes,
-                BorderLeftFrameChar = ProgressClockSettings.ProgressClockLeftFrameCharMinutes,
-                BorderRightFrameChar = ProgressClockSettings.ProgressClockRightFrameCharMinutes,
+                BorderUpperLeftCornerChar = ScreensaverPackInit.SaversConfig.ProgressClockUpperLeftCornerCharMinutes,
+                BorderLowerLeftCornerChar = ScreensaverPackInit.SaversConfig.ProgressClockLowerLeftCornerCharMinutes,
+                BorderUpperRightCornerChar = ScreensaverPackInit.SaversConfig.ProgressClockUpperRightCornerCharMinutes,
+                BorderLowerRightCornerChar = ScreensaverPackInit.SaversConfig.ProgressClockLowerRightCornerCharMinutes,
+                BorderUpperFrameChar = ScreensaverPackInit.SaversConfig.ProgressClockUpperFrameCharMinutes,
+                BorderLowerFrameChar = ScreensaverPackInit.SaversConfig.ProgressClockLowerFrameCharMinutes,
+                BorderLeftFrameChar = ScreensaverPackInit.SaversConfig.ProgressClockLeftFrameCharMinutes,
+                BorderRightFrameChar = ScreensaverPackInit.SaversConfig.ProgressClockRightFrameCharMinutes,
             };
             var secondsBorder = new BorderSettings()
             {
-                BorderUpperLeftCornerChar = ProgressClockSettings.ProgressClockUpperLeftCornerCharSeconds,
-                BorderLowerLeftCornerChar = ProgressClockSettings.ProgressClockLowerLeftCornerCharSeconds,
-                BorderUpperRightCornerChar = ProgressClockSettings.ProgressClockUpperRightCornerCharSeconds,
-                BorderLowerRightCornerChar = ProgressClockSettings.ProgressClockLowerRightCornerCharSeconds,
-                BorderUpperFrameChar = ProgressClockSettings.ProgressClockUpperFrameCharSeconds,
-                BorderLowerFrameChar = ProgressClockSettings.ProgressClockLowerFrameCharSeconds,
-                BorderLeftFrameChar = ProgressClockSettings.ProgressClockLeftFrameCharSeconds,
-                BorderRightFrameChar = ProgressClockSettings.ProgressClockRightFrameCharSeconds,
+                BorderUpperLeftCornerChar = ScreensaverPackInit.SaversConfig.ProgressClockUpperLeftCornerCharSeconds,
+                BorderLowerLeftCornerChar = ScreensaverPackInit.SaversConfig.ProgressClockLowerLeftCornerCharSeconds,
+                BorderUpperRightCornerChar = ScreensaverPackInit.SaversConfig.ProgressClockUpperRightCornerCharSeconds,
+                BorderLowerRightCornerChar = ScreensaverPackInit.SaversConfig.ProgressClockLowerRightCornerCharSeconds,
+                BorderUpperFrameChar = ScreensaverPackInit.SaversConfig.ProgressClockUpperFrameCharSeconds,
+                BorderLowerFrameChar = ScreensaverPackInit.SaversConfig.ProgressClockLowerFrameCharSeconds,
+                BorderLeftFrameChar = ScreensaverPackInit.SaversConfig.ProgressClockLeftFrameCharSeconds,
+                BorderRightFrameChar = ScreensaverPackInit.SaversConfig.ProgressClockRightFrameCharSeconds,
             };
 
             // Render the progress clock bars
@@ -976,16 +189,16 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 }
 
                 // Print information
-                if (!string.IsNullOrEmpty(ProgressClockSettings.ProgressClockInfoTextHours))
-                    TextWriterWhereColor.WriteWhereColor(PlaceParse.ProbePlaces(ProgressClockSettings.ProgressClockInfoTextHours), 4, InformationPositionHours, true, ColorStorageHours, TimeDateTools.KernelDateTime.Hour);
+                if (!string.IsNullOrEmpty(ScreensaverPackInit.SaversConfig.ProgressClockInfoTextHours))
+                    TextWriterWhereColor.WriteWhereColor(PlaceParse.ProbePlaces(ScreensaverPackInit.SaversConfig.ProgressClockInfoTextHours), 4, InformationPositionHours, true, ColorStorageHours, TimeDateTools.KernelDateTime.Hour);
                 else
                     TextWriterWhereColor.WriteWhereColor("H: {0}/24  ", 4, InformationPositionHours, true, ColorStorageHours, TimeDateTools.KernelDateTime.Hour);
-                if (!string.IsNullOrEmpty(ProgressClockSettings.ProgressClockInfoTextMinutes))
-                    TextWriterWhereColor.WriteWhereColor(PlaceParse.ProbePlaces(ProgressClockSettings.ProgressClockInfoTextMinutes), 4, InformationPositionMinutes, true, ColorStorageMinutes, TimeDateTools.KernelDateTime.Minute);
+                if (!string.IsNullOrEmpty(ScreensaverPackInit.SaversConfig.ProgressClockInfoTextMinutes))
+                    TextWriterWhereColor.WriteWhereColor(PlaceParse.ProbePlaces(ScreensaverPackInit.SaversConfig.ProgressClockInfoTextMinutes), 4, InformationPositionMinutes, true, ColorStorageMinutes, TimeDateTools.KernelDateTime.Minute);
                 else
                     TextWriterWhereColor.WriteWhereColor("M: {0}/60  ", 4, InformationPositionMinutes, true, ColorStorageMinutes, TimeDateTools.KernelDateTime.Minute);
-                if (!string.IsNullOrEmpty(ProgressClockSettings.ProgressClockInfoTextHours))
-                    TextWriterWhereColor.WriteWhereColor(PlaceParse.ProbePlaces(ProgressClockSettings.ProgressClockInfoTextSeconds), 4, InformationPositionSeconds, true, ColorStorageSeconds, TimeDateTools.KernelDateTime.Second);
+                if (!string.IsNullOrEmpty(ScreensaverPackInit.SaversConfig.ProgressClockInfoTextHours))
+                    TextWriterWhereColor.WriteWhereColor(PlaceParse.ProbePlaces(ScreensaverPackInit.SaversConfig.ProgressClockInfoTextSeconds), 4, InformationPositionSeconds, true, ColorStorageSeconds, TimeDateTools.KernelDateTime.Second);
                 else
                     TextWriterWhereColor.WriteWhereColor("S: {0}/60  ", 4, InformationPositionSeconds, true, ColorStorageSeconds, TimeDateTools.KernelDateTime.Second);
 
@@ -995,12 +208,12 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 TextWriterWhereColor.WriteWhereColor(currentDate, (int)Math.Round(ConsoleWrapper.WindowWidth / 2d - currentDate.Length / 2d), ConsoleWrapper.WindowHeight - 2, ColorStorage);
                 lastDate = currentDate;
             }
-            if (ProgressClockSettings.ProgressClockCycleColors)
+            if (ScreensaverPackInit.SaversConfig.ProgressClockCycleColors)
                 CurrentTicks += 1L;
 
             // Reset resize sync
             ConsoleResizeHandler.WasResized();
-            ThreadManager.SleepNoBlock(ProgressClockSettings.ProgressClockDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.ProgressClockDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 
     }

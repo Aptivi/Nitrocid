@@ -29,141 +29,6 @@ using Terminaux.Colors;
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
     /// <summary>
-    /// Settings for Typo
-    /// </summary>
-    public static class TypoSettings
-    {
-
-        /// <summary>
-        /// [Typo] How many milliseconds to wait before making the next write?
-        /// </summary>
-        public static int TypoDelay
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.TypoDelay;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 50;
-                ScreensaverPackInit.SaversConfig.TypoDelay = value;
-            }
-        }
-        /// <summary>
-        /// [Typo] How many milliseconds to wait before writing the text again?
-        /// </summary>
-        public static int TypoWriteAgainDelay
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.TypoWriteAgainDelay;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 3000;
-                ScreensaverPackInit.SaversConfig.TypoWriteAgainDelay = value;
-            }
-        }
-        /// <summary>
-        /// [Typo] Text for Typo. Longer is better.
-        /// </summary>
-        public static string TypoWrite
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.TypoWrite;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "Nitrocid KS";
-                ScreensaverPackInit.SaversConfig.TypoWrite = value;
-            }
-        }
-        /// <summary>
-        /// [Typo] Minimum writing speed in WPM
-        /// </summary>
-        public static int TypoWritingSpeedMin
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.TypoWritingSpeedMin;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 50;
-                ScreensaverPackInit.SaversConfig.TypoWritingSpeedMin = value;
-            }
-        }
-        /// <summary>
-        /// [Typo] Maximum writing speed in WPM
-        /// </summary>
-        public static int TypoWritingSpeedMax
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.TypoWritingSpeedMax;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 80;
-                ScreensaverPackInit.SaversConfig.TypoWritingSpeedMax = value;
-            }
-        }
-        /// <summary>
-        /// [Typo] Possibility that the writer made a typo in percent
-        /// </summary>
-        public static int TypoMissStrikePossibility
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.TypoMissStrikePossibility;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 20;
-                ScreensaverPackInit.SaversConfig.TypoMissStrikePossibility = value;
-            }
-        }
-        /// <summary>
-        /// [Typo] Possibility that the writer missed a character in percent
-        /// </summary>
-        public static int TypoMissPossibility
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.TypoMissPossibility;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 10;
-                ScreensaverPackInit.SaversConfig.TypoMissPossibility = value;
-            }
-        }
-        /// <summary>
-        /// [Typo] Text color
-        /// </summary>
-        public static string TypoTextColor
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.TypoTextColor;
-            }
-            set
-            {
-                ScreensaverPackInit.SaversConfig.TypoTextColor = new Color(value).PlainSequence;
-            }
-        }
-
-    }
-
-    /// <summary>
     /// Display code for Typo
     /// </summary>
     public class TypoDisplay : BaseScreensaver, IScreensaver
@@ -176,15 +41,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            ColorTools.SetConsoleColor(new Color(TypoSettings.TypoTextColor));
+            ColorTools.SetConsoleColor(new Color(ScreensaverPackInit.SaversConfig.TypoTextColor));
             ConsoleWrapper.Clear();
         }
 
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            int CpmSpeedMin = TypoSettings.TypoWritingSpeedMin * 5;
-            int CpmSpeedMax = TypoSettings.TypoWritingSpeedMax * 5;
+            int CpmSpeedMin = ScreensaverPackInit.SaversConfig.TypoWritingSpeedMin * 5;
+            int CpmSpeedMax = ScreensaverPackInit.SaversConfig.TypoWritingSpeedMax * 5;
             var Strikes = new List<string>() { "q`12wsa", "r43edfgt5", "u76yhjki8", @"p09ol;'[-=]\", "/';. ", "m,lkjn ", "vbhgfc ", "zxdsa " };
             var CapStrikes = new List<string>() { "Q~!@WSA", "R$#EDFGT%", "U&^YHJKI*", "P)(OL:\"{_+}|", "?\":> ", "M<LKJN ", "VBHGFC ", "ZXDSA " };
             string CapSymbols = "~!@$#%&^*)(:\"{_+}|?><";
@@ -198,7 +63,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Get struck character and write it
             var StrikeCharsIndex = 0;
-            foreach (char StruckChar in TypoSettings.TypoWrite)
+            foreach (char StruckChar in ScreensaverPackInit.SaversConfig.TypoWrite)
             {
                 char StruckCharAssigned = StruckChar;
 
@@ -213,14 +78,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Struck character: {0}", StruckCharAssigned);
 
                 // See if the typo is guaranteed
-                double Probability = (TypoSettings.TypoMissStrikePossibility >= 80 ? 80 : TypoSettings.TypoMissStrikePossibility) / 100d;
+                double Probability = (ScreensaverPackInit.SaversConfig.TypoMissStrikePossibility >= 80 ? 80 : ScreensaverPackInit.SaversConfig.TypoMissStrikePossibility) / 100d;
                 bool TypoGuaranteed = RandomDriver.RandomChance(Probability);
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Probability: {0} Guarantee: {1}", Probability, TypoGuaranteed);
                 if (TypoGuaranteed)
                 {
                     // Sometimes, a typo is generated by missing a character.
                     DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Made a typo!");
-                    double MissProbability = (TypoSettings.TypoMissPossibility >= 10 ? 10 : TypoSettings.TypoMissPossibility) / 100d;
+                    double MissProbability = (ScreensaverPackInit.SaversConfig.TypoMissPossibility >= 10 ? 10 : ScreensaverPackInit.SaversConfig.TypoMissPossibility) / 100d;
                     bool MissGuaranteed = RandomDriver.RandomChance(MissProbability);
                     if (MissGuaranteed)
                     {
@@ -271,11 +136,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             // Wait until retry
             ConsoleWrapper.WriteLine();
             if (!ConsoleResizeHandler.WasResized(false))
-                ThreadManager.SleepNoBlock(TypoSettings.TypoWriteAgainDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.TypoWriteAgainDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
 
             // Reset resize sync
             ConsoleResizeHandler.WasResized();
-            ThreadManager.SleepNoBlock(TypoSettings.TypoDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.TypoDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 
     }

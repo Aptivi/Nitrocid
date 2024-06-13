@@ -22,6 +22,7 @@ using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Configuration.Instances;
 using Nitrocid.Kernel.Configuration.Settings;
 using Nitrocid.Misc.Reflection.Internal;
+using Nitrocid.ScreensaverPacks.Screensavers;
 using System;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
@@ -39,988 +40,4040 @@ namespace Nitrocid.ScreensaverPacks.Settings
             ConfigTools.GetSettingsEntries(ResourcesManager.GetData("AddonSaverSettings.json", ResourcesType.Misc, typeof(ExtraSaversConfig).Assembly));
 
         #region Matrix
+        private int matrixDelay = 10;
+        private int matrixMaxSteps = 25;
+
         /// <summary>
         /// [Matrix] How many milliseconds to wait before making the next write?
         /// </summary>
-        public int MatrixDelay { get; set; } = 10;
+        public int MatrixDelay
+        {
+            get
+            {
+                return matrixDelay;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 10;
+                matrixDelay = value;
+            }
+        }
+
         /// <summary>
         /// [Matrix] How many fade steps to do?
         /// </summary>
-        public int MatrixMaxSteps { get; set; } = 25;
+        public int MatrixMaxSteps
+        {
+            get
+            {
+                return matrixMaxSteps;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 25;
+                matrixMaxSteps = value;
+            }
+        }
         #endregion
+
+        #region ColorMix
+        private bool colorMixTrueColor = true;
+        private int colorMixDelay = 1;
+        private string colorMixBackgroundColor = new Color(ConsoleColors.Black).PlainSequence;
+        private int colorMixMinimumRedColorLevel = 0;
+        private int colorMixMinimumGreenColorLevel = 0;
+        private int colorMixMinimumBlueColorLevel = 0;
+        private int colorMixMinimumColorLevel = 0;
+        private int colorMixMaximumRedColorLevel = 255;
+        private int colorMixMaximumGreenColorLevel = 255;
+        private int colorMixMaximumBlueColorLevel = 255;
+        private int colorMixMaximumColorLevel = 255;
 
         /// <summary>
         /// [ColorMix] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
-        public bool ColorMixTrueColor { get; set; } = true;
+        public bool ColorMixTrueColor
+        {
+            get
+            {
+                return colorMixTrueColor;
+            }
+            set
+            {
+                colorMixTrueColor = value;
+            }
+        }
+
         /// <summary>
         /// [ColorMix] How many milliseconds to wait before making the next write?
         /// </summary>
-        public int ColorMixDelay { get; set; } = 1;
+        public int ColorMixDelay
+        {
+            get
+            {
+                return colorMixDelay;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 1;
+                colorMixDelay = value;
+            }
+        }
+
         /// <summary>
         /// [ColorMix] Screensaver background color
         /// </summary>
-        public string ColorMixBackgroundColor { get; set; } = new Color(ConsoleColors.Black).PlainSequence;
+        public string ColorMixBackgroundColor
+        {
+            get
+            {
+                return colorMixBackgroundColor;
+            }
+            set
+            {
+                colorMixBackgroundColor = new Color(value).PlainSequence;
+            }
+        }
+
         /// <summary>
         /// [ColorMix] The minimum red color level (true color)
         /// </summary>
-        public int ColorMixMinimumRedColorLevel { get; set; } = 0;
+        public int ColorMixMinimumRedColorLevel
+        {
+            get
+            {
+                return colorMixMinimumRedColorLevel;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 0;
+                if (value > 255)
+                    value = 255;
+                colorMixMinimumRedColorLevel = value;
+            }
+        }
+
         /// <summary>
         /// [ColorMix] The minimum green color level (true color)
         /// </summary>
-        public int ColorMixMinimumGreenColorLevel { get; set; } = 0;
+        public int ColorMixMinimumGreenColorLevel
+        {
+            get
+            {
+                return colorMixMinimumGreenColorLevel;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 0;
+                if (value > 255)
+                    value = 255;
+                colorMixMinimumGreenColorLevel = value;
+            }
+        }
+
         /// <summary>
         /// [ColorMix] The minimum blue color level (true color)
         /// </summary>
-        public int ColorMixMinimumBlueColorLevel { get; set; } = 0;
+        public int ColorMixMinimumBlueColorLevel
+        {
+            get
+            {
+                return colorMixMinimumBlueColorLevel;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 0;
+                if (value > 255)
+                    value = 255;
+                colorMixMinimumBlueColorLevel = value;
+            }
+        }
+
         /// <summary>
         /// [ColorMix] The minimum color level (255 colors or 16 colors)
         /// </summary>
-        public int ColorMixMinimumColorLevel { get; set; } = 0;
+        public int ColorMixMinimumColorLevel
+        {
+            get
+            {
+                return colorMixMinimumColorLevel;
+            }
+            set
+            {
+                int FinalMinimumLevel = 255;
+                if (value <= 0)
+                    value = 0;
+                if (value > FinalMinimumLevel)
+                    value = FinalMinimumLevel;
+                colorMixMinimumColorLevel = value;
+            }
+        }
+
         /// <summary>
         /// [ColorMix] The maximum red color level (true color)
         /// </summary>
-        public int ColorMixMaximumRedColorLevel { get; set; } = 255;
+        public int ColorMixMaximumRedColorLevel
+        {
+            get
+            {
+                return colorMixMaximumRedColorLevel;
+            }
+            set
+            {
+                if (value <= colorMixMaximumRedColorLevel)
+                    value = colorMixMaximumRedColorLevel;
+                if (value > 255)
+                    value = 255;
+                colorMixMaximumRedColorLevel = value;
+            }
+        }
+
         /// <summary>
         /// [ColorMix] The maximum green color level (true color)
         /// </summary>
-        public int ColorMixMaximumGreenColorLevel { get; set; } = 255;
+        public int ColorMixMaximumGreenColorLevel
+        {
+            get
+            {
+                return colorMixMaximumGreenColorLevel;
+            }
+            set
+            {
+                if (value <= colorMixMaximumGreenColorLevel)
+                    value = colorMixMaximumGreenColorLevel;
+                if (value > 255)
+                    value = 255;
+                colorMixMaximumGreenColorLevel = value;
+            }
+        }
+
         /// <summary>
         /// [ColorMix] The maximum blue color level (true color)
         /// </summary>
-        public int ColorMixMaximumBlueColorLevel { get; set; } = 255;
+        public int ColorMixMaximumBlueColorLevel
+        {
+            get
+            {
+                return colorMixMaximumBlueColorLevel;
+            }
+            set
+            {
+                if (value <= colorMixMaximumBlueColorLevel)
+                    value = colorMixMaximumBlueColorLevel;
+                if (value > 255)
+                    value = 255;
+                colorMixMaximumBlueColorLevel = value;
+            }
+        }
+
         /// <summary>
         /// [ColorMix] The maximum color level (255 colors or 16 colors)
         /// </summary>
-        public int ColorMixMaximumColorLevel { get; set; } = 255;
+        public int ColorMixMaximumColorLevel
+        {
+            get
+            {
+                return colorMixMaximumColorLevel;
+            }
+            set
+            {
+                int FinalMaximumLevel = 255;
+                if (value <= colorMixMaximumColorLevel)
+                    value = colorMixMaximumColorLevel;
+                if (value > FinalMaximumLevel)
+                    value = FinalMaximumLevel;
+                colorMixMaximumColorLevel = value;
+            }
+        }
+        #endregion
+
+        #region Disco
+        private bool discoTrueColor = true;
+        private int discoDelay = 100;
+        private bool discoUseBeatsPerMinute;
+        private bool discoCycleColors;
+        private bool discoEnableFedMode;
+        private int discoMinimumRedColorLevel = 0;
+        private int discoMinimumGreenColorLevel = 0;
+        private int discoMinimumBlueColorLevel = 0;
+        private int discoMinimumColorLevel = 0;
+        private int discoMaximumRedColorLevel = 255;
+        private int discoMaximumGreenColorLevel = 255;
+        private int discoMaximumBlueColorLevel = 255;
+        private int discoMaximumColorLevel = 255;
+
         /// <summary>
         /// [Disco] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
-        public bool DiscoTrueColor { get; set; } = true;
+        public bool DiscoTrueColor
+        {
+            get
+            {
+                return discoTrueColor;
+            }
+            set
+            {
+                discoTrueColor = value;
+            }
+        }
+
         /// <summary>
         /// [Disco] How many milliseconds, or beats per minute, to wait before making the next write?
         /// </summary>
-        public int DiscoDelay { get; set; } = 100;
+        public int DiscoDelay
+        {
+            get
+            {
+                return discoDelay;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 100;
+                discoDelay = value;
+            }
+        }
+
         /// <summary>
         /// [Disco] Whether to use the Beats Per Minute (1/4) to change the writing delay. If False, will use the standard milliseconds delay instead.
         /// </summary>
-        public bool DiscoUseBeatsPerMinute { get; set; }
+        public bool DiscoUseBeatsPerMinute
+        {
+            get
+            {
+                return discoUseBeatsPerMinute;
+            }
+            set
+            {
+                discoUseBeatsPerMinute = value;
+            }
+        }
+
         /// <summary>
         /// [Disco] Enable color cycling
         /// </summary>
-        public bool DiscoCycleColors { get; set; }
+        public bool DiscoCycleColors
+        {
+            get
+            {
+                return discoCycleColors;
+            }
+            set
+            {
+                discoCycleColors = value;
+            }
+        }
+
         /// <summary>
         /// [Disco] Uses the black and white cycle to produce the same effect as the legacy "fed" screensaver introduced back in v0.0.1
         /// </summary>
-        public bool DiscoEnableFedMode { get; set; }
+        public bool DiscoEnableFedMode
+        {
+            get
+            {
+                return discoEnableFedMode;
+            }
+            set
+            {
+                discoEnableFedMode = value;
+            }
+        }
+
         /// <summary>
         /// [Disco] The minimum red color level (true color)
         /// </summary>
-        public int DiscoMinimumRedColorLevel { get; set; } = 0;
+        public int DiscoMinimumRedColorLevel
+        {
+            get
+            {
+                return discoMinimumRedColorLevel;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 0;
+                if (value > 255)
+                    value = 255;
+                discoMinimumRedColorLevel = value;
+            }
+        }
+
         /// <summary>
         /// [Disco] The minimum green color level (true color)
         /// </summary>
-        public int DiscoMinimumGreenColorLevel { get; set; } = 0;
+        public int DiscoMinimumGreenColorLevel
+        {
+            get
+            {
+                return discoMinimumGreenColorLevel;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 0;
+                if (value > 255)
+                    value = 255;
+                discoMinimumGreenColorLevel = value;
+            }
+        }
+
         /// <summary>
         /// [Disco] The minimum blue color level (true color)
         /// </summary>
-        public int DiscoMinimumBlueColorLevel { get; set; } = 0;
+        public int DiscoMinimumBlueColorLevel
+        {
+            get
+            {
+                return discoMinimumBlueColorLevel;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 0;
+                if (value > 255)
+                    value = 255;
+                discoMinimumBlueColorLevel = value;
+            }
+        }
+
         /// <summary>
         /// [Disco] The minimum color level (255 colors or 16 colors)
         /// </summary>
-        public int DiscoMinimumColorLevel { get; set; } = 0;
+        public int DiscoMinimumColorLevel
+        {
+            get
+            {
+                return discoMinimumColorLevel;
+            }
+            set
+            {
+                int FinalMinimumLevel = 255;
+                if (value <= 0)
+                    value = 0;
+                if (value > FinalMinimumLevel)
+                    value = FinalMinimumLevel;
+                discoMinimumColorLevel = value;
+            }
+        }
+
         /// <summary>
         /// [Disco] The maximum red color level (true color)
         /// </summary>
-        public int DiscoMaximumRedColorLevel { get; set; } = 255;
+        public int DiscoMaximumRedColorLevel
+        {
+            get
+            {
+                return discoMaximumRedColorLevel;
+            }
+            set
+            {
+                if (value <= discoMaximumRedColorLevel)
+                    value = discoMaximumRedColorLevel;
+                if (value > 255)
+                    value = 255;
+                discoMaximumRedColorLevel = value;
+            }
+        }
+
         /// <summary>
         /// [Disco] The maximum green color level (true color)
         /// </summary>
-        public int DiscoMaximumGreenColorLevel { get; set; } = 255;
+        public int DiscoMaximumGreenColorLevel
+        {
+            get
+            {
+                return discoMaximumGreenColorLevel;
+            }
+            set
+            {
+                if (value <= discoMaximumGreenColorLevel)
+                    value = discoMaximumGreenColorLevel;
+                if (value > 255)
+                    value = 255;
+                discoMaximumGreenColorLevel = value;
+            }
+        }
+
         /// <summary>
         /// [Disco] The maximum blue color level (true color)
         /// </summary>
-        public int DiscoMaximumBlueColorLevel { get; set; } = 255;
+        public int DiscoMaximumBlueColorLevel
+        {
+            get
+            {
+                return discoMaximumBlueColorLevel;
+            }
+            set
+            {
+                if (value <= discoMaximumBlueColorLevel)
+                    value = discoMaximumBlueColorLevel;
+                if (value > 255)
+                    value = 255;
+                discoMaximumBlueColorLevel = value;
+            }
+        }
+
         /// <summary>
         /// [Disco] The maximum color level (255 colors or 16 colors)
         /// </summary>
-        public int DiscoMaximumColorLevel { get; set; } = 255;
+        public int DiscoMaximumColorLevel
+        {
+            get
+            {
+                return discoMaximumColorLevel;
+            }
+            set
+            {
+                int FinalMaximumLevel = 255;
+                if (value <= discoMaximumColorLevel)
+                    value = discoMaximumColorLevel;
+                if (value > FinalMaximumLevel)
+                    value = FinalMaximumLevel;
+                discoMaximumColorLevel = value;
+            }
+        }
+        #endregion
+
+        #region GlitterColor
+        private bool glitterColorTrueColor = true;
+        private int glitterColorDelay = 1;
+        private int glitterColorMinimumRedColorLevel = 0;
+        private int glitterColorMinimumGreenColorLevel = 0;
+        private int glitterColorMinimumBlueColorLevel = 0;
+        private int glitterColorMinimumColorLevel = 0;
+        private int glitterColorMaximumRedColorLevel = 255;
+        private int glitterColorMaximumGreenColorLevel = 255;
+        private int glitterColorMaximumBlueColorLevel = 255;
+        private int glitterColorMaximumColorLevel = 255;
+
         /// <summary>
         /// [GlitterColor] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
-        public bool GlitterColorTrueColor { get; set; } = true;
+        public bool GlitterColorTrueColor
+        {
+            get
+            {
+                return glitterColorTrueColor;
+            }
+            set
+            {
+                glitterColorTrueColor = value;
+            }
+        }
+
         /// <summary>
         /// [GlitterColor] How many milliseconds to wait before making the next write?
         /// </summary>
-        public int GlitterColorDelay { get; set; } = 1;
+        public int GlitterColorDelay
+        {
+            get
+            {
+                return glitterColorDelay;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 1;
+                glitterColorDelay = value;
+            }
+        }
+
         /// <summary>
         /// [GlitterColor] The minimum red color level (true color)
         /// </summary>
-        public int GlitterColorMinimumRedColorLevel { get; set; } = 0;
+        public int GlitterColorMinimumRedColorLevel
+        {
+            get
+            {
+                return glitterColorMinimumRedColorLevel;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 0;
+                if (value > 255)
+                    value = 255;
+                glitterColorMinimumRedColorLevel = value;
+            }
+        }
+
         /// <summary>
         /// [GlitterColor] The minimum green color level (true color)
         /// </summary>
-        public int GlitterColorMinimumGreenColorLevel { get; set; } = 0;
+        public int GlitterColorMinimumGreenColorLevel
+        {
+            get
+            {
+                return glitterColorMinimumGreenColorLevel;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 0;
+                if (value > 255)
+                    value = 255;
+                glitterColorMinimumGreenColorLevel = value;
+            }
+        }
+
         /// <summary>
         /// [GlitterColor] The minimum blue color level (true color)
         /// </summary>
-        public int GlitterColorMinimumBlueColorLevel { get; set; } = 0;
+        public int GlitterColorMinimumBlueColorLevel
+        {
+            get
+            {
+                return glitterColorMinimumBlueColorLevel;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 0;
+                if (value > 255)
+                    value = 255;
+                glitterColorMinimumBlueColorLevel = value;
+            }
+        }
+
         /// <summary>
         /// [GlitterColor] The minimum color level (255 colors or 16 colors)
         /// </summary>
-        public int GlitterColorMinimumColorLevel { get; set; } = 0;
+        public int GlitterColorMinimumColorLevel
+        {
+            get
+            {
+                return glitterColorMinimumColorLevel;
+            }
+            set
+            {
+                int FinalMinimumLevel = 255;
+                if (value <= 0)
+                    value = 0;
+                if (value > FinalMinimumLevel)
+                    value = FinalMinimumLevel;
+                glitterColorMinimumColorLevel = value;
+            }
+        }
+
         /// <summary>
         /// [GlitterColor] The maximum red color level (true color)
         /// </summary>
-        public int GlitterColorMaximumRedColorLevel { get; set; } = 255;
+        public int GlitterColorMaximumRedColorLevel
+        {
+            get
+            {
+                return glitterColorMaximumRedColorLevel;
+            }
+            set
+            {
+                if (value <= glitterColorMinimumRedColorLevel)
+                    value = glitterColorMinimumRedColorLevel;
+                if (value > 255)
+                    value = 255;
+                glitterColorMaximumRedColorLevel = value;
+            }
+        }
+
         /// <summary>
         /// [GlitterColor] The maximum green color level (true color)
         /// </summary>
-        public int GlitterColorMaximumGreenColorLevel { get; set; } = 255;
+        public int GlitterColorMaximumGreenColorLevel
+        {
+            get
+            {
+                return glitterColorMaximumGreenColorLevel;
+            }
+            set
+            {
+                if (value <= glitterColorMinimumGreenColorLevel)
+                    value = glitterColorMinimumGreenColorLevel;
+                if (value > 255)
+                    value = 255;
+                glitterColorMaximumGreenColorLevel = value;
+            }
+        }
+
         /// <summary>
         /// [GlitterColor] The maximum blue color level (true color)
         /// </summary>
-        public int GlitterColorMaximumBlueColorLevel { get; set; } = 255;
+        public int GlitterColorMaximumBlueColorLevel
+        {
+            get
+            {
+                return glitterColorMaximumBlueColorLevel;
+            }
+            set
+            {
+                if (value <= glitterColorMinimumBlueColorLevel)
+                    value = glitterColorMinimumBlueColorLevel;
+                if (value > 255)
+                    value = 255;
+                glitterColorMaximumBlueColorLevel = value;
+            }
+        }
+
         /// <summary>
         /// [GlitterColor] The maximum color level (255 colors or 16 colors)
         /// </summary>
-        public int GlitterColorMaximumColorLevel { get; set; } = 255;
+        public int GlitterColorMaximumColorLevel
+        {
+            get
+            {
+                return glitterColorMaximumColorLevel;
+            }
+            set
+            {
+                int FinalMaximumLevel = 255;
+                if (value <= glitterColorMinimumColorLevel)
+                    value = glitterColorMinimumColorLevel;
+                if (value > FinalMaximumLevel)
+                    value = FinalMaximumLevel;
+                glitterColorMaximumColorLevel = value;
+            }
+        }
+        #endregion
+
+        #region Lines
+        private bool linesTrueColor = true;
+        private int linesDelay = 500;
+        private string linesLineChar = "-";
+        private string linesBackgroundColor = new Color(ConsoleColors.Black).PlainSequence;
+        private int linesMinimumRedColorLevel = 0;
+        private int linesMinimumGreenColorLevel = 0;
+        private int linesMinimumBlueColorLevel = 0;
+        private int linesMinimumColorLevel = 0;
+        private int linesMaximumRedColorLevel = 255;
+        private int linesMaximumGreenColorLevel = 255;
+        private int linesMaximumBlueColorLevel = 255;
+        private int linesMaximumColorLevel = 255;
+
         /// <summary>
         /// [Lines] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
-        public bool LinesTrueColor { get; set; } = true;
+        public bool LinesTrueColor
+        {
+            get
+            {
+                return linesTrueColor;
+            }
+            set
+            {
+                linesTrueColor = value;
+            }
+        }
+
         /// <summary>
         /// [Lines] How many milliseconds to wait before making the next write?
         /// </summary>
-        public int LinesDelay { get; set; } = 500;
+        public int LinesDelay
+        {
+            get
+            {
+                return linesDelay;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 500;
+                linesDelay = value;
+            }
+        }
+
         /// <summary>
         /// [Lines] Line character
         /// </summary>
-        public string LinesLineChar { get; set; } = "-";
+        public string LinesLineChar
+        {
+            get
+            {
+                return linesLineChar;
+            }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                    value = "-";
+                linesLineChar = value;
+            }
+        }
+
         /// <summary>
         /// [Lines] Screensaver background color
         /// </summary>
-        public string LinesBackgroundColor { get; set; } = new Color(ConsoleColors.Black).PlainSequence;
+        public string LinesBackgroundColor
+        {
+            get
+            {
+                return linesBackgroundColor;
+            }
+            set
+            {
+                linesBackgroundColor = new Color(value).PlainSequence;
+            }
+        }
+
         /// <summary>
         /// [Lines] The minimum red color level (true color)
         /// </summary>
-        public int LinesMinimumRedColorLevel { get; set; } = 0;
+        public int LinesMinimumRedColorLevel
+        {
+            get
+            {
+                return linesMinimumRedColorLevel;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 0;
+                if (value > 255)
+                    value = 255;
+                linesMinimumRedColorLevel = value;
+            }
+        }
+
         /// <summary>
         /// [Lines] The minimum green color level (true color)
         /// </summary>
-        public int LinesMinimumGreenColorLevel { get; set; } = 0;
+        public int LinesMinimumGreenColorLevel
+        {
+            get
+            {
+                return linesMinimumGreenColorLevel;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 0;
+                if (value > 255)
+                    value = 255;
+                linesMinimumGreenColorLevel = value;
+            }
+        }
+
         /// <summary>
         /// [Lines] The minimum blue color level (true color)
         /// </summary>
-        public int LinesMinimumBlueColorLevel { get; set; } = 0;
+        public int LinesMinimumBlueColorLevel
+        {
+            get
+            {
+                return linesMinimumBlueColorLevel;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 0;
+                if (value > 255)
+                    value = 255;
+                linesMinimumBlueColorLevel = value;
+            }
+        }
+
         /// <summary>
         /// [Lines] The minimum color level (255 colors or 16 colors)
         /// </summary>
-        public int LinesMinimumColorLevel { get; set; } = 0;
+        public int LinesMinimumColorLevel
+        {
+            get
+            {
+                return linesMinimumColorLevel;
+            }
+            set
+            {
+                int FinalMinimumLevel = 255;
+                if (value <= 0)
+                    value = 0;
+                if (value > FinalMinimumLevel)
+                    value = FinalMinimumLevel;
+                linesMinimumColorLevel = value;
+            }
+        }
+
         /// <summary>
         /// [Lines] The maximum red color level (true color)
         /// </summary>
-        public int LinesMaximumRedColorLevel { get; set; } = 255;
+        public int LinesMaximumRedColorLevel
+        {
+            get
+            {
+                return linesMaximumRedColorLevel;
+            }
+            set
+            {
+                if (value <= linesMinimumRedColorLevel)
+                    value = linesMinimumRedColorLevel;
+                if (value > 255)
+                    value = 255;
+                linesMaximumRedColorLevel = value;
+            }
+        }
+
         /// <summary>
         /// [Lines] The maximum green color level (true color)
         /// </summary>
-        public int LinesMaximumGreenColorLevel { get; set; } = 255;
+        public int LinesMaximumGreenColorLevel
+        {
+            get
+            {
+                return linesMaximumGreenColorLevel;
+            }
+            set
+            {
+                if (value <= linesMinimumGreenColorLevel)
+                    value = linesMinimumGreenColorLevel;
+                if (value > 255)
+                    value = 255;
+                linesMaximumGreenColorLevel = value;
+            }
+        }
+
         /// <summary>
         /// [Lines] The maximum blue color level (true color)
         /// </summary>
-        public int LinesMaximumBlueColorLevel { get; set; } = 255;
+        public int LinesMaximumBlueColorLevel
+        {
+            get
+            {
+                return linesMaximumBlueColorLevel;
+            }
+            set
+            {
+                if (value <= linesMinimumBlueColorLevel)
+                    value = linesMinimumBlueColorLevel;
+                if (value > 255)
+                    value = 255;
+                linesMaximumBlueColorLevel = value;
+            }
+        }
+
         /// <summary>
         /// [Lines] The maximum color level (255 colors or 16 colors)
         /// </summary>
-        public int LinesMaximumColorLevel { get; set; } = 255;
+        public int LinesMaximumColorLevel
+        {
+            get
+            {
+                return linesMaximumColorLevel;
+            }
+            set
+            {
+                int FinalMaximumLevel = 255;
+                if (value <= linesMinimumColorLevel)
+                    value = linesMinimumColorLevel;
+                if (value > FinalMaximumLevel)
+                    value = FinalMaximumLevel;
+                linesMaximumColorLevel = value;
+            }
+        }
+        #endregion
+
+        #region Dissolve
+        private bool dissolveTrueColor = true;
+        private string dissolveBackgroundColor = new Color(ConsoleColors.Black).PlainSequence;
+        private int dissolveMinimumRedColorLevel = 0;
+        private int dissolveMinimumGreenColorLevel = 0;
+        private int dissolveMinimumBlueColorLevel = 0;
+        private int dissolveMinimumColorLevel = 0;
+        private int dissolveMaximumRedColorLevel = 255;
+        private int dissolveMaximumGreenColorLevel = 255;
+        private int dissolveMaximumBlueColorLevel = 255;
+        private int dissolveMaximumColorLevel = 255;
+
         /// <summary>
         /// [Dissolve] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
-        public bool DissolveTrueColor { get; set; } = true;
+        public bool DissolveTrueColor
+        {
+            get
+            {
+                return dissolveTrueColor;
+            }
+            set
+            {
+                dissolveTrueColor = value;
+            }
+        }
         /// <summary>
         /// [Dissolve] Screensaver background color
         /// </summary>
-        public string DissolveBackgroundColor { get; set; } = new Color(ConsoleColors.Black).PlainSequence;
+        public string DissolveBackgroundColor
+        {
+            get
+            {
+                return dissolveBackgroundColor;
+            }
+            set
+            {
+                dissolveBackgroundColor = new Color(value).PlainSequence;
+            }
+        }
         /// <summary>
         /// [Dissolve] The minimum red color level (true color)
         /// </summary>
-        public int DissolveMinimumRedColorLevel { get; set; } = 0;
+        public int DissolveMinimumRedColorLevel
+        {
+            get
+            {
+                return dissolveMinimumRedColorLevel;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 0;
+                if (value > 255)
+                    value = 255;
+                dissolveMinimumRedColorLevel = value;
+            }
+        }
         /// <summary>
         /// [Dissolve] The minimum green color level (true color)
         /// </summary>
-        public int DissolveMinimumGreenColorLevel { get; set; } = 0;
+        public int DissolveMinimumGreenColorLevel
+        {
+            get
+            {
+                return dissolveMinimumGreenColorLevel;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 0;
+                if (value > 255)
+                    value = 255;
+                dissolveMinimumGreenColorLevel = value;
+            }
+        }
         /// <summary>
         /// [Dissolve] The minimum blue color level (true color)
         /// </summary>
-        public int DissolveMinimumBlueColorLevel { get; set; } = 0;
+        public int DissolveMinimumBlueColorLevel
+        {
+            get
+            {
+                return dissolveMinimumBlueColorLevel;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 0;
+                if (value > 255)
+                    value = 255;
+                dissolveMinimumBlueColorLevel = value;
+            }
+        }
         /// <summary>
         /// [Dissolve] The minimum color level (255 colors or 16 colors)
         /// </summary>
-        public int DissolveMinimumColorLevel { get; set; } = 0;
+        public int DissolveMinimumColorLevel
+        {
+            get
+            {
+                return dissolveMinimumColorLevel;
+            }
+            set
+            {
+                int FinalMinimumLevel = 255;
+                if (value <= 0)
+                    value = 0;
+                if (value > FinalMinimumLevel)
+                    value = FinalMinimumLevel;
+                dissolveMinimumColorLevel = value;
+            }
+        }
         /// <summary>
         /// [Dissolve] The maximum red color level (true color)
         /// </summary>
-        public int DissolveMaximumRedColorLevel { get; set; } = 255;
+        public int DissolveMaximumRedColorLevel
+        {
+            get
+            {
+                return dissolveMaximumRedColorLevel;
+            }
+            set
+            {
+                if (value <= dissolveMinimumRedColorLevel)
+                    value = dissolveMinimumRedColorLevel;
+                if (value > 255)
+                    value = 255;
+                dissolveMaximumRedColorLevel = value;
+            }
+        }
         /// <summary>
         /// [Dissolve] The maximum green color level (true color)
         /// </summary>
-        public int DissolveMaximumGreenColorLevel { get; set; } = 255;
+        public int DissolveMaximumGreenColorLevel
+        {
+            get
+            {
+                return dissolveMaximumGreenColorLevel;
+            }
+            set
+            {
+                if (value <= dissolveMinimumGreenColorLevel)
+                    value = dissolveMinimumGreenColorLevel;
+                if (value > 255)
+                    value = 255;
+                dissolveMaximumGreenColorLevel = value;
+            }
+        }
         /// <summary>
         /// [Dissolve] The maximum blue color level (true color)
         /// </summary>
-        public int DissolveMaximumBlueColorLevel { get; set; } = 255;
+        public int DissolveMaximumBlueColorLevel
+        {
+            get
+            {
+                return dissolveMaximumBlueColorLevel;
+            }
+            set
+            {
+                if (value <= dissolveMinimumBlueColorLevel)
+                    value = dissolveMinimumBlueColorLevel;
+                if (value > 255)
+                    value = 255;
+                dissolveMaximumBlueColorLevel = value;
+            }
+        }
         /// <summary>
         /// [Dissolve] The maximum color level (255 colors or 16 colors)
         /// </summary>
-        public int DissolveMaximumColorLevel { get; set; } = 255;
+        public int DissolveMaximumColorLevel
+        {
+            get
+            {
+                return dissolveMaximumColorLevel;
+            }
+            set
+            {
+                int FinalMaximumLevel = 255;
+                if (value <= dissolveMinimumColorLevel)
+                    value = dissolveMinimumColorLevel;
+                if (value > FinalMaximumLevel)
+                    value = FinalMaximumLevel;
+                dissolveMaximumColorLevel = value;
+            }
+        }
+        #endregion
+
+        #region BouncingBlock
+        private bool bouncingBlockTrueColor = true;
+        private int bouncingBlockDelay = 10;
+        private string bouncingBlockBackgroundColor = new Color(ConsoleColors.Black).PlainSequence;
+        private string bouncingBlockForegroundColor = new Color(ConsoleColors.White).PlainSequence;
+        private int bouncingBlockMinimumRedColorLevel = 0;
+        private int bouncingBlockMinimumGreenColorLevel = 0;
+        private int bouncingBlockMinimumBlueColorLevel = 0;
+        private int bouncingBlockMinimumColorLevel = 0;
+        private int bouncingBlockMaximumRedColorLevel = 255;
+        private int bouncingBlockMaximumGreenColorLevel = 255;
+        private int bouncingBlockMaximumBlueColorLevel = 255;
+        private int bouncingBlockMaximumColorLevel = 255;
+
         /// <summary>
         /// [BouncingBlock] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
-        public bool BouncingBlockTrueColor { get; set; } = true;
+        public bool BouncingBlockTrueColor
+        {
+            get
+            {
+                return bouncingBlockTrueColor;
+            }
+            set
+            {
+                bouncingBlockTrueColor = value;
+            }
+        }
         /// <summary>
         /// [BouncingBlock] How many milliseconds to wait before making the next write?
         /// </summary>
-        public int BouncingBlockDelay { get; set; } = 10;
+        public int BouncingBlockDelay
+        {
+            get
+            {
+                return bouncingBlockDelay;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 10;
+                bouncingBlockDelay = value;
+            }
+        }
         /// <summary>
         /// [BouncingBlock] Screensaver background color
         /// </summary>
-        public string BouncingBlockBackgroundColor { get; set; } = new Color(ConsoleColors.Black).PlainSequence;
+        public string BouncingBlockBackgroundColor
+        {
+            get
+            {
+                return bouncingBlockBackgroundColor;
+            }
+            set
+            {
+                bouncingBlockBackgroundColor = new Color(value).PlainSequence;
+            }
+        }
         /// <summary>
         /// [BouncingBlock] Screensaver foreground color
         /// </summary>
-        public string BouncingBlockForegroundColor { get; set; } = new Color(ConsoleColors.White).PlainSequence;
+        public string BouncingBlockForegroundColor
+        {
+            get
+            {
+                return bouncingBlockForegroundColor;
+            }
+            set
+            {
+                bouncingBlockForegroundColor = new Color(value).PlainSequence;
+            }
+        }
         /// <summary>
         /// [BouncingBlock] The minimum red color level (true color)
         /// </summary>
-        public int BouncingBlockMinimumRedColorLevel { get; set; } = 0;
+        public int BouncingBlockMinimumRedColorLevel
+        {
+            get
+            {
+                return bouncingBlockMinimumRedColorLevel;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 0;
+                if (value > 255)
+                    value = 255;
+                bouncingBlockMinimumRedColorLevel = value;
+            }
+        }
         /// <summary>
         /// [BouncingBlock] The minimum green color level (true color)
         /// </summary>
-        public int BouncingBlockMinimumGreenColorLevel { get; set; } = 0;
+        public int BouncingBlockMinimumGreenColorLevel
+        {
+            get
+            {
+                return bouncingBlockMinimumGreenColorLevel;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 0;
+                if (value > 255)
+                    value = 255;
+                bouncingBlockMinimumGreenColorLevel = value;
+            }
+        }
         /// <summary>
         /// [BouncingBlock] The minimum blue color level (true color)
         /// </summary>
-        public int BouncingBlockMinimumBlueColorLevel { get; set; } = 0;
+        public int BouncingBlockMinimumBlueColorLevel
+        {
+            get
+            {
+                return bouncingBlockMinimumBlueColorLevel;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 0;
+                if (value > 255)
+                    value = 255;
+                bouncingBlockMinimumBlueColorLevel = value;
+            }
+        }
         /// <summary>
         /// [BouncingBlock] The minimum color level (255 colors or 16 colors)
         /// </summary>
-        public int BouncingBlockMinimumColorLevel { get; set; } = 0;
+        public int BouncingBlockMinimumColorLevel
+        {
+            get
+            {
+                return bouncingBlockMinimumColorLevel;
+            }
+            set
+            {
+                int FinalMinimumLevel = 255;
+                if (value <= 0)
+                    value = 0;
+                if (value > FinalMinimumLevel)
+                    value = FinalMinimumLevel;
+                bouncingBlockMinimumColorLevel = value;
+            }
+        }
         /// <summary>
         /// [BouncingBlock] The maximum red color level (true color)
         /// </summary>
-        public int BouncingBlockMaximumRedColorLevel { get; set; } = 255;
+        public int BouncingBlockMaximumRedColorLevel
+        {
+            get
+            {
+                return bouncingBlockMaximumRedColorLevel;
+            }
+            set
+            {
+                if (value <= bouncingBlockMinimumRedColorLevel)
+                    value = bouncingBlockMinimumRedColorLevel;
+                if (value > 255)
+                    value = 255;
+                bouncingBlockMaximumRedColorLevel = value;
+            }
+        }
         /// <summary>
         /// [BouncingBlock] The maximum green color level (true color)
         /// </summary>
-        public int BouncingBlockMaximumGreenColorLevel { get; set; } = 255;
+        public int BouncingBlockMaximumGreenColorLevel
+        {
+            get
+            {
+                return bouncingBlockMaximumGreenColorLevel;
+            }
+            set
+            {
+                if (value <= bouncingBlockMinimumGreenColorLevel)
+                    value = bouncingBlockMinimumGreenColorLevel;
+                if (value > 255)
+                    value = 255;
+                bouncingBlockMaximumGreenColorLevel = value;
+            }
+        }
         /// <summary>
         /// [BouncingBlock] The maximum blue color level (true color)
         /// </summary>
-        public int BouncingBlockMaximumBlueColorLevel { get; set; } = 255;
+        public int BouncingBlockMaximumBlueColorLevel
+        {
+            get
+            {
+                return bouncingBlockMaximumBlueColorLevel;
+            }
+            set
+            {
+                if (value <= bouncingBlockMinimumBlueColorLevel)
+                    value = bouncingBlockMinimumBlueColorLevel;
+                if (value > 255)
+                    value = 255;
+                bouncingBlockMaximumBlueColorLevel = value;
+            }
+        }
         /// <summary>
         /// [BouncingBlock] The maximum color level (255 colors or 16 colors)
         /// </summary>
-        public int BouncingBlockMaximumColorLevel { get; set; } = 255;
+        public int BouncingBlockMaximumColorLevel
+        {
+            get
+            {
+                return bouncingBlockMaximumColorLevel;
+            }
+            set
+            {
+                int FinalMaximumLevel = 255;
+                if (value <= bouncingBlockMinimumColorLevel)
+                    value = bouncingBlockMinimumColorLevel;
+                if (value > FinalMaximumLevel)
+                    value = FinalMaximumLevel;
+                bouncingBlockMaximumColorLevel = value;
+            }
+        }
+        #endregion
+
+        #region ProgressClock
+        private bool progressClockTrueColor = true;
+        private bool progressClockCycleColors = true;
+        private int progressClockCycleColorsTicks = 20;
+        private string progressClockSecondsProgressColor = "4";
+        private string progressClockMinutesProgressColor = "5";
+        private string progressClockHoursProgressColor = "6";
+        private string progressClockProgressColor = "7";
+        private int progressClockDelay = 500;
+        private char progressClockUpperLeftCornerCharHours = '╔';
+        private char progressClockUpperLeftCornerCharMinutes = '╔';
+        private char progressClockUpperLeftCornerCharSeconds = '╔';
+        private char progressClockUpperRightCornerCharHours = '╗';
+        private char progressClockUpperRightCornerCharMinutes = '╗';
+        private char progressClockUpperRightCornerCharSeconds = '╗';
+        private char progressClockLowerLeftCornerCharHours = '╚';
+        private char progressClockLowerLeftCornerCharMinutes = '╚';
+        private char progressClockLowerLeftCornerCharSeconds = '╚';
+        private char progressClockLowerRightCornerCharHours = '╝';
+        private char progressClockLowerRightCornerCharMinutes = '╝';
+        private char progressClockLowerRightCornerCharSeconds = '╝';
+        private char progressClockUpperFrameCharHours = '═';
+        private char progressClockUpperFrameCharMinutes = '═';
+        private char progressClockUpperFrameCharSeconds = '═';
+        private char progressClockLowerFrameCharHours = '═';
+        private char progressClockLowerFrameCharMinutes = '═';
+        private char progressClockLowerFrameCharSeconds = '═';
+        private char progressClockLeftFrameCharHours = '║';
+        private char progressClockLeftFrameCharMinutes = '║';
+        private char progressClockLeftFrameCharSeconds = '║';
+        private char progressClockRightFrameCharHours = '║';
+        private char progressClockRightFrameCharMinutes = '║';
+        private char progressClockRightFrameCharSeconds = '║';
+        private string progressClockInfoTextHours = "";
+        private string progressClockInfoTextMinutes = "";
+        private string progressClockInfoTextSeconds = "";
+        private int progressClockMinimumRedColorLevelHours = 0;
+        private int progressClockMinimumGreenColorLevelHours = 0;
+        private int progressClockMinimumBlueColorLevelHours = 0;
+        private int progressClockMinimumColorLevelHours = 1;
+        private int progressClockMaximumRedColorLevelHours = 255;
+        private int progressClockMaximumGreenColorLevelHours = 255;
+        private int progressClockMaximumBlueColorLevelHours = 255;
+        private int progressClockMaximumColorLevelHours = 255;
+        private int progressClockMinimumRedColorLevelMinutes = 0;
+        private int progressClockMinimumGreenColorLevelMinutes = 0;
+        private int progressClockMinimumBlueColorLevelMinutes = 0;
+        private int progressClockMinimumColorLevelMinutes = 1;
+        private int progressClockMaximumRedColorLevelMinutes = 255;
+        private int progressClockMaximumGreenColorLevelMinutes = 255;
+        private int progressClockMaximumBlueColorLevelMinutes = 255;
+        private int progressClockMaximumColorLevelMinutes = 255;
+        private int progressClockMinimumRedColorLevelSeconds = 0;
+        private int progressClockMinimumGreenColorLevelSeconds = 0;
+        private int progressClockMinimumBlueColorLevelSeconds = 0;
+        private int progressClockMinimumColorLevelSeconds = 1;
+        private int progressClockMaximumRedColorLevelSeconds = 255;
+        private int progressClockMaximumGreenColorLevelSeconds = 255;
+        private int progressClockMaximumBlueColorLevelSeconds = 255;
+        private int progressClockMaximumColorLevelSeconds = 255;
+        private int progressClockMinimumRedColorLevel = 0;
+        private int progressClockMinimumGreenColorLevel = 0;
+        private int progressClockMinimumBlueColorLevel = 0;
+        private int progressClockMinimumColorLevel = 1;
+        private int progressClockMaximumRedColorLevel = 255;
+        private int progressClockMaximumGreenColorLevel = 255;
+        private int progressClockMaximumBlueColorLevel = 255;
+        private int progressClockMaximumColorLevel = 255;
+
         /// <summary>
         /// [ProgressClock] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
-        public bool ProgressClockTrueColor { get; set; } = true;
+        public bool ProgressClockTrueColor
+        {
+            get => progressClockTrueColor;
+            set => progressClockTrueColor = value;
+        }
         /// <summary>
         /// [ProgressClock] Enable color cycling (uses RNG. If disabled, uses the <see cref="ProgressClockSecondsProgressColor"/>, <see cref="ProgressClockMinutesProgressColor"/>, and <see cref="ProgressClockHoursProgressColor"/> colors.)
         /// </summary>
-        public bool ProgressClockCycleColors { get; set; } = true;
-        /// <summary>
-        /// [ProgressClock] If color cycling is enabled, how many ticks before changing colors? 1 tick = 0.5 seconds
-        /// </summary>
-        public int ProgressClockCycleColorsTicks { get; set; } = 20;
+        public bool ProgressClockCycleColors
+        {
+            get => progressClockCycleColors;
+            set => progressClockCycleColors = value;
+        }
         /// <summary>
         /// [ProgressClock] The color of seconds progress bar. It can be 1-16, 1-255, or "1-255;1-255;1-255".
         /// </summary>
-        public string ProgressClockSecondsProgressColor { get; set; } = "4";
+        public string ProgressClockSecondsProgressColor
+        {
+            get => progressClockSecondsProgressColor;
+            set => progressClockSecondsProgressColor = new Color(value).PlainSequence;
+        }
         /// <summary>
         /// [ProgressClock] The color of minutes progress bar. It can be 1-16, 1-255, or "1-255;1-255;1-255".
         /// </summary>
-        public string ProgressClockMinutesProgressColor { get; set; } = "5";
+        public string ProgressClockMinutesProgressColor
+        {
+            get => progressClockMinutesProgressColor;
+            set => progressClockMinutesProgressColor = new Color(value).PlainSequence;
+        }
         /// <summary>
         /// [ProgressClock] The color of hours progress bar. It can be 1-16, 1-255, or "1-255;1-255;1-255".
         /// </summary>
-        public string ProgressClockHoursProgressColor { get; set; } = "6";
+        public string ProgressClockHoursProgressColor
+        {
+            get => progressClockHoursProgressColor;
+            set => progressClockHoursProgressColor = new Color(value).PlainSequence;
+        }
         /// <summary>
         /// [ProgressClock] The color of date information. It can be 1-16, 1-255, or "1-255;1-255;1-255".
         /// </summary>
-        public string ProgressClockProgressColor { get; set; } = "7";
+        public string ProgressClockProgressColor
+        {
+            get => progressClockProgressColor;
+            set => progressClockProgressColor = new Color(value).PlainSequence;
+        }
+        /// <summary>
+        /// [ProgressClock] If color cycling is enabled, how many ticks before changing colors? 1 tick = 0.5 seconds
+        /// </summary>
+        public long ProgressClockCycleColorsTicks
+        {
+            get => progressClockCycleColorsTicks;
+            set
+            {
+                if (value <= 0L)
+                    value = 20L;
+                progressClockCycleColorsTicks = (int)value;
+            }
+        }
         /// <summary>
         /// [ProgressClock] How many milliseconds to wait before making the next write?
         /// </summary>
-        public int ProgressClockDelay { get; set; } = 500;
+        public int ProgressClockDelay
+        {
+            get => progressClockDelay;
+            set
+            {
+                if (value <= 0)
+                    value = 500;
+                progressClockDelay = value;
+            }
+        }
         /// <summary>
         /// [ProgressClock] Upper left corner character for hours bar
         /// </summary>
-        public char ProgressClockUpperLeftCornerCharHours { get; set; } = '╔';
+        public char ProgressClockUpperLeftCornerCharHours
+        {
+            get => progressClockUpperLeftCornerCharHours;
+            set => progressClockUpperLeftCornerCharHours = value;
+        }
         /// <summary>
         /// [ProgressClock] Upper left corner character for minutes bar
         /// </summary>
-        public char ProgressClockUpperLeftCornerCharMinutes { get; set; } = '╔';
+        public char ProgressClockUpperLeftCornerCharMinutes
+        {
+            get => progressClockUpperLeftCornerCharMinutes;
+            set => progressClockUpperLeftCornerCharMinutes = value;
+        }
         /// <summary>
         /// [ProgressClock] Upper left corner character for seconds bar
         /// </summary>
-        public char ProgressClockUpperLeftCornerCharSeconds { get; set; } = '╔';
+        public char ProgressClockUpperLeftCornerCharSeconds
+        {
+            get => progressClockUpperLeftCornerCharSeconds;
+            set => progressClockUpperLeftCornerCharSeconds = value;
+        }
         /// <summary>
         /// [ProgressClock] Upper right corner character for hours bar
         /// </summary>
-        public char ProgressClockUpperRightCornerCharHours { get; set; } = '╗';
+        public char ProgressClockUpperRightCornerCharHours
+        {
+            get => progressClockUpperRightCornerCharHours;
+            set => progressClockUpperRightCornerCharHours = value;
+        }
         /// <summary>
         /// [ProgressClock] Upper right corner character for minutes bar
         /// </summary>
-        public char ProgressClockUpperRightCornerCharMinutes { get; set; } = '╗';
+        public char ProgressClockUpperRightCornerCharMinutes
+        {
+            get => progressClockUpperRightCornerCharMinutes;
+            set => progressClockUpperRightCornerCharMinutes = value;
+        }
         /// <summary>
         /// [ProgressClock] Upper right corner character for seconds bar
         /// </summary>
-        public char ProgressClockUpperRightCornerCharSeconds { get; set; } = '╗';
+        public char ProgressClockUpperRightCornerCharSeconds
+        {
+            get => progressClockUpperRightCornerCharSeconds;
+            set => progressClockUpperRightCornerCharSeconds = value;
+        }
         /// <summary>
         /// [ProgressClock] Lower left corner character for hours bar
         /// </summary>
-        public char ProgressClockLowerLeftCornerCharHours { get; set; } = '╚';
+        public char ProgressClockLowerLeftCornerCharHours
+        {
+            get => progressClockLowerLeftCornerCharHours;
+            set => progressClockLowerLeftCornerCharHours = value;
+        }
         /// <summary>
         /// [ProgressClock] Lower left corner character for minutes bar
         /// </summary>
-        public char ProgressClockLowerLeftCornerCharMinutes { get; set; } = '╚';
+        public char ProgressClockLowerLeftCornerCharMinutes
+        {
+            get => progressClockLowerLeftCornerCharMinutes;
+            set => progressClockLowerLeftCornerCharMinutes = value;
+        }
         /// <summary>
         /// [ProgressClock] Lower left corner character for seconds bar
         /// </summary>
-        public char ProgressClockLowerLeftCornerCharSeconds { get; set; } = '╚';
+        public char ProgressClockLowerLeftCornerCharSeconds
+        {
+            get => progressClockLowerLeftCornerCharSeconds;
+            set => progressClockLowerLeftCornerCharSeconds = value;
+        }
         /// <summary>
         /// [ProgressClock] Lower right corner character for hours bar
         /// </summary>
-        public char ProgressClockLowerRightCornerCharHours { get; set; } = '╝';
+        public char ProgressClockLowerRightCornerCharHours
+        {
+            get => progressClockLowerRightCornerCharHours;
+            set => progressClockLowerRightCornerCharHours = value;
+        }
         /// <summary>
         /// [ProgressClock] Lower right corner character for minutes bar
         /// </summary>
-        public char ProgressClockLowerRightCornerCharMinutes { get; set; } = '╝';
+        public char ProgressClockLowerRightCornerCharMinutes
+        {
+            get => progressClockLowerRightCornerCharMinutes;
+            set => progressClockLowerRightCornerCharMinutes = value;
+        }
         /// <summary>
         /// [ProgressClock] Lower right corner character for seconds bar
         /// </summary>
-        public char ProgressClockLowerRightCornerCharSeconds { get; set; } = '╝';
+        public char ProgressClockLowerRightCornerCharSeconds
+        {
+            get => progressClockLowerRightCornerCharSeconds;
+            set => progressClockLowerRightCornerCharSeconds = value;
+        }
         /// <summary>
         /// [ProgressClock] Upper frame character for hours bar
         /// </summary>
-        public char ProgressClockUpperFrameCharHours { get; set; } = '═';
+        public char ProgressClockUpperFrameCharHours
+        {
+            get => progressClockUpperFrameCharHours;
+            set => progressClockUpperFrameCharHours = value;
+        }
         /// <summary>
         /// [ProgressClock] Upper frame character for minutes bar
         /// </summary>
-        public char ProgressClockUpperFrameCharMinutes { get; set; } = '═';
+        public char ProgressClockUpperFrameCharMinutes
+        {
+            get => progressClockUpperFrameCharMinutes;
+            set => progressClockUpperFrameCharMinutes = value;
+        }
         /// <summary>
         /// [ProgressClock] Upper frame character for seconds bar
         /// </summary>
-        public char ProgressClockUpperFrameCharSeconds { get; set; } = '═';
+        public char ProgressClockUpperFrameCharSeconds
+        {
+            get => progressClockUpperFrameCharSeconds;
+            set => progressClockUpperFrameCharSeconds = value;
+        }
         /// <summary>
         /// [ProgressClock] Lower frame character for hours bar
         /// </summary>
-        public char ProgressClockLowerFrameCharHours { get; set; } = '═';
+        public char ProgressClockLowerFrameCharHours
+        {
+            get => progressClockLowerFrameCharHours;
+            set => progressClockLowerFrameCharHours = value;
+        }
         /// <summary>
         /// [ProgressClock] Lower frame character for minutes bar
         /// </summary>
-        public char ProgressClockLowerFrameCharMinutes { get; set; } = '═';
+        public char ProgressClockLowerFrameCharMinutes
+        {
+            get => progressClockLowerFrameCharMinutes;
+            set => progressClockLowerFrameCharMinutes = value;
+        }
         /// <summary>
         /// [ProgressClock] Lower frame character for seconds bar
         /// </summary>
-        public char ProgressClockLowerFrameCharSeconds { get; set; } = '═';
+        public char ProgressClockLowerFrameCharSeconds
+        {
+            get => progressClockLowerFrameCharSeconds;
+            set => progressClockLowerFrameCharSeconds = value;
+        }
         /// <summary>
         /// [ProgressClock] Left frame character for hours bar
         /// </summary>
-        public char ProgressClockLeftFrameCharHours { get; set; } = '║';
+        public char ProgressClockLeftFrameCharHours
+        {
+            get => progressClockLeftFrameCharHours;
+            set => progressClockLeftFrameCharHours = value;
+        }
         /// <summary>
         /// [ProgressClock] Left frame character for minutes bar
         /// </summary>
-        public char ProgressClockLeftFrameCharMinutes { get; set; } = '║';
+        public char ProgressClockLeftFrameCharMinutes
+        {
+            get => progressClockLeftFrameCharMinutes;
+            set => progressClockLeftFrameCharMinutes = value;
+        }
         /// <summary>
         /// [ProgressClock] Left frame character for seconds bar
         /// </summary>
-        public char ProgressClockLeftFrameCharSeconds { get; set; } = '║';
+        public char ProgressClockLeftFrameCharSeconds
+        {
+            get => progressClockLeftFrameCharSeconds;
+            set => progressClockLeftFrameCharSeconds = value;
+        }
         /// <summary>
         /// [ProgressClock] Right frame character for hours bar
         /// </summary>
-        public char ProgressClockRightFrameCharHours { get; set; } = '║';
+        public char ProgressClockRightFrameCharHours
+        {
+            get => progressClockRightFrameCharHours;
+            set => progressClockRightFrameCharHours = value;
+        }
         /// <summary>
         /// [ProgressClock] Right frame character for minutes bar
         /// </summary>
-        public char ProgressClockRightFrameCharMinutes { get; set; } = '║';
+        public char ProgressClockRightFrameCharMinutes
+        {
+            get => progressClockRightFrameCharMinutes;
+            set => progressClockRightFrameCharMinutes = value;
+        }
         /// <summary>
         /// [ProgressClock] Right frame character for seconds bar
         /// </summary>
-        public char ProgressClockRightFrameCharSeconds { get; set; } = '║';
+        public char ProgressClockRightFrameCharSeconds
+        {
+            get => progressClockRightFrameCharSeconds;
+            set => progressClockRightFrameCharSeconds = value;
+        }
         /// <summary>
         /// [ProgressClock] Information text for hours bar
         /// </summary>
-        public string ProgressClockInfoTextHours { get; set; } = "";
+        public string ProgressClockInfoTextHours
+        {
+            get => progressClockInfoTextHours;
+            set => progressClockInfoTextHours = value;
+        }
         /// <summary>
         /// [ProgressClock] Information text for minutes bar
         /// </summary>
-        public string ProgressClockInfoTextMinutes { get; set; } = "";
+        public string ProgressClockInfoTextMinutes
+        {
+            get => progressClockInfoTextMinutes;
+            set => progressClockInfoTextMinutes = value;
+        }
         /// <summary>
         /// [ProgressClock] Information text for seconds bar
         /// </summary>
-        public string ProgressClockInfoTextSeconds { get; set; } = "";
+        public string ProgressClockInfoTextSeconds
+        {
+            get => progressClockInfoTextSeconds;
+            set => progressClockInfoTextSeconds = value;
+        }
         /// <summary>
         /// [ProgressClock] The minimum red color level (true color - hours)
         /// </summary>
-        public int ProgressClockMinimumRedColorLevelHours { get; set; } = 0;
+        public int ProgressClockMinimumRedColorLevelHours
+        {
+            get => progressClockMinimumRedColorLevelHours;
+            set
+            {
+                if (value <= 0)
+                    value = 0;
+                if (value > 255)
+                    value = 255;
+                progressClockMinimumRedColorLevelHours = value;
+            }
+        }
         /// <summary>
         /// [ProgressClock] The minimum green color level (true color - hours)
         /// </summary>
-        public int ProgressClockMinimumGreenColorLevelHours { get; set; } = 0;
+        public int ProgressClockMinimumGreenColorLevelHours
+        {
+            get => progressClockMinimumGreenColorLevelHours;
+            set
+            {
+                if (value <= 0)
+                    value = 0;
+                if (value > 255)
+                    value = 255;
+                progressClockMinimumGreenColorLevelHours = value;
+            }
+        }
         /// <summary>
         /// [ProgressClock] The minimum blue color level (true color - hours)
         /// </summary>
-        public int ProgressClockMinimumBlueColorLevelHours { get; set; } = 0;
+        public int ProgressClockMinimumBlueColorLevelHours
+        {
+            get => progressClockMinimumBlueColorLevelHours;
+            set
+            {
+                if (value <= 0)
+                    value = 0;
+                if (value > 255)
+                    value = 255;
+                progressClockMinimumBlueColorLevelHours = value;
+            }
+        }
         /// <summary>
         /// [ProgressClock] The minimum color level (255 colors or 16 colors - hours)
         /// </summary>
-        public int ProgressClockMinimumColorLevelHours { get; set; } = 1;
+        public int ProgressClockMinimumColorLevelHours
+        {
+            get => progressClockMinimumColorLevelHours;
+            set
+            {
+                int FinalMinimumLevel = 255;
+                if (value < 0)
+                    value = 1;
+                if (value > FinalMinimumLevel)
+                    value = FinalMinimumLevel;
+                progressClockMinimumColorLevelHours = value;
+            }
+        }
         /// <summary>
         /// [ProgressClock] The maximum red color level (true color - hours)
         /// </summary>
-        public int ProgressClockMaximumRedColorLevelHours { get; set; } = 255;
+        public int ProgressClockMaximumRedColorLevelHours
+        {
+            get => progressClockMaximumRedColorLevelHours;
+            set
+            {
+                if (value <= progressClockMinimumRedColorLevelHours)
+                    value = progressClockMinimumRedColorLevelHours;
+                if (value > 255)
+                    value = 255;
+                progressClockMaximumRedColorLevelHours = value;
+            }
+        }
         /// <summary>
         /// [ProgressClock] The maximum green color level (true color - hours)
         /// </summary>
-        public int ProgressClockMaximumGreenColorLevelHours { get; set; } = 255;
+        public int ProgressClockMaximumGreenColorLevelHours
+        {
+            get => progressClockMaximumGreenColorLevelHours;
+            set
+            {
+                if (value <= progressClockMinimumGreenColorLevelHours)
+                    value = progressClockMinimumGreenColorLevelHours;
+                if (value > 255)
+                    value = 255;
+                progressClockMaximumGreenColorLevelHours = value;
+            }
+        }
         /// <summary>
         /// [ProgressClock] The maximum blue color level (true color - hours)
         /// </summary>
-        public int ProgressClockMaximumBlueColorLevelHours { get; set; } = 255;
+        public int ProgressClockMaximumBlueColorLevelHours
+        {
+            get => progressClockMaximumBlueColorLevelHours;
+            set
+            {
+                if (value <= progressClockMinimumBlueColorLevelHours)
+                    value = progressClockMinimumBlueColorLevelHours;
+                if (value > 255)
+                    value = 255;
+                progressClockMaximumBlueColorLevelHours = value;
+            }
+        }
         /// <summary>
         /// [ProgressClock] The maximum color level (255 colors or 16 colors - hours)
         /// </summary>
-        public int ProgressClockMaximumColorLevelHours { get; set; } = 255;
+        public int ProgressClockMaximumColorLevelHours
+        {
+            get => progressClockMaximumColorLevelHours;
+            set
+            {
+                int FinalMaximumLevel = 255;
+                if (value <= progressClockMinimumColorLevelHours)
+                    value = progressClockMinimumColorLevelHours;
+                if (value > FinalMaximumLevel)
+                    value = FinalMaximumLevel;
+                progressClockMaximumColorLevelHours = value;
+            }
+        }
         /// <summary>
         /// [ProgressClock] The minimum red color level (true color - minutes)
         /// </summary>
-        public int ProgressClockMinimumRedColorLevelMinutes { get; set; } = 0;
+        public int ProgressClockMinimumRedColorLevelMinutes
+        {
+            get => progressClockMinimumRedColorLevelMinutes;
+            set
+            {
+                if (value <= 0)
+                    value = 0;
+                if (value > 255)
+                    value = 255;
+                progressClockMinimumRedColorLevelMinutes = value;
+            }
+        }
         /// <summary>
         /// [ProgressClock] The minimum green color level (true color - minutes)
         /// </summary>
-        public int ProgressClockMinimumGreenColorLevelMinutes { get; set; } = 0;
+        public int ProgressClockMinimumGreenColorLevelMinutes
+        {
+            get => progressClockMinimumGreenColorLevelMinutes;
+            set
+            {
+                if (value <= 0)
+                    value = 0;
+                if (value > 255)
+                    value = 255;
+                progressClockMinimumGreenColorLevelMinutes = value;
+            }
+        }
         /// <summary>
         /// [ProgressClock] The minimum blue color level (true color - minutes)
         /// </summary>
-        public int ProgressClockMinimumBlueColorLevelMinutes { get; set; } = 0;
+        public int ProgressClockMinimumBlueColorLevelMinutes
+        {
+            get => progressClockMinimumBlueColorLevelMinutes;
+            set
+            {
+                if (value <= 0)
+                    value = 0;
+                if (value > 255)
+                    value = 255;
+                progressClockMinimumBlueColorLevelMinutes = value;
+            }
+        }
         /// <summary>
         /// [ProgressClock] The minimum color level (255 colors or 16 colors - minutes)
         /// </summary>
-        public int ProgressClockMinimumColorLevelMinutes { get; set; } = 1;
+        public int ProgressClockMinimumColorLevelMinutes
+        {
+            get => progressClockMinimumColorLevelMinutes;
+            set
+            {
+                int FinalMinimumLevel = 255;
+                if (value < 0)
+                    value = 1;
+                if (value > FinalMinimumLevel)
+                    value = FinalMinimumLevel;
+                progressClockMinimumColorLevelMinutes = value;
+            }
+        }
         /// <summary>
         /// [ProgressClock] The maximum red color level (true color - minutes)
         /// </summary>
-        public int ProgressClockMaximumRedColorLevelMinutes { get; set; } = 255;
+        public int ProgressClockMaximumRedColorLevelMinutes
+        {
+            get => progressClockMaximumRedColorLevelMinutes;
+            set
+            {
+                if (value <= progressClockMinimumRedColorLevelMinutes)
+                    value = progressClockMinimumRedColorLevelMinutes;
+                if (value > 255)
+                    value = 255;
+                progressClockMaximumRedColorLevelMinutes = value;
+            }
+        }
         /// <summary>
         /// [ProgressClock] The maximum green color level (true color - minutes)
         /// </summary>
-        public int ProgressClockMaximumGreenColorLevelMinutes { get; set; } = 255;
+        public int ProgressClockMaximumGreenColorLevelMinutes
+        {
+            get => progressClockMaximumGreenColorLevelMinutes;
+            set
+            {
+                if (value <= progressClockMinimumGreenColorLevelMinutes)
+                    value = progressClockMinimumGreenColorLevelMinutes;
+                if (value > 255)
+                    value = 255;
+                progressClockMaximumGreenColorLevelMinutes = value;
+            }
+        }
         /// <summary>
         /// [ProgressClock] The maximum blue color level (true color - minutes)
         /// </summary>
-        public int ProgressClockMaximumBlueColorLevelMinutes { get; set; } = 255;
+        public int ProgressClockMaximumBlueColorLevelMinutes
+        {
+            get => progressClockMaximumBlueColorLevelMinutes;
+            set
+            {
+                if (value <= progressClockMinimumBlueColorLevelMinutes)
+                    value = progressClockMinimumBlueColorLevelMinutes;
+                if (value > 255)
+                    value = 255;
+                progressClockMaximumBlueColorLevelMinutes = value;
+            }
+        }
         /// <summary>
         /// [ProgressClock] The maximum color level (255 colors or 16 colors - minutes)
         /// </summary>
-        public int ProgressClockMaximumColorLevelMinutes { get; set; } = 255;
+        public int ProgressClockMaximumColorLevelMinutes
+        {
+            get => progressClockMaximumColorLevelMinutes;
+            set
+            {
+                int FinalMaximumLevel = 255;
+                if (value <= progressClockMinimumColorLevelMinutes)
+                    value = progressClockMinimumColorLevelMinutes;
+                if (value > FinalMaximumLevel)
+                    value = FinalMaximumLevel;
+                progressClockMaximumColorLevelMinutes = value;
+            }
+        }
         /// <summary>
         /// [ProgressClock] The minimum red color level (true color - seconds)
         /// </summary>
-        public int ProgressClockMinimumRedColorLevelSeconds { get; set; } = 0;
+        public int ProgressClockMinimumRedColorLevelSeconds
+        {
+            get => progressClockMinimumRedColorLevelSeconds;
+            set
+            {
+                if (value <= 0)
+                    value = 0;
+                if (value > 255)
+                    value = 255;
+                progressClockMinimumRedColorLevelSeconds = value;
+            }
+        }
         /// <summary>
         /// [ProgressClock] The minimum green color level (true color - seconds)
         /// </summary>
-        public int ProgressClockMinimumGreenColorLevelSeconds { get; set; } = 0;
+        public int ProgressClockMinimumGreenColorLevelSeconds
+        {
+            get => progressClockMinimumGreenColorLevelSeconds;
+            set
+            {
+                if (value <= 0)
+                    value = 0;
+                if (value > 255)
+                    value = 255;
+                progressClockMinimumGreenColorLevelSeconds = value;
+            }
+        }
         /// <summary>
         /// [ProgressClock] The minimum blue color level (true color - seconds)
         /// </summary>
-        public int ProgressClockMinimumBlueColorLevelSeconds { get; set; } = 0;
+        public int ProgressClockMinimumBlueColorLevelSeconds
+        {
+            get => progressClockMinimumBlueColorLevelSeconds;
+            set
+            {
+                if (value <= 0)
+                    value = 0;
+                if (value > 255)
+                    value = 255;
+                progressClockMinimumBlueColorLevelSeconds = value;
+            }
+        }
         /// <summary>
         /// [ProgressClock] The minimum color level (255 colors or 16 colors - seconds)
         /// </summary>
-        public int ProgressClockMinimumColorLevelSeconds { get; set; } = 1;
+        public int ProgressClockMinimumColorLevelSeconds
+        {
+            get => progressClockMinimumColorLevelSeconds;
+            set
+            {
+                int FinalMinimumLevel = 255;
+                if (value < 0)
+                    value = 1;
+                if (value > FinalMinimumLevel)
+                    value = FinalMinimumLevel;
+                progressClockMinimumColorLevelSeconds = value;
+            }
+        }
         /// <summary>
         /// [ProgressClock] The maximum red color level (true color - seconds)
         /// </summary>
-        public int ProgressClockMaximumRedColorLevelSeconds { get; set; } = 255;
+        public int ProgressClockMaximumRedColorLevelSeconds
+        {
+            get => progressClockMaximumRedColorLevelSeconds;
+            set
+            {
+                if (value <= progressClockMinimumRedColorLevelSeconds)
+                    value = progressClockMinimumRedColorLevelSeconds;
+                if (value > 255)
+                    value = 255;
+                progressClockMaximumRedColorLevelSeconds = value;
+            }
+        }
         /// <summary>
         /// [ProgressClock] The maximum green color level (true color - seconds)
         /// </summary>
-        public int ProgressClockMaximumGreenColorLevelSeconds { get; set; } = 255;
+        public int ProgressClockMaximumGreenColorLevelSeconds
+        {
+            get => progressClockMaximumGreenColorLevelSeconds;
+            set
+            {
+                if (value <= progressClockMinimumGreenColorLevelSeconds)
+                    value = progressClockMinimumGreenColorLevelSeconds;
+                if (value > 255)
+                    value = 255;
+                progressClockMaximumGreenColorLevelSeconds = value;
+            }
+        }
         /// <summary>
         /// [ProgressClock] The maximum blue color level (true color - seconds)
         /// </summary>
-        public int ProgressClockMaximumBlueColorLevelSeconds { get; set; } = 255;
+        public int ProgressClockMaximumBlueColorLevelSeconds
+        {
+            get => progressClockMaximumBlueColorLevelSeconds;
+            set
+            {
+                if (value <= progressClockMinimumBlueColorLevelSeconds)
+                    value = progressClockMinimumBlueColorLevelSeconds;
+                if (value > 255)
+                    value = 255;
+                progressClockMaximumBlueColorLevelSeconds = value;
+            }
+        }
         /// <summary>
         /// [ProgressClock] The maximum color level (255 colors or 16 colors - seconds)
         /// </summary>
-        public int ProgressClockMaximumColorLevelSeconds { get; set; } = 255;
+        public int ProgressClockMaximumColorLevelSeconds
+        {
+            get => progressClockMaximumColorLevelSeconds;
+            set
+            {
+                int FinalMaximumLevel = 255;
+                if (value <= progressClockMinimumColorLevelSeconds)
+                    value = progressClockMinimumColorLevelSeconds;
+                if (value > FinalMaximumLevel)
+                    value = FinalMaximumLevel;
+                progressClockMaximumColorLevelSeconds = value;
+            }
+        }
         /// <summary>
         /// [ProgressClock] The minimum red color level (true color)
         /// </summary>
-        public int ProgressClockMinimumRedColorLevel { get; set; } = 0;
+        public int ProgressClockMinimumRedColorLevel
+        {
+            get => progressClockMinimumRedColorLevel;
+            set
+            {
+                if (value <= 0)
+                    value = 0;
+                if (value > 255)
+                    value = 255;
+                progressClockMinimumRedColorLevel = value;
+            }
+        }
         /// <summary>
         /// [ProgressClock] The minimum green color level (true color)
         /// </summary>
-        public int ProgressClockMinimumGreenColorLevel { get; set; } = 0;
+        public int ProgressClockMinimumGreenColorLevel
+        {
+            get => progressClockMinimumGreenColorLevel;
+            set
+            {
+                if (value <= 0)
+                    value = 0;
+                if (value > 255)
+                    value = 255;
+                progressClockMinimumGreenColorLevel = value;
+            }
+        }
         /// <summary>
         /// [ProgressClock] The minimum blue color level (true color)
         /// </summary>
-        public int ProgressClockMinimumBlueColorLevel { get; set; } = 0;
+        public int ProgressClockMinimumBlueColorLevel
+        {
+            get => progressClockMinimumBlueColorLevel;
+            set
+            {
+                if (value <= 0)
+                    value = 0;
+                if (value > 255)
+                    value = 255;
+                progressClockMinimumBlueColorLevel = value;
+            }
+        }
         /// <summary>
         /// [ProgressClock] The minimum color level (255 colors or 16 colors)
         /// </summary>
-        public int ProgressClockMinimumColorLevel { get; set; } = 1;
+        public int ProgressClockMinimumColorLevel
+        {
+            get => progressClockMinimumColorLevel;
+            set
+            {
+                int FinalMinimumLevel = 255;
+                if (value < 0)
+                    value = 1;
+                if (value > FinalMinimumLevel)
+                    value = FinalMinimumLevel;
+                progressClockMinimumColorLevel = value;
+            }
+        }
         /// <summary>
         /// [ProgressClock] The maximum red color level (true color)
         /// </summary>
-        public int ProgressClockMaximumRedColorLevel { get; set; } = 255;
+        public int ProgressClockMaximumRedColorLevel
+        {
+            get => progressClockMaximumRedColorLevel;
+            set
+            {
+                if (value <= progressClockMinimumRedColorLevel)
+                    value = progressClockMinimumRedColorLevel;
+                if (value > 255)
+                    value = 255;
+                progressClockMaximumRedColorLevel = value;
+            }
+        }
         /// <summary>
         /// [ProgressClock] The maximum green color level (true color)
         /// </summary>
-        public int ProgressClockMaximumGreenColorLevel { get; set; } = 255;
+        public int ProgressClockMaximumGreenColorLevel
+        {
+            get => progressClockMaximumGreenColorLevel;
+            set
+            {
+                if (value <= progressClockMinimumGreenColorLevel)
+                    value = progressClockMinimumGreenColorLevel;
+                if (value > 255)
+                    value = 255;
+                progressClockMaximumGreenColorLevel = value;
+            }
+        }
         /// <summary>
         /// [ProgressClock] The maximum blue color level (true color)
         /// </summary>
-        public int ProgressClockMaximumBlueColorLevel { get; set; } = 255;
+        public int ProgressClockMaximumBlueColorLevel
+        {
+            get => progressClockMaximumBlueColorLevel;
+            set
+            {
+                if (value <= progressClockMinimumBlueColorLevel)
+                    value = progressClockMinimumBlueColorLevel;
+                if (value > 255)
+                    value = 255;
+                progressClockMaximumBlueColorLevel = value;
+            }
+        }
         /// <summary>
         /// [ProgressClock] The maximum color level (255 colors or 16 colors)
         /// </summary>
-        public int ProgressClockMaximumColorLevel { get; set; } = 255;
+        public int ProgressClockMaximumColorLevel
+        {
+            get => progressClockMaximumColorLevel;
+            set
+            {
+                int FinalMaximumLevel = 255;
+                if (value <= progressClockMinimumColorLevel)
+                    value = progressClockMinimumColorLevel;
+                if (value > FinalMaximumLevel)
+                    value = FinalMaximumLevel;
+                progressClockMaximumColorLevel = value;
+            }
+        }
+        #endregion
+
+        #region Lighter
+        private bool lighterTrueColor = true;
+        private int lighterDelay = 100;
+        private int lighterMaxPositions = 10;
+        private string lighterBackgroundColor = new Color(ConsoleColors.Black).PlainSequence;
+        private int lighterMinimumRedColorLevel = 0;
+        private int lighterMinimumGreenColorLevel = 0;
+        private int lighterMinimumBlueColorLevel = 0;
+        private int lighterMinimumColorLevel = 0;
+        private int lighterMaximumRedColorLevel = 255;
+        private int lighterMaximumGreenColorLevel = 255;
+        private int lighterMaximumBlueColorLevel = 255;
+        private int lighterMaximumColorLevel = 255;
+
         /// <summary>
         /// [Lighter] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
-        public bool LighterTrueColor { get; set; } = true;
+        public bool LighterTrueColor
+        {
+            get
+            {
+                return lighterTrueColor;
+            }
+            set
+            {
+                lighterTrueColor = value;
+            }
+        }
         /// <summary>
         /// [Lighter] How many milliseconds to wait before making the next write?
         /// </summary>
-        public int LighterDelay { get; set; } = 100;
+        public int LighterDelay
+        {
+            get
+            {
+                return lighterDelay;
+            }
+            set
+            {
+                lighterDelay = value;
+            }
+        }
         /// <summary>
         /// [Lighter] How many positions to write before starting to blacken them?
         /// </summary>
-        public int LighterMaxPositions { get; set; } = 10;
+        public int LighterMaxPositions
+        {
+            get
+            {
+                return lighterMaxPositions;
+            }
+            set
+            {
+                lighterMaxPositions = value;
+            }
+        }
         /// <summary>
         /// [Lighter] Screensaver background color
         /// </summary>
-        public string LighterBackgroundColor { get; set; } = new Color(ConsoleColors.Black).PlainSequence;
+        public string LighterBackgroundColor
+        {
+            get
+            {
+                return lighterBackgroundColor;
+            }
+            set
+            {
+                lighterBackgroundColor = value;
+            }
+        }
         /// <summary>
         /// [Lighter] The minimum red color level (true color)
         /// </summary>
-        public int LighterMinimumRedColorLevel { get; set; } = 0;
+        public int LighterMinimumRedColorLevel
+        {
+            get
+            {
+                return lighterMinimumRedColorLevel;
+            }
+            set
+            {
+                lighterMinimumRedColorLevel = value;
+            }
+        }
         /// <summary>
         /// [Lighter] The minimum green color level (true color)
         /// </summary>
-        public int LighterMinimumGreenColorLevel { get; set; } = 0;
+        public int LighterMinimumGreenColorLevel
+        {
+            get
+            {
+                return lighterMinimumGreenColorLevel;
+            }
+            set
+            {
+                lighterMinimumGreenColorLevel = value;
+            }
+        }
         /// <summary>
         /// [Lighter] The minimum blue color level (true color)
         /// </summary>
-        public int LighterMinimumBlueColorLevel { get; set; } = 0;
+        public int LighterMinimumBlueColorLevel
+        {
+            get
+            {
+                return lighterMinimumBlueColorLevel;
+            }
+            set
+            {
+                lighterMinimumBlueColorLevel = value;
+            }
+        }
         /// <summary>
         /// [Lighter] The minimum color level (255 colors or 16 colors)
         /// </summary>
-        public int LighterMinimumColorLevel { get; set; } = 0;
+        public int LighterMinimumColorLevel
+        {
+            get
+            {
+                return lighterMinimumColorLevel;
+            }
+            set
+            {
+                lighterMinimumColorLevel = value;
+            }
+        }
         /// <summary>
         /// [Lighter] The maximum red color level (true color)
         /// </summary>
-        public int LighterMaximumRedColorLevel { get; set; } = 255;
+        public int LighterMaximumRedColorLevel
+        {
+            get
+            {
+                return lighterMaximumRedColorLevel;
+            }
+            set
+            {
+                lighterMaximumRedColorLevel = value;
+            }
+        }
         /// <summary>
         /// [Lighter] The maximum green color level (true color)
         /// </summary>
-        public int LighterMaximumGreenColorLevel { get; set; } = 255;
+        public int LighterMaximumGreenColorLevel
+        {
+            get
+            {
+                return lighterMaximumGreenColorLevel;
+            }
+            set
+            {
+                lighterMaximumGreenColorLevel = value;
+            }
+        }
         /// <summary>
         /// [Lighter] The maximum blue color level (true color)
         /// </summary>
-        public int LighterMaximumBlueColorLevel { get; set; } = 255;
+        public int LighterMaximumBlueColorLevel
+        {
+            get
+            {
+                return lighterMaximumBlueColorLevel;
+            }
+            set
+            {
+                lighterMaximumBlueColorLevel = value;
+            }
+        }
         /// <summary>
         /// [Lighter] The maximum color level (255 colors or 16 colors)
         /// </summary>
-        public int LighterMaximumColorLevel { get; set; } = 255;
+        public int LighterMaximumColorLevel
+        {
+            get
+            {
+                return lighterMaximumColorLevel;
+            }
+            set
+            {
+                lighterMaximumColorLevel = value;
+            }
+        }
+        #endregion
+
+        #region Wipe
+        private bool wipeTrueColor = true;
+        private int wipeDelay = 10;
+        private int wipeWipesNeededToChangeDirection = 10;
+        private string wipeBackgroundColor = new Color(ConsoleColors.Black).PlainSequence;
+        private int wipeMinimumRedColorLevel = 0;
+        private int wipeMinimumGreenColorLevel = 0;
+        private int wipeMinimumBlueColorLevel = 0;
+        private int wipeMinimumColorLevel = 0;
+        private int wipeMaximumRedColorLevel = 255;
+        private int wipeMaximumGreenColorLevel = 255;
+        private int wipeMaximumBlueColorLevel = 255;
+        private int wipeMaximumColorLevel = 255;
+
         /// <summary>
         /// [Wipe] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
-        public bool WipeTrueColor { get; set; } = true;
+        public bool WipeTrueColor
+        {
+            get
+            {
+                return wipeTrueColor;
+            }
+            set
+            {
+                wipeTrueColor = value;
+            }
+        }
         /// <summary>
         /// [Wipe] How many milliseconds to wait before making the next write?
         /// </summary>
-        public int WipeDelay { get; set; } = 10;
+        public int WipeDelay
+        {
+            get
+            {
+                return wipeDelay;
+            }
+            set
+            {
+                wipeDelay = value;
+            }
+        }
         /// <summary>
         /// [Wipe] How many wipes needed to change direction?
         /// </summary>
-        public int WipeWipesNeededToChangeDirection { get; set; } = 10;
+        public int WipeWipesNeededToChangeDirection
+        {
+            get
+            {
+                return wipeWipesNeededToChangeDirection;
+            }
+            set
+            {
+                wipeWipesNeededToChangeDirection = value;
+            }
+        }
         /// <summary>
         /// [Wipe] Screensaver background color
         /// </summary>
-        public string WipeBackgroundColor { get; set; } = new Color(ConsoleColors.Black).PlainSequence;
+        public string WipeBackgroundColor
+        {
+            get
+            {
+                return wipeBackgroundColor;
+            }
+            set
+            {
+                wipeBackgroundColor = value;
+            }
+        }
         /// <summary>
         /// [Wipe] The minimum red color level (true color)
         /// </summary>
-        public int WipeMinimumRedColorLevel { get; set; } = 0;
+        public int WipeMinimumRedColorLevel
+        {
+            get
+            {
+                return wipeMinimumRedColorLevel;
+            }
+            set
+            {
+                wipeMinimumRedColorLevel = value;
+            }
+        }
         /// <summary>
         /// [Wipe] The minimum green color level (true color)
         /// </summary>
-        public int WipeMinimumGreenColorLevel { get; set; } = 0;
+        public int WipeMinimumGreenColorLevel
+        {
+            get
+            {
+                return wipeMinimumGreenColorLevel;
+            }
+            set
+            {
+                wipeMinimumGreenColorLevel = value;
+            }
+        }
         /// <summary>
         /// [Wipe] The minimum blue color level (true color)
         /// </summary>
-        public int WipeMinimumBlueColorLevel { get; set; } = 0;
+        public int WipeMinimumBlueColorLevel
+        {
+            get
+            {
+                return wipeMinimumBlueColorLevel;
+            }
+            set
+            {
+                wipeMinimumBlueColorLevel = value;
+            }
+        }
         /// <summary>
         /// [Wipe] The minimum color level (255 colors or 16 colors)
         /// </summary>
-        public int WipeMinimumColorLevel { get; set; } = 0;
+        public int WipeMinimumColorLevel
+        {
+            get
+            {
+                return wipeMinimumColorLevel;
+            }
+            set
+            {
+                wipeMinimumColorLevel = value;
+            }
+        }
         /// <summary>
         /// [Wipe] The maximum red color level (true color)
         /// </summary>
-        public int WipeMaximumRedColorLevel { get; set; } = 255;
+        public int WipeMaximumRedColorLevel
+        {
+            get
+            {
+                return wipeMaximumRedColorLevel;
+            }
+            set
+            {
+                wipeMaximumRedColorLevel = value;
+            }
+        }
         /// <summary>
         /// [Wipe] The maximum green color level (true color)
         /// </summary>
-        public int WipeMaximumGreenColorLevel { get; set; } = 255;
+        public int WipeMaximumGreenColorLevel
+        {
+            get
+            {
+                return wipeMaximumGreenColorLevel;
+            }
+            set
+            {
+                wipeMaximumGreenColorLevel = value;
+            }
+        }
         /// <summary>
         /// [Wipe] The maximum blue color level (true color)
         /// </summary>
-        public int WipeMaximumBlueColorLevel { get; set; } = 255;
+        public int WipeMaximumBlueColorLevel
+        {
+            get
+            {
+                return wipeMaximumBlueColorLevel;
+            }
+            set
+            {
+                wipeMaximumBlueColorLevel = value;
+            }
+        }
         /// <summary>
         /// [Wipe] The maximum color level (255 colors or 16 colors)
         /// </summary>
-        public int WipeMaximumColorLevel { get; set; } = 255;
+        public int WipeMaximumColorLevel
+        {
+            get
+            {
+                return wipeMaximumColorLevel;
+            }
+            set
+            {
+                wipeMaximumColorLevel = value;
+            }
+        }
+        #endregion
+
+        #region SimpleMatrix
+        private int simpleMatrixDelay = 1;
+
         /// <summary>
         /// [SimpleMatrix] How many milliseconds to wait before making the next write?
         /// </summary>
-        public int SimpleMatrixDelay { get; set; } = 1;
+        public int SimpleMatrixDelay
+        {
+            get
+            {
+                return simpleMatrixDelay;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 1;
+                simpleMatrixDelay = value;
+            }
+        }
+        #endregion
+
+        #region GlitterMatrix
+        private int glitterMatrixDelay = 1;
+        private string glitterMatrixBackgroundColor = new Color(ConsoleColors.Black).PlainSequence;
+        private string glitterMatrixForegroundColor = new Color(ConsoleColors.Green).PlainSequence;
+
         /// <summary>
         /// [GlitterMatrix] How many milliseconds to wait before making the next write?
         /// </summary>
-        public int GlitterMatrixDelay { get; set; } = 1;
+        public int GlitterMatrixDelay
+        {
+            get
+            {
+                return glitterMatrixDelay;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 1;
+                glitterMatrixDelay = value;
+            }
+        }
         /// <summary>
         /// [GlitterMatrix] Screensaver background color
         /// </summary>
-        public string GlitterMatrixBackgroundColor { get; set; } = new Color(ConsoleColors.Black).PlainSequence;
+        public string GlitterMatrixBackgroundColor
+        {
+            get
+            {
+                return glitterMatrixBackgroundColor;
+            }
+            set
+            {
+                glitterMatrixBackgroundColor = new Color(value).PlainSequence;
+            }
+        }
         /// <summary>
         /// [GlitterMatrix] Screensaver foreground color
         /// </summary>
-        public string GlitterMatrixForegroundColor { get; set; } = new Color(ConsoleColors.Green).PlainSequence;
+        public string GlitterMatrixForegroundColor
+        {
+            get
+            {
+                return glitterMatrixForegroundColor;
+            }
+            set
+            {
+                glitterMatrixForegroundColor = new Color(value).PlainSequence;
+            }
+        }
+        #endregion
+
+        #region BouncingText
+        private bool bouncingTextTrueColor = true;
+        private int bouncingTextDelay = 50;
+        private string bouncingTextWrite = "Nitrocid KS";
+        private string bouncingTextBackgroundColor = new Color(ConsoleColors.Black).PlainSequence;
+        private string bouncingTextForegroundColor = new Color(ConsoleColors.White).PlainSequence;
+        private int bouncingTextMinimumRedColorLevel = 0;
+        private int bouncingTextMinimumGreenColorLevel = 0;
+        private int bouncingTextMinimumBlueColorLevel = 0;
+        private int bouncingTextMinimumColorLevel = 0;
+        private int bouncingTextMaximumRedColorLevel = 255;
+        private int bouncingTextMaximumGreenColorLevel = 255;
+        private int bouncingTextMaximumBlueColorLevel = 255;
+        private int bouncingTextMaximumColorLevel = 255;
+
         /// <summary>
         /// [BouncingText] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
-        public bool BouncingTextTrueColor { get; set; } = true;
+        public bool BouncingTextTrueColor
+        {
+            get
+            {
+                return bouncingTextTrueColor;
+            }
+            set
+            {
+                bouncingTextTrueColor = value;
+            }
+        }
         /// <summary>
         /// [BouncingText] How many milliseconds to wait before making the next write?
         /// </summary>
-        public int BouncingTextDelay { get; set; } = 50;
+        public int BouncingTextDelay
+        {
+            get
+            {
+                return bouncingTextDelay;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 50;
+                bouncingTextDelay = value;
+            }
+        }
         /// <summary>
         /// [BouncingText] Text for Bouncing Text. Shorter is better.
         /// </summary>
-        public string BouncingTextWrite { get; set; } = "Nitrocid KS";
+        public string BouncingTextWrite
+        {
+            get
+            {
+                return bouncingTextWrite;
+            }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                    value = "Nitrocid KS";
+                bouncingTextWrite = value;
+            }
+        }
         /// <summary>
         /// [BouncingText] Screensaver background color
         /// </summary>
-        public string BouncingTextBackgroundColor { get; set; } = new Color(ConsoleColors.Black).PlainSequence;
+        public string BouncingTextBackgroundColor
+        {
+            get
+            {
+                return bouncingTextBackgroundColor;
+            }
+            set
+            {
+                bouncingTextBackgroundColor = new Color(value).PlainSequence;
+            }
+        }
         /// <summary>
         /// [BouncingText] Screensaver foreground color
         /// </summary>
-        public string BouncingTextForegroundColor { get; set; } = new Color(ConsoleColors.White).PlainSequence;
+        public string BouncingTextForegroundColor
+        {
+            get
+            {
+                return bouncingTextForegroundColor;
+            }
+            set
+            {
+                bouncingTextForegroundColor = new Color(value).PlainSequence;
+            }
+        }
         /// <summary>
         /// [BouncingText] The minimum red color level (true color)
         /// </summary>
-        public int BouncingTextMinimumRedColorLevel { get; set; } = 0;
+        public int BouncingTextMinimumRedColorLevel
+        {
+            get
+            {
+                return bouncingTextMinimumRedColorLevel;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 0;
+                if (value > 255)
+                    value = 255;
+                bouncingTextMinimumRedColorLevel = value;
+            }
+        }
         /// <summary>
         /// [BouncingText] The minimum green color level (true color)
         /// </summary>
-        public int BouncingTextMinimumGreenColorLevel { get; set; } = 0;
+        public int BouncingTextMinimumGreenColorLevel
+        {
+            get
+            {
+                return bouncingTextMinimumGreenColorLevel;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 0;
+                if (value > 255)
+                    value = 255;
+                bouncingTextMinimumGreenColorLevel = value;
+            }
+        }
         /// <summary>
         /// [BouncingText] The minimum blue color level (true color)
         /// </summary>
-        public int BouncingTextMinimumBlueColorLevel { get; set; } = 0;
+        public int BouncingTextMinimumBlueColorLevel
+        {
+            get
+            {
+                return bouncingTextMinimumBlueColorLevel;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 0;
+                if (value > 255)
+                    value = 255;
+                bouncingTextMinimumBlueColorLevel = value;
+            }
+        }
         /// <summary>
         /// [BouncingText] The minimum color level (255 colors or 16 colors)
         /// </summary>
-        public int BouncingTextMinimumColorLevel { get; set; } = 0;
+        public int BouncingTextMinimumColorLevel
+        {
+            get
+            {
+                return bouncingTextMinimumColorLevel;
+            }
+            set
+            {
+                int FinalMinimumLevel = 255;
+                if (value <= 0)
+                    value = 0;
+                if (value > FinalMinimumLevel)
+                    value = FinalMinimumLevel;
+                bouncingTextMinimumColorLevel = value;
+            }
+        }
         /// <summary>
         /// [BouncingText] The maximum red color level (true color)
         /// </summary>
-        public int BouncingTextMaximumRedColorLevel { get; set; } = 255;
+        public int BouncingTextMaximumRedColorLevel
+        {
+            get
+            {
+                return bouncingTextMaximumRedColorLevel;
+            }
+            set
+            {
+                if (value <= bouncingTextMinimumRedColorLevel)
+                    value = bouncingTextMinimumRedColorLevel;
+                if (value > 255)
+                    value = 255;
+                bouncingTextMaximumRedColorLevel = value;
+            }
+        }
         /// <summary>
         /// [BouncingText] The maximum green color level (true color)
         /// </summary>
-        public int BouncingTextMaximumGreenColorLevel { get; set; } = 255;
+        public int BouncingTextMaximumGreenColorLevel
+        {
+            get
+            {
+                return bouncingTextMaximumGreenColorLevel;
+            }
+            set
+            {
+                if (value <= bouncingTextMinimumGreenColorLevel)
+                    value = bouncingTextMinimumGreenColorLevel;
+                if (value > 255)
+                    value = 255;
+                bouncingTextMaximumGreenColorLevel = value;
+            }
+        }
         /// <summary>
         /// [BouncingText] The maximum blue color level (true color)
         /// </summary>
-        public int BouncingTextMaximumBlueColorLevel { get; set; } = 255;
+        public int BouncingTextMaximumBlueColorLevel
+        {
+            get
+            {
+                return bouncingTextMaximumBlueColorLevel;
+            }
+            set
+            {
+                if (value <= bouncingTextMinimumBlueColorLevel)
+                    value = bouncingTextMinimumBlueColorLevel;
+                if (value > 255)
+                    value = 255;
+                bouncingTextMaximumBlueColorLevel = value;
+            }
+        }
         /// <summary>
         /// [BouncingText] The maximum color level (255 colors or 16 colors)
         /// </summary>
-        public int BouncingTextMaximumColorLevel { get; set; } = 255;
+        public int BouncingTextMaximumColorLevel
+        {
+            get
+            {
+                return bouncingTextMaximumColorLevel;
+            }
+            set
+            {
+                int FinalMaximumLevel = 255;
+                if (value <= bouncingTextMinimumColorLevel)
+                    value = bouncingTextMinimumColorLevel;
+                if (value > FinalMaximumLevel)
+                    value = FinalMaximumLevel;
+                bouncingTextMaximumColorLevel = value;
+            }
+        }
+        #endregion
+
+        #region Fader
+        private int faderDelay = 50;
+        private int faderFadeOutDelay = 3000;
+        private string faderWrite = "Nitrocid KS";
+        private int faderMaxSteps = 25;
+        private string faderBackgroundColor = new Color(0, 0, 0).PlainSequence;
+        private int faderMinimumRedColorLevel = 0;
+        private int faderMinimumGreenColorLevel = 0;
+        private int faderMinimumBlueColorLevel = 0;
+        private int faderMaximumRedColorLevel = 255;
+        private int faderMaximumGreenColorLevel = 255;
+        private int faderMaximumBlueColorLevel = 255;
+
         /// <summary>
         /// [Fader] How many milliseconds to wait before making the next write?
         /// </summary>
-        public int FaderDelay { get; set; } = 50;
+        public int FaderDelay
+        {
+            get
+            {
+                return faderDelay;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 50;
+                faderDelay = value;
+            }
+        }
         /// <summary>
         /// [Fader] How many milliseconds to wait before fading the text out?
         /// </summary>
-        public int FaderFadeOutDelay { get; set; } = 3000;
+        public int FaderFadeOutDelay
+        {
+            get
+            {
+                return faderFadeOutDelay;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 3000;
+                faderFadeOutDelay = value;
+            }
+        }
         /// <summary>
         /// [Fader] Text for Fader. Shorter is better.
         /// </summary>
-        public string FaderWrite { get; set; } = "Nitrocid KS";
+        public string FaderWrite
+        {
+            get
+            {
+                return faderWrite;
+            }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                    value = "Nitrocid KS";
+                faderWrite = value;
+            }
+        }
         /// <summary>
         /// [Fader] How many fade steps to do?
         /// </summary>
-        public int FaderMaxSteps { get; set; } = 25;
+        public int FaderMaxSteps
+        {
+            get
+            {
+                return faderMaxSteps;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 25;
+                faderMaxSteps = value;
+            }
+        }
         /// <summary>
         /// [Fader] Screensaver background color
         /// </summary>
-        public string FaderBackgroundColor { get; set; } = new Color(0, 0, 0).PlainSequence;
+        public string FaderBackgroundColor
+        {
+            get
+            {
+                return faderBackgroundColor;
+            }
+            set
+            {
+                faderBackgroundColor = new Color(value).PlainSequence;
+            }
+        }
         /// <summary>
         /// [Fader] The minimum red color level (true color)
         /// </summary>
-        public int FaderMinimumRedColorLevel { get; set; } = 0;
+        public int FaderMinimumRedColorLevel
+        {
+            get
+            {
+                return faderMinimumRedColorLevel;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 0;
+                if (value > 255)
+                    value = 255;
+                faderMinimumRedColorLevel = value;
+            }
+        }
         /// <summary>
         /// [Fader] The minimum green color level (true color)
         /// </summary>
-        public int FaderMinimumGreenColorLevel { get; set; } = 0;
+        public int FaderMinimumGreenColorLevel
+        {
+            get
+            {
+                return faderMinimumGreenColorLevel;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 0;
+                if (value > 255)
+                    value = 255;
+                faderMinimumGreenColorLevel = value;
+            }
+        }
         /// <summary>
         /// [Fader] The minimum blue color level (true color)
         /// </summary>
-        public int FaderMinimumBlueColorLevel { get; set; } = 0;
+        public int FaderMinimumBlueColorLevel
+        {
+            get
+            {
+                return faderMinimumBlueColorLevel;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 0;
+                if (value > 255)
+                    value = 255;
+                faderMinimumBlueColorLevel = value;
+            }
+        }
         /// <summary>
         /// [Fader] The maximum red color level (true color)
         /// </summary>
-        public int FaderMaximumRedColorLevel { get; set; } = 255;
+        public int FaderMaximumRedColorLevel
+        {
+            get
+            {
+                return faderMaximumRedColorLevel;
+            }
+            set
+            {
+                if (value <= faderMinimumRedColorLevel)
+                    value = faderMinimumRedColorLevel;
+                if (value > 255)
+                    value = 255;
+                faderMaximumRedColorLevel = value;
+            }
+        }
         /// <summary>
         /// [Fader] The maximum green color level (true color)
         /// </summary>
-        public int FaderMaximumGreenColorLevel { get; set; } = 255;
+        public int FaderMaximumGreenColorLevel
+        {
+            get
+            {
+                return faderMaximumGreenColorLevel;
+            }
+            set
+            {
+                if (value <= faderMinimumGreenColorLevel)
+                    value = faderMinimumGreenColorLevel;
+                if (value > 255)
+                    value = 255;
+                faderMaximumGreenColorLevel = value;
+            }
+        }
         /// <summary>
         /// [Fader] The maximum blue color level (true color)
         /// </summary>
-        public int FaderMaximumBlueColorLevel { get; set; } = 255;
+        public int FaderMaximumBlueColorLevel
+        {
+            get
+            {
+                return faderMaximumBlueColorLevel;
+            }
+            set
+            {
+                if (value <= faderMinimumBlueColorLevel)
+                    value = faderMinimumBlueColorLevel;
+                if (value > 255)
+                    value = 255;
+                faderMaximumBlueColorLevel = value;
+            }
+        }
+        #endregion
+
+        #region FaderBack
+        private int faderBackDelay = 10;
+        private int faderBackFadeOutDelay = 3000;
+        private int faderBackMaxSteps = 25;
+        private int faderBackMinimumRedColorLevel = 0;
+        private int faderBackMinimumGreenColorLevel = 0;
+        private int faderBackMinimumBlueColorLevel = 0;
+        private int faderBackMaximumRedColorLevel = 255;
+        private int faderBackMaximumGreenColorLevel = 255;
+        private int faderBackMaximumBlueColorLevel = 255;
+
         /// <summary>
         /// [FaderBack] How many milliseconds to wait before making the next write?
         /// </summary>
-        public int FaderBackDelay { get; set; } = 10;
+        public int FaderBackDelay
+        {
+            get
+            {
+                return faderBackDelay;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 10;
+                faderBackDelay = value;
+            }
+        }
         /// <summary>
         /// [FaderBack] How many milliseconds to wait before fading the text out?
         /// </summary>
-        public int FaderBackFadeOutDelay { get; set; } = 3000;
+        public int FaderBackFadeOutDelay
+        {
+            get
+            {
+                return faderBackFadeOutDelay;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 3000;
+                faderBackFadeOutDelay = value;
+            }
+        }
         /// <summary>
         /// [FaderBack] How many fade steps to do?
         /// </summary>
-        public int FaderBackMaxSteps { get; set; } = 25;
+        public int FaderBackMaxSteps
+        {
+            get
+            {
+                return faderBackMaxSteps;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 25;
+                faderBackMaxSteps = value;
+            }
+        }
         /// <summary>
         /// [FaderBack] The minimum red color level (true color)
         /// </summary>
-        public int FaderBackMinimumRedColorLevel { get; set; } = 0;
+        public int FaderBackMinimumRedColorLevel
+        {
+            get
+            {
+                return faderBackMinimumRedColorLevel;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 0;
+                if (value > 255)
+                    value = 255;
+                faderBackMinimumRedColorLevel = value;
+            }
+        }
         /// <summary>
         /// [FaderBack] The minimum green color level (true color)
         /// </summary>
-        public int FaderBackMinimumGreenColorLevel { get; set; } = 0;
+        public int FaderBackMinimumGreenColorLevel
+        {
+            get
+            {
+                return faderBackMinimumGreenColorLevel;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 0;
+                if (value > 255)
+                    value = 255;
+                faderBackMinimumGreenColorLevel = value;
+            }
+        }
         /// <summary>
         /// [FaderBack] The minimum blue color level (true color)
         /// </summary>
-        public int FaderBackMinimumBlueColorLevel { get; set; } = 0;
+        public int FaderBackMinimumBlueColorLevel
+        {
+            get
+            {
+                return faderBackMinimumBlueColorLevel;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 0;
+                if (value > 255)
+                    value = 255;
+                faderBackMinimumBlueColorLevel = value;
+            }
+        }
         /// <summary>
         /// [FaderBack] The maximum red color level (true color)
         /// </summary>
-        public int FaderBackMaximumRedColorLevel { get; set; } = 255;
+        public int FaderBackMaximumRedColorLevel
+        {
+            get
+            {
+                return faderBackMaximumRedColorLevel;
+            }
+            set
+            {
+                if (value <= faderBackMinimumRedColorLevel)
+                    value = faderBackMinimumRedColorLevel;
+                if (value > 255)
+                    value = 255;
+                faderBackMaximumRedColorLevel = value;
+            }
+        }
         /// <summary>
         /// [FaderBack] The maximum green color level (true color)
         /// </summary>
-        public int FaderBackMaximumGreenColorLevel { get; set; } = 255;
+        public int FaderBackMaximumGreenColorLevel
+        {
+            get
+            {
+                return faderBackMaximumGreenColorLevel;
+            }
+            set
+            {
+                if (value <= faderBackMinimumGreenColorLevel)
+                    value = faderBackMinimumGreenColorLevel;
+                if (value > 255)
+                    value = 255;
+                faderBackMaximumGreenColorLevel = value;
+            }
+        }
         /// <summary>
         /// [FaderBack] The maximum blue color level (true color)
         /// </summary>
-        public int FaderBackMaximumBlueColorLevel { get; set; } = 255;
+        public int FaderBackMaximumBlueColorLevel
+        {
+            get
+            {
+                return faderBackMaximumBlueColorLevel;
+            }
+            set
+            {
+                if (value <= faderBackMinimumBlueColorLevel)
+                    value = faderBackMinimumBlueColorLevel;
+                if (value > 255)
+                    value = 255;
+                faderBackMaximumBlueColorLevel = value;
+            }
+        }
+        #endregion
+
+        #region BeatFader
+        private bool beatFaderTrueColor = true;
+        private int beatFaderDelay = 120;
+        private bool beatFaderCycleColors = true;
+        private string beatFaderBeatColor = "17";
+        private int beatFaderMaxSteps = 25;
+        private int beatFaderMinimumRedColorLevel = 0;
+        private int beatFaderMinimumGreenColorLevel = 0;
+        private int beatFaderMinimumBlueColorLevel = 0;
+        private int beatFaderMinimumColorLevel = 0;
+        private int beatFaderMaximumRedColorLevel = 255;
+        private int beatFaderMaximumGreenColorLevel = 255;
+        private int beatFaderMaximumBlueColorLevel = 255;
+        private int beatFaderMaximumColorLevel = 255;
+
         /// <summary>
         /// [BeatFader] Enable truecolor support. Has a higher priority than 255 color support. Please note that it only works if color cycling is enabled.
         /// </summary>
-        public bool BeatFaderTrueColor { get; set; } = true;
-        /// <summary>
-        /// [BeatFader] How many beats per minute to wait before making the next write?
-        /// </summary>
-        public int BeatFaderDelay { get; set; } = 120;
+        public bool BeatFaderTrueColor
+        {
+            get
+            {
+                return beatFaderTrueColor;
+            }
+            set
+            {
+                beatFaderTrueColor = value;
+            }
+        }
         /// <summary>
         /// [BeatFader] Enable color cycling (uses RNG. If disabled, uses the <see cref="BeatFaderBeatColor"/> color.)
         /// </summary>
-        public bool BeatFaderCycleColors { get; set; } = true;
+        public bool BeatFaderCycleColors
+        {
+            get
+            {
+                return beatFaderCycleColors;
+            }
+            set
+            {
+                beatFaderCycleColors = value;
+            }
+        }
         /// <summary>
         /// [BeatFader] The color of beats. It can be 1-16, 1-255, or "1-255;1-255;1-255".
         /// </summary>
-        public string BeatFaderBeatColor { get; set; } = "17";
+        public string BeatFaderBeatColor
+        {
+            get
+            {
+                return beatFaderBeatColor;
+            }
+            set
+            {
+                beatFaderBeatColor = new Color(value).PlainSequence;
+            }
+        }
+        /// <summary>
+        /// [BeatFader] How many beats per minute to wait before making the next write?
+        /// </summary>
+        public int BeatFaderDelay
+        {
+            get
+            {
+                return beatFaderDelay;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 120;
+                beatFaderDelay = value;
+            }
+        }
         /// <summary>
         /// [BeatFader] How many fade steps to do?
         /// </summary>
-        public int BeatFaderMaxSteps { get; set; } = 25;
+        public int BeatFaderMaxSteps
+        {
+            get
+            {
+                return beatFaderMaxSteps;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 25;
+                beatFaderMaxSteps = value;
+            }
+        }
         /// <summary>
         /// [BeatFader] The minimum red color level (true color)
         /// </summary>
-        public int BeatFaderMinimumRedColorLevel { get; set; } = 0;
+        public int BeatFaderMinimumRedColorLevel
+        {
+            get
+            {
+                return beatFaderMinimumRedColorLevel;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 0;
+                if (value > 255)
+                    value = 255;
+                beatFaderMinimumRedColorLevel = value;
+            }
+        }
         /// <summary>
         /// [BeatFader] The minimum green color level (true color)
         /// </summary>
-        public int BeatFaderMinimumGreenColorLevel { get; set; } = 0;
+        public int BeatFaderMinimumGreenColorLevel
+        {
+            get
+            {
+                return beatFaderMinimumGreenColorLevel;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 0;
+                if (value > 255)
+                    value = 255;
+                beatFaderMinimumGreenColorLevel = value;
+            }
+        }
         /// <summary>
         /// [BeatFader] The minimum blue color level (true color)
         /// </summary>
-        public int BeatFaderMinimumBlueColorLevel { get; set; } = 0;
+        public int BeatFaderMinimumBlueColorLevel
+        {
+            get
+            {
+                return beatFaderMinimumBlueColorLevel;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 0;
+                if (value > 255)
+                    value = 255;
+                beatFaderMinimumBlueColorLevel = value;
+            }
+        }
         /// <summary>
         /// [BeatFader] The minimum color level (255 colors or 16 colors)
         /// </summary>
-        public int BeatFaderMinimumColorLevel { get; set; } = 0;
+        public int BeatFaderMinimumColorLevel
+        {
+            get
+            {
+                return beatFaderMinimumColorLevel;
+            }
+            set
+            {
+                int FinalMinimumLevel = 255;
+                if (value <= 0)
+                    value = 0;
+                if (value > FinalMinimumLevel)
+                    value = FinalMinimumLevel;
+                beatFaderMinimumColorLevel = value;
+            }
+        }
         /// <summary>
         /// [BeatFader] The maximum red color level (true color)
         /// </summary>
-        public int BeatFaderMaximumRedColorLevel { get; set; } = 255;
+        public int BeatFaderMaximumRedColorLevel
+        {
+            get
+            {
+                return beatFaderMaximumRedColorLevel;
+            }
+            set
+            {
+                if (value <= beatFaderMinimumRedColorLevel)
+                    value = beatFaderMinimumRedColorLevel;
+                if (value > 255)
+                    value = 255;
+                beatFaderMaximumRedColorLevel = value;
+            }
+        }
         /// <summary>
         /// [BeatFader] The maximum green color level (true color)
         /// </summary>
-        public int BeatFaderMaximumGreenColorLevel { get; set; } = 255;
+        public int BeatFaderMaximumGreenColorLevel
+        {
+            get
+            {
+                return beatFaderMaximumGreenColorLevel;
+            }
+            set
+            {
+                if (value <= beatFaderMinimumGreenColorLevel)
+                    value = beatFaderMinimumGreenColorLevel;
+                if (value > 255)
+                    value = 255;
+                beatFaderMaximumGreenColorLevel = value;
+            }
+        }
         /// <summary>
         /// [BeatFader] The maximum blue color level (true color)
         /// </summary>
-        public int BeatFaderMaximumBlueColorLevel { get; set; } = 255;
+        public int BeatFaderMaximumBlueColorLevel
+        {
+            get
+            {
+                return beatFaderMaximumBlueColorLevel;
+            }
+            set
+            {
+                if (value <= beatFaderMinimumBlueColorLevel)
+                    value = beatFaderMinimumBlueColorLevel;
+                if (value > 255)
+                    value = 255;
+                beatFaderMaximumBlueColorLevel = value;
+            }
+        }
         /// <summary>
         /// [BeatFader] The maximum color level (255 colors or 16 colors)
         /// </summary>
-        public int BeatFaderMaximumColorLevel { get; set; } = 255;
+        public int BeatFaderMaximumColorLevel
+        {
+            get
+            {
+                return beatFaderMaximumColorLevel;
+            }
+            set
+            {
+                int FinalMaximumLevel = 255;
+                if (value <= beatFaderMinimumColorLevel)
+                    value = beatFaderMinimumColorLevel;
+                if (value > FinalMaximumLevel)
+                    value = FinalMaximumLevel;
+                beatFaderMaximumColorLevel = value;
+            }
+        }
+        #endregion
+
+        #region Typo
+        private int typoDelay = 50;
+        private int typoWriteAgainDelay = 3000;
+        private string typoWrite = "Nitrocid KS";
+        private int typoWritingSpeedMin = 50;
+        private int typoWritingSpeedMax = 80;
+        private int typoMissStrikePossibility = 20;
+        private int typoMissPossibility = 10;
+        private string typoTextColor = new Color(ConsoleColors.White).PlainSequence;
+
         /// <summary>
         /// [Typo] How many milliseconds to wait before making the next write?
         /// </summary>
-        public int TypoDelay { get; set; } = 50;
+        public int TypoDelay
+        {
+            get
+            {
+                return typoDelay;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 50;
+                typoDelay = value;
+            }
+        }
         /// <summary>
         /// [Typo] How many milliseconds to wait before writing the text again?
         /// </summary>
-        public int TypoWriteAgainDelay { get; set; } = 3000;
+        public int TypoWriteAgainDelay
+        {
+            get
+            {
+                return typoWriteAgainDelay;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 3000;
+                typoWriteAgainDelay = value;
+            }
+        }
         /// <summary>
         /// [Typo] Text for Typo. Longer is better.
         /// </summary>
-        public string TypoWrite { get; set; } = "Nitrocid KS";
+        public string TypoWrite
+        {
+            get
+            {
+                return typoWrite;
+            }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                    value = "Nitrocid KS";
+                typoWrite = value;
+            }
+        }
         /// <summary>
         /// [Typo] Minimum writing speed in WPM
         /// </summary>
-        public int TypoWritingSpeedMin { get; set; } = 50;
+        public int TypoWritingSpeedMin
+        {
+            get
+            {
+                return typoWritingSpeedMin;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 50;
+                typoWritingSpeedMin = value;
+            }
+        }
         /// <summary>
         /// [Typo] Maximum writing speed in WPM
         /// </summary>
-        public int TypoWritingSpeedMax { get; set; } = 80;
+        public int TypoWritingSpeedMax
+        {
+            get
+            {
+                return typoWritingSpeedMax;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 80;
+                typoWritingSpeedMax = value;
+            }
+        }
         /// <summary>
         /// [Typo] Possibility that the writer made a typo in percent
         /// </summary>
-        public int TypoMissStrikePossibility { get; set; } = 20;
+        public int TypoMissStrikePossibility
+        {
+            get
+            {
+                return typoMissStrikePossibility;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 20;
+                typoMissStrikePossibility = value;
+            }
+        }
         /// <summary>
         /// [Typo] Possibility that the writer missed a character in percent
         /// </summary>
-        public int TypoMissPossibility { get; set; } = 10;
+        public int TypoMissPossibility
+        {
+            get
+            {
+                return typoMissPossibility;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 10;
+                typoMissPossibility = value;
+            }
+        }
         /// <summary>
         /// [Typo] Text color
         /// </summary>
-        public string TypoTextColor { get; set; } = new Color(ConsoleColors.White).PlainSequence;
+        public string TypoTextColor
+        {
+            get
+            {
+                return typoTextColor;
+            }
+            set
+            {
+                typoTextColor = new Color(value).PlainSequence;
+            }
+        }
+        #endregion
+
+        #region Marquee
+        private bool marqueeTrueColor = true;
+        private int marqueeDelay = 10;
+        private string marqueeWrite = "Nitrocid KS";
+        private bool marqueeAlwaysCentered = true;
+        private bool marqueeUseConsoleAPI;
+        private string marqueeBackgroundColor = new Color(ConsoleColors.Black).PlainSequence;
+        private int marqueeMinimumRedColorLevel = 0;
+        private int marqueeMinimumGreenColorLevel = 0;
+        private int marqueeMinimumBlueColorLevel = 0;
+        private int marqueeMinimumColorLevel = 0;
+        private int marqueeMaximumRedColorLevel = 255;
+        private int marqueeMaximumGreenColorLevel = 255;
+        private int marqueeMaximumBlueColorLevel = 255;
+        private int marqueeMaximumColorLevel = 255;
+
         /// <summary>
         /// [Marquee] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
-        public bool MarqueeTrueColor { get; set; } = true;
+        public bool MarqueeTrueColor
+        {
+            get
+            {
+                return marqueeTrueColor;
+            }
+            set
+            {
+                marqueeTrueColor = value;
+            }
+        }
         /// <summary>
         /// [Marquee] How many milliseconds to wait before making the next write?
         /// </summary>
-        public int MarqueeDelay { get; set; } = 10;
+        public int MarqueeDelay
+        {
+            get
+            {
+                return marqueeDelay;
+            }
+            set
+            {
+                marqueeDelay = value;
+            }
+        }
         /// <summary>
         /// [Marquee] Text for Marquee. Shorter is better.
         /// </summary>
-        public string MarqueeWrite { get; set; } = "Nitrocid KS";
+        public string MarqueeWrite
+        {
+            get
+            {
+                return marqueeWrite;
+            }
+            set
+            {
+                marqueeWrite = value;
+            }
+        }
         /// <summary>
         /// [Marquee] Whether the text is always on center.
         /// </summary>
-        public bool MarqueeAlwaysCentered { get; set; } = true;
+        public bool MarqueeAlwaysCentered
+        {
+            get
+            {
+                return marqueeAlwaysCentered;
+            }
+            set
+            {
+                marqueeAlwaysCentered = value;
+            }
+        }
         /// <summary>
         /// [Marquee] Whether to use the KS.ConsoleBase.ConsoleWrapper.Clear() API (slow) or use the line-clearing VT sequence (fast).
         /// </summary>
-        public bool MarqueeUseConsoleAPI { get; set; }
+        public bool MarqueeUseConsoleAPI
+        {
+            get
+            {
+                return marqueeUseConsoleAPI;
+            }
+            set
+            {
+                marqueeUseConsoleAPI = value;
+            }
+        }
         /// <summary>
         /// [Marquee] Screensaver background color
         /// </summary>
-        public string MarqueeBackgroundColor { get; set; } = new Color(ConsoleColors.Black).PlainSequence;
+        public string MarqueeBackgroundColor
+        {
+            get
+            {
+                return marqueeBackgroundColor;
+            }
+            set
+            {
+                marqueeBackgroundColor = value;
+            }
+        }
         /// <summary>
         /// [Marquee] The minimum red color level (true color)
         /// </summary>
-        public int MarqueeMinimumRedColorLevel { get; set; } = 0;
+        public int MarqueeMinimumRedColorLevel
+        {
+            get
+            {
+                return marqueeMinimumRedColorLevel;
+            }
+            set
+            {
+                marqueeMinimumRedColorLevel = value;
+            }
+        }
         /// <summary>
         /// [Marquee] The minimum green color level (true color)
         /// </summary>
-        public int MarqueeMinimumGreenColorLevel { get; set; } = 0;
+        public int MarqueeMinimumGreenColorLevel
+        {
+            get
+            {
+                return marqueeMinimumGreenColorLevel;
+            }
+            set
+            {
+                marqueeMinimumGreenColorLevel = value;
+            }
+        }
         /// <summary>
         /// [Marquee] The minimum blue color level (true color)
         /// </summary>
-        public int MarqueeMinimumBlueColorLevel { get; set; } = 0;
+        public int MarqueeMinimumBlueColorLevel
+        {
+            get
+            {
+                return marqueeMinimumBlueColorLevel;
+            }
+            set
+            {
+                marqueeMinimumBlueColorLevel = value;
+            }
+        }
         /// <summary>
         /// [Marquee] The minimum color level (255 colors or 16 colors)
         /// </summary>
-        public int MarqueeMinimumColorLevel { get; set; } = 0;
+        public int MarqueeMinimumColorLevel
+        {
+            get
+            {
+                return marqueeMinimumColorLevel;
+            }
+            set
+            {
+                marqueeMinimumColorLevel = value;
+            }
+        }
         /// <summary>
         /// [Marquee] The maximum red color level (true color)
         /// </summary>
-        public int MarqueeMaximumRedColorLevel { get; set; } = 255;
+        public int MarqueeMaximumRedColorLevel
+        {
+            get
+            {
+                return marqueeMaximumRedColorLevel;
+            }
+            set
+            {
+                marqueeMaximumRedColorLevel = value;
+            }
+        }
         /// <summary>
         /// [Marquee] The maximum green color level (true color)
         /// </summary>
-        public int MarqueeMaximumGreenColorLevel { get; set; } = 255;
+        public int MarqueeMaximumGreenColorLevel
+        {
+            get
+            {
+                return marqueeMaximumGreenColorLevel;
+            }
+            set
+            {
+                marqueeMaximumGreenColorLevel = value;
+            }
+        }
         /// <summary>
         /// [Marquee] The maximum blue color level (true color)
         /// </summary>
-        public int MarqueeMaximumBlueColorLevel { get; set; } = 255;
+        public int MarqueeMaximumBlueColorLevel
+        {
+            get
+            {
+                return marqueeMaximumBlueColorLevel;
+            }
+            set
+            {
+                marqueeMaximumBlueColorLevel = value;
+            }
+        }
         /// <summary>
         /// [Marquee] The maximum color level (255 colors or 16 colors)
         /// </summary>
-        public int MarqueeMaximumColorLevel { get; set; } = 255;
+        public int MarqueeMaximumColorLevel
+        {
+            get
+            {
+                return marqueeMaximumColorLevel;
+            }
+            set
+            {
+                marqueeMaximumColorLevel = value;
+            }
+        }
+        #endregion
+
+        #region Linotypo
+        private int linotypoDelay = 50;
+        private int linotypoNewScreenDelay = 3000;
+        private string linotypoWrite = "Nitrocid KS";
+        private int linotypoWritingSpeedMin = 50;
+        private int linotypoWritingSpeedMax = 80;
+        private int linotypoMissStrikePossibility = 1;
+        private int linotypoTextColumns = 3;
+        private int linotypoEtaoinThreshold = 5;
+        private int linotypoEtaoinCappingPossibility = 5;
+        private int linotypoEtaoinType = 0;
+        private int linotypoMissPossibility = 10;
+        private string linotypoTextColor = new Color(ConsoleColors.White).PlainSequence;
+
         /// <summary>
         /// [Linotypo] How many milliseconds to wait before making the next write?
         /// </summary>
-        public int LinotypoDelay { get; set; } = 50;
+        public int LinotypoDelay
+        {
+            get
+            {
+                return linotypoDelay;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 50;
+                linotypoDelay = value;
+            }
+        }
         /// <summary>
         /// [Linotypo] How many milliseconds to wait before writing the text in the new screen again?
         /// </summary>
-        public int LinotypoNewScreenDelay { get; set; } = 3000;
+        public int LinotypoNewScreenDelay
+        {
+            get
+            {
+                return linotypoNewScreenDelay;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 3000;
+                linotypoNewScreenDelay = value;
+            }
+        }
         /// <summary>
         /// [Linotypo] Text for Linotypo. Longer is better.
         /// </summary>
-        public string LinotypoWrite { get; set; } = "Nitrocid KS";
+        public string LinotypoWrite
+        {
+            get
+            {
+                return linotypoWrite;
+            }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                    value = "Nitrocid KS";
+                linotypoWrite = value;
+            }
+        }
         /// <summary>
         /// [Linotypo] Minimum writing speed in WPM
         /// </summary>
-        public int LinotypoWritingSpeedMin { get; set; } = 50;
+        public int LinotypoWritingSpeedMin
+        {
+            get
+            {
+                return linotypoWritingSpeedMin;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 50;
+                linotypoWritingSpeedMin = value;
+            }
+        }
         /// <summary>
         /// [Linotypo] Maximum writing speed in WPM
         /// </summary>
-        public int LinotypoWritingSpeedMax { get; set; } = 80;
+        public int LinotypoWritingSpeedMax
+        {
+            get
+            {
+                return linotypoWritingSpeedMax;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 80;
+                linotypoWritingSpeedMax = value;
+            }
+        }
         /// <summary>
         /// [Linotypo] Possibility that the writer made a typo in percent
         /// </summary>
-        public int LinotypoMissStrikePossibility { get; set; } = 1;
+        public int LinotypoMissStrikePossibility
+        {
+            get
+            {
+                return linotypoMissStrikePossibility;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 1;
+                linotypoMissStrikePossibility = value;
+            }
+        }
         /// <summary>
         /// [Linotypo] The text columns to be printed.
         /// </summary>
-        public int LinotypoTextColumns { get; set; } = 3;
+        public int LinotypoTextColumns
+        {
+            get
+            {
+                return linotypoTextColumns;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 3;
+                if (value > 3)
+                    value = 3;
+                linotypoTextColumns = value;
+            }
+        }
         /// <summary>
         /// [Linotypo] How many characters to write before triggering the "line fill"?
         /// </summary>
-        public int LinotypoEtaoinThreshold { get; set; } = 5;
+        public int LinotypoEtaoinThreshold
+        {
+            get
+            {
+                return linotypoEtaoinThreshold;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 5;
+                if (value > 8)
+                    value = 8;
+                linotypoEtaoinThreshold = value;
+            }
+        }
         /// <summary>
         /// [Linotypo] Possibility that the Etaoin pattern will be printed in all caps in percent
         /// </summary>
-        public int LinotypoEtaoinCappingPossibility { get; set; } = 5;
+        public int LinotypoEtaoinCappingPossibility
+        {
+            get
+            {
+                return linotypoEtaoinCappingPossibility;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 5;
+                linotypoEtaoinCappingPossibility = value;
+            }
+        }
         /// <summary>
         /// [Linotypo] Line fill pattern type
         /// </summary>
-        public int LinotypoEtaoinType { get; set; } = 0;
+        public FillType LinotypoEtaoinType
+        {
+            get
+            {
+                return (FillType)linotypoEtaoinType;
+            }
+            set
+            {
+                linotypoEtaoinType = (int)value;
+            }
+        }
         /// <summary>
         /// [Linotypo] Possibility that the writer missed a character in percent
         /// </summary>
-        public int LinotypoMissPossibility { get; set; } = 10;
+        public int LinotypoMissPossibility
+        {
+            get
+            {
+                return linotypoMissPossibility;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 10;
+                linotypoMissPossibility = value;
+            }
+        }
         /// <summary>
         /// [Linotypo] Text color
         /// </summary>
-        public string LinotypoTextColor { get; set; } = new Color(ConsoleColors.White).PlainSequence;
+        public string LinotypoTextColor
+        {
+            get
+            {
+                return linotypoTextColor;
+            }
+            set
+            {
+                linotypoTextColor = new Color(value).PlainSequence;
+            }
+        }
+        #endregion
+
+        #region Typewriter
         /// <summary>
         /// [Typewriter] How many milliseconds to wait before making the next write?
         /// </summary>
@@ -1049,50 +4102,66 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [Typewriter] Text color
         /// </summary>
         public string TypewriterTextColor { get; set; } = new Color(ConsoleColors.White).PlainSequence;
+        #endregion
+
+        #region FlashColor
         /// <summary>
         /// [FlashColor] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
         public bool FlashColorTrueColor { get; set; } = true;
+
         /// <summary>
         /// [FlashColor] How many milliseconds to wait before making the next write?
         /// </summary>
         public int FlashColorDelay { get; set; } = 20;
+
         /// <summary>
         /// [FlashColor] Screensaver background color
         /// </summary>
         public string FlashColorBackgroundColor { get; set; } = new Color(ConsoleColors.Black).PlainSequence;
+
         /// <summary>
         /// [FlashColor] The minimum red color level (true color)
         /// </summary>
         public int FlashColorMinimumRedColorLevel { get; set; } = 0;
+
         /// <summary>
         /// [FlashColor] The minimum green color level (true color)
         /// </summary>
         public int FlashColorMinimumGreenColorLevel { get; set; } = 0;
+
         /// <summary>
         /// [FlashColor] The minimum blue color level (true color)
         /// </summary>
         public int FlashColorMinimumBlueColorLevel { get; set; } = 0;
+
         /// <summary>
         /// [FlashColor] The minimum color level (255 colors or 16 colors)
         /// </summary>
         public int FlashColorMinimumColorLevel { get; set; } = 0;
+
         /// <summary>
         /// [FlashColor] The maximum red color level (true color)
         /// </summary>
         public int FlashColorMaximumRedColorLevel { get; set; } = 255;
+
         /// <summary>
         /// [FlashColor] The maximum green color level (true color)
         /// </summary>
         public int FlashColorMaximumGreenColorLevel { get; set; } = 255;
+
         /// <summary>
         /// [FlashColor] The maximum blue color level (true color)
         /// </summary>
         public int FlashColorMaximumBlueColorLevel { get; set; } = 255;
+
         /// <summary>
         /// [FlashColor] The maximum color level (255 colors or 16 colors)
         /// </summary>
         public int FlashColorMaximumColorLevel { get; set; } = 255;
+        #endregion
+
+        #region SpotWrite
         /// <summary>
         /// [SpotWrite] How many milliseconds to wait before making the next write?
         /// </summary>
@@ -1109,6 +4178,9 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [SpotWrite] Text color
         /// </summary>
         public string SpotWriteTextColor { get; set; } = new Color(ConsoleColors.White).PlainSequence;
+        #endregion
+
+        #region Ramp
         /// <summary>
         /// [Ramp] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -1253,6 +4325,9 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [Ramp] Use the border colors.
         /// </summary>
         public bool RampUseBorderColors { get; set; }
+        #endregion
+
+        #region StackBox
         /// <summary>
         /// [StackBox] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -1297,6 +4372,9 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [StackBox] Whether to fill in the boxes drawn, or only draw the outline
         /// </summary>
         public bool StackBoxFill { get; set; } = true;
+        #endregion
+
+        #region Snaker
         /// <summary>
         /// [Snaker] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -1341,6 +4419,9 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [Snaker] The maximum color level (255 colors or 16 colors)
         /// </summary>
         public int SnakerMaximumColorLevel { get; set; } = 255;
+        #endregion
+
+        #region BarRot
         /// <summary>
         /// [BarRot] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -1469,6 +4550,9 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [BarRot] Use the border colors.
         /// </summary>
         public bool BarRotUseBorderColors { get; set; }
+        #endregion
+
+        #region Fireworks
         /// <summary>
         /// [Fireworks] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -1513,6 +4597,9 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [Fireworks] The maximum color level (255 colors or 16 colors)
         /// </summary>
         public int FireworksMaximumColorLevel { get; set; } = 255;
+        #endregion
+
+        #region Figlet
         /// <summary>
         /// [Figlet] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -1565,6 +4652,9 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [Figlet] The maximum color level (255 colors or 16 colors)
         /// </summary>
         public int FigletMaximumColorLevel { get; set; } = 255;
+        #endregion
+
+        #region FlashText
         /// <summary>
         /// [FlashText] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -1613,6 +4703,9 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [FlashText] The maximum color level (255 colors or 16 colors)
         /// </summary>
         public int FlashTextMaximumColorLevel { get; set; } = 255;
+        #endregion
+
+        #region Noise
         /// <summary>
         /// [Noise] How many milliseconds to wait before making the new screen?
         /// </summary>
@@ -1621,6 +4714,9 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [Noise] The noise density in percent
         /// </summary>
         public int NoiseDensity { get; set; } = 40;
+        #endregion
+
+        #region DateAndTime
         /// <summary>
         /// [DateAndTime] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -1661,6 +4757,9 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [DateAndTime] The maximum color level (255 colors or 16 colors)
         /// </summary>
         public int DateAndTimeMaximumColorLevel { get; set; } = 255;
+        #endregion
+
+        #region Glitch
         /// <summary>
         /// [Glitch] How many milliseconds to wait before making the next write?
         /// </summary>
@@ -1669,6 +4768,9 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [Glitch] The Glitch density in percent
         /// </summary>
         public int GlitchDensity { get; set; } = 40;
+        #endregion
+
+        #region FallingLine
         /// <summary>
         /// [FallingLine] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -1713,6 +4815,9 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [FallingLine] The maximum color level (255 colors or 16 colors)
         /// </summary>
         public int FallingLineMaximumColorLevel { get; set; } = 255;
+        #endregion
+
+        #region Indeterminate
         /// <summary>
         /// [Indeterminate] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -1821,6 +4926,9 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [Indeterminate] Use the border colors.
         /// </summary>
         public bool IndeterminateUseBorderColors { get; set; }
+        #endregion
+
+        #region Pulse
         /// <summary>
         /// [Pulse] How many milliseconds to wait before making the next write?
         /// </summary>
@@ -1853,6 +4961,9 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [Pulse] The maximum blue color level (true color)
         /// </summary>
         public int PulseMaximumBlueColorLevel { get; set; } = 255;
+        #endregion
+
+        #region BeatPulse
         /// <summary>
         /// [BeatPulse] Enable truecolor support. Has a higher priority than 255 color support. Please note that it only works if color cycling is enabled.
         /// </summary>
@@ -1905,6 +5016,9 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [BeatPulse] The maximum color level (255 colors or 16 colors)
         /// </summary>
         public int BeatPulseMaximumColorLevel { get; set; } = 255;
+        #endregion
+
+        #region EdgePulse
         /// <summary>
         /// [EdgePulse] How many milliseconds to wait before making the next write?
         /// </summary>
@@ -1937,6 +5051,9 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [EdgePulse] The maximum blue color level (true color)
         /// </summary>
         public int EdgePulseMaximumBlueColorLevel { get; set; } = 255;
+        #endregion
+
+        #region BeatEdgePulse
         /// <summary>
         /// [BeatEdgePulse] Enable truecolor support. Has a higher priority than 255 color support. Please note that it only works if color cycling is enabled.
         /// </summary>
@@ -1989,6 +5106,9 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [BeatEdgePulse] The maximum color level (255 colors or 16 colors)
         /// </summary>
         public int BeatEdgePulseMaximumColorLevel { get; set; } = 255;
+        #endregion
+
+        #region GradientRot
         /// <summary>
         /// [GradientRot] How many milliseconds to wait before making the next write?
         /// </summary>
@@ -2045,6 +5165,9 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [GradientRot] The maximum blue color level (true color - end)
         /// </summary>
         public int GradientRotMaximumBlueColorLevelEnd { get; set; } = 255;
+        #endregion
+
+        #region Gradient
         /// <summary>
         /// [Gradient] How many milliseconds to wait before rotting the next screen?
         /// </summary>
@@ -2097,10 +5220,16 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [Gradient] The maximum blue color level (true color - end)
         /// </summary>
         public int GradientMaximumBlueColorLevelEnd { get; set; } = 255;
+        #endregion
+
+        #region Starfield
         /// <summary>
         /// [Starfield] How many milliseconds to wait before making the next write?
         /// </summary>
         public int StarfieldDelay { get; set; } = 10;
+        #endregion
+
+        #region Siren
         /// <summary>
         /// [Siren] How many milliseconds to wait before making the next write?
         /// </summary>
@@ -2109,10 +5238,16 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [Siren] The siren style
         /// </summary>
         public string SirenStyle { get; set; } = "Cop";
+        #endregion
+
+        #region Spin
         /// <summary>
         /// [Spin] How many milliseconds to wait before making the next write?
         /// </summary>
         public int SpinDelay { get; set; } = 10;
+        #endregion
+
+        #region SnakeFill
         /// <summary>
         /// [SnakeFill] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -2153,18 +5288,30 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [SnakeFill] The maximum color level (255 colors or 16 colors)
         /// </summary>
         public int SnakeFillMaximumColorLevel { get; set; } = 255;
+        #endregion
+
+        #region Equalizer
         /// <summary>
         /// [Equalizer] How many milliseconds to wait before going to next equalizer preset?
         /// </summary>
         public int EqualizerNextScreenDelay { get; set; } = 3000;
+        #endregion
+
+        #region BSOD
         /// <summary>
         /// [BSOD] How many beats per minute to wait before making the next write?
         /// </summary>
         public int BSODDelay { get; set; } = 10000;
+        #endregion
+
+        #region Memdump
         /// <summary>
         /// [Memdump] How many milliseconds to wait before making the next write?
         /// </summary>
         public int MemdumpDelay { get; set; } = 500;
+        #endregion
+
+        #region ExcaliBeats
         /// <summary>
         /// [ExcaliBeats] Enable truecolor support. Has a higher priority than 255 color support. Please note that it only works if color cycling is enabled.
         /// </summary>
@@ -2225,6 +5372,9 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [ExcaliBeats] The maximum color level (255 colors or 16 colors)
         /// </summary>
         public int ExcaliBeatsMaximumColorLevel { get; set; } = 255;
+        #endregion
+
+        #region BarWave
         /// <summary>
         /// [BarWave] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -2269,6 +5419,9 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [BarWave] The maximum color level (255 colors or 16 colors)
         /// </summary>
         public int BarWaveMaximumColorLevel { get; set; } = 255;
+        #endregion
+
+        #region Wave
         /// <summary>
         /// [Wave] How many milliseconds to wait before making the next write?
         /// </summary>
@@ -2309,6 +5462,9 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [Wave] The maximum color level (255 colors or 16 colors)
         /// </summary>
         public int WaveMaximumColorLevel { get; set; } = 255;
+        #endregion
+
+        #region Mesmerize
         /// <summary>
         /// [Mesmerize] How many milliseconds to wait before making the next write?
         /// </summary>
@@ -2345,10 +5501,16 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [Mesmerize] The maximum color level (255 colors or 16 colors)
         /// </summary>
         public int MesmerizeMaximumColorLevel { get; set; } = 255;
+        #endregion
+
+        #region Aurora
         /// <summary>
         /// [Aurora] How many milliseconds to wait before making the next write?
         /// </summary>
         public int AuroraDelay { get; set; } = 100;
+        #endregion
+
+        #region Lightning
         /// <summary>
         /// [Lightning] How many milliseconds to wait before making the next write?
         /// </summary>
@@ -2357,6 +5519,9 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [Lightning] Chance, in percent, to strike
         /// </summary>
         public int LightningStrikeProbability { get; set; } = 5;
+        #endregion
+
+        #region Bloom
         /// <summary>
         /// [Bloom] How many milliseconds to wait before making the next write?
         /// </summary>
@@ -2369,6 +5534,9 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [Bloom] How many color steps for transitioning between two colors?
         /// </summary>
         public int BloomSteps { get; set; } = 100;
+        #endregion
+
+        #region WordHasher
         /// <summary>
         /// [WordHasher] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -2409,6 +5577,9 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [WordHasher] The maximum color level (255 colors or 16 colors)
         /// </summary>
         public int WordHasherMaximumColorLevel { get; set; } = 255;
+        #endregion
+
+        #region SquareCorner
         /// <summary>
         /// [SquareCorner] How many milliseconds to wait before making the next write?
         /// </summary>
@@ -2445,6 +5616,9 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [SquareCorner] The maximum blue color level (true color)
         /// </summary>
         public int SquareCornerMaximumBlueColorLevel { get; set; } = 255;
+        #endregion
+
+        #region NumberScatter
         /// <summary>
         /// [NumberScatter] How many milliseconds to wait before making the next write?
         /// </summary>
@@ -2457,6 +5631,9 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [NumberScatter] Screensaver foreground color
         /// </summary>
         public string NumberScatterForegroundColor { get; set; } = new Color(ConsoleColors.Green).PlainSequence;
+        #endregion
+
+        #region Quote
         /// <summary>
         /// [Quote] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -2497,6 +5674,9 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [Quote] The maximum color level (255 colors or 16 colors)
         /// </summary>
         public int QuoteMaximumColorLevel { get; set; } = 255;
+        #endregion
+
+        #region BoxGrid
         /// <summary>
         /// [BoxGrid] How many milliseconds to wait before making the next write?
         /// </summary>
@@ -2525,6 +5705,9 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [BoxGrid] The maximum blue color level (true color)
         /// </summary>
         public int BoxGridMaximumBlueColorLevel { get; set; } = 255;
+        #endregion
+
+        #region ColorBleed
         /// <summary>
         /// [ColorBleed] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -2573,6 +5756,9 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [ColorBleed] The maximum color level (255 colors or 16 colors)
         /// </summary>
         public int ColorBleedMaximumColorLevel { get; set; } = 255;
+        #endregion
+
+        #region Text
         /// <summary>
         /// [Text] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -2621,6 +5807,9 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [Text] The maximum color level (255 colors or 16 colors)
         /// </summary>
         public int TextMaximumColorLevel { get; set; } = 255;
+        #endregion
+
+        #region TextBox
         /// <summary>
         /// [TextBox] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -2669,6 +5858,9 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [TextBox] The maximum color level (255 colors or 16 colors)
         /// </summary>
         public int TextBoxMaximumColorLevel { get; set; } = 255;
+        #endregion
+
+        #region WordHasherWrite
         /// <summary>
         /// [WordHasherWrite] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -2709,6 +5901,9 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [WordHasherWrite] The maximum color level (255 colors or 16 colors)
         /// </summary>
         public int WordHasherWriteMaximumColorLevel { get; set; } = 255;
+        #endregion
+
+        #region SirenTheme
         /// <summary>
         /// [SirenTheme] How many milliseconds to wait before making the next write?
         /// </summary>
@@ -2717,14 +5912,23 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [SirenTheme] The siren style
         /// </summary>
         public string SirenThemeStyle { get; set; } = "Default";
+        #endregion
+
+        #region StarfieldWarp
         /// <summary>
         /// [StarfieldWarp] How many milliseconds to wait before making the next write?
         /// </summary>
         public int StarfieldWarpDelay { get; set; } = 10;
+        #endregion
+
+        #region Speckles
         /// <summary>
         /// [Speckles] How many milliseconds to wait before making the next write?
         /// </summary>
         public int SpecklesDelay { get; set; } = 10;
+        #endregion
+
+        #region LetterScatter
         /// <summary>
         /// [LetterScatter] How many milliseconds to wait before making the next write?
         /// </summary>
@@ -2737,6 +5941,9 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [LetterScatter] Screensaver foreground color
         /// </summary>
         public string LetterScatterForegroundColor { get; set; } = new Color(ConsoleColors.Green).PlainSequence;
+        #endregion
+
+        #region MultiLines
         /// <summary>
         /// [MultiLines] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -2785,6 +5992,9 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [MultiLines] The maximum color level (255 colors or 16 colors)
         /// </summary>
         public int MultiLinesMaximumColorLevel { get; set; } = 255;
+        #endregion
+
+        #region LaserBeams
         /// <summary>
         /// [LaserBeams] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -2833,6 +6043,9 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [LaserBeams] The maximum color level (255 colors or 16 colors)
         /// </summary>
         public int LaserBeamsMaximumColorLevel { get; set; } = 255;
+        #endregion
+
+        #region TextWander
         /// <summary>
         /// [TextWander] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -2877,6 +6090,9 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [TextWander] The maximum color level (255 colors or 16 colors)
         /// </summary>
         public int TextWanderMaximumColorLevel { get; set; } = 255;
+        #endregion
+
+        #region Swivel
         /// <summary>
         /// [Swivel] How many milliseconds to wait before making the next write?
         /// </summary>
@@ -2921,6 +6137,9 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [Swivel] The maximum color level (255 colors or 16 colors)
         /// </summary>
         public int SwivelMaximumColorLevel { get; set; } = 255;
+        #endregion
+
+        #region DoorShift
         /// <summary>
         /// [DoorShift] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -2965,6 +6184,9 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [DoorShift] The maximum color level (255 colors or 16 colors)
         /// </summary>
         public int DoorShiftMaximumColorLevel { get; set; } = 255;
+        #endregion
+
+        #region GradientBloom
         /// <summary>
         /// [GradientBloom] How many milliseconds to wait before making the next write?
         /// </summary>
@@ -2977,14 +6199,23 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [GradientBloom] How many color steps for transitioning between two colors?
         /// </summary>
         public int GradientBloomSteps { get; set; } = 100;
+        #endregion
+
+        #region SkyComet
         /// <summary>
         /// [SkyComet] How many milliseconds to wait before making the next write?
         /// </summary>
         public int SkyCometDelay { get; set; } = 10;
+        #endregion
+
+        #region Diamond
         /// <summary>
         /// [Diamond] How many milliseconds to wait before making the next write?
         /// </summary>
         public int DiamondDelay { get; set; } = 500;
+        #endregion
+
+        #region HueBack
         /// <summary>
         /// [HueBack] How many milliseconds to wait before making the next write?
         /// </summary>
@@ -2997,6 +6228,9 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [HueBack] How light is the color?
         /// </summary>
         public int HueBackLuminance { get; set; } = 50;
+        #endregion
+
+        #region HueBackGradient
         /// <summary>
         /// [HueBackGradient] How many milliseconds to wait before making the next write?
         /// </summary>
@@ -3009,6 +6243,9 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [HueBackGradient] How light is the color?
         /// </summary>
         public int HueBackGradientLuminance { get; set; } = 50;
+        #endregion
+
+        #region Particles
         /// <summary>
         /// [Particles] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -3053,6 +6290,9 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [Particles] The maximum color level (255 colors or 16 colors)
         /// </summary>
         public int ParticlesMaximumColorLevel { get; set; } = 255;
+        #endregion
+
+        #region WorldClock
         /// <summary>
         /// [WorldClock] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -3097,6 +6337,9 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [WorldClock] The maximum color level (255 colors or 16 colors)
         /// </summary>
         public int WorldClockMaximumColorLevel { get; set; } = 255;
+        #endregion
+
+        #region FillFade
         /// <summary>
         /// [FillFade] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -3133,6 +6376,9 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [FillFade] The maximum color level (255 colors or 16 colors)
         /// </summary>
         public int FillFadeMaximumColorLevel { get; set; } = 255;
+        #endregion
+
+        #region DanceLines
         /// <summary>
         /// [DanceLines] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -3181,6 +6427,9 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [DanceLines] The maximum color level (255 colors or 16 colors)
         /// </summary>
         public int DanceLinesMaximumColorLevel { get; set; } = 255;
+        #endregion
+
+        #region Mazer
         /// <summary>
         /// [Mazer] How many milliseconds to wait before generating a new maze?
         /// </summary>
@@ -3197,6 +6446,9 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [Mazer] Specifies whether to choose the <seealso href="http://en.wikipedia.org/wiki/Schwartzian_transform">Schwartzian transform</seealso> or to use <see cref="Random.Shuffle{T}(T[])"/>
         /// </summary>
         public bool MazerUseSchwartzian { get; set; } = true;
+        #endregion
+
+        #region TwoSpins
         /// <summary>
         /// [TwoSpins] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -3237,6 +6489,9 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [TwoSpins] The maximum color level (255 colors or 16 colors)
         /// </summary>
         public int TwoSpinsMaximumColorLevel { get; set; } = 255;
+        #endregion
+
+        #region CommitMilestone
         /// <summary>
         /// [CommitMilestone] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -3281,10 +6536,16 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [CommitMilestone] The maximum color level (255 colors or 16 colors)
         /// </summary>
         public int CommitMilestoneMaximumColorLevel { get; set; } = 255;
+        #endregion
+
+        #region Spray
         /// <summary>
         /// [Spray] How many milliseconds to wait before making the next write?
         /// </summary>
         public int SprayDelay { get; set; } = 10;
+        #endregion
+
+        #region ZebraShift
         /// <summary>
         /// [ZebraShift] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -3325,6 +6586,9 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [ZebraShift] The maximum color level (255 colors or 16 colors)
         /// </summary>
         public int ZebraShiftMaximumColorLevel { get; set; } = 255;
+        #endregion
+
+        #region AnalogClock
         /// <summary>
         /// [AnalogClock] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
@@ -3369,5 +6633,6 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [AnalogClock] The maximum color level (255 colors or 16 colors)
         /// </summary>
         public int AnalogClockMaximumColorLevel { get; set; } = 255;
+        #endregion
     }
 }

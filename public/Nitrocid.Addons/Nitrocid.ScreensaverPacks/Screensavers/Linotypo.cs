@@ -32,223 +32,22 @@ using Textify.General;
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
     /// <summary>
-    /// Settings for Linotypo
+    /// Etaoin fill type
     /// </summary>
-    public static class LinotypoSettings
+    public enum FillType
     {
-
         /// <summary>
-        /// [Linotypo] How many milliseconds to wait before making the next write?
+        /// Prints the known pattern of etaoin characters, such as: etaoin shrdlu
         /// </summary>
-        public static int LinotypoDelay
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.LinotypoDelay;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 50;
-                ScreensaverPackInit.SaversConfig.LinotypoDelay = value;
-            }
-        }
+        EtaoinPattern,
         /// <summary>
-        /// [Linotypo] How many milliseconds to wait before writing the text in the new screen again?
+        /// Prints the complete pattern of etaoin characters, such as: etaoin shrdlu cmfwyp vbgkqj xz
         /// </summary>
-        public static int LinotypoNewScreenDelay
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.LinotypoNewScreenDelay;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 3000;
-                ScreensaverPackInit.SaversConfig.LinotypoNewScreenDelay = value;
-            }
-        }
+        EtaoinComplete,
         /// <summary>
-        /// [Linotypo] Text for Linotypo. Longer is better.
+        /// Prints the random set of characters to rapidly fill in the line
         /// </summary>
-        public static string LinotypoWrite
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.LinotypoWrite;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "Nitrocid KS";
-                ScreensaverPackInit.SaversConfig.LinotypoWrite = value;
-            }
-        }
-        /// <summary>
-        /// [Linotypo] Minimum writing speed in WPM
-        /// </summary>
-        public static int LinotypoWritingSpeedMin
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.LinotypoWritingSpeedMin;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 50;
-                ScreensaverPackInit.SaversConfig.LinotypoWritingSpeedMin = value;
-            }
-        }
-        /// <summary>
-        /// [Linotypo] Maximum writing speed in WPM
-        /// </summary>
-        public static int LinotypoWritingSpeedMax
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.LinotypoWritingSpeedMax;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 80;
-                ScreensaverPackInit.SaversConfig.LinotypoWritingSpeedMax = value;
-            }
-        }
-        /// <summary>
-        /// [Linotypo] Possibility that the writer made a typo in percent
-        /// </summary>
-        public static int LinotypoMissStrikePossibility
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.LinotypoMissStrikePossibility;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 1;
-                ScreensaverPackInit.SaversConfig.LinotypoMissStrikePossibility = value;
-            }
-        }
-        /// <summary>
-        /// [Linotypo] The text columns to be printed.
-        /// </summary>
-        public static int LinotypoTextColumns
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.LinotypoTextColumns;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 3;
-                if (value > 3)
-                    value = 3;
-                ScreensaverPackInit.SaversConfig.LinotypoTextColumns = value;
-            }
-        }
-        /// <summary>
-        /// [Linotypo] How many characters to write before triggering the "line fill"?
-        /// </summary>
-        public static int LinotypoEtaoinThreshold
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.LinotypoEtaoinThreshold;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 5;
-                if (value > 8)
-                    value = 8;
-                ScreensaverPackInit.SaversConfig.LinotypoEtaoinThreshold = value;
-            }
-        }
-        /// <summary>
-        /// [Linotypo] Possibility that the Etaoin pattern will be printed in all caps in percent
-        /// </summary>
-        public static int LinotypoEtaoinCappingPossibility
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.LinotypoEtaoinCappingPossibility;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 5;
-                ScreensaverPackInit.SaversConfig.LinotypoEtaoinCappingPossibility = value;
-            }
-        }
-        /// <summary>
-        /// [Linotypo] Line fill pattern type
-        /// </summary>
-        public static FillType LinotypoEtaoinType
-        {
-            get
-            {
-                return (FillType)ScreensaverPackInit.SaversConfig.LinotypoEtaoinType;
-            }
-            set
-            {
-                ScreensaverPackInit.SaversConfig.LinotypoEtaoinType = (int)value;
-            }
-        }
-        /// <summary>
-        /// [Linotypo] Possibility that the writer missed a character in percent
-        /// </summary>
-        public static int LinotypoMissPossibility
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.LinotypoMissPossibility;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 10;
-                ScreensaverPackInit.SaversConfig.LinotypoMissPossibility = value;
-            }
-        }
-        /// <summary>
-        /// [Linotypo] Text color
-        /// </summary>
-        public static string LinotypoTextColor
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.LinotypoTextColor;
-            }
-            set
-            {
-                ScreensaverPackInit.SaversConfig.LinotypoTextColor = new Color(value).PlainSequence;
-            }
-        }
-
-        /// <summary>
-        /// Etaoin fill type
-        /// </summary>
-        public enum FillType
-        {
-            /// <summary>
-            /// Prints the known pattern of etaoin characters, such as: etaoin shrdlu
-            /// </summary>
-            EtaoinPattern,
-            /// <summary>
-            /// Prints the complete pattern of etaoin characters, such as: etaoin shrdlu cmfwyp vbgkqj xz
-            /// </summary>
-            EtaoinComplete,
-            /// <summary>
-            /// Prints the random set of characters to rapidly fill in the line
-            /// </summary>
-            RandomChars
-        }
-
+        RandomChars
     }
 
     /// <summary>
@@ -265,7 +64,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            ColorTools.SetConsoleColor(new Color(LinotypoSettings.LinotypoTextColor));
+            ColorTools.SetConsoleColor(new Color(ScreensaverPackInit.SaversConfig.LinotypoTextColor));
             ConsoleWrapper.Clear();
             ConsoleWrapper.CursorVisible = false;
             CurrentColumn = 1;
@@ -275,13 +74,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
         public override void ScreensaverLogic()
         {
-            int CpmSpeedMin = LinotypoSettings.LinotypoWritingSpeedMin * 5;
-            int CpmSpeedMax = LinotypoSettings.LinotypoWritingSpeedMax * 5;
-            int MaxCharacters = (int)Math.Round((ConsoleWrapper.WindowWidth - 2) / (double)LinotypoSettings.LinotypoTextColumns - 3d);
-            int ColumnRowConsoleThreshold = (int)Math.Round(ConsoleWrapper.WindowWidth / (double)LinotypoSettings.LinotypoTextColumns);
-            DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Minimum speed from {0} WPM: {1} CPM", LinotypoSettings.LinotypoWritingSpeedMin, CpmSpeedMin);
-            DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Maximum speed from {0} WPM: {1} CPM", LinotypoSettings.LinotypoWritingSpeedMax, CpmSpeedMax);
-            DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Maximum characters: {0} (satisfying {1} columns)", MaxCharacters, LinotypoSettings.LinotypoTextColumns);
+            int CpmSpeedMin = ScreensaverPackInit.SaversConfig.LinotypoWritingSpeedMin * 5;
+            int CpmSpeedMax = ScreensaverPackInit.SaversConfig.LinotypoWritingSpeedMax * 5;
+            int MaxCharacters = (int)Math.Round((ConsoleWrapper.WindowWidth - 2) / (double)ScreensaverPackInit.SaversConfig.LinotypoTextColumns - 3d);
+            int ColumnRowConsoleThreshold = (int)Math.Round(ConsoleWrapper.WindowWidth / (double)ScreensaverPackInit.SaversConfig.LinotypoTextColumns);
+            DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Minimum speed from {0} WPM: {1} CPM", ScreensaverPackInit.SaversConfig.LinotypoWritingSpeedMin, CpmSpeedMin);
+            DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Maximum speed from {0} WPM: {1} CPM", ScreensaverPackInit.SaversConfig.LinotypoWritingSpeedMax, CpmSpeedMax);
+            DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Maximum characters: {0} (satisfying {1} columns)", MaxCharacters, ScreensaverPackInit.SaversConfig.LinotypoTextColumns);
             DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Width threshold: {0}", ColumnRowConsoleThreshold);
 
             // Strikes
@@ -303,15 +102,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             var CharacterCounter = 0;
             var EtaoinMode = false;
             var CappedEtaoin = false;
-            string LinotypeWrite = LinotypoSettings.LinotypoWrite;
+            string LinotypeWrite = ScreensaverPackInit.SaversConfig.LinotypoWrite;
 
             // Linotypo can also deal with files written on the field that is used for storing text, so check to see if the path exists.
-            DebugWriter.WriteDebug(DebugLevel.I, "Checking \"{0}\" to see if it's a file path", LinotypoSettings.LinotypoWrite);
-            if (Parsing.TryParsePath(LinotypoSettings.LinotypoWrite) && Checking.FileExists(LinotypoSettings.LinotypoWrite))
+            DebugWriter.WriteDebug(DebugLevel.I, "Checking \"{0}\" to see if it's a file path", ScreensaverPackInit.SaversConfig.LinotypoWrite);
+            if (Parsing.TryParsePath(ScreensaverPackInit.SaversConfig.LinotypoWrite) && Checking.FileExists(ScreensaverPackInit.SaversConfig.LinotypoWrite))
             {
                 // File found! Now, write the contents of it to the local variable that stores the actual written text.
-                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Opening file {0} to write...", LinotypoSettings.LinotypoWrite);
-                LinotypeWrite = Reading.ReadContentsText(LinotypoSettings.LinotypoWrite);
+                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Opening file {0} to write...", ScreensaverPackInit.SaversConfig.LinotypoWrite);
+                LinotypeWrite = Reading.ReadContentsText(ScreensaverPackInit.SaversConfig.LinotypoWrite);
             }
 
             // For each line, write four spaces, and extra two spaces if paragraph starts.
@@ -430,13 +229,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             }
 
                             // Advance the indexes of column and key, depending on their values, and get the character
-                            DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Etaoin type: {0}", LinotypoSettings.LinotypoEtaoinType);
-                            switch (LinotypoSettings.LinotypoEtaoinType)
+                            DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Etaoin type: {0}", ScreensaverPackInit.SaversConfig.LinotypoEtaoinType);
+                            switch (ScreensaverPackInit.SaversConfig.LinotypoEtaoinType)
                             {
-                                case LinotypoSettings.FillType.EtaoinComplete:
-                                case LinotypoSettings.FillType.EtaoinPattern:
+                                case (int)FillType.EtaoinComplete:
+                                case (int)FillType.EtaoinPattern:
                                     {
-                                        if (LinotypoSettings.LinotypoEtaoinType == LinotypoSettings.FillType.EtaoinPattern)
+                                        if (ScreensaverPackInit.SaversConfig.LinotypoEtaoinType == (int)FillType.EtaoinPattern)
                                             LinotypeMaxColumnIndex = 1;
 
                                         // Increment the key (and optionally column) index. If both exceed the max limit, reset both to zero.
@@ -456,7 +255,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                                         break;
                                     }
-                                case LinotypoSettings.FillType.RandomChars:
+                                case (int)FillType.RandomChars:
                                     {
                                         // Randomly select the linotype indexes
                                         LinotypeColumnIndex = RandomDriver.Random(0, 5);
@@ -469,14 +268,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         else
                         {
                             // See if the typo is guaranteed
-                            double Probability = (LinotypoSettings.LinotypoMissStrikePossibility >= 5 ? 5 : LinotypoSettings.LinotypoMissStrikePossibility) / 100d;
+                            double Probability = (ScreensaverPackInit.SaversConfig.LinotypoMissStrikePossibility >= 5 ? 5 : ScreensaverPackInit.SaversConfig.LinotypoMissStrikePossibility) / 100d;
                             bool LinotypoGuaranteed = RandomDriver.RandomChance(Probability);
                             DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Probability: {0} Guarantee: {1}", Probability, LinotypoGuaranteed);
                             if (LinotypoGuaranteed)
                             {
                                 // Sometimes, a typo is generated by missing a character.
                                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Made a typo!");
-                                double MissProbability = (LinotypoSettings.LinotypoMissPossibility >= 10 ? 10 : LinotypoSettings.LinotypoMissPossibility) / 100d;
+                                double MissProbability = (ScreensaverPackInit.SaversConfig.LinotypoMissPossibility >= 10 ? 10 : ScreensaverPackInit.SaversConfig.LinotypoMissPossibility) / 100d;
                                 bool MissGuaranteed = RandomDriver.RandomChance(MissProbability);
                                 if (MissGuaranteed)
                                 {
@@ -518,7 +317,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                                 }
 
                                 // Randomly select whether or not to turn on the capped Etaoin
-                                double CappingProbability = (LinotypoSettings.LinotypoEtaoinCappingPossibility >= 10 ? 10 : LinotypoSettings.LinotypoEtaoinCappingPossibility) / 100d;
+                                double CappingProbability = (ScreensaverPackInit.SaversConfig.LinotypoEtaoinCappingPossibility >= 10 ? 10 : ScreensaverPackInit.SaversConfig.LinotypoEtaoinCappingPossibility) / 100d;
                                 CappedEtaoin = RandomDriver.RandomChance(CappingProbability);
                                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Capped Etaoin: {0}", CappedEtaoin);
 
@@ -538,7 +337,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         {
                             DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Counter increased. {0}", CharacterCounter);
                             CharacterCounter += 1;
-                            if (CharacterCounter > LinotypoSettings.LinotypoEtaoinThreshold)
+                            if (CharacterCounter > ScreensaverPackInit.SaversConfig.LinotypoEtaoinThreshold)
                             {
                                 // We've reached the Etaoin threshold. Turn on that mode and stop counting characters.
                                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Etaoin mode on because threshold reached.");
@@ -598,7 +397,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Reset resize sync
             ConsoleResizeHandler.WasResized();
-            ThreadManager.SleepNoBlock(LinotypoSettings.LinotypoDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.LinotypoDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 
         /// <summary>
@@ -606,17 +405,17 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// </summary>
         private void HandleNextColumn(ref int CurrentColumn, ref int CurrentColumnRowConsole, int ColumnRowConsoleThreshold)
         {
-            if (LinotypoSettings.LinotypoTextColumns > 1)
+            if (ScreensaverPackInit.SaversConfig.LinotypoTextColumns > 1)
             {
                 if (ConsoleWrapper.CursorTop >= ConsoleWrapper.WindowHeight - 2)
                 {
                     // We're on the bottom, so...
-                    if (CurrentColumn >= LinotypoSettings.LinotypoTextColumns)
+                    if (CurrentColumn >= ScreensaverPackInit.SaversConfig.LinotypoTextColumns)
                     {
                         // ...wait until retry
-                        DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Drawn all columns. Waiting {0} ms...", LinotypoSettings.LinotypoNewScreenDelay);
+                        DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Drawn all columns. Waiting {0} ms...", ScreensaverPackInit.SaversConfig.LinotypoNewScreenDelay);
                         ConsoleWrapper.WriteLine();
-                        ThreadManager.SleepNoBlock(LinotypoSettings.LinotypoNewScreenDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                        ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.LinotypoNewScreenDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
 
                         // ...and make a new screen
                         ConsoleWrapper.Clear();
@@ -633,12 +432,12 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     }
                 }
             }
-            else if (LinotypoSettings.LinotypoTextColumns == 1 & ConsoleWrapper.CursorTop >= ConsoleWrapper.WindowHeight - 2)
+            else if (ScreensaverPackInit.SaversConfig.LinotypoTextColumns == 1 & ConsoleWrapper.CursorTop >= ConsoleWrapper.WindowHeight - 2)
             {
                 // We're on the bottom, so wait until retry...
-                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Drawn all text. Waiting {0} ms...", LinotypoSettings.LinotypoNewScreenDelay);
+                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Drawn all text. Waiting {0} ms...", ScreensaverPackInit.SaversConfig.LinotypoNewScreenDelay);
                 ConsoleWrapper.WriteLine();
-                ThreadManager.SleepNoBlock(LinotypoSettings.LinotypoNewScreenDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.LinotypoNewScreenDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
 
                 // ...and make a new screen
                 ConsoleWrapper.Clear();

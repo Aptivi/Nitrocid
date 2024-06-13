@@ -29,235 +29,6 @@ using Terminaux.Base;
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
     /// <summary>
-    /// Settings for BouncingText
-    /// </summary>
-    public static class BouncingTextSettings
-    {
-
-        /// <summary>
-        /// [BouncingText] Enable truecolor support. Has a higher priority than 255 color support.
-        /// </summary>
-        public static bool BouncingTextTrueColor
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.BouncingTextTrueColor;
-            }
-            set
-            {
-                ScreensaverPackInit.SaversConfig.BouncingTextTrueColor = value;
-            }
-        }
-        /// <summary>
-        /// [BouncingText] How many milliseconds to wait before making the next write?
-        /// </summary>
-        public static int BouncingTextDelay
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.BouncingTextDelay;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 50;
-                ScreensaverPackInit.SaversConfig.BouncingTextDelay = value;
-            }
-        }
-        /// <summary>
-        /// [BouncingText] Text for Bouncing Text. Shorter is better.
-        /// </summary>
-        public static string BouncingTextWrite
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.BouncingTextWrite;
-            }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = "Nitrocid KS";
-                ScreensaverPackInit.SaversConfig.BouncingTextWrite = value;
-            }
-        }
-        /// <summary>
-        /// [BouncingText] Screensaver background color
-        /// </summary>
-        public static string BouncingTextBackgroundColor
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.BouncingTextBackgroundColor;
-            }
-            set
-            {
-                ScreensaverPackInit.SaversConfig.BouncingTextBackgroundColor = new Color(value).PlainSequence;
-            }
-        }
-        /// <summary>
-        /// [BouncingText] Screensaver foreground color
-        /// </summary>
-        public static string BouncingTextForegroundColor
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.BouncingTextForegroundColor;
-            }
-            set
-            {
-                ScreensaverPackInit.SaversConfig.BouncingTextForegroundColor = new Color(value).PlainSequence;
-            }
-        }
-        /// <summary>
-        /// [BouncingText] The minimum red color level (true color)
-        /// </summary>
-        public static int BouncingTextMinimumRedColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.BouncingTextMinimumRedColorLevel;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.BouncingTextMinimumRedColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [BouncingText] The minimum green color level (true color)
-        /// </summary>
-        public static int BouncingTextMinimumGreenColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.BouncingTextMinimumGreenColorLevel;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.BouncingTextMinimumGreenColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [BouncingText] The minimum blue color level (true color)
-        /// </summary>
-        public static int BouncingTextMinimumBlueColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.BouncingTextMinimumBlueColorLevel;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.BouncingTextMinimumBlueColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [BouncingText] The minimum color level (255 colors or 16 colors)
-        /// </summary>
-        public static int BouncingTextMinimumColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.BouncingTextMinimumColorLevel;
-            }
-            set
-            {
-                int FinalMinimumLevel = 255;
-                if (value <= 0)
-                    value = 0;
-                if (value > FinalMinimumLevel)
-                    value = FinalMinimumLevel;
-                ScreensaverPackInit.SaversConfig.BouncingTextMinimumColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [BouncingText] The maximum red color level (true color)
-        /// </summary>
-        public static int BouncingTextMaximumRedColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.BouncingTextMaximumRedColorLevel;
-            }
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.BouncingTextMinimumRedColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.BouncingTextMinimumRedColorLevel;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.BouncingTextMaximumRedColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [BouncingText] The maximum green color level (true color)
-        /// </summary>
-        public static int BouncingTextMaximumGreenColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.BouncingTextMaximumGreenColorLevel;
-            }
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.BouncingTextMinimumGreenColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.BouncingTextMinimumGreenColorLevel;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.BouncingTextMaximumGreenColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [BouncingText] The maximum blue color level (true color)
-        /// </summary>
-        public static int BouncingTextMaximumBlueColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.BouncingTextMaximumBlueColorLevel;
-            }
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.BouncingTextMinimumBlueColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.BouncingTextMinimumBlueColorLevel;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.BouncingTextMaximumBlueColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [BouncingText] The maximum color level (255 colors or 16 colors)
-        /// </summary>
-        public static int BouncingTextMaximumColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.BouncingTextMaximumColorLevel;
-            }
-            set
-            {
-                int FinalMaximumLevel = 255;
-                if (value <= ScreensaverPackInit.SaversConfig.BouncingTextMinimumColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.BouncingTextMinimumColorLevel;
-                if (value > FinalMaximumLevel)
-                    value = FinalMaximumLevel;
-                ScreensaverPackInit.SaversConfig.BouncingTextMaximumColorLevel = value;
-            }
-        }
-
-    }
-
-    /// <summary>
     /// Display code for BouncingText
     /// </summary>
     public class BouncingTextDisplay : BaseScreensaver, IScreensaver
@@ -275,11 +46,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            ColorTools.SetConsoleColor(new Color(BouncingTextSettings.BouncingTextForegroundColor));
-            ColorTools.LoadBackDry(new Color(BouncingTextSettings.BouncingTextBackgroundColor));
+            ColorTools.SetConsoleColor(new Color(ScreensaverPackInit.SaversConfig.BouncingTextForegroundColor));
+            ColorTools.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.BouncingTextBackgroundColor));
             RowText = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d);
-            ColumnFirstLetter = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d - BouncingTextSettings.BouncingTextWrite.Length / 2d);
-            ColumnLastLetter = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d + BouncingTextSettings.BouncingTextWrite.Length / 2d);
+            ColumnFirstLetter = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d - ScreensaverPackInit.SaversConfig.BouncingTextWrite.Length / 2d);
+            ColumnLastLetter = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d + ScreensaverPackInit.SaversConfig.BouncingTextWrite.Length / 2d);
         }
 
         /// <inheritdoc/>
@@ -289,7 +60,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Clear the old text position
             int diff = ColumnLastLetter - ColumnFirstLetter + 1;
-            TextWriterWhereColor.WriteWhereColorBack(new string(' ', diff), lastLeft, lastTop, true, Color.Empty, BouncingTextSettings.BouncingTextBackgroundColor);
+            TextWriterWhereColor.WriteWhereColorBack(new string(' ', diff), lastLeft, lastTop, true, Color.Empty, ScreensaverPackInit.SaversConfig.BouncingTextBackgroundColor);
 
             // Define the color
             DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Row text: {0}", RowText);
@@ -302,14 +73,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             }
             if (!ConsoleResizeHandler.WasResized(false))
             {
-                TextWriterWhereColor.WriteWhereColorBack(BouncingTextSettings.BouncingTextWrite, ColumnFirstLetter, RowText, true, BouncingColor, BouncingTextSettings.BouncingTextBackgroundColor);
+                TextWriterWhereColor.WriteWhereColorBack(ScreensaverPackInit.SaversConfig.BouncingTextWrite, ColumnFirstLetter, RowText, true, BouncingColor, ScreensaverPackInit.SaversConfig.BouncingTextBackgroundColor);
             }
             else
             {
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.W, "We're resize-syncing! Setting RowText, ColumnFirstLetter, and ColumnLastLetter to its original position...");
                 RowText = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d);
-                ColumnFirstLetter = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d - BouncingTextSettings.BouncingTextWrite.Length / 2d);
-                ColumnLastLetter = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d + BouncingTextSettings.BouncingTextWrite.Length / 2d);
+                ColumnFirstLetter = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d - ScreensaverPackInit.SaversConfig.BouncingTextWrite.Length / 2d);
+                ColumnLastLetter = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d + ScreensaverPackInit.SaversConfig.BouncingTextWrite.Length / 2d);
             }
 
             // Set the old positions to clear
@@ -376,7 +147,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Reset resize sync
             ConsoleResizeHandler.WasResized();
-            ThreadManager.SleepNoBlock(BouncingTextSettings.BouncingTextDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.BouncingTextDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 
         /// <summary>
@@ -385,16 +156,16 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public Color ChangeBouncingTextColor()
         {
             Color ColorInstance;
-            if (BouncingTextSettings.BouncingTextTrueColor)
+            if (ScreensaverPackInit.SaversConfig.BouncingTextTrueColor)
             {
-                int RedColorNum = RandomDriver.Random(BouncingTextSettings.BouncingTextMinimumRedColorLevel, BouncingTextSettings.BouncingTextMaximumRedColorLevel);
-                int GreenColorNum = RandomDriver.Random(BouncingTextSettings.BouncingTextMinimumGreenColorLevel, BouncingTextSettings.BouncingTextMaximumGreenColorLevel);
-                int BlueColorNum = RandomDriver.Random(BouncingTextSettings.BouncingTextMinimumBlueColorLevel, BouncingTextSettings.BouncingTextMaximumBlueColorLevel);
+                int RedColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.BouncingTextMinimumRedColorLevel, ScreensaverPackInit.SaversConfig.BouncingTextMaximumRedColorLevel);
+                int GreenColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.BouncingTextMinimumGreenColorLevel, ScreensaverPackInit.SaversConfig.BouncingTextMaximumGreenColorLevel);
+                int BlueColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.BouncingTextMinimumBlueColorLevel, ScreensaverPackInit.SaversConfig.BouncingTextMaximumBlueColorLevel);
                 ColorInstance = new Color(RedColorNum, GreenColorNum, BlueColorNum);
             }
             else
             {
-                int ColorNum = RandomDriver.Random(BouncingTextSettings.BouncingTextMinimumColorLevel, BouncingTextSettings.BouncingTextMaximumColorLevel);
+                int ColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.BouncingTextMinimumColorLevel, ScreensaverPackInit.SaversConfig.BouncingTextMaximumColorLevel);
                 ColorInstance = new Color(ColorNum);
             }
             return ColorInstance;

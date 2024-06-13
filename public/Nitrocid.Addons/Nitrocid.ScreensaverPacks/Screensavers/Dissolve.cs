@@ -31,189 +31,6 @@ using Terminaux.Base;
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
     /// <summary>
-    /// Settings for Dissolve
-    /// </summary>
-    public static class DissolveSettings
-    {
-
-        /// <summary>
-        /// [Dissolve] Enable truecolor support. Has a higher priority than 255 color support.
-        /// </summary>
-        public static bool DissolveTrueColor
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.DissolveTrueColor;
-            }
-            set
-            {
-                ScreensaverPackInit.SaversConfig.DissolveTrueColor = value;
-            }
-        }
-        /// <summary>
-        /// [Dissolve] Screensaver background color
-        /// </summary>
-        public static string DissolveBackgroundColor
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.DissolveBackgroundColor;
-            }
-            set
-            {
-                ScreensaverPackInit.SaversConfig.DissolveBackgroundColor = new Color(value).PlainSequence;
-            }
-        }
-        /// <summary>
-        /// [Dissolve] The minimum red color level (true color)
-        /// </summary>
-        public static int DissolveMinimumRedColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.DissolveMinimumRedColorLevel;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.DissolveMinimumRedColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [Dissolve] The minimum green color level (true color)
-        /// </summary>
-        public static int DissolveMinimumGreenColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.DissolveMinimumGreenColorLevel;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.DissolveMinimumGreenColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [Dissolve] The minimum blue color level (true color)
-        /// </summary>
-        public static int DissolveMinimumBlueColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.DissolveMinimumBlueColorLevel;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.DissolveMinimumBlueColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [Dissolve] The minimum color level (255 colors or 16 colors)
-        /// </summary>
-        public static int DissolveMinimumColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.DissolveMinimumColorLevel;
-            }
-            set
-            {
-                int FinalMinimumLevel = 255;
-                if (value <= 0)
-                    value = 0;
-                if (value > FinalMinimumLevel)
-                    value = FinalMinimumLevel;
-                ScreensaverPackInit.SaversConfig.DissolveMinimumColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [Dissolve] The maximum red color level (true color)
-        /// </summary>
-        public static int DissolveMaximumRedColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.DissolveMaximumRedColorLevel;
-            }
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.DissolveMinimumRedColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.DissolveMinimumRedColorLevel;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.DissolveMaximumRedColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [Dissolve] The maximum green color level (true color)
-        /// </summary>
-        public static int DissolveMaximumGreenColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.DissolveMaximumGreenColorLevel;
-            }
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.DissolveMinimumGreenColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.DissolveMinimumGreenColorLevel;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.DissolveMaximumGreenColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [Dissolve] The maximum blue color level (true color)
-        /// </summary>
-        public static int DissolveMaximumBlueColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.DissolveMaximumBlueColorLevel;
-            }
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.DissolveMinimumBlueColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.DissolveMinimumBlueColorLevel;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.DissolveMaximumBlueColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [Dissolve] The maximum color level (255 colors or 16 colors)
-        /// </summary>
-        public static int DissolveMaximumColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.DissolveMaximumColorLevel;
-            }
-            set
-            {
-                int FinalMaximumLevel = 255;
-                if (value <= ScreensaverPackInit.SaversConfig.DissolveMinimumColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.DissolveMinimumColorLevel;
-                if (value > FinalMaximumLevel)
-                    value = FinalMaximumLevel;
-                ScreensaverPackInit.SaversConfig.DissolveMaximumColorLevel = value;
-            }
-        }
-
-    }
-
-    /// <summary>
     /// Display code for Dissolve
     /// </summary>
     public class DissolveDisplay : BaseScreensaver, IScreensaver
@@ -229,7 +46,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            ColorTools.LoadBackDry(new Color(DissolveSettings.DissolveBackgroundColor));
+            ColorTools.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.DissolveBackgroundColor));
             ConsoleWrapper.CursorVisible = false;
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
         }
@@ -250,17 +67,17 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Populate color
             Color colorStorage = Color.Empty;
-            if (DissolveSettings.DissolveTrueColor)
+            if (ScreensaverPackInit.SaversConfig.DissolveTrueColor)
             {
-                int RedColorNum = RandomDriver.Random(DissolveSettings.DissolveMinimumRedColorLevel, DissolveSettings.DissolveMaximumRedColorLevel);
-                int GreenColorNum = RandomDriver.Random(DissolveSettings.DissolveMinimumGreenColorLevel, DissolveSettings.DissolveMaximumGreenColorLevel);
-                int BlueColorNum = RandomDriver.Random(DissolveSettings.DissolveMinimumBlueColorLevel, DissolveSettings.DissolveMaximumBlueColorLevel);
+                int RedColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.DissolveMinimumRedColorLevel, ScreensaverPackInit.SaversConfig.DissolveMaximumRedColorLevel);
+                int GreenColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.DissolveMinimumGreenColorLevel, ScreensaverPackInit.SaversConfig.DissolveMaximumGreenColorLevel);
+                int BlueColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.DissolveMinimumBlueColorLevel, ScreensaverPackInit.SaversConfig.DissolveMaximumBlueColorLevel);
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                 colorStorage = new Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}");
             }
             else
             {
-                int ColorNum = RandomDriver.Random(DissolveSettings.DissolveMinimumColorLevel, DissolveSettings.DissolveMaximumColorLevel);
+                int ColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.DissolveMinimumColorLevel, ScreensaverPackInit.SaversConfig.DissolveMaximumColorLevel);
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
                 colorStorage = new Color(ColorNum);
             }
@@ -274,7 +91,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "We're refilling...");
                     ColorFilled = false;
                     goAhead = false;
-                    ColorTools.LoadBackDry(new Color(DissolveSettings.DissolveBackgroundColor));
+                    ColorTools.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.DissolveBackgroundColor));
                     CoveredPositions.Clear();
                 }
 
@@ -307,13 +124,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 if (!ConsoleResizeHandler.WasResized(false))
                 {
                     ConsoleWrapper.SetCursorPosition(Left, Top);
-                    ColorTools.SetConsoleColorDry(new Color(DissolveSettings.DissolveBackgroundColor), true);
+                    ColorTools.SetConsoleColorDry(new Color(ScreensaverPackInit.SaversConfig.DissolveBackgroundColor), true);
                     ConsoleWrapper.Write(" ");
                     if (CoveredPositions.Count == (EndLeft + 1) * (EndTop + 1))
                     {
                         DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "We're refilling...");
                         ColorFilled = false;
-                        ColorTools.LoadBackDry(new Color(DissolveSettings.DissolveBackgroundColor));
+                        ColorTools.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.DissolveBackgroundColor));
                         CoveredPositions.Clear();
                     }
                 }
@@ -321,7 +138,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 {
                     DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "We're refilling...");
                     ColorFilled = false;
-                    ColorTools.LoadBackDry(new Color(DissolveSettings.DissolveBackgroundColor));
+                    ColorTools.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.DissolveBackgroundColor));
                     CoveredPositions.Clear();
                 }
             }

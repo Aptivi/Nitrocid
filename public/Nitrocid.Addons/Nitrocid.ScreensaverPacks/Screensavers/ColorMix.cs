@@ -28,205 +28,6 @@ using Terminaux.Base;
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
     /// <summary>
-    /// Settings for ColorMix
-    /// </summary>
-    public static class ColorMixSettings
-    {
-
-        /// <summary>
-        /// [ColorMix] Enable truecolor support. Has a higher priority than 255 color support.
-        /// </summary>
-        public static bool ColorMixTrueColor
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.ColorMixTrueColor;
-            }
-            set
-            {
-                ScreensaverPackInit.SaversConfig.ColorMixTrueColor = value;
-            }
-        }
-        /// <summary>
-        /// [ColorMix] How many milliseconds to wait before making the next write?
-        /// </summary>
-        public static int ColorMixDelay
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.ColorMixDelay;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 1;
-                ScreensaverPackInit.SaversConfig.ColorMixDelay = value;
-            }
-        }
-        /// <summary>
-        /// [ColorMix] Screensaver background color
-        /// </summary>
-        public static string ColorMixBackgroundColor
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.ColorMixBackgroundColor;
-            }
-            set
-            {
-                ScreensaverPackInit.SaversConfig.ColorMixBackgroundColor = new Color(value).PlainSequence;
-            }
-        }
-        /// <summary>
-        /// [ColorMix] The minimum red color level (true color)
-        /// </summary>
-        public static int ColorMixMinimumRedColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.ColorMixMinimumRedColorLevel;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.ColorMixMinimumRedColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [ColorMix] The minimum green color level (true color)
-        /// </summary>
-        public static int ColorMixMinimumGreenColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.ColorMixMinimumGreenColorLevel;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.ColorMixMinimumGreenColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [ColorMix] The minimum blue color level (true color)
-        /// </summary>
-        public static int ColorMixMinimumBlueColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.ColorMixMinimumBlueColorLevel;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.ColorMixMinimumBlueColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [ColorMix] The minimum color level (255 colors or 16 colors)
-        /// </summary>
-        public static int ColorMixMinimumColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.ColorMixMinimumColorLevel;
-            }
-            set
-            {
-                int FinalMinimumLevel = 255;
-                if (value <= 0)
-                    value = 0;
-                if (value > FinalMinimumLevel)
-                    value = FinalMinimumLevel;
-                ScreensaverPackInit.SaversConfig.ColorMixMinimumColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [ColorMix] The maximum red color level (true color)
-        /// </summary>
-        public static int ColorMixMaximumRedColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.ColorMixMaximumRedColorLevel;
-            }
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.ColorMixMaximumRedColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.ColorMixMaximumRedColorLevel;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.ColorMixMaximumRedColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [ColorMix] The maximum green color level (true color)
-        /// </summary>
-        public static int ColorMixMaximumGreenColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.ColorMixMaximumGreenColorLevel;
-            }
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.ColorMixMaximumGreenColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.ColorMixMaximumGreenColorLevel;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.ColorMixMaximumGreenColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [ColorMix] The maximum blue color level (true color)
-        /// </summary>
-        public static int ColorMixMaximumBlueColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.ColorMixMaximumBlueColorLevel;
-            }
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.ColorMixMaximumBlueColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.ColorMixMaximumBlueColorLevel;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.ColorMixMaximumBlueColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [ColorMix] The maximum color level (255 colors or 16 colors)
-        /// </summary>
-        public static int ColorMixMaximumColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.ColorMixMaximumColorLevel;
-            }
-            set
-            {
-                int FinalMaximumLevel = 255;
-                if (value <= ScreensaverPackInit.SaversConfig.ColorMixMaximumColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.ColorMixMaximumColorLevel;
-                if (value > FinalMaximumLevel)
-                    value = FinalMaximumLevel;
-                ScreensaverPackInit.SaversConfig.ColorMixMaximumColorLevel = value;
-            }
-        }
-
-    }
-
-    /// <summary>
     /// Display code for ColorMix
     /// </summary>
     public class ColorMixDisplay : BaseScreensaver, IScreensaver
@@ -239,7 +40,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            ColorTools.LoadBackDry(new Color(ColorMixSettings.ColorMixBackgroundColor));
+            ColorTools.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.ColorMixBackgroundColor));
             ConsoleWrapper.CursorVisible = false;
         }
 
@@ -259,17 +60,17 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             else
             {
                 Color colorStorage;
-                if (ColorMixSettings.ColorMixTrueColor)
+                if (ScreensaverPackInit.SaversConfig.ColorMixTrueColor)
                 {
-                    int RedColorNum = RandomDriver.Random(ColorMixSettings.ColorMixMinimumRedColorLevel, ColorMixSettings.ColorMixMaximumRedColorLevel);
-                    int GreenColorNum = RandomDriver.Random(ColorMixSettings.ColorMixMinimumGreenColorLevel, ColorMixSettings.ColorMixMaximumGreenColorLevel);
-                    int BlueColorNum = RandomDriver.Random(ColorMixSettings.ColorMixMinimumBlueColorLevel, ColorMixSettings.ColorMixMaximumBlueColorLevel);
+                    int RedColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.ColorMixMinimumRedColorLevel, ScreensaverPackInit.SaversConfig.ColorMixMaximumRedColorLevel);
+                    int GreenColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.ColorMixMinimumGreenColorLevel, ScreensaverPackInit.SaversConfig.ColorMixMaximumGreenColorLevel);
+                    int BlueColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.ColorMixMinimumBlueColorLevel, ScreensaverPackInit.SaversConfig.ColorMixMaximumBlueColorLevel);
                     DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                     colorStorage = new Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}");
                 }
                 else
                 {
-                    int ColorNum = RandomDriver.Random(ColorMixSettings.ColorMixMinimumColorLevel, ColorMixSettings.ColorMixMaximumColorLevel);
+                    int ColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.ColorMixMinimumColorLevel, ScreensaverPackInit.SaversConfig.ColorMixMaximumColorLevel);
                     DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
                     colorStorage = new Color(ColorNum);
                 }
@@ -283,13 +84,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 else
                 {
                     DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "We're refilling...");
-                    ColorTools.LoadBackDry(new Color(ColorMixSettings.ColorMixBackgroundColor));
+                    ColorTools.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.ColorMixBackgroundColor));
                 }
             }
 
             // Reset resize sync
             ConsoleResizeHandler.WasResized();
-            ThreadManager.SleepNoBlock(ColorMixSettings.ColorMixDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.ColorMixDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 
     }

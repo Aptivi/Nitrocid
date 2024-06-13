@@ -30,183 +30,6 @@ using Terminaux.Colors;
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
     /// <summary>
-    /// Settings for Lighter
-    /// </summary>
-    public static class LighterSettings
-    {
-
-        /// <summary>
-        /// [Lighter] Enable truecolor support. Has a higher priority than 255 color support.
-        /// </summary>
-        public static bool LighterTrueColor
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.LighterTrueColor;
-            }
-            set
-            {
-                ScreensaverPackInit.SaversConfig.LighterTrueColor = value;
-            }
-        }
-        /// <summary>
-        /// [Lighter] How many milliseconds to wait before making the next write?
-        /// </summary>
-        public static int LighterDelay
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.LighterDelay;
-            }
-            set
-            {
-                ScreensaverPackInit.SaversConfig.LighterDelay = value;
-            }
-        }
-        /// <summary>
-        /// [Lighter] How many positions to write before starting to blacken them?
-        /// </summary>
-        public static int LighterMaxPositions
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.LighterMaxPositions;
-            }
-            set
-            {
-                ScreensaverPackInit.SaversConfig.LighterMaxPositions = value;
-            }
-        }
-        /// <summary>
-        /// [Lighter] Screensaver background color
-        /// </summary>
-        public static string LighterBackgroundColor
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.LighterBackgroundColor;
-            }
-            set
-            {
-                ScreensaverPackInit.SaversConfig.LighterBackgroundColor = value;
-            }
-        }
-        /// <summary>
-        /// [Lighter] The minimum red color level (true color)
-        /// </summary>
-        public static int LighterMinimumRedColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.LighterMinimumRedColorLevel;
-            }
-            set
-            {
-                ScreensaverPackInit.SaversConfig.LighterMinimumRedColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [Lighter] The minimum green color level (true color)
-        /// </summary>
-        public static int LighterMinimumGreenColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.LighterMinimumGreenColorLevel;
-            }
-            set
-            {
-                ScreensaverPackInit.SaversConfig.LighterMinimumGreenColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [Lighter] The minimum blue color level (true color)
-        /// </summary>
-        public static int LighterMinimumBlueColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.LighterMinimumBlueColorLevel;
-            }
-            set
-            {
-                ScreensaverPackInit.SaversConfig.LighterMinimumBlueColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [Lighter] The minimum color level (255 colors or 16 colors)
-        /// </summary>
-        public static int LighterMinimumColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.LighterMinimumColorLevel;
-            }
-            set
-            {
-                ScreensaverPackInit.SaversConfig.LighterMinimumColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [Lighter] The maximum red color level (true color)
-        /// </summary>
-        public static int LighterMaximumRedColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.LighterMaximumRedColorLevel;
-            }
-            set
-            {
-                ScreensaverPackInit.SaversConfig.LighterMaximumRedColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [Lighter] The maximum green color level (true color)
-        /// </summary>
-        public static int LighterMaximumGreenColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.LighterMaximumGreenColorLevel;
-            }
-            set
-            {
-                ScreensaverPackInit.SaversConfig.LighterMaximumGreenColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [Lighter] The maximum blue color level (true color)
-        /// </summary>
-        public static int LighterMaximumBlueColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.LighterMaximumBlueColorLevel;
-            }
-            set
-            {
-                ScreensaverPackInit.SaversConfig.LighterMaximumBlueColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [Lighter] The maximum color level (255 colors or 16 colors)
-        /// </summary>
-        public static int LighterMaximumColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.LighterMaximumColorLevel;
-            }
-            set
-            {
-                ScreensaverPackInit.SaversConfig.LighterMaximumColorLevel = value;
-            }
-        }
-
-    }
-
-    /// <summary>
     /// Display code for Lighter
     /// </summary>
     public class LighterDisplay : BaseScreensaver, IScreensaver
@@ -222,7 +45,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             // Variable preparations
             CoveredPositions.Clear();
-            ColorTools.LoadBackDry(new Color(LighterSettings.LighterBackgroundColor));
+            ColorTools.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.LighterBackgroundColor));
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
         }
 
@@ -244,11 +67,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             }
 
             // Select a color and write the space
-            if (LighterSettings.LighterTrueColor)
+            if (ScreensaverPackInit.SaversConfig.LighterTrueColor)
             {
-                int RedColorNum = RandomDriver.Random(LighterSettings.LighterMinimumRedColorLevel, LighterSettings.LighterMaximumRedColorLevel);
-                int GreenColorNum = RandomDriver.Random(LighterSettings.LighterMinimumGreenColorLevel, LighterSettings.LighterMaximumGreenColorLevel);
-                int BlueColorNum = RandomDriver.Random(LighterSettings.LighterMinimumBlueColorLevel, LighterSettings.LighterMaximumBlueColorLevel);
+                int RedColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.LighterMinimumRedColorLevel, ScreensaverPackInit.SaversConfig.LighterMaximumRedColorLevel);
+                int GreenColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.LighterMinimumGreenColorLevel, ScreensaverPackInit.SaversConfig.LighterMaximumGreenColorLevel);
+                int BlueColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.LighterMinimumBlueColorLevel, ScreensaverPackInit.SaversConfig.LighterMaximumBlueColorLevel);
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                 var ColorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
                 if (!ConsoleResizeHandler.WasResized(false))
@@ -264,7 +87,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             }
             else
             {
-                int ColorNum = RandomDriver.Random(LighterSettings.LighterMinimumColorLevel, LighterSettings.LighterMaximumColorLevel);
+                int ColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.LighterMinimumColorLevel, ScreensaverPackInit.SaversConfig.LighterMaximumColorLevel);
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
                 if (!ConsoleResizeHandler.WasResized(false))
                 {
@@ -279,16 +102,16 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             }
 
             // Simulate a trail effect
-            if (CoveredPositions.Count == LighterSettings.LighterMaxPositions)
+            if (CoveredPositions.Count == ScreensaverPackInit.SaversConfig.LighterMaxPositions)
             {
-                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Covered positions exceeded max positions of {0}", LighterSettings.LighterMaxPositions);
+                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Covered positions exceeded max positions of {0}", ScreensaverPackInit.SaversConfig.LighterMaxPositions);
                 int WipeLeft = CoveredPositions[0].Item1;
                 int WipeTop = CoveredPositions[0].Item2;
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Wiping in {0}, {1}...", WipeLeft, WipeTop);
                 if (!ConsoleResizeHandler.WasResized(false))
                 {
                     ConsoleWrapper.SetCursorPosition(WipeLeft, WipeTop);
-                    ColorTools.SetConsoleColorDry(new Color(LighterSettings.LighterBackgroundColor), true);
+                    ColorTools.SetConsoleColorDry(new Color(ScreensaverPackInit.SaversConfig.LighterBackgroundColor), true);
                     ConsoleWrapper.Write(" ");
                     CoveredPositions.RemoveAt(0);
                 }
@@ -301,7 +124,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Reset resize sync
             ConsoleResizeHandler.WasResized();
-            ThreadManager.SleepNoBlock(LighterSettings.LighterDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.LighterDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 
     }

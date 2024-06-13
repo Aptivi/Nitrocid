@@ -27,59 +27,6 @@ using Terminaux.Colors;
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
     /// <summary>
-    /// Settings for GlitterMatrix
-    /// </summary>
-    public static class GlitterMatrixSettings
-    {
-
-        /// <summary>
-        /// [GlitterMatrix] How many milliseconds to wait before making the next write?
-        /// </summary>
-        public static int GlitterMatrixDelay
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.GlitterMatrixDelay;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 1;
-                ScreensaverPackInit.SaversConfig.GlitterMatrixDelay = value;
-            }
-        }
-        /// <summary>
-        /// [GlitterMatrix] Screensaver background color
-        /// </summary>
-        public static string GlitterMatrixBackgroundColor
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.GlitterMatrixBackgroundColor;
-            }
-            set
-            {
-                ScreensaverPackInit.SaversConfig.GlitterMatrixBackgroundColor = new Color(value).PlainSequence;
-            }
-        }
-        /// <summary>
-        /// [GlitterMatrix] Screensaver foreground color
-        /// </summary>
-        public static string GlitterMatrixForegroundColor
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.GlitterMatrixForegroundColor;
-            }
-            set
-            {
-                ScreensaverPackInit.SaversConfig.GlitterMatrixForegroundColor = new Color(value).PlainSequence;
-            }
-        }
-
-    }
-
-    /// <summary>
     /// Display code for GlitterMatrix
     /// </summary>
     public class GlitterMatrixDisplay : BaseScreensaver, IScreensaver
@@ -92,8 +39,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            ColorTools.SetConsoleColor(new Color(GlitterMatrixSettings.GlitterMatrixForegroundColor));
-            ColorTools.LoadBackDry(new Color(GlitterMatrixSettings.GlitterMatrixBackgroundColor));
+            ColorTools.SetConsoleColor(new Color(ScreensaverPackInit.SaversConfig.GlitterMatrixForegroundColor));
+            ColorTools.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.GlitterMatrixBackgroundColor));
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
         }
 
@@ -117,7 +64,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Reset resize sync
             ConsoleResizeHandler.WasResized();
-            ThreadManager.SleepNoBlock(GlitterMatrixSettings.GlitterMatrixDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.GlitterMatrixDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 
     }
