@@ -164,19 +164,7 @@ namespace Nitrocid.Misc.Interactives
             try
             {
                 bool infoIsDirectory = FileInfoCurrentPane.Type == FileSystemEntryType.Directory;
-                if (Config.MainConfig.IfmShowFileSize)
-                    return
-                        // Name and directory indicator
-                        $"[{(infoIsDirectory ? "/" : "*")}] {FileInfoCurrentPane.BaseEntry.Name} | " +
-
-                        // File size or directory size
-                        $"{(!infoIsDirectory ? ((FileInfo)FileInfoCurrentPane.BaseEntry).Length.SizeString() : SizeGetter.GetAllSizesInFolder((DirectoryInfo)FileInfoCurrentPane.BaseEntry).SizeString())} | " +
-
-                        // Modified date
-                        $"{(!infoIsDirectory ? TimeDateRenderers.Render(((FileInfo)FileInfoCurrentPane.BaseEntry).LastWriteTime) : "")}"
-                    ;
-                else
-                    return $"[{(infoIsDirectory ? "/" : "*")}] {FileInfoCurrentPane.BaseEntry.Name}";
+                return $"[{(infoIsDirectory ? "/" : "*")}] {FileInfoCurrentPane.BaseEntry.Name}";
             }
             catch (Exception ex)
             {
@@ -191,7 +179,16 @@ namespace Nitrocid.Misc.Interactives
             {
                 FileSystemEntry file = item;
                 bool isDirectory = file.Type == FileSystemEntryType.Directory;
-                return $" [{(isDirectory ? "/" : "*")}] {file.BaseEntry.Name}";
+                if (Config.MainConfig.IfmShowFileSize)
+                    return
+                        // Name and directory indicator
+                        $"[{(isDirectory ? "/" : "*")}] {file.BaseEntry.Name} | " +
+
+                        // File size or directory size
+                        $"{(!isDirectory ? ((FileInfo)file.BaseEntry).Length.SizeString() : SizeGetter.GetAllSizesInFolder((DirectoryInfo)file.BaseEntry).SizeString())}"
+                    ;
+                else
+                    return $"[{(isDirectory ? "/" : "*")}] {file.BaseEntry.Name}";
             }
             catch (Exception ex)
             {

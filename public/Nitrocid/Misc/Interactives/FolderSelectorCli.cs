@@ -130,20 +130,7 @@ namespace Nitrocid.Misc.Interactives
             try
             {
                 bool infoIsDirectory = FileInfoCurrentPane.Type == FileSystemEntryType.Directory;
-                string status = "";
-                if (Config.MainConfig.IfmShowFileSize)
-                    status =
-                        // Name and directory indicator
-                        $"[{(infoIsDirectory ? "/" : "*")}] {FileInfoCurrentPane.BaseEntry.Name} | " +
-
-                        // File size or directory size
-                        $"{(!infoIsDirectory ? ((FileInfo)FileInfoCurrentPane.BaseEntry).Length.SizeString() : SizeGetter.GetAllSizesInFolder((DirectoryInfo)FileInfoCurrentPane.BaseEntry).SizeString())} | " +
-
-                        // Modified date
-                        $"{(!infoIsDirectory ? TimeDateRenderers.Render(((FileInfo)FileInfoCurrentPane.BaseEntry).LastWriteTime) : "")}"
-                    ;
-                else
-                    status = $"[{(infoIsDirectory ? "/" : "*")}] {FileInfoCurrentPane.BaseEntry.Name}";
+                string status = $"[{(infoIsDirectory ? "/" : "*")}] {FileInfoCurrentPane.BaseEntry.Name}";
                 if (!string.IsNullOrEmpty(selectedFolder))
                     status = $"{Translate.DoTranslation("Selected")} {selectedFolder} - {status}";
                 return status;
@@ -193,7 +180,16 @@ namespace Nitrocid.Misc.Interactives
                 FileSystemEntry file = item;
                 bool isDirectory = file.Type == FileSystemEntryType.Directory;
                 bool isSelected = SelectedFolder == file.FilePath;
-                return $" [{(isDirectory ? "/" : "*")}] [{(isSelected ? "+" : " ")}] {file.BaseEntry.Name}";
+                if (Config.MainConfig.IfmShowFileSize)
+                    return
+                        // Name and directory indicator
+                        $"[{(isDirectory ? "/" : "*")}] [{(isSelected ? "+" : " ")}] {file.BaseEntry.Name} | " +
+
+                        // File size or directory size
+                        $"{(!isDirectory ? ((FileInfo)file.BaseEntry).Length.SizeString() : SizeGetter.GetAllSizesInFolder((DirectoryInfo)file.BaseEntry).SizeString())}"
+                    ;
+                else
+                    return $"[{(isDirectory ? "/" : "*")}] [{(isSelected ? "+" : " ")}] {file.BaseEntry.Name}";
             }
             catch (Exception ex)
             {
