@@ -84,7 +84,7 @@ namespace Nitrocid.Misc.Interactives
                 (info, _) => Hash((FileSystemEntry)info)),
             new InteractiveTuiBinding("Verify...", ConsoleKey.F10,
                 (info, _) => Verify((FileSystemEntry)info)),
-            new InteractiveTuiBinding("Preview Selected", ConsoleKey.Spacebar,
+            new InteractiveTuiBinding("Preview Selected", ConsoleKey.F11,
                 (_, _) => PreviewSelected()),
             new InteractiveTuiBinding("Preview", ConsoleKey.P,
                 (info, _) => Preview((FileSystemEntry)info)),

@@ -45,7 +45,7 @@ namespace Nitrocid.Misc.Interactives
             // Operations
             new InteractiveTuiBinding("Kill", ConsoleKey.F1,
                 (_, index) => KillThread(index)),
-            new InteractiveTuiBinding("Switch", ConsoleKey.S,
+            new InteractiveTuiBinding("Switch", ConsoleKey.F2,
                 (_, _) => SwitchMode())
         ];
 
