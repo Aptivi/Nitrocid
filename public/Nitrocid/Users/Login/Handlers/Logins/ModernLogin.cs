@@ -63,7 +63,7 @@ namespace Nitrocid.Users.Login.Handlers.Logins
                     new InputChoiceInfo("shutdown", Translate.DoTranslation("Shut down")),
                     new InputChoiceInfo("reboot", Translate.DoTranslation("Restart")),
                     new InputChoiceInfo("login", Translate.DoTranslation("Login")),
-                ], Translate.DoTranslation("What do you want to do?"));
+                ], Translate.DoTranslation("You've entered the power action menu. Please enter a choice using the left and the right arrow keys and press ENTER, or press ESC to go back to the main screen."));
                 if (answer == 0)
                     PowerManager.PowerManage(PowerMode.Shutdown);
                 else if (answer == 1)
