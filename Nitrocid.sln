@@ -69,8 +69,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.Analyzers.Package"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.Analyzers.Test", "private\Nitrocid.Analyzers.Test\Nitrocid.Analyzers.Test.csproj", "{E7FE453F-AD54-4286-B129-4788C7729F5F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.Analyzers.Vsix", "public\Nitrocid.Analyzers\Nitrocid.Analyzers.Vsix\Nitrocid.Analyzers.Vsix.csproj", "{AD2CC906-EC76-4736-A216-6453114A0C0C}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.LocaleCheck", "private\Nitrocid.LocaleCheck\Nitrocid.LocaleCheck.csproj", "{CB35C763-7560-4B64-B756-9DE23FC5BBBE}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.StandaloneAnalyzer", "public\Nitrocid.Analyzers\Nitrocid.StandaloneAnalyzer\Nitrocid.StandaloneAnalyzer.csproj", "{DF07F4E1-47B2-452D-A200-F15F558C4977}"
@@ -183,7 +181,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Assets", "Assets", "{5C239B
 		Directory.Build.props = Directory.Build.props
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nitrocid.Extras.Pastebin", "public\Nitrocid.Addons\Nitrocid.Extras.Pastebin\Nitrocid.Extras.Pastebin.csproj", "{BFF82FA8-6946-4A1C-ACAF-AE9FC73E5C46}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.Extras.Pastebin", "public\Nitrocid.Addons\Nitrocid.Extras.Pastebin\Nitrocid.Extras.Pastebin.csproj", "{BFF82FA8-6946-4A1C-ACAF-AE9FC73E5C46}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -227,10 +225,6 @@ Global
 		{E7FE453F-AD54-4286-B129-4788C7729F5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E7FE453F-AD54-4286-B129-4788C7729F5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E7FE453F-AD54-4286-B129-4788C7729F5F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AD2CC906-EC76-4736-A216-6453114A0C0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AD2CC906-EC76-4736-A216-6453114A0C0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AD2CC906-EC76-4736-A216-6453114A0C0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AD2CC906-EC76-4736-A216-6453114A0C0C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CB35C763-7560-4B64-B756-9DE23FC5BBBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CB35C763-7560-4B64-B756-9DE23FC5BBBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CB35C763-7560-4B64-B756-9DE23FC5BBBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -429,7 +423,6 @@ Global
 		{92EFB380-0B78-4B92-A227-F0B6BF982F19} = {60986DC6-07C5-40D1-A305-741E8ABE39FC}
 		{A9D16C17-745F-467E-854F-A5C40A28D7A9} = {60986DC6-07C5-40D1-A305-741E8ABE39FC}
 		{E7FE453F-AD54-4286-B129-4788C7729F5F} = {D5693E90-DBB5-4C20-B83B-A200CEB8A639}
-		{AD2CC906-EC76-4736-A216-6453114A0C0C} = {60986DC6-07C5-40D1-A305-741E8ABE39FC}
 		{CB35C763-7560-4B64-B756-9DE23FC5BBBE} = {5427F963-3094-4111-AB05-DAE364A8DF67}
 		{DF07F4E1-47B2-452D-A200-F15F558C4977} = {60986DC6-07C5-40D1-A305-741E8ABE39FC}
 		{5BA304B0-7162-4261-894C-9EDEF169253F} = {5427F963-3094-4111-AB05-DAE364A8DF67}

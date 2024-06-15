@@ -13,6 +13,11 @@ if [ ! $? == 0 ]; then
 	echo Push failed.
 	exit 1
 fi
+find ../public/Nitrocid/KSAnalyzer/ -maxdepth 1 -type f -name "*.nupkg" -exec dotnet nuget push {} --api-key $NUGET_APIKEY --source "nuget.org" \;
+if [ ! $? == 0 ]; then
+	echo Push failed.
+	exit 1
+fi
 
 # Inform success
 echo Push successful.
