@@ -42,6 +42,13 @@ namespace Nitrocid.Extras.Forecast
                 [
                     new CommandArgumentInfo(
                     [
+                        new SwitchInfo("tui", /* Localizable */ "Weather info in an interactive TUI", new SwitchOptions()
+                        {
+                            AcceptsValues = false,
+                        })
+                    ]),
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "latitude"),
                         new CommandArgumentPart(true, "longitude"),
                         new CommandArgumentPart(false, "apikey"),

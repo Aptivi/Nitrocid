@@ -26,6 +26,8 @@ using System.Linq;
 using Nitrocid.ConsoleBase.Inputs;
 using Nettify.Weather;
 using Nitrocid.Shell.ShellBase.Switches;
+using Terminaux.Inputs.Interactive;
+using Nitrocid.Extras.Forecast.Forecast.Interactive;
 
 namespace Nitrocid.Extras.Forecast.Forecast.Commands
 {
@@ -54,6 +56,16 @@ namespace Nitrocid.Extras.Forecast.Forecast.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
+            if (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-tui"))
+            {
+                InteractiveTuiTools.OpenInteractiveTui(new WeatherCli());
+                return 0;
+            }
+            if (parameters.ArgumentsList.Length <= 1)
+            {
+                TextWriters.Write(Translate.DoTranslation("Enter the city latitude and longitude."), KernelColorType.Error);
+                return 38;
+            }
             string APIKey = Forecast.ApiKey;
             if (parameters.ArgumentsList.Length > 2)
             {
