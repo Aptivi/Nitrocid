@@ -30,7 +30,6 @@ using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Files;
-using Nitrocid.Misc.Screensaver;
 using Nitrocid.Misc.Reflection;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Files.Operations;

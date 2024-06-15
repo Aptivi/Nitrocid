@@ -21,7 +21,6 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 using Terminaux.Colors;
-using Nitrocid.Extras.Amusements.Screensavers;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Threading;

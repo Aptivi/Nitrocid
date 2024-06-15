@@ -17,9 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System.Linq;
-using Nitrocid.Extras.RssShell.Tools;
-using Nettify.Rss.Instance;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;

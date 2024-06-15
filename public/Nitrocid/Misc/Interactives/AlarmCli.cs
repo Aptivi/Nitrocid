@@ -23,7 +23,6 @@ using Nitrocid.Kernel.Time.Alarm;
 using Nitrocid.Languages;
 using Terminaux.Inputs.Interactive;
 using Terminaux.Inputs.Styles.Infobox;
-using Terminaux.Reader;
 using Textify.General;
 
 namespace Nitrocid.Misc.Interactives

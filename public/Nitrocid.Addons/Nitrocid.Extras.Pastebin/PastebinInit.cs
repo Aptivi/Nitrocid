@@ -17,8 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Drivers;
-using Nitrocid.Drivers.Encryption;
 using Nitrocid.Extras.Pastebin.Commands;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Modifications;
