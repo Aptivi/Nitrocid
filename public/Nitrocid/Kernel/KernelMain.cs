@@ -92,7 +92,7 @@ namespace Nitrocid.Kernel
                     TextWriters.Write(Translate.DoTranslation("Available kernel arguments:"), true, KernelColorType.ListTitle);
                     ArgumentHelpPrint.ShowArgsHelp();
                     PowerManager.hardShutdown = true;
-                    return;
+                    PowerManager.KernelShutdown = true;
                 }
 
                 // This is a kernel entry point
