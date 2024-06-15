@@ -666,6 +666,32 @@
                 "SelectionFunctionType": "LoginHandlerTools",
                 "SelectionFallback": [ "classic", "modern" ],
                 "Description": "Login handler to use for sign-in prompts."
+            },
+            {
+                "Name": "Enable widgets",
+                "Type": "SBoolean",
+                "Variable": "EnableWidgets",
+                "Description": "Enables the widgets in the modern logon handler and all the handlers that use the widget API."
+            },
+            {
+                "Name": "First widget",
+                "Type": "SSelection",
+                "Variable": "FirstWidget",
+                "IsEnumeration": false,
+                "SelectionFunctionName": "GetWidgetNames",
+                "SelectionFunctionType": "WidgetTools",
+                "SelectionFallback": [ "AnalogClock", "DigitalClock" ],
+                "Description": "First widget for the modern logon handler. You can configure this widget in its respective settings entry."
+            },
+            {
+                "Name": "Second widget",
+                "Type": "SSelection",
+                "Variable": "SecondWidget",
+                "IsEnumeration": false,
+                "SelectionFunctionName": "GetWidgetNames",
+                "SelectionFunctionType": "WidgetTools",
+                "SelectionFallback": [ "AnalogClock", "DigitalClock" ],
+                "Description": "Second widget for the modern logon handler. You can configure this widget in its respective settings entry."
             }
         ]
     },

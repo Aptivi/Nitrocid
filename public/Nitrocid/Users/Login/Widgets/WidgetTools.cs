@@ -163,5 +163,16 @@ namespace Nitrocid.Users.Login.Widgets
             string widgetSeq = widget.Render(left, top, width, height);
             TextWriterRaw.WriteRaw(widgetSeq);
         }
+
+        /// <summary>
+        /// Gets widget names
+        /// </summary>
+        /// <returns>An array containing base and custom widget class names</returns>
+        public static string[] GetWidgetNames()
+        {
+            var baseNames = baseWidgets.Select(GetWidgetName).ToArray();
+            var customNames = customWidgets.Select(GetWidgetName).ToArray();
+            return [.. baseNames, .. customNames];
+        }
     }
 }
