@@ -50,6 +50,7 @@ using Nitrocid.Network;
 using Terminaux.Inputs.Styles.Selection;
 using Terminaux.Inputs.Interactive;
 using Nitrocid.Misc.Reflection.Internal;
+using Nitrocid.Users.Login;
 
 namespace Nitrocid.Kernel.Configuration.Instances
 {
@@ -909,6 +910,30 @@ namespace Nitrocid.Kernel.Configuration.Instances
         {
             get => LoginHandlerTools.CurrentHandlerName;
             set => LoginHandlerTools.CurrentHandlerName = value;
+        }
+        /// <summary>
+        /// Enables the widgets in the modern logon handler and all the handlers that use the widget API.
+        /// </summary>
+        public bool EnableWidgets
+        {
+            get => ModernLogonScreen.enableWidgets;
+            set => ModernLogonScreen.enableWidgets = value;
+        }
+        /// <summary>
+        /// First widget for the modern logon handler. You can configure this widget in its respective settings entry.
+        /// </summary>
+        public string FirstWidget
+        {
+            get => ModernLogonScreen.firstWidgetName;
+            set => ModernLogonScreen.firstWidgetName = value;
+        }
+        /// <summary>
+        /// Second widget for the modern logon handler. You can configure this widget in its respective settings entry.
+        /// </summary>
+        public string SecondWidget
+        {
+            get => ModernLogonScreen.secondWidgetName;
+            set => ModernLogonScreen.secondWidgetName = value;
         }
         #endregion
 

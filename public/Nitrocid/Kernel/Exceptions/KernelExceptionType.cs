@@ -492,5 +492,9 @@ namespace Nitrocid.Kernel.Exceptions
         /// There was an error when trying to process an alarm system operation.
         /// </summary>
         Alarm,
+        /// <summary>
+        /// There was an error when trying to process a widget system operation. If you're sure that this widget is registered properly, please make sure that you've written the widget class name properly.
+        /// </summary>
+        Widget,
     }
 }

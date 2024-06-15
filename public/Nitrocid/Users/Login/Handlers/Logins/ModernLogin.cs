@@ -73,6 +73,8 @@ namespace Nitrocid.Users.Login.Handlers.Logins
             else if (key == ConsoleKey.LeftArrow || key == ConsoleKey.RightArrow)
             {
                 proceed = false;
+                if (!ModernLogonScreen.enableWidgets)
+                    return proceed;
                 if (key == ConsoleKey.LeftArrow)
                 {
                     ModernLogonScreen.screenNum--;

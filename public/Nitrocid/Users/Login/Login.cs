@@ -82,6 +82,7 @@ namespace Nitrocid.Users.Login
 
                 // Login loop until either power action (in case login handler tries to shut the kernel down) or sign in action
                 string user = "";
+                ModernLogonScreen.screenNum = 1;
                 while (!PowerManager.RebootRequested && !PowerManager.KernelShutdown)
                 {
                     // First, set root account

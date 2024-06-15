@@ -148,6 +148,7 @@ namespace Nitrocid.Kernel.Exceptions
                 { KernelExceptionType.Environment,                      Translate.DoTranslation("There was an error when trying to perform an operation for the environment management.") },
                 { KernelExceptionType.Bootloader,                       Translate.DoTranslation("There was an error when trying to process a bootloader operation.") },
                 { KernelExceptionType.Alarm,                            Translate.DoTranslation("There was an error when trying to process an alarm system operation.") },
+                { KernelExceptionType.Widget,                           Translate.DoTranslation("There was an error when trying to process a widget system operation. If you're sure that this widget is registered properly, please make sure that you've written the widget class name properly.") },
             };
 
         internal static string GetFinalExceptionMessage(KernelExceptionType exceptionType, string message, Exception e, params object[] vars)

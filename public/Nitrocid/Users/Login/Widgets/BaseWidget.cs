@@ -30,7 +30,7 @@ namespace Nitrocid.Users.Login.Widgets
         /// Renders this widget in the upper left corner of the console with the width and height of the console window
         /// </summary>
         /// <returns>A string that represents the rendered widget with VT sequences and other console control sequences.</returns>
-        public virtual string Render() =>
+        public string Render() =>
             Render(0, 0, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
 
         /// <summary>

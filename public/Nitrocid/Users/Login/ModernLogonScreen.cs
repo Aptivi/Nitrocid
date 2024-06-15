@@ -37,6 +37,8 @@ using Textify.General;
 using Terminaux.Base;
 using Nitrocid.Users.Login.Motd;
 using Nitrocid.Network.Types.RSS;
+using Nitrocid.Users.Login.Widgets;
+using Nitrocid.Users.Login.Widgets.Implementations;
 
 namespace Nitrocid.Users.Login
 {
@@ -45,6 +47,19 @@ namespace Nitrocid.Users.Login
         internal static bool renderedFully = false;
         internal static int screenNum = 1;
         internal readonly static KernelThread updateThread = new("Modern Logon Update Thread", true, ScreenHandler);
+        internal static bool enableWidgets = true;
+        internal static string firstWidgetName = nameof(AnalogClock);
+        internal static string secondWidgetName = nameof(DigitalClock);
+
+        internal static BaseWidget FirstWidget =>
+            WidgetTools.CheckWidget(firstWidgetName) ?
+            WidgetTools.GetWidget(firstWidgetName) :
+            WidgetTools.GetWidget(nameof(AnalogClock));
+
+        internal static BaseWidget SecondWidget =>
+            WidgetTools.CheckWidget(secondWidgetName) ?
+            WidgetTools.GetWidget(secondWidgetName) :
+            WidgetTools.GetWidget(nameof(DigitalClock));
 
         /// <summary>
         /// Whether to show the MOTD and the headline at the bottom or at the top of the clock
@@ -172,7 +187,7 @@ namespace Nitrocid.Users.Login
                         // Place for first widget
                         screen.RemoveBufferedParts();
                         var part = new ScreenPart();
-                        part.AddDynamicText(() => CenteredTextColor.RenderCentered("Placeholder for first widget"));
+                        part.AddDynamicText(FirstWidget.Render);
                         screen.AddBufferedPart("Widget 1 updater", part);
 
                         // Render it now
@@ -183,7 +198,7 @@ namespace Nitrocid.Users.Login
                         // Place for second widget
                         screen.RemoveBufferedParts();
                         var part = new ScreenPart();
-                        part.AddDynamicText(() => CenteredTextColor.RenderCentered("Placeholder for second widget"));
+                        part.AddDynamicText(SecondWidget.Render);
                         screen.AddBufferedPart("Widget 2 updater", part);
 
                         // Render it now
