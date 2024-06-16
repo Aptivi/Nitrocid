@@ -27,6 +27,7 @@ using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.ConsoleBase.Colors;
 using Nettify.Weather;
 using Terminaux.Inputs;
+using Newtonsoft.Json.Linq;
 
 namespace Nitrocid.Extras.Forecast.Forecast.Interactive
 {
@@ -65,6 +66,14 @@ namespace Nitrocid.Extras.Forecast.Forecast.Interactive
             CheckApiKey();
             InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Loading weather info from geographical location") + $" {item.Item1}, {item.Item2}...", false, KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
             var WeatherInfo = Forecast.GetWeatherInfo(item.Item1, item.Item2);
+            T Adjust<T>(string dayPartData)
+            {
+                var dayPartArray = WeatherInfo.WeatherToken["daypart"][0][dayPartData];
+                var adjusted = dayPartArray[0];
+                if (adjusted.Type == JTokenType.Null)
+                    adjusted = dayPartArray[1];
+                return (T)adjusted.ToObject(typeof(T));
+            }
 
             // Print them to a string
             string WeatherSpecifier = "°";
@@ -76,13 +85,37 @@ namespace Nitrocid.Extras.Forecast.Forecast.Interactive
                 WeatherSpecifier += "F";
                 WindSpeedSpecifier = "mph";
             }
+            int cloudCover = Adjust<int>("cloudCover");
+            string dayIndicator = Adjust<string>("dayOrNight");
+            string narrative = Adjust<string>("narrative");
+            int precipitation = Adjust<int>("precipChance");
+            string precipitationType = Adjust<string>("precipType");
+            int heatIdx = Adjust<int>("temperatureHeatIndex");
+            int windIdx = Adjust<int>("temperatureWindChill");
+            int uvIdx = Adjust<int>("uvIndex");
+            string uvDesc = Adjust<string>("uvDescription");
+            string windNarrative = Adjust<string>("windPhrase");
+            int min = (int)WeatherInfo.WeatherToken["calendarDayTemperatureMin"][0];
+            int max = (int)WeatherInfo.WeatherToken["calendarDayTemperatureMax"][0];
             string info =
                 $"{Translate.DoTranslation("Weather condition")}: {WeatherInfo.Weather}{WeatherSpecifier}\n" +
                 $"{Translate.DoTranslation("Temperature")}: {WeatherInfo.Temperature:N2}\n" +
                 $"{Translate.DoTranslation("Wind speed")}: {WeatherInfo.WindSpeed:N2} {WindSpeedSpecifier}\n" +
                 $"{Translate.DoTranslation("Wind direction")}: {WeatherInfo.WindDirection:N2}°\n" +
                 $"{Translate.DoTranslation("Humidity rate")}: {WeatherInfo.Humidity:N2}%\n" +
-                $"{Translate.DoTranslation("Geographical location")}: {item.Item1}, {item.Item2}";
+                $"{Translate.DoTranslation("Cloud cover")}: {cloudCover}\n" +
+                $"{Translate.DoTranslation("Time of day")}: {dayIndicator}\n" +
+                $"{Translate.DoTranslation("Minimum temperature")}: {min}, {WeatherSpecifier}\n" +
+                $"{Translate.DoTranslation("Maximum temperature")}: {max}, {WeatherSpecifier}\n" +
+                $"{Translate.DoTranslation("Precipitation chance")}: {precipitation}%\n" +
+                $"{Translate.DoTranslation("Precipitation type")}: {precipitationType}\n" +
+                $"{Translate.DoTranslation("Heat index")}: {heatIdx}, {WeatherSpecifier}\n" +
+                $"{Translate.DoTranslation("Wind chill")}: {windIdx}, {WeatherSpecifier}\n" +
+                $"{Translate.DoTranslation("Ultraviolet index")} [0-10]: {uvIdx}\n" +
+                $"{Translate.DoTranslation("Ultraviolet description")}: {uvDesc}\n" +
+                $"======================\n" +
+                $"{narrative} - {windNarrative}"
+            ;
 
             // Render them to the second pane
             return info;

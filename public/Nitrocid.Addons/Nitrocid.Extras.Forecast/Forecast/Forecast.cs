@@ -24,6 +24,7 @@ using Terminaux.Writer.FancyWriters;
 using Nitrocid.Languages;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
+using Newtonsoft.Json.Linq;
 
 namespace Nitrocid.Extras.Forecast.Forecast
 {
@@ -78,6 +79,15 @@ namespace Nitrocid.Extras.Forecast.Forecast
         public static void PrintWeatherInfo(double latitude, double longitude, string APIKey)
         {
             WeatherForecastInfo WeatherInfo = GetWeatherInfo(latitude, longitude, APIKey);
+            T Adjust<T>(string dayPartData)
+            {
+                var dayPartArray = WeatherInfo.WeatherToken["daypart"][0][dayPartData];
+                var adjusted = dayPartArray[0];
+                if (adjusted.Type == JTokenType.Null)
+                    adjusted = dayPartArray[1];
+                return (T)adjusted.ToObject(typeof(T));
+            }
+
             string WeatherSpecifier = "°";
             string WindSpeedSpecifier = "m.s";
             SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("-- Weather info --"), false);
@@ -94,6 +104,32 @@ namespace Nitrocid.Extras.Forecast.Forecast
             TextWriterColor.Write(Translate.DoTranslation("Wind direction: {0}") + "°", WeatherInfo.WindDirection.ToString("N2"));
             TextWriterColor.Write(Translate.DoTranslation("Humidity: {0}") + "%", WeatherInfo.Humidity.ToString("N2"));
             TextWriterColor.Write(Translate.DoTranslation("Latitude and Longitude") + ": {0}, {1}", latitude, longitude);
+
+            // More info
+            int cloudCover = Adjust<int>("cloudCover");
+            string dayIndicator = Adjust<string>("dayOrNight");
+            string narrative = Adjust<string>("narrative");
+            int precipitation = Adjust<int>("precipChance");
+            string precipitationType = Adjust<string>("precipType");
+            int heatIdx = Adjust<int>("temperatureHeatIndex");
+            int windIdx = Adjust<int>("temperatureWindChill");
+            int uvIdx = Adjust<int>("uvIndex");
+            string uvDesc = Adjust<string>("uvDescription");
+            string windNarrative = Adjust<string>("windPhrase");
+            int min = (int)WeatherInfo.WeatherToken["calendarDayTemperatureMin"][0];
+            int max = (int)WeatherInfo.WeatherToken["calendarDayTemperatureMax"][0];
+            TextWriterColor.Write(Translate.DoTranslation("Cloud cover") + ": {0}%", cloudCover);
+            TextWriterColor.Write(Translate.DoTranslation("Time of day") + ": {0}", dayIndicator);
+            TextWriterColor.Write(Translate.DoTranslation("Minimum temperature") + ": {0}{1}", min, WeatherSpecifier);
+            TextWriterColor.Write(Translate.DoTranslation("Maximum temperature") + ": {0}{1}", max, WeatherSpecifier);
+            TextWriterColor.Write(Translate.DoTranslation("Precipitation chance") + ": {0}%", precipitation);
+            TextWriterColor.Write(Translate.DoTranslation("Precipitation type") + ": {0}", precipitationType);
+            TextWriterColor.Write(Translate.DoTranslation("Heat index") + ": {0}{1}", heatIdx, WeatherSpecifier);
+            TextWriterColor.Write(Translate.DoTranslation("Wind chill") + ": {0}{1}", windIdx, WeatherSpecifier);
+            TextWriterColor.Write(Translate.DoTranslation("Ultraviolet index") + " [0-10]: {0}", uvIdx);
+            TextWriterColor.Write(Translate.DoTranslation("Ultraviolet description") + ": {0}", uvDesc);
+            TextWriterColor.Write("\n======================\n");
+            TextWriterColor.Write($"{narrative} - {windNarrative}");
         }
 
         #region Legacy (OWM)
