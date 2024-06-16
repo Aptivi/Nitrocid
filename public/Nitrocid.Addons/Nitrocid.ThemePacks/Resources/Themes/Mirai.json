@@ -1,9 +1,9 @@
 {
     "Metadata": {
-        "Name": "Greenified",
-        "Description": "Greenify your environment, greenify your kernel. Make Earth greener!",
+        "Name": "Mirai",
+        "Description": "Color palette from Mirai Kuriyama from Beyond the Boundary.",
         "Localizable": true,
-        "Category": "Exciting"
+        "Category": "Chinese"
     },
     "InputColor": "208;232;105",
     "LicenseColor": "217;231;156",

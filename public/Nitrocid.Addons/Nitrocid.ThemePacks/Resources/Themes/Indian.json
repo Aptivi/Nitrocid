@@ -1,9 +1,8 @@
 {
     "Metadata": {
-        "Name": "Greenified",
-        "Description": "Greenify your environment, greenify your kernel. Make Earth greener!",
-        "Localizable": true,
-        "Category": "Exciting"
+        "Name": "Indian",
+        "Description": "Traditional Indian colors right in your console.",
+        "Localizable": true
     },
     "InputColor": "208;232;105",
     "LicenseColor": "217;231;156",
