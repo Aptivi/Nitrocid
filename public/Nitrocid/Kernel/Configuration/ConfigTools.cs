@@ -229,11 +229,11 @@ namespace Nitrocid.Kernel.Configuration
                         if (KeyEnumerationInternal)
                         {
                             // Apparently, we need to have a full assembly name for getting types.
-                            Result = Type.GetType("Nitrocid." + KeyEnumeration + ", " + Assembly.GetExecutingAssembly().FullName) is not null;
+                            Result = Type.GetType($"{KernelMain.rootNameSpace}.{KeyEnumeration}, {Assembly.GetExecutingAssembly().FullName}") is not null;
                         }
                         else
                         {
-                            Result = Type.GetType(KeyEnumeration + ", " + KeyEnumerationAssembly) is not null;
+                            Result = Type.GetType($"{KeyEnumeration}, {KeyEnumerationAssembly}") is not null;
                         }
                         Results.Add($"{KeyName}, {KeyVariable}, {KeyEnumeration}", Result);
                     }

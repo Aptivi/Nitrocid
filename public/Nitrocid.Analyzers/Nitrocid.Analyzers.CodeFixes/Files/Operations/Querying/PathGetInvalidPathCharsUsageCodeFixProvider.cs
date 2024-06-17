@@ -80,12 +80,12 @@ namespace Nitrocid.Analyzers.Files.Operations.Querying
 
                 // Check the imports
                 var compilation = finalNode as CompilationUnitSyntax;
-                if (compilation?.Usings.Any(u => u.Name.ToString() == "Nitrocid.Files.Operations.Querying") == false)
+                if (compilation?.Usings.Any(u => u.Name.ToString() == $"{AnalysisTools.rootNameSpace}.Files.Operations.Querying") == false)
                 {
                     var name = SyntaxFactory.QualifiedName(
                         SyntaxFactory.QualifiedName(
                             SyntaxFactory.QualifiedName(
-                                SyntaxFactory.IdentifierName("Nitrocid"),
+                                SyntaxFactory.IdentifierName(AnalysisTools.rootNameSpace),
                                 SyntaxFactory.IdentifierName("Files")),
                             SyntaxFactory.IdentifierName("Operations")),
                         SyntaxFactory.IdentifierName("Querying"));

@@ -82,12 +82,12 @@ namespace Nitrocid.Analyzers.Kernel.Time.Timezones
 
                 // Check the imports
                 var compilation = finalNode as CompilationUnitSyntax;
-                if (compilation?.Usings.Any(u => u.Name.ToString() == "Nitrocid.Kernel.Time.Timezones") == false)
+                if (compilation?.Usings.Any(u => u.Name.ToString() == $"{AnalysisTools.rootNameSpace}.Kernel.Time.Timezones") == false)
                 {
                     var name = SyntaxFactory.QualifiedName(
                         SyntaxFactory.QualifiedName(
                             SyntaxFactory.QualifiedName(
-                                SyntaxFactory.IdentifierName("Nitrocid"),
+                                SyntaxFactory.IdentifierName(AnalysisTools.rootNameSpace),
                                 SyntaxFactory.IdentifierName("Kernel")),
                             SyntaxFactory.IdentifierName("Time")),
                         SyntaxFactory.IdentifierName("Timezones"));

@@ -17,19 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using BenchmarkDotNet.Running;
-using Nitrocid.Kernel;
-
-namespace Nitrocid.Benchmarks
+namespace Nitrocid.Analyzers
 {
-    internal static class FixtureManager
+    internal static class AnalysisTools
     {
-        internal static void RunBenchmark(string fixture)
-        {
-            // Get the benchmark fixture and run it
-            var fixtureType = Type.GetType($"{KernelMain.rootNameSpace}.Benchmarks.Fixtures.{fixture}") ??
-                throw new Exception($"No fixture type called {fixture}.");
-            BenchmarkRunner.Run(fixtureType);
-        }
+        internal static readonly string rootNameSpace =
+            typeof(AnalysisTools).Namespace.Split('.')[0];
     }
 }

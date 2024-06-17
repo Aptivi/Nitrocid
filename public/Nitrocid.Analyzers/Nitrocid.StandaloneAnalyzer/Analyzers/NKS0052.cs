@@ -108,10 +108,10 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
 
                 // Check the imports
                 var compilation = finalNode as CompilationUnitSyntax;
-                if (compilation?.Usings.Any(u => u.Name.ToString() == "Nitrocid.Kernel") == false)
+                if (compilation?.Usings.Any(u => u.Name.ToString() == $"{AnalysisTools.rootNameSpace}.Kernel") == false)
                 {
                     var name = SyntaxFactory.QualifiedName(
-                        SyntaxFactory.IdentifierName("Nitrocid"),
+                        SyntaxFactory.IdentifierName(AnalysisTools.rootNameSpace),
                         SyntaxFactory.IdentifierName("Kernel"));
                     var directive = SyntaxFactory.UsingDirective(name).NormalizeWhitespace();
                     TextWriterColor.Write("Additionally, the suggested fix will add the following using statement:", true, ConsoleColors.Yellow);

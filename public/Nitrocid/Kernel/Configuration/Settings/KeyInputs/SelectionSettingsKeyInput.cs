@@ -179,7 +179,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
                 if (SelectionEnumInternal)
                 {
                     // Apparently, we need to have a full assembly name for getting types.
-                    SelectionEnumType = Type.GetType("Nitrocid." + enumeration + ", " + Assembly.GetExecutingAssembly().FullName);
+                    SelectionEnumType = Type.GetType($"{KernelMain.rootNameSpace}.{enumeration}, {Assembly.GetExecutingAssembly().FullName}");
                     SelectFrom = SelectionEnumType.GetEnumNames();
                     Selections = SelectionEnumType.GetEnumValues();
                 }

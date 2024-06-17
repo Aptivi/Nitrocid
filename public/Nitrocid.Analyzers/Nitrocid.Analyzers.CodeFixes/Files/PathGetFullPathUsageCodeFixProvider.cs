@@ -80,10 +80,10 @@ namespace Nitrocid.Analyzers.Files
 
                 // Check the imports
                 var compilation = finalNode as CompilationUnitSyntax;
-                if (compilation?.Usings.Any(u => u.Name.ToString() == "Nitrocid.Files") == false)
+                if (compilation?.Usings.Any(u => u.Name.ToString() == $"{AnalysisTools.rootNameSpace}.Files") == false)
                 {
                     var name = SyntaxFactory.QualifiedName(
-                        SyntaxFactory.IdentifierName("Nitrocid"),
+                        SyntaxFactory.IdentifierName(AnalysisTools.rootNameSpace),
                         SyntaxFactory.IdentifierName("Files"));
                     compilation = compilation
                         .AddUsings(SyntaxFactory.UsingDirective(name));

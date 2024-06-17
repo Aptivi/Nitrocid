@@ -96,11 +96,11 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
 
                     // Check the imports
                     var compilation = finalNode as CompilationUnitSyntax;
-                    if (compilation?.Usings.Any(u => u.Name.ToString() == "Nitrocid.Network.Base") == false)
+                    if (compilation?.Usings.Any(u => u.Name.ToString() == $"{AnalysisTools.rootNameSpace}.Network.Base") == false)
                     {
                         var name = SyntaxFactory.QualifiedName(
                             SyntaxFactory.QualifiedName(
-                                SyntaxFactory.IdentifierName("Nitrocid"),
+                                SyntaxFactory.IdentifierName(AnalysisTools.rootNameSpace),
                                 SyntaxFactory.IdentifierName("Network")),
                             SyntaxFactory.IdentifierName("Base"));
                         var directive = SyntaxFactory.UsingDirective(name).NormalizeWhitespace();

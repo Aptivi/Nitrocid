@@ -80,10 +80,10 @@ namespace Nitrocid.Analyzers.Network.Base
 
                 // Check the imports
                 var compilation = finalNode as CompilationUnitSyntax;
-                if (compilation?.Usings.Any(u => u.Name.ToString() == "Nitrocid.Network") == false)
+                if (compilation?.Usings.Any(u => u.Name.ToString() == $"{AnalysisTools.rootNameSpace}.Network") == false)
                 {
                     var name = SyntaxFactory.QualifiedName(
-                        SyntaxFactory.IdentifierName("Nitrocid"),
+                        SyntaxFactory.IdentifierName(AnalysisTools.rootNameSpace),
                         SyntaxFactory.IdentifierName("Network"));
                     compilation = compilation
                         .AddUsings(SyntaxFactory.UsingDirective(name));

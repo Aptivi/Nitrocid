@@ -18,6 +18,7 @@
 //
 
 using Nitrocid.Files.Operations.Querying;
+using Nitrocid.Kernel;
 using Nitrocid.Kernel.Configuration.Instances;
 using Nitrocid.Kernel.Exceptions;
 using System;
@@ -33,7 +34,7 @@ namespace Nitrocid.Misc.Reflection
             typeof(KernelMainConfig),
             typeof(KernelSaverConfig),
         ];
-        internal static Type[] KernelTypes = Assembly.GetExecutingAssembly().GetTypes().Where((type) => type.FullName.StartsWith("Nitrocid.")).ToArray();
+        internal static Type[] KernelTypes = Assembly.GetExecutingAssembly().GetTypes().Where((type) => type.FullName.StartsWith($"{KernelMain.rootNameSpace}.")).ToArray();
 
         /// <summary>
         /// If the specified file is a .NET assembly

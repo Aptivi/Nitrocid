@@ -46,6 +46,8 @@ namespace Nitrocid.Kernel
     /// </summary>
     public static class KernelMain
     {
+        internal static readonly string rootNameSpace =
+            typeof(KernelMain).Namespace.Split('.')[0];
         private static readonly Version kernelVersion =
             Assembly.GetExecutingAssembly().GetName().Version;
         private static readonly SemVer kernelVersionFull =

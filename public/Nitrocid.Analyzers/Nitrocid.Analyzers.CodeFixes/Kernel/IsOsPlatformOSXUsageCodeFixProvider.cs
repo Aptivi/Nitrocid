@@ -82,10 +82,10 @@ namespace Nitrocid.Analyzers.Kernel
 
                 // Check the imports
                 var compilation = finalNode as CompilationUnitSyntax;
-                if (compilation?.Usings.Any(u => u.Name.ToString() == "Nitrocid.Kernel") == false)
+                if (compilation?.Usings.Any(u => u.Name.ToString() == $"{AnalysisTools.rootNameSpace}.Kernel") == false)
                 {
                     var name = SyntaxFactory.QualifiedName(
-                        SyntaxFactory.IdentifierName("Nitrocid"),
+                        SyntaxFactory.IdentifierName(AnalysisTools.rootNameSpace),
                         SyntaxFactory.IdentifierName("Kernel"));
                     compilation = compilation
                         .AddUsings(SyntaxFactory.UsingDirective(name));
