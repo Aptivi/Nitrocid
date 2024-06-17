@@ -308,25 +308,14 @@ namespace Nitrocid.Kernel.Configuration
         public static void InitializeConfig()
         {
             // Make a config file if not found
-            if (!Checking.FileExists(PathsManagement.GetKernelPath(KernelPathType.Configuration)))
+            foreach (var baseConfig in baseConfigurations)
             {
-                DebugWriter.WriteDebug(DebugLevel.W, "No config file found. Creating...");
-                CreateConfig(MainConfig);
-            }
-            if (!Checking.FileExists(PathsManagement.GetKernelPath(KernelPathType.SaverConfiguration)))
-            {
-                DebugWriter.WriteDebug(DebugLevel.W, "No saver config file found. Creating...");
-                CreateConfig(SaverConfig);
-            }
-            if (!Checking.FileExists(PathsManagement.GetKernelPath(KernelPathType.DriverConfiguration)))
-            {
-                DebugWriter.WriteDebug(DebugLevel.W, "No driver config file found. Creating...");
-                CreateConfig(DriverConfig);
-            }
-            if (!Checking.FileExists(PathsManagement.GetKernelPath(KernelPathType.WidgetConfiguration)))
-            {
-                DebugWriter.WriteDebug(DebugLevel.W, "No widget config file found. Creating...");
-                CreateConfig(WidgetConfig);
+                string finalPath = ConfigTools.GetPathToCustomSettingsFile(baseConfig.Value);
+                if (!Checking.FileExists(PathsManagement.GetKernelPath(KernelPathType.Configuration)))
+                {
+                    DebugWriter.WriteDebug(DebugLevel.W, "No {0} config file found. Creating at {1}...", baseConfig.Key, finalPath);
+                    CreateConfig(baseConfig.Value);
+                }
             }
 
             // Validate config
