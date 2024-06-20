@@ -27,6 +27,9 @@ using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Switches;
 using System;
 using System.Net.Http;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading;
 
 namespace Nitrocid.Extras.Pastebin.Commands
 {
@@ -54,7 +57,7 @@ namespace Nitrocid.Extras.Pastebin.Commands
             string type = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-type") ? SwitchManager.GetSwitchValue(parameters.SwitchesList, "-type") : "https";
             if (provider.Contains(':'))
             {
-                string portStr = provider.Substring(provider.IndexOf(":"));
+                string portStr = provider.Substring(provider.IndexOf(":") + 1);
                 port = int.Parse(portStr);
                 provider = provider.Substring(0, provider.IndexOf(':'));
             }
@@ -75,7 +78,32 @@ namespace Nitrocid.Extras.Pastebin.Commands
             // Now, form a URI and choose how to send the request
             if (type == "raw")
             {
-                // TODO: Placeholder
+                try
+                {
+                    // Make a socket and connect
+                    using var socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+                    socket.Connect(provider, port);
+
+                    // Now, send the contents to the remote raw pastebin provider
+                    var contentsBytes = Encoding.UTF8.GetBytes(contents);
+                    socket.Send(contentsBytes);
+
+                    // Wait for the response
+                    SpinWait.SpinUntil(() => socket.Available > 0);
+                    var buffer = new byte[socket.Available];
+                    socket.Receive(buffer);
+
+                    // Decode the response
+                    string response = Encoding.UTF8.GetString(buffer);
+                    TextWriters.Write(Translate.DoTranslation("Successfully pasted to the provider!"), KernelColorType.Success);
+                    TextWriters.Write(response, KernelColorType.NeutralText);
+                }
+                catch (Exception ex)
+                {
+                    TextWriters.Write(Translate.DoTranslation("Unable to paste to the provider."), KernelColorType.Error);
+                    TextWriters.Write(ex.Message, KernelColorType.NeutralText);
+                    return 37;
+                }
             }
             else
             {
