@@ -30,6 +30,7 @@ using Terminaux.Inputs;
 using System;
 using Nitrocid.Kernel.Power;
 using Terminaux.Reader;
+using Nitrocid.Users.Login.Widgets;
 
 namespace Nitrocid.Users.Login.Handlers.Logins
 {
@@ -75,6 +76,7 @@ namespace Nitrocid.Users.Login.Handlers.Logins
                 proceed = false;
                 if (!ModernLogonScreen.enableWidgets)
                     return proceed;
+                CleanWidgetsUp();
                 if (key == ConsoleKey.LeftArrow)
                 {
                     ModernLogonScreen.screenNum--;
@@ -132,6 +134,14 @@ namespace Nitrocid.Users.Login.Handlers.Logins
                 // Wrong password.
                 InfoBoxColor.WriteInfoBoxColor(Translate.DoTranslation("Wrong password for user."), KernelColorTools.GetColor(KernelColorType.Error));
             return false;
+        }
+
+        private void CleanWidgetsUp()
+        {
+            if (ModernLogonScreen.screenNum == 2)
+                WidgetTools.CleanupWidget(WidgetTools.GetWidgetName(ModernLogonScreen.FirstWidget));
+            else if (ModernLogonScreen.screenNum == 3)
+                WidgetTools.CleanupWidget(WidgetTools.GetWidgetName(ModernLogonScreen.SecondWidget));
         }
     }
 }

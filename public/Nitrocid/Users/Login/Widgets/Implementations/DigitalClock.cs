@@ -18,11 +18,12 @@
 //
 
 using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Time;
 using Nitrocid.Kernel.Time.Renderers;
 using System.Text;
-using Terminaux.Base;
+using Terminaux.Colors;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.FancyWriters;
 using Textify.Figlet;
@@ -31,6 +32,17 @@ namespace Nitrocid.Users.Login.Widgets.Implementations
 {
     internal class DigitalClock : BaseWidget, IWidget
     {
+        private Color clockColor = Color.Empty;
+
+        public override string Cleanup(int left, int top, int width, int height) =>
+            "";
+
+        public override string Initialize(int left, int top, int width, int height)
+        {
+            clockColor = ChangeDateAndTimeColor();
+            return "";
+        }
+
         public override string Render(int left, int top, int width, int height)
         {
             var display = new StringBuilder();
@@ -45,7 +57,7 @@ namespace Nitrocid.Users.Login.Widgets.Implementations
             int figHeight = FigletTools.GetFigletHeight(timeStr, figFont) / 2;
             int consoleY = height / 2 - figHeight;
             display.Append(
-                KernelColorTools.GetColor(KernelColorType.Stage).VTSequenceForeground +
+                clockColor.VTSequenceForeground +
                 CenteredFigletTextColor.RenderCenteredFiglet(consoleY, figFont, timeStr) +
                 KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground
             );
@@ -56,7 +68,7 @@ namespace Nitrocid.Users.Login.Widgets.Implementations
                 string dateStr = $"{TimeDateRenderers.RenderDate()}";
                 int consoleInfoY = (height / 2) + figHeight + 2;
                 display.Append(
-                    KernelColorTools.GetColor(KernelColorType.Stage).VTSequenceForeground +
+                    clockColor.VTSequenceForeground +
                     CenteredTextColor.RenderCenteredOneLine(consoleInfoY, dateStr) +
                     KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground
                 );
@@ -64,6 +76,27 @@ namespace Nitrocid.Users.Login.Widgets.Implementations
 
             // Print everything
             return display.ToString();
+        }
+
+        /// <summary>
+        /// Changes the color of date and time
+        /// </summary>
+        private Color ChangeDateAndTimeColor()
+        {
+            Color ColorInstance;
+            if (Config.WidgetConfig.DigitalTrueColor)
+            {
+                int RedColorNum = RandomDriver.Random(Config.WidgetConfig.DigitalMinimumRedColorLevel, Config.WidgetConfig.DigitalMaximumRedColorLevel);
+                int GreenColorNum = RandomDriver.Random(Config.WidgetConfig.DigitalMinimumGreenColorLevel, Config.WidgetConfig.DigitalMaximumGreenColorLevel);
+                int BlueColorNum = RandomDriver.Random(Config.WidgetConfig.DigitalMinimumBlueColorLevel, Config.WidgetConfig.DigitalMaximumBlueColorLevel);
+                ColorInstance = new Color(RedColorNum, GreenColorNum, BlueColorNum);
+            }
+            else
+            {
+                int ColorNum = RandomDriver.Random(Config.WidgetConfig.DigitalMinimumColorLevel, Config.WidgetConfig.DigitalMaximumColorLevel);
+                ColorInstance = new Color(ColorNum);
+            }
+            return ColorInstance;
         }
     }
 }

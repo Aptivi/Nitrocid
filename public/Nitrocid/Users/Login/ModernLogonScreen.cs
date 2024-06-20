@@ -187,6 +187,8 @@ namespace Nitrocid.Users.Login
                         // Place for first widget
                         screen.RemoveBufferedParts();
                         var part = new ScreenPart();
+                        if (!renderedFully)
+                            part.AddDynamicText(FirstWidget.Initialize);
                         part.AddDynamicText(FirstWidget.Render);
                         screen.AddBufferedPart("Widget 1 updater", part);
 
@@ -198,6 +200,8 @@ namespace Nitrocid.Users.Login
                         // Place for second widget
                         screen.RemoveBufferedParts();
                         var part = new ScreenPart();
+                        if (!renderedFully)
+                            part.AddDynamicText(SecondWidget.Initialize);
                         part.AddDynamicText(SecondWidget.Render);
                         screen.AddBufferedPart("Widget 2 updater", part);
 

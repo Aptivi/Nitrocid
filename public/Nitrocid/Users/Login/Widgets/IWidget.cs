@@ -29,9 +29,29 @@ namespace Nitrocid.Users.Login.Widgets
         /// </summary>
         /// <param name="left">Left position of the widget</param>
         /// <param name="top">Top position of the widget</param>
-        /// <param name="width">Width of a widget</param>
-        /// <param name="height">Height of a widget</param>
+        /// <param name="width">Width of the widget</param>
+        /// <param name="height">Height of the widget</param>
         /// <returns>A string that represents the rendered widget with VT sequences and other console control sequences.</returns>
         string Render(int left, int top, int width, int height);
+
+        /// <summary>
+        /// Initializes this widget in a specified location
+        /// </summary>
+        /// <param name="left">Left position of the widget</param>
+        /// <param name="top">Top position of the widget</param>
+        /// <param name="width">Width of the widget</param>
+        /// <param name="height">Height of the widget</param>
+        /// <returns>A string that contains control sequences to render to the console as a sequence to initialize the widget.</returns>
+        string Initialize(int left, int top, int width, int height);
+
+        /// <summary>
+        /// Cleans this widget up in a specified location
+        /// </summary>
+        /// <param name="left">Left position of the widget</param>
+        /// <param name="top">Top position of the widget</param>
+        /// <param name="width">Width of the widget</param>
+        /// <param name="height">Height of the widget</param>
+        /// <returns>A string that contains control sequences to render to the console as a sequence to clean the widget up.</returns>
+        string Cleanup(int left, int top, int width, int height);
     }
 }

@@ -18,12 +18,12 @@
 //
 
 using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Time;
 using Nitrocid.Kernel.Time.Renderers;
 using System;
 using System.Text;
-using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
@@ -35,11 +35,31 @@ namespace Nitrocid.Users.Login.Widgets.Implementations
 {
     internal class AnalogClock : BaseWidget, IWidget
     {
+        private Color timeColor = Color.Empty;
+        private Color bezelColor = Color.Empty;
+        private Color handsColor = Color.Empty;
+        private Color secondsHandColor = Color.Empty;
         private string lastRendered = "";
         private (int x, int y) lastCenter = (0, 0);
         private (int x, int y) lastHours = (0, 0);
         private (int x, int y) lastMinutes = (0, 0);
         private (int x, int y) lastSeconds = (0, 0);
+
+        public override string Cleanup(int left, int top, int width, int height) =>
+            "";
+
+        public override string Initialize(int left, int top, int width, int height)
+        {
+            timeColor = ChangeAnalogClockColor();
+            bezelColor = ChangeAnalogClockColor();
+            handsColor = ChangeAnalogClockColor();
+            secondsHandColor = ChangeAnalogClockColor();
+            lastCenter = (0, 0);
+            lastHours = (0, 0);
+            lastMinutes = (0, 0);
+            lastSeconds = (0, 0);
+            return "";
+        }
 
         public override string Render(int left, int top, int width, int height)
         {
@@ -56,7 +76,7 @@ namespace Nitrocid.Users.Login.Widgets.Implementations
 
             // Clear old date/time
             int oldPosX = width / 2 - lastRendered.Length / 2;
-            builder.Append(TextWriterWhereColor.RenderWhereColor(new string(' ', ConsoleChar.EstimateCellWidth(lastRendered)), oldPosX, posY, KernelColorTools.GetColor(KernelColorType.NeutralText)));
+            builder.Append(TextWriterWhereColor.RenderWhereColor(new string(' ', ConsoleChar.EstimateCellWidth(lastRendered)), oldPosX, posY, timeColor));
 
             // Clear old bezels
             builder.Append(GraphicsTools.RenderLine(lastCenter, lastHours, ColorTools.CurrentBackgroundColor));
@@ -65,7 +85,7 @@ namespace Nitrocid.Users.Login.Widgets.Implementations
                 builder.Append(GraphicsTools.RenderLine(lastCenter, lastSeconds, ColorTools.CurrentBackgroundColor));
 
             // Write date and time
-            builder.Append(TextWriterWhereColor.RenderWhereColor(rendered, posX, posY, KernelColorTools.GetColor(KernelColorType.NeutralText)));
+            builder.Append(TextWriterWhereColor.RenderWhereColor(rendered, posX, posY, timeColor));
             lastRendered = rendered;
 
             // Now, draw the bezel
@@ -75,7 +95,7 @@ namespace Nitrocid.Users.Login.Widgets.Implementations
             int bezelLeft = width / 2 - bezelHeight;
             (int x, int y) radius = (bezelLeft + bezelWidth / 2, bezelTop + bezelHeight / 2);
             int bezelRadius = radius.y - bezelTop;
-            var bezel = new Circle(bezelHeight, bezelLeft, bezelTop, false, KernelColorTools.GetColor(KernelColorType.Stage));
+            var bezel = new Circle(bezelHeight, bezelLeft, bezelTop, false, bezelColor);
             builder.Append(bezel.Render());
             lastCenter = radius;
 
@@ -90,8 +110,8 @@ namespace Nitrocid.Users.Login.Widgets.Implementations
             (int x, int y) minutes = ((int)(radius.x + minutesRadius * Math.Cos(ToRad(minutesAngle))), (int)(radius.y + minutesRadius * Math.Sin(ToRad(minutesAngle))));
             hours.x += (hours.x - radius.x);
             minutes.x += (minutes.x - radius.x);
-            builder.Append(GraphicsTools.RenderLine(radius, hours, KernelColorTools.GetColor(KernelColorType.Stage)));
-            builder.Append(GraphicsTools.RenderLine(radius, minutes, KernelColorTools.GetColor(KernelColorType.Stage)));
+            builder.Append(GraphicsTools.RenderLine(radius, hours, handsColor));
+            builder.Append(GraphicsTools.RenderLine(radius, minutes, handsColor));
             lastHours = hours;
             lastMinutes = minutes;
 
@@ -103,12 +123,33 @@ namespace Nitrocid.Users.Login.Widgets.Implementations
                 int secondsAngle = (int)(360 * (secondsPos / 60d)) - 90;
                 (int x, int y) seconds = ((int)(radius.x + secondsRadius * Math.Cos(ToRad(secondsAngle))), (int)(radius.y + secondsRadius * Math.Sin(ToRad(secondsAngle))));
                 seconds.x += (seconds.x - radius.x);
-                builder.Append(GraphicsTools.RenderLine(radius, seconds, ConsoleColorData.Red.Color));
+                builder.Append(GraphicsTools.RenderLine(radius, seconds, secondsHandColor));
                 lastSeconds = seconds;
             }
 
             // Return the results
             return builder.ToString();
+        }
+
+        /// <summary>
+        /// Changes the color of date and time
+        /// </summary>
+        private Color ChangeAnalogClockColor()
+        {
+            Color ColorInstance;
+            if (Config.WidgetConfig.AnalogTrueColor)
+            {
+                int RedColorNum = RandomDriver.Random(Config.WidgetConfig.AnalogMinimumRedColorLevel, Config.WidgetConfig.AnalogMaximumRedColorLevel);
+                int GreenColorNum = RandomDriver.Random(Config.WidgetConfig.AnalogMinimumGreenColorLevel, Config.WidgetConfig.AnalogMaximumGreenColorLevel);
+                int BlueColorNum = RandomDriver.Random(Config.WidgetConfig.AnalogMinimumBlueColorLevel, Config.WidgetConfig.AnalogMaximumBlueColorLevel);
+                ColorInstance = new Color(RedColorNum, GreenColorNum, BlueColorNum);
+            }
+            else
+            {
+                int ColorNum = RandomDriver.Random(Config.WidgetConfig.AnalogMinimumColorLevel, Config.WidgetConfig.AnalogMaximumColorLevel);
+                ColorInstance = new Color(ColorNum);
+            }
+            return ColorInstance;
         }
     }
 }

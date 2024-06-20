@@ -165,6 +165,78 @@ namespace Nitrocid.Users.Login.Widgets
         }
 
         /// <summary>
+        /// Initializes a widget
+        /// </summary>
+        /// <param name="widgetName">A widget instance to initialize</param>
+        /// <exception cref="KernelException"></exception>
+        public static void InitializeWidget(string widgetName)
+        {
+            if (string.IsNullOrWhiteSpace(widgetName))
+                throw new KernelException(KernelExceptionType.Widget, Translate.DoTranslation("Widget name is not provided."));
+            if (!CheckWidget(widgetName))
+                throw new KernelException(KernelExceptionType.Widget, Translate.DoTranslation("Widget doesn't exist."));
+            var widget = GetWidget(widgetName);
+            string widgetSeq = widget.Initialize();
+            TextWriterRaw.WriteRaw(widgetSeq);
+        }
+
+        /// <summary>
+        /// Initializes a widget
+        /// </summary>
+        /// <param name="widgetName">A widget instance to initialize</param>
+        /// <param name="left">Left position of the widget</param>
+        /// <param name="top">Top position of the widget</param>
+        /// <param name="width">Width of a widget</param>
+        /// <param name="height">Height of a widget</param>
+        /// <exception cref="KernelException"></exception>
+        public static void InitializeWidget(string widgetName, int left, int top, int width, int height)
+        {
+            if (string.IsNullOrWhiteSpace(widgetName))
+                throw new KernelException(KernelExceptionType.Widget, Translate.DoTranslation("Widget name is not provided."));
+            if (!CheckWidget(widgetName))
+                throw new KernelException(KernelExceptionType.Widget, Translate.DoTranslation("Widget doesn't exist."));
+            var widget = GetWidget(widgetName);
+            string widgetSeq = widget.Initialize(left, top, width, height);
+            TextWriterRaw.WriteRaw(widgetSeq);
+        }
+
+        /// <summary>
+        /// Cleans a widget up
+        /// </summary>
+        /// <param name="widgetName">A widget instance to cleanup</param>
+        /// <exception cref="KernelException"></exception>
+        public static void CleanupWidget(string widgetName)
+        {
+            if (string.IsNullOrWhiteSpace(widgetName))
+                throw new KernelException(KernelExceptionType.Widget, Translate.DoTranslation("Widget name is not provided."));
+            if (!CheckWidget(widgetName))
+                throw new KernelException(KernelExceptionType.Widget, Translate.DoTranslation("Widget doesn't exist."));
+            var widget = GetWidget(widgetName);
+            string widgetSeq = widget.Cleanup();
+            TextWriterRaw.WriteRaw(widgetSeq);
+        }
+
+        /// <summary>
+        /// Cleans a widget up
+        /// </summary>
+        /// <param name="widgetName">A widget instance to cleanup</param>
+        /// <param name="left">Left position of the widget</param>
+        /// <param name="top">Top position of the widget</param>
+        /// <param name="width">Width of a widget</param>
+        /// <param name="height">Height of a widget</param>
+        /// <exception cref="KernelException"></exception>
+        public static void CleanupWidget(string widgetName, int left, int top, int width, int height)
+        {
+            if (string.IsNullOrWhiteSpace(widgetName))
+                throw new KernelException(KernelExceptionType.Widget, Translate.DoTranslation("Widget name is not provided."));
+            if (!CheckWidget(widgetName))
+                throw new KernelException(KernelExceptionType.Widget, Translate.DoTranslation("Widget doesn't exist."));
+            var widget = GetWidget(widgetName);
+            string widgetSeq = widget.Cleanup(left, top, width, height);
+            TextWriterRaw.WriteRaw(widgetSeq);
+        }
+
+        /// <summary>
         /// Gets widget names
         /// </summary>
         /// <returns>An array containing base and custom widget class names</returns>
