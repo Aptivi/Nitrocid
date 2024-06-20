@@ -149,7 +149,7 @@ namespace Nitrocid.Kernel
 
                 // If "No APM" is enabled, simply print the text
                 if (PowerManager.SimulateNoAPM)
-                    InfoBoxColor.WriteInfoBox(Translate.DoTranslation("It's now safe to turn off your computer."));
+                    InfoBoxColor.WriteInfoBoxColor(Translate.DoTranslation("It's now safe to turn off your computer."), KernelColorTools.GetColor(KernelColorType.Success));
             }
             catch (Exception ex)
             {
