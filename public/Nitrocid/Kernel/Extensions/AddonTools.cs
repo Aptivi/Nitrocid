@@ -42,6 +42,7 @@ namespace Nitrocid.Kernel.Extensions
     {
         internal static readonly List<string> probedAddons = [];
         private static readonly List<AddonInfo> addons = [];
+        private static readonly Dictionary<string, IAddon> addonInstances = [];
         private const string windowsSuffix = ".Windows";
 
         internal static List<AddonInfo> ListAddons() =>
@@ -150,12 +151,20 @@ namespace Nitrocid.Kernel.Extensions
                     DebugWriter.WriteDebug(DebugLevel.W, "Skipping addon entry {0} because of conflicts with the already-loaded addon in the queue [{1}]...", addon, addonPath);
                     return;
                 }
+                bool exists = addonInstances.ContainsKey(addonPath);
                 DebugWriter.WriteDebug(DebugLevel.I, $"[{current}/{length}] Initializing kernel addon {Path.GetFileName(addon)}...");
                 probedAddons.Add(addonPath);
                 AssemblyLookup.baseAssemblyLookupPaths.Add(addon);
-                var asm = Assembly.LoadFrom(addonPath);
-                var addonInstance = GetAddonInstance(asm) ??
-                    throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("This addon is not a valid addon.") + $" {addonPath}");
+                IAddon addonInstance;
+                if (!exists)
+                {
+                    var asm = Assembly.LoadFrom(addonPath);
+                    addonInstance = GetAddonInstance(asm) ??
+                        throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("This addon is not a valid addon.") + $" {addonPath}");
+                    addonInstances.Add(addonPath, addonInstance);
+                }
+                else
+                    addonInstance = addonInstances[addonPath];
 
                 // Check to see if the types match
                 if (addonInstance.AddonType == type)
