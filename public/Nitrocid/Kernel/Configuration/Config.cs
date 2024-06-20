@@ -30,12 +30,12 @@ using Nitrocid.Misc.Notifications;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Kernel.Configuration.Instances;
-using Nitrocid.Misc.Text;
 using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Events;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Files.Operations.Querying;
+using Textify.Json;
 
 namespace Nitrocid.Kernel.Configuration
 {
@@ -386,7 +386,7 @@ namespace Nitrocid.Kernel.Configuration
             {
                 var serializedObj = JObject.Parse(serialized);
                 var currentObj = JObject.Parse(current);
-                var diffObj = JsonTextTools.FindDifferences(serializedObj, currentObj);
+                var diffObj = JsonTools.FindDifferences(serializedObj, currentObj);
 
                 // Skim through the difference object
                 foreach (var diff in diffObj)

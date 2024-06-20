@@ -25,8 +25,8 @@ using Nitrocid.Files.Operations;
 using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
-using Nitrocid.Misc.Text;
 using Nitrocid.Shell.ShellBase.Commands;
+using Textify.Json;
 
 namespace Nitrocid.Extras.JsonShell.Commands
 {
@@ -48,7 +48,7 @@ namespace Nitrocid.Extras.JsonShell.Commands
             if (Checking.FileExists(JsonFile))
             {
                 // Beautify the JSON and display it on screen
-                BeautifiedJson = JsonTextTools.BeautifyJson(JsonFile);
+                BeautifiedJson = JsonTools.BeautifyJson(JsonFile);
                 TextWriterColor.Write(BeautifiedJson);
 
                 // Beautify it to an output file specified (optional)

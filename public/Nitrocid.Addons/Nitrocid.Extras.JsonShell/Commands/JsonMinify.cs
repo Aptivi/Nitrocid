@@ -25,8 +25,8 @@ using Nitrocid.Files.Operations;
 using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
-using Nitrocid.Misc.Text;
 using Nitrocid.Shell.ShellBase.Commands;
+using Textify.Json;
 
 namespace Nitrocid.Extras.JsonShell.Commands
 {
@@ -48,7 +48,7 @@ namespace Nitrocid.Extras.JsonShell.Commands
             if (Checking.FileExists(JsonFile))
             {
                 // Minify the JSON and display it on screen
-                MinifiedJson = JsonTextTools.MinifyJson(JsonFile);
+                MinifiedJson = JsonTools.MinifyJson(JsonFile);
                 TextWriterColor.Write(MinifiedJson);
 
                 // Minify it to an output file specified (optional)
