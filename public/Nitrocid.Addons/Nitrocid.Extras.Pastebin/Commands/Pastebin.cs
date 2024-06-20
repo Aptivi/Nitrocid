@@ -30,6 +30,7 @@ using System.Net.Http;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
+using System.Web;
 
 namespace Nitrocid.Extras.Pastebin.Commands
 {
@@ -44,7 +45,7 @@ namespace Nitrocid.Extras.Pastebin.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             // Check the contents
-            string contents = parameters.ArgumentsText;
+            string contents = parameters.ArgumentsList[0];
             if (string.IsNullOrWhiteSpace(contents))
             {
                 TextWriters.Write(Translate.DoTranslation("Specify either a file name or text to upload."), KernelColorType.Error);
@@ -67,9 +68,10 @@ namespace Nitrocid.Extras.Pastebin.Commands
                 return 36;
             }
 
-            // Get the post page and format
+            // Get the post page, field, format
             string page = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-postpage") ? SwitchManager.GetSwitchValue(parameters.SwitchesList, "-postpage") : "api/api_post.php";
             string format = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-postformat") ? SwitchManager.GetSwitchValue(parameters.SwitchesList, "-postformat") : "text";
+            string field = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-postfield") ? SwitchManager.GetSwitchValue(parameters.SwitchesList, "-postfield") : "api_paste_code";
 
             // Get the contents
             if (Checking.FileExists(contents))
@@ -108,20 +110,16 @@ namespace Nitrocid.Extras.Pastebin.Commands
             else
             {
                 // Just for validation
+                string encoded = HttpUtility.UrlEncode(contents);
                 string url = $"{type}://{provider}:{port}/{page}";
                 var uri = new Uri(url);
 
                 // Open the HTTP client and choose how to post
                 var client = new HttpClient();
                 client.DefaultRequestHeaders.Add("User-Agent", $"Nitrocid v{KernelMain.Version}");
-                if (format == "json")
-                    client.DefaultRequestHeaders.Add("Content-Type", "text/json");
-
-                // Make a content key/value string
-                string kvs = $"{{\"content\": \"{contents}\"}}";
 
                 // Now, post and return the response.
-                var response = client.PostAsync(uri, new StringContent(kvs)).Result;
+                var response = client.PostAsync(uri, new StringContent($"{field}={encoded}{(parameters.ArgumentsList.Length > 1 ? $"&{parameters.ArgumentsList[1]}" : "")}", Encoding.UTF8, format == "json" ? "text/json" : "application/x-www-form-urlencoded")).Result;
                 string reply = response.Content.ReadAsStringAsync().Result;
                 if (!response.IsSuccessStatusCode)
                 {

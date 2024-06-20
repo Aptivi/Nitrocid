@@ -41,6 +41,7 @@ namespace Nitrocid.Extras.Pastebin
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "file/string"),
+                        new CommandArgumentPart(false, "arguments"),
                     ],
                     [
                         new SwitchInfo("provider", /* Localizable */ "Specifies the URL to the Pastebin provider", new()
@@ -59,6 +60,11 @@ namespace Nitrocid.Extras.Pastebin
                             ArgumentsRequired = true,
                         }),
                         new SwitchInfo("postformat", /* Localizable */ "Specifies the Pastebin provider post format", new()
+                        {
+                            AcceptsValues = true,
+                            ArgumentsRequired = true,
+                        }),
+                        new SwitchInfo("postfield", /* Localizable */ "Specifies the Pastebin provider post field name", new()
                         {
                             AcceptsValues = true,
                             ArgumentsRequired = true,
