@@ -295,7 +295,6 @@ namespace Nitrocid.Kernel.Starting
             try
             {
                 // Reset every variable below
-                KernelEntry.QuietKernel = false;
                 SplashReport._Progress = 0;
                 SplashReport._ProgressText = "";
                 SplashReport._KernelBooted = false;
@@ -420,6 +419,9 @@ namespace Nitrocid.Kernel.Starting
 
                 // Unload the assembly resolver
                 AppDomain.CurrentDomain.AssemblyResolve -= AssemblyLookup.LoadFromAssemblySearchPaths;
+
+                // Reset quiet state
+                KernelEntry.QuietKernel = false;
             }
         }
     }
