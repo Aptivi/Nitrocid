@@ -150,7 +150,7 @@ namespace Nitrocid.Kernel.Extensions
                     DebugWriter.WriteDebug(DebugLevel.W, "Skipping addon entry {0} because of conflicts with the already-loaded addon in the queue [{1}]...", addon, addonPath);
                     return;
                 }
-                SplashReport.ReportProgress($"[{current}/{length}] " + Translate.DoTranslation("Initializing kernel addon") + " {0}...", Path.GetFileName(addon));
+                DebugWriter.WriteDebug(DebugLevel.I, $"[{current}/{length}] Initializing kernel addon {Path.GetFileName(addon)}...");
                 probedAddons.Add(addonPath);
                 AssemblyLookup.baseAssemblyLookupPaths.Add(addon);
                 var asm = Assembly.LoadFrom(addonPath);
@@ -176,7 +176,7 @@ namespace Nitrocid.Kernel.Extensions
                     }
                     catch (Exception ex)
                     {
-                        SplashReport.ReportProgress($"[{current}/{length}] " + Translate.DoTranslation("Failed to start kernel addon") + " {0}.", addonInstance.AddonName);
+                        SplashReport.ReportProgressError($"[{current}/{length}] " + Translate.DoTranslation("Failed to start kernel addon") + " {0}.", addonInstance.AddonName);
                         DebugWriter.WriteDebug(DebugLevel.E, "Failed to start addon {0}. {1}", addon, ex.Message);
                         DebugWriter.WriteDebugStackTrace(ex);
                     }
@@ -184,7 +184,7 @@ namespace Nitrocid.Kernel.Extensions
             }
             catch (Exception ex)
             {
-                SplashReport.ReportProgress($"[{current}/{length}] " + Translate.DoTranslation("Failed to initialize kernel addon") + " {0}.", Path.GetFileName(addon));
+                SplashReport.ReportProgressError($"[{current}/{length}] " + Translate.DoTranslation("Failed to initialize kernel addon") + " {0}.", Path.GetFileName(addon));
                 DebugWriter.WriteDebug(DebugLevel.E, "Failed to load addon {0}. {1}", addon, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
