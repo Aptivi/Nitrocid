@@ -62,6 +62,7 @@
   <ItemGroup>
     <PackageReference Include="Shouldly" Version="4.2.1" />
     <PackageReference Include="Terminaux" Version="4.1.1.1" />
+    <PackageReference Include="Textify.Offline.Json" Version="1.9.0.1" />
   </ItemGroup>
 
   <ItemGroup>
