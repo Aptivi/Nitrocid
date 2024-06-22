@@ -554,6 +554,21 @@
                 "Name": "Disabled option color",
                 "Type": "SColor",
                 "Variable": "DisabledOptionColor"
+            },
+            {
+                "Name": "Interactive TUI builtin key binding background color",
+                "Type": "SColor",
+                "Variable": "TuiKeyBindingBuiltinBackgroundColor"
+            },
+            {
+                "Name": "Interactive TUI builtin key binding foreground color",
+                "Type": "SColor",
+                "Variable": "TuiKeyBindingBuiltinForegroundColor"
+            },
+            {
+                "Name": "Interactive TUI builtin key binding name color",
+                "Type": "SColor",
+                "Variable": "TuiKeyBindingBuiltinColor"
             }
         ]
     },

@@ -841,6 +841,45 @@ namespace Nitrocid.Kernel.Configuration.Instances
                 SelectionStyleSettings.GlobalSettings.DisabledOptionColor = color;
             }
         }
+        /// <summary>
+        /// Interactive TUI builtin key binding background color
+        /// </summary>
+        public string TuiKeyBindingBuiltinBackgroundColor
+        {
+            get => KernelColorTools.GetColor(KernelColorType.TuiKeyBindingBuiltinBackground).PlainSequence;
+            set
+            {
+                var color = new Color(value);
+                KernelColorTools.SetColor(KernelColorType.TuiKeyBindingBuiltinBackground, color);
+                InteractiveTuiStatus.KeyBindingBuiltinBackgroundColor = color;
+            }
+        }
+        /// <summary>
+        /// Interactive TUI builtin key binding foreground color
+        /// </summary>
+        public string TuiKeyBindingBuiltinForegroundColor
+        {
+            get => KernelColorTools.GetColor(KernelColorType.TuiKeyBindingBuiltinForeground).PlainSequence;
+            set
+            {
+                var color = new Color(value);
+                KernelColorTools.SetColor(KernelColorType.TuiKeyBindingBuiltinForeground, color);
+                InteractiveTuiStatus.KeyBindingBuiltinForegroundColor = color;
+            }
+        }
+        /// <summary>
+        /// Interactive TUI builtin key binding color
+        /// </summary>
+        public string TuiKeyBindingBuiltinColor
+        {
+            get => KernelColorTools.GetColor(KernelColorType.TuiKeyBindingBuiltin).PlainSequence;
+            set
+            {
+                var color = new Color(value);
+                KernelColorTools.SetColor(KernelColorType.TuiKeyBindingBuiltin, color);
+                InteractiveTuiStatus.KeyBindingBuiltinColor = color;
+            }
+        }
         #endregion
 
         #region Hardware

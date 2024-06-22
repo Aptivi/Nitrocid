@@ -61,5 +61,8 @@
     "TuiOptionForegroundColor": "#AC9B03",
     "TuiBoxBackgroundColor": "#0A0A00",
     "TuiBoxForegroundColor": "#AC9B03",
-    "DisabledOptionColor": "#5E5500"
+    "DisabledOptionColor": "#5E5500",
+    "TuiKeyBindingBuiltinBackgroundColor": "#AC9B03",
+    "TuiKeyBindingBuiltinColor": "#AC9B03",
+    "TuiKeyBindingBuiltinForegroundColor": "#AC9B03"
 }
