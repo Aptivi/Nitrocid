@@ -204,6 +204,8 @@ namespace Nitrocid.Kernel.Exceptions
                 e = e.InnerException;
                 exceptionIndex++;
             }
+            if (e is null)
+                builder.AppendLine("- " + Translate.DoTranslation("Additional errors were not found during the operation."));
 
             builder.AppendLine();
             builder.Append(Translate.DoTranslation("If you're sure that this error is unexpected, try to restart the kernel with debugging enabled and investigate the logs after retrying the action."));
