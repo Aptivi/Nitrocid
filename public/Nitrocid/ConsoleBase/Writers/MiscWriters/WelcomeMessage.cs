@@ -119,7 +119,7 @@ namespace Nitrocid.ConsoleBase.Writers.MiscWriters
         public static void WriteLicense()
         {
             TextFancyWriters.WriteSeparator(Translate.DoTranslation("License information"), KernelColorType.Stage);
-            TextWriters.Write("\n" + GetLicenseString(), true, KernelColorType.License);
+            TextWriters.Write(GetLicenseString(), true, KernelColorType.License);
         }
 
         /// <summary>

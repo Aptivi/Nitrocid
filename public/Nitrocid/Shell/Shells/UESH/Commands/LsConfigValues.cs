@@ -47,7 +47,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Configuration variables for") + $" {configName}", true);
                 foreach (var entry in config.SettingsEntries)
                 {
-                    SeparatorWriterColor.WriteSeparator("-- " + Translate.DoTranslation("Entry name") + $": {entry.Name}", false);
+                    SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Entry name") + $": {entry.Name}");
                     foreach (var key in entry.Keys)
                     {
                         var value = ConfigTools.GetValueFromEntry(key, config);

@@ -90,7 +90,7 @@ namespace Nitrocid.Extras.Forecast.Forecast
 
             string WeatherSpecifier = "°";
             string WindSpeedSpecifier = "m.s";
-            SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("-- Weather info --"), false);
+            SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("-- Weather info --"));
             TextWriterColor.Write(Translate.DoTranslation("Weather: {0}"), WeatherInfo.Weather);
             if (WeatherInfo.TemperatureMeasurement == UnitMeasurement.Metric)
                 WeatherSpecifier += "C";
@@ -192,7 +192,7 @@ namespace Nitrocid.Extras.Forecast.Forecast
             double feelsLike = (double)WeatherInfo.WeatherToken["main"]["feels_like"];
             double pressure = (double)WeatherInfo.WeatherToken["main"]["pressure"];
             DebugWriter.WriteDebug(DebugLevel.I, "City name: {0}, City ID: {1}", name, CityID);
-            SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("-- Weather info for {0} --"), false, name);
+            SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("-- Weather info for {0} --"), true, name);
             TextWriterColor.Write(Translate.DoTranslation("Weather: {0}"), WeatherInfo.Weather);
             if (WeatherInfo.TemperatureMeasurement == UnitMeasurement.Metric)
                 WeatherSpecifier += "C";
