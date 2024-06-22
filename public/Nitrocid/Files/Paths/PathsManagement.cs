@@ -113,20 +113,6 @@ namespace Nitrocid.Files.Paths
         }
 
         /// <summary>
-        /// Retro Nitrocid KS download path
-        /// </summary>
-        public static string RetroKSDownloadPath
-        {
-            get
-            {
-                if (KernelPlatform.IsOnUnix())
-                    return Environment.GetEnvironmentVariable("HOME") + "/.config/retroks/exec/coreclr";
-                else
-                    return (Environment.GetEnvironmentVariable("LOCALAPPDATA") + "/RetroKS/exec/coreclr").Replace("\\", "/");
-            }
-        }
-
-        /// <summary>
         /// Path to KS addons folder
         /// </summary>
         public static string AddonsPath =>
