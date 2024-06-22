@@ -213,7 +213,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
             set => TimeZones.defaultZoneName = TimeZones.TimeZoneExists(value) ? value : TimeZones.defaultZoneName;
         }
         /// <summary>
-        /// Shows an informational box for the program license for three seconds after each login
+        /// Shows an informational box for the program license for fifteen seconds after each login
         /// </summary>
         public bool ShowLicenseInfoBox { get; set; } = true;
         /// <summary>
