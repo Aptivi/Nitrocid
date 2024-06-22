@@ -25,7 +25,7 @@ namespace Nitrocid.Kernel.Exceptions
     public enum KernelExceptionType
     {
         /// <summary>
-        /// Unknown kernel error.
+        /// There was an unknown kernel error, possibly due to either the kernel exception type not being specified or something was wrong.
         /// </summary>
         Unknown,
         /// <summary>
@@ -81,7 +81,7 @@ namespace Nitrocid.Kernel.Exceptions
         /// </summary>
         GroupManagement,
         /// <summary>
-        /// Hostname error.
+        /// The kernel networking has reported an error for the hostname component.
         /// </summary>
         Hostname,
         /// <summary>
@@ -93,15 +93,15 @@ namespace Nitrocid.Kernel.Exceptions
         /// </summary>
         InsaneConsoleDetected,
         /// <summary>
-        /// Invalid RSS feed.
+        /// Invalid RSS feed. Ensure that you've referenced the feed correctly and try again.
         /// </summary>
         InvalidFeed,
         /// <summary>
-        /// Invalid RSS feed link.
+        /// Invalid RSS feed link. Ensure that you've entered the link correctly and try again.
         /// </summary>
         InvalidFeedLink,
         /// <summary>
-        /// Invalid RSS feed type.
+        /// Invalid RSS feed type. Ensure that you've entered the feed type correctly and try again.
         /// </summary>
         InvalidFeedType,
         /// <summary>
@@ -277,7 +277,7 @@ namespace Nitrocid.Kernel.Exceptions
         /// </summary>
         NetworkOffline,
         /// <summary>
-        /// Permission denied trying to perform an operation.
+        /// Permission denied trying to perform an operation. You'll need to log in as a user that has the necessary permissions in order to be able to perform this operation.
         /// </summary>
         PermissionDenied,
         /// <summary>
