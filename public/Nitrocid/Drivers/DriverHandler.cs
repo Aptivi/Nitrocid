@@ -61,7 +61,6 @@ namespace Nitrocid.Drivers
                 DriverTypes.Console, new()
                 {
                     new Terminal(),
-                    new TerminalMonoCompat(),
                     new File(),
                     new FileSequence(),
                     new Null(),
