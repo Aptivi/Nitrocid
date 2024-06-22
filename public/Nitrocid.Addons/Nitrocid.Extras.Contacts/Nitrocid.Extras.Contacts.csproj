@@ -37,7 +37,7 @@
   <!-- Extras.Contacts addon Platform Information End -->
 
   <ItemGroup>
-    <PackageReference Include="VisualCard" Version="1.0.0.1" />
+    <PackageReference Include="VisualCard" Version="1.0.1" />
   </ItemGroup>
 
   <ItemGroup>
