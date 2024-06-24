@@ -23,19 +23,12 @@ using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Network.Transfer;
+using Nitrocid.Misc.Splash;
+using Nitrocid.Languages;
 
 #if SPECIFIERREL
 using Nitrocid.Files.Paths;
-using Nitrocid.Misc.Splash;
-using Nitrocid.Languages;
 using System.IO;
-#endif
-
-#if PACKAGEMANAGERBUILD
-#if !SPECIFIERREL
-using Nitrocid.Misc.Splash;
-using Nitrocid.Languages;
-#endif
 #endif
 
 namespace Nitrocid.Kernel.Updates
@@ -185,6 +178,8 @@ namespace Nitrocid.Kernel.Updates
             }
 #elif PACKAGEMANAGERBUILD
             SplashReport.ReportProgressError(Translate.DoTranslation("You've installed Nitrocid KS using your package manager. Please use it to upgrade your kernel instead."));
+#else
+            SplashReport.ReportProgressWarning(Translate.DoTranslation("Checking for updates is disabled because you're running a development version."));
 #endif
         }
 

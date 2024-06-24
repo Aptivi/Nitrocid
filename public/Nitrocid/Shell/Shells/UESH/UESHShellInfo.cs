@@ -1552,10 +1552,12 @@ namespace Nitrocid.Shell.Shells.UESH
                     ])
                 ], new UnZipCommand()),
 
+            #if SPECIFIERREL
             new CommandInfo("update", /* Localizable */ "System update",
                 [
                     new CommandArgumentInfo()
                 ], new UpdateCommand(), CommandFlags.Strict),
+            #endif
 
             new CommandInfo("uptime", /* Localizable */ "Shows the kernel uptime",
                 [
