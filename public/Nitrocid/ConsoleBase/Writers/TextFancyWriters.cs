@@ -737,5 +737,701 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
         public static void WriteTable(string[] Headers, string[,] Rows, int Margin, KernelColorType colorTypeSeparatorForeground, KernelColorType colorTypeHeaderForeground, KernelColorType colorTypeValueForeground, KernelColorType colorTypeBackground, bool SeparateRows = true, List<CellOptions> CellOptions = null) =>
             TableColor.WriteTable(Headers, Rows, Margin, KernelColorTools.GetColor(colorTypeSeparatorForeground), KernelColorTools.GetColor(colorTypeHeaderForeground), KernelColorTools.GetColor(colorTypeValueForeground), KernelColorTools.GetColor(colorTypeBackground), SeparateRows, CellOptions);
+
+        /// <summary>
+        /// Writes the slider (absolute)
+        /// </summary>
+        /// <param name="currPos">Current position out of maximum position</param>
+        /// <param name="minPos">Minimum position</param>
+        /// <param name="maxPos">Maximum position</param>
+        /// <param name="Left">The slider position from the upper left corner</param>
+        /// <param name="Top">The slider position from the top</param>
+        /// <param name="sliderColor">The slider color</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        public static void WriteSliderAbsolute(int currPos, int maxPos, int Left, int Top, KernelColorType sliderColor, int minPos = 0, bool DrawBorder = true) =>
+            WriteSliderAbsolute(currPos, maxPos, Left, Top, ConsoleWrapper.WindowWidth - 10, BorderSettings.GlobalSettings, sliderColor, KernelColorType.Separator, minPos, DrawBorder);
+
+        /// <summary>
+        /// Writes the slider (absolute)
+        /// </summary>
+        /// <param name="currPos">Current position out of maximum position</param>
+        /// <param name="minPos">Minimum position</param>
+        /// <param name="maxPos">Maximum position</param>
+        /// <param name="Left">The slider position from the upper left corner</param>
+        /// <param name="Top">The slider position from the top</param>
+        /// <param name="sliderColor">The slider color</param>
+        /// <param name="width">Slider width</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        public static void WriteSliderAbsolute(int currPos, int maxPos, int Left, int Top, int width, KernelColorType sliderColor, int minPos = 0, bool DrawBorder = true) =>
+            WriteSliderAbsolute(currPos, maxPos, Left, Top, width, BorderSettings.GlobalSettings, sliderColor, KernelColorType.Separator, minPos, DrawBorder);
+
+        /// <summary>
+        /// Writes the slider (absolute)
+        /// </summary>
+        /// <param name="currPos">Current position out of maximum position</param>
+        /// <param name="minPos">Minimum position</param>
+        /// <param name="maxPos">Maximum position</param>
+        /// <param name="Left">The slider position from the upper left corner</param>
+        /// <param name="Top">The slider position from the top</param>
+        /// <param name="sliderColor">The slider color</param>
+        /// <param name="FrameColor">The slider frame color</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        public static void WriteSliderAbsolute(int currPos, int maxPos, int Left, int Top, KernelColorType sliderColor, KernelColorType FrameColor, int minPos = 0, bool DrawBorder = true) =>
+            WriteSliderAbsolute(currPos, maxPos, Left, Top, ConsoleWrapper.WindowWidth - 10, BorderSettings.GlobalSettings, sliderColor, FrameColor, minPos, DrawBorder);
+
+        /// <summary>
+        /// Writes the slider (absolute)
+        /// </summary>
+        /// <param name="currPos">Current position out of maximum position</param>
+        /// <param name="minPos">Minimum position</param>
+        /// <param name="maxPos">Maximum position</param>
+        /// <param name="Left">The slider position from the upper left corner</param>
+        /// <param name="Top">The slider position from the top</param>
+        /// <param name="sliderColor">The slider color</param>
+        /// <param name="FrameColor">The slider frame color</param>
+        /// <param name="width">Slider width</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        public static void WriteSliderAbsolute(int currPos, int maxPos, int Left, int Top, int width, KernelColorType sliderColor, KernelColorType FrameColor, int minPos = 0, bool DrawBorder = true) =>
+            WriteSliderAbsolute(currPos, maxPos, Left, Top, width, BorderSettings.GlobalSettings, sliderColor, FrameColor, KernelColorType.Background, minPos, DrawBorder);
+
+        /// <summary>
+        /// Writes the slider (absolute)
+        /// </summary>
+        /// <param name="currPos">Current position out of maximum position</param>
+        /// <param name="minPos">Minimum position</param>
+        /// <param name="maxPos">Maximum position</param>
+        /// <param name="Left">The slider position from the upper left corner</param>
+        /// <param name="Top">The slider position from the top</param>
+        /// <param name="sliderColor">The slider color</param>
+        /// <param name="FrameColor">The slider frame color</param>
+        /// <param name="BackgroundColor">The slider background color</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        public static void WriteSliderAbsolute(int currPos, int maxPos, int Left, int Top, KernelColorType sliderColor, KernelColorType FrameColor, KernelColorType BackgroundColor, int minPos = 0, bool DrawBorder = true) =>
+            WriteSliderAbsolute(currPos, maxPos, Left, Top, ConsoleWrapper.WindowWidth - 10, BorderSettings.GlobalSettings, sliderColor, FrameColor, BackgroundColor, minPos, DrawBorder);
+
+        /// <summary>
+        /// Writes the slider (absolute)
+        /// </summary>
+        /// <param name="currPos">Current position out of maximum position</param>
+        /// <param name="minPos">Minimum position</param>
+        /// <param name="maxPos">Maximum position</param>
+        /// <param name="Left">The slider position from the upper left corner</param>
+        /// <param name="Top">The slider position from the top</param>
+        /// <param name="sliderColor">The slider color</param>
+        /// <param name="FrameColor">The slider frame color</param>
+        /// <param name="BackgroundColor">The slider background color</param>
+        /// <param name="width">Slider width</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        public static void WriteSliderAbsolute(int currPos, int maxPos, int Left, int Top, int width, KernelColorType sliderColor, KernelColorType FrameColor, KernelColorType BackgroundColor, int minPos = 0, bool DrawBorder = true) =>
+            WriteSliderAbsolute(currPos, maxPos, Left, Top, width, BorderSettings.GlobalSettings, sliderColor, FrameColor, BackgroundColor, minPos, DrawBorder);
+
+        /// <summary>
+        /// Writes the slider (absolute)
+        /// </summary>
+        /// <param name="currPos">Current position out of maximum position</param>
+        /// <param name="minPos">Minimum position</param>
+        /// <param name="maxPos">Maximum position</param>
+        /// <param name="Left">The slider position from the upper left corner</param>
+        /// <param name="Top">The slider position from the top</param>
+        /// <param name="sliderColor">The slider color</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        /// <param name="settings">Border settings</param>
+        public static void WriteSliderAbsolute(int currPos, int maxPos, int Left, int Top, BorderSettings settings, KernelColorType sliderColor, int minPos = 0, bool DrawBorder = true) =>
+            WriteSliderAbsolute(currPos, maxPos, Left, Top, ConsoleWrapper.WindowWidth - 10, settings, sliderColor, KernelColorType.Separator, minPos, DrawBorder);
+
+        /// <summary>
+        /// Writes the slider (absolute)
+        /// </summary>
+        /// <param name="currPos">Current position out of maximum position</param>
+        /// <param name="minPos">Minimum position</param>
+        /// <param name="maxPos">Maximum position</param>
+        /// <param name="Left">The slider position from the upper left corner</param>
+        /// <param name="Top">The slider position from the top</param>
+        /// <param name="sliderColor">The slider color</param>
+        /// <param name="width">Slider width</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        /// <param name="settings">Border settings</param>
+        public static void WriteSliderAbsolute(int currPos, int maxPos, int Left, int Top, int width, BorderSettings settings, KernelColorType sliderColor, int minPos = 0, bool DrawBorder = true) =>
+            WriteSliderAbsolute(currPos, maxPos, Left, Top, width, settings, sliderColor, KernelColorType.Separator, minPos, DrawBorder);
+
+        /// <summary>
+        /// Writes the slider (absolute)
+        /// </summary>
+        /// <param name="currPos">Current position out of maximum position</param>
+        /// <param name="minPos">Minimum position</param>
+        /// <param name="maxPos">Maximum position</param>
+        /// <param name="Left">The slider position from the upper left corner</param>
+        /// <param name="Top">The slider position from the top</param>
+        /// <param name="sliderColor">The slider color</param>
+        /// <param name="FrameColor">The slider frame color</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        /// <param name="settings">Border settings</param>
+        public static void WriteSliderAbsolute(int currPos, int maxPos, int Left, int Top, BorderSettings settings, KernelColorType sliderColor, KernelColorType FrameColor, int minPos = 0, bool DrawBorder = true) =>
+            WriteSliderAbsolute(currPos, maxPos, Left, Top, ConsoleWrapper.WindowWidth - 10, settings, sliderColor, FrameColor, minPos, DrawBorder);
+
+        /// <summary>
+        /// Writes the slider (absolute)
+        /// </summary>
+        /// <param name="currPos">Current position out of maximum position</param>
+        /// <param name="minPos">Minimum position</param>
+        /// <param name="maxPos">Maximum position</param>
+        /// <param name="Left">The slider position from the upper left corner</param>
+        /// <param name="Top">The slider position from the top</param>
+        /// <param name="sliderColor">The slider color</param>
+        /// <param name="FrameColor">The slider frame color</param>
+        /// <param name="width">Slider width</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        /// <param name="settings">Border settings</param>
+        public static void WriteSliderAbsolute(int currPos, int maxPos, int Left, int Top, int width, BorderSettings settings, KernelColorType sliderColor, KernelColorType FrameColor, int minPos = 0, bool DrawBorder = true) =>
+            WriteSliderAbsolute(currPos, maxPos, Left, Top, width, settings, sliderColor, FrameColor, KernelColorType.Background, minPos, DrawBorder);
+
+        /// <summary>
+        /// Writes the slider (absolute)
+        /// </summary>
+        /// <param name="currPos">Current position out of maximum position</param>
+        /// <param name="minPos">Minimum position</param>
+        /// <param name="maxPos">Maximum position</param>
+        /// <param name="Left">The slider position from the upper left corner</param>
+        /// <param name="Top">The slider position from the top</param>
+        /// <param name="sliderColor">The slider color</param>
+        /// <param name="FrameColor">The slider frame color</param>
+        /// <param name="BackgroundColor">The slider background color</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        /// <param name="settings">Border settings</param>
+        public static void WriteSliderAbsolute(int currPos, int maxPos, int Left, int Top, BorderSettings settings, KernelColorType sliderColor, KernelColorType FrameColor, KernelColorType BackgroundColor, int minPos = 0, bool DrawBorder = true) =>
+            WriteSliderAbsolute(currPos, maxPos, Left, Top, ConsoleWrapper.WindowWidth - 10, settings, sliderColor, FrameColor, BackgroundColor, minPos, DrawBorder);
+
+        /// <summary>
+        /// Writes the slider (absolute)
+        /// </summary>
+        /// <param name="currPos">Current position out of maximum position</param>
+        /// <param name="minPos">Minimum position</param>
+        /// <param name="maxPos">Maximum position</param>
+        /// <param name="Left">The slider position from the upper left corner</param>
+        /// <param name="Top">The slider position from the top</param>
+        /// <param name="sliderColor">The slider color</param>
+        /// <param name="FrameColor">The slider frame color</param>
+        /// <param name="BackgroundColor">The slider background color</param>
+        /// <param name="width">Slider width</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        /// <param name="settings">Border settings</param>
+        public static void WriteSliderAbsolute(int currPos, int maxPos, int Left, int Top, int width, BorderSettings settings, KernelColorType sliderColor, KernelColorType FrameColor, KernelColorType BackgroundColor, int minPos = 0, bool DrawBorder = true) =>
+            SliderColor.WriteSliderAbsolute(currPos, maxPos, Left, Top, width, settings, KernelColorTools.GetColor(sliderColor), KernelColorTools.GetColor(FrameColor), KernelColorTools.GetColor(BackgroundColor), minPos, DrawBorder);
+
+        /// <summary>
+        /// Writes the slider
+        /// </summary>
+        /// <param name="currPos">Current position out of maximum position</param>
+        /// <param name="maxPos">Maximum position</param>
+        /// <param name="Left">The slider position from the upper left corner</param>
+        /// <param name="Top">The slider position from the top</param>
+        /// <param name="sliderColor">The slider color</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        public static void WriteSlider(int currPos, int maxPos, int Left, int Top, KernelColorType sliderColor, bool DrawBorder = true) =>
+            WriteSlider(currPos, maxPos, Left, Top, ConsoleWrapper.WindowWidth - 10, BorderSettings.GlobalSettings, sliderColor, KernelColorType.Separator, DrawBorder);
+
+        /// <summary>
+        /// Writes the slider
+        /// </summary>
+        /// <param name="currPos">Current position out of maximum position</param>
+        /// <param name="maxPos">Maximum position</param>
+        /// <param name="Left">The slider position from the upper left corner</param>
+        /// <param name="Top">The slider position from the top</param>
+        /// <param name="sliderColor">The slider color</param>
+        /// <param name="width">Slider width</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        public static void WriteSlider(int currPos, int maxPos, int Left, int Top, int width, KernelColorType sliderColor, bool DrawBorder = true) =>
+            WriteSlider(currPos, maxPos, Left, Top, width, BorderSettings.GlobalSettings, sliderColor, KernelColorType.Separator, DrawBorder);
+
+        /// <summary>
+        /// Writes the slider
+        /// </summary>
+        /// <param name="currPos">Current position out of maximum position</param>
+        /// <param name="maxPos">Maximum position</param>
+        /// <param name="Left">The slider position from the upper left corner</param>
+        /// <param name="Top">The slider position from the top</param>
+        /// <param name="sliderColor">The slider color</param>
+        /// <param name="FrameColor">The slider frame color</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        public static void WriteSlider(int currPos, int maxPos, int Left, int Top, KernelColorType sliderColor, KernelColorType FrameColor, bool DrawBorder = true) =>
+            WriteSlider(currPos, maxPos, Left, Top, ConsoleWrapper.WindowWidth - 10, BorderSettings.GlobalSettings, sliderColor, FrameColor, DrawBorder);
+
+        /// <summary>
+        /// Writes the slider
+        /// </summary>
+        /// <param name="currPos">Current position out of maximum position</param>
+        /// <param name="maxPos">Maximum position</param>
+        /// <param name="Left">The slider position from the upper left corner</param>
+        /// <param name="Top">The slider position from the top</param>
+        /// <param name="sliderColor">The slider color</param>
+        /// <param name="FrameColor">The slider frame color</param>
+        /// <param name="width">Slider width</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        public static void WriteSlider(int currPos, int maxPos, int Left, int Top, int width, KernelColorType sliderColor, KernelColorType FrameColor, bool DrawBorder = true) =>
+            WriteSlider(currPos, maxPos, Left, Top, width, BorderSettings.GlobalSettings, sliderColor, FrameColor, KernelColorType.Background, DrawBorder);
+
+        /// <summary>
+        /// Writes the slider
+        /// </summary>
+        /// <param name="currPos">Current position out of maximum position</param>
+        /// <param name="maxPos">Maximum position</param>
+        /// <param name="Left">The slider position from the upper left corner</param>
+        /// <param name="Top">The slider position from the top</param>
+        /// <param name="sliderColor">The slider color</param>
+        /// <param name="FrameColor">The slider frame color</param>
+        /// <param name="BackgroundColor">The slider background color</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        public static void WriteSlider(int currPos, int maxPos, int Left, int Top, KernelColorType sliderColor, KernelColorType FrameColor, KernelColorType BackgroundColor, bool DrawBorder = true) =>
+            WriteSlider(currPos, maxPos, Left, Top, ConsoleWrapper.WindowWidth - 10, BorderSettings.GlobalSettings, sliderColor, FrameColor, BackgroundColor, DrawBorder);
+
+        /// <summary>
+        /// Writes the slider
+        /// </summary>
+        /// <param name="currPos">Current position out of maximum position</param>
+        /// <param name="maxPos">Maximum position</param>
+        /// <param name="Left">The slider position from the upper left corner</param>
+        /// <param name="Top">The slider position from the top</param>
+        /// <param name="sliderColor">The slider color</param>
+        /// <param name="FrameColor">The slider frame color</param>
+        /// <param name="BackgroundColor">The slider background color</param>
+        /// <param name="width">Slider width</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        public static void WriteSlider(int currPos, int maxPos, int Left, int Top, int width, KernelColorType sliderColor, KernelColorType FrameColor, KernelColorType BackgroundColor, bool DrawBorder = true) =>
+            WriteSlider(currPos, maxPos, Left, Top, width, BorderSettings.GlobalSettings, sliderColor, FrameColor, BackgroundColor, DrawBorder);
+
+        /// <summary>
+        /// Writes the slider
+        /// </summary>
+        /// <param name="currPos">Current position out of maximum position</param>
+        /// <param name="maxPos">Maximum position</param>
+        /// <param name="Left">The slider position from the upper left corner</param>
+        /// <param name="Top">The slider position from the top</param>
+        /// <param name="sliderColor">The slider color</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        /// <param name="settings">Border settings</param>
+        public static void WriteSlider(int currPos, int maxPos, int Left, int Top, BorderSettings settings, KernelColorType sliderColor, bool DrawBorder = true) =>
+            WriteSlider(currPos, maxPos, Left, Top, ConsoleWrapper.WindowWidth - 10, settings, sliderColor, KernelColorType.Separator, DrawBorder);
+
+        /// <summary>
+        /// Writes the slider
+        /// </summary>
+        /// <param name="currPos">Current position out of maximum position</param>
+        /// <param name="maxPos">Maximum position</param>
+        /// <param name="Left">The slider position from the upper left corner</param>
+        /// <param name="Top">The slider position from the top</param>
+        /// <param name="sliderColor">The slider color</param>
+        /// <param name="width">Slider width</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        /// <param name="settings">Border settings</param>
+        public static void WriteSlider(int currPos, int maxPos, int Left, int Top, int width, BorderSettings settings, KernelColorType sliderColor, bool DrawBorder = true) =>
+            WriteSlider(currPos, maxPos, Left, Top, width, settings, sliderColor, KernelColorType.Separator, DrawBorder);
+
+        /// <summary>
+        /// Writes the slider
+        /// </summary>
+        /// <param name="currPos">Current position out of maximum position</param>
+        /// <param name="maxPos">Maximum position</param>
+        /// <param name="Left">The slider position from the upper left corner</param>
+        /// <param name="Top">The slider position from the top</param>
+        /// <param name="sliderColor">The slider color</param>
+        /// <param name="FrameColor">The slider frame color</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        /// <param name="settings">Border settings</param>
+        public static void WriteSlider(int currPos, int maxPos, int Left, int Top, BorderSettings settings, KernelColorType sliderColor, KernelColorType FrameColor, bool DrawBorder = true) =>
+            WriteSlider(currPos, maxPos, Left, Top, ConsoleWrapper.WindowWidth - 10, settings, sliderColor, FrameColor, DrawBorder);
+
+        /// <summary>
+        /// Writes the slider
+        /// </summary>
+        /// <param name="currPos">Current position out of maximum position</param>
+        /// <param name="maxPos">Maximum position</param>
+        /// <param name="Left">The slider position from the upper left corner</param>
+        /// <param name="Top">The slider position from the top</param>
+        /// <param name="sliderColor">The slider color</param>
+        /// <param name="FrameColor">The slider frame color</param>
+        /// <param name="width">Slider width</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        /// <param name="settings">Border settings</param>
+        public static void WriteSlider(int currPos, int maxPos, int Left, int Top, int width, BorderSettings settings, KernelColorType sliderColor, KernelColorType FrameColor, bool DrawBorder = true) =>
+            WriteSlider(currPos, maxPos, Left, Top, width, settings, sliderColor, FrameColor, KernelColorType.Background, DrawBorder);
+
+        /// <summary>
+        /// Writes the slider
+        /// </summary>
+        /// <param name="currPos">Current position out of maximum position</param>
+        /// <param name="maxPos">Maximum position</param>
+        /// <param name="Left">The slider position from the upper left corner</param>
+        /// <param name="Top">The slider position from the top</param>
+        /// <param name="sliderColor">The slider color</param>
+        /// <param name="FrameColor">The slider frame color</param>
+        /// <param name="BackgroundColor">The slider background color</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        /// <param name="settings">Border settings</param>
+        public static void WriteSlider(int currPos, int maxPos, int Left, int Top, BorderSettings settings, KernelColorType sliderColor, KernelColorType FrameColor, KernelColorType BackgroundColor, bool DrawBorder = true) =>
+            WriteSlider(currPos, maxPos, Left, Top, ConsoleWrapper.WindowWidth - 10, settings, sliderColor, FrameColor, BackgroundColor, DrawBorder);
+
+        /// <summary>
+        /// Writes the slider
+        /// </summary>
+        /// <param name="currPos">Current position out of maximum position</param>
+        /// <param name="maxPos">Maximum position</param>
+        /// <param name="Left">The slider position from the upper left corner</param>
+        /// <param name="Top">The slider position from the top</param>
+        /// <param name="sliderColor">The slider color</param>
+        /// <param name="FrameColor">The slider frame color</param>
+        /// <param name="BackgroundColor">The slider background color</param>
+        /// <param name="width">Slider width</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        /// <param name="settings">Border settings</param>
+        public static void WriteSlider(int currPos, int maxPos, int Left, int Top, int width, BorderSettings settings, KernelColorType sliderColor, KernelColorType FrameColor, KernelColorType BackgroundColor, bool DrawBorder = true) =>
+            SliderColor.WriteSlider(currPos, maxPos, Left, Top, width, settings, KernelColorTools.GetColor(sliderColor), KernelColorTools.GetColor(FrameColor), KernelColorTools.GetColor(BackgroundColor), DrawBorder);
+
+        /// <summary>
+        /// Writes the vertical slider (absolute)
+        /// </summary>
+        /// <param name="currPos">Current position out of maximum position</param>
+        /// <param name="minPos">Minimum position</param>
+        /// <param name="maxPos">Maximum position</param>
+        /// <param name="Left">The slider position from the upper left corner</param>
+        /// <param name="Top">The slider position from the top</param>
+        /// <param name="SliderColor">The slider color</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        public static void WriteVerticalSliderAbsolute(int currPos, int maxPos, int Left, int Top, KernelColorType SliderColor, int minPos = 0, bool DrawBorder = true) =>
+            WriteVerticalSliderAbsolute(currPos, maxPos, Left, Top, ConsoleWrapper.WindowHeight - 2, BorderSettings.GlobalSettings, SliderColor, KernelColorType.Separator, minPos, DrawBorder);
+
+        /// <summary>
+        /// Writes the vertical slider (absolute)
+        /// </summary>
+        /// <param name="currPos">Current position out of maximum position</param>
+        /// <param name="minPos">Minimum position</param>
+        /// <param name="maxPos">Maximum position</param>
+        /// <param name="Left">The slider position from the upper left corner</param>
+        /// <param name="Top">The slider position from the top</param>
+        /// <param name="SliderColor">The slider color</param>
+        /// <param name="height">Slider height</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        public static void WriteVerticalSliderAbsolute(int currPos, int maxPos, int Left, int Top, int height, KernelColorType SliderColor, int minPos = 0, bool DrawBorder = true) =>
+            WriteVerticalSliderAbsolute(currPos, maxPos, Left, Top, height, BorderSettings.GlobalSettings, SliderColor, KernelColorType.Separator, minPos, DrawBorder);
+
+        /// <summary>
+        /// Writes the vertical slider (absolute)
+        /// </summary>
+        /// <param name="currPos">Current position out of maximum position</param>
+        /// <param name="minPos">Minimum position</param>
+        /// <param name="maxPos">Maximum position</param>
+        /// <param name="Left">The slider position from the upper left corner</param>
+        /// <param name="Top">The slider position from the top</param>
+        /// <param name="SliderColor">The slider color</param>
+        /// <param name="FrameColor">The slider frame color</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        public static void WriteVerticalSliderAbsolute(int currPos, int maxPos, int Left, int Top, KernelColorType SliderColor, KernelColorType FrameColor, int minPos = 0, bool DrawBorder = true) =>
+            WriteVerticalSliderAbsolute(currPos, maxPos, Left, Top, ConsoleWrapper.WindowHeight - 2, BorderSettings.GlobalSettings, SliderColor, FrameColor, minPos, DrawBorder);
+
+        /// <summary>
+        /// Writes the vertical slider (absolute)
+        /// </summary>
+        /// <param name="currPos">Current position out of maximum position</param>
+        /// <param name="minPos">Minimum position</param>
+        /// <param name="maxPos">Maximum position</param>
+        /// <param name="Left">The slider position from the upper left corner</param>
+        /// <param name="Top">The slider position from the top</param>
+        /// <param name="SliderColor">The slider color</param>
+        /// <param name="FrameColor">The slider frame color</param>
+        /// <param name="height">Slider height</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        public static void WriteVerticalSliderAbsolute(int currPos, int maxPos, int Left, int Top, int height, KernelColorType SliderColor, KernelColorType FrameColor, int minPos = 0, bool DrawBorder = true) =>
+            WriteVerticalSliderAbsolute(currPos, maxPos, Left, Top, height, BorderSettings.GlobalSettings, SliderColor, FrameColor, KernelColorType.Background, minPos, DrawBorder);
+
+        /// <summary>
+        /// Writes the vertical slider (absolute)
+        /// </summary>
+        /// <param name="currPos">Current position out of maximum position</param>
+        /// <param name="minPos">Minimum position</param>
+        /// <param name="maxPos">Maximum position</param>
+        /// <param name="Left">The slider position from the upper left corner</param>
+        /// <param name="Top">The slider position from the top</param>
+        /// <param name="SliderColor">The slider color</param>
+        /// <param name="FrameColor">The slider frame color</param>
+        /// <param name="BackgroundColor">The slider background color</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        public static void WriteVerticalSliderAbsolute(int currPos, int maxPos, int Left, int Top, KernelColorType SliderColor, KernelColorType FrameColor, KernelColorType BackgroundColor, int minPos = 0, bool DrawBorder = true) =>
+            WriteVerticalSliderAbsolute(currPos, maxPos, Left, Top, ConsoleWrapper.WindowHeight - 2, BorderSettings.GlobalSettings, SliderColor, FrameColor, BackgroundColor, minPos, DrawBorder);
+
+        /// <summary>
+        /// Writes the vertical slider (absolute)
+        /// </summary>
+        /// <param name="currPos">Current position out of maximum position</param>
+        /// <param name="minPos">Minimum position</param>
+        /// <param name="maxPos">Maximum position</param>
+        /// <param name="Left">The slider position from the upper left corner</param>
+        /// <param name="Top">The slider position from the top</param>
+        /// <param name="SliderColor">The slider color</param>
+        /// <param name="FrameColor">The slider frame color</param>
+        /// <param name="BackgroundColor">The slider background color</param>
+        /// <param name="height">Slider height</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        public static void WriteVerticalSliderAbsolute(int currPos, int maxPos, int Left, int Top, int height, KernelColorType SliderColor, KernelColorType FrameColor, KernelColorType BackgroundColor, int minPos = 0, bool DrawBorder = true) =>
+            WriteVerticalSliderAbsolute(currPos, maxPos, Left, Top, height, BorderSettings.GlobalSettings, SliderColor, FrameColor, BackgroundColor, minPos, DrawBorder);
+
+        /// <summary>
+        /// Writes the vertical slider (absolute)
+        /// </summary>
+        /// <param name="currPos">Current position out of maximum position</param>
+        /// <param name="minPos">Minimum position</param>
+        /// <param name="maxPos">Maximum position</param>
+        /// <param name="Left">The slider position from the upper left corner</param>
+        /// <param name="Top">The slider position from the top</param>
+        /// <param name="settings">Border settings</param>
+        /// <param name="SliderColor">The slider color</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        public static void WriteVerticalSliderAbsolute(int currPos, int maxPos, int Left, int Top, BorderSettings settings, KernelColorType SliderColor, int minPos = 0, bool DrawBorder = true) =>
+            WriteVerticalSliderAbsolute(currPos, maxPos, Left, Top, ConsoleWrapper.WindowHeight - 2, settings, SliderColor, KernelColorType.Separator, minPos, DrawBorder);
+
+        /// <summary>
+        /// Writes the vertical slider (absolute)
+        /// </summary>
+        /// <param name="currPos">Current position out of maximum position</param>
+        /// <param name="minPos">Minimum position</param>
+        /// <param name="maxPos">Maximum position</param>
+        /// <param name="Left">The slider position from the upper left corner</param>
+        /// <param name="Top">The slider position from the top</param>
+        /// <param name="settings">Border settings</param>
+        /// <param name="SliderColor">The slider color</param>
+        /// <param name="height">Slider height</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        public static void WriteVerticalSliderAbsolute(int currPos, int maxPos, int Left, int Top, int height, BorderSettings settings, KernelColorType SliderColor, int minPos = 0, bool DrawBorder = true) =>
+            WriteVerticalSliderAbsolute(currPos, maxPos, Left, Top, height, settings, SliderColor, KernelColorType.Separator, minPos, DrawBorder);
+
+        /// <summary>
+        /// Writes the vertical slider (absolute)
+        /// </summary>
+        /// <param name="currPos">Current position out of maximum position</param>
+        /// <param name="minPos">Minimum position</param>
+        /// <param name="maxPos">Maximum position</param>
+        /// <param name="Left">The slider position from the upper left corner</param>
+        /// <param name="Top">The slider position from the top</param>
+        /// <param name="settings">Border settings</param>
+        /// <param name="SliderColor">The slider color</param>
+        /// <param name="FrameColor">The slider frame color</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        public static void WriteVerticalSliderAbsolute(int currPos, int maxPos, int Left, int Top, BorderSettings settings, KernelColorType SliderColor, KernelColorType FrameColor, int minPos = 0, bool DrawBorder = true) =>
+            WriteVerticalSliderAbsolute(currPos, maxPos, Left, Top, ConsoleWrapper.WindowHeight - 2, settings, SliderColor, FrameColor, minPos, DrawBorder);
+
+        /// <summary>
+        /// Writes the vertical slider (absolute)
+        /// </summary>
+        /// <param name="currPos">Current position out of maximum position</param>
+        /// <param name="minPos">Minimum position</param>
+        /// <param name="maxPos">Maximum position</param>
+        /// <param name="Left">The slider position from the upper left corner</param>
+        /// <param name="Top">The slider position from the top</param>
+        /// <param name="settings">Border settings</param>
+        /// <param name="SliderColor">The slider color</param>
+        /// <param name="FrameColor">The slider frame color</param>
+        /// <param name="height">Slider height</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        public static void WriteVerticalSliderAbsolute(int currPos, int maxPos, int Left, int Top, int height, BorderSettings settings, KernelColorType SliderColor, KernelColorType FrameColor, int minPos = 0, bool DrawBorder = true) =>
+            WriteVerticalSliderAbsolute(currPos, maxPos, Left, Top, height, settings, SliderColor, FrameColor, KernelColorType.Background, minPos, DrawBorder);
+
+        /// <summary>
+        /// Writes the vertical slider (absolute)
+        /// </summary>
+        /// <param name="currPos">Current position out of maximum position</param>
+        /// <param name="minPos">Minimum position</param>
+        /// <param name="maxPos">Maximum position</param>
+        /// <param name="Left">The slider position from the upper left corner</param>
+        /// <param name="Top">The slider position from the top</param>
+        /// <param name="settings">Border settings</param>
+        /// <param name="SliderColor">The slider color</param>
+        /// <param name="FrameColor">The slider frame color</param>
+        /// <param name="BackgroundColor">The slider background color</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        public static void WriteVerticalSliderAbsolute(int currPos, int maxPos, int Left, int Top, BorderSettings settings, KernelColorType SliderColor, KernelColorType FrameColor, KernelColorType BackgroundColor, int minPos = 0, bool DrawBorder = true) =>
+            WriteVerticalSliderAbsolute(currPos, maxPos, Left, Top, ConsoleWrapper.WindowHeight - 2, settings, SliderColor, FrameColor, BackgroundColor, minPos, DrawBorder);
+
+        /// <summary>
+        /// Writes the vertical slider (absolute)
+        /// </summary>
+        /// <param name="currPos">Current position out of maximum position</param>
+        /// <param name="minPos">Minimum position</param>
+        /// <param name="maxPos">Maximum position</param>
+        /// <param name="Left">The slider position from the upper left corner</param>
+        /// <param name="Top">The slider position from the top</param>
+        /// <param name="SliderColor">The slider color</param>
+        /// <param name="FrameColor">The slider frame color</param>
+        /// <param name="BackgroundColor">The slider background color</param>
+        /// <param name="height">Slider height</param>
+        /// <param name="settings">Border settings</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        public static void WriteVerticalSliderAbsolute(int currPos, int maxPos, int Left, int Top, int height, BorderSettings settings, KernelColorType SliderColor, KernelColorType FrameColor, KernelColorType BackgroundColor, int minPos = 0, bool DrawBorder = true) =>
+            SliderVerticalColor.WriteVerticalSliderAbsolute(currPos, maxPos, Left, Top, height, settings, KernelColorTools.GetColor(SliderColor), KernelColorTools.GetColor(FrameColor), KernelColorTools.GetColor(BackgroundColor), minPos, DrawBorder);
+
+        /// <summary>
+        /// Writes the vertical slider
+        /// </summary>
+        /// <param name="currPos">Current position out of maximum position</param>
+        /// <param name="maxPos">Maximum position</param>
+        /// <param name="Left">The slider position from the upper left corner</param>
+        /// <param name="Top">The slider position from the top</param>
+        /// <param name="SliderColor">The slider color</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        public static void WriteVerticalSlider(int currPos, int maxPos, int Left, int Top, KernelColorType SliderColor, bool DrawBorder = true) =>
+            WriteVerticalSlider(currPos, maxPos, Left, Top, ConsoleWrapper.WindowHeight - 2, BorderSettings.GlobalSettings, SliderColor, KernelColorType.Separator, DrawBorder);
+
+        /// <summary>
+        /// Writes the vertical slider
+        /// </summary>
+        /// <param name="currPos">Current position out of maximum position</param>
+        /// <param name="maxPos">Maximum position</param>
+        /// <param name="Left">The slider position from the upper left corner</param>
+        /// <param name="Top">The slider position from the top</param>
+        /// <param name="SliderColor">The slider color</param>
+        /// <param name="height">Slider height</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        public static void WriteVerticalSlider(int currPos, int maxPos, int Left, int Top, int height, KernelColorType SliderColor, bool DrawBorder = true) =>
+            WriteVerticalSlider(currPos, maxPos, Left, Top, height, BorderSettings.GlobalSettings, SliderColor, KernelColorType.Separator, DrawBorder);
+
+        /// <summary>
+        /// Writes the vertical slider
+        /// </summary>
+        /// <param name="currPos">Current position out of maximum position</param>
+        /// <param name="maxPos">Maximum position</param>
+        /// <param name="Left">The slider position from the upper left corner</param>
+        /// <param name="Top">The slider position from the top</param>
+        /// <param name="SliderColor">The slider color</param>
+        /// <param name="FrameColor">The slider frame color</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        public static void WriteVerticalSlider(int currPos, int maxPos, int Left, int Top, KernelColorType SliderColor, KernelColorType FrameColor, bool DrawBorder = true) =>
+            WriteVerticalSlider(currPos, maxPos, Left, Top, ConsoleWrapper.WindowHeight - 2, BorderSettings.GlobalSettings, SliderColor, FrameColor, DrawBorder);
+
+        /// <summary>
+        /// Writes the vertical slider
+        /// </summary>
+        /// <param name="currPos">Current position out of maximum position</param>
+        /// <param name="maxPos">Maximum position</param>
+        /// <param name="Left">The slider position from the upper left corner</param>
+        /// <param name="Top">The slider position from the top</param>
+        /// <param name="SliderColor">The slider color</param>
+        /// <param name="FrameColor">The slider frame color</param>
+        /// <param name="height">Slider height</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        public static void WriteVerticalSlider(int currPos, int maxPos, int Left, int Top, int height, KernelColorType SliderColor, KernelColorType FrameColor, bool DrawBorder = true) =>
+            WriteVerticalSlider(currPos, maxPos, Left, Top, height, BorderSettings.GlobalSettings, SliderColor, FrameColor, KernelColorType.Background, DrawBorder);
+
+        /// <summary>
+        /// Writes the vertical slider
+        /// </summary>
+        /// <param name="currPos">Current position out of maximum position</param>
+        /// <param name="maxPos">Maximum position</param>
+        /// <param name="Left">The slider position from the upper left corner</param>
+        /// <param name="Top">The slider position from the top</param>
+        /// <param name="SliderColor">The slider color</param>
+        /// <param name="FrameColor">The slider frame color</param>
+        /// <param name="BackgroundColor">The slider background color</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        public static void WriteVerticalSlider(int currPos, int maxPos, int Left, int Top, KernelColorType SliderColor, KernelColorType FrameColor, KernelColorType BackgroundColor, bool DrawBorder = true) =>
+            WriteVerticalSlider(currPos, maxPos, Left, Top, ConsoleWrapper.WindowHeight - 2, BorderSettings.GlobalSettings, SliderColor, FrameColor, BackgroundColor, DrawBorder);
+
+        /// <summary>
+        /// Writes the vertical slider
+        /// </summary>
+        /// <param name="currPos">Current position out of maximum position</param>
+        /// <param name="maxPos">Maximum position</param>
+        /// <param name="Left">The slider position from the upper left corner</param>
+        /// <param name="Top">The slider position from the top</param>
+        /// <param name="SliderColor">The slider color</param>
+        /// <param name="FrameColor">The slider frame color</param>
+        /// <param name="BackgroundColor">The slider background color</param>
+        /// <param name="height">Slider height</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        public static void WriteVerticalSlider(int currPos, int maxPos, int Left, int Top, int height, KernelColorType SliderColor, KernelColorType FrameColor, KernelColorType BackgroundColor, bool DrawBorder = true) =>
+            WriteVerticalSlider(currPos, maxPos, Left, Top, height, BorderSettings.GlobalSettings, SliderColor, FrameColor, BackgroundColor, DrawBorder);
+
+        /// <summary>
+        /// Writes the vertical slider
+        /// </summary>
+        /// <param name="currPos">Current position out of maximum position</param>
+        /// <param name="maxPos">Maximum position</param>
+        /// <param name="Left">The slider position from the upper left corner</param>
+        /// <param name="Top">The slider position from the top</param>
+        /// <param name="settings">Border settings</param>
+        /// <param name="SliderColor">The slider color</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        public static void WriteVerticalSlider(int currPos, int maxPos, int Left, int Top, BorderSettings settings, KernelColorType SliderColor, bool DrawBorder = true) =>
+            WriteVerticalSlider(currPos, maxPos, Left, Top, ConsoleWrapper.WindowHeight - 2, settings, SliderColor, KernelColorType.Separator, DrawBorder);
+
+        /// <summary>
+        /// Writes the vertical slider
+        /// </summary>
+        /// <param name="currPos">Current position out of maximum position</param>
+        /// <param name="maxPos">Maximum position</param>
+        /// <param name="Left">The slider position from the upper left corner</param>
+        /// <param name="Top">The slider position from the top</param>
+        /// <param name="settings">Border settings</param>
+        /// <param name="SliderColor">The slider color</param>
+        /// <param name="height">Slider height</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        public static void WriteVerticalSlider(int currPos, int maxPos, int Left, int Top, int height, BorderSettings settings, KernelColorType SliderColor, bool DrawBorder = true) =>
+            WriteVerticalSlider(currPos, maxPos, Left, Top, height, settings, SliderColor, KernelColorType.Separator, DrawBorder);
+
+        /// <summary>
+        /// Writes the vertical slider
+        /// </summary>
+        /// <param name="currPos">Current position out of maximum position</param>
+        /// <param name="maxPos">Maximum position</param>
+        /// <param name="Left">The slider position from the upper left corner</param>
+        /// <param name="Top">The slider position from the top</param>
+        /// <param name="settings">Border settings</param>
+        /// <param name="SliderColor">The slider color</param>
+        /// <param name="FrameColor">The slider frame color</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        public static void WriteVerticalSlider(int currPos, int maxPos, int Left, int Top, BorderSettings settings, KernelColorType SliderColor, KernelColorType FrameColor, bool DrawBorder = true) =>
+            WriteVerticalSlider(currPos, maxPos, Left, Top, ConsoleWrapper.WindowHeight - 2, settings, SliderColor, FrameColor, DrawBorder);
+
+        /// <summary>
+        /// Writes the vertical slider
+        /// </summary>
+        /// <param name="currPos">Current position out of maximum position</param>
+        /// <param name="maxPos">Maximum position</param>
+        /// <param name="Left">The slider position from the upper left corner</param>
+        /// <param name="Top">The slider position from the top</param>
+        /// <param name="settings">Border settings</param>
+        /// <param name="SliderColor">The slider color</param>
+        /// <param name="FrameColor">The slider frame color</param>
+        /// <param name="height">Slider height</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        public static void WriteVerticalSlider(int currPos, int maxPos, int Left, int Top, int height, BorderSettings settings, KernelColorType SliderColor, KernelColorType FrameColor, bool DrawBorder = true) =>
+            WriteVerticalSlider(currPos, maxPos, Left, Top, height, settings, SliderColor, FrameColor, KernelColorType.Background, DrawBorder);
+
+        /// <summary>
+        /// Writes the vertical slider
+        /// </summary>
+        /// <param name="currPos">Current position out of maximum position</param>
+        /// <param name="maxPos">Maximum position</param>
+        /// <param name="Left">The slider position from the upper left corner</param>
+        /// <param name="Top">The slider position from the top</param>
+        /// <param name="settings">Border settings</param>
+        /// <param name="SliderColor">The slider color</param>
+        /// <param name="FrameColor">The slider frame color</param>
+        /// <param name="BackgroundColor">The slider background color</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        public static void WriteVerticalSlider(int currPos, int maxPos, int Left, int Top, BorderSettings settings, KernelColorType SliderColor, KernelColorType FrameColor, KernelColorType BackgroundColor, bool DrawBorder = true) =>
+            WriteVerticalSlider(currPos, maxPos, Left, Top, ConsoleWrapper.WindowHeight - 2, settings, SliderColor, FrameColor, BackgroundColor, DrawBorder);
+
+        /// <summary>
+        /// Writes the vertical slider
+        /// </summary>
+        /// <param name="currPos">Current position out of maximum position</param>
+        /// <param name="maxPos">Maximum position</param>
+        /// <param name="Left">The slider position from the upper left corner</param>
+        /// <param name="Top">The slider position from the top</param>
+        /// <param name="SliderColor">The slider color</param>
+        /// <param name="FrameColor">The slider frame color</param>
+        /// <param name="BackgroundColor">The slider background color</param>
+        /// <param name="height">Slider height</param>
+        /// <param name="settings">Border settings</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        public static void WriteVerticalSlider(int currPos, int maxPos, int Left, int Top, int height, BorderSettings settings, KernelColorType SliderColor, KernelColorType FrameColor, KernelColorType BackgroundColor, bool DrawBorder = true) =>
+            SliderVerticalColor.WriteVerticalSlider(currPos, maxPos, Left, Top, height, settings, KernelColorTools.GetColor(SliderColor), KernelColorTools.GetColor(FrameColor), KernelColorTools.GetColor(BackgroundColor), DrawBorder);
     }
 }
