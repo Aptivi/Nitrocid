@@ -188,6 +188,10 @@ namespace Nitrocid.Kernel.Extensions
         /// Unit Converter App Extras addon
         /// </summary>
         ExtrasPastebin,
+        /// <summary>
+        /// Images Extras addon
+        /// </summary>
+        ExtrasImages,
         #endregion
     }
 }
