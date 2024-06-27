@@ -202,7 +202,7 @@ namespace Nitrocid.Misc.Splash.Splashes
             builder.Append(
                 col.VTSequenceForeground +
                 TextWriterWhereColor.RenderWhere(ConsoleClearing.GetClearLineToRightSequence(), 0, consoleY - 2, true, Vars) +
-                CenteredTextColor.RenderCenteredOneLine(consoleY - 2, $"{Progress}% - {ProgressReport}", Vars)
+                CenteredTextColor.RenderCenteredOneLine(consoleY - 2, $"{Progress}% - {ProgressReport}", Vars: Vars)
             );
             return builder.ToString();
         }

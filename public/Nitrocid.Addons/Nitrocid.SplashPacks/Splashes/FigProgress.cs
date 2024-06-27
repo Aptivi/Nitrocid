@@ -229,7 +229,7 @@ namespace Nitrocid.SplashPacks.Splashes
             builder.Append(
                 CenteredFigletTextColor.RenderCenteredFiglet(consoleY, figFont, text, Vars) +
                 TextWriterWhereColor.RenderWhere(ConsoleClearing.GetClearLineToRightSequence(), 0, consoleY - 2, true) +
-                CenteredTextColor.RenderCenteredOneLine(consoleY - 2, ProgressReport, Vars)
+                CenteredTextColor.RenderCenteredOneLine(consoleY - 2, ProgressReport, 0, 0, Vars)
             );
             return builder.ToString();
         }

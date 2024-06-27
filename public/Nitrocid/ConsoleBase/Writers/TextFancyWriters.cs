@@ -365,9 +365,11 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="top">Top position to write centered text to</param>
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
         /// <param name="ColTypes">A type of colors that will be changed.</param>
+        /// <param name="leftMargin">The left margin</param>
+        /// <param name="rightMargin">The right margin</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCentered(int top, string Text, KernelColorType ColTypes, params object[] Vars) =>
-            CenteredTextColor.WriteCenteredColorBack(top, Text, KernelColorTools.GetColor(ColTypes), KernelColorTools.GetColor(KernelColorType.Background), Vars);
+        public static void WriteCentered(int top, string Text, KernelColorType ColTypes, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
+            CenteredTextColor.WriteCenteredColorBack(top, Text, KernelColorTools.GetColor(ColTypes), KernelColorTools.GetColor(KernelColorType.Background), leftMargin, rightMargin, Vars);
 
         /// <summary>
         /// Draws a centered text
@@ -376,18 +378,22 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
         /// <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
         /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
+        /// <param name="leftMargin">The left margin</param>
+        /// <param name="rightMargin">The right margin</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCentered(int top, string Text, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] Vars) =>
-            CenteredTextColor.WriteCenteredColorBack(top, Text, KernelColorTools.GetColor(colorTypeForeground), KernelColorTools.GetColor(colorTypeBackground), Vars);
+        public static void WriteCentered(int top, string Text, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
+            CenteredTextColor.WriteCenteredColorBack(top, Text, KernelColorTools.GetColor(colorTypeForeground), KernelColorTools.GetColor(colorTypeBackground), leftMargin, rightMargin, Vars);
 
         /// <summary>
         /// Draws a centered text
         /// </summary>
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
         /// <param name="ColTypes">A type of colors that will be changed.</param>
+        /// <param name="leftMargin">The left margin</param>
+        /// <param name="rightMargin">The right margin</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCentered(string Text, KernelColorType ColTypes, params object[] Vars) =>
-            CenteredTextColor.WriteCenteredColorBack(Text, KernelColorTools.GetColor(ColTypes), KernelColorTools.GetColor(KernelColorType.Background), Vars);
+        public static void WriteCentered(string Text, KernelColorType ColTypes, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
+            CenteredTextColor.WriteCenteredColorBack(Text, KernelColorTools.GetColor(ColTypes), KernelColorTools.GetColor(KernelColorType.Background), leftMargin, rightMargin, Vars);
 
         /// <summary>
         /// Draws a centered text
@@ -395,9 +401,11 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
         /// <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
         /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
+        /// <param name="leftMargin">The left margin</param>
+        /// <param name="rightMargin">The right margin</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCentered(string Text, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] Vars) =>
-            CenteredTextColor.WriteCenteredColorBack(Text, KernelColorTools.GetColor(colorTypeForeground), KernelColorTools.GetColor(colorTypeBackground), Vars);
+        public static void WriteCentered(string Text, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
+            CenteredTextColor.WriteCenteredColorBack(Text, KernelColorTools.GetColor(colorTypeForeground), KernelColorTools.GetColor(colorTypeBackground), leftMargin, rightMargin, Vars);
 
         /// <summary>
         /// Draws a centered text (just the first line)
@@ -405,9 +413,11 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="top">Top position to write centered text to</param>
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
         /// <param name="ColTypes">A type of colors that will be changed.</param>
+        /// <param name="leftMargin">The left margin</param>
+        /// <param name="rightMargin">The right margin</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredOneLine(int top, string Text, KernelColorType ColTypes, params object[] Vars) =>
-            CenteredTextColor.WriteCenteredOneLineColorBack(top, Text, KernelColorTools.GetColor(ColTypes), KernelColorTools.GetColor(KernelColorType.Background), Vars);
+        public static void WriteCenteredOneLine(int top, string Text, KernelColorType ColTypes, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
+            CenteredTextColor.WriteCenteredOneLineColorBack(top, Text, KernelColorTools.GetColor(ColTypes), KernelColorTools.GetColor(KernelColorType.Background), leftMargin, rightMargin, Vars);
 
         /// <summary>
         /// Draws a centered text (just the first line)
@@ -416,18 +426,22 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
         /// <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
         /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
+        /// <param name="leftMargin">The left margin</param>
+        /// <param name="rightMargin">The right margin</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredOneLine(int top, string Text, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] Vars) =>
-            CenteredTextColor.WriteCenteredOneLineColorBack(top, Text, KernelColorTools.GetColor(colorTypeForeground), KernelColorTools.GetColor(colorTypeBackground), Vars);
+        public static void WriteCenteredOneLine(int top, string Text, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
+            CenteredTextColor.WriteCenteredOneLineColorBack(top, Text, KernelColorTools.GetColor(colorTypeForeground), KernelColorTools.GetColor(colorTypeBackground), leftMargin, rightMargin, Vars);
 
         /// <summary>
         /// Draws a centered text (just the first line)
         /// </summary>
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
         /// <param name="ColTypes">A type of colors that will be changed.</param>
+        /// <param name="leftMargin">The left margin</param>
+        /// <param name="rightMargin">The right margin</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredOneLine(string Text, KernelColorType ColTypes, params object[] Vars) =>
-            CenteredTextColor.WriteCenteredOneLineColorBack(Text, KernelColorTools.GetColor(ColTypes), KernelColorTools.GetColor(KernelColorType.Background), Vars);
+        public static void WriteCenteredOneLine(string Text, KernelColorType ColTypes, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
+            CenteredTextColor.WriteCenteredOneLineColorBack(Text, KernelColorTools.GetColor(ColTypes), KernelColorTools.GetColor(KernelColorType.Background), leftMargin, rightMargin, Vars);
 
         /// <summary>
         /// Draws a centered text (just the first line)
@@ -435,9 +449,11 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
         /// <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
         /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
+        /// <param name="leftMargin">The left margin</param>
+        /// <param name="rightMargin">The right margin</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredOneLine(string Text, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] Vars) =>
-            CenteredTextColor.WriteCenteredOneLineColorBack(Text, KernelColorTools.GetColor(colorTypeForeground), KernelColorTools.GetColor(colorTypeBackground), Vars);
+        public static void WriteCenteredOneLine(string Text, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
+            CenteredTextColor.WriteCenteredOneLineColorBack(Text, KernelColorTools.GetColor(colorTypeForeground), KernelColorTools.GetColor(colorTypeBackground), leftMargin, rightMargin, Vars);
 
         /// <summary>
         /// Writes the figlet text

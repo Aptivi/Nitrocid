@@ -278,7 +278,7 @@ namespace Nitrocid.Extras.BassBoom.Player
             // Print the music name
             return
                 TextWriterWhereColor.RenderWhere(ConsoleClearing.GetClearLineToRightSequence(), 0, 1) +
-                CenteredTextColor.RenderCentered(1, Translate.DoTranslation("Now playing") + ": {0} - {1}", ConsoleColors.White, ConsoleColors.Black, musicArtist, musicName);
+                CenteredTextColor.RenderCentered(1, Translate.DoTranslation("Now playing") + ": {0} - {1}", ConsoleColors.White, ConsoleColors.Black, 0, 0, musicArtist, musicName);
         }
 
         internal static (string musicName, string musicArtist, string musicGenre) GetMusicNameArtistGenre(string musicPath)
