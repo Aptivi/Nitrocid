@@ -323,7 +323,7 @@ namespace Nitrocid.Files.Editors.TextEdit
                         for (int a = startLineIndex; a < endLineIndex; a++)
                             source += absolutes[a].Item2;
                     }
-                    line = source + line + ColorTools.RenderRevertForeground() + ColorTools.RenderRevertBackground() + new string(' ', SeparatorConsoleWidthInterior - ConsoleChar.EstimateCellWidth(source) - 1);
+                    line = source + line + ColorTools.RenderRevertForeground() + ColorTools.RenderRevertBackground();
 
                     // Change the color depending on the highlighted line and column
                     sels.Append(
