@@ -21,6 +21,8 @@ using System.IO;
 using Nitrocid.Drivers.Encryption;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
+using SpecProbe.Platform;
+using System;
 
 namespace Nitrocid.Tests.Drivers
 {
@@ -44,6 +46,13 @@ namespace Nitrocid.Tests.Drivers
         [Description("Action")]
         public void TestGetEncryptedString(string Algorithm, string expected)
         {
+            if (Algorithm.EndsWith("Enhanced"))
+            {
+                if (PlatformHelper.IsOnWindows() && !OperatingSystem.IsWindowsVersionAtLeast(10, 0, 25324))
+                    Assert.Inconclusive("Your version of Windows doesn't support SHA-3 yet.");
+                if (PlatformHelper.IsOnMacOS())
+                    Assert.Inconclusive("macOS doesn't support SHA-3 yet.");
+            }
             string TextHash = "Test hashing.";
             string actual = Encryption.GetEncryptedString(TextHash, Algorithm);
             actual.ShouldBe(expected);
