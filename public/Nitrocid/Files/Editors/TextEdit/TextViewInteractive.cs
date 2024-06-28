@@ -290,6 +290,7 @@ namespace Nitrocid.Files.Editors.TextEdit
                         lineBuilder.Append(' ');
                         lineBuilder.Append(ColorTools.RenderSetConsoleColor(unhighlightedColorBackground, true));
                         lineBuilder.Append(ColorTools.RenderSetConsoleColor(highlightedColorBackground));
+                        lineBuilder.Append(CsiSequences.GenerateCsiCursorPosition(SeparatorConsoleWidthInterior + 3 - (SeparatorConsoleWidthInterior - ConsoleChar.EstimateCellWidth(source)), SeparatorMinimumHeightInterior + count + 1));
                     }
 
                     // Now, get the line range
@@ -309,7 +310,7 @@ namespace Nitrocid.Files.Editors.TextEdit
                         for (int a = startLineIndex; a < endLineIndex; a++)
                             source += absolutes[a];
                     }
-                    line = source + line + ColorTools.RenderRevertForeground() + ColorTools.RenderRevertBackground() + new string(' ', SeparatorConsoleWidthInterior - ConsoleChar.EstimateCellWidth(source));
+                    line = source + line + ColorTools.RenderRevertForeground() + ColorTools.RenderRevertBackground() + new string(' ', SeparatorConsoleWidthInterior - ConsoleChar.EstimateCellWidth(source) - 1);
 
                     // Change the color depending on the highlighted line and column
                     sels.Append(
@@ -423,11 +424,13 @@ namespace Nitrocid.Files.Editors.TextEdit
                 return;
             if (lines[lineIdx].Length == 0)
                 return;
-            var currChar = lines[lineIdx][lineColIdx];
-            if (CharManager.IsControlChar(currChar) || currChar == '\0' || currChar == (char)0xAD)
-                status += " | " + Translate.DoTranslation("Bin") + $": {(int)currChar}";
-            if (currChar == '\t')
-                status += " | " + Translate.DoTranslation("Tab") + $": {(int)currChar}";
+            var sequencesCollections = VtSequenceTools.MatchVTSequences(lines[lineIdx]);
+            var absolutes = GetAbsoluteSequences(lines[lineIdx], sequencesCollections);
+            var currChar = absolutes[lineColIdx];
+            if (ConsoleChar.EstimateCellWidth(currChar) == 0)
+                status += " | " + Translate.DoTranslation("Bin");
+            if (currChar == "\t")
+                status += " | " + Translate.DoTranslation("Tab") + $": {(int)currChar[0]}";
         }
 
         private static void PreviousPage(List<string> lines)

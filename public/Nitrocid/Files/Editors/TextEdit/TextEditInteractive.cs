@@ -39,6 +39,8 @@ using Terminaux.Colors;
 using Terminaux.Base;
 using Terminaux.Reader;
 using Terminaux.Base.Extensions;
+using Nitrocid.ConsoleBase;
+using System.Text.RegularExpressions;
 
 namespace Nitrocid.Files.Editors.TextEdit
 {
@@ -276,58 +278,52 @@ namespace Nitrocid.Files.Editors.TextEdit
                     string source = lines[i - 1].Replace("\t", ">");
                     if (source.Length == 0)
                         source = " ";
+                    var sequencesCollections = VtSequenceTools.MatchVTSequences(source);
+                    int vtSeqIdx = 0;
 
                     // Seek through the whole string to find unprintable characters
                     var sourceBuilder = new StringBuilder();
+                    int width = ConsoleChar.EstimateCellWidth(source);
                     for (int l = 0; l < source.Length; l++)
                     {
-                        bool unprintable = CharManager.IsControlChar(source[l]) || source[l] == '\0' || source[l] == (char)0xAD;
-                        string rendered = unprintable ? "." : source[l].ToString();
+                        string sequence = ConsoleTools.BufferChar(source, sequencesCollections, ref l, ref vtSeqIdx, out bool isVtSequence);
+                        bool unprintable = ConsoleChar.EstimateCellWidth(sequence) == 0;
+                        string rendered = unprintable && !isVtSequence ? "." : sequence;
                         sourceBuilder.Append(rendered);
                     }
                     source = sourceBuilder.ToString();
 
                     // Highlight the selection
-                    var lineBuilder = new StringBuilder(source);
+                    var lineBuilder = new StringBuilder();
                     if (i == lineIdx + 1)
                     {
-                        if (lineColIdx + 1 > lineBuilder.Length)
-                        {
-                            lineBuilder.Append(ColorTools.RenderSetConsoleColor(unhighlightedColorBackground));
-                            lineBuilder.Append(ColorTools.RenderSetConsoleColor(highlightedColorBackground, true, true));
-                            lineBuilder.Append(' ');
-                            lineBuilder.Append(ColorTools.RenderSetConsoleColor(unhighlightedColorBackground, true));
-                            lineBuilder.Append(ColorTools.RenderSetConsoleColor(highlightedColorBackground));
-                        }
-                        else
-                        {
-                            lineBuilder.Insert(lineColIdx + 1, ColorTools.RenderSetConsoleColor(unhighlightedColorBackground, true));
-                            lineBuilder.Insert(lineColIdx + 1, ColorTools.RenderSetConsoleColor(highlightedColorBackground));
-                            lineBuilder.Insert(lineColIdx, ColorTools.RenderSetConsoleColor(unhighlightedColorBackground));
-                            lineBuilder.Insert(lineColIdx, ColorTools.RenderSetConsoleColor(highlightedColorBackground, true, true));
-                        }
+                        lineBuilder.Append(CsiSequences.GenerateCsiCursorPosition(lineColIdx % SeparatorConsoleWidthInterior + 2, SeparatorMinimumHeightInterior + count + 1));
+                        lineBuilder.Append(ColorTools.RenderSetConsoleColor(unhighlightedColorBackground));
+                        lineBuilder.Append(ColorTools.RenderSetConsoleColor(highlightedColorBackground, true, true));
+                        lineBuilder.Append(' ');
+                        lineBuilder.Append(ColorTools.RenderSetConsoleColor(unhighlightedColorBackground, true));
+                        lineBuilder.Append(ColorTools.RenderSetConsoleColor(highlightedColorBackground));
+                        lineBuilder.Append(CsiSequences.GenerateCsiCursorPosition(SeparatorConsoleWidthInterior + 3 - (SeparatorConsoleWidthInterior - ConsoleChar.EstimateCellWidth(source)), SeparatorMinimumHeightInterior + count + 1));
                     }
 
                     // Now, get the line range
                     string line = lineBuilder.ToString();
+                    var absolutes = GetAbsoluteSequences(source, sequencesCollections);
                     if (source.Length > 0)
                     {
                         int charsPerPage = SeparatorConsoleWidthInterior;
                         int currentCharPage = lineColIdx / charsPerPage;
                         int startLineIndex = charsPerPage * currentCharPage;
                         int endLineIndex = charsPerPage * (currentCharPage + 1);
-                        if (startLineIndex > source.Length)
-                            startLineIndex = source.Length;
-                        if (endLineIndex > source.Length)
-                            endLineIndex = source.Length;
-                        int vtSeqLength = 0;
-                        var vtSeqMatches = VtSequenceTools.MatchVTSequences(line);
-                        foreach (var (type, matches) in vtSeqMatches)
-                            vtSeqLength += matches.Sum((mat) => mat.Length);
-                        source = source[startLineIndex..endLineIndex];
-                        line = line[startLineIndex..(endLineIndex + vtSeqLength)];
+                        if (startLineIndex > absolutes.Length)
+                            startLineIndex = absolutes.Length;
+                        if (endLineIndex > absolutes.Length)
+                            endLineIndex = absolutes.Length;
+                        source = "";
+                        for (int a = startLineIndex; a < endLineIndex; a++)
+                            source += absolutes[a].Item2;
                     }
-                    line += new string(' ', SeparatorConsoleWidthInterior - source.Length);
+                    line = source + line + ColorTools.RenderRevertForeground() + ColorTools.RenderRevertBackground() + new string(' ', SeparatorConsoleWidthInterior - ConsoleChar.EstimateCellWidth(source) - 1);
 
                     // Change the color depending on the highlighted line and column
                     sels.Append(
@@ -417,7 +413,11 @@ namespace Nitrocid.Files.Editors.TextEdit
             // Delete a character
             if (lineColIdx > 0)
             {
-                lines[lineIdx] = lines[lineIdx].Remove(lineColIdx - 1, 1);
+                var sequencesCollections = VtSequenceTools.MatchVTSequences(lines[lineIdx]);
+                var absolutes = GetAbsoluteSequences(lines[lineIdx], sequencesCollections);
+                int colIdx = absolutes[lineColIdx - 1].Item1;
+                int seqLength = absolutes[lineColIdx - 1].Item2.Length;
+                lines[lineIdx] = lines[lineIdx].Remove(colIdx, seqLength);
                 MoveBackward(lines);
             }
             else if (lineIdx > 0)
@@ -442,7 +442,11 @@ namespace Nitrocid.Files.Editors.TextEdit
             // Delete a character
             if (lines[lineIdx].Length > 0)
             {
-                lines[lineIdx] = lines[lineIdx].Remove(lineColIdx, 1);
+                var sequencesCollections = VtSequenceTools.MatchVTSequences(lines[lineIdx]);
+                var absolutes = GetAbsoluteSequences(lines[lineIdx], sequencesCollections);
+                int colIdx = absolutes[lineColIdx].Item1;
+                int seqLength = absolutes[lineColIdx].Item2.Length;
+                lines[lineIdx] = lines[lineIdx].Remove(colIdx, seqLength);
                 UpdateLineIndex(lineIdx, lines);
             }
             else
@@ -500,8 +504,11 @@ namespace Nitrocid.Files.Editors.TextEdit
             else
             {
                 // Check to see if the current position is not at the end of the line
-                string substringNewLine = lines[lineIdx][lineColIdx..];
-                string substringOldLine = lines[lineIdx][..lineColIdx];
+                var sequencesCollections = VtSequenceTools.MatchVTSequences(lines[lineIdx]);
+                var absolutes = GetAbsoluteSequences(lines[lineIdx], sequencesCollections);
+                int colIdx = absolutes[lineColIdx].Item1;
+                string substringNewLine = lines[lineIdx][colIdx..];
+                string substringOldLine = lines[lineIdx][..colIdx];
                 lines[lineIdx] = substringOldLine;
                 lines.Insert(lineIdx + 1, substringNewLine);
             }
@@ -591,11 +598,13 @@ namespace Nitrocid.Files.Editors.TextEdit
                 return;
             if (entering)
                 return;
-            var currChar = lines[lineIdx][lineColIdx];
-            if (CharManager.IsControlChar(currChar) || currChar == '\0' || currChar == (char)0xAD)
-                status += " | " + Translate.DoTranslation("Bin") + $": {(int)currChar}";
-            if (currChar == '\t')
-                status += " | " + Translate.DoTranslation("Tab") + $": {(int)currChar}";
+            var sequencesCollections = VtSequenceTools.MatchVTSequences(lines[lineIdx]);
+            var absolutes = GetAbsoluteSequences(lines[lineIdx], sequencesCollections);
+            var currChar = absolutes[lineColIdx].Item2;
+            if (ConsoleChar.EstimateCellWidth(currChar) == 0)
+                status += " | " + Translate.DoTranslation("Bin");
+            if (currChar == "\t")
+                status += " | " + Translate.DoTranslation("Tab") + $": {(int)currChar[0]}";
         }
 
         private static void PreviousPage(List<string> lines)
@@ -642,7 +651,7 @@ namespace Nitrocid.Files.Editors.TextEdit
                 lineColIdx = 0;
                 return;
             }
-            int maxLen = lines[lineIdx].Length;
+            int maxLen = ConsoleChar.EstimateCellWidth(lines[lineIdx]);
             maxLen -= entering ? 0 : 1;
             if (lineColIdx > maxLen)
                 lineColIdx = maxLen;
@@ -655,6 +664,22 @@ namespace Nitrocid.Files.Editors.TextEdit
             entering = !entering;
             UpdateLineIndex(lineIdx, lines);
             return lines;
+        }
+
+        private static (int, string)[] GetAbsoluteSequences(string source, (VtSequenceType type, Match[] sequences)[] sequencesCollections)
+        {
+            int vtSeqIdx = 0;
+            List<(int, string)> sequences = [];
+            string sequence = "";
+            for (int l = 0; l < source.Length; l++)
+            {
+                sequence += ConsoleTools.BufferChar(source, sequencesCollections, ref l, ref vtSeqIdx, out bool isVtSequence);
+                if (isVtSequence)
+                    continue;
+                sequences.Add((l, sequence));
+                sequence = "";
+            }
+            return [.. sequences];
         }
     }
 }
