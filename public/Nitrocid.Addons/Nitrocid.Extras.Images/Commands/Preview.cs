@@ -64,7 +64,7 @@ namespace Nitrocid.Extras.Images.Commands
                 for (int x = 0; x < width; x++)
                 {
                     var color = colors[x, y];
-                    builder.Append(color.VTSequenceBackgroundTrueColor + " ");
+                    builder.Append(color.VTSequenceBackgroundTrueColor + "  ");
                 }
                 builder.AppendLine();
             }
