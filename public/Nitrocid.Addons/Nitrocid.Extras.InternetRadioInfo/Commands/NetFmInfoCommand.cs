@@ -22,6 +22,8 @@ using Nitrocid.Shell.ShellBase.Switches;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Writer.FancyWriters;
+using BassBoom.Basolia.Radio;
 
 namespace Nitrocid.Extras.InternetRadioInfo.Commands
 {
@@ -42,26 +44,18 @@ namespace Nitrocid.Extras.InternetRadioInfo.Commands
                 return 25;
             }
 
-            // Wait until BassBoom 0.1.0 is out
-            TextWriters.Write("BassBoom 0.1.0 replaces Nettify's implementation. Wait...", false, KernelColorType.Error);
-
-#if false
             // Now, get the server info
-            var internetFm = new ShoutcastServer(internetFmUrl, internetFmPortInt, https);
+            var internetFm = RadioTools.GetRadioInfo($"{internetFmUrl}:{internetFmPortInt}");
             internetFm.Refresh();
             SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Internet Radio (FM) info for") + $" {internetFmUrl}");
             TextWriters.Write(Translate.DoTranslation("Full URL") + ": ", false, KernelColorType.ListEntry);
             TextWriters.Write($"{internetFm.ServerHostFull}", true, KernelColorType.ListValue);
-            TextWriters.Write(Translate.DoTranslation("Version") + ": ", false, KernelColorType.ListEntry);
-            TextWriters.Write($"{internetFm.ServerVersion}", true, KernelColorType.ListValue);
+            TextWriters.Write(Translate.DoTranslation("Station type") + ": ", false, KernelColorType.ListEntry);
+            TextWriters.Write($"{internetFm.ServerType}", true, KernelColorType.ListValue);
             TextWriters.Write(Translate.DoTranslation("Current listeners") + ": ", false, KernelColorType.ListEntry);
             TextWriters.Write($"{internetFm.CurrentListeners}", true, KernelColorType.ListValue);
             TextWriters.Write(Translate.DoTranslation("Peak listeners") + ": ", false, KernelColorType.ListEntry);
             TextWriters.Write($"{internetFm.PeakListeners}", true, KernelColorType.ListValue);
-            TextWriters.Write(Translate.DoTranslation("Max listeners") + ": ", false, KernelColorType.ListEntry);
-            TextWriters.Write($"{internetFm.MaxListeners}", true, KernelColorType.ListValue);
-            TextWriters.Write(Translate.DoTranslation("Unique listeners") + ": ", false, KernelColorType.ListEntry);
-            TextWriters.Write($"{internetFm.UniqueListeners}", true, KernelColorType.ListValue);
             TextWriters.Write(Translate.DoTranslation("Streams") + ": ", false, KernelColorType.ListEntry);
             TextWriters.Write($"{internetFm.TotalStreams}", true, KernelColorType.ListValue);
             TextWriters.Write(Translate.DoTranslation("Active streams") + ": ", false, KernelColorType.ListEntry);
@@ -80,8 +74,6 @@ namespace Nitrocid.Extras.InternetRadioInfo.Commands
                 TextWriters.Write(Translate.DoTranslation("Uptime") + ": ", false, KernelColorType.ListEntry);
                 TextWriters.Write($"{stream.StreamUptimeSpan}", true, KernelColorType.ListValue);
             }
-#endif
-
             return 0;
         }
 

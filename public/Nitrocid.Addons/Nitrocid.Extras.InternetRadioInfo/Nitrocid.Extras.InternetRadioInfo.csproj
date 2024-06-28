@@ -12,6 +12,7 @@
     <Description>Nitrocid KS Extras - Internet Radio Info</Description>
     <AssemblyTitle>Nitrocid KS Extras - Internet Radio Info</AssemblyTitle>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
   </PropertyGroup>
   <!-- Extras.InternetRadioInfo addon General Information End -->
 
@@ -34,6 +35,10 @@
     </None>
   </ItemGroup>
   <!-- Extras.InternetRadioInfo addon Platform Information End -->
+
+  <ItemGroup>
+    <PackageReference Include="BassBoom.Basolia" Version="0.1.0" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="all" />
