@@ -76,6 +76,9 @@ namespace Nitrocid.Kernel.Extensions
             #region Since 0.1.1
             { KnownAddons.ExtrasPastebin,               /* Localizable */ "Extras - Pastebin" },
             { KnownAddons.ExtrasImages,                 /* Localizable */ "Extras - Images" },
+            { KnownAddons.ExtrasSha256Enhanced,         /* Localizable */ "Extras - Enhanced SHA256" },
+            { KnownAddons.ExtrasSha384Enhanced,         /* Localizable */ "Extras - Enhanced SHA384" },
+            { KnownAddons.ExtrasSha512Enhanced,         /* Localizable */ "Extras - Enhanced SHA512" },
             #endregion
         };
 

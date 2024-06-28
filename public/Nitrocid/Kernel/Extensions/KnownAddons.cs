@@ -192,6 +192,18 @@ namespace Nitrocid.Kernel.Extensions
         /// Images Extras addon
         /// </summary>
         ExtrasImages,
+        /// <summary>
+        /// SHA256 Enhanced Extras addon
+        /// </summary>
+        ExtrasSha256Enhanced,
+        /// <summary>
+        /// SHA384 Enhanced Extras addon
+        /// </summary>
+        ExtrasSha384Enhanced,
+        /// <summary>
+        /// SHA512 Enhanced Extras addon
+        /// </summary>
+        ExtrasSha512Enhanced,
         #endregion
     }
 }
