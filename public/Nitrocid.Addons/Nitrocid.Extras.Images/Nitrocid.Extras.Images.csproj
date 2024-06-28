@@ -12,7 +12,6 @@
     <Description>Nitrocid KS Extras - Images</Description>
     <AssemblyTitle>Nitrocid KS Extras - Images</AssemblyTitle>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
-    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
   </PropertyGroup>
   <!-- Extras.Images addon General Information End -->
 
@@ -38,7 +37,6 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="all" />
-    <PackageReference Include="Terminaux.Images" Version="4.2.0" />
   </ItemGroup>
   <PropertyGroup>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
