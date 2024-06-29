@@ -204,6 +204,10 @@ namespace Nitrocid.Kernel.Extensions
         /// SHA512 Enhanced Extras addon
         /// </summary>
         ExtrasSha512Enhanced,
+        /// <summary>
+        /// CRC32C (Castagnoli) Extras addon
+        /// </summary>
+        ExtrasCrc32C,
         #endregion
     }
 }

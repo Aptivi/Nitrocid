@@ -190,11 +190,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.Extras.Pastebin", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.Extras.Images", "public\Nitrocid.Addons\Nitrocid.Extras.Images\Nitrocid.Extras.Images.csproj", "{CFC033AA-0ECC-4732-9082-0ECA267224B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nitrocid.Extras.Sha256Enhanced", "public\Nitrocid.Addons\Nitrocid.Extras.Sha256Enhanced\Nitrocid.Extras.Sha256Enhanced.csproj", "{499BC942-E615-4CD0-B32D-87834092F9D2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.Extras.Sha256Enhanced", "public\Nitrocid.Addons\Nitrocid.Extras.Sha256Enhanced\Nitrocid.Extras.Sha256Enhanced.csproj", "{499BC942-E615-4CD0-B32D-87834092F9D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nitrocid.Extras.Sha384Enhanced", "public\Nitrocid.Addons\Nitrocid.Extras.Sha384Enhanced\Nitrocid.Extras.Sha384Enhanced.csproj", "{46CC2699-A9BB-4748-B1FF-ABD4C501DAA1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.Extras.Sha384Enhanced", "public\Nitrocid.Addons\Nitrocid.Extras.Sha384Enhanced\Nitrocid.Extras.Sha384Enhanced.csproj", "{46CC2699-A9BB-4748-B1FF-ABD4C501DAA1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nitrocid.Extras.Sha512Enhanced", "public\Nitrocid.Addons\Nitrocid.Extras.Sha512Enhanced\Nitrocid.Extras.Sha512Enhanced.csproj", "{2D768D78-7BBF-43CE-823D-081881BA941E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.Extras.Sha512Enhanced", "public\Nitrocid.Addons\Nitrocid.Extras.Sha512Enhanced\Nitrocid.Extras.Sha512Enhanced.csproj", "{2D768D78-7BBF-43CE-823D-081881BA941E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nitrocid.Extras.Crc32Castagnoli", "public\Nitrocid.Addons\Nitrocid.Extras.Crc32Castagnoli\Nitrocid.Extras.Crc32Castagnoli.csproj", "{B7712906-FA6D-43B4-A0C5-E28D605851EF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -438,6 +440,10 @@ Global
 		{2D768D78-7BBF-43CE-823D-081881BA941E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D768D78-7BBF-43CE-823D-081881BA941E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2D768D78-7BBF-43CE-823D-081881BA941E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7712906-FA6D-43B4-A0C5-E28D605851EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7712906-FA6D-43B4-A0C5-E28D605851EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7712906-FA6D-43B4-A0C5-E28D605851EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7712906-FA6D-43B4-A0C5-E28D605851EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -509,6 +515,7 @@ Global
 		{499BC942-E615-4CD0-B32D-87834092F9D2} = {B60F276A-FE12-4001-916E-080344ED1FD9}
 		{46CC2699-A9BB-4748-B1FF-ABD4C501DAA1} = {B60F276A-FE12-4001-916E-080344ED1FD9}
 		{2D768D78-7BBF-43CE-823D-081881BA941E} = {B60F276A-FE12-4001-916E-080344ED1FD9}
+		{B7712906-FA6D-43B4-A0C5-E28D605851EF} = {B60F276A-FE12-4001-916E-080344ED1FD9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {424D8E7A-CFEB-40AE-A79C-437D603177FD}
