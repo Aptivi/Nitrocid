@@ -32,7 +32,10 @@ namespace Nitrocid.Extras.Amusements.Commands
                 SwitchManager.ContainsSwitch(parameters.SwitchesList, "-hardcore") ? HangmanDifficulty.Hardcore :
                 SwitchManager.ContainsSwitch(parameters.SwitchesList, "-practice") ? HangmanDifficulty.Practice :
                 HangmanDifficulty.None;
-            Hangman.InitializeHangman(difficulty);
+            var wordDifficulty =
+                SwitchManager.ContainsSwitch(parameters.SwitchesList, "-uncommon") ? HangmanWordDifficulty.Uncommon :
+                HangmanWordDifficulty.Common;
+            Hangman.InitializeHangman(difficulty, wordDifficulty);
             return 0;
         }
     }

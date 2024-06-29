@@ -60,6 +60,16 @@ namespace Nitrocid.Extras.Amusements
                             ConflictsWith = ["hardcore"],
                             AcceptsValues = false
                         }),
+                        new SwitchInfo("common", /* Localizable */ "Uses the common word list.", new SwitchOptions()
+                        {
+                            ConflictsWith = ["uncommon"],
+                            AcceptsValues = false
+                        }),
+                        new SwitchInfo("uncommon", /* Localizable */ "Uses the complete word list.", new SwitchOptions()
+                        {
+                            ConflictsWith = ["common"],
+                            AcceptsValues = false
+                        }),
                     })
                 ], new HangmanCommand()),
 
@@ -135,7 +145,17 @@ namespace Nitrocid.Extras.Amusements
                         new SwitchInfo("orig", /* Localizable */ "Play the Wordle game originally", new SwitchOptions()
                         {
                             AcceptsValues = false
-                        })
+                        }),
+                        new SwitchInfo("common", /* Localizable */ "Uses the common word list.", new SwitchOptions()
+                        {
+                            ConflictsWith = ["uncommon"],
+                            AcceptsValues = false
+                        }),
+                        new SwitchInfo("uncommon", /* Localizable */ "Uses the complete word list.", new SwitchOptions()
+                        {
+                            ConflictsWith = ["common"],
+                            AcceptsValues = false
+                        }),
                     })
                 ], new WordleCommand()),
 
