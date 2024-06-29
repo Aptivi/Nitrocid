@@ -25,7 +25,7 @@ using System;
 using System.Collections.ObjectModel;
 using System.Reflection;
 
-namespace Nitrocid.Extras.Sha384
+namespace Nitrocid.Extras.Sha384Enhanced
 {
     internal class Sha384Init : IAddon
     {
