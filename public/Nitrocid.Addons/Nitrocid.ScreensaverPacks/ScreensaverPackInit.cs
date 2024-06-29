@@ -66,6 +66,7 @@ namespace Nitrocid.ScreensaverPacks
             { "fireworks", new FireworksDisplay() },
             { "flashcolor", new FlashColorDisplay() },
             { "flashtext", new FlashTextDisplay() },
+            { "following", new FollowingDisplay() },
             { "glitch", new GlitchDisplay() },
             { "glittercolor", new GlitterColorDisplay() },
             { "glittermatrix", new GlitterMatrixDisplay() },
