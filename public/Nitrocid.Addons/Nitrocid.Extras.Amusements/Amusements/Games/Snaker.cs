@@ -31,6 +31,7 @@ using Terminaux.Colors.Transformation.Contrast;
 using Terminaux.Base.Buffered;
 using System.Text;
 using Terminaux.Sequences.Builder.Types;
+using Nitrocid.Languages;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games
 {
@@ -85,7 +86,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor top edge ({0}, {1})", x, 1);
                     floor.Append(
-                        CsiSequences.GenerateCsiCursorPosition(x + 1, 2) +
+                        CsiSequences.GenerateCsiCursorPosition(x + 1, FloorTopEdge + 1) +
                         " "
                     );
                 }
@@ -106,7 +107,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor left edge ({0}, {1})", FloorLeftEdge, y);
                     floor.Append(
                         CsiSequences.GenerateCsiCursorPosition(FloorLeftEdge + 1, y + 1) +
-                        " "
+                        "  "
                     );
                 }
 
@@ -116,9 +117,18 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor right edge ({0}, {1})", FloorRightEdge, y);
                     floor.Append(
                         CsiSequences.GenerateCsiCursorPosition(FloorRightEdge + 2, y + 1) +
-                        " "
+                        "  "
                     );
                 }
+
+                // Now, print the score
+                floor.Append(
+                    CsiSequences.GenerateCsiCursorPosition(1, 1) +
+                    ColorTools.RenderRevertBackground() +
+                    ColorTools.RenderSetConsoleColor(FloorColor) +
+                    Translate.DoTranslation("Score") +
+                    $": {SnakeLength - 1}"
+                );
 
                 // Render the result
                 return floor.ToString();
@@ -129,10 +139,10 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             var snakeForeColor = ColorTools.GetGray(SnakeColor, ColorContrastType.Ntsc);
 
             // A typical snake usually starts in the middle.
-            int FloorTopEdge = 1;
+            int FloorTopEdge = 2;
             int FloorBottomEdge = ConsoleWrapper.WindowHeight - 2;
             int FloorLeftEdge = 3;
-            int FloorRightEdge = ConsoleWrapper.WindowWidth - 4;
+            int FloorRightEdge = ConsoleWrapper.WindowWidth - 3;
             DebugWriter.WriteDebug(DebugLevel.I, "Floor top edge {0}", FloorTopEdge);
             DebugWriter.WriteDebug(DebugLevel.I, "Floor bottom edge {0}", FloorBottomEdge);
             DebugWriter.WriteDebug(DebugLevel.I, "Floor left edge {0}", FloorLeftEdge);
@@ -157,7 +167,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             {
                 StringBuilder buffer = new();
                 FloorBottomEdge = ConsoleWrapper.WindowHeight - 2;
-                FloorRightEdge = ConsoleWrapper.WindowWidth - 4;
+                FloorRightEdge = ConsoleWrapper.WindowWidth - 3;
 
                 // Remove excess mass and set the snake color
                 buffer.Append(
