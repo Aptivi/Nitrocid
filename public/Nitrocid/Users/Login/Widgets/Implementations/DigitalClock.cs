@@ -23,6 +23,7 @@ using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Time;
 using Nitrocid.Kernel.Time.Renderers;
 using System.Text;
+using Terminaux.Base;
 using Terminaux.Colors;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.FancyWriters;
@@ -69,7 +70,7 @@ namespace Nitrocid.Users.Login.Widgets.Implementations
                 int consoleInfoY = (height / 2) + figHeight + 2;
                 display.Append(
                     clockColor.VTSequenceForeground +
-                    CenteredTextColor.RenderCenteredOneLine(consoleInfoY, dateStr) +
+                    CenteredTextColor.RenderCenteredOneLine(consoleInfoY, dateStr, left, ConsoleWrapper.WindowWidth - (left + width)) +
                     KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground
                 );
             }

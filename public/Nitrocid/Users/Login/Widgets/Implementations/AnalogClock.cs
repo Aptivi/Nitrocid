@@ -24,12 +24,14 @@ using Nitrocid.Kernel.Time;
 using Nitrocid.Kernel.Time.Renderers;
 using System;
 using System.Text;
+using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Graphics;
 using Terminaux.Graphics.Shapes;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.FancyWriters;
 
 namespace Nitrocid.Users.Login.Widgets.Implementations
 {
@@ -72,11 +74,10 @@ namespace Nitrocid.Users.Login.Widgets.Implementations
             string renderedTime = TimeDateRenderers.RenderTime();
             string rendered = $"{renderedDate} / {renderedTime}";
             int posY = height - 2;
-            int posX = width / 2 - rendered.Length / 2;
 
             // Clear old date/time
             int oldPosX = width / 2 - lastRendered.Length / 2;
-            builder.Append(TextWriterWhereColor.RenderWhereColor(new string(' ', ConsoleChar.EstimateCellWidth(lastRendered)), oldPosX, posY, timeColor));
+            builder.Append(CenteredTextColor.RenderCentered(posY, new string(' ', ConsoleChar.EstimateCellWidth(lastRendered)), timeColor, left, ConsoleWrapper.WindowWidth - (left + width)));
 
             // Clear old bezels
             builder.Append(GraphicsTools.RenderLine(lastCenter, lastHours, ColorTools.CurrentBackgroundColor));
@@ -85,14 +86,14 @@ namespace Nitrocid.Users.Login.Widgets.Implementations
                 builder.Append(GraphicsTools.RenderLine(lastCenter, lastSeconds, ColorTools.CurrentBackgroundColor));
 
             // Write date and time
-            builder.Append(TextWriterWhereColor.RenderWhereColor(rendered, posX, posY, timeColor));
+            builder.Append(CenteredTextColor.RenderCentered(posY, rendered, timeColor, left, ConsoleWrapper.WindowWidth - (left + width)));
             lastRendered = rendered;
 
             // Now, draw the bezel
             int bezelTop = 2;
             int bezelHeight = height - bezelTop * 2 - 3;
             int bezelWidth = bezelHeight * 2;
-            int bezelLeft = width / 2 - bezelHeight;
+            int bezelLeft = width / 2 - bezelHeight + left;
             (int x, int y) radius = (bezelLeft + bezelWidth / 2, bezelTop + bezelHeight / 2);
             int bezelRadius = radius.y - bezelTop;
             var bezel = new Circle(bezelHeight, bezelLeft, bezelTop, false, bezelColor);
