@@ -210,13 +210,14 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             ScreenTools.SetCurrent(screen);
 
             // Main loop
+            double factor = 1.0;
             while (!Dead)
             {
                 // Delay
                 if (Simulation)
-                    ThreadManager.SleepNoBlock(AmusementsInit.SaversConfig.SnakerDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                    ThreadManager.SleepNoBlock((int)(AmusementsInit.SaversConfig.SnakerDelay * factor), ScreensaverDisplayer.ScreensaverDisplayerThread);
                 else
-                    Thread.Sleep(AmusementsInit.SaversConfig.SnakerDelay);
+                    Thread.Sleep((int)(AmusementsInit.SaversConfig.SnakerDelay * factor));
                 ScreenTools.Render();
 
                 // Move the snake according to the mode
@@ -351,6 +352,8 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 if (SnakeCurrentX == SnakeAppleX & SnakeCurrentY == SnakeAppleY)
                 {
                     SnakeLength += 1;
+                    if (factor > 0.25)
+                        factor -= 0.01;
                     DebugWriter.WriteDebug(DebugLevel.I, "Snake grew up to {0}.", SnakeLength);
 
                     // Relocate the apple
