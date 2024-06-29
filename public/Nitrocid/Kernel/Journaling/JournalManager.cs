@@ -155,8 +155,12 @@ namespace Nitrocid.Kernel.Journaling
                 string Message = journal.Message;
 
                 // Now, print the entries
-                TextWriters.Write($"[{Date} {Time}] [{i + 1}] [{Status}]: ", false, KernelColorType.ListEntry);
-                TextWriters.Write(Message, true, KernelColorType.ListEntry);
+                var finalColor =
+                    Status == JournalStatus.Error ? KernelColorType.Error :
+                    Status == JournalStatus.Warning ? KernelColorType.Warning :
+                    KernelColorType.NeutralText;
+                TextWriters.Write($"[{Date} {Time}] [{i + 1}] [{Status}] : ", false, KernelColorType.ListEntry);
+                TextWriters.Write(Message, true, finalColor);
             }
         }
 

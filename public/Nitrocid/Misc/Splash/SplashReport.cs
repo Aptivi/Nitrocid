@@ -42,7 +42,7 @@ namespace Nitrocid.Misc.Splash
         internal static string _ProgressText = "";
         internal static bool _KernelBooted = false;
         internal static bool _InSplash = false;
-        internal static readonly List<string> logBuffer = [];
+        internal static readonly List<SplashReportInfo> logBuffer = [];
 
         /// <summary>
         /// The progress indicator of the kernel 
@@ -71,7 +71,7 @@ namespace Nitrocid.Misc.Splash
         /// <summary>
         /// Log buffer of the boot process
         /// </summary>
-        public static string[] LogBuffer =>
+        public static SplashReportInfo[] LogBuffer =>
             [.. logBuffer];
 
         /// <summary>
@@ -246,7 +246,8 @@ namespace Nitrocid.Misc.Splash
                 }
 
                 // Add to the log buffer
-                logBuffer.Add($"[{TimeDateRenderers.Render(FormatType.Short)}] [{_Progress}%] {severity.ToString()[0]}: {TextTools.FormatString(Text, Vars)}");
+                var reportInfo = new SplashReportInfo(TimeDateTools.KernelDateTime, _Progress, severity, TextTools.FormatString(Text, Vars));
+                logBuffer.Add(reportInfo);
             }
             else if (KernelBooted && !KernelEntry.QuietKernel && (SplashManager.EnableSplash && !InSplash || !SplashManager.EnableSplash))
             {

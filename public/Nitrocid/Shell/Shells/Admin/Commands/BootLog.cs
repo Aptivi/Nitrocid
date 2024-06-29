@@ -37,7 +37,14 @@ namespace Nitrocid.Shell.Shells.Admin.Commands
         {
             var logLines = SplashReport.LogBuffer;
             foreach (var line in logLines)
-                TextWriters.Write(line, true, KernelColorType.ListEntry);
+            {
+                var finalColor =
+                    line.Severity == SplashReportSeverity.Error ? KernelColorType.Error :
+                    line.Severity == SplashReportSeverity.Warning ? KernelColorType.Warning :
+                    KernelColorType.NeutralText;
+                TextWriters.Write($"[{line.Time}] [{line.Progress}%] [{line.Severity}] : ", false, KernelColorType.ListEntry);
+                TextWriters.Write(line.RenderedMessage, true, finalColor);
+            }
             return 0;
         }
     }
