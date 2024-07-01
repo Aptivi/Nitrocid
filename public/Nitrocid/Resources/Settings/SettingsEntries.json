@@ -1318,6 +1318,18 @@
                 "Description": "How many milliseconds to wait before updating the CPU usage and printing it to the debugger?",
                 "MinimumValue": 1000,
                 "MaximumValue": 1000000
+            },
+            {
+                "Name": "Mouse support",
+                "Type": "SBoolean",
+                "Variable": "InitializeCursorHandler",
+                "Description": "Whether to initialize the mouse support for the kernel or not, essentially enabling all mods to handle the mouse pointer."
+            },
+            {
+                "Name": "Mouse movement support",
+                "Type": "SBoolean",
+                "Variable": "HandleCursorMovement",
+                "Description": "Whether to also enable the movement events or not, improving the user experience of some interactive applications."
             }
         ]
     }

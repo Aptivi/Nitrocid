@@ -367,6 +367,10 @@ namespace Nitrocid.Kernel.Starting
                 SplashReport.logBuffer.Clear();
                 DebugWriter.WriteDebug(DebugLevel.I, "Boot log buffer reset");
 
+                // Stop cursor handler
+                ConsolePointerHandler.StopHandler();
+                DebugWriter.WriteDebug(DebugLevel.I, "Stopped the cursor handler.");
+
                 // Disable Debugger
                 if (KernelEntry.DebugMode)
                 {

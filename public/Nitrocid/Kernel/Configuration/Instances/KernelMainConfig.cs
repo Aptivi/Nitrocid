@@ -51,6 +51,8 @@ using Terminaux.Inputs.Styles.Selection;
 using Terminaux.Inputs.Interactive;
 using Nitrocid.Misc.Reflection.Internal;
 using Nitrocid.Users.Login;
+using Nitrocid.ConsoleBase;
+using Terminaux.Inputs.Pointer;
 
 namespace Nitrocid.Kernel.Configuration.Instances
 {
@@ -1554,6 +1556,34 @@ namespace Nitrocid.Kernel.Configuration.Instances
         {
             get => CpuUsageDebug.usageIntervalUpdatePeriod;
             set => CpuUsageDebug.usageIntervalUpdatePeriod = value >= 1000 ? value : 1000;
+        }
+        /// <summary>
+        /// Whether to initialize the mouse support for the kernel or not, essentially enabling all mods to handle the mouse pointer
+        /// </summary>
+        public bool InitializeCursorHandler
+        {
+            get => ConsolePointerHandler.enableHandler;
+            set
+            {
+                if (value)
+                {
+                    ConsolePointerHandler.enableHandler = true;
+                    ConsolePointerHandler.StartHandler();
+                }
+                else
+                {
+                    ConsolePointerHandler.StopHandler();
+                    ConsolePointerHandler.enableHandler = false;
+                }
+            }
+        }
+        /// <summary>
+        /// Whether to also enable the movement events or not, improving the user experience of some interactive applications
+        /// </summary>
+        public bool HandleCursorMovement
+        {
+            get => PointerListener.EnableMovementEvents;
+            set => PointerListener.EnableMovementEvents = value;
         }
         #endregion
     }
