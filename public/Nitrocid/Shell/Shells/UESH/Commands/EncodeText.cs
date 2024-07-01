@@ -55,6 +55,8 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 var encoded = driver.GetEncodedString(orig);
                 string decomposed = driver.DecomposeBytesFromString(encoded);
                 TextWriters.Write(decomposed, true, KernelColorType.Success);
+                if (driver.TryRepresentAsText(encoded, out string strEncoded))
+                    TextWriters.Write(Translate.DoTranslation("Encoded as string") + $": {strEncoded}", true, KernelColorType.Success);
             }
             else
             {
@@ -76,6 +78,8 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 }
                 string decomposed = driver.DecomposeBytesFromString(encoded);
                 TextWriters.Write(decomposed, true, KernelColorType.Success);
+                if (driver.TryRepresentAsText(encoded, out string strEncoded))
+                    TextWriters.Write(Translate.DoTranslation("Encoded as string") + $": {strEncoded}", true, KernelColorType.Success);
 
                 // Now, print out the key and the IV used
                 string keyDecomposed = driver.DecomposeBytesFromString(key);

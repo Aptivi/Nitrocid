@@ -135,5 +135,20 @@ namespace Nitrocid.Drivers.EncodingAsymmetric
                 encodedStringBuilder.Append($"{value:000}");
             return encodedStringBuilder.ToString();
         }
+
+        /// <inheritdoc/>
+        public bool TryRepresentAsText(byte[] encoded, out string strEncoded)
+        {
+            strEncoded = null;
+            string text = TextEncoding.Default.GetString(encoded);
+            for (int i = 0; i < text.Length; i++)
+            {
+                char textChar = text[i];
+                if (char.IsControl(textChar))
+                    return false;
+            }
+            strEncoded = text;
+            return true;
+        }
     }
 }

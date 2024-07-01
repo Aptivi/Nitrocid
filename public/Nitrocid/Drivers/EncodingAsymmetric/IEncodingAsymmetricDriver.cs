@@ -64,6 +64,14 @@ namespace Nitrocid.Drivers.EncodingAsymmetric
         string DecomposeBytesFromString(byte[] encoded);
 
         /// <summary>
+        /// Tries to represent encoded text as a real string
+        /// </summary>
+        /// <param name="encoded">Encoded byte array to try to represent as text</param>
+        /// <param name="strEncoded">Output text, or empty if the <paramref name="encoded"/> array contains binary characters</param>
+        /// <returns>True if it can be represented; false otherwise.</returns>
+        bool TryRepresentAsText(byte[] encoded, out string strEncoded);
+
+        /// <summary>
         /// Encodes a file
         /// </summary>
         /// <param name="path">Path to the file to encode (non-neutralized)</param>
