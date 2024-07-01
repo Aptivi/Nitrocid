@@ -25,6 +25,7 @@ using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Kernel.Time;
 using Nitrocid.Kernel.Time.Renderers;
 using Nitrocid.Languages;
 using System;
@@ -75,8 +76,8 @@ namespace Nitrocid.Kernel.Journaling
                 DebugWriter.WriteDebug(DebugLevel.I, "Journal message {0}, status {1}.", Message, Status.ToString());
                 var JournalEntry = new JournalEntry()
                 {
-                    date = TimeDateRenderers.RenderDate(),
-                    time = TimeDateRenderers.RenderTime(),
+                    date = TimeDateRenderers.RenderDate(FormatType.Short),
+                    time = TimeDateRenderers.RenderTime(FormatType.Short),
                     status = Status.ToString(),
                     message = Message,
                 };
