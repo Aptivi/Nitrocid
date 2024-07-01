@@ -24,12 +24,12 @@ using Nitrocid.Languages;
 using System.Security.Cryptography;
 using TextEncoding = System.Text.Encoding;
 
-namespace Nitrocid.Drivers.Encoding.Bases
+namespace Nitrocid.Drivers.EncodingAsymmetric.Bases
 {
     /// <summary>
     /// RSA encoder
     /// </summary>
-    public class RsaEncoding : BaseEncodingDriver, IEncodingDriver
+    public class RsaEncoding : BaseEncodingAsymmetricDriver, IEncodingAsymmetricDriver
     {
         private RSA rsa;
 
@@ -37,23 +37,11 @@ namespace Nitrocid.Drivers.Encoding.Bases
         public override string DriverName => "RSA";
 
         /// <inheritdoc/>
-        public override DriverTypes DriverType => DriverTypes.Encoding;
+        public override DriverTypes DriverType => DriverTypes.EncodingAsymmetric;
 
         /// <inheritdoc/>
         public override object Instance =>
             rsa;
-
-        /// <inheritdoc/>
-        public override bool IsSymmetric =>
-            false;
-
-        /// <inheritdoc/>
-        public override byte[] Key =>
-            throw new KernelException(KernelExceptionType.NotImplementedYet, Translate.DoTranslation("RSA doesn't support keys"));
-
-        /// <inheritdoc/>
-        public override byte[] Iv =>
-            throw new KernelException(KernelExceptionType.NotImplementedYet, Translate.DoTranslation("RSA doesn't support initialization vectors"));
 
         /// <inheritdoc/>
         public override void Initialize() =>
@@ -82,14 +70,6 @@ namespace Nitrocid.Drivers.Encoding.Bases
             string plaintext = TextEncoding.Default.GetString(decrypted);
             return plaintext;
         }
-
-        /// <inheritdoc/>
-        public override byte[] GetEncodedString(string text, byte[] key, byte[] iv) =>
-            GetEncodedString(text);
-
-        /// <inheritdoc/>
-        public override string GetDecodedString(byte[] encoded, byte[] key, byte[] iv) =>
-            GetDecodedString(encoded);
 
         /// <inheritdoc/>
         public override void EncodeFile(string path)
@@ -122,13 +102,5 @@ namespace Nitrocid.Drivers.Encoding.Bases
             // Write the array of bytes
             Writing.WriteAllBytes(path, decrypted);
         }
-
-        /// <inheritdoc/>
-        public override void EncodeFile(string path, byte[] key, byte[] iv) =>
-            EncodeFile(path);
-
-        /// <inheritdoc/>
-        public override void DecodeFile(string path, byte[] key, byte[] iv) =>
-            DecodeFile(path);
     }
 }

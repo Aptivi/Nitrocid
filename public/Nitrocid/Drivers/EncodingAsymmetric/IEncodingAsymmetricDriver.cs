@@ -17,27 +17,17 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace Nitrocid.Drivers.Encoding
+namespace Nitrocid.Drivers.EncodingAsymmetric
 {
     /// <summary>
-    /// Base encryptor interface for an encoding algorithm
+    /// Base encryptor interface for an asymmetric encoding algorithm
     /// </summary>
-    public interface IEncodingDriver : IDriver
+    public interface IEncodingAsymmetricDriver : IDriver
     {
         /// <summary>
         /// An instance of the encoding class to use for encoding operations. Should be populated by Initialize.
         /// </summary>
         object Instance { get; }
-
-        /// <summary>
-        /// For symmetric encoding drivers, this is the key used
-        /// </summary>
-        byte[] Key { get; }
-
-        /// <summary>
-        /// For symmetric encoding drivers, this is the initialization vector used
-        /// </summary>
-        byte[] Iv { get; }
 
         /// <summary>
         /// Initializes encoding. Must be called once for each driver.
@@ -57,24 +47,6 @@ namespace Nitrocid.Drivers.Encoding
         /// <param name="encoded">Encoded text to decode</param>
         /// <returns>Resulting decoded string</returns>
         string GetDecodedString(byte[] encoded);
-
-        /// <summary>
-        /// Gets the encoded string in the array of bytes
-        /// </summary>
-        /// <param name="text">Text to encode</param>
-        /// <param name="key">Key to use while encoding</param>
-        /// <param name="iv">Initialization vector</param>
-        /// <returns>Array of bytes containing encoded data</returns>
-        byte[] GetEncodedString(string text, byte[] key, byte[] iv);
-
-        /// <summary>
-        /// Gets the decoded string from the array of bytes
-        /// </summary>
-        /// <param name="encoded">Encoded text to decode</param>
-        /// <param name="key">Key to use while decoding</param>
-        /// <param name="iv">Initialization vector</param>
-        /// <returns>Resulting decoded string</returns>
-        string GetDecodedString(byte[] encoded, byte[] key, byte[] iv);
 
         /// <summary>
         /// Composes an array of bytes from the string that satisfies the following format:
@@ -102,21 +74,5 @@ namespace Nitrocid.Drivers.Encoding
         /// </summary>
         /// <param name="path">Path to the file to decode (non-neutralized)</param>
         void DecodeFile(string path);
-
-        /// <summary>
-        /// Encodes a file
-        /// </summary>
-        /// <param name="path">Path to the file to encode (non-neutralized)</param>
-        /// <param name="key">Key to use while encoding</param>
-        /// <param name="iv">Initialization vector</param>
-        void EncodeFile(string path, byte[] key, byte[] iv);
-
-        /// <summary>
-        /// Decodes a file
-        /// </summary>
-        /// <param name="path">Path to the file to decode (non-neutralized)</param>
-        /// <param name="key">Key to use while decoding</param>
-        /// <param name="iv">Initialization vector</param>
-        void DecodeFile(string path, byte[] key, byte[] iv);
     }
 }

@@ -53,10 +53,6 @@ namespace Nitrocid.Drivers.Encoding
             aes;
 
         /// <inheritdoc/>
-        public virtual bool IsSymmetric =>
-            true;
-
-        /// <inheritdoc/>
         public virtual byte[] Key =>
             aes.Key;
 

@@ -22,44 +22,40 @@ using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
+using System.Collections.Generic;
+using System.Runtime.Serialization;
+using System.Text;
 using Textify.General;
 using TextEncoding = System.Text.Encoding;
 
-namespace Nitrocid.Drivers.Encoding.Bases
+namespace Nitrocid.Drivers.EncodingAsymmetric
 {
     /// <summary>
-    /// BASE64 encoder
+    /// BASE64 encoding
     /// </summary>
-    public class Base64Encoding : BaseEncodingDriver, IEncodingDriver
+    [DataContract]
+    public abstract class BaseEncodingAsymmetricDriver : IEncodingAsymmetricDriver
     {
         /// <inheritdoc/>
-        public override string DriverName => "BASE64";
+        public virtual string DriverName => "Default";
 
         /// <inheritdoc/>
-        public override DriverTypes DriverType => DriverTypes.Encoding;
+        public virtual DriverTypes DriverType => DriverTypes.EncodingAsymmetric;
 
         /// <inheritdoc/>
-        public override object Instance =>
+        public virtual object Instance =>
             null;
 
         /// <inheritdoc/>
-        public override bool IsSymmetric =>
+        public bool DriverInternal =>
             false;
 
         /// <inheritdoc/>
-        public override byte[] Key =>
-            throw new KernelException(KernelExceptionType.NotImplementedYet, Translate.DoTranslation("BASE64 doesn't support keys"));
-
-        /// <inheritdoc/>
-        public override byte[] Iv =>
-            throw new KernelException(KernelExceptionType.NotImplementedYet, Translate.DoTranslation("BASE64 doesn't support initialization vectors"));
-
-        /// <inheritdoc/>
-        public override void Initialize() =>
+        public virtual void Initialize() =>
             DebugWriter.WriteDebug(DebugLevel.I, "Base64 encoding.");
 
         /// <inheritdoc/>
-        public override byte[] GetEncodedString(string text)
+        public virtual byte[] GetEncodedString(string text)
         {
             if (string.IsNullOrEmpty(text))
                 throw new KernelException(KernelExceptionType.Encoding, Translate.DoTranslation("The text must not be empty."));
@@ -70,7 +66,7 @@ namespace Nitrocid.Drivers.Encoding.Bases
         }
 
         /// <inheritdoc/>
-        public override string GetDecodedString(byte[] encoded)
+        public virtual string GetDecodedString(byte[] encoded)
         {
             if (encoded is null || encoded.Length <= 0)
                 throw new KernelException(KernelExceptionType.Encoding, Translate.DoTranslation("The encoded text must not be empty."));
@@ -81,15 +77,7 @@ namespace Nitrocid.Drivers.Encoding.Bases
         }
 
         /// <inheritdoc/>
-        public override byte[] GetEncodedString(string text, byte[] key, byte[] iv) =>
-            GetEncodedString(text);
-
-        /// <inheritdoc/>
-        public override string GetDecodedString(byte[] encoded, byte[] key, byte[] iv) =>
-            GetDecodedString(encoded);
-
-        /// <inheritdoc/>
-        public override void EncodeFile(string path)
+        public virtual void EncodeFile(string path)
         {
             if (string.IsNullOrEmpty(path))
                 throw new KernelException(KernelExceptionType.Encoding, Translate.DoTranslation("The path must not be empty."));
@@ -105,7 +93,7 @@ namespace Nitrocid.Drivers.Encoding.Bases
         }
 
         /// <inheritdoc/>
-        public override void DecodeFile(string path)
+        public virtual void DecodeFile(string path)
         {
             if (string.IsNullOrEmpty(path))
                 throw new KernelException(KernelExceptionType.Encoding, Translate.DoTranslation("The path must not be empty."));
@@ -122,11 +110,30 @@ namespace Nitrocid.Drivers.Encoding.Bases
         }
 
         /// <inheritdoc/>
-        public override void EncodeFile(string path, byte[] key, byte[] iv) =>
-            EncodeFile(path);
+        public virtual byte[] ComposeBytesFromString(string encoded)
+        {
+            if (string.IsNullOrEmpty(encoded))
+                throw new KernelException(KernelExceptionType.Encoding, Translate.DoTranslation("The encoded text must not be empty."));
+
+            // Get the wrapped bytes, assuming that all the byte numbers are padded to three digits.
+            string[] encodedStrings = TextTools.GetWrappedSentences(encoded, 3);
+            List<byte> bytes = [];
+            foreach (string encodedString in encodedStrings)
+                bytes.Add(byte.Parse(encodedString));
+            return [.. bytes];
+        }
 
         /// <inheritdoc/>
-        public override void DecodeFile(string path, byte[] key, byte[] iv) =>
-            DecodeFile(path);
+        public virtual string DecomposeBytesFromString(byte[] encoded)
+        {
+            if (encoded is null || encoded.Length <= 0)
+                throw new KernelException(KernelExceptionType.Encoding, Translate.DoTranslation("The encoded text must not be empty."));
+
+            // Pad the encoded byte numbers to three digits and return them as a single string
+            StringBuilder encodedStringBuilder = new();
+            foreach (var value in encoded)
+                encodedStringBuilder.Append($"{value:000}");
+            return encodedStringBuilder.ToString();
+        }
     }
 }
