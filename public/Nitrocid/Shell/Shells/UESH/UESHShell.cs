@@ -48,13 +48,6 @@ namespace Nitrocid.Shell.Shells.UESH
         {
             while (!Bail)
             {
-                if (Login.LogoutRequested)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Requested log out: {0}", Login.LogoutRequested);
-                    Login.LogoutRequested = false;
-                    Login.LoggedIn = false;
-                    Bail = true;
-                }
                 else if (!ScreensaverManager.InSaver)
                 {
                     try

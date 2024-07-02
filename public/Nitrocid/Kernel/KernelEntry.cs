@@ -41,6 +41,7 @@ using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Network.Types.RSS;
 using Terminaux.Colors;
+using Nitrocid.Shell.Homepage;
 
 namespace Nitrocid.Kernel
 {
@@ -178,7 +179,17 @@ namespace Nitrocid.Kernel
 
                 // Initialize shell
                 DebugWriter.WriteDebug(DebugLevel.I, "Shell is being initialized.");
-                ShellManager.StartShellInternal(ShellType.Shell);
+                while (!Login.LogoutRequested)
+                {
+                    HomepageTools.OpenHomepage();
+                    ShellManager.StartShellInternal(ShellType.Shell);
+                    if (Login.LogoutRequested)
+                    {
+                        DebugWriter.WriteDebug(DebugLevel.I, "Requested log out: {0}", Login.LogoutRequested);
+                        Login.LogoutRequested = false;
+                        Login.LoggedIn = false;
+                    }
+                }
             }
         }
     }

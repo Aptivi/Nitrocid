@@ -43,6 +43,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             if (ShellManager.ShellStack.Count == 1)
             {
                 Login.LogoutRequested = true;
+                ShellManager.KillShellInternal();
                 return 0;
             }
             else
