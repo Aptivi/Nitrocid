@@ -17,11 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace Nitrocid.Drivers.EncodingAsymmetric.Bases
+using Nitrocid.Drivers.EncodingAsymmetric;
+using System.Runtime.Serialization;
+
+namespace Nitrocid.Tests.Drivers.DriverData
 {
-    /// <summary>
-    /// BASE64 encoder
-    /// </summary>
-    public class Base64Encoding : BaseEncodingAsymmetricDriver, IEncodingAsymmetricDriver
-    { }
+    [DataContract]
+    internal class MyCustomEncodingAsymmetricDriver : BaseEncodingAsymmetricDriver, IEncodingAsymmetricDriver
+    {
+        public override string DriverName => "MyCustom";
+    }
 }
