@@ -29,6 +29,10 @@ using Nitrocid.Misc.Text.Probers.Regexp;
 using Nitrocid.Files.Operations.Querying;
 using Textify.General;
 using VisualCard.Parts.Implementations;
+using Terminaux.Images;
+using Terminaux.Colors;
+using System.IO;
+using Terminaux.Base;
 
 namespace Nitrocid.Extras.Contacts.Contacts.Interactives
 {
@@ -45,14 +49,14 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             // Operations
             new InteractiveTuiBinding("Delete", ConsoleKey.F1, (_, index) => RemoveContact(index)),
             new InteractiveTuiBinding("Delete All", ConsoleKey.F2, (_, _) => RemoveContacts()),
-            new InteractiveTuiBinding("Import", ConsoleKey.F3, (_, _) => ImportContacts()),
-            new InteractiveTuiBinding("Import From", ConsoleKey.F4, (_, _) => ImportContactsFrom()),
+            new InteractiveTuiBinding("Import", ConsoleKey.F3, (_, _) => ImportContacts(), true),
+            new InteractiveTuiBinding("Import From", ConsoleKey.F4, (_, _) => ImportContactsFrom(), true),
             new InteractiveTuiBinding("Info", ConsoleKey.F5, (_, index) => ShowContactInfo(index)),
             new InteractiveTuiBinding("Search", ConsoleKey.F6, (_, _) => SearchBox()),
             new InteractiveTuiBinding("Search Next", ConsoleKey.F7, (_, _) => SearchNext()),
             new InteractiveTuiBinding("Search Back", ConsoleKey.F8, (_, _) => SearchPrevious()),
             new InteractiveTuiBinding("Raw Info", ConsoleKey.F9, (_, index) => ShowContactRawInfo(index)),
-            new InteractiveTuiBinding("Import From MeCard", ConsoleKey.F10, (_, _) => ImportContactFromMeCard()),
+            new InteractiveTuiBinding("Import From MeCard", ConsoleKey.F10, (_, _) => ImportContactFromMeCard(), true),
         ];
 
         /// <inheritdoc/>
@@ -72,6 +76,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                 return Translate.DoTranslation("There is no contact. If you'd like to import contacts, please use the import options using the keystrokes defined at the bottom of the screen.");
 
             // Generate the rendered text
+            string finalRenderedContactPicture = GetContactPictureFinal(selectedContact, (ConsoleWrapper.WindowWidth / 2) - 4, ConsoleWrapper.WindowHeight / 2, InteractiveTuiStatus.BackgroundColor);
             string finalRenderedContactName = GetContactNameFinal(selectedContact);
             string finalRenderedContactAddress = GetContactAddressFinal(selectedContact);
             string finalRenderedContactMail = GetContactMailFinal(selectedContact);
@@ -81,6 +86,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
 
             // Render them to the second pane
             return
+                (!string.IsNullOrEmpty(finalRenderedContactPicture) ? finalRenderedContactName + CharManager.NewLine : "") +
                 finalRenderedContactName + CharManager.NewLine +
                 finalRenderedContactAddress + CharManager.NewLine +
                 finalRenderedContactMail + CharManager.NewLine +
@@ -201,6 +207,16 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             finalInfoRendered.AppendLine(finalRenderedContactTitles);
             string finalRenderedContactNotes = GetContactNotesFinal(index);
             finalInfoRendered.AppendLine(finalRenderedContactNotes);
+
+            // If there is a profile picture, print it
+            string picture = GetContactPictureFinal(index, ConsoleWrapper.WindowWidth - 8, ConsoleWrapper.WindowHeight, InteractiveTuiStatus.BoxBackgroundColor);
+            if (!string.IsNullOrEmpty(picture))
+            {
+                finalInfoRendered.AppendLine("\n");
+                finalInfoRendered.AppendLine(picture);
+            }
+
+            // Add a prompt to close
             finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
 
             // Now, render the info box
@@ -564,6 +580,30 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                 finalInfoRendered.Append(Translate.DoTranslation("Contact notes") + $": {card.GetPartsArray<NoteInfo>()[0]}");
             else
                 finalInfoRendered.Append(Translate.DoTranslation("No contact notes"));
+
+            // Now, return the value
+            return finalInfoRendered.ToString();
+        }
+
+        private static string GetContactPictureFinal(int index, int width, int height, Color background = null)
+        {
+            // Render the final information string
+            var card = ContactsManager.GetContact(index);
+            return GetContactPictureFinal(card, width, height, background);
+        }
+
+        private static string GetContactPictureFinal(Card card, int width, int height, Color background = null)
+        {
+            // Render the final information string
+            var finalInfoRendered = new StringBuilder();
+            bool hasPicture = card.GetPartsArray<PhotoInfo>().Length > 0;
+
+            if (hasPicture)
+            {
+                Stream imageStream = card.GetPartsArray<PhotoInfo>()[0].GetStream();
+                string finalPicture = ImageProcessor.RenderImage(imageStream, width, height, background);
+                finalInfoRendered.Append(finalPicture);
+            }
 
             // Now, return the value
             return finalInfoRendered.ToString();
