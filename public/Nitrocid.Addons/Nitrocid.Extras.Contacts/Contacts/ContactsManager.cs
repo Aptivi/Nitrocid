@@ -174,6 +174,8 @@ namespace Nitrocid.Extras.Contacts.Contacts
                     DebugWriter.WriteDebug(DebugLevel.I, "VCard version: {0}", vcard.CardVersion);
                     DebugWriter.WriteDebug(DebugLevel.D, "Contents:");
                     DebugWriter.WriteDebugPrivacy(DebugLevel.D, "{0}", [0], vcard.ToString());
+                    if (!ContactsManager.cards.Contains(vcard))
+                        ContactsManager.cards.Add(vcard);
                     DebugWriter.WriteDebugPrivacy(DebugLevel.I, "Parser successfully processed contact {0}.", [0], vcard.GetPartsArray<FullNameInfo>()[0].FullName);
                 }
                 DebugWriter.WriteDebug(DebugLevel.I, "Cards: {0}", cards.Length);

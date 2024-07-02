@@ -86,7 +86,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
 
             // Render them to the second pane
             return
-                (!string.IsNullOrEmpty(finalRenderedContactPicture) ? finalRenderedContactName + CharManager.NewLine : "") +
+                (!string.IsNullOrEmpty(finalRenderedContactPicture) ? finalRenderedContactPicture + CharManager.NewLine : "") +
                 finalRenderedContactName + CharManager.NewLine +
                 finalRenderedContactAddress + CharManager.NewLine +
                 finalRenderedContactMail + CharManager.NewLine +
