@@ -152,44 +152,46 @@ namespace Nitrocid.Kernel
                 if (PowerManager.RebootRequested || PowerManager.KernelShutdown)
                     continue;
 
-                // Show MAL
-                BaseLoginHandler.ShowMOTDOnceFlag = true;
-                if (BaseLoginHandler.ShowMAL)
-                {
-                    TextWriters.Write(PlaceParse.ProbePlaces(MalParse.MalMessage), true, KernelColorType.Banner);
-                    MalParse.ProcessDynamicMal();
-                }
-                DebugWriter.WriteDebug(DebugLevel.I, "Loaded MAL.");
-
-                // Show current time
-                if (TimeDateTools.ShowCurrentTimeBeforeLogin)
-                    TimeDateMiscRenderers.ShowCurrentTimes();
-                TextWriterRaw.Write();
-
-                // Show headline
-                RSSTools.ShowHeadlineLogin();
-                DebugWriter.WriteDebug(DebugLevel.I, "Loaded headline.");
-
-                // Show the tip
-                if (WelcomeMessage.ShowTip)
-                    WelcomeMessage.ShowRandomTip();
-
-                // Show a tip telling users to see license information
-                TextWriters.Write("* " + Translate.DoTranslation("Run 'license' to see the license information."), KernelColorType.Tip);
-
                 // Initialize shell
                 DebugWriter.WriteDebug(DebugLevel.I, "Shell is being initialized.");
                 while (!Login.LogoutRequested)
                 {
                     HomepageTools.OpenHomepage();
+
+                    // Show MAL
+                    BaseLoginHandler.ShowMOTDOnceFlag = true;
+                    if (BaseLoginHandler.ShowMAL)
+                    {
+                        TextWriters.Write(PlaceParse.ProbePlaces(MalParse.MalMessage), true, KernelColorType.Banner);
+                        MalParse.ProcessDynamicMal();
+                    }
+                    DebugWriter.WriteDebug(DebugLevel.I, "Loaded MAL.");
+
+                    // Show current time
+                    if (TimeDateTools.ShowCurrentTimeBeforeLogin)
+                        TimeDateMiscRenderers.ShowCurrentTimes();
+                    TextWriterRaw.Write();
+
+                    // Show headline
+                    RSSTools.ShowHeadlineLogin();
+                    DebugWriter.WriteDebug(DebugLevel.I, "Loaded headline.");
+
+                    // Show the tip
+                    if (WelcomeMessage.ShowTip)
+                        WelcomeMessage.ShowRandomTip();
+
+                    // Show a tip telling users to see license information
+                    TextWriters.Write("* " + Translate.DoTranslation("Run 'license' to see the license information."), KernelColorType.Tip);
+
+                    // Start the shell
                     ShellManager.StartShellInternal(ShellType.Shell);
                     if (Login.LogoutRequested)
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Requested log out: {0}", Login.LogoutRequested);
-                        Login.LogoutRequested = false;
                         Login.LoggedIn = false;
                     }
                 }
+                Login.LogoutRequested = false;
             }
         }
     }

@@ -48,7 +48,7 @@ namespace Nitrocid.Shell.Shells.UESH
         {
             while (!Bail)
             {
-                else if (!ScreensaverManager.InSaver)
+                if (!ScreensaverManager.InSaver)
                 {
                     try
                     {
