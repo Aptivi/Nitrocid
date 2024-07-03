@@ -39,6 +39,7 @@ using Nitrocid.Users.Login.Motd;
 using Nitrocid.Network.Types.RSS;
 using Nitrocid.Users.Login.Widgets;
 using Nitrocid.Users.Login.Widgets.Implementations;
+using Nitrocid.Kernel;
 
 namespace Nitrocid.Users.Login
 {
@@ -105,116 +106,132 @@ namespace Nitrocid.Users.Login
                 string headlineStr = "";
                 while (true)
                 {
-                    if (screenNum == 1)
+                    try
                     {
-                        // Main screen. Print the time.
-                        string timeStr = TimeDateRenderers.RenderTime(FormatType.Short);
-                        if (timeStr != cachedTimeStr)
+                        if (screenNum == 1)
                         {
+                            // Main screen. Print the time.
+                            string timeStr = TimeDateRenderers.RenderTime(FormatType.Short);
+                            if (timeStr != cachedTimeStr)
+                            {
+                                screen.RemoveBufferedParts();
+                                var part = new ScreenPart();
+                                part.AddDynamicText(() =>
+                                {
+                                    var display = new StringBuilder();
+
+                                    // Clear the console and write the time using figlet
+                                    display.Append(
+                                        CsiSequences.GenerateCsiCursorPosition(1, 1) +
+                                        CsiSequences.GenerateCsiEraseInDisplay(0)
+                                    );
+                                    cachedTimeStr = TimeDateRenderers.RenderTime(FormatType.Short);
+                                    var figFont = FigletTools.GetFigletFont(Config.MainConfig.DefaultFigletFontName);
+                                    int figHeight = FigletTools.GetFigletHeight(timeStr, figFont) / 2;
+                                    display.Append(
+                                        KernelColorTools.GetColor(KernelColorType.Stage).VTSequenceForeground +
+                                        CenteredFigletTextColor.RenderCenteredFiglet(figFont, timeStr)
+                                    );
+
+                                    // Print the date
+                                    string dateStr = $"{TimeDateRenderers.RenderDate()}";
+                                    int consoleInfoY = ConsoleWrapper.WindowHeight / 2 + figHeight + 2;
+                                    display.Append(
+                                        CenteredTextColor.RenderCenteredOneLine(consoleInfoY, dateStr) +
+                                        KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground
+                                    );
+
+                                    // Print the headline
+                                    if (RSSTools.ShowHeadlineOnLogin)
+                                    {
+                                        if (string.IsNullOrEmpty(headlineStr))
+                                            headlineStr = UpdateHeadline();
+                                        int consoleHeadlineInfoY =
+                                            MotdHeadlineBottom ?
+                                            ConsoleWrapper.WindowHeight / 2 + figHeight + 3 :
+                                            ConsoleWrapper.WindowHeight / 2 - figHeight - 2;
+                                        display.Append(
+                                            CenteredTextColor.RenderCenteredOneLine(consoleHeadlineInfoY, headlineStr)
+                                        );
+                                    }
+
+                                    // Print the MOTD
+                                    string[] motdStrs = TextTools.GetWrappedSentences(MotdParse.MotdMessage, ConsoleWrapper.WindowWidth - 4);
+                                    for (int i = 0; i < motdStrs.Length && i < 2; i++)
+                                    {
+                                        string motdStr = motdStrs[i];
+                                        int consoleMotdInfoY =
+                                            MotdHeadlineBottom ?
+                                            ConsoleWrapper.WindowHeight / 2 + figHeight + 4 + i :
+                                            ConsoleWrapper.WindowHeight / 2 - figHeight - (RSSTools.ShowHeadlineOnLogin ? 4 : 2) + i;
+                                        display.Append(
+                                            CenteredTextColor.RenderCenteredOneLine(consoleMotdInfoY, motdStr)
+                                        );
+                                    }
+
+                                    // Print the instructions
+                                    string instStr = Translate.DoTranslation("Press any key to start, or ESC for more options...");
+                                    int consoleInstY = ConsoleWrapper.WindowHeight - 2;
+                                    display.Append(
+                                        CenteredTextColor.RenderCenteredOneLine(consoleInstY, instStr)
+                                    );
+
+                                    // Print everything
+                                    return display.ToString();
+                                });
+                                screen.AddBufferedPart("Date/time widget updater", part);
+
+                                // Render it now
+                                ScreenTools.Render();
+                            }
+                        }
+                        else if (screenNum == 2)
+                        {
+                            // Place for first widget
                             screen.RemoveBufferedParts();
                             var part = new ScreenPart();
-                            part.AddDynamicText(() =>
-                            {
-                                var display = new StringBuilder();
+                            if (!renderedFully)
+                                part.AddDynamicText(FirstWidget.Initialize);
+                            part.AddDynamicText(FirstWidget.Render);
+                            screen.AddBufferedPart("Widget 1 updater", part);
 
-                                // Clear the console and write the time using figlet
-                                display.Append(
-                                    CsiSequences.GenerateCsiCursorPosition(1, 1) +
-                                    CsiSequences.GenerateCsiEraseInDisplay(0)
-                                );
-                                cachedTimeStr = TimeDateRenderers.RenderTime(FormatType.Short);
-                                var figFont = FigletTools.GetFigletFont(Config.MainConfig.DefaultFigletFontName);
-                                int figHeight = FigletTools.GetFigletHeight(timeStr, figFont) / 2;
-                                display.Append(
-                                    KernelColorTools.GetColor(KernelColorType.Stage).VTSequenceForeground +
-                                    CenteredFigletTextColor.RenderCenteredFiglet(figFont, timeStr)
-                                );
+                            // Render it now
+                            ScreenTools.Render();
+                        }
+                        else if (screenNum == 3)
+                        {
+                            // Place for second widget
+                            screen.RemoveBufferedParts();
+                            var part = new ScreenPart();
+                            if (!renderedFully)
+                                part.AddDynamicText(SecondWidget.Initialize);
+                            part.AddDynamicText(SecondWidget.Render);
+                            screen.AddBufferedPart("Widget 2 updater", part);
 
-                                // Print the date
-                                string dateStr = $"{TimeDateRenderers.RenderDate()}";
-                                int consoleInfoY = ConsoleWrapper.WindowHeight / 2 + figHeight + 2;
-                                display.Append(
-                                    CenteredTextColor.RenderCenteredOneLine(consoleInfoY, dateStr) +
-                                    KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground
-                                );
-
-                                // Print the headline
-                                if (RSSTools.ShowHeadlineOnLogin)
-                                {
-                                    if (string.IsNullOrEmpty(headlineStr))
-                                        headlineStr = UpdateHeadline();
-                                    int consoleHeadlineInfoY =
-                                        MotdHeadlineBottom ?
-                                        ConsoleWrapper.WindowHeight / 2 + figHeight + 3 :
-                                        ConsoleWrapper.WindowHeight / 2 - figHeight - 2;
-                                    display.Append(
-                                        CenteredTextColor.RenderCenteredOneLine(consoleHeadlineInfoY, headlineStr)
-                                    );
-                                }
-
-                                // Print the MOTD
-                                string[] motdStrs = TextTools.GetWrappedSentences(MotdParse.MotdMessage, ConsoleWrapper.WindowWidth - 4);
-                                for (int i = 0; i < motdStrs.Length && i < 2; i++)
-                                {
-                                    string motdStr = motdStrs[i];
-                                    int consoleMotdInfoY =
-                                        MotdHeadlineBottom ?
-                                        ConsoleWrapper.WindowHeight / 2 + figHeight + 4 + i :
-                                        ConsoleWrapper.WindowHeight / 2 - figHeight - (RSSTools.ShowHeadlineOnLogin ? 4 : 2) + i;
-                                    display.Append(
-                                        CenteredTextColor.RenderCenteredOneLine(consoleMotdInfoY, motdStr)
-                                    );
-                                }
-
-                                // Print the instructions
-                                string instStr = Translate.DoTranslation("Press any key to start, or ESC for more options...");
-                                int consoleInstY = ConsoleWrapper.WindowHeight - 2;
-                                display.Append(
-                                    CenteredTextColor.RenderCenteredOneLine(consoleInstY, instStr)
-                                );
-
-                                // Print everything
-                                return display.ToString();
-                            });
-                            screen.AddBufferedPart("Date/time widget updater", part);
+                            // Render it now
+                            ScreenTools.Render();
+                        }
+                        else
+                        {
+                            // Unknown screen!
+                            screen.RemoveBufferedParts();
+                            var part = new ScreenPart();
+                            part.AddDynamicText(() => CenteredTextColor.RenderCentered(Translate.DoTranslation("Unknown screen number.")));
+                            screen.AddBufferedPart("Unknown widget updater", part);
 
                             // Render it now
                             ScreenTools.Render();
                         }
                     }
-                    else if (screenNum == 2)
+                    catch (Exception ex) when (ex is not ThreadInterruptedException)
                     {
-                        // Place for first widget
+                        // An error occurred!
                         screen.RemoveBufferedParts();
                         var part = new ScreenPart();
-                        if (!renderedFully)
-                            part.AddDynamicText(FirstWidget.Initialize);
-                        part.AddDynamicText(FirstWidget.Render);
-                        screen.AddBufferedPart("Widget 1 updater", part);
-
-                        // Render it now
-                        ScreenTools.Render();
-                    }
-                    else if (screenNum == 3)
-                    {
-                        // Place for second widget
-                        screen.RemoveBufferedParts();
-                        var part = new ScreenPart();
-                        if (!renderedFully)
-                            part.AddDynamicText(SecondWidget.Initialize);
-                        part.AddDynamicText(SecondWidget.Render);
-                        screen.AddBufferedPart("Widget 2 updater", part);
-
-                        // Render it now
-                        ScreenTools.Render();
-                    }
-                    else
-                    {
-                        // Unknown screen!
-                        screen.RemoveBufferedParts();
-                        var part = new ScreenPart();
-                        part.AddDynamicText(() => CenteredTextColor.RenderCentered(Translate.DoTranslation("Unknown screen number.")));
-                        screen.AddBufferedPart("Unknown widget updater", part);
+                        part.AddDynamicText(() => CenteredTextColor.RenderCentered(Translate.DoTranslation("Failed to render the logon screen.") + (KernelEntry.DebugMode ? $"\n\n{Translate.DoTranslation("Investigate the debug logs for more information about the error.")}" : "")));
+                        DebugWriter.WriteDebug(DebugLevel.E, $"Error rendering the modern logon: {ex.Message}");
+                        DebugWriter.WriteDebugStackTrace(ex);
+                        screen.AddBufferedPart("Error updater", part);
 
                         // Render it now
                         ScreenTools.Render();
