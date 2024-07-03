@@ -208,6 +208,10 @@ namespace Nitrocid.Kernel.Extensions
         /// CRC32C (Castagnoli) Extras addon
         /// </summary>
         ExtrasCrc32C,
+        /// <summary>
+        /// Stocks Extras addon
+        /// </summary>
+        ExtrasStocks,
         #endregion
     }
 }

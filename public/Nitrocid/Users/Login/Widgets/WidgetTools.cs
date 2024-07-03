@@ -246,5 +246,27 @@ namespace Nitrocid.Users.Login.Widgets
             var customNames = customWidgets.Select(GetWidgetName).ToArray();
             return [.. baseNames, .. customNames];
         }
+
+        internal static void AddBaseWidget(BaseWidget widget)
+        {
+            if (widget is null)
+                throw new KernelException(KernelExceptionType.Widget, Translate.DoTranslation("Widget is not provided."));
+            string widgetName = GetWidgetName(widget);
+            if (CheckWidget(widgetName))
+                throw new KernelException(KernelExceptionType.Widget, Translate.DoTranslation("Widget already exists."));
+            baseWidgets.Add(widget);
+        }
+
+        internal static void RemoveBaseWidget(string widgetName)
+        {
+            if (string.IsNullOrWhiteSpace(widgetName))
+                throw new KernelException(KernelExceptionType.Widget, Translate.DoTranslation("Widget name is not provided."));
+            if (!CheckWidget(widgetName))
+                throw new KernelException(KernelExceptionType.Widget, Translate.DoTranslation("Widget doesn't exist."));
+            if (!IsWidgetBuiltin(widgetName))
+                throw new KernelException(KernelExceptionType.Widget, Translate.DoTranslation("Widget is not a built-in widget."));
+            var widget = GetWidget(widgetName);
+            baseWidgets.Remove(widget);
+        }
     }
 }

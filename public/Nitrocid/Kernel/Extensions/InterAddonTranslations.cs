@@ -80,6 +80,7 @@ namespace Nitrocid.Kernel.Extensions
             { KnownAddons.ExtrasSha384Enhanced,         /* Localizable */ "Extras - Enhanced SHA384" },
             { KnownAddons.ExtrasSha512Enhanced,         /* Localizable */ "Extras - Enhanced SHA512" },
             { KnownAddons.ExtrasCrc32C,                 /* Localizable */ "Extras - CRC32C (Castagnoli)" },
+            { KnownAddons.ExtrasStocks,                 /* Localizable */ "Extras - Stocks" },
             #endregion
         };
 
