@@ -32,7 +32,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
         public override void Run(params string[] args)
         {
             string rendered = args.Length > 0 ? args[0] : "Hi, {0}!";
-            TextFancyWriters.WriteCenteredFiglet(FigletFonts.TryGetByName("speed"), rendered, KernelColorType.Success, "Nitrocid KS");
+            TextFancyWriters.WriteCenteredFiglet(FigletFonts.TryGetByName("speed"), rendered, KernelColorType.Success, 0, 0, "Nitrocid KS");
         }
     }
 }

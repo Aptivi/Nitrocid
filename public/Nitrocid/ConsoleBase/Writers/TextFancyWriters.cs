@@ -322,9 +322,11 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="FigletFont">Figlet font to use in the text.</param>
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered figlet.</param>
         /// <param name="ColTypes">A type of colors that will be changed.</param>
+        /// <param name="leftMargin">Left margin</param>
+        /// <param name="rightMargin">Right margin</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredFiglet(int top, FigletFont FigletFont, string Text, KernelColorType ColTypes, params object[] Vars) =>
-            CenteredFigletTextColor.WriteCenteredFigletColorBack(top, FigletFont, Text, KernelColorTools.GetColor(ColTypes), KernelColorTools.GetColor(KernelColorType.Background), Vars);
+        public static void WriteCenteredFiglet(int top, FigletFont FigletFont, string Text, KernelColorType ColTypes, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
+            CenteredFigletTextColor.WriteCenteredFigletColorBack(top, FigletFont, Text, KernelColorTools.GetColor(ColTypes), KernelColorTools.GetColor(KernelColorType.Background), leftMargin, rightMargin, Vars);
 
         /// <summary>
         /// Draw a centered figlet with text
@@ -334,9 +336,11 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered figlet.</param>
         /// <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
         /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
+        /// <param name="leftMargin">Left margin</param>
+        /// <param name="rightMargin">Right margin</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredFiglet(int top, FigletFont FigletFont, string Text, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] Vars) =>
-            CenteredFigletTextColor.WriteCenteredFigletColorBack(top, FigletFont, Text, KernelColorTools.GetColor(colorTypeForeground), KernelColorTools.GetColor(colorTypeBackground), Vars);
+        public static void WriteCenteredFiglet(int top, FigletFont FigletFont, string Text, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
+            CenteredFigletTextColor.WriteCenteredFigletColorBack(top, FigletFont, Text, KernelColorTools.GetColor(colorTypeForeground), KernelColorTools.GetColor(colorTypeBackground), leftMargin, rightMargin, Vars);
 
         /// <summary>
         /// Draw a centered figlet with text
@@ -344,9 +348,11 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="FigletFont">Figlet font to use in the text.</param>
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered figlet.</param>
         /// <param name="ColTypes">A type of colors that will be changed.</param>
+        /// <param name="leftMargin">Left margin</param>
+        /// <param name="rightMargin">Right margin</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredFiglet(FigletFont FigletFont, string Text, KernelColorType ColTypes, params object[] Vars) =>
-            CenteredFigletTextColor.WriteCenteredFigletColorBack(FigletFont, Text, KernelColorTools.GetColor(ColTypes), KernelColorTools.GetColor(KernelColorType.Background), Vars);
+        public static void WriteCenteredFiglet(FigletFont FigletFont, string Text, KernelColorType ColTypes, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
+            CenteredFigletTextColor.WriteCenteredFigletColorBack(FigletFont, Text, KernelColorTools.GetColor(ColTypes), KernelColorTools.GetColor(KernelColorType.Background), leftMargin, rightMargin, Vars);
 
         /// <summary>
         /// Draw a centered figlet with text
@@ -355,9 +361,11 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered figlet.</param>
         /// <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
         /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
+        /// <param name="leftMargin">Left margin</param>
+        /// <param name="rightMargin">Right margin</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredFiglet(FigletFont FigletFont, string Text, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] Vars) =>
-            CenteredFigletTextColor.WriteCenteredFigletColorBack(FigletFont, Text, KernelColorTools.GetColor(colorTypeForeground), KernelColorTools.GetColor(colorTypeBackground), Vars);
+        public static void WriteCenteredFiglet(FigletFont FigletFont, string Text, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
+            CenteredFigletTextColor.WriteCenteredFigletColorBack(FigletFont, Text, KernelColorTools.GetColor(colorTypeForeground), KernelColorTools.GetColor(colorTypeBackground), leftMargin, rightMargin, Vars);
 
         /// <summary>
         /// Draws a centered text
@@ -461,12 +469,14 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
         /// <param name="FigletFont">Figlet font to use in the text.</param>
         /// <param name="ColTypes">A type of colors that will be changed.</param>
+        /// <param name="leftMargin">Left margin</param>
+        /// <param name="rightMargin">Right margin</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteFiglet(string Text, FigletFont FigletFont, KernelColorType ColTypes, params object[] Vars)
+        public static void WriteFiglet(string Text, FigletFont FigletFont, KernelColorType ColTypes, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
         {
             try
             {
-                TextWriterRaw.WritePlain(FigletColor.RenderFigletPlain(Text, FigletFont, KernelColorTools.GetColor(ColTypes), KernelColorTools.GetColor(KernelColorType.Background), Vars), false);
+                TextWriterRaw.WritePlain(FigletColor.RenderFiglet(Text, FigletFont, KernelColorTools.GetColor(ColTypes), KernelColorTools.GetColor(KernelColorType.Background), leftMargin, rightMargin, Vars), false);
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
@@ -482,12 +492,14 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="FigletFont">Figlet font to use in the text.</param>
         /// <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
         /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
+        /// <param name="leftMargin">Left margin</param>
+        /// <param name="rightMargin">Right margin</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteFiglet(string Text, FigletFont FigletFont, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] Vars)
+        public static void WriteFiglet(string Text, FigletFont FigletFont, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
         {
             try
             {
-                TextWriterRaw.WritePlain(FigletColor.RenderFigletPlain(Text, FigletFont, KernelColorTools.GetColor(colorTypeForeground), KernelColorTools.GetColor(colorTypeBackground), Vars), false);
+                TextWriterRaw.WritePlain(FigletColor.RenderFiglet(Text, FigletFont, KernelColorTools.GetColor(colorTypeForeground), KernelColorTools.GetColor(colorTypeBackground), leftMargin, rightMargin, Vars), false);
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
@@ -505,8 +517,10 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="Return">Whether or not to return to old position</param>
         /// <param name="FigletFont">Figlet font to use in the text.</param>
         /// <param name="ColTypes">A type of colors that will be changed.</param>
+        /// <param name="leftMargin">Left margin</param>
+        /// <param name="rightMargin">Right margin</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteFigletWhere(string Text, int Left, int Top, bool Return, FigletFont FigletFont, KernelColorType ColTypes, params object[] Vars)
+        public static void WriteFigletWhere(string Text, int Left, int Top, bool Return, FigletFont FigletFont, KernelColorType ColTypes, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
         {
             try
             {
@@ -514,7 +528,7 @@ namespace Nitrocid.ConsoleBase.Writers
                 KernelColorTools.SetConsoleColorDry(ColTypes);
 
                 // Actually write
-                FigletWhereColor.WriteFigletWherePlain(Text, Left, Top, Return, FigletFont, Vars);
+                FigletWhereColor.WriteFigletWherePlain(Text, Left, Top, Return, FigletFont, leftMargin, rightMargin, Vars);
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
@@ -533,8 +547,10 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="FigletFont">Figlet font to use in the text.</param>
         /// <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
         /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
+        /// <param name="leftMargin">Left margin</param>
+        /// <param name="rightMargin">Right margin</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteFigletWhere(string Text, int Left, int Top, bool Return, FigletFont FigletFont, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] Vars)
+        public static void WriteFigletWhere(string Text, int Left, int Top, bool Return, FigletFont FigletFont, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
         {
             try
             {
@@ -543,7 +559,7 @@ namespace Nitrocid.ConsoleBase.Writers
                 KernelColorTools.SetConsoleColorDry(colorTypeBackground, true);
 
                 // Actually write
-                FigletWhereColor.WriteFigletWherePlain(Text, Left, Top, Return, FigletFont, Vars);
+                FigletWhereColor.WriteFigletWherePlain(Text, Left, Top, Return, FigletFont, leftMargin, rightMargin, Vars);
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {

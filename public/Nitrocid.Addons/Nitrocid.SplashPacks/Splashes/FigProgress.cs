@@ -227,7 +227,7 @@ namespace Nitrocid.SplashPacks.Splashes
             for (int i = consoleY; i <= consoleY + figHeight; i++)
                 builder.Append(TextWriterWhereColor.RenderWhere(ConsoleClearing.GetClearLineToRightSequence(), 0, i, true));
             builder.Append(
-                CenteredFigletTextColor.RenderCenteredFiglet(consoleY, figFont, text, Vars) +
+                CenteredFigletTextColor.RenderCenteredFiglet(consoleY, figFont, text, 0, 0, Vars) +
                 TextWriterWhereColor.RenderWhere(ConsoleClearing.GetClearLineToRightSequence(), 0, consoleY - 2, true) +
                 CenteredTextColor.RenderCenteredOneLine(consoleY - 2, ProgressReport, 0, 0, Vars)
             );
