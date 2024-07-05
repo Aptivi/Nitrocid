@@ -31,6 +31,7 @@ using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Modifications;
 using System.Linq;
+using Nitrocid.Shell.ShellBase.Switches;
 
 namespace Nitrocid.Extras.Contacts
 {
@@ -45,7 +46,38 @@ namespace Nitrocid.Extras.Contacts
             new CommandInfo("contacts", /* Localizable */ "Manages your contacts",
                 [
                     new CommandArgumentInfo()
-                ], new ContactsCommand())
+                ], new ContactsCommand()),
+            new CommandInfo("listcontacts", /* Localizable */ "Lists your contacts",
+                [
+                    new CommandArgumentInfo()
+                ], new ListContactsCommand()),
+            new CommandInfo("loadcontacts", /* Localizable */ "Loads your contacts",
+                [
+                    new CommandArgumentInfo()
+                ], new LoadContactsCommand()),
+            new CommandInfo("importcontacts", /* Localizable */ "Imports your contacts",
+                [
+                    new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "mecard/path")
+                        ],
+                        [
+                            new SwitchInfo("mecard", /* Localizable */ "Treats the required input as MeCard string", new(){
+                                AcceptsValues = false,
+                            }),
+                        ]
+                    )
+                ], new ImportContactsCommand()),
+            new CommandInfo("contactinfo", /* Localizable */ "Gets contact information",
+                [
+                    new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "contactNum", new(){
+                                IsNumeric = true
+                            })
+                        ]
+                    )
+                ], new ContactInfoCommand()),
         ];
 
         string IAddon.AddonName =>
