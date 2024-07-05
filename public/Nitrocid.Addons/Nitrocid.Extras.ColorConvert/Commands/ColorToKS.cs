@@ -19,9 +19,11 @@
 
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Extras.ColorConvert.Tools;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Colors.Models;
 
 namespace Nitrocid.Extras.ColorConvert.Commands
 {
@@ -37,32 +39,88 @@ namespace Nitrocid.Extras.ColorConvert.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             // Check to see if we have the numeric arguments
-            if (!int.TryParse(parameters.ArgumentsList[0], out int C))
+            int fourth = 0;
+            if (!int.TryParse(parameters.ArgumentsList[2], out int first))
             {
-                TextWriters.Write(Translate.DoTranslation("The cyan color level must be numeric."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("The first color level must be numeric."), true, KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Color);
             }
-            if (!int.TryParse(parameters.ArgumentsList[1], out int M))
+            if (!int.TryParse(parameters.ArgumentsList[3], out int second))
             {
-                TextWriters.Write(Translate.DoTranslation("The magenta color level must be numeric."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("The second color level must be numeric."), true, KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Color);
             }
-            if (!int.TryParse(parameters.ArgumentsList[2], out int Y))
+            if (!int.TryParse(parameters.ArgumentsList[4], out int third))
             {
-                TextWriters.Write(Translate.DoTranslation("The yellow color level must be numeric."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("The third color level must be numeric."), true, KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Color);
             }
-            if (!int.TryParse(parameters.ArgumentsList[3], out int K))
+            if (parameters.ArgumentsList.Length > 5 && !int.TryParse(parameters.ArgumentsList[3], out fourth))
             {
-                TextWriters.Write(Translate.DoTranslation("The black key level must be numeric."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("The fourth key level must be numeric."), true, KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Color);
             }
 
+            // Check the source and the target models
+            string source = parameters.ArgumentsList[0];
+            string target = parameters.ArgumentsList[1];
+            var modelConvert = ColorConvertTools.GetConvertFuncFromModel(source, target);
+            if (modelConvert is null)
+            {
+                TextWriters.Write(Translate.DoTranslation("Model specification is invalid."), true, KernelColorType.Error);
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.Color);
+            }
+            var modelConverted = modelConvert.Invoke(first, second, third, fourth);
+
             // Do the job
-            var CMY = KernelColorConversionTools.ConvertFromCmykToCmy(C, M, Y, K);
-            TextWriters.Write("- " + Translate.DoTranslation("CMY color sequence:") + " ", false, KernelColorType.ListEntry);
-            TextWriters.Write($"{CMY}", true, KernelColorType.ListValue);
-            variableValue = CMY;
+            switch (target)
+            {
+                case "rgb":
+                    var rgb = ((RedGreenBlue)modelConverted).ToString();
+                    TextWriters.Write(rgb, KernelColorType.NeutralText);
+                    variableValue = rgb;
+                    break;
+                case "ryb":
+                    var ryb = ((RedYellowBlue)modelConverted).ToString();
+                    TextWriters.Write(ryb, KernelColorType.NeutralText);
+                    variableValue = ryb;
+                    break;
+                case "cmy":
+                    var cmy = ((CyanMagentaYellow)modelConverted).ToString();
+                    TextWriters.Write(cmy, KernelColorType.NeutralText);
+                    variableValue = cmy;
+                    break;
+                case "cmyk":
+                    var cmyk = ((CyanMagentaYellowKey)modelConverted).ToString();
+                    TextWriters.Write(cmyk, KernelColorType.NeutralText);
+                    variableValue = cmyk;
+                    break;
+                case "hsv":
+                    var hsv = ((HueSaturationValue)modelConverted).ToString();
+                    TextWriters.Write(hsv, KernelColorType.NeutralText);
+                    variableValue = hsv;
+                    break;
+                case "hsl":
+                    var hsl = ((HueSaturationLightness)modelConverted).ToString();
+                    TextWriters.Write(hsl, KernelColorType.NeutralText);
+                    variableValue = hsl;
+                    break;
+                case "yiq":
+                    var yiq = ((LumaInPhaseQuadrature)modelConverted).ToString();
+                    TextWriters.Write(yiq, KernelColorType.NeutralText);
+                    variableValue = yiq;
+                    break;
+                case "yuv":
+                    var yuv = ((LumaChromaUv)modelConverted).ToString();
+                    TextWriters.Write(yuv, KernelColorType.NeutralText);
+                    variableValue = yuv;
+                    break;
+                case "xyz":
+                    var xyz = ((Xyz)modelConverted).ToString();
+                    TextWriters.Write(xyz, KernelColorType.NeutralText);
+                    variableValue = xyz;
+                    break;
+            }
             return 0;
         }
 

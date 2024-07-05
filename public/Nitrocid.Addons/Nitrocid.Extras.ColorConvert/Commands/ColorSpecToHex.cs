@@ -22,6 +22,7 @@ using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Colors;
 
 namespace Nitrocid.Extras.ColorConvert.Commands
 {
@@ -31,38 +32,15 @@ namespace Nitrocid.Extras.ColorConvert.Commands
     /// <remarks>
     /// If you want to get the target color model representation in hex from the source color model specifier, you can use this command.
     /// </remarks>
-    class ColorToKSCommand : BaseCommand, ICommand
+    class ColorSpecToHexCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            // Check to see if we have the numeric arguments
-            if (!int.TryParse(parameters.ArgumentsList[0], out int C))
-            {
-                TextWriters.Write(Translate.DoTranslation("The cyan color level must be numeric."), true, KernelColorType.Error);
-                return KernelExceptionTools.GetErrorCode(KernelExceptionType.Color);
-            }
-            if (!int.TryParse(parameters.ArgumentsList[1], out int M))
-            {
-                TextWriters.Write(Translate.DoTranslation("The magenta color level must be numeric."), true, KernelColorType.Error);
-                return KernelExceptionTools.GetErrorCode(KernelExceptionType.Color);
-            }
-            if (!int.TryParse(parameters.ArgumentsList[2], out int Y))
-            {
-                TextWriters.Write(Translate.DoTranslation("The yellow color level must be numeric."), true, KernelColorType.Error);
-                return KernelExceptionTools.GetErrorCode(KernelExceptionType.Color);
-            }
-            if (!int.TryParse(parameters.ArgumentsList[3], out int K))
-            {
-                TextWriters.Write(Translate.DoTranslation("The black key level must be numeric."), true, KernelColorType.Error);
-                return KernelExceptionTools.GetErrorCode(KernelExceptionType.Color);
-            }
-
             // Do the job
-            var CMY = KernelColorConversionTools.ConvertFromCmykToCmy(C, M, Y, K);
-            TextWriters.Write("- " + Translate.DoTranslation("CMY color sequence:") + " ", false, KernelColorType.ListEntry);
-            TextWriters.Write($"{CMY}", true, KernelColorType.ListValue);
-            variableValue = CMY;
+            var color = new Color(parameters.ArgumentsList[0]).ToString();
+            TextWriters.Write(color, KernelColorType.NeutralText);
+            variableValue = color;
             return 0;
         }
 

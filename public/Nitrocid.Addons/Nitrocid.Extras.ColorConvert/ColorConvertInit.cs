@@ -134,7 +134,7 @@ namespace Nitrocid.Extras.ColorConvert
                         }),
                         new CommandArgumentPart(true, "specifier"),
                     ], true)
-                ], new ColorToHexCommand()),
+                ], new ColorSpecToCommand()),
             
             new CommandInfo("colorspectoks", /* Localizable */ "Converts the source color model using the color specifier to the target color model in KS format.",
                 [
@@ -146,7 +146,7 @@ namespace Nitrocid.Extras.ColorConvert
                         }),
                         new CommandArgumentPart(true, "specifier"),
                     ], true)
-                ], new ColorToHexCommand()),
+                ], new ColorSpecToKSCommand()),
             
             new CommandInfo("colorspectohex", /* Localizable */ "Converts the source color model using the color specifier to the target color model in hex.",
                 [
@@ -154,7 +154,7 @@ namespace Nitrocid.Extras.ColorConvert
                     [
                         new CommandArgumentPart(true, "specifier"),
                     ], true)
-                ], new ColorToHexCommand()),
+                ], new ColorSpecToHexCommand()),
         ];
 
         string IAddon.AddonName =>
