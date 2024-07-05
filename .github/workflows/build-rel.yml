@@ -11,6 +11,7 @@ jobs:
     strategy:
       matrix:
         runs-on: [ubuntu-latest, windows-latest, macos-latest]
+      fail-fast: false
     runs-on: ${{ matrix.runs-on }}
 
     steps:
