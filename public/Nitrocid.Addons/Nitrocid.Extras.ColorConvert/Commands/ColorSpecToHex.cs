@@ -22,18 +22,16 @@ using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
-using Terminaux.Colors;
-using Terminaux.Colors.Models.Conversion;
 
 namespace Nitrocid.Extras.ColorConvert.Commands
 {
     /// <summary>
-    /// Converts the color CMY numbers to YUV.
+    /// Converts the color specifier to hex.
     /// </summary>
     /// <remarks>
-    /// If you want to get the YUV representation of the color from the CMY color numbers, you can use this command.
+    /// If you want to get the target color model representation in hex from the source color model specifier, you can use this command.
     /// </remarks>
-    class ColorCmyToYuvCommand : BaseCommand, ICommand
+    class ColorToKSCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
@@ -54,17 +52,17 @@ namespace Nitrocid.Extras.ColorConvert.Commands
                 TextWriters.Write(Translate.DoTranslation("The yellow color level must be numeric."), true, KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Color);
             }
+            if (!int.TryParse(parameters.ArgumentsList[3], out int K))
+            {
+                TextWriters.Write(Translate.DoTranslation("The black key level must be numeric."), true, KernelColorType.Error);
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.Color);
+            }
 
             // Do the job
-            var color = new Color($"cmy:{C};{M};{Y}");
-            var yuv = ConversionTools.ToYuv(color.RGB);
-            TextWriters.Write("- " + Translate.DoTranslation("Luma:") + " ", false, KernelColorType.ListEntry);
-            TextWriters.Write($"{yuv.Luma}", true, KernelColorType.ListValue);
-            TextWriters.Write("- " + Translate.DoTranslation("U-Chroma:") + " ", false, KernelColorType.ListEntry);
-            TextWriters.Write($"{yuv.ChromaU}", true, KernelColorType.ListValue);
-            TextWriters.Write("- " + Translate.DoTranslation("V-Chroma:") + " ", false, KernelColorType.ListEntry);
-            TextWriters.Write($"{yuv.ChromaV}", true, KernelColorType.ListValue);
-            variableValue = yuv.ToString();
+            var CMY = KernelColorConversionTools.ConvertFromCmykToCmy(C, M, Y, K);
+            TextWriters.Write("- " + Translate.DoTranslation("CMY color sequence:") + " ", false, KernelColorType.ListEntry);
+            TextWriters.Write($"{CMY}", true, KernelColorType.ListValue);
+            variableValue = CMY;
             return 0;
         }
 

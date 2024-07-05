@@ -26,38 +26,43 @@ using Nitrocid.Shell.ShellBase.Commands;
 namespace Nitrocid.Extras.ColorConvert.Commands
 {
     /// <summary>
-    /// Converts the color YUV numbers to HSV in KS format.
+    /// Converts the color numbers to hex.
     /// </summary>
     /// <remarks>
-    /// If you want to get the semicolon-delimited sequence of the HSV color numbers from the YUV representation of the color, you can use this command. You can use this to form a valid color sequence to generate new color instances for your mods.
+    /// If you want to get the hexadecimal representation of the color from the color numbers, you can use this command.
     /// </remarks>
-    class ColorYuvToHsvKSCommand : BaseCommand, ICommand
+    class ColorToHexCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             // Check to see if we have the numeric arguments
-            if (!int.TryParse(parameters.ArgumentsList[0], out int Y))
+            if (!int.TryParse(parameters.ArgumentsList[0], out int C))
             {
-                TextWriters.Write(Translate.DoTranslation("The Y component level must be numeric."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("The cyan color level must be numeric."), true, KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Color);
             }
-            if (!int.TryParse(parameters.ArgumentsList[1], out int U))
+            if (!int.TryParse(parameters.ArgumentsList[1], out int M))
             {
-                TextWriters.Write(Translate.DoTranslation("The U component level must be numeric."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("The magenta color level must be numeric."), true, KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Color);
             }
-            if (!int.TryParse(parameters.ArgumentsList[2], out int V))
+            if (!int.TryParse(parameters.ArgumentsList[2], out int Y))
             {
-                TextWriters.Write(Translate.DoTranslation("The V component level must be numeric."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("The yellow color level must be numeric."), true, KernelColorType.Error);
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.Color);
+            }
+            if (!int.TryParse(parameters.ArgumentsList[3], out int K))
+            {
+                TextWriters.Write(Translate.DoTranslation("The black key level must be numeric."), true, KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Color);
             }
 
             // Do the job
-            string yuv = KernelColorConversionTools.ConvertFromYuvToHsv(Y, U, V);
-            TextWriters.Write("- " + Translate.DoTranslation("HSV color sequence:") + " ", false, KernelColorType.ListEntry);
-            TextWriters.Write(yuv, true, KernelColorType.ListValue);
-            variableValue = yuv;
+            string hex = KernelColorConversionTools.ConvertFromCmykToHex(C, M, Y, K);
+            TextWriters.Write("- " + Translate.DoTranslation("Color hexadecimal representation:") + " ", false, KernelColorType.ListEntry);
+            TextWriters.Write(hex, true, KernelColorType.ListValue);
+            variableValue = hex;
             return 0;
         }
 

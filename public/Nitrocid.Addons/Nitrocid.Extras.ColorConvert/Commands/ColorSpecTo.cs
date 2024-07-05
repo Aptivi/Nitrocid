@@ -28,12 +28,12 @@ using Terminaux.Colors.Models.Conversion;
 namespace Nitrocid.Extras.ColorConvert.Commands
 {
     /// <summary>
-    /// Converts the color CMYK numbers to CMY.
+    /// Converts the color specifier to the target color model.
     /// </summary>
     /// <remarks>
-    /// If you want to get the CMY representation of the color from the CMYK color numbers, you can use this command.
+    /// If you want to get the target color model representation from the source color model specifier, you can use this command.
     /// </remarks>
-    class ColorCmykToCmyCommand : BaseCommand, ICommand
+    class ColorSpecToCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)

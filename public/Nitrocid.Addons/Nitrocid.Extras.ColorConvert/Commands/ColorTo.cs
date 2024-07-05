@@ -22,16 +22,18 @@ using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Colors;
+using Terminaux.Colors.Models.Conversion;
 
 namespace Nitrocid.Extras.ColorConvert.Commands
 {
     /// <summary>
-    /// Converts the color CMY numbers to RYB in KS format.
+    /// Converts the color numbers to the target color model.
     /// </summary>
     /// <remarks>
-    /// If you want to get the semicolon-delimited sequence of the RYB color numbers from the CMY representation of the color, you can use this command. You can use this to form a valid color sequence to generate new color instances for your mods.
+    /// If you want to get the target color model representation from the source color model numbers, you can use this command.
     /// </remarks>
-    class ColorCmyToRybKSCommand : BaseCommand, ICommand
+    class ColorToCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
@@ -52,12 +54,22 @@ namespace Nitrocid.Extras.ColorConvert.Commands
                 TextWriters.Write(Translate.DoTranslation("The yellow color level must be numeric."), true, KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Color);
             }
+            if (!int.TryParse(parameters.ArgumentsList[3], out int K))
+            {
+                TextWriters.Write(Translate.DoTranslation("The black key level must be numeric."), true, KernelColorType.Error);
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.Color);
+            }
 
             // Do the job
-            var ryb = KernelColorConversionTools.ConvertFromCmyToRyb(C, M, Y);
-            TextWriters.Write("- " + Translate.DoTranslation("RYB color sequence:") + " ", false, KernelColorType.ListEntry);
-            TextWriters.Write($"{ryb}", true, KernelColorType.ListValue);
-            variableValue = ryb;
+            var rgb = new Color($"cmyk:{C};{M};{Y};{K}");
+            var cmy = ConversionTools.ToCmy(rgb.RGB);
+            TextWriters.Write("- " + Translate.DoTranslation("Cyan level:") + " ", false, KernelColorType.ListEntry);
+            TextWriters.Write($"{cmy.CWhole} [{cmy.C:0.00}]", true, KernelColorType.ListValue);
+            TextWriters.Write("- " + Translate.DoTranslation("Magenta level:") + " ", false, KernelColorType.ListEntry);
+            TextWriters.Write($"{cmy.MWhole} [{cmy.M:0.00}]", true, KernelColorType.ListValue);
+            TextWriters.Write("- " + Translate.DoTranslation("Yellow level:") + " ", false, KernelColorType.ListEntry);
+            TextWriters.Write($"{cmy.YWhole} [{cmy.Y:0.00}]", true, KernelColorType.ListValue);
+            variableValue = $"cmy:{cmy.CWhole};{cmy.MWhole};{cmy.YWhole}";
             return 0;
         }
 

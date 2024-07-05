@@ -22,47 +22,47 @@ using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
-using Terminaux.Colors;
 
 namespace Nitrocid.Extras.ColorConvert.Commands
 {
     /// <summary>
-    /// Converts the color YUV numbers to RGB.
+    /// Converts the color specifier to the target color model in KS format.
     /// </summary>
     /// <remarks>
-    /// If you want to get the RGB representation of the color from the HSL color numbers, you can use this command.
+    /// If you want to get the target color model representation in KS format from the source color model specifier, you can use this command.
     /// </remarks>
-    class ColorYuvToRgbCommand : BaseCommand, ICommand
+    class ColorSpecToKSCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             // Check to see if we have the numeric arguments
-            if (!int.TryParse(parameters.ArgumentsList[0], out int Y))
+            if (!int.TryParse(parameters.ArgumentsList[0], out int C))
             {
-                TextWriters.Write(Translate.DoTranslation("The Y component level must be numeric."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("The cyan color level must be numeric."), true, KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Color);
             }
-            if (!int.TryParse(parameters.ArgumentsList[1], out int U))
+            if (!int.TryParse(parameters.ArgumentsList[1], out int M))
             {
-                TextWriters.Write(Translate.DoTranslation("The U component level must be numeric."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("The magenta color level must be numeric."), true, KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Color);
             }
-            if (!int.TryParse(parameters.ArgumentsList[2], out int V))
+            if (!int.TryParse(parameters.ArgumentsList[2], out int Y))
             {
-                TextWriters.Write(Translate.DoTranslation("The V component level must be numeric."), true, KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("The yellow color level must be numeric."), true, KernelColorType.Error);
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.Color);
+            }
+            if (!int.TryParse(parameters.ArgumentsList[3], out int K))
+            {
+                TextWriters.Write(Translate.DoTranslation("The black key level must be numeric."), true, KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Color);
             }
 
             // Do the job
-            var color = new Color($"yuv:{Y};{U};{V}");
-            TextWriters.Write("- " + Translate.DoTranslation("Red color level:") + " ", false, KernelColorType.ListEntry);
-            TextWriters.Write($"{color.RGB.R}", true, KernelColorType.ListValue);
-            TextWriters.Write("- " + Translate.DoTranslation("Green color level:") + " ", false, KernelColorType.ListEntry);
-            TextWriters.Write($"{color.RGB.G}", true, KernelColorType.ListValue);
-            TextWriters.Write("- " + Translate.DoTranslation("Blue color level:") + " ", false, KernelColorType.ListEntry);
-            TextWriters.Write($"{color.RGB.B}", true, KernelColorType.ListValue);
-            variableValue = color.PlainSequence;
+            string hex = KernelColorConversionTools.ConvertFromCmykToHex(C, M, Y, K);
+            TextWriters.Write("- " + Translate.DoTranslation("Color hexadecimal representation:") + " ", false, KernelColorType.ListEntry);
+            TextWriters.Write(hex, true, KernelColorType.ListValue);
+            variableValue = hex;
             return 0;
         }
 
