@@ -177,17 +177,13 @@ namespace Nitrocid.Kernel.Extensions
         /// Unit Converter App Extras addon
         /// </summary>
         ExtrasUnitConv,
-        /// <summary>
-        /// HDD Uncleaner 2015 Legacy addon
-        /// </summary>
-        LegacyHddUncleaner,
         #endregion
 
         #region Since 0.1.1
         /// <summary>
         /// Unit Converter App Extras addon
         /// </summary>
-        ExtrasPastebin,
+        ExtrasPastebin = 39,
         /// <summary>
         /// Images Extras addon
         /// </summary>

@@ -70,7 +70,6 @@ namespace Nitrocid.Kernel.Extensions
             { KnownAddons.ExtrasTips,                   /* Localizable */ "Extras - Kernel Tips" },
             { KnownAddons.ExtrasToDoList,               /* Localizable */ "Extras - To-do List" },
             { KnownAddons.ExtrasUnitConv,               /* Localizable */ "Extras - Unit Converter" },
-            { KnownAddons.LegacyHddUncleaner,           /* Localizable */ "Legacy - HDD Uncleaner 2015" },
             #endregion
 
             #region Since 0.1.1
