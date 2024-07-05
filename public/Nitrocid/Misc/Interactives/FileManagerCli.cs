@@ -44,6 +44,7 @@ using Nitrocid.Files.Extensions;
 using Nitrocid.Files.Operations.Querying;
 using Textify.General;
 using Terminaux.Colors;
+using Magico.Files;
 
 namespace Nitrocid.Misc.Interactives
 {
@@ -300,7 +301,9 @@ namespace Nitrocid.Misc.Interactives
                         finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Newline style:") + " {0}", Style.ToString()));
                     }
                     finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Binary file:") + " {0}", isBinary));
-                    finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("MIME metadata:") + " {0}\n", MimeTypes.GetMimeType(fileInfo.Extension)));
+                    finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("MIME metadata:") + " {0}", MimeTypes.GetMimeType(fileInfo.Extension)));
+                    finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("MIME metadata (extended)") + ": {0}", MagicHandler.GetMagicMimeInfo(fileInfo.FullName)));
+                    finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("File type") + ": {0}\n", MagicHandler.GetMagicInfo(fileInfo.FullName)));
 
                     // .NET managed info
                     if (ReflectionCommon.IsDotnetAssemblyFile(fullPath, out AssemblyName asmName))
