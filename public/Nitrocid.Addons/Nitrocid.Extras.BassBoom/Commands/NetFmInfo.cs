@@ -25,7 +25,7 @@ using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Writer.FancyWriters;
 using BassBoom.Basolia.Radio;
 
-namespace Nitrocid.Extras.InternetRadioInfo.Commands
+namespace Nitrocid.Extras.BassBoom.Commands
 {
     class NetFmInfoCommand : BaseCommand, ICommand
     {

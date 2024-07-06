@@ -109,7 +109,16 @@ namespace Nitrocid.Extras.BassBoom
                     {
                         new CommandArgumentPart(true, "musicFile"),
                     })
-                ], new PlaySoundCommand())
+                ], new PlaySoundCommand()),
+
+            new CommandInfo("netfminfo", /* Localizable */ "Gets information about your online radio station",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "hostname"),
+                        new CommandArgumentPart(true, "port"),
+                    })
+                ], new NetFmInfoCommand()),
         ];
 
         string IAddon.AddonName =>
