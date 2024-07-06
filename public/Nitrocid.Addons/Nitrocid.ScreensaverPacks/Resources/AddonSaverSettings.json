@@ -6384,5 +6384,25 @@
                 "MaximumValue": 255
             }
         ]
+    },
+    {
+        "Name": "Aberration",
+        "Desc": "Simulates a hypothetical malfunctioning black screen with RGB lines sometimes appearing.",
+        "Keys": [
+            {
+                "Name": "Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "AberrationDelay",
+                "Description": "How many milliseconds to wait before making the next write?"
+            },
+            {
+                "Name": "Glitch Probability",
+                "Type": "SIntSlider",
+                "Variable": "AberrationProbability",
+                "Description": "Chance, in percent, for the screen glitch to occur",
+                "MinimumValue": 0,
+                "MaximumValue": 100
+            }
+        ]
     }
 ]

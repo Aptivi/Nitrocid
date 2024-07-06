@@ -14550,5 +14550,43 @@ namespace Nitrocid.ScreensaverPacks.Settings
             }
         }
         #endregion
+
+        #region Aberration
+        private int aberrationDelay = 100;
+        private int aberrationProbability = 5;
+
+        /// <summary>
+        /// [Aberration] How many milliseconds to wait before making the next write?
+        /// </summary>
+        public int AberrationDelay
+        {
+            get
+            {
+                return aberrationDelay;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 100;
+                aberrationDelay = value;
+            }
+        }
+        /// <summary>
+        /// [Aberration] Chance, in percent, for the screen glitch to occur
+        /// </summary>
+        public int AberrationProbability
+        {
+            get
+            {
+                return aberrationProbability;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 5;
+                aberrationProbability = value;
+            }
+        }
+        #endregion
     }
 }
