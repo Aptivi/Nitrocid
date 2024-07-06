@@ -83,6 +83,11 @@ namespace Nitrocid.Extras.Amusements
                     new CommandArgumentInfo()
                 ], new MeteorDodgeCommand()),
 
+            new CommandInfo("pong", /* Localizable */ "The ping-pong game!",
+                [
+                    new CommandArgumentInfo()
+                ], new PongCommand()),
+
             new CommandInfo("quote", /* Localizable */ "Gets a random quote",
                 [
                     new CommandArgumentInfo()
