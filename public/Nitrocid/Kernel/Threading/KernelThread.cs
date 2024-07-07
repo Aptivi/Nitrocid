@@ -353,7 +353,7 @@ namespace Nitrocid.Kernel.Threading
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Thread {0} [{1}, OS: {3}] failed: {2}", Name, ThreadId, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Thread {0} [{1}] failed: {2}", Name, ThreadId, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
                 KernelPanic.KernelErrorContinuable(Translate.DoTranslation("Kernel thread {0} failed.") + " {1}", ex, Name, ex.Message);
             }
@@ -369,7 +369,7 @@ namespace Nitrocid.Kernel.Threading
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Thread {0} [{1}, OS: {3}] failed: {2}", Name, ThreadId, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Thread {0} [{1}] failed: {2}", Name, ThreadId, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
                 KernelPanic.KernelErrorContinuable(Translate.DoTranslation("Kernel thread {0} failed.") + " {1}", ex, Name, ex.Message);
             }
@@ -381,7 +381,7 @@ namespace Nitrocid.Kernel.Threading
             DebugWriter.WriteDebug(DebugLevel.I, "Starting {0} child threads...", ChildThreads.Count);
             foreach (var ChildThread in ChildThreads)
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "For parent kernel thread {0} with ID {1}, starting the child thread {2} with ID {3} [OS: {6}] [child parameterized: {4}].", BaseThread.Name, ThreadId, ChildThread.Name, ChildThread.ThreadId, ChildThread.IsParameterized);
+                DebugWriter.WriteDebug(DebugLevel.I, "For parent kernel thread {0} with ID {1}, starting the child thread {2} with ID {3} [child parameterized: {4}].", BaseThread.Name, ThreadId, ChildThread.Name, ChildThread.ThreadId, ChildThread.IsParameterized);
                 if (ChildThread.IsParameterized)
                     ChildThread.Start(Parameter);
                 else
@@ -396,7 +396,7 @@ namespace Nitrocid.Kernel.Threading
             DebugWriter.WriteDebug(DebugLevel.I, "Stopping {0} active child threads...", ActiveChildThreads.Length);
             foreach (var ChildThread in ActiveChildThreads)
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "For parent kernel thread {0} with ID {1} [OS: {4}], stopping the child thread {2} with ID {3}.", BaseThread.Name, ThreadId, ChildThread.Name, ChildThread.ThreadId);
+                DebugWriter.WriteDebug(DebugLevel.I, "For parent kernel thread {0} with ID {1}, stopping the child thread {2} with ID {3}.", BaseThread.Name, ThreadId, ChildThread.Name, ChildThread.ThreadId);
                 ChildThread.Stop();
             }
         }
@@ -412,7 +412,7 @@ namespace Nitrocid.Kernel.Threading
                 if (!ChildThread.IsAlive)
                     continue;
 
-                DebugWriter.WriteDebug(DebugLevel.I, "For parent kernel thread {0} with ID {1} [OS: {4}], stopping the child thread {2} with ID {3}.", BaseThread.Name, ThreadId, ChildThread.Name, ChildThread.ThreadId);
+                DebugWriter.WriteDebug(DebugLevel.I, "For parent kernel thread {0} with ID {1}, stopping the child thread {2} with ID {3}.", BaseThread.Name, ThreadId, ChildThread.Name, ChildThread.ThreadId);
                 ChildThread.Wait();
             }
         }
@@ -429,7 +429,7 @@ namespace Nitrocid.Kernel.Threading
                 if (!ChildThread.IsAlive)
                     continue;
 
-                DebugWriter.WriteDebug(DebugLevel.I, "For parent kernel thread {0} with ID {1} [OS: {4}], stopping the child thread {2} with ID {3}.", BaseThread.Name, ThreadId, ChildThread.Name, ChildThread.ThreadId);
+                DebugWriter.WriteDebug(DebugLevel.I, "For parent kernel thread {0} with ID {1}, stopping the child thread {2} with ID {3}.", BaseThread.Name, ThreadId, ChildThread.Name, ChildThread.ThreadId);
                 if (!ChildThread.Wait(timeoutMs))
                     SuccessfullyWaited = false;
             }
