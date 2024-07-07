@@ -1,6 +1,6 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <!-- Extras.Caffeine addon General Information -->
+  <!-- Extras.BeepSynth addon General Information -->
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -8,14 +8,14 @@
     <DebugSymbols>true</DebugSymbols>
     <DefineTrace>true</DefineTrace>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-    <OutputPath>..\..\Nitrocid\KSBuild\$(TargetFramework)\Addons\Extras.Caffeine</OutputPath>
-    <Description>Nitrocid KS Extras - Caffeine</Description>
-    <AssemblyTitle>Nitrocid KS Extras - Caffeine</AssemblyTitle>
+    <OutputPath>..\..\Nitrocid\KSBuild\$(TargetFramework)\Addons\Extras.BeepSynth</OutputPath>
+    <Description>Nitrocid KS Extras - Beep Synth</Description>
+    <AssemblyTitle>Nitrocid KS Extras - Beep Synth</AssemblyTitle>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
-  <!-- Extras.Caffeine addon General Information End -->
+  <!-- Extras.BeepSynth addon General Information End -->
 
-  <!-- Extras.Caffeine addon Platform Information -->
+  <!-- Extras.BeepSynth addon Platform Information -->
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugType>portable</DebugType>
     <DefineDebug>true</DefineDebug>
@@ -33,6 +33,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-  <!-- Extras.Caffeine addon Platform Information End -->
+  <!-- Extras.BeepSynth addon Platform Information End -->
 
 </Project>

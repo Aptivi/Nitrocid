@@ -208,6 +208,10 @@ namespace Nitrocid.Kernel.Extensions
         /// Stocks Extras addon
         /// </summary>
         ExtrasStocks,
+        /// <summary>
+        /// Beep Synth Extras addon
+        /// </summary>
+        ExtrasBeepSynth,
         #endregion
     }
 }
