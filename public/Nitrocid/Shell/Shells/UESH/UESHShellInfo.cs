@@ -118,7 +118,15 @@ namespace Nitrocid.Shell.Shells.UESH
 
             new CommandInfo("beep", /* Localizable */ "Beeps from the console",
                 [
-                    new CommandArgumentInfo()
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(false, "freq", new(){
+                            IsNumeric = true,
+                        }),
+                        new CommandArgumentPart(false, "ms", new(){
+                            IsNumeric = true,
+                        }),
+                    })
                 ], new BeepCommand()),
 
             new CommandInfo("blockdbgdev", /* Localizable */ "Block a debug device by IP address",

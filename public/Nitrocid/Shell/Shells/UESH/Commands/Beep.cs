@@ -17,6 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
 using Terminaux.Base;
 
@@ -27,17 +31,32 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
     /// </summary>
     /// <remarks>
     /// This command lets you make a PC speaker beep. This requires that you have it installed.
-    /// <br></br>
+    /// <br></br><br></br>
     /// This command used to give you an option to specify the time in milliseconds and the frequency, but it isn't cross-platform because it only works
     /// on Windows. With the help of a native utility to utilize the PC speaker completely in Linux, this would have been achieved. However, we're trying
-    /// to be 100% .NET compatible and not depend on that utility.
+    /// to be 100% .NET compatible and not depend on that utility. Fortunately, we've found two VT sequences that control the beep.
     /// </remarks>
     class BeepCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            ConsoleWrapper.Beep();
+            if (parameters.ArgumentsList.Length >= 2)
+            {
+                if (!int.TryParse(parameters.ArgumentsList[0], out var freq))
+                {
+                    TextWriters.Write(Translate.DoTranslation("The frequency is invalid. Make sure that you've correctly written the frequency in hertz."), KernelColorType.Error);
+                    return KernelExceptionTools.GetErrorCode(KernelExceptionType.Console);
+                }
+                if (!int.TryParse(parameters.ArgumentsList[1], out var ms))
+                {
+                    TextWriters.Write(Translate.DoTranslation("The duration is invalid. Make sure that you've correctly written the duration in milliseconds."), KernelColorType.Error);
+                    return KernelExceptionTools.GetErrorCode(KernelExceptionType.Console);
+                }
+                ConsoleWrapper.Beep(freq, ms);
+            }
+            else
+                ConsoleWrapper.Beep();
             return 0;
         }
     }
