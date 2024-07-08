@@ -81,6 +81,7 @@ namespace Nitrocid.Kernel.Extensions
             { KnownAddons.ExtrasCrc32C,                 /* Localizable */ "Extras - CRC32C (Castagnoli)" },
             { KnownAddons.ExtrasStocks,                 /* Localizable */ "Extras - Stocks" },
             { KnownAddons.ExtrasBeepSynth,              /* Localizable */ "Extras - Beep Synth" },
+            { KnownAddons.ExtrasSsh,                    /* Localizable */ "Extras - SSH" },
             #endregion
         };
 

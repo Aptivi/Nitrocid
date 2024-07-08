@@ -17,21 +17,21 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Extras.SftpShell.SSH;
+using Nitrocid.Extras.Ssh.SSH;
 using Nitrocid.Shell.ShellBase.Commands;
 using System;
 
-namespace Nitrocid.Extras.SftpShell.Commands
+namespace Nitrocid.Extras.Ssh.Commands
 {
     /// <summary>
-    /// You can interact with the Secure SHell server (SSH) to remotely execute commands on the host of another PC.
+    /// You can interact with the Secure SHell server (SSH) to remotely interact with the shell.
     /// </summary>
     /// <remarks>
     /// Secure SHell server (SSH) is a type of server which lets another computer connect to it to run commands in it. In the recent iterations, it is bound to support X11 forwarding. Our implementation is pretty basic, and uses the SSH.NET library by Renci.
     /// <br></br>
-    /// This command lets you connect to another computer to remotely execute commands.
+    /// This command lets you connect to another computer to remotely interact with the shell.
     /// </remarks>
-    class SshcmdCommand : BaseCommand, ICommand
+    class SshellCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
@@ -41,11 +41,11 @@ namespace Nitrocid.Extras.SftpShell.Commands
             if (AddressDelimiter.Length > 1)
             {
                 int Port = Convert.ToInt32(AddressDelimiter[1]);
-                SSHTools.InitializeSSH(Address, Port, parameters.ArgumentsList[1], SSHTools.ConnectionType.Command, parameters.ArgumentsList[2]);
+                SSHTools.InitializeSSH(Address, Port, parameters.ArgumentsList[1], SSHTools.ConnectionType.Shell);
             }
             else
             {
-                SSHTools.InitializeSSH(Address, 22, parameters.ArgumentsList[1], SSHTools.ConnectionType.Command, parameters.ArgumentsList[2]);
+                SSHTools.InitializeSSH(Address, 22, parameters.ArgumentsList[1], SSHTools.ConnectionType.Shell);
             }
             return 0;
         }

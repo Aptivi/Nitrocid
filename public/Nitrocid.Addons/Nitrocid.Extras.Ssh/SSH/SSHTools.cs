@@ -39,7 +39,7 @@ using Nitrocid.ConsoleBase.Inputs;
 using Nitrocid.Network.Connections;
 using Terminaux.Reader;
 
-namespace Nitrocid.Extras.SftpShell.SSH
+namespace Nitrocid.Extras.Ssh.SSH
 {
     /// <summary>
     /// SSH module

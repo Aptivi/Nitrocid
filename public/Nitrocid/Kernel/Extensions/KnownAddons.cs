@@ -212,6 +212,10 @@ namespace Nitrocid.Kernel.Extensions
         /// Beep Synth Extras addon
         /// </summary>
         ExtrasBeepSynth,
+        /// <summary>
+        /// SSH Extras addon
+        /// </summary>
+        ExtrasSsh,
         #endregion
     }
 }

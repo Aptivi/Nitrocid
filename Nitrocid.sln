@@ -196,7 +196,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.Extras.Crc32Castag
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.Extras.Stocks", "public\Nitrocid.Addons\Nitrocid.Extras.Stocks\Nitrocid.Extras.Stocks.csproj", "{A6DCE2AA-D221-4685-949D-5BD67A3C2330}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nitrocid.Extras.BeepSynth", "public\Nitrocid.Addons\Nitrocid.Extras.BeepSynth\Nitrocid.Extras.BeepSynth.csproj", "{E4FD6E0D-51CC-43F6-878A-D0C4160F50B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.Extras.BeepSynth", "public\Nitrocid.Addons\Nitrocid.Extras.BeepSynth\Nitrocid.Extras.BeepSynth.csproj", "{E4FD6E0D-51CC-43F6-878A-D0C4160F50B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nitrocid.Extras.Ssh", "public\Nitrocid.Addons\Nitrocid.Extras.Ssh\Nitrocid.Extras.Ssh.csproj", "{239472BF-B9F5-49FD-9E9F-9F5A034C8337}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -444,6 +446,10 @@ Global
 		{E4FD6E0D-51CC-43F6-878A-D0C4160F50B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E4FD6E0D-51CC-43F6-878A-D0C4160F50B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E4FD6E0D-51CC-43F6-878A-D0C4160F50B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{239472BF-B9F5-49FD-9E9F-9F5A034C8337}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{239472BF-B9F5-49FD-9E9F-9F5A034C8337}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{239472BF-B9F5-49FD-9E9F-9F5A034C8337}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{239472BF-B9F5-49FD-9E9F-9F5A034C8337}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -516,6 +522,7 @@ Global
 		{B7712906-FA6D-43B4-A0C5-E28D605851EF} = {B60F276A-FE12-4001-916E-080344ED1FD9}
 		{A6DCE2AA-D221-4685-949D-5BD67A3C2330} = {B60F276A-FE12-4001-916E-080344ED1FD9}
 		{E4FD6E0D-51CC-43F6-878A-D0C4160F50B3} = {B60F276A-FE12-4001-916E-080344ED1FD9}
+		{239472BF-B9F5-49FD-9E9F-9F5A034C8337} = {B60F276A-FE12-4001-916E-080344ED1FD9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {424D8E7A-CFEB-40AE-A79C-437D603177FD}
