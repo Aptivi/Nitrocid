@@ -60,7 +60,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             }
             catch (Exception ex)
             {
-                TextWriters.Write(Translate.DoTranslation("Can't make a symbolic link.") + $"{ex.Message}", KernelColorType.Error);
+                TextWriters.Write(Translate.DoTranslation("Can't make a symbolic link.") + $" {ex.Message}", KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Filesystem);
             }
             return 0;
