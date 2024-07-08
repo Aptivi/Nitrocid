@@ -31,7 +31,7 @@ namespace Nitrocid.Misc.Interactives
     /// <summary>
     /// Task manager class
     /// </summary>
-    public class TaskManagerCli : BaseInteractiveTui<object>, IInteractiveTui<object>
+    public class TaskManagerCli : BaseInteractiveTui<(int, object)>, IInteractiveTui<(int, object)>
     {
 
         private static string taskStatus = "";
@@ -44,20 +44,47 @@ namespace Nitrocid.Misc.Interactives
         [
             // Operations
             new InteractiveTuiBinding("Kill", ConsoleKey.F1,
-                (_, index) => KillThread(index)),
+                (thread, _) => KillThread(thread)),
             new InteractiveTuiBinding("Switch", ConsoleKey.F2,
                 (_, _) => SwitchMode())
         ];
 
         /// <inheritdoc/>
-        public override IEnumerable<object> PrimaryDataSource
+        public override IEnumerable<(int, object)> PrimaryDataSource
         {
             get
             {
-                IEnumerable objects = osThreadMode ? ThreadManager.OperatingSystemThreads : ThreadManager.KernelThreads;
-                List<object> result = [];
-                foreach (object obj in objects)
-                    result.Add(obj);
+                IEnumerable threads = osThreadMode ? ThreadManager.OperatingSystemThreads : ThreadManager.KernelThreads;
+                List<(int, object)> result = [];
+                if (threads is ProcessThreadCollection osThreads)
+                {
+                    // The level is always zero here, because the OS thread instance doesn't provide info about
+                    // managed threads as they don't always have a 1:1 relationship with the OS thread.
+                    foreach (var thread in osThreads)
+                        result.Add((0, thread));
+                }
+                else
+                {
+                    int nestLevel = 0;
+                    var managedThreads = threads as List<KernelThread>;
+                    foreach (var thread in managedThreads)
+                    {
+                        void HandleChildThreads(KernelThread thread)
+                        {
+                            nestLevel++;
+                            var childThreads = thread.ChildThreads;
+                            foreach (var childThread in childThreads)
+                            {
+                                result.Add((nestLevel, childThread));
+                                HandleChildThreads(childThread);
+                            }
+                            nestLevel--;
+                        }
+
+                        result.Add((nestLevel, thread));
+                        HandleChildThreads(thread);
+                    }
+                }
                 return result;
             }
         }
@@ -67,11 +94,11 @@ namespace Nitrocid.Misc.Interactives
             3000;
 
         /// <inheritdoc/>
-        public override string GetInfoFromItem(object item)
+        public override string GetInfoFromItem((int, object) item)
         {
             if (osThreadMode)
             {
-                ProcessThread selectedThread = (ProcessThread)item;
+                ProcessThread selectedThread = (ProcessThread)item.Item2;
                 string finalRenderedTaskID = Translate.DoTranslation("Task ID") + $": {selectedThread.Id}";
                 string finalRenderedTaskPPT = Translate.DoTranslation("Privileged processor time") + $": {selectedThread.PrivilegedProcessorTime}";
                 string finalRenderedTaskUPT = Translate.DoTranslation("User processor time") + $": {selectedThread.UserProcessorTime}";
@@ -91,7 +118,7 @@ namespace Nitrocid.Misc.Interactives
             }
             else
             {
-                KernelThread selectedThread = (KernelThread)item;
+                KernelThread selectedThread = (KernelThread)item.Item2;
                 string finalRenderedTaskName = Translate.DoTranslation("Task name") + $": {selectedThread.Name}";
                 string finalRenderedTaskAlive = Translate.DoTranslation("Alive") + $": {selectedThread.IsAlive}";
                 string finalRenderedTaskBackground = Translate.DoTranslation("Background") + $": {selectedThread.IsBackground}";
@@ -108,12 +135,12 @@ namespace Nitrocid.Misc.Interactives
         }
 
         /// <inheritdoc/>
-        public override string GetStatusFromItem(object item)
+        public override string GetStatusFromItem((int, object) item)
         {
             string status = "";
             if (osThreadMode)
             {
-                ProcessThread thread = (ProcessThread)item;
+                ProcessThread thread = (ProcessThread)item.Item2;
                 if (string.IsNullOrEmpty(taskStatus))
                     status = $"{thread.Id}";
                 else
@@ -121,7 +148,7 @@ namespace Nitrocid.Misc.Interactives
             }
             else
             {
-                KernelThread thread = (KernelThread)item;
+                KernelThread thread = (KernelThread)item.Item2;
                 if (string.IsNullOrEmpty(taskStatus))
                     status = $"{thread.Name}";
                 else
@@ -132,29 +159,33 @@ namespace Nitrocid.Misc.Interactives
         }
 
         /// <inheritdoc/>
-        public override string GetEntryFromItem(object item)
+        public override string GetEntryFromItem((int, object) item)
         {
             if (osThreadMode)
             {
-                ProcessThread thread = (ProcessThread)item;
+                ProcessThread thread = (ProcessThread)item.Item2;
                 return $"{thread.Id}";
             }
             else
             {
-                KernelThread thread = (KernelThread)item;
-                return $"{thread.Name}";
+                KernelThread thread = (KernelThread)item.Item2;
+                return $"{new string(' ', item.Item1 * 2)}{thread.Name}";
             }
         }
 
-        private static void KillThread(int id)
+        private static void KillThread(object id)
         {
             if (!osThreadMode)
-                if (!ThreadManager.kernelThreads[id].IsCritical && ThreadManager.kernelThreads[id].IsAlive)
-                    ThreadManager.kernelThreads[id].Stop();
-                else if (!ThreadManager.kernelThreads[id].IsAlive)
+            {
+                (int, object) item = ((int, object))id;
+                KernelThread thread = (KernelThread)item.Item2;
+                if (!thread.IsCritical && thread.IsAlive)
+                    thread.Stop();
+                else if (!thread.IsAlive)
                     taskStatus = Translate.DoTranslation("Kernel task is already killed.");
                 else
                     taskStatus = Translate.DoTranslation("Kernel task is critical and can't be killed.");
+            }
             else
                 taskStatus = Translate.DoTranslation("OS threads can't be killed.");
         }
