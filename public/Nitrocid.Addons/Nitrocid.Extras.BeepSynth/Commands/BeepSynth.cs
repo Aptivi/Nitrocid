@@ -23,6 +23,7 @@ using Nitrocid.Extras.BeepSynth.Tools;
 using Nitrocid.Files;
 using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Kernel.Threading;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
 using Terminaux.Base;
@@ -73,7 +74,10 @@ namespace Nitrocid.Extras.BeepSynth.Commands
                         TextWriters.Write(Translate.DoTranslation("Duration is invalid.") + $" [{i + 1}.{j + 1}]", KernelColorType.Error);
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.Console);
                     }
-                    ConsoleWrapper.Beep(freq, ms);
+                    if (freq == 0)
+                        ThreadManager.SleepNoBlock(ms);
+                    else
+                        ConsoleWrapper.Beep(freq, ms);
                 }
             }
             return 0;
