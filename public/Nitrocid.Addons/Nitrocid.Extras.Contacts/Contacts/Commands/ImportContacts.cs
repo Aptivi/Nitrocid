@@ -23,8 +23,6 @@ using Nitrocid.Languages;
 using System;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Kernel.Exceptions;
-using VisualCard.Parts.Implementations;
-using System.Text;
 using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Shell.ShellBase.Switches;
 

@@ -21,7 +21,6 @@ using Terminaux.Inputs.Interactive;
 using Nitrocid.Languages;
 using System.Collections.Generic;
 using System;
-using Nitrocid.Files.Editors.TextEdit;
 using System.Linq;
 using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.ConsoleBase.Colors;

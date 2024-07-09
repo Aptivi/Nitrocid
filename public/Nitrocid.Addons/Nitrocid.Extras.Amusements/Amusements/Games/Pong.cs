@@ -18,16 +18,13 @@
 //
 
 using System;
-using System.Collections.Generic;
 using System.Threading;
 using Terminaux.Colors;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Drivers.RNG;
-using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Screensaver;
 using Terminaux.Base;
 using Terminaux.Reader;
-using Terminaux.Colors.Transformation.Contrast;
 using Terminaux.Base.Buffered;
 using System.Text;
 using Terminaux.Sequences.Builder.Types;

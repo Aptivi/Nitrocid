@@ -25,7 +25,6 @@ using Nitrocid.Kernel.Time.Renderers;
 using System.Text;
 using Terminaux.Base;
 using Terminaux.Colors;
-using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.FancyWriters;
 using Textify.Figlet;
 

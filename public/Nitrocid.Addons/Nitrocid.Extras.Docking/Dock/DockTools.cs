@@ -30,7 +30,6 @@ using Terminaux.Colors;
 using Nitrocid.Users.Login.Widgets;
 using Nitrocid.Users.Login.Widgets.Implementations;
 using Terminaux.Base;
-using Nitrocid.Kernel.Threading;
 using System.Threading;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Reader;

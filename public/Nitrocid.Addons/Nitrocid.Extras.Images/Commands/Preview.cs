@@ -17,16 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using ImageMagick;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Files.Editors.TextEdit;
 using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
-using System.Linq;
 using System.Text;
-using Terminaux.Colors;
 using Terminaux.Images;
 using Textify.General;
 

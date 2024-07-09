@@ -17,10 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
 
 namespace Nitrocid.Shell.ShellBase.Shells.Unified
