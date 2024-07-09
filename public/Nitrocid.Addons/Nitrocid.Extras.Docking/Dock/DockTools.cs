@@ -84,6 +84,7 @@ namespace Nitrocid.Extras.Docking.Dock
                 // screen, you're essentially idling because you've successfully converted your device to the information
                 // center that displays continuously, and we don't want screensavers to interfere with the operation.
                 ScreensaverManager.PreventLock();
+                ColorTools.LoadBack();
                 TextWriterRaw.WriteRaw(dockInstance.Initialize());
                 while (!ConsoleWrapper.KeyAvailable)
                 {
