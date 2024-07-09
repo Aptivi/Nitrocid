@@ -232,6 +232,12 @@
                 "Type": "SInt",
                 "Variable": "BootSelect",
                 "Description": "Default boot entry selection. This number is zero-based, so the first element is index 0, and so on."
+            },
+            {
+                "Name": "Enable 'The Nitrocid Homepage'",
+                "Type": "SBoolean",
+                "Variable": "EnableHomepage",
+                "Description": "Enables 'The Nitrocid Homepage' that allows you to see what's happening in a glance."
             }
         ]
     },

@@ -35,6 +35,7 @@ namespace Nitrocid.Shell.Homepage
     /// </summary>
     public static class HomepageTools
     {
+        internal static bool isHomepageEnabled = false;
         private static bool isOnHomepage = false;
 
         /// <summary>
@@ -42,7 +43,7 @@ namespace Nitrocid.Shell.Homepage
         /// </summary>
         public static void OpenHomepage()
         {
-            if (isOnHomepage)
+            if (isOnHomepage || isHomepageEnabled)
                 return;
             isOnHomepage = true;
             var homeScreen = new Screen();

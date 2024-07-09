@@ -53,6 +53,7 @@ using Nitrocid.Misc.Reflection.Internal;
 using Nitrocid.Users.Login;
 using Nitrocid.ConsoleBase;
 using Terminaux.Inputs.Pointer;
+using Nitrocid.Shell.Homepage;
 
 namespace Nitrocid.Kernel.Configuration.Instances
 {
@@ -234,6 +235,14 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// The default boot entry selection. This number is zero-based, so the first element is index 0, and so on.
         /// </summary>
         public int BootSelect { get; set; } = 0;
+        /// <summary>
+        /// Enables "The Nitrocid Homepage"
+        /// </summary>
+        public bool EnableHomepage
+        {
+            get => HomepageTools.isHomepageEnabled;
+            set => HomepageTools.isHomepageEnabled = value;
+        }
         #endregion
 
         #region Colors
