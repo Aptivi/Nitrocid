@@ -44,7 +44,8 @@ namespace Nitrocid.Extras.Docking.Dock
     {
         private static readonly Dictionary<string, BaseWidget> docks = new()
         {
-            { nameof(DigitalClock), new DigitalClock() }
+            { nameof(DigitalClock), new DigitalClock() },
+            { nameof(AnalogClock), new AnalogClock() },
         };
 
         /// <summary>
