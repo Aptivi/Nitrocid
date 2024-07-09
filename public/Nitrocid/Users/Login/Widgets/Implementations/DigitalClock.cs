@@ -49,11 +49,7 @@ namespace Nitrocid.Users.Login.Widgets.Implementations
             var display = new StringBuilder();
             string timeStr = TimeDateRenderers.RenderTime(FormatType.Short);
 
-            // Clear the console and write the time using figlet
-            display.Append(
-                CsiSequences.GenerateCsiCursorPosition(1, 1) +
-                CsiSequences.GenerateCsiEraseInDisplay(0)
-            );
+            // Write the time using figlet
             var figFont = FigletTools.GetFigletFont(Config.MainConfig.DefaultFigletFontName);
             int figHeight = FigletTools.GetFigletHeight(timeStr, figFont) / 2;
             int consoleY = height / 2 - figHeight;
