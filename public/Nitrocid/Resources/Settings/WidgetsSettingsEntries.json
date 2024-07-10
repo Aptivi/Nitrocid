@@ -174,5 +174,23 @@
                 "MaximumValue": 255
             }
         ]
+    },
+    {
+        "Name": "Emoji",
+        "Desc": "Shows an emoji in the middle of the screen.",
+        "Keys": [
+            {
+                "Name": "Enable Emoticon Cycling",
+                "Type": "SBoolean",
+                "Variable": "EmojiWidgetCycleEmoticons",
+                "Description": "Whether to cycle between emoticons"
+            },
+            {
+                "Name": "Emoticon",
+                "Type": "SIcon",
+                "Variable": "EmojiWidgetEmoticonName",
+                "Description": "Emoticon to show"
+            }
+        ]
     }
 ]

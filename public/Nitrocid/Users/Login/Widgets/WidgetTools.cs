@@ -35,6 +35,7 @@ namespace Nitrocid.Users.Login.Widgets
         [
             new AnalogClock(),
             new DigitalClock(),
+            new Emoji(),
         ];
         private static readonly List<BaseWidget> customWidgets = [];
 

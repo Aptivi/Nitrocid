@@ -45,6 +45,7 @@ namespace Nitrocid.Extras.Docking.Dock
         {
             { nameof(DigitalClock), new DigitalClock() },
             { nameof(AnalogClock), new AnalogClock() },
+            { nameof(Emoji), new Emoji() },
         };
 
         /// <summary>

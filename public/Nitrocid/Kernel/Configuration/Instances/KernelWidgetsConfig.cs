@@ -20,6 +20,8 @@
 using Newtonsoft.Json;
 using Nitrocid.Kernel.Configuration.Settings;
 using Nitrocid.Misc.Reflection.Internal;
+using System.Linq;
+using Terminaux.Images.Icons;
 
 namespace Nitrocid.Kernel.Configuration.Instances
 {
@@ -434,6 +436,23 @@ namespace Nitrocid.Kernel.Configuration.Instances
                     value = FinalMaximumLevel;
                 digitalMaximumColorLevel = value;
             }
+        }
+        #endregion
+
+        #region
+        private string emojiWidgetCurrentEmoticon = "gem-stone";
+
+        /// <summary>
+        /// Whether to cycle between emoticons
+        /// </summary>
+        public bool EmojiWidgetCycleEmoticons { get; set; }
+        /// <summary>
+        /// Emoticon name to show
+        /// </summary>
+        public string EmojiWidgetEmoticonName
+        {
+            get => emojiWidgetCurrentEmoticon;
+            set => emojiWidgetCurrentEmoticon = IconsManager.GetIconNames().Contains(value) ? value : emojiWidgetCurrentEmoticon;
         }
         #endregion
     }
