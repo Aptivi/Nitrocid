@@ -122,6 +122,21 @@ namespace Nitrocid.Shell.Shells.Debug
                     })
                 ], new LsAddonFuncsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
+            new CommandInfo("lsaddonfuncparams", /* Localizable */ "Lists all available function parameters from a function",
+                [
+                    new CommandArgumentInfo(new[]
+                    {
+                        new CommandArgumentPart(true, "addon", new CommandArgumentPartOptions()
+                        {
+                            AutoCompleter = (_) => AddonTools.GetAddons(),
+                        }),
+                        new CommandArgumentPart(true, "function", new CommandArgumentPartOptions()
+                        {
+                            AutoCompleter = (arg) => InterAddonTools.ListAvailableFunctions(arg[0]),
+                        }),
+                    })
+                ], new LsAddonFuncParamsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
+
             new CommandInfo("lsaddonprops", /* Localizable */ "Lists all available properties from the specified addon",
                 [
                     new CommandArgumentInfo(new[]
