@@ -31,6 +31,7 @@ using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Modifications;
 using System.Linq;
+using Nettify.Weather;
 
 namespace Nitrocid.Extras.Forecast
 {
@@ -87,9 +88,24 @@ namespace Nitrocid.Extras.Forecast
         internal static ForecastConfig ForecastConfig =>
             (ForecastConfig)Config.baseConfigurations[nameof(ForecastConfig)];
 
-        ReadOnlyDictionary<string, Delegate> IAddon.PubliclyAvailableFunctions => null;
+        ReadOnlyDictionary<string, Delegate> IAddon.PubliclyAvailableFunctions => new(new Dictionary<string, Delegate>()
+        {
+            { nameof(Forecast.Forecast.GetWeatherInfo), new Func<double, double, WeatherForecastInfo>(Forecast.Forecast.GetWeatherInfo) },
+            { nameof(Forecast.Forecast.GetWeatherInfo) + "2", new Func<double, double, string, WeatherForecastInfo>(Forecast.Forecast.GetWeatherInfo) },
+            { nameof(Forecast.Forecast.PrintWeatherInfo), new Action<double, double>(Forecast.Forecast.PrintWeatherInfo) },
+            { nameof(Forecast.Forecast.PrintWeatherInfo) + "2", new Action<double, double, string>(Forecast.Forecast.PrintWeatherInfo) },
+            { nameof(Forecast.Forecast.GetWeatherInfoOwm), new Func<long, WeatherForecastInfo>(Forecast.Forecast.GetWeatherInfoOwm) },
+            { nameof(Forecast.Forecast.GetWeatherInfoOwm) + "2", new Func<long, string, WeatherForecastInfo>(Forecast.Forecast.GetWeatherInfoOwm) },
+            { nameof(Forecast.Forecast.GetWeatherInfoOwm) + "3", new Func<string, WeatherForecastInfo>(Forecast.Forecast.GetWeatherInfoOwm) },
+            { nameof(Forecast.Forecast.GetWeatherInfoOwm) + "4", new Func<string, string, WeatherForecastInfo>(Forecast.Forecast.GetWeatherInfoOwm) },
+            { nameof(Forecast.Forecast.PrintWeatherInfoOwm), new Action<string>(Forecast.Forecast.PrintWeatherInfoOwm) },
+            { nameof(Forecast.Forecast.PrintWeatherInfoOwm) + "2", new Action<string, string>(Forecast.Forecast.PrintWeatherInfoOwm) },
+        });
 
-        ReadOnlyDictionary<string, PropertyInfo> IAddon.PubliclyAvailableProperties => null;
+        ReadOnlyDictionary<string, PropertyInfo> IAddon.PubliclyAvailableProperties => new(new Dictionary<string, PropertyInfo>()
+        {
+            { nameof(Forecast.Forecast.PreferredUnit), typeof(Forecast.Forecast).GetProperty(nameof(Forecast.Forecast.PreferredUnit)) },
+        });
 
         ReadOnlyDictionary<string, FieldInfo> IAddon.PubliclyAvailableFields => null;
 

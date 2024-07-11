@@ -62,7 +62,14 @@ namespace Nitrocid.Extras.RssShell
         ReadOnlyDictionary<string, Delegate> IAddon.PubliclyAvailableFunctions =>
             new(new Dictionary<string, Delegate>()
             {
-                { nameof(RSSShellTools.GetFirstArticle), RSSShellTools.GetFirstArticle }
+                { nameof(RSSShellTools.GetFirstArticle), RSSShellTools.GetFirstArticle },
+                { nameof(RSSShellTools.SearchArticles), RSSShellTools.SearchArticles },
+                { nameof(RSSBookmarkManager.AddRSSFeedToBookmark), new Action(RSSBookmarkManager.AddRSSFeedToBookmark) },
+                { nameof(RSSBookmarkManager.AddRSSFeedToBookmark) + "2", new Action<string>(RSSBookmarkManager.AddRSSFeedToBookmark) },
+                { nameof(RSSBookmarkManager.RemoveRSSFeedFromBookmark), new Action(RSSBookmarkManager.RemoveRSSFeedFromBookmark) },
+                { nameof(RSSBookmarkManager.RemoveRSSFeedFromBookmark) + "2", new Action<string>(RSSBookmarkManager.RemoveRSSFeedFromBookmark) },
+                { nameof(RSSBookmarkManager.GetBookmarks), new Func<List<string>>(RSSBookmarkManager.GetBookmarks) },
+                { nameof(RSSBookmarkManager.GetBookmark), new Func<int, string>(RSSBookmarkManager.GetBookmark) },
             });
 
         ReadOnlyDictionary<string, PropertyInfo> IAddon.PubliclyAvailableProperties => null;

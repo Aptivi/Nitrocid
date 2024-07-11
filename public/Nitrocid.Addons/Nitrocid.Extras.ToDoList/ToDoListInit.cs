@@ -79,7 +79,19 @@ namespace Nitrocid.Extras.ToDoList
 
         ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
 
-        ReadOnlyDictionary<string, Delegate> IAddon.PubliclyAvailableFunctions => null;
+        ReadOnlyDictionary<string, Delegate> IAddon.PubliclyAvailableFunctions => new(new Dictionary<string, Delegate>()
+        {
+            { nameof(ToDoManager.AddTask), new Action<string>(ToDoManager.AddTask) },
+            { nameof(ToDoManager.RemoveTask), new Action<string>(ToDoManager.RemoveTask) },
+            { nameof(ToDoManager.GetTask), new Func<string, ToDoTask>(ToDoManager.GetTask) },
+            { nameof(ToDoManager.GetTaskIndex), new Func<string, int>(ToDoManager.GetTaskIndex) },
+            { nameof(ToDoManager.TaskExists), new Func<string, bool>(ToDoManager.TaskExists) },
+            { nameof(ToDoManager.SetDone), new Action<string>(ToDoManager.SetDone) },
+            { nameof(ToDoManager.SetUndone), new Action<string>(ToDoManager.SetUndone) },
+            { nameof(ToDoManager.GetTaskNames), new Func<string[]>(ToDoManager.GetTaskNames) },
+            { nameof(ToDoManager.SaveTasks), new Action(ToDoManager.SaveTasks) },
+            { nameof(ToDoManager.LoadTasks), new Action(ToDoManager.LoadTasks) },
+        });
 
         ReadOnlyDictionary<string, PropertyInfo> IAddon.PubliclyAvailableProperties => null;
 

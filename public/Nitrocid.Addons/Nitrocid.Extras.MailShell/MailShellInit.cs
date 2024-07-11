@@ -17,8 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using MailKit;
+using MimeKit;
 using Nitrocid.Extras.MailShell.Mail;
 using Nitrocid.Extras.MailShell.Settings;
+using Nitrocid.Extras.MailShell.Tools.Directory;
+using Nitrocid.Extras.MailShell.Tools.Transfer;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Modifications;
@@ -61,9 +65,29 @@ namespace Nitrocid.Extras.MailShell
         internal static MailConfig MailConfig =>
             (MailConfig)Config.baseConfigurations[nameof(MailConfig)];
 
-        ReadOnlyDictionary<string, Delegate> IAddon.PubliclyAvailableFunctions => null;
+        ReadOnlyDictionary<string, Delegate> IAddon.PubliclyAvailableFunctions => new(new Dictionary<string, Delegate>()
+        {
+            { nameof(MailDirectory.CreateMailDirectory), new Action<string>(MailDirectory.CreateMailDirectory) },
+            { nameof(MailDirectory.DeleteMailDirectory), new Action<string>(MailDirectory.DeleteMailDirectory) },
+            { nameof(MailDirectory.RenameMailDirectory), new Action<string, string>(MailDirectory.RenameMailDirectory) },
+            { nameof(MailDirectory.OpenFolder), new Func<string, FolderAccess, MailFolder>(MailDirectory.OpenFolder) },
+            { nameof(MailDirectory.MailListDirectories), new Func<string>(MailDirectory.MailListDirectories) },
+            { nameof(MailManager.MailListMessages), new Action<int>(MailManager.MailListMessages) },
+            { nameof(MailManager.MailListMessages) + "2", new Action<int, int>(MailManager.MailListMessages) },
+            { nameof(MailManager.MailRemoveMessage), new Func<int, bool>(MailManager.MailRemoveMessage) },
+            { nameof(MailManager.MailRemoveAllBySender), new Func<string, bool>(MailManager.MailRemoveAllBySender) },
+            { nameof(MailManager.MailMoveAllBySender), new Func<string, string, bool>(MailManager.MailMoveAllBySender) },
+            { nameof(MailTransfer.DecryptMessage), new Func<MimeMessage, Dictionary<string, MimeEntity>>(MailTransfer.DecryptMessage) },
+            { nameof(MailTransfer.MailSendMessage), new Func<string, string, string, bool>(MailTransfer.MailSendMessage) },
+            { nameof(MailTransfer.MailSendMessage) + "2", new Func<string, string, MimeEntity, bool>(MailTransfer.MailSendMessage) },
+            { nameof(MailTransfer.MailSendEncryptedMessage), new Func<string, string, MimeEntity, bool>(MailTransfer.MailSendEncryptedMessage) },
+            { nameof(MailTransfer.PopulateMessages), new Action(MailTransfer.PopulateMessages) },
+        });
 
-        ReadOnlyDictionary<string, PropertyInfo> IAddon.PubliclyAvailableProperties => null;
+        ReadOnlyDictionary<string, PropertyInfo> IAddon.PubliclyAvailableProperties => new(new Dictionary<string, PropertyInfo>()
+        {
+            { nameof(MailManager.ShowPreview), typeof(MailManager).GetProperty(nameof(MailManager.ShowPreview)) },
+        });
 
         ReadOnlyDictionary<string, FieldInfo> IAddon.PubliclyAvailableFields => null;
 
