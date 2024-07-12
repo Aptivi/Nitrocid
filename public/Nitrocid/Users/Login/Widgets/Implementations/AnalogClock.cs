@@ -70,10 +70,10 @@ namespace Nitrocid.Users.Login.Widgets.Implementations
             string renderedDate = TimeDateRenderers.RenderDate();
             string renderedTime = TimeDateRenderers.RenderTime();
             string rendered = $"{renderedDate} / {renderedTime}";
-            int posY = height - 2;
+            int posY = top + height - 2;
 
             // Clear old date/time
-            int oldPosX = width / 2 - lastRendered.Length / 2;
+            int oldPosX = (left + width) / 2 - lastRendered.Length / 2;
             builder.Append(CenteredTextColor.RenderCentered(posY, new string(' ', ConsoleChar.EstimateCellWidth(lastRendered)), timeColor, left, ConsoleWrapper.WindowWidth - (left + width)));
 
             // Clear old bezels
@@ -87,8 +87,8 @@ namespace Nitrocid.Users.Login.Widgets.Implementations
             lastRendered = rendered;
 
             // Now, draw the bezel
-            int bezelTop = 2;
-            int bezelHeight = height - bezelTop * 2 - 3;
+            int bezelTop = top + 2;
+            int bezelHeight = height - 6;
             int bezelWidth = bezelHeight * 2;
             int bezelLeft = width / 2 - bezelHeight + left;
             (int x, int y) radius = (bezelLeft + bezelWidth / 2, bezelTop + bezelHeight / 2);

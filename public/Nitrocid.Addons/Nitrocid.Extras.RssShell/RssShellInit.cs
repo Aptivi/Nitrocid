@@ -63,6 +63,7 @@ namespace Nitrocid.Extras.RssShell
             new(new Dictionary<string, Delegate>()
             {
                 { nameof(RSSShellTools.GetFirstArticle), RSSShellTools.GetFirstArticle },
+                { nameof(RSSShellTools.GetArticles), RSSShellTools.GetArticles },
                 { nameof(RSSShellTools.SearchArticles), RSSShellTools.SearchArticles },
                 { nameof(RSSBookmarkManager.AddRSSFeedToBookmark), new Action(RSSBookmarkManager.AddRSSFeedToBookmark) },
                 { nameof(RSSBookmarkManager.AddRSSFeedToBookmark) + "2", new Action<string>(RSSBookmarkManager.AddRSSFeedToBookmark) },
