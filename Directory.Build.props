@@ -36,6 +36,7 @@
 
       Supported constants (NitrocidFlags):
           - PACKAGEMANAGERBUILD: Indicates that this build is a package manager build suitable for Launchpad PPA
+          - VSDEBUG: Enables immediate window debug in the "Output" pane
 
       Possible specifiers (NitrocidReleaseSpecifier):
           - REL: Final release

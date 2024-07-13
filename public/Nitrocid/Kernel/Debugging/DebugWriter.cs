@@ -19,6 +19,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Text;
 using Nitrocid.Drivers;
@@ -221,10 +222,11 @@ namespace Nitrocid.Kernel.Debugging
                         // it to have consistent line endings across platforms, like if you try to print the output of a text
                         // file that only has \n at the end of each line, we would inadvertently place the \r\n in each debug
                         // line, causing the file to have mixed line endings.
-                        if (vars.Length > 0)
-                            DriverHandler.CurrentDebugLoggerDriverLocal.Write(message.ToString(), vars);
-                        else
-                            DriverHandler.CurrentDebugLoggerDriverLocal.Write(message.ToString());
+                        string result = vars.Length > 0 ? message.ToString().FormatString(vars) : message.ToString();
+                        DriverHandler.CurrentDebugLoggerDriverLocal.Write(result);
+#if VSDEBUG
+                        Debug.Write(result);
+#endif
 
                         // If quota is enabled, add the line count
                         if (DebugQuotaCheck)
