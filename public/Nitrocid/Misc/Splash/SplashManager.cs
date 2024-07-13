@@ -167,6 +167,12 @@ namespace Nitrocid.Misc.Splash
         /// <summary>
         /// Opens the splash screen
         /// </summary>
+        public static void OpenSplash() =>
+            OpenSplash(CurrentSplash, currentContext);
+
+        /// <summary>
+        /// Opens the splash screen
+        /// </summary>
         /// <param name="context">Context of the splash screen (can be used as a reason as to why do you want to display the splash)</param>
         public static void OpenSplash(SplashContext context) =>
             OpenSplash(CurrentSplash, context);
@@ -175,9 +181,23 @@ namespace Nitrocid.Misc.Splash
         /// Opens the splash screen
         /// </summary>
         /// <param name="splashName">Splash name</param>
+        public static void OpenSplash(string splashName) =>
+            OpenSplash(GetSplashFromName(splashName).EntryPoint, currentContext);
+
+        /// <summary>
+        /// Opens the splash screen
+        /// </summary>
+        /// <param name="splashName">Splash name</param>
         /// <param name="context">Context of the splash screen (can be used as a reason as to why do you want to display the splash)</param>
         public static void OpenSplash(string splashName, SplashContext context) =>
             OpenSplash(GetSplashFromName(splashName).EntryPoint, context);
+
+        /// <summary>
+        /// Opens the splash screen
+        /// </summary>
+        /// <param name="splash">Splash interface to use</param>
+        public static void OpenSplash(ISplash splash) =>
+            OpenSplash(splash, currentContext);
 
         /// <summary>
         /// Opens the splash screen
@@ -220,6 +240,12 @@ namespace Nitrocid.Misc.Splash
         /// <summary>
         /// Closes the splash screen
         /// </summary>
+        public static void CloseSplash() =>
+            CloseSplash(CurrentSplash, currentContext);
+
+        /// <summary>
+        /// Closes the splash screen
+        /// </summary>
         /// <param name="context">Context of the splash screen (can be used as a reason as to why do you want to display the splash)</param>
         public static void CloseSplash(SplashContext context) =>
             CloseSplash(CurrentSplash, context);
@@ -228,9 +254,23 @@ namespace Nitrocid.Misc.Splash
         /// Closes the splash screen
         /// </summary>
         /// <param name="splashName">Splash name</param>
+        public static void CloseSplash(string splashName) =>
+            CloseSplash(GetSplashFromName(splashName).EntryPoint, currentContext);
+
+        /// <summary>
+        /// Closes the splash screen
+        /// </summary>
+        /// <param name="splashName">Splash name</param>
         /// <param name="context">Context of the splash screen (can be used as a reason as to why do you want to display the splash)</param>
         public static void CloseSplash(string splashName, SplashContext context) =>
             CloseSplash(GetSplashFromName(splashName).EntryPoint, context);
+
+        /// <summary>
+        /// Closes the splash screen
+        /// </summary>
+        /// <param name="splash">Splash interface to use</param>
+        public static void CloseSplash(ISplash splash) =>
+            CloseSplash(splash, true, currentContext);
 
         /// <summary>
         /// Closes the splash screen
@@ -301,12 +341,24 @@ namespace Nitrocid.Misc.Splash
         /// <summary>
         /// Clears the screen for important messages to show up during kernel booting
         /// </summary>
+        public static void BeginSplashOut() =>
+            BeginSplashOut(currentContext);
+
+        /// <summary>
+        /// Clears the screen for important messages to show up during kernel booting
+        /// </summary>
         /// <param name="context">Context of the splash screen (can be used as a reason as to why do you want to display the splash)</param>
         public static void BeginSplashOut(SplashContext context)
         {
             if (EnableSplash && SplashReport._InSplash)
                 CloseSplash(CurrentSplash, false, context);
         }
+
+        /// <summary>
+        /// Declares that it's done showing important messages during kernel booting
+        /// </summary>
+        public static void EndSplashOut() =>
+            EndSplashOut(currentContext);
 
         /// <summary>
         /// Declares that it's done showing important messages during kernel booting
