@@ -36,12 +36,13 @@ using System.Linq;
 using Textify.General;
 using Terminaux.Base;
 using Nitrocid.ConsoleBase.Inputs;
+using Terminaux.Inputs.Interactive;
 
 namespace Nitrocid.Extras.LanguageStudio.Studio
 {
     static class LanguageStudioApp
     {
-        public static void StartLanguageStudio(string pathToTranslations)
+        public static void StartLanguageStudio(string pathToTranslations, bool useTui = false)
         {
             // Neutralize the translations path
             pathToTranslations = FilesystemTools.NeutralizePath(pathToTranslations);
@@ -121,6 +122,19 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
                 // Now, add the translated lines
                 DebugWriter.WriteDebug(DebugLevel.I, "Final lines {0}", finalLangLines.Count);
                 translatedLines.Add(language, finalLangLines);
+            }
+
+            // Check for TUI
+            if (useTui)
+            {
+                var tui = new LanguageStudioCli()
+                {
+                    translatedLines = translatedLines,
+                    pathToTranslations = pathToTranslations,
+                    englishLines = englishLines,
+                };
+                InteractiveTuiTools.OpenInteractiveTui(tui);
+                return;
             }
 
             // Loop until exit is requested

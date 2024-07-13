@@ -28,6 +28,7 @@ using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Modifications;
 using System.Linq;
+using Nitrocid.Shell.ShellBase.Switches;
 
 namespace Nitrocid.Extras.LanguageStudio
 {
@@ -37,10 +38,13 @@ namespace Nitrocid.Extras.LanguageStudio
         [
             new CommandInfo("mklang", /* Localizable */ "Makes a new language",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "pathToTranslations"),
-                    })
+                    ],
+                    [
+                        new SwitchInfo("tui", /* Localizable */ "Makes a new language in an interactive TUI")
+                    ])
                 ], new MkLangCommand())
         ];
 
