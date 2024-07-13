@@ -18,11 +18,14 @@
 //
 
 using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Configuration;
+using Nitrocid.Kernel.Configuration.Settings;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Languages;
+using Nitrocid.Misc.Interactives;
 using Nitrocid.Network.Types.RSS;
 using Nitrocid.Users;
 using Nitrocid.Users.Login;
@@ -36,9 +39,11 @@ using Terminaux.Base;
 using Terminaux.Base.Buffered;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
+using Terminaux.Inputs;
 using Terminaux.Inputs.Interactive;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Selection;
 using Terminaux.Reader;
 using Terminaux.Sequences;
 using Terminaux.Sequences.Builder.Types;
@@ -60,6 +65,7 @@ namespace Nitrocid.Shell.Homepage
             new(/* Localizable */ "Logout", ConsoleKey.Escape),
             new(/* Localizable */ "Shell", ConsoleKey.S),
             new(/* Localizable */ "Keybindings", ConsoleKey.K),
+            new(/* Localizable */ "Switch", ConsoleKey.Tab),
 
             // Mouse
             new(/* Localizable */ "Execute", PointerButton.Left),
@@ -74,6 +80,15 @@ namespace Nitrocid.Shell.Homepage
                 return;
             isOnHomepage = true;
             var homeScreen = new Screen();
+            int choiceIdx = 0;
+            bool settingsHighlighted = false;
+            InputChoiceInfo[] choices =
+            [
+                new("1", Translate.DoTranslation("File Manager")),
+                new("2", Translate.DoTranslation("Alarm Manager")),
+                new("3", Translate.DoTranslation("Notifications")),
+                new("4", Translate.DoTranslation("Task Manager")),
+            ];
 
             try
             {
@@ -152,7 +167,6 @@ namespace Nitrocid.Shell.Homepage
                     if (string.IsNullOrEmpty(rssSequence))
                     {
                         var rssSequenceBuilder = new StringBuilder();
-                        rssSequenceBuilder.Append(CsiSequences.GenerateCsiCursorPosition(widgetLeft + 2, rssTop + 2));
                         try
                         {
                             if (!Config.MainConfig.ShowHeadlineOnLogin)
@@ -189,6 +203,7 @@ namespace Nitrocid.Shell.Homepage
                         }
                         rssSequence = rssSequenceBuilder.ToString();
                     }
+                    builder.Append(CsiSequences.GenerateCsiCursorPosition(widgetLeft + 2, rssTop + 2));
                     builder.Append(rssSequence);
 
                     // Populate the settings button
@@ -196,8 +211,12 @@ namespace Nitrocid.Shell.Homepage
                     int settingsButtonPosY = ConsoleWrapper.WindowHeight - 5;
                     int settingsButtonWidth = ConsoleWrapper.WindowWidth / 2 - 5 + ConsoleWrapper.WindowWidth % 2;
                     int settingsButtonHeight = 1;
-                    builder.Append(BorderColor.RenderBorder(settingsButtonPosX, settingsButtonPosY, settingsButtonWidth, settingsButtonHeight, KernelColorTools.GetColor(KernelColorType.TuiPaneSeparator)));
-                    builder.Append(CenteredTextColor.RenderCenteredOneLine(settingsButtonPosY + 1, Translate.DoTranslation("Settings"), KernelColorTools.GetColor(KernelColorType.TuiPaneSeparator), settingsButtonPosX + 1, settingsButtonWidth + settingsButtonPosX + 5 - ConsoleWrapper.WindowWidth % 2));
+                    builder.Append(BorderColor.RenderBorder(settingsButtonPosX, settingsButtonPosY, settingsButtonWidth, settingsButtonHeight, KernelColorTools.GetColor(settingsHighlighted ? KernelColorType.TuiPaneSelectedSeparator : KernelColorType.TuiPaneSeparator)));
+                    builder.Append(CenteredTextColor.RenderCenteredOneLine(settingsButtonPosY + 1, Translate.DoTranslation("Settings"), KernelColorTools.GetColor(settingsHighlighted ? KernelColorType.TuiPaneSelectedSeparator : KernelColorType.TuiPaneSeparator), settingsButtonPosX + 1, settingsButtonWidth + settingsButtonPosX + 5 - ConsoleWrapper.WindowWidth % 2));
+
+                    // Populate the available options
+                    builder.Append(BorderColor.RenderBorder(settingsButtonPosX, clockTop, widgetWidth - 1 + ConsoleWrapper.WindowWidth % 2, widgetHeight + 2, KernelColorTools.GetColor(KernelColorType.TuiPaneSelectedSeparator)));
+                    builder.Append(SelectionInputTools.RenderSelections(choices, settingsButtonPosX + 1, clockTop + 1, choiceIdx, widgetHeight + 2, widgetWidth - 1 + ConsoleWrapper.WindowWidth % 2));
 
                     // Return the resulting homepage
                     return builder.ToString();
@@ -224,8 +243,60 @@ namespace Nitrocid.Shell.Homepage
                         var keypress = key.Item2;
                         switch (keypress.Key)
                         {
+                            case ConsoleKey.DownArrow:
+                                if (settingsHighlighted)
+                                    break;
+                                choiceIdx++;
+                                if (choiceIdx >= choices.Length)
+                                    choiceIdx--;
+                                break;
+                            case ConsoleKey.UpArrow:
+                                if (settingsHighlighted)
+                                    break;
+                                choiceIdx--;
+                                if (choiceIdx < 0)
+                                    choiceIdx++;
+                                break;
+                            case ConsoleKey.Tab:
+                                settingsHighlighted = !settingsHighlighted;
+                                break;
                             case ConsoleKey.Enter:
-
+                                if (settingsHighlighted)
+                                    SettingsApp.OpenMainPage(Config.MainConfig);
+                                else
+                                {
+                                    switch (choiceIdx)
+                                    {
+                                        case 0:
+                                            {
+                                                var tui = new FileManagerCli
+                                                {
+                                                    firstPanePath = PathsManagement.HomePath,
+                                                    secondPanePath = PathsManagement.HomePath
+                                                };
+                                                InteractiveTuiTools.OpenInteractiveTui(tui);
+                                            }
+                                            break;
+                                        case 1:
+                                            {
+                                                var tui = new AlarmCli();
+                                                InteractiveTuiTools.OpenInteractiveTui(tui);
+                                            }
+                                            break;
+                                        case 2:
+                                            {
+                                                var tui = new NotificationsCli();
+                                                InteractiveTuiTools.OpenInteractiveTui(tui);
+                                            }
+                                            break;
+                                        case 3:
+                                            {
+                                                var tui = new TaskManagerCli();
+                                                InteractiveTuiTools.OpenInteractiveTui(tui);
+                                            }
+                                            break;
+                                    }
+                                }
                                 break;
                             case ConsoleKey.Escape:
                                 exiting = true;
