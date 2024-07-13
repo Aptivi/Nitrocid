@@ -184,7 +184,8 @@ namespace Nitrocid.Kernel
                     TextWriters.Write("* " + Translate.DoTranslation("Run 'license' to see the license information."), KernelColorType.Tip);
 
                     // Start the shell
-                    ShellManager.StartShellInternal(ShellType.Shell);
+                    if (!Login.LogoutRequested)
+                        ShellManager.StartShellInternal(ShellType.Shell);
                     if (Login.LogoutRequested)
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Requested log out: {0}", Login.LogoutRequested);
