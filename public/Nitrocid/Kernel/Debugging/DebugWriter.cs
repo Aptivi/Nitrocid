@@ -46,8 +46,8 @@ namespace Nitrocid.Kernel.Debugging
         internal static StreamWriter DebugStreamWriter;
         internal static bool isDisposed;
         internal static object WriteLock = new();
+        internal static int debugLines = 0;
         internal readonly static List<string> debugStackTraces = [];
-        internal readonly static List<string> debugLines = [];
 
         /// <summary>
         /// Debug stack trace list
@@ -226,9 +226,9 @@ namespace Nitrocid.Kernel.Debugging
                         else
                             DriverHandler.CurrentDebugLoggerDriverLocal.Write(message.ToString());
 
-                        // If quota is enabled, add the line
+                        // If quota is enabled, add the line count
                         if (DebugQuotaCheck)
-                            debugLines.Add(message.ToString());
+                            debugLines++;
                     }
                     catch (Exception ex)
                     {
@@ -402,9 +402,9 @@ namespace Nitrocid.Kernel.Debugging
                 return;
 
             // Now, check how many lines we've written to the buffer
-            if (debugLines.Count > DebugQuotaLines)
+            if (debugLines > DebugQuotaLines)
             {
-                debugLines.Clear();
+                debugLines = 0;
                 InitializeDebugPath();
                 isDisposed = true;
             }

@@ -379,6 +379,7 @@ namespace Nitrocid.Kernel.Starting
                     DebugWriter.DebugStreamWriter.Close();
                     DebugWriter.DebugStreamWriter.Dispose();
                     DebugWriter.isDisposed = true;
+                    DebugWriter.debugLines = 0;
                 }
 
                 // Clear all active threads as we're rebooting
