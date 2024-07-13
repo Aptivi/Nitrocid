@@ -56,7 +56,7 @@ namespace Nitrocid.Shell.Homepage
     /// </summary>
     public static class HomepageTools
     {
-        internal static bool isHomepageEnabled = false;
+        internal static bool isHomepageEnabled = true;
         private static bool isOnHomepage = false;
         private static readonly HomepageBinding[] bindings =
         [
