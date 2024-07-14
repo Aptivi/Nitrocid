@@ -21,6 +21,7 @@ using MailKit;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Extras.MailShell.Mail;
+using Nitrocid.Kernel.Configuration;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Reflection;
 using Nitrocid.Misc.Text.Probers.Placeholder;
@@ -38,7 +39,7 @@ namespace Nitrocid.Extras.MailShell.Tools.Transfer
         /// <inheritdoc/>
         public void Report(long bytesTransferred, long totalSize)
         {
-            if (MailShellCommon.ShowProgress)
+            if (Config.MainConfig.ShowProgress)
             {
                 if (!string.IsNullOrWhiteSpace(MailShellCommon.ProgressStyle))
                 {
@@ -54,7 +55,7 @@ namespace Nitrocid.Extras.MailShell.Tools.Transfer
         /// <inheritdoc/>
         public void Report(long bytesTransferred)
         {
-            if (MailShellCommon.ShowProgress)
+            if (Config.MainConfig.ShowProgress)
             {
                 if (!string.IsNullOrWhiteSpace(MailShellCommon.ProgressStyleSingle))
                 {

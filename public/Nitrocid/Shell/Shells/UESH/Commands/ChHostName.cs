@@ -24,6 +24,7 @@ using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Network;
+using Nitrocid.Kernel.Configuration;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -58,7 +59,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("Changing from: {0} to {1}..."), NetworkTools.HostName, parameters.ArgumentsList[0]);
+                TextWriterColor.Write(Translate.DoTranslation("Changing from: {0} to {1}..."), Config.MainConfig.HostName, parameters.ArgumentsList[0]);
                 NetworkTools.ChangeHostname(parameters.ArgumentsList[0]);
                 return 0;
             }

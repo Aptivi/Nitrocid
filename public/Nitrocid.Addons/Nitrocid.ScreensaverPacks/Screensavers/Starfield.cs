@@ -25,6 +25,7 @@ using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Screensaver;
+using Nitrocid.Kernel.Configuration;
 using Terminaux.Colors;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
@@ -96,7 +97,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             }
             if (ConsoleResizeHandler.WasResized(false))
             {
-                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.W, "Resize-syncing. Clearing...");
+                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.W, "Resize-syncing. Clearing...");
                 Stars.Clear();
             }
             else

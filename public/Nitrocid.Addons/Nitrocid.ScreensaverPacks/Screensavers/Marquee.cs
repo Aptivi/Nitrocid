@@ -26,6 +26,7 @@ using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Textify.General;
+using Nitrocid.Kernel.Configuration;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -58,7 +59,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             {
                 TopPrinted = RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight);
             }
-            DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Top position: {0}", TopPrinted);
+            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Top position: {0}", TopPrinted);
 
             // Start with the left position as the right position.
             int CurrentLeft = ConsoleWrapper.WindowWidth - 1;
@@ -71,13 +72,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 int RedColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.MarqueeMinimumRedColorLevel, ScreensaverPackInit.SaversConfig.MarqueeMaximumRedColorLevel);
                 int GreenColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.MarqueeMinimumGreenColorLevel, ScreensaverPackInit.SaversConfig.MarqueeMaximumGreenColorLevel);
                 int BlueColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.MarqueeMinimumBlueColorLevel, ScreensaverPackInit.SaversConfig.MarqueeMaximumBlueColorLevel);
-                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
+                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                 ColorTools.SetConsoleColor(new Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}"));
             }
             else
             {
                 int color = RandomDriver.Random(ScreensaverPackInit.SaversConfig.MarqueeMinimumColorLevel, ScreensaverPackInit.SaversConfig.MarqueeMaximumColorLevel);
-                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color ({0})", color);
+                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color ({0})", color);
                 ColorTools.SetConsoleColor(new Color(color));
             }
 
@@ -89,12 +90,12 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     break;
                 if (ScreensaverPackInit.SaversConfig.MarqueeUseConsoleAPI)
                     ConsoleWrapper.Clear();
-                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Current left: {0} | Current left on other end: {1}", CurrentLeft, CurrentLeftOtherEnd);
+                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Current left: {0} | Current left on other end: {1}", CurrentLeft, CurrentLeftOtherEnd);
 
                 // Declare variable for written marquee text
                 string MarqueeWritten = ScreensaverPackInit.SaversConfig.MarqueeWrite;
                 bool Middle = ScreensaverPackInit.SaversConfig.MarqueeWrite.Length - (CurrentLeftOtherEnd - CurrentLeft) != CurrentCharacterNum - (CurrentLeftOtherEnd - CurrentLeft);
-                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Middle of long text: {0}", Middle);
+                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Middle of long text: {0}", Middle);
 
                 // If the current left position is not zero (not on the left), take the substring starting from the beginning of the string until the
                 // written variable equals the base text variable. However, if we're on the left, take the substring so that the character which was
@@ -111,7 +112,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 {
                     MarqueeWritten = MarqueeWritten[(ScreensaverPackInit.SaversConfig.MarqueeWrite.Length - (CurrentLeftOtherEnd - CurrentLeft))..];
                 }
-                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Written result: {0}", MarqueeWritten);
+                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Written result: {0}", MarqueeWritten);
                 if (!ScreensaverPackInit.SaversConfig.MarqueeUseConsoleAPI)
                     MarqueeWritten += $"{ConsoleClearing.GetClearLineToRightSequence()}";
 
@@ -125,14 +126,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 if (CurrentLeft != 0)
                 {
                     CurrentLeft -= 1;
-                    DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Not on left. Decremented left position {0}", CurrentLeft);
+                    DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Not on left. Decremented left position {0}", CurrentLeft);
                 }
 
                 // If we're on the left or the entire text is written, decrement the current left other end position
                 if (!Middle)
                 {
                     CurrentLeftOtherEnd -= 1;
-                    DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "On left or entire text written. Decremented left other end position {0}", CurrentLeftOtherEnd);
+                    DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "On left or entire text written. Decremented left other end position {0}", CurrentLeftOtherEnd);
                 }
             }
 

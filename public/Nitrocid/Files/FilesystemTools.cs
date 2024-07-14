@@ -44,36 +44,6 @@ namespace Nitrocid.Files
         private const int maxLockTimeoutMs = 300000;
 
         /// <summary>
-        /// Shows the filesystem progress
-        /// </summary>
-        public static bool ShowFilesystemProgress =>
-            Config.MainConfig.ShowFilesystemProgress;
-
-        /// <summary>
-        /// Whether or not to parse whole directory for size
-        /// </summary>
-        public static bool FullParseMode =>
-            Config.MainConfig.FullParseMode;
-
-        /// <summary>
-        /// Whether or not to show hidden files
-        /// </summary>
-        public static bool HiddenFiles =>
-            Config.MainConfig.HiddenFiles;
-
-        /// <summary>
-        /// Print the line numbers while listing file contents
-        /// </summary>
-        public static bool PrintLineNumbers =>
-            Config.MainConfig.PrintLineNumbers;
-
-        /// <summary>
-        /// Whether to suppress the unauthorized messages while listing directory contents
-        /// </summary>
-        public static bool SuppressUnauthorizedMessages =>
-            Config.MainConfig.SuppressUnauthorizedMessages;
-
-        /// <summary>
         /// Simplifies the path to the correct one. It converts the path format to the unified format.
         /// </summary>
         /// <param name="Path">Target path, be it a file or a folder</param>

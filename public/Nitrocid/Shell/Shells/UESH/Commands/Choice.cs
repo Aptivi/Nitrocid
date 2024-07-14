@@ -25,6 +25,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.ConsoleBase.Inputs;
+using Nitrocid.Kernel.Configuration;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -73,7 +74,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
         {
             var Titles = new List<(string, string)>();
             var PressEnter = false;
-            var OutputType = InputTools.DefaultChoiceOutputType;
+            var OutputType = (ChoiceOutputType)Config.MainConfig.DefaultChoiceOutputType;
             if (parameters.SwitchesList.Contains("-multiple"))
                 PressEnter = true;
             if (parameters.SwitchesList.Contains("-single"))

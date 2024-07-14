@@ -20,6 +20,7 @@
 using Nitrocid.Languages;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
+using Nitrocid.Kernel.Configuration;
 
 namespace Nitrocid.Tests.Languages
 {
@@ -75,7 +76,7 @@ namespace Nitrocid.Tests.Languages
         public void TestSetLang()
         {
             LanguageManager.SetLang("spa").ShouldBeTrue();
-            LanguageManager.CurrentLanguage.ShouldBe("spa");
+            Config.MainConfig.CurrentLanguage.ShouldBe("spa");
 
             // Check for null
             var InfoInstance = LanguageManager.CurrentLanguageInfo;
@@ -100,7 +101,7 @@ namespace Nitrocid.Tests.Languages
         public void TestSetLangDry()
         {
             LanguageManager.SetLangDry("arb").ShouldBeTrue();
-            LanguageManager.CurrentLanguage.ShouldBe("arb");
+            Config.MainConfig.CurrentLanguage.ShouldBe("arb");
 
             // Check for null
             var InfoInstance = LanguageManager.CurrentLanguageInfo;

@@ -29,6 +29,7 @@ using Terminaux.Colors;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
+using Nitrocid.Kernel.Configuration;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -63,11 +64,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 int firstGroupRedColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.TwoSpinsMinimumRedColorLevel, ScreensaverPackInit.SaversConfig.TwoSpinsMaximumRedColorLevel);
                 int firstGroupGreenColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.TwoSpinsMinimumGreenColorLevel, ScreensaverPackInit.SaversConfig.TwoSpinsMaximumGreenColorLevel);
                 int firstGroupBlueColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.TwoSpinsMinimumBlueColorLevel, ScreensaverPackInit.SaversConfig.TwoSpinsMaximumBlueColorLevel);
-                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color for first group (R;G;B: {0};{1};{2})", firstGroupRedColorNum, firstGroupGreenColorNum, firstGroupBlueColorNum);
+                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color for first group (R;G;B: {0};{1};{2})", firstGroupRedColorNum, firstGroupGreenColorNum, firstGroupBlueColorNum);
                 int secondGroupRedColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.TwoSpinsMinimumRedColorLevel, ScreensaverPackInit.SaversConfig.TwoSpinsMaximumRedColorLevel);
                 int secondGroupGreenColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.TwoSpinsMinimumGreenColorLevel, ScreensaverPackInit.SaversConfig.TwoSpinsMaximumGreenColorLevel);
                 int secondGroupBlueColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.TwoSpinsMinimumBlueColorLevel, ScreensaverPackInit.SaversConfig.TwoSpinsMaximumBlueColorLevel);
-                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color for second group (R;G;B: {0};{1};{2})", secondGroupRedColorNum, secondGroupGreenColorNum, secondGroupBlueColorNum);
+                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color for second group (R;G;B: {0};{1};{2})", secondGroupRedColorNum, secondGroupGreenColorNum, secondGroupBlueColorNum);
                 var firstGroupColorStorage = new Color(firstGroupRedColorNum, firstGroupGreenColorNum, firstGroupBlueColorNum);
                 var secondGroupColorStorage = new Color(secondGroupRedColorNum, secondGroupGreenColorNum, secondGroupBlueColorNum);
                 firstGroupDotsColor = firstGroupColorStorage;
@@ -76,9 +77,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             else
             {
                 int firstGroupColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.TwoSpinsMinimumColorLevel, ScreensaverPackInit.SaversConfig.TwoSpinsMaximumColorLevel);
-                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color for first group ({0})", firstGroupColorNum);
+                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color for first group ({0})", firstGroupColorNum);
                 int secondGroupColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.TwoSpinsMinimumColorLevel, ScreensaverPackInit.SaversConfig.TwoSpinsMaximumColorLevel);
-                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color for second group ({0})", secondGroupColorNum);
+                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color for second group ({0})", secondGroupColorNum);
                 firstGroupDotsColor = firstGroupColorNum;
                 secondGroupDotsColor = secondGroupColorNum;
             }

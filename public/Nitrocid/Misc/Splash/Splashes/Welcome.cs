@@ -171,9 +171,9 @@ namespace Nitrocid.Misc.Splash.Splashes
                 CenteredTextColor.RenderCenteredOneLine(consoleY - 1, KernelReleaseInfo.ConsoleTitle)
             );
             delayRequired =
-                context == SplashContext.ShuttingDown && PowerManager.DelayOnShutdown ||
+                context == SplashContext.ShuttingDown && Config.MainConfig.DelayOnShutdown ||
                 context != SplashContext.ShuttingDown && context != SplashContext.Rebooting;
-            if ((context == SplashContext.ShuttingDown || context == SplashContext.Rebooting) && PowerManager.BeepOnShutdown)
+            if ((context == SplashContext.ShuttingDown || context == SplashContext.Rebooting) && Config.MainConfig.BeepOnShutdown)
                 ConsoleWrapper.Beep();
             return builder.ToString();
         }

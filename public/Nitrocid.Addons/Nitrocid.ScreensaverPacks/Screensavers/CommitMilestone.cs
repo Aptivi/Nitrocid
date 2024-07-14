@@ -24,6 +24,7 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Screensaver;
+using Nitrocid.Kernel.Configuration;
 using Terminaux.Colors;
 using Terminaux.Base;
 
@@ -59,13 +60,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 int RedColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.CommitMilestoneMinimumRedColorLevel, ScreensaverPackInit.SaversConfig.CommitMilestoneMaximumRedColorLevel);
                 int GreenColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.CommitMilestoneMinimumGreenColorLevel, ScreensaverPackInit.SaversConfig.CommitMilestoneMaximumGreenColorLevel);
                 int BlueColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.CommitMilestoneMinimumBlueColorLevel, ScreensaverPackInit.SaversConfig.CommitMilestoneMaximumBlueColorLevel);
-                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
+                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                 ColorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
             }
             else
             {
                 int ColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.CommitMilestoneMinimumColorLevel, ScreensaverPackInit.SaversConfig.CommitMilestoneMaximumColorLevel);
-                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
+                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
                 ColorStorage = new Color(ColorNum);
             }
             if (ScreensaverPackInit.SaversConfig.CommitMilestoneRainbowMode)

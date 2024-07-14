@@ -31,6 +31,7 @@ using Terminaux.Base;
 using Terminaux.Colors.Data;
 using Nitrocid.Kernel.Debugging;
 using Terminaux.Reader;
+using Nitrocid.Kernel.Configuration;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games
 {
@@ -307,7 +308,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 }
                 catch
                 {
-                    DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.E, "Can't display error message on meteor shooter.");
+                    DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.E, "Can't display error message on meteor shooter.");
                 }
                 finally
                 {
@@ -327,7 +328,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     }
                     catch
                     {
-                        DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.E, "Can't display game over on meteor shooter.");
+                        DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.E, "Can't display game over on meteor shooter.");
                     }
                 }
                 ConsoleWrapper.Clear();

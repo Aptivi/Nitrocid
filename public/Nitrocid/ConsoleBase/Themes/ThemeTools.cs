@@ -115,7 +115,7 @@ namespace Nitrocid.ConsoleBase.Themes
         public static void ApplyTheme(ThemeInfo themeInfo, bool dry = false)
         {
             // Check if the console supports true color
-            if (ConsoleTools.ConsoleSupportsTrueColor && themeInfo.TrueColorRequired || !themeInfo.TrueColorRequired)
+            if (Config.MainConfig.ConsoleSupportsTrueColor && themeInfo.TrueColorRequired || !themeInfo.TrueColorRequired)
             {
                 // Check to see if the event is finished
                 if (themeInfo.IsExpired)
@@ -202,7 +202,7 @@ namespace Nitrocid.ConsoleBase.Themes
                 throw new KernelException(KernelExceptionType.Color, nameof(ThemeInfo));
 
             // Check to see if we're trying to preview theme on non-true color console
-            if (MinimumTypeRequired(ThemeInfo, ColorType.TrueColor) && !ConsoleTools.ConsoleSupportsTrueColor)
+            if (MinimumTypeRequired(ThemeInfo, ColorType.TrueColor) && !Config.MainConfig.ConsoleSupportsTrueColor)
                 throw new KernelException(KernelExceptionType.UnsupportedConsole, Translate.DoTranslation("Your console must support true color to use this theme."));
 
             // Set the colors

@@ -24,6 +24,7 @@ using Nitrocid.Languages;
 using Nitrocid.Security.Privacy;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Security.Privacy.Consents;
+using Nitrocid.Kernel.Configuration;
 
 namespace Nitrocid.Files.Operations
 {
@@ -41,7 +42,7 @@ namespace Nitrocid.Files.Operations
         {
             if (!PrivacyConsentTools.ConsentPermission(ConsentedPermissionType.FilesystemWrite))
                 throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Access to the path is denied due to no consent."));
-            DriverHandler.CurrentFilesystemDriverLocal.RemoveDirectory(Target, FilesystemTools.ShowFilesystemProgress);
+            DriverHandler.CurrentFilesystemDriverLocal.RemoveDirectory(Target, Config.MainConfig.ShowFilesystemProgress);
         }
 
         /// <summary>

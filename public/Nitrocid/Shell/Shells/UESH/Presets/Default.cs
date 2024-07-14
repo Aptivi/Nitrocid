@@ -62,7 +62,7 @@ namespace Nitrocid.Shell.Shells.UESH.Presets
 
                 // Current hostname
                 PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.HostNameShell).VTSequenceForeground);
-                PresetStringBuilder.AppendFormat("{0}", NetworkTools.HostName);
+                PresetStringBuilder.AppendFormat("{0}", Config.MainConfig.HostName);
 
                 // Current directory and shell stack
                 PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);

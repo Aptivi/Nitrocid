@@ -24,6 +24,7 @@ using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Screensaver;
 using Terminaux.Colors;
 using Terminaux.Base;
+using Nitrocid.Kernel.Configuration;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -51,8 +52,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             int EndTop = ConsoleWrapper.WindowHeight - 1;
             int Left = RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth);
             int Top = RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight);
-            DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "End left: {0} | End top: {1}", EndLeft, EndTop);
-            DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got left: {0} | Got top: {1}", Left, Top);
+            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "End left: {0} | End top: {1}", EndLeft, EndTop);
+            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got left: {0} | Got top: {1}", Left, Top);
 
             // Fill the color if not filled
             if (ConsoleWrapper.CursorLeft >= EndLeft && ConsoleWrapper.CursorTop >= EndTop)
@@ -65,13 +66,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     int RedColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.ColorMixMinimumRedColorLevel, ScreensaverPackInit.SaversConfig.ColorMixMaximumRedColorLevel);
                     int GreenColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.ColorMixMinimumGreenColorLevel, ScreensaverPackInit.SaversConfig.ColorMixMaximumGreenColorLevel);
                     int BlueColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.ColorMixMinimumBlueColorLevel, ScreensaverPackInit.SaversConfig.ColorMixMaximumBlueColorLevel);
-                    DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
+                    DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                     colorStorage = new Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}");
                 }
                 else
                 {
                     int ColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.ColorMixMinimumColorLevel, ScreensaverPackInit.SaversConfig.ColorMixMaximumColorLevel);
-                    DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
+                    DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
                     colorStorage = new Color(ColorNum);
                 }
 
@@ -83,7 +84,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 }
                 else
                 {
-                    DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "We're refilling...");
+                    DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "We're refilling...");
                     ColorTools.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.ColorMixBackgroundColor));
                 }
             }

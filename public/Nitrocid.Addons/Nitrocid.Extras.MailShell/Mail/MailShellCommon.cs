@@ -68,11 +68,6 @@ namespace Nitrocid.Extras.MailShell.Mail
         public static TextFormat TextFormat =>
             (TextFormat)MailShellInit.MailConfig.MailTextFormat;
         /// <summary>
-        /// Show progress on mail transfer
-        /// </summary>
-        public static bool ShowProgress =>
-            Config.MainConfig.ShowProgress;
-        /// <summary>
         /// Mail progress style
         /// </summary>
         public static string ProgressStyle =>

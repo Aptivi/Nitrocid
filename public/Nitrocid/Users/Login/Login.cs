@@ -46,17 +46,6 @@ namespace Nitrocid.Users.Login
         internal static bool LoggedIn;
 
         /// <summary>
-        /// Username prompt
-        /// </summary>
-        public static string UsernamePrompt =>
-            Config.MainConfig.UsernamePrompt;
-        /// <summary>
-        /// Password prompt
-        /// </summary>
-        public static string PasswordPrompt =>
-            Config.MainConfig.PasswordPrompt;
-
-        /// <summary>
         /// Prompts user for login information
         /// </summary>
         public static void LoginPrompt()
@@ -227,7 +216,7 @@ namespace Nitrocid.Users.Login
 
         internal static void PromptMaintenanceLogin()
         {
-            if (SplashManager.EnableSplash)
+            if (Config.MainConfig.EnableSplash)
                 ColorTools.LoadBack();
             TextWriterColor.Write(Translate.DoTranslation("Enter the admin password for maintenance."));
             string user = "root";

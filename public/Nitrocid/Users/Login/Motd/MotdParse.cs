@@ -41,12 +41,6 @@ namespace Nitrocid.Users.Login.Motd
         private static readonly List<Func<string>> motdDynamics = [];
 
         /// <summary>
-        /// MOTD file path
-        /// </summary>
-        public static string MotdFilePath =>
-            Config.MainConfig.MotdFilePath;
-
-        /// <summary>
         /// Current MOTD message
         /// </summary>
         public static string MotdMessage
@@ -73,12 +67,12 @@ namespace Nitrocid.Users.Login.Motd
             try
             {
                 // Get the MOTD file path
-                Config.MainConfig.MotdFilePath = FilesystemTools.NeutralizePath(MotdFilePath);
-                DebugWriter.WriteDebug(DebugLevel.I, "Path: {0}", MotdFilePath);
+                Config.MainConfig.MotdFilePath = FilesystemTools.NeutralizePath(Config.MainConfig.MotdFilePath);
+                DebugWriter.WriteDebug(DebugLevel.I, "Path: {0}", Config.MainConfig.MotdFilePath);
 
                 // Set the message
                 MotdMessage = Message;
-                Writing.WriteContentsText(MotdFilePath, Message);
+                Writing.WriteContentsText(Config.MainConfig.MotdFilePath, Message);
             }
             catch (Exception ex)
             {
@@ -95,12 +89,12 @@ namespace Nitrocid.Users.Login.Motd
             try
             {
                 // Get the MAL file path
-                Config.MainConfig.MotdFilePath = FilesystemTools.NeutralizePath(MotdFilePath);
-                DebugWriter.WriteDebug(DebugLevel.I, "Path: {0}", MotdFilePath);
+                Config.MainConfig.MotdFilePath = FilesystemTools.NeutralizePath(Config.MainConfig.MotdFilePath);
+                DebugWriter.WriteDebug(DebugLevel.I, "Path: {0}", Config.MainConfig.MotdFilePath);
 
                 // Read the message
                 InitMotd();
-                MotdMessage = Reading.ReadContentsText(MotdFilePath);
+                MotdMessage = Reading.ReadContentsText(Config.MainConfig.MotdFilePath);
             }
             catch (Exception ex)
             {

@@ -21,6 +21,7 @@ using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Screensaver;
+using Nitrocid.Kernel.Configuration;
 using Terminaux.Base;
 using Terminaux.Colors;
 
@@ -50,7 +51,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             ConsoleWrapper.CursorVisible = false;
             int Left = RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth);
             int Top = RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight);
-            DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Selected left and top: {0}, {1}", Left, Top);
+            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Selected left and top: {0}, {1}", Left, Top);
             ConsoleWrapper.SetCursorPosition(Left, Top);
             if (!ConsoleResizeHandler.WasResized(false))
             {
@@ -58,7 +59,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             }
             else
             {
-                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.W, "Color-syncing. Clearing...");
+                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.W, "Color-syncing. Clearing...");
                 ConsoleWrapper.Clear();
             }
 

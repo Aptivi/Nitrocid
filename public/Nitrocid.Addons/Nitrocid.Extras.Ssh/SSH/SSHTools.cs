@@ -51,11 +51,6 @@ namespace Nitrocid.Extras.Ssh.SSH
         /// Whether or not if disconnection is requested
         /// </summary>
         private static bool DisconnectionRequested;
-        /// <summary>
-        /// Whether or not to show the SSH banner on connection
-        /// </summary>
-        public static bool SSHBanner =>
-            Config.MainConfig.SSHBanner;
 
         /// <summary>
         /// Specifies SSH connection type
@@ -208,7 +203,7 @@ namespace Nitrocid.Extras.Ssh.SSH
                 // Connection
                 var SSH = new SshClient(PromptConnectionInfo(Address, Port, Username));
                 SSH.ConnectionInfo.Timeout = TimeSpan.FromSeconds(30d);
-                if (SSHBanner)
+                if (Config.MainConfig.SSHBanner)
                     SSH.ConnectionInfo.AuthenticationBanner += ShowBanner;
                 DebugWriter.WriteDebug(DebugLevel.I, "Connecting to {0}...", Address);
                 SSH.Connect();

@@ -40,18 +40,6 @@ namespace Nitrocid.Kernel.Updates
     {
 
         /// <summary>
-        /// Whether or not to check for updates on startup
-        /// </summary>
-        public static bool CheckUpdateStart =>
-            Config.MainConfig.CheckUpdateStart;
-
-        /// <summary>
-        /// Automatically downloads the kernel updates and notifies the user
-        /// </summary>
-        public static bool AutoDownloadUpdate =>
-            Config.MainConfig.AutoDownloadUpdate;
-
-        /// <summary>
         /// Fetches the GitHub repo to see if there are any updates
         /// </summary>
         /// <param name="kind">The kind of update</param>

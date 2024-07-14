@@ -41,18 +41,6 @@ namespace Nitrocid.Kernel.Hardware
         internal static IEnumerable graphics;
 
         /// <summary>
-        /// Probe the hardware quietly. This overrides the <see cref="VerboseHardwareProbe"/> flag.
-        /// </summary>
-        public static bool QuietHardwareProbe =>
-            Config.MainConfig.QuietHardwareProbe;
-
-        /// <summary>
-        /// Makes the hardware prober a bit talkative
-        /// </summary>
-        public static bool VerboseHardwareProbe =>
-            Config.MainConfig.VerboseHardwareProbe;
-
-        /// <summary>
         /// Starts probing hardware
         /// </summary>
         public static void StartProbing()

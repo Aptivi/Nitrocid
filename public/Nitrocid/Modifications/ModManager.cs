@@ -53,24 +53,6 @@ namespace Nitrocid.Modifications
         internal static Dictionary<string, ModInfo> Mods = [];
 
         /// <summary>
-        /// Blacklisted mods split by semicolons
-        /// </summary>
-        public static string BlacklistedModsString =>
-            Config.MainConfig.BlacklistedModsString;
-
-        /// <summary>
-        /// Whether to start the kernel mods on boot
-        /// </summary>
-        public static bool StartKernelMods =>
-            Config.MainConfig.StartKernelMods;
-
-        /// <summary>
-        /// Allow untrusted mods
-        /// </summary>
-        public static bool AllowUntrustedMods =>
-            Config.MainConfig.AllowUntrustedMods;
-
-        /// <summary>
         /// Loads all mods in KSMods
         /// </summary>
         /// <param name="priority">Specifies the mod load priority</param>
@@ -272,7 +254,8 @@ namespace Nitrocid.Modifications
         /// <summary>
         /// Gets the blacklisted mods list
         /// </summary>
-        public static List<string> GetBlacklistedMods() => [.. BlacklistedModsString.Split(';')];
+        public static List<string> GetBlacklistedMods() =>
+            [.. Config.MainConfig.BlacklistedModsString.Split(';')];
 
         /// <summary>
         /// Installs the mod DLL or single code file to the mod directory

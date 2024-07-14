@@ -21,6 +21,7 @@ using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Screensaver;
+using Nitrocid.Kernel.Configuration;
 using Terminaux.Base;
 using Terminaux.Colors;
 
@@ -60,20 +61,20 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     int RedColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.MultiLinesMinimumRedColorLevel, ScreensaverPackInit.SaversConfig.MultiLinesMaximumRedColorLevel);
                     int GreenColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.MultiLinesMinimumGreenColorLevel, ScreensaverPackInit.SaversConfig.MultiLinesMaximumGreenColorLevel);
                     int BlueColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.MultiLinesMinimumBlueColorLevel, ScreensaverPackInit.SaversConfig.MultiLinesMaximumBlueColorLevel);
-                    DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
+                    DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                     var ColorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
                     ColorTools.SetConsoleColor(ColorStorage);
                 }
                 else
                 {
                     int color = RandomDriver.Random(ScreensaverPackInit.SaversConfig.MultiLinesMinimumColorLevel, ScreensaverPackInit.SaversConfig.MultiLinesMaximumColorLevel);
-                    DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color ({0})", color);
+                    DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color ({0})", color);
                     ColorTools.SetConsoleColor(new Color(color));
                 }
 
                 // Now, draw a line
                 int Top = RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight);
-                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got top position ({0})", Top);
+                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got top position ({0})", Top);
                 if (!ConsoleResizeHandler.WasResized(false))
                 {
                     ConsoleWrapper.SetCursorPosition(0, Top);

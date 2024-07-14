@@ -36,18 +36,6 @@ namespace Nitrocid.ConsoleBase.Inputs
         internal static bool isWrapperInitialized;
 
         /// <summary>
-        /// Default input choice output type
-        /// </summary>
-        public static ChoiceOutputType DefaultChoiceOutputType =>
-            (ChoiceOutputType)Config.MainConfig.DefaultChoiceOutputType;
-
-        /// <summary>
-        /// Current mask character
-        /// </summary>
-        public static string CurrentMask =>
-            Config.MainConfig.CurrentMask;
-
-        /// <summary>
         /// Reads the line from the console
         /// </summary>
         public static string ReadLine() =>

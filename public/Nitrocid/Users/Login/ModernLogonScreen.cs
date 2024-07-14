@@ -62,12 +62,6 @@ namespace Nitrocid.Users.Login
             WidgetTools.GetWidget(secondWidgetName) :
             WidgetTools.GetWidget(nameof(DigitalClock));
 
-        /// <summary>
-        /// Whether to show the MOTD and the headline at the bottom or at the top of the clock
-        /// </summary>
-        public static bool MotdHeadlineBottom =>
-            Config.MainConfig.MotdHeadlineBottom;
-
         internal static void ScreenHandler()
         {
             // Make a screen
@@ -84,7 +78,7 @@ namespace Nitrocid.Users.Login
                 {
                     try
                     {
-                        var Feed = InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasRssShell, "GetFirstArticle", RSSTools.RssHeadlineUrl);
+                        var Feed = InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasRssShell, "GetFirstArticle", Config.MainConfig.RssHeadlineUrl);
                         if (Feed is (string feedTitle, string articleTitle))
                             return Translate.DoTranslation("From") + $" {feedTitle}: {articleTitle}";
                         return Translate.DoTranslation("No feed.");
@@ -142,12 +136,12 @@ namespace Nitrocid.Users.Login
                                     );
 
                                     // Print the headline
-                                    if (RSSTools.ShowHeadlineOnLogin)
+                                    if (Config.MainConfig.ShowHeadlineOnLogin)
                                     {
                                         if (string.IsNullOrEmpty(headlineStr))
                                             headlineStr = UpdateHeadline();
                                         int consoleHeadlineInfoY =
-                                            MotdHeadlineBottom ?
+                                            Config.MainConfig.MotdHeadlineBottom ?
                                             ConsoleWrapper.WindowHeight / 2 + figHeight + 3 :
                                             ConsoleWrapper.WindowHeight / 2 - figHeight - 2;
                                         display.Append(
@@ -161,9 +155,9 @@ namespace Nitrocid.Users.Login
                                     {
                                         string motdStr = motdStrs[i];
                                         int consoleMotdInfoY =
-                                            MotdHeadlineBottom ?
+                                            Config.MainConfig.MotdHeadlineBottom ?
                                             ConsoleWrapper.WindowHeight / 2 + figHeight + 4 + i :
-                                            ConsoleWrapper.WindowHeight / 2 - figHeight - (RSSTools.ShowHeadlineOnLogin ? 4 : 2) + i;
+                                            ConsoleWrapper.WindowHeight / 2 - figHeight - (Config.MainConfig.ShowHeadlineOnLogin ? 4 : 2) + i;
                                         display.Append(
                                             CenteredTextColor.RenderCenteredOneLine(consoleMotdInfoY, motdStr)
                                         );

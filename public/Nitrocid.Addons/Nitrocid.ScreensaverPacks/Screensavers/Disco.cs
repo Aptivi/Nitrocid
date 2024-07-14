@@ -25,6 +25,7 @@ using Nitrocid.Misc.Screensaver;
 using Terminaux.Base;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
+using Nitrocid.Kernel.Configuration;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -47,17 +48,17 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverLogic()
         {
             int MaximumColors = ScreensaverPackInit.SaversConfig.DiscoMaximumColorLevel;
-            DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", MaximumColors);
+            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", MaximumColors);
             int MaximumColorsR = ScreensaverPackInit.SaversConfig.DiscoMaximumRedColorLevel;
-            DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Maximum red color level: {0}", MaximumColorsR);
+            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Maximum red color level: {0}", MaximumColorsR);
             int MaximumColorsG = ScreensaverPackInit.SaversConfig.DiscoMaximumGreenColorLevel;
-            DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Maximum green color level: {0}", MaximumColorsG);
+            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Maximum green color level: {0}", MaximumColorsG);
             int MaximumColorsB = ScreensaverPackInit.SaversConfig.DiscoMaximumBlueColorLevel;
-            DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Maximum blue color level: {0}", MaximumColorsB);
+            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Maximum blue color level: {0}", MaximumColorsB);
 
             // Select the background color
-            DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Cycling colors: {0}", ScreensaverPackInit.SaversConfig.DiscoCycleColors);
-            DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "fed (future-eyes-destroyer) mode: {0}", ScreensaverPackInit.SaversConfig.DiscoEnableFedMode);
+            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Cycling colors: {0}", ScreensaverPackInit.SaversConfig.DiscoCycleColors);
+            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "fed (future-eyes-destroyer) mode: {0}", ScreensaverPackInit.SaversConfig.DiscoEnableFedMode);
             if (!ScreensaverPackInit.SaversConfig.DiscoEnableFedMode)
             {
                 if (ScreensaverPackInit.SaversConfig.DiscoTrueColor)
@@ -67,13 +68,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         int RedColorNum = RandomDriver.Random(255);
                         int GreenColorNum = RandomDriver.Random(255);
                         int BlueColorNum = RandomDriver.Random(255);
-                        DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
+                        DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                         var ColorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
                         ColorTools.SetConsoleColorDry(ColorStorage, true);
                     }
                     else
                     {
-                        DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", CurrentColorR, CurrentColorG, CurrentColorB);
+                        DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", CurrentColorR, CurrentColorG, CurrentColorB);
                         var ColorStorage = new Color(CurrentColorR, CurrentColorG, CurrentColorB);
                         ColorTools.SetConsoleColorDry(ColorStorage, true);
                     }
@@ -83,12 +84,12 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     if (!ScreensaverPackInit.SaversConfig.DiscoCycleColors)
                     {
                         int color = RandomDriver.Random(255);
-                        DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color ({0})", color);
+                        DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color ({0})", color);
                         ColorTools.SetConsoleColorDry(new Color(color), true);
                     }
                     else
                     {
-                        DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color ({0})", CurrentColor);
+                        DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color ({0})", CurrentColor);
                         ColorTools.SetConsoleColorDry(new Color(CurrentColor), true);
                     }
                 }
@@ -103,7 +104,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 {
                     CurrentColor = (int)ConsoleColors.Black;
                 }
-                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color ({0})", CurrentColor);
+                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color ({0})", CurrentColor);
                 ColorTools.SetConsoleColorDry(new Color(CurrentColor), true);
             }
 
@@ -115,32 +116,32 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             {
                 if (CurrentColorR >= MaximumColorsR)
                 {
-                    DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Red level exceeded maximum color. {0} >= {1}", CurrentColorR, MaximumColorsR);
+                    DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Red level exceeded maximum color. {0} >= {1}", CurrentColorR, MaximumColorsR);
                     CurrentColorR = 0;
                 }
                 else
                 {
-                    DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Stepping one (R)...");
+                    DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Stepping one (R)...");
                     CurrentColorR += 1;
                 }
                 if (CurrentColorG >= MaximumColorsG)
                 {
-                    DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Green level exceeded maximum color. {0} >= {1}", CurrentColorG, MaximumColorsG);
+                    DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Green level exceeded maximum color. {0} >= {1}", CurrentColorG, MaximumColorsG);
                     CurrentColorG = 0;
                 }
                 else if (CurrentColorR == 0)
                 {
-                    DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Stepping one (G)...");
+                    DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Stepping one (G)...");
                     CurrentColorG += 1;
                 }
                 if (CurrentColorB >= MaximumColorsB)
                 {
-                    DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Blue level exceeded maximum color. {0} >= {1}", CurrentColorB, MaximumColorsB);
+                    DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Blue level exceeded maximum color. {0} >= {1}", CurrentColorB, MaximumColorsB);
                     CurrentColorB = 0;
                 }
                 else if (CurrentColorG == 0 & CurrentColorR == 0)
                 {
-                    DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Stepping one (B)...");
+                    DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Stepping one (B)...");
                     CurrentColorB += 1;
                 }
                 if (CurrentColorB == 0 & CurrentColorG == 0 & CurrentColorR == 0)
@@ -152,21 +153,21 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             }
             else if (CurrentColor >= MaximumColors)
             {
-                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Color level exceeded maximum color. {0} >= {1}", CurrentColor, MaximumColors);
+                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Color level exceeded maximum color. {0} >= {1}", CurrentColor, MaximumColors);
                 CurrentColor = 0;
             }
             else
             {
-                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Stepping one...");
+                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Stepping one...");
                 CurrentColor += 1;
             }
 
             // Check to see if we're dealing with beats per minute
-            DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Using BPM: {0}", ScreensaverPackInit.SaversConfig.DiscoUseBeatsPerMinute);
+            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Using BPM: {0}", ScreensaverPackInit.SaversConfig.DiscoUseBeatsPerMinute);
             if (ScreensaverPackInit.SaversConfig.DiscoUseBeatsPerMinute)
             {
                 int BeatInterval = (int)Math.Round(60000d / ScreensaverPackInit.SaversConfig.DiscoDelay);
-                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Beat interval from {0} BPM: {1} ms", ScreensaverPackInit.SaversConfig.DiscoDelay, BeatInterval);
+                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Beat interval from {0} BPM: {1} ms", ScreensaverPackInit.SaversConfig.DiscoDelay, BeatInterval);
                 ThreadManager.SleepNoBlock(BeatInterval, ScreensaverDisplayer.ScreensaverDisplayerThread);
             }
             else

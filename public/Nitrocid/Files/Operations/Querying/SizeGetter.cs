@@ -19,6 +19,7 @@
 
 using System.IO;
 using Nitrocid.Drivers;
+using Nitrocid.Kernel.Configuration;
 
 namespace Nitrocid.Files.Operations.Querying
 {
@@ -29,12 +30,12 @@ namespace Nitrocid.Files.Operations.Querying
     {
 
         /// <summary>
-        /// Gets all file sizes in a folder, depending on the kernel setting <see cref="FilesystemTools.FullParseMode"/>
+        /// Gets all file sizes in a folder, depending on the kernel setting <see cref="Config.MainConfig.FullParseMode"/>
         /// </summary>
         /// <param name="DirectoryInfo">Directory information</param>
         /// <returns>Directory Size</returns>
         public static long GetAllSizesInFolder(DirectoryInfo DirectoryInfo) =>
-            DriverHandler.CurrentFilesystemDriverLocal.GetAllSizesInFolder(DirectoryInfo, FilesystemTools.FullParseMode);
+            DriverHandler.CurrentFilesystemDriverLocal.GetAllSizesInFolder(DirectoryInfo, Config.MainConfig.FullParseMode);
 
         /// <summary>
         /// Gets all file sizes in a folder, and optionally parses the entire folder

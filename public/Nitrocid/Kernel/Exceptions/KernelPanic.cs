@@ -50,18 +50,6 @@ namespace Nitrocid.Kernel.Exceptions
         internal static bool KernelErrored;
         internal static bool NotifyKernelError;
 
-        /// <summary>
-        /// Whether to notify the user about minor boot faults
-        /// </summary>
-        public static bool NotifyFaultsBoot =>
-            Config.MainConfig.NotifyFaultsBoot;
-
-        /// <summary>
-        /// Whether to print the stack trace on kernel error
-        /// </summary>
-        public static bool ShowStackTraceOnKernelError =>
-            Config.MainConfig.ShowStackTraceOnKernelError;
-
 
         /// <summary>
         /// Indicates that there's something wrong with the kernel.
@@ -139,7 +127,7 @@ namespace Nitrocid.Kernel.Exceptions
                     // Offer the user to wait for the set time interval before the kernel reboots.
                     DebugWriter.WriteDebug(DebugLevel.F, "Kernel panic initiated with reboot time: {0} seconds, Error Type: {1}", RebootTime, ErrorType);
                     SplashReport.ReportProgressError(Translate.DoTranslation("[{0}] panic: {1} -- Rebooting in {2} seconds..."), Exc, ErrorType, Description, RebootTime);
-                    if (ShowStackTraceOnKernelError & Exc is not null)
+                    if (Config.MainConfig.ShowStackTraceOnKernelError & Exc is not null)
                         SplashReport.ReportProgressError(Exc.StackTrace);
                     Thread.Sleep((int)(RebootTime * 1000L));
                     PowerManager.PowerManage(PowerMode.Reboot);
@@ -150,7 +138,7 @@ namespace Nitrocid.Kernel.Exceptions
                     DebugWriter.WriteDebug(DebugLevel.W, "Reboot is False, ErrorType is not double or continuable.");
                     DebugWriter.WriteDebug(DebugLevel.F, "Shutdown panic initiated with reboot time: {0} seconds, Error Type: {1}", RebootTime, ErrorType);
                     SplashReport.ReportProgressError(Translate.DoTranslation("[{0}] panic: {1} -- Press any key to shutdown."), Exc, ErrorType, Description);
-                    if (ShowStackTraceOnKernelError & Exc is not null)
+                    if (Config.MainConfig.ShowStackTraceOnKernelError & Exc is not null)
                         SplashReport.ReportProgressError(Exc.StackTrace);
                     TermReader.ReadKey();
                     PowerManager.PowerManage(PowerMode.Shutdown);
@@ -217,7 +205,7 @@ namespace Nitrocid.Kernel.Exceptions
                 EventsManager.FireEvent(EventType.ContKernelError, Description, Exc, Variables);
                 DebugWriter.WriteDebug(DebugLevel.W, "Continuable kernel error occurred: {0}. {1}.", Description, Exc?.Message);
                 SplashReport.ReportProgressWarning(Translate.DoTranslation("Continuable kernel error occurred:") + " {0}", Exc, Description);
-                if (ShowStackTraceOnKernelError && Exc is not null)
+                if (Config.MainConfig.ShowStackTraceOnKernelError && Exc is not null)
                     SplashReport.ReportProgressWarning(Exc.StackTrace);
                 SplashReport.ReportProgressWarning(Translate.DoTranslation("This error may cause instabilities to the kernel or to the applications. You can continue using the kernel at your own risk."));
             }

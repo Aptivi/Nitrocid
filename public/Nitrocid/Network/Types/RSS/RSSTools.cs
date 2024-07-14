@@ -34,26 +34,15 @@ namespace Nitrocid.Network.Types.RSS
     public static class RSSTools
     {
         /// <summary>
-        /// Whether to show the RSS headline each login
-        /// </summary>
-        public static bool ShowHeadlineOnLogin =>
-            Config.MainConfig.ShowHeadlineOnLogin;
-        /// <summary>
-        /// RSS headline URL
-        /// </summary>
-        public static string RssHeadlineUrl =>
-            Config.MainConfig.RssHeadlineUrl;
-
-        /// <summary>
         /// Show a headline on login
         /// </summary>
         public static void ShowHeadlineLogin()
         {
-            if (ShowHeadlineOnLogin)
+            if (Config.MainConfig.ShowHeadlineOnLogin)
             {
                 try
                 {
-                    var Feed = InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasRssShell, "GetFirstArticle", RssHeadlineUrl);
+                    var Feed = InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasRssShell, "GetFirstArticle", Config.MainConfig.RssHeadlineUrl);
                     if (Feed is (string feedTitle, string articleTitle))
                     {
                         TextWriters.Write(Translate.DoTranslation("Latest news from") + " {0}: ", false, KernelColorType.ListEntry, feedTitle);

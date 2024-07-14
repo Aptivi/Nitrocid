@@ -25,6 +25,7 @@ using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Screensaver;
+using Nitrocid.Kernel.Configuration;
 using Terminaux.Colors;
 using Terminaux.Base;
 
@@ -96,7 +97,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             int RedColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.SwivelMinimumRedColorLevel, ScreensaverPackInit.SaversConfig.SwivelMaximumRedColorLevel);
             int GreenColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.SwivelMinimumGreenColorLevel, ScreensaverPackInit.SaversConfig.SwivelMaximumGreenColorLevel);
             int BlueColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.SwivelMinimumBlueColorLevel, ScreensaverPackInit.SaversConfig.SwivelMaximumBlueColorLevel);
-            DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
+            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
             var ColorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
             posIdxVertical++;
             if (posIdxVertical >= CurrentPosVertical.Count)

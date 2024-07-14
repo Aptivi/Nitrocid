@@ -44,12 +44,6 @@ namespace Nitrocid.Kernel.Starting
             new KernelStage( /* Localizable */ "Multiple environments", KernelStageActions.Stage08Bootables, false, false),
         ];
 
-        /// <summary>
-        /// Show how much time a stage took on boot
-        /// </summary>
-        public static bool ShowStageFinishTimes =>
-            Config.MainConfig.ShowStageFinishTimes;
-
         internal static void RunKernelStage(int stageNum)
         {
             int stageIdx = stageNum - 1;
@@ -86,13 +80,13 @@ namespace Nitrocid.Kernel.Starting
             // Show the stage finish times
             if (StageNumber <= 1)
             {
-                if (ShowStageFinishTimes)
+                if (Config.MainConfig.ShowStageFinishTimes)
                 {
                     SplashReport.ReportProgress(Translate.DoTranslation("Internal initialization finished in") + $" {StageTimer.Elapsed}");
                     StageTimer.Restart();
                 }
             }
-            else if (ShowStageFinishTimes)
+            else if (Config.MainConfig.ShowStageFinishTimes)
             {
                 SplashReport.ReportProgress(Translate.DoTranslation("Stage finished in") + $" {StageTimer.Elapsed}", 10);
                 if (StageNumber > Stages.Count)
@@ -107,7 +101,7 @@ namespace Nitrocid.Kernel.Starting
             // Actually report the stage
             if (StageNumber >= 1 & StageNumber <= Stages.Count)
             {
-                if (!SplashManager.EnableSplash & !KernelEntry.QuietKernel)
+                if (!Config.MainConfig.EnableSplash & !KernelEntry.QuietKernel)
                 {
                     TextWriterRaw.Write();
                     TextFancyWriters.WriteSeparator(StageText, KernelColorType.Stage);

@@ -26,6 +26,7 @@ using Nitrocid.Misc.Screensaver;
 using Terminaux.Base;
 using Terminaux.Colors;
 using Textify.General;
+using Nitrocid.Kernel.Configuration;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -57,7 +58,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             if (Parsing.TryParsePath(ScreensaverPackInit.SaversConfig.SpotWriteWrite) && Checking.FileExists(ScreensaverPackInit.SaversConfig.SpotWriteWrite))
             {
                 // File found! Now, write the contents of it to the local variable that stores the actual written text.
-                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Opening file {0} to write...", ScreensaverPackInit.SaversConfig.SpotWriteWrite);
+                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Opening file {0} to write...", ScreensaverPackInit.SaversConfig.SpotWriteWrite);
                 TypeWrite = Reading.ReadContentsText(ScreensaverPackInit.SaversConfig.SpotWriteWrite);
             }
 
@@ -66,7 +67,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             {
                 if (ConsoleResizeHandler.WasResized(false))
                     break;
-                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "New paragraph: {0}", Paragraph);
+                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "New paragraph: {0}", Paragraph);
 
                 // Split the paragraph into sentences that have the length of maximum characters that can be printed in various terminal
                 // sizes.
@@ -77,7 +78,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 {
                     ConsoleWrapper.SetCursorPosition(0, ConsoleWrapper.CursorTop + 1);
                     ConsoleWrapper.Write("    ");
-                    DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", ConsoleWrapper.CursorLeft, ConsoleWrapper.CursorTop);
+                    DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", ConsoleWrapper.CursorLeft, ConsoleWrapper.CursorTop);
                 }
 
                 // Get struck character and write it
@@ -94,7 +95,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         // If we're at the end of the page, clear the screen
                         if (ConsoleWrapper.CursorTop == ConsoleWrapper.WindowHeight - 2)
                         {
-                            DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "We're at the end of the page! {0} = {1}", ConsoleWrapper.CursorTop, ConsoleWrapper.WindowHeight - 2);
+                            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "We're at the end of the page! {0} = {1}", ConsoleWrapper.CursorTop, ConsoleWrapper.WindowHeight - 2);
                             ThreadManager.SleepNoBlock(ScreensaverPackInit.SaversConfig.SpotWriteNewScreenDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
                             ConsoleWrapper.Clear();
                             ConsoleWrapper.WriteLine();
@@ -106,7 +107,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             {
                                 ConsoleWrapper.Write(" ");
                             }
-                            DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", ConsoleWrapper.CursorLeft, ConsoleWrapper.CursorTop);
+                            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", ConsoleWrapper.CursorLeft, ConsoleWrapper.CursorTop);
                         }
 
                         // Write the final character to the console and wait

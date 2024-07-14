@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Nitrocid.Kernel.Configuration;
 using Nitrocid.Shell.ShellBase.Help;
 
 namespace Nitrocid.Arguments.Help
@@ -48,7 +49,7 @@ namespace Nitrocid.Arguments.Help
             else
             {
                 // List the available arguments
-                if (!HelpPrintTools.SimHelp)
+                if (!Config.MainConfig.SimHelp)
                     ArgumentHelpPrintTools.ShowArgumentList();
                 else
                     ArgumentHelpPrintTools.ShowArgumentListSimple();

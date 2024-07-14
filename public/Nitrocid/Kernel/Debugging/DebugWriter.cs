@@ -57,41 +57,11 @@ namespace Nitrocid.Kernel.Debugging
             [.. debugStackTraces];
 
         /// <summary>
-        /// Censor private information that may be printed to the debug logs.
-        /// </summary>
-        public static bool DebugCensorPrivateInfo =>
-            Config.MainConfig.DebugCensorPrivateInfo;
-
-        /// <summary>
-        /// Enables event debugging
-        /// </summary>
-        public static bool EventDebug =>
-            Config.MainConfig.EventDebug;
-
-        /// <summary>
-        /// Enables debug quota checks.
-        /// </summary>
-        public static bool DebugQuotaCheck =>
-            Config.MainConfig.DebugQuotaCheck;
-
-        /// <summary>
-        /// How many lines to print to the debug buffer before reaching the quota limit?
-        /// </summary>
-        public static int DebugQuotaLines =>
-            Config.MainConfig.DebugQuotaLines;
-
-        /// <summary>
-        /// Uses the legacy log style
-        /// </summary>
-        public static bool DebugLegacyLogStyle =>
-            Config.MainConfig.DebugLegacyLogStyle;
-
-        /// <summary>
-        /// Outputs the text into the debugger file, and sets the time stamp. Censors all secure arguments if <see cref="DebugCensorPrivateInfo"/> is on.
+        /// Outputs the text into the debugger file, and sets the time stamp. Censors all secure arguments if <see cref="Config.MainConfig.DebugCensorPrivateInfo"/> is on.
         /// </summary>
         /// <param name="Level">Debug level</param>
         /// <param name="text">A sentence that will be written to the the debugger file. Supports {0}, {1}, ...</param>
-        /// <param name="SecureVarIndexes">Secure variable indexes to modify <paramref name="vars"/> to censor them when <see cref="DebugCensorPrivateInfo"/> is on</param>
+        /// <param name="SecureVarIndexes">Secure variable indexes to modify <paramref name="vars"/> to censor them when <see cref="Config.MainConfig.DebugCensorPrivateInfo"/> is on</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteDebugPrivacy(DebugLevel Level, string text, int[] SecureVarIndexes, params object[] vars)
         {
@@ -105,7 +75,7 @@ namespace Nitrocid.Kernel.Debugging
                     continue;
 
                 // Censor all the secure vars found
-                if (DebugCensorPrivateInfo)
+                if (Config.MainConfig.DebugCensorPrivateInfo)
                     vars[SecureVarIndex] = "[removed for privacy]";
             }
 
@@ -182,7 +152,7 @@ namespace Nitrocid.Kernel.Debugging
                             string time = TimeDateTools.KernelDateTime.ToShortTimeString();
 
                             // We need to check to see if we're going to use the legacy log style
-                            if (DebugLegacyLogStyle)
+                            if (Config.MainConfig.DebugLegacyLogStyle)
                             {
                                 string routineName = STrace.RoutineName;
                                 string fileName = STrace.RoutineFileName;
@@ -229,7 +199,7 @@ namespace Nitrocid.Kernel.Debugging
 #endif
 
                         // If quota is enabled, add the line count
-                        if (DebugQuotaCheck)
+                        if (Config.MainConfig.DebugQuotaCheck)
                             debugLines++;
                     }
                     catch (Exception ex)
@@ -400,11 +370,11 @@ namespace Nitrocid.Kernel.Debugging
         internal static void CheckDebugQuota()
         {
             // Don't do anything if debug quota check is disabled.
-            if (!DebugQuotaCheck)
+            if (!Config.MainConfig.DebugQuotaCheck)
                 return;
 
             // Now, check how many lines we've written to the buffer
-            if (debugLines > DebugQuotaLines)
+            if (debugLines > Config.MainConfig.DebugQuotaLines)
             {
                 debugLines = 0;
                 InitializeDebugPath();

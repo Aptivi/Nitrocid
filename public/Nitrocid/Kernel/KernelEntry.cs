@@ -88,7 +88,7 @@ namespace Nitrocid.Kernel
             SplashReport.ReportProgress(Translate.DoTranslation("Welcome!"), 100);
             SplashManager.CloseSplash(SplashContext.StartingUp);
             SplashReport._KernelBooted = true;
-            if (!SplashManager.EnableSplash)
+            if (!Config.MainConfig.EnableSplash)
                 TextWriterRaw.Write();
 
             // If this is the first time, run the first run presentation
@@ -99,7 +99,7 @@ namespace Nitrocid.Kernel
             }
 
             // Show the license infobox
-            if (Config.MainConfig.ShowLicenseInfoBox && SplashManager.EnableSplash)
+            if (Config.MainConfig.ShowLicenseInfoBox && Config.MainConfig.EnableSplash)
             {
                 InfoBoxColor.WriteInfoBoxColor(
                     Translate.DoTranslation("License information"),
@@ -160,7 +160,7 @@ namespace Nitrocid.Kernel
 
                     // Show MAL
                     BaseLoginHandler.ShowMOTDOnceFlag = true;
-                    if (BaseLoginHandler.ShowMAL)
+                    if (Config.MainConfig.ShowMAL)
                     {
                         TextWriters.Write(PlaceParse.ProbePlaces(MalParse.MalMessage), true, KernelColorType.Banner);
                         MalParse.ProcessDynamicMal();
@@ -168,7 +168,7 @@ namespace Nitrocid.Kernel
                     DebugWriter.WriteDebug(DebugLevel.I, "Loaded MAL.");
 
                     // Show current time
-                    if (TimeDateTools.ShowCurrentTimeBeforeLogin)
+                    if (Config.MainConfig.ShowCurrentTimeBeforeLogin)
                         TimeDateMiscRenderers.ShowCurrentTimes();
                     TextWriterRaw.Write();
 

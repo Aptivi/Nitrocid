@@ -68,7 +68,7 @@ namespace Nitrocid.Shell.Shells.UESH.Presets
             List<PowerLineSegment> segments =
             [
                 new PowerLineSegment(new Color(85, 255, 255), new Color(43, 127, 127), UserManagement.CurrentUser.Username),
-                new PowerLineSegment(new Color(0, 0, 0), new Color(85, 255, 255), NetworkTools.HostName, PadlockChar),
+                new PowerLineSegment(new Color(0, 0, 0), new Color(85, 255, 255), Config.MainConfig.HostName, PadlockChar),
                 new PowerLineSegment(new Color(0, 0, 0), new Color(255, 255, 255), $"{CurrentDirectory.CurrentDir}{(Config.MainConfig.ShowShellCount ? $" [{ShellManager.ShellStack.Count}]" : "")}"),
             ];
 

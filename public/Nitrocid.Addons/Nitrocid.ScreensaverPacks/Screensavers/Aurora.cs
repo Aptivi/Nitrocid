@@ -24,6 +24,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Screensaver;
+using Nitrocid.Kernel.Configuration;
 using Terminaux.Colors;
 using Terminaux.Base;
 
@@ -59,7 +60,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             int RedColorNumTo = Math.Abs(RedCurrentLevels[redPosIdx]);
             int GreenColorNumTo = Math.Abs(GreenCurrentLevels[greenPosIdx]);
             int BlueColorNumTo = Math.Abs(BlueCurrentLevels[bluePosIdx]);
-            DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "R: {0} [{1}], G: {2} [{3}], B: {4} [{5}]", RedColorNumTo, redPosIdx, GreenColorNumTo, greenPosIdx, BlueColorNumTo, bluePosIdx);
+            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "R: {0} [{1}], G: {2} [{3}], B: {4} [{5}]", RedColorNumTo, redPosIdx, GreenColorNumTo, greenPosIdx, BlueColorNumTo, bluePosIdx);
 
             // Advance the indexes
             redPosIdx++;
@@ -71,7 +72,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             bluePosIdx++;
             if (bluePosIdx >= BlueCurrentLevels.Length)
                 bluePosIdx = 0;
-            DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Indexes advanced to {0}, {1}, {2}", redPosIdx, greenPosIdx, bluePosIdx);
+            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Indexes advanced to {0}, {1}, {2}", redPosIdx, greenPosIdx, bluePosIdx);
 
             // Prepare the color bands
             (int, int, int)[] ColorBands = GetColorBands(RedColorNumTo, GreenColorNumTo, BlueColorNumTo);
@@ -83,7 +84,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 int red = colorBand.Item1;
                 int green = colorBand.Item2;
                 int blue = colorBand.Item3;
-                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Aurora drawing... {0}, {1}, {2}", red, green, blue);
+                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Aurora drawing... {0}, {1}, {2}", red, green, blue);
                 Color storage = new(red, green, blue);
                 builder.Append($"{storage.VTSequenceBackground}{new string(' ', ConsoleWrapper.WindowWidth)}");
             }

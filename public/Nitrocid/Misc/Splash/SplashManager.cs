@@ -55,22 +55,16 @@ namespace Nitrocid.Misc.Splash
         internal readonly static List<SplashInfo> customSplashes = [];
 
         /// <summary>
-        /// Current splash name
-        /// </summary>
-        public static string SplashName =>
-            Config.MainConfig.SplashName;
-
-        /// <summary>
         /// Current splash screen
         /// </summary>
         public static ISplash CurrentSplash =>
-            GetSplashFromName(SplashName).EntryPoint;
+            GetSplashFromName(Config.MainConfig.SplashName).EntryPoint;
 
         /// <summary>
         /// Current splash screen info instance
         /// </summary>
         public static SplashInfo CurrentSplashInfo =>
-            GetSplashFromName(SplashName);
+            GetSplashFromName(Config.MainConfig.SplashName);
 
         /// <summary>
         /// All the installed splashes either normal or custom
@@ -85,12 +79,6 @@ namespace Nitrocid.Misc.Splash
         /// </summary>
         public static SplashContext CurrentSplashContext =>
             currentContext;
-
-        /// <summary>
-        /// Enable the stylish splash screen in place of the regular verbose boot messages
-        /// </summary>
-        public static bool EnableSplash =>
-            Config.MainConfig.EnableSplash;
 
         /// <summary>
         /// Gets names of the installed splashes
@@ -206,7 +194,7 @@ namespace Nitrocid.Misc.Splash
         /// <param name="context">Context of the splash screen (can be used as a reason as to why do you want to display the splash)</param>
         public static void OpenSplash(ISplash splash, SplashContext context)
         {
-            if (EnableSplash)
+            if (Config.MainConfig.EnableSplash)
             {
                 // Clean everything up
                 var openingPart = new ScreenPart();
@@ -288,7 +276,7 @@ namespace Nitrocid.Misc.Splash
         /// <param name="context">Context of the splash screen (can be used as a reason as to why do you want to display the splash)</param>
         internal static void CloseSplash(ISplash splash, bool showClosing, SplashContext context)
         {
-            if (EnableSplash)
+            if (Config.MainConfig.EnableSplash)
             {
                 bool delay = false;
                 try
@@ -350,7 +338,7 @@ namespace Nitrocid.Misc.Splash
         /// <param name="context">Context of the splash screen (can be used as a reason as to why do you want to display the splash)</param>
         public static void BeginSplashOut(SplashContext context)
         {
-            if (EnableSplash && SplashReport._InSplash)
+            if (Config.MainConfig.EnableSplash && SplashReport._InSplash)
                 CloseSplash(CurrentSplash, false, context);
         }
 
@@ -366,7 +354,7 @@ namespace Nitrocid.Misc.Splash
         /// <param name="context">Context of the splash screen (can be used as a reason as to why do you want to display the splash)</param>
         public static void EndSplashOut(SplashContext context)
         {
-            if (EnableSplash && !SplashReport._InSplash)
+            if (Config.MainConfig.EnableSplash && !SplashReport._InSplash)
                 OpenSplash(context);
         }
 

@@ -182,7 +182,7 @@ namespace Nitrocid.Kernel.Starting
                 DebugWriter.WriteDebug(DebugLevel.I, "Loaded splash.");
 
                 // Initialize important mods
-                if (ModManager.StartKernelMods)
+                if (Config.MainConfig.StartKernelMods)
                 {
                     if (KernelEntry.TalkativePreboot)
                         SplashReport.ReportProgress(Translate.DoTranslation("Loading important mods..."));
@@ -217,7 +217,7 @@ namespace Nitrocid.Kernel.Starting
             WelcomeMessage.WriteMessage();
 
             // Some information
-            if (WelcomeMessage.ShowAppInfoOnBoot & !SplashManager.EnableSplash)
+            if (Config.MainConfig.ShowAppInfoOnBoot & !Config.MainConfig.EnableSplash)
             {
                 TextFancyWriters.WriteSeparator(Translate.DoTranslation("Kernel environment information"), KernelColorType.Stage);
                 TextWriterColor.Write("  OS: " + Translate.DoTranslation("Running on {0}"), System.Environment.OSVersion.ToString());
@@ -316,8 +316,8 @@ namespace Nitrocid.Kernel.Starting
 
                 // Reset languages
                 SplashManager.BeginSplashOut(context);
-                LanguageManager.SetLangDry(LanguageManager.CurrentLanguage);
-                LanguageManager.currentUserLanguage = LanguageManager.Languages[LanguageManager.CurrentLanguage];
+                LanguageManager.SetLangDry(Config.MainConfig.CurrentLanguage);
+                LanguageManager.currentUserLanguage = LanguageManager.Languages[Config.MainConfig.CurrentLanguage];
                 SplashManager.EndSplashOut(context);
 
                 // Save extension handlers

@@ -21,6 +21,7 @@ using System;
 using System.Threading;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Screensaver;
@@ -45,7 +46,7 @@ namespace Nitrocid.Kernel.Time.Renderers
             try
             {
                 int oldWid = default, oldTop = default;
-                while (TimeDateTools.CornerTimeDate)
+                while (Config.MainConfig.CornerTimeDate)
                 {
                     if (!ScreensaverManager.InSaver)
                     {
@@ -75,7 +76,7 @@ namespace Nitrocid.Kernel.Time.Renderers
         /// </summary>
         public static void InitTopRightDate()
         {
-            if (!TimeTopRightChange.IsAlive && TimeDateTools.CornerTimeDate)
+            if (!TimeTopRightChange.IsAlive && Config.MainConfig.CornerTimeDate)
                 TimeTopRightChange.Start();
         }
 

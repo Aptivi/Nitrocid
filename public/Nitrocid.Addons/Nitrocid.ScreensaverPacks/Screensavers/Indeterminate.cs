@@ -27,6 +27,7 @@ using Nitrocid.Drivers.RNG;
 using Terminaux.Writer.FancyWriters;
 using Nitrocid.Kernel.Threading;
 using Terminaux.Base;
+using Nitrocid.Kernel.Configuration;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -67,11 +68,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             int RampFrameStartWidth = 4;
             int RampFrameEndWidth = ConsoleWrapper.WindowWidth - RampFrameStartWidth;
             int RampFrameSpaces = RampFrameEndWidth - RampFrameStartWidth;
-            DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Start width: {0}, End width: {1}, Spaces: {2}", RampFrameStartWidth, RampFrameEndWidth, RampFrameSpaces);
+            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Start width: {0}, End width: {1}, Spaces: {2}", RampFrameStartWidth, RampFrameEndWidth, RampFrameSpaces);
 
             // Let the ramp be printed in the center
             int RampCenterPosition = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d);
-            DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Center position: {0}", RampCenterPosition);
+            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Center position: {0}", RampCenterPosition);
 
             // Draw the frame
             if (!ConsoleResizeHandler.WasResized(false))

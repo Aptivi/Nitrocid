@@ -23,6 +23,7 @@ using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Screensaver;
 using Terminaux.Base;
 using Terminaux.Colors;
+using Nitrocid.Kernel.Configuration;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -54,7 +55,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 int RedColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.LinesMinimumRedColorLevel, ScreensaverPackInit.SaversConfig.LinesMaximumRedColorLevel);
                 int GreenColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.LinesMinimumGreenColorLevel, ScreensaverPackInit.SaversConfig.LinesMaximumGreenColorLevel);
                 int BlueColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.LinesMinimumBlueColorLevel, ScreensaverPackInit.SaversConfig.LinesMaximumBlueColorLevel);
-                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
+                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                 var ColorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
                 ColorTools.SetConsoleColor(ColorStorage);
             }
@@ -62,7 +63,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             {
                 ColorTools.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.LinesBackgroundColor));
                 int color = RandomDriver.Random(ScreensaverPackInit.SaversConfig.LinesMinimumColorLevel, ScreensaverPackInit.SaversConfig.LinesMaximumColorLevel);
-                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color ({0})", color);
+                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color ({0})", color);
                 ColorTools.SetConsoleColor(new Color(color));
             }
 
@@ -70,7 +71,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             string lineString = !string.IsNullOrWhiteSpace(ScreensaverPackInit.SaversConfig.LinesLineChar) ? ScreensaverPackInit.SaversConfig.LinesLineChar : "-";
             string Line = new(lineString[0], ConsoleWrapper.WindowWidth);
             int Top = RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight);
-            DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got top position ({0})", Top);
+            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got top position ({0})", Top);
             if (!ConsoleResizeHandler.WasResized(false))
             {
                 ConsoleWrapper.SetCursorPosition(0, Top);

@@ -19,6 +19,7 @@
 
 using System;
 using System.Globalization;
+using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Time.Calendars;
 using Nitrocid.Languages;
 
@@ -35,7 +36,7 @@ namespace Nitrocid.Kernel.Time.Renderers
         /// </summary>
         /// <returns>A long or short time</returns>
         public static string RenderTimeUtc() =>
-            TimeDateTools.LongTimeDate
+            Config.MainConfig.LongTimeDate
             ? TimeDateTools.KernelDateTimeUtc.ToString(CultureManager.CurrentCult.DateTimeFormat.LongTimePattern, CultureManager.CurrentCult)
             : TimeDateTools.KernelDateTimeUtc.ToString(CultureManager.CurrentCult.DateTimeFormat.ShortTimePattern, CultureManager.CurrentCult);
 
@@ -55,7 +56,7 @@ namespace Nitrocid.Kernel.Time.Renderers
         /// <param name="Cult">A culture.</param>
         /// <returns>A time</returns>
         public static string RenderTimeUtc(CultureInfo Cult) =>
-            TimeDateTools.LongTimeDate
+            Config.MainConfig.LongTimeDate
             ? TimeDateTools.KernelDateTimeUtc.ToString(Cult.DateTimeFormat.LongTimePattern, Cult)
             : TimeDateTools.KernelDateTimeUtc.ToString(Cult.DateTimeFormat.ShortTimePattern, Cult);
 
@@ -76,7 +77,7 @@ namespace Nitrocid.Kernel.Time.Renderers
         /// <param name="calendar">A base calendar</param>
         /// <returns>A time</returns>
         public static string RenderTimeUtc(BaseCalendar calendar) =>
-            TimeDateTools.LongTimeDate
+            Config.MainConfig.LongTimeDate
             ? TimeDateTools.KernelDateTimeUtc.ToString(calendar.Culture.DateTimeFormat.LongTimePattern, calendar.Culture)
             : TimeDateTools.KernelDateTimeUtc.ToString(calendar.Culture.DateTimeFormat.ShortTimePattern, calendar.Culture);
 
@@ -97,7 +98,7 @@ namespace Nitrocid.Kernel.Time.Renderers
         /// <param name="DT">Specified time</param>
         /// <returns>A long or short time</returns>
         public static string RenderTimeUtc(DateTime DT) =>
-            TimeDateTools.LongTimeDate
+            Config.MainConfig.LongTimeDate
             ? DT.ToUniversalTime().ToString(CultureManager.CurrentCult.DateTimeFormat.LongTimePattern, CultureManager.CurrentCult)
             : DT.ToUniversalTime().ToString(CultureManager.CurrentCult.DateTimeFormat.ShortTimePattern, CultureManager.CurrentCult);
 
@@ -119,7 +120,7 @@ namespace Nitrocid.Kernel.Time.Renderers
         /// <param name="Cult">A culture</param>
         /// <returns>A time</returns>
         public static string RenderTimeUtc(DateTime DT, CultureInfo Cult) =>
-            TimeDateTools.LongTimeDate
+            Config.MainConfig.LongTimeDate
             ? DT.ToUniversalTime().ToString(Cult.DateTimeFormat.LongTimePattern, Cult)
             : DT.ToUniversalTime().ToString(Cult.DateTimeFormat.ShortTimePattern, Cult);
 
@@ -142,7 +143,7 @@ namespace Nitrocid.Kernel.Time.Renderers
         /// <param name="calendar">A base calendar</param>
         /// <returns>A time</returns>
         public static string RenderTimeUtc(DateTime DT, BaseCalendar calendar) =>
-            TimeDateTools.LongTimeDate
+            Config.MainConfig.LongTimeDate
             ? DT.ToUniversalTime().ToString(calendar.Culture.DateTimeFormat.LongTimePattern, calendar.Culture)
             : DT.ToUniversalTime().ToString(calendar.Culture.DateTimeFormat.ShortTimePattern, calendar.Culture);
 
@@ -163,7 +164,7 @@ namespace Nitrocid.Kernel.Time.Renderers
         /// </summary>
         /// <returns>A long or short date</returns>
         public static string RenderDateUtc() =>
-            TimeDateTools.LongTimeDate
+            Config.MainConfig.LongTimeDate
             ? TimeDateTools.KernelDateTimeUtc.ToString(CultureManager.CurrentCult.DateTimeFormat.LongDatePattern, CultureManager.CurrentCult)
             : TimeDateTools.KernelDateTimeUtc.ToString(CultureManager.CurrentCult.DateTimeFormat.ShortDatePattern, CultureManager.CurrentCult);
 
@@ -183,7 +184,7 @@ namespace Nitrocid.Kernel.Time.Renderers
         /// <param name="Cult">A culture.</param>
         /// <returns>A date</returns>
         public static string RenderDateUtc(CultureInfo Cult) =>
-            TimeDateTools.LongTimeDate
+            Config.MainConfig.LongTimeDate
             ? TimeDateTools.KernelDateTimeUtc.ToString(Cult.DateTimeFormat.LongDatePattern, Cult)
             : TimeDateTools.KernelDateTimeUtc.ToString(Cult.DateTimeFormat.ShortDatePattern, Cult);
 
@@ -204,7 +205,7 @@ namespace Nitrocid.Kernel.Time.Renderers
         /// <param name="calendar">A base calendar</param>
         /// <returns>A date</returns>
         public static string RenderDateUtc(BaseCalendar calendar) =>
-            TimeDateTools.LongTimeDate
+            Config.MainConfig.LongTimeDate
             ? TimeDateTools.KernelDateTimeUtc.ToString(calendar.Culture.DateTimeFormat.LongDatePattern, calendar.Culture)
             : TimeDateTools.KernelDateTimeUtc.ToString(calendar.Culture.DateTimeFormat.ShortDatePattern, calendar.Culture);
 
@@ -225,7 +226,7 @@ namespace Nitrocid.Kernel.Time.Renderers
         /// <param name="DT">Specified date</param>
         /// <returns>A long or short date</returns>
         public static string RenderDateUtc(DateTime DT) =>
-            TimeDateTools.LongTimeDate
+            Config.MainConfig.LongTimeDate
             ? DT.ToUniversalTime().ToString(CultureManager.CurrentCult.DateTimeFormat.LongDatePattern, CultureManager.CurrentCult)
             : DT.ToUniversalTime().ToString(CultureManager.CurrentCult.DateTimeFormat.ShortDatePattern, CultureManager.CurrentCult);
 
@@ -247,7 +248,7 @@ namespace Nitrocid.Kernel.Time.Renderers
         /// <param name="Cult">A culture</param>
         /// <returns>A date</returns>
         public static string RenderDateUtc(DateTime DT, CultureInfo Cult) =>
-            TimeDateTools.LongTimeDate
+            Config.MainConfig.LongTimeDate
             ? DT.ToUniversalTime().ToString(Cult.DateTimeFormat.LongDatePattern, Cult)
             : DT.ToUniversalTime().ToString(Cult.DateTimeFormat.ShortDatePattern, Cult);
 
@@ -270,7 +271,7 @@ namespace Nitrocid.Kernel.Time.Renderers
         /// <param name="calendar">A base calendar</param>
         /// <returns>A date</returns>
         public static string RenderDateUtc(DateTime DT, BaseCalendar calendar) =>
-            TimeDateTools.LongTimeDate
+            Config.MainConfig.LongTimeDate
             ? DT.ToUniversalTime().ToString(calendar.Culture.DateTimeFormat.LongDatePattern, calendar.Culture)
             : DT.ToUniversalTime().ToString(calendar.Culture.DateTimeFormat.ShortDatePattern, calendar.Culture);
 
@@ -291,7 +292,7 @@ namespace Nitrocid.Kernel.Time.Renderers
         /// </summary>
         /// <returns>A long or short time and date</returns>
         public static string RenderUtc() =>
-            TimeDateTools.LongTimeDate
+            Config.MainConfig.LongTimeDate
             ? TimeDateTools.KernelDateTimeUtc.ToString(CultureManager.CurrentCult.DateTimeFormat.FullDateTimePattern, CultureManager.CurrentCult)
             : TimeDateTools.KernelDateTimeUtc.ToString(CultureManager.CurrentCult.DateTimeFormat.ShortDatePattern, CultureManager.CurrentCult) + " - " + TimeDateTools.KernelDateTimeUtc.ToString(CultureManager.CurrentCult.DateTimeFormat.ShortTimePattern, CultureManager.CurrentCult);
 
@@ -311,7 +312,7 @@ namespace Nitrocid.Kernel.Time.Renderers
         /// <param name="Cult">A culture.</param>
         /// <returns>A time and date</returns>
         public static string RenderUtc(CultureInfo Cult) =>
-            TimeDateTools.LongTimeDate
+            Config.MainConfig.LongTimeDate
             ? TimeDateTools.KernelDateTimeUtc.ToString(Cult.DateTimeFormat.FullDateTimePattern, Cult)
             : TimeDateTools.KernelDateTimeUtc.ToString(Cult.DateTimeFormat.ShortDatePattern, Cult) + " - " + TimeDateTools.KernelDateTimeUtc.ToString(Cult.DateTimeFormat.ShortTimePattern, Cult);
 
@@ -321,7 +322,7 @@ namespace Nitrocid.Kernel.Time.Renderers
         /// <param name="calendar">A base calendar</param>
         /// <returns>A time and date</returns>
         public static string RenderUtc(BaseCalendar calendar) =>
-            TimeDateTools.LongTimeDate
+            Config.MainConfig.LongTimeDate
             ? TimeDateTools.KernelDateTimeUtc.ToString(calendar.Culture.DateTimeFormat.FullDateTimePattern, calendar.Culture)
             : TimeDateTools.KernelDateTimeUtc.ToString(calendar.Culture.DateTimeFormat.ShortDatePattern, calendar.Culture) + " - " + TimeDateTools.KernelDateTimeUtc.ToString(calendar.Culture.DateTimeFormat.ShortTimePattern, calendar.Culture);
 
@@ -379,7 +380,7 @@ namespace Nitrocid.Kernel.Time.Renderers
         /// <param name="DT">Specified time and date</param>
         /// <returns>A long or short time and date</returns>
         public static string RenderUtc(DateTime DT) =>
-            TimeDateTools.LongTimeDate
+            Config.MainConfig.LongTimeDate
             ? DT.ToUniversalTime().ToString(CultureManager.CurrentCult.DateTimeFormat.FullDateTimePattern, CultureManager.CurrentCult)
             : DT.ToUniversalTime().ToString(CultureManager.CurrentCult.DateTimeFormat.ShortDatePattern, CultureManager.CurrentCult) + " - " + DT.ToUniversalTime().ToString(CultureManager.CurrentCult.DateTimeFormat.ShortTimePattern, CultureManager.CurrentCult);
 
@@ -401,7 +402,7 @@ namespace Nitrocid.Kernel.Time.Renderers
         /// <param name="Cult">A culture</param>
         /// <returns>A time and date</returns>
         public static string RenderUtc(DateTime DT, CultureInfo Cult) =>
-            TimeDateTools.LongTimeDate
+            Config.MainConfig.LongTimeDate
             ? DT.ToUniversalTime().ToString(Cult.DateTimeFormat.FullDateTimePattern, Cult)
             : DT.ToUniversalTime().ToString(Cult.DateTimeFormat.ShortDatePattern, Cult) + " - " + DT.ToUniversalTime().ToString(Cult.DateTimeFormat.ShortTimePattern, Cult);
 
@@ -424,7 +425,7 @@ namespace Nitrocid.Kernel.Time.Renderers
         /// <param name="calendar">A base calendar</param>
         /// <returns>A time and date</returns>
         public static string RenderUtc(DateTime DT, BaseCalendar calendar) =>
-            TimeDateTools.LongTimeDate
+            Config.MainConfig.LongTimeDate
             ? DT.ToUniversalTime().ToString(calendar.Culture.DateTimeFormat.FullDateTimePattern, calendar.Culture)
             : DT.ToUniversalTime().ToString(calendar.Culture.DateTimeFormat.ShortDatePattern, calendar.Culture) + " - " + DT.ToUniversalTime().ToString(calendar.Culture.DateTimeFormat.ShortTimePattern, calendar.Culture);
 

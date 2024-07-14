@@ -48,35 +48,14 @@ namespace Nitrocid.Languages
         internal readonly static LanguageMetadata[] LanguageMetadata = JsonConvert.DeserializeObject<LanguageMetadata[]>(ResourcesManager.GetData("Metadata.json", ResourcesType.Languages));
         internal static Dictionary<string, LanguageInfo> BaseLanguages = [];
         internal static Dictionary<string, LanguageInfo> CustomLanguages = [];
-        internal static LanguageInfo currentLanguage = Languages[CurrentLanguage];
-        internal static LanguageInfo currentUserLanguage = Languages[CurrentLanguage];
-
-        /// <summary>
-        /// Current language
-        /// </summary>
-        public static string CurrentLanguage =>
-            Config.MainConfig.CurrentLanguage;
+        internal static LanguageInfo currentLanguage = Languages[Config.MainConfig.CurrentLanguage];
+        internal static LanguageInfo currentUserLanguage = Languages[Config.MainConfig.CurrentLanguage];
 
         /// <summary>
         /// Current language
         /// </summary>
         public static LanguageInfo CurrentLanguageInfo =>
             Login.LoggedIn ? currentUserLanguage : currentLanguage;
-
-        /// <summary>
-        /// Set the language codepage upon switching languages (Windows only)
-        /// </summary>
-        public static bool SetCodepage
-        {
-            get => Config.MainConfig.SetCodepage;
-            set => Config.MainConfig.SetCodepage = value;
-        }
-
-        /// <summary>
-        /// Change culture when changing language
-        /// </summary>
-        public static bool LangChangeCulture =>
-            Config.MainConfig.LangChangeCulture;
 
         /// <summary>
         /// The installed languages list.
@@ -119,7 +98,7 @@ namespace Nitrocid.Languages
                 // Set appropriate codepage for incapable terminals
                 try
                 {
-                    if (KernelPlatform.IsOnWindows() && SetCodepage)
+                    if (KernelPlatform.IsOnWindows() && Config.MainConfig.SetCodepage)
                     {
                         int Codepage = langInfo.Codepage;
                         Console.OutputEncoding = System.Text.Encoding.GetEncoding(Codepage);
@@ -140,7 +119,7 @@ namespace Nitrocid.Languages
                     currentLanguage = langInfo;
 
                     // Update Culture if applicable
-                    if (LangChangeCulture)
+                    if (Config.MainConfig.LangChangeCulture)
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Updating culture.");
                         CultureManager.UpdateCultureDry();

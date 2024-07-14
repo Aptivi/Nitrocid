@@ -27,6 +27,7 @@ using Nitrocid.Misc.Screensaver;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
 using Terminaux.Base;
+using Nitrocid.Kernel.Configuration;
 
 namespace Nitrocid.Drivers.Input
 {
@@ -156,8 +157,8 @@ namespace Nitrocid.Drivers.Input
         /// </summary>
         public virtual string ReadLineNoInput()
         {
-            if (!string.IsNullOrEmpty(In.CurrentMask))
-                return ReadLineNoInput(In.CurrentMask[0]);
+            if (!string.IsNullOrEmpty(Config.MainConfig.CurrentMask))
+                return ReadLineNoInput(Config.MainConfig.CurrentMask[0]);
             else
                 return ReadLineNoInput(Convert.ToChar("\0"));
         }
@@ -167,8 +168,8 @@ namespace Nitrocid.Drivers.Input
         /// </summary>
         public virtual string ReadLineNoInput(TermReaderSettings settings)
         {
-            if (!string.IsNullOrEmpty(In.CurrentMask))
-                return ReadLineNoInput(In.CurrentMask[0], settings);
+            if (!string.IsNullOrEmpty(Config.MainConfig.CurrentMask))
+                return ReadLineNoInput(Config.MainConfig.CurrentMask[0], settings);
             else
                 return ReadLineNoInput('\0', settings);
         }
@@ -208,8 +209,8 @@ namespace Nitrocid.Drivers.Input
         /// </summary>
         public virtual string ReadLineNoInputUnsafe()
         {
-            if (!string.IsNullOrEmpty(In.CurrentMask))
-                return ReadLineNoInputUnsafe(In.CurrentMask[0]);
+            if (!string.IsNullOrEmpty(Config.MainConfig.CurrentMask))
+                return ReadLineNoInputUnsafe(Config.MainConfig.CurrentMask[0]);
             else
                 return ReadLineNoInputUnsafe('\0');
         }
@@ -220,8 +221,8 @@ namespace Nitrocid.Drivers.Input
         /// <param name="settings">Reader settings</param>
         public virtual string ReadLineNoInputUnsafe(TermReaderSettings settings)
         {
-            if (!string.IsNullOrEmpty(In.CurrentMask))
-                return ReadLineNoInputUnsafe(In.CurrentMask[0], settings);
+            if (!string.IsNullOrEmpty(Config.MainConfig.CurrentMask))
+                return ReadLineNoInputUnsafe(Config.MainConfig.CurrentMask[0], settings);
             else
                 return ReadLineNoInputUnsafe('\0', settings);
         }

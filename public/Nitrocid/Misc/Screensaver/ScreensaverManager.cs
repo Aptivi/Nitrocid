@@ -73,19 +73,6 @@ namespace Nitrocid.Misc.Screensaver
         internal static AutoResetEvent SaverAutoReset = new(false);
         internal static KernelThread Timeout = new("Screensaver timeout thread", false, HandleTimeout) { isCritical = true };
 
-        // Public Variables
-        /// <summary>
-        /// Screensaver debugging
-        /// </summary>
-        public static bool ScreensaverDebug =>
-            Config.MainConfig.ScreensaverDebug;
-
-        /// <summary>
-        /// Password lock enabled
-        /// </summary>
-        public static bool PasswordLock =>
-            Config.MainConfig.PasswordLock;
-
         /// <summary>
         /// Whether the kernel is on the screensaver mode
         /// </summary>
@@ -245,7 +232,7 @@ namespace Nitrocid.Misc.Screensaver
                     InputTools.DetectKeypressUnsafe();
 
                 // Now, show the password prompt
-                if (PasswordLock)
+                if (Config.MainConfig.PasswordLock)
                     Login.ShowPasswordPrompt(UserManagement.CurrentUser.Username);
 
                 // Render the current screen

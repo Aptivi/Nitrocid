@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Nitrocid.Kernel.Configuration;
 using Nitrocid.Shell.ShellBase.Shells;
 
 namespace Nitrocid.Shell.ShellBase.Help
@@ -35,7 +36,7 @@ namespace Nitrocid.Shell.ShellBase.Help
         /// <param name="showUnified">Shows all unified commands</param>
         /// <param name="showAddon">Shows all kernel addon commands</param>
         public static void ShowHelp(bool showGeneral = true, bool showMod = false, bool showAlias = false, bool showUnified = false, bool showAddon = false) =>
-            ShowHelpExtended("", ShellManager.CurrentShellType, HelpPrintTools.SimHelp, showGeneral, showMod, showAlias, showUnified, showAddon);
+            ShowHelpExtended("", ShellManager.CurrentShellType, Config.MainConfig.SimHelp, showGeneral, showMod, showAlias, showUnified, showAddon);
 
         /// <summary>
         /// Shows the list of commands under the specified shell type
@@ -47,7 +48,7 @@ namespace Nitrocid.Shell.ShellBase.Help
         /// <param name="showUnified">Shows all unified commands</param>
         /// <param name="showAddon">Shows all kernel addon commands</param>
         public static void ShowHelp(ShellType commandType, bool showGeneral = true, bool showMod = false, bool showAlias = false, bool showUnified = false, bool showAddon = false) =>
-            ShowHelpExtended("", ShellManager.GetShellTypeName(commandType), HelpPrintTools.SimHelp, showGeneral, showMod, showAlias, showUnified, showAddon);
+            ShowHelpExtended("", ShellManager.GetShellTypeName(commandType), Config.MainConfig.SimHelp, showGeneral, showMod, showAlias, showUnified, showAddon);
 
         /// <summary>
         /// Shows the help of a command, or command list under the current shell type if nothing is specified
@@ -59,7 +60,7 @@ namespace Nitrocid.Shell.ShellBase.Help
         /// <param name="showUnified">Shows all unified commands</param>
         /// <param name="showAddon">Shows all kernel addon commands</param>
         public static void ShowHelp(string command, bool showGeneral = true, bool showMod = false, bool showAlias = false, bool showUnified = false, bool showAddon = false) =>
-            ShowHelpExtended(command, ShellManager.CurrentShellType, HelpPrintTools.SimHelp, showGeneral, showMod, showAlias, showUnified, showAddon);
+            ShowHelpExtended(command, ShellManager.CurrentShellType, Config.MainConfig.SimHelp, showGeneral, showMod, showAlias, showUnified, showAddon);
 
         /// <summary>
         /// Shows the help of a command, or command list under the specified shell type if nothing is specified
@@ -72,7 +73,7 @@ namespace Nitrocid.Shell.ShellBase.Help
         /// <param name="showUnified">Shows all unified commands</param>
         /// <param name="showAddon">Shows all kernel addon commands</param>
         public static void ShowHelp(string command, ShellType commandType, bool showGeneral = true, bool showMod = false, bool showAlias = false, bool showUnified = false, bool showAddon = false) =>
-            ShowHelpExtended(command, ShellManager.GetShellTypeName(commandType), HelpPrintTools.SimHelp, showGeneral, showMod, showAlias, showUnified, showAddon);
+            ShowHelpExtended(command, ShellManager.GetShellTypeName(commandType), Config.MainConfig.SimHelp, showGeneral, showMod, showAlias, showUnified, showAddon);
 
         /// <summary>
         /// Shows the help of a command, or command list under the specified shell type if nothing is specified
@@ -85,7 +86,7 @@ namespace Nitrocid.Shell.ShellBase.Help
         /// <param name="showUnified">Shows all unified commands</param>
         /// <param name="showAddon">Shows all kernel addon commands</param>
         public static void ShowHelp(string command, string commandType, bool showGeneral = true, bool showMod = false, bool showAlias = false, bool showUnified = false, bool showAddon = false) =>
-            ShowHelpExtended(command, commandType, HelpPrintTools.SimHelp, showGeneral, showMod, showAlias, showUnified, showAddon);
+            ShowHelpExtended(command, commandType, Config.MainConfig.SimHelp, showGeneral, showMod, showAlias, showUnified, showAddon);
 
         /// <summary>
         /// Shows the list of commands under the current shell type

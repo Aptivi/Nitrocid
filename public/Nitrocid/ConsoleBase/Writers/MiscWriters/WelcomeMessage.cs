@@ -45,33 +45,9 @@ namespace Nitrocid.ConsoleBase.Writers.MiscWriters
         internal static string[] tips = [];
 
         /// <summary>
-        /// The customized message banner to write. If none is specified, or if it only consists of whitespace, it uses the default message.
-        /// </summary>
-        public static string CustomBanner =>
-            Config.MainConfig.CustomBanner;
-
-        /// <summary>
         /// Show tips on log-in
         /// </summary>
         public static bool ShowTip { get; internal set; }
-
-        /// <summary>
-        /// Whether to show the app information on boot
-        /// </summary>
-        public static bool ShowAppInfoOnBoot =>
-            Config.MainConfig.ShowAppInfoOnBoot;
-
-        /// <summary>
-        /// Enable marquee on startup
-        /// </summary>
-        public static bool StartScroll =>
-            Config.MainConfig.StartScroll;
-
-        /// <summary>
-        /// Development notice acknowledged
-        /// </summary>
-        public static bool DevNoticeConsented =>
-            Config.MainConfig.DevNoticeConsented;
 
         /// <summary>
         /// Gets the custom banner actual text with placeholders parsed
@@ -94,7 +70,7 @@ namespace Nitrocid.ConsoleBase.Writers.MiscWriters
         /// </summary>
         public static void WriteMessage()
         {
-            if (!SplashManager.EnableSplash)
+            if (!Config.MainConfig.EnableSplash)
             {
                 ConsoleWrapper.CursorVisible = false;
 
@@ -102,7 +78,7 @@ namespace Nitrocid.ConsoleBase.Writers.MiscWriters
                 string MessageWrite = GetCustomBanner();
 
                 // Finally, write the message
-                if (StartScroll)
+                if (Config.MainConfig.StartScroll)
                     TextDynamicWriters.WriteSlowly(MessageWrite, true, 10d, KernelColorType.Banner, KernelMain.VersionFullStr);
                 else
                     TextWriters.Write(MessageWrite, true, KernelColorType.Banner, KernelMain.VersionFullStr);
@@ -156,7 +132,7 @@ namespace Nitrocid.ConsoleBase.Writers.MiscWriters
             ;
 
             // Show development disclaimer
-            if (SplashManager.EnableSplash)
+            if (Config.MainConfig.EnableSplash)
             {
                 InputChoiceInfo[] answers = [
                     new InputChoiceInfo("ok", Translate.DoTranslation("OK")),
@@ -189,7 +165,7 @@ namespace Nitrocid.ConsoleBase.Writers.MiscWriters
             string message2 = Translate.DoTranslation("Please note that running Nitrocid KS on an unusual environment means that some features are limited. You won't be able to load mods and configurations.");
 
             // Show unusual environment notice
-            if (SplashManager.EnableSplash)
+            if (Config.MainConfig.EnableSplash)
             {
                 InputChoiceInfo[] answers = [
                     new InputChoiceInfo("ok", Translate.DoTranslation("OK")),

@@ -22,7 +22,7 @@ using System.Threading;
 using Terminaux.Colors;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Drivers.RNG;
-using Nitrocid.Misc.Screensaver;
+using Nitrocid.Kernel.Configuration;
 using Terminaux.Base;
 using Terminaux.Reader;
 using Terminaux.Base.Buffered;
@@ -57,7 +57,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             int RedColorNum = RandomDriver.Random(0, 255);
             int GreenColorNum = RandomDriver.Random(0, 255);
             int BlueColorNum = RandomDriver.Random(0, 255);
-            DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
+            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
             var fieldColor = new Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}");
 
             // Draw the field
@@ -279,7 +279,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                         DebugWriter.WriteDebug(DebugLevel.I, "Increased horizontal ball position from {0} to {1}", BallPreviousX, BallCurrentX);
                         break;
                 }
-                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Ball is facing {0}.", Direction.ToString());
+                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Ball is facing {0}.", Direction.ToString());
                 
                 // Determine whether the ball has hit the pad or the top and bottom edges
                 if (BallCurrentY <= FloorTopEdge + 1)

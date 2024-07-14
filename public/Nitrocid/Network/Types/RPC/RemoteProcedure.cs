@@ -46,28 +46,16 @@ namespace Nitrocid.Network.Types.RPC
             RPCThread.IsAlive;
 
         /// <summary>
-        /// RPC port
-        /// </summary>
-        public static int RPCPort =>
-            Config.MainConfig.RPCPort;
-
-        /// <summary>
-        /// Whether the RPC is enabled or not
-        /// </summary>
-        public static bool RPCEnabled =>
-            Config.MainConfig.RPCEnabled;
-
-        /// <summary>
         /// Starts the RPC listener
         /// </summary>
         public static void StartRPC()
         {
-            if (RPCEnabled)
+            if (Config.MainConfig.RPCEnabled)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "RPC: Starting...");
                 if (!RPCStarted)
                 {
-                    RPCListen = new UdpClient(RPCPort) { EnableBroadcast = true };
+                    RPCListen = new UdpClient(Config.MainConfig.RPCPort) { EnableBroadcast = true };
                     DebugWriter.WriteDebug(DebugLevel.I, "RPC: Listener started");
                     RPCThread.Start();
                     DebugWriter.WriteDebug(DebugLevel.I, "RPC: Thread started");
@@ -88,12 +76,12 @@ namespace Nitrocid.Network.Types.RPC
         /// </summary>
         public static void WrapperStartRPC()
         {
-            if (RPCEnabled)
+            if (Config.MainConfig.RPCEnabled)
             {
                 try
                 {
                     StartRPC();
-                    SplashReport.ReportProgress(Translate.DoTranslation("RPC listening on all addresses using port {0}."), 5, RPCPort);
+                    SplashReport.ReportProgress(Translate.DoTranslation("RPC listening on all addresses using port {0}."), 5, Config.MainConfig.RPCPort);
                 }
                 catch (ThreadStateException ex)
                 {

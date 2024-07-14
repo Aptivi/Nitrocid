@@ -28,6 +28,7 @@ using Nitrocid.Languages;
 using System;
 using System.Collections.Generic;
 using Textify.General;
+using Nitrocid.Kernel.Configuration;
 
 namespace Nitrocid.Misc.Splash
 {
@@ -198,7 +199,7 @@ namespace Nitrocid.Misc.Splash
                 severity == SplashReportSeverity.Warning ? KernelColorType.Warning :
                 severity == SplashReportSeverity.Error ? KernelColorType.Error :
                 KernelColorType.Tip;
-            if (!KernelBooted && !KernelEntry.QuietKernel && (SplashManager.EnableSplash && InSplash || !SplashManager.EnableSplash) || force)
+            if (!KernelBooted && !KernelEntry.QuietKernel && (Config.MainConfig.EnableSplash && InSplash || !Config.MainConfig.EnableSplash) || force)
             {
                 // Check the progress value
                 if (Progress < 0)
@@ -220,7 +221,7 @@ namespace Nitrocid.Misc.Splash
                 // Report it
                 if (SplashManager.CurrentSplashInfo.DisplaysProgress)
                 {
-                    if (SplashManager.EnableSplash && splash != null)
+                    if (Config.MainConfig.EnableSplash && splash != null)
                     {
                         var openingPart = new ScreenPart();
                         DebugWriter.WriteDebug(DebugLevel.I, "Invoking splash to report {0}...", Text);
@@ -248,7 +249,7 @@ namespace Nitrocid.Misc.Splash
                 var reportInfo = new SplashReportInfo(TimeDateTools.KernelDateTime, _Progress, severity, TextTools.FormatString(Text, Vars));
                 logBuffer.Add(reportInfo);
             }
-            else if (KernelBooted && !KernelEntry.QuietKernel && (SplashManager.EnableSplash && !InSplash || !SplashManager.EnableSplash))
+            else if (KernelBooted && !KernelEntry.QuietKernel && (Config.MainConfig.EnableSplash && !InSplash || !Config.MainConfig.EnableSplash))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Kernel booted or not in splash. Reporting {0}...", Text);
                 TextWriters.Write(Text, true, finalColor, Vars);

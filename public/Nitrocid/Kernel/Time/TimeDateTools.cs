@@ -43,24 +43,6 @@ namespace Nitrocid.Kernel.Time
             DateTime.UtcNow;
 
         /// <summary>
-        /// Whether to show the current time before login
-        /// </summary>
-        public static bool ShowCurrentTimeBeforeLogin =>
-            Config.MainConfig.ShowCurrentTimeBeforeLogin;
-
-        /// <summary>
-        /// Show Time/Date on corner
-        /// </summary>
-        public static bool CornerTimeDate =>
-            Config.MainConfig.CornerTimeDate;
-
-        /// <summary>
-        /// Whether or not to render time and dates short or long
-        /// </summary>
-        public static bool LongTimeDate =>
-            Config.MainConfig.LongTimeDate;
-
-        /// <summary>
         /// Gets the remaining time from now
         /// </summary>
         /// <param name="Milliseconds">The milliseconds interval</param>

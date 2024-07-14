@@ -47,30 +47,6 @@ namespace Nitrocid.ConsoleBase
         internal static bool UseAltBuffer = true;
 
         /// <summary>
-        /// Does your console support true color?
-        /// </summary>
-        public static bool ConsoleSupportsTrueColor =>
-            Config.MainConfig.ConsoleSupportsTrueColor;
-
-        /// <summary>
-        /// Whether the input history is enabled
-        /// </summary>
-        public static bool InputHistoryEnabled =>
-            Config.MainConfig.InputHistoryEnabled;
-
-        /// <summary>
-        /// Enables the scroll bar in selection screens
-        /// </summary>
-        public static bool EnableScrollBarInSelection =>
-            Config.MainConfig.EnableScrollBarInSelection;
-
-        /// <summary>
-        /// Wraps the list outputs
-        /// </summary>
-        public static bool WrapListOutputs =>
-            Config.MainConfig.WrapListOutputs;
-
-        /// <summary>
         /// Resets the console colors without clearing screen
         /// </summary>
         /// <param name="useKernelColors">Whether to use the kernel colors or to use the default terminal colors</param>

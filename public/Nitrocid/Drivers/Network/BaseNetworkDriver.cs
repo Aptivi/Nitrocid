@@ -38,6 +38,7 @@ using Nitrocid.Misc.Progress;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Network;
 using Nitrocid.Network.Transfer;
+using Nitrocid.Kernel.Configuration;
 
 namespace Nitrocid.Drivers.Network
 {
@@ -65,7 +66,7 @@ namespace Nitrocid.Drivers.Network
 
         /// <inheritdoc/>
         public virtual bool DownloadFile(string URL) =>
-            DownloadFile(URL, NetworkTools.ShowProgress);
+            DownloadFile(URL, Config.MainConfig.ShowProgress);
 
         /// <inheritdoc/>
         public virtual bool DownloadFile(string URL, bool ShowProgress)
@@ -76,7 +77,7 @@ namespace Nitrocid.Drivers.Network
 
         /// <inheritdoc/>
         public virtual bool DownloadFile(string URL, string FileName) =>
-            DownloadFile(URL, NetworkTools.ShowProgress, FileName);
+            DownloadFile(URL, Config.MainConfig.ShowProgress, FileName);
 
         /// <inheritdoc/>
         public virtual bool DownloadFile(string URL, bool ShowProgress, string FileName)
@@ -90,7 +91,7 @@ namespace Nitrocid.Drivers.Network
             var builtinHandler = new ProgressHandler((_, message) => NetworkTransfer.HttpReceiveProgressWatch(message), "Download");
 
             // Initialize the progress bar indicator and the file completed event handler
-            if (NetworkTransfer.DownloadNotificationProvoke)
+            if (Config.MainConfig.DownloadNotificationProvoke)
             {
                 NetworkTransfer.DownloadNotif = new Notification(Translate.DoTranslation("Downloading..."), FileUri.AbsoluteUri, NotificationPriority.Low, NotificationType.Progress);
                 NotificationManager.NotifySend(NetworkTransfer.DownloadNotif);
@@ -157,14 +158,14 @@ namespace Nitrocid.Drivers.Network
             NetworkTransfer.SuppressDownloadMessage = false;
             if (NetworkTransfer.IsError)
             {
-                if (NetworkTransfer.DownloadNotificationProvoke)
+                if (Config.MainConfig.DownloadNotificationProvoke)
                     NetworkTransfer.DownloadNotif.ProgressState = NotificationProgressState.Failure;
                 NetworkTransfer.CancellationToken.Cancel();
                 throw NetworkTransfer.ReasonError;
             }
             else
             {
-                if (NetworkTransfer.DownloadNotificationProvoke)
+                if (Config.MainConfig.DownloadNotificationProvoke)
                 {
                     NetworkTransfer.DownloadNotif.Progress = 100;
                     NetworkTransfer.DownloadNotif.ProgressState = NotificationProgressState.Success;
@@ -175,7 +176,7 @@ namespace Nitrocid.Drivers.Network
 
         /// <inheritdoc/>
         public virtual string DownloadString(string URL) =>
-            DownloadString(URL, NetworkTools.ShowProgress);
+            DownloadString(URL, Config.MainConfig.ShowProgress);
 
         /// <inheritdoc/>
         public virtual string DownloadString(string URL, bool ShowProgress)
@@ -189,7 +190,7 @@ namespace Nitrocid.Drivers.Network
             var builtinHandler = new ProgressHandler((_, message) => NetworkTransfer.HttpReceiveProgressWatch(message), "Download");
 
             // Initialize the progress bar indicator and the file completed event handler
-            if (NetworkTransfer.DownloadNotificationProvoke)
+            if (Config.MainConfig.DownloadNotificationProvoke)
             {
                 NetworkTransfer.DownloadNotif = new Notification(Translate.DoTranslation("Downloading..."), StringUri.AbsoluteUri, NotificationPriority.Low, NotificationType.Progress);
                 NotificationManager.NotifySend(NetworkTransfer.DownloadNotif);
@@ -256,14 +257,14 @@ namespace Nitrocid.Drivers.Network
             NetworkTransfer.SuppressDownloadMessage = false;
             if (NetworkTransfer.IsError)
             {
-                if (NetworkTransfer.DownloadNotificationProvoke)
+                if (Config.MainConfig.DownloadNotificationProvoke)
                     NetworkTransfer.DownloadNotif.ProgressState = NotificationProgressState.Failure;
                 NetworkTransfer.CancellationToken.Cancel();
                 throw NetworkTransfer.ReasonError;
             }
             else
             {
-                if (NetworkTransfer.DownloadNotificationProvoke)
+                if (Config.MainConfig.DownloadNotificationProvoke)
                 {
                     NetworkTransfer.DownloadNotif.Progress = 100;
                     NetworkTransfer.DownloadNotif.ProgressState = NotificationProgressState.Success;
@@ -274,7 +275,7 @@ namespace Nitrocid.Drivers.Network
 
         /// <inheritdoc/>
         public virtual bool UploadFile(string FileName, string URL) =>
-            UploadFile(FileName, URL, NetworkTools.ShowProgress);
+            UploadFile(FileName, URL, Config.MainConfig.ShowProgress);
 
         /// <inheritdoc/>
         public virtual bool UploadFile(string FileName, string URL, bool ShowProgress)
@@ -288,7 +289,7 @@ namespace Nitrocid.Drivers.Network
             var builtinHandler = new ProgressHandler((_, message) => NetworkTransfer.HttpSendProgressWatch(message), "Upload");
 
             // Initialize the progress bar indicator and the file completed event handler
-            if (NetworkTransfer.UploadNotificationProvoke)
+            if (Config.MainConfig.UploadNotificationProvoke)
             {
                 NetworkTransfer.UploadNotif = new Notification(Translate.DoTranslation("Uploading..."), FileUri.AbsoluteUri, NotificationPriority.Low, NotificationType.Progress);
                 NotificationManager.NotifySend(NetworkTransfer.DownloadNotif);
@@ -329,14 +330,14 @@ namespace Nitrocid.Drivers.Network
             NetworkTransfer.SuppressUploadMessage = false;
             if (NetworkTransfer.IsError)
             {
-                if (NetworkTransfer.UploadNotificationProvoke)
+                if (Config.MainConfig.UploadNotificationProvoke)
                     NetworkTransfer.UploadNotif.ProgressState = NotificationProgressState.Failure;
                 NetworkTransfer.CancellationToken.Cancel();
                 throw NetworkTransfer.ReasonError;
             }
             else
             {
-                if (NetworkTransfer.UploadNotificationProvoke)
+                if (Config.MainConfig.UploadNotificationProvoke)
                 {
                     NetworkTransfer.UploadNotif.Progress = 100;
                     NetworkTransfer.UploadNotif.ProgressState = NotificationProgressState.Success;
@@ -347,7 +348,7 @@ namespace Nitrocid.Drivers.Network
 
         /// <inheritdoc/>
         public virtual bool UploadString(string URL, string Data) =>
-            UploadString(URL, Data, NetworkTools.ShowProgress);
+            UploadString(URL, Data, Config.MainConfig.ShowProgress);
 
         /// <inheritdoc/>
         public virtual bool UploadString(string URL, string Data, bool ShowProgress)
@@ -361,7 +362,7 @@ namespace Nitrocid.Drivers.Network
             var builtinHandler = new ProgressHandler((_, message) => NetworkTransfer.HttpSendProgressWatch(message), "Upload");
 
             // Initialize the progress bar indicator and the file completed event handler
-            if (NetworkTransfer.UploadNotificationProvoke)
+            if (Config.MainConfig.UploadNotificationProvoke)
             {
                 NetworkTransfer.UploadNotif = new Notification(Translate.DoTranslation("Uploading..."), StringUri.AbsoluteUri, NotificationPriority.Low, NotificationType.Progress);
                 NotificationManager.NotifySend(NetworkTransfer.UploadNotif);
@@ -396,14 +397,14 @@ namespace Nitrocid.Drivers.Network
             NetworkTransfer.SuppressUploadMessage = false;
             if (NetworkTransfer.IsError)
             {
-                if (NetworkTransfer.UploadNotificationProvoke)
+                if (Config.MainConfig.UploadNotificationProvoke)
                     NetworkTransfer.UploadNotif.ProgressState = NotificationProgressState.Failure;
                 NetworkTransfer.CancellationToken.Cancel();
                 throw NetworkTransfer.ReasonError;
             }
             else
             {
-                if (NetworkTransfer.UploadNotificationProvoke)
+                if (Config.MainConfig.UploadNotificationProvoke)
                 {
                     NetworkTransfer.UploadNotif.Progress = 100;
                     NetworkTransfer.UploadNotif.ProgressState = NotificationProgressState.Success;

@@ -43,18 +43,6 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug
         private static List<RemoteDebugDeviceInfo> remoteDebugDevices = [];
 
         /// <summary>
-        /// When there is a remote debug connection error, notify the user
-        /// </summary>
-        public static bool NotifyOnRemoteDebugConnectionError =>
-            Config.MainConfig.NotifyOnRemoteDebugConnectionError;
-
-        /// <summary>
-        /// Records remote debug chat to debug log
-        /// </summary>
-        public static bool RecordChatToDebugLog =>
-            Config.MainConfig.RecordChatToDebugLog;
-
-        /// <summary>
         /// Disconnects a specified debug device
         /// </summary>
         /// <param name="address">An IP address of the connected debug device</param>

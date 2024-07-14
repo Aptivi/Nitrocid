@@ -31,6 +31,7 @@ using Terminaux.Inputs;
 using Terminaux.Inputs.Styles.Selection;
 using Terminaux.Base.Extensions;
 using Terminaux.Reader;
+using Nitrocid.Kernel.Configuration;
 
 namespace Nitrocid.ConsoleBase.Themes
 {
@@ -60,7 +61,7 @@ namespace Nitrocid.ConsoleBase.Themes
         internal static void PreviewThemeSimple(Dictionary<KernelColorType, Color> colors)
         {
             // Check to see if we're trying to preview theme on non-true color console
-            if (ThemeTools.MinimumTypeRequired(colors, ColorType.TrueColor) && !ConsoleTools.ConsoleSupportsTrueColor)
+            if (ThemeTools.MinimumTypeRequired(colors, ColorType.TrueColor) && !Config.MainConfig.ConsoleSupportsTrueColor)
                 throw new KernelException(KernelExceptionType.UnsupportedConsole, Translate.DoTranslation("Your console must support true color to use this theme."));
 
             // Render the choices
@@ -111,7 +112,7 @@ namespace Nitrocid.ConsoleBase.Themes
         internal static void PreviewTheme(Dictionary<KernelColorType, Color> colors, ThemeInfo theme)
         {
             // Check to see if we're trying to preview theme on non-true color console
-            if (ThemeTools.MinimumTypeRequired(colors, ColorType.TrueColor) && !ConsoleTools.ConsoleSupportsTrueColor)
+            if (ThemeTools.MinimumTypeRequired(colors, ColorType.TrueColor) && !Config.MainConfig.ConsoleSupportsTrueColor)
                 throw new KernelException(KernelExceptionType.UnsupportedConsole, Translate.DoTranslation("Your console must support true color to use this theme."));
 
             // Clear the screen

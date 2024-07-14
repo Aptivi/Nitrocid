@@ -25,6 +25,7 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Screensaver;
+using Nitrocid.Kernel.Configuration;
 using Terminaux.Base;
 using Terminaux.Reader;
 using Terminaux.Colors.Transformation.Contrast;
@@ -237,8 +238,8 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     float PossibilityToChange = (float)RandomDriver.RandomDouble();
                     if ((int)Math.Round(PossibilityToChange) == 1)
                     {
-                        DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Change guaranteed. {0}", PossibilityToChange);
-                        DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Horizontal? {0}, Vertical? {1}", DidHorizontal, DidVertical);
+                        DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Change guaranteed. {0}", PossibilityToChange);
+                        DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Horizontal? {0}, Vertical? {1}", DidHorizontal, DidVertical);
                         if (DidHorizontal)
                             Direction = (SnakeDirection)Convert.ToInt32(Enum.Parse(typeof(SnakeDirection), RandomDriver.RandomIdx(2).ToString()));
                         else if (DidVertical)
@@ -326,7 +327,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                             break;
                     }
                 }
-                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Snake is facing {0}.", Direction.ToString());
+                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Snake is facing {0}.", Direction.ToString());
 
                 // Check death using mass position check
                 Dead = SnakeMassPositions.Contains($"{SnakeCurrentX}/{SnakeCurrentY}");
@@ -401,13 +402,13 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 int RedColorNum = RandomDriver.Next(AmusementsInit.SaversConfig.SnakerMinimumRedColorLevel, AmusementsInit.SaversConfig.SnakerMaximumRedColorLevel);
                 int GreenColorNum = RandomDriver.Next(AmusementsInit.SaversConfig.SnakerMinimumGreenColorLevel, AmusementsInit.SaversConfig.SnakerMaximumGreenColorLevel);
                 int BlueColorNum = RandomDriver.Next(AmusementsInit.SaversConfig.SnakerMinimumBlueColorLevel, AmusementsInit.SaversConfig.SnakerMaximumBlueColorLevel);
-                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
+                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                 return new Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}");
             }
             else
             {
                 int ColorNum = RandomDriver.Next(AmusementsInit.SaversConfig.SnakerMinimumColorLevel, AmusementsInit.SaversConfig.SnakerMaximumColorLevel);
-                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
+                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
                 return new Color(ColorNum);
             }
         }

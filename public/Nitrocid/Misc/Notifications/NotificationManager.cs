@@ -73,72 +73,6 @@ namespace Nitrocid.Misc.Notifications
             notifRecents;
 
         /// <summary>
-        /// Upper left corner character for the notfication box
-        /// </summary>
-        public static char NotifyUpperLeftCornerChar =>
-            Config.MainConfig.NotifyUpperLeftCornerChar;
-
-        /// <summary>
-        /// Upper right corner character for the notfication box
-        /// </summary>
-        public static char NotifyUpperRightCornerChar =>
-            Config.MainConfig.NotifyUpperRightCornerChar;
-
-        /// <summary>
-        /// Lower left corner character for the notfication box
-        /// </summary>
-        public static char NotifyLowerLeftCornerChar =>
-            Config.MainConfig.NotifyLowerLeftCornerChar;
-
-        /// <summary>
-        /// Lower right corner character for the notfication box
-        /// </summary>
-        public static char NotifyLowerRightCornerChar =>
-            Config.MainConfig.NotifyLowerRightCornerChar;
-
-        /// <summary>
-        /// Upper frame character for the notfication box
-        /// </summary>
-        public static char NotifyUpperFrameChar =>
-            Config.MainConfig.NotifyUpperFrameChar;
-
-        /// <summary>
-        /// Lower frame character for the notfication box
-        /// </summary>
-        public static char NotifyLowerFrameChar =>
-            Config.MainConfig.NotifyLowerFrameChar;
-
-        /// <summary>
-        /// Left frame character for the notfication box
-        /// </summary>
-        public static char NotifyLeftFrameChar =>
-            Config.MainConfig.NotifyLeftFrameChar;
-
-        /// <summary>
-        /// Right frame character for the notfication box
-        /// </summary>
-        public static char NotifyRightFrameChar =>
-            Config.MainConfig.NotifyRightFrameChar;
-
-        /// <summary>
-        /// Don't disturb, meaning don't show any notification when this mode is on
-        /// </summary>
-        public static bool DoNotDisturb =>
-            Config.MainConfig.DoNotDisturb;
-
-        /// <summary>
-        /// Shows all new notifications as asterisks. This option is ignored in notifications with progress bar.
-        /// </summary>
-        public static bool NotifyDisplayAsAsterisk =>
-            Config.MainConfig.NotifyDisplayAsAsterisk;
-
-        /// <summary>
-        /// Draws the border around the notification
-        /// </summary>
-        public static bool DrawBorderNotification =>
-            Config.MainConfig.DrawBorderNotification;
-
-        /// <summary>
         /// Listens for notifications and notifies the user if one has been found
         /// </summary>
         private static void NotifListen()
@@ -177,12 +111,12 @@ namespace Nitrocid.Misc.Notifications
                             EventsManager.FireEvent(EventType.NotificationReceived, NewNotification);
 
                             // If do not disturb is enabled, don't show.
-                            if (DoNotDisturb)
+                            if (Config.MainConfig.DoNotDisturb)
                                 // However, fire event for other notifications
                                 continue;
 
                             // Select how to display the notification
-                            bool useSimplified = NotifyDisplayAsAsterisk && NewNotification.Type == NotificationType.Normal;
+                            bool useSimplified = Config.MainConfig.NotifyDisplayAsAsterisk && NewNotification.Type == NotificationType.Normal;
 
                             // Populate title and description
                             string Title, Desc;
@@ -245,17 +179,17 @@ namespace Nitrocid.Misc.Notifications
                             (int x, int y) = (ConsoleWrapper.CursorLeft, ConsoleWrapper.CursorTop);
 
                             // Optionally, draw a border
-                            if (DrawBorderNotification && !useSimplified)
+                            if (Config.MainConfig.DrawBorderNotification && !useSimplified)
                             {
                                 // Prepare the variables
-                                char CurrentNotifyUpperLeftCornerChar = NotifyUpperLeftCornerChar;
-                                char CurrentNotifyUpperRightCornerChar = NotifyUpperRightCornerChar;
-                                char CurrentNotifyLowerLeftCornerChar = NotifyLowerLeftCornerChar;
-                                char CurrentNotifyLowerRightCornerChar = NotifyLowerRightCornerChar;
-                                char CurrentNotifyUpperFrameChar = NotifyUpperFrameChar;
-                                char CurrentNotifyLowerFrameChar = NotifyLowerFrameChar;
-                                char CurrentNotifyLeftFrameChar = NotifyLeftFrameChar;
-                                char CurrentNotifyRightFrameChar = NotifyRightFrameChar;
+                                char CurrentNotifyUpperLeftCornerChar = Config.MainConfig.NotifyUpperLeftCornerChar;
+                                char CurrentNotifyUpperRightCornerChar = Config.MainConfig.NotifyUpperRightCornerChar;
+                                char CurrentNotifyLowerLeftCornerChar = Config.MainConfig.NotifyLowerLeftCornerChar;
+                                char CurrentNotifyLowerRightCornerChar = Config.MainConfig.NotifyLowerRightCornerChar;
+                                char CurrentNotifyUpperFrameChar = Config.MainConfig.NotifyUpperFrameChar;
+                                char CurrentNotifyLowerFrameChar = Config.MainConfig.NotifyLowerFrameChar;
+                                char CurrentNotifyLeftFrameChar = Config.MainConfig.NotifyLeftFrameChar;
+                                char CurrentNotifyRightFrameChar = Config.MainConfig.NotifyRightFrameChar;
 
                                 // Get custom corner characters
                                 if (NewNotification.Priority == NotificationPriority.Custom)
@@ -344,7 +278,7 @@ namespace Nitrocid.Misc.Notifications
                                     printBuffer.Append(TextWriterWhereColor.RenderWhereColorBack(Desc, notifLeftAgnostic, notifDescTop, NotifyDescColor, background));
 
                                     // For indeterminate progresses, flash the box inside the progress bar
-                                    ProgressBarColor.WriteProgress(indeterminate ? 100 * indeterminateStep : NewNotification.Progress, notifLeftAgnostic, notifTipTop, 42, NotifyProgressColor, NotifyBorderColor, KernelColorTools.GetColor(KernelColorType.Background), DrawBorderNotification);
+                                    ProgressBarColor.WriteProgress(indeterminate ? 100 * indeterminateStep : NewNotification.Progress, notifLeftAgnostic, notifTipTop, 42, NotifyProgressColor, NotifyBorderColor, KernelColorTools.GetColor(KernelColorType.Background), Config.MainConfig.DrawBorderNotification);
                                     indeterminateStep++;
                                     if (indeterminateStep > 1)
                                         indeterminateStep = 0;
@@ -370,8 +304,8 @@ namespace Nitrocid.Misc.Notifications
 
                             // Clear the area
                             SpinWait.SpinUntil(() => sent, 5000);
-                            int left = ConsoleWrapper.WindowWidth - (DrawBorderNotification ? 43 : 42);
-                            int width = DrawBorderNotification ? 43 : 42;
+                            int left = ConsoleWrapper.WindowWidth - (Config.MainConfig.DrawBorderNotification ? 43 : 42);
+                            int width = Config.MainConfig.DrawBorderNotification ? 43 : 42;
                             if (useSimplified)
                                 TextWriterWhereColor.WriteWhere(" ", notifLeft, notifTop, true);
                             else
@@ -385,7 +319,7 @@ namespace Nitrocid.Misc.Notifications
                                 );
 
                                 // Also, clear the border area
-                                if (DrawBorderNotification)
+                                if (Config.MainConfig.DrawBorderNotification)
                                 {
                                     printBuffer.Append(
                                         TextWriterWhereColor.RenderWhereColorBack(spaces, left, notifTopAgnostic, textColor, background) +
