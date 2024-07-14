@@ -28,6 +28,7 @@ using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Modifications;
 using System.Linq;
+using Nitrocid.Shell.ShellBase.Switches;
 
 namespace Nitrocid.Extras.ThemeStudio
 {
@@ -37,10 +38,13 @@ namespace Nitrocid.Extras.ThemeStudio
         [
             new CommandInfo("mktheme", /* Localizable */ "Makes a new theme",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "themeName"),
-                    })
+                    ],
+                    [
+                        new SwitchInfo("tui", /* Localizable */ "Makes a new theme in an interactive TUI")
+                    ])
                 ], new MkThemeCommand()),
         ];
 

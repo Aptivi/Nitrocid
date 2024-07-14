@@ -35,6 +35,7 @@ using Terminaux.Base;
 using Nitrocid.ConsoleBase.Inputs;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Interactive;
 
 namespace Nitrocid.Extras.ThemeStudio.Studio
 {
@@ -45,7 +46,8 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
         /// Starts the theme studio
         /// </summary>
         /// <param name="ThemeName">Theme name</param>
-        public static void StartThemeStudio(string ThemeName)
+        /// <param name="useTui">Whether to use TUI or not</param>
+        public static void StartThemeStudio(string ThemeName, bool useTui = false)
         {
             // Inform user that we're on the studio
             EventsManager.FireEvent(EventType.ThemeStudioStarted);
@@ -57,6 +59,19 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
             var StudioExiting = false;
             var originalColors = new Dictionary<KernelColorType, Color>(ThemeStudioTools.SelectedColors);
 
+            // Check for TUI
+            if (useTui)
+            {
+                var tui = new ThemeStudioCli()
+                {
+                    originalColors = originalColors,
+                    themeName = ThemeName,
+                };
+                InteractiveTuiTools.OpenInteractiveTui(tui);
+                return;
+            }
+
+            // Main Loop
             while (!StudioExiting)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Studio not exiting yet. Populating {0} options...", MaximumOptions);

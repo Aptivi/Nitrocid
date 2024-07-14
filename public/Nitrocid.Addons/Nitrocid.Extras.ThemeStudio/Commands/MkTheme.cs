@@ -19,6 +19,7 @@
 
 using Nitrocid.Extras.ThemeStudio.Studio;
 using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.Shell.ShellBase.Switches;
 
 namespace Nitrocid.Extras.ThemeStudio.Commands
 {
@@ -35,7 +36,8 @@ namespace Nitrocid.Extras.ThemeStudio.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            ThemeStudioApp.StartThemeStudio(parameters.ArgumentsList[0]);
+            bool tui = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-tui");
+            ThemeStudioApp.StartThemeStudio(parameters.ArgumentsList[0], tui);
             return 0;
         }
     }
