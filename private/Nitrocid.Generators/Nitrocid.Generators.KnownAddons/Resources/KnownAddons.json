@@ -1,0 +1,232 @@
+[
+    {
+        "name": "AddonLanguagePacks",
+        "display": "Extra Languages Pack",
+        "project": "LanguagePacks"
+    },
+    {
+        "name": "AddonScreensaverPacks",
+        "display": "Extra Screensavers Pack",
+        "project": "ScreensaverPacks"
+    },
+    {
+        "name": "AddonSplashPacks",
+        "display": "Extra Splashes Pack",
+        "project": "SplashPacks"
+    },
+    {
+        "name": "AddonThemePacks",
+        "display": "Extra Themes Pack",
+        "project": "ThemePacks"
+    },
+    {
+        "name": "ExtrasAmusements",
+        "display": "Extras - Amusements",
+        "project": "Extras.Amusements"
+    },
+    {
+        "name": "ExtrasArchiveShell",
+        "display": "Extras - Archive Shell",
+        "project": "Extras.ArchiveShell"
+    },
+    {
+        "name": "ExtrasBassBoom",
+        "display": "Extras - BassBoom",
+        "project": "Extras.BassBoom"
+    },
+    {
+        "name": "ExtrasCaffeine",
+        "display": "Extras - Caffeine",
+        "project": "Extras.Caffeine"
+    },
+    {
+        "name": "ExtrasCalculators",
+        "display": "Extras - Calculators",
+        "project": "Extras.Calculators"
+    },
+    {
+        "name": "ExtrasCalendar",
+        "display": "Extras - Calendar",
+        "project": "Extras.Calendar"
+    },
+    {
+        "name": "ExtrasColorConvert",
+        "display": "Extras - Color Converter",
+        "project": "Extras.ColorConvert"
+    },
+    {
+        "name": "ExtrasContacts",
+        "display": "Extras - Contacts",
+        "project": "Extras.Contacts"
+    },
+    {
+        "name": "ExtrasCrc32",
+        "display": "Extras - CRC32",
+        "project": "Extras.Crc32"
+    },
+    {
+        "name": "ExtrasDiagnostics",
+        "display": "Extras - Diagnostics",
+        "project": "Extras.Diagnostics"
+    },
+    {
+        "name": "ExtrasDictionary",
+        "display": "Extras - Dictionary",
+        "project": "Extras.Dictionary"
+    },
+    {
+        "name": "ExtrasDocking",
+        "display": "Extras - Docking",
+        "project": "Extras.Docking"
+    },
+    {
+        "name": "ExtrasForecast",
+        "display": "Extras - Forecast",
+        "project": "Extras.Forecast"
+    },
+    {
+        "name": "ExtrasFtpShell",
+        "display": "Extras - FTP Shell",
+        "project": "Extras.FtpShell"
+    },
+    {
+        "name": "ExtrasGitShell",
+        "display": "Extras - Git Shell",
+        "project": "Extras.GitShell"
+    },
+    {
+        "name": "ExtrasHttpShell",
+        "display": "Extras - HTTP Shell",
+        "project": "Extras.HttpShell"
+    },
+    {
+        "name": "ExtrasJsonShell",
+        "display": "Extras - JSON Shell",
+        "project": "Extras.JsonShell"
+    },
+    {
+        "name": "ExtrasLanguageStudio",
+        "display": "Extras - Language Studio",
+        "project": "Extras.LanguageStudio"
+    },
+    {
+        "name": "ExtrasMailShell",
+        "display": "Extras - Mail Shell",
+        "project": "Extras.MailShell"
+    },
+    {
+        "name": "ExtrasMd5",
+        "display": "Extras - MD5",
+        "project": "Extras.Md5"
+    },
+    {
+        "name": "ExtrasNameGen",
+        "display": "Extras - Name Generator",
+        "project": "Extras.NameGen"
+    },
+    {
+        "name": "ExtrasNotes",
+        "display": "Extras - Notes",
+        "project": "Extras.Notes"
+    },
+    {
+        "name": "ExtrasRssShell",
+        "display": "Extras - RSS Shell",
+        "project": "Extras.RssShell"
+    },
+    {
+        "name": "ExtrasSftpShell",
+        "display": "Extras - SFTP Shell",
+        "project": "Extras.SftpShell"
+    },
+    {
+        "name": "ExtrasSha1",
+        "display": "Extras - SHA1",
+        "project": "Extras.Sha1"
+    },
+    {
+        "name": "ExtrasSha384",
+        "display": "Extras - SHA384",
+        "project": "Extras.Sha384"
+    },
+    {
+        "name": "ExtrasSqlShell",
+        "display": "Extras - SQL Shell",
+        "project": "Extras.SqlShell"
+    },
+    {
+        "name": "ExtrasThemeStudio",
+        "display": "Extras - Theme Studio",
+        "project": "Extras.ThemeStudio"
+    },
+    {
+        "name": "ExtrasTimeInfo",
+        "display": "Extras - Time Info",
+        "project": "Extras.TimeInfo"
+    },
+    {
+        "name": "ExtrasTimers",
+        "display": "Extras - Timers",
+        "project": "Extras.Timers"
+    },
+    {
+        "name": "ExtrasTips",
+        "display": "Extras - Kernel Tips",
+        "project": "Extras.Tips"
+    },
+    {
+        "name": "ExtrasToDoList",
+        "display": "Extras - To-do List",
+        "project": "Extras.ToDoList"
+    },
+    {
+        "name": "ExtrasUnitConv",
+        "display": "Extras - Unit Converter",
+        "project": "Extras.UnitConv"
+    },
+    {
+        "name": "ExtrasPastebin",
+        "display": "Extras - Pastebin",
+        "project": "Extras.Pastebin"
+    },
+    {
+        "name": "ExtrasImages",
+        "display": "Extras - Images",
+        "project": "Extras.Images"
+    },
+    {
+        "name": "ExtrasSha256Enhanced",
+        "display": "Extras - Enhanced SHA256",
+        "project": "Extras.Sha256Enhanced"
+    },
+    {
+        "name": "ExtrasSha384Enhanced",
+        "display": "Extras - Enhanced SHA384",
+        "project": "Extras.Sha384Enhanced"
+    },
+    {
+        "name": "ExtrasSha512Enhanced",
+        "display": "Extras - Enhanced SHA512",
+        "project": "Extras.Sha512Enhanced"
+    },
+    {
+        "name": "ExtrasCrc32C",
+        "display": "Extras - CRC32C (Castagnoli)",
+        "project": "Extras.Crc32C"
+    },
+    {
+        "name": "ExtrasStocks",
+        "display": "Extras - Stocks",
+        "project": "Extras.Stocks"
+    },
+    {
+        "name": "ExtrasBeepSynth",
+        "display": "Extras - Beep Synth",
+        "project": "Extras.BeepSynth"
+    },
+    {
+        "name": "ExtrasSsh",
+        "display": "Extras - SSH",
+        "project": "Extras.Ssh"
+    }
+]

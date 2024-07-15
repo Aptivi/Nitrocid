@@ -26,65 +26,8 @@ namespace Nitrocid.Kernel.Extensions
     /// <summary>
     /// Translations from enumerations to names for all known addons
     /// </summary>
-    public static class InterAddonTranslations
+    public static partial class InterAddonTranslations
     {
-        private static readonly Dictionary<KnownAddons, string> knownAddons = new()
-        {
-            // Note: The names are not to be localized for usage with GetAddonName(), because they are constant addon names.
-            #region Since 0.1.0
-            { KnownAddons.AddonLanguagePacks,           /* Localizable */ "Extra Languages Pack" },
-            { KnownAddons.AddonScreensaverPacks,        /* Localizable */ "Extra Screensavers Pack" },
-            { KnownAddons.AddonSplashPacks,             /* Localizable */ "Extra Splashes Pack" },
-            { KnownAddons.AddonThemePacks,              /* Localizable */ "Extra Themes Pack" },
-            { KnownAddons.ExtrasAmusements,             /* Localizable */ "Extras - Amusements" },
-            { KnownAddons.ExtrasArchiveShell,           /* Localizable */ "Extras - Archive Shell" },
-            { KnownAddons.ExtrasBassBoom,               /* Localizable */ "Extras - BassBoom" },
-            { KnownAddons.ExtrasCaffeine,               /* Localizable */ "Extras - Caffeine" },
-            { KnownAddons.ExtrasCalculators,            /* Localizable */ "Extras - Calculators" },
-            { KnownAddons.ExtrasCalendar,               /* Localizable */ "Extras - Calendar" },
-            { KnownAddons.ExtrasColorConvert,           /* Localizable */ "Extras - Color Converter" },
-            { KnownAddons.ExtrasContacts,               /* Localizable */ "Extras - Contacts" },
-            { KnownAddons.ExtrasCrc32,                  /* Localizable */ "Extras - CRC32" },
-            { KnownAddons.ExtrasDiagnostics,            /* Localizable */ "Extras - Diagnostics" },
-            { KnownAddons.ExtrasDictionary,             /* Localizable */ "Extras - Dictionary" },
-            { KnownAddons.ExtrasDocking,                /* Localizable */ "Extras - Docking" },
-            { KnownAddons.ExtrasForecast,               /* Localizable */ "Extras - Forecast" },
-            { KnownAddons.ExtrasFtpShell,               /* Localizable */ "Extras - FTP Shell" },
-            { KnownAddons.ExtrasGitShell,               /* Localizable */ "Extras - Git Shell" },
-            { KnownAddons.ExtrasHttpShell,              /* Localizable */ "Extras - HTTP Shell" },
-            { KnownAddons.ExtrasInternetRadioInfo,      /* Localizable */ "Extras - Internet Radio Information" },
-            { KnownAddons.ExtrasJsonShell,              /* Localizable */ "Extras - JSON Shell" },
-            { KnownAddons.ExtrasLanguageStudio,         /* Localizable */ "Extras - Language Studio" },
-            { KnownAddons.ExtrasMailShell,              /* Localizable */ "Extras - Mail Shell" },
-            { KnownAddons.ExtrasMd5,                    /* Localizable */ "Extras - MD5" },
-            { KnownAddons.ExtrasNameGen,                /* Localizable */ "Extras - NameGen" },
-            { KnownAddons.ExtrasNotes,                  /* Localizable */ "Extras - Notes" },
-            { KnownAddons.ExtrasRssShell,               /* Localizable */ "Extras - RSS Shell" },
-            { KnownAddons.ExtrasSftpShell,              /* Localizable */ "Extras - SFTP Shell" },
-            { KnownAddons.ExtrasSha1,                   /* Localizable */ "Extras - SHA1" },
-            { KnownAddons.ExtrasSha384,                 /* Localizable */ "Extras - SHA384" },
-            { KnownAddons.ExtrasSqlShell,               /* Localizable */ "Extras - SQL Shell" },
-            { KnownAddons.ExtrasThemeStudio,            /* Localizable */ "Extras - Theme Studio" },
-            { KnownAddons.ExtrasTimeInfo,               /* Localizable */ "Extras - Time Info" },
-            { KnownAddons.ExtrasTimers,                 /* Localizable */ "Extras - Timers" },
-            { KnownAddons.ExtrasTips,                   /* Localizable */ "Extras - Kernel Tips" },
-            { KnownAddons.ExtrasToDoList,               /* Localizable */ "Extras - To-do List" },
-            { KnownAddons.ExtrasUnitConv,               /* Localizable */ "Extras - Unit Converter" },
-            #endregion
-
-            #region Since 0.1.1
-            { KnownAddons.ExtrasPastebin,               /* Localizable */ "Extras - Pastebin" },
-            { KnownAddons.ExtrasImages,                 /* Localizable */ "Extras - Images" },
-            { KnownAddons.ExtrasSha256Enhanced,         /* Localizable */ "Extras - Enhanced SHA256" },
-            { KnownAddons.ExtrasSha384Enhanced,         /* Localizable */ "Extras - Enhanced SHA384" },
-            { KnownAddons.ExtrasSha512Enhanced,         /* Localizable */ "Extras - Enhanced SHA512" },
-            { KnownAddons.ExtrasCrc32C,                 /* Localizable */ "Extras - CRC32C (Castagnoli)" },
-            { KnownAddons.ExtrasStocks,                 /* Localizable */ "Extras - Stocks" },
-            { KnownAddons.ExtrasBeepSynth,              /* Localizable */ "Extras - Beep Synth" },
-            { KnownAddons.ExtrasSsh,                    /* Localizable */ "Extras - SSH" },
-            #endregion
-        };
-
         /// <summary>
         /// Gets the addon name from the type
         /// </summary>
@@ -93,8 +36,8 @@ namespace Nitrocid.Kernel.Extensions
         /// <exception cref="KernelException"></exception>
         public static string GetAddonName(KnownAddons addon)
         {
-            if (knownAddons.TryGetValue(addon, out string name))
-                return name;
+            if (knownAddons.TryGetValue(addon, out (string, string) name))
+                return name.Item2;
             throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("No such addon type '{0}'"), addon.ToString());
         }
 
@@ -106,8 +49,8 @@ namespace Nitrocid.Kernel.Extensions
         /// <exception cref="KernelException"></exception>
         public static string GetLocalizedAddonName(KnownAddons addon)
         {
-            if (knownAddons.TryGetValue(addon, out string name))
-                return Translate.DoTranslation(name);
+            if (knownAddons.TryGetValue(addon, out (string, string) name))
+                return Translate.DoTranslation(name.Item2);
             throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("No such addon type '{0}'"), addon.ToString());
         }
     }

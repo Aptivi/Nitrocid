@@ -35,6 +35,8 @@
     <ApplicationIcon>OfficialAppIcon-KernelSimulator.ico</ApplicationIcon>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+    <CompilerGeneratedFilesOutputPath>Generated</CompilerGeneratedFilesOutputPath>
   </PropertyGroup>
   <!-- KS General Information End -->
 
@@ -103,4 +105,16 @@
     <RemoveDir Directories="KSBuild\" />
   </Target>
   <!-- KS extra targets End -->
+
+  <!-- KS Generators -->
+  <ItemGroup>
+    <ProjectReference Include="..\..\private\Nitrocid.Generators\Nitrocid.Generators.KnownAddons\Nitrocid.Generators.KnownAddons.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+  </ItemGroup>
+  <!-- KS Generators End -->
+
+  <!-- KS Generated -->
+  <ItemGroup>
+    <Compile Remove="$(CompilerGeneratedFilesOutputPath)/**/*.cs" />
+  </ItemGroup>
+  <!-- KS Generated End -->
 </Project>
