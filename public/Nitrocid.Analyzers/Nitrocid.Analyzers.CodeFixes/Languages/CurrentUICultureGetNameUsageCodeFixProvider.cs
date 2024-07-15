@@ -64,9 +64,7 @@ namespace Nitrocid.Analyzers.Languages
             if (typeDecl.Expression is IdentifierNameSyntax identifier)
             {
                 // Build the replacement syntax
-                var classSyntax = SyntaxFactory.IdentifierName("CultureManager");
-                var methodSyntax = SyntaxFactory.IdentifierName("CurrentCultStr");
-                var resultSyntax = SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, classSyntax, methodSyntax);
+                var resultSyntax = SyntaxFactory.ParseExpression("Config.MainConfig.CurrentCultStr");
 
                 // Actually replace
                 var node = await document.GetSyntaxRootAsync(cancellationToken);
@@ -74,11 +72,13 @@ namespace Nitrocid.Analyzers.Languages
 
                 // Check the imports
                 var compilation = finalNode as CompilationUnitSyntax;
-                if (compilation?.Usings.Any(u => u.Name.ToString() == $"{AnalysisTools.rootNameSpace}.Languages") == false)
+                if (compilation?.Usings.Any(u => u.Name.ToString() == $"{AnalysisTools.rootNameSpace}.Kernel.Configuration") == false)
                 {
                     var name = SyntaxFactory.QualifiedName(
-                        SyntaxFactory.IdentifierName(AnalysisTools.rootNameSpace),
-                        SyntaxFactory.IdentifierName("Languages"));
+                        SyntaxFactory.QualifiedName(
+                            SyntaxFactory.IdentifierName(AnalysisTools.rootNameSpace),
+                            SyntaxFactory.IdentifierName("Kernel")),
+                        SyntaxFactory.IdentifierName("Configuration"));
                     compilation = compilation
                         .AddUsings(SyntaxFactory.UsingDirective(name));
                 }

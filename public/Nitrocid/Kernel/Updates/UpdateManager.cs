@@ -144,7 +144,7 @@ namespace Nitrocid.Kernel.Updates
                 {
                     SplashReport.ReportProgress(Translate.DoTranslation("Found new version: "), 10);
                     SplashReport.ReportProgress(AvailableUpdate.UpdateVersion.ToString(), 10);
-                    if (AutoDownloadUpdate)
+                    if (Config.MainConfig.AutoDownloadUpdate)
                     {
                         NetworkTransfer.DownloadFile(AvailableUpdate.UpdateURL.ToString(), Path.Combine(PathsManagement.ExecPath, "update.zip"));
                         SplashReport.ReportProgress(Translate.DoTranslation("Downloaded the update successfully!"), 10);

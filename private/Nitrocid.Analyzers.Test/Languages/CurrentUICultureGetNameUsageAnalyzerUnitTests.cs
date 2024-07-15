@@ -95,7 +95,7 @@ namespace Nitrocid.Analyzers.Test.Languages
                 using System.Threading.Tasks;
                 using System.Diagnostics;
                 using System.Globalization;
-                using Nitrocid.Languages;
+                using Nitrocid.Kernel.Configuration;
 
                 namespace ConsoleApplication1
                 {
@@ -103,7 +103,7 @@ namespace Nitrocid.Analyzers.Test.Languages
                     {   
                         public static void Main()
                         {
-                            var culture = CultureManager.CurrentCultStr;
+                            var culture = Config.MainConfig.CurrentCultStr;
                         }
                     }
                 }
