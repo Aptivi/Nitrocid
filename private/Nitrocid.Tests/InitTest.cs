@@ -47,25 +47,21 @@ namespace Nitrocid.Tests
         [AssemblyInitialize]
         public static void ReadyEverything(TestContext tc)
         {
+            // Add this assembly to the console check whitelist
             var asm = Assembly.GetEntryAssembly();
             if (asm is not null)
                 ConsoleChecker.AddToCheckWhitelist(asm);
-            if (!Checking.FileExists(PathsManagement.GetKernelPath(KernelPathType.Configuration)))
-            {
-                // Check to see if we have an appdata folder for KS
-                if (!Checking.FolderExists(PathsManagement.AppDataPath))
-                    Making.MakeDirectory(PathsManagement.AppDataPath, false);
 
-                // Now, create config
-                Config.CreateConfig();
-            }
-            else
-            {
-                if (!Checking.FileExists(PathsManagement.GetKernelPath(KernelPathType.Configuration) + ".old"))
-                    File.Move(PathsManagement.GetKernelPath(KernelPathType.Configuration), PathsManagement.GetKernelPath(KernelPathType.Configuration) + ".old");
-                Config.CreateConfig();
-            }
-            Config.ReadConfig(Config.MainConfig, PathsManagement.GetKernelPath(KernelPathType.Configuration));
+            // We need not to use real user config directory
+            PathsManagement.isTest = true;
+            if (Checking.FolderExists(PathsManagement.AppDataPath))
+                Removing.RemoveDirectory(PathsManagement.AppDataPath, false);
+            Making.MakeDirectory(PathsManagement.AppDataPath, false);
+
+            // Create config
+            Config.CreateConfig();
+
+            // Populate the test slot folder
             PathToTestSlotFolder = Path.GetFullPath("FilesystemSlot");
             PathToTestSlotFolder = FilesystemTools.NeutralizePath(PathToTestSlotFolder);
 
@@ -93,12 +89,6 @@ namespace Nitrocid.Tests
             if (Checking.FolderExists(Path.GetFullPath("ResultSlot")))
                 Removing.RemoveDirectory(Path.GetFullPath("ResultSlot"));
             Directory.Move(PathToTestSlotFolder, Path.GetFullPath("ResultSlot"));
-            if (Checking.FileExists(PathsManagement.GetKernelPath(KernelPathType.Configuration) + ".old"))
-            {
-                if (Checking.FileExists(PathsManagement.GetKernelPath(KernelPathType.Configuration)))
-                    File.Delete(PathsManagement.GetKernelPath(KernelPathType.Configuration));
-                File.Move(PathsManagement.GetKernelPath(KernelPathType.Configuration) + ".old", PathsManagement.GetKernelPath(KernelPathType.Configuration));
-            }
         }
     }
 }

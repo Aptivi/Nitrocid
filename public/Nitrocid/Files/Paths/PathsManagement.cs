@@ -32,7 +32,7 @@ namespace Nitrocid.Files.Paths
     /// </summary>
     public static class PathsManagement
     {
-
+        internal static bool isTest = false;
         private static readonly string[] knownKernelPathTypes = Enum.GetNames<KernelPathType>();
         private static readonly Dictionary<string, string> customPaths = [];
         private static readonly Dictionary<string, (Func<string>, bool)> knownPaths = new()
@@ -91,10 +91,15 @@ namespace Nitrocid.Files.Paths
         {
             get
             {
-                if (KernelPlatform.IsOnUnix())
-                    return Environment.GetEnvironmentVariable("HOME") + "/.config/ks";
+                if (!isTest)
+                {
+                    if (KernelPlatform.IsOnUnix())
+                        return Environment.GetEnvironmentVariable("HOME") + "/.config/ks";
+                    else
+                        return (Environment.GetEnvironmentVariable("LOCALAPPDATA") + "/KS").Replace("\\", "/");
+                }
                 else
-                    return (Environment.GetEnvironmentVariable("LOCALAPPDATA") + "/KS").Replace("\\", "/");
+                    return TempPath + "/kstest";
             }
         }
 
