@@ -1048,12 +1048,6 @@
         "DisplayAs": "Miscellaneous settings",
         "Keys": [
             {
-                "Name": "Show Time/Date on Upper Right Corner",
-                "Type": "SBoolean",
-                "Variable": "CornerTimeDate",
-                "Description": "The time and date will be shown in the upper right corner of the screen"
-            },
-            {
                 "Name": "Marquee on startup",
                 "Type": "SBoolean",
                 "Variable": "StartScroll",

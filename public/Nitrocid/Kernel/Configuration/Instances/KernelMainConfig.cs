@@ -1281,10 +1281,6 @@ namespace Nitrocid.Kernel.Configuration.Instances
 
         #region Misc
         /// <summary>
-        /// The time and date will be shown in the upper right corner of the screen
-        /// </summary>
-        public bool CornerTimeDate { get; set; }
-        /// <summary>
         /// Enables eyecandy on startup
         /// </summary>
         public bool StartScroll { get; set; } = true;

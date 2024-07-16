@@ -246,10 +246,6 @@ namespace Nitrocid.Kernel.Starting
                 SpeedDialTools.LoadAll();
                 DebugWriter.WriteDebug(DebugLevel.I, "Loaded speed dial entries.");
 
-                // Initialize top right date
-                TimeDateTopRight.InitTopRightDate();
-                DebugWriter.WriteDebug(DebugLevel.I, "Loaded top right date.");
-
                 // Load system env vars and convert them
                 UESHVariables.ConvertSystemEnvironmentVariables();
                 DebugWriter.WriteDebug(DebugLevel.I, "Loaded environment variables.");
@@ -354,10 +350,6 @@ namespace Nitrocid.Kernel.Starting
                 // Disable safe mode
                 KernelEntry.SafeMode = false;
                 DebugWriter.WriteDebug(DebugLevel.I, "Safe mode disabled");
-
-                // Stop the time/date change thread
-                TimeDateTopRight.TimeTopRightChange.Stop();
-                DebugWriter.WriteDebug(DebugLevel.I, "Time/date corner stopped");
 
                 // Stop screensaver timeout
                 ScreensaverManager.StopTimeout();
