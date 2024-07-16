@@ -170,36 +170,38 @@ namespace Nitrocid.Shell.Homepage
                         try
                         {
                             if (!Config.MainConfig.ShowHeadlineOnLogin)
-                                rssSequenceBuilder.Append(Translate.DoTranslation("Enable headlines on login to show RSS feeds").Truncate(widgetWidth));
+                                rssSequenceBuilder.Append(Translate.DoTranslation("Enable headlines on login to show RSS feeds").Truncate(widgetWidth - 2));
                             else
                             {
                                 var feedsObject = InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasRssShell, "GetArticles", Config.MainConfig.RssHeadlineUrl);
+                                bool found = false;
                                 if (feedsObject is (string feedTitle, string articleTitle)[] feeds)
                                 {
                                     for (int i = 0; i < 3; i++)
                                     {
                                         if (i >= feeds.Length)
                                             break;
-                                        (string feedTitle, string articleTitle) = feeds[i];
-                                        string feedRender = Translate.DoTranslation("From") + $" {feedTitle}: {articleTitle}";
+                                        (string _, string articleTitle) = feeds[i];
                                         rssSequenceBuilder.Append(CsiSequences.GenerateCsiCursorPosition(widgetLeft + 2, rssTop + i + 2));
-                                        rssSequenceBuilder.Append(feedRender.Truncate(widgetWidth));
+                                        rssSequenceBuilder.Append(articleTitle.Truncate(widgetWidth - 2));
+                                        found = true;
                                     }
                                 }
-                                rssSequenceBuilder.Append(Translate.DoTranslation("No feed.").Truncate(widgetWidth));
+                                if (!found)
+                                    rssSequenceBuilder.Append(Translate.DoTranslation("No feed.").Truncate(widgetWidth - 2));
                             }
                         }
                         catch (KernelException ex) when (ex.ExceptionType == KernelExceptionType.AddonManagement)
                         {
                             DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news: {0}", ex.Message);
                             DebugWriter.WriteDebugStackTrace(ex);
-                            rssSequenceBuilder.Append(Translate.DoTranslation("Install the RSS Shell Extras addon!").Truncate(widgetWidth));
+                            rssSequenceBuilder.Append(Translate.DoTranslation("Install the RSS Shell Extras addon!").Truncate(widgetWidth - 2));
                         }
                         catch (Exception ex)
                         {
                             DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news: {0}", ex.Message);
                             DebugWriter.WriteDebugStackTrace(ex);
-                            rssSequenceBuilder.Append(Translate.DoTranslation("Failed to get the latest news.").Truncate(widgetWidth));
+                            rssSequenceBuilder.Append(Translate.DoTranslation("Failed to get the latest news.").Truncate(widgetWidth - 2));
                         }
                         rssSequence = rssSequenceBuilder.ToString();
                     }
