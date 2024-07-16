@@ -76,7 +76,7 @@ namespace Nitrocid.Shell.Homepage
         /// </summary>
         public static void OpenHomepage()
         {
-            if (isOnHomepage || isHomepageEnabled)
+            if (isOnHomepage || !isHomepageEnabled)
                 return;
             isOnHomepage = true;
             var homeScreen = new Screen();
