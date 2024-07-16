@@ -67,8 +67,14 @@ namespace Nitrocid.Files.Paths
         /// <summary>
         /// Path to KS executable folder
         /// </summary>
-        public static string ExecPath =>
-            Path.GetDirectoryName(typeof(PathsManagement).Assembly.Location);
+        public static string ExecPath
+        {
+            get
+            {
+                string dirName = Path.GetDirectoryName(typeof(PathsManagement).Assembly.Location);
+                return KernelPlatform.IsOnUnix() ? dirName : dirName.Replace(@"\", "/");
+            }
+        }
 
         /// <summary>
         /// Platform-dependent home path

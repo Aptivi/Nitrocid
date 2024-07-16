@@ -38,7 +38,7 @@ namespace Nitrocid.Tests.Files
         public void TestSetCurrDir()
         {
             Config.MainConfig.CurrentDir = InitTest.PathToTestSlotFolder;
-            string Path = PathsManagement.AppDataPath;
+            string Path = PathsManagement.ExecPath;
             CurrentDirectory.SetCurrDir(Path);
             Path.ShouldBe(CurrentDirectory.CurrentDir);
         }
@@ -51,7 +51,7 @@ namespace Nitrocid.Tests.Files
         public void TestTrySetCurrDir()
         {
             Config.MainConfig.CurrentDir = InitTest.PathToTestSlotFolder;
-            string Path = PathsManagement.AppDataPath;
+            string Path = PathsManagement.ExecPath;
             CurrentDirectory.TrySetCurrDir(Path).ShouldBeTrue();
             Path.ShouldBe(CurrentDirectory.CurrentDir);
         }
