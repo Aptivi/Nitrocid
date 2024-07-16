@@ -10,7 +10,9 @@ jobs:
 
     runs-on: ubuntu-latest
     permissions:
+      id-token: write
       contents: write
+      attestations: write
     steps:
     - uses: actions/checkout@v4
       with:
@@ -28,6 +30,10 @@ jobs:
         cd tools ; ./pack.sh ; cd ..
         make doc
         cd tools ; ./docgen-pack.sh ; cd ..
+    - name: Binary Attestation
+      uses: actions/attest-build-provenance@v1
+      with:
+        subject-path: 'tools/*.zip'
     - name: Release Draft Making
       uses: softprops/action-gh-release@v1
       with:
