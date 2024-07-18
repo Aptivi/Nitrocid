@@ -157,6 +157,11 @@ namespace Nitrocid.Kernel
                 while (!Login.LogoutRequested)
                 {
                     HomepageTools.OpenHomepage();
+                    if (Login.LogoutRequested)
+                    {
+                        DebugWriter.WriteDebug(DebugLevel.I, "Requested log out: {0}", Login.LogoutRequested);
+                        break;
+                    }
 
                     // Show MAL
                     BaseLoginHandler.ShowMOTDOnceFlag = true;
@@ -184,14 +189,9 @@ namespace Nitrocid.Kernel
                     TextWriters.Write("* " + Translate.DoTranslation("Run 'license' to see the license information."), KernelColorType.Tip);
 
                     // Start the shell
-                    if (!Login.LogoutRequested)
-                        ShellManager.StartShellInternal(ShellType.Shell);
-                    if (Login.LogoutRequested)
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Requested log out: {0}", Login.LogoutRequested);
-                        Login.LoggedIn = false;
-                    }
+                    ShellManager.StartShellInternal(ShellType.Shell);
                 }
+                Login.LoggedIn = false;
                 Login.LogoutRequested = false;
             }
         }
