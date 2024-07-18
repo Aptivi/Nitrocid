@@ -19,9 +19,7 @@
 
 using System;
 using Nitrocid.Drivers;
-using Nitrocid.Kernel.Configuration;
 using Terminaux.Base;
-using Terminaux.Inputs.Styles.Choice;
 using Terminaux.Reader;
 
 namespace Nitrocid.ConsoleBase.Inputs

@@ -21,7 +21,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using Nitrocid.Drivers;
-using Nitrocid.Kernel.Configuration;
 
 namespace Nitrocid.Files.Paths
 {

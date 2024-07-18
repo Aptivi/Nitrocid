@@ -18,7 +18,6 @@
 //
 
 using Nitrocid.Kernel.Configuration;
-using Nitrocid.Shell.ShellBase.Help;
 
 namespace Nitrocid.Kernel.Debugging.RemoteDebug.Command.Help
 {

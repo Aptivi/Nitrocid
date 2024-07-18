@@ -22,7 +22,6 @@ using System.Collections.Generic;
 using System.Linq;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Files.Folders;
-using Nitrocid.Files.Operations;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
 using Terminaux.Colors;

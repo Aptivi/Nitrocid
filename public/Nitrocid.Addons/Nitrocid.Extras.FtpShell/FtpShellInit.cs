@@ -19,7 +19,6 @@
 
 using FluentFTP;
 using Nitrocid.Extras.FtpShell.FTP;
-using Nitrocid.Extras.FtpShell.Settings;
 using Nitrocid.Extras.FtpShell.Tools;
 using Nitrocid.Extras.FtpShell.Tools.Filesystem;
 using Nitrocid.Extras.FtpShell.Tools.Transfer;

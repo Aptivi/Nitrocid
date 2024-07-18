@@ -19,7 +19,6 @@
 
 using System;
 using System.Collections;
-using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Drivers.HardwareProber;
 using Nitrocid.Misc.Splash;

@@ -34,7 +34,6 @@ using Nitrocid.Misc.Screensaver;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Misc.Reflection;
 using Nitrocid.Files.Operations;
-using Nitrocid.Kernel.Time.Renderers;
 using Nitrocid.Files.Folders;
 using Nitrocid.Misc.Splash;
 using Nitrocid.Languages;

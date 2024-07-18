@@ -21,7 +21,6 @@ using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Help;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -18,7 +18,6 @@
 //
 
 using Nitrocid.Drivers;
-using Nitrocid.Files.Folders;
 using Nitrocid.Files.Instances;
 using Nitrocid.Kernel.Configuration;
 

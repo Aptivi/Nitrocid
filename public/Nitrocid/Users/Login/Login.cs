@@ -32,7 +32,6 @@ using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Power;
 using Terminaux.Colors;
-using Nitrocid.Misc.Splash;
 
 namespace Nitrocid.Users.Login
 {

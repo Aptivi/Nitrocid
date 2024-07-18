@@ -29,7 +29,6 @@ using Terminaux.Writer.FancyWriters;
 using Nitrocid.Languages;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.Kernel.Power;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
 using Nitrocid.Kernel.Configuration;

@@ -23,7 +23,6 @@ using Nitrocid.Files.Folders;
 using Nitrocid.Kernel;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Languages;
-using Nitrocid.Network;
 using Nitrocid.Shell.Prompts;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Users;

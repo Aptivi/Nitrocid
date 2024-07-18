@@ -19,7 +19,6 @@
 
 using System.IO;
 using Nitrocid.Files.Editors.HexEdit;
-using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Threading;
 
 namespace Nitrocid.Shell.Shells.Hex

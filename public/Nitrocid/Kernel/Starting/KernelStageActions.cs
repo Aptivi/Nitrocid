@@ -34,11 +34,6 @@ using Nitrocid.Kernel.Starting.Bootloader.Apps;
 using Nitrocid.Kernel.Starting.Bootloader;
 using Nitrocid.Kernel.Starting.Environment;
 using Nitrocid.Kernel.Power;
-using Nitrocid.Files.Operations.Querying;
-using Nitrocid.Files.Paths;
-using Nitrocid.Files.Operations;
-using Terminaux.Inputs.Styles.Infobox;
-using Terminaux.Inputs;
 
 namespace Nitrocid.Kernel.Starting
 {

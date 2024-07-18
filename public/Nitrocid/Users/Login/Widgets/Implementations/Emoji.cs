@@ -17,17 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Configuration;
-using Nitrocid.Kernel.Time;
-using Nitrocid.Kernel.Time.Renderers;
 using System.Text;
-using Terminaux.Base;
-using Terminaux.Colors;
 using Terminaux.Images.Icons;
-using Terminaux.Writer.FancyWriters;
-using Textify.Figlet;
 
 namespace Nitrocid.Users.Login.Widgets.Implementations
 {

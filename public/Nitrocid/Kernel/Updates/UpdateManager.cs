@@ -19,7 +19,6 @@
 
 using System;
 using Newtonsoft.Json.Linq;
-using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Network.Transfer;

@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Time.Converters;
 using Nitrocid.Kernel.Time.Timezones;
 using System;

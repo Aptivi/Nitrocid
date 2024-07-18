@@ -23,7 +23,6 @@ using System.Linq;
 using System.Net.Sockets;
 using Newtonsoft.Json;
 using System.Collections.Generic;
-using Nitrocid.Kernel.Configuration;
 using Nitrocid.Files.Operations;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;

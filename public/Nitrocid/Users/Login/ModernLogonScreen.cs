@@ -36,7 +36,6 @@ using Nitrocid.Kernel.Extensions;
 using Textify.General;
 using Terminaux.Base;
 using Nitrocid.Users.Login.Motd;
-using Nitrocid.Network.Types.RSS;
 using Nitrocid.Users.Login.Widgets;
 using Nitrocid.Users.Login.Widgets.Implementations;
 using Nitrocid.Kernel;

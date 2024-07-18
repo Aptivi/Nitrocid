@@ -37,7 +37,6 @@ using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Power;
 using Nitrocid.Kernel.Time.Timezones;
 using Textify.General;
-using Nitrocid.Network;
 using Nitrocid.Misc.Text.Probers.Regexp;
 using Nitrocid.Kernel.Configuration;
 

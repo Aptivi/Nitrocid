@@ -24,7 +24,6 @@ using Terminaux.Inputs.Styles.Choice;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.ConsoleBase.Inputs;
 using Nitrocid.Kernel.Configuration;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands

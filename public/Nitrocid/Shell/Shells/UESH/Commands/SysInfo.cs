@@ -28,7 +28,6 @@ using Nitrocid.Kernel.Hardware;
 using Nitrocid.Users;
 using Nitrocid.Misc.Text.Probers.Placeholder;
 using Nitrocid.Users.Login.Motd;
-using Nitrocid.Network;
 using Nitrocid.Users.Windows;
 using Nitrocid.Kernel.Configuration;
 

@@ -22,7 +22,6 @@ using System.IO;
 using System.Linq;
 using IOPath = System.IO.Path;
 using System.Threading;
-using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Files.Folders;

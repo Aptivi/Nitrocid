@@ -20,7 +20,6 @@
 using System.Collections.Generic;
 using System.IO;
 using Nitrocid.Files.Editors.TextEdit;
-using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Threading;
 
 namespace Nitrocid.Shell.Shells.Text

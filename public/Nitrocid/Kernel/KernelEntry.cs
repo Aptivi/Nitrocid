@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Kernel.Time;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Users.Login;
 using Nitrocid.Kernel.Debugging;
