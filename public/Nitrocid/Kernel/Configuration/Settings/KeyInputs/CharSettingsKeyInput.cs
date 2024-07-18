@@ -53,9 +53,9 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             string AnswerString = Convert.ToString(keypress);
 
             // Neutralize path if required with the assumption that the keytype is not list
-            DebugWriter.WriteDebug(DebugLevel.I, "User answered {0}", AnswerString);
-            bail = !string.IsNullOrEmpty(AnswerString) && AnswerString.Length == 1;
-            return AnswerString;
+            DebugWriter.WriteDebug(DebugLevel.I, "User answered {0}", keypress);
+            bail = !string.IsNullOrEmpty(AnswerString);
+            return keypress;
         }
 
         public object TranslateStringValue(SettingsKey key, string value)
@@ -78,7 +78,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             DebugWriter.WriteDebug(DebugLevel.I, "Answer is not numeric and key is of the Char (inferred from keytype {0}) type. Setting variable...", key.Type.ToString());
 
             // Check to see if written answer is empty
-            if (value is not string AnswerString)
+            if (value is not char AnswerString)
                 return;
 
             // Set the value
