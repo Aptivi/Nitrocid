@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Nitrocid.Kernel.Configuration;
 using Nitrocid.Shell.ShellBase.Commands;
 
 namespace Nitrocid.Shell.ShellBase.Shells.Unified
@@ -32,7 +33,7 @@ namespace Nitrocid.Shell.ShellBase.Shells.Unified
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            if (ShellManager.IsOnMotherShell())
+            if (ShellManager.IsOnMotherShell() && Config.MainConfig.EnableHomepage)
             {
                 // User requested to go back to The Nitrocid Homepage
                 ShellManager.KillShellInternal();
