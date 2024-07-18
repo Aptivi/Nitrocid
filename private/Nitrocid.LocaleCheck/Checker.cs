@@ -66,7 +66,7 @@ namespace Nitrocid.LocaleCheck
                             var strMatches = Regex.Matches(sourceLine, stringPattern);
                             foreach (Match strMatch in strMatches.Cast<Match>())
                             {
-                                string str = strMatch.Groups["string"].Value.Replace("\"", "\\\"");
+                                string str = strMatch.Groups["string"].Value.Replace("\\\"", "\"");
 
                                 // Check to see if the string is found in the eng.txt file
                                 if (!engStrings.Contains(str) && !unlocalizedStrings.Contains(str) && !string.IsNullOrEmpty(str))
@@ -102,7 +102,7 @@ namespace Nitrocid.LocaleCheck
                             var strMatches = Regex.Matches(sourceLine, stringPattern);
                             foreach (Match strMatch in strMatches.Cast<Match>())
                             {
-                                string str = strMatch.Groups["string"].Value.Replace("\"", "\\\"");
+                                string str = strMatch.Groups["string"].Value.Replace("\\\"", "\"");
 
                                 // Check to see if the string is found in the eng.txt file
                                 if (!engStrings.Contains(str) && !unlocalizedStrings.Contains(str) && !string.IsNullOrEmpty(str))

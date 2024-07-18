@@ -234,7 +234,6 @@ tanzil Retry Times
 tasjil asm mustakhdim FTP
 tasjil eunwan IP liburutukul naql almilafaat
 'iirjae milafi taerif FTP al'awal faqat
-'iizhar alwaqt / altaarikh fi alzaawiat alyumnaa aleulya
 wade tahlil alhajm
 saradiq eind bad' altashghil
 waqt tawil watarikh
@@ -303,7 +302,6 @@ yuzhir almustakhdimin almutahin 'iidha tama tamkinuhu.
 ma 'iidha kunt turid tasjil asm mustakhdim FTP 'umm la.
 ma 'iidha kunt turid tasjil eunwan IP alkhasu bi FTP 'umm la.
 aikhtar almilafa alshakhsia al'awal faqat eind aliatisali.
-sayazhar alwaqt waltaarikh fi alzaawiat alyumnaa aleulya min alshaasha
 fi halat altamkin , sataqum kernel bitahlil almujalad bialkamil lihajmih al'iijmali. eada dhalik , sayuhalil alsath faqat.
 tamakan eyecandy eind bad' altashghil
 sayakun alwaqt waltaarikh 'atwal , wayueridan 'asma' alshuhur kamilatan , 'iilakh.
@@ -531,7 +529,6 @@ kam eadad khutuat altalashi alati yajib alqiam biha?
 yaftah qadhifatan RSS liqira'at alkhalasat
 yasrud jamie al'aelaf
 yaqra mujaz wib fi mutasafih alwib
-nawe mujaz RSS ghayr salihi.
 yahsul ealaa maelumat almaqala
 la yumkin 'an yakun raqm almaqalat 'akbar min almaqalat almutahati.
 liqab:
@@ -1114,11 +1111,6 @@ qum bitamkin wade al'aswad wal'abyad
 yajeal aldiysku 'abyad wa'aswada. sawf tudhi eaynayk hqan 'iidha kanat sarieatan jdan , lidha la yunsah biha 'iidha kunt tueani min nawbat min alsuwar alsarieati.
 tahmil al'alwan alhalia
 alqimat alhaliatu:
-muhadad allawn alsudasii ghayr salihi.
-muhadad lawn RGB ghayr salihi.
-muhadad allawn al'ahmar ghayr salihi.
-muhadad allawn al'akhdar ghayr salihi.
-muhadad allawn al'azraq ghayr salihi.
 yudif bayit jadid fi nihayat almilafi
 yudif wahadat albayit aljadidat fi nihayat almilafi
 yamsah almilafu althunayiyu
@@ -1172,17 +1164,9 @@ alhadu al'aqsaa limiqdar aleumr sanawat almurad 'iinshawuha
 safhat dalil bidun eunwan
 tama tamkin sijili al'iidkhal
 sawa' tama tamkin mahfuzat al'iidkhal 'am la. fi halat altamkin , yumkinuk alwusul 'iilaa al'awamir almaktubat mwkhran biaistikhdam mafatih al'ashum li'aelaa 'aw li'asfala.
-yuhawil 'arqam RGB almulawanat 'iilaa 'arqam sudasiat eishria.
-yuhawil altamthil alsudasia aleishria lilawn 'iilaa 'arqam RGB.
-yuhawil altamthil alsudasia aleishria lilawn 'iilaa 'arqam RGB bitansiq KS.
 mustawaa allawn al'ahmaru:
 mustawaa allawn al'akhdari:
 mustawaa allawn al'azraqa:
-tasalsal 'alwan RGB:
-yajib 'an yakun mustawaa allawn al'ahmar rqmyan.
-yajib 'an yakun mustawaa allawn al'akhdar rqmyan.
-yajib 'an yakun mustawaa allawn al'azraq rqmyan.
-altamthil alsudasiu aleishriu liluwni:
 yumkinuk alan 'iiqaf tashghil jihaz alkumbuyutar alkhasi bik bi'amani.
 muhakat la yujad wade APM
 ma 'iidha kan sayatimu muhakaat mawqif la yatawafar fih APM 'am la. 'iidha tama tamkinuh , fa'iinah yukhbir almustakhdim 'anah min alamin alan 'iiqaf tashghil alkumbuyutar eind 'iiqaf altashghili.
@@ -1236,11 +1220,8 @@ qm btšġīl "āltrẖīṣ" lruʾīẗ mʿlūmāt al-trẖīṣ.
 tšġīl al-nwāẗ lʾaūl mrẗ
 mrḥbā bkm fī nwāẗ al-nītrūsīd! škrā lk ʿli tǧrbthā!
 llbdʾ, aḍġṭ ʿli ENTER.
-aẖtr lġtk
 aẖtr lġtk. bškl aftrāḍī, īstẖdm al-nwāẗ al-lġẗ al-inǧlīzīẗ, ūlkn īmknk tḥdīd aī lġẗ aẖri hnā.
 bnāʾً ʿli iʿdādāt al-lġẗ al-ẖāṣẗ bk ʿli nẓāmk, fin al-lġẗ al-mnāsbẗ hī
-aktb rmz al-lġẗ al-mḏkūr adnāh:
-aḍġṭ ʿli al-mftāḥ ENTER llmtābʿẗ.
 qm binšāʾ al-mstẖdm al-ʾaūl al-ẖāṣ bk
 snsāʿdk fī inšāʾ asm al-mstẖdm al-ẖāṣ bk. ḥdd aī asm trīdh. īmkn an īkūn hḏā hū lqbk aū asmk al-mẖtṣr, ṭālmā an asm al-mstẖdm al-ẖāṣ bk lā īḥtwy ʿli msāfāt ūʾaḥrf ẖāṣẗ ūʾanh ġīr mūǧūd bālfʿl. ītm tsǧīl asmāʾ al-mstẖdmīn al-tālīẗ:
 adẖl asm al-mstẖdm
@@ -1262,9 +1243,7 @@ aktšf Nitrocid KS mšklẗ ūtm iġlāqh.
 mʿlūmāt al-bīānāt al-tʿrīfīẗ al-lāzmẗ ltṯbīt al-lġẗ al-mẖṣṣẗ ġīr mūǧūdẗ.
 mʿlūmāt al-bīānāt al-tʿrīfīẗ al-lāzmẗ lizālẗ tṯbīt al-lġẗ al-mẖṣṣẗ ġīr mūǧūdẗ.
 qd lā īkūn al-brnāmǧ al-nṣī al-mʿdl fārġًā.
-ǧārٍ tḥmīl al-tʿdīlāt...
 lm ītm aktšāf aī tʿdīlāt.
-īqāf al-tʿdīlāt...
 ǧārٍ īqāf al-ūḍʿ {0}...
 lm ītm al-tūqīʿ ʿli al-ūḍʿ bqūẗ. qd īḥtwy ʿli tʿlīmāt brmǧīẗ ġīr mūṯūq bhā.
 lā īmkn tḥmīl al-tʿdīl bsbb ʿdm al-twāfq bīn hḏā al-iṣdār mn al-nwāẗ ūhḏā al-tʿdīl:
@@ -1287,13 +1266,6 @@ lā ītm msḥ al-mlfāt al-tālīẗ:
 hl ant mtʾakd mn msḥ hḏh al-mlfāt?
 lā īmkn msḥ al-mlfāt al-mtnūʿẗ
 lā īūǧd ūṣf msāʿdẗ ḥǧẗ
-mḥdd lūn RYB ġīr ṣālḥ.
-mḥdd lūn CMY ġīr ṣālḥ.
-mḥdd al-wān CMYK ġīr ṣālḥ.
-mḥdd lūn HSL ġīr ṣālḥ.
-mḥdd lūn HSV ġīr ṣālḥ.
-mḥdd lūn YIQ ġīr ṣālḥ.
-mḥdd lūn YUV ġīr ṣālḥ.
 īǧb an tdʿm ūḥdẗ al-tḥkm al-ẖāṣẗ bk al-lūn al-ḥqīqī lāstẖdām hḏā al-mẓhr.
 al-ẖrūǧ mn al-mʿāīnẗ
 mnthī
@@ -1382,7 +1354,6 @@ fšl al-tʾakīd.
 lm ītm al-ʿṯūr ʿli al-ḥdṯ {0}.
 tm iṭlāq ḥdṯ Kernel:
 tūfīr iǧrāʾ ḥdṯ ṣālḥ
-ẖṭʾa ġīr mʿrūf fī al-nwāẗ.
 al-āsm al-mstʿār al-mḥdd mūǧūd bālfʿl. tʾakd mn tḥdīd asm mstʿār mẖtlf.
 wāǧh nẓām al-āsm al-mstʿār ʿmlīẗ ġīr ṣālḥẗ aṯnāʾ mḥāūlẗ mʿālǧẗ ṭlbk.
 lm ītm al-ʿṯūr ʿli al-āsm al-mstʿār al-mḥdd.
@@ -1395,11 +1366,8 @@ lm ītm al-ʿṯūr ʿli nūʿ al-āsm al-mstʿār al-mḥdd.
 ḥdṯ ẖṭʾa ʿām fī šbkẗ FTP. tḥqq lltʾakd mn an atṣālk bālintrnt īʿml.
 ḥdṯ ẖṭʾa ʿām fī ġlāf FTP.
 ḥdṯ ẖṭʾa fī idārẗ al-mǧmūʿẗ.
-ẖṭʾa fī asm al-mḍīf.
 ḥdṯ ẖṭʾa ʿām fī ġlāf HTTP.
 tm aktšāf ūḥdẗ al-tḥkm al-mǧnūnẗ. lā īmkn l. Nitrocid KS al-āstmrār fī al-tšġīl, lʾan ūḥdẗ al-tḥkm al-ẖāṣẗ bk ġīr mtwāfqẗ mʿ mtṭlbātnā.
-ẖlāṣẗ RSS ġīr ṣālḥẗ.
-rābṭ mūǧz RSS ġīr ṣālḥ.
 ẖwārzmīẗ al-tǧzʾiẗ ġīr ṣālḥẗ. iḏā knt tstẖdm brnāmǧ tšġīl mẖṣṣ lmǧmūʿ al-tǧzʾiẗ, ftḥqq lltʾakd mn tḥmīl brnāmǧ al-tšġīl.
 mǧmūʿ al-tǧzʾiẗ ġīr ṣālḥ. tḥqq lltʾakd mn ank qmt bnsẖ mǧmūʿ al-tǧzʾiẗ ūlṣqh bškl ṣḥīḥ. iḏā knt tstẖdm brnāmǧ tšġīl tǧzʾiẗ mẖṣṣ, ftḥqq lltʾakd mn tḥmīl brnāmǧ al-tšġīl ūʾanh īʿml kmā hū mtūqʿ.
 msār al-nwāẗ ġīr ṣālḥ.
@@ -1443,7 +1411,6 @@ fšl tḥlīl al-ḥālẗ. īrǧi al-tḥqq mn bnāʾ al-ǧmlẗ al-ẖāṣ bk
 tm aktšāf ūḥdẗ tḥkm ġīr mdʿūmẗ.
 tm aktšāf fšl al-tʾakīd fī al-nwāẗ! mn al-mrǧḥ an īkūn hḏā ẖṭʾaً fī ūḥdẗ kernel wyǧb iṣlāḥh mn ǧānbnā.
 īǧb an tkūn šbktk mtṣlẗ bālintrnt qbl an ttmkn mn tnfīḏ al-ʿmlīāt al-mtʿlqẗ bālšbkāt. qm btūṣīl mḥūl al-šbkẗ ūḥāūl mrẗ aẖri.
-tm rfḍ al-iḏn bmḥāūlẗ iǧrāʾ ʿmlīẗ mā.
 al-mstẖdm ġīr mūǧūd. tḥqq lltʾakd mn ank ktbt al-mstẖdm bškl ṣḥīḥ.
 al-sāʾiq ġīr mūǧūd. tḥqq lltʾakd mn ktābẗ asm brnāmǧ al-tšġīl bškl ṣḥīḥ, ūmn tsǧīl brnāmǧ al-tšġīl bškl ṣḥīḥ.
 al-ẖīṭ līs ǧāhzā bʿd. rbmā nsī rmz al-mstẖdm iʿādẗ inšāʾ slslẗ kernel bʿd īqāfh īdwyًā.
@@ -1542,11 +1509,9 @@ backtraces muʾšr al-trābṭ fārġ. imā an hḏh al-mʿlūmāt ġīr mtūfr�
 ttbʿ al-mkds llẖīṭ
 fšl tḥlīl al-ttbʿ al-ẖlfī lmuʾšr al-trābṭ. qd lā tkūn bʿḍ al-mʿlūmāt kāmlẗ.
 mʿlūmāt al-iṣdār
-tšġīl mn GRILO?
 fšl mūld al-tfrīġ fī tfrīġ ẖṭʾa kernel al-nāǧm ʿn
 nʿtḏr ʿn al-izʿāǧ, ūlkn ībdū an al-nwāẗ kānt twāǧh mšklẗ fī al-tšġīl. qd tsāʿd rsālẗ al-ẖṭʾa adnāh:
 lmzīd mn al-āstqṣāʾ, qm btmkīn ūḍʿ tṣḥīḥ al-ʾaẖṭāʾ ʿli kernel ūḥāūl iʿādẗ iẓhār al-mšklẗ. ḥāūl aīḍḍā al-tḥqq mn aḥdṯ mlf tfrīġ tm inšāuʾh.
-thīʾiẗ al-mlḥq kernel
 hḏā al-mlḥq līs mlḥqًā ṣālḥًā.
 bdʾ tšġīl al-mlḥq kernel
 bdʾa al-mlḥq al-nwāẗ
@@ -1581,12 +1546,10 @@ iḍāfāt - tūqʿāt
 iḍāfāt - šl brūtūkūl nql al-mlfāt
 al-iḍāfāt - ǧīt šl
 iḍāfāt - HTTP šl
-iḍāfāt - mʿlūmāt rādīū al-intrnt
 al-iḍāfāt - JSON Shell
 al-iḍāfāt - astūdīū al-lġāt
 iḍāfāt - šl al-brīd
 iḍāfāt - MD5
-al-iḍāfāt - NameGen
 iḍāfāt - mlāḥẓāt
 iḍāfāt - RSS šl
 iḍāfāt - šl SFTP
@@ -1599,7 +1562,6 @@ iḍāfāt - al-mūqtāt
 iḍāfāt - nṣāʾiḥ al-nwāẗ
 al-iḍāfāt - qāʾimẗ al-mhām
 iḍāfāt - mḥūl al-ūḥdāt
-līǧāsī - HDD Uncleaner 2015
 lā īūǧd mṯl hḏā al-nūʿ al-iḍāfī '{0}'
 fšl wāḥd aū akṯr mn mrākz ūḥdẗ al-mʿālǧẗ al-mrkzīẗ fī al-tḥqīq. ʿrḍ al-mʿlūmāt ʿli aī ḥāl...
 fšl fḥṣ wāḥdẗ aū akṯr mn šrāʾiḥ ḏākrẗ al-ūṣūl al-ʿšwāʾī (RAM). ʿrḍ al-mʿlūmāt ʿli aī ḥāl...
@@ -1799,15 +1761,10 @@ llrfḍ nhāʾīًā, aḍġṭ ʿli ENTER ʿli al-zr "tm al-iqrār" hnā mn ẖ
 nʿm
 mʿtrf bh
 išʿār al-tṭwyr
-ant tqūm btšġīl Nitrocid KS fī bīʾiẗ ġīr ʿādīẗ. īrǧi al-tḥqq mn ank qmt btšġīl al-nwāẗ imā mbāšrẗ aū mn ẖlāl GRILO. iḏā knt mtʾakddā mn ank qmt btšġīl al-nwāẗ bālṭrīqẗ al-mʿtādẗ, fqd īkūn al-sbb hū ank tqūm btšġīl iṣdār ġīr mdʿūm mn Nitrocid KS.
 īrǧi mlāḥẓẗ an tšġīl Nitrocid KS fī bīʾiẗ ġīr ʿādīẗ īʿnī an bʿḍ al-mīzāt mḥdūdẗ. ln ttmkn mn tḥmīl al-tʿdīlāt wāltkwynāt.
 išʿār bīʾiẗ ġīr ʿādīẗ
 hl īmknk al-ḥṣūl ʿli nṣāʾiḥ iḍāfīẗ mn mlḥq kernel al-ḏī ītm šḥnh mʿ al-iṣdār al-kāml mn Nitrocid?
 nṣīḥẗ llmḥtrfīn: hl tʿlm
-BASE64 lā īdʿm al-mfātīḥ
-lā īdʿm BASE64 mtǧhāt al-thīʾiẗ
-RSA lā īdʿm al-mfātīḥ
-lā īdʿm RSA mtǧhāt al-thīʾiẗ
 rwābṭ al-mfātīḥ
 idrāǧ
 īzīl
@@ -1943,7 +1900,6 @@ lā tqbl al-mfātīḥ adnāh al-qīm.
 ttūqʿ wāḥdẗ aū akṯr mn al-ūsīṭāt qīmẗ rqmīẗ, lknk qdmt rqmmā ġīr ṣālḥ.
 ttūqʿ wāḥdẗ aū akṯr mn al-ūsīṭāt ṣīāġẗ dqīqẗ, ūlknk qdmt klmẗ ġīr ṣālḥẗ.
 ītūqʿ wāḥd aū akṯr mn rmūz al-tbdīl qīmẗ rqmīẗ, ūlknk qmt btūfīr rqm ġīr ṣālḥ.
-rāǧʿ hḏā al-ʾamr lmzīd mn al-mʿlūmāt
 tm iḥbāṭ al-ʾamr.
 lā īǧb ʿlīk tnfīḏ hḏā al-ʾamr mbāšrẗ fī al-ūḍʿ al-mltf.
 ḥdṯ ẖṭʾa aṯnāʾ mḥāūlẗ al-tfāf iẖrāǧ al-ʾamr
@@ -2234,7 +2190,6 @@ lqd ḥddt
 īẖtbr kātb idẖāl al-qāʾimẗ
 al-msāfẗ al-bādʾiẗ 1:
 al-msāfẗ al-bādʾiẗ 2:
-īẖtbr nẓām al-ʿrḍ
 īẖtbr mʿālǧ al-tqdm
 ǧār thīʾiẗ...
 aktb slslẗ lltḥqq:
@@ -2251,7 +2206,6 @@ al-ʿnṣr al-nāʾib ġīr msǧl
 lā īmkn tsǧīl šrṭ mūǧūd bālfʿl.
 lā īmkn tsǧīl ḥālẗ fārġẗ.
 lā īmkn ilġāʾ tsǧīl šrṭ ġīr mūǧūd.
-lā īmknk al-ẖrūǧ mn al-qšrẗ al-ʾam. hl tqṣd tsǧīl al-ẖrūǧ mn ḥsābk aū iġlāq al-nwāẗ aū iʿādẗ tšġīlhā?
 lm ītm al-ʿṯūr ʿli awāmr.
 ʿdd ġīr ṣālḥ mn al-mrāt.
 lā īmkn tkrār al-ḏāt.
@@ -2376,7 +2330,6 @@ lā īmkn inšāʾ rābṭ rmzī.
 iʿdādāt al-nwāẗ
 iṣdār al-nwāẗ:
 ūḍʿ al-tṣḥīḥ:
-al-ǧrī mn ǧrīlū:
 al-tšġīl fī al-bīʾiẗ al-mʿtādẗ:
 al-ūḍʿ al-ʾāmn:
 iʿdādāt al-ʾaǧhzẗ
@@ -2402,7 +2355,6 @@ hḏā al-ʾamr ġīr mtūfr lnẓāmk al-ʾasāsī.
 aġlq
 iʿādẗ tšġīl
 tsǧīl al-dẖūl
-māḏā trīd an tfʿl?
 ḥdd ḥsāb al-mstẖdm al-ḏī trīd tsǧīl al-dẖūl bh.
 adẖl klmẗ al-mrūr llmstẖdm
 klmẗ al-mrūr ẖāṭʾiẗ llmstẖdm.
@@ -2432,139 +2384,6 @@ iḍāfẗ mnbh ltnbīhk ʿndmā īkūn kūb al-šāī aū al-qhūẗ ǧāhzًā
 mdīr al-tqwym wālḥdṯ wāltḏkīr
 nūʿ al-tqwym al-ḏī sītm al-ʿml ʿlīh
 astẖdm ʿārḍ al-tqwym al-mstnd ili al-ǧdūl
-īḥūl al-tmṯīl al-st ʿšrī llūn ili arqām RYB.
-īḥūl al-tmṯīl al-st ʿšrī llūn ili arqām RYB btnsīq KS.
-īḥūl al-tmṯīl al-sdāsī al-ʿšrī llūn ili arqām CMYK.
-īḥūl al-tmṯīl al-sdāsī al-ʿšrī llūn ili arqām CMYK btnsīq KS.
-īḥūl al-tmṯīl al-st ʿšrī llūn ili arqām CMY.
-īḥūl al-tmṯīl al-st ʿšrī llūn ili arqām CMY btnsīq KS.
-īḥūl al-tmṯīl al-st ʿšrī llūn ili arqām HSL.
-īḥūl al-tmṯīl al-sdāsī al-ʿšrī llūn ili arqām HSL btnsīq KS.
-īḥūl al-tmṯīl al-st ʿšrī llūn ili arqām HSV.
-īḥūl al-tmṯīl al-sdāsī al-ʿšrī llūn ili arqām HSV btnsīq KS.
-īḥūl al-tmṯīl al-st ʿšrī llūn ili arqām YIQ.
-īḥūl al-tmṯīl al-sdāsī al-ʿšrī llūn ili arqām YIQ btnsīq KS.
-īḥūl al-tmṯīl al-st ʿšrī llūn ili arqām YUV.
-īḥūl al-tmṯīl al-sdāsī al-ʿšrī llūn ili arqām YUV btnsīq KS.
-īḥūl arqām al-ʾalwān RGB ili CMYK.
-īḥūl arqām RGB al-mlūnẗ ili CMYK btnsīq KS.
-īḥūl arqām al-ʾalwān RGB ili CMY.
-īḥūl arqām RGB al-mlūnẗ ili CMY btnsīq KS.
-īḥūl arqām RGB al-mlūnẗ ili HSL.
-īḥūl arqām RGB al-mlūnẗ ili HSL btnsīq KS.
-īḥūl arqām RGB al-mlūnẗ ili HSV.
-īḥūl arqām RGB al-mlūnẗ ili HSV btnsīq KS.
-īḥūl arqām RGB al-mlūnẗ ili RYB.
-īḥūl arqām RGB al-mlūnẗ ili RYB btnsīq KS.
-īḥūl arqām RGB al-mlūnẗ ili YIQ.
-īḥūl arqām RGB al-mlūnẗ ili YIQ btnsīq KS.
-īḥūl arqām al-ʾalwān RGB ili YUV.
-īḥūl arqām RGB al-mlūnẗ ili YUV btnsīq KS.
-īḥūl arqām RYB al-mlūnẗ ili st ʿšrīẗ.
-īḥūl arqām al-ʾalwān RYB ili CMYK.
-īḥūl arqām al-ʾalwān RYB ili CMYK btnsīq KS.
-īḥūl arqām al-ʾalwān RYB ili CMY.
-īḥūl arqām RYB al-mlūnẗ ili CMY btnsīq KS.
-īḥūl arqām RYB al-mlūnẗ ili HSL.
-īḥūl arqām RYB al-mlūnẗ ili HSL btnsīq KS.
-īḥūl arqām RYB al-mlūnẗ ili HSV.
-īḥūl arqām RYB al-mlūnẗ ili HSV btnsīq KS.
-īḥūl arqām al-ʾalwān RYB ili RGB.
-īḥūl arqām al-ʾalwān RYB ili RGB btnsīq KS.
-tḥwyl arqām al-lūn RYB ili YIQ.
-īḥūl arqām RYB al-mlūnẗ ili YIQ btnsīq KS.
-īḥūl arqām al-lūn RYB ili YUV.
-īḥūl arqām al-ʾalwān RYB ili YUV btnsīq KS.
-īḥūl arqām HSL al-mlūnẗ ili rqm sdāsī ʿšrī.
-īḥūl arqām HSL al-mlūnẗ ili CMYK.
-īḥūl arqām HSL al-mlūnẗ ili CMYK btnsīq KS.
-īḥūl arqām HSL al-mlūnẗ ili CMY.
-īḥūl arqām HSL al-mlūnẗ ili CMY btnsīq KS.
-īḥūl arqām HSL al-mlūnẗ ili HSV.
-īḥūl arqām HSL al-mlūnẗ ili HSV btnsīq KS.
-īḥūl arqām HSL al-mlūnẗ ili RGB.
-īḥūl arqām HSL al-mlūnẗ ili RGB btnsīq KS.
-īḥūl arqām HSL al-mlūnẗ ili RYB.
-īḥūl arqām HSL al-mlūnẗ ili RYB btnsīq KS.
-tḥwyl arqām HSL al-mlūnẗ ili YIQ.
-īḥūl arqām HSL al-mlūnẗ ili YIQ btnsīq KS.
-īḥūl arqām HSL al-mlūnẗ ili YUV.
-īḥūl arqām HSL al-mlūnẗ ili YUV btnsīq KS.
-īḥūl arqām HSV al-mlūnẗ ili rqm sdāsī ʿšrī.
-īḥūl arqām HSV al-mlūnẗ ili CMYK.
-īḥūl arqām HSV al-mlūnẗ ili CMYK btnsīq KS.
-īḥūl arqām HSV al-mlūnẗ ili CMY.
-īḥūl arqām HSV al-mlūnẗ ili CMY btnsīq KS.
-īḥūl arqām HSV al-mlūnẗ ili HSL.
-īḥūl arqām HSV al-mlūnẗ ili HSL btnsīq KS.
-īḥūl arqām HSV al-mlūnẗ ili RGB.
-īḥūl arqām HSV al-mlūnẗ ili RGB btnsīq KS.
-īḥūl arqām HSV al-mlūnẗ ili RYB.
-īḥūl arqām HSV al-mlūnẗ ili RYB btnsīq KS.
-tḥwyl arqām HSV al-mlūnẗ ili YIQ.
-īḥūl arqām HSV al-mlūnẗ ili YIQ btnsīq KS.
-īḥūl arqām HSV al-mlūnẗ ili YUV.
-īḥūl arqām HSV al-mlūnẗ ili YUV btnsīq KS.
-īḥūl arqām CMYK al-mlūnẗ ili rqm sdāsī ʿšrī.
-īḥūl arqām al-ʾalwān CMYK ili RGB.
-īḥūl arqām al-ʾalwān CMYK ili RGB btnsīq KS.
-īḥūl arqām CMYK al-mlūnẗ ili RYB.
-īḥūl arqām CMYK al-mlūnẗ ili RYB btnsīq KS.
-īḥūl arqām al-ʾalwān CMYK ili HSL.
-īḥūl arqām CMYK al-mlūnẗ ili HSL btnsīq KS.
-īḥūl arqām al-ʾalwān CMYK ili HSV.
-īḥūl arqām CMYK al-mlūnẗ ili HSV btnsīq KS.
-īḥūl arqām al-ʾalwān CMYK ili CMY.
-īḥūl arqām al-ʾalwān CMYK ili CMY btnsīq KS.
-īḥūl arqām al-ʾalwān CMYK ili YIQ.
-īḥūl arqām al-ʾalwān CMYK ili YIQ btnsīq KS.
-īḥūl arqām al-ʾalwān CMYK ili YUV.
-īḥūl arqām al-ʾalwān CMYK ili YUV btnsīq KS.
-īḥūl arqām CMY al-mlūnẗ ili rqm sdāsī ʿšrī.
-tḥwyl arqām CMY al-mlūnẗ ili CMYK.
-īḥūl arqām CMY al-mlūnẗ ili CMYK btnsīq KS.
-īḥūl arqām CMY al-mlūnẗ ili HSL.
-īḥūl arqām CMY al-mlūnẗ ili HSL btnsīq KS.
-īḥūl arqām CMY al-mlūnẗ ili HSV.
-īḥūl arqām CMY al-mlūnẗ ili HSV btnsīq KS.
-īḥūl arqām CMY al-mlūnẗ ili RGB.
-īḥūl arqām al-ʾalwān CMY ili RGB btnsīq KS.
-īḥūl arqām CMY al-mlūnẗ ili RYB.
-īḥūl arqām CMY al-mlūnẗ ili RYB btnsīq KS.
-tḥwyl arqām CMY al-mlūnẗ ili YIQ.
-īḥūl arqām CMY al-mlūnẗ ili YIQ btnsīq KS.
-īḥūl arqām CMY al-mlūnẗ ili YUV.
-īḥūl arqām al-ʾalwān CMY ili YUV btnsīq KS.
-tḥwyl arqām YIQ al-mlūnẗ ili rqm sdāsī ʿšrī.
-tḥwyl arqām YIQ al-mlūnẗ ili CMYK.
-īḥūl arqām YIQ al-mlūnẗ ili CMYK btnsīq KS.
-tḥwyl arqām YIQ al-mlūnẗ ili CMY.
-īḥūl arqām YIQ al-mlūnẗ ili CMY btnsīq KS.
-tḥwyl arqām YIQ al-mlūnẗ ili HSL.
-īḥūl arqām YIQ al-mlūnẗ ili HSL btnsīq KS.
-tḥwyl arqām YIQ al-mlūnẗ ili HSV.
-īḥūl arqām YIQ al-mlūnẗ ili HSV btnsīq KS.
-īḥūl arqām YIQ al-mlūnẗ ili RGB.
-īḥūl arqām YIQ al-mlūnẗ ili RGB btnsīq KS.
-tḥwyl arqām YIQ al-mlūnẗ ili RYB.
-tḥwyl arqām YIQ al-mlūnẗ ili RYB btnsīq KS.
-tḥwyl arqām YIQ al-mlūnẗ ili YUV.
-īḥūl arqām YIQ al-mlūnẗ ili YUV btnsīq KS.
-īḥūl arqām YUV al-mlūnẗ ili rqm sdāsī ʿšrī.
-īḥūl arqām YUV al-mlūnẗ ili CMYK.
-īḥūl arqām YUV al-mlūnẗ ili CMYK btnsīq KS.
-tḥwyl arqām YUV al-mlūnẗ ili CMY.
-īḥūl arqām YUV al-mlūnẗ ili CMY btnsīq KS.
-īḥūl arqām YUV al-mlūnẗ ili HSL.
-īḥūl arqām YUV al-mlūnẗ ili HSL btnsīq KS.
-tḥwyl arqām YUV al-mlūnẗ ili HSV.
-īḥūl arqām YUV al-mlūnẗ ili HSV btnsīq KS.
-īḥūl arqām YUV al-mlūnẗ ili RGB.
-īḥūl arqām YUV al-mlūnẗ ili RGB btnsīq KS.
-īḥūl arqām YUV al-mlūnẗ ili RYB.
-īḥūl arqām YUV al-mlūnẗ ili RYB btnsīq KS.
-tḥwyl arqām YUV al-mlūnẗ ili YUV.
-īḥūl arqām YUV al-mlūnẗ ili YIQ btnsīq KS.
 īdīr ǧhāt al-ātṣāl al-ẖāṣẗ bk
 īḥṣl ʿli aṯr ʿksī lǧmīʿ al-mwāḍīʿ
 īʿrḍ lk nẓrẗ ʿāmẗ bmlʾ al-šāšẗ ḥūl ʿrḍ al-irsāʾ al-mḥdd lttmkn mn astẖdāmh klūḥẗ mʿlūmāt
@@ -2635,7 +2454,6 @@ anh īmknk inšāʾ šāšāt al-tūqf al-ẖāṣẗ bk ʿn ṭrīq tsǧīlhā 
 an šāšẗ al-tūqf al-ʾaūli al-tī ġṭt al-šāšẗ bʿd ṯlāṯ dqāʾiq mn ʿdm al-nšāṭ ʿli aǧhzẗ kmbīūtr IBM al-ʾaṣlīẗ, scrnsave, tm inšāuʾhā fī ʿām 1983 bwāsṭẗ ǧūn sūšā?
 an bʿḍ šāšāt al-tūqf srīʿẗ al-ẖṭi qd tsbb nūbāt ḥsāsīẗ?
 an ītm astẖdām mǧlāt kernel ksǧlāt lltmhīd wīqāf al-tšġīl?
-anh īmknk mḥākāẗ tmhīd adāẗ tḥmīl al-tšġīl ili Nitrocid bāstẖdām GRILO?
 an al-tʿdīlāt al-ẖāṣẗ bk īmkn an tṣbḥ al-ʾān qāblẗ lltrǧmẗ?
 hl īmkn ltʿdīlātk al-twāṣl mʿ iḍāfāt kernel wāltʿdīlāt al-ʾaẖri, mmā īuʾdī ili inšāʾ nūʿ mn al-ātṣāl ūtḥqīq imkānīẗ al-tšġīl al-bīnī?
 anh īmknk al-ātṣāl bmṣḥḥ al-ʾaẖṭāʾ ʿn bʿd, wāẖtīārīًā, bẖādm al-drdšẗ?
@@ -2663,8 +2481,6 @@ an wāǧhāt brmǧẗ al-tṭbīqāt al-mtnūʿẗ tūfr ūẓāʾif mfīdẗ lt
 mdīr al-mhām al-wāǧbẗ
 īsrd ǧmīʿ al-ūḥdāt al-mtāḥẗ
 astẖdm iṣdār TUI lmḥūl al-ūḥdāt
-īsẖr hḏā "āltṭbīq al-ūhmī" mn "HDD Cleaner 2.1", al-ḏī tm iṣdārh fī 24 nūfmbr 2015. ūsnsmīh "HDD Uncleaner 2015". ln tfʿl šīʾiًā swi ʿrḍ al-rsāʾil ʿli ūḥdẗ al-tḥkm bāstẖdām Nitrocid KS API. sīḥāūl mḥākāẗ kīf ībdū hḏā al-brnāmǧ al-muʾršf. mn fḍlk lā tʾaẖḏ hḏā bškl ḥrfī lʾanh mǧrd brnāmǧ mzḥẗ īhdf ili trfīhk. kmā anh lā īḥākī mīzāt ġīr ḍrūrīẗ, mṯl rūtīn "ālāstrdād al-tlqāʾī". īrǧi mlāḥẓẗ annā lā nnwy tūṭīn hḏā. aḍġṭ ʿli aī mftāḥ llbdʾ.
-ībdʾa tšġīl brnāmǧ al-mzḥẗ HDD Uncleaner 2015.
 iḥīāʾ al-ḏkri al-ẖāmsẗ llnwāẗ
 al-iṣdār al-ʾaūl ʿli al-iṭlāq
 tm iṣdār hḏh al-nwāẗ lʾaūl mrẗ fī 22 fbrāīr 2018 linšāʾ ǧhāz mḥākāẗ bsīṭ īḥākī fī al-wāqʿ kīfīẗ ʿml ǧūhr al-nwāẗ.
@@ -2680,7 +2496,6 @@ nẓrrā liṣdār al-mīzāt al-ǧdīdẗ al-rāʾidẗ, qrrnā tsmīẗ hḏh 
 lā īmkn astẖrāǧ aī šīʾ.
 al-ʾaršīf ġīr qābl llktābẗ lʾan al-nūʿ kḏlk
 tʾakd mn tḥdīd al-msār ili mlf LRC.
-mlf al-mūsīqi ġīr mḥdd.
 mlf al-mūsīqi '{0}' ġīr mūǧūd.
 ẖṭʾa fādḥ fī al-mlḥq BassBoom CLI.
 lā īmkn tšġīl al-ṣūt lʾanh lm ītm al-ʿṯūr ʿli al-mlf.
@@ -2705,7 +2520,6 @@ adẖl al-msār ili mlf al-mūsīqi
 al-mlf "{0}" ġīr mūǧūd.
 adẖl msārrā ili dlīl mktbẗ al-mūsīqi
 lm ītm al-ʿṯūr ʿli dlīl mktbẗ al-mūsīqi.
-lā īmkn ftḥ {0}: {1}
 ǧārٍ tḥmīl BassBoom lftḥ {0}...
 al-ān al-ʿb
 mḥāūlẗ ftḥ mlf klmāt al-ʾaġānī
@@ -2719,13 +2533,10 @@ abḥṯ ʿn al-sīṭrẗ
 abḥṯ ʿn al-tḥkm fī al-mdẗ
 mʿlūmāt al-ʾaġnīẗ
 aḍf mlf mūsīqi
-aḍf dlīl al-mūsīqi ili qāʾimẗ al-tšġīl
 al-ʾaġnīẗ al-sābqẗ
 al-ʾaġnīẗ al-tālīẗ
 izālẗ al-ʾaġnīẗ al-ḥālīẗ
 izālẗ kāfẗ al-ʾaġānī
-tsʿi bškl antqāʾī
-ftḥ al-tʿādl
 mǧhūl
 ʿnwān
 al-ʾalbūm
@@ -2780,39 +2591,18 @@ al-ʾaḥdāṯ wāltḏkīrāt l
 nūʿ al-tqwym
 lm ītm al-ʿṯūr ʿli tḏkīrāt llšhr al-mḥdd
 lm ītm al-ʿṯūr ʿli aḥdāṯ llšhr al-mḥdd
-īǧb an īkūn mstwi al-lūn al-smāwy rqmīًā.
-īǧb an īkūn mstwi al-lūn al-ʾarǧwānī rqmīًā.
-īǧb an īkūn mstwi al-lūn al-ʾaṣfr rqmīًā.
-īǧb an īkūn mstwi al-mftāḥ al-ʾasūd rqmīًā.
 mstwi smāwy:
 mstwi arǧwānī:
 al-mstwi al-ʾaṣfr:
-tslsl al-ʾalwān CMY:
 msḥẗ:
 al-tšbʿ:
-tslsl al-ʾalwān HSL:
 qīmẗ:
-tslsl al-ʾalwān HSV:
 mstwi al-lūn al-ʾaṣfr:
-tslsl al-ʾalwān RYB:
 lūmā:
 fī mrḥlẗ:
 al-trbīʿ:
-tslsl al-ʾalwān YIQ:
 īū krūmā:
 krūmā al-ẖāms:
-tslsl al-ʾalwān YUV:
-al-mftāḥ al-ʾasūd:
-tslsl al-ʾalwān CMYK:
-īǧb an īkūn mstwi al-ṣbġẗ rqmīًā.
-īǧb an īkūn mstwi al-tšbʿ rqmīًā.
-īǧb an īkūn al-nṣūʿ aū mstwi al-iḍāʾẗ rqmīًā.
-īǧb an īkūn mstwi al-qīmẗ rqmīًā.
-īǧb an īkūn mstwi al-mkūn Y rqmīًā.
-īǧb an īkūn mstwi al-mkūn I rqmīًā.
-īǧb an īkūn mstwi mkūn Q rqmīًā.
-īǧb an īkūn mstwi mkūn U rqmīًā.
-īǧb an īkūn mstwi al-mkūn V rqmīًā.
 lā īmkn ftḥ al-mlf '{0}' lʾanh lm ītm al-ʿṯūr ʿlīh.
 tm astīrād ǧhāt al-ātṣāl bnǧāḥ.
 lā īmkn ftḥ al-mlf '{0}' lʾan mlf al-bṭāqẗ ġīr ṣālḥ.
@@ -2820,7 +2610,6 @@ mlf al-ātṣāl ġīr mūǧūd.
 tm al-ʿṯūr ʿli ǧhāt al-ātṣāl
 mlf al-ātṣāl ġīr ṣālḥ.
 lā īmkn an īkūn bnāʾ ǧmlẗ MeCard fārġًā.
-lā īmkn iḍāfẗ bʿḍ ǧhāt al-ātṣāl. tmt iḍāfẗ {0} fqṭ mn aṣl {1} ǧhẗ atṣāl.
 imā an mlf ǧhāt al-ātṣāl al-mqdm lā īḥtwy ʿli mʿlūmāt ḥūl aī ǧhẗ atṣāl aū anh ġīr ṣālḥ.
 fšl fī tḥlīl ǧhāt al-ātṣāl. rāǧʿ tfāṣīl al-ẖṭʾa lmzīd mn al-mʿlūmāt.
 fhrs ǧhẗ al-ātṣāl ẖārǧ al-nṭāq. al-ḥd al-ʾaqṣi llfhrs hū {0} bīnmā al-fhrs al-mqdm hū {1}.
@@ -2885,8 +2674,6 @@ rqm al-mnfḏ al-ẖāṣ bālrādīū ʿbr al-intrnt ġīr ṣālḥ.
 ʿnwān URL al-kāml
 al-mstmʿīn al-ḥālyin
 ḏrūẗ al-mstmʿīn
-māks al-mstmʿīn
-mstmʿūn frīdūn
 tīārāt
 tīārāt nšṭẗ
 dfq al-mʿlūmāt llmʿrf
@@ -2989,8 +2776,6 @@ fšlt iḍāfẗ tḏkīr.
 lm ītm tūfīr ūsāʾiṭ kāfīẗ liḍāfẗ tḏkīr.
 fšlt izālẗ al-tḏkīr.
 lm ītm tūfīr ūsāʾiṭ kāfīẗ lizālẗ al-tḏkīr.
-al-ḏkri al-snwyẗ liṣdār Nitrocid KS\", ṣḥīḥ, 2, 22, 2, 22, \"mīlādī
-rmḍān\", ṣḥīḥ 9, 1, 10, 1, \"hǧrī
 lā īūǧd ḥdṯ.
 lā īūǧd tḏkīr.
 lā īūǧd atṣāl. iḏā knt trġb fī astīrād ǧhāt al-ātṣāl, fīrǧi astẖdām ẖīārāt al-āstīrād bāstẖdām ḍġṭāt al-mfātīḥ al-mḥddẗ fī al-ǧzʾ al-sflī mn al-šāšẗ.
@@ -3025,8 +2810,6 @@ lā īūǧd dūr al-ātṣāl
 lā īūǧd ʿnwān ǧhẗ al-ātṣāl
 mlāḥẓāt al-ātṣāl
 lā tūǧd mlāḥẓāt al-ātṣāl
-sāʿẗ rqmīẗ
-aḍġṭ ʿli aī mftāḥ llʿūdẗ ili al-nwāẗ...
 adẖl mftāḥ API al-ẖāṣ bk:
 īmknk imā al-rǧūʿ ili al-rābṭ adnāh llḥṣūl ʿli qāʾimẗ al-mdn bmʿrfāthā, aū tmrīr "-list" ili hḏā al-ʾamr.
 hl ant mtʾakd ank trīd ḥḏf {0}?
@@ -3177,8 +2960,6 @@ mā mdi ẖṭūrẗ ʿmi al-ʾalwān?
 tmkīn al-ṣāfrẗ ʿnd aġlāq al-nwāẗ.
 tʾaẖīr ʿnd īqāf al-tšġīl aū iʿādẗ al-tšġīl
 tmkn mn tʾaẖīr aġlāq al-nwāẗ.
-tmkīn ʿmi al-ʾalwān al-bsīṭ
-iḏā knt trīd an tkūn mḥākāẗ ʿmi al-ʾalwān bsīṭẗ, fqm btmkīn ḏlk. īrǧi mlāḥẓẗ an al-ṣīġẗ al-mstẖdmẗ fī ṭrīqẗ al-mḥākāẗ hḏh qd lā tkūn dqīqẗ.
 tdʿm ūḥdẗ al-tḥkm al-lūn al-ḥqīqī
 iḏā knt mtʾakddā mn an ūḥdẗ al-tḥkm tdʿm al-lūn al-ḥqīqī, aū iḏā knt trīd tġyir al-ūḥdẗ al-ṭrfīẗ al-ẖāṣẗ bk ili ūḥdẗ ṭrfīẗ tdʿm al-lūn al-ḥqīqī, fqm btġyir hḏh al-qīmẗ.
 tʿyin ṣfḥẗ al-rmūz
@@ -3209,8 +2990,6 @@ lūn lhǧẗ al-ẖlfīẗ
 bālnsbẗ llmūḍūʿāt al-tī tdʿm al-ʿlāmāt, hḏā hū lūn al-ẖlfīẗ al-mmīz.
 astẖdm lūḥẗ al-wān ūḥdẗ al-tḥkm
 ʿnd ḍbṭ hḏā ʿli al-qīmẗ true, ītm astẖdām lūḥẗ al-ʾalwān al-mḥddẗ bwāsṭẗ al-ǧhāz.
-al-smāḥ bāllūn al-ʾamāmī
-ʿnd ḍbṭ hḏā ʿli al-qīmẗ true, ītm aḥtrām al-lūn al-ʾamāmī al-ḥālī. bẖlāf ḏlk, finh īstẖdm al-ʾalwān al-āftrāḍīẗ lǧhāzk.
 al-smāḥ blūn al-ẖlfīẗ
 ʿndmā ītm tʿyin hḏā ili ṣḥīḥ, ītm aḥtrām lūn al-ẖlfīẗ al-ḥālī. bẖlāf ḏlk, finh īstẖdm al-ʾalwān al-āftrāḍīẗ lǧhāzk.
 asm al-mstẖdm lūn al-ġlāf
@@ -3324,14 +3103,6 @@ iẓhār ʿdd al-ʾawāmr al-mūḥdẗ ʿli al-msāʿdẗ
 iẓhār ʿdd awāmr Shell al-mūḥdẗ ʿnd idrāǧhā fī amr al-msāʿdẗ
 iẓhār ʿdd al-ʾawāmr al-iḍāfīẗ ʿnd al-msāʿdẗ
 iẓhār ʿdd awāmr kernel al-iḍāfīẗ ʿnd idrāǧhā fī amr al-msāʿdẗ
-ḥrf al-zāwyẗ al-īsri al-ʿlīā lʾašrṭẗ al-tqdm
-ḥrf al-zāwyẗ al-īmni al-ʿlīā lʾašrṭẗ al-tqdm
-ḥrf al-zāwyẗ al-īsri al-sflīẗ lʾašrṭẗ al-tqdm
-ḥrf al-zāwyẗ al-īmni al-sflīẗ lʾašrṭẗ al-tqdm
-ḥrf al-iṭār al-ʿlwy lʾašrṭẗ al-tqdm
-ḥrf al-iṭār al-sflī lʾašrṭẗ al-tqdm
-ḥrf al-iṭār al-ʾaīsr lʾašrṭẗ al-tqdm
-ḥrf al-iṭār al-ṣḥīḥ lʾašrṭẗ al-tqdm
 tmkīn šrīṭ al-tmrīr fī al-tḥdīd
 tmkīn šrīṭ al-tmrīr fī šāšāt al-tḥdīd
 lā tẖl

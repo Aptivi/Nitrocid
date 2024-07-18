@@ -51,8 +51,10 @@ namespace Nitrocid.Extras.Calendar.Calendar.Events
         internal static List<EventInfo> CalendarEvents = [];
         internal static readonly EventInfo[] baseEvents =
         [
-            new(new(2018, 2, 22), /* Localizable */ "Nitrocid KS Release Anniversary", true, 2, 22, 2, 22, "Gregorian"),
-            new(new(2018, 2, 22), /* Localizable */ "Ramadan", true, 9, 1, 10, 1, "Hijri"),
+            new(new(2018, 2, 22), /* Localizable */ "Nitrocid KS Release Anniversary"
+                , true, 2, 22, 2, 22, "Gregorian"),
+            new(new(2018, 2, 22), /* Localizable */ "Ramadan"
+                , true, 9, 1, 10, 1, "Hijri"),
         ];
 
         /// <summary>

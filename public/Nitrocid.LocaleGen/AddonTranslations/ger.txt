@@ -234,7 +234,6 @@ Wiederholungszeiten herunterladen
 Protokollieren Sie den FTP-Benutzernamen
 Protokollieren Sie die FTP-IP-Adresse
 Gibt nur das erste FTP-Profil zurück
-Zeit / Datum in der oberen rechten Ecke anzeigen
 Größenanalyse-Modus
 Festzelt beim Start
 Lange Zeit und Datum
@@ -303,7 +302,6 @@ Vereinfachter Hilfebefehl für alle Shells
 Gibt an, ob der FTP-Benutzername protokolliert werden soll.
 Gibt an, ob die FTP-IP-Adresse protokolliert werden soll.
 Wählen Sie das erste Profil nur beim Verbinden.
-Uhrzeit und Datum werden in der oberen rechten Ecke des Bildschirms angezeigt
 Wenn aktiviert, analysiert der Kernel den gesamten Ordner auf seine Gesamtgröße. Andernfalls wird nur die Oberfläche analysiert.
 Aktiviert Eyecandy beim Start
 Die Uhrzeit und das Datum sind länger und zeigen die vollständigen Monatsnamen usw. an.
@@ -531,7 +529,6 @@ Wie viele Fade-Schritte sind zu tun?
 Öffnet eine RSS-Shell zum Lesen der Feeds
 Listet alle Feeds auf
 Liest einen Feed in einem Webbrowser
-Ungültiger RSS-Feed-Typ.
 Ruft die Artikelinfo ab
 Artikelnummer könnte nicht größer sein als die verfügbaren Artikel.
 Titel:
@@ -1114,11 +1111,6 @@ Aktivieren Sie den Schwarz-Weiß-Modus
 Macht die Disco schwarz auf weiß. Wird Ihre Augen wirklich verletzen, wenn es zu schnell war, also nicht empfohlen, wenn Sie einen Anfall von schnellen Bildern erleben.
 Aktuelle Farben laden
 Aktueller Wert:
-Ungültiger Hex-Farbbezeichner.
-Ungültiger RGB-Farbbezeichner.
-Ungültiger roter Farbbezeichner.
-Ungültiger grüner Farbbezeichner.
-Ungültiger blauer Farbbezeichner.
 Fügt am Ende der Datei ein neues Byte hinzu
 Fügt die neuen Bytes am Ende der Datei hinzu
 Löscht die Binärdatei
@@ -1172,17 +1164,9 @@ Maximal zu generierende Altersjahre
 Unbenannte Handbuchseite
 Eingabeverlauf aktiviert
 Ob der Eingabeverlauf aktiviert ist oder nicht. Wenn diese Option aktiviert ist, können Sie mit den Aufwärts- oder Abwärtspfeiltasten auf kürzlich eingegebene Befehle zugreifen.
-Konvertiert die Farb-RGB-Zahlen in Hex.
-Konvertiert die hexadezimale Darstellung der Farbe in RGB-Zahlen.
-Konvertiert die hexadezimale Darstellung der Farbe in RGB-Zahlen im KS-Format.
 Rote Farbstufe:
 Grüne Farbstufe:
 Blaue Farbstufe:
-RGB-Farbfolge:
-Die rote Farbstufe muss numerisch sein.
-Die grüne Farbstufe muss numerisch sein.
-Die blaue Farbstufe muss numerisch sein.
-Hexadezimale Farbdarstellung:
 Sie können Ihren Computer jetzt sicher ausschalten.
 Simulieren Sie keinen APM-Modus
 Ob eine Situation simuliert werden soll, in der kein APM verfügbar ist. Wenn aktiviert, informiert es den Benutzer, dass es jetzt sicher ist, den Computer beim Herunterfahren auszuschalten.
@@ -1236,11 +1220,8 @@ Führen Sie „Lizenz“ aus, um die Lizenzinformationen anzuzeigen.
 Kernel wird zum ersten Mal ausgeführt
 Willkommen bei Nitrocid Kernel! Vielen Dank, dass Sie es ausprobiert haben!
 Um zu beginnen, drücken Sie die EINGABETASTE.
-Wähle deine Sprache
 Wähle deine Sprache. Standardmäßig verwendet der Kernel die englische Sprache, Sie können hier jedoch jede andere Sprache auswählen.
 Basierend auf Ihren Spracheinstellungen auf Ihrem System ist die entsprechende Sprache
-Schreiben Sie den unten aufgeführten Sprachcode:
-Drücken Sie die ENTER-Taste, um fortzufahren.
 Erstellen Sie Ihren ersten Benutzer
 Wir helfen Ihnen bei der Erstellung Ihres eigenen Benutzernamens. Wählen Sie einen beliebigen Namen aus. Dies kann Ihr Spitzname oder Ihr Kurzname sein, sofern Ihr Benutzername keine Leer- und Sonderzeichen enthält und dieser nicht bereits existiert. Folgende Benutzernamen sind registriert:
 Geben Sie den Benutzernamen ein
@@ -1262,9 +1243,7 @@ Nitrocid KS hat ein Problem festgestellt und wurde abgeschaltet.
 Die für die Installation der benutzerdefinierten Sprache erforderlichen Metadateninformationen sind nicht vorhanden.
 Die zum Deinstallieren der benutzerdefinierten Sprache erforderlichen Metadateninformationen sind nicht vorhanden.
 Das Mod-Skript darf nicht null sein.
-Mods werden geladen...
 Keine Mods erkannt.
-Mods stoppen...
 Mod {0} wird gestoppt...
 Der Mod ist nicht stark signiert. Es kann nicht vertrauenswürdigen Code enthalten.
 Mod kann nicht geladen werden, da eine Inkompatibilität zwischen dieser Version des Kernels und diesem Mod besteht:
@@ -1287,13 +1266,6 @@ Die folgenden Dateien werden nicht gelöscht:
 Möchten Sie diese Dateien wirklich löschen?
 Verschiedene Dateien können nicht gelöscht werden
 Keine Argumenthilfebeschreibung
-Ungültiger RYB-Farbspezifizierer.
-Ungültiger CMY-Farbspezifizierer.
-Ungültiger CMYK-Farbspezifizierer.
-Ungültiger HSL-Farbspezifizierer.
-Ungültiger HSV-Farbspezifizierer.
-Ungültiger YIQ-Farbspezifizierer.
-Ungültiger YUV-Farbspezifizierer.
 Um dieses Design verwenden zu können, muss Ihre Konsole True Color unterstützen.
 Verlassen Sie die Vorschau
 Erledigt
@@ -1382,7 +1354,6 @@ Behauptungsfehler.
 Ereignis {0} nicht gefunden.
 Kernel-Ereignis ausgelöst:
 Geben Sie eine gültige Ereignisaktion an
-Unbekannter Kernelfehler.
 Der angegebene Alias existiert bereits. Stellen Sie sicher, dass Sie einen anderen Alias auswählen.
 Das Aliassystem hat beim Versuch, Ihre Anfrage zu verarbeiten, einen ungültigen Vorgang festgestellt.
 Der angegebene Alias wurde nicht gefunden.
@@ -1395,11 +1366,8 @@ Es ist ein allgemeiner FTP-Dateisystemfehler aufgetreten. Stellen Sie sicher, da
 Es ist ein allgemeiner FTP-Netzwerkfehler aufgetreten. Stellen Sie sicher, dass Ihre Internetverbindung funktioniert.
 Es ist ein allgemeiner FTP-Shell-Fehler aufgetreten.
 Es ist ein Gruppenverwaltungsfehler aufgetreten.
-Fehler beim Hostnamen.
 Es ist ein allgemeiner HTTP-Shell-Fehler aufgetreten.
 Es wurde eine verrückte Konsole entdeckt. Nitrocid KS kann nicht weiter ausgeführt werden, da Ihre Konsole nicht mit unseren Anforderungen kompatibel ist.
-Ungültiger RSS-Feed.
-Ungültiger RSS-Feed-Link.
 Ungültiger Hash-Algorithmus. Wenn Sie einen benutzerdefinierten Hashsummentreiber verwenden, stellen Sie sicher, dass der Treiber geladen ist.
 Ungültige Hash-Summe. Stellen Sie sicher, dass Sie die Hash-Summe korrekt kopiert und eingefügt haben. Wenn Sie einen benutzerdefinierten Hashsummentreiber verwenden, stellen Sie sicher, dass der Treiber geladen ist und wie erwartet funktioniert.
 Ungültiger Kernelpfad.
@@ -1443,7 +1411,6 @@ Es ist ein allgemeiner Netzwerkfehler aufgetreten. Wenn Sie versuchen, eine Verb
 Es wurde eine nicht unterstützte Konsole erkannt.
 Im Kernel wurde ein Assertionsfehler festgestellt! Dies ist höchstwahrscheinlich ein Fehler im Kernelmodul, der von unserer Seite behoben werden sollte.
 Ihr Netzwerk muss online sein, bevor Sie netzwerkbezogene Vorgänge ausführen können. Schließen Sie Ihren Netzwerkadapter an und versuchen Sie es erneut.
-Beim Versuch, einen Vorgang auszuführen, wurde die Berechtigung verweigert.
 Benutzer existiert nicht. Stellen Sie sicher, dass Sie den Benutzer richtig geschrieben haben.
 Treiber existiert nicht. Stellen Sie sicher, dass Sie den Treibernamen richtig geschrieben haben und dass der Treiber ordnungsgemäß registriert ist.
 Der Thread ist noch nicht fertig. Möglicherweise hat der Benutzercode vergessen, den Kernel-Thread neu zu generieren, nachdem er manuell gestoppt wurde.
@@ -1542,11 +1509,9 @@ Thread-Backtraces sind leer. Entweder sind diese Informationen nicht verfügbar,
 Stacktrace für Thread
 Die Thread-Backtrace-Analyse ist fehlgeschlagen. Einige Informationen sind möglicherweise nicht vollständig.
 Versionsinformation
-Auf der Flucht vor GRILO?
 Der Dump-Generator konnte einen Kernel-Fehler nicht ausgeben, der durch verursacht wurde
 Wir entschuldigen uns für Ihre Unannehmlichkeiten, aber es sieht so aus, als ob der Kernel Probleme beim Booten hatte. Die folgende Fehlermeldung könnte helfen:
 Aktivieren Sie für weitere Untersuchungen den Debugging-Modus im Kernel und versuchen Sie, das Problem zu reproduzieren. Versuchen Sie außerdem, die zuletzt erstellte Dump-Datei zu untersuchen.
-Kernel-Addon wird initialisiert
 Dieses Add-on ist kein gültiges Add-on.
 Kernel-Addon starten
 Kernel-Addon gestartet
@@ -1581,12 +1546,10 @@ Extras - Prognose
 Extras - FTP-Shell
 Extras – Git-Shell
 Extras – HTTP-Shell
-Extras - Informationen zum Internetradio
 Extras – JSON-Shell
 Extras - Sprachstudio
 Extras – Mail-Shell
 Extras - MD5
-Extras - NameGen
 Extras – Notizen
 Extras - RSS-Shell
 Extras – SFTP-Shell
@@ -1599,7 +1562,6 @@ Extras – Timer
 Extras – Kernel-Tipps
 Extras – To-do-Liste
 Extras – Einheitenumrechner
-Legacy – HDD Uncleaner 2015
 Kein solcher Add-on-Typ „{0}“
 Einer oder mehrere der CPU-Kerne konnten nicht überprüft werden. Informationen werden trotzdem angezeigt...
 Einer oder mehrere der RAM-Chips konnten nicht geprüft werden. Informationen werden trotzdem angezeigt...
@@ -1799,15 +1761,10 @@ Um den Vorgang endgültig zu schließen, drücken Sie entweder die EINGABETASTE 
 OK
 Anerkannt
 Entwicklungshinweis
-Sie führen Nitrocid KS in einer ungewöhnlichen Umgebung aus. Bitte stellen Sie sicher, dass Sie den Kernel entweder direkt oder über GRILO gestartet haben. Wenn Sie sicher sind, dass Sie den Kernel auf die übliche Weise gestartet haben, liegt das möglicherweise daran, dass Sie eine nicht unterstützte Version von Nitrocid KS ausführen.
 Bitte beachten Sie, dass die Ausführung von Nitrocid KS in einer ungewöhnlichen Umgebung dazu führt, dass einige Funktionen eingeschränkt sind. Sie können keine Mods und Konfigurationen laden.
 Ungewöhnlicher Umgebungshinweis
 dass Sie zusätzliche Tipps vom Kernel-Add-on erhalten können, das mit der Vollversion von Nitrocid geliefert wird?
 Profi-Tipp: Wussten Sie schon?
-BASE64 unterstützt keine Schlüssel
-BASE64 unterstützt keine Initialisierungsvektoren
-RSA unterstützt keine Schlüssel
-RSA unterstützt keine Initialisierungsvektoren
 Tastenbelegungen
 Einfügen
 Entfernen
@@ -1943,7 +1900,6 @@ Die folgenden Schalter akzeptieren keine Werte.
 Mindestens eines der Argumente erwartet einen numerischen Wert, aber Sie haben eine ungültige Zahl angegeben.
 Eines oder mehrere der Argumente erfordern einen genauen Wortlaut, aber Sie haben ein ungültiges Wort angegeben.
 Einer oder mehrere Schalter erwarten einen numerischen Wert, aber Sie haben eine ungültige Zahl angegeben.
-Weitere Informationen finden Sie in diesem Befehl
 Der Befehl wurde abgebrochen.
 Sie dürfen diesen Befehl nicht direkt im umschlossenen Modus ausführen.
 Beim Versuch, eine Befehlsausgabe zu umbrechen, ist ein Fehler aufgetreten
@@ -2234,7 +2190,6 @@ Testet den Eingabeauswahlstil
 Testet den Listeneintragsschreiber
 Gedankenstrich 1:
 Gedankenstrich 2:
-Testet das Präsentationssystem
 Testet den Fortschrittshandler
 Initialisierung...
 Schreiben Sie eine Zeichenfolge zur Überprüfung:
@@ -2251,7 +2206,6 @@ Die Bedingung muss am Ende platziert werden.
 Eine bereits vorhandene Bedingung kann nicht registriert werden.
 Es kann keine leere Bedingung registriert werden.
 Die Registrierung einer nicht vorhandenen Bedingung kann nicht aufgehoben werden.
-Sie können die Mutterschale nicht verlassen. Wollten Sie sich von Ihrem Konto abmelden, den Kernel herunterfahren oder neu starten?
 Keine Befehle gefunden.
 Ungültige Häufigkeit.
 Ich kann mich nicht wiederholen.
@@ -2376,7 +2330,6 @@ Es kann kein symbolischer Link erstellt werden.
 Kernel-Einstellungen
 Kernelversion:
 Debug-Modus:
-Laufen von GRILO:
 Läuft in der üblichen Umgebung:
 Sicherheitsmodus:
 Hardwareeinstellungen
@@ -2402,7 +2355,6 @@ Ungültige Spaltenanzahl.
 Abschalten
 Neu starten
 Anmeldung
-Was möchten Sie tun?
 Wählen Sie ein Benutzerkonto aus, mit dem Sie sich anmelden möchten.
 Geben Sie das Passwort für den Benutzer ein
 Falsches Passwort für Benutzer.
@@ -2432,139 +2384,6 @@ Zeigt Informationen über die imaginäre Zahlenformel an, die durch eine bestimm
 Kalender-, Ereignis- und Erinnerungsmanager
 Kalendertyp, an dem gearbeitet werden soll
 Nutzen Sie den tabellenbasierten Kalender-Viewer
-Konvertiert die hexadezimale Darstellung der Farbe in RYB-Zahlen.
-Konvertiert die hexadezimale Darstellung der Farbe in RYB-Zahlen im KS-Format.
-Konvertiert die hexadezimale Darstellung der Farbe in CMYK-Zahlen.
-Konvertiert die hexadezimale Darstellung der Farbe in CMYK-Zahlen im KS-Format.
-Konvertiert die hexadezimale Darstellung der Farbe in CMY-Zahlen.
-Konvertiert die hexadezimale Darstellung der Farbe in CMY-Zahlen im KS-Format.
-Konvertiert die hexadezimale Darstellung der Farbe in HSL-Zahlen.
-Konvertiert die hexadezimale Darstellung der Farbe in HSL-Zahlen im KS-Format.
-Konvertiert die hexadezimale Darstellung der Farbe in HSV-Zahlen.
-Konvertiert die hexadezimale Darstellung der Farbe in HSV-Zahlen im KS-Format.
-Konvertiert die hexadezimale Darstellung der Farbe in YIQ-Zahlen.
-Konvertiert die hexadezimale Darstellung der Farbe in YIQ-Zahlen im KS-Format.
-Konvertiert die hexadezimale Darstellung der Farbe in YUV-Zahlen.
-Konvertiert die hexadezimale Darstellung der Farbe in YUV-Zahlen im KS-Format.
-Konvertiert die Farb-RGB-Zahlen in CMYK.
-Konvertiert die Farb-RGB-Zahlen in CMYK im KS-Format.
-Konvertiert die Farb-RGB-Zahlen in CMY.
-Konvertiert die Farb-RGB-Zahlen in CMY im KS-Format.
-Konvertiert die Farb-RGB-Zahlen in HSL.
-Konvertiert die Farb-RGB-Zahlen in HSL im KS-Format.
-Konvertiert die Farb-RGB-Zahlen in HSV.
-Konvertiert die Farb-RGB-Zahlen in HSV im KS-Format.
-Konvertiert die Farb-RGB-Zahlen in RYB.
-Konvertiert die Farb-RGB-Zahlen in RYB im KS-Format.
-Konvertiert die Farb-RGB-Zahlen in YIQ.
-Konvertiert die Farb-RGB-Zahlen in YIQ im KS-Format.
-Konvertiert die Farb-RGB-Zahlen in YUV.
-Konvertiert die Farb-RGB-Zahlen in YUV im KS-Format.
-Konvertiert die Farb-RYB-Zahlen in Hex.
-Konvertiert die Farb-RYB-Zahlen in CMYK.
-Konvertiert die Farb-RYB-Zahlen in CMYK im KS-Format.
-Konvertiert die Farb-RYB-Zahlen in CMY.
-Konvertiert die Farb-RYB-Zahlen in CMY im KS-Format.
-Konvertiert die Farb-RYB-Zahlen in HSL.
-Konvertiert die Farb-RYB-Zahlen in HSL im KS-Format.
-Konvertiert die Farb-RYB-Zahlen in HSV.
-Konvertiert die Farb-RYB-Zahlen in HSV im KS-Format.
-Konvertiert die Farb-RYB-Zahlen in RGB.
-Konvertiert die Farb-RYB-Zahlen in RGB im KS-Format.
-Konvertiert die Farb-RYB-Zahlen in YIQ.
-Konvertiert die Farb-RYB-Zahlen in YIQ im KS-Format.
-Konvertiert die Farb-RYB-Zahlen in YUV.
-Konvertiert die Farb-RYB-Zahlen in YUV im KS-Format.
-Konvertiert die farbigen HSL-Zahlen in Hexadezimalwerte.
-Konvertiert die Farb-HSL-Zahlen in CMYK.
-Konvertiert die Farb-HSL-Zahlen in CMYK im KS-Format.
-Konvertiert die Farb-HSL-Zahlen in CMY.
-Konvertiert die Farb-HSL-Zahlen in CMY im KS-Format.
-Konvertiert die Farb-HSL-Zahlen in HSV.
-Konvertiert die farbigen HSL-Zahlen in HSV im KS-Format.
-Konvertiert die Farb-HSL-Zahlen in RGB.
-Konvertiert die Farb-HSL-Zahlen in RGB im KS-Format.
-Konvertiert die Farb-HSL-Zahlen in RYB.
-Konvertiert die farbigen HSL-Zahlen in RYB im KS-Format.
-Konvertiert die Farb-HSL-Zahlen in YIQ.
-Konvertiert die farbigen HSL-Zahlen in YIQ im KS-Format.
-Konvertiert die Farb-HSL-Zahlen in YUV.
-Konvertiert die farbigen HSL-Zahlen in YUV im KS-Format.
-Konvertiert die Farb-HSV-Zahlen in Hex.
-Konvertiert die Farb-HSV-Zahlen in CMYK.
-Konvertiert die Farb-HSV-Zahlen in CMYK im KS-Format.
-Konvertiert die Farb-HSV-Zahlen in CMY.
-Konvertiert die Farb-HSV-Zahlen in CMY im KS-Format.
-Konvertiert die Farb-HSV-Zahlen in HSL.
-Konvertiert die farbigen HSV-Zahlen in HSL im KS-Format.
-Konvertiert die Farb-HSV-Zahlen in RGB.
-Konvertiert die Farb-HSV-Zahlen in RGB im KS-Format.
-Konvertiert die Farb-HSV-Zahlen in RYB.
-Konvertiert die farbigen HSV-Zahlen in RYB im KS-Format.
-Konvertiert die Farb-HSV-Zahlen in YIQ.
-Konvertiert die farbigen HSV-Zahlen in YIQ im KS-Format.
-Konvertiert die Farb-HSV-Zahlen in YUV.
-Konvertiert die Farb-HSV-Zahlen in YUV im KS-Format.
-Konvertiert die Farb-CMYK-Zahlen in Hexadezimalwerte.
-Konvertiert die Farb-CMYK-Zahlen in RGB.
-Konvertiert die Farb-CMYK-Zahlen in RGB im KS-Format.
-Konvertiert die Farb-CMYK-Zahlen in RYB.
-Konvertiert die Farb-CMYK-Zahlen in RYB im KS-Format.
-Konvertiert die Farb-CMYK-Zahlen in HSL.
-Konvertiert die Farb-CMYK-Zahlen in HSL im KS-Format.
-Konvertiert die Farb-CMYK-Zahlen in HSV.
-Konvertiert die Farb-CMYK-Zahlen in HSV im KS-Format.
-Konvertiert die Farb-CMYK-Zahlen in CMY.
-Konvertiert die Farb-CMYK-Zahlen in CMY im KS-Format.
-Konvertiert die Farb-CMYK-Zahlen in YIQ.
-Konvertiert die Farb-CMYK-Zahlen in YIQ im KS-Format.
-Konvertiert die Farb-CMYK-Zahlen in YUV.
-Konvertiert die Farb-CMYK-Zahlen in YUV im KS-Format.
-Konvertiert die Farb-CMY-Zahlen in Hexadezimalwerte.
-Konvertiert die Farb-CMY-Zahlen in CMYK.
-Konvertiert die Farb-CMY-Zahlen in CMYK im KS-Format.
-Konvertiert die Farb-CMY-Zahlen in HSL.
-Konvertiert die Farb-CMY-Zahlen in HSL im KS-Format.
-Konvertiert die Farb-CMY-Zahlen in HSV.
-Konvertiert die Farb-CMY-Zahlen in HSV im KS-Format.
-Konvertiert die Farb-CMY-Zahlen in RGB.
-Konvertiert die Farb-CMY-Zahlen in RGB im KS-Format.
-Konvertiert die Farb-CMY-Zahlen in RYB.
-Konvertiert die Farb-CMY-Zahlen in RYB im KS-Format.
-Konvertiert die Farb-CMY-Zahlen in YIQ.
-Konvertiert die Farb-CMY-Zahlen in YIQ im KS-Format.
-Konvertiert die Farb-CMY-Zahlen in YUV.
-Konvertiert die Farb-CMY-Zahlen in YUV im KS-Format.
-Wandelt die Farb-YIQ-Zahlen in Hex um.
-Konvertiert die Farb-YIQ-Zahlen in CMYK.
-Konvertiert die Farb-YIQ-Zahlen in CMYK im KS-Format.
-Konvertiert die Farb-YIQ-Zahlen in CMY.
-Konvertiert die Farb-YIQ-Zahlen in CMY im KS-Format.
-Konvertiert die Farb-YIQ-Zahlen in HSL.
-Konvertiert die Farb-YIQ-Zahlen in HSL im KS-Format.
-Konvertiert die Farb-YIQ-Zahlen in HSV.
-Konvertiert die Farb-YIQ-Zahlen in HSV im KS-Format.
-Konvertiert die Farb-YIQ-Zahlen in RGB.
-Konvertiert die Farb-YIQ-Zahlen in RGB im KS-Format.
-Konvertiert die Farb-YIQ-Zahlen in RYB.
-Konvertiert die Farb-YIQ-Zahlen in RYB im KS-Format.
-Konvertiert die Farb-YIQ-Zahlen in YUV.
-Konvertiert die Farb-YIQ-Zahlen in YUV im KS-Format.
-Konvertiert die Farb-YUV-Zahlen in Hex.
-Konvertiert die YUV-Farbzahlen in CMYK.
-Konvertiert die YUV-Farbzahlen in CMYK im KS-Format.
-Konvertiert die Farb-YUV-Zahlen in CMY.
-Konvertiert die YUV-Farbzahlen in CMY im KS-Format.
-Konvertiert die Farb-YUV-Zahlen in HSL.
-Konvertiert die Farb-YUV-Zahlen in HSL im KS-Format.
-Konvertiert die Farb-YUV-Zahlen in HSV.
-Konvertiert die Farb-YUV-Zahlen in HSV im KS-Format.
-Konvertiert die Farb-YUV-Zahlen in RGB.
-Konvertiert die Farb-YUV-Zahlen in RGB im KS-Format.
-Konvertiert die Farb-YUV-Zahlen in RYB.
-Konvertiert die Farb-YUV-Zahlen in RYB im KS-Format.
-Konvertiert die Farb-YUV-Zahlen in YUV.
-Konvertiert die Farb-YUV-Zahlen in YIQ im KS-Format.
 Verwaltet Ihre Kontakte
 Ruft den Backtrace für alle Threads ab
 Zeigt Ihnen eine Vollbildübersicht über eine ausgewählte Dockansicht, um diese als Infopanel nutzen zu können
@@ -2635,7 +2454,6 @@ dass du deine eigenen Bildschirmschoner erstellen kannst, indem du sie in deinem
 dass der erste Bildschirmschoner, der den Bildschirm nach drei Minuten Inaktivität auf den ursprünglichen IBM-PCs ausschaltete, scrnsave, 1983 von John Socha erstellt wurde?
 dass einige der schnellen Bildschirmschoner lichtempfindliche Anfälle verursachen können?
 dass Kernel-Journale als Boot- und Shutdown-Protokolle verwendet werden?
-dass man mit GRILO einen Bootloader simulieren kann, der Nitrocid bootet?
 dass deine Mods jetzt übersetzbar werden können?
 dass Ihre Mods mit Kernel-Addons und anderen Mods kommunizieren können, wodurch eine Art Kommunikation entsteht und Interoperabilität erreicht wird?
 dass Sie sich mit dem Remote-Debugger und optional mit dem Chat-Server verbinden können?
@@ -2663,8 +2481,6 @@ dass verschiedene APIs nützliche Funktionen für deine Mods bereitstellen?
 To-Do-Aufgabenmanager
 Listet alle verfügbaren Einheiten auf
 Verwenden Sie die TUI-Version des Einheitenumrechners
-Diese „Mock-App“ ist eine Verspottung von „HDD Cleaner 2.1“, das am 24. November 2015 veröffentlicht wurde. Wir nennen es „HDD Uncleaner 2015“. Es wird im Grunde nichts anderes tun, als über die Nitrocid KS-API Nachrichten auf der Konsole anzuzeigen. Es wird versucht zu simulieren, wie dieses archivierte Programm aussieht. Bitte nehmen Sie dies nicht zu wörtlich, da es sich nur um ein Scherzprogramm handelt, das Sie amüsieren soll. Außerdem werden keine überflüssigen Funktionen wie die „AutoRecovery“-Routine simuliert. Bitte beachten Sie, dass wir nicht beabsichtigen, dies zu lokalisieren. Drücken Sie zum Starten eine beliebige Taste.
-Startet das Scherzprogramm HDD Uncleaner 2015.
 Gedenken an das 5-jährige Jubiläum des Kernels
 Erste Veröffentlichung überhaupt
 Dieser Kernel wurde erstmals am 22. Februar 2018 veröffentlicht, um einen minimalistischen Simulator zu erstellen, der tatsächlich simuliert, wie der Kernel funktioniert.
@@ -2680,7 +2496,6 @@ Alles Gute zum 5-jährigen Jubiläum!
 Kann nichts extrahieren.
 Das Archiv ist aufgrund des Typs nicht beschreibbar
 Stellen Sie sicher, dass Sie den Pfad zu einer LRC-Datei angeben.
-Musikdatei nicht angegeben.
 Die Musikdatei „{0}“ existiert nicht.
 Schwerwiegender Fehler im BassBoom CLI-Addon.
 Der Ton kann nicht abgespielt werden, da die Datei nicht gefunden wurde.
@@ -2705,7 +2520,6 @@ Geben Sie einen Pfad zur Musikdatei ein
 Datei „{0}“ existiert nicht.
 Geben Sie einen Pfad zum Musikbibliotheksverzeichnis ein
 Das Verzeichnis der Musikbibliothek wurde nicht gefunden.
-{0} kann nicht geöffnet werden: {1}
 BassBoom wird geladen, um {0} zu öffnen...
 Läuft gerade
 Ich versuche, die Liedtextdatei zu öffnen
@@ -2719,13 +2533,10 @@ Suche Kontrolle
 Suchen Sie nach einer Dauerkontrolle
 Songinfo
 Fügen Sie eine Musikdatei hinzu
-Fügen Sie der Wiedergabeliste ein Musikverzeichnis hinzu
 Vorheriges Lied
 Nächstes Lied
 Aktuelles Lied entfernen
 Alle Lieder entfernen
-Selektiv suchen
-Offener Equalizer
 Unbekannt
 Titel
 Album
@@ -2780,39 +2591,18 @@ Lange Form
 Kalendertyp
 Für den ausgewählten Monat wurden keine Erinnerungen gefunden
 Für den ausgewählten Monat wurden keine Veranstaltungen gefunden
-Die Cyan-Farbstufe muss numerisch sein.
-Die Magenta-Farbstufe muss numerisch sein.
-Die gelbe Farbstufe muss numerisch sein.
-Die Ebene der schwarzen Taste muss numerisch sein.
 Cyan-Pegel:
 Magenta-Stufe:
 Gelbstufe:
-CMY-Farbfolge:
 Farbton:
 Sättigung:
-HSL-Farbfolge:
 Wert:
-HSV-Farbfolge:
 Farbstufe Gelb:
-RYB-Farbfolge:
 Luma:
 In-Phase:
 Quadratur:
-YIQ-Farbreihenfolge:
 U-Chroma:
 V-Chroma:
-YUV-Farbsequenz:
-Schwarzer Schlüssel:
-CMYK-Farbfolge:
-Der Farbtonwert muss numerisch sein.
-Der Sättigungsgrad muss numerisch sein.
-Die Leuchtdichte oder Beleuchtungsstärke muss numerisch sein.
-Die Werteebene muss numerisch sein.
-Die Y-Komponentenebene muss numerisch sein.
-Die I-Komponentenebene muss numerisch sein.
-Die Q-Komponentenebene muss numerisch sein.
-Die U-Komponentenebene muss numerisch sein.
-Die V-Komponentenebene muss numerisch sein.
 Die Datei „{0}“ kann nicht geöffnet werden, da sie nicht gefunden wurde.
 Kontakte erfolgreich importiert.
 Die Datei „{0}“ kann nicht geöffnet werden, da die Kartendatei ungültig ist.
@@ -2820,7 +2610,6 @@ Die Kontaktdatei ist nicht vorhanden.
 Kontakte gefunden
 Die Kontaktdatei ist ungültig.
 Die MeCard-Syntax darf nicht leer sein.
-Einige Kontakte können nicht hinzugefügt werden. Nur {0} von {1} Kontakten wurden hinzugefügt.
 Entweder enthält die bereitgestellte Kontaktdatei keine Informationen zu einem Kontakt oder ist ungültig.
 Kontakte konnten nicht analysiert werden. Weitere Informationen finden Sie in den Fehlerdetails.
 Der Kontaktindex liegt außerhalb des zulässigen Bereichs. Der maximale Index ist {0}, während der bereitgestellte Index {1} ist.
@@ -2885,8 +2674,6 @@ Die Portnummer Ihres Online-Radios ist ungültig.
 Vollständige URL
 Aktuelle Zuhörer
 Spitzenzuhörer
-Maximale Zuhörer
-Einzigartige Zuhörer
 Streams
 Aktive Streams
 Stream-Info für ID
@@ -2989,8 +2776,6 @@ Es konnte keine Erinnerung hinzugefügt werden.
 Es wurden nicht genügend Argumente angegeben, um eine Erinnerung hinzuzufügen.
 Eine Erinnerung konnte nicht entfernt werden.
 Es wurden nicht genügend Argumente angegeben, um eine Erinnerung zu entfernen.
-Nitrocid KS Release Anniversary\", true, 2, 22, 2, 22, \"Gregorian
-Ramadan\", wahr, 9, 1, 10, 1, \"Hijri
 Es gibt keine Veranstaltung.
 Es gibt keine Erinnerung.
 Es besteht kein Kontakt. Wenn Sie Kontakte importieren möchten, nutzen Sie bitte die Importoptionen über die am unteren Bildschirmrand definierten Tastenkombinationen.
@@ -3025,8 +2810,6 @@ Kontakttitel
 Kein Kontakttitel
 Kontaktnotizen
 Keine Kontaktnotizen
-Digitaluhr
-Drücken Sie eine beliebige Taste, um zum Kernel zurückzukehren ...
 Geben Sie Ihren API-Schlüssel ein:
 Sie können entweder den folgenden Link aufrufen, um die Liste der Städte mit ihren IDs anzuzeigen, oder „-list“ an diesen Befehl übergeben.
 Sind Sie sicher, dass Sie {0} löschen möchten?
@@ -3177,8 +2960,6 @@ Signalton beim Herunterfahren oder Neustarten
 Aktiviert einen Signalton beim Herunterfahren des Kernels.
 Verzögerung beim Herunterfahren oder Neustart
 Aktiviert die Verzögerung beim Herunterfahren des Kernels.
-Ermöglichen Sie einfache Farbenblindheit
-Wenn Sie möchten, dass die Simulation von Farbenblindheit einfach ist, aktivieren Sie diese Option. Bitte beachten Sie, dass die in dieser Simulationsmethode verwendete Formel möglicherweise nicht korrekt ist.
 Die Konsole unterstützt True Color
 Wenn Sie sicher sind, dass die Konsole True Color unterstützt, oder wenn Sie Ihr Terminal auf ein Terminal umstellen möchten, das True Color unterstützt, ändern Sie diesen Wert.
 Codepage festlegen
@@ -3209,8 +2990,6 @@ Hintergrundakzentfarbe
 Bei Themen, die Akzente unterstützen, ist dies die akzentuierte Hintergrundfarbe.
 Verwenden Sie die Farbpalette der Konsole
 Wenn dies auf „true“ gesetzt ist, wird die vom Terminal definierte Farbpalette verwendet.
-Vordergrundfarbe zulassen
-Wenn dies auf „true“ gesetzt ist, wird die aktuelle Vordergrundfarbe berücksichtigt. Andernfalls werden die Standardfarben Ihres Terminals verwendet.
 Hintergrundfarbe zulassen
 Wenn dies auf „true“ gesetzt ist, wird die aktuelle Hintergrundfarbe berücksichtigt. Andernfalls werden die Standardfarben Ihres Terminals verwendet.
 Shell-Farbe des Benutzernamens
@@ -3324,14 +3103,6 @@ Zeigen Sie die Anzahl der einheitlichen Befehle in der Hilfe an
 Zeigt die Anzahl der Unified-Shell-Befehle an, wenn sie im Hilfebefehl aufgelistet werden
 Zeigt die Anzahl der Add-on-Befehle in der Hilfe an
 Zeigt die Anzahl der Kernel-Add-On-Befehle an, wenn sie im Hilfebefehl aufgelistet werden
-Zeichen in der oberen linken Ecke für Fortschrittsbalken
-Zeichen in der oberen rechten Ecke für Fortschrittsbalken
-Zeichen in der unteren linken Ecke für Fortschrittsbalken
-Zeichen in der unteren rechten Ecke für Fortschrittsbalken
-Oberes Rahmenzeichen für Fortschrittsbalken
-Unteres Rahmenzeichen für Fortschrittsbalken
-Linkes Rahmenzeichen für Fortschrittsbalken
-Rechtes Rahmenzeichen für Fortschrittsbalken
 Bildlaufleiste in der Auswahl aktivieren
 Aktiviert die Bildlaufleiste in Auswahlbildschirmen
 Bitte nicht stören

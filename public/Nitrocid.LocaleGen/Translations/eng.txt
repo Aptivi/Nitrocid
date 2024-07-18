@@ -234,7 +234,6 @@ Download Retry Times
 Log FTP username
 Log FTP IP address
 Return only first FTP profile
-Show Time/Date on Upper Right Corner
 Size parse mode
 Marquee on startup
 Long Time and Date
@@ -303,7 +302,6 @@ Simplified help command for all the shells
 Whether or not to log FTP username.
 Whether or not to log FTP IP address.
 Pick the first profile only when connecting.
-The time and date will be shown in the upper right corner of the screen
 If enabled, the kernel will parse the whole folder for its total size. Else, will only parse the surface.
 Enables eyecandy on startup
 The time and date will be longer, showing full month names, etc.
@@ -531,7 +529,6 @@ How many fade steps to do?
 Opens an RSS shell to read the feeds
 Lists all feeds
 Reads a feed in a web browser
-Invalid RSS feed type.
 Gets the article info
 Article number couldn't be bigger than the available articles.
 Title:
@@ -1114,11 +1111,6 @@ Enable Black and White Mode
 Makes the disco black and white. Will really hurt your eyes if it was too fast, so not recommended if you're experiencing a seizure of fast images.
 Load Current Colors
 Current value:
-Invalid hex color specifier.
-Invalid RGB color specifier.
-Invalid red color specifier.
-Invalid green color specifier.
-Invalid blue color specifier.
 Adds a new byte at the end of the file
 Adds the new bytes at the end of the file
 Clears the binary file
@@ -1172,17 +1164,9 @@ Maximum amount of age years to generate
 Untitled manual page
 Input history enabled
 Whether the input history is enabled or not. If enabled, you can access recently typed commands using the up or down arrow keys.
-Converts the color RGB numbers to hex.
-Converts the hexadecimal representation of the color to RGB numbers.
-Converts the hexadecimal representation of the color to RGB numbers in KS format.
 Red color level:
 Green color level:
 Blue color level:
-RGB color sequence:
-The red color level must be numeric.
-The green color level must be numeric.
-The blue color level must be numeric.
-Color hexadecimal representation:
 It's now safe to turn off your computer.
 Simulate No APM Mode
 Whether to simulate a situation where there is no APM available. If enabled, it informs the user that it's now safe to turn off the computer upon shutdown.
@@ -1236,11 +1220,8 @@ Run 'license' to see the license information.
 Kernel first-run
 Welcome to Nitrocid Kernel! Thank you for trying it out!
 To get started, press ENTER.
-Select your language
 Select your language. By default, the kernel uses the English language, but you can select any other language here.
 Based on your language settings on your system, the appropriate language is
-Write the language code listed below:
-Press the ENTER key to continue.
 Create your first user
 We'll help you create your own username. Select any name you want. This could be your nickname or your short name, as long as your username doesn't contain spaces and special characters and that it doesn't already exist. The following usernames are registered:
 Enter the username
@@ -1262,9 +1243,7 @@ Nitrocid KS has detected a problem and it has been shut down.
 The metadata information needed to install the custom language doesn't exist.
 The metadata information needed to uninstall the custom language doesn't exist.
 The mod script may not be null.
-Loading mods...
 No mods detected.
-Stopping mods...
 Stopping mod {0}...
 The mod is not strongly signed. It may contain untrusted code.
 Mod can't be loaded because there's an incompatibility between this version of the kernel and this mod:
@@ -1287,13 +1266,6 @@ The following files are not wiped:
 Are you sure to wipe these files?
 Can't wipe miscellaneous file
 No argument help description
-Invalid RYB color specifier.
-Invalid CMY color specifier.
-Invalid CMYK color specifier.
-Invalid HSL color specifier.
-Invalid HSV color specifier.
-Invalid YIQ color specifier.
-Invalid YUV color specifier.
 Your console must support true color to use this theme.
 Exit the preview
 Done
@@ -1382,7 +1354,6 @@ Assertion failure.
 Event {0} not found.
 Kernel event fired:
 Provide a valid event action
-Unknown kernel error.
 The specified alias already exists. Make sure that you select a different alias.
 The alias system encountered an invalid operation trying to process your request.
 The specified alias isn't found.
@@ -1395,11 +1366,8 @@ A general FTP filesystem error occurred. Check to make sure that the path specif
 A general FTP network error occurred. Check to make sure that your internet connection is working.
 A general FTP shell error occurred.
 A group management error occurred.
-Hostname error.
 A general HTTP shell error occurred.
 Insane console has been detected. Nitrocid KS can't continue running, because your console is incompatible with our requirements.
-Invalid RSS feed.
-Invalid RSS feed link.
 Invalid hash algorithm. If you're using a custom hash sum driver, check to make sure that the driver is loaded.
 Invalid hash sum. Check to make sure that you copied and pasted the hash sum correctly. If you're using a custom hash sum driver, check to make sure that the driver is loaded and that it works as expected.
 Invalid kernel path.
@@ -1443,7 +1411,6 @@ A general network error occurred. Should you be trying to connect to a remote en
 An unsupported console has been detected.
 An assertion failure has been detected in the kernel! This is most likely a bug in the kernel module that should be fixed on our end.
 Your network needs to be online before being able to perform operations related to networking. Connect your network adapter and try again.
-Permission denied trying to perform an operation.
 User doesn't exist. Check to make sure that you've written the user correctly.
 Driver doesn't exist. Check to make sure that you've written the driver name correctly, and that the driver is registered properly.
 The thread is not ready yet. The user code might have forgotten to regenerate the kernel thread after stopping it manually.
@@ -1542,11 +1509,9 @@ Thread backtraces is empty. Either this information is not available, an error o
 Stack trace for thread
 Thread backtrace analysis failed. Some information might not be complete.
 Version information
-Running from GRILO?
 Dump generator failed to dump a kernel error caused by
 We apologize for your inconvenience, but it looks like that the kernel was having trouble booting. The below error message might help:
 For further investigation, enable debugging mode on the kernel and try to reproduce the issue. Also, try to investigate the latest dump file created.
-Initializing kernel addon
 This addon is not a valid addon.
 Starting kernel addon
 Started kernel addon
@@ -1581,12 +1546,10 @@ Extras - Forecast
 Extras - FTP Shell
 Extras - Git Shell
 Extras - HTTP Shell
-Extras - Internet Radio Information
 Extras - JSON Shell
 Extras - Language Studio
 Extras - Mail Shell
 Extras - MD5
-Extras - NameGen
 Extras - Notes
 Extras - RSS Shell
 Extras - SFTP Shell
@@ -1599,7 +1562,6 @@ Extras - Timers
 Extras - Kernel Tips
 Extras - To-do List
 Extras - Unit Converter
-Legacy - HDD Uncleaner 2015
 No such addon type '{0}'
 One or more of the CPU cores failed to probe. Showing information anyway...
 One or more of the RAM chips failed to probe. Showing information anyway...
@@ -1799,15 +1761,10 @@ To dismiss forever, either press ENTER on the "Acknowledged" button here by high
 OK
 Acknowledged
 Development notice
-You're running Nitrocid KS on an unusual environment. Please verify that you've started the kernel either directly or through GRILO. If you're sure that you've started the kernel in a usual way, it might be because you're running an unsupported version of Nitrocid KS.
 Please note that running Nitrocid KS on an unusual environment means that some features are limited. You won't be able to load mods and configurations.
 Unusual environment notice
 that you can get extra tips from the kernel addon shipped with the full build of Nitrocid?
 Pro tip: Did you know
-BASE64 doesn't support keys
-BASE64 doesn't support initialization vectors
-RSA doesn't support keys
-RSA doesn't support initialization vectors
 Keybindings
 Insert
 Remove
@@ -1943,7 +1900,6 @@ The below switches don't accept values.
 One or more of the arguments expect a numeric value, but you provided an invalid number.
 One or more of the arguments expect an exact wording, but you provided an invalid word.
 One or more of the switches expect a numeric value, but you provided an invalid number.
-Consult this command for more info
 Command has been aborted.
 You must not directly execute this command in a wrapped mode.
 An error occurred while trying to wrap a command output
@@ -2234,7 +2190,6 @@ Tests the input selection style
 Tests the list entry writer
 Indent 1:
 Indent 2:
-Tests the presentation system
 Tests the progress handler
 Initializing...
 Write a string to check:
@@ -2251,7 +2206,6 @@ The condition needs to be placed in the end.
 Can't register a condition that already exists.
 Can't register an empty condition.
 Can't unregister a condition that doesn't exist.
-You can't exit the mother shell. Did you mean to log out of your account, shut the kernel down, or reboot it?
 No commands found.
 Invalid number of times.
 Can't repeat self.
@@ -2376,7 +2330,6 @@ Can't make a symbolic link.
 Kernel settings
 Kernel Version:
 Debug Mode:
-Running from GRILO:
 Running on usual environment:
 Safe Mode:
 Hardware settings
@@ -2402,7 +2355,6 @@ Invalid number of columns.
 Shut down
 Restart
 Login
-What do you want to do?
 Select a user account you want to log in with.
 Enter the password for user
 Wrong password for user.
@@ -2432,139 +2384,6 @@ Show information about the imaginary number formula specified by a specified rea
 Calendar, event, and reminder manager
 Calendar type to work on
 Use the table-based calendar viewer
-Converts the hexadecimal representation of the color to RYB numbers.
-Converts the hexadecimal representation of the color to RYB numbers in KS format.
-Converts the hexadecimal representation of the color to CMYK numbers.
-Converts the hexadecimal representation of the color to CMYK numbers in KS format.
-Converts the hexadecimal representation of the color to CMY numbers.
-Converts the hexadecimal representation of the color to CMY numbers in KS format.
-Converts the hexadecimal representation of the color to HSL numbers.
-Converts the hexadecimal representation of the color to HSL numbers in KS format.
-Converts the hexadecimal representation of the color to HSV numbers.
-Converts the hexadecimal representation of the color to HSV numbers in KS format.
-Converts the hexadecimal representation of the color to YIQ numbers.
-Converts the hexadecimal representation of the color to YIQ numbers in KS format.
-Converts the hexadecimal representation of the color to YUV numbers.
-Converts the hexadecimal representation of the color to YUV numbers in KS format.
-Converts the color RGB numbers to CMYK.
-Converts the color RGB numbers to CMYK in KS format.
-Converts the color RGB numbers to CMY.
-Converts the color RGB numbers to CMY in KS format.
-Converts the color RGB numbers to HSL.
-Converts the color RGB numbers to HSL in KS format.
-Converts the color RGB numbers to HSV.
-Converts the color RGB numbers to HSV in KS format.
-Converts the color RGB numbers to RYB.
-Converts the color RGB numbers to RYB in KS format.
-Converts the color RGB numbers to YIQ.
-Converts the color RGB numbers to YIQ in KS format.
-Converts the color RGB numbers to YUV.
-Converts the color RGB numbers to YUV in KS format.
-Converts the color RYB numbers to hex.
-Converts the color RYB numbers to CMYK.
-Converts the color RYB numbers to CMYK in KS format.
-Converts the color RYB numbers to CMY.
-Converts the color RYB numbers to CMY in KS format.
-Converts the color RYB numbers to HSL.
-Converts the color RYB numbers to HSL in KS format.
-Converts the color RYB numbers to HSV.
-Converts the color RYB numbers to HSV in KS format.
-Converts the color RYB numbers to RGB.
-Converts the color RYB numbers to RGB in KS format.
-Converts the color RYB numbers to YIQ.
-Converts the color RYB numbers to YIQ in KS format.
-Converts the color RYB numbers to YUV.
-Converts the color RYB numbers to YUV in KS format.
-Converts the color HSL numbers to hex.
-Converts the color HSL numbers to CMYK.
-Converts the color HSL numbers to CMYK in KS format.
-Converts the color HSL numbers to CMY.
-Converts the color HSL numbers to CMY in KS format.
-Converts the color HSL numbers to HSV.
-Converts the color HSL numbers to HSV in KS format.
-Converts the color HSL numbers to RGB.
-Converts the color HSL numbers to RGB in KS format.
-Converts the color HSL numbers to RYB.
-Converts the color HSL numbers to RYB in KS format.
-Converts the color HSL numbers to YIQ.
-Converts the color HSL numbers to YIQ in KS format.
-Converts the color HSL numbers to YUV.
-Converts the color HSL numbers to YUV in KS format.
-Converts the color HSV numbers to hex.
-Converts the color HSV numbers to CMYK.
-Converts the color HSV numbers to CMYK in KS format.
-Converts the color HSV numbers to CMY.
-Converts the color HSV numbers to CMY in KS format.
-Converts the color HSV numbers to HSL.
-Converts the color HSV numbers to HSL in KS format.
-Converts the color HSV numbers to RGB.
-Converts the color HSV numbers to RGB in KS format.
-Converts the color HSV numbers to RYB.
-Converts the color HSV numbers to RYB in KS format.
-Converts the color HSV numbers to YIQ.
-Converts the color HSV numbers to YIQ in KS format.
-Converts the color HSV numbers to YUV.
-Converts the color HSV numbers to YUV in KS format.
-Converts the color CMYK numbers to hex.
-Converts the color CMYK numbers to RGB.
-Converts the color CMYK numbers to RGB in KS format.
-Converts the color CMYK numbers to RYB.
-Converts the color CMYK numbers to RYB in KS format.
-Converts the color CMYK numbers to HSL.
-Converts the color CMYK numbers to HSL in KS format.
-Converts the color CMYK numbers to HSV.
-Converts the color CMYK numbers to HSV in KS format.
-Converts the color CMYK numbers to CMY.
-Converts the color CMYK numbers to CMY in KS format.
-Converts the color CMYK numbers to YIQ.
-Converts the color CMYK numbers to YIQ in KS format.
-Converts the color CMYK numbers to YUV.
-Converts the color CMYK numbers to YUV in KS format.
-Converts the color CMY numbers to hex.
-Converts the color CMY numbers to CMYK.
-Converts the color CMY numbers to CMYK in KS format.
-Converts the color CMY numbers to HSL.
-Converts the color CMY numbers to HSL in KS format.
-Converts the color CMY numbers to HSV.
-Converts the color CMY numbers to HSV in KS format.
-Converts the color CMY numbers to RGB.
-Converts the color CMY numbers to RGB in KS format.
-Converts the color CMY numbers to RYB.
-Converts the color CMY numbers to RYB in KS format.
-Converts the color CMY numbers to YIQ.
-Converts the color CMY numbers to YIQ in KS format.
-Converts the color CMY numbers to YUV.
-Converts the color CMY numbers to YUV in KS format.
-Converts the color YIQ numbers to hex.
-Converts the color YIQ numbers to CMYK.
-Converts the color YIQ numbers to CMYK in KS format.
-Converts the color YIQ numbers to CMY.
-Converts the color YIQ numbers to CMY in KS format.
-Converts the color YIQ numbers to HSL.
-Converts the color YIQ numbers to HSL in KS format.
-Converts the color YIQ numbers to HSV.
-Converts the color YIQ numbers to HSV in KS format.
-Converts the color YIQ numbers to RGB.
-Converts the color YIQ numbers to RGB in KS format.
-Converts the color YIQ numbers to RYB.
-Converts the color YIQ numbers to RYB in KS format.
-Converts the color YIQ numbers to YUV.
-Converts the color YIQ numbers to YUV in KS format.
-Converts the color YUV numbers to hex.
-Converts the color YUV numbers to CMYK.
-Converts the color YUV numbers to CMYK in KS format.
-Converts the color YUV numbers to CMY.
-Converts the color YUV numbers to CMY in KS format.
-Converts the color YUV numbers to HSL.
-Converts the color YUV numbers to HSL in KS format.
-Converts the color YUV numbers to HSV.
-Converts the color YUV numbers to HSV in KS format.
-Converts the color YUV numbers to RGB.
-Converts the color YUV numbers to RGB in KS format.
-Converts the color YUV numbers to RYB.
-Converts the color YUV numbers to RYB in KS format.
-Converts the color YUV numbers to YUV.
-Converts the color YUV numbers to YIQ in KS format.
 Manages your contacts
 Gets backtrace for all threads
 Shows you a full-screen overview about a selected dock view to be able to use it as an info panel
@@ -2635,7 +2454,6 @@ that you can build your own screensavers by registering them in your mod?
 that the first screensaver that blanked the screen after three minutes of inactivity on the original IBM PCs, scrnsave, was created on 1983 by John Socha?
 that some of the fast-paced screensavers may cause photosensitive seizures?
 that kernel journals are used as boot and shutdown logs?
-that you can simulate a bootloader booting to Nitrocid using GRILO?
 that your mods can now become translatable?
 that your mods can communicate with kernel addons and other mods, creating some kind of communication and achieving interoperability?
 that you can connect to the remote debugger and, optionally, to the chat server?
@@ -2663,8 +2481,6 @@ that miscellaneous APIs provide useful functions for your mods?
 To-do task manager
 Lists all available units
 Use the TUI version of the unit converter
-This "mock app" mocks "HDD Cleaner 2.1," which was released on November 24th, 2015. We'll call it "HDD Uncleaner 2015." It'll basically do nothing except display messages to the console using the Nitrocid KS API. It'll try to simulate how this archived program looks like. Please don't take this too literally as it's just a joke program intended to amuse you. It also doesn't simulate extraneous features, like the "AutoRecovery" routine. Please note that we don't intend to localize this. Press any key to start.
-Starts the joke program, HDD Uncleaner 2015.
 Commemorating the 5-year anniversary of the kernel
 First ever release
 This kernel was first released on February 22, 2018 to make a minimalistic simulator that actually simulates how the core of the kernel works.
@@ -2680,7 +2496,6 @@ Happy 5-year anniversary!
 Can't extract nothing.
 Archive is not writable because type is
 Make sure to specify the path to an LRC file.
-Music file not specified.
 Music file '{0}' doesn't exist.
 Fatal error in the BassBoom CLI addon.
 Can't play sound because the file is not found.
@@ -2705,7 +2520,6 @@ Enter a path to the music file
 File "{0}" doesn't exist.
 Enter a path to the music library directory
 Music library directory is not found.
-Can't open {0}: {1}
 Loading BassBoom to open {0}...
 Now playing
 Trying to open lyrics file
@@ -2719,13 +2533,10 @@ Seek control
 Seek duration control
 Song info
 Add a music file
-Add a music directory to the playlist
 Previous song
 Next song
 Remove current song
 Remove all songs
-Selectively seek
-Open equalizer
 Unknown
 Title
 Album
@@ -2780,39 +2591,18 @@ Long form
 Calendar type
 No reminders found for the selected month
 No events found for the selected month
-The cyan color level must be numeric.
-The magenta color level must be numeric.
-The yellow color level must be numeric.
-The black key level must be numeric.
 Cyan level:
 Magenta level:
 Yellow level:
-CMY color sequence:
 Hue:
 Saturation:
-HSL color sequence:
 Value:
-HSV color sequence:
 Yellow color level:
-RYB color sequence:
 Luma:
 In-phase:
 Quadrature:
-YIQ color sequence:
 U-Chroma:
 V-Chroma:
-YUV color sequence:
-Black key:
-CMYK color sequence:
-The hue level must be numeric.
-The saturation level must be numeric.
-The luminance or lighting level must be numeric.
-The value level must be numeric.
-The Y component level must be numeric.
-The I component level must be numeric.
-The Q component level must be numeric.
-The U component level must be numeric.
-The V component level must be numeric.
 Can't open file '{0}' because it's not found.
 Imported contacts successfully.
 Can't open file '{0}' because the card file is invalid.
@@ -2820,7 +2610,6 @@ Contact file doesn't exist.
 contacts found
 Contact file is invalid.
 The MeCard syntax can't be empty.
-Some of the contacts can't be added. Only {0} out of {1} contacts were added.
 Either the provided contacts file doesn't have information about any contact or isn't valid.
 Failed to parse contacts. See the error details for more information.
 Contact index is out of range. Maximum index is {0} while provided index is {1}.
@@ -2885,8 +2674,6 @@ The port number for your online radio is invalid.
 Full URL
 Current listeners
 Peak listeners
-Max listeners
-Unique listeners
 Streams
 Active streams
 Stream info for ID
@@ -2989,8 +2776,6 @@ Failed to add a reminder.
 Not enough arguments provided to add a reminder.
 Failed to remove a reminder.
 Not enough arguments provided to remove a reminder.
-Nitrocid KS Release Anniversary\", true, 2, 22, 2, 22, \"Gregorian
-Ramadan\", true, 9, 1, 10, 1, \"Hijri
 There is no event.
 There is no reminder.
 There is no contact. If you'd like to import contacts, please use the import options using the keystrokes defined at the bottom of the screen.
@@ -3025,8 +2810,6 @@ Contact title
 No contact title
 Contact notes
 No contact notes
-Digital Clock
-Press any key to go back to the kernel...
 Enter your API key:
 You can either consult the below link for the list of cities with their IDs, or, pass "-list" to this command.
 Are you sure you want to delete {0}?
@@ -3177,8 +2960,6 @@ Beep on shutdown or reboot
 Enables beeping upon shutting down the kernel.
 Delay on shutdown or reboot
 Enables delaying upon shutting down the kernel.
-Enable simple color blindness
-If you want the simulation of color blindness to be simple, enable this. Please note that the formula used in this simulation method may not be accurate.
 Console supports true color
 If you are sure that the console supports true color, or if you want to change your terminal to a terminal that supports true color, change this value.
 Set codepage
@@ -3209,8 +2990,6 @@ Background accent color
 For themes that support accents, this is the accented backgound color.
 Use console color palette
 When this is set to true, the color palette defined by the terminal is used.
-Allow foreground color
-When this is set to true, the current foreground color is honored. Else, it uses your terminal's default colors.
 Allow background color
 When this is set to true, the current background color is honored. Else, it uses your terminal's default colors.
 User Name Shell Color
@@ -3324,14 +3103,6 @@ Show the unified commands count on help
 Show the count of unified shell commands when listing them in the help command
 Show the addon commands count on help
 Show the count of kernel addon commands when listing them in the help command
-Upper left corner character for progress bars
-Upper right corner character for progress bars
-Lower left corner character for progress bars
-Lower right corner character for progress bars
-Upper frame character for progress bars
-Lower frame character for progress bars
-Left frame character for progress bars
-Right frame character for progress bars
 Enable scroll bar in selection
 Enables the scroll bar in selection screens
 Do Not Disturb

@@ -234,7 +234,6 @@ ritree taims daunalod karen
 efateepee yoozaranem log in karen
 efateepee aaeepee pata log karen
 keval pahale efateepee profail par lauten
-ooparee daen kone par samay / dinaank dikhaen
 aakaar paars mod
 staartap par maarkee
 lambe samay aur taareekh
@@ -303,7 +302,6 @@ sabhee gole ke lie saraleekrt sahaayata kamaand
 efateepee yoozaranem log in karen ya nahin.
 efateepee aaeepee pate par log in karen ya nahin.
 kanekt karate samay pahalee profail chunen.
-samay aur taareekh skreen ke ooparee daen kone mein dikhaee jaegee
 yadi saksham hai, to karnel poore aakaar ke lie sampoorn foldar ko paars kar dega. els, keval satah ko paars karega.
 staartap par aiyaichandy ko saksham karata hai
 poore maheene ke naam ityaadi dikhaate hue samay aur taareekh lambee ho jaegee.
@@ -531,7 +529,6 @@ kitane pheeke kadam karane hain?
 feed padhane ke lie rss shel kholata hai
 sabhee feed soocheebaddh karata hai
 veb brauzar mein feed padhata hai
-amaany rss feed prakaar.
 lekh kee jaanakaaree praapt karata hai
 aalekh sankhya upalabdh lekhon se badee nahin ho sakatee.
 sheershak:
@@ -1114,11 +1111,6 @@ blaik end vhait mod saksham karen
 disko ko blaik end vhait banaata hai. yadi yah bahut tez tha, to vaastav mein aapakee aankhon ko chot pahunchaega, isalie yadi aap tez chhaviyon ke jabtee ka anubhav kar rahe hain to isakee anushansa nahin kee jaatee hai.
 vartamaan rang lod karen
 vartamaan mooly:
-amaany heks rang vinirdeshak.
-amaany rgb rang vinirdeshak.
-amaany laal rang vinirdeshak.
-amaany hara rang vinirdeshak.
-amaany neela rang vinirdeshak.
 fail ke ant mein ek naya bait jodata hai
 fail ke ant mein nae bait jodata hai
 bainaree fail ko saaf karata hai
@@ -1172,17 +1164,9 @@ adhikatam aayu varsh utpann karane ke lie
 bina sheershak vaala mainual pej
 inaput itihaas saksham
 inaput itihaas saksham hai ya nahin. yadi saksham hai, to aap oopar ya neeche teer kunjiyon ka upayog karake haal hee mein taip kie gae aadeshon tak pahunch sakate hain.
-rang rgb sankhyaon ko heks mein kanavart karata hai.
-rang ke heksaadesimal pratinidhitv ko rgb sankhyaon mein parivartit karata hai.
-kees praaroop mein rang ke heksaadesimal pratinidhitv ko aarajeebee sankhyaon mein parivartit karata hai.
 laal rang ka star:
 hara rang star:
 neela rang star:
-aarajeebee rang anukram:
-laal rang ka star ankeey hona chaahie.
-hare rang ka star ankeey hona chaahie.
-neele rang ka star ankeey hona chaahie.
-rang heksaadesimal pratinidhitv:
 apane kampyootar ko band karana ab surakshit hai.
 simyulet no epeeem mod
 kya aisee sthiti ka anukaran karana hai jahaan koee epeeem upalabdh nahin hai. yadi saksham hai, to yah upayogakarta ko soochit karata hai ki shatadaun hone par kampyootar ko band karana ab surakshit hai.
@@ -1236,11 +1220,8 @@ laaisens ki jaankaari dekhne ke lie 'laaisens' chlaaen.
 krnel prthm-rn
 naaitrosid krnel men aapkaa svaagat hai! isaajaane ke lie dhnyvaad!
 aarnbh krne ke lie, ENTER dbaaen.
-apni bhaasaa kaa chyn kren
 apni bhaasaa kaa chyn kren. difeolt rup se, krnel angareji bhaasaa kaa upyoga krtaa hai, lekin aap yhaan kisi any bhaasaa kaa chyn kr skte hain.
 aapke sistm pr aapki bhaasaa setingas kaadhaar pr, upyukt bhaasaa hai
-niche suchibddh bhaasaa kod likhen:
-jaari rkhne ke lie ENTER kunji dbaaen.
 apnaa phlaa upyogakrtaa bnaaen
 hm aapko apnaa svyn kaa upyogakrtaa naam bnaane men mdd krengae. apnaa ichchhit koee bhi naam chunen. yh aapkaa upnaam yaa aapkaa snksipt naam ho sktaa hai, jb tk ki aapke upyogakrtaa naam men rikt sthaan aur vishes vrn n hon aur yh phle se maujud n ho. nimnlikhit upyogakrtaa naam pnjikrit hain:
 upyoktaanaam drj kren
@@ -1262,9 +1243,7 @@ naaitrosid kees ne ek smsyaa kaa ptaa lgaaayaa hai aur ise bnd kr diyaa gayaa ha
 kstm bhaasaa sthaapit krne ke liaavshyk maadaa jaankaari maujud nhin hai.
 kstm bhaasaa ko aninstol krne ke liaavshyk maadaa jaankaari maujud nhin hai.
 mod skript shuny nhin ho skti.
-mod lod ho rhe hain...
 koee mod nhin paayaa gayaa.
-mod rok rhaa hai...
 mod ko rok rhaa hai {0}...
 mod dridhaa se hstaaksrit nhin hai. ismen avishvsniy kod ho sktaa hai.
 mod ko lod nhin kiyaa jaa sktaa kyonki krnel ke is snskrn aur is mod ke bich asngattaa hai:
@@ -1287,13 +1266,6 @@ nimnlikhit failen mitaaee nhin gaee hain:
 kyaa aap nishchit rup se in failon ko mitaa dengae?
 vividh fail ko mitaayaa nhin jaa sktaa
 koee trk shaaytaa vivrn nhin
-amaany RYB rnga vinirdeshk.
-amaany CMY rnga vinirdeshk.
-amaany CMYK rnga vinirdeshk.
-amaany echesel rnga vinirdeshk.
-amaany HSV rnga vinirdeshk.
-amaany YIQ rnga vinirdeshk.
-amaany YUV rnga vinirdeshk.
 is thim kaa upyoga krne ke liaapke knsol ko shi rnga kaa smrthn krnaa chaahie.
 purvaavlokn se baahr niklen
 ho gayaa
@@ -1382,7 +1354,6 @@ daavaa vifltaa.
 ivent {0} nhin milaa.
 krnel ivent skriy kiyaa gayaa:
 ek vaidh ghtnaa kaarrvaaee prdaan kren
-ajnyaat krnel truti.
 nirdist upnaam phle se maujud hai. sunishchit kren ki aap koee bhinn upnaam chunen.
 aapkanurodh ko snsaadhit krne kaa pryaas krte smy upnaam sistm ko ek amaany aupreshn kaa saamnaa krnaa pda.
 nirdist upnaam nhin milaa.
@@ -1395,11 +1366,8 @@ ek saamaany FTP fail sistm truti utpnn huee. yh sunishchit krne ke lie jaanchen 
 ek saamaany FTP netvrk truti utpnn huee. yh sunishchit krne ke lie jaanchen ki aapkaa intrnet knekshn kaam kr rhaa hai.
 ek saamaany FTP shel truti utpnn huee.
 ek smuh prbndhn truti utpnn huee.
-hostnaam truti.
 ek saamaany HTTP shel truti utpnn huee.
 paagal knsol kaa ptaa chlaa hai. naaitrosid kees chlnaa jaari nhin rkh sktaa, kyonki aapkaa knsol hmaari aavshyktaaon ke saath asngat hai.
-amaany RSS feid.
-amaany RSS feid link.
 amaany haish elgaorithm. ydi aap kstm haish sm draaivr kaa upyoga kr rhe hain, to yh sunishchit krne ke lie jaanchen ki draaivr lod hai.
 amaany haish raashi. yh sunishchit krne ke lie jaanchen ki aapne haish raashi ko shi dhnga se kopi aur pest kiyaa hai. ydi aap kstm haish sm draaivr kaa upyoga kr rhe hain, to yh sunishchit krne ke lie jaanchen ki draaivr lod hai aur yh apeksaa kanurup kaam krtaa hai.
 amaany krnel pth.
@@ -1443,7 +1411,6 @@ ek saamaany netvrk truti utpnn huee. ydi aap kisi dursth chhor se knekt krne kaa
 ek asmrthit knsol kaa ptaa chlaa hai.
 krnel men ek abhikthn vifltaa kaa ptaa chlaa hai! yh snbhvtah krnel modyul men ek bga hai jise hmaari or se thik kiyaa jaanaa chaahie.
 netvrkinga se snbndhit snchaaln krne men sksm hone se phlaapkaa netvrk aunlaain honaa aavshyk hai. apnaa netvrk edoptr knekt kren aur punah pryaas kren.
-aupreshn krne ki koshish krne ki anumti se inkaar kr diyaa gayaa.
 upyogakrtaa maujud nhin hai. yh sunishchit krne ke lie jaanchen ki aapne upyogakrtaa ko shi dhnga se likhaa hai.
 draaivr maujud nhin hai. yh sunishchit krne ke lie jaanchen ki aapne draaivr kaa naam shi likhaa hai, aur draaivr thik se pnjikrit hai.
 dhaagaaa abhi taiyaar nhin hai. upyogakrtaa kod mainyual rup se rokne ke baad krnel thred ko pun: utpnn krnaa bhul gayaa hogaaa.
@@ -1542,11 +1509,9 @@ thred baiktres khaali hai. yaa to yh jaankaari uplbdh nhin hai, ise laate smy ko
 dhaagae ke lie staik tres
 thred baiktres vishlesn vifl rhaa. ho sktaa hai ki kuchh jaankaari puri n ho.
 snskrn jaankaari
-garilo se bhaaga rhe hain?
 dnp jnretr krnel truti ke kaarn dnp krne men vifl rhaa
 aapki asuvidhaa ke lie hm ksmaa chaahte hain, lekin aisaa lgataa hai ki krnel ko but krne men smsyaa aa rhi thi. niche diyaa gayaa truti sndesh mdd kr sktaa hai:
 aagae ki jaanch ke lie, krnel pr dibgainga mod sksm kren aur smsyaa ko pun: utpnn krne kaa pryaas kren. saath hi, bnaaee gaee nvintm dnp fail ki jaanch krne kaa pryaas kren.
-krnel aidaun praarnbh kiyaa jaa rhaa hai
 yh aidaun vaidh aidaun nhin hai.
 krnel aidaun praarnbh krnaa
 krnel aidaun praarnbh kiyaa gayaa
@@ -1581,12 +1546,10 @@ atirikt - purvaanumaan
 atirikt - efetipi shel
 atirikt - gait shail
 atirikt - HTTP shel
-atirikt - intrnet rediyo suchnaa
 atirikt - JSON shel
 atirikt - bhaasaa studiyo
 atirikt - mel shail
 atirikt - emdi5
-atirikt - NameGen
 atirikt - nots
 atirikt - aareses shail
 atirikt - eseftipi shel
@@ -1599,7 +1562,6 @@ atirikt - taaimr
 atirikt - krnel yuktiyaan
 atirikt - kaary suchi
 atirikt - ikaaee privrtk
-ligaesi - echdidi anklinr 2015
 aisaa koeaidaun prkaar '{0}' nhin
 ek yaa adhik sipiyu kor jaanch krne men vifl rhe. fir bhi jaankaari dikhaa rhaa hun...
 ek yaa adhik raim chips jaanch men vifl rhe. fir bhi jaankaari dikhaa rhaa hun...
@@ -1799,15 +1761,10 @@ hmeshaa ke lie khaarij krne ke lie, yaa to apne kibord pr baaen tir kaa upyoga k
 thik hai
 svikaar kiyaa
 vikaas suchnaa
-aap ek asaamaany vaataavrn men naaitrosid kees chlaa rhe hain. kripyaa styaapit kren ki aapne krnel ko sidhe yaa GRILO ke maadhym se praarnbh kiyaa hai. ydi aap aashvst hain ki aapne krnel ko saamaany trike se praarnbh kiyaa hai, to aisaa islie ho sktaa hai kyonki aap naaitrosid kees kaa ek asmrthit snskrn chlaa rhe hain.
 kripyaa dhyaan den ki naaitrosid kees ko asaamaany vaataavrn men chlaane kaa mtlb hai ki kuchh suvidhaaen simit hain. aap mod aur konfeigareshn lod nhin kr paaengae.
 asaamaany vaataavrn suchnaa
 ki aap naaitrosid ke purn nirmaan ke saath bheje gae krnel aidaun satirikt yuktiyaan praapt kr skte hain?
 pro tip: kyaa aap jaante hain
-BASE64 kunjiyon kaa smrthn nhin krtaa
-BASE64 inishiylaaijeeshn vaiktr kaa smrthn nhin krtaa hai
-aarese kunjiyon kaa smrthn nhin krtaa
-aaresaarnbhikrn vaiktr kaa smrthn nhin krtaa hai
 kunji baaindinga
 daalnaa
 nikaalnaa
@@ -1943,7 +1900,6 @@ niche die gae svich maan svikaar nhin krte hain.
 ek yaa adhik trk snkhyaatmk maan ki apeksaa krte hain, lekin aapne ek amaany snkhyaa prdaan ki hai.
 ek yaa adhik trk stik shbdon ki apeksaa krte hain, lekin aapne ek amaany shbd prdaan kiyaa hai.
 ek yaa adhik svich ek snkhyaatmk maan ki apeksaa krte hain, lekin aapne ek amaany snkhyaa prdaan ki hai.
-adhik jaankaari ke lie is aadesh se praamrsh len
 aadesh nirst kr diyaa gayaa hai.
 aapko is kmaand ko raipd mod men sidhe nispaadit nhin krnaa chaahie.
 kmaand aautput ko lpetne kaa pryaas krte smy ek truti utpnn huee
@@ -2234,7 +2190,6 @@ input chyn shaili kaa priksn krtaa hai
 suchi prvisti lekhk kaa priksn krtaa hai
 indent 1:
 indent 2:
-prstutikrn prnaali kaa priksn krtaa hai
 prgati haindlr kaa priksn krtaa hai
 praarnbh kiyaa jaa rhaa hai...
 jaanchne ke lie ek stringa likhen:
@@ -2251,7 +2206,6 @@ shrt ant men rkhni hogai.
 phle se maujud kisi shrt ko pnjikrit nhin kiyaa jaa sktaa.
 khaali sthiti drj nhin ki jaa skti.
 aisi shrt ko apnjikrit nhin kiyaa jaa sktaa jo astitv men hi nhin hai.
-aap maatri shail se baahr nhin nikl skte. kyaa aap apne khaate se loga aaut krnaa chaahte the, krnel ko bnd krnaa chaahte the, yaa ise ribut krnaa chaahte the?
 koeaadesh nhin milaa.
 kee baar amaany snkhyaa.
 svyn ko dohraa nhin skte.
@@ -2376,7 +2330,6 @@ koee prtikaatmk link nhin bnaa skte.
 krnel setingas
 krnel snskrn:
 dibga mod:
-garilo se chl rhaa hai:
 saamaany vaataavrn pr chl rhaa hai:
 surksit mod:
 haardveyr setingas
@@ -2402,7 +2355,6 @@ stnbhon ki amaany snkhyaa.
 sht daaun
 punah aarnbh kren
 loga in kren
-aap kyaa krnaa chaahte hain?
 vh upyogakrtaa khaataa chunen jissaap loga in krnaa chaahte hain.
 upyogakrtaa ke lie paasvrd drj kren
 upyogakrtaa ke lie galt paasvrd.
@@ -2432,139 +2384,6 @@ nirdist vaastvik aur kaalpnik snkhyaa dvaaraa nirdist kaalpnik snkhyaa sutr ke b
 kailendr, eevent aur anusmaark prbndhk
 kaam krne ke lie kailendr prkaar
 taalikaa-aadhaarit kailendr vyuar kaa upyoga kren
-rnga ke heksaadesiml prtinidhitv ko RYB snkhyaaon men privrtit krtaa hai.
-rnga ke heksaadesiml prtinidhitv ko kees praarup men aarvaaeebi snkhyaaon men privrtit krtaa hai.
-rnga ke heksaadesiml prtinidhitv ko CMYK snkhyaaon men privrtit krtaa hai.
-rnga ke heksaadesiml prtinidhitv ko kees praarup men siemvaaeeke snkhyaaon men privrtit krtaa hai.
-rnga ke heksaadesiml prtinidhitv ko CMY snkhyaaon men privrtit krtaa hai.
-rnga ke heksaadesiml prtinidhitv ko kees praarup men siemvaaee snkhyaaon men privrtit krtaa hai.
-rnga ke heksaadesiml prtinidhitv ko echesel snkhyaaon men privrtit krtaa hai.
-rnga ke heksaadesiml prtinidhitv ko kees praarup men echesel snkhyaaon men privrtit krtaa hai.
-rnga ke heksaadesiml prtinidhitv ko echesvi snkhyaaon men privrtit krtaa hai.
-rnga ke heksaadesiml prtinidhitv ko kees praarup men echesvi snkhyaaon men privrtit krtaa hai.
-rnga ke heksaadesiml prtinidhitv ko YIQ snkhyaaon men privrtit krtaa hai.
-rnga ke heksaadesiml prtinidhitv ko KS praarup men YIQ snkhyaaon men privrtit krtaa hai.
-rnga ke heksaadesiml prtinidhitv ko YUV snkhyaaon men privrtit krtaa hai.
-rnga ke heksaadesiml prtinidhitv ko kees praarup men YUV snkhyaaon men privrtit krtaa hai.
-rngain RGB snkhyaaon ko CMYK men privrtit krtaa hai.
-rngain aarjibi snkhyaaon ko kees praarup men siemvaaeeke men privrtit krtaa hai.
-rngain RGB nnbron ko CMY men privrtit krtaa hai.
-rngain aarjibi snkhyaaon ko kees praarup men siemvaaee men privrtit krtaa hai.
-rngain RGB nnbron ko HSL men privrtit krtaa hai.
-rngain aarjibi nnbron ko kees praarup men echesel men privrtit krtaa hai.
-rngain RGB nnbron ko HSV men privrtit krtaa hai.
-rngain aarjibi nnbron ko kees praarup men echesvi men privrtit krtaa hai.
-rngain RGB snkhyaaon ko RYB men privrtit krtaa hai.
-rngain RGB snkhyaaon ko KS praarup men RYB men privrtit krtaa hai.
-rngain RGB nnbron ko YIQ men privrtit krtaa hai.
-rngain RGB snkhyaaon ko KS praarup men YIQ men privrtit krtaa hai.
-rnga RGB snkhyaaon ko YUV men privrtit krtaa hai.
-rngain RGB snkhyaaon ko KS praarup men YUV men privrtit krtaa hai.
-rnga RYB snkhyaaon ko heks men privrtit krtaa hai.
-rnga RYB snkhyaaon ko CMYK men privrtit krtaa hai.
-rnga RYB snkhyaaon ko KS praarup men CMYK men privrtit krtaa hai.
-rnga RYB snkhyaaon ko CMY men privrtit krtaa hai.
-rnga RYB snkhyaaon ko KS praarup men CMY men privrtit krtaa hai.
-rnga RYB snkhyaaon ko HSL men privrtit krtaa hai.
-rnga RYB snkhyaaon ko KS praarup men HSL men privrtit krtaa hai.
-rnga RYB snkhyaaon ko HSV men privrtit krtaa hai.
-rngain RYB snkhyaaon ko KS praarup men HSV men privrtit krtaa hai.
-rnga RYB snkhyaaon ko RGB men privrtit krtaa hai.
-rnga RYB snkhyaaon ko KS praarup men RGB men privrtit krtaa hai.
-rnga RYB snkhyaaon ko YIQ men privrtit krtaa hai.
-rnga RYB snkhyaaon ko KS praarup men YIQ men privrtit krtaa hai.
-rnga RYB snkhyaaon ko YUV men privrtit krtaa hai.
-rnga RYB snkhyaaon ko KS praarup men YUV men privrtit krtaa hai.
-rnga echesel snkhyaaon ko heks men privrtit krtaa hai.
-rngain echesel nnbron ko siemvaaeeke men privrtit krtaa hai.
-rngain echesel nnbron ko kees praarup men siemvaaeeke men privrtit krtaa hai.
-rngain echesel nnbron ko siemvaaee men privrtit krtaa hai.
-rngain echesel nnbron ko kees praarup men siemvaaee men privrtit krtaa hai.
-rngain echesel nnbron ko echesvi men privrtit krtaa hai.
-rngain echesel nnbron ko kees praarup men echesvi men privrtit krtaa hai.
-rngain echesel nnbron ko aarjibi men privrtit krtaa hai.
-rngain echesel nnbron ko kees praarup men aarjibi men privrtit krtaa hai.
-rngain HSL nnbron ko RYB men privrtit krtaa hai.
-rngain echesel nnbron ko kees praarup men aarvaaeebi men privrtit krtaa hai.
-rngain HSL nnbron ko YIQ men privrtit krtaa hai.
-rngain HSL nnbron ko KS praarup men YIQ men privrtit krtaa hai.
-rnga HSL nnbron ko YUV men privrtit krtaa hai.
-rngain echesel nnbron ko kees praarup men vaaeeyuvi men privrtit krtaa hai.
-rngain echesvi snkhyaaon ko heks men privrtit krtaa hai.
-rngain echesvi snkhyaaon ko siemvaaeeke men privrtit krtaa hai.
-rngain echesvi snkhyaaon ko kees praarup men siemvaaeeke men privrtit krtaa hai.
-rngain echesvi snkhyaaon ko siemvaaee men privrtit krtaa hai.
-rngain echesvi snkhyaaon ko kees praarup men siemvaaee men privrtit krtaa hai.
-rngain echesvi nnbron ko echesel men privrtit krtaa hai.
-rngain echesvi nnbron ko kees praarup men echesel men privrtit krtaa hai.
-rngain echesvi nnbron ko aarjibi men privrtit krtaa hai.
-rngain echesvi snkhyaaon ko kees praarup men aarjibi men privrtit krtaa hai.
-rngain HSV snkhyaaon ko RYB men privrtit krtaa hai.
-rngain echesvi snkhyaaon ko kees praarup men aarvaaeebi men privrtit krtaa hai.
-rngain HSV snkhyaaon ko YIQ men privrtit krtaa hai.
-rngain HSV snkhyaaon ko KS praarup men YIQ men privrtit krtaa hai.
-rngain HSV snkhyaaon ko YUV men privrtit krtaa hai.
-rngain echesvi snkhyaaon ko kees praarup men vaaeeyuvi men privrtit krtaa hai.
-rnga CMYK snkhyaaon ko heks men privrtit krtaa hai.
-rngain CMYK snkhyaaon ko RGB men privrtit krtaa hai.
-rngain CMYK snkhyaaon ko KS praarup men RGB men privrtit krtaa hai.
-rngain CMYK snkhyaaon ko RYB men privrtit krtaa hai.
-rngain CMYK snkhyaaon ko KS praarup men RYB men privrtit krtaa hai.
-rngain CMYK nnbron ko HSL men privrtit krtaa hai.
-rngain siemvaaeeke nnbron ko kees praarup men echesel men privrtit krtaa hai.
-rngain CMYK nnbron ko HSV men privrtit krtaa hai.
-rngain siemvaaeeke nnbron ko kees praarup men echesvi men privrtit krtaa hai.
-rnga CMYK snkhyaaon ko CMY men privrtit krtaa hai.
-rngain siemvaaeeke snkhyaaon ko kees praarup men siemvaaee men privrtit krtaa hai.
-rngain CMYK snkhyaaon ko YIQ men privrtit krtaa hai.
-rngain CMYK snkhyaaon ko KS praarup men YIQ men privrtit krtaa hai.
-rnga CMYK snkhyaaon ko YUV men privrtit krtaa hai.
-rngain CMYK snkhyaaon ko KS praarup men YUV men privrtit krtaa hai.
-rngain CMY snkhyaaon ko heks men privrtit krtaa hai.
-rngain CMY snkhyaaon ko CMYK men privrtit krtaa hai.
-rngain siemvaaee snkhyaaon ko kees praarup men siemvaaeeke men privrtit krtaa hai.
-rngain CMY nnbron ko HSL men privrtit krtaa hai.
-rngain siemvaaee nnbron ko kees praarup men echesel men privrtit krtaa hai.
-rngain CMY nnbron ko HSV men privrtit krtaa hai.
-rngain siemvaaee snkhyaaon ko kees praarup men echesvi men privrtit krtaa hai.
-rngain CMY snkhyaaon ko RGB men privrtit krtaa hai.
-rngain siemvaaee snkhyaaon ko kees praarup men aarjibi men privrtit krtaa hai.
-rngain CMY snkhyaaon ko RYB men privrtit krtaa hai.
-rngain CMY snkhyaaon ko KS praarup men RYB men privrtit krtaa hai.
-rngain CMY snkhyaaon ko YIQ men privrtit krtaa hai.
-rngain CMY snkhyaaon ko KS praarup men YIQ men privrtit krtaa hai.
-rnga CMY snkhyaaon ko YUV men privrtit krtaa hai.
-rngain CMY snkhyaaon ko KS praarup men YUV men privrtit krtaa hai.
-rnga YIQ snkhyaaon ko heks men privrtit krtaa hai.
-rnga YIQ snkhyaaon ko CMYK men privrtit krtaa hai.
-rnga YIQ snkhyaaon ko KS praarup men CMYK men privrtit krtaa hai.
-rnga YIQ snkhyaaon ko CMY men privrtit krtaa hai.
-rnga YIQ snkhyaaon ko KS praarup men CMY men privrtit krtaa hai.
-rnga YIQ nnbron ko HSL men privrtit krtaa hai.
-rnga YIQ snkhyaaon ko KS praarup men HSL men privrtit krtaa hai.
-rnga YIQ snkhyaaon ko HSV men privrtit krtaa hai.
-rngain YIQ snkhyaaon ko KS praarup men HSV men privrtit krtaa hai.
-rnga YIQ snkhyaaon ko RGB men privrtit krtaa hai.
-rnga YIQ snkhyaaon ko KS praarup men RGB men privrtit krtaa hai.
-rnga YIQ snkhyaaon ko RYB men privrtit krtaa hai.
-rnga YIQ snkhyaaon ko KS praarup men RYB men privrtit krtaa hai.
-rnga YIQ snkhyaaon ko YUV men privrtit krtaa hai.
-rnga YIQ snkhyaaon ko KS praarup men YUV men privrtit krtaa hai.
-rnga YUV snkhyaaon ko heks men privrtit krtaa hai.
-rngain YUV nnbron ko CMYK men privrtit krtaa hai.
-rngain YUV nnbron ko KS praarup men CMYK men privrtit krtaa hai.
-rngain YUV nnbron ko CMY men privrtit krtaa hai.
-rngain YUV nnbron ko KS praarup men CMY men privrtit krtaa hai.
-rngain YUV nnbron ko HSL men privrtit krtaa hai.
-rngain YUV nnbron ko KS praarup men HSL men privrtit krtaa hai.
-rngain YUV nnbron ko HSV men privrtit krtaa hai.
-rngain YUV nnbron ko KS praarup men HSV men privrtit krtaa hai.
-rngain YUV nnbron ko RGB men privrtit krtaa hai.
-rngain YUV nnbron ko KS praarup men RGB men privrtit krtaa hai.
-rnga YUV snkhyaaon ko RYB men privrtit krtaa hai.
-rngain YUV snkhyaaon ko KS praarup men RYB men privrtit krtaa hai.
-rnga YUV snkhyaaon ko YUV men privrtit krtaa hai.
-rngain YUV nnbron ko KS praarup men YIQ men privrtit krtaa hai.
 aapke snprkon ko prbndhit krtaa hai
 sbhi threds ke lie baiktres praapt krtaa hai
 aapko ek chynit dok drishy ke baare men ek purn-skrin avlokn dikhaataa hai taaki aap ise ek suchnaa painl ke rup men upyoga kr sken
@@ -2635,7 +2454,6 @@ ki aap unhen apne mod men pnjikrit krkapne svyn ke skrinsevr bnaa skte hain?
 phlaa skrinsevr jisne mul aaeebiem pisi pr tin mint ki niskriytaa ke baad skrin ko khaali kr diyaa thaa, skrnsev, 1983 men jon sochaa dvaaraa bnaayaa gayaa thaa?
 kyaa kuchh teje gati vaale skrinsevr prkaash-snvednshil daure kaa kaarn bn skte hain?
 ki krnel jrnl kaa upyoga but aur shtdaaun loga ke rup men kiyaa jaataa hai?
-ki aap GRILO kaa upyoga krke naaitrosid men butlodr ko but krne kaa anukrn kr skte hain?
 kyaa aapke mod ab anuvaad yogay ho skte hain?
 kyaa aapke mod krnel aidaun aur any mod ke saath snchaar kr skte hain, kisi prkaar kaa snchaar bnaa skte hain aur intrauprebiliti praapt kr skte hain?
 ki aap rimot dibgar saur vaiklpik rup se chait srvr se knekt kr skte hain?
@@ -2663,8 +2481,6 @@ vividh epiaaeaapke mod ke lie upyogai kaary prdaan krte hain?
 krne yogay kaary prbndhk
 sbhi uplbdh ikaaiyon ko suchibddh krtaa hai
 yunit knvrtr ke tiyuaaee snskrn kaa upyoga kren
-yh "mok aip" "echdidi klinr 2.1" kaa anukrn krtaa hai, jo 24 nvnbr 2015 ko jaari kiyaa gayaa thaa. hm ise "echdidi anklinr 2015" khengae. yh mul rup se naaitrosid kees epiaaee kaa upyoga krke knsol pr sndesh prdrshit krne kalaavaa kuchh nhin kraaa. yh anukrn krne kaa pryaas kraaa ki yh sngarhit progaraam kaisaa dikhtaa hai. kripyaa ise bhut shaabdik rup se n len kyonki yh sirf aapkaa mnornjn krne ke lie bnaayaa gayaa ek chutkulaa kaarykrm hai. yh "autorikvri" rutin jaisi baahri suvidhaaon kaa anukrn bhi nhin krtaa hai. kripyaa dhyaan den ki hmaaraa iskaa sthaaniykrn krne kaa koee iraadaa nhin hai. praarnbh krne ke lie koee bhi kunji dbaaen.
-mjak kaarykrm, echdidi anklinr 2015 shuru krtaa hai.
 krnel ki 5vin vrsgaaanth kaa smrnotsv
 phli baar rilij
 is krnel ko phli baar 22 frvri, 2018 ko ek nyuntm simyuletr bnaane ke lie jaari kiyaa gayaa thaa jo vaastv men anukrn krtaa hai ki krnel kaa kor kaise kaam krtaa hai.
@@ -2680,7 +2496,6 @@ chunki neabhutpurv suvidhaaen jaari ho gaeen, islie hmne is krnel ko naam dene k
 kuchh bhi nhin nikaal skte.
 puraalekh likhne yogay nhin hai kyonki prkaar hai
 aarsi fail kaa pth nirdist krnaa sunishchit kren.
-sngait fail nirdist nhin hai.
 sngait fail '{0}' maujud nhin hai.
 baisbum siaaeaidaun men ganbhir truti.
 fail nhin milne ke kaarn dhvni nhin bjaaee jaa skti.
@@ -2705,7 +2520,6 @@ sngait fail ke lie pth drj kren
 fail "{0}" maujud nhin hai.
 sngait laaibreri nirdeshikaa ke lie ek pth drj kren
 sngait laaibreri nirdeshikaa nhin mili.
-{0} nhin khul sktaa: {1}
 {0} kholne ke lie baisbum lod ho rhaa hai...
 ab khel rhe hain
 gait fail kholne kaa pryaas kr rhaa hun
@@ -2719,13 +2533,10 @@ niyntrn ki tlaash kren
 avdhi niyntrn ki tlaash kren
 gaaane ki jaankaari
 ek sngait fail jodeen
-plelist men ek sngait nirdeshikaa jodeen
 pichhlaa gaaanaa
 agalaa gaaanaa
 vrtmaan gait htaaen
 sbhi gaaane htaaen
-chun-chun kr khojo
-tulykaark kholen
 ajnyaat
 shirsk
 elbm
@@ -2780,39 +2591,18 @@ lnbaa prptr
 kailendr prkaar
 chynit maah ke lie koeanusmaark nhin milaa
 chynit maah ke lie koee eevent nhin milaa
-siyaan rnga kaa str snkhyaatmk honaa chaahie.
-maijentaa rnga kaa str snkhyaatmk honaa chaahie.
-pile rnga kaa str snkhyaatmk honaa chaahie.
-kaali kunji kaa str snkhyaatmk honaa chaahie.
 siyaan str:
 maijentaa str:
 pilaa str:
-siemvaaee rnga anukrm:
 rnga:
 sntripti:
-echesel rnga anukrm:
 kimt:
-echesvi rnga anukrm:
 pilaa rnga str:
-aarvaaeebi rnga anukrm:
 lumaa:
 chrnbddh:
 chturbhuj:
-YIQ rnga anukrm:
 yu-kromaa:
 vi-kromaa:
-YUV rnga anukrm:
-kaali kunji:
-siemvaaeeke rnga anukrm:
-rnga kaa str snkhyaatmk honaa chaahie.
-sntripti str snkhyaatmk honaa chaahie.
-chmk yaa roshni kaa str snkhyaatmk honaa chaahie.
-maan str snkhyaatmk honaa chaahie.
-Y ghtk str snkhyaatmk honaa chaahie.
-I ghtk str snkhyaatmk honaa chaahie.
-Q ghtk str snkhyaatmk honaa chaahie.
-yu ghtk str snkhyaatmk honaa chaahie.
-V ghtk str snkhyaatmk honaa chaahie.
 fail '{0}' nhin mil paane ke kaarn ise nhin kholaa jaa sktaa.
 snprk sfltaapurvk aayaatit.
 fail '{0}' nhin kholi jaa skti kyonki kaard fail amaany hai.
@@ -2820,7 +2610,6 @@ snprk fail maujud nhin hai.
 snprk mile
 snprk fail amaany hai.
 Mard sintaiks khaali nhin ho sktaa.
-kuchh snprk jodee nhin jaa skte. {1} men se kevl {0} snprk jodee gae.
 yaa to prdaan ki gaee snprk fail men kisi snprk ke baare men jaankaari nhin hai yaa vh maany nhin hai.
 snprkon ko paars krne men vifl. adhik jaankaari ke lie truti vivrn dekhen.
 snprk suchkaank simaa se baahr hai. adhiktm suchkaank {0} hai jbki prdaan kiyaa gayaa suchkaank {1} hai.
@@ -2885,8 +2674,6 @@ aapkaunlaain rediyo kaa port nnbr amaany hai.
 puraa yuaarel
 vrtmaan shrotaa
 chrm shrotaa
-adhiktm shrotaa
-advitiy shrotaa
 strim
 skriy dhaaraaen
 aaeedi ke lie strim jaankaari
@@ -2989,8 +2776,6 @@ anusmaark jodene men vifl.
 anusmaark jodene ke lie pryaapt trk uplbdh nhin kraae gae.
 anusmaark htaane men vifl.
 anusmaark ko htaane ke lie pryaapt trk uplbdh nhin kraae gae.
-naaitrosid kees rilije vrsgaaanth\", sty, 2, 22, 2, 22, \"garaoriyn
-rmjan\", sch, 9, 1, 10, 1, \"hijri
 koeaayojn nhin hai.
 koeanusmaark nhin hai.
 koee snprk nhin hai. ydi aap snprk aayaat krnaa chaahte hain, to kripyaa skrin ke niche pribhaasit kistroks kaa upyoga krkaayaat viklpon kaa upyoga kren.
@@ -3025,8 +2810,6 @@ snprk shirsk
 koee snprk shirsk nhin
 snprk nots
 koee snprk not nhin
-dijitl ghdei
-krnel pr vaaps jaane ke lie koee bhi kunji dbaaen...
 apni epiaaee kunji drj kren:
 aap yaa to shhron ki unki aaeedi ke saath suchi ke lie niche die gae link se praamrsh le skte hain, yaa, is kmaand ko "-suchi" paas kr skte hain.
 kyaa aap vaakee {0} ko htaanaa chaahte hain?
@@ -3177,8 +2960,6 @@ shtdaaun yaa ribut pr bip kren
 krnel ko bnd krne pr bip sksm krtaa hai.
 shtdaaun yaa ribut pr deri
 krnel ko bnd krne pr vilnb sksm krtaa hai.
-srl rnga andhaapn sksm kren
-ydi aap chaahte hain ki rnga andhaapn kaa anukrn srl ho, to ise sksm kren. kripyaa dhyaan den ki is simuleshn pddhti men pryukt sutr stik nhin ho sktaa hai.
 knsol asli rnga kaa smrthn krtaa hai
 ydi aap aashvst hain ki knsol shi rnga kaa smrthn krtaa hai, yaa ydi aap apne trminl ko aise trminl men bdlnaa chaahte hain jo shi rnga kaa smrthn krtaa hai, to is maan ko bdlen.
 kodpej set kren
@@ -3209,8 +2990,6 @@ pristhbhumi uchchaarn rnga
 un visyon ke lie jo uchchaarn kaa smrthn krte hain, yh uchchaarn vaalaa baikgaaaund rnga hai.
 knsol rnga pailet kaa upyoga kren
 jb ise sty pr set kiyaa jaataa hai, to trminl dvaaraa pribhaasit rnga pailet kaa upyoga kiyaa jaataa hai.
-agarbhumi rnga ki anumti den
-jb ise sty pr set kiyaa jaataa hai, to vrtmaan agarbhumi rnga ko smmaanit kiyaa jaataa hai. anythaa, yh aapke trminl ke difeolt rngaon kaa upyoga krtaa hai.
 pristhbhumi rnga ki anumti den
 jb ise sty pr set kiyaa jaataa hai, to vrtmaan pristhbhumi rnga ko smmaanit kiyaa jaataa hai. anythaa, yh aapke trminl ke difeolt rngaon kaa upyoga krtaa hai.
 upyoktaa naam shail rnga
@@ -3324,14 +3103,6 @@ shaaytaa pr bhrosaa krte hue ekikrit kmaand dikhaaen
 shaaytaa kmaand men suchibddh krte smy ekikrit shel kmaand ki gainti dikhaaen
 shaaytaa pr nirbhr aidaun kmaand dikhaaen
 shaaytaa kmaand men suchibddh krte smy krnel aidaun kmaand ki gainti dikhaaen
-prgati pttiyon ke lie oopri baaen kone kaa vrn
-prgati pttiyon ke lie oopri daaen kone kaa vrn
-prgati pttiyon ke lie nichle baaen kone kaa vrn
-prgati pttiyon ke lie nichle daaen kone kaa vrn
-prgati pttiyon ke lie oopri ferem vrn
-prgati pttiyon ke lie nichlaa ferem vrn
-prgati pttiyon ke lie baayaan ferem vrn
-prgati pttiyon ke lie shi ferem vrn
 chyn men skrol baar sksm kren
 chyn skrin men skrol baar ko sksm krtaa hai
 preshaan n kren

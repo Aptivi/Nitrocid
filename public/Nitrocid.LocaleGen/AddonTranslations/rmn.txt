@@ -234,7 +234,6 @@ Descărcați Retry Times
 Înregistrați numele de utilizator FTP
 Înregistrați adresa IP FTP
 Returnează numai primul profil FTP
-Afișați ora/data în colțul din dreapta sus
 Modul de analiză a mărimii
 Marquee la pornire
 Timp lung și dată
@@ -303,7 +302,6 @@ Comanda de ajutor simplificată pentru toate shell-urile
 Dacă să înregistrați sau nu numele de utilizator FTP.
 Dacă să înregistrați sau nu adresa IP FTP.
 Alegeți primul profil numai când vă conectați.
-Ora și data vor fi afișate în colțul din dreapta sus al ecranului
 Dacă este activat, nucleul va analiza întregul folder pentru dimensiunea totală. În caz contrar, va analiza doar suprafața.
 Activează eyecandy la pornire
 Ora și data vor fi mai lungi, afișând numele întregii luni etc.
@@ -531,7 +529,6 @@ Câți pași de fade trebuie să faci?
 Deschide un shell RSS pentru a citi fluxurile
 Listează toate fluxurile
 Citește un flux într-un browser web
-Tip de feed RSS nevalid.
 Obține informații despre articol
 Numărul articolului nu poate fi mai mare decât articolele disponibile.
 Titlu:
@@ -1114,11 +1111,6 @@ Activați modul Alb-negru
 Face discoteca alb-negru. Vă va răni cu adevărat ochii dacă a fost prea rapid, așa că nu este recomandat dacă aveți o criză de imagini rapide.
 Încărcați culorile curente
 Valoarea curentă:
-Specificator de culoare hexadecimal nevalid.
-Specificator de culoare RGB nevalid.
-Specificator de culoare roșie nevalid.
-Specificator de culoare verde nevalid.
-Specificator de culoare albastră nevalid.
 Adaugă un nou octet la sfârșitul fișierului
 Adaugă noii octeți la sfârșitul fișierului
 Șterge fișierul binar
@@ -1172,17 +1164,9 @@ Cantitatea maximă de ani de vârstă de generat
 Pagina de manual fără titlu
 Istoricul intrărilor este activat
 Indiferent dacă istoricul intrărilor este activat sau nu. Dacă este activată, puteți accesa comenzile introduse recent folosind tastele săgeți sus sau jos.
-Convertește numerele RGB de culoare în hex.
-Convertește reprezentarea hexazecimală a culorii în numere RGB.
-Convertește reprezentarea hexazecimală a culorii în numere RGB în format KS.
 Nivel de culoare roșie:
 Nivel de culoare verde:
 Nivel de culoare albastru:
-Secvență de culori RGB:
-Nivelul de culoare roșie trebuie să fie numeric.
-Nivelul de culoare verde trebuie să fie numeric.
-Nivelul de culoare albastră trebuie să fie numeric.
-Reprezentare hexazecimală de culoare:
 Acum puteți opri computerul în siguranță.
 Simulați modul fără APM
 Dacă să simuleze o situație în care nu există APM disponibil. Dacă este activat, informează utilizatorul că acum este sigur să oprească computerul la oprire.
@@ -1236,11 +1220,8 @@ Rulați „license” pentru a vedea informațiile despre licență.
 Kernel-ul prima rulare
 Bun venit la Nitrocid Kernel! Vă mulțumim că l-ați încercat!
 Pentru a începe, apăsați ENTER.
-Selectați limba dvs
 Selectați limba dvs. În mod implicit, nucleul folosește limba engleză, dar puteți selecta orice altă limbă aici.
 Pe baza setărilor de limbă pe sistem, limba corespunzătoare este
-Scrieți codul de limbă enumerat mai jos:
-Apăsați tasta ENTER pentru a continua.
 Creați-vă primul utilizator
 Vă vom ajuta să vă creați propriul nume de utilizator. Selectați orice nume doriți. Acesta poate fi porecla sau numele scurt, atâta timp cât numele de utilizator nu conține spații și caractere speciale și nu există deja. Sunt înregistrate următoarele nume de utilizator:
 Introduceți numele de utilizator
@@ -1262,9 +1243,7 @@ Nitrocid KS a detectat o problemă și a fost oprit.
 Informațiile despre metadate necesare pentru a instala limba personalizată nu există.
 Informațiile despre metadate necesare pentru a dezinstala limba personalizată nu există.
 Este posibil ca scriptul de modificare să nu fie nul.
-Se încarcă modurile...
 Nu au fost detectate modificări.
-Se opresc modurile...
 Se oprește modul {0}...
 Modulul nu este puternic semnat. Poate conține cod nede încredere.
 Modul nu poate fi încărcat deoarece există o incompatibilitate între această versiune a nucleului și acest mod:
@@ -1287,13 +1266,6 @@ Următoarele fișiere nu sunt șterse:
 Sunteți sigur că ștergeți aceste fișiere?
 Nu se pot șterge fișierele diverse
 Nici un argument ajută la descriere
-Specificator de culoare RYB nevalid.
-Specificator de culoare CMY nevalid.
-Specificator de culoare CMYK nevalid.
-Specificator de culoare HSL nevalid.
-Specificator de culoare HSV nevalid.
-Specificator de culoare YIQ nevalid.
-Specificator de culoare YUV nevalid.
 Consola dvs. trebuie să accepte culori reale pentru a utiliza această temă.
 Ieși din previzualizare
 Terminat
@@ -1382,7 +1354,6 @@ Eșecul afirmației.
 Evenimentul {0} nu a fost găsit.
 Eveniment kernel declanșat:
 Furnizați o acțiune de eveniment validă
-Eroare de nucleu necunoscută.
 Aliasul specificat există deja. Asigurați-vă că selectați un alt alias.
 Sistemul de alias a întâlnit o operațiune nevalidă care încearcă să proceseze solicitarea dvs.
 Aliasul specificat nu a fost găsit.
@@ -1395,11 +1366,8 @@ A apărut o eroare generală a sistemului de fișiere FTP. Verificați pentru a 
 A apărut o eroare generală de rețea FTP. Verificați pentru a vă asigura că conexiunea dvs. la internet funcționează.
 A apărut o eroare generală de shell FTP.
 A apărut o eroare de gestionare a grupului.
-Eroare de nume de gazdă.
 A apărut o eroare generală de shell HTTP.
 Consola nebună a fost detectată. Nitrocid KS nu poate continua să ruleze, deoarece consola dumneavoastră este incompatibilă cu cerințele noastre.
-Flux RSS nevalid.
-Link RSS nevalid.
 Algoritm hash nevalid. Dacă utilizați un driver de sumă hash personalizat, verificați pentru a vă asigura că driverul este încărcat.
 Sumă hash nevalidă. Verificați pentru a vă asigura că ați copiat și lipit corect suma hash. Dacă utilizați un driver de sumă hash personalizat, verificați pentru a vă asigura că driverul este încărcat și că funcționează conform așteptărilor.
 Cale de kernel nevalidă.
@@ -1443,7 +1411,6 @@ A apărut o eroare generală de rețea. Dacă încercați să vă conectați la 
 A fost detectată o consolă neacceptată.
 A fost detectată o eroare de afirmație în nucleu! Acesta este cel mai probabil un bug în modulul kernel care ar trebui remediat din partea noastră.
 Rețeaua dvs. trebuie să fie online înainte de a putea efectua operațiuni legate de rețea. Conectați adaptorul de rețea și încercați din nou.
-Permisiune refuzată încercând să efectueze o operațiune.
 Utilizatorul nu există. Verificați pentru a vă asigura că ați scris utilizatorul corect.
 Driverul nu există. Verificați pentru a vă asigura că ați scris corect numele driverului și că driverul este înregistrat corect.
 Firul nu este încă gata. Este posibil ca codul utilizatorului să fi uitat să regenereze firul de execuție a nucleului după ce l-a oprit manual.
@@ -1542,11 +1509,9 @@ Urmările înapoi ale firului sunt goale. Fie aceste informații nu sunt disponi
 Urme de stivă pentru fir
 Analiza backtrace al firului a eșuat. Este posibil ca unele informații să nu fie complete.
 Informații despre versiune
-Fugi de GRILO?
 Generatorul de descărcare nu a reușit să arunce o eroare de kernel cauzată de
 Ne cerem scuze pentru neplăcerile tale, dar se pare că nucleul a avut probleme la pornire. Mesajul de eroare de mai jos ar putea ajuta:
 Pentru investigații suplimentare, activați modul de depanare pe nucleu și încercați să reproduceți problema. De asemenea, încercați să investigați cel mai recent fișier dump creat.
-Inițializarea suplimentului kernel
 Acest supliment nu este un supliment valid.
 Pornirea suplimentului kernel
 Am pornit suplimentul kernel
@@ -1581,12 +1546,10 @@ Suplimente - Prognoză
 Suplimente - Shell FTP
 Suplimente - Git Shell
 Suplimente - HTTP Shell
-Extra - Internet Radio Information
 Suplimente - Shell JSON
 Suplimente - Studio lingvistic
 Suplimente - Mail Shell
 Suplimente - MD5
-Suplimente - NameGen
 Suplimente - Note
 Suplimente - RSS Shell
 Suplimente - Shell SFTP
@@ -1599,7 +1562,6 @@ Suplimente - Cronometre
 Suplimente - Sfaturi pentru nuclee
 Suplimente - Lista de sarcini
 Suplimente - Convertor de unități
-Legacy - HDD Uncleaner 2015
 Nu există un astfel de supliment de tip „{0}”
 Unul sau mai multe dintre nucleele CPU nu au reușit să sondeze. Oricum se afișează informații...
 Unul sau mai multe dintre cipurile RAM nu au reușit să sondeze. Oricum se afișează informații...
@@ -1799,15 +1761,10 @@ Pentru a renunța pentru totdeauna, fie apăsați ENTER pe butonul „Confirmat�
 Bine
 Recunoscut
 Notă de dezvoltare
-Rulați Nitrocid KS într-un mediu neobișnuit. Vă rugăm să verificați dacă ați pornit nucleul fie direct, fie prin GRILO. Dacă sunteți sigur că ați pornit nucleul într-un mod obișnuit, s-ar putea să fie pentru că rulați o versiune neacceptată de Nitrocid KS.
 Vă rugăm să rețineți că rularea Nitrocid KS într-un mediu neobișnuit înseamnă că unele funcții sunt limitate. Nu veți putea încărca modificări și configurații.
 Notă de mediu neobișnuit
 că puteți obține sfaturi suplimentare de la suplimentul kernel livrat cu versiunea completă a Nitrocid?
 Sfat profesionist: Știați că
-BASE64 nu acceptă chei
-BASE64 nu acceptă vectori de inițializare
-RSA nu acceptă chei
-RSA nu acceptă vectori de inițializare
 Legături de taste
 Introduce
 Elimina
@@ -1943,7 +1900,6 @@ Comutatoarele de mai jos nu acceptă valori.
 Unul sau mai multe dintre argumente așteaptă o valoare numerică, dar ați furnizat un număr nevalid.
 Unul sau mai multe dintre argumente așteaptă o formulare exactă, dar ați furnizat un cuvânt nevalid.
 Unul sau mai multe dintre comutatoare așteaptă o valoare numerică, dar ați furnizat un număr nevalid.
-Consultați această comandă pentru mai multe informații
 Comanda a fost anulată.
 Nu trebuie să executați direct această comandă într-un mod înfășurat.
 A apărut o eroare la încercarea de a împacheta o ieșire de comandă
@@ -2234,7 +2190,6 @@ Testează stilul de selecție a intrării
 Testează scriitorul intrării listei
 liniuța 1:
 liniuța 2:
-Testează sistemul de prezentare
 Testează handlerul de progres
 Se inițializează...
 Scrieți un șir pentru a verifica:
@@ -2251,7 +2206,6 @@ Condiția trebuie pusă până la urmă.
 Nu se poate înregistra o condiție care există deja.
 Nu se poate înregistra o condiție goală.
 Nu se poate anula înregistrarea unei afecțiuni care nu există.
-Nu poți ieși din carcasa mamei. Ați vrut să vă deconectați din cont, să închideți nucleul sau să-l reporniți?
 Nu s-au găsit comenzi.
 Număr nevalid de ori.
 Nu se poate repeta.
@@ -2376,7 +2330,6 @@ Nu se poate face o legătură simbolică.
 Setările kernelului
 Versiunea Kernel:
 Modul de depanare:
-Fugând de la GRILO:
 Rulează în mediul obișnuit:
 Modul sigur:
 Setări hardware
@@ -2402,7 +2355,6 @@ Număr nevalid de coloane.
 Închide
 Repornire
 Log in
-Ce vreţi să faceţi?
 Selectați un cont de utilizator cu care doriți să vă conectați.
 Introduceți parola pentru utilizator
 Parolă greșită pentru utilizator.
@@ -2432,139 +2384,6 @@ Afișați informații despre formula numărului imaginar specificat de un număr
 Manager de calendar, evenimente și mementouri
 Tip de calendar la care să lucrezi
 Utilizați vizualizatorul de calendar bazat pe tabel
-Convertește reprezentarea hexazecimală a culorii în numere RYB.
-Convertește reprezentarea hexazecimală a culorii în numere RYB în format KS.
-Convertește reprezentarea hexazecimală a culorii în numere CMYK.
-Convertește reprezentarea hexazecimală a culorii în numere CMYK în format KS.
-Convertește reprezentarea hexazecimală a culorii în numere CMY.
-Convertește reprezentarea hexazecimală a culorii în numere CMY în format KS.
-Convertește reprezentarea hexazecimală a culorii în numere HSL.
-Convertește reprezentarea hexazecimală a culorii în numere HSL în format KS.
-Convertește reprezentarea hexazecimală a culorii în numere HSV.
-Convertește reprezentarea hexazecimală a culorii în numere HSV în format KS.
-Convertește reprezentarea hexazecimală a culorii în numere YIQ.
-Convertește reprezentarea hexazecimală a culorii în numere YIQ în format KS.
-Convertește reprezentarea hexazecimală a culorii în numere YUV.
-Convertește reprezentarea hexazecimală a culorii în numere YUV în format KS.
-Convertește numerele RGB de culoare în CMYK.
-Convertește numerele RGB de culoare în CMYK în format KS.
-Convertește numerele RGB de culoare în CMY.
-Convertește numerele RGB de culoare în CMY în format KS.
-Convertește numerele RGB de culoare în HSL.
-Convertește numerele RGB color în HSL în format KS.
-Convertește numerele RGB de culoare în HSV.
-Convertește numerele RGB de culoare în HSV în format KS.
-Convertește numerele RGB de culoare în RYB.
-Convertește numerele RGB de culoare în RYB în format KS.
-Convertește numerele RGB de culoare în YIQ.
-Convertește numerele RGB de culoare în YIQ în format KS.
-Convertește numerele RGB de culoare în YUV.
-Convertește numerele RGB de culoare în YUV în format KS.
-Convertește numerele de culoare RYB în hex.
-Convertește numerele de culoare RYB în CMYK.
-Convertește numerele de culoare RYB în CMYK în format KS.
-Convertește numerele de culoare RYB în CMY.
-Convertește numerele de culoare RYB în CMY în format KS.
-Convertește numerele de culoare RYB în HSL.
-Convertește numerele de culoare RYB în HSL în format KS.
-Convertește numerele de culoare RYB în HSV.
-Convertește numerele de culoare RYB în HSV în format KS.
-Convertește numerele de culoare RYB în RGB.
-Convertește numerele de culoare RYB în RGB în format KS.
-Convertește numerele de culoare RYB în YIQ.
-Convertește numerele de culoare RYB în YIQ în format KS.
-Convertește numerele de culoare RYB în YUV.
-Convertește numerele de culoare RYB în YUV în format KS.
-Convertește numerele HSL de culoare în hex.
-Convertește numerele HSL de culoare în CMYK.
-Convertește numerele de culoare HSL în CMYK în format KS.
-Convertește numerele HSL de culoare în CMY.
-Convertește numerele de culoare HSL în CMY în format KS.
-Convertește numerele de culoare HSL în HSV.
-Convertește numerele de culoare HSL în HSV în format KS.
-Convertește numerele HSL de culoare în RGB.
-Convertește numerele HSL de culoare în RGB în format KS.
-Convertește numerele HSL de culoare în RYB.
-Convertește numerele HSL de culoare în RYB în format KS.
-Convertește numerele HSL de culoare în YIQ.
-Convertește numerele HSL de culoare în YIQ în format KS.
-Convertește numerele HSL de culoare în YUV.
-Convertește numerele HSL de culoare în YUV în format KS.
-Convertește numerele HSV de culoare în hex.
-Convertește numerele HSV de culoare în CMYK.
-Convertește numerele de culoare HSV în CMYK în format KS.
-Convertește numerele de culoare HSV în CMY.
-Convertește numerele de culoare HSV în CMY în format KS.
-Convertește numerele de culoare HSV în HSL.
-Convertește numerele de culoare HSV în HSL în format KS.
-Convertește numerele de culoare HSV în RGB.
-Convertește numerele de culoare HSV în RGB în format KS.
-Convertește numerele HSV de culoare în RYB.
-Convertește numerele de culoare HSV în RYB în format KS.
-Convertește numerele HSV de culoare în YIQ.
-Convertește numerele de culoare HSV în YIQ în format KS.
-Convertește numerele HSV de culoare în YUV.
-Convertește numerele de culoare HSV în YUV în format KS.
-Convertește numerele de culoare CMYK în hex.
-Convertește numerele de culoare CMYK în RGB.
-Convertește numerele de culoare CMYK în RGB în format KS.
-Convertește numerele de culoare CMYK în RYB.
-Convertește numerele de culoare CMYK în RYB în format KS.
-Convertește numerele de culoare CMYK în HSL.
-Convertește numerele de culoare CMYK în HSL în format KS.
-Convertește numerele de culoare CMYK în HSV.
-Convertește numerele de culoare CMYK în HSV în format KS.
-Convertește numerele de culoare CMYK în CMY.
-Convertește numerele de culoare CMYK în CMY în format KS.
-Convertește numerele de culoare CMYK în YIQ.
-Convertește numerele de culoare CMYK în YIQ în format KS.
-Convertește numerele de culoare CMYK în YUV.
-Convertește numerele de culoare CMYK în YUV în format KS.
-Convertește numerele de culoare CMY în hex.
-Convertește numerele de culoare CMY în CMYK.
-Convertește numerele de culoare CMY în CMYK în format KS.
-Convertește numerele de culoare CMY în HSL.
-Convertește numerele de culoare CMY în HSL în format KS.
-Convertește numerele de culoare CMY în HSV.
-Convertește numerele de culoare CMY în HSV în format KS.
-Convertește numerele de culoare CMY în RGB.
-Convertește numerele de culoare CMY în RGB în format KS.
-Convertește numerele de culoare CMY în RYB.
-Convertește numerele de culoare CMY în RYB în format KS.
-Convertește numerele de culoare CMY în YIQ.
-Convertește numerele de culoare CMY în YIQ în format KS.
-Convertește numerele de culoare CMY în YUV.
-Convertește numerele de culoare CMY în YUV în format KS.
-Convertește numerele de culoare YIQ în hex.
-Convertește numerele de culoare YIQ în CMYK.
-Convertește numerele de culoare YIQ în CMYK în format KS.
-Convertește numerele de culoare YIQ în CMY.
-Convertește numerele de culoare YIQ în CMY în format KS.
-Convertește numerele de culoare YIQ în HSL.
-Convertește numerele color YIQ în HSL în format KS.
-Convertește numerele de culoare YIQ în HSV.
-Convertește numerele color YIQ în HSV în format KS.
-Convertește numerele de culoare YIQ în RGB.
-Convertește numerele color YIQ în RGB în format KS.
-Convertește numerele de culoare YIQ în RYB.
-Convertește numerele color YIQ în RYB în format KS.
-Convertește numerele de culoare YIQ în YUV.
-Convertește numerele de culoare YIQ în YUV în format KS.
-Convertește numerele YUV de culoare în hex.
-Convertește numerele YUV de culoare în CMYK.
-Convertește numerele color YUV în CMYK în format KS.
-Convertește numerele YUV de culoare în CMY.
-Convertește numerele color YUV în CMY în format KS.
-Convertește numerele color YUV în HSL.
-Convertește numerele color YUV în HSL în format KS.
-Convertește numerele de culoare YUV în HSV.
-Convertește numerele color YUV în HSV în format KS.
-Convertește numerele YUV de culoare în RGB.
-Convertește numerele color YUV în RGB în format KS.
-Convertește numerele YUV de culoare în RYB.
-Convertește numerele color YUV în RYB în format KS.
-Convertește numerele de culoare YUV în YUV.
-Convertește numerele color YUV în YIQ în format KS.
 Gestionează contactele dvs
 Obține backtrace pentru toate firele
 Vă arată o prezentare generală pe ecran complet despre o vizualizare de andocare selectată pentru a o putea folosi ca panou de informații
@@ -2635,7 +2454,6 @@ că vă puteți construi propriile screensavere înregistrându-le în mod?
 că primul screensaver care a golit ecranul după trei minute de inactivitate pe PC-urile IBM originale, scrnsave, a fost creat în 1983 de John Socha?
 că unele dintre screensaverele cu ritm rapid pot provoca convulsii fotosensibile?
 că jurnalele nucleului sunt folosite ca jurnale de pornire și oprire?
-că puteți simula un bootloader care pornește la Nitrocid folosind GRILO?
 că modurile tale pot deveni acum traducibile?
 că modurile dvs. pot comunica cu suplimentele nucleului și alte moduri, creând un fel de comunicare și realizând interoperabilitate?
 că vă puteți conecta la depanatorul de la distanță și, opțional, la serverul de chat?
@@ -2663,8 +2481,6 @@ că diversele API-uri oferă funcții utile pentru modurile dvs.?
 Manager de sarcini de făcut
 Listează toate unitățile disponibile
 Utilizați versiunea TUI a convertorului de unități
-Această „aplicație simulată” bate joc de „HDD Cleaner 2.1”, care a fost lansat pe 24 noiembrie 2015. Îl vom numi „HDD Uncleaner 2015”. Practic, nu va face nimic decât să afișeze mesaje pe consolă folosind API-ul Nitrocid KS. Va încerca să simuleze modul în care arată acest program arhivat. Vă rugăm să nu luați asta prea la propriu, deoarece este doar un program de glumă menit să vă amuze. De asemenea, nu simulează funcții străine, cum ar fi rutina „AutoRecovery”. Vă rugăm să rețineți că nu intenționăm să localizăm acest lucru. Apăsați orice tastă pentru a începe.
-Pornește programul de glumă, HDD Uncleaner 2015.
 Comemorarea a 5 ani de la kernel
 Prima lansare
 Acest nucleu a fost lansat pentru prima dată pe 22 februarie 2018 pentru a realiza un simulator minimalist care simulează de fapt modul în care funcționează nucleul nucleului.
@@ -2680,7 +2496,6 @@ La mulți ani de 5 ani!
 Nu pot extrage nimic.
 Arhiva nu poate fi scrisă deoarece tipul este
 Asigurați-vă că specificați calea către un fișier LRC.
-Fișierul muzical nu este specificat.
 Fișierul muzical „{0}” nu există.
 Eroare fatală în suplimentul CLI BassBoom.
 Nu se poate reda sunetul deoarece fișierul nu a fost găsit.
@@ -2705,7 +2520,6 @@ Introduceți o cale către fișierul muzical
 Fișierul „{0}” nu există.
 Introduceți o cale către directorul bibliotecii muzicale
 Directorul bibliotecii muzicale nu a fost găsit.
-Nu se poate deschide {0}: {1}
 Se încarcă BassBoom pentru a deschide {0}...
 Acum joacă
 Încerc să deschid fișierul versuri
@@ -2719,13 +2533,10 @@ Căutați controlul
 Căutați controlul duratei
 Informații despre melodie
 Adăugați un fișier muzical
-Adăugați un director muzical la lista de redare
 Melodia anterioară
 Următorul cântec
 Eliminați melodia curentă
 Eliminați toate melodiile
-Căutați selectiv
-Deschideți egalizatorul
 Necunoscut
 Titlu
 Album
@@ -2780,39 +2591,18 @@ Forma lungă
 Tip calendar
 Nu s-au găsit mementouri pentru luna selectată
 Nu s-au găsit evenimente pentru luna selectată
-Nivelul culorii cyan trebuie să fie numeric.
-Nivelul de culoare magenta trebuie să fie numeric.
-Nivelul de culoare galbenă trebuie să fie numeric.
-Nivelul tastei negre trebuie să fie numeric.
 Nivel de cyan:
 Nivel magenta:
 Nivel galben:
-Secvența de culori CMY:
 Nuanţă:
 Saturare:
-Secvență de culori HSL:
 Valoare:
-Secvența de culori HSV:
 Nivel de culoare galbenă:
-Secvența de culori RYB:
 Luma:
 În fază:
 cuadratura:
-Secvența de culori YIQ:
 U-Chroma:
 V-Chroma:
-Secvența de culori YUV:
-Tasta neagra:
-Secvență de culori CMYK:
-Nivelul de nuanță trebuie să fie numeric.
-Nivelul de saturație trebuie să fie numeric.
-Luminanța sau nivelul de iluminare trebuie să fie numeric.
-Nivelul valorii trebuie să fie numeric.
-Nivelul componentei Y trebuie să fie numeric.
-Nivelul componentei I trebuie să fie numeric.
-Nivelul componentei Q trebuie să fie numeric.
-Nivelul componentei U trebuie să fie numeric.
-Nivelul componentei V trebuie să fie numeric.
 Nu se poate deschide fișierul „{0}” deoarece nu a fost găsit.
 Contacte importate cu succes.
 Nu se poate deschide fișierul „{0}” deoarece fișierul cardului este nevalid.
@@ -2820,7 +2610,6 @@ Fișierul de contact nu există.
 contacte găsite
 Fișierul de contact este nevalid.
 Sintaxa MeCard nu poate fi goală.
-Unele dintre contacte nu pot fi adăugate. Doar {0} din {1} persoane de contact au fost adăugate.
 Fie că fișierul de contacte furnizat nu conține informații despre niciun contact sau nu este valid.
 Nu s-a putut analiza contactele. Consultați detaliile erorii pentru mai multe informații.
 Indexul de contact este în afara intervalului. Indexul maxim este {0}, în timp ce indexul furnizat este {1}.
@@ -2885,8 +2674,6 @@ Numărul portului pentru radioul dvs. online este nevalid.
 Adresa URL completă
 Ascultătorii actuali
 Ascultători de vârf
-Max ascultători
-Ascultători unici
 Fluxuri
 Fluxuri active
 Transmite informații pentru ID
@@ -2989,8 +2776,6 @@ Nu s-a putut adăuga un memento.
 Nu au fost furnizate suficiente argumente pentru a adăuga un memento.
 Nu s-a putut elimina un memento.
 Nu sunt furnizate suficiente argumente pentru a elimina un memento.
-Nitrocid KS Release Anniversary\", adevărat, 2, 22, 2, 22, \"Gregorian
-Ramadan\", adevărat, 9, 1, 10, 1, \"Hijri
 Nu există niciun eveniment.
 Nu există nicio memento.
 Nu există niciun contact. Dacă doriți să importați contacte, vă rugăm să utilizați opțiunile de import folosind tastele definite în partea de jos a ecranului.
@@ -3025,8 +2810,6 @@ Titlu de contact
 Fără titlu de contact
 Note de contact
 Fără note de contact
-Ceas digital
-Apăsați orice tastă pentru a reveni la nucleu...
 Introduceți cheia dvs. API:
 Puteți fie să consultați linkul de mai jos pentru lista orașelor cu ID-urile lor, fie să transmiteți „-list” la această comandă.
 Sigur doriți să ștergeți {0}?
@@ -3177,8 +2960,6 @@ Bip la oprire sau repornire
 Permite semnalul sonor la închiderea nucleului.
 Întârziere la oprire sau repornire
 Permite întârzierea la închiderea nucleului.
-Activați daltonismul simplu
-Dacă doriți ca simularea daltonismului să fie simplă, activați aceasta. Vă rugăm să rețineți că formula utilizată în această metodă de simulare poate să nu fie exactă.
 Consola acceptă culoarea adevărată
 Dacă sunteți sigur că consola acceptă culoarea adevărată sau dacă doriți să schimbați terminalul cu un terminal care acceptă culoarea adevărată, modificați această valoare.
 Setați pagina de coduri
@@ -3209,8 +2990,6 @@ Culoare de accent de fundal
 Pentru temele care acceptă accente, aceasta este culoarea de fundal accentuată.
 Utilizați paleta de culori a consolei
 Când aceasta este setată la adevărat, se utilizează paleta de culori definită de terminal.
-Permite culoarea primului plan
-Când aceasta este setată la adevărat, culoarea curentă a prim-planului este respectată. În caz contrar, folosește culorile implicite ale terminalului.
 Permite culoarea de fundal
 Când este setat la adevărat, culoarea actuală de fundal este onorata. În caz contrar, folosește culorile implicite ale terminalului.
 Nume utilizator Culoare Shell
@@ -3324,14 +3103,6 @@ Afișați că comenzile unificate contează pe ajutor
 Afișați numărul de comenzi shell unificate atunci când le enumerați în comanda de ajutor
 Afișați comenzile de supliment care se bazează pe ajutor
 Afișați numărul de comenzi de supliment de kernel atunci când le enumerați în comanda de ajutor
-Caracter din colțul din stânga sus pentru barele de progres
-Caracter din colțul din dreapta sus pentru barele de progres
-Caracter din colțul din stânga jos pentru barele de progres
-Caracter din colțul din dreapta jos pentru barele de progres
-Caracter de cadru superior pentru barele de progres
-Caracter de cadru inferior pentru barele de progres
-Caracter de cadru din stânga pentru barele de progres
-Caracter cadru drept pentru barele de progres
 Activați bara de defilare în selecție
 Activează bara de defilare în ecranele de selecție
 Nu deranjați
