@@ -19,6 +19,7 @@
 
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Files.Paths;
+using Nitrocid.Kernel;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Configuration.Settings;
 using Nitrocid.Kernel.Debugging;
@@ -89,6 +90,7 @@ namespace Nitrocid.Shell.Homepage
                 new("2", Translate.DoTranslation("Alarm Manager")),
                 new("3", Translate.DoTranslation("Notifications")),
                 new("4", Translate.DoTranslation("Task Manager")),
+                new("5", Translate.DoTranslation("About Nitrocid")),
             ];
 
             try
@@ -297,6 +299,16 @@ namespace Nitrocid.Shell.Homepage
                                                 var tui = new TaskManagerCli();
                                                 InteractiveTuiTools.OpenInteractiveTui(tui);
                                             }
+                                            break;
+                                        case 4:
+                                            InfoBoxButtonsColor.WriteInfoBoxButtons(
+                                                Translate.DoTranslation("About Nitrocid"),
+                                                [new InputChoiceInfo(Translate.DoTranslation("Close"), Translate.DoTranslation("Close"))],
+                                                Translate.DoTranslation("Nitrocid KS simulates our future kernel, the Nitrocid Kernel.") + "\n\n" +
+                                                Translate.DoTranslation("Version") + $": {KernelMain.VersionFullStr}" + "\n" +
+                                                Translate.DoTranslation("Mod API") + $": {KernelMain.ApiVersion}" + "\n\n" +
+                                                Translate.DoTranslation("Copyright (C) 2018-2024 Aptivi - All rights reserved") + " - https://aptivi.github.io"
+                                            );
                                             break;
                                     }
                                 }
