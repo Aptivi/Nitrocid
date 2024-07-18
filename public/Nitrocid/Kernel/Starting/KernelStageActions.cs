@@ -35,6 +35,14 @@ using Nitrocid.Kernel.Starting.Bootloader;
 using Nitrocid.Kernel.Starting.Environment;
 using Nitrocid.Kernel.Power;
 
+#if SPECIFIERREL
+using Nitrocid.Files.Paths;
+using Nitrocid.Files.Operations.Querying;
+using Nitrocid.Files.Operations;
+using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs;
+#endif
+
 namespace Nitrocid.Kernel.Starting
 {
     internal static class KernelStageActions

@@ -27,6 +27,7 @@ using Nitrocid.Languages;
 
 #if SPECIFIERREL
 using Nitrocid.Files.Paths;
+using Nitrocid.Kernel.Configuration;
 using System.IO;
 #endif
 

@@ -56,11 +56,11 @@ namespace Nitrocid.Kernel.Debugging
             [.. debugStackTraces];
 
         /// <summary>
-        /// Outputs the text into the debugger file, and sets the time stamp. Censors all secure arguments if <see cref="Config.MainConfig.DebugCensorPrivateInfo"/> is on.
+        /// Outputs the text into the debugger file, and sets the time stamp. Censors all secure arguments if <see cref="Config.MainConfig"/>.DebugCensorPrivateInfo is on.
         /// </summary>
         /// <param name="Level">Debug level</param>
         /// <param name="text">A sentence that will be written to the the debugger file. Supports {0}, {1}, ...</param>
-        /// <param name="SecureVarIndexes">Secure variable indexes to modify <paramref name="vars"/> to censor them when <see cref="Config.MainConfig.DebugCensorPrivateInfo"/> is on</param>
+        /// <param name="SecureVarIndexes">Secure variable indexes to modify <paramref name="vars"/> to censor them when <see cref="Config.MainConfig"/>.DebugCensorPrivateInfo is on</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteDebugPrivacy(DebugLevel Level, string text, int[] SecureVarIndexes, params object[] vars)
         {
