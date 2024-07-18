@@ -3302,3 +3302,368 @@ Welchen Eingabetreiber möchten Sie verwenden?
 Alte Konfiguration migrieren
 Migriert einen Teil Ihrer alten Konfiguration von älteren Versionen des Kernels
 Die Konfigurationsmigration wurde möglicherweise nicht erfolgreich abgeschlossen. Wenn Sie sicher sind, dass Ihre Konfigurationsdateien gültig sind, untersuchen Sie die Debug-Protokolle auf weitere Informationen.
+Wähle deine Sprache.
+Geben Sie Ihren neuen Benutzernamen ein. Sie sollten einen neuen Benutzernamen eingeben, der noch nicht existiert.
+Geben Sie Ihr Benutzerkennwort ein. Zur Erhöhung der Sicherheit sollten Sie ein sicheres Kennwort wählen.
+Automatischer Update-Check
+Ja, das tue ich!
+Nein danke.
+Automatischer Update-Download
+Das Starten oder Stoppen von Mods ist im abgesicherten Modus nicht zulässig.
+Es ist ein unbekannter Kernelfehler aufgetreten, möglicherweise weil der Kernel-Ausnahmetyp nicht angegeben wurde oder etwas nicht stimmte.
+Das Kernel-Netzwerk hat einen Fehler für die Hostnamenkomponente gemeldet.
+Ungültiger RSS-Feed. Stellen Sie sicher, dass Sie den Feed richtig referenziert haben und versuchen Sie es erneut.
+Ungültiger RSS-Feed-Link. Stellen Sie sicher, dass Sie den Link richtig eingegeben haben, und versuchen Sie es erneut.
+Ungültiger RSS-Feed-Typ. Stellen Sie sicher, dass Sie den Feed-Typ richtig eingegeben haben, und versuchen Sie es erneut.
+Beim Versuch, einen Vorgang auszuführen, wurde die Berechtigung verweigert. Sie müssen sich als Benutzer mit den erforderlichen Berechtigungen anmelden, um diesen Vorgang ausführen zu können.
+Beim Versuch, einen Vorgang für das Umgebungsmanagement durchzuführen, ist ein Fehler aufgetreten.
+Beim Versuch, einen Bootloadervorgang auszuführen, ist ein Fehler aufgetreten.
+Beim Versuch, einen Alarmsystemvorgang abzuwickeln, ist ein Fehler aufgetreten.
+Beim Versuch, einen Systemvorgang des Widgets zu verarbeiten, ist ein Fehler aufgetreten. Wenn Sie sicher sind, dass dieses Widget ordnungsgemäß registriert ist, stellen Sie bitte sicher, dass Sie den Widget-Klassennamen richtig geschrieben haben.
+Weitere Fehler wurden während der Operation nicht gefunden.
+Überprüfen, ob mehrere Umgebungen installiert sind
+Mehrere Umgebungen
+Die Indexnummer des untergeordneten Threads ist ungültig.
+Alarmname
+Alarmbeschreibung
+Alarm-Fälligkeitsdatum
+Schreiben Sie den Alarmnamen
+Der Alarmname ist nicht angegeben.
+Schreiben Sie das Alarmintervall in diesem Format
+Das Alarmintervall ist entweder nicht angegeben oder ungültig.
+Dateityp
+Wichtigkeit der Benachrichtigung
+Fortschritt in Prozent
+Fortschritt abgeschlossen
+Der Fortschritt ist unbestimmt
+Fortschrittsstatus
+Benachrichtigungstitel
+Der Reporter hat keine Informationen bereitgestellt!
+Ausführen
+Ausloggen
+Hülse
+Schalten
+Dateimanager
+Alarmmanager
+Benachrichtigungen
+Taskmanager
+Über Nitrocid
+Hallo, {0}! Willkommen bei Nitrocid!
+Aktivieren Sie beim Anmelden Überschriften, um RSS-Feeds anzuzeigen
+Einstellungen
+Schließen
+Nitrocid KS simuliert unseren zukünftigen Kernel, den Nitrocid-Kernel.
+Mod-API
+Die Nitrocid-Homepage ist abgestürzt und muss zur Shell zurückkehren.
+Unbekannte Bildschirmnummer.
+Der Anmeldebildschirm konnte nicht gerendert werden.
+Untersuchen Sie die Debug-Protokolle, um weitere Informationen zum Fehler zu erhalten.
+Um es endgültig zu verwerfen, drücken Sie entweder die Eingabetaste auf Ihrer Tastatur oder aktivieren Sie „Entwicklungshinweis bestätigt“ in den Kerneleinstellungen. Jede andere Taste funktioniert ohne Bestätigung.
+Sie führen Nitrocid KS in einer ungewöhnlichen Umgebung aus. Bitte überprüfen Sie, ob Sie den Kernel direkt gestartet haben. Wenn Sie sicher sind, dass Sie den Kernel auf die übliche Weise gestartet haben, liegt dies möglicherweise daran, dass Sie eine nicht unterstützte Version von Nitrocid KS ausführen.
+Extras - Namensgenerator
+Extras - Pastebin
+Extras - Bilder
+Extras - Erweitertes SHA256
+Extras - Erweitertes SHA384
+Extras - Erweitertes SHA512
+Extras - Vorräte
+Extras - Beep Synth
+Extras - SSH
+Bei GRILO ist ein interner Fehler aufgetreten
+Zum Verlassen eine beliebige Taste drücken.
+Standardsteuerungen
+Bedienelemente durch benutzerdefinierten Boot-Stil definiert
+Keine durch benutzerdefinierten Boot-Stil definierten Steuerelemente
+Wählt den vorherigen Booteintrag aus
+Wählt den nächsten Booteintrag aus
+Wählt den ersten Booteintrag aus
+Wählt den letzten Booteintrag aus
+Öffnet diese Hilfeseite
+Bootet den ausgewählten Eintrag
+Umgebung ist nicht angegeben
+Datum und Uhrzeit des Alarms dürfen nicht in der Vergangenheit liegen.
+Weitere Informationen finden Sie im Hilfeeintrag zu diesem Befehl.
+Dieser Befehl hat die folgenden Argumente, die seine Funktionsweise ändern:
+Nicht angegebene Argumentbeschreibung
+Listet alle verfügbaren Funktionsparameter einer Funktion auf
+Verwalten Sie Ihre Alarme
+Verwalten Sie Ihre Alarme in einer interaktiven TUI
+Startet eine Remote-Kernel-Instanz neu
+Der Kernel in der Remote-Instanz wird heruntergefahren
+Verwendet den alten Einstellungsstil
+Zeigt alle empfangenen Benachrichtigungen in einer interaktiven TUI
+Widget wird nicht bereitgestellt.
+Widget existiert bereits.
+Es wurde kein Widgetname angegeben.
+Widget existiert nicht.
+Widget kann nicht entfernt werden.
+Widget ist kein integriertes Widget.
+Der Name der Boot-App wurde nicht angegeben.
+Die Start-App-Umgebung ist nicht angegeben
+Boot-App ist bereits vorhanden
+Boot-App existiert nicht
+Booteintrag auswählen
+UMSCHALT + H für Hilfe. Version
+{0} wird gebootet...
+Liste der Funktionsparameter für
+Alarm existiert bereits.
+Das Alarmintervall ist ungültig.
+Alarmname und Intervall sind nicht angegeben.
+Alarm existiert nicht.
+Alarmname:
+Alarmbeschreibung:
+Alarm-Fälligkeitsdatum:
+Die Frequenz ist ungültig. Stellen Sie sicher, dass Sie die Frequenz in Hertz korrekt angegeben haben.
+Die Dauer ist ungültig. Stellen Sie sicher, dass Sie die Dauer in Millisekunden korrekt angegeben haben.
+Als Zeichenfolge kodiert
+Sie befinden sich nun im Power-Action-Menü. Bitte treffen Sie eine Auswahl mit den Pfeiltasten links und rechts und drücken Sie die EINGABETASTE oder drücken Sie ESC, um zum Hauptbildschirm zurückzukehren.
+Windows Boot Manager
+ENTER=Auswählen
+Wählen Sie zum Starten ein Betriebssystem aus oder drücken Sie die TAB-Taste, um ein Tool auszuwählen:
+Um eine erweiterte Option für diese Auswahl anzugeben, drücken Sie F8.
+Sekunden, bis die markierte Auswahl automatisch gestartet wird:
+GNU GRUB Version 2.06
+Verwenden Sie die Tasten ↑ und ↓, um auszuwählen, welcher Eintrag hervorgehoben wird.
+Drücken Sie die Eingabetaste, um das ausgewählte Betriebssystem zu starten, und „e“, um die Befehle zu bearbeiten.
+vor dem Booten oder „c“ für eine Befehlszeile.
+Der markierte Eintrag wird in {0}s automatisch ausgeführt.
+Drücken Sie die Eingabetaste, um das ausgewählte Betriebssystem zu starten,
+Befehle vor dem Booten oder „c“ für eine Befehlszeile.
+Booten von „{0}“
+Der Dateisystemtyp ist
+Partitionstyp
+Drücken Sie eine beliebige Taste, um das Timeout abzubrechen
+Verwenden Sie die Pfeiltasten, um eine Auswahl zu treffen
+Geben Sie Auswahl und Optionen ein und drücken Sie CR zum Booten
+Bitte wählen Sie das zu startende Betriebssystem aus
+Verwenden Sie die Auf- und Ab-Pfeiltasten, um die Markierung auf Ihre Auswahl zu verschieben.
+Drücken Sie zur Auswahl die EINGABETASTE.
+Drücken Sie zur Fehlerbehebung und für erweiterte Startoptionen für Windows F8.
+Weitermachen
+Booteintrag auswählen:
+Verwendet die Liste der gebräuchlichen Wörter.
+Verwendet die vollständige Wortliste.
+Das Ping-Pong-Spiel!
+Öffnet stattdessen den Radiosender-Player
+Liest eine Beep-Synth-Datei
+Konvertiert das Quellfarbmodell in das Zielfarbmodell in Zahlen.
+Konvertiert das Quellfarbmodell in das Zielfarbmodell im KS-Format.
+Konvertiert das Quellfarbmodell in Hex.
+Konvertiert das Quellfarbmodell unter Verwendung des Farbspezifizierers in das Zielfarbmodell.
+Konvertiert das Quellfarbmodell mithilfe des Farbspezifizierers in das Zielfarbmodell im KS-Format.
+Konvertiert das Quellfarbmodell unter Verwendung des Farbspezifizierers in das Zielfarbmodell im Hex-Format.
+Listet Ihre Kontakte auf
+Lädt Ihre Kontakte
+Importiert Ihre Kontakte
+Behandelt die erforderliche Eingabe als MeCard-Zeichenfolge
+Ruft Kontaktinformationen ab
+Zeigt Wetterinformationen für eine bestimmte Stadt an. Verwendet den Weather Channel von IBM.
+Wetterinfos im interaktiven TUI
+Zeigt alle verfügbaren Städte und ihre Breitengrad-/Längengradpaare an
+Zeigt eine Bildvorschau an
+Erlernen Sie eine neue Sprache in einem interaktiven TUI
+Fügt den Inhalt einer Datei oder eines Strings in einen Texthosting-Anbieter ein.
+Gibt die URL zum Pastebin-Anbieter an
+Gibt den Pastebin-Providertyp an
+Gibt die Pastebin-Provider-Postseite an
+Gibt das Postformat des Pastebin-Providers an
+Gibt den Post-Feldnamen des Pastebin-Providers an.
+Ruft stündliche Bestandsinformationen ab
+Kurzes Firmensymbol
+Erstellt ein neues Thema in einem interaktiven TUI
+dass Sie mit Ihren Kernel-Mods bootfähige Programme erstellen können?
+Stationstyp
+Gerät
+Treiber
+Während der Wiedergabe kann keine Abfrage aktueller Geräte erfolgen.
+Gerät und Treiber
+Verfügbare Geräte und Treiber
+BassBoom-Spezifikationen
+Decoder
+Systemspezifikationen
+Basolia-Version
+MPG123-Version
+OUT123-Version
+Unterstützte Decoder
+Alle Decoder
+System
+Systemarchitektur
+Prozessarchitektur
+Systembeschreibung
+.NET-Beschreibung
+Wiederholungsprüfpunkt festlegen
+Versuchen Sie, den Kontrollpunkt zu wiederholen
+Öffnet den Equalizer
+Geräte- und Treiberinformationen
+Gerät und Treiber festlegen
+Gerät und Treiber zurücksetzen
+Systeminformationen
+Radiosenderinfo
+Erweiterte Informationen zum Radiosender
+Einen Radiosender hinzufügen
+Vorheriger Radiosender
+Nächster Radiosender
+Aktuellen Radiosender entfernen
+Alle Radiosender entfernen
+Wählen Sie einen Treiber aus. ESC zum Beenden.
+Wählen Sie ein Gerät aus. Der aktuelle Treiber ist {0}. ESC zum Beenden.
+Keine Wiedergabe. Der Musik-Player ist im Leerlauf.
+Bass
+Obere Mitte
+Verdreifachen
+Unbekannter Bandtyp
+Equalizer-Band
+Wählen Sie einen Liedtext aus, nach dem Sie suchen möchten
+Heimatstaat
+Präzises Rendern
+Pufferfüllung
+Dekodierungsverzögerung
+Kodierungsverzögerung
+Codierungs-Padding
+Frankenstein-Stream
+Frischer Decoder
+Drücken Sie „A“, um einen Radiosender zur Wiedergabeliste hinzuzufügen.
+Geben Sie einen Pfad zum Radiosender ein. Die URL zum Sender muss einen MPEG-Radiosender angeben. AAC-Radiosender werden derzeit nicht unterstützt.
+Stationsinfo
+URL des Radiosenders
+Name des Radiosenders
+Aktuelles Lied des Radiosenders
+Startseite
+Stream-Pfad
+Zuhörer: {0} mit {1} in der Spitze
+Bitrate
+Medientyp
+Radioserverinfo
+Stream-Informationen
+Radiosender nutzt HTTPS
+Servertyp des Radiosenders
+Radiosender-Streams: {0} mit {1} aktiv
+Hörerzahl des Radiosenders: {0}, davon {1} in der Spitze
+Die Beep-Synth-Datei existiert nicht.
+Kapitelname
+Die Synth-Darstellung ist ungültig.
+Die Frequenz ist ungültig.
+Die Dauer ist ungültig.
+Aus der bereitgestellten Darstellung können keine Synthesizerinformationen abgerufen werden.
+Die Modellspezifikation ist ungültig.
+Schwarze Tastenebene:
+Die erste Farbebene muss numerisch sein.
+Die zweite Farbebene muss numerisch sein.
+Die dritte Farbebene muss numerisch sein.
+Die vierte Schlüsselebene muss numerisch sein.
+-- Wetterinfo --
+Breiten-und Längengrad
+Wolkendecke
+Uhrzeit
+Mindesttemperatur
+Maximale Temperatur
+Niederschlagswahrscheinlichkeit
+Niederschlagsart
+Hitzeindex
+Windchill
+Ultravioletter Index
+Ultraviolette Beschreibung
+Der Pfad zum Bild wird nicht angegeben.
+Bilddatei existiert nicht.
+Geben Sie entweder einen Dateinamen oder einen hochzuladenden Text an.
+Der Pastebin-Anbietertyp wird nicht unterstützt.
+Erfolgreich zum Provider eingefügt!
+Einfügen zum Anbieter nicht möglich.
+Durchsucht die Feed-Bibliothek nach einem Feed
+Geben Sie Ihren AlphaVantage API-Schlüssel ein
+Bitte geben Sie Ihren API-Schlüssel ein.
+Der Demonstrations-API-Schlüssel kann nicht verwendet werden.
+Ihr API-Schlüssel sollte 16 Zeichen lang sein.
+Beim Abrufen der Bestandsdaten ist ein Fehler aufgetreten. Weitere Informationen finden Sie hier
+Eröffnungskurs der Aktie
+Hoher Aktienkurs
+Niedriger Aktienkurs
+Schlusskurs
+Lagerbestand
+API-Schlüssel ist erforderlich. Konfigurieren Sie ihn über die Einstellungen.
+Keine Bestandsdaten vorhanden.
+Farbe kopieren nach...
+Wählen Sie den Quellfarbtyp aus, von dem die Farbe kopiert werden soll.
+Wählen Sie die Zielfarbtypen aus, in die der Quellfarbtyp {0} kopiert werden soll.
+Farbtyp
+Farbe
+Farbname
+Farbe Hex
+Farbhelligkeit
+Wählen Sie aus, wie Sie dieses Design speichern möchten
+Wählen Sie aus, wie Sie ein Design laden möchten
+Punktzahl
+Jahrestag der Veröffentlichung von Nitrocid KS
+Ramadan
+Keine Kontakte.
+Die Kontaktnummer ist ungültig.
+Die Kontaktnummer ist außerhalb des Bereichs.
+Vorname
+Familienname, Nachname
+Kontakt Geo
+Kontakthinweis
+Einige der Kontakte können nicht aufgelistet werden.
+Geben Sie den Breiten- und Längengrad der Stadt ein.
+Sie können Ihren eigenen API-Schlüssel erhalten. Anleitungen hierzu finden Sie auf der IBM-Website.
+Wetterinformationen vom geografischen Standort laden
+Wetterlage
+Temperatur
+Windgeschwindigkeit
+Windrichtung
+Luftfeuchtigkeit
+Breite
+Längengrad
+Geben Sie für die Suche einen Städtenamen ein.
+Es gibt keine Städte mit diesem Namen. Wenn Sie nach einer bestimmten Stadt suchen, versuchen Sie, nach einem umfassenderen Ort zu suchen, der der gesuchten Stadt am nächsten liegt.
+Wählen Sie eine Stadt aus der Liste unten. Die beiden Zahlen repräsentieren geografische Standorte.
+Geben Sie den Breitengrad der Stadt ein.
+Geben Sie den Längengrad der Stadt ein.
+Der Breitengrad ist ungültig.
+Der Längengrad ist ungültig.
+Sie können Ihren eigenen API-Schlüssel erhalten. Anleitungen hierzu finden Sie auf der IBM-Website. Geben Sie den API-Schlüssel von The Weather Channel ein.
+Der Weather Channel-API-Schlüssel wird nicht bereitgestellt. Wenn Sie Hilfe benötigen, konsultieren Sie die IBM-Website.
+Aktueller asymmetrischer Kodierungstreiber
+Welchen asymmetrischen Kodierungstreiber möchten Sie verwenden?
+Bootloader-Stil
+Wählen Sie einen Bootloader-Stil aus, der Ihren Wünschen entspricht.
+Timeout für die Standardauswahl des Bootloaders
+Timeout in Sekunden zum Booten mit der Standardauswahl.
+Bootloader-Standardauswahl
+Standardmäßige Auswahl des Starteintrags. Diese Nummer ist nullbasiert, das erste Element hat also den Index 0 und so weiter.
+Aktivieren Sie „Die Nitrocid-Homepage“.
+Aktiviert die „Nitrocid-Homepage“, sodass Sie auf einen Blick sehen können, was los ist.
+Interaktive TUI integrierte Tastenbelegungs-Hintergrundfarbe
+Interaktive TUI-integrierte Tastenbelegung für Vordergrundfarbe
+Interaktive TUI integrierte Tastenbelegungsfarbe
+Widgets aktivieren
+Aktiviert die Widgets im modernen Anmeldehandler und allen Handlern, die die Widget-API verwenden.
+Erstes Widget
+Erstes Widget für den modernen Anmeldehandler. Sie können dieses Widget in seinem entsprechenden Einstellungseintrag konfigurieren.
+Zweites Widget
+Zweites Widget für den modernen Anmeldehandler. Sie können dieses Widget in seinem entsprechenden Einstellungseintrag konfigurieren.
+Mausunterstützung
+Ob die Mausunterstützung für den Kernel initialisiert werden soll oder nicht, wodurch im Wesentlichen alle Mods in die Lage versetzt werden, den Mauszeiger zu handhaben.
+Unterstützung der Mausbewegung
+Ob auch die Bewegungsereignisse aktiviert werden sollen oder nicht, um das Benutzererlebnis einiger interaktiver Anwendungen zu verbessern.
+Analoge Uhr mit einfachem Datum und Uhrzeit unten auf dem Bildschirm.
+Sekundenzeiger anzeigen
+Ob der Sekundenzeiger angezeigt werden soll oder nicht.
+Anzeigedatum
+Ob das Datum angezeigt werden soll oder nicht.
+Zeigt ein Emoji in der Mitte des Bildschirms.
+Emoticon-Zyklus aktivieren
+Ob zwischen Emoticons gewechselt werden soll
+Emoticon
+Zu zeigendes Emoticon
+In diesem Abschnitt können Sie die Funktionsweise von SSH konfigurieren.
+Stil der Benutzernamen-Eingabeaufforderung für SSH
+Neue Verbindungen zur SSH-Kurzwahl hinzufügen
+Wenn aktiviert, wird der SSH-Kurzwahl eine neue Verbindung hinzugefügt.
+In diesem Abschnitt können Sie die Bestände konfigurieren.
+API-Schlüssel
+Schlüssel für die AlphaVantage Stocks API
+Buchungskreis
+Aktiengesellschaft
+Simuliert einen hypothetischen, fehlerhaften schwarzen Bildschirm, auf dem gelegentlich RGB-Linien erscheinen.
+Störwahrscheinlichkeit
+Wahrscheinlichkeit in Prozent, dass der Bildschirmfehler auftritt

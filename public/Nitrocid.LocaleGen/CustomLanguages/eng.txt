@@ -1,4 +1,4 @@
-Invalid color template {0}
+﻿Invalid color template {0}
 Enter the admin password for maintenance.
 Kernel Error while booting: {0}
 DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.
@@ -3302,3 +3302,368 @@ Which input driver would you like to use?
 Migrate old configuration
 Migrates some of your old configuration from older versions of the kernel
 Configuration migration may not have been completed successfully. If you're sure that your configuration files are valid, investigate the debug logs for more info.
+Select your language.
+Enter your new username. You should enter a new username that doesn't already exist.
+Enter your user password. You should choose a strong password for increased security.
+Automatic Update Check
+Yes, I do!
+No, thanks.
+Automatic Update Download
+Starting or stopping mods not allowed on safe mode.
+There was an unknown kernel error, possibly due to either the kernel exception type not being specified or something was wrong.
+The kernel networking has reported an error for the hostname component.
+Invalid RSS feed. Ensure that you've referenced the feed correctly and try again.
+Invalid RSS feed link. Ensure that you've entered the link correctly and try again.
+Invalid RSS feed type. Ensure that you've entered the feed type correctly and try again.
+Permission denied trying to perform an operation. You'll need to log in as a user that has the necessary permissions in order to be able to perform this operation.
+There was an error when trying to perform an operation for the environment management.
+There was an error when trying to process a bootloader operation.
+There was an error when trying to process an alarm system operation.
+There was an error when trying to process a widget system operation. If you're sure that this widget is registered properly, please make sure that you've written the widget class name properly.
+Additional errors were not found during the operation.
+Checking for multiple installed environments
+Multiple environments
+Child thread index number is invalid.
+Alarm name
+Alarm description
+Alarm due date
+Write the alarm name
+Alarm name is not specified.
+Write the alarm interval in this format
+Alarm interval is either not specified or is invalid.
+File type
+Notification importance
+Progress percentage
+Progress completed
+Progress is indeterminate
+Progress state
+Notification title
+Reporter didn't provide any info!
+Execute
+Logout
+Shell
+Switch
+File Manager
+Alarm Manager
+Notifications
+Task Manager
+About Nitrocid
+Hi, {0}! Welcome to Nitrocid!
+Enable headlines on login to show RSS feeds
+Settings
+Close
+Nitrocid KS simulates our future kernel, the Nitrocid Kernel.
+Mod API
+The Nitrocid Homepage has crashed and needs to revert back to the shell.
+Unknown screen number.
+Failed to render the logon screen.
+Investigate the debug logs for more information about the error.
+To dismiss forever, either press ENTER on your keyboard, or enable "Development notice acknowledged" in the kernel settings. Any other key goes ahead without acknowledgement.
+You're running Nitrocid KS on an unusual environment. Please verify that you've started the kernel directly. If you're sure that you've started the kernel in a usual way, it might be because you're running an unsupported version of Nitrocid KS.
+Extras - Name Generator
+Extras - Pastebin
+Extras - Images
+Extras - Enhanced SHA256
+Extras - Enhanced SHA384
+Extras - Enhanced SHA512
+Extras - Stocks
+Extras - Beep Synth
+Extras - SSH
+GRILO has experienced an internal error
+Press any key to exit.
+Standard controls
+Controls defined by custom boot style
+No controls defined by custom boot style
+Selects the previous boot entry
+Selects the next boot entry
+Selects the first boot entry
+Selects the last boot entry
+Opens this help page
+Boots the selected entry
+Environment is not specified
+Alarm date and time may not be in the past.
+Consult the help entry for this command for more info
+This command has the below arguments that change how it works:
+Unspecified argument description
+Lists all available function parameters from a function
+Manage your alarms
+Manage your alarms in an interactive TUI
+Restarts a remote kernel instance
+The kernel in the remote instance will be shut down
+Uses the legacy settings style
+Shows all received notifications in an interactive TUI
+Widget is not provided.
+Widget already exists.
+Widget name is not provided.
+Widget doesn't exist.
+Widget can't be removed.
+Widget is not a built-in widget.
+Boot app name is not specified
+Boot app environment is not specified
+Boot app already exists
+Boot app doesn't exist
+Select boot entry
+SHIFT + H for help. Version
+Booting {0}...
+List of function parameters for
+Alarm already exists.
+Alarm interval is invalid.
+Alarm name and interval is not specified.
+Alarm doesn't exist.
+Alarm name:
+Alarm description:
+Alarm due date:
+The frequency is invalid. Make sure that you've correctly written the frequency in hertz.
+The duration is invalid. Make sure that you've correctly written the duration in milliseconds.
+Encoded as string
+You've entered the power action menu. Please enter a choice using the left and the right arrow keys and press ENTER, or press ESC to go back to the main screen.
+Windows Boot Manager
+ENTER=Choose
+Choose an operating system to start, or press TAB to select a tool:
+To specify an advanced option for this choice, press F8.
+Seconds until the highlighted choice will be started automatically:
+GNU GRUB  version 2.06
+Use the ↑ and ↓ keys to select which entry is highlighted.
+Press enter to boot the selected OS, `e' to edit the commands
+before booting or `c' for a command line.
+The highlighted entry will be executed automatically in {0}s.
+Press enter to boot the selected OS, `e' to edit the
+commands before booting or `c' for a command line.
+Booting '{0}'
+Filesystem type is
+partition type
+Hit any key to cancel timeout
+Use arrow keys to make selection
+Enter choice & options, hit CR to boot
+Please select the operating system to start
+Use the up and down arrow keys to move the highlight to your choice.
+Press ENTER to choose.
+For troubleshooting and advanced startup options for Windows, press F8.
+Continue
+Select boot entry:
+Uses the common word list.
+Uses the complete word list.
+The ping-pong game!
+Opens the radio station player instead
+Reads a beep synth file
+Converts the source color model to the target color model in numbers.
+Converts the source color model to the target color model in KS format.
+Converts the source color model to hex.
+Converts the source color model using the color specifier to the target color model.
+Converts the source color model using the color specifier to the target color model in KS format.
+Converts the source color model using the color specifier to the target color model in hex.
+Lists your contacts
+Loads your contacts
+Imports your contacts
+Treats the required input as MeCard string
+Gets contact information
+Shows weather info for specified city. Uses The Weather Channel from IBM.
+Weather info in an interactive TUI
+Shows all the available cities and their latitude/longitude pairs
+Previews an image
+Makes a new language in an interactive TUI
+Pastes the content of either a file or a string to a text hosting provider
+Specifies the URL to the Pastebin provider
+Specifies the Pastebin provider type
+Specifies the Pastebin provider post page
+Specifies the Pastebin provider post format
+Specifies the Pastebin provider post field name
+Gets an hourly stock information
+Short company symbol
+Makes a new theme in an interactive TUI
+that you can make bootable programs using your kernel mods?
+Station type
+Device
+Driver
+Can't query current devices while not playing.
+Device and Driver
+Available devices and drivers
+BassBoom specifications
+Decoders
+System specifications
+Basolia version
+MPG123 version
+OUT123 version
+Supported decoders
+All decoders
+System
+System Architecture
+Process Architecture
+System description
+.NET description
+Set repeat checkpoint
+Seek to repeat checkpoint
+Opens the equalizer
+Device and driver info
+Set device and driver
+Reset device and driver
+System info
+Radio station info
+Radio station extended info
+Add a radio station
+Previous radio station
+Next radio station
+Remove current radio station
+Remove all radio stations
+Select a driver. ESC to quit.
+Select a device. Current driver is {0}. ESC to quit.
+Not playing. Music player is idle.
+Bass
+Upper Mid
+Treble
+Unknown band type
+Equalizer Band
+Select a lyric to seek to
+Native State
+Accurate rendering
+Buffer fill
+Decoding delay
+Encoding delay
+Encoding padding
+Frankenstein stream
+Fresh decoder
+Press 'A' to insert a radio station to the playlist.
+Enter a path to the radio station. The URL to the station must provide an MPEG radio station. AAC ones are not supported yet.
+Station info
+Radio station URL
+Radio station name
+Radio station current song
+Home page
+Stream path
+Listeners: {0} with {1} at peak
+Bit rate
+Media type
+Radio server info
+Stream info
+Radio station uses HTTPS
+Radio station server type
+Radio station streams: {0} with {1} active
+Radio station listeners: {0} with {1} at peak
+Beep synth file doesn't exist.
+Chapter name
+Synth representation is invalid.
+Frequency is invalid.
+Duration is invalid.
+Can't get synth info from the provided representation.
+Model specification is invalid.
+Black key level:
+The first color level must be numeric.
+The second color level must be numeric.
+The third color level must be numeric.
+The fourth key level must be numeric.
+-- Weather info --
+Latitude and Longitude
+Cloud cover
+Time of day
+Minimum temperature
+Maximum temperature
+Precipitation chance
+Precipitation type
+Heat index
+Wind chill
+Ultraviolet index
+Ultraviolet description
+Path to the image is not provided.
+Image file doesn't exist.
+Specify either a file name or text to upload.
+Pastebin provider type is not supported.
+Successfully pasted to the provider!
+Unable to paste to the provider.
+Searches the feed library for a feed
+Enter your AlphaVantage API key
+Please provide your API key.
+Demonstration API key can't be used.
+Your API key should be 16 characters long.
+An error occurred while fetching the stocks data. Additional information can be found here
+Opening stock price
+High stock price
+Low stock price
+Closing stock price
+Stock volume
+API Key is required. Configure from the settings.
+No stock data available.
+Copy Color To...
+Select the source color type to copy the color from.
+Select the target color types to copy the source color type, {0}, to.
+Color type
+Color
+Color name
+Color hex
+Color brightness
+Choose how do you want to save this theme
+Choose how do you want to load a theme
+Score
+Nitrocid KS Release Anniversary
+Ramadan
+No contacts.
+Contact number is invalid.
+Contact number is out of range.
+First name
+Last name
+Contact Geo
+Contact note
+Some of the contacts can't be listed.
+Enter the city latitude and longitude.
+You can get your own API key by consulting the IBM website for guidance.
+Loading weather info from geographical location
+Weather condition
+Temperature
+Wind speed
+Wind direction
+Humidity rate
+Latitude
+Longitude
+Enter a city name to search.
+There are no cities by this name. If you are trying to search for a specific city, try searching for a broader location that is closest to the city that you're looking for.
+Select a city from the list below. The two numbers represent geographical locations.
+Enter city latitude.
+Enter city longitude.
+Latitude is invalid.
+Longitude is invalid.
+You can get your own API key by consulting the IBM website for guidance. Enter The Weather Channel API key.
+The Weather Channel API key is not provided. If you need help, consult the IBM website.
+Current asymmetric encoding driver
+Which asymmetric encoding driver would you like to use?
+Bootloader style
+Select a bootloader style to match your preference.
+Bootloader default selection timeout
+Timeout in seconds to boot to the default selection.
+Bootloader default selection
+Default boot entry selection. This number is zero-based, so the first element is index 0, and so on.
+Enable 'The Nitrocid Homepage'
+Enables 'The Nitrocid Homepage' that allows you to see what's happening in a glance.
+Interactive TUI builtin key binding background color
+Interactive TUI builtin key binding foreground color
+Interactive TUI builtin key binding name color
+Enable widgets
+Enables the widgets in the modern logon handler and all the handlers that use the widget API.
+First widget
+First widget for the modern logon handler. You can configure this widget in its respective settings entry.
+Second widget
+Second widget for the modern logon handler. You can configure this widget in its respective settings entry.
+Mouse support
+Whether to initialize the mouse support for the kernel or not, essentially enabling all mods to handle the mouse pointer.
+Mouse movement support
+Whether to also enable the movement events or not, improving the user experience of some interactive applications.
+Analog clock with a simple date and time in the bottom of the screen.
+Show seconds hand
+Whether to show the seconds hand or not.
+Display date
+Whether to show the date or not.
+Shows an emoji in the middle of the screen.
+Enable Emoticon Cycling
+Whether to cycle between emoticons
+Emoticon
+Emoticon to show
+This section lets you configure how the SSH works.
+Username prompt style for SSH
+Add new connections to SSH speed dial
+If enabled, adds a new connection to the SSH speed dial.
+This section lets you configure the stocks.
+API key
+Key for the AlphaVantage Stocks API
+Company code
+Stocks company
+Simulates a hypothetical malfunctioning black screen with RGB lines sometimes appearing.
+Glitch Probability
+Chance, in percent, for the screen glitch to occur

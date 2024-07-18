@@ -3302,3 +3302,368 @@ Quale driver di input desideri utilizzare?
 Migrare la vecchia configurazione
 Migra parte della tua vecchia configurazione dalle versioni precedenti del kernel
 La migrazione della configurazione potrebbe non essere stata completata correttamente. Se sei sicuro che i file di configurazione siano validi, esamina i log di debug per ulteriori informazioni.
+Seleziona la tua lingua.
+Inserisci il tuo nuovo nome utente. Dovresti inserire un nuovo nome utente che non esiste già.
+Inserisci la tua password utente. Dovresti scegliere una password complessa per una maggiore sicurezza.
+Controllo automatico degli aggiornamenti
+Sì, certamente!
+No grazie.
+Download automatico degli aggiornamenti
+L'avvio o l'arresto delle mod non è consentito in modalità provvisoria.
+Si è verificato un errore del kernel sconosciuto, probabilmente dovuto alla mancata specificazione del tipo di eccezione del kernel o a qualcosa che non andava.
+La rete del kernel ha segnalato un errore per il componente nome host.
+Feed RSS non valido. Assicurati di aver fatto riferimento correttamente al feed e riprova.
+Collegamento al feed RSS non valido. Assicurati di aver inserito correttamente il collegamento e riprova.
+Tipo di feed RSS non valido. Assicurati di aver inserito correttamente il tipo di feed e riprova.
+Autorizzazione negata durante il tentativo di eseguire un'operazione. Dovrai accedere come utente che dispone delle autorizzazioni necessarie per poter eseguire questa operazione.
+Si è verificato un errore durante il tentativo di eseguire un'operazione per la gestione dell'ambiente.
+Si è verificato un errore durante il tentativo di elaborare un'operazione del bootloader.
+Si è verificato un errore durante il tentativo di elaborare un'operazione del sistema di allarme.
+Si è verificato un errore durante il tentativo di elaborare un'operazione di sistema widget. Se sei sicuro che questo widget sia registrato correttamente, assicurati di aver scritto correttamente il nome della classe del widget.
+Non sono stati rilevati ulteriori errori durante l'operazione.
+Verifica della presenza di più ambienti installati
+Ambienti multipli
+Il numero di indice del thread figlio non è valido.
+Nome dell'allarme
+Descrizione dell'allarme
+Data di scadenza dell'allarme
+Scrivi il nome dell'allarme
+Il nome dell'allarme non è specificato.
+Scrivere l'intervallo di allarme in questo formato
+L'intervallo di allarme non è specificato o non è valido.
+Tipo di file
+Importanza della notifica
+Percentuale di avanzamento
+Progresso completato
+Il progresso è indeterminato
+Stato di avanzamento
+Titolo della notifica
+Il giornalista non ha fornito alcuna informazione!
+Eseguire
+Disconnettersi
+Conchiglia
+Interruttore
+Gestore file
+Gestore allarmi
+Notifiche
+Responsabile delle attività
+A proposito di Nitrocid
+Ciao, {0}! Benvenuti in Nitrocid!
+Abilita i titoli all'accesso per mostrare i feed RSS
+Impostazioni
+Vicino
+Nitrocid KS simula il nostro futuro kernel, il Nitrocid Kernel.
+API mod
+La home page di Nitrocid si è bloccata ed è necessario ripristinare la shell.
+Numero di schermo sconosciuto.
+Impossibile eseguire il rendering della schermata di accesso.
+Esaminare i log di debug per ulteriori informazioni sull'errore.
+Per ignorare per sempre, premi INVIO sulla tastiera o abilita "Avviso di sviluppo riconosciuto" nelle impostazioni del kernel. Qualsiasi altro tasto va avanti senza riconoscimento.
+Stai eseguendo Nitrocid KS in un ambiente insolito. Verifica di aver avviato direttamente il kernel. Se sei sicuro di aver avviato il kernel nel solito modo, potrebbe essere perché stai utilizzando una versione non supportata di Nitrocid KS.
+Extra - Generatore di nomi
+Extra: Pastebin
+Extra - Immagini
+Extra: SHA256 migliorato
+Extra: SHA384 migliorato
+Extra: SHA512 migliorato
+Extra - Azioni
+Extra - Sintetizzatore Beep
+Extra: SSH
+GRILO ha riscontrato un errore interno
+Premi qualsiasi tasto per uscire.
+Controlli standard
+Controlli definiti dallo stile di avvio personalizzato
+Nessun controllo definito dallo stile di avvio personalizzato
+Seleziona la voce di avvio precedente
+Seleziona la voce di avvio successiva
+Seleziona la prima voce di avvio
+Seleziona l'ultima voce di avvio
+Apre questa pagina di aiuto
+Avvia la voce selezionata
+L'ambiente non è specificato
+La data e l'ora dell'allarme potrebbero non essere nel passato.
+Per ulteriori informazioni, consultare la voce della guida per questo comando
+Questo comando ha gli argomenti seguenti che cambiano il modo in cui funziona:
+Descrizione dell'argomento non specificata
+Elenca tutti i parametri di funzione disponibili da una funzione
+Gestisci i tuoi allarmi
+Gestisci i tuoi allarmi in un'interfaccia utente interattiva
+Riavvia un'istanza remota del kernel
+Il kernel nell'istanza remota verrà arrestato
+Utilizza lo stile delle impostazioni legacy
+Mostra tutte le notifiche ricevute in un'interfaccia utente interattiva
+Il widget non è fornito.
+Il widget esiste già.
+Il nome del widget non è fornito.
+Il widget non esiste.
+Il widget non può essere rimosso.
+Il widget non è un widget integrato.
+Il nome dell'app di avvio non è specificato
+L'ambiente dell'app di avvio non è specificato
+L'app di avvio esiste già
+L'app di avvio non esiste
+Seleziona la voce di avvio
+MAIUSC + H per aiuto. Versione
+Avvio di {0}...
+Elenco dei parametri di funzione per
+L'allarme esiste già.
+L'intervallo di allarme non è valido.
+Il nome e l'intervallo dell'allarme non sono specificati.
+L'allarme non esiste.
+Nome dell'allarme:
+Descrizione allarme:
+Data di scadenza dell'allarme:
+La frequenza non è valida. Assicurati di aver scritto correttamente la frequenza in hertz.
+La durata non è valida. Assicurati di aver scritto correttamente la durata in millisecondi.
+Codificato come stringa
+Sei entrato nel menu di azione potente. Inserisci una scelta utilizzando i tasti freccia sinistra e destra e premi INVIO oppure premi ESC per tornare alla schermata principale.
+Gestore avvio di Windows
+INVIO=Scegli
+Scegli un sistema operativo da avviare o premi TAB per selezionare uno strumento:
+Per specificare un'opzione avanzata per questa scelta, premere F8.
+Secondi fino all'avvio automatico della scelta evidenziata:
+GNU GRUB versione 2.06
+Utilizzare i tasti ↑ e ↓ per selezionare la voce evidenziata.
+Premere Invio per avviare il sistema operativo selezionato, "e" per modificare i comandi
+prima dell'avvio o "c" per una riga di comando.
+La voce evidenziata verrà eseguita automaticamente tra {0} s.
+Premere Invio per avviare il sistema operativo selezionato, "e" per modificare il file
+comandi prima dell'avvio o "c" per una riga di comando.
+Avvio di '{0}'
+Il tipo di filesystem è
+tipo di partizione
+Premi un tasto qualsiasi per annullare il timeout
+Utilizzare i tasti freccia per effettuare la selezione
+Inserisci scelta e opzioni, premi CR per avviare
+Seleziona il sistema operativo da avviare
+Utilizza i tasti freccia su e giù per spostare l'evidenziazione sulla tua scelta.
+Premere INVIO per scegliere.
+Per la risoluzione dei problemi e le opzioni di avvio avanzate per Windows, premere F8.
+Continua
+Seleziona la voce di avvio:
+Utilizza l'elenco di parole comuni.
+Utilizza l'elenco completo delle parole.
+Il gioco del ping-pong!
+Apre invece il lettore della stazione radio
+Legge un file synth con segnale acustico
+Converte il modello di colore di origine nel modello di colore di destinazione in numeri.
+Converte il modello di colore di origine nel modello di colore di destinazione in formato KS.
+Converte il modello di colore di origine in esadecimale.
+Converte il modello di colore di origine utilizzando l'identificatore di colore nel modello di colore di destinazione.
+Converte il modello di colore di origine utilizzando l'identificatore di colore nel modello di colore di destinazione in formato KS.
+Converte il modello di colore di origine utilizzando l'identificatore di colore nel modello di colore di destinazione in formato esadecimale.
+Elenca i tuoi contatti
+Carica i tuoi contatti
+Importa i tuoi contatti
+Tratta l'input richiesto come stringa MeCard
+Ottiene le informazioni di contatto
+Mostra le informazioni meteo per la città specificata. Utilizza The Weather Channel di IBM.
+Informazioni meteo in un'interfaccia utente interattiva
+Mostra tutte le città disponibili e le relative coppie latitudine/longitudine
+Visualizza l'anteprima di un'immagine
+Crea una nuova lingua in una TUI interattiva
+Incolla il contenuto di un file o di una stringa in un provider di hosting di testo
+Specifica l'URL del provider Pastebin
+Specifica il tipo di provider Pastebin
+Specifica la pagina di post del provider Pastebin
+Specifica il formato di post del provider Pastebin
+Specifica il nome del campo post del provider Pastebin
+Ottiene informazioni orarie sulle scorte
+Simbolo aziendale breve
+Crea un nuovo tema in un'interfaccia utente interattiva
+che puoi creare programmi avviabili usando le mod del kernel?
+Tipo di stazione
+Dispositivo
+Autista
+Impossibile interrogare i dispositivi correnti mentre non si gioca.
+Dispositivo e driver
+Dispositivi e driver disponibili
+Specifiche del BassBoom
+Decodificatori
+Specifiche del sistema
+Versione Basolia
+Versione MPG123
+Versione OUT123
+Decoder supportati
+Tutti i decoder
+Sistema
+Architettura di sistema
+Architettura dei processi
+Descrizione del sistema
+Descrizione .NET
+Imposta il punto di controllo ripetuto
+Cerca di ripetere il checkpoint
+Apre l'equalizzatore
+Informazioni su dispositivo e driver
+Imposta dispositivo e driver
+Ripristina dispositivo e driver
+Informazioni di sistema
+Informazioni sulla stazione radio
+Informazioni estese sulla stazione radio
+Aggiungi una stazione radio
+Stazione radio precedente
+Prossima stazione radio
+Rimuovi la stazione radio corrente
+Rimuovi tutte le stazioni radio
+Seleziona un autista. ESC per uscire.
+Seleziona un dispositivo. Il conducente attuale è {0}. ESC per uscire.
+Non giocare. Il lettore musicale è inattivo.
+Basso
+Metà superiore
+Alti
+Tipo di banda sconosciuta
+Banda dell'equalizzatore
+Seleziona un testo da cercare
+Stato nativo
+Rappresentazione accurata
+Riempimento del buffer
+Ritardo di decodifica
+Ritardo di codifica
+Imbottitura della codifica
+Flusso di Frankenstein
+Decodificatore fresco
+Premi "A" per inserire una stazione radio nella playlist.
+Immettere un percorso per la stazione radio. L'URL della stazione deve fornire una stazione radio MPEG. Quelli AAC non sono ancora supportati.
+Informazioni sulla stazione
+URL della stazione radio
+Nome della stazione radio
+Canzone corrente della stazione radio
+Pagina iniziale
+Percorso del flusso
+Ascoltatori: {0} con {1} al massimo
+Velocità in bit
+Tipo di supporto
+Informazioni sul server radio
+Informazioni sullo streaming
+La stazione radio utilizza HTTPS
+Tipo di server della stazione radio
+Stream delle stazioni radio: {0} con {1} attivo
+Ascoltatori di stazioni radio: {0} con {1} al massimo
+Il file del sintetizzatore Beep non esiste.
+Nome del capitolo
+La rappresentazione del sintetizzatore non è valida.
+La frequenza non è valida.
+La durata non è valida.
+Impossibile ottenere informazioni sul sintetizzatore dalla rappresentazione fornita.
+La specifica del modello non è valida.
+Livello chiave nera:
+Il primo livello di colore deve essere numerico.
+Il secondo livello di colore deve essere numerico.
+Il terzo livello di colore deve essere numerico.
+Il quarto livello di chiave deve essere numerico.
+-- Informazioni meteo --
+Latitudine e longitudine
+Coperto dalle nuvole
+Ora del giorno
+Temperatura minima
+Temperatura massima
+Possibilità di precipitazioni
+Tipo di precipitazione
+Indice di calore
+Vento gelido
+Indice ultravioletto
+Descrizione ultravioletta
+Il percorso dell'immagine non è fornito.
+Il file immagine non esiste.
+Specifica un nome file o un testo da caricare.
+Il tipo di provider Pastebin non è supportato.
+Incollato con successo nel provider!
+Impossibile incollare nel provider.
+Cerca un feed nella libreria dei feed
+Inserisci la tua chiave API AlphaVantage
+Fornisci la tua chiave API.
+Non è possibile utilizzare la chiave API dimostrativa.
+La tua chiave API dovrebbe essere lunga 16 caratteri.
+Si è verificato un errore durante il recupero dei dati sulle azioni. Ulteriori informazioni possono essere trovate qui
+Prezzo di apertura delle azioni
+Prezzo delle azioni elevato
+Prezzo delle azioni basso
+Prezzo di chiusura delle azioni
+Volume delle scorte
+È richiesta la chiave API. Configura dalle impostazioni.
+Nessun dato di borsa disponibile.
+Copia colore in...
+Seleziona il tipo di colore di origine da cui copiare il colore.
+Seleziona i tipi di colore di destinazione in cui copiare il tipo di colore di origine, {0}.
+Tipo di colore
+Colore
+Nome del colore
+Colore esagonale
+Luminosità del colore
+Scegli come vuoi salvare questo tema
+Scegli come vuoi caricare un tema
+Punto
+Anniversario del rilascio di Nitrocid KS
+Ramadan
+Nessun contatto.
+Il numero di contatto non è valido.
+Il numero di contatto è fuori portata.
+Nome di battesimo
+Cognome
+Contatta Geo
+Nota di contatto
+Alcuni contatti non possono essere elencati.
+Inserisci latitudine e longitudine della città.
+Puoi ottenere la tua chiave API consultando il sito Web IBM per indicazioni.
+Caricamento delle informazioni meteo dalla posizione geografica
+Condizioni metereologiche
+Temperatura
+Velocità del vento
+La direzione del vento
+Tasso di umidità
+Latitudine
+Longitudine
+Inserisci il nome di una città da cercare.
+Non ci sono città con questo nome. Se stai cercando una città specifica, prova a cercare una località più ampia e più vicina alla città che stai cercando.
+Seleziona una città dall'elenco sottostante. I due numeri rappresentano posizioni geografiche.
+Inserisci la latitudine della città.
+Inserisci la longitudine della città.
+La latitudine non è valida.
+La longitudine non è valida.
+Puoi ottenere la tua chiave API consultando il sito Web IBM per indicazioni. Inserisci la chiave API Weather Channel.
+La chiave API Weather Channel non viene fornita. Se hai bisogno di aiuto, consulta il sito Web IBM.
+Driver di codifica asimmetrico corrente
+Quale driver di codifica asimmetrica desideri utilizzare?
+Stile bootloader
+Seleziona uno stile di bootloader in base alle tue preferenze.
+Timeout della selezione predefinita del bootloader
+Timeout in secondi per l'avvio con la selezione predefinita.
+Selezione predefinita del bootloader
+Selezione della voce di avvio predefinita. Questo numero è in base zero, quindi il primo elemento è l'indice 0 e così via.
+Abilita "La home page di Nitrocid"
+Abilita "The Nitrocid Homepage" che ti consente di vedere cosa sta succedendo in un colpo d'occhio.
+Colore di sfondo dell'associazione dei tasti incorporata della TUI interattiva
+Colore di primo piano dell'associazione dei tasti incorporata della TUI interattiva
+Colore del nome dell'associazione dei tasti incorporata della TUI interattiva
+Abilita i widget
+Abilita i widget nel gestore di accesso moderno e tutti i gestori che utilizzano l'API widget.
+Primo widget
+Primo widget per il moderno gestore di accesso. Puoi configurare questo widget nella rispettiva voce delle impostazioni.
+Secondo widget
+Secondo widget per il moderno gestore di accesso. Puoi configurare questo widget nella rispettiva voce delle impostazioni.
+Supporto per il mouse
+Se inizializzare o meno il supporto del mouse per il kernel, consentendo essenzialmente a tutti i mod di gestire il puntatore del mouse.
+Supporto per il movimento del mouse
+Se abilitare o meno anche gli eventi di movimento, migliorando l'esperienza d'uso di alcune applicazioni interattive.
+Orologio analogico con data e ora semplici nella parte inferiore dello schermo.
+Mostra la lancetta dei secondi
+Se mostrare o meno la lancetta dei secondi.
+Data di visualizzazione
+Se mostrare o meno la data.
+Mostra un'emoji al centro dello schermo.
+Abilita il ciclismo delle emoticon
+Se scorrere tra le emoticon
+Emoticon
+Emoticon da mostrare
+Questa sezione consente di configurare il funzionamento di SSH.
+Stile della richiesta del nome utente per SSH
+Aggiungi nuove connessioni alla composizione rapida SSH
+Se abilitato, aggiunge una nuova connessione alla composizione rapida SSH.
+Questa sezione consente di configurare le azioni.
+Chiave API
+Chiave per l'API AlphaVantage Stocks
+Codice aziendale
+Società per azioni
+Simula un ipotetico schermo nero malfunzionante con la comparsa occasionale di linee RGB.
+Probabilità di guasto
+Probabilità, in percentuale, che si verifichi il problema tecnico dello schermo

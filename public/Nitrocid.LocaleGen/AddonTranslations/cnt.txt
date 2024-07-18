@@ -3302,3 +3302,368 @@ nín xiǎng shǐyòng nǎge shūrù qūdòng chéngshì?
 Qiānyí jiù pèizhì
 cóng jiù bǎnběn de héxīn qiānyí yīxiē jiù pèizhì
 pèizhì qiānyí kěnéng wèi chénggōng wánchéng. Rúguǒ nín quèdìng shèdìng dàng yǒuxiào, qǐng yánjiū zhēn cuò rìzhì yǐ qǔdé gèng duō zīxùn.
+Xuǎnzé nǐ de yǔyán.
+Shūrù nín de xīn yònghù míng. Nín yīnggāi shūrù yīgè shàng bù cúnzài de xīn shǐyòng zhě míngchēng.
+Shūrù nín de yònghù mìmǎ. Nín yīnggāi xuǎnzé yīgè qiáng mìmǎ yǐ tígāo ānquán xìng.
+Zìdòng gēngxīn jiǎnchá
+shì de, wǒ yuànyì!
+Bù, xièxiè.
+Zìdòng gēngxīn xiàzài
+ānquán móshì xià bù yǔnxǔ qǐdòng huò tíngzhǐ mod.
+Cúnzài wèizhī de nèihé cuòwù, kěnéng shì yóuyú wèi zhǐdìng nèihé yìcháng lèixíng huò chūxiàn wèntí.
+Héxīn wǎng lù yǐ bàogào zhǔjī míngchēng zǔjiàn cuòwù.
+RSS láiyuán wúxiào. Quèbǎo nín zhèngquè yǐnyòngle Feed, ránhòu zàishì yīcì.
+RSS láiyuán liánjié wúxiào. Quèbǎo nín shūrù de liánjié zhèngquè, ránhòu chóng shì.
+RSS láiyuán lèixíng wúxiào. Quèbǎo nín shūrù de Feed lèixíng zhèngquè, ránhòu zàishì yīcì.
+Chángshì zhíxíng cāozuò de quánxiàn bèi jùjué. Nín xūyào yǐ jùyǒu bìyào quánxiàn de shǐyòng zhě shēnfèn dēngrù cáinéng zhíxíng cǐ cāozuò.
+Chángshì zhíxíng huánjìng guǎnlǐ cāozuò shí fāshēng cuòwù.
+Chángshì chǔlǐ yǐndǎo chéngshì cāozuò shí fāshēng cuòwù.
+Chángshì chǔlǐ jǐngbào xìtǒng cāozuò shí fāshēng cuòwù.
+Chángshì chǔlǐ xiǎo gōngjù xìtǒng cāozuò shí fāshēng cuòwù. Rúguǒ nín quèdìng gāi xiǎo bùjiàn yǐ zhèngquè zhùcè, qǐng quèbǎo nín yǐ zhèngquè biānxiě xiǎo bùjiàn lèibié míngchēng.
+Cāozuò guòchéng zhōng wèi fāxiàn qítā cuòwù.
+Jiǎnchá duō gè ānzhuāng huánjìng
+duōzhǒng huánjìng
+zi xiànchéng suǒyǐn hàomǎ wúxiào.
+Jǐngbào míngchēng
+jǐngbào shuōmíng
+jǐngbào jiézhǐ rìqí
+xiě rù jǐngbào míngchēng
+wèi zhǐdìng jǐngbào míngchēng.
+Àn cǐ géshì xiě rù jǐngbào jiàngé
+jǐngbào jiàngé wèi zhǐdìng huò wúxiào.
+Wénjiàn lèixíng
+tōngzhī zhòngyào xìng
+jìndù bǎifēnbǐ
+jìndù yǐ wánchéng
+jìnzhǎn shì bù quèdìng de
+jìndù zhuàngtài
+tōngzhī biāotí
+jìzhě méiyǒu tígōng rènhé zīxùn!
+Zhíxíng
+dēng chū
+ké
+zhuǎnbiàn
+wénjiàn guǎnlǐ qì
+jǐngbào guǎnlǐ qì
+tōngzhī
+gōngzuò guǎnlǐ yuán
+guānyú xiāo jī shā chóng jì
+hāi,{0}! Huānyíng lái dào xiāo jī xī dé!
+Dēngrù shí qǐyòng biāotí yǐ xiǎnshì RSS láiyuán
+shèdìng
+guānbì
+Nitrocid KS mónǐ wǒmen wèilái de nèihé,Nitrocid Kernel.
+Mó zǔ API
+Nitrocid zhǔyè yǐ bēngkuì, xūyào huányuán dào shell.
+Wèizhī de yíngmù biānhào.
+Wúfǎ chéngxiàn dēngrù huàmiàn.
+Yánjiū tiáoshì rìzhì yǐ huòqǔ yǒuguān cuòwù de gèng duō zīxùn.
+Ruò yào yǒngjiǔ guānbì, qǐng àn xià jiànpán shàng de ENTER jiàn, huò zài héxīn shèdìng zhōng qǐyòng `yǐ quèrèn kāifā tōngzhī'. Rènhé qítā ànjiàn dūhuì jìxù zhíxíng ér wúxū quèrèn.
+Nín zài bù xúncháng de huánjìng zhōng zhíxíng Nitrocid KS. Qǐng yànzhèng nín shìfǒu zhíjiē qǐdòngle héxīn. Rúguǒ nín quèdìng yǐ yǐ chángguī fāngshì qǐdòng nèihé, kěnéng shì yīnwèi nín zhèngzài zhíxíng bù shòu zhīyuán de Nitrocid KS bǎnběn.
+Fùjiā gōngnéng - míngchēng chǎnshēng qì
+fùjiā - Pastebin
+fùjiā nèiróng - túpiàn
+fùjiā gōngnéng - zēngqiáng xíng SHA256
+fùjiā gōngnéng - zēngqiáng xíng SHA384
+fùjiā gōngnéng - zēngqiáng xíng SHA512
+éwài - kùcún
+fùjiā gōngnéng - fēng míng héchéng qì
+fùjiā gōngnéng - SSH
+GRILO yù dào nèibù cuòwù
+àn rènhé yīgè jiàn tuìchū.
+Biāozhǔn kòngzhì
+yóu zì dìng qǐdòng yàngshì dìngyì de kòngjiàn
+méiyǒu zì dìng qǐdòng yàngshì dìngyì de kòngjiàn
+xuǎnzé shàng yīgè qǐdòng xiàng
+xuǎnzé xià yīgè qǐdòng xiàng
+xuǎnzé dì yīgè qǐdòng xiàng
+xuǎnzé zuìhòu yī gè qǐdòng xiàng
+kāiqǐ cǐ bāngzhù yèmiàn
+qǐdòng xuǎndìng de tiáomù
+huánjìng wèi zhǐdìng
+nàozhōng rìqí hé shíjiān kěnéng bùshì guòqù de rìqí hé shíjiān.
+Yǒuguān xiángxì xìnxī, qǐng cānyuè cǐ mìnglìng de bāngzhù tiáomù
+gāi mìnglìng jùyǒu yǐxià cānshù, kěyǐ gēnggǎi qí gōngzuò fāngshì:
+Wèi zhǐdìng de cānshù miáoshù
+liè chū hánshù zhōng suǒyǒu kěyòng de hánshù cānshù
+guǎnlǐ nín de nàozhōng
+zài hùdòng shì TUI zhōng guǎnlǐ nín de nàozhōng
+chóngxīn qǐdòng yuǎn duān héxīn shílì
+yuǎn duān shílì zhōng de héxīn jiāng bèi guānbì
+shǐyòng jiù shèdìng fēnggé
+zài hùdòng shì TUI zhōng xiǎnshì suǒyǒu shōu dào de tōngzhī
+bù tígōng xiǎo bùjiàn.
+Xiǎo bùjiàn yǐjīng cúnzài.
+Wèi tígōng xiǎo bùjiàn míngchēng.
+Xiǎo bùjiàn bù cúnzài.
+Wúfǎ shānchú xiǎo gōngjù.
+Xiǎo bùjiàn bùshì nèi jiàn xiǎo gōngjù.
+Wèi zhǐdìng qǐdòng yìngyòng chéngshì míngchēng
+wèi zhǐdìng qǐdòng yìngyòng chéngshì huánjìng
+qǐdòng yìngyòng chéngshì yǐ cúnzài
+qǐdòng yìngyòng chéngshì bù cúnzài
+xuǎnzé qǐdòng xiàng
+SHIFT + H xúnqiú xiézhù. Bǎnběn
+zhèngzài qǐdòng {0}...
+Hánshù cānshù lièbiǎo
+jǐngbào yǐ cúnzài.
+Jǐngbào jiàngé wúxiào.
+Wèi zhǐdìng jǐngbào míngchēng hé jiàngé.
+Jǐngbào bù cúnzài.
+Jǐngbào míngchēng:
+Jǐngbào shuōmíng:
+Jǐngbào jiézhǐ rìqí:
+Pínlǜ wúxiào. Quèbǎo nín zhèngquè shūxiěle pínlǜ (yǐ hèzī wèi dānwèi).
+Chíxù shíjiān wúxiào. Quèbǎo nín zhèngquè shūxiěle chíxù shíjiān (yǐ háomiǎo wèi dānwèi).
+Biānmǎ wèi zì chuàn
+nín yǐ jìnrù diànyuán cāozuò xuǎndān. Qǐng shǐyòng zuǒyòu jiàntóu jiàn shūrù xuǎnxiàng bìng àn ENTER, huò àn ESC fǎnhuí zhǔ huàmiàn.
+Windows qǐdòng guǎnlǐ qì
+ENTER=xuǎnzé
+xuǎnzé yào qǐdòng de zuòyè xìtǒng, huò àn TAB jiàn xuǎnzé gōngjù:
+Ruò yào wèi cǐ xuǎnzé zhǐdìng jìn jiē xuǎnxiàng, qǐng àn F8.
+Jùlí zìdòng qǐdòng túchū xiǎnshì de xuǎnxiàng hái yǒu jǐ miǎo zhōng:
+GNU GRUB bǎnběn 2.06
+Shǐyòng ￪ hé ￬ jiàn xuǎnzé túchū xiǎnshì de tiáomù.
+Àn Enter qǐdòng suǒ xuǎn zuòyè xìtǒng, àn `e'biānjí zhǐlìng
+qǐdòng qián huò mìnglìng liè de “c”.
+Fǎn bái de tiáomù jiàng zài {0} miǎo hòu zìdòng zhíxíng.
+Àn Enter qǐdòng suǒ xuǎn zuòyè xìtǒng, àn `e'biānjí
+qǐdòng qián de mìnglìng huò mìnglìng liè de “c”.
+Zhèngzài qǐdòng “{0}”
+dǎng'àn xìtǒng lèixíngshì
+gé jiān lèixíng
+àn rènyì jiàn qǔxiāo yú shí
+shǐyòng jiàntóu jiàn jìnxíng xuǎnzé
+shūrù xuǎnzé hé xuǎnxiàng, àn CR qǐdòng
+qǐng xuǎnzé yào qǐdòng de zuòyè xìtǒng
+shǐyòng xiàngshàng hé xiàng xià jiàntóu jiàn jiāng túchū xiǎnshì de nèiróng yí zhì nín de xuǎnzé.
+Àn ENTER jiàn jìnxíng xuǎnzé.
+Yǒuguān Windows de gùzhàng páichú hé jìn jiē qǐdòng xuǎnxiàng, qǐng àn F8.
+Jìxù
+xuǎnzé qǐdòng xiàngmù:
+Shǐyòng chángyòng dānzì lièbiǎo.
+Shǐyòng wánzhěng de dānzì lièbiǎo.
+Pīngpāng qiú bǐsài!
+Kāiqǐ guǎngbò diàntái bòfàng qì
+dòu qǔ fēng míng shēng héchéng wénjiàn
+jiāng láiyuán sècǎi móxíng yǐ shùzì xíng shì zhuǎnhuàn wèi mùbiāo sècǎi móxíng.
+Jiāng láiyuán sècǎi móxíng zhuǎnhuàn wèi KS géshì de mùbiāo sècǎi móxíng.
+Jiāng láiyuán sècǎi móxíng zhuǎnhuàn wèi shíliù jìnwèi.
+Shǐyòng yánsè shuōmíng fú jiāng láiyuán yánsè móxíng zhuǎnhuàn wèi mùbiāo yánsè móxíng.
+Shǐyòng yánsè shuōmíng fú jiāng láiyuán sècǎi móxíng zhuǎnhuàn wèi KS géshì de mùbiāo sècǎi móxíng.
+Shǐyòng yánsè shuōmíng fú jiāng láiyuán yánsè móxíng zhuǎnhuàn wèi shíliù jìn zhì de mùbiāo yánsè móxíng.
+Liè chū nín de liánluò rén
+jiāzài nín de liánluò rén
+huì rù nín de liánluò rén
+jiāng suǒ xū de shūrù shì wéi MeCard zì chuàn
+huòqǔ liánluò zīxùn
+xiǎnshì zhǐdìng chéngshì de tiānqì zīxùn. Shǐyòng IBM de tiānqì píndào.
+Hùdòng shì TUI zhōng de tiānqì zīxùn
+xiǎnshì suǒyǒu kěyòng chéngshì jí qí wěidù/jīngdù duì
+yùlǎn yǐngxiàng
+zài hùdòng shì TUI zhōng chuàngzào yīzhǒng xīn yǔyán
+jiāng wénjiàn huò zì chuàn de nèiróng tiē dào wénzì tuōguǎn tígōng shāng
+zhǐdìng Pastebin tígōng zhě de URL
+zhǐdìng Pastebin tígōng zhě lèixíng
+zhǐdìng Pastebin tígōng zhě tiē wén yèmiàn
+zhǐdìng Pastebin tígōng zhě de tiē wén géshì
+zhǐdìng Pastebin tígōng zhě tiē wén lán wèi míngchēng
+huòqǔ měi xiǎoshí de gǔpiào xìnxī
+gōngsī jiǎnchēng
+zài hùdòng shì TUI zhōng jiànlì xīn zhǔtí
+nín kěyǐ shǐyòng héxīn mó zǔ zhìzuò kě qǐdòng chéngshì ma?
+Chēzhàn lèixíng
+zhuāngzhì
+sījī
+bù wán shí wúfǎ cháxún mùqián shèbèi.
+Shèbèi hé qūdòng chéngshì
+kěyòng de shèbèi hé qūdòng chéngshì
+BassBoom guīgé
+jiěmǎ qì
+xìtǒng guīgé
+bā suǒ lì yǎ bǎnběn
+MPG123 bǎnběn
+OUT123 bǎnběn
+zhīyuán de jiěmǎ qì
+suǒyǒu jiěmǎ qì
+xìtǒng
+xìtǒng jiàgòu
+liúchéng jiàgòu
+xìtǒng miáoshù
+.NET miáoshù
+shèdìng chóngfù jiǎnchá diǎn
+xúnqiú chóngfù jiǎnchá diǎn
+kāiqǐ jūnhéng qì
+shèbèi hé qūdòng chéngshì xùnxí
+shèdìng shèbèi hé qūdòng chéngshì
+chóng zhì shèbèi hé qūdòng chéngshì
+xìtǒng zīxùn
+guǎngbò diàntái xùnxí
+guǎngbò diàntái kuòchōng xùnxí
+xīn zēng guǎngbò diàntái
+shàng yīgè diàntái
+xià yīgè guǎngbò diàntái
+shānchú mùqián diàntái
+shānchú suǒyǒu guǎngbò diàntái
+xuǎnzé yīgè qūdòng chéngshì. ESC tuìchū.
+Xuǎnzé yīgè shèbèi. Mùqián qūdòng chéngshì shì {0}. ESC tuìchū.
+Bù wán. Yīnyuè bòfàng qì xiánzhì.
+Dīyīn
+zhōng shàngcéng
+gāoyīn
+wèizhī dài lèixíng
+jūnhéng qì pínduàn
+xuǎnzé yào zhǎo de gēcí
+yuán zhùmín zhōu
+jīngzhǔn xuànrǎn
+huǎnchōng qū tiánchōng
+jiěmǎ yánchí
+biānmǎ yánchí
+biānmǎ tiánchōng
+kēxué guàirén liú
+xīnxiān jiěmǎ qì
+àn xià “A” jiàng guǎngbò diàntái chārù bòfàng qīngdān.
+Shūrù guǎngbò diàntái de lùjìng. Diàntái de URL bìxū tígōng MPEG guǎngbò diàntái. Shàng bù zhīyuán AAC.
+Chēzhàn zīxùn
+guǎngbò diàntái wǎngzhǐ
+guǎngbò diàntái míngchēng
+diàntái dāngqián gēqǔ
+shǒuyè
+mǎ liú lùjìng
+tīngzhòng:{0}, Qízhōng {1} chǔyú gāofēng zhuàngtài
+wèi yuán lǜ
+méitǐ lèixíng
+wúxiàndiàn sìfú qì zīxùn
+chuàn liú méitǐ xùnxí
+guǎngbò diàntái shǐyòng HTTPS
+diàntái sìfú qì lèixíng
+guǎngbò diàntái chuàn liú:{0}, Qízhōng {1} chǔyú zuòyòng zhōng zhuàngtài
+guǎngbò diàntái tīngzhòng:{0}, Gāofēng qī wèi {1}
+fēng míng héchéng dàng bù cúnzài.
+Zhāngjié míngchēng
+héchéng qì biǎoshì wúxiào.
+Pínlǜ wúxiào.
+Chíxù shíjiān wúxiào.
+Wúfǎ cóng tígōng de biǎoshì zhōng huòqǔ héchéng zīxùn.
+Xínghào guīgé wúxiào.
+Hēi jiàn diàn píng:
+Dì yī gè yánsè děngjí bìxū shì shùzì.
+Dì èr gè yánsè děngjí bìxū shì shùzì.
+Dì sān gè yánsè děngjí bìxū shì shùzì.
+Dì sì gè jiàn jíbié bìxū shì shùzì.
+-- Tiānqì zīxùn --
+wěidù hé jīngdù
+yúncéng fùgài
+yītiān zhōng de shíjiān
+zuìdī wēndù
+zuìgāo wēndù
+jiàngshuǐ jīhuì
+jiàngshuǐ xíng
+rèdù zhǐshù
+fēnghán
+zǐwàixiàn zhǐshù
+zǐwàixiàn shuōmíng
+wèi tígōng yǐngxiàng de lùjìng.
+Tú xiàng dǎng'àn bù cúnzài.
+Zhǐdìng yào shàngchuán de dǎng'àn míngchēng huò wénzì.
+Bù zhīyuán Pastebin tígōng zhě lèixíng.
+Chénggōng tiē dào tígōng zhě!
+Wúfǎ tiē shàng dào tígōng zhě.
+Zài feed kù zhōng sōuxún feed
+shūrù nín de AlphaVantage API jīn yào
+qǐng tígōng nín de API jīn yào.
+Wúfǎ shǐyòng yǎnshì API jīn yào.
+Nín de API jīn yào chángdù yīng wèi 16 gè zì yuán.
+Qǔdé gǔpiào zīliào shí fāshēng cuòwù. Kěyǐ zài cǐ chù zhǎodào gèng duō xìnxī
+Kāipán gǔjià
+gāo gǔjià
+gǔjià dī
+shōupán gǔjià
+kùcún liàng
+xūyào API jīn yào. Cóng shèdìng jìnxíng pèizhì.
+Wú kěyòng kùcún zīliào.
+Jiāng yánsè fùzhì dào...
+Xuǎnzé yào cóngzhōng fùzhì yánsè de láiyuán yánsè lèixíng.
+Xuǎnzé yào jiāng láiyuán yánsè lèixíng {0} fùzhì dào de mùbiāo yánsè lèixíng.
+Yánsè lèixíng
+yánsè
+yánsè míngchēng
+yánsè liù jiǎoxíng
+sècǎi liàngdù
+xuǎnzé nín xiǎng yào rúhé chúcún cǐ zhǔtí
+xuǎnzé nín xiǎng yào rúhé zài rù zhǔtí
+fēnshù
+Nitrocid KS fābù zhōunián jìniàn rì
+zhāijiè yuè
+méiyǒu liánluò fāngshì.
+Liánluò diànhuà hàomǎ wúxiào.
+Liánluò diànhuà hàomǎ chāochū fànwéi.
+Míng
+xìng
+liánxì dìlǐ
+liánluò fāngshì bèizhù
+yǒuxiē liánluò rén wúfǎ liè chū.
+Shūrù chéngshì de wěidù hé jīngdù.
+Nín kěyǐ tòuguò cháyuè IBM wǎngzhàn qǔdé zhǐdǎo lái qǔdé zìjǐ de API jīn yào.
+Cóng dìlǐ wèizhì zài rù tiānqì zīxùn
+qìhòu tiáojiàn
+wēndù
+fēngsù
+fēngxiàng
+shīdù
+wěidù
+jīngdù
+shūrù chéngshì míngchēng jìnxíng sōuxún.
+Méiyǒu yǐ cǐ míngchēng mìngmíng de chéngshì. Rúguǒ nín chángshì sōuxún tèdìng chéngshì, qǐng chángshì sōuxún jùlí nín yào xúnzhǎo de chéngshì zuìjìn de gèng guǎngfàn de wèizhì.
+Cóng xiàmiàn de qīngdān zhòng xuǎnzé yīgè chéngshì. Zhè liǎng gè shùzì dàibiǎo dìlǐ wèizhì.
+Shūrù chéngshì wěidù.
+Shūrù chéngshì jīngdù.
+Wěidù wúxiào.
+Jīngdù wúxiào.
+Nín kěyǐ tòuguò cháyuè IBM wǎngzhàn qǔdé zhǐdǎo lái qǔdé zìjǐ de API jīn yào. Shūrù tiānqì píndào API jīn yào.
+Wèi tígōng tiānqì píndào API jīn yào. Rúguǒ nín xūyào xiézhù, qǐng zàofǎng IBM wǎngzhàn.
+Dāngqián de fēi duìchèn biānmǎ qūdòng chéngshì
+nín xiǎng shǐyòng nǎ zhǒng fēi duìchèn biānmǎ qūdòng chéngshì?
+Yǐndǎo chéngshì fēnggé
+xuǎnzé fúhé nín piānhào de yǐndǎo chéngshì yàngshì.
+Yǐndǎo chéngshì yù shè xuǎnzé chāo shí
+qǐdòng dào yù shè xuǎnzé de chāo shí (yǐ miǎo wèi dānwèi).
+Yǐndǎo chéngshì yù shè xuǎnzé
+yù shè qǐdòng xiàng xuǎnzé. Zhège shùzì cóng líng kāishǐ, yīncǐ dì yī gè yuánsù de suǒyǐn wéi 0, yī cǐ lèituī.
+Qǐyòng “xiāohuà jì zhǔyè”
+qǐyòng “xiāo jī shā chóng jì zhǔyè”, ràng nín yīmùliǎorán dì liǎojiě zhèngzài fāshēng de qíngkuàng.
+Hùdòng shì TUI nèi jiàn jiàn bǎng dìng bèijǐng yánsè
+hùdòng shì TUI nèi jiàn jiàn bǎng dìng qián jǐngsè
+hùdòng shì TUI nèi jiàn jiàn bǎng dìng míngchēng yánsè
+qǐyòng xiǎo gōngjù
+qǐyòng xiàndài dēngrù chǔlǐ chéngxù zhōng de xiǎo gōngjù yǐjí shǐyòng xiǎo gōngjù API de suǒyǒu chǔlǐ chéngxù.
+Dì yī gè xiǎo bùjiàn
+xiàndài dēngrù chǔlǐ chéngxù de dì yī gè xiǎo gōngjù. Nín kěyǐ zài qí gèzì de shèdìng tiáomù zhōng pèizhì cǐ xiǎo gōngjù.
+Dì èr gè xiǎo bùjiàn
+xiàndài dēngrù chǔlǐ chéngxù de dì èr gè xiǎo gōngjù. Nín kěyǐ zài qí gèzì de shèdìng tiáomù zhōng pèizhì cǐ xiǎo gōngjù.
+Huá shǔ zhīyuán
+shìfǒu chūshǐhuà nèihé de huá shǔ zhīchí, běnzhí shàng shǐ suǒyǒu mods dōu nénggòu chǔlǐ huá shǔ zhǐbiāo.
+Huá shǔ yídòng zhīyuán
+shìfǒu tóngshí qǐyòng xíngdòng shìjiàn, yǐ gǎishàn mǒu xiē hùdòng shì yìngyòng chéngshì de shǐyòng zhě tǐyàn.
+Mónǐ shízhōng, yíngmù dǐbù yǒu jiǎndān de rìqí hé shíjiān.
+Xiǎnshì miǎozhēn
+shìfǒu xiǎnshì miǎozhēn.
+Xiǎnshì rìqí
+shìfǒu xiǎnshì rìqí.
+Zài yíngmù zhōngjiān xiǎnshì biǎoqíng fúhào.
+Qǐyòng biǎoqíng xúnhuán
+shìfǒu zài biǎoqíng fúhào zhī jiān xúnhuán
+tú shì
+yào xiǎnshì de biǎoqíng fúhào
+běn bùfèn kě ràng nín pèizhì SSH de gōngzuò fāngshì.
+SSH de shǐyòng zhě míngchēng tíshì yàngshì
+jiāng xīn lián xiàn xīn zēng zhì SSH kuàisù bōhào
+rúguǒ qǐyòng, zé huì wèi SSH kuàisù bōhào xīn zēng lián xiàn.
+Cǐ bùfèn yǔnxǔ nín pèizhì kùcún.
+API jīn yào
+AlphaVantage gǔpiào API de jīn yào
+gōngsī dàimǎ
+gǔpiào gōngsī
+mónǐ jiǎshè de gùzhàng hēipíng, yǒu shí huì chūxiàn RGB xiàn.
+Máocì jīlǜ
+yíngmù gùzhàng fāshēng de jǐlǜ (yǐ bǎifēnbǐ wéi dānwèi)

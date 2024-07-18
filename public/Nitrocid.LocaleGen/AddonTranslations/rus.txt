@@ -3302,3 +3302,368 @@ Kakoy drayver vvoda vy by khoteli ispol'zovat'?
 Perenos staroy konfiguratsii
 Perenosit chast' vashey staroy konfiguratsii iz starykh versiy yadra.
 Vozmozhno, migratsiya konfiguratsii ne zavershilas' uspeshno. Yesli vy uvereny, chto vashi fayly konfiguratsii deystvitel'ny, izuchite zhurnaly otladki dlya polucheniya dopolnitel'noy informatsii.
+Vyberite vash yazyk.
+Vvedite novoye imya pol'zovatelya. Vam sleduyet vvesti novoye imya pol'zovatelya, kotorogo yeshche ne sushchestvuyet.
+Vvedite svoy parol' pol'zovatelya. Vam sleduyet vybrat' nadezhnyy parol' dlya povysheniya bezopasnosti.
+Avtomaticheskaya proverka obnovleniy
+Da!
+Net, spasibo.
+Avtomaticheskaya zagruzka obnovleniy
+Zapusk i ostanovka modov v bezopasnom rezhime zapreshcheny.
+Proizoshla neizvestnaya oshibka yadra, vozmozhno, iz-za togo, chto ne ukazan tip isklyucheniya yadra, ili chto-to ne tak.
+Set' yadra soobshchila ob oshibke dlya komponenta imeni khosta.
+Nevernyy RSS-kanal. Ubedites', chto vy pravil'no ukazali ssylku na kanal, i povtorite popytku.
+Nevernaya ssylka na RSS-kanal. Ubedites', chto vy pravil'no vveli ssylku, i povtorite popytku.
+Nedopustimyy tip RSS-kanala. Ubedites', chto vy pravil'no vveli tip fida, i povtorite popytku.
+Razresheniye otkloneno pri popytke vypolnit' operatsiyu. Vam neobkhodimo voyti v sistemu kak pol'zovatel', imeyushchiy neobkhodimyye razresheniya, chtoby imet' vozmozhnost' vypolnit' etu operatsiyu.
+Proizoshla oshibka pri popytke vypolnit' operatsiyu po upravleniyu sredoy.
+Proizoshla oshibka pri popytke obrabotat' operatsiyu zagruzchika.
+Proizoshla oshibka pri popytke obrabotki operatsii sistemy signalizatsii.
+Proizoshla oshibka pri popytke obrabotat' sistemnuyu operatsiyu vidzheta. Yesli vy uvereny, chto etot vidzhet zaregistrirovan pravil'no, ubedites', chto vy pravil'no napisali imya klassa vidzheta.
+Dopolnitel'nykh oshibok v khode ekspluatatsii ne obnaruzheno.
+Proverka nalichiya neskol'kikh ustanovlennykh sred
+Neskol'ko sred
+Nedopustimyy indeksnyy nomer dochernego potoka.
+Imya signala trevogi
+Opisaniye trevogi
+Srok deystviya signala trevogi
+Napishite nazvaniye budil'nika
+Imya trevogi ne ukazano.
+Zapishite interval trevogi v etom formate
+Interval signalizatsii ne ukazan ili nedeystvitelen.
+Tip fayla
+Vazhnost' uvedomleniya
+Protsent progressa
+Progress zavershen
+Progress ne opredelen
+Sostoyaniye progressa
+Nazvaniye uvedomleniya
+Reporter ne predostavil nikakoy informatsii!
+Vypolnyat'
+Vyyti
+Obolochka
+Vyklyuchatel'
+Faylovyy menedzher
+Menedzher trevog
+Uvedomleniya
+Dispetcher zadach
+O nitrotside
+Privet, {0}! Dobro pozhalovat' v Nitrotsid!
+Vklyuchite zagolovki pri vkhode v sistemu, chtoby pokazyvat' RSS-kanaly
+Nastroyki
+Zakryvat'
+Nitrocid KS modeliruyet nashe budushcheye yadro ​​— Nitrocid Kernel.
+API modov
+Domashnyaya stranitsa Nitrocid vyshla iz stroya, i yeye neobkhodimo vernut' obratno v obolochku.
+Neizvestnyy nomer ekrana.
+Ne udalos' otobrazit' ekran vkhoda v sistemu.
+Izuchite zhurnaly otladki, chtoby poluchit' dopolnitel'nuyu informatsiyu ob oshibke.
+Chtoby zakryt' navsegda, libo nazhmite ENTER na klaviature, libo vklyuchite «Uvedomleniye o razrabotke podtverzhdeno» v nastroykakh yadra. Lyuboy drugoy klyuch prodolzhayetsya bez podtverzhdeniya.
+Vy ispol'zuyete Nitrocid KS v neobychnoy srede. Pozhaluysta, ubedites', chto vy zapustili yadro ​​napryamuyu. Yesli vy uvereny, chto zapustili yadro ​​obychnym sposobom, vozmozhno, vy ispol'zuyete nepodderzhivayemuyu versiyu Nitrocid KS.
+Dopolnitel'no - Generator imen
+Ekstra - Pastebin
+Dopolnitel'no - Izobrazheniya
+Dopolnitel'no — uluchshennyy SHA256
+Dopolnitel'no — uluchshennyy SHA384
+Dopolnitel'no — uluchshennyy SHA512
+Dopolnitel'no - Aktsii
+Dopolnitel'no: zvukovoy sintezator
+Dopolnitel'no — SSH
+V GRILO proizoshla vnutrennyaya oshibka
+Nazhmite lyubuyu klavishu dlya vykhoda.
+Standartnyye elementy upravleniya
+Elementy upravleniya, opredelyayemyye pol'zovatel'skim stilem zagruzki
+Net elementov upravleniya, opredelennykh pol'zovatel'skim stilem zagruzki.
+Vybirayet predydushchuyu zagruzochnuyu zapis'
+Vybirayet sleduyushchuyu zagruzochnuyu zapis'
+Vybirayet pervuyu zagruzochnuyu zapis'
+Vybirayet poslednyuyu zagruzochnuyu zapis'
+Otkryvayet etu stranitsu spravki
+Zagruzhayet vybrannuyu zapis'
+Okruzhayushchaya sreda ne ukazana
+Data i vremya signala trevogi mogut byt' ne v proshlom.
+Dopolnitel'nuyu informatsiyu sm. v spravke po etoy komande.
+Eta komanda imeyet sleduyushchiye argumenty, kotoryye menyayut yeye rabotu:
+Neukazannoye opisaniye argumenta
+Perechislyayet vse dostupnyye parametry funktsii iz funktsii.
+Upravlyayte svoimi signalami trevogi
+Upravlyayte svoimi signalami trevogi v interaktivnom TUI
+Perezapuskayet udalennyy ekzemplyar yadra
+Yadro v udalennom ekzemplyare budet vyklyucheno
+Ispol'zuyet ustarevshiy stil' nastroyek.
+Pokazyvayet vse poluchennyye uvedomleniya v interaktivnom pol'zovatel'skom interfeyse.
+Vidzhet ne predusmotren.
+Vidzhet uzhe sushchestvuyet.
+Imya vidzheta ne ukazano.
+Vidzhet ne sushchestvuyet.
+Vidzhet nevozmozhno udalit'.
+Vidzhet ne yavlyayetsya vstroyennym vidzhetom.
+Imya zagruzochnogo prilozheniya ne ukazano
+Sreda zagruzochnogo prilozheniya ne ukazana
+Zagruzochnoye prilozheniye uzhe sushchestvuyet
+Zagruzochnoye prilozheniye ne sushchestvuyet
+Vyberite zagruzochnuyu zapis'
+SHIFT + H dlya pomoshchi. Versiya
+Zagruzka {0}...
+Spisok parametrov funktsii dlya
+Trevoga uzhe sushchestvuyet.
+Nevernyy interval signalizatsii.
+Imya signala trevogi i interval ne ukazany.
+Signalizatsii ne sushchestvuyet.
+Imya signala trevogi:
+Opisaniye trevogi:
+Srok podachi signala trevogi:
+Chastota nedeystvitel'na. Ubedites', chto vy pravil'no napisali chastotu v gertsakh.
+Nedopustimaya prodolzhitel'nost'. Ubedites', chto vy pravil'no napisali prodolzhitel'nost' v millisekundakh.
+Zakodirovano kak stroka
+Vy voshli v menyu silovykh deystviy. Pozhaluysta, vvedite vybor, ispol'zuya klavishi so strelkami vlevo i vpravo, i nazhmite ENTER ili nazhmite ESC, chtoby vernut'sya na glavnyy ekran.
+Menedzher zagruzki dlya Windows
+ENTER=Vybrat'
+Vyberite operatsionnuyu sistemu dlya zapuska ili nazhmite TAB, chtoby vybrat' instrument:
+Chtoby ukazat' rasshirennyy parametr dlya etogo vybora, nazhmite F8.
+Sekundy do avtomaticheskogo zapuska vydelennogo vybora:
+GNU GRUB versii 2.06
+Ispol'zuyte klavishi ↑ i ↓, chtoby vybrat' vydelennuyu zapis'.
+Nazhmite Enter, chtoby zagruzit' vybrannuyu OS, «e», chtoby otredaktirovat' komandy.
+pered zagruzkoy ili `c' dlya komandnoy stroki.
+Vydelennaya zapis' budet vypolnena avtomaticheski cherez {0} s.
+Nazhmite Enter, chtoby zagruzit' vybrannuyu OS, «e», chtoby otredaktirovat'
+komandy pered zagruzkoy ili `c' dlya komandnoy stroki.
+Zagruzka '{0}'
+Tip faylovoy sistemy
+tip razdela
+Nazhmite lyubuyu klavishu, chtoby otmenit' taym-aut.
+Ispol'zuyte klavishi so strelkami, chtoby sdelat' vybor
+Vvedite vybor i parametry, nazhmite CR dlya zagruzki.
+Pozhaluysta, vyberite operatsionnuyu sistemu dlya zapuska
+Ispol'zuyte klavishi so strelkami vverkh i vniz, chtoby peremestit' vydeleniye na vash vybor.
+Nazhmite ENTER, chtoby vybrat'.
+Dlya ustraneniya nepoladok i dopolnitel'nykh parametrov zapuska Windows nazhmite F8.
+Prodolzhat'
+Vyberite zagruzochnuyu zapis':
+Ispol'zuyet obshchiy spisok slov.
+Ispol'zuyet polnyy spisok slov.
+Igra v ping-pong!
+Vmesto etogo otkryvayet pleyer radiostantsii
+Chitayet zvukovoy fayl sintezatora
+Preobrazuyet iskhodnuyu tsvetovuyu model' v tselevuyu tsvetovuyu model' v chislakh.
+Preobrazuyet iskhodnuyu tsvetovuyu model' v tselevuyu tsvetovuyu model' v formate KS.
+Preobrazuyet iskhodnuyu tsvetovuyu model' v shestnadtsaterichnuyu.
+Preobrazuyet iskhodnuyu tsvetovuyu model' s pomoshch'yu spetsifikatora tsveta v tselevuyu tsvetovuyu model'.
+Preobrazuyet iskhodnuyu tsvetovuyu model' s pomoshch'yu spetsifikatora tsveta v tselevuyu tsvetovuyu model' v formate KS.
+Preobrazuyet iskhodnuyu tsvetovuyu model' s pomoshch'yu spetsifikatora tsveta v tselevuyu tsvetovuyu model' v shestnadtsaterichnom formate.
+Perechislyayet vashi kontakty
+Zagruzhayet vashi kontakty
+Importiruyet vashi kontakty
+Obrabatyvayet trebuyemyy vvod kak stroku MeCard.
+Poluchayet kontaktnuyu informatsiyu
+Pokazyvayet informatsiyu o pogode dlya ukazannogo goroda. Ispol'zuyet The Weather Channel ot IBM.
+Informatsiya o pogode v interaktivnom TUI
+Pokazyvayet vse dostupnyye goroda i ikh pary shiroty i dolgoty.
+Predvaritel'nyy prosmotr izobrazheniya
+Sozdayet novyy yazyk v interaktivnom TUI
+Vstavlyayet soderzhimoye fayla ili stroki provayderu tekstovogo khostinga.
+Ukazyvayet URL-adres postavshchika Pastebin.
+Ukazyvayet tip postavshchika Pastebin
+Ukazyvayet stranitsu publikatsii provaydera Pastebin
+Ukazyvayet format soobshcheniya provaydera Pastebin.
+Ukazyvayet imya polya soobshcheniya provaydera Pastebin.
+Poluchayet pochasovuyu informatsiyu o zapasakh
+Korotkiy simvol kompanii
+Sozdayet novuyu temu v interaktivnom TUI.
+chto vy mozhete sozdavat' zagruzochnyye programmy, ispol'zuya mody yadra?
+Tip stantsii
+Ustroystvo
+Voditel'
+Nevozmozhno zaprosit' tekushchiye ustroystva, poka vy ne igrayete.
+Ustroystvo i drayver
+Dostupnyye ustroystva i drayvery
+Tekhnicheskiye kharakteristiki BassBoom
+Dekodery
+Tekhnicheskiye kharakteristiki sistemy
+Versiya Bazolii
+versiya MPG123
+Versiya OUT123
+Podderzhivayemyye dekodery
+Vse dekodery
+Sistema
+Arkhitektura sistemy
+Arkhitektura protsessa
+Opisaniye sistemy
+.NET-opisaniye
+Ustanovit' povtornuyu kontrol'nuyu tochku
+Popytat'sya povtorit' kontrol'nuyu tochku
+Otkryvayet ekvalayzer
+Informatsiya ob ustroystve i drayvere
+Ustanovit' ustroystvo i drayver
+Sbros ustroystva i drayvera
+Sistemnaya informatsiya
+Informatsiya o radiostantsii
+Rasshirennaya informatsiya o radiostantsii
+Dobavit' radiostantsiyu
+Predydushchaya radiostantsiya
+Sleduyushchaya radiostantsiya
+Udalit' tekushchuyu radiostantsiyu
+Udalit' vse radiostantsii
+Vyberite voditelya. ESC dlya vykhoda.
+Vyberite ustroystvo. Tekushchiy drayver: {0}. ESC dlya vykhoda.
+Ne igrayu. Muzykal'nyy proigryvatel' neaktiven.
+Bas
+Verkhniy Sredniy
+Vysokiye chastoty
+Neizvestnyy tip gruppy
+Gruppa ekvalayzera
+Vyberite tekst, kotoryy khotite nayti
+Rodnoye gosudarstvo
+Tochnyy rendering
+Zapolneniye bufera
+Zaderzhka dekodirovaniya
+Zaderzhka kodirovaniya
+Zapolneniye kodirovaniya
+ruchey Frankenshteyna
+Svezhiy dekoder
+Nazhmite «A», chtoby vstavit' radiostantsiyu ​​v spisok vosproizvedeniya.
+Vvedite put' k radiostantsii. URL-adres stantsii dolzhen ukazyvat' radiostantsiyu ​​v formate MPEG. AAC poka ne podderzhivayutsya.
+Informatsiya o stantsii
+URL radiostantsii
+Nazvaniye radiostantsii
+Tekushchaya pesnya radiostantsii
+Domashnyaya stranitsa
+Put' potoka
+Slushateli: {0}, {1} na pike
+Bitreyt
+Tip nositelya
+Informatsiya o radioservere
+Informatsiya o potoke
+Radiostantsiya ispol'zuyet HTTPS
+Tip servera radiostantsii
+Potoki radiostantsiy: {0} s aktivnym {1}
+Slushateli radiostantsiy: {0}, {1} v pik.
+Fayl sintezatora Beep ne sushchestvuyet.
+Nazvaniye glavy
+Nedopustimoye predstavleniye sintezatora.
+Nedopustimaya chastota.
+Nedopustimaya prodolzhitel'nost'.
+Nevozmozhno poluchit' informatsiyu o sintezatore iz predostavlennogo predstavleniya.
+Spetsifikatsiya modeli nedeystvitel'na.
+Uroven' chernogo klyucha:
+Pervyy uroven' tsveta dolzhen byt' chislovym.
+Vtoroy uroven' tsveta dolzhen byt' chislovym.
+Tretiy uroven' tsveta dolzhen byt' chislovym.
+Chetvertyy klyuchevoy uroven' dolzhen byt' chislovym.
+-- Informatsiya o pogode --
+Shirota i dolgota
+Oblachnost'
+Vremya sutok
+Minimal'naya temperatura
+Maksimal'naya temperatura
+Veroyatnost' osadkov
+Tip osadkov
+Indeks tepla
+Kholodnyy veter
+Ul'trafioletovyy indeks
+Opisaniye ul'trafioleta
+Put' k izobrazheniyu ne ukazan.
+Fayl izobrazheniya ne sushchestvuyet.
+Ukazhite imya fayla ili tekst dlya zagruzki.
+Tip postavshchika Pastebin ne podderzhivayetsya.
+Uspeshno vstavleno provayderu!
+Nevozmozhno vstavit' provayderu.
+Ishchet kanal v biblioteke kanalov.
+Vvedite klyuch API AlphaVantage.
+Ukazhite svoy klyuch API.
+Klyuch demonstratsionnogo API ispol'zovat' nel'zya.
+Vash klyuch API dolzhen imet' dlinu 16 simvolov.
+Proizoshla oshibka pri poluchenii dannykh ob aktsiyakh. Dopolnitel'nuyu informatsiyu mozhno nayti zdes'
+Nachal'naya tsena aktsii
+Vysokaya tsena aktsiy
+Nizkaya tsena aktsiy
+Zakrytiye tseny aktsii
+Ob"yem zapasov
+Trebuyetsya klyuch API. Nastroit' iz nastroyek.
+Dannykh o nalichii net.
+Kopirovat' tsvet v...
+Vyberite iskhodnyy tip tsveta, iz kotorogo nuzhno skopirovat' tsvet.
+Vyberite tselevyye tipy tsveta, v kotoryye nuzhno skopirovat' iskhodnyy tip tsveta {0}.
+Tip tsveta
+Tsvet
+Nazvaniye tsveta
+Shestnadtsaterichnyy tsvet
+Yarkost' tsveta
+Vyberite, kak vy khotite sokhranit' etu temu
+Vyberite, kak vy khotite zagruzit' temu
+Schet
+Godovshchina vypuska Nitrocid KS
+Ramadan
+Nikakikh kontaktov.
+Kontaktnyy nomer nedeystvitelen.
+Kontaktnyy nomer vne diapazona.
+Imya
+Familiya
+Kontakt Geo
+Kontaktnaya informatsiya
+Nekotoryye kontakty ne mogut byt' ukazany.
+Vvedite shirotu i dolgotu goroda.
+Vy mozhete poluchit' sobstvennyy klyuch API, obrativshis' za instruktsiyami na veb-sayt IBM.
+Zagruzka informatsii o pogode iz geograficheskogo mestopolozheniya
+Pogodnyye usloviya
+Temperatura
+Skorost' vetra
+Napravleniye vetra
+Uroven' vlazhnosti
+Shirota
+Dolgota
+Vvedite nazvaniye goroda dlya poiska.
+Gorodov s takim nazvaniyem net. Yesli vy pytayetes' nayti konkretnyy gorod, poprobuyte nayti boleye shirokoye mestopolozheniye, blizhaysheye k iskomomu gorodu.
+Vyberite gorod iz spiska nizhe. Eti dva chisla oboznachayut geograficheskiye mestopolozheniya.
+Vvedite shirotu goroda.
+Vvedite dolgotu goroda.
+Nedopustimaya shirota.
+Nedopustimaya dolgota.
+Vy mozhete poluchit' sobstvennyy klyuch API, obrativshis' za instruktsiyami na veb-sayt IBM. Vvedite API-klyuch Weather Channel.
+Klyuch API Weather Channel ne predostavlyayetsya. Yesli vam nuzhna pomoshch', posetite veb-sayt IBM.
+Tekushchiy drayver asimmetrichnogo kodirovaniya
+Kakoy drayver asimmetrichnogo kodirovaniya vy by khoteli ispol'zovat'?
+Stil' zagruzchika
+Vyberite stil' zagruzchika, sootvetstvuyushchiy vashim predpochteniyam.
+Taym-aut vybora zagruzchika po umolchaniyu
+Taym-aut v sekundakh dlya zagruzki s vyborom po umolchaniyu.
+Vybor zagruzchika po umolchaniyu
+Vybor zagruzochnoy zapisi po umolchaniyu. Eto chislo nachinayetsya s nulya, poetomu pervyy element imeyet indeks 0 i tak daleye.
+Vklyuchit' «Domashnyuyu stranitsu Nitrocid»
+Vklyuchayet «Domashnyuyu stranitsu Nitrocid», kotoraya pozvolyayet vam srazu uvidet', chto proiskhodit.
+Tsvet fona interaktivnoy vstroyennoy privyazki klavish TUI
+Tsvet perednego plana interaktivnoy vstroyennoy privyazki klavish TUI
+Tsvet nazvaniya vstroyennoy privyazki klavish interaktivnogo TUI
+Vklyuchit' vidzhety
+Vklyuchayet vidzhety v sovremennom obrabotchike vkhoda v sistemu i vo vsekh obrabotchikakh, ispol'zuyushchikh API vidzhetov.
+Pervyy vidzhet
+Pervyy vidzhet dlya sovremennogo obrabotchika vkhoda v sistemu. Vy mozhete nastroit' etot vidzhet v sootvetstvuyushchey zapisi nastroyek.
+Vtoroy vidzhet
+Vtoroy vidzhet dlya sovremennogo obrabotchika vkhoda v sistemu. Vy mozhete nastroit' etot vidzhet v sootvetstvuyushchey zapisi nastroyek.
+Podderzhka myshi
+Initsializirovat' li podderzhku myshi dlya yadra ili net, po suti pozvolyaya vsem modam obrabatyvat' ukazatel' myshi.
+Podderzhka dvizheniya myshi
+Vklyuchit' li takzhe sobytiya dvizheniya ili net, chtoby uluchshit' vzaimodeystviye s pol'zovatelem nekotorykh interaktivnykh prilozheniy.
+Analogovyye chasy s prostoy datoy i vremenem vnizu ekrana.
+Pokazat' sekundnuyu strelku
+Pokazyvat' sekundnuyu strelku ili net.
+Data otobrazheniya
+Pokazyvat' datu ili net.
+Pokazyvayet smaylik v tsentre ekrana.
+Vklyuchit' smenu smaylikov
+Pereklyuchat'sya li mezhdu smaylikami
+smaylik
+Smaylik, kotoryy nuzhno pokazat'
+V etom razdele vy mozhete nastroit' rabotu SSH.
+Stil' zaprosa imeni pol'zovatelya dlya SSH
+Dobavleniye novykh podklyucheniy k bystromu naboru SSH
+Yesli etot parametr vklyuchen, dobavlyayetsya novoye soyedineniye k bystromu naboru SSH.
+V etom razdele vy mozhete nastroit' aktsii.
+API-klyuch
+Klyuch dlya API aktsiy AlphaVantage
+Kod kompanii
+Aktsionnaya kompaniya
+Imitiruyet gipoteticheskiy neispravnyy chernyy ekran s inogda poyavlyayushchimisya liniyami RGB.
+Veroyatnost' sboya
+Veroyatnost', v protsentakh, vozniknoveniya glyuka ekrana
