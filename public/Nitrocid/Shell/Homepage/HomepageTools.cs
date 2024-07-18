@@ -33,6 +33,7 @@ using Nitrocid.Users.Login;
 using Nitrocid.Users.Login.Widgets;
 using Nitrocid.Users.Login.Widgets.Implementations;
 using System;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -228,6 +229,52 @@ namespace Nitrocid.Shell.Homepage
                 });
                 homeScreen.AddBufferedPart("The Nitrocid Homepage", homeScreenBuffer);
 
+                // Helper function
+                void DoAction(int choiceIdx)
+                {
+                    switch (choiceIdx)
+                    {
+                        case 0:
+                            {
+                                var tui = new FileManagerCli
+                                {
+                                    firstPanePath = PathsManagement.HomePath,
+                                    secondPanePath = PathsManagement.HomePath
+                                };
+                                InteractiveTuiTools.OpenInteractiveTui(tui);
+                            }
+                            break;
+                        case 1:
+                            {
+                                var tui = new AlarmCli();
+                                InteractiveTuiTools.OpenInteractiveTui(tui);
+                            }
+                            break;
+                        case 2:
+                            {
+                                var tui = new NotificationsCli();
+                                InteractiveTuiTools.OpenInteractiveTui(tui);
+                            }
+                            break;
+                        case 3:
+                            {
+                                var tui = new TaskManagerCli();
+                                InteractiveTuiTools.OpenInteractiveTui(tui);
+                            }
+                            break;
+                        case 4:
+                            InfoBoxButtonsColor.WriteInfoBoxButtons(
+                                Translate.DoTranslation("About Nitrocid"),
+                                [new InputChoiceInfo(Translate.DoTranslation("Close"), Translate.DoTranslation("Close"))],
+                                Translate.DoTranslation("Nitrocid KS simulates our future kernel, the Nitrocid Kernel.") + "\n\n" +
+                                Translate.DoTranslation("Version") + $": {KernelMain.VersionFullStr}" + "\n" +
+                                Translate.DoTranslation("Mod API") + $": {KernelMain.ApiVersion}" + "\n\n" +
+                                Translate.DoTranslation("Copyright (C) 2018-2024 Aptivi - All rights reserved") + " - https://aptivi.github.io"
+                            );
+                            break;
+                    }
+                }
+
                 // Render the thing and wait for a keypress
                 bool exiting = false;
                 while (!exiting)
@@ -238,14 +285,70 @@ namespace Nitrocid.Shell.Homepage
                         continue;
 
                     // Read the available input
-                    var key = TermReader.ReadPointerOrKey();
-                    if (key.Item1 is PointerEventContext context)
+                    if (PointerListener.PointerAvailable)
                     {
+                        var context = TermReader.ReadPointer();
 
+                        // Get the necessary positions
+                        int settingsButtonWidth = ConsoleWrapper.WindowWidth / 2 - 5 + ConsoleWrapper.WindowWidth % 2;
+                        int settingsButtonHeight = 1;
+                        int settingsButtonStartPosX = 2;
+                        int settingsButtonStartPosY = ConsoleWrapper.WindowHeight - 5;
+                        int settingsButtonEndPosX = settingsButtonStartPosX + settingsButtonWidth + 1;
+                        int settingsButtonEndPosY = settingsButtonStartPosY + settingsButtonHeight + 1;
+                        int clockTop = 5;
+                        int widgetWidth = ConsoleWrapper.WindowWidth / 2 - 4;
+                        int widgetHeight = ConsoleWrapper.WindowHeight - 13;
+                        int optionsEndX = settingsButtonStartPosX + widgetWidth - 1 + ConsoleWrapper.WindowWidth % 2;
+                        int optionsEndY = clockTop + widgetHeight + 1;
+
+                        // Check the ranges
+                        bool isWithinSettings = PointerTools.PointerWithinRange(context, (settingsButtonStartPosX, settingsButtonStartPosY), (settingsButtonEndPosX, settingsButtonEndPosY));
+                        bool isWithinOptions = PointerTools.PointerWithinRange(context, (settingsButtonStartPosX + 1, clockTop), (optionsEndX, optionsEndY));
+
+                        // If the mouse pointer is within the settings, check for left release
+                        if (isWithinSettings)
+                        {
+                            if (context.ButtonPress == PointerButtonPress.Released && context.Button == PointerButton.Left)
+                                SettingsApp.OpenMainPage(Config.MainConfig);
+                        }
+                        else if (isWithinOptions)
+                        {
+                            int selectionChoices = widgetHeight + 2;
+                            int currentChoices = choices.Length;
+                            if ((context.ButtonPress == PointerButtonPress.Released && context.Button == PointerButton.Left) || context.ButtonPress == PointerButtonPress.Moved)
+                            {
+                                int posY = context.Coordinates.y;
+                                int finalPos = posY - clockTop;
+                                if (finalPos < currentChoices)
+                                {
+                                    choiceIdx = finalPos;
+                                    if (context.ButtonPress == PointerButtonPress.Released && context.Button == PointerButton.Left)
+                                        DoAction(choiceIdx);
+                                }
+                            }
+                            else if (context.ButtonPress == PointerButtonPress.Scrolled)
+                            {
+                                if (context.Button == PointerButton.WheelUp)
+                                {
+                                    choiceIdx--;
+                                    if (choiceIdx < 0)
+                                        choiceIdx++;
+                                }
+                                else if (context.Button == PointerButton.WheelDown)
+                                {
+                                    choiceIdx++;
+                                    if (choiceIdx >= choices.Length)
+                                        choiceIdx--;
+                                }
+                            }
+                        }
+                        if (context.ButtonPress == PointerButtonPress.Moved)
+                            settingsHighlighted = isWithinSettings;
                     }
-                    else
+                    else if (ConsoleWrapper.KeyAvailable && !PointerListener.PointerActive)
                     {
-                        var keypress = key.Item2;
+                        var keypress = TermReader.ReadKey();
                         switch (keypress.Key)
                         {
                             case ConsoleKey.DownArrow:
@@ -269,49 +372,7 @@ namespace Nitrocid.Shell.Homepage
                                 if (settingsHighlighted)
                                     SettingsApp.OpenMainPage(Config.MainConfig);
                                 else
-                                {
-                                    switch (choiceIdx)
-                                    {
-                                        case 0:
-                                            {
-                                                var tui = new FileManagerCli
-                                                {
-                                                    firstPanePath = PathsManagement.HomePath,
-                                                    secondPanePath = PathsManagement.HomePath
-                                                };
-                                                InteractiveTuiTools.OpenInteractiveTui(tui);
-                                            }
-                                            break;
-                                        case 1:
-                                            {
-                                                var tui = new AlarmCli();
-                                                InteractiveTuiTools.OpenInteractiveTui(tui);
-                                            }
-                                            break;
-                                        case 2:
-                                            {
-                                                var tui = new NotificationsCli();
-                                                InteractiveTuiTools.OpenInteractiveTui(tui);
-                                            }
-                                            break;
-                                        case 3:
-                                            {
-                                                var tui = new TaskManagerCli();
-                                                InteractiveTuiTools.OpenInteractiveTui(tui);
-                                            }
-                                            break;
-                                        case 4:
-                                            InfoBoxButtonsColor.WriteInfoBoxButtons(
-                                                Translate.DoTranslation("About Nitrocid"),
-                                                [new InputChoiceInfo(Translate.DoTranslation("Close"), Translate.DoTranslation("Close"))],
-                                                Translate.DoTranslation("Nitrocid KS simulates our future kernel, the Nitrocid Kernel.") + "\n\n" +
-                                                Translate.DoTranslation("Version") + $": {KernelMain.VersionFullStr}" + "\n" +
-                                                Translate.DoTranslation("Mod API") + $": {KernelMain.ApiVersion}" + "\n\n" +
-                                                Translate.DoTranslation("Copyright (C) 2018-2024 Aptivi - All rights reserved") + " - https://aptivi.github.io"
-                                            );
-                                            break;
-                                    }
-                                }
+                                    DoAction(choiceIdx);
                                 break;
                             case ConsoleKey.Escape:
                                 exiting = true;
