@@ -68,13 +68,8 @@ namespace Nitrocid.Kernel
         /// Is this system an Android system?
         /// </summary>
         /// <returns>True if running on Android phones using Termux. Otherwise, false.</returns>
-        public static bool IsOnAndroid()
-        {
-            if (IsOnUnix() && !IsOnMacOS())
-                return Checking.FileExists("/system/build.prop");
-            else
-                return false;
-        }
+        public static bool IsOnAndroid() =>
+            PlatformHelper.IsOnAndroid();
 
         /// <summary>
         /// Polls $TERM_PROGRAM to get terminal emulator
@@ -112,9 +107,7 @@ namespace Nitrocid.Kernel
         /// </summary>
         /// <returns>Returns a runtime identifier (win-x64 for example).</returns>
         public static string GetCurrentGenericRid() =>
-            $"{(IsOnWindows() ? "win" : IsOnMacOS() ? "osx" : IsOnUnix() ? "linux" : "freebsd")}-" +
-            $"{(IsOnUnixMusl() ? "musl-" : "")}" +
-            $"{RuntimeInformation.OSArchitecture.ToString().ToLower()}";
+            PlatformHelper.GetCurrentGenericRid();
 
     }
 }
