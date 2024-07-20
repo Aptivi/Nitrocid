@@ -19,10 +19,8 @@
 <br>
 <br>
 
-[![Badge Main]][Main]   
-[![Badge Main Linux]][Main Linux]   
-[![Badge Servicing]][Servicing]   
-[![Badge Servicing Linux]][Servicing Linux]
+[![Badge Main Debug]][Main Debug]   
+[![Badge Main Release]][Main Release]
 
 [![Badge Latest]][Latest]   
 [![Badge NuGet]][NuGet]
@@ -48,10 +46,8 @@
 [Latest]: https://github.com/Aptivi/NitrocidKS/releases/latest
 [NuGet]: https://www.nuget.org/packages/KS/
 
-[Main]: https://github.com/Aptivi/NitrocidKS/actions/workflows/build-win.yml
-[Main Linux]: https://github.com/Aptivi/NitrocidKS/actions/workflows/build-linux.yml
-[Servicing]: https://github.com/Aptivi/NitrocidKS/actions/workflows/build-win.yml
-[Servicing Linux]: https://github.com/Aptivi/NitrocidKS/actions/workflows/build-linux.yml
+[Main Debug]: https://github.com/Aptivi/NitrocidKS/actions/workflows/build.yml
+[Main Release]: https://github.com/Aptivi/NitrocidKS/actions/workflows/build-rel.yml
 
 [Libraries]: https://aptivi.gitbook.io/kernel-simulator-manual/project-dependencies
 [Building]: https://aptivi.gitbook.io/kernel-simulator-manual/advanced-and-power-users/building-the-kernel
@@ -65,11 +61,8 @@
 [Badge NuGet]: https://img.shields.io/nuget/vpre/KS?color=012f52&style=for-the-badge&logoColor=white&logo=NuGet&labelColor=004880
 [Badge Size]: https://img.shields.io/github/repo-size/Aptivi/NitrocidKS?color=bb4a28&label=size&logoColor=white&style=for-the-badge&logo=GoogleAnalytics&labelColor=E85C33
 
-[Badge Main]: https://github.com/Aptivi/NitrocidKS/actions/workflows/build-win.yml/badge.svg
-[Badge Main Linux]: https://github.com/Aptivi/NitrocidKS/actions/workflows/build-linux.yml/badge.svg
-[Badge Servicing]: https://github.com/Aptivi/NitrocidKS/actions/workflows/build-win.yml/badge.svg?branch=servicing
-[Badge Servicing Linux]: https://github.com/Aptivi/NitrocidKS/actions/workflows/build-linux.yml/badge.svg?branch=servicing
-
+[Badge Main Debug]: https://github.com/Aptivi/NitrocidKS/actions/workflows/build.yml/badge.svg
+[Badge Main Release]: https://github.com/Aptivi/NitrocidKS/actions/workflows/build-rel.yml/badge.svg
 
 <!---------------------------------[ Buttons ]--------------------------------->
 
