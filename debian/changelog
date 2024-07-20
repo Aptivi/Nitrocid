@@ -1,3 +1,28 @@
+kernel-simulator (3.0.26.42-0.1.1-1) jammy; urgency=medium
+
+  * Added The Nitrocid Homepage
+  * Added new commands
+  * Added new screensavers
+  * Added new themes
+  * Added playing radio stations
+  * Restored "beepsynth"
+  * Added more hashing algorithms
+  * Added image viewer
+  * Added the new "settings" UI
+  * Made some apps more interactive
+  * Merged GRILO into Nitrocid
+  * Theme studio classic UI now indicates color changes
+  * You can view file sizes directly next to their names in IFM
+  * Improved base configuration handling and initialization
+  * Enhanced VT support for text editor TUI
+  * Improved appearance of Snaker
+  * Improved appearance of boot log and journal log viewers
+  * ExecPath is now neutralized
+  * General improvements and bug fixes
+  * Removed time/date corner
+
+ -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Sat, 20 Jul 2024 08:37:22 +0300
+
 kernel-simulator (3.0.25.439-0.1.0.9-1) noble; urgency=medium
 
   * General improvements

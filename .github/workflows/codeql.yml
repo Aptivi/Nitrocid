@@ -2,9 +2,9 @@ name: "CodeQL Analysis"
 
 on:
   push:
-    branches: [ "main", "v0.1.0.x-saas" ]
+    branches: [ "main", "v0.1.0.x-saas", "v0.1.1.x-servicing" ]
   pull_request:
-    branches: [ "main", "v0.1.0.x-saas" ]
+    branches: [ "main", "v0.1.0.x-saas", "v0.1.1.x-servicing" ]
   schedule:
     - cron: '32 13 * * 2'
 
@@ -27,7 +27,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
     - name: Initialize CodeQL
-      uses: github/codeql-action/init@v2
+      uses: github/codeql-action/init@v3
       with:
         languages: ${{ matrix.language }}
     - name: Build
@@ -35,6 +35,6 @@ jobs:
         chmod +x ./tools/build.sh
         cd tools && ./build.sh && cd -
     - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v2
+      uses: github/codeql-action/analyze@v3
       with:
         category: "/language:${{matrix.language}}"

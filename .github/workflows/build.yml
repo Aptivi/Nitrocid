@@ -2,9 +2,9 @@ name: Build Project (Debug)
 
 on:
   push:
-    branches: [ "main", "v0.1.0.x-saas" ]
+    branches: [ "main", "v0.1.0.x-saas", "v0.1.1.x-servicing" ]
   pull_request:
-    branches: [ "main", "v0.1.0.x-saas" ]
+    branches: [ "main", "v0.1.0.x-saas", "v0.1.1.x-servicing" ]
     
 jobs:
   build:
