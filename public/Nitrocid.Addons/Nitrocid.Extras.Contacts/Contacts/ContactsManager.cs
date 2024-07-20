@@ -161,6 +161,8 @@ namespace Nitrocid.Extras.Contacts.Contacts
             try
             {
                 string contactsPath = PathsManagement.GetKernelPath(KernelPathType.Contacts);
+                if (!Checking.FolderExists(contactsPath))
+                    Making.MakeDirectory(contactsPath);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got {0} cards.", cards.Length);
                 if (cards is null || cards.Length == 0)
                 {
@@ -212,6 +214,8 @@ namespace Nitrocid.Extras.Contacts.Contacts
             {
                 // Check to see if we're dealing with the non-existent index file
                 string contactsPath = PathsManagement.GetKernelPath(KernelPathType.Contacts);
+                if (!Checking.FolderExists(contactsPath))
+                    Making.MakeDirectory(contactsPath);
                 if (contactIndex < 0 || contactIndex >= cards.Count)
                     throw new KernelException(KernelExceptionType.Contacts, Translate.DoTranslation("Contact index is out of range. Maximum index is {0} while provided index is {1}."), cards.Count - 1, contactIndex);
 
@@ -244,6 +248,8 @@ namespace Nitrocid.Extras.Contacts.Contacts
             {
                 // Check to see if we're dealing with the non-existent index file
                 string contactsPath = PathsManagement.GetKernelPath(KernelPathType.Contacts);
+                if (!Checking.FolderExists(contactsPath))
+                    Making.MakeDirectory(contactsPath);
                 if (cards.Count <= 0)
                     return;
 
