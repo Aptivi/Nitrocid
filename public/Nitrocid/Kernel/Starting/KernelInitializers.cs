@@ -219,8 +219,8 @@ namespace Nitrocid.Kernel.Starting
             if (Config.MainConfig.ShowAppInfoOnBoot & !Config.MainConfig.EnableSplash)
             {
                 TextFancyWriters.WriteSeparator(Translate.DoTranslation("Kernel environment information"), KernelColorType.Stage);
-                TextWriterColor.Write("  OS: " + Translate.DoTranslation("Running on {0}"), System.Environment.OSVersion.ToString());
-                TextWriterColor.Write("  KSAPI: " + $"v{KernelMain.ApiVersion}");
+                TextWriterColor.Write("OS: " + Translate.DoTranslation("Running on {0}"), System.Environment.OSVersion.ToString());
+                TextWriterColor.Write("KSAPI: " + $"v{KernelMain.ApiVersion}");
             }
         }
 

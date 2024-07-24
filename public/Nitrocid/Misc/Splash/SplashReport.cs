@@ -241,7 +241,7 @@ namespace Nitrocid.Misc.Splash
                     else if (!KernelEntry.QuietKernel)
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Kernel not booted and not quiet. Reporting {0}...", Text);
-                        TextWriters.Write($"  [{_Progress}%] {Text}", true, finalColor, Vars);
+                        TextWriters.Write($"[{_Progress}%] {Text}", true, finalColor, Vars);
                     }
                 }
 
