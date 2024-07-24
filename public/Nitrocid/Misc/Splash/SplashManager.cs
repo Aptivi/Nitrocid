@@ -32,6 +32,7 @@ using Nitrocid.Languages;
 using Nitrocid.Misc.Splash.Splashes;
 using Terminaux.Base;
 using Terminaux.Colors;
+using Nitrocid.Kernel;
 
 namespace Nitrocid.Misc.Splash
 {
@@ -222,6 +223,7 @@ namespace Nitrocid.Misc.Splash
 
                 // Inform the kernel that the splash has started
                 SplashReport._InSplash = true;
+                SplashReport.ResetProgressReportArea();
             }
         }
 
