@@ -115,6 +115,7 @@ namespace Nitrocid.Kernel
 
             // Load splash for reboot or shutdown
             SplashReport._KernelBooted = false;
+            ColorTools.LoadBack();
             if (!PowerManager.KernelShutdown)
                 SplashManager.OpenSplash(SplashContext.Rebooting);
             else
