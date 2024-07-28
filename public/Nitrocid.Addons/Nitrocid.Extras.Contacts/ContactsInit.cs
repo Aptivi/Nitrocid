@@ -91,7 +91,7 @@ namespace Nitrocid.Extras.Contacts
             { nameof(ContactsManager.GetContacts), new Func<Card[]>(ContactsManager.GetContacts) },
             { nameof(ContactsManager.ImportContacts), new Action(ContactsManager.ImportContacts) },
             { nameof(ContactsManager.InstallContacts), new Action<string, bool>(ContactsManager.InstallContacts) },
-            { nameof(ContactsManager.InstallContacts) + 2, new Action<Card[], bool>(ContactsManager.InstallContacts) },
+            { nameof(ContactsManager.InstallContacts) + "2", new Action<Card[], bool>(ContactsManager.InstallContacts) },
             { nameof(ContactsManager.InstallContactFromMeCard), new Action<string, bool>(ContactsManager.InstallContactFromMeCard) },
             { nameof(ContactsManager.RemoveContact), new Action<int, bool>(ContactsManager.RemoveContact) },
             { nameof(ContactsManager.RemoveContacts), new Action<bool>(ContactsManager.RemoveContacts) },
