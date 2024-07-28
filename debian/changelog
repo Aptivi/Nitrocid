@@ -1,3 +1,9 @@
+kernel-simulator (3.0.26.43-0.1.1.2-1) jammy; urgency=medium
+
+  * General improvements and bug fixes
+
+ -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Sun, 28 Jul 2024 20:59:03 +0300
+
 kernel-simulator (3.0.26.42-0.1.1.1-1) jammy; urgency=medium
 
   * Fixed appearance of shutdown/reboot in classic mode
