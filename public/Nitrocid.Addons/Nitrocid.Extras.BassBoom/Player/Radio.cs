@@ -36,6 +36,7 @@ using Terminaux.Reader;
 using Terminaux.Inputs.Styles.Selection;
 using Terminaux.Inputs;
 using Nitrocid.Languages;
+using BassBoom.Basolia.Exceptions;
 
 namespace Nitrocid.Extras.BassBoom.Player
 {

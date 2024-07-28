@@ -17,10 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using SpecProbe.Hardware.Parts.Types;
+using SpecProbe.Parts.Types;
 using System.Collections;
 using System.Linq;
-using HwProber = SpecProbe.Hardware.HardwareProber;
+using HwProber = SpecProbe.HardwareProber;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Misc.Reflection;
 using Nitrocid.ConsoleBase.Writers;

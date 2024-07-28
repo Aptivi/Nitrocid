@@ -33,6 +33,7 @@ using System.Collections.Generic;
 using Terminaux.Inputs.Styles.Selection;
 using Terminaux.Base.Extensions;
 using Nitrocid.Languages;
+using BassBoom.Basolia.Exceptions;
 
 namespace Nitrocid.Extras.BassBoom.Player
 {

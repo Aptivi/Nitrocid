@@ -24,7 +24,7 @@ using BassBoom.Basolia.Format;
 using BassBoom.Basolia.Playback;
 using Nitrocid.Extras.BassBoom.Player.Tools;
 using Nitrocid.Languages;
-using SpecProbe.Platform;
+using SpecProbe.Software.Platform;
 using System;
 using System.Collections.Generic;
 using System.Linq;

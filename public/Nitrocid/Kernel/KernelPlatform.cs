@@ -18,7 +18,7 @@
 //
 
 using Nitrocid.Files.Operations.Querying;
-using SpecProbe.Platform;
+using SpecProbe.Software.Platform;
 using System.Reflection;
 using System.Runtime.InteropServices;
 
