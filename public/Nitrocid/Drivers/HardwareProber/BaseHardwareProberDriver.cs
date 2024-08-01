@@ -194,7 +194,7 @@ namespace Nitrocid.Drivers.HardwareProber
             {
                 SplashReport.ReportProgress("CPU: " + Translate.DoTranslation("Processor name:") + " {0}", cpu.Name);
                 SplashReport.ReportProgress("CPU: " + Translate.DoTranslation("Processor clock speed:") + " {0} MHz", cpu.Speed);
-                SplashReport.ReportProgress("CPU: " + Translate.DoTranslation("Total number of processors:") + $" {cpu.TotalCores}", 3);
+                SplashReport.ReportProgress("CPU: " + Translate.DoTranslation("Total number of processors:") + $" {cpu.LogicalCores} ({cpu.ProcessorCores} x{cpu.Cores})", 3);
             }
 
             // Print RAM info
@@ -255,7 +255,7 @@ namespace Nitrocid.Drivers.HardwareProber
                                 TextWriters.Write(Translate.DoTranslation("Clock speed:"), false, KernelColorType.ListEntry);
                                 TextWriters.Write($" {processor.Speed} MHz", true, KernelColorType.ListValue);
                                 TextWriters.Write(Translate.DoTranslation("Total cores:"), false, KernelColorType.ListEntry);
-                                TextWriters.Write($" {processor.TotalCores} ({processor.ProcessorCores} x{processor.CoresForEachCore})", true, KernelColorType.ListValue);
+                                TextWriters.Write($" {processor.LogicalCores} ({processor.ProcessorCores} x{processor.Cores})", true, KernelColorType.ListValue);
                                 TextWriters.Write(Translate.DoTranslation("Cache sizes:"), false, KernelColorType.ListEntry);
                                 TextWriters.Write($" {processor.L1CacheSize.SizeString()} L1, {processor.L2CacheSize.SizeString()} L2, {processor.L3CacheSize.SizeString()} L3", true, KernelColorType.ListValue);
                             }

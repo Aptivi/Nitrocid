@@ -41,7 +41,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Textify.Offline.Data.Analysis" Version="1.9.1" />
+    <PackageReference Include="Textify.Offline.Data.Analysis" Version="1.10.0.1" />
   </ItemGroup>
 
 </Project>
