@@ -1,3 +1,9 @@
+kernel-simulator (3.0.26.44-0.1.1.3-1) jammy; urgency=medium
+
+  * Updated libraries to the merger versions
+
+ -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Thu, 01 Aug 2024 17:00:13 +0300
+
 kernel-simulator (3.0.26.43-0.1.1.2-1) jammy; urgency=medium
 
   * General improvements and bug fixes
