@@ -1117,6 +1117,10 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// If enabled, shows the total folder size in list, depending on how to calculate the folder sizes according to the configuration.
         /// </summary>
         public bool ShowTotalSizeInList { get; set; }
+        /// <summary>
+        /// If enabled, sorts the list alphanumerically. Otherwise, sorts them alphabetically.
+        /// </summary>
+        public bool SortLogically { get; set; } = true;
         #endregion
 
         #region Network

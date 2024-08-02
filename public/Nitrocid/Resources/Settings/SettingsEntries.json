@@ -883,6 +883,12 @@
                 "Type": "SBoolean",
                 "Variable": "ShowTotalSizeInList",
                 "Description": "If enabled, shows the total folder size in list, depending on how to calculate the folder sizes according to the configuration."
+            },
+            {
+                "Name": "Sort logically",
+                "Type": "SBoolean",
+                "Variable": "SortLogically",
+                "Description": "Sorts the list alphanumerically if enabled or alphabetically if disabled."
             }
         ]
     },

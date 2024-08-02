@@ -51,6 +51,7 @@ using Terminaux.Base;
 using Nitrocid.Misc.Progress;
 using System.Runtime.Serialization;
 using Terminaux.Colors;
+using Textify.General.Comparers;
 
 namespace Nitrocid.Drivers.Filesystem
 {
@@ -391,12 +392,12 @@ namespace Nitrocid.Drivers.Filesystem
                 {
                     case (int)FilesystemSortDirection.Ascending:
                         {
-                            FilesystemEntries = [.. FilesystemEntries.OrderBy(x => SortSelector(x, MaxLength), StringComparer.OrdinalIgnoreCase)];
+                            FilesystemEntries = [.. FilesystemEntries.OrderBy(x => SortSelector(x, MaxLength), Config.MainConfig.SortLogically ? new LogicalComparer() : StringComparer.OrdinalIgnoreCase)];
                             break;
                         }
                     case (int)FilesystemSortDirection.Descending:
                         {
-                            FilesystemEntries = [.. FilesystemEntries.OrderByDescending(x => SortSelector(x, MaxLength), StringComparer.OrdinalIgnoreCase)];
+                            FilesystemEntries = [.. FilesystemEntries.OrderByDescending(x => SortSelector(x, MaxLength), Config.MainConfig.SortLogically ? new LogicalComparer() : StringComparer.OrdinalIgnoreCase)];
                             break;
                         }
                 }
