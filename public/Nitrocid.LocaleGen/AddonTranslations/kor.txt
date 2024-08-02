@@ -3667,3 +3667,5 @@ jusig hoesa
 ttaettaelo RGB lain-i natananeun gasang-ui geom-eunsaeg hwamyeon ojagdong-eul simyulleisyeonhabnida.
 gyeolham hwaglyul
 hwamyeon gyeolham-i balsaenghal hwaglyul(%)
+nonlijeog jeonglyeol
+hwalseonghwadoemyeon alpabes-sun-eulo, bihwalseonghwadoemyeon alpabes-sun-eulo moglog-eul jeonglyeolhabnida.

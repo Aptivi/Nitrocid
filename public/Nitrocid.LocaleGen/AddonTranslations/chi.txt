@@ -3667,3 +3667,5 @@ gǔpiào gōngsī
 mónǐ jiǎshè de gùzhàng hēipíng, yǒushí huì chūxiàn RGB xiàntiáo.
 Gùzhàng gàilǜ
 píngmù gùzhàng fāshēng de gàilǜ (bǎifēnbǐ)
+Àn luójí páixù
+rúguǒ qǐyòng, zé àn zìmǔ shùnxù duì lièbiǎo jìn háng páixù; rúguǒ jìnyòng, zé àn zìmǔ shùnxù duì lièbiǎo jìn háng páixù.

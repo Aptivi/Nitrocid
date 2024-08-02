@@ -3667,3 +3667,5 @@ Aandelen bedrijf
 Simuleert een hypothetisch defect zwart scherm waarbij soms RGB-lijnen verschijnen.
 Glitch-waarschijnlijkheid
 Kans, in procenten, dat de schermfout optreedt
+Logisch sorteren
+Sorteert de lijst alfanumeriek als deze is ingeschakeld of alfabetisch als deze is uitgeschakeld.

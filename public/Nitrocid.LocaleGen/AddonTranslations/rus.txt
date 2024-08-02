@@ -3667,3 +3667,5 @@ Aktsionnaya kompaniya
 Imitiruyet gipoteticheskiy neispravnyy chernyy ekran s inogda poyavlyayushchimisya liniyami RGB.
 Veroyatnost' sboya
 Veroyatnost', v protsentakh, vozniknoveniya glyuka ekrana
+Sortirovat' logicheski
+Sortiruyet spisok bukvenno, yesli vklyuchen ili v alfavitnom poryadke, yesli otklyuchen.

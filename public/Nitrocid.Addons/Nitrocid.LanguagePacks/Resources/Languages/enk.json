@@ -3670,6 +3670,8 @@
     "Stocks company",
     "Simulates a hypothetical malfunctioning black screen with RGB lines sometimes appearing.",
     "Glitch Probability",
-    "Chance, in percent, for the screen glitch to occur"
+    "Chance, in percent, for the screen glitch to occur",
+    "Sort logically",
+    "Sorts the list alphanumerically if enabled or alphabetically if disabled."
   ]
 }

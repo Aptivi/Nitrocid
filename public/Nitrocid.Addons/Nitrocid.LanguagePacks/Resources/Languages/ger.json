@@ -3670,6 +3670,8 @@
     "Aktiengesellschaft",
     "Simuliert einen hypothetischen, fehlerhaften schwarzen Bildschirm, auf dem gelegentlich RGB-Linien erscheinen.",
     "Störwahrscheinlichkeit",
-    "Wahrscheinlichkeit in Prozent, dass der Bildschirmfehler auftritt"
+    "Wahrscheinlichkeit in Prozent, dass der Bildschirmfehler auftritt",
+    "Logisch sortieren",
+    "Sortiert die Liste alphanumerisch, wenn aktiviert, oder alphabetisch, wenn deaktiviert."
   ]
 }

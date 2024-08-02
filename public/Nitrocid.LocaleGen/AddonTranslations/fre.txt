@@ -3667,3 +3667,5 @@ Société boursière
 Simule un hypothétique écran noir défectueux avec des lignes RVB apparaissant parfois.
 Probabilité de pépin
 Chance, en pourcentage, que le problème d'écran se produise
+Trier logiquement
+Trier la liste par ordre alphanumérique si activé ou par ordre alphabétique si désactivé.

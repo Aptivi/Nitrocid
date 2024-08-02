@@ -3670,6 +3670,8 @@
     "Companie de acțiuni",
     "Simulează un ecran negru ipotetic defectuos, cu linii RGB care apar uneori.",
     "Probabilitatea de glitch",
-    "Șansă, în procente, ca eroarea ecranului să apară"
+    "Șansă, în procente, ca eroarea ecranului să apară",
+    "Sortează logic",
+    "Sortează lista alfanumeric dacă este activată sau alfabetic dacă este dezactivată."
   ]
 }

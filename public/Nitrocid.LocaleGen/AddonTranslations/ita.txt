@@ -3667,3 +3667,5 @@ Società per azioni
 Simula un ipotetico schermo nero malfunzionante con la comparsa occasionale di linee RGB.
 Probabilità di guasto
 Probabilità, in percentuale, che si verifichi il problema tecnico dello schermo
+Ordina logicamente
+Ordina l'elenco in ordine alfanumerico se abilitato o in ordine alfabetico se disabilitato.

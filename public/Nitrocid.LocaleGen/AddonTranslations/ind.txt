@@ -3667,3 +3667,5 @@ stok kampanee
 kabhee-kabhee rgb lainon ke saath ek kaalpanik kharaabee vaalee kaalee skreen ka anukaran karata hai.
 gadabadee kee sambhaavana
 skreen gadabad hone kee sambhaavana, pratishat mein
+taarkik roop se kramabaddh karen
+saksham hone par soochee ko alfaanyoomerik roop se ya aksham hone par varnaanukram mein kramabaddh karata hai.

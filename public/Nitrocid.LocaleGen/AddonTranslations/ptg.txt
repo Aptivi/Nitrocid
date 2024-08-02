@@ -3667,3 +3667,5 @@ Empresa de ações
 Simula uma hipotética tela preta com defeito, às vezes aparecendo linhas RGB.
 Probabilidade de falha
 Chance, em porcentagem, de ocorrer a falha na tela
+Classifique logicamente
+Classifica a lista por ordem alfanumérica, se estiver activada, ou por ordem alfabética, se desactivada.

@@ -3670,6 +3670,8 @@
     "Compañía de acciones",
     "Simula una hipotética pantalla negra que funciona mal y que a veces aparecen líneas RGB.",
     "Probabilidad de falla",
-    "Probabilidad, en porcentaje, de que se produzca el fallo de pantalla"
+    "Probabilidad, en porcentaje, de que se produzca el fallo de pantalla",
+    "Ordena lógicamente",
+    "Ordene la lista alfanuméricamente si está habilitada o alfabéticamente si está deshabilitada."
   ]
 }
