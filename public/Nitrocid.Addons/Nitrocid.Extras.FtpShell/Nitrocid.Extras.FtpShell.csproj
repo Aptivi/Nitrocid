@@ -40,7 +40,7 @@
   <!-- Extras.FtpShell addon Platform Information End -->
 
   <ItemGroup>
-    <PackageReference Include="FluentFTP" Version="50.1.0" />
+    <PackageReference Include="FluentFTP" Version="51.0.0" />
   </ItemGroup>
 
 </Project>
