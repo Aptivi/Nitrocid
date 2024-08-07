@@ -25,6 +25,9 @@ echo.
 echo                       ** Welcome to Nitrocid LIVE! **
 echo.
 
+REM DEBUG: Remove this ASAP
+cmd.exe
+
 REM Silently install dotnet
 echo - Installing .NET 8.0...
 start /w %ESSENTIALS%\Setup\dotnet-runtime.exe /install /quiet /norestart
