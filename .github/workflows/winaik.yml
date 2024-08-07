@@ -1,0 +1,49 @@
+name: Build on-commit Nitrocid LIVE! [AMD64]
+
+on:
+  push:
+    
+jobs:
+  nksliveamd64:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        ref: ${{ github.ref }}
+    - name: Downloading WinAik...
+      run: choco install windows-adk
+    - name: Downloading WinPE...
+      run: choco install windows-adk-winpe
+    - name: Downloading necessary files...
+      run: curl -L -o dotnet-runtime-amd64.exe "https://download.visualstudio.microsoft.com/download/pr/3980ab0a-379f-44a0-9be6-eaf74c07a3b3/bd1cc6107ff3d8fe0104d30f01339b74/dotnet-runtime-8.0.7-win-x64.exe"
+    - name: Building Nitrocid...
+      run: cd tools ; & "build.cmd" ; cd ..
+    - name: Copying PE files...
+      run: |
+        Import-Module $env:ChocolateyInstall\helpers\chocolateyProfile.psm1
+        $env:WINPEROOT = "C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment"
+        $env:OSCDImgRoot = "C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools\oscd\oscd"
+        $env:PATH += ";$env:WINPEROOT;$env:OSCDImgRoot\..\..\amd64\Oscdimg"
+        & "C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\copype.cmd" amd64 work-amd64
+    - name: Mounting and copying Nitrocid files...
+      run: |
+        dism /Mount-Image /ImageFile:work-amd64\media\sources\boot.wim /index:1 /MountDir:work-amd64\mount
+        New-Item -Path "work-amd64\mount\Windows" -Name "Essentials" -ItemType "directory"
+        New-Item -Path "work-amd64\mount\Windows\Essentials" -Name "Setup" -ItemType "directory"
+        New-Item -Path "work-amd64\mount\Windows\Essentials" -Name "Nitrocid" -ItemType "directory"
+        cmd.exe /c "copy dotnet-runtime-amd64.exe work-amd64\mount\Windows\Essentials\Setup\dotnet-runtime.exe"
+        cmd.exe /c "xcopy /efy public\Nitrocid\KSBuild\net8.0\ work-amd64\mount\Windows\Essentials\Nitrocid\"
+        cmd.exe /c "copy assets\startnet.cmd work-amd64\mount\Windows\System32\startnet.cmd"
+        dism /Unmount-Image /MountDir:work-amd64\mount /commit
+    - name: Building Nitrocid LIVE ISO...
+      run: |
+        $env:WINPEROOT = "C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment"
+        $env:OSCDImgRoot = "C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools\oscd\oscd"
+        $env:PATH += ";$env:WINPEROOT;$env:OSCDImgRoot\..\..\amd64\Oscdimg"
+        & "C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\MakeWinPEMedia.cmd" /ISO work-amd64 NKS_Live_amd64.iso
+    - name: Uploading Nitrocid LIVE artifact...
+      uses: actions/upload-artifact@v4
+      with:
+        name: Nitrocid-KS-LiveDistro-AMD64
+        path: "NKS_Live_amd64.iso"

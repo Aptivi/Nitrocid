@@ -30,10 +30,26 @@ jobs:
         cd tools ; ./pack.sh ; cd ..
         make doc
         cd tools ; ./docgen-pack.sh ; cd ..
-    - name: Binary Attestation
+    - name: Nitrocid LIVE (AMD64)
+      uses: dawidd6/action-download-artifact@v6
+      with:
+        workflow: winaik.yml
+        branch: main
+        name: Nitrocid-KS-LiveDistro-AMD64
+    - name: Nitrocid LIVE (ARM64)
+      uses: dawidd6/action-download-artifact@v6
+      with:
+        workflow: winaikarm64.yml
+        branch: main
+        name: Nitrocid-KS-LiveDistro-ARM64
+    - name: Binary Attestation (binaries)
       uses: actions/attest-build-provenance@v1
       with:
         subject-path: 'tools/*.zip'
+    - name: Binary Attestation (LIVE)
+      uses: actions/attest-build-provenance@v1
+      with:
+        subject-path: '*.iso'
     - name: Release Draft Making
       uses: softprops/action-gh-release@v1
       with:
@@ -43,3 +59,4 @@ jobs:
           tools/*.zip
           tools/*-changes.chg
           tools/hashsums.txt
+          *.iso

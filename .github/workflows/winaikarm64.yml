@@ -1,0 +1,51 @@
+name: Build on-commit Nitrocid LIVE! [ARM64]
+
+on:
+  push:
+    
+jobs:
+  nkslivearm64:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        ref: ${{ github.ref }}
+    - name: Downloading WinAik...
+      run: choco install windows-adk
+    - name: Downloading WinPE...
+      run: choco install windows-adk-winpe
+    - name: Downloading necessary files...
+      run: curl -L -o dotnet-runtime-arm64.exe "https://download.visualstudio.microsoft.com/download/pr/68d0360d-462a-44db-baa9-53fd5d67c05b/6b2c172c219ef4d083c3f4b7f69ae97b/dotnet-runtime-8.0.7-win-arm64.exe"
+    - name: Building Nitrocid...
+      run: cd tools ; & "build.cmd" ; cd ..
+    - name: Copying PE files...
+      run: |
+        Import-Module $env:ChocolateyInstall\helpers\chocolateyProfile.psm1
+        $env:WINPEROOT = "C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment"
+        $env:OSCDImgRoot = "C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools\oscd\oscd"
+        # Use OSCDIMG from AMD64 as GH runners don't have ARM64 Windows yet.
+        $env:PATH += ";$env:WINPEROOT;$env:OSCDImgRoot\..\..\amd64\Oscdimg"
+        & "C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\copype.cmd" arm64 work-arm64
+    - name: Mounting and copying Nitrocid files...
+      run: |
+        dism /Mount-Image /ImageFile:work-arm64\media\sources\boot.wim /index:1 /MountDir:work-arm64\mount
+        New-Item -Path "work-arm64\mount\Windows" -Name "Essentials" -ItemType "directory"
+        New-Item -Path "work-arm64\mount\Windows\Essentials" -Name "Setup" -ItemType "directory"
+        New-Item -Path "work-arm64\mount\Windows\Essentials" -Name "Nitrocid" -ItemType "directory"
+        cmd.exe /c "copy dotnet-runtime-arm64.exe work-arm64\mount\Windows\Essentials\Setup\dotnet-runtime.exe"
+        cmd.exe /c "xcopy /efy public\Nitrocid\KSBuild\net8.0\ work-amd64\mount\Windows\Essentials\Nitrocid\"
+        cmd.exe /c "copy assets\startnet.cmd work-arm64\mount\Windows\System32\startnet.cmd"
+        dism /Unmount-Image /MountDir:work-arm64\mount /Commit
+    - name: Building Nitrocid LIVE ISOs...
+      run: |
+        $env:WINPEROOT = "C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment"
+        $env:OSCDImgRoot = "C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools\oscd\oscd"
+        # Use OSCDIMG from AMD64 as GH runners don't have ARM64 Windows yet.
+        $env:PATH += ";$env:WINPEROOT;$env:OSCDImgRoot\..\..\amd64\Oscdimg"
+        & "C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\MakeWinPEMedia.cmd" /ISO work-arm64 NKS_Live_arm64.iso
+    - name: Uploading WinPE artifact...
+      uses: actions/upload-artifact@v4
+      with:
+        name: Nitrocid-KS-LiveDistro-ARM64
+        path: "NKS_Live_arm64.iso"
