@@ -1,7 +1,19 @@
 Nitrocid KS 0.1.1 changes
 =========================
 
-Released July 23rd, 2024; codename (Magikaleidoscope) (0.1.1) (Rev 5)
+Released July 23rd, 2024; codename (Magikaleidoscope) (0.1.1) (Rev 6)
+
+=============================================================================
+
+From 0.1.1.6 onwards
+--------------------
+
+You can now try out Nitrocid in a minimal Windows environment distribution,
+called Nitrocid LIVE! Based on Windows 11 24H2 Preinstallation Environment
+(PE), you can try the Windows version of Nitrocid out without having to install
+Windows.
+
+=============================================================================
 
 The successor of the 0.1.0 series is now here, bringing you more features than
 ever! This version of Nitrocid is supported for nine months starting from the
