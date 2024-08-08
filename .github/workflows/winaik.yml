@@ -16,7 +16,7 @@ jobs:
     - name: Downloading WinPE...
       run: choco install windows-adk-winpe
     - name: Downloading necessary files...
-      run: curl -L -o dotnet-runtime-amd64.exe "https://download.visualstudio.microsoft.com/download/pr/3980ab0a-379f-44a0-9be6-eaf74c07a3b3/bd1cc6107ff3d8fe0104d30f01339b74/dotnet-runtime-8.0.7-win-x64.exe"
+      run: curl -L -o dotnet-runtime-amd64.zip "https://download.visualstudio.microsoft.com/download/pr/0f2e2c47-3e38-45be-aa3b-f382c5e73ff8/c7890b45dbd8306b4d89daa55abe49f6/dotnet-runtime-8.0.7-win-x64.zip"
     - name: Building Nitrocid...
       run: cd tools ; cmd.exe /c "build.cmd" ; cd ..
     - name: Copying PE files...
@@ -32,9 +32,9 @@ jobs:
         New-Item -Path "work-amd64\mount\Windows" -Name "Essentials" -ItemType "directory"
         New-Item -Path "work-amd64\mount\Windows\Essentials" -Name "Setup" -ItemType "directory"
         New-Item -Path "work-amd64\mount\Windows\Essentials" -Name "Nitrocid" -ItemType "directory"
-        cmd.exe /c "copy dotnet-runtime-amd64.exe work-amd64\mount\Windows\Essentials\Setup\dotnet-runtime.exe"
         cmd.exe /c "xcopy /efy public\Nitrocid\KSBuild\net8.0\ work-amd64\mount\Windows\Essentials\Nitrocid\"
         cmd.exe /c "copy assets\startnet.cmd work-amd64\mount\Windows\System32\startnet.cmd"
+        cmd.exe /c "7za e -y dotnet-runtime-amd64.zip -owork-amd64\mount\Windows\Essentials\Setup"
         dism /Unmount-Image /MountDir:work-amd64\mount /commit
     - name: Building Nitrocid LIVE ISO...
       run: |
