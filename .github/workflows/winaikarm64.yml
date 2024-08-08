@@ -35,7 +35,7 @@ jobs:
         New-Item -Path "work-arm64\mount\Windows\Essentials" -Name "Nitrocid" -ItemType "directory"
         cmd.exe /c "xcopy /efy public\Nitrocid\KSBuild\net8.0\ work-arm64\mount\Windows\Essentials\Nitrocid\"
         cmd.exe /c "copy assets\startnet.cmd work-arm64\mount\Windows\System32\startnet.cmd"
-        cmd.exe /c "7za e -y dotnet-runtime-arm64.zip -owork-arm64\mount\Windows\Essentials\Setup"
+        cmd.exe /c "7z x dotnet-runtime-arm64.zip -owork-arm64\mount\Windows\Essentials\Setup"
         dism /Unmount-Image /MountDir:work-arm64\mount /Commit
     - name: Building Nitrocid LIVE ISO...
       run: |
