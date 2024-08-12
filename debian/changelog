@@ -1,3 +1,9 @@
+kernel-simulator (3.0.26.45-0.1.1.7-1) noble; urgency=medium
+
+  * Taken out 32-bit support
+
+ -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Mon, 12 Aug 2024 13:43:52 +0300
+
 kernel-simulator (3.0.26.45-0.1.1.6-1) noble; urgency=medium
 
   * Introduction of Nitrocid LIVE!
