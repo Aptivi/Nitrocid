@@ -42,7 +42,7 @@
 
   <!-- KS Dependencies Information -->
   <ItemGroup>
-    <PackageReference Include="Magico" Version="1.1.1" PrivateAssets="all" />
+    <PackageReference Include="Magico" Version="1.1.1.1" PrivateAssets="all" />
     <PackageReference Include="Microsoft.Data.Sqlite" Version="8.0.7" PrivateAssets="all" />
     <PackageReference Include="Newtonsoft.Json.Schema" Version="4.0.1" PrivateAssets="all" />
     <PackageReference Include="SpecProbe" Version="2.0.1" PrivateAssets="all" />
@@ -51,9 +51,9 @@
 
   <!-- KS Non-private Dependencies Information -->
   <ItemGroup>
-    <PackageReference Include="Terminaux" Version="4.3.4" PrivateAssets="contentfiles;analyzers;build;runtime" />
-    <PackageReference Include="Terminaux.Images" Version="4.3.4" PrivateAssets="contentfiles;analyzers;build;runtime;native" />
-    <PackageReference Include="Terminaux.ResizeListener" Version="4.3.4" PrivateAssets="contentfiles;analyzers;build;runtime" />
+    <PackageReference Include="Terminaux" Version="4.3.5" PrivateAssets="contentfiles;analyzers;build;runtime" />
+    <PackageReference Include="Terminaux.Images" Version="4.3.5" PrivateAssets="contentfiles;analyzers;build;runtime;native" />
+    <PackageReference Include="Terminaux.ResizeListener" Version="4.3.5" PrivateAssets="contentfiles;analyzers;build;runtime" />
     <PackageReference Include="Textify.Offline" Version="1.10.0.1" PrivateAssets="contentfiles;analyzers;build;runtime">
       <Aliases>global,TextifyDep</Aliases>
     </PackageReference>
