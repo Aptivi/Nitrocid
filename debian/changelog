@@ -1,3 +1,9 @@
+kernel-simulator (3.0.26.45-0.1.1.8-1) noble; urgency=medium
+
+  * Updated libraries
+
+ -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Tue, 13 Aug 2024 20:51:36 +0300
+
 kernel-simulator (3.0.26.45-0.1.1.7-1) noble; urgency=medium
 
   * Taken out 32-bit support
