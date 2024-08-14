@@ -17,7 +17,7 @@ jobs:
         uses: tsickert/discord-webhook@v6.0.0
         with:
           webhook-url: ${{ secrets.WEBHOOK_URL }}
-          content: ":nitrocidks: ${{ github.event.release.name }} :nitrocidks:\n\n${{ github.event.release.body }}"
+          content: "<:nitrocidks:1268905174563557452> ${{ github.event.release.name }} <:nitrocidks:1268905174563557452>\n\n${{ github.event.release.body }}"
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
