@@ -39,6 +39,7 @@ using Terminaux.Colors;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Nitrocid.Kernel.Configuration;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Kernel
 {
@@ -89,12 +90,24 @@ namespace Nitrocid.Kernel
                 // Set main thread name
                 Thread.CurrentThread.Name = "Main Nitrocid Kernel Thread";
 
-                // Show help prior to starting the kernel if help is passed
+                // Show help / version prior to starting the kernel if help / version is passed
                 if (ArgumentParse.IsArgumentPassed(Args, "help"))
                 {
                     // Kernel arguments
                     TextWriters.Write(Translate.DoTranslation("Available kernel arguments:"), true, KernelColorType.ListTitle);
                     ArgumentHelpPrint.ShowArgsHelp();
+                    PowerManager.hardShutdown = true;
+                    PowerManager.KernelShutdown = true;
+                }
+                else if (ArgumentParse.IsArgumentPassed(Args, "version"))
+                {
+                    TextWriterRaw.WritePlain(VersionFullStr);
+                    PowerManager.hardShutdown = true;
+                    PowerManager.KernelShutdown = true;
+                }
+                else if (ArgumentParse.IsArgumentPassed(Args, "apiversion"))
+                {
+                    TextWriterRaw.WritePlain($"{ApiVersion}");
                     PowerManager.hardShutdown = true;
                     PowerManager.KernelShutdown = true;
                 }
