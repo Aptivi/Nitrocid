@@ -8,7 +8,7 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     permissions:
       id-token: write
       contents: write
@@ -33,11 +33,10 @@ jobs:
         curl -L -o dotnet-runtime-arm64.zip "https://download.visualstudio.microsoft.com/download/pr/12a17ef1-071d-489e-b138-1fd5249ac7f9/4e6030ef34957f9120171a74932f4fb5/dotnet-runtime-8.0.7-win-arm64.zip"
     - name: Release Asset Preparation
       run: |
-        chmod +x tools/*.sh
-        make
-        cd tools ; ./pack.sh ; cd ..
-        make doc
-        cd tools ; ./docgen-pack.sh ; cd ..
+        cd tools ; cmd.exe /c "build.cmd" ; cd ..
+        cd tools ; cmd.exe /c "pack.cmd" ; cd ..
+        cd tools ; cmd.exe /c "docgen.cmd" ; cd ..
+        cd tools ; cmd.exe /c "docgen-pack.cmd" ; cd ..
     - name: Copying PE files (AMD64 and ARM64)...
       run: |
         Import-Module $env:ChocolateyInstall\helpers\chocolateyProfile.psm1
