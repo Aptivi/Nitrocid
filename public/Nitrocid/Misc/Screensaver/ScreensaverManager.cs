@@ -45,6 +45,7 @@ using Terminaux.Colors;
 using Terminaux.Base;
 using Nitrocid.Kernel;
 using System.Linq;
+using Terminaux.Inputs.Pointer;
 
 namespace Nitrocid.Misc.Screensaver
 {
@@ -220,16 +221,33 @@ namespace Nitrocid.Misc.Screensaver
             {
                 // Show the screensaver and wait for input
                 ShowSavers();
-                SpinWait.SpinUntil(() => ConsoleWrapper.KeyAvailable);
+                SpinWait.SpinUntil(() => PointerListener.InputAvailable);
                 EventsManager.FireEvent(EventType.PreUnlock, DefaultSaverName);
 
                 // Bail from screensaver and optionally prompt for password
                 ScreensaverDisplayer.BailFromScreensaver();
 
                 // When getting out of the lock screen by pressing ENTER when lockscreen is invoked, we need to make sure
-                // that we don't write the shell prompt twice.
-                if (ConsoleWrapper.KeyAvailable)
-                    InputTools.DetectKeypressUnsafe();
+                // that we don't write the shell prompt twice. Furthermore, when we use the mouse to generate click events,
+                // we need to make sure that we ignore the Clicked event and listen to the Released event to ensure that
+                // there are no more mouse events left, or the screensaver would exit instantly, causing info to be displayed
+                // longer than the set duration.
+                while (PointerListener.InputAvailable)
+                {
+                    var descriptor = TermReader.ReadPointerOrKey();
+                    if (descriptor.Item1 is not null)
+                    {
+                        switch (descriptor.Item1.Button)
+                        {
+                            case PointerButton.Left:
+                            case PointerButton.Right:
+                            case PointerButton.Middle:
+                                if (descriptor.Item1.ButtonPress == PointerButtonPress.Clicked)
+                                    TermReader.ReadPointer();
+                                break;
+                        }
+                    }
+                }
 
                 // Now, show the password prompt
                 if (Config.MainConfig.PasswordLock)
