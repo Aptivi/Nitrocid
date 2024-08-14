@@ -1,3 +1,9 @@
+kernel-simulator (3.0.26.45-0.1.1.9-1) noble; urgency=medium
+
+  * Implemented unlock by mouse
+
+ -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Wed, 14 Aug 2024 18:15:25 +0300
+
 kernel-simulator (3.0.26.45-0.1.1.8-1) noble; urgency=medium
 
   * Updated libraries
