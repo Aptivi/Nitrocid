@@ -81,7 +81,7 @@ jobs:
       with:
         subject-path: '*.iso'
     - name: Release Draft Making
-      uses: softprops/action-gh-release@v1
+      uses: softprops/action-gh-release@v2
       with:
         body: "This is a draft release. Fill this with a release snippet from the release sheet made internally."
         draft: true
