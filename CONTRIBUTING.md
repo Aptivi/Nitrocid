@@ -156,39 +156,52 @@ Description
 
 Type: Type
 Breaking: Yes/No
-Documentation Required: Yes/No
+Doc Required: Yes/No
+Backport Required: Yes/No
 Part: 1/1
 ```
 
 For types, you should select exactly one type from the following types:
 
-```
-add: for additions
-fix: for fixes
-rem: for removals
-imp: for improvements
-ref: for refactors
-upd: for library updates
-doc: for documentation updates
-```
+* `add`: for additions
+* `fix`: for fixes
+* `rem`: for removals
+* `imp`: for improvements
+* `ref`: for refactors
+* `upd`: for library updates
+* `doc`: for documentation updates
+* `dev`: for development checkpoints (version bump, etc.)
+* `fin`: for development finish points
+* `chg`: for minor changes to previous commits
+* `und`: for other changes that don't apply
 
 Additionally, attributes are optional and can be specified. Multiple attributes should be separated with the pipe character (`|`). However, there are special cases that you may need to handle when you're committing your changes to your pull request:
 
-* If documentation is required (i.e. your commit requires documentation on GitBook and you've specified `doc`), change the `Documentation Required` part to `Yes`, otherwise, `No`.
+* If documentation is required (i.e. your commit requires documentation on GitBook and you've specified `doc`), change the `Doc Required` part to `Yes`, otherwise, `No`.
+* If backport is required (i.e. your commit introduces a fix that needs to be backported to previous version series that don't have a fix), change the `Backport Required` part to `Yes`, otherwise, `No`.
 * If this commit includes breaking changes (i.e. you've specified `brk`), change the `Breaking` part to `Yes`, otherwise, `No`.
-* If this commit is a part of the commit series, specify `prt` and change the `Part` field where it says `1/1` to the current and the total parts in this format: `current/total`. Total parts must be accurate, and the title should stay the same as any former commits in the series.
+* If this commit is a part of the commit series, specify `prt` and change the `Part` field where it says `1/1` to the current and the total parts in this format: `current/total`. Total parts must be accurate, the title should stay the same as any former commits in the series, and the current part must not be larger than the total part number.
 
 These are the attributes we officially support:
 
-```
-brk: for breaking changes
-sec: for security
-prf: for performance improvements
-reg: for regression fixes
-doc: for documentation requirement
-ptp: for prototyping
-prt: for commit series (PartNum is required)
-```
+* `brk`: for breaking changes
+* `sec`: for security
+* `prf`: for performance improvements
+* `reg`: for regression fixes
+* `doc`: for documentation requirement
+* `ptp`: for prototyping
+* `prt`: for commit series (PartNum is required)
+* `bkp`: for backports
+
+Take note that if you've set a commit that is a backport, make sure that the type is not one of the following types:
+
+* Incompatible types with `bkp`
+  * `rem`: for removals
+  * `dev`: for development checkpoints (version bump, etc.)
+  * `fin`: for development finish points
+* Incompatible attributes with `bkp`
+  * `ptp`: for prototyping
+  * `brk`: for breaking changes
 
 ## Engagement with the Community
 
