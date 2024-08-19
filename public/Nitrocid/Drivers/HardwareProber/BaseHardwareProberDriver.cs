@@ -31,6 +31,7 @@ using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using System.Runtime.Serialization;
 using Nitrocid.Users.Windows;
+using SpecProbe.Parts;
 
 namespace Nitrocid.Drivers.HardwareProber
 {
@@ -45,10 +46,12 @@ namespace Nitrocid.Drivers.HardwareProber
             "Default";
 
         /// <inheritdoc/>
-        public virtual DriverTypes DriverType => DriverTypes.HardwareProber;
+        public virtual DriverTypes DriverType =>
+            DriverTypes.HardwareProber;
 
         /// <inheritdoc/>
-        public virtual bool DriverInternal => false;
+        public virtual bool DriverInternal =>
+            false;
 
         /// <inheritdoc/>
         public string[] SupportedHardwareTypes =>
@@ -56,19 +59,19 @@ namespace Nitrocid.Drivers.HardwareProber
 
         /// <inheritdoc/>
         public virtual IEnumerable ProbeGraphics() =>
-            HwProber.Video;
+            HwProber.GetVideos();
 
         /// <inheritdoc/>
         public virtual IEnumerable ProbeHardDrive() =>
-            HwProber.HardDisk;
+            HwProber.GetHardDisks();
 
         /// <inheritdoc/>
         public virtual IEnumerable ProbePcMemory() =>
-            HwProber.Memory;
+            new BaseHardwarePartInfo[] { HwProber.GetMemory() };
 
         /// <inheritdoc/>
         public virtual IEnumerable ProbeProcessor() =>
-            HwProber.Processors;
+            new BaseHardwarePartInfo[] { HwProber.GetProcessor() };
 
         /// <inheritdoc/>
         public virtual string DiskInfo(int diskIndex)
@@ -196,14 +199,17 @@ namespace Nitrocid.Drivers.HardwareProber
                 SplashReport.ReportProgress("CPU: " + Translate.DoTranslation("Processor clock speed:") + " {0} MHz", cpu.Speed);
                 SplashReport.ReportProgress("CPU: " + Translate.DoTranslation("Total number of processors:") + $" {cpu.LogicalCores} ({cpu.ProcessorCores} x{cpu.Cores})", 3);
             }
+            PrintErrors(HardwarePartType.Processor);
 
             // Print RAM info
             var mem = memList[0];
             SplashReport.ReportProgress("RAM: " + Translate.DoTranslation("Total memory:") + " {0}", 2, mem.TotalMemory.SizeString());
+            PrintErrors(HardwarePartType.Memory);
 
             // GPU info
             foreach (var gpu in gpuDict)
                 SplashReport.ReportProgress("GPU: " + Translate.DoTranslation("Graphics card:") + " {0}", gpu.VideoCardName);
+            PrintErrors(HardwarePartType.Video);
 
             // Drive Info
             foreach (var hdd in hddDict)
@@ -214,7 +220,7 @@ namespace Nitrocid.Drivers.HardwareProber
                 foreach (var part in hdd.Partitions)
                     SplashReport.ReportProgress("HDD [{0}]: " + Translate.DoTranslation("Partition size:") + " {1}", hdd.HardDiskNumber, part.PartitionSize);
             }
-            PrintErrors();
+            PrintErrors(HardwarePartType.HardDisk);
         }
 
         /// <inheritdoc/>
@@ -226,14 +232,28 @@ namespace Nitrocid.Drivers.HardwareProber
                 return;
             }
 
+            HardwarePartType[] supportedTypesEnum =
+            [
+                HardwarePartType.HardDisk,
+                HardwarePartType.Processor,
+                HardwarePartType.Video,
+                HardwarePartType.Memory,
+            ];
             if (hardwareType == "all")
             {
-                foreach (string supportedType in SupportedHardwareTypes)
+                for (int i = 0; i < SupportedHardwareTypes.Length; i++)
+                {
+                    string supportedType = SupportedHardwareTypes[i];
                     ListHardwareInternal(supportedType);
+                    PrintErrors(supportedTypesEnum[i]);
+                }
             }
             else
+            {
                 ListHardwareInternal(hardwareType);
-            PrintErrors();
+                foreach (var supportedType in supportedTypesEnum)
+                    PrintErrors(supportedType);
+            }
         }
 
         private void ListHardwareInternal(string hardwareType)
@@ -322,13 +342,14 @@ namespace Nitrocid.Drivers.HardwareProber
             }
         }
 
-        private void PrintErrors()
+        private void PrintErrors(HardwarePartType type)
         {
-            if (HwProber.Errors.Length > 0)
+            var errors = HwProber.GetParseExceptions(type);
+            if (errors.Length > 0)
             {
                 SplashReport.ReportProgressError(Translate.DoTranslation("SpecProbe failed to parse some of the hardware. Below are the errors reported by SpecProbe:"));
                 DebugWriter.WriteDebug(DebugLevel.E, "SpecProbe failed to parse hardware due to the following errors:");
-                foreach (var error in HwProber.Errors)
+                foreach (var error in errors)
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, $"- {error.Message}");
                     DebugWriter.WriteDebugStackTrace(error);
