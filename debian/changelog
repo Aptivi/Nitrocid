@@ -1,3 +1,9 @@
+kernel-simulator (3.0.26.46-0.1.1.10-1) noble; urgency=medium
+
+  * Updated SpecProbe
+
+ -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Mon, 19 Aug 2024 19:59:01 +0300
+
 kernel-simulator (3.0.26.45-0.1.1.9-1) noble; urgency=medium
 
   * Implemented unlock by mouse
