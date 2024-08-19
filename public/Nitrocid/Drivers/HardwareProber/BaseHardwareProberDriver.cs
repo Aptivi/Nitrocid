@@ -67,11 +67,11 @@ namespace Nitrocid.Drivers.HardwareProber
 
         /// <inheritdoc/>
         public virtual IEnumerable ProbePcMemory() =>
-            new BaseHardwarePartInfo[] { HwProber.GetMemory() };
+            new MemoryPart[] { HwProber.GetMemory() };
 
         /// <inheritdoc/>
         public virtual IEnumerable ProbeProcessor() =>
-            new BaseHardwarePartInfo[] { HwProber.GetProcessor() };
+            new ProcessorPart[] { HwProber.GetProcessor() };
 
         /// <inheritdoc/>
         public virtual string DiskInfo(int diskIndex)
