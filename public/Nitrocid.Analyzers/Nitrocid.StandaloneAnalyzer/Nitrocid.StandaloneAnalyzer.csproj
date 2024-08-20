@@ -34,7 +34,7 @@
     <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.4" PrivateAssets="all" />
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="4.11.0" />
     <PackageReference Include="Microsoft.CodeAnalysis.Workspaces.MSBuild" Version="4.11.0" />
-    <PackageReference Include="Terminaux" Version="4.3.5" />
+    <PackageReference Include="Terminaux" Version="4.3.6" />
   </ItemGroup>
 
 </Project>
