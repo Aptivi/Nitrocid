@@ -150,6 +150,7 @@
 
   <ItemGroup>
     <PackageReference Include="Terminaux" Version="4.3.5" />
+    <PackageReference Include="SpecProbe.Software" Version="3.0.0" />
   </ItemGroup>
   
 </Project>
