@@ -52,7 +52,6 @@
   <!-- LocaleGen Dependencies Information -->
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="SpecProbe.Software" Version="3.0.0" />
   </ItemGroup>
   <!-- LocaleGen Dependencies Information End -->
 
