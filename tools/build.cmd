@@ -27,14 +27,14 @@ if "%buildoptions%" == "*=" set buildoptions=
 
 :download
 echo Downloading packages...
-"%ProgramFiles%\dotnet\dotnet.exe" msbuild "..\Nitrocid.sln" -t:restore -p:Configuration=%releaseconfig% %buildoptions%
+"%ProgramFiles%\dotnet\dotnet.exe" restore "..\Nitrocid.sln" --configuration %releaseconfig% %buildoptions%
 if %errorlevel% == 0 goto :build
 echo There was an error trying to download packages (%errorlevel%).
 goto :finished
 
 :build
 echo Building Nitrocid KS...
-"%ProgramFiles%\dotnet\dotnet.exe" msbuild "..\Nitrocid.sln" -p:Configuration=%releaseconfig% -maxCpuCount:1 %buildoptions%
+"%ProgramFiles%\dotnet\dotnet.exe" build "..\Nitrocid.sln" --configuration %releaseconfig% -maxCpuCount:1 %buildoptions%
 if %errorlevel% == 0 goto :success
 echo There was an error trying to build (%errorlevel%).
 goto :finished
