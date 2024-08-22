@@ -32,7 +32,7 @@ fi
 
 # Download packages
 echo Downloading packages...
-"$dotnetpath" restore "../Nitrocid.sln" --configuration $ksreleaseconf ${@:2}
+"$dotnetpath" restore "../Nitrocid.sln" -p:Configuration=$ksreleaseconf ${@:2}
 if [ ! $? == 0 ]; then
 	echo Download failed.
 	exit 1
@@ -40,7 +40,7 @@ fi
 
 # Build KS
 echo Building KS...
-"$dotnetpath" build "../Nitrocid.sln" --configuration $ksreleaseconf -maxCpuCount:1 ${@:2}
+"$dotnetpath" build "../Nitrocid.sln" -p:Configuration=$ksreleaseconf -maxCpuCount:1 ${@:2}
 if [ ! $? == 0 ]; then
 	echo Build failed.
 	exit 1
