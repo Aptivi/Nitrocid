@@ -203,6 +203,10 @@ Take note that if you've set a commit that is a backport, make sure that the typ
   * `ptp`: for prototyping
   * `brk`: for breaking changes
 
+## Assistance of AI
+
+Although artifical intelligence (AI) is a next-gen technology that every company are leaning to, which we are proud of, but when contributing code or other things to this project, we rely on human work to ensure maximum quality. This means that you are not allowed to use any kind of AI assistance to generate code and non-code contributions, such as ChatGPT and others, in fear of licensing issues, potential security issues, and current hallucination issues. Any usage of such tools when contributing will be immediately rejected.
+
 ## Engagement with the Community
 
 Thank you for your contribution to our project, but in order for this contribution to be flawless, you must be respectful to all other developers of the projects and the users in general, regardless of whether there is a fight or a heated discussion going on. Try to keep it civil during fights and don't use personal attacks, threats of any kind, derogatory and racist remarks against people or groups of any race, ethnicity, religion, or group, and explicit words (like swearing) to try to solve any disagreement with anyone, including the developers of the project.
