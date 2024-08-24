@@ -386,6 +386,35 @@ namespace Nitrocid.Misc.Reflection
         }
 
         /// <summary>
+        /// Gets the fields from the type dynamically
+        /// </summary>
+        /// <param name="VariableType">Variable type</param>
+        /// <param name="instance">Instance</param>
+        /// <returns>Dictionary containing all fields</returns>
+        public static Dictionary<string, object> GetFields<T>(T instance, Type VariableType)
+        {
+            // Get field for specified variable
+            var Fields = VariableType.GetFields();
+            var FieldDict = new Dictionary<string, object>();
+
+            // Get the fields and get their values
+            foreach (FieldInfo VarField in Fields)
+            {
+                try
+                {
+                    var FieldValue = VarField.GetValue(instance);
+                    FieldDict.Add(VarField.Name, FieldValue);
+                }
+                catch (Exception ex)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, $"Error getting field value {VarField.Name} for {VariableType.Name}: {ex.Message}");
+                    DebugWriter.WriteDebugStackTrace(ex);
+                }
+            }
+            return FieldDict;
+        }
+
+        /// <summary>
         /// Gets the fields from the type without evaluation
         /// </summary>
         /// <param name="VariableType">Variable type</param>
@@ -452,5 +481,30 @@ namespace Nitrocid.Misc.Reflection
             return FieldDict;
         }
 
+        /// <summary>
+        /// Gets all the fields from the type dynamically
+        /// </summary>
+        /// <param name="instance">Instance</param>
+        /// <returns>Dictionary containing all fields</returns>
+        public static Dictionary<string, object> GetAllFields<T>(T instance)
+        {
+            // Get field for specified variable
+            var FieldDict = new Dictionary<string, object>();
+            foreach (var type in ReflectionCommon.KernelTypes)
+            {
+                try
+                {
+                    var fields = GetFields(instance, type);
+                    foreach (var field in fields)
+                        FieldDict.Add(field.Key, field.Value);
+                }
+                catch (Exception ex)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, $"Error getting field value for {type.Name}: {ex.Message}");
+                    DebugWriter.WriteDebugStackTrace(ex);
+                }
+            }
+            return FieldDict;
+        }
     }
 }

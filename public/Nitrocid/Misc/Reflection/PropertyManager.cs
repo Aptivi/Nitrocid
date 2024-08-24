@@ -395,6 +395,27 @@ namespace Nitrocid.Misc.Reflection
         }
 
         /// <summary>
+        /// Gets the properties from the type dynamically
+        /// </summary>
+        /// <param name="VariableType">Variable type</param>
+        /// <param name="instance">Instance</param>
+        /// <returns>Dictionary containing all properties</returns>
+        public static Dictionary<string, object> GetProperties<T>(T instance, Type VariableType)
+        {
+            // Get property for specified variable
+            var Properties = VariableType.GetProperties();
+            var PropertyDict = new Dictionary<string, object>();
+
+            // Get the properties and get their values
+            foreach (PropertyInfo VarProperty in Properties)
+            {
+                var PropertyValue = VarProperty.GetValue(instance);
+                PropertyDict.Add(VarProperty.Name, PropertyValue);
+            }
+            return PropertyDict;
+        }
+
+        /// <summary>
         /// Gets all the properties from the type dynamically
         /// </summary>
         /// <returns>Dictionary containing all properties</returns>
@@ -444,5 +465,30 @@ namespace Nitrocid.Misc.Reflection
             return PropertyDict;
         }
 
+        /// <summary>
+        /// Gets all the properties from the type dynamically
+        /// </summary>
+        /// <param name="instance">Instance</param>
+        /// <returns>Dictionary containing all properties</returns>
+        public static Dictionary<string, object> GetAllProperties<T>(T instance)
+        {
+            // Get property for specified variable
+            var PropertyDict = new Dictionary<string, object>();
+            foreach (var type in ReflectionCommon.KernelTypes)
+            {
+                try
+                {
+                    var properties = GetProperties(instance, type);
+                    foreach (var property in properties)
+                        PropertyDict.Add(property.Key, property.Value);
+                }
+                catch (Exception ex)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, $"Error getting property value for {type.Name}: {ex.Message}");
+                    DebugWriter.WriteDebugStackTrace(ex);
+                }
+            }
+            return PropertyDict;
+        }
     }
 }

@@ -24,6 +24,8 @@ using Nitrocid.Kernel.Configuration.Instances;
 using Nitrocid.Misc.Reflection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
+using Textify.Figlet;
+using Terminaux.Colors.Data;
 
 namespace Nitrocid.Tests.Misc.Reflection
 {
@@ -149,5 +151,16 @@ namespace Nitrocid.Tests.Misc.Reflection
             Properties.ShouldNotBeEmpty();
         }
 
+        /// <summary>
+        /// Tests getting properties
+        /// </summary>
+        [TestMethod]
+        [Description("Management")]
+        public void TestGetPropertiesInstance()
+        {
+            var Properties = PropertyManager.GetProperties(ConsoleColorData.Black, typeof(ConsoleColorData));
+            Properties.ShouldNotBeNull();
+            Properties.ShouldNotBeEmpty();
+        }
     }
 }
