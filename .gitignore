@@ -410,3 +410,6 @@ DocGen/api/
 
 # Vim
 *.swp
+
+# Nitrocid Generators
+public/*/Generated/
