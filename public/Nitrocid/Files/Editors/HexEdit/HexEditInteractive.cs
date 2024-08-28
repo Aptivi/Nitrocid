@@ -41,6 +41,7 @@ using Terminaux.Colors;
 using Terminaux.Base;
 using Terminaux.Reader;
 using Terminaux.Base.Extensions;
+using Terminaux.Inputs;
 
 namespace Nitrocid.Files.Editors.HexEdit
 {
@@ -112,7 +113,7 @@ namespace Nitrocid.Files.Editors.HexEdit
 
                     // Wait for a keypress
                     ScreenTools.Render(screen);
-                    var keypress = TermReader.ReadKey();
+                    var keypress = Input.ReadKey();
                     HandleKeypress(keypress, ref bytes);
 
                     // Reset, in case selection changed
@@ -149,11 +150,11 @@ namespace Nitrocid.Files.Editors.HexEdit
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Drawing binding {0} with description {1}...", GetBindingKeyShortcut(binding, false), binding.Name);
                         bindingsBuilder.Append(
-                            $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.KeyBindingOptionColor)}" +
-                            $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.OptionBackgroundColor, true)}" +
+                            $"{ColorTools.RenderSetConsoleColor(KernelColorTools.GetColor(KernelColorType.TuiKeyBindingOption))}" +
+                            $"{ColorTools.RenderSetConsoleColor(KernelColorTools.GetColor(KernelColorType.TuiOptionBackground), true)}" +
                             GetBindingKeyShortcut(binding, false) +
-                            $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.OptionForegroundColor)}" +
-                            $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.BackgroundColor, true)}" +
+                            $"{ColorTools.RenderSetConsoleColor(KernelColorTools.GetColor(KernelColorType.TuiOptionForeground))}" +
+                            $"{ColorTools.RenderSetConsoleColor(KernelColorTools.GetColor(KernelColorType.TuiBackground), true)}" +
                             $" {(binding._localizable ? Translate.DoTranslation(binding.Name) : binding.Name)}  " +
                             ConsoleClearing.GetClearLineToRightSequence()
                         );
@@ -164,8 +165,8 @@ namespace Nitrocid.Files.Editors.HexEdit
                         DebugWriter.WriteDebug(DebugLevel.I, "Bailing because of no space...");
                         bindingsBuilder.Append(
                             $"{CsiSequences.GenerateCsiCursorPosition(ConsoleWrapper.WindowWidth - 2, ConsoleWrapper.WindowHeight)}" +
-                            $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.KeyBindingOptionColor)}" +
-                            $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.OptionBackgroundColor, true)}" +
+                            $"{ColorTools.RenderSetConsoleColor(KernelColorTools.GetColor(KernelColorType.TuiKeyBindingOption))}" +
+                            $"{ColorTools.RenderSetConsoleColor(KernelColorTools.GetColor(KernelColorType.TuiOptionBackground), true)}" +
                             " K " +
                             ConsoleClearing.GetClearLineToRightSequence()
                         );
@@ -185,8 +186,8 @@ namespace Nitrocid.Files.Editors.HexEdit
             {
                 var builder = new StringBuilder();
                 builder.Append(
-                    $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.ForegroundColor)}" +
-                    $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.BackgroundColor, true)}" +
+                    $"{ColorTools.RenderSetConsoleColor(KernelColorTools.GetColor(KernelColorType.TuiForeground))}" +
+                    $"{ColorTools.RenderSetConsoleColor(KernelColorTools.GetColor(KernelColorType.TuiBackground), true)}" +
                     $"{TextWriterWhereColor.RenderWhere(status + ConsoleClearing.GetClearLineToRightSequence(), 0, 0)}"
                 );
                 return builder.ToString();
@@ -209,8 +210,8 @@ namespace Nitrocid.Files.Editors.HexEdit
 
                 // Render the box
                 builder.Append(
-                    $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.PaneSeparatorColor)}" +
-                    $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.BackgroundColor, true)}" +
+                    $"{ColorTools.RenderSetConsoleColor(KernelColorTools.GetColor(KernelColorType.TuiPaneSeparator))}" +
+                    $"{ColorTools.RenderSetConsoleColor(KernelColorTools.GetColor(KernelColorType.TuiBackground), true)}" +
                     $"{BorderColor.RenderBorderPlain(0, SeparatorMinimumHeight, SeparatorConsoleWidthInterior, SeparatorMaximumHeightInterior)}"
                 );
                 return builder.ToString();
@@ -243,8 +244,8 @@ namespace Nitrocid.Files.Editors.HexEdit
 
                 // Render the box
                 builder.Append(
-                    $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.ForegroundColor)}" +
-                    $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.BackgroundColor, true)}" +
+                    $"{ColorTools.RenderSetConsoleColor(KernelColorTools.GetColor(KernelColorType.TuiForeground))}" +
+                    $"{ColorTools.RenderSetConsoleColor(KernelColorTools.GetColor(KernelColorType.TuiBackground), true)}" +
                     $"{TextWriterWhereColor.RenderWhere(rendered, 1, 2)}"
                 );
                 return builder.ToString();
@@ -310,7 +311,7 @@ namespace Nitrocid.Files.Editors.HexEdit
                 $"{section}{CharManager.NewLine}" +
                 $"{new string('=', section.Length)}{CharManager.NewLine}{CharManager.NewLine}" +
                 $"{string.Join('\n', bindingRepresentations)}"
-            , InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+            , KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
             return bytes;
         }
 
@@ -353,10 +354,10 @@ namespace Nitrocid.Files.Editors.HexEdit
         {
             // Prompt and parse the number
             byte byteNum = default;
-            string byteNumHex = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Write the byte number with the hexadecimal value.") + " 00 -> FF.", InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+            string byteNumHex = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Write the byte number with the hexadecimal value.") + " 00 -> FF.", KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
             if (byteNumHex.Length != 2 ||
                 byteNumHex.Length == 2 && !byte.TryParse(byteNumHex, NumberStyles.AllowHexSpecifier, null, out byteNum))
-                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("The byte number specified is not valid."), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("The byte number specified is not valid."), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
             else
                 bytes = HexEditTools.AddNewByte(bytes, byteNum, byteIdx + 1);
             return bytes;
@@ -376,10 +377,10 @@ namespace Nitrocid.Files.Editors.HexEdit
 
             // Now, prompt for the replacement byte
             byte byteNumReplaced = default;
-            string byteNumReplacedHex = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Write the byte number with the hexadecimal value to replace {0} with.") + " 00 -> FF.", InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor, byteNumHex);
+            string byteNumReplacedHex = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Write the byte number with the hexadecimal value to replace {0} with.") + " 00 -> FF.", KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground), byteNumHex);
             if (byteNumReplacedHex.Length != 2 ||
                 byteNumReplacedHex.Length == 2 && !byte.TryParse(byteNumReplacedHex, NumberStyles.AllowHexSpecifier, null, out byteNumReplaced))
-                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("The byte number specified is not valid."), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("The byte number specified is not valid."), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
 
             // Do the replacement!
             bytes = HexEditTools.Replace(bytes, byteNum, byteNumReplaced, byteIdx + 1, byteIdx + 1);
@@ -394,10 +395,10 @@ namespace Nitrocid.Files.Editors.HexEdit
 
             // Now, prompt for the replacement byte
             byte byteNumReplaced = default;
-            string byteNumReplacedHex = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Write the byte number with the hexadecimal value to replace {0} with.") + " 00 -> FF.", InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor, byteNumHex);
+            string byteNumReplacedHex = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Write the byte number with the hexadecimal value to replace {0} with.") + " 00 -> FF.", KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground), byteNumHex);
             if (byteNumReplacedHex.Length != 2 ||
                 byteNumReplacedHex.Length == 2 && !byte.TryParse(byteNumReplacedHex, NumberStyles.AllowHexSpecifier, null, out byteNumReplaced))
-                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("The byte number specified is not valid."), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("The byte number specified is not valid."), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
 
             // Do the replacement!
             bytes = HexEditTools.Replace(bytes, byteNum, byteNumReplaced);
@@ -408,17 +409,17 @@ namespace Nitrocid.Files.Editors.HexEdit
         {
             // Prompt and parse the number
             byte byteNum = default;
-            string byteNumHex = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Write the byte number with the hexadecimal value to be replaced.") + " 00 -> FF.", InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+            string byteNumHex = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Write the byte number with the hexadecimal value to be replaced.") + " 00 -> FF.", KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
             if (byteNumHex.Length != 2 ||
                 byteNumHex.Length == 2 && !byte.TryParse(byteNumHex, NumberStyles.AllowHexSpecifier, null, out byteNum))
-                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("The byte number specified is not valid."), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("The byte number specified is not valid."), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
 
             // Now, prompt for the replacement byte
             byte byteNumReplaced = default;
-            string byteNumReplacedHex = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Write the byte number with the hexadecimal value to replace {0} with.") + " 00 -> FF.", InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor, byteNumHex);
+            string byteNumReplacedHex = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Write the byte number with the hexadecimal value to replace {0} with.") + " 00 -> FF.", KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground), byteNumHex);
             if (byteNumReplacedHex.Length != 2 ||
                 byteNumReplacedHex.Length == 2 && !byte.TryParse(byteNumReplacedHex, NumberStyles.AllowHexSpecifier, null, out byteNumReplaced))
-                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("The byte number specified is not valid."), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("The byte number specified is not valid."), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
 
             // Do the replacement!
             bytes = HexEditTools.Replace(bytes, byteNum, byteNumReplaced);
@@ -444,7 +445,7 @@ namespace Nitrocid.Files.Editors.HexEdit
                 Translate.DoTranslation("Octal") + $": {byteNumOctal}" + CharManager.NewLine +
                 Translate.DoTranslation("Number") + $": {byteNumNumber}" + CharManager.NewLine +
                 Translate.DoTranslation("Binary") + $": {byteNumBinary}"
-                , InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+                , KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
             return bytes;
         }
 

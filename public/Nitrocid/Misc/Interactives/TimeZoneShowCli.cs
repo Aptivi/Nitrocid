@@ -33,11 +33,6 @@ namespace Nitrocid.Misc.Interactives
 
         private static readonly string[] zones = TimeZones.GetTimeZoneNames();
 
-        /// <summary>
-        /// Time zone showing CLI bindings
-        /// </summary>
-        public override InteractiveTuiBinding[] Bindings { get; } = [];
-
         /// <inheritdoc/>
         public override IEnumerable<string> PrimaryDataSource =>
             zones;

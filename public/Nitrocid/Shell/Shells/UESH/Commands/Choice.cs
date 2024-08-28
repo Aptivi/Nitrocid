@@ -101,12 +101,15 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                     OutputType = ChoiceOutputType.TwoLines;
                 if (parameters.SwitchesList[0] == "-m")
                     OutputType = ChoiceOutputType.Modern;
-                if (parameters.SwitchesList[0] == "-a")
-                    OutputType = ChoiceOutputType.Table;
             }
 
             // Prompt for choice
-            string Answer = ChoiceStyle.PromptChoice(parameters.ArgumentsList[1], [.. Titles], OutputType, PressEnter);
+            var settings = new ChoiceStyleSettings()
+            {
+                OutputType = OutputType,
+                PressEnter = PressEnter,
+            };
+            string Answer = ChoiceStyle.PromptChoice(parameters.ArgumentsList[1], [.. Titles], settings);
             variableValue = Answer;
             return 0;
         }

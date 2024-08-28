@@ -33,6 +33,7 @@ using Terminaux.Base;
 using System.Threading;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Reader;
+using Terminaux.Inputs;
 
 namespace Nitrocid.Extras.Docking.Dock
 {
@@ -93,7 +94,7 @@ namespace Nitrocid.Extras.Docking.Dock
                     SpinWait.SpinUntil(() => ConsoleWrapper.KeyAvailable, 1000);
                 }
                 TextWriterRaw.WriteRaw(dockInstance.Cleanup());
-                TermReader.ReadKey();
+                Input.ReadKey();
             }
             catch (Exception ex)
             {

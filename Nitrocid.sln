@@ -202,7 +202,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.Extras.Ssh", "publ
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Generators", "Generators", "{E403EE05-8642-4496-8897-CBD762D7670B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nitrocid.Generators.KnownAddons", "private\Nitrocid.Generators\Nitrocid.Generators.KnownAddons\Nitrocid.Generators.KnownAddons.csproj", "{E1B8ED9D-541A-4D9E-AAF5-2671114E179B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.Generators.KnownAddons", "private\Nitrocid.Generators\Nitrocid.Generators.KnownAddons\Nitrocid.Generators.KnownAddons.csproj", "{E1B8ED9D-541A-4D9E-AAF5-2671114E179B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

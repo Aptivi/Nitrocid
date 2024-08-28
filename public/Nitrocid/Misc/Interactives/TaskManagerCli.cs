@@ -33,21 +33,8 @@ namespace Nitrocid.Misc.Interactives
     /// </summary>
     public class TaskManagerCli : BaseInteractiveTui<(int, object)>, IInteractiveTui<(int, object)>
     {
-
-        private static string taskStatus = "";
-        private static bool osThreadMode = false;
-
-        /// <summary>
-        /// Task manager bindings
-        /// </summary>
-        public override InteractiveTuiBinding[] Bindings { get; } =
-        [
-            // Operations
-            new InteractiveTuiBinding("Kill", ConsoleKey.F1,
-                (thread, _) => KillThread(thread)),
-            new InteractiveTuiBinding("Switch", ConsoleKey.F2,
-                (_, _) => SwitchMode())
-        ];
+        internal string taskStatus = "";
+        internal bool osThreadMode = false;
 
         /// <inheritdoc/>
         public override IEnumerable<(int, object)> PrimaryDataSource
@@ -173,7 +160,7 @@ namespace Nitrocid.Misc.Interactives
             }
         }
 
-        private static void KillThread(object id)
+        internal void KillThread(object id)
         {
             if (!osThreadMode)
             {
@@ -190,10 +177,10 @@ namespace Nitrocid.Misc.Interactives
                 taskStatus = Translate.DoTranslation("OS threads can't be killed.");
         }
 
-        private static void SwitchMode()
+        internal void SwitchMode()
         {
             osThreadMode = !osThreadMode;
-            InteractiveTuiTools.SelectionMovement(Instance, 1);
+            InteractiveTuiTools.SelectionMovement(this, 1);
         }
     }
 }

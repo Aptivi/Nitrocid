@@ -22,6 +22,7 @@ using Nitrocid.Languages;
 using System.Collections.Generic;
 using System.Linq;
 using Terminaux.Inputs;
+using Terminaux.Inputs.Styles;
 
 namespace Nitrocid.Network.Connections
 {

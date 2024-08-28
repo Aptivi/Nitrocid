@@ -36,20 +36,10 @@ namespace Nitrocid.Misc.Interactives
     /// </summary>
     public class SettingsCli : BaseInteractiveTui<(string, int)>, IInteractiveTui<(string, int)>
     {
-        internal static BaseKernelConfig config;
-        internal static int lastFirstPaneIdx = -1;
+        internal BaseKernelConfig config;
+        internal int lastFirstPaneIdx = -1;
         internal List<(string, int)> entryNames = [];
         internal List<(string, int)> keyNames = [];
-
-        /// <summary>
-        /// File manager bindings
-        /// </summary>
-        public override InteractiveTuiBinding[] Bindings { get; } =
-        [
-            // Operations
-            new InteractiveTuiBinding("Set", ConsoleKey.Enter,
-                (_, _) => Set(InteractiveTuiStatus.FirstPaneCurrentSelection - 1, InteractiveTuiStatus.SecondPaneCurrentSelection - 1)),
-        ];
 
         /// <summary>
         /// Always true in the file manager as we want it to behave like Total Commander
@@ -64,11 +54,11 @@ namespace Nitrocid.Misc.Interactives
             {
                 try
                 {
-                    if (lastFirstPaneIdx == InteractiveTuiStatus.FirstPaneCurrentSelection - 1)
+                    if (lastFirstPaneIdx == FirstPaneCurrentSelection - 1)
                         return entryNames;
                     var configs = config.SettingsEntries;
                     var configNames = configs.Select((se, idx) => (se.Name, idx)).ToArray();
-                    var entry = config.SettingsEntries[InteractiveTuiStatus.FirstPaneCurrentSelection - 1];
+                    var entry = config.SettingsEntries[FirstPaneCurrentSelection - 1];
                     var keys = entry.Keys;
                     var finalkeyNames = keys.Select((key, idx) =>
                     {
@@ -79,7 +69,7 @@ namespace Nitrocid.Misc.Interactives
                     entryNames.AddRange(configNames);
                     keyNames.Clear();
                     keyNames.AddRange(finalkeyNames);
-                    lastFirstPaneIdx = InteractiveTuiStatus.FirstPaneCurrentSelection - 1;
+                    lastFirstPaneIdx = FirstPaneCurrentSelection - 1;
                     return configNames;
                 }
                 catch (Exception ex)
@@ -117,11 +107,11 @@ namespace Nitrocid.Misc.Interactives
         public override string GetStatusFromItem((string, int) item)
         {
             string status;
-            if (InteractiveTuiStatus.CurrentPane == 2)
+            if (CurrentPane == 2)
             {
                 string keyName = item.Item1;
                 int keyIdx = item.Item2;
-                string keyDesc = config.SettingsEntries[InteractiveTuiStatus.FirstPaneCurrentSelection - 1].Keys[keyIdx].Description;
+                string keyDesc = config.SettingsEntries[FirstPaneCurrentSelection - 1].Keys[keyIdx].Description;
                 status = $"K: {keyName} - {keyDesc}";
             }
             else
@@ -142,11 +132,11 @@ namespace Nitrocid.Misc.Interactives
         public override string GetInfoFromItem((string, int) item)
         {
             string status;
-            if (InteractiveTuiStatus.CurrentPane == 2)
+            if (CurrentPane == 2)
             {
                 string keyName = item.Item1;
                 int keyIdx = item.Item2;
-                string keyDesc = config.SettingsEntries[InteractiveTuiStatus.FirstPaneCurrentSelection - 1].Keys[keyIdx].Description;
+                string keyDesc = config.SettingsEntries[FirstPaneCurrentSelection - 1].Keys[keyIdx].Description;
                 status =
                     $"""
                     {keyName}
@@ -171,7 +161,7 @@ namespace Nitrocid.Misc.Interactives
             return status;
         }
 
-        private static void Set(int entryIdx, int keyIdx)
+        internal void Set(int entryIdx, int keyIdx)
         {
             try
             {
@@ -190,7 +180,7 @@ namespace Nitrocid.Misc.Interactives
                 var finalInfoRendered = new StringBuilder();
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't open file or folder") + TextTools.FormatString(": {0}", ex.Message));
                 finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
-                InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
             }
         }
     }

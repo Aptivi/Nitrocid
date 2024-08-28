@@ -27,6 +27,7 @@ using Nitrocid.ConsoleBase.Colors;
 using Nettify.Weather;
 using Terminaux.Inputs;
 using Newtonsoft.Json.Linq;
+using Terminaux.Inputs.Styles;
 
 namespace Nitrocid.Extras.Forecast.Forecast.Interactive
 {

@@ -29,15 +29,6 @@ namespace Nitrocid.Misc.Interactives
 {
     internal class AlarmCli : BaseInteractiveTui<string>, IInteractiveTui<string>
     {
-        public override InteractiveTuiBinding[] Bindings { get; } =
-        [
-            // Operations
-            new InteractiveTuiBinding("Add", ConsoleKey.A,
-                (_, _) => Start(), true),
-            new InteractiveTuiBinding("Remove", ConsoleKey.Delete,
-                (saver, _) => Stop((string)saver)),
-        ];
-
         /// <inheritdoc/>
         public override IEnumerable<string> PrimaryDataSource =>
             AlarmTools.alarms.Keys;
@@ -84,7 +75,7 @@ namespace Nitrocid.Misc.Interactives
         public override string GetEntryFromItem(string item) =>
             item;
 
-        private static void Start()
+        internal void Start()
         {
             string name = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Write the alarm name"));
             if (string.IsNullOrWhiteSpace(name))
@@ -101,7 +92,7 @@ namespace Nitrocid.Misc.Interactives
             AlarmTools.StartAlarm(name, name, (int)span.TotalSeconds);
         }
 
-        private static void Stop(string alarm) =>
+        internal void Stop(string alarm) =>
             AlarmTools.StopAlarm(alarm);
     }
 }

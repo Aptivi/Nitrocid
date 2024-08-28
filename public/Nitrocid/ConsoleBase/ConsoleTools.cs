@@ -36,6 +36,7 @@ using Terminaux.Reader;
 using Terminaux.Base.Extensions;
 using System.Text.RegularExpressions;
 using Terminaux.Sequences;
+using Terminaux.Inputs;
 
 namespace Nitrocid.ConsoleBase
 {
@@ -164,7 +165,7 @@ namespace Nitrocid.ConsoleBase
             ConsoleKey answer = ConsoleKey.None;
             ScreenTools.Render();
             while (answer != ConsoleKey.N && answer != ConsoleKey.Y)
-                answer = TermReader.ReadKey().Key;
+                answer = Input.ReadKey().Key;
 
             // Set the appropriate config
             bool supports256Color = answer == ConsoleKey.Y;

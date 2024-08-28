@@ -30,6 +30,7 @@ using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Debugging;
 using System.IO;
 using Nitrocid.Modifications.ManPages;
+using System;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -62,6 +63,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             }
 
             var tuiInstance = new ManualViewerCli() { modName = modName };
+            tuiInstance.Bindings.Add(new InteractiveTuiBinding<Manual>("Info", ConsoleKey.F1, (manual, _, _, _) => tuiInstance.ShowManualInfo(manual)));
             InteractiveTuiTools.OpenInteractiveTui(tuiInstance);
             return 0;
         }

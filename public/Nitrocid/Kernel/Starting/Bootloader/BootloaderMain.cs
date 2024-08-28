@@ -30,6 +30,7 @@ using Terminaux.Base;
 using Terminaux.Base.Buffered;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
+using Terminaux.Inputs;
 using Terminaux.Reader;
 using Terminaux.Writer.ConsoleWriters;
 
@@ -56,7 +57,7 @@ namespace Nitrocid.Kernel.Starting.Bootloader
                 DebugWriter.WriteDebugStackTrace(ex);
                 TextWriterColor.Write(Translate.DoTranslation("GRILO has experienced an internal error") + ": {0}", ex.Message);
                 TextWriterColor.Write(Translate.DoTranslation("Press any key to exit."));
-                TermReader.ReadKey();
+                Input.ReadKey();
             }
             finally
             {
@@ -105,14 +106,14 @@ namespace Nitrocid.Kernel.Starting.Bootloader
                 ConsoleKeyInfo cki;
                 if (timeout > 0 && BootloaderState.WaitingForFirstBootKey)
                 {
-                    var result = TermReader.ReadKeyTimeout(true, TimeSpan.FromSeconds(Config.MainConfig.BootSelectTimeoutSeconds));
+                    var result = Input.ReadKeyTimeout(true, TimeSpan.FromSeconds(Config.MainConfig.BootSelectTimeoutSeconds));
                     if (!result.provided)
                         cki = new('\x0A', ConsoleKey.Enter, false, false, false);
                     else
                         cki = result.result;
                 }
                 else
-                    cki = TermReader.ReadKey();
+                    cki = Input.ReadKey();
                 BootloaderState.waitingForFirstBootKey = false;
                 DebugWriter.WriteDebug(DebugLevel.I, "Key pressed: {0}", cki.Key.ToString());
                 switch (cki.Key)
@@ -185,7 +186,7 @@ namespace Nitrocid.Kernel.Starting.Bootloader
                             // Wait for input
                             DebugWriter.WriteDebug(DebugLevel.I, "Waiting for user to press any key...");
                             ScreenTools.Render();
-                            TermReader.ReadKey();
+                            Input.ReadKey();
                             bootloaderScreen.RequireRefresh();
                         }
                         break;

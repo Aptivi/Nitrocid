@@ -42,6 +42,7 @@ using Terminaux.Reader;
 using Terminaux.Base.Extensions;
 using Nitrocid.Kernel.Time.Renderers;
 using System.Collections.Generic;
+using Terminaux.Inputs;
 
 namespace Nitrocid.Extras.Calendar.Calendar
 {
@@ -103,7 +104,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
 
                     // Wait for a keypress
                     ScreenTools.Render(screen);
-                    var keypress = TermReader.ReadKey();
+                    var keypress = Input.ReadKey();
                     HandleKeypress(keypress, ref state);
 
                     // Reset, in case selection changed
@@ -140,11 +141,11 @@ namespace Nitrocid.Extras.Calendar.Calendar
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Drawing binding {0} with description {1}...", GetBindingKeyShortcut(binding, false), binding.Name);
                         bindingsBuilder.Append(
-                            $"{InteractiveTuiStatus.KeyBindingOptionColor.VTSequenceForeground}" +
-                            $"{InteractiveTuiStatus.OptionBackgroundColor.VTSequenceBackground}" +
+                            $"{KernelColorTools.GetColor(KernelColorType.TuiKeyBindingOption).VTSequenceForeground}" +
+                            $"{KernelColorTools.GetColor(KernelColorType.TuiOptionBackground).VTSequenceBackground}" +
                             GetBindingKeyShortcut(binding, false) +
-                            $"{InteractiveTuiStatus.OptionForegroundColor.VTSequenceForeground}" +
-                            $"{InteractiveTuiStatus.BackgroundColor.VTSequenceBackground}" +
+                            $"{KernelColorTools.GetColor(KernelColorType.TuiOptionForeground).VTSequenceForeground}" +
+                            $"{KernelColorTools.GetColor(KernelColorType.TuiBackground).VTSequenceBackground}" +
                             $" {(binding._localizable ? Translate.DoTranslation(binding.Name) : binding.Name)}  "
                         );
                     }
@@ -154,8 +155,8 @@ namespace Nitrocid.Extras.Calendar.Calendar
                         DebugWriter.WriteDebug(DebugLevel.I, "Bailing because of no space...");
                         bindingsBuilder.Append(
                             $"{CsiSequences.GenerateCsiCursorPosition(ConsoleWrapper.WindowWidth - 2, ConsoleWrapper.WindowHeight)}" +
-                            $"{InteractiveTuiStatus.KeyBindingOptionColor.VTSequenceForeground}" +
-                            $"{InteractiveTuiStatus.OptionBackgroundColor.VTSequenceBackground}" +
+                            $"{KernelColorTools.GetColor(KernelColorType.TuiKeyBindingOption).VTSequenceForeground}" +
+                            $"{KernelColorTools.GetColor(KernelColorType.TuiOptionBackground).VTSequenceBackground}" +
                             " K "
                         );
                         break;
@@ -174,7 +175,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
             {
                 var builder = new StringBuilder();
                 builder.Append(
-                    $"{InteractiveTuiStatus.ForegroundColor.VTSequenceForeground}" +
+                    $"{KernelColorTools.GetColor(KernelColorType.TuiForeground).VTSequenceForeground}" +
                     $"{KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground}" +
                     $"{TextWriterWhereColor.RenderWhere(status + ConsoleClearing.GetClearLineToRightSequence(), 0, 0)}"
                 );
@@ -198,7 +199,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
 
                 // Render the box
                 builder.Append(
-                    $"{InteractiveTuiStatus.PaneSeparatorColor.VTSequenceForeground}" +
+                    $"{KernelColorTools.GetColor(KernelColorType.TuiPaneSeparator).VTSequenceForeground}" +
                     $"{KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground}" +
                     $"{BorderColor.RenderBorderPlain(0, SeparatorMinimumHeight, SeparatorConsoleWidthInterior, SeparatorMaximumHeightInterior)}"
                 );
@@ -277,7 +278,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
                     var foreground =
                         IsToday ? KernelColorTools.GetColor(KernelColorType.TodayDay) :
                         IsWeekend ? KernelColorTools.GetColor(KernelColorType.WeekendDay) :
-                        InteractiveTuiStatus.ForegroundColor;
+                        KernelColorTools.GetColor(KernelColorType.TuiForeground);
 
                     // Know where and how to put the day number
                     foreach (ReminderInfo Reminder in ReminderManager.Reminders)
@@ -365,7 +366,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
                     var foreground =
                         IsToday ? KernelColorTools.GetColor(KernelColorType.TodayDay) :
                         IsWeekend ? KernelColorTools.GetColor(KernelColorType.WeekendDay) :
-                        InteractiveTuiStatus.ForegroundColor;
+                        KernelColorTools.GetColor(KernelColorType.TuiForeground);
 
                     // Know where and how to put the reminders and events
                     foreach (ReminderInfo Reminder in ReminderManager.Reminders)
@@ -434,7 +435,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
 
                 // Finalize everything
                 builder.Append(
-                    $"{InteractiveTuiStatus.ForegroundColor.VTSequenceForeground}" +
+                    $"{KernelColorTools.GetColor(KernelColorType.TuiForeground).VTSequenceForeground}" +
                     $"{background.VTSequenceBackground}"
                 );
                 return builder.ToString();
@@ -509,7 +510,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
                 $"{section}{CharManager.NewLine}" +
                 $"{new string('=', section.Length)}{CharManager.NewLine}{CharManager.NewLine}" +
                 $"{string.Join('\n', bindingRepresentations)}"
-            , InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+            , KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
             return state;
         }
 

@@ -37,6 +37,7 @@ using Terminaux.Inputs.Styles.Selection;
 using Terminaux.Inputs;
 using Nitrocid.Languages;
 using BassBoom.Basolia.Exceptions;
+using Terminaux.Inputs.Styles;
 
 namespace Nitrocid.Extras.BassBoom.Player
 {
@@ -98,7 +99,7 @@ namespace Nitrocid.Extras.BassBoom.Player
                     // Handle the keystroke
                     if (ConsoleWrapper.KeyAvailable)
                     {
-                        var keystroke = TermReader.ReadKey();
+                        var keystroke = Input.ReadKey();
                         if (PlaybackTools.Playing)
                             HandleKeypressPlayMode(keystroke, radioScreen);
                         else

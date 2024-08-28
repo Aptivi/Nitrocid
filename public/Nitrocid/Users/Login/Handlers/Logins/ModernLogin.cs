@@ -31,6 +31,7 @@ using System;
 using Nitrocid.Kernel.Power;
 using Terminaux.Reader;
 using Nitrocid.Users.Login.Widgets;
+using Terminaux.Inputs.Styles;
 
 namespace Nitrocid.Users.Login.Handlers.Logins
 {
@@ -50,7 +51,7 @@ namespace Nitrocid.Users.Login.Handlers.Logins
             DebugWriter.WriteDebug(DebugLevel.I, "Rendering...");
             SpinWait.SpinUntil(() => ModernLogonScreen.renderedFully);
             DebugWriter.WriteDebug(DebugLevel.I, "Rendered fully!");
-            var key = TermReader.ReadKey().Key;
+            var key = Input.ReadKey().Key;
 
             // Stop the thread if screen number indicates that we're on the main screen
             ModernLogonScreen.updateThread.Stop();

@@ -23,6 +23,7 @@ using Nitrocid.Kernel.Configuration.Instances;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
 using Terminaux.Base;
+using Terminaux.Inputs;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Reader;
 
@@ -86,7 +87,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
                 DebugWriter.WriteDebug(DebugLevel.W, "Negative values are disallowed.");
                 TextWriters.Write(Translate.DoTranslation("The answer may not be negative."), true, KernelColorType.Error);
                 TextWriters.Write(Translate.DoTranslation("Press any key to go back."), true, KernelColorType.Error);
-                TermReader.ReadKey();
+                Input.ReadKey();
             }
         }
 

@@ -41,6 +41,7 @@ using Terminaux.Reader;
 using Terminaux.Base.Extensions;
 using Nitrocid.ConsoleBase;
 using System.Text.RegularExpressions;
+using Terminaux.Inputs;
 
 namespace Nitrocid.Files.Editors.TextEdit
 {
@@ -118,7 +119,7 @@ namespace Nitrocid.Files.Editors.TextEdit
 
                     // Wait for a keypress
                     ScreenTools.Render(screen);
-                    var keypress = TermReader.ReadKey();
+                    var keypress = Input.ReadKey();
                     HandleKeypress(keypress, lines);
 
                     // Reset, in case selection changed
@@ -156,11 +157,11 @@ namespace Nitrocid.Files.Editors.TextEdit
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Drawing binding {0} with description {1}...", GetBindingKeyShortcut(binding, false), binding.Name);
                         bindingsBuilder.Append(
-                            $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.KeyBindingOptionColor)}" +
-                            $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.OptionBackgroundColor, true)}" +
+                            $"{ColorTools.RenderSetConsoleColor(KernelColorTools.GetColor(KernelColorType.TuiKeyBindingOption))}" +
+                            $"{ColorTools.RenderSetConsoleColor(KernelColorTools.GetColor(KernelColorType.TuiOptionBackground), true)}" +
                             GetBindingKeyShortcut(binding, false) +
-                            $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.OptionForegroundColor)}" +
-                            $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.BackgroundColor, true)}" +
+                            $"{ColorTools.RenderSetConsoleColor(KernelColorTools.GetColor(KernelColorType.TuiOptionForeground))}" +
+                            $"{ColorTools.RenderSetConsoleColor(KernelColorTools.GetColor(KernelColorType.TuiBackground), true)}" +
                             $" {(binding._localizable ? Translate.DoTranslation(binding.Name) : binding.Name)}  " +
                             ConsoleClearing.GetClearLineToRightSequence()
                         );
@@ -171,8 +172,8 @@ namespace Nitrocid.Files.Editors.TextEdit
                         DebugWriter.WriteDebug(DebugLevel.I, "Bailing because of no space...");
                         bindingsBuilder.Append(
                             $"{CsiSequences.GenerateCsiCursorPosition(ConsoleWrapper.WindowWidth - 2, ConsoleWrapper.WindowHeight)}" +
-                            $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.KeyBindingOptionColor)}" +
-                            $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.OptionBackgroundColor, true)}" +
+                            $"{ColorTools.RenderSetConsoleColor(KernelColorTools.GetColor(KernelColorType.TuiKeyBindingOption))}" +
+                            $"{ColorTools.RenderSetConsoleColor(KernelColorTools.GetColor(KernelColorType.TuiOptionBackground), true)}" +
                             " K " +
                             ConsoleClearing.GetClearLineToRightSequence()
                         );
@@ -192,8 +193,8 @@ namespace Nitrocid.Files.Editors.TextEdit
             {
                 var builder = new StringBuilder();
                 builder.Append(
-                    $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.ForegroundColor)}" +
-                    $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.BackgroundColor, true)}" +
+                    $"{ColorTools.RenderSetConsoleColor(KernelColorTools.GetColor(KernelColorType.TuiForeground))}" +
+                    $"{ColorTools.RenderSetConsoleColor(KernelColorTools.GetColor(KernelColorType.TuiBackground), true)}" +
                     $"{TextWriterWhereColor.RenderWhere(status + ConsoleClearing.GetClearLineToRightSequence(), 0, 0)}"
                 );
                 return builder.ToString();
@@ -216,8 +217,8 @@ namespace Nitrocid.Files.Editors.TextEdit
 
                 // Render the box
                 builder.Append(
-                    $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.PaneSeparatorColor)}" +
-                    $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.BackgroundColor, true)}" +
+                    $"{ColorTools.RenderSetConsoleColor(KernelColorTools.GetColor(KernelColorType.TuiPaneSeparator))}" +
+                    $"{ColorTools.RenderSetConsoleColor(KernelColorTools.GetColor(KernelColorType.TuiBackground), true)}" +
                     $"{BorderColor.RenderBorderPlain(0, SeparatorMinimumHeight, SeparatorConsoleWidthInterior, SeparatorMaximumHeightInterior)}"
                 );
                 return builder.ToString();
@@ -243,7 +244,7 @@ namespace Nitrocid.Files.Editors.TextEdit
                 int SeparatorMinimumHeightInterior = 2;
 
                 // Get the colors
-                var unhighlightedColorBackground = InteractiveTuiStatus.BackgroundColor;
+                var unhighlightedColorBackground = KernelColorTools.GetColor(KernelColorType.TuiBackground);
                 var highlightedColorBackground = KernelColorTools.GetColor(KernelColorType.Success);
 
                 // Get the start and the end indexes for lines
@@ -388,7 +389,7 @@ namespace Nitrocid.Files.Editors.TextEdit
                 $"{section}{CharManager.NewLine}" +
                 $"{new string('=', section.Length)}{CharManager.NewLine}{CharManager.NewLine}" +
                 $"{string.Join('\n', bindingRepresentations)}"
-            , InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+            , KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
             return lines;
         }
 

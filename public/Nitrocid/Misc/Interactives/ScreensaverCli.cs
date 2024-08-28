@@ -21,6 +21,7 @@ using System;
 using System.Collections.Generic;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Screensaver;
+using Terminaux.Inputs;
 using Terminaux.Inputs.Interactive;
 using Terminaux.Reader;
 using Textify.General;
@@ -29,13 +30,6 @@ namespace Nitrocid.Misc.Interactives
 {
     internal class ScreensaverCli : BaseInteractiveTui<string>, IInteractiveTui<string>
     {
-        public override InteractiveTuiBinding[] Bindings { get; } =
-        [
-            // Operations
-            new InteractiveTuiBinding("Preview", ConsoleKey.Enter,
-                (saver, _) => PressAndBailHelper((string)saver))
-        ];
-
         /// <inheritdoc/>
         public override IEnumerable<string> PrimaryDataSource =>
             ScreensaverManager.GetScreensaverNames();
@@ -65,12 +59,12 @@ namespace Nitrocid.Misc.Interactives
         public override string GetEntryFromItem(string item) =>
             item;
 
-        private static void PressAndBailHelper(string saver)
+        internal void PressAndBailHelper(string saver)
         {
             ScreensaverManager.ShowSavers(saver);
             if (ScreensaverManager.inSaver)
             {
-                TermReader.ReadKey();
+                Input.ReadKey();
                 ScreensaverDisplayer.BailFromScreensaver();
             }
         }

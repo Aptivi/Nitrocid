@@ -30,6 +30,7 @@ using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Reader;
 using Nitrocid.Drivers.RNG;
+using Terminaux.Inputs;
 
 namespace Nitrocid.Extras.Timers.Timers
 {
@@ -136,12 +137,12 @@ namespace Nitrocid.Extras.Timers.Timers
                 {
                     // Wait for a keypress
                     if (ConsoleWrapper.KeyAvailable)
-                        KeysKeypress = TermReader.ReadKey().Key;
+                        KeysKeypress = Input.ReadKey().Key;
                 }
                 else
                 {
                     // Wait for a keypress
-                    KeysKeypress = TermReader.ReadKey().Key;
+                    KeysKeypress = Input.ReadKey().Key;
                 }
 
                 // Check for a keypress

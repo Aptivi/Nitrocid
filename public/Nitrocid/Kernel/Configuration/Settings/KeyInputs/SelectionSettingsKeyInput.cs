@@ -31,6 +31,7 @@ using System.Linq;
 using System.Reflection;
 using Terminaux.Reader;
 using Terminaux.Inputs;
+using Terminaux.Inputs.Styles;
 
 namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
 {
@@ -142,7 +143,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
                     DebugWriter.WriteDebug(DebugLevel.W, "Answer is not valid.");
                     TextWriters.Write(Translate.DoTranslation("The answer may not exceed the entries shown."), true, KernelColorType.Error);
                     TextWriters.Write(Translate.DoTranslation("Press any key to go back."), true, KernelColorType.Error);
-                    TermReader.ReadKey();
+                    Input.ReadKey();
                 }
             }
             else if (AnswerInt == 0 & !SelectionEnumZeroBased)
@@ -150,14 +151,14 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
                 DebugWriter.WriteDebug(DebugLevel.W, "Zero is not allowed.");
                 TextWriters.Write(Translate.DoTranslation("The answer may not be zero."), true, KernelColorType.Error);
                 TextWriters.Write(Translate.DoTranslation("Press any key to go back."), true, KernelColorType.Error);
-                TermReader.ReadKey();
+                Input.ReadKey();
             }
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Negative values are disallowed.");
                 TextWriters.Write(Translate.DoTranslation("The answer may not be negative."), true, KernelColorType.Error);
                 TextWriters.Write(Translate.DoTranslation("Press any key to go back."), true, KernelColorType.Error);
-                TermReader.ReadKey();
+                Input.ReadKey();
             }
         }
 

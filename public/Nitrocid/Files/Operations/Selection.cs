@@ -20,6 +20,9 @@
 using Terminaux.Inputs.Interactive;
 using Nitrocid.Files.Paths;
 using Nitrocid.Misc.Interactives;
+using System;
+using Nitrocid.Languages;
+using Nitrocid.Files.Instances;
 
 namespace Nitrocid.Files.Operations
 {
@@ -49,6 +52,18 @@ namespace Nitrocid.Files.Operations
                     PathsManagement.HomePath :
                     FilesystemTools.NeutralizePath(path)
             };
+            selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Select"), ConsoleKey.Enter, (entry1, _, _, _) => selector.SelectOrGoTo(entry1)));
+            selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Copy"), ConsoleKey.F1, (entry1, _, _, _) => selector.CopyTo(entry1)));
+            selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Move"), ConsoleKey.F2, (entry1, _, _, _) => selector.MoveTo(entry1)));
+            selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Delete"), ConsoleKey.F3, (entry1, _, _, _) => selector.RemoveFileOrDir(entry1)));
+            selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Up"), ConsoleKey.F4, (_, _, _, _) => selector.GoUp()));
+            selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Info"), ConsoleKey.F5, (entry1, _, _, _) => selector.PrintFileSystemEntry(entry1)));
+            selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Go To"), ConsoleKey.F6, (_, _, _, _) => selector.GoTo()));
+            selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Rename"), ConsoleKey.F7, (entry1, _, _, _) => selector.Rename(entry1)));
+            selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("New Folder"), ConsoleKey.F8, (_, _, _, _) => selector.MakeDir()));
+            selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Hash..."), ConsoleKey.F9, (entry1, _, _, _) => selector.Hash(entry1)));
+            selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Verify..."), ConsoleKey.F10, (entry1, _, _, _) => selector.Verify(entry1)));
+            selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Preview"), ConsoleKey.P, (entry1, _, _, _) => selector.Preview(entry1)));
             InteractiveTuiTools.OpenInteractiveTui(selector);
             string selected = selector.selectedFile;
             return selected;
@@ -75,6 +90,19 @@ namespace Nitrocid.Files.Operations
                     PathsManagement.HomePath :
                     FilesystemTools.NeutralizePath(path)
             };
+            selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Select"), ConsoleKey.Enter, (entry1, _, _, _) => selector.SelectOrGoTo(entry1)));
+            selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Copy"), ConsoleKey.F1, (entry1, _, _, _) => selector.CopyTo(entry1)));
+            selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Move"), ConsoleKey.F2, (entry1, _, _, _) => selector.MoveTo(entry1)));
+            selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Delete"), ConsoleKey.F3, (entry1, _, _, _) => selector.RemoveFileOrDir(entry1)));
+            selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Up"), ConsoleKey.F4, (_, _, _, _) => selector.GoUp()));
+            selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Info"), ConsoleKey.F5, (entry1, _, _, _) => selector.PrintFileSystemEntry(entry1)));
+            selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Go To"), ConsoleKey.F6, (_, _, _, _) => selector.GoTo()));
+            selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Rename"), ConsoleKey.F7, (entry1, _, _, _) => selector.Rename(entry1)));
+            selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("New Folder"), ConsoleKey.F8, (_, _, _, _) => selector.MakeDir()));
+            selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Hash..."), ConsoleKey.F9, (entry1, _, _, _) => selector.Hash(entry1)));
+            selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Verify..."), ConsoleKey.F10, (entry1, _, _, _) => selector.Verify(entry1)));
+            selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Preview Selected"), ConsoleKey.F11, (_, _, _, _) => selector.PreviewSelected()));
+            selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Preview"), ConsoleKey.P, (entry1, _, _, _) => selector.Preview(entry1)));
             InteractiveTuiTools.OpenInteractiveTui(selector);
             string[] selected = [.. selector.selectedFiles];
             return selected;
@@ -101,6 +129,18 @@ namespace Nitrocid.Files.Operations
                     PathsManagement.HomePath :
                     FilesystemTools.NeutralizePath(path)
             };
+            selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Open"), ConsoleKey.Enter, (entry1, _, _, _) => selector.Open(entry1)));
+            selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Copy"), ConsoleKey.F1, (entry1, _, _, _) => selector.CopyTo(entry1)));
+            selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Move"), ConsoleKey.F2, (entry1, _, _, _) => selector.MoveTo(entry1)));
+            selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Delete"), ConsoleKey.F3, (entry1, _, _, _) => selector.RemoveFileOrDir(entry1)));
+            selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Up"), ConsoleKey.F4, (_, _, _, _) => selector.GoUp()));
+            selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Info"), ConsoleKey.F5, (entry1, _, _, _) => selector.PrintFileSystemEntry(entry1)));
+            selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Go To"), ConsoleKey.F6, (_, _, _, _) => selector.GoTo()));
+            selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Rename"), ConsoleKey.F7, (entry1, _, _, _) => selector.Rename(entry1)));
+            selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("New Folder"), ConsoleKey.F8, (_, _, _, _) => selector.MakeDir()));
+            selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Hash..."), ConsoleKey.F9, (entry1, _, _, _) => selector.Hash(entry1)));
+            selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Verify..."), ConsoleKey.F10, (entry1, _, _, _) => selector.Verify(entry1)));
+            selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Preview"), ConsoleKey.P, (entry1, _, _, _) => selector.Preview(entry1)));
             InteractiveTuiTools.OpenInteractiveTui(selector);
             string selected = selector.selectedFolder;
             return selected;
@@ -127,6 +167,19 @@ namespace Nitrocid.Files.Operations
                     PathsManagement.HomePath :
                     FilesystemTools.NeutralizePath(path)
             };
+            selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Open"), ConsoleKey.Enter, (entry1, _, _, _) => selector.Open(entry1)));
+            selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Copy"), ConsoleKey.F1, (entry1, _, _, _) => selector.CopyTo(entry1)));
+            selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Move"), ConsoleKey.F2, (entry1, _, _, _) => selector.MoveTo(entry1)));
+            selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Delete"), ConsoleKey.F3, (entry1, _, _, _) => selector.RemoveFileOrDir(entry1)));
+            selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Up"), ConsoleKey.F4, (_, _, _, _) => selector.GoUp()));
+            selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Info"), ConsoleKey.F5, (entry1, _, _, _) => selector.PrintFileSystemEntry(entry1)));
+            selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Go To"), ConsoleKey.F6, (_, _, _, _) => selector.GoTo()));
+            selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Rename"), ConsoleKey.F7, (entry1, _, _, _) => selector.Rename(entry1)));
+            selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("New Folder"), ConsoleKey.F8, (_, _, _, _) => selector.MakeDir()));
+            selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Hash..."), ConsoleKey.F9, (entry1, _, _, _) => selector.Hash(entry1)));
+            selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Verify..."), ConsoleKey.F10, (entry1, _, _, _) => selector.Verify(entry1)));
+            selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Preview Selected"), ConsoleKey.F11, (_, _, _, _) => selector.PreviewSelected()));
+            selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Preview"), ConsoleKey.P, (entry1, _, _, _) => selector.Preview(entry1)));
             InteractiveTuiTools.OpenInteractiveTui(selector);
             string[] selected = [.. selector.selectedFolders];
             return selected;

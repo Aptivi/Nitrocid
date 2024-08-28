@@ -32,6 +32,7 @@ using Terminaux.Inputs.Presentation.Inputs;
 using Terminaux.Inputs;
 using System.Linq;
 using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles;
 
 namespace Nitrocid.Kernel
 {
@@ -108,7 +109,7 @@ namespace Nitrocid.Kernel
                 ConsoleWrapper.Clear();
                 TextWriterColor.Write(Translate.DoTranslation("We apologize for your inconvenience, but the out-of-box experience has crashed. If you're sure that this is a defect in the experience, please report the crash to us with debugging logs.") + " {0}", ex.Message);
                 TextWriterColor.Write(Translate.DoTranslation("Press any key to start the shell anyways, but please note that you may have to create your new user manually."));
-                TermReader.ReadKey();
+                Input.ReadKey();
             }
         }
 
@@ -300,7 +301,7 @@ namespace Nitrocid.Kernel
                 ConsoleWrapper.Clear();
                 TextWriterColor.Write(Translate.DoTranslation("We apologize for your inconvenience, but the out-of-box experience has crashed. If you're sure that this is a defect in the experience, please report the crash to us with debugging logs.") + " {0}", ex.Message);
                 TextWriterColor.Write(Translate.DoTranslation("Press any key to start the shell anyways, but please note that you may have to create your new user manually."));
-                TermReader.ReadKey();
+                Input.ReadKey();
             }
         }
     }

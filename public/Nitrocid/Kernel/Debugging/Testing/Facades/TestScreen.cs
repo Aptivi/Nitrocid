@@ -28,6 +28,7 @@ using Terminaux.Sequences.Builder.Types;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
 using Terminaux.Reader;
+using Terminaux.Inputs;
 
 namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
@@ -51,7 +52,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
                 stickScreen.AddBufferedPart("Test", stickScreenPart);
                 ScreenTools.SetCurrent(stickScreen);
                 ScreenTools.Render();
-                TermReader.ReadKey();
+                Input.ReadKey();
             }
             catch (Exception ex)
             {

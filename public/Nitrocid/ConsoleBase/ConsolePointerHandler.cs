@@ -18,6 +18,7 @@
 //
 
 using Nitrocid.Kernel.Debugging;
+using Terminaux.Inputs;
 using Terminaux.Inputs.Pointer;
 
 namespace Nitrocid.ConsoleBase
@@ -37,21 +38,21 @@ namespace Nitrocid.ConsoleBase
         {
             lock (_lock)
             {
-                if (PointerListener.Listening)
+                if (Input.EnableMouse)
                     DebugWriter.WriteDebug(DebugLevel.W, "Pointer handler is already listening while {0} is called...", nameof(StartHandler));
                 else if (!enableHandler)
                 {
                     DebugWriter.WriteDebug(DebugLevel.W, "Pointer handler is not enabled while {0} is called...", nameof(StopHandler));
-                    if (PointerListener.Listening)
+                    if (Input.EnableMouse)
                     {
                         DebugWriter.WriteDebug(DebugLevel.W, "Stopping the pointer handler anyway...");
-                        PointerListener.StopListening();
+                        Input.EnableMouse = false;
                     }
                 }
                 else
                 {
                     DebugWriter.WriteDebug(DebugLevel.W, "Starting the pointer handler...");
-                    PointerListener.StartListening();
+                    Input.EnableMouse = true;
                 }
             }
         }
@@ -63,21 +64,21 @@ namespace Nitrocid.ConsoleBase
         {
             lock (_lock)
             {
-                if (!PointerListener.Listening)
+                if (!Input.EnableMouse)
                     DebugWriter.WriteDebug(DebugLevel.W, "Pointer handler is not listening while {0} is called...", nameof(StopHandler));
                 else if (!enableHandler)
                 {
                     DebugWriter.WriteDebug(DebugLevel.W, "Pointer handler is not enabled while {0} is called...", nameof(StopHandler));
-                    if (PointerListener.Listening)
+                    if (Input.EnableMouse)
                     {
                         DebugWriter.WriteDebug(DebugLevel.W, "Stopping the pointer handler anyway...");
-                        PointerListener.StopListening();
+                        Input.EnableMouse = false;
                     }
                 }
                 else
                 {
                     DebugWriter.WriteDebug(DebugLevel.W, "Stopping the pointer handler...");
-                    PointerListener.StopListening();
+                    Input.EnableMouse = false;
                 }
             }
         }

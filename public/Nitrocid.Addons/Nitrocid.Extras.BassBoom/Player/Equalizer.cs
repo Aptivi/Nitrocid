@@ -34,6 +34,7 @@ using Terminaux.Inputs.Styles.Selection;
 using Terminaux.Base.Extensions;
 using Nitrocid.Languages;
 using BassBoom.Basolia.Exceptions;
+using Terminaux.Inputs.Styles;
 
 namespace Nitrocid.Extras.BassBoom.Player
 {
@@ -59,7 +60,7 @@ namespace Nitrocid.Extras.BassBoom.Player
                     ScreenTools.Render();
 
                     // Handle the keystroke
-                    var keystroke = TermReader.ReadKey();
+                    var keystroke = Input.ReadKey();
                     HandleKeypress(keystroke);
                 }
                 catch (BasoliaException bex)

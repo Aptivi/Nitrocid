@@ -35,16 +35,6 @@ namespace Nitrocid.Misc.Interactives
     {
         internal string modName = "";
 
-        /// <summary>
-        /// Manual viewer keybindings
-        /// </summary>
-        public override InteractiveTuiBinding[] Bindings { get; } =
-        [
-            // Operations
-            new InteractiveTuiBinding("Info", ConsoleKey.F1,
-                (manual, _) => ShowManualInfo((Manual)manual))
-        ];
-
         /// <inheritdoc/>
         public override IEnumerable<Manual> PrimaryDataSource =>
             PageManager.ListAllPagesByMod(modName);
@@ -97,7 +87,7 @@ namespace Nitrocid.Misc.Interactives
             return manual.Name;
         }
 
-        private static void ShowManualInfo(Manual item)
+        internal void ShowManualInfo(Manual item)
         {
             // Render the final information string
             var finalInfoRendered = new StringBuilder();
@@ -120,7 +110,7 @@ namespace Nitrocid.Misc.Interactives
             finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
 
             // Now, render the info box
-            InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+            InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
         }
     }
 }

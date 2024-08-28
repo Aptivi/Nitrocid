@@ -33,6 +33,7 @@ using Terminaux.Colors.Data;
 using Terminaux.Reader;
 using Terminaux.Base.Buffered;
 using System.Text;
+using Terminaux.Inputs;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games
 {
@@ -171,7 +172,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 {
                     // Wait for the input
                     winner = 0;
-                    var input = TermReader.ReadKey().Key;
+                    var input = Input.ReadKey().Key;
                     switch (input)
                     {
                         case ConsoleKey.UpArrow:

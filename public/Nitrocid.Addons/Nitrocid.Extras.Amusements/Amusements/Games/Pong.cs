@@ -32,6 +32,7 @@ using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Writer.FancyWriters;
 using Terminaux.Colors.Data;
+using Terminaux.Inputs;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games
 {
@@ -227,7 +228,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 // Move the ball according to the mode
                 if (ConsoleWrapper.KeyAvailable)
                 {
-                    var Pressed = TermReader.ReadKey().Key;
+                    var Pressed = Input.ReadKey().Key;
                     switch (Pressed)
                     {
                         case ConsoleKey.DownArrow:

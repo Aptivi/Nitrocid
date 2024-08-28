@@ -24,6 +24,7 @@ using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Reader;
+using Terminaux.Inputs;
 
 namespace Nitrocid.Shell.Shells.Debug.Commands
 {
@@ -39,7 +40,7 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             TextWriterColor.Write(Translate.DoTranslation("Enter a key or a combination of keys to display its information."));
-            var KeyPress = TermReader.ReadKey();
+            var KeyPress = Input.ReadKey();
 
             // Pressed key
             TextWriters.Write("- " + Translate.DoTranslation("Pressed key") + ": ", false, KernelColorType.ListEntry);

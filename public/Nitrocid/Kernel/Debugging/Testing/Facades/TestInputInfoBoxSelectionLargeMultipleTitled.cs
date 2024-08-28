@@ -22,6 +22,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using System.Collections.Generic;
 using Terminaux.Inputs;
+using Terminaux.Inputs.Styles;
 
 namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {

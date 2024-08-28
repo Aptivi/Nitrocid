@@ -32,6 +32,7 @@ using System.Linq;
 using Terminaux.Colors;
 using Textify.General;
 using Terminaux.Inputs;
+using Terminaux.Inputs.Styles;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -171,7 +172,10 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                         ("y", Translate.DoTranslation("Yes, set it!")),
                         ("n", Translate.DoTranslation("No, don't set it."))
                     ],
-                    ChoiceOutputType.Modern
+                    new ChoiceStyleSettings()
+                    {
+                        OutputType = ChoiceOutputType.Modern
+                    }
                 );
                 if (answer == "n" && parameters.ArgumentsList.Length > 0)
                     bail = true;

@@ -30,15 +30,6 @@ namespace Nitrocid.Misc.Interactives
 {
     internal class NotificationsCli : BaseInteractiveTui<Notification>, IInteractiveTui<Notification>
     {
-        public override InteractiveTuiBinding[] Bindings { get; } =
-        [
-            // Operations
-            new InteractiveTuiBinding("Dismiss", ConsoleKey.Delete,
-                (notif, _) => Dismiss((Notification)notif)),
-            new InteractiveTuiBinding("Dismiss All", ConsoleKey.Delete, ConsoleModifiers.Control,
-                (_, _) => DismissAll()),
-        ];
-
         /// <inheritdoc/>
         public override IEnumerable<Notification> PrimaryDataSource =>
             NotificationManager.NotifRecents;
@@ -79,7 +70,7 @@ namespace Nitrocid.Misc.Interactives
         public override string GetEntryFromItem(Notification item) =>
             item.Title;
 
-        private static void Dismiss(Notification notification)
+        internal void Dismiss(Notification notification)
         {
             var notifs = NotificationManager.NotifRecents;
             for (int i = notifs.Length() - 1; i > 0; i--)
@@ -90,7 +81,7 @@ namespace Nitrocid.Misc.Interactives
             }
         }
 
-        private static void DismissAll() =>
+        internal void DismissAll() =>
             NotificationManager.NotifDismissAll();
     }
 }

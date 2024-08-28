@@ -27,6 +27,8 @@ using Terminaux.Inputs.Interactive;
 using Nitrocid.Misc.Interactives;
 using System.Threading;
 using Terminaux.Inputs.Pointer;
+using System;
+using Terminaux.Inputs;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -43,7 +45,11 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
         {
             bool selectionMode = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-select");
             if (selectionMode)
-                InteractiveTuiTools.OpenInteractiveTui(new ScreensaverCli());
+            {
+                var tui = new ScreensaverCli();
+                tui.Bindings.Add(new InteractiveTuiBinding<string>(Translate.DoTranslation("Preview"), ConsoleKey.Enter, (saver, _, _, _) => tui.PressAndBailHelper(saver)));
+                InteractiveTuiTools.OpenInteractiveTui(tui);
+            }
             else
             {
                 if (parameters.ArgumentsList.Length != 0)
@@ -65,10 +71,10 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
         {
             if (ScreensaverManager.inSaver)
             {
-                SpinWait.SpinUntil(() => PointerListener.InputAvailable);
-                while (PointerListener.InputAvailable)
+                SpinWait.SpinUntil(() => Input.InputAvailable);
+                while (Input.InputAvailable)
                 {
-                    var descriptor = TermReader.ReadPointerOrKey();
+                    var descriptor = Input.ReadPointerOrKey();
                     if (descriptor.Item1 is not null)
                     {
                         switch (descriptor.Item1.Button)
@@ -77,7 +83,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                             case PointerButton.Right:
                             case PointerButton.Middle:
                                 if (descriptor.Item1.ButtonPress == PointerButtonPress.Clicked)
-                                    TermReader.ReadPointer();
+                                    Input.ReadPointer();
                                 break;
                         }
                     }

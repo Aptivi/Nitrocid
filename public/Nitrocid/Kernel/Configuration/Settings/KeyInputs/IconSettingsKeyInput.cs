@@ -18,7 +18,7 @@
 //
 
 using Nitrocid.Kernel.Configuration.Instances;
-using Terminaux.Inputs.Styles;
+using Terminaux.Images.Icons;
 
 namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
 {

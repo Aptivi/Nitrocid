@@ -33,6 +33,7 @@ using Terminaux.Base.Buffered;
 using System.Text;
 using Terminaux.Sequences.Builder.Types;
 using Nitrocid.Languages;
+using Terminaux.Inputs;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games
 {
@@ -278,7 +279,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     // User pressed the arrow button to move the snake
                     if (ConsoleWrapper.KeyAvailable)
                     {
-                        var Pressed = TermReader.ReadKey().Key;
+                        var Pressed = Input.ReadKey().Key;
                         switch (Pressed)
                         {
                             case ConsoleKey.DownArrow:

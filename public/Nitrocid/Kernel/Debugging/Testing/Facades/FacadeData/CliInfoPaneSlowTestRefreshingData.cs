@@ -1,14 +1,14 @@
 ﻿//
-// Nitrocid KS  Copyright (C) 2018-2024  Aptivi
+// Terminaux  Copyright (C) 2023-2024  Aptivi
 //
-// This file is part of Nitrocid KS
+// This file is part of Terminaux
 //
-// Nitrocid KS is free software: you can redistribute it and/or modify
+// Terminaux is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// Nitrocid KS is distributed in the hope that it will be useful,
+// Terminaux is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY, without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
@@ -17,24 +17,15 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Inputs.Interactive;
-using Nitrocid.Languages;
-using System;
 using System.Collections.Generic;
+using Terminaux.Inputs.Interactive;
 
 namespace Nitrocid.Kernel.Debugging.Testing.Facades.FacadeData
 {
     internal class CliInfoPaneSlowTestRefreshingData : BaseInteractiveTui<string>, IInteractiveTui<string>
     {
-        internal static List<string> strings = [];
+        internal List<string> strings = [];
         private static int timesRendered = 0;
-
-        public override InteractiveTuiBinding[] Bindings { get; } =
-        [
-            new InteractiveTuiBinding("Add", ConsoleKey.F1, (_, index) => strings.Add($"[{index}] --+-- [{index}]")),
-            new InteractiveTuiBinding("Delete", ConsoleKey.F2, (_, index) => strings.RemoveAt(index)),
-            new InteractiveTuiBinding("Delete Last", ConsoleKey.F3, (_, _) => strings.RemoveAt(strings.Count - 1)),
-        ];
 
         /// <inheritdoc/>
         public override int RefreshInterval =>
@@ -49,13 +40,10 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades.FacadeData
             true;
 
         /// <inheritdoc/>
-        public override string GetStatusFromItem(string item) =>
-            string.IsNullOrEmpty(item) ? Translate.DoTranslation("No info.") : item;
-
-        /// <inheritdoc/>
         public override string GetInfoFromItem(string item)
         {
             // Some variables
+            string selected = item;
             timesRendered++;
 
             // Now, populate the info to the status

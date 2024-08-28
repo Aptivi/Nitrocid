@@ -61,42 +61,6 @@ namespace Nitrocid.Misc.Interactives
         private List<FileSystemEntry> secondPaneListing = [];
 
         /// <summary>
-        /// File manager bindings
-        /// </summary>
-        public override InteractiveTuiBinding[] Bindings { get; } =
-        [
-            // Operations
-            new InteractiveTuiBinding("Open", ConsoleKey.Enter,
-                (info, _) => Open((FileSystemEntry)info)),
-            new InteractiveTuiBinding("Copy", ConsoleKey.F1,
-                (info, _) => CopyFileOrDir((FileSystemEntry)info)),
-            new InteractiveTuiBinding("Move", ConsoleKey.F2,
-                (info, _) => MoveFileOrDir((FileSystemEntry)info)),
-            new InteractiveTuiBinding("Delete", ConsoleKey.F3,
-                (info, _) => RemoveFileOrDir((FileSystemEntry)info)),
-            new InteractiveTuiBinding("Up", ConsoleKey.F4,
-                (_, _) => GoUp()),
-            new InteractiveTuiBinding("Info", ConsoleKey.F5,
-                (info, _) => PrintFileSystemEntry((FileSystemEntry)info)),
-            new InteractiveTuiBinding("Go To", ConsoleKey.F6,
-                (_, _) => GoTo()),
-            new InteractiveTuiBinding("Copy To", ConsoleKey.F1, ConsoleModifiers.Shift,
-                (info, _) => CopyTo((FileSystemEntry)info)),
-            new InteractiveTuiBinding("Move To", ConsoleKey.F2, ConsoleModifiers.Shift,
-                (info, _) => MoveTo((FileSystemEntry)info)),
-            new InteractiveTuiBinding("Rename", ConsoleKey.F9,
-                (info, _) => Rename((FileSystemEntry)info)),
-            new InteractiveTuiBinding("New Folder", ConsoleKey.F10,
-                (_, _) => MakeDir()),
-            new InteractiveTuiBinding("Hash...", ConsoleKey.F11,
-                (info, _) => Hash((FileSystemEntry)info)),
-            new InteractiveTuiBinding("Verify...", ConsoleKey.F12,
-                (info, _) => Verify((FileSystemEntry)info)),
-            new InteractiveTuiBinding("Preview", ConsoleKey.P,
-                (info, _) => Preview((FileSystemEntry)info)),
-        ];
-
-        /// <summary>
         /// Always true in the file manager as we want it to behave like Total Commander
         /// </summary>
         public override bool SecondPaneInteractable =>
@@ -199,39 +163,40 @@ namespace Nitrocid.Misc.Interactives
             }
         }
 
-        private static void Open(FileSystemEntry currentFileSystemEntry)
+        internal void Open(FileSystemEntry entry1, FileSystemEntry entry2)
         {
             try
             {
                 // Don't do anything if we haven't been provided anything.
-                if (currentFileSystemEntry is null)
+                if (entry1 is null && entry2 is null)
                     return;
 
                 // Check for existence
-                if (!currentFileSystemEntry.Exists)
+                var currentEntry = CurrentPane == 2 ? entry2 : entry1;
+                if (!currentEntry.Exists)
                     return;
 
                 // Now that the selected file or folder exists, check the type.
-                if (currentFileSystemEntry.Type == FileSystemEntryType.Directory)
+                if (currentEntry.Type == FileSystemEntryType.Directory)
                 {
                     // We're dealing with a folder. Open it in the selected pane.
-                    if (InteractiveTuiStatus.CurrentPane == 2)
+                    if (CurrentPane == 2)
                     {
-                        ((FileManagerCli)Instance).secondPanePath = FilesystemTools.NeutralizePath(currentFileSystemEntry.FilePath + "/");
-                        ((FileManagerCli)Instance).refreshSecondPaneListing = true;
+                        secondPanePath = FilesystemTools.NeutralizePath(currentEntry.FilePath + "/");
+                        refreshSecondPaneListing = true;
                     }
                     else
                     {
-                        ((FileManagerCli)Instance).firstPanePath = FilesystemTools.NeutralizePath(currentFileSystemEntry.FilePath + "/");
-                        ((FileManagerCli)Instance).refreshFirstPaneListing = true;
+                        firstPanePath = FilesystemTools.NeutralizePath(currentEntry.FilePath + "/");
+                        refreshFirstPaneListing = true;
                     }
-                    InteractiveTuiTools.SelectionMovement(Instance, 1);
+                    InteractiveTuiTools.SelectionMovement(this, 1);
                 }
-                else if (currentFileSystemEntry.Type == FileSystemEntryType.File)
+                else if (currentEntry.Type == FileSystemEntryType.File)
                 {
                     // We're dealing with a file. Clear the screen and open the appropriate editor.
                     ColorTools.LoadBack();
-                    Opening.OpenDeterministically(currentFileSystemEntry.FilePath);
+                    Opening.OpenDeterministically(currentEntry.FilePath);
                 }
             }
             catch (Exception ex)
@@ -239,36 +204,37 @@ namespace Nitrocid.Misc.Interactives
                 var finalInfoRendered = new StringBuilder();
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't open file or folder") + TextTools.FormatString(": {0}", ex.Message));
                 finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
-                InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
             }
         }
 
-        private static void GoUp()
+        internal void GoUp()
         {
-            if (InteractiveTuiStatus.CurrentPane == 2)
+            if (CurrentPane == 2)
             {
-                ((FileManagerCli)Instance).secondPanePath = FilesystemTools.NeutralizePath(((FileManagerCli)Instance).secondPanePath + "/..");
-                ((FileManagerCli)Instance).refreshSecondPaneListing = true;
+                secondPanePath = FilesystemTools.NeutralizePath(secondPanePath + "/..");
+                refreshSecondPaneListing = true;
             }
             else
             {
-                ((FileManagerCli)Instance).firstPanePath = FilesystemTools.NeutralizePath(((FileManagerCli)Instance).firstPanePath + "/..");
-                ((FileManagerCli)Instance).refreshFirstPaneListing = true;
+                firstPanePath = FilesystemTools.NeutralizePath(firstPanePath + "/..");
+                refreshFirstPaneListing = true;
             }
-            InteractiveTuiTools.SelectionMovement(Instance, 1);
+            InteractiveTuiTools.SelectionMovement(this, 1);
         }
 
-        private static void PrintFileSystemEntry(FileSystemEntry currentFileSystemEntry)
+        internal void PrintFileSystemEntry(FileSystemEntry entry1, FileSystemEntry entry2)
         {
             // Don't do anything if we haven't been provided anything.
-            if (currentFileSystemEntry is null)
+            if (entry1 is null && entry2 is null)
                 return;
 
             // Render the final information string
             try
             {
+                var currentEntry = CurrentPane == 2 ? entry2 : entry1;
                 var finalInfoRendered = new StringBuilder();
-                string fullPath = currentFileSystemEntry.FilePath;
+                string fullPath = currentEntry.FilePath;
                 if (Checking.FolderExists(fullPath))
                 {
                     // The file system info instance points to a folder
@@ -329,126 +295,130 @@ namespace Nitrocid.Misc.Interactives
                 finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
 
                 // Now, render the info box
-                InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
             }
             catch (Exception ex)
             {
                 var finalInfoRendered = new StringBuilder();
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't get file system info") + TextTools.FormatString(": {0}", ex.Message));
                 finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
-                InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
             }
         }
 
-        private static void CopyFileOrDir(FileSystemEntry currentFileSystemEntry)
+        internal void CopyFileOrDir(FileSystemEntry entry1, FileSystemEntry entry2)
         {
             // Don't do anything if we haven't been provided anything.
-            if (currentFileSystemEntry is null)
+            if (entry1 is null && entry2 is null)
                 return;
 
             try
             {
-                string dest = (InteractiveTuiStatus.CurrentPane == 2 ? ((FileManagerCli)Instance).firstPanePath : ((FileManagerCli)Instance).secondPanePath) + "/";
+                var currentEntry = CurrentPane == 2 ? entry2 : entry1;
+                string dest = (CurrentPane == 2 ? firstPanePath : secondPanePath) + "/";
                 DebugWriter.WriteDebug(DebugLevel.I, $"Destination is {dest}");
                 DebugCheck.AssertNull(dest, "destination is null!");
                 DebugCheck.Assert(!string.IsNullOrWhiteSpace(dest), "destination is empty or whitespace!");
-                Copying.CopyFileOrDir(currentFileSystemEntry.FilePath, dest);
-                if (InteractiveTuiStatus.CurrentPane == 2)
-                    ((FileManagerCli)Instance).refreshFirstPaneListing = true;
+                Copying.CopyFileOrDir(currentEntry.FilePath, dest);
+                if (CurrentPane == 2)
+                    refreshFirstPaneListing = true;
                 else
-                    ((FileManagerCli)Instance).refreshSecondPaneListing = true;
+                    refreshSecondPaneListing = true;
             }
             catch (Exception ex)
             {
                 var finalInfoRendered = new StringBuilder();
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't copy file or directory") + TextTools.FormatString(": {0}", ex.Message));
                 finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
-                InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
             }
         }
 
-        private static void MoveFileOrDir(FileSystemEntry currentFileSystemEntry)
+        internal void MoveFileOrDir(FileSystemEntry entry1, FileSystemEntry entry2)
         {
             // Don't do anything if we haven't been provided anything.
-            if (currentFileSystemEntry is null)
+            if (entry1 is null && entry2 is null)
                 return;
 
             try
             {
-                string dest = (InteractiveTuiStatus.CurrentPane == 2 ? ((FileManagerCli)Instance).firstPanePath : ((FileManagerCli)Instance).secondPanePath) + "/";
+                var currentEntry = CurrentPane == 2 ? entry2 : entry1;
+                string dest = (CurrentPane == 2 ? firstPanePath : secondPanePath) + "/";
                 DebugWriter.WriteDebug(DebugLevel.I, $"Destination is {dest}");
                 DebugCheck.AssertNull(dest, "destination is null!");
                 DebugCheck.Assert(!string.IsNullOrWhiteSpace(dest), "destination is empty or whitespace!");
-                Moving.MoveFileOrDir(currentFileSystemEntry.FilePath, dest);
-                ((FileManagerCli)Instance).refreshSecondPaneListing = true;
-                ((FileManagerCli)Instance).refreshFirstPaneListing = true;
+                Moving.MoveFileOrDir(currentEntry.FilePath, dest);
+                refreshSecondPaneListing = true;
+                refreshFirstPaneListing = true;
             }
             catch (Exception ex)
             {
                 var finalInfoRendered = new StringBuilder();
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't move file or directory") + TextTools.FormatString(": {0}", ex.Message));
                 finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
-                InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
             }
         }
 
-        private static void RemoveFileOrDir(FileSystemEntry currentFileSystemEntry)
+        internal void RemoveFileOrDir(FileSystemEntry entry1, FileSystemEntry entry2)
         {
             // Don't do anything if we haven't been provided anything.
-            if (currentFileSystemEntry is null)
+            if (entry1 is null && entry2 is null)
                 return;
 
             try
             {
-                Removing.RemoveFileOrDir(currentFileSystemEntry.FilePath);
-                if (InteractiveTuiStatus.CurrentPane == 2)
-                    ((FileManagerCli)Instance).refreshSecondPaneListing = true;
+                var currentEntry = CurrentPane == 2 ? entry2 : entry1;
+                Removing.RemoveFileOrDir(currentEntry.FilePath);
+                if (CurrentPane == 2)
+                    refreshSecondPaneListing = true;
                 else
-                    ((FileManagerCli)Instance).refreshFirstPaneListing = true;
+                    refreshFirstPaneListing = true;
             }
             catch (Exception ex)
             {
                 var finalInfoRendered = new StringBuilder();
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't remove file or directory") + TextTools.FormatString(": {0}", ex.Message));
                 finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
-                InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
             }
         }
 
-        private static void GoTo()
+        internal void GoTo()
         {
             // Now, render the search box
-            string root = InteractiveTuiStatus.CurrentPane == 2 ? ((FileManagerCli)Instance).secondPanePath : ((FileManagerCli)Instance).firstPanePath;
+            string root = CurrentPane == 2 ? secondPanePath : firstPanePath;
             string path = Selection.SelectFolder(root);
             path = FilesystemTools.NeutralizePath(path, root);
             if (Checking.FolderExists(path))
             {
-                if (InteractiveTuiStatus.CurrentPane == 2)
+                if (CurrentPane == 2)
                 {
-                    ((FileManagerCli)Instance).secondPanePath = path;
-                    ((FileManagerCli)Instance).refreshSecondPaneListing = true;
+                    secondPanePath = path;
+                    refreshSecondPaneListing = true;
                 }
                 else
                 {
-                    ((FileManagerCli)Instance).firstPanePath = path;
-                    ((FileManagerCli)Instance).refreshFirstPaneListing = true;
+                    firstPanePath = path;
+                    refreshFirstPaneListing = true;
                 }
-                InteractiveTuiTools.SelectionMovement(Instance, 1);
+                InteractiveTuiTools.SelectionMovement(this, 1);
             }
             else
-                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Folder doesn't exist. Make sure that you've written the correct path."), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Folder doesn't exist. Make sure that you've written the correct path."), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
         }
 
-        private static void CopyTo(FileSystemEntry currentFileSystemEntry)
+        internal void CopyTo(FileSystemEntry entry1, FileSystemEntry entry2)
         {
             // Don't do anything if we haven't been provided anything.
-            if (currentFileSystemEntry is null)
+            if (entry1 is null && entry2 is null)
                 return;
 
             try
             {
-                string path = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a path or a full path to a destination folder to copy the selected file to."), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
-                path = FilesystemTools.NeutralizePath(path, InteractiveTuiStatus.CurrentPane == 2 ? ((FileManagerCli)Instance).secondPanePath : ((FileManagerCli)Instance).firstPanePath) + "/";
+                var currentEntry = CurrentPane == 2 ? entry2 : entry1;
+                string path = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a path or a full path to a destination folder to copy the selected file to."), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
+                path = FilesystemTools.NeutralizePath(path, CurrentPane == 2 ? secondPanePath : firstPanePath) + "/";
                 DebugWriter.WriteDebug(DebugLevel.I, $"Destination is {path}");
                 DebugCheck.AssertNull(path, "destination is null!");
                 DebugCheck.Assert(!string.IsNullOrWhiteSpace(path), "destination is empty or whitespace!");
@@ -456,37 +426,38 @@ namespace Nitrocid.Misc.Interactives
                 {
                     if (Parsing.TryParsePath(path))
                     {
-                        Copying.CopyFileOrDir(currentFileSystemEntry.FilePath, path);
-                        if (InteractiveTuiStatus.CurrentPane == 2)
-                            ((FileManagerCli)Instance).refreshFirstPaneListing = true;
+                        Copying.CopyFileOrDir(currentEntry.FilePath, path);
+                        if (CurrentPane == 2)
+                            refreshFirstPaneListing = true;
                         else
-                            ((FileManagerCli)Instance).refreshSecondPaneListing = true;
+                            refreshSecondPaneListing = true;
                     }
                     else
-                        InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Make sure that you've written the correct path."), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+                        InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Make sure that you've written the correct path."), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
                 }
                 else
-                    InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("File doesn't exist. Make sure that you've written the correct path."), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+                    InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("File doesn't exist. Make sure that you've written the correct path."), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
             }
             catch (Exception ex)
             {
                 var finalInfoRendered = new StringBuilder();
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't copy file or directory") + TextTools.FormatString(": {0}", ex.Message));
                 finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
-                InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
             }
         }
 
-        private static void MoveTo(FileSystemEntry currentFileSystemEntry)
+        internal void MoveTo(FileSystemEntry entry1, FileSystemEntry entry2)
         {
             // Don't do anything if we haven't been provided anything.
-            if (currentFileSystemEntry is null)
+            if (entry1 is null && entry2 is null)
                 return;
 
             try
             {
-                string path = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a path or a full path to a destination folder to move the selected file to."), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
-                path = FilesystemTools.NeutralizePath(path, InteractiveTuiStatus.CurrentPane == 2 ? ((FileManagerCli)Instance).secondPanePath : ((FileManagerCli)Instance).firstPanePath) + "/";
+                var currentEntry = CurrentPane == 2 ? entry2 : entry1;
+                string path = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a path or a full path to a destination folder to move the selected file to."), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
+                path = FilesystemTools.NeutralizePath(path, CurrentPane == 2 ? secondPanePath : firstPanePath) + "/";
                 DebugWriter.WriteDebug(DebugLevel.I, $"Destination is {path}");
                 DebugCheck.AssertNull(path, "destination is null!");
                 DebugCheck.Assert(!string.IsNullOrWhiteSpace(path), "destination is empty or whitespace!");
@@ -494,158 +465,162 @@ namespace Nitrocid.Misc.Interactives
                 {
                     if (Parsing.TryParsePath(path))
                     {
-                        Moving.MoveFileOrDir(currentFileSystemEntry.FilePath, path);
-                        ((FileManagerCli)Instance).refreshSecondPaneListing = true;
-                        ((FileManagerCli)Instance).refreshFirstPaneListing = true;
+                        Moving.MoveFileOrDir(entry1.FilePath, path);
+                        refreshSecondPaneListing = true;
+                        refreshFirstPaneListing = true;
                     }
                     else
-                        InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Make sure that you've written the correct path."), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+                        InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Make sure that you've written the correct path."), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
                 }
                 else
-                    InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("File doesn't exist. Make sure that you've written the correct path."), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+                    InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("File doesn't exist. Make sure that you've written the correct path."), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
             }
             catch (Exception ex)
             {
                 var finalInfoRendered = new StringBuilder();
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't move file or directory") + TextTools.FormatString(": {0}", ex.Message));
                 finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
-                InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
             }
         }
 
-        private static void Rename(FileSystemEntry currentFileSystemEntry)
+        internal void Rename(FileSystemEntry entry1, FileSystemEntry entry2)
         {
             // Don't do anything if we haven't been provided anything.
-            if (currentFileSystemEntry is null)
+            if (entry1 is null && entry2 is null)
                 return;
 
             try
             {
-                string filename = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a new file name."), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+                var currentEntry = CurrentPane == 2 ? entry2 : entry1;
+                string filename = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a new file name."), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
                 DebugWriter.WriteDebug(DebugLevel.I, $"New filename is {filename}");
                 if (!Checking.FileExists(filename))
                 {
                     if (Parsing.TryParseFileName(filename))
                     {
-                        Moving.MoveFileOrDir(currentFileSystemEntry.FilePath, Path.GetDirectoryName(currentFileSystemEntry.FilePath) + $"/{filename}");
-                        if (InteractiveTuiStatus.CurrentPane == 2)
-                            ((FileManagerCli)Instance).refreshSecondPaneListing = true;
+                        Moving.MoveFileOrDir(currentEntry.FilePath, Path.GetDirectoryName(currentEntry.FilePath) + $"/{filename}");
+                        if (CurrentPane == 2)
+                            refreshSecondPaneListing = true;
                         else
-                            ((FileManagerCli)Instance).refreshFirstPaneListing = true;
+                            refreshFirstPaneListing = true;
                     }
                     else
-                        InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Make sure that you've written the correct file name."), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+                        InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Make sure that you've written the correct file name."), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
                 }
                 else
-                    InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("File already exists. The name shouldn't be occupied by another file."), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+                    InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("File already exists. The name shouldn't be occupied by another file."), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
             }
             catch (Exception ex)
             {
                 var finalInfoRendered = new StringBuilder();
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't move file or directory") + TextTools.FormatString(": {0}", ex.Message));
                 finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
-                InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
             }
         }
 
-        private static void MakeDir()
+        internal void MakeDir()
         {
             // Now, render the search box
-            string path = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a new directory name."), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
-            path = FilesystemTools.NeutralizePath(path, InteractiveTuiStatus.CurrentPane == 2 ? ((FileManagerCli)Instance).secondPanePath : ((FileManagerCli)Instance).firstPanePath);
+            string path = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a new directory name."), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
+            path = FilesystemTools.NeutralizePath(path, CurrentPane == 2 ? secondPanePath : firstPanePath);
             if (!Checking.FolderExists(path))
             {
                 Making.TryMakeDirectory(path);
-                if (InteractiveTuiStatus.CurrentPane == 2)
-                    ((FileManagerCli)Instance).refreshSecondPaneListing = true;
+                if (CurrentPane == 2)
+                    refreshSecondPaneListing = true;
                 else
-                    ((FileManagerCli)Instance).refreshFirstPaneListing = true;
+                    refreshFirstPaneListing = true;
             }
             else
-                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Folder already exists. The name shouldn't be occupied by another folder."), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Folder already exists. The name shouldn't be occupied by another folder."), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
         }
 
-        private static void Hash(FileSystemEntry currentFileSystemEntry)
+        internal void Hash(FileSystemEntry entry1, FileSystemEntry entry2)
         {
             // Don't do anything if we haven't been provided anything.
-            if (currentFileSystemEntry is null)
+            if (entry1 is null && entry2 is null)
                 return;
 
             // First, check to see if it's a file
-            if (!Checking.FileExists(currentFileSystemEntry.FilePath))
+            var currentEntry = CurrentPane == 2 ? entry2 : entry1;
+            if (!Checking.FileExists(currentEntry.FilePath))
             {
-                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Selected entry is not a file."), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Selected entry is not a file."), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
                 return;
             }
 
             // Render the hash box
             string[] hashDrivers = EncryptionDriverTools.GetEncryptionDriverNames();
-            string hashDriver = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a hash driver:") + $" {string.Join(", ", hashDrivers)}", InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+            string hashDriver = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a hash driver:") + $" {string.Join(", ", hashDrivers)}", Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
             string hash;
             if (string.IsNullOrEmpty(hashDriver))
-                hash = Encryption.GetEncryptedFile(currentFileSystemEntry.FilePath, DriverHandler.CurrentEncryptionDriver.DriverName);
+                hash = Encryption.GetEncryptedFile(currentEntry.FilePath, DriverHandler.CurrentEncryptionDriver.DriverName);
             else if (hashDrivers.Contains(hashDriver))
-                hash = Encryption.GetEncryptedFile(currentFileSystemEntry.FilePath, hashDriver);
+                hash = Encryption.GetEncryptedFile(currentEntry.FilePath, hashDriver);
             else
             {
-                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Hash driver not found."), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Hash driver not found."), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
                 return;
             }
-            InfoBoxColor.WriteInfoBoxColorBack(hash, InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+            InfoBoxColor.WriteInfoBoxColorBack(hash, Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
         }
 
-        private static void Verify(FileSystemEntry currentFileSystemEntry)
+        internal void Verify(FileSystemEntry entry1, FileSystemEntry entry2)
         {
             // Don't do anything if we haven't been provided anything.
-            if (currentFileSystemEntry is null)
+            if (entry1 is null && entry2 is null)
                 return;
 
             // First, check to see if it's a file
-            if (!Checking.FileExists(currentFileSystemEntry.FilePath))
+            var currentEntry = CurrentPane == 2 ? entry2 : entry1;
+            if (!Checking.FileExists(currentEntry.FilePath))
             {
-                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Selected entry is not a file."), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Selected entry is not a file."), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
                 return;
             }
 
             // Render the hash box
             string[] hashDrivers = EncryptionDriverTools.GetEncryptionDriverNames();
-            string hashDriver = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a hash driver:") + $" {string.Join(", ", hashDrivers)}", InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+            string hashDriver = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a hash driver:") + $" {string.Join(", ", hashDrivers)}", Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
             string hash;
             if (string.IsNullOrEmpty(hashDriver))
-                hash = Encryption.GetEncryptedFile(currentFileSystemEntry.FilePath, DriverHandler.CurrentEncryptionDriver.DriverName);
+                hash = Encryption.GetEncryptedFile(currentEntry.FilePath, DriverHandler.CurrentEncryptionDriver.DriverName);
             else if (hashDrivers.Contains(hashDriver))
-                hash = Encryption.GetEncryptedFile(currentFileSystemEntry.FilePath, hashDriver);
+                hash = Encryption.GetEncryptedFile(currentEntry.FilePath, hashDriver);
             else
             {
-                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Hash driver not found."), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Hash driver not found."), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
                 return;
             }
 
             // Now, let the user write the expected hash
-            string expectedHash = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter your expected hash"), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+            string expectedHash = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter your expected hash"), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
             if (expectedHash == hash)
-                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Two hashes match!"), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Two hashes match!"), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
             else
-                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Two hashes don't match."), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Two hashes don't match."), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
         }
 
-        private static void Preview(FileSystemEntry currentFileSystemEntry)
+        internal void Preview(FileSystemEntry entry1, FileSystemEntry entry2)
         {
             // Don't do anything if we haven't been provided anything.
-            if (currentFileSystemEntry is null)
+            if (entry1 is null && entry2 is null)
                 return;
 
             // First, check to see if it's a file
-            if (!Checking.FileExists(currentFileSystemEntry.FilePath))
+            var currentEntry = CurrentPane == 2 ? entry2 : entry1;
+            if (!Checking.FileExists(currentEntry.FilePath))
             {
-                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Selected entry is not a file."), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Selected entry is not a file."), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
                 return;
             }
 
             // Render the preview box
-            string preview = FileContentPrinter.RenderContents(currentFileSystemEntry.FilePath);
+            string preview = FileContentPrinter.RenderContents(currentEntry.FilePath);
             string filtered = VtSequenceTools.FilterVTSequences(preview);
-            InfoBoxColor.WriteInfoBoxColorBack(filtered, InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+            InfoBoxColor.WriteInfoBoxColorBack(filtered, Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
         }
     }
 }

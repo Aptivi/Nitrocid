@@ -31,6 +31,7 @@ using Terminaux.Base;
 using Terminaux.Inputs;
 using Terminaux.Reader;
 using System;
+using Terminaux.Inputs.Styles;
 
 namespace Nitrocid.ConsoleBase.Writers.MiscWriters
 {
@@ -151,7 +152,7 @@ namespace Nitrocid.ConsoleBase.Writers.MiscWriters
             {
                 TextWriters.Write($"  * {message}", true, KernelColorType.DevelopmentWarning);
                 TextWriters.Write($"  * {Translate.DoTranslation("To dismiss forever, either press ENTER on your keyboard, or enable \"Development notice acknowledged\" in the kernel settings. Any other key goes ahead without acknowledgement.")}", true, KernelColorType.DevelopmentWarning);
-                var key = TermReader.ReadKey(true);
+                var key = Input.ReadKey(true);
                 if (key.Key == ConsoleKey.Enter)
                     Config.MainConfig.DevNoticeConsented = true;
             }

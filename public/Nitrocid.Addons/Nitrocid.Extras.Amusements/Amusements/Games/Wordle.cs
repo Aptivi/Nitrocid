@@ -28,6 +28,7 @@ using Terminaux.Writer.FancyWriters;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
 using Terminaux.Reader;
+using Terminaux.Inputs;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games
 {
@@ -52,7 +53,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 RenderBoxes(RandomWord, maxGuesses, currentTries);
 
                 // Let the user decide the character
-                var pressedChar = TermReader.ReadKey();
+                var pressedChar = Input.ReadKey();
                 switch (pressedChar.Key)
                 {
                     case ConsoleKey.Escape:

@@ -35,6 +35,7 @@ using Terminaux.Reader;
 using Nitrocid.Kernel.Configuration.Migration;
 using Terminaux.Inputs.Interactive;
 using Nitrocid.Misc.Interactives;
+using Terminaux.Inputs.Styles;
 
 namespace Nitrocid.Kernel.Configuration.Settings
 {
@@ -72,9 +73,13 @@ namespace Nitrocid.Kernel.Configuration.Settings
             // Decide whether to use the selection style
             if (!useSelection)
             {
-                SettingsCli.config = settingsType;
-                SettingsCli.lastFirstPaneIdx = -1;
-                InteractiveTuiTools.OpenInteractiveTui(new SettingsCli());
+                var tui = new SettingsCli
+                {
+                    config = settingsType,
+                    lastFirstPaneIdx = -1
+                };
+                tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(Translate.DoTranslation("Set"), ConsoleKey.Enter, (saver, _, _, _) => tui.Set(tui.FirstPaneCurrentSelection - 1, tui.SecondPaneCurrentSelection - 1)));
+                InteractiveTuiTools.OpenInteractiveTui(tui);
                 return;
             }
 
@@ -262,7 +267,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
                         DebugWriter.WriteDebug(DebugLevel.W, "Option is not valid. Returning...");
                         TextWriters.Write(Translate.DoTranslation("Specified option {0} is invalid."), true, KernelColorType.Error, Answer);
                         TextWriters.Write(Translate.DoTranslation("Press any key to go back."), true, KernelColorType.Error);
-                        TermReader.ReadKey();
+                        Input.ReadKey();
                     }
                 }
             }

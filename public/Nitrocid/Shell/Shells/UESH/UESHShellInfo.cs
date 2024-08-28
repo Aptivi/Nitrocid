@@ -268,22 +268,17 @@ namespace Nitrocid.Shell.Shells.UESH
                     [
                         new SwitchInfo("o", /* Localizable */ "One line choice style", new SwitchOptions()
                         {
-                            ConflictsWith = ["t", "a", "m"],
+                            ConflictsWith = ["t", "m"],
                             AcceptsValues = false
                         }),
                         new SwitchInfo("t", /* Localizable */ "Two lines choice style", new SwitchOptions()
                         {
-                            ConflictsWith = ["a", "o", "m"],
+                            ConflictsWith = ["o", "m"],
                             AcceptsValues = false
                         }),
                         new SwitchInfo("m", /* Localizable */ "Modern choice style", new SwitchOptions()
                         {
-                            ConflictsWith = ["t", "o", "a"],
-                            AcceptsValues = false
-                        }),
-                        new SwitchInfo("a", /* Localizable */ "Table choice style", new SwitchOptions()
-                        {
-                            ConflictsWith = ["t", "o", "m"],
+                            ConflictsWith = ["t", "o"],
                             AcceptsValues = false
                         }),
                         new SwitchInfo("single", /* Localizable */ "The output can be only one character", new SwitchOptions()

@@ -32,6 +32,7 @@ using System.IO;
 using System.Threading;
 using Terminaux.Base;
 using Terminaux.Reader;
+using Terminaux.Inputs;
 
 namespace Nitrocid.Extras.BassBoom.Commands
 {
@@ -105,7 +106,7 @@ namespace Nitrocid.Extras.BassBoom.Commands
                     {
                         if (ConsoleWrapper.KeyAvailable)
                         {
-                            var key = TermReader.ReadKey();
+                            var key = Input.ReadKey();
                             if (key.Key == ConsoleKey.Q)
                                 PlaybackTools.Stop();
                         }

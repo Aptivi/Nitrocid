@@ -30,6 +30,7 @@ using Terminaux.Base;
 using Terminaux.Reader;
 using Terminaux.Base.Buffered;
 using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games
 {
@@ -198,7 +199,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 else
                 {
                     // Wait for character
-                    var input = TermReader.ReadKey();
+                    var input = Input.ReadKey();
                     var inputChar = input.KeyChar;
                     if (RandomWord.Contains(inputChar))
                     {

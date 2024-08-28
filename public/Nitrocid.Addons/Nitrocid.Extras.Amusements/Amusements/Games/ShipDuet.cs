@@ -32,6 +32,7 @@ using Terminaux.Colors.Data;
 using Nitrocid.Kernel.Debugging;
 using Terminaux.Reader;
 using Nitrocid.Kernel.Configuration;
+using Terminaux.Inputs;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games
 {
@@ -104,7 +105,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     if (ConsoleWrapper.KeyAvailable)
                     {
                         // Read the key and handle it
-                        Keypress = TermReader.ReadKey();
+                        Keypress = Input.ReadKey();
                         HandleKeypress(Keypress.Key);
                     }
                 }

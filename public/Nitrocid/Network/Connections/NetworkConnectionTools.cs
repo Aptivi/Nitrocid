@@ -31,6 +31,7 @@ using Nitrocid.Kernel.Exceptions;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Inputs;
 using Nitrocid.Network.SpeedDial;
+using Terminaux.Inputs.Styles;
 
 namespace Nitrocid.Network.Connections
 {

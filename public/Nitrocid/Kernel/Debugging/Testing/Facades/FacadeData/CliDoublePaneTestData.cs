@@ -1,14 +1,14 @@
 ﻿//
-// Nitrocid KS  Copyright (C) 2018-2024  Aptivi
+// Terminaux  Copyright (C) 2023-2024  Aptivi
 //
-// This file is part of Nitrocid KS
+// This file is part of Terminaux
 //
-// Nitrocid KS is free software: you can redistribute it and/or modify
+// Terminaux is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// Nitrocid KS is distributed in the hope that it will be useful,
+// Terminaux is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY, without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
@@ -17,24 +17,15 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Inputs.Interactive;
-using Nitrocid.Languages;
-using System;
 using System.Collections.Generic;
+using Terminaux.Inputs.Interactive;
 
 namespace Nitrocid.Kernel.Debugging.Testing.Facades.FacadeData
 {
-    internal class CliDoublePaneTestData : BaseInteractiveTui<string>, IInteractiveTui<string>
+    internal class CliDoublePaneTestData : BaseInteractiveTui<string, string>, IInteractiveTui<string, string>
     {
         internal static List<string> strings = [];
         internal static List<string> strings2 = [];
-
-        public override InteractiveTuiBinding[] Bindings { get; } =
-        [
-            new InteractiveTuiBinding("Add", ConsoleKey.F1, (_, index) => Add(index)),
-            new InteractiveTuiBinding("Delete", ConsoleKey.F2, (_, index) => Remove(index)),
-            new InteractiveTuiBinding("Delete Last", ConsoleKey.F3, (_, _) => RemoveLast()),
-        ];
 
         /// <inheritdoc/>
         public override IEnumerable<string> PrimaryDataSource =>
@@ -53,51 +44,61 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades.FacadeData
 
         /// <inheritdoc/>
         public override string GetStatusFromItem(string item) =>
-            string.IsNullOrEmpty(item) ? Translate.DoTranslation("No info.") : item;
+            string.IsNullOrEmpty(item) ? "No info." : item;
 
         /// <inheritdoc/>
         public override string GetEntryFromItem(string item) =>
             item;
 
-        private static void Add(int index)
+        /// <inheritdoc/>
+        public override string GetStatusFromItemSecondary(string item) =>
+            string.IsNullOrEmpty(item) ? "No info." : item;
+
+        /// <inheritdoc/>
+        public override string GetEntryFromItemSecondary(string item) =>
+            item;
+
+        internal void Add(int index, int index2)
         {
-            if (InteractiveTuiStatus.CurrentPane == 2)
-                strings2.Add($"[{index}] --2-- [{index}]");
+            if (CurrentPane == 2)
+                strings2.Add($"[{index2}] --2-- [{index2}]");
             else
                 strings.Add($"[{index}] --1-- [{index}]");
         }
 
-        private static void Remove(int index)
+        internal void Remove(int index, int index2)
         {
-            if (InteractiveTuiStatus.CurrentPane == 2)
+            if (CurrentPane == 2)
             {
-                if (index < strings2.Count)
-                    strings2.RemoveAt(index - 1);
-                if (InteractiveTuiStatus.SecondPaneCurrentSelection > strings2.Count)
-                    InteractiveTuiTools.SelectionMovement(Instance, strings2.Count);
+                if (index2 < strings2.Count && strings2.Count > 0)
+                    strings2.RemoveAt(index2 == 0 ? index2 : index2 - 1);
+                if (SecondPaneCurrentSelection > strings2.Count)
+                    InteractiveTuiTools.SelectionMovement(this, strings2.Count);
             }
             else
             {
-                if (index < strings.Count)
-                    strings.RemoveAt(index - 1);
-                if (InteractiveTuiStatus.FirstPaneCurrentSelection > strings.Count)
-                    InteractiveTuiTools.SelectionMovement(Instance, strings.Count);
+                if (index < strings.Count && strings.Count > 0)
+                    strings.RemoveAt(index == 0 ? index : index - 1);
+                if (FirstPaneCurrentSelection > strings.Count)
+                    InteractiveTuiTools.SelectionMovement(this, strings.Count);
             }
         }
 
-        private static void RemoveLast()
+        internal void RemoveLast()
         {
-            if (InteractiveTuiStatus.CurrentPane == 2)
+            if (CurrentPane == 2)
             {
-                strings2.RemoveAt(strings2.Count - 1);
-                if (InteractiveTuiStatus.SecondPaneCurrentSelection > strings2.Count)
-                    InteractiveTuiTools.SelectionMovement(Instance, strings2.Count);
+                if (strings2.Count > 0)
+                    strings2.RemoveAt(strings2.Count - 1);
+                if (SecondPaneCurrentSelection > strings2.Count)
+                    InteractiveTuiTools.SelectionMovement(this, strings2.Count);
             }
             else
             {
-                strings.RemoveAt(strings.Count - 1);
-                if (InteractiveTuiStatus.FirstPaneCurrentSelection > strings.Count)
-                    InteractiveTuiTools.SelectionMovement(Instance, strings.Count);
+                if (strings.Count > 0)
+                    strings.RemoveAt(strings.Count - 1);
+                if (FirstPaneCurrentSelection > strings.Count)
+                    InteractiveTuiTools.SelectionMovement(this, strings.Count);
             }
         }
     }

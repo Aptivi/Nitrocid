@@ -26,6 +26,7 @@ using Nitrocid.Languages;
 using System;
 using Terminaux.Base;
 using Terminaux.Reader;
+using Terminaux.Inputs;
 
 namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
 {
@@ -50,7 +51,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
                 InfoBoxProgressColor.WriteInfoBoxProgress(key.Name, slider, Translate.DoTranslation("Current value:") + " {0} / {1} - {2}", CurrentValue, key.MinimumValue, key.MaximumValue);
 
                 // Parse the user input
-                PressedKey = TermReader.ReadKey();
+                PressedKey = Input.ReadKey();
                 switch (PressedKey.Key)
                 {
                     case ConsoleKey.Home:

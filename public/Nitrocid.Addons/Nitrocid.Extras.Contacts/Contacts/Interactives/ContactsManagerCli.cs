@@ -33,6 +33,7 @@ using Terminaux.Images;
 using Terminaux.Colors;
 using System.IO;
 using Terminaux.Base;
+using Nitrocid.ConsoleBase.Colors;
 
 namespace Nitrocid.Extras.Contacts.Contacts.Interactives
 {
@@ -76,7 +77,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                 return Translate.DoTranslation("There is no contact. If you'd like to import contacts, please use the import options using the keystrokes defined at the bottom of the screen.");
 
             // Generate the rendered text
-            string finalRenderedContactPicture = GetContactPictureFinal(selectedContact, (ConsoleWrapper.WindowWidth / 2) - 4, ConsoleWrapper.WindowHeight / 2, InteractiveTuiStatus.BackgroundColor);
+            string finalRenderedContactPicture = GetContactPictureFinal(selectedContact, (ConsoleWrapper.WindowWidth / 2) - 4, ConsoleWrapper.WindowHeight / 2, KernelColorTools.GetColor(KernelColorType.TuiBackground));
             string finalRenderedContactName = GetContactNameFinal(selectedContact);
             string finalRenderedContactAddress = GetContactAddressFinal(selectedContact);
             string finalRenderedContactMail = GetContactMailFinal(selectedContact);
@@ -135,14 +136,14 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             }
             catch (Exception ex)
             {
-                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Some of the contacts can't be imported.") + ex.Message, InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Some of the contacts can't be imported.") + ex.Message, KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
             }
         }
 
         private static void ImportContactsFrom()
         {
             // Now, render the search box
-            string path = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter path to a VCF file containing your contact. Android's contacts2.db file is also supported."), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+            string path = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter path to a VCF file containing your contact. Android's contacts2.db file is also supported."), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
             if (Checking.FileExists(path))
             {
                 try
@@ -152,17 +153,17 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                 }
                 catch
                 {
-                    InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Contact file is invalid."), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+                    InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Contact file is invalid."), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
                 }
             }
             else
-                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("File doesn't exist. Make sure that you've written the correct path to a VCF file or to a contacts2.db file."), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("File doesn't exist. Make sure that you've written the correct path to a VCF file or to a contacts2.db file."), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
         }
 
         private static void ImportContactFromMeCard()
         {
             // Now, render the search box
-            string meCard = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a valid MeCard representation of your contact."), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+            string meCard = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a valid MeCard representation of your contact."), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
             if (!string.IsNullOrEmpty(meCard))
             {
                 try
@@ -172,11 +173,11 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                 }
                 catch
                 {
-                    InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Contact MeCard syntax is invalid."), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+                    InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Contact MeCard syntax is invalid."), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
                 }
             }
             else
-                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Contact MeCard syntax may not be empty"), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Contact MeCard syntax may not be empty"), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
         }
 
         private static void ShowContactInfo(int index)
@@ -209,7 +210,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             finalInfoRendered.AppendLine(finalRenderedContactNotes);
 
             // If there is a profile picture, print it
-            string picture = GetContactPictureFinal(index, ConsoleWrapper.WindowWidth - 8, ConsoleWrapper.WindowHeight, InteractiveTuiStatus.BoxBackgroundColor);
+            string picture = GetContactPictureFinal(index, ConsoleWrapper.WindowWidth - 8, ConsoleWrapper.WindowHeight, KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
             if (!string.IsNullOrEmpty(picture))
             {
                 finalInfoRendered.AppendLine("\n");
@@ -220,7 +221,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
 
             // Now, render the info box
-            InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+            InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
         }
 
         private static void ShowContactRawInfo(int index)
@@ -234,23 +235,23 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             finalInfoRendered.Append(Translate.DoTranslation("Press any key to close this window."));
 
             // Now, render the info box
-            InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+            InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
         }
 
         private static void SearchBox()
         {
             // Now, render the search box
-            string exp = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter regular expression to search the contacts."), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+            string exp = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter regular expression to search the contacts."), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
             if (RegexpTools.IsValidRegex(exp))
             {
                 // Initiate the search
                 var foundCard = ContactsManager.SearchNext(exp);
                 if (foundCard is null)
-                    InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("There are no contacts that contains your requested expression."), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+                    InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("There are no contacts that contains your requested expression."), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
                 UpdateIndex(foundCard);
             }
             else
-                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Regular expression is invalid."), InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Regular expression is invalid."), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
         }
 
         private static void SearchNext()

@@ -18,6 +18,7 @@
 //
 
 using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Files.Instances;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel;
 using Nitrocid.Kernel.Configuration;
@@ -27,6 +28,7 @@ using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Interactives;
+using Nitrocid.Misc.Notifications;
 using Nitrocid.Users;
 using Nitrocid.Users.Login;
 using Nitrocid.Users.Login.Widgets;
@@ -43,6 +45,7 @@ using Terminaux.Colors.Data;
 using Terminaux.Inputs;
 using Terminaux.Inputs.Interactive;
 using Terminaux.Inputs.Pointer;
+using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs.Styles.Selection;
 using Terminaux.Reader;
@@ -127,11 +130,11 @@ namespace Nitrocid.Shell.Homepage
                         if (canDraw)
                         {
                             bindingsBuilder.Append(
-                                $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.KeyBindingOptionColor, false, true)}" +
-                                $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.OptionBackgroundColor, true)}" +
+                                $"{ColorTools.RenderSetConsoleColor(KernelColorTools.GetColor(KernelColorType.TuiKeyBindingOption), false, true)}" +
+                                $"{ColorTools.RenderSetConsoleColor(KernelColorTools.GetColor(KernelColorType.TuiOptionBackground), true)}" +
                                 GetBindingKeyShortcut(binding, false) +
-                                $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.OptionForegroundColor)}" +
-                                $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.BackgroundColor, true)}" +
+                                $"{ColorTools.RenderSetConsoleColor(KernelColorTools.GetColor(KernelColorType.TuiOptionForeground))}" +
+                                $"{ColorTools.RenderSetConsoleColor(KernelColorTools.GetColor(KernelColorType.TuiBackground), true)}" +
                                 $" {binding.BindingName}  "
                             );
                         }
@@ -140,8 +143,8 @@ namespace Nitrocid.Shell.Homepage
                             // We can't render anymore, so just break and write a binding to show more
                             bindingsBuilder.Append(
                                 $"{CsiSequences.GenerateCsiCursorPosition(ConsoleWrapper.WindowWidth - 2, ConsoleWrapper.WindowHeight)}" +
-                                $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.KeyBindingBuiltinColor, false, true)}" +
-                                $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.KeyBindingBuiltinBackgroundColor, true)}" +
+                                $"{ColorTools.RenderSetConsoleColor(KernelColorTools.GetColor(KernelColorType.TuiKeyBindingBuiltin), false, true)}" +
+                                $"{ColorTools.RenderSetConsoleColor(KernelColorTools.GetColor(KernelColorType.TuiKeyBindingBuiltinBackground), true)}" +
                                 " K "
                             );
                             break;
@@ -239,24 +242,44 @@ namespace Nitrocid.Shell.Homepage
                                     firstPanePath = PathsManagement.HomePath,
                                     secondPanePath = PathsManagement.HomePath
                                 };
+                                tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Open"), ConsoleKey.Enter, (entry1, _, entry2, _) => tui.Open(entry1, entry2)));
+                                tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Copy"), ConsoleKey.F1, (entry1, _, entry2, _) => tui.CopyFileOrDir(entry1, entry2)));
+                                tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Move"), ConsoleKey.F2, (entry1, _, entry2, _) => tui.MoveFileOrDir(entry1, entry2)));
+                                tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Delete"), ConsoleKey.F3, (entry1, _, entry2, _) => tui.RemoveFileOrDir(entry1, entry2)));
+                                tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Up"), ConsoleKey.F4, (_, _, _, _) => tui.GoUp()));
+                                tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Info"), ConsoleKey.F5, (entry1, _, entry2, _) => tui.PrintFileSystemEntry(entry1, entry2)));
+                                tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Go To"), ConsoleKey.F6, (_, _, _, _) => tui.GoTo()));
+                                tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Copy To"), ConsoleKey.F1, ConsoleModifiers.Shift, (entry1, _, entry2, _) => tui.CopyTo(entry1, entry2)));
+                                tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Move to"), ConsoleKey.F2, ConsoleModifiers.Shift, (entry1, _, entry2, _) => tui.MoveTo(entry1, entry2)));
+                                tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Rename"), ConsoleKey.F9, (entry1, _, entry2, _) => tui.Rename(entry1, entry2)));
+                                tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("New Folder"), ConsoleKey.F10, (_, _, _, _) => tui.MakeDir()));
+                                tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Hash"), ConsoleKey.F11, (entry1, _, entry2, _) => tui.Hash(entry1, entry2)));
+                                tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Verify"), ConsoleKey.F12, (entry1, _, entry2, _) => tui.Verify(entry1, entry2)));
+                                tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Preview"), ConsoleKey.P, (entry1, _, entry2, _) => tui.Preview(entry1, entry2)));
                                 InteractiveTuiTools.OpenInteractiveTui(tui);
                             }
                             break;
                         case 1:
                             {
                                 var tui = new AlarmCli();
+                                tui.Bindings.Add(new InteractiveTuiBinding<string>(Translate.DoTranslation("Add"), ConsoleKey.A, (_, _, _, _) => tui.Start(), true));
+                                tui.Bindings.Add(new InteractiveTuiBinding<string>(Translate.DoTranslation("Remove"), ConsoleKey.Delete, (alarm, _, _, _) => tui.Stop(alarm)));
                                 InteractiveTuiTools.OpenInteractiveTui(tui);
                             }
                             break;
                         case 2:
                             {
                                 var tui = new NotificationsCli();
+                                tui.Bindings.Add(new InteractiveTuiBinding<Notification>(Translate.DoTranslation("Dismiss"), ConsoleKey.Delete, (notif, _, _, _) => tui.Dismiss(notif)));
+                                tui.Bindings.Add(new InteractiveTuiBinding<Notification>(Translate.DoTranslation("Dismiss All"), ConsoleKey.Delete, ConsoleModifiers.Control, (_, _, _, _) => tui.DismissAll()));
                                 InteractiveTuiTools.OpenInteractiveTui(tui);
                             }
                             break;
                         case 3:
                             {
                                 var tui = new TaskManagerCli();
+                                tui.Bindings.Add(new InteractiveTuiBinding<(int, object)>(Translate.DoTranslation("Kill"), ConsoleKey.F1, (thread, _, _, _) => tui.KillThread(thread)));
+                                tui.Bindings.Add(new InteractiveTuiBinding<(int, object)>(Translate.DoTranslation("Switch"), ConsoleKey.F2, (_, _, _, _) => tui.SwitchMode()));
                                 InteractiveTuiTools.OpenInteractiveTui(tui);
                             }
                             break;
@@ -279,13 +302,13 @@ namespace Nitrocid.Shell.Homepage
                 {
                     // Render and wait for input for a second
                     ScreenTools.Render();
-                    if (!SpinWait.SpinUntil(() => PointerListener.InputAvailable, 1000))
+                    if (!SpinWait.SpinUntil(() => Input.InputAvailable, 1000))
                         continue;
 
                     // Read the available input
-                    if (PointerListener.PointerAvailable)
+                    if (Input.MouseInputAvailable)
                     {
-                        var context = TermReader.ReadPointer();
+                        var context = Input.ReadPointer();
 
                         // Get the necessary positions
                         int settingsButtonWidth = ConsoleWrapper.WindowWidth / 2 - 5 + ConsoleWrapper.WindowWidth % 2;
@@ -344,9 +367,9 @@ namespace Nitrocid.Shell.Homepage
                         if (context.ButtonPress == PointerButtonPress.Moved)
                             settingsHighlighted = isWithinSettings;
                     }
-                    else if (ConsoleWrapper.KeyAvailable && !PointerListener.PointerActive)
+                    else if (ConsoleWrapper.KeyAvailable && !Input.PointerActive)
                     {
-                        var keypress = TermReader.ReadKey();
+                        var keypress = Input.ReadKey();
                         switch (keypress.Key)
                         {
                             case ConsoleKey.DownArrow:
@@ -401,8 +424,9 @@ namespace Nitrocid.Shell.Homepage
                                     "Available keys",
                                     $"{string.Join("\n", bindingRepresentations)}" +
                                     "\n\nMouse bindings:\n\n" +
-                                    $"{(bindingMouseRepresentations.Length > 0 ? string.Join("\n", bindingMouseRepresentations) : "No mouse bindings")}"
-                                , InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+                                    $"{(bindingMouseRepresentations.Length > 0 ? string.Join("\n", bindingMouseRepresentations) : "No mouse bindings")}", 
+                                    KernelColorTools.GetColor(KernelColorType.TuiBoxForeground),
+                                    KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
                                 break;
                         }
                     }

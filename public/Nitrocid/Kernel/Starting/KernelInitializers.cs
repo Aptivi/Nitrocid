@@ -75,7 +75,7 @@ namespace Nitrocid.Kernel.Starting
                 if (!KernelPlatform.IsOnUnix())
                 {
                     // Initialize the VT sequences
-                    if (!ConsolePositioning.InitializeSequences())
+                    if (!ConsoleMisc.InitializeSequences())
                     {
                         TextWriterColor.Write(Translate.DoTranslation("Can not initialize VT sequences for your Windows terminal. Make sure that you're running Windows 10 or later."));
                         InputTools.DetectKeypress();

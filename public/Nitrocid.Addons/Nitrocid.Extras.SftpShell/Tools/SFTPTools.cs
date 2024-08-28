@@ -33,6 +33,7 @@ using Textify.General;
 using Terminaux.Reader;
 using Nitrocid.Files;
 using Nitrocid.Files.Operations.Querying;
+using Terminaux.Inputs;
 
 namespace Nitrocid.Extras.SftpShell.Tools
 {
@@ -127,7 +128,7 @@ namespace Nitrocid.Extras.SftpShell.Tools
                             DebugWriter.WriteDebug(DebugLevel.W, "Option is not valid. Returning...");
                             TextWriters.Write(Translate.DoTranslation("Specified option {0} is invalid."), true, KernelColorType.Error, Answer);
                             TextWriters.Write(Translate.DoTranslation("Press any key to go back."), true, KernelColorType.Error);
-                            TermReader.ReadKey();
+                            Input.ReadKey();
                             break;
                     }
 
@@ -139,7 +140,7 @@ namespace Nitrocid.Extras.SftpShell.Tools
                     DebugWriter.WriteDebug(DebugLevel.W, "Answer is not numeric.");
                     TextWriters.Write(Translate.DoTranslation("The answer must be numeric."), true, KernelColorType.Error);
                     TextWriters.Write(Translate.DoTranslation("Press any key to go back."), true, KernelColorType.Error);
-                    TermReader.ReadKey();
+                    Input.ReadKey();
                 }
             }
 
