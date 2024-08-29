@@ -20,6 +20,9 @@
 using Terminaux.Inputs.Interactive;
 using Nitrocid.Extras.Contacts.Contacts.Interactives;
 using Nitrocid.Shell.ShellBase.Commands;
+using VisualCard.Parts;
+using System;
+using Nitrocid.Languages;
 
 namespace Nitrocid.Extras.Contacts.Contacts.Commands
 {
@@ -28,7 +31,18 @@ namespace Nitrocid.Extras.Contacts.Contacts.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            InteractiveTuiTools.OpenInteractiveTui(new ContactsManagerCli());
+            var tui = new ContactsManagerCli();
+            tui.Bindings.Add(new InteractiveTuiBinding<Card>(Translate.DoTranslation("Delete"), ConsoleKey.F1, (_, index, _, _) => tui.RemoveContact(index)));
+            tui.Bindings.Add(new InteractiveTuiBinding<Card>(Translate.DoTranslation("Delete All"), ConsoleKey.F2, (_, _, _, _) => tui.RemoveContacts()));
+            tui.Bindings.Add(new InteractiveTuiBinding<Card>(Translate.DoTranslation("Import"), ConsoleKey.F3, (_, _, _, _) => tui.ImportContacts(), true));
+            tui.Bindings.Add(new InteractiveTuiBinding<Card>(Translate.DoTranslation("Import From"), ConsoleKey.F4, (_, _, _, _) => tui.ImportContactsFrom(), true));
+            tui.Bindings.Add(new InteractiveTuiBinding<Card>(Translate.DoTranslation("Info"), ConsoleKey.F5, (_, index, _, _) => tui.ShowContactInfo(index)));
+            tui.Bindings.Add(new InteractiveTuiBinding<Card>(Translate.DoTranslation("Search"), ConsoleKey.F6, (_, _, _, _) => tui.SearchBox()));
+            tui.Bindings.Add(new InteractiveTuiBinding<Card>(Translate.DoTranslation("Search Next"), ConsoleKey.F7, (_, _, _, _) => tui.SearchNext()));
+            tui.Bindings.Add(new InteractiveTuiBinding<Card>(Translate.DoTranslation("Search Back"), ConsoleKey.F8, (_, _, _, _) => tui.SearchPrevious()));
+            tui.Bindings.Add(new InteractiveTuiBinding<Card>(Translate.DoTranslation("Raw Info"), ConsoleKey.F9, (_, index, _, _) => tui.ShowContactRawInfo(index)));
+            tui.Bindings.Add(new InteractiveTuiBinding<Card>(Translate.DoTranslation("Import From MeCard"), ConsoleKey.F10, (_, _, _, _) => tui.ImportContactFromMeCard(), true));
+            InteractiveTuiTools.OpenInteractiveTui(tui);
             return 0;
         }
     }

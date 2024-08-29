@@ -36,20 +36,7 @@ namespace Nitrocid.Extras.Forecast.Forecast.Interactive
     /// </summary>
     public class WeatherCli : BaseInteractiveTui<(double, double)>, IInteractiveTui<(double, double)>
     {
-        private static readonly List<(double, double)> latsLongs = [];
-        /// <inheritdoc/>
-        public override InteractiveTuiBinding[] Bindings { get; } =
-        [
-            // Operations
-            new InteractiveTuiBinding("Add", ConsoleKey.F1,
-                (_, _) => Add(), true),
-            new InteractiveTuiBinding("Add Manually", ConsoleKey.F1, ConsoleModifiers.Shift,
-                (_, _) => AddManually(), true),
-            new InteractiveTuiBinding("Remove", ConsoleKey.F2,
-                (_, idx) => Remove(idx)),
-            new InteractiveTuiBinding("Remove All", ConsoleKey.F3,
-                (_, _) => RemoveAll()),
-        ];
+        internal readonly List<(double, double)> latsLongs = [];
 
         /// <inheritdoc/>
         public override IEnumerable<(double, double)> PrimaryDataSource =>
@@ -137,7 +124,7 @@ namespace Nitrocid.Extras.Forecast.Forecast.Interactive
                 Translate.DoTranslation("Longitude") + $": {item.Item2}";
         }
 
-        private static void Add()
+        internal void Add()
         {
             CheckApiKey();
 
@@ -158,7 +145,7 @@ namespace Nitrocid.Extras.Forecast.Forecast.Interactive
             latsLongs.Add(cityLatsLongs);
         }
 
-        private static void AddManually()
+        internal void AddManually()
         {
             CheckApiKey();
 
@@ -178,13 +165,13 @@ namespace Nitrocid.Extras.Forecast.Forecast.Interactive
             latsLongs.Add((lat, lng));
         }
 
-        private static void Remove(int idx) =>
+        internal void Remove(int idx) =>
             latsLongs.RemoveAt(idx);
 
-        private static void RemoveAll() =>
+        internal void RemoveAll() =>
             latsLongs.Clear();
 
-        private static void CheckApiKey()
+        internal void CheckApiKey()
         {
             if (string.IsNullOrEmpty(Forecast.ApiKey))
             {

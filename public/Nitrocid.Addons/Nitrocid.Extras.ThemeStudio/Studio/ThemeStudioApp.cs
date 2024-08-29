@@ -36,6 +36,7 @@ using Nitrocid.ConsoleBase.Inputs;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs.Interactive;
+using System;
 
 namespace Nitrocid.Extras.ThemeStudio.Studio
 {
@@ -67,6 +68,10 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
                     originalColors = originalColors,
                     themeName = ThemeName,
                 };
+                tui.Bindings.Add(new InteractiveTuiBinding<KernelColorType>(Translate.DoTranslation("Change..."), ConsoleKey.Enter, (line, _, _, _) => tui.Change(line)));
+                tui.Bindings.Add(new InteractiveTuiBinding<KernelColorType>(Translate.DoTranslation("Save..."), ConsoleKey.F1, (_, _, _, _) => tui.Save()));
+                tui.Bindings.Add(new InteractiveTuiBinding<KernelColorType>(Translate.DoTranslation("Load..."), ConsoleKey.F2, (_, _, _, _) => tui.Load()));
+                tui.Bindings.Add(new InteractiveTuiBinding<KernelColorType>(Translate.DoTranslation("Copy..."), ConsoleKey.F3, (line, _, _, _) => tui.Copy(line)));
                 InteractiveTuiTools.OpenInteractiveTui(tui);
                 return;
             }

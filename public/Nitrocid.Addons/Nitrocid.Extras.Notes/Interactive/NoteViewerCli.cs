@@ -34,24 +34,6 @@ namespace Nitrocid.Extras.Notes.Interactive
     public class NoteViewerCli : BaseInteractiveTui<string>, IInteractiveTui<string>
     {
         /// <inheritdoc/>
-        public override InteractiveTuiBinding[] Bindings { get; } =
-        [
-            // Operations
-            new InteractiveTuiBinding("Add", ConsoleKey.F1,
-                (_, _) => Add(), true),
-            new InteractiveTuiBinding("Edit", ConsoleKey.F2,
-                (_, noteIdx) => Edit(noteIdx)),
-            new InteractiveTuiBinding("Remove", ConsoleKey.F3,
-                (_, noteIdx) => Remove(noteIdx)),
-            new InteractiveTuiBinding("Remove All", ConsoleKey.F4,
-                (_, _) => RemoveAll()),
-            new InteractiveTuiBinding("Load", ConsoleKey.F5,
-                (_, _) => Load()),
-            new InteractiveTuiBinding("Save", ConsoleKey.F6,
-                (_, _) => Save()),
-        ];
-
-        /// <inheritdoc/>
         public override IEnumerable<string> PrimaryDataSource =>
             NoteManagement.ListNotes();
 
@@ -107,7 +89,7 @@ namespace Nitrocid.Extras.Notes.Interactive
             return finalRenderedNote;
         }
 
-        private static void Add()
+        internal void Add()
         {
             List<string> lines = [];
             TextEditInteractive.OpenInteractive(ref lines);
@@ -115,7 +97,7 @@ namespace Nitrocid.Extras.Notes.Interactive
             NoteManagement.SaveNotes();
         }
 
-        private static void Edit(int noteIdx)
+        internal void Edit(int noteIdx)
         {
             string note = NoteManagement.notes[noteIdx];
             var lines = note.SplitNewLines().ToList();
@@ -124,22 +106,22 @@ namespace Nitrocid.Extras.Notes.Interactive
             NoteManagement.SaveNotes();
         }
 
-        private static void Remove(int noteIdx)
+        internal void Remove(int noteIdx)
         {
             NoteManagement.RemoveNote(noteIdx);
             NoteManagement.SaveNotes();
         }
 
-        private static void RemoveAll()
+        internal void RemoveAll()
         {
             NoteManagement.RemoveNotes();
             NoteManagement.SaveNotes();
         }
 
-        private static void Load() =>
+        internal void Load() =>
             NoteManagement.LoadNotes();
 
-        private static void Save() =>
+        internal void Save() =>
             NoteManagement.SaveNotes();
     }
 }

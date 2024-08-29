@@ -37,6 +37,8 @@ using Textify.General;
 using Terminaux.Base;
 using Nitrocid.ConsoleBase.Inputs;
 using Terminaux.Inputs.Interactive;
+using Terminaux.Inputs.Styles;
+using System;
 
 namespace Nitrocid.Extras.LanguageStudio.Studio
 {
@@ -133,6 +135,10 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
                     pathToTranslations = pathToTranslations,
                     englishLines = englishLines,
                 };
+                new InteractiveTuiBinding<string>(Translate.DoTranslation("Translate"), ConsoleKey.Enter, (line, _, _, _) => tui.DoTranslate(line), true);
+                new InteractiveTuiBinding<string>(Translate.DoTranslation("Add"), ConsoleKey.A, (_, _, _, _) => tui.Add(), true);
+                new InteractiveTuiBinding<string>(Translate.DoTranslation("Remove"), ConsoleKey.Delete, (_, idx, _, _) => tui.Remove(idx));
+                new InteractiveTuiBinding<string>(Translate.DoTranslation("Save"), ConsoleKey.F1, (_, _, _, _) => tui.Save(), true);
                 InteractiveTuiTools.OpenInteractiveTui(tui);
                 return;
             }

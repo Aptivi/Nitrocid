@@ -42,24 +42,6 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
     /// </summary>
     public class ContactsManagerCli : BaseInteractiveTui<Card>, IInteractiveTui<Card>
     {
-        /// <summary>
-        /// Contact manager bindings
-        /// </summary>
-        public override InteractiveTuiBinding[] Bindings { get; } =
-        [
-            // Operations
-            new InteractiveTuiBinding("Delete", ConsoleKey.F1, (_, index) => RemoveContact(index)),
-            new InteractiveTuiBinding("Delete All", ConsoleKey.F2, (_, _) => RemoveContacts()),
-            new InteractiveTuiBinding("Import", ConsoleKey.F3, (_, _) => ImportContacts(), true),
-            new InteractiveTuiBinding("Import From", ConsoleKey.F4, (_, _) => ImportContactsFrom(), true),
-            new InteractiveTuiBinding("Info", ConsoleKey.F5, (_, index) => ShowContactInfo(index)),
-            new InteractiveTuiBinding("Search", ConsoleKey.F6, (_, _) => SearchBox()),
-            new InteractiveTuiBinding("Search Next", ConsoleKey.F7, (_, _) => SearchNext()),
-            new InteractiveTuiBinding("Search Back", ConsoleKey.F8, (_, _) => SearchPrevious()),
-            new InteractiveTuiBinding("Raw Info", ConsoleKey.F9, (_, index) => ShowContactRawInfo(index)),
-            new InteractiveTuiBinding("Import From MeCard", ConsoleKey.F10, (_, _) => ImportContactFromMeCard(), true),
-        ];
-
         /// <inheritdoc/>
         public override IEnumerable<Card> PrimaryDataSource =>
             ContactsManager.GetContacts();
@@ -121,13 +103,13 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             return contact.GetPartsArray<FullNameInfo>()[0].FullName;
         }
 
-        private static void RemoveContact(int index) =>
+        internal void RemoveContact(int index) =>
             ContactsManager.RemoveContact(index);
 
-        private static void RemoveContacts() =>
+        internal void RemoveContacts() =>
             ContactsManager.RemoveContacts();
 
-        private static void ImportContacts()
+        internal void ImportContacts()
         {
             try
             {
@@ -140,7 +122,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             }
         }
 
-        private static void ImportContactsFrom()
+        internal void ImportContactsFrom()
         {
             // Now, render the search box
             string path = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter path to a VCF file containing your contact. Android's contacts2.db file is also supported."), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
@@ -160,7 +142,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                 InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("File doesn't exist. Make sure that you've written the correct path to a VCF file or to a contacts2.db file."), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
         }
 
-        private static void ImportContactFromMeCard()
+        internal void ImportContactFromMeCard()
         {
             // Now, render the search box
             string meCard = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a valid MeCard representation of your contact."), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
@@ -180,7 +162,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                 InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Contact MeCard syntax may not be empty"), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
         }
 
-        private static void ShowContactInfo(int index)
+        internal void ShowContactInfo(int index)
         {
             // Render the final information string
             var finalInfoRendered = new StringBuilder();
@@ -224,7 +206,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
         }
 
-        private static void ShowContactRawInfo(int index)
+        internal void ShowContactRawInfo(int index)
         {
             // Render the final information string
             var finalInfoRendered = new StringBuilder();
@@ -238,7 +220,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
         }
 
-        private static void SearchBox()
+        internal void SearchBox()
         {
             // Now, render the search box
             string exp = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter regular expression to search the contacts."), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
@@ -254,21 +236,21 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                 InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Regular expression is invalid."), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
         }
 
-        private static void SearchNext()
+        internal void SearchNext()
         {
             // Initiate the search
             var foundCard = ContactsManager.SearchNext();
             UpdateIndex(foundCard);
         }
 
-        private static void SearchPrevious()
+        internal void SearchPrevious()
         {
             // Initiate the search
             var foundCard = ContactsManager.SearchPrevious();
             UpdateIndex(foundCard);
         }
 
-        private static void UpdateIndex(Card foundCard)
+        internal void UpdateIndex(Card foundCard)
         {
             var contacts = ContactsManager.GetContacts();
             if (foundCard is not null)
@@ -276,18 +258,18 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                 // Get the index from the instance
                 int idx = Array.FindIndex(contacts, (card) => card == foundCard);
                 DebugCheck.Assert(idx != -1, "contact index is -1!!!");
-                InteractiveTuiTools.SelectionMovement(Instance, idx + 1);
+                InteractiveTuiTools.SelectionMovement(this, idx + 1);
             }
         }
 
-        private static string GetContactNameFinal(int index)
+        internal string GetContactNameFinal(int index)
         {
             // Render the final information string
             var card = ContactsManager.GetContact(index);
             return GetContactNameFinal(card);
         }
 
-        private static string GetContactNameFinal(Card card)
+        internal string GetContactNameFinal(Card card)
         {
             // Render the final information string
             var finalInfoRendered = new StringBuilder();
@@ -302,14 +284,14 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             return finalInfoRendered.ToString();
         }
 
-        private static string GetContactAddressFinal(int index)
+        internal string GetContactAddressFinal(int index)
         {
             // Render the final information string
             var card = ContactsManager.GetContact(index);
             return GetContactAddressFinal(card);
         }
 
-        private static string GetContactAddressFinal(Card card)
+        internal string GetContactAddressFinal(Card card)
         {
             // Render the final information string
             var finalInfoRendered = new StringBuilder();
@@ -351,14 +333,14 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             return finalInfoRendered.ToString();
         }
 
-        private static string GetContactMailFinal(int index)
+        internal string GetContactMailFinal(int index)
         {
             // Render the final information string
             var card = ContactsManager.GetContact(index);
             return GetContactMailFinal(card);
         }
 
-        private static string GetContactMailFinal(Card card)
+        internal string GetContactMailFinal(Card card)
         {
             // Render the final information string
             var finalInfoRendered = new StringBuilder();
@@ -373,14 +355,14 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             return finalInfoRendered.ToString();
         }
 
-        private static string GetContactOrganizationFinal(int index)
+        internal string GetContactOrganizationFinal(int index)
         {
             // Render the final information string
             var card = ContactsManager.GetContact(index);
             return GetContactOrganizationFinal(card);
         }
 
-        private static string GetContactOrganizationFinal(Card card)
+        internal string GetContactOrganizationFinal(Card card)
         {
             // Render the final information string
             var finalInfoRendered = new StringBuilder();
@@ -410,14 +392,14 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             return finalInfoRendered.ToString();
         }
 
-        private static string GetContactTelephoneFinal(int index)
+        internal string GetContactTelephoneFinal(int index)
         {
             // Render the final information string
             var card = ContactsManager.GetContact(index);
             return GetContactTelephoneFinal(card);
         }
 
-        private static string GetContactTelephoneFinal(Card card)
+        internal string GetContactTelephoneFinal(Card card)
         {
             // Render the final information string
             var finalInfoRendered = new StringBuilder();
@@ -432,14 +414,14 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             return finalInfoRendered.ToString();
         }
 
-        private static string GetContactURLFinal(int index)
+        internal string GetContactURLFinal(int index)
         {
             // Render the final information string
             var card = ContactsManager.GetContact(index);
             return GetContactURLFinal(card);
         }
 
-        private static string GetContactURLFinal(Card card)
+        internal string GetContactURLFinal(Card card)
         {
             // Render the final information string
             var finalInfoRendered = new StringBuilder();
@@ -454,14 +436,14 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             return finalInfoRendered.ToString();
         }
 
-        private static string GetContactGeoFinal(int index)
+        internal string GetContactGeoFinal(int index)
         {
             // Render the final information string
             var card = ContactsManager.GetContact(index);
             return GetContactGeoFinal(card);
         }
 
-        private static string GetContactGeoFinal(Card card)
+        internal string GetContactGeoFinal(Card card)
         {
             // Render the final information string
             var finalInfoRendered = new StringBuilder();
@@ -476,14 +458,14 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             return finalInfoRendered.ToString();
         }
 
-        private static string GetContactImppFinal(int index)
+        internal string GetContactImppFinal(int index)
         {
             // Render the final information string
             var card = ContactsManager.GetContact(index);
             return GetContactImppFinal(card);
         }
 
-        private static string GetContactImppFinal(Card card)
+        internal string GetContactImppFinal(Card card)
         {
             // Render the final information string
             var finalInfoRendered = new StringBuilder();
@@ -498,14 +480,14 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             return finalInfoRendered.ToString();
         }
 
-        private static string GetContactNicknameFinal(int index)
+        internal string GetContactNicknameFinal(int index)
         {
             // Render the final information string
             var card = ContactsManager.GetContact(index);
             return GetContactNicknameFinal(card);
         }
 
-        private static string GetContactNicknameFinal(Card card)
+        internal string GetContactNicknameFinal(Card card)
         {
             // Render the final information string
             var finalInfoRendered = new StringBuilder();
@@ -520,14 +502,14 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             return finalInfoRendered.ToString();
         }
 
-        private static string GetContactRoleFinal(int index)
+        internal string GetContactRoleFinal(int index)
         {
             // Render the final information string
             var card = ContactsManager.GetContact(index);
             return GetContactRoleFinal(card);
         }
 
-        private static string GetContactRoleFinal(Card card)
+        internal string GetContactRoleFinal(Card card)
         {
             // Render the final information string
             var finalInfoRendered = new StringBuilder();
@@ -542,14 +524,14 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             return finalInfoRendered.ToString();
         }
 
-        private static string GetContactTitleFinal(int index)
+        internal string GetContactTitleFinal(int index)
         {
             // Render the final information string
             var card = ContactsManager.GetContact(index);
             return GetContactTitleFinal(card);
         }
 
-        private static string GetContactTitleFinal(Card card)
+        internal string GetContactTitleFinal(Card card)
         {
             // Render the final information string
             var finalInfoRendered = new StringBuilder();
@@ -564,14 +546,14 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             return finalInfoRendered.ToString();
         }
 
-        private static string GetContactNotesFinal(int index)
+        internal string GetContactNotesFinal(int index)
         {
             // Render the final information string
             var card = ContactsManager.GetContact(index);
             return GetContactNotesFinal(card);
         }
 
-        private static string GetContactNotesFinal(Card card)
+        internal string GetContactNotesFinal(Card card)
         {
             // Render the final information string
             var finalInfoRendered = new StringBuilder();
@@ -586,14 +568,14 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             return finalInfoRendered.ToString();
         }
 
-        private static string GetContactPictureFinal(int index, int width, int height, Color background = null)
+        internal string GetContactPictureFinal(int index, int width, int height, Color background = null)
         {
             // Render the final information string
             var card = ContactsManager.GetContact(index);
             return GetContactPictureFinal(card, width, height, background);
         }
 
-        private static string GetContactPictureFinal(Card card, int width, int height, Color background = null)
+        internal string GetContactPictureFinal(Card card, int width, int height, Color background = null)
         {
             // Render the final information string
             var finalInfoRendered = new StringBuilder();

@@ -33,19 +33,6 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
         internal List<string> englishLines = [];
         internal string pathToTranslations = "";
 
-        public override InteractiveTuiBinding[] Bindings { get; } =
-        [
-            // Operations
-            new InteractiveTuiBinding("Translate", ConsoleKey.Enter,
-                (line, _) => DoTranslate(line), true),
-            new InteractiveTuiBinding("Add", ConsoleKey.A,
-                (_, _) => Add(), true),
-            new InteractiveTuiBinding("Remove", ConsoleKey.Delete,
-                (_, idx) => Remove(idx)),
-            new InteractiveTuiBinding("Save", ConsoleKey.F1,
-                (_, _) => Save(), true),
-        ];
-
         /// <inheritdoc/>
         public override IEnumerable<string> PrimaryDataSource =>
             englishLines;
@@ -70,14 +57,14 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
         public override string GetEntryFromItem(string item) =>
             item;
 
-        private static void DoTranslate(object line)
+        internal void DoTranslate(object line)
         {
-            if (InteractiveTuiStatus.CurrentPane == 2)
+            if (CurrentPane == 2)
             {
                 // Requested to remove language
                 string lang = (string)line;
-                int lineIdx = InteractiveTuiStatus.FirstPaneCurrentSelection - 1;
-                var translatedLines = ((LanguageStudioCli)Instance).translatedLines[lang];
+                int lineIdx = FirstPaneCurrentSelection - 1;
+                var translatedLines = this.translatedLines[lang];
                 string translated = translatedLines[lineIdx];
                 translated = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Write your translation of") + $" \"{translated}\"");
                 translated = string.IsNullOrWhiteSpace(translated) ? translatedLines[lineIdx] : translated;
@@ -85,36 +72,36 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
             }
         }
 
-        private static void Add()
+        internal void Add()
         {
-            if (InteractiveTuiStatus.CurrentPane == 1)
+            if (CurrentPane == 1)
             {
                 // Requested to add string
                 string newString = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Enter a new string"));
-                ((LanguageStudioCli)Instance).englishLines.Add(newString);
-                var lines = ((LanguageStudioCli)Instance).translatedLines;
+                englishLines.Add(newString);
+                var lines = translatedLines;
                 foreach (var translatedLang in lines.Keys)
                     lines[translatedLang].Add(translatedLang == "eng" ? newString : "???");
             }
         }
 
-        private static void Remove(int idx)
+        internal void Remove(int idx)
         {
-            if (InteractiveTuiStatus.CurrentPane == 1)
+            if (CurrentPane == 1)
             {
                 // Requested to remove string
-                var lines = ((LanguageStudioCli)Instance).translatedLines;
-                ((LanguageStudioCli)Instance).englishLines.RemoveAt(idx);
+                var lines = translatedLines;
+                englishLines.RemoveAt(idx);
                 foreach (var kvp in lines)
                     kvp.Value.RemoveAt(idx);
             }
         }
 
-        private static void Save()
+        internal void Save()
         {
             InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Saving language..."), false);
-            var lines = ((LanguageStudioCli)Instance).translatedLines;
-            var pathToTranslations = ((LanguageStudioCli)Instance).pathToTranslations;
+            var lines = translatedLines;
+            var pathToTranslations = this.pathToTranslations;
             foreach (var translatedLine in lines)
             {
                 string language = translatedLine.Key;

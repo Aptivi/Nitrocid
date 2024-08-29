@@ -40,10 +40,14 @@ namespace Nitrocid.Extras.RssShell
         {
             if (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-tui"))
             {
+                var tui = new RssReaderCli();
+                tui.Bindings.Add(new InteractiveTuiBinding<RSSArticle>(Translate.DoTranslation("Info"), ConsoleKey.F1, (article, _, _, _) => tui.ShowArticleInfo(article)));
+                tui.Bindings.Add(new InteractiveTuiBinding<RSSArticle>(Translate.DoTranslation("Read More"), ConsoleKey.F2, (article, _, _, _) => tui.OpenArticleLink(article)));
+                tui.Bindings.Add(new InteractiveTuiBinding<RSSArticle>(Translate.DoTranslation("Refresh"), ConsoleKey.F3, (article, _, _, _) => tui.RefreshFeed()));
                 if (parameters.ArgumentsList.Length > 0)
                 {
-                    RssReaderCli.rssConnection = EstablishRssConnection(parameters.ArgumentsList[0]);
-                    ((RSSFeed)RssReaderCli.rssConnection.ConnectionInstance).Refresh();
+                    tui.rssConnection = EstablishRssConnection(parameters.ArgumentsList[0]);
+                    ((RSSFeed)tui.rssConnection.ConnectionInstance).Refresh();
                     InteractiveTuiTools.OpenInteractiveTui(new RssReaderCli());
                 }
                 else
@@ -54,8 +58,8 @@ namespace Nitrocid.Extras.RssShell
                         TextWriters.Write(Translate.DoTranslation("Error trying to parse the address. Make sure that you've written the address correctly."), KernelColorType.Error);
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.RSSNetwork);
                     }
-                    RssReaderCli.rssConnection = EstablishRssConnection(address);
-                    ((RSSFeed)RssReaderCli.rssConnection.ConnectionInstance).Refresh();
+                    tui.rssConnection = EstablishRssConnection(address);
+                    ((RSSFeed)tui.rssConnection.ConnectionInstance).Refresh();
                     InteractiveTuiTools.OpenInteractiveTui(new RssReaderCli());
                 }
             }

@@ -38,19 +38,6 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
         internal Dictionary<KernelColorType, Color> originalColors = [];
         internal string themeName = "";
 
-        public override InteractiveTuiBinding[] Bindings { get; } =
-        [
-            // Operations
-            new InteractiveTuiBinding("Change...", ConsoleKey.Enter,
-                (line, _) => Change(line)),
-            new InteractiveTuiBinding("Save...", ConsoleKey.F1,
-                (_, _) => Save()),
-            new InteractiveTuiBinding("Load...", ConsoleKey.F2,
-                (_, _) => Load()),
-            new InteractiveTuiBinding("Copy...", ConsoleKey.F3,
-                (line, _) => Copy(line)),
-        ];
-
         /// <inheritdoc/>
         public override IEnumerable<KernelColorType> PrimaryDataSource =>
             originalColors.Keys;
@@ -75,18 +62,18 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
                 $"{ColorTools.RenderSetConsoleColor(color)}- Lorem ipsum dolor sit amet, consectetur adipiscing elit.{ColorTools.RenderRevertForeground()}";
         }
 
-        private static void Change(object type)
+        internal void Change(object type)
         {
             // Requested to remove language
             var colorType = (KernelColorType)type;
-            var color = ColorSelector.OpenColorSelector(((ThemeStudioCli)Instance).originalColors[colorType]);
-            ((ThemeStudioCli)Instance).originalColors[colorType] = color;
+            var color = ColorSelector.OpenColorSelector(originalColors[colorType]);
+            originalColors[colorType] = color;
         }
 
-        private static void Save()
+        internal void Save()
         {
             foreach (var type in ThemeStudioTools.SelectedColors.Keys)
-                ThemeStudioTools.SelectedColors[type] = ((ThemeStudioCli)Instance).originalColors[type];
+                ThemeStudioTools.SelectedColors[type] = originalColors[type];
             var choices = new InputChoiceInfo[]
             {
                 new("1", Translate.DoTranslation("Save Theme to Current Directory")),
@@ -102,7 +89,7 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
                 case 0:
                     {
                         // Save theme to current directory
-                        ThemeStudioTools.SaveThemeToCurrentDirectory(((ThemeStudioCli)Instance).themeName);
+                        ThemeStudioTools.SaveThemeToCurrentDirectory(themeName);
                         break;
                     }
                 case 1:
@@ -112,15 +99,15 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
                         string DirectoryName = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Specify directory to save theme to:") + " [{0}] ", vars: [CurrentDirectory.CurrentDir]);
                         DirectoryName = string.IsNullOrWhiteSpace(DirectoryName) ? CurrentDirectory.CurrentDir : DirectoryName;
                         DebugWriter.WriteDebug(DebugLevel.I, "Got directory name {0}.", DirectoryName);
-                        ThemeStudioTools.SaveThemeToAnotherDirectory(((ThemeStudioCli)Instance).themeName, DirectoryName);
+                        ThemeStudioTools.SaveThemeToAnotherDirectory(themeName, DirectoryName);
                         break;
                     }
                 case 2:
                     {
                         // Save theme to current directory as...
                         DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for theme name...");
-                        string AltThemeName = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Specify theme name:") + " [{0}] ", vars: [((ThemeStudioCli)Instance).themeName]);
-                        AltThemeName = string.IsNullOrWhiteSpace(AltThemeName) ? ((ThemeStudioCli)Instance).themeName : AltThemeName;
+                        string AltThemeName = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Specify theme name:") + " [{0}] ", vars: [themeName]);
+                        AltThemeName = string.IsNullOrWhiteSpace(AltThemeName) ? themeName : AltThemeName;
                         DebugWriter.WriteDebug(DebugLevel.I, "Got theme name {0}.", AltThemeName);
                         ThemeStudioTools.SaveThemeToCurrentDirectory(AltThemeName);
                         break;
@@ -133,8 +120,8 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
                         DirectoryName = string.IsNullOrWhiteSpace(DirectoryName) ? CurrentDirectory.CurrentDir : DirectoryName;
                         DebugWriter.WriteDebug(DebugLevel.I, "Got directory name {0}.", DirectoryName);
                         DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for theme name...");
-                        string AltThemeName = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Specify theme name:") + " [{0}] ", vars: [((ThemeStudioCli)Instance).themeName]);
-                        AltThemeName = string.IsNullOrWhiteSpace(AltThemeName) ? ((ThemeStudioCli)Instance).themeName : AltThemeName;
+                        string AltThemeName = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Specify theme name:") + " [{0}] ", vars: [themeName]);
+                        AltThemeName = string.IsNullOrWhiteSpace(AltThemeName) ? themeName : AltThemeName;
                         DebugWriter.WriteDebug(DebugLevel.I, "Got theme name {0}.", AltThemeName);
                         ThemeStudioTools.SaveThemeToAnotherDirectory(AltThemeName, DirectoryName);
                         break;
@@ -142,7 +129,7 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
             }
         }
 
-        private static void Load()
+        internal void Load()
         {
             var choices = new InputChoiceInfo[]
             {
@@ -183,13 +170,13 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
             }
         }
 
-        private static void Copy(object type)
+        internal void Copy(object type)
         {
             var colorType = (KernelColorType)type;
-            var sourceColor = ((ThemeStudioCli)Instance).originalColors[colorType];
+            var sourceColor = originalColors[colorType];
 
             // Specify the target...
-            var sources = ((ThemeStudioCli)Instance).originalColors.Select((kvp, idx) => new InputChoiceInfo($"{idx + 1}", $"{kvp.Key}")).ToArray();
+            var sources = originalColors.Select((kvp, idx) => new InputChoiceInfo($"{idx + 1}", $"{kvp.Key}")).ToArray();
             int[] targetColors = InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultiple([.. sources], Translate.DoTranslation("Select the target color types to copy the source color type, {0}, to.").FormatString(colorType));
             if (targetColors.Length == 0)
                 return;
@@ -198,7 +185,7 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
             foreach (int idx in targetColors)
             {
                 var targetType = (KernelColorType)idx;
-                ((ThemeStudioCli)Instance).originalColors[targetType] = sourceColor;
+                originalColors[targetType] = sourceColor;
             }
         }
     }

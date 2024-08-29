@@ -28,6 +28,7 @@ using Nettify.Weather;
 using Nitrocid.Shell.ShellBase.Switches;
 using Terminaux.Inputs.Interactive;
 using Nitrocid.Extras.Forecast.Forecast.Interactive;
+using System;
 
 namespace Nitrocid.Extras.Forecast.Forecast.Commands
 {
@@ -58,7 +59,12 @@ namespace Nitrocid.Extras.Forecast.Forecast.Commands
         {
             if (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-tui"))
             {
-                InteractiveTuiTools.OpenInteractiveTui(new WeatherCli());
+                var tui = new WeatherCli();
+                tui.Bindings.Add(new InteractiveTuiBinding<(double, double)>(Translate.DoTranslation("Add"), ConsoleKey.F1, (_, _, _, _) => tui.Add(), true));
+                tui.Bindings.Add(new InteractiveTuiBinding<(double, double)>(Translate.DoTranslation("Add Manually"), ConsoleKey.F1, ConsoleModifiers.Shift, (_, _, _, _) => tui.AddManually(), true));
+                tui.Bindings.Add(new InteractiveTuiBinding<(double, double)>(Translate.DoTranslation("Remove"), ConsoleKey.F2, (_, idx, _, _) => tui.Remove(idx)));
+                tui.Bindings.Add(new InteractiveTuiBinding<(double, double)>(Translate.DoTranslation("Remove All"), ConsoleKey.F3, (_, _, _, _) => tui.RemoveAll()));
+                InteractiveTuiTools.OpenInteractiveTui(tui);
                 return 0;
             }
             if (parameters.ArgumentsList.Length <= 1)

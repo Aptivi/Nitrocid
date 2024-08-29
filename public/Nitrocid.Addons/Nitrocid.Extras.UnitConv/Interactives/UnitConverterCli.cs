@@ -27,6 +27,7 @@ using Terminaux.Inputs.Interactive;
 using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Languages;
 using Magico.Enumeration;
+using Nitrocid.ConsoleBase.Colors;
 
 namespace Nitrocid.Extras.UnitConv.Interactives
 {
@@ -35,15 +36,6 @@ namespace Nitrocid.Extras.UnitConv.Interactives
     /// </summary>
     public class UnitConverterCli : BaseInteractiveTui<object>, IInteractiveTui<object>
     {
-        /// <summary>
-        /// Contact manager bindings
-        /// </summary>
-        public override InteractiveTuiBinding[] Bindings { get; } =
-        [
-            // Operations
-            new InteractiveTuiBinding("Convert...", ConsoleKey.F1, (_, _) => OpenConvert()),
-        ];
-
         /// <inheritdoc/>
         public override bool SecondPaneInteractable =>
             true;
@@ -64,7 +56,7 @@ namespace Nitrocid.Extras.UnitConv.Interactives
         public override string GetEntryFromItem(object item) =>
             (string)item;
 
-        private static void OpenConvert()
+        internal void OpenConvert()
         {
             try
             {
@@ -85,9 +77,9 @@ namespace Nitrocid.Extras.UnitConv.Interactives
                     var parser = UnitsNetSetup.Default.UnitParser;
                     var unitNames = GetUnitTypeNames();
                     var units = GetUnits();
-                    string UnitType = (string)unitNames.GetElementFromIndex(InteractiveTuiStatus.FirstPaneCurrentSelection - 1);
+                    string UnitType = (string)unitNames.GetElementFromIndex(FirstPaneCurrentSelection - 1);
                     int QuantityNum = Convert.ToInt32(answer);
-                    string wholeUnit = units.OfType<string>().ElementAt(InteractiveTuiStatus.SecondPaneCurrentSelection - 1);
+                    string wholeUnit = units.OfType<string>().ElementAt(SecondPaneCurrentSelection - 1);
                     string SourceUnit = wholeUnit[..wholeUnit.IndexOf(' ')];
                     string TargetUnit = wholeUnit[(wholeUnit.LastIndexOf(' ') + 1)..];
                     var QuantityInfos = Quantity.Infos.Where(x => x.Name == UnitType).ToArray();
@@ -103,19 +95,19 @@ namespace Nitrocid.Extras.UnitConv.Interactives
             }
         }
 
-        private static IEnumerable GetUnitTypeNames() =>
+        internal IEnumerable GetUnitTypeNames() =>
             Quantity.Infos.Where((qi) => qi.UnitInfos.Length > 1).Select((qi) => qi.Name);
 
-        private static IEnumerable GetUnitTypes() =>
+        internal IEnumerable GetUnitTypes() =>
             Quantity.Infos.Where((qi) => qi.UnitInfos.Length > 1);
 
-        private static IEnumerable GetUnits()
+        internal IEnumerable GetUnits()
         {
             var unitInfo = GetUnitTypes().Cast<QuantityInfo>().ToArray();
             var abbreviations = UnitsNetSetup.Default.UnitAbbreviations;
             for (int i = 0; i < unitInfo.Length; i++)
             {
-                if (i != InteractiveTuiStatus.FirstPaneCurrentSelection - 1)
+                if (i != FirstPaneCurrentSelection - 1)
                     continue;
 
                 QuantityInfo QuantityInfo = unitInfo[i];

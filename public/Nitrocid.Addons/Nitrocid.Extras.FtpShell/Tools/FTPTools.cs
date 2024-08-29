@@ -36,6 +36,9 @@ using Nitrocid.ConsoleBase.Inputs;
 using Nitrocid.Network.Connections;
 using Terminaux.Reader;
 using Terminaux.Inputs;
+using Terminaux.Inputs.Styles.Choice;
+using System.Collections.Generic;
+using Terminaux.Inputs.Styles;
 
 namespace Nitrocid.Extras.FtpShell.Tools
 {
@@ -194,24 +197,26 @@ namespace Nitrocid.Extras.FtpShell.Tools
                 {
                     string profanswer;
                     var profanswered = false;
-                    var ProfHeaders = new[] { "#", Translate.DoTranslation("Host Name"), Translate.DoTranslation("Username"), Translate.DoTranslation("Data Type"), Translate.DoTranslation("Encoding"), Translate.DoTranslation("Encryption"), Translate.DoTranslation("Protocols") };
-                    var ProfData = new string[profiles.Count, 7];
-                    TextWriterColor.Write(Translate.DoTranslation("More than one profile found. Select one:"));
+                    List<InputChoiceInfo> choices = [];
                     for (int i = 0; i <= profiles.Count - 1; i++)
                     {
-                        ProfData[i, 0] = (i + 1).ToString();
-                        ProfData[i, 1] = profiles[i].Host;
-                        ProfData[i, 2] = profiles[i].Credentials.UserName;
-                        ProfData[i, 3] = profiles[i].DataConnection.ToString();
-                        ProfData[i, 4] = profiles[i].Encoding.EncodingName;
-                        ProfData[i, 5] = profiles[i].Encryption.ToString();
-                        ProfData[i, 6] = profiles[i].Protocols.ToString();
+                        var profile = profiles[i];
+                        choices.Add(
+                            new InputChoiceInfo($"{i + 1}", $"{profile.Host}, {profile.Credentials.UserName}, {profile.DataConnection}, {profile.Encoding.EncodingName}, {profile.Encryption}, {profile.Protocols}")
+                        );
                     }
-                    TableColor.WriteTable(ProfHeaders, ProfData, 2);
                     while (!profanswered)
                     {
-                        TextWriters.Write(CharManager.NewLine + ">> ", false, KernelColorType.Input);
-                        profanswer = InputTools.ReadLine();
+                        profanswer = ChoiceStyle.PromptChoice(
+                            Translate.DoTranslation("More than one profile found. Select one:") +
+                            "\n###: {0}, {1}, {2}, {3}, {4}, {5}".FormatString(
+                                Translate.DoTranslation("Host Name"),
+                                Translate.DoTranslation("Username"),
+                                Translate.DoTranslation("Data Type"),
+                                Translate.DoTranslation("Encoding"),
+                                Translate.DoTranslation("Encryption"),
+                                Translate.DoTranslation("Protocols")
+                            ), [.. choices]);
                         DebugWriter.WriteDebug(DebugLevel.I, "Selection: {0}", profanswer);
                         if (TextTools.IsStringNumeric(profanswer))
                         {

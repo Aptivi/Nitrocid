@@ -30,6 +30,7 @@ using Textify.General;
 using Nitrocid.Network.Connections;
 using Nitrocid.Shell.ShellBase.Commands.ProcessExecution;
 using Nitrocid.Kernel;
+using Nitrocid.ConsoleBase.Colors;
 
 namespace Nitrocid.Extras.RssShell.RSS.Interactive
 {
@@ -38,9 +39,9 @@ namespace Nitrocid.Extras.RssShell.RSS.Interactive
     /// </summary>
     public class RssReaderCli : BaseInteractiveTui<RSSArticle>, IInteractiveTui<RSSArticle>
     {
-        internal static NetworkConnection rssConnection;
+        internal NetworkConnection rssConnection;
 
-        private static RSSFeed Feed
+        private RSSFeed Feed
         {
             get
             {
@@ -49,17 +50,6 @@ namespace Nitrocid.Extras.RssShell.RSS.Interactive
                 return feed;
             }
         }
-
-        /// <summary>
-        /// Article viewer keybindings
-        /// </summary>
-        public override InteractiveTuiBinding[] Bindings { get; } =
-        [
-            // Operations
-            new InteractiveTuiBinding("Info", ConsoleKey.F1, (article, _) => ShowArticleInfo(article)),
-            new InteractiveTuiBinding("Read More", ConsoleKey.F2, (article, _) => OpenArticleLink(article)),
-            new InteractiveTuiBinding("Refresh", ConsoleKey.F3, (article, _) => RefreshFeed())
-        ];
 
         /// <inheritdoc/>
         public override IEnumerable<RSSArticle> PrimaryDataSource =>
@@ -105,7 +95,7 @@ namespace Nitrocid.Extras.RssShell.RSS.Interactive
             return article.ArticleTitle;
         }
 
-        private static void ShowArticleInfo(object item)
+        internal void ShowArticleInfo(object item)
         {
             // Render the final information string
             var finalInfoRendered = new StringBuilder();
@@ -135,7 +125,7 @@ namespace Nitrocid.Extras.RssShell.RSS.Interactive
             InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
         }
 
-        private static void OpenArticleLink(object item)
+        internal void OpenArticleLink(object item)
         {
             // Check to see if we have a link
             RSSArticle article = (RSSArticle)item;
@@ -159,7 +149,7 @@ namespace Nitrocid.Extras.RssShell.RSS.Interactive
             }
         }
 
-        private static void RefreshFeed() =>
+        internal void RefreshFeed() =>
             Feed.Refresh();
 
     }

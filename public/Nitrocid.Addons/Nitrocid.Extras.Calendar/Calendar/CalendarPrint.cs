@@ -31,6 +31,7 @@ using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.FancyWriters;
 using Terminaux.Base;
+using Terminaux.Colors;
 
 namespace Nitrocid.Extras.Calendar.Calendar
 {
@@ -61,7 +62,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
             var CalendarDays = calendarInstance.Culture.DateTimeFormat.DayNames;
             var CalendarMonths = calendarInstance.Culture.DateTimeFormat.MonthNames;
             var CalendarWeek = calendarInstance.Culture.DateTimeFormat.FirstDayOfWeek;
-            var CalendarData = new string[6, CalendarDays.Length];
+            var CalendarData = new string[7, CalendarDays.Length];
             var maxDate = calendarInstance.Calendar.GetDaysInMonth(Year, Month);
             var selectedDate = new DateTime(Year, Month, TimeDateTools.KernelDateTime.Day > maxDate ? 1 : TimeDateTools.KernelDateTime.Day);
             var (year, month, _, _) = TimeDateConverters.GetDateFromCalendar(selectedDate, calendar);
@@ -80,11 +81,12 @@ namespace Nitrocid.Extras.Calendar.Calendar
                 dayOfWeek++;
                 if (dayOfWeek > 6)
                     dayOfWeek = 0;
+                CalendarData[0, i] = $"{day}";
             }
 
             // Populate the calendar data
-            TextWriters.WriteWhere(CalendarTitle, (int)Math.Round((ConsoleWrapper.WindowWidth - CalendarTitle.Length) / 2d), ConsoleWrapper.CursorTop, true, KernelColorType.TableTitle);
-            TextWriterRaw.Write();
+            ColorTools.LoadBack();
+            TextWriters.WriteWhere(CalendarTitle, (int)Math.Round((ConsoleWrapper.WindowWidth - CalendarTitle.Length) / 2d), 1, true, KernelColorType.TableTitle);
             for (int CurrentDay = 1; CurrentDay <= DateTo.Day; CurrentDay++)
             {
                 var CurrentDate = new DateTime(year, month, CurrentDay);
@@ -159,9 +161,9 @@ namespace Nitrocid.Extras.Calendar.Calendar
                 string markStart = ReminderMarked && EventMarked ? "[" : ReminderMarked ? "(" : EventMarked ? "<" : " ";
                 string markEnd = ReminderMarked && EventMarked ? "]" : ReminderMarked ? ")" : EventMarked ? ">" : " ";
                 CurrentDayMark = $"{markStart}{CurrentDay}{markEnd}";
-                CalendarData[CurrentWeekIndex, currentDay - 1] = CurrentDayMark;
+                CalendarData[CurrentWeekIndex + 1, currentDay - 1] = CurrentDayMark;
             }
-            TableColor.WriteTable(mappedDays.Keys.Select((dow) => $"{CalendarDays[(int)dow]}").ToArray(), CalendarData, 2, true, CalendarCellOptions);
+            TableColor.WriteTable(CalendarData, 2, 3, ConsoleWrapper.WindowWidth - 4, ConsoleWrapper.WindowHeight - 4, true, CalendarCellOptions);
         }
 
     }

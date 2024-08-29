@@ -23,8 +23,8 @@ using Nitrocid.Drivers.Console;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Events;
 using Nitrocid.Misc.Screensaver;
-using Terminaux.ResizeListener;
 using Terminaux.Reader;
+using ConsoleResizeListener = Terminaux.Base.ConsoleResizeHandler;
 
 namespace Nitrocid.ConsoleBase
 {
@@ -40,7 +40,7 @@ namespace Nitrocid.ConsoleBase
             // Handle window change
             if (inited)
                 return;
-            Terminaux.Base.ConsoleResizeHandler.RunEssentialHandler = false;
+            ConsoleResizeListener.RunEssentialHandler = false;
             ConsoleResizeListener.StartResizeListener(HandleResize);
             inited = true;
         }
@@ -55,7 +55,7 @@ namespace Nitrocid.ConsoleBase
             newX = termDriver.WindowWidth;
             newY = termDriver.WindowHeight;
             DebugWriter.WriteDebug(DebugLevel.W, "Final: Old width x height: {0}x{1} | New width x height: {2}x{3}", oldX, oldY, newX, newY);
-            DebugWriter.WriteDebug(DebugLevel.W, $"Userspace application will have to call {nameof(Terminaux.Base.ConsoleResizeHandler.WasResized)} to reset the state.");
+            DebugWriter.WriteDebug(DebugLevel.W, $"Userspace application will have to call {nameof(ConsoleResizeListener.WasResized)} to reset the state.");
             EventsManager.FireEvent(EventType.ResizeDetected, oldX, oldY, newX, newY);
 
             // Also, tell the screen-based apps to refresh themselves
