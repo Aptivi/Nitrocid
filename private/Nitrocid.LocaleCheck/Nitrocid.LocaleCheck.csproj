@@ -18,7 +18,7 @@
     <Optimize>true</Optimize>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Terminaux" Version="5.0.0" />
+    <PackageReference Include="Terminaux" Version="5.0.0.1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Nitrocid.LocaleTools\Nitrocid.LocaleTools.csproj" />
