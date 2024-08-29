@@ -40,7 +40,7 @@ using Nitrocid.Files.Paths;
 using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Files.Operations;
 using Terminaux.Inputs.Styles.Infobox;
-using Terminaux.Inputs;
+using Terminaux.Inputs.Styles;
 #endif
 
 namespace Nitrocid.Kernel.Starting
