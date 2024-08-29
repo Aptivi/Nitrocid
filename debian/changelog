@@ -1,3 +1,9 @@
+kernel-simulator (3.0.26.48-0.1.1.13-1) noble; urgency=medium
+
+  * Updated Terminaux to 5.0 to bring improvements
+
+ -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Thu, 29 Aug 2024 17:42:49 +0300
+
 kernel-simulator (3.0.26.47-0.1.1.12-1) noble; urgency=medium
 
   * Added instance properties and/or classes support for reflection
