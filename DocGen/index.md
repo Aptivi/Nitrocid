@@ -6,7 +6,7 @@ Nitrocid KS is an application which simulates our future-planned kernel as we've
  
 This webpage is not a wiki for the general use of Nitrocid KS; it's an API documentation for mod developers to be used as reference. It constantly gets updated as we push the updates to the main and servicing versions of Nitrocid KS.
 
-If you still intend to use a documentation specific to your preferred version of KS, you may refer to the [releases](https://github.com/Aptivi/NitrocidKS/releases) page of the project and download the attached `0.0.x.y-doc.rar` file.
+If you still intend to use a documentation specific to your preferred version of KS, you may refer to the [releases](https://github.com/Aptivi/NitrocidKS/releases) page of the project and download the attached `0.0.x.y-doc.zip` file.
 
 To get started using the documentation, select `API Documentation` from the top menu and select a namespace to get a clear overview of the API that Nitrocid KS provides.
 
