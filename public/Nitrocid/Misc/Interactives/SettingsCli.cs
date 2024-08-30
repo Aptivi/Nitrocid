@@ -106,21 +106,10 @@ namespace Nitrocid.Misc.Interactives
         /// <inheritdoc/>
         public override string GetStatusFromItem((string, int) item)
         {
-            string status;
-            if (CurrentPane == 2)
-            {
-                string keyName = item.Item1;
-                int keyIdx = item.Item2;
-                string keyDesc = config.SettingsEntries[FirstPaneCurrentSelection - 1].Keys[keyIdx].Description;
-                status = $"K: {keyName} - {keyDesc}";
-            }
-            else
-            {
-                string entryName = item.Item1;
-                int entryIdx = item.Item2;
-                string entryDesc = config.SettingsEntries[entryIdx].Desc;
-                status = $"E: {entryName} - {entryDesc}";
-            }
+            string entryName = item.Item1;
+            int entryIdx = item.Item2;
+            string entryDesc = config.SettingsEntries[entryIdx].Desc;
+            string status = $"E: {entryName} - {entryDesc}";
             return status;
         }
 
@@ -131,33 +120,46 @@ namespace Nitrocid.Misc.Interactives
         /// <inheritdoc/>
         public override string GetInfoFromItem((string, int) item)
         {
-            string status;
-            if (CurrentPane == 2)
-            {
-                string keyName = item.Item1;
-                int keyIdx = item.Item2;
-                string keyDesc = config.SettingsEntries[FirstPaneCurrentSelection - 1].Keys[keyIdx].Description;
-                status =
-                    $"""
-                    {keyName}
-                    ====================================================
+            string entryName = item.Item1;
+            int entryIdx = item.Item2;
+            string entryDesc = config.SettingsEntries[entryIdx].Desc;
+            string status =
+                $"""
+                {entryName}
+                ====================================================
                     
-                    {keyDesc}
-                    """;
-            }
-            else
-            {
-                string entryName = item.Item1;
-                int entryIdx = item.Item2;
-                string entryDesc = config.SettingsEntries[entryIdx].Desc;
-                status =
-                    $"""
-                    {entryName}
-                    ====================================================
+                {entryDesc}
+                """;
+            return status;
+        }
+
+        /// <inheritdoc/>
+        public override string GetStatusFromItemSecondary((string, int) item)
+        {
+            string keyName = item.Item1;
+            int keyIdx = item.Item2;
+            string keyDesc = config.SettingsEntries[FirstPaneCurrentSelection - 1].Keys[keyIdx].Description;
+            string status = $"K: {keyName} - {keyDesc}";
+            return status;
+        }
+
+        /// <inheritdoc/>
+        public override string GetEntryFromItemSecondary((string, int) item) =>
+            item.Item1;
+
+        /// <inheritdoc/>
+        public override string GetInfoFromItemSecondary((string, int) item)
+        {
+            string keyName = item.Item1;
+            int keyIdx = item.Item2;
+            string keyDesc = config.SettingsEntries[FirstPaneCurrentSelection - 1].Keys[keyIdx].Description;
+            string status =
+                $"""
+                {keyName}
+                ====================================================
                     
-                    {entryDesc}
-                    """;
-            }
+                {keyDesc}
+                """;
             return status;
         }
 
@@ -165,6 +167,10 @@ namespace Nitrocid.Misc.Interactives
         {
             try
             {
+                // Check the pane first
+                if (CurrentPane != 2)
+                    return;
+
                 // Get the key and try to set
                 var key = config.SettingsEntries[entryIdx].Keys[keyIdx];
                 var defaultValue = ConfigTools.GetValueFromEntry(key, config);

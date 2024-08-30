@@ -163,6 +163,14 @@ namespace Nitrocid.Misc.Interactives
             }
         }
 
+        /// <inheritdoc/>
+        public override string GetStatusFromItemSecondary(FileSystemEntry item) =>
+            GetStatusFromItem(item);
+
+        /// <inheritdoc/>
+        public override string GetEntryFromItemSecondary(FileSystemEntry item) =>
+            GetEntryFromItem(item);
+
         internal void Open(FileSystemEntry entry1, FileSystemEntry entry2)
         {
             try
