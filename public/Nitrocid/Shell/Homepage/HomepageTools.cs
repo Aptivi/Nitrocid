@@ -309,6 +309,8 @@ namespace Nitrocid.Shell.Homepage
                     if (Input.MouseInputAvailable)
                     {
                         var context = Input.ReadPointer();
+                        if (context is null)
+                            continue;
 
                         // Get the necessary positions
                         int settingsButtonWidth = ConsoleWrapper.WindowWidth / 2 - 5 + ConsoleWrapper.WindowWidth % 2;
