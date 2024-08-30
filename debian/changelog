@@ -1,3 +1,9 @@
+kernel-simulator (3.0.26.48-0.1.1.14-1) noble; urgency=medium
+
+  * Fixed IFM and Settings TUIs
+
+ -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Fri, 30 Aug 2024 18:57:43 +0300
+
 kernel-simulator (3.0.26.48-0.1.1.13-1) noble; urgency=medium
 
   * Updated Terminaux to 5.0 to bring improvements
