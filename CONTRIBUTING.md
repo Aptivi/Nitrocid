@@ -1,4 +1,4 @@
-# Contributing guidelines
+# Contribution guidelines
 
 First of all, thank you for contributing to our project! This kind of act is the most welcome act to help us keep running our projects the way we want them to run. All your contributions are valuable, but you need to follow these simple rules to get your contribution accepted.
 
@@ -146,8 +146,6 @@ We follow this conventional Git commit scheme:
 ```
 Type - Attributes - Summary
 
-Extended Summary
-
 ---
 
 Description
@@ -202,6 +200,41 @@ Take note that if you've set a commit that is a backport, make sure that the typ
 * Incompatible attributes with `bkp`
   * `ptp`: for prototyping
   * `brk`: for breaking changes
+
+## Releases
+
+When planning for a new version, always start the development of the next version by changing the version found in all the relevant files (usually `Directory.Build.props` for C# projects) before starting to push commits that add new features and everything else. When development finishes, before the release tag can be pushed, the `CHANGES` file should be changed to reflect the new release, as long as it follows this convention:
+
+```
+Long description of the release
+
+### Changes
+
+This release contains a variety of changes, including, but not limited to:
+
+- `[+]` Added X
+- `[*]` Improved Y
+- `[-]` Removed Z
+
+Review the commit history if you want to get a deep insight about the changes.
+
+### Feedback?
+
+If you have issues with this version, report to us by [making a new issue ticket](https://github.com/Aptivi/PROJECT/issues/new).
+```
+
+Also, the `CHANGES.TITLE` file should be changed to match the version whose development finished but tag not pushed, as long as it follows this format:
+
+```
+[servicing] PROJECT v1.0.0: Release Name
+```
+
+The type at the beginning is necessary as it can tell us and the users in what stage this release belongs to. Currently, this list of releases should be used:
+
+  * `alpha`: Indicates that this release is an alpha version
+  * `beta`: Indicates that this release is a beta version
+  * `release`: Indicates that this release is a major release (i.e. changes the major part and/or the minor part)
+  * `servicing`: Indicates that this release is a minore release (i.e. changes the build part and/or the patch part)
 
 ## Assistance of AI
 
