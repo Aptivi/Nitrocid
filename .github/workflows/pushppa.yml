@@ -1,9 +1,9 @@
 name: Push to PPA
 
 on:
-  release:
-    types: [published]
-  workflow_dispatch:
+  push:
+    tags:
+      - 'v0.1.*'
 
 jobs:
   build:
