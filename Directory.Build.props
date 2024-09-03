@@ -9,6 +9,7 @@
         <LangVersion>latest</LangVersion>
         <Deterministic>true</Deterministic>
         <TargetFramework>net8.0</TargetFramework>
+        <WarningsAsErrors>CS8002,nullable</WarningsAsErrors>
         <SignAssembly>True</SignAssembly>
         <RootPath>$(MSBuildThisFileDirectory)</RootPath>
         <AssemblyOriginatorKeyFile>$(RootPath)\aptivi_snk.snk</AssemblyOriginatorKeyFile>
