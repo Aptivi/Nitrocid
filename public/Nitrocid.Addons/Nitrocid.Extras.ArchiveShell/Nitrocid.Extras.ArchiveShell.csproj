@@ -38,7 +38,7 @@
 
   <ItemGroup>
     <PackageReference Include="FluentFTP" Version="51.0.0" />
-    <PackageReference Include="SharpCompress" Version="0.37.2" />
+    <PackageReference Include="SharpCompress" Version="0.38.0" />
   </ItemGroup>
 
   <ItemGroup>

@@ -57,9 +57,8 @@ namespace Nitrocid.Extras.Forecast.Forecast.Interactive
             {
                 var dayPartArray = WeatherInfo.WeatherToken["daypart"][0][dayPartData];
                 var adjusted = dayPartArray[0];
-                if (adjusted.Type == JTokenType.Null)
-                    adjusted = dayPartArray[1];
-                return (T)adjusted.ToObject(typeof(T));
+                adjusted ??= dayPartArray[1];
+                return adjusted.GetValue<T>();
             }
 
             // Print them to a string

@@ -52,12 +52,12 @@
   <!-- KS Non-private Dependencies Information -->
   <ItemGroup>
     <PackageReference Include="Terminaux" Version="5.0.1" PrivateAssets="contentfiles;analyzers;build;runtime" />
-    <PackageReference Include="Terminaux.Images" Version="5.0.0.1" PrivateAssets="contentfiles;analyzers;build;runtime;native" />
-    <PackageReference Include="Textify.Offline" Version="1.11.1.1" PrivateAssets="contentfiles;analyzers;build;runtime">
+    <PackageReference Include="Terminaux.Images" Version="5.0.1" PrivateAssets="contentfiles;analyzers;build;runtime;native" />
+    <PackageReference Include="Textify.Offline" Version="1.11.2" PrivateAssets="contentfiles;analyzers;build;runtime">
       <Aliases>global,TextifyDep</Aliases>
     </PackageReference>
-    <PackageReference Include="Nettify" Version="1.5.0.3" PrivateAssets="contentfiles;analyzers;build;runtime" />
-    <PackageReference Include="Textify.Offline.Json" Version="1.11.1.1" PrivateAssets="contentfiles;analyzers;build;runtime" />
+    <PackageReference Include="Nettify" Version="1.5.2" PrivateAssets="contentfiles;analyzers;build;runtime" />
+    <PackageReference Include="Textify.Offline.Json" Version="1.11.2" PrivateAssets="contentfiles;analyzers;build;runtime" />
   </ItemGroup>
   <!-- KS Non-private Dependencies Information End -->
 
