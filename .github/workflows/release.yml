@@ -104,4 +104,4 @@ jobs:
       - name: Package Publication
         run: |
           chmod +x tools/*.sh
-          cd tools ; $env:NUGET_APIKEY="${{ secrets.NUGET_APIKEY }}" ; ./push.sh ; cd ..
+          cd tools ; cmd.exe /C "push.cmd ${{ secrets.NUGET_APIKEY }}" ; cd ..
