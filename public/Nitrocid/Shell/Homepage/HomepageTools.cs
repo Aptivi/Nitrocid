@@ -52,6 +52,8 @@ using Terminaux.Reader;
 using Terminaux.Sequences;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.FancyWriters;
+using Terminaux.Writer.MiscWriters;
+using Terminaux.Writer.MiscWriters.Tools;
 
 namespace Nitrocid.Shell.Homepage
 {
@@ -62,7 +64,7 @@ namespace Nitrocid.Shell.Homepage
     {
         internal static bool isHomepageEnabled = true;
         private static bool isOnHomepage = false;
-        private static readonly HomepageBinding[] bindings =
+        private static readonly Keybinding[] bindings =
         [
             // Keyboard
             new(/* Localizable */ "Execute", ConsoleKey.Enter),
@@ -115,42 +117,15 @@ namespace Nitrocid.Shell.Homepage
                     builder.Append(CenteredTextColor.RenderCenteredOneLine(1, Translate.DoTranslation("Hi, {0}! Welcome to Nitrocid!"), Vars: [string.IsNullOrWhiteSpace(UserManagement.CurrentUser.FullName) ? UserManagement.CurrentUser.Username : UserManagement.CurrentUser.FullName]));
 
                     // Show bindings
-                    var bindingsBuilder = new StringBuilder(CsiSequences.GenerateCsiCursorPosition(1, ConsoleWrapper.WindowHeight));
-                    foreach (HomepageBinding binding in bindings)
-                    {
-                        // Check the binding mode
-                        if (binding.BindingUsesMouse)
-                            continue;
-
-                        // First, check to see if the rendered binding info is going to exceed the console window width
-                        string renderedBinding = $"{GetBindingKeyShortcut(binding, false)} {binding.BindingName}  ";
-                        int bindingLength = ConsoleChar.EstimateCellWidth(renderedBinding);
-                        int actualLength = ConsoleChar.EstimateCellWidth(VtSequenceTools.FilterVTSequences(bindingsBuilder.ToString()));
-                        bool canDraw = bindingLength + actualLength < ConsoleWrapper.WindowWidth - 3;
-                        if (canDraw)
-                        {
-                            bindingsBuilder.Append(
-                                $"{ColorTools.RenderSetConsoleColor(KernelColorTools.GetColor(KernelColorType.TuiKeyBindingOption), false, true)}" +
-                                $"{ColorTools.RenderSetConsoleColor(KernelColorTools.GetColor(KernelColorType.TuiOptionBackground), true)}" +
-                                GetBindingKeyShortcut(binding, false) +
-                                $"{ColorTools.RenderSetConsoleColor(KernelColorTools.GetColor(KernelColorType.TuiOptionForeground))}" +
-                                $"{ColorTools.RenderSetConsoleColor(KernelColorTools.GetColor(KernelColorType.TuiBackground), true)}" +
-                                $" {binding.BindingName}  "
-                            );
-                        }
-                        else
-                        {
-                            // We can't render anymore, so just break and write a binding to show more
-                            bindingsBuilder.Append(
-                                $"{CsiSequences.GenerateCsiCursorPosition(ConsoleWrapper.WindowWidth - 2, ConsoleWrapper.WindowHeight)}" +
-                                $"{ColorTools.RenderSetConsoleColor(KernelColorTools.GetColor(KernelColorType.TuiKeyBindingBuiltin), false, true)}" +
-                                $"{ColorTools.RenderSetConsoleColor(KernelColorTools.GetColor(KernelColorType.TuiKeyBindingBuiltinBackground), true)}" +
-                                " K "
-                            );
-                            break;
-                        }
-                    }
-                    builder.Append(bindingsBuilder);
+                    builder.Append(
+                        KeybindingsWriter.RenderKeybindings(bindings,
+                            KernelColorTools.GetColor(KernelColorType.TuiKeyBindingBuiltin),
+                            KernelColorTools.GetColor(KernelColorType.TuiKeyBindingBuiltinForeground),
+                            KernelColorTools.GetColor(KernelColorType.TuiKeyBindingBuiltinBackground),
+                            KernelColorTools.GetColor(KernelColorType.TuiKeyBindingOption),
+                            KernelColorTools.GetColor(KernelColorType.TuiOptionForeground),
+                            KernelColorTools.GetColor(KernelColorType.TuiOptionBackground),
+                            0, ConsoleWrapper.WindowHeight - 1));
 
                     // Make a border for an analog clock widget and the first three RSS feeds (if the addon is installed)
                     int widgetLeft = ConsoleWrapper.WindowWidth / 2 + ConsoleWrapper.WindowWidth % 2;
@@ -421,28 +396,9 @@ namespace Nitrocid.Shell.Homepage
                                 exiting = true;
                                 break;
                             case ConsoleKey.K:
-                                // User needs an infobox that shows all available keys
-                                var binds = bindings.Where((binding) => !binding.BindingUsesMouse);
-                                var mouseBindings = bindings.Where((binding) => binding.BindingUsesMouse);
-                                int maxBindingLength = binds
-                                    .Max((itb) => ConsoleChar.EstimateCellWidth(GetBindingKeyShortcut(itb)));
-                                string[] bindingRepresentations = binds
-                                    .Select((itb) => $"{GetBindingKeyShortcut(itb) + new string(' ', maxBindingLength - ConsoleChar.EstimateCellWidth(GetBindingKeyShortcut(itb))) + $" | {itb.BindingName}"}")
-                                    .ToArray();
-                                string[] bindingMouseRepresentations = [];
-                                if (mouseBindings is not null && mouseBindings.Any())
-                                {
-                                    int maxMouseBindingLength = mouseBindings
-                                        .Max((itb) => ConsoleChar.EstimateCellWidth(GetBindingMouseShortcut(itb)));
-                                    bindingMouseRepresentations = mouseBindings
-                                        .Select((itb) => $"{GetBindingMouseShortcut(itb) + new string(' ', maxMouseBindingLength - ConsoleChar.EstimateCellWidth(GetBindingMouseShortcut(itb))) + $" | {itb.BindingName}"}")
-                                        .ToArray();
-                                }
                                 InfoBoxColor.WriteInfoBoxColorBack(
                                     "Available keys",
-                                    $"{string.Join("\n", bindingRepresentations)}" +
-                                    "\n\nMouse bindings:\n\n" +
-                                    $"{(bindingMouseRepresentations.Length > 0 ? string.Join("\n", bindingMouseRepresentations) : "No mouse bindings")}", 
+                                    KeybindingsWriter.RenderKeybindingHelpText(bindings), 
                                     KernelColorTools.GetColor(KernelColorType.TuiBoxForeground),
                                     KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
                                 break;
@@ -464,24 +420,6 @@ namespace Nitrocid.Shell.Homepage
                 ScreenTools.UnsetCurrent(homeScreen);
                 ColorTools.LoadBack();
             }
-        }
-
-        private static string GetBindingKeyShortcut(HomepageBinding bind, bool mark = true)
-        {
-            if (bind.BindingUsesMouse)
-                return "";
-            string markStart = mark ? "[" : " ";
-            string markEnd = mark ? "]" : " ";
-            return $"{markStart}{(bind.BindingKeyModifiers != 0 ? $"{bind.BindingKeyModifiers} + " : "")}{bind.BindingKeyName}{markEnd}";
-        }
-
-        private static string GetBindingMouseShortcut(HomepageBinding bind, bool mark = true)
-        {
-            if (!bind.BindingUsesMouse)
-                return "";
-            string markStart = mark ? "[" : " ";
-            string markEnd = mark ? "]" : " ";
-            return $"{markStart}{(bind.BindingPointerModifiers != 0 ? $"{bind.BindingPointerModifiers} + " : "")}{bind.BindingPointerButton}{(bind.BindingPointerButtonPress != 0 ? $" {bind.BindingPointerButtonPress}" : "")}{markEnd}";
         }
     }
 }
