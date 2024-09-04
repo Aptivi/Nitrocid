@@ -298,12 +298,20 @@ namespace Nitrocid.Shell.Homepage
 
                 // Render the thing and wait for a keypress
                 bool exiting = false;
+                bool render = true;
                 while (!exiting)
                 {
                     // Render and wait for input for a second
-                    ScreenTools.Render();
+                    if (render)
+                    {
+                        ScreenTools.Render();
+                        render = false;
+                    }
                     if (!SpinWait.SpinUntil(() => Input.InputAvailable, 1000))
+                    {
+                        render = true;
                         continue;
+                    }
 
                     // Read the available input
                     if (Input.MouseInputAvailable)
@@ -334,6 +342,7 @@ namespace Nitrocid.Shell.Homepage
                         {
                             if (context.ButtonPress == PointerButtonPress.Released && context.Button == PointerButton.Left)
                                 SettingsApp.OpenMainPage(Config.MainConfig);
+                            render = true;
                         }
                         else if (isWithinOptions)
                         {
@@ -349,6 +358,7 @@ namespace Nitrocid.Shell.Homepage
                                     if (context.ButtonPress == PointerButtonPress.Released && context.Button == PointerButton.Left)
                                         DoAction(choiceIdx);
                                 }
+                                render = true;
                             }
                             else if (context.ButtonPress == PointerButtonPress.Scrolled)
                             {
@@ -357,20 +367,26 @@ namespace Nitrocid.Shell.Homepage
                                     choiceIdx--;
                                     if (choiceIdx < 0)
                                         choiceIdx++;
+                                    render = true;
                                 }
                                 else if (context.Button == PointerButton.WheelDown)
                                 {
                                     choiceIdx++;
                                     if (choiceIdx >= choices.Length)
                                         choiceIdx--;
+                                    render = true;
                                 }
                             }
                         }
                         if (context.ButtonPress == PointerButtonPress.Moved)
+                        {
                             settingsHighlighted = isWithinSettings;
+                            render = true;
+                        }
                     }
                     else if (ConsoleWrapper.KeyAvailable && !Input.PointerActive)
                     {
+                        render = true;
                         var keypress = Input.ReadKey();
                         switch (keypress.Key)
                         {
@@ -429,6 +445,9 @@ namespace Nitrocid.Shell.Homepage
                                     $"{(bindingMouseRepresentations.Length > 0 ? string.Join("\n", bindingMouseRepresentations) : "No mouse bindings")}", 
                                     KernelColorTools.GetColor(KernelColorType.TuiBoxForeground),
                                     KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
+                                break;
+                            default:
+                                render = false;
                                 break;
                         }
                     }
