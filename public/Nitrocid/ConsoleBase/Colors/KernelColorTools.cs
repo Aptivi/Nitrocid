@@ -114,7 +114,7 @@ namespace Nitrocid.ConsoleBase.Colors
         private static Dictionary<KernelColorType, Color> PopulateColors(KernelColorPopulationType populationType)
         {
             Dictionary<KernelColorType, Color> colors = [];
-            ThemeInfo themeInfo = default;
+            ThemeInfo? themeInfo = default;
 
             // Select population type
             for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(KernelColorType)).Length; typeIndex++)

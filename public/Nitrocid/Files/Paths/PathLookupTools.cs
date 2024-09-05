@@ -140,7 +140,7 @@ namespace Nitrocid.Files.Paths
         /// <param name="FilePath">A full path to file or just a file name</param>
         /// <param name="Result">The neutralized path</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool FileExistsInPath(string FilePath, ref string Result) =>
+        public static bool FileExistsInPath(string FilePath, ref string? Result) =>
             DriverHandler.CurrentFilesystemDriverLocal.FileExistsInPath(FilePath, ref Result);
 
     }

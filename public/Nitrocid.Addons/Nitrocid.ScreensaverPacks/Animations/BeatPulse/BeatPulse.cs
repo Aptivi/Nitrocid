@@ -38,8 +38,9 @@ namespace Nitrocid.ScreensaverPacks.Animations.BeatPulse
         /// <summary>
         /// Simulates the beat pulsing animation
         /// </summary>
-        public static void Simulate(BeatPulseSettings Settings)
+        public static void Simulate(BeatPulseSettings? Settings)
         {
+            Settings ??= new();
             ConsoleWrapper.CursorVisible = false;
             int BeatInterval = (int)Math.Round(60000d / Settings.BeatPulseDelay);
             int BeatIntervalStep = (int)Math.Round(BeatInterval / (double)Settings.BeatPulseMaxSteps);

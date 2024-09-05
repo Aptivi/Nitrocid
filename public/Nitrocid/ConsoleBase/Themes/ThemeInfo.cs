@@ -31,6 +31,8 @@ using Nitrocid.Kernel.Time.Calendars;
 using Terminaux.Colors;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Misc.Reflection.Internal;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
 
 namespace Nitrocid.ConsoleBase.Themes
 {
@@ -44,7 +46,7 @@ namespace Nitrocid.ConsoleBase.Themes
         internal readonly Dictionary<KernelColorType, Color> ThemeColors = KernelColorTools.PopulateColorsEmpty();
         internal readonly DateTime start = DateTime.Today;
         internal readonly DateTime end = DateTime.Today;
-        private string[] useAccentTypes;
+        private string[] useAccentTypes = [];
         private readonly ThemeMetadata metadata;
         private readonly JToken metadataToken;
 
@@ -151,7 +153,8 @@ namespace Nitrocid.ConsoleBase.Themes
         /// Generates a new theme info from KS resources
         /// </summary>
         public ThemeInfo() :
-            this(JToken.Parse(ResourcesManager.GetData("Default.json", ResourcesType.Themes)))
+            this(JToken.Parse(ResourcesManager.GetData("Default.json", ResourcesType.Themes) ??
+                throw new KernelException(KernelExceptionType.ThemeManagement, Translate.DoTranslation("Failed to populate default theme"))))
         { }
 
         /// <summary>
@@ -177,8 +180,10 @@ namespace Nitrocid.ConsoleBase.Themes
         internal ThemeInfo(JToken ThemeResourceJson)
         {
             // Parse the metadata
-            var metadataObj = ThemeResourceJson["Metadata"];
-            metadata = JsonConvert.DeserializeObject<ThemeMetadata>(metadataObj.ToString());
+            var metadataObj = ThemeResourceJson["Metadata"] ??
+                throw new KernelException(KernelExceptionType.ThemeManagement, Translate.DoTranslation("There is no theme metadata defined."));
+            metadata = JsonConvert.DeserializeObject<ThemeMetadata>(metadataObj.ToString()) ??
+                throw new KernelException(KernelExceptionType.ThemeManagement, Translate.DoTranslation("Can't deserialize metadata."));
             metadataToken = ThemeResourceJson;
 
             // Populate colors

@@ -33,16 +33,16 @@ namespace Nitrocid.Extras.FtpShell.FTP
         internal static int verifyRetryAttempts = 3;
         internal static int connectTimeout = 15000;
         internal static int dataConnectTimeout = 15000;
-        internal static NetworkConnection clientConnection;
-        internal static string FtpSite;
-        internal static string FtpPass;
-        internal static string FtpUser;
+        internal static NetworkConnection? clientConnection;
+        internal static string FtpSite = "";
+        internal static string FtpPass = "";
+        internal static string FtpUser = "";
         internal readonly static List<CommandInfo> FTPModCommands = [];
 
         /// <summary>
         /// The FTP client used to connect to the FTP server
         /// </summary>
-        public static NetworkConnection ClientFTP =>
+        public static NetworkConnection? ClientFTP =>
             clientConnection;
         /// <summary>
         /// FTP verify retry attempts
@@ -112,11 +112,11 @@ namespace Nitrocid.Extras.FtpShell.FTP
         /// <summary>
         /// FTP current local directory
         /// </summary>
-        public static string FtpCurrentDirectory { get; set; }
+        public static string FtpCurrentDirectory { get; set; } = "";
         /// <summary>
         /// FTP current remote directory
         /// </summary>
-        public static string FtpCurrentRemoteDir { get; set; }
+        public static string FtpCurrentRemoteDir { get; set; } = "";
 
     }
 }

@@ -74,7 +74,7 @@ namespace Nitrocid.Misc.Reflection
         /// Loads assembly from the search paths
         /// </summary>
         /// <returns>If successful, returns the assembly instance. Otherwise, null.</returns>
-        internal static Assembly LoadFromAssemblySearchPaths(object sender, ResolveEventArgs args)
+        internal static Assembly LoadFromAssemblySearchPaths(object? sender, ResolveEventArgs args)
         {
             Assembly FinalAssembly = null;
             string DepAssemblyName = new AssemblyName(args.Name).Name;

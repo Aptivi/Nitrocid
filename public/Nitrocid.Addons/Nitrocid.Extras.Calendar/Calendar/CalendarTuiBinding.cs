@@ -68,10 +68,10 @@ namespace Nitrocid.Extras.Calendar.Calendar
                 throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("This keybinding contains no action."));
         }
 
-        public override bool Equals(object obj) =>
+        public override bool Equals(object? obj) =>
             Equals(obj as CalendarTuiBinding);
 
-        public bool Equals(CalendarTuiBinding other) =>
+        public bool Equals(CalendarTuiBinding? other) =>
             other is not null &&
             Key == other.Key &&
             KeyModifiers == other.KeyModifiers;

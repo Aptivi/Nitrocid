@@ -203,7 +203,7 @@ namespace Nitrocid.Drivers.Filesystem.Bases
             return result;
         }
 
-        public override bool FileExistsInPath(string FilePath, ref string Result)
+        public override bool FileExistsInPath(string FilePath, ref string? Result)
         {
             DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(FileExistsInPath)}({FilePath}, {Result ?? ""}) entry");
             var result = base.FileExistsInPath(FilePath, ref Result);
@@ -219,7 +219,7 @@ namespace Nitrocid.Drivers.Filesystem.Bases
             return result;
         }
 
-        public override long GetAllSizesInFolder(DirectoryInfo DirectoryInfo)
+        public override long GetAllSizesInFolder(DirectoryInfo? DirectoryInfo)
         {
             DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(GetAllSizesInFolder)}({nameof(DirectoryInfo)}) entry");
             var result = base.GetAllSizesInFolder(DirectoryInfo);
@@ -227,7 +227,7 @@ namespace Nitrocid.Drivers.Filesystem.Bases
             return result;
         }
 
-        public override long GetAllSizesInFolder(DirectoryInfo DirectoryInfo, bool FullParseMode)
+        public override long GetAllSizesInFolder(DirectoryInfo? DirectoryInfo, bool FullParseMode)
         {
             DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(GetAllSizesInFolder)}({nameof(DirectoryInfo)}, {FullParseMode}) entry");
             var result = base.GetAllSizesInFolder(DirectoryInfo, FullParseMode);
@@ -243,7 +243,7 @@ namespace Nitrocid.Drivers.Filesystem.Bases
             return result;
         }
 
-        public override string[] GetFilesystemEntries(string Parent, string Pattern, bool Recursive = false)
+        public override string[] GetFilesystemEntries(string? Parent, string Pattern, bool Recursive = false)
         {
             DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(GetFilesystemEntries)}({Parent}, {Pattern}, {Recursive}) entry");
             var result = base.GetFilesystemEntries(Parent, Pattern, Recursive);
@@ -275,7 +275,7 @@ namespace Nitrocid.Drivers.Filesystem.Bases
             return result;
         }
 
-        public override string GetNumberedFileName(string path, string fileName)
+        public override string GetNumberedFileName(string? path, string fileName)
         {
             DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(GetNumberedFileName)}({path}, {fileName}) entry");
             var result = base.GetNumberedFileName(path, fileName);

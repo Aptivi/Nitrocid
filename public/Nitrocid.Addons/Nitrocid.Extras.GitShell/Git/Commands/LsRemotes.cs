@@ -34,6 +34,8 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
+            if (GitShellCommon.Repository is null)
+                return 43;
             var remotes = GitShellCommon.Repository.Network.Remotes;
             foreach (var remote in remotes)
             {

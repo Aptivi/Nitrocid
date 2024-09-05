@@ -43,7 +43,7 @@ namespace Nitrocid.Kernel.Debugging
 
         internal static string DebugPath = "";
         internal static string lastRoutinePath = "";
-        internal static StreamWriter DebugStreamWriter;
+        internal static StreamWriter? DebugStreamWriter;
         internal static bool isDisposed;
         internal static object WriteLock = new();
         internal static int debugLines = 0;
@@ -62,12 +62,14 @@ namespace Nitrocid.Kernel.Debugging
         /// <param name="text">A sentence that will be written to the the debugger file. Supports {0}, {1}, ...</param>
         /// <param name="SecureVarIndexes">Secure variable indexes to modify <paramref name="vars"/> to censor them when <see cref="Config.MainConfig"/>.DebugCensorPrivateInfo is on</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteDebugPrivacy(DebugLevel Level, string text, int[] SecureVarIndexes, params object[] vars)
+        public static void WriteDebugPrivacy(DebugLevel Level, string text, int[] SecureVarIndexes, params object?[]? vars)
         {
             // First, iterate through all the provided secure indexes to convert these to censored strings
             foreach (int SecureVarIndex in SecureVarIndexes)
             {
                 // Check the index value
+                if (vars is null)
+                    continue;
                 if (SecureVarIndex < 0)
                     continue;
                 if (SecureVarIndex >= vars.Length)
@@ -88,7 +90,7 @@ namespace Nitrocid.Kernel.Debugging
         /// <param name="Level">Debug level</param>
         /// <param name="text">A sentence that will be written to the the debugger file. Supports {0}, {1}, ...</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteDebug(DebugLevel Level, string text, params object[] vars)
+        public static void WriteDebug(DebugLevel Level, string text, params object?[]? vars)
         {
             lock (WriteLock)
             {
@@ -106,7 +108,7 @@ namespace Nitrocid.Kernel.Debugging
         /// <param name="Level">Debug level</param>
         /// <param name="text">A sentence that will be written to the the debugger file. Supports {0}, {1}, ...</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteDebugLogOnly(DebugLevel Level, string text, params object[] vars)
+        public static void WriteDebugLogOnly(DebugLevel Level, string text, params object?[]? vars)
         {
             lock (WriteLock)
             {
@@ -191,7 +193,10 @@ namespace Nitrocid.Kernel.Debugging
                         // it to have consistent line endings across platforms, like if you try to print the output of a text
                         // file that only has \n at the end of each line, we would inadvertently place the \r\n in each debug
                         // line, causing the file to have mixed line endings.
-                        string result = vars.Length > 0 ? message.ToString().FormatString(vars) : message.ToString();
+                        string result =
+                            vars is not null && vars.Length > 0 ?
+                            message.ToString().FormatString(vars) :
+                            message.ToString();
                         DriverHandler.CurrentDebugLoggerDriverLocal.Write(result);
 #if VSDEBUG
                         Debug.Write(result);
@@ -217,7 +222,7 @@ namespace Nitrocid.Kernel.Debugging
         /// <param name="Level">Debug level</param>
         /// <param name="text">A sentence that will be written to the the debugger file. Supports {0}, {1}, ...</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteDebugConditional(bool Condition, DebugLevel Level, string text, params object[] vars)
+        public static void WriteDebugConditional(bool Condition, DebugLevel Level, string text, params object?[]? vars)
         {
             lock (WriteLock)
             {
@@ -233,7 +238,7 @@ namespace Nitrocid.Kernel.Debugging
         /// <param name="text">A sentence that will be written to the the debugger devices. Supports {0}, {1}, ...</param>
         /// <param name="force">Force message to appear, regardless of mute settings</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteDebugDevicesOnly(DebugLevel Level, string text, bool force, params object[] vars)
+        public static void WriteDebugDevicesOnly(DebugLevel Level, string text, bool force, params object?[]? vars)
         {
             lock (WriteLock)
             {
@@ -258,7 +263,7 @@ namespace Nitrocid.Kernel.Debugging
         /// <param name="device">Device to contact</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         /// <returns>True if successfully sent. False otherwise. Also true if the kernel runs on non-debug mode.</returns>
-        public static bool WriteDebugDeviceOnly(DebugLevel Level, string text, bool force, RemoteDebugDevice device, params object[] vars)
+        public static bool WriteDebugDeviceOnly(DebugLevel Level, string text, bool force, RemoteDebugDevice device, params object?[]? vars)
         {
             lock (WriteLock)
             {
@@ -275,7 +280,12 @@ namespace Nitrocid.Kernel.Debugging
                         foreach (string textStr in texts)
                         {
                             if (force || !force && !device.DeviceInfo.MuteLogs)
-                                device.ClientStreamWriter.Write($"{TimeDateTools.KernelDateTime.ToShortDateString()} {TimeDateTools.KernelDateTime.ToShortTimeString()} [{Level}] {textStr}\r\n", vars);
+                            {
+                                if (vars is null)
+                                    device.ClientStreamWriter.Write($"{TimeDateTools.KernelDateTime.ToShortDateString()} {TimeDateTools.KernelDateTime.ToShortTimeString()} [{Level}] {textStr}\r\n");
+                                else
+                                    device.ClientStreamWriter.Write($"{TimeDateTools.KernelDateTime.ToShortDateString()} {TimeDateTools.KernelDateTime.ToShortTimeString()} [{Level}] {textStr}\r\n", vars);
+                            }
                         }
                     }
                     catch (Exception ex)
@@ -295,7 +305,7 @@ namespace Nitrocid.Kernel.Debugging
         /// <param name="text">A sentence that will be written to the the debugger devices. Supports {0}, {1}, ...</param>
         /// <param name="force">Force message to appear, regardless of mute settings</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteDebugChatsOnly(DebugLevel Level, string text, bool force, params object[] vars)
+        public static void WriteDebugChatsOnly(DebugLevel Level, string text, bool force, params object?[]? vars)
         {
             lock (WriteLock)
             {

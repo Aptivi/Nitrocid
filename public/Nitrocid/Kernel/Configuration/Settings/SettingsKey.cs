@@ -34,21 +34,21 @@ namespace Nitrocid.Kernel.Configuration.Settings
     {
         // General
         [JsonProperty(nameof(Name))]
-        internal string name;
+        internal string name = "";
         [JsonProperty(nameof(Type))]
-        internal string type;
+        internal string type = "";
         [JsonProperty(nameof(Variable))]
-        internal string variable;
+        internal string variable = "";
         [JsonProperty(nameof(Description))]
-        internal string description;
+        internal string description = "";
 
         // Selection
         [JsonProperty(nameof(SelectionFunctionName))]
-        internal string selectionFunctionName;
+        internal string selectionFunctionName = "";
         [JsonProperty(nameof(SelectionFunctionType))]
-        internal string selectionFunctionType;
+        internal string selectionFunctionType = "";
         [JsonProperty(nameof(SelectionFallback))]
-        internal string[] selectionFallback;
+        internal string[]? selectionFallback;
         [JsonProperty(nameof(IsSelectionFunctionDict))]
         internal bool isSelectionFunctionDict;
 
@@ -58,9 +58,9 @@ namespace Nitrocid.Kernel.Configuration.Settings
         [JsonProperty(nameof(EnumerationInternal))]
         internal bool enumerationInternal;
         [JsonProperty(nameof(Enumeration))]
-        internal string enumeration;
+        internal string enumeration = "";
         [JsonProperty(nameof(EnumerationAssembly))]
-        internal string enumerationAssembly;
+        internal string enumerationAssembly = "";
         [JsonProperty(nameof(EnumerationZeroBased))]
         internal bool enumerationZeroBased;
         [JsonProperty(nameof(EnumerableIndex))]
@@ -72,13 +72,13 @@ namespace Nitrocid.Kernel.Configuration.Settings
         [JsonProperty(nameof(IsPathCurrentPath))]
         internal bool isPathCurrentPath;
         [JsonProperty(nameof(ValuePathType))]
-        internal string valuePathType;
+        internal string valuePathType = "";
 
         // List
         [JsonProperty(nameof(DelimiterVariable))]
-        internal string delimiterVariable;
+        internal string delimiterVariable = "";
         [JsonProperty(nameof(Delimiter))]
-        internal string delimiter;
+        internal string delimiter = "";
 
         // Int slider
         [JsonProperty(nameof(MinimumValue))]
@@ -88,15 +88,15 @@ namespace Nitrocid.Kernel.Configuration.Settings
 
         // Misc
         [JsonProperty(nameof(UnsupportedPlatforms))]
-        internal string[] unsupportedPlatforms;
+        internal string[]? unsupportedPlatforms;
         [JsonProperty(nameof(ShellType))]
-        internal string shellType;
+        internal string shellType = "";
         [JsonProperty(nameof(Tip))]
-        internal string tip;
+        internal string tip = "";
 
         // Internal
         [JsonIgnore]
-        internal ISettingsKeyInput keyInput;
+        internal ISettingsKeyInput? keyInput;
 
         /// <summary>
         /// Settings key name

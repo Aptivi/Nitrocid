@@ -38,7 +38,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         private string Direction = "BottomRight";
         private int RowText, ColumnFirstLetter, ColumnLastLetter;
         private int lastLeft, lastTop;
-        private Color BouncingColor;
+        private Color? BouncingColor;
 
         /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "BouncingText";

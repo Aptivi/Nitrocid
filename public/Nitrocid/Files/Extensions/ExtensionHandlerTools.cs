@@ -144,10 +144,10 @@ namespace Nitrocid.Files.Extensions
         /// </summary>
         /// <param name="extension">Extension to check</param>
         /// <returns>An instance of <see cref="ExtensionHandler"/> containing info about the extension, or null if there is no handler.</returns>
-        public static ExtensionHandler GetExtensionHandler(string extension)
+        public static ExtensionHandler? GetExtensionHandler(string extension)
         {
             // Check to see if we have the extension in the default handlers list
-            if (!defaultHandlers.TryGetValue(extension, out string defHandlerName))
+            if (!defaultHandlers.TryGetValue(extension, out string? defHandlerName))
             {
                 if (IsHandlerRegistered(extension))
                 {
@@ -171,7 +171,7 @@ namespace Nitrocid.Files.Extensions
         /// <param name="extension">Extension to check</param>
         /// <param name="implementer">Implementer to check</param>
         /// <returns>An instance of <see cref="ExtensionHandler"/> containing info about the extension, or null if there is no handler.</returns>
-        public static ExtensionHandler GetExtensionHandler(string extension, string implementer)
+        public static ExtensionHandler? GetExtensionHandler(string extension, string implementer)
         {
             // If nothing is registered, indicate that it isn't registered
             if (!IsHandlerRegisteredSpecific(extension, implementer))
@@ -190,7 +190,7 @@ namespace Nitrocid.Files.Extensions
         /// </summary>
         /// <param name="extension">Extension to check</param>
         /// <returns>An instance of <see cref="ExtensionHandler"/> containing info about the extension, or null if there is no handler.</returns>
-        public static ExtensionHandler GetFirstExtensionHandler(string extension)
+        public static ExtensionHandler? GetFirstExtensionHandler(string extension)
         {
             // If nothing is registered, indicate that it isn't registered
             if (!IsHandlerRegistered(extension))
@@ -295,11 +295,13 @@ namespace Nitrocid.Files.Extensions
         /// </summary>
         /// <param name="extension">Extension to unregister</param>
         /// <param name="handler">Handler to look for when removing</param>
-        public static void UnregisterHandler(string extension, ExtensionHandler handler)
+        public static void UnregisterHandler(string extension, ExtensionHandler? handler)
         {
             // Don't register if the handler is not registered
             if (!IsHandlerRegistered(extension))
                 throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Handler for extension is not registered.") + $" {extension}");
+            if (handler is null)
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Handler for extension is not specified.") + $" {extension}");
 
             // Extensions must start with a dot
             if (!extension.StartsWith("."))
@@ -314,7 +316,8 @@ namespace Nitrocid.Files.Extensions
                 // There are two cases: one in which we still have at least one implementer, and one in which we don't have any more
                 // implementers.
                 if (IsHandlerRegistered(extension))
-                    defaultHandlers[extension] = GetFirstExtensionHandler(extension).Implementer;
+                    defaultHandlers[extension] = GetFirstExtensionHandler(extension)?.Implementer ??
+                        throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Failed to obtain default handler"));
                 else
                     defaultHandlers.Remove(extension);
             }
@@ -363,7 +366,8 @@ namespace Nitrocid.Files.Extensions
             if (!Checking.FileExists(PathsManagement.ExtensionHandlersPath))
                 SaveAllHandlers();
             string contents = Reading.ReadContentsText(PathsManagement.ExtensionHandlersPath);
-            defaultHandlers = JsonConvert.DeserializeObject<Dictionary<string, string>>(contents);
+            defaultHandlers = JsonConvert.DeserializeObject<Dictionary<string, string>>(contents) ??
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Loading default handlers failed."));
         }
     }
 }

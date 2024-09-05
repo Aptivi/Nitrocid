@@ -49,6 +49,8 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
                 end = int.Parse(parameters.ArgumentsList[2]);
 
             // Get the list of blame hunks
+            if (GitShellCommon.Repository is null)
+                return 43;
             int hunkNum = 1;
             var blameHunks = GitShellCommon.Repository.Blame(file, new BlameOptions()
             {

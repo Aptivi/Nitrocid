@@ -160,8 +160,12 @@ namespace Nitrocid.Languages
                 this.cultureCode = cultureCode;
 
                 // Get instance of language resource
-                string[] LanguageResource = JsonConvert.DeserializeObject<LanguageLocalizations>(localizationTokenValue).Localizations;
-                string[] LanguageResourceEnglish = JsonConvert.DeserializeObject<LanguageLocalizations>(ResourcesManager.GetData("eng.json", ResourcesType.Languages)).Localizations;
+                var localizations = JsonConvert.DeserializeObject<LanguageLocalizations>(localizationTokenValue) ??
+                    throw new KernelException(KernelExceptionType.LanguageManagement, Translate.DoTranslation("Can't get localized text"));
+                string[] LanguageResource = localizations.Localizations;
+                var englishLocalizations = JsonConvert.DeserializeObject<LanguageLocalizations>(ResourcesManager.GetData("eng.json", ResourcesType.Languages)) ??
+                    throw new KernelException(KernelExceptionType.LanguageManagement, Translate.DoTranslation("Can't get English text"));
+                string[] LanguageResourceEnglish = englishLocalizations.Localizations;
                 custom = false;
 
                 // Populate language strings
@@ -194,7 +198,7 @@ namespace Nitrocid.Languages
         /// <param name="LanguageToken">The language token containing localization information</param>
         /// <param name="cultureCode">Culture code to use. If blank, the language manager will find the appropriate culture.</param>
         /// <param name="country">The country</param>
-        public LanguageInfo(string LangName, string FullLanguageName, bool Transliterable, string[] LanguageToken, string cultureCode = "", string country = "")
+        public LanguageInfo(string LangName, string FullLanguageName, bool Transliterable, string[]? LanguageToken, string cultureCode = "", string country = "")
         {
             // Install values to the object instance
             threeLetterLanguageName = LangName;
@@ -223,7 +227,11 @@ namespace Nitrocid.Languages
             this.cultureCode = cultureCode;
 
             // Install it
-            string[] LanguageResourceEnglish = JsonConvert.DeserializeObject<LanguageLocalizations>(ResourcesManager.GetData("eng.json", ResourcesType.Languages)).Localizations;
+            var englishLocalizations = JsonConvert.DeserializeObject<LanguageLocalizations>(ResourcesManager.GetData("eng.json", ResourcesType.Languages)) ??
+                throw new KernelException(KernelExceptionType.LanguageManagement, Translate.DoTranslation("Can't get English text"));
+            if (LanguageToken is null)
+                throw new KernelException(KernelExceptionType.LanguageManagement, Translate.DoTranslation("Language token must be specified"));
+            string[] LanguageResourceEnglish = englishLocalizations.Localizations;
             custom = true;
             DebugWriter.WriteDebug(DebugLevel.I, "{0} should be {1} from English strings list.", LanguageToken.Length, LanguageResourceEnglish.Length);
             if (LanguageToken.Length == LanguageResourceEnglish.Length)

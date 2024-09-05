@@ -35,6 +35,8 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
         public bool Analyze(Document document)
         {
             var tree = document.GetSyntaxTreeAsync().Result;
+            if (tree is null)
+                return false;
             var syntaxNodeNodes = tree.GetRoot().DescendantNodesAndSelf().OfType<SyntaxNode>().ToList();
             bool found = false;
             foreach (var syntaxNode in syntaxNodeNodes)
@@ -74,6 +76,8 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
         public async Task SuggestAsync(Document document, CancellationToken cancellationToken = default)
         {
             var tree = document.GetSyntaxTreeAsync(cancellationToken).Result;
+            if (tree is null)
+                return;
             var syntaxNodeNodes = tree.GetRoot(cancellationToken).DescendantNodesAndSelf().OfType<SyntaxNode>().ToList();
             foreach (var syntaxNode in syntaxNodeNodes)
             {
@@ -84,7 +88,9 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                 var classSyntax = SyntaxFactory.IdentifierName("CultureManager");
                 var methodSyntax = SyntaxFactory.IdentifierName("UpdateCulture");
                 var maeSyntax = SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, classSyntax, methodSyntax);
-                var parentSyntax = (AssignmentExpressionSyntax)exp.Parent;
+                var parentSyntax = (AssignmentExpressionSyntax?)exp.Parent;
+                if (parentSyntax is null)
+                    return;
                 var invocationSyntax = (InvocationExpressionSyntax)parentSyntax.Right;
                 var argumentListSyntax = invocationSyntax.ArgumentList.Arguments;
                 if (argumentListSyntax.Count != 1)
@@ -101,14 +107,14 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
 
                 // Actually replace
                 var node = await document.GetSyntaxRootAsync(cancellationToken);
-                var finalNode = node.ReplaceNode(parentSyntax, replacedSyntax);
+                var finalNode = node?.ReplaceNode(parentSyntax, replacedSyntax);
                 TextWriterColor.Write("Here's what the replacement would look like (with no Roslyn trivia):", true, ConsoleColors.Yellow);
                 TextWriterColor.Write($"  - {exp}", true, ConsoleColors.Red);
                 TextWriterColor.Write($"  + {replacedSyntax.ToFullString()}", true, ConsoleColors.Green);
 
                 // Check the imports
                 var compilation = finalNode as CompilationUnitSyntax;
-                if (compilation?.Usings.Any(u => u.Name.ToString() == $"{AnalysisTools.rootNameSpace}.Languages") == false)
+                if (compilation?.Usings.Any(u => u.Name?.ToString() == $"{AnalysisTools.rootNameSpace}.Languages") == false)
                 {
                     var name = SyntaxFactory.QualifiedName(
                         SyntaxFactory.IdentifierName(AnalysisTools.rootNameSpace),

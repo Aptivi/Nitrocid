@@ -58,13 +58,16 @@ namespace Nitrocid.Extras.FtpShell.Tools.Transfer
         {
             try
             {
+                var client = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance ??
+                    throw new KernelException(KernelExceptionType.FTPNetwork, Translate.DoTranslation("Connection is not established yet."));
+
                 // Show a message to download
                 EventsManager.FireEvent(EventType.FTPPreDownload, File);
                 DebugWriter.WriteDebug(DebugLevel.I, "Downloading file {0}...", File);
 
                 // Try to download 3 times
                 string LocalFilePath = FilesystemTools.NeutralizePath(LocalFile, FTPShellCommon.FtpCurrentDirectory);
-                var Result = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DownloadFile(LocalFilePath, File, FtpLocalExists.Resume, (FtpVerify)((int)FtpVerify.Retry + (int)FtpVerify.Throw), FTPTransferProgress.FileProgress);
+                var Result = client.DownloadFile(LocalFilePath, File, FtpLocalExists.Resume, (FtpVerify)((int)FtpVerify.Retry + (int)FtpVerify.Throw), FTPTransferProgress.FileProgress);
 
                 // Show a message that it's downloaded
                 DebugWriter.WriteDebug(DebugLevel.I, "Downloaded file {0}.", File);
@@ -97,13 +100,16 @@ namespace Nitrocid.Extras.FtpShell.Tools.Transfer
         {
             try
             {
+                var client = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance ??
+                    throw new KernelException(KernelExceptionType.FTPNetwork, Translate.DoTranslation("Connection is not established yet."));
+
                 // Show a message to download
                 EventsManager.FireEvent(EventType.FTPPreDownload, Folder);
                 DebugWriter.WriteDebug(DebugLevel.I, "Downloading folder {0}...", Folder);
 
                 // Try to download folder
                 string LocalFolderPath = FilesystemTools.NeutralizePath(LocalFolder, FTPShellCommon.FtpCurrentDirectory);
-                var Results = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DownloadDirectory(LocalFolderPath, Folder, FtpFolderSyncMode.Update, FtpLocalExists.Resume, (FtpVerify)((int)FtpVerify.Retry + (int)FtpVerify.Throw), null, FTPTransferProgress.MultipleProgress);
+                var Results = client.DownloadDirectory(LocalFolderPath, Folder, FtpFolderSyncMode.Update, FtpLocalExists.Resume, (FtpVerify)((int)FtpVerify.Retry + (int)FtpVerify.Throw), null, FTPTransferProgress.MultipleProgress);
 
                 // Print download results to debugger
                 var Failed = false;
@@ -167,6 +173,9 @@ namespace Nitrocid.Extras.FtpShell.Tools.Transfer
         /// <returns>True if successful; False if unsuccessful</returns>
         public static bool FTPUploadFile(string File, string LocalFile)
         {
+            var client = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance ??
+                throw new KernelException(KernelExceptionType.FTPNetwork, Translate.DoTranslation("Connection is not established yet."));
+
             // Show a message to download
             EventsManager.FireEvent(EventType.FTPPreUpload, File);
             DebugWriter.WriteDebug(DebugLevel.I, "Uploading file {0}...", LocalFile);
@@ -174,7 +183,7 @@ namespace Nitrocid.Extras.FtpShell.Tools.Transfer
 
             // Try to upload
             string LocalFilePath = FilesystemTools.NeutralizePath(LocalFile, FTPShellCommon.FtpCurrentDirectory);
-            bool Success = Convert.ToBoolean(((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).UploadFile(LocalFilePath, File, FtpRemoteExists.Resume, true, FtpVerify.Retry, FTPTransferProgress.FileProgress));
+            bool Success = Convert.ToBoolean(client.UploadFile(LocalFilePath, File, FtpRemoteExists.Resume, true, FtpVerify.Retry, FTPTransferProgress.FileProgress));
             DebugWriter.WriteDebug(DebugLevel.I, "Uploaded file {0} to {1} with status {2}.", LocalFile, File, Success);
             EventsManager.FireEvent(EventType.FTPPostUpload, File, Success);
             return Success;
@@ -195,13 +204,16 @@ namespace Nitrocid.Extras.FtpShell.Tools.Transfer
         /// <returns>True if successful; False if unsuccessful</returns>
         public static bool FTPUploadFolder(string Folder, string LocalFolder)
         {
+            var client = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance ??
+                throw new KernelException(KernelExceptionType.FTPNetwork, Translate.DoTranslation("Connection is not established yet."));
+
             // Show a message to download
             EventsManager.FireEvent(EventType.FTPPreUpload, Folder);
             DebugWriter.WriteDebug(DebugLevel.I, "Uploading folder {0}...", Folder);
 
             // Try to upload
             string LocalFolderPath = FilesystemTools.NeutralizePath(LocalFolder, FTPShellCommon.FtpCurrentDirectory);
-            var Results = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).UploadDirectory(LocalFolderPath, Folder, FtpFolderSyncMode.Update, FtpRemoteExists.Resume, FtpVerify.Retry, null, FTPTransferProgress.MultipleProgress);
+            var Results = client.UploadDirectory(LocalFolderPath, Folder, FtpFolderSyncMode.Update, FtpRemoteExists.Resume, FtpVerify.Retry, null, FTPTransferProgress.MultipleProgress);
 
             // Print upload results to debugger
             var Failed = false;
@@ -251,6 +263,9 @@ namespace Nitrocid.Extras.FtpShell.Tools.Transfer
         {
             try
             {
+                var client = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance ??
+                    throw new KernelException(KernelExceptionType.FTPNetwork, Translate.DoTranslation("Connection is not established yet."));
+
                 // Show a message to download
                 EventsManager.FireEvent(EventType.FTPPreDownload, File);
                 DebugWriter.WriteDebug(DebugLevel.I, "Downloading {0}...", File);
@@ -258,7 +273,7 @@ namespace Nitrocid.Extras.FtpShell.Tools.Transfer
                 // Try to download 3 times
                 var DownloadedBytes = Array.Empty<byte>();
                 var DownloadedContent = new StringBuilder();
-                bool Downloaded = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DownloadBytes(out DownloadedBytes, File);
+                bool Downloaded = client.DownloadBytes(out DownloadedBytes, File);
                 foreach (byte DownloadedByte in DownloadedBytes)
                     DownloadedContent.Append(Convert.ToChar(DownloadedByte));
 

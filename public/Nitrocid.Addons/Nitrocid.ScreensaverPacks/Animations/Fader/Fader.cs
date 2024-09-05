@@ -38,8 +38,9 @@ namespace Nitrocid.ScreensaverPacks.Animations.Fader
         /// <summary>
         /// Simulates the fading animation
         /// </summary>
-        public static void Simulate(FaderSettings Settings)
+        public static void Simulate(FaderSettings? Settings)
         {
+            Settings ??= new();
             int RedColorNum = RandomDriver.Random(Settings.FaderMinimumRedColorLevel, Settings.FaderMaximumRedColorLevel);
             int GreenColorNum = RandomDriver.Random(Settings.FaderMinimumGreenColorLevel, Settings.FaderMaximumGreenColorLevel);
             int BlueColorNum = RandomDriver.Random(Settings.FaderMinimumBlueColorLevel, Settings.FaderMaximumBlueColorLevel);

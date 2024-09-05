@@ -40,8 +40,9 @@ namespace Nitrocid.ScreensaverPacks.Animations.ExcaliBeats
         /// <summary>
         /// Simulates the ExcaliBeats animation
         /// </summary>
-        public static void Simulate(ExcaliBeatsSettings Settings)
+        public static void Simulate(ExcaliBeatsSettings? Settings)
         {
+            Settings ??= new();
             ConsoleWrapper.CursorVisible = false;
 
             // Trance mode isn't supported on Windows since the minimum limit for sleeping is 16ms.

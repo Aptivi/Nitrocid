@@ -36,6 +36,8 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
+            if (GitShellCommon.Repository is null)
+                return 43;
             var commits = GitShellCommon.Repository.Commits;
             TextWriterColor.Write(Translate.DoTranslation("Commits for branch") + $" {GitShellCommon.BranchName}:");
             foreach (var commit in commits)

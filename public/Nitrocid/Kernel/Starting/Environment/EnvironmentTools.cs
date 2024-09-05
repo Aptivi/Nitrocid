@@ -38,7 +38,7 @@ namespace Nitrocid.Kernel.Starting.Environment
         /// Sets the environment
         /// </summary>
         /// <param name="baseEnvironment">Base environment instance</param>
-        public static void SetEnvironment(BaseEnvironment baseEnvironment)
+        public static void SetEnvironment(BaseEnvironment? baseEnvironment)
         {
             if (baseEnvironment is null)
                 throw new KernelException(KernelExceptionType.Environment, Translate.DoTranslation("Environment is not specified"));

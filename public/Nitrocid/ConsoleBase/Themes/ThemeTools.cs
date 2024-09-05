@@ -42,9 +42,9 @@ namespace Nitrocid.ConsoleBase.Themes
 
         internal readonly static Dictionary<string, ThemeInfo> themes = new()
         {
-            { "Default", new ThemeInfo(JToken.Parse(ResourcesManager.GetData("Default.json", ResourcesType.Themes))) },
-            { "Dynamic", new ThemeInfo(JToken.Parse(ResourcesManager.GetData("Dynamic.json", ResourcesType.Themes))) },
-            { "NitricAcid", new ThemeInfo(JToken.Parse(ResourcesManager.GetData("NitricAcid.json", ResourcesType.Themes))) },
+            { "Default", new ThemeInfo(JToken.Parse(ResourcesManager.GetData("Default.json", ResourcesType.Themes) ?? "[]")) },
+            { "Dynamic", new ThemeInfo(JToken.Parse(ResourcesManager.GetData("Dynamic.json", ResourcesType.Themes) ?? "[]")) },
+            { "NitricAcid", new ThemeInfo(JToken.Parse(ResourcesManager.GetData("NitricAcid.json", ResourcesType.Themes) ?? "[]")) },
         };
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Nitrocid.ConsoleBase.Themes
         public static ThemeInfo GetThemeInfo(string theme, bool throwNotFound = false)
         {
             var themes = GetInstalledThemes();
-            if (themes.TryGetValue(theme, out ThemeInfo resultingTheme))
+            if (themes.TryGetValue(theme, out ThemeInfo? resultingTheme))
                 return resultingTheme;
             if (throwNotFound)
                 throw new KernelException(KernelExceptionType.NoSuchTheme, Translate.DoTranslation("Invalid color template {0}"), theme);

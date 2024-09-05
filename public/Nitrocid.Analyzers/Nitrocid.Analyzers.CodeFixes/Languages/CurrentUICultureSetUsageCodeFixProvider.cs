@@ -48,7 +48,9 @@ namespace Nitrocid.Analyzers.Languages
             var diagnosticSpan = diagnostic.Location.SourceSpan;
 
             // Find the type declaration identified by the diagnostic.
-            var declaration = root.FindToken(diagnosticSpan.Start).Parent.AncestorsAndSelf().OfType<MemberAccessExpressionSyntax>().First();
+            var declaration = root?.FindToken(diagnosticSpan.Start).Parent?.AncestorsAndSelf().OfType<MemberAccessExpressionSyntax>().First();
+            if (declaration is null)
+                return;
 
             // Register a code action that will invoke the fix.
             context.RegisterCodeFix(
@@ -67,7 +69,9 @@ namespace Nitrocid.Analyzers.Languages
                 var classSyntax = SyntaxFactory.IdentifierName("CultureManager");
                 var methodSyntax = SyntaxFactory.IdentifierName("UpdateCulture");
                 var maeSyntax = SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, classSyntax, methodSyntax);
-                var parentSyntax = (AssignmentExpressionSyntax)typeDecl.Parent;
+                var parentSyntax = (AssignmentExpressionSyntax?)typeDecl.Parent;
+                if (parentSyntax is null)
+                    return document.Project.Solution;
                 var invocationSyntax = (InvocationExpressionSyntax)parentSyntax.Right;
                 var argumentListSyntax = invocationSyntax.ArgumentList.Arguments;
                 if (argumentListSyntax.Count != 1)
@@ -81,11 +85,12 @@ namespace Nitrocid.Analyzers.Languages
 
                 // Actually replace
                 var node = await document.GetSyntaxRootAsync(cancellationToken);
-                var finalNode = node.ReplaceNode(parentSyntax, resultSyntax);
+                var finalNode = node?.ReplaceNode(parentSyntax, resultSyntax);
 
                 // Check the imports
-                var compilation = finalNode as CompilationUnitSyntax;
-                if (compilation?.Usings.Any(u => u.Name.ToString() == $"{AnalysisTools.rootNameSpace}.Languages") == false)
+                if (finalNode is not CompilationUnitSyntax compilation)
+                    return document.Project.Solution;
+                if (compilation.Usings.Any(u => u.Name?.ToString() == $"{AnalysisTools.rootNameSpace}.Languages") == false)
                 {
                     var name = SyntaxFactory.QualifiedName(
                         SyntaxFactory.IdentifierName(AnalysisTools.rootNameSpace),

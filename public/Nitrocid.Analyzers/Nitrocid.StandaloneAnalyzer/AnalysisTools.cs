@@ -22,6 +22,6 @@ namespace Nitrocid.StandaloneAnalyzer
     internal static class AnalysisTools
     {
         internal static readonly string rootNameSpace =
-            typeof(AnalysisTools).Namespace.Split('.')[0];
+            typeof(AnalysisTools).Namespace?.Split('.')[0] ?? "";
     }
 }

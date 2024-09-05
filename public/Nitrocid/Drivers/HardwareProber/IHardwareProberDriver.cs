@@ -48,13 +48,13 @@ namespace Nitrocid.Drivers.HardwareProber
         /// Probes the graphics adapter
         /// </summary>
         /// <returns>An object representing the graphics adapter collection object</returns>
-        IEnumerable ProbeGraphics();
+        IEnumerable? ProbeGraphics();
 
         /// <summary>
         /// Probes the hard drives
         /// </summary>
         /// <returns>An object representing the hard drive collection object</returns>
-        IEnumerable ProbeHardDrive();
+        IEnumerable? ProbeHardDrive();
 
         /// <summary>
         /// Lists all the probed hardware. Please note that this overload probes all the hardware
@@ -68,7 +68,7 @@ namespace Nitrocid.Drivers.HardwareProber
         /// <param name="memory">List of memory returned from the same driver</param>
         /// <param name="graphics">List of graphics adapters returned from the same driver</param>
         /// <param name="hardDrives">List of hard drives returned from the same driver</param>
-        void ListHardware(IEnumerable processors, IEnumerable memory, IEnumerable graphics, IEnumerable hardDrives);
+        void ListHardware(IEnumerable? processors, IEnumerable? memory, IEnumerable? graphics, IEnumerable? hardDrives);
 
         /// <summary>
         /// Lists information about hardware

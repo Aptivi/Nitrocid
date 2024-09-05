@@ -72,7 +72,7 @@ namespace Nitrocid.Extras.FtpShell.Tools
         /// <param name="Address">A host address</param>
         /// <param name="Port">A port for the address</param>
         /// <param name="EncryptionMode">FTP encryption mode</param>
-        public static NetworkConnection PromptForPassword(FtpClient clientFTP, string user, string Address = "", int Port = 0, FtpEncryptionMode EncryptionMode = FtpEncryptionMode.Explicit)
+        public static NetworkConnection? PromptForPassword(FtpClient? clientFTP, string user, string Address = "", int Port = 0, FtpEncryptionMode EncryptionMode = FtpEncryptionMode.Explicit)
         {
             // Make a new FTP client object instance (Used in case logging in using speed dial)
             if (clientFTP is null)
@@ -113,7 +113,7 @@ namespace Nitrocid.Extras.FtpShell.Tools
         /// Tries to connect to the FTP server
         /// </summary>
         /// <param name="address">An FTP server. You may specify it like "[address]" or "[address]:[port]"</param>
-        public static NetworkConnection TryToConnect(string address)
+        public static NetworkConnection? TryToConnect(string address)
         {
             try
             {
@@ -181,7 +181,7 @@ namespace Nitrocid.Extras.FtpShell.Tools
         /// <summary>
         /// Tries to connect to the FTP server.
         /// </summary>
-        private static NetworkConnection ConnectFTP(FtpClient clientFTP)
+        private static NetworkConnection? ConnectFTP(FtpClient clientFTP)
         {
             // Prepare profiles
             TextWriterColor.Write(Translate.DoTranslation("Preparing profiles... It could take several minutes..."));

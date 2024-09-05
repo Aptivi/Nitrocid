@@ -63,7 +63,7 @@ namespace Nitrocid.Shell.ShellBase.Arguments
         /// <param name="isNumeric">Specifies whether the argument accepts only numbers (and dots for float values)</param>
         /// <param name="exactWording">User is required to provide this exact wording</param>
         /// <param name="argumentDesc">Argument description (unlocalized)</param>
-        public CommandArgumentPart(bool argumentRequired, string argumentExpression, Func<string[], string[]> autoCompleter = null, bool isNumeric = false, string[] exactWording = null, string argumentDesc = "")
+        public CommandArgumentPart(bool argumentRequired, string argumentExpression, Func<string[], string[]>? autoCompleter = null, bool isNumeric = false, string[]? exactWording = null, string argumentDesc = "")
         {
             ArgumentRequired = argumentRequired;
             ArgumentExpression = argumentExpression;

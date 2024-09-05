@@ -55,8 +55,10 @@ namespace Nitrocid.Extras.MailShell.Tools.Transfer
         /// <param name="Decrypt">Whether to decrypt messages or not</param>
         public static void MailPrintMessage(int MessageNum, bool Decrypt = false)
         {
+            var client = (ImapClient)((object[]?)MailShellCommon.Client?.ConnectionInstance ?? [])[0];
             int Message = MessageNum - 1;
-            int MaxMessagesIndex = MailShellCommon.IMAP_Messages.Count() - 1;
+            var messages = MailShellCommon.IMAP_Messages ?? [];
+            int MaxMessagesIndex = messages.Count() - 1;
             DebugWriter.WriteDebug(DebugLevel.I, "Message number {0}", Message);
             if (Message < 0)
             {
@@ -71,19 +73,20 @@ namespace Nitrocid.Extras.MailShell.Tools.Transfer
                 return;
             }
 
-            lock (((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).SyncRoot)
+            lock (client.SyncRoot)
             {
                 // Get message
                 DebugWriter.WriteDebug(DebugLevel.I, "Getting message...");
                 MimeMessage Msg;
+                var finalMessages = MailShellCommon.IMAP_Messages ?? [];
                 if (!string.IsNullOrEmpty(MailShellCommon.IMAP_CurrentDirectory) & !(MailShellCommon.IMAP_CurrentDirectory == "Inbox"))
                 {
                     var Dir = MailDirectory.OpenFolder(MailShellCommon.IMAP_CurrentDirectory);
-                    Msg = Dir.GetMessage(MailShellCommon.IMAP_Messages.ElementAtOrDefault(Message), default, MailShellCommon.Progress);
+                    Msg = Dir.GetMessage(finalMessages.ElementAtOrDefault(Message), default, MailShellCommon.Progress);
                 }
                 else
                 {
-                    Msg = ((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).Inbox.GetMessage(MailShellCommon.IMAP_Messages.ElementAtOrDefault(Message), default, MailShellCommon.Progress);
+                    Msg = client.Inbox.GetMessage(finalMessages.ElementAtOrDefault(Message), default, MailShellCommon.Progress);
                 }
 
                 // Prepare view
@@ -184,16 +187,24 @@ namespace Nitrocid.Extras.MailShell.Tools.Transfer
                     if (Decrypt)
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Parsing attachments...");
+                        if (DecryptedMessage is null)
+                            return;
                         for (int DecryptedEntityNumber = 0; DecryptedEntityNumber <= DecryptedMessage.Count - 1; DecryptedEntityNumber++)
                         {
-                            DebugWriter.WriteDebug(DebugLevel.I, "Is entity number {0} an attachment? {1}", DecryptedEntityNumber, DecryptedMessage.Keys.ElementAtOrDefault(DecryptedEntityNumber).Contains("Attachment"));
-                            DebugWriter.WriteDebug(DebugLevel.I, "Is entity number {0} a body that is a multipart? {1}", DecryptedEntityNumber, DecryptedMessage.Keys.ElementAtOrDefault(DecryptedEntityNumber) == "Body" & DecryptedMessage["Body"] is Multipart);
-                            if (DecryptedMessage.Keys.ElementAtOrDefault(DecryptedEntityNumber).Contains("Attachment"))
+                            var decryptedString = DecryptedMessage.Keys.ElementAtOrDefault(DecryptedEntityNumber);
+                            var decryptedEntity = DecryptedMessage.Values.ElementAtOrDefault(DecryptedEntityNumber);
+                            if (decryptedString is null)
+                                continue;
+                            if (decryptedEntity is null)
+                                continue;
+                            DebugWriter.WriteDebug(DebugLevel.I, "Is entity number {0} an attachment? {1}", DecryptedEntityNumber, decryptedString.Contains("Attachment"));
+                            DebugWriter.WriteDebug(DebugLevel.I, "Is entity number {0} a body that is a multipart? {1}", DecryptedEntityNumber, decryptedString == "Body" & DecryptedMessage["Body"] is Multipart);
+                            if (decryptedString.Contains("Attachment"))
                             {
                                 DebugWriter.WriteDebug(DebugLevel.I, "Adding entity {0} to attachment entities...", DecryptedEntityNumber);
-                                AttachmentEntities.Add(DecryptedMessage.Values.ElementAtOrDefault(DecryptedEntityNumber));
+                                AttachmentEntities.Add(decryptedEntity);
                             }
-                            else if (DecryptedMessage.Keys.ElementAtOrDefault(DecryptedEntityNumber) == "Body" & DecryptedMessage["Body"] is Multipart)
+                            else if (decryptedString == "Body" & DecryptedMessage["Body"] is Multipart)
                             {
                                 Multipart MultiEntity = (Multipart)DecryptedMessage["Body"];
                                 DebugWriter.WriteDebug(DebugLevel.I, $"Decrypted message entity is {(MultiEntity is not null ? "multipart" : "nothing")}");
@@ -245,12 +256,11 @@ namespace Nitrocid.Extras.MailShell.Tools.Transfer
         {
             var EncryptedDict = new Dictionary<string, MimeEntity>();
             DebugWriter.WriteDebug(DebugLevel.I, $"Encrypted message type: {(Text.Body is MultipartEncrypted ? "Multipart" : "Singlepart")}");
-            if (Text.Body is MultipartEncrypted)
+            if (Text.Body is MultipartEncrypted encrypted)
             {
-                MultipartEncrypted Encrypted = (MultipartEncrypted)Text.Body;
-                DebugWriter.WriteDebug(DebugLevel.I, $"Message type: {(Encrypted is not null ? "MultipartEncrypted" : "Nothing")}");
+                DebugWriter.WriteDebug(DebugLevel.I, "Message type: MultipartEncrypted");
                 DebugWriter.WriteDebug(DebugLevel.I, "Decrypting...");
-                EncryptedDict.Add("Body", Encrypted.Decrypt(new PGPContext()));
+                EncryptedDict.Add("Body", encrypted.Decrypt(new PGPContext()));
             }
             else
             {
@@ -262,12 +272,11 @@ namespace Nitrocid.Extras.MailShell.Tools.Transfer
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Attachment number {0}", AttachmentNumber);
                 DebugWriter.WriteDebug(DebugLevel.I, $"Encrypted attachment type: {(TextAttachment is MultipartEncrypted ? "Multipart" : "Singlepart")}");
-                if (TextAttachment is MultipartEncrypted)
+                if (TextAttachment is MultipartEncrypted attachmentEncrypted)
                 {
-                    MultipartEncrypted Encrypted = (MultipartEncrypted)TextAttachment;
-                    DebugWriter.WriteDebug(DebugLevel.I, $"Attachment type: {(Encrypted is not null ? "MultipartEncrypted" : "Nothing")}");
+                    DebugWriter.WriteDebug(DebugLevel.I, "Attachment type: MultipartEncrypted");
                     DebugWriter.WriteDebug(DebugLevel.I, "Decrypting...");
-                    EncryptedDict.Add("Attachment " + AttachmentNumber, Encrypted.Decrypt(new PGPContext()));
+                    EncryptedDict.Add("Attachment " + AttachmentNumber, attachmentEncrypted.Decrypt(new PGPContext()));
                 }
                 else
                 {
@@ -288,6 +297,8 @@ namespace Nitrocid.Extras.MailShell.Tools.Transfer
         /// <returns>True if successful; False if unsuccessful.</returns>
         public static bool MailSendMessage(string Recipient, string Subject, string Body)
         {
+            var client = (SmtpClient)((object[]?)MailShellCommon.Client?.ConnectionInstance ?? [])[1];
+
             // Construct a message
             var FinalMessage = new MimeMessage();
             FinalMessage.From.Add(MailboxAddress.Parse(MailLogin.Authentication.UserName));
@@ -300,11 +311,11 @@ namespace Nitrocid.Extras.MailShell.Tools.Transfer
             DebugWriter.WriteDebug(DebugLevel.I, "Added body to FinalMessage.Body (plain text). Sending message...");
 
             // Send the message
-            lock (((SmtpClient)((object[])MailShellCommon.Client.ConnectionInstance)[1]).SyncRoot)
+            lock (client.SyncRoot)
             {
                 try
                 {
-                    ((SmtpClient)((object[])MailShellCommon.Client.ConnectionInstance)[1]).Send(FinalMessage, default, MailShellCommon.Progress);
+                    client.Send(FinalMessage, default, MailShellCommon.Progress);
                     return true;
                 }
                 catch (Exception ex)
@@ -325,6 +336,8 @@ namespace Nitrocid.Extras.MailShell.Tools.Transfer
         /// <returns>True if successful; False if unsuccessful.</returns>
         public static bool MailSendMessage(string Recipient, string Subject, MimeEntity Body)
         {
+            var client = (SmtpClient)((object[]?)MailShellCommon.Client?.ConnectionInstance ?? [])[1];
+
             // Construct a message
             var FinalMessage = new MimeMessage();
             FinalMessage.From.Add(MailboxAddress.Parse(MailLogin.Authentication.UserName));
@@ -337,11 +350,11 @@ namespace Nitrocid.Extras.MailShell.Tools.Transfer
             DebugWriter.WriteDebug(DebugLevel.I, "Added body to FinalMessage.Body (plain text). Sending message...");
 
             // Send the message
-            lock (((SmtpClient)((object[])MailShellCommon.Client.ConnectionInstance)[1]).SyncRoot)
+            lock (client.SyncRoot)
             {
                 try
                 {
-                    ((SmtpClient)((object[])MailShellCommon.Client.ConnectionInstance)[1]).Send(FinalMessage, default, MailShellCommon.Progress);
+                    client.Send(FinalMessage, default, MailShellCommon.Progress);
                     return true;
                 }
                 catch (Exception ex)
@@ -362,6 +375,8 @@ namespace Nitrocid.Extras.MailShell.Tools.Transfer
         /// <returns>True if successful; False if unsuccessful.</returns>
         public static bool MailSendEncryptedMessage(string Recipient, string Subject, MimeEntity Body)
         {
+            var client = (SmtpClient)((object[]?)MailShellCommon.Client?.ConnectionInstance ?? [])[1];
+
             // Construct a message
             var FinalMessage = new MimeMessage();
             FinalMessage.From.Add(MailboxAddress.Parse(MailLogin.Authentication.UserName));
@@ -374,11 +389,11 @@ namespace Nitrocid.Extras.MailShell.Tools.Transfer
             DebugWriter.WriteDebug(DebugLevel.I, "Added body to FinalMessage.Body (plain text). Sending message...");
 
             // Send the message
-            lock (((SmtpClient)((object[])MailShellCommon.Client.ConnectionInstance)[1]).SyncRoot)
+            lock (client.SyncRoot)
             {
                 try
                 {
-                    ((SmtpClient)((object[])MailShellCommon.Client.ConnectionInstance)[1]).Send(FinalMessage, default, MailShellCommon.Progress);
+                    client.Send(FinalMessage, default, MailShellCommon.Progress);
                     return true;
                 }
                 catch (Exception ex)
@@ -395,15 +410,16 @@ namespace Nitrocid.Extras.MailShell.Tools.Transfer
         /// </summary>
         public static void PopulateMessages()
         {
-            if (((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).IsConnected)
+            var client = (ImapClient)((object[]?)MailShellCommon.Client?.ConnectionInstance ?? [])[0];
+            if (client.IsConnected)
             {
-                lock (((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).SyncRoot)
+                lock (client.SyncRoot)
                 {
                     if (string.IsNullOrEmpty(MailShellCommon.IMAP_CurrentDirectory) | MailShellCommon.IMAP_CurrentDirectory == "Inbox")
                     {
-                        ((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).Inbox.Open(FolderAccess.ReadWrite);
+                        client.Inbox.Open(FolderAccess.ReadWrite);
                         DebugWriter.WriteDebug(DebugLevel.I, "Opened inbox");
-                        MailShellCommon.IMAP_Messages = ((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).Inbox.Search(SearchQuery.All).Reverse();
+                        MailShellCommon.IMAP_Messages = client.Inbox.Search(SearchQuery.All).Reverse();
                         DebugWriter.WriteDebug(DebugLevel.I, "Messages count: {0} messages", MailShellCommon.IMAP_Messages.LongCount());
                     }
                     else

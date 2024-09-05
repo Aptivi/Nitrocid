@@ -48,7 +48,7 @@ namespace Nitrocid.Kernel.Exceptions
         { }
 
         /// <inheritdoc/>
-        public KernelErrorException(string message, Exception e) :
+        public KernelErrorException(string message, Exception? e) :
             base(message, e)
         { }
 
@@ -58,7 +58,7 @@ namespace Nitrocid.Kernel.Exceptions
         /// <param name="vars">List of arguments</param>
         /// <param name="e">Inner exception</param>
         /// <param name="message">Message to be printed</param>
-        public KernelErrorException(string message, Exception e, params object[] vars) :
+        public KernelErrorException(string message, Exception? e, params object[] vars) :
             base(TextTools.FormatString(message, vars), e)
         { }
 

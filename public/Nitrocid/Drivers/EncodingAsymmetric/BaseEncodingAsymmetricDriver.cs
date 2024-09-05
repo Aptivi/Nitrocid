@@ -43,7 +43,7 @@ namespace Nitrocid.Drivers.EncodingAsymmetric
         public virtual DriverTypes DriverType => DriverTypes.EncodingAsymmetric;
 
         /// <inheritdoc/>
-        public virtual object Instance =>
+        public virtual object? Instance =>
             null;
 
         /// <inheritdoc/>
@@ -137,7 +137,7 @@ namespace Nitrocid.Drivers.EncodingAsymmetric
         }
 
         /// <inheritdoc/>
-        public bool TryRepresentAsText(byte[] encoded, out string strEncoded)
+        public bool TryRepresentAsText(byte[] encoded, out string? strEncoded)
         {
             strEncoded = null;
             string text = TextEncoding.Default.GetString(encoded);

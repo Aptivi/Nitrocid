@@ -32,7 +32,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
 {
     internal class CharSettingsKeyInput : ISettingsKeyInput
     {
-        public object PromptForSet(SettingsKey key, object KeyDefaultValue, out bool bail)
+        public object? PromptForSet(SettingsKey key, object? KeyDefaultValue, out bool bail)
         {
             ConsoleWrapper.Clear();
 
@@ -44,7 +44,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
 
             // Write the prompt
             TextWriters.Write($"{Translate.DoTranslation("Press any letter on your keyboard to set it to that character.")}\n", KernelColorType.Tip);
-            TextWriters.Write("[{0}] ", false, KernelColorType.Input, KeyDefaultValue);
+            TextWriters.Write("[{0}] ", false, KernelColorType.Input, KeyDefaultValue ?? ' ');
             var keypressTerm = Input.ReadKey();
             var keypress = keypressTerm.KeyChar;
             keypress =
@@ -59,13 +59,13 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             return keypress;
         }
 
-        public object TranslateStringValue(SettingsKey key, string value)
+        public object? TranslateStringValue(SettingsKey key, string value)
         {
             char character = value.Length == 0 ? '\0' : value[0];
             return character;
         }
 
-        public object TranslateStringValueWithDefault(SettingsKey key, string value, object KeyDefaultValue)
+        public object? TranslateStringValueWithDefault(SettingsKey key, string value, object? KeyDefaultValue)
         {
             if (KeyDefaultValue is not char defaultChar)
                 return '\0';
@@ -73,7 +73,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             return character;
         }
 
-        public void SetValue(SettingsKey key, object value, BaseKernelConfig configType)
+        public void SetValue(SettingsKey key, object? value, BaseKernelConfig configType)
         {
             // We're dealing with characters
             DebugWriter.WriteDebug(DebugLevel.I, "Answer is not numeric and key is of the Char (inferred from keytype {0}) type. Setting variable...", key.Type.ToString());

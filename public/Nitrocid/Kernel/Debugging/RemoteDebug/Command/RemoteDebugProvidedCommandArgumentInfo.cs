@@ -89,17 +89,15 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug.Command
             // Split the arguments with enclosed quotes
             var EnclosedArgs = strArgs.SplitEncloseDoubleQuotes();
             if (string.IsNullOrWhiteSpace(strArgs))
-                EnclosedArgs = null;
-            if (EnclosedArgs is not null)
-                DebugWriter.WriteDebug(DebugLevel.I, "Arguments parsed: " + string.Join(", ", EnclosedArgs));
+                EnclosedArgs = [];
+            DebugWriter.WriteDebug(DebugLevel.I, "Arguments parsed: " + string.Join(", ", EnclosedArgs));
             ArgumentsListOrig = EnclosedArgs;
 
             // Check to see if the caller has provided required number of arguments
-            var CommandInfo = RemoteDebugCommandExecutor.RemoteDebugCommands.TryGetValue(Command, out RemoteDebugCommandInfo rdci) ? rdci : null;
+            var CommandInfo = RemoteDebugCommandExecutor.RemoteDebugCommands.TryGetValue(Command, out RemoteDebugCommandInfo? rdci) ? rdci : null;
             if (CommandInfo?.CommandArgumentInfo is not null)
                 if (EnclosedArgs is not null)
-                    RequiredArgumentsProvided = (bool)(CommandInfo.CommandArgumentInfo.MinimumArguments is int expectedArgumentNum &&
-                                                      (EnclosedArgs?.Length) is int actualArgumentNum ? actualArgumentNum >= expectedArgumentNum : (bool?)null);
+                    RequiredArgumentsProvided = EnclosedArgs?.Length >= CommandInfo.CommandArgumentInfo.MinimumArguments;
                 else if (CommandInfo.CommandArgumentInfo.ArgumentsRequired & EnclosedArgs is null)
                     RequiredArgumentsProvided = false;
                 else
@@ -113,13 +111,9 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug.Command
                 foreach (string EnclosedArg in EnclosedArgs)
                 {
                     if (EnclosedArg.StartsWith("-"))
-                    {
                         FinalSwitches.Add(EnclosedArg);
-                    }
                     else
-                    {
                         FinalArgs.Add(EnclosedArg);
-                    }
                 }
             }
 

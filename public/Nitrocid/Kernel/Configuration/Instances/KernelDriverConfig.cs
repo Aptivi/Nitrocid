@@ -33,6 +33,8 @@ using Nitrocid.Drivers.Console;
 using Nitrocid.Drivers.Input;
 using Nitrocid.Misc.Reflection.Internal;
 using Nitrocid.Drivers.EncodingAsymmetric;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
 
 namespace Nitrocid.Kernel.Configuration.Instances
 {
@@ -44,7 +46,8 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// <inheritdoc/>
         [JsonIgnore]
         public override SettingsEntry[] SettingsEntries =>
-            ConfigTools.GetSettingsEntries(ResourcesManager.GetData("DriverSettingsEntries.json", ResourcesType.Settings));
+            ConfigTools.GetSettingsEntries(ResourcesManager.GetData("DriverSettingsEntries.json", ResourcesType.Settings) ??
+                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Failed to obtain driver settings entries.")));
 
         #region Drivers
         /// <summary>

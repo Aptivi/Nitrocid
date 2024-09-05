@@ -43,17 +43,17 @@ namespace Nitrocid.Extras.MailShell.Tools
         /// <summary>
         /// Initializes the CountChanged handlers. Currently, it only supports inbox.
         /// </summary>
-        public static void InitializeHandlers() => ((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).Inbox.CountChanged += OnCountChanged;
+        public static void InitializeHandlers() => ((ImapClient)((object[]?)MailShellCommon.Client?.ConnectionInstance ?? [])[0]).Inbox.CountChanged += OnCountChanged;
 
         /// <summary>
         /// Releases the CountChanged handlers. Currently, it only supports inbox.
         /// </summary>
-        public static void ReleaseHandlers() => ((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).Inbox.CountChanged -= OnCountChanged;
+        public static void ReleaseHandlers() => ((ImapClient)((object[]?)MailShellCommon.Client?.ConnectionInstance ?? [])[0]).Inbox.CountChanged -= OnCountChanged;
 
         /// <summary>
         /// Handles WebAlert sent by Gmail
         /// </summary>
-        public static void HandleWebAlert(object sender, WebAlertEventArgs e)
+        public static void HandleWebAlert(object? sender, WebAlertEventArgs e)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "WebAlert URI: {0}", e.WebUri.AbsoluteUri);
             TextWriters.Write(e.Message, true, KernelColorType.Warning);
@@ -69,14 +69,16 @@ namespace Nitrocid.Extras.MailShell.Tools
         /// <summary>
         /// Executed when the CountChanged event is fired.
         /// </summary>
-        /// <param name="Sender">A folder</param>
+        /// <param name="sender">A folder</param>
         /// <param name="e">Event arguments</param>
-        public static void OnCountChanged(object Sender, EventArgs e)
+        public static void OnCountChanged(object? sender, EventArgs e)
         {
-            ImapFolder Folder = (ImapFolder)Sender;
-            if (Folder.Count > MailShellCommon.IMAP_Messages.Count())
+            if (sender is not ImapFolder folder)
+                return;
+            var messages = MailShellCommon.IMAP_Messages ?? [];
+            if (folder.Count > messages.Count())
             {
-                int NewMessagesCount = Folder.Count - MailShellCommon.IMAP_Messages.Count();
+                int NewMessagesCount = folder.Count - messages.Count();
                 NotificationManager.NotifySend(new Notification(TextTools.FormatString(Translate.DoTranslation("{0} new messages arrived in inbox."), NewMessagesCount), Translate.DoTranslation("Open \"mail\" to see them."), NotificationPriority.Medium, NotificationType.Normal));
             }
         }

@@ -37,20 +37,23 @@ namespace Nitrocid.Extras.FtpShell.FTP.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
+            var client = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance;
+            if (client is null)
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.FTPShell);
             if (parameters.ArgumentsList[0].Equals("a", System.StringComparison.OrdinalIgnoreCase))
             {
-                ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).Config.DownloadDataType = FtpDataType.ASCII;
-                ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).Config.ListingDataType = FtpDataType.ASCII;
-                ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).Config.UploadDataType = FtpDataType.ASCII;
+                client.Config.DownloadDataType = FtpDataType.ASCII;
+                client.Config.ListingDataType = FtpDataType.ASCII;
+                client.Config.UploadDataType = FtpDataType.ASCII;
                 TextWriters.Write(Translate.DoTranslation("Data type set to ASCII!"), true, KernelColorType.Success);
                 TextWriters.Write(Translate.DoTranslation("Beware that most files won't download or upload properly using this mode, so we highly recommend using the Binary mode on most situations."), true, KernelColorType.Warning);
                 return 0;
             }
             else if (parameters.ArgumentsList[0].Equals("b", System.StringComparison.OrdinalIgnoreCase))
             {
-                ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).Config.DownloadDataType = FtpDataType.Binary;
-                ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).Config.ListingDataType = FtpDataType.Binary;
-                ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).Config.UploadDataType = FtpDataType.Binary;
+                client.Config.DownloadDataType = FtpDataType.Binary;
+                client.Config.ListingDataType = FtpDataType.Binary;
+                client.Config.UploadDataType = FtpDataType.Binary;
                 TextWriters.Write(Translate.DoTranslation("Data type set to Binary!"), true, KernelColorType.Success);
                 return 0;
             }

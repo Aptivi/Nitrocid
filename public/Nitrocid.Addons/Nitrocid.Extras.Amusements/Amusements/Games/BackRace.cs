@@ -39,7 +39,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
 {
     static class BackRace
     {
-        internal static BackRaceHorse[] horses;
+        internal static BackRaceHorse[] horses = [];
 
         internal static void OpenBackRace()
         {

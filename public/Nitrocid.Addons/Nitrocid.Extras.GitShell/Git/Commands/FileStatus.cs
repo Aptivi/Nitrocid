@@ -35,6 +35,8 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
+            if (GitShellCommon.Repository is null)
+                return 43;
             string file = parameters.ArgumentsList[0];
             var status = GitShellCommon.Repository.RetrieveStatus(file);
             TextWriterColor.Write(Translate.DoTranslation("Status for file") + $" {Path.GetFileName(file)}: {status}");

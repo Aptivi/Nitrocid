@@ -31,9 +31,9 @@ namespace Nitrocid.Security.Privacy.Consents
         [JsonProperty(nameof(Type))]
         internal ConsentedPermissionType type;
         [JsonProperty(nameof(Context))]
-        internal string context;
+        internal string context = "";
         [JsonProperty(nameof(Username))]
-        internal string user;
+        internal string user = "";
 
         /// <summary>
         /// Consented permission type
@@ -57,11 +57,11 @@ namespace Nitrocid.Security.Privacy.Consents
             user;
 
         /// <inheritdoc/>
-        public override bool Equals(object obj) =>
+        public override bool Equals(object? obj) =>
             Equals(obj as ConsentedPermission);
 
         /// <inheritdoc/>
-        public bool Equals(ConsentedPermission other) =>
+        public bool Equals(ConsentedPermission? other) =>
             other is not null &&
             Type == other.Type &&
             Context == other.Context;

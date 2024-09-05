@@ -60,7 +60,7 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug.Command
                 bool RequiredArgumentsProvided = ArgumentInfo.RequiredArgumentsProvided;
 
                 // Check to see if the command exists
-                if (!RemoteDebugCommands.TryGetValue(Command, out RemoteDebugCommandInfo rdci))
+                if (!RemoteDebugCommands.TryGetValue(Command, out RemoteDebugCommandInfo? rdci))
                 {
                     DebugWriter.WriteDebugDeviceOnly(DebugLevel.W, Translate.DoTranslation("Command not found."), true, Device);
                     return;

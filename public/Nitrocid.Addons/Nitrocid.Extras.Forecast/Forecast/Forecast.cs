@@ -81,9 +81,10 @@ namespace Nitrocid.Extras.Forecast.Forecast
             WeatherForecastInfo WeatherInfo = GetWeatherInfo(latitude, longitude, APIKey);
             T Adjust<T>(string dayPartData)
             {
-                var dayPartArray = WeatherInfo.WeatherToken["daypart"][0][dayPartData];
-                var adjusted = dayPartArray[0];
-                adjusted ??= dayPartArray[1];
+                var dayPartArray = WeatherInfo.WeatherToken["daypart"]?[0]?[dayPartData] ??
+                    throw new Exception(Translate.DoTranslation("Can't get day part array"));
+                var adjusted = dayPartArray[0] ?? dayPartArray[1] ??
+                    throw new Exception(Translate.DoTranslation("Can't get day part"));
                 return adjusted.GetValue<T>();
             }
 
@@ -115,8 +116,8 @@ namespace Nitrocid.Extras.Forecast.Forecast
             int uvIdx = Adjust<int>("uvIndex");
             string uvDesc = Adjust<string>("uvDescription");
             string windNarrative = Adjust<string>("windPhrase");
-            int min = (int)WeatherInfo.WeatherToken["calendarDayTemperatureMin"][0];
-            int max = (int)WeatherInfo.WeatherToken["calendarDayTemperatureMax"][0];
+            int min = (int?)WeatherInfo.WeatherToken?["calendarDayTemperatureMin"]?[0] ?? 0;
+            int max = (int?)WeatherInfo.WeatherToken?["calendarDayTemperatureMax"]?[0] ?? 0;
             TextWriterColor.Write(Translate.DoTranslation("Cloud cover") + ": {0}%", cloudCover);
             TextWriterColor.Write(Translate.DoTranslation("Time of day") + ": {0}", dayIndicator);
             TextWriterColor.Write(Translate.DoTranslation("Minimum temperature") + ": {0}{1}", min, WeatherSpecifier);
@@ -187,9 +188,9 @@ namespace Nitrocid.Extras.Forecast.Forecast
                 WeatherInfo = GetWeatherInfoOwm(Convert.ToInt64(CityID), APIKey);
             else
                 WeatherInfo = GetWeatherInfoOwm(CityID, APIKey);
-            string name = (string)WeatherInfo.WeatherToken["name"];
-            double feelsLike = (double)WeatherInfo.WeatherToken["main"]["feels_like"];
-            double pressure = (double)WeatherInfo.WeatherToken["main"]["pressure"];
+            string name = (string?)WeatherInfo.WeatherToken["name"] ?? "";
+            double feelsLike = (double?)WeatherInfo.WeatherToken?["main"]?["feels_like"] ?? 0d;
+            double pressure = (double?)WeatherInfo.WeatherToken?["main"]?["pressure"] ?? 0d;
             DebugWriter.WriteDebug(DebugLevel.I, "City name: {0}, City ID: {1}", name, CityID);
             SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("-- Weather info for {0} --"), true, name);
             TextWriterColor.Write(Translate.DoTranslation("Weather: {0}"), WeatherInfo.Weather);

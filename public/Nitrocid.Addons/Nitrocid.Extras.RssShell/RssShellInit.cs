@@ -59,7 +59,7 @@ namespace Nitrocid.Extras.RssShell
         internal static RssConfig RssConfig =>
             (RssConfig)Config.baseConfigurations[nameof(RssConfig)];
 
-        ReadOnlyDictionary<string, Delegate> IAddon.PubliclyAvailableFunctions =>
+        ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions =>
             new(new Dictionary<string, Delegate>()
             {
                 { nameof(RSSShellTools.GetFirstArticle), RSSShellTools.GetFirstArticle },
@@ -73,9 +73,9 @@ namespace Nitrocid.Extras.RssShell
                 { nameof(RSSBookmarkManager.GetBookmark), new Func<int, string>(RSSBookmarkManager.GetBookmark) },
             });
 
-        ReadOnlyDictionary<string, PropertyInfo> IAddon.PubliclyAvailableProperties => null;
+        ReadOnlyDictionary<string, PropertyInfo>? IAddon.PubliclyAvailableProperties => null;
 
-        ReadOnlyDictionary<string, FieldInfo> IAddon.PubliclyAvailableFields => null;
+        ReadOnlyDictionary<string, FieldInfo>? IAddon.PubliclyAvailableFields => null;
 
         void IAddon.FinalizeAddon()
         {

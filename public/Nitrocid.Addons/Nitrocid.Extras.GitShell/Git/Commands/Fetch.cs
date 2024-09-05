@@ -48,6 +48,8 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
             }
 
             // Check for existence if the remote is provided, or check for remotes and select the default one
+            if (GitShellCommon.Repository is null)
+                return 43;
             var remotes = GitShellCommon.Repository.Network.Remotes;
             var remoteNames = remotes.Select((remote) => remote.Name).ToArray();
             string selectedRemote = "origin";

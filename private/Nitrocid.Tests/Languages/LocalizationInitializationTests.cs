@@ -22,6 +22,7 @@ using Nitrocid.Languages;
 using Nitrocid.Languages.Decoy;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
+using System;
 
 namespace Nitrocid.Tests.Languages
 {
@@ -49,8 +50,9 @@ namespace Nitrocid.Tests.Languages
         [Description("Initialization")]
         public void TestProbeLocalizations()
         {
-            string[] localizations = default;
-            var localization = JsonConvert.DeserializeObject<LanguageLocalizations>(localizationExample);
+            string[]? localizations = default;
+            var localization = JsonConvert.DeserializeObject<LanguageLocalizations>(localizationExample) ??
+                throw new Exception("Can't probe localizations");
             Should.NotThrow(() => localizations = LanguageManager.ProbeLocalizations(localization));
             localizations.ShouldNotBeNull();
             localizations.ShouldNotBeEmpty();

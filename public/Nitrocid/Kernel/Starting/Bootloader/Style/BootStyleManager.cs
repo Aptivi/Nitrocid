@@ -32,7 +32,7 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style
     /// </summary>
     public static class BootStyleManager
     {
-        private static Thread timeoutThread;
+        private static Thread? timeoutThread;
         private static readonly Dictionary<string, BaseBootStyle> bootStyles = new()
         {
             { "Default", new DefaultBootStyle() },
@@ -54,7 +54,7 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style
         {
             // Use the base boot styles first
             DebugWriter.WriteDebug(DebugLevel.I, "Getting boot style {0} from base boot styles...", name);
-            bootStyles.TryGetValue(name, out BaseBootStyle bootStyle);
+            bootStyles.TryGetValue(name, out BaseBootStyle? bootStyle);
 
             // If not found, use the custom one
             if (bootStyle == null)
@@ -121,7 +121,7 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style
         /// <param name="timeout">Timeout interval in seconds</param>
         public static void RenderSelectTimeout(int timeout)
         {
-            timeoutThread = new((timeout) => SelectTimeoutHandler((int)timeout));
+            timeoutThread = new((timeout) => SelectTimeoutHandler((int?)timeout ?? 60));
             if (!timeoutThread.IsAlive && timeout > 0 && BootloaderState.WaitingForFirstBootKey)
                 timeoutThread.Start(timeout);
         }

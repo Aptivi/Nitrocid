@@ -40,8 +40,9 @@ namespace Nitrocid.ScreensaverPacks.Animations.Spin
         /// <summary>
         /// Simulates the pulsing animation
         /// </summary>
-        public static void Simulate(SpinSettings Settings)
+        public static void Simulate(SpinSettings? Settings)
         {
+            Settings ??= new();
             CurrentWindowWidth = ConsoleWrapper.WindowWidth;
             CurrentWindowHeight = ConsoleWrapper.WindowHeight;
             ConsoleWrapper.CursorVisible = false;

@@ -30,7 +30,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     public class SpinDisplay : BaseScreensaver, IScreensaver
     {
 
-        private Animations.Spin.SpinSettings SpinSettingsInstance;
+        private Animations.Spin.SpinSettings? SpinSettingsInstance;
 
         /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "Spin";

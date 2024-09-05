@@ -35,7 +35,7 @@ namespace Nitrocid.Kernel.Time.Timezones
     {
         internal static bool useSystemTimezone = true;
         internal static string defaultZoneName = TimeZoneInfo.Local.Id;
-        private static string[] recognizedZones;
+        private static string[]? recognizedZones;
 
         /// <summary>
         /// Populates names of all the time zones (IANA on Unix).

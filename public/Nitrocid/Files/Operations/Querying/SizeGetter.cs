@@ -34,7 +34,7 @@ namespace Nitrocid.Files.Operations.Querying
         /// </summary>
         /// <param name="DirectoryInfo">Directory information</param>
         /// <returns>Directory Size</returns>
-        public static long GetAllSizesInFolder(DirectoryInfo DirectoryInfo) =>
+        public static long GetAllSizesInFolder(DirectoryInfo? DirectoryInfo) =>
             DriverHandler.CurrentFilesystemDriverLocal.GetAllSizesInFolder(DirectoryInfo, Config.MainConfig.FullParseMode);
 
         /// <summary>
@@ -43,7 +43,7 @@ namespace Nitrocid.Files.Operations.Querying
         /// <param name="DirectoryInfo">Directory information</param>
         /// <param name="FullParseMode">Whether to parse all the directories</param>
         /// <returns>Directory Size</returns>
-        public static long GetAllSizesInFolder(DirectoryInfo DirectoryInfo, bool FullParseMode) =>
+        public static long GetAllSizesInFolder(DirectoryInfo? DirectoryInfo, bool FullParseMode) =>
             DriverHandler.CurrentFilesystemDriverLocal.GetAllSizesInFolder(DirectoryInfo, FullParseMode);
 
     }

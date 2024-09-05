@@ -57,7 +57,7 @@ namespace Nitrocid.Shell.Shells.Text.Presets
 
             // File name
             PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground);
-            PresetStringBuilder.AppendFormat(Path.GetFileName(TextEditShellCommon.FileStream.Name));
+            PresetStringBuilder.AppendFormat(Path.GetFileName(TextEditShellCommon.FileStream?.Name) ?? "???");
 
             // Was file edited?
             PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground);

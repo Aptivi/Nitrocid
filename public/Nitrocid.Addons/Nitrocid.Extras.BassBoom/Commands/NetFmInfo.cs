@@ -46,34 +46,39 @@ namespace Nitrocid.Extras.BassBoom.Commands
 
             // Now, get the server info
             var internetFm = RadioTools.GetRadioInfo($"{internetFmUrl}:{internetFmPortInt}");
-            internetFm.Refresh();
-            SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Internet Radio (FM) info for") + $" {internetFmUrl}");
-            TextWriters.Write(Translate.DoTranslation("Full URL") + ": ", false, KernelColorType.ListEntry);
-            TextWriters.Write($"{internetFm.ServerHostFull}", true, KernelColorType.ListValue);
-            TextWriters.Write(Translate.DoTranslation("Station type") + ": ", false, KernelColorType.ListEntry);
-            TextWriters.Write($"{internetFm.ServerType}", true, KernelColorType.ListValue);
-            TextWriters.Write(Translate.DoTranslation("Current listeners") + ": ", false, KernelColorType.ListEntry);
-            TextWriters.Write($"{internetFm.CurrentListeners}", true, KernelColorType.ListValue);
-            TextWriters.Write(Translate.DoTranslation("Peak listeners") + ": ", false, KernelColorType.ListEntry);
-            TextWriters.Write($"{internetFm.PeakListeners}", true, KernelColorType.ListValue);
-            TextWriters.Write(Translate.DoTranslation("Streams") + ": ", false, KernelColorType.ListEntry);
-            TextWriters.Write($"{internetFm.TotalStreams}", true, KernelColorType.ListValue);
-            TextWriters.Write(Translate.DoTranslation("Active streams") + ": ", false, KernelColorType.ListEntry);
-            TextWriters.Write($"{internetFm.ActiveStreams}\n", true, KernelColorType.ListValue);
-
-            // Now, the stream info
-            foreach (var stream in internetFm.Streams)
+            if (internetFm is not null)
             {
-                SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Stream info for ID") + $" {stream.StreamId}");
-                TextWriters.Write(Translate.DoTranslation("Title") + ": ", false, KernelColorType.ListEntry);
-                TextWriters.Write($"{stream.StreamTitle}", true, KernelColorType.ListValue);
-                TextWriters.Write(Translate.DoTranslation("Path") + ": ", false, KernelColorType.ListEntry);
-                TextWriters.Write($"{stream.StreamPath}", true, KernelColorType.ListValue);
-                TextWriters.Write(Translate.DoTranslation("Currently playing") + ": ", false, KernelColorType.ListEntry);
-                TextWriters.Write($"{stream.SongTitle}", true, KernelColorType.ListValue);
-                TextWriters.Write(Translate.DoTranslation("Uptime") + ": ", false, KernelColorType.ListEntry);
-                TextWriters.Write($"{stream.StreamUptimeSpan}", true, KernelColorType.ListValue);
+                internetFm.Refresh();
+                SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Internet Radio (FM) info for") + $" {internetFmUrl}");
+                TextWriters.Write(Translate.DoTranslation("Full URL") + ": ", false, KernelColorType.ListEntry);
+                TextWriters.Write($"{internetFm.ServerHostFull}", true, KernelColorType.ListValue);
+                TextWriters.Write(Translate.DoTranslation("Station type") + ": ", false, KernelColorType.ListEntry);
+                TextWriters.Write($"{internetFm.ServerType}", true, KernelColorType.ListValue);
+                TextWriters.Write(Translate.DoTranslation("Current listeners") + ": ", false, KernelColorType.ListEntry);
+                TextWriters.Write($"{internetFm.CurrentListeners}", true, KernelColorType.ListValue);
+                TextWriters.Write(Translate.DoTranslation("Peak listeners") + ": ", false, KernelColorType.ListEntry);
+                TextWriters.Write($"{internetFm.PeakListeners}", true, KernelColorType.ListValue);
+                TextWriters.Write(Translate.DoTranslation("Streams") + ": ", false, KernelColorType.ListEntry);
+                TextWriters.Write($"{internetFm.TotalStreams}", true, KernelColorType.ListValue);
+                TextWriters.Write(Translate.DoTranslation("Active streams") + ": ", false, KernelColorType.ListEntry);
+                TextWriters.Write($"{internetFm.ActiveStreams}\n", true, KernelColorType.ListValue);
+
+                // Now, the stream info
+                foreach (var stream in internetFm.Streams)
+                {
+                    SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Stream info for ID") + $" {stream.StreamId}");
+                    TextWriters.Write(Translate.DoTranslation("Title") + ": ", false, KernelColorType.ListEntry);
+                    TextWriters.Write($"{stream.StreamTitle}", true, KernelColorType.ListValue);
+                    TextWriters.Write(Translate.DoTranslation("Path") + ": ", false, KernelColorType.ListEntry);
+                    TextWriters.Write($"{stream.StreamPath}", true, KernelColorType.ListValue);
+                    TextWriters.Write(Translate.DoTranslation("Currently playing") + ": ", false, KernelColorType.ListEntry);
+                    TextWriters.Write($"{stream.SongTitle}", true, KernelColorType.ListValue);
+                    TextWriters.Write(Translate.DoTranslation("Uptime") + ": ", false, KernelColorType.ListEntry);
+                    TextWriters.Write($"{stream.StreamUptimeSpan}", true, KernelColorType.ListValue);
+                }
             }
+            else
+                TextWriters.Write(Translate.DoTranslation("Can't get internet radio information."), KernelColorType.Error);
             return 0;
         }
 

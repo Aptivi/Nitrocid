@@ -35,6 +35,8 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
+            if (GitShellCommon.Repository is null)
+                return 43;
             var info = GitShellCommon.Repository.Info;
             TextWriters.Write("- " + Translate.DoTranslation("Bare repository") + ": ", false, KernelColorType.ListEntry);
             TextWriters.Write($"{info.IsBare}", true, KernelColorType.ListValue);

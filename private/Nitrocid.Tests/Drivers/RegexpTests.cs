@@ -62,7 +62,7 @@ namespace Nitrocid.Tests.Drivers
         [Description("Action")]
         public void TestMatch(string text, string pattern)
         {
-            Match match = default;
+            Match? match = default;
             Should.NotThrow(() => match = RegexpTools.Match(text, pattern));
         }
 
@@ -73,7 +73,7 @@ namespace Nitrocid.Tests.Drivers
         [Description("Action")]
         public void TestMatchInvalid(string text, string pattern)
         {
-            Match match = default;
+            Match? match = default;
             Should.Throw(() => match = RegexpTools.Match(text, pattern), typeof(KernelException));
         }
 
@@ -86,7 +86,7 @@ namespace Nitrocid.Tests.Drivers
         [Description("Action")]
         public void TestMatches(string text, string pattern)
         {
-            MatchCollection match = default;
+            MatchCollection? match = default;
             Should.NotThrow(() => match = RegexpTools.Matches(text, pattern));
         }
 
@@ -97,7 +97,7 @@ namespace Nitrocid.Tests.Drivers
         [Description("Action")]
         public void TestMatchesInvalid(string text, string pattern)
         {
-            MatchCollection match = default;
+            MatchCollection? match = default;
             Should.Throw(() => match = RegexpTools.Matches(text, pattern), typeof(KernelException));
         }
 
@@ -110,7 +110,7 @@ namespace Nitrocid.Tests.Drivers
         [Description("Action")]
         public void TestFilter(string text, string pattern, string expected)
         {
-            string filtered = default;
+            string? filtered = default;
             Should.NotThrow(() => filtered = RegexpTools.Filter(text, pattern));
             filtered.ShouldBe(expected);
         }
@@ -122,7 +122,7 @@ namespace Nitrocid.Tests.Drivers
         [Description("Action")]
         public void TestFilterInvalid(string text, string pattern)
         {
-            string filtered = default;
+            string? filtered = default;
             Should.Throw(() => filtered = RegexpTools.Filter(text, pattern), typeof(KernelException));
         }
 
@@ -135,7 +135,7 @@ namespace Nitrocid.Tests.Drivers
         [Description("Action")]
         public void TestFilter(string text, string pattern, string replaceWith, string expected)
         {
-            string filtered = default;
+            string? filtered = default;
             Should.NotThrow(() => filtered = RegexpTools.Filter(text, pattern, replaceWith));
             filtered.ShouldBe(expected);
         }
@@ -147,7 +147,7 @@ namespace Nitrocid.Tests.Drivers
         [Description("Action")]
         public void TestFilterInvalid(string text, string pattern, string replaceWith)
         {
-            string filtered = default;
+            string? filtered = default;
             Should.Throw(() => filtered = RegexpTools.Filter(text, pattern, replaceWith), typeof(KernelException));
         }
 
@@ -160,7 +160,7 @@ namespace Nitrocid.Tests.Drivers
         [Description("Action")]
         public void TestSplit(string text, string pattern, string[] expected)
         {
-            string[] split = default;
+            string[]? split = default;
             Should.NotThrow(() => split = RegexpTools.Split(text, pattern));
             split.ShouldBe(expected);
         }
@@ -172,7 +172,7 @@ namespace Nitrocid.Tests.Drivers
         [Description("Action")]
         public void TestSplitInvalid(string text, string pattern)
         {
-            string[] split = default;
+            string[]? split = default;
             Should.Throw(() => split = RegexpTools.Split(text, pattern), typeof(KernelException));
         }
 
@@ -194,7 +194,7 @@ namespace Nitrocid.Tests.Drivers
         [Description("Action")]
         public void TestEscape(string text, string expected)
         {
-            string final = default;
+            string? final = default;
             Should.NotThrow(() => final = RegexpTools.Escape(text));
             final.ShouldBe(expected);
         }
@@ -217,7 +217,7 @@ namespace Nitrocid.Tests.Drivers
         [Description("Action")]
         public void TestUnescape(string text, string expected)
         {
-            string final = default;
+            string? final = default;
             Should.NotThrow(() => final = RegexpTools.Unescape(text));
             final.ShouldBe(expected);
         }

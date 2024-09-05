@@ -34,10 +34,10 @@ namespace Nitrocid.Kernel.Hardware
     /// </summary>
     public static class HardwareProbe
     {
-        internal static IEnumerable processors;
-        internal static IEnumerable pcMemory;
-        internal static IEnumerable hardDrive;
-        internal static IEnumerable graphics;
+        internal static IEnumerable? processors;
+        internal static IEnumerable? pcMemory;
+        internal static IEnumerable? hardDrive;
+        internal static IEnumerable? graphics;
 
         /// <summary>
         /// Starts probing hardware

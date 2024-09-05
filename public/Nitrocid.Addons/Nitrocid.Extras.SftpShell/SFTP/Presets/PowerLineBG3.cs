@@ -67,7 +67,7 @@ namespace Nitrocid.Extras.SftpShell.SFTP.Presets
             [
                 new PowerLineSegment(new Color(255, 255, 85), new Color(25, 25, 25), SFTPShellCommon.SFTPUser, default, TransitionPartChar),
                 new PowerLineSegment(new Color(255, 255, 85), new Color(25, 25, 25), SFTPShellCommon.SFTPSite, PadlockChar, TransitionPartChar),
-                new PowerLineSegment(new Color(255, 255, 85), new Color(25, 25, 25), SFTPShellCommon.SFTPCurrentRemoteDir, default, TransitionPartChar),
+                new PowerLineSegment(new Color(255, 255, 85), new Color(25, 25, 25), SFTPShellCommon.SFTPCurrentRemoteDir ?? "", default, TransitionPartChar),
             ];
 
             // Builder

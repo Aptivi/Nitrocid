@@ -41,7 +41,7 @@ namespace Nitrocid.Security.Signing
                 throw new KernelException(KernelExceptionType.Security, Translate.DoTranslation("You didn't specify an assembly."));
 
             // Now, get the assembly name from it and return its public key token
-            var asmName = new AssemblyName(assembly.FullName);
+            var asmName = new AssemblyName(assembly.FullName ?? "");
             return PublicKeyToken(asmName);
         }
 

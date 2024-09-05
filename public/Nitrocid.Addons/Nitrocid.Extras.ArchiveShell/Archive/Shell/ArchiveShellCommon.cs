@@ -25,9 +25,9 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
     internal class ArchiveShellCommon
     {
         // Variables
-        public static FileStream FileStream;
-        public static IArchive Archive;
-        public static string CurrentDirectory;
-        public static string CurrentArchiveDirectory;
+        public static FileStream? FileStream;
+        public static IArchive? Archive;
+        public static string? CurrentDirectory;
+        public static string? CurrentArchiveDirectory;
     }
 }

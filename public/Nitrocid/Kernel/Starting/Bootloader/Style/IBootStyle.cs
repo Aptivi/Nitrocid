@@ -30,7 +30,7 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style
         /// <summary>
         /// Custom key assignments
         /// </summary>
-        Dictionary<ConsoleKeyInfo, Action> CustomKeys { get; }
+        Dictionary<ConsoleKeyInfo, Action>? CustomKeys { get; }
         /// <summary>
         /// Renders the bootloader style
         /// </summary>

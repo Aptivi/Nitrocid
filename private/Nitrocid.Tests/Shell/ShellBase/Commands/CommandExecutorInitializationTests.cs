@@ -29,7 +29,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
     public class CommandExecutorInitializationTests
     {
 
-        private static BaseCommand CommandInstance;
+        private static BaseCommand? CommandInstance;
 
         /// <summary>
         /// Tests initializing the command instance from base
@@ -52,6 +52,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [Description("Initialization")]
         public void TestInitializedCommandExecution()
         {
+            CommandInstance.ShouldNotBeNull();
             string dummy = "";
             var parameters = new CommandParameters("", [], "", [], [], "say");
             Should.NotThrow(new Action(() => CommandInstance.Execute(parameters, ref dummy)));
@@ -64,6 +65,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [Description("Initialization")]
         public void TestInitializedCommandExecutionWithArguments()
         {
+            CommandInstance.ShouldNotBeNull();
             string dummy = "";
             var parameters = new CommandParameters("Hello World", ["Hello", "World"], "Hello World", ["Hello", "World"], [], "say");
             Should.NotThrow(new Action(() => CommandInstance.Execute(parameters, ref dummy)));
@@ -76,6 +78,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [Description("Initialization")]
         public void TestInitializedCommandExecutionWithSwitches()
         {
+            CommandInstance.ShouldNotBeNull();
             string dummy = "";
             var parameters = new CommandParameters("-s", [], "-s", [], ["-s"], "say");
             Should.NotThrow(new Action(() => CommandInstance.Execute(parameters, ref dummy)));
@@ -88,6 +91,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [Description("Initialization")]
         public void TestInitializedCommandExecutionWithArgumentsAndSwitches()
         {
+            CommandInstance.ShouldNotBeNull();
             string dummy = "";
             var parameters = new CommandParameters("-s Hello!", ["Hello!"], "-s Hello!", ["Hello!"], ["-s"], "say");
             Should.NotThrow(new Action(() => CommandInstance.Execute(parameters, ref dummy)));

@@ -57,7 +57,7 @@ namespace Nitrocid.Shell.Shells.Hex.Presets
 
             // File name
             PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground);
-            PresetStringBuilder.AppendFormat(Path.GetFileName(HexEditShellCommon.FileStream.Name));
+            PresetStringBuilder.AppendFormat(Path.GetFileName(HexEditShellCommon.FileStream?.Name ?? "???"));
 
             // Was file edited?
             PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground);

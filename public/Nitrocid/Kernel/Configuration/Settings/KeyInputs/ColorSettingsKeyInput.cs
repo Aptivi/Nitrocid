@@ -30,7 +30,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
 {
     internal class ColorSettingsKeyInput : ISettingsKeyInput
     {
-        public object PromptForSet(SettingsKey key, object KeyDefaultValue, out bool bail)
+        public object? PromptForSet(SettingsKey key, object? KeyDefaultValue, out bool bail)
         {
             Color keyColorValue = Color.Empty;
 
@@ -49,13 +49,13 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             return ColorValue;
         }
 
-        public object TranslateStringValue(SettingsKey key, string value)
+        public object? TranslateStringValue(SettingsKey key, string value)
         {
             var color = new Color(value);
             return color.PlainSequence;
         }
 
-        public object TranslateStringValueWithDefault(SettingsKey key, string value, object KeyDefaultValue)
+        public object? TranslateStringValueWithDefault(SettingsKey key, string value, object? KeyDefaultValue)
         {
             Color keyColorValue = Color.Empty;
 
@@ -70,7 +70,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             return keyColorValue.PlainSequence;
         }
 
-        public void SetValue(SettingsKey key, object value, BaseKernelConfig configType)
+        public void SetValue(SettingsKey key, object? value, BaseKernelConfig configType)
         {
             // We're dealing with integers with limits
             if (value is not string colorValue)
@@ -87,7 +87,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
                 FinalColor = colors2;
             }
             else if (PropertyManager.CheckProperty(key.Variable) &&
-                     PropertyManager.GetProperty(key.Variable).PropertyType == typeof(Color))
+                     PropertyManager.GetProperty(key.Variable)?.PropertyType == typeof(Color))
             {
                 FinalColor = new Color(colorValue);
             }

@@ -38,7 +38,7 @@ namespace Nitrocid.Extras.RssShell.RSS.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            foreach (RSSArticle Article in RSSShellCommon.RSSFeedInstance.FeedArticles)
+            foreach (RSSArticle Article in RSSShellCommon.RSSFeedInstance?.FeedArticles ?? [])
             {
                 TextWriters.Write("- {0}: ", false, KernelColorType.ListEntry, Article.ArticleTitle);
                 TextWriters.Write(Article.ArticleLink, true, KernelColorType.ListValue);

@@ -126,11 +126,11 @@ namespace Nitrocid.Extras.NameGen
         internal static NameGenSaversConfig SaversConfig =>
             (NameGenSaversConfig)Config.baseConfigurations[nameof(NameGenSaversConfig)];
 
-        ReadOnlyDictionary<string, Delegate> IAddon.PubliclyAvailableFunctions => null;
+        ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => null;
 
-        ReadOnlyDictionary<string, PropertyInfo> IAddon.PubliclyAvailableProperties => null;
+        ReadOnlyDictionary<string, PropertyInfo>? IAddon.PubliclyAvailableProperties => null;
 
-        ReadOnlyDictionary<string, FieldInfo> IAddon.PubliclyAvailableFields => null;
+        ReadOnlyDictionary<string, FieldInfo>? IAddon.PubliclyAvailableFields => null;
 
         void IAddon.StartAddon()
         {

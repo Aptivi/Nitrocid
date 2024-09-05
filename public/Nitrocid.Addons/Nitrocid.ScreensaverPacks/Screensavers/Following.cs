@@ -35,7 +35,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     /// </summary>
     public class FollowingDisplay : BaseScreensaver, IScreensaver
     {
-        private Color dotColor;
+        private Color? dotColor;
         private (int x, int y) start;
         private (int x, int y) end;
         private int currentStep;
@@ -87,7 +87,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             TextWriterWhereColor.WriteWherePlain(" ", end.x, end.y);
 
             // Select a color
-            ColorTools.SetConsoleColorDry(dotColor, true);
+            if (dotColor is not null)
+                ColorTools.SetConsoleColorDry(dotColor, true);
 
             // Draw a dot
             int posX = start.x;

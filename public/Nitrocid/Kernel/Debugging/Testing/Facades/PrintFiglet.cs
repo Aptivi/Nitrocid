@@ -21,6 +21,7 @@ using Textify.Figlet;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
+using Nitrocid.Kernel.Exceptions;
 
 namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
@@ -32,7 +33,9 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
         public override void Run(params string[] args)
         {
             string rendered = args.Length > 0 ? args[0] : "Hello world!";
-            TextFancyWriters.WriteFiglet(rendered, FigletFonts.TryGetByName("small"), KernelColorType.Success);
+            var figletFont = FigletFonts.TryGetByName("small") ??
+                throw new KernelException(KernelExceptionType.Console, Translate.DoTranslation("Failed to get figlet font"));
+            TextFancyWriters.WriteFiglet(rendered, figletFont, KernelColorType.Success);
         }
     }
 }

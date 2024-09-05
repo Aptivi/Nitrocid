@@ -37,7 +37,7 @@ namespace Nitrocid.Users.Login.Motd
     /// </summary>
     public static class MotdParse
     {
-        private static string motdMessage;
+        private static string motdMessage = "";
         private static readonly List<Func<string>> motdDynamics = [];
 
         /// <summary>

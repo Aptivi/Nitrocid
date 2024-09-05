@@ -93,11 +93,11 @@ namespace Nitrocid.Misc.Splash
             "";
 
         /// <inheritdoc/>
-        public virtual string ReportWarning(int Progress, string WarningReport, Exception ExceptionInfo, params object[] Vars) =>
+        public virtual string ReportWarning(int Progress, string WarningReport, Exception? ExceptionInfo, params object[] Vars) =>
             "";
 
         /// <inheritdoc/>
-        public virtual string ReportError(int Progress, string ErrorReport, Exception ExceptionInfo, params object[] Vars) =>
+        public virtual string ReportError(int Progress, string ErrorReport, Exception? ExceptionInfo, params object[] Vars) =>
             "";
 
     }

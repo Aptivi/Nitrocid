@@ -24,6 +24,7 @@ using Nitrocid.Extras.FtpShell.Tools.Filesystem;
 using Nitrocid.Extras.FtpShell.Tools.Transfer;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Extensions;
+using Nitrocid.Languages;
 using Nitrocid.Modifications;
 using Nitrocid.Network.Connections;
 using Nitrocid.Shell.ShellBase.Arguments;
@@ -59,7 +60,7 @@ namespace Nitrocid.Extras.FtpShell
         internal static FtpConfig FtpConfig =>
             (FtpConfig)Config.baseConfigurations[nameof(FtpConfig)];
 
-        ReadOnlyDictionary<string, Delegate> IAddon.PubliclyAvailableFunctions => new(new Dictionary<string, Delegate>()
+        ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => new(new Dictionary<string, Delegate>()
         {
             { nameof(FTPFilesystem.FTPListRemote), new Func<string, List<string>>(FTPFilesystem.FTPListRemote) },
             { nameof(FTPFilesystem.FTPListRemote) + "2", new Func<string, bool, List<string>>(FTPFilesystem.FTPListRemote) },
@@ -80,17 +81,17 @@ namespace Nitrocid.Extras.FtpShell
             { nameof(FTPTransfer.FTPUploadFolder), new Func<string, bool>(FTPTransfer.FTPUploadFolder) },
             { nameof(FTPTransfer.FTPUploadFolder) + "2", new Func<string, string, bool>(FTPTransfer.FTPUploadFolder) },
             { nameof(FTPTransfer.FTPDownloadToString), new Func<string, string>(FTPTransfer.FTPDownloadToString) },
-            { nameof(FTPTools.PromptForPassword), new Func<FtpClient, string, string, int, FtpEncryptionMode, NetworkConnection>(FTPTools.PromptForPassword) },
-            { nameof(FTPTools.TryToConnect), new Func<string, NetworkConnection>(FTPTools.TryToConnect) },
+            { nameof(FTPTools.PromptForPassword), new Func<FtpClient, string, string, int, FtpEncryptionMode, NetworkConnection?>(FTPTools.PromptForPassword) },
+            { nameof(FTPTools.TryToConnect), new Func<string, NetworkConnection?>(FTPTools.TryToConnect) },
         });
 
-        ReadOnlyDictionary<string, PropertyInfo> IAddon.PubliclyAvailableProperties => new(new Dictionary<string, PropertyInfo>()
+        ReadOnlyDictionary<string, PropertyInfo>? IAddon.PubliclyAvailableProperties => new(new Dictionary<string, PropertyInfo>()
         {
-            { nameof(FTPTransferProgress.FileProgress), typeof(FTPTransferProgress).GetProperty(nameof(FTPTransferProgress.FileProgress)) },
-            { nameof(FTPTransferProgress.MultipleProgress), typeof(FTPTransferProgress).GetProperty(nameof(FTPTransferProgress.MultipleProgress)) },
+            { nameof(FTPTransferProgress.FileProgress), typeof(FTPTransferProgress).GetProperty(nameof(FTPTransferProgress.FileProgress)) ?? throw new Exception(Translate.DoTranslation("There is no property info for") + $" {nameof(FTPTransferProgress.FileProgress)}") },
+            { nameof(FTPTransferProgress.MultipleProgress), typeof(FTPTransferProgress).GetProperty(nameof(FTPTransferProgress.MultipleProgress)) ?? throw new Exception(Translate.DoTranslation("There is no property info for") + $" {nameof(FTPTransferProgress.MultipleProgress)}") },
         });
 
-        ReadOnlyDictionary<string, FieldInfo> IAddon.PubliclyAvailableFields => null;
+        ReadOnlyDictionary<string, FieldInfo>? IAddon.PubliclyAvailableFields => null;
 
         void IAddon.FinalizeAddon()
         {

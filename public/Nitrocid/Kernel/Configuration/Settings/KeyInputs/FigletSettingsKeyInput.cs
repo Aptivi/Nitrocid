@@ -25,28 +25,28 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
 {
     internal class FigletSettingsKeyInput : ISettingsKeyInput
     {
-        public object PromptForSet(SettingsKey key, object KeyDefaultValue, out bool bail)
+        public object? PromptForSet(SettingsKey key, object? KeyDefaultValue, out bool bail)
         {
-            string figletFont = FigletSelector.PromptForFiglet((string)KeyDefaultValue);
+            string figletFont = FigletSelector.PromptForFiglet((string?)KeyDefaultValue ?? Config.MainConfig.DefaultFigletFontName);
 
             // Bail and return
             bail = true;
             return figletFont;
         }
 
-        public object TranslateStringValue(SettingsKey key, string value)
+        public object? TranslateStringValue(SettingsKey key, string value)
         {
             var figlet = FigletFonts.TryGetByName(value);
-            return figlet.Name;
+            return figlet?.Name;
         }
 
-        public object TranslateStringValueWithDefault(SettingsKey key, string value, object KeyDefaultValue)
+        public object? TranslateStringValueWithDefault(SettingsKey key, string value, object? KeyDefaultValue)
         {
             var figlet = FigletFonts.TryGetByName(value);
-            return figlet.Name;
+            return figlet?.Name;
         }
 
-        public void SetValue(SettingsKey key, object value, BaseKernelConfig configType)
+        public void SetValue(SettingsKey key, object? value, BaseKernelConfig configType)
         {
             // Already set by SetPresetInternal
             if (value is not string figletFont)

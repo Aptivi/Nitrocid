@@ -48,7 +48,9 @@ namespace Nitrocid.Analyzers.ConsoleBase
             var diagnosticSpan = diagnostic.Location.SourceSpan;
 
             // Find the type declaration identified by the diagnostic.
-            var declaration = root.FindToken(diagnosticSpan.Start).Parent.AncestorsAndSelf().OfType<MemberAccessExpressionSyntax>().First();
+            var declaration = root?.FindToken(diagnosticSpan.Start).Parent?.AncestorsAndSelf().OfType<MemberAccessExpressionSyntax>().First();
+            if (declaration is null)
+                return;
 
             // Register a code action that will invoke the fix.
             context.RegisterCodeFix(
@@ -67,18 +69,21 @@ namespace Nitrocid.Analyzers.ConsoleBase
                 var classSyntax = SyntaxFactory.IdentifierName("ColorTools");
                 var methodSyntax = SyntaxFactory.IdentifierName("SetConsoleColor");
                 var maeSyntax = SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, classSyntax, methodSyntax);
-                var parentSyntax = (AssignmentExpressionSyntax)typeDecl.Parent;
+                var parentSyntax = (AssignmentExpressionSyntax?)typeDecl.Parent;
+                if (parentSyntax is null)
+                    return document.Project.Solution;
                 var valueSyntax = SyntaxFactory.Argument(parentSyntax.Right.ReplaceNode(((MemberAccessExpressionSyntax)parentSyntax.Right).Expression, SyntaxFactory.IdentifierName("ConsoleColors")));
                 var valuesSyntax = SyntaxFactory.ArgumentList().AddArguments(valueSyntax);
                 var resultSyntax = SyntaxFactory.InvocationExpression(maeSyntax, valuesSyntax);
 
                 // Actually replace
                 var node = await document.GetSyntaxRootAsync(cancellationToken);
-                var finalNode = node.ReplaceNode(parentSyntax, resultSyntax);
+                var finalNode = node?.ReplaceNode(parentSyntax, resultSyntax);
 
                 // Check the imports
-                var compilation = finalNode as CompilationUnitSyntax;
-                if (compilation?.Usings.Any(u => u.Name.ToString() == "Terminaux.Colors") == false)
+                if (finalNode is not CompilationUnitSyntax compilation)
+                    return document.Project.Solution;
+                if (compilation.Usings.Any(u => u.Name?.ToString() == "Terminaux.Colors") == false)
                 {
                     var name = SyntaxFactory.QualifiedName(
                         SyntaxFactory.IdentifierName("Terminaux"),
@@ -86,7 +91,7 @@ namespace Nitrocid.Analyzers.ConsoleBase
                     compilation = compilation
                         .AddUsings(SyntaxFactory.UsingDirective(name));
                 }
-                if (compilation?.Usings.Any(u => u.Name.ToString() == "Terminaux.Colors.Data") == false)
+                if (compilation.Usings.Any(u => u.Name?.ToString() == "Terminaux.Colors.Data") == false)
                 {
                     var name = SyntaxFactory.QualifiedName(
                         SyntaxFactory.QualifiedName(

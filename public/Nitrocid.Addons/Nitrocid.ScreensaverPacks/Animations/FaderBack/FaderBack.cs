@@ -37,8 +37,9 @@ namespace Nitrocid.ScreensaverPacks.Animations.FaderBack
         /// <summary>
         /// Simulates the background fading animation
         /// </summary>
-        public static void Simulate(FaderBackSettings Settings)
+        public static void Simulate(FaderBackSettings? Settings)
         {
+            Settings ??= new();
             int RedColorNum = RandomDriver.Random(Settings.FaderBackMinimumRedColorLevel, Settings.FaderBackMaximumRedColorLevel);
             int GreenColorNum = RandomDriver.Random(Settings.FaderBackMinimumGreenColorLevel, Settings.FaderBackMaximumGreenColorLevel);
             int BlueColorNum = RandomDriver.Random(Settings.FaderBackMinimumBlueColorLevel, Settings.FaderBackMaximumBlueColorLevel);

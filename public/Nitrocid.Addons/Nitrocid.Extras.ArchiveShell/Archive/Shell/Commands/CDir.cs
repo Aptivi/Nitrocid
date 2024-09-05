@@ -33,7 +33,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            TextWriterColor.Write(ArchiveShellCommon.CurrentDirectory);
+            TextWriterColor.Write(ArchiveShellCommon.CurrentDirectory ?? "");
             return 0;
         }
     }

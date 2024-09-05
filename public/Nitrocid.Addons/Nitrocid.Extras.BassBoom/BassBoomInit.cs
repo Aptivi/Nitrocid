@@ -63,8 +63,8 @@ namespace Nitrocid.Extras.BassBoom
 {
     internal class BassBoomInit : IAddon
     {
-        internal static Version mpgVer;
-        internal static Version outVer;
+        internal static Version? mpgVer;
+        internal static Version? outVer;
         internal static Color white = new(ConsoleColors.White);
         private readonly ExtensionHandler[] handlers = [
             new(".mp3", "Mp3BassBoom", PlayerHandler.Handle, PlayerHandler.InfoHandle),
@@ -132,11 +132,11 @@ namespace Nitrocid.Extras.BassBoom
         internal static BassBoomConfig BassBoomConfig =>
             (BassBoomConfig)Config.baseConfigurations[nameof(BassBoomConfig)];
 
-        ReadOnlyDictionary<string, Delegate> IAddon.PubliclyAvailableFunctions => null;
+        ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => null;
 
-        ReadOnlyDictionary<string, PropertyInfo> IAddon.PubliclyAvailableProperties => null;
+        ReadOnlyDictionary<string, PropertyInfo>? IAddon.PubliclyAvailableProperties => null;
 
-        ReadOnlyDictionary<string, FieldInfo> IAddon.PubliclyAvailableFields => null;
+        ReadOnlyDictionary<string, FieldInfo>? IAddon.PubliclyAvailableFields => null;
 
         void IAddon.StartAddon()
         {

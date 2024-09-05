@@ -33,6 +33,7 @@ using Nitrocid.Files.Extensions;
 using Nitrocid.Files.Operations.Querying;
 using Terminaux.Writer.ConsoleWriters;
 using Magico.Files;
+using Nitrocid.Kernel.Exceptions;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -96,7 +97,8 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                     SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Extra info"), true);
                     if (ExtensionHandlerTools.IsHandlerRegistered(FileInfo.Extension))
                     {
-                        var handler = ExtensionHandlerTools.GetExtensionHandler(FileInfo.Extension);
+                        var handler = ExtensionHandlerTools.GetExtensionHandler(FileInfo.Extension) ??
+                            throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Handler is registered but somehow failed to get an extension handler for") + $" {fileInfo.Extension}");
                         TextWriterColor.Write(handler.InfoHandler(FilePath));
                     }
                 }

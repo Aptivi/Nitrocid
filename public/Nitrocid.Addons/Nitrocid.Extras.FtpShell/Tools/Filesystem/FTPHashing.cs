@@ -45,10 +45,12 @@ namespace Nitrocid.Extras.FtpShell.Tools.Filesystem
         {
             if (!string.IsNullOrEmpty(File))
             {
-                if (((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).FileExists(File))
+                var client = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance ??
+                    throw new KernelException(KernelExceptionType.FTPNetwork, Translate.DoTranslation("Connection is not established yet."));
+                if (client.FileExists(File))
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Hashing {0} using {1}...", File, HashAlgorithm.ToString());
-                    return ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).GetChecksum(File, HashAlgorithm);
+                    return client.GetChecksum(File, HashAlgorithm);
                 }
                 else
                 {
@@ -83,17 +85,19 @@ namespace Nitrocid.Extras.FtpShell.Tools.Filesystem
         {
             if (!string.IsNullOrEmpty(Directory))
             {
-                if (((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DirectoryExists(Directory))
+                var client = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance ??
+                    throw new KernelException(KernelExceptionType.FTPNetwork, Translate.DoTranslation("Connection is not established yet."));
+                if (client.DirectoryExists(Directory))
                 {
                     var Hashes = new Dictionary<string, FtpHash>();
                     FtpListItem[] Items;
                     if (Recurse)
                     {
-                        Items = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).GetListing(Directory, FtpListOption.Recursive);
+                        Items = client.GetListing(Directory, FtpListOption.Recursive);
                     }
                     else
                     {
-                        Items = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).GetListing(Directory);
+                        Items = client.GetListing(Directory);
                     }
                     foreach (FtpListItem Item in Items)
                     {

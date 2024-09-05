@@ -31,7 +31,7 @@ namespace Nitrocid.Extras.GitShell.Git
 
         internal static string branchName = "";
         internal static string repoPath = "";
-        internal static Repository repo = null;
+        internal static Repository? repo = null;
         internal static string name = "";
         internal static string email = "";
         internal static bool isIdentified = false;
@@ -51,7 +51,7 @@ namespace Nitrocid.Extras.GitShell.Git
         /// <summary>
         /// Repository instance for Git
         /// </summary>
-        public static Repository Repository =>
+        public static Repository? Repository =>
             repo;
 
         /// <summary>

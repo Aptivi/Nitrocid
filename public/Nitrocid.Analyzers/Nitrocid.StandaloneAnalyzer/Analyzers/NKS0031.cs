@@ -34,6 +34,8 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
         public bool Analyze(Document document)
         {
             var tree = document.GetSyntaxTreeAsync().Result;
+            if (tree is null)
+                return false;
             var syntaxNodeNodes = tree.GetRoot().DescendantNodesAndSelf().OfType<SyntaxNode>().ToList();
             bool found = false;
             foreach (var syntaxNode in syntaxNodeNodes)
@@ -57,13 +59,13 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                 // Analyze!
                 if (exp.Expression is IdentifierNameSyntax identifier)
                 {
-                    var location = exp.Parent.GetLocation();
+                    var location = exp.Parent?.GetLocation();
                     if (identifier.Identifier.Text == "TimeDateTools")
                     {
                         // Let's see if the caller tries to access TimeDateTools.KernelDateTimeUtc.ToString.
                         var name = (IdentifierNameSyntax)exp.Name;
                         var idName = name.Identifier.Text;
-                        if (idName == "KernelDateTimeUtc")
+                        if (idName == "KernelDateTimeUtc" && location is not null)
                         {
                             var lineSpan = location.GetLineSpan();
                             TextWriterColor.Write($"{GetType().Name}: {document.FilePath} ({lineSpan.StartLinePosition} -> {lineSpan.EndLinePosition}): Caller uses TimeDateTools.KernelDateTimeUtc.ToString instead of TimeDateRenderersUtc.RenderTimeUtc()", true, ConsoleColors.Yellow);
@@ -80,6 +82,8 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
         public async Task SuggestAsync(Document document, CancellationToken cancellationToken = default)
         {
             var tree = document.GetSyntaxTreeAsync(cancellationToken).Result;
+            if (tree is null)
+                return;
             var syntaxNodeNodes = tree.GetRoot(cancellationToken).DescendantNodesAndSelf().OfType<SyntaxNode>().ToList();
             foreach (var syntaxNode in syntaxNodeNodes)
             {
@@ -102,15 +106,17 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                         .WithTrailingTrivia(resultSyntax.GetTrailingTrivia());
 
                     // Actually replace
+                    if (exp.Parent is null)
+                        return;
                     var node = await document.GetSyntaxRootAsync(cancellationToken);
-                    var finalNode = node.ReplaceNode(exp.Parent, replacedSyntax);
+                    var finalNode = node?.ReplaceNode(exp.Parent, replacedSyntax);
                     TextWriterColor.Write("Here's what the replacement would look like (with no Roslyn trivia):", true, ConsoleColors.Yellow);
                     TextWriterColor.Write($"  - {exp}", true, ConsoleColors.Red);
                     TextWriterColor.Write($"  + {replacedSyntax.ToFullString()}", true, ConsoleColors.Green);
 
                     // Check the imports
                     var compilation = finalNode as CompilationUnitSyntax;
-                    if (compilation?.Usings.Any(u => u.Name.ToString() == $"{AnalysisTools.rootNameSpace}.Kernel.Time.Renderers") == false)
+                    if (compilation?.Usings.Any(u => u.Name?.ToString() == $"{AnalysisTools.rootNameSpace}.Kernel.Time.Renderers") == false)
                     {
                         var name = SyntaxFactory.QualifiedName(
                             SyntaxFactory.QualifiedName(

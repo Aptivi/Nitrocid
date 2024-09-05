@@ -208,7 +208,7 @@ namespace Nitrocid.Extras.Calendar
         internal static CalendarConfig CalendarConfig =>
             (CalendarConfig)Config.baseConfigurations[nameof(CalendarConfig)];
 
-        ReadOnlyDictionary<string, Delegate> IAddon.PubliclyAvailableFunctions => new(new Dictionary<string, Delegate>()
+        ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => new(new Dictionary<string, Delegate>()
         {
             { nameof(CalendarPrint.PrintCalendar), new Action(CalendarPrint.PrintCalendar) },
             { nameof(CalendarPrint.PrintCalendar) + "2", new Action<CalendarTypes>(CalendarPrint.PrintCalendar) },
@@ -217,7 +217,7 @@ namespace Nitrocid.Extras.Calendar
             { nameof(EventManager.RemoveEvent), new Action<DateTime, int>(EventManager.RemoveEvent) },
             { nameof(EventManager.ListEvents), new Action(EventManager.ListEvents) },
             { nameof(EventManager.LoadEvents), new Action(EventManager.LoadEvents) },
-            { nameof(EventManager.LoadEvent), new Func<string, EventInfo>(EventManager.LoadEvent) },
+            { nameof(EventManager.LoadEvent), new Func<string, EventInfo?>(EventManager.LoadEvent) },
             { nameof(EventManager.SaveEvents), new Action(EventManager.SaveEvents) },
             { nameof(EventManager.SaveEvents) + "2", new Action<string, bool>(EventManager.SaveEvents) },
             { nameof(EventManager.SaveEvent), new Action<EventInfo>(EventManager.SaveEvent) },
@@ -226,16 +226,16 @@ namespace Nitrocid.Extras.Calendar
             { nameof(ReminderManager.RemoveReminder), new Action<DateTime, int>(ReminderManager.RemoveReminder) },
             { nameof(ReminderManager.ListReminders), new Action(ReminderManager.ListReminders) },
             { nameof(ReminderManager.LoadReminders), new Action(ReminderManager.LoadReminders) },
-            { nameof(ReminderManager.LoadReminder), new Func<string, ReminderInfo>(ReminderManager.LoadReminder) },
+            { nameof(ReminderManager.LoadReminder), new Func<string, ReminderInfo?>(ReminderManager.LoadReminder) },
             { nameof(ReminderManager.SaveReminders), new Action(ReminderManager.SaveReminders) },
             { nameof(ReminderManager.SaveReminders) + "2", new Action<string, bool>(ReminderManager.SaveReminders) },
             { nameof(ReminderManager.SaveReminder), new Action<ReminderInfo>(ReminderManager.SaveReminder) },
             { nameof(ReminderManager.SaveReminder) + "2", new Action<ReminderInfo, string>(ReminderManager.SaveReminder) },
         });
 
-        ReadOnlyDictionary<string, PropertyInfo> IAddon.PubliclyAvailableProperties => null;
+        ReadOnlyDictionary<string, PropertyInfo>? IAddon.PubliclyAvailableProperties => null;
 
-        ReadOnlyDictionary<string, FieldInfo> IAddon.PubliclyAvailableFields => null;
+        ReadOnlyDictionary<string, FieldInfo>? IAddon.PubliclyAvailableFields => null;
 
         void IAddon.FinalizeAddon()
         {

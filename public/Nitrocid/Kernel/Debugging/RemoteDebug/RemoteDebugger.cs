@@ -33,6 +33,7 @@ using Nitrocid.Languages;
 using Nitrocid.Kernel.Events;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Kernel.Debugging.RemoteDebug.RemoteChat;
+using Nitrocid.Kernel.Exceptions;
 
 namespace Nitrocid.Kernel.Debugging.RemoteDebug
 {
@@ -43,13 +44,13 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug
     {
 
         internal static bool RDebugFailed;
-        internal static Exception RDebugFailedReason;
+        internal static Exception? RDebugFailedReason;
         internal static List<RemoteDebugDevice> DebugDevices = [];
-        internal static Socket RDebugClient;
-        internal static TcpListener DebugTCP;
+        internal static Socket? RDebugClient;
+        internal static TcpListener? DebugTCP;
         internal static KernelThread RDebugThread = new("Remote Debug Thread", true, StartRDebugger) { isCritical = true };
         internal static int debugPort = 3014;
-        internal readonly static SemVer RDebugVersion = SemVer.ParseWithRev("0.9.1.0");
+        internal readonly static SemVer? RDebugVersion = SemVer.ParseWithRev("0.9.1.0");
         private static readonly AutoResetEvent RDebugBailer = new(false);
 
         /// <summary>
@@ -126,6 +127,8 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug
                     RemoteDebugDevice RDebugInstance;
 
                     // Check for pending connections
+                    if (DebugTCP is null)
+                        continue;
                     if (DebugTCP.Pending())
                     {
                         // Populate the device variables with the information
@@ -135,22 +138,28 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug
                         RDebugStream = new NetworkStream(RDebugClient);
 
                         // Add the device to JSON
-                        RDebugEndpoint = RDebugClient.RemoteEndPoint.ToString();
-                        RDebugIP = RDebugEndpoint.Remove(RDebugClient.RemoteEndPoint.ToString().IndexOf(":"));
-                        var device = RemoteDebugTools.AddDevice(RDebugIP, false);
+                        RDebugEndpoint = RDebugClient.RemoteEndPoint?.ToString() ?? "";
+                        RemoteDebugDeviceInfo? deviceInfo;
+                        if (!string.IsNullOrEmpty(RDebugEndpoint))
+                        {
+                            RDebugIP = RDebugEndpoint.Remove(RDebugClient.RemoteEndPoint?.ToString()?.IndexOf(":") ?? 0);
+                            deviceInfo = RemoteDebugTools.AddDevice(RDebugIP, false);
+                        }
+                        else
+                            continue;
 
                         // Get the remaining properties
                         var RDebugThread = new KernelThread($"Remote Debug Listener Thread for {RDebugIP}", false, Listen);
-                        RDebugInstance = new RemoteDebugDevice(RDebugClient, RDebugStream, RDebugThread, device);
+                        RDebugInstance = new RemoteDebugDevice(RDebugClient, RDebugStream, RDebugThread, deviceInfo);
                         RDebugSWriter = RDebugInstance.ClientStreamWriter;
 
                         // Check the name
-                        RDebugName = device.Name;
+                        RDebugName = deviceInfo.Name;
                         if (string.IsNullOrEmpty(RDebugName))
                             DebugWriter.WriteDebug(DebugLevel.W, "Debug device {0} has no name. Prompting for name...", RDebugIP);
 
                         // Check to see if the device is blocked
-                        if (device.Blocked)
+                        if (deviceInfo.Blocked)
                         {
                             // Blocked! Disconnect it.
                             DebugWriter.WriteDebug(DebugLevel.W, "Debug device {0} ({1}) tried to join remote debug, but blocked.", RDebugName, RDebugIP);
@@ -195,14 +204,14 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug
             }
 
             RDebugStopping = false;
-            DebugTCP.Stop();
+            DebugTCP?.Stop();
             DebugDevices.Clear();
         }
 
         /// <summary>
         /// Thread to listen to messages and post them to the debugger
         /// </summary>
-        internal static void Listen(object RDebugInstance)
+        internal static void Listen(object? RDebugInstance)
         {
             if (RDebugInstance is not RemoteDebugDevice device)
                 return;
@@ -212,6 +221,8 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug
                 try
                 {
                     Thread.Sleep(1);
+                    if (device is null)
+                        throw new KernelException(KernelExceptionType.RemoteDebugDeviceOperation, Translate.DoTranslation("Remote debug device doesn't seem to exist."));
 
                     // Variables
                     var MessageBuffer = new byte[65537];
@@ -257,7 +268,7 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug
                 }
                 catch
                 {
-                    string SocketIP = device?.ClientIP;
+                    string SocketIP = device?.ClientIP ?? "";
                     if (!string.IsNullOrWhiteSpace(SocketIP))
                         RemoteDebugTools.DisconnectDevice(SocketIP);
                 }

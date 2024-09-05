@@ -78,7 +78,7 @@ namespace Nitrocid.Extras.HttpShell.HTTP
                 {
                     if (!detaching)
                     {
-                        ((HttpClient)HTTPShellCommon.ClientHTTP.ConnectionInstance)?.Dispose();
+                        ((HttpClient?)HTTPShellCommon.ClientHTTP?.ConnectionInstance)?.Dispose();
                         int connectionIndex = NetworkConnectionTools.GetConnectionIndex(HTTPShellCommon.ClientHTTP);
                         NetworkConnectionTools.CloseConnection(connectionIndex);
                         HTTPShellCommon.clientConnection = null;

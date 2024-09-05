@@ -24,6 +24,7 @@ using Nitrocid.Kernel.Extensions;
 using Nitrocid.Network.Transfer;
 using Nitrocid.Misc.Splash;
 using Nitrocid.Languages;
+using Nitrocid.Kernel.Exceptions;
 
 #if SPECIFIERREL
 using Nitrocid.Files.Paths;
@@ -44,7 +45,7 @@ namespace Nitrocid.Kernel.Updates
         /// </summary>
         /// <param name="kind">The kind of update</param>
         /// <returns>A kernel update instance</returns>
-        public static KernelUpdate FetchKernelUpdates(UpdateKind kind)
+        public static KernelUpdate? FetchKernelUpdates(UpdateKind kind)
         {
             try
             {
@@ -75,7 +76,7 @@ namespace Nitrocid.Kernel.Updates
         /// Fetches the GitHub repo to see if there are any updates
         /// </summary>
         /// <returns>A kernel update instance</returns>
-        public static KernelUpdate FetchBinaryArchive()
+        public static KernelUpdate? FetchBinaryArchive()
         {
             try
             {
@@ -97,7 +98,7 @@ namespace Nitrocid.Kernel.Updates
         /// Fetches the GitHub repo for addon pack
         /// </summary>
         /// <returns>A kernel update instance</returns>
-        public static KernelUpdate FetchAddonPack()
+        public static KernelUpdate? FetchAddonPack()
         {
             try
             {
@@ -115,7 +116,7 @@ namespace Nitrocid.Kernel.Updates
         /// Fetches the GitHub repo for changelogs
         /// </summary>
         /// <returns>A kernel update instance</returns>
-        public static KernelUpdate FetchChangelogs()
+        public static KernelUpdate? FetchChangelogs()
         {
             try
             {
@@ -177,7 +178,8 @@ namespace Nitrocid.Kernel.Updates
         /// <returns>A string representing the changelogs for this kernel version</returns>
         public static string GetVersionChangelogs()
         {
-            var changelogsUpdate = FetchChangelogs();
+            var changelogsUpdate = FetchChangelogs() ??
+                throw new KernelException(KernelExceptionType.Network, Translate.DoTranslation("Can't fetch changelogs."));
             string changes = NetworkTransfer.DownloadString(changelogsUpdate.UpdateURL.ToString());
             return changes;
         }

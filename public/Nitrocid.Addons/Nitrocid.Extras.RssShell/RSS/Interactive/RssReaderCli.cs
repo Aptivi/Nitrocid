@@ -39,13 +39,13 @@ namespace Nitrocid.Extras.RssShell.RSS.Interactive
     /// </summary>
     public class RssReaderCli : BaseInteractiveTui<RSSArticle>, IInteractiveTui<RSSArticle>
     {
-        internal NetworkConnection rssConnection;
+        internal NetworkConnection? rssConnection;
 
         private RSSFeed Feed
         {
             get
             {
-                if (rssConnection.ConnectionInstance is not RSSFeed feed)
+                if (rssConnection is null || rssConnection.ConnectionInstance is not RSSFeed feed)
                     throw new KernelException(KernelExceptionType.RSSNetwork, Translate.DoTranslation("This connection contains an invalid RSS feed instance."));
                 return feed;
             }
@@ -95,26 +95,27 @@ namespace Nitrocid.Extras.RssShell.RSS.Interactive
             return article.ArticleTitle;
         }
 
-        internal void ShowArticleInfo(object item)
+        internal void ShowArticleInfo(RSSArticle? item)
         {
             // Render the final information string
             var finalInfoRendered = new StringBuilder();
-            RSSArticle article = (RSSArticle)item;
-            bool hasTitle = !string.IsNullOrEmpty(article.ArticleTitle);
-            bool hasDescription = !string.IsNullOrEmpty(article.ArticleDescription);
-            bool hasVars = article.ArticleVariables.Count > 0;
+            if (item is null)
+                return;
+            bool hasTitle = !string.IsNullOrEmpty(item.ArticleTitle);
+            bool hasDescription = !string.IsNullOrEmpty(item.ArticleDescription);
+            bool hasVars = item.ArticleVariables.Count > 0;
 
             string finalRenderedArticleTitle =
                 hasTitle ?
-                $"{article.ArticleTitle}" :
-                Translate.DoTranslation("Unknown article title") + $" -> {article.ArticleLink}";
+                $"{item.ArticleTitle}" :
+                Translate.DoTranslation("Unknown article title") + $" -> {item.ArticleLink}";
             string finalRenderedArticleBody =
                 hasDescription ?
-                article.ArticleDescription :
-                Translate.DoTranslation("Unfortunately, this article doesn't have any contents. You can still follow the article at") + $" {article.ArticleLink}.";
+                item.ArticleDescription :
+                Translate.DoTranslation("Unfortunately, this article doesn't have any contents. You can still follow the article at") + $" {item.ArticleLink}.";
             string finalRenderedArticleVars =
                 hasVars ?
-                $"  - {string.Join("\n  - ", article.ArticleVariables.Select((kvp) => $"{kvp.Key} [{kvp.Value.InnerText}]"))}" :
+                $"  - {string.Join("\n  - ", item.ArticleVariables.Select((kvp) => $"{kvp.Key} [{kvp.Value.InnerText}]"))}" :
                 Translate.DoTranslation("No revision.");
             finalInfoRendered.AppendLine(finalRenderedArticleTitle);
             finalInfoRendered.AppendLine(finalRenderedArticleBody);
@@ -125,11 +126,12 @@ namespace Nitrocid.Extras.RssShell.RSS.Interactive
             InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
         }
 
-        internal void OpenArticleLink(object item)
+        internal void OpenArticleLink(RSSArticle? item)
         {
             // Check to see if we have a link
-            RSSArticle article = (RSSArticle)item;
-            bool hasLink = !string.IsNullOrEmpty(article.ArticleLink);
+            if (item is null)
+                return;
+            bool hasLink = !string.IsNullOrEmpty(item.ArticleLink);
             if (!hasLink)
                 InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("This article doesn't have a link."), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
 
@@ -137,11 +139,11 @@ namespace Nitrocid.Extras.RssShell.RSS.Interactive
             try
             {
                 if (KernelPlatform.IsOnWindows())
-                    ProcessExecutor.ExecuteProcess("cmd.exe", $"/c \"start {article.ArticleLink}\"");
+                    ProcessExecutor.ExecuteProcess("cmd.exe", $"/c \"start {item.ArticleLink}\"");
                 else if (KernelPlatform.IsOnMacOS())
-                    ProcessExecutor.ExecuteProcess("open", article.ArticleLink);
+                    ProcessExecutor.ExecuteProcess("open", item.ArticleLink);
                 else
-                    ProcessExecutor.ExecuteProcess("xdg-open", article.ArticleLink);
+                    ProcessExecutor.ExecuteProcess("xdg-open", item.ArticleLink);
             }
             catch (Exception e)
             {

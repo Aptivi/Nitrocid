@@ -31,11 +31,11 @@ namespace Nitrocid.Extras.MailShell.Mail
     public static class MailShellCommon
     {
 
-        internal static IEnumerable<UniqueId> IMAP_Messages;
+        internal static IEnumerable<UniqueId>? IMAP_Messages;
         internal static int imapPingInterval = 30000;
         internal static int smtpPingInterval = 30000;
         internal static int maxMessagesInPage = 10;
-        internal static NetworkConnection Client;
+        internal static NetworkConnection? Client;
 
         /// <summary>
         /// IMAP current directory name

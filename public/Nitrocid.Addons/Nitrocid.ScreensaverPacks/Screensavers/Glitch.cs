@@ -29,7 +29,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     public class GlitchDisplay : BaseScreensaver, IScreensaver
     {
 
-        private Animations.Glitch.GlitchSettings GlitchSettingsInstance;
+        private Animations.Glitch.GlitchSettings? GlitchSettingsInstance;
 
         /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "Glitch";

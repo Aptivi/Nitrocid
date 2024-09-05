@@ -64,7 +64,7 @@ namespace Nitrocid.Analyzers.Languages
             if (exp.Expression is IdentifierNameSyntax identifier && exp.Parent is AssignmentExpressionSyntax assignment)
             {
                 var rightExpInvocation = (InvocationExpressionSyntax)assignment.Right;
-                var location = exp.Parent.GetLocation();
+                var location = exp.Parent?.GetLocation();
                 var rightExp = (MemberAccessExpressionSyntax)rightExpInvocation.Expression;
                 var rightExpIdExp = (IdentifierNameSyntax)rightExp.Expression;
                 var rightExpIdName = (IdentifierNameSyntax)rightExp.Name;

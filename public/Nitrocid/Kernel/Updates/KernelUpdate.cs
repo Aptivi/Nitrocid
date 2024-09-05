@@ -23,6 +23,7 @@ using System.Data;
 using System.Linq;
 using Newtonsoft.Json.Linq;
 using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Exceptions;
 using Textify.Versioning;
 
 namespace Nitrocid.Kernel.Updates
@@ -36,7 +37,7 @@ namespace Nitrocid.Kernel.Updates
         /// <summary>
         /// Updated kernel version
         /// </summary>
-        public SemVer UpdateVersion { get; private set; }
+        public SemVer? UpdateVersion { get; private set; }
 
         /// <summary>
         /// Update file URL
@@ -71,7 +72,7 @@ namespace Nitrocid.Kernel.Updates
             // After we do this, Nitrocid KS should recognize newer servicing versions based on the current series (i.e. KS 0.0.21.3 didn't notify
             // the user that 0.0.21.4 was available due to 0.0.8.12 and versions that came after coming as first according to the API until 0.0.21.5
             // arrived)
-            List<(SemVer UpdateVersion, Uri UpdateURL)> SortedVersions = [];
+            List<(SemVer? UpdateVersion, Uri UpdateURL)> SortedVersions = [];
             string specifier =
                 kind == UpdateKind.Binary ? "bin" :
                 kind == UpdateKind.BinaryLite ? "bin-lite" :
@@ -79,10 +80,13 @@ namespace Nitrocid.Kernel.Updates
                 "bin";
             foreach (JToken KernelUpdate in UpdateToken)
             {
+                if (KernelUpdate is null)
+                    continue;
+
                 // We usually prefix versions with vx.x.x.x-xxx on Nitrocid KS releases.
-                string tagName = KernelUpdate.SelectToken("tag_name").ToString();
-                tagName = tagName.StartsWith('v') ? KernelUpdate.SelectToken("tag_name").ToString()[1..] : tagName;
-                SemVer KernelUpdateVer = default;
+                string tagName = KernelUpdate.SelectToken("tag_name")?.ToString() ?? "";
+                tagName = tagName.StartsWith('v') ? tagName[1..] : tagName;
+                SemVer? KernelUpdateVer = default;
                 if (tagName.Split('.').Length > 3)
                     KernelUpdateVer = SemVer.ParseWithRev(tagName);
                 else
@@ -90,9 +94,12 @@ namespace Nitrocid.Kernel.Updates
 
                 // Now, get the appropriate -bin URLs
                 string KernelUpdateURL = "";
-                foreach (var asset in KernelUpdate.SelectToken("assets"))
+                var assets = KernelUpdate.SelectToken("assets");
+                if (assets is null)
+                    continue;
+                foreach (var asset in assets)
                 {
-                    string url = (string)asset["browser_download_url"];
+                    string url = (string?)asset["browser_download_url"] ?? "";
                     string binSpecifier = kind != UpdateKind.Binary ? specifier : specifier +
 #if NET6_0
                         "6"
@@ -112,14 +119,20 @@ namespace Nitrocid.Kernel.Updates
                         break;
                     }
                 }
-                DebugWriter.WriteDebug(DebugLevel.I, "Update information: {0}, {1}.", KernelUpdateVer.ToString(), KernelUpdateURL);
+                DebugWriter.WriteDebug(DebugLevel.I, "Update information: {0}, {1}.", KernelUpdateVer?.ToString(), KernelUpdateURL);
                 if (!string.IsNullOrEmpty(KernelUpdateURL))
                     SortedVersions.Add((KernelUpdateVer, new Uri(KernelUpdateURL)));
             }
             SortedVersions =
             [
                 .. SortedVersions.OrderByDescending((x) =>
-                       new Version(x.UpdateVersion.MajorVersion, x.UpdateVersion.MinorVersion, x.UpdateVersion.PatchVersion, x.UpdateVersion.RevisionVersion)),
+                    {
+                        var updateVersion = x.UpdateVersion;
+                        if (updateVersion is null)
+                            return new Version();
+                        return new Version(updateVersion.MajorVersion, updateVersion.MinorVersion, updateVersion.PatchVersion, updateVersion.RevisionVersion);
+                    }
+                ),
             ];
             DebugWriter.WriteDebug(DebugLevel.I, "Found {0} kernel updates.", SortedVersions.Count);
 
@@ -127,10 +140,10 @@ namespace Nitrocid.Kernel.Updates
             var CurrentVer = KernelMain.VersionFull;
             var UpdateVer = SortedVersions[0].UpdateVersion;
             var UpdateURI =
-                kind == UpdateKind.Addons ?
-                new Uri(SortedVersions[0].UpdateURL.ToString().Replace(SortedVersions[0].UpdateVersion.ToString(), CurrentVer.ToString()).Replace($"-{specifier}", "-addons")) :
+                kind == UpdateKind.Addons && UpdateVer is not null && CurrentVer is not null ?
+                new Uri(SortedVersions[0].UpdateURL.ToString().Replace(UpdateVer.ToString(), CurrentVer.ToString()).Replace($"-{specifier}", "-addons")) :
                 SortedVersions[0].UpdateURL;
-            DebugWriter.WriteDebug(DebugLevel.I, "Update version: {0}", UpdateVer.ToString());
+            DebugWriter.WriteDebug(DebugLevel.I, "Update version: {0}", UpdateVer?.ToString());
             DebugWriter.WriteDebug(DebugLevel.I, "Update URL: {0}", UpdateURI.ToString());
 
             // Install the values
@@ -139,7 +152,10 @@ namespace Nitrocid.Kernel.Updates
             UpdateKind = kind;
 
             // If the updated version is lower or equal to the current version, consider the kernel up-to-date.
-            Updated = UpdateVersion <= CurrentVer;
+            if (UpdateVersion is not null && CurrentVer is not null)
+                Updated = UpdateVersion <= CurrentVer;
+            else
+                Updated = true;
             DebugWriter.WriteDebug(DebugLevel.I, "Is this kernel up-to-date? {0}", Updated);
         }
 

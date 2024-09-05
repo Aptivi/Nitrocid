@@ -23,6 +23,7 @@ using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
 using Terminaux.Writer.FancyWriters;
 using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Kernel.Exceptions;
 
 namespace Nitrocid.Extras.FtpShell.FTP.Commands
 {
@@ -37,25 +38,28 @@ namespace Nitrocid.Extras.FtpShell.FTP.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
+            var client = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance;
+            if (client is null)
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.FTPShell);
             SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("FTP server information"), true);
             TextWriters.Write(Translate.DoTranslation("Server address:") + " ", false, KernelColorType.ListEntry);
-            TextWriters.Write(((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).Host, true, KernelColorType.ListValue);
+            TextWriters.Write(client.Host, true, KernelColorType.ListValue);
             TextWriters.Write(Translate.DoTranslation("Server port:") + " ", false, KernelColorType.ListEntry);
-            TextWriters.Write(((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).Port.ToString(), true, KernelColorType.ListValue);
+            TextWriters.Write(client.Port.ToString(), true, KernelColorType.ListValue);
             TextWriters.Write(Translate.DoTranslation("Server type:") + " ", false, KernelColorType.ListEntry);
-            TextWriters.Write(((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).ServerType.ToString(), true, KernelColorType.ListValue);
+            TextWriters.Write(client.ServerType.ToString(), true, KernelColorType.ListValue);
             TextWriters.Write(Translate.DoTranslation("Server system type:") + " ", false, KernelColorType.ListEntry);
-            TextWriters.Write(((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).SystemType, true, KernelColorType.ListValue);
+            TextWriters.Write(client.SystemType, true, KernelColorType.ListValue);
             TextWriters.Write(Translate.DoTranslation("Server system:") + " ", false, KernelColorType.ListEntry);
-            TextWriters.Write(((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).ServerOS.ToString(), true, KernelColorType.ListValue);
+            TextWriters.Write(client.ServerOS.ToString(), true, KernelColorType.ListValue);
             TextWriters.Write(Translate.DoTranslation("Server encryption mode:") + " ", false, KernelColorType.ListEntry);
-            TextWriters.Write(((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).Config.EncryptionMode.ToString(), true, KernelColorType.ListValue);
+            TextWriters.Write(client.Config.EncryptionMode.ToString(), true, KernelColorType.ListValue);
             TextWriters.Write(Translate.DoTranslation("Server data connection type:") + " ", false, KernelColorType.ListEntry);
-            TextWriters.Write(((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).Config.DataConnectionType.ToString(), true, KernelColorType.ListValue);
+            TextWriters.Write(client.Config.DataConnectionType.ToString(), true, KernelColorType.ListValue);
             TextWriters.Write(Translate.DoTranslation("Server download data type:") + " ", false, KernelColorType.ListEntry);
-            TextWriters.Write(((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).Config.DownloadDataType.ToString(), true, KernelColorType.ListValue);
+            TextWriters.Write(client.Config.DownloadDataType.ToString(), true, KernelColorType.ListValue);
             TextWriters.Write(Translate.DoTranslation("Server upload data type:") + " ", false, KernelColorType.ListEntry);
-            TextWriters.Write(((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).Config.UploadDataType.ToString(), true, KernelColorType.ListValue);
+            TextWriters.Write(client.Config.UploadDataType.ToString(), true, KernelColorType.ListValue);
             return 0;
         }
 

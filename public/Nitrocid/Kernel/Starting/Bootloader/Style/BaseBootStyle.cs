@@ -42,7 +42,7 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style
     public abstract class BaseBootStyle : IBootStyle
     {
         /// <inheritdoc/>
-        public virtual Dictionary<ConsoleKeyInfo, Action> CustomKeys { get; }
+        public virtual Dictionary<ConsoleKeyInfo, Action>? CustomKeys { get; }
 
         /// <inheritdoc/>
         public virtual string Render()

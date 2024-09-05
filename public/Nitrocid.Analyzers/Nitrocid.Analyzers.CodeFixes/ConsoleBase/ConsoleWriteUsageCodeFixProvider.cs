@@ -48,7 +48,9 @@ namespace Nitrocid.Analyzers.ConsoleBase
             var diagnosticSpan = diagnostic.Location.SourceSpan;
 
             // Find the type declaration identified by the diagnostic.
-            var declaration = root.FindToken(diagnosticSpan.Start).Parent.AncestorsAndSelf().OfType<MemberAccessExpressionSyntax>().First();
+            var declaration = root?.FindToken(diagnosticSpan.Start).Parent?.AncestorsAndSelf().OfType<MemberAccessExpressionSyntax>().First();
+            if (declaration is null)
+                return;
 
             // Register a code action that will invoke the fix.
             context.RegisterCodeFix(
@@ -66,7 +68,9 @@ namespace Nitrocid.Analyzers.ConsoleBase
                 // Build the replacement syntax
                 var classSyntax = SyntaxFactory.IdentifierName("TextWriterColor");
                 var methodSyntax = SyntaxFactory.IdentifierName("Write");
-                var parentSyntax = (InvocationExpressionSyntax)typeDecl.Parent;
+                var parentSyntax = (InvocationExpressionSyntax?)typeDecl.Parent;
+                if (parentSyntax is null)
+                    return document.Project.Solution;
                 var argsListSyntax = parentSyntax.ArgumentList.Arguments;
                 var falseArg = SyntaxFactory.Argument(SyntaxFactory.ParseExpression("false"));
                 if (argsListSyntax.Count > 1)
@@ -85,11 +89,12 @@ namespace Nitrocid.Analyzers.ConsoleBase
 
                 // Actually replace
                 var node = await document.GetSyntaxRootAsync(cancellationToken);
-                var finalNode = node.ReplaceNode(parentSyntax, resultSyntax);
+                var finalNode = node?.ReplaceNode(parentSyntax, resultSyntax);
 
                 // Check the imports
-                var compilation = finalNode as CompilationUnitSyntax;
-                if (compilation?.Usings.Any(u => u.Name.ToString() == "Terminaux.Writer.ConsoleWriters") == false)
+                if (finalNode is not CompilationUnitSyntax compilation)
+                    return document.Project.Solution;
+                if (compilation.Usings.Any(u => u.Name?.ToString() == "Terminaux.Writer.ConsoleWriters") == false)
                 {
                     var name = SyntaxFactory.QualifiedName(
                         SyntaxFactory.QualifiedName(

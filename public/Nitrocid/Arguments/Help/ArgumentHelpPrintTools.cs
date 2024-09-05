@@ -65,7 +65,7 @@ namespace Nitrocid.Arguments.Help
         {
             // Check to see if we have this argument
             var argumentList = GetArguments();
-            if (!argumentList.TryGetValue(argument, out ArgumentInfo argInfo))
+            if (!argumentList.TryGetValue(argument, out ArgumentInfo? argInfo))
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "We found no help! {0}", argument);
                 TextWriters.Write(Translate.DoTranslation("No help for argument \"{0}\"."), true, KernelColorType.Error, argument);
@@ -87,6 +87,8 @@ namespace Nitrocid.Arguments.Help
                     Switches = argumentInfo.Switches;
                     DebugWriter.WriteDebug(DebugLevel.I, "{0} args, {1} switches", Arguments.Length, Switches.Length);
                 }
+                else
+                    continue;
 
                 // Print usage information
                 if (Arguments.Length != 0 || Switches.Length != 0)

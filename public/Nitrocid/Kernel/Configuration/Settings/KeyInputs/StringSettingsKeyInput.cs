@@ -33,7 +33,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
 {
     internal class StringSettingsKeyInput : ISettingsKeyInput
     {
-        public object PromptForSet(SettingsKey key, object KeyDefaultValue, out bool bail)
+        public object? PromptForSet(SettingsKey key, object? KeyDefaultValue, out bool bail)
         {
             ConsoleWrapper.Clear();
 
@@ -44,15 +44,15 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             TextWriters.Write(finalSection + "\n", true, KernelColorType.Question);
 
             // Write the prompt
-            string AnswerString = InfoBoxInputColor.WriteInfoBoxInput(key.Name, $"{Translate.DoTranslation("Write any text to use. Remember, follow the description of the option that you've chosen.")} [{KeyDefaultValue}]");
+            string? AnswerString = InfoBoxInputColor.WriteInfoBoxInput(key.Name, $"{Translate.DoTranslation("Write any text to use. Remember, follow the description of the option that you've chosen.")} [{KeyDefaultValue}]");
 
             // Neutralize path if required with the assumption that the keytype is not list
-            AnswerString = (string)TranslateStringValueWithDefault(key, AnswerString, KeyDefaultValue);
+            AnswerString = (string?)TranslateStringValueWithDefault(key, AnswerString, KeyDefaultValue);
             bail = true;
             return AnswerString;
         }
 
-        public object TranslateStringValue(SettingsKey key, string value)
+        public object? TranslateStringValue(SettingsKey key, string value)
         {
             // Neutralize path if required with the assumption that the keytype is not list
             if (key.IsValuePath)
@@ -63,7 +63,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             return value;
         }
 
-        public object TranslateStringValueWithDefault(SettingsKey key, string value, object KeyDefaultValue)
+        public object? TranslateStringValueWithDefault(SettingsKey key, string value, object? KeyDefaultValue)
         {
             // Neutralize path if required with the assumption that the keytype is not list
             if (key.IsValuePath)
@@ -84,7 +84,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             return value;
         }
 
-        public void SetValue(SettingsKey key, object value, BaseKernelConfig configType)
+        public void SetValue(SettingsKey key, object? value, BaseKernelConfig configType)
         {
             // We're dealing with integers
             DebugWriter.WriteDebug(DebugLevel.I, "Answer is not numeric and key is of the String or Char (inferred from keytype {0}) type. Setting variable...", key.Type.ToString());

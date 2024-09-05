@@ -24,19 +24,19 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
 {
     internal class UnknownSettingsKeyInput : ISettingsKeyInput
     {
-        public object PromptForSet(SettingsKey key, object KeyDefaultValue, out bool bail)
+        public object? PromptForSet(SettingsKey key, object? KeyDefaultValue, out bool bail)
         {
             bail = true;
             throw new KernelException(KernelExceptionType.NotImplementedYet);
         }
 
-        public object TranslateStringValue(SettingsKey key, string value) =>
+        public object? TranslateStringValue(SettingsKey key, string value) =>
             throw new KernelException(KernelExceptionType.NotImplementedYet);
 
-        public object TranslateStringValueWithDefault(SettingsKey key, string value, object KeyDefaultValue) =>
+        public object? TranslateStringValueWithDefault(SettingsKey key, string value, object? KeyDefaultValue) =>
             throw new KernelException(KernelExceptionType.NotImplementedYet);
 
-        public void SetValue(SettingsKey key, object value, BaseKernelConfig configType) =>
+        public void SetValue(SettingsKey key, object? value, BaseKernelConfig configType) =>
             throw new KernelException(KernelExceptionType.NotImplementedYet);
 
     }

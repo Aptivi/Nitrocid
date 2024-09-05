@@ -35,10 +35,11 @@ namespace Nitrocid.Extras.FtpShell
             return 0;
         }
 
-        private NetworkConnection EstablishFtpConnection(string address, SpeedDialEntry connection)
+        private NetworkConnection? EstablishFtpConnection(string address, SpeedDialEntry connection)
         {
-            var encMode = connection.Options.Length > 1 ? Enum.Parse<FtpEncryptionMode>(connection.Options[1].ToString()) : FtpEncryptionMode.Auto;
-            return FTPTools.PromptForPassword(null, connection.Options[0].ToString(), address, connection.Port, connection.Options.Length > 1 ? encMode : FtpEncryptionMode.None);
+            var options = connection.Options;
+            var encMode = options.Length > 1 ? Enum.Parse<FtpEncryptionMode>(options[1].ToString() ?? "") : FtpEncryptionMode.Auto;
+            return FTPTools.PromptForPassword(null, options[0].ToString() ?? "", address, connection.Port, options.Length > 1 ? encMode : FtpEncryptionMode.None);
         }
 
     }

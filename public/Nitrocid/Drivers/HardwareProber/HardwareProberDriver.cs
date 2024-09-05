@@ -30,14 +30,14 @@ namespace Nitrocid.Drivers.HardwareProber
         /// Probes the graphics adapter
         /// </summary>
         /// <returns>An object representing the graphics adapter collection object</returns>
-        public static IEnumerable ProbeGraphics() =>
+        public static IEnumerable? ProbeGraphics() =>
             DriverHandler.CurrentHardwareProberDriverLocal.ProbeGraphics();
 
         /// <summary>
         /// Probes the hard drives
         /// </summary>
         /// <returns>An object representing the hard drive collection object</returns>
-        public static IEnumerable ProbeHardDrive() =>
+        public static IEnumerable? ProbeHardDrive() =>
             DriverHandler.CurrentHardwareProberDriverLocal.ProbeHardDrive();
 
         /// <summary>
@@ -67,7 +67,7 @@ namespace Nitrocid.Drivers.HardwareProber
         /// <param name="memory">List of memory returned from the same driver</param>
         /// <param name="graphics">List of graphics adapters returned from the same driver</param>
         /// <param name="hardDrives">List of hard drives returned from the same driver</param>
-        public static void ListHardware(IEnumerable processors, IEnumerable memory, IEnumerable graphics, IEnumerable hardDrives) =>
+        public static void ListHardware(IEnumerable? processors, IEnumerable? memory, IEnumerable? graphics, IEnumerable? hardDrives) =>
             DriverHandler.CurrentHardwareProberDriverLocal.ListHardware(processors, memory, graphics, hardDrives);
 
         /// <summary>

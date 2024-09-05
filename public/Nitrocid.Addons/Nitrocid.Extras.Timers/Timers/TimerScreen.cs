@@ -49,10 +49,10 @@ namespace Nitrocid.Extras.Timers.Timers
         internal static int FigletTimeOldWidthEnd;
         internal static string timerFigletFont = "Small";
         internal static bool running;
-        internal static Color timerColor;
-        private static Timer _Timer;
+        internal static Color? timerColor;
+        private static Timer? _Timer;
 
-        internal static Timer Timer
+        internal static Timer? Timer
         {
             [MethodImpl(MethodImplOptions.Synchronized)]
             get
@@ -106,7 +106,10 @@ namespace Nitrocid.Extras.Timers.Timers
 
             // Populate the time
             double TimerInterval = 60000d;
-            Timer.Interval = TimerInterval;
+            Timer = new Timer
+            {
+                Interval = TimerInterval
+            };
 
             // Add a dynamic text that shows you the remaining time dynamically
             timerScreenPart.AddDynamicText(() =>
@@ -240,10 +243,10 @@ namespace Nitrocid.Extras.Timers.Timers
         /// <summary>
         /// Indicates that the timer has elapsed
         /// </summary>
-        private static void TimerElapsed(object sender, ElapsedEventArgs e)
+        private static void TimerElapsed(object? sender, ElapsedEventArgs e)
         {
             running = false;
-            Timer.Stop();
+            Timer?.Stop();
             int RedValue = RandomDriver.Random(255);
             int GreenValue = RandomDriver.Random(255);
             int BlueValue = RandomDriver.Random(255);

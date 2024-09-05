@@ -60,9 +60,9 @@ namespace Nitrocid.Extras.Stocks.Widgets
                     display.Append(CenteredTextColor.RenderCentered(top + (height / 2), Translate.DoTranslation("No stock data available."), left, ConsoleWrapper.WindowWidth - (left + width)));
                 else
                 {
-                    string ianaTimeZone = (string)stocksToken["Meta Data"]["6. Time Zone"];
-                    string high = (string)stocksIntervalToken.First.First["2. high"];
-                    string low = (string)stocksIntervalToken.First.First["3. low"];
+                    string ianaTimeZone = (string?)stocksToken?["Meta Data"]?["6. Time Zone"] ?? "";
+                    string? high = (string?)stocksIntervalToken?.First?.First?["2. high"];
+                    string? low = (string?)stocksIntervalToken?.First?.First?["3. low"];
                     display.Append(CenteredTextColor.RenderCentered(top + (height / 2),
                         $"{ColorTools.RenderSetConsoleColor(KernelColorTools.GetColor(KernelColorType.NeutralText))}H: {ColorTools.RenderSetConsoleColor(ConsoleColors.Lime)}{high}" +
                         $"{ColorTools.RenderSetConsoleColor(KernelColorTools.GetColor(KernelColorType.NeutralText))} | L: {ColorTools.RenderSetConsoleColor(ConsoleColors.Red)}{low}" +

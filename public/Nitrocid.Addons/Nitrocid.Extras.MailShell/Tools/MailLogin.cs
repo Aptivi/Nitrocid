@@ -37,6 +37,7 @@ using Nitrocid.Languages;
 using Nitrocid.Misc.Text.Probers.Placeholder;
 using Nitrocid.ConsoleBase.Inputs;
 using Nitrocid.Network.Connections;
+using Nitrocid.Kernel.Exceptions;
 
 namespace Nitrocid.Extras.MailShell.Tools
 {
@@ -81,7 +82,7 @@ namespace Nitrocid.Extras.MailShell.Tools
         /// <summary>
         /// Prompts user to enter username or e-mail address
         /// </summary>
-        public static NetworkConnection PromptUser()
+        public static NetworkConnection? PromptUser()
         {
             // Username or mail address
             if (!string.IsNullOrWhiteSpace(UserPromptStyle))
@@ -102,7 +103,7 @@ namespace Nitrocid.Extras.MailShell.Tools
         /// Prompts user to enter password
         /// </summary>
         /// <param name="Username">Specified username</param>
-        public static NetworkConnection PromptPassword(string Username)
+        public static NetworkConnection? PromptPassword(string Username)
         {
             // Password
             DebugWriter.WriteDebug(DebugLevel.I, "Username: {0}", Username);
@@ -129,7 +130,7 @@ namespace Nitrocid.Extras.MailShell.Tools
         /// <summary>
         /// Prompts for server
         /// </summary>
-        public static NetworkConnection PromptServer()
+        public static NetworkConnection? PromptServer()
         {
             string IMAP_Address;
             var IMAP_Port = 0;
@@ -164,7 +165,7 @@ namespace Nitrocid.Extras.MailShell.Tools
             return ParseAddresses(IMAP_Address, IMAP_Port, SMTP_Address, SMTP_Port);
         }
 
-        public static NetworkConnection ParseAddresses(string IMAP_Address, int IMAP_Port, string SMTP_Address, int SMTP_Port)
+        public static NetworkConnection? ParseAddresses(string IMAP_Address, int IMAP_Port, string SMTP_Address, int SMTP_Port)
         {
             // If the address is <address>:[port]
             if (IMAP_Address.Contains(':'))
@@ -205,10 +206,11 @@ namespace Nitrocid.Extras.MailShell.Tools
             {
                 case ServerType.IMAP:
                     {
-                        var ImapServers = DynamicConfiguration.EmailProvider.IncomingServer.Select(x => x).Where(x => x.Type == "imap");
-                        if (ImapServers.Any())
+                        var ImapServers = DynamicConfiguration.EmailProvider?.IncomingServer?.Select(x => x).Where(x => x.Type == "imap");
+                        if (ImapServers is not null && ImapServers.Any())
                         {
-                            var ImapServer = ImapServers.ElementAtOrDefault(0);
+                            var ImapServer = ImapServers.ElementAtOrDefault(0) ??
+                                throw new KernelException(KernelExceptionType.Mail, Translate.DoTranslation("Can't get IMAP server configuration"));
                             ReturnedMailAddress = ImapServer.Hostname;
                             ReturnedMailPort = ImapServer.Port;
                         }
@@ -217,8 +219,9 @@ namespace Nitrocid.Extras.MailShell.Tools
                     }
                 case ServerType.SMTP:
                     {
-                        var SmtpServer = DynamicConfiguration.EmailProvider.OutgoingServer;
-                        ReturnedMailAddress = SmtpServer?.Hostname;
+                        var SmtpServer = DynamicConfiguration.EmailProvider?.OutgoingServer ??
+                                throw new KernelException(KernelExceptionType.Mail, Translate.DoTranslation("Can't get SMTP server configuration"));
+                        ReturnedMailAddress = SmtpServer.Hostname;
                         ReturnedMailPort = SmtpServer.Port;
                         break;
                     }
@@ -238,7 +241,7 @@ namespace Nitrocid.Extras.MailShell.Tools
         /// <param name="Port">A port of the IMAP server</param>
         /// <param name="SmtpAddress">An IP address of the SMTP server</param>
         /// <param name="SmtpPort">A port of the SMTP server</param>
-        public static NetworkConnection ConnectShell(string Address, int Port, string SmtpAddress, int SmtpPort)
+        public static NetworkConnection? ConnectShell(string Address, int Port, string SmtpAddress, int SmtpPort)
         {
             try
             {

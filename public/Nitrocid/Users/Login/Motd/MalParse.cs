@@ -37,7 +37,7 @@ namespace Nitrocid.Users.Login.Motd
     /// </summary>
     public static class MalParse
     {
-        private static string malMessage;
+        private static string malMessage = "";
         private static readonly List<Func<string>> malDynamics = [];
 
         /// <summary>

@@ -47,7 +47,7 @@ namespace Nitrocid.Extras.SftpShell.Tools
         /// Tries to connect to the FTP server
         /// </summary>
         /// <param name="address">An FTP server. You may specify it like "[address]" or "[address]:[port]"</param>
-        public static NetworkConnection SFTPTryToConnect(string address)
+        public static NetworkConnection? SFTPTryToConnect(string address)
         {
             try
             {

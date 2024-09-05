@@ -19,6 +19,8 @@
 
 using Newtonsoft.Json;
 using Nitrocid.Kernel.Configuration.Settings;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
 using Nitrocid.Misc.Reflection.Internal;
 
 namespace Nitrocid.Kernel.Configuration.Instances
@@ -31,7 +33,8 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// <inheritdoc/>
         [JsonIgnore]
         public override SettingsEntry[] SettingsEntries =>
-            ConfigTools.GetSettingsEntries(ResourcesManager.GetData("ScreensaverSettingsEntries.json", ResourcesType.Settings));
+            ConfigTools.GetSettingsEntries(ResourcesManager.GetData("ScreensaverSettingsEntries.json", ResourcesType.Settings) ??
+                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Failed to obtain screensaver settings entries.")));
 
         #region MatrixBleed
         private int matrixBleedDelay = 10;

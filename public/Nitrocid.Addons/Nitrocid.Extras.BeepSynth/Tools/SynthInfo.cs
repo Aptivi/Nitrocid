@@ -24,18 +24,18 @@ namespace Nitrocid.Extras.BeepSynth.Tools
     internal class SynthInfo
     {
         [JsonProperty("name")]
-        public string Name { get; set; }
+        public string Name { get; set; } = "";
 
         [JsonProperty("chapters")]
-        public Chapter[] Chapters { get; set; }
+        public Chapter[] Chapters { get; set; } = [];
 
         public class Chapter
         {
             [JsonProperty("name")]
-            public string Name { get; set; }
+            public string Name { get; set; } = "";
 
             [JsonProperty("synths")]
-            public string[] Synths { get; set; }
+            public string[] Synths { get; set; } = [];
         }
     }
 }

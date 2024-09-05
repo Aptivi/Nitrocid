@@ -67,7 +67,7 @@ namespace Nitrocid.Extras.Stocks.Commands
                 TextWriters.Write(stocksJson, KernelColorType.NeutralText);
                 return 40;
             }
-            string ianaTimeZone = (string)stocksToken["Meta Data"]["6. Time Zone"];
+            string? ianaTimeZone = (string?)stocksToken?["Meta Data"]?["6. Time Zone"];
 
             // Construct the CLI to add the token
             var cli = new StocksCli()

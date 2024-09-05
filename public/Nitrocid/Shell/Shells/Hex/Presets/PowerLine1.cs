@@ -59,7 +59,7 @@ namespace Nitrocid.Shell.Shells.Hex.Presets
             // Segments
             List<PowerLineSegment> segments =
             [
-                new PowerLineSegment(new Color(85, 255, 255), new Color(43, 127, 127), HexEditShellCommon.FileStream.Name)
+                new PowerLineSegment(new Color(85, 255, 255), new Color(43, 127, 127), HexEditShellCommon.FileStream?.Name ?? "???")
             ];
 
             // Builder

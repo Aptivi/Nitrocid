@@ -51,7 +51,7 @@ namespace Nitrocid.Extras.BassBoom.Player
         internal static bool isRadioMode = false;
         internal static readonly List<CachedSongInfo> cachedInfos = [];
 
-        internal static CachedSongInfo CurrentCachedInfo =>
+        internal static CachedSongInfo? CurrentCachedInfo =>
             cachedInfos.Count > 0 ? cachedInfos[currentPos - 1] : null;
 
         internal static void RaiseVolume()

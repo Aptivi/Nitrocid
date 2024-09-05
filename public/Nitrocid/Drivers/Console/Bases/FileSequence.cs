@@ -41,7 +41,7 @@ namespace Nitrocid.Drivers.Console.Bases
 
         public override bool DriverInternal => true;
 
-        internal string[] PathsToWrite { get; set; }
+        internal string[]? PathsToWrite { get; set; }
         internal bool FilterVT { get; set; }
 
         public override bool IsDumb => true;
@@ -165,7 +165,7 @@ namespace Nitrocid.Drivers.Console.Bases
         {
             lock (WriteLock)
             {
-                foreach (string PathToWrite in PathsToWrite)
+                foreach (string PathToWrite in PathsToWrite ?? [])
                 {
                     // If the file doesn't exist, make a new file
                     if (!Checking.FileExists(PathToWrite))
@@ -221,7 +221,7 @@ namespace Nitrocid.Drivers.Console.Bases
         {
             lock (WriteLock)
             {
-                foreach (string PathToWrite in PathsToWrite)
+                foreach (string PathToWrite in PathsToWrite ?? [])
                 {
                     // If the file doesn't exist, make a new file
                     if (!Checking.FileExists(PathToWrite))
@@ -255,7 +255,7 @@ namespace Nitrocid.Drivers.Console.Bases
         {
             lock (WriteLock)
             {
-                foreach (string PathToWrite in PathsToWrite)
+                foreach (string PathToWrite in PathsToWrite ?? [])
                 {
                     // If the file doesn't exist, make a new file
                     if (!Checking.FileExists(PathToWrite))
@@ -321,7 +321,7 @@ namespace Nitrocid.Drivers.Console.Bases
         {
             lock (WriteLock)
             {
-                foreach (string PathToWrite in PathsToWrite)
+                foreach (string PathToWrite in PathsToWrite ?? [])
                 {
                     // If the file doesn't exist, make a new file
                     if (!Checking.FileExists(PathToWrite))
@@ -367,7 +367,7 @@ namespace Nitrocid.Drivers.Console.Bases
         {
             lock (WriteLock)
             {
-                foreach (string PathToWrite in PathsToWrite)
+                foreach (string PathToWrite in PathsToWrite ?? [])
                 {
                     // If the file doesn't exist, make a new file
                     if (!Checking.FileExists(PathToWrite))
@@ -399,7 +399,7 @@ namespace Nitrocid.Drivers.Console.Bases
         {
             lock (WriteLock)
             {
-                foreach (string PathToWrite in PathsToWrite)
+                foreach (string PathToWrite in PathsToWrite ?? [])
                 {
                     // If the file doesn't exist, make a new file
                     if (!Checking.FileExists(PathToWrite))

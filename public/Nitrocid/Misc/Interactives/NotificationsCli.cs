@@ -73,10 +73,10 @@ namespace Nitrocid.Misc.Interactives
         internal void Dismiss(Notification notification)
         {
             var notifs = NotificationManager.NotifRecents;
-            for (int i = notifs.Length() - 1; i > 0; i--)
+            for (int i = notifs.Count - 1; i > 0; i--)
             {
-                var notif = notifs.GetElementFromIndex(i);
-                if ((Notification)notif == notification)
+                var notif = notifs[i];
+                if (notif == notification)
                     NotificationManager.NotifDismiss(i);
             }
         }

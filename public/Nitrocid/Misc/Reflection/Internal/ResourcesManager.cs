@@ -30,12 +30,12 @@ namespace Nitrocid.Misc.Reflection.Internal
     {
         private static readonly Dictionary<Assembly, Dictionary<string, string>> assemblies = [];
 
-        internal static bool DataExists(string resource, ResourcesType type, out string data, Assembly asm = null)
+        internal static bool DataExists(string resource, ResourcesType type, out string? data, Assembly? asm = null)
         {
             asm ??= Assembly.GetExecutingAssembly();
             data = "";
             InitializeData(asm);
-            if (!assemblies.TryGetValue(asm, out Dictionary<string, string> asmResources))
+            if (!assemblies.TryGetValue(asm, out Dictionary<string, string>? asmResources))
                 return false;
             return
                 type == ResourcesType.Misc ?
@@ -43,26 +43,28 @@ namespace Nitrocid.Misc.Reflection.Internal
                 asmResources.TryGetValue($"{type}.{resource}", out data);
         }
 
-        internal static string GetData(string resource, ResourcesType type, Assembly asm = null)
+        internal static string? GetData(string resource, ResourcesType type, Assembly? asm = null)
         {
             asm ??= Assembly.GetExecutingAssembly();
             InitializeData(asm);
-            if (!DataExists(resource, type, out string data, asm))
+            if (!DataExists(resource, type, out string? data, asm))
                 throw new KernelException(KernelExceptionType.Reflection, $"Resource {resource} not found for type {type} in between {assemblies.Count} assemblies");
             return data;
         }
 
-        internal static string[] GetResourceNames(Assembly asm)
+        internal static string[] GetResourceNames(Assembly? asm)
         {
             asm ??= Assembly.GetExecutingAssembly();
             InitializeData(asm);
-            if (!assemblies.TryGetValue(asm, out Dictionary<string, string> asmResources))
+            if (!assemblies.TryGetValue(asm, out Dictionary<string, string>? asmResources))
                 return [];
             return asmResources.Select((kvp) => kvp.Key).ToArray();
         }
 
-        internal static void InitializeData(Assembly assembly)
+        internal static void InitializeData(Assembly? assembly)
         {
+            if (assembly is null)
+                return;
             if (assemblies.ContainsKey(assembly))
                 return;
             var resourceFullNames = assembly.GetManifestResourceNames();
@@ -71,6 +73,8 @@ namespace Nitrocid.Misc.Reflection.Internal
             {
                 // Get the stream and parse its contents
                 var contentStream = assembly.GetManifestResourceStream(resourceFullName);
+                if (contentStream is null)
+                    continue;
                 using var contentStreamReader = new StreamReader(contentStream);
                 string content = contentStreamReader.ReadToEnd();
                 string fileName = resourceFullName.RemovePrefix($"{assembly.GetName().Name}.Resources.");

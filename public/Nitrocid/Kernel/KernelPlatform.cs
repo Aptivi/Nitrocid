@@ -34,7 +34,7 @@ namespace Nitrocid.Kernel
         /// Checks to see if the kernel is running normally or from somewhere else
         /// </summary>
         public static bool IsOnUsualEnvironment() =>
-            Assembly.GetEntryAssembly().FullName == Assembly.GetExecutingAssembly().FullName;
+            Assembly.GetEntryAssembly()?.FullName == Assembly.GetExecutingAssembly().FullName;
 
         /// <summary>
         /// Is this system a Windows system?

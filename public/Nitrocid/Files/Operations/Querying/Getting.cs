@@ -32,7 +32,7 @@ namespace Nitrocid.Files.Operations.Querying
         /// <param name="path">Path to the directory that the generated numbered file name will situate</param>
         /// <param name="fileName">The file name with an extension</param>
         /// <returns>Numbered file name with the file number suffix applied in this format: [filename]-[number].[ext]</returns>
-        public static string GetNumberedFileName(string path, string fileName) =>
+        public static string GetNumberedFileName(string? path, string fileName) =>
             DriverHandler.CurrentFilesystemDriverLocal.GetNumberedFileName(path, fileName);
 
         /// <summary>

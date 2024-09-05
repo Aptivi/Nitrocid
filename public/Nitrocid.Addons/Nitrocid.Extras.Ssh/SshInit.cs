@@ -69,7 +69,7 @@ namespace Nitrocid.Extras.Ssh
         internal static SshConfig SshConfig =>
             (SshConfig)Config.baseConfigurations[nameof(SshConfig)];
 
-        ReadOnlyDictionary<string, Delegate> IAddon.PubliclyAvailableFunctions => new(new Dictionary<string, Delegate>()
+        ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => new(new Dictionary<string, Delegate>()
         {
             { nameof(SSHTools.PromptConnectionInfo), new Func<string, int, string, ConnectionInfo>(SSHTools.PromptConnectionInfo) },
             { nameof(SSHTools.GetConnectionInfo), new Func<string, int, string, List<AuthenticationMethod>, ConnectionInfo>(SSHTools.GetConnectionInfo) },
@@ -80,9 +80,9 @@ namespace Nitrocid.Extras.Ssh
             { nameof(SSHTools.OpenCommand) + "2", new Action<SshClient, string>(SSHTools.OpenCommand) },
         });
 
-        ReadOnlyDictionary<string, PropertyInfo> IAddon.PubliclyAvailableProperties => null;
+        ReadOnlyDictionary<string, PropertyInfo>? IAddon.PubliclyAvailableProperties => null;
 
-        ReadOnlyDictionary<string, FieldInfo> IAddon.PubliclyAvailableFields => null;
+        ReadOnlyDictionary<string, FieldInfo>? IAddon.PubliclyAvailableFields => null;
 
         void IAddon.FinalizeAddon()
         {

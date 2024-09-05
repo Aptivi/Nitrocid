@@ -36,6 +36,7 @@ using Nitrocid.Kernel.Configuration.Migration;
 using Terminaux.Inputs.Interactive;
 using Nitrocid.Misc.Interactives;
 using Terminaux.Inputs.Styles;
+using Nitrocid.Kernel.Exceptions;
 
 namespace Nitrocid.Kernel.Configuration.Settings
 {
@@ -58,7 +59,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
         /// </summary>
         /// <param name="settingsType">Type of settings</param>
         /// <param name="useSelection">Whether to use the selection style or the interactive TUI</param>
-        public static void OpenMainPage(BaseKernelConfig settingsType, bool useSelection = false)
+        public static void OpenMainPage(BaseKernelConfig? settingsType, bool useSelection = false)
         {
             // Verify that we actually have the type
             if (settingsType is null)
@@ -85,7 +86,12 @@ namespace Nitrocid.Kernel.Configuration.Settings
 
             // Now, the main loop
             bool PromptFinished = false;
-            SettingsEntry[] SettingsEntries = settingsType.SettingsEntries;
+            SettingsEntry[]? SettingsEntries = settingsType.SettingsEntries;
+            if (SettingsEntries is null || SettingsEntries.Length == 0)
+            {
+                TextWriters.Write(Translate.DoTranslation("Settings entries are not found."), true, KernelColorType.Error);
+                return;
+            }
             int MaxSections = SettingsEntries.Length;
 
             while (!PromptFinished)
@@ -214,7 +220,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
                             continue;
 
                         // Now, populate the input choice info
-                        object CurrentValue = ConfigTools.GetValueFromEntry(Setting, settingsType);
+                        object? CurrentValue = ConfigTools.GetValueFromEntry(Setting, settingsType);
                         string choiceName = $"{SectionIndex + 1}";
                         string choiceTitle = $"{Translate.DoTranslation(Setting.Name)} [{CurrentValue}]";
                         string choiceDesc = Translate.DoTranslation(Setting.Description);
@@ -294,7 +300,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
 
                 // Key properties
                 SettingsKeyType KeyType = KeyToken.Type;
-                object KeyDefaultValue = "";
+                object? KeyDefaultValue = "";
                 bool KeyFinished = false;
 
                 // Preset properties
@@ -364,7 +370,8 @@ namespace Nitrocid.Kernel.Configuration.Settings
                         var ChosenSetting = Results[sel];
                         int SectionIndex = Convert.ToInt32(ChosenSetting.ChoiceName.Split('/')[0]) - 1;
                         int KeyNumber = Convert.ToInt32(ChosenSetting.ChoiceName.Split('/')[1]);
-                        var Section = configType.SettingsEntries[SectionIndex];
+                        var Section = configType.SettingsEntries?[SectionIndex] ??
+                            throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't get section"));
                         OpenKey(KeyNumber, Section, configType);
                         Results = ConfigTools.FindSetting(SearchFor, configType);
                         finalResults = Results.Union(Back).ToArray();

@@ -59,7 +59,7 @@ namespace Nitrocid.Extras.JsonShell.Json.Presets
             // Segments
             List<PowerLineSegment> segments =
             [
-                new PowerLineSegment(new Color(85, 255, 255), new Color(43, 127, 127), JsonShellCommon.FileStream.Name)
+                new PowerLineSegment(new Color(85, 255, 255), new Color(43, 127, 127), JsonShellCommon.FileStream?.Name ?? "???")
             ];
 
             // Builder

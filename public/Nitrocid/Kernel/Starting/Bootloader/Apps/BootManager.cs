@@ -89,7 +89,7 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Apps
         /// <summary>
         /// Gets boot application by name
         /// </summary>
-        public static BaseEnvironment GetBootApp(string name)
+        public static BaseEnvironment? GetBootApp(string name)
         {
             if (string.IsNullOrWhiteSpace(name))
                 throw new KernelException(KernelExceptionType.Bootloader, Translate.DoTranslation("Boot app name is not specified"));

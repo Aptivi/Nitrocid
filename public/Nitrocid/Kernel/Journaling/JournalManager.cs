@@ -125,7 +125,8 @@ namespace Nitrocid.Kernel.Journaling
 
             // Assuming that the file exists (guarded by the above check), deserialize the contents
             string entriesValue = Reading.ReadContentsText(journalPath);
-            JournalEntry[] entries = JsonConvert.DeserializeObject<JournalEntry[]>(entriesValue);
+            JournalEntry[] entries = JsonConvert.DeserializeObject<JournalEntry[]>(entriesValue) ??
+                throw new KernelException(KernelExceptionType.Journaling, Translate.DoTranslation("Can't get journal entries"));
 
             // Now, return the journal entries
             return entries;

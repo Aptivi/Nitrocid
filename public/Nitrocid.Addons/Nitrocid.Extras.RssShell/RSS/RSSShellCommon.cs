@@ -32,18 +32,18 @@ namespace Nitrocid.Extras.RssShell.RSS
     public static class RSSShellCommon
     {
 
-        internal static NetworkConnection clientConnection;
-        internal static RSSFeed feedInstance;
+        internal static NetworkConnection? clientConnection;
+        internal static RSSFeed? feedInstance;
         internal static int fetchTimeout = 60000;
         internal static int refreshInterval = 60000;
         internal static KernelThread RSSRefresher = new("RSS Feed Refresher", false, RSSShellTools.RefreshFeeds);
         internal static HttpClient RSSRefresherClient = new() { Timeout = TimeSpan.FromMilliseconds(RSSFetchTimeout) };
-        internal static string rssFeedLink;
+        internal static string rssFeedLink = "";
 
         /// <summary>
         /// RSS feed instance
         /// </summary>
-        public static RSSFeed RSSFeedInstance =>
+        public static RSSFeed? RSSFeedInstance =>
             feedInstance;
         /// <summary>
         /// RSS feed URL prompt style

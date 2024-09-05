@@ -42,7 +42,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
     public static class MeteorShooter
     {
 
-        internal readonly static KernelThread MeteorDrawThread = new("Meteor Shooter Draw Thread", true, (dodge) => DrawGame((bool)dodge));
+        internal readonly static KernelThread MeteorDrawThread = new("Meteor Shooter Draw Thread", true, (dodge) => DrawGame((bool?)dodge ?? true));
         internal static bool GameEnded = false;
         internal static bool GameExiting = false;
         internal static int meteorSpeed = 10;

@@ -326,7 +326,7 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug
         /// <param name="device">Device to contact</param>
         internal static void DisconnectDependingOnException(Exception exception, RemoteDebugDevice device)
         {
-            SocketException SE = (SocketException)exception.InnerException;
+            SocketException? SE = (SocketException?)exception.InnerException;
             if (SE is not null)
             {
                 if (SE.SocketErrorCode == SocketError.TimedOut ||
@@ -353,7 +353,8 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug
         {
             string devicesPath = PathsManagement.GetKernelPath(KernelPathType.DebugDevices);
             if (Checking.FileExists(devicesPath))
-                remoteDebugDevices = JsonConvert.DeserializeObject<List<RemoteDebugDeviceInfo>>(Reading.ReadContentsText(devicesPath));
+                remoteDebugDevices = JsonConvert.DeserializeObject<List<RemoteDebugDeviceInfo>>(Reading.ReadContentsText(devicesPath)) ??
+                    throw new KernelException(KernelExceptionType.RemoteDebugDeviceOperation, Translate.DoTranslation("Can't get remote debug devices from") + $" {devicesPath}");
         }
     }
 }

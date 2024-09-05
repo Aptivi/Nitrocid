@@ -53,7 +53,7 @@ namespace Nitrocid.Kernel.Power
         internal static bool rebootingToDebugMode;
         internal static bool rebootingToMaintenanceMode;
         internal static Stopwatch Uptime = new();
-        internal static KernelThread RPCPowerListener = new("RPC Power Listener Thread", true, (arg) => PowerManage((PowerMode)arg));
+        internal static KernelThread RPCPowerListener = new("RPC Power Listener Thread", true, (arg) => PowerManage((PowerMode?)arg ?? PowerMode.Shutdown));
 
         internal static bool RebootingToSafeMode
         {

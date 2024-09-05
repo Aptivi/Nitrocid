@@ -25,6 +25,7 @@ using Nitrocid.Extras.MailShell.Tools.Directory;
 using Nitrocid.Extras.MailShell.Tools.Transfer;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Extensions;
+using Nitrocid.Languages;
 using Nitrocid.Modifications;
 using Nitrocid.Shell.ShellBase.Arguments;
 using Nitrocid.Shell.ShellBase.Commands;
@@ -65,7 +66,7 @@ namespace Nitrocid.Extras.MailShell
         internal static MailConfig MailConfig =>
             (MailConfig)Config.baseConfigurations[nameof(MailConfig)];
 
-        ReadOnlyDictionary<string, Delegate> IAddon.PubliclyAvailableFunctions => new(new Dictionary<string, Delegate>()
+        ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => new(new Dictionary<string, Delegate>()
         {
             { nameof(MailDirectory.CreateMailDirectory), new Action<string>(MailDirectory.CreateMailDirectory) },
             { nameof(MailDirectory.DeleteMailDirectory), new Action<string>(MailDirectory.DeleteMailDirectory) },
@@ -84,12 +85,12 @@ namespace Nitrocid.Extras.MailShell
             { nameof(MailTransfer.PopulateMessages), new Action(MailTransfer.PopulateMessages) },
         });
 
-        ReadOnlyDictionary<string, PropertyInfo> IAddon.PubliclyAvailableProperties => new(new Dictionary<string, PropertyInfo>()
+        ReadOnlyDictionary<string, PropertyInfo>? IAddon.PubliclyAvailableProperties => new(new Dictionary<string, PropertyInfo>()
         {
-            { nameof(MailManager.ShowPreview), typeof(MailManager).GetProperty(nameof(MailManager.ShowPreview)) },
+            { nameof(MailManager.ShowPreview), typeof(MailManager).GetProperty(nameof(MailManager.ShowPreview)) ?? throw new Exception(Translate.DoTranslation("There is no property info for") + $" {nameof(MailManager.ShowPreview)}") },
         });
 
-        ReadOnlyDictionary<string, FieldInfo> IAddon.PubliclyAvailableFields => null;
+        ReadOnlyDictionary<string, FieldInfo>? IAddon.PubliclyAvailableFields => null;
 
         void IAddon.FinalizeAddon()
         {

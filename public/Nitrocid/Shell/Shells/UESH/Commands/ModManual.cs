@@ -47,7 +47,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             string modName = parameters.ArgumentsList[0];
-            if (!ModManager.Mods.TryGetValue(modName, out ModInfo mod))
+            if (!ModManager.Mods.TryGetValue(modName, out ModInfo? mod))
             {
                 TextWriters.Write(Translate.DoTranslation("Tried to query the manuals for nonexistent mod {0}."), true, KernelColorType.Error, modName);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.NoSuchMod);

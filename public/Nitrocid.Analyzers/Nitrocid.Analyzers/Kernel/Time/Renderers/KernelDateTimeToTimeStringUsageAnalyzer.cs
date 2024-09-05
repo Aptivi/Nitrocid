@@ -77,7 +77,7 @@ namespace Nitrocid.Analyzers.Kernel.Time.Renderers
             // Analyze!
             if (exp.Expression is IdentifierNameSyntax identifier)
             {
-                var location = exp.Parent.GetLocation();
+                var location = exp.Parent?.GetLocation();
                 if (identifier.Identifier.Text == "TimeDateTools")
                 {
                     // Let's see if the caller tries to access TimeDateTools.KernelDateTime.ToString.

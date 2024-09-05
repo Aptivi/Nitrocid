@@ -31,9 +31,9 @@ namespace Nitrocid.Shell.Shells.Text
     {
 
         internal static List<string> fileLines = [];
-        internal static FileStream fileStream;
+        internal static FileStream? fileStream;
         internal static int autoSaveInterval = 60;
-        internal static List<string> FileLinesOrig;
+        internal static List<string> FileLinesOrig = [];
         internal static KernelThread AutoSave = new("Text Edit Autosave Thread", false, TextEditTools.HandleAutoSaveTextFile);
 
         /// <summary>
@@ -44,7 +44,7 @@ namespace Nitrocid.Shell.Shells.Text
         /// <summary>
         /// File stream for text editor
         /// </summary>
-        public static FileStream FileStream =>
+        public static FileStream? FileStream =>
             fileStream;
 
     }

@@ -43,7 +43,7 @@ namespace Nitrocid.Extras.BassBoom.Player
 {
     internal static class PlayerTui
     {
-        internal static Thread playerThread;
+        internal static Thread? playerThread;
         internal static int position = 0;
         internal static readonly List<string> passedMusicPaths = [];
 
@@ -355,9 +355,12 @@ namespace Nitrocid.Extras.BassBoom.Player
             }
 
             // Populate music file info, as necessary
-            if (Common.populate)
-                PlayerControls.PopulateMusicFileInfo(Common.CurrentCachedInfo.MusicPath);
-            drawn.Append(PlayerControls.RenderSongName(Common.CurrentCachedInfo.MusicPath));
+            if (Common.CurrentCachedInfo is not null)
+            {
+                if (Common.populate)
+                    PlayerControls.PopulateMusicFileInfo(Common.CurrentCachedInfo.MusicPath);
+                drawn.Append(PlayerControls.RenderSongName(Common.CurrentCachedInfo.MusicPath));
+            }
 
             // Now, print the list of songs.
             var choices = new List<InputChoiceInfo>();

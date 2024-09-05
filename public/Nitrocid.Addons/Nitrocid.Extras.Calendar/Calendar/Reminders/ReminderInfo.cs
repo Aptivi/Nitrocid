@@ -34,7 +34,7 @@ namespace Nitrocid.Extras.Calendar.Calendar.Reminders
         [JsonProperty(nameof(ReminderDate))]
         private readonly DateTime reminderDate;
         [JsonProperty(nameof(ReminderTitle))]
-        private readonly string reminderTitle;
+        private readonly string reminderTitle = "";
         [JsonProperty(nameof(ReminderImportance))]
         private readonly NotificationPriority reminderImportance;
 

@@ -36,13 +36,13 @@ namespace Nitrocid.Tests.Kernel.Threading
             {
                 Console.WriteLine("Hello world!");
                 Console.WriteLine("- Writing from thread: {0} [{1}]", Thread.CurrentThread.Name, Environment.CurrentManagedThreadId);
-                while (!KernelThreadTests.TargetThread.IsStopping)
+                while (!KernelThreadTests.TargetThread?.IsStopping ?? true)
                     Thread.Sleep(1000);
             }
             catch
             {
                 Console.WriteLine("- Goodbye from thread: {0} [{1}]", Thread.CurrentThread.Name, Environment.CurrentManagedThreadId);
-                KernelThreadTests.TargetThread.IsStopping.ShouldBeTrue();
+                KernelThreadTests.TargetThread?.IsStopping.ShouldBeTrue();
             }
         }
 
@@ -55,13 +55,13 @@ namespace Nitrocid.Tests.Kernel.Threading
             {
                 Console.WriteLine("Hello, {0}!", Name);
                 Console.WriteLine("- Writing from thread: {0} [{1}]", Thread.CurrentThread.Name, Environment.CurrentManagedThreadId);
-                while (!KernelThreadTests.TargetParameterizedThread.IsStopping)
+                while (!KernelThreadTests.TargetParameterizedThread?.IsStopping ?? true)
                     Thread.Sleep(1000);
             }
             catch
             {
                 Console.WriteLine("- Goodbye from thread: {0} [{1}]", Thread.CurrentThread.Name, Environment.CurrentManagedThreadId);
-                KernelThreadTests.TargetParameterizedThread.IsStopping.ShouldBeTrue();
+                KernelThreadTests.TargetParameterizedThread?.IsStopping.ShouldBeTrue();
             }
         }
 
@@ -74,13 +74,13 @@ namespace Nitrocid.Tests.Kernel.Threading
             {
                 Console.WriteLine("Hello world!");
                 Console.WriteLine("- Writing from parent thread: {0} [{1}]", Thread.CurrentThread.Name, Environment.CurrentManagedThreadId);
-                while (!KernelThreadTests.TargetThreadWithChild.IsStopping)
+                while (!KernelThreadTests.TargetThreadWithChild?.IsStopping ?? true)
                     Thread.Sleep(1000);
             }
             catch
             {
                 Console.WriteLine("- Goodbye from parent thread: {0} [{1}]", Thread.CurrentThread.Name, Environment.CurrentManagedThreadId);
-                KernelThreadTests.TargetThreadWithChild.IsStopping.ShouldBeTrue();
+                KernelThreadTests.TargetThreadWithChild?.IsStopping.ShouldBeTrue();
             }
         }
 
@@ -93,13 +93,13 @@ namespace Nitrocid.Tests.Kernel.Threading
             {
                 Console.WriteLine("Hello, {0}!", Name);
                 Console.WriteLine("- Writing from parent thread: {0} [{1}]", Thread.CurrentThread.Name, Environment.CurrentManagedThreadId);
-                while (!KernelThreadTests.TargetParameterizedThreadWithChild.IsStopping)
+                while (!KernelThreadTests.TargetParameterizedThreadWithChild?.IsStopping ?? true)
                     Thread.Sleep(1000);
             }
             catch
             {
                 Console.WriteLine("- Goodbye from parent thread: {0} [{1}]", Thread.CurrentThread.Name, Environment.CurrentManagedThreadId);
-                KernelThreadTests.TargetParameterizedThreadWithChild.IsStopping.ShouldBeTrue();
+                KernelThreadTests.TargetParameterizedThreadWithChild?.IsStopping.ShouldBeTrue();
             }
         }
 
@@ -112,13 +112,13 @@ namespace Nitrocid.Tests.Kernel.Threading
             {
                 Console.WriteLine("- Hello world!");
                 Console.WriteLine("  - Writing from thread: {0} [{1}]", Thread.CurrentThread.Name, Environment.CurrentManagedThreadId);
-                while (!KernelThreadTests.TargetThreadWithChild.IsStopping)
+                while (!KernelThreadTests.TargetThreadWithChild?.IsStopping ?? true)
                     Thread.Sleep(1000);
             }
             catch
             {
                 Console.WriteLine("  - Goodbye from thread: {0} [{1}]", Thread.CurrentThread.Name, Environment.CurrentManagedThreadId);
-                KernelThreadTests.TargetThreadWithChild.IsStopping.ShouldBeTrue();
+                KernelThreadTests.TargetThreadWithChild?.IsStopping.ShouldBeTrue();
             }
         }
 
@@ -131,13 +131,13 @@ namespace Nitrocid.Tests.Kernel.Threading
             {
                 Console.WriteLine("- Hello, {0}!", Name);
                 Console.WriteLine("  - Writing from thread: {0} [{1}]", Thread.CurrentThread.Name, Environment.CurrentManagedThreadId);
-                while (!KernelThreadTests.TargetParameterizedThreadWithChild.IsStopping)
+                while (!KernelThreadTests.TargetParameterizedThreadWithChild?.IsStopping ?? true)
                     Thread.Sleep(1000);
             }
             catch
             {
                 Console.WriteLine("  - Goodbye from thread: {0} [{1}]", Thread.CurrentThread.Name, Environment.CurrentManagedThreadId);
-                KernelThreadTests.TargetParameterizedThreadWithChild.IsStopping.ShouldBeTrue();
+                KernelThreadTests.TargetParameterizedThreadWithChild?.IsStopping.ShouldBeTrue();
             }
         }
 
@@ -150,13 +150,13 @@ namespace Nitrocid.Tests.Kernel.Threading
             {
                 Console.WriteLine("Hello world!");
                 Console.WriteLine("- Writing from parent thread: {0} [{1}]", Thread.CurrentThread.Name, Environment.CurrentManagedThreadId);
-                while (!KernelThreadTests.TargetThreadWithAppendingChild.IsStopping)
+                while (!KernelThreadTests.TargetThreadWithAppendingChild?.IsStopping ?? true)
                     Thread.Sleep(1000);
             }
             catch
             {
                 Console.WriteLine("- Goodbye from parent thread: {0} [{1}]", Thread.CurrentThread.Name, Environment.CurrentManagedThreadId);
-                KernelThreadTests.TargetThreadWithAppendingChild.IsStopping.ShouldBeTrue();
+                KernelThreadTests.TargetThreadWithAppendingChild?.IsStopping.ShouldBeTrue();
             }
         }
 
@@ -169,13 +169,13 @@ namespace Nitrocid.Tests.Kernel.Threading
             {
                 Console.WriteLine("Hello, {0}!", Name);
                 Console.WriteLine("- Writing from parent thread: {0} [{1}]", Thread.CurrentThread.Name, Environment.CurrentManagedThreadId);
-                while (!KernelThreadTests.TargetParameterizedThreadWithAppendingChild.IsStopping)
+                while (!KernelThreadTests.TargetParameterizedThreadWithAppendingChild?.IsStopping ?? true)
                     Thread.Sleep(1000);
             }
             catch
             {
                 Console.WriteLine("- Goodbye from parent thread: {0} [{1}]", Thread.CurrentThread.Name, Environment.CurrentManagedThreadId);
-                KernelThreadTests.TargetParameterizedThreadWithAppendingChild.IsStopping.ShouldBeTrue();
+                KernelThreadTests.TargetParameterizedThreadWithAppendingChild?.IsStopping.ShouldBeTrue();
             }
         }
 
@@ -188,13 +188,13 @@ namespace Nitrocid.Tests.Kernel.Threading
             {
                 Console.WriteLine("- Hello world!");
                 Console.WriteLine("  - Writing from thread: {0} [{1}]", Thread.CurrentThread.Name, Environment.CurrentManagedThreadId);
-                while (!KernelThreadTests.TargetThreadWithAppendingChild.IsStopping)
+                while (!KernelThreadTests.TargetThreadWithAppendingChild?.IsStopping ?? true)
                     Thread.Sleep(1000);
             }
             catch
             {
                 Console.WriteLine("  - Goodbye from thread: {0} [{1}]", Thread.CurrentThread.Name, Environment.CurrentManagedThreadId);
-                KernelThreadTests.TargetThreadWithAppendingChild.IsStopping.ShouldBeTrue();
+                KernelThreadTests.TargetThreadWithAppendingChild?.IsStopping.ShouldBeTrue();
             }
         }
 
@@ -207,13 +207,13 @@ namespace Nitrocid.Tests.Kernel.Threading
             {
                 Console.WriteLine("- Hello, {0}!", Name);
                 Console.WriteLine("  - Writing from thread: {0} [{1}]", Thread.CurrentThread.Name, Environment.CurrentManagedThreadId);
-                while (!KernelThreadTests.TargetParameterizedThreadWithAppendingChild.IsStopping)
+                while (!KernelThreadTests.TargetParameterizedThreadWithAppendingChild?.IsStopping ?? true)
                     Thread.Sleep(1000);
             }
             catch
             {
                 Console.WriteLine("  - Goodbye from thread: {0} [{1}]", Thread.CurrentThread.Name, Environment.CurrentManagedThreadId);
-                KernelThreadTests.TargetParameterizedThreadWithAppendingChild.IsStopping.ShouldBeTrue();
+                KernelThreadTests.TargetParameterizedThreadWithAppendingChild?.IsStopping.ShouldBeTrue();
             }
         }
 
@@ -226,13 +226,13 @@ namespace Nitrocid.Tests.Kernel.Threading
             {
                 Console.WriteLine("Hello world!");
                 Console.WriteLine("- Writing from parent thread: {0} [{1}]", Thread.CurrentThread.Name, Environment.CurrentManagedThreadId);
-                while (!KernelThreadTests.TargetThreadWithChildrenOfChildren.IsStopping)
+                while (!KernelThreadTests.TargetThreadWithChildrenOfChildren?.IsStopping ?? true)
                     Thread.Sleep(1000);
             }
             catch
             {
                 Console.WriteLine("- Goodbye from parent thread: {0} [{1}]", Thread.CurrentThread.Name, Environment.CurrentManagedThreadId);
-                KernelThreadTests.TargetThreadWithChildrenOfChildren.IsStopping.ShouldBeTrue();
+                KernelThreadTests.TargetThreadWithChildrenOfChildren?.IsStopping.ShouldBeTrue();
             }
         }
 
@@ -245,13 +245,13 @@ namespace Nitrocid.Tests.Kernel.Threading
             {
                 Console.WriteLine("Hello, {0}!", Name);
                 Console.WriteLine("- Writing from parent thread: {0} [{1}]", Thread.CurrentThread.Name, Environment.CurrentManagedThreadId);
-                while (!KernelThreadTests.TargetParameterizedThreadWithChildrenOfChildren.IsStopping)
+                while (!KernelThreadTests.TargetParameterizedThreadWithChildrenOfChildren?.IsStopping ?? true)
                     Thread.Sleep(1000);
             }
             catch
             {
                 Console.WriteLine("- Goodbye from parent thread: {0} [{1}]", Thread.CurrentThread.Name, Environment.CurrentManagedThreadId);
-                KernelThreadTests.TargetParameterizedThreadWithChildrenOfChildren.IsStopping.ShouldBeTrue();
+                KernelThreadTests.TargetParameterizedThreadWithChildrenOfChildren?.IsStopping.ShouldBeTrue();
             }
         }
 
@@ -264,13 +264,13 @@ namespace Nitrocid.Tests.Kernel.Threading
             {
                 Console.WriteLine("- Hello world!");
                 Console.WriteLine("  - Writing from thread: {0} [{1}]", Thread.CurrentThread.Name, Environment.CurrentManagedThreadId);
-                while (!KernelThreadTests.TargetThreadWithChildrenOfChildren.IsStopping)
+                while (!KernelThreadTests.TargetThreadWithChildrenOfChildren?.IsStopping ?? true)
                     Thread.Sleep(1000);
             }
             catch
             {
                 Console.WriteLine("  - Goodbye from thread: {0} [{1}]", Thread.CurrentThread.Name, Environment.CurrentManagedThreadId);
-                KernelThreadTests.TargetThreadWithChildrenOfChildren.IsStopping.ShouldBeTrue();
+                KernelThreadTests.TargetThreadWithChildrenOfChildren?.IsStopping.ShouldBeTrue();
             }
         }
 
@@ -283,13 +283,13 @@ namespace Nitrocid.Tests.Kernel.Threading
             {
                 Console.WriteLine("- Hello, {0}!", Name);
                 Console.WriteLine("  - Writing from thread: {0} [{1}]", Thread.CurrentThread.Name, Environment.CurrentManagedThreadId);
-                while (!KernelThreadTests.TargetParameterizedThreadWithChildrenOfChildren.IsStopping)
+                while (!KernelThreadTests.TargetParameterizedThreadWithChildrenOfChildren?.IsStopping ?? true)
                     Thread.Sleep(1000);
             }
             catch
             {
                 Console.WriteLine("  - Goodbye from thread: {0} [{1}]", Thread.CurrentThread.Name, Environment.CurrentManagedThreadId);
-                KernelThreadTests.TargetParameterizedThreadWithChildrenOfChildren.IsStopping.ShouldBeTrue();
+                KernelThreadTests.TargetParameterizedThreadWithChildrenOfChildren?.IsStopping.ShouldBeTrue();
             }
         }
 
@@ -302,13 +302,13 @@ namespace Nitrocid.Tests.Kernel.Threading
             {
                 Console.WriteLine("Hello world!");
                 Console.WriteLine("- Writing from parent thread: {0} [{1}]", Thread.CurrentThread.Name, Environment.CurrentManagedThreadId);
-                while (!KernelThreadTests.TargetThreadWithAppendingChildrenOfChildren.IsStopping)
+                while (!KernelThreadTests.TargetThreadWithAppendingChildrenOfChildren?.IsStopping ?? true)
                     Thread.Sleep(1000);
             }
             catch
             {
                 Console.WriteLine("- Goodbye from parent thread: {0} [{1}]", Thread.CurrentThread.Name, Environment.CurrentManagedThreadId);
-                KernelThreadTests.TargetThreadWithAppendingChildrenOfChildren.IsStopping.ShouldBeTrue();
+                KernelThreadTests.TargetThreadWithAppendingChildrenOfChildren?.IsStopping.ShouldBeTrue();
             }
         }
 
@@ -321,13 +321,13 @@ namespace Nitrocid.Tests.Kernel.Threading
             {
                 Console.WriteLine("Hello, {0}!", Name);
                 Console.WriteLine("- Writing from parent thread: {0} [{1}]", Thread.CurrentThread.Name, Environment.CurrentManagedThreadId);
-                while (!KernelThreadTests.TargetParameterizedThreadWithAppendingChildrenOfChildren.IsStopping)
+                while (!KernelThreadTests.TargetParameterizedThreadWithAppendingChildrenOfChildren?.IsStopping ?? true)
                     Thread.Sleep(1000);
             }
             catch
             {
                 Console.WriteLine("- Goodbye from parent thread: {0} [{1}]", Thread.CurrentThread.Name, Environment.CurrentManagedThreadId);
-                KernelThreadTests.TargetParameterizedThreadWithAppendingChildrenOfChildren.IsStopping.ShouldBeTrue();
+                KernelThreadTests.TargetParameterizedThreadWithAppendingChildrenOfChildren?.IsStopping.ShouldBeTrue();
             }
         }
 
@@ -340,13 +340,13 @@ namespace Nitrocid.Tests.Kernel.Threading
             {
                 Console.WriteLine("- Hello world!");
                 Console.WriteLine("  - Writing from thread: {0} [{1}]", Thread.CurrentThread.Name, Environment.CurrentManagedThreadId);
-                while (!KernelThreadTests.TargetThreadWithAppendingChildrenOfChildren.IsStopping)
+                while (!KernelThreadTests.TargetThreadWithAppendingChildrenOfChildren?.IsStopping ?? true)
                     Thread.Sleep(1000);
             }
             catch
             {
                 Console.WriteLine("  - Goodbye from thread: {0} [{1}]", Thread.CurrentThread.Name, Environment.CurrentManagedThreadId);
-                KernelThreadTests.TargetThreadWithAppendingChildrenOfChildren.IsStopping.ShouldBeTrue();
+                KernelThreadTests.TargetThreadWithAppendingChildrenOfChildren?.IsStopping.ShouldBeTrue();
             }
         }
 
@@ -359,13 +359,13 @@ namespace Nitrocid.Tests.Kernel.Threading
             {
                 Console.WriteLine("- Hello, {0}!", Name);
                 Console.WriteLine("  - Writing from thread: {0} [{1}]", Thread.CurrentThread.Name, Environment.CurrentManagedThreadId);
-                while (!KernelThreadTests.TargetParameterizedThreadWithAppendingChildrenOfChildren.IsStopping)
+                while (!KernelThreadTests.TargetParameterizedThreadWithAppendingChildrenOfChildren?.IsStopping ?? true)
                     Thread.Sleep(1000);
             }
             catch
             {
                 Console.WriteLine("  - Goodbye from thread: {0} [{1}]", Thread.CurrentThread.Name, Environment.CurrentManagedThreadId);
-                KernelThreadTests.TargetParameterizedThreadWithAppendingChildrenOfChildren.IsStopping.ShouldBeTrue();
+                KernelThreadTests.TargetParameterizedThreadWithAppendingChildrenOfChildren?.IsStopping.ShouldBeTrue();
             }
         }
 

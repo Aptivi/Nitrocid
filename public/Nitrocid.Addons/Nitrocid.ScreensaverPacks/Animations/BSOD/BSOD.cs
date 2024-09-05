@@ -59,8 +59,9 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD
         /// <summary>
         /// Simulates the BSOD animation
         /// </summary>
-        public static void Simulate(BSODSettings Settings)
+        public static void Simulate(BSODSettings? Settings)
         {
+            Settings ??= new();
             int selectedBsodIdx = RandomDriver.RandomIdx(BSODList.Count);
             var selectedBsod = BSODList[selectedBsodIdx];
             ConsoleWrapper.CursorVisible = false;

@@ -36,8 +36,9 @@ namespace Nitrocid.ScreensaverPacks.Animations.Pulse
         /// <summary>
         /// Simulates the pulsing animation
         /// </summary>
-        public static void Simulate(PulseSettings Settings)
+        public static void Simulate(PulseSettings? Settings)
         {
+            Settings ??= new();
             int RedColorNum = RandomDriver.Random(Settings.PulseMinimumRedColorLevel, Settings.PulseMaximumRedColorLevel);
             int GreenColorNum = RandomDriver.Random(Settings.PulseMinimumGreenColorLevel, Settings.PulseMaximumGreenColorLevel);
             int BlueColorNum = RandomDriver.Random(Settings.PulseMinimumBlueColorLevel, Settings.PulseMaximumBlueColorLevel);

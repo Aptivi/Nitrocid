@@ -24,13 +24,13 @@ namespace Nitrocid.Generators.KnownAddons
     internal class KnownAddonInfo
     {
         [JsonProperty("name")]
-        public string Name { get; set; }
+        public string Name { get; set; } = "";
 
         [JsonProperty("display")]
-        public string Display { get; set; }
+        public string Display { get; set; } = "";
 
         [JsonProperty("project")]
-        public string Project { get; set; }
+        public string Project { get; set; } = "";
     }
 
 }

@@ -53,7 +53,7 @@ namespace Nitrocid.SplashPacks.Splashes
             return "";
         }
 
-        public override string ReportWarning(int Progress, string WarningReport, Exception ExceptionInfo, params object[] Vars)
+        public override string ReportWarning(int Progress, string WarningReport, Exception? ExceptionInfo, params object[] Vars)
         {
             string exceptionMessage =
                 ExceptionInfo is not null ?
@@ -64,7 +64,7 @@ namespace Nitrocid.SplashPacks.Splashes
             return "";
         }
 
-        public override string ReportError(int Progress, string ErrorReport, Exception ExceptionInfo, params object[] Vars)
+        public override string ReportError(int Progress, string ErrorReport, Exception? ExceptionInfo, params object[] Vars)
         {
             string exceptionMessage =
                 ExceptionInfo is not null ?

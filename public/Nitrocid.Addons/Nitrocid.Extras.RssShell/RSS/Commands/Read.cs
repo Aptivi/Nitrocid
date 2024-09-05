@@ -40,9 +40,10 @@ namespace Nitrocid.Extras.RssShell.RSS.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
+            var articles = RSSShellCommon.RSSFeedInstance?.FeedArticles ?? [];
             int ArticleIndex = (int)Math.Round(Convert.ToDouble(parameters.ArgumentsList[0]) - 1d);
-            int articleCount = RSSShellCommon.RSSFeedInstance.FeedArticles.Length;
-            var article = RSSShellCommon.RSSFeedInstance.FeedArticles[ArticleIndex];
+            int articleCount = articles.Length;
+            var article = articles[ArticleIndex];
             if (ArticleIndex > articleCount - 1)
             {
                 TextWriters.Write(Translate.DoTranslation("Article number couldn't be bigger than the available articles."), true, KernelColorType.Error);

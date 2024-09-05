@@ -95,7 +95,7 @@ namespace Nitrocid.Drivers.Input
         /// <param name="DefaultValue">Default value</param>
         /// <param name="OneLineWrap">Whether to wrap the input to one line</param>
         /// <param name="settings">Reader settings</param>
-        string ReadLineUnsafe(string InputText, string DefaultValue, bool OneLineWrap = false, TermReaderSettings settings = null);
+        string ReadLineUnsafe(string InputText, string DefaultValue, bool OneLineWrap = false, TermReaderSettings? settings = null);
 
         /// <summary>
         /// Reads the next line of characters from the standard input stream without showing input being written by user.

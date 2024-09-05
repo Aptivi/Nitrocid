@@ -754,7 +754,7 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="colorTypeHeaderForeground">A type of colors that will be changed for the header foreground color.</param>
         /// <param name="colorTypeValueForeground">A type of colors that will be changed for the value foreground color.</param>
         /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
-        public static void WriteTable(string[,] Rows, int left, int top, int width, int height, bool enableHeader, KernelColorType colorTypeSeparatorForeground, KernelColorType colorTypeHeaderForeground, KernelColorType colorTypeValueForeground, KernelColorType colorTypeBackground, List<CellOptions> CellOptions = null, BorderSettings borderSettings = null) =>
+        public static void WriteTable(string[,] Rows, int left, int top, int width, int height, bool enableHeader, KernelColorType colorTypeSeparatorForeground, KernelColorType colorTypeHeaderForeground, KernelColorType colorTypeValueForeground, KernelColorType colorTypeBackground, List<CellOptions>? CellOptions = null, BorderSettings? borderSettings = null) =>
             TableColor.WriteTable(Rows, left, top, width, height, enableHeader, KernelColorTools.GetColor(colorTypeSeparatorForeground), KernelColorTools.GetColor(colorTypeHeaderForeground), KernelColorTools.GetColor(colorTypeValueForeground), KernelColorTools.GetColor(colorTypeBackground), CellOptions, borderSettings);
 
         /// <summary>

@@ -151,7 +151,7 @@ namespace Nitrocid.Kernel.Exceptions
                 { KernelExceptionType.Widget,                           Translate.DoTranslation("There was an error when trying to process a widget system operation. If you're sure that this widget is registered properly, please make sure that you've written the widget class name properly.") },
             };
 
-        internal static string GetFinalExceptionMessage(KernelExceptionType exceptionType, string message, Exception e, params object[] vars)
+        internal static string GetFinalExceptionMessage(KernelExceptionType exceptionType, string message, Exception? e, params object[] vars)
         {
             StringBuilder builder = new();
 
@@ -200,8 +200,8 @@ namespace Nitrocid.Kernel.Exceptions
             while (e is not null)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Inner exception {0} is not null: {1}", exceptionIndex, e is not null);
-                builder.AppendLine("  " + $"[{exceptionIndex}] {e.GetType().Name}: {(e is KernelException kex ? kex.OriginalExceptionMessage : e.Message)}");
-                e = e.InnerException;
+                builder.AppendLine("  " + $"[{exceptionIndex}] {e?.GetType().Name}: {(e is KernelException kex ? kex.OriginalExceptionMessage : e?.Message)}");
+                e = e?.InnerException;
                 exceptionIndex++;
             }
             if (e is null)
@@ -213,7 +213,7 @@ namespace Nitrocid.Kernel.Exceptions
         }
 
         internal static string GetMessageFromType(KernelExceptionType exceptionType) =>
-            Messages.TryGetValue(exceptionType, out string type) ?
+            Messages.TryGetValue(exceptionType, out string? type) ?
             type :
             Translate.DoTranslation("Unfortunately, an invalid message type was given, so it's possible that something is messed up. Try turning on the debugger and reproducing the problem.");
     }

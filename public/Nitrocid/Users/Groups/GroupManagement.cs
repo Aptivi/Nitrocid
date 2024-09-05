@@ -72,7 +72,8 @@ namespace Nitrocid.Users.Groups
                 throw new KernelException(KernelExceptionType.NoSuchGroup, Translate.DoTranslation("Can't remove a nonexistent group."));
 
             // Add the new group to the group list
-            GroupInfo group = GetGroup(groupName);
+            GroupInfo? group = GetGroup(groupName) ??
+                throw new KernelException(KernelExceptionType.NoSuchGroup, Translate.DoTranslation("Can't remove a nonexistent group."));
             AvailableGroups.Remove(group);
             SaveGroups();
         }
@@ -153,7 +154,7 @@ namespace Nitrocid.Users.Groups
 
             // Get the user group array first, then check to see if we have a group entry for a user
             string[] groupNames = UserManagement.GetUser(user).Groups;
-            DebugWriter.WriteDebug(DebugLevel.I, "User {0} in group {1}? Refer to: [{2}]", user, groupName, groupNames is not null ? string.Join(", ", groupNames) : "???");
+            DebugWriter.WriteDebug(DebugLevel.I, "User {0} in group {1}? Refer to: [{2}]", user, groupName, string.Join(", ", groupNames));
             return groupNames.Length > 0 && groupNames.Any((group) => group == groupName);
         }
 
@@ -170,7 +171,7 @@ namespace Nitrocid.Users.Groups
 
             // Get the user group array first, then compare against all the group elements for the group name
             string[] groupNames = UserManagement.GetUser(user).Groups;
-            DebugWriter.WriteDebug(DebugLevel.I, "User {0}'s groups: [{1}]", user, groupNames is not null ? string.Join(", ", groupNames) : "???");
+            DebugWriter.WriteDebug(DebugLevel.I, "User {0}'s groups: [{1}]", user, string.Join(", ", groupNames));
             return AvailableGroups.Where((group) => groupNames.Contains(group.GroupName)).ToArray();
         }
 
@@ -179,7 +180,7 @@ namespace Nitrocid.Users.Groups
         /// </summary>
         /// <param name="groupName">The group</param>
         /// <returns>Group information</returns>
-        public static GroupInfo GetGroup(string groupName)
+        public static GroupInfo? GetGroup(string groupName)
         {
             // Check to see if we have the target group
             if (!DoesGroupExist(groupName))
@@ -210,11 +211,13 @@ namespace Nitrocid.Users.Groups
 
             // Get the group information instances to the user groups path
             string groupInfosJson = Reading.ReadContentsText(PathsManagement.UserGroupsPath);
-            JArray groupInfoArrays = (JArray)JsonConvert.DeserializeObject(groupInfosJson);
+            JArray? groupInfoArrays = (JArray?)JsonConvert.DeserializeObject(groupInfosJson) ??
+                throw new KernelException(KernelExceptionType.GroupManagement, Translate.DoTranslation("Can't deserialize group info array"));
             List<GroupInfo> groups = [];
             foreach (var groupInfoArray in groupInfoArrays)
             {
-                GroupInfo groupInfo = (GroupInfo)JsonConvert.DeserializeObject(groupInfoArray.ToString(), typeof(GroupInfo));
+                GroupInfo groupInfo = JsonConvert.DeserializeObject<GroupInfo>(groupInfoArray.ToString()) ??
+                    throw new KernelException(KernelExceptionType.GroupManagement, Translate.DoTranslation("Can't deserialize group info"));
                 groups.Add(groupInfo);
             }
             AvailableGroups = groups;

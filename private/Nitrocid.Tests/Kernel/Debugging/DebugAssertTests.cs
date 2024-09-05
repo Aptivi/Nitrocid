@@ -130,7 +130,7 @@ namespace Nitrocid.Tests.Kernel.Debugging
         {
             DriverHandler.RegisterDriver(DriverTypes.Console, new MyCustomConsoleDriver());
             DriverHandler.SetDriver<IConsoleDriver>("MyCustom");
-            Should.Throw(() => DebugCheck.AssertNull<string[]>(null), typeof(KernelException));
+            Should.Throw(() => DebugCheck.AssertNull<string[]?>(null), typeof(KernelException));
         }
 
         /// <summary>
@@ -150,7 +150,7 @@ namespace Nitrocid.Tests.Kernel.Debugging
         {
             DriverHandler.RegisterDriver(DriverTypes.Console, new MyCustomConsoleDriver());
             DriverHandler.SetDriver<IConsoleDriver>("MyCustom");
-            Should.Throw(() => DebugCheck.AssertNull<string[]>(null, "Always false"), typeof(KernelException));
+            Should.Throw(() => DebugCheck.AssertNull<string[]?>(null, "Always false"), typeof(KernelException));
         }
 
         /// <summary>
@@ -159,7 +159,7 @@ namespace Nitrocid.Tests.Kernel.Debugging
         [TestMethod]
         [Description("Misc")]
         public void TestAssertNotNull() =>
-            Should.NotThrow(() => DebugCheck.AssertNotNull<string[]>(null));
+            Should.NotThrow(() => DebugCheck.AssertNotNull<string[]?>(null));
 
         /// <summary>
         /// Tests assertion...
@@ -179,7 +179,7 @@ namespace Nitrocid.Tests.Kernel.Debugging
         [TestMethod]
         [Description("Misc")]
         public void TestAssertNotNullMessage() =>
-            Should.NotThrow(() => DebugCheck.AssertNotNull<string[]>(null, "Always true"));
+            Should.NotThrow(() => DebugCheck.AssertNotNull<string[]?>(null, "Always true"));
 
         /// <summary>
         /// Tests assertion...

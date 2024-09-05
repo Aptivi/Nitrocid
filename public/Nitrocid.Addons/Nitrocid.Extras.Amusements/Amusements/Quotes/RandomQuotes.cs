@@ -18,6 +18,7 @@
 //
 
 using Newtonsoft.Json.Linq;
+using Nitrocid.Languages;
 using Nitrocid.Network.Transfer;
 using System.Text;
 using Textify.General;
@@ -35,8 +36,8 @@ namespace Nitrocid.Extras.Amusements.Amusements.Quotes
 
             // Now, get the content and the author
             var quoteToken = JToken.Parse(quoteString);
-            string content = (string)quoteToken[0]["content"];
-            string author = (string)quoteToken[0]["author"];
+            string? content = (string?)quoteToken[0]?["content"] ?? Translate.DoTranslation("Unknown quote.");
+            string? author = (string?)quoteToken[0]?["author"] ?? Translate.DoTranslation("Unknown author.");
             return (content, author);
         }
 

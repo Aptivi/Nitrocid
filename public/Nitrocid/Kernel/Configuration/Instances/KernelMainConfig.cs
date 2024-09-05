@@ -64,7 +64,8 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// <inheritdoc/>
         [JsonIgnore]
         public override SettingsEntry[] SettingsEntries =>
-            ConfigTools.GetSettingsEntries(ResourcesManager.GetData("SettingsEntries.json", ResourcesType.Settings));
+            ConfigTools.GetSettingsEntries(ResourcesManager.GetData("SettingsEntries.json", ResourcesType.Settings) ??
+                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Failed to obtain main settings entries.")));
 
         [JsonIgnore]
         private string defaultFigletFontName = "speed";
@@ -927,7 +928,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// <summary>
         /// Group of paths separated by the colon. It works the same as PATH. Write a full path to a folder or a folder name. When you're finished, write \"q\". Write a minus sign next to the path to remove an existing directory.
         /// </summary>
-        public string PathsToLookup { get; set; } = Environment.GetEnvironmentVariable("PATH");
+        public string PathsToLookup { get; set; } = Environment.GetEnvironmentVariable("PATH") ?? "";
         /// <summary>
         /// Default choice output type
         /// </summary>

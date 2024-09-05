@@ -39,6 +39,8 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             // Get the tree changes and the patch
+            if (GitShellCommon.Repository is null)
+                return 43;
             var diff = GitShellCommon.Repository.Diff;
             var tree = diff.Compare<TreeChanges>();
             var patch = diff.Compare<Patch>();

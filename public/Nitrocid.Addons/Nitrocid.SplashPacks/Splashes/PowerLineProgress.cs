@@ -73,10 +73,10 @@ namespace Nitrocid.SplashPacks.Splashes
         public override string Report(int Progress, string ProgressReport, params object[] Vars) =>
             UpdateProgressReport(Progress, false, false, ProgressReport, Vars);
 
-        public override string ReportWarning(int Progress, string WarningReport, Exception ExceptionInfo, params object[] Vars) =>
+        public override string ReportWarning(int Progress, string WarningReport, Exception? ExceptionInfo, params object[] Vars) =>
             UpdateProgressReport(Progress, false, true, WarningReport, Vars);
 
-        public override string ReportError(int Progress, string ErrorReport, Exception ExceptionInfo, params object[] Vars) =>
+        public override string ReportError(int Progress, string ErrorReport, Exception? ExceptionInfo, params object[] Vars) =>
             UpdateProgressReport(Progress, true, false, ErrorReport, Vars);
 
         /// <summary>

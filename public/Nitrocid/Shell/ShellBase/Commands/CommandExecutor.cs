@@ -38,6 +38,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Threading;
 using Textify.General;
 using Nitrocid.Misc.Text.Probers.Regexp;
+using Nitrocid.Kernel.Exceptions;
 
 namespace Nitrocid.Shell.ShellBase.Commands
 {
@@ -78,8 +79,10 @@ namespace Nitrocid.Shell.ShellBase.Commands
             }
         }
 
-        internal static void ExecuteCommand(CommandExecutorParameters ThreadParams)
+        internal static void ExecuteCommand(CommandExecutorParameters? ThreadParams)
         {
+            if (ThreadParams is null)
+                throw new KernelException(KernelExceptionType.ShellOperation, Translate.DoTranslation("Thread parameters are not specified."));
             var RequestedCommand = ThreadParams.RequestedCommand;
             var RequestedCommandInfo = ThreadParams.RequestedCommandInfo;
             string ShellType = ThreadParams.ShellType;
@@ -92,7 +95,7 @@ namespace Nitrocid.Shell.ShellBase.Commands
 
                 // Check to see if we have satisfied arguments list
                 argSatisfied = satisfied is not null;
-                if (!argSatisfied)
+                if (satisfied is null)
                 {
                     DebugWriter.WriteDebug(DebugLevel.W, "Arguments not satisfied.");
                     TextWriters.Write(Translate.DoTranslation("Required arguments are not provided for all usages below:"), true, KernelColorType.Error);
@@ -299,7 +302,7 @@ namespace Nitrocid.Shell.ShellBase.Commands
                 EventsManager.FireEvent(EventType.CommandError, ShellType, RequestedCommand, ex);
                 DebugWriter.WriteDebug(DebugLevel.E, "Failed to execute command {0} from type {1}: {2}", RequestedCommand, ShellType.ToString(), ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriters.Write(Translate.DoTranslation("Error trying to execute command") + " {2}." + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, KernelColorType.Error, ex.GetType().FullName, ex.Message, RequestedCommand);
+                TextWriters.Write(Translate.DoTranslation("Error trying to execute command") + " {2}." + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, KernelColorType.Error, ex.GetType().FullName ?? "<null>", ex.Message, RequestedCommand);
                 ShellInstance.LastErrorCode = ex.GetHashCode();
             }
         }
@@ -350,7 +353,7 @@ namespace Nitrocid.Shell.ShellBase.Commands
                 if (AltThreads.Count == 0 || AltThreads[^1].IsAlive)
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Making alt thread for wrapped command {0}...", Command);
-                    var WrappedCommand = new KernelThread($"Wrapped Shell Command Thread", false, (cmdThreadParams) => ExecuteCommand((CommandExecutorParameters)cmdThreadParams));
+                    var WrappedCommand = new KernelThread($"Wrapped Shell Command Thread", false, (cmdThreadParams) => ExecuteCommand((CommandExecutorParameters?)cmdThreadParams));
                     ShellManager.ShellStack[^1].AltCommandThreads.Add(WrappedCommand);
                 }
 

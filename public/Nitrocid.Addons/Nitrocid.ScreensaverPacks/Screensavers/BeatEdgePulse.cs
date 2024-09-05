@@ -31,7 +31,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     public class BeatEdgePulseDisplay : BaseScreensaver, IScreensaver
     {
 
-        private Animations.BeatEdgePulse.BeatEdgePulseSettings BeatEdgePulseSettingsInstance;
+        private Animations.BeatEdgePulse.BeatEdgePulseSettings? BeatEdgePulseSettingsInstance;
 
         /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "BeatEdgePulse";

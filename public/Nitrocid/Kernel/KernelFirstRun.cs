@@ -94,7 +94,7 @@ namespace Nitrocid.Kernel
 
                 // Save all the changes
                 InfoBoxColor.WriteInfoBoxPlain(Translate.DoTranslation("Saving settings..."), false);
-                int selectedLanguageIdx = (int)firstRunPres.Pages[0].Inputs[0].InputMethod.Input;
+                int selectedLanguageIdx = (int?)firstRunPres.Pages[0].Inputs[0].InputMethod.Input ?? 0;
                 string selectedLanguage = LanguageManager.Languages.ElementAt(selectedLanguageIdx).Key;
                 DebugWriter.WriteDebug(DebugLevel.I, "Got selectedLanguage {0}.", selectedLanguage);
                 LanguageManager.SetLang(selectedLanguage);
@@ -181,9 +181,9 @@ namespace Nitrocid.Kernel
                 while (!moveOn)
                 {
                     PresentationTools.Present(firstRunPresUser, true, true);
-                    string inputUser = (string)firstRunPresUser.Pages[0].Inputs[0].InputMethod.Input;
+                    string inputUser = (string?)firstRunPresUser.Pages[0].Inputs[0].InputMethod.Input ?? user;
                     user = string.IsNullOrEmpty(inputUser) ? user : inputUser;
-                    string pass = (string)firstRunPresUser.Pages[0].Inputs[1].InputMethod.Input ?? "";
+                    string pass = (string?)firstRunPresUser.Pages[0].Inputs[1].InputMethod.Input ?? "";
                     try
                     {
                         UserManagement.AddUser(user, pass);
@@ -255,8 +255,8 @@ namespace Nitrocid.Kernel
                     ]
                 );
                 PresentationTools.Present(firstRunPresUpdates, true, true);
-                bool needsAutoCheck = (int)firstRunPresUpdates.Pages[0].Inputs[0].InputMethod.Input == 0;
-                bool needsAutoDownload = (int)firstRunPresUpdates.Pages[0].Inputs[1].InputMethod.Input == 0;
+                bool needsAutoCheck = (int?)firstRunPresUpdates.Pages[0].Inputs[0].InputMethod.Input == 0;
+                bool needsAutoDownload = (int?)firstRunPresUpdates.Pages[0].Inputs[1].InputMethod.Input == 0;
                 Config.MainConfig.CheckUpdateStart = needsAutoCheck;
                 Config.MainConfig.AutoDownloadUpdate = needsAutoDownload;
 

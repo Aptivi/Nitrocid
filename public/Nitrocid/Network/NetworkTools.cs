@@ -62,7 +62,7 @@ namespace Nitrocid.Network
         /// <param name="Address">Target address</param>
         /// <param name="options">Ping options</param>
         /// <returns>A ping reply status</returns>
-        public static PingReply PingAddress(string Address, PingOptions options = null)
+        public static PingReply PingAddress(string Address, PingOptions? options = null)
         {
             // 60 seconds = 1 minute. timeout of Pinger.Send() takes milliseconds.
             int Timeout = Config.MainConfig.PingTimeout;
@@ -76,7 +76,7 @@ namespace Nitrocid.Network
         /// <param name="Timeout">Ping timeout in milliseconds</param>
         /// <param name="options">Ping options</param>
         /// <returns>A ping reply status</returns>
-        public static PingReply PingAddress(string Address, int Timeout, PingOptions options = null)
+        public static PingReply PingAddress(string Address, int Timeout, PingOptions? options = null)
         {
             var Pinger = new Ping();
             options ??= new PingOptions() { DontFragment = true };
@@ -91,7 +91,7 @@ namespace Nitrocid.Network
         /// <param name="text">The text to buffer</param>
         /// <param name="options">Ping options</param>
         /// <returns>A ping reply status</returns>
-        public static PingReply PingAddress(string Address, int Timeout, string text, PingOptions options = null)
+        public static PingReply PingAddress(string Address, int Timeout, string text, PingOptions? options = null)
         {
             var PingBuffer = Encoding.ASCII.GetBytes(text);
             return PingAddress(Address, Timeout, PingBuffer, options);
@@ -105,7 +105,7 @@ namespace Nitrocid.Network
         /// <param name="Buffer">The buffer consisting of array of bytes</param>
         /// <param name="options">Ping options</param>
         /// <returns>A ping reply status</returns>
-        public static PingReply PingAddress(string Address, int Timeout, byte[] Buffer, PingOptions options = null)
+        public static PingReply PingAddress(string Address, int Timeout, byte[] Buffer, PingOptions? options = null)
         {
             // See https://learn.microsoft.com/en-us/dotnet/core/compatibility/networking/7.0/ping-custom-payload-linux for more info
             var Pinger = new Ping();

@@ -54,7 +54,7 @@ namespace Nitrocid.Kernel
         internal static bool TalkativePreboot;
         internal static bool PrebootSplash = true;
 
-        internal static void EntryPoint(string[] args)
+        internal static void EntryPoint(string[]? args)
         {
             // Initialize very important components
             KernelInitializers.InitializeCritical();
@@ -133,7 +133,7 @@ namespace Nitrocid.Kernel
             {
                 KernelPanic.KernelErrored = false;
                 var exception = KernelPanic.LastKernelErrorException;
-                throw new KernelErrorException(Translate.DoTranslation("Kernel Error while booting: {0}"), exception, exception.Message);
+                throw new KernelErrorException(Translate.DoTranslation("Kernel Error while booting: {0}"), exception, exception?.Message ?? "");
             }
         }
 

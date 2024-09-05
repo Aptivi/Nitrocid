@@ -17,11 +17,15 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Extras.JsonShell.Tools;
 using Nitrocid.Files.Editors.TextEdit;
 using Nitrocid.Files.Operations;
+using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
 using System.Collections.Generic;
+using Terminaux.Inputs.Styles.Editor;
 
 namespace Nitrocid.Extras.JsonShell.Json.Commands
 {
@@ -36,9 +40,14 @@ namespace Nitrocid.Extras.JsonShell.Json.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
+            if (JsonShellCommon.FileStream is null)
+            {
+                TextWriters.Write(Translate.DoTranslation("The file stream is not open yet."), KernelColorType.Error);
+                return 42;
+            }
             string path = JsonShellCommon.FileStream.Name;
             List<string> lines = [.. Reading.ReadAllLinesNoBlock(path)];
-            TextEditInteractive.OpenInteractive(JsonShellCommon.FileStream.Name, ref lines);
+            TextEditInteractive.OpenInteractive(ref lines);
 
             // Save the changes
             JsonTools.CloseJsonFile();

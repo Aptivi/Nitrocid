@@ -36,6 +36,11 @@ namespace Nitrocid.Extras.SqlShell.Sql.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             var connection = SqlShellCommon.sqliteConnection;
+            if (connection is null)
+            {
+                TextWriters.Write(Translate.DoTranslation("Can't get connection"), KernelColorType.Error);
+                return 41;
+            }
             TextWriters.Write(Translate.DoTranslation("Database path:") + " ", false, KernelColorType.ListEntry);
             TextWriters.Write(connection.DataSource, true, KernelColorType.ListValue);
             TextWriters.Write(Translate.DoTranslation("Server version:") + " ", false, KernelColorType.ListEntry);

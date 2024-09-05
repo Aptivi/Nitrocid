@@ -48,11 +48,11 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Commands
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Listing entries with current directory as target directory");
-                Entries = ArchiveTools.ListArchiveEntries(ArchiveShellCommon.CurrentArchiveDirectory);
+                Entries = ArchiveTools.ListArchiveEntries(ArchiveShellCommon.CurrentArchiveDirectory ?? "");
             }
             foreach (IArchiveEntry Entry in Entries)
             {
-                TextWriters.Write("- {0}: ", false, KernelColorType.ListEntry, Entry.Key);
+                TextWriters.Write("- {0}: ", false, KernelColorType.ListEntry, Entry.Key ?? "");
                 if (!Entry.IsDirectory) // Entry is a file
                 {
                     TextWriters.Write("{0} ({1})", true, KernelColorType.ListValue, Entry.CompressedSize.SizeString(), Entry.Size.SizeString());

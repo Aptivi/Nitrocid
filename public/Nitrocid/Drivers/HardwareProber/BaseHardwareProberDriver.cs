@@ -58,26 +58,26 @@ namespace Nitrocid.Drivers.HardwareProber
             ["HDD", "CPU", "GPU", "RAM"];
 
         /// <inheritdoc/>
-        public virtual IEnumerable ProbeGraphics() =>
+        public virtual IEnumerable? ProbeGraphics() =>
             HwProber.GetVideos();
 
         /// <inheritdoc/>
-        public virtual IEnumerable ProbeHardDrive() =>
+        public virtual IEnumerable? ProbeHardDrive() =>
             HwProber.GetHardDisks();
 
         /// <inheritdoc/>
         public virtual IEnumerable ProbePcMemory() =>
-            new MemoryPart[] { HwProber.GetMemory() };
+            new MemoryPart?[] { HwProber.GetMemory() };
 
         /// <inheritdoc/>
         public virtual IEnumerable ProbeProcessor() =>
-            new ProcessorPart[] { HwProber.GetProcessor() };
+            new ProcessorPart?[] { HwProber.GetProcessor() };
 
         /// <inheritdoc/>
         public virtual string DiskInfo(int diskIndex)
         {
             var hardDrives = ProbeHardDrive() as HardDiskPart[];
-            if (diskIndex < hardDrives.Length)
+            if (hardDrives is not null && diskIndex < hardDrives.Length)
             {
                 // Get the drive index and get the partition info
                 var drive = hardDrives[diskIndex];
@@ -93,7 +93,7 @@ namespace Nitrocid.Drivers.HardwareProber
         public virtual string DiskPartitionInfo(int diskIndex, int diskPartitionIndex)
         {
             var hardDrives = ProbeHardDrive() as HardDiskPart[];
-            if (diskIndex < hardDrives.Length)
+            if (hardDrives is not null && diskIndex < hardDrives.Length)
             {
                 // Get the drive index and get the partition info
                 var parts = hardDrives[diskIndex].Partitions;
@@ -120,7 +120,7 @@ namespace Nitrocid.Drivers.HardwareProber
         public virtual string ListDiskPartitions(int diskIndex)
         {
             var hardDrives = ProbeHardDrive() as HardDiskPart[];
-            if (diskIndex < hardDrives.Length)
+            if (hardDrives is not null && diskIndex < hardDrives.Length)
             {
                 // Get the drive index and get the partition info
                 var parts = hardDrives[diskIndex].Partitions;
@@ -144,15 +144,16 @@ namespace Nitrocid.Drivers.HardwareProber
         public virtual string ListDisks()
         {
             var hardDrives = ProbeHardDrive() as HardDiskPart[];
+            if (hardDrives is not null && hardDrives.Length == 0 || hardDrives is null)
+            {
+                // SpecProbe may have failed to parse hard disks due to insufficient permissions.
+                TextWriters.Write(Translate.DoTranslation("The hardware probing library has failed to probe hard drives. If you're running Windows, the most likely cause is that you have insufficient permissions to access the hard drive information. Restart Nitrocid with elevated administrative privileges to be able to parse hard drives."), true, KernelColorType.Warning);
+                return "";
+            }
             for (int i = 0; i < hardDrives.Length; i++)
             {
                 var hardDrive = hardDrives[i];
                 TextWriterColor.Write($"- [{i + 1}] {hardDrive.HardDiskSize.SizeString()}");
-            }
-            if (hardDrives.Length == 0)
-            {
-                // SpecProbe may have failed to parse hard disks due to insufficient permissions.
-                TextWriters.Write(Translate.DoTranslation("The hardware probing library has failed to probe hard drives. If you're running Windows, the most likely cause is that you have insufficient permissions to access the hard drive information. Restart Nitrocid with elevated administrative privileges to be able to parse hard drives."), true, KernelColorType.Warning);
             }
             return $"[{string.Join(", ", hardDrives.Select((hdp) => hdp.HardDiskNumber))}]";
         }
@@ -162,7 +163,7 @@ namespace Nitrocid.Drivers.HardwareProber
             ListHardware(ProbeProcessor(), ProbePcMemory(), ProbeGraphics(), ProbeHardDrive());
 
         /// <inheritdoc/>
-        public virtual void ListHardware(IEnumerable processors, IEnumerable memory, IEnumerable graphics, IEnumerable hardDrives)
+        public virtual void ListHardware(IEnumerable? processors, IEnumerable? memory, IEnumerable? graphics, IEnumerable? hardDrives)
         {
             if (!WindowsUserTools.IsAdministrator())
             {

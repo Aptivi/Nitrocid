@@ -54,7 +54,7 @@ namespace Nitrocid.Extras.HttpShell
         internal static HttpConfig HttpConfig =>
             (HttpConfig)Config.baseConfigurations[nameof(HttpConfig)];
 
-        ReadOnlyDictionary<string, Delegate> IAddon.PubliclyAvailableFunctions => new(new Dictionary<string, Delegate>()
+        ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => new(new Dictionary<string, Delegate>()
         {
             { nameof(HttpTools.HttpDelete), new Func<string, Task>(HttpTools.HttpDelete) },
             { nameof(HttpTools.HttpGetString), new Func<string, Task<string>>(HttpTools.HttpGetString) },
@@ -71,9 +71,9 @@ namespace Nitrocid.Extras.HttpShell
             { nameof(HttpTools.NeutralizeUri), new Func<string, string>(HttpTools.NeutralizeUri) },
         });
 
-        ReadOnlyDictionary<string, PropertyInfo> IAddon.PubliclyAvailableProperties => null;
+        ReadOnlyDictionary<string, PropertyInfo>? IAddon.PubliclyAvailableProperties => null;
 
-        ReadOnlyDictionary<string, FieldInfo> IAddon.PubliclyAvailableFields => null;
+        ReadOnlyDictionary<string, FieldInfo>? IAddon.PubliclyAvailableFields => null;
 
         void IAddon.FinalizeAddon()
         {

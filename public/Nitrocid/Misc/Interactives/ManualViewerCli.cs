@@ -87,11 +87,13 @@ namespace Nitrocid.Misc.Interactives
             return manual.Name;
         }
 
-        internal void ShowManualInfo(Manual item)
+        internal void ShowManualInfo(Manual? item)
         {
             // Render the final information string
             var finalInfoRendered = new StringBuilder();
-            Manual manual = item;
+            Manual? manual = item;
+            if (manual is null)
+                return;
             bool hasTitle = !string.IsNullOrEmpty(manual.Title);
             bool hasBody = !string.IsNullOrEmpty(manual.Body.ToString());
 

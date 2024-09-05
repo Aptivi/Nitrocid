@@ -46,7 +46,12 @@ namespace Nitrocid.Extras.JsonShell.Json
             string FilePath = "";
             if (ShellArgs.Length > 0)
             {
-                FilePath = Convert.ToString(ShellArgs[0]);
+                FilePath = Convert.ToString(ShellArgs[0]) ?? "";
+                if (string.IsNullOrEmpty(FilePath))
+                {
+                    TextWriters.Write(Translate.DoTranslation("File not specified. Exiting shell..."), true, KernelColorType.Error);
+                    Bail = true;
+                }
             }
             else
             {

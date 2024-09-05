@@ -41,7 +41,7 @@ namespace Nitrocid.Drivers.Console.Bases
 
         public override bool DriverInternal => true;
 
-        internal string PathToWrite { get; set; }
+        internal string PathToWrite { get; set; } = "";
         internal bool FilterVT { get; set; }
 
         public override bool IsDumb => true;

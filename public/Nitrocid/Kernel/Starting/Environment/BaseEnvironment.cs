@@ -30,7 +30,7 @@ namespace Nitrocid.Kernel.Starting.Environment
         /// <summary>
         /// Arguments to provide this environment
         /// </summary>
-        public string[] Arguments { get; internal set; }
+        public string[]? Arguments { get; internal set; }
 
         /// <inheritdoc/>
         public virtual string Name =>

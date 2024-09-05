@@ -92,7 +92,10 @@ namespace Nitrocid.Misc.Interactives
             AlarmTools.StartAlarm(name, name, (int)span.TotalSeconds);
         }
 
-        internal void Stop(string alarm) =>
-            AlarmTools.StopAlarm(alarm);
+        internal void Stop(string? alarm)
+        {
+            if (alarm is not null)
+                AlarmTools.StopAlarm(alarm);
+        }
     }
 }

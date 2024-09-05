@@ -250,7 +250,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             UpdateIndex(foundCard);
         }
 
-        internal void UpdateIndex(Card foundCard)
+        internal void UpdateIndex(Card? foundCard)
         {
             var contacts = ContactsManager.GetContacts();
             if (foundCard is not null)
@@ -568,14 +568,14 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             return finalInfoRendered.ToString();
         }
 
-        internal string GetContactPictureFinal(int index, int width, int height, Color background = null)
+        internal string GetContactPictureFinal(int index, int width, int height, Color? background = null)
         {
             // Render the final information string
             var card = ContactsManager.GetContact(index);
             return GetContactPictureFinal(card, width, height, background);
         }
 
-        internal string GetContactPictureFinal(Card card, int width, int height, Color background = null)
+        internal string GetContactPictureFinal(Card card, int width, int height, Color? background = null)
         {
             // Render the final information string
             var finalInfoRendered = new StringBuilder();

@@ -48,7 +48,12 @@ namespace Nitrocid.Extras.GitShell.Git
             string RepoPath = "";
             if (ShellArgs.Length > 0)
             {
-                RepoPath = Convert.ToString(ShellArgs[0]);
+                RepoPath = Convert.ToString(ShellArgs[0]) ?? "";
+                if (string.IsNullOrEmpty(RepoPath))
+                {
+                    TextWriters.Write(Translate.DoTranslation("Repository not specified. Exiting shell..."), true, KernelColorType.Error);
+                    Bail = true;
+                }
             }
             else
             {
@@ -83,7 +88,7 @@ namespace Nitrocid.Extras.GitShell.Git
                 catch (Exception ex)
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
-                    TextWriters.Write(Translate.DoTranslation("There was an error in the shell.") + CharManager.NewLine + "Error {0}: {1}", true, KernelColorType.Error, ex.GetType().FullName, ex.Message);
+                    TextWriters.Write(Translate.DoTranslation("There was an error in the shell.") + CharManager.NewLine + "Error {0}: {1}", true, KernelColorType.Error, ex.GetType().FullName ?? "<null>", ex.Message);
                     continue;
                 }
             }

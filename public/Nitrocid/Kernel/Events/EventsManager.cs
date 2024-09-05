@@ -36,21 +36,22 @@ namespace Nitrocid.Kernel.Events
         /// <summary>
         /// Recently fired events
         /// </summary>
-        internal static Dictionary<string, object[]> FiredEvents { get; set; } = [];
-        internal static Dictionary<EventType, List<Action<object[]>>> eventHandlers = [];
+        internal static Dictionary<string, object?[]?> FiredEvents { get; set; } = [];
+        internal static Dictionary<EventType, List<Action<object?[]?>>> eventHandlers = [];
 
         /// <summary>
         /// Lists all the fired events with arguments
         /// </summary>
-        public static Dictionary<string, object[]> ListAllFiredEvents() => ListAllFiredEvents("");
+        public static Dictionary<string, object?[]?> ListAllFiredEvents() =>
+            ListAllFiredEvents("");
 
         /// <summary>
         /// Lists all the fired events with arguments
         /// </summary>
         /// <param name="SearchTerm">The search term</param>
-        public static Dictionary<string, object[]> ListAllFiredEvents(string SearchTerm)
+        public static Dictionary<string, object?[]?> ListAllFiredEvents(string SearchTerm)
         {
-            var Events = new Dictionary<string, object[]>();
+            var Events = new Dictionary<string, object?[]?>();
 
             // Enumerate all the fired events
             DebugWriter.WriteDebugConditional(Config.MainConfig.EventDebug, DebugLevel.I, "Searching events from search term {0}...", SearchTerm);
@@ -78,7 +79,7 @@ namespace Nitrocid.Kernel.Events
         /// </summary>
         /// <param name="Event">Event</param>
         /// <param name="Params">Parameters for event</param>
-        public static void FireEvent(EventType Event, params object[] Params)
+        public static void FireEvent(EventType Event, params object?[]? Params)
         {
             // Check to see if event exists
             if (!Enum.IsDefined(typeof(EventType), Event))
@@ -112,7 +113,7 @@ namespace Nitrocid.Kernel.Events
         /// </summary>
         /// <param name="eventType">An event type to handle</param>
         /// <param name="eventAction">An event action to add to the handler list</param>
-        public static void RegisterEventHandler(EventType eventType, Action<object[]> eventAction)
+        public static void RegisterEventHandler(EventType eventType, Action<object?[]?> eventAction)
         {
             if (eventAction == null)
                 throw new KernelException(KernelExceptionType.NoSuchEvent, Translate.DoTranslation("Provide a valid event action"));
@@ -128,7 +129,7 @@ namespace Nitrocid.Kernel.Events
         /// </summary>
         /// <param name="eventType">An event type to handle</param>
         /// <param name="eventAction">An event action to remove from the handler list</param>
-        public static void UnregisterEventHandler(EventType eventType, Action<object[]> eventAction)
+        public static void UnregisterEventHandler(EventType eventType, Action<object?[]?> eventAction)
         {
             if (eventAction == null)
                 throw new KernelException(KernelExceptionType.NoSuchEvent, Translate.DoTranslation("Provide a valid event action"));

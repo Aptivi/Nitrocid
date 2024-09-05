@@ -19,6 +19,7 @@
 
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
 
@@ -35,16 +36,18 @@ namespace Nitrocid.Extras.RssShell.RSS.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
+            var feed = RSSShellCommon.RSSFeedInstance ??
+                throw new KernelException(KernelExceptionType.RSSShell, Translate.DoTranslation("There is no feed."));
             TextWriters.Write("- " + Translate.DoTranslation("Title:") + " ", false, KernelColorType.ListEntry);
-            TextWriters.Write(RSSShellCommon.RSSFeedInstance.FeedTitle, true, KernelColorType.ListValue);
+            TextWriters.Write(feed.FeedTitle, true, KernelColorType.ListValue);
             TextWriters.Write("- " + Translate.DoTranslation("Link:") + " ", false, KernelColorType.ListEntry);
-            TextWriters.Write(RSSShellCommon.RSSFeedInstance.FeedUrl, true, KernelColorType.ListValue);
+            TextWriters.Write(feed.FeedUrl, true, KernelColorType.ListValue);
             TextWriters.Write("- " + Translate.DoTranslation("Description:") + " ", false, KernelColorType.ListEntry);
-            TextWriters.Write(RSSShellCommon.RSSFeedInstance.FeedDescription, true, KernelColorType.ListValue);
+            TextWriters.Write(feed.FeedDescription, true, KernelColorType.ListValue);
             TextWriters.Write("- " + Translate.DoTranslation("Feed type:") + " ", false, KernelColorType.ListEntry);
-            TextWriters.Write(RSSShellCommon.RSSFeedInstance.FeedType.ToString(), true, KernelColorType.ListValue);
+            TextWriters.Write(feed.FeedType.ToString(), true, KernelColorType.ListValue);
             TextWriters.Write("- " + Translate.DoTranslation("Number of articles:") + " ", false, KernelColorType.ListEntry);
-            TextWriters.Write(RSSShellCommon.RSSFeedInstance.FeedArticles.Length.ToString(), true, KernelColorType.ListValue);
+            TextWriters.Write(feed.FeedArticles.Length.ToString(), true, KernelColorType.ListValue);
             return 0;
         }
 

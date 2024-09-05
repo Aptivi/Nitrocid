@@ -48,7 +48,9 @@ namespace Nitrocid.Analyzers.Files.Operations
             var diagnosticSpan = diagnostic.Location.SourceSpan;
 
             // Find the type declaration identified by the diagnostic.
-            var declaration = root.FindToken(diagnosticSpan.Start).Parent.AncestorsAndSelf().OfType<MemberAccessExpressionSyntax>().First();
+            var declaration = root?.FindToken(diagnosticSpan.Start).Parent?.AncestorsAndSelf().OfType<MemberAccessExpressionSyntax>().First();
+            if (declaration is null)
+                return;
 
             // Register a code action that will invoke the fix.
             context.RegisterCodeFix(
@@ -76,11 +78,12 @@ namespace Nitrocid.Analyzers.Files.Operations
 
                 // Actually replace
                 var node = await document.GetSyntaxRootAsync(cancellationToken);
-                var finalNode = node.ReplaceNode(typeDecl, replacedSyntax);
+                var finalNode = node?.ReplaceNode(typeDecl, replacedSyntax);
 
                 // Check the imports
-                var compilation = finalNode as CompilationUnitSyntax;
-                if (compilation?.Usings.Any(u => u.Name.ToString() == $"{AnalysisTools.rootNameSpace}.Files.Operations") == false)
+                if (finalNode is not CompilationUnitSyntax compilation)
+                    return document.Project.Solution;
+                if (compilation.Usings.Any(u => u.Name?.ToString() == $"{AnalysisTools.rootNameSpace}.Files.Operations") == false)
                 {
                     var name = SyntaxFactory.QualifiedName(
                         SyntaxFactory.QualifiedName(

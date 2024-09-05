@@ -142,12 +142,12 @@ namespace Nitrocid.Arguments
         /// Parses specified arguments
         /// </summary>
         /// <param name="ArgumentsInput">Input Arguments</param>
-        public static void ParseArguments(string[] ArgumentsInput)
+        public static void ParseArguments(string[]? ArgumentsInput)
         {
             // Check for the arguments written by the user
             try
             {
-                ArgumentsInput = GetFilteredArguments(ArgumentsInput);
+                ArgumentsInput = GetFilteredArguments(ArgumentsInput) ?? [];
                 var Arguments = AvailableCMDLineArgs;
 
                 // Parse them now
@@ -155,7 +155,7 @@ namespace Nitrocid.Arguments
                 {
                     string Argument = ArgumentsInput[i];
                     string ArgumentName = Argument.SplitEncloseDoubleQuotes()[0];
-                    if (Arguments.TryGetValue(ArgumentName, out ArgumentInfo argInfoVal))
+                    if (Arguments.TryGetValue(ArgumentName, out ArgumentInfo? argInfoVal))
                     {
                         // Variables
                         var (satisfied, total) = ArgumentsParser.ParseArgumentArguments(Argument);
@@ -213,12 +213,12 @@ namespace Nitrocid.Arguments
         /// <param name="ArgumentsInput">List of passed arguments</param>
         /// <param name="argumentName">Argument name to check</param>
         /// <returns>True if found in the arguments list and passed. False otherwise.</returns>
-        public static bool IsArgumentPassed(string[] ArgumentsInput, string argumentName)
+        public static bool IsArgumentPassed(string[]? ArgumentsInput, string argumentName)
         {
             // Check for the arguments written by the user
             try
             {
-                ArgumentsInput = GetFilteredArguments(ArgumentsInput);
+                ArgumentsInput = GetFilteredArguments(ArgumentsInput) ?? [];
                 var Arguments = AvailableCMDLineArgs;
 
                 // Parse them now
@@ -241,9 +241,9 @@ namespace Nitrocid.Arguments
             }
         }
 
-        private static string[] GetFilteredArguments(string[] ArgumentsInput)
+        private static string[]? GetFilteredArguments(string[]? ArgumentsInput)
         {
-            if (ArgumentHelpPrint.acknowledged)
+            if (ArgumentHelpPrint.acknowledged && ArgumentsInput is not null)
                 ArgumentsInput = ArgumentsInput.Where((arg) => !outArgs.Contains(arg)).ToArray();
             return ArgumentsInput;
         }

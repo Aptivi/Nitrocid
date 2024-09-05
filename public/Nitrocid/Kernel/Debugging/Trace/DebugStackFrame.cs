@@ -26,11 +26,11 @@ namespace Nitrocid.Kernel.Debugging.Trace
 {
     internal class DebugStackFrame
     {
-        public string RoutineName { get; }
-        public string RoutinePath { get; }
+        public string RoutineName { get; } = "";
+        public string RoutinePath { get; } = "";
         public int RoutineLineNumber { get; }
         public int RoutineColumnNumber { get; }
-        public string RoutineFileName { get; }
+        public string RoutineFileName { get; } = "";
 
         internal DebugStackFrame() :
             this(2)
@@ -44,13 +44,16 @@ namespace Nitrocid.Kernel.Debugging.Trace
             if (frameNumber <= 0 || frameNumber > trace.FrameCount)
                 throw new KernelException(KernelExceptionType.Debug, Translate.DoTranslation("Stack frame number shouldn't exceed current amount of frames or shouldn't be negative."));
 
-            string FrameFilePath = trace.GetFrame(frameNumber).GetFileName();
+            var frame = trace.GetFrame(frameNumber) ??
+                throw new KernelException(KernelExceptionType.Debug, Translate.DoTranslation("Can't get frame"));
+            string FrameFilePath = frame.GetFileName() ?? "";
             string Source = Path.GetFileName(FrameFilePath);
-            int LineNum = trace.GetFrame(frameNumber).GetFileLineNumber();
-            int ColNum = trace.GetFrame(frameNumber).GetFileColumnNumber();
-            var Method = trace.GetFrame(frameNumber).GetMethod();
+            int LineNum = frame.GetFileLineNumber();
+            int ColNum = frame.GetFileColumnNumber();
+            var Method = frame.GetMethod() ??
+                throw new KernelException(KernelExceptionType.Debug, Translate.DoTranslation("Can't get method"));
             string Func = Method.Name;
-            string FullFunc = Method.ReflectedType.FullName;
+            string FullFunc = Method.ReflectedType?.FullName ?? "";
 
             // Install values
             RoutineFileName = Source;

@@ -57,8 +57,10 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
         public override string GetEntryFromItem(string item) =>
             item;
 
-        internal void DoTranslate(object line)
+        internal void DoTranslate(object? line)
         {
+            if (line is null)
+                return;
             if (CurrentPane == 2)
             {
                 // Requested to remove language

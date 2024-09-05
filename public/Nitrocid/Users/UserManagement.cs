@@ -113,7 +113,7 @@ namespace Nitrocid.Users
             catch (Exception ex)
             {
                 DebugWriter.WriteDebugStackTrace(ex);
-                throw new KernelException(KernelExceptionType.UserCreation, Translate.DoTranslation("Error trying to add username.") + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), ex, ex.GetType().FullName, ex.Message);
+                throw new KernelException(KernelExceptionType.UserCreation, Translate.DoTranslation("Error trying to add username.") + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), ex, ex.GetType().FullName ?? "<null>", ex.Message);
             }
         }
 
@@ -132,7 +132,8 @@ namespace Nitrocid.Users
 
             // Get the content and parse it
             string UsersTokenContent = Reading.ReadContentsText(PathsManagement.GetKernelPath(KernelPathType.Users));
-            JArray userInfoArrays = (JArray)JsonConvert.DeserializeObject(UsersTokenContent);
+            JArray? userInfoArrays = (JArray?)JsonConvert.DeserializeObject(UsersTokenContent) ??
+                throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Can't deserialize the user info array"));
 
             // Now, get each user from the config file
             List<UserInfo> users = [];
@@ -141,7 +142,8 @@ namespace Nitrocid.Users
             foreach (var userInfoArray in userInfoArrays)
             {
                 // Add the user info to the users list after populating it
-                UserInfo userInfo = (UserInfo)JsonConvert.DeserializeObject(userInfoArray.ToString(), typeof(UserInfo));
+                UserInfo? userInfo = JsonConvert.DeserializeObject<UserInfo>(userInfoArray.ToString()) ??
+                    throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Can't deserialize the user info instance"));
                 users.Add(userInfo);
                 if (userInfo.Username == "root")
                     sawRoot = true;
@@ -240,7 +242,8 @@ namespace Nitrocid.Users
 
                     // Remove user
                     DebugWriter.WriteDebug(DebugLevel.I, "Removing username {0}...", user);
-                    var userInfo = GetUser(user);
+                    var userInfo = GetUser(user) ??
+                        throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Failed to get user") + $" {user}");
                     Users.Remove(userInfo);
 
                     // Remove user from Users.json
@@ -296,7 +299,8 @@ namespace Nitrocid.Users
                     try
                     {
                         // Store user info
-                        var oldInfo = GetUser(OldName);
+                        var oldInfo = GetUser(OldName) ??
+                            throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Failed to get user") + $" {OldName}");
                         var newInfo = new UserInfo(Username, oldInfo.Password, oldInfo.Permissions, oldInfo.FullName, oldInfo.PreferredLanguage, oldInfo.Groups, oldInfo.Flags, oldInfo.CustomSettings);
 
                         // Rename username in dictionary
@@ -356,8 +360,12 @@ namespace Nitrocid.Users
             // Check the current login for permissions
             PermissionsTools.Demand(PermissionTypes.ManageUsers);
 
-            bool currentUserAdmin = GetUser(CurrentUser.Username).Flags.HasFlag(UserFlags.Administrator);
-            bool targetUserAdmin = GetUser(Target).Flags.HasFlag(UserFlags.Administrator);
+            var currentUser = GetUser(CurrentUser.Username) ??
+                throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Failed to get current user"));
+            var targetUser = GetUser(Target) ??
+                throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Failed to get user") + $" {Target}");
+            bool currentUserAdmin = currentUser.Flags.HasFlag(UserFlags.Administrator);
+            bool targetUserAdmin = targetUser.Flags.HasFlag(UserFlags.Administrator);
 
             if (!UserExists(Target))
                 throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("User not found"));
@@ -367,7 +375,7 @@ namespace Nitrocid.Users
                 throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Trying to modify existing account while it's locked"));
 
             CurrentPass = Encryption.GetEncryptedString(CurrentPass, "SHA256");
-            if (CurrentPass == GetUser(Target).Password)
+            if (CurrentPass == targetUser.Password)
             {
                 if (currentUserAdmin & UserExists(Target))
                 {
@@ -428,9 +436,9 @@ namespace Nitrocid.Users
         {
             var UsersList = new List<string>(Users.Select((userInfo) => userInfo.Username));
             if (!IncludeAnonymous)
-                UsersList.RemoveAll(x => GetUser(x).Flags.HasFlag(UserFlags.Anonymous));
+                UsersList.RemoveAll(x => GetUser(x)?.Flags.HasFlag(UserFlags.Anonymous) ?? false);
             if (!IncludeDisabled)
-                UsersList.RemoveAll(x => GetUser(x).Flags.HasFlag(UserFlags.Disabled));
+                UsersList.RemoveAll(x => GetUser(x)?.Flags.HasFlag(UserFlags.Disabled) ?? false);
 
             return UsersList;
         }
@@ -454,7 +462,9 @@ namespace Nitrocid.Users
         {
             var UsersList = ListAllUsers(IncludeAnonymous, IncludeDisabled);
             string SelectedUsername = UsersList[UserNumber - 1];
-            return GetUser(SelectedUsername).Username;
+            var user = GetUser(SelectedUsername) ??
+                throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Failed to get user") + $" {SelectedUsername}");
+            return user.Username;
         }
 
         /// <summary>
@@ -469,7 +479,7 @@ namespace Nitrocid.Users
         /// </summary>
         /// <param name="userName">The user</param>
         /// <returns>User information</returns>
-        public static UserInfo GetUser(string userName)
+        public static UserInfo? GetUser(string userName)
         {
             // Check to see if we have the target user
             if (!UserExists(userName))
@@ -505,7 +515,7 @@ namespace Nitrocid.Users
         public static string GetUserDollarSign(string User)
         {
             if (UserExists(User))
-                if (GetUser(User).Flags.HasFlag(UserFlags.Administrator))
+                if (GetUser(User)?.Flags.HasFlag(UserFlags.Administrator) ?? false)
                     return "#";
                 else
                     return "$";
@@ -545,7 +555,7 @@ namespace Nitrocid.Users
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Username correct. Finding if the user is disabled...");
-                if (!UserExists(User) || !GetUser(User).Flags.HasFlag(UserFlags.Disabled))
+                if (!UserExists(User) || (!GetUser(User)?.Flags.HasFlag(UserFlags.Disabled) ?? false))
                 {
                     // User is not disabled
                     DebugWriter.WriteDebug(DebugLevel.I, "User validation complete");
@@ -578,7 +588,9 @@ namespace Nitrocid.Users
             DebugWriter.WriteDebug(DebugLevel.I, "Hash computed.");
 
             // Now, check to see if the password matches
-            if (GetUser(User).Password == Password)
+            var userInstance = GetUser(User) ??
+                throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Failed to get user") + $" {User}");
+            if (userInstance.Password == Password)
             {
                 // Password matches
                 DebugWriter.WriteDebug(DebugLevel.I, "Password written correctly.");
@@ -600,7 +612,11 @@ namespace Nitrocid.Users
         public static void LockUser(string User)
         {
             if (!IsLocked(User))
-                LockedUsers.Add(GetUser(User));
+            {
+                var userInstance = GetUser(User) ??
+                    throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Failed to get user") + $" {User}");
+                LockedUsers.Add(userInstance);
+            }
         }
 
         /// <summary>
@@ -610,7 +626,11 @@ namespace Nitrocid.Users
         public static void UnlockUser(string User)
         {
             if (IsLocked(User))
-                LockedUsers.Remove(GetUser(User));
+            {
+                var userInstance = GetUser(User) ??
+                    throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Failed to get user") + $" {User}");
+                LockedUsers.Remove(userInstance);
+            }
         }
 
         /// <summary>

@@ -31,6 +31,6 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// List of settings entries
         /// </summary>
         [JsonIgnore]
-        public virtual SettingsEntry[] SettingsEntries { get; }
+        public virtual SettingsEntry[]? SettingsEntries { get; }
     }
 }

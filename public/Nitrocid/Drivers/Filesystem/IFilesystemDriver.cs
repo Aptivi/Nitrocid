@@ -288,7 +288,7 @@ namespace Nitrocid.Drivers.Filesystem
         /// <param name="FilePath">A full path to file or just a file name</param>
         /// <param name="Result">The neutralized path</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        bool FileExistsInPath(string FilePath, ref string Result);
+        bool FileExistsInPath(string FilePath, ref string? Result);
 
         /// <summary>
         /// Prints the directory information to the console
@@ -438,7 +438,7 @@ namespace Nitrocid.Drivers.Filesystem
         /// <param name="path">Path to the directory that the generated numbered file name will situate</param>
         /// <param name="fileName">The file name with an extension</param>
         /// <returns>Numbered file name with the file number suffix applied in this format: [filename]-[number].[ext]</returns>
-        string GetNumberedFileName(string path, string fileName);
+        string GetNumberedFileName(string? path, string fileName);
 
         /// <summary>
         /// Gets all the invalid path characters
@@ -509,7 +509,7 @@ namespace Nitrocid.Drivers.Filesystem
         /// </summary>
         /// <param name="DirectoryInfo">Directory information</param>
         /// <returns>Directory Size</returns>
-        long GetAllSizesInFolder(DirectoryInfo DirectoryInfo);
+        long GetAllSizesInFolder(DirectoryInfo? DirectoryInfo);
 
         /// <summary>
         /// Gets all file sizes in a folder, and optionally parses the entire folder
@@ -517,7 +517,7 @@ namespace Nitrocid.Drivers.Filesystem
         /// <param name="DirectoryInfo">Directory information</param>
         /// <param name="FullParseMode">Whether to parse all the directories</param>
         /// <returns>Directory Size</returns>
-        long GetAllSizesInFolder(DirectoryInfo DirectoryInfo, bool FullParseMode);
+        long GetAllSizesInFolder(DirectoryInfo? DirectoryInfo, bool FullParseMode);
 
         /// <summary>
         /// Reads the contents of a file and writes it to the array. This is blocking and will put a lock on the file until read.

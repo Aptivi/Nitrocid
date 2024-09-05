@@ -34,11 +34,11 @@ namespace Nitrocid.Extras.MailShell
             return 0;
         }
 
-        private NetworkConnection EstablishMailConnection(string username) =>
+        private NetworkConnection? EstablishMailConnection(string username) =>
             string.IsNullOrEmpty(username) ? MailLogin.PromptUser() : MailLogin.PromptPassword(username);
 
-        private NetworkConnection EstablishMailConnectionSpeedDial(SpeedDialEntry connection) =>
-            MailLogin.PromptPassword(connection.Options[0].ToString());
+        private NetworkConnection? EstablishMailConnectionSpeedDial(SpeedDialEntry connection) =>
+            MailLogin.PromptPassword(connection.Options[0]?.ToString() ?? "");
 
     }
 }

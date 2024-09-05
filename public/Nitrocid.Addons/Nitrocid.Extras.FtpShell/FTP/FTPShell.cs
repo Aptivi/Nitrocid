@@ -54,7 +54,8 @@ namespace Nitrocid.Extras.FtpShell.FTP
         {
             // Parse shell arguments
             NetworkConnection ftpConnection = (NetworkConnection)ShellArgs[0];
-            FtpClient clientFTP = (FtpClient)ftpConnection.ConnectionInstance;
+            FtpClient? clientFTP = (FtpClient?)ftpConnection.ConnectionInstance ??
+                throw new KernelException(KernelExceptionType.FTPShell, Translate.DoTranslation("The client is not populated."));
 
             // Finalize current connection
             FTPShellCommon.clientConnection = ftpConnection;

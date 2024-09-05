@@ -34,7 +34,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
 {
     internal class ListSettingsKeyInput : ISettingsKeyInput
     {
-        public object PromptForSet(SettingsKey key, object KeyDefaultValue, out bool bail)
+        public object? PromptForSet(SettingsKey key, object? KeyDefaultValue, out bool bail)
         {
             ConsoleWrapper.Clear();
 
@@ -58,7 +58,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
                     if (target is string targetStr)
                         choices.Add(new InputChoiceInfo($"{targetNum}", targetStr));
                     else
-                        choices.Add(new InputChoiceInfo($"{targetNum}", target.ToString()));
+                        choices.Add(new InputChoiceInfo($"{targetNum}", target?.ToString() ?? ""));
                     targetNum++;
                 }
                 List<InputChoiceInfo> altChoices =
@@ -107,7 +107,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             return TargetList;
         }
 
-        public object TranslateStringValue(SettingsKey key, string value)
+        public object? TranslateStringValue(SettingsKey key, string value)
         {
             string FinalDelimiter = GetFinalDelimiter(key);
 
@@ -116,7 +116,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             return values;
         }
 
-        public object TranslateStringValueWithDefault(SettingsKey key, string value, object KeyDefaultValue)
+        public object? TranslateStringValueWithDefault(SettingsKey key, string value, object? KeyDefaultValue)
         {
             string FinalDelimiter = GetFinalDelimiter(key);
 
@@ -128,7 +128,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             return values;
         }
 
-        public void SetValue(SettingsKey key, object value, BaseKernelConfig configType)
+        public void SetValue(SettingsKey key, object? value, BaseKernelConfig configType)
         {
             string FinalDelimiter = GetFinalDelimiter(key);
 
@@ -141,7 +141,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
 
         private string GetFinalDelimiter(SettingsKey key)
         {
-            string FinalDelimiter;
+            string? FinalDelimiter;
             string ListJoinString = key.Delimiter;
             string ListJoinStringVariable = key.DelimiterVariable;
             DebugWriter.WriteDebug(DebugLevel.I, "Answer is not numeric and key is of the List type. Adding answers to the list...");
@@ -151,7 +151,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
                 FinalDelimiter = Convert.ToString(PropertyManager.GetPropertyValue(ListJoinStringVariable, null, true));
             else
                 FinalDelimiter = ListJoinString;
-            return FinalDelimiter;
+            return FinalDelimiter ?? ";";
         }
 
     }

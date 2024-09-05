@@ -48,7 +48,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
 {
     internal static class CalendarTui
     {
-        private static string status;
+        private static string status = "";
         private static bool bail;
         private static (int Year, int Month, int Day, CalendarTypes calendar) state;
         private static readonly CalendarTuiBinding[] bindings =

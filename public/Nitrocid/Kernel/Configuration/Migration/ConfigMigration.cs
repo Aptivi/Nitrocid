@@ -24,6 +24,8 @@ using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Configuration.Settings;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Debugging.RemoteDebug;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
 using Nitrocid.Misc.Reflection;
 using Nitrocid.Network.Connections;
 using Nitrocid.Network.SpeedDial;
@@ -98,17 +100,13 @@ namespace Nitrocid.Kernel.Configuration.Migration
                         string[] blacklistedVars = ["MotdFilePath", "MalFilePath"];
                         if (blacklistedVars.Contains(keyVar))
                             continue;
-                        if (PropertyManager.CheckProperty(keyVar) && keyToken is JValue keyValue)
+                        if (keyToken is JValue keyValue)
                         {
-                            // Prepare the property to be set
-                            var property = PropertyManager.GetProperty(keyVar);
-                            var setMethod = property.GetSetMethod();
-
                             // For character settings, we need to convert the value to a string to get its first character, because
                             // this value in the old configuration could consist of more than one character, and the SettingsKeyType.SChar
                             // requires exactly one character.
                             var value =
-                                key.Type == SettingsKeyType.SChar ? keyValue.Value<string>()[0] :
+                                key.Type == SettingsKeyType.SChar ? (keyValue.Value<string>() ?? " ")[0] :
                                 key.Type == SettingsKeyType.SBoolean ? keyValue.Value<int>() :
                                 key.Type == SettingsKeyType.SInt ? keyValue.Value<int>() :
                                 key.Type == SettingsKeyType.SIntSlider ? keyValue.Value<int>() :
@@ -159,12 +157,14 @@ namespace Nitrocid.Kernel.Configuration.Migration
                 // Find the known sections and get all the matching configuration names inside them to compare them to the
                 // Nitrocid settings entry so that we can get the variable from just the name
                 var extraSaversConfig = Config.GetKernelConfig("ExtraSaversConfig");
-                bool isAddonSaverInstalled = extraSaversConfig is not null;
 
                 // Parse also the base saver config entries, just in case we promote an old screensaver to the base kernel
                 // in a future release.
                 var baseSaverConfigEntries = Config.SaverConfig.SettingsEntries;
-                SettingsEntry[][] configEntryGroups = isAddonSaverInstalled ? [baseSaverConfigEntries, extraSaversConfig.SettingsEntries] : [baseSaverConfigEntries];
+                SettingsEntry[][] configEntryGroups =
+                    extraSaversConfig is not null && extraSaversConfig.SettingsEntries is not null ?
+                    [baseSaverConfigEntries, extraSaversConfig.SettingsEntries] :
+                    [baseSaverConfigEntries];
                 for (int i = 0; i < configEntryGroups.Length; i++)
                 {
                     SettingsEntry[] configEntries = configEntryGroups[i];
@@ -173,7 +173,7 @@ namespace Nitrocid.Kernel.Configuration.Migration
                         // Parse this section
                         var keys = configEntry.Keys;
                         string section = configEntry.Name;
-                        var sectionToken = oldMainKernelConfigToken["Screensaver"][section];
+                        var sectionToken = oldMainKernelConfigToken["Screensaver"]?[section];
                         if (sectionToken is null)
                             continue;
                         foreach (var key in keys)
@@ -182,24 +182,20 @@ namespace Nitrocid.Kernel.Configuration.Migration
                             string keyName = key.Name;
                             string keyVar = key.Variable;
                             var keyToken = sectionToken[keyName];
-                            if ((PropertyManager.CheckProperty(keyVar) || PropertyManager.CheckProperty(keyVar, extraSaversConfig.GetType())) && keyToken is JValue keyValue)
+                            if (keyToken is JValue keyValue)
                             {
-                                // Prepare the property to be set
-                                var property = PropertyManager.GetProperty(keyVar) ?? PropertyManager.GetProperty(keyVar, extraSaversConfig.GetType());
-                                var setMethod = property.GetSetMethod();
-
                                 // For character settings, we need to convert the value to a string to get its first character, because
                                 // this value in the old configuration could consist of more than one character, and the SettingsKeyType.SChar
                                 // requires exactly one character.
                                 var value =
-                                    key.Type == SettingsKeyType.SChar ? keyValue.Value<string>()[0] :
+                                    key.Type == SettingsKeyType.SChar ? (keyValue.Value<string>() ?? " ")[0] :
                                     key.Type == SettingsKeyType.SBoolean ? keyValue.Value<int>() :
                                     key.Type == SettingsKeyType.SInt ? keyValue.Value<int>() :
                                     key.Type == SettingsKeyType.SIntSlider ? keyValue.Value<int>() :
                                     keyValue.Value;
 
                                 // Now, set the value
-                                key.KeyInput.SetValue(key, value, i == 0 ? Config.SaverConfig : extraSaversConfig);
+                                key.KeyInput.SetValue(key, value, i == 1 && extraSaversConfig is not null ? extraSaversConfig : Config.SaverConfig);
                             }
                         }
                     }
@@ -235,7 +231,8 @@ namespace Nitrocid.Kernel.Configuration.Migration
                 DebugWriter.WriteDebug(DebugLevel.W, "Old alias file has zero bytes.");
                 return true;
             }
-            var aliases = JsonConvert.DeserializeObject<AliasInfo[]>(contents);
+            var aliases = JsonConvert.DeserializeObject<AliasInfo[]>(contents) ??
+                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Failed to get alias information"));
             DebugWriter.WriteDebug(DebugLevel.I, "Got old alias token.");
 
             // Handle any possible errors here.
@@ -290,10 +287,14 @@ namespace Nitrocid.Kernel.Configuration.Migration
                 // Iterate through all the users and add them conditionally
                 foreach (var user in oldUsersToken)
                 {
-                    string username = (string)user["username"];
-                    string password = (string)user["password"];
-                    var permissions = (JArray)user["permissions"];
+                    string? username = (string?)user["username"];
+                    string? password = (string?)user["password"];
+                    var permissions = (JArray?)user["permissions"];
                     if (username is null)
+                        continue;
+                    if (password is null)
+                        continue;
+                    if (permissions is null)
                         continue;
                     if (!UserManagement.UserExists(username))
                         UserManagement.AddUser(username, password);
@@ -348,11 +349,13 @@ namespace Nitrocid.Kernel.Configuration.Migration
                 foreach (var ftpSpeedDial in oldFtpSpeedDialToken)
                 {
                     var info = ftpSpeedDial.First;
-                    string address = (string)info["Address"];
-                    int port = (int)info["Port"];
-                    string user = (string)info["User"];
-                    int type = (int)info["Type"];
-                    int encryptionMode = (int)info["FTP Encryption Mode"];
+                    if (info is null)
+                        continue;
+                    string address = (string?)info["Address"] ?? "";
+                    int port = (int?)info["Port"] ?? 21;
+                    string user = (string?)info["User"] ?? "";
+                    int type = (int?)info["Type"] ?? 0;
+                    int encryptionMode = (int?)info["FTP Encryption Mode"] ?? 0;
                     SpeedDialTools.AddEntryToSpeedDial(address, port, NetworkConnectionType.FTP, false, [user, type, encryptionMode]);
                 }
 
@@ -396,11 +399,13 @@ namespace Nitrocid.Kernel.Configuration.Migration
                 foreach (var sftpSpeedDial in oldSftpSpeedDialToken)
                 {
                     var info = sftpSpeedDial.First;
-                    string address = (string)info["Address"];
-                    int port = (int)info["Port"];
-                    string user = (string)info["User"];
-                    int type = (int)info["Type"];
-                    int encryptionMode = (int)info["FTP Encryption Mode"];
+                    if (info is null)
+                        continue;
+                    string address = (string?)info["Address"] ?? "";
+                    int port = (int?)info["Port"] ?? 22;
+                    string user = (string?)info["User"] ?? "";
+                    int type = (int?)info["Type"] ?? 0;
+                    int encryptionMode = (int?)info["SFTP Encryption Mode"] ?? 0;
                     SpeedDialTools.AddEntryToSpeedDial(address, port, NetworkConnectionType.SFTP, false, [user, type, encryptionMode]);
                 }
 
@@ -445,13 +450,15 @@ namespace Nitrocid.Kernel.Configuration.Migration
                 {
                     string address = ((JProperty)debugDevices).Name;
                     var info = ((JProperty)debugDevices).Value;
-                    string name = (string)info["Name"];
-                    bool blocked = (bool)info["Blocked"];
-                    JArray chatHistory = (JArray)info["ChatHistory"];
+                    string name = (string?)info["Name"] ?? "";
+                    bool blocked = (bool?)info["Blocked"] ?? false;
+                    var chatHistory = (JArray?)info["ChatHistory"];
                     var device = RemoteDebugTools.AddDevice(address, false);
                     device.name = name;
                     device.blocked = blocked;
-                    device.chatHistory = chatHistory.Values<string>().ToList();
+                    if (chatHistory is null)
+                        continue;
+                    device.chatHistory = chatHistory.Values<string>().Cast<string>().ToList();
                 }
 
                 // Save the entries

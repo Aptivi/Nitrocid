@@ -38,8 +38,10 @@ namespace Nitrocid.ScreensaverPacks.Animations.BeatFader
         /// <summary>
         /// Simulates the beat fading animation
         /// </summary>
-        public static void Simulate(BeatFaderSettings Settings)
+        public static void Simulate(BeatFaderSettings? Settings)
         {
+            if (Settings is null)
+                return;
             ConsoleWrapper.CursorVisible = false;
             int BeatInterval = (int)Math.Round(60000d / Settings.BeatFaderDelay);
             int BeatIntervalStep = (int)Math.Round(BeatInterval / (double)Settings.BeatFaderMaxSteps);

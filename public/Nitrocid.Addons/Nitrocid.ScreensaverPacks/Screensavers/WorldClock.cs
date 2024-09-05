@@ -35,7 +35,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     /// </summary>
     public class WorldClockDisplay : BaseScreensaver, IScreensaver
     {
-        string timeZoneName;
+        string timeZoneName = "";
         int times;
 
         /// <inheritdoc/>

@@ -80,7 +80,7 @@ namespace Nitrocid.Kernel.Configuration
         /// </summary>
         /// <param name="name">Custom config type name to query</param>
         /// <returns>An instance of <see cref="BaseKernelConfig"/> if found. Otherwise, null.</returns>
-        public static BaseKernelConfig GetKernelConfig(string name)
+        public static BaseKernelConfig? GetKernelConfig(string name)
         {
             if (ConfigTools.IsCustomSettingBuiltin(name))
                 return baseConfigurations[name];
@@ -268,9 +268,11 @@ namespace Nitrocid.Kernel.Configuration
                 // Now, deserialize the config state.
                 string typeName = type.GetType().Name;
                 if (ConfigTools.IsCustomSettingBuiltin(typeName))
-                    baseConfigurations[typeName] = (BaseKernelConfig)JsonConvert.DeserializeObject(jsonContents, type.GetType());
+                    baseConfigurations[typeName] = (BaseKernelConfig?)JsonConvert.DeserializeObject(jsonContents, type.GetType()) ??
+                        throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation($"Can't deserialize the base configuration {typeName}"));
                 else
-                    customConfigurations[typeName] = (BaseKernelConfig)JsonConvert.DeserializeObject(jsonContents, type.GetType());
+                    customConfigurations[typeName] = (BaseKernelConfig?)JsonConvert.DeserializeObject(jsonContents, type.GetType()) ??
+                        throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation($"Can't deserialize the custom configuration {typeName}"));
             }
             catch (Exception e)
             {
@@ -391,6 +393,10 @@ namespace Nitrocid.Kernel.Configuration
                 // Skim through the difference object
                 foreach (var diff in diffObj)
                 {
+                    // Check to see if we have a difference token
+                    if (diff.Value is null)
+                        continue;
+
                     // Get the key and the diff type
                     string modifiedKey = diff.Key[1..];
                     string modifiedType = string.Join("", diff.Value.Select((diffToken) => ((JProperty)diffToken).Name));

@@ -48,6 +48,8 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
             }
 
             // Check for existence
+            if (GitShellCommon.Repository is null)
+                return 43;
             var branches = GitShellCommon.Repository.Branches;
             var branchFriendlyNames = branches.Select((branch) => branch.FriendlyName).ToArray();
             var branchCanonNames = branches.Select((branch) => branch.CanonicalName).ToArray();

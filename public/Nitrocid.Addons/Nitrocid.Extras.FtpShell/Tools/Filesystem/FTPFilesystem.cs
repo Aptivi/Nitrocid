@@ -68,14 +68,12 @@ namespace Nitrocid.Extras.FtpShell.Tools.Filesystem
 
             try
             {
+                var instance = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance ??
+                    throw new KernelException(KernelExceptionType.FTPShell, Translate.DoTranslation("There is no FTP client yet."));
                 if (!string.IsNullOrEmpty(Path))
-                {
-                    Listing = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).GetListing(Path, FtpListOption.Auto);
-                }
+                    Listing = instance.GetListing(Path, FtpListOption.Auto);
                 else
-                {
-                    Listing = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).GetListing(FTPShellCommon.FtpCurrentRemoteDir, FtpListOption.Auto);
-                }
+                    Listing = instance.GetListing(FTPShellCommon.FtpCurrentRemoteDir, FtpListOption.Auto);
                 foreach (FtpListItem DirListFTP in Listing)
                 {
                     FtpListItem finalDirListFTP = DirListFTP;
@@ -99,8 +97,8 @@ namespace Nitrocid.Extras.FtpShell.Tools.Filesystem
                             if (ShowDetails)
                             {
                                 EntryBuilder.Append(": ");
-                                FileSize = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).GetFileSize(finalDirListFTP.FullName);
-                                ModDate = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).GetModifiedTime(finalDirListFTP.FullName);
+                                FileSize = instance.GetFileSize(finalDirListFTP.FullName);
+                                ModDate = instance.GetModifiedTime(finalDirListFTP.FullName);
                                 EntryBuilder.Append(KernelColorTools.GetColor(KernelColorType.ListValue).VTSequenceForeground +
                                     $"{FileSize.SizeString()} | {Translate.DoTranslation("Modified on")} {ModDate}");
                             }
@@ -132,15 +130,17 @@ namespace Nitrocid.Extras.FtpShell.Tools.Filesystem
             DebugWriter.WriteDebug(DebugLevel.I, "Deleting {0}...", Target);
 
             // Delete a file or folder
-            if (((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).FileExists(Target))
+            var instance = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance ??
+                throw new KernelException(KernelExceptionType.FTPShell, Translate.DoTranslation("There is no FTP client yet."));
+            if (instance.FileExists(Target))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "{0} is a file.", Target);
-                ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DeleteFile(Target);
+                instance.DeleteFile(Target);
             }
-            else if (((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DirectoryExists(Target))
+            else if (instance.DirectoryExists(Target))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "{0} is a folder.", Target);
-                ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DeleteDirectory(Target);
+                instance.DeleteDirectory(Target);
             }
             else
             {
@@ -162,11 +162,13 @@ namespace Nitrocid.Extras.FtpShell.Tools.Filesystem
         {
             if (!string.IsNullOrEmpty(Directory))
             {
-                if (((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DirectoryExists(Directory))
+                var instance = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance ??
+                    throw new KernelException(KernelExceptionType.FTPShell, Translate.DoTranslation("There is no FTP client yet."));
+                if (instance.DirectoryExists(Directory))
                 {
                     // Directory exists, go to the new directory
-                    ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).SetWorkingDirectory(Directory);
-                    FTPShellCommon.FtpCurrentRemoteDir = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).GetWorkingDirectory();
+                    instance.SetWorkingDirectory(Directory);
+                    FTPShellCommon.FtpCurrentRemoteDir = instance.GetWorkingDirectory();
                     return true;
                 }
                 else
@@ -224,16 +226,18 @@ namespace Nitrocid.Extras.FtpShell.Tools.Filesystem
         public static bool FTPMoveItem(string Source, string Target)
         {
             var Success = false;
+            var instance = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance ??
+                throw new KernelException(KernelExceptionType.FTPShell, Translate.DoTranslation("There is no FTP client yet."));
 
             // Begin the moving process
             string SourceFile = Source.Split('/').Last();
             DebugWriter.WriteDebug(DebugLevel.I, "Moving from {0} to {1} with the source file of {2}...", Source, Target, SourceFile);
-            if (((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DirectoryExists(Source))
-                Success = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).MoveDirectory(Source, Target);
-            else if (((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).FileExists(Source) & ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DirectoryExists(Target))
-                Success = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).MoveFile(Source, Target + SourceFile);
-            else if (((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).FileExists(Source))
-                Success = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).MoveFile(Source, Target);
+            if (instance.DirectoryExists(Source))
+                Success = instance.MoveDirectory(Source, Target);
+            else if (instance.FileExists(Source) & instance.DirectoryExists(Target))
+                Success = instance.MoveFile(Source, Target + SourceFile);
+            else if (instance.FileExists(Source))
+                Success = instance.MoveFile(Source, Target);
             DebugWriter.WriteDebug(DebugLevel.I, "Moved. Result: {0}", Success);
             return Success;
         }
@@ -248,29 +252,36 @@ namespace Nitrocid.Extras.FtpShell.Tools.Filesystem
         public static bool FTPCopyItem(string Source, string Target)
         {
             bool Success = true;
-            object Result = null;
+            object? Result = null;
+            var instance = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance ??
+                throw new KernelException(KernelExceptionType.FTPShell, Translate.DoTranslation("There is no FTP client yet."));
 
             // Begin the copying process
             string SourceFile = Source.Split('/').Last();
             DebugWriter.WriteDebug(DebugLevel.I, "Copying from {0} to {1} with the source file of {2}...", Source, Target, SourceFile);
-            if (((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DirectoryExists(Source))
+            if (instance.DirectoryExists(Source))
             {
-                ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DownloadDirectory(PathsManagement.TempPath + "/FTPTransfer", Source);
-                Result = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).UploadDirectory(PathsManagement.TempPath + "/FTPTransfer/" + Source, Target);
+                instance.DownloadDirectory(PathsManagement.TempPath + "/FTPTransfer", Source);
+                Result = instance.UploadDirectory(PathsManagement.TempPath + "/FTPTransfer/" + Source, Target);
             }
-            else if (((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).FileExists(Source) & ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DirectoryExists(Target))
+            else if (instance.FileExists(Source) & instance.DirectoryExists(Target))
             {
-                ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DownloadFile(PathsManagement.TempPath + "/FTPTransfer/" + SourceFile, Source);
-                Result = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).UploadFile(PathsManagement.TempPath + "/FTPTransfer/" + SourceFile, Target + "/" + SourceFile);
+                instance.DownloadFile(PathsManagement.TempPath + "/FTPTransfer/" + SourceFile, Source);
+                Result = instance.UploadFile(PathsManagement.TempPath + "/FTPTransfer/" + SourceFile, Target + "/" + SourceFile);
             }
-            else if (((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).FileExists(Source))
+            else if (instance.FileExists(Source))
             {
-                ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DownloadFile(PathsManagement.TempPath + "/FTPTransfer/" + SourceFile, Source);
-                Result = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).UploadFile(PathsManagement.TempPath + "/FTPTransfer/" + SourceFile, Target);
+                instance.DownloadFile(PathsManagement.TempPath + "/FTPTransfer/" + SourceFile, Source);
+                Result = instance.UploadFile(PathsManagement.TempPath + "/FTPTransfer/" + SourceFile, Target);
             }
             Directory.Delete(PathsManagement.TempPath + "/FTPTransfer", true);
 
             // See if copied successfully
+            if (Result is null)
+            {
+                DebugWriter.WriteDebug(DebugLevel.I, "Copied, but result is inconclusive. Assuming failure...");
+                return false;
+            }
             if (Result.GetType() == typeof(List<FtpResult>))
             {
                 foreach (FtpResult FileResult in (IEnumerable)Result)
@@ -305,7 +316,9 @@ namespace Nitrocid.Extras.FtpShell.Tools.Filesystem
         {
             try
             {
-                ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).Chmod(Target, Chmod);
+                var instance = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance ??
+                    throw new KernelException(KernelExceptionType.FTPShell, Translate.DoTranslation("There is no FTP client yet."));
+                instance.Chmod(Target, Chmod);
                 return true;
             }
             catch (Exception ex)

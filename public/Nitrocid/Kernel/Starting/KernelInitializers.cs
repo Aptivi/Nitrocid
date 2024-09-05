@@ -367,8 +367,8 @@ namespace Nitrocid.Kernel.Starting
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Shutting down debugger");
                     KernelEntry.DebugMode = false;
-                    DebugWriter.DebugStreamWriter.Close();
-                    DebugWriter.DebugStreamWriter.Dispose();
+                    DebugWriter.DebugStreamWriter?.Close();
+                    DebugWriter.DebugStreamWriter?.Dispose();
                     DebugWriter.isDisposed = true;
                     DebugWriter.debugLines = 0;
                 }

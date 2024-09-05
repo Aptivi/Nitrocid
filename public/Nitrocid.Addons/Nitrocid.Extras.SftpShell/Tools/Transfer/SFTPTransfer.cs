@@ -21,6 +21,8 @@ using System;
 using Nitrocid.Extras.SftpShell.SFTP;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Events;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
 using Renci.SshNet;
 
 namespace Nitrocid.Extras.SftpShell.Tools.Transfer
@@ -40,13 +42,16 @@ namespace Nitrocid.Extras.SftpShell.Tools.Transfer
         {
             try
             {
+                var client = (SftpClient?)SFTPShellCommon.ClientSFTP?.ConnectionInstance ??
+                    throw new KernelException(KernelExceptionType.SFTPShell, Translate.DoTranslation("Client is not connected yet"));
+
                 // Show a message to download
                 EventsManager.FireEvent(EventType.SFTPPreDownload, File);
                 DebugWriter.WriteDebug(DebugLevel.I, "Downloading file {0}...", File);
 
                 // Try to download
                 var DownloadFileStream = new System.IO.FileStream($"{SFTPShellCommon.SFTPCurrDirect}/{File}", System.IO.FileMode.OpenOrCreate);
-                ((SftpClient)SFTPShellCommon.ClientSFTP.ConnectionInstance).DownloadFile($"{SFTPShellCommon.SFTPCurrentRemoteDir}/{File}", DownloadFileStream);
+                client.DownloadFile($"{SFTPShellCommon.SFTPCurrentRemoteDir}/{File}", DownloadFileStream);
 
                 // Show a message that it's downloaded
                 DebugWriter.WriteDebug(DebugLevel.I, "Downloaded file {0}.", File);
@@ -70,13 +75,16 @@ namespace Nitrocid.Extras.SftpShell.Tools.Transfer
         {
             try
             {
+                var client = (SftpClient?)SFTPShellCommon.ClientSFTP?.ConnectionInstance ??
+                    throw new KernelException(KernelExceptionType.SFTPShell, Translate.DoTranslation("Client is not connected yet"));
+
                 // Show a message to download
                 EventsManager.FireEvent(EventType.SFTPPreUpload, File);
                 DebugWriter.WriteDebug(DebugLevel.I, "Uploading file {0}...", File);
 
                 // Try to upload
                 var UploadFileStream = new System.IO.FileStream($"{SFTPShellCommon.SFTPCurrDirect}/{File}", System.IO.FileMode.Open);
-                ((SftpClient)SFTPShellCommon.ClientSFTP.ConnectionInstance).UploadFile(UploadFileStream, $"{SFTPShellCommon.SFTPCurrentRemoteDir}/{File}");
+                client.UploadFile(UploadFileStream, $"{SFTPShellCommon.SFTPCurrentRemoteDir}/{File}");
                 DebugWriter.WriteDebug(DebugLevel.I, "Uploaded file {0}", File);
                 EventsManager.FireEvent(EventType.SFTPPostUpload, File);
                 return true;
@@ -98,13 +106,16 @@ namespace Nitrocid.Extras.SftpShell.Tools.Transfer
         {
             try
             {
+                var client = (SftpClient?)SFTPShellCommon.ClientSFTP?.ConnectionInstance ??
+                    throw new KernelException(KernelExceptionType.SFTPShell, Translate.DoTranslation("Client is not connected yet"));
+
                 // Show a message to download
                 EventsManager.FireEvent(EventType.SFTPPreDownload, File);
                 DebugWriter.WriteDebug(DebugLevel.I, "Downloading {0}...", File);
 
                 // Try to download 3 times
                 var DownloadedBytes = Array.Empty<byte>();
-                string DownloadedContent = ((SftpClient)SFTPShellCommon.ClientSFTP.ConnectionInstance).ReadAllText(File);
+                string DownloadedContent = client.ReadAllText(File);
 
                 // Show a message that it's downloaded
                 DebugWriter.WriteDebug(DebugLevel.I, "Downloaded {0}.", File);

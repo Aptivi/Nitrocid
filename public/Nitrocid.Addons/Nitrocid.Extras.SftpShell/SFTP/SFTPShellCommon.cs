@@ -27,24 +27,24 @@ namespace Nitrocid.Extras.SftpShell.SFTP
     public static class SFTPShellCommon
     {
 
-        internal static NetworkConnection clientConnection;
-        internal static string SFTPSite;
-        internal static string SFTPPass;
-        internal static string SFTPUser;
+        internal static NetworkConnection? clientConnection;
+        internal static string SFTPSite = "";
+        internal static string SFTPPass = "";
+        internal static string SFTPUser = "";
 
         /// <summary>
         /// The SFTP client used to connect to the SFTP server
         /// </summary>
-        public static NetworkConnection ClientSFTP =>
+        public static NetworkConnection? ClientSFTP =>
             clientConnection;
         /// <summary>
         /// SFTP current local directory
         /// </summary>
-        public static string SFTPCurrDirect { get; set; }
+        public static string? SFTPCurrDirect { get; set; }
         /// <summary>
         /// SFTP current remote directory
         /// </summary>
-        public static string SFTPCurrentRemoteDir { get; set; }
+        public static string? SFTPCurrentRemoteDir { get; set; }
         /// <summary>
         /// SFTP show file details in list
         /// </summary>

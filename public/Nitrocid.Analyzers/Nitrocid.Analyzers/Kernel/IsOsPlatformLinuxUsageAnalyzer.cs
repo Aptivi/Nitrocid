@@ -61,7 +61,7 @@ namespace Nitrocid.Analyzers.Kernel
         {
             // Now, check for the usage of string.Format()
             var exp = (MemberAccessExpressionSyntax)context.Node;
-            var location = exp.Parent.GetLocation();
+            var location = exp.Parent?.GetLocation();
             bool found = false;
             if (exp.Expression is IdentifierNameSyntax identifier)
             {

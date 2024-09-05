@@ -31,8 +31,8 @@ namespace Nitrocid.Kernel.Extensions
         internal void StartAddon();
         internal void FinalizeAddon();
         internal void StopAddon();
-        internal ReadOnlyDictionary<string, Delegate> PubliclyAvailableFunctions { get; }
-        internal ReadOnlyDictionary<string, PropertyInfo> PubliclyAvailableProperties { get; }
-        internal ReadOnlyDictionary<string, FieldInfo> PubliclyAvailableFields { get; }
+        internal ReadOnlyDictionary<string, Delegate>? PubliclyAvailableFunctions { get; }
+        internal ReadOnlyDictionary<string, PropertyInfo>? PubliclyAvailableProperties { get; }
+        internal ReadOnlyDictionary<string, FieldInfo>? PubliclyAvailableFields { get; }
     }
 }

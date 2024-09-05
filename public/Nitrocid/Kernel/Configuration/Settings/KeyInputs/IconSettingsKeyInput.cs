@@ -24,22 +24,22 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
 {
     internal class IconSettingsKeyInput : ISettingsKeyInput
     {
-        public object PromptForSet(SettingsKey key, object KeyDefaultValue, out bool bail)
+        public object? PromptForSet(SettingsKey key, object? KeyDefaultValue, out bool bail)
         {
-            string icon = IconsSelector.PromptForIcons((string)KeyDefaultValue);
+            string icon = IconsSelector.PromptForIcons((string?)KeyDefaultValue ?? "heart-suit");
 
             // Bail and return
             bail = true;
             return icon;
         }
 
-        public object TranslateStringValue(SettingsKey key, string value) =>
+        public object? TranslateStringValue(SettingsKey key, string value) =>
             value;
 
-        public object TranslateStringValueWithDefault(SettingsKey key, string value, object KeyDefaultValue) =>
+        public object? TranslateStringValueWithDefault(SettingsKey key, string value, object? KeyDefaultValue) =>
             value;
 
-        public void SetValue(SettingsKey key, object value, BaseKernelConfig configType)
+        public void SetValue(SettingsKey key, object? value, BaseKernelConfig configType)
         {
             // Already set by SetPresetInternal
             if (value is not string icon)

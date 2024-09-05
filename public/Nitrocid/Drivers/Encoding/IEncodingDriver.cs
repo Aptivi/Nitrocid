@@ -27,7 +27,7 @@ namespace Nitrocid.Drivers.Encoding
         /// <summary>
         /// An instance of the encoding class to use for encoding operations. Should be populated by Initialize.
         /// </summary>
-        object Instance { get; }
+        object? Instance { get; }
 
         /// <summary>
         /// For symmetric encoding drivers, this is the key used
@@ -97,7 +97,7 @@ namespace Nitrocid.Drivers.Encoding
         /// <param name="encoded">Encoded byte array to try to represent as text</param>
         /// <param name="strEncoded">Output text, or empty if the <paramref name="encoded"/> array contains binary characters</param>
         /// <returns>True if it can be represented; false otherwise.</returns>
-        bool TryRepresentAsText(byte[] encoded, out string strEncoded);
+        bool TryRepresentAsText(byte[] encoded, out string? strEncoded);
 
         /// <summary>
         /// Encodes a file

@@ -19,6 +19,7 @@
 
 using Newtonsoft.Json;
 using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Languages;
 using Nitrocid.Languages.Decoy;
@@ -39,22 +40,28 @@ namespace Nitrocid.LanguagePacks
 
         ModLoadPriority IAddon.AddonType => ModLoadPriority.Important;
 
-        ReadOnlyDictionary<string, Delegate> IAddon.PubliclyAvailableFunctions => null;
+        ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => null;
 
-        ReadOnlyDictionary<string, PropertyInfo> IAddon.PubliclyAvailableProperties => null;
+        ReadOnlyDictionary<string, PropertyInfo>? IAddon.PubliclyAvailableProperties => null;
 
-        ReadOnlyDictionary<string, FieldInfo> IAddon.PubliclyAvailableFields => null;
+        ReadOnlyDictionary<string, FieldInfo>? IAddon.PubliclyAvailableFields => null;
 
         void IAddon.StartAddon()
         {
             // Add them all!
             string[] languageResNames = ResourcesManager.GetResourceNames(typeof(LanguagePackInit).Assembly).Except(["Languages.Metadata.json"]).ToArray();
-            var languageMetadataToken = JsonConvert.DeserializeObject<LanguageMetadata[]>(ResourcesManager.GetData("Metadata.json", ResourcesType.Languages, typeof(LanguagePackInit).Assembly));
+            var metadataData = ResourcesManager.GetData("Metadata.json", ResourcesType.Languages, typeof(LanguagePackInit).Assembly) ??
+                throw new KernelException(KernelExceptionType.LanguageManagement, Translate.DoTranslation("Failed to load language metadata"));
+            var languageMetadataToken = JsonConvert.DeserializeObject<LanguageMetadata[]>(metadataData) ??
+                throw new KernelException(KernelExceptionType.LanguageManagement, Translate.DoTranslation("Failed to deserialize language metadata"));
             for (int i = 0; i < languageResNames.Length; i++)
             {
                 var metadata = languageMetadataToken[i];
                 string key = languageResNames[i].RemovePrefix("Languages.");
-                var languageToken = JsonConvert.DeserializeObject<LanguageLocalizations>(ResourcesManager.GetData(key, ResourcesType.Languages, typeof(LanguagePackInit).Assembly));
+                var langData = ResourcesManager.GetData(key, ResourcesType.Languages, typeof(LanguagePackInit).Assembly) ??
+                    throw new KernelException(KernelExceptionType.LanguageManagement, Translate.DoTranslation("Failed to load language metadata for") + $" {key}");
+                var languageToken = JsonConvert.DeserializeObject<LanguageLocalizations>(langData) ??
+                throw new KernelException(KernelExceptionType.LanguageManagement, Translate.DoTranslation("Failed to deserialize language metadata for") + $" {key}");
                 LanguageManager.AddBaseLanguage(metadata, true, languageToken.Localizations);
                 DebugWriter.WriteDebug(DebugLevel.I, "Added {0}", key);
             }

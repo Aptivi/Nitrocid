@@ -46,10 +46,10 @@ namespace Nitrocid.Misc.Reflection
         /// <param name="Variable">Property name. Use operator NameOf to get name.</param>
         /// <param name="VariableValue">New value</param>
         /// <param name="VariableType">Property type</param>
-        public static void SetPropertyValue(string Variable, object VariableValue, Type VariableType)
+        public static void SetPropertyValue(string Variable, object VariableValue, Type? VariableType)
         {
             // Get property for specified variable
-            PropertyInfo TargetProperty;
+            PropertyInfo? TargetProperty;
             if (VariableType is not null)
                 TargetProperty = GetProperty(Variable, VariableType);
             else
@@ -78,7 +78,7 @@ namespace Nitrocid.Misc.Reflection
         /// <param name="instance">Instance class to make changes on</param>
         /// <param name="Variable">Property name. Use operator NameOf to get name.</param>
         /// <param name="VariableValue">New value</param>
-        public static void SetPropertyValueInstance<T>(T instance, string Variable, object VariableValue) =>
+        public static void SetPropertyValueInstance<T>(T instance, string Variable, object? VariableValue) =>
             SetPropertyValueInstance(instance, Variable, VariableValue, null);
 
         /// <summary>
@@ -88,10 +88,10 @@ namespace Nitrocid.Misc.Reflection
         /// <param name="Variable">Property name. Use operator NameOf to get name.</param>
         /// <param name="VariableValue">New value</param>
         /// <param name="VariableType">Property type</param>
-        public static void SetPropertyValueInstance<T>(T instance, string Variable, object VariableValue, Type VariableType)
+        public static void SetPropertyValueInstance<T>(T instance, string Variable, object? VariableValue, Type? VariableType)
         {
             // Get property for specified variable
-            PropertyInfo TargetProperty;
+            PropertyInfo? TargetProperty;
             if (VariableType is not null)
                 TargetProperty = GetProperty(Variable, VariableType);
             else
@@ -103,7 +103,7 @@ namespace Nitrocid.Misc.Reflection
                 // The "obj" description says this: "The object whose property value will be returned."
                 // Apparently, GetValue works on modules if you specify a variable name as an object (first argument). Not only classes.
                 // Unfortunately, there are no examples on the MSDN that showcase such situations; classes are being used.
-                DebugWriter.WriteDebug(DebugLevel.I, "Got property {0}. Setting to {1}...", TargetProperty.Name, VariableValue);
+                DebugWriter.WriteDebug(DebugLevel.I, "Got property {0}. Setting to {1}...", TargetProperty.Name, VariableValue ?? "<null>");
                 TargetProperty.SetValue(instance, VariableValue);
             }
             else
@@ -121,10 +121,10 @@ namespace Nitrocid.Misc.Reflection
         /// <param name="Variable">Property name. Use operator NameOf to get name.</param>
         /// <param name="VariableValue">New value</param>
         /// <param name="VariableType">Property type</param>
-        public static void SetPropertyValueInstanceExplicit(object instance, string Variable, object VariableValue, Type VariableType)
+        public static void SetPropertyValueInstanceExplicit(object instance, string Variable, object? VariableValue, Type? VariableType)
         {
             // Get property for specified variable
-            PropertyInfo TargetProperty = default;
+            PropertyInfo? TargetProperty = default;
             if (VariableType is not null)
                 TargetProperty = GetProperty(Variable, VariableType);
 
@@ -134,7 +134,7 @@ namespace Nitrocid.Misc.Reflection
                 // The "obj" description says this: "The object whose property value will be returned."
                 // Apparently, GetValue works on modules if you specify a variable name as an object (first argument). Not only classes.
                 // Unfortunately, there are no examples on the MSDN that showcase such situations; classes are being used.
-                DebugWriter.WriteDebug(DebugLevel.I, "Got property {0}. Setting to {1}...", TargetProperty.Name, VariableValue);
+                DebugWriter.WriteDebug(DebugLevel.I, "Got property {0}. Setting to {1}...", TargetProperty.Name, VariableValue ?? "<null>");
                 TargetProperty.SetValue(instance, VariableValue);
             }
             else
@@ -150,7 +150,7 @@ namespace Nitrocid.Misc.Reflection
         /// </summary>
         /// <param name="Variable">Property name. Use operator NameOf to get name.</param>
         /// <returns>Value of a property</returns>
-        public static object GetPropertyValue(string Variable) =>
+        public static object? GetPropertyValue(string Variable) =>
             GetPropertyValue(Variable, null);
 
         /// <summary>
@@ -160,10 +160,10 @@ namespace Nitrocid.Misc.Reflection
         /// <param name="VariableType">Property type</param>
         /// <param name="UseGeneral">Whether to use the general kernel types</param>
         /// <returns>Value of a property</returns>
-        public static object GetPropertyValue(string Variable, Type VariableType, bool UseGeneral = false)
+        public static object? GetPropertyValue(string Variable, Type? VariableType, bool UseGeneral = false)
         {
             // Get property for specified variable
-            PropertyInfo TargetProperty;
+            PropertyInfo? TargetProperty;
             if (VariableType is not null)
                 TargetProperty = GetProperty(Variable, VariableType);
             else if (UseGeneral)
@@ -194,7 +194,7 @@ namespace Nitrocid.Misc.Reflection
         /// <param name="instance">Instance class to fetch value from</param>
         /// <param name="Variable">Property name. Use operator NameOf to get name.</param>
         /// <returns>Value of a property</returns>
-        public static object GetPropertyValueInstance<T>(T instance, string Variable) =>
+        public static object? GetPropertyValueInstance<T>(T instance, string Variable) =>
             GetPropertyValueInstance(instance, Variable, null);
 
         /// <summary>
@@ -204,18 +204,14 @@ namespace Nitrocid.Misc.Reflection
         /// <param name="Variable">Property name. Use operator NameOf to get name.</param>
         /// <param name="VariableType">Property type</param>
         /// <returns>Value of a property</returns>
-        public static object GetPropertyValueInstance<T>(T instance, string Variable, Type VariableType)
+        public static object? GetPropertyValueInstance<T>(T instance, string Variable, Type? VariableType)
         {
             // Get property for specified variable
-            PropertyInfo TargetProperty;
+            PropertyInfo? TargetProperty;
             if (VariableType is not null)
-            {
                 TargetProperty = GetProperty(Variable, VariableType);
-            }
             else
-            {
                 TargetProperty = GetProperty(Variable);
-            }
 
             // Get the variable if found
             if (TargetProperty is not null)
@@ -241,15 +237,15 @@ namespace Nitrocid.Misc.Reflection
         /// <param name="Variable">Property name. Use operator NameOf to get name.</param>
         /// <param name="VariableType">Property type</param>
         /// <returns>Value of a property</returns>
-        public static object GetPropertyValueInstanceExplicit(object instance, string Variable, Type VariableType)
+        public static object? GetPropertyValueInstanceExplicit(object instance, string Variable, Type? VariableType)
         {
             // Get property for specified variable
-            PropertyInfo TargetProperty = default;
+            PropertyInfo? TargetProperty = default;
             if (VariableType is not null)
                 TargetProperty = GetProperty(Variable, VariableType);
 
             // Get the variable if found
-            if (TargetProperty is not null)
+            if (TargetProperty is not null && VariableType is not null)
             {
                 // The "obj" description says this: "The object whose property value will be returned."
                 // Apparently, GetValue works on modules if you specify a variable name as an object (first argument). Not only classes.
@@ -271,16 +267,14 @@ namespace Nitrocid.Misc.Reflection
         /// <param name="Variable">Property name. Use operator NameOf to get name.</param>
         /// <param name="Type">Property type</param>
         /// <returns>Property information</returns>
-        public static PropertyInfo GetProperty(string Variable, Type Type)
+        public static PropertyInfo? GetProperty(string Variable, Type Type)
         {
             // Get properties of specified type
             var PropertyInstance = Type.GetProperty(Variable);
 
             // Check if any of them contains the specified variable
             if (PropertyInstance is not null)
-            {
                 return PropertyInstance;
-            }
             return null;
         }
 
@@ -289,10 +283,10 @@ namespace Nitrocid.Misc.Reflection
         /// </summary>
         /// <param name="Variable">Property name. Use operator NameOf to get name.</param>
         /// <returns>Property information</returns>
-        public static PropertyInfo GetProperty(string Variable)
+        public static PropertyInfo? GetProperty(string Variable)
         {
             Type[] PossibleTypes;
-            PropertyInfo PossibleProperty;
+            PropertyInfo? PossibleProperty;
 
             // Get types of possible flag locations
             PossibleTypes = ReflectionCommon.KernelConfigTypes;
@@ -312,10 +306,10 @@ namespace Nitrocid.Misc.Reflection
         /// </summary>
         /// <param name="Variable">Property name. Use operator NameOf to get name.</param>
         /// <returns>Property information</returns>
-        public static PropertyInfo GetPropertyGeneral(string Variable)
+        public static PropertyInfo? GetPropertyGeneral(string Variable)
         {
             Type[] PossibleTypes;
-            PropertyInfo PossibleProperty;
+            PropertyInfo? PossibleProperty;
 
             // Get types of possible flag locations
             PossibleTypes = ReflectionCommon.KernelTypes;
@@ -362,11 +356,11 @@ namespace Nitrocid.Misc.Reflection
         /// </summary>
         /// <param name="VariableType">Variable type</param>
         /// <returns>Dictionary containing all properties</returns>
-        public static Dictionary<string, object> GetProperties(Type VariableType)
+        public static Dictionary<string, object?> GetProperties(Type VariableType)
         {
             // Get property for specified variable
             var Properties = VariableType.GetProperties();
-            var PropertyDict = new Dictionary<string, object>();
+            var PropertyDict = new Dictionary<string, object?>();
 
             // Get the properties and get their values
             foreach (PropertyInfo VarProperty in Properties)
@@ -400,11 +394,11 @@ namespace Nitrocid.Misc.Reflection
         /// <param name="VariableType">Variable type</param>
         /// <param name="instance">Instance</param>
         /// <returns>Dictionary containing all properties</returns>
-        public static Dictionary<string, object> GetProperties<T>(T instance, Type VariableType)
+        public static Dictionary<string, object?> GetProperties<T>(T instance, Type VariableType)
         {
             // Get property for specified variable
             var Properties = VariableType.GetProperties();
-            var PropertyDict = new Dictionary<string, object>();
+            var PropertyDict = new Dictionary<string, object?>();
 
             // Get the properties and get their values
             foreach (PropertyInfo VarProperty in Properties)
@@ -419,10 +413,10 @@ namespace Nitrocid.Misc.Reflection
         /// Gets all the properties from the type dynamically
         /// </summary>
         /// <returns>Dictionary containing all properties</returns>
-        public static Dictionary<string, object> GetAllProperties()
+        public static Dictionary<string, object?> GetAllProperties()
         {
             // Get property for specified variable
-            var PropertyDict = new Dictionary<string, object>();
+            var PropertyDict = new Dictionary<string, object?>();
             foreach (var type in ReflectionCommon.KernelTypes)
             {
                 try
@@ -470,10 +464,10 @@ namespace Nitrocid.Misc.Reflection
         /// </summary>
         /// <param name="instance">Instance</param>
         /// <returns>Dictionary containing all properties</returns>
-        public static Dictionary<string, object> GetAllProperties<T>(T instance)
+        public static Dictionary<string, object?> GetAllProperties<T>(T instance)
         {
             // Get property for specified variable
-            var PropertyDict = new Dictionary<string, object>();
+            var PropertyDict = new Dictionary<string, object?>();
             foreach (var type in ReflectionCommon.KernelTypes)
             {
                 try

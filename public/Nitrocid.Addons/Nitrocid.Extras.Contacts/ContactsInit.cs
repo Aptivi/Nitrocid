@@ -86,7 +86,7 @@ namespace Nitrocid.Extras.Contacts
 
         ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
 
-        ReadOnlyDictionary<string, Delegate> IAddon.PubliclyAvailableFunctions => new(new Dictionary<string, Delegate>()
+        ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => new(new Dictionary<string, Delegate>()
         {
             { nameof(ContactsManager.GetContacts), new Func<Card[]>(ContactsManager.GetContacts) },
             { nameof(ContactsManager.ImportContacts), new Action(ContactsManager.ImportContacts) },
@@ -96,15 +96,15 @@ namespace Nitrocid.Extras.Contacts
             { nameof(ContactsManager.RemoveContact), new Action<int, bool>(ContactsManager.RemoveContact) },
             { nameof(ContactsManager.RemoveContacts), new Action<bool>(ContactsManager.RemoveContacts) },
             { nameof(ContactsManager.GetContact), new Func<int, Card>(ContactsManager.GetContact) },
-            { nameof(ContactsManager.SearchNext), new Func<Card>(ContactsManager.SearchNext) },
-            { nameof(ContactsManager.SearchNext) + "2", new Func<string, Card>(ContactsManager.SearchNext) },
-            { nameof(ContactsManager.SearchPrevious), new Func<Card>(ContactsManager.SearchPrevious) },
-            { nameof(ContactsManager.SearchPrevious) + "2", new Func<string, Card>(ContactsManager.SearchPrevious) },
+            { nameof(ContactsManager.SearchNext), new Func<Card?>(ContactsManager.SearchNext) },
+            { nameof(ContactsManager.SearchNext) + "2", new Func<string, Card?>(ContactsManager.SearchNext) },
+            { nameof(ContactsManager.SearchPrevious), new Func<Card?>(ContactsManager.SearchPrevious) },
+            { nameof(ContactsManager.SearchPrevious) + "2", new Func<string, Card?>(ContactsManager.SearchPrevious) },
         });
 
-        ReadOnlyDictionary<string, PropertyInfo> IAddon.PubliclyAvailableProperties => null;
+        ReadOnlyDictionary<string, PropertyInfo>? IAddon.PubliclyAvailableProperties => null;
 
-        ReadOnlyDictionary<string, FieldInfo> IAddon.PubliclyAvailableFields => null;
+        ReadOnlyDictionary<string, FieldInfo>? IAddon.PubliclyAvailableFields => null;
 
         void IAddon.FinalizeAddon()
         { }

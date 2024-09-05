@@ -30,16 +30,16 @@ namespace Nitrocid.Tests.Kernel.Threading
     public class KernelThreadTests
     {
 
-        internal static KernelThread TargetThread;
-        internal static KernelThread TargetParameterizedThread;
-        internal static KernelThread TargetThreadWithChild;
-        internal static KernelThread TargetParameterizedThreadWithChild;
-        internal static KernelThread TargetThreadWithAppendingChild;
-        internal static KernelThread TargetParameterizedThreadWithAppendingChild;
-        internal static KernelThread TargetThreadWithChildrenOfChildren;
-        internal static KernelThread TargetParameterizedThreadWithChildrenOfChildren;
-        internal static KernelThread TargetThreadWithAppendingChildrenOfChildren;
-        internal static KernelThread TargetParameterizedThreadWithAppendingChildrenOfChildren;
+        internal static KernelThread? TargetThread;
+        internal static KernelThread? TargetParameterizedThread;
+        internal static KernelThread? TargetThreadWithChild;
+        internal static KernelThread? TargetParameterizedThreadWithChild;
+        internal static KernelThread? TargetThreadWithAppendingChild;
+        internal static KernelThread? TargetParameterizedThreadWithAppendingChild;
+        internal static KernelThread? TargetThreadWithChildrenOfChildren;
+        internal static KernelThread? TargetParameterizedThreadWithChildrenOfChildren;
+        internal static KernelThread? TargetThreadWithAppendingChildrenOfChildren;
+        internal static KernelThread? TargetParameterizedThreadWithAppendingChildrenOfChildren;
 
         /// <summary>
         /// Tests initializing kernel thread
@@ -215,7 +215,7 @@ namespace Nitrocid.Tests.Kernel.Threading
         [TestMethod]
         [Description("Initialization")]
         public void TestStartKernelThread() =>
-            TargetThread.Start();
+            TargetThread?.Start();
 
         /// <summary>
         /// Tests starting kernel parameterized thread
@@ -223,7 +223,7 @@ namespace Nitrocid.Tests.Kernel.Threading
         [TestMethod]
         [Description("Initialization")]
         public void TestStartKernelParameterizedThread() =>
-            TargetParameterizedThread.Start("Agustin");
+            TargetParameterizedThread?.Start("Agustin");
 
         /// <summary>
         /// Tests starting kernel thread
@@ -231,7 +231,7 @@ namespace Nitrocid.Tests.Kernel.Threading
         [TestMethod]
         [Description("Initialization")]
         public void TestStartKernelThreadWithChildThread() =>
-            TargetThreadWithChild.Start();
+            TargetThreadWithChild?.Start();
 
         /// <summary>
         /// Tests starting kernel parameterized thread
@@ -239,7 +239,7 @@ namespace Nitrocid.Tests.Kernel.Threading
         [TestMethod]
         [Description("Initialization")]
         public void TestStartKernelParameterizedThreadWithChildThread() =>
-            TargetParameterizedThreadWithChild.Start("Agustin");
+            TargetParameterizedThreadWithChild?.Start("Agustin");
 
         /// <summary>
         /// Tests starting kernel thread
@@ -248,11 +248,11 @@ namespace Nitrocid.Tests.Kernel.Threading
         [Description("Initialization")]
         public void TestStartKernelThreadWithAppendingChildThread()
         {
-            TargetThreadWithAppendingChild.Start();
+            TargetThreadWithAppendingChild?.Start();
             Thread.Sleep(1000);
-            TargetThreadWithAppendingChild.AddChild("Unit test additional child thread #4 for parent thread #5", true, KernelThreadTestHelper.WriteHelloFromAppendingChild);
-            TargetThreadWithAppendingChild.AddChild("Unit test additional child thread #5 for parent thread #5", true, KernelThreadTestHelper.WriteHelloFromAppendingChild);
-            TargetThreadWithAppendingChild.AddChild("Unit test additional child thread #6 for parent thread #5", true, KernelThreadTestHelper.WriteHelloFromAppendingChild);
+            TargetThreadWithAppendingChild?.AddChild("Unit test additional child thread #4 for parent thread #5", true, KernelThreadTestHelper.WriteHelloFromAppendingChild);
+            TargetThreadWithAppendingChild?.AddChild("Unit test additional child thread #5 for parent thread #5", true, KernelThreadTestHelper.WriteHelloFromAppendingChild);
+            TargetThreadWithAppendingChild?.AddChild("Unit test additional child thread #6 for parent thread #5", true, KernelThreadTestHelper.WriteHelloFromAppendingChild);
         }
 
         /// <summary>
@@ -262,11 +262,11 @@ namespace Nitrocid.Tests.Kernel.Threading
         [Description("Initialization")]
         public void TestStartKernelParameterizedThreadWithAppendingChildThread()
         {
-            TargetParameterizedThreadWithAppendingChild.Start("Agustin");
+            TargetParameterizedThreadWithAppendingChild?.Start("Agustin");
             Thread.Sleep(1000);
-            TargetParameterizedThreadWithAppendingChild.AddChild("Unit test child thread #4 for parent thread #6", true, (_) => KernelThreadTestHelper.WriteHelloWithArgumentFromAppendingChild("Hello"));
-            TargetParameterizedThreadWithAppendingChild.AddChild("Unit test child thread #5 for parent thread #6", true, (_) => KernelThreadTestHelper.WriteHelloWithArgumentFromAppendingChild("Hello"));
-            TargetParameterizedThreadWithAppendingChild.AddChild("Unit test child thread #6 for parent thread #6", true, (_) => KernelThreadTestHelper.WriteHelloWithArgumentFromAppendingChild("Hello"));
+            TargetParameterizedThreadWithAppendingChild?.AddChild("Unit test child thread #4 for parent thread #6", true, (_) => KernelThreadTestHelper.WriteHelloWithArgumentFromAppendingChild("Hello"));
+            TargetParameterizedThreadWithAppendingChild?.AddChild("Unit test child thread #5 for parent thread #6", true, (_) => KernelThreadTestHelper.WriteHelloWithArgumentFromAppendingChild("Hello"));
+            TargetParameterizedThreadWithAppendingChild?.AddChild("Unit test child thread #6 for parent thread #6", true, (_) => KernelThreadTestHelper.WriteHelloWithArgumentFromAppendingChild("Hello"));
         }
 
         /// <summary>
@@ -275,7 +275,7 @@ namespace Nitrocid.Tests.Kernel.Threading
         [TestMethod]
         [Description("Initialization")]
         public void TestStartKernelThreadWithChildrenOfChildrenThread() =>
-            TargetThreadWithChildrenOfChildren.Start();
+            TargetThreadWithChildrenOfChildren?.Start();
 
         /// <summary>
         /// Tests starting kernel parameterized thread
@@ -283,7 +283,7 @@ namespace Nitrocid.Tests.Kernel.Threading
         [TestMethod]
         [Description("Initialization")]
         public void TestStartKernelParameterizedThreadWithChildrenOfChildrenThread() =>
-            TargetParameterizedThreadWithChildrenOfChildren.Start("Agustin");
+            TargetParameterizedThreadWithChildrenOfChildren?.Start("Agustin");
 
         /// <summary>
         /// Tests starting kernel thread
@@ -292,23 +292,23 @@ namespace Nitrocid.Tests.Kernel.Threading
         [Description("Initialization")]
         public void TestStartKernelThreadWithAppendingChildrenOfChildrenThread()
         {
-            TargetThreadWithAppendingChildrenOfChildren.Start();
+            TargetThreadWithAppendingChildrenOfChildren?.Start();
             Thread.Sleep(1000);
-            TargetThreadWithAppendingChildrenOfChildren.AddChild("Unit test additional child thread #4 for parent thread #9", true, KernelThreadTestHelper.WriteHelloFromAppendingChildrenOfChildren);
-            TargetThreadWithAppendingChildrenOfChildren.AddChild("Unit test additional child thread #5 for parent thread #9", true, KernelThreadTestHelper.WriteHelloFromAppendingChildrenOfChildren);
-            TargetThreadWithAppendingChildrenOfChildren.AddChild("Unit test additional child thread #6 for parent thread #9", true, KernelThreadTestHelper.WriteHelloFromAppendingChildrenOfChildren);
-            var child4 = TargetThreadWithAppendingChildrenOfChildren.GetChild(3);
-            var child5 = TargetThreadWithAppendingChildrenOfChildren.GetChild(4);
-            var child6 = TargetThreadWithAppendingChildrenOfChildren.GetChild(5);
-            child4.AddChild("Unit test child thread #1 of child thread #4 for parent thread #9", true, KernelThreadTestHelper.WriteHelloFromAppendingChildrenOfChildren);
-            child4.AddChild("Unit test child thread #2 of child thread #4 for parent thread #9", true, KernelThreadTestHelper.WriteHelloFromAppendingChildrenOfChildren);
-            child4.AddChild("Unit test child thread #3 of child thread #4 for parent thread #9", true, KernelThreadTestHelper.WriteHelloFromAppendingChildrenOfChildren);
-            child5.AddChild("Unit test child thread #1 of child thread #5 for parent thread #9", true, KernelThreadTestHelper.WriteHelloFromAppendingChildrenOfChildren);
-            child5.AddChild("Unit test child thread #2 of child thread #5 for parent thread #9", true, KernelThreadTestHelper.WriteHelloFromAppendingChildrenOfChildren);
-            child5.AddChild("Unit test child thread #3 of child thread #5 for parent thread #9", true, KernelThreadTestHelper.WriteHelloFromAppendingChildrenOfChildren);
-            child6.AddChild("Unit test child thread #1 of child thread #6 for parent thread #9", true, KernelThreadTestHelper.WriteHelloFromAppendingChildrenOfChildren);
-            child6.AddChild("Unit test child thread #2 of child thread #6 for parent thread #9", true, KernelThreadTestHelper.WriteHelloFromAppendingChildrenOfChildren);
-            child6.AddChild("Unit test child thread #3 of child thread #6 for parent thread #9", true, KernelThreadTestHelper.WriteHelloFromAppendingChildrenOfChildren);
+            TargetThreadWithAppendingChildrenOfChildren?.AddChild("Unit test additional child thread #4 for parent thread #9", true, KernelThreadTestHelper.WriteHelloFromAppendingChildrenOfChildren);
+            TargetThreadWithAppendingChildrenOfChildren?.AddChild("Unit test additional child thread #5 for parent thread #9", true, KernelThreadTestHelper.WriteHelloFromAppendingChildrenOfChildren);
+            TargetThreadWithAppendingChildrenOfChildren?.AddChild("Unit test additional child thread #6 for parent thread #9", true, KernelThreadTestHelper.WriteHelloFromAppendingChildrenOfChildren);
+            var child4 = TargetThreadWithAppendingChildrenOfChildren?.GetChild(3);
+            var child5 = TargetThreadWithAppendingChildrenOfChildren?.GetChild(4);
+            var child6 = TargetThreadWithAppendingChildrenOfChildren?.GetChild(5);
+            child4?.AddChild("Unit test child thread #1 of child thread #4 for parent thread #9", true, KernelThreadTestHelper.WriteHelloFromAppendingChildrenOfChildren);
+            child4?.AddChild("Unit test child thread #2 of child thread #4 for parent thread #9", true, KernelThreadTestHelper.WriteHelloFromAppendingChildrenOfChildren);
+            child4?.AddChild("Unit test child thread #3 of child thread #4 for parent thread #9", true, KernelThreadTestHelper.WriteHelloFromAppendingChildrenOfChildren);
+            child5?.AddChild("Unit test child thread #1 of child thread #5 for parent thread #9", true, KernelThreadTestHelper.WriteHelloFromAppendingChildrenOfChildren);
+            child5?.AddChild("Unit test child thread #2 of child thread #5 for parent thread #9", true, KernelThreadTestHelper.WriteHelloFromAppendingChildrenOfChildren);
+            child5?.AddChild("Unit test child thread #3 of child thread #5 for parent thread #9", true, KernelThreadTestHelper.WriteHelloFromAppendingChildrenOfChildren);
+            child6?.AddChild("Unit test child thread #1 of child thread #6 for parent thread #9", true, KernelThreadTestHelper.WriteHelloFromAppendingChildrenOfChildren);
+            child6?.AddChild("Unit test child thread #2 of child thread #6 for parent thread #9", true, KernelThreadTestHelper.WriteHelloFromAppendingChildrenOfChildren);
+            child6?.AddChild("Unit test child thread #3 of child thread #6 for parent thread #9", true, KernelThreadTestHelper.WriteHelloFromAppendingChildrenOfChildren);
         }
 
         /// <summary>
@@ -318,23 +318,23 @@ namespace Nitrocid.Tests.Kernel.Threading
         [Description("Initialization")]
         public void TestStartKernelParameterizedThreadWithAppendingChildrenOfChildrenThread()
         {
-            TargetParameterizedThreadWithAppendingChildrenOfChildren.Start("Agustin");
+            TargetParameterizedThreadWithAppendingChildrenOfChildren?.Start("Agustin");
             Thread.Sleep(1000);
-            TargetParameterizedThreadWithAppendingChildrenOfChildren.AddChild("Unit test child thread #4 for parent thread #10", true, (_) => KernelThreadTestHelper.WriteHelloWithArgumentFromAppendingChildrenOfChildren("Hello"));
-            TargetParameterizedThreadWithAppendingChildrenOfChildren.AddChild("Unit test child thread #5 for parent thread #10", true, (_) => KernelThreadTestHelper.WriteHelloWithArgumentFromAppendingChildrenOfChildren("Hello"));
-            TargetParameterizedThreadWithAppendingChildrenOfChildren.AddChild("Unit test child thread #6 for parent thread #10", true, (_) => KernelThreadTestHelper.WriteHelloWithArgumentFromAppendingChildrenOfChildren("Hello"));
-            var child4 = TargetParameterizedThreadWithAppendingChildrenOfChildren.GetChild(3);
-            var child5 = TargetParameterizedThreadWithAppendingChildrenOfChildren.GetChild(4);
-            var child6 = TargetParameterizedThreadWithAppendingChildrenOfChildren.GetChild(5);
-            child4.AddChild("Unit test child thread #1 of child thread #4 for parent thread #10", true, (_) => KernelThreadTestHelper.WriteHelloWithArgumentFromAppendingChildrenOfChildren("Hello"));
-            child4.AddChild("Unit test child thread #2 of child thread #4 for parent thread #10", true, (_) => KernelThreadTestHelper.WriteHelloWithArgumentFromAppendingChildrenOfChildren("Hello"));
-            child4.AddChild("Unit test child thread #3 of child thread #4 for parent thread #10", true, (_) => KernelThreadTestHelper.WriteHelloWithArgumentFromAppendingChildrenOfChildren("Hello"));
-            child5.AddChild("Unit test child thread #1 of child thread #5 for parent thread #10", true, (_) => KernelThreadTestHelper.WriteHelloWithArgumentFromAppendingChildrenOfChildren("Hello"));
-            child5.AddChild("Unit test child thread #2 of child thread #5 for parent thread #10", true, (_) => KernelThreadTestHelper.WriteHelloWithArgumentFromAppendingChildrenOfChildren("Hello"));
-            child5.AddChild("Unit test child thread #3 of child thread #5 for parent thread #10", true, (_) => KernelThreadTestHelper.WriteHelloWithArgumentFromAppendingChildrenOfChildren("Hello"));
-            child6.AddChild("Unit test child thread #1 of child thread #6 for parent thread #10", true, (_) => KernelThreadTestHelper.WriteHelloWithArgumentFromAppendingChildrenOfChildren("Hello"));
-            child6.AddChild("Unit test child thread #2 of child thread #6 for parent thread #10", true, (_) => KernelThreadTestHelper.WriteHelloWithArgumentFromAppendingChildrenOfChildren("Hello"));
-            child6.AddChild("Unit test child thread #3 of child thread #6 for parent thread #10", true, (_) => KernelThreadTestHelper.WriteHelloWithArgumentFromAppendingChildrenOfChildren("Hello"));
+            TargetParameterizedThreadWithAppendingChildrenOfChildren?.AddChild("Unit test child thread #4 for parent thread #10", true, (_) => KernelThreadTestHelper.WriteHelloWithArgumentFromAppendingChildrenOfChildren("Hello"));
+            TargetParameterizedThreadWithAppendingChildrenOfChildren?.AddChild("Unit test child thread #5 for parent thread #10", true, (_) => KernelThreadTestHelper.WriteHelloWithArgumentFromAppendingChildrenOfChildren("Hello"));
+            TargetParameterizedThreadWithAppendingChildrenOfChildren?.AddChild("Unit test child thread #6 for parent thread #10", true, (_) => KernelThreadTestHelper.WriteHelloWithArgumentFromAppendingChildrenOfChildren("Hello"));
+            var child4 = TargetParameterizedThreadWithAppendingChildrenOfChildren?.GetChild(3);
+            var child5 = TargetParameterizedThreadWithAppendingChildrenOfChildren?.GetChild(4);
+            var child6 = TargetParameterizedThreadWithAppendingChildrenOfChildren?.GetChild(5);
+            child4?.AddChild("Unit test child thread #1 of child thread #4 for parent thread #10", true, (_) => KernelThreadTestHelper.WriteHelloWithArgumentFromAppendingChildrenOfChildren("Hello"));
+            child4?.AddChild("Unit test child thread #2 of child thread #4 for parent thread #10", true, (_) => KernelThreadTestHelper.WriteHelloWithArgumentFromAppendingChildrenOfChildren("Hello"));
+            child4?.AddChild("Unit test child thread #3 of child thread #4 for parent thread #10", true, (_) => KernelThreadTestHelper.WriteHelloWithArgumentFromAppendingChildrenOfChildren("Hello"));
+            child5?.AddChild("Unit test child thread #1 of child thread #5 for parent thread #10", true, (_) => KernelThreadTestHelper.WriteHelloWithArgumentFromAppendingChildrenOfChildren("Hello"));
+            child5?.AddChild("Unit test child thread #2 of child thread #5 for parent thread #10", true, (_) => KernelThreadTestHelper.WriteHelloWithArgumentFromAppendingChildrenOfChildren("Hello"));
+            child5?.AddChild("Unit test child thread #3 of child thread #5 for parent thread #10", true, (_) => KernelThreadTestHelper.WriteHelloWithArgumentFromAppendingChildrenOfChildren("Hello"));
+            child6?.AddChild("Unit test child thread #1 of child thread #6 for parent thread #10", true, (_) => KernelThreadTestHelper.WriteHelloWithArgumentFromAppendingChildrenOfChildren("Hello"));
+            child6?.AddChild("Unit test child thread #2 of child thread #6 for parent thread #10", true, (_) => KernelThreadTestHelper.WriteHelloWithArgumentFromAppendingChildrenOfChildren("Hello"));
+            child6?.AddChild("Unit test child thread #3 of child thread #6 for parent thread #10", true, (_) => KernelThreadTestHelper.WriteHelloWithArgumentFromAppendingChildrenOfChildren("Hello"));
         }
 
         /// <summary>
@@ -345,9 +345,9 @@ namespace Nitrocid.Tests.Kernel.Threading
         public void TestStopKernelThread()
         {
             Thread.Sleep(300);
-            TargetThread.Stop();
-            TargetThread.IsStopping.ShouldBeFalse();
-            TargetThread.ShouldNotBeNull();
+            TargetThread?.Stop();
+            TargetThread?.IsStopping.ShouldBeFalse();
+            TargetThread?.ShouldNotBeNull();
         }
 
         /// <summary>
@@ -358,9 +358,9 @@ namespace Nitrocid.Tests.Kernel.Threading
         public void TestStopKernelParameterizedThread()
         {
             Thread.Sleep(300);
-            TargetParameterizedThread.Stop();
-            TargetParameterizedThread.IsStopping.ShouldBeFalse();
-            TargetParameterizedThread.ShouldNotBeNull();
+            TargetParameterizedThread?.Stop();
+            TargetParameterizedThread?.IsStopping.ShouldBeFalse();
+            TargetParameterizedThread?.ShouldNotBeNull();
         }
 
         /// <summary>
@@ -370,6 +370,8 @@ namespace Nitrocid.Tests.Kernel.Threading
         [Description("Initialization")]
         public void TestStopKernelThreadWithChildThread()
         {
+            if (TargetThreadWithChild is null)
+                throw new Exception($"{nameof(TargetThreadWithChild)} is null");
             Thread.Sleep(500);
             Should.CompleteIn(TargetThreadWithChild.Stop, TimeSpan.FromSeconds(5));
             TargetThreadWithChild.IsStopping.ShouldBeFalse();
@@ -388,6 +390,8 @@ namespace Nitrocid.Tests.Kernel.Threading
         [Description("Initialization")]
         public void TestStopKernelParameterizedThreadWithChildThread()
         {
+            if (TargetParameterizedThreadWithChild is null)
+                throw new Exception($"{nameof(TargetParameterizedThreadWithChild)} is null");
             Thread.Sleep(500);
             Should.CompleteIn(TargetParameterizedThreadWithChild.Stop, TimeSpan.FromSeconds(5));
             TargetParameterizedThreadWithChild.IsStopping.ShouldBeFalse();
@@ -406,6 +410,8 @@ namespace Nitrocid.Tests.Kernel.Threading
         [Description("Initialization")]
         public void TestStopKernelThreadWithAppendingChildThread()
         {
+            if (TargetThreadWithAppendingChild is null)
+                throw new Exception($"{nameof(TargetThreadWithAppendingChild)} is null");
             Thread.Sleep(500);
             Should.CompleteIn(TargetThreadWithAppendingChild.Stop, TimeSpan.FromSeconds(5));
             TargetThreadWithAppendingChild.IsStopping.ShouldBeFalse();
@@ -424,6 +430,8 @@ namespace Nitrocid.Tests.Kernel.Threading
         [Description("Initialization")]
         public void TestStopKernelParameterizedThreadWithAppendingChildThread()
         {
+            if (TargetParameterizedThreadWithAppendingChild is null)
+                throw new Exception($"{nameof(TargetParameterizedThreadWithAppendingChild)} is null");
             Thread.Sleep(500);
             Should.CompleteIn(TargetParameterizedThreadWithAppendingChild.Stop, TimeSpan.FromSeconds(5));
             TargetParameterizedThreadWithAppendingChild.IsStopping.ShouldBeFalse();
@@ -442,6 +450,8 @@ namespace Nitrocid.Tests.Kernel.Threading
         [Description("Initialization")]
         public void TestStopKernelThreadWithChildrenOfChildrenThread()
         {
+            if (TargetThreadWithChildrenOfChildren is null)
+                throw new Exception($"{nameof(TargetThreadWithChildrenOfChildren)} is null");
             Thread.Sleep(500);
             Should.CompleteIn(TargetThreadWithChildrenOfChildren.Stop, TimeSpan.FromSeconds(5));
             TargetThreadWithChildrenOfChildren.IsStopping.ShouldBeFalse();
@@ -465,6 +475,8 @@ namespace Nitrocid.Tests.Kernel.Threading
         [Description("Initialization")]
         public void TestStopKernelParameterizedThreadWithChildrenOfChildrenThread()
         {
+            if (TargetParameterizedThreadWithChildrenOfChildren is null)
+                throw new Exception($"{nameof(TargetParameterizedThreadWithChildrenOfChildren)} is null");
             Thread.Sleep(500);
             Should.CompleteIn(TargetParameterizedThreadWithChildrenOfChildren.Stop, TimeSpan.FromSeconds(5));
             TargetParameterizedThreadWithChildrenOfChildren.IsStopping.ShouldBeFalse();
@@ -488,6 +500,8 @@ namespace Nitrocid.Tests.Kernel.Threading
         [Description("Initialization")]
         public void TestStopKernelThreadWithAppendingChildrenOfChildrenThread()
         {
+            if (TargetThreadWithAppendingChildrenOfChildren is null)
+                throw new Exception($"{nameof(TargetThreadWithAppendingChildrenOfChildren)} is null");
             Thread.Sleep(500);
             Should.CompleteIn(TargetThreadWithAppendingChildrenOfChildren.Stop, TimeSpan.FromSeconds(5));
             TargetThreadWithAppendingChildrenOfChildren.IsStopping.ShouldBeFalse();
@@ -511,6 +525,8 @@ namespace Nitrocid.Tests.Kernel.Threading
         [Description("Initialization")]
         public void TestStopKernelParameterizedThreadWithAppendingChildrenOfChildrenThread()
         {
+            if (TargetParameterizedThreadWithAppendingChildrenOfChildren is null)
+                throw new Exception($"{nameof(TargetParameterizedThreadWithAppendingChildrenOfChildren)} is null");
             Thread.Sleep(500);
             Should.CompleteIn(TargetParameterizedThreadWithAppendingChildrenOfChildren.Stop, TimeSpan.FromSeconds(5));
             TargetParameterizedThreadWithAppendingChildrenOfChildren.IsStopping.ShouldBeFalse();

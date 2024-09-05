@@ -77,7 +77,8 @@ namespace Nitrocid.Extras.UnitConv.Interactives
                     var parser = UnitsNetSetup.Default.UnitParser;
                     var unitNames = GetUnitTypeNames();
                     var units = GetUnits();
-                    string UnitType = (string)unitNames.GetElementFromIndex(FirstPaneCurrentSelection - 1);
+                    string UnitType = (string?)unitNames.GetElementFromIndex(FirstPaneCurrentSelection - 1) ??
+                        throw new Exception("The unit type is not known.");
                     int QuantityNum = Convert.ToInt32(answer);
                     string wholeUnit = units.OfType<string>().ElementAt(SecondPaneCurrentSelection - 1);
                     string SourceUnit = wholeUnit[..wholeUnit.IndexOf(' ')];

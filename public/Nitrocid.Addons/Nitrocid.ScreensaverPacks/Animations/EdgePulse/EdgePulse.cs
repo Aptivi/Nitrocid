@@ -36,8 +36,10 @@ namespace Nitrocid.ScreensaverPacks.Animations.EdgePulse
         /// <summary>
         /// Simulates the edge pulsing animation
         /// </summary>
-        public static void Simulate(EdgePulseSettings Settings)
+        public static void Simulate(EdgePulseSettings? Settings)
         {
+            Settings ??= new();
+
             // Now, do the rest
             int RedColorNum = RandomDriver.Random(Settings.EdgePulseMinimumRedColorLevel, Settings.EdgePulseMaximumRedColorLevel);
             int GreenColorNum = RandomDriver.Random(Settings.EdgePulseMinimumGreenColorLevel, Settings.EdgePulseMaximumGreenColorLevel);

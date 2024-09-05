@@ -147,7 +147,7 @@ namespace Nitrocid.Extras.RssShell.Tools
             string currentUsername = UserManagement.CurrentUser.Username;
             const string keyName = "RSSBookmarks";
             if (UserCustomSettingsManager.DoesSettingsEntryExist(currentUsername, keyName))
-                return UserCustomSettingsManager.GetSettingsEntryFromUser(currentUsername, keyName).Select((rssString) => rssString.ToString()).ToList();
+                return UserCustomSettingsManager.GetSettingsEntryFromUser(currentUsername, keyName).Select((rssString) => rssString.ToString() ?? "").ToList();
             else
                 return [];
         }

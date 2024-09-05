@@ -26,12 +26,12 @@ namespace Nitrocid.Extras.HttpShell.HTTP
     /// </summary>
     public static class HTTPShellCommon
     {
-        internal static NetworkConnection clientConnection;
+        internal static NetworkConnection? clientConnection;
 
         /// <summary>
         /// HTTP site URL
         /// </summary>
-        public static string HTTPSite { get; set; }
+        public static string HTTPSite { get; set; } = "";
 
         /// <summary>
         /// HTTP shell prompt style
@@ -41,7 +41,7 @@ namespace Nitrocid.Extras.HttpShell.HTTP
         /// <summary>
         /// An HTTP client
         /// </summary>
-        public static NetworkConnection ClientHTTP =>
+        public static NetworkConnection? ClientHTTP =>
             clientConnection;
     }
 }

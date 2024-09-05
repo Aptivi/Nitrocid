@@ -29,7 +29,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     public class BSODDisplay : BaseScreensaver, IScreensaver
     {
 
-        private Animations.BSOD.BSODSettings BSODSettingsInstance;
+        private Animations.BSOD.BSODSettings? BSODSettingsInstance;
 
         /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "BSOD";

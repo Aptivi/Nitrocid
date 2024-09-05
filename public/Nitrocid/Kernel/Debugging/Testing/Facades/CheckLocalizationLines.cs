@@ -23,6 +23,7 @@ using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Misc.Reflection.Internal;
+using Nitrocid.Kernel.Exceptions;
 
 namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
@@ -32,15 +33,15 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
         public override TestSection TestSection => TestSection.Languages;
         public override void Run(params string[] args)
         {
-            var EnglishJson = JToken.Parse(ResourcesManager.GetData("eng.json", ResourcesType.Languages));
+            var EnglishJson = JToken.Parse(ResourcesManager.GetData("eng.json", ResourcesType.Languages) ??
+                throw new KernelException(KernelExceptionType.LanguageManagement, Translate.DoTranslation("Can't open the English localization resource")));
             JToken LanguageJson;
             foreach (string LanguageName in LanguageManager.Languages.Keys)
             {
-                LanguageJson = JToken.Parse(ResourcesManager.GetData($"{LanguageName}.json", ResourcesType.Languages));
+                LanguageJson = JToken.Parse(ResourcesManager.GetData($"{LanguageName}.json", ResourcesType.Languages) ??
+                throw new KernelException(KernelExceptionType.LanguageManagement, Translate.DoTranslation("Can't open the localization resource for") + $" {LanguageName}"));
                 if (LanguageJson.Count() != EnglishJson.Count())
-                {
                     TextWriters.Write(Translate.DoTranslation("Line mismatch in") + " {0}: {1} <> {2}", true, KernelColorType.Warning, LanguageName, LanguageJson.Count(), EnglishJson.Count());
-                }
             }
         }
     }

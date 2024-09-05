@@ -80,7 +80,7 @@ namespace Nitrocid.Extras.SqlShell.Tools
             try
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Trying to close file...");
-                SqlShellCommon.sqliteConnection.Close();
+                SqlShellCommon.sqliteConnection?.Close();
                 SqlShellCommon.sqliteConnection = null;
                 SqlShellCommon.sqliteDatabasePath = "";
                 return true;

@@ -41,7 +41,7 @@ namespace Nitrocid.Extras.Timers.Timers
     {
 
         internal static List<LapDisplayInfo> Laps = [];
-        internal static Color LapColor;
+        internal static Color? LapColor;
         internal static Stopwatch Stopwatch = new();
         internal static Stopwatch LappedStopwatch = new();
         internal static bool running;

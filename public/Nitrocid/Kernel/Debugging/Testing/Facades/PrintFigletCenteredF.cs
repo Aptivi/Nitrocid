@@ -21,6 +21,7 @@ using Textify.Figlet;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
+using Nitrocid.Kernel.Exceptions;
 
 namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
@@ -32,7 +33,9 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
         public override void Run(params string[] args)
         {
             string rendered = args.Length > 0 ? args[0] : "Hi, {0}!";
-            TextFancyWriters.WriteCenteredFiglet(FigletFonts.TryGetByName("speed"), rendered, KernelColorType.Success, 0, 0, "Nitrocid KS");
+            var figletFont = FigletFonts.TryGetByName("speed") ??
+                throw new KernelException(KernelExceptionType.Console, Translate.DoTranslation("Failed to get figlet font"));
+            TextFancyWriters.WriteCenteredFiglet(figletFont, rendered, KernelColorType.Success, 0, 0, "Nitrocid KS");
         }
     }
 }

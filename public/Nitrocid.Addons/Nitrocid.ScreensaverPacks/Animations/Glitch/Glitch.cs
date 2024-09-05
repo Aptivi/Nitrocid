@@ -37,8 +37,10 @@ namespace Nitrocid.ScreensaverPacks.Animations.Glitch
         /// <summary>
         /// Simulates the glitching animation
         /// </summary>
-        public static void Simulate(GlitchSettings Settings)
+        public static void Simulate(GlitchSettings? Settings)
         {
+            Settings ??= new();
+
             // Select random positions to generate the glitch
             double GlitchDense = (Settings.GlitchDensity > 100 ? 100 : Settings.GlitchDensity) / 100d;
             int AmountOfBlocks = ConsoleWrapper.WindowWidth * ConsoleWrapper.WindowHeight - 1;

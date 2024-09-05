@@ -59,7 +59,12 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
             string ArchiveFile = "";
             if (ShellArgs.Length > 0)
             {
-                ArchiveFile = Convert.ToString(ShellArgs[0]);
+                ArchiveFile = Convert.ToString(ShellArgs[0]) ?? "";
+                if (string.IsNullOrEmpty(ArchiveFile))
+                {
+                    TextWriters.Write(Translate.DoTranslation("File not specified. Exiting shell..."), true, KernelColorType.Error);
+                    Bail = true;
+                }
             }
             else
             {
@@ -110,14 +115,14 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
                 catch (Exception ex)
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
-                    TextWriters.Write(Translate.DoTranslation("There was an error in the shell.") + CharManager.NewLine + "Error {0}: {1}", true, KernelColorType.Error, ex.GetType().FullName, ex.Message);
+                    TextWriters.Write(Translate.DoTranslation("There was an error in the shell.") + CharManager.NewLine + "Error {0}: {1}", true, KernelColorType.Error, ex.GetType()?.FullName ?? "<null>", ex.Message);
                     continue;
                 }
             }
 
             // Close file stream
-            ArchiveShellCommon.Archive.Dispose();
-            ArchiveShellCommon.FileStream.Close();
+            ArchiveShellCommon.Archive?.Dispose();
+            ArchiveShellCommon.FileStream?.Close();
             ArchiveShellCommon.CurrentDirectory = "";
             ArchiveShellCommon.CurrentArchiveDirectory = "";
             ArchiveShellCommon.Archive = null;

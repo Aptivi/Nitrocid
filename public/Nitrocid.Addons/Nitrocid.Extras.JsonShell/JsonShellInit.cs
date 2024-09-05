@@ -77,7 +77,7 @@ namespace Nitrocid.Extras.JsonShell
         internal static JsonConfig JsonConfig =>
             (JsonConfig)Config.baseConfigurations[nameof(JsonConfig)];
 
-        ReadOnlyDictionary<string, Delegate> IAddon.PubliclyAvailableFunctions => new(new Dictionary<string, Delegate>()
+        ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => new(new Dictionary<string, Delegate>()
         {
             { nameof(JsonTools.OpenJsonFile), new Func<string, bool>(JsonTools.OpenJsonFile) },
             { nameof(JsonTools.CloseJsonFile), new Func<bool>(JsonTools.CloseJsonFile) },
@@ -87,17 +87,17 @@ namespace Nitrocid.Extras.JsonShell
             { nameof(JsonTools.DetermineRootType), new Func<JTokenType>(JsonTools.DetermineRootType) },
             { nameof(JsonTools.DetermineType), new Func<string, JTokenType>(JsonTools.DetermineType) },
             { nameof(JsonTools.GetToken), new Func<string, JToken>(JsonTools.GetToken) },
-            { nameof(JsonTools.GetTokenSafe), new Func<string, JToken>(JsonTools.GetTokenSafe) },
-            { nameof(JsonTools.GetTokenSafe) + "2", new Func<string, string, JToken>(JsonTools.GetTokenSafe) },
+            { nameof(JsonTools.GetTokenSafe), new Func<string, JToken?>(JsonTools.GetTokenSafe) },
+            { nameof(JsonTools.GetTokenSafe) + "2", new Func<string, string, JToken?>(JsonTools.GetTokenSafe) },
             { nameof(JsonTools.Add), new Action<string, string, string, string>(JsonTools.Add) },
             { nameof(JsonTools.Set), new Action<string, string, string, string>(JsonTools.Set) },
             { nameof(JsonTools.Remove), new Action<string>(JsonTools.Remove) },
             { nameof(JsonTools.SerializeToString), new Func<string, string>(JsonTools.SerializeToString) },
         });
 
-        ReadOnlyDictionary<string, PropertyInfo> IAddon.PubliclyAvailableProperties => null;
+        ReadOnlyDictionary<string, PropertyInfo>? IAddon.PubliclyAvailableProperties => null;
 
-        ReadOnlyDictionary<string, FieldInfo> IAddon.PubliclyAvailableFields => null;
+        ReadOnlyDictionary<string, FieldInfo>? IAddon.PubliclyAvailableFields => null;
 
         void IAddon.FinalizeAddon()
         {

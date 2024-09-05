@@ -191,10 +191,12 @@ namespace Nitrocid.Extras.SftpShell.Tools.Filesystem
             // GetCanonicalPath was supposed to be public, but it's in a private class called SftpSession. It should be in SftpClient, which is public.
             var SFTPType = ((SftpClient)SFTPShellCommon.ClientSFTP.ConnectionInstance).GetType();
             var SFTPSessionField = SFTPType.GetField("_sftpSession", BindingFlags.Instance | BindingFlags.NonPublic);
-            var SFTPSession = SFTPSessionField.GetValue((SftpClient)SFTPShellCommon.ClientSFTP.ConnectionInstance);
-            var SFTPSessionType = SFTPSession.GetType();
-            var SFTPSessionCanon = SFTPSessionType.GetMethod("GetCanonicalPath");
-            string CanonicalPath = Convert.ToString(SFTPSessionCanon.Invoke(SFTPSession, new string[] { Path }));
+            var SFTPSession = SFTPSessionField?.GetValue((SftpClient)SFTPShellCommon.ClientSFTP.ConnectionInstance);
+            var SFTPSessionType = SFTPSession?.GetType();
+            var SFTPSessionCanon = SFTPSessionType?.GetMethod("GetCanonicalPath");
+            if (SFTPSessionCanon is null)
+                return "";
+            string CanonicalPath = Convert.ToString(SFTPSessionCanon.Invoke(SFTPSession, [Path])) ?? "";
             DebugWriter.WriteDebug(DebugLevel.I, "Canonical path: {0}", CanonicalPath);
             return CanonicalPath;
         }

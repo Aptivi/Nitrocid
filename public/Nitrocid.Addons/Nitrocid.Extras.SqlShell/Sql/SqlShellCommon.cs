@@ -31,12 +31,12 @@ namespace Nitrocid.Extras.SqlShell.Sql
     {
 
         internal static string sqliteDatabasePath = "";
-        internal static SqliteConnection sqliteConnection;
+        internal static SqliteConnection? sqliteConnection;
 
         /// <summary>
         /// Current connection for the SQL
         /// </summary>
-        public static SqliteConnection Connection =>
+        public static SqliteConnection? Connection =>
             sqliteConnection;
 
         /// <summary>

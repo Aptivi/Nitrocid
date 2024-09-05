@@ -51,8 +51,11 @@ namespace Nitrocid.Tests.Misc.Reflection
         [Description("Management")]
         public void TestGetPropertyValueInstance()
         {
-            string Value = Convert.ToString(PropertyManager.GetPropertyValueInstance(Config.SaverConfig, nameof(KernelSaverConfig.MatrixBleedDelay)));
-            Value.ShouldNotBeNullOrEmpty();
+            var Value = PropertyManager.GetPropertyValueInstance(Config.SaverConfig, nameof(KernelSaverConfig.MatrixBleedDelay));
+            if (Value is string value)
+                value.ShouldNotBeNullOrEmpty();
+            else
+                Assert.Fail("Can't get property value");
         }
 
         /// <summary>
@@ -74,8 +77,11 @@ namespace Nitrocid.Tests.Misc.Reflection
         [Description("Management")]
         public void TestGetPropertyValue()
         {
-            string Value = Convert.ToString(PropertyManager.GetPropertyValue(nameof(TryToChangeIt), typeof(PropertyManagementTests)));
-            Value.ShouldNotBeNullOrEmpty();
+            var Value = PropertyManager.GetPropertyValue(nameof(TryToChangeIt), typeof(PropertyManagementTests));
+            if (Value is string value)
+                value.ShouldNotBeNullOrEmpty();
+            else
+                Assert.Fail("Can't get property value");
         }
 
         /// <summary>
@@ -86,8 +92,11 @@ namespace Nitrocid.Tests.Misc.Reflection
         public void TestSetPropertyValue()
         {
             PropertyManager.SetPropertyValue(nameof(TryToChangeIt), "Yes!", typeof(PropertyManagementTests));
-            string Value = Convert.ToString(PropertyManager.GetPropertyValue(nameof(TryToChangeIt), typeof(PropertyManagementTests)));
-            Value.ShouldBe("Yes!");
+            var Value = PropertyManager.GetPropertyValue(nameof(TryToChangeIt), typeof(PropertyManagementTests));
+            if (Value is string value)
+                value.ShouldBe("Yes!");
+            else
+                Assert.Fail("Can't set property value");
         }
 
         /// <summary>
@@ -98,7 +107,7 @@ namespace Nitrocid.Tests.Misc.Reflection
         public void TestGetConfigProperty()
         {
             var PropertyInfo = PropertyManager.GetProperty(nameof(KernelSaverConfig.MatrixBleedDelay));
-            PropertyInfo.Name.ShouldBe(nameof(KernelSaverConfig.MatrixBleedDelay));
+            PropertyInfo?.Name.ShouldBe(nameof(KernelSaverConfig.MatrixBleedDelay));
         }
 
         /// <summary>

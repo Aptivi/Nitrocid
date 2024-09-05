@@ -37,13 +37,14 @@ namespace Nitrocid.Extras.MailShell.Tools.Transfer
             try
             {
                 // Every 30 seconds, send a ping to IMAP server
-                while (((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).IsConnected)
+                var client = (ImapClient)((object[]?)MailShellCommon.Client?.ConnectionInstance ?? [])[0];
+                while (client.IsConnected)
                 {
                     Thread.Sleep(MailShellCommon.ImapPingInterval);
-                    if (((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).IsConnected)
+                    if (client.IsConnected)
                     {
-                        lock (((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).SyncRoot)
-                            ((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).NoOp();
+                        lock (client.SyncRoot)
+                            client.NoOp();
                         MailTransfer.PopulateMessages();
                     }
                     else
@@ -68,13 +69,14 @@ namespace Nitrocid.Extras.MailShell.Tools.Transfer
             try
             {
                 // Every 30 seconds, send a ping to SMTP server
-                while (((SmtpClient)((object[])MailShellCommon.Client.ConnectionInstance)[1]).IsConnected)
+                var client = (SmtpClient)((object[]?)MailShellCommon.Client?.ConnectionInstance ?? [])[1];
+                while (client.IsConnected)
                 {
                     Thread.Sleep(MailShellCommon.SmtpPingInterval);
-                    if (((SmtpClient)((object[])MailShellCommon.Client.ConnectionInstance)[1]).IsConnected)
+                    if (client.IsConnected)
                     {
-                        lock (((SmtpClient)((object[])MailShellCommon.Client.ConnectionInstance)[1]).SyncRoot)
-                            ((SmtpClient)((object[])MailShellCommon.Client.ConnectionInstance)[1]).NoOp();
+                        lock (client.SyncRoot)
+                            client.NoOp();
                     }
                     else
                     {

@@ -32,6 +32,8 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
+            if (GitShellCommon.Repository is null)
+                return 43;
             GitShellCommon.Repository.Network.Push(GitShellCommon.Repository.Branches[GitShellCommon.BranchName]);
             return 0;
         }

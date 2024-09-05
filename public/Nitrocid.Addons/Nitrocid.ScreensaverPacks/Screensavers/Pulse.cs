@@ -30,7 +30,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     public class PulseDisplay : BaseScreensaver, IScreensaver
     {
 
-        private Animations.Pulse.PulseSettings PulseSettingsInstance;
+        private Animations.Pulse.PulseSettings? PulseSettingsInstance;
 
         /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "Pulse";

@@ -180,10 +180,10 @@ namespace Nitrocid.Misc.Splash.Splashes
         public override string Report(int Progress, string ProgressReport, params object[] Vars) =>
             ReportProgress(Progress, ProgressReport, KernelColorType.Stage, Vars);
 
-        public override string ReportWarning(int Progress, string WarningReport, Exception ExceptionInfo, params object[] Vars) =>
+        public override string ReportWarning(int Progress, string WarningReport, Exception? ExceptionInfo, params object[] Vars) =>
             ReportProgress(Progress, WarningReport, KernelColorType.Warning, Vars);
 
-        public override string ReportError(int Progress, string ErrorReport, Exception ExceptionInfo, params object[] Vars) =>
+        public override string ReportError(int Progress, string ErrorReport, Exception? ExceptionInfo, params object[] Vars) =>
             ReportProgress(Progress, ErrorReport, KernelColorType.Error, Vars);
 
         private string ReportProgress(int Progress, string ProgressReport, KernelColorType colorType, params object[] Vars)

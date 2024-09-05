@@ -63,7 +63,7 @@ namespace Nitrocid.Extras.FtpShell.FTP.Commands
             }
             else
             {
-                foreach (string Directory in parameters.ArgumentsList)
+                foreach (string Directory in parameters.ArgumentsList ?? [])
                 {
                     string direct = FilesystemTools.NeutralizePath(Directory);
                     Listing.List(direct, ShowFileDetails, SuppressUnauthorizedMessage);

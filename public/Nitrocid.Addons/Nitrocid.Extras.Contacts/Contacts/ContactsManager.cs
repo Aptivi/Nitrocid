@@ -306,7 +306,7 @@ namespace Nitrocid.Extras.Contacts.Contacts
         /// Searches the contact database for the next card that the full name satisfies the cached expression.
         /// </summary>
         /// <returns>Next card that satisfies the cached expression</returns>
-        public static Card SearchNext() =>
+        public static Card? SearchNext() =>
             SearchNext(cachedSearchExpression);
 
         /// <summary>
@@ -314,7 +314,7 @@ namespace Nitrocid.Extras.Contacts.Contacts
         /// </summary>
         /// <param name="expression">Expression to search all cards</param>
         /// <returns>Next card that satisfies the expression</returns>
-        public static Card SearchNext(string expression)
+        public static Card? SearchNext(string expression)
         {
             try
             {
@@ -358,7 +358,7 @@ namespace Nitrocid.Extras.Contacts.Contacts
         /// Searches the contact database for the previous card that the full name satisfies the cached expression.
         /// </summary>
         /// <returns>Previous card that satisfies the cached expression</returns>
-        public static Card SearchPrevious() =>
+        public static Card? SearchPrevious() =>
             SearchPrevious(cachedSearchExpression);
 
         /// <summary>
@@ -366,7 +366,7 @@ namespace Nitrocid.Extras.Contacts.Contacts
         /// </summary>
         /// <param name="expression">Expression to search all cards</param>
         /// <returns>Previous card that satisfies the expression</returns>
-        public static Card SearchPrevious(string expression)
+        public static Card? SearchPrevious(string expression)
         {
             try
             {

@@ -29,7 +29,7 @@ namespace Nitrocid.Extras.BassBoom.Screensavers
     public class LyricsDisplay : BaseScreensaver, IScreensaver
     {
 
-        private Animations.Lyrics.LyricsSettings LyricsSettingsInstance;
+        private Animations.Lyrics.LyricsSettings? LyricsSettingsInstance;
 
         /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "Lyrics";

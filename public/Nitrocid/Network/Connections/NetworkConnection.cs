@@ -60,12 +60,12 @@ namespace Nitrocid.Network.Connections
             connectionIsInstance ?
             throw new KernelException(KernelExceptionType.NetworkConnection,
                 Translate.DoTranslation("This property is only valid for connections with threads. For instance connections, call the appropriate property on the instance itself instead of calling this property.")) :
-            ConnectionThread.IsAlive;
+            ConnectionThread?.IsAlive ?? false;
 
-        internal KernelThread ConnectionThread { get; }
-        internal object ConnectionInstance { get; }
+        internal KernelThread? ConnectionThread { get; }
+        internal object? ConnectionInstance { get; }
 
-        internal NetworkConnection(string connectionName, Uri connectionUri, string connectionType, KernelThread connectionThread, object connectionInstance, string connectionOriginalUrl)
+        internal NetworkConnection(string connectionName, Uri connectionUri, string connectionType, KernelThread? connectionThread, object? connectionInstance, string connectionOriginalUrl)
         {
             ConnectionName = connectionName;
             ConnectionUri = connectionUri;

@@ -106,7 +106,7 @@ namespace Nitrocid.Shell.ShellBase.Switches
         /// <param name="optionalizeLastRequiredArguments">Whether to make the last N required arguments optional. This is useful for some switches, like -list.</param>
         /// <param name="IsNumeric">Whether to make this switch only accept numbers</param>
         /// <param name="AcceptsValues">Does the switch accept values?</param>
-        public SwitchInfo(string Switch, string HelpDefinition, bool IsRequired = false, bool ArgumentsRequired = false, string[] conflictsWith = null, int optionalizeLastRequiredArguments = 0, bool AcceptsValues = true, bool IsNumeric = false)
+        public SwitchInfo(string Switch, string HelpDefinition, bool IsRequired = false, bool ArgumentsRequired = false, string[]? conflictsWith = null, int optionalizeLastRequiredArguments = 0, bool AcceptsValues = true, bool IsNumeric = false)
         {
             SwitchName = Switch;
             this.HelpDefinition = HelpDefinition;

@@ -264,7 +264,7 @@ namespace Nitrocid.Misc.Notifications
         /// </summary>
         /// <param name="obj">Notification object</param>
         /// <returns>True if there is a match; false otherwise.</returns>
-        public override bool Equals(object obj) =>
+        public override bool Equals(object? obj) =>
             Equals(obj as Notification);
 
         /// <summary>
@@ -272,7 +272,7 @@ namespace Nitrocid.Misc.Notifications
         /// </summary>
         /// <param name="other">Notification to compare</param>
         /// <returns>True if there is a match; false otherwise.</returns>
-        public bool Equals(Notification other)
+        public bool Equals(Notification? other)
         {
             return
                 other is not null &&
@@ -305,7 +305,7 @@ namespace Nitrocid.Misc.Notifications
         /// </summary>
         /// <param name="other">Notification to compare</param>
         /// <returns>True if there is a match; false otherwise.</returns>
-        public bool EqualsNoId(Notification other)
+        public bool EqualsNoId(Notification? other)
         {
             return
                 other is not null &&

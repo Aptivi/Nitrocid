@@ -42,8 +42,10 @@ namespace Nitrocid.Extras.HttpShell.Tools
         /// <param name="ContentUri">Content URI (starts after the HTTP hostname, e.g. "filetodelete.html")</param>
         public async static Task HttpDelete(string ContentUri)
         {
+            var client = (HttpClient?)HTTPShellCommon.ClientHTTP?.ConnectionInstance ??
+                throw new KernelException(KernelExceptionType.HTTPShell, Translate.DoTranslation("Client is not connected yet."));
             var TargetUri = new Uri(NeutralizeUri(ContentUri));
-            await ((HttpClient)HTTPShellCommon.ClientHTTP.ConnectionInstance).DeleteAsync(TargetUri);
+            await client.DeleteAsync(TargetUri);
         }
 
         /// <summary>
@@ -52,8 +54,10 @@ namespace Nitrocid.Extras.HttpShell.Tools
         /// <param name="ContentUri">Content URI (starts after the HTTP hostname, e.g. "filetoget.html")</param>
         public async static Task<string> HttpGetString(string ContentUri)
         {
+            var client = (HttpClient?)HTTPShellCommon.ClientHTTP?.ConnectionInstance ??
+                throw new KernelException(KernelExceptionType.HTTPShell, Translate.DoTranslation("Client is not connected yet."));
             var TargetUri = new Uri(NeutralizeUri(ContentUri));
-            return await ((HttpClient)HTTPShellCommon.ClientHTTP.ConnectionInstance).GetStringAsync(TargetUri);
+            return await client.GetStringAsync(TargetUri);
         }
 
         /// <summary>
@@ -62,8 +66,10 @@ namespace Nitrocid.Extras.HttpShell.Tools
         /// <param name="ContentUri">Content URI (starts after the HTTP hostname, e.g. "filetoget.html")</param>
         public async static Task<HttpResponseMessage> HttpGet(string ContentUri)
         {
+            var client = (HttpClient?)HTTPShellCommon.ClientHTTP?.ConnectionInstance ??
+                throw new KernelException(KernelExceptionType.HTTPShell, Translate.DoTranslation("Client is not connected yet."));
             var TargetUri = new Uri(NeutralizeUri(ContentUri));
-            return await ((HttpClient)HTTPShellCommon.ClientHTTP.ConnectionInstance).GetAsync(TargetUri);
+            return await client.GetAsync(TargetUri);
         }
 
         /// <summary>
@@ -73,9 +79,11 @@ namespace Nitrocid.Extras.HttpShell.Tools
         /// <param name="ContentString">String to put to the HTTP server</param>
         public async static Task<HttpResponseMessage> HttpPutString(string ContentUri, string ContentString)
         {
+            var client = (HttpClient?)HTTPShellCommon.ClientHTTP?.ConnectionInstance ??
+                throw new KernelException(KernelExceptionType.HTTPShell, Translate.DoTranslation("Client is not connected yet."));
             var TargetUri = new Uri(NeutralizeUri(ContentUri));
             var stringContent = new StringContent(ContentString);
-            return await ((HttpClient)HTTPShellCommon.ClientHTTP.ConnectionInstance).PutAsync(TargetUri, stringContent);
+            return await client.PutAsync(TargetUri, stringContent);
         }
 
         /// <summary>
@@ -85,11 +93,13 @@ namespace Nitrocid.Extras.HttpShell.Tools
         /// <param name="ContentPath">Path to the file to open a stream and put it to the HTTP server</param>
         public async static Task<HttpResponseMessage> HttpPutFile(string ContentUri, string ContentPath)
         {
+            var client = (HttpClient?)HTTPShellCommon.ClientHTTP?.ConnectionInstance ??
+                throw new KernelException(KernelExceptionType.HTTPShell, Translate.DoTranslation("Client is not connected yet."));
             ContentPath = FilesystemTools.NeutralizePath(ContentPath);
             var TargetUri = new Uri(NeutralizeUri(ContentUri));
             var TargetStream = new FileStream(ContentPath, FileMode.Open, FileAccess.Read);
             var stringContent = new StreamContent(TargetStream);
-            return await ((HttpClient)HTTPShellCommon.ClientHTTP.ConnectionInstance).PutAsync(TargetUri, stringContent);
+            return await client.PutAsync(TargetUri, stringContent);
         }
 
         /// <summary>
@@ -99,9 +109,11 @@ namespace Nitrocid.Extras.HttpShell.Tools
         /// <param name="ContentString">String to post to the HTTP server</param>
         public async static Task<HttpResponseMessage> HttpPostString(string ContentUri, string ContentString)
         {
+            var client = (HttpClient?)HTTPShellCommon.ClientHTTP?.ConnectionInstance ??
+                throw new KernelException(KernelExceptionType.HTTPShell, Translate.DoTranslation("Client is not connected yet."));
             var TargetUri = new Uri(NeutralizeUri(ContentUri));
             var stringContent = new StringContent(ContentString);
-            return await ((HttpClient)HTTPShellCommon.ClientHTTP.ConnectionInstance).PostAsync(TargetUri, stringContent);
+            return await client.PostAsync(TargetUri, stringContent);
         }
 
         /// <summary>
@@ -111,11 +123,13 @@ namespace Nitrocid.Extras.HttpShell.Tools
         /// <param name="ContentPath">Path to the file to open a stream and post it to the HTTP server</param>
         public async static Task<HttpResponseMessage> HttpPostFile(string ContentUri, string ContentPath)
         {
+            var client = (HttpClient?)HTTPShellCommon.ClientHTTP?.ConnectionInstance ??
+                throw new KernelException(KernelExceptionType.HTTPShell, Translate.DoTranslation("Client is not connected yet."));
             ContentPath = FilesystemTools.NeutralizePath(ContentPath);
             var TargetUri = new Uri(NeutralizeUri(ContentUri));
             var TargetStream = new FileStream(ContentPath, FileMode.Open, FileAccess.Read);
             var stringContent = new StreamContent(TargetStream);
-            return await ((HttpClient)HTTPShellCommon.ClientHTTP.ConnectionInstance).PostAsync(TargetUri, stringContent);
+            return await client.PostAsync(TargetUri, stringContent);
         }
 
         /// <summary>
@@ -125,8 +139,10 @@ namespace Nitrocid.Extras.HttpShell.Tools
         /// <param name="value">Value to assign to this key</param>
         public static void HttpAddHeader(string key, string value)
         {
+            var client = (HttpClient?)HTTPShellCommon.ClientHTTP?.ConnectionInstance ??
+                throw new KernelException(KernelExceptionType.HTTPShell, Translate.DoTranslation("Client is not connected yet."));
             if (!HttpHeaderExists(key))
-                ((HttpClient)HTTPShellCommon.ClientHTTP.ConnectionInstance).DefaultRequestHeaders.Add(key, value);
+                client.DefaultRequestHeaders.Add(key, value);
             else
                 throw new KernelException(KernelExceptionType.HTTPNetwork, Translate.DoTranslation("Adding header that already exists."));
         }
@@ -137,8 +153,10 @@ namespace Nitrocid.Extras.HttpShell.Tools
         /// <param name="key">Key to remove</param>
         public static void HttpRemoveHeader(string key)
         {
+            var client = (HttpClient?)HTTPShellCommon.ClientHTTP?.ConnectionInstance ??
+                throw new KernelException(KernelExceptionType.HTTPShell, Translate.DoTranslation("Client is not connected yet."));
             if (HttpHeaderExists(key))
-                ((HttpClient)HTTPShellCommon.ClientHTTP.ConnectionInstance).DefaultRequestHeaders.Remove(key);
+                client.DefaultRequestHeaders.Remove(key);
             else
                 throw new KernelException(KernelExceptionType.HTTPNetwork, Translate.DoTranslation("Removing header that doesn't exist."));
         }
@@ -167,7 +185,9 @@ namespace Nitrocid.Extras.HttpShell.Tools
         /// <returns>An array of tuples containing keys and values from the HTTP request headers</returns>
         public static (string, string)[] HttpListHeaders()
         {
-            var headers = ((HttpClient)HTTPShellCommon.ClientHTTP.ConnectionInstance).DefaultRequestHeaders;
+            var client = (HttpClient?)HTTPShellCommon.ClientHTTP?.ConnectionInstance ??
+                throw new KernelException(KernelExceptionType.HTTPShell, Translate.DoTranslation("Client is not connected yet."));
+            var headers = client.DefaultRequestHeaders;
             var finalHeaders = new List<(string, string)>();
 
             // Enumerate through headers to convert them to tuples
@@ -185,8 +205,12 @@ namespace Nitrocid.Extras.HttpShell.Tools
         /// </summary>
         /// <param name="key">Key to query</param>
         /// <returns>True if found; false otherwise.</returns>
-        public static bool HttpHeaderExists(string key) =>
-            ((HttpClient)HTTPShellCommon.ClientHTTP.ConnectionInstance).DefaultRequestHeaders.Contains(key);
+        public static bool HttpHeaderExists(string key)
+        {
+            var client = (HttpClient?)HTTPShellCommon.ClientHTTP?.ConnectionInstance ??
+                throw new KernelException(KernelExceptionType.HTTPShell, Translate.DoTranslation("Client is not connected yet."));
+            return client.DefaultRequestHeaders.Contains(key);
+        }
 
         /// <summary>
         /// Gets the current user agent
@@ -197,7 +221,9 @@ namespace Nitrocid.Extras.HttpShell.Tools
         /// </returns>
         public static string HttpGetCurrentUserAgent()
         {
-            var userAgents = ((HttpClient)HTTPShellCommon.ClientHTTP.ConnectionInstance).DefaultRequestHeaders.UserAgent;
+            var client = (HttpClient?)HTTPShellCommon.ClientHTTP?.ConnectionInstance ??
+                throw new KernelException(KernelExceptionType.HTTPShell, Translate.DoTranslation("Client is not connected yet."));
+            var userAgents = client.DefaultRequestHeaders.UserAgent;
             if (userAgents.Count > 0)
                 // We don't support more than one UserAgent value, so return the last one and ignore the rest
                 return userAgents.ElementAt(userAgents.Count - 1).ToString();

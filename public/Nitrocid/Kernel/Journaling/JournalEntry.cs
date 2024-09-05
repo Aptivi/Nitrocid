@@ -27,13 +27,13 @@ namespace Nitrocid.Kernel.Journaling
     public class JournalEntry
     {
         [JsonProperty(PropertyName = "date")]
-        internal string date;
+        internal string date = string.Empty;
         [JsonProperty(PropertyName = "time")]
-        internal string time;
+        internal string time = string.Empty;
         [JsonProperty(PropertyName = "status")]
-        internal string status;
+        internal string status = string.Empty;
         [JsonProperty(PropertyName = "message")]
-        internal string message;
+        internal string message = string.Empty;
 
         /// <summary>
         /// Specifies the date of the journal

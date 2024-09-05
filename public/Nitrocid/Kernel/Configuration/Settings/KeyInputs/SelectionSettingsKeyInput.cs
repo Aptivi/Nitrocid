@@ -32,27 +32,30 @@ using System.Reflection;
 using Terminaux.Reader;
 using Terminaux.Inputs;
 using Terminaux.Inputs.Styles;
+using Nitrocid.Kernel.Exceptions;
 
 namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
 {
     internal class SelectionSettingsKeyInput : ISettingsKeyInput
     {
         bool SelectionEnum;
-        string SelectionEnumAssembly;
+        string? SelectionEnumAssembly;
         bool SelectionEnumInternal;
         bool SelectionFunctionDict;
-        string ListFunctionName;
+        string? ListFunctionName;
         bool SelectionEnumZeroBased;
-        Type SelectionEnumType = default;
-        IEnumerable<object> SelectFrom;
-        string[] selectFallbacks;
-        object Selections;
+        Type? SelectionEnumType = default;
+        IEnumerable<object>? SelectFrom;
+        string[]? selectFallbacks;
+        object? Selections;
 
-        public object PromptForSet(SettingsKey key, object KeyDefaultValue, out bool bail)
+        public object? PromptForSet(SettingsKey key, object? KeyDefaultValue, out bool bail)
         {
             PopulateInfo(key);
 
             // Populate items
+            if (SelectFrom is null)
+                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("There is nothing to select from."));
             int MaxKeyOptions = SelectFrom.Count();
             var items = new List<(string, string)>();
             var altItems = new List<(string, string)>()
@@ -64,7 +67,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             int itemCount = 1;
             foreach (var item in SelectFrom)
             {
-                items.Add(($"{itemCount}", item.ToString()));
+                items.Add(($"{itemCount}", item.ToString() ?? ""));
                 itemCount++;
             }
 
@@ -79,9 +82,11 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             return Answer;
         }
 
-        public object TranslateStringValue(SettingsKey key, string value)
+        public object? TranslateStringValue(SettingsKey key, string value)
         {
             PopulateInfo(key);
+            if (SelectFrom is null)
+                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("There is nothing to select from."));
 
             if (string.IsNullOrEmpty(value))
                 return 0;
@@ -90,20 +95,24 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             return 0;
         }
 
-        public object TranslateStringValueWithDefault(SettingsKey key, string value, object KeyDefaultValue)
+        public object? TranslateStringValueWithDefault(SettingsKey key, string value, object? KeyDefaultValue)
         {
             PopulateInfo(key);
+            if (SelectFrom is null)
+                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("There is nothing to select from."));
 
             if (string.IsNullOrEmpty(value))
-                return (int)KeyDefaultValue;
+                return (int?)KeyDefaultValue;
             if (int.TryParse(value, out int answer))
-                return answer > 0 && answer <= SelectFrom.Count() ? answer : (int)KeyDefaultValue;
-            return (int)KeyDefaultValue;
+                return answer > 0 && answer <= SelectFrom.Count() ? answer : (int?)KeyDefaultValue;
+            return (int?)KeyDefaultValue;
         }
 
-        public void SetValue(SettingsKey key, object value, BaseKernelConfig configType)
+        public void SetValue(SettingsKey key, object? value, BaseKernelConfig configType)
         {
             PopulateInfo(key);
+            if (SelectFrom is null)
+                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("There is nothing to select from."));
 
             // We're dealing with selection
             DebugWriter.WriteDebug(DebugLevel.I, "Answer is numeric and key is of the selection type.");
@@ -129,11 +138,11 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
                 }
                 else if (AnswerInt <= MaxKeyOptions)
                 {
-                    object FinalValue;
+                    object? FinalValue;
                     DebugWriter.WriteDebug(DebugLevel.I, "Setting variable {0} to {1}...", key.Variable, AnswerInt);
                     FinalValue = SelectFrom.ElementAtOrDefault(AnswerInt - 1);
-                    if (SelectionEnum)
-                        FinalValue = Enum.Parse(SelectionEnumType, FinalValue.ToString());
+                    if (SelectionEnum && SelectionEnumType is not null)
+                        FinalValue = Enum.Parse(SelectionEnumType, FinalValue?.ToString() ?? "");
 
                     // Now, set the value
                     SettingsAppTools.SetPropertyValue(key.Variable, FinalValue, configType);
@@ -180,13 +189,15 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
                 if (SelectionEnumInternal)
                 {
                     // Apparently, we need to have a full assembly name for getting types.
-                    SelectionEnumType = Type.GetType($"{KernelMain.rootNameSpace}.{enumeration}, {Assembly.GetExecutingAssembly().FullName}");
+                    SelectionEnumType = Type.GetType($"{KernelMain.rootNameSpace}.{enumeration}, {Assembly.GetExecutingAssembly().FullName}") ??
+                        throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't get type from") + $" {enumeration}");
                     SelectFrom = SelectionEnumType.GetEnumNames();
                     Selections = SelectionEnumType.GetEnumValues();
                 }
                 else
                 {
-                    SelectionEnumType = Type.GetType(enumeration + ", " + SelectionEnumAssembly);
+                    SelectionEnumType = Type.GetType(enumeration + ", " + SelectionEnumAssembly) ??
+                        throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't get type from") + $" {enumeration}");
                     SelectFrom = SelectionEnumType.GetEnumNames();
                     Selections = SelectionEnumType.GetEnumValues();
                 }

@@ -28,7 +28,7 @@ namespace Nitrocid.Tests.Arguments
     [TestClass]
     public class ArgumentInfoTests
     {
-        private static ArgumentExecutor ArgumentInstance;
+        private static ArgumentExecutor? ArgumentInstance;
 
         /// <summary>
         /// Tests initializing ArgumentInfo instance from a command line argument
@@ -75,7 +75,7 @@ namespace Nitrocid.Tests.Arguments
         public void TestInitializedArgumentExecution()
         {
             var parameters = new ArgumentParameters("", [], "", [], [], "test");
-            Should.NotThrow(new Action(() => ArgumentInstance.Execute(parameters)));
+            Should.NotThrow(new Action(() => ArgumentInstance?.Execute(parameters)));
         }
 
         /// <summary>
@@ -86,7 +86,7 @@ namespace Nitrocid.Tests.Arguments
         public void TestInitializedArgumentExecutionWithArguments()
         {
             var parameters = new ArgumentParameters("Hello World", ["Hello", "World"], "Hello World", ["Hello", "World"], [], "test");
-            Should.NotThrow(new Action(() => ArgumentInstance.Execute(parameters)));
+            Should.NotThrow(new Action(() => ArgumentInstance?.Execute(parameters)));
         }
 
         /// <summary>
@@ -97,7 +97,7 @@ namespace Nitrocid.Tests.Arguments
         public void TestInitializedArgumentExecutionWithSwitches()
         {
             var parameters = new ArgumentParameters("", [], "-s", [], ["-s"], "test");
-            Should.NotThrow(new Action(() => ArgumentInstance.Execute(parameters)));
+            Should.NotThrow(new Action(() => ArgumentInstance?.Execute(parameters)));
         }
 
         /// <summary>
@@ -108,7 +108,7 @@ namespace Nitrocid.Tests.Arguments
         public void TestInitializedArgumentExecutionWithArgumentsAndSwitches()
         {
             var parameters = new ArgumentParameters("Hello!", ["Hello!"], "-s Hello!", ["Hello!"], ["-s"], "test");
-            Should.NotThrow(new Action(() => ArgumentInstance.Execute(parameters)));
+            Should.NotThrow(new Action(() => ArgumentInstance?.Execute(parameters)));
         }
     }
 }

@@ -449,7 +449,7 @@ namespace Nitrocid.Languages
             return loc.Localizations;
         }
 
-        internal static void AddBaseLanguage(LanguageMetadata Language, bool useLocalizationObject = false, string[] localizations = null)
+        internal static void AddBaseLanguage(LanguageMetadata Language, bool useLocalizationObject = false, string[]? localizations = null)
         {
             string shortName = Language.ThreeLetterLanguageName;
             string LanguageFullName = Language.Name;

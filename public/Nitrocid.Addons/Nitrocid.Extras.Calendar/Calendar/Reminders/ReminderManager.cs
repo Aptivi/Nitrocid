@@ -112,8 +112,11 @@ namespace Nitrocid.Extras.Calendar.Calendar.Reminders
         /// Adds the reminder to the list (calendar will mark the day with parentheses)
         /// </summary>
         /// <param name="Reminder">Reminder info instance</param>
-        internal static void AddReminder(ReminderInfo Reminder) =>
-            Reminders.Add(Reminder);
+        internal static void AddReminder(ReminderInfo? Reminder)
+        {
+            if (Reminder is not null)
+                Reminders.Add(Reminder);
+        }
 
         /// <summary>
         /// Removes the reminder from the list
@@ -168,7 +171,7 @@ namespace Nitrocid.Extras.Calendar.Calendar.Reminders
         /// </summary>
         /// <param name="ReminderFile">Reminder file</param>
         /// <returns>A converted reminder info instance. null if unsuccessful.</returns>
-        public static ReminderInfo LoadReminder(string ReminderFile)
+        public static ReminderInfo? LoadReminder(string ReminderFile)
         {
             lock (ReminderManagerLock)
             {
@@ -180,7 +183,7 @@ namespace Nitrocid.Extras.Calendar.Calendar.Reminders
                 if (Checking.FileExists(ReminderFile))
                 {
                     var reminderContents = Reading.ReadContentsText(ReminderFile);
-                    ReminderInfo ConvertedReminder = JsonConvert.DeserializeObject<ReminderInfo>(reminderContents);
+                    ReminderInfo? ConvertedReminder = JsonConvert.DeserializeObject<ReminderInfo>(reminderContents);
                     DebugWriter.WriteDebug(DebugLevel.I, "Converted!");
                     return ConvertedReminder;
                 }

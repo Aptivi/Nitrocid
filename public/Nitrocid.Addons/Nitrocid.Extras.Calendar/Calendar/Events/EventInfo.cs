@@ -39,7 +39,7 @@ namespace Nitrocid.Extras.Calendar.Calendar.Events
         [JsonProperty(nameof(EventDate))]
         private DateTime eventDate;
         [JsonProperty(nameof(EventTitle))]
-        private string eventTitle;
+        private string eventTitle = "";
         [JsonProperty(nameof(IsYearly))]
         private bool isYearly;
         [JsonProperty(nameof(StartMonth))]
@@ -51,7 +51,7 @@ namespace Nitrocid.Extras.Calendar.Calendar.Events
         [JsonProperty(nameof(EndDay))]
         private int endDay;
         [JsonProperty(nameof(Calendar))]
-        private string calendar;
+        private string calendar = "";
 
         [JsonIgnore]
         private readonly int origStartMonth;

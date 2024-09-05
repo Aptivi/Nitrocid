@@ -38,7 +38,10 @@ namespace Nitrocid.Extras.FtpShell.FTP.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             TextWriterColor.Write("<<< C: {0}", parameters.ArgumentsText);
-            var ExecutedReply = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).Execute(parameters.ArgumentsText);
+            var client = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance;
+            if (client is null)
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.FTPShell);
+            var ExecutedReply = client.Execute(parameters.ArgumentsText);
             if (ExecutedReply.Success)
             {
                 TextWriters.Write(">>> [{0}] M: {1}", true, KernelColorType.Success, ExecutedReply.Code, ExecutedReply.Message);

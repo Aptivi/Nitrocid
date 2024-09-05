@@ -35,6 +35,8 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
         public bool Analyze(Document document)
         {
             var tree = document.GetSyntaxTreeAsync().Result;
+            if (tree is null)
+                return false;
             var syntaxNodeNodes = tree.GetRoot().DescendantNodesAndSelf().OfType<SyntaxNode>().ToList();
             bool found = false;
             foreach (var syntaxNode in syntaxNodeNodes)
@@ -66,6 +68,8 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
         public async Task SuggestAsync(Document document, CancellationToken cancellationToken = default)
         {
             var tree = document.GetSyntaxTreeAsync(cancellationToken).Result;
+            if (tree is null)
+                return;
             var syntaxNodeNodes = tree.GetRoot(cancellationToken).DescendantNodesAndSelf().OfType<SyntaxNode>().ToList();
             foreach (var syntaxNode in syntaxNodeNodes)
             {
@@ -81,21 +85,23 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                     if (idName.Identifier.Text != nameof(Console.ForegroundColor))
                         continue;
                     var maeSyntax = SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, classSyntax, methodSyntax);
-                    var parentSyntax = (AssignmentExpressionSyntax)exp.Parent;
+                    var parentSyntax = (AssignmentExpressionSyntax?)exp.Parent;
+                    if (parentSyntax is null)
+                        return;
                     var valueSyntax = SyntaxFactory.Argument(parentSyntax.Right.ReplaceNode(((MemberAccessExpressionSyntax)parentSyntax.Right).Expression, SyntaxFactory.IdentifierName("ConsoleColors")));
                     var valuesSyntax = SyntaxFactory.ArgumentList().AddArguments(valueSyntax);
                     var resultSyntax = SyntaxFactory.InvocationExpression(maeSyntax, valuesSyntax);
 
                     // Actually replace
                     var node = await document.GetSyntaxRootAsync(cancellationToken);
-                    var finalNode = node.ReplaceNode(parentSyntax, resultSyntax);
+                    var finalNode = node?.ReplaceNode(parentSyntax, resultSyntax);
                     TextWriterColor.Write("Here's what the replacement would look like (with no Roslyn trivia):", true, ConsoleColors.Yellow);
                     TextWriterColor.Write($"  - {exp}", true, ConsoleColors.Red);
                     TextWriterColor.Write($"  + {resultSyntax.ToFullString()}", true, ConsoleColors.Green);
 
                     // Check the imports
                     var compilation = finalNode as CompilationUnitSyntax;
-                    if (compilation?.Usings.Any(u => u.Name.ToString() == $"{AnalysisTools.rootNameSpace}.ConsoleBase.Colors") == false)
+                    if (compilation?.Usings.Any(u => u.Name?.ToString() == $"{AnalysisTools.rootNameSpace}.ConsoleBase.Colors") == false)
                     {
                         var name = SyntaxFactory.QualifiedName(
                             SyntaxFactory.QualifiedName(
@@ -106,7 +112,7 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                         TextWriterColor.Write("Additionally, the suggested fix will add the following using statements:", true, ConsoleColors.Yellow);
                         TextWriterColor.Write($"  + {directive.ToFullString()}", true, ConsoleColors.Green);
                     }
-                    if (compilation?.Usings.Any(u => u.Name.ToString() == "Terminaux.Colors") == false)
+                    if (compilation?.Usings.Any(u => u.Name?.ToString() == "Terminaux.Colors") == false)
                     {
                         var name = SyntaxFactory.QualifiedName(
                             SyntaxFactory.IdentifierName("Terminaux"),

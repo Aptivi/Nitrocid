@@ -29,13 +29,13 @@ namespace Nitrocid.Kernel.Configuration.Settings
     public class SettingsEntry
     {
         [JsonProperty(nameof(Name))]
-        internal string name;
+        internal string name = "";
         [JsonProperty(nameof(Desc))]
-        internal string desc;
+        internal string desc = "";
         [JsonProperty(nameof(DisplayAs))]
-        internal string displayAs;
+        internal string displayAs = "";
         [JsonProperty(nameof(Keys))]
-        internal SettingsKey[] keys;
+        internal SettingsKey[]? keys;
 
         /// <summary>
         /// Settings entry name

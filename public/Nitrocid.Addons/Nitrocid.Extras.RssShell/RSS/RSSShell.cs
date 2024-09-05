@@ -29,6 +29,7 @@ using Nitrocid.ConsoleBase.Colors;
 using Textify.General;
 using Nitrocid.Network.SpeedDial;
 using Nitrocid.Network.Connections;
+using Nitrocid.Kernel.Exceptions;
 
 namespace Nitrocid.Extras.RssShell.RSS
 {
@@ -51,7 +52,8 @@ namespace Nitrocid.Extras.RssShell.RSS
         {
             // Parse shell arguments
             NetworkConnection rssConnection = (NetworkConnection)ShellArgs[0];
-            RSSFeed rssFeed = (RSSFeed)rssConnection.ConnectionInstance;
+            RSSFeed? rssFeed = (RSSFeed?)rssConnection.ConnectionInstance ??
+                throw new KernelException(KernelExceptionType.RSSShell, Translate.DoTranslation("The client is not populated."));
             RSSShellCommon.feedInstance = rssFeed;
             RSSShellCommon.rssFeedLink = rssFeed.FeedUrl;
 
@@ -80,7 +82,7 @@ namespace Nitrocid.Extras.RssShell.RSS
                 catch (Exception ex)
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
-                    TextWriters.Write(Translate.DoTranslation("There was an error in the shell.") + CharManager.NewLine + "Error {0}: {1}", true, KernelColorType.Error, ex.GetType().FullName, ex.Message);
+                    TextWriters.Write(Translate.DoTranslation("There was an error in the shell.") + CharManager.NewLine + "Error {0}: {1}", true, KernelColorType.Error, ex.GetType().FullName ?? "<null>", ex.Message);
                     continue;
                 }
 

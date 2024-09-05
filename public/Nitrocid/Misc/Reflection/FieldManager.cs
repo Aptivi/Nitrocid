@@ -37,7 +37,7 @@ namespace Nitrocid.Misc.Reflection
         /// </summary>
         /// <param name="Variable">Field name. Use operator NameOf to get name.</param>
         /// <param name="VariableValue">New value</param>
-        public static void SetFieldValue(string Variable, object VariableValue) =>
+        public static void SetFieldValue(string Variable, object? VariableValue) =>
             SetFieldValue(Variable, VariableValue, null);
 
         /// <summary>
@@ -46,10 +46,10 @@ namespace Nitrocid.Misc.Reflection
         /// <param name="Variable">Field name. Use operator NameOf to get name.</param>
         /// <param name="VariableValue">New value</param>
         /// <param name="VariableType">Field type</param>
-        public static void SetFieldValue(string Variable, object VariableValue, Type VariableType)
+        public static void SetFieldValue(string Variable, object? VariableValue, Type? VariableType)
         {
             // Get field for specified variable
-            FieldInfo TargetField;
+            FieldInfo? TargetField;
             if (VariableType is not null)
                 TargetField = GetField(Variable, VariableType);
             else
@@ -78,7 +78,7 @@ namespace Nitrocid.Misc.Reflection
         /// <param name="instance">Instance class to make changes on</param>
         /// <param name="Variable">Field name. Use operator NameOf to get name.</param>
         /// <param name="VariableValue">New value</param>
-        public static void SetFieldValueInstance<T>(T instance, string Variable, object VariableValue) =>
+        public static void SetFieldValueInstance<T>(T instance, string Variable, object? VariableValue) =>
             SetFieldValueInstance(instance, Variable, VariableValue, null);
 
         /// <summary>
@@ -88,10 +88,10 @@ namespace Nitrocid.Misc.Reflection
         /// <param name="Variable">Field name. Use operator NameOf to get name.</param>
         /// <param name="VariableValue">New value</param>
         /// <param name="VariableType">Field type</param>
-        public static void SetFieldValueInstance<T>(T instance, string Variable, object VariableValue, Type VariableType)
+        public static void SetFieldValueInstance<T>(T instance, string Variable, object? VariableValue, Type? VariableType)
         {
             // Get field for specified variable
-            FieldInfo TargetField;
+            FieldInfo? TargetField;
             if (VariableType is not null)
                 TargetField = GetField(Variable, VariableType);
             else
@@ -121,10 +121,10 @@ namespace Nitrocid.Misc.Reflection
         /// <param name="Variable">Field name. Use operator NameOf to get name.</param>
         /// <param name="VariableValue">New value</param>
         /// <param name="VariableType">Field type</param>
-        public static void SetFieldValueInstanceExplicit(object instance, string Variable, object VariableValue, Type VariableType)
+        public static void SetFieldValueInstanceExplicit(object instance, string Variable, object? VariableValue, Type? VariableType)
         {
             // Get field for specified variable
-            FieldInfo TargetField = default;
+            FieldInfo? TargetField = default;
             if (VariableType is not null)
                 TargetField = GetField(Variable, VariableType);
 
@@ -150,7 +150,7 @@ namespace Nitrocid.Misc.Reflection
         /// </summary>
         /// <param name="Variable">Field name. Use operator NameOf to get name.</param>
         /// <returns>Value of a field</returns>
-        public static object GetFieldValue(string Variable) =>
+        public static object? GetFieldValue(string Variable) =>
             GetFieldValue(Variable, null);
 
         /// <summary>
@@ -160,10 +160,10 @@ namespace Nitrocid.Misc.Reflection
         /// <param name="VariableType">Field type</param>
         /// <param name="UseGeneral">Whether to use the general kernel types</param>
         /// <returns>Value of a field</returns>
-        public static object GetFieldValue(string Variable, Type VariableType, bool UseGeneral = false)
+        public static object? GetFieldValue(string Variable, Type? VariableType, bool UseGeneral = false)
         {
             // Get field for specified variable
-            FieldInfo TargetField;
+            FieldInfo? TargetField;
             if (VariableType is not null)
                 TargetField = GetField(Variable, VariableType);
             else if (UseGeneral)
@@ -194,7 +194,7 @@ namespace Nitrocid.Misc.Reflection
         /// <param name="instance">Instance class to fetch value from</param>
         /// <param name="Variable">Field name. Use operator NameOf to get name.</param>
         /// <returns>Value of a field</returns>
-        public static object GetFieldValueInstance<T>(T instance, string Variable) =>
+        public static object? GetFieldValueInstance<T>(T instance, string Variable) =>
             GetFieldValueInstance(instance, Variable, null);
 
         /// <summary>
@@ -204,18 +204,14 @@ namespace Nitrocid.Misc.Reflection
         /// <param name="Variable">Field name. Use operator NameOf to get name.</param>
         /// <param name="VariableType">Field type</param>
         /// <returns>Value of a field</returns>
-        public static object GetFieldValueInstance<T>(T instance, string Variable, Type VariableType)
+        public static object? GetFieldValueInstance<T>(T instance, string Variable, Type? VariableType)
         {
             // Get field for specified variable
-            FieldInfo TargetField;
+            FieldInfo? TargetField;
             if (VariableType is not null)
-            {
                 TargetField = GetField(Variable, VariableType);
-            }
             else
-            {
                 TargetField = GetField(Variable);
-            }
 
             // Get the variable if found
             if (TargetField is not null)
@@ -241,15 +237,15 @@ namespace Nitrocid.Misc.Reflection
         /// <param name="Variable">Field name. Use operator NameOf to get name.</param>
         /// <param name="VariableType">Field type</param>
         /// <returns>Value of a field</returns>
-        public static object GetFieldValueInstanceExplicit(object instance, string Variable, Type VariableType)
+        public static object? GetFieldValueInstanceExplicit(object instance, string Variable, Type? VariableType)
         {
             // Get field for specified variable
-            FieldInfo TargetField = default;
+            FieldInfo? TargetField = default;
             if (VariableType is not null)
                 TargetField = GetField(Variable, VariableType);
 
             // Get the variable if found
-            if (TargetField is not null)
+            if (TargetField is not null && VariableType is not null)
             {
                 // The "obj" description says this: "The object whose field value will be returned."
                 // Apparently, GetValue works on modules if you specify a variable name as an object (first argument). Not only classes.
@@ -271,16 +267,14 @@ namespace Nitrocid.Misc.Reflection
         /// <param name="Variable">Field name. Use operator NameOf to get name.</param>
         /// <param name="Type">Field type</param>
         /// <returns>Field information</returns>
-        public static FieldInfo GetField(string Variable, Type Type)
+        public static FieldInfo? GetField(string Variable, Type Type)
         {
             // Get fields of specified type
             var FieldInstance = Type.GetField(Variable);
 
             // Check if any of them contains the specified variable
             if (FieldInstance is not null)
-            {
                 return FieldInstance;
-            }
             return null;
         }
 
@@ -289,10 +283,10 @@ namespace Nitrocid.Misc.Reflection
         /// </summary>
         /// <param name="Variable">Field name. Use operator NameOf to get name.</param>
         /// <returns>Field information</returns>
-        public static FieldInfo GetField(string Variable)
+        public static FieldInfo? GetField(string Variable)
         {
             Type[] PossibleTypes;
-            FieldInfo PossibleField;
+            FieldInfo? PossibleField;
 
             // Get types of possible flag locations
             PossibleTypes = ReflectionCommon.KernelConfigTypes;
@@ -312,10 +306,10 @@ namespace Nitrocid.Misc.Reflection
         /// </summary>
         /// <param name="Variable">Field name. Use operator NameOf to get name.</param>
         /// <returns>Field information</returns>
-        public static FieldInfo GetFieldGeneral(string Variable)
+        public static FieldInfo? GetFieldGeneral(string Variable)
         {
             Type[] PossibleTypes;
-            FieldInfo PossibleField;
+            FieldInfo? PossibleField;
 
             // Get types of possible flag locations
             PossibleTypes = ReflectionCommon.KernelTypes;
@@ -362,11 +356,11 @@ namespace Nitrocid.Misc.Reflection
         /// </summary>
         /// <param name="VariableType">Variable type</param>
         /// <returns>Dictionary containing all fields</returns>
-        public static Dictionary<string, object> GetFields(Type VariableType)
+        public static Dictionary<string, object?> GetFields(Type VariableType)
         {
             // Get field for specified variable
             var Fields = VariableType.GetFields();
-            var FieldDict = new Dictionary<string, object>();
+            var FieldDict = new Dictionary<string, object?>();
 
             // Get the fields and get their values
             foreach (FieldInfo VarField in Fields)
@@ -391,11 +385,11 @@ namespace Nitrocid.Misc.Reflection
         /// <param name="VariableType">Variable type</param>
         /// <param name="instance">Instance</param>
         /// <returns>Dictionary containing all fields</returns>
-        public static Dictionary<string, object> GetFields<T>(T instance, Type VariableType)
+        public static Dictionary<string, object?> GetFields<T>(T instance, Type VariableType)
         {
             // Get field for specified variable
             var Fields = VariableType.GetFields();
-            var FieldDict = new Dictionary<string, object>();
+            var FieldDict = new Dictionary<string, object?>();
 
             // Get the fields and get their values
             foreach (FieldInfo VarField in Fields)
@@ -435,10 +429,10 @@ namespace Nitrocid.Misc.Reflection
         /// Gets all the fields from the type dynamically
         /// </summary>
         /// <returns>Dictionary containing all fields</returns>
-        public static Dictionary<string, object> GetAllFields()
+        public static Dictionary<string, object?> GetAllFields()
         {
             // Get field for specified variable
-            var FieldDict = new Dictionary<string, object>();
+            var FieldDict = new Dictionary<string, object?>();
             foreach (var type in ReflectionCommon.KernelTypes)
             {
                 try
@@ -486,10 +480,10 @@ namespace Nitrocid.Misc.Reflection
         /// </summary>
         /// <param name="instance">Instance</param>
         /// <returns>Dictionary containing all fields</returns>
-        public static Dictionary<string, object> GetAllFields<T>(T instance)
+        public static Dictionary<string, object?> GetAllFields<T>(T instance)
         {
             // Get field for specified variable
-            var FieldDict = new Dictionary<string, object>();
+            var FieldDict = new Dictionary<string, object?>();
             foreach (var type in ReflectionCommon.KernelTypes)
             {
                 try

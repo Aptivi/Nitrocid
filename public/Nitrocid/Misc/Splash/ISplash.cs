@@ -74,7 +74,7 @@ namespace Nitrocid.Misc.Splash
         /// <param name="ExceptionInfo">Exception that caused the warning</param>
         /// <param name="Vars">Variables to be formatted in the text</param>
         /// <returns>A VT sequence to render the progress warning</returns>
-        string ReportWarning(int Progress, string WarningReport, Exception ExceptionInfo, params object[] Vars);
+        string ReportWarning(int Progress, string WarningReport, Exception? ExceptionInfo, params object[] Vars);
         /// <summary>
         /// Report the progress error
         /// </summary>
@@ -83,7 +83,7 @@ namespace Nitrocid.Misc.Splash
         /// <param name="ExceptionInfo">Exception that caused the error</param>
         /// <param name="Vars">Variables to be formatted in the text</param>
         /// <returns>A VT sequence to render the progress error</returns>
-        string ReportError(int Progress, string ErrorReport, Exception ExceptionInfo, params object[] Vars);
+        string ReportError(int Progress, string ErrorReport, Exception? ExceptionInfo, params object[] Vars);
 
     }
 }

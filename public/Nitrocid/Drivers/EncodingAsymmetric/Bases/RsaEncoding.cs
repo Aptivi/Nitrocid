@@ -31,7 +31,7 @@ namespace Nitrocid.Drivers.EncodingAsymmetric.Bases
     /// </summary>
     public class RsaEncoding : BaseEncodingAsymmetricDriver, IEncodingAsymmetricDriver
     {
-        private RSA rsa;
+        private RSA? rsa;
 
         /// <inheritdoc/>
         public override string DriverName => "RSA";
@@ -40,7 +40,7 @@ namespace Nitrocid.Drivers.EncodingAsymmetric.Bases
         public override DriverTypes DriverType => DriverTypes.EncodingAsymmetric;
 
         /// <inheritdoc/>
-        public override object Instance =>
+        public override object? Instance =>
             rsa;
 
         /// <inheritdoc/>
@@ -52,6 +52,8 @@ namespace Nitrocid.Drivers.EncodingAsymmetric.Bases
         {
             if (string.IsNullOrEmpty(text))
                 throw new KernelException(KernelExceptionType.Encoding, Translate.DoTranslation("The text must not be empty."));
+            if (rsa is null)
+                throw new KernelException(KernelExceptionType.Encoding, Translate.DoTranslation("This encoding should be initialized."));
 
             // Try to get the encoded string
             byte[] textBytes = TextEncoding.Default.GetBytes(text);
@@ -64,6 +66,8 @@ namespace Nitrocid.Drivers.EncodingAsymmetric.Bases
         {
             if (encoded is null || encoded.Length <= 0)
                 throw new KernelException(KernelExceptionType.Encoding, Translate.DoTranslation("The encoded text must not be empty."));
+            if (rsa is null)
+                throw new KernelException(KernelExceptionType.Encoding, Translate.DoTranslation("This encoding should be initialized."));
 
             // Try to get the decoded string
             byte[] decrypted = rsa.Decrypt(encoded, RSAEncryptionPadding.Pkcs1);
@@ -78,6 +82,8 @@ namespace Nitrocid.Drivers.EncodingAsymmetric.Bases
                 throw new KernelException(KernelExceptionType.Encoding, Translate.DoTranslation("The path must not be empty."));
             if (!Checking.FileExists(path))
                 throw new KernelException(KernelExceptionType.Encoding, Translate.DoTranslation("File doesn't exist."));
+            if (rsa is null)
+                throw new KernelException(KernelExceptionType.Encoding, Translate.DoTranslation("This encoding should be initialized."));
 
             // Get the bytes of the file
             byte[] file = Reading.ReadAllBytes(path);
@@ -94,6 +100,8 @@ namespace Nitrocid.Drivers.EncodingAsymmetric.Bases
                 throw new KernelException(KernelExceptionType.Encoding, Translate.DoTranslation("The path must not be empty."));
             if (!Checking.FileExists(path))
                 throw new KernelException(KernelExceptionType.Encoding, Translate.DoTranslation("File doesn't exist."));
+            if (rsa is null)
+                throw new KernelException(KernelExceptionType.Encoding, Translate.DoTranslation("This encoding should be initialized."));
 
             // Get the bytes of the file
             byte[] encoded = Reading.ReadAllBytes(path);

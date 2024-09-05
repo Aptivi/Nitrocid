@@ -43,7 +43,7 @@ namespace Nitrocid.Extras.HttpShell.HTTP.Commands
                 string ResponseContent = Response.Content.ReadAsStringAsync().Result;
                 TextWriterColor.Write("[{0}] {1}", (int)Response.StatusCode, Response.StatusCode.ToString());
                 TextWriterColor.Write(ResponseContent);
-                TextWriterColor.Write(Response.ReasonPhrase);
+                TextWriterColor.Write(Response.ReasonPhrase ?? "");
                 return 0;
             }
             catch (AggregateException aex)

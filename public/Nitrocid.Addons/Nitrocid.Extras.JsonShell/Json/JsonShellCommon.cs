@@ -32,7 +32,7 @@ namespace Nitrocid.Extras.JsonShell.Json
     {
 
         internal static JToken FileTokenOrig = JToken.Parse("{}");
-        internal static FileStream FileStream;
+        internal static FileStream? FileStream;
         internal static KernelThread AutoSave = new("JSON Shell Autosave Thread", false, JsonTools.HandleAutoSaveJsonFile);
         internal static int autoSaveInterval = 60;
 

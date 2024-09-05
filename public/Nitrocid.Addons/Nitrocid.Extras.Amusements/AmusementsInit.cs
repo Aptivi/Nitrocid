@@ -184,11 +184,11 @@ namespace Nitrocid.Extras.Amusements
         internal static AmusementsConfig AmusementsConfig =>
             (AmusementsConfig)Config.baseConfigurations[nameof(AmusementsConfig)];
 
-        ReadOnlyDictionary<string, Delegate> IAddon.PubliclyAvailableFunctions => null;
+        ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => null;
 
-        ReadOnlyDictionary<string, PropertyInfo> IAddon.PubliclyAvailableProperties => null;
+        ReadOnlyDictionary<string, PropertyInfo>? IAddon.PubliclyAvailableProperties => null;
 
-        ReadOnlyDictionary<string, FieldInfo> IAddon.PubliclyAvailableFields => null;
+        ReadOnlyDictionary<string, FieldInfo>? IAddon.PubliclyAvailableFields => null;
 
         private readonly SplashInfo quote = new("Quote", new SplashQuote(), false);
 

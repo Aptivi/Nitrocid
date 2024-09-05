@@ -34,7 +34,7 @@ namespace Nitrocid.Extras.ColorConvert.Tools
         /// </summary>
         /// <param name="sourceModel"></param>
         /// <returns></returns>
-        public static Func<int, int, int, int, Color> GetColorFuncFromModel(string sourceModel)
+        public static Func<int, int, int, int, Color>? GetColorFuncFromModel(string sourceModel)
         {
             sourceModel = sourceModel.Trim().ToLower();
             if (string.IsNullOrEmpty(sourceModel))
@@ -61,7 +61,7 @@ namespace Nitrocid.Extras.ColorConvert.Tools
         /// </summary>
         /// <param name="sourceModel"></param>
         /// <returns></returns>
-        public static Func<string, BaseColorModel> GetConvertFuncFromSingleModel(string sourceModel)
+        public static Func<string, BaseColorModel>? GetConvertFuncFromSingleModel(string sourceModel)
         {
             sourceModel = sourceModel.Trim().ToLower();
             if (string.IsNullOrEmpty(sourceModel))
@@ -89,7 +89,7 @@ namespace Nitrocid.Extras.ColorConvert.Tools
         /// <param name="sourceModel"></param>
         /// <param name="targetModel"></param>
         /// <returns></returns>
-        public static Func<int, int, int, int, BaseColorModel> GetConvertFuncFromModel(string sourceModel, string targetModel)
+        public static Func<int, int, int, int, BaseColorModel>? GetConvertFuncFromModel(string sourceModel, string targetModel)
         {
             sourceModel = sourceModel.Trim().ToLower();
             targetModel = targetModel.Trim().ToLower();

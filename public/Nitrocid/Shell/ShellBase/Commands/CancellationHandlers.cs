@@ -50,7 +50,7 @@ namespace Nitrocid.Shell.ShellBase.Commands
         public static void InhibitCancel() =>
             canCancel = false;
 
-        internal static void CancelCommand(object sender, ConsoleCancelEventArgs e)
+        internal static void CancelCommand(object? sender, ConsoleCancelEventArgs e)
         {
             // We can't cancel in a situation where there are no shells.
             if (ShellManager.ShellStack.Count <= 0)

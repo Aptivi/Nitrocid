@@ -81,7 +81,8 @@ namespace Nitrocid.Extras.RssShell.Tools
         {
             try
             {
-                var OldFeedsList = new List<RSSArticle>(RSSShellCommon.RSSFeedInstance.FeedArticles);
+                var articles = RSSShellCommon.RSSFeedInstance?.FeedArticles ?? [];
+                var OldFeedsList = new List<RSSArticle>(articles);
                 List<RSSArticle> NewFeedsList;
                 while (RSSShellCommon.RSSFeedInstance is not null)
                 {
@@ -91,13 +92,13 @@ namespace Nitrocid.Extras.RssShell.Tools
                         RSSShellCommon.RSSFeedInstance.Refresh();
 
                         // Check for new feeds
-                        NewFeedsList = RSSShellCommon.RSSFeedInstance.FeedArticles.Except(OldFeedsList).ToList();
+                        NewFeedsList = articles.Except(OldFeedsList).ToList();
                         string OldFeedTitle = OldFeedsList.Count == 0 ? "" : OldFeedsList[0].ArticleTitle;
                         if (NewFeedsList.Count > 0 && NewFeedsList[0].ArticleTitle != OldFeedTitle)
                         {
                             // Update the list
-                            DebugWriter.WriteDebug(DebugLevel.W, "Feeds received! Recents count was {0}, Old count was {1}", RSSShellCommon.RSSFeedInstance.FeedArticles.Length, OldFeedsList.Count);
-                            OldFeedsList = new List<RSSArticle>(RSSShellCommon.RSSFeedInstance.FeedArticles);
+                            DebugWriter.WriteDebug(DebugLevel.W, "Feeds received! Recents count was {0}, Old count was {1}", articles.Length, OldFeedsList.Count);
+                            OldFeedsList = new List<RSSArticle>(articles);
                             foreach (RSSArticle NewFeed in NewFeedsList)
                             {
                                 var FeedNotif = new Notification(NewFeed.ArticleTitle, NewFeed.ArticleDescription, NotificationPriority.Low, NotificationType.Normal);
@@ -124,8 +125,9 @@ namespace Nitrocid.Extras.RssShell.Tools
         /// <returns>List of articles containing the phrase</returns>
         public static List<RSSArticle> SearchArticles(string phrase, bool searchTitle = true, bool searchDescription = false, bool caseSensitive = false)
         {
+            var articles = RSSShellCommon.RSSFeedInstance?.FeedArticles ?? [];
             var foundArticles = new List<RSSArticle>();
-            var feedArticles = RSSShellCommon.RSSFeedInstance.FeedArticles;
+            var feedArticles = articles;
 
             // If not searching title and description, assume that we're searching for title
             if (!searchTitle && !searchDescription)

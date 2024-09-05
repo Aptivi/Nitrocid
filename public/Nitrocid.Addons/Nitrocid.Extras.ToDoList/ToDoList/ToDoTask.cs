@@ -27,7 +27,7 @@ namespace Nitrocid.Extras.ToDoList.ToDoList
         /// <summary>
         /// Task name
         /// </summary>
-        public string TaskName { get; set; }
+        public string TaskName { get; set; } = "";
         /// <summary>
         /// Whether the task is done or not
         /// </summary>

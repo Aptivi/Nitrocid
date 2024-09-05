@@ -35,11 +35,11 @@ namespace Nitrocid.Extras.BassBoom.Player.Tools
         /// <summary>
         /// ID3v1 metadata
         /// </summary>
-        public Id3V1Metadata MetadataV1 { get; private set; }
+        public Id3V1Metadata? MetadataV1 { get; private set; }
         /// <summary>
         /// ID3v2 metadata
         /// </summary>
-        public Id3V2Metadata MetadataV2 { get; private set; }
+        public Id3V2Metadata? MetadataV2 { get; private set; }
         /// <summary>
         /// Radio station name
         /// </summary>
@@ -64,7 +64,7 @@ namespace Nitrocid.Extras.BassBoom.Player.Tools
         /// <summary>
         /// An instance of the music lyrics (if any)
         /// </summary>
-        public Lyric LyricInstance { get; private set; }
+        public Lyric? LyricInstance { get; private set; }
         /// <summary>
         /// Checks to see if this cached song info instance is a radio station or not
         /// </summary>
@@ -86,7 +86,7 @@ namespace Nitrocid.Extras.BassBoom.Player.Tools
         /// <param name="lyricInstance">An instance of the music lyrics (if any)</param>
         /// <param name="stationName">Radio station name</param>
         /// <param name="isRadioStation">Is this cached song info instance is a radio station or not?</param>
-        public CachedSongInfo(string musicPath, Id3V1Metadata metadataV1, Id3V2Metadata metadataV2, int duration, (long rate, int channels, int encoding) formatInfo, FrameInfo frameInfo, Lyric lyricInstance, string stationName, bool isRadioStation)
+        public CachedSongInfo(string musicPath, Id3V1Metadata? metadataV1, Id3V2Metadata? metadataV2, int duration, (long rate, int channels, int encoding) formatInfo, FrameInfo frameInfo, Lyric? lyricInstance, string stationName, bool isRadioStation)
         {
             MusicPath = musicPath;
             MetadataV1 = metadataV1;

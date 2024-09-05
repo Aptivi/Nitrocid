@@ -33,13 +33,13 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades.FacadeData
             try
             {
                 TextWriterColor.Write("Hello world!");
-                TextWriterColor.Write("- Writing from thread: {0} [{1}]", Thread.CurrentThread.Name, Environment.CurrentManagedThreadId);
+                TextWriterColor.Write("- Writing from thread: {0} [{1}]", Thread.CurrentThread.Name ?? "<null>", Environment.CurrentManagedThreadId);
                 while (true)
                     Thread.Sleep(1);
             }
             catch
             {
-                TextWriterColor.Write("- Goodbye from thread: {0} [{1}]", Thread.CurrentThread.Name, Environment.CurrentManagedThreadId);
+                TextWriterColor.Write("- Goodbye from thread: {0} [{1}]", Thread.CurrentThread.Name ?? "<null>", Environment.CurrentManagedThreadId);
             }
         }
     }

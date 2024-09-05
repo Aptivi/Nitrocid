@@ -25,7 +25,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
 {
     internal class PresetSettingsKeyInput : ISettingsKeyInput
     {
-        public object PromptForSet(SettingsKey key, object KeyDefaultValue, out bool bail)
+        public object? PromptForSet(SettingsKey key, object? KeyDefaultValue, out bool bail)
         {
             string selectedPreset = PromptPresetManager.PromptForPresets(key.ShellType);
 
@@ -34,7 +34,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             return selectedPreset;
         }
 
-        public object TranslateStringValue(SettingsKey key, string value)
+        public object? TranslateStringValue(SettingsKey key, string value)
         {
             var presets = PromptPresetManager.GetAllPresetsFromShell(key.ShellType);
             if (presets.ContainsKey(value))
@@ -42,7 +42,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             return PromptPresetManager.GetCurrentPresetBaseFromShell(key.ShellType);
         }
 
-        public object TranslateStringValueWithDefault(SettingsKey key, string value, object KeyDefaultValue)
+        public object? TranslateStringValueWithDefault(SettingsKey key, string value, object? KeyDefaultValue)
         {
             var presets = PromptPresetManager.GetAllPresetsFromShell(key.ShellType);
             if (presets.ContainsKey(value))
@@ -53,7 +53,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
                 PromptPresetManager.GetCurrentPresetBaseFromShell(key.ShellType);
         }
 
-        public void SetValue(SettingsKey key, object value, BaseKernelConfig configType)
+        public void SetValue(SettingsKey key, object? value, BaseKernelConfig configType)
         {
             // We're dealing with presets
             DebugWriter.WriteDebug(DebugLevel.I, "Answer is not numeric and key is of the Preset type. Setting variable...");

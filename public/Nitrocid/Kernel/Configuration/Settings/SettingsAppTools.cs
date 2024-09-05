@@ -207,7 +207,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
             return platformUnsupported;
         }
 
-        internal static void SetPropertyValue(string KeyVar, object Value, BaseKernelConfig configType)
+        internal static void SetPropertyValue(string KeyVar, object? Value, BaseKernelConfig configType)
         {
             // Consult a comment in ConfigTools about "as dynamic" for more info.
             var configTypeInstance = configType.GetType();
@@ -219,7 +219,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
                 PropertyManager.SetPropertyValueInstanceExplicit(configType, KeyVar, Value, configTypeInstance);
         }
 
-        internal static object GetPropertyValue(string KeyVar, BaseKernelConfig configType)
+        internal static object? GetPropertyValue(string KeyVar, BaseKernelConfig configType)
         {
             var configTypeInstance = configType.GetType();
             string configTypeName = configTypeInstance.Name;
@@ -231,7 +231,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
             return null;
         }
 
-        internal static void HandleError(string message, Exception ex = null)
+        internal static void HandleError(string message, Exception? ex = null)
         {
             if (ex is null)
             {

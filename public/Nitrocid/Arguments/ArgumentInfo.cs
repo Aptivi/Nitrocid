@@ -57,7 +57,7 @@ namespace Nitrocid.Arguments
         /// <param name="ArgArgumentInfo">Argument info</param>
         /// <param name="ArgumentBase">Kernel argument base for execution</param>
         /// <param name="Obsolete">Is the command obsolete?</param>
-        public ArgumentInfo(string Argument, string HelpDefinition, CommandArgumentInfo[] ArgArgumentInfo, ArgumentExecutor ArgumentBase, bool Obsolete = false)
+        public ArgumentInfo(string Argument, string HelpDefinition, CommandArgumentInfo[]? ArgArgumentInfo, ArgumentExecutor? ArgumentBase, bool Obsolete = false)
         {
             this.Argument = Argument;
             this.HelpDefinition = HelpDefinition;

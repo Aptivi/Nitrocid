@@ -89,7 +89,7 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
             string metadataStr = Reading.ReadContentsText(manifestFile);
             JArray metadata = JArray.Parse(metadataStr);
             string[] finalLangs = metadata
-                .Select((token) => token["three"].ToString())
+                .Select((token) => token["three"]?.ToString() ?? "")
                 .Where(LanguageManager.Languages.ContainsKey)
                 .ToArray();
             DebugWriter.WriteDebug(DebugLevel.I, "finalLangs = {0}.", finalLangs.Length);

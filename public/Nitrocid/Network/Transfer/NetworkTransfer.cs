@@ -42,12 +42,12 @@ namespace Nitrocid.Network.Transfer
     {
 
         internal static bool IsError;
-        internal static Exception ReasonError;
+        internal static Exception? ReasonError;
         internal static CancellationTokenSource CancellationToken = new();
         internal static HttpClient WClient = new();
-        internal static string DownloadedString;
-        internal static Notification DownloadNotif;
-        internal static Notification UploadNotif;
+        internal static string DownloadedString = "";
+        internal static Notification? DownloadNotif;
+        internal static Notification? UploadNotif;
         internal static bool SuppressDownloadMessage;
         internal static bool SuppressUploadMessage;
 
@@ -145,36 +145,38 @@ namespace Nitrocid.Network.Transfer
         /// <summary>
         /// Check for errors on download completion.
         /// </summary>
-        internal static void DownloadChecker(Exception e)
+        internal static void DownloadChecker(Exception? e)
         {
-            DebugWriter.WriteDebug(DebugLevel.I, "Download complete. Error: {0}", e?.Message);
             if (e is not null)
             {
-                if (Config.MainConfig.DownloadNotificationProvoke)
+                DebugWriter.WriteDebug(DebugLevel.I, "Download complete. Error: {0}", e.Message);
+                if (Config.MainConfig.DownloadNotificationProvoke && DownloadNotif is not null)
                     DownloadNotif.ProgressState = NotificationProgressState.Failure;
                 ReasonError = e;
                 IsError = true;
             }
-            else if (Config.MainConfig.DownloadNotificationProvoke)
+            else if (Config.MainConfig.DownloadNotificationProvoke && DownloadNotif is not null)
                 DownloadNotif.ProgressState = NotificationProgressState.Success;
+            DebugWriter.WriteDebug(DebugLevel.I, "Download complete.");
             NetworkTools.TransferFinished = true;
         }
 
         /// <summary>
         /// Thread to check for errors on download completion.
         /// </summary>
-        internal static void UploadChecker(Exception e)
+        internal static void UploadChecker(Exception? e)
         {
-            DebugWriter.WriteDebug(DebugLevel.I, "Upload complete. Error: {0}", e?.Message);
             if (e is not null)
             {
-                if (Config.MainConfig.UploadNotificationProvoke)
+                DebugWriter.WriteDebug(DebugLevel.I, "Upload complete. Error: {0}", e.Message);
+                if (Config.MainConfig.UploadNotificationProvoke && UploadNotif is not null)
                     UploadNotif.ProgressState = NotificationProgressState.Failure;
                 ReasonError = e;
                 IsError = true;
             }
-            else if (Config.MainConfig.UploadNotificationProvoke)
-                DownloadNotif.ProgressState = NotificationProgressState.Success;
+            else if (Config.MainConfig.UploadNotificationProvoke && UploadNotif is not null)
+                UploadNotif.ProgressState = NotificationProgressState.Success;
+            DebugWriter.WriteDebug(DebugLevel.I, "Upload complete.");
             NetworkTools.TransferFinished = true;
         }
 
@@ -219,27 +221,19 @@ namespace Nitrocid.Network.Transfer
                     {
                         // We know the total bytes. Print it out.
                         double Progress = 100d * (TransferInfo.DoneSize / (double)TransferInfo.FileSize);
-                        if (NotificationProvoke)
-                        {
+                        if (NotificationProvoke && NotificationInstance is not null)
                             NotificationInstance.Progress = (int)Math.Round(Progress);
-                        }
                         else
                         {
                             if (!string.IsNullOrWhiteSpace(Config.MainConfig.DownloadPercentagePrint))
-                            {
                                 TextWriters.WriteWhere(PlaceParse.ProbePlaces(Config.MainConfig.DownloadPercentagePrint), 0, ConsoleWrapper.CursorTop, false, KernelColorType.NeutralText, TransferInfo.DoneSize.SizeString(), TransferInfo.FileSize.SizeString(), Progress);
-                            }
                             else
-                            {
                                 TextWriters.WriteWhere(" {2:000.00}% | " + indicator, 0, ConsoleWrapper.CursorTop, false, KernelColorType.NeutralText, TransferInfo.DoneSize.SizeString(), TransferInfo.FileSize.SizeString(), Progress);
-                            }
                             ConsoleClearing.ClearLineToRight();
                         }
                     }
                     else
-                    {
                         TransferInfo.MessageSuppressed = true;
-                    }
                 }
             }
             catch (Exception ex)

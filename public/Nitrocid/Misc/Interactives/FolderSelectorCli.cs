@@ -43,6 +43,7 @@ using Nitrocid.Files.LineEndings;
 using Nitrocid.Files.Extensions;
 using Nitrocid.Files.Operations.Querying;
 using Textify.General;
+using Nitrocid.Kernel.Exceptions;
 
 namespace Nitrocid.Misc.Interactives
 {
@@ -84,9 +85,9 @@ namespace Nitrocid.Misc.Interactives
             true;
 
         /// <inheritdoc/>
-        public override string GetStatusFromItem(FileSystemEntry item)
+        public override string GetStatusFromItem(FileSystemEntry? item)
         {
-            FileSystemEntry FileInfoCurrentPane = item;
+            FileSystemEntry? FileInfoCurrentPane = item;
 
             // Check to see if we're given the file system info
             if (FileInfoCurrentPane == null)
@@ -108,11 +109,13 @@ namespace Nitrocid.Misc.Interactives
         }
 
         /// <inheritdoc/>
-        public override string GetInfoFromItem(FileSystemEntry item)
+        public override string GetInfoFromItem(FileSystemEntry? item)
         {
             try
             {
-                FileSystemEntry file = item;
+                FileSystemEntry? file = item;
+                if (file is null)
+                    return Translate.DoTranslation("No info.");
                 bool isDirectory = file.Type == FileSystemEntryType.Directory;
                 bool isSelected = SelectedFolder == file.FilePath;
                 var size = file.FileSize;
@@ -139,11 +142,13 @@ namespace Nitrocid.Misc.Interactives
         }
 
         /// <inheritdoc/>
-        public override string GetEntryFromItem(FileSystemEntry item)
+        public override string GetEntryFromItem(FileSystemEntry? item)
         {
             try
             {
-                FileSystemEntry file = item;
+                FileSystemEntry? file = item;
+                if (file is null)
+                    return Translate.DoTranslation("No info.");
                 bool isDirectory = file.Type == FileSystemEntryType.Directory;
                 bool isSelected = SelectedFolder == file.FilePath;
                 if (Config.MainConfig.IfmShowFileSize)
@@ -171,7 +176,7 @@ namespace Nitrocid.Misc.Interactives
         public string SelectedFolder =>
             selectedFolder;
 
-        internal void Open(FileSystemEntry currentFileSystemEntry)
+        internal void Open(FileSystemEntry? currentFileSystemEntry)
         {
             try
             {
@@ -201,7 +206,7 @@ namespace Nitrocid.Misc.Interactives
             }
         }
 
-        internal void Select(FileSystemEntry currentFileSystemEntry)
+        internal void Select(FileSystemEntry? currentFileSystemEntry)
         {
             try
             {
@@ -236,7 +241,7 @@ namespace Nitrocid.Misc.Interactives
             refreshFirstPaneListing = true;
         }
 
-        internal void PrintFileSystemEntry(FileSystemEntry currentFileSystemEntry)
+        internal void PrintFileSystemEntry(FileSystemEntry? currentFileSystemEntry)
         {
             // Don't do anything if we haven't been provided anything.
             if (currentFileSystemEntry is null)
@@ -258,7 +263,8 @@ namespace Nitrocid.Misc.Interactives
                     finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Last access time: {0}"), TimeDateRenderers.Render(DirInfo.LastAccessTime)));
                     finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Last write time: {0}"), TimeDateRenderers.Render(DirInfo.LastWriteTime)));
                     finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Attributes: {0}"), DirInfo.Attributes));
-                    finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Parent directory: {0}"), FilesystemTools.NeutralizePath(DirInfo.Parent.FullName)));
+                    if (DirInfo.Parent is not null)
+                        finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Parent directory: {0}"), FilesystemTools.NeutralizePath(DirInfo.Parent.FullName)));
                 }
                 else
                 {
@@ -286,7 +292,8 @@ namespace Nitrocid.Misc.Interactives
                     {
                         finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Name: {0}"), asmName.Name));
                         finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Full name") + ": {0}", asmName.FullName));
-                        finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Version") + ": {0}", asmName.Version.ToString()));
+                        if (asmName.Version is not null)
+                            finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Version") + ": {0}", asmName.Version.ToString()));
                         finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Culture name") + ": {0}", asmName.CultureName));
                         finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Content type") + ": {0}\n", asmName.ContentType.ToString()));
                     }
@@ -298,7 +305,8 @@ namespace Nitrocid.Misc.Interactives
                     // Other info handled by the extension handler
                     if (ExtensionHandlerTools.IsHandlerRegistered(fileInfo.Extension))
                     {
-                        var handler = ExtensionHandlerTools.GetExtensionHandler(fileInfo.Extension);
+                        var handler = ExtensionHandlerTools.GetExtensionHandler(fileInfo.Extension) ??
+                            throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Handler is registered but somehow failed to get an extension handler for") + $" {fileInfo.Extension}");
                         finalInfoRendered.AppendLine(handler.InfoHandler(fullPath));
                     }
                 }
@@ -316,7 +324,7 @@ namespace Nitrocid.Misc.Interactives
             }
         }
 
-        internal void RemoveFileOrDir(FileSystemEntry currentFileSystemEntry)
+        internal void RemoveFileOrDir(FileSystemEntry? currentFileSystemEntry)
         {
             // Don't do anything if we haven't been provided anything.
             if (currentFileSystemEntry is null)
@@ -351,7 +359,7 @@ namespace Nitrocid.Misc.Interactives
                 InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Folder doesn't exist. Make sure that you've written the correct path."), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
         }
 
-        internal void CopyTo(FileSystemEntry currentFileSystemEntry)
+        internal void CopyTo(FileSystemEntry? currentFileSystemEntry)
         {
             // Don't do anything if we haven't been provided anything.
             if (currentFileSystemEntry is null)
@@ -386,7 +394,7 @@ namespace Nitrocid.Misc.Interactives
             }
         }
 
-        internal void MoveTo(FileSystemEntry currentFileSystemEntry)
+        internal void MoveTo(FileSystemEntry? currentFileSystemEntry)
         {
             // Don't do anything if we haven't been provided anything.
             if (currentFileSystemEntry is null)
@@ -421,7 +429,7 @@ namespace Nitrocid.Misc.Interactives
             }
         }
 
-        internal void Rename(FileSystemEntry currentFileSystemEntry)
+        internal void Rename(FileSystemEntry? currentFileSystemEntry)
         {
             // Don't do anything if we haven't been provided anything.
             if (currentFileSystemEntry is null)
@@ -467,7 +475,7 @@ namespace Nitrocid.Misc.Interactives
                 InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Folder already exists. The name shouldn't be occupied by another folder."), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
         }
 
-        internal void Hash(FileSystemEntry currentFileSystemEntry)
+        internal void Hash(FileSystemEntry? currentFileSystemEntry)
         {
             // Don't do anything if we haven't been provided anything.
             if (currentFileSystemEntry is null)
@@ -496,7 +504,7 @@ namespace Nitrocid.Misc.Interactives
             InfoBoxColor.WriteInfoBoxColorBack(hash, Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
         }
 
-        internal void Verify(FileSystemEntry currentFileSystemEntry)
+        internal void Verify(FileSystemEntry? currentFileSystemEntry)
         {
             // Don't do anything if we haven't been provided anything.
             if (currentFileSystemEntry is null)
@@ -531,7 +539,7 @@ namespace Nitrocid.Misc.Interactives
                 InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Two hashes don't match."), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
         }
 
-        internal void Preview(FileSystemEntry currentFileSystemEntry)
+        internal void Preview(FileSystemEntry? currentFileSystemEntry)
         {
             // Don't do anything if we haven't been provided anything.
             if (currentFileSystemEntry is null)

@@ -34,7 +34,7 @@ namespace Nitrocid.Extras.SftpShell.SFTP.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            TextWriterColor.Write(Translate.DoTranslation("Local directory: {0}"), SFTPShellCommon.SFTPCurrDirect);
+            TextWriterColor.Write(Translate.DoTranslation("Local directory: {0}"), SFTPShellCommon.SFTPCurrDirect ?? "");
             return 0;
         }
     }

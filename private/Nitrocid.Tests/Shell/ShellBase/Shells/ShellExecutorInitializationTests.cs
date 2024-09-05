@@ -29,7 +29,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Shells
     public class ShellExecutorInitializationTests
     {
 
-        private static ShellTest ShellInstance;
+        private static ShellTest? ShellInstance;
 
         /// <summary>
         /// Tests initializing the shell instance from base
@@ -54,6 +54,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Shells
         [Description("Initialization")]
         public void TestInitializedShellExecution()
         {
+            ShellInstance.ShouldNotBeNull();
             Should.NotThrow(new Action(() => ShellInstance.InitializeShell()));
             ShellInstance.Bail.ShouldBeTrue();
         }
@@ -65,6 +66,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Shells
         [Description("Initialization")]
         public void TestInitializedShellExecutionWithArguments()
         {
+            ShellInstance.ShouldNotBeNull();
             Should.NotThrow(new Action(() => ShellInstance.InitializeShell("Hello", "World")));
             ShellInstance.Bail.ShouldBeTrue();
         }

@@ -48,7 +48,9 @@ namespace Nitrocid.Analyzers.Network.Base
             var diagnosticSpan = diagnostic.Location.SourceSpan;
 
             // Find the type declaration identified by the diagnostic.
-            var declaration = root.FindToken(diagnosticSpan.Start).Parent.AncestorsAndSelf().OfType<MemberAccessExpressionSyntax>().First();
+            var declaration = root?.FindToken(diagnosticSpan.Start).Parent?.AncestorsAndSelf().OfType<MemberAccessExpressionSyntax>().First();
+            if (declaration is null)
+                return;
 
             // Register a code action that will invoke the fix.
             context.RegisterCodeFix(
@@ -75,12 +77,15 @@ namespace Nitrocid.Analyzers.Network.Base
                     .WithTrailingTrivia(resultSyntax.GetTrailingTrivia());
 
                 // Actually replace
+                if (typeDecl.Parent is null)
+                    return document.Project.Solution;
                 var node = await document.GetSyntaxRootAsync(cancellationToken);
-                var finalNode = node.ReplaceNode(typeDecl.Parent, replacedSyntax);
+                var finalNode = node?.ReplaceNode(typeDecl.Parent, replacedSyntax);
 
                 // Check the imports
-                var compilation = finalNode as CompilationUnitSyntax;
-                if (compilation?.Usings.Any(u => u.Name.ToString() == $"{AnalysisTools.rootNameSpace}.Network") == false)
+                if (finalNode is not CompilationUnitSyntax compilation)
+                    return document.Project.Solution;
+                if (compilation.Usings.Any(u => u.Name?.ToString() == $"{AnalysisTools.rootNameSpace}.Network") == false)
                 {
                     var name = SyntaxFactory.QualifiedName(
                         SyntaxFactory.IdentifierName(AnalysisTools.rootNameSpace),

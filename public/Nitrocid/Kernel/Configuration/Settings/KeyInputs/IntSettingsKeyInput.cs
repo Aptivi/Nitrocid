@@ -31,7 +31,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
 {
     internal class IntSettingsKeyInput : ISettingsKeyInput
     {
-        public object PromptForSet(SettingsKey key, object KeyDefaultValue, out bool bail)
+        public object? PromptForSet(SettingsKey key, object? KeyDefaultValue, out bool bail)
         {
             ConsoleWrapper.Clear();
 
@@ -51,7 +51,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             return answer;
         }
 
-        public object TranslateStringValue(SettingsKey key, string value)
+        public object? TranslateStringValue(SettingsKey key, string value)
         {
             if (string.IsNullOrEmpty(value))
                 return 0;
@@ -60,16 +60,16 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             return 0;
         }
 
-        public object TranslateStringValueWithDefault(SettingsKey key, string value, object KeyDefaultValue)
+        public object? TranslateStringValueWithDefault(SettingsKey key, string value, object? KeyDefaultValue)
         {
             if (string.IsNullOrEmpty(value))
-                return (int)KeyDefaultValue;
+                return (int?)KeyDefaultValue;
             if (int.TryParse(value, out int answer))
                 return answer;
-            return (int)KeyDefaultValue;
+            return (int?)KeyDefaultValue;
         }
 
-        public void SetValue(SettingsKey key, object value, BaseKernelConfig configType)
+        public void SetValue(SettingsKey key, object? value, BaseKernelConfig configType)
         {
             // We're dealing with integers
             DebugWriter.WriteDebug(DebugLevel.I, "Answer is numeric and key is of the integer type.");

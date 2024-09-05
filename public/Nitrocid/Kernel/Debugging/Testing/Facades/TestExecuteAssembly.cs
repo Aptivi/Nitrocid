@@ -19,6 +19,7 @@
 
 using Nitrocid.ConsoleBase.Inputs;
 using Nitrocid.Files;
+using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using System.Reflection;
 
@@ -34,7 +35,9 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
             if (string.IsNullOrEmpty(path))
                 path = InputTools.ReadLine(Translate.DoTranslation("Write a path to assembly file:") + " ");
             path = FilesystemTools.NeutralizePath(path);
-            Assembly.LoadFrom(path).EntryPoint.Invoke("", []);
+            var entryPoint = Assembly.LoadFrom(path).EntryPoint ??
+                throw new KernelException(KernelExceptionType.Reflection, Translate.DoTranslation("Failed to get entry point."));
+            entryPoint.Invoke("", []);
         }
     }
 }

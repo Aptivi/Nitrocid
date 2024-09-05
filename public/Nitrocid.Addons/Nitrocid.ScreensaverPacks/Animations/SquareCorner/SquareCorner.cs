@@ -40,8 +40,9 @@ namespace Nitrocid.ScreensaverPacks.Animations.SquareCorner
         /// <summary>
         /// Simulates the square corner animation
         /// </summary>
-        public static void Simulate(SquareCornerSettings Settings)
+        public static void Simulate(SquareCornerSettings? Settings)
         {
+            Settings ??= new();
             int RedColorNum = RandomDriver.Random(Settings.SquareCornerMinimumRedColorLevel, Settings.SquareCornerMaximumRedColorLevel);
             int GreenColorNum = RandomDriver.Random(Settings.SquareCornerMinimumGreenColorLevel, Settings.SquareCornerMaximumGreenColorLevel);
             int BlueColorNum = RandomDriver.Random(Settings.SquareCornerMinimumBlueColorLevel, Settings.SquareCornerMaximumBlueColorLevel);

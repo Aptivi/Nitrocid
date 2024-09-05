@@ -25,13 +25,14 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
 {
     internal class BooleanSettingsKeyInput : ISettingsKeyInput
     {
-        public object PromptForSet(SettingsKey key, object KeyDefaultValue, out bool bail)
+        public object? PromptForSet(SettingsKey key, object? KeyDefaultValue, out bool bail)
         {
             bail = true;
-            return Convert.ToInt32(!(bool)KeyDefaultValue);
+            var defaultValue = (bool?)KeyDefaultValue ?? false;
+            return Convert.ToInt32(!defaultValue);
         }
 
-        public object TranslateStringValue(SettingsKey key, string value)
+        public object? TranslateStringValue(SettingsKey key, string value)
         {
             if (string.IsNullOrEmpty(value))
                 return false;
@@ -40,7 +41,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             return false;
         }
 
-        public object TranslateStringValueWithDefault(SettingsKey key, string value, object KeyDefaultValue)
+        public object? TranslateStringValueWithDefault(SettingsKey key, string value, object? KeyDefaultValue)
         {
             if (KeyDefaultValue is not bool defaultBool)
                 return false;
@@ -51,7 +52,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             return defaultBool;
         }
 
-        public void SetValue(SettingsKey key, object value, BaseKernelConfig configType)
+        public void SetValue(SettingsKey key, object? value, BaseKernelConfig configType)
         {
             // We're dealing with boolean
             DebugWriter.WriteDebug(DebugLevel.I, "Answer is numeric and key is of the Boolean type.");

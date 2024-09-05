@@ -29,9 +29,9 @@ namespace Nitrocid.Shell.Shells.Hex
     internal static class HexEditShellCommon
     {
         internal static int autoSaveInterval = 60;
-        internal static byte[] FileBytesOrig;
-        internal static FileStream FileStream;
-        internal static byte[] FileBytes;
+        internal static byte[]? FileBytesOrig;
+        internal static FileStream? FileStream;
+        internal static byte[]? FileBytes;
         internal static KernelThread AutoSave = new("Hex Edit Autosave Thread", false, HexEditTools.HandleAutoSaveBinaryFile);
     }
 }

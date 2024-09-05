@@ -39,10 +39,10 @@ namespace Nitrocid.Drivers.DebugLogger
 
         /// <inheritdoc/>
         public virtual void Write(string text) =>
-            DebugWriter.DebugStreamWriter.Write(text);
+            DebugWriter.DebugStreamWriter?.Write(text);
 
         /// <inheritdoc/>
         public virtual void Write(string text, params object[] vars) =>
-            DebugWriter.DebugStreamWriter.Write(text, vars);
+            DebugWriter.DebugStreamWriter?.Write(text, vars);
     }
 }

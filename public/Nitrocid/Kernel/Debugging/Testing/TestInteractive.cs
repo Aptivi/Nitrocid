@@ -308,9 +308,9 @@ namespace Nitrocid.Kernel.Debugging.Testing
                     else
                     {
                         // Compare the actual value with the expected value
-                        if (!facade.TestActualValue.Equals(facade.TestExpectedValue))
+                        if (facade.TestActualValue is null || !facade.TestActualValue.Equals(facade.TestExpectedValue))
                         {
-                            InfoBoxColor.WriteInfoBoxColor(Translate.DoTranslation("The test failed. Expected value is {0}, but actual value is {1}."), KernelColorTools.GetColor(KernelColorType.Error), facade.TestExpectedValue.ToString(), facade.TestActualValue.ToString());
+                            InfoBoxColor.WriteInfoBoxColor(Translate.DoTranslation("The test failed. Expected value is {0}, but actual value is {1}."), KernelColorTools.GetColor(KernelColorType.Error), facade.TestExpectedValue?.ToString() ?? "<null>", facade.TestActualValue?.ToString() ?? "<null>");
                             facade.status = TestStatus.Failed;
                             tested = true;
                         }

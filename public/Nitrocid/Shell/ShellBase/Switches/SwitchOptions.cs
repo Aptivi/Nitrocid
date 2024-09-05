@@ -85,7 +85,7 @@ namespace Nitrocid.Shell.ShellBase.Switches
         /// <summary>
         /// Does the switch conflict with the provided switches?
         /// </summary>
-        public string[] ConflictsWith
+        public string[]? ConflictsWith
         {
             get => conflictsWith;
             set

@@ -49,7 +49,7 @@ namespace Nitrocid.Extras.BassBoom.Animations.Lyrics
     {
 
         internal static string lyricsPath = PathsManagement.HomePath + "/Music/";
-        internal static string[] lyricsLrc;
+        internal static string[]? lyricsLrc;
 
         /// <summary>
         /// Path to the lyrics
@@ -67,8 +67,12 @@ namespace Nitrocid.Extras.BassBoom.Animations.Lyrics
         /// <summary>
         /// Simulates the lyric animation
         /// </summary>
-        public static void Simulate(LyricsSettings Settings)
+        public static void Simulate(LyricsSettings? Settings)
         {
+            // Check the settings
+            if (Settings is null)
+                return;
+
             // Select random lyric file from $HOME/Music/*.LRC
             lyricsLrc ??= Listing.GetFilesystemEntries(LyricsPath, "*.lrc");
             var lyricPath = lyricsLrc.Length > 0 ? lyricsLrc[RandomDriver.RandomIdx(lyricsLrc.Length)] : "";

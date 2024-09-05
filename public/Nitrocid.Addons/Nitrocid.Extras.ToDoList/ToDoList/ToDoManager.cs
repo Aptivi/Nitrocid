@@ -21,6 +21,8 @@ using Newtonsoft.Json;
 using Nitrocid.Files.Operations;
 using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Files.Paths;
+using Nitrocid.Languages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -128,7 +130,8 @@ namespace Nitrocid.Extras.ToDoList.ToDoList
             if (!Checking.FileExists(path))
                 Making.MakeJsonFile(path, true, true);
             string serializedTasks = Reading.ReadContentsText(path);
-            toDoTasks = (List<ToDoTask>)JsonConvert.DeserializeObject(serializedTasks, typeof(List<ToDoTask>));
+            toDoTasks = JsonConvert.DeserializeObject<List<ToDoTask>>(serializedTasks) ??
+                throw new Exception(Translate.DoTranslation("Can't get a list of tasks"));
         }
     }
 }

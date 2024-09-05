@@ -68,7 +68,7 @@ namespace Nitrocid.Extras.SftpShell.SFTP.Presets
 
             // Closing
             PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
-            PresetStringBuilder.AppendFormat("]{0}> ", SFTPShellCommon.SFTPCurrentRemoteDir);
+            PresetStringBuilder.AppendFormat("]{0}> ", SFTPShellCommon.SFTPCurrentRemoteDir ?? "");
             PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
 
             // Present final string

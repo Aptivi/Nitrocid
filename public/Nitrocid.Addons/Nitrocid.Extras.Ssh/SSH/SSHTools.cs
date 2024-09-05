@@ -39,6 +39,7 @@ using Nitrocid.ConsoleBase.Inputs;
 using Nitrocid.Network.Connections;
 using Terminaux.Reader;
 using Terminaux.Inputs;
+using System.Reflection;
 
 namespace Nitrocid.Extras.Ssh.SSH
 {
@@ -229,7 +230,7 @@ namespace Nitrocid.Extras.Ssh.SSH
         /// <summary>
         /// Shows the SSH banner
         /// </summary>
-        private static void ShowBanner(object sender, AuthenticationBannerEventArgs e)
+        private static void ShowBanner(object? sender, AuthenticationBannerEventArgs e)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Banner language: {0}", e.Language);
             DebugWriter.WriteDebug(DebugLevel.I, "Banner username: {0}", e.Username);
@@ -286,7 +287,8 @@ namespace Nitrocid.Extras.Ssh.SSH
                 while (SSHClient.IsConnected)
                 {
                     System.Threading.Thread.Sleep(1);
-                    if (DisconnectionRequested | SSHS.GetType().GetField("_input", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).GetValue(SSHS) is null)
+                    var reflectedInput = SSHS.GetType().GetField("_input", BindingFlags.NonPublic | BindingFlags.Instance);
+                    if (DisconnectionRequested || reflectedInput is null || reflectedInput.GetValue(SSHS) is null)
                     {
                         SSHS.Stop();
                         SSHClient.Disconnect();
@@ -355,9 +357,17 @@ namespace Nitrocid.Extras.Ssh.SSH
                         SSHClient.Disconnect();
                     }
                     while (!SSHCErrorReader.EndOfStream)
-                        TextWriterColor.Write(SSHCErrorReader.ReadLine());
+                    {
+                        string? line = SSHCErrorReader.ReadLine();
+                        if (line is not null)
+                            TextWriterColor.Write(line);
+                    }
                     while (!SSHCOutputReader.EndOfStream)
-                        TextWriterColor.Write(SSHCOutputReader.ReadLine());
+                    {
+                        string? line = SSHCOutputReader.ReadLine();
+                        if (line is not null)
+                            TextWriterColor.Write(line);
+                    }
                 }
             }
             catch (Exception ex)
@@ -380,7 +390,7 @@ namespace Nitrocid.Extras.Ssh.SSH
             }
         }
 
-        private static void SSHDisconnect(object sender, ConsoleCancelEventArgs e)
+        private static void SSHDisconnect(object? sender, ConsoleCancelEventArgs e)
         {
             if (e.SpecialKey == ConsoleSpecialKey.ControlC)
             {

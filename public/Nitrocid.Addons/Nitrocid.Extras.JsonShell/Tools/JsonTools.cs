@@ -73,7 +73,7 @@ namespace Nitrocid.Extras.JsonShell.Tools
             try
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Trying to close file...");
-                JsonShellCommon.FileStream.Close();
+                JsonShellCommon.FileStream?.Close();
                 JsonShellCommon.FileStream = null;
                 DebugWriter.WriteDebug(DebugLevel.I, "File is no longer open.");
                 JsonShellCommon.FileToken = JToken.Parse("{}");
@@ -103,6 +103,8 @@ namespace Nitrocid.Extras.JsonShell.Tools
         {
             try
             {
+                if (JsonShellCommon.FileStream is null)
+                    throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("JSON file is not open yet."));
                 DebugWriter.WriteDebug(DebugLevel.I, "Trying to save file...");
                 JsonShellCommon.FileStream.SetLength(0L);
                 DebugWriter.WriteDebug(DebugLevel.I, "Length set to 0.");
@@ -112,9 +114,7 @@ namespace Nitrocid.Extras.JsonShell.Tools
                 JsonShellCommon.FileStream.Flush();
                 DebugWriter.WriteDebug(DebugLevel.I, "File is saved.");
                 if (ClearJson)
-                {
                     JsonShellCommon.FileToken = JToken.Parse("{}");
-                }
                 JsonShellCommon.FileTokenOrig = JToken.Parse("{}");
                 JsonShellCommon.FileTokenOrig = JsonShellCommon.FileToken;
                 return true;
@@ -138,9 +138,7 @@ namespace Nitrocid.Extras.JsonShell.Tools
                 {
                     Thread.Sleep(JsonShellCommon.AutoSaveInterval * 1000);
                     if (JsonShellCommon.FileStream is not null)
-                    {
                         SaveFile(false);
-                    }
                 }
                 catch (Exception ex)
                 {
@@ -185,42 +183,30 @@ namespace Nitrocid.Extras.JsonShell.Tools
             {
                 var TargetToken = JsonShellCommon.FileToken.SelectToken(path);
                 if (TargetToken is not null)
-                {
                     return TargetToken;
-                }
                 else
-                {
                     throw new KernelException(KernelExceptionType.JsonEditor, Translate.DoTranslation("The token inside the JSON file isn't found."));
-                }
             }
             else
-            {
                 throw new KernelException(KernelExceptionType.JsonEditor, Translate.DoTranslation("The JSON editor hasn't opened a file stream yet."));
-            }
         }
 
         /// <summary>
         /// Gets a token in the JSON file. It returns null if not found.
         /// </summary>
         /// <param name="path">The path to a token. You can use JSONPath.</param>
-        public static JToken GetTokenSafe(string path)
+        public static JToken? GetTokenSafe(string path)
         {
             if (JsonShellCommon.FileStream is not null)
             {
                 var TargetToken = JsonShellCommon.FileToken.SelectToken(path);
                 if (TargetToken is not null)
-                {
                     return TargetToken;
-                }
                 else
-                {
                     return null;
-                }
             }
             else
-            {
                 throw new KernelException(KernelExceptionType.JsonEditor, Translate.DoTranslation("The JSON editor hasn't opened a file stream yet."));
-            }
         }
 
         /// <summary>
@@ -228,25 +214,19 @@ namespace Nitrocid.Extras.JsonShell.Tools
         /// </summary>
         /// <param name="parentToken">Where is the target token found?</param>
         /// <param name="path">The path to a token. You can use JSONPath.</param>
-        public static JToken GetTokenSafe(string parentToken, string path)
+        public static JToken? GetTokenSafe(string parentToken, string path)
         {
             if (JsonShellCommon.FileStream is not null)
             {
                 var TargetToken = GetToken(parentToken);
                 TargetToken = TargetToken.SelectToken(path);
                 if (TargetToken is not null)
-                {
                     return TargetToken;
-                }
                 else
-                {
                     return null;
-                }
             }
             else
-            {
                 throw new KernelException(KernelExceptionType.JsonEditor, Translate.DoTranslation("The JSON editor hasn't opened a file stream yet."));
-            }
         }
 
         /// <summary>
@@ -275,7 +255,7 @@ namespace Nitrocid.Extras.JsonShell.Tools
                 throw new KernelException(KernelExceptionType.JsonEditor, Translate.DoTranslation("Can't append a new item with the property name with the parent token type of '{0}'."), parentTokenType.ToString());
 
             // Finally, parse the string JSON token
-            JToken newToken = default;
+            JToken? newToken = default;
             switch (type.ToLower())
             {
                 case "array":
@@ -312,7 +292,8 @@ namespace Nitrocid.Extras.JsonShell.Tools
             switch (parentTokenType)
             {
                 case JTokenType.Array:
-                    ((JArray)parentToken).Add(newToken);
+                    if (newToken is not null)
+                        ((JArray)parentToken).Add(newToken);
                     break;
                 case JTokenType.Object:
                     ((JObject)parentToken).Add(propName, newToken);
@@ -346,7 +327,7 @@ namespace Nitrocid.Extras.JsonShell.Tools
                 throw new KernelException(KernelExceptionType.JsonEditor, Translate.DoTranslation("Can't append a new item with the property name with the parent token type of '{0}'."), parentTokenType.ToString());
 
             // Finally, parse the string JSON token
-            JToken newToken = default;
+            JToken? newToken = default;
             switch (type.ToLower())
             {
                 case "array":
@@ -388,7 +369,8 @@ namespace Nitrocid.Extras.JsonShell.Tools
                     parentToken[propName] = newToken;
                     break;
                 default:
-                    parentToken.Replace(newToken);
+                    if (newToken is not null)
+                        parentToken.Replace(newToken);
                     break;
             }
         }
@@ -401,6 +383,8 @@ namespace Nitrocid.Extras.JsonShell.Tools
         {
             // First, do some sanity checks, starting from the parent token
             var parentToken = GetTokenSafe(parent) ??
+                throw new KernelException(KernelExceptionType.JsonEditor, Translate.DoTranslation("The parent token is not found. Make sure that you've written the path '{0}' correctly."), parent);
+            if (parentToken.Parent is null)
                 throw new KernelException(KernelExceptionType.JsonEditor, Translate.DoTranslation("The parent token is not found. Make sure that you've written the path '{0}' correctly."), parent);
 
             // Then, do the deletion

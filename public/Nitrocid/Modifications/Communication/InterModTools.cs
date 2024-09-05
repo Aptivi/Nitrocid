@@ -131,7 +131,7 @@ namespace Nitrocid.Modifications.Communication
         /// </summary>
         /// <param name="modName">The mod name to query</param>
         /// <param name="functionName">Function name defined in the <see cref="IMod.PubliclyAvailableFunctions"/> dictionary to query</param>
-        public static object ExecuteCustomModFunction(string modName, string functionName) =>
+        public static object? ExecuteCustomModFunction(string modName, string functionName) =>
             ExecuteCustomModFunction(modName, functionName, null);
 
         /// <summary>
@@ -140,7 +140,7 @@ namespace Nitrocid.Modifications.Communication
         /// <param name="modName">The mod name to query</param>
         /// <param name="functionName">Function name defined in the <see cref="IMod.PubliclyAvailableFunctions"/> dictionary to query</param>
         /// <param name="parameters">Parameters to execute the function with</param>
-        public static object ExecuteCustomModFunction(string modName, string functionName, params object[] parameters)
+        public static object? ExecuteCustomModFunction(string modName, string functionName, params object?[]? parameters)
         {
             // Check the user permission
             PermissionsTools.Demand(PermissionTypes.IntermodCommunication);
@@ -159,7 +159,7 @@ namespace Nitrocid.Modifications.Communication
         /// </summary>
         /// <param name="modName">The mod name to query</param>
         /// <param name="propertyName">Property name defined in the <see cref="IMod.PubliclyAvailableProperties"/> dictionary to query</param>
-        public static object GetCustomModPropertyValue(string modName, string propertyName)
+        public static object? GetCustomModPropertyValue(string modName, string propertyName)
         {
             // Check the user permission
             PermissionsTools.Demand(PermissionTypes.IntermodCommunication);
@@ -208,14 +208,14 @@ namespace Nitrocid.Modifications.Communication
         /// </summary>
         /// <param name="modName">The mod name to query</param>
         /// <param name="fieldName">Field name defined in the <see cref="IMod.PubliclyAvailableFields"/> dictionary to query</param>
-        public static object GetCustomModFieldValue(string modName, string fieldName)
+        public static object? GetCustomModFieldValue(string modName, string fieldName)
         {
             // Check the user permission
             PermissionsTools.Demand(PermissionTypes.IntermodCommunication);
 
             // Assuming that we have that field, get a single field delegate
             var field = GetFieldInfo(modName, fieldName);
-            var get = field.GetValue(null);
+            var get = field?.GetValue(null);
             if (get is null)
                 return null;
             return get;
@@ -227,14 +227,14 @@ namespace Nitrocid.Modifications.Communication
         /// <param name="modName">The mod name to query</param>
         /// <param name="fieldName">Field name defined in the <see cref="IMod.PubliclyAvailableFields"/> dictionary to query</param>
         /// <param name="value">Value to set the field to</param>
-        public static void SetCustomModFieldValue(string modName, string fieldName, object value)
+        public static void SetCustomModFieldValue(string modName, string fieldName, object? value)
         {
             // Check the user permission
             PermissionsTools.Demand(PermissionTypes.IntermodCommunication);
 
             // The field instance is valid. Try to set a value.
             var field = GetFieldInfo(modName, fieldName);
-            field.SetValue(null, value);
+            field?.SetValue(null, value);
         }
 
         /// <summary>
@@ -243,7 +243,7 @@ namespace Nitrocid.Modifications.Communication
         /// <param name="modName">The mod name to query</param>
         /// <param name="functionName">Function name defined in the <see cref="IMod.PubliclyAvailableFunctions"/> dictionary to query</param>
         /// <returns>An array of <see cref="ParameterInfo"/> if there are any; null if there is no function</returns>
-        public static ParameterInfo[] GetFunctionParameters(string modName, string functionName)
+        public static ParameterInfo[]? GetFunctionParameters(string modName, string functionName)
         {
             var function = GetFunctionDelegate(modName, functionName);
             if (function is null)
@@ -259,7 +259,7 @@ namespace Nitrocid.Modifications.Communication
         /// <param name="modName">The mod name to query</param>
         /// <param name="propertyName">Property name defined in the <see cref="IMod.PubliclyAvailableProperties"/> dictionary to query</param>
         /// <returns>An array of <see cref="ParameterInfo"/> if there are any; null if there is no property</returns>
-        public static ParameterInfo[] GetSetPropertyParameters(string modName, string propertyName)
+        public static ParameterInfo[]? GetSetPropertyParameters(string modName, string propertyName)
         {
             var property = GetPropertyInfo(modName, propertyName);
             if (property is null)
@@ -272,7 +272,7 @@ namespace Nitrocid.Modifications.Communication
             return get.GetParameters();
         }
 
-        private static Delegate GetFunctionDelegate(string modName, string functionName)
+        private static Delegate? GetFunctionDelegate(string modName, string functionName)
         {
             // Get the mod
             var modInfo = ModManager.GetMod(modName) ??
@@ -288,13 +288,13 @@ namespace Nitrocid.Modifications.Communication
                 return null;
 
             // Assuming that we have functions, get a single function containing that name
-            if (!functions.TryGetValue(functionName, out Delegate function))
+            if (!functions.TryGetValue(functionName, out Delegate? function))
                 return null;
 
             return function;
         }
 
-        private static PropertyInfo GetPropertyInfo(string modName, string propertyName)
+        private static PropertyInfo? GetPropertyInfo(string modName, string propertyName)
         {
             // Get the mod
             var modInfo = ModManager.GetMod(modName) ??
@@ -310,12 +310,12 @@ namespace Nitrocid.Modifications.Communication
                 return null;
 
             // Assuming that we have properties, get a single property containing that name
-            if (!properties.TryGetValue(propertyName, out PropertyInfo property))
+            if (!properties.TryGetValue(propertyName, out PropertyInfo? property))
                 return null;
             return property;
         }
 
-        private static FieldInfo GetFieldInfo(string modName, string fieldName)
+        private static FieldInfo? GetFieldInfo(string modName, string fieldName)
         {
             // Get the mod
             var modInfo = ModManager.GetMod(modName) ??
@@ -331,7 +331,7 @@ namespace Nitrocid.Modifications.Communication
                 return null;
 
             // Assuming that we have fields, get a single field containing that name
-            if (!fields.TryGetValue(fieldName, out FieldInfo field))
+            if (!fields.TryGetValue(fieldName, out FieldInfo? field))
                 return null;
             if (field is null)
                 return null;

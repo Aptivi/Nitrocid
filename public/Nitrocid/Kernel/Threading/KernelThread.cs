@@ -38,12 +38,12 @@ namespace Nitrocid.Kernel.Threading
         internal readonly List<KernelThread> ChildThreads = [];
         private bool isReady;
         private bool isStopping;
-        private readonly ThreadStart ThreadDelegate;
-        private readonly ThreadStart InitialThreadDelegate;
-        private readonly ParameterizedThreadStart ThreadDelegateParameterized;
-        private readonly ParameterizedThreadStart InitialThreadDelegateParameterized;
+        private readonly ThreadStart? ThreadDelegate;
+        private readonly ThreadStart? InitialThreadDelegate;
+        private readonly ParameterizedThreadStart? ThreadDelegateParameterized;
+        private readonly ParameterizedThreadStart? InitialThreadDelegateParameterized;
         private readonly bool IsParameterized;
-        private readonly KernelThread parentThread;
+        private readonly KernelThread? parentThread;
 
         /// <summary>
         /// The name of the thread
@@ -78,7 +78,7 @@ namespace Nitrocid.Kernel.Threading
         /// <summary>
         /// Parent thread. If this thread is a parent thread, returns null. On child threads, returns a parent thread that spawned this thread.
         /// </summary>
-        public KernelThread ParentThread => parentThread;
+        public KernelThread? ParentThread => parentThread;
 
         /// <summary>
         /// Thread ID for this kernel thread
@@ -108,7 +108,7 @@ namespace Nitrocid.Kernel.Threading
         /// <param name="Executor">The thread delegate</param>
         /// <param name="Child">Specifies whether the thread is going to be a child thread</param>
         /// <param name="ParentThread">If <paramref name="Child"/> is on, this should be specified to specify a thread that spawned the parent thread</param>
-        private KernelThread(string ThreadName, bool Background, ThreadStart Executor, bool Child, KernelThread ParentThread)
+        private KernelThread(string ThreadName, bool Background, ThreadStart Executor, bool Child, KernelThread? ParentThread)
         {
             InitialThreadDelegate = Executor;
             Executor = () => StartInternalNormal(InitialThreadDelegate);
@@ -148,7 +148,7 @@ namespace Nitrocid.Kernel.Threading
         /// <param name="Executor">The thread delegate</param>
         /// <param name="Child">Specifies whether the thread is going to be a child thread</param>
         /// <param name="ParentThread">If <paramref name="Child"/> is on, this should be specified to specify a thread that spawned the parent thread</param>
-        private KernelThread(string ThreadName, bool Background, ParameterizedThreadStart Executor, bool Child, KernelThread ParentThread)
+        private KernelThread(string ThreadName, bool Background, ParameterizedThreadStart Executor, bool Child, KernelThread? ParentThread)
         {
             InitialThreadDelegateParameterized = Executor;
             Executor = (Parameter) => StartInternalParameterized(InitialThreadDelegateParameterized, Parameter);
@@ -191,7 +191,7 @@ namespace Nitrocid.Kernel.Threading
         /// Starts the kernel thread
         /// </summary>
         /// <param name="Parameter">The parameter class instance containing multiple parameters, or a usual single parameter</param>
-        public void Start(object Parameter)
+        public void Start(object? Parameter)
         {
             if (!IsReady)
                 throw new KernelException(KernelExceptionType.ThreadNotReadyYet);
@@ -302,10 +302,12 @@ namespace Nitrocid.Kernel.Threading
                 throw new KernelException(KernelExceptionType.ThreadOperation, Translate.DoTranslation("Can't regenerate the kernel thread while the same thread is already running."));
 
             // Remake the thread to avoid illegal state exceptions
-            if (IsParameterized)
+            if (IsParameterized && ThreadDelegateParameterized is not null)
                 BaseThread = new Thread(ThreadDelegateParameterized) { Name = Name, IsBackground = IsBackground };
-            else
+            else if (ThreadDelegate is not null)
                 BaseThread = new Thread(ThreadDelegate) { Name = Name, IsBackground = IsBackground };
+            else
+                throw new KernelException(KernelExceptionType.ThreadOperation, Translate.DoTranslation("Thread can't be regenerated") + $". {Name}");
             DebugWriter.WriteDebug(DebugLevel.I, "Regenerated a new kernel thread {0} with ID {1} successfully.", Name, ThreadId);
             isReady = true;
         }
@@ -378,7 +380,7 @@ namespace Nitrocid.Kernel.Threading
             }
         }
 
-        private void StartInternalParameterized(ParameterizedThreadStart action, object arg)
+        private void StartInternalParameterized(ParameterizedThreadStart action, object? arg)
         {
             try
             {
@@ -394,7 +396,7 @@ namespace Nitrocid.Kernel.Threading
             }
         }
 
-        private void StartChildThreads(object Parameter)
+        private void StartChildThreads(object? Parameter)
         {
             // Start the child threads
             DebugWriter.WriteDebug(DebugLevel.I, "Starting {0} child threads...", ChildThreads.Count);

@@ -164,7 +164,7 @@ namespace Nitrocid.Extras.Calendar.Calendar.Events
         /// </summary>
         /// <param name="EventFile">Event file</param>
         /// <returns>A converted event info instance. null if unsuccessful.</returns>
-        public static EventInfo LoadEvent(string EventFile)
+        public static EventInfo? LoadEvent(string EventFile)
         {
             lock (EventManagerLock)
             {
@@ -176,7 +176,7 @@ namespace Nitrocid.Extras.Calendar.Calendar.Events
                 if (Checking.FileExists(EventFile))
                 {
                     var eventContents = Reading.ReadContentsText(EventFile);
-                    EventInfo ConvertedEvent = JsonConvert.DeserializeObject<EventInfo>(eventContents);
+                    EventInfo? ConvertedEvent = JsonConvert.DeserializeObject<EventInfo>(eventContents);
                     DebugWriter.WriteDebug(DebugLevel.I, "Converted!");
                     return ConvertedEvent;
                 }

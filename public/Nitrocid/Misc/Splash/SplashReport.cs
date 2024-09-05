@@ -121,7 +121,7 @@ namespace Nitrocid.Misc.Splash
         /// If the kernel has booted successfully, it will act like the normal printing command. If this routine was called during boot,<br></br>
         /// it will report the progress to the splash system. You can force it to report the progress by passing force.
         /// </remarks>
-        public static void ReportProgressWarning(string Text, Exception exception, params object[] Vars) =>
+        public static void ReportProgressWarning(string Text, Exception? exception, params object[] Vars) =>
             ReportProgressWarning(Text, false, SplashManager.CurrentSplash, exception, Vars);
 
         /// <summary>
@@ -136,7 +136,7 @@ namespace Nitrocid.Misc.Splash
         /// If the kernel has booted successfully, it will act like the normal printing command. If this routine was called during boot,<br></br>
         /// it will report the progress to the splash system. You can force it to report the progress by passing force.
         /// </remarks>
-        public static void ReportProgressWarning(string Text, bool force = false, ISplash splash = null, Exception exception = null, params object[] Vars) =>
+        public static void ReportProgressWarning(string Text, bool force = false, ISplash? splash = null, Exception? exception = null, params object[] Vars) =>
             ReportProgress(Text, 0, force, exception, SplashReportSeverity.Warning, splash, Vars);
 
         /// <summary>
@@ -161,7 +161,7 @@ namespace Nitrocid.Misc.Splash
         /// If the kernel has booted successfully, it will act like the normal printing command. If this routine was called during boot,<br></br>
         /// it will report the progress to the splash system. You can force it to report the progress by passing force.
         /// </remarks>
-        public static void ReportProgressError(string Text, Exception exception, params object[] Vars) =>
+        public static void ReportProgressError(string Text, Exception? exception, params object[] Vars) =>
             ReportProgressError(Text, false, SplashManager.CurrentSplash, exception, Vars);
 
         /// <summary>
@@ -176,7 +176,7 @@ namespace Nitrocid.Misc.Splash
         /// If the kernel has booted successfully, it will act like the normal printing command. If this routine was called during boot,<br></br>
         /// it will report the progress to the splash system. You can force it to report the progress by passing force.
         /// </remarks>
-        public static void ReportProgressError(string Text, bool force = false, ISplash splash = null, Exception exception = null, params object[] Vars) =>
+        public static void ReportProgressError(string Text, bool force = false, ISplash? splash = null, Exception? exception = null, params object[] Vars) =>
             ReportProgress(Text, 0, force, exception, SplashReportSeverity.Error, splash, Vars);
 
         /// <summary>
@@ -193,7 +193,7 @@ namespace Nitrocid.Misc.Splash
         /// If the kernel has booted successfully, it will act like the normal printing command. If this routine was called during boot,<br></br>
         /// it will report the progress to the splash system. You can force it to report the progress by passing force.
         /// </remarks>
-        public static void ReportProgress(string Text, int Progress, bool force = false, Exception exception = null, SplashReportSeverity severity = SplashReportSeverity.Info, ISplash splash = null, params object[] Vars)
+        public static void ReportProgress(string Text, int Progress, bool force = false, Exception? exception = null, SplashReportSeverity severity = SplashReportSeverity.Info, ISplash? splash = null, params object[] Vars)
         {
             KernelColorType finalColor =
                 severity == SplashReportSeverity.Warning ? KernelColorType.Warning :
@@ -267,7 +267,7 @@ namespace Nitrocid.Misc.Splash
         /// Resets the splash progress report area with the generic loading text
         /// </summary>
         /// <param name="splash">Splash screen instance</param>
-        public static void ResetProgressReportArea(ISplash splash = null) =>
+        public static void ResetProgressReportArea(ISplash? splash = null) =>
             ReportProgress(Translate.DoTranslation("Loading..."), 0, false, splash ?? SplashManager.CurrentSplash);
 
     }

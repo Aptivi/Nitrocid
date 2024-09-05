@@ -698,7 +698,7 @@ namespace Nitrocid.Drivers.Filesystem
         }
 
         /// <inheritdoc/>
-        public virtual bool FileExistsInPath(string FilePath, ref string Result)
+        public virtual bool FileExistsInPath(string FilePath, ref string? Result)
         {
             FS.ThrowOnInvalidPath(FilePath);
             var LookupPaths = GetPathList();
@@ -735,22 +735,22 @@ namespace Nitrocid.Drivers.Filesystem
             IOPath.IsPathRooted(Path);
 
         /// <inheritdoc/>
-        public virtual long GetAllSizesInFolder(DirectoryInfo DirectoryInfo) =>
+        public virtual long GetAllSizesInFolder(DirectoryInfo? DirectoryInfo) =>
             GetAllSizesInFolder(DirectoryInfo, Config.MainConfig.FullParseMode);
 
         /// <inheritdoc/>
-        public virtual long GetAllSizesInFolder(DirectoryInfo DirectoryInfo, bool FullParseMode)
+        public virtual long GetAllSizesInFolder(DirectoryInfo? DirectoryInfo, bool FullParseMode)
         {
+            // Check for null
+            if (DirectoryInfo is null)
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Directory info is not specified."));
+
             // Determine parse mode
             List<FileInfo> Files;
             if (FullParseMode)
-            {
                 Files = [.. DirectoryInfo.GetFiles("*", SearchOption.AllDirectories)];
-            }
             else
-            {
                 Files = [.. DirectoryInfo.GetFiles("*", SearchOption.TopDirectoryOnly)];
-            }
             DebugWriter.WriteDebug(DebugLevel.I, "{0} files to be parsed", Files.Count);
 
             // Get all sizes in bytes
@@ -806,7 +806,7 @@ namespace Nitrocid.Drivers.Filesystem
                 }
 
                 // Split the path and the pattern
-                string Parent = FS.NeutralizePath(IOPath.GetDirectoryName(Path) + "/" + IOPath.GetFileName(Path));
+                string? Parent = FS.NeutralizePath(IOPath.GetDirectoryName(Path) + "/" + IOPath.GetFileName(Path));
                 if (Parent.ContainsAnyOf(Parsing.GetInvalidPathChars().Select(Character => Character.ToString()).ToArray()))
                 {
                     Parent = IOPath.GetDirectoryName(Path);
@@ -830,7 +830,7 @@ namespace Nitrocid.Drivers.Filesystem
         }
 
         /// <inheritdoc/>
-        public virtual string[] GetFilesystemEntries(string Parent, string Pattern, bool Recursive = false)
+        public virtual string[] GetFilesystemEntries(string? Parent, string Pattern, bool Recursive = false)
         {
             var Entries = Array.Empty<string>();
             try
@@ -967,7 +967,7 @@ namespace Nitrocid.Drivers.Filesystem
         }
 
         /// <inheritdoc/>
-        public virtual string GetNumberedFileName(string path, string fileName)
+        public virtual string GetNumberedFileName(string? path, string fileName)
         {
             FS.ThrowOnInvalidPath(path);
             FS.ThrowOnInvalidPath(fileName);
@@ -1387,7 +1387,8 @@ namespace Nitrocid.Drivers.Filesystem
             if (DirectoryInfo.Type == FileSystemEntryType.Directory)
             {
                 // Get all file sizes in a folder
-                var finalDirInfo = DirectoryInfo.BaseEntry as DirectoryInfo;
+                var finalDirInfo = DirectoryInfo.BaseEntry as DirectoryInfo ??
+                    throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Directory info is not specified."));
                 long TotalSize = SizeGetter.GetAllSizesInFolder(finalDirInfo);
 
                 // Print information
@@ -1418,7 +1419,8 @@ namespace Nitrocid.Drivers.Filesystem
         {
             if (FileInfo.Type == FileSystemEntryType.File)
             {
-                var finalDirInfo = FileInfo.BaseEntry as FileInfo;
+                var finalDirInfo = FileInfo.BaseEntry as FileInfo ??
+                    throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("File info is not specified."));
                 if (finalDirInfo.Attributes == FileAttributes.Hidden & Config.MainConfig.HiddenFiles | !finalDirInfo.Attributes.HasFlag(FileAttributes.Hidden))
                 {
                     if (finalDirInfo.Name.EndsWith(".uesh"))
@@ -1481,7 +1483,7 @@ namespace Nitrocid.Drivers.Filesystem
             var AllLnList = new List<string>();
             var FOpen = new StreamReader(File.Open(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite));
             while (!FOpen.EndOfStream)
-                AllLnList.Add(FOpen.ReadLine());
+                AllLnList.Add(FOpen.ReadLine() ?? "");
             FOpen.Close();
             return [.. AllLnList];
         }
@@ -1805,7 +1807,7 @@ namespace Nitrocid.Drivers.Filesystem
             Config.MainConfig.SortMode switch
             {
                 (int)FilesystemSortOptions.FullName => FileSystemEntry.FilePath,
-                (int)FilesystemSortOptions.Length => (FileSystemEntry.BaseEntry as FileInfo is not null ? (FileSystemEntry.BaseEntry as FileInfo).Length : 0L).ToString().PadLeft(MaxLength, '0'),
+                (int)FilesystemSortOptions.Length => (FileSystemEntry.BaseEntry is FileInfo fileInfo ? fileInfo.Length : 0L).ToString().PadLeft(MaxLength, '0'),
                 (int)FilesystemSortOptions.CreationTime => Convert.ToString(FileSystemEntry.BaseEntry.CreationTime),
                 (int)FilesystemSortOptions.LastAccessTime => Convert.ToString(FileSystemEntry.BaseEntry.LastAccessTime),
                 (int)FilesystemSortOptions.LastWriteTime => Convert.ToString(FileSystemEntry.BaseEntry.LastWriteTime),

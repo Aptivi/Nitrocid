@@ -50,7 +50,7 @@ namespace Nitrocid.Extras.BassBoom.Player
             if (PlaybackTools.State == PlaybackState.Stopped)
                 PlaybackPositioningTools.Drop();
             Common.advance = true;
-            Radio.playerThread.Start();
+            Radio.playerThread?.Start();
             SpinWait.SpinUntil(() => PlaybackTools.Playing || Common.failedToPlay);
             Common.failedToPlay = false;
         }
@@ -98,11 +98,11 @@ namespace Nitrocid.Extras.BassBoom.Player
         internal static void PromptForAddStation()
         {
             string path = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Enter a path to the radio station. The URL to the station must provide an MPEG radio station. AAC ones are not supported yet."));
-            ScreenTools.CurrentScreen.RequireRefresh();
+            ScreenTools.CurrentScreen?.RequireRefresh();
             Common.populate = true;
             PopulateRadioStationInfo(path);
             Common.populate = true;
-            PopulateRadioStationInfo(Common.CurrentCachedInfo.MusicPath);
+            PopulateRadioStationInfo(Common.CurrentCachedInfo?.MusicPath ?? "");
         }
 
         internal static void PopulateRadioStationInfo(string musicPath)
@@ -119,7 +119,7 @@ namespace Nitrocid.Extras.BassBoom.Player
                 var frameInfo = AudioInfoTools.GetFrameInfo();
 
                 // Try to open the lyrics
-                var instance = new CachedSongInfo(musicPath, null, null, -1, formatInfo, frameInfo, null, FileTools.CurrentFile.StationName, true);
+                var instance = new CachedSongInfo(musicPath, null, null, -1, formatInfo, frameInfo, null, FileTools.CurrentFile?.StationName ?? "", true);
                 Common.cachedInfos.Add(instance);
             }
         }
@@ -148,7 +148,7 @@ namespace Nitrocid.Extras.BassBoom.Player
                 if (Common.currentPos == 0)
                     Common.currentPos = 1;
                 Common.populate = true;
-                PopulateRadioStationInfo(Common.CurrentCachedInfo.MusicPath);
+                PopulateRadioStationInfo(Common.CurrentCachedInfo?.MusicPath ?? "");
             }
         }
 
@@ -164,6 +164,8 @@ namespace Nitrocid.Extras.BassBoom.Player
 
         internal static void ShowStationInfo()
         {
+            if (Common.CurrentCachedInfo is null)
+                return;
             string section1 = Translate.DoTranslation("Station info");
             string section2 = Translate.DoTranslation("Layer info");
             string section3 = Translate.DoTranslation("Native State");
@@ -207,40 +209,47 @@ namespace Nitrocid.Extras.BassBoom.Player
 
         internal static void ShowExtendedStationInfo()
         {
+            if (Common.CurrentCachedInfo is null)
+                return;
             var station = RadioTools.GetRadioInfo(Common.CurrentCachedInfo.MusicPath);
             var streamBuilder = new StringBuilder();
-            foreach (var stream in station.Streams)
+            if (station is not null)
             {
-                streamBuilder.AppendLine($"{Translate.DoTranslation("Name")}: {stream.StreamTitle}");
-                streamBuilder.AppendLine($"{Translate.DoTranslation("Home page")}: {stream.StreamHomepage}");
-                streamBuilder.AppendLine($"{Translate.DoTranslation("Genre")}: {stream.StreamGenre}");
-                streamBuilder.AppendLine($"{Translate.DoTranslation("Now playing")}: {stream.SongTitle}");
-                streamBuilder.AppendLine($"{Translate.DoTranslation("Stream path")}: {stream.StreamPath}");
-                streamBuilder.AppendLine(Translate.DoTranslation("Listeners: {0} with {1} at peak").FormatString(stream.CurrentListeners, stream.PeakListeners));
-                streamBuilder.AppendLine($"{Translate.DoTranslation("Bit rate")}: {stream.BitRate} kbps");
-                streamBuilder.AppendLine($"{Translate.DoTranslation("Media type")}: {stream.MimeInfo}");
-                streamBuilder.AppendLine("===============================");
-            }
-            string section1 = Translate.DoTranslation("Radio server info");
-            string section2 = Translate.DoTranslation("Stream info");
-            InfoBoxColor.WriteInfoBox(
-                $$"""
-                {{section1}}
-                {{new string('=', ConsoleChar.EstimateCellWidth(section1))}}
+                foreach (var stream in station.Streams)
+                {
+                    streamBuilder.AppendLine($"{Translate.DoTranslation("Name")}: {stream.StreamTitle}");
+                    streamBuilder.AppendLine($"{Translate.DoTranslation("Home page")}: {stream.StreamHomepage}");
+                    streamBuilder.AppendLine($"{Translate.DoTranslation("Genre")}: {stream.StreamGenre}");
+                    streamBuilder.AppendLine($"{Translate.DoTranslation("Now playing")}: {stream.SongTitle}");
+                    streamBuilder.AppendLine($"{Translate.DoTranslation("Stream path")}: {stream.StreamPath}");
+                    streamBuilder.AppendLine(Translate.DoTranslation("Listeners: {0} with {1} at peak").FormatString(stream.CurrentListeners, stream.PeakListeners));
+                    streamBuilder.AppendLine($"{Translate.DoTranslation("Bit rate")}: {stream.BitRate} kbps");
+                    streamBuilder.AppendLine($"{Translate.DoTranslation("Media type")}: {stream.MimeInfo}");
+                    streamBuilder.AppendLine("===============================");
+                }
+                string section1 = Translate.DoTranslation("Radio server info");
+                string section2 = Translate.DoTranslation("Stream info");
+                InfoBoxColor.WriteInfoBox(
+                    $$"""
+                    {{section1}}
+                    {{new string('=', ConsoleChar.EstimateCellWidth(section1))}}
 
-                {{Translate.DoTranslation("Radio station URL")}}: {{station.ServerHostFull}}
-                {{Translate.DoTranslation("Radio station uses HTTPS")}}: {{station.ServerHttps}}
-                {{Translate.DoTranslation("Radio station server type")}}: {{station.ServerType}}
-                {{Translate.DoTranslation("Radio station streams: {0} with {1} active").FormatString(station.TotalStreams, station.ActiveStreams)}}
-                {{Translate.DoTranslation("Radio station listeners: {0} with {1} at peak").FormatString(station.CurrentListeners, station.PeakListeners)}}
+                    {{Translate.DoTranslation("Radio station URL")}}: {{station.ServerHostFull}}
+                    {{Translate.DoTranslation("Radio station uses HTTPS")}}: {{station.ServerHttps}}
+                    {{Translate.DoTranslation("Radio station server type")}}: {{station.ServerType}}
+                    {{Translate.DoTranslation("Radio station streams: {0} with {1} active").FormatString(station.TotalStreams, station.ActiveStreams)}}
+                    {{Translate.DoTranslation("Radio station listeners: {0} with {1} at peak").FormatString(station.CurrentListeners, station.PeakListeners)}}
                 
-                {{section2}}
-                {{new string('=', ConsoleChar.EstimateCellWidth(section2))}}
+                    {{section2}}
+                    {{new string('=', ConsoleChar.EstimateCellWidth(section2))}}
 
-                ===============================
-                {{streamBuilder}}
-                """
-            );
+                    ===============================
+                    {{streamBuilder}}
+                    """
+                );
+            }
+            else
+                InfoBoxColor.WriteInfoBox($"Unable to get extended radio station info for {Common.CurrentCachedInfo.MusicPath}");
         }
     }
 }

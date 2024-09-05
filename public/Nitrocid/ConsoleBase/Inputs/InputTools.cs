@@ -109,7 +109,7 @@ namespace Nitrocid.ConsoleBase.Inputs
         /// <param name="DefaultValue">Default value</param>
         /// <param name="OneLineWrap">Whether to wrap the input to one line</param>
         /// <param name="settings">Reader settings</param>
-        public static string ReadLineUnsafe(string InputText, string DefaultValue, bool OneLineWrap = false, TermReaderSettings settings = null) =>
+        public static string ReadLineUnsafe(string InputText, string DefaultValue, bool OneLineWrap = false, TermReaderSettings? settings = null) =>
             DriverHandler.CurrentInputDriverLocal.ReadLineUnsafe(InputText, DefaultValue, OneLineWrap, settings);
 
         /// <summary>

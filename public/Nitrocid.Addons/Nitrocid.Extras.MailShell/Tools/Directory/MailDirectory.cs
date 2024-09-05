@@ -45,7 +45,7 @@ namespace Nitrocid.Extras.MailShell.Tools.Directory
             try
             {
                 MailFolder MailFolder;
-                lock (((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).SyncRoot)
+                lock (((ImapClient)((object[]?)MailShellCommon.Client?.ConnectionInstance ?? [])[0]).SyncRoot)
                 {
                     MailFolder = OpenFolder(MailShellCommon.IMAP_CurrentDirectory);
                     MailFolder.Create(Directory, true);
@@ -69,7 +69,7 @@ namespace Nitrocid.Extras.MailShell.Tools.Directory
             try
             {
                 MailFolder MailFolder;
-                lock (((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).SyncRoot)
+                lock (((ImapClient)((object[]?)MailShellCommon.Client?.ConnectionInstance ?? [])[0]).SyncRoot)
                 {
                     MailFolder = OpenFolder(Directory);
                     MailFolder.Delete();
@@ -94,7 +94,7 @@ namespace Nitrocid.Extras.MailShell.Tools.Directory
             try
             {
                 MailFolder MailFolder;
-                lock (((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).SyncRoot)
+                lock (((ImapClient)((object[]?)MailShellCommon.Client?.ConnectionInstance ?? [])[0]).SyncRoot)
                 {
                     MailFolder = OpenFolder(Directory);
                     MailFolder.Rename(MailFolder.ParentFolder, NewName);
@@ -117,7 +117,7 @@ namespace Nitrocid.Extras.MailShell.Tools.Directory
             DebugWriter.WriteDebug(DebugLevel.I, "Opening folder: {0}", Directory);
             try
             {
-                lock (((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).SyncRoot)
+                lock (((ImapClient)((object[]?)MailShellCommon.Client?.ConnectionInstance ?? [])[0]).SyncRoot)
                     OpenFolder(Directory);
                 MailShellCommon.IMAP_CurrentDirectory = Directory;
                 DebugWriter.WriteDebug(DebugLevel.I, "Current directory changed.");
@@ -139,11 +139,12 @@ namespace Nitrocid.Extras.MailShell.Tools.Directory
         public static MailFolder OpenFolder(string FolderString, FolderAccess FolderMode = FolderAccess.ReadWrite)
         {
             var Opened = default(MailFolder);
+            var client = ((ImapClient)((object[]?)MailShellCommon.Client?.ConnectionInstance ?? [])[0]);
             DebugWriter.WriteDebug(DebugLevel.I, "Personal namespace collection parsing started.");
-            foreach (FolderNamespace nmspc in ((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).PersonalNamespaces)
+            foreach (FolderNamespace nmspc in client.PersonalNamespaces)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Namespace: {0}", nmspc.Path);
-                foreach (MailFolder dir in ((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).GetFolders(nmspc).Cast<MailFolder>())
+                foreach (MailFolder dir in client.GetFolders(nmspc).Cast<MailFolder>())
                 {
                     if (dir.Name.Equals(FolderString, StringComparison.OrdinalIgnoreCase))
                     {
@@ -154,10 +155,10 @@ namespace Nitrocid.Extras.MailShell.Tools.Directory
             }
 
             DebugWriter.WriteDebug(DebugLevel.I, "Shared namespace collection parsing started.");
-            foreach (FolderNamespace nmspc in ((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).SharedNamespaces)
+            foreach (FolderNamespace nmspc in client.SharedNamespaces)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Namespace: {0}", nmspc.Path);
-                foreach (MailFolder dir in ((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).GetFolders(nmspc).Cast<MailFolder>())
+                foreach (MailFolder dir in client.GetFolders(nmspc).Cast<MailFolder>())
                 {
                     if (dir.Name.Equals(FolderString, StringComparison.OrdinalIgnoreCase))
                     {
@@ -168,10 +169,10 @@ namespace Nitrocid.Extras.MailShell.Tools.Directory
             }
 
             DebugWriter.WriteDebug(DebugLevel.I, "Other namespace collection parsing started.");
-            foreach (FolderNamespace nmspc in ((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).OtherNamespaces)
+            foreach (FolderNamespace nmspc in client.OtherNamespaces)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Namespace: {0}", nmspc.Path);
-                foreach (MailFolder dir in ((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).GetFolders(nmspc).Cast<MailFolder>())
+                foreach (MailFolder dir in client.GetFolders(nmspc).Cast<MailFolder>())
                 {
                     if (dir.Name.Equals(FolderString, StringComparison.OrdinalIgnoreCase))
                     {
@@ -198,14 +199,15 @@ namespace Nitrocid.Extras.MailShell.Tools.Directory
         public static string MailListDirectories()
         {
             var EntryBuilder = new StringBuilder();
-            lock (((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).SyncRoot)
+            var client = ((ImapClient)((object[]?)MailShellCommon.Client?.ConnectionInstance ?? [])[0]);
+            lock (client.SyncRoot)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Personal namespace collection parsing started.");
-                foreach (FolderNamespace nmspc in ((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).PersonalNamespaces)
+                foreach (FolderNamespace nmspc in client.PersonalNamespaces)
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Namespace: {0}", nmspc.Path);
                     EntryBuilder.AppendLine($"- {nmspc.Path}");
-                    foreach (MailFolder dir in ((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).GetFolders(nmspc).Cast<MailFolder>())
+                    foreach (MailFolder dir in client.GetFolders(nmspc).Cast<MailFolder>())
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Folder: {0}", dir.Name);
                         EntryBuilder.AppendLine($"  - {dir.Name}");
@@ -213,11 +215,11 @@ namespace Nitrocid.Extras.MailShell.Tools.Directory
                 }
 
                 DebugWriter.WriteDebug(DebugLevel.I, "Shared namespace collection parsing started.");
-                foreach (FolderNamespace nmspc in ((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).SharedNamespaces)
+                foreach (FolderNamespace nmspc in client.SharedNamespaces)
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Namespace: {0}", nmspc.Path);
                     EntryBuilder.AppendLine($"- {nmspc.Path}");
-                    foreach (MailFolder dir in ((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).GetFolders(nmspc).Cast<MailFolder>())
+                    foreach (MailFolder dir in client.GetFolders(nmspc).Cast<MailFolder>())
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Folder: {0}", dir.Name);
                         EntryBuilder.AppendLine($"  - {dir.Name}");
@@ -225,11 +227,11 @@ namespace Nitrocid.Extras.MailShell.Tools.Directory
                 }
 
                 DebugWriter.WriteDebug(DebugLevel.I, "Other namespace collection parsing started.");
-                foreach (FolderNamespace nmspc in ((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).OtherNamespaces)
+                foreach (FolderNamespace nmspc in client.OtherNamespaces)
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Namespace: {0}", nmspc.Path);
                     EntryBuilder.AppendLine($"- {nmspc.Path}");
-                    foreach (MailFolder dir in ((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).GetFolders(nmspc).Cast<MailFolder>())
+                    foreach (MailFolder dir in client.GetFolders(nmspc).Cast<MailFolder>())
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Folder: {0}", dir.Name);
                         EntryBuilder.AppendLine($"  - {dir.Name}");

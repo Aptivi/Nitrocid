@@ -54,12 +54,12 @@ namespace Nitrocid.Modifications
         /// Gets the mod instance from compiled assembly
         /// </summary>
         /// <param name="Assembly">An assembly</param>
-        public static IMod GetModInstance(Assembly Assembly)
+        public static IMod? GetModInstance(Assembly Assembly)
         {
             foreach (Type t in Assembly.GetTypes())
             {
                 if (t.GetInterface(typeof(IMod).Name) is not null)
-                    return (IMod)Assembly.CreateInstance(t.FullName);
+                    return (IMod?)Assembly.CreateInstance(t.FullName ?? "");
             }
             return null;
         }
@@ -103,8 +103,10 @@ namespace Nitrocid.Modifications
                     DebugWriter.WriteDebug(DebugLevel.E, "Error trying to load dynamic mod {0}: {1}", modFile, ex.Message);
                     DebugWriter.WriteDebugStackTrace(ex);
                     SplashReport.ReportProgressError(Translate.DoTranslation("Mod can't be loaded because of the following: "));
-                    foreach (Exception LoaderException in ex.LoaderExceptions)
+                    foreach (Exception? LoaderException in ex.LoaderExceptions)
                     {
+                        if (LoaderException is null)
+                            continue;
                         DebugWriter.WriteDebug(DebugLevel.E, "Loader exception: {0}", LoaderException.Message);
                         DebugWriter.WriteDebugStackTrace(LoaderException);
                         SplashReport.ReportProgressError(LoaderException.Message);
@@ -117,7 +119,7 @@ namespace Nitrocid.Modifications
                     DebugWriter.WriteDebugStackTrace(ex);
                     SplashReport.ReportProgressError(Translate.DoTranslation("Mod can't be loaded because there's an incompatibility between this version of the kernel and this mod:") + $" {ex.Message}");
                     SplashReport.ReportProgressError(Translate.DoTranslation("Here's a list of errors that may help you investigate this incompatibility:"));
-                    Exception inner = ex.InnerException;
+                    Exception? inner = ex.InnerException;
                     while (inner != null)
                     {
                         SplashReport.ReportProgressError(inner.Message);
@@ -187,7 +189,8 @@ namespace Nitrocid.Modifications
                             // This json file, as always, contains "Name" (ignored), "Transliterable" (ignored), and "Localizations" keys.
                             string LanguageName = Path.GetFileNameWithoutExtension(ModLocFile);
                             string ModLocFileContents = Reading.ReadContentsText(ModLocFile);
-                            var modLocs = JsonConvert.DeserializeObject<LanguageLocalizations[]>(ModLocFileContents);
+                            var modLocs = JsonConvert.DeserializeObject<LanguageLocalizations[]>(ModLocFileContents) ??
+                                throw new KernelException(KernelExceptionType.ModManagement, Translate.DoTranslation("Can't load mod localizations"));
                             DebugWriter.WriteDebug(DebugLevel.I, "{0} localizations.", modLocs.Length);
                             foreach (var modLoc in modLocs)
                             {

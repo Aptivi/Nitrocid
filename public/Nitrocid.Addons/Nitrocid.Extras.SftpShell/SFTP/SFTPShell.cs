@@ -50,14 +50,15 @@ namespace Nitrocid.Extras.SftpShell.SFTP
         {
             // Parse shell arguments
             NetworkConnection sftpConnection = (NetworkConnection)ShellArgs[0];
-            SftpClient client = (SftpClient)sftpConnection.ConnectionInstance;
+            SftpClient? client = (SftpClient?)sftpConnection.ConnectionInstance ??
+                throw new KernelException(KernelExceptionType.SFTPShell, Translate.DoTranslation("The client is not populated."));
 
             // Finalize current connection
             SFTPShellCommon.clientConnection = sftpConnection;
 
             // Prepare to print current SFTP directory
             SFTPShellCommon.SFTPCurrentRemoteDir = client.WorkingDirectory;
-            DebugWriter.WriteDebug(DebugLevel.I, "Working directory: {0}", SFTPShellCommon.SFTPCurrentRemoteDir);
+            DebugWriter.WriteDebug(DebugLevel.I, "Working directory: {0}", SFTPShellCommon.SFTPCurrentRemoteDir ?? "");
             SFTPShellCommon.SFTPSite = client.ConnectionInfo.Host;
             SFTPShellCommon.SFTPUser = client.ConnectionInfo.Username;
 
@@ -91,7 +92,7 @@ namespace Nitrocid.Extras.SftpShell.SFTP
                     DebugWriter.WriteDebug(DebugLevel.W, "Exiting shell...");
                     if (!detaching)
                     {
-                        ((SftpClient)SFTPShellCommon.ClientSFTP.ConnectionInstance)?.Disconnect();
+                        ((SftpClient?)SFTPShellCommon.ClientSFTP?.ConnectionInstance)?.Disconnect();
                         int connectionIndex = NetworkConnectionTools.GetConnectionIndex(SFTPShellCommon.ClientSFTP);
                         NetworkConnectionTools.CloseConnection(connectionIndex);
                         SFTPShellCommon.clientConnection = null;

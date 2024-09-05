@@ -60,7 +60,9 @@ namespace Nitrocid.Drivers.Encryption
                     while (!HashStream.EndOfStream)
                     {
                         // Check if made from KS, and take it from before-last split space. If not, take it from the beginning
-                        string StringLine = HashStream.ReadLine();
+                        string? StringLine = HashStream.ReadLine();
+                        if (StringLine is null)
+                            continue;
                         if (StringLine.StartsWith("- "))
                         {
                             DebugWriter.WriteDebug(DebugLevel.I, "Hashes file is of KS format");
@@ -155,7 +157,9 @@ namespace Nitrocid.Drivers.Encryption
                     while (!HashStream.EndOfStream)
                     {
                         // Check if made from KS, and take it from before-last split space. If not, take it from the beginning
-                        string StringLine = HashStream.ReadLine();
+                        string? StringLine = HashStream.ReadLine();
+                        if (StringLine is null)
+                            continue;
                         if (StringLine.StartsWith("- "))
                         {
                             DebugWriter.WriteDebug(DebugLevel.I, "Hashes file is of KS format");

@@ -48,8 +48,11 @@ namespace Nitrocid.Tests.Misc.Reflection
         [Description("Management")]
         public void TestGetFieldValue()
         {
-            string Value = Convert.ToString(FieldManager.GetFieldValue(nameof(TryToChangeIt), typeof(FieldManagementTests)));
-            Value.ShouldNotBeNullOrEmpty();
+            var Value = Convert.ToString(FieldManager.GetFieldValue(nameof(TryToChangeIt), typeof(FieldManagementTests)));
+            if (Value is string value)
+                value.ShouldNotBeNullOrEmpty();
+            else
+                Assert.Fail("Can't get field value");
         }
 
         /// <summary>
@@ -60,8 +63,11 @@ namespace Nitrocid.Tests.Misc.Reflection
         public void TestSetFieldValue()
         {
             FieldManager.SetFieldValue(nameof(TryToChangeIt), "Yes!", typeof(FieldManagementTests));
-            string Value = Convert.ToString(FieldManager.GetFieldValue(nameof(TryToChangeIt), typeof(FieldManagementTests)));
-            Value.ShouldBe("Yes!");
+            var Value = Convert.ToString(FieldManager.GetFieldValue(nameof(TryToChangeIt), typeof(FieldManagementTests)));
+            if (Value is string value)
+                value.ShouldBe("Yes!");
+            else
+                Assert.Fail("Can't set field value");
         }
 
         /// <summary>
