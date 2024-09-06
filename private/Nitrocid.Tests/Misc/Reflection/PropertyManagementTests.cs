@@ -52,9 +52,7 @@ namespace Nitrocid.Tests.Misc.Reflection
         public void TestGetPropertyValueInstance()
         {
             var Value = PropertyManager.GetPropertyValueInstance(Config.SaverConfig, nameof(KernelSaverConfig.MatrixBleedDelay));
-            if (Value is string value)
-                value.ShouldNotBeNullOrEmpty();
-            else
+            if (Value is not int)
                 Assert.Fail("Can't get property value");
         }
 

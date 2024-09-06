@@ -189,7 +189,7 @@ namespace Nitrocid.Kernel.Configuration
         /// <summary>
         /// Checks all the config variables to see if they can be parsed
         /// </summary>
-        public static Dictionary<string, bool> CheckConfigVariables(BaseKernelConfig entries)
+        public static Dictionary<string, bool> CheckConfigVariables(BaseKernelConfig? entries)
         {
             if (entries is null)
                 throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't check configuration variables when no entries are specified."));
@@ -199,8 +199,10 @@ namespace Nitrocid.Kernel.Configuration
         /// <summary>
         /// Checks all the config variables to see if they can be parsed
         /// </summary>
-        public static Dictionary<string, bool> CheckConfigVariables(SettingsEntry[] entries, BaseKernelConfig config)
+        public static Dictionary<string, bool> CheckConfigVariables(SettingsEntry[]? entries, BaseKernelConfig? config)
         {
+            if (config is null)
+                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't check configuration variables when no entries are specified."));
             if (entries is null || entries.Length == 0)
                 throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't check configuration variables when no entries are specified."));
             var Results = new Dictionary<string, bool>();
@@ -224,7 +226,7 @@ namespace Nitrocid.Kernel.Configuration
                     Results.Add($"{KeyName}, {KeyVariable}", KeyFound);
 
                     // Check the enumeration
-                    if (KeyEnumeration is not null)
+                    if (!string.IsNullOrEmpty(KeyEnumeration))
                     {
                         bool Result;
                         if (KeyEnumerationInternal)
