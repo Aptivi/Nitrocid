@@ -52,7 +52,7 @@ namespace Nitrocid.LocaleGen.Core.Serializer
             // Now, iterate through each target language to generate JSON files
             var fileLinesEng = File.ReadAllLines(englishFile);
             JArray metadatas = JArray.Parse(File.ReadAllText(metadataFile));
-            var languageNames = metadatas.Select((token) => token.SelectToken("three").ToString());
+            var languageNames = metadatas.Select((token) => token.SelectToken("three")?.ToString());
             targetLanguages = targetLanguages.Where((tl) => languageNames.Contains(tl.LanguageName)).ToArray();
             var serializedTargets = new List<(TargetLanguage, string)>();
             for (int i = 0; i < metadatas.Count; i++)
