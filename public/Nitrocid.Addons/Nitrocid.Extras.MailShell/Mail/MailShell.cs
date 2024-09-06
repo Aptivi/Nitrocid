@@ -53,8 +53,8 @@ namespace Nitrocid.Extras.MailShell.Mail
         {
             // Parse shell arguments
             NetworkConnection connection = (NetworkConnection)ShellArgs[0];
-            ImapClient imapLink = (ImapClient)((object[])connection.ConnectionInstance)[0];
-            SmtpClient smtpLink = (SmtpClient)((object[])connection.ConnectionInstance)[1];
+            ImapClient imapLink = ((ImapClient)((object[]?)MailShellCommon.Client?.ConnectionInstance ?? [])[0]);
+            SmtpClient smtpLink = ((SmtpClient)((object[]?)MailShellCommon.Client?.ConnectionInstance ?? [])[1]);
             MailShellCommon.Client = connection;
 
             // Send ping to keep the connection alive

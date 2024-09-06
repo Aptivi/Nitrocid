@@ -126,7 +126,7 @@ namespace Nitrocid.Network.Types.RPC
 
                     // Send the response
                     DebugWriter.WriteDebug(DebugLevel.I, "Sending response to device...");
-                    RemoteProcedure.RPCListen.Send(ByteMsg, ByteMsg.Length, IP, Port);
+                    RemoteProcedure.RPCListen?.Send(ByteMsg, ByteMsg.Length, IP, Port);
                     EventsManager.FireEvent(EventType.RPCCommandSent, Cmd, Arg, IP, Port);
                 }
                 else
@@ -147,7 +147,7 @@ namespace Nitrocid.Network.Types.RPC
             {
                 try
                 {
-                    var receiveResult = RemoteProcedure.RPCListen.BeginReceive(new AsyncCallback(AcknowledgeMessage), null);
+                    var receiveResult = RemoteProcedure.RPCListen?.BeginReceive(new AsyncCallback(AcknowledgeMessage), null);
                     while (!received)
                     {
                         SpinWait.SpinUntil(() => received || RemoteProcedure.rpcStopping);
@@ -175,7 +175,7 @@ namespace Nitrocid.Network.Types.RPC
                 }
                 received = false;
             }
-            RemoteProcedure.RPCListen.Close();
+            RemoteProcedure.RPCListen?.Close();
         }
 
         private static void AcknowledgeMessage(IAsyncResult asyncResult)

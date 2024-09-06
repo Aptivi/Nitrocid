@@ -21,6 +21,8 @@ using Newtonsoft.Json;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Configuration.Instances;
 using Nitrocid.Kernel.Configuration.Settings;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
 using Nitrocid.Misc.Reflection.Internal;
 
 namespace Nitrocid.Extras.Stocks.Settings
@@ -33,7 +35,8 @@ namespace Nitrocid.Extras.Stocks.Settings
         /// <inheritdoc/>
         [JsonIgnore]
         public override SettingsEntry[] SettingsEntries =>
-            ConfigTools.GetSettingsEntries(ResourcesManager.GetData("StocksSettings.json", ResourcesType.Misc, typeof(StocksConfig).Assembly));
+            ConfigTools.GetSettingsEntries(ResourcesManager.GetData("StocksSettings.json", ResourcesType.Misc, typeof(StocksConfig).Assembly) ??
+                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Failed to obtain settings entries.")));
 
         /// <summary>
         /// Key for the AlphaVantage Stocks API

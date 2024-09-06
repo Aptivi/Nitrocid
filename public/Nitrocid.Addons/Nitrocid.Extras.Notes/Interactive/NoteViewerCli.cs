@@ -25,6 +25,7 @@ using System;
 using Nitrocid.Files.Editors.TextEdit;
 using Textify.General;
 using System.Linq;
+using Terminaux.Inputs.Styles.Editor;
 
 namespace Nitrocid.Extras.Notes.Interactive
 {

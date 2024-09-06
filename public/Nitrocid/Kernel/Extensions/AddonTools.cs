@@ -124,9 +124,14 @@ namespace Nitrocid.Kernel.Extensions
                     DebugWriter.WriteDebug(DebugLevel.W, "Skipping addon entry {0} because of nonexistent file [{1}]...", addon, addonPath);
                     return;
                 }
-                if (!ReflectionCommon.IsDotnetAssemblyFile(addonPath, out AssemblyName asmName))
+                if (!ReflectionCommon.IsDotnetAssemblyFile(addonPath, out AssemblyName? asmName))
                 {
                     DebugWriter.WriteDebug(DebugLevel.W, "Skipping addon entry {0} because of invalid .NET assembly file [{1}]...", addon, addonPath);
+                    return;
+                }
+                if (asmName is null)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.W, "Skipping addon entry {0} because of no assembly name [{1}]...", addon, addonPath);
                     return;
                 }
 

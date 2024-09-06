@@ -42,7 +42,9 @@ namespace Nitrocid.Shell.Shells.Hex.Commands
         {
             if (TextTools.IsStringNumeric(parameters.ArgumentsList[0]))
             {
-                if (Convert.ToInt32(parameters.ArgumentsList[0]) <= HexEditShellCommon.FileBytes.LongLength)
+                var FileBytes = HexEditShellCommon.FileBytes ??
+                    throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Hex file is not open yet."));
+                if (Convert.ToInt32(parameters.ArgumentsList[0]) <= FileBytes.LongLength)
                 {
                     HexEditTools.DeleteByte(Convert.ToInt64(parameters.ArgumentsList[0]));
                     TextWriters.Write(Translate.DoTranslation("Byte deleted."), true, KernelColorType.Success);

@@ -17,6 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Shells;
 
@@ -34,7 +36,9 @@ namespace Nitrocid.Extras.HttpShell.HTTP.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            ((HTTPShell)ShellManager.ShellStack[^1].ShellBase).detaching = true;
+            var shell = (HTTPShell?)ShellManager.ShellStack[^1].ShellBase ??
+                throw new KernelException(KernelExceptionType.HTTPShell, Translate.DoTranslation("The last shell is not this shell to detach from."));
+            shell.detaching = true;
             ShellManager.KillShell();
             return 0;
         }

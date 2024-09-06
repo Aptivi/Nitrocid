@@ -40,7 +40,9 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             var handlers = ExtensionHandlerTools.defaultHandlers;
             for (int i = 0; i < handlers.Count; i++)
             {
-                ExtensionHandler handler = ExtensionHandlerTools.GetExtensionHandler(handlers.ElementAt(i).Key, handlers.ElementAt(i).Value);
+                ExtensionHandler? handler = ExtensionHandlerTools.GetExtensionHandler(handlers.ElementAt(i).Key, handlers.ElementAt(i).Value);
+                if (handler is null)
+                    continue;
                 TextFancyWriters.WriteSeparator($"{i + 1}/{handlers.Count}", KernelColorType.ListTitle);
                 TextWriters.Write("- " + Translate.DoTranslation("Extension") + ": ", false, KernelColorType.ListEntry);
                 TextWriters.Write(handler.Extension, KernelColorType.ListValue);

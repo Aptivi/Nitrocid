@@ -339,12 +339,19 @@ namespace Nitrocid.Kernel.Debugging
         /// Writes the exception's stack trace to the debugger
         /// </summary>
         /// <param name="Ex">An exception</param>
-        public static void WriteDebugStackTrace(Exception Ex)
+        public static void WriteDebugStackTrace(Exception? Ex)
         {
             lock (WriteLock)
             {
                 if (KernelEntry.DebugMode)
                 {
+                    if (Ex is null)
+                    {
+                        WriteDebug(DebugLevel.T, "No stack trace!");
+                        WriteDebug(DebugLevel.T, $"Event of incident: {TimeDateRenderers.Render()}");
+                        return;
+                    }
+
                     // These two NewLines are padding for accurate stack tracing.
                     var Inner = Ex.InnerException;
                     int InnerNumber = 1;

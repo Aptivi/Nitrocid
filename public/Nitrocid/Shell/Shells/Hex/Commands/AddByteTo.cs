@@ -43,7 +43,9 @@ namespace Nitrocid.Shell.Shells.Hex.Commands
             byte ByteContent = Convert.ToByte(parameters.ArgumentsList[0], 16);
             if (TextTools.IsStringNumeric(parameters.ArgumentsList[1]))
             {
-                if (Convert.ToInt32(parameters.ArgumentsList[1]) <= HexEditShellCommon.FileBytes.LongLength)
+                var FileBytes = HexEditShellCommon.FileBytes ??
+                    throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Hex file is not open yet."));
+                if (Convert.ToInt32(parameters.ArgumentsList[1]) <= FileBytes.LongLength)
                 {
                     HexEditTools.AddNewByte(ByteContent, Convert.ToInt64(parameters.ArgumentsList[1]));
                     TextWriters.Write(Translate.DoTranslation("Byte deleted."), true, KernelColorType.Success);

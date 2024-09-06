@@ -58,7 +58,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                     TextWriterColor.Write(Translate.DoTranslation("Last access time: {0}"), TimeDateRenderers.Render(DirInfo.LastAccessTime));
                     TextWriterColor.Write(Translate.DoTranslation("Last write time: {0}"), TimeDateRenderers.Render(DirInfo.LastWriteTime));
                     TextWriterColor.Write(Translate.DoTranslation("Attributes: {0}"), DirInfo.Attributes);
-                    TextWriterColor.Write(Translate.DoTranslation("Parent directory: {0}"), FilesystemTools.NeutralizePath(DirInfo.Parent.FullName));
+                    TextWriterColor.Write(Translate.DoTranslation("Parent directory: {0}"), FilesystemTools.NeutralizePath(DirInfo.Parent?.FullName));
                 }
                 else
                 {

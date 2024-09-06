@@ -45,7 +45,6 @@ namespace Nitrocid.Languages
     public static class LanguageManager
     {
 
-        internal readonly static LanguageMetadata[] LanguageMetadata = JsonConvert.DeserializeObject<LanguageMetadata[]>(ResourcesManager.GetData("Metadata.json", ResourcesType.Languages));
         internal static Dictionary<string, LanguageInfo> BaseLanguages = [];
         internal static Dictionary<string, LanguageInfo> CustomLanguages = [];
         internal static LanguageInfo currentLanguage = Languages[Config.MainConfig.CurrentLanguage];
@@ -67,6 +66,10 @@ namespace Nitrocid.Languages
                 var InstalledLanguages = new Dictionary<string, LanguageInfo>();
 
                 // For each language, get information for localization and cache them
+                var languageData = ResourcesManager.GetData("Metadata.json", ResourcesType.Languages) ??
+                    throw new KernelException(KernelExceptionType.LanguageManagement, Translate.DoTranslation("Can't get language metadata"));
+                LanguageMetadata[] LanguageMetadata = JsonConvert.DeserializeObject<LanguageMetadata[]>(languageData) ??
+                    throw new KernelException(KernelExceptionType.LanguageManagement, Translate.DoTranslation("Can't get language metadata array"));
                 foreach (var Language in LanguageMetadata)
                     AddBaseLanguage(Language);
 
@@ -93,7 +96,7 @@ namespace Nitrocid.Languages
         {
             // Settings app may have passed the language name with the country
             lang = lang.Contains(' ') ? lang.Split(' ')[0] : lang;
-            if (Languages.TryGetValue(lang, out LanguageInfo langInfo))
+            if (Languages.TryGetValue(lang, out LanguageInfo? langInfo))
             {
                 // Set appropriate codepage for incapable terminals
                 try
@@ -331,7 +334,7 @@ namespace Nitrocid.Languages
                     // Enumerate all the installed languages and query for the custom status to uninstall the custom languages
                     for (int LanguageIndex = Languages.Count - 1; LanguageIndex <= 0; LanguageIndex++)
                     {
-                        string Language = Languages.Keys.ElementAtOrDefault(LanguageIndex);
+                        string Language = Languages.Keys.ElementAt(LanguageIndex);
                         var LanguageInfo = Languages[Language];
 
                         // Check the status
@@ -427,6 +430,8 @@ namespace Nitrocid.Languages
             {
                 // Get the available cultures
                 var cults = CultureManager.GetCulturesFromLang(language);
+                if (cults is null)
+                    continue;
                 foreach (var cult in cults)
                 {
                     if (cult.Name == currentCult)

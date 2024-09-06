@@ -27,11 +27,11 @@ namespace Nitrocid.Modifications.Dependencies
     public class ModDependency
     {
         [JsonProperty("version")]
-        internal string modVersion;
+        internal string modVersion = "";
         [JsonProperty("name")]
-        internal string modName;
+        internal string modName = "";
         [JsonIgnore]
-        internal string modPath;
+        internal string modPath = "";
 
         /// <summary>
         /// Dependent mod version

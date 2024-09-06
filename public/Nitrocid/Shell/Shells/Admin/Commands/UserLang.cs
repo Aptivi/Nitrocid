@@ -48,7 +48,7 @@ namespace Nitrocid.Shell.Shells.Admin.Commands
                 UserManagement.SaveUsers();
                 TextWriterColor.Write(Translate.DoTranslation("Preferred user language set to {0}. You may want to log in again."), lang);
             }
-            else if (LanguageManager.Languages.TryGetValue(lang, out LanguageInfo langInfo))
+            else if (LanguageManager.Languages.TryGetValue(lang, out LanguageInfo? langInfo))
             {
                 // Do it locally
                 if (UserManagement.CurrentUser.Username == userName)

@@ -24,6 +24,8 @@ using Nitrocid.Kernel.Threading;
 using Nitrocid.Kernel.Events;
 using Terminaux.Base;
 using Terminaux.Colors;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
 
 namespace Nitrocid.Misc.Screensaver
 {
@@ -33,16 +35,18 @@ namespace Nitrocid.Misc.Screensaver
     internal static class ScreensaverDisplayer
     {
 
-        internal readonly static KernelThread ScreensaverDisplayerThread = new("Screensaver display thread", false, (ss) => DisplayScreensaver((BaseScreensaver)ss));
+        internal readonly static KernelThread ScreensaverDisplayerThread = new("Screensaver display thread", false, (ss) => DisplayScreensaver((BaseScreensaver?)ss));
         internal static bool OutOfSaver;
-        internal static BaseScreensaver displayingSaver;
+        internal static BaseScreensaver? displayingSaver;
 
         /// <summary>
         /// Displays the screensaver from the screensaver base
         /// </summary>
         /// <param name="Screensaver">Screensaver base containing information about the screensaver</param>
-        internal static void DisplayScreensaver(BaseScreensaver Screensaver)
+        internal static void DisplayScreensaver(BaseScreensaver? Screensaver)
         {
+            if (Screensaver is null)
+                throw new KernelException(KernelExceptionType.ScreensaverManagement, Translate.DoTranslation("Screensaver instance is not specified"));
             bool initialVisible = ConsoleWrapper.CursorVisible;
             bool initialBack = ColorTools.AllowBackground;
             try

@@ -30,6 +30,7 @@ using Nitrocid.Kernel.Events;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
+using Nitrocid.Kernel.Exceptions;
 
 namespace Nitrocid.Shell.ShellBase.Commands.ProcessExecution
 {
@@ -42,8 +43,12 @@ namespace Nitrocid.Shell.ShellBase.Commands.ProcessExecution
         /// <summary>
         /// Executes a file with specified arguments
         /// </summary>
-        internal static void ExecuteProcess(ExecuteProcessThreadParameters ThreadParams) =>
+        internal static void ExecuteProcess(ExecuteProcessThreadParameters? ThreadParams)
+        {
+            if (ThreadParams is null)
+                throw new KernelException(KernelExceptionType.ShellOperation, Translate.DoTranslation("Can't get thread parameters for process execution."));
             ExecuteProcess(ThreadParams.File, ThreadParams.Args);
+        }
 
         /// <summary>
         /// Executes a file with specified arguments
@@ -123,7 +128,7 @@ namespace Nitrocid.Shell.ShellBase.Commands.ProcessExecution
                 EventsManager.FireEvent(EventType.ProcessError, File + Args, ex);
                 DebugWriter.WriteDebug(DebugLevel.E, "Process error for {0}, {1}, {2}: {3}.", File, WorkingDirectory, Args, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriters.Write(Translate.DoTranslation("Error trying to execute command") + " {2}." + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, KernelColorType.Error, ex.GetType().FullName, ex.Message, File);
+                TextWriters.Write(Translate.DoTranslation("Error trying to execute command") + " {2}." + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, KernelColorType.Error, ex.GetType().FullName ?? "<null>", ex.Message, File);
             }
             return -1;
         }
@@ -220,7 +225,7 @@ namespace Nitrocid.Shell.ShellBase.Commands.ProcessExecution
                 EventsManager.FireEvent(EventType.ProcessError, File + Args, ex);
                 DebugWriter.WriteDebug(DebugLevel.E, "Process error for {0}, {1}, {2}: {3}.", File, WorkingDirectory, Args, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriters.Write(Translate.DoTranslation("Error trying to execute command") + " {2}." + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, KernelColorType.Error, ex.GetType().FullName, ex.Message, File);
+                TextWriters.Write(Translate.DoTranslation("Error trying to execute command") + " {2}." + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, KernelColorType.Error, ex.GetType().FullName ?? "<null>", ex.Message, File);
                 exitCode = -1;
             }
             return commandOutputBuilder.ToString();
@@ -275,7 +280,7 @@ namespace Nitrocid.Shell.ShellBase.Commands.ProcessExecution
                 EventsManager.FireEvent(EventType.ProcessError, File + Args, ex);
                 DebugWriter.WriteDebug(DebugLevel.E, "Process error for {0}, {1}, {2}: {3}.", File, WorkingDirectory, Args, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriters.Write(Translate.DoTranslation("Error trying to execute command") + " {2}." + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, KernelColorType.Error, ex.GetType().FullName, ex.Message, File);
+                TextWriters.Write(Translate.DoTranslation("Error trying to execute command") + " {2}." + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, KernelColorType.Error, ex.GetType().FullName ?? "<null>", ex.Message, File);
             }
         }
 
@@ -316,7 +321,8 @@ namespace Nitrocid.Shell.ShellBase.Commands.ProcessExecution
             // Issue report: https://github.com/dotnet/runtime/issues/94338
             var privateReflection = BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.SetField;
             var startInfoType = processStartInfo.GetType();
-            var envVarsField = startInfoType.GetField("_environmentVariables", privateReflection);
+            var envVarsField = startInfoType.GetField("_environmentVariables", privateReflection) ??
+                throw new KernelException(KernelExceptionType.ShellOperation, Translate.DoTranslation("Can't get internal field for environment variables"));
             envVarsField.SetValue(processStartInfo, null);
             // 
             // --- UseShellExecute and the Environment property population Hack End ---

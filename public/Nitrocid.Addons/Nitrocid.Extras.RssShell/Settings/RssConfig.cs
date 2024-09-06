@@ -22,6 +22,8 @@ using Nitrocid.Extras.RssShell.RSS;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Configuration.Instances;
 using Nitrocid.Kernel.Configuration.Settings;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
 using Nitrocid.Misc.Reflection.Internal;
 using Nitrocid.Shell.Prompts;
 
@@ -35,7 +37,8 @@ namespace Nitrocid.Extras.RssShell.Settings
         /// <inheritdoc/>
         [JsonIgnore]
         public override SettingsEntry[] SettingsEntries =>
-            ConfigTools.GetSettingsEntries(ResourcesManager.GetData("RssSettings.json", ResourcesType.Misc, typeof(RssConfig).Assembly));
+            ConfigTools.GetSettingsEntries(ResourcesManager.GetData("RssSettings.json", ResourcesType.Misc, typeof(RssConfig).Assembly) ??
+                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Failed to obtain settings entries.")));
 
         /// <summary>
         /// RSS Prompt Preset

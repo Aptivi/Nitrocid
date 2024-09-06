@@ -53,7 +53,8 @@ namespace Nitrocid.Misc.Interactives
                 else
                 {
                     int nestLevel = 0;
-                    var managedThreads = threads as List<KernelThread>;
+                    if (threads is not List<KernelThread> managedThreads)
+                        return [];
                     foreach (var thread in managedThreads)
                     {
                         void HandleChildThreads(KernelThread thread)

@@ -41,11 +41,13 @@ namespace Nitrocid.Shell.Shells.Hex.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
+            var FileBytes = HexEditShellCommon.FileBytes ??
+                throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Hex file is not open yet."));
             if (parameters.ArgumentsList.Length == 1)
             {
                 if (TextTools.IsStringNumeric(parameters.ArgumentsList[0]))
                 {
-                    if (Convert.ToInt64(parameters.ArgumentsList[0]) <= HexEditShellCommon.FileBytes.LongLength)
+                    if (Convert.ToInt64(parameters.ArgumentsList[0]) <= FileBytes.LongLength)
                     {
                         HexEditTools.DeleteBytes(Convert.ToInt64(parameters.ArgumentsList[0]));
                         TextWriters.Write(Translate.DoTranslation("Deleted bytes."), true, KernelColorType.Success);
@@ -68,7 +70,7 @@ namespace Nitrocid.Shell.Shells.Hex.Commands
             {
                 if (TextTools.IsStringNumeric(parameters.ArgumentsList[0]) & TextTools.IsStringNumeric(parameters.ArgumentsList[1]))
                 {
-                    if (Convert.ToInt64(parameters.ArgumentsList[0]) <= HexEditShellCommon.FileBytes.LongLength & Convert.ToInt64(parameters.ArgumentsList[1]) <= HexEditShellCommon.FileBytes.LongLength)
+                    if (Convert.ToInt64(parameters.ArgumentsList[0]) <= FileBytes.LongLength & Convert.ToInt64(parameters.ArgumentsList[1]) <= HexEditShellCommon.FileBytes.LongLength)
                     {
                         long ByteNumberStart = Convert.ToInt64(parameters.ArgumentsList[0]);
                         long ByteNumberEnd = Convert.ToInt64(parameters.ArgumentsList[1]);

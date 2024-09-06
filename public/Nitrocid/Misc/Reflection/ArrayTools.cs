@@ -37,7 +37,7 @@ namespace Nitrocid.Misc.Reflection
         /// <typeparam name="T">Target type. It's not necessarily an integer.</typeparam>
         /// <param name="array">Target array to sort randomly</param>
         /// <returns>A new array containing elements that are shuffled.</returns>
-        public static T[] RandomizeArray<T>(this T[] array)
+        public static T[]? RandomizeArray<T>(this T[] array)
         {
             if (array == null || array.Length == 0)
                 return array;

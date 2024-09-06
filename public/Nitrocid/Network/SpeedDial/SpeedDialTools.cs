@@ -46,7 +46,7 @@ namespace Nitrocid.Network.SpeedDial
         /// <param name="SpeedDialType">Speed dial type to look for</param>
         /// <param name="arguments">Arguments to look for</param>
         /// <returns>A <see cref="SpeedDialEntry"/> instance if found</returns>
-        public static SpeedDialEntry GetSpeedDialEntry(string Address, int Port, NetworkConnectionType SpeedDialType, object[] arguments) =>
+        public static SpeedDialEntry? GetSpeedDialEntry(string Address, int Port, NetworkConnectionType SpeedDialType, object[] arguments) =>
             GetSpeedDialEntry(Address, Port, SpeedDialType.ToString(), arguments);
 
         /// <summary>
@@ -57,7 +57,7 @@ namespace Nitrocid.Network.SpeedDial
         /// <param name="SpeedDialType">Speed dial type to look for</param>
         /// <param name="arguments">Arguments to look for</param>
         /// <returns>A <see cref="SpeedDialEntry"/> instance if found</returns>
-        public static SpeedDialEntry GetSpeedDialEntry(string Address, int Port, string SpeedDialType, object[] arguments)
+        public static SpeedDialEntry? GetSpeedDialEntry(string Address, int Port, string SpeedDialType, object[] arguments)
         {
             if (speedDialEntries.Count == 0)
                 return null;
@@ -77,7 +77,7 @@ namespace Nitrocid.Network.SpeedDial
         /// <param name="Port">Port to look for</param>
         /// <param name="SpeedDialType">Speed dial type to look for</param>
         /// <returns>A <see cref="SpeedDialEntry"/> instance if found</returns>
-        public static SpeedDialEntry GetSpeedDialEntry(string Address, int Port, NetworkConnectionType SpeedDialType) =>
+        public static SpeedDialEntry? GetSpeedDialEntry(string Address, int Port, NetworkConnectionType SpeedDialType) =>
             GetSpeedDialEntry(Address, Port, SpeedDialType.ToString());
 
         /// <summary>
@@ -87,7 +87,7 @@ namespace Nitrocid.Network.SpeedDial
         /// <param name="Port">Port to look for</param>
         /// <param name="SpeedDialType">Speed dial type to look for</param>
         /// <returns>A <see cref="SpeedDialEntry"/> instance if found</returns>
-        public static SpeedDialEntry GetSpeedDialEntry(string Address, int Port, string SpeedDialType)
+        public static SpeedDialEntry? GetSpeedDialEntry(string Address, int Port, string SpeedDialType)
         {
             if (speedDialEntries.Count == 0)
                 return null;
@@ -216,7 +216,7 @@ namespace Nitrocid.Network.SpeedDial
             string path = PathsManagement.GetKernelPath(KernelPathType.SpeedDial);
             if (!Checking.FileExists(path))
                 return;
-            speedDialEntries = JsonConvert.DeserializeObject<List<SpeedDialEntry>>(Reading.ReadContentsText(path));
+            speedDialEntries = JsonConvert.DeserializeObject<List<SpeedDialEntry>>(Reading.ReadContentsText(path)) ?? [];
         }
     }
 }

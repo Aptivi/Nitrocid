@@ -47,7 +47,7 @@ namespace Nitrocid.Users.Login.Handlers
         /// <summary>
         /// Gets the current login handler
         /// </summary>
-        public static BaseLoginHandler CurrentHandler =>
+        public static BaseLoginHandler? CurrentHandler =>
             GetHandler(CurrentHandlerName);
 
         /// <summary>
@@ -79,7 +79,7 @@ namespace Nitrocid.Users.Login.Handlers
         /// </summary>
         /// <param name="name">Name of the built-in or custom handler</param>
         /// <returns>A <see cref="BaseLoginHandler"/> instance containing handler data if found. Otherwise, null is returned.</returns>
-        public static BaseLoginHandler GetHandler(string name)
+        public static BaseLoginHandler? GetHandler(string name)
         {
             if (IsHandlerBuiltin(name))
                 return handlers[name];

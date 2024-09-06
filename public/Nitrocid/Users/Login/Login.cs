@@ -74,10 +74,12 @@ namespace Nitrocid.Users.Login
                 while (!PowerManager.RebootRequested && !PowerManager.KernelShutdown)
                 {
                     // First, set root account
-                    UserManagement.CurrentUserInfo =
-                        UserManagement.UserExists("root") ?
-                        UserManagement.GetUser("root") :
-                        UserManagement.fallbackRootAccount;
+                    var userInfo =
+                        (UserManagement.UserExists("root") ?
+                         UserManagement.GetUser("root") :
+                         UserManagement.fallbackRootAccount) ??
+                        throw new KernelException(KernelExceptionType.LoginHandler, Translate.DoTranslation("Can't set root account."));
+                    UserManagement.CurrentUserInfo = userInfo;
 
                     // Now, show the Login screen
                     bool proceed = handler.LoginScreen();
@@ -198,10 +200,11 @@ namespace Nitrocid.Users.Login
             DebugWriter.WriteDebug(DebugLevel.I, "Logged in to {0}!", signedInUser);
 
             // Sign in to user.
-            UserManagement.CurrentUserInfo = UserManagement.GetUser(signedInUser);
+            UserManagement.CurrentUserInfo = UserManagement.GetUser(signedInUser) ??
+                throw new KernelException(KernelExceptionType.LoginHandler, Translate.DoTranslation("Can't get user info for") + $" {signedInUser}");
 
             // Set preferred language
-            string preferredLanguage = UserManagement.CurrentUser.PreferredLanguage;
+            string preferredLanguage = UserManagement.CurrentUser.PreferredLanguage ?? "";
             DebugWriter.WriteDebug(DebugLevel.I, "Preferred language {0}. Trying to set dryly...", preferredLanguage);
             if (!string.IsNullOrWhiteSpace(preferredLanguage))
                 LanguageManager.currentUserLanguage = LanguageManager.Languages[preferredLanguage];

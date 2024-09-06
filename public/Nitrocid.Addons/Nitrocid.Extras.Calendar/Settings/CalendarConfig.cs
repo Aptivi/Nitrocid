@@ -21,6 +21,8 @@ using Newtonsoft.Json;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Configuration.Instances;
 using Nitrocid.Kernel.Configuration.Settings;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
 using Nitrocid.Misc.Reflection.Internal;
 
 namespace Nitrocid.Extras.Calendar.Settings
@@ -33,7 +35,8 @@ namespace Nitrocid.Extras.Calendar.Settings
         /// <inheritdoc/>
         [JsonIgnore]
         public override SettingsEntry[] SettingsEntries =>
-            ConfigTools.GetSettingsEntries(ResourcesManager.GetData("CalendarSettings.json", ResourcesType.Misc, typeof(CalendarConfig).Assembly));
+            ConfigTools.GetSettingsEntries(ResourcesManager.GetData("CalendarSettings.json", ResourcesType.Misc, typeof(CalendarConfig).Assembly) ??
+                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Failed to obtain settings entries.")));
 
         /// <summary>
         /// If enabled, deletes all events and/or reminders before saving all of them using the calendar command

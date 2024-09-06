@@ -301,7 +301,7 @@ namespace Nitrocid.Users
                         // Store user info
                         var oldInfo = GetUser(OldName) ??
                             throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Failed to get user") + $" {OldName}");
-                        var newInfo = new UserInfo(Username, oldInfo.Password, oldInfo.Permissions, oldInfo.FullName, oldInfo.PreferredLanguage, oldInfo.Groups, oldInfo.Flags, oldInfo.CustomSettings);
+                        var newInfo = new UserInfo(Username, oldInfo.Password, oldInfo.Permissions, oldInfo.FullName, oldInfo.PreferredLanguage ?? "", oldInfo.Groups, oldInfo.Flags, oldInfo.CustomSettings);
 
                         // Rename username in dictionary
                         Users.Remove(oldInfo);

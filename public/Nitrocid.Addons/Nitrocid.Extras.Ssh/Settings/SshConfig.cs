@@ -21,6 +21,8 @@ using Newtonsoft.Json;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Configuration.Instances;
 using Nitrocid.Kernel.Configuration.Settings;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
 using Nitrocid.Misc.Reflection.Internal;
 
 namespace Nitrocid.Extras.Ssh.Settings
@@ -33,7 +35,8 @@ namespace Nitrocid.Extras.Ssh.Settings
         /// <inheritdoc/>
         [JsonIgnore]
         public override SettingsEntry[] SettingsEntries =>
-            ConfigTools.GetSettingsEntries(ResourcesManager.GetData("SshSettings.json", ResourcesType.Misc, typeof(SshConfig).Assembly));
+            ConfigTools.GetSettingsEntries(ResourcesManager.GetData("SshSettings.json", ResourcesType.Misc, typeof(SshConfig).Assembly) ??
+                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Failed to obtain settings entries.")));
 
         /// <summary>
         /// Write how you want your login prompt to be. Leave blank to use default style. Placeholders are parsed

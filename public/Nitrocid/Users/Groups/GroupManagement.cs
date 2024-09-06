@@ -153,7 +153,9 @@ namespace Nitrocid.Users.Groups
                 throw new KernelException(KernelExceptionType.NoSuchGroup, Translate.DoTranslation("Can't query a user from a nonexistent group."));
 
             // Get the user group array first, then check to see if we have a group entry for a user
-            string[] groupNames = UserManagement.GetUser(user).Groups;
+            var userInstance = UserManagement.GetUser(user) ??
+                throw new KernelException(KernelExceptionType.GroupManagement, Translate.DoTranslation("Can't get user info for") + $" {user}");
+            string[] groupNames = userInstance.Groups;
             DebugWriter.WriteDebug(DebugLevel.I, "User {0} in group {1}? Refer to: [{2}]", user, groupName, string.Join(", ", groupNames));
             return groupNames.Length > 0 && groupNames.Any((group) => group == groupName);
         }
@@ -170,7 +172,9 @@ namespace Nitrocid.Users.Groups
                 throw new KernelException(KernelExceptionType.NoSuchUser);
 
             // Get the user group array first, then compare against all the group elements for the group name
-            string[] groupNames = UserManagement.GetUser(user).Groups;
+            var userInstance = UserManagement.GetUser(user) ??
+                throw new KernelException(KernelExceptionType.GroupManagement, Translate.DoTranslation("Can't get user info for") + $" {user}");
+            string[] groupNames = userInstance.Groups;
             DebugWriter.WriteDebug(DebugLevel.I, "User {0}'s groups: [{1}]", user, string.Join(", ", groupNames));
             return AvailableGroups.Where((group) => groupNames.Contains(group.GroupName)).ToArray();
         }

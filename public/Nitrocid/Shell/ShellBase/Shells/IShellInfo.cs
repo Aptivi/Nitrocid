@@ -51,7 +51,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
         /// <summary>
         /// Gets the shell base
         /// </summary>
-        BaseShell ShellBase { get; }
+        BaseShell? ShellBase { get; }
         /// <summary>
         /// Gets the current preset
         /// </summary>

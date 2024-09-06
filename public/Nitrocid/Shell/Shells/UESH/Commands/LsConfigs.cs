@@ -41,6 +41,8 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             bool deep = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-deep");
             foreach (var config in configs)
             {
+                if (config is null || config.SettingsEntries is null)
+                    continue;
                 SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Info for") + $" {config.GetType().Name}", true);
                 ListEntryWriterColor.WriteListEntry(Translate.DoTranslation("Entries count"), $"{config.SettingsEntries.Length}");
                 if (deep)

@@ -22,6 +22,8 @@ using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Configuration.Instances;
 using Nitrocid.Kernel.Configuration.Settings;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
 using Nitrocid.Misc.Reflection.Internal;
 using Nitrocid.Misc.Text;
 
@@ -35,7 +37,8 @@ namespace Nitrocid.SplashPacks.Settings
         /// <inheritdoc/>
         [JsonIgnore]
         public override SettingsEntry[] SettingsEntries =>
-            ConfigTools.GetSettingsEntries(ResourcesManager.GetData("AddonSplashSettings.json", ResourcesType.Misc, typeof(ExtraSplashesConfig).Assembly));
+            ConfigTools.GetSettingsEntries(ResourcesManager.GetData("AddonSplashSettings.json", ResourcesType.Misc, typeof(ExtraSplashesConfig).Assembly) ??
+                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Failed to obtain settings entries.")));
 
         /// <summary>
         /// [Simple] The progress text location

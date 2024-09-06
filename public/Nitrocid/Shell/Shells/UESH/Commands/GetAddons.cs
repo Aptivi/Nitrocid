@@ -52,7 +52,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             }
 
             // First, try to fetch the addons package
-            KernelUpdate addonsPackage;
+            KernelUpdate? addonsPackage;
             try
             {
                 TextWriters.Write(Translate.DoTranslation("Fetching the addons package..."), KernelColorType.Progress);
@@ -69,6 +69,8 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             // Now, try to download the addons package
             try
             {
+                if (addonsPackage is null)
+                    throw new KernelException(KernelExceptionType.Unknown, Translate.DoTranslation("Can't obtain addons package."));
                 TextWriters.Write(Translate.DoTranslation("Downloading the addons package..."), KernelColorType.Progress);
                 NetworkTransfer.DownloadFile(addonsPackage.UpdateURL.ToString(), PathsManagement.AppDataPath + "/addons.zip");
             }

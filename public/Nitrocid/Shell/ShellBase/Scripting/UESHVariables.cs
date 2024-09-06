@@ -113,7 +113,7 @@ namespace Nitrocid.Shell.ShellBase.Scripting
             try
             {
                 string FinalVar = SanitizeVariableName(var);
-                if (ShellVariables.TryGetValue(FinalVar, out string variableValue))
+                if (ShellVariables.TryGetValue(FinalVar, out string? variableValue))
                     return variableValue;
                 return var;
             }
@@ -206,7 +206,7 @@ namespace Nitrocid.Shell.ShellBase.Scripting
         {
             var EnvVars = Environment.GetEnvironmentVariables();
             foreach (string EnvVar in EnvVars.Keys)
-                SetVariable(EnvVar, Convert.ToString(EnvVars[EnvVar]));
+                SetVariable(EnvVar, EnvVars[EnvVar]?.ToString() ?? "");
         }
 
         /// <summary>

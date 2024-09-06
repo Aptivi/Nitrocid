@@ -49,7 +49,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
         /// <inheritdoc/>
         public virtual Dictionary<string, PromptPresetBase> CustomShellPresets => customShellPresets;
         /// <inheritdoc/>
-        public virtual BaseShell ShellBase => null;
+        public virtual BaseShell? ShellBase => null;
         /// <inheritdoc/>
         public virtual PromptPresetBase CurrentPreset =>
             
@@ -68,6 +68,6 @@ namespace Nitrocid.Shell.ShellBase.Shells
         /// <summary>
         /// Shell type. Taken from <see cref="ShellBase"/> for easier access
         /// </summary>
-        public string ShellType => ShellBase.ShellType;
+        public string ShellType => ShellBase?.ShellType ?? "";
     }
 }

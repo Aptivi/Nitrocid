@@ -45,7 +45,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             string mode = parameters.ArgumentsList[1];
             string perm = parameters.ArgumentsList[2];
 
-            if (!Enum.TryParse(typeof(PermissionTypes), perm, out object permission))
+            if (!Enum.TryParse(typeof(PermissionTypes), perm, out object? permission))
             {
                 // Permission not found
                 TextWriters.Write(Translate.DoTranslation("No such permission"), true, KernelColorType.Error);

@@ -36,10 +36,10 @@ namespace Nitrocid.Misc.Reflection
         /// </summary>
         /// <param name="Method">Method name. Use operator NameOf to get name.</param>
         /// <returns>Method information</returns>
-        public static MethodBase GetMethod(string Method)
+        public static MethodBase? GetMethod(string Method)
         {
             Type[] PossibleTypes;
-            MethodInfo PossibleMethod;
+            MethodInfo? PossibleMethod;
 
             // Get types of possible flag locations
             PossibleTypes = ReflectionCommon.KernelTypes;
@@ -60,9 +60,9 @@ namespace Nitrocid.Misc.Reflection
         /// <param name="Method">Method name. Use operator NameOf to get name.</param>
         /// <param name="methodType">From which type do we need to get a method from?</param>
         /// <returns>Method information</returns>
-        public static MethodBase GetMethod(string Method, Type methodType)
+        public static MethodBase? GetMethod(string Method, Type methodType)
         {
-            MethodInfo PossibleMethod;
+            MethodInfo? PossibleMethod;
 
             // First, check to see if we have this type
             var PossibleTypes = ReflectionCommon.KernelTypes;
@@ -84,7 +84,7 @@ namespace Nitrocid.Misc.Reflection
         /// <param name="args">Arguments to be specified to the method. Review the method signature for more information.</param>
         /// <returns>The value of the returned object from the method</returns>
         /// <exception cref="KernelException"></exception>
-        public static object InvokeMethod(string method, object obj, params object[] args)
+        public static object? InvokeMethod(string method, object obj, params object[] args)
         {
             var methodInstance = GetMethod(method, obj.GetType()) ??
                 throw new KernelException(KernelExceptionType.Reflection, Translate.DoTranslation("This method is nonexistent.") + $" {method}");
@@ -104,7 +104,7 @@ namespace Nitrocid.Misc.Reflection
         /// <param name="args">Arguments to be specified to the method. Review the method signature for more information.</param>
         /// <returns>The value of the returned object from the method</returns>
         /// <exception cref="KernelException"></exception>
-        public static object InvokeMethodStatic(string method, params object[] args)
+        public static object? InvokeMethodStatic(string method, params object[] args)
         {
             var methodInstance = GetMethod(method) ??
                 throw new KernelException(KernelExceptionType.Reflection, Translate.DoTranslation("This method is nonexistent.") + $" {method}");

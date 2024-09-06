@@ -44,8 +44,8 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             string finalSection = SettingsApp.RenderHeader(keyName, keyDesc);
 
             // Write the prompt
-            var TargetEnum = (IEnumerable<object>)MethodManager.InvokeMethodStatic(key.SelectionFunctionName);
-            var TargetList = TargetEnum.ToList();
+            var TargetEnum = (IEnumerable<object>?)MethodManager.InvokeMethodStatic(key.SelectionFunctionName);
+            var TargetList = TargetEnum?.ToList() ?? [];
             bool promptBail = false;
             while (!promptBail)
             {

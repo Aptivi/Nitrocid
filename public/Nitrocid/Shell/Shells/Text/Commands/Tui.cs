@@ -19,6 +19,7 @@
 
 using Nitrocid.Files.Editors.TextEdit;
 using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Inputs.Styles.Editor;
 
 namespace Nitrocid.Shell.Shells.Text.Commands
 {
@@ -33,7 +34,7 @@ namespace Nitrocid.Shell.Shells.Text.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            TextEditInteractive.OpenInteractive(TextEditShellCommon.FileStream.Name);
+            TextEditInteractive.OpenInteractive(ref TextEditShellCommon.fileLines);
             return 0;
         }
     }

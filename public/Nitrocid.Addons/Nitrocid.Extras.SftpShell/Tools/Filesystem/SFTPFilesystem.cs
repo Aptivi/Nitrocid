@@ -62,14 +62,12 @@ namespace Nitrocid.Extras.SftpShell.Tools.Filesystem
 
             try
             {
+                var client = (SftpClient?)SFTPShellCommon.ClientSFTP?.ConnectionInstance ??
+                    throw new KernelException(KernelExceptionType.SFTPShell, Translate.DoTranslation("Client is not connected yet"));
                 if (!string.IsNullOrEmpty(Path))
-                {
-                    Listing = ((SftpClient)SFTPShellCommon.ClientSFTP.ConnectionInstance).ListDirectory(Path);
-                }
+                    Listing = client.ListDirectory(Path);
                 else
-                {
-                    Listing = ((SftpClient)SFTPShellCommon.ClientSFTP.ConnectionInstance).ListDirectory(SFTPShellCommon.SFTPCurrentRemoteDir);
-                }
+                    Listing = client.ListDirectory(SFTPShellCommon.SFTPCurrentRemoteDir ?? "");
                 foreach (ISftpFile DirListSFTP in Listing)
                 {
                     EntryBuilder.Append($"- {DirListSFTP.Name}");
@@ -114,13 +112,15 @@ namespace Nitrocid.Extras.SftpShell.Tools.Filesystem
         /// <returns>True if successful; False if unsuccessful</returns>
         public static bool SFTPDeleteRemote(string Target)
         {
+            var client = (SftpClient?)SFTPShellCommon.ClientSFTP?.ConnectionInstance ??
+                throw new KernelException(KernelExceptionType.SFTPShell, Translate.DoTranslation("Client is not connected yet"));
             DebugWriter.WriteDebug(DebugLevel.I, "Deleting {0}...", Target);
 
             // Delete a file or folder
-            if (((SftpClient)SFTPShellCommon.ClientSFTP.ConnectionInstance).Exists(Target))
+            if (client.Exists(Target))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Deleting {0}...", Target);
-                ((SftpClient)SFTPShellCommon.ClientSFTP.ConnectionInstance).Delete(Target);
+                client.Delete(Target);
             }
             else
             {
@@ -140,13 +140,15 @@ namespace Nitrocid.Extras.SftpShell.Tools.Filesystem
         /// <exception cref="ArgumentNullException"></exception>
         public static bool SFTPChangeRemoteDir(string Directory)
         {
+            var client = (SftpClient?)SFTPShellCommon.ClientSFTP?.ConnectionInstance ??
+                throw new KernelException(KernelExceptionType.SFTPShell, Translate.DoTranslation("Client is not connected yet"));
             if (!string.IsNullOrEmpty(Directory))
             {
-                if (((SftpClient)SFTPShellCommon.ClientSFTP.ConnectionInstance).Exists(Directory))
+                if (client.Exists(Directory))
                 {
                     // Directory exists, go to the new directory
-                    ((SftpClient)SFTPShellCommon.ClientSFTP.ConnectionInstance).ChangeDirectory(Directory);
-                    SFTPShellCommon.SFTPCurrentRemoteDir = ((SftpClient)SFTPShellCommon.ClientSFTP.ConnectionInstance).WorkingDirectory;
+                    client.ChangeDirectory(Directory);
+                    SFTPShellCommon.SFTPCurrentRemoteDir = client.WorkingDirectory;
                     return true;
                 }
                 else
@@ -188,10 +190,13 @@ namespace Nitrocid.Extras.SftpShell.Tools.Filesystem
         /// <returns>Absolute path for a remote path</returns>
         public static string SFTPGetCanonicalPath(string Path)
         {
+            var client = (SftpClient?)SFTPShellCommon.ClientSFTP?.ConnectionInstance ??
+                throw new KernelException(KernelExceptionType.SFTPShell, Translate.DoTranslation("Client is not connected yet"));
+
             // GetCanonicalPath was supposed to be public, but it's in a private class called SftpSession. It should be in SftpClient, which is public.
-            var SFTPType = ((SftpClient)SFTPShellCommon.ClientSFTP.ConnectionInstance).GetType();
+            var SFTPType = client.GetType();
             var SFTPSessionField = SFTPType.GetField("_sftpSession", BindingFlags.Instance | BindingFlags.NonPublic);
-            var SFTPSession = SFTPSessionField?.GetValue((SftpClient)SFTPShellCommon.ClientSFTP.ConnectionInstance);
+            var SFTPSession = SFTPSessionField?.GetValue(client);
             var SFTPSessionType = SFTPSession?.GetType();
             var SFTPSessionCanon = SFTPSessionType?.GetMethod("GetCanonicalPath");
             if (SFTPSessionCanon is null)

@@ -70,8 +70,10 @@ namespace Nitrocid.Misc.Interactives
         public override string GetEntryFromItem(Notification item) =>
             item.Title;
 
-        internal void Dismiss(Notification notification)
+        internal void Dismiss(Notification? notification)
         {
+            if (notification is null)
+                return;
             var notifs = NotificationManager.NotifRecents;
             for (int i = notifs.Count - 1; i > 0; i--)
             {

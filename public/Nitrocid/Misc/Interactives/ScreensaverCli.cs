@@ -59,8 +59,10 @@ namespace Nitrocid.Misc.Interactives
         public override string GetEntryFromItem(string item) =>
             item;
 
-        internal void PressAndBailHelper(string saver)
+        internal void PressAndBailHelper(string? saver)
         {
+            if (saver is null)
+                return;
             ScreensaverManager.ShowSavers(saver);
             if (ScreensaverManager.inSaver)
             {

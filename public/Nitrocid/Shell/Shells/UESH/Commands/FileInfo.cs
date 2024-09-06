@@ -79,12 +79,12 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
 
                     // .NET managed info
                     SeparatorWriterColor.WriteSeparator(Translate.DoTranslation(".NET assembly info"), true);
-                    if (ReflectionCommon.IsDotnetAssemblyFile(FilePath, out AssemblyName asmName))
+                    if (ReflectionCommon.IsDotnetAssemblyFile(FilePath, out AssemblyName? asmName) && asmName is not null)
                     {
-                        TextWriterColor.Write(Translate.DoTranslation("Name: {0}"), asmName.Name);
+                        TextWriterColor.Write(Translate.DoTranslation("Name: {0}"), asmName.Name ?? "");
                         TextWriterColor.Write(Translate.DoTranslation("Full name") + ": {0}", asmName.FullName);
-                        TextWriterColor.Write(Translate.DoTranslation("Version") + ": {0}", asmName.Version.ToString());
-                        TextWriterColor.Write(Translate.DoTranslation("Culture name") + ": {0}", asmName.CultureName);
+                        TextWriterColor.Write(Translate.DoTranslation("Version") + ": {0}", asmName.Version?.ToString() ?? "0.0.0.0");
+                        TextWriterColor.Write(Translate.DoTranslation("Culture name") + ": {0}", asmName.CultureName ?? "");
                         TextWriterColor.Write(Translate.DoTranslation("Content type") + ": {0}", asmName.ContentType.ToString());
                     }
                     else
@@ -98,7 +98,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                     if (ExtensionHandlerTools.IsHandlerRegistered(FileInfo.Extension))
                     {
                         var handler = ExtensionHandlerTools.GetExtensionHandler(FileInfo.Extension) ??
-                            throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Handler is registered but somehow failed to get an extension handler for") + $" {fileInfo.Extension}");
+                            throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Handler is registered but somehow failed to get an extension handler for") + $" {FileInfo.Extension}");
                         TextWriterColor.Write(handler.InfoHandler(FilePath));
                     }
                 }

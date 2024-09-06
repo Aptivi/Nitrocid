@@ -70,7 +70,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 // Kernel section
                 TextFancyWriters.WriteSeparator(Translate.DoTranslation("Kernel settings"), KernelColorType.Separator);
                 TextWriters.Write(Translate.DoTranslation("Kernel Version:") + " ", false, KernelColorType.ListEntry);
-                TextWriters.Write(KernelMain.Version.ToString(), true, KernelColorType.ListValue);
+                TextWriters.Write(KernelMain.Version?.ToString() ?? "0.0.0.0", true, KernelColorType.ListValue);
                 TextWriters.Write(Translate.DoTranslation("Debug Mode:") + " ", false, KernelColorType.ListEntry);
                 TextWriters.Write(KernelEntry.DebugMode.ToString(), true, KernelColorType.ListValue);
                 TextWriters.Write(Translate.DoTranslation("Running on usual environment:") + " ", false, KernelColorType.ListEntry);

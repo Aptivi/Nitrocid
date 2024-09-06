@@ -30,11 +30,11 @@ namespace Nitrocid.Shell.ShellBase.Aliases
     public class AliasInfo
     {
         [JsonProperty(PropertyName = nameof(Alias))]
-        internal string alias;
+        internal string alias = "";
         [JsonProperty(PropertyName = nameof(Command))]
-        internal string command;
+        internal string command = "";
         [JsonProperty(PropertyName = nameof(Type))]
-        internal string type;
+        internal string type = "";
 
         /// <summary>
         /// Gets the alias that the shell resolves to the actual command

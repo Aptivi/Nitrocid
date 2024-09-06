@@ -34,7 +34,7 @@ namespace Nitrocid.Misc.Reflection
             typeof(KernelMainConfig),
             typeof(KernelSaverConfig),
         ];
-        internal static Type[] KernelTypes = Assembly.GetExecutingAssembly().GetTypes().Where((type) => type.FullName.StartsWith($"{KernelMain.rootNameSpace}.")).ToArray();
+        internal static Type[] KernelTypes = Assembly.GetExecutingAssembly().GetTypes().Where((type) => type.FullName?.StartsWith($"{KernelMain.rootNameSpace}.") ?? false).ToArray();
 
         /// <summary>
         /// If the specified file is a .NET assembly
@@ -42,7 +42,7 @@ namespace Nitrocid.Misc.Reflection
         /// <param name="path">Absolute path to the assembly file</param>
         /// <param name="asmName">Assembly name</param>
         /// <returns>True if it's a real assembly; false otherwise</returns>
-        public static bool IsDotnetAssemblyFile(string path, out AssemblyName asmName)
+        public static bool IsDotnetAssemblyFile(string path, out AssemblyName? asmName)
         {
             if (!Checking.FileExists(path))
                 throw new KernelException(KernelExceptionType.Reflection);

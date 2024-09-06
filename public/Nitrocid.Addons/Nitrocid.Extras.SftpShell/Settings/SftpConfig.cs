@@ -21,6 +21,8 @@ using Newtonsoft.Json;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Configuration.Instances;
 using Nitrocid.Kernel.Configuration.Settings;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
 using Nitrocid.Misc.Reflection.Internal;
 using Nitrocid.Shell.Prompts;
 
@@ -34,7 +36,8 @@ namespace Nitrocid.Extras.SftpShell.Settings
         /// <inheritdoc/>
         [JsonIgnore]
         public override SettingsEntry[] SettingsEntries =>
-            ConfigTools.GetSettingsEntries(ResourcesManager.GetData("SftpSettings.json", ResourcesType.Misc, typeof(SftpConfig).Assembly));
+            ConfigTools.GetSettingsEntries(ResourcesManager.GetData("SftpSettings.json", ResourcesType.Misc, typeof(SftpConfig).Assembly) ??
+                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Failed to obtain settings entries.")));
 
         /// <summary>
         /// SFTP Prompt Preset

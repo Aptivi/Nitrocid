@@ -53,13 +53,15 @@ namespace Nitrocid.Security.Permissions
             // Check to see if we have the target user
             if (!UserManagement.UserExists(User))
                 throw new KernelException(KernelExceptionType.NoSuchUser);
+            var user = UserManagement.GetUser(User) ??
+                throw new KernelException(KernelExceptionType.NoSuchUser);
 
             // If admin, always granted
-            if (UserManagement.GetUser(User).Flags.HasFlag(UserFlags.Administrator))
+            if (user.Flags.HasFlag(UserFlags.Administrator))
                 return true;
 
             // Now, query the user for permissions
-            return UserManagement.GetUser(User).Permissions.Contains(permissionType.ToString()) ||
+            return user.Permissions.Contains(permissionType.ToString()) ||
                    GroupManagement.GetUserGroups(User).Select((groupInfo) => groupInfo.Permissions.Contains(permissionType.ToString())).Contains(true);
         }
 
@@ -100,6 +102,8 @@ namespace Nitrocid.Security.Permissions
             // Check to see if we have the target user
             if (!UserManagement.UserExists(User))
                 throw new KernelException(KernelExceptionType.NoSuchUser);
+            var user = UserManagement.GetUser(User) ??
+                throw new KernelException(KernelExceptionType.NoSuchUser);
 
             // Check to see if the current user is granted permission management or not
             Demand(PermissionTypes.ManagePermissions);
@@ -113,7 +117,7 @@ namespace Nitrocid.Security.Permissions
                 {
                     // Exists! Check the user permissions to see if the permission is already granted
                     int userIndex = UserManagement.GetUserIndex(User);
-                    var perms = new List<string>(UserManagement.GetUser(User).Permissions);
+                    var perms = new List<string>(user.Permissions);
                     DebugWriter.WriteDebug(DebugLevel.I, "Index of user: {0}, perms: {1} [{2}].", userIndex, perms.Count, string.Join(", ", perms));
                     if (!perms.Contains(type.ToString()))
                     {
@@ -142,6 +146,8 @@ namespace Nitrocid.Security.Permissions
             // Check to see if we have the target user
             if (!UserManagement.UserExists(User))
                 throw new KernelException(KernelExceptionType.NoSuchUser);
+            var user = UserManagement.GetUser(User) ??
+                throw new KernelException(KernelExceptionType.NoSuchUser);
 
             // Check to see if the current user is granted permission management or not
             Demand(PermissionTypes.ManagePermissions);
@@ -155,7 +161,7 @@ namespace Nitrocid.Security.Permissions
                 {
                     // Exists! Check the user permissions to see if the permission is already revoked
                     int userIndex = UserManagement.GetUserIndex(User);
-                    var perms = new List<string>(UserManagement.GetUser(User).Permissions);
+                    var perms = new List<string>(user.Permissions);
                     DebugWriter.WriteDebug(DebugLevel.I, "Index of user: {0}, perms: {1} [{2}].", userIndex, perms.Count, string.Join(", ", perms));
                     if (perms.Contains(type.ToString()))
                     {
@@ -184,6 +190,8 @@ namespace Nitrocid.Security.Permissions
             // Check to see if we have the target group
             if (!GroupManagement.DoesGroupExist(Group))
                 throw new KernelException(KernelExceptionType.NoSuchGroup);
+            var group = GroupManagement.GetGroup(Group) ??
+                throw new KernelException(KernelExceptionType.NoSuchGroup);
 
             // Check to see if the current group is granted permission management or not
             Demand(PermissionTypes.ManagePermissions);
@@ -196,7 +204,7 @@ namespace Nitrocid.Security.Permissions
                 if (permissionType.HasFlag(type))
                 {
                     // Exists! Check the group permissions to see if the permission is already granted
-                    var perms = new List<string>(GroupManagement.GetGroup(Group).Permissions);
+                    var perms = new List<string>(group.Permissions);
                     DebugWriter.WriteDebug(DebugLevel.I, "Permissions for group {0}: {1} [{2}].", Group, perms.Count, string.Join(", ", perms));
                     if (!perms.Contains(type.ToString()))
                     {
@@ -225,6 +233,8 @@ namespace Nitrocid.Security.Permissions
             // Check to see if we have the target group
             if (!GroupManagement.DoesGroupExist(Group))
                 throw new KernelException(KernelExceptionType.NoSuchGroup);
+            var group = GroupManagement.GetGroup(Group) ??
+                throw new KernelException(KernelExceptionType.NoSuchGroup);
 
             // Check to see if the current group is granted permission management or not
             Demand(PermissionTypes.ManagePermissions);
@@ -237,7 +247,7 @@ namespace Nitrocid.Security.Permissions
                 if (permissionType.HasFlag(type))
                 {
                     // Exists! Check the group permissions to see if the permission is already revoked
-                    var perms = new List<string>(GroupManagement.GetGroup(Group).Permissions);
+                    var perms = new List<string>(group.Permissions);
                     DebugWriter.WriteDebug(DebugLevel.I, "Permissions for group {0}: {1} [{2}].", Group, perms.Count, string.Join(", ", perms));
                     if (perms.Contains(type.ToString()))
                     {

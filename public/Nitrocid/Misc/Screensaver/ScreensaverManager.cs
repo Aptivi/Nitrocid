@@ -142,8 +142,8 @@ namespace Nitrocid.Misc.Screensaver
 
             // Now, get the screensaver instance
             var BaseSaver =
-                AddonSavers.TryGetValue(saver, out BaseScreensaver @base) ? @base :
-                CustomSavers.TryGetValue(saver, out BaseScreensaver customBase) ? customBase :
+                AddonSavers.TryGetValue(saver, out BaseScreensaver? @base) ? @base :
+                CustomSavers.TryGetValue(saver, out BaseScreensaver? customBase) ? customBase :
                 Screensavers[saver];
             return BaseSaver;
         }
@@ -190,8 +190,8 @@ namespace Nitrocid.Misc.Screensaver
                 {
                     // Get the base screensaver
                     var BaseSaver =
-                        AddonSavers.TryGetValue(saver, out BaseScreensaver @base) ? @base :
-                        CustomSavers.TryGetValue(saver, out BaseScreensaver customBase) ? customBase :
+                        AddonSavers.TryGetValue(saver, out BaseScreensaver? @base) ? @base :
+                        CustomSavers.TryGetValue(saver, out BaseScreensaver? customBase) ? customBase :
                         Screensavers[saver];
 
                     // Show the seizure warning if required
@@ -290,12 +290,12 @@ namespace Nitrocid.Misc.Screensaver
         /// Gets a screensaver instance from loaded assembly
         /// </summary>
         /// <param name="Assembly">An assembly</param>
-        public static BaseScreensaver GetScreensaverInstance(Assembly Assembly)
+        public static BaseScreensaver? GetScreensaverInstance(Assembly Assembly)
         {
             foreach (Type t in Assembly.GetTypes())
             {
                 if (t.GetInterface(typeof(IScreensaver).Name) is not null)
-                    return (BaseScreensaver)Assembly.CreateInstance(t.FullName);
+                    return (BaseScreensaver?)Assembly.CreateInstance(t.FullName ?? "");
             }
             return null;
         }

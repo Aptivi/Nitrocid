@@ -504,7 +504,7 @@ namespace Nitrocid.Tests.Files
         public void TestFileExistsInPath()
         {
             string Path = KernelPlatform.IsOnWindows() ? "netstat.exe" : "bash";
-            string NeutralizedPath = "";
+            string? NeutralizedPath = "";
             PathLookupTools.FileExistsInPath(Path, ref NeutralizedPath).ShouldBeTrue();
             NeutralizedPath.ShouldNotBeNullOrEmpty();
         }

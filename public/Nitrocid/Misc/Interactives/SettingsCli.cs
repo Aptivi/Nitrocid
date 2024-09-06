@@ -28,6 +28,7 @@ using Terminaux.Inputs.Interactive;
 using Terminaux.Inputs.Styles.Infobox;
 using Textify.General;
 using Nitrocid.Kernel.Configuration.Instances;
+using Nitrocid.Kernel.Exceptions;
 
 namespace Nitrocid.Misc.Interactives
 {
@@ -36,7 +37,7 @@ namespace Nitrocid.Misc.Interactives
     /// </summary>
     public class SettingsCli : BaseInteractiveTui<(string, int)>, IInteractiveTui<(string, int)>
     {
-        internal BaseKernelConfig config;
+        internal BaseKernelConfig? config;
         internal int lastFirstPaneIdx = -1;
         internal List<(string, int)> entryNames = [];
         internal List<(string, int)> keyNames = [];
@@ -56,13 +57,16 @@ namespace Nitrocid.Misc.Interactives
                 {
                     if (lastFirstPaneIdx == FirstPaneCurrentSelection - 1)
                         return entryNames;
-                    var configs = config.SettingsEntries;
+                    if (config is null)
+                        return entryNames;
+                    var configs = config.SettingsEntries ??
+                        throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't get settings entries"));
                     var configNames = configs.Select((se, idx) => (se.Name, idx)).ToArray();
-                    var entry = config.SettingsEntries[FirstPaneCurrentSelection - 1];
+                    var entry = configs[FirstPaneCurrentSelection - 1];
                     var keys = entry.Keys;
                     var finalkeyNames = keys.Select((key, idx) =>
                     {
-                        object currentValue = ConfigTools.GetValueFromEntry(key, config);
+                        object? currentValue = ConfigTools.GetValueFromEntry(key, config);
                         return ($"{key.Name} [{currentValue}]", idx);
                     }).ToArray();
                     entryNames.Clear();
@@ -108,7 +112,11 @@ namespace Nitrocid.Misc.Interactives
         {
             string entryName = item.Item1;
             int entryIdx = item.Item2;
-            string entryDesc = config.SettingsEntries[entryIdx].Desc;
+            if (config is null)
+                return "";
+            var configs = config.SettingsEntries ??
+                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't get settings entries"));
+            string entryDesc = configs[entryIdx].Desc;
             string status = $"E: {entryName} - {entryDesc}";
             return status;
         }
@@ -122,7 +130,11 @@ namespace Nitrocid.Misc.Interactives
         {
             string entryName = item.Item1;
             int entryIdx = item.Item2;
-            string entryDesc = config.SettingsEntries[entryIdx].Desc;
+            if (config is null)
+                return "";
+            var configs = config.SettingsEntries ??
+                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't get settings entries"));
+            string entryDesc = configs[entryIdx].Desc;
             string status =
                 $"""
                 {entryName}
@@ -138,7 +150,11 @@ namespace Nitrocid.Misc.Interactives
         {
             string keyName = item.Item1;
             int keyIdx = item.Item2;
-            string keyDesc = config.SettingsEntries[FirstPaneCurrentSelection - 1].Keys[keyIdx].Description;
+            if (config is null)
+                return "";
+            var configs = config.SettingsEntries ??
+                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't get settings entries"));
+            string keyDesc = configs[FirstPaneCurrentSelection - 1].Keys[keyIdx].Description;
             string status = $"K: {keyName} - {keyDesc}";
             return status;
         }
@@ -152,7 +168,11 @@ namespace Nitrocid.Misc.Interactives
         {
             string keyName = item.Item1;
             int keyIdx = item.Item2;
-            string keyDesc = config.SettingsEntries[FirstPaneCurrentSelection - 1].Keys[keyIdx].Description;
+            if (config is null)
+                return "";
+            var configs = config.SettingsEntries ??
+                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't get settings entries"));
+            string keyDesc = configs[FirstPaneCurrentSelection - 1].Keys[keyIdx].Description;
             string status =
                 $"""
                 {keyName}
@@ -170,9 +190,13 @@ namespace Nitrocid.Misc.Interactives
                 // Check the pane first
                 if (CurrentPane != 2)
                     return;
+                if (config is null)
+                    return;
 
                 // Get the key and try to set
-                var key = config.SettingsEntries[entryIdx].Keys[keyIdx];
+                var configs = config.SettingsEntries ??
+                    throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't get settings entries"));
+                var key = configs[entryIdx].Keys[keyIdx];
                 var defaultValue = ConfigTools.GetValueFromEntry(key, config);
                 var input = key.KeyInput.PromptForSet(key, defaultValue, out bool provided);
                 if (provided)
@@ -184,7 +208,7 @@ namespace Nitrocid.Misc.Interactives
             catch (Exception ex)
             {
                 var finalInfoRendered = new StringBuilder();
-                finalInfoRendered.AppendLine(Translate.DoTranslation("Can't open file or folder") + TextTools.FormatString(": {0}", ex.Message));
+                finalInfoRendered.AppendLine(Translate.DoTranslation("Can't set settings entry") + TextTools.FormatString(": {0}", ex.Message));
                 finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
                 InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
             }

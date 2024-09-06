@@ -145,7 +145,8 @@ namespace Nitrocid.Modifications
             DebugWriter.WriteDebug(DebugLevel.I, "Mod {0} is being stopped.", ModFilename);
             for (int ScriptIndex = Mods.Count - 1; ScriptIndex >= 0; ScriptIndex -= 1)
             {
-                var TargetMod = Mods.Values.ElementAtOrDefault(ScriptIndex);
+                var TargetMod = Mods.Values.ElementAt(ScriptIndex);
+                var TargetModKey = Mods.Keys.ElementAt(ScriptIndex);
                 var Script = TargetMod.ModScript;
 
                 // Try to stop the mod
@@ -161,7 +162,7 @@ namespace Nitrocid.Modifications
 
                 // Remove the mod from the list
                 SplashReport.ReportProgress(Translate.DoTranslation("Mod {0} stopped"), TargetMod.ModName);
-                Mods.Remove(Mods.Keys.ElementAtOrDefault(ScriptIndex));
+                Mods.Remove(TargetModKey);
 
                 // Remove the mod dependency from the lookup
                 string ModDepPath = ModPath + "Deps/" + Path.GetFileNameWithoutExtension(ModFilename) + "-" + FileVersionInfo.GetVersionInfo(ModPath + ModFilename).FileVersion + "/";
@@ -265,7 +266,7 @@ namespace Nitrocid.Modifications
         {
             string TargetModPath = FilesystemTools.NeutralizePath(Path.GetFileName(ModPath), PathsManagement.GetKernelPath(KernelPathType.Mods));
             string ModName = Path.GetFileNameWithoutExtension(ModPath);
-            IMod Script;
+            IMod? Script;
             ModPath = FilesystemTools.NeutralizePath(ModPath, true);
             DebugWriter.WriteDebug(DebugLevel.I, "Installing mod {0} to {1}...", ModPath, TargetModPath);
 
@@ -293,11 +294,11 @@ namespace Nitrocid.Modifications
                         DebugWriter.WriteDebug(DebugLevel.E, "Error trying to load dynamic mod {0}: {1}", ModPath, ex.Message);
                         DebugWriter.WriteDebugStackTrace(ex);
                         TextWriters.Write(Translate.DoTranslation("Mod can't be loaded because of the following: "), true, KernelColorType.Error);
-                        foreach (Exception LoaderException in ex.LoaderExceptions)
+                        foreach (Exception? LoaderException in ex.LoaderExceptions)
                         {
-                            DebugWriter.WriteDebug(DebugLevel.E, "Loader exception: {0}", LoaderException.Message);
+                            DebugWriter.WriteDebug(DebugLevel.E, "Loader exception: {0}", LoaderException?.Message ?? "Unknown loader exception");
                             DebugWriter.WriteDebugStackTrace(LoaderException);
-                            TextWriters.Write(LoaderException.Message, true, KernelColorType.Error);
+                            TextWriters.Write(LoaderException?.Message ?? Translate.DoTranslation("Unknown loader exception"), true, KernelColorType.Error);
                         }
                         TextWriters.Write(Translate.DoTranslation("Contact the vendor of the mod to upgrade the mod to the compatible version."), true, KernelColorType.Error);
                         throw;
@@ -414,7 +415,7 @@ namespace Nitrocid.Modifications
         /// </summary>
         /// <param name="modName">The mod name to search for</param>
         /// <returns>An instance of <see cref="ModInfo"/> containing information about your requested mod</returns>
-        public static ModInfo GetMod(string modName)
+        public static ModInfo? GetMod(string modName)
         {
             var mods = ListMods();
             foreach (var mod in mods.Keys)

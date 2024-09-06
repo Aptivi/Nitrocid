@@ -25,6 +25,7 @@ using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
 using System.Text;
 using Terminaux.Images;
+using Terminaux.Inputs.Styles.Editor;
 using Textify.General;
 
 namespace Nitrocid.Extras.Images.Commands

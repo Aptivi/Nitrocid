@@ -45,15 +45,16 @@ namespace Nitrocid.Misc.Interactives
             // Get some info from the manual
             Manual selectedManual = item;
             bool hasTitle = !string.IsNullOrEmpty(selectedManual.Title);
-            bool hasBody = !string.IsNullOrEmpty(selectedManual.Body.ToString());
+            bool hasBody = !string.IsNullOrEmpty(selectedManual.Body?.ToString());
 
             // Generate the rendered text
+            string noDocs = Translate.DoTranslation("Unfortunately, this manual page doesn't have any contents. However, this documentation might have been found under the mod vendor's webpage. If you still can't find this documentation, ask the developers of the mod for more information.");
             string finalRenderedManualTitle = hasTitle ?
                 $"{selectedManual.Title} [v{selectedManual.Revision}]" :
                 $"{selectedManual.Name} [v{selectedManual.Revision}]";
             string finalRenderedManualBody = hasBody ?
-                selectedManual.Body.ToString() :
-                Translate.DoTranslation("Unfortunately, this manual page doesn't have any contents. However, this documentation might have been found under the mod vendor's webpage. If you still can't find this documentation, ask the developers of the mod for more information.");
+                selectedManual.Body?.ToString() ?? noDocs :
+                noDocs;
 
             // Render them to the second pane
             return
@@ -95,13 +96,13 @@ namespace Nitrocid.Misc.Interactives
             if (manual is null)
                 return;
             bool hasTitle = !string.IsNullOrEmpty(manual.Title);
-            bool hasBody = !string.IsNullOrEmpty(manual.Body.ToString());
+            bool hasBody = !string.IsNullOrEmpty(manual.Body?.ToString());
 
             string finalRenderedManualTitle = hasTitle ?
                 $"{manual.Title}" :
                 $"{manual.Name}";
             string finalRenderedManualBody = hasBody ?
-                Translate.DoTranslation("Content length") + $": {manual.Body.Length}" :
+                Translate.DoTranslation("Content length") + $": {manual.Body?.Length}" :
                 Translate.DoTranslation("No contents.");
             string finalRenderedManualRevision = hasBody ?
                 $"v{manual.Revision}" :

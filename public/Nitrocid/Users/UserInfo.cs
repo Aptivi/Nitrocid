@@ -39,7 +39,7 @@ namespace Nitrocid.Users
         /// <summary>
         /// The preferred language
         /// </summary>
-        public string PreferredLanguage { get; set; }
+        public string? PreferredLanguage { get; set; }
         [JsonProperty]
         internal string[] Groups { get; set; }
         [JsonProperty]

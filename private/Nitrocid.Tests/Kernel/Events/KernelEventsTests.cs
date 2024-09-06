@@ -76,7 +76,7 @@ namespace Nitrocid.Tests.Kernel.Events
         public void TestEventHandler()
         {
             bool acknowledged = false;
-            var acknowledge = new Action<object[]>((_) => acknowledged = true);
+            var acknowledge = new Action<object?[]?>((_) => acknowledged = true);
             EventsManager.RegisterEventHandler(EventType.ShellInitialized, acknowledge);
             EventsManager.FireEvent(EventType.ShellInitialized);
             EventsManager.UnregisterEventHandler(EventType.ShellInitialized, acknowledge);
@@ -91,9 +91,9 @@ namespace Nitrocid.Tests.Kernel.Events
         public void TestEventHandlerParameterized()
         {
             bool acknowledged = false;
-            var acknowledge = new Action<object[]>((parameters) =>
+            var acknowledge = new Action<object?[]?>((parameters) =>
             {
-                if (parameters.Contains("Hello"))
+                if (parameters is not null && parameters.Contains("Hello"))
                     acknowledged = true;
             });
             EventsManager.RegisterEventHandler(EventType.ShellInitialized, acknowledge);

@@ -81,7 +81,7 @@ namespace Nitrocid.Shell.ShellBase.Scripting.Conditions.Types
         public override bool IsConditionSatisfied(string FirstVariable, string SecondVariable)
         {
             // SecondVariable is actually a data type needed for parsing.
-            if (!DataTypes.TryGetValue(SecondVariable, out Func<string, bool> dataFunc))
+            if (!DataTypes.TryGetValue(SecondVariable, out Func<string, bool>? dataFunc))
                 throw new KernelException(KernelExceptionType.UESHConditionParse, Translate.DoTranslation("Data type {0} specified is invalid."), SecondVariable);
 
             // Get the action needed to get the comparer and test the condition defined above

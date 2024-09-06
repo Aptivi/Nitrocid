@@ -49,8 +49,9 @@ namespace Nitrocid.Security.Privacy
         public static bool ConsentPermission(ConsentedPermissionType consentType)
         {
             // Get the namespace of the calling method
-            var methodInfo = new StackTrace().GetFrame(2).GetMethod();
-            var context = methodInfo.ReflectedType.Namespace;
+            var methodInfo = new StackTrace().GetFrame(2)?.GetMethod() ??
+                throw new KernelException(KernelExceptionType.PrivacyConsent, Translate.DoTranslation("Can't get method from the last two frames."));
+            var context = methodInfo.ReflectedType?.Namespace ?? "";
             string finalContext = context.Contains('.') ? context[..context.IndexOf('.')] : context;
 
             // Verify the type and the context
@@ -108,7 +109,7 @@ namespace Nitrocid.Security.Privacy
 
             // Now, load all the consents
             string serialized = Reading.ReadContentsText(consentsPath);
-            consentedPermissions = JsonConvert.DeserializeObject<List<ConsentedPermission>>(serialized);
+            consentedPermissions = JsonConvert.DeserializeObject<List<ConsentedPermission>>(serialized) ?? [];
         }
 
         internal static void SaveConsents()

@@ -284,7 +284,7 @@ namespace Nitrocid.Misc.Interactives
                     finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("File type") + ": {0}\n", MagicHandler.GetMagicInfo(fileInfo.FullName)));
 
                     // .NET managed info
-                    if (ReflectionCommon.IsDotnetAssemblyFile(fullPath, out AssemblyName asmName))
+                    if (ReflectionCommon.IsDotnetAssemblyFile(fullPath, out AssemblyName? asmName) && asmName is not null)
                     {
                         finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Name: {0}"), asmName.Name));
                         finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Full name") + ": {0}", asmName.FullName));

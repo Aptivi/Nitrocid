@@ -89,7 +89,7 @@ namespace Nitrocid.Shell.ShellBase.Arguments
 
                     // Check to see if there are any conflicts to put them to a group
                     string numericRender = justNumeric ? ":int" : "";
-                    var conflicts = Switch.ConflictsWith;
+                    var conflicts = Switch.ConflictsWith ?? [];
                     if (conflicts.Length > 0)
                         switchStrings.AddRange(conflicts);
                     var switchLists = Switches

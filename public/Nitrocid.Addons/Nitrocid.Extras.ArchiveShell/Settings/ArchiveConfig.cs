@@ -21,6 +21,8 @@ using Newtonsoft.Json;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Configuration.Instances;
 using Nitrocid.Kernel.Configuration.Settings;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
 using Nitrocid.Misc.Reflection.Internal;
 using Nitrocid.Shell.Prompts;
 
@@ -34,7 +36,8 @@ namespace Nitrocid.Extras.ArchiveShell.Settings
         /// <inheritdoc/>
         [JsonIgnore]
         public override SettingsEntry[] SettingsEntries =>
-            ConfigTools.GetSettingsEntries(ResourcesManager.GetData("ArchiveSettings.json", ResourcesType.Misc, typeof(ArchiveConfig).Assembly));
+            ConfigTools.GetSettingsEntries(ResourcesManager.GetData("ArchiveSettings.json", ResourcesType.Misc, typeof(ArchiveConfig).Assembly) ??
+                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Failed to obtain settings entries.")));
 
         /// <summary>
         /// Prompt Preset

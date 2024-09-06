@@ -60,10 +60,10 @@ namespace Nitrocid.Shell.ShellBase.Arguments
         /// </summary>
         /// <param name="expression">An expression to query</param>
         /// <returns>A function that points to the completion, or null if not found.</returns>
-        public static Func<string[], string[]> GetCompletionFunction(string expression)
+        public static Func<string[], string[]>? GetCompletionFunction(string expression)
         {
             expression = expression.ToLower();
-            if (!completions.TryGetValue(expression, out Func<string[], string[]> func))
+            if (!completions.TryGetValue(expression, out Func<string[], string[]>? func))
                 return null;
             return func;
         }

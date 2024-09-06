@@ -36,13 +36,15 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            Version ver;
+            Version? ver;
 
             // Get the version according to the switches provided
             if (parameters.SwitchesList.Length > 0 && SwitchManager.ContainsSwitch(parameters.SwitchesList, "-m"))
                 ver = KernelMain.ApiVersion;
             else
                 ver = KernelMain.Version;
+            if (ver is null)
+                return 5;
 
             // Now, provide the current version as a string and as a decimal
             string currentVersion = ver.ToString();

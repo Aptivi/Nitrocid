@@ -74,11 +74,11 @@ namespace Nitrocid.Misc.Reflection
         /// Loads assembly from the search paths
         /// </summary>
         /// <returns>If successful, returns the assembly instance. Otherwise, null.</returns>
-        internal static Assembly LoadFromAssemblySearchPaths(object? sender, ResolveEventArgs args)
+        internal static Assembly? LoadFromAssemblySearchPaths(object? sender, ResolveEventArgs args)
         {
-            Assembly FinalAssembly = null;
-            string DepAssemblyName = new AssemblyName(args.Name).Name;
-            string ReqAssemblyName = args.RequestingAssembly is not null ? args.RequestingAssembly.GetName().Name : "An unknown assembly";
+            Assembly? FinalAssembly = null;
+            string? DepAssemblyName = new AssemblyName(args.Name).Name;
+            string? ReqAssemblyName = args.RequestingAssembly is not null ? args.RequestingAssembly.GetName().Name : "An unknown assembly";
             DebugWriter.WriteDebug(DebugLevel.I, "{0} has requested to load {1}.", ReqAssemblyName, args.Name);
 
             // Guard against the old version of Nitrocid KS (0.1.0 Milestone X or lower)

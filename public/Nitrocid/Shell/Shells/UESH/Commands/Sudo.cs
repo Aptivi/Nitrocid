@@ -46,7 +46,8 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             PermissionsTools.Demand(PermissionTypes.UseSudo);
 
             // First, check to see if we're already root
-            var root = UserManagement.GetUser("root");
+            var root = UserManagement.GetUser("root") ??
+                throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Can't get user info for the system user"));
             if (UserManagement.CurrentUserInfo == root)
             {
                 TextWriterColor.Write(Translate.DoTranslation("You are already a superuser!"));
@@ -68,7 +69,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                     var AltThreads = ShellManager.ShellStack[^1].AltCommandThreads;
                     if (AltThreads.Count == 0 || AltThreads[^1].IsAlive)
                     {
-                        var CommandThread = new KernelThread($"Sudo Shell Command Thread", false, (cmdThreadParams) => CommandExecutor.ExecuteCommand((CommandExecutorParameters)cmdThreadParams));
+                        var CommandThread = new KernelThread($"Sudo Shell Command Thread", false, (cmdThreadParams) => CommandExecutor.ExecuteCommand((CommandExecutorParameters?)cmdThreadParams));
                         ShellManager.ShellStack[^1].AltCommandThreads.Add(CommandThread);
                     }
                     ShellManager.GetLine(parameters.ArgumentsText);
@@ -88,7 +89,8 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 if (sudoDone)
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Sudo is done. Switching to user {0}...", currentUsername);
-                    UserManagement.CurrentUserInfo = UserManagement.GetUser(currentUsername);
+                    UserManagement.CurrentUserInfo = UserManagement.GetUser(currentUsername) ??
+                throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Can't get user info for") + $" {currentUsername}");
                     UserManagement.UnlockUser(currentUsername);
                     UserManagement.UnlockUser("root");
                 }

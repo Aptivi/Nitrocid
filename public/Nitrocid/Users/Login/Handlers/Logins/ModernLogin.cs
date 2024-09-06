@@ -32,6 +32,7 @@ using Nitrocid.Kernel.Power;
 using Terminaux.Reader;
 using Nitrocid.Users.Login.Widgets;
 using Terminaux.Inputs.Styles;
+using Nitrocid.Kernel.Exceptions;
 
 namespace Nitrocid.Users.Login.Handlers.Logins
 {
@@ -100,7 +101,9 @@ namespace Nitrocid.Users.Login.Handlers.Logins
             var users = UserManagement.ListAllUsers().Select(
                 (user) =>
                 {
-                    var fullName = UserManagement.GetUser(user).FullName;
+                    var userInfo = UserManagement.GetUser(user) ??
+                    throw new KernelException(KernelExceptionType.LoginHandler, Translate.DoTranslation("Can't get user info for") + $" {user}");
+                    var fullName = userInfo.FullName;
                     return (user, string.IsNullOrEmpty(fullName) ? user : fullName);
                 }
             ).ToArray();
@@ -118,8 +121,10 @@ namespace Nitrocid.Users.Login.Handlers.Logins
         public override bool PasswordHandler(string user, ref string pass)
         {
             // Check if password is empty
+            var userInfo = UserManagement.GetUser(user) ??
+            throw new KernelException(KernelExceptionType.LoginHandler, Translate.DoTranslation("Can't get user info for") + $" {user}");
             ConsoleWrapper.Clear();
-            string UserPassword = UserManagement.GetUser(user).Password;
+            string UserPassword = userInfo.Password;
             if (UserPassword == Encryption.GetEmptyHash("SHA256"))
                 return true;
 

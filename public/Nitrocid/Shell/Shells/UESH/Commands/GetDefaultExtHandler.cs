@@ -20,6 +20,7 @@
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Files.Extensions;
+using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
 
@@ -41,7 +42,8 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 TextWriters.Write(Translate.DoTranslation("No such extension."), KernelColorType.Error);
                 return 21;
             }
-            var handler = ExtensionHandlerTools.GetExtensionHandler(parameters.ArgumentsList[0]);
+            var handler = ExtensionHandlerTools.GetExtensionHandler(parameters.ArgumentsList[0]) ??
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Handler is registered but somehow failed to get an extension handler for") + $" {parameters.ArgumentsList[0]}");
             TextWriters.Write("- " + Translate.DoTranslation("Default extension handler") + ": ", false, KernelColorType.ListEntry);
             TextWriters.Write(handler.Implementer, KernelColorType.ListValue);
             variableValue = handler.Implementer;

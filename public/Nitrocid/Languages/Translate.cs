@@ -55,7 +55,7 @@ namespace Nitrocid.Languages
                 return text;
 
             // If the language is available, translate
-            if (LanguageManager.Languages.TryGetValue(lang, out LanguageInfo langInfo))
+            if (LanguageManager.Languages.TryGetValue(lang, out LanguageInfo? langInfo))
             {
                 return DoTranslation(text, langInfo);
             }
@@ -64,7 +64,7 @@ namespace Nitrocid.Languages
                 // We might have this string from a mod
                 foreach (ModInfo mod in ModManager.ListMods().Values)
                 {
-                    if (mod.ModStrings.TryGetValue(lang, out string[] localizations) && localizations.Contains(text))
+                    if (mod.ModStrings.TryGetValue(lang, out string[]? localizations) && localizations.Contains(text))
                         return localizations.Single((t) => t == text);
                 }
 
@@ -94,7 +94,7 @@ namespace Nitrocid.Languages
                 return text;
 
             // Do translation
-            if (lang.Strings.TryGetValue(text, out string translated))
+            if (lang.Strings.TryGetValue(text, out string? translated))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Translating string to {0}: {1}", langname, text);
                 return translated;
@@ -104,7 +104,7 @@ namespace Nitrocid.Languages
                 // We might have this string from a mod
                 foreach (ModInfo mod in ModManager.ListMods().Values)
                 {
-                    if (mod.ModStrings.TryGetValue(langname, out string[] localizations) && localizations.Contains(text))
+                    if (mod.ModStrings.TryGetValue(langname, out string[]? localizations) && localizations.Contains(text))
                         return localizations.Single((t) => t == text);
                 }
 

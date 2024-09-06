@@ -45,7 +45,7 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
                 try
                 {
                     var property = PropertyManager.GetProperty(propertyName, type);
-                    if (property is null || !property.GetMethod.IsStatic)
+                    if (property is null || (!property.GetMethod?.IsStatic ?? false))
                         continue;
 
                     // Write the property name and its value

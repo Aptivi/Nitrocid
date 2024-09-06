@@ -18,7 +18,10 @@
 //
 
 using Nitrocid.Files.Editors.HexEdit;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Inputs.Styles.Editor;
 
 namespace Nitrocid.Shell.Shells.Hex.Commands
 {
@@ -33,7 +36,9 @@ namespace Nitrocid.Shell.Shells.Hex.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            HexEditInteractive.OpenInteractive(HexEditShellCommon.FileStream?.Name ?? "???");
+            var FileBytes = HexEditShellCommon.FileBytes ??
+                throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Hex file is not open yet."));
+            HexEditInteractive.OpenInteractive(ref FileBytes);
             return 0;
         }
     }

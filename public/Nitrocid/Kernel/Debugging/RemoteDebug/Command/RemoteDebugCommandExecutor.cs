@@ -100,7 +100,7 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug.Command
             {
                 EventsManager.FireEvent(EventType.RemoteDebugCommandError, RequestedCommand, ex);
                 DebugWriter.WriteDebugStackTrace(ex);
-                DebugWriter.WriteDebugDeviceOnly(DebugLevel.E, Translate.DoTranslation("Error trying to execute command") + " {2}." + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, Device, ex.GetType().FullName, ex.Message, RequestedCommand);
+                DebugWriter.WriteDebugDeviceOnly(DebugLevel.E, Translate.DoTranslation("Error trying to execute command") + " {2}." + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, Device, ex.GetType().FullName ?? "<null>", ex.Message, RequestedCommand);
             }
         }
 

@@ -49,7 +49,10 @@ namespace Nitrocid.Modifications.Dependencies
                 return [];
 
             // Parse it and return all dependencies
-            ModDependency[] deps = JsonConvert.DeserializeObject<ModDependency[]>(Reading.ReadContentsText(metadataPath));
+            string metadataContents = Reading.ReadContentsText(metadataPath);
+            ModDependency[]? deps = JsonConvert.DeserializeObject<ModDependency[]>(metadataContents);
+            if (deps is null)
+                return [];
             DebugWriter.WriteDebug(DebugLevel.I, "Initial dep count: {0}", deps.Length);
             List<ModDependency> finalDeps = [];
             foreach (ModDependency dep in deps)
@@ -75,7 +78,8 @@ namespace Nitrocid.Modifications.Dependencies
                     try
                     {
                         // Do the job!
-                        var version = SemVer.Parse(dep.ModVersion);
+                        var version = SemVer.Parse(dep.ModVersion) ??
+                            throw new KernelException(KernelExceptionType.ModManagement, Translate.DoTranslation("Can't determine mod version") + $": {dep.ModVersion}");
                         DebugWriter.WriteDebug(DebugLevel.I, "Parsed version as {0}", version.ToString());
                         finalDeps.Add(dep);
                         DebugWriter.WriteDebug(DebugLevel.I, "Added");

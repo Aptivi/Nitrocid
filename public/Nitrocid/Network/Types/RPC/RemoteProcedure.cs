@@ -35,7 +35,7 @@ namespace Nitrocid.Network.Types.RPC
     {
 
         internal static int rpcPort = 12345;
-        internal static UdpClient RPCListen;
+        internal static UdpClient? RPCListen;
         internal static KernelThread RPCThread = new("RPC Thread", true, RPCCommands.ReceiveCommand) { isCritical = true };
         internal static bool rpcStopping = false;
 

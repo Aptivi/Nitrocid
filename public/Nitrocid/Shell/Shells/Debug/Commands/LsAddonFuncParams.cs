@@ -39,7 +39,7 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
             SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("List of function parameters for") + $" {parameters.ArgumentsList[0]} -> {parameters.ArgumentsList[1]}", true);
 
             // List all the available addons
-            var list = InterAddonTools.GetFunctionParameters(parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
+            var list = InterAddonTools.GetFunctionParameters(parameters.ArgumentsList[0], parameters.ArgumentsList[1]) ?? [];
             ListWriterColor.WriteList(list);
             return 0;
         }

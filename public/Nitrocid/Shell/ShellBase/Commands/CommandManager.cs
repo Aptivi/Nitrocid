@@ -197,7 +197,7 @@ namespace Nitrocid.Shell.ShellBase.Commands
         /// </summary>
         /// <param name="ShellType">Type of Nitrocid's built-in shell</param>
         /// <param name="commandBase">Custom command base to register</param>
-        public static void RegisterCustomCommand(ShellType ShellType, CommandInfo commandBase) =>
+        public static void RegisterCustomCommand(ShellType ShellType, CommandInfo? commandBase) =>
             RegisterCustomCommand(ShellManager.GetShellTypeName(ShellType), commandBase);
 
         /// <summary>
@@ -205,7 +205,7 @@ namespace Nitrocid.Shell.ShellBase.Commands
         /// </summary>
         /// <param name="ShellType">Type of a shell, including your custom type and other mod's custom type to extend it</param>
         /// <param name="commandBase">Custom command base to register</param>
-        public static void RegisterCustomCommand(string ShellType, CommandInfo commandBase)
+        public static void RegisterCustomCommand(string ShellType, CommandInfo? commandBase)
         {
             // First, check the values
             if (!ShellManager.ShellTypeExists(ShellType))
@@ -279,7 +279,7 @@ namespace Nitrocid.Shell.ShellBase.Commands
         /// </summary>
         /// <param name="ShellType">Type of Nitrocid's built-in shell</param>
         /// <param name="commandName">Custom command name to unregister</param>
-        public static void UnregisterCustomCommand(ShellType ShellType, string commandName) =>
+        public static void UnregisterCustomCommand(ShellType ShellType, string? commandName) =>
             UnregisterCustomCommand(ShellManager.GetShellTypeName(ShellType), commandName);
 
         /// <summary>
@@ -287,7 +287,7 @@ namespace Nitrocid.Shell.ShellBase.Commands
         /// </summary>
         /// <param name="ShellType">Type of a shell, including your custom type and other mod's custom type to extend it</param>
         /// <param name="commandName">Custom command name to unregister</param>
-        public static void UnregisterCustomCommand(string ShellType, string commandName)
+        public static void UnregisterCustomCommand(string ShellType, string? commandName)
         {
             // First, check the values
             if (!ShellManager.ShellTypeExists(ShellType))

@@ -29,7 +29,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
     {
 
         /// <inheritdoc/>
-        public virtual string ShellType { get; private set; }
+        public virtual string ShellType { get; private set; } = "";
 
         /// <inheritdoc/>
         public virtual bool Bail { get; set; }

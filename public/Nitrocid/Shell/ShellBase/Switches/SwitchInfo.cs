@@ -57,7 +57,7 @@ namespace Nitrocid.Shell.ShellBase.Switches
         /// <summary>
         /// Does the switch conflict with the provided switches?
         /// </summary>
-        public string[] ConflictsWith =>
+        public string[]? ConflictsWith =>
             Options.ConflictsWith;
         /// <summary>
         /// Whether to make the last N required arguments optional. This is useful for some switches, like -list.

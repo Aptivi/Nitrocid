@@ -40,6 +40,7 @@ using Nitrocid.Network.Connections;
 using Terminaux.Reader;
 using Terminaux.Inputs;
 using System.Reflection;
+using Nitrocid.Kernel.Exceptions;
 
 namespace Nitrocid.Extras.Ssh.SSH
 {
@@ -250,7 +251,7 @@ namespace Nitrocid.Extras.Ssh.SSH
         /// <param name="sshConnection">SSH connection</param>
         public static void OpenShell(NetworkConnection sshConnection)
         {
-            OpenShell((SshClient)sshConnection.ConnectionInstance);
+            OpenShell((SshClient?)sshConnection.ConnectionInstance);
             int connectionIndex = NetworkConnectionTools.GetConnectionIndex(sshConnection);
             NetworkConnectionTools.CloseConnection(connectionIndex);
         }
@@ -259,8 +260,12 @@ namespace Nitrocid.Extras.Ssh.SSH
         /// Opens an SSH shell
         /// </summary>
         /// <param name="SSHClient">SSH client instance</param>
-        public static void OpenShell(SshClient SSHClient)
+        public static void OpenShell(SshClient? SSHClient)
         {
+            // Check the client
+            if (SSHClient is null)
+                throw new KernelException(KernelExceptionType.SFTPShell, Translate.DoTranslation("SSH is connected but with no client."));
+
             try
             {
                 // Add handler for SSH
@@ -320,7 +325,7 @@ namespace Nitrocid.Extras.Ssh.SSH
         /// <param name="Command">Command to sent to remote system (usually a UNIX command)</param>
         public static void OpenCommand(NetworkConnection sshConnection, string Command)
         {
-            OpenCommand((SshClient)sshConnection.ConnectionInstance, Command);
+            OpenCommand((SshClient?)sshConnection.ConnectionInstance, Command);
             int connectionIndex = NetworkConnectionTools.GetConnectionIndex(sshConnection);
             NetworkConnectionTools.CloseConnection(connectionIndex);
         }
@@ -330,8 +335,12 @@ namespace Nitrocid.Extras.Ssh.SSH
         /// </summary>
         /// <param name="SSHClient">SSH client instance</param>
         /// <param name="Command">Command to sent to remote system (usually a UNIX command)</param>
-        public static void OpenCommand(SshClient SSHClient, string Command)
+        public static void OpenCommand(SshClient? SSHClient, string Command)
         {
+            // Check the client
+            if (SSHClient is null)
+                throw new KernelException(KernelExceptionType.SFTPShell, Translate.DoTranslation("SSH is connected but with no client."));
+
             try
             {
                 // Add handler for SSH

@@ -21,6 +21,8 @@ using Newtonsoft.Json;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Configuration.Instances;
 using Nitrocid.Kernel.Configuration.Settings;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
 using Nitrocid.Misc.Reflection.Internal;
 
 namespace Nitrocid.Extras.Tips.Settings
@@ -33,7 +35,8 @@ namespace Nitrocid.Extras.Tips.Settings
         /// <inheritdoc/>
         [JsonIgnore]
         public override SettingsEntry[] SettingsEntries =>
-            ConfigTools.GetSettingsEntries(ResourcesManager.GetData("TipsSettings.json", ResourcesType.Misc, typeof(TipsConfig).Assembly));
+            ConfigTools.GetSettingsEntries(ResourcesManager.GetData("TipsSettings.json", ResourcesType.Misc, typeof(TipsConfig).Assembly) ??
+                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Failed to obtain settings entries.")));
 
         /// <summary>
         /// Show the tip after logging in.

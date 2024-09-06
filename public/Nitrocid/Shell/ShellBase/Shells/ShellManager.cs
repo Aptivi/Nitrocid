@@ -76,7 +76,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
 
         internal static List<ShellExecuteInfo> ShellStack = [];
         internal static string lastCommand = "";
-        internal static KernelThread ProcessStartCommandThread = new("Executable Command Thread", false, (processParams) => ProcessExecutor.ExecuteProcess((ExecuteProcessThreadParameters)processParams));
+        internal static KernelThread ProcessStartCommandThread = new("Executable Command Thread", false, (processParams) => ProcessExecutor.ExecuteProcess((ExecuteProcessThreadParameters?)processParams));
         internal static Dictionary<string, List<string>> histories = new()
         {
             { "General",                    new() },
@@ -320,7 +320,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
                 FullCommand = "";
 
             // Variables
-            string TargetFile = "";
+            string? TargetFile = "";
             string TargetFileName = "";
 
             // Get the shell info
@@ -456,7 +456,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
                     // Get the target file and path
                     TargetFile = RegexpTools.Unescape(commandName);
                     bool existsInPath = PathLookupTools.FileExistsInPath(commandName, ref TargetFile);
-                    bool pathValid = Parsing.TryParsePath(TargetFile);
+                    bool pathValid = Parsing.TryParsePath(TargetFile ?? "");
                     if (!existsInPath || string.IsNullOrEmpty(TargetFile))
                         TargetFile = FilesystemTools.NeutralizePath(commandName);
                     if (pathValid)
@@ -598,7 +598,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
                     catch (Exception ex)
                     {
                         DebugWriter.WriteDebugStackTrace(ex);
-                        TextWriters.Write(Translate.DoTranslation("Error trying to execute command.") + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, KernelColorType.Error, ex.GetType().FullName, ex.Message);
+                        TextWriters.Write(Translate.DoTranslation("Error trying to execute command.") + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, KernelColorType.Error, ex.GetType().FullName ?? "<null>", ex.Message);
                         if (ex is KernelException kex)
                             UESHVariables.SetVariable("UESHErrorCode", $"{KernelExceptionTools.GetErrorCode(kex)}");
                         else
@@ -656,7 +656,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
         /// </summary>
         /// <param name="shellType">Shell type name</param>
         public static BaseShellInfo GetShellInfo(string shellType) =>
-            AvailableShells.TryGetValue(shellType, out BaseShellInfo baseShellInfo) ? baseShellInfo : AvailableShells["Shell"];
+            AvailableShells.TryGetValue(shellType, out BaseShellInfo? baseShellInfo) ? baseShellInfo : AvailableShells["Shell"];
 
         /// <summary>
         /// Starts the shell
@@ -700,20 +700,20 @@ namespace Nitrocid.Shell.ShellBase.Shells
         /// </summary>
         public static void PurgeShells() =>
             // Remove these shells from the stack
-            ShellStack.RemoveAll(x => x.ShellBase.Bail);
+            ShellStack.RemoveAll(x => x.ShellBase?.Bail ?? true);
 
         /// <summary>
         /// Gets the shell executor based on the shell type
         /// </summary>
         /// <param name="ShellType">The requested shell type</param>
-        public static BaseShell GetShellExecutor(ShellType ShellType) =>
+        public static BaseShell? GetShellExecutor(ShellType ShellType) =>
             GetShellExecutor(GetShellTypeName(ShellType));
 
         /// <summary>
         /// Gets the shell executor based on the shell type
         /// </summary>
         /// <param name="ShellType">The requested shell type</param>
-        public static BaseShell GetShellExecutor(string ShellType) =>
+        public static BaseShell? GetShellExecutor(string ShellType) =>
             GetShellInfo(ShellType).ShellBase;
 
         /// <summary>
@@ -858,7 +858,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
             string path = PathsManagement.ShellHistoriesPath;
             if (!Checking.FileExists(path))
                 return;
-            histories = JsonConvert.DeserializeObject<Dictionary<string, List<string>>>(FileIO.ReadAllText(path));
+            histories = JsonConvert.DeserializeObject<Dictionary<string, List<string>>>(FileIO.ReadAllText(path)) ?? [];
             foreach (string history in histories.Keys)
             {
                 if (!HistoryTools.IsHistoryRegistered(history))
@@ -888,10 +888,11 @@ namespace Nitrocid.Shell.ShellBase.Shells
             {
                 // Make a shell executor based on shell type to select a specific executor (if the shell type is not UESH, and if the new shell isn't a mother shell)
                 // Please note that the remote debug shell is not supported because it works on its own space, so it can't be interfaced using the standard IShell.
-                var ShellExecute = GetShellExecutor(ShellType);
+                var ShellExecute = GetShellExecutor(ShellType) ??
+                    throw new KernelException(KernelExceptionType.ShellOperation, Translate.DoTranslation("Can't get shell executor for") + $" {ShellType}");
 
                 // Make a new instance of shell information
-                var ShellCommandThread = new KernelThread($"{ShellType} Command Thread", false, (cmdThreadParams) => CommandExecutor.ExecuteCommand((CommandExecutorParameters)cmdThreadParams));
+                var ShellCommandThread = new KernelThread($"{ShellType} Command Thread", false, (cmdThreadParams) => CommandExecutor.ExecuteCommand((CommandExecutorParameters?)cmdThreadParams));
                 var ShellInfo = new ShellExecuteInfo(ShellType, ShellExecute, ShellCommandThread);
 
                 // Add a new shell to the shell stack to indicate that we have a new shell (a visitor)!
@@ -938,7 +939,9 @@ namespace Nitrocid.Shell.ShellBase.Shells
         {
             if (ShellStack.Count >= 1)
             {
-                ShellStack[^1].ShellBase.Bail = true;
+                var shellBase = ShellStack[^1].ShellBase;
+                if (shellBase is not null)
+                    shellBase.Bail = true;
                 PurgeShells();
             }
         }
@@ -949,7 +952,11 @@ namespace Nitrocid.Shell.ShellBase.Shells
         internal static void KillAllShells()
         {
             for (int i = ShellStack.Count - 1; i >= 0; i--)
-                ShellStack[i].ShellBase.Bail = true;
+            {
+                var shellBase = ShellStack[i].ShellBase;
+                if (shellBase is not null)
+                    shellBase.Bail = true;
+            }
             PurgeShells();
         }
 

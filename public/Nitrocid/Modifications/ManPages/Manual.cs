@@ -32,27 +32,27 @@ namespace Nitrocid.Modifications.ManPages
         /// <summary>
         /// Manual page file name
         /// </summary>
-        public string Name { get; private set; }
+        public string Name { get; private set; } = "";
         /// <summary>
         /// Mod name containing this manual page
         /// </summary>
-        public string ModName { get; private set; }
+        public string ModName { get; private set; } = "";
         /// <summary>
         /// The manual page title
         /// </summary>
-        public string Title { get; private set; }
+        public string Title { get; private set; } = "";
         /// <summary>
         /// The manual page revision
         /// </summary>
-        public string Revision { get; private set; }
+        public string Revision { get; private set; } = "";
         /// <summary>
         /// The body string (the contents of manual)
         /// </summary>
-        public StringBuilder Body { get; private set; }
+        public StringBuilder? Body { get; private set; }
         /// <summary>
         /// The list of todos
         /// </summary>
-        public List<string> Todos { get; private set; }
+        public List<string>? Todos { get; private set; }
         /// <summary>
         /// Is the manual page valid?
         /// </summary>

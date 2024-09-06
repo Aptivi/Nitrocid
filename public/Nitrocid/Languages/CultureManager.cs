@@ -109,9 +109,9 @@ namespace Nitrocid.Languages
         /// <summary>
         /// Gets all cultures available for the current language
         /// </summary>
-        public static CultureInfo[] GetCulturesFromLang(string Language)
+        public static CultureInfo[]? GetCulturesFromLang(string Language)
         {
-            if (LanguageManager.Languages.TryGetValue(Language, out LanguageInfo langInfo))
+            if (LanguageManager.Languages.TryGetValue(Language, out LanguageInfo? langInfo))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Returning cultures for lang {0}", Language);
                 return langInfo.Cultures;
@@ -128,9 +128,9 @@ namespace Nitrocid.Languages
         /// <summary>
         /// Gets all culture names available for the current language
         /// </summary>
-        public static List<string> GetCultureNamesFromLang(string Language)
+        public static List<string>? GetCultureNamesFromLang(string Language)
         {
-            if (LanguageManager.Languages.TryGetValue(Language, out LanguageInfo langInfo))
+            if (LanguageManager.Languages.TryGetValue(Language, out LanguageInfo? langInfo))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Returning culture names for lang {0}", Language);
                 return langInfo.Cultures.Select((culture) => culture.Name).ToList();

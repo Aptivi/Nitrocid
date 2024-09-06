@@ -66,7 +66,7 @@ namespace Nitrocid.Shell.ShellBase.Commands
         /// <param name="CommandArgumentInfo">Command argument info</param>
         /// <param name="CommandBase">Command base for execution</param>
         /// <param name="Flags">Command flags</param>
-        public CommandInfo(string Command, string HelpDefinition, CommandArgumentInfo[] CommandArgumentInfo, BaseCommand CommandBase, CommandFlags Flags = CommandFlags.None)
+        public CommandInfo(string Command, string HelpDefinition, CommandArgumentInfo[]? CommandArgumentInfo, BaseCommand? CommandBase, CommandFlags Flags = CommandFlags.None)
         {
             this.Command = Command;
             this.HelpDefinition = HelpDefinition;

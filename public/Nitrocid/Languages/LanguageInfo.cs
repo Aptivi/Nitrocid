@@ -129,7 +129,8 @@ namespace Nitrocid.Languages
         public LanguageInfo(string LangName, string FullLanguageName, bool Transliterable, int Codepage = 65001, string cultureCode = "", string country = "")
         {
             // Check to see if the language being installed is found in resources
-            string localizationTokenValue = ResourcesManager.GetData($"{LangName}.json", ResourcesType.Languages);
+            string localizationTokenValue = ResourcesManager.GetData($"{LangName}.json", ResourcesType.Languages) ??
+                throw new KernelException(KernelExceptionType.LanguageManagement, Translate.DoTranslation("Failed to load language resource for") + $" {LangName}");
             if (!string.IsNullOrEmpty(localizationTokenValue))
             {
                 // Install values to the object instance
@@ -163,7 +164,9 @@ namespace Nitrocid.Languages
                 var localizations = JsonConvert.DeserializeObject<LanguageLocalizations>(localizationTokenValue) ??
                     throw new KernelException(KernelExceptionType.LanguageManagement, Translate.DoTranslation("Can't get localized text"));
                 string[] LanguageResource = localizations.Localizations;
-                var englishLocalizations = JsonConvert.DeserializeObject<LanguageLocalizations>(ResourcesManager.GetData("eng.json", ResourcesType.Languages)) ??
+                var englishData = ResourcesManager.GetData("eng.json", ResourcesType.Languages) ??
+                    throw new KernelException(KernelExceptionType.LanguageManagement, Translate.DoTranslation("Can't get English localizations"));
+                var englishLocalizations = JsonConvert.DeserializeObject<LanguageLocalizations>(englishData) ??
                     throw new KernelException(KernelExceptionType.LanguageManagement, Translate.DoTranslation("Can't get English text"));
                 string[] LanguageResourceEnglish = englishLocalizations.Localizations;
                 custom = false;
@@ -227,7 +230,9 @@ namespace Nitrocid.Languages
             this.cultureCode = cultureCode;
 
             // Install it
-            var englishLocalizations = JsonConvert.DeserializeObject<LanguageLocalizations>(ResourcesManager.GetData("eng.json", ResourcesType.Languages)) ??
+            var englishData = ResourcesManager.GetData("eng.json", ResourcesType.Languages) ??
+                throw new KernelException(KernelExceptionType.LanguageManagement, Translate.DoTranslation("Can't get English localizations"));
+            var englishLocalizations = JsonConvert.DeserializeObject<LanguageLocalizations>(englishData) ??
                 throw new KernelException(KernelExceptionType.LanguageManagement, Translate.DoTranslation("Can't get English text"));
             if (LanguageToken is null)
                 throw new KernelException(KernelExceptionType.LanguageManagement, Translate.DoTranslation("Language token must be specified"));

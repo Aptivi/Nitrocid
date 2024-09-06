@@ -116,7 +116,7 @@ namespace Nitrocid.LocaleGen
             catch (Exception ex)
             {
                 TextWriters.Write("Unexpected error in converter:" + $" {ex.Message}", true, KernelColorType.Error);
-                TextWriters.Write(ex.StackTrace, true, KernelColorType.Error);
+                TextWriters.Write(ex.StackTrace ?? "No stack trace!", true, KernelColorType.Error);
             }
         }
     }

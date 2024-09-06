@@ -46,7 +46,7 @@ namespace Nitrocid.Shell.Shells.Admin.Commands
             {
                 try
                 {
-                    DebugWriter.DebugStreamWriter.Close();
+                    DebugWriter.DebugStreamWriter?.Close();
                     DebugWriter.DebugStreamWriter = new StreamWriter(PathsManagement.GetKernelPath(KernelPathType.Debugging)) { AutoFlush = true };
                     TextWriterColor.Write(Translate.DoTranslation("Debug log removed. All connected debugging devices may still view messages."));
                     return 0;

@@ -103,9 +103,16 @@ namespace Nitrocid.Shell.ShellBase.Commands
                     {
                         ProvidedArgumentsInfo unsatisfied = total[i];
                         string command = unsatisfied.Command;
+                        var argInfo = unsatisfied.ArgumentInfo;
+                        if (argInfo is null)
+                        {
+                            TextWriters.Write($"- [{i + 1}] {command}: ", false, KernelColorType.ListEntry);
+                            TextWriters.Write(Translate.DoTranslation("Unknown argument"), false, KernelColorType.ListValue);
+                            continue;
+                        }
 
                         // Write usage number
-                        string renderedUsage = !string.IsNullOrEmpty(unsatisfied.ArgumentInfo.RenderedUsage) ? " " + unsatisfied.ArgumentInfo.RenderedUsage : "";
+                        string renderedUsage = !string.IsNullOrEmpty(argInfo.RenderedUsage) ? " " + argInfo.RenderedUsage : "";
                         TextWriters.Write($"- [{i + 1}] {command}{renderedUsage}", true, KernelColorType.ListEntry);
 
                         // Check for required arguments

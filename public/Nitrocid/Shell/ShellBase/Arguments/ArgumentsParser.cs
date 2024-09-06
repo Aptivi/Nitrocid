@@ -19,6 +19,8 @@
 
 using Nitrocid.Arguments;
 using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
 using Nitrocid.Misc.Text.Probers.Regexp;
 using Nitrocid.Modifications;
 using Nitrocid.Shell.ShellBase.Aliases;
@@ -43,7 +45,7 @@ namespace Nitrocid.Shell.ShellBase.Arguments
         /// <param name="CommandText">Command text that the user provided</param>
         /// <param name="CommandType">Shell command type. Consult the <see cref="ShellType"/> enum for information about supported shells.</param>
         /// <returns>An array of <see cref="ProvidedArgumentsInfo"/> that holds information about parsed command</returns>
-        public static (ProvidedArgumentsInfo satisfied, ProvidedArgumentsInfo[] total) ParseShellCommandArguments(string CommandText, ShellType CommandType) =>
+        public static (ProvidedArgumentsInfo? satisfied, ProvidedArgumentsInfo[] total) ParseShellCommandArguments(string CommandText, ShellType CommandType) =>
             ParseShellCommandArguments(CommandText, null, ShellManager.GetShellTypeName(CommandType));
 
         /// <summary>
@@ -52,7 +54,7 @@ namespace Nitrocid.Shell.ShellBase.Arguments
         /// <param name="CommandText">Command text that the user provided</param>
         /// <param name="CommandType">Shell command type.</param>
         /// <returns>An array of <see cref="ProvidedArgumentsInfo"/> that holds information about parsed command</returns>
-        public static (ProvidedArgumentsInfo satisfied, ProvidedArgumentsInfo[] total) ParseShellCommandArguments(string CommandText, string CommandType) =>
+        public static (ProvidedArgumentsInfo? satisfied, ProvidedArgumentsInfo[] total) ParseShellCommandArguments(string CommandText, string CommandType) =>
             ParseShellCommandArguments(CommandText, null, CommandType);
 
         /// <summary>
@@ -62,7 +64,7 @@ namespace Nitrocid.Shell.ShellBase.Arguments
         /// <param name="cmdInfo">Command information</param>
         /// <param name="CommandType">Shell command type. Consult the <see cref="ShellType"/> enum for information about supported shells.</param>
         /// <returns>An array of <see cref="ProvidedArgumentsInfo"/> that holds information about parsed command</returns>
-        public static (ProvidedArgumentsInfo satisfied, ProvidedArgumentsInfo[] total) ParseShellCommandArguments(string CommandText, CommandInfo cmdInfo, ShellType CommandType) =>
+        public static (ProvidedArgumentsInfo? satisfied, ProvidedArgumentsInfo[] total) ParseShellCommandArguments(string CommandText, CommandInfo? cmdInfo, ShellType CommandType) =>
             ParseShellCommandArguments(CommandText, cmdInfo, ShellManager.GetShellTypeName(CommandType));
 
         /// <summary>
@@ -72,7 +74,7 @@ namespace Nitrocid.Shell.ShellBase.Arguments
         /// <param name="cmdInfo">Command information</param>
         /// <param name="CommandType">Shell command type.</param>
         /// <returns>An array of <see cref="ProvidedArgumentsInfo"/> that holds information about parsed command</returns>
-        public static (ProvidedArgumentsInfo satisfied, ProvidedArgumentsInfo[] total) ParseShellCommandArguments(string CommandText, CommandInfo cmdInfo, string CommandType)
+        public static (ProvidedArgumentsInfo? satisfied, ProvidedArgumentsInfo[] total) ParseShellCommandArguments(string CommandText, CommandInfo? cmdInfo, string CommandType)
         {
             string Command;
             CommandInfo[] ShellCommands;
@@ -127,7 +129,7 @@ namespace Nitrocid.Shell.ShellBase.Arguments
         /// </summary>
         /// <param name="ArgumentText">Kernel argument text that the user provided</param>
         /// <returns>An array of <see cref="ProvidedArgumentsInfo"/> that holds information about parsed command</returns>
-        public static (ProvidedArgumentsInfo satisfied, ProvidedArgumentsInfo[] total) ParseArgumentArguments(string ArgumentText)
+        public static (ProvidedArgumentsInfo? satisfied, ProvidedArgumentsInfo[] total) ParseArgumentArguments(string ArgumentText)
         {
             string Argument;
             var KernelArguments = ArgumentParse.AvailableCMDLineArgs;
@@ -142,7 +144,7 @@ namespace Nitrocid.Shell.ShellBase.Arguments
             Argument = words[0];
 
             // Check to see if the caller has provided a switch that subtracts the number of required arguments
-            var ArgumentInfo = KernelArguments.TryGetValue(Argument, out ArgumentInfo argInfo) ? argInfo : null;
+            var ArgumentInfo = KernelArguments.TryGetValue(Argument, out ArgumentInfo? argInfo) ? argInfo : null;
             var fallback = new ProvidedArgumentsInfo(Argument, arguments, words.Skip(1).ToArray(), argumentsOrig, wordsOrig.Skip(1).ToArray(), [], true, true, true, [], [], [], true, true, true, new());
             if (ArgumentInfo != null)
                 return ProcessArgumentOrShellCommandArguments(ArgumentText, null, ArgumentInfo);
@@ -150,9 +152,9 @@ namespace Nitrocid.Shell.ShellBase.Arguments
                 return (fallback, new[] { fallback });
         }
 
-        private static (ProvidedArgumentsInfo satisfied, ProvidedArgumentsInfo[] total) ProcessArgumentOrShellCommandArguments(string CommandText, CommandInfo CommandInfo, ArgumentInfo ArgumentInfo)
+        private static (ProvidedArgumentsInfo? satisfied, ProvidedArgumentsInfo[] total) ProcessArgumentOrShellCommandArguments(string CommandText, CommandInfo? CommandInfo, ArgumentInfo? ArgumentInfo)
         {
-            ProvidedArgumentsInfo satisfiedArg = null;
+            ProvidedArgumentsInfo? satisfiedArg = null;
             List<ProvidedArgumentsInfo> totalArgs = [];
 
             // Check the command and argument info
@@ -192,7 +194,8 @@ namespace Nitrocid.Shell.ShellBase.Arguments
             string[] unknownSwitchesList = [];
             string[] conflictingSwitchesList = [];
             string[] noValueSwitchesList = [];
-            var argInfos = isCommand ? CommandInfo?.CommandArgumentInfo : ArgumentInfo?.ArgArgumentInfo;
+            var argInfos = (isCommand ? CommandInfo?.CommandArgumentInfo : ArgumentInfo?.ArgArgumentInfo) ??
+                throw new KernelException(KernelExceptionType.ShellOperation, Translate.DoTranslation("Can't get argument info for command or argument"));
             foreach (var argInfo in argInfos)
             {
                 bool RequiredArgumentsProvided = true;
@@ -203,11 +206,10 @@ namespace Nitrocid.Shell.ShellBase.Arguments
                 bool exactWordingProvided = true;
 
                 // Check for argument info
-                bool withArgInfo = argInfo is not null;
-                DebugWriter.WriteDebug(DebugLevel.I, "Argument info is full? {0}", withArgInfo);
+                DebugWriter.WriteDebug(DebugLevel.I, "Argument info is full? {0}", argInfo is not null);
 
                 // Optionalize some of the arguments if there are switches that optionalize them
-                if (withArgInfo)
+                if (argInfo is not null)
                 {
                     foreach (string enclosedSwitch in EnclosedSwitches)
                     {
@@ -219,13 +221,13 @@ namespace Nitrocid.Shell.ShellBase.Arguments
                         DebugWriter.WriteDebug(DebugLevel.I, "Minimum arguments offset is now {0}", minimumArgumentsOffset);
                     }
                 }
-                int finalRequiredArgs = withArgInfo ? argInfo.MinimumArguments - minimumArgumentsOffset : 0;
+                int finalRequiredArgs = argInfo is not null ? argInfo.MinimumArguments - minimumArgumentsOffset : 0;
                 if (finalRequiredArgs < 0)
                     finalRequiredArgs = 0;
                 DebugWriter.WriteDebug(DebugLevel.I, "Required arguments count is now {0}", finalRequiredArgs);
 
                 // Check to see if the caller has provided required number of arguments
-                if (withArgInfo)
+                if (argInfo is not null)
                     RequiredArgumentsProvided =
                         EnclosedArgs.Length >= finalRequiredArgs ||
                         !argInfo.ArgumentsRequired;
@@ -234,7 +236,7 @@ namespace Nitrocid.Shell.ShellBase.Arguments
                 DebugWriter.WriteDebug(DebugLevel.I, "RequiredArgumentsProvided is {0}. Refer to the value of argument info.", RequiredArgumentsProvided);
 
                 // Check to see if the caller has provided required number of switches
-                if (withArgInfo)
+                if (argInfo is not null)
                     RequiredSwitchesProvided =
                         argInfo.Switches.Length == 0 ||
                         EnclosedSwitches.Length >= argInfo.Switches.Where((@switch) => @switch.IsRequired).Count() ||
@@ -244,7 +246,7 @@ namespace Nitrocid.Shell.ShellBase.Arguments
                 DebugWriter.WriteDebug(DebugLevel.I, "RequiredSwitchesProvided is {0}. Refer to the value of argument info.", RequiredSwitchesProvided);
 
                 // Check to see if the caller has provided required number of switches that require arguments
-                if (withArgInfo)
+                if (argInfo is not null)
                 {
                     if (argInfo.Switches.Length == 0 || EnclosedSwitches.Length == 0 ||
                         !argInfo.Switches.Any((@switch) => @switch.ArgumentsRequired))
@@ -265,7 +267,7 @@ namespace Nitrocid.Shell.ShellBase.Arguments
                 DebugWriter.WriteDebug(DebugLevel.I, "RequiredSwitchArgumentsProvided is {0}. Refer to the value of argument info.", RequiredSwitchArgumentsProvided);
 
                 // Check to see if the caller has provided switches that don't accept values with the values
-                if (withArgInfo)
+                if (argInfo is not null)
                 {
                     var allSwitches = argInfo.Switches.Where((@switch) => !@switch.AcceptsValues).Select((@switch) => @switch.SwitchName).ToArray();
                     var allProvidedSwitches = EnclosedSwitches
@@ -284,7 +286,7 @@ namespace Nitrocid.Shell.ShellBase.Arguments
                 DebugWriter.WriteDebug(DebugLevel.I, "RequiredSwitchArgumentsProvided is {0}. Refer to the value of argument info.", RequiredSwitchArgumentsProvided);
 
                 // Check to see if the caller has provided non-existent switches
-                if (withArgInfo)
+                if (argInfo is not null)
                     unknownSwitchesList = EnclosedSwitchKeyValuePairs
                         .Select((kvp) => kvp.Item1)
                         .Where((key) => !argInfo.Switches.Any((switchInfo) => switchInfo.SwitchName == key[1..]))
@@ -292,7 +294,7 @@ namespace Nitrocid.Shell.ShellBase.Arguments
                 DebugWriter.WriteDebug(DebugLevel.I, "Unknown switches: {0}", unknownSwitchesList.Length);
 
                 // Check to see if the caller has provided conflicting switches
-                if (withArgInfo)
+                if (argInfo is not null)
                 {
                     List<string> processed = [];
                     List<string> conflicts = [];
@@ -310,8 +312,8 @@ namespace Nitrocid.Shell.ShellBase.Arguments
                         if (switchEnumerator.Any())
                         {
                             // We have a switch! Now, process it.
-                            string[] switchConflicts = switchEnumerator
-                                .First().ConflictsWith
+                            var initialConflicts = switchEnumerator.First().ConflictsWith ?? [];
+                            string[] switchConflicts = initialConflicts
                                 .Select((conflicting) => $"-{conflicting}")
                                 .ToArray();
                             DebugWriter.WriteDebug(DebugLevel.I, "Switch conflicts: {0} [{1}]", switchConflicts.Length, string.Join(", ", switchConflicts));
@@ -331,44 +333,53 @@ namespace Nitrocid.Shell.ShellBase.Arguments
                     conflictingSwitchesList = [.. conflicts];
                 }
 
-                // Check to see if the caller has provided a non-numeric value to an argument that expects numbers
-                for (int i = 0; i < argInfo.Arguments.Length && i < EnclosedArgs.Length; i++)
+                // Check to see if the caller has provided a non-numeric value to an argument that expects number
+                if (argInfo is not null)
                 {
-                    // Get the argument and the part
-                    string arg = EnclosedArgs[i];
-                    var argPart = argInfo.Arguments[i];
+                    for (int i = 0; i < argInfo.Arguments.Length && i < EnclosedArgs.Length; i++)
+                    {
+                        // Get the argument and the part
+                        string arg = EnclosedArgs[i];
+                        var argPart = argInfo.Arguments[i];
 
-                    // Check to see if the argument expects a number and that the provided argument is numeric
-                    // or if the argument allows string values
-                    if (argPart.Options.IsNumeric && !double.TryParse(arg, out _))
-                        numberProvided = false;
+                        // Check to see if the argument expects a number and that the provided argument is numeric
+                        // or if the argument allows string values
+                        if (argPart.Options.IsNumeric && !double.TryParse(arg, out _))
+                            numberProvided = false;
+                    }
                 }
 
                 // Check to see if the caller has provided a wording other than the expected exact wording if found
-                for (int i = 0; i < argInfo.Arguments.Length && i < EnclosedArgs.Length; i++)
+                if (argInfo is not null)
                 {
-                    // Get the argument and the part
-                    string arg = EnclosedArgs[i];
-                    var argPart = argInfo.Arguments[i];
+                    for (int i = 0; i < argInfo.Arguments.Length && i < EnclosedArgs.Length; i++)
+                    {
+                        // Get the argument and the part
+                        string arg = EnclosedArgs[i];
+                        var argPart = argInfo.Arguments[i];
 
-                    // Check to see if the argument expects a number and that the provided argument is numeric
-                    // or if the argument allows string values
-                    if (argPart.Options.ExactWording.Length > 0 && !argPart.Options.ExactWording.Contains(arg))
-                        exactWordingProvided = false;
+                        // Check to see if the argument expects a number and that the provided argument is numeric
+                        // or if the argument allows string values
+                        if (argPart.Options.ExactWording.Length > 0 && !argPart.Options.ExactWording.Contains(arg))
+                            exactWordingProvided = false;
+                    }
                 }
 
                 // Check to see if the caller has provided a non-numeric value to a switch that expects numbers
-                var switchesList = argInfo.Switches.Where((si) => si.SwitchName != "set").ToArray();
-                for (int i = 0; i < switchesList.Length && i < EnclosedSwitchKeyValuePairs.Count; i++)
+                if (argInfo is not null)
                 {
-                    // Get the switch and the part
-                    var switches = EnclosedSwitchKeyValuePairs[i];
-                    var switchPart = switchesList[i];
+                    var switchesList = argInfo.Switches.Where((si) => si.SwitchName != "set").ToArray();
+                    for (int i = 0; i < switchesList.Length && i < EnclosedSwitchKeyValuePairs.Count; i++)
+                    {
+                        // Get the switch and the part
+                        var switches = EnclosedSwitchKeyValuePairs[i];
+                        var switchPart = switchesList[i];
 
-                    // Check to see if the switch expects a number and that the provided switch is numeric
-                    // or if the switch allows string values
-                    if (switchPart.IsNumeric && !double.TryParse(switches.Item2, out _))
-                        switchNumberProvided = false;
+                        // Check to see if the switch expects a number and that the provided switch is numeric
+                        // or if the switch allows string values
+                        if (switchPart.IsNumeric && !double.TryParse(switches.Item2, out _))
+                            switchNumberProvided = false;
+                    }
                 }
 
                 // If all is well, bail.

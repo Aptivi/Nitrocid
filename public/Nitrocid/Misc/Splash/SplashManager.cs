@@ -44,7 +44,7 @@ namespace Nitrocid.Misc.Splash
 
         internal static Screen splashScreen = new();
         internal static SplashContext currentContext = SplashContext.StartingUp;
-        internal static KernelThread SplashThread = new("Kernel Splash Thread", false, (splashParams) => SplashThreadHandler((SplashThreadParameters)splashParams));
+        internal static KernelThread SplashThread = new("Kernel Splash Thread", false, (splashParams) => SplashThreadHandler((SplashThreadParameters?)splashParams));
         internal static SplashInfo fallbackSplash = new("Welcome", new SplashWelcome());
         internal static SplashInfo blankSplash = new("Blank", new SplashBlank(), false);
         internal readonly static List<SplashInfo> builtinSplashes =
@@ -429,10 +429,12 @@ namespace Nitrocid.Misc.Splash
             CloseSplash(splash, context);
         }
 
-        private static void SplashThreadHandler(SplashThreadParameters threadParameters)
+        private static void SplashThreadHandler(SplashThreadParameters? threadParameters)
         {
             try
             {
+                if (threadParameters is null)
+                    throw new KernelException(KernelExceptionType.Splash, Translate.DoTranslation("Splash thread parameters are not specified"));
                 var splash = GetSplashFromName(threadParameters.SplashName).EntryPoint;
                 while (!splash.SplashClosing)
                 {

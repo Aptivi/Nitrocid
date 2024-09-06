@@ -37,8 +37,8 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            string filePath = "";
-            if (PathLookupTools.FileExistsInPath(parameters.ArgumentsList[0], ref filePath))
+            string? filePath = "";
+            if (PathLookupTools.FileExistsInPath(parameters.ArgumentsList[0], ref filePath) && filePath is not null)
             {
                 TextWriters.Write(Translate.DoTranslation("File found in path:") + " {0}", true, KernelColorType.Success, filePath);
                 variableValue = filePath;

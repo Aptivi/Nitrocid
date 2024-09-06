@@ -77,7 +77,7 @@ namespace Nitrocid.Misc.Progress
         /// <param name="message">Message to write to the handlers</param>
         /// <param name="vars">Variables for message extension</param>
         /// <param name="context">Progress context</param>
-        public static void ReportProgress(double progress, string context, string message, params object[] vars)
+        public static void ReportProgress(double progress, string context, string message, params object?[]? vars)
         {
             context = string.IsNullOrEmpty(context) ? "General" : context;
             message = vars is not null ? TextTools.FormatString(message, vars) : message;

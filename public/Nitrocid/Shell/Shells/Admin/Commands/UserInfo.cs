@@ -51,7 +51,7 @@ namespace Nitrocid.Shell.Shells.Admin.Commands
                 TextWriters.Write(Translate.DoTranslation("Full name") + ": ", false, KernelColorType.ListEntry);
                 TextWriters.Write(user.FullName, true, KernelColorType.ListValue);
                 TextWriters.Write(Translate.DoTranslation("Preferred language") + ": ", false, KernelColorType.ListEntry);
-                TextWriters.Write(user.PreferredLanguage, true, KernelColorType.ListValue);
+                TextWriters.Write(user.PreferredLanguage ?? "", true, KernelColorType.ListValue);
                 TextWriters.Write(Translate.DoTranslation("Flags") + ": ", false, KernelColorType.ListEntry);
                 TextWriters.Write(string.Join(", ", user.Flags), true, KernelColorType.ListValue);
                 TextWriterRaw.Write();

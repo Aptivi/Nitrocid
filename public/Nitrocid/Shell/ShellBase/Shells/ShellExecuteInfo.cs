@@ -31,7 +31,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
         internal int LastErrorCode = 0;
         internal readonly List<KernelThread> AltCommandThreads = [];
         private readonly string shellType;
-        private readonly BaseShell shellBase;
+        private readonly BaseShell? shellBase;
         private readonly KernelThread shellCommandThread;
 
         /// <summary>
@@ -42,7 +42,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
         /// <summary>
         /// Shell base class
         /// </summary>
-        public BaseShell ShellBase => shellBase;
+        public BaseShell? ShellBase => shellBase;
 
         /// <summary>
         /// Shell command thread
@@ -55,7 +55,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
         /// <param name="ShellType">The shell type</param>
         /// <param name="ShellBase">Shell base class</param>
         /// <param name="ShellCommandThread">Shell command thread</param>
-        public ShellExecuteInfo(ShellType ShellType, BaseShell ShellBase, KernelThread ShellCommandThread) :
+        public ShellExecuteInfo(ShellType ShellType, BaseShell? ShellBase, KernelThread ShellCommandThread) :
             this(ShellManager.GetShellTypeName(ShellType), ShellBase, ShellCommandThread)
         { }
 
@@ -65,7 +65,7 @@ namespace Nitrocid.Shell.ShellBase.Shells
         /// <param name="ShellType">The shell type</param>
         /// <param name="ShellBase">Shell base class</param>
         /// <param name="ShellCommandThread">Shell command thread</param>
-        public ShellExecuteInfo(string ShellType, BaseShell ShellBase, KernelThread ShellCommandThread)
+        public ShellExecuteInfo(string ShellType, BaseShell? ShellBase, KernelThread ShellCommandThread)
         {
             shellType = ShellType;
             shellBase = ShellBase;
