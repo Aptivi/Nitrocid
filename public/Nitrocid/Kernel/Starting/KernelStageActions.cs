@@ -89,9 +89,9 @@ namespace Nitrocid.Kernel.Starting
                 UpdateManager.CheckKernelUpdates();
 #if SPECIFIERREL
             string upgradedPath = PathsManagement.TempPath + "/.upgraded";
-            if (!Checking.FileExists(upgradedPath) || Reading.ReadContents(upgradedPath)[0] != KernelMain.Version.ToString())
+            if (!Checking.FileExists(upgradedPath) || Reading.ReadContents(upgradedPath)[0] != KernelMain.Version?.ToString())
             {
-                Writing.WriteContentsText(upgradedPath, KernelMain.Version.ToString());
+                Writing.WriteContentsText(upgradedPath, KernelMain.Version?.ToString() ?? "0.0.0.0");
                 SplashManager.BeginSplashOut(SplashManager.CurrentSplashContext);
                 string changes = UpdateManager.GetVersionChangelogs();
                 InfoBoxButtonsColor.WriteInfoBoxButtons([

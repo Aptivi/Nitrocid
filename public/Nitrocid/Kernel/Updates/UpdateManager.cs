@@ -141,7 +141,7 @@ namespace Nitrocid.Kernel.Updates
             var AvailableUpdate = FetchBinaryArchive();
             if (AvailableUpdate is not null)
             {
-                if (!AvailableUpdate.Updated)
+                if (!AvailableUpdate.Updated && AvailableUpdate.UpdateVersion is not null)
                 {
                     SplashReport.ReportProgress(Translate.DoTranslation("Found new version: "), 10);
                     SplashReport.ReportProgress(AvailableUpdate.UpdateVersion.ToString(), 10);
