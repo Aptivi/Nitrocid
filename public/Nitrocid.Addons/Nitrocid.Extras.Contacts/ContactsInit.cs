@@ -34,6 +34,8 @@ using System.Linq;
 using Nitrocid.Shell.ShellBase.Switches;
 using VisualCard.Parts;
 using Nitrocid.Shell.Homepage;
+using Nitrocid.Extras.Contacts.Settings;
+using Nitrocid.Kernel.Configuration;
 
 namespace Nitrocid.Extras.Contacts
 {
@@ -107,6 +109,9 @@ namespace Nitrocid.Extras.Contacts
 
         ReadOnlyDictionary<string, FieldInfo>? IAddon.PubliclyAvailableFields => null;
 
+        internal static ContactsConfig ContactsConfig =>
+            (ContactsConfig)Config.baseConfigurations[nameof(ContactsConfig)];
+
         void IAddon.FinalizeAddon()
         {
             // Add homepage entries
@@ -115,6 +120,8 @@ namespace Nitrocid.Extras.Contacts
 
         void IAddon.StartAddon()
         {
+            var config = new ContactsConfig();
+            ConfigTools.RegisterBaseSetting(config);
             CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
             ExtensionHandlerTools.extensionHandlers.AddRange(handlers);
         }
@@ -128,6 +135,7 @@ namespace Nitrocid.Extras.Contacts
             foreach (var handler in handlers)
                 ExtensionHandlerTools.extensionHandlers.Remove(handler);
             HomepageTools.UnregisterBuiltinAction("Contacts");
+            ConfigTools.UnregisterBaseSetting(nameof(ContactsConfig));
         }
     }
 }

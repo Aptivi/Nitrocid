@@ -59,7 +59,10 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                 return Translate.DoTranslation("There is no contact. If you'd like to import contacts, please use the import options using the keystrokes defined at the bottom of the screen.");
 
             // Generate the rendered text
-            string finalRenderedContactPicture = GetContactPictureFinal(selectedContact, (ConsoleWrapper.WindowWidth / 2) - 4, ConsoleWrapper.WindowHeight / 2, KernelColorTools.GetColor(KernelColorType.TuiBackground));
+            string finalRenderedContactPicture =
+                ContactsInit.ContactsConfig.ShowImages ?
+                GetContactPictureFinal(selectedContact, (ConsoleWrapper.WindowWidth / 2) - 4, ConsoleWrapper.WindowHeight / 2, KernelColorTools.GetColor(KernelColorType.TuiBackground)) :
+                "";
             string finalRenderedContactName = GetContactNameFinal(selectedContact);
             string finalRenderedContactAddress = GetContactAddressFinal(selectedContact);
             string finalRenderedContactMail = GetContactMailFinal(selectedContact);
@@ -191,12 +194,16 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             string finalRenderedContactNotes = GetContactNotesFinal(index);
             finalInfoRendered.AppendLine(finalRenderedContactNotes);
 
-            // If there is a profile picture, print it
-            string picture = GetContactPictureFinal(index, ConsoleWrapper.WindowWidth - 8, ConsoleWrapper.WindowHeight, KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
+            // If there is a profile picture and preview is enabled, print it
+            string picture =
+                ContactsInit.ContactsConfig.ShowImages ?
+                GetContactPictureFinal(index, ConsoleWrapper.WindowWidth - 8, ConsoleWrapper.WindowHeight, KernelColorTools.GetColor(KernelColorType.TuiBoxBackground)) :
+                "";
             if (!string.IsNullOrEmpty(picture))
             {
                 finalInfoRendered.AppendLine("\n");
                 finalInfoRendered.AppendLine(picture);
+                finalInfoRendered.Append(ColorTools.RenderSetConsoleColor(KernelColorTools.GetColor(KernelColorType.TuiBoxBackground), true));
             }
 
             // Add a prompt to close
