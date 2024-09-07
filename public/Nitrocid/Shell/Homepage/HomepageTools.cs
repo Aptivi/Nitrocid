@@ -311,6 +311,10 @@ namespace Nitrocid.Shell.Homepage
                     {
                         render = true;
                         var keypress = Input.ReadKey();
+                        int widgetHeight = ConsoleWrapper.WindowHeight - 12;
+                        int currentPage = (choiceIdx - 1) / widgetHeight;
+                        int startIndex = widgetHeight * currentPage;
+                        int endIndex = widgetHeight * (currentPage + 1);
                         switch (keypress.Key)
                         {
                             case ConsoleKey.DownArrow:
@@ -326,6 +330,27 @@ namespace Nitrocid.Shell.Homepage
                                 choiceIdx--;
                                 if (choiceIdx < 0)
                                     choiceIdx++;
+                                break;
+                            case ConsoleKey.Home:
+                                if (settingsHighlighted)
+                                    break;
+                                choiceIdx = 0;
+                                break;
+                            case ConsoleKey.End:
+                                if (settingsHighlighted)
+                                    break;
+                                choiceIdx = choices.Length - 1;
+                                break;
+                            case ConsoleKey.PageUp:
+                                if (settingsHighlighted)
+                                    break;
+                                choiceIdx = startIndex;
+                                break;
+                            case ConsoleKey.PageDown:
+                                if (settingsHighlighted)
+                                    break;
+                                choiceIdx = endIndex > choices.Length - 1 ? choices.Length - 1 : endIndex + 1;
+                                choiceIdx = endIndex == choices.Length - 1 ? endIndex : choiceIdx;
                                 break;
                             case ConsoleKey.Tab:
                                 settingsHighlighted = !settingsHighlighted;
