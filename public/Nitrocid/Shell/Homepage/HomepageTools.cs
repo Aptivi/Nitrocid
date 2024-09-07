@@ -50,6 +50,7 @@ using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs.Styles.Selection;
 using Terminaux.Sequences.Builder.Types;
+using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.FancyWriters;
 using Terminaux.Writer.MiscWriters;
 using Terminaux.Writer.MiscWriters.Tools;
@@ -113,10 +114,10 @@ namespace Nitrocid.Shell.Homepage
                     var builder = new StringBuilder();
 
                     // Make a master border
-                    builder.Append(BorderColor.RenderBorder(0, 3, ConsoleWrapper.WindowWidth - 2, ConsoleWrapper.WindowHeight - 6, KernelColorTools.GetColor(KernelColorType.TuiPaneSelectedSeparator)));
+                    builder.Append(BorderColor.RenderBorder(0, 1, ConsoleWrapper.WindowWidth - 2, ConsoleWrapper.WindowHeight - 4, KernelColorTools.GetColor(KernelColorType.TuiPaneSelectedSeparator)));
 
                     // Show username at the top
-                    builder.Append(CenteredTextColor.RenderCenteredOneLine(1, Translate.DoTranslation("Hi, {0}! Welcome to Nitrocid!"), Vars: [string.IsNullOrWhiteSpace(UserManagement.CurrentUser.FullName) ? UserManagement.CurrentUser.Username : UserManagement.CurrentUser.FullName]));
+                    builder.Append(TextWriterWhereColor.RenderWhere(Translate.DoTranslation("Hi, {0}! Welcome to Nitrocid!"), 0, 0, vars: [string.IsNullOrWhiteSpace(UserManagement.CurrentUser.FullName) ? UserManagement.CurrentUser.Username : UserManagement.CurrentUser.FullName]));
 
                     // Show bindings
                     builder.Append(
@@ -132,8 +133,8 @@ namespace Nitrocid.Shell.Homepage
                     // Make a border for an analog clock widget and the first three RSS feeds (if the addon is installed)
                     int widgetLeft = ConsoleWrapper.WindowWidth / 2 + ConsoleWrapper.WindowWidth % 2;
                     int widgetWidth = ConsoleWrapper.WindowWidth / 2 - 4;
-                    int widgetHeight = ConsoleWrapper.WindowHeight - 13;
-                    int clockTop = 4;
+                    int widgetHeight = ConsoleWrapper.WindowHeight - 11;
+                    int clockTop = 2;
                     int rssTop = clockTop + widgetHeight + 2;
                     int rssHeight = 3;
                     builder.Append(BorderColor.RenderBorder(widgetLeft, clockTop, widgetWidth, widgetHeight, KernelColorTools.GetColor(KernelColorType.TuiPaneSelectedSeparator)));
@@ -250,7 +251,7 @@ namespace Nitrocid.Shell.Homepage
                         int settingsButtonStartPosY = ConsoleWrapper.WindowHeight - 5;
                         int settingsButtonEndPosX = settingsButtonStartPosX + settingsButtonWidth + 1;
                         int settingsButtonEndPosY = settingsButtonStartPosY + settingsButtonHeight + 1;
-                        int clockTop = 5;
+                        int clockTop = 3;
                         int widgetWidth = ConsoleWrapper.WindowWidth / 2 - 4;
                         int widgetHeight = ConsoleWrapper.WindowHeight - 13;
                         int optionsEndX = settingsButtonStartPosX + widgetWidth - 1 + ConsoleWrapper.WindowWidth % 2;
@@ -311,7 +312,7 @@ namespace Nitrocid.Shell.Homepage
                     {
                         render = true;
                         var keypress = Input.ReadKey();
-                        int widgetHeight = ConsoleWrapper.WindowHeight - 12;
+                        int widgetHeight = ConsoleWrapper.WindowHeight - 10;
                         int currentPage = (choiceIdx - 1) / widgetHeight;
                         int startIndex = widgetHeight * currentPage;
                         int endIndex = widgetHeight * (currentPage + 1);
