@@ -34,6 +34,8 @@ using Nitrocid.Users.Login;
 using Nitrocid.Users.Login.Widgets;
 using Nitrocid.Users.Login.Widgets.Implementations;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading;
 using Terminaux.Base;
@@ -61,6 +63,16 @@ namespace Nitrocid.Shell.Homepage
     {
         internal static bool isHomepageEnabled = true;
         private static bool isOnHomepage = false;
+        private static Dictionary<string, Action> choiceActionsAddons = [];
+        private static Dictionary<string, Action> choiceActionsCustom = [];
+        private static Dictionary<string, Action> choiceActionsBuiltin = new()
+        {
+            { /* Localizable */ "File Manager", OpenFileManagerCli },
+            { /* Localizable */ "Alarm Manager", OpenAlarmCli },
+            { /* Localizable */ "Notifications", OpenNotificationsCli },
+            { /* Localizable */ "Task Manager", OpenTaskManagerCli },
+            { /* Localizable */ "About Nitrocid", OpenAboutBox },
+        };
         private static readonly Keybinding[] bindings =
         [
             // Keyboard
@@ -85,14 +97,7 @@ namespace Nitrocid.Shell.Homepage
             var homeScreen = new Screen();
             int choiceIdx = 0;
             bool settingsHighlighted = false;
-            InputChoiceInfo[] choices =
-            [
-                new("1", Translate.DoTranslation("File Manager")),
-                new("2", Translate.DoTranslation("Alarm Manager")),
-                new("3", Translate.DoTranslation("Notifications")),
-                new("4", Translate.DoTranslation("Task Manager")),
-                new("5", Translate.DoTranslation("About Nitrocid")),
-            ];
+            var choices = PopulateChoices();
 
             try
             {
@@ -194,8 +199,9 @@ namespace Nitrocid.Shell.Homepage
                     builder.Append(CenteredTextColor.RenderCenteredOneLine(settingsButtonPosY + 1, Translate.DoTranslation("Settings"), settingsHighlighted ? new Color(ConsoleColors.Black) : KernelColorTools.GetColor(KernelColorType.NeutralText), settingsHighlighted ? KernelColorTools.GetColor(KernelColorType.TuiPaneSelectedSeparator) : ColorTools.CurrentBackgroundColor, settingsButtonPosX + 1, settingsButtonWidth + settingsButtonPosX + 5 - ConsoleWrapper.WindowWidth % 2));
 
                     // Populate the available options
+                    var availableChoices = choices.Select((tuple) => tuple.Item1).ToArray();
                     builder.Append(BorderColor.RenderBorder(settingsButtonPosX, clockTop, widgetWidth - 1 + ConsoleWrapper.WindowWidth % 2, widgetHeight + 2, KernelColorTools.GetColor(!settingsHighlighted ? KernelColorType.TuiPaneSelectedSeparator : KernelColorType.TuiPaneSeparator)));
-                    builder.Append(SelectionInputTools.RenderSelections(choices, settingsButtonPosX + 1, clockTop + 1, choiceIdx, widgetHeight + 2, widgetWidth - 1 + ConsoleWrapper.WindowWidth % 2, foregroundColor: KernelColorTools.GetColor(KernelColorType.NeutralText), selectedForegroundColor: KernelColorTools.GetColor(KernelColorType.TuiPaneSelectedSeparator)));
+                    builder.Append(SelectionInputTools.RenderSelections(availableChoices, settingsButtonPosX + 1, clockTop + 1, choiceIdx, widgetHeight + 2, widgetWidth - 1 + ConsoleWrapper.WindowWidth % 2, foregroundColor: KernelColorTools.GetColor(KernelColorType.NeutralText), selectedForegroundColor: KernelColorTools.GetColor(KernelColorType.TuiPaneSelectedSeparator)));
 
                     // Return the resulting homepage
                     return builder.ToString();
@@ -205,67 +211,12 @@ namespace Nitrocid.Shell.Homepage
                 // Helper function
                 void DoAction(int choiceIdx)
                 {
-                    switch (choiceIdx)
-                    {
-                        case 0:
-                            {
-                                var tui = new FileManagerCli
-                                {
-                                    firstPanePath = PathsManagement.HomePath,
-                                    secondPanePath = PathsManagement.HomePath
-                                };
-                                tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Open"), ConsoleKey.Enter, (entry1, _, entry2, _) => tui.Open(entry1, entry2)));
-                                tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Copy"), ConsoleKey.F1, (entry1, _, entry2, _) => tui.CopyFileOrDir(entry1, entry2)));
-                                tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Move"), ConsoleKey.F2, (entry1, _, entry2, _) => tui.MoveFileOrDir(entry1, entry2)));
-                                tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Delete"), ConsoleKey.F3, (entry1, _, entry2, _) => tui.RemoveFileOrDir(entry1, entry2)));
-                                tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Up"), ConsoleKey.F4, (_, _, _, _) => tui.GoUp()));
-                                tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Info"), ConsoleKey.F5, (entry1, _, entry2, _) => tui.PrintFileSystemEntry(entry1, entry2)));
-                                tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Go To"), ConsoleKey.F6, (_, _, _, _) => tui.GoTo()));
-                                tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Copy To"), ConsoleKey.F1, ConsoleModifiers.Shift, (entry1, _, entry2, _) => tui.CopyTo(entry1, entry2)));
-                                tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Move to"), ConsoleKey.F2, ConsoleModifiers.Shift, (entry1, _, entry2, _) => tui.MoveTo(entry1, entry2)));
-                                tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Rename"), ConsoleKey.F9, (entry1, _, entry2, _) => tui.Rename(entry1, entry2)));
-                                tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("New Folder"), ConsoleKey.F10, (_, _, _, _) => tui.MakeDir()));
-                                tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Hash"), ConsoleKey.F11, (entry1, _, entry2, _) => tui.Hash(entry1, entry2)));
-                                tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Verify"), ConsoleKey.F12, (entry1, _, entry2, _) => tui.Verify(entry1, entry2)));
-                                tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Preview"), ConsoleKey.P, (entry1, _, entry2, _) => tui.Preview(entry1, entry2)));
-                                InteractiveTuiTools.OpenInteractiveTui(tui);
-                            }
-                            break;
-                        case 1:
-                            {
-                                var tui = new AlarmCli();
-                                tui.Bindings.Add(new InteractiveTuiBinding<string>(Translate.DoTranslation("Add"), ConsoleKey.A, (_, _, _, _) => tui.Start(), true));
-                                tui.Bindings.Add(new InteractiveTuiBinding<string>(Translate.DoTranslation("Remove"), ConsoleKey.Delete, (alarm, _, _, _) => tui.Stop(alarm)));
-                                InteractiveTuiTools.OpenInteractiveTui(tui);
-                            }
-                            break;
-                        case 2:
-                            {
-                                var tui = new NotificationsCli();
-                                tui.Bindings.Add(new InteractiveTuiBinding<Notification>(Translate.DoTranslation("Dismiss"), ConsoleKey.Delete, (notif, _, _, _) => tui.Dismiss(notif)));
-                                tui.Bindings.Add(new InteractiveTuiBinding<Notification>(Translate.DoTranslation("Dismiss All"), ConsoleKey.Delete, ConsoleModifiers.Control, (_, _, _, _) => tui.DismissAll()));
-                                InteractiveTuiTools.OpenInteractiveTui(tui);
-                            }
-                            break;
-                        case 3:
-                            {
-                                var tui = new TaskManagerCli();
-                                tui.Bindings.Add(new InteractiveTuiBinding<(int, object)>(Translate.DoTranslation("Kill"), ConsoleKey.F1, (thread, _, _, _) => tui.KillThread(thread)));
-                                tui.Bindings.Add(new InteractiveTuiBinding<(int, object)>(Translate.DoTranslation("Switch"), ConsoleKey.F2, (_, _, _, _) => tui.SwitchMode()));
-                                InteractiveTuiTools.OpenInteractiveTui(tui);
-                            }
-                            break;
-                        case 4:
-                            InfoBoxButtonsColor.WriteInfoBoxButtons(
-                                Translate.DoTranslation("About Nitrocid"),
-                                [new InputChoiceInfo(Translate.DoTranslation("Close"), Translate.DoTranslation("Close"))],
-                                Translate.DoTranslation("Nitrocid KS simulates our future kernel, the Nitrocid Kernel.") + "\n\n" +
-                                Translate.DoTranslation("Version") + $": {KernelMain.VersionFullStr}" + "\n" +
-                                Translate.DoTranslation("Mod API") + $": {KernelMain.ApiVersion}" + "\n\n" +
-                                Translate.DoTranslation("Copyright (C) 2018-2024 Aptivi - All rights reserved") + " - https://aptivi.github.io"
-                            );
-                            break;
-                    }
+                    if (choiceIdx < 0 || choiceIdx >= choices.Length)
+                        return;
+
+                    // Now, do the action!
+                    var action = choices[choiceIdx].Item2;
+                    action.Invoke();
                 }
 
                 // Render the thing and wait for a keypress
@@ -417,6 +368,206 @@ namespace Nitrocid.Shell.Homepage
                 ScreenTools.UnsetCurrent(homeScreen);
                 ColorTools.LoadBack();
             }
+        }
+
+        private static (InputChoiceInfo, Action)[] PopulateChoices()
+        {
+            // Variables
+            var choices = new List<(InputChoiceInfo, Action)>();
+
+            // First, deal with the builtin choices that are added by the core kernel
+            foreach (var choiceAction in choiceActionsBuiltin)
+            {
+                // Sanity checks
+                string key = choiceAction.Key;
+                var action = choiceAction.Value;
+                if (action is null)
+                    continue;
+                if (string.IsNullOrEmpty(key))
+                    continue;
+
+                // Add this action
+                var inputChoiceInfo = new InputChoiceInfo($"{choices.Count + 1}", Translate.DoTranslation(key));
+                choices.Add((inputChoiceInfo, action));
+            }
+
+            // Then, deal with the choices that are added by the addons
+            foreach (var choiceAction in choiceActionsAddons)
+            {
+                // Sanity checks
+                string key = choiceAction.Key;
+                var action = choiceAction.Value;
+                if (action is null)
+                    continue;
+                if (string.IsNullOrEmpty(key))
+                    continue;
+
+                // Add this action
+                var inputChoiceInfo = new InputChoiceInfo($"{choices.Count + 1}", Translate.DoTranslation(key));
+                choices.Add((inputChoiceInfo, action));
+            }
+
+            // Now, deal with the custom choices that are added by the mods
+            foreach (var choiceAction in choiceActionsCustom)
+            {
+                // Sanity checks
+                string key = choiceAction.Key;
+                var action = choiceAction.Value;
+                if (action is null)
+                    continue;
+                if (string.IsNullOrEmpty(key))
+                    continue;
+
+                // Add this action
+                var inputChoiceInfo = new InputChoiceInfo($"{choices.Count + 1}", Translate.DoTranslation(key));
+                choices.Add((inputChoiceInfo, action));
+            }
+
+            // Finally, return the result for the homepage to recognize them
+            return [.. choices];
+        }
+
+        /// <summary>
+        /// Checks to see if the homepage action is registered or not
+        /// </summary>
+        /// <param name="actionName">Action name to search (case sensitive)</param>
+        /// <returns>True if it exists; false otherwise</returns>
+        public static bool IsHomepageActionRegistered(string actionName)
+        {
+            if (string.IsNullOrEmpty(actionName))
+                return false;
+            if (IsHomepageActionBuiltin(actionName))
+                return true;
+            var actions = choiceActionsAddons.Union(choiceActionsCustom).Select((kvp) => kvp.Key).ToArray();
+            return actions.Contains(actionName);
+        }
+
+        /// <summary>
+        /// Checks to see if the homepage action is bulitin or not
+        /// </summary>
+        /// <param name="actionName">Action name to search (case sensitive)</param>
+        /// <returns>True if it exists; false otherwise</returns>
+        public static bool IsHomepageActionBuiltin(string actionName)
+        {
+            if (string.IsNullOrEmpty(actionName))
+                return false;
+            var actions = choiceActionsBuiltin.Select((kvp) => kvp.Key).ToArray();
+            return actions.Contains(actionName);
+        }
+
+        /// <summary>
+        /// Registers a custom action
+        /// </summary>
+        /// <param name="actionName">Action name (case sensitive)</param>
+        /// <param name="action">Action to delegate a specific function to</param>
+        /// <exception cref="KernelException"></exception>
+        public static void RegisterAction(string actionName, Action? action)
+        {
+            if (string.IsNullOrEmpty(actionName))
+                throw new KernelException(KernelExceptionType.Homepage, Translate.DoTranslation("Action name is not specified."));
+            if (action is null)
+                throw new KernelException(KernelExceptionType.Homepage, Translate.DoTranslation("Action is not specified."));
+            if (IsHomepageActionRegistered(actionName))
+                throw new KernelException(KernelExceptionType.Homepage, Translate.DoTranslation("Action already exists."));
+            choiceActionsCustom.Add(actionName, action);
+        }
+
+        /// <summary>
+        /// Unregisters a custom action
+        /// </summary>
+        /// <param name="actionName">Action name to delete (case sensitive)</param>
+        /// <exception cref="KernelException"></exception>
+        public static void UnregisterAction(string actionName)
+        {
+            if (string.IsNullOrEmpty(actionName))
+                throw new KernelException(KernelExceptionType.Homepage, Translate.DoTranslation("Action name is not specified."));
+            if (!IsHomepageActionRegistered(actionName))
+                throw new KernelException(KernelExceptionType.Homepage, Translate.DoTranslation("Action doesn't exist."));
+            if (IsHomepageActionBuiltin(actionName))
+                throw new KernelException(KernelExceptionType.Homepage, Translate.DoTranslation("Built-in action can't be removed."));
+            choiceActionsCustom.Remove(actionName);
+        }
+
+        internal static void RegisterBuiltinAction(string actionName, Action? action)
+        {
+            if (string.IsNullOrEmpty(actionName))
+                throw new KernelException(KernelExceptionType.Homepage, Translate.DoTranslation("Action name is not specified."));
+            if (action is null)
+                throw new KernelException(KernelExceptionType.Homepage, Translate.DoTranslation("Action is not specified."));
+            if (IsHomepageActionRegistered(actionName))
+                throw new KernelException(KernelExceptionType.Homepage, Translate.DoTranslation("Action already exists."));
+            choiceActionsAddons.Add(actionName, action);
+        }
+
+        internal static void UnregisterBuiltinAction(string actionName)
+        {
+            if (string.IsNullOrEmpty(actionName))
+                throw new KernelException(KernelExceptionType.Homepage, Translate.DoTranslation("Action name is not specified."));
+            if (!IsHomepageActionRegistered(actionName))
+                throw new KernelException(KernelExceptionType.Homepage, Translate.DoTranslation("Action doesn't exist."));
+            if (IsHomepageActionBuiltin(actionName))
+                throw new KernelException(KernelExceptionType.Homepage, Translate.DoTranslation("Built-in action can't be removed."));
+            choiceActionsAddons.Remove(actionName);
+        }
+
+        private static void OpenFileManagerCli()
+        {
+            var tui = new FileManagerCli
+            {
+                firstPanePath = PathsManagement.HomePath,
+                secondPanePath = PathsManagement.HomePath
+            };
+            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Open"), ConsoleKey.Enter, (entry1, _, entry2, _) => tui.Open(entry1, entry2)));
+            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Copy"), ConsoleKey.F1, (entry1, _, entry2, _) => tui.CopyFileOrDir(entry1, entry2)));
+            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Move"), ConsoleKey.F2, (entry1, _, entry2, _) => tui.MoveFileOrDir(entry1, entry2)));
+            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Delete"), ConsoleKey.F3, (entry1, _, entry2, _) => tui.RemoveFileOrDir(entry1, entry2)));
+            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Up"), ConsoleKey.F4, (_, _, _, _) => tui.GoUp()));
+            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Info"), ConsoleKey.F5, (entry1, _, entry2, _) => tui.PrintFileSystemEntry(entry1, entry2)));
+            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Go To"), ConsoleKey.F6, (_, _, _, _) => tui.GoTo()));
+            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Copy To"), ConsoleKey.F1, ConsoleModifiers.Shift, (entry1, _, entry2, _) => tui.CopyTo(entry1, entry2)));
+            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Move to"), ConsoleKey.F2, ConsoleModifiers.Shift, (entry1, _, entry2, _) => tui.MoveTo(entry1, entry2)));
+            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Rename"), ConsoleKey.F9, (entry1, _, entry2, _) => tui.Rename(entry1, entry2)));
+            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("New Folder"), ConsoleKey.F10, (_, _, _, _) => tui.MakeDir()));
+            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Hash"), ConsoleKey.F11, (entry1, _, entry2, _) => tui.Hash(entry1, entry2)));
+            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Verify"), ConsoleKey.F12, (entry1, _, entry2, _) => tui.Verify(entry1, entry2)));
+            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Preview"), ConsoleKey.P, (entry1, _, entry2, _) => tui.Preview(entry1, entry2)));
+            InteractiveTuiTools.OpenInteractiveTui(tui);
+        }
+
+        private static void OpenAlarmCli()
+        {
+            var tui = new AlarmCli();
+            tui.Bindings.Add(new InteractiveTuiBinding<string>(Translate.DoTranslation("Add"), ConsoleKey.A, (_, _, _, _) => tui.Start(), true));
+            tui.Bindings.Add(new InteractiveTuiBinding<string>(Translate.DoTranslation("Remove"), ConsoleKey.Delete, (alarm, _, _, _) => tui.Stop(alarm)));
+            InteractiveTuiTools.OpenInteractiveTui(tui);
+        }
+
+        private static void OpenNotificationsCli()
+        {
+            var tui = new NotificationsCli();
+            tui.Bindings.Add(new InteractiveTuiBinding<Notification>(Translate.DoTranslation("Dismiss"), ConsoleKey.Delete, (notif, _, _, _) => tui.Dismiss(notif)));
+            tui.Bindings.Add(new InteractiveTuiBinding<Notification>(Translate.DoTranslation("Dismiss All"), ConsoleKey.Delete, ConsoleModifiers.Control, (_, _, _, _) => tui.DismissAll()));
+            InteractiveTuiTools.OpenInteractiveTui(tui);
+        }
+
+        private static void OpenTaskManagerCli()
+        {
+            var tui = new TaskManagerCli();
+            tui.Bindings.Add(new InteractiveTuiBinding<(int, object)>(Translate.DoTranslation("Kill"), ConsoleKey.F1, (thread, _, _, _) => tui.KillThread(thread)));
+            tui.Bindings.Add(new InteractiveTuiBinding<(int, object)>(Translate.DoTranslation("Switch"), ConsoleKey.F2, (_, _, _, _) => tui.SwitchMode()));
+            InteractiveTuiTools.OpenInteractiveTui(tui);
+        }
+
+        private static void OpenAboutBox()
+        {
+            InfoBoxButtonsColor.WriteInfoBoxButtons(
+                Translate.DoTranslation("About Nitrocid"),
+                [new InputChoiceInfo(Translate.DoTranslation("Close"), Translate.DoTranslation("Close"))],
+                Translate.DoTranslation("Nitrocid KS simulates our future kernel, the Nitrocid Kernel.") + "\n\n" +
+                Translate.DoTranslation("Version") + $": {KernelMain.VersionFullStr}" + "\n" +
+                Translate.DoTranslation("Mod API") + $": {KernelMain.ApiVersion}" + "\n\n" +
+                Translate.DoTranslation("Copyright (C) 2018-2024 Aptivi - All rights reserved") + " - https://aptivi.github.io"
+            );
         }
     }
 }

@@ -37,6 +37,7 @@ using System.Linq;
 using Nitrocid.Extras.Calendar.Calendar;
 using Nitrocid.Kernel.Time.Calendars;
 using EventInfo = Nitrocid.Extras.Calendar.Calendar.Events.EventInfo;
+using Nitrocid.Shell.Homepage;
 
 namespace Nitrocid.Extras.Calendar
 {
@@ -247,6 +248,9 @@ namespace Nitrocid.Extras.Calendar
             EventManager.LoadEvents();
             ReminderManager.LoadReminders();
             DebugWriter.WriteDebug(DebugLevel.I, "Loaded events & reminders.");
+
+            // Add the calendar option to the homepage
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "Calendar", CalendarTui.OpenInteractive);
         }
 
         void IAddon.StartAddon()
@@ -262,6 +266,7 @@ namespace Nitrocid.Extras.Calendar
             EventManager.CalendarEvents.Clear();
             CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
             ConfigTools.UnregisterBaseSetting(nameof(CalendarConfig));
+            HomepageTools.UnregisterBuiltinAction("Calendar");
         }
     }
 }

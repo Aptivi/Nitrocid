@@ -496,5 +496,9 @@ namespace Nitrocid.Kernel.Exceptions
         /// There was an error when trying to process a widget system operation. If you're sure that this widget is registered properly, please make sure that you've written the widget class name properly.
         /// </summary>
         Widget,
+        /// <summary>
+        /// The homepage tools has encountered an error when trying to process your request. Please make sure that you've entered all the necessary data correctly.
+        /// </summary>
+        Homepage,
     }
 }
