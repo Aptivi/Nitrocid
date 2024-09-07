@@ -346,7 +346,8 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             // Show the stage for few seconds before wiping
             Thread.Sleep(5000);
 
-            // Reset console display
+            // Reset console display and screen
+            ScreenTools.UnsetCurrent(screen);
             ColorTools.LoadBack();
             ConsoleResizeHandler.WasResized();
         }

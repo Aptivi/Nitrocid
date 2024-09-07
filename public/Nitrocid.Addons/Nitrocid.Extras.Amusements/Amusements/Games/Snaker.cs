@@ -385,7 +385,8 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             else
                 Thread.Sleep(AmusementsInit.SaversConfig.SnakerStageDelay);
 
-            // Reset mass and console display
+            // Reset mass and console display and screen
+            ScreenTools.UnsetCurrent(screen);
             SnakeMassPositions.Clear();
             ColorTools.LoadBack();
             ConsoleResizeHandler.WasResized();
