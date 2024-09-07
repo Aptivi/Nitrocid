@@ -72,7 +72,6 @@ namespace Nitrocid.Shell.Homepage
             { /* Localizable */ "Alarm Manager", OpenAlarmCli },
             { /* Localizable */ "Notifications", OpenNotificationsCli },
             { /* Localizable */ "Task Manager", OpenTaskManagerCli },
-            { /* Localizable */ "About Nitrocid", OpenAboutBox },
         };
         private static readonly Keybinding[] bindings =
         [
@@ -97,7 +96,7 @@ namespace Nitrocid.Shell.Homepage
             isOnHomepage = true;
             var homeScreen = new Screen();
             int choiceIdx = 0;
-            bool settingsHighlighted = false;
+            int buttonHighlight = 0;
             var choices = PopulateChoices();
 
             try
@@ -192,16 +191,26 @@ namespace Nitrocid.Shell.Homepage
                     builder.Append(rssSequence);
 
                     // Populate the settings button
+                    int buttonPanelPosY = ConsoleWrapper.WindowHeight - 5;
+                    int buttonPanelWidth = ConsoleWrapper.WindowWidth / 2 - 5 + ConsoleWrapper.WindowWidth % 2;
+                    int buttonWidth = buttonPanelWidth / 2 - 2;
+                    int buttonHeight = 1;
                     int settingsButtonPosX = 2;
-                    int settingsButtonPosY = ConsoleWrapper.WindowHeight - 5;
-                    int settingsButtonWidth = ConsoleWrapper.WindowWidth / 2 - 5 + ConsoleWrapper.WindowWidth % 2;
-                    int settingsButtonHeight = 1;
-                    builder.Append(BorderColor.RenderBorder(settingsButtonPosX, settingsButtonPosY, settingsButtonWidth, settingsButtonHeight, settingsHighlighted ? new Color(ConsoleColors.Black) : KernelColorTools.GetColor(KernelColorType.TuiPaneSeparator), settingsHighlighted ? KernelColorTools.GetColor(KernelColorType.TuiPaneSelectedSeparator) : ColorTools.CurrentBackgroundColor));
-                    builder.Append(CenteredTextColor.RenderCenteredOneLine(settingsButtonPosY + 1, Translate.DoTranslation("Settings"), settingsHighlighted ? new Color(ConsoleColors.Black) : KernelColorTools.GetColor(KernelColorType.NeutralText), settingsHighlighted ? KernelColorTools.GetColor(KernelColorType.TuiPaneSelectedSeparator) : ColorTools.CurrentBackgroundColor, settingsButtonPosX + 1, settingsButtonWidth + settingsButtonPosX + 5 - ConsoleWrapper.WindowWidth % 2));
+                    int aboutButtonPosX = buttonWidth + 6;
+                    var foregroundSettings = buttonHighlight == 1 ? new Color(ConsoleColors.Black) : KernelColorTools.GetColor(KernelColorType.TuiPaneSeparator);
+                    var backgroundSettings = buttonHighlight == 1 ? KernelColorTools.GetColor(KernelColorType.TuiPaneSelectedSeparator) : ColorTools.CurrentBackgroundColor;
+                    var foregroundSettingsText = buttonHighlight == 1 ? new Color(ConsoleColors.Black) : KernelColorTools.GetColor(KernelColorType.NeutralText);
+                    var foregroundAbout = buttonHighlight == 2 ? new Color(ConsoleColors.Black) : KernelColorTools.GetColor(KernelColorType.TuiPaneSeparator);
+                    var backgroundAbout = buttonHighlight == 2 ? KernelColorTools.GetColor(KernelColorType.TuiPaneSelectedSeparator) : ColorTools.CurrentBackgroundColor;
+                    var foregroundAboutText = buttonHighlight == 2 ? new Color(ConsoleColors.Black) : KernelColorTools.GetColor(KernelColorType.NeutralText);
+                    builder.Append(BorderColor.RenderBorder(settingsButtonPosX, buttonPanelPosY, buttonWidth, buttonHeight, foregroundSettings, backgroundSettings));
+                    builder.Append(CenteredTextColor.RenderCenteredOneLine(buttonPanelPosY + 1, Translate.DoTranslation("Settings"), foregroundSettingsText, backgroundSettings, settingsButtonPosX + 1, buttonPanelWidth + settingsButtonPosX + aboutButtonPosX + 2 - ConsoleWrapper.WindowWidth % 2));
+                    builder.Append(BorderColor.RenderBorder(aboutButtonPosX, buttonPanelPosY, buttonWidth, buttonHeight, foregroundAbout, backgroundAbout));
+                    builder.Append(CenteredTextColor.RenderCenteredOneLine(buttonPanelPosY + 1, Translate.DoTranslation("About"), foregroundAboutText, backgroundAbout, aboutButtonPosX + 1, buttonWidth + aboutButtonPosX + 4 - ConsoleWrapper.WindowWidth % 2));
 
                     // Populate the available options
                     var availableChoices = choices.Select((tuple) => tuple.Item1).ToArray();
-                    builder.Append(BorderColor.RenderBorder(settingsButtonPosX, clockTop, widgetWidth - 1 + ConsoleWrapper.WindowWidth % 2, widgetHeight + 2, KernelColorTools.GetColor(!settingsHighlighted ? KernelColorType.TuiPaneSelectedSeparator : KernelColorType.TuiPaneSeparator)));
+                    builder.Append(BorderColor.RenderBorder(settingsButtonPosX, clockTop, widgetWidth - 1 + ConsoleWrapper.WindowWidth % 2, widgetHeight + 2, KernelColorTools.GetColor(buttonHighlight == 0 ? KernelColorType.TuiPaneSelectedSeparator : KernelColorType.TuiPaneSeparator)));
                     builder.Append(SelectionInputTools.RenderSelections(availableChoices, settingsButtonPosX + 1, clockTop + 1, choiceIdx, widgetHeight + 2, widgetWidth - 1 + ConsoleWrapper.WindowWidth % 2, foregroundColor: KernelColorTools.GetColor(KernelColorType.NeutralText), selectedForegroundColor: KernelColorTools.GetColor(KernelColorType.TuiPaneSelectedSeparator)));
 
                     // Return the resulting homepage
@@ -245,12 +254,18 @@ namespace Nitrocid.Shell.Homepage
                             continue;
 
                         // Get the necessary positions
-                        int settingsButtonWidth = ConsoleWrapper.WindowWidth / 2 - 5 + ConsoleWrapper.WindowWidth % 2;
-                        int settingsButtonHeight = 1;
+                        int buttonPanelPosY = ConsoleWrapper.WindowHeight - 5;
+                        int buttonPanelWidth = ConsoleWrapper.WindowWidth / 2 - 5 + ConsoleWrapper.WindowWidth % 2;
+                        int buttonWidth = buttonPanelWidth / 2 - 2;
+                        int buttonHeight = 1;
                         int settingsButtonStartPosX = 2;
                         int settingsButtonStartPosY = ConsoleWrapper.WindowHeight - 5;
-                        int settingsButtonEndPosX = settingsButtonStartPosX + settingsButtonWidth + 1;
-                        int settingsButtonEndPosY = settingsButtonStartPosY + settingsButtonHeight + 1;
+                        int settingsButtonEndPosX = settingsButtonStartPosX + buttonWidth + 1;
+                        int settingsButtonEndPosY = settingsButtonStartPosY + buttonHeight + 1;
+                        int aboutButtonStartPosX = buttonWidth + 2;
+                        int aboutButtonStartPosY = ConsoleWrapper.WindowHeight - 5;
+                        int aboutButtonEndPosX = aboutButtonStartPosX + buttonWidth + 1;
+                        int aboutButtonEndPosY = aboutButtonStartPosY + buttonHeight + 1;
                         int clockTop = 3;
                         int widgetWidth = ConsoleWrapper.WindowWidth / 2 - 4;
                         int widgetHeight = ConsoleWrapper.WindowHeight - 13;
@@ -259,6 +274,7 @@ namespace Nitrocid.Shell.Homepage
 
                         // Check the ranges
                         bool isWithinSettings = PointerTools.PointerWithinRange(context, (settingsButtonStartPosX, settingsButtonStartPosY), (settingsButtonEndPosX, settingsButtonEndPosY));
+                        bool isWithinAbout = PointerTools.PointerWithinRange(context, (aboutButtonStartPosX, aboutButtonStartPosY), (aboutButtonEndPosX, aboutButtonEndPosY));
                         bool isWithinOptions = PointerTools.PointerWithinRange(context, (settingsButtonStartPosX + 1, clockTop), (optionsEndX, optionsEndY));
 
                         // If the mouse pointer is within the settings, check for left release
@@ -266,6 +282,12 @@ namespace Nitrocid.Shell.Homepage
                         {
                             if (context.ButtonPress == PointerButtonPress.Released && context.Button == PointerButton.Left)
                                 SettingsApp.OpenMainPage(Config.MainConfig);
+                            render = true;
+                        }
+                        else if (isWithinAbout)
+                        {
+                            if (context.ButtonPress == PointerButtonPress.Released && context.Button == PointerButton.Left)
+                                OpenAboutBox();
                             render = true;
                         }
                         else if (isWithinOptions)
@@ -304,7 +326,12 @@ namespace Nitrocid.Shell.Homepage
                         }
                         if (context.ButtonPress == PointerButtonPress.Moved)
                         {
-                            settingsHighlighted = isWithinSettings;
+                            if (isWithinSettings)
+                                buttonHighlight = 1;
+                            else if (isWithinAbout)
+                                buttonHighlight = 2;
+                            else
+                                buttonHighlight = 0;
                             render = true;
                         }
                     }
@@ -319,46 +346,50 @@ namespace Nitrocid.Shell.Homepage
                         switch (keypress.Key)
                         {
                             case ConsoleKey.DownArrow:
-                                if (settingsHighlighted)
+                                if (buttonHighlight > 0)
                                     break;
                                 choiceIdx++;
                                 if (choiceIdx >= choices.Length)
                                     choiceIdx--;
                                 break;
                             case ConsoleKey.UpArrow:
-                                if (settingsHighlighted)
+                                if (buttonHighlight > 0)
                                     break;
                                 choiceIdx--;
                                 if (choiceIdx < 0)
                                     choiceIdx++;
                                 break;
                             case ConsoleKey.Home:
-                                if (settingsHighlighted)
+                                if (buttonHighlight > 0)
                                     break;
                                 choiceIdx = 0;
                                 break;
                             case ConsoleKey.End:
-                                if (settingsHighlighted)
+                                if (buttonHighlight > 0)
                                     break;
                                 choiceIdx = choices.Length - 1;
                                 break;
                             case ConsoleKey.PageUp:
-                                if (settingsHighlighted)
+                                if (buttonHighlight > 0)
                                     break;
                                 choiceIdx = startIndex;
                                 break;
                             case ConsoleKey.PageDown:
-                                if (settingsHighlighted)
+                                if (buttonHighlight > 0)
                                     break;
                                 choiceIdx = endIndex > choices.Length - 1 ? choices.Length - 1 : endIndex + 1;
                                 choiceIdx = endIndex == choices.Length - 1 ? endIndex : choiceIdx;
                                 break;
                             case ConsoleKey.Tab:
-                                settingsHighlighted = !settingsHighlighted;
+                                buttonHighlight++;
+                                if (buttonHighlight > 2)
+                                    buttonHighlight = 0;
                                 break;
                             case ConsoleKey.Enter:
-                                if (settingsHighlighted)
+                                if (buttonHighlight == 1)
                                     SettingsApp.OpenMainPage(Config.MainConfig);
+                                else if (buttonHighlight == 2)
+                                    OpenAboutBox();
                                 else
                                     DoAction(choiceIdx);
                                 break;
