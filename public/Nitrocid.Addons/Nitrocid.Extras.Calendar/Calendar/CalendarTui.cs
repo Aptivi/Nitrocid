@@ -315,94 +315,18 @@ namespace Nitrocid.Extras.Calendar.Calendar
                     BorderColor.RenderBorder(Translate.DoTranslation("Events and reminders for") + $" {CalendarTitle}", eventBoxLeft, eventBoxTop, eventBoxWidth, eventBoxHeight, boxForeground, background)
                 );
 
-                // List all the events if they don't overflow
-                int eventEntryTop = 4;
-                int eventEntryLeft = eventBoxLeft + 1;
-                for (int CurrentDay = 1; CurrentDay <= DateTo.Day; CurrentDay++)
+                // List all events and reminders in a separate builder to wrap
+                var eventsBuilder = new StringBuilder();
+                eventsBuilder.AppendLine(RenderEvents(state));
+                eventsBuilder.AppendLine(RenderReminders(state));
+                var eventsLines = eventsBuilder.ToString().GetWrappedSentencesByWords(eventBoxWidth);
+                for (int l = 0; l < eventsLines.Length && l < eventBoxHeight; l++)
                 {
-                    eventEntryLeft = eventBoxLeft + 1;
-                    if (eventEntryTop - 1 >= eventBoxHeight + eventBoxTop)
-                        break;
-
-                    // Populate some variables
-                    var CurrentDate = new DateTime(year, month, CurrentDay);
-                    int CurrentWeekIndex = CurrentWeek - 1;
-
-                    // Some flags
-                    bool ReminderMarked = false;
-                    bool EventMarked = false;
-                    bool dayMarked = false;
-                    int currentDay = mappedDays[CurrentDate.DayOfWeek] + 1;
-                    bool IsWeekend = currentDay > 5;
-                    bool IsToday = CurrentDate == new DateTime(state.Year, state.Month, state.Day);
-                    var foreground =
-                        IsToday ? KernelColorTools.GetColor(KernelColorType.TodayDay) :
-                        IsWeekend ? KernelColorTools.GetColor(KernelColorType.WeekendDay) :
-                        KernelColorTools.GetColor(KernelColorType.TuiForeground);
-
-                    // Know where and how to put the reminders and events
-                    foreach (ReminderInfo Reminder in ReminderManager.Reminders)
-                    {
-                        var rDate = Reminder.ReminderDate.Date;
-                        var (rYear, rMonth, rDay, _) = TimeDateConverters.GetDateFromCalendar(new DateTime(rDate.Year, rDate.Month, rDate.Day), state.calendar);
-                        rDate = new(rYear, rMonth, rDay);
-                        if (rDate == CurrentDate & !ReminderMarked)
-                        {
-                            ReminderMarked = true;
-                            eventEntryTop++;
-                            if (eventEntryTop - 1 > eventBoxHeight + eventBoxTop)
-                                break;
-                            if (!dayMarked)
-                            {
-                                dayMarked = true;
-                                builder.Append(
-                                    TextWriterWhereColor.RenderWhere($"{month}/{CurrentDay}/{year}", eventEntryLeft, eventEntryTop - 1, boxForeground, background)
-                                );
-                                eventEntryLeft += 2;
-                                eventEntryTop++;
-                                if (eventEntryTop - 1 > eventBoxHeight + eventBoxTop)
-                                    break;
-                            }
-                            builder.Append(
-                                TextWriterWhereColor.RenderWhere(Reminder.ReminderTitle.Truncate(eventBoxWidth - 5), eventEntryLeft, eventEntryTop - 1, boxForeground, background)
-                            );
-                        }
-                    }
-                    foreach (EventInfo EventInstance in EventManager.CalendarEvents.Union(EventManager.baseEvents))
-                    {
-                        EventInstance.UpdateEventInfo(new DateTime(state.Year, 1, 1));
-                        var nDate = EventInstance.EventDate.Date;
-                        var sDate = EventInstance.Start.Date;
-                        var eDate = EventInstance.End.Date;
-                        var (nYear, nMonth, nDay, _) = TimeDateConverters.GetDateFromCalendar(new DateTime(nDate.Year, nDate.Month, nDate.Day), state.calendar);
-                        var (sYear, sMonth, sDay, _) = TimeDateConverters.GetDateFromCalendar(new DateTime(sDate.Year, sDate.Month, sDate.Day), state.calendar);
-                        var (eYear, eMonth, eDay, _) = TimeDateConverters.GetDateFromCalendar(new DateTime(eDate.Year, eDate.Month, eDate.Day), state.calendar);
-                        nDate = new(nYear, nMonth, nDay);
-                        sDate = new(sYear, sMonth, sDay);
-                        eDate = new(eYear, eMonth, eDay);
-                        if (((EventInstance.IsYearly && CurrentDate >= sDate && CurrentDate <= eDate) ||
-                             (!EventInstance.IsYearly && CurrentDate == nDate)) && !EventMarked)
-                        {
-                            EventMarked = true;
-                            eventEntryTop++;
-                            if (eventEntryTop - 1 > eventBoxHeight + eventBoxTop)
-                                break;
-                            if (!dayMarked)
-                            {
-                                dayMarked = true;
-                                builder.Append(
-                                    TextWriterWhereColor.RenderWhere($"{month}/{CurrentDay}/{year}", eventEntryLeft, eventEntryTop - 1, boxForeground, background)
-                                );
-                                eventEntryLeft += 2;
-                                eventEntryTop++;
-                                if (eventEntryTop - 1 > eventBoxHeight + eventBoxTop)
-                                    break;
-                            }
-                            builder.Append(
-                                TextWriterWhereColor.RenderWhere(EventInstance.EventTitle.Truncate(eventBoxWidth - 5), eventEntryLeft, eventEntryTop - 1, boxForeground, background)
-                            );
-                        }
-                    }
+                    string eventsLine = eventsLines[l];
+                    builder.Append(
+                        CsiSequences.GenerateCsiCursorPosition(eventBoxLeft + 2, eventBoxTop + 2 + l) +
+                        eventsLine
+                    );
                 }
 
                 // Finalize everything
@@ -468,10 +392,10 @@ namespace Nitrocid.Extras.Calendar.Calendar
                         RenderKeybindingsBox();
                         break;
                     case ConsoleKey.E:
-                        ListEventsDay(state);
+                        InfoBoxColor.WriteInfoBox(RenderEventsDay(state));
                         break;
                     case ConsoleKey.R:
-                        ListRemindersDay(state);
+                        InfoBoxColor.WriteInfoBox(RenderRemindersDay(state));
                         break;
                 }
             }
@@ -610,7 +534,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
                 state.Day = maxDays;
         }
 
-        private static void ListReminders((int Year, int Month, int Day, CalendarTypes calendar) state)
+        private static string RenderReminders((int Year, int Month, int Day, CalendarTypes calendar) state)
         {
             var builder = new StringBuilder();
             var calendarInstance = CalendarTools.GetCalendar(state.calendar);
@@ -655,10 +579,10 @@ namespace Nitrocid.Extras.Calendar.Calendar
                         builder.AppendLine($"    {reminderName}");
                 }
             }
-            InfoBoxColor.WriteInfoBox(builder.ToString());
+            return builder.ToString();
         }
 
-        private static void ListEvents((int Year, int Month, int Day, CalendarTypes calendar) state)
+        private static string RenderEvents((int Year, int Month, int Day, CalendarTypes calendar) state)
         {
             var builder = new StringBuilder();
             var calendarInstance = CalendarTools.GetCalendar(state.calendar);
@@ -718,10 +642,10 @@ namespace Nitrocid.Extras.Calendar.Calendar
                         builder.AppendLine($"    {eventName}");
                 }
             }
-            InfoBoxColor.WriteInfoBox(builder.ToString());
+            return builder.ToString();
         }
 
-        private static void ListRemindersDay((int Year, int Month, int Day, CalendarTypes calendar) state)
+        private static string RenderRemindersDay((int Year, int Month, int Day, CalendarTypes calendar) state)
         {
             var builder = new StringBuilder();
 
@@ -750,10 +674,10 @@ namespace Nitrocid.Extras.Calendar.Calendar
                 foreach (string reminderName in reminderNames)
                     builder.AppendLine($"    {reminderName}");
             }
-            InfoBoxColor.WriteInfoBox(builder.ToString());
+            return builder.ToString();
         }
 
-        private static void ListEventsDay((int Year, int Month, int Day, CalendarTypes calendar) state)
+        private static string RenderEventsDay((int Year, int Month, int Day, CalendarTypes calendar) state)
         {
             var builder = new StringBuilder();
 
@@ -790,7 +714,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
                 foreach (string eventName in eventNames)
                     builder.AppendLine($"    {eventName}");
             }
-            InfoBoxColor.WriteInfoBox(builder.ToString());
+            return builder.ToString();
         }
     }
 }
