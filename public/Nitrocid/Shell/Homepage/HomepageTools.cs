@@ -586,9 +586,8 @@ namespace Nitrocid.Shell.Homepage
 
         private static void OpenAboutBox()
         {
-            InfoBoxButtonsColor.WriteInfoBoxButtons(
+            InfoBoxColor.WriteInfoBox(
                 Translate.DoTranslation("About Nitrocid"),
-                [new InputChoiceInfo(Translate.DoTranslation("Close"), Translate.DoTranslation("Close"))],
                 Translate.DoTranslation("Nitrocid KS simulates our future kernel, the Nitrocid Kernel.") + "\n\n" +
                 Translate.DoTranslation("Version") + $": {KernelMain.VersionFullStr}" + "\n" +
                 Translate.DoTranslation("Mod API") + $": {KernelMain.ApiVersion}" + "\n\n" +
