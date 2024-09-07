@@ -32,6 +32,8 @@ using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Power;
 using Terminaux.Colors;
+using Nitrocid.Security.Permissions;
+using Terminaux.Inputs.Styles.Infobox;
 
 namespace Nitrocid.Users.Login
 {
@@ -84,12 +86,8 @@ namespace Nitrocid.Users.Login
                     // Now, show the Login screen
                     bool proceed = handler.LoginScreen();
 
-                    // The login screen may provide an option to perform power options.
-                    if (PowerManager.RebootRequested || PowerManager.KernelShutdown)
-                        continue;
-
                     // The login screen may provide an option to refresh itself.
-                    if (!proceed)
+                    if (!proceed && !PowerManager.RebootRequested && !PowerManager.KernelShutdown)
                         continue;
 
                     // Prompt for username
@@ -97,12 +95,20 @@ namespace Nitrocid.Users.Login
 
                     // Handlers may return an empty username. This may indicate that the user has exited. In this case, go to the beginning.
                     if (string.IsNullOrEmpty(user))
+                    {
+                        // Cancel shutdown and reboot attempts
+                        PowerManager.RebootRequested = false;
+                        PowerManager.KernelShutdown = false;
                         continue;
+                    }
 
                     // OK. Here's where things get tricky. Some handlers may misleadingly give us a completely invalid username, so verify it
                     // the second time for these handlers to behave.
                     if (!UserManagement.ValidateUsername(user))
                     {
+                        // Cancel shutdown and reboot attempts
+                        PowerManager.RebootRequested = false;
+                        PowerManager.KernelShutdown = false;
                         TextWriters.Write(Translate.DoTranslation("Wrong username or username not found."), true, KernelColorType.Error);
                         continue;
                     }
@@ -112,7 +118,19 @@ namespace Nitrocid.Users.Login
                     bool valid = handler.PasswordHandler(user, ref pass);
                     valid = UserManagement.ValidatePassword(user, pass);
                     if (!valid)
+                    {
+                        // Cancel shutdown and reboot attempts
+                        PowerManager.RebootRequested = false;
+                        PowerManager.KernelShutdown = false;
                         TextWriters.Write(Translate.DoTranslation("Wrong password."), true, KernelColorType.Error);
+                    }
+                    else if (!PermissionsTools.IsPermissionGranted(user, PermissionTypes.ManagePower) && (PowerManager.RebootRequested || PowerManager.KernelShutdown))
+                    {
+                        // Cancel shutdown and reboot attempts
+                        PowerManager.RebootRequested = false;
+                        PowerManager.KernelShutdown = false;
+                        InfoBoxColor.WriteInfoBoxColor(Translate.DoTranslation("You don't have permission to request a reboot or a shutdown."), KernelColorTools.GetColor(KernelColorType.Error));
+                    }
                     else
                         break;
                 }
