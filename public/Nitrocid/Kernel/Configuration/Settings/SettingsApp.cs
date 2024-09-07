@@ -79,7 +79,14 @@ namespace Nitrocid.Kernel.Configuration.Settings
                     config = settingsType,
                     lastFirstPaneIdx = -1
                 };
-                tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(Translate.DoTranslation("Set"), ConsoleKey.Enter, (saver, _, _, _) => tui.Set(tui.FirstPaneCurrentSelection - 1, tui.SecondPaneCurrentSelection - 1)));
+                tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(Translate.DoTranslation("Set"), ConsoleKey.Enter, (_, _, _, _) => tui.Set(tui.FirstPaneCurrentSelection - 1, tui.SecondPaneCurrentSelection - 1)));
+                tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(Translate.DoTranslation("Save"), ConsoleKey.F1, (_, _, _, _) => tui.Save()));
+                tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(Translate.DoTranslation("Save as"), ConsoleKey.F2, (_, _, _, _) => tui.SaveAs()));
+                tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(Translate.DoTranslation("Load from"), ConsoleKey.F3, (_, _, _, _) => tui.LoadFrom()));
+                tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(Translate.DoTranslation("Reload"), ConsoleKey.F4, (_, _, _, _) => tui.Reload()));
+                tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(Translate.DoTranslation("Migrate"), ConsoleKey.F5, (_, _, _, _) => tui.Migrate()));
+                tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(Translate.DoTranslation("Check for system updates"), ConsoleKey.F6, (_, _, _, _) => tui.CheckUpdates()));
+                tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(Translate.DoTranslation("System information"), ConsoleKey.F7, (_, _, _, _) => tui.SystemInfo()));
                 InteractiveTuiTools.OpenInteractiveTui(tui);
                 return;
             }
@@ -162,7 +169,8 @@ namespace Nitrocid.Kernel.Configuration.Settings
                 {
                     // The selected answer is "Migrate old configuration"
                     if (!ConfigMigration.MigrateAllConfig())
-                        InfoBoxColor.WriteInfoBoxColor(Translate.DoTranslation("Configuration migration may not have been completed successfully. If you're sure that your configuration files are valid, investigate the debug logs for more info.") + " " + Translate.DoTranslation("Press any key to go back."), true, KernelColorTools.GetColor(KernelColorType.Error));
+                        InfoBoxColor.WriteInfoBoxColor(Translate.DoTranslation("Configuration migration may not have been completed successfully. If you're sure that your configuration files are valid, investigate the debug logs for more info.") + " " +
+                            Translate.DoTranslation("Press any key to go back."), true, KernelColorTools.GetColor(KernelColorType.Error));
                 }
                 else if (Answer == MaxSections + 9 || Answer == -1)
                 {

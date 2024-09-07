@@ -29,6 +29,9 @@ using Terminaux.Inputs.Styles.Infobox;
 using Textify.General;
 using Nitrocid.Kernel.Configuration.Instances;
 using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Kernel.Configuration.Settings;
+using Nitrocid.Kernel.Configuration.Migration;
+using Nitrocid.ConsoleBase.Colors;
 
 namespace Nitrocid.Misc.Interactives
 {
@@ -209,6 +212,124 @@ namespace Nitrocid.Misc.Interactives
             {
                 var finalInfoRendered = new StringBuilder();
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't set settings entry") + TextTools.FormatString(": {0}", ex.Message));
+                finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
+                InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
+            }
+        }
+
+        internal void Save()
+        {
+            try
+            {
+                // Save the config
+                SettingsAppTools.SaveSettings();
+            }
+            catch (Exception ex)
+            {
+                var finalInfoRendered = new StringBuilder();
+                finalInfoRendered.AppendLine(Translate.DoTranslation("Can't save settings") + TextTools.FormatString(": {0}", ex.Message));
+                finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
+                InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
+            }
+        }
+
+        internal void SaveAs()
+        {
+            try
+            {
+                // Save the config as...
+                SettingsAppTools.SaveSettingsAs();
+            }
+            catch (Exception ex)
+            {
+                var finalInfoRendered = new StringBuilder();
+                finalInfoRendered.AppendLine(Translate.DoTranslation("Can't save settings") + TextTools.FormatString(": {0}", ex.Message));
+                finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
+                InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
+            }
+        }
+
+        internal void LoadFrom()
+        {
+            try
+            {
+                // Check the config first
+                if (config is null)
+                    return;
+
+                // Load the config from...
+                SettingsAppTools.LoadSettingsFrom(config);
+            }
+            catch (Exception ex)
+            {
+                var finalInfoRendered = new StringBuilder();
+                finalInfoRendered.AppendLine(Translate.DoTranslation("Can't load settings") + TextTools.FormatString(": {0}", ex.Message));
+                finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
+                InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
+            }
+        }
+
+        internal void Reload()
+        {
+            try
+            {
+                // Reload the config
+                SettingsAppTools.ReloadConfig();
+            }
+            catch (Exception ex)
+            {
+                var finalInfoRendered = new StringBuilder();
+                finalInfoRendered.AppendLine(Translate.DoTranslation("Can't reload settings") + TextTools.FormatString(": {0}", ex.Message));
+                finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
+                InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
+            }
+        }
+
+        internal void Migrate()
+        {
+            try
+            {
+                // Migrate the config
+                if (!ConfigMigration.MigrateAllConfig())
+                    InfoBoxColor.WriteInfoBoxColor(Translate.DoTranslation("Configuration migration may not have been completed successfully. If you're sure that your configuration files are valid, investigate the debug logs for more info.") + " " +
+                        Translate.DoTranslation("Press any key to go back."), true, KernelColorTools.GetColor(KernelColorType.Error));
+            }
+            catch (Exception ex)
+            {
+                var finalInfoRendered = new StringBuilder();
+                finalInfoRendered.AppendLine(Translate.DoTranslation("Can't migrate settings") + TextTools.FormatString(": {0}", ex.Message));
+                finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
+                InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
+            }
+        }
+
+        internal void CheckUpdates()
+        {
+            try
+            {
+                // Check for system updates
+                SettingsAppTools.CheckForSystemUpdates();
+            }
+            catch (Exception ex)
+            {
+                var finalInfoRendered = new StringBuilder();
+                finalInfoRendered.AppendLine(Translate.DoTranslation("Can't check for updates") + TextTools.FormatString(": {0}", ex.Message));
+                finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
+                InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
+            }
+        }
+
+        internal void SystemInfo()
+        {
+            try
+            {
+                // Show system information
+                SettingsAppTools.SystemInformation();
+            }
+            catch (Exception ex)
+            {
+                var finalInfoRendered = new StringBuilder();
+                finalInfoRendered.AppendLine(Translate.DoTranslation("Can't get system information") + TextTools.FormatString(": {0}", ex.Message));
                 finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
                 InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
             }
