@@ -173,8 +173,8 @@ namespace Nitrocid.Extras.Calendar.Calendar
             {
                 var builder = new StringBuilder();
                 builder.Append(
-                    $"{KernelColorTools.GetColor(KernelColorType.TuiForeground).VTSequenceForeground}" +
-                    $"{KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground}" +
+                    $"{ColorTools.RenderSetConsoleColor(KernelColorTools.GetColor(KernelColorType.TuiForeground))}" +
+                    $"{ColorTools.RenderSetConsoleColor(KernelColorTools.GetColor(KernelColorType.Background), true)}" +
                     $"{TextWriterWhereColor.RenderWhere(status + ConsoleClearing.GetClearLineToRightSequence(), 0, 0)}"
                 );
                 return builder.ToString();
@@ -197,8 +197,8 @@ namespace Nitrocid.Extras.Calendar.Calendar
 
                 // Render the box
                 builder.Append(
-                    $"{KernelColorTools.GetColor(KernelColorType.TuiPaneSeparator).VTSequenceForeground}" +
-                    $"{KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground}" +
+                    $"{ColorTools.RenderSetConsoleColor(KernelColorTools.GetColor(KernelColorType.TuiPaneSeparator))}" +
+                    $"{ColorTools.RenderSetConsoleColor(KernelColorTools.GetColor(KernelColorType.Background), true)}" +
                     $"{BorderColor.RenderBorderPlain(0, SeparatorMinimumHeight, SeparatorConsoleWidthInterior, SeparatorMaximumHeightInterior)}"
                 );
                 return builder.ToString();
@@ -311,8 +311,8 @@ namespace Nitrocid.Extras.Calendar.Calendar
                     CurrentDayMark = $"{markStart}{CurrentDay}{markEnd}";
                     builder.Append(
                         CsiSequences.GenerateCsiCursorPosition(dayPosX + 1, dayPosY + 1) +
-                        $"{foreground.VTSequenceForeground}" +
-                        $"{background.VTSequenceBackground}" +
+                        $"{ColorTools.RenderSetConsoleColor(foreground)}" +
+                        $"{ColorTools.RenderSetConsoleColor(background, true)}" +
                         CurrentDayMark
                     );
                 }
@@ -326,8 +326,8 @@ namespace Nitrocid.Extras.Calendar.Calendar
                     char dayChar = char.ToUpper(dayName[0]);
                     builder.Append(
                         CsiSequences.GenerateCsiCursorPosition(dayIndicatorPosX + (6 * i) + 2, dayIndicatorPosY + 1) +
-                        $"{boxForeground.VTSequenceForeground}" +
-                        $"{background.VTSequenceBackground}" +
+                        $"{ColorTools.RenderSetConsoleColor(boxForeground)}" +
+                        $"{ColorTools.RenderSetConsoleColor(background, true)}" +
                         dayChar
                     );
                 }
@@ -433,8 +433,8 @@ namespace Nitrocid.Extras.Calendar.Calendar
 
                 // Finalize everything
                 builder.Append(
-                    $"{KernelColorTools.GetColor(KernelColorType.TuiForeground).VTSequenceForeground}" +
-                    $"{background.VTSequenceBackground}"
+                    $"{ColorTools.RenderSetConsoleColor(KernelColorTools.GetColor(KernelColorType.TuiForeground))}" +
+                    $"{ColorTools.RenderSetConsoleColor(background, true)}"
                 );
                 return builder.ToString();
             });
