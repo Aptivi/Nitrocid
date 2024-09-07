@@ -54,6 +54,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.FancyWriters;
 using Terminaux.Writer.MiscWriters;
 using Terminaux.Writer.MiscWriters.Tools;
+using Textify.General;
 
 namespace Nitrocid.Shell.Homepage
 {
@@ -152,7 +153,7 @@ namespace Nitrocid.Shell.Homepage
                         try
                         {
                             if (!Config.MainConfig.ShowHeadlineOnLogin)
-                                rssSequenceBuilder.Append(Translate.DoTranslation("Enable headlines on login to show RSS feeds").Truncate(widgetWidth - 2));
+                                rssSequenceBuilder.Append(Translate.DoTranslation("Enable headlines on login to show RSS feeds"));
                             else
                             {
                                 var feedsObject = InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasRssShell, "GetArticles", Config.MainConfig.RssHeadlineUrl);
@@ -164,31 +165,39 @@ namespace Nitrocid.Shell.Homepage
                                         if (i >= feeds.Length)
                                             break;
                                         (string _, string articleTitle) = feeds[i];
-                                        rssSequenceBuilder.Append(CsiSequences.GenerateCsiCursorPosition(widgetLeft + 2, rssTop + i + 2));
-                                        rssSequenceBuilder.Append(articleTitle.Truncate(widgetWidth - 2));
+                                        rssSequenceBuilder.AppendLine(articleTitle);
                                         found = true;
                                     }
                                 }
                                 if (!found)
-                                    rssSequenceBuilder.Append(Translate.DoTranslation("No feed.").Truncate(widgetWidth - 2));
+                                    rssSequenceBuilder.Append(Translate.DoTranslation("No feed."));
                             }
                         }
                         catch (KernelException ex) when (ex.ExceptionType == KernelExceptionType.AddonManagement)
                         {
                             DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news: {0}", ex.Message);
                             DebugWriter.WriteDebugStackTrace(ex);
-                            rssSequenceBuilder.Append(Translate.DoTranslation("Install the RSS Shell Extras addon!").Truncate(widgetWidth - 2));
+                            rssSequenceBuilder.Append(Translate.DoTranslation("Install the RSS Shell Extras addon!"));
                         }
                         catch (Exception ex)
                         {
                             DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news: {0}", ex.Message);
                             DebugWriter.WriteDebugStackTrace(ex);
-                            rssSequenceBuilder.Append(Translate.DoTranslation("Failed to get the latest news.").Truncate(widgetWidth - 2));
+                            rssSequenceBuilder.Append(Translate.DoTranslation("Failed to get the latest news."));
                         }
                         rssSequence = rssSequenceBuilder.ToString();
                     }
-                    builder.Append(CsiSequences.GenerateCsiCursorPosition(widgetLeft + 2, rssTop + 2));
-                    builder.Append(rssSequence);
+
+                    // Render the RSS feed sequence
+                    var sequences = rssSequence.GetWrappedSentencesByWords(widgetWidth);
+                    for (int i = 0; i < 3; i++)
+                    {
+                        if (i >= sequences.Length)
+                            break;
+                        string sequence = sequences[i];
+                        builder.Append(CsiSequences.GenerateCsiCursorPosition(widgetLeft + 2, rssTop + 2 + i));
+                        builder.Append(sequence);
+                    }
 
                     // Populate the settings button
                     int buttonPanelPosY = ConsoleWrapper.WindowHeight - 5;
