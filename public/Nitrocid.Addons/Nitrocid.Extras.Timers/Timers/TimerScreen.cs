@@ -35,6 +35,8 @@ using Terminaux.Base;
 using Nitrocid.Drivers.RNG;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Inputs;
+using Terminaux.Writer.MiscWriters.Tools;
+using Terminaux.Writer.MiscWriters;
 
 namespace Nitrocid.Extras.Timers.Timers
 {
@@ -50,6 +52,12 @@ namespace Nitrocid.Extras.Timers.Timers
         internal static bool running;
         internal static Color? timerColor;
         private static Timer? _Timer;
+        private readonly static Keybinding[] keyBindings =
+        [
+            new( /* Localizable */ "Start counting down", ConsoleKey.Enter),
+            new( /* Localizable */ "Set interval", ConsoleKey.T),
+            new( /* Localizable */ "Exit", ConsoleKey.Escape),
+        ];
 
         internal static Timer? Timer
         {
@@ -63,19 +71,15 @@ namespace Nitrocid.Extras.Timers.Timers
             set
             {
                 if (_Timer != null)
-                {
                     _Timer.Elapsed -= TimerElapsed;
-                }
-
                 _Timer = value;
                 if (_Timer != null)
-                {
                     _Timer.Elapsed += TimerElapsed;
-                }
             }
         }
 
-        static TimerScreen() => Timer = new Timer();
+        static TimerScreen() =>
+            Timer = new Timer();
 
         /// <summary>
         /// Timer figlet font
@@ -141,13 +145,10 @@ namespace Nitrocid.Extras.Timers.Timers
                 FigletTimeOldWidth = (int)Math.Round(HalfWidth - FigletTools.GetFigletWidth(UntilText, FigletFont) / 2d);
                 FigletTimeOldWidthEnd = (int)Math.Round(HalfWidth + FigletTools.GetFigletWidth(UntilText, FigletFont) / 2d);
 
-                // Populate the keys text variable
-                string KeysText = "[ENTER] " + Translate.DoTranslation("Start counting down") + " | [T] " + Translate.DoTranslation("Set interval") + " | [ESC] " + Translate.DoTranslation("Exit");
-                int KeysTextTopPosition = ConsoleWrapper.WindowHeight - 2;
-
-                // Print the keys text
+                // Print the keybindings
+                int KeysTextTopPosition = ConsoleWrapper.WindowHeight - 1;
                 builder.Append(
-                    CenteredTextColor.RenderCenteredOneLine(KeysTextTopPosition, KeysText, KernelColorTools.GetColor(KernelColorType.Tip))
+                    KeybindingsWriter.RenderKeybindings(keyBindings, 0, KeysTextTopPosition)
                 );
 
                 // Print the time interval
@@ -163,11 +164,6 @@ namespace Nitrocid.Extras.Timers.Timers
                         TextWriterWhereColor.RenderWhereColorBack(UntilText, TimeLeftPosition, TimeTopPosition, true, timerColor, KernelColorTools.GetColor(KernelColorType.Background))
                     );
                 }
-
-                // Print the border
-                builder.Append(
-                    TextWriterWhereColor.RenderWhereColorBack(new string('═', ConsoleWrapper.WindowWidth), 0, KeysTextTopPosition - 2, true, ColorTools.GetGray(), KernelColorTools.GetColor(KernelColorType.Background))
-                );
 
                 // Return the final result
                 return builder.ToString();

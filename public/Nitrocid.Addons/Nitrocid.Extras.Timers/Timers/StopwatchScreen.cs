@@ -30,6 +30,9 @@ using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Nitrocid.Drivers.RNG;
 using Terminaux.Inputs;
+using Terminaux.Writer.MiscWriters.Tools;
+using Terminaux.Writer.MiscWriters;
+using Terminaux.Writer.FancyWriters;
 
 namespace Nitrocid.Extras.Timers.Timers
 {
@@ -44,6 +47,13 @@ namespace Nitrocid.Extras.Timers.Timers
         internal static Stopwatch Stopwatch = new();
         internal static Stopwatch LappedStopwatch = new();
         internal static bool running;
+        private readonly static Keybinding[] keyBindings =
+        [
+            new( /* Localizable */ "Start or stop", ConsoleKey.Enter),
+            new( /* Localizable */ "Lap", ConsoleKey.L),
+            new( /* Localizable */ "Reset", ConsoleKey.R),
+            new( /* Localizable */ "Exit", ConsoleKey.Escape),
+        ];
 
         /// <summary>
         /// Opens the stopwatch screen
@@ -74,18 +84,14 @@ namespace Nitrocid.Extras.Timers.Timers
                 int HalfWidth = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d);
                 int HalfHeight = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d);
                 int TimeLeftPosition = (int)Math.Round(HalfWidth * 1.5d - Stopwatch.Elapsed.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCult).Length / 2d);
-                int TimeTopPosition = HalfHeight - 2;
-                int LapsCurrentLapLeftPosition = 4;
-                int LapsCurrentLapTopPosition = ConsoleWrapper.WindowHeight - 6;
+                int TimeTopPosition = HalfHeight;
+                int LapsCurrentLapLeftPosition = 2;
+                int LapsCurrentLapTopPosition = ConsoleWrapper.WindowHeight - 3;
 
-                // Populate the keys text variable
-                string KeysText = "[ENTER] " + Translate.DoTranslation("Start or stop") + " | [L] " + Translate.DoTranslation("Lap") + " | [R] " + Translate.DoTranslation("Reset") + " | [ESC] " + Translate.DoTranslation("Exit");
-                int KeysTextLeftPosition = (int)Math.Round(HalfWidth - KeysText.Length / 2d);
-                int KeysTextTopPosition = ConsoleWrapper.WindowHeight - 2;
-
-                // Print the keys text
+                // Print the keybindings
+                int KeysTextTopPosition = ConsoleWrapper.WindowHeight - 1;
                 builder.Append(
-                    TextWriterWhereColor.RenderWhereColorBack(KeysText, KeysTextLeftPosition, KeysTextTopPosition, true, KernelColorTools.GetColor(KernelColorType.Tip), KernelColorTools.GetColor(KernelColorType.Background))
+                    KeybindingsWriter.RenderKeybindings(keyBindings, 0, KeysTextTopPosition)
                 );
 
                 // Print the time interval and the current lap
@@ -95,18 +101,23 @@ namespace Nitrocid.Extras.Timers.Timers
                 );
 
                 // Print the border
-                builder.Append(MakeBorder());
+                int SeparatorHalfConsoleWidth = ConsoleWrapper.WindowWidth / 2;
+                int SeparatorHalfConsoleWidthInterior = ConsoleWrapper.WindowWidth / 2 - 2;
+                int SeparatorMinimumHeight = 1;
+                int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
+                builder.Append(BoxFrameColor.RenderBoxFrame(0, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior, SeparatorMaximumHeightInterior, ColorTools.GetGray(), KernelColorTools.GetColor(KernelColorType.Background)));
+                builder.Append(BoxFrameColor.RenderBoxFrame(SeparatorHalfConsoleWidth, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior + (ConsoleWrapper.WindowWidth % 2 != 0 ? 1 : 0), SeparatorMaximumHeightInterior, ColorTools.GetGray(), KernelColorTools.GetColor(KernelColorType.Background)));
 
                 // Print informational messages
                 builder.Append(
-                    TextWriterWhereColor.RenderWhereColorBack(status, 1, 0, false, KernelColorTools.GetColor(KernelColorType.NeutralText), KernelColorTools.GetColor(KernelColorType.Background)) +
+                    TextWriterWhereColor.RenderWhereColorBack(status, 0, 0, false, KernelColorTools.GetColor(KernelColorType.NeutralText), KernelColorTools.GetColor(KernelColorType.Background)) +
                     ConsoleClearing.GetClearLineToRightSequence()
                 );
 
                 // Print the laps list
-                int LapsLapsListLeftPosition = 4;
-                int LapsLapsListTopPosition = 3;
-                int LapsListEndBorder = ConsoleWrapper.WindowHeight - 10;
+                int LapsLapsListLeftPosition = 2;
+                int LapsLapsListTopPosition = 2;
+                int LapsListEndBorder = ConsoleWrapper.WindowHeight - 6;
                 var LapsListBuilder = new StringBuilder();
                 int BorderDifference = Laps.Count - LapsListEndBorder;
                 if (BorderDifference < 0)
@@ -212,31 +223,6 @@ namespace Nitrocid.Extras.Timers.Timers
             Laps.Clear();
             ConsoleWrapper.Clear();
             ConsoleWrapper.CursorVisible = true;
-        }
-
-        /// <summary>
-        /// Makes the display border
-        /// </summary>
-        public static string MakeBorder()
-        {
-            var border = new StringBuilder();
-            int KeysTextTopPosition = ConsoleWrapper.WindowHeight - 2;
-            int HalfWidth = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d);
-            border.Append(
-                TextWriterWhereColor.RenderWhereColorBack(new string('═', ConsoleWrapper.WindowWidth), 0, KeysTextTopPosition - 2, true, ColorTools.GetGray(), KernelColorTools.GetColor(KernelColorType.Background)) +
-                TextWriterWhereColor.RenderWhereColorBack(new string('═', ConsoleWrapper.WindowWidth), 0, 1, true, ColorTools.GetGray(), KernelColorTools.GetColor(KernelColorType.Background))
-            );
-            for (int Height = 2; Height <= KeysTextTopPosition - 2; Height++)
-            {
-                border.Append(
-                    TextWriterWhereColor.RenderWhereColorBack("║", HalfWidth, Height, true, ColorTools.GetGray(), KernelColorTools.GetColor(KernelColorType.Background))
-                );
-            }
-            border.Append(
-                TextWriterWhereColor.RenderWhereColorBack("╩", HalfWidth, KeysTextTopPosition - 2, true, ColorTools.GetGray(), KernelColorTools.GetColor(KernelColorType.Background)) +
-                TextWriterWhereColor.RenderWhereColorBack("╦", HalfWidth, 1, true, ColorTools.GetGray(), KernelColorTools.GetColor(KernelColorType.Background))
-            );
-            return border.ToString();
         }
 
     }
