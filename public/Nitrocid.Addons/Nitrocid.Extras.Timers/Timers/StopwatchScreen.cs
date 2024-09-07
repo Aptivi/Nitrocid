@@ -33,6 +33,7 @@ using Terminaux.Inputs;
 using Terminaux.Writer.MiscWriters.Tools;
 using Terminaux.Writer.MiscWriters;
 using Terminaux.Writer.FancyWriters;
+using Terminaux.Inputs.Styles.Infobox;
 
 namespace Nitrocid.Extras.Timers.Timers
 {
@@ -51,6 +52,7 @@ namespace Nitrocid.Extras.Timers.Timers
         [
             new( /* Localizable */ "Start or stop", ConsoleKey.Enter),
             new( /* Localizable */ "Lap", ConsoleKey.L),
+            new( /* Localizable */ "Lap list", ConsoleKey.L, ConsoleModifiers.Shift),
             new( /* Localizable */ "Reset", ConsoleKey.R),
             new( /* Localizable */ "Exit", ConsoleKey.Escape),
         ];
@@ -142,21 +144,21 @@ namespace Nitrocid.Extras.Timers.Timers
                 ScreenTools.Render(watchScreen);
 
                 // Check to see if the timer is running to continually update the timer render
-                ConsoleKey KeysKeypress = default;
+                ConsoleKeyInfo KeysKeypress = default;
                 if (running)
                 {
                     // Wait for a keypress
                     if (ConsoleWrapper.KeyAvailable)
-                        KeysKeypress = Input.ReadKey().Key;
+                        KeysKeypress = Input.ReadKey();
                 }
                 else
                 {
                     // Wait for a keypress
-                    KeysKeypress = Input.ReadKey().Key;
+                    KeysKeypress = Input.ReadKey();
                 }
 
                 // Check for a keypress
-                switch (KeysKeypress)
+                switch (KeysKeypress.Key)
                 {
                     case ConsoleKey.Enter:
                         {
@@ -176,6 +178,12 @@ namespace Nitrocid.Extras.Timers.Timers
                         {
                             if (LappedStopwatch.IsRunning)
                             {
+                                if (KeysKeypress.Modifiers == ConsoleModifiers.Shift)
+                                {
+                                    InfoBoxColor.WriteInfoBox(GenerateLapList());
+                                    watchScreen.RequireRefresh();
+                                    break;
+                                }
                                 var Lap = new LapDisplayInfo(LapColor, LappedStopwatch.Elapsed);
                                 Laps.Add(Lap);
                                 LappedStopwatch.Restart();
@@ -225,5 +233,17 @@ namespace Nitrocid.Extras.Timers.Timers
             ConsoleWrapper.CursorVisible = true;
         }
 
+        private static string GenerateLapList()
+        {
+            var lapsListBuilder = new StringBuilder();
+            for (int i = 0; i < Laps.Count; i++)
+            {
+                LapDisplayInfo? lap = Laps[i];
+                lapsListBuilder.AppendLine(lap.LapColor.VTSequenceForeground + Translate.DoTranslation("Lap") + $" {i + 1}: {lap.LapInterval.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCult)}");
+            }
+            if (Laps.Count == 0)
+                lapsListBuilder.AppendLine(Translate.DoTranslation("No laps yet..."));
+            return lapsListBuilder.ToString();
+        }
     }
 }
