@@ -468,10 +468,10 @@ namespace Nitrocid.Extras.Calendar.Calendar
                         RenderKeybindingsBox();
                         break;
                     case ConsoleKey.E:
-                        ListEvents(state);
+                        ListEventsDay(state);
                         break;
                     case ConsoleKey.R:
-                        ListReminders(state);
+                        ListRemindersDay(state);
                         break;
                 }
             }
@@ -681,6 +681,66 @@ namespace Nitrocid.Extras.Calendar.Calendar
             }
             if (!found)
                 builder.AppendLine(Translate.DoTranslation("No events found for the selected month"));
+            InfoBoxColor.WriteInfoBox(builder.ToString());
+        }
+
+        private static void ListRemindersDay((int Year, int Month, int Day, CalendarTypes calendar) state)
+        {
+            var builder = new StringBuilder();
+
+            // Populate some variables
+            bool found = false;
+            var CurrentDate = new DateTime(state.Year, state.Month, state.Day);
+
+            // Render the reminders
+            foreach (ReminderInfo Reminder in ReminderManager.Reminders)
+            {
+                var rDate = Reminder.ReminderDate.Date;
+                var (rYear, rMonth, rDay, _) = TimeDateConverters.GetDateFromCalendar(new DateTime(rDate.Year, rDate.Month, rDate.Day), state.calendar);
+                rDate = new(rYear, rMonth, rDay);
+                if (rDate == CurrentDate)
+                {
+                    found = true;
+                    builder.AppendLine($"{state.Month}/{state.Day}/{state.Year}");
+                    builder.AppendLine($"  {Reminder.ReminderTitle}");
+                }
+            }
+            if (!found)
+                builder.AppendLine(Translate.DoTranslation("No reminders found for the selected day"));
+            InfoBoxColor.WriteInfoBox(builder.ToString());
+        }
+
+        private static void ListEventsDay((int Year, int Month, int Day, CalendarTypes calendar) state)
+        {
+            var builder = new StringBuilder();
+
+            // Populate some variables
+            bool found = false;
+            var CurrentDate = new DateTime(state.Year, state.Month, state.Day);
+
+            // Render the events
+            foreach (EventInfo EventInstance in EventManager.CalendarEvents.Union(EventManager.baseEvents))
+            {
+                EventInstance.UpdateEventInfo(new DateTime(state.Year, 1, 1));
+                var nDate = EventInstance.EventDate.Date;
+                var sDate = EventInstance.Start.Date;
+                var eDate = EventInstance.End.Date;
+                var (nYear, nMonth, nDay, _) = TimeDateConverters.GetDateFromCalendar(new DateTime(nDate.Year, nDate.Month, nDate.Day), state.calendar);
+                var (sYear, sMonth, sDay, _) = TimeDateConverters.GetDateFromCalendar(new DateTime(sDate.Year, sDate.Month, sDate.Day), state.calendar);
+                var (eYear, eMonth, eDay, _) = TimeDateConverters.GetDateFromCalendar(new DateTime(eDate.Year, eDate.Month, eDate.Day), state.calendar);
+                nDate = new(nYear, nMonth, nDay);
+                sDate = new(sYear, sMonth, sDay);
+                eDate = new(eYear, eMonth, eDay);
+                if (((EventInstance.IsYearly && CurrentDate >= sDate && CurrentDate <= eDate) ||
+                        (!EventInstance.IsYearly && CurrentDate == nDate)))
+                {
+                    found = true;
+                    builder.AppendLine($"{state.Month}/{state.Day}/{state.Year}");
+                    builder.AppendLine($"  {EventInstance.EventTitle}");
+                }
+            }
+            if (!found)
+                builder.AppendLine(Translate.DoTranslation("No events found for the selected day"));
             InfoBoxColor.WriteInfoBox(builder.ToString());
         }
     }
