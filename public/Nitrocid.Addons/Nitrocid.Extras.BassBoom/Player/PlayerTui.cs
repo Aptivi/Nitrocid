@@ -47,6 +47,7 @@ namespace Nitrocid.Extras.BassBoom.Player
 
         public static void PlayerLoop()
         {
+            Common.exiting = false;
             Common.volume = PlaybackTools.GetVolume().baseLinear;
 
             // Populate the screen

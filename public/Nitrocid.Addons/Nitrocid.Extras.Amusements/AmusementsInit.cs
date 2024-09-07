@@ -198,6 +198,14 @@ namespace Nitrocid.Extras.Amusements
         {
             // Add the amusements to the homepage
             HomepageTools.RegisterBuiltinAction(/* Localizable */ "Horse Racing", BackRace.OpenBackRace);
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "Hangman", () => Hangman.InitializeHangman(HangmanDifficulty.None));
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "Meteor Dodge", () => MeteorShooter.InitializeMeteor(false, true));
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "Meteor Shooter", () => MeteorShooter.InitializeMeteor());
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "Pong", Pong.InitializePong);
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "Ship Duet", () => ShipDuetShooter.InitializeShipDuet());
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "Snaker", () => Snaker.InitializeSnaker(false));
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "Wordle", () => Wordle.InitializeWordle());
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "Wordle (original)", () => Wordle.InitializeWordle(true));
         }
 
         void IAddon.StartAddon()
@@ -238,7 +246,15 @@ namespace Nitrocid.Extras.Amusements
             ConfigTools.UnregisterBaseSetting(nameof(AmusementsConfig));
 
             // Remove all options
-            HomepageTools.UnregisterBuiltinAction(/* Localizable */ "Horse Racing");
+            HomepageTools.UnregisterBuiltinAction("Horse Racing");
+            HomepageTools.UnregisterBuiltinAction("Hangman");
+            HomepageTools.UnregisterBuiltinAction("Meteor Dodge");
+            HomepageTools.UnregisterBuiltinAction("Meteor Shooter");
+            HomepageTools.UnregisterBuiltinAction("Pong");
+            HomepageTools.UnregisterBuiltinAction("Ship Duet");
+            HomepageTools.UnregisterBuiltinAction("Snaker");
+            HomepageTools.UnregisterBuiltinAction("Wordle");
+            HomepageTools.UnregisterBuiltinAction("Wordle (original)");
         }
     }
 }

@@ -45,6 +45,7 @@ namespace Nitrocid.Extras.BassBoom.Player
 
         public static void RadioLoop()
         {
+            Common.exiting = false;
             Common.volume = PlaybackTools.GetVolume().baseLinear;
             Common.isRadioMode = true;
 

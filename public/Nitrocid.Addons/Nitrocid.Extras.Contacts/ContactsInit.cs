@@ -33,6 +33,7 @@ using Nitrocid.Modifications;
 using System.Linq;
 using Nitrocid.Shell.ShellBase.Switches;
 using VisualCard.Parts;
+using Nitrocid.Shell.Homepage;
 
 namespace Nitrocid.Extras.Contacts
 {
@@ -107,7 +108,10 @@ namespace Nitrocid.Extras.Contacts
         ReadOnlyDictionary<string, FieldInfo>? IAddon.PubliclyAvailableFields => null;
 
         void IAddon.FinalizeAddon()
-        { }
+        {
+            // Add homepage entries
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "Contacts", ContactsManager.OpenContactsTui);
+        }
 
         void IAddon.StartAddon()
         {
@@ -123,6 +127,7 @@ namespace Nitrocid.Extras.Contacts
             CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
             foreach (var handler in handlers)
                 ExtensionHandlerTools.extensionHandlers.Remove(handler);
+            HomepageTools.UnregisterBuiltinAction("Contacts");
         }
     }
 }

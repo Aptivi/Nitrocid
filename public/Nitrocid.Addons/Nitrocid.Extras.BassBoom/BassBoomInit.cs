@@ -58,6 +58,7 @@ using System.Linq;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Nitrocid.Shell.ShellBase.Switches;
+using Nitrocid.Shell.Homepage;
 
 namespace Nitrocid.Extras.BassBoom
 {
@@ -167,9 +168,15 @@ namespace Nitrocid.Extras.BassBoom
             ConfigTools.UnregisterBaseSetting(nameof(BassBoomConfig));
             foreach (var handler in handlers)
                 ExtensionHandlerTools.extensionHandlers.Remove(handler);
+            HomepageTools.UnregisterBuiltinAction("Music Player");
+            HomepageTools.UnregisterBuiltinAction("Radio Player");
         }
 
         void IAddon.FinalizeAddon()
-        { }
+        {
+            // Add homepage entries
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "Music Player", PlayerTui.PlayerLoop);
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "Radio Player", Radio.RadioLoop);
+        }
     }
 }

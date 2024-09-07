@@ -58,7 +58,6 @@ namespace Nitrocid.Extras.BassBoom.Commands
                 }
 
                 // Now, open an interactive TUI
-                Common.exiting = false;
                 if (isRadio)
                     Radio.RadioLoop();
                 else

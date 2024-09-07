@@ -29,6 +29,7 @@ using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Modifications;
 using System.Linq;
+using Nitrocid.Shell.Homepage;
 
 namespace Nitrocid.Extras.Notes
 {
@@ -95,10 +96,19 @@ namespace Nitrocid.Extras.Notes
         void IAddon.StartAddon() =>
             CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
 
-        void IAddon.StopAddon() =>
+        void IAddon.StopAddon()
+        {
             CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
+            HomepageTools.UnregisterBuiltinAction("Notes");
+        }
 
-        void IAddon.FinalizeAddon() =>
+        void IAddon.FinalizeAddon()
+        {
+            // Add homepage entries
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "Notes", NoteManagement.OpenNotesTui);
+
+            // Load notes
             NoteManagement.LoadNotes();
+        }
     }
 }
