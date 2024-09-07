@@ -610,7 +610,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
                 state.Day = maxDays;
         }
 
-        private static (int Year, int Month, int Day, CalendarTypes calendar) ListReminders((int Year, int Month, int Day, CalendarTypes calendar) state)
+        private static void ListReminders((int Year, int Month, int Day, CalendarTypes calendar) state)
         {
             var builder = new StringBuilder();
             var calendarInstance = CalendarTools.GetCalendar(state.calendar);
@@ -641,10 +641,9 @@ namespace Nitrocid.Extras.Calendar.Calendar
             if (!found)
                 builder.AppendLine(Translate.DoTranslation("No reminders found for the selected month"));
             InfoBoxColor.WriteInfoBox(builder.ToString());
-            return state;
         }
 
-        private static (int Year, int Month, int Day, CalendarTypes calendar) ListEvents((int Year, int Month, int Day, CalendarTypes calendar) state)
+        private static void ListEvents((int Year, int Month, int Day, CalendarTypes calendar) state)
         {
             var builder = new StringBuilder();
             var calendarInstance = CalendarTools.GetCalendar(state.calendar);
@@ -683,7 +682,6 @@ namespace Nitrocid.Extras.Calendar.Calendar
             if (!found)
                 builder.AppendLine(Translate.DoTranslation("No events found for the selected month"));
             InfoBoxColor.WriteInfoBox(builder.ToString());
-            return state;
         }
     }
 }
