@@ -177,7 +177,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     {
                         if (y != SpaceshipHeight)
                             buffer.Append(
-                                new Color(ConsoleColors.Black).VTSequenceBackground +
+                                ColorTools.RenderSetConsoleColor(new Color(ConsoleColors.Black), true) +
                                 TextWriterWhereColor.RenderWhere(" ", 0, y)
                             );
                     }
@@ -191,7 +191,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     // Move the meteors left
                     for (int Meteor = 0; Meteor <= Meteors.Count - 1; Meteor++)
                     {
-                        buffer.Append(new Color(ConsoleColors.Black).VTSequenceBackground);
+                        buffer.Append(ColorTools.RenderSetConsoleColor(new Color(ConsoleColors.Black), true));
                         buffer.Append(TextWriterWhereColor.RenderWhere(" ", Meteors[Meteor].Item1, Meteors[Meteor].Item2));
                         int MeteorX = Meteors[Meteor].Item1 - 1;
                         int MeteorY = Meteors[Meteor].Item2;
@@ -201,7 +201,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     // Move the bullets right
                     for (int Bullet = 0; Bullet <= Bullets.Count - 1; Bullet++)
                     {
-                        buffer.Append(new Color(ConsoleColors.Black).VTSequenceBackground);
+                        buffer.Append(ColorTools.RenderSetConsoleColor(new Color(ConsoleColors.Black), true));
                         buffer.Append(TextWriterWhereColor.RenderWhere(" ", Bullets[Bullet].Item1, Bullets[Bullet].Item2));
                         int BulletX = Bullets[Bullet].Item1 + 1;
                         int BulletY = Bullets[Bullet].Item2;
@@ -278,7 +278,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                             if (Meteor.Item1 <= Bullet.Item1 & Meteor.Item2 == Bullet.Item2)
                             {
                                 // The meteor crashed! Remove both the bullet and the meteor
-                                buffer.Append(new Color(ConsoleColors.Black).VTSequenceBackground);
+                                buffer.Append(ColorTools.RenderSetConsoleColor(new Color(ConsoleColors.Black), true));
                                 buffer.Append(TextWriterWhereColor.RenderWhere(" ", Meteor.Item1, Meteor.Item2));
                                 buffer.Append(TextWriterWhereColor.RenderWhere(" ", Bullet.Item1, Bullet.Item2));
                                 Bullets.RemoveAt(BulletIndex);
