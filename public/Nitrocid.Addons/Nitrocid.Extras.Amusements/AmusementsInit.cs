@@ -35,6 +35,8 @@ using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Misc.Splash;
 using Nitrocid.Modifications;
 using System.Linq;
+using Nitrocid.Shell.Homepage;
+using Nitrocid.Extras.Amusements.Amusements.Games;
 
 namespace Nitrocid.Extras.Amusements
 {
@@ -193,7 +195,10 @@ namespace Nitrocid.Extras.Amusements
         private readonly SplashInfo quote = new("Quote", new SplashQuote(), false);
 
         void IAddon.FinalizeAddon()
-        { }
+        {
+            // Add the amusements to the homepage
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "Horse Racing", BackRace.OpenBackRace);
+        }
 
         void IAddon.StartAddon()
         {
@@ -231,6 +236,9 @@ namespace Nitrocid.Extras.Amusements
             ConfigTools.UnregisterBaseSetting(nameof(AmusementsSaversConfig));
             ConfigTools.UnregisterBaseSetting(nameof(AmusementsSplashesConfig));
             ConfigTools.UnregisterBaseSetting(nameof(AmusementsConfig));
+
+            // Remove all options
+            HomepageTools.UnregisterBuiltinAction(/* Localizable */ "Horse Racing");
         }
     }
 }
