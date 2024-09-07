@@ -73,54 +73,39 @@ namespace Nitrocid.Extras.ColorConvert.Commands
             var modelConverted = modelConvert.Invoke(first, second, third, fourth);
 
             // Do the job
+            string finalSequence = "";
             switch (target)
             {
                 case "rgb":
-                    var rgb = ((RedGreenBlue)modelConverted).ToString();
-                    TextWriters.Write(rgb, KernelColorType.NeutralText);
-                    variableValue = rgb;
+                    finalSequence = ((RedGreenBlue)modelConverted).ToString();
                     break;
                 case "ryb":
-                    var ryb = ((RedYellowBlue)modelConverted).ToString();
-                    TextWriters.Write(ryb, KernelColorType.NeutralText);
-                    variableValue = ryb;
+                    finalSequence = ((RedYellowBlue)modelConverted).ToString();
                     break;
                 case "cmy":
-                    var cmy = ((CyanMagentaYellow)modelConverted).ToString();
-                    TextWriters.Write(cmy, KernelColorType.NeutralText);
-                    variableValue = cmy;
+                    finalSequence = ((CyanMagentaYellow)modelConverted).ToString();
                     break;
                 case "cmyk":
-                    var cmyk = ((CyanMagentaYellowKey)modelConverted).ToString();
-                    TextWriters.Write(cmyk, KernelColorType.NeutralText);
-                    variableValue = cmyk;
+                    finalSequence = ((CyanMagentaYellowKey)modelConverted).ToString();
                     break;
                 case "hsv":
-                    var hsv = ((HueSaturationValue)modelConverted).ToString();
-                    TextWriters.Write(hsv, KernelColorType.NeutralText);
-                    variableValue = hsv;
+                    finalSequence = ((HueSaturationValue)modelConverted).ToString();
                     break;
                 case "hsl":
-                    var hsl = ((HueSaturationLightness)modelConverted).ToString();
-                    TextWriters.Write(hsl, KernelColorType.NeutralText);
-                    variableValue = hsl;
+                    finalSequence = ((HueSaturationLightness)modelConverted).ToString();
                     break;
                 case "yiq":
-                    var yiq = ((LumaInPhaseQuadrature)modelConverted).ToString();
-                    TextWriters.Write(yiq, KernelColorType.NeutralText);
-                    variableValue = yiq;
+                    finalSequence = ((LumaInPhaseQuadrature)modelConverted).ToString();
                     break;
                 case "yuv":
-                    var yuv = ((LumaChromaUv)modelConverted).ToString();
-                    TextWriters.Write(yuv, KernelColorType.NeutralText);
-                    variableValue = yuv;
+                    finalSequence = ((LumaChromaUv)modelConverted).ToString();
                     break;
                 case "xyz":
-                    var xyz = ((Xyz)modelConverted).ToString();
-                    TextWriters.Write(xyz, KernelColorType.NeutralText);
-                    variableValue = xyz;
+                    finalSequence = ((Xyz)modelConverted).ToString();
                     break;
             }
+            TextWriters.Write(finalSequence, KernelColorType.NeutralText);
+            variableValue = finalSequence;
             return 0;
         }
 
