@@ -108,6 +108,7 @@
   <!-- KS Generators -->
   <ItemGroup>
     <ProjectReference Include="..\..\private\Nitrocid.Generators\Nitrocid.Generators.KnownAddons\Nitrocid.Generators.KnownAddons.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+    <ProjectReference Include="..\..\private\Nitrocid.LocaleChecker\Nitrocid.LocaleChecker.csproj" />
   </ItemGroup>
   <!-- KS Generators End -->
 

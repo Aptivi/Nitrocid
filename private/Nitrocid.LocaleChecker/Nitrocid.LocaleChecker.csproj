@@ -1,0 +1,48 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <IsPackable>false</IsPackable>
+    <OutputPath>..\..\Nitrocid\KSAnalyzer\</OutputPath>
+    <EnforceExtendedAnalyzerRules>true</EnforceExtendedAnalyzerRules>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="AnalyzerReleases.Shipped.md" />
+    <None Remove="AnalyzerReleases.Unshipped.md" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="AnalyzerReleases.Shipped.md" />
+    <AdditionalFiles Include="AnalyzerReleases.Unshipped.md" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.11.0" />
+  </ItemGroup>
+
+  <Target Name="WipeAnalyzerBuild" AfterTargets="Clean">
+    <ItemGroup>
+      <BuildDirs Include="..\..\Nitrocid\KSAnalyzer\**\*" />
+    </ItemGroup>
+    <Message Importance="high" Text="A: Removing whole KSAnalyzer directory..." />
+    <Delete Files="@(BuildDirs)" />
+    <RemoveDir Directories="..\..\Nitrocid\KSAnalyzer\" />
+  </Target>
+
+  <ItemGroup>
+    <Compile Update="Resources\AnalyzerResources.Designer.cs" DesignTime="True" AutoGen="True" DependentUpon="AnalyzerResources.resx" />
+    <EmbeddedResource Update="Resources\AnalyzerResources.resx" Generator="ResXFileCodeGenerator" LastGenOutput="AnalyzerResources.Designer.cs">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\public\Nitrocid.Analyzers\Nitrocid.Analyzers\Nitrocid.Analyzers.csproj" />
+  </ItemGroup>
+
+</Project>
