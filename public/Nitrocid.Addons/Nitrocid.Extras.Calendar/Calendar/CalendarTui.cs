@@ -41,6 +41,8 @@ using Terminaux.Base.Extensions;
 using Nitrocid.Kernel.Time.Renderers;
 using System.Collections.Generic;
 using Terminaux.Inputs;
+using Terminaux.Writer.MiscWriters.Tools;
+using Terminaux.Writer.MiscWriters;
 
 namespace Nitrocid.Extras.Calendar.Calendar
 {
@@ -49,12 +51,12 @@ namespace Nitrocid.Extras.Calendar.Calendar
         private static string status = "";
         private static bool bail;
         private static (int Year, int Month, int Day, CalendarTypes calendar) state;
-        private static readonly CalendarTuiBinding[] bindings =
+        private static readonly Keybinding[] bindings =
         [
-            new CalendarTuiBinding( /* Localizable */ "Exit", ConsoleKey.Escape, default, (b) => { bail = true; return b; }, true),
-            new CalendarTuiBinding( /* Localizable */ "Keybindings", ConsoleKey.K, default, RenderKeybindingsBox, true),
-            new CalendarTuiBinding( /* Localizable */ "Events...", ConsoleKey.E, default, ListEvents, true),
-            new CalendarTuiBinding( /* Localizable */ "Reminders...", ConsoleKey.R, default, ListReminders, true),
+            new Keybinding( /* Localizable */ "Exit", ConsoleKey.Escape),
+            new Keybinding( /* Localizable */ "Keybindings", ConsoleKey.K),
+            new Keybinding( /* Localizable */ "Events...", ConsoleKey.E),
+            new Keybinding( /* Localizable */ "Reminders...", ConsoleKey.R),
         ];
 
         /// <summary>
@@ -126,42 +128,14 @@ namespace Nitrocid.Extras.Calendar.Calendar
         {
             // Make a screen part
             var part = new ScreenPart();
-            part.AddDynamicText(() =>
-            {
-                var bindingsBuilder = new StringBuilder(CsiSequences.GenerateCsiCursorPosition(1, ConsoleWrapper.WindowHeight));
-                foreach (CalendarTuiBinding binding in bindings)
-                {
-                    // First, check to see if the rendered binding info is going to exceed the console window width
-                    string renderedBinding = $"{GetBindingKeyShortcut(binding, false)} {(binding._localizable ? Translate.DoTranslation(binding.Name) : binding.Name)}  ";
-                    int actualLength = VtSequenceTools.FilterVTSequences(bindingsBuilder.ToString()).Length;
-                    bool canDraw = renderedBinding.Length + actualLength < ConsoleWrapper.WindowWidth - 3;
-                    if (canDraw)
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Drawing binding {0} with description {1}...", GetBindingKeyShortcut(binding, false), binding.Name);
-                        bindingsBuilder.Append(
-                            $"{KernelColorTools.GetColor(KernelColorType.TuiKeyBindingOption).VTSequenceForeground}" +
-                            $"{KernelColorTools.GetColor(KernelColorType.TuiOptionBackground).VTSequenceBackground}" +
-                            GetBindingKeyShortcut(binding, false) +
-                            $"{KernelColorTools.GetColor(KernelColorType.TuiOptionForeground).VTSequenceForeground}" +
-                            $"{KernelColorTools.GetColor(KernelColorType.TuiBackground).VTSequenceBackground}" +
-                            $" {(binding._localizable ? Translate.DoTranslation(binding.Name) : binding.Name)}  "
-                        );
-                    }
-                    else
-                    {
-                        // We can't render anymore, so just break and write a binding to show more
-                        DebugWriter.WriteDebug(DebugLevel.I, "Bailing because of no space...");
-                        bindingsBuilder.Append(
-                            $"{CsiSequences.GenerateCsiCursorPosition(ConsoleWrapper.WindowWidth - 2, ConsoleWrapper.WindowHeight)}" +
-                            $"{KernelColorTools.GetColor(KernelColorType.TuiKeyBindingOption).VTSequenceForeground}" +
-                            $"{KernelColorTools.GetColor(KernelColorType.TuiOptionBackground).VTSequenceBackground}" +
-                            " K "
-                        );
-                        break;
-                    }
-                }
-                return bindingsBuilder.ToString();
-            });
+            part.AddDynamicText(() => KeybindingsWriter.RenderKeybindings(bindings,
+                KernelColorTools.GetColor(KernelColorType.TuiKeyBindingBuiltin),
+                KernelColorTools.GetColor(KernelColorType.TuiKeyBindingBuiltinForeground),
+                KernelColorTools.GetColor(KernelColorType.TuiKeyBindingBuiltinBackground),
+                KernelColorTools.GetColor(KernelColorType.TuiKeyBindingOption),
+                KernelColorTools.GetColor(KernelColorType.TuiOptionForeground),
+                KernelColorTools.GetColor(KernelColorType.TuiOptionBackground),
+                0, ConsoleWrapper.WindowHeight - 1));
             screen.AddBufferedPart("Interactive calendar - Keybindings", part);
         }
 
@@ -453,70 +427,65 @@ namespace Nitrocid.Extras.Calendar.Calendar
         private static void HandleKeypress(ConsoleKeyInfo key, ref (int Year, int Month, int Day, CalendarTypes calendar) state)
         {
             // Check to see if we have this binding
-            if (!bindings.Any((heb) => heb.Key == key.Key && heb.KeyModifiers == key.Modifiers))
+            if (!bindings.Any((heb) => heb.BindingKeyName == key.Key && heb.BindingKeyModifiers == key.Modifiers))
             {
                 switch (key.Key)
                 {
                     case ConsoleKey.LeftArrow:
                         PreviousDay(ref state);
-                        return;
+                        break;
                     case ConsoleKey.RightArrow:
                         NextDay(ref state);
-                        return;
+                        break;
                     case ConsoleKey.UpArrow:
                         PreviousWeek(ref state);
-                        return;
+                        break;
                     case ConsoleKey.DownArrow:
                         NextWeek(ref state);
-                        return;
+                        break;
                     case ConsoleKey.PageUp:
                         PreviousMonth(ref state);
-                        return;
+                        break;
                     case ConsoleKey.PageDown:
                         NextMonth(ref state);
-                        return;
+                        break;
                     case ConsoleKey.Home:
                         PreviousYear(ref state);
-                        return;
+                        break;
                     case ConsoleKey.End:
                         NextYear(ref state);
-                        return;
+                        break;
                 }
-                return;
             }
-
-            // Now, get the first binding and execute it.
-            var bind = bindings
-                .First((heb) => heb.Key == key.Key && heb.KeyModifiers == key.Modifiers);
-            state = bind.Action(state);
+            else
+            {
+                switch (key.Key)
+                {
+                    case ConsoleKey.Escape:
+                        bail = true;
+                        break;
+                    case ConsoleKey.K:
+                        RenderKeybindingsBox();
+                        break;
+                    case ConsoleKey.E:
+                        ListEvents(state);
+                        break;
+                    case ConsoleKey.R:
+                        ListReminders(state);
+                        break;
+                }
+            }
         }
 
-        private static (int Year, int Month, int Day, CalendarTypes calendar) RenderKeybindingsBox((int Year, int Month, int Day, CalendarTypes calendar) state)
+        private static void RenderKeybindingsBox()
         {
             // Show the available keys list
             if (bindings.Length == 0)
-                return state;
-
-            // User needs an infobox that shows all available keys
-            string section = Translate.DoTranslation("Available keys");
-            int maxBindingLength = bindings
-                .Max((heb) => GetBindingKeyShortcut(heb).Length);
-            string[] bindingRepresentations = bindings
-                .Select((heb) => $"{GetBindingKeyShortcut(heb) + new string(' ', maxBindingLength - GetBindingKeyShortcut(heb).Length) + $" | {(heb._localizable ? Translate.DoTranslation(heb.Name) : heb.Name)}"}")
-                .ToArray();
-            InfoBoxColor.WriteInfoBoxColorBack(
-                $"{section}{CharManager.NewLine}" +
-                $"{new string('=', section.Length)}{CharManager.NewLine}{CharManager.NewLine}" +
-                $"{string.Join('\n', bindingRepresentations)}"
-            , KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
-            return state;
-        }
-
-        private static string GetBindingKeyShortcut(CalendarTuiBinding bind, bool mark = true)
-        {
-            string markStart = mark ? "[" : " ";
-            string markEnd = mark ? "]" : " ";
-            return $"{markStart}{(bind.KeyModifiers != 0 ? $"{bind.KeyModifiers} + " : "")}{bind.Key}{markEnd}";
+                return;
+            InfoBoxColor.WriteInfoBoxColorBack(KeybindingsWriter.RenderKeybindingHelpText(bindings),
+                KernelColorTools.GetColor(KernelColorType.TuiBoxForeground),
+                KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
+            return;
         }
 
         private static void PreviousDay(ref (int Year, int Month, int Day, CalendarTypes calendar) state)
