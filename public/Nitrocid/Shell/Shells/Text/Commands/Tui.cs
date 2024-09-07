@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Files.Editors.TextEdit;
 using Nitrocid.Shell.ShellBase.Commands;
 using Terminaux.Inputs.Styles.Editor;
 

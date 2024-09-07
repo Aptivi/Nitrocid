@@ -18,13 +18,11 @@
 //
 
 using System;
-using System.Reflection;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Configuration.Instances;
 using Nitrocid.Misc.Reflection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
-using Textify.Figlet;
 using Terminaux.Colors.Data;
 
 namespace Nitrocid.Tests.Misc.Reflection

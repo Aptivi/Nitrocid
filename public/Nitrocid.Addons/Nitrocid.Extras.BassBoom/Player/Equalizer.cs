@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using BassBoom.Basolia;
 using System;
 using System.Text;
 using Terminaux.Base;
@@ -27,7 +26,6 @@ using Terminaux.Colors.Data;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.FancyWriters;
-using Terminaux.Reader;
 using Terminaux.Inputs;
 using System.Collections.Generic;
 using Terminaux.Inputs.Styles.Selection;

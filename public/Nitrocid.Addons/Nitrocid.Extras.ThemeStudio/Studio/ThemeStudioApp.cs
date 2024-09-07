@@ -20,7 +20,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using Nitrocid.ConsoleBase.Colors;
-using Terminaux.Inputs;
 using Terminaux.Inputs.Styles.Selection;
 using Nitrocid.ConsoleBase.Themes;
 using Nitrocid.ConsoleBase.Writers;

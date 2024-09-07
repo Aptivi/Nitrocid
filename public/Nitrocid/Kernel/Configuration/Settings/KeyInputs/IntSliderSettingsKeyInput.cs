@@ -25,7 +25,6 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
 using System;
 using Terminaux.Base;
-using Terminaux.Reader;
 using Terminaux.Inputs;
 
 namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs

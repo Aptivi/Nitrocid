@@ -23,7 +23,6 @@ using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using Textify.General;
-using Terminaux.Reader;
 using Terminaux.Inputs;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games

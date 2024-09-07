@@ -29,7 +29,6 @@ using Terminaux.Inputs.Styles.Selection;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.ConsoleBase.Colors;
-using Terminaux.Inputs;
 using Nitrocid.Network.SpeedDial;
 using Terminaux.Inputs.Styles;
 

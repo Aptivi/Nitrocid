@@ -32,7 +32,6 @@ using Nitrocid.Shell.ShellBase.Shells;
 using Nitrocid.Modifications;
 using System.Linq;
 using Nettify.Weather;
-using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 
 namespace Nitrocid.Extras.Forecast

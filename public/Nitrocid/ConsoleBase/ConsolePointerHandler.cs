@@ -19,7 +19,6 @@
 
 using Nitrocid.Kernel.Debugging;
 using Terminaux.Inputs;
-using Terminaux.Inputs.Pointer;
 
 namespace Nitrocid.ConsoleBase
 {

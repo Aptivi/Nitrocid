@@ -30,7 +30,6 @@ using Terminaux.Base;
 using Terminaux.Inputs;
 using Terminaux.Inputs.Styles.Selection;
 using Terminaux.Base.Extensions;
-using Terminaux.Reader;
 using Nitrocid.Kernel.Configuration;
 using Terminaux.Inputs.Styles;
 

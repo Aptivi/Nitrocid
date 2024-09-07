@@ -29,7 +29,6 @@ using Terminaux.Base;
 using Terminaux.Inputs;
 using System;
 using Nitrocid.Kernel.Power;
-using Terminaux.Reader;
 using Nitrocid.Users.Login.Widgets;
 using Terminaux.Inputs.Styles;
 using Nitrocid.Kernel.Exceptions;

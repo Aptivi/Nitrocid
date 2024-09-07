@@ -28,7 +28,6 @@ using Nitrocid.Languages;
 using Terminaux.Base.Buffered;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
-using Terminaux.Reader;
 using Nitrocid.Drivers.RNG;
 using Terminaux.Inputs;
 

@@ -37,7 +37,6 @@ using Textify.General;
 using Terminaux.Base;
 using Nitrocid.ConsoleBase.Inputs;
 using Nitrocid.Network.Connections;
-using Terminaux.Reader;
 using Terminaux.Inputs;
 using System.Reflection;
 using Nitrocid.Kernel.Exceptions;

@@ -27,7 +27,6 @@ using Nitrocid.Users;
 using System;
 using Textify.General;
 using Terminaux.Base;
-using Terminaux.Reader;
 using Terminaux.Inputs.Presentation.Inputs;
 using Terminaux.Inputs;
 using System.Linq;

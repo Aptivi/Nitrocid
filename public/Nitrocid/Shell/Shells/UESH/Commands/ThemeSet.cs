@@ -31,7 +31,6 @@ using System.Collections.Generic;
 using System.Linq;
 using Terminaux.Colors;
 using Textify.General;
-using Terminaux.Inputs;
 using Terminaux.Inputs.Styles;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands

@@ -21,7 +21,6 @@ using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs.Interactive;
 using Nitrocid.Languages;
 using Nitrocid.Modifications.ManPages;
-using System;
 using System.Collections.Generic;
 using System.Text;
 using Textify.General;

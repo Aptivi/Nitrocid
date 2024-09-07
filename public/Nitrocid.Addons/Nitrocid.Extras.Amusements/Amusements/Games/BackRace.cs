@@ -30,7 +30,6 @@ using Nitrocid.Languages;
 using Nitrocid.Drivers.RNG;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
-using Terminaux.Reader;
 using Terminaux.Base.Buffered;
 using System.Text;
 using Terminaux.Inputs;

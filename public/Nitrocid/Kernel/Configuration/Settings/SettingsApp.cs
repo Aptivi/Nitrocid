@@ -31,7 +31,6 @@ using Nitrocid.Security.Permissions;
 using Textify.General;
 using Terminaux.Base;
 using Terminaux.Inputs;
-using Terminaux.Reader;
 using Nitrocid.Kernel.Configuration.Migration;
 using Terminaux.Inputs.Interactive;
 using Nitrocid.Misc.Interactives;

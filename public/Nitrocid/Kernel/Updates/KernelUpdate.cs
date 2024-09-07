@@ -23,7 +23,6 @@ using System.Data;
 using System.Linq;
 using Newtonsoft.Json.Linq;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.Kernel.Exceptions;
 using Textify.Versioning;
 
 namespace Nitrocid.Kernel.Updates

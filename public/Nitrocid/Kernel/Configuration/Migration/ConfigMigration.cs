@@ -26,7 +26,6 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Debugging.RemoteDebug;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
-using Nitrocid.Misc.Reflection;
 using Nitrocid.Network.Connections;
 using Nitrocid.Network.SpeedDial;
 using Nitrocid.Shell.ShellBase.Aliases;

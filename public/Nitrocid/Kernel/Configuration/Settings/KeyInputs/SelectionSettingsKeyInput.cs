@@ -29,7 +29,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using Terminaux.Reader;
 using Terminaux.Inputs;
 using Terminaux.Inputs.Styles;
 using Nitrocid.Kernel.Exceptions;

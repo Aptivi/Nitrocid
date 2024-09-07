@@ -29,7 +29,6 @@ using Nitrocid.Misc.Text.Probers.Placeholder;
 using Textify.General;
 using Terminaux.Base;
 using Terminaux.Inputs;
-using Terminaux.Reader;
 using System;
 using Terminaux.Inputs.Styles;
 

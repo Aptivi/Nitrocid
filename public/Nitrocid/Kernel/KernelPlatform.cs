@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Files.Operations.Querying;
 using SpecProbe.Software.Platform;
 using System.Reflection;
 using System.Runtime.InteropServices;

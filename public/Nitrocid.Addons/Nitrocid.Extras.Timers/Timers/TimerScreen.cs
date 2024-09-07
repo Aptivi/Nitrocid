@@ -32,7 +32,6 @@ using System.Text;
 using Terminaux.Writer.FancyWriters;
 using Terminaux.Colors;
 using Terminaux.Base;
-using Terminaux.Reader;
 using Nitrocid.Drivers.RNG;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Inputs;

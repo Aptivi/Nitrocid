@@ -17,13 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System;
 using System.Collections.Generic;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Screensaver;
 using Terminaux.Inputs;
 using Terminaux.Inputs.Interactive;
-using Terminaux.Reader;
 using Textify.General;
 
 namespace Nitrocid.Misc.Interactives

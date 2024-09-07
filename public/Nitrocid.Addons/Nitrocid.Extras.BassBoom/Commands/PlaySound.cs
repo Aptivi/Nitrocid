@@ -31,7 +31,6 @@ using System;
 using System.IO;
 using System.Threading;
 using Terminaux.Base;
-using Terminaux.Reader;
 using Terminaux.Inputs;
 
 namespace Nitrocid.Extras.BassBoom.Commands

@@ -24,7 +24,6 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Configuration;
 using Terminaux.Base;
-using Terminaux.Reader;
 using Terminaux.Base.Buffered;
 using System.Text;
 using Terminaux.Sequences.Builder.Types;

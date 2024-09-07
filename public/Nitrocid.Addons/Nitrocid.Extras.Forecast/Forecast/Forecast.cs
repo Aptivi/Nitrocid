@@ -24,7 +24,6 @@ using Terminaux.Writer.FancyWriters;
 using Nitrocid.Languages;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
-using Newtonsoft.Json.Linq;
 
 namespace Nitrocid.Extras.Forecast.Forecast
 {

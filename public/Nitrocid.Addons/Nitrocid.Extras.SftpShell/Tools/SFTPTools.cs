@@ -30,7 +30,6 @@ using Nitrocid.ConsoleBase.Inputs;
 using Nitrocid.Network.Connections;
 using System.Collections.Generic;
 using Textify.General;
-using Terminaux.Reader;
 using Nitrocid.Files;
 using Nitrocid.Files.Operations.Querying;
 using Terminaux.Inputs;

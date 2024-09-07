@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using Nitrocid.ConsoleBase.Colors;
@@ -25,7 +24,6 @@ using Nitrocid.Files.Folders;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
 using Terminaux.Colors;
-using Terminaux.Inputs;
 using Terminaux.Inputs.Interactive;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;

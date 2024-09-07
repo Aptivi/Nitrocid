@@ -31,7 +31,6 @@ using Terminaux.Base.Buffered;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Inputs;
-using Terminaux.Reader;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Kernel.Starting.Bootloader

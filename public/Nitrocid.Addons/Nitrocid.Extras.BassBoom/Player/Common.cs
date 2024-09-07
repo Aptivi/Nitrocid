@@ -32,7 +32,6 @@ using System.Runtime.InteropServices;
 using System.Text;
 using Terminaux.Base.Buffered;
 using Terminaux.Base.Extensions;
-using Terminaux.Inputs;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
 

@@ -20,7 +20,6 @@
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Extras.JsonShell.Tools;
-using Nitrocid.Files.Editors.TextEdit;
 using Nitrocid.Files.Operations;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;

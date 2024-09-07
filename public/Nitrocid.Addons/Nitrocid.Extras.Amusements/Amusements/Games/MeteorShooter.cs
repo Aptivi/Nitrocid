@@ -30,7 +30,6 @@ using Nitrocid.Misc.Screensaver;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
 using Nitrocid.Kernel.Debugging;
-using Terminaux.Reader;
 using Nitrocid.Kernel.Configuration;
 using Terminaux.Inputs;
 

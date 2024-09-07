@@ -32,7 +32,6 @@ using Nitrocid.Users.Login.Widgets.Implementations;
 using Terminaux.Base;
 using System.Threading;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Reader;
 using Terminaux.Inputs;
 
 namespace Nitrocid.Extras.Docking.Dock

@@ -25,7 +25,6 @@ using Nitrocid.Languages;
 using Terminaux.Base;
 using Terminaux.Inputs;
 using Terminaux.Inputs.Styles.Infobox;
-using Terminaux.Reader;
 
 namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
 {

@@ -27,7 +27,6 @@ using Nitrocid.Languages;
 using Terminaux.Colors;
 using Textify.Data.Analysis.Words;
 using Terminaux.Base;
-using Terminaux.Reader;
 using Terminaux.Base.Buffered;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs;

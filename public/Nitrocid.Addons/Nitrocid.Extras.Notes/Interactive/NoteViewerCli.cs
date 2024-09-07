@@ -21,8 +21,6 @@ using Terminaux.Inputs.Interactive;
 using Nitrocid.Extras.Notes.Management;
 using Nitrocid.Languages;
 using System.Collections.Generic;
-using System;
-using Nitrocid.Files.Editors.TextEdit;
 using Textify.General;
 using System.Linq;
 using Terminaux.Inputs.Styles.Editor;
