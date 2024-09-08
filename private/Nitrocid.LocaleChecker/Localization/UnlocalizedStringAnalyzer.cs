@@ -59,7 +59,7 @@ namespace Nitrocid.LocaleChecker.Localization
             new(DiagnosticId, Title, MessageFormat, Category, DiagnosticSeverity.Warning, isEnabledByDefault: true, description: Description);
 
         // English localization list
-        private readonly HashSet<string> localizationList = [];
+        private static readonly HashSet<string> localizationList = [];
 
         // Supported diagnostics
         public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics =>
@@ -70,7 +70,6 @@ namespace Nitrocid.LocaleChecker.Localization
             context.ConfigureGeneratedCodeAnalysis(GeneratedCodeAnalysisFlags.None);
             context.EnableConcurrentExecution();
             context.RegisterCompilationStartAction(PopulateEnglishLocalizations);
-            Debugger.Launch();
         }
 
         private void PopulateEnglishLocalizations(CompilationStartAnalysisContext context)
@@ -105,6 +104,8 @@ namespace Nitrocid.LocaleChecker.Localization
             var args = exp.ArgumentList.Arguments;
             if (args.Count < 1)
                 return;
+            var localizableStringArgument = args[0] ??
+                throw new Exception("Can't get localizable string");
 
             // Now, check for the Translate.DoTranslation() call
             if (exp.Expression is not MemberAccessExpressionSyntax expMaes)
@@ -122,9 +123,16 @@ namespace Nitrocid.LocaleChecker.Localization
                     // check that first, because they're usually obtained from a string representation usually prefixed with
                     // either the /* Localizable */ comment or in individual kernel resources. However, the resources don't
                     // have a prefix, so the key names alone are enough.
-
-                    var diagnostic = Diagnostic.Create(Rule, location);
-                    context.ReportDiagnostic(diagnostic);
+                    if (localizableStringArgument.Expression is LiteralExpressionSyntax literalText)
+                    {
+                        string text = literalText.ToString();
+                        text = text.Substring(1, text.Length - 2).Replace("\\\"", "\"");
+                        if (!localizationList.Contains(text))
+                        {
+                            var diagnostic = Diagnostic.Create(Rule, location, text);
+                            context.ReportDiagnostic(diagnostic);
+                        }
+                    }
                 }
             }
         }

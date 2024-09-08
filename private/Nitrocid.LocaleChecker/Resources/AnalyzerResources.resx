@@ -122,12 +122,12 @@
       Unlocalized string
   -->
   <data name="UnlocalizedStringAnalyzerTitle" xml:space="preserve">
-    <value>You'll need to localize this string at the end of the development cycle</value>
+    <value>You'll need to localize this string, "{0}", at the end of the development cycle</value>
   </data>
   <data name="UnlocalizedStringAnalyzerMessageFormat" xml:space="preserve">
-    <value>This string is unlocalized</value>
+    <value>This string, "{0}", is unlocalized</value>
   </data>
   <data name="UnlocalizedStringAnalyzerDescription" xml:space="preserve">
-    <value>While Nitrocid KS accepts unlocalized strings and returns them as is as in English, it's recommended to localize this string so that translations would be complete before the end of the development cycle.</value>
+    <value>While Nitrocid KS accepts unlocalized strings and returns them as is as in English, it's recommended to localize this string, "{0}", so that translations would be complete before the end of the development cycle.</value>
   </data>
 </root>
