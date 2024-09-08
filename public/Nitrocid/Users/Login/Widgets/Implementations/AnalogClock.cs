@@ -38,6 +38,7 @@ namespace Nitrocid.Users.Login.Widgets.Implementations
         private Color bezelColor = Color.Empty;
         private Color handsColor = Color.Empty;
         private Color secondsHandColor = Color.Empty;
+        private bool clear = false;
         private string lastRendered = "";
         private (int x, int y) lastCenter = (0, 0);
         private (int x, int y) lastHours = (0, 0);
@@ -57,6 +58,7 @@ namespace Nitrocid.Users.Login.Widgets.Implementations
             lastHours = (0, 0);
             lastMinutes = (0, 0);
             lastSeconds = (0, 0);
+            clear = false;
             return "";
         }
 
@@ -72,15 +74,20 @@ namespace Nitrocid.Users.Login.Widgets.Implementations
             string rendered = $"{renderedDate} / {renderedTime}";
             int posY = top + height - 2;
 
-            // Clear old date/time
-            int oldPosX = (left + width) / 2 - lastRendered.Length / 2;
-            builder.Append(CenteredTextColor.RenderCentered(posY, new string(' ', ConsoleChar.EstimateCellWidth(lastRendered)), timeColor, left, ConsoleWrapper.WindowWidth - (left + width)));
+            // Clear old values
+            if (clear)
+            {
+                // Clear old date/time
+                int oldPosX = (left + width) / 2 - lastRendered.Length / 2;
+                builder.Append(CenteredTextColor.RenderCentered(posY, new string(' ', ConsoleChar.EstimateCellWidth(lastRendered)), timeColor, left, ConsoleWrapper.WindowWidth - (left + width)));
 
-            // Clear old bezels
-            builder.Append(GraphicsTools.RenderLine(lastCenter, lastHours, ColorTools.CurrentBackgroundColor));
-            builder.Append(GraphicsTools.RenderLine(lastCenter, lastMinutes, ColorTools.CurrentBackgroundColor));
-            if (Config.WidgetConfig.AnalogShowSecondsHand)
-                builder.Append(GraphicsTools.RenderLine(lastCenter, lastSeconds, ColorTools.CurrentBackgroundColor));
+                // Clear old bezels
+                builder.Append(GraphicsTools.RenderLine(lastCenter, lastHours, ColorTools.CurrentBackgroundColor));
+                builder.Append(GraphicsTools.RenderLine(lastCenter, lastMinutes, ColorTools.CurrentBackgroundColor));
+                if (Config.WidgetConfig.AnalogShowSecondsHand)
+                    builder.Append(GraphicsTools.RenderLine(lastCenter, lastSeconds, ColorTools.CurrentBackgroundColor));
+            }
+            clear = true;
 
             // Write date and time
             builder.Append(CenteredTextColor.RenderCentered(posY, rendered, timeColor, left, ConsoleWrapper.WindowWidth - (left + width)));
