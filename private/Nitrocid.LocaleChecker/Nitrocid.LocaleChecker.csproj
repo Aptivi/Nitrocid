@@ -23,15 +23,17 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.11.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" PrivateAssets="all" GeneratePathProperty="true" />
   </ItemGroup>
 
-  <Target Name="WipeAnalyzerBuild" AfterTargets="Clean">
+  <PropertyGroup>
+    <GetTargetPathDependsOn>$(GetTargetPathDependsOn);GetDependencyTargetPaths</GetTargetPathDependsOn>
+  </PropertyGroup>
+
+  <Target Name="GetDependencyTargetPaths">
     <ItemGroup>
-      <BuildDirs Include="..\..\Nitrocid\KSAnalyzer\**\*" />
+      <TargetPathWithTargetPlatformMoniker Include="$(PKGNewtonsoft_Json)\lib\netstandard2.0\*.dll" IncludeRuntimeDependency="false" />
     </ItemGroup>
-    <Message Importance="high" Text="A: Removing whole KSAnalyzer directory..." />
-    <Delete Files="@(BuildDirs)" />
-    <RemoveDir Directories="..\..\Nitrocid\KSAnalyzer\" />
   </Target>
 
   <ItemGroup>
@@ -39,6 +41,7 @@
     <EmbeddedResource Update="Resources\AnalyzerResources.resx" Generator="ResXFileCodeGenerator" LastGenOutput="AnalyzerResources.Designer.cs">
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="..\..\public\Nitrocid\Resources\Languages\eng.json" />
   </ItemGroup>
 
   <ItemGroup>
