@@ -95,6 +95,7 @@ namespace Nitrocid.LocaleChecker.Localization
 
             // Register the localization analysis action
             context.RegisterSyntaxNodeAction(AnalyzeLocalization, SyntaxKind.InvocationExpression);
+            context.RegisterSyntaxNodeAction(AnalyzeImplicitLocalization, SyntaxKind.CompilationUnit);
         }
 
         private static void AnalyzeLocalization(SyntaxNodeAnalysisContext context)
@@ -132,6 +133,70 @@ namespace Nitrocid.LocaleChecker.Localization
                             var diagnostic = Diagnostic.Create(Rule, location, text);
                             context.ReportDiagnostic(diagnostic);
                         }
+                    }
+                }
+            }
+        }
+
+        private void AnalyzeImplicitLocalization(SyntaxNodeAnalysisContext context)
+        {
+            // Since /* Localizable */ represents a multiline comment, we need to find them and find the string
+            // next to each one.
+            var exp = (CompilationUnitSyntax)context.Node;
+            var triviaList = exp.DescendantTrivia();
+            var multiLineComments = triviaList.Where((trivia) => trivia.IsKind(SyntaxKind.MultiLineCommentTrivia));
+            foreach (var multiLineComment in multiLineComments)
+            {
+                string comment = multiLineComment.ToString();
+                if (comment == "/* Localizable */")
+                {
+                    // We found a localizable string, but we need to find the string itself, so get all the possible
+                    // tokens.
+                    var node = exp.FindNode(multiLineComment.Span);
+                    var tokens = node.DescendantTokens()
+                        .Where(token => token.GetAllTrivia()
+                            .Where((trivia) => trivia.IsKind(SyntaxKind.MultiLineCommentTrivia) && trivia.ToString() == "/* Localizable */")
+                        .Count() > 0);
+
+                    // Now, enumerate them to find the string
+                    foreach (var token in tokens)
+                    {
+                        void Process(LiteralExpressionSyntax literalText)
+                        {
+                            // Process it.
+                            var location = literalText.GetLocation();
+                            string text = literalText.ToString();
+                            text = text.Substring(1, text.Length - 2).Replace("\\\"", "\"");
+                            if (!localizationList.Contains(text))
+                            {
+                                var diagnostic = Diagnostic.Create(Rule, location, text);
+                                context.ReportDiagnostic(diagnostic);
+                            }
+                        }
+
+                        // Try to get a child
+                        int start = token.FullSpan.End;
+                        var parent = token.Parent;
+                        if (parent is null)
+                            continue;
+                        if (parent is LiteralExpressionSyntax literalParent)
+                        {
+                            Process(literalParent);
+                            continue;
+                        }
+                        if (parent is NameColonSyntax)
+                            parent = parent.Parent;
+                        if (parent is null)
+                            continue;
+                        var child = (SyntaxNode?)parent.ChildThatContainsPosition(start);
+                        if (child is null)
+                            continue;
+
+                        // Now, check to see if it's a literal string
+                        if (child is LiteralExpressionSyntax literalText)
+                            Process(literalText);
+                        else if (child is ArgumentSyntax argument && argument.Expression is LiteralExpressionSyntax literalArgText)
+                            Process(literalArgText);
                     }
                 }
             }
