@@ -135,40 +135,51 @@ namespace Nitrocid.Kernel.Updates
         /// </summary>
         public static void CheckKernelUpdates()
         {
+            // The LocaleClean analyzer-based cleaner reports false positives for extra strings that happen to be
+            // translated in the compiler pre-processor directives, so we need to move all translations here to
+            // avoid this happening again and for the locale tools to actually see them.
+            string devVersionWarning = Translate.DoTranslation("Checking for updates is disabled because you're running a development version.");
+            string packageManagerError = Translate.DoTranslation("You've installed Nitrocid KS using your package manager. Please use it to upgrade your kernel instead.");
+            string checkFailed = Translate.DoTranslation("Failed to check for updates.");
+            string checking = Translate.DoTranslation("Checking for system updates...");
+            string newVersion = Translate.DoTranslation("Found new version: ");
+            string downloaded = Translate.DoTranslation("Downloaded the update successfully!");
+            string downloadManually = Translate.DoTranslation("You can download it at: ");
+            string upToDate = Translate.DoTranslation("You're up to date!");
 #if SPECIFIERREL && !PACKAGEMANAGERBUILD
             // Check for updates now
-            SplashReport.ReportProgress(Translate.DoTranslation("Checking for system updates..."), 10);
+            SplashReport.ReportProgress(checking, 10);
             var AvailableUpdate = FetchBinaryArchive();
             if (AvailableUpdate is not null)
             {
                 if (!AvailableUpdate.Updated && AvailableUpdate.UpdateVersion is not null)
                 {
-                    SplashReport.ReportProgress(Translate.DoTranslation("Found new version: "), 10);
+                    SplashReport.ReportProgress(newVersion), 10);
                     SplashReport.ReportProgress(AvailableUpdate.UpdateVersion.ToString(), 10);
                     if (Config.MainConfig.AutoDownloadUpdate)
                     {
                         NetworkTransfer.DownloadFile(AvailableUpdate.UpdateURL.ToString(), Path.Combine(PathsManagement.ExecPath, "update.zip"));
-                        SplashReport.ReportProgress(Translate.DoTranslation("Downloaded the update successfully!"), 10);
+                        SplashReport.ReportProgress(downloaded, 10);
                     }
                     else
                     {
-                        SplashReport.ReportProgress(Translate.DoTranslation("You can download it at: "), 10);
+                        SplashReport.ReportProgress(downloadManually, 10);
                         SplashReport.ReportProgress(AvailableUpdate.UpdateURL.ToString(), 10);
                     }
                 }
                 else
                 {
-                    SplashReport.ReportProgress(Translate.DoTranslation("You're up to date!"), 10);
+                    SplashReport.ReportProgress(upToDate, 10);
                 }
             }
             else if (AvailableUpdate is null)
             {
-                SplashReport.ReportProgressError(Translate.DoTranslation("Failed to check for updates."));
+                SplashReport.ReportProgressError(checkFailed);
             }
 #elif PACKAGEMANAGERBUILD
-            SplashReport.ReportProgressError(Translate.DoTranslation("You've installed Nitrocid KS using your package manager. Please use it to upgrade your kernel instead."));
+            SplashReport.ReportProgressError(packageManagerError);
 #else
-            SplashReport.ReportProgressWarning(Translate.DoTranslation("Checking for updates is disabled because you're running a development version."));
+            SplashReport.ReportProgressWarning(devVersionWarning);
 #endif
         }
 

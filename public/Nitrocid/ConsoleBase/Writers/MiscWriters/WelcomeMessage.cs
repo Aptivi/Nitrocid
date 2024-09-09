@@ -116,17 +116,28 @@ namespace Nitrocid.ConsoleBase.Writers.MiscWriters
 
         internal static void ShowDevelopmentDisclaimer()
         {
+            // See UpdateManager.CheckKernelUpdates() comment for more info.
+            string devMessage = Translate.DoTranslation("You're running the development version of the kernel. While you can experience upcoming features which may exist in the final release, you may run into bugs, instabilities, or even data loss. We recommend using the stable version, if possible.");
+            string rcMessage = Translate.DoTranslation("You're running the release candidate version of the kernel. While you can experience the final touches, you may run into bugs, instabilities, or even data loss. We recommend using the stable version, if possible.");
+            string unsupportedMessage = Translate.DoTranslation("We recommend against running this version of the kernel, because it is unsupported. If you have downloaded this kernel from unknown sources, this message may appear. Please download from our official downloads page.");
+            string devNoticeTitle = Translate.DoTranslation("Development notice");
+            string devNoticeMessage = Translate.DoTranslation("To dismiss forever, either press ENTER on the \"Acknowledged\" button here by highlighting it using the left arrow on your keyboard, or enable \"Development notice acknowledged\" in the kernel settings.");
+            string devNoticeOk = Translate.DoTranslation("OK");
+            string devNoticeAck = Translate.DoTranslation("Acknowledged");
+            string devNoticeClassic = Translate.DoTranslation("To dismiss forever, either press ENTER on your keyboard, or enable \"Development notice acknowledged\" in the kernel settings. Any other key goes ahead without acknowledgement.");
+
+            // Actual code
 #if SPECIFIERREL
             // no-op
             return;
 #else
             string message =
 #if SPECIFIERDEV
-                Translate.DoTranslation("You're running the development version of the kernel. While you can experience upcoming features which may exist in the final release, you may run into bugs, instabilities, or even data loss. We recommend using the stable version, if possible.")
+                devMessage
 #elif SPECIFIERRC
-                Translate.DoTranslation("You're running the release candidate version of the kernel. While you can experience the final touches, you may run into bugs, instabilities, or even data loss. We recommend using the stable version, if possible.")
+                rcMessage
 #elif SPECIFIERREL == false
-                Translate.DoTranslation("We recommend against running this version of the kernel, because it is unsupported. If you have downloaded this kernel from unknown sources, this message may appear. Please download from our official downloads page.")
+                unsupportedMessage
 #endif
             ;
 
@@ -134,14 +145,14 @@ namespace Nitrocid.ConsoleBase.Writers.MiscWriters
             if (Config.MainConfig.EnableSplash)
             {
                 InputChoiceInfo[] answers = [
-                    new InputChoiceInfo("ok", Translate.DoTranslation("OK")),
-                    new InputChoiceInfo("acknowledged", Translate.DoTranslation("Acknowledged")),
+                    new InputChoiceInfo("ok", devNoticeOk),
+                    new InputChoiceInfo("acknowledged", devNoticeAck),
                 ];
                 int answer = InfoBoxButtonsColor.WriteInfoBoxButtonsColor(
-                    Translate.DoTranslation("Development notice"),
+                    devNoticeTitle,
                     answers,
                     $"{message}\n\n" +
-                    $"{Translate.DoTranslation("To dismiss forever, either press ENTER on the \"Acknowledged\" button here by highlighting it using the left arrow on your keyboard, or enable \"Development notice acknowledged\" in the kernel settings.")}",
+                    $"{devNoticeMessage}",
                     KernelColorTools.GetColor(KernelColorType.DevelopmentWarning)
                 );
                 if (answer == 1)
@@ -150,7 +161,7 @@ namespace Nitrocid.ConsoleBase.Writers.MiscWriters
             else
             {
                 TextWriters.Write($"  * {message}", true, KernelColorType.DevelopmentWarning);
-                TextWriters.Write($"  * {Translate.DoTranslation("To dismiss forever, either press ENTER on your keyboard, or enable \"Development notice acknowledged\" in the kernel settings. Any other key goes ahead without acknowledgement.")}", true, KernelColorType.DevelopmentWarning);
+                TextWriters.Write($"  * {devNoticeClassic}", true, KernelColorType.DevelopmentWarning);
                 var key = Input.ReadKey(true);
                 if (key.Key == ConsoleKey.Enter)
                     Config.MainConfig.DevNoticeConsented = true;
