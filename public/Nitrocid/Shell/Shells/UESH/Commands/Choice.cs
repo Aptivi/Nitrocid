@@ -59,10 +59,6 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
     /// <term>-m</term>
     /// <description>Modern choice style</description>
     /// </item>
-    /// <item>
-    /// <term>-a</term>
-    /// <description>Table choice style</description>
-    /// </item>
     /// </list>
     /// <br></br>
     /// </remarks>
