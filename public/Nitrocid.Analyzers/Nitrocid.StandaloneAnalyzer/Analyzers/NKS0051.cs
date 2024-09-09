@@ -54,7 +54,7 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                         if (idName == nameof(NetworkInterface.GetIsNetworkAvailable))
                         {
                             var lineSpan = location.GetLineSpan();
-                            TextWriterColor.Write($"{GetType().Name}: {document.FilePath} ({lineSpan.StartLinePosition} -> {lineSpan.EndLinePosition}): Caller uses NetworkInterface.GetIsNetworkAvailable instead of NetworkTools.NetworkAvailable", true, ConsoleColors.Yellow);
+                            TextWriterColor.WriteColor($"{GetType().Name}: {document.FilePath} ({lineSpan.StartLinePosition} -> {lineSpan.EndLinePosition}): Caller uses NetworkInterface.GetIsNetworkAvailable instead of NetworkTools.NetworkAvailable", true, ConsoleColors.Yellow);
                             if (!string.IsNullOrEmpty(document.FilePath))
                                 LineHandleRangedWriter.PrintLineWithHandle(document.FilePath, lineSpan.StartLinePosition.Line + 1, lineSpan.StartLinePosition.Character + 1, lineSpan.EndLinePosition.Character);
                             found = true;
@@ -96,9 +96,9 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                         return;
                     var node = await document.GetSyntaxRootAsync(cancellationToken);
                     var finalNode = node?.ReplaceNode(exp.Parent, replacedSyntax);
-                    TextWriterColor.Write("Here's what the replacement would look like (with no Roslyn trivia):", true, ConsoleColors.Yellow);
-                    TextWriterColor.Write($"  - {exp}", true, ConsoleColors.Red);
-                    TextWriterColor.Write($"  + {replacedSyntax.ToFullString()}", true, ConsoleColors.Green);
+                    TextWriterColor.WriteColor("Here's what the replacement would look like (with no Roslyn trivia):", true, ConsoleColors.Yellow);
+                    TextWriterColor.WriteColor($"  - {exp}", true, ConsoleColors.Red);
+                    TextWriterColor.WriteColor($"  + {replacedSyntax.ToFullString()}", true, ConsoleColors.Green);
 
                     // Check the imports
                     var compilation = finalNode as CompilationUnitSyntax;
@@ -110,8 +110,8 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                                 SyntaxFactory.IdentifierName("Network")),
                             SyntaxFactory.IdentifierName("Base"));
                         var directive = SyntaxFactory.UsingDirective(name).NormalizeWhitespace();
-                        TextWriterColor.Write("Additionally, the suggested fix will add the following using statement:", true, ConsoleColors.Yellow);
-                        TextWriterColor.Write($"  + {directive.ToFullString()}", true, ConsoleColors.Green);
+                        TextWriterColor.WriteColor("Additionally, the suggested fix will add the following using statement:", true, ConsoleColors.Yellow);
+                        TextWriterColor.WriteColor($"  + {directive.ToFullString()}", true, ConsoleColors.Green);
                     }
                 }
             }

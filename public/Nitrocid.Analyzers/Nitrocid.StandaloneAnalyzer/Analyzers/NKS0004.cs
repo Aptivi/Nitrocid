@@ -54,7 +54,7 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                         if (idName == nameof(Console.ForegroundColor))
                         {
                             var lineSpan = location.GetLineSpan();
-                            TextWriterColor.Write($"{GetType().Name}: {document.FilePath} ({lineSpan.StartLinePosition} -> {lineSpan.EndLinePosition}): Caller uses Console.ForegroundColor instead of SetConsoleColor(Color)", true, ConsoleColors.Yellow);
+                            TextWriterColor.WriteColor($"{GetType().Name}: {document.FilePath} ({lineSpan.StartLinePosition} -> {lineSpan.EndLinePosition}): Caller uses Console.ForegroundColor instead of SetConsoleColor(Color)", true, ConsoleColors.Yellow);
                             if (!string.IsNullOrEmpty(document.FilePath))
                                 LineHandleRangedWriter.PrintLineWithHandle(document.FilePath, lineSpan.StartLinePosition.Line + 1, lineSpan.StartLinePosition.Character + 1, lineSpan.EndLinePosition.Character);
                             found = true;
@@ -95,9 +95,9 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                     // Actually replace
                     var node = await document.GetSyntaxRootAsync(cancellationToken);
                     var finalNode = node?.ReplaceNode(parentSyntax, resultSyntax);
-                    TextWriterColor.Write("Here's what the replacement would look like (with no Roslyn trivia):", true, ConsoleColors.Yellow);
-                    TextWriterColor.Write($"  - {exp}", true, ConsoleColors.Red);
-                    TextWriterColor.Write($"  + {resultSyntax.ToFullString()}", true, ConsoleColors.Green);
+                    TextWriterColor.WriteColor("Here's what the replacement would look like (with no Roslyn trivia):", true, ConsoleColors.Yellow);
+                    TextWriterColor.WriteColor($"  - {exp}", true, ConsoleColors.Red);
+                    TextWriterColor.WriteColor($"  + {resultSyntax.ToFullString()}", true, ConsoleColors.Green);
 
                     // Check the imports
                     var compilation = finalNode as CompilationUnitSyntax;
@@ -109,8 +109,8 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                                 SyntaxFactory.IdentifierName("ConsoleBase")),
                             SyntaxFactory.IdentifierName("Colors"));
                         var directive = SyntaxFactory.UsingDirective(name).NormalizeWhitespace();
-                        TextWriterColor.Write("Additionally, the suggested fix will add the following using statements:", true, ConsoleColors.Yellow);
-                        TextWriterColor.Write($"  + {directive.ToFullString()}", true, ConsoleColors.Green);
+                        TextWriterColor.WriteColor("Additionally, the suggested fix will add the following using statements:", true, ConsoleColors.Yellow);
+                        TextWriterColor.WriteColor($"  + {directive.ToFullString()}", true, ConsoleColors.Green);
                     }
                     if (compilation?.Usings.Any(u => u.Name?.ToString() == "Terminaux.Colors") == false)
                     {
@@ -118,7 +118,7 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                             SyntaxFactory.IdentifierName("Terminaux"),
                             SyntaxFactory.IdentifierName("Colors"));
                         var directive = SyntaxFactory.UsingDirective(name).NormalizeWhitespace();
-                        TextWriterColor.Write($"  + {directive.ToFullString()}", true, ConsoleColors.Green);
+                        TextWriterColor.WriteColor($"  + {directive.ToFullString()}", true, ConsoleColors.Green);
                     }
                 }
             }

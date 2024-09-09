@@ -36,7 +36,7 @@ namespace Nitrocid.StandaloneAnalyzer
             // Check to see if we've been provided the path to a mod
             if (args.Length == 0)
             {
-                TextWriterColor.Write("Provide a path to your mod project.", true, ConsoleColors.Red);
+                TextWriterColor.WriteColor("Provide a path to your mod project.", true, ConsoleColors.Red);
                 return;
             }
 
@@ -51,7 +51,7 @@ namespace Nitrocid.StandaloneAnalyzer
                 // Create a workspace using the instance
                 using var workspace = MSBuildWorkspace.Create();
                 workspace.WorkspaceFailed += (o, e) =>
-                    TextWriterColor.Write($"Failed to load the workspace: [{e.Diagnostic.Kind}] {e.Diagnostic.Message}", true, ConsoleColors.Red);
+                    TextWriterColor.WriteColor($"Failed to load the workspace: [{e.Diagnostic.Kind}] {e.Diagnostic.Message}", true, ConsoleColors.Red);
 
                 // Load the solution
                 var solutionPath = args[0];
@@ -59,7 +59,7 @@ namespace Nitrocid.StandaloneAnalyzer
 
                 // Attach progress reporter so we print projects as they are loaded.
                 var solution = await workspace.OpenSolutionAsync(solutionPath, new ConsoleProgressReporter());
-                TextWriterColor.Write($"Finished loading solution {solutionPath}!", true, ConsoleColors.Green);
+                TextWriterColor.WriteColor($"Finished loading solution {solutionPath}!", true, ConsoleColors.Green);
 
                 // Add the Nitrocid analyzer to all the projects
                 var projects = solution.Projects;
@@ -77,7 +77,7 @@ namespace Nitrocid.StandaloneAnalyzer
                             }
                             catch (Exception ex)
                             {
-                                TextWriterColor.Write($"Analyzer failed: {ex.Message}", true, ConsoleColors.Red);
+                                TextWriterColor.WriteColor($"Analyzer failed: {ex.Message}", true, ConsoleColors.Red);
                             }
                         }
                     }
@@ -85,7 +85,7 @@ namespace Nitrocid.StandaloneAnalyzer
             }
             catch (Exception ex)
             {
-                TextWriterColor.Write($"General analysis failure: {ex.Message}", true, ConsoleColors.Red);
+                TextWriterColor.WriteColor($"General analysis failure: {ex.Message}", true, ConsoleColors.Red);
             }
         }
 
@@ -109,7 +109,7 @@ namespace Nitrocid.StandaloneAnalyzer
                 {
                     return visualStudioInstances[instanceNumber - 1];
                 }
-                TextWriterColor.Write("Input not accepted, try again.", true, ConsoleColors.Red);
+                TextWriterColor.WriteColor("Input not accepted, try again.", true, ConsoleColors.Red);
             }
         }
 
