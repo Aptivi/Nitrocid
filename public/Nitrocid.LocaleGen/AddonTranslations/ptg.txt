@@ -3637,3 +3637,296 @@ Probabilidade de falha
 Chance, em porcentagem, de ocorrer a falha na tela
 Classifique logicamente
 Classifica a lista por ordem alfanumérica, se estiver activada, ou por ordem alfabética, se desactivada.
+Falha à preenchimento do tema padrão
+Não existem metadados temas definidos.
+Não é possível desserializar metadados.
+Esta codificação deve ser inicializada.
+As informações do diretório não são especificadas.
+As informações do ficheiro não são especificadas.
+Falha geral de transferência de rede
+O ficheiro hexáceo ainda não está aberto.
+O ficheiro de texto ainda não está aberto.
+O manipulador para extensão não é especificado.
+Falha à obtenção de um manipulador padrão
+O carregamento de manipuladores padrão falhou.
+Tentando aceder ao caminho inválido. Esta verificação foi feita para evitar sistemas mais antigos do Windows 10 que não se atualizassem para o patch de Abril de 2021 ou superior a aceder a estes caminhos conhecidos por causar a corrupção do sistema de ficheiros NTFS ou o problema Blue Screen of Death (BSOD). Isto implica que o chamador está a tentar causar uma negação de serviço (DoS) e deve ser corrigido, ou que a entrada do utilizador é maliciosa.
+Selecionar
+Cópia
+Mover
+Eliminar
+Para cima
+Informação
+Vá para
+Renomear
+Nova pasta
+Hash...
+Verificar...
+Pré-visualização
+Visualização selecionada
+Aberto
+Não é possível verificar as variáveis ​​de configuração quando a configuração do kernel não é especificada.
+Não é possível obter esquema de definições base.
+Não consigo obter entradas de definições.
+Falha à obtenção de entradas de definições do driver.
+Falha à obtenção de entradas de definições principais.
+Falha à obtenção de entradas de definições de protetor de ecrã.
+Falha à obtenção de entradas de definições de widget.
+Falha a obter informações de alias
+Não há nada em que selecionar.
+Não é possível escrever
+Conjunto
+Guardar
+Poupe como
+Carregar de
+Recarga
+Migrar
+As entradas de definições não são encontradas.
+Verificações para atualizações do sistema (requer uma ligação à Internet ativa).
+Mostra informações básicas do sistema (mais informações disponíveis no comando 'sysinfo').
+Não é possível obter a secção
+O dispositivo de depuração remoto não parece existir.
+Não é possível obter dispositivos de depuração remota de
+Não é possível abrir o recurso de localização inglesa
+Não é possível abrir o recurso de localização para
+Falha a obter fonte de figlet
+Imprima uma corda de figlet para consolar (centrado)
+Imprima uma sequência de figlet para consolar com formatação (centro)
+Imprimir uma corda de figlet para consolar (centro, posicional)
+Imprimir uma sequência de figlet para consolar com formatação (centro, posicional)
+Falha a obter um ponto de entrada.
+Testa os botões na caixa informativa (intitulado)
+Testa a caixa de entrada a cores na caixa informativa (intitulada)
+Testa a caixa de entrada na caixa informativa (intitulada)
+Testa o estilo de selecção múltipla de entrada na caixa informativa (intitulada)
+Testa o estilo de seleção de entrada na caixa informativa (grande número de itens para testar o scroll e a paging)
+Testa o estilo de seleção de múltiplas entradas na caixa informativa (grande número de itens para testar a scroll e a paginação)
+Testa o estilo de seleção múltipla de entrada na caixa informativa (grande número de itens para testar a scroll e a paginação) (intitulado
+Testa o estilo de seleção de entrada na caixa informativa (grande número de itens para testar a scroll e a paginação) (intitulado
+Testa o estilo de seleção de entrada na caixa informativa (intitulado
+Testa o estilo de seleção de entrada (grande número de itens para testar o scrolling e a paginação)
+Testa o estilo de seleção múltipla de entrada (grande número de itens para testar o scrolling e a paginação)
+Não é possível obter quadro
+Não é possível obter método
+Um erro de expressão regular aconteceu enquanto o texto está a ser processado. Verifique a sua sintaxe de expressão regular e tente novamente. Se o tempo limite ocorrer, certifique-se de que não se revira muito (não seja ganancioso).
+As ferramentas de página inicial enfrentaram um erro ao tentar processar o seu pedido. Certifique-se de que introduziu todos os dados necessários corretamente.
+Infelizmente, a última falha é desconhecida, por isso não sabemos exatamente o que correu mal. No entanto, pode ser útil se tiver consultado os registos de depuração do kernel.
+Falha a obter metadados de add-on
+Não é possível obter informações de campo para
+Não é possível obter entradas de diário
+(Utilize as teclas de seta para destacar a sua escolha e prima ENTER.)
+GNU GRUB versão 0,97 (638K inferior / 1046784K memória superior)
+A depuração remota não começou por razões desconhecidas.
+O tópico não pode ser regenerado
+Não é possível procurar locações.
+Falha ao carregar o recurso da linguagem para
+Não é possível obter texto localizado
+Não é possível obter localizações em inglês
+Não é possível obter texto em inglês
+O token da linguagem deve ser especificado
+Não é possível obter metadados de linguagem
+Não é possível obter um array de metadados de linguagem
+Metadados MIME (extendidos)
+O manipulador está registado, mas de alguma forma não conseguiu obter um manipulador de extensão para
+Não é possível obter entradas de definições
+Não é possível definir a entrada de definições
+Não é possível guardar definições
+Não é possível carregar as definições
+Não é possível recarregar as definições
+Não é possível migrar as definições
+Não é possível verificar as atualizações
+Não é possível obter informações do sistema
+A instância do ecrã não é especificada
+Os parâmetros do thread Splash não são especificados
+Não é possível determinar a versão mod
+Exceção carregadora desconhecida
+Não é possível carregar localizações de mod
+Não é possível obter o método dos dois últimos fotogramas.
+Sobre
+O nome da ação não é especificado.
+A ação não é especificada.
+A ação já existe.
+A ação não existe.
+A ação integrada não pode ser removida.
+Cópia para
+Mova-se para
+Hash
+Verificar
+Adicionar
+Dispensar
+Despedir tudo
+Morte
+Copyright (C) 2018-2024 Aptivi - Todos os direitos reservados
+Não é possível obter informações de argumento para comando ou argumento
+Os parâmetros do tópico não são especificados.
+Não é possível obter parâmetros do thread para execução de processos.
+Não é possível obter um campo interno para variáveis ​​de ambiente
+Não é possível obter o executor de shell para
+Mostra comandos gerais (padrão)
+Altera o nome completo do utilizador (nome de visualização)
+Mostra o buffer principal que estava no ecrã antes de iniciar o Nitrocid KS (apenas sistemas Unix)
+Não é possível obter pacotes de add-ons.
+Não é possível obter informações do utilizador para o utilizador do sistema
+Não é possível obter informações do utilizador para
+Reinicia o nitrocid com as permissões elevadas (apenas janelas)
+Não é possível desserializar o conjunto de informações do grupo
+Não é possível desserializar informações do grupo
+Não é possível definir conta raiz.
+Não tem permissão para solicitar uma reinicialização ou encerramento.
+Não é possível desserializar a matriz de informações do utilizador
+Não é possível desserializar a instância da informação do utilizador
+Falha a obter o utilizador
+Falha ao obter o utilizador atual
+Não é possível obter dados necessários para inicializar este add-on.
+Falha ao carregar metadados de linguagem
+Falha ao desserializar os metadados da linguagem
+Falha à carregamento de metadados de linguagem para
+Falha à desserialização de metadados linguísticos para
+Editar
+Remova tudo
+Carga
+Notas
+Falha à obtenção de entradas de definições.
+que o Nitrocid (Kernel Simulator 0.0.2) chamou a concha integrada do shell 'UESH'?
+que os protetores de ecrã foram considerados uma solução contra queimaduras de ecrã no tubo de raios de cátodo (CRT) ou em exposições de plasma?
+Corrida de cavalos
+Hangman
+Meteoro Dodge
+Atirador de meteoro
+Pong
+Envio Duto
+Snaker
+Wordle
+Wordle (original)
+Citação desconhecida.
+Autor desconhecido.
+Não é possível obter entradas de arquivo
+O ficheiro ainda não está carregado.
+Não é possível determinar o diretório de arquivo atual.
+Calendário
+Não foram encontrados lembretes para o dia selecionado
+Nenhum evento encontrado para o dia selecionado
+Contactos
+Apagar tudo
+Importação
+Importação de
+Pesquisa
+Pesquise o próximo
+Pesquisar de volta
+Informação bruta
+Importação de MeCard
+Não há informações de propriedade para
+Adicionar manualmente
+Não é possível obter um array de parte do dia
+Não consigo fazer parte do dia
+Não é possível obter uma lista de tarefas
+Temporizador
+Paragem
+Ainda não há voltas...
+Lista de voltas
+Gera nomes (umlauts não são atualmente suportados)
+Converso...
+Conversor de unidades
+Jogador de Música
+Leitor de rádio
+Informação sobre a Rádio Internet (FM) para
+Não é possível obter informações sobre a rádio na Internet.
+Dispositivo (cached
+Condutor (em cache
+(quando ocioso) Adicione um diretório musical à playlist
+(quando jogar) Procure seletivamente
+(quando tocar) Procure a letra anterior
+(quando jogar) Procure a próxima letra
+(quando jogar) Procure a letra atual
+(quando jogar) Procure qual a letra
+Mudar...
+Guardar...
+Carga...
+Copie...
+Traduzir
+Luminância (Luntade):
+A última concha não é esta concha de descolar.
+O cliente não está povoado.
+Ainda não existe um cliente FTP.
+O cliente ainda não está ligado.
+Não é possível obter a configuração do servidor IMAP
+Não é possível obter a configuração do servidor SMTP
+O cliente ainda não está ligado
+Ler mais
+Atualize
+Não há artigo.
+Não há feed.
+Não é possível obter ligação
+O fluxo de ficheiros ainda não está aberto.
+O ficheiro JSON ainda não está aberto.
+Não é possível obter informações sobre ações.
+O SSH está ligado, mas sem cliente.
+Mostra a contagem de shell na concha normal do UESH (dependendo da predefinição)
+Intervalo de ralenti mínimo para iniciar o protetor de ecrã. A unidade está em formato de tempo de tempo (HH:MM:SS).
+O tema padrão para o kernel
+Acentos em todo o lado!
+Líquido incolor, furioso e altamente corrosivo
+Esta secção permite-lhe configurar como funciona o add-on de contactos.
+Mostrar fotos de perfil
+Se for ativado, mostra imagens de contacto. Desativado por defeito para evitar o uso indevido e por razões de desempenho.
+Selecione a sua unidade preferida para a temperatura (isto aplica-se apenas ao comando "clima"). 1 é Kelvin, 2 é Métrico e 3 é Imperial.
+Luminância de tonalidade de cor (luz)
+harmonia roxa
+Esta é a cor da mascote Android em primeiro plano
+A nossa harmonia de marca
+Versão escura de um tema VIM popular, Ayu
+Versão leve de um tema VIM popular, Ayu
+Versão mirage de um tema VIM popular, Ayu
+Este é o primeiro dia do novo ano letivo
+terminal mais leve possível
+Esta é a rosa preta
+Esquema de cor para Breeze, um tema KDE Plasma 5
+Esquema de cores popular para IDEs, como o IntelliJ
+É tempo de voltar ao lado negro.
+Esquemas de cor para Debian
+O tema vívido padrão para o kernel
+Acentos de fundo no seu kernel!
+Mais sotaques em todo o lado!
+Use se é fã de EDM
+Sombras de incêndio
+O seu palácio dourado épico em fundo azul escuro
+Grape e Kiwi misturados
+Esquema de cor para uvas
+Cores verdes e rebocadas verdes, azul e roxo
+Verde o seu ambiente, greenifique o seu kernel. Torne a Terra mais verde!
+Adicionámos verde e vermelho como cores.
+Verde e cor-de-rosa misturados
+Um dos esquemas de cores terminais conhecidos
+Texto verde em cinzento
+Cores indígenas tradicionais mesmo na sua consola.
+Faça o seu terminal cheio de ácido de limão
+Placas de madeira clara
+Cores do terminal Linux padrão
+Terminal cinzento
+Algum texto de design de material no seu terminal
+Sombras de laranja e castanho
+Tema Melange inspirado no tema VIM com o mesmo nome
+Faça o seu terminal cheio de hortelã
+Paleta de cores de Mirai Kuriyama de Beyond the Boundary.
+Um tema inspirado num tema VIM com o mesmo nome
+Gosta de azul néon e cor-de-rosa?
+Este tema deve ser neutro para si.
+Este é o seu céu noturno no início da noite!
+Outubro está a chegar em breve, por isso preparem-se!
+O mar de laranja
+Terminal fosfórico que transforma tudo em laranja
+Dá-lhe uma brisa de vermelho.
+Uma consola vermelha sangrenta
+As árvores de Sakura dar-lhe-ão uma brisa chinesa
+Todas as cores azul-petróleo
+Um tema para os amantes da tecnologia
+Fã de música de Trance? Este é o tema para si!
+Esquemas de cores de um sistema operativo Linux popular, Ubuntu
+Dá-lhe uma vibração perfeita Vice City
+Este é o amanhecer do seu Vice City.
+Esquema de cores para o Visual Studio, um dos IDEs mais poderosos
+Esquema de cor para o Windows 11, uma versão recente do Windows
+Traga a nostalgia com este tema!
+O seu terminal consiste em tábuas de madeira
+Inspirado no padrão chinês de diferentes frutos
+Extras - CRC32C (Castagnoli)
+A verificação de atualizações é desativada em versões de desenvolvimento.

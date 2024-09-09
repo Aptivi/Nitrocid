@@ -3637,3 +3637,296 @@ Gùzhàng gàilǜ
 píngmù gùzhàng fāshēng de gàilǜ (bǎifēnbǐ)
 Àn luójí páixù
 rúguǒ qǐyòng, zé àn zìmǔ shùnxù duì lièbiǎo jìn háng páixù; rúguǒ jìnyòng, zé àn zìmǔ shùnxù duì lièbiǎo jìn háng páixù.
+Wúfǎ tiánchōng mòrèn zhǔtí
+wèi dìngyì zhǔtí yuán shùjù.
+Wúfǎ fǎn xùliè huà yuán shùjù.
+Yīng chūshǐhuà cǐ biānmǎ.
+Wèi zhǐdìng mùlù xìnxī.
+Wèi zhǐdìng wénjiàn xìnxī.
+Chángguī wǎngluò chuánshū shībài
+shíliù jìn zhì wénjiàn shàngwèi dǎkāi.
+Wénběn wénjiàn shàngwèi dǎkāi.
+Wèi zhǐdìng kuòzhǎn de chǔlǐ chéngxù.
+Wúfǎ huòqǔ mòrèn chǔlǐ chéngxù
+jiāzài mòrèn chǔlǐ chéngxù shībài.
+Chángshì fǎngwèn wúxiào lùjìng. Jìnxíng cǐ jiǎnchá shì wèile fángzhǐ wèi gēngxīn dào 2021 nián 4 yuè bǔdīng huò gèng gāo bǎnběn de jiùbǎn Windows 10 xìtǒng fǎngwèn yǐ zhī hui dǎozhì NTFS wénjiàn xìtǒng sǔnhuài huò lánpíng sǐjī (BSOD) wèntí de zhèxiē lùjìng. Zhèyìwèizhe diàoyòng zhě zhèngzài shìtú dǎozhì jùjué fúwù (DoS) bìng yīngyǔyǐ xiūfù, huòzhě yònghù shūrù shì è yì de.
+Xuǎnzé
+fùzhì
+yídòng
+shānchú
+shàng yí
+xìnxī
+zhuǎn zhì
+zhòng mìngmíng
+xīn wénjiàn jiā
+hā xī...
+Yànzhèng...
+Yùlǎn
+yùlǎn suǒ xuǎn
+dǎkāi
+wèi zhǐdìng nèihé pèizhì shí wúfǎ jiǎnchá pèizhì biànliàng.
+Wúfǎ huòqǔ jīběn shèzhì jiàgòu.
+Wúfǎ huòqǔ shèzhì tiáomù.
+Wúfǎ huòqǔ qūdòng chéngxù shèzhì tiáomù.
+Wúfǎ huòqǔ zhǔ shèzhì tiáomù.
+Wúfǎ huòqǔ píngmù bǎohù chéngxù shèzhì tiáomù.
+Wúfǎ huòqǔ chuāngkǒu xiǎo bùjiàn shèzhì tiáomù.
+Wúfǎ huòqǔ biémíng xìnxī
+méiyǒu kě gōng xuǎnzé de nèiróng.
+Wúfǎ cóngzhōng huòqǔ lèixíng
+shèzhì
+bǎocún
+lìngcún wèi
+jiāzài zì
+chóngxīn jiāzài
+qiānyí
+wèi zhǎodào shèzhì tiáomù.
+Jiǎnchá xìtǒng gēngxīn (xūyào yǒuxiào de Internet liánjiē).
+Xiǎnshì jīběn xìtǒng xìnxī (gèng duō xìnxī kě zài “sysinfo” mìnglìng zhōng zhǎodào).
+Wúfǎ huòqǔ bùfèn
+yuǎnchéng tiáoshì shèbèi sìhū bù cúnzài.
+Wúfǎ cóng yǐxià wèizhì huòqǔ yuǎnchéng tiáoshì shèbèi
+wúfǎ dǎkāi yīngyǔ běndì huà zīyuán
+wúfǎ dǎkāi běndì huà zīyuán
+wúfǎ huòqǔ figlet zìtǐ
+jiāng figlet zìfú chuàn dǎyìn dào kòngzhì tái (jūzhōng)
+jiāng figlet zìfú chuàn dǎyìn dào kòngzhì tái bìng shèzhì géshì (jūzhōng)
+jiāng figlet zìfú chuàn dǎyìn dào kòngzhì tái (jūzhōng, wèizhì)
+jiāng figlet zìfú chuàn dǎyìn dào kòngzhì tái bìng shèzhì géshì (jūzhōng, wèizhì)
+wúfǎ huòqǔ rùkǒu diǎn.
+Cèshì xìnxī kuāng zhōng de ànniǔ (biāotí)
+cèshì xìnxī kuāng zhōng de cǎisè shūrù kuāng (biāotí)
+cèshì xìnxī kuāng zhōng de shūrù kuāng (biāotí)
+cèshì xìnxī kuāng zhōng de shūrù duō xiàng xuǎnzé yàngshì (biāotí)
+cèshì xìnxī kuāng zhōng de shūrù xuǎnzé yàngshì (dàliàng xiàngmù cèshì gǔndòng hé fēnyè)
+cèshì xìnxī kuāng zhōng de shūrù duō xiàng xuǎnzé yàngshì (dàliàng xiàngmù cèshì gǔndòng hé fēnyè)
+cèshì xìnxī kuāng zhōng de shūrù duō xiàng xuǎnzé yàngshì (dàliàng xiàngmù cèshì gǔndòng hé fēnyè)(biāotí
+cèshì xìnxī kuāng zhōng de shūrù xuǎnzé yàngshì (dàliàng xiàngmù cèshì gǔndòng hé fēnyè)(biāotí
+cèshì xìnxī kuāng zhōng de shūrù xuǎnzé yàngshì (biāotí
+cèshì shūrù xuǎnzé yàngshì (dàliàng xiàngmù cèshì gǔndòng hé fēnyè)
+cèshì shūrù duō xiàng xuǎnzé yàngshì (dàliàng xiàngmù cèshì gǔndòng hé fēnyè)
+wúfǎ huòqǔ kuàngjià
+wúfǎ huòqǔ fāngfǎ
+wénběn jiāzài shí fāshēng zhèngzé biǎodá shì cuòwù zhèngzài chǔlǐ. Qǐng jiǎnchá zhèngzé biǎodá shì yǔfǎ bìng chóng shì. Rúguǒ fāshēng chāoshí, qǐng quèbǎo bu yào guò duō dìguī (bùyào tānxīn).
+Zhǔyè gōngjù zài chángshì chǔlǐ nín de qǐngqiú shí yù dào cuòwù. Qǐng quèbǎo nín yǐ zhèngquè shūrù suǒyǒu bìyào de shùjù.
+Bùxìng de shì, zuìhòu yīcì shībài shì wèizhī de, suǒyǐ wǒmen bùzhīdào dàodǐ chūle shénme wèntí. Dànshì, rúguǒ nín cháyuèle nèihé tiáoshì rìzhì, kěnéng huì yǒu suǒ bāngzhù.
+Wúfǎ huòqǔ chājiàn yuán shùjù
+wúfǎ huòqǔ zìduàn xìnxī
+wúfǎ huòqǔ rìjì tiáomù
+(shǐyòng jiàntóu jiàn túchū xiǎnshì nín de xuǎnzé, ránhòu àn ENTER.)
+GNU GRUB bǎnběn 0.97(638K xiàxiàn/1046784K shàngxiàn nèicún)
+yóuyú wèizhī yuányīn, yuǎnchéng tiáoshì wúfǎ qǐdòng.
+Wúfǎ chóngxīn shēngchéng xiànchéng
+wúfǎ huòqǔ gēnggǎi rìzhì.
+Wúfǎ jiāzài yǔyán zīyuán
+wúfǎ huòqǔ běndì huà wénběn
+wúfǎ huòqǔ yīngyǔ běndì huà
+wúfǎ huòqǔ yīng yǔ wénběn
+bìxū zhǐdìng yǔyán biāojì
+wúfǎ huòqǔ yǔyán yuán shùjù
+wúfǎ huòqǔ yǔyán yuán shùjù shùzǔ
+MIME yuán shùjù (kuòzhǎn)
+chǔlǐ chéngxù yǐ zhùcè dàn bù zhī hégù wúfǎ huòqǔ kuòzhǎn chǔlǐ chéngxù
+wúfǎ huòqǔ shèzhì tiáomù
+wúfǎ shèzhì shèzhì tiáomù
+wúfǎ bǎocún shèzhì
+wúfǎ jiāzài shèzhì
+wúfǎ chóngxīn jiāzài shèzhì
+wúfǎ qiānyí shèzhì
+wúfǎ jiǎnchá gēngxīn
+wúfǎ huòqǔ xìtǒng xìnxī
+wèi zhǐdìng píngmù bǎohù chéngxù shílì
+wèi zhǐdìng qǐdòng xiànchéng cānshù
+wúfǎ quèdìng mod bǎnběn
+wèizhī jiāzài qì yìcháng
+wúfǎ jiāzài mod běndì huà
+wúfǎ cóng zuìhòu liǎng zhèng huòqǔ fāngfǎ.
+Guānyú
+wèi zhǐdìng cāozuò míngchēng.
+Wèi zhǐdìng cāozuò.
+Cāozuò yǐ cúnzài.
+Cāozuò bù cúnzài.
+Wúfǎ shānchú nèizhì cāozuò.
+Fùzhì dào
+yídòng dào
+hā xī
+yànzhèng
+tiānjiā
+guānbì
+quánbù guānbì
+zhōngzhǐ
+bǎnquán suǒyǒu (C) 2018-2024 Aptivi - bǎoliú suǒyǒu quánlì
+wúfǎ huòqǔ mìnglìng huò cān shǔ de cānshù xìnxī
+wèi zhǐdìng xiànchéng cānshù.
+Wúfǎ huòqǔ jìnchéng zhíxíng de xiànchéng cānshù.
+Wúfǎ huòqǔ huánjìng biànliàng de nèibù zìduàn
+wúfǎ huòqǔ shell zhíxíng chéngxù
+xiǎnshì chángguī mìnglìng (mòrèn)
+Gēnggǎi yònghù de quán míng (xiǎnshì míngchēng)
+xiǎnshì qǐdòng Nitrocid KS zhīqián píngmù shàng de zhǔ huǎnchōng qū (jǐn xiàn Unix xìtǒng)
+wúfǎ huòqǔ fùjiā zǔjiàn bāo.
+Wúfǎ huòqǔ xìtǒng yònghù de yònghù xìnxī
+wúfǎ huòqǔ yònghù xìnxī
+shǐyòng tíshēng de quánxiàn chóngxīn qǐdòng Nitrocid(jǐn xiàn Windows)
+wúfǎ fǎn xùliè huà zǔ xìnxī shùzǔ
+wúfǎ fǎn xùliè huà zǔ xìnxī
+wúfǎ shèzhì root zhànghù.
+Nín wú quán qǐngqiú chóngxīn qǐdòng huò guānjī.
+Wúfǎ fǎn xùliè huà yònghù xìnxī shùzǔ
+wúfǎ fǎn xùliè huà yònghù xìnxī shílì
+wúfǎ huòqǔ yònghù
+wúfǎ huòqǔ dāngqián yònghù
+wúfǎ huòqǔ chūshǐhuà cǐ fùjiā zǔjiàn suǒ xū de shùjù.
+Wúfǎ jiāzài yǔyán yuán shùjù
+wúfǎ fǎn xùliè huà yǔyán yuán shùjù
+wúfǎ jiāzài yǔyán yuán shùjù
+wúfǎ fǎn xùliè huà yǔyán yuán shùjù
+biānjí
+quánbù shānchú
+jiāzài
+zhùshì
+wúfǎ huòqǔ shèzhì tiáomù.
+Nitrocid (Kernel Simulator 0.0.2) Jiāng nèizhì shell chēng wèi “UESH”shell?
+Píngmù bǎohù chéngxù bèi chuīpěng wèi jiějué yīnjí shèxiàn guǎn (CRT) huò děnglízǐ xiǎnshìqì píngmù shāo píng wèntí de jiějué fāng'àn?
+Sàimǎ
+jiǎoxíng shī
+liúxīng duǒbì
+liúxīng shèshǒu
+pīngpāng qiú
+fēichuán èrchóngzòu
+shé xíng yóuxì
+Wordle
+Wordle (yuánshǐ)
+wèizhī yǐnyòng.
+Wèizhī zuòzhě.
+Wúfǎ huòqǔ cúndàng tiáomù
+cúndàng shàngwèi jiāzài.
+Wúfǎ quèdìng dàng qián cúndàng mùlù.
+Rìlì
+wèi zhǎodào suǒ xuǎn rìqí de tíxǐng
+wèi zhǎodào suǒ xuǎn rìqí de shìjiàn
+liánxì rén
+quánbù shānchú
+dǎorù
+dǎorù zì
+sōusuǒ
+sōusuǒ xià yīgè
+sōusuǒ shàng yīgè
+yuánshǐ xìnxī
+cóng MeCard dǎorù
+méiyǒu shǔxìng xìnxī
+shǒudòng tiānjiā
+wúfǎ huòqǔ rìqí bùfèn shùzǔ
+wúfǎ huòqǔ rìqí bùfèn
+wúfǎ huòqǔ rènwù lièbiǎo
+jìshí qì
+miǎobiǎo
+shàng wú quān shù...
+Quān shù lièbiǎo
+shēngchéng xìngmíng biāoqiān (mùqián bù zhīchí biàn yīn fúhào)
+zhuǎnhuàn...
+Dānwèi zhuǎnhuàn qì
+yīnyuè bòfàng qì
+guǎngbò bòfàng qì
+hùliánwǎng guǎngbò (FM) xìnxī
+wúfǎ huòqǔ hùliánwǎng guǎngbò xìnxī.
+Shèbèi (huǎncún
+qūdòng chéngxù (huǎncún
+(kòngxián shí) jiāng yīnyuè mùlù tiānjiā dào bòfàng lièbiǎo
+(bòfàng shí) xuǎnzé xìng sōusuǒ
+(bòfàng shí) sōusuǒ shàng yī shǒu gēcí
+(bòfàng shí) sōusuǒ xià yī shǒu gēcí
+(bòfàng shí) sōusuǒ dāngqián gēcí
+(bòfàng shí) sōusuǒ nǎ shǒu gēcí
+gēnggǎi...
+Bǎocún...
+Jiāzài...
+Fùzhì...
+Fānyì
+liàngdù (liàngdù):
+Zuìhòu yīgè shell bùshì yào fēnlí de zhège shell.
+Kèhù duān shàngwèi tiánchōng.
+Shàng wú FTP kèhù duān.
+Kèhù duān shàngwèi liánjiē.
+Wúfǎ huòqǔ IMAP fúwùqì pèizhì
+wúfǎ huòqǔ SMTP fúwùqì pèizhì
+kèhù duān shàngwèi liánjiē
+yuèdú gèng duō
+shuāxīn
+méiyǒu wénzhāng.
+Méiyǒu tíyào.
+Wúfǎ huòqǔ liánjiē
+wénjiàn liú shàngwèi dǎkāi.
+JSON wénjiàn shàngwèi dǎkāi.
+Wúfǎ huòqǔ kùcún xìnxī.
+SSH yǐ liánjiē dàn méiyǒu kèhù duān.
+Xiǎnshì zhèngcháng UESH shell zhōng de shell jìshù (qǔjué yú yù shè)
+qǐdòng píngmù bǎohù chéngxù de zuìxiǎo kòngxián jiàngé. Dānwèi wéi shíjiān kuàdù géshì (HH:MM:SS).
+Nèihé de mòrèn zhǔtí
+wú chù bùzài de kǒuyīn!
+Wú sè, mào yān qiě fǔshí xìng jí qiáng de yètǐ
+cǐ bùfèn kě ràng nín pèizhì liánxì rén chājiàn de gōngzuò fāngshì.
+Xiǎnshì gèrén zīliào túpiàn
+rúguǒ qǐyòng, zé xiǎnshì liánxì rén túxiàng. Mòrèn qíngkuàng xià jìnyòng yǐ fángzhǐ lànyòng hé chū yú xìngnéng yuányīn.
+Xuǎnzé nín xǐhuān de wēndù dānwèi (zhè jǐn shìyòng yú “tiānqì” mìnglìng).1 Shì kāi'ěrwén,2 shì gōngzhì,3 shì yīngzhì.
+Sèdiào liàngdù (liàngdù)
+zǐsè héxié
+zhè shì qiánjǐng zhōng de Android jíxiáng wù yánsè
+wǒmen de pǐnpái héxié
+liúxíng VIM zhǔtí Ayu de shēn sè bǎnběn
+liúxíng VIM zhǔtí Ayu de qiǎn sè bǎnběn
+liúxíng VIM zhǔtí Ayu de huànyǐng bǎnběn
+zhè shì xīn xuénián de dì yī tiān
+jǐn kěnéng zuì liàng de zhōngduān
+zhè shì hēi méiguī
+Breeze de pèisè fāng'àn,KDE Plasma 5 zhǔtí
+liúxíng de IDE pèisè fāng'àn, rú IntelliJ
+shì shíhòu huí dào hēi'àn miànle.
+Debian de pèisè fāng'àn
+nèihé de shēngdòng mòrèn zhǔtí
+nèihé zhōng de bèijǐng zhòngdiǎn!
+Gèng duō chóng diǎn wú chù bùzài!
+Rúguǒ nín shì EDM de fěnsī, qǐng shǐyòng
+huǒyàn sèdiào
+shēnlán sè bèijǐng shàng de shǐshī jīnsè gōngdiàn
+pútáo hé míhóutáo hùnhé zài yīqǐ
+pútáo de pèisè fāng'àn
+shēngdòng ér nóngliè de lǜsè, lán sè hé zǐsè
+lǜhuà nín de huánjìng, lǜhuà nín de nèihé. Ràng dìqiú gèng lǜ!
+Wǒmen tiānjiāle lǜsè hé hóngsè zuòwéi yánsè.
+Lǜsè hé fěnsè hùnhé zài yīqǐ
+yǐ zhī de zhōngduān pèisè fāng'àn zhī yī
+huīsè shàng de lǜsè wénběn
+kòngzhì táizhōng de chuántǒng yìndù yánsè.
+Ràng nín de zhōngduān chōngmǎn níngméng suān
+qiǎn shǎi mùbǎn
+biāozhǔn Linux zhōngduān yánsè
+huīsè zhōngduān
+zhōngduān shàng de yīxiē Material Design wénběn
+chéngsè hé zōngsè sèdiào
+shòu tóngmíng VIM zhǔtí qǐfā de hùnsè zhǔtí
+ràng nín de zhōngduān chōngmǎn bòhé
+láizì Beyond the Boundary de Mirai Kuriyama de tiáo sè bǎn.
+Shòu tóngmíng VIM zhǔtí qǐfā de zhǔtí
+nín xǐhuān ní hóng lán hé fěnsè ma?
+Zhège zhǔtí duì nín lái shuō yīnggāi shì zhōng xìng de.
+Zhè shì yèwǎn kāishǐ shí de yèkōng!
+Shí yuè jíjiāng dàolái, suǒyǐ zuò hǎo zhǔnbèi!
+Chéngsè dì hǎiyáng
+jiāng yīqiè dōu biàn chéng chéngsè de lín zhōngduān
+gěi nǐ yī gǔ hóngsè de wéifēng.
+Xiě hóngsè de kòngzhì tái
+yīnghuā shù huì gěi nǐ yīxiē zhōngguó wéifēng
+suǒyǒu lán lǜsè
+jìshù àihào zhě de zhǔtí
+huǎnghū yīnyuè mí? Zhè shì shìhé nín de zhǔtí!
+Láizì liúxíng Linux cāozuò xìtǒng Ubuntu de pèisè fāng'àn
+wèi nín dài lái wánměi de zuì'è dūshì fēnwéi
+zhè shì nín de zuì'è dūshì límíng.
+Shìyòng yú Visual Studio de pèisè fāng'àn, zhè shì zuì qiáng dà de IDE zhī yī
+shìyòng yú Windows 11 de pèisè fāng'àn, zhè shì Windows de zuìxīn bǎnběn
+yòng zhège zhǔtí chóng wēn huáijiù zhī qíng!
+Nín de zhōngduān yóu mùbǎn zǔchéng
+línggǎn láizì zhōngguó bùtóng shuǐguǒ de tú'àn
+fùjiā gōngnéng - CRC32C(Castagnoli)
+Kāifā bǎnběn yǐ jìnyòng jiǎnchá gēngxīn.

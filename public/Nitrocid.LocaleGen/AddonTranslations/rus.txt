@@ -3637,3 +3637,296 @@ Veroyatnost' sboya
 Veroyatnost', v protsentakh, vozniknoveniya glyuka ekrana
 Sortirovat' logicheski
 Sortiruyet spisok bukvenno, yesli vklyuchen ili v alfavitnom poryadke, yesli otklyuchen.
+Ne udalos' zapolnit' temu po umolchaniyu
+Ne opredeleny metadannyye temy.
+Nevozmozhno deserializovat' metadannyye.
+Eta kodirovka dolzhna byt' initsializirovana.
+Informatsiya o kataloge ne ukazana.
+Informatsiya o fayle ne ukazana.
+Obshchaya oshibka setevoy peredachi
+Hex-fayl yeshche ne otkryt.
+Tekstovyy fayl yeshche ne otkryt.
+Obrabotchik dlya rasshireniya ne ukazan.
+Ne udalos' poluchit' obrabotchik po umolchaniyu
+Ne udalos' zagruzit' obrabotchiki po umolchaniyu.
+Popytka dostupa k nedopustimomu puti. Eta proverka byla vypolnena dlya predotvrashcheniya dostupa k etim putyam v starykh sistemakh Windows 10, kotoryye ne byli obnovleny do ispravleniya ot aprelya 2021 goda ili vyshe, kotoryye, kak izvestno, vyzyvayut povrezhdeniye faylovoy sistemy NTFS ili problemu sinego ekrana smerti (BSOD). Eto oznachayet, chto vyzyvayushchiy pytayetsya vyzvat' otkaz v obsluzhivanii (DoS) i dolzhen byt' ispravlen, ili chto pol'zovatel'skiy vvod yavlyayetsya vredonosnym.
+Vybrat'
+Kopirovat'
+Peremestit'
+Udalit'
+Vverkh
+Informatsiya
+Pereyti k
+Pereimenovat'
+Novaya papka
+Khesh...
+Proverit'...
+Predvaritel'nyy prosmotr
+Predvaritel'nyy prosmotr vybrannogo
+Otkryt'
+Nevozmozhno proverit' peremennyye konfiguratsii, yesli konfiguratsiya yadra ne ukazana.
+Nevozmozhno poluchit' bazovuyu skhemu nastroyek.
+Nevozmozhno poluchit' zapisi nastroyek.
+Ne udalos' poluchit' zapisi nastroyek drayvera.
+Ne udalos' poluchit' osnovnyye zapisi nastroyek.
+Ne udalos' poluchit' zapisi nastroyek zastavki.
+Ne udalos' poluchit' zapisi nastroyek vidzheta.
+Ne udalos' poluchit' informatsiyu o psevdonime
+Ne iz chego vybirat'.
+Nevozmozhno poluchit' tip iz
+Ustanovit'
+Sokhranit'
+Sokhranit' kak
+Zagruzit' iz
+Perezagruzit'
+Migratsiya
+Ne naydeny zapisi nastroyek.
+Proveryayet nalichiye obnovleniy sistemy (trebuyetsya aktivnoye podklyucheniye k Internetu).
+Pokazyvayet osnovnuyu informatsiyu o sisteme (dopolnitel'naya informatsiya dostupna v komande 'sysinfo').
+Nevozmozhno poluchit' razdel
+Udalennoye otladochnoye ustroystvo, pokhozhe, ne sushchestvuyet.
+Nevozmozhno poluchit' udalennyye otladochnyye ustroystva iz
+Nevozmozhno otkryt' resurs lokalizatsii na angliyskom yazyke
+Nevozmozhno otkryt' resurs lokalizatsii dlya
+Ne udalos' poluchit' shrift figlet
+Vyvesti stroku figlet na konsol' (po tsentru)
+Vyvesti stroku figlet na konsol' s formatirovaniyem (po tsentru)
+Vyvesti stroku figlet na konsol' (po tsentru, pozitsionno)
+Vyvesti stroku figlet na konsol' s formatirovaniyem (po tsentru, pozitsionno)
+Ne udalos' poluchit' tochku vkhoda.
+Testiruyet knopki v informatsionnom pole (titled)
+Testiruyet tsvetnoye pole vvoda v informatsionnom pole (titled)
+Testiruyet pole vvoda v informatsionnom pole (titled)
+Testiruyet stil' mnozhestvennogo vybora vvoda v informatsionnom pole (titled)
+Testiruyet stil' vybora vvoda v informatsionnom pole (bol'shoye kolichestvo elementov dlya proverki prokrutki i listaniya)
+Testiruyet stil' mnozhestvennogo vybora vvoda v informatsionnom pole (bol'shoye kolichestvo elementov dlya proverki prokrutki i listaniya)
+Testiruyet stil' mnozhestvennogo vybora vvoda v informatsionnom pole (bol'shoye kolichestvo elementov dlya proverki prokrutki i listaniya) (titled)
+Testiruyet stil' vybora vvoda v informatsionnom pole (bol'shoye kolichestvo elementov dlya proverki prokrutki i listaniya) (titled)
+Testiruyet stil' vybora vvoda v informatsionnom pole (titled)
+Testiruyet stil' vybora vvoda (bol'shoye kolichestvo elementov dlya proverki prokrutki i listaniya)
+Testiruyet stil' mnozhestvennogo vybora vvoda (bol'shoye kolichestvo elementov dlya proverki prokrutki i listaniya)
+Nevozmozhno poluchit' freym
+Nevozmozhno poluchit' metod
+Vo vremya obrabotki teksta proizoshla oshibka regulyarnogo vyrazheniya. Prover'te sintaksis regulyarnogo vyrazheniya i povtorite popytku. Yesli proizoshlo prevysheniye vremeni ozhidaniya, ubedites', chto vy ne slishkom mnogo rekursiruyete (ne bud'te zhadnymi).
+Instrumenty domashney stranitsy obnaruzhili oshibku pri popytke obrabotat' vash zapros. Ubedites', chto vy pravil'no vveli vse neobkhodimyye dannyye.
+K sozhaleniyu, poslednyaya oshibka neizvestna, poetomu my ne znayem tochno, chto poshlo ne tak. Odnako mozhet byt' polezno, yesli vy prokonsul'tirovalis' s zhurnalami otladki yadra.
+Ne udalos' poluchit' metadannyye dopolneniya
+Nevozmozhno poluchit' informatsiyu o pole dlya
+Nevozmozhno poluchit' zapisi zhurnala
+(Ispol'zuyte klavishi so strelkami, chtoby vydelit' svoy vybor, zatem nazhmite ENTER.)
+GNU GRUB versii 0.97 (638 KB nizhney / 1046784 KB verkhney pamyati)
+Udalennaya otladka ne nachalas' po neizvestnym prichinam.
+Nevozmozhno vosstanovit' potok
+Nevozmozhno poluchit' zhurnaly izmeneniy.
+Ne udalos' zagruzit' yazykovoy resurs dlya
+Nevozmozhno poluchit' lokalizovannyy tekst
+Nevozmozhno poluchit' angliyskiye lokalizatsii
+Nevozmozhno poluchit' angliyskiy tekst
+Nevozmozhno ukazat' yazykovoy token
+Nevozmozhno poluchit' yazykovyye metadannyye
+Nevozmozhno poluchit' massiv yazykovykh metadannykh
+Metadannyye MIME (rasshirennyye)
+Obrabotchik zaregistrirovan, no po kakoy-to prichine ne udalos' poluchit' obrabotchik rasshireniya dlya
+Nevozmozhno poluchit' zapisi nastroyek
+Nevozmozhno zadat' zapis' nastroyek
+Nevozmozhno sokhranit' nastroyki
+Nevozmozhno zagruzit' nastroyki
+Nevozmozhno perezagruzit' nastroyki
+Nevozmozhno perenesti nastroyki
+Nevozmozhno proverit' nalichiye obnovleniy
+Nevozmozhno poluchit' sistemnuyu informatsiyu
+Ekzemplyar zastavki ne ukazan
+Parametry potoka Splash ne ukazany
+Nevozmozhno opredelit' versiyu moda
+Neizvestnoye isklyucheniye zagruzchika
+Nevozmozhno zagruzit' lokalizatsii moda
+Nevozmozhno poluchit' metod iz poslednikh dvukh kadrov.
+O programme
+Imya deystviya ne ukazano.
+Deystviye ne ukazano.
+Deystviye uzhe sushchestvuyet.
+Deystviye ne sushchestvuyet.
+Vstroyennoye deystviye nel'zya udalit'.
+Kopirovat' v
+Peremestit' v
+Khesh
+Proverit'
+Dobavit'
+Otklonit'
+Otklonit' vse
+Udalit'
+Avtorskiye prava (C) 2018-2024 Aptivi - Vse prava zashchishcheny
+Nevozmozhno poluchit' informatsiyu ob argumente dlya komandy ili argumenta
+Parametry potoka ne ukazany.
+Nevozmozhno poluchit' parametry potoka dlya vypolneniya protsessa.
+Nevozmozhno poluchit' vnutrenneye pole dlya peremennykh sredy
+Nevozmozhno poluchit' ispolnyayushchego elementa obolochki dlya
+Pokazyvayet obshchiye komandy (po umolchaniyu)
+Izmenyayet polnoye imya pol'zovatelya (otobrazhayemoye imya)
+Pokazyvayet osnovnoy bufer, kotoryy byl na ekrane pered zapuskom Nitrocid KS (tol'ko dlya sistem Unix)
+Nevozmozhno poluchit' paket dopolneniy.
+Nevozmozhno poluchit' informatsiyu o pol'zovatele dlya sistemnogo pol'zovatelya
+Nevozmozhno poluchit' informatsiyu o pol'zovatele dlya
+Perezapuskayet Nitrocid s povyshennymi razresheniyami (tol'ko dlya Windows)
+Nevozmozhno deserializovat' massiv informatsii o gruppe
+Nevozmozhno deserializovat' informatsiyu o gruppe
+Nevozmozhno zadat' uchetnuyu zapis' root.
+U vas net razresheniya na zapros perezagruzki ili vyklyucheniya.
+Nevozmozhno deserializovat' massiv informatsii o pol'zovatele
+Nevozmozhno deserializovat' ekzemplyar informatsii o pol'zovatele
+Ne udalos' poluchit' pol'zovatelya
+Ne udalos' poluchit' tekushchego pol'zovatelya
+Ne udalos' poluchit' neobkhodimyye dannyye dlya initsializatsii etogo dopolneniya.
+Ne udalos' zagruzit' metadannyye yazyka
+Ne udalos' deserializovat' metadannyye yazyka
+Ne udalos' zagruzit' metadannyye yazyka dlya
+Ne udalos' deserializovat' metadannyye yazyka dlya
+Izmenit'
+Udalit' vse
+Zagruzit'
+Primechaniya
+Ne udalos' poluchit' zapisi nastroyek.
+chto Nitrocid (Kernel Simulator 0.0.2) nazval vstroyennuyu obolochku obolochkoy 'UESH'?
+chto zastavki reklamirovalis' kak resheniye protiv vygoraniya ekrana na elektronno-luchevykh trubkakh (ELT) ili plazmennykh displeyakh?
+Skachki
+Viselitsa
+Ukloneniye ot meteora
+Meteornyy shuter
+Pong
+Korabel'nyy duet
+Zmeya
+Slovo
+Slovo (original)
+Neizvestnaya tsitata.
+Neizvestnyy avtor.
+Nevozmozhno poluchit' zapisi arkhiva
+Arkhiv yeshche ne zagruzhen.
+Nevozmozhno opredelit' tekushchiy katalog arkhiva.
+Kalendar'
+Napominaniya na vybrannyy den' ne naydeny
+Sobytiya na vybrannyy den' ne naydeny
+Kontakty
+Udalit' vse
+Import
+Import iz
+Poisk
+Sleduyushchiy poisk
+Nazad poisk
+Neobrabotannaya informatsiya
+Import iz MeCard
+Net informatsii o svoystvakh dlya
+Dobavit' vruchnuyu
+Nevozmozhno poluchit' massiv chastey dnya
+Nevozmozhno poluchit' chast' dnya
+Nevozmozhno poluchit' spisok zadach
+Taymer
+Sekundomer
+Poka net krugov...
+Spisok krugov
+Sozdat' tegi imen (umlyauty v nastoyashcheye vremya ne podderzhivayutsya)
+Konvertirovat'...
+Konverter yedinits izmereniya
+Muzykal'nyy proigryvatel'
+Radiopleyer
+Informatsiya ob internet-radio (FM) dlya
+Nevozmozhno poluchit' informatsiyu ob internet-radio.
+Ustroystvo (keshirovannoye
+Drayver (keshirovannoye
+(pri bezdeystvii) Dobavit' muzykal'nyy katalog v pleylist
+(pri vosproizvedenii) Vyborochnyy poisk
+(pri vosproizvedenii) Poisk predydushchego teksta
+(pri vosproizvedenii) Poisk sleduyushchego teksta
+(pri vosproizvedenii) Poisk tekushchego teksta
+(pri vosproizvedenii) Poisk teksta
+Izmenit'...
+Sokhranit'...
+Zagruzit'...
+Kopirovat'...
+Perevesti
+Yarkost' (Lightness):
+Poslednyaya obolochka — eto ne eta obolochka dlya otsoyedineniya.
+Kliyent ne zapolnen.
+FTP-kliyent yeshche ne ustanovlen.
+Kliyent yeshche ne podklyuchen.
+Nevozmozhno poluchit' konfiguratsiyu servera IMAP
+Nevozmozhno poluchit' konfiguratsiyu servera SMTP
+Kliyent yeshche ne podklyuchen
+Podrobneye
+Obnovit'
+Net stat'i.
+Net lenty.
+Nevozmozhno poluchit' soyedineniye
+Faylovyy potok yeshche ne otkryt.
+Fayl JSON yeshche ne otkryt.
+Nevozmozhno poluchit' informatsiyu o zapasakh.
+SSH podklyuchen, no bez kliyent.
+Pokazyvayet kolichestvo obolochek v obychnoy obolochke UESH (v zavisimosti ot predustanovki)
+Minimal'nyy interval prostoya dlya zapuska zastavki. Yedinitsa izmereniya — v formate vremennogo intervala (CHCH:MM:SS).
+Tema po umolchaniyu dlya yadra
+Aktsenty vezde!
+Bestsvetnaya, dymyashchayasya i ochen' yedkaya zhidkost'
+V etom razdele mozhno nastroit' rabotu nadstroyki kontaktov.
+Pokazyvat' izobrazheniya profilya
+Yesli vklyucheno, otobrazhayutsya izobrazheniya kontaktov. Po umolchaniyu otklyucheno dlya predotvrashcheniya nepravil'nogo ispol'zovaniya i po soobrazheniyam proizvoditel'nosti.
+Vyberite predpochtitel'nuyu yedinitsu izmereniya temperatury (eto primenimo tol'ko k komande «weather»). 1 — Kel'vin, 2 — metricheskaya sistema, 3 — imperskaya sistema.
+Tsvetovoy ottenok yarkost' (svetlost')
+Fioletovaya garmoniya
+Eto tsvet talismana Android na perednem plane
+Nasha firmennaya garmoniya
+Temnaya versiya populyarnoy temy VIM, Ayu
+Svetlaya versiya populyarnoy temy VIM, Ayu
+Versiya Mirage populyarnoy temy VIM, Ayu
+Eto pervyy den' novogo uchebnogo goda
+Samyy svetlyy terminal iz vozmozhnykh
+Eto chernaya roza
+Tsvetovaya skhema dlya Breeze, temy KDE Plasma 5
+Populyarnaya tsvetovaya skhema dlya IDE, takikh kak IntelliJ
+Pora vernut'sya na temnuyu storonu.
+Tsvetovyye skhemy dlya Debian
+Yarkaya tema po umolchaniyu dlya yadra
+Fonovyye aktsenty v vashem yadre!
+Bol'she aktsentov vezde!
+Ispol'zuyte, yesli vy poklonnik EDM
+Ognennyye ottenki
+Vash epicheskiy zolotoy dvorets na temno-sinem fone
+Vinograd i kivi, smeshannyye vmeste
+Tsvetovaya skhema dlya vinograda
+Yarkiye i oshtukaturennyye zelenyye, siniye i fioletovyye tsveta
+Ozelenite svoyu sredu, ozelenite svoye yadro. Sdelayte Zemlyu zeleneye!
+My dobavili zelenyy i krasnyy v kachestve tsvetov.
+Smeshannyye zelenyy i rozovyy
+Odna iz izvestnykh tsvetovykh skhem terminala
+Zelenyy tekst na serom
+Traditsionnyye indiyskiye tsveta pryamo v vashey konsoli.
+Napolnite svoy terminal limonnoy kislotoy
+Svetlyye derevyannyye doski
+Standartnyye tsveta terminala Linux
+Seryy terminal
+Nekotoryy tekst Material Design na vashem terminale
+Ottenki oranzhevogo i korichnevogo
+Tema Melange, vdokhnovlennaya odnoimennoy temoy VIM
+Napolnite svoy terminal myatoy
+Tsvetovaya palitra ot Mirai Kuriyama iz Beyond the Boundary.
+Tema, vdokhnovlennaya odnoimennoy temoy VIM
+Vam nravyatsya neonovo-goluboy i rozovyy?
+Eta tema dolzhna byt' dlya vas neytral'noy.
+Eto vashe nochnoye nebo v nachale nochi!
+Skoro nastupit oktyabr', tak chto bud'te gotovy!
+More oranzhevogo
+Fosfornyy terminal, kotoryy prevrashchayet vse v oranzhevyy
+Darit vam briz krasnogo.
+Krovavo-krasnaya konsol'
+Derev'ya sakury podaryat vam nemnogo kitayskogo briza
+Vse tsveta biryuzy
+Tema dlya lyubiteley tekhnologiy
+Poklonnik trans-muzyki? Eta tema dlya vas!
+Tsvetovyye skhemy populyarnoy operatsionnoy sistemy Linux Ubuntu
+Dayet vam ideal'nuyu atmosferu Vice City
+Eto vash rassvet Vice City.
+Tsvetovaya skhema dlya Visual Studio, odnoy iz samykh moshchnykh IDE
+Tsvetovaya skhema dlya Windows 11, posledney versii Windows
+Vernite nostal'giyu s etoy temoy!
+Vash terminal sostoit iz derevyannykh dosok
+Vdokhnovleno kitayskim uzorom iz raznykh fruktov
+Dopolnitel'no - CRC32C (Castagnoli)
+Proverka obnovleniy otklyuchena v versiyakh, nakhodyashchikhsya v razrabotke.
