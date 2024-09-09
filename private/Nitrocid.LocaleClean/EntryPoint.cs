@@ -23,6 +23,7 @@ using Microsoft.CodeAnalysis.MSBuild;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Nitrocid.LocaleClean.Analyzers;
+using Nitrocid.LocaleCommon;
 using System;
 using System.Collections.Generic;
 using System.IO;

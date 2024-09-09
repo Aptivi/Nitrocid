@@ -20,7 +20,7 @@
 using System.Collections.Generic;
 using System.IO;
 
-namespace Nitrocid.LocaleTools
+namespace Nitrocid.LocaleCommon
 {
     internal static class CodeLister
     {

@@ -18,11 +18,12 @@
 //
 
 using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace Nitrocid.LocaleTools
+namespace Nitrocid.LocaleCommon
 {
     internal static class LocalizationLister
     {
@@ -64,8 +65,10 @@ namespace Nitrocid.LocaleTools
             string addonMetadataFile = "../../../../../public/Nitrocid.LocaleGen/AddonTranslations/Metadata.json";
             string metadata = File.ReadAllText(metadataFile);
             string addonMetadata = File.ReadAllText(addonMetadataFile);
-            var languageMetadataToken = JsonConvert.DeserializeObject<LanguageMetadata[]>(metadata);
-            var languageAddonMetadataToken = JsonConvert.DeserializeObject<LanguageMetadata[]>(addonMetadata);
+            var languageMetadataToken = JsonConvert.DeserializeObject<LanguageMetadata[]>(metadata) ??
+                throw new Exception("Failed to get language metadata");
+            var languageAddonMetadataToken = JsonConvert.DeserializeObject<LanguageMetadata[]>(addonMetadata) ??
+                throw new Exception("Failed to get addon language metadata");
             return languageMetadataToken.Union(languageAddonMetadataToken).ToArray();
         }
     }

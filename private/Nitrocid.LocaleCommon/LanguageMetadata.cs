@@ -19,7 +19,7 @@
 
 using Newtonsoft.Json;
 
-namespace Nitrocid.LocaleTools
+namespace Nitrocid.LocaleCommon
 {
     internal class LanguageMetadata
     {
