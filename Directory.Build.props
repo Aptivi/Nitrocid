@@ -11,6 +11,7 @@
         <TargetFramework>net8.0</TargetFramework>
         <Nullable>enable</Nullable>
         <WarningsAsErrors>CS8002,nullable</WarningsAsErrors>
+        <EnableSourceControlManagerQueries>true</EnableSourceControlManagerQueries>
         <SignAssembly>True</SignAssembly>
         <RootPath>$(MSBuildThisFileDirectory)</RootPath>
         <AssemblyOriginatorKeyFile>$(RootPath)\aptivi_snk.snk</AssemblyOriginatorKeyFile>
