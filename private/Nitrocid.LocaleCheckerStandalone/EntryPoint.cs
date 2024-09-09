@@ -53,20 +53,20 @@ namespace Nitrocid.LocaleCheckerStandalone
                 // Create a workspace using the instance
                 using var workspace = MSBuildWorkspace.Create();
                 workspace.WorkspaceFailed += (o, e) =>
-                    TextWriterColor.Write($"Failed to load the workspace: [{e.Diagnostic.Kind}] {e.Diagnostic.Message}", true, ConsoleColors.Red);
+                    TextWriterColor.WriteColor($"Failed to load the workspace: [{e.Diagnostic.Kind}] {e.Diagnostic.Message}", true, ConsoleColors.Red);
 
                 // Check for Nitrocid solution
                 var solutionPath = "../../../../../Nitrocid.sln";
                 if (!File.Exists(solutionPath))
                 {
-                    TextWriterColor.Write("Can't find Nitrocid solution. Make sure that it's run from the Nitrocid repo.", true, ConsoleColors.Red);
+                    TextWriterColor.WriteColor("Can't find Nitrocid solution. Make sure that it's run from the Nitrocid repo.", true, ConsoleColors.Red);
                     return;
                 }
 
                 // Attach progress reporter so we print projects as they are loaded.
                 TextWriterColor.Write($"Loading solution {solutionPath}...");
                 var solution = await workspace.OpenSolutionAsync(solutionPath, new ConsoleProgressReporter());
-                TextWriterColor.Write($"Finished loading solution {solutionPath}!", true, ConsoleColors.Green);
+                TextWriterColor.WriteColor($"Finished loading solution {solutionPath}!", true, ConsoleColors.Green);
 
                 // Find the English JSON stream and open it.
                 var stream = thisAssembly.GetManifestResourceStream("Nitrocid.LocaleCheckerStandalone.eng.json") ??
@@ -110,7 +110,7 @@ namespace Nitrocid.LocaleCheckerStandalone
                             }
                             catch (Exception ex)
                             {
-                                TextWriterColor.Write($"Analyzer failed: {ex.Message}", true, ConsoleColors.Red);
+                                TextWriterColor.WriteColor($"Analyzer failed: {ex.Message}", true, ConsoleColors.Red);
                             }
                         }
                     }
@@ -126,11 +126,11 @@ namespace Nitrocid.LocaleCheckerStandalone
 
                 // Save all unlocalized strings
                 File.WriteAllLines("unlocalized.txt", totalUnlocalized);
-                TextWriterColor.Write($"Total unlocalized strings: {totalUnlocalized.Count}", true, ConsoleColors.Red);
+                TextWriterColor.WriteColor($"Total unlocalized strings: {totalUnlocalized.Count}", true, totalUnlocalized.Count > 0 ? ConsoleColors.Red : ConsoleColors.Lime);
             }
             catch (Exception ex)
             {
-                TextWriterColor.Write($"General analysis failure: {ex.Message}", true, ConsoleColors.Red);
+                TextWriterColor.WriteColor($"General analysis failure: {ex.Message}", true, ConsoleColors.Red);
             }
         }
 
@@ -154,7 +154,7 @@ namespace Nitrocid.LocaleCheckerStandalone
                 {
                     return visualStudioInstances[instanceNumber - 1];
                 }
-                TextWriterColor.Write("Input not accepted, try again.", true, ConsoleColors.Red);
+                TextWriterColor.WriteColor("Input not accepted, try again.", true, ConsoleColors.Red);
             }
         }
 

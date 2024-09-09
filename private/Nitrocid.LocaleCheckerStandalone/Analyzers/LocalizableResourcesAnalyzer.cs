@@ -60,7 +60,7 @@ namespace Nitrocid.LocaleCheckerStandalone.Analyzers
                     bool localizable = (bool?)themeMetadata["Localizable"] ?? false;
                     if (!string.IsNullOrEmpty(description) && localizable && !EntryPoint.localizationList.Contains(description))
                     {
-                        TextWriterColor.Write($"{nameof(NLOC0001)}Resources: {resourceName}: Unlocalized theme description found: {description}", true, ConsoleColors.Yellow);
+                        TextWriterColor.WriteColor($"{nameof(NLOC0001)}Resources: {resourceName}: Unlocalized theme description found: {description}", true, ConsoleColors.Yellow);
                         unlocalizedStrings.Add(description);
                     }
                 }
@@ -74,12 +74,12 @@ namespace Nitrocid.LocaleCheckerStandalone.Analyzers
                         string displayAs = ((string?)settingsEntryList["DisplayAs"] ?? "").Replace("\\\"", "\"");
                         if (!string.IsNullOrEmpty(description) && !EntryPoint.localizationList.Contains(description))
                         {
-                            TextWriterColor.Write($"{nameof(NLOC0001)}Resources: {resourceName}: Unlocalized settings description found: {description}", true, ConsoleColors.Yellow);
+                            TextWriterColor.WriteColor($"{nameof(NLOC0001)}Resources: {resourceName}: Unlocalized settings description found: {description}", true, ConsoleColors.Yellow);
                             unlocalizedStrings.Add(description);
                         }
                         if (!string.IsNullOrEmpty(displayAs) && !EntryPoint.localizationList.Contains(displayAs))
                         {
-                            TextWriterColor.Write($"{nameof(NLOC0001)}Resources: {resourceName}: Unlocalized settings display found: {displayAs}", true, ConsoleColors.Yellow);
+                            TextWriterColor.WriteColor($"{nameof(NLOC0001)}Resources: {resourceName}: Unlocalized settings display found: {displayAs}", true, ConsoleColors.Yellow);
                             unlocalizedStrings.Add(displayAs);
                         }
 
@@ -93,12 +93,12 @@ namespace Nitrocid.LocaleCheckerStandalone.Analyzers
                             string keyDesc = ((string?)key["Description"] ?? "").Replace("\\\"", "\"");
                             if (!string.IsNullOrEmpty(keyName) && !EntryPoint.localizationList.Contains(keyName))
                             {
-                                TextWriterColor.Write($"{nameof(NLOC0001)}Resources: {resourceName}: Unlocalized key name found: {keyName}", true, ConsoleColors.Yellow);
+                                TextWriterColor.WriteColor($"{nameof(NLOC0001)}Resources: {resourceName}: Unlocalized key name found: {keyName}", true, ConsoleColors.Yellow);
                                 unlocalizedStrings.Add(keyName);
                             }
                             if (!string.IsNullOrEmpty(keyDesc) && !EntryPoint.localizationList.Contains(keyDesc))
                             {
-                                TextWriterColor.Write($"{nameof(NLOC0001)}Resources: {resourceName}: Unlocalized key description found: {keyDesc}", true, ConsoleColors.Yellow);
+                                TextWriterColor.WriteColor($"{nameof(NLOC0001)}Resources: {resourceName}: Unlocalized key description found: {keyDesc}", true, ConsoleColors.Yellow);
                                 unlocalizedStrings.Add(keyDesc);
                             }
                         }

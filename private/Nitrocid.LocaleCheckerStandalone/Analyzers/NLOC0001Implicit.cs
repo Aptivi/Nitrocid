@@ -71,7 +71,7 @@ namespace Nitrocid.LocaleCheckerStandalone.Analyzers
                                 if (!EntryPoint.localizationList.Contains(text))
                                 {
                                     var lineSpan = location.GetLineSpan();
-                                    TextWriterColor.Write($"{GetType().Name}: {document.FilePath} ({lineSpan.StartLinePosition} -> {lineSpan.EndLinePosition}): Unlocalized string found: {text}", true, ConsoleColors.Yellow);
+                                    TextWriterColor.WriteColor($"{GetType().Name}: {document.FilePath} ({lineSpan.StartLinePosition} -> {lineSpan.EndLinePosition}): Unlocalized string found: {text}", true, ConsoleColors.Yellow);
                                     if (!string.IsNullOrEmpty(document.FilePath))
                                         LineHandleRangedWriter.PrintLineWithHandle(document.FilePath, lineSpan.StartLinePosition.Line + 1, lineSpan.StartLinePosition.Character + 1, lineSpan.EndLinePosition.Character);
                                     found = true;
