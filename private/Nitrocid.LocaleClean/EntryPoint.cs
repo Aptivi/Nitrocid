@@ -37,7 +37,7 @@ namespace Nitrocid.LocaleClean
 {
     internal class EntryPoint
     {
-        internal static readonly HashSet<string> localizationList = [];
+        internal static readonly List<string> localizationList = [];
         internal static readonly Assembly thisAssembly =
             typeof(EntryPoint).Assembly;
 
@@ -131,15 +131,31 @@ namespace Nitrocid.LocaleClean
                 }
 
                 // Remove all extra strings
-                List<string> extraStrings = [];
-                foreach (string maybeExtraString in localizationList)
+                List<int> indexes = [];
+                for (int i = 0; i < localizationList.Count; i++)
                 {
+                    string maybeExtraString = localizationList[i];
                     if (!totalLocalized.Contains(maybeExtraString))
                     {
                         TextWriterColor.WriteColor($"Found extra string: {maybeExtraString}", true, ConsoleColors.Yellow);
-                        extraStrings.Add(maybeExtraString);
+                        indexes.Add(i);
                     }
                 }
+                var langs = LocalizationLister.PopulateLanguages();
+                foreach (string localizationFile in langs.Keys)
+                {
+                    // Delete all line numbers listed
+                    for (int i = indexes.Count; i > 0; i--)
+                    {
+                        int redundantIndex = indexes[i - 1];
+                        langs[localizationFile].RemoveAt(redundantIndex);
+                    }
+
+                    // Save the modified list to the file
+                    TextWriterColor.WriteColor($"Sanitized: {localizationFile}", true, ConsoleColors.Lime);
+                    File.WriteAllLines(localizationFile, langs[localizationFile]);
+                }
+                TextWriterColor.Write("Done! Please use Nitrocid.LocaleGen to finalize the change.", true, ConsoleColors.Lime);
             }
             catch (Exception ex)
             {

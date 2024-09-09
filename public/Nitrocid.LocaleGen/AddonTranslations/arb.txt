@@ -1766,37 +1766,8 @@ išʿār bīʾiẗ ġīr ʿādīẗ
 hl īmknk al-ḥṣūl ʿli nṣāʾiḥ iḍāfīẗ mn mlḥq kernel al-ḏī ītm šḥnh mʿ al-iṣdār al-kāml mn Nitrocid?
 nṣīḥẗ llmḥtrfīn: hl tʿlm
 rwābṭ al-mfātīḥ
-idrāǧ
 īzīl
-īstbdl
-astbdāl al-kl
-astbdāl kl mā
-mʿlūmāt al-rqm
-fšl al-mḥrr al-sdāsī:
-al-mfātīḥ al-mtāḥẗ
-aktb rqm al-bāīt bālqīmẗ al-sdāsīẗ al-ʿšrīẗ.
-rqm al-bāīt al-mḥdd ġīr ṣālḥ.
-aktb rqm al-bāīt bālqīmẗ al-sdāsīẗ al-ʿšrīẗ lāstbdāl {0} bhā.
-aktb rqm al-bāīt bālqīmẗ al-sdāsīẗ al-ʿšrīẗ al-mrād astbdālhā.
-mʿlūmāt al-rqm:
-al-sdāsī ʿšrī
-ṯmānī
-rqm
-al-ṯnāʾīẗ
-lā īḥtwy rbṭ al-mfātīḥ hḏā ʿli aī iǧrāʾ.
 lā īmkn tnfīḏ hḏh al-ʿmlīẗ ʿli ṣfīf fārġ.
-īdẖl...
-izālẗ al-ẖṭ
-tūqf ʿn al-dẖūl
-ẖṭ ǧdīd
-fšl mḥrr al-nṣūṣ:
-aktb al-slslẗ llʿṯūr ʿlīhā
-aktb slslẗ al-āstbdāl
-ẖṭūṭ
-ʿmūd
-ṣf
-slẗ mhmlāt
-fātūrẗ ġīr mdfūʿẗ
 lā īmkn iǧrāʾ hḏh al-ʿmlīẗ ʿli qāʾimẗ al-ʾasṭr al-ẖālīẗ.
 lm ītm al-ʿṯūr ʿli nūʿ al-iʿdādāt.
 abḥṯ ʿn ẖīār
@@ -1823,7 +1794,6 @@ fšl fī al-ʿṯūr ʿli al-iʿdād al-mṭlūb.
 ḥfẓ al-iʿdādāt ili
 ǧārٍ tḥmīl al-iʿdādāt...
 ǧārٍ iʿādẗ tḥmīl al-iʿdādāt...
-tm tʿṭīl al-tḥqq mn ūǧūd tḥdīṯāt fī iṣdārāt al-tṭwyr.
 iṣdār al-nwāẗ
 iṣdār wāǧhẗ brmǧẗ tṭbīqāt al-nwāẗ
 mʿrf al-mḍīf
@@ -1992,7 +1962,6 @@ al-tḥqq mn qfl al-mlf aū al-mǧld
 aslūb aẖtīār sṭr wāḥd
 aslūb aẖtīār sṭrīn
 aslūb al-āẖtīār al-ḥdīṯ
-aslūb aẖtīār al-ǧdūl
 īmkn an īkūn al-iẖrāǧ ḥrfًā wāḥddā fqṭ
 īmkn an īkūn al-iẖrāǧ akṯr mn ḥrf
 īǧmʿ al-mlfīn al-nṣyin aū akṯr fī ūḥdẗ al-tḥkm.
@@ -3351,7 +3320,6 @@ hawl nitrusid
 mrhban, {0}! marhaban bikum fi nitrusid!
 tamkin aleanawin eind tasjil aldukhul li'iizhar khulasat RSS
 'iiedadat
-yughlaq
 Nitrocid KS yuhaki nawat almustaqbila, Nitrocid Kernel.
 wizarat aldifae API
 laqad taeatalat safhat Nitrocid alrayiysiat watahtaj 'iilaa aleawdat 'iilaa alsudfati.

@@ -1766,37 +1766,8 @@ Aviso de entorno inusual
 ¿Que puede obtener consejos adicionales del complemento del kernel que se incluye con la versión completa de Nitrocid?
 Consejo profesional: ¿Sabías que
 Atajos de teclado
-Insertar
 Eliminar
-Reemplazar
-Reemplaza todo
-Reemplazar todo lo que
-Información del número
-El editor hexadecimal falló:
-Claves disponibles
-Escribe el número de byte con el valor hexadecimal.
-El número de byte especificado no es válido.
-Escriba el número de byte con el valor hexadecimal para reemplazar {0}.
-Escriba el número de byte con el valor hexadecimal a reemplazar.
-Información del número:
-hexadecimal
-octal
-Número
-Binario
-Esta combinación de teclas no contiene ninguna acción.
 No se puede realizar esta operación en una matriz nula.
-Ingresar...
-Eliminar línea
-Dejar de entrar
-Nueva línea
-El editor de texto falló:
-Escribe la cadena para encontrar
-Escribe la cadena de reemplazo
-Líneas
-Columna
-Fila
-Papelera
-Pestaña
 No se puede realizar esta operación en una lista de líneas nulas.
 No se encuentra el tipo de configuración.
 Encuentra una opción
@@ -1823,7 +1794,6 @@ Guardando configuración...
 Guardar configuración en
 Cargando configuración...
 Recargando configuración...
-La búsqueda de actualizaciones está deshabilitada en las versiones de desarrollo.
 Versión del núcleo
 Versión de la API del núcleo
 ID de anfitrión
@@ -1992,7 +1962,6 @@ Cambia el idioma del usuario en lugar del idioma del sistema.
 Estilo de elección de una línea
 Estilo de elección de dos líneas.
 Estilo de elección moderno
-Estilo de elección de mesa
 La salida puede ser solo un carácter.
 La salida puede ser más que un carácter.
 Combina los dos archivos de texto o más en la consola.
@@ -3351,7 +3320,6 @@ Acerca del nitrocida
 ¡Hola, {0}! ¡Bienvenidos a Nitrocid!
 Habilite los titulares al iniciar sesión para mostrar canales RSS
 Ajustes
-Cerca
 Nitrocid KS simula nuestro futuro kernel, el Nitrocid Kernel.
 API de modificación
 La página de inicio de Nitrocid ha fallado y necesita volver al shell.

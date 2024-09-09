@@ -1,4 +1,4 @@
-﻿jalmosdoen saegsang tempeullis {0}
+jalmosdoen saegsang tempeullis {0}
 yuji gwanlileul wihae gwanlija bimilbeonholeul iblyeoghasibsio.
 buting jung keoneol olyu : {0}
 ijung paenig : jaebuting sigan-i choedae heoyong {0} olyu jaebuting sigan-eul chogwahabnida. keoneol beogeuleul balgyeonhaessseubnida.
@@ -1766,37 +1766,8 @@ bijeongsangjeogin hwangyeong allim
 Nitrocidui jeonche bildeuwa hamkke jegongdoeneun keoneol aedeuoneseo chuga jeongboreul eodeul su issseupnikka?
 jeonmunga tip: algo gyesyeossnayo?
 kibainding
-kkiwo neohda
 jegeohada
-bakkuda
-modu da bakkwo
-mueoseul modu bakkugi
-beonho jeongbo
-16jinsu pyeonjipgiga silpaehaessseupnida.
-sayong ganeunghan ki
-16jinsu gapseuro baiteu beonhoreul sseupnida.
-jijeongdoen baiteu beonhoga yuhyohaji anhseupnida.
-{0}eul daechehal 16jinsu gapseuro baiteu beonhoreul jakseonghapnida.
-gyochehal 16jinsu gapseuro baiteu beonhoreul jakseonghapnida.
-beonho jeongbo:
-16jinsu
-8jinsu
-susja
-baineori
-i ki baindingeneun jageobi pohamdoeeo issji anhseupnida.
 Null baeyeoreseoneun i jageobeul suhaenghal su eopsseupnida.
-ipryeokhada...
-rain jegeo
-ipryeok jungji
-saeroun rain
-tekseuteu pyeonjipgiga silpaehaessseupnida.
-chajeul munjayeoreul jakseonghaseyo.
-daeche munjayeoreul jakseonghaseyo.
-yungwak
-yeol
-yeol
-keun sangja
-taep
 null jul mokrogeseoneun i jageobeul suhaenghal su eopsseupnida.
 seoljeong yuhyeongeul chajeul su eopsseupnida.
 opsyeon chajgi
@@ -1823,7 +1794,6 @@ seoljeong jeojang jung...
 seoljeong jeojang wichi
 seoljeong rodeu jung...
 seoljeongeul dasi rodeuhaneun jung...
-gaebal beojeoneseoneun eopdeiteu hwagini bihwalseonghwadoeeo issseupnida.
 keoneol beojeon
 keoneol API beojeon
 hoseuteu It
@@ -1992,7 +1962,6 @@ siseutem eoneo daesin sayongja eoneoreul byeongyeonghapnida.
 han jul seontaek seutail
 du jul seontaek seutail
 hyeondaejeogin seontaek seutail
-teibeul seontaek seutail
 chullyeogeun han munjaman ganeunghapnida.
 chullyeogeun munja isangil su issseupnida.
 du gae isangui tekseuteu paireul konsore gyeolhaphapnida.
@@ -3351,7 +3320,6 @@ niteulosideu sogae
 annyeonghaseyo, {0}nim! niteulosideue osin geos-eul hwan-yeonghabnida!
 RSS pideuleul pyosihalyeomyeon logeu-in si hedeulain-eul hwalseonghwahaseyo.
 seoljeong
-dadda
 Nitrocid KSneun milae keoneol-in Nitrocid keoneol-eul simyulleisyeonhabnida.
 modeu API
 Nitrocid hompeijiga chungdolhayeo syello dasi dol-agaya habnida.

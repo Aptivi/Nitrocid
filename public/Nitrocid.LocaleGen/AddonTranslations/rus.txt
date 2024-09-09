@@ -1766,37 +1766,8 @@ Uvedomlenie o neobychnoi obstanovke
 chto vy mozhete poluchit dopolnitelnye sovety ot dopolneniia iadra, postavliaemogo s polnoi sborkoi Nitrocid?
 Sovet dlia professionalov: znaete li vy
 Sochetaniia klavish
-Vstavliat
 Udaliat
-Zameniat
-Zamenit vse
-Zamenit vse chto
-Informatsiia o nomere
-Shestnadtsaterichnyi redaktor ne udalsia:
-Dostupnye kliuchi
-Zapishite nomer baita s shestnadtsaterichnym znacheniem.
-Ukazannyi nomer baita nedeistvitelen.
-Zapishite nomer baita shestnadtsaterichnym znacheniem, na kotoroe nuzhno zamenit {0}.
-Zapishite nomer baita s shestnadtsaterichnym znacheniem, kotoroe neobkhodimo zamenit.
-Informatsiia o nomere:
-Shestnadtsaterichnyi
-Vosmerichnyi
-Chislo
-Dvoichnyi
-Eta kombinatsiia klavish ne soderzhit nikakikh deistvii.
 Nevozmozhno vypolnit etu operatsiiu s pustym massivom.
-Vkhodit...
-Udalit stroku
-Prekratit vkhod
-Novaia liniia
-Tekstovyi redaktor ne udalsia:
-Napishite stroku, chtoby naiti
-Napishite stroku zameny
-Linii
-Stolbets
-Riad
-Bin
-Vkladka
 Nevozmozhno vypolnit etu operatsiiu so spiskom pustykh strok.
 Tip nastroek ne naiden.
 Naidite variant
@@ -1823,7 +1794,6 @@ Sokhranenie nastroek...
 Sokhranenie nastroek v
 Zagruzka nastroek...
 Perezagruzka nastroek...
-Proverka obnovlenii otkliuchena v razrabatyvaemykh versiiakh.
 Versiia iadra
 Versiia API iadra
 Identifikator khosta
@@ -1992,7 +1962,6 @@ Izmeniaet iazyk polzovatelia vmesto iazyka sistemy.
 Stil vybora odnoi linii
 Stil vybora dvukh linii
 Sovremennyi stil vybora
-Stil vybora tablitsy
 Vyvod mozhet sostoiat tolko iz odnogo simvola
 Vyvod mozhet byt bolshe, chem simvol
 Obieediniaet dva ili bolee tekstovykh faila v konsol.
@@ -3351,7 +3320,6 @@ O nitrotside
 Privet, {0}! Dobro pozhalovat' v Nitrotsid!
 Vklyuchite zagolovki pri vkhode v sistemu, chtoby pokazyvat' RSS-kanaly
 Nastroyki
-Zakryvat'
 Nitrocid KS modeliruyet nashe budushcheye yadro ​​— Nitrocid Kernel.
 API modov
 Domashnyaya stranitsa Nitrocid vyshla iz stroya, i yeye neobkhodimo vernut' obratno v obolochku.

@@ -1766,37 +1766,8 @@ asaamaany vaataavaran notis
 ki aap nitrochid ke poorn nirmaan ke saath bheje gae karnel aidon se atirikt sujhaav praapt kar sakate hain?
 pro tip: kya aap jaanate hain
 keebainding
-sammilit karen
 hataen
-badalen
-sabhee badalen
-sabhee badalen kya
-sankhya jaanakaaree
-heks sampaadak viphal hua:
-upalabdh kunjiyaan
-bait sankhya ko heksaadesimal maan ke saath likhen.
-nirdisht bait sankhya maany nahin hai.
-bait sankhya ko heksaadesimal maan ke saath likhen, jisake saath {0} ko pratisthaapit kiya jaana hai.
-bait sankhya ko heksaadesimal maan ke saath likhen, jise pratisthaapit kiya jaana hai.
-sankhya jaanakaaree:
-heksaadesimal
-ashtaadhaaree
-sankhya
-bainaree
-is keebainding mein koee kriya nahin hai.
 yah opareshan shoony saranee par nahin kiya ja sakata.
-darj karen...
-pankti hataen
-pravisht karana band karen
-naee pankti
-tekst sampaadak viphal hua:
-dhoondhane ke lie string likhen
-pratisthaapan string likhen
-panktiyaan
-stambh
-pankti
-bin
-taib
 yah opareshan shoony panktiyon kee soochee par nahin kiya ja sakata.
 seting prakaar nahin mila.
 koee vikalp khojen
@@ -1823,7 +1794,6 @@ setings sahejee ja rahee hain...
 setings sahejee ja rahee hain
 setings lod kee ja rahee hain...
 setings punah lod kee ja rahee hain...
-devalapament sanskaranon par apadet kee jaanch karana aksham hai.
 karnel sanskaran
 karnel api sanskaran
 host id
@@ -1992,7 +1962,6 @@ sistam bhaasha ke bajaay upayogakarta bhaasha badalata hai
 ek pankti vikalp shailee
 do panktiyon vikalp shailee
 aadhunik vikalp shailee
-taalika vikalp shailee
 aautaput keval ek varn ho sakata hai
 aautaput ek varn se adhik ho sakata hai
 kansol mein do ya adhik tekst failon ko jodata hai.
@@ -3351,7 +3320,6 @@ naitrosid ke baare mein
 namaste, {0}! naitrosid mein aapaka svaagat hai!
 rss feed dikhaane ke lie login par hedalain saksham karen
 setings
-band karen
 naitrosid ks hamaare bhavishy ke karnel, naitrosid karnel ka anukaran karata hai.
 mod api
 naitrosid homapej kraish ho gaya hai aur ise shel par vaapas lautane kee aavashyakata hai.

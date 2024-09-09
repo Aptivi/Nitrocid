@@ -1766,37 +1766,8 @@ Ungewöhnlicher Umgebungshinweis
 dass Sie zusätzliche Tipps vom Kernel-Add-on erhalten können, das mit der Vollversion von Nitrocid geliefert wird?
 Profi-Tipp: Wussten Sie schon?
 Tastenbelegungen
-Einfügen
 Entfernen
-Ersetzen
-Alles ersetzen
-Ersetzen Sie alles, was
-Nummerninfo
-Der Hex-Editor ist fehlgeschlagen:
-Verfügbare Schlüssel
-Schreiben Sie die Bytenummer mit dem Hexadezimalwert.
-Die angegebene Bytenummer ist ungültig.
-Schreiben Sie die Bytenummer mit dem Hexadezimalwert, durch den {0} ersetzt werden soll.
-Schreiben Sie die Bytenummer mit dem zu ersetzenden Hexadezimalwert.
-Nummerninformationen:
-Hexadezimal
-Oktal
-Nummer
-Binär
-Diese Tastenkombination enthält keine Aktion.
 Dieser Vorgang kann nicht für ein Null-Array ausgeführt werden.
-Eingeben...
-Linie entfernen
-Hören Sie auf, einzutreten
-Neue Zeile
-Der Texteditor ist fehlgeschlagen:
-Schreiben Sie die zu findende Zeichenfolge
-Schreiben Sie die Ersatzzeichenfolge
-Linien
-Spalte
-Reihe
-Behälter
-Tab
 Dieser Vorgang kann nicht für eine Nullzeilenliste ausgeführt werden.
 Der Einstellungstyp wurde nicht gefunden.
 Finden Sie eine Option
@@ -1823,7 +1794,6 @@ Einstellungen speichern...
 Einstellungen speichern unter
 Einstellungen werden geladen...
 Einstellungen werden neu geladen...
-Die Suche nach Updates ist bei Entwicklungsversionen deaktiviert.
 Kernelversion
 Kernel-API-Version
 Host-ID
@@ -1992,7 +1962,6 @@ Verwendet die Systemspracheneinstellungen, um zu versuchen, die Sprache abzuleit
 Einzeiliger Auswahlstil
 Zweizeiliger Auswahlstil
 Moderner Wahlstil
-Stil der Tischauswahl
 Die Ausgabe kann nur ein Zeichen sein
 Die Ausgabe kann mehr als ein Zeichen umfassen
 Kombiniert die zwei oder mehr Textdateien in der Konsole.
@@ -3351,7 +3320,6 @@ Taskmanager
 Hallo, {0}! Willkommen bei Nitrocid!
 Aktivieren Sie beim Anmelden Überschriften, um RSS-Feeds anzuzeigen
 Einstellungen
-Schließen
 Nitrocid KS simuliert unseren zukünftigen Kernel, den Nitrocid-Kernel.
 Mod-API
 Die Nitrocid-Homepage ist abgestürzt und muss zur Shell zurückkehren.

@@ -1766,37 +1766,8 @@ Notă de mediu neobișnuit
 că puteți obține sfaturi suplimentare de la suplimentul kernel livrat cu versiunea completă a Nitrocid?
 Sfat profesionist: Știați că
 Legături de taste
-Introduce
 Elimina
-A inlocui
-Înlocuiește-le pe toate
-Înlocuiește tot ce
-Informații despre număr
-Editorul hexadecimal a eșuat:
-Chei disponibile
-Scrieți numărul de octeți cu valoarea hexazecimală.
-Numărul de octeți specificat nu este valid.
-Scrieți numărul de octeți cu valoarea hexazecimală cu care să înlocuiți {0}.
-Scrieți numărul de octeți cu valoarea hexazecimală de înlocuit.
-Informații despre număr:
-hexazecimal
-Octal
-Număr
-Binar
-Această combinare de taste nu conține nicio acțiune.
 Nu se poate efectua această operație pe o matrice nulă.
-Introduce...
-Eliminați linia
-Nu mai intrați
-Linie nouă
-Editorul de text a eșuat:
-Scrieți șirul pentru a găsi
-Scrieți șirul de înlocuire
-Linii
-Coloană
-Rând
-Cos
-Tab
 Nu se poate efectua această operație pe o listă de linii nule.
 Tipul de setări nu a fost găsit.
 Găsiți o opțiune
@@ -1823,7 +1794,6 @@ Se salvează setările...
 Se salvează setările în
 Se încarcă setările...
 Se reîncarcă setările...
-Verificarea actualizărilor este dezactivată pe versiunile de dezvoltare.
 Versiunea Kernel
 Versiunea Kernel API
 ID gazdă
@@ -1992,7 +1962,6 @@ Schimbă limba utilizatorului în loc de limba sistemului
 Stil de alegere cu o singură linie
 Stil de alegere în două linii
 Stil de alegere modern
-Stilul de alegere a mesei
 Ieșirea poate fi doar un caracter
 Ieșirea poate fi mai mult decât un caracter
 Combină cele două fișiere text sau mai multe în consolă.
@@ -3351,7 +3320,6 @@ Despre Nitrocid
 Bună, {0}! Bun venit la Nitrocid!
 Activați titlurile la conectare pentru a afișa fluxuri RSS
 Setări
-Închide
 Nitrocid KS simulează viitorul nostru nucleu, Nitrocid Kernel.
 Mod API
 Pagina de pornire Nitrocid s-a prăbușit și trebuie să revină la shell.

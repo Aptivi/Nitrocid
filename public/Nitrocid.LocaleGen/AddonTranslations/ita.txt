@@ -1766,37 +1766,8 @@ Avviso di ambiente insolito
 che puoi ottenere suggerimenti extra dal componente aggiuntivo del kernel fornito con la build completa di Nitrocid?
 Suggerimento da professionista: lo sapevi
 Associazioni di tasti
-Inserire
 Rimuovere
-Sostituire
-Sostituisci tutto
-Sostituisci tutto cosa
-Informazioni sul numero
-L'editor esadecimale non è riuscito:
-Chiavi disponibili
-Scrivere il numero di byte con il valore esadecimale.
-Il numero di byte specificato non è valido.
-Scrivere il numero di byte con il valore esadecimale con cui sostituire {0}.
-Scrivere il numero di byte con il valore esadecimale da sostituire.
-Informazioni sul numero:
-Esadecimale
-Ottale
-Numero
-Binario
-Questa combinazione di tasti non contiene alcuna azione.
 Impossibile eseguire questa operazione su un array null.
-Accedere...
-Rimuovi linea
-Smettere di entrare
-Nuova linea
-L'editor di testo non è riuscito:
-Scrivi la stringa da trovare
-Scrivi la stringa sostitutiva
-Linee
-Colonna
-Riga
-Bidone
-Tab
 Impossibile eseguire questa operazione su un elenco di righe nulle.
 Tipo di impostazioni non trovato.
 Trova un'opzione
@@ -1823,7 +1794,6 @@ Salvataggio delle impostazioni...
 Salvataggio delle impostazioni in
 Caricamento impostazioni...
 Ricaricamento impostazioni...
-Il controllo degli aggiornamenti è disabilitato nelle versioni di sviluppo.
 Versione del kernel
 Versione dell'API del kernel
 ID dell'ospite
@@ -1992,7 +1962,6 @@ Cambia la lingua dell'utente invece della lingua del sistema
 Stile con scelta di una riga
 Stile di scelta di due linee
 Stile di scelta moderna
-Stile di scelta della tavola
 L'output può contenere un solo carattere
 L'output può essere più di un carattere
 Combina i due file di testo o più nella console.
@@ -3351,7 +3320,6 @@ A proposito di Nitrocid
 Ciao, {0}! Benvenuti in Nitrocid!
 Abilita i titoli all'accesso per mostrare i feed RSS
 Impostazioni
-Vicino
 Nitrocid KS simula il nostro futuro kernel, il Nitrocid Kernel.
 API mod
 La home page di Nitrocid si è bloccata ed è necessario ripristinare la shell.

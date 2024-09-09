@@ -1,4 +1,4 @@
-﻿Invalid colour template {0}
+Invalid colour template {0}
 Enter the admin password for maintenance.
 Kernel Error while booting: {0}
 DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.
@@ -1766,37 +1766,8 @@ Unusual environment notice
 that you can get extra tips from the kernel addon shipped with the full build of Nitrocid?
 Pro tip: Did you know
 Keybindings
-Insert
 Remove
-Replace
-Replace All
-Replace All What
-Number Info
-The hex editor failed:
-Available keys
-Write the byte number with the hexadecimal value.
-The byte number specified is not valid.
-Write the byte number with the hexadecimal value to replace {0} with.
-Write the byte number with the hexadecimal value to be replaced.
-Number information:
-Hexadecimal
-Octal
-Number
-Binary
-This keybinding contains no action.
 Can't perform this operation on a null array.
-Enter...
-Remove Line
-Stop Entering
-New Line
-The text editor failed:
-Write the string to find
-Write the replacement string
-Lines
-Column
-Row
-Bin
-Tab
 Can't perform this operation on a null lines list.
 Settings type is not found.
 Find an option
@@ -1823,7 +1794,6 @@ Saving settings...
 Saving settings to
 Loading settings...
 Reloading settings...
-Checking for updates is disabled on development versions.
 Kernel version
 Kernel API version
 Host ID
@@ -1992,7 +1962,6 @@ Changes the user language instead of the system language
 One line choice style
 Two lines choice style
 Modern choice style
-Table choice style
 The output can be only one character
 The output can be more than a character
 Combines the two text files or more into the console.
@@ -3351,7 +3320,6 @@ About Nitrocid
 Hi, {0}! Welcome to Nitrocid!
 Enable headlines on login to show RSS feeds
 Settings
-Close
 Nitrocid KS simulates our future kernel, the Nitrocid Kernel.
 Mod API
 The Nitrocid Homepage has crashed and needs to revert back to the shell.
