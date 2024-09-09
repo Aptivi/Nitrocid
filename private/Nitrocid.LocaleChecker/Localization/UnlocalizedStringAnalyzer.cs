@@ -245,6 +245,7 @@ namespace Nitrocid.LocaleChecker.Localization
                         // Check the description and the display
                         string description = ((string?)settingsEntryList["Desc"] ?? "").Replace("\\\"", "\"");
                         string displayAs = ((string?)settingsEntryList["DisplayAs"] ?? "").Replace("\\\"", "\"");
+                        string knownAddonDisplay = ((string?)settingsEntryList["display"] ?? "").Replace("\\\"", "\"");
                         if (!string.IsNullOrEmpty(description) && !localizationList.Contains(description))
                         {
                             var diagnostic = Diagnostic.Create(Rule, null, description);
@@ -253,6 +254,11 @@ namespace Nitrocid.LocaleChecker.Localization
                         if (!string.IsNullOrEmpty(displayAs) && !localizationList.Contains(displayAs))
                         {
                             var diagnostic = Diagnostic.Create(Rule, null, displayAs);
+                            context.ReportDiagnostic(diagnostic);
+                        }
+                        if (!string.IsNullOrEmpty(knownAddonDisplay) && !localizationList.Contains(knownAddonDisplay))
+                        {
+                            var diagnostic = Diagnostic.Create(Rule, null, knownAddonDisplay);
                             context.ReportDiagnostic(diagnostic);
                         }
 

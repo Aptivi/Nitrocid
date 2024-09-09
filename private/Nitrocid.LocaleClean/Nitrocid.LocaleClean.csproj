@@ -42,6 +42,7 @@
     <EmbeddedResource Include="..\..\public\Nitrocid\Resources\Themes\*.json" Visible="false" />
     <EmbeddedResource Include="..\..\public\Nitrocid.Addons\**\Resources\*Settings.json" Visible="false" />
     <EmbeddedResource Include="..\..\public\Nitrocid.Addons\Nitrocid.ThemePacks\Resources\Themes\*.json" Visible="false" />
+    <EmbeddedResource Include="..\..\private\Nitrocid.Generators\Nitrocid.Generators.KnownAddons\Resources\KnownAddons.json" Visible="false" />
   </ItemGroup>
 
 </Project>

@@ -70,10 +70,13 @@ namespace Nitrocid.LocaleClean.Analyzers
                         // Check the description and the display
                         string description = ((string?)settingsEntryList["Desc"] ?? "").Replace("\\\"", "\"");
                         string displayAs = ((string?)settingsEntryList["DisplayAs"] ?? "").Replace("\\\"", "\"");
+                        string knownAddonDisplay = ((string?)settingsEntryList["display"] ?? "").Replace("\\\"", "\"");
                         if (!string.IsNullOrEmpty(description) && EntryPoint.localizationList.Contains(description))
                             localizedStrings.Add(description);
                         if (!string.IsNullOrEmpty(displayAs) && EntryPoint.localizationList.Contains(displayAs))
                             localizedStrings.Add(displayAs);
+                        if (!string.IsNullOrEmpty(knownAddonDisplay) && EntryPoint.localizationList.Contains(knownAddonDisplay))
+                            localizedStrings.Add(knownAddonDisplay);
 
                         // Now, check the keys
                         JArray? keys = (JArray?)settingsEntryList["Keys"];

@@ -72,6 +72,7 @@ namespace Nitrocid.LocaleCheckerStandalone.Analyzers
                         // Check the description and the display
                         string description = ((string?)settingsEntryList["Desc"] ?? "").Replace("\\\"", "\"");
                         string displayAs = ((string?)settingsEntryList["DisplayAs"] ?? "").Replace("\\\"", "\"");
+                        string knownAddonDisplay = ((string?)settingsEntryList["display"] ?? "").Replace("\\\"", "\"");
                         if (!string.IsNullOrEmpty(description) && !EntryPoint.localizationList.Contains(description))
                         {
                             TextWriterColor.WriteColor($"{nameof(NLOC0001)}Resources: {resourceName}: Unlocalized settings description found: {description}", true, ConsoleColors.Yellow);
@@ -81,6 +82,11 @@ namespace Nitrocid.LocaleCheckerStandalone.Analyzers
                         {
                             TextWriterColor.WriteColor($"{nameof(NLOC0001)}Resources: {resourceName}: Unlocalized settings display found: {displayAs}", true, ConsoleColors.Yellow);
                             unlocalizedStrings.Add(displayAs);
+                        }
+                        if (!string.IsNullOrEmpty(knownAddonDisplay) && !EntryPoint.localizationList.Contains(knownAddonDisplay))
+                        {
+                            TextWriterColor.WriteColor($"{nameof(NLOC0001)}Resources: {resourceName}: Unlocalized known addon display found: {knownAddonDisplay}", true, ConsoleColors.Yellow);
+                            unlocalizedStrings.Add(knownAddonDisplay);
                         }
 
                         // Now, check the keys
