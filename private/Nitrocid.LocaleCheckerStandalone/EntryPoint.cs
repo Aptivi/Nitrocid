@@ -21,6 +21,7 @@ using Microsoft.Build.Locator;
 using Microsoft.CodeAnalysis.MSBuild;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Nitrocid.LocaleCheckerStandalone.Analyzers;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -115,8 +116,17 @@ namespace Nitrocid.LocaleCheckerStandalone
                     }
                 }
 
+                // Now, analyze also the Nitrocid resources
+                string[] unlocalizedResourceStrings = LocalizableResourcesAnalyzer.GetUnlocalizedStrings();
+                foreach (string unlocalizedString in unlocalizedResourceStrings)
+                {
+                    if (!totalUnlocalized.Contains(unlocalizedString))
+                        totalUnlocalized.Add(unlocalizedString);
+                }
+
                 // Save all unlocalized strings
                 File.WriteAllLines("unlocalized.txt", totalUnlocalized);
+                TextWriterColor.Write($"Total unlocalized strings: {totalUnlocalized.Count}", true, ConsoleColors.Red);
             }
             catch (Exception ex)
             {
