@@ -154,7 +154,7 @@ namespace Nitrocid.Kernel.Updates
             {
                 if (!AvailableUpdate.Updated && AvailableUpdate.UpdateVersion is not null)
                 {
-                    SplashReport.ReportProgress(newVersion), 10);
+                    SplashReport.ReportProgress(newVersion, 10);
                     SplashReport.ReportProgress(AvailableUpdate.UpdateVersion.ToString(), 10);
                     if (Config.MainConfig.AutoDownloadUpdate)
                     {
