@@ -1,3 +1,18 @@
+kernel-simulator (3.0.26.52-0.1.1.17-1) noble; urgency=medium
+
+  * Homepage actions can now be registered
+  * Added more applications to the homepage
+  * Added an option to get lap list
+  * Added unlocalized strings
+  * The Nitrocid Homepage now looks more modern than before
+  * Fixed transparency issues for some apps, such as Calendar TUI
+  * Improved calendar event and reminder listing
+  * You'll need to sign in before being able to shut down or reboot from the login screen
+  * General improvements and bug fixes
+  * Removed extra localized strings
+
+ -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Tue, 10 Sep 2024 10:48:44 +0300
+
 kernel-simulator (3.0.26.49-0.1.1.16-1) noble; urgency=medium
 
   * Updated libraries
