@@ -26,7 +26,6 @@
   <!-- KS General Information -->
   <PropertyGroup>
     <DebugSymbols>true</DebugSymbols>
-    <DebugType>portable</DebugType>
     <OutputType>Exe</OutputType>
     <AssemblyName>Nitrocid</AssemblyName>
     <AssemblyTitle>Nitrocid KS</AssemblyTitle>

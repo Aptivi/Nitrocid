@@ -52,6 +52,7 @@
     <PropertyGroup>
         <DefineDebug Condition="'$(Configuration)' == 'Debug'">true</DefineDebug>
         <DefineTrace Condition="'$(Configuration)' == 'Debug'">true</DefineTrace>
+        <DebugType Condition="'$(Configuration)' == 'Debug'">portable</DebugType>
         <Optimize>true</Optimize>
         <Optimize Condition="'$(Configuration)' == 'Debug'">false</Optimize>
         <NitrocidReleaseSpecifier>REL</NitrocidReleaseSpecifier>
