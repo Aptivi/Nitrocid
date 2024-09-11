@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [ "main", "v0.1.0.x-saas", "v0.1.1.x-servicing" ]
   schedule:
-    - cron: '32 13 * * 2'
+    - cron: '06 12 * * *'
 
 jobs:
   analyze:
@@ -26,6 +26,9 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
+      with:
+        submodules: 'true'
+        ref: ${{ github.ref }}
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v3
       with:
