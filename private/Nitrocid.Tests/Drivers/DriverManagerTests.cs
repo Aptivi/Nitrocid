@@ -40,7 +40,7 @@ namespace Nitrocid.Tests.Drivers
     public class DriverManagerTests
     {
 
-        private static IEnumerable<object[]> ExpectedDriverNames =>
+        public static IEnumerable<object[]> ExpectedDriverNames =>
             [
                 // ---------- Actual ----------                                                         ---------- Expected ----------
                 [DriverTypes.Console, DriverHandler.CurrentConsoleDriver,                               "Default"],
@@ -69,73 +69,73 @@ namespace Nitrocid.Tests.Drivers
                 [DriverTypes.EncodingAsymmetric, DriverHandler.CurrentEncodingAsymmetricDriverLocal,    "Default"],
             ];
 
-        private static IEnumerable<object[]> RegisteredConsoleDriver =>
+        public static IEnumerable<object[]> RegisteredConsoleDriver =>
             [
                 //                     ---------- Provided ----------
                 [DriverTypes.Console, new MyCustomConsoleDriver()],
             ];
 
-        private static IEnumerable<object[]> RegisteredEncryptionDriver =>
+        public static IEnumerable<object[]> RegisteredEncryptionDriver =>
             [
                 //                       ---------- Provided ----------
                 [DriverTypes.Encryption, new MyCustomEncryptionDriver()],
             ];
 
-        private static IEnumerable<object[]> RegisteredFilesystemDriver =>
+        public static IEnumerable<object[]> RegisteredFilesystemDriver =>
             [
                 //                        ---------- Provided ----------
                 [DriverTypes.Filesystem, new MyCustomFilesystemDriver()],
             ];
 
-        private static IEnumerable<object[]> RegisteredNetworkDriver =>
+        public static IEnumerable<object[]> RegisteredNetworkDriver =>
             [
                 //                     ---------- Provided ----------
                 [DriverTypes.Network, new MyCustomNetworkDriver()],
             ];
 
-        private static IEnumerable<object[]> RegisteredRNGDriver =>
+        public static IEnumerable<object[]> RegisteredRNGDriver =>
             [
                 //                 ---------- Provided ----------
                 [DriverTypes.RNG, new MyCustomRNGDriver()],
             ];
 
-        private static IEnumerable<object[]> RegisteredRegexpDriver =>
+        public static IEnumerable<object[]> RegisteredRegexpDriver =>
             [
                 //                    ---------- Provided ----------
                 [DriverTypes.Regexp, new MyCustomRegexpDriver()],
             ];
 
-        private static IEnumerable<object[]> RegisteredDebugLoggerDriver =>
+        public static IEnumerable<object[]> RegisteredDebugLoggerDriver =>
             [
                 //                         ---------- Provided ----------
                 [DriverTypes.DebugLogger, new MyCustomDebugLoggerDriver()],
             ];
 
-        private static IEnumerable<object[]> RegisteredEncodingDriver =>
+        public static IEnumerable<object[]> RegisteredEncodingDriver =>
             [
                 //                      ---------- Provided ----------
                 [DriverTypes.Encoding, new MyCustomEncodingDriver()],
             ];
 
-        private static IEnumerable<object[]> RegisteredHardwareProberDriver =>
+        public static IEnumerable<object[]> RegisteredHardwareProberDriver =>
             [
                 //                            ---------- Provided ----------
                 [DriverTypes.HardwareProber, new MyCustomHardwareProberDriver()],
             ];
 
-        private static IEnumerable<object[]> RegisteredSortingDriver =>
+        public static IEnumerable<object[]> RegisteredSortingDriver =>
             [
                 //                     ---------- Provided ----------
                 [DriverTypes.Sorting, new MyCustomSortingDriver()],
             ];
 
-        private static IEnumerable<object[]> RegisteredInputDriver =>
+        public static IEnumerable<object[]> RegisteredInputDriver =>
             [
                 //                   ---------- Provided ----------
                 [DriverTypes.Input, new MyCustomInputDriver()],
             ];
 
-        private static IEnumerable<object[]> RegisteredEncodingAsymmetricDriver =>
+        public static IEnumerable<object[]> RegisteredEncodingAsymmetricDriver =>
             [
                 //                               ---------- Provided ----------
                 [DriverTypes.EncodingAsymmetric, new MyCustomEncodingAsymmetricDriver()],

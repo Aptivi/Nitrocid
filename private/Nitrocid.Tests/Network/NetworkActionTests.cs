@@ -33,7 +33,7 @@ namespace Nitrocid.Tests.Network
     public class NetworkActionTests
     {
 
-        private static IEnumerable<(string, string, NetworkConnectionType, object)> Connections =>
+        public static IEnumerable<(string, string, NetworkConnectionType, object)> Connections =>
             [
                 // ---------- Provided ----------
                 ("FTP client", "ftp.fabrikam.com", NetworkConnectionType.FTP, ConnectionThreads.ftpThread),
