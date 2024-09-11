@@ -201,11 +201,11 @@ namespace Nitrocid.Shell.Homepage
 
                     // Populate the settings button
                     int buttonPanelPosY = ConsoleWrapper.WindowHeight - 5;
-                    int buttonPanelWidth = ConsoleWrapper.WindowWidth / 2 - 5 + ConsoleWrapper.WindowWidth % 2;
+                    int buttonPanelWidth = widgetLeft - 4;
                     int buttonWidth = buttonPanelWidth / 2 - 2;
                     int buttonHeight = 1;
                     int settingsButtonPosX = 2;
-                    int aboutButtonPosX = buttonWidth + 6;
+                    int aboutButtonPosX = settingsButtonPosX + buttonWidth + 3;
                     var foregroundSettings = buttonHighlight == 1 ? new Color(ConsoleColors.Black) : KernelColorTools.GetColor(KernelColorType.TuiPaneSeparator);
                     var backgroundSettings = buttonHighlight == 1 ? KernelColorTools.GetColor(KernelColorType.TuiPaneSelectedSeparator) : ColorTools.CurrentBackgroundColor;
                     var foregroundSettingsText = buttonHighlight == 1 ? new Color(ConsoleColors.Black) : KernelColorTools.GetColor(KernelColorType.NeutralText);
