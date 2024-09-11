@@ -336,7 +336,7 @@ namespace Nitrocid.Extras.Contacts.Contacts
                 cachedSearchExpression = expression;
 
                 // Get the list of cards satisfying the expression
-                var satisfiedCards = cards.Where((card) => RegexpTools.IsMatch(card.GetPartsArray<FullNameInfo>()[0].FullName, expression)).ToArray();
+                var satisfiedCards = cards.Where((card) => RegexpTools.IsMatch(card.GetPartsArray<FullNameInfo>()[0].FullName ?? "", expression)).ToArray();
 
                 // Return a card if the index is valid
                 if (satisfiedCards.Length > 0)
@@ -381,7 +381,7 @@ namespace Nitrocid.Extras.Contacts.Contacts
                     throw new KernelException(KernelExceptionType.Contacts, Translate.DoTranslation("Regular expression is invalid."));
 
                 // Get the list of cards satisfying the expression
-                var satisfiedCards = cards.Where((card) => RegexpTools.IsMatch(card.GetPartsArray<FullNameInfo>()[0].FullName, expression)).ToArray();
+                var satisfiedCards = cards.Where((card) => RegexpTools.IsMatch(card.GetPartsArray<FullNameInfo>()[0].FullName ?? "", expression)).ToArray();
 
                 // Compare between the cached expression and the given expression
                 if (expression == cachedSearchExpression)

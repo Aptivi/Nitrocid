@@ -103,7 +103,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             Card contact = item;
             if (contact is null)
                 return "";
-            return contact.GetPartsArray<FullNameInfo>()[0].FullName;
+            return contact.GetPartsArray<FullNameInfo>()[0].FullName ?? "";
         }
 
         internal void RemoveContact(int index) =>
@@ -310,13 +310,13 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
 
                 var address = card.GetPartsArray<AddressInfo>()[0];
                 List<string> fullElements = [];
-                string street = address.StreetAddress;
-                string postal = address.PostalCode;
-                string poBox = address.PostOfficeBox;
-                string extended = address.ExtendedAddress;
-                string locality = address.Locality;
-                string region = address.Region;
-                string country = address.Country;
+                string street = address.StreetAddress ?? "";
+                string postal = address.PostalCode ?? "";
+                string poBox = address.PostOfficeBox ?? "";
+                string extended = address.ExtendedAddress ?? "";
+                string locality = address.Locality ?? "";
+                string region = address.Region ?? "";
+                string country = address.Country ?? "";
                 if (!string.IsNullOrEmpty(street))
                     fullElements.Add(street);
                 if (!string.IsNullOrEmpty(postal))
@@ -381,9 +381,9 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
 
                 var org = card.GetPartsArray<OrganizationInfo>()[0];
                 List<string> fullElements = [];
-                string name = org.Name;
-                string unit = org.Unit;
-                string role = org.Role;
+                string name = org.Name ?? "";
+                string unit = org.Unit ?? "";
+                string role = org.Role ?? "";
                 if (!string.IsNullOrEmpty(name))
                     fullElements.Add(name);
                 if (!string.IsNullOrEmpty(unit))

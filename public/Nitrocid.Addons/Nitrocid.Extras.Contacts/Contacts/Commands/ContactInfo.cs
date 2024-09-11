@@ -73,81 +73,81 @@ namespace Nitrocid.Extras.Contacts.Contacts.Commands
                 if (hasFullName)
                 {
                     TextWriters.Write("- " + Translate.DoTranslation("Contact name") + ": ", false, KernelColorType.ListEntry);
-                    TextWriters.Write(contact.GetPartsArray<FullNameInfo>()[0].FullName, KernelColorType.ListValue);
+                    TextWriters.Write(contact.GetPartsArray<FullNameInfo>()[0].FullName ?? "", KernelColorType.ListValue);
                 }
                 if (hasName)
                 {
                     TextWriters.Write("  - " + Translate.DoTranslation("First name") + ": ", false, KernelColorType.ListEntry);
-                    TextWriters.Write(contact.GetPartsArray<NameInfo>()[0].ContactFirstName, KernelColorType.ListValue);
+                    TextWriters.Write(contact.GetPartsArray<NameInfo>()[0].ContactFirstName ?? "", KernelColorType.ListValue);
                     TextWriters.Write("  - " + Translate.DoTranslation("Last name") + ": ", false, KernelColorType.ListEntry);
-                    TextWriters.Write(contact.GetPartsArray<NameInfo>()[0].ContactLastName, KernelColorType.ListValue);
+                    TextWriters.Write(contact.GetPartsArray<NameInfo>()[0].ContactLastName ?? "", KernelColorType.ListValue);
                 }
                 if (hasAddress)
                 {
                     var address = contact.GetPartsArray<AddressInfo>()[0];
-                    string street = address.StreetAddress;
-                    string postal = address.PostalCode;
-                    string poBox = address.PostOfficeBox;
-                    string extended = address.ExtendedAddress;
-                    string locality = address.Locality;
-                    string region = address.Region;
-                    string country = address.Country;
+                    string street = address.StreetAddress ?? "";
+                    string postal = address.PostalCode ?? "";
+                    string poBox = address.PostOfficeBox ?? "";
+                    string extended = address.ExtendedAddress ?? "";
+                    string locality = address.Locality ?? "";
+                    string region = address.Region ?? "";
+                    string country = address.Country ?? "";
                     TextWriters.Write("  - " + Translate.DoTranslation("Contact address") + ": ", false, KernelColorType.ListEntry);
                     TextWriters.Write($"{street}, {postal}, {poBox}, {extended}, {locality}, {region}, {country}", KernelColorType.ListValue);
                 }
                 if (hasMail)
                 {
                     TextWriters.Write("  - " + Translate.DoTranslation("Contact mail") + ": ", false, KernelColorType.ListEntry);
-                    TextWriters.Write(contact.GetPartsArray<EmailInfo>()[0].ContactEmailAddress, KernelColorType.ListValue);
+                    TextWriters.Write(contact.GetPartsArray<EmailInfo>()[0].ContactEmailAddress ?? "", KernelColorType.ListValue);
                 }
                 if (hasOrganization)
                 {
                     var org = contact.GetPartsArray<OrganizationInfo>()[0];
-                    string name = org.Name;
-                    string unit = org.Unit;
-                    string role = org.Role;
+                    string name = org.Name ?? "";
+                    string unit = org.Unit ?? "";
+                    string role = org.Role ?? "";
                     TextWriters.Write("  - " + Translate.DoTranslation("Contact organization") + ": ", false, KernelColorType.ListEntry);
                     TextWriters.Write($"{name}, {unit}, {role}", KernelColorType.ListValue);
                 }
                 if (hasTelephone)
                 {
                     TextWriters.Write("  - " + Translate.DoTranslation("Contact telephone") + ": ", false, KernelColorType.ListEntry);
-                    TextWriters.Write(contact.GetPartsArray<TelephoneInfo>()[0].ContactPhoneNumber, KernelColorType.ListValue);
+                    TextWriters.Write(contact.GetPartsArray<TelephoneInfo>()[0].ContactPhoneNumber ?? "", KernelColorType.ListValue);
                 }
                 if (hasURL)
                 {
                     TextWriters.Write("  - " + Translate.DoTranslation("Contact URL") + ": ", false, KernelColorType.ListEntry);
-                    TextWriters.Write(contact.GetPartsArray<UrlInfo>()[0].Url, KernelColorType.ListValue);
+                    TextWriters.Write(contact.GetPartsArray<UrlInfo>()[0].Url ?? "", KernelColorType.ListValue);
                 }
                 if (hasGeo)
                 {
                     TextWriters.Write("  - " + Translate.DoTranslation("Contact Geo") + ": ", false, KernelColorType.ListEntry);
-                    TextWriters.Write(contact.GetPartsArray<GeoInfo>()[0].Geo, KernelColorType.ListValue);
+                    TextWriters.Write(contact.GetPartsArray<GeoInfo>()[0].Geo ?? "", KernelColorType.ListValue);
                 }
                 if (hasImpp)
                 {
                     TextWriters.Write("  - " + Translate.DoTranslation("Contact IMPP") + ": ", false, KernelColorType.ListEntry);
-                    TextWriters.Write(contact.GetPartsArray<ImppInfo>()[0].ContactIMPP, KernelColorType.ListValue);
+                    TextWriters.Write(contact.GetPartsArray<ImppInfo>()[0].ContactIMPP ?? "", KernelColorType.ListValue);
                 }
                 if (hasNickname)
                 {
                     TextWriters.Write("  - " + Translate.DoTranslation("Contact nickname") + ": ", false, KernelColorType.ListEntry);
-                    TextWriters.Write(contact.GetPartsArray<NicknameInfo>()[0].ContactNickname, KernelColorType.ListValue);
+                    TextWriters.Write(contact.GetPartsArray<NicknameInfo>()[0].ContactNickname ?? "", KernelColorType.ListValue);
                 }
                 if (hasRoles)
                 {
                     TextWriters.Write("  - " + Translate.DoTranslation("Contact role") + ": ", false, KernelColorType.ListEntry);
-                    TextWriters.Write(contact.GetPartsArray<RoleInfo>()[0].ContactRole, KernelColorType.ListValue);
+                    TextWriters.Write(contact.GetPartsArray<RoleInfo>()[0].ContactRole ?? "", KernelColorType.ListValue);
                 }
                 if (hasTitles)
                 {
                     TextWriters.Write("  - " + Translate.DoTranslation("Contact title") + ": ", false, KernelColorType.ListEntry);
-                    TextWriters.Write(contact.GetPartsArray<TitleInfo>()[0].ContactTitle, KernelColorType.ListValue);
+                    TextWriters.Write(contact.GetPartsArray<TitleInfo>()[0].ContactTitle ?? "", KernelColorType.ListValue);
                 }
                 if (hasNotes)
                 {
                     TextWriters.Write("  - " + Translate.DoTranslation("Contact note") + ": ", false, KernelColorType.ListEntry);
-                    TextWriters.Write(contact.GetPartsArray<NoteInfo>()[0].Note, KernelColorType.ListValue);
+                    TextWriters.Write(contact.GetPartsArray<NoteInfo>()[0].Note ?? "", KernelColorType.ListValue);
                 }
                 return 0;
             }
