@@ -214,7 +214,7 @@ namespace Nitrocid.Shell.Homepage
                     var foregroundAboutText = buttonHighlight == 2 ? new Color(ConsoleColors.Black) : KernelColorTools.GetColor(KernelColorType.NeutralText);
                     builder.Append(BorderColor.RenderBorder(settingsButtonPosX, buttonPanelPosY, buttonWidth, buttonHeight, foregroundSettings, backgroundSettings));
                     builder.Append(CenteredTextColor.RenderCenteredOneLine(buttonPanelPosY + 1, Translate.DoTranslation("Settings"), foregroundSettingsText, backgroundSettings, settingsButtonPosX + 1, buttonPanelWidth + settingsButtonPosX + aboutButtonPosX + 2 - ConsoleWrapper.WindowWidth % 2));
-                    builder.Append(BorderColor.RenderBorder(aboutButtonPosX, buttonPanelPosY, buttonWidth, buttonHeight, foregroundAbout, backgroundAbout));
+                    builder.Append(BorderColor.RenderBorder(aboutButtonPosX, buttonPanelPosY, aboutButtonPosX + buttonWidth == buttonPanelWidth ? buttonWidth + 1 : buttonWidth, buttonHeight, foregroundAbout, backgroundAbout));
                     builder.Append(CenteredTextColor.RenderCenteredOneLine(buttonPanelPosY + 1, Translate.DoTranslation("About"), foregroundAboutText, backgroundAbout, aboutButtonPosX + 1, buttonWidth + aboutButtonPosX + 4 - ConsoleWrapper.WindowWidth % 2));
 
                     // Populate the available options
