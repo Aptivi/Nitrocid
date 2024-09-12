@@ -1,3 +1,10 @@
+kernel-simulator (3.0.26.52-0.1.1.19-1) noble; urgency=medium
+
+  * Updated Terminaux to 5.1.0
+  * Settings button fixed
+
+ -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Thu, 12 Sep 2024 17:30:14 +0300
+
 kernel-simulator (3.0.26.52-0.1.1.18-1) noble; urgency=medium
 
   * Updated libraries
