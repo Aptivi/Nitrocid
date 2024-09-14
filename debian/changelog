@@ -1,3 +1,9 @@
+kernel-simulator (3.0.26.52-0.1.1.20-1) noble; urgency=medium
+
+  * Updated FluentFTP
+
+ -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Sat, 14 Sep 2024 14:58:14 +0300
+
 kernel-simulator (3.0.26.52-0.1.1.19-1) noble; urgency=medium
 
   * Updated Terminaux to 5.1.0

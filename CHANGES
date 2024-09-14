@@ -1,11 +1,10 @@
-We've made this release to present you some improvements.
+We've made this release to present you some improvements to the FTP shell.
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` Updated Terminaux to 5.1.0
-- `[*]` Settings button fixed
+- `[*]` Updated FluentFTP
 
 Review the commit history if you want to get a deep insight about the changes.
 
