@@ -16,7 +16,7 @@ jobs:
         ref: ${{ github.ref }}
     - name: Build Docker image
       id: push
-      uses: docker/build-push-action
+      uses: docker/build-push-action@master
       with:
         context: .
         file: ./Dockerfile
