@@ -1,0 +1,26 @@
+name: Build Project (Docker)
+
+on:
+  push:
+    branches: [ "main", "v0.1.0.x-saas", "v0.1.1.x-servicing" ]
+  pull_request:
+    branches: [ "main", "v0.1.0.x-saas", "v0.1.1.x-servicing" ]
+    
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        ref: ${{ github.ref }}
+    - name: Build Docker image
+      id: push
+      uses: docker/build-push-action
+      with:
+        context: .
+        file: ./Dockerfile
+        push: false
+        tags: ${{ steps.meta.outputs.tags }}
+        labels: ${{ steps.meta.outputs.labels }}
+        
