@@ -5,13 +5,12 @@ WORKDIR /NKS
 COPY . ./
 
 # Attempt to build Nitrocid KS
-RUN dotnet restore
-RUN dotnet publish -c Release -o out
+RUN make
 
 # Run the ASP.NET image
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /NKS
 
 # Copy the output files and start Nitrocid KS
-COPY --from=build-env /NKS/out .
+COPY --from=build-env /NKS/public/Nitrocid/KSBuild/net8.0 .
 ENTRYPOINT ["dotnet", "Nitrocid.dll"]
