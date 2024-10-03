@@ -25,7 +25,7 @@ using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
 using Terminaux.Colors;
-using Textify.Data.Analysis.Words;
+using Textify.Data.Words;
 using Terminaux.Base;
 using Terminaux.Base.Buffered;
 using Terminaux.Inputs.Styles.Infobox;
@@ -187,13 +187,13 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 if (hung)
                 {
                     // Lost the game
-                    InfoBoxColor.WriteInfoBox(Translate.DoTranslation("You're hung!"));
+                    InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("You're hung!"));
                 }
                 else if (won)
                 {
                     // Won the game
                     hung = true;
-                    InfoBoxColor.WriteInfoBox(Translate.DoTranslation("You win!"));
+                    InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("You win!"));
                 }
                 else
                 {

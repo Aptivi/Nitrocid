@@ -410,7 +410,7 @@ namespace Nitrocid.Shell.Homepage
                                 exiting = true;
                                 break;
                             case ConsoleKey.K:
-                                InfoBoxColor.WriteInfoBoxColorBack(
+                                InfoBoxModalColor.WriteInfoBoxModalColorBack(
                                     "Available keys",
                                     KeybindingsWriter.RenderKeybindingHelpText(bindings), 
                                     KernelColorTools.GetColor(KernelColorType.TuiBoxForeground),
@@ -426,7 +426,7 @@ namespace Nitrocid.Shell.Homepage
             catch (Exception ex)
             {
                 ColorTools.LoadBack();
-                InfoBoxColor.WriteInfoBoxColor(Translate.DoTranslation("The Nitrocid Homepage has crashed and needs to revert back to the shell.") + $": {ex.Message}", true, KernelColorTools.GetColor(KernelColorType.Error));
+                InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("The Nitrocid Homepage has crashed and needs to revert back to the shell.") + $": {ex.Message}", KernelColorTools.GetColor(KernelColorType.Error));
             }
             finally
             {
@@ -626,7 +626,7 @@ namespace Nitrocid.Shell.Homepage
 
         private static void OpenAboutBox()
         {
-            InfoBoxColor.WriteInfoBox(
+            InfoBoxModalColor.WriteInfoBoxModal(
                 Translate.DoTranslation("About Nitrocid"),
                 Translate.DoTranslation("Nitrocid KS simulates our future kernel, the Nitrocid Kernel.") + "\n\n" +
                 Translate.DoTranslation("Version") + $": {KernelMain.VersionFullStr}" + "\n" +

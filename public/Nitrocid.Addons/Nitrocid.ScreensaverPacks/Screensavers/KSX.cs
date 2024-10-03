@@ -20,7 +20,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Textify.Figlet;
+using Textify.Data.Figlet;
 using Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations;
 using Nitrocid.ScreensaverPacks.Animations.Glitch;
 using Terminaux.Colors;

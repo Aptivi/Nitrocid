@@ -129,7 +129,7 @@ namespace Nitrocid.Users.Login
                         // Cancel shutdown and reboot attempts
                         PowerManager.RebootRequested = false;
                         PowerManager.KernelShutdown = false;
-                        InfoBoxColor.WriteInfoBoxColor(Translate.DoTranslation("You don't have permission to request a reboot or a shutdown."), KernelColorTools.GetColor(KernelColorType.Error));
+                        InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("You don't have permission to request a reboot or a shutdown."), KernelColorTools.GetColor(KernelColorType.Error));
                     }
                     else
                         break;

@@ -19,7 +19,7 @@
 
 using System;
 using System.Linq;
-using Textify.Figlet;
+using Textify.Data.Figlet;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Debugging;

@@ -305,7 +305,7 @@ namespace Nitrocid.Misc.Splash
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, $"Splash closing failed to display: {ex.Message}");
                     DebugWriter.WriteDebugStackTrace(ex);
-                    InfoBoxColor.WriteInfoBoxColor(Translate.DoTranslation("The closing splash has failed to display") + $".\n  - {ex.Message}", KernelColorTools.GetColor(KernelColorType.Error));
+                    InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("The closing splash has failed to display") + $".\n  - {ex.Message}", KernelColorTools.GetColor(KernelColorType.Error));
                 }
                 finally
                 {
@@ -419,7 +419,7 @@ namespace Nitrocid.Misc.Splash
                 if (splashOut)
                 {
                     BeginSplashOut(context);
-                    InfoBoxColor.WriteInfoBox(Translate.DoTranslation("We've reached {0}%!"), vars: prog);
+                    InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("We've reached {0}%!"), vars: prog);
                     EndSplashOut(context);
                 }
             }

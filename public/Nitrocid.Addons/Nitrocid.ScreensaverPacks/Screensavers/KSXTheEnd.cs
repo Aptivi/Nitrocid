@@ -24,7 +24,7 @@ using Terminaux.Colors;
 using Terminaux.Base;
 using System;
 using Terminaux.Writer.FancyWriters;
-using Textify.Figlet;
+using Textify.Data.Figlet;
 using Nitrocid.ScreensaverPacks.Animations.Glitch;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Time.Renderers;

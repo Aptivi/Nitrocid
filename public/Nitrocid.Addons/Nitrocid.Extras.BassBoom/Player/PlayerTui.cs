@@ -118,21 +118,21 @@ namespace Nitrocid.Extras.BassBoom.Player
                 {
                     if (PlaybackTools.Playing)
                         PlaybackTools.Stop();
-                    InfoBoxColor.WriteInfoBox(Translate.DoTranslation("There's an error with Basolia when trying to process the music file.") + "\n\n" + bex.Message);
+                    InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("There's an error with Basolia when trying to process the music file.") + "\n\n" + bex.Message);
                     playerScreen.RequireRefresh();
                 }
                 catch (BasoliaOutException bex)
                 {
                     if (PlaybackTools.Playing)
                         PlaybackTools.Stop();
-                    InfoBoxColor.WriteInfoBox(Translate.DoTranslation("There's an error with Basolia output when trying to process the music file.") + "\n\n" + bex.Message);
+                    InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("There's an error with Basolia output when trying to process the music file.") + "\n\n" + bex.Message);
                     playerScreen.RequireRefresh();
                 }
                 catch (Exception ex)
                 {
                     if (PlaybackTools.Playing)
                         PlaybackTools.Stop();
-                    InfoBoxColor.WriteInfoBox(Translate.DoTranslation("There's an unknown error when trying to process the music file.") + "\n\n" + ex.Message);
+                    InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("There's an unknown error when trying to process the music file.") + "\n\n" + ex.Message);
                     playerScreen.RequireRefresh();
                 }
             }
@@ -307,7 +307,7 @@ namespace Nitrocid.Extras.BassBoom.Player
             }
             catch (Exception ex)
             {
-                InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Playback failure") + $": {ex.Message}");
+                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Playback failure") + $": {ex.Message}");
                 Common.failedToPlay = true;
             }
         }

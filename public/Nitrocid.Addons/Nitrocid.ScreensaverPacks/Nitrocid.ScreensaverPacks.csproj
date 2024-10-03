@@ -39,8 +39,4 @@
     <EmbeddedResource Include="Resources\*" />
   </ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Textify.Offline.Data.Analysis" Version="1.11.2" />
-  </ItemGroup>
-
 </Project>

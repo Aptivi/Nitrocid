@@ -36,10 +36,6 @@
   <!-- Extras.Amusements addon Platform Information End -->
 
   <ItemGroup>
-    <PackageReference Include="Textify.Offline.Data.Analysis" Version="1.11.2" />
-  </ItemGroup>
-
-  <ItemGroup>
     <EmbeddedResource Include="Resources\*" />
   </ItemGroup>
   

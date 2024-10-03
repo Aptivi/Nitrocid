@@ -48,10 +48,10 @@ namespace Nitrocid.Misc.Screensaver
         public virtual void ScreensaverSeizureWarning()
         {
             ColorTools.LoadBack();
-            InfoBoxColor.WriteInfoBoxColorBack(
+            InfoBoxNonModalColor.WriteInfoBoxColorBack(
                 Translate.DoTranslation("Photosensitive seizure warning") + CharManager.NewLine + CharManager.NewLine +
                 Translate.DoTranslation("This screensaver may contain flashing images and fast-paced animations that may cause seizures for the photosensitive. It's recommended to seek a medical specialist for more information about such seizure before continuing. If you want to get rid of this warning, you can turn this off from the screensaver settings."),
-                false, ConsoleColors.White, ConsoleColors.Red);
+                ConsoleColors.White, ConsoleColors.Red);
             ConsoleWrapper.CursorVisible = false;
             ThreadManager.SleepUntilInput(10000);
         }

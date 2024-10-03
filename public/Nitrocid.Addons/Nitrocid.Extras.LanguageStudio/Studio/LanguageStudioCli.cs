@@ -100,7 +100,7 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
 
         internal void Save()
         {
-            InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Saving language..."), false);
+            InfoBoxNonModalColor.WriteInfoBox(Translate.DoTranslation("Saving language..."));
             var lines = translatedLines;
             var pathToTranslations = this.pathToTranslations;
             foreach (var translatedLine in lines)

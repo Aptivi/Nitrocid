@@ -124,7 +124,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
                 if (Answer >= 1 & Answer <= MaxSections)
                 {
                     // The selected answer is a section
-                    InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Loading section..."), false);
+                    InfoBoxNonModalColor.WriteInfoBox(Translate.DoTranslation("Loading section..."));
                     SettingsEntry SelectedSection = SettingsEntries[Answer - 1];
                     DebugWriter.WriteDebug(DebugLevel.I, "Opening section {0}...", SelectedSection.Name);
                     OpenSection(SelectedSection.Name, SelectedSection, settingsType);
@@ -168,8 +168,8 @@ namespace Nitrocid.Kernel.Configuration.Settings
                 {
                     // The selected answer is "Migrate old configuration"
                     if (!ConfigMigration.MigrateAllConfig())
-                        InfoBoxColor.WriteInfoBoxColor(Translate.DoTranslation("Configuration migration may not have been completed successfully. If you're sure that your configuration files are valid, investigate the debug logs for more info.") + " " +
-                            Translate.DoTranslation("Press any key to go back."), true, KernelColorTools.GetColor(KernelColorType.Error));
+                        InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("Configuration migration may not have been completed successfully. If you're sure that your configuration files are valid, investigate the debug logs for more info.") + " " +
+                            Translate.DoTranslation("Press any key to go back."), KernelColorTools.GetColor(KernelColorType.Error));
                 }
                 else if (Answer == MaxSections + 9 || Answer == -1)
                 {
@@ -182,7 +182,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
                 {
                     // Invalid selection
                     DebugWriter.WriteDebug(DebugLevel.W, "Option is not valid. Returning...");
-                    InfoBoxColor.WriteInfoBoxColor(Translate.DoTranslation("Specified option {0} is invalid.") + " " + Translate.DoTranslation("Press any key to go back."), true, KernelColorTools.GetColor(KernelColorType.Error), Answer);
+                    InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("Specified option {0} is invalid.") + " " + Translate.DoTranslation("Press any key to go back."), KernelColorTools.GetColor(KernelColorType.Error), Answer);
                 }
             }
         }
@@ -356,7 +356,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
 
                 // Search for the setting
                 ConsoleWrapper.CursorVisible = false;
-                InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Searching for settings..."), false);
+                InfoBoxNonModalColor.WriteInfoBox(Translate.DoTranslation("Searching for settings..."));
                 Results = ConfigTools.FindSetting(SearchFor, configType);
                 InputChoiceInfo[] finalResults = Results.Union(Back).ToArray();
 
@@ -386,12 +386,12 @@ namespace Nitrocid.Kernel.Configuration.Settings
                 }
                 else
                 {
-                    InfoBoxColor.WriteInfoBoxColor(Translate.DoTranslation("Nothing is found. Make sure that you've written the setting correctly."), true, KernelColorTools.GetColor(KernelColorType.Error));
+                    InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("Nothing is found. Make sure that you've written the setting correctly."), KernelColorTools.GetColor(KernelColorType.Error));
                 }
             }
             catch (Exception ex)
             {
-                InfoBoxColor.WriteInfoBoxColor(Translate.DoTranslation("Failed to find your requested setting.") + $" {ex.Message}", true, KernelColorTools.GetColor(KernelColorType.Error));
+                InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("Failed to find your requested setting.") + $" {ex.Message}", KernelColorTools.GetColor(KernelColorType.Error));
             }
         }
 

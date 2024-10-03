@@ -18,7 +18,7 @@
 //
 
 using System;
-using Textify.Figlet;
+using Textify.Data.Figlet;
 using Terminaux.Colors;
 using Nitrocid.Misc.Screensaver;
 using Terminaux.Writer.ConsoleWriters;

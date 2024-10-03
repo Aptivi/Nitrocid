@@ -202,7 +202,7 @@ namespace Nitrocid.Kernel.Starting
                 SplashManager.BeginSplashOut(SplashContext.StartingUp);
                 DebugWriter.WriteDebug(DebugLevel.E, $"Failed to initialize essential components! {ex.Message}");
                 DebugWriter.WriteDebugStackTrace(ex);
-                InfoBoxColor.WriteInfoBox(
+                InfoBoxModalColor.WriteInfoBoxModal(
                     Translate.DoTranslation("The kernel failed to initialize some of the essential components. The kernel will not work properly at this point.") + "\n\n" +
                     Translate.DoTranslation("Error information:") + $" {ex.Message}"
                 );
@@ -276,7 +276,7 @@ namespace Nitrocid.Kernel.Starting
                 SplashManager.BeginSplashOut(SplashContext.StartingUp);
                 DebugWriter.WriteDebug(DebugLevel.E, $"Failed to initialize optional components! {ex.Message}");
                 DebugWriter.WriteDebugStackTrace(ex);
-                InfoBoxColor.WriteInfoBox(
+                InfoBoxModalColor.WriteInfoBoxModal(
                     Translate.DoTranslation("The kernel failed to initialize some of the optional components. If it's trying to read a configuration file, make sure that it's formatted correctly.") + "\n\n" +
                     Translate.DoTranslation("Error information:") + $" {ex.Message}"
                 );
@@ -383,7 +383,7 @@ namespace Nitrocid.Kernel.Starting
                 SplashManager.BeginSplashOut(context);
                 DebugWriter.WriteDebug(DebugLevel.E, $"Failed to reset everything! {ex.Message}");
                 DebugWriter.WriteDebugStackTrace(ex);
-                InfoBoxColor.WriteInfoBox(
+                InfoBoxModalColor.WriteInfoBoxModal(
                     Translate.DoTranslation("The kernel failed to reset all the configuration to their initial states. Some of the components might have not unloaded correctly. If you're experiencing problems after the reboot, this might be the cause. Please shut down the kernel once rebooted.") + "\n\n" +
                     Translate.DoTranslation("Error information:") + $" {ex.Message}"
                 );

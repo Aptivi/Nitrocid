@@ -18,7 +18,7 @@
 //
 
 using System;
-using Textify.Data.Analysis.NameGen;
+using Textify.Data.NameGen;
 using Nitrocid.Misc.Screensaver;
 using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Drivers.RNG;
@@ -44,7 +44,7 @@ namespace Nitrocid.Extras.NameGen.Screensavers
             base.ScreensaverPreparation();
 
             // Populate the names
-            InfoBoxColor.WriteInfoBoxColor("Welcome to the database! Fetching identities...", false, ConsoleColors.Green);
+            InfoBoxNonModalColor.WriteInfoBoxColor("Welcome to the database! Fetching identities...", ConsoleColors.Green);
             NameGenerator.PopulateNames();
         }
 
@@ -87,7 +87,7 @@ namespace Nitrocid.Extras.NameGen.Screensavers
 
                 // Print all information
                 ConsoleWrapper.Clear();
-                InfoBoxColor.WriteInfoBoxColor(
+                InfoBoxNonModalColor.WriteInfoBoxColor(
                     "- Name:                  {0}\n" +
                    $"{new string('=', $"- Name:                  {GeneratedName}".Length)}\n" +
                     "\n" +
@@ -97,7 +97,6 @@ namespace Nitrocid.Extras.NameGen.Screensavers
                     "  - Birth date:          {4}\n",
 
                     // We don't want to wait for input as we're on the screensaver environment.
-                    false,
                     ConsoleColors.Green,
 
                     // Necessary variables to print

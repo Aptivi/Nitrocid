@@ -19,7 +19,7 @@
 
 using System.Threading;
 using System;
-using Textify.Figlet;
+using Textify.Data.Figlet;
 using System.Text;
 using Terminaux.Sequences.Builder.Types;
 using Nitrocid.Kernel.Configuration;

@@ -31,7 +31,7 @@ using System;
 using System.Runtime.Versioning;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
-using Textify.Figlet;
+using Textify.Data.Figlet;
 
 namespace Nitrocid.ScreensaverPacks.Settings
 {

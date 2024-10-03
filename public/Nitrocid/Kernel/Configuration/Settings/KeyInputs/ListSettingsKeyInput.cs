@@ -99,7 +99,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
                         }
                     }
                     else
-                        InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Invalid action selected."));
+                        InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Invalid action selected."));
                 }
             }
             bail = true;

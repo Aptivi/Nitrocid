@@ -123,7 +123,7 @@ namespace Nitrocid.Extras.RssShell.RSS.Interactive
             finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
 
             // Now, render the info box
-            InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
+            InfoBoxModalColor.WriteInfoBoxModalColorBack(finalInfoRendered.ToString(), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
         }
 
         internal void OpenArticleLink(RSSArticle? item)
@@ -133,7 +133,7 @@ namespace Nitrocid.Extras.RssShell.RSS.Interactive
                 return;
             bool hasLink = !string.IsNullOrEmpty(item.ArticleLink);
             if (!hasLink)
-                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("This article doesn't have a link."), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
+                InfoBoxModalColor.WriteInfoBoxModalColorBack(Translate.DoTranslation("This article doesn't have a link."), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
 
             // Now, open the host browser
             try
@@ -147,7 +147,7 @@ namespace Nitrocid.Extras.RssShell.RSS.Interactive
             }
             catch (Exception e)
             {
-                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Can't open the host browser to the article link.") + $" {e.Message}", KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
+                InfoBoxModalColor.WriteInfoBoxModalColorBack(Translate.DoTranslation("Can't open the host browser to the article link.") + $" {e.Message}", KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
             }
         }
 

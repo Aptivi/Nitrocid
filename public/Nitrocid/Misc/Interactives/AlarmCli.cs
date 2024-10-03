@@ -80,13 +80,13 @@ namespace Nitrocid.Misc.Interactives
             string name = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Write the alarm name"));
             if (string.IsNullOrWhiteSpace(name))
             {
-                InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Alarm name is not specified."));
+                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Alarm name is not specified."));
                 return;
             }
             string interval = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Write the alarm interval in this format") + ": HH:MM:SS");
             if (!TimeSpan.TryParse(interval, out TimeSpan span))
             {
-                InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Alarm interval is either not specified or is invalid."));
+                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Alarm interval is either not specified or is invalid."));
                 return;
             }
             AlarmTools.StartAlarm(name, name, (int)span.TotalSeconds);

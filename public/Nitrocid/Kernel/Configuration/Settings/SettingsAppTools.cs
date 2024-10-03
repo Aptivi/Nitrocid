@@ -76,12 +76,12 @@ namespace Nitrocid.Kernel.Configuration.Settings
             DebugWriter.WriteDebug(DebugLevel.I, "Saving settings...");
             try
             {
-                InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Saving settings..."), false);
+                InfoBoxNonModalColor.WriteInfoBox(Translate.DoTranslation("Saving settings..."));
                 Config.CreateConfig();
             }
             catch (Exception ex)
             {
-                InfoBoxColor.WriteInfoBoxColor(ex.Message, true, KernelColorTools.GetColor(KernelColorType.Error));
+                InfoBoxModalColor.WriteInfoBoxModalColor(ex.Message, KernelColorTools.GetColor(KernelColorType.Error));
                 DebugWriter.WriteDebugStackTrace(ex);
             }
         }
@@ -92,12 +92,12 @@ namespace Nitrocid.Kernel.Configuration.Settings
             DebugWriter.WriteDebug(DebugLevel.I, "Saving settings...");
             try
             {
-                InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Saving settings to") + $" {location}...", false);
+                InfoBoxNonModalColor.WriteInfoBox(Translate.DoTranslation("Saving settings to") + $" {location}...");
                 Config.CreateConfig(location);
             }
             catch (Exception ex)
             {
-                InfoBoxColor.WriteInfoBoxColor(ex.Message, true, KernelColorTools.GetColor(KernelColorType.Error));
+                InfoBoxModalColor.WriteInfoBoxModalColor(ex.Message, KernelColorTools.GetColor(KernelColorType.Error));
                 DebugWriter.WriteDebugStackTrace(ex);
             }
         }
@@ -110,7 +110,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
             if (!Checking.FileExists(Location))
                 SaveSettings(Location);
             else
-                InfoBoxColor.WriteInfoBoxColor(Translate.DoTranslation("Can't save kernel settings on top of existing file."), true, KernelColorTools.GetColor(KernelColorType.Error));
+                InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("Can't save kernel settings on top of existing file."), KernelColorTools.GetColor(KernelColorType.Error));
         }
 
         internal static void LoadSettingsFrom(BaseKernelConfig config)
@@ -121,60 +121,60 @@ namespace Nitrocid.Kernel.Configuration.Settings
             {
                 try
                 {
-                    InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Loading settings..."), false);
+                    InfoBoxNonModalColor.WriteInfoBox(Translate.DoTranslation("Loading settings..."));
                     Config.ReadConfig(config, Location);
-                    InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Saving settings..."), false);
+                    InfoBoxNonModalColor.WriteInfoBox(Translate.DoTranslation("Saving settings..."));
                     Config.CreateConfig();
                 }
                 catch (Exception ex)
                 {
-                    InfoBoxColor.WriteInfoBoxColor(ex.Message, true, KernelColorTools.GetColor(KernelColorType.Error));
+                    InfoBoxModalColor.WriteInfoBoxModalColor(ex.Message, KernelColorTools.GetColor(KernelColorType.Error));
                     DebugWriter.WriteDebugStackTrace(ex);
                 }
             }
             else
-                InfoBoxColor.WriteInfoBoxColor(Translate.DoTranslation("File not found."), true, KernelColorTools.GetColor(KernelColorType.Error));
+                InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("File not found."), KernelColorTools.GetColor(KernelColorType.Error));
         }
 
         internal static void ReloadConfig()
         {
             DebugWriter.WriteDebug(DebugLevel.W, "Reloading...");
-            InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Reloading settings..."), false);
+            InfoBoxNonModalColor.WriteInfoBox(Translate.DoTranslation("Reloading settings..."));
             ConfigTools.ReloadConfig();
-            InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Configuration reloaded. You might need to reboot the kernel for some changes to take effect."));
+            InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Configuration reloaded. You might need to reboot the kernel for some changes to take effect."));
         }
 
         internal static void CheckForSystemUpdates()
         {
 #if SPECIFIERREL && !PACKAGEMANAGERBUILD
             // Check for updates now
-            InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Checking for system updates..."), false);
+            InfoBoxNonModalColor.WriteInfoBox(Translate.DoTranslation("Checking for system updates..."));
             var AvailableUpdate = UpdateManager.FetchBinaryArchive();
             if (AvailableUpdate is not null)
             {
                 if (!AvailableUpdate.Updated)
                 {
-                    InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Found new version: ") + $"{AvailableUpdate.UpdateVersion}");
+                    InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Found new version: ") + $"{AvailableUpdate.UpdateVersion}");
                 }
                 else
                 {
-                    InfoBoxColor.WriteInfoBox(Translate.DoTranslation("You're up to date!"));
+                    InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("You're up to date!"));
                 }
             }
             else if (AvailableUpdate is null)
             {
-                InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Failed to check for updates."));
+                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Failed to check for updates."));
             }
 #elif PACKAGEMANAGERBUILD
-            InfoBoxColor.WriteInfoBox(Translate.DoTranslation("You've installed Nitrocid KS using your package manager. Please use it to upgrade your kernel instead."));
+            InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("You've installed Nitrocid KS using your package manager. Please use it to upgrade your kernel instead."));
 #else
-            InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Checking for updates is disabled on development versions."));
+            InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Checking for updates is disabled on development versions."));
 #endif
         }
 
         internal static void SystemInformation()
         {
-            InfoBoxColor.WriteInfoBox(
+            InfoBoxModalColor.WriteInfoBoxModal(
                 $"{Translate.DoTranslation("Kernel version")}: {KernelMain.VersionFullStr}\n" +
                 $"{Translate.DoTranslation("Kernel API version")}: {KernelMain.ApiVersion}\n" +
                 $"{Translate.DoTranslation("Host ID")}: {KernelPlatform.GetCurrentRid()}\n" +
@@ -237,7 +237,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Error trying to open section.");
                 string finalSection = Translate.DoTranslation("You're Lost!");
-                InfoBoxColor.WriteInfoBoxColor(
+                InfoBoxModalColor.WriteInfoBoxModalColor(
                     $"  * {finalSection}\n\n" +
                     $"{message}\n\n" +
                     $"{Translate.DoTranslation("If you're sure that you've opened the right section, turn on the kernel debugger, reproduce, and try to investigate the logs.")}",
@@ -248,7 +248,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Error trying to open section: {0}", ex.Message);
                 string finalSection = Translate.DoTranslation("You're Lost!");
-                InfoBoxColor.WriteInfoBoxColor(
+                InfoBoxModalColor.WriteInfoBoxModalColor(
                     $"  * {finalSection}\n\n" +
                     $"{message}\n\n" +
                     $"{Translate.DoTranslation("If you're sure that you've opened the right section, check this message out:")}\n" +

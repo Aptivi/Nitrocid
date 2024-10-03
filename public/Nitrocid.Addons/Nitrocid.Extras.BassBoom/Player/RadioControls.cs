@@ -114,7 +114,7 @@ namespace Nitrocid.Extras.BassBoom.Player
             Common.Switch(musicPath);
             if (!Common.cachedInfos.Any((csi) => csi.MusicPath == musicPath))
             {
-                InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Loading BassBoom to open {0}..."), false, musicPath);
+                InfoBoxNonModalColor.WriteInfoBox(Translate.DoTranslation("Loading BassBoom to open {0}..."), musicPath);
                 var formatInfo = FormatTools.GetFormatInfo();
                 var frameInfo = AudioInfoTools.GetFrameInfo();
 
@@ -169,7 +169,7 @@ namespace Nitrocid.Extras.BassBoom.Player
             string section1 = Translate.DoTranslation("Station info");
             string section2 = Translate.DoTranslation("Layer info");
             string section3 = Translate.DoTranslation("Native State");
-            InfoBoxColor.WriteInfoBox(
+            InfoBoxModalColor.WriteInfoBoxModal(
                 $$"""
                 {{section1}}
                 {{new string('=', ConsoleChar.EstimateCellWidth(section1))}}
@@ -229,7 +229,7 @@ namespace Nitrocid.Extras.BassBoom.Player
                 }
                 string section1 = Translate.DoTranslation("Radio server info");
                 string section2 = Translate.DoTranslation("Stream info");
-                InfoBoxColor.WriteInfoBox(
+                InfoBoxModalColor.WriteInfoBoxModal(
                     $$"""
                     {{section1}}
                     {{new string('=', ConsoleChar.EstimateCellWidth(section1))}}
@@ -249,7 +249,7 @@ namespace Nitrocid.Extras.BassBoom.Player
                 );
             }
             else
-                InfoBoxColor.WriteInfoBox($"Unable to get extended radio station info for {Common.CurrentCachedInfo.MusicPath}");
+                InfoBoxModalColor.WriteInfoBoxModal($"Unable to get extended radio station info for {Common.CurrentCachedInfo.MusicPath}");
         }
     }
 }

@@ -137,7 +137,7 @@ namespace Nitrocid.Users.Login.Handlers.Logins
                 return true;
             else
                 // Wrong password.
-                InfoBoxColor.WriteInfoBoxColor(Translate.DoTranslation("Wrong password for user."), KernelColorTools.GetColor(KernelColorType.Error));
+                InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("Wrong password for user."), KernelColorTools.GetColor(KernelColorType.Error));
             return false;
         }
 

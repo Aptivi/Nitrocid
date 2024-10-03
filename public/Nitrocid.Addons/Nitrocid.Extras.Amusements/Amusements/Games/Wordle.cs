@@ -21,7 +21,7 @@ using System.Collections.Generic;
 using System;
 using System.Threading;
 using Terminaux.Colors;
-using Textify.Data.Analysis.Words;
+using Textify.Data.Words;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using Terminaux.Writer.FancyWriters;

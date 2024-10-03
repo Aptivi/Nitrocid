@@ -33,7 +33,7 @@ namespace Nitrocid.Extras.BassBoom.Player
         {
             if (!Checking.FileExists(path))
             {
-                InfoBoxColor.WriteInfoBoxColor(Translate.DoTranslation("Can't open music file '{0}' because it's not found."), KernelColorTools.GetColor(KernelColorType.Error), path);
+                InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("Can't open music file '{0}' because it's not found."), KernelColorTools.GetColor(KernelColorType.Error), path);
                 return;
             }
             if (!PlayerTui.passedMusicPaths.Contains(path))

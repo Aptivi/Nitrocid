@@ -30,7 +30,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
         public override void Run(params string[] args)
         {
             string[] selected = Selection.SelectFolders();
-            InfoBoxColor.WriteInfoBox(Translate.DoTranslation("You've selected") + $": {string.Join(", ", selected)}");
+            InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("You've selected") + $": {string.Join(", ", selected)}");
         }
     }
 }

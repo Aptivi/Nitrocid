@@ -55,7 +55,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
             }
             catch (Exception ex)
             {
-                InfoBoxColor.WriteInfoBoxColor(Translate.DoTranslation("Screen failed to render:") + $" {ex.Message}", KernelColorTools.GetColor(KernelColorType.Error));
+                InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("Screen failed to render:") + $" {ex.Message}", KernelColorTools.GetColor(KernelColorType.Error));
             }
             finally
             {

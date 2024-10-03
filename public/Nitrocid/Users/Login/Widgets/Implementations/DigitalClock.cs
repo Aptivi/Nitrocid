@@ -26,7 +26,7 @@ using System.Text;
 using Terminaux.Base;
 using Terminaux.Colors;
 using Terminaux.Writer.FancyWriters;
-using Textify.Figlet;
+using Textify.Data.Figlet;
 
 namespace Nitrocid.Users.Login.Widgets.Implementations
 {

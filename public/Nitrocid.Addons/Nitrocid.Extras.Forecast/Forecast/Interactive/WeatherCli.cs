@@ -49,7 +49,7 @@ namespace Nitrocid.Extras.Forecast.Forecast.Interactive
         {
             // Load the weather information, given the API key provided by the command line. Prompt for it if empty.
             CheckApiKey();
-            InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Loading weather info from geographical location") + $" {item.Item1}, {item.Item2}...", false, KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
+            InfoBoxNonModalColor.WriteInfoBoxColorBack(Translate.DoTranslation("Loading weather info from geographical location") + $" {item.Item1}, {item.Item2}...", KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
             var WeatherInfo = Forecast.GetWeatherInfo(item.Item1, item.Item2);
             T Adjust<T>(string dayPartData)
             {
@@ -131,7 +131,7 @@ namespace Nitrocid.Extras.Forecast.Forecast.Interactive
             var cities = WeatherForecast.ListAllCities(cityName, Forecast.ApiKey);
             if (cities.Count == 0)
             {
-                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("There are no cities by this name. If you are trying to search for a specific city, try searching for a broader location that is closest to the city that you're looking for."), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
+                InfoBoxModalColor.WriteInfoBoxModalColorBack(Translate.DoTranslation("There are no cities by this name. If you are trying to search for a specific city, try searching for a broader location that is closest to the city that you're looking for."), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
                 return;
             }
 
@@ -152,12 +152,12 @@ namespace Nitrocid.Extras.Forecast.Forecast.Interactive
             string lngString = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter city longitude."), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
             if (!double.TryParse(latString, out var lat))
             {
-                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Latitude is invalid."), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
+                InfoBoxModalColor.WriteInfoBoxModalColorBack(Translate.DoTranslation("Latitude is invalid."), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
                 return;
             }
             if (!double.TryParse(lngString, out var lng))
             {
-                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Longitude is invalid."), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
+                InfoBoxModalColor.WriteInfoBoxModalColorBack(Translate.DoTranslation("Longitude is invalid."), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
                 return;
             }
             latsLongs.Add((lat, lng));
@@ -177,7 +177,7 @@ namespace Nitrocid.Extras.Forecast.Forecast.Interactive
                 {
                     Forecast.ApiKey = InfoBoxInputPasswordColor.WriteInfoBoxInputPasswordColorBack(Translate.DoTranslation("You can get your own API key by consulting the IBM website for guidance. Enter The Weather Channel API key."), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
                     if (string.IsNullOrEmpty(Forecast.ApiKey))
-                        InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("The Weather Channel API key is not provided. If you need help, consult the IBM website."), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
+                        InfoBoxModalColor.WriteInfoBoxModalColorBack(Translate.DoTranslation("The Weather Channel API key is not provided. If you need help, consult the IBM website."), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
                 } while (string.IsNullOrEmpty(Forecast.ApiKey));
             }
         }

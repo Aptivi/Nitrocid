@@ -51,7 +51,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 if (currentHueAngle > 360)
                     currentHueAngle = 0;
             }
-            InfoBoxColor.WriteInfoBoxColor(renderedTextBox, false, color);
+            InfoBoxNonModalColor.WriteInfoBoxColor(renderedTextBox, color);
 
             // Delay
             int delay = ScreensaverPackInit.SaversConfig.TextBoxRainbowMode ? 16 : ScreensaverPackInit.SaversConfig.TextBoxDelay;

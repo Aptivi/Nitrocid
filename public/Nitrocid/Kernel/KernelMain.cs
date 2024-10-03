@@ -164,11 +164,11 @@ namespace Nitrocid.Kernel
 
                 // If "No APM" is enabled, simply print the text
                 if (Config.MainConfig.SimulateNoAPM)
-                    InfoBoxColor.WriteInfoBoxColor(Translate.DoTranslation("It's now safe to turn off your computer."), KernelColorTools.GetColor(KernelColorType.Success));
+                    InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("It's now safe to turn off your computer."), KernelColorTools.GetColor(KernelColorType.Success));
             }
             catch (Exception ex)
             {
-                InfoBoxColor.WriteInfoBoxColor(Translate.DoTranslation("Nitrocid KS has detected a problem and it has been shut down.") + $" {ex.Message}", KernelColorTools.GetColor(KernelColorType.Error));
+                InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("Nitrocid KS has detected a problem and it has been shut down.") + $" {ex.Message}", KernelColorTools.GetColor(KernelColorType.Error));
             }
             finally
             {

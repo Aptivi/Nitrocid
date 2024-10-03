@@ -234,7 +234,7 @@ namespace Nitrocid.Extras.BassBoom.Player
                 PlaybackPositioningTools.SeekToFrame(currentPos);
             }
             else
-                InfoBoxColor.WriteInfoBox(Translate.DoTranslation("File \"{0}\" doesn't exist."), path);
+                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("File \"{0}\" doesn't exist."), path);
         }
 
         internal static void PromptForAddDirectory()
@@ -258,7 +258,7 @@ namespace Nitrocid.Extras.BassBoom.Player
                 }
             }
             else
-                InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Music library directory is not found."));
+                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Music library directory is not found."));
         }
 
         internal static void PopulateMusicFileInfo(string musicPath)
@@ -271,7 +271,7 @@ namespace Nitrocid.Extras.BassBoom.Player
             if (!Common.cachedInfos.Any((csi) => csi.MusicPath == musicPath))
             {
                 ScreenTools.CurrentScreen?.RequireRefresh();
-                InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Loading BassBoom to open {0}..."), false, musicPath);
+                InfoBoxNonModalColor.WriteInfoBox(Translate.DoTranslation("Loading BassBoom to open {0}..."), musicPath);
                 var total = AudioInfoTools.GetDuration(true);
                 var formatInfo = FormatTools.GetFormatInfo();
                 var frameInfo = AudioInfoTools.GetFrameInfo();
@@ -342,7 +342,7 @@ namespace Nitrocid.Extras.BassBoom.Player
             string lyricsPath = Path.GetDirectoryName(musicPath) + "/" + Path.GetFileNameWithoutExtension(musicPath) + ".lrc";
             try
             {
-                InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Trying to open lyrics file") + " {0}...", false, lyricsPath);
+                InfoBoxNonModalColor.WriteInfoBox(Translate.DoTranslation("Trying to open lyrics file") + " {0}...", lyricsPath);
                 if (File.Exists(lyricsPath))
                     return LyricReader.GetLyrics(lyricsPath);
                 else
@@ -350,7 +350,7 @@ namespace Nitrocid.Extras.BassBoom.Player
             }
             catch (Exception ex)
             {
-                InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Can't open lyrics file") + " {0}... {1}", lyricsPath, ex.Message);
+                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Can't open lyrics file") + " {0}... {1}", lyricsPath, ex.Message);
             }
             return null;
         }
@@ -416,7 +416,7 @@ namespace Nitrocid.Extras.BassBoom.Player
             string section2 = Translate.DoTranslation("Layer info");
             string section3 = Translate.DoTranslation("Native State");
             string section4 = Translate.DoTranslation("Texts and Extras");
-            InfoBoxColor.WriteInfoBox(
+            InfoBoxModalColor.WriteInfoBoxModal(
                 $$"""
                 {{section1}}
                 {{new string('=', ConsoleChar.EstimateCellWidth(section1))}}

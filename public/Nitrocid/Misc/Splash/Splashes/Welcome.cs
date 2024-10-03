@@ -20,7 +20,7 @@
 using System.Threading;
 using Terminaux.Colors;
 using Terminaux.Sequences;
-using Textify.Figlet;
+using Textify.Data.Figlet;
 using System;
 using System.Text;
 using Nitrocid.Kernel;

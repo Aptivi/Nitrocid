@@ -156,13 +156,13 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     // If the user chose the same horse that won, congratulate the user.
                     if (selected == winner)
                     {
-                        InfoBoxColor.WriteInfoBoxColor(Translate.DoTranslation("Your horse won the race!"), KernelColorTools.GetColor(KernelColorType.Success));
+                        InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("Your horse won the race!"), KernelColorTools.GetColor(KernelColorType.Success));
                         ConsoleWrapper.Clear();
                         ResetAll();
                     }
                     else if (winner > 0)
                     {
-                        InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Your horse lost the race!"));
+                        InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Your horse lost the race!"));
                         ConsoleWrapper.Clear();
                         ResetAll();
                     }

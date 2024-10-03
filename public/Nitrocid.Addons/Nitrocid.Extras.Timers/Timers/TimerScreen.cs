@@ -21,7 +21,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Timers;
 using Timer = System.Timers.Timer;
-using Textify.Figlet;
+using Textify.Data.Figlet;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ConsoleBase.Colors;
@@ -213,7 +213,7 @@ namespace Nitrocid.Extras.Timers.Timers
                         {
                             // Not numeric.
                             timerScreen.RequireRefresh();
-                            InfoBoxColor.WriteInfoBoxColor(Translate.DoTranslation("Indicated timeout is not numeric."), KernelColorTools.GetColor(KernelColorType.Error));
+                            InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("Indicated timeout is not numeric."), KernelColorTools.GetColor(KernelColorType.Error));
                             TimerInterval = 60000d;
                         }
                         timerScreen.RequireRefresh();

@@ -309,7 +309,7 @@ namespace Nitrocid.Kernel.Debugging.Testing
                         // Compare the actual value with the expected value
                         if (facade.TestActualValue is null || !facade.TestActualValue.Equals(facade.TestExpectedValue))
                         {
-                            InfoBoxColor.WriteInfoBoxColor(Translate.DoTranslation("The test failed. Expected value is {0}, but actual value is {1}."), KernelColorTools.GetColor(KernelColorType.Error), facade.TestExpectedValue?.ToString() ?? "<null>", facade.TestActualValue?.ToString() ?? "<null>");
+                            InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("The test failed. Expected value is {0}, but actual value is {1}."), KernelColorTools.GetColor(KernelColorType.Error), facade.TestExpectedValue?.ToString() ?? "<null>", facade.TestActualValue?.ToString() ?? "<null>");
                             facade.status = TestStatus.Failed;
                             tested = true;
                         }
@@ -324,7 +324,7 @@ namespace Nitrocid.Kernel.Debugging.Testing
             catch (Exception ex)
             {
                 // Facade failed unexpectedly
-                InfoBoxColor.WriteInfoBoxColor(Translate.DoTranslation("The test failed unexpectedly.") + $" {ex.Message}", KernelColorTools.GetColor(KernelColorType.Error));
+                InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("The test failed unexpectedly.") + $" {ex.Message}", KernelColorTools.GetColor(KernelColorType.Error));
                 facade.status = TestStatus.Failed;
             }
         }
@@ -334,7 +334,7 @@ namespace Nitrocid.Kernel.Debugging.Testing
             int successCount = facades.Values.Where((fac) => fac.TestStatus == TestStatus.Success && fac.TestSection == section).Count();
             int failureCount = facades.Values.Where((fac) => fac.TestStatus == TestStatus.Failed && fac.TestSection == section).Count();
             int neutralCount = facades.Values.Where((fac) => fac.TestStatus == TestStatus.Neutral && fac.TestSection == section).Count();
-            InfoBoxColor.WriteInfoBox(
+            InfoBoxModalColor.WriteInfoBoxModal(
                 "  * " + Translate.DoTranslation("Successful tests:") + " {0}\n" +
                 "  * " + Translate.DoTranslation("Failed tests:") + " {1}\n" +
                 "  * " + Translate.DoTranslation("Tests to be run:") + " {2}",
@@ -346,7 +346,7 @@ namespace Nitrocid.Kernel.Debugging.Testing
             int successCount = facades.Values.Where((fac) => fac.TestStatus == TestStatus.Success).Count();
             int failureCount = facades.Values.Where((fac) => fac.TestStatus == TestStatus.Failed).Count();
             int neutralCount = facades.Values.Where((fac) => fac.TestStatus == TestStatus.Neutral).Count();
-            InfoBoxColor.WriteInfoBox(
+            InfoBoxModalColor.WriteInfoBoxModal(
                 "  * " + Translate.DoTranslation("Successful tests:") + " {0}\n" +
                 "  * " + Translate.DoTranslation("Failed tests:") + " {1}\n" +
                 "  * " + Translate.DoTranslation("Tests to be run:") + " {2}",

@@ -49,7 +49,7 @@ namespace Nitrocid.SplashPacks.Splashes
         public override string Report(int Progress, string ProgressReport, params object[] Vars)
         {
             ColorTools.LoadBack();
-            InfoBoxColor.WriteInfoBox($"*) {ProgressReport}\n\n{Progress}%", false, Vars);
+            InfoBoxNonModalColor.WriteInfoBox($"*) {ProgressReport}\n\n{Progress}%", Vars);
             return "";
         }
 
@@ -60,7 +60,7 @@ namespace Nitrocid.SplashPacks.Splashes
                 ExceptionInfo.Message :
                 Translate.DoTranslation("Unknown error!");
             ColorTools.LoadBack();
-            InfoBoxColor.WriteInfoBox($"!) {WarningReport}\n\n{exceptionMessage}\n\n{Progress}%", false, Vars);
+            InfoBoxNonModalColor.WriteInfoBox($"!) {WarningReport}\n\n{exceptionMessage}\n\n{Progress}%", Vars);
             return "";
         }
 
@@ -71,7 +71,7 @@ namespace Nitrocid.SplashPacks.Splashes
                 ExceptionInfo.Message :
                 Translate.DoTranslation("Unknown error!");
             ColorTools.LoadBack();
-            InfoBoxColor.WriteInfoBox($"X) {ErrorReport}\n\n{exceptionMessage}\n\n{Progress}%", false, Vars);
+            InfoBoxNonModalColor.WriteInfoBox($"X) {ErrorReport}\n\n{exceptionMessage}\n\n{Progress}%", Vars);
             return "";
         }
     }
