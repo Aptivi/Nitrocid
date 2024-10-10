@@ -80,9 +80,9 @@ jobs:
           echo "SUBJECT=$(cat CHANGES.TITLE)" >> "$GITHUB_OUTPUT"
           echo 'BODY<<EOF' >> "$GITHUB_OUTPUT"
           cat CHANGES >> "$GITHUB_OUTPUT"
-          powershell 'Get-FileHash -Algorithm sha256 tools/*.zip | % {\"- \" + $_.Hash + \"  \" + (Resolve-Path -Path $_.Path -Relative)}' >> "$GITHUB_OUTPUT"
-          powershell 'Get-FileHash -Algorithm sha256 tools/*-changes.chg | % {\"- \" + $_.Hash + \"  \" + (Resolve-Path -Path $_.Path -Relative)}' >> "$GITHUB_OUTPUT"
-          powershell 'Get-FileHash -Algorithm sha256 *.iso | % {\"- \" + $_.Hash + \"  \" + (Resolve-Path -Path $_.Path -Relative)}' >> "$GITHUB_OUTPUT"
+          powershell 'Get-FileHash -Algorithm sha256 tools/*.zip | % {"- " + $_.Hash + "  " + (Resolve-Path -Path $_.Path -Relative)}' >> "$GITHUB_OUTPUT"
+          powershell 'Get-FileHash -Algorithm sha256 tools/*-changes.chg | % {"- " + $_.Hash + "  " + (Resolve-Path -Path $_.Path -Relative)}' >> "$GITHUB_OUTPUT"
+          powershell 'Get-FileHash -Algorithm sha256 *.iso | % {"- " + $_.Hash + "  " + (Resolve-Path -Path $_.Path -Relative)}' >> "$GITHUB_OUTPUT"
           echo 'EOF' >> "$GITHUB_OUTPUT"
       - name: Binary Attestation (binaries)
         uses: actions/attest-build-provenance@v1
