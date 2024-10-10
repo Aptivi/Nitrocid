@@ -95,7 +95,7 @@ jobs:
       - name: Release Making
         uses: softprops/action-gh-release@v2
         with:
-          body_path: CHANGES
+          body: ${{ steps.release-asset.outputs.BODY }}
           name: ${{ steps.release-asset.outputs.SUBJECT }}
           files: |
             tools/*.zip
