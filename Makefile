@@ -33,14 +33,21 @@ debian-init-offline:
 	$(MAKE) -C tools debian-invoke-init-offline
 
 debian-install:
-	mkdir -m 755 -p debian/kernel-simulator/usr/bin debian/kernel-simulator/usr/lib/ks debian/kernel-simulator/usr/share/applications
-	install -m 755 -t debian/kernel-simulator/usr/bin/ $(BINARIES)
+	$(MAKE) debain-install-all PACKAGE=kernel-simulator
+
+debian-install-all:
+	mkdir -m 755 -p debian/$(PACKAGE)/usr/bin debian/$(PACKAGE)/usr/lib/ks debian/$(PACKAGE)/usr/share/applications
+	install -m 755 -t debian/$(PACKAGE)/usr/bin/ $(BINARIES)
 	install -m 755 -t debian/ $(MANUALS)
-	find $(OUTPUT) -mindepth 1 -type d -exec sh -c 'mkdir -p -m 755 "debian/kernel-simulator/usr/lib/ks/$$(realpath --relative-to $(OUTPUT) "$$0")"' {} \;
-	find $(OUTPUT) -mindepth 1 -type f -exec sh -c 'install -m 644 -t "debian/kernel-simulator/usr/lib/ks/$$(dirname $$(realpath --relative-to $(OUTPUT) "$$0"))" "$$0"' {} \;
-	install -m 755 -t debian/kernel-simulator/usr/share/applications/ $(DESKTOPS)
-	install -m 755 -t debian/kernel-simulator/usr/lib/ks/ $(BRANDINGS)
-	mv debian/kernel-simulator/usr/bin/ks-n debian/kernel-simulator/usr/bin/ks
-	find 'debian/kernel-simulator/usr/lib/' -type d -name "runtimes" -exec sh -c 'find $$0 -mindepth 1 -maxdepth 1 -not -name $(ARCH) -type d -exec rm -rf \{\} \;' {} \;
+	find $(OUTPUT) -mindepth 1 -type d -exec sh -c 'mkdir -p -m 755 "debian/$(PACKAGE)/usr/lib/ks/$$(realpath --relative-to $(OUTPUT) "$$0")"' {} \;
+	find $(OUTPUT) -mindepth 1 -type f -exec sh -c 'install -m 644 -t "debian/$(PACKAGE)/usr/lib/ks/$$(dirname $$(realpath --relative-to $(OUTPUT) "$$0"))" "$$0"' {} \;
+	install -m 755 -t debian/$(PACKAGE)/usr/share/applications/ $(DESKTOPS)
+	install -m 755 -t debian/$(PACKAGE)/usr/lib/ks/ $(BRANDINGS)
+	mv debian/$(PACKAGE)/usr/bin/ks-n debian/$(PACKAGE)/usr/bin/ks
+	find 'debian/$(PACKAGE)/usr/lib/' -type d -name "runtimes" -exec sh -c 'find $$0 -mindepth 1 -maxdepth 1 -not -name $(ARCH) -type d -exec rm -rf \{\} \;' {} \;
+
+debian-install-lite:
+	$(MAKE) debain-install-all PACKAGE=kernel-simulator-lite
+	rm -rf debian/kernel-simulator-lite/usr/lib/ks/Addons
 
 # This makefile is just a wrapper for tools scripts.

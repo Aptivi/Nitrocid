@@ -1,5 +1,5 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: kernel-simulator
+Upstream-Name: Nitrocid KS
 Source: https://github.com/Aptivi/NitrocidKS/blob/master/LICENSE
 
 Files: *

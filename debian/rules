@@ -25,3 +25,4 @@ override_dh_auto_build:
 
 override_dh_auto_install:
 	$(MAKE) debian-install
+	$(MAKE) debian-install-lite
