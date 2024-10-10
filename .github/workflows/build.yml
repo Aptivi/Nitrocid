@@ -24,7 +24,7 @@ jobs:
         dotnet-version: '8.0.x'
     - name: Solution Compilation
       run: |
-        powershell 'Get-FileHash -Algorithm sha256 tools/* | % {""- "" + $_.Hash + ""  "" + (Resolve-Path -Path $_.Path -Relative)}'
+        powershell 'Get-FileHash -Algorithm sha256 tools/* | % {"- " + $_.Hash + "  " + (Resolve-Path -Path $_.Path -Relative)}'
         dotnet build -maxCpuCount:1 --configuration Debug
     - name: Testing
       run: dotnet test --no-build --configuration Debug
