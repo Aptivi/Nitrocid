@@ -33,7 +33,7 @@ debian-init-offline:
 	$(MAKE) -C tools debian-invoke-init-offline
 
 debian-install:
-	$(MAKE) debain-install-all PACKAGE=kernel-simulator
+	$(MAKE) debian-install-all PACKAGE=kernel-simulator
 
 debian-install-all:
 	mkdir -m 755 -p debian/$(PACKAGE)/usr/bin debian/$(PACKAGE)/usr/lib/ks debian/$(PACKAGE)/usr/share/applications
@@ -47,7 +47,7 @@ debian-install-all:
 	find 'debian/$(PACKAGE)/usr/lib/' -type d -name "runtimes" -exec sh -c 'find $$0 -mindepth 1 -maxdepth 1 -not -name $(ARCH) -type d -exec rm -rf \{\} \;' {} \;
 
 debian-install-lite:
-	$(MAKE) debain-install-all PACKAGE=kernel-simulator-lite
+	$(MAKE) debian-install-all PACKAGE=kernel-simulator-lite
 	rm -rf debian/kernel-simulator-lite/usr/lib/ks/Addons
 
 # This makefile is just a wrapper for tools scripts.
