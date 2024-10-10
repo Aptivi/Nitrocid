@@ -1,4 +1,4 @@
-We've made this release to update almost all libraries to their latest versions.
+We've made this emergency release to fix color palette issues causing some screensavers to look ugly.
 
 NOTICE: There won't be any updates until the end of December 2024, but we promise that we'll come up with something amazing in the next update!
 
@@ -6,7 +6,7 @@ NOTICE: There won't be any updates until the end of December 2024, but we promis
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` Updated libraries (excluding BassBoom)
+- `[*]` Prevent color palette from being used on screensavers
 
 Review the commit history if you want to get a deep insight about the changes.
 

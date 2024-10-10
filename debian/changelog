@@ -1,3 +1,9 @@
+kernel-simulator (3.0.26.53-0.1.1.23-1) noble; urgency=medium
+
+  * Prevent color palette from being used on screensavers
+
+ -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Thu, 10 Oct 2024 12:09:11 +0300
+
 kernel-simulator (3.0.26.53-0.1.1.22-1) noble; urgency=medium
 
   * Updated libraries (excluding BassBoom)
