@@ -221,9 +221,15 @@ Review the commit history if you want to get a deep insight about the changes.
 ### Feedback?
 
 If you have issues with this version, report to us by [making a new issue ticket](https://github.com/Aptivi/PROJECT/issues/new).
+
+### Sum hashes
+
+To verify integrity of your download, compare the SHA256 sum of your downloaded file with the following information:
+
+
 ```
 
-Also, the `CHANGES.TITLE` file should be changed to match the version whose development finished but tag not pushed, as long as it follows this format:
+Two new lines are applied intentionally so that the hash list gets rendered in a way that you'd expect, because the hash sum list gets populated automatically. Also, the `CHANGES.TITLE` file should be changed to match the version whose development finished but tag not pushed, as long as it follows this format:
 
 ```
 [servicing] PROJECT v1.0.0: Release Name
@@ -234,11 +240,11 @@ The type at the beginning is necessary as it can tell us and the users in what s
   * `alpha`: Indicates that this release is an alpha version
   * `beta`: Indicates that this release is a beta version
   * `release`: Indicates that this release is a major release (i.e. changes the major part and/or the minor part)
-  * `servicing`: Indicates that this release is a minore release (i.e. changes the build part and/or the patch part)
+  * `servicing`: Indicates that this release is a minor release (i.e. changes the build part and/or the patch part)
 
 ## Assistance of AI
 
-Although artifical intelligence (AI) is a next-gen technology that every company are leaning to, which we are proud of, but when contributing code or other things to this project, we rely on human work to ensure maximum quality. This means that you are not allowed to use any kind of AI assistance to generate code and non-code contributions, such as ChatGPT and others, in fear of licensing issues, potential security issues, and current hallucination issues. Any usage of such tools when contributing will be immediately rejected.
+Although artifical intelligence (AI) is a next-gen technology that every company is leaning to, which we are proud of, but when contributing code or other things to this project, we rely on human work to ensure maximum quality. This means that you are not allowed to use any kind of AI assistance to generate code and non-code contributions, such as ChatGPT and others, in fear of licensing issues, potential security issues, and current hallucination issues. Any usage of such tools when contributing will be immediately rejected.
 
 ## Engagement with the Community
 
