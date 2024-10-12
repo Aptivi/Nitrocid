@@ -1,4 +1,4 @@
-We've made this emergency release to fix color palette issues causing some screensavers to look ugly.
+We've made this emergency release to fix issues related to license infobox and BackRace game appearance.
 
 NOTICE: There won't be any updates until the end of December 2024, but we promise that we'll come up with something amazing in the next update!
 
@@ -6,7 +6,8 @@ NOTICE: There won't be any updates until the end of December 2024, but we promis
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` Prevent color palette from being used on screensavers
+- `[*]` Fixed license infobox modality
+- `[*]` Fixed BackRace game appearance
 
 Review the commit history if you want to get a deep insight about the changes.
 

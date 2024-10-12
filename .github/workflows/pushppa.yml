@@ -37,8 +37,8 @@ jobs:
         run: |
           mv debian ..
           mv .github ..
-          tar cfv ../kernel-simulator_3.0.26.53-0.1.1.23.orig.tar .
-          xz ../kernel-simulator_3.0.26.53-0.1.1.23.orig.tar
+          tar cfv ../kernel-simulator_3.0.26.53-0.1.1.24.orig.tar .
+          xz ../kernel-simulator_3.0.26.53-0.1.1.24.orig.tar
           mv ../debian .
 
       - name: Build source package
