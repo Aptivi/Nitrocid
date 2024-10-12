@@ -91,7 +91,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                         TextWriterWhereColor.RenderWhereColor(Translate.DoTranslation("Horse") + $" {horse.HorseNumber}", 1, height - 1, finalColor) +
                         BorderColor.RenderBorder(boxLeft, height, boxWidth, 1, finalColor) +
                         TextWriterWhereColor.RenderWhereColor($"{horse.HorseProgress:000}%", 2, height + 1, finalColor) +
-                        ProgressBarColor.RenderProgress(horse.HorseProgress, progressLeft, height, 8, 2, finalColor, finalColor)
+                        ProgressBarColor.RenderProgress(horse.HorseProgress, progressLeft, height, ConsoleWrapper.WindowWidth - 10, finalColor, finalColor)
                     );
                 }
 
