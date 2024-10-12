@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#    Nitrocid KS  Copyright (C) 2018-2021  Aptivi
+#    Nitrocid KS  Copyright (C) 2018-2024  Aptivi
 #
 #    This file is part of Nitrocid KS
 #
@@ -17,6 +17,15 @@
 #    You should have received a copy of the GNU General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+# Convenience functions
+checkerror() {
+    if [ $1 != 0 ]
+    then
+        printf "$2 - Error $1\n" >&2
+        exit $1
+    fi
+}
+
 # This script builds KS. Use when you have dotnet installed.
 ksreleaseconf=$1
 if [ -z $ksreleaseconf ]; then
@@ -25,27 +34,17 @@ fi
 
 # Check for dependencies
 dotnetpath=`which dotnet`
-if [ ! $? == 0 ]; then
-	echo dotnet is not found.
-	exit 1
-fi
+checkerror $? "dotnet is not found"
 
 # Download packages
 echo Downloading packages...
 "$dotnetpath" restore "../Nitrocid.sln" -p:Configuration=$ksreleaseconf ${@:2}
-if [ ! $? == 0 ]; then
-	echo Download failed.
-	exit 1
-fi
+checkerror $? "Failed to download packages"
 
 # Build KS
 echo Building KS...
 "$dotnetpath" build "../Nitrocid.sln" -p:Configuration=$ksreleaseconf -maxCpuCount:1 ${@:2}
-if [ ! $? == 0 ]; then
-	echo Build failed.
-	exit 1
-fi
+checkerror $? "Failed to build Nitrocid"
 
 # Inform success
 echo Build successful.
-exit 0

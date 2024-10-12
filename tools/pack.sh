@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#    Nitrocid KS  Copyright (C) 2018-2021  Aptivi
+#    Nitrocid KS  Copyright (C) 2018-2024  Aptivi
 #
 #    This file is part of Nitrocid KS
 #
@@ -17,40 +17,51 @@
 #    You should have received a copy of the GNU General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+# Convenience functions
+checkerror() {
+    if [ $1 != 0 ]
+    then
+        printf "$2 - Error $1\n" >&2
+        exit $1
+    fi
+}
+
 # This script builds KS and packs the artifacts. Use when you have MSBuild installed.
 ksversion=$(grep "<Version>" ../Directory.Build.props | cut -d "<" -f 2 | cut -d ">" -f 2)
+checkerror $? "Failed to get version. Check to make sure that the version is specified correctly in D.B.props"
 
 # Check for dependencies
 zippath=`which zip`
-if [ ! $? == 0 ]; then
-	echo zip is not found.
-	exit 1
-fi
+checkerror $? "zip is not found"
 shapath=`which sha256sum`
-if [ ! $? == 0 ]; then
-	echo sha256sum is not found.
-	exit 1
-fi
+checkerror $? "sha256sum is not found"
 
 # Pack binary
 echo Packing binary...
 cd "../public/Nitrocid/KSBuild/net8.0/" && "$zippath" -r /tmp/$ksversion-bin.zip . && cd -
+checkerror $? "Failed to pack"
 cd "../public/Nitrocid/KSBuild/net8.0/" && "$zippath" -r /tmp/$ksversion-bin-lite.zip . -x "./Addons/*" && cd -
+checkerror $? "Failed to pack"
 cd "../public/Nitrocid/KSBuild/net8.0/Addons/" && "$zippath" -r /tmp/$ksversion-addons.zip . && cd -
+checkerror $? "Failed to pack"
 cd "../public/Nitrocid/KSAnalyzer/netstandard2.0/" && "$zippath" -r /tmp/$ksversion-analyzers.zip . && cd -
+checkerror $? "Failed to pack"
 cd "../public/Nitrocid/KSAnalyzer/net8.0/" && "$zippath" -r /tmp/$ksversion-mod-analyzer.zip . && cd -
-if [ ! $? == 0 ]; then
-	echo Packing failed.
-	exit 1
-fi
+checkerror $? "Failed to pack"
 
 # Inform success
 mv /tmp/$ksversion-bin.zip .
+checkerror $? "Failed to move archive from temporary folder"
 mv /tmp/$ksversion-bin-lite.zip .
+checkerror $? "Failed to move archive from temporary folder"
 mv /tmp/$ksversion-addons.zip .
+checkerror $? "Failed to move archive from temporary folder"
 mv /tmp/$ksversion-analyzers.zip .
+checkerror $? "Failed to move archive from temporary folder"
 mv /tmp/$ksversion-mod-analyzer.zip .
+checkerror $? "Failed to move archive from temporary folder"
 cp changes.chg $ksversion-changes.chg
+checkerror $? "Failed to copy changelogs"
 
-echo Build and pack successful.
+echo Pack successful.
 exit 0
