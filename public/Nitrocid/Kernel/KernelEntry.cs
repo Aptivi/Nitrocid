@@ -41,6 +41,7 @@ using Nitrocid.Kernel.Threading;
 using Nitrocid.Network.Types.RSS;
 using Terminaux.Colors;
 using Nitrocid.Shell.Homepage;
+using Terminaux.Base;
 
 namespace Nitrocid.Kernel
 {
@@ -104,6 +105,7 @@ namespace Nitrocid.Kernel
                     Translate.DoTranslation("License information"),
                     WelcomeMessage.GetLicenseString(), KernelColorTools.GetColor(KernelColorType.License)
                 );
+                ConsoleWrapper.CursorVisible = false;
                 ThreadManager.SleepUntilInput(15000);
                 ColorTools.LoadBack();
             }
