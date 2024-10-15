@@ -10,6 +10,17 @@ Your pull requests should follow the template.
 
 You should be descriptive about what your change is trying to do and what's your opinion about how it affects the whole project. Moreover, it's vital to test your changes before trying to start a pull request to ensure that there are no problems in your initial version. **Always** draft your pull requests.
 
+## Windows compatibility
+
+*This doesn't apply to projects that don't use C# or aren't exclusive to Windows.*
+
+When contributing changes to any part of the code, especially when creating files, your pull requests should follow the below requirements:
+
+  - File names should not contain forbidden characters, such as `/ \ : * ? " < > |`, and control characters, such as a new line, as files with such names don't sit well with Windows.
+  - File names should always be treated as case sensitive, even if *nix systems allow you to create files with same name but different casing, as files that fall into this category don't sit well with Windows.
+  - When creating shell scripts in Windows, you should give it executable permissions with `git update-index --chmod=+x <SHELLSCRIPT>` prior to committing, as Windows in general has no concept of Unix permissions.
+  - In general, make sure that any of your changes don't cause incompatibilities with Windows in any way in both build-time and run-time.
+
 ## Code guidelines
 
 When it comes to coding your changes, they should follow the below coding guidelines to retain the style of our projects' code. These are the below code guidelines:
