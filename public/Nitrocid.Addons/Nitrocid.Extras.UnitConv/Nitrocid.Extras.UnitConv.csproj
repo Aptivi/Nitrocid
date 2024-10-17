@@ -37,7 +37,7 @@
 
   <ItemGroup>
     <PackageReference Include="FluentFTP" Version="51.1.0" />
-    <PackageReference Include="Magico" Version="1.2.2" />
+    <PackageReference Include="Magico" Version="1.2.3" />
     <PackageReference Include="UnitsNet" Version="5.59.0" />
   </ItemGroup>
 

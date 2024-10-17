@@ -41,22 +41,22 @@
 
   <!-- KS Dependencies Information -->
   <ItemGroup>
-    <PackageReference Include="Magico" Version="1.2.2" PrivateAssets="all" />
+    <PackageReference Include="Magico" Version="1.2.3" PrivateAssets="all" />
     <PackageReference Include="Microsoft.Data.Sqlite" Version="8.0.8" PrivateAssets="all" />
     <PackageReference Include="Newtonsoft.Json.Schema" Version="4.0.1" PrivateAssets="all" />
-    <PackageReference Include="SpecProbe" Version="3.1.0" PrivateAssets="all" />
+    <PackageReference Include="SpecProbe" Version="3.1.1" PrivateAssets="all" />
   </ItemGroup>
   <!-- KS Dependencies Information End -->
 
   <!-- KS Non-private Dependencies Information -->
   <ItemGroup>
-    <PackageReference Include="Terminaux" Version="5.4.0.1" PrivateAssets="contentfiles;analyzers;build;runtime" />
-    <PackageReference Include="Terminaux.Images" Version="5.4.0.1" PrivateAssets="contentfiles;analyzers;build;runtime;native" />
+    <PackageReference Include="Terminaux" Version="5.4.1" PrivateAssets="contentfiles;analyzers;build;runtime" />
+    <PackageReference Include="Terminaux.Images" Version="5.4.1" PrivateAssets="contentfiles;analyzers;build;runtime;native" />
     <PackageReference Include="Textify.Offline" Version="2.0.3" PrivateAssets="contentfiles;analyzers;build;runtime">
       <Aliases>global,TextifyDep</Aliases>
     </PackageReference>
     <PackageReference Include="Textify.Offline.Data" Version="2.0.3" PrivateAssets="contentfiles;analyzers;build;runtime" />
-    <PackageReference Include="Nettify" Version="1.5.3" PrivateAssets="contentfiles;analyzers;build;runtime" />
+    <PackageReference Include="Nettify" Version="1.5.4" PrivateAssets="contentfiles;analyzers;build;runtime" />
   </ItemGroup>
   <!-- KS Non-private Dependencies Information End -->
 
