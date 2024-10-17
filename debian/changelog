@@ -1,3 +1,9 @@
+kernel-simulator (3.0.26.53-0.1.1.25-1) noble; urgency=medium
+
+  * Fixed a security issue concerning System.Text.Json
+
+ -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Thu, 17 Oct 2024 18:56:07 +0300
+
 kernel-simulator (3.0.26.53-0.1.1.24-1) noble; urgency=medium
 
   * Fixed license infobox modality
