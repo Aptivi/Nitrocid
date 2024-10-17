@@ -16,7 +16,7 @@
     <Optimize>true</Optimize>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Terminaux" Version="5.4.1" />
+    <PackageReference Include="Terminaux" Version="5.4.2" />
   </ItemGroup>
   <Import Project="..\Nitrocid.LocaleCommon\Nitrocid.LocaleCommon.projitems" Label="Shared" />
 
