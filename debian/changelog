@@ -1,3 +1,9 @@
+kernel-simulator (3.0.26.53-0.1.1.26-1) noble; urgency=medium
+
+  * Fixed a usability issue regarding Terminaux
+
+ -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Sun, 20 Oct 2024 12:40:19 +0300
+
 kernel-simulator (3.0.26.53-0.1.1.25-1) noble; urgency=medium
 
   * Fixed a security issue concerning System.Text.Json
