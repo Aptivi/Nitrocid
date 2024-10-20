@@ -1,4 +1,4 @@
-We've made this emergency release to fix a security issue related to System.Text.Json.
+We've made this emergency release to fix a usability issue regarding Terminaux.
 
 NOTICE: There won't be any updates until the end of December 2024, but we promise that we'll come up with something amazing in the next update!
 
@@ -6,7 +6,7 @@ NOTICE: There won't be any updates until the end of December 2024, but we promis
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` Fixed a security issue concerning System.Text.Json
+- `[*]` Fixed a usability issue regarding Terminaux
 
 Review the commit history if you want to get a deep insight about the changes.
 
