@@ -12,7 +12,7 @@
     <AssemblyName>Nitrocid.LocaleCheckerStandalone</AssemblyName>
     <Description>Nitrocid KS Locale Checker</Description>
     <AssemblyTitle>Nitrocid KS Locale Checker</AssemblyTitle>
-    <ApplicationIcon>../../public/Nitrocid/OfficialAppIcon-KernelSimulator.ico</ApplicationIcon>
+    <ApplicationIcon>../../public/Nitrocid/OfficialAppIcon-NitrocidKS.ico</ApplicationIcon>
   </PropertyGroup>
   <!-- LocaleChecker General Information End -->
 

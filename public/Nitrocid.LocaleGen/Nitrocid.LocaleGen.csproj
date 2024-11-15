@@ -14,7 +14,7 @@
     <OutputPath>..\Nitrocid\KSBuild\</OutputPath>
     <Description>Nitrocid KS Locale Generator</Description>
     <AssemblyTitle>Nitrocid KS Locale Generator</AssemblyTitle>
-    <ApplicationIcon>../Nitrocid/OfficialAppIcon-KernelSimulator.ico</ApplicationIcon>
+    <ApplicationIcon>../Nitrocid/OfficialAppIcon-NitrocidKS.ico</ApplicationIcon>
   </PropertyGroup>
   <!-- LocaleGen General Information End -->
 

@@ -12,7 +12,7 @@
     <AssemblyName>Nitrocid.LocaleClean</AssemblyName>
     <Description>Nitrocid KS Locale Cleaner</Description>
     <AssemblyTitle>Nitrocid KS Locale Cleaner</AssemblyTitle>
-    <ApplicationIcon>../../public/Nitrocid/OfficialAppIcon-KernelSimulator.ico</ApplicationIcon>
+    <ApplicationIcon>../../public/Nitrocid/OfficialAppIcon-NitrocidKS.ico</ApplicationIcon>
   </PropertyGroup>
   <!-- LocaleCleaner General Information End -->
 
