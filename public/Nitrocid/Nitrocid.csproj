@@ -8,7 +8,7 @@
     <PackageTags>kernel;simulator;csharp</PackageTags>
     <!-- URL settings -->
     <PackageProjectUrl>https://github.com/Aptivi/NitrocidKS</PackageProjectUrl>
-    <PackageIcon>OfficialAppIcon-KernelSimulator-512.png</PackageIcon>
+    <PackageIcon>OfficialAppIcon-NitrocidKS-512.png</PackageIcon>
     <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
     <PackageReleaseNotes>Detailed explanation: https://aptivi.gitbook.io/nitrocid-ks-manual/versions-and-compatibility/version-release-notes/v0.1.x.x-series</PackageReleaseNotes>
     <!-- MSBuild Tags -->
@@ -31,7 +31,7 @@
     <AssemblyTitle>Nitrocid KS</AssemblyTitle>
     <Description>Simulates our future-planned kernel, Nitrocid Kernel</Description>
     <OutputPath>KSBuild\</OutputPath>
-    <ApplicationIcon>OfficialAppIcon-KernelSimulator.ico</ApplicationIcon>
+    <ApplicationIcon>OfficialAppIcon-NitrocidKS.ico</ApplicationIcon>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
@@ -88,7 +88,7 @@
 
   <!-- KS Package Files -->
   <ItemGroup>
-    <None Include="OfficialAppIcon-KernelSimulator-512.png" Pack="true" PackagePath="\" />
+    <None Include="OfficialAppIcon-NitrocidKS-512.png" Pack="true" PackagePath="\" />
     <None Include="..\..\README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
   <!-- KS Package Files End -->
