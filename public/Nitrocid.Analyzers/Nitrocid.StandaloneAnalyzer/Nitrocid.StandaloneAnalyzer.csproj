@@ -32,7 +32,7 @@
     <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.4" PrivateAssets="all" />
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="[4.8.0]" />
     <PackageReference Include="Microsoft.CodeAnalysis.Workspaces.MSBuild" Version="[4.8.0]" />
-    <PackageReference Include="Terminaux" Version="5.4.2.1" />
+    <PackageReference Include="Terminaux" Version="5.4.3.1" />
   </ItemGroup>
 
 </Project>
