@@ -32,6 +32,7 @@ using System.IO;
 using System.Threading;
 using Terminaux.Base;
 using Terminaux.Inputs;
+using BassBoom.Basolia;
 
 namespace Nitrocid.Extras.BassBoom.Commands
 {
@@ -47,6 +48,7 @@ namespace Nitrocid.Extras.BassBoom.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             string path = parameters.ArgumentsList[0];
+            var media = new BasoliaMedia();
             path = FilesystemTools.NeutralizePath(path);
             if (!Checking.FileExists(path))
             {
@@ -55,7 +57,7 @@ namespace Nitrocid.Extras.BassBoom.Commands
             }
             try
             {
-                FileTools.OpenFile(path);
+                FileTools.OpenFile(media, path);
                 TextWriters.Write(Translate.DoTranslation("Opened music file successfully."), KernelColorType.Success);
             }
             catch (Exception ex)
@@ -63,17 +65,17 @@ namespace Nitrocid.Extras.BassBoom.Commands
                 TextWriters.Write(Translate.DoTranslation("Can't open music file.") + $" {ex.Message}", KernelColorType.Error);
                 return ex.HResult;
             }
-            if (FileTools.IsOpened)
+            if (FileTools.IsOpened(media))
             {
                 try
                 {
                     // They must be done before playing
-                    int total = AudioInfoTools.GetDuration(true);
-                    AudioInfoTools.GetId3Metadata(out var managedV1, out var managedV2);
+                    int total = AudioInfoTools.GetDuration(media, true);
+                    AudioInfoTools.GetId3Metadata(media, out var managedV1, out var managedV2);
 
                     // Play now!
-                    PlaybackTools.PlayAsync();
-                    if (!SpinWait.SpinUntil(() => PlaybackTools.Playing, 15000))
+                    PlaybackTools.PlayAsync(media);
+                    if (!SpinWait.SpinUntil(() => PlaybackTools.GetState(media) == PlaybackState.Playing, 15000))
                     {
                         TextWriters.Write(Translate.DoTranslation("Can't play sound because of timeout."), KernelColorType.Error);
                         return 30;
@@ -92,7 +94,7 @@ namespace Nitrocid.Extras.BassBoom.Commands
                         !string.IsNullOrEmpty(managedV2.Genre) ? managedV2.Genre :
                         managedV1.GenreIndex >= 0 ? $"{managedV1.Genre} [{managedV1.GenreIndex}]" :
                         Translate.DoTranslation("Unknown Genre");
-                    var totalSpan = AudioInfoTools.GetDurationSpanFromSamples(total);
+                    var totalSpan = AudioInfoTools.GetDurationSpanFromSamples(media, total);
                     string duration = totalSpan.ToString();
                     ListEntryWriterColor.WriteListEntry(Translate.DoTranslation("Name"), musicName);
                     ListEntryWriterColor.WriteListEntry(Translate.DoTranslation("Artist"), musicArtist);
@@ -101,13 +103,13 @@ namespace Nitrocid.Extras.BassBoom.Commands
 
                     // Wait until the song stops or the user bails
                     TextWriters.Write(Translate.DoTranslation("Press 'q' to stop playing."), KernelColorType.Tip);
-                    while (PlaybackTools.Playing)
+                    while (PlaybackTools.GetState(media) == PlaybackState.Playing)
                     {
                         if (ConsoleWrapper.KeyAvailable)
                         {
                             var key = Input.ReadKey();
                             if (key.Key == ConsoleKey.Q)
-                                PlaybackTools.Stop();
+                                PlaybackTools.Stop(media);
                         }
                     }
                 }
@@ -118,7 +120,7 @@ namespace Nitrocid.Extras.BassBoom.Commands
                 }
                 finally
                 {
-                    FileTools.CloseFile();
+                    FileTools.CloseFile(media);
                 }
             }
             return 0;

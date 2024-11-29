@@ -45,7 +45,6 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Reflection;
 using BassBoom.Basolia;
-using Nitrocid.Extras.BassBoom.Player;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Files.Extensions;
@@ -67,13 +66,6 @@ namespace Nitrocid.Extras.BassBoom
         internal static Version? mpgVer;
         internal static Version? outVer;
         internal static Color white = new(ConsoleColors.White);
-        private readonly ExtensionHandler[] handlers = [
-            new(".mp3", "Mp3BassBoom", PlayerHandler.Handle, PlayerHandler.InfoHandle),
-            new(".mp2", "Mp3BassBoom", PlayerHandler.Handle, PlayerHandler.InfoHandle),
-            new(".mpg", "Mp3BassBoom", PlayerHandler.Handle, PlayerHandler.InfoHandle),
-            new(".mpa", "Mp3BassBoom", PlayerHandler.Handle, PlayerHandler.InfoHandle),
-            new(".mpga", "Mp3BassBoom", PlayerHandler.Handle, PlayerHandler.InfoHandle),
-        ];
 
         private readonly List<CommandInfo> addonCommands =
         [
@@ -84,17 +76,6 @@ namespace Nitrocid.Extras.BassBoom
                         new CommandArgumentPart(true, "lyric.lrc"),
                     })
                 ], new LyricLinesCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
-
-            new CommandInfo("musicplayer", /* Localizable */ "Opens an interactive music player",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(false, "musicFile"),
-                    ],
-                    [
-                        new SwitchInfo("r", /* Localizable */ "Opens the radio station player instead")
-                    ])
-                ], new MusicPlayerCommand()),
 
             new CommandInfo("playlyric", /* Localizable */ "Plays a lyric file",
                 [
@@ -153,7 +134,6 @@ namespace Nitrocid.Extras.BassBoom
             // Additionally, register a custom extension handler that handles music playback
             if (!InitBasolia.BasoliaInitialized)
                 InitBasolia.Init(PathsManagement.AddonsPath + "/Extras.BassBoom");
-            ExtensionHandlerTools.extensionHandlers.AddRange(handlers);
 
             // Initialize versions
             mpgVer = InitBasolia.MpgLibVersion;
@@ -166,17 +146,11 @@ namespace Nitrocid.Extras.BassBoom
             ScreensaverManager.AddonSavers.Remove("lyrics");
             ConfigTools.UnregisterBaseSetting(nameof(BassBoomSaversConfig));
             ConfigTools.UnregisterBaseSetting(nameof(BassBoomConfig));
-            foreach (var handler in handlers)
-                ExtensionHandlerTools.extensionHandlers.Remove(handler);
             HomepageTools.UnregisterBuiltinAction("Music Player");
             HomepageTools.UnregisterBuiltinAction("Radio Player");
         }
 
         void IAddon.FinalizeAddon()
-        {
-            // Add homepage entries
-            HomepageTools.RegisterBuiltinAction(/* Localizable */ "Music Player", PlayerTui.PlayerLoop);
-            HomepageTools.RegisterBuiltinAction(/* Localizable */ "Radio Player", Radio.RadioLoop);
-        }
+        { }
     }
 }
