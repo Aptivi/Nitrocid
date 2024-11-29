@@ -25,6 +25,7 @@ using System;
 using System.Text;
 using VisualCard;
 using VisualCard.Parts.Implementations;
+using VisualCard.Parts.Enums;
 
 namespace Nitrocid.Extras.Contacts.Contacts
 {
@@ -61,7 +62,7 @@ namespace Nitrocid.Extras.Contacts.Contacts
                 var cards = CardTools.GetCards(path);
                 builder.AppendLine($"{cards.Length} {Translate.DoTranslation("contacts found")}");
                 foreach (var card in cards)
-                    builder.AppendLine($"  - {card.GetPartsArray<FullNameInfo>()[0].FullName}");
+                    builder.AppendLine($"  - {card.GetString(StringsEnum.FullName)[0].Value}");
                 return builder.ToString();
             }
             catch (Exception ex)

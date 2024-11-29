@@ -25,6 +25,7 @@ using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Kernel.Exceptions;
 using VisualCard.Parts.Implementations;
 using System.Text;
+using VisualCard.Parts.Enums;
 
 namespace Nitrocid.Extras.Contacts.Contacts.Commands
 {
@@ -41,10 +42,10 @@ namespace Nitrocid.Extras.Contacts.Contacts.Commands
                 {
                     var finalNameRendered = new StringBuilder();
                     bool hasName = contact.GetPartsArray<NameInfo>().Length != 0;
-                    bool hasFullName = contact.GetPartsArray<FullNameInfo>().Length != 0;
+                    bool hasFullName = contact.GetString(StringsEnum.FullName).Length != 0;
 
                     if (hasName || hasFullName)
-                        finalNameRendered.Append(contact.GetPartsArray<FullNameInfo>()[0].FullName);
+                        finalNameRendered.Append(contact.GetString(StringsEnum.FullName)[0].Value);
                     else
                         finalNameRendered.Append(Translate.DoTranslation("No contact name"));
                     TextWriters.Write(finalNameRendered.ToString(), KernelColorType.NeutralText);

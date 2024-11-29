@@ -24,6 +24,7 @@ using System;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Kernel.Exceptions;
 using VisualCard.Parts.Implementations;
+using VisualCard.Parts.Enums;
 
 namespace Nitrocid.Extras.Contacts.Contacts.Commands
 {
@@ -56,24 +57,24 @@ namespace Nitrocid.Extras.Contacts.Contacts.Commands
 
                 // Determine whether the contact has some parts
                 bool hasName = contact.GetPartsArray<NameInfo>().Length != 0;
-                bool hasFullName = contact.GetPartsArray<FullNameInfo>().Length != 0;
+                bool hasFullName = contact.GetString(StringsEnum.FullName).Length != 0;
                 bool hasAddress = contact.GetPartsArray<AddressInfo>().Length != 0;
-                bool hasMail = contact.GetPartsArray<EmailInfo>().Length != 0;
+                bool hasMail = contact.GetString(StringsEnum.Mails).Length != 0;
                 bool hasOrganization = contact.GetPartsArray<OrganizationInfo>().Length != 0;
-                bool hasTelephone = contact.GetPartsArray<TelephoneInfo>().Length != 0;
-                bool hasURL = contact.GetPartsArray<UrlInfo>().Length != 0;
-                bool hasGeo = contact.GetPartsArray<GeoInfo>().Length != 0;
-                bool hasImpp = contact.GetPartsArray<ImppInfo>().Length != 0;
-                bool hasNickname = contact.GetPartsArray<NicknameInfo>().Length != 0;
-                bool hasRoles = contact.GetPartsArray<RoleInfo>().Length != 0;
-                bool hasTitles = contact.GetPartsArray<TitleInfo>().Length != 0;
-                bool hasNotes = contact.GetPartsArray<NoteInfo>().Length > 0;
+                bool hasTelephone = contact.GetString(StringsEnum.Telephones).Length != 0;
+                bool hasURL = contact.GetString(StringsEnum.Url).Length != 0;
+                bool hasGeo = contact.GetString(StringsEnum.Geo).Length != 0;
+                bool hasImpp = contact.GetString(StringsEnum.Impps).Length != 0;
+                bool hasNickname = contact.GetString(StringsEnum.Nicknames).Length != 0;
+                bool hasRoles = contact.GetString(StringsEnum.Roles).Length != 0;
+                bool hasTitles = contact.GetString(StringsEnum.Titles).Length != 0;
+                bool hasNotes = contact.GetString(StringsEnum.Notes).Length > 0;
 
                 // Print every detail
                 if (hasFullName)
                 {
                     TextWriters.Write("- " + Translate.DoTranslation("Contact name") + ": ", false, KernelColorType.ListEntry);
-                    TextWriters.Write(contact.GetPartsArray<FullNameInfo>()[0].FullName ?? "", KernelColorType.ListValue);
+                    TextWriters.Write(contact.GetString(StringsEnum.FullName)[0].Value ?? "", KernelColorType.ListValue);
                 }
                 if (hasName)
                 {
@@ -98,7 +99,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Commands
                 if (hasMail)
                 {
                     TextWriters.Write("  - " + Translate.DoTranslation("Contact mail") + ": ", false, KernelColorType.ListEntry);
-                    TextWriters.Write(contact.GetPartsArray<EmailInfo>()[0].ContactEmailAddress ?? "", KernelColorType.ListValue);
+                    TextWriters.Write(contact.GetString(StringsEnum.Mails)[0].Value ?? "", KernelColorType.ListValue);
                 }
                 if (hasOrganization)
                 {
@@ -112,42 +113,42 @@ namespace Nitrocid.Extras.Contacts.Contacts.Commands
                 if (hasTelephone)
                 {
                     TextWriters.Write("  - " + Translate.DoTranslation("Contact telephone") + ": ", false, KernelColorType.ListEntry);
-                    TextWriters.Write(contact.GetPartsArray<TelephoneInfo>()[0].ContactPhoneNumber ?? "", KernelColorType.ListValue);
+                    TextWriters.Write(contact.GetString(StringsEnum.Telephones)[0].Value ?? "", KernelColorType.ListValue);
                 }
                 if (hasURL)
                 {
                     TextWriters.Write("  - " + Translate.DoTranslation("Contact URL") + ": ", false, KernelColorType.ListEntry);
-                    TextWriters.Write(contact.GetPartsArray<UrlInfo>()[0].Url ?? "", KernelColorType.ListValue);
+                    TextWriters.Write(contact.GetString(StringsEnum.Url)[0].Value ?? "", KernelColorType.ListValue);
                 }
                 if (hasGeo)
                 {
                     TextWriters.Write("  - " + Translate.DoTranslation("Contact Geo") + ": ", false, KernelColorType.ListEntry);
-                    TextWriters.Write(contact.GetPartsArray<GeoInfo>()[0].Geo ?? "", KernelColorType.ListValue);
+                    TextWriters.Write(contact.GetString(StringsEnum.Geo)[0].Value ?? "", KernelColorType.ListValue);
                 }
                 if (hasImpp)
                 {
                     TextWriters.Write("  - " + Translate.DoTranslation("Contact IMPP") + ": ", false, KernelColorType.ListEntry);
-                    TextWriters.Write(contact.GetPartsArray<ImppInfo>()[0].ContactIMPP ?? "", KernelColorType.ListValue);
+                    TextWriters.Write(contact.GetString(StringsEnum.Impps)[0].Value ?? "", KernelColorType.ListValue);
                 }
                 if (hasNickname)
                 {
                     TextWriters.Write("  - " + Translate.DoTranslation("Contact nickname") + ": ", false, KernelColorType.ListEntry);
-                    TextWriters.Write(contact.GetPartsArray<NicknameInfo>()[0].ContactNickname ?? "", KernelColorType.ListValue);
+                    TextWriters.Write(contact.GetString(StringsEnum.Nicknames)[0].Value ?? "", KernelColorType.ListValue);
                 }
                 if (hasRoles)
                 {
                     TextWriters.Write("  - " + Translate.DoTranslation("Contact role") + ": ", false, KernelColorType.ListEntry);
-                    TextWriters.Write(contact.GetPartsArray<RoleInfo>()[0].ContactRole ?? "", KernelColorType.ListValue);
+                    TextWriters.Write(contact.GetString(StringsEnum.Roles)[0].Value ?? "", KernelColorType.ListValue);
                 }
                 if (hasTitles)
                 {
                     TextWriters.Write("  - " + Translate.DoTranslation("Contact title") + ": ", false, KernelColorType.ListEntry);
-                    TextWriters.Write(contact.GetPartsArray<TitleInfo>()[0].ContactTitle ?? "", KernelColorType.ListValue);
+                    TextWriters.Write(contact.GetString(StringsEnum.Titles)[0].Value ?? "", KernelColorType.ListValue);
                 }
                 if (hasNotes)
                 {
                     TextWriters.Write("  - " + Translate.DoTranslation("Contact note") + ": ", false, KernelColorType.ListEntry);
-                    TextWriters.Write(contact.GetPartsArray<NoteInfo>()[0].Note ?? "", KernelColorType.ListValue);
+                    TextWriters.Write(contact.GetString(StringsEnum.Notes)[0].Value ?? "", KernelColorType.ListValue);
                 }
                 return 0;
             }
