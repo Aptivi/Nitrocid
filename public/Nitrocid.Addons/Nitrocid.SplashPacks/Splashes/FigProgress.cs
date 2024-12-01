@@ -46,8 +46,6 @@ namespace Nitrocid.SplashPacks.Splashes
         // Standalone splash information
         public override string SplashName => "FigProgress";
 
-        public override bool SplashDisplaysProgress => true;
-
         // Actual logic
         public override string Opening(SplashContext context)
         {

@@ -47,8 +47,6 @@ namespace Nitrocid.Misc.Splash.Splashes
         // Standalone splash information
         public override string SplashName => "Welcome";
 
-        public override bool SplashDisplaysProgress => true;
-
         // Actual logic
         public override string Opening(SplashContext context)
         {
