@@ -67,6 +67,10 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
     /// <description>Opens the splash settings</description>
     /// </item>
     /// <item>
+    /// <term>-addonsplash</term>
+    /// <description>Opens the extra splash settings</description>
+    /// </item>
+    /// <item>
     /// <term>-driver</term>
     /// <description>Opens the driver settings</description>
     /// </item>
@@ -91,6 +95,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 bool isSaver = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-saver");
                 bool isAddonSaver = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-addonsaver");
                 bool isSplash = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-splash");
+                bool isAddonSplash = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-addonsplash");
                 bool isDriver = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-driver");
                 if (isSaver)
                     typeFinal = nameof(KernelSaverConfig);
@@ -104,7 +109,9 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.Config);
                     }
                 }
-                else if (isSplash)
+                if (isSplash)
+                    typeFinal = nameof(KernelSplashConfig);
+                else if (isAddonSplash)
                 {
                     if (ConfigTools.IsCustomSettingBuiltin("ExtraSplashesConfig"))
                         typeFinal = "ExtraSplashesConfig";

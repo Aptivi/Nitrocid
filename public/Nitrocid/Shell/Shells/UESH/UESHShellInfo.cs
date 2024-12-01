@@ -1287,27 +1287,32 @@ namespace Nitrocid.Shell.Shells.UESH
                     new CommandArgumentInfo(new[] {
                         new SwitchInfo("saver", /* Localizable */ "Opens the screensaver settings", new SwitchOptions()
                         {
-                            ConflictsWith = ["splash", "type", "addonsaver", "driver"],
+                            ConflictsWith = ["splash", "addonsplash", "type", "addonsaver", "driver"],
                             AcceptsValues = false
                         }),
                         new SwitchInfo("addonsaver", /* Localizable */ "Opens the addon screensaver settings", new SwitchOptions()
                         {
-                            ConflictsWith = ["splash", "type", "saver", "driver"],
+                            ConflictsWith = ["splash", "addonsplash", "type", "saver", "driver"],
                             AcceptsValues = false
                         }),
                         new SwitchInfo("splash", /* Localizable */ "Opens the splash settings", new SwitchOptions()
                         {
-                            ConflictsWith = ["saver", "type", "addonsaver", "driver"],
+                            ConflictsWith = ["saver", "addonsplash", "type", "addonsaver", "driver"],
+                            AcceptsValues = false
+                        }),
+                        new SwitchInfo("addonsplash", /* Localizable */ "Opens the addon splash settings", new SwitchOptions()
+                        {
+                            ConflictsWith = ["saver", "splash", "type", "addonsaver", "driver"],
                             AcceptsValues = false
                         }),
                         new SwitchInfo("driver", /* Localizable */ "Opens the driver settings", new SwitchOptions()
                         {
-                            ConflictsWith = ["saver", "type", "addonsaver", "splash"],
+                            ConflictsWith = ["saver", "addonsplash", "type", "addonsaver", "splash"],
                             AcceptsValues = false
                         }),
                         new SwitchInfo("type", /* Localizable */ "Opens the custom settings", new SwitchOptions()
                         {
-                            ConflictsWith = ["saver", "splash", "addonsaver", "driver"],
+                            ConflictsWith = ["saver", "addonsplash", "splash", "addonsaver", "driver"],
                             ArgumentsRequired = true
                         }),
                         new SwitchInfo("sel", /* Localizable */ "Uses the legacy settings style", new SwitchOptions()
