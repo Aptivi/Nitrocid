@@ -42,7 +42,6 @@ namespace Nitrocid.Kernel.Debugging
     {
 
         internal static string DebugPath = "";
-        internal static string lastRoutinePath = "";
         internal static StreamWriter? DebugStreamWriter;
         internal static bool isDisposed;
         internal static object WriteLock = new();
@@ -151,37 +150,15 @@ namespace Nitrocid.Kernel.Debugging
                             string routinePath = STrace.RoutinePath;
                             string date = TimeDateTools.KernelDateTime.ToShortDateString();
                             string time = TimeDateTools.KernelDateTime.ToShortTimeString();
+                            string routineName = STrace.RoutineName;
+                            string fileName = STrace.RoutineFileName;
+                            int fileLineNumber = STrace.RoutineLineNumber;
 
-                            // We need to check to see if we're going to use the legacy log style
-                            if (Config.MainConfig.DebugLegacyLogStyle)
-                            {
-                                string routineName = STrace.RoutineName;
-                                string fileName = STrace.RoutineFileName;
-                                int fileLineNumber = STrace.RoutineLineNumber;
-
-                                // Check to see if source file name is not empty.
-                                message.Append($"{date} {time} [{Level}] ");
-                                if (fileName is not null && fileLineNumber != 0)
-                                    message.Append($"({routineName} - {fileName}:{fileLineNumber}): ");
-                                message.Append($"{splitText}\n");
-                            }
-                            else
-                            {
-                                // Check to see if source routine is the same.
-                                if (routinePath != lastRoutinePath)
-                                {
-                                    string renderedRoutinePath = $"{date} {time} ({routinePath})";
-                                    message.Append($"\n{renderedRoutinePath}\n");
-                                    message.Append(new string('-', renderedRoutinePath.Length));
-                                    message.Append($"\n\n");
-                                }
-
-                                // Show stack information
-                                message.Append($"[{Level}] : {splitText}\n");
-                            }
-
-                            // Set teh last routine path for modern debug logs
-                            lastRoutinePath = routinePath;
+                            // Check to see if source file name is not empty.
+                            message.Append($"{date} {time} [{Level}] ");
+                            if (fileName is not null && fileLineNumber != 0)
+                                message.Append($"({routineName} - {fileName}:{fileLineNumber}): ");
+                            message.Append($"{splitText}\n");
                         }
 
                         // Debug to file and all connected debug devices (raw mode). The reason for the \r\n is that because

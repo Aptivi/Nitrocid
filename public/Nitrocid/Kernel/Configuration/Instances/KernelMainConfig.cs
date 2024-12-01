@@ -220,10 +220,6 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public bool ShowLicenseInfoBox { get; set; } = true;
         /// <summary>
-        /// Uses the legacy log style
-        /// </summary>
-        public bool DebugLegacyLogStyle { get; set; } = true;
-        /// <summary>
         /// Bootloader style
         /// </summary>
         public string BootStyle { get; set; } = "Default";
