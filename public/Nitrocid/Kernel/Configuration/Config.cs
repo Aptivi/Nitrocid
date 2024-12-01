@@ -321,7 +321,7 @@ namespace Nitrocid.Kernel.Configuration
             foreach (var baseConfig in baseConfigurations)
             {
                 string finalPath = ConfigTools.GetPathToCustomSettingsFile(baseConfig.Value);
-                if (!Checking.FileExists(PathsManagement.GetKernelPath(KernelPathType.Configuration)))
+                if (!Checking.FileExists(finalPath))
                 {
                     DebugWriter.WriteDebug(DebugLevel.W, "No {0} config file found. Creating at {1}...", baseConfig.Key, finalPath);
                     CreateConfig(baseConfig.Value);
