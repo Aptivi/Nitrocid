@@ -228,5 +228,10 @@
         "name": "ExtrasSsh",
         "display": "Extras - SSH",
         "project": "Extras.Ssh"
+    },
+    {
+        "name": "ExtrasChemistry",
+        "display": "Extras - Chemistry",
+        "project": "Extras.Chemistry"
     }
 ]
