@@ -69,7 +69,10 @@ namespace Nitrocid.Analyzers.ConsoleBase
                     // Let's see if the caller tries to access Console.BackgroundColor.
                     var name = (IdentifierNameSyntax)exp.Name;
                     var idName = name.Identifier.Text;
-                    if (idName == nameof(Console.BackgroundColor))
+
+                    // False positive, because we're actually getting the name of the Console.BackgroundColor property.
+                    // Since that is always constant, stringify it.
+                    if (idName == "BackgroundColor")
                     {
                         var diagnostic = Diagnostic.Create(Rule, location);
                         context.ReportDiagnostic(diagnostic);

@@ -69,22 +69,25 @@ namespace Nitrocid.Analyzers.ConsoleBase
                 {
                     // Before making the diagnostic, we need to first check for any existing methods from the ConsoleWrapper class.
                     // For contributors: Update the below array when new functions get added to ConsoleWrapper or changed.
+
+                    // False positive, because we're actually getting the name of the properties from Console, not calling them.
+                    // Since they're always constant, stringify them.
                     string[] wrapperFunctions =
                     [
-                        nameof(Console.Out),
-                        nameof(Console.CursorLeft),
-                        nameof(Console.CursorTop),
-                        nameof(Console.WindowWidth),
-                        nameof(Console.WindowHeight),
-                        nameof(Console.WindowTop),
-                        nameof(Console.BufferWidth),
-                        nameof(Console.BufferHeight),
-                        nameof(Console.ForegroundColor),
-                        nameof(Console.BackgroundColor),
-                        nameof(Console.CursorVisible),
-                        nameof(Console.OutputEncoding),
-                        nameof(Console.InputEncoding),
-                        nameof(Console.KeyAvailable),
+                        "Out",
+                        "CursorLeft",
+                        "CursorTop",
+                        "WindowWidth",
+                        "WindowHeight",
+                        "WindowTop",
+                        "BufferWidth",
+                        "BufferHeight",
+                        "ForegroundColor",
+                        "BackgroundColor",
+                        "CursorVisible",
+                        "OutputEncoding",
+                        "InputEncoding",
+                        "KeyAvailable",
                         nameof(Console.Clear),
                         nameof(Console.SetCursorPosition),
                         nameof(Console.ResetColor),

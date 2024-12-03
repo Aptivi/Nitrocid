@@ -18,6 +18,7 @@
 //
 
 using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.Text;
 using Newtonsoft.Json;
 using System.IO;
 using System.Linq;
@@ -26,11 +27,11 @@ using System.Text;
 namespace Nitrocid.Generators.KnownAddons
 {
     [Generator]
-    public class KnownAddonsGen : ISourceGenerator
+    public class KnownAddonsGen : IIncrementalGenerator
     {
         private string knownAddons = "";
 
-        public void Execute(GeneratorExecutionContext context)
+        public void Initialize(IncrementalGeneratorInitializationContext context)
         {
             // Get the data content
             var asm = typeof(KnownAddonsGen).Assembly;
@@ -43,10 +44,7 @@ namespace Nitrocid.Generators.KnownAddons
             PopulateData(context);
         }
 
-        public void Initialize(GeneratorInitializationContext context)
-        { }
-
-        private void PopulateData(GeneratorExecutionContext context)
+        private void PopulateData(IncrementalGeneratorInitializationContext context)
         {
             string header =
                 $$"""
@@ -112,10 +110,13 @@ namespace Nitrocid.Generators.KnownAddons
 
             // Add the source code to the compilation
             builder.AppendLine(footer);
-            context.AddSource("InterAddonTranslations.g.cs", builder.ToString());
+            context.RegisterPostInitializationOutput(ctx =>
+            {
+                ctx.AddSource("InterAddonTranslations.g.cs", SourceText.From(builder.ToString(), Encoding.UTF8));
+            });
         }
 
-        private void PopulateEnums(GeneratorExecutionContext context)
+        private void PopulateEnums(IncrementalGeneratorInitializationContext context)
         {
             string header =
                 $$"""
@@ -179,7 +180,10 @@ namespace Nitrocid.Generators.KnownAddons
 
             // Add the source code to the compilation
             builder.AppendLine(footer);
-            context.AddSource("KnownAddons.cs", builder.ToString());
+            context.RegisterPostInitializationOutput(ctx =>
+            {
+                ctx.AddSource("KnownAddons.cs", SourceText.From(builder.ToString(), Encoding.UTF8));
+            });
         }
     }
 }

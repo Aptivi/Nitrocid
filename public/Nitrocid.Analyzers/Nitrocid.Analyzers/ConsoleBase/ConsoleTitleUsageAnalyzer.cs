@@ -69,7 +69,10 @@ namespace Nitrocid.Analyzers.ConsoleBase
                     // Let's see if the caller tries to access Console.Title.
                     var name = (IdentifierNameSyntax)exp.Name;
                     var idName = name.Identifier.Text;
-                    if (idName == nameof(Console.Title))
+
+                    // False positive, because we're actually getting the name of the Console.Title property.
+                    // Since that is always constant, stringify it.
+                    if (idName == "Title")
                     {
                         var diagnostic = Diagnostic.Create(Rule, location);
                         context.ReportDiagnostic(diagnostic);
