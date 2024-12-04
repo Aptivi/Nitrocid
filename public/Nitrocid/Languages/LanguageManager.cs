@@ -362,40 +362,16 @@ namespace Nitrocid.Languages
         /// <summary>
         /// Lists all languages
         /// </summary>
-        public static Dictionary<string, LanguageInfo> ListAllLanguages() =>
-            ListLanguages("");
+        /// <param name="withCountry">Whether to include country specifiers in the key</param>
+        public static Dictionary<string, LanguageInfo> ListAllLanguages(bool withCountry = false) =>
+            ListLanguages("", withCountry);
 
         /// <summary>
         /// Lists the languages
         /// </summary>
         /// <param name="SearchTerm">Search term</param>
-        public static Dictionary<string, LanguageInfo> ListLanguages(string SearchTerm)
-        {
-            var ListedLanguages = new Dictionary<string, LanguageInfo>();
-
-            // List the Languages using the search term
-            foreach (string LanguageName in Languages.Keys)
-            {
-                if (LanguageName.Contains(SearchTerm))
-                {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Adding language {0} to list... Search term: {1}", LanguageName, SearchTerm);
-                    ListedLanguages.Add(LanguageName, Languages[LanguageName]);
-                }
-            }
-            return ListedLanguages;
-        }
-
-        /// <summary>
-        /// Lists all languages with their country specifiers
-        /// </summary>
-        public static Dictionary<string, LanguageInfo> ListAllLanguagesWithCountry() =>
-            ListLanguagesWithCountry("");
-
-        /// <summary>
-        /// Lists the languages with their country specifiers
-        /// </summary>
-        /// <param name="SearchTerm">Search term</param>
-        public static Dictionary<string, LanguageInfo> ListLanguagesWithCountry(string SearchTerm)
+        /// <param name="withCountry">Whether to include country specifiers in the key</param>
+        public static Dictionary<string, LanguageInfo> ListLanguages(string SearchTerm, bool withCountry = false)
         {
             var ListedLanguages = new Dictionary<string, LanguageInfo>();
 
@@ -407,7 +383,7 @@ namespace Nitrocid.Languages
                 if (LanguageName.Contains(SearchTerm))
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Adding language {0} to list... Search term: {1}", LanguageName, SearchTerm);
-                    ListedLanguages.Add($"{LanguageName} [{LanguageValue.Country}]", Languages[LanguageName]);
+                    ListedLanguages.Add($"{LanguageName}{(withCountry ? $" [{LanguageValue.Country}]" : "")}", Languages[LanguageName]);
                 }
             }
             return ListedLanguages;
