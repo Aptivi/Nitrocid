@@ -129,10 +129,13 @@ namespace Nitrocid.Shell.ShellBase.Arguments
         /// </summary>
         /// <param name="ArgumentText">Kernel argument text that the user provided</param>
         /// <returns>An array of <see cref="ProvidedArgumentsInfo"/> that holds information about parsed command</returns>
-        public static (ProvidedArgumentsInfo? satisfied, ProvidedArgumentsInfo[] total) ParseArgumentArguments(string ArgumentText)
+        public static (ProvidedArgumentsInfo? satisfied, ProvidedArgumentsInfo[] total) ParseArgumentArguments(string ArgumentText) =>
+            ParseArgumentArguments(ArgumentText, false);
+
+        internal static (ProvidedArgumentsInfo? satisfied, ProvidedArgumentsInfo[] total) ParseArgumentArguments(string ArgumentText, bool earlyStage)
         {
             string Argument;
-            var KernelArguments = ArgumentParse.AvailableCMDLineArgs;
+            var KernelArguments = earlyStage ? ArgumentParse.outArgs : ArgumentParse.AvailableCMDLineArgs;
 
             // Split the requested argument string into words
             var words = ArgumentText.SplitEncloseDoubleQuotes();

@@ -18,7 +18,6 @@
 //
 
 using Nitrocid.Arguments.CommandLineArguments;
-using Nitrocid.Arguments.Help;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel.Debugging;
@@ -27,7 +26,6 @@ using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Arguments;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using Textify.General;
 
 namespace Nitrocid.Arguments
@@ -38,17 +36,31 @@ namespace Nitrocid.Arguments
     public static class ArgumentParse
     {
 
-        private readonly static string[] outArgs =
-        [
-            "help",
-            "version",
-            "apiversion"
-        ];
+        internal readonly static Dictionary<string, ArgumentInfo> outArgs = new()
+        {
+            { "help",
+                new ArgumentInfo("help", /* Localizable */ "Help page",
+                    [
+                        new CommandArgumentInfo()
+                    ], new HelpArgument())
+            },
 
-        /// <summary>
-        /// Available command line arguments
-        /// </summary>
-        public readonly static Dictionary<string, ArgumentInfo> AvailableCMDLineArgs = new()
+            { "version",
+                new ArgumentInfo("version", /* Localizable */ "Prints the kernel version",
+                    [
+                        new CommandArgumentInfo()
+                    ], new VersionArgument())
+            },
+
+            { "apiversion",
+                new ArgumentInfo("apiversion", /* Localizable */ "Prints the API version",
+                    [
+                        new CommandArgumentInfo()
+                    ], new ApiVersionArgument())
+            },
+        };
+
+        private readonly static Dictionary<string, ArgumentInfo> args = new()
         {
             { "quiet",
                 new ArgumentInfo("quiet", /* Localizable */ "Starts the kernel quietly",
@@ -139,16 +151,25 @@ namespace Nitrocid.Arguments
         };
 
         /// <summary>
+        /// Available command line arguments
+        /// </summary>
+        public static Dictionary<string, ArgumentInfo> AvailableCMDLineArgs =>
+            args;
+
+        /// <summary>
         /// Parses specified arguments
         /// </summary>
         /// <param name="ArgumentsInput">Input Arguments</param>
-        public static void ParseArguments(string[]? ArgumentsInput)
+        public static void ParseArguments(string[]? ArgumentsInput) =>
+            ParseArguments(ArgumentsInput, false);
+
+        internal static void ParseArguments(string[]? ArgumentsInput, bool earlyStage)
         {
             // Check for the arguments written by the user
             try
             {
-                ArgumentsInput = GetFilteredArguments(ArgumentsInput) ?? [];
-                var Arguments = AvailableCMDLineArgs;
+                ArgumentsInput ??= [];
+                var Arguments = earlyStage ? outArgs : AvailableCMDLineArgs;
 
                 // Parse them now
                 for (int i = 0; i <= ArgumentsInput.Length - 1; i++)
@@ -213,13 +234,16 @@ namespace Nitrocid.Arguments
         /// <param name="ArgumentsInput">List of passed arguments</param>
         /// <param name="argumentName">Argument name to check</param>
         /// <returns>True if found in the arguments list and passed. False otherwise.</returns>
-        public static bool IsArgumentPassed(string[]? ArgumentsInput, string argumentName)
+        public static bool IsArgumentPassed(string[]? ArgumentsInput, string argumentName) =>
+            IsArgumentPassed(ArgumentsInput, argumentName, false);
+
+        internal static bool IsArgumentPassed(string[]? ArgumentsInput, string argumentName, bool earlyStage)
         {
             // Check for the arguments written by the user
             try
             {
-                ArgumentsInput = GetFilteredArguments(ArgumentsInput) ?? [];
-                var Arguments = AvailableCMDLineArgs;
+                ArgumentsInput ??= [];
+                var Arguments = earlyStage ? outArgs : AvailableCMDLineArgs;
 
                 // Parse them now
                 bool found = false;
@@ -227,7 +251,7 @@ namespace Nitrocid.Arguments
                 {
                     string Argument = ArgumentsInput[i];
                     string ArgumentName = Argument.SplitEncloseDoubleQuotes()[0];
-                    found = ArgumentName == argumentName && (outArgs.Contains(ArgumentName) || Arguments.ContainsKey(ArgumentName));
+                    found = ArgumentName == argumentName && Arguments.ContainsKey(ArgumentName);
                     if (found)
                         break;
                 }
@@ -239,13 +263,6 @@ namespace Nitrocid.Arguments
                 DebugWriter.WriteDebugStackTrace(ex);
                 return false;
             }
-        }
-
-        private static string[]? GetFilteredArguments(string[]? ArgumentsInput)
-        {
-            if (ArgumentHelpPrint.acknowledged && ArgumentsInput is not null)
-                ArgumentsInput = ArgumentsInput.Where((arg) => !outArgs.Contains(arg)).ToArray();
-            return ArgumentsInput;
         }
 
     }
