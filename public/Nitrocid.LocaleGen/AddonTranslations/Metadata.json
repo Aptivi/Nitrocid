@@ -3,14 +3,20 @@
         "three": "arb",
         "name": "Arabic",
         "transliterable": true,
-        "country": "Syria"
+        "country": "Saudi Arabia"
     },
     {
         "three": "arb-T",
         "name": "Arabic",
         "transliterable": true,
         "codepage": 1256,
-        "country": "Syria"
+        "country": "Saudi Arabia"
+    },
+    {
+        "three": "brz",
+        "name": "Portuguese (BR)",
+        "transliterable": false,
+        "country": "Brazil"
     },
     {
         "three": "chi",
@@ -87,6 +93,12 @@
         "country": "India"
     },
     {
+        "three": "iri",
+        "name": "Irish",
+        "transliterable": false,
+        "country": "Ireland"
+    },
+    {
         "three": "ita",
         "name": "Italian",
         "transliterable": false,
@@ -119,6 +131,18 @@
         "country": "Latin"
     },
     {
+        "three": "mal",
+        "name": "Malay",
+        "transliterable": false,
+        "country": "Malaysia"
+    },
+    {
+        "three": "nor",
+        "name": "Norwegian",
+        "transliterable": false,
+        "country": "Norway"
+    },
+    {
         "three": "ptg",
         "name": "Portuguese",
         "transliterable": false,
@@ -148,5 +172,11 @@
         "name": "Spanish",
         "transliterable": false,
         "country": "Spain"
+    },
+    {
+        "three": "vtn",
+        "name": "Vietnamese",
+        "transliterable": false,
+        "country": "Vietnam"
     }
 ]
