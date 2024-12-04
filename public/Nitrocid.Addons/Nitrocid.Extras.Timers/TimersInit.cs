@@ -48,6 +48,11 @@ namespace Nitrocid.Extras.Timers
                 [
                     new CommandArgumentInfo()
                 ], new TimerCommand()),
+
+            new CommandInfo("pomodoro", /* Localizable */ "Pomodoro timer",
+                [
+                    new CommandArgumentInfo()
+                ], new PomodoroCommand()),
         ];
 
         string IAddon.AddonName =>
