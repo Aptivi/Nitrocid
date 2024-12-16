@@ -1,7 +1,7 @@
 ---
 name: Report an issue
 about: Thank you for reporting a bug to us.
-title: "[BUG] [featureName] - [issue]"
+title: "[BUG] [FeatureName] - [Issue]"
 labels: ''
 assignees: ''
 
@@ -26,5 +26,9 @@ assignees: ''
 1. Observe a happening instead of z
 
 ### Version
-<!-- This should be in this format: <Version> (<Commit>) (<Branch>). Commit number and branch required for development builds. -->
-Version `0.0.0 0000000000000000000000000000000000000000 main`
+<!-- Replace all placeholders. Project version should be in this format: <Version> (<Commit>) (<Branch>). Commit number and branch required for development builds. -->
+| Key              | Value
+|:-----------------|:------
+| Project version  | `0.0.0 0000000000000000000000000000000000000000 main`
+| Operating system | Windows XX build XXXXX.XXXX
+| .NET version     | .NET X.X / .NET Framework X.X / Mono X.X

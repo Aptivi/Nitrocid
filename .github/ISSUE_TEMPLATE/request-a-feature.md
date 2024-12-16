@@ -1,7 +1,7 @@
 ---
 name: Request a feature
 about: Suggest an idea to us.
-title: "[ADD] [FeatureName] - [Feature]"
+title: "[REQ] [FeatureName] - [Feature]"
 labels: ''
 assignees: ''
 
@@ -16,4 +16,9 @@ assignees: ''
 - [ ] New API functions
 - [ ] Others
 
-### Have you tried doing it? If so, attach a mod file.
+### Have you tried doing it? Place test cases here.
+<!-- If you have tried implementing this new feature, please place test cases here, and make a fork of this project with your changes. Please respect everyone's privacy and avoid posting confidential and/or private information; make dummy data instead that implements your suggestion. -->
+- [ ] Yes, I have
+- [ ] No, but I will do it
+- [ ] No, it's a suggestion to you
+
