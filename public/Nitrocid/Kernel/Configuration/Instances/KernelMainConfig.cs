@@ -239,6 +239,14 @@ namespace Nitrocid.Kernel.Configuration.Instances
             get => HomepageTools.isHomepageEnabled;
             set => HomepageTools.isHomepageEnabled = value;
         }
+        /// <summary>
+        /// Enables "The Nitrocid Homepage" widgets
+        /// </summary>
+        public bool EnableHomepageWidgets
+        {
+            get => HomepageTools.isHomepageWidgetEnabled;
+            set => HomepageTools.isHomepageWidgetEnabled = value;
+        }
         #endregion
 
         #region Colors

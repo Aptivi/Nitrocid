@@ -64,6 +64,7 @@ namespace Nitrocid.Shell.Homepage
     public static class HomepageTools
     {
         internal static bool isHomepageEnabled = true;
+        internal static bool isHomepageWidgetEnabled = true;
         private static bool isOnHomepage = false;
         private static Dictionary<string, Action> choiceActionsAddons = [];
         private static Dictionary<string, Action> choiceActionsCustom = [];
@@ -141,10 +142,13 @@ namespace Nitrocid.Shell.Homepage
                     builder.Append(BorderColor.RenderBorder(widgetLeft, rssTop, widgetWidth, rssHeight, KernelColorTools.GetColor(KernelColorType.TuiPaneSelectedSeparator)));
 
                     // Render the clock widget
-                    var widget = WidgetTools.GetWidget(nameof(AnalogClock));
-                    string widgetInit = widget.Initialize(widgetLeft + 1, clockTop + 1, widgetWidth, widgetHeight);
-                    string widgetSeq = widget.Render(widgetLeft + 1, clockTop + 1, widgetWidth, widgetHeight);
-                    builder.Append(widgetInit + widgetSeq);
+                    if (Config.MainConfig.EnableHomepageWidgets)
+                    {
+                        var widget = WidgetTools.GetWidget(nameof(AnalogClock));
+                        string widgetInit = widget.Initialize(widgetLeft + 1, clockTop + 1, widgetWidth, widgetHeight);
+                        string widgetSeq = widget.Render(widgetLeft + 1, clockTop + 1, widgetWidth, widgetHeight);
+                        builder.Append(widgetInit + widgetSeq);
+                    }
 
                     // Render the first three RSS feeds
                     if (string.IsNullOrEmpty(rssSequence))
