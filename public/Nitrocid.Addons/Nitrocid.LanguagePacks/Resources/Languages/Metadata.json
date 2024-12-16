@@ -63,12 +63,6 @@
         "country": "France"
     },
     {
-        "three": "frs",
-        "name": "Farsi/Persian",
-        "transliterable": false,
-        "country": "Iran"
-    },
-    {
         "three": "ger",
         "name": "German",
         "transliterable": false,
@@ -155,23 +149,16 @@
         "country": "Romania"
     },
     {
-        "three": "rus",
-        "name": "Russian",
-        "transliterable": true,
-        "country": "Russia"
-    },
-    {
-        "three": "rus-T",
-        "name": "Russian",
-        "transliterable": true,
-        "codepage": 866,
-        "country": "Russia"
-    },
-    {
         "three": "spa",
         "name": "Spanish",
         "transliterable": false,
         "country": "Spain"
+    },
+    {
+        "three": "tky",
+        "name": "Turkish",
+        "transliterable": false,
+        "country": "Turkey"
     },
     {
         "three": "vtn",
