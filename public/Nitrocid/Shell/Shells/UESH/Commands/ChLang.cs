@@ -63,8 +63,18 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 var countryLanguages = countries[country];
                 if (countryLanguages.Length > 1)
                 {
-                    var langChoices = countryLanguages.Select((li, idx) => new InputChoiceInfo($"{idx + 1}", $"{li.FullLanguageName}")).ToArray();
-                    string choice = ChoiceStyle.PromptChoice(Translate.DoTranslation("Choose a language for country") + $" {country}", langChoices);
+                    var langChoices = countryLanguages.Select((li, idx) => new InputChoiceInfo($"{idx + 1}", $"{li.FullLanguageName} [{li.ThreeLetterLanguageName}]")).ToArray();
+                    string choice = ChoiceStyle.PromptChoice(Translate.DoTranslation("Choose a language for country") + $" {country}", langChoices, new()
+                    {
+                        OutputType = ChoiceOutputType.Modern,
+                        PressEnter = true,
+                    });
+                    if (!int.TryParse(choice, out int langNum) || langNum < 1 || langNum >= langChoices.Length)
+                    {
+                        TextWriters.Write(Translate.DoTranslation("Invalid language selection for") + $" {country}", true, KernelColorType.Error);
+                        return KernelExceptionTools.GetErrorCode(KernelExceptionType.LanguageManagement);
+                    }
+                    language = countryLanguages[langNum - 1].ThreeLetterLanguageName;
                 }
                 else
                     language = countryLanguages[0].ThreeLetterLanguageName;

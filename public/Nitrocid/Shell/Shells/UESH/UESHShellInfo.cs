@@ -237,6 +237,10 @@ namespace Nitrocid.Shell.Shells.UESH
                         {
                             AcceptsValues = false
                         }),
+                        new SwitchInfo("country", /* Localizable */ "Changes the language using a country (you might get prompted to choose a language)", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
                     ])
                 ], new ChLangCommand(), CommandFlags.Strict),
 
