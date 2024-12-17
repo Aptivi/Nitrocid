@@ -44,7 +44,7 @@ namespace Nitrocid.Languages
         {
             var cultures = GetCulturesFromCurrentLang();
             string StrCult =
-                !(cultures.Length == 0 && cultures.Any((ci) => ci.EnglishName.Contains(LanguageManager.CurrentLanguageInfo.FullLanguageName))) ?
+                cultures.Length != 0 && cultures.Any((ci) => ci.EnglishName.Contains(LanguageManager.CurrentLanguageInfo.FullLanguageName)) ?
                 cultures.First((ci) => ci.EnglishName.Contains(LanguageManager.CurrentLanguageInfo.FullLanguageName)).EnglishName :
                 CultureInfo.CurrentCulture.EnglishName;
             DebugWriter.WriteDebug(DebugLevel.I, "Culture for {0} is {1}", LanguageManager.CurrentLanguageInfo, StrCult);
