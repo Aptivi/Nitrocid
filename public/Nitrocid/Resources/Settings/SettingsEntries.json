@@ -27,7 +27,7 @@
                 "Type": "SSelection",
                 "Variable": "CurrentLanguage",
                 "IsEnumeration": false,
-                "SelectionFunctionName": "ListAllLanguagesWithCountry",
+                "SelectionFunctionName": "ListAllLanguages",
                 "SelectionFunctionType": "LanguageManager",
                 "IsSelectionFunctionDict": true,
                 "SelectionFallback": [ "en-US" ],
