@@ -91,7 +91,7 @@ namespace Nitrocid.Kernel.Configuration.Migration
                     foreach (var key in keys)
                     {
                         // Parse this key
-                        string keyName = key.Name;
+                        string keyName = key.Name.Original;
                         string keyVar = key.Variable;
                         var keyToken = sectionToken[keyName];
 
@@ -178,7 +178,7 @@ namespace Nitrocid.Kernel.Configuration.Migration
                         foreach (var key in keys)
                         {
                             // Parse this key
-                            string keyName = key.Name;
+                            string keyName = key.Name.Original;
                             string keyVar = key.Variable;
                             var keyToken = sectionToken[keyName];
                             if (keyToken is JValue keyValue)

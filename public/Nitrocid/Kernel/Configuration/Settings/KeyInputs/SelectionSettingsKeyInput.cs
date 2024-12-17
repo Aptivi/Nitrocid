@@ -71,8 +71,8 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             }
 
             // Prompt user and check for input
-            string keyName = Translate.DoTranslation(key.Name);
-            string keyDesc = Translate.DoTranslation(key.Description);
+            string keyName = key.Name;
+            string keyDesc = key.Description;
             string finalSection = SettingsApp.RenderHeader(keyName, keyDesc);
             int Answer = SelectionStyle.PromptSelection(finalSection,
                 InputChoiceTools.GetInputChoices([.. items]),

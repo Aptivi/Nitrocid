@@ -214,7 +214,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
                     // Check for platform compatibility
                     string Notes = "";
                     var unsupportedConfigs = SectionToken.Where((sk) => sk.Unsupported).ToArray();
-                    var unsupportedConfigNames = unsupportedConfigs.Select((sk) => Translate.DoTranslation(sk.Name)).ToArray();
+                    var unsupportedConfigNames = unsupportedConfigs.Select((sk) => sk.Name.Localized).ToArray();
                     bool hasUnsupportedConfigs = unsupportedConfigs.Length > 0;
                     if (hasUnsupportedConfigs)
                         Notes = Translate.DoTranslation("One or more of the following settings found in this section are unsupported in your platform:") + $" {string.Join(", ", unsupportedConfigNames)}";
@@ -229,8 +229,8 @@ namespace Nitrocid.Kernel.Configuration.Settings
                         // Now, populate the input choice info
                         object? CurrentValue = ConfigTools.GetValueFromEntry(Setting, settingsType);
                         string choiceName = $"{SectionIndex + 1}";
-                        string choiceTitle = $"{Translate.DoTranslation(Setting.Name)} [{CurrentValue}]";
-                        string choiceDesc = Translate.DoTranslation(Setting.Description);
+                        string choiceTitle = $"{Setting.Name} [{CurrentValue}]";
+                        string choiceDesc = Setting.Description;
                         var ici = new InputChoiceInfo(
                             choiceName,
                             choiceTitle,

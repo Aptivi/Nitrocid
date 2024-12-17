@@ -38,13 +38,13 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             ConsoleWrapper.Clear();
 
             // Make an introductory banner
-            string keyName = Translate.DoTranslation(key.Name);
-            string keyDesc = Translate.DoTranslation(key.Description);
+            string keyName = key.Name;
+            string keyDesc = key.Description;
             string finalSection = SettingsApp.RenderHeader(keyName, keyDesc);
             TextWriters.Write(finalSection + "\n", true, KernelColorType.Question);
 
             // Write the prompt
-            string? AnswerString = InfoBoxInputColor.WriteInfoBoxInput(key.Name, $"{Translate.DoTranslation("Write any text to use. Remember, follow the description of the option that you've chosen.")} [{KeyDefaultValue}]");
+            string? AnswerString = InfoBoxInputColor.WriteInfoBoxInput(keyName, $"{Translate.DoTranslation("Write any text to use. Remember, follow the description of the option that you've chosen.")} [{KeyDefaultValue}]");
 
             // Neutralize path if required with the assumption that the keytype is not list
             AnswerString = (string?)TranslateStringValueWithDefault(key, AnswerString, KeyDefaultValue);

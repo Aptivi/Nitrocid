@@ -133,10 +133,10 @@ namespace Nitrocid.Kernel.Configuration
                     {
                         var Setting = keys[SettingIndex];
                         object? CurrentValue = GetValueFromEntry(Setting, configType);
-                        string KeyName = Translate.DoTranslation(Setting.Name) + $" [{CurrentValue}]";
+                        string KeyName = Setting.Name + $" [{CurrentValue}]";
                         if (Regex.IsMatch(KeyName, Pattern, RegexOptions.IgnoreCase))
                         {
-                            string desc = Translate.DoTranslation(Setting.Description);
+                            string desc = Setting.Description;
                             InputChoiceInfo ici = new($"{SectionIndex + 1}/{SettingIndex + 1}", KeyName, desc);
                             DebugWriter.WriteDebug(DebugLevel.I, "Found setting {0} under section {1}, key {2}", KeyName, SectionIndex + 1, SettingIndex + 1);
                             Results.Add(ici);
@@ -213,7 +213,7 @@ namespace Nitrocid.Kernel.Configuration
                 var keys = entry.Keys;
                 foreach (var key in keys)
                 {
-                    string KeyName = key.Name;
+                    string KeyName = key.Name.Original;
                     string KeyVariable = key.Variable;
                     string KeyEnumeration = key.Enumeration;
                     bool KeyEnumerationInternal = key.EnumerationInternal;

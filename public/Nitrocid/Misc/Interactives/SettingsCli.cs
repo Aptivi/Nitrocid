@@ -72,7 +72,7 @@ namespace Nitrocid.Misc.Interactives
                     var finalkeyNames = keys.Select((key, idx) =>
                     {
                         object? currentValue = ConfigTools.GetValueFromEntry(key, config);
-                        return ($"{Translate.DoTranslation(key.Name)} [{currentValue}]", idx);
+                        return ($"{key.Name} [{currentValue}]", idx);
                     }).ToArray();
                     entryNames.Clear();
                     entryNames.AddRange(configNames);

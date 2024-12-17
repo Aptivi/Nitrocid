@@ -38,8 +38,8 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             ConsoleWrapper.Clear();
 
             // Make an introductory banner
-            string keyName = Translate.DoTranslation(key.Name);
-            string keyDesc = Translate.DoTranslation(key.Description);
+            string keyName = key.Name;
+            string keyDesc = key.Description;
             string finalSection = SettingsApp.RenderHeader(keyName, keyDesc);
 
             // Write the prompt

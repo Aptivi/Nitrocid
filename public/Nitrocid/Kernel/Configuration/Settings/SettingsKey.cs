@@ -21,6 +21,7 @@ using Newtonsoft.Json;
 using Nitrocid.Files;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Configuration.Settings.KeyInputs;
+using Nitrocid.Languages;
 using System;
 using System.Diagnostics;
 
@@ -102,7 +103,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
         /// Settings key name
         /// </summary>
         [JsonIgnore]
-        public string Name =>
+        public LocalizedString Name =>
             name;
 
         /// <summary>
@@ -128,10 +129,10 @@ namespace Nitrocid.Kernel.Configuration.Settings
             variable;
 
         /// <summary>
-        /// Settings description (unlocalized)
+        /// Settings description
         /// </summary>
         [JsonIgnore]
-        public string Description =>
+        public LocalizedString Description =>
             description;
 
         /// <summary>
