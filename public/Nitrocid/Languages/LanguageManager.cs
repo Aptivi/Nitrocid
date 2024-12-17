@@ -390,6 +390,37 @@ namespace Nitrocid.Languages
         }
 
         /// <summary>
+        /// Lists all countries
+        /// </summary>
+        public static Dictionary<string, LanguageInfo[]> ListAllCountries() =>
+            ListCountries("");
+
+        /// <summary>
+        /// Lists the countries
+        /// </summary>
+        /// <param name="SearchTerm">Search term</param>
+        public static Dictionary<string, LanguageInfo[]> ListCountries(string SearchTerm)
+        {
+            var listedCountries = new Dictionary<string, List<LanguageInfo>>();
+
+            // List the countries using the search term
+            foreach (var language in Languages)
+            {
+                string languageName = language.Key;
+                var languageValue = language.Value;
+                if (languageValue.Country.Contains(SearchTerm))
+                {
+                    DebugWriter.WriteDebug(DebugLevel.I, "Adding language {0} for country {1} to list... Search term: {2}", languageName, languageValue.Country, SearchTerm);
+                    if (listedCountries.ContainsKey(languageName))
+                        listedCountries[languageValue.Country].Add(Languages[languageName]);
+                    else
+                        listedCountries.Add(languageValue.Country, [Languages[languageName]]);
+                }
+            }
+            return listedCountries.ToDictionary((kvp) => kvp.Key, (kvp) => kvp.Value.ToArray());
+        }
+
+        /// <summary>
         /// Infers the language from the system's current culture settings
         /// </summary>
         /// <returns>Language name if the system culture can be used to infer the language. Otherwise, English (eng).</returns>

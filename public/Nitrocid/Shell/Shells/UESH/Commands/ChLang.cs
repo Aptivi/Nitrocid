@@ -25,6 +25,9 @@ using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Switches;
 using Nitrocid.Users;
+using Terminaux.Inputs.Styles.Choice;
+using System.Linq;
+using Terminaux.Inputs.Styles;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -43,16 +46,42 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
         {
             bool inferSysLang = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-usesyslang");
             bool useUser = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-user");
-            string language = inferSysLang ? "eng" : parameters.ArgumentsList[0];
-            if (!LanguageManager.ListAllLanguages().ContainsKey(language))
+            bool useCountry = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-country");
+            string language = "eng";
+            if (useCountry)
             {
-                TextWriters.Write(Translate.DoTranslation("Invalid language") + $" {language}", true, KernelColorType.Error);
-                return KernelExceptionTools.GetErrorCode(KernelExceptionType.NoSuchLanguage);
+                // Country selection is entirely different, because a country might contain more than one language
+                var countries = LanguageManager.ListAllCountries();
+                string country = parameters.ArgumentsList[0];
+                if (!countries.ContainsKey(country))
+                {
+                    TextWriters.Write(Translate.DoTranslation("Invalid country") + $" {country}", true, KernelColorType.Error);
+                    return KernelExceptionTools.GetErrorCode(KernelExceptionType.LanguageManagement);
+                }
+
+                // Check to see if a country has more than one language
+                var countryLanguages = countries[country];
+                if (countryLanguages.Length > 1)
+                {
+                    var langChoices = countryLanguages.Select((li, idx) => new InputChoiceInfo($"{idx + 1}", $"{li.FullLanguageName}")).ToArray();
+                    string choice = ChoiceStyle.PromptChoice(Translate.DoTranslation("Choose a language for country") + $" {country}", langChoices);
+                }
+                else
+                    language = countryLanguages[0].ThreeLetterLanguageName;
+            }
+            else
+            {
+                // Language selection takes only one language
+                language = inferSysLang ? LanguageManager.InferLanguageFromSystem() : parameters.ArgumentsList[0];
+                var languages = LanguageManager.ListAllLanguages();
+                if (!languages.ContainsKey(language))
+                {
+                    TextWriters.Write(Translate.DoTranslation("Invalid language") + $" {language}", true, KernelColorType.Error);
+                    return KernelExceptionTools.GetErrorCode(KernelExceptionType.NoSuchLanguage);
+                }
             }
 
             // Change the language
-            if (inferSysLang)
-                language = LanguageManager.InferLanguageFromSystem();
             if (useUser)
             {
                 UserManagement.CurrentUser.PreferredLanguage = language;
