@@ -247,6 +247,14 @@ namespace Nitrocid.Kernel.Configuration.Instances
             get => HomepageTools.isHomepageWidgetEnabled;
             set => HomepageTools.isHomepageWidgetEnabled = value;
         }
+        /// <summary>
+        /// Enables "The Nitrocid Homepage" RSS feed widget
+        /// </summary>
+        public bool EnableHomepageRssFeed
+        {
+            get => HomepageTools.isHomepageRssFeedEnabled;
+            set => HomepageTools.isHomepageRssFeedEnabled = value;
+        }
         #endregion
 
         #region Colors

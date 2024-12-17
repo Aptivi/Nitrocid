@@ -65,6 +65,7 @@ namespace Nitrocid.Shell.Homepage
     {
         internal static bool isHomepageEnabled = true;
         internal static bool isHomepageWidgetEnabled = true;
+        internal static bool isHomepageRssFeedEnabled = true;
         private static bool isOnHomepage = false;
         private static Dictionary<string, Action> choiceActionsAddons = [];
         private static Dictionary<string, Action> choiceActionsCustom = [];
@@ -151,56 +152,59 @@ namespace Nitrocid.Shell.Homepage
                     }
 
                     // Render the first three RSS feeds
-                    if (string.IsNullOrEmpty(rssSequence))
+                    if (Config.MainConfig.EnableHomepageRssFeed)
                     {
-                        var rssSequenceBuilder = new StringBuilder();
-                        try
+                        if (string.IsNullOrEmpty(rssSequence))
                         {
-                            if (!Config.MainConfig.ShowHeadlineOnLogin)
-                                rssSequenceBuilder.Append(Translate.DoTranslation("Enable headlines on login to show RSS feeds"));
-                            else
+                            var rssSequenceBuilder = new StringBuilder();
+                            try
                             {
-                                var feedsObject = InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasRssShell, "GetArticles", Config.MainConfig.RssHeadlineUrl);
-                                bool found = false;
-                                if (feedsObject is (string feedTitle, string articleTitle)[] feeds)
+                                if (!Config.MainConfig.ShowHeadlineOnLogin)
+                                    rssSequenceBuilder.Append(Translate.DoTranslation("Enable headlines on login to show RSS feeds"));
+                                else
                                 {
-                                    for (int i = 0; i < 3; i++)
+                                    var feedsObject = InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasRssShell, "GetArticles", Config.MainConfig.RssHeadlineUrl);
+                                    bool found = false;
+                                    if (feedsObject is (string feedTitle, string articleTitle)[] feeds)
                                     {
-                                        if (i >= feeds.Length)
-                                            break;
-                                        (string _, string articleTitle) = feeds[i];
-                                        rssSequenceBuilder.AppendLine(articleTitle);
-                                        found = true;
+                                        for (int i = 0; i < 3; i++)
+                                        {
+                                            if (i >= feeds.Length)
+                                                break;
+                                            (string _, string articleTitle) = feeds[i];
+                                            rssSequenceBuilder.AppendLine(articleTitle);
+                                            found = true;
+                                        }
                                     }
+                                    if (!found)
+                                        rssSequenceBuilder.Append(Translate.DoTranslation("No feed."));
                                 }
-                                if (!found)
-                                    rssSequenceBuilder.Append(Translate.DoTranslation("No feed."));
                             }
+                            catch (KernelException ex) when (ex.ExceptionType == KernelExceptionType.AddonManagement)
+                            {
+                                DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news: {0}", ex.Message);
+                                DebugWriter.WriteDebugStackTrace(ex);
+                                rssSequenceBuilder.Append(Translate.DoTranslation("Install the RSS Shell Extras addon!"));
+                            }
+                            catch (Exception ex)
+                            {
+                                DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news: {0}", ex.Message);
+                                DebugWriter.WriteDebugStackTrace(ex);
+                                rssSequenceBuilder.Append(Translate.DoTranslation("Failed to get the latest news."));
+                            }
+                            rssSequence = rssSequenceBuilder.ToString();
                         }
-                        catch (KernelException ex) when (ex.ExceptionType == KernelExceptionType.AddonManagement)
-                        {
-                            DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news: {0}", ex.Message);
-                            DebugWriter.WriteDebugStackTrace(ex);
-                            rssSequenceBuilder.Append(Translate.DoTranslation("Install the RSS Shell Extras addon!"));
-                        }
-                        catch (Exception ex)
-                        {
-                            DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news: {0}", ex.Message);
-                            DebugWriter.WriteDebugStackTrace(ex);
-                            rssSequenceBuilder.Append(Translate.DoTranslation("Failed to get the latest news."));
-                        }
-                        rssSequence = rssSequenceBuilder.ToString();
-                    }
 
-                    // Render the RSS feed sequence
-                    var sequences = rssSequence.GetWrappedSentencesByWords(widgetWidth);
-                    for (int i = 0; i < 3; i++)
-                    {
-                        if (i >= sequences.Length)
-                            break;
-                        string sequence = sequences[i];
-                        builder.Append(CsiSequences.GenerateCsiCursorPosition(widgetLeft + 2, rssTop + 2 + i));
-                        builder.Append(sequence);
+                        // Render the RSS feed sequence
+                        var sequences = rssSequence.GetWrappedSentencesByWords(widgetWidth);
+                        for (int i = 0; i < 3; i++)
+                        {
+                            if (i >= sequences.Length)
+                                break;
+                            string sequence = sequences[i];
+                            builder.Append(CsiSequences.GenerateCsiCursorPosition(widgetLeft + 2, rssTop + 2 + i));
+                            builder.Append(sequence);
+                        }
                     }
 
                     // Populate the settings button

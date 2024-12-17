@@ -238,6 +238,12 @@
                 "Type": "SBoolean",
                 "Variable": "EnableHomepageWidgets",
                 "Description": "Enables 'The Nitrocid Homepage' widgets at the right side of the screen."
+            },
+            {
+                "Name": "Enable 'The Nitrocid Homepage' RSS feed",
+                "Type": "SBoolean",
+                "Variable": "EnableHomepageRssFeed",
+                "Description": "Enables 'The Nitrocid Homepage' RSS feed widget at the right side of the screen."
             }
         ]
     },
