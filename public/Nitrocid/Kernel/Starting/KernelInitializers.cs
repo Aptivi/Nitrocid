@@ -96,8 +96,8 @@ namespace Nitrocid.Kernel.Starting
                 if (Listing.GetFilesystemEntries(PathsManagement.AppDataPath).Length == 0)
                     KernelEntry.FirstTime = true;
 
-                // Initialize debug path
-                DebugWriter.InitializeDebugPath();
+                // Initialize debug
+                DebugWriter.InitializeDebug();
 
                 // Power signal handlers
                 PowerSignalHandlers.RegisterHandlers();
@@ -754,10 +754,6 @@ namespace Nitrocid.Kernel.Starting
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Shutting down debugger");
                         KernelEntry.DebugMode = false;
-                        DebugWriter.DebugStreamWriter?.Close();
-                        DebugWriter.DebugStreamWriter?.Dispose();
-                        DebugWriter.isDisposed = true;
-                        DebugWriter.debugLines = 0;
                     }
                     catch (Exception exc)
                     {

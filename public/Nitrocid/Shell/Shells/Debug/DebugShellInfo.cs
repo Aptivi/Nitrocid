@@ -50,10 +50,7 @@ namespace Nitrocid.Shell.Shells.Debug
                 [
                     new CommandArgumentInfo(new[]
                     {
-                        new CommandArgumentPart(true, "sessionNum", new CommandArgumentPartOptions()
-                        {
-                            IsNumeric = true
-                        })
+                        new CommandArgumentPart(true, "sessionGuid")
                     })
                 ], new DebugLogCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 

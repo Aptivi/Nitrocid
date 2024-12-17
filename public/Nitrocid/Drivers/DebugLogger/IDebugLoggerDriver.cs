@@ -17,6 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Nitrocid.Kernel.Debugging;
+
 namespace Nitrocid.Drivers.DebugLogger
 {
     /// <summary>
@@ -28,13 +30,15 @@ namespace Nitrocid.Drivers.DebugLogger
         /// Outputs the text into the debugger file, and sets the time stamp.
         /// </summary>
         /// <param name="text">A sentence that will be written to the the debugger file. Supports {0}, {1}, ...</param>
-        void Write(string text);
+        /// <param name="level">Debug level</param>
+        void Write(string text, DebugLevel level);
 
         /// <summary>
         /// Outputs the text into the debugger file, and sets the time stamp.
         /// </summary>
         /// <param name="text">A sentence that will be written to the the debugger file. Supports {0}, {1}, ...</param>
+        /// <param name="level">Debug level</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        void Write(string text, params object[] vars);
+        void Write(string text, DebugLevel level, params object[] vars);
     }
 }

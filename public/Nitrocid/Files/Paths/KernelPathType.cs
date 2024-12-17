@@ -33,10 +33,6 @@ namespace Nitrocid.Files.Paths
         /// </summary>
         Configuration,
         /// <summary>
-        /// Kernel debug log file.
-        /// </summary>
-        Debugging,
-        /// <summary>
         /// Aliases file.
         /// </summary>
         Aliases,

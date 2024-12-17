@@ -70,9 +70,9 @@ namespace Nitrocid.Tests
                 Making.MakeDirectory(PathToTestSlotFolder, false);
 
             // Enable debugging
-            string debugPath = Environment.CurrentDirectory + "/UnitTestDebug.log";
-            DebugWriter.DebugPath = debugPath;
             KernelEntry.DebugMode = true;
+            string debugPath = Environment.CurrentDirectory + "/UnitTestDebug.log";
+            DebugWriter.InitializeDebug(debugPath);
 
             // Load necessary addons for testing
             AddonTools.ProcessAddons(ModLoadPriority.Important);

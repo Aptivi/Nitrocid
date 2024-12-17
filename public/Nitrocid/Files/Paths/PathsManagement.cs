@@ -41,7 +41,6 @@ namespace Nitrocid.Files.Paths
             { $"{KernelPathType.Configuration}",       (() => ConfigurationPath, true) },
             { $"{KernelPathType.CustomLanguages}",     (() => CustomLanguagesPath, true) },
             { $"{KernelPathType.DebugDevices}",        (() => DebugDevicesPath, true) },
-            { $"{KernelPathType.Debugging}",           (() => DebuggingPath, true) },
             { $"{KernelPathType.Events}",              (() => EventsPath, true) },
             { $"{KernelPathType.SpeedDial}",           (() => SpeedDialPath, true) },
             { $"{KernelPathType.MAL}",                 (() => MALPath, true) },
@@ -142,12 +141,6 @@ namespace Nitrocid.Files.Paths
         /// </summary>
         public static string ConfigurationPath =>
             FilesystemTools.NeutralizePath(AppDataPath + "/KernelMainConfig.json");
-
-        /// <summary>
-        /// Debugging path
-        /// </summary>
-        public static string DebuggingPath =>
-            FilesystemTools.NeutralizePath(AppDataPath + "/kernelDbg.log");
 
         /// <summary>
         /// Aliases path

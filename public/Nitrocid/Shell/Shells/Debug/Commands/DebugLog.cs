@@ -26,6 +26,8 @@ using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Files.Paths;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Writer.ConsoleWriters;
+using Nitrocid.Files;
+using System;
 
 namespace Nitrocid.Shell.Shells.Debug.Commands
 {
@@ -40,19 +42,17 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            // Try to parse the session number.
-            string sessionNumStr = parameters.ArgumentsList[0];
-            if (!int.TryParse(sessionNumStr, out int sessionNum))
+            // Try to parse the session GUID.
+            string sessionGuidStr = parameters.ArgumentsList[0];
+            if (!Guid.TryParse(sessionGuidStr, out Guid sessionGuid))
             {
-                // There is invalid session number being requested
-                TextWriters.Write(Translate.DoTranslation("Invalid session number") + $" {sessionNumStr}", true, KernelColorType.Error);
+                // There is invalid session GUID being requested
+                TextWriters.Write(Translate.DoTranslation("Invalid session GUID") + $" {sessionGuidStr}", true, KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Debug);
             }
 
-            // Now, check to see if we have this session number. Get all the debug logs and compare.
-            string TargetPath = PathsManagement.GetKernelPath(KernelPathType.Debugging);
-            TargetPath = TargetPath[..TargetPath.LastIndexOf(".log")] + "*.log";
-            string[] debugs = Listing.GetFilesystemEntries(TargetPath);
+            // Now, check to see if we have this session GUID. Get all the debug logs and compare.
+            var debugs = Listing.GetFilesystemEntries(FilesystemTools.NeutralizePath(PathsManagement.AppDataPath + "/../Aptivi/Logs/") + "log_Nitrocid_*.txt");
             string finalDebug = "";
             foreach (string debug in debugs)
             {
@@ -60,16 +60,16 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
                 if (!string.IsNullOrEmpty(finalDebug))
                     break;
 
-                // Check the debug path and compare it with the requested session number.
-                if (debug.Contains($"kernelDbg-{sessionNum}.log"))
+                // Check the debug path and compare it with the requested session GUID.
+                if (debug.Contains($"{sessionGuid}"))
                     finalDebug = debug;
             }
 
             // Check to see if we really have the file path
             if (string.IsNullOrEmpty(finalDebug))
             {
-                // There is no such session number being requested
-                TextWriters.Write(Translate.DoTranslation("No such session number") + $" {sessionNumStr}", true, KernelColorType.Error);
+                // There is no such session GUID being requested
+                TextWriters.Write(Translate.DoTranslation("No such session GUID") + $" {sessionGuidStr}", true, KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Debug);
             }
 

@@ -28,6 +28,7 @@ using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Power;
+using Nitrocid.Kernel.Debugging;
 
 namespace Nitrocid.Arguments.CommandLineArguments
 {
@@ -52,12 +53,6 @@ namespace Nitrocid.Arguments.CommandLineArguments
                             string[] recents = Listing.GetFilesystemEntries(TargetPath);
                             foreach (string recent in recents)
                                 File.Delete(recent);
-                            break;
-                        case KernelPathType.Debugging:
-                            TargetPath = TargetPath[..TargetPath.LastIndexOf(".log")] + "*.log";
-                            string[] debugs = Listing.GetFilesystemEntries(TargetPath);
-                            foreach (string debug in debugs)
-                                File.Delete(debug);
                             break;
                         case KernelPathType.Journaling:
                             TargetPath = TargetPath[..TargetPath.LastIndexOf(".json")] + "*.json";
@@ -92,6 +87,16 @@ namespace Nitrocid.Arguments.CommandLineArguments
                 {
                     TextWriters.Write(Translate.DoTranslation("Can't wipe dump file") + $" {dump}: {ex.Message}", true, KernelColorType.Error);
                 }
+            }
+
+            // Wipe debug logs
+            try
+            {
+                DebugWriter.RemoveDebugLogs();
+            }
+            catch (Exception ex)
+            {
+                TextWriters.Write(Translate.DoTranslation("Can't wipe debug files") + $": {ex.Message}", true, KernelColorType.Error);
             }
 
             // Inform user that the wipe was not complete if there are files.

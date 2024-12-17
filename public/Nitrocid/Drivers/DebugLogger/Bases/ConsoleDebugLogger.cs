@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Nitrocid.Kernel.Debugging;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Drivers.DebugLogger.Bases
@@ -30,11 +31,11 @@ namespace Nitrocid.Drivers.DebugLogger.Bases
         public override bool DriverInternal => true;
 
         /// <inheritdoc/>
-        public override void Write(string text) =>
+        public override void Write(string text, DebugLevel level) =>
             TextWriterColor.Write(text, false);
 
         /// <inheritdoc/>
-        public override void Write(string text, params object[] vars) =>
+        public override void Write(string text, DebugLevel level, params object[] vars) =>
             TextWriterColor.Write(text, false, vars);
     }
 }

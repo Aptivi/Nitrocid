@@ -38,11 +38,11 @@ namespace Nitrocid.Drivers.DebugLogger
         public virtual bool DriverInternal => false;
 
         /// <inheritdoc/>
-        public virtual void Write(string text) =>
-            DebugWriter.DebugStreamWriter?.Write(text);
+        public virtual void Write(string text, DebugLevel level) =>
+            DebugWriter.DeterministicDebug(text, level, null);
 
         /// <inheritdoc/>
-        public virtual void Write(string text, params object[] vars) =>
-            DebugWriter.DebugStreamWriter?.Write(text, vars);
+        public virtual void Write(string text, DebugLevel level, params object[] vars) =>
+            DebugWriter.DeterministicDebug(text, level, vars);
     }
 }

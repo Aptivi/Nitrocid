@@ -18,11 +18,9 @@
 //
 
 using System;
-using System.IO;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Files.Paths;
 using Nitrocid.Kernel;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
@@ -46,8 +44,7 @@ namespace Nitrocid.Shell.Shells.Admin.Commands
             {
                 try
                 {
-                    DebugWriter.DebugStreamWriter?.Close();
-                    DebugWriter.DebugStreamWriter = new StreamWriter(PathsManagement.GetKernelPath(KernelPathType.Debugging)) { AutoFlush = true };
+                    DebugWriter.RemoveDebugLogs();
                     TextWriterColor.Write(Translate.DoTranslation("Debug log removed. All connected debugging devices may still view messages."));
                     return 0;
                 }

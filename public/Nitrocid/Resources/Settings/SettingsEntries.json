@@ -174,18 +174,6 @@
                 "Description": "If set to true, the kernel won't error out upon loading mods that don't have the signed public key."
             },
             {
-                "Name": "Debug quota enabled",
-                "Type": "SBoolean",
-                "Variable": "DebugQuotaCheck",
-                "Description": "If this option is enabled, the debug writer rotates the debug log file if the quota is exceeded."
-            },
-            {
-                "Name": "Debug quota line count",
-                "Type": "SInt",
-                "Variable": "DebugQuotaLines",
-                "Description": "How many lines to print to the debug buffer before reaching the quota limit? Please note that it doesn't represent how many lines are in the debug log files."
-            },
-            {
                 "Name": "Use system time zone",
                 "Type": "SBoolean",
                 "Variable": "UseSystemTimeZone",
