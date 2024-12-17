@@ -841,7 +841,7 @@ namespace Nitrocid.Kernel.Starting
                 Exception exception = exceptions[i];
 
                 // Write the exception header
-                string exceptionHeader = $"{Translate.DoTranslation("Exception")} {i}/{exceptions.Count}";
+                string exceptionHeader = $"{Translate.DoTranslation("Exception")} {i + 1}/{exceptions.Count}";
                 exceptionsBuilder.AppendLine(exceptionHeader);
                 exceptionsBuilder.AppendLine(new string('=', ConsoleChar.EstimateCellWidth(exceptionHeader)));
 
