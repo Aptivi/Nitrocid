@@ -850,10 +850,6 @@ namespace Nitrocid.Drivers.Filesystem
                     Entries = Directory.GetFileSystemEntries(Parent, Pattern, options);
                     DebugWriter.WriteDebug(DebugLevel.I, "Enumerated {0} entries from parent {1} using pattern {2}", Entries.Length, Parent, Pattern);
                 }
-                else
-                {
-                    Entries = [Parent];
-                }
             }
             catch (Exception ex)
             {
