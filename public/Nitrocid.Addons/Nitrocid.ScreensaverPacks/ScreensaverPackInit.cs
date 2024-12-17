@@ -96,6 +96,7 @@ namespace Nitrocid.ScreensaverPacks
             { "newyear", new NewYearDisplay() },
             { "noise", new NoiseDisplay() },
             { "numberscatter", new NumberScatterDisplay() },
+            { "omen", new OmenDisplay() },
             { "particles", new ParticlesDisplay() },
             { "progressclock", new ProgressClockDisplay() },
             { "pulse", new PulseDisplay() },

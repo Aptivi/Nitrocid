@@ -6404,5 +6404,47 @@
                 "MaximumValue": 100
             }
         ]
+    },
+    {
+        "Name": "Omen",
+        "Desc": "Shows you text below a line in a glooming red background.",
+        "Keys": [
+            {
+                "Name": "Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "OmenDelay",
+                "Description": "How many milliseconds to wait before making the next write?"
+            },
+            {
+                "Name": "Text shown",
+                "Type": "SString",
+                "Variable": "OmenWrite",
+                "Description": "Write any text you want shown. Shorter is better."
+            },
+            {
+                "Name": "Maximum background color level",
+                "Type": "SIntSlider",
+                "Variable": "OmenMaximumBackColorLevel",
+                "Description": "Maximum background color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            },
+            {
+                "Name": "Maximum line color level",
+                "Type": "SIntSlider",
+                "Variable": "OmenMaximumLineColorLevel",
+                "Description": "Maximum line color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            },
+            {
+                "Name": "Maximum text color level",
+                "Type": "SIntSlider",
+                "Variable": "OmenMaximumTextColorLevel",
+                "Description": "Maximum text color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            }
+        ]
     }
 ]

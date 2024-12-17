@@ -14591,5 +14591,94 @@ namespace Nitrocid.ScreensaverPacks.Settings
             }
         }
         #endregion
+
+        #region Omen
+        private int omenDelay = 100;
+        private string omenWrite = "Nitrocid KS";
+        private int omenMaximumBackColorLevel = 32;
+        private int omenMaximumLineColorLevel = 64;
+        private int omenMaximumTextColorLevel = 128;
+
+        /// <summary>
+        /// [Omen] How many milliseconds to wait before making the next write?
+        /// </summary>
+        public int OmenDelay
+        {
+            get
+            {
+                return omenDelay;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 100;
+                omenDelay = value;
+            }
+        }
+        /// <summary>
+        /// [Omen] Text for Omen. Shorter is better.
+        /// </summary>
+        public string OmenWrite
+        {
+            get
+            {
+                return omenWrite;
+            }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                    value = "Nitrocid KS";
+                omenWrite = value;
+            }
+        }
+        /// <summary>
+        /// [Omen] Maximum background color level to use
+        /// </summary>
+        public int OmenMaximumBackColorLevel
+        {
+            get
+            {
+                return omenMaximumBackColorLevel;
+            }
+            set
+            {
+                if (value <= 0 || value > 255)
+                    value = 32;
+                omenMaximumBackColorLevel = value;
+            }
+        }
+        /// <summary>
+        /// [Omen] Maximum line color level to use
+        /// </summary>
+        public int OmenMaximumLineColorLevel
+        {
+            get
+            {
+                return omenMaximumLineColorLevel;
+            }
+            set
+            {
+                if (value <= 0 || value > 255)
+                    value = 64;
+                omenMaximumLineColorLevel = value;
+            }
+        }
+        /// <summary>
+        /// [Omen] Maximum text color level to use
+        /// </summary>
+        public int OmenMaximumTextColorLevel
+        {
+            get
+            {
+                return omenMaximumTextColorLevel;
+            }
+            set
+            {
+                if (value <= 0 || value > 255)
+                    value = 64;
+                omenMaximumTextColorLevel = value;
+            }
+        }
+        #endregion
     }
 }
