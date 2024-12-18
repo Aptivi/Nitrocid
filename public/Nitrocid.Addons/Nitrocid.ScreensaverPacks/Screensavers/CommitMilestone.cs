@@ -39,7 +39,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         private int currentHueAngle = 0;
 
         /// <inheritdoc/>
-        public override string ScreensaverName { get; set; } = "CommitMilestone";
+        public override string ScreensaverName =>
+            "CommitMilestone";
 
         /// <inheritdoc/>
         public override void ScreensaverPreparation() =>

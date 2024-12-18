@@ -35,10 +35,12 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         private int step = 0;
 
         /// <inheritdoc/>
-        public override string ScreensaverName { get; set; } = "SirenTheme";
+        public override string ScreensaverName =>
+            "SirenTheme";
 
         /// <inheritdoc/>
-        public override bool ScreensaverContainsFlashingImages { get; set; } = true;
+        public override bool ScreensaverContainsFlashingImages =>
+            true;
 
         /// <inheritdoc/>
         public override void ScreensaverPreparation()

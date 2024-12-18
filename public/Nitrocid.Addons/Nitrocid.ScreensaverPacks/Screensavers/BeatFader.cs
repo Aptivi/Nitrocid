@@ -32,10 +32,12 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         private Animations.BeatFader.BeatFaderSettings? BeatFaderSettingsInstance;
 
         /// <inheritdoc/>
-        public override string ScreensaverName { get; set; } = "BeatFader";
+        public override string ScreensaverName =>
+            "BeatFader";
 
         /// <inheritdoc/>
-        public override bool ScreensaverContainsFlashingImages { get; set; } = true;
+        public override bool ScreensaverContainsFlashingImages =>
+            true;
 
         /// <inheritdoc/>
         public override void ScreensaverPreparation()

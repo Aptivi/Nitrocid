@@ -54,7 +54,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         private readonly List<(int, int)> dotPositions = [];
 
         /// <inheritdoc/>
-        public override string ScreensaverName { get; set; } = "Mesmerize";
+        public override string ScreensaverName =>
+            "Mesmerize";
 
         /// <inheritdoc/>
         public override void ScreensaverPreparation()

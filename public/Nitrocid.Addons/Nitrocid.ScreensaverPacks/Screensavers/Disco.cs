@@ -39,10 +39,12 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         private int CurrentColorR, CurrentColorG, CurrentColorB;
 
         /// <inheritdoc/>
-        public override string ScreensaverName { get; set; } = "Disco";
+        public override string ScreensaverName =>
+            "Disco";
 
         /// <inheritdoc/>
-        public override bool ScreensaverContainsFlashingImages { get; set; } = true;
+        public override bool ScreensaverContainsFlashingImages =>
+            true;
 
         /// <inheritdoc/>
         public override void ScreensaverLogic()

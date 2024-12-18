@@ -49,10 +49,10 @@ namespace Nitrocid.Misc.Screensaver
         /// <summary>
         /// The name of screensaver, usually the assembly name of the custom screensaver
         /// </summary>
-        string ScreensaverName { get; set; }
+        string ScreensaverName { get; }
         /// <summary>
         /// Whether the screensaver contains flashing images
         /// </summary>
-        bool ScreensaverContainsFlashingImages { get; set; }
+        bool ScreensaverContainsFlashingImages { get; }
     }
 }

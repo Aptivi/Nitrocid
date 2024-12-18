@@ -44,7 +44,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         private readonly Color background = new("0;0;0");
 
         /// <inheritdoc/>
-        public override string ScreensaverName { get; set; } = "Matrix";
+        public override string ScreensaverName =>
+            "Matrix";
 
         /// <inheritdoc/>
         public override void ScreensaverPreparation()

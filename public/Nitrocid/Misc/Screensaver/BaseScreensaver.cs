@@ -36,11 +36,13 @@ namespace Nitrocid.Misc.Screensaver
         /// <summary>
         /// Screensaver name
         /// </summary>
-        public virtual string ScreensaverName { get; set; } = "BaseScreensaver";
+        public virtual string ScreensaverName =>
+            "BaseScreensaver";
         /// <summary>
         /// Whether the screensaver contains flashing images
         /// </summary>
-        public virtual bool ScreensaverContainsFlashingImages { get; set; } = false;
+        public virtual bool ScreensaverContainsFlashingImages =>
+            false;
 
         /// <summary>
         /// Shows the seizure warning before the preparation

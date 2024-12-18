@@ -36,7 +36,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         private static char[] characters = CharManager.GetAllLettersAndNumbers(false);
 
         /// <inheritdoc/>
-        public override string ScreensaverName { get; set; } = "GlitterChar";
+        public override string ScreensaverName =>
+            "GlitterChar";
 
         /// <inheritdoc/>
         public override void ScreensaverPreparation()

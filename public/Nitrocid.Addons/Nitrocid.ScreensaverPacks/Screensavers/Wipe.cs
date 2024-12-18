@@ -38,7 +38,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         private int TimesWiped = 0;
 
         /// <inheritdoc/>
-        public override string ScreensaverName { get; set; } = "Wipe";
+        public override string ScreensaverName =>
+            "Wipe";
 
         /// <inheritdoc/>
         public override void ScreensaverPreparation()

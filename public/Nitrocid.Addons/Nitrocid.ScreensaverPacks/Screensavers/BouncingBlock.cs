@@ -40,7 +40,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         private Color? blockColor = null;
 
         /// <inheritdoc/>
-        public override string ScreensaverName { get; set; } = "BouncingBlock";
+        public override string ScreensaverName =>
+            "BouncingBlock";
 
         /// <inheritdoc/>
         public override void ScreensaverPreparation()

@@ -36,7 +36,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     {
 
         /// <inheritdoc/>
-        public override string ScreensaverName { get; set; } = "Fireworks";
+        public override string ScreensaverName =>
+            "Fireworks";
 
         /// <inheritdoc/>
         public override void ScreensaverLogic()

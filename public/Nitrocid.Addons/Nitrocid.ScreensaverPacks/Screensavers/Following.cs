@@ -41,7 +41,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         private int currentStep;
 
         /// <inheritdoc/>
-        public override string ScreensaverName { get; set; } = "Following";
+        public override string ScreensaverName =>
+            "Following";
 
         /// <inheritdoc/>
         public override void ScreensaverPreparation()

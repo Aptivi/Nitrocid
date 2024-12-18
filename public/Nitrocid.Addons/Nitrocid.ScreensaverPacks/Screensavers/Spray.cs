@@ -43,7 +43,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         private readonly List<Tuple<int, int>> Stars = [];
 
         /// <inheritdoc/>
-        public override string ScreensaverName { get; set; } = "Spray";
+        public override string ScreensaverName =>
+            "Spray";
 
         /// <inheritdoc/>
         public override void ScreensaverPreparation()

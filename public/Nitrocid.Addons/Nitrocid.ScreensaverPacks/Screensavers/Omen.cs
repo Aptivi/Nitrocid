@@ -37,7 +37,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         private int step = 0;
 
         /// <inheritdoc/>
-        public override string ScreensaverName { get; set; } = "Omen";
+        public override string ScreensaverName =>
+            "Omen";
 
         /// <inheritdoc/>
         public override void ScreensaverPreparation()

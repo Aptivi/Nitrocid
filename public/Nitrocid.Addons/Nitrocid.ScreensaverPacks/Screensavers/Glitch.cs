@@ -32,7 +32,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         private Animations.Glitch.GlitchSettings? GlitchSettingsInstance;
 
         /// <inheritdoc/>
-        public override string ScreensaverName { get; set; } = "Glitch";
+        public override string ScreensaverName =>
+            "Glitch";
 
         /// <inheritdoc/>
         public override void ScreensaverPreparation()

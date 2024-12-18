@@ -48,7 +48,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         private (int x, int y) lastSeconds = (0, 0);
 
         /// <inheritdoc/>
-        public override string ScreensaverName { get; set; } = "AnalogClock";
+        public override string ScreensaverName =>
+            "AnalogClock";
 
         /// <inheritdoc/>
         public override void ScreensaverPreparation()

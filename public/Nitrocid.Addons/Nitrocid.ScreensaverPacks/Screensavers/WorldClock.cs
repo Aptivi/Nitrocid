@@ -39,7 +39,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         int times;
 
         /// <inheritdoc/>
-        public override string ScreensaverName { get; set; } = "WorldClock";
+        public override string ScreensaverName =>
+            "WorldClock";
 
         /// <inheritdoc/>
         public override void ScreensaverPreparation()

@@ -51,7 +51,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         private static readonly List<(int x, int y, DotMovementDirection direction)> secondGroupDots = [];
 
         /// <inheritdoc/>
-        public override string ScreensaverName { get; set; } = "TwoSpins";
+        public override string ScreensaverName =>
+            "TwoSpins";
 
         /// <inheritdoc/>
         public override void ScreensaverPreparation()

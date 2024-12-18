@@ -41,7 +41,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         private readonly List<Tuple<int, int>> CoveredPositions = [];
 
         /// <inheritdoc/>
-        public override string ScreensaverName { get; set; } = "Dissolve";
+        public override string ScreensaverName =>
+            "Dissolve";
 
         /// <inheritdoc/>
         public override void ScreensaverPreparation()

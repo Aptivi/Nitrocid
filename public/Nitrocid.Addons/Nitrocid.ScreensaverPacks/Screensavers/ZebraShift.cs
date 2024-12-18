@@ -42,10 +42,12 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         private static bool inverse = false;
 
         /// <inheritdoc/>
-        public override string ScreensaverName { get; set; } = "ZebraShift";
+        public override string ScreensaverName =>
+            "ZebraShift";
 
         /// <inheritdoc/>
-        public override bool ScreensaverContainsFlashingImages { get; set; } = true;
+        public override bool ScreensaverContainsFlashingImages =>
+            true;
 
         /// <inheritdoc/>
         public override void ScreensaverPreparation()

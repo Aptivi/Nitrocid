@@ -39,7 +39,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         private readonly List<(double, double, int, int, double, double, Color)> Blocks = [];
 
         /// <inheritdoc/>
-        public override string ScreensaverName { get; set; } = "Speckles";
+        public override string ScreensaverName =>
+            "Speckles";
 
         /// <inheritdoc/>
         public override void ScreensaverLogic()

@@ -41,7 +41,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         private int bluePosIdx = 0;
 
         /// <inheritdoc/>
-        public override string ScreensaverName { get; set; } = "Aurora";
+        public override string ScreensaverName =>
+            "Aurora";
 
         /// <inheritdoc/>
         public override void ScreensaverLogic()

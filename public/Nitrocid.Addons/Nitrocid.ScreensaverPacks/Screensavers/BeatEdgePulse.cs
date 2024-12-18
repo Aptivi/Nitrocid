@@ -34,7 +34,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         private Animations.BeatEdgePulse.BeatEdgePulseSettings? BeatEdgePulseSettingsInstance;
 
         /// <inheritdoc/>
-        public override string ScreensaverName { get; set; } = "BeatEdgePulse";
+        public override string ScreensaverName =>
+            "BeatEdgePulse";
 
         /// <inheritdoc/>
         public override void ScreensaverPreparation()

@@ -40,7 +40,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         private int posIdxHorizontal = 0;
 
         /// <inheritdoc/>
-        public override string ScreensaverName { get; set; } = "Swivel";
+        public override string ScreensaverName =>
+            "Swivel";
 
         /// <inheritdoc/>
         public override void ScreensaverPreparation()

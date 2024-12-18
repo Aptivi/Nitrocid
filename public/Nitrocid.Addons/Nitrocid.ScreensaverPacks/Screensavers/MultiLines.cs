@@ -34,7 +34,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     {
 
         /// <inheritdoc/>
-        public override string ScreensaverName { get; set; } = "MultiLines";
+        public override string ScreensaverName =>
+            "MultiLines";
 
         /// <inheritdoc/>
         public override void ScreensaverPreparation()

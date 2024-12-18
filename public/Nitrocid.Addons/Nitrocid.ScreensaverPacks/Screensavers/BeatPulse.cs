@@ -33,10 +33,12 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         private Animations.BeatPulse.BeatPulseSettings? BeatPulseSettingsInstance;
 
         /// <inheritdoc/>
-        public override string ScreensaverName { get; set; } = "BeatPulse";
+        public override string ScreensaverName =>
+            "BeatPulse";
 
         /// <inheritdoc/>
-        public override bool ScreensaverContainsFlashingImages { get; set; } = true;
+        public override bool ScreensaverContainsFlashingImages =>
+            true;
 
         /// <inheritdoc/>
         public override void ScreensaverPreparation()

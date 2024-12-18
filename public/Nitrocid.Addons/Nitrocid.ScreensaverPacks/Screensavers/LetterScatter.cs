@@ -40,7 +40,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         private readonly char maxChar = 'z';
 
         /// <inheritdoc/>
-        public override string ScreensaverName { get; set; } = "LetterScatter";
+        public override string ScreensaverName =>
+            "LetterScatter";
 
         /// <inheritdoc/>
         public override void ScreensaverPreparation()

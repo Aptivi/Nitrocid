@@ -60,7 +60,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         private int CurrentColumn = 1;
         private int CurrentColumnRowConsole = 0;
 
-        public override string ScreensaverName { get; set; } = "Linotypo";
+        public override string ScreensaverName =>
+            "Linotypo";
 
         public override void ScreensaverPreparation()
         {

@@ -56,7 +56,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         };
 
         /// <inheritdoc/>
-        public override string ScreensaverName { get; set; } = "Equalizer";
+        public override string ScreensaverName =>
+            "Equalizer";
 
         /// <inheritdoc/>
         public override void ScreensaverPreparation()

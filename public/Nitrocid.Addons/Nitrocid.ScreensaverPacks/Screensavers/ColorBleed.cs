@@ -41,7 +41,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         private static readonly List<BleedState> bleedStates = [];
 
         /// <inheritdoc/>
-        public override string ScreensaverName { get; set; } = "ColorBleed";
+        public override string ScreensaverName =>
+            "ColorBleed";
 
         /// <inheritdoc/>
         public override void ScreensaverPreparation()

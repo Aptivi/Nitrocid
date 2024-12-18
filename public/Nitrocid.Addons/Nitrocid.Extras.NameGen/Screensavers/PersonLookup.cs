@@ -36,7 +36,8 @@ namespace Nitrocid.Extras.NameGen.Screensavers
     {
 
         /// <inheritdoc/>
-        public override string ScreensaverName { get; set; } = "PersonLookup";
+        public override string ScreensaverName =>
+            "PersonLookup";
 
         /// <inheritdoc/>
         public override void ScreensaverPreparation()

@@ -37,7 +37,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         private double TimeSecs = 0.0d;
 
         /// <inheritdoc/>
-        public override string ScreensaverName { get; set; } = "BarWave";
+        public override string ScreensaverName =>
+            "BarWave";
 
         /// <inheritdoc/>
         public override void ScreensaverPreparation() =>

@@ -33,10 +33,12 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         private Animations.ExcaliBeats.ExcaliBeatsSettings? ExcaliBeatsSettingsInstance;
 
         /// <inheritdoc/>
-        public override string ScreensaverName { get; set; } = "ExcaliBeats";
+        public override string ScreensaverName =>
+            "ExcaliBeats";
 
         /// <inheritdoc/>
-        public override bool ScreensaverContainsFlashingImages { get; set; } = true;
+        public override bool ScreensaverContainsFlashingImages =>
+            true;
 
         /// <inheritdoc/>
         public override void ScreensaverPreparation()

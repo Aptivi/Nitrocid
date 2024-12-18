@@ -30,7 +30,8 @@ namespace Nitrocid.Extras.Amusements.Screensavers
     {
 
         /// <inheritdoc/>
-        public override string ScreensaverName { get; set; } = "Snaker";
+        public override string ScreensaverName =>
+            "Snaker";
 
         /// <inheritdoc/>
         public override void ScreensaverLogic()

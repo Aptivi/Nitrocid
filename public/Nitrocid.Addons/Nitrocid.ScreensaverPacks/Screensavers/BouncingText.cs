@@ -41,7 +41,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         private Color? BouncingColor;
 
         /// <inheritdoc/>
-        public override string ScreensaverName { get; set; } = "BouncingText";
+        public override string ScreensaverName =>
+            "BouncingText";
 
         /// <inheritdoc/>
         public override void ScreensaverPreparation()

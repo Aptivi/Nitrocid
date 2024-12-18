@@ -41,7 +41,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     {
 
         /// <inheritdoc/>
-        public override string ScreensaverName { get; set; } = "WordHasher";
+        public override string ScreensaverName =>
+            "WordHasher";
 
         /// <inheritdoc/>
         public override void ScreensaverPreparation()

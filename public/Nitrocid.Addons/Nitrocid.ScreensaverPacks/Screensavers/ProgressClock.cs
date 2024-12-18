@@ -50,7 +50,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         private string lastDate = "";
 
         /// <inheritdoc/>
-        public override string ScreensaverName { get; set; } = "ProgressClock";
+        public override string ScreensaverName =>
+            "ProgressClock";
 
         /// <inheritdoc/>
         public override void ScreensaverPreparation()

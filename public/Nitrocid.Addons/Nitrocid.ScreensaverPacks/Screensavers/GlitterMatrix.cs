@@ -34,7 +34,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     {
 
         /// <inheritdoc/>
-        public override string ScreensaverName { get; set; } = "GlitterMatrix";
+        public override string ScreensaverName =>
+            "GlitterMatrix";
 
         /// <inheritdoc/>
         public override void ScreensaverPreparation()

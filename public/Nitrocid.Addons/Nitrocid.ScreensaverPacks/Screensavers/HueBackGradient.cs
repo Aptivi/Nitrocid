@@ -41,7 +41,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         private static int currentHueAngle = 0;
 
         /// <inheritdoc/>
-        public override string ScreensaverName { get; set; } = "HueBackGradient";
+        public override string ScreensaverName =>
+            "HueBackGradient";
 
         /// <inheritdoc/>
         public override void ScreensaverLogic()

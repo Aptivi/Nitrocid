@@ -37,7 +37,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             ScreensaverPackInit.SaversConfig.BloomDarkColors ? 32 : 255;
 
         /// <inheritdoc/>
-        public override string ScreensaverName { get; set; } = "Bloom";
+        public override string ScreensaverName =>
+            "Bloom";
 
         /// <inheritdoc/>
         public override void ScreensaverPreparation()

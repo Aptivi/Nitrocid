@@ -33,7 +33,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         private Animations.SquareCorner.SquareCornerSettings? SquareCornerSettingsInstance;
 
         /// <inheritdoc/>
-        public override string ScreensaverName { get; set; } = "SquareCorner";
+        public override string ScreensaverName =>
+            "SquareCorner";
 
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
