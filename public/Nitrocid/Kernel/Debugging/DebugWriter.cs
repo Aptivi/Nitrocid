@@ -340,7 +340,10 @@ namespace Nitrocid.Kernel.Debugging
         internal static void InitializeDebug(string loggerPath)
         {
             // Initialize debug logger
-            debugLogger = new SerilogLogger(new LoggerConfiguration().WriteTo.File(loggerPath, rollOnFileSizeLimit: true));
+            debugLogger = new SerilogLogger(
+                new LoggerConfiguration()
+                .MinimumLevel.Debug()
+                .WriteTo.File(loggerPath, rollOnFileSizeLimit: true));
         }
 
         internal static void DeterministicDebug(string text, DebugLevel level, params object?[]? vars)
