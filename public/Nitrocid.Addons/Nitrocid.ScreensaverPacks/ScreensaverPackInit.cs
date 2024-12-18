@@ -69,6 +69,7 @@ namespace Nitrocid.ScreensaverPacks
             { "flashtext", new FlashTextDisplay() },
             { "following", new FollowingDisplay() },
             { "glitch", new GlitchDisplay() },
+            { "glitterchar", new GlitterCharDisplay() },
             { "glittercolor", new GlitterColorDisplay() },
             { "glittermatrix", new GlitterMatrixDisplay() },
             { "gradient", new GradientDisplay() },

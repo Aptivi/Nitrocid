@@ -6446,5 +6446,27 @@
                 "MaximumValue": 255
             }
         ]
+    },
+    {
+        "Name": "GlitterChar",
+        "Desc": "Random characters that spread randomly across the screen.",
+        "Keys": [
+            {
+                "Name": "Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "GlitterCharDelay",
+                "Description": "How many milliseconds to wait before making the next write?"
+            },
+            {
+                "Name": "Background color",
+                "Type": "SColor",
+                "Variable": "GlitterCharBackgroundColor"
+            },
+            {
+                "Name": "Foreground color",
+                "Type": "SColor",
+                "Variable": "GlitterCharForegroundColor"
+            }
+        ]
     }
 ]

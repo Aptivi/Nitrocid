@@ -14680,5 +14680,56 @@ namespace Nitrocid.ScreensaverPacks.Settings
             }
         }
         #endregion
+
+        #region GlitterChar
+        private int glitterCharDelay = 1;
+        private string glitterCharBackgroundColor = new Color(ConsoleColors.Black).PlainSequence;
+        private string glitterCharForegroundColor = new Color(ConsoleColors.Green).PlainSequence;
+
+        /// <summary>
+        /// [GlitterChar] How many milliseconds to wait before making the next write?
+        /// </summary>
+        public int GlitterCharDelay
+        {
+            get
+            {
+                return glitterCharDelay;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 1;
+                glitterCharDelay = value;
+            }
+        }
+        /// <summary>
+        /// [GlitterChar] Screensaver background color
+        /// </summary>
+        public string GlitterCharBackgroundColor
+        {
+            get
+            {
+                return glitterCharBackgroundColor;
+            }
+            set
+            {
+                glitterCharBackgroundColor = new Color(value).PlainSequence;
+            }
+        }
+        /// <summary>
+        /// [GlitterChar] Screensaver foreground color
+        /// </summary>
+        public string GlitterCharForegroundColor
+        {
+            get
+            {
+                return glitterCharForegroundColor;
+            }
+            set
+            {
+                glitterCharForegroundColor = new Color(value).PlainSequence;
+            }
+        }
+        #endregion
     }
 }
