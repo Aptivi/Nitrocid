@@ -18,7 +18,9 @@
 //
 
 using Nitrocid.Extras.Chemistry.Commands;
+using Nitrocid.Extras.Chemistry.Screensavers;
 using Nitrocid.Kernel.Extensions;
+using Nitrocid.Misc.Screensaver;
 using Nitrocid.Modifications;
 using Nitrocid.Shell.ShellBase.Arguments;
 using Nitrocid.Shell.ShellBase.Commands;
@@ -55,11 +57,17 @@ namespace Nitrocid.Extras.Chemistry
 
         ReadOnlyDictionary<string, FieldInfo>? IAddon.PubliclyAvailableFields => null;
 
-        void IAddon.StartAddon() =>
+        void IAddon.StartAddon()
+        {
             CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
+            ScreensaverManager.AddonSavers.Add("periodicpreview", new PeriodicPreviewDisplay());
+        }
 
-        void IAddon.StopAddon() =>
+        void IAddon.StopAddon()
+        {
             CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
+            ScreensaverManager.AddonSavers.Remove("periodicpreview");
+        }
 
         void IAddon.FinalizeAddon()
         { }
