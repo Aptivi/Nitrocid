@@ -26,6 +26,7 @@ using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Commands.ProcessExecution;
+using SpecProbe.Software.Platform;
 
 namespace Nitrocid.Extras.RssShell.RSS.Commands
 {
@@ -53,12 +54,7 @@ namespace Nitrocid.Extras.RssShell.RSS.Commands
             else if (!string.IsNullOrWhiteSpace(article.ArticleLink))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Opening web browser to {0}...", article.ArticleLink);
-                if (KernelPlatform.IsOnWindows())
-                    ProcessExecutor.ExecuteProcess("cmd.exe", $"/c \"start {article.ArticleLink}\"");
-                else if (KernelPlatform.IsOnMacOS())
-                    ProcessExecutor.ExecuteProcess("open", article.ArticleLink);
-                else
-                    ProcessExecutor.ExecuteProcess("xdg-open", article.ArticleLink);
+                PlatformHelper.PlatformOpen(article.ArticleLink);
                 return 0;
             }
             else

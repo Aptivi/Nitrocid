@@ -31,6 +31,7 @@ using Nitrocid.Network.Connections;
 using Nitrocid.Shell.ShellBase.Commands.ProcessExecution;
 using Nitrocid.Kernel;
 using Nitrocid.ConsoleBase.Colors;
+using SpecProbe.Software.Platform;
 
 namespace Nitrocid.Extras.RssShell.RSS.Interactive
 {
@@ -138,12 +139,7 @@ namespace Nitrocid.Extras.RssShell.RSS.Interactive
             // Now, open the host browser
             try
             {
-                if (KernelPlatform.IsOnWindows())
-                    ProcessExecutor.ExecuteProcess("cmd.exe", $"/c \"start {item.ArticleLink}\"");
-                else if (KernelPlatform.IsOnMacOS())
-                    ProcessExecutor.ExecuteProcess("open", item.ArticleLink);
-                else
-                    ProcessExecutor.ExecuteProcess("xdg-open", item.ArticleLink);
+                PlatformHelper.PlatformOpen(item.ArticleLink);
             }
             catch (Exception e)
             {
