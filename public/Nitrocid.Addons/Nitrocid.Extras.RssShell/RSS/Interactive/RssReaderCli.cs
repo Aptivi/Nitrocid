@@ -134,7 +134,10 @@ namespace Nitrocid.Extras.RssShell.RSS.Interactive
                 return;
             bool hasLink = !string.IsNullOrEmpty(item.ArticleLink);
             if (!hasLink)
+            {
                 InfoBoxModalColor.WriteInfoBoxModalColorBack(Translate.DoTranslation("This article doesn't have a link."), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
+                return;
+            }
 
             // Now, open the host browser
             try
