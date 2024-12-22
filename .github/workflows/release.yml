@@ -24,55 +24,12 @@ jobs:
           dotnet-version: '8.0.x'
       - name: Setup DocFX
         run: dotnet tool install --global docfx
-      - name: Setup Windows ADK
-        run: choco install windows-adk
-      - name: Setup Windows PE Addon
-        run: choco install windows-adk-winpe
-      - name: Setup necessary files
-        run: |
-          curl -L -o dotnet-runtime-amd64.zip "https://download.visualstudio.microsoft.com/download/pr/0f2e2c47-3e38-45be-aa3b-f382c5e73ff8/c7890b45dbd8306b4d89daa55abe49f6/dotnet-runtime-8.0.7-win-x64.zip"
-          curl -L -o dotnet-runtime-arm64.zip "https://download.visualstudio.microsoft.com/download/pr/12a17ef1-071d-489e-b138-1fd5249ac7f9/4e6030ef34957f9120171a74932f4fb5/dotnet-runtime-8.0.7-win-arm64.zip"
       - name: Release Asset Preparation
         run: |
           cd tools ; cmd.exe /c "build.cmd" ; cd ..
           cd tools ; cmd.exe /c "pack.cmd" ; cd ..
           cd tools ; cmd.exe /c "docgen.cmd" ; cd ..
           cd tools ; cmd.exe /c "docgen-pack.cmd" ; cd ..
-      - name: Copying PE files (AMD64 and ARM64)...
-        run: |
-          Import-Module $env:ChocolateyInstall\helpers\chocolateyProfile.psm1
-          $env:WINPEROOT = "C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment"
-          $env:OSCDImgRoot = "C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools\oscd\oscd"
-          $env:PATH += ";$env:WINPEROOT;$env:OSCDImgRoot\..\..\amd64\Oscdimg"
-          & "C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\copype.cmd" amd64 work-amd64
-          & "C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\copype.cmd" arm64 work-arm64
-      - name: Mounting and copying Nitrocid files (AMD64)...
-        run: |
-          dism /Mount-Image /ImageFile:work-amd64\media\sources\boot.wim /index:1 /MountDir:work-amd64\mount
-          New-Item -Path "work-amd64\mount\Windows" -Name "Essentials" -ItemType "directory"
-          New-Item -Path "work-amd64\mount\Windows\Essentials" -Name "Setup" -ItemType "directory"
-          New-Item -Path "work-amd64\mount\Windows\Essentials" -Name "Nitrocid" -ItemType "directory"
-          cmd.exe /c "xcopy /efy public\Nitrocid\KSBuild\net8.0\ work-amd64\mount\Windows\Essentials\Nitrocid\"
-          cmd.exe /c "copy assets\startnet.cmd work-amd64\mount\Windows\System32\startnet.cmd"
-          cmd.exe /c "7z x dotnet-runtime-amd64.zip -owork-amd64\mount\Windows\Essentials\Setup"
-          dism /Unmount-Image /MountDir:work-amd64\mount /commit
-      - name: Mounting and copying Nitrocid files (ARM64)...
-        run: |
-          dism /Mount-Image /ImageFile:work-arm64\media\sources\boot.wim /index:1 /MountDir:work-arm64\mount
-          New-Item -Path "work-arm64\mount\Windows" -Name "Essentials" -ItemType "directory"
-          New-Item -Path "work-arm64\mount\Windows\Essentials" -Name "Setup" -ItemType "directory"
-          New-Item -Path "work-arm64\mount\Windows\Essentials" -Name "Nitrocid" -ItemType "directory"
-          cmd.exe /c "xcopy /efy public\Nitrocid\KSBuild\net8.0\ work-arm64\mount\Windows\Essentials\Nitrocid\"
-          cmd.exe /c "copy assets\startnet.cmd work-arm64\mount\Windows\System32\startnet.cmd"
-          cmd.exe /c "7z x dotnet-runtime-arm64.zip -owork-arm64\mount\Windows\Essentials\Setup"
-          dism /Unmount-Image /MountDir:work-arm64\mount /Commit
-      - name: Building Nitrocid LIVE ISO...
-        run: |
-          $env:WINPEROOT = "C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment"
-          $env:OSCDImgRoot = "C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools\oscd\oscd"
-          $env:PATH += ";$env:WINPEROOT;$env:OSCDImgRoot\..\..\amd64\Oscdimg"
-          & "C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\MakeWinPEMedia.cmd" /ISO work-amd64 NKS_Live_amd64.iso
-          & "C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\MakeWinPEMedia.cmd" /ISO work-arm64 NKS_Live_arm64.iso
       - name: Release Preparation
         id: release-asset
         shell: bash
@@ -82,16 +39,11 @@ jobs:
           cat CHANGES >> "$GITHUB_OUTPUT"
           powershell 'Get-FileHash -Algorithm sha256 tools/*.zip | % {"- " + $_.Hash + "  " + (Resolve-Path -Path $_.Path -Relative)}' >> "$GITHUB_OUTPUT"
           powershell 'Get-FileHash -Algorithm sha256 tools/*-changes.chg | % {"- " + $_.Hash + "  " + (Resolve-Path -Path $_.Path -Relative)}' >> "$GITHUB_OUTPUT"
-          powershell 'Get-FileHash -Algorithm sha256 *.iso | % {"- " + $_.Hash + "  " + (Resolve-Path -Path $_.Path -Relative)}' >> "$GITHUB_OUTPUT"
           echo 'EOF' >> "$GITHUB_OUTPUT"
       - name: Binary Attestation (binaries)
         uses: actions/attest-build-provenance@v1
         with:
           subject-path: 'tools/*.zip'
-      - name: Binary Attestation (LIVE)
-        uses: actions/attest-build-provenance@v1
-        with:
-          subject-path: '*.iso'
       - name: Release Making
         uses: softprops/action-gh-release@v2
         with:
