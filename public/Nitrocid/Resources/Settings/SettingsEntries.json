@@ -209,6 +209,16 @@
                 "Type": "SBoolean",
                 "Variable": "EnableHomepageRssFeed",
                 "Description": "Enables 'The Nitrocid Homepage' RSS feed widget at the right side of the screen."
+            },
+            {
+                "Name": "'The Nitrocid Homepage' widget",
+                "Type": "SSelection",
+                "Variable": "HomepageWidget",
+                "IsEnumeration": false,
+                "SelectionFunctionName": "GetWidgetNames",
+                "SelectionFunctionType": "WidgetTools",
+                "SelectionFallback": [ "AnalogClock" ],
+                "Description": "Selects a widget that will be displayed in 'The Nitrocid Homepage'."
             }
         ]
     },

@@ -67,6 +67,7 @@ namespace Nitrocid.Shell.Homepage
         internal static bool isHomepageEnabled = true;
         internal static bool isHomepageWidgetEnabled = true;
         internal static bool isHomepageRssFeedEnabled = true;
+        internal static string homepageWidgetName = nameof(AnalogClock);
         private static bool isOnHomepage = false;
         private static Dictionary<string, Action> choiceActionsAddons = [];
         private static Dictionary<string, Action> choiceActionsCustom = [];
@@ -145,17 +146,17 @@ namespace Nitrocid.Shell.Homepage
                     };
                     builder.Append(keybindings.Render());
 
-                    // Make a border for an analog clock widget and the first three RSS feeds (if the addon is installed)
+                    // Make a border for a widget and the first three RSS feeds (if the addon is installed)
                     int widgetLeft = ConsoleWrapper.WindowWidth / 2 + ConsoleWrapper.WindowWidth % 2;
                     int widgetWidth = ConsoleWrapper.WindowWidth / 2 - 4;
                     int widgetHeight = ConsoleWrapper.WindowHeight - 11;
-                    int clockTop = 2;
-                    int rssTop = clockTop + widgetHeight + 2;
+                    int widgetTop = 2;
+                    int rssTop = widgetTop + widgetHeight + 2;
                     int rssHeight = 3;
-                    var clockBorder = new Border()
+                    var widgetBorder = new Border()
                     {
                         Left = widgetLeft,
-                        Top = clockTop,
+                        Top = widgetTop,
                         InteriorWidth = widgetWidth,
                         InteriorHeight = widgetHeight,
                         Color = KernelColorTools.GetColor(KernelColorType.TuiPaneSelectedSeparator),
@@ -169,16 +170,19 @@ namespace Nitrocid.Shell.Homepage
                         Color = KernelColorTools.GetColor(KernelColorType.TuiPaneSelectedSeparator),
                     };
                     builder.Append(
-                        clockBorder.Render() +
+                        widgetBorder.Render() +
                         rssBorder.Render()
                     );
 
-                    // Render the clock widget
+                    // Render the widget
                     if (Config.MainConfig.EnableHomepageWidgets)
                     {
-                        var widget = WidgetTools.GetWidget(nameof(AnalogClock));
-                        string widgetInit = widget.Initialize(widgetLeft + 1, clockTop + 1, widgetWidth, widgetHeight);
-                        string widgetSeq = widget.Render(widgetLeft + 1, clockTop + 1, widgetWidth, widgetHeight);
+                        var widget =
+                            WidgetTools.CheckWidget(Config.MainConfig.HomepageWidget) ?
+                            WidgetTools.GetWidget(Config.MainConfig.HomepageWidget) :
+                            WidgetTools.GetWidget(nameof(AnalogClock));
+                        string widgetInit = widget.Initialize(widgetLeft + 1, widgetTop + 1, widgetWidth, widgetHeight);
+                        string widgetSeq = widget.Render(widgetLeft + 1, widgetTop + 1, widgetWidth, widgetHeight);
                         builder.Append(widgetInit + widgetSeq);
                     }
 
@@ -305,7 +309,7 @@ namespace Nitrocid.Shell.Homepage
                     var choicesBorder = new Border()
                     {
                         Left = settingsButtonPosX,
-                        Top = clockTop,
+                        Top = widgetTop,
                         InteriorWidth = widgetWidth - 1 + ConsoleWrapper.WindowWidth % 2,
                         InteriorHeight = widgetHeight + 2,
                         Color = KernelColorTools.GetColor(buttonHighlight == 0 ? KernelColorType.TuiPaneSelectedSeparator : KernelColorType.TuiPaneSeparator),
@@ -313,7 +317,7 @@ namespace Nitrocid.Shell.Homepage
                     var choicesSelection = new Selection(availableChoices)
                     {
                         Left = settingsButtonPosX + 1,
-                        Top = clockTop + 1,
+                        Top = widgetTop + 1,
                         CurrentSelection = choiceIdx,
                         Height = widgetHeight + 2,
                         Width = widgetWidth - 1 + ConsoleWrapper.WindowWidth % 2,
@@ -381,16 +385,16 @@ namespace Nitrocid.Shell.Homepage
                         int aboutButtonStartPosY = ConsoleWrapper.WindowHeight - 5;
                         int aboutButtonEndPosX = aboutButtonStartPosX + buttonWidth + 1;
                         int aboutButtonEndPosY = aboutButtonStartPosY + buttonHeight + 1;
-                        int clockTop = 3;
+                        int widgetTop = 3;
                         int widgetWidth = ConsoleWrapper.WindowWidth / 2 - 4;
                         int widgetHeight = ConsoleWrapper.WindowHeight - 13;
                         int optionsEndX = settingsButtonStartPosX + widgetWidth - 1 + ConsoleWrapper.WindowWidth % 2;
-                        int optionsEndY = clockTop + widgetHeight + 1;
+                        int optionsEndY = widgetTop + widgetHeight + 1;
 
                         // Check the ranges
                         bool isWithinSettings = PointerTools.PointerWithinRange(context, (settingsButtonStartPosX, settingsButtonStartPosY), (settingsButtonEndPosX, settingsButtonEndPosY));
                         bool isWithinAbout = PointerTools.PointerWithinRange(context, (aboutButtonStartPosX, aboutButtonStartPosY), (aboutButtonEndPosX, aboutButtonEndPosY));
-                        bool isWithinOptions = PointerTools.PointerWithinRange(context, (settingsButtonStartPosX + 1, clockTop), (optionsEndX, optionsEndY));
+                        bool isWithinOptions = PointerTools.PointerWithinRange(context, (settingsButtonStartPosX + 1, widgetTop), (optionsEndX, optionsEndY));
 
                         // If the mouse pointer is within the settings, check for left release
                         if (isWithinSettings)
@@ -412,7 +416,7 @@ namespace Nitrocid.Shell.Homepage
                             if ((context.ButtonPress == PointerButtonPress.Released && context.Button == PointerButton.Left) || context.ButtonPress == PointerButtonPress.Moved)
                             {
                                 int posY = context.Coordinates.y;
-                                int finalPos = posY - clockTop;
+                                int finalPos = posY - widgetTop;
                                 if (finalPos < currentChoices)
                                 {
                                     choiceIdx = finalPos;

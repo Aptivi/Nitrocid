@@ -53,6 +53,8 @@ using Nitrocid.Users.Login;
 using Nitrocid.ConsoleBase;
 using Nitrocid.Shell.Homepage;
 using Terminaux.Inputs;
+using Nitrocid.Users.Login.Widgets;
+using Nitrocid.Users.Login.Widgets.Implementations;
 
 namespace Nitrocid.Kernel.Configuration.Instances
 {
@@ -222,6 +224,14 @@ namespace Nitrocid.Kernel.Configuration.Instances
         {
             get => HomepageTools.isHomepageRssFeedEnabled;
             set => HomepageTools.isHomepageRssFeedEnabled = value;
+        }
+        /// <summary>
+        /// Select a widget to be displayed in the widget pane of the homepage
+        /// </summary>
+        public string HomepageWidget
+        {
+            get => HomepageTools.homepageWidgetName;
+            set => HomepageTools.homepageWidgetName = WidgetTools.CheckWidget(value) ? value : nameof(AnalogClock);
         }
         #endregion
 
